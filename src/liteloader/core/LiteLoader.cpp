@@ -37,21 +37,20 @@ Logger ll::logger("LiteLoader");
 time_t ll::startTime;
 time_t ll::endTime;
 
-using namespace std;
 using namespace ll;
 
 // Add plugins folder to path
 void fixPluginsLibDir() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
 
-    auto* buffer = new (nothrow) wchar_t[MAX_PATH_LEN];
+    auto* buffer = new (std::nothrow) wchar_t[MAX_PATH_LEN];
     if (!buffer) return;
 
     GetEnvironmentVariableW(L"PATH", buffer, MAX_PATH_LEN);
-    wstring path(buffer);
+    std::wstring path(buffer);
 
     GetCurrentDirectoryW(MAX_PATH_LEN, buffer);
-    wstring currentDir(buffer);
+    std::wstring currentDir(buffer);
 
     // append plugins path to environment path
     SetEnvironmentVariableW(L"PATH", (currentDir + L"\\plugins;" + path).c_str());
@@ -60,11 +59,11 @@ void fixPluginsLibDir() {
 void fixUpCWD() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
 
-    auto* buffer = new (nothrow) wchar_t[MAX_PATH_LEN];
+    auto* buffer = new (std::nothrow) wchar_t[MAX_PATH_LEN];
     if (!buffer) return;
 
     GetModuleFileNameW(nullptr, buffer, MAX_PATH_LEN);
-    wstring path(buffer);
+    std::wstring path(buffer);
 
     SetCurrentDirectoryW(path.substr(0, path.find_last_of(L'\\')).c_str());
 }
@@ -81,7 +80,7 @@ void unzipNodeModules() {
         if (res.first != 0) {
             logger.error(tr("ll.unzipNodeModules.fail"));
         } else {
-            filesystem::remove(R"(.\plugins\lib\node_modules.tar)", ec);
+            std::filesystem::remove(R"(.\plugins\lib\node_modules.tar)", ec);
         }
     }
 }
@@ -104,7 +103,7 @@ void decompressResourcePacks() {
         if (res.first != 0) {
             logger.error(tr("ll.decompressResourcePacks.fail"));
         } else {
-            filesystem::remove(R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar)", ec);
+            std::filesystem::remove(R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar)", ec);
         }
     }
 }
@@ -176,30 +175,10 @@ void checkRunningBDS() {
     delete[] buffer;
 }
 
-void fixAllowList() {
-    if (filesystem::exists("whitelist.json")) {
-        if (filesystem::exists("allowlist.json")) {
-            auto res = ReadAllFile("allowlist.json");
-            if (res && (res->empty() || nlohmann::json::parse(*res, nullptr, true, true).empty())) {
-                logger.warn(tr("ll.main.fixAllowList.removeEmptyAllowlist"));
-                filesystem::remove("allowlist.json");
-            } else {
-                logger.warn(tr("ll.main.fixAllowList.checkManually"));
-                return;
-            }
-        }
-        std::error_code ec;
-        // Rename whitelist.json to allowlist.json
-        filesystem::copy_file("whitelist.json", "allowlist.json", filesystem::copy_options::overwrite_existing, ec);
-        filesystem::remove("whitelist.json", ec);
-        logger.warn(tr("ll.main.fixAllowList.renamed"));
-    }
-}
-
 void printLogo() {
     if (!ll::globalConfig.enableWelcomeText) return;
 
-    cout << R"(
+    std::cout << R"(
                                                                        
           _     _ _       _                    _                       
          | |   (_) |_ ___| |    ___   __ _  __| | ___ _ __             
@@ -209,7 +188,7 @@ void printLogo() {
                                                                        
        --------   Light-Weight BDS Plugin Loader   ----------          
                                                                        
-)" << endl;
+)" << std::endl;
 }
 
 void checkDevMode() {
@@ -315,9 +294,6 @@ void liteloaderMain() {
     // Fix problems
     fixUpCWD();
     fixPluginsLibDir();
-
-    // Check whether allowlist.json exists/is empty or not
-    fixAllowList();
 
     // Init LL Logger
     Logger::setDefaultFile("logs/LiteLoader-latest.log", false);

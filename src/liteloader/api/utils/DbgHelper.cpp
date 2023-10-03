@@ -18,10 +18,7 @@
 
 #pragma comment(lib, "dbghelp.lib")
 
-using namespace std;
 using namespace ll::StringUtils;
-
-namespace fs = std::filesystem;
 
 using ll::logger;
 
@@ -32,14 +29,14 @@ using ll::logger;
 std::set<std::wstring> loadedSymbolDir;
 bool                   symbolsLoaded = false;
 
-void FindSymbols(wstring& collection, std::string const& nowPath, bool recursion = false) {
-    fs::directory_iterator list(nowPath);
+void FindSymbols(std::wstring& collection, std::string const& nowPath, bool recursion = false) {
+    std::filesystem::directory_iterator list(nowPath);
     for (auto& it : list) {
         if (it.is_directory() && recursion) {
             FindSymbols(collection, it.path().string(), recursion);
         } else if (it.path().extension() == ".pdb") {
-            fs::path dir     = fs::canonical(it.path());
-            wstring  dirPath = dir.remove_filename().native();
+            std::filesystem::path dir     = std::filesystem::canonical(it.path());
+            std::wstring          dirPath = dir.remove_filename().native();
 
             if (loadedSymbolDir.find(dirPath) == loadedSymbolDir.end()) {
                 collection += L";" + dirPath.substr(0, dirPath.size() - 1);
@@ -53,7 +50,7 @@ bool LoadSymbols() {
     if (symbolsLoaded) return true;
 
     loadedSymbolDir.clear();
-    wstring symbolPath{L"srv*C:\\Windows\\symbols*http://msdl.microsoft.com/download/symbols"};
+    std::wstring symbolPath{L"srv*C:\\Windows\\symbols*http://msdl.microsoft.com/download/symbols"};
     FindSymbols(symbolPath, ".", false);
     FindSymbols(symbolPath, ".\\plugins", true);
 
@@ -103,7 +100,7 @@ bool CreateModuleMap(HANDLE hProcess) {
     return true;
 }
 
-wstring MapModuleFromAddr(HANDLE hProcess, void* address) {
+std::wstring MapModuleFromAddr(HANDLE hProcess, void* address) {
     return moduleMap[(DWORD)SymGetModuleBase64(hProcess, (DWORD64)address)];
 }
 
@@ -194,7 +191,7 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
                 delete info;
             } else debugLogger.error("at ???????? (0x{:X})  [{}]", address, moduleName);
         }
-        cout << endl;
+        std::cout << std::endl;
 
         if (!cacheSymbol) CleanupSymbols();
         res = true;

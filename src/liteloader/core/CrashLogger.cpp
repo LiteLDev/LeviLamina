@@ -10,10 +10,6 @@
 #include "liteloader/api/utils/WinHelper.h"
 #include "liteloader/core/Config.h"
 
-using namespace std;
-using namespace ll;
-using namespace ll::StringUtils;
-
 Logger crashLogger("CrashLogger");
 
 bool ll::CrashLogger::startCrashLoggerProcess() {
@@ -42,9 +38,9 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
     wsprintf(
         daemonCmd,
         L"%ls %u \"%ls\"",
-        str2wstr(globalConfig.crashLoggerPath).c_str(),
+        ll::StringUtils::str2wstr(globalConfig.crashLoggerPath).c_str(),
         GetCurrentProcessId(),
-        str2wstr(serverVersion).c_str()
+        ll::StringUtils::str2wstr(serverVersion).c_str()
     );
     if (!CreateProcess(nullptr, daemonCmd, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error(tr("ll.crashLogger.error.cannotCreateDaemonProcess"));
@@ -71,7 +67,7 @@ void ll::CrashLogger::initCrashLogger(bool enableCrashLogger) {
     // string noCrashLoggerReason;
 
     // Get file list
-    filesystem::directory_iterator ent("plugins");
+    std::filesystem::directory_iterator ent("plugins");
 
     for (auto& i : ent) {
         if (i.is_regular_file() && i.path().extension() == ".dll") {

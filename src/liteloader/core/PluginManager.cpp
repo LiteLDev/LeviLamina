@@ -12,7 +12,6 @@
 
 #include "windows.h"
 
-using namespace std;
 using namespace ll::StringUtils;
 
 using ll::logger;
@@ -49,7 +48,7 @@ bool ll::PluginManager::registerPlugin(
 
     try {
         plugin.filePath =
-            u8str2str(filesystem::path(str2wstr(others.at("PluginFilePath"))).lexically_normal().u8string());
+            u8str2str(std::filesystem::path(str2wstr(others.at("PluginFilePath"))).lexically_normal().u8string());
         others.erase("PluginFilePath");
     } catch (...) {
         if (handle) plugin.filePath = GetModulePath(handle);
@@ -73,7 +72,7 @@ bool ll::PluginManager::unRegisterPlugin(std::string name) {
 ll::Plugin* GetPlugin_Raw(std::string const& name, bool includeScriptPlugin) {
     for (auto& it : plugins) {
         if (it.second.name == name
-            || u8str2str(filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name) {
+            || u8str2str(std::filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name) {
             if (!includeScriptPlugin && it.second.type == ll::Plugin::PluginType::ScriptPlugin) continue;
             return &it.second;
         }

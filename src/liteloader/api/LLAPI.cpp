@@ -13,23 +13,22 @@
 #include "liteloader/core/PluginManager.h"
 #include "liteloader/core/Version.h"
 
-using namespace std;
 
 using ll::StringUtils::str2wstr;
 
 namespace {
 inline int stoi(std::string_view str) {
     int ret = -1;
-    from_chars(str.data(), str.data() + str.size(), ret);
+    std::from_chars(str.data(), str.data() + str.size(), ret);
     return ret;
 }
 } // namespace
 
 std::string ll::getDataPath(std::string const& pluginName) {
     std::string dataPath = "plugins\\LiteLoader\\" + pluginName;
-    if (!filesystem::exists(str2wstr(dataPath))) {
+    if (!std::filesystem::exists(str2wstr(dataPath))) {
         std::error_code ec;
-        filesystem::create_directories(str2wstr(dataPath), ec);
+        std::filesystem::create_directories(str2wstr(dataPath), ec);
     }
     return dataPath;
 }

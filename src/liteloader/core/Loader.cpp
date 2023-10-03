@@ -21,12 +21,11 @@
 
 #include "windows.h"
 
-using namespace std;
 using namespace ll::StringUtils;
 
-inline vector<std::string> getPreloadList() {
+inline std::vector<std::string> getPreloadList() {
     // Not load if is already loaded in preloader
-    vector<std::string> preloadList{};
+    std::vector<std::string> preloadList{};
 
     if (std::filesystem::exists(std::filesystem::path(".\\plugins\\preload.conf"))) {
         std::ifstream preloadConf{".\\plugins\\preload.conf"};
@@ -53,13 +52,13 @@ void ll::LoadMain() {
 
     // Load plugins
     int                 pluginCount = 0;
-    vector<std::string> preloadList = getPreloadList();
+    std::vector<std::string> preloadList = getPreloadList();
 
-    filesystem::directory_iterator ent("plugins");
+    std::filesystem::directory_iterator ent("plugins");
     for (auto& file : ent) {
 
         if (!file.is_regular_file()) { continue; }
-        filesystem::path const& path = file.path();
+        std::filesystem::path const& path = file.path();
 
         auto ext = path.extension().u8string();
 

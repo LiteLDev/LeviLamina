@@ -5,7 +5,6 @@
 
 #include "liteloader/api/base/StdInt.h"
 
-using namespace std;
 
 namespace ll::crypto {
 std::string md5(std::string_view input) {

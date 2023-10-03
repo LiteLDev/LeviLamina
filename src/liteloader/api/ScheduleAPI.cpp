@@ -15,10 +15,9 @@
 
 #include "mc/server/ServerLevel.h"
 
-using namespace std;
 
 std::mutex  locker;
-atomic_uint nextTaskId = 0;
+std::atomic_uint nextTaskId = 0;
 
 class ScheduleTaskData {
 public:
@@ -55,7 +54,8 @@ std::vector<ScheduleTaskData> pendingTaskList{};
 std::vector<uint>             pendingCancelList{};
 bool                          pendingClear = false;
 
-class ScheduleTaskQueueType : public priority_queue<ScheduleTaskData, vector<ScheduleTaskData>, greater<>> {
+class ScheduleTaskQueueType
+: public std::priority_queue<ScheduleTaskData, std::vector<ScheduleTaskData>, std::greater<>> {
 public:
     bool remove(uint taskId) {
         bool removed = false;
@@ -77,7 +77,7 @@ public:
             clear();
             std::vector<ScheduleTaskData> tmpList;
 
-            unique_lock lock(locker);
+            std::unique_lock lock(locker);
             pendingTaskList.swap(tmpList);
             pendingCancelList.clear();
             pendingClear = false;

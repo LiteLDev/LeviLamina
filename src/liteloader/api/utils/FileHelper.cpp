@@ -8,7 +8,6 @@
 
 #include "io.h"
 
-using namespace std;
 using namespace ll::StringUtils;
 namespace fs = std::filesystem;
 
@@ -82,7 +81,7 @@ bool CreateDirs(std::string const& path) {
 }
 
 std::pair<int, std::string> UncompressFile(std::string const& filePath, std::string toDir, int processTimeout) {
-    error_code ec;
+    std::error_code ec;
     fs::create_directories(toDir, ec);
     toDir = u8str2str(fs::canonical(toDir, ec).u8string());
     if (ec.value() != 0) {

@@ -10,7 +10,6 @@
 
 #include "liteloader/core/LiteLoader.h"
 
-using namespace std;
 
 namespace ll {
 
@@ -65,7 +64,7 @@ void inline from_json(nlohmann::json const& j, LLConfig& conf) {
     conf.language                  = j.value("Language", "system");
     conf.resourcePackEncryptionMap = j.value(
         "ResourcePackEncryption",
-        map<std::string, std::string>{
+        std::map<std::string, std::string>{
             {"UUID", "KEY"}
     }
     );
@@ -194,7 +193,7 @@ bool ll::LoadLLConfig() {
             // if (IsWineEnvironment()) {
             //     ChooseLanguage();
             // }
-            filesystem::create_directories(filesystem::path(LITELOADER_CONFIG_FILE).remove_filename());
+            std::filesystem::create_directories(std::filesystem::path(LITELOADER_CONFIG_FILE).remove_filename());
             ll::SaveLLConfig();
         } else {
             try {

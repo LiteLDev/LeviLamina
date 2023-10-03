@@ -11,7 +11,6 @@
 #include "liteloader/core/Config.h"
 #include "liteloader/core/LiteLoader.h"
 
-using namespace std;
 
 void SplitHttpUrl(std::string const& url, std::string& host, std::string& path) {
     host = url;
@@ -27,15 +26,15 @@ void SplitHttpUrl(std::string const& url, std::string& host, std::string& path) 
     }
 }
 
-bool HttpGet(std::string const& url, const function<void(int, std::string)>& callback, int timeout) {
+bool HttpGet(std::string const& url, std::function<void(int, std::string)> const& callback, int timeout) {
     return HttpGet(url, {}, callback, timeout);
 }
 
 bool HttpGet(
-    std::string const&                      url,
-    httplib::Headers const&                 headers,
-    const function<void(int, std::string)>& callback,
-    int                                     timeout
+    std::string const&                           url,
+    httplib::Headers const&                      headers,
+     std::function<void(int, std::string)> const& callback,
+    int                                          timeout
 ) {
     std::string host, path;
     SplitHttpUrl(url, host, path);

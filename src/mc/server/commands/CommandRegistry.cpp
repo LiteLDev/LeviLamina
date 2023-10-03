@@ -1,32 +1,10 @@
-#include <utility>
-
+#include "mc/server/commands/CommandRegistry.h"
 #include "liteloader/api/service/GlobalService.h"
 #include "liteloader/core/Config.h"
 #include "liteloader/core/LiteLoader.h"
-#include "mc/network/packet/AvailableCommandsPacket.h"
 #include "mc/server/commands/CommandParameterData.h"
-#include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/CommandVersion.h"
 
-
-CommandRegistry::Overload::Overload(CommandVersion version, FactoryFn factory, std::vector<CommandParameterData> args)
-: version(version),
-  alloc(factory),
-  params(std::move(args)),
-  versionOffset(0xff) {}
-
-CommandRegistry::Signature::Signature(
-    std::string_view       name,
-    std::string_view       desc,
-    CommandPermissionLevel perm,
-    Symbol                 symbol,
-    CommandFlag            flag
-)
-: name(name),
-  desc(desc),
-  perm(perm),
-  main_symbol(symbol),
-  flag(flag) {}
 
 void CommandRegistry::registerOverload(
     std::string const&                  name,
@@ -43,9 +21,6 @@ std::vector<std::string> CommandRegistry::getEnumNames() {
     results.reserve(this->mEnums.size());
     for (auto& e : this->mEnums) results.push_back(e.name);
     return results;
-
-    auto packet = this->serializeAvailableCommands();
-    return packet.getEnumNames();
 }
 
 std::vector<std::string> CommandRegistry::getSoftEnumNames() {
@@ -53,9 +28,6 @@ std::vector<std::string> CommandRegistry::getSoftEnumNames() {
     results.reserve(this->mSoftEnums.size());
     for (auto& e : this->mSoftEnums) results.push_back(e.mName);
     return results;
-
-    auto packet = this->serializeAvailableCommands();
-    return packet.getEnumNames();
 }
 
 std::vector<std::string> CommandRegistry::getEnumValues(std::string const& name) {
@@ -66,9 +38,6 @@ std::vector<std::string> CommandRegistry::getEnumValues(std::string const& name)
     if (iter == enums.end()) return results;
     for (auto& i : iter->values) results.push_back(this->mEnumValues.at(std::get<3>(i)));
     return results;
-
-    auto packet = this->serializeAvailableCommands();
-    return packet.getEnumValues(name);
 }
 
 std::vector<std::string> CommandRegistry::getSoftEnumValues(std::string const& name) {
@@ -78,9 +47,6 @@ std::vector<std::string> CommandRegistry::getSoftEnumValues(std::string const& n
         std::find_if(enums.begin(), enums.end(), [&](CommandRegistry::SoftEnum const& r) { return r.mName == name; });
     if (iter != enums.end()) return iter->mValues;
     return {};
-
-    auto packet = this->serializeAvailableCommands();
-    return packet.getEnumValues(name);
 }
 
 std::string CommandRegistry::getCommandFullName(std::string const& name) {
@@ -119,27 +85,21 @@ bool CommandRegistry::unregisterCommand(std::string const& name) {
             mEnumLookup.erase(aliasIter->name);
             aliasIter->name = fmt::format("removed_{}", removeIndex++);
         }
+        if (!mSignatures.contains(command)) return false;
+
         auto sig = mSignatures.find(command);
-        if (sig == mSignatures.end()) return false;
-        {
-            auto miter = std::remove_if(mCommandSymbols.begin(), mCommandSymbols.end(), [&](Symbol const& r) {
-                return r == sig->second.main_symbol || r == sig->second.alt_symbol;
-            });
-            if (miter != mCommandSymbols.end()) mCommandSymbols.erase(miter, mCommandSymbols.end());
-        }
-        //{
-        //    auto miter = std::remove_if(mRules.begin(), mRules.end(),
-        //                               [&](ParseRule const& r) { return r.sym == sig->second.main_symbol || r.sym ==
-        //                               sig->second.alt_symbol; });
-        //    if (miter == mRules.end())
-        //        mRules.erase(miter, mRules.end());
-        //};
-        {
-            auto miter = std::remove_if(mFactorizations.begin(), mFactorizations.end(), [&](Factorization const& r) {
-                return r.commandSymbol == sig->second.main_symbol || r.commandSymbol == sig->second.alt_symbol;
-            });
-            if (miter != mFactorizations.end()) mFactorizations.erase(miter, mFactorizations.end());
-        };
+        std::erase_if(mCommandSymbols, [&](Symbol const& r) {
+            return r == sig->second.main_symbol || r == sig->second.alt_symbol;
+        });
+
+        // std::erase_if(mRules, [&](ParseRule const& r) {
+        //     return r.sym == sig->second.main_symbol || r.sym == sig->second.alt_symbol;
+        // });
+
+        std::erase_if(mFactorizations, [&](Factorization const& r) {
+            return r.commandSymbol == sig->second.main_symbol || r.commandSymbol == sig->second.alt_symbol;
+        });
+
 
         mSignatures.erase(sig);
         mAliases.erase(command);

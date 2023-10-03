@@ -5,7 +5,6 @@
 
 #include "stringapiset.h"
 
-using namespace std;
 
 namespace fs = std::filesystem;
 
@@ -362,7 +361,7 @@ std::string toUTF8(std::string const& text, Encoding from) { return convert(text
 std::string convert(std::string const& text, Encoding from, Encoding to) {
     if (text.empty() || from == to) return text;
 
-    wstring uni = toUnicode(text, from);
+    std::wstring uni = toUnicode(text, from);
     if (uni.empty()) return "";
 
     return fromUnicode(uni, to);
