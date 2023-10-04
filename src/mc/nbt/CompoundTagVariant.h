@@ -39,7 +39,11 @@ public:
 
     CompoundTagVariant() = default;
 
+    template <typename TagType>
+    CompoundTagVariant(TagType tag) : mTagStorage(std::move(tag)) {}
+
     CompoundTagVariant(Variant storage) : mTagStorage(std::move(storage)) {}
+    
 
 public:
     // NOLINTBEGIN

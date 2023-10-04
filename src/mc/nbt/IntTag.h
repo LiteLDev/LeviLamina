@@ -50,3 +50,5 @@ public:
 
     // NOLINTEND
 };
+
+inline IntTag operator""_i(uint64 num) { return IntTag{(int)num}; }

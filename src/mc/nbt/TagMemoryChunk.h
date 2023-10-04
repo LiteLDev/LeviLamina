@@ -1,12 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include <span>
 
 struct TagMemoryChunk {
 public:
     size_t                   mElements{0};
     size_t                   mSize{0};
     std::unique_ptr<uchar[]> mBuffer;
+
+    TagMemoryChunk() = default;
 
     LLNDAPI TagMemoryChunk(uchar data[], size_t size);
     LLNDAPI TagMemoryChunk(TagMemoryChunk const&);

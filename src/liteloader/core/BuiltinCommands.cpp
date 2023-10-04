@@ -488,7 +488,7 @@ class VersionCommand : public Command {
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
 #ifdef DEBUG
-        Logger("CommandOrigin").warn(ori.serialize().toSNBT());
+        Logger("CommandOrigin").warn(ori.serialize().toSnbt());
 #endif // DEBUG
         LLVersionCommand(output);
     }

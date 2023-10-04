@@ -47,3 +47,5 @@ public:
 
     // NOLINTEND
 };
+
+inline Int64Tag operator""_l(uint64 num) { return Int64Tag{(int64)num}; }

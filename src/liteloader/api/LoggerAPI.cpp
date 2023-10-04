@@ -100,7 +100,7 @@ fmt::text_style getModeColor(std::string const& a1) {
     return fmt::fg(fmt::color::white);
 }
 
-template <typename S, typename Char = fmt::v9::char_t<S>>
+template <typename S, typename Char>
 std::string applyTextStyle(fmt::v9::text_style const& ts, S const& format_str) {
     fmt::v9::basic_memory_buffer<Char> buf;
     auto                               fmt       = fmt::detail::to_string_view(format_str);

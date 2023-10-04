@@ -1,5 +1,6 @@
 #pragma once
 
+#include "liteloader/api/base/Concepts.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
@@ -14,8 +15,33 @@ public:
 
 public:
     // prevent constructor by default
-    ListTag& operator=(ListTag const&);
-    ListTag(ListTag const&);
+    constexpr ListTag& operator=(ListTag const& other) {
+        mType = other.mType;
+        mList.clear();
+        mList.resize(other.mList.size());
+        for (size_t i = 0; i < other.mList.size(); i++) { mList[i] = std::move(other.mList[i]->copy()); }
+        return *this;
+    }
+    constexpr ListTag(ListTag const& other) {
+        mType = other.mType;
+        mList.clear();
+        mList.resize(other.mList.size());
+        for (size_t i = 0; i < other.mList.size(); i++) { mList[i] = std::move(other.mList[i]->copy()); }
+    }
+
+    template <typename TagType>
+    constexpr ListTag(std::vector<TagType> const& tags) {
+        if (tags.empty()) {
+            mType = Tag::Type::End;
+        } else {
+            mType = tags[0].getId();
+            mList.resize(tags.size());
+            for (size_t i = 0; i < tags.size(); i++) { mList[i] = std::make_unique<TagType>(tags[i]); }
+        }
+    }
+
+    template <typename TagType>
+    constexpr ListTag(std::initializer_list<TagType> tags) : ListTag(std::vector<TagType>{std::move(tags)}) {}
 
 public:
     // NOLINTBEGIN

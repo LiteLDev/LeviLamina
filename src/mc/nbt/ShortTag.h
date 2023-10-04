@@ -16,6 +16,8 @@ public:
 
     operator short() const { return data; }
 
+    explicit ShortTag(short value) : data(value) {}
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0
@@ -44,3 +46,5 @@ public:
 
     // NOLINTEND
 };
+
+inline ShortTag operator""_s(uint64 num) { return ShortTag{(short)num}; }

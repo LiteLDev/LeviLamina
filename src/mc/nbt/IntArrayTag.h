@@ -17,6 +17,10 @@ public:
 
     operator TagMemoryChunk() const { return data; }
 
+    IntArrayTag(std::vector<int> const& arr) : data((uchar*)arr.data(), arr.size() * sizeof(int)) {}
+
+    std::span<int> view() const { return std::span<int>((int*)data.mBuffer.get(), data.mSize / sizeof(int)); }
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0

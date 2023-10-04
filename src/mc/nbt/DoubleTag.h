@@ -16,6 +16,8 @@ public:
 
     operator double() const { return data; }
 
+    explicit DoubleTag(double value) : data(value) {}
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0
@@ -44,3 +46,5 @@ public:
 
     // NOLINTEND
 };
+
+inline DoubleTag operator""_d(long double num) { return DoubleTag{(double)num}; }

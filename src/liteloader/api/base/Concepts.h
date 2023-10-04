@@ -7,6 +7,8 @@ namespace ll::concepts {
 
 template <typename T, typename... Ts>
 concept IsOneOf = (std::is_same_v<T, Ts> || ...);
+template <typename T, typename... Ts>
+concept IsAllSame = (std::is_same_v<T, Ts> && ...);
 
 
 template <typename T>

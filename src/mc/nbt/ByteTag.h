@@ -7,14 +7,18 @@
 
 class ByteTag : public ::Tag {
 public:
-    uchar data;
+    schar data;
 
-    ByteTag& operator=(uchar value) {
+    ByteTag& operator=(schar value) {
         data = value;
         return *this;
     }
 
-    operator uchar() const { return data; }
+    operator schar() const { return data; }
+
+    operator bool() const { return data != 0; }
+
+    explicit ByteTag(int value) : data((schar)value) {}
 
 public:
     // NOLINTBEGIN
@@ -50,3 +54,5 @@ public:
 
     // NOLINTEND
 };
+
+inline ByteTag operator""_b(uint64 num) { return ByteTag{(uchar)num}; }

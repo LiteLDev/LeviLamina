@@ -8,15 +8,6 @@
 
 class CompoundTagVariant;
 
-enum class SnbtFormat : uchar {
-    Minimize        = 0,
-    CompoundNewLine = 1 << 0,
-    ListNewLine     = 1 << 1,
-    Colored         = 1 << 2,
-    Console         = 1 << 3,
-    AlwaysNewLine   = CompoundNewLine | ListNewLine,
-};
-
 class CompoundTag : public ::Tag {
 public:
     using TagMap = std::map<std::string, class CompoundTagVariant>;
@@ -35,14 +26,14 @@ public:
 
     CompoundTag(TagMap tags) : mTags(std::move(tags)) {} // NOLINT
 
-    // LLNDAPI std::string toSNBT(uchar indent = 4, SnbtFormat snbtFormat = SnbtFormat::PartialNewLine) const;
-    // LLNDAPI static std::unique_ptr<CompoundTag> fromSNBT(std::string_view snbt);
-
     LLNDAPI std::string                         toBinaryNBT(bool isLittleEndian = true) const;
     LLNDAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string_view dataView, bool isLittleEndian = true);
 
     LLNDAPI std::string                         toNetworkNBT() const;
     LLNDAPI static std::unique_ptr<CompoundTag> fromNetworkNBT(std::string const& data);
+
+    CompoundTag(CompoundTag const&) = default;
+    CompoundTag& operator=(CompoundTag const&) = default;
 
 public:
     // NOLINTBEGIN

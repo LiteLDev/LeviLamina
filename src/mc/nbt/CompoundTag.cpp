@@ -4,9 +4,6 @@
 #include "mc/util/BigEndianStringByteInput.h"
 #include "mc/util/BigEndianStringByteOutput.h"
 
-// std::string                  CompoundTag::toSNBT(uchar indent, SnbtFormat snbtFormat) const { return ""; }
-// std::unique_ptr<CompoundTag> CompoundTag::fromSNBT(std::string_view snbt) { return nullptr; }
-
 std::string CompoundTag::toBinaryNBT(bool isLittleEndian) const {
     std::string result;
     if (isLittleEndian) {

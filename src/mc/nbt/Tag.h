@@ -6,6 +6,19 @@ class IDataOutput;
 class IDataInput;
 class PrintStream;
 
+enum class SnbtFormat : uchar {
+    Minimize           = 0,
+    CompoundNewLine    = 1 << 0,
+    ListNewLine        = 1 << 1,
+    Colored            = 1 << 2,
+    Console            = 1 << 3,
+    PartialNewLine     = CompoundNewLine,
+    AlwaysNewLine      = CompoundNewLine | ListNewLine,
+    PrettyFilePrint    = CompoundNewLine,
+    PrettyChatPrint    = CompoundNewLine | Colored,
+    PrettyConsolePrint = CompoundNewLine | Colored | Console,
+};
+
 class Tag {
 public:
     // Tag inner types define
@@ -36,17 +49,13 @@ public:
     template <typename T>
     T const& as() const {
         auto* res = dynamic_cast<T const*>(this);
-        if (res) {
-            return *res;
-        }
+        if (res) { return *res; }
         throw std::runtime_error("Invalid Tag As");
     }
     template <typename T>
     T& as() {
         auto* res = dynamic_cast<T*>(this);
-        if (res) {
-            return *res;
-        }
+        if (res) { return *res; }
         throw std::runtime_error("Invalid Tag As");
     }
 
@@ -55,6 +64,9 @@ public:
 
     LLNDAPI Tag&       operator[](std::string_view index);
     LLNDAPI Tag const& operator[](std::string_view index) const;
+
+    LLNDAPI std::string toSnbt(uchar indent = 4, SnbtFormat snbtFormat = SnbtFormat::AlwaysNewLine) const;
+    LLNDAPI static std::unique_ptr<Tag> fromSnbt(std::string_view snbt);
 
 public:
     // NOLINTBEGIN

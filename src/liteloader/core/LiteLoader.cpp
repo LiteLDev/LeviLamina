@@ -5,12 +5,12 @@
 #include <string>
 
 #include "liteloader/api/LoggerAPI.h"
+#include "liteloader/api/ServerAPI.h"
 #include "liteloader/api/memory/Hook.h"
 #include "liteloader/api/service/GlobalService.h"
 #include "liteloader/api/utils/FileHelper.h"
 #include "liteloader/api/utils/SehTranslator.h"
 #include "liteloader/api/utils/StringUtils.h"
-#include "liteloader/api/ServerAPI.h"
 
 // #include "liteloader/api/event/LegacyEvents.h"
 // #include "liteloader/api/event/server/ServerStartedEvent.h"
@@ -177,16 +177,17 @@ void checkRunningBDS() {
 void printLogo() {
     if (!ll::globalConfig.enableWelcomeText) return;
 
-    std::cout << (R"(
-          _     _ _       _                    _                       
-         | |   (_) |_ ___| |    ___   __ _  __| | ___ _ __             
-         | |   | | __/ _ \ |   / _ \ / _` |/ _` |/ _ \ '__|            
-         | |___| | ||  __/ |__| (_) | (_| | (_| |  __/ |               
-         |_____|_|\__\___|_____\___/ \__,_|\__,_|\___|_|               
-                                                                       
-       --------   Light-Weight BDS Plugin Loader   ----------          
-                                                                       
-)") << std::endl;
+    logger.info(R"(                                                                       )");
+    logger.info(R"(          _     _ _       _                    _                       )");
+    logger.info(R"(         | |   (_) |_ ___| |    ___   __ _  __| | ___ _ __             )");
+    logger.info(R"(         | |   | | __/ _ \ |   / _ \ / _` |/ _` |/ _ \ '__|            )");
+    logger.info(R"(         | |___| | ||  __/ |__| (_) | (_| | (_| |  __/ |               )");
+    logger.info(R"(         |_____|_|\__\___|_____\___/ \__,_|\__,_|\___|_|               )");
+    logger.info(R"(                                                                       )");
+    logger.info(R"(       --------   Light-Weight BDS Plugin Loader   ----------          )");
+    logger.info(R"(                                                                       )");
+    logger.info(R"(                                                                       )");
+
     logger.info(tr("ll.notice.license", "LGPLv3"));
     logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
     logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
