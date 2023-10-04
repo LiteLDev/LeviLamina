@@ -37,13 +37,22 @@ public:
 
     Variant mTagStorage;
 
-    CompoundTagVariant() = default;
+    [[nodiscard]] CompoundTagVariant() = default;
 
     template <typename TagType>
-    CompoundTagVariant(TagType tag) : mTagStorage(std::move(tag)) {}
+    [[nodiscard]] CompoundTagVariant(TagType tag) : mTagStorage(std::move(tag)) {}
 
-    CompoundTagVariant(Variant storage) : mTagStorage(std::move(storage)) {}
-    
+    [[nodiscard]] CompoundTagVariant(Variant storage) : mTagStorage(std::move(storage)) {}
+
+    template <typename T>
+    [[nodiscard]] bool hold() const {
+        return std::holds_alternative<T>(mTagStorage);
+    }
+
+    [[nodiscard]] CompoundTagVariant& operator[](std::string const& index) {
+        if (!hold<CompoundTag>()) { mTagStorage = CompoundTag{}; }
+        return std::get<CompoundTag>(mTagStorage)[index];
+    }
 
 public:
     // NOLINTBEGIN

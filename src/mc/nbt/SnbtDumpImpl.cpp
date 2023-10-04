@@ -18,8 +18,17 @@ std::string WrapColorCode(std::string const& str, std::string const& code) { ret
 
 std::string toDumpString(std::string const& str, fmt::color defaultc, std::string const& defaultmc, SnbtFormat format) {
 
-    auto res = nlohmann::json{str}.dump(-1, ' ', false, nlohmann::json::error_handler_t::ignore);
-    res      = res.substr(1, res.size() - 2);
+    std::string    res;
+    nlohmann::json temp{str};
+
+    if ((int)format & (int)SnbtFormat::ForceAscii) {
+        res = temp.dump(-1, ' ', true, nlohmann::json::error_handler_t::ignore);
+    } else {
+        try {
+            res = temp.dump();
+        } catch (...) { res = temp.dump(-1, ' ', true, nlohmann::json::error_handler_t::ignore); }
+    }
+    res = res.substr(1, res.size() - 2);
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {

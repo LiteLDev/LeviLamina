@@ -19,7 +19,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     auto nbt = CompoundTag{
         {
-         {"some", StringTag{R"(streee _ _o-ix 我超, utf8 "\asfa%"*)##q)$\\"\Q34\\""'':)"}},
+         {"string?", StringTag{R"(streee _ _o-ix 我超, utf8 "\asfa%"*)##q)$\\"\Q34\\""'':)"}},
          {"num", 1_i},
          {"nums", 3_s},
          {"byte", 127_b},
@@ -40,6 +40,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
          {"intarray", IntArrayTag{{1, 2, 3, 4, 5, -2, -3, -6}}},
          }
     };
+
+    nbt["some"]["new"]["compound"] = nbt;
+    nbt["hello"]["world"]["\u123456"] = StringTag{R"(\u1234\uffffffff)"};
 
 
     ll::logger.info("\n{}", nbt.toSnbt(4, SnbtFormat::PrettyConsolePrint));

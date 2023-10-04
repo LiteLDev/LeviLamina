@@ -43,6 +43,9 @@ public:
     template <typename TagType>
     constexpr ListTag(std::initializer_list<TagType> tags) : ListTag(std::vector<TagType>{std::move(tags)}) {}
 
+    [[nodiscard]] Tag&       operator[](size_t index) { return *mList[index]; }
+    [[nodiscard]] Tag const& operator[](size_t index) const { return *mList[index]; }
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1ListTag@@UEAA@XZ

@@ -14,26 +14,18 @@ public:
 
     TagMap mTags;
 
-    template <typename T>
-    inline T const* get(std::string_view key) const {
-        return dynamic_cast<T const*>(get(key));
-    };
-
-    template <typename T>
-    inline T* get(std::string_view key) {
-        return dynamic_cast<T*>(get(key));
-    };
-
     CompoundTag(TagMap tags) : mTags(std::move(tags)) {} // NOLINT
+    CompoundTag(CompoundTag const&) = default;
+    CompoundTag& operator=(CompoundTag const&) = default;
+
+    [[nodiscard]] CompoundTagVariant& operator[](std::string const& index) { return mTags[index]; }
+    [[nodiscard]] CompoundTagVariant const& operator[](std::string const& index) const { return mTags.at(index); }
 
     LLNDAPI std::string                         toBinaryNBT(bool isLittleEndian = true) const;
     LLNDAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string_view dataView, bool isLittleEndian = true);
 
     LLNDAPI std::string                         toNetworkNBT() const;
     LLNDAPI static std::unique_ptr<CompoundTag> fromNetworkNBT(std::string const& data);
-
-    CompoundTag(CompoundTag const&) = default;
-    CompoundTag& operator=(CompoundTag const&) = default;
 
 public:
     // NOLINTBEGIN
