@@ -177,7 +177,7 @@ registerPlugin(std::string name, std::string desc, ll::Version version, std::map
  * @param  name         The name of the plugin
  * @return ll::Plugin*  The plugin(nullptr if not found)
  */
-LLAPI ll::Plugin* getPlugin(std::string name);
+LLAPI ll::Plugin* getPlugin(std::string const& name);
 /**
  * @brief Get a loaded plugin by HMODULE handle
  *
@@ -192,7 +192,7 @@ LLAPI ll::Plugin* getPlugin(HMODULE handle);
  * @param  name  The name of the plugin
  * @return bool  True if the plugin is loaded
  */
-LLAPI bool hasPlugin(std::string name);
+LLAPI bool hasPlugin(std::string const& name);
 
 /**
  * @brief Get the All the loaded plugins

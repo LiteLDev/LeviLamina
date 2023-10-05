@@ -37,11 +37,11 @@ std::string ll::getLoaderVersionString() { return getLoaderVersion().toString();
 
 bool ll::isDebugMode() { return ll::globalConfig.debugMode; }
 
-ll::Plugin* ll::getPlugin(std::string name) { return PluginManager::getPlugin(std::move(name)); }
+ll::Plugin* ll::getPlugin(std::string const& name) { return PluginManager::getPlugin(name); }
 
 ll::Plugin* ll::getPlugin(HMODULE handle) { return PluginManager::getPlugin(handle); }
 
-bool ll::hasPlugin(std::string name) { return PluginManager::hasPlugin(std::move(name)); }
+bool ll::hasPlugin(std::string const& name) { return PluginManager::hasPlugin(name); }
 
 std::unordered_map<std::string, ll::Plugin*> ll::getAllPlugins() { return PluginManager::getAllPlugins(); }
 

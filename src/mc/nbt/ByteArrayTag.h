@@ -17,6 +17,8 @@ public:
 
     operator TagMemoryChunk() const { return data; }
 
+    ByteArrayTag() = default;
+
     ByteArrayTag(std::vector<schar> const& arr) : data((uchar*)arr.data(), arr.size()) {}
 
     std::span<schar> view() const { return std::span<schar>((schar*)data.mBuffer.get(), data.mSize); }

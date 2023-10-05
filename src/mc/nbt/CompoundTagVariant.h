@@ -37,21 +37,64 @@ public:
 
     Variant mTagStorage;
 
-    [[nodiscard]] CompoundTagVariant() = default;
+    [[nodiscard]] CompoundTagVariant()                          = default;
+    [[nodiscard]] CompoundTagVariant(CompoundTagVariant const&) = default;
+    CompoundTagVariant& operator=(const CompoundTagVariant&)    = default;
 
-    template <typename TagType>
-    [[nodiscard]] CompoundTagVariant(TagType tag) : mTagStorage(std::move(tag)) {}
+    [[nodiscard]] CompoundTagVariant(Variant tag) : mTagStorage(std::move(tag)) {}
 
-    [[nodiscard]] CompoundTagVariant(Variant storage) : mTagStorage(std::move(storage)) {}
+    template <std::derived_from<Tag> T>
+    [[nodiscard]] CompoundTagVariant(T tag) : mTagStorage(std::move(tag)) {}
 
     template <typename T>
     [[nodiscard]] bool hold() const {
         return std::holds_alternative<T>(mTagStorage);
     }
 
+    template <typename T>
+    [[nodiscard]] T& get() {
+        return std::get<T>(mTagStorage);
+    }
+
+    template <typename T>
+    [[nodiscard]] T const& get() const {
+        return std::get<T>(mTagStorage);
+    }
+
     [[nodiscard]] CompoundTagVariant& operator[](std::string const& index) {
         if (!hold<CompoundTag>()) { mTagStorage = CompoundTag{}; }
         return std::get<CompoundTag>(mTagStorage)[index];
+    }
+
+    std::unique_ptr<Tag> toUnique() const {
+        switch (mTagStorage.index()) {
+        case 0:
+            return std::make_unique<EndTag>(get<EndTag>());
+        case 1:
+            return std::make_unique<ByteTag>(get<ByteTag>());
+        case 2:
+            return std::make_unique<ShortTag>(get<ShortTag>());
+        case 3:
+            return std::make_unique<IntTag>(get<IntTag>());
+        case 4:
+            return std::make_unique<Int64Tag>(get<Int64Tag>());
+        case 5:
+            return std::make_unique<FloatTag>(get<FloatTag>());
+        case 6:
+            return std::make_unique<DoubleTag>(get<DoubleTag>());
+        case 7:
+            return std::make_unique<ByteArrayTag>(get<ByteArrayTag>());
+        case 8:
+            return std::make_unique<StringTag>(get<StringTag>());
+        case 9:
+            return std::make_unique<ListTag>(get<ListTag>());
+        case 10:
+            return std::make_unique<CompoundTag>(get<CompoundTag>());
+        case 11:
+            return std::make_unique<IntArrayTag>(get<IntArrayTag>());
+        default:
+            return nullptr;
+        }
     }
 
 public:

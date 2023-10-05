@@ -8,7 +8,7 @@
 
 class IntArrayTag : public ::Tag {
 public:
-    TagMemoryChunk data;
+    TagMemoryChunk data{};
 
     IntArrayTag& operator=(TagMemoryChunk const& value) {
         data = value;
@@ -16,6 +16,8 @@ public:
     }
 
     operator TagMemoryChunk() const { return data; }
+
+    IntArrayTag() = default;
 
     IntArrayTag(std::vector<int> const& arr) : data((uchar*)arr.data(), arr.size() * sizeof(int)) {}
 

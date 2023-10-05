@@ -6,7 +6,7 @@ class IDataOutput;
 class IDataInput;
 class PrintStream;
 
-enum class SnbtFormat : uchar {
+enum class SnbtFormat {
     Minimize           = 0,
     CompoundNewLine    = 1 << 0,
     ListNewLine        = 1 << 1,
@@ -56,7 +56,6 @@ public:
     }
 
     LLNDAPI std::string toSnbt(uchar indent = 4, SnbtFormat snbtFormat = SnbtFormat::AlwaysNewLine) const;
-    LLNDAPI static std::unique_ptr<Tag> fromSnbt(std::string_view snbt);
 
 public:
     // NOLINTBEGIN

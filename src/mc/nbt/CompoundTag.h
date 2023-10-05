@@ -21,6 +21,9 @@ public:
     [[nodiscard]] CompoundTagVariant& operator[](std::string const& index) { return mTags[index]; }
     [[nodiscard]] CompoundTagVariant const& operator[](std::string const& index) const { return mTags.at(index); }
 
+
+    LLNDAPI static std::unique_ptr<CompoundTag> fromSnbt(std::string_view snbt);
+
     LLNDAPI std::string                         toBinaryNBT(bool isLittleEndian = true) const;
     LLNDAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string_view dataView, bool isLittleEndian = true);
 

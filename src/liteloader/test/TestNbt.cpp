@@ -41,11 +41,56 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
          }
     };
 
-    nbt["some"]["new"]["compound"] = nbt;
+    nbt["some"]["new"]["compound"]    = nbt;
     nbt["hello"]["world"]["\u123456"] = StringTag{R"(\u1234\uffffffff)"};
 
 
+    auto nbt2 = *CompoundTag::fromSnbt(R"(
+
+{
+    "byte": 127b,
+    "bytearray": [B;1b, 2b, 3b, 4b, 5b, -2b, -3b, -6b],
+    "compound": {
+        "double": 0.3,
+        "float": 0.1f,
+        "long": 10000l
+    },
+    "hello": {
+        "world": {
+            "s56": "\n\t\r\b\\u1234\\uffffffff"
+        }
+    },
+    'intarray': [I;1, 2, 3, 4, 5, -2, -3, -6],
+    list: [5b, true,false, -2b],
+    num: 1,
+    nums: 3s,   /* nmmmmmm*/    
+    "some": {
+        "new": {
+            "compound": {    //hhhhhhhhh   
+                "byte": 127b,
+                "bytearray": [B;1b, 2b, 3b, 4b, 5b, -2b, -3b, -6b],
+                "compound": {
+                    "double": 0.3,
+                    "float": 0.1f,
+                    "long": 10000l
+                },
+                "intarray": [I;1, 2, 3, 4, 5, -2, -3, -6],
+                "list": [5b, true, 0b, -2b],
+                "num": 1,
+                "nums": 3s,
+                "string?": "streee _ _o-ix 我超, utf8 \"\\asfa%\"*)##q)$\\\\\"\\Q34\\\\\"\"'':"
+            }
+        }
+    },
+    "string?": "streee _ _o-ix 我超, utf8 \"\\asfa%\"*)##q)$\\\\\"\\Q34\\\\\"\"'':"
+}
+
+    )");
+
+
     ll::logger.info("\n{}", nbt.toSnbt(4, SnbtFormat::PrettyConsolePrint));
+
+    ll::logger.info("\n{}", nbt2.toSnbt(4, SnbtFormat::PrettyConsolePrint));
 
     ll::logger.info(ColorFormat::AQUA);
     ll::logger.info(ColorFormat::MINECOIN_GOLD);
@@ -54,5 +99,5 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     ll::logger.info(ColorFormat::ColorFromColorCode(ColorFormat::MINECOIN_GOLD)->toString());
     ll::logger.info(ColorFormat::ColorFromColorCode(ColorFormat::LIGHT_PURPLE)->toString());
     ll::logger.info(ColorFormat::ColorFromColorCode(ColorFormat::LIGHT_PURPLE)->toString());
-    ll::logger.info(ColorFormat::FormatCodeFromName("Bold"));
+    ll::logger.info("{}", ColorFormat::FormatCodeFromName("Bold"));
 }

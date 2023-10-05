@@ -1,4 +1,5 @@
 #pragma once
+#pragma warning(error : 4834)
 
 #ifndef LLAPI
 #ifdef LITELOADER_EXPORTS
