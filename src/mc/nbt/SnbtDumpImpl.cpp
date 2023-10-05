@@ -18,17 +18,30 @@ std::string WrapColorCode(std::string const& str, std::string const& code) { ret
 
 std::string toDumpString(std::string const& str, fmt::color defaultc, std::string const& defaultmc, SnbtFormat format) {
 
-    std::string    res;
-    nlohmann::json temp{str};
+    std::string res;
 
-    if ((int)format & (int)SnbtFormat::ForceAscii) {
-        res = temp.dump(-1, ' ', true, nlohmann::json::error_handler_t::ignore);
+    if ((int)format & (int)SnbtFormat::UseSlashU) {
+        nlohmann::json temp{str};
+
+        if ((int)format & (int)SnbtFormat::ForceAscii) {
+            res = temp.dump(-1, ' ', true, nlohmann::json::error_handler_t::ignore);
+        } else {
+            try {
+                res = temp.dump();
+            } catch (...) { res = temp.dump(-1, ' ', true, nlohmann::json::error_handler_t::ignore); }
+        }
+        res = res.substr(1, res.size() - 2);
     } else {
-        try {
-            res = temp.dump();
-        } catch (...) { res = temp.dump(-1, ' ', true, nlohmann::json::error_handler_t::ignore); }
+        res = str;
+        res = replaceAll(res, "\\", "\\\\");
+        res = replaceAll(res, "\b", "\\b");
+        res = replaceAll(res, "\f", "\\f");
+        res = replaceAll(res, "\n", "\\n");
+        res = replaceAll(res, "\r", "\\r");
+        res = replaceAll(res, "\t", "\\t");
+        res = replaceAll(res, "\v", "\\v");
+        res = replaceAll(res, "\"", "\\\"");
     }
-    res = res.substr(1, res.size() - 2);
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
