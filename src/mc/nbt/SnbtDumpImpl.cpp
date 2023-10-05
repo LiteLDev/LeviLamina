@@ -41,6 +41,7 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
         res = replaceAll(res, "\t", "\\t");
         res = replaceAll(res, "\v", "\\v");
         res = replaceAll(res, "\"", "\\\"");
+        res = "\"" + res + "\"";
     }
 
     if ((int)format & (int)SnbtFormat::Colored) {
