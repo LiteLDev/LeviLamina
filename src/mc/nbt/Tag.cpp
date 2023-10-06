@@ -44,3 +44,11 @@ std::string Tag::toSnbt(SnbtFormat snbtFormat, uchar indent) const {
         return TypedToSnbt(*(EndTag*)this, indent, snbtFormat);
     }
 }
+
+extern std::optional<CompoundTagVariant> parseSnbtValue(std::string_view&);
+
+std::unique_ptr<Tag> Tag::parseSnbt(std::string_view s) {
+    auto tag = parseSnbtValue(s);
+    if (tag) { return tag.value().toUnique(); }
+    return nullptr;
+}

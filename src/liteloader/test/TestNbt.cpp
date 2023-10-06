@@ -41,8 +41,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
          }
     };
 
-    nbt["some"]["new"]["compound"] = nbt;
-    nbt["hello"]["world"]["s56"]   = StringTag{R"(\n\t\r\b\u1234\uffffffff)"};
+    nbt["some"]["new"]["compound"]    = nbt;
+    nbt["hello"]["world"]["\u123456"] = StringTag{R"(\n\t\r\b\u1234\uffffffff)"};
 
 
     auto nbt2 = *CompoundTag::fromSnbt(R"(
@@ -57,7 +57,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     },
     "hello": {
         "world": {
-            "s56": "\\n\\t\\r\\b\\u1234\\uffffffff"
+            "\u123456": "\\n\\t\\r\\b\\u1234\\uffffffff"
         }
     },
     "intarray": [I;1, 2, 3, 4, 5, -2, -3, -6],
@@ -98,13 +98,19 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     ll::logger.info("\n{}", nbt.toBinaryNBT() == nbt2.toBinaryNBT());
 
+    ll::logger.info("\n{}", nbt.toNetworkNBT() == nbt2.toNetworkNBT());
+
     ll::logger.info("\n{}", StringTag{nbt.toBinaryNBT()}.toSnbt(SnbtFormat::PrettyConsolePrint));
     ll::logger.info("\n{}", StringTag{nbt2.toBinaryNBT()}.toSnbt(SnbtFormat::PrettyConsolePrint));
 
     ll::logger.info("\n{}", StringTag{nbt.toNetworkNBT()}.toSnbt(SnbtFormat::PrettyConsolePrint));
     ll::logger.info("\n{}", StringTag{nbt2.toNetworkNBT()}.toSnbt(SnbtFormat::PrettyConsolePrint));
 
-    ll::logger.info("\n{}", nbt.toNetworkNBT() == nbt2.toNetworkNBT());
+    ll::logger.info(
+        "\n{}",
+        ((StringTag*)(Tag::parseSnbt(StringTag{nbt2.toNetworkNBT()}.toSnbt()).get()))
+            ->toSnbt(SnbtFormat::PrettyConsolePrint | SnbtFormat::ForceAscii)
+    );
 
     ll::logger.info("\n{}", nbt.toNetworkNBT() == nbt.toNetworkNBT());
 

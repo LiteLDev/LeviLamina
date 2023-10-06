@@ -143,13 +143,33 @@ std::optional<CompoundTagVariant> parseNumber(std::string_view& s) {
 
 bool isTrivialChar(char c) { return isalnum(c) || c == '-' || c == '+' || c == '_' || c == '.'; }
 
+int get_codepoint(std::string_view& s) {
+    int codepoint = 0;
+
+    for (const auto factor : {12u, 8u, 4u, 0u}) {
+        auto current = get(s);
+
+        if (current >= '0' && current <= '9') {
+            codepoint += static_cast<int>((static_cast<unsigned int>(current) - 0x30u) << factor);
+        } else if (current >= 'A' && current <= 'F') {
+            codepoint += static_cast<int>((static_cast<unsigned int>(current) - 0x37u) << factor);
+        } else if (current >= 'a' && current <= 'f') {
+            codepoint += static_cast<int>((static_cast<unsigned int>(current) - 0x57u) << factor);
+        } else {
+            return -1;
+        }
+    }
+
+    return codepoint;
+}
+
 std::optional<std::string> parseString(std::string_view& s) {
 
     char starts = s.front();
 
     if (starts != '\"' && starts != '\'' && !isTrivialChar(starts)) { return std::nullopt; }
 
-    auto res = std::string{};
+    auto res = std::vector<char>{};
 
     if (starts == '\"' || starts == '\'') {
         s.remove_prefix(1);
@@ -160,7 +180,7 @@ std::optional<std::string> parseString(std::string_view& s) {
                 s.remove_prefix(1);
                 res.push_back(fc);
             } else {
-                return res;
+                return std::string{res.begin(), res.end()};
             }
         }
     }
@@ -174,11 +194,11 @@ std::optional<std::string> parseString(std::string_view& s) {
 
         // closing quote
         case '\"': {
-            if (starts == '\"') { return res; }
+            if (starts == '\"') { return std::string{res.begin(), res.end()}; }
             res.push_back('\"');
         } break;
         case '\'': {
-            if (starts == '\'') { return res; }
+            if (starts == '\'') { return std::string{res.begin(), res.end()}; }
             res.push_back('\'');
         } break;
 
@@ -237,8 +257,63 @@ std::optional<std::string> parseString(std::string_view& s) {
             // unicode escapes
             case 'u': {
 
-                return std::nullopt; // TODO
-            }
+                const int codepoint1 = get_codepoint(s);
+                int       codepoint  = codepoint1; // start with codepoint1
+
+                if (codepoint1 == -1) { return std::nullopt; }
+
+                // check if code point is a high surrogate
+                if (0xD800 <= codepoint1 && codepoint1 <= 0xDBFF) {
+                    // expect next \uxxxx entry
+                    if (get(s) == '\\' && get(s) == 'u') {
+                        const int codepoint2 = get_codepoint(s);
+
+                        if (codepoint2 == -1) { return std::nullopt; }
+
+                        // check if codepoint2 is a low surrogate
+                        if ((0xDC00 <= codepoint2 && codepoint2 <= 0xDFFF)) {
+                            // overwrite codepoint
+                            codepoint = static_cast<int>(
+                                // high surrogate occupies the most significant 22 bits
+                                (static_cast<uint>(codepoint1) << 10u)
+                                // low surrogate occupies the least significant 15 bits
+                                + static_cast<uint>(codepoint2)
+                                // there is still the 0xD800, 0xDC00 and 0x10000 noise
+                                // in the result, so we have to subtract with:
+                                // (0xD800 << 10) + DC00 - 0x10000 = 0x35FDC00
+                                - 0x35FDC00u
+                            );
+                        } else {
+                            return std::nullopt;
+                        }
+                    } else {
+                        return std::nullopt;
+                    }
+                } else {
+                    if (0xDC00 <= codepoint1 && codepoint1 <= 0xDFFF) { return std::nullopt; }
+                }
+
+                // translate codepoint into bytes
+                if (codepoint < 0x80) {
+                    // 1-byte characters: 0xxxxxxx (ASCII)
+                    res.push_back(static_cast<char>(codepoint));
+                } else if (codepoint <= 0x7FF) {
+                    // 2-byte characters: 110xxxxx 10xxxxxx
+                    res.push_back(static_cast<char>(0xC0u | (static_cast<uint>(codepoint) >> 6u)));
+                    res.push_back(static_cast<char>(0x80u | (static_cast<uint>(codepoint) & 0x3Fu)));
+                } else if (codepoint <= 0xFFFF) {
+                    // 3-byte characters: 1110xxxx 10xxxxxx 10xxxxxx
+                    res.push_back(static_cast<char>(0xE0u | (static_cast<uint>(codepoint) >> 12u)));
+                    res.push_back(static_cast<char>(0x80u | ((static_cast<uint>(codepoint) >> 6u) & 0x3Fu)));
+                    res.push_back(static_cast<char>(0x80u | (static_cast<uint>(codepoint) & 0x3Fu)));
+                } else {
+                    // 4-byte characters: 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+                    res.push_back(static_cast<char>(0xF0u | (static_cast<uint>(codepoint) >> 18u)));
+                    res.push_back(static_cast<char>(0x80u | ((static_cast<uint>(codepoint) >> 12u) & 0x3Fu)));
+                    res.push_back(static_cast<char>(0x80u | ((static_cast<uint>(codepoint) >> 6u) & 0x3Fu)));
+                    res.push_back(static_cast<char>(0x80u | (static_cast<uint>(codepoint) & 0x3Fu)));
+                }
+            } break;
 
             // other characters after escape
             default:
@@ -392,7 +467,6 @@ std::optional<CompoundTag> parseCompound(std::string_view& s) {
 
         auto value = parseSnbtValue(s);
 
-
         if (!value) { return std::nullopt; }
 
         res[key.value()] = value.value();
@@ -449,7 +523,6 @@ std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s) {
         } else {
             return std::nullopt;
         }
-        break;
     default:
         break;
     }

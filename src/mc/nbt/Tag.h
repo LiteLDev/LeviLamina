@@ -68,6 +68,8 @@ public:
 
     LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const;
 
+    LLNDAPI static std::unique_ptr<Tag> parseSnbt(std::string_view);
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1Tag@@UEAA@XZ
