@@ -16,8 +16,8 @@ std::unordered_map<unsigned int, decltype(serverLogger.debug)&> loggerMap = {
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     AppendLogEntryMetadataHook,
-    ::BedrockLog::LogDetails,
     ll::memory::HookPriority::Normal,
+    ::BedrockLog::LogDetails,
     &::BedrockLog::LogDetails::_appendLogEntryMetadata,
     void,
     std::string&,

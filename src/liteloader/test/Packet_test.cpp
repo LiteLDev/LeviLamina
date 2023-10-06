@@ -117,8 +117,8 @@ void autoGenerate() {
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     PacketTestInit,
-    ServerInstance,
     ll::memory::HookPriority::Normal,
+    ServerInstance,
     &ServerInstance::startServerThread,
     void
 ) {

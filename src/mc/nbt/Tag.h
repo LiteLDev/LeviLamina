@@ -12,14 +12,24 @@ enum class SnbtFormat {
     ListNewLine        = 1 << 1,
     Colored            = 1 << 2,
     Console            = 1 << 3,
-    UseSlashU          = 1 << 4,
+    UnuseSlashU        = 1 << 4,
     ForceAscii         = 1 << 5,
     PartialNewLine     = CompoundNewLine,
     AlwaysNewLine      = CompoundNewLine | ListNewLine,
     PrettyFilePrint    = CompoundNewLine,
-    PrettyChatPrint    = CompoundNewLine | Colored,
-    PrettyConsolePrint = CompoundNewLine | Colored | Console,
+    PrettyChatPrint    = PrettyFilePrint | Colored,
+    PrettyConsolePrint = PrettyFilePrint | Colored | Console,
 };
+[[nodiscard]] constexpr SnbtFormat operator|(const SnbtFormat l, const SnbtFormat r) noexcept {
+    return static_cast<SnbtFormat>(
+        static_cast<std::underlying_type_t<SnbtFormat>>(l) | static_cast<std::underlying_type_t<SnbtFormat>>(r)
+    );
+}
+[[nodiscard]] constexpr SnbtFormat operator&(const SnbtFormat l, const SnbtFormat r) noexcept {
+    return static_cast<SnbtFormat>(
+        static_cast<std::underlying_type_t<SnbtFormat>>(l) & static_cast<std::underlying_type_t<SnbtFormat>>(r)
+    );
+}
 
 class Tag {
 public:

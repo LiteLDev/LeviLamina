@@ -20,7 +20,7 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
 
     std::string res;
 
-    if ((int)format & (int)SnbtFormat::UseSlashU) {
+    if (!((int)format & (int)SnbtFormat::UnuseSlashU)) {
         nlohmann::json temp{str};
 
         if ((int)format & (int)SnbtFormat::ForceAscii) {

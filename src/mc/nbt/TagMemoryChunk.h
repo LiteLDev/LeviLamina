@@ -5,8 +5,8 @@
 
 struct TagMemoryChunk {
 public:
-    size_t                   mElements{0};
-    size_t                   mSize{0};
+    size_t                   mSize{0};     // not one byte
+    size_t                   mCapacity{0}; // one byte
     std::unique_ptr<uchar[]> mBuffer;
 
     TagMemoryChunk() = default;

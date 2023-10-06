@@ -10,8 +10,8 @@
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     NbtTest,
-    ServerInstance,
     ll::memory::HookPriority::Normal,
+    ServerInstance,
     &ServerInstance::startServerThread,
     void
 ) {
@@ -98,19 +98,17 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     ll::logger.info("\n{}", nbt.toBinaryNBT() == nbt2.toBinaryNBT());
 
+    ll::logger.info("\n{}", StringTag{nbt.toBinaryNBT()}.toSnbt(SnbtFormat::PrettyConsolePrint));
+    ll::logger.info("\n{}", StringTag{nbt2.toBinaryNBT()}.toSnbt(SnbtFormat::PrettyConsolePrint));
+
+    ll::logger.info("\n{}", StringTag{nbt.toNetworkNBT()}.toSnbt(SnbtFormat::PrettyConsolePrint));
+    ll::logger.info("\n{}", StringTag{nbt2.toNetworkNBT()}.toSnbt(SnbtFormat::PrettyConsolePrint));
+
     ll::logger.info("\n{}", nbt.toNetworkNBT() == nbt2.toNetworkNBT());
 
     ll::logger.info("\n{}", nbt.toNetworkNBT() == nbt.toNetworkNBT());
 
     ll::logger.info("\n{}", nbt.toBinaryNBT() == nbt.toBinaryNBT());
-
-    ll::logger.info("\n{}", CompoundTag::fromBinaryNBT(nbt.toBinaryNBT())->equals(nbt));
-
-    ll::logger.info("\n{}", CompoundTag::fromNetworkNBT(nbt.toNetworkNBT())->equals(nbt));
-
-    ll::logger.info("\n{}", CompoundTag::fromBinaryNBT(nbt.toBinaryNBT())->toSnbt(SnbtFormat::PrettyConsolePrint));
-
-    ll::logger.info("\n{}", CompoundTag::fromNetworkNBT(nbt.toNetworkNBT())->toSnbt(SnbtFormat::PrettyConsolePrint));
 
     ll::logger.info(ColorFormat::AQUA);
     ll::logger.info(ColorFormat::MINECOIN_GOLD);

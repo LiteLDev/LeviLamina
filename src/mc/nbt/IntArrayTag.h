@@ -19,9 +19,11 @@ public:
 
     IntArrayTag() = default;
 
-    IntArrayTag(std::vector<int> const& arr) : data((uchar*)arr.data(), arr.size() * sizeof(int)) {}
+    IntArrayTag(std::vector<int> const& arr) : data((uchar*)arr.data(), arr.size() * sizeof(int)) {
+        data.mSize = arr.size();
+    }
 
-    std::span<int> view() const { return std::span<int>((int*)data.mBuffer.get(), data.mElements / sizeof(int)); }
+    std::span<int> view() const { return std::span<int>((int*)data.mBuffer.get(), data.mSize); }
 
 public:
     // NOLINTBEGIN

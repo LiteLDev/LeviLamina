@@ -37,8 +37,8 @@ using namespace ll::memory;
 // Minecraft
 LL_AUTO_TYPED_INSTANCE_HOOK(
     MinecraftService,
-    Minecraft,
     HookPriority::Normal,
+    Minecraft,
     &Minecraft::initAsDedicatedServer,
     void
 ) {
@@ -50,8 +50,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 // ServerLevel
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ServerStartedEventHook,
-    ServerInstanceEventCoordinator,
     ll::memory::HookPriority::Normal,
+    ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,
     void,
     ::ServerInstance& ins
@@ -68,8 +68,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 // ServerNetworkHandler
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ServerNetworkHandlerService,
-    ServerNetworkHandler,
     HookPriority::Normal,
+    ServerNetworkHandler,
     &ServerNetworkHandler::allowIncomingConnections,
     void,
     std::string const& a1,
@@ -100,8 +100,8 @@ LL_AUTO_TYPED_STATIC_HOOK(
 // PropertiesSettings
 LL_AUTO_TYPED_INSTANCE_HOOK(
     PropertiesSettingsService,
-    PropertiesSettings,
     HookPriority::Normal,
+    PropertiesSettings,
     &PropertiesSettings::isPropertiesFileLoaded,
     bool const
 ) {
@@ -112,8 +112,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 // ResourcePackRepository
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ResourcePackInitEventHook,
-    ResourcePackRepository,
     ll::memory::HookPriority::Normal,
+    ResourcePackRepository,
     &ResourcePackRepository::_initialize,
     void
 ) {

@@ -209,7 +209,7 @@ ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle) {
 }
 } // namespace Schedule
 
-LL_AUTO_TYPED_INSTANCE_HOOK(ScheduleTaskTickHook, ServerLevel, HookPriority::Normal, &ServerLevel::_subTick, void) {
+LL_AUTO_TYPED_INSTANCE_HOOK(ScheduleTaskTickHook, HookPriority::Normal, ServerLevel, &ServerLevel::_subTick, void) {
     origin();
     taskQueue.tick();
 }

@@ -79,8 +79,8 @@ void handleFormPacket(Player& player, uint formId, std::string const& data) {
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     FormResponseHandler,
-    PacketHandlerDispatcherInstance<ModalFormResponsePacket>,
     HookPriority::Lowest,
+    PacketHandlerDispatcherInstance<ModalFormResponsePacket>,
     &PacketHandlerDispatcherInstance<ModalFormResponsePacket>::handle,
     void,
     NetworkIdentifier const& source,

@@ -146,8 +146,8 @@ struct HookAutoRegister {
 /**
  * @brief Register a hook for a typed static function.
  * @param DEF_TYPE The name of the hook definition.
- * @param TYPE The type which the function belongs to.
  * @param PRIORITY ll::memory::HookPriority The priority of the hook.
+ * @param TYPE The type which the function belongs to.
  * @param IDENTIFIER The identifier of the hook. It can be a function pointer, symbol, address or a signature.
  * @param RET_TYPE The return type of the hook.
  * @param ... The parameters of the hook.
@@ -189,15 +189,15 @@ struct HookAutoRegister {
 /**
  * @brief Register a hook for a typed instance function.
  * @param DEF_TYPE The name of the hook definition.
- * @param TYPE The type which the function belongs to.
  * @param PRIORITY ll::memory::HookPriority The priority of the hook.
+ * @param TYPE The type which the function belongs to.
  * @param IDENTIFIER The identifier of the hook. It can be a function pointer, symbol, address or a signature.
  * @param RET_TYPE The return type of the hook.
  * @param ... The parameters of the hook.
  *
  * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
  */
-#define LL_TYPED_INSTANCE_HOOK(DEF_TYPE, TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)                                    \
+#define LL_TYPED_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                                    \
     LL_VA_EXPAND(LL_INSTANCE_HOOK_IMPL(DEF_TYPE, : public TYPE, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
 
 /**
@@ -218,7 +218,7 @@ struct HookAutoRegister {
  * @details The hook will be automatically registered and unregistered.
  * @see LL_TYPED_INSTANCE_HOOK for usage.
  */
-#define LL_AUTO_TYPED_INSTANCE_HOOK(DEF_TYPE, TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)                               \
+#define LL_AUTO_TYPED_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                               \
     LL_VA_EXPAND(LL_AUTO_INSTANCE_HOOK_IMPL(DEF_TYPE, : public TYPE, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
 
 /**

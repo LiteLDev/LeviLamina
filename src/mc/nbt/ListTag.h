@@ -24,8 +24,7 @@ public:
         return *this;
     }
 
-    constexpr ListTag(ListTag const& other) {
-        mType = other.mType;
+    constexpr ListTag(ListTag const& other) : mType(other.mType) {
         mList.clear();
         mList.reserve(other.mList.size());
         for (auto& tag : other.mList) { mList.emplace_back(tag->copy()); }
