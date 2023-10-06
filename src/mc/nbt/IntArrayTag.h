@@ -21,7 +21,7 @@ public:
 
     IntArrayTag(std::vector<int> const& arr) : data((uchar*)arr.data(), arr.size() * sizeof(int)) {}
 
-    std::span<int> view() const { return std::span<int>((int*)data.mBuffer.get(), data.mSize / sizeof(int)); }
+    std::span<int> view() const { return std::span<int>((int*)data.mBuffer.get(), data.mElements / sizeof(int)); }
 
 public:
     // NOLINTBEGIN

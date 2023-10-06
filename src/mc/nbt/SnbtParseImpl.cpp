@@ -335,10 +335,11 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
 
     if (s.front() == ']') { return ListTag{}; }
 
-    auto res = ListTag{};
+    auto res  = ListTag{};
+    res.mType = Tag::Type::End;
     res.mList.clear();
 
-    auto type = Tag::Type::End;
+    auto& type = res.mType;
 
     while (!s.empty()) {
 
@@ -348,10 +349,11 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
 
         if (type == Tag::Type::End) {
             type = value.value().get()->getId();
-        } else {
-            if (value.value().get()->getId() != type) { return std::nullopt; }
-            res.mList.emplace_back(value.value().toUnique());
+        } else if (value.value().get()->getId() != type) {
+            return std::nullopt;
         }
+        res.mList.emplace_back(value.value().toUnique());
+
 
         switch (s.front()) {
         case ']':

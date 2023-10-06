@@ -101,7 +101,7 @@ fmt::text_style getModeColor(std::string const& a1) {
 }
 
 template <typename S, typename Char>
-std::string applyTextStyle(fmt::v9::text_style const& ts, S const& format_str) {
+std::string applyTextStyle(fmt::v9::text_style const& ts, S const& format_str, bool reset) {
     fmt::v9::basic_memory_buffer<Char> buf;
     auto                               fmt       = fmt::detail::to_string_view(format_str);
     bool                               has_style = false;
@@ -121,7 +121,7 @@ std::string applyTextStyle(fmt::v9::text_style const& ts, S const& format_str) {
         buf.append(background.begin(), background.end());
     }
     buf.append(fmt.begin(), fmt.end());
-    if (has_style) fmt::v9::detail::reset_color<Char>(buf);
+    if (has_style && reset) fmt::v9::detail::reset_color<Char>(buf);
     return fmt::to_string(buf);
 }
 

@@ -56,7 +56,7 @@ public:
         return *dynamic_cast<T*>(this);
     }
 
-    LLNDAPI std::string toSnbt(uchar indent = 4, SnbtFormat snbtFormat = SnbtFormat::AlwaysNewLine) const;
+    LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const;
 
 public:
     // NOLINTBEGIN

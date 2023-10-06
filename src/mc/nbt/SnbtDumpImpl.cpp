@@ -33,14 +33,30 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
         res = res.substr(1, res.size() - 2);
     } else {
         res = str;
-        res = replaceAll(res, "\\", "\\\\");
-        res = replaceAll(res, "\b", "\\b");
-        res = replaceAll(res, "\f", "\\f");
-        res = replaceAll(res, "\n", "\\n");
-        res = replaceAll(res, "\r", "\\r");
-        res = replaceAll(res, "\t", "\\t");
-        res = replaceAll(res, "\v", "\\v");
-        res = replaceAll(res, "\"", "\\\"");
+
+        std::function strColor = [](std::string const& s) -> std::string { return s; };
+
+        if ((int)format & (int)SnbtFormat::Colored) {
+            if ((int)format & (int)SnbtFormat::Console) {
+                strColor = [&defaultc](std::string const& s) -> std::string {
+                    return applyTextStyle(fmt::fg(fmt::color::gold), s)
+                         + applyTextStyle(fmt::fg(defaultc), std::string(""), false);
+                };
+            } else {
+                strColor = [&defaultmc](std::string const& s) -> std::string {
+                    return WrapColorCode(s, cf::MINECOIN_GOLD) + defaultmc;
+                };
+            }
+        }
+
+        res = replaceAll(res, "\\", strColor("\\\\"));
+        res = replaceAll(res, "\b", strColor("\\b"));
+        res = replaceAll(res, "\f", strColor("\\f"));
+        res = replaceAll(res, "\n", strColor("\\n"));
+        res = replaceAll(res, "\r", strColor("\\r"));
+        res = replaceAll(res, "\t", strColor("\\t"));
+        res = replaceAll(res, "\v", strColor("\\v"));
+        res = replaceAll(res, "\"", strColor("\\\""));
         res = "\"" + res + "\"";
     }
 
@@ -131,7 +147,7 @@ std::string TypedToSnbt(ListTag& self, uchar indent, SnbtFormat format) {
         i--;
         if (isNewLine) { res += indentSpace; }
 
-        auto key = tag->toSnbt(indent, format);
+        auto key = tag->toSnbt(format, indent);
 
         if (isNewLine) {
             res += replaceAll(key, "\n", "\n" + indentSpace);
@@ -190,7 +206,7 @@ std::string TypedToSnbt(CompoundTag& self, uchar indent, SnbtFormat format) {
 
         if (!isMinimized) { res += ' '; }
 
-        auto key = v.get()->toSnbt(indent, format);
+        auto key = v.get()->toSnbt(format, indent);
 
         if (isNewLine) {
             res += replaceAll(key, "\n", "\n" + indentSpace);

@@ -41,8 +41,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
          }
     };
 
-    nbt["some"]["new"]["compound"]    = nbt;
-    nbt["hello"]["world"]["\u123456"] = StringTag{R"(\u1234\uffffffff)"};
+    nbt["some"]["new"]["compound"] = nbt;
+    nbt["hello"]["world"]["s56"]   = StringTag{R"(\n\t\r\b\u1234\uffffffff)"};
 
 
     auto nbt2 = *CompoundTag::fromSnbt(R"(
@@ -57,16 +57,16 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     },
     "hello": {
         "world": {
-            "s56": "\n\t\r\b\\u1234\\uffffffff"
+            "s56": "\\n\\t\\r\\b\\u1234\\uffffffff"
         }
     },
-    'intarray': [I;1, 2, 3, 4, 5, -2, -3, -6],
-    list: [5b, true,false, -2b],
-    num: 1,
-    nums: 3s,   /* nmmmmmm*/    
+    "intarray": [I;1, 2, 3, 4, 5, -2, -3, -6],
+    "list": [5b, 1b, 0b, -2b],
+    "num": 1,
+    "nums": 3s,
     "some": {
         "new": {
-            "compound": {    //hhhhhhhhh   
+            "compound": {
                 "byte": 127b,
                 "bytearray": [B;1b, 2b, 3b, 4b, 5b, -2b, -3b, -6b],
                 "compound": {
@@ -75,7 +75,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
                     "long": 10000l
                 },
                 "intarray": [I;1, 2, 3, 4, 5, -2, -3, -6],
-                "list": [5b, true, 0b, -2b],
+                "list": [5b, 1b, 0b, -2b],
                 "num": 1,
                 "nums": 3s,
                 "string?": "streee _ _o-ix 我超, utf8 \"\\asfa%\"*)##q)$\\\\\"\\Q34\\\\\"\"'':"
@@ -88,9 +88,29 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     )");
 
 
-    ll::logger.info("\n{}", nbt.toSnbt(4, SnbtFormat::PrettyConsolePrint));
+    ll::logger.info("\n{}", nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
 
-    ll::logger.info("\n{}", nbt2.toSnbt(4, SnbtFormat::PrettyConsolePrint));
+    ll::logger.info("\n{}", nbt2.toSnbt(SnbtFormat::PrettyConsolePrint));
+
+    ll::logger.info("\n{}", nbt.equals(nbt2));
+
+    ll::logger.info("\n{}", nbt.toSnbt() == nbt2.toSnbt());
+
+    ll::logger.info("\n{}", nbt.toBinaryNBT() == nbt2.toBinaryNBT());
+
+    ll::logger.info("\n{}", nbt.toNetworkNBT() == nbt2.toNetworkNBT());
+
+    ll::logger.info("\n{}", nbt.toNetworkNBT() == nbt.toNetworkNBT());
+
+    ll::logger.info("\n{}", nbt.toBinaryNBT() == nbt.toBinaryNBT());
+
+    ll::logger.info("\n{}", CompoundTag::fromBinaryNBT(nbt.toBinaryNBT())->equals(nbt));
+
+    ll::logger.info("\n{}", CompoundTag::fromNetworkNBT(nbt.toNetworkNBT())->equals(nbt));
+
+    ll::logger.info("\n{}", CompoundTag::fromBinaryNBT(nbt.toBinaryNBT())->toSnbt(SnbtFormat::PrettyConsolePrint));
+
+    ll::logger.info("\n{}", CompoundTag::fromNetworkNBT(nbt.toNetworkNBT())->toSnbt(SnbtFormat::PrettyConsolePrint));
 
     ll::logger.info(ColorFormat::AQUA);
     ll::logger.info(ColorFormat::MINECOIN_GOLD);
