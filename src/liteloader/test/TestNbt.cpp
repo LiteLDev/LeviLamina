@@ -41,8 +41,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
          }
     };
 
-    nbt["some"]["new"]["compound"]    = nbt;
-    nbt["hello"]["world"]["\u123456"] = StringTag{R"(\n\t\r\b\u1234\uffffffff)"};
+    nbt["some"]["new"]["compound"]          = nbt;
+    nbt["hello"]["789\xDB\xFE"]["\u123456"] = StringTag{std::string{R"(\n\t\r\b\u1234\uffffffff)"} + "\xDB\xFE"};
 
 
     auto nbt2 = *CompoundTag::fromSnbt(R"(
@@ -56,8 +56,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         "long": 10000l
     },
     "hello": {
-        "world": {
-            "\u123456": "\\n\\t\\r\\b\\u1234\\uffffffff"
+        "Nzg52/4=" /*BASE64*/: {
+            "ሴ56": "XG5cdFxyXGJcdTEyMzRcdWZmZmZmZmZm2/4=" /*BASE64*/  // hellow
         }
     },
     "intarray": [I;1, 2, 3, 4, 5, -2, -3, -6],
@@ -68,7 +68,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         "new": {
             "compound": {
                 "byte": 127b,
-                "bytearray": [B;1b, 2b, 3b, 4b, 5b, -2b, -3b, -6b],
+                "bytearray": [B;1b, 2b, 3b, 4b, 5b, -2b, -3b, -6b],  // orld   /**/ /*     34t */
                 "compound": {
                     "double": 0.3,
                     "float": 0.1f,
@@ -90,7 +90,13 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     ll::logger.info("\n{}", nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
 
-    ll::logger.info("\n{}", nbt2.toSnbt(SnbtFormat::PrettyConsolePrint));
+    ll::logger.info("\n{}", nbt2.toSnbt(SnbtFormat::Colored | SnbtFormat::Console));
+
+    ll::logger.info(
+        "\n{}",
+        ((StringTag*)(Tag::parseSnbt(StringTag{nbt2.toNetworkNBT()}.toSnbt()).get()))
+            ->toSnbt(SnbtFormat::PrettyConsolePrint | SnbtFormat::ForceAscii)
+    );
 
     ll::logger.info("\n{}", nbt.equals(nbt2));
 
@@ -99,18 +105,6 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     ll::logger.info("\n{}", nbt.toBinaryNBT() == nbt2.toBinaryNBT());
 
     ll::logger.info("\n{}", nbt.toNetworkNBT() == nbt2.toNetworkNBT());
-
-    ll::logger.info("\n{}", StringTag{nbt.toBinaryNBT()}.toSnbt(SnbtFormat::PrettyConsolePrint));
-    ll::logger.info("\n{}", StringTag{nbt2.toBinaryNBT()}.toSnbt(SnbtFormat::PrettyConsolePrint));
-
-    ll::logger.info("\n{}", StringTag{nbt.toNetworkNBT()}.toSnbt(SnbtFormat::PrettyConsolePrint));
-    ll::logger.info("\n{}", StringTag{nbt2.toNetworkNBT()}.toSnbt(SnbtFormat::PrettyConsolePrint));
-
-    ll::logger.info(
-        "\n{}",
-        ((StringTag*)(Tag::parseSnbt(StringTag{nbt2.toNetworkNBT()}.toSnbt()).get()))
-            ->toSnbt(SnbtFormat::PrettyConsolePrint | SnbtFormat::ForceAscii)
-    );
 
     ll::logger.info("\n{}", nbt.toNetworkNBT() == nbt.toNetworkNBT());
 

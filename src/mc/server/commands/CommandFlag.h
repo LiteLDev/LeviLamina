@@ -27,6 +27,19 @@ enum class CommandFlagValue : ushort {
     Removed                      = Hidden | HiddenFromAutomationOrigin,
 };
 
+[[nodiscard]] constexpr CommandFlagValue operator|(const CommandFlagValue l, const CommandFlagValue r) noexcept {
+    return static_cast<CommandFlagValue>(
+        static_cast<std::underlying_type_t<CommandFlagValue>>(l)
+        | static_cast<std::underlying_type_t<CommandFlagValue>>(r)
+    );
+}
+[[nodiscard]] constexpr CommandFlagValue operator&(const CommandFlagValue l, const CommandFlagValue r) noexcept {
+    return static_cast<CommandFlagValue>(
+        static_cast<std::underlying_type_t<CommandFlagValue>>(l)
+        & static_cast<std::underlying_type_t<CommandFlagValue>>(r)
+    );
+}
+
 struct CommandFlag {
 public:
     enum class CommandFlagValue value;
@@ -36,7 +49,7 @@ public:
     constexpr bool operator==(CommandFlag const& rhs) const noexcept { return value == rhs.value; }
     constexpr bool operator!=(CommandFlag const& rhs) const noexcept { return value != rhs.value; }
     CommandFlag&   operator|=(CommandFlag const& rhs) {
-        value = (CommandFlagValue)((ushort)rhs.value | (ushort)value);
+        value = rhs.value | value;
         return *this;
     }
 };

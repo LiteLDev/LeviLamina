@@ -1,4 +1,5 @@
 #include "liteloader/api/LoggerAPI.h"
+#include "liteloader/api/utils/Base64.h"
 #include "liteloader/api/utils/StringUtils.h"
 #include "mc/common/ColorFormat.h"
 #include "mc/deps/core/mce/Color.h"
@@ -8,6 +9,8 @@
 using namespace ll::StringUtils;
 
 namespace cf = ColorFormat;
+
+static constexpr auto base64Id = std::string{" /*BASE64*/"};
 
 template <typename T>
 std::string getString(T&& value) {
@@ -20,52 +23,31 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
 
     std::string res;
 
-    if (!((int)format & (int)SnbtFormat::UnuseSlashU)) {
-        nlohmann::json temp{str};
+    bool base64 = false;
 
-        if ((int)format & (int)SnbtFormat::ForceAscii) {
-            res = temp.dump(-1, ' ', true, nlohmann::json::error_handler_t::ignore);
-        } else {
-            try {
-                res = temp.dump();
-            } catch (...) { res = temp.dump(-1, ' ', true, nlohmann::json::error_handler_t::ignore); }
-        }
+    try {
+        res = nlohmann::json{str}.dump(
+            -1,
+            ' ',
+            (bool)((int)format & (int)SnbtFormat::ForceAscii),
+            nlohmann::json::error_handler_t::strict
+        );
         res = res.substr(1, res.size() - 2);
-    } else {
-        res = str;
-
-        std::function strColor = [](std::string const& s) -> std::string { return s; };
-
-        if ((int)format & (int)SnbtFormat::Colored) {
-            if ((int)format & (int)SnbtFormat::Console) {
-                strColor = [&defaultc](std::string const& s) -> std::string {
-                    return applyTextStyle(fmt::fg(fmt::color::gold), s)
-                         + applyTextStyle(fmt::fg(defaultc), std::string(""), false);
-                };
-            } else {
-                strColor = [&defaultmc](std::string const& s) -> std::string {
-                    return WrapColorCode(s, cf::MINECOIN_GOLD) + defaultmc;
-                };
-            }
-        }
-
-        res = replaceAll(res, "\\", strColor("\\\\"));
-        res = replaceAll(res, "\b", strColor("\\b"));
-        res = replaceAll(res, "\f", strColor("\\f"));
-        res = replaceAll(res, "\n", strColor("\\n"));
-        res = replaceAll(res, "\r", strColor("\\r"));
-        res = replaceAll(res, "\t", strColor("\\t"));
-        res = replaceAll(res, "\v", strColor("\\v"));
-        res = replaceAll(res, "\"", strColor("\\\""));
-        res = "\"" + res + "\"";
+    } catch (...) {
+        base64 = true;
+        res    = "\"" + ll::base64::Encode(str) + "\"";
     }
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
             res = applyTextStyle(fmt::fg(defaultc), res);
+            if (base64) { res += applyTextStyle(fmt::fg(fmt::color::olive_drab), base64Id); }
         } else {
             res = WrapColorCode(res, defaultmc);
+            if (base64) { res += WrapColorCode(base64Id, cf::MATERIAL_EMERALD); }
         }
+    } else {
+        if (base64) { res += base64Id; }
     }
     return res;
 }
