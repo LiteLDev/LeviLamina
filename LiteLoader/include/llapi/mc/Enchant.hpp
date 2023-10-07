@@ -97,8 +97,9 @@ enum class Type : uint8_t
     piercing = 34,
     quick_charge = 35,
     soul_speed = 36,
-    num_enchantments = 37,
-    invalid_enchantment = 38
+    swift_sneak = 37,
+    num_enchantments = 38,
+    invalid_enchantment = 39
 };
 
 #undef AFTER_EXTRA
