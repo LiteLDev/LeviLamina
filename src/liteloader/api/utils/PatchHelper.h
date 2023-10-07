@@ -1,4 +1,5 @@
 #pragma once
+#include "liteloader/api/base/StdInt.h"
 #include "memoryapi.h"
 #include <exception>
 #include <string>
@@ -42,16 +43,16 @@
 //    }
 //}
 
-template <int len>
+template <size_t len>
 struct PatchHelper {
     uchar data[len];
     using ref_t = uchar (&)[len];
-    constexpr bool operator==(ref_t ref) const noexcept { return memcmp(data, ref, sizeof data) == 0; }
-    constexpr bool operator!=(ref_t ref) const noexcept { return memcmp(data, ref, sizeof data) != 0; }
-    constexpr bool operator==(PatchHelper ref) const noexcept { return memcmp(data, ref.data, sizeof data) == 0; }
-    constexpr bool operator!=(PatchHelper ref) const noexcept { return memcmp(data, ref.data, sizeof data) != 0; }
-    inline void    operator=(ref_t ref) { memcpy(data, ref, sizeof data); }
-    inline bool    DoPatch(PatchHelper expected, PatchHelper patched) {
+    constexpr bool      operator==(ref_t ref) const noexcept { return memcmp(data, ref, sizeof data) == 0; }
+    constexpr bool      operator!=(ref_t ref) const noexcept { return memcmp(data, ref, sizeof data) != 0; }
+    constexpr bool      operator==(PatchHelper ref) const noexcept { return memcmp(data, ref.data, sizeof data) == 0; }
+    constexpr bool      operator!=(PatchHelper ref) const noexcept { return memcmp(data, ref.data, sizeof data) != 0; }
+    inline PatchHelper& operator=(ref_t ref) { memcpy(data, ref, sizeof data); }
+    inline bool         DoPatch(PatchHelper expected, PatchHelper patched) {
         if (*this == expected) {
             *this = patched;
             return true;
@@ -66,7 +67,7 @@ struct PatchHelper {
         return result;
     }
 
-    inline std::string Dump() const noexcept {
+    [[nodiscard]] inline std::string Dump() const noexcept {
         char  buffer[2 * len + 1] = {};
         char* ptr                 = buffer;
         for (auto& ch : data) ptr += sprintf(ptr, "%02X", (uint)ch);
@@ -75,8 +76,8 @@ struct PatchHelper {
 };
 
 struct NopFiller {
-    template <int len>
-    inline operator PatchHelper<len>() {
+    template <size_t len>
+    inline explicit operator PatchHelper<len>() {
         PatchHelper<len> ret;
         memset(ret.data, 0x90, len);
         return ret;

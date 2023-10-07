@@ -73,7 +73,7 @@ public:
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
             makeOptional<CommandParameterDataType::SoftEnum>(
                 &TestCommand::target,
-                "softEnumName",
+                "SoftEnumName",
                 "SoftEnumName",
                 &TestCommand::target_isSet
             )
@@ -165,7 +165,7 @@ LL_AUTO_STATIC_HOOK(
     origin(server, networkCommands, networkTestCommands, permissionsFile);
     // Test CommandRegistry
     try {
-        // TestCommand::setup(server.getCommands().getRegistry());
+        TestCommand::setup(server.getCommands().getRegistry());
     } catch (std::exception const& e) {
         ll::logger.error("Exception occurred in TestCommand::setup");
         ll::logger.error("Error message: {} , type: {}", TextEncoding::toUTF8(e.what()), typeid(e).name());

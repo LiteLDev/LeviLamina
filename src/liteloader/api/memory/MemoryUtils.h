@@ -52,46 +52,67 @@ inline void memcpy_t(void* dst, const void* src) {
  * @param symbol Symbol
  * @return function pointer
  */
-LLAPI FuncPtr resolveSymbol(const char* symbol);
+LLNDAPI FuncPtr resolveSymbol(const char* symbol);
 
 /**
  * @brief resolve signature to function pointer
  * @param t Signature
  * @return function pointer
  */
-LLAPI FuncPtr resolveSignature(const char* signature);
+LLNDAPI FuncPtr resolveSignature(const char* signature);
 
 /**
  * @brief lookup symbol name of a function address
  * @param func Function address
  * @return symbols
  */
-LLAPI std::vector<std::string> lookupSymbol(FuncPtr func);
+LLNDAPI std::vector<std::string> lookupSymbol(FuncPtr func);
 
 template <uintptr_t off, typename RTN = void, typename... Args>
 auto constexpr virtualCall(void const* _this, Args&&... args) -> RTN {
     return (*(RTN(**)(void const*, Args&&...))(*(uintptr_t*)_this + off))(_this, std::forward<Args>(args)...);
 }
 
-template <typename T, uintptr_t off>
-constexpr T& dAccess(void* ptr) {
-    return *(T*)(reinterpret_cast<uintptr_t>(ptr) + off);
-}
-
-template <typename T, uintptr_t off>
-constexpr T const& dAccess(void const* ptr) {
+template <typename T>
+[[nodiscard]] constexpr T& dAccess(void* ptr, uintptr_t off) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
 
 template <typename T>
-constexpr T& dAccess(void* ptr, uintptr_t off) {
+[[nodiscard]] constexpr T const& dAccess(void const* ptr, uintptr_t off) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
 
 template <typename T>
-constexpr T const& dAccess(void const* ptr, uintptr_t off) {
-    return *(T*)(((uintptr_t)ptr) + off);
+[[nodiscard]] inline size_t getMemSizeFromPtr(std::shared_ptr<T>& ptr) {
+    // clang-format off
+    return _msize(dAccess<void*>(std::addressof(ptr), 8) // ptr* 8, rep* 8
+    ) - ( // rep:
+    8 +       // vtable
+    4 * 2     // uses & weaks
+    /**/      // storage
+    );
+    // clang-format on
 }
+
+template <typename T>
+[[nodiscard]] inline size_t getMemSizeFromPtr(std::weak_ptr<T>& ptr) {
+    // clang-format off
+    return _msize(dAccess<void*>(std::addressof(ptr), 8) // ptr* 8, rep* 8
+    ) - ( // rep:
+    8 +       // vtable
+    4 * 2     // uses & weaks
+    /**/      // storage
+    );
+    // clang-format on
+}
+
+template <typename T, typename D>
+[[nodiscard]] inline size_t getMemSizeFromPtr(std::unique_ptr<T, D>& ptr) {
+    return _msize(ptr.get());
+}
+
+[[nodiscard]] inline size_t getMemSizeFromPtr(void* ptr) { return _msize(ptr); }
 
 template <FixedString symbol>
 inline FuncPtr symbolCache = resolveSymbol(symbol);

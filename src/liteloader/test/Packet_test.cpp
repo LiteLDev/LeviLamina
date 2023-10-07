@@ -20,8 +20,8 @@ struct magic_enum::customize::enum_range<MinecraftPacketIds> {
 
 #ifdef GENERATE_PACKET
 
-std::string getVTableName(void** vtable) {
-    auto res = ll::memory::lookupSymbol(*vtable);
+std::string getVTableName(void* vtable) {
+    auto res = ll::memory::lookupSymbol(*((void**)vtable));
 
     if (res.size() == 1) {
         return res[0].substr(4, res[0].size() - 9);
@@ -35,9 +35,9 @@ inline void forEachPacket(std::function<void(Packet const& packet, std::string c
     while (packetId < 500) {
         auto packet = MinecraftPackets::createPacket((MinecraftPacketIds)packetId);
         if (packet) {
-            auto size = _msize((void**)packet.get() - 2);
+            auto size = ll::memory::getMemSizeFromPtr(packet);
 
-            auto className = getVTableName((void**)packet.get());
+            auto className = getVTableName(packet.get());
 
             ll::logger.warn(
                 "Packet: enum: {}, getName: {}, vtable: {}, id: {},size: {}",
@@ -52,7 +52,7 @@ inline void forEachPacket(std::function<void(Packet const& packet, std::string c
                 ll::logger.error("intresting, different name, get: {}, typeid: {}", packet->getName(), className);
             }
 
-            callback(*packet, className, size - 16);
+            callback(*packet, className, size);
         }
         packetId++;
     }
