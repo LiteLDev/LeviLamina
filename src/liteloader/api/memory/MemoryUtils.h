@@ -83,36 +83,38 @@ template <typename T>
     return *(T*)(((uintptr_t)ptr) + off);
 }
 
-template <typename T>
-[[nodiscard]] inline size_t getMemSizeFromPtr(std::shared_ptr<T>& ptr) {
-    // clang-format off
-    return _msize(dAccess<void*>(std::addressof(ptr), 8) // ptr* 8, rep* 8
-    ) - ( // rep:
-    8 +       // vtable
-    4 * 2     // uses & weaks
-    /**/      // storage
-    );
-    // clang-format on
-}
-
-template <typename T>
-[[nodiscard]] inline size_t getMemSizeFromPtr(std::weak_ptr<T>& ptr) {
-    // clang-format off
-    return _msize(dAccess<void*>(std::addressof(ptr), 8) // ptr* 8, rep* 8
-    ) - ( // rep:
-    8 +       // vtable
-    4 * 2     // uses & weaks
-    /**/      // storage
-    );
-    // clang-format on
+[[nodiscard]] inline size_t getMemSizeFromPtr(void* ptr) {
+    if (!ptr) { return 0; }
+    return _msize(ptr);
 }
 
 template <typename T, typename D>
 [[nodiscard]] inline size_t getMemSizeFromPtr(std::unique_ptr<T, D>& ptr) {
+    if (!ptr) { return 0; }
     return _msize(ptr.get());
 }
 
-[[nodiscard]] inline size_t getMemSizeFromPtr(void* ptr) { return _msize(ptr); }
+template <template <typename> typename P, typename T>
+[[nodiscard]] inline size_t getMemSizeFromPtr(P<T>& ptr)
+    requires(std::derived_from<P<T>, std::_Ptr_base<T>>)
+{
+    auto& refc = dAccess<std::_Ref_count_base*>(std::addressof(ptr), 8);
+    if (!refc) { return 0; }
+    auto& rawptr = dAccess<T*>(std::addressof(ptr), 0);
+    if (!rawptr) { return 0; }
+    if constexpr (!std::is_array_v<T>) {
+        if (rawptr == dAccess<T*>(refc, 8 + 4 * 2)) { return getMemSizeFromPtr(rawptr); }
+    }
+    // clang-format off
+    return _msize(refc // ptr* 8, rep* 8
+    ) - ( // rep:
+    8 +                        // vtable
+    4 * 2 +                    // uses & weaks
+   (std::is_array_v<T> ? 8 : 0)// size
+    /**/                       // storage
+    );
+    // clang-format on
+}
 
 template <FixedString symbol>
 inline FuncPtr symbolCache = resolveSymbol(symbol);
