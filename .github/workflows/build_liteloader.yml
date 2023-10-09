@@ -1,6 +1,7 @@
 on:
   push:
     paths:
+      - .github/workflows/build_liteloader.yml
       - scripts/localbdslibrary.lua
       - src
       - xmake.lua
