@@ -3,7 +3,7 @@
 [![English](https://img.shields.io/badge/English-informational?style=for-the-badge)](README.md)&nbsp;![中文](https://img.shields.io/badge/简体中文-inactive?style=for-the-badge)
 
 > [!IMPORTANT]
-> LiteLoaderBDS 3尚在开发！对于生产环境，请访问<https://github.com/LiteLDev/LiteLoaderBDSv2>。
+> LiteLoaderBDS v3尚在开发！对于生产环境，请访问<https://github.com/LiteLDev/LiteLoaderBDSv2>。
 
 一个开创性的跨语言插件加载器，适用于Minecraft基岩版专用服务器（BDS）
 
@@ -65,7 +65,7 @@ $ ./bedrock_server.exe
 
 ## 贡献
 
-欢迎参与！[提交问题](https://github.com/LiteLDev/LiteLoaderBDS/issues/new/choose)或提交PR贡献者
+欢迎参与！[提交问题](https://github.com/LiteLDev/LiteLoader/issues/new/choose)或提交PR贡献者
 
 感谢所有为该项目作出贡献的人。
 
