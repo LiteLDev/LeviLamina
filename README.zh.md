@@ -1,4 +1,6 @@
-# LiteLoaderBDS
+# LiteLoader
+
+_LiteLoaderBDS 的主模块_
 
 [![English](https://img.shields.io/badge/English-informational?style=for-the-badge)](README.md)&nbsp;![中文](https://img.shields.io/badge/简体中文-inactive?style=for-the-badge)
 
