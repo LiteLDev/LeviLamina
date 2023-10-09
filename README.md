@@ -3,7 +3,7 @@
 ![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)&nbsp;[![中文](https://img.shields.io/badge/简体中文-informational?style=for-the-badge)](README.zh.md)
 
 > [!IMPORTANT]
-> LiteLoaderBDS v3 is under development! For production use, go to <https://github.com/LiteLDev/LiteLoaderBDSv2>.
+> LiteLoaderBDS 3 is under development! For production use, go to <https://github.com/LiteLDev/LiteLoaderBDSv2>.
 
 An epoch-making cross-language plugin loader for Minecraft Bedrock Dedicated Server (BDS)
 
@@ -79,7 +79,7 @@ For more information, please refer to [the documentation](https://docs.litebds.c
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LiteLoader/issues/new/choose) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LiteLoaderBDS/issues/new/choose) or submit PRs.
 
 LiteLoaderBDS follows the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) Code of Conduct.
 
@@ -87,7 +87,7 @@ LiteLoaderBDS follows the [Contributor Covenant](https://www.contributor-covenan
 
 This project exists thanks to all the people who contribute.
 
-![Contributors](https://contrib.rocks/image?repo=LiteLDev/LiteLoader)
+![Contributors](https://contrib.rocks/image?repo=LiteLDev/LiteLoaderBDS)
 
 ## License
 
