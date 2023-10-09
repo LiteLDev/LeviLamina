@@ -25,9 +25,9 @@ jobs:
           path: |
             ~/AppData/Local/.xmake
             .xmake
-          key: ${{ runner.os }}-xmake-${{ github.sha }}
+          key: xmake-liteloader-windows-x64-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-xmake-
+            liteloader-xmake-windows-x64
 
       - run: |
           xmake repo -u
@@ -40,7 +40,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: liteloader-${{ github.sha }}-windows-amd64
+          name: liteloader-windows-x64-${{ github.sha }}
           path: |
             build/windows/x64/release/LiteLoader.dll
             build/windows/x64/release/LiteLoader.lib
