@@ -1,9 +1,3 @@
-env:
-  VERSION: v0.0.0
-  ZIP_SHA256: ""
-  DLL_SHA256: ""
-  PDB_SHA256: ""
-  LIB_SHA256: ""
 on:
   release:
     types:
@@ -11,117 +5,63 @@ on:
 
 jobs:
   build:
-    name: Build
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup XMake
-        uses: xmake-io/github-action-setup-xmake@v1
-        with:
-          xmake-version: latest
+      - uses: xmake-io/github-action-setup-xmake@v1
 
-      - name: Cache XMake
-        uses: actions/cache@v3
+      - uses: actions/cache@v3
         with:
           path: |
             ~/AppData/Local/.xmake
-            ./.xmake
-          key: ${{ runner.os }}-xmake-${{ github.sha }}
+            .xmake
+          key: xmake-liteloader-windows-x64-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-xmake-
+            liteloader-xmake-windows-x64
 
-      - name: Update XMake Repository
-        run: xmake repo -u
+      - run: |
+          xmake repo -u
 
-      - name: Get Release Version Tag
-        if: github.event_name == 'release'
-        run: echo "VERSION=${{ github.ref_name }}" >> $env:GITHUB_ENV
+      - run: |
+          xmake f -a x64 -m release -p windows -v -y --ccache=n
 
-      - name: Get Previous Tag
-        if: github.event_name != 'release'
-        id: previoustag
-        run: |
-          $tag = ((git ls-remote -t --refs --sort=-v:refname -q | select -first 1) -split "/")[2]
-          if ($tag -eq "" -or $tag -eq $null) {
-            $tag = "v0.0.0"
-          }
-          echo "tag=$tag" >> $env:GITHUB_OUTPUT
-
-      - name: Set Pseudo Version
-        if: github.event_name != 'release'
-        run: |
-          $date = (Get-Date -Format "yyyyMMddHHmmss")
-          $commit = git rev-parse --short HEAD
-          $previous_tag = "${{ steps.previoustag.outputs.tag }}"
-          echo "VERSION=$previous_tag-$date-$commit" >> $env:GITHUB_ENV
-
-      - name: Build liteloader
-        run: |
-          xmake f -p windows -m release -a x64 --ccache=n -y -v
+      - run: |
           xmake -w -y
 
-      - name: Prepare Artifacts
-        run: |
-          mkdir artifacts
-          cp build/windows/x64/release/LiteLoader.dll artifacts
-          cp build/windows/x64/release/LiteLoader.lib artifacts
-          cp build/windows/x64/release/LiteLoader.pdb artifacts
-          mv artifacts liteloader-${{ env.VERSION }}-windows-amd64
-          mkdir artifacts
-          mv liteloader-${{ env.VERSION }}-windows-amd64 artifacts/
-
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3
         with:
-          name: liteloader-${{ env.VERSION }}-windows-amd64
-          path: artifacts
+          name: liteloader-windows-x64-${{ github.sha }}
+          path: |
+            build/windows/x64/release/LiteLoader.dll
+            build/windows/x64/release/LiteLoader.lib
+            build/windows/x64/release/LiteLoader.pdb
 
   upload-to-release:
-    name: Upload to Release
     needs:
       - build
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
-    if: github.event_name == 'release'
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v3
         with:
-          fetch-depth: 0
+          name: liteloader-windows-x64-${{ github.sha }}
+          path: bin
 
-      - name: Get Version
-        run: echo "VERSION=${{ github.ref_name }}" >> $GITHUB_ENV
+      - run: |
+          cp CHANGELOG.md LICENSE.md README.md bin/
 
-      - name: Download Artifacts
-        uses: actions/download-artifact@v3
-
-      - name: Compress Artifacts
-        id: compress
+      - name: Archive release
         run: |
-          mv liteloader-${{ env.VERSION }}-windows-amd64 artifacts
-          mv artifacts/liteloader-${{ env.VERSION }}-windows-amd64 .
-          cp -r include liteloader-${{ env.VERSION }}-windows-amd64/
-          zip -r liteloader-${{ env.VERSION }}-windows-amd64.zip liteloader-${{ env.VERSION }}-windows-amd64
-          echo "ZIP_SHA256=$(sha256sum liteloader-${{ env.VERSION }}-windows-amd64.zip | cut -d ' ' -f 1)" >> $GITHUB_ENV
-          echo "DLL_SHA256=$(sha256sum liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.dll | cut -d ' ' -f 1)" >> $GITHUB_ENV
-          echo "LIB_SHA256=$(sha256sum liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.lib | cut -d ' ' -f 1)" >> $GITHUB_ENV
-          echo "PDB_SHA256=$(sha256sum liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.pdb | cut -d ' ' -f 1)" >> $GITHUB_ENV
-        shell: bash
+          cd bin
+          zip -r ../liteloader-windows-x64.zip *
+          cd ..
 
-      - name: Upload Release Assets
-        uses: softprops/action-gh-release@v1
+      - uses: softprops/action-gh-release@v1
         with:
           append_body: true
           files: |
-            liteloader-${{ env.VERSION }}-windows-amd64.zip
-            liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.dll
-            liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.lib
-            liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.pdb
-          body: |
-            ---
-            | File                                           | SHA256                |
-            | :--------------------------------------------- | :-------------------- |
-            | liteloader-${{ env.VERSION }}-windows-amd64.zip | ${{ env.ZIP_SHA256 }} |
-            | LiteLoader.dll                                  | ${{ env.DLL_SHA256 }} |
-            | LiteLoader.lib                                  | ${{ env.LIB_SHA256 }} |
-            | LiteLoader.pdb                                  | ${{ env.PDB_SHA256 }} |
+            liteloader-windows-x64.zip
