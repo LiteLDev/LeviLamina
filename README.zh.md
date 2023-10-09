@@ -13,7 +13,7 @@ LiteLoader提供了一个广阔的API、强大的事件系统和丰富的封装�
 
 开发者可以轻松地使用C++、JavaScript、Lua、Python、C#等语言编写插件。这种无缝集成使他们能够轻松扩展和个性化BDS的功能，促进直观的学习体验和无与伦比的灵活性。
 
-更多信息，请参考[文档](https://docs.litebds.com)。
+更多信息，请参考[文档](https://v3.docs.litebds.com)。
 
 ## 安全性
 
@@ -44,7 +44,7 @@ $ cd myserver
 $ lip install github.com/tooth-hub/liteloaderbds
 ```
 
-更多信息，请参考[文档](https://docs.litebds.com)。
+更多信息，请参考[文档](https://v3.docs.litebds.com)。
 
 ### 更新
 
@@ -61,7 +61,7 @@ $ lip install github.com/tooth-hub/liteloaderbds
 $ ./bedrock_server.exe
 ```
 
-更多信息，请参考[文档](https://docs.litebds.com)。
+更多信息，请参考[文档](https://v3.docs.litebds.com)。
 
 ## 贡献
 

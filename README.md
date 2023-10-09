@@ -13,7 +13,7 @@ LiteLoader presents an expansive API, a powerful event system, and an abundance 
 
 Developers can effortlessly write plugins in languages such as C++, JavaScript, Lua, Python, C#, and others. This seamless integration enables them to effortlessly expand and personalize BDS functionality, facilitating an intuitive learning experience and unparalleled flexibility.
 
-For more information, please refer to [the documentation](https://docs.litebds.com).
+For more information, please refer to [the documentation](https://v3.docs.litebds.com).
 
 ## Security
 
@@ -58,7 +58,7 @@ Then, install LiteLoaderBDS using Lip:
 $ lip install github.com/tooth-hub/liteloaderbds
 ```
 
-For more information, please refer to [the documentation](https://docs.litebds.com).
+For more information, please refer to [the documentation](https://v3.docs.litebds.com).
 
 ### Updating
 
@@ -75,7 +75,7 @@ To start the server, simply run `bedrock_server.exe`:
 $ ./bedrock_server.exe
 ```
 
-For more information, please refer to [the documentation](https://docs.litebds.com).
+For more information, please refer to [the documentation](https://v3.docs.litebds.com).
 
 ## Contributing
 
