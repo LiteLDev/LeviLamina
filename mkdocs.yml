@@ -1,0 +1,63 @@
+site_name: LiteLoaderBDS Documentation
+repo_url: https://github.com/LiteLDev/LiteLoaderBDS
+
+nav:
+  - Basics:
+    - Overview: index.md
+    - install_windows.md
+    - usage.md
+    - faq.md
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+  favicon: img/favicon.ico
+  logo: img/logo.png
+  palette:
+    primary: white
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc
+  - tables
+  - pymdownx.arithmatex
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.highlight:
+      auto_title: true
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist
+
+plugins:
+  - i18n:
+      languages:
+        - locale: en
+          default: true
+          name: English
+          
+        - locale: zh
+          name: 中文
+          nav_translations:
+            Basics: 基础
+            Overview: 概述
+
+
