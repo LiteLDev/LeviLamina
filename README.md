@@ -7,7 +7,7 @@
 
 ![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)&nbsp;[![中文](https://img.shields.io/badge/简体中文-informational?style=for-the-badge)](README.zh.md)
 
-A lightweight, modular and versatile plugin loader for Minecraft Bedrock Server BDS, formerly known as LeviLamina
+A lightweight, modular and versatile plugin loader for Minecraft Bedrock Server BDS, formerly known as LiteLoaderBDS
 
 LeviLamina is an unofficial plugin loader designed to offer indispensable API support for Minecraft Bedrock Server BDS. It boasts a comprehensive API, an array of utility interfaces, a robust event system, and comprehensive support for basic interfaces. LeviLamina provides an expansive API, a powerful event system, and a wealth of encapsulated development infrastructure interfaces, forming a solid foundation for augmenting the Bedrock Edition BDS with additional gameplay features and functionalities. By leveraging plugins, the process of extending BDS functionality becomes effortless, with a user-friendly development process and an adaptable approach.
 
