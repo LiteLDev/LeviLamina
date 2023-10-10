@@ -1,4 +1,4 @@
-#include "liteloader/core/LiteLoader.h"
+#include "ll/core/LeviLamina.h"
 
 #include <csignal>
 #include <iostream>
@@ -6,33 +6,33 @@
 #include <processenv.h>
 #include <string>
 
-#include "liteloader/api/utils/FileHelper.h"
-#include "liteloader/api/utils/SehTranslator.h"
-#include "liteloader/api/utils/StringUtils.h"
+#include "ll/api/utils/FileHelper.h"
+#include "ll/api/utils/SehTranslator.h"
+#include "ll/api/utils/StringUtils.h"
 
-#include "liteloader/api/memory/Hook.h"
+#include "ll/api/memory/Hook.h"
 
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/ServerAPI.h"
-#include "liteloader/api/event/LegacyEvents.h"
-#include "liteloader/api/event/server/ServerStartedEvent.h"
-#include "liteloader/api/event/server/ServerStoppedEvent.h"
+#include "ll/api/LoggerAPI.h"
+#include "ll/api/ServerAPI.h"
+#include "ll/api/event/LegacyEvents.h"
+#include "ll/api/event/server/ServerStartedEvent.h"
+#include "ll/api/event/server/ServerStoppedEvent.h"
 
 #include "mc/Minecraft.hpp"
 
-#include "liteloader/core/AddonsHelper.h"
-#include "liteloader/core/Config.h"
-#include "liteloader/core/CrashLogger.h"
-#include "liteloader/core/Loader.h"
-#include "liteloader/core/PlayerDeathPositions.h"
-#include "liteloader/core/SimpleServerLogger.h"
-#include "liteloader/core/Version.h"
+#include "ll/core/AddonsHelper.h"
+#include "ll/core/Config.h"
+#include "ll/core/CrashLogger.h"
+#include "ll/core/Loader.h"
+#include "ll/core/PlayerDeathPositions.h"
+#include "ll/core/SimpleServerLogger.h"
+#include "ll/core/Version.h"
 
 #include <Psapi.h>
 #include <TlHelp32.h>
 #include <windows.h>
 
-Logger ll::logger("LiteLoader");
+Logger ll::logger("LeviLamina");
 time_t ll::startTime;
 time_t ll::endTime;
 
@@ -87,23 +87,23 @@ void unzipNodeModules() {
 
 void decompressResourcePacks() {
     if (std::filesystem::exists(
-            std::filesystem::path(TEXT(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar"))
+            std::filesystem::path(TEXT(".\\plugins\\LeviLamina\\ResourcePacks\\LeviLamina-CUI.tar"))
         )) {
         std::error_code ec;
         // if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
         //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
         auto res = NewProcessSync(
             fmt::format(
-                R"({} x "{}" -o".\plugins\LiteLoader\ResourcePacks\" -aoa)",
+                R"({} x "{}" -o".\plugins\LeviLamina\ResourcePacks\" -aoa)",
                 ZIP_PROGRAM_PATH,
-                R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar)"
+                R"(.\plugins\LeviLamina\ResourcePacks\LeviLamina-CUI.tar)"
             ),
             30000
         );
         if (res.first != 0) {
             logger.error(tr("ll.decompressResourcePacks.fail"));
         } else {
-            filesystem::remove(R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar)", ec);
+            filesystem::remove(R"(.\plugins\LeviLamina\ResourcePacks\LeviLamina-CUI.tar)", ec);
         }
     }
 }
@@ -216,7 +216,7 @@ void checkDevMode() {
 }
 
 void checkBetaVersion() {
-    if constexpr (LITELOADER_VERSION_STATUS != ll::Version::Release) {
+    if constexpr (LL_VERSION_STATUS != ll::Version::Release) {
         logger.warn(tr("ll.main.warning.betaVersion"));
         logger.warn(tr("ll.main.warning.productionEnv"));
     }
@@ -274,7 +274,7 @@ namespace bstats {
 void registerBStats();
 }
 
-void liteloaderMain() {
+void leviLaminaMain() {
     // Set global SEH-Exception handler
     auto oldSeTranslator = _set_se_translator(seh_exception::TranslateSEHtoCE);
 
@@ -289,7 +289,7 @@ void liteloaderMain() {
     std::filesystem::create_directories("plugins", ec);
 
     // I18n
-    auto i18n = Translation::load("plugins/LiteLoader/LangPack/");
+    auto i18n = Translation::load("plugins/LeviLamina/LangPack/");
 
     // Load Config
     ll::LoadLLConfig();
@@ -317,7 +317,7 @@ void liteloaderMain() {
     fixAllowList();
 
     // Init LL Logger
-    Logger::setDefaultFile("logs/LiteLoader-latest.log", false);
+    Logger::setDefaultFile("logs/LeviLamina-latest.log", false);
 
     // Check Running BDS(Requires Config)
     checkRunningBDS();
@@ -358,7 +358,8 @@ void liteloaderMain() {
     ServerStartedEvent::subscribe([](ServerStartedEvent const&) {
         logger.info(tr("ll.notice.license", "LGPLv3"));
         logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
-        logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
+        // TODO: change to new name
+        logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/LeviLaminabds"));
         logger.info("Thanks to RhyMC(rhymc.com) for the support");
         return true;
     });
@@ -375,7 +376,7 @@ void liteloaderMain() {
 
 using namespace ll::memory;
 
-LL_AUTO_STATIC_HOOK(LiteLoaderMain, HookPriority::Normal, "main", int, int argc, char** argv) {
+LL_AUTO_STATIC_HOOK(LeviLaminaMain, HookPriority::Normal, "main", int, int argc, char** argv) {
     startTime = clock();
     for (int i = 0; i < argc; ++i) {
         if (strcmp(argv[i], "--noColor") == 0) {
@@ -383,7 +384,7 @@ LL_AUTO_STATIC_HOOK(LiteLoaderMain, HookPriority::Normal, "main", int, int argc,
             break;
         }
     }
-    liteloaderMain();
+    leviLaminaMain();
     return origin(argc, argv);
 }
 

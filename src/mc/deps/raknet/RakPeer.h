@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/raknet/RakNetGUID.h"
-#include "mc/deps/raknet/SystemAddress.h"
 #include "mc/deps/raknet/RakPeerInterface.h"
+#include "mc/deps/raknet/SystemAddress.h"
 
 // auto generated inclusion list
 #include "mc/deps/raknet/ConnectionAttemptResult.h"

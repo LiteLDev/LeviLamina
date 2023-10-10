@@ -1,5 +1,5 @@
-#include "liteloader/api/base/Global.h"
-#include "liteloader/api/memory/Hook.h"
+#include "ll/api/base/Global.h"
+#include "ll/api/memory/Hook.h"
 #include "mc/IResourcePackRepository.hpp"
 #include "mc/Pack.hpp"
 #include "mc/PackIdVersion.hpp"

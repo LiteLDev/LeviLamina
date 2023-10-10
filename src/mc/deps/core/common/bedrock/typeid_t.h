@@ -29,10 +29,10 @@ public:
     typeid_t<T0>() : value(++_getCounter()) {}
 
 private:
-     static std::atomic_ushort& _getCounter() {
+    static std::atomic_ushort& _getCounter() {
 
         // MCAPI // error C2201
-        static std::atomic_ushort storage; 
+        static std::atomic_ushort storage;
 
         return storage;
     }

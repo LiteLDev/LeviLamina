@@ -7,8 +7,8 @@
  *
  */
 #pragma once
-#include "liteloader/api/base/Global.h"
-#include "liteloader/api/LLAPI.h"
+#include "ll/api/base/Global.h"
+#include "ll/api/LLAPI.h"
 #include "mc/AABB.hpp"
 #include "mc/BlockPos.hpp"
 #include "mc/BoundingBox.hpp"

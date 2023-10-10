@@ -32,7 +32,7 @@ copies or substantial portions of the Software.
 #include "mc/CommandRegistry.hpp"
 #include "mc/CommandSelector.hpp"
 
-#include "liteloader/api/utils/WinHelper.h"
+#include "ll/api/utils/WinHelper.h"
 
 struct DCCallback;
 struct DCArgs;

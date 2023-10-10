@@ -30,15 +30,12 @@ public:
     [[nodiscard]] bool has_value() const { return mHasValue; }
 
     T& value() {
-        if (!mHasValue) {
-            std::rethrow_exception(std::make_exception_ptr(mError.getError()));
-        }
+        if (!mHasValue) { std::rethrow_exception(std::make_exception_ptr(mError.getError())); }
         return mValue;
     }
 
     Err& error() {
-        if (mHasValue)
-            throw std::logic_error("Bad error result access.");
+        if (mHasValue) throw std::logic_error("Bad error result access.");
         return mError;
     }
 };
@@ -55,23 +52,18 @@ public:
 
     Result(Result&& other) noexcept {
         mHasValue = other.mHasValue;
-        if (!mHasValue) {
-            mError = std::move(other.mError);
-        }
+        if (!mHasValue) { mError = std::move(other.mError); }
     }
 
     [[nodiscard]] bool has_value() const { return mHasValue; }
 
     void value() {
-        if (!mHasValue) {
-            std::rethrow_exception(std::make_exception_ptr(mError.getError()));
-        }
+        if (!mHasValue) { std::rethrow_exception(std::make_exception_ptr(mError.getError())); }
         // No value to return as T is void
     }
 
     Err& error() {
-        if (mHasValue)
-            throw std::logic_error("Bad error result access.");
+        if (mHasValue) throw std::logic_error("Bad error result access.");
         return mError;
     }
 };

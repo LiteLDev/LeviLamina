@@ -32,7 +32,8 @@ public:
         class HashedString stateName;
         int                value;
         BlockComplexAliasBlockState(HashedString const& stateName, int value) noexcept
-        : stateName(stateName), value(value) {}
+        : stateName(stateName),
+          value(value) {}
 
     public:
         // NOLINTBEGIN

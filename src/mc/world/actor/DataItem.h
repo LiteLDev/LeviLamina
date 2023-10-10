@@ -13,8 +13,8 @@
 class DataItem {
 public:
     ::DataItemType mType;
-    ushort                  mId;
-    bool                    mDirty = true;
+    ushort         mId;
+    bool           mDirty = true;
 
     template <typename T>
     inline optional_ref<T const> getData() const;
@@ -103,16 +103,21 @@ inline void DataItem2<CompoundTag>::setData(CompoundTag const& value) {
 }
 
 template <>
-inline DataItem2<schar>::DataItem2(ushort key, schar const& value) : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
+inline DataItem2<schar>::DataItem2(ushort key, schar const& value) : DataItem(DATA_ITEM_TYPE, key),
+                                                                     mValue(value) {}
 template <>
-inline DataItem2<short>::DataItem2(ushort key, short const& value) : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
+inline DataItem2<short>::DataItem2(ushort key, short const& value) : DataItem(DATA_ITEM_TYPE, key),
+                                                                     mValue(value) {}
 template <>
-inline DataItem2<int>::DataItem2(ushort key, int const& value) : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
+inline DataItem2<int>::DataItem2(ushort key, int const& value) : DataItem(DATA_ITEM_TYPE, key),
+                                                                 mValue(value) {}
 template <>
-inline DataItem2<float>::DataItem2(ushort key, float const& value) : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
+inline DataItem2<float>::DataItem2(ushort key, float const& value) : DataItem(DATA_ITEM_TYPE, key),
+                                                                     mValue(value) {}
 template <>
 inline DataItem2<std::string>::DataItem2(ushort key, std::string const& value) // NOLINT
-: DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
+: DataItem(DATA_ITEM_TYPE, key),
+  mValue(value) {}
 template <>
 inline DataItem2<class CompoundTag>::DataItem2(ushort key, class CompoundTag const& value)
 : DataItem(DATA_ITEM_TYPE, key) {
@@ -120,30 +125,30 @@ inline DataItem2<class CompoundTag>::DataItem2(ushort key, class CompoundTag con
 }
 template <>
 inline DataItem2<BlockPos>::DataItem2(ushort key, BlockPos const& value)
-: DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
+: DataItem(DATA_ITEM_TYPE, key),
+  mValue(value) {}
 template <>
-inline DataItem2<int64>::DataItem2(ushort key, int64 const& value) : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
+inline DataItem2<int64>::DataItem2(ushort key, int64 const& value) : DataItem(DATA_ITEM_TYPE, key),
+                                                                     mValue(value) {}
 template <>
-inline DataItem2<Vec3>::DataItem2(ushort key, Vec3 const& value) : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
+inline DataItem2<Vec3>::DataItem2(ushort key, Vec3 const& value) : DataItem(DATA_ITEM_TYPE, key),
+                                                                   mValue(value) {}
 
 template <typename T>
 inline optional_ref<T const> DataItem::getData() const {
-    if (this->mType == DataItem2<T>::DATA_ITEM_TYPE)
-        return ((DataItem2<T>*)this)->mValue;
+    if (this->mType == DataItem2<T>::DATA_ITEM_TYPE) return ((DataItem2<T>*)this)->mValue;
     return nullptr;
 }
 
 template <typename T>
 inline optional_ref<T> DataItem::getData() {
-    if (this->mType == DataItem2<T>::DATA_ITEM_TYPE)
-        return ((DataItem2<T>*)this)->mValue;
+    if (this->mType == DataItem2<T>::DATA_ITEM_TYPE) return ((DataItem2<T>*)this)->mValue;
     return nullptr;
 }
 
 template <typename T>
 inline bool DataItem::setData(T const& value) {
-    if (this->mType != DataItem2<T>::DATA_ITEM_TYPE)
-        return false;
+    if (this->mType != DataItem2<T>::DATA_ITEM_TYPE) return false;
     ((DataItem2<T>*)this)->setData(value);
     return true;
 }

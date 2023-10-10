@@ -30,7 +30,7 @@
         template <std::convertible_to<TYPE> TALL>                                                                      \
         constexpr NAME(TALL all) noexcept                                                                              \
         : x(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
-          ),                                                                                                           \
+        ),                                                                                                             \
           z(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
           ){};                                                                                                         \
         template <std::convertible_to<TYPE> T0, std::convertible_to<TYPE> T1>                                          \
@@ -51,16 +51,12 @@
         }                                                                                                              \
         template <typename T>                                                                                          \
         [[nodiscard]] constexpr T& get(size_t index) noexcept {                                                        \
-            if (index == 1) {                                                                                          \
-                return (T&)z;                                                                                          \
-            }                                                                                                          \
+            if (index == 1) { return (T&)z; }                                                                          \
             return (T&)x;                                                                                              \
         }                                                                                                              \
         template <typename T>                                                                                          \
         [[nodiscard]] constexpr T get(size_t index) const noexcept {                                                   \
-            if (index == 1) {                                                                                          \
-                return (T)z;                                                                                           \
-            }                                                                                                          \
+            if (index == 1) { return (T)z; }                                                                           \
             return (T)x;                                                                                               \
         }                                                                                                              \
     }
@@ -75,7 +71,7 @@
         template <std::convertible_to<TYPE> TALL>                                                                      \
         constexpr NAME(TALL all) noexcept                                                                              \
         : x(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
-          ),                                                                                                           \
+        ),                                                                                                             \
           y(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
           ),                                                                                                           \
           z(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
@@ -132,7 +128,7 @@
         template <std::convertible_to<TYPE> TALL>                                                                      \
         constexpr NAME(TALL all) noexcept                                                                              \
         : x(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
-          ),                                                                                                           \
+        ),                                                                                                             \
           y(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
           ),                                                                                                           \
           z(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \

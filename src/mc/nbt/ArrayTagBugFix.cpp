@@ -1,7 +1,7 @@
 #include "mc/nbt/ByteArrayTag.h"
 #include "mc/nbt/IntArrayTag.h"
 
-#include "liteloader/api/memory/Hook.h"
+#include "ll/api/memory/Hook.h"
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ByteArrayTagEqualsHook,

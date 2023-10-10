@@ -1,4 +1,4 @@
-#include "liteloader/api/PlayerInfoAPI.h"
+#include "ll/api/PlayerInfoAPI.h"
 #include "mc/CompoundTag.hpp"
 #include "mc/DisplayObjective.hpp"
 #include "mc/Level.hpp"
@@ -12,7 +12,7 @@
 #include "mc/ServerScoreboard.hpp"
 #include "mc/setScorePacket.hpp"
 
-#include "liteloader/api/memory/MemoryUtils.h"
+#include "ll/api/memory/MemoryUtils.h"
 
 using ll::memory::dAccess;
 

@@ -1,7 +1,7 @@
 #include "mc/server/commands/CommandRegistry.h"
-#include "liteloader/api/service/GlobalService.h"
-#include "liteloader/core/Config.h"
-#include "liteloader/core/LiteLoader.h"
+#include "ll/api/service/GlobalService.h"
+#include "ll/core/Config.h"
+#include "ll/core/LeviLamina.h"
 #include "mc/server/commands/CommandParameterData.h"
 #include "mc/server/commands/CommandVersion.h"
 

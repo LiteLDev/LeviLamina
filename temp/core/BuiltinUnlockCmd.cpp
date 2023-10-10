@@ -1,15 +1,15 @@
-#include "liteloader/api/base/Global.h"
-#include "liteloader/api/memory/Hook.h"
+#include "ll/api/base/Global.h"
+#include "ll/api/memory/Hook.h"
 #include "mc/CommandParameterData.hpp"
 
-#include "liteloader/core/Config.h"
+#include "ll/core/Config.h"
 #include "magic_enum.hpp"
 
 using namespace ll::memory;
 
 /////////////////// Built in UnlockCmd ///////////////////
 
-// ==> LiteLoader/Main/SimpleServerLogger.cpp
+// ==> LeviLamina/Main/SimpleServerLogger.cpp
 void LogCommandRegistration(
     std::string const&          name,
     char const*                 description,

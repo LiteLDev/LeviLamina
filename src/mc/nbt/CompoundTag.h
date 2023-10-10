@@ -15,10 +15,10 @@ public:
     TagMap mTags;
 
     CompoundTag(TagMap tags) : mTags(std::move(tags)) {} // NOLINT
-    CompoundTag(CompoundTag const&) = default;
+    CompoundTag(CompoundTag const&)            = default;
     CompoundTag& operator=(CompoundTag const&) = default;
 
-    [[nodiscard]] CompoundTagVariant& operator[](std::string const& index) { return mTags[index]; }
+    [[nodiscard]] CompoundTagVariant&       operator[](std::string const& index) { return mTags[index]; }
     [[nodiscard]] CompoundTagVariant const& operator[](std::string const& index) const { return mTags.at(index); }
 
 

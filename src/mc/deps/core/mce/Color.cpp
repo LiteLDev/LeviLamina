@@ -42,10 +42,8 @@ double Color::deltaE00(Color const& dst) const noexcept {
     double dCp = C1p - C2p;
     double h1p = atan2(b1, a1p);
     double h2p = atan2(b2, a2p);
-    if (h1p < 0)
-        h1p += 6.2831853071796;
-    if (h2p < 0)
-        h2p += 6.2831853071796;
+    if (h1p < 0) h1p += 6.2831853071796;
+    if (h2p < 0) h2p += 6.2831853071796;
     h1p        *= 57.2957795131;
     h2p        *= 57.2957795131;
     double h_p  = (h1p + h2p) * 0.5;
@@ -70,10 +68,10 @@ double Color::deltaE00(Color const& dst) const noexcept {
             H_p = h_p;
         }
     }
-    double T = 1 - 0.17 * cos((H_p - 30) * (std::numbers::pi / 180.0)) +
-               0.24 * cos((2 * H_p) * (std::numbers::pi / 180.0)) +
-               0.32 * cos((3 * H_p + 6) * (std::numbers::pi / 180.0)) -
-               0.20 * cos((4 * H_p - 63.0) * (std::numbers::pi / 180.0));
+    double T = 1 - 0.17 * cos((H_p - 30) * (std::numbers::pi / 180.0))
+             + 0.24 * cos((2 * H_p) * (std::numbers::pi / 180.0))
+             + 0.32 * cos((3 * H_p + 6) * (std::numbers::pi / 180.0))
+             - 0.20 * cos((4 * H_p - 63.0) * (std::numbers::pi / 180.0));
     double dHp   = 2 * sqrt(C1p * C2p) * sin(dhp * 0.5 * (std::numbers::pi / 180.0));
     L_          -= 50;
     L_          *= L_;

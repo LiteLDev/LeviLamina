@@ -1,4 +1,4 @@
-#include "liteloader/api/base/Global.h"
+#include "ll/api/base/Global.h"
 
 #include "mc/AllowListFile.hpp"
 #include "mc/CommandSoftEnumRegistry.hpp"
@@ -11,10 +11,10 @@
 #include "mc/Scoreboard.hpp"
 #include "mc/ServerNetworkHandler.hpp"
 
-#include "liteloader/api/service/GlobalService.h"
+#include "ll/api/service/GlobalService.h"
 
-#include "liteloader/api/memory/Hook.h"
-#include "liteloader/api/utils/Hash.h"
+#include "ll/api/memory/Hook.h"
+#include "ll/api/utils/Hash.h"
 
 using namespace ll::memory;
 

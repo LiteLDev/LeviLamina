@@ -31,7 +31,7 @@ add_requires("rapidjson v1.1.0")
 add_requires("compact_enc_det v1.0.1")
 add_requires("fifo_map v1.0.0")
 add_requires("pcg_cpp v1.0.0")
-add_requires("preloader v1.2.0")
+add_requires("preloader v1.3.0")
 add_requires("symbolprovider v1.1.0")
 
 if has_config("localbdslibrary") then
@@ -40,20 +40,20 @@ else
     add_requires("bdslibrary 1.20.30.02")
 end
 
-target("levilamina_core")
+target("LeviLamina")
     set_license("LGPL-3")
     set_kind("shared")
     set_languages("c++20")
     set_symbols("debug")
     set_exceptions("none")
-    set_pcxxheader("src/liteloader/api/base/Global.h")
+    set_pcxxheader("src/ll/api/base/Global.h")
     set_configdir("$(buildir)/config")
     add_configfiles("src/(**.in)")
     add_headerfiles("src/(**.h)", "src/(**.hpp)")
     add_includedirs("./src", "$(buildir)/config")
     add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4")
     add_defines(
-        "UNICODE", "LITELOADER_EXPORTS", "WIN32_LEAN_AND_MEAN",
+        "UNICODE", "LL_EXPORT", "WIN32_LEAN_AND_MEAN",
         "CPPHTTPLIB_OPENSSL_SUPPORT", "_AMD64_", "NOMINMAX",
         "_CRT_SECURE_NO_WARNINGS"
     )
@@ -76,9 +76,9 @@ target("levilamina_core")
             print("Failed to parse version tag, using 0.0.0")
             major, minor, patch = 0, 0, 0
         end
-        target:set("configvar", "LITELOADER_VERSION_MAJOR", major)
-        target:set("configvar", "LITELOADER_VERSION_MINOR", minor)
-        target:set("configvar", "LITELOADER_VERSION_PATCH", patch)
+        target:set("configvar", "LL_VERSION_MAJOR", major)
+        target:set("configvar", "LL_VERSION_MINOR", minor)
+        target:set("configvar", "LL_VERSION_PATCH", patch)
     end)
 
 task("bds-lib")

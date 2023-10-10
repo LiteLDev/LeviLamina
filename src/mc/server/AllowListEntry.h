@@ -24,7 +24,10 @@ public:
         mce::UUID   uuid               = mce::UUID::EMPTY,
         bool        ignoresPlayerLimit = false
     )
-    : mName(std::move(name)), mUuid(uuid), mXuid(std::move(xuid)), mIgnoresPlayerLimit(ignoresPlayerLimit) {}
+    : mName(std::move(name)),
+      mUuid(uuid),
+      mXuid(std::move(xuid)),
+      mIgnoresPlayerLimit(ignoresPlayerLimit) {}
 
 public:
     // NOLINTBEGIN

@@ -1,6 +1,6 @@
 #include "mc/server/SimulatedPlayer.h"
-#include "liteloader/api/service/GlobalService.h"
-#include "liteloader/api/utils/RNG.h"
+#include "ll/api/service/GlobalService.h"
+#include "ll/api/utils/RNG.h"
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/network/ServerNetworkHandler.h"
@@ -16,9 +16,7 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
         ll::Global<ServerNetworkHandler>->createSimulatedPlayer(name, '-' + std::to_string(RNG::rand<uint64>()));
     auto player = ownerPtr.tryUnwrap<SimulatedPlayer>();
 
-    if (player == nullptr) {
-        return nullptr;
-    }
+    if (player == nullptr) { return nullptr; }
 
     player->postLoad(true);
     player->getLevel().addUser(std::move(ownerPtr));
@@ -45,8 +43,6 @@ bool SimulatedPlayer::simulateDestroyLookAt(float handLength) {
 
     auto hitResult = traceRay(handLength, false);
 
-    if (hitResult.mType != HitResultType::Tile) {
-        return false;
-    }
+    if (hitResult.mType != HitResultType::Tile) { return false; }
     return simulateDestroyBlock(hitResult.mBlockPos, (ScriptModuleMinecraft::ScriptFacing)hitResult.mFacing);
 }

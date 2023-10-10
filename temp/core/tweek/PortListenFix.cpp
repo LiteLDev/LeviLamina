@@ -1,7 +1,7 @@
-#include "liteloader/api/memory/Hook.h"
+#include "ll/api/memory/Hook.h"
 
-#include "liteloader/core/Config.h"
-#include "liteloader/core/LiteLoader.h"
+#include "ll/core/Config.h"
+#include "ll/core/LeviLamina.h"
 
 using namespace ll;
 using namespace ll::memory;

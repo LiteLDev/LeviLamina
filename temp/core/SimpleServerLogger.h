@@ -1,7 +1,7 @@
 #pragma once
 
-#include "liteloader/api/event/LegacyEvents.h"
-#include "liteloader/api/event/player/PlayerChatEvent.h"
+#include "ll/api/event/LegacyEvents.h"
+#include "ll/api/event/player/PlayerChatEvent.h"
 
 namespace ll {
 class SimpleServerLogger {

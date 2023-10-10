@@ -2,13 +2,13 @@
 #include "mc/entity/systems/UpdateBoundingBoxSystem.h"
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/nbt/CompoundTag.h"
+#include "mc/server/ServerLevel.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorFactory.h"
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/registry/ItemStack.h"
 #include "mc/world/level/ChunkPos.h"
-#include "mc/server/ServerLevel.h"
 #include "mc/world/level/block/Block.h"
 #include "mc/world/level/block/actor/DropperBlockActor.h"
 #include "mc/world/level/chunk/LevelChunk.h"
@@ -25,14 +25,12 @@ BlockSource::getEntities(class AABB const& range, float extendDistance, ActorTyp
     for (int x = minChunk.x; x <= maxChunk.x; x++)
         for (int z = minChunk.z; z <= maxChunk.z; z++) {
             auto* chunk = getChunk(x, z);
-            if (chunk == nullptr) {
-                continue;
-            }
+            if (chunk == nullptr) { continue; }
             for (auto& weakEntityRef : chunk->getChunkEntities()) {
                 auto* actor = weakEntityRef.tryUnwrap<Actor>();
-                if (actor != nullptr &&
-                    (actorType == ActorType::TypeMask || actor->isInstanceOf(actorType) != ignoreType) &&
-                    range.intersects(actor->getAABB())) {
+                if (actor != nullptr
+                    && (actorType == ActorType::TypeMask || actor->isInstanceOf(actorType) != ignoreType)
+                    && range.intersects(actor->getAABB())) {
                     entities.emplace_back(actor);
                 }
             }
@@ -50,9 +48,7 @@ BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<Dime
 
     auto nbt = origin.saveToNBT();
 
-    if (!nbt) {
-        return nullptr;
-    }
+    if (!nbt) { return nullptr; }
 
     if (auto* nbtPos = nbt->getList("Pos"); nbtPos) {
         unroll<3>([&](size_t i) { nbtPos[i].as<FloatTag>() = pos[i]; });
@@ -62,25 +58,17 @@ BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<Dime
 
     Dimension* dim = &getDimension();
 
-    if (dimID.has_value()) {
-        dim = level.getDimension(dimID.value()).get();
-    }
+    if (dimID.has_value()) { dim = level.getDimension(dimID.value()).get(); }
 
-    if (!dim) {
-        return nullptr;
-    }
+    if (!dim) { return nullptr; }
 
     auto actorOwnerPtr = level.getActorFactory().createSpawnedActor(origin.getActorIdentifier(), nullptr, pos);
 
-    if (!actorOwnerPtr) {
-        return nullptr;
-    }
+    if (!actorOwnerPtr) { return nullptr; }
 
     auto* actor = actorOwnerPtr.tryUnwrap<Actor>();
 
-    if (!actor) {
-        return nullptr;
-    }
+    if (!actor) { return nullptr; }
 
     actor->_setLevelPtr(&level);
 
@@ -99,26 +87,18 @@ bool BlockSource::destroyBlock(BlockPos const& pos, optional_ref<ItemStack> tool
 
     if (tool && toolOwner && toolOwner->isCreative()) {
         auto* item = tool->getItem();
-        if (item && !item->canDestroyInCreative()) {
-            return false;
-        }
+        if (item && !item->canDestroyInCreative()) { return false; }
     }
 
     auto& block = getBlock(pos);
-    if (block.isUnbreakable()) {
-        return false;
-    }
+    if (block.isUnbreakable()) { return false; }
     auto& material = block.getMaterial();
 
     bool shouldDrop = material.isAlwaysDestroyable() || tool->canDestroySpecial(block);
 
     bool res = getLevel().destroyBlock(*this, pos, shouldDrop);
 
-    if (!tool) {
-        return res;
-    }
-    if (res) {
-        tool->mineBlock(block, pos.x, pos.y, pos.z, toolOwner.as_ptr());
-    }
+    if (!tool) { return res; }
+    if (res) { tool->mineBlock(block, pos.x, pos.y, pos.z, toolOwner.as_ptr()); }
     return res;
 }

@@ -1,11 +1,11 @@
 ﻿#include <unordered_map>
 
-#include "liteloader/core/Config.h"
-#include "liteloader/core/LiteLoader.h"
+#include "ll/core/Config.h"
+#include "ll/core/LeviLamina.h"
 
-#include "liteloader/api/ScheduleAPI.h"
-#include "liteloader/api/event/LegacyEvents.h"
-#include "liteloader/api/memory/Hook.h"
+#include "ll/api/ScheduleAPI.h"
+#include "ll/api/event/LegacyEvents.h"
+#include "ll/api/memory/Hook.h"
 #include "mc/AdventureSettings.hpp"
 #include "mc/BinaryStream.hpp"
 #include "mc/ChunkSource.hpp"

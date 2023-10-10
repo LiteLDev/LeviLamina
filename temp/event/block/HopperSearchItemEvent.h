@@ -1,7 +1,7 @@
 #pragma once
 
-#include "liteloader/api/event/Event.h"
-#include "liteloader/api/utils/AccessorMacro.h"
+#include "ll/api/event/Event.h"
+#include "ll/api/utils/AccessorMacro.h"
 #include "mc/ItemStack.hpp"
 #include "mc/Vec3.hpp"
 

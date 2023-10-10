@@ -2,13 +2,13 @@
 
 /**
  * @brief This file is the implementation of the event listener.
- * @note Only LiteLoader itself should include this file in the source code of event.
+ * @note Only LeviLamina itself should include this file in the source code of event.
  */
 
-#include "liteloader/core/LiteLoader.h"
+#include "ll/core/LeviLamina.h"
 
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/event/Listener.h"
+#include "ll/api/LoggerAPI.h"
+#include "ll/api/event/Listener.h"
 
 namespace ll::event {
 namespace detail {

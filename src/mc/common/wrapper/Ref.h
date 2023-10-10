@@ -21,16 +21,12 @@ public:
     ~WeakStorageSharePtr() = default;
 
     WeakStorageSharePtr& operator=(WeakStorageSharePtr const& other) {
-        if (this != &other) {
-            mHandle = other.mHandle;
-        }
+        if (this != &other) { mHandle = other.mHandle; }
         return *this;
     }
 
     WeakStorageSharePtr& operator=(WeakStorageSharePtr&& other) noexcept {
-        if (this != &other) {
-            mHandle = std::move(other.mHandle);
-        }
+        if (this != &other) { mHandle = std::move(other.mHandle); }
         return *this;
     }
 
@@ -40,9 +36,7 @@ public:
 
     T* get() const {
         auto sp = mHandle.lock();
-        if (!sp) {
-            return nullptr;
-        }
+        if (!sp) { return nullptr; }
         return sp.get();
     }
 
@@ -68,16 +62,12 @@ public:
     ~OwnerStorageSharePtr() = default;
 
     OwnerStorageSharePtr& operator=(OwnerStorageSharePtr const& other) {
-        if (this != &other) {
-            mHandle = other.mHandle;
-        }
+        if (this != &other) { mHandle = other.mHandle; }
         return *this;
     }
 
     OwnerStorageSharePtr& operator=(OwnerStorageSharePtr&& other) noexcept {
-        if (this != &other) {
-            mHandle = std::move(other.mHandle);
-        }
+        if (this != &other) { mHandle = std::move(other.mHandle); }
         return *this;
     }
 
@@ -103,16 +93,12 @@ public:
     ~StackResultStorageSharePtr() = default;
 
     StackResultStorageSharePtr& operator=(StackResultStorageSharePtr const& other) {
-        if (this != &other) {
-            mHandle = other.mHandle;
-        }
+        if (this != &other) { mHandle = other.mHandle; }
         return *this;
     }
 
     StackResultStorageSharePtr& operator=(StackResultStorageSharePtr&& other) noexcept {
-        if (this != &other) {
-            mHandle = std::move(other.mHandle);
-        }
+        if (this != &other) { mHandle = std::move(other.mHandle); }
         return *this;
     }
 
@@ -155,13 +141,11 @@ public:
     }
 
     void releaseWeak() {
-        if (--weak_count == 0) {
-            delete this;
-        }
+        if (--weak_count == 0) { delete this; }
     }
 
 private:
-    T*               ptr;
+    T*              ptr;
     std::atomic_int share_count;
     std::atomic_int weak_count;
 };

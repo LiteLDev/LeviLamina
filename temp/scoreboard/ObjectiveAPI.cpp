@@ -1,8 +1,8 @@
-#include "liteloader/api/service/GlobalService.h"
+#include "ll/api/service/GlobalService.h"
 #include "mc/Objective.hpp"
 #include "mc/ServerScoreboard.hpp"
 
-#include "liteloader/api/utils/Hash.h"
+#include "ll/api/utils/Hash.h"
 
 // helper
 #define H do_hash

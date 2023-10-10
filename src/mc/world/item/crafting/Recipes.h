@@ -69,7 +69,8 @@ public:
         char               mC;
 
         constexpr Type(std::string const& name, char label, int aux, ushort count)
-        : mIngredient(name, aux, count), mC(label) {
+        : mIngredient(name, aux, count),
+          mC(label) {
             mItem  = mIngredient.getItem();
             mBlock = mIngredient.getBlock();
         }

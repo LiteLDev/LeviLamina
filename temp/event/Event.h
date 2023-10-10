@@ -7,10 +7,10 @@
 
 #include <magic_enum.hpp>
 
-#include "liteloader/api/LLAPI.h"
-#include "liteloader/api/event/Cancellable.h"
-#include "liteloader/api/event/Listener.h"
-#include "liteloader/api/utils/WinHelper.h"
+#include "ll/api/LLAPI.h"
+#include "ll/api/event/Cancellable.h"
+#include "ll/api/event/Listener.h"
+#include "ll/api/utils/WinHelper.h"
 
 namespace ll::event {
 

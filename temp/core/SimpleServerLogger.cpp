@@ -1,16 +1,16 @@
-#include "liteloader/core/SimpleServerLogger.h"
+#include "ll/core/SimpleServerLogger.h"
 
 #include <magic_enum.hpp>
 
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/event/EventManager.h"
-#include "liteloader/api/event/LegacyEvents.h"
-#include "liteloader/api/memory/Hook.h"
+#include "ll/api/LoggerAPI.h"
+#include "ll/api/event/EventManager.h"
+#include "ll/api/event/LegacyEvents.h"
+#include "ll/api/memory/Hook.h"
 #include "mc/CommandRegistry.hpp"
 #include "mc/ItemStack.hpp"
 #include "mc/ServerPlayer.hpp"
 
-#include "liteloader/core/Config.h"
+#include "ll/core/Config.h"
 
 using namespace ll::event::legacy;
 using ll::event::Listener;
@@ -73,7 +73,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     return origin(perm);
 }
 
-// ==> LiteLoader/Main/BuiltinUnlockCmd.cpp
+// ==> LeviLamina/Main/BuiltinUnlockCmd.cpp
 #include "mc/I18n.hpp"
 
 void LogCommandRegistration(

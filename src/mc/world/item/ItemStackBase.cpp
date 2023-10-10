@@ -3,16 +3,12 @@
 
 std::string ItemStackBase::getTypeName() const {
     auto* item = getItem();
-    if (item) {
-        return item->getSerializedName();
-    }
+    if (item) { return item->getSerializedName(); }
     return "";
 }
 
 std::string ItemStackBase::getDescriptionName() const {
     auto* item = getItem();
-    if (item) {
-        return item->buildDescriptionName(*this);
-    }
+    if (item) { return item->buildDescriptionName(*this); }
     return "";
 }

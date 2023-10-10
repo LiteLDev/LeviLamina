@@ -1,13 +1,13 @@
-#include "liteloader/api/event/block/BlockTryPlaceEvent.h"
-#include "liteloader/api/event/EventManager.h"
-#include "liteloader/api/memory/Hook.h"
+#include "ll/api/event/block/BlockTryPlaceEvent.h"
+#include "ll/api/event/EventManager.h"
+#include "ll/api/memory/Hook.h"
 
 #include "mc/BlockSource.hpp"
 #include "mc/ItemUseInventoryTransaction.hpp"
 
-#include "liteloader/api/event/impl/EventImpl.inl"
-#include "liteloader/api/event/impl/EventManagerImpl.inl"
-#include "liteloader/api/event/impl/ListenerImpl.inl"
+#include "ll/api/event/impl/EventImpl.inl"
+#include "ll/api/event/impl/EventManagerImpl.inl"
+#include "ll/api/event/impl/ListenerImpl.inl"
 
 namespace ll::event::block {
 
@@ -17,7 +17,7 @@ BlockTryPlaceEvent::BlockTryPlaceEvent(BlockInstance const& blockInstance, Playe
 LL_GETTER_IMPL(BlockTryPlaceEvent, Player*, player, getPlayer)
 LL_GETTER_IMPL(BlockTryPlaceEvent, BlockInstance, blockInstance, getBlockInstance)
 
-// TODO: fix LiteLoaderBDS#548
+// TODO: fix LeviLamina#548
 LL_AUTO_TYPED_INSTANCE_HOOK(
     BlockTryPlaceEventHook,
     BlockSource,

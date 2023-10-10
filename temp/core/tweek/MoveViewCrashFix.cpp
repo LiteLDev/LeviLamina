@@ -1,10 +1,10 @@
-#include "liteloader/api/memory/Hook.h"
+#include "ll/api/memory/Hook.h"
 
 #include "mc/ChunkViewSource.hpp"
 #include "mc/Level.hpp"
 #include "mc/Player.hpp"
 
-#include "liteloader/core/LiteLoader.h"
+#include "ll/core/LeviLamina.h"
 
 using namespace ll;
 using namespace ll::memory;

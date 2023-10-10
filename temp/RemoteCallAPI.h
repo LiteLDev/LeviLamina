@@ -1,6 +1,6 @@
 #pragma once
-#include "liteloader/api/base/Global.h"
-#include "liteloader/api/utils/WinHelper.h"
+#include "ll/api/base/Global.h"
+#include "ll/api/utils/WinHelper.h"
 #include "mc/Block.hpp"
 #include "mc/BlockActor.hpp"
 #include "mc/BlockInstance.hpp"

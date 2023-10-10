@@ -1,12 +1,12 @@
-﻿#include "liteloader/core/LiteLoader.h"
+﻿#include "ll/core/LeviLamina.h"
 
-#include "liteloader/api/base/Global.h"
-#include "liteloader/api/ScheduleAPI.h"
-#include "liteloader/api/ServerAPI.h"
-#include "liteloader/api/event/server/ServerStartedEvent.h"
-#include "liteloader/api/utils/NetworkHelper.h"
-#include "liteloader/api/utils/StringUtils.h"
-#include "liteloader/api/utils/WinHelper.h"
+#include "ll/api/base/Global.h"
+#include "ll/api/ScheduleAPI.h"
+#include "ll/api/ServerAPI.h"
+#include "ll/api/event/server/ServerStartedEvent.h"
+#include "ll/api/utils/NetworkHelper.h"
+#include "ll/api/utils/StringUtils.h"
+#include "ll/api/utils/WinHelper.h"
 #include "mc/Level.hpp"
 #include "mc/PropertiesSettings.hpp"
 #include "mc/ServerNetworkHandler.hpp"
@@ -26,13 +26,14 @@ using namespace std;
 
 namespace regEdit {
 
+// TODO: remove old reg `LiteLoader`
 bool create(string const& UUID) {
     HKEY  hRoot = HKEY_CURRENT_USER;
     HKEY  hKey;
     DWORD dwDisposition = REG_OPENED_EXISTING_KEY;
     LONG  lRet          = ::RegCreateKeyEx(
         hRoot,
-        L"SOFTWARE\\LiteLoaderBDS",
+        L"SOFTWARE\\LeviLamina",
         0,
         nullptr,
         REG_OPTION_NON_VOLATILE,
@@ -58,7 +59,7 @@ unordered_set<string> getAllValue() {
     DWORD                 dwDisposition = REG_OPENED_EXISTING_KEY;
     LONG                  lRet          = ::RegCreateKeyEx(
         hRoot,
-        L"SOFTWARE\\LiteLoaderBDS",
+        L"SOFTWARE\\LeviLamina",
         0,
         nullptr,
         REG_OPTION_NON_VOLATILE,
@@ -246,6 +247,7 @@ nlohmann::json addAdvancedPie(string const& key, const unordered_map<string, int
 
 nlohmann::json getCustomCharts() {
     nlohmann::json pluginsJson;
+    // TODO: change to new name
     pluginsJson.emplace_back(addSimplePie("liteloaderbds_version", ll::getLoaderVersion().toString(false)));
     pluginsJson.emplace_back(addSimplePie("bds_version", ll::getBdsVersion().substr(1))); // bad
     pluginsJson.emplace_back(addSimplePie("xbox_auth", isOnlineAuth ? "Required" : "Not required"));

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "liteloader/api/event/Listener.h"
+#include "ll/api/event/Listener.h"
 
 namespace ll::event {
 

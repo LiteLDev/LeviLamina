@@ -1,7 +1,7 @@
-#include "liteloader/api/FormUI.h"
+#include "ll/api/FormUI.h"
 
-#include "liteloader/api/Impl/FormPacketHelper.h"
-#include "liteloader/api/utils/fifo_json.h"
+#include "ll/api/Impl/FormPacketHelper.h"
+#include "ll/api/utils/fifo_json.h"
 
 //////////////////////////////// Data ////////////////////////////////
 

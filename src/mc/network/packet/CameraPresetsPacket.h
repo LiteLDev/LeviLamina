@@ -10,7 +10,7 @@
 
 class CameraPresetsPacket : public ::Packet {
 public:
-    CameraPresets mData;
+    CameraPresets                          mData;
     std::vector<CameraPresets::CameraList> mList;
 
     // prevent constructor by default

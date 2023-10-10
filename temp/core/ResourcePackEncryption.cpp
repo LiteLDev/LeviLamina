@@ -1,8 +1,8 @@
-#include "liteloader/api/memory/Hook.h"
+#include "ll/api/memory/Hook.h"
 #include "mc/PackInfoData.hpp"
 #include "mc/ResourcePacksInfoPacket.hpp"
 
-#include "liteloader/core/Config.h"
+#include "ll/core/Config.h"
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ResourcePackEncryptionHook,

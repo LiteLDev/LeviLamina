@@ -8,44 +8,32 @@
 #include "mc/world/level/block/actor/ChestBlockActor.h"
 #include "mc/world/level/dimension/Dimension.h"
 
-#include "liteloader/api/service/GlobalService.h"
+#include "ll/api/service/GlobalService.h"
 
 using ll::Global;
 
 void BlockActor::refresh(optional_ref<class BlockSource> blockSourceRef) {
     setChanged();
-    if (!blockSourceRef.has_value()) {
-        return;
-    }
+    if (!blockSourceRef.has_value()) { return; }
     auto& blockSource{blockSourceRef.get()};
 
     auto& dimension = blockSource.getDimension();
 
     auto mainPacket{getServerUpdatePacket(blockSource)};
 
-    if (mainPacket != nullptr) {
-        dimension.sendPacketForPosition(getPosition(), *mainPacket, nullptr);
-    }
+    if (mainPacket != nullptr) { dimension.sendPacketForPosition(getPosition(), *mainPacket, nullptr); }
 
-    if (getType() != BlockActorType::Chest) {
-        return;
-    }
+    if (getType() != BlockActorType::Chest) { return; }
 
     auto chest = (ChestBlockActor*)(this);
 
-    if (!chest->isLargeChest()) {
-        return;
-    }
+    if (!chest->isLargeChest()) { return; }
     auto pairChest = blockSource.getBlockEntity(chest->getPairedChestPosition());
 
-    if (pairChest == nullptr) {
-        return;
-    }
+    if (pairChest == nullptr) { return; }
     auto subPacket{pairChest->getServerUpdatePacket(blockSource)};
 
-    if (subPacket != nullptr) {
-        dimension.sendPacketForPosition(pairChest->getPosition(), *subPacket, nullptr);
-    }
+    if (subPacket != nullptr) { dimension.sendPacketForPosition(pairChest->getPosition(), *subPacket, nullptr); }
 }
 
 std::unique_ptr<class CompoundTag> BlockActor::saveToNBT() const {
@@ -53,9 +41,7 @@ std::unique_ptr<class CompoundTag> BlockActor::saveToNBT() const {
 
     bool success = save(*res);
 
-    if (success) {
-        return res;
-    }
+    if (success) { return res; }
     return nullptr;
 }
 
@@ -70,8 +56,6 @@ std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt) {
 
 std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt, class BlockPos const& pos) {
     auto b = create(nbt);
-    if (b != nullptr) {
-        b->moveTo(pos);
-    }
+    if (b != nullptr) { b->moveTo(pos); }
     return b;
 }

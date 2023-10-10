@@ -1,6 +1,6 @@
 #pragma once
 
-#include "liteloader/api/i18n/I18nAPI.h"
+#include "ll/api/i18n/I18nAPI.h"
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/server/commands/CommandOutputParameter.h"
 

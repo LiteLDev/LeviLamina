@@ -1,14 +1,14 @@
 /**
  * @brief This file is the implementation of the event.
- * @note Only LiteLoader itself should include this file in the source code of event.
+ * @note Only LeviLamina itself should include this file in the source code of event.
  */
 
 #pragma once
 
-#include "liteloader/api/LLAPI.h"
-#include "liteloader/api/event/Event.h"
-#include "liteloader/api/event/EventManager.h"
-#include "liteloader/api/utils/StringUtils.h"
+#include "ll/api/LLAPI.h"
+#include "ll/api/event/Event.h"
+#include "ll/api/event/EventManager.h"
+#include "ll/api/utils/StringUtils.h"
 
 #define LL_EVENT_IMPL(EventType)                                                                                       \
     namespace ll::event {                                                                                              \

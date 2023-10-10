@@ -1,13 +1,13 @@
 ﻿// #define COMMAND_REGISTRY_EXTRA
 #include <dyncall/dyncall_callback.h>
 
-#include "liteloader/api/DynamicCommandAPI.h"
-#include "liteloader/api/LLAPI.h"
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/ScheduleAPI.h"
-#include "liteloader/api/i18n/I18nAPI.h"
-#include "liteloader/api/memory/Hook.h"
-#include "liteloader/api/utils/SRWLock.h"
+#include "ll/api/DynamicCommandAPI.h"
+#include "ll/api/LLAPI.h"
+#include "ll/api/LoggerAPI.h"
+#include "ll/api/ScheduleAPI.h"
+#include "ll/api/i18n/I18nAPI.h"
+#include "ll/api/memory/Hook.h"
+#include "ll/api/utils/SRWLock.h"
 #include "mc/ActorDefinitionIdentifier.hpp"
 #include "mc/AvailableCommandsPacket.hpp"
 #include "mc/CommandBlockName.hpp"
@@ -23,7 +23,7 @@
 #include "mc/Minecraft.hpp"
 #include "mc/MobEffect.hpp"
 
-#include "liteloader/core/LiteLoader.h"
+#include "ll/core/LeviLamina.h"
 
 using ll::logger;
 using ll::memory::dAccess;
@@ -699,9 +699,9 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
 ) {
     return DynamicCommandInstance::create(name, description, permission, flag1 |= flag2, handle);
 }
-#include "liteloader/api/LLAPI.h"
-#include "liteloader/api/event/LegacyEvents.h"
-#include "liteloader/core/Config.h"
+#include "ll/api/LLAPI.h"
+#include "ll/api/event/LegacyEvents.h"
+#include "ll/core/Config.h"
 
 DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> commandInstance) {
     auto ptr = commandInstance.get();

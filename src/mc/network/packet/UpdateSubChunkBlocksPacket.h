@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/ActorBlockSyncMessage.h"
 #include "mc/network/NetworkBlockPosition.h"
+#include "mc/world/level/ActorBlockSyncMessage.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"

@@ -93,9 +93,9 @@
 
 #include "mc/math/vector/Vecs.h" // for vector types
 
-#include "liteloader/api/base/Macro.h" // for LLAPI
+#include "ll/api/base/Macro.h" // for LLAPI
 
-#include "liteloader/api/memory/MemoryUtils.h" // for dAccess
+#include "ll/api/memory/MemoryUtils.h" // for dAccess
 
 #include "mc/common/wrapper/optional_ref.h" // replace optional<reference_wrapper<>>
 

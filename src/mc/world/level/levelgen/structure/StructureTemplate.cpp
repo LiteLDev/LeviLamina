@@ -5,7 +5,7 @@
 #include "mc/world/level/levelgen/structure/StructureManager.h"
 #include "mc/world/level/levelgen/structure/StructureSettings.h"
 
-#include "liteloader/api/service/GlobalService.h"
+#include "ll/api/service/GlobalService.h"
 
 using ll::Global;
 

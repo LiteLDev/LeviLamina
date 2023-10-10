@@ -24,7 +24,9 @@ public:
         constexpr Item() = delete;
 
         constexpr Item(BaseCircuitComponent* component, int dampening, BlockPos const& pos)
-        : mComponent(component), mDampening(dampening), mPos(pos) {}
+        : mComponent(component),
+          mDampening(dampening),
+          mPos(pos) {}
     };
 
     std::vector<Item> mComponents;

@@ -9,7 +9,7 @@
 #include "mc/world/level/block/utils/BlockSerializationUtils.h"
 #include "mc/world/level/block/utils/VanillaBlockConversion.h"
 
-#include "liteloader/api/service/GlobalService.h"
+#include "ll/api/service/GlobalService.h"
 
 using ll::Global;
 

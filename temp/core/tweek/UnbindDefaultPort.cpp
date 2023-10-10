@@ -1,10 +1,10 @@
 #include <unordered_map>
 
-#include "liteloader/api/memory/Hook.h"
+#include "ll/api/memory/Hook.h"
 #include "mc/PropertiesSettings.hpp"
 #include "mc/SharedConstants.hpp"
 
-#include "liteloader/core/Config.h"
+#include "ll/core/Config.h"
 
 #include <Windows.h>
 using namespace ll;

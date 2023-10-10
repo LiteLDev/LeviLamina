@@ -10,7 +10,7 @@
 
 class ResourcePacksInfoPacket : public ::Packet {
 public:
-    PacksInfoData mData;
+    PacksInfoData                                    mData;
     std::vector<std::pair<std::string, std::string>> mCDNUrls;
 
     // prevent constructor by default

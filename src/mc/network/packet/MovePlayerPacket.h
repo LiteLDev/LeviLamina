@@ -2,12 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/entity/components/PlayerPositionModeComponent.h"
+#include "mc/entity/utilities/ActorType.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/math/Vec2.h"
 #include "mc/math/Vec3.h"
 #include "mc/world/ActorRuntimeID.h"
 #include "mc/world/level/Tick.h"
-#include "mc/entity/utilities/ActorType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"

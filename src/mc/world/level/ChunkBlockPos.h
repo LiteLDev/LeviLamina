@@ -11,7 +11,9 @@ public:
     constexpr ChunkBlockPos() noexcept : x(0), z(0), y(0){};
     template <std::convertible_to<short> T>
     constexpr explicit ChunkBlockPos(T const& all) noexcept
-    : x(static_cast<schar>(all)), z(static_cast<schar>(all)), y(static_cast<short>(all)){};
+    : x(static_cast<schar>(all)),
+      z(static_cast<schar>(all)),
+      y(static_cast<short>(all)){};
 
     template <std::convertible_to<schar> T0, std::convertible_to<short> T1, std::convertible_to<schar> T2>
     constexpr ChunkBlockPos(T0 x, T1 y, T2 z) noexcept

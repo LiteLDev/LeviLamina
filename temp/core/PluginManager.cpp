@@ -1,24 +1,24 @@
-#include "liteloader/core/PluginManager.h"
+#include "ll/core/PluginManager.h"
 
 #include <string>
 #include <unordered_map>
 // #include <ScriptEngine/src/main/Configs.h>
 
-#include "liteloader/api/utils/StringUtils.h"
-#include "liteloader/api/utils/WinHelper.h"
+#include "ll/api/utils/StringUtils.h"
+#include "ll/api/utils/WinHelper.h"
 
 #include "mc/Level.hpp"
 #include "mc/Player.hpp"
 
-#include "liteloader/api/LLAPI.h"
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/ScheduleAPI.h"
-#include "liteloader/api/event/EventManager.h"
-#include "liteloader/api/event/LegacyEvents.h"
-#include "liteloader/api/event/server/ServerStartedEvent.h"
-#include "liteloader/api/i18n/I18nAPI.h"
+#include "ll/api/LLAPI.h"
+#include "ll/api/LoggerAPI.h"
+#include "ll/api/ScheduleAPI.h"
+#include "ll/api/event/EventManager.h"
+#include "ll/api/event/LegacyEvents.h"
+#include "ll/api/event/server/ServerStartedEvent.h"
+#include "ll/api/i18n/I18nAPI.h"
 
-#include "liteloader/core/LiteLoader.h"
+#include "ll/core/LeviLamina.h"
 
 #include <windows.h>
 

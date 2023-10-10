@@ -1,11 +1,11 @@
-#include "liteloader/api/RemoteCallAPI.h"
+#include "ll/api/RemoteCallAPI.h"
 
-#include "liteloader/api/utils/StringUtils.h"
+#include "ll/api/utils/StringUtils.h"
 
-#include "liteloader/api/LLAPI.h"
-#include "liteloader/api/LoggerAPI.h"
+#include "ll/api/LLAPI.h"
+#include "ll/api/LoggerAPI.h"
 
-#include "liteloader/core/LiteLoader.h"
+#include "ll/core/LeviLamina.h"
 
 using ll::logger;
 
@@ -91,7 +91,7 @@ static_assert(RemoteCall::is_supported_type_v<CompoundTag*>);
 
 
 #ifdef DEBUG
-#include "liteloader/api/ScheduleAPI.h"
+#include "ll/api/ScheduleAPI.h"
 #include "mc/Player.hpp"
 inline bool testExtra = ([]() {
     std::vector<std::string> input{"aa", "abcd", "test"};
@@ -132,7 +132,7 @@ std::unique_ptr<CompoundTag> TestSimulatedPlayerLL(Player* player) { return play
 void exportTestSimulatedPlayerLL() {
     RemoteCall::exportAs("TestRemoteCall", "TestSimulatedPlayerLL", TestSimulatedPlayerLL);
 }
-#include "liteloader/api/event/LegacyEvents.h"
+#include "ll/api/event/LegacyEvents.h"
 auto TestRemoteCall = ([]() -> bool {
     std::thread([]() {
         Sleep(5000);

@@ -1,5 +1,5 @@
 #pragma once
-#include "liteloader/api/LLAPI.h"
+#include "ll/api/LLAPI.h"
 #include <string>
 #include <vector>
 

@@ -77,7 +77,7 @@ public:
         };
 
     public:
-        std::optional<TimeOption> mTimeData;
+        std::optional<TimeOption>  mTimeData;
         std::optional<ColorOption> mColor;
 
         // prevent constructor by default
@@ -195,7 +195,7 @@ public:
         };
 
     public:
-        std::optional<uint>        mPreset;
+        std::optional<uint>         mPreset;
         std::optional<EaseOption>   mEase;
         std::optional<PosOption>    mPos;
         std::optional<RotOption>    mRot;
@@ -228,7 +228,7 @@ public:
     };
 
 public:
-    std::optional<SetInstruction> mSetInstruction;
+    std::optional<SetInstruction>  mSetInstruction;
     std::optional<FadeInstruction> mFadeInstruction;
 
     // prevent constructor by default

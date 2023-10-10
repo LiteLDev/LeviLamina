@@ -1,15 +1,15 @@
-#include "liteloader/api/event/block/BlockChangedEvent.h"
-#include "liteloader/api/event/EventManager.h"
+#include "ll/api/event/block/BlockChangedEvent.h"
+#include "ll/api/event/EventManager.h"
 
 #include "mc/Block.hpp"
 #include "mc/BlockSource.hpp"
 #include "mc/Level.hpp"
 
-#include "liteloader/api/memory/Hook.h"
+#include "ll/api/memory/Hook.h"
 
-#include "liteloader/api/event/impl/EventImpl.inl"
-#include "liteloader/api/event/impl/EventManagerImpl.inl"
-#include "liteloader/api/event/impl/ListenerImpl.inl"
+#include "ll/api/event/impl/EventImpl.inl"
+#include "ll/api/event/impl/EventManagerImpl.inl"
+#include "ll/api/event/impl/ListenerImpl.inl"
 
 namespace ll::event::block {
 

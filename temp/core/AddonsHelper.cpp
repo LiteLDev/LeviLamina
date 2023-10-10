@@ -1,15 +1,15 @@
-#include "liteloader/core/AddonsHelper.h"
-#include "liteloader/api/LLAPI.h"
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/RegCommandAPI.h"
-#include "liteloader/api/event/LegacyEvents.h"
-#include "liteloader/api/event/server/RegisterCommandEvent.h"
-#include "liteloader/api/i18n/I18nAPI.h"
-#include "liteloader/api/service/GlobalService.h"
-#include "liteloader/api/utils/FileHelper.h"
-#include "liteloader/api/utils/WinHelper.h"
-#include "liteloader/api/utils/fifo_json.h"
-#include "liteloader/core/Config.h"
+#include "ll/core/AddonsHelper.h"
+#include "ll/api/LLAPI.h"
+#include "ll/api/LoggerAPI.h"
+#include "ll/api/RegCommandAPI.h"
+#include "ll/api/event/LegacyEvents.h"
+#include "ll/api/event/server/RegisterCommandEvent.h"
+#include "ll/api/i18n/I18nAPI.h"
+#include "ll/api/service/GlobalService.h"
+#include "ll/api/utils/FileHelper.h"
+#include "ll/api/utils/WinHelper.h"
+#include "ll/api/utils/fifo_json.h"
+#include "ll/core/Config.h"
 #include "mc/ColorFormat.hpp"
 #include "mc/CommandOrigin.hpp"
 #include "mc/CommandOutput.hpp"
@@ -498,7 +498,7 @@ public:
     static void setup(CommandRegistry* registry) {
         registry->registerCommand(
             "addons",
-            "LiteLoaderBDS Addons Helper (Restart required after addon changes)",
+            "LeviLamina Addons Helper (Restart required after addon changes)",
             CommandPermissionLevel::GameMasters,
             CommandFlagValue::None,
             CommandFlagValue::NotCheat

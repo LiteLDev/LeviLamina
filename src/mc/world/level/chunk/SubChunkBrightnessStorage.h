@@ -13,7 +13,7 @@ public:
     struct LightPair {
     public:
         uchar blockLight : 4;
-        uchar skyLight : 4;
+        uchar skyLight   : 4;
     };
 
 public:

@@ -27,13 +27,13 @@ public:
 
     CommandParameterData(
         const Bedrock::typeid_t<CommandRegistry>& typeIndex,
-        ParseFn                            parser,
-        std::string_view                   name,
-        ::CommandParameterDataType         type,
-        char const*                        enumName,
-        int                                offset,
-        bool                               optional,
-        int                                flag_offset
+        ParseFn                                   parser,
+        std::string_view                          name,
+        ::CommandParameterDataType                type,
+        char const*                               enumName,
+        int                                       offset,
+        bool                                      optional,
+        int                                       flag_offset
     )
     : mTypeIndex(typeIndex),
       mParse(parser),

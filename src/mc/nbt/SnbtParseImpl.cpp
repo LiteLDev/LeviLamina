@@ -1,4 +1,4 @@
-#include "liteloader/api/utils/Base64.h"
+#include "ll/api/utils/Base64.h"
 #include "mc/nbt/CompoundTag.h"
 
 std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s);
@@ -198,9 +198,7 @@ std::optional<std::string> parseString(std::string_view& s) {
             if (starts == '\"') {
                 auto ans = std::string{res.begin(), res.end()};
 
-                if (s.starts_with(" /*BASE64*/")) {
-                    return ll::base64::Decode(ans);
-                }
+                if (s.starts_with(" /*BASE64*/")) { return ll::base64::Decode(ans); }
 
                 return ans;
             }

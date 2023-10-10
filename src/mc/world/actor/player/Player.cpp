@@ -12,11 +12,11 @@
 #include "mc/network/NetworkPeer.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/world/Minecraft.h"
 #include "mc/server/ServerLevel.h"
+#include "mc/world/Minecraft.h"
 #include "mc/world/systems/NetworkSystem.h"
 
-#include "liteloader/api/service/GlobalService.h"
+#include "ll/api/service/GlobalService.h"
 
 using ll::Global;
 
@@ -30,16 +30,12 @@ std::string Player::getDeviceId() const {
 
 std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
     auto peer = Global<Minecraft>->getNetworkSystem().getPeerForUser(getNetworkIdentifier());
-    if (!peer) {
-        return std::nullopt;
-    }
+    if (!peer) { return std::nullopt; }
     return peer->getNetworkStatus();
 }
 
 std::string Player::getRealName() const {
     auto certificate = getCertificate();
-    if (!certificate) {
-        return getName();
-    }
+    if (!certificate) { return getName(); }
     return ExtendedCertificate::getIdentityName(*certificate);
 }

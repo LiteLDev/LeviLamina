@@ -14,13 +14,13 @@ public:
     };
 
 public:
-    std::string mIdentifier;
-    std::string mParentPreset;
-    std::optional<Vec3> mPos;
-    std::optional<float> mYaw;
-    std::optional<float> mPitch;
+    std::string                  mIdentifier;
+    std::string                  mParentPreset;
+    std::optional<Vec3>          mPos;
+    std::optional<float>         mYaw;
+    std::optional<float>         mPitch;
     std::optional<AudioListener> mListener;
-    std::optional<bool> playEffect;
+    std::optional<bool>          playEffect;
 
     // prevent constructor by default
     CameraPreset();

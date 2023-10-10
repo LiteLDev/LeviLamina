@@ -20,7 +20,8 @@ public:
     [[nodiscard]] class CommandOrigin& getOrigin() const { return *mOrigin; }
 
     template <typename T>
-    CommandContext(T&& x, std::unique_ptr<CommandOrigin> ori) : mCommand(std::forward<T>(x)), mOrigin(std::move(ori)){};
+    CommandContext(T&& x, std::unique_ptr<CommandOrigin> ori) : mCommand(std::forward<T>(x)),
+                                                                mOrigin(std::move(ori)){};
 
 public:
     // NOLINTBEGIN

@@ -2,14 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/network/ForceBlockNetworkIdsAreHashes.h"
-#include "mc/options/EducationEditionOfferValue.h"
 #include "mc/options/EduSharedUriResource.h"
+#include "mc/options/EducationEditionOfferValue.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/EducationLevelSettings.h"
 #include "mc/world/level/LevelSeed64.h"
+#include "mc/world/level/PermissionsHandler.h"
 #include "mc/world/level/SpawnSettings.h"
 #include "mc/world/level/storage/GameRules.h"
-#include "mc/world/level/PermissionsHandler.h"
-#include "mc/world/level/EducationLevelSettings.h"
-#include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
 #include "mc/client/social/GamePublishSetting.h"

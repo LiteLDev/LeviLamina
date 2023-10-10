@@ -2,10 +2,10 @@
 
 /**
  * @brief This file is the implementation of the event manager.
- * @note Only LiteLoader itself should include this file in the source code of event.
+ * @note Only LeviLamina itself should include this file in the source code of event.
  */
 
-#include "liteloader/api/event/EventManager.h"
+#include "ll/api/event/EventManager.h"
 
 namespace ll::event {
 

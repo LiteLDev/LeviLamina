@@ -7,11 +7,11 @@
 #include <regex>
 #include <unordered_map>
 
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/utils/Hash.h"
+#include "ll/api/LoggerAPI.h"
+#include "ll/api/utils/Hash.h"
 #include "mc/Player.hpp"
 
-#include "liteloader/core/Config.h"
+#include "ll/core/Config.h"
 
 #define LOGGER_CURRENT_TITLE "ll_plugin_logger_title"
 #define LOGGER_CURRENT_FILE  "ll_plugin_logger_file"

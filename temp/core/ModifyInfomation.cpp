@@ -1,10 +1,10 @@
-#include "liteloader/api/LLAPI.h"
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/ServerAPI.h"
-#include "liteloader/api/memory/Hook.h"
+#include "ll/api/LLAPI.h"
+#include "ll/api/LoggerAPI.h"
+#include "ll/api/ServerAPI.h"
+#include "ll/api/memory/Hook.h"
 
-#include "liteloader/core/Config.h"
-#include "liteloader/core/Version.h"
+#include "ll/core/Config.h"
+#include "ll/core/Version.h"
 #include <regex>
 #include <string>
 
@@ -26,7 +26,7 @@ LL_AUTO_STATIC_HOOK(
            fmt::format(
                ll::globalConfig.colorLog ? fg(fmt::color::light_sky_blue) | fmt::emphasis::bold | fmt::emphasis::italic
                                          : fmt::text_style(),
-               "LiteLoaderBDS " LITELOADER_FILE_VERSION_STRING
+               "LeviLamina " LL_FILE_VERSION_STRING
            );
 }
 
@@ -122,7 +122,7 @@ LL_AUTO_STATIC_HOOK(
     uint   a8
 ) {}
 
-#include "liteloader/core/LiteLoader.h"
+#include "ll/core/LeviLamina.h"
 #include "mc/BedrockLog.hpp"
 namespace ModifyInfomation {
 int telemetryText = 0;

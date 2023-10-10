@@ -24,10 +24,10 @@ copies or substantial portions of the Software.
 #include <string>
 #include <unordered_map>
 
-#include "liteloader/api/base/Global.h"
-#include "liteloader/api/LLAPI.h"
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/utils/WinHelper.h"
+#include "ll/api/base/Global.h"
+#include "ll/api/LLAPI.h"
+#include "ll/api/LoggerAPI.h"
+#include "ll/api/utils/WinHelper.h"
 #include "mc/AABB.hpp"
 #include "mc/BlockInstance.hpp"
 #include "mc/BlockLegacy.hpp"

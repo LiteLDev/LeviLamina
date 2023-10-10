@@ -1,5 +1,5 @@
 #pragma once
-#include "liteloader/api/base/Global.h"
+#include "ll/api/base/Global.h"
 #include <string>
 #include <unordered_map>
 
