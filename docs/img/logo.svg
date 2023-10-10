@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 16 16" shape-rendering="crispEdges">
+<metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
+<path stroke="#000000" d="M7 1h1M6 2h1M8 2h1M5 3h1M9 3h1M4 4h1M10 4h1M5 5h1M11 5h1M6 6h1M12 6h1M7 7h1M13 7h1M6 8h1M8 8h1M14 8h1M7 9h1M9 9h1M13 9h1M10 10h1M12 10h1M11 11h1" />
+<path stroke="#9c9c9c" d="M7 2h1" />
+<path stroke="#a7a7a7" d="M6 3h1M9 5h1M10 6h1M12 9h1" />
+<path stroke="#bcbcbc" d="M7 3h2M12 8h1" />
+<path stroke="#808080" d="M5 4h1M6 5h1M7 6h1M9 6h1M8 7h1M9 8h1M10 9h1M11 10h1" />
+<path stroke="#7a7a7a" d="M6 4h1" />
+<path stroke="#9a9a9a" d="M7 4h1" />
+<path stroke="#aeaeae" d="M8 4h1M11 7h1" />
+<path stroke="#c4c4c4" d="M9 4h1M10 5h1M11 6h1" />
+<path stroke="#5c5b5e" d="M7 5h1" />
+<path stroke="#888888" d="M8 5h1M10 7h1" />
+<path stroke="#5c5c5d" d="M8 6h1M9 7h1M10 8h1" />
+<path stroke="#cdcdcd" d="M12 7h1" />
+<path stroke="#56342b" d="M7 8h1" />
+<path stroke="#9b9b9b" d="M11 8h1" />
+<path stroke="#c7c7c7" d="M13 8h1" />
+<path stroke="rgba(36,36,36,0.027450980392156862)" d="M4 9h1M6 11h1" />
+<path stroke="rgba(15,7,8,0.9764705882352941)" d="M5 9h1" />
+<path stroke="#83503c" d="M6 9h1" />
+<path stroke="#7b7b79" d="M11 9h1" />
+<path stroke="rgba(0,0,0,0.00784313725490196)" d="M3 10h1" />
+<path stroke="#080301" d="M4 10h1" />
+<path stroke="#935949" d="M5 10h1" />
+<path stroke="rgba(14,7,2,0.984313725490196)" d="M6 10h1" />
+<path stroke="#070201" d="M3 11h1" />
+<path stroke="#935946" d="M4 11h1" />
+<path stroke="#0a0202" d="M5 11h1" />
+<path stroke="#04040b" d="M2 12h1" />
+<path stroke="#8c5544" d="M3 12h1" />
+<path stroke="#060102" d="M4 12h1" />
+<path stroke="rgba(0,0,0,0.011764705882352941)" d="M5 12h1" />
+<path stroke="#06040c" d="M1 13h1" />
+<path stroke="#895142" d="M2 13h1" />
+<path stroke="#050507" d="M3 13h1" />
+<path stroke="#020715" d="M0 14h1" />
+<path stroke="#875242" d="M1 14h1" />
+<path stroke="#040809" d="M2 14h1" />
+<path stroke="#07060c" d="M0 15h1" />
+<path stroke="#08070f" d="M1 15h1" />
+</svg>

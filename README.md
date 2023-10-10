@@ -1,9 +1,9 @@
+> [!IMPORTANT]
+> Looking for LiteLoaderBDS, the predecessor of LeviLamina? Go to <https://github.com/LiteLDev/LiteLoaderBDSv2>.
+
 # LeviLamina
 
 ![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)&nbsp;[![中文](https://img.shields.io/badge/简体中文-informational?style=for-the-badge)](README.zh.md)
-
-> [!IMPORTANT]
-> Looking for LiteLoaderBDS, the predecessor of LeviLamina? Go to <https://github.com/LiteLDev/LiteLoaderBDSv2>.
 
 A lightweight, modular and versatile plugin loader for Minecraft Bedrock Server BDS, formerly known as LeviLamina
 
