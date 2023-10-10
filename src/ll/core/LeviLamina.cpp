@@ -183,11 +183,11 @@ void printLogo() {
 
 */
     logger.info(R"(                                                                       )");
-    logger.info(R"(         _               _ _                    _                      )");
-    logger.info(R"(        | |    _____   _(_) |    __ _ _ __ ___ (_)_ __   __ _          )");
-    logger.info(R"(        | |   / _ \ \ / / | |   / _` | '_ ` _ \| | '_ \ / _` |         )");
-    logger.info(R"(        | |__|  __/\ V /| | |__| (_| | | | | | | | | | | (_| |         )");
-    logger.info(R"(        |_____\___| \_/ |_|_____\__,_|_| |_| |_|_|_| |_|\__,_|         )");
+    logger.info(R"(        _               _ _                    _                       )");
+    logger.info(R"(       | |    _____   _(_) |    __ _ _ __ ___ (_)_ __   __ _           )");
+    logger.info(R"(       | |   / _ \ \ / / | |   / _` | '_ ` _ \| | '_ \ / _` |          )");
+    logger.info(R"(       | |__|  __/\ V /| | |__| (_| | | | | | | | | | | (_| |          )");
+    logger.info(R"(       |_____\___| \_/ |_|_____\__,_|_| |_| |_|_|_| |_|\__,_|          )");
     logger.info(R"(                                                                       )");
     logger.info(R"(       --------   Light-Weight BDS Plugin Loader   ----------          )");
     logger.info(R"(                                                                       )");
