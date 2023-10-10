@@ -175,13 +175,19 @@ void checkRunningBDS() {
 
 void printLogo() {
     if (!ll::globalConfig.enableWelcomeText) return;
+/*
 
+
+
+
+
+*/
     logger.info(R"(                                                                       )");
-    logger.info(R"(          _     _ _       _                    _                       )");
-    logger.info(R"(         | |   (_) |_ ___| |    ___   __ _  __| | ___ _ __             )");
-    logger.info(R"(         | |   | | __/ _ \ |   / _ \ / _` |/ _` |/ _ \ '__|            )");
-    logger.info(R"(         | |___| | ||  __/ |__| (_) | (_| | (_| |  __/ |               )");
-    logger.info(R"(         |_____|_|\__\___|_____\___/ \__,_|\__,_|\___|_|               )");
+    logger.info(R"(         _               _ _                    _                      )");
+    logger.info(R"(        | |    _____   _(_) |    __ _ _ __ ___ (_)_ __   __ _          )");
+    logger.info(R"(        | |   / _ \ \ / / | |   / _` | '_ ` _ \| | '_ \ / _` |         )");
+    logger.info(R"(        | |__|  __/\ V /| | |__| (_| | | | | | | | | | | (_| |         )");
+    logger.info(R"(        |_____\___| \_/ |_|_____\__,_|_| |_| |_|_|_| |_|\__,_|         )");
     logger.info(R"(                                                                       )");
     logger.info(R"(       --------   Light-Weight BDS Plugin Loader   ----------          )");
     logger.info(R"(                                                                       )");
