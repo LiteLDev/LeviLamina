@@ -40,7 +40,7 @@ else
     add_requires("bdslibrary 1.20.30.02")
 end
 
-target("LiteLoader")
+target("levilamina_core")
     set_license("LGPL-3")
     set_kind("shared")
     set_languages("c++20")
