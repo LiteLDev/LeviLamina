@@ -1,15 +1,15 @@
-# LiteLoaderBDS
+# LeviLamina
 
 ![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)&nbsp;[![中文](https://img.shields.io/badge/简体中文-informational?style=for-the-badge)](README.zh.md)
 
 > [!IMPORTANT]
-> LiteLoaderBDS 3 is under development! For production use, go to <https://github.com/LiteLDev/LiteLoaderBDSv2>.
+> Looking for LeviLamina, the predecessor of LeviLamina? Go to <https://github.com/LiteLDev/LeviLaminav2>.
 
-An epoch-making cross-language plugin loader for Minecraft Bedrock Dedicated Server (BDS)
+A lightweight, modular and versatile plugin loader for Minecraft Bedrock Server BDS, formerly known as LeviLamina
 
-LiteLoaderBDS is an unofficial plugin loader that offers essential API support for the Bedrock Dedicated Server (BDS). It boasts an extensive API, a plethora of utility interfaces, a robust event system, and comprehensive basic interface support.
+LeviLamina is an unofficial plugin loader that offers essential API support for the Bedrock Dedicated Server (BDS). It boasts an extensive API, a plethora of utility interfaces, a robust event system, and comprehensive basic interface support.
 
-LiteLoader presents an expansive API, a powerful event system, and an abundance of encapsulated development infrastructure interfaces, laying a sturdy groundwork for enhancing the Bedrock Edition BDS with additional gameplay features and functionalities. Through plugins, extending BDS functionality becomes effortless, with a user-friendly development process and adaptable approach.
+LeviLamina presents an expansive API, a powerful event system, and an abundance of encapsulated development infrastructure interfaces, laying a sturdy groundwork for enhancing the Bedrock Edition BDS with additional gameplay features and functionalities. Through plugins, extending BDS functionality becomes effortless, with a user-friendly development process and adaptable approach.
 
 Developers can effortlessly write plugins in languages such as C++, JavaScript, Lua, Python, C#, and others. This seamless integration enables them to effortlessly expand and personalize BDS functionality, facilitating an intuitive learning experience and unparalleled flexibility.
 
@@ -17,7 +17,7 @@ For more information, please refer to [the documentation](https://v3.docs.litebd
 
 ## Security
 
-LiteLoaderBDS (hereinafter referred to as "this software") is developed and 
+LeviLamina (hereinafter referred to as "this software") is developed and 
 provided by LiteLDev (hereinafter referred to as "the developer"). This software is designed 
 to help users manage and install various software packages, but is not responsible for any 
 content, quality, functionality, security or legality of any software package. Users should 
@@ -43,7 +43,7 @@ If you have any questions or comments about this disclaimer, please contact the 
 
 ## Install
 
-This project uses [Lip](https://github.com/LipPkg/Lip). Go check them out if you don't have them locally installed.
+This project uses [lip](https://github.com/lippkg/lip). Go check them out if you don't have them locally installed.
 
 First, create a new directory for your Minecraft server and enter it:
 
@@ -52,42 +52,42 @@ $ mkdir myserver
 $ cd myserver
 ```
 
-Then, install LiteLoaderBDS using Lip:
+Then, install LeviLamina bundled with Minecraft Bedrock Server using lip:
 
 ```sh
-$ lip install github.com/tooth-hub/liteloaderbds
+$ lip install github.com/tooth-hub/corepack
 ```
 
 For more information, please refer to [the documentation](https://v3.docs.litebds.com).
 
 ### Updating
 
-Considering data security, we do not provide an update method. If you would like to update LiteLoaderBDS, please install the new version somewhere else and copy the files shown below to your server directory:
+Considering data security, we do not provide an update method. If you would like to update LeviLamina, please install the new version somewhere else and copy the files shown below to your server directory:
 
 - `worlds/`
 - `server.properties`
 
 ## Usage
 
-To start the server, simply run `bedrock_server.exe`: 
+To start the server, simply run `bedrock_server_mod.exe`: 
 
 ```sh
-$ ./bedrock_server.exe
+$ ./bedrock_server_mod.exe
 ```
 
 For more information, please refer to [the documentation](https://v3.docs.litebds.com).
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LiteLoaderBDS/issues/new/choose) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LeviLamina/issues/new/choose) or submit PRs.
 
-LiteLoaderBDS follows the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) Code of Conduct.
+LeviLamina follows the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) Code of Conduct.
 
 ## Contributors
 
 This project exists thanks to all the people who contribute.
 
-![Contributors](https://contrib.rocks/image?repo=LiteLDev/LiteLoaderBDS)
+![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
 
 ## License
 
