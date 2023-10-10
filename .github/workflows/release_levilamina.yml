@@ -18,7 +18,7 @@ jobs:
             .xmake
           key: xmake-levilamina-windows-x64-${{ github.sha }}
           restore-keys: |
-            levilamina-xmake-windows-x64
+            xmake-levilamina-windows-x64-
 
       - run: |
           xmake repo -u
