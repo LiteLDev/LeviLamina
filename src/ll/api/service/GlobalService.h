@@ -50,6 +50,8 @@ public:
     explicit operator U*() {
         return static_cast<U*>(value);
     }
+    explicit operator bool() { return value != nullptr; }
+    bool has_value() { return value != nullptr; }
 };
 
 template <IsGlobalService T>
