@@ -212,7 +212,7 @@ void printLogo() {
 }
 
 void checkDevMode() {
-    if (ll::globalConfig.debugMode) logger.warn(tr("ll.main.warning.inDevMode"));
+    if (ll::isDebugMode()) logger.warn(tr("ll.main.warning.inDevMode"));
 }
 
 void checkBetaVersion() {

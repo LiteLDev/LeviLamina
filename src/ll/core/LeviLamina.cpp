@@ -12,16 +12,12 @@
 #include "ll/api/utils/SehTranslator.h"
 #include "ll/api/utils/StringUtils.h"
 
-// #include "ll/api/event/LegacyEvents.h"
-// #include "ll/api/event/server/ServerStartedEvent.h"
-// #include "ll/api/event/server/ServerStoppedEvent.h"
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
 #include "ll/core/Loader.h"
 #include "ll/core/Version.h"
 // #include "ll/core/AddonsHelper.h"
 // #include "ll/core/SimpleServerLogger.h"
-// #include "ll/core/PlayerDeathPositions.h"
 
 #include "mc/world/Minecraft.h"
 
@@ -175,13 +171,7 @@ void checkRunningBDS() {
 
 void printLogo() {
     if (!ll::globalConfig.enableWelcomeText) return;
-/*
 
-
-
-
-
-*/
     logger.info(R"(                                                                       )");
     logger.info(R"(        _               _ _                    _                       )");
     logger.info(R"(       | |    _____   _(_) |    __ _ _ __ ___ (_)_ __   __ _           )");
@@ -264,8 +254,8 @@ void registerBStats();
 }
 
 void leviLaminaMain() {
-    // Set global SEH-Exception handler
-    auto oldSeTranslator = _set_se_translator(seh_exception::TranslateSEHtoCE);
+    // If SEH Protection is not enabled (Debug mode), restore old SE translator
+    if (ll::isDebugMode()) _set_se_translator(seh_exception::TranslateSEHtoCE);
 
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
@@ -289,9 +279,6 @@ void leviLaminaMain() {
     // Decompress resource packs
     decompressResourcePacks();
 
-    // If SEH Protection is not enabled (Debug mode), restore old SE translator
-    if (!ll::isDebugMode()) _set_se_translator(oldSeTranslator);
-
     // Update default language
     if (i18n && ll::globalConfig.language != "system") { i18n->defaultLocaleName = ll::globalConfig.language; }
 
@@ -313,7 +300,7 @@ void leviLaminaMain() {
 
     // Rename Window
     HWND         hwnd = GetConsoleWindow();
-    std::wstring s    = L"Bedrock Dedicated Server " + ll::StringUtils::str2wstr(ll::getBdsVersion());
+    std::wstring s    = ll::StringUtils::str2wstr("Bedrock Dedicated Server " + ll::getBdsVersion());
     SetWindowText(hwnd, s.c_str());
 
     // Register Exit Event Handler.
@@ -343,12 +330,6 @@ void leviLaminaMain() {
 
     // Register BStats
     // bstats::registerBStats();
-
-    // Register Cleanup
-    // ServerStoppedEvent::subscribe([](ServerStoppedEvent const&) {
-    //     EndScheduleSystem();
-    //     return true;
-    // });
 }
 
 using namespace ll::memory;
@@ -367,4 +348,4 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Normal, "main", int, int a
     return origin(argc, argv);
 }
 
-[[maybe_unused]] BOOL WINAPI DllMain(HMODULE, DWORD /*ul_reason_for_call*/, LPVOID) { return TRUE; }
+[[maybe_unused]] BOOL WINAPI DllMain(HMODULE, DWORD , LPVOID) { return TRUE; }

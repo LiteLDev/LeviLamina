@@ -74,10 +74,6 @@ std::string CommandRegistry::getCommandFullName(std::string const& name) {
 }
 
 bool CommandRegistry::unregisterCommand(std::string const& name) {
-    // if (!ll::globalConfig.debugMode) {
-    //     ll::logger.error("unregister command is only enabled in debug mode");
-    //     return false;
-    // }
     ll::logger.warn("Unregister Command \"{}\"!", name);
     try {
         auto command = getCommandFullName(name);
