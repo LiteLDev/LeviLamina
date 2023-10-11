@@ -524,6 +524,7 @@ std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command
 
 DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicCommandInstance> commandInstance) {
     std::string name = commandInstance->getCommandName();
+    logger.info("Setting up command \"{}\"", name);
 #ifdef DEBUG
     logger.info("Setting up command \"{}\"", name);
 #endif // DEBUG

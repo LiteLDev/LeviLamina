@@ -1,4 +1,4 @@
-
+#define DEBUG
 #ifdef DEBUG
 
 #include "liteloader/api/LLAPI.h"
@@ -88,9 +88,7 @@ void setupTestParamCommand() {
            CommandOrigin const&                                     origin,
            CommandOutput&                                           output,
            std::unordered_map<std::string, DynamicCommand::Result>& results) {
-            for (auto& [name, result] : results) {
-                output.success(result.toDebugString());
-            }
+            for (auto& [name, result] : results) { output.success(result.toDebugString()); }
         },
         CommandPermissionLevel::Any
     );
@@ -110,7 +108,7 @@ void setupTestEnumCommand() {
         {
             // parameters(type, name, [optional], [enumOptions(also enumName)], [identifier])
             // identifier: used to identify unique parameter data, if idnetifier is not set,
-            //   it is set to be the same as enumOptions or name (identifier = enumOptions.empty() ? name:enumOptions)
+            // it is set to be the same as enumOptions or name (identifier = enumOptions.empty() ? name:enumOptions)
             Param("testEnum", ParamType::Enum, "TestEnum1", "", CommandParameterOption::EnumAutocompleteExpansion),
             Param("testEnum", ParamType::Enum, "TestEnum2", "", CommandParameterOption::EnumAutocompleteExpansion),
             Param("testInt", ParamType::Int, true),
@@ -128,16 +126,13 @@ void setupTestEnumCommand() {
             auto& action = results["testEnum"].getRaw<std::string>();
             switch (do_hash(action.c_str())) {
             case do_hash("add"):
-                if (results["testInt"].isSet)
-                    output.success(fmt::format("add {}", results["testInt"].getRaw<int>()));
-                else
-                    output.success("add nothing");
+                if (results["testInt"].isSet) output.success(fmt::format("add {}", results["testInt"].getRaw<int>()));
+                else output.success("add nothing");
                 break;
             case do_hash("remove"):
                 if (results["testInt"].isSet)
                     output.success(fmt::format("remove {}", results["testInt"].getRaw<int>()));
-                else
-                    output.success("remove nothing");
+                else output.success("remove nothing");
                 break;
             case do_hash("list"):
                 output.success("list");
@@ -209,8 +204,7 @@ void setupRemoveCommand() {
                         ll::logger.info("unregister command " + fullName);
                         ((DynamicCommandInstance*)0)
                             ->setSoftEnum("CommandNames", ll::Global<CommandRegistry>->getEnumValues("CommandName"));
-                    } else
-                        ll::logger.error("error in unregister command " + fullName);
+                    } else ll::logger.error("error in unregister command " + fullName);
                 },
                 20
             );
@@ -221,8 +215,7 @@ void setupRemoveCommand() {
             DynamicCommand::unregisterCommand(fullName);
             output.success("unregister command " + fullName);
             cmd.getInstance()->setSoftEnum("CommandNames", ll::Global<CommandRegistry>->getEnumValues("CommandName"));
-        } else
-            output.error("error in unregister command " + fullName);
+        } else output.error("error in unregister command " + fullName);
     });
     command->setSoftEnum("CommandNames", ll::Global<CommandRegistry>->getEnumValues("CommandName"));
     DynamicCommand::setup(std::move(command));
@@ -267,21 +260,14 @@ void onEnumExecute(
         if (std::find(softEnumNames.begin(), softEnumNames.end(), enumName) != softEnumNames.end()) {
             found = true;
             output.successf("§eSoft Enum §l{}§r§e Values:", enumName);
-            for (auto& val : ll::Global<CommandRegistry>->getSoftEnumValues(enumName)) {
-                output.success(val);
-            }
+            for (auto& val : ll::Global<CommandRegistry>->getSoftEnumValues(enumName)) { output.success(val); }
         }
-        if (!found)
-            output.errorf("Enum or Soft Enum \"{}\" not found", enumName);
+        if (!found) output.errorf("Enum or Soft Enum \"{}\" not found", enumName);
     } else {
         output.success("§eEnum Names:");
-        for (auto& val : ll::Global<CommandRegistry>->getEnumNames()) {
-            output.success(val);
-        }
+        for (auto& val : ll::Global<CommandRegistry>->getEnumNames()) { output.success(val); }
         output.success("§eSoft Enum Names:");
-        for (auto& val : ll::Global<CommandRegistry>->getSoftEnumNames()) {
-            output.success(val);
-        }
+        for (auto& val : ll::Global<CommandRegistry>->getSoftEnumNames()) { output.success(val); }
     }
 }
 
@@ -307,7 +293,7 @@ void setupEnumCommand() {
 // echo command
 void setupEchoCommand() {
     auto command = DynamicCommand::createCommand("echo", "show message", CommandPermissionLevel::Any);
-    command->addOverload(command->mandatory("text", ParamType::RawText));
+    command->addOverload(command->mandatory("text", ParamType::String));
     command->setCallback([](DynamicCommand const&                                    cmd,
                             CommandOrigin const&                                     origin,
                             CommandOutput&                                           output,
@@ -325,5 +311,28 @@ void setupEchoCommand() {
 // setupEnumCommand();
 // setupEchoCommand();
 
+#include "mc/server/commands/ServerCommands.h"
+
+LL_AUTO_STATIC_HOOK(
+    ServerCommandsService,
+    HookPriority::Normal,
+    ServerCommands::setupStandardServer,
+    void,
+    Minecraft&             server,
+    std::string const&     networkCommands,
+    std::string const&     networkTestCommands,
+    class PermissionsFile* permissionsFile
+) {
+    origin(server, networkCommands, networkTestCommands, permissionsFile);
+    // Test DynamicCommandRegistry
+    
+    // setupRemoveCommand();
+    // setupTestEnumCommand();
+    // setupTestParamCommand();
+    // setupExampleCommand();
+    // setupEnumCommand();
+    setupEchoCommand();
+    DynamicCommand::onServerCommandsRegister(server.getCommands().getRegistry());
+}
 
 #endif // DEBUG
