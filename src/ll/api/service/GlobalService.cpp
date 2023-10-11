@@ -60,6 +60,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         (RakNet::RakPeer*)((RakNetConnector&)(*ll::Global<Minecraft>->getNetworkSystem().getRemoteConnector()))
             .getPeer()
     );
+    ll::Global<StructureManager>.init(ll::Global<Minecraft>->getStructureManager().get());
     ll::Global<Level>.init(ll::Global<Minecraft>->getLevel());
     ll::Global<ServerLevel>.init((ServerLevel*)ll::Global<Level>);
     origin(ins);
@@ -75,11 +76,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     std::string const& a1,
     bool               a2
 ) {
-    static bool initd = false;
-    if (!initd) {
-        initd = true;
-        ll::Global<ServerNetworkHandler>.init(this);
-    }
+    ll::Global<ServerNetworkHandler>.init(this);
+    unhook();
     origin(a1, a2);
 }
 
@@ -106,6 +104,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     bool const
 ) {
     ll::Global<PropertiesSettings>.init(this);
+    unhook();
     return origin();
 }
 
@@ -122,6 +121,3 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 }
 
 } // namespace
-
-// fixme: remove or implement
-template class ll::GlobalService<StructureManager>;

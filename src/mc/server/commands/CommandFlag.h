@@ -52,4 +52,8 @@ public:
         value = rhs.value | value;
         return *this;
     }
+    CommandFlag& operator|=(CommandFlagValue const& rhs) {
+        value = rhs | value;
+        return *this;
+    }
 };

@@ -20,12 +20,6 @@ public:
 
     constexpr optional_ref(std::nullptr_t) noexcept {}
 
-    // template <typename U>
-    //     requires(IsCompatibleV<U>)
-    // constexpr optional_ref(std::optional<U> const& o)
-    //     requires(std::is_const_v<T>)
-    // : ptr_(o ? &*o : nullptr) {}
-
     template <typename U>
         requires(IsCompatibleV<U>)
     constexpr optional_ref(std::optional<U>& o) : ptr_(o ? &*o : nullptr) {}
@@ -33,10 +27,6 @@ public:
     template <typename U>
         requires(IsCompatibleV<U>)
     constexpr optional_ref(U* p) : ptr_(p) {}
-
-    // template <typename U>
-    //     requires(IsCompatibleV<U>)
-    // constexpr optional_ref(U const& r) : ptr_(std::addressof(r)) {}
 
     template <typename U>
         requires(IsCompatibleV<U>)
@@ -57,11 +47,11 @@ public:
     [[nodiscard]] constexpr T* as_ptr() const noexcept { return ptr_; }
 
     constexpr T* operator->() const {
-        if (!has_value()) { throw std::bad_optional_access{}; }
+        if (!has_value()) { throw std::runtime_error{"bas optional_ref access"}; }
         return ptr_;
     }
     [[nodiscard]] constexpr T& get() const {
-        if (!has_value()) { throw std::bad_optional_access{}; }
+        if (!has_value()) { throw std::runtime_error{"bas optional_ref access"}; }
         return *ptr_;
     }
 
@@ -78,7 +68,7 @@ public:
     }
 
     [[nodiscard]] constexpr operator T&() const {
-        if (!has_value()) { throw std::bad_optional_access{}; }
+        if (!has_value()) { throw std::runtime_error{"bas optional_ref access"}; }
         return *ptr_;
     }
 

@@ -216,7 +216,6 @@ void checkProtocolVersion() {
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
         logger.warn(tr("ll.main.warning.protocolVersionNotMatch.1"), TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
         logger.warn(tr("ll.main.warning.protocolVersionNotMatch.2"));
-        std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
 

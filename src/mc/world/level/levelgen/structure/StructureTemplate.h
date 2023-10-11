@@ -34,11 +34,11 @@ public:
     ) const;
 
     // nullptr if invalid nbt
-    LLNDAPI static std::unique_ptr<StructureTemplate> create(std::string name, CompoundTag const& tag);
+    LLNDAPI static std::unique_ptr<StructureTemplate> create(const std::string& name, CompoundTag const& tag);
 
     // always success
     LLNDAPI static std::unique_ptr<StructureTemplate> create(
-        std::string        name,
+        const std::string&        name,
         BlockSource&       blockSource,
         BoundingBox const& boundingBox,
         bool               ignoreBlocks   = false,

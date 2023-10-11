@@ -24,7 +24,7 @@ void StructureTemplate::placeInWorld(
 }
 
 
-std::unique_ptr<StructureTemplate> StructureTemplate::create(std::string name, CompoundTag const& tag) {
+std::unique_ptr<StructureTemplate> StructureTemplate::create(const std::string& name, CompoundTag const& tag) {
     auto& unknownBlockRegistry = Global<StructureManager>->mUnknownBlockRegistry;
     auto  res                  = std::make_unique<StructureTemplate>(name, unknownBlockRegistry);
     bool  success{res->load(tag)};
@@ -33,7 +33,7 @@ std::unique_ptr<StructureTemplate> StructureTemplate::create(std::string name, C
 }
 
 std::unique_ptr<StructureTemplate> StructureTemplate::create(
-    std::string        name,
+    const std::string& name,
     BlockSource&       blockSource,
     BoundingBox const& boundingBox,
     bool               ignoreBlocks,

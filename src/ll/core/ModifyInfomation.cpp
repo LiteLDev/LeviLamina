@@ -1,5 +1,6 @@
 #include "ll/api/LoggerAPI.h"
 #include "ll/api/memory/Hook.h"
+#include "mc/common/Common.h"
 
 #include "mc/deps/core/common/debug/LogDetails.h"
 
@@ -16,7 +17,7 @@ std::unordered_map<unsigned int, decltype(serverLogger.debug)&> loggerMap = {
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     AppendLogEntryMetadataHook,
-    ll::memory::HookPriority::Normal,
+    HookPriority::Normal,
     ::BedrockLog::LogDetails,
     &::BedrockLog::LogDetails::_appendLogEntryMetadata,
     void,
@@ -33,7 +34,7 @@ MCAPI void BedrockLogOut(unsigned int priority, const char* pszFormat, ...);
 
 LL_AUTO_STATIC_HOOK(
     BedrockLogOutHook,
-    ll::memory::HookPriority::Normal,
+    HookPriority::Normal,
     BedrockLogOut,
     void,
     unsigned int priority,
