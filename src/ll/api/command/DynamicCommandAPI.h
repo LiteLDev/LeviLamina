@@ -22,8 +22,8 @@ copies or substantial portions of the Software.
 #include "magic_enum.hpp"
 
 #include "fmt/core.h"
-#include "liteloader/api/service/GlobalService.h"
-#include "liteloader/api/utils/WinHelper.h"
+#include "ll/api/service/GlobalService.h"
+#include "ll/api/utils/WinHelper.h"
 #include "mc/deps/json/Value.h"
 #include "mc/server/commands/CommandItem.h"
 #include "mc/server/commands/CommandOrigin.h"
@@ -139,8 +139,8 @@ class DynamicCommandInstance;
 class DynamicCommand : public Command {
     template <typename _Ty, class... _Types>
     static constexpr bool is_one_of_v =
-        std::_Meta_find_unique_index<std::variant<_Types...>, std::add_pointer_t<std::add_const_t<_Ty>>>::value <
-        sizeof...(_Types);
+        std::_Meta_find_unique_index<std::variant<_Types...>, std::add_pointer_t<std::add_const_t<_Ty>>>::value
+        < sizeof...(_Types);
     template <typename _Ty>
     static constexpr bool is_supported_result_type_v = is_one_of_v<_Ty, AllResultType>;
     template <typename _Ty, typename Type>
@@ -285,21 +285,20 @@ public:
             }
 #else
             if constexpr (std::is_same_v<std::remove_cv_t<T>, std::string>) {
-                if (type == ParameterType::Enum)
-                    return getEnumValue();
+                if (type == ParameterType::Enum) return getEnumValue();
             }
 #endif // USE_PARSE_ENUM_STRING
-            if (checkTempateType<T>(type))
-                return ll::memory::dAccess<T>(command, offset);
+            if (checkTempateType<T>(type)) return ll::memory::dAccess<T>(command, offset);
             throw std::runtime_error(fmt::format(
-                "Raw type not match, parameter Type: {}, data type: {}", magic_enum::enum_name(type), typeid(T).name()
+                "Raw type not match, parameter Type: {}, data type: {}",
+                magic_enum::enum_name(type),
+                typeid(T).name()
             ));
         }
 
         template <typename T>
         inline enable_if_supported_t<T, T const&> value_or(T const& defaultValue) {
-            if (isSet)
-                return getRaw<T>();
+            if (isSet) return getRaw<T>();
             return defaultValue;
         }
 
@@ -316,14 +315,12 @@ public:
             T>
         get() const {
             static_assert(
-                is_supported_result_type_v<T> ||
-                    (std::is_lvalue_reference_v<T> && is_supported_result_type_v<std::remove_reference_t<T>>),
+                is_supported_result_type_v<T>
+                    || (std::is_lvalue_reference_v<T> && is_supported_result_type_v<std::remove_reference_t<T>>),
                 "Unsupported Result Type in " __FUNCTION__
             );
-            if constexpr (std::is_lvalue_reference_v<T>)
-                return getRaw<std::remove_reference_t<T>>();
-            else
-                return getRaw<T>();
+            if constexpr (std::is_lvalue_reference_v<T>) return getRaw<std::remove_reference_t<T>>();
+            else return getRaw<T>();
         }
 
         template <>
@@ -337,17 +334,13 @@ public:
                 return actors;
             }
             std::vector<Actor*> rtn;
-            for (auto& result : getRaw<CommandSelector<Actor>>().results(*origin)) {
-                rtn.push_back(result);
-            }
+            for (auto& result : getRaw<CommandSelector<Actor>>().results(*origin)) { rtn.push_back(result); }
             return rtn;
         }
         template <>
         inline std::vector<Player*> get<std::vector<Player*>>() const {
             std::vector<Player*> rtn;
-            for (auto& result : getRaw<CommandSelector<Player>>().results(*origin)) {
-                rtn.push_back(result);
-            }
+            for (auto& result : getRaw<CommandSelector<Player>>().results(*origin)) { rtn.push_back(result); }
             return rtn;
         }
         template <>
@@ -428,14 +421,11 @@ public:
 
         template <ParameterType type>
         inline static constexpr CommandParameterDataType getCommandParameterDataType() {
-            if constexpr (type == ParameterType::Enum)
-                return CommandParameterDataType::Enum;
-            else if constexpr (type == ParameterType::SoftEnum)
-                return CommandParameterDataType::SoftEnum;
+            if constexpr (type == ParameterType::Enum) return CommandParameterDataType::Enum;
+            else if constexpr (type == ParameterType::SoftEnum) return CommandParameterDataType::SoftEnum;
             // else if constexpr (type == ParameterType::Postfix)
             //     return CommandParameterDataType::POSIFIX;
-            else
-                return CommandParameterDataType::Basic;
+            else return CommandParameterDataType::Basic;
         }
         template <ParameterType type, typename T>
         CommandParameterData makeParameterData() const {
@@ -498,11 +488,11 @@ private:
             return std::is_same_v<CommandSelector<Player>, std::remove_cv_t<_Ty>>;
         case ParameterType::BlockPos:
         case ParameterType::Vec3:
-            return std::is_same_v<CommandPosition, std::remove_cv_t<_Ty>> ||
-                   std::is_same_v<CommandPositionFloat, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<CommandPosition, std::remove_cv_t<_Ty>>
+                || std::is_same_v<CommandPositionFloat, std::remove_cv_t<_Ty>>;
         case ParameterType::RawText:
-            return std::is_same_v<CommandRawText, std::remove_cv_t<_Ty>> ||
-                   std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<CommandRawText, std::remove_cv_t<_Ty>>
+                || std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
         case ParameterType::Message:
             return std::is_same_v<CommandMessage, std::remove_cv_t<_Ty>>;
         case ParameterType::JsonValue:
@@ -519,8 +509,8 @@ private:
         //     return std::is_same_v<ParameterDataType::Position, std::remove_cv_t<_Ty>> || std::is_same_v<BlockPos,
         //     std::remove_cv_t<_Ty>> || std::is_same_v<Vec3, std::remove_cv_t<_Ty>>;
         case ParameterType::Enum:
-            return std::is_same_v<int, std::remove_cv_t<_Ty>> || std::is_same_v<std::string, std::remove_cv_t<_Ty>> ||
-                   std::is_enum_v<_Ty>;
+            return std::is_same_v<int, std::remove_cv_t<_Ty>> || std::is_same_v<std::string, std::remove_cv_t<_Ty>>
+                || std::is_enum_v<_Ty>;
         case ParameterType::SoftEnum:
             return std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
         case ParameterType::ActorType:

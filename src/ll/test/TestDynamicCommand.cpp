@@ -1,13 +1,13 @@
 #define DEBUG
 #ifdef DEBUG
 
-#include "liteloader/api/LLAPI.h"
-#include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/ScheduleAPI.h"
-#include "liteloader/api/command/DynamicCommandAPI.h"
-#include "liteloader/api/memory/Hook.h"
-#include "liteloader/api/utils/Hash.h"
-#include "liteloader/core/LiteLoader.h"
+#include "ll/api/LLAPI.h"
+#include "ll/api/LoggerAPI.h"
+#include "ll/api/ScheduleAPI.h"
+#include "ll/api/command/DynamicCommandAPI.h"
+#include "ll/api/memory/Hook.h"
+#include "ll/api/utils/Hash.h"
+#include "ll/core/Levilamina.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/level/storage/LevelData.h"
 
@@ -224,8 +224,8 @@ void setupRemoveCommand() {
 // force enable cheat
 LL_AUTO_TYPED_INSTANCE_HOOK(
     LevelDataService,
-    LevelData,
     HookPriority::Normal,
+    LevelData,
     "?hasCommandsEnabled@LevelData@@QEBA_NXZ",
     bool
 ) {
@@ -293,7 +293,7 @@ void setupEnumCommand() {
 // echo command
 void setupEchoCommand() {
     auto command = DynamicCommand::createCommand("echo", "show message", CommandPermissionLevel::Any);
-    command->addOverload(command->mandatory("text", ParamType::String));
+    command->addOverload(command->mandatory("text", ParamType::RawText),command->mandatory("int",ParamType::Int));
     command->setCallback([](DynamicCommand const&                                    cmd,
                             CommandOrigin const&                                     origin,
                             CommandOutput&                                           output,
@@ -325,7 +325,7 @@ LL_AUTO_STATIC_HOOK(
 ) {
     origin(server, networkCommands, networkTestCommands, permissionsFile);
     // Test DynamicCommandRegistry
-    
+
     // setupRemoveCommand();
     // setupTestEnumCommand();
     // setupTestParamCommand();
