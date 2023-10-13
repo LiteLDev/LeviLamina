@@ -33,16 +33,18 @@
 //
 //////////////////////////////////////////////////////
 
-#include "FMT/core.h"
-#include "FMT/os.h"
-#include "Nlohmann/json.hpp"
 #include "ll/api/LLAPI.h"
+#include "ll/api/base/Concepts.h"
 #include "ll/api/base/Global.h"
 #include "ll/api/utils/FileHelper.h"
 #include "ll/api/utils/PluginOwnData.h"
 #include "ll/api/utils/StringUtils.h"
+
 #include <string>
 
+#include "FMT/core.h"
+#include "FMT/os.h"
+#include "Nlohmann/json.hpp"
 
 class I18nBase {
 
@@ -183,11 +185,9 @@ public:
 #endif
 
 namespace Translation {
-template <bool B, class T = void>
-using enable_if_t = typename std::enable_if<B, T>::type;
 
 ///////////////// tr Impl /////////////////
-template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detail::is_string<S>::value), int> = 0>
+template <ll::concepts::IsString S, typename... Args>
 inline std::string trlImpl(HMODULE hPlugin, std::string const& localeName, S const& formatStr, Args&&... args) {
     std::string realFormatStr = formatStr;
     if (PluginOwnData::hasImpl(hPlugin, I18nBase::POD_KEY)) {
@@ -222,7 +222,7 @@ inline std::string trlImpl(HMODULE hPlugin, std::string const& localeName, S con
         return fmt::format(fmt::runtime(realFormatStr), std::forward<Args>(args)...);
     }
 }
-template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detail::is_string<S>::value), int> = 0>
+template <ll::concepts::IsString S, typename... Args>
 inline std::string trImpl(HMODULE hPlugin, S const& formatStr, Args&&... args) {
     return trlImpl(hPlugin, "", formatStr, std::forward<Args>(args)...);
 }
@@ -354,7 +354,7 @@ inline I18nBase* getI18N(HMODULE hPlugin = nullptr) {
  * tr(std::string("There are {0} days before {1} to come back"), 3, "alex");
  * @endcode
  */
-template <typename S, typename... Args, Translation::enable_if_t<(fmt::v9::detail::is_string<S>::value), int> = 0>
+template <ll::concepts::IsString S, typename... Args>
 inline std::string tr(S const& formatStr, Args&&... args) {
     return Translation::trImpl(GetCurrentModule(), formatStr, std::forward<Args>(args)...);
 }

@@ -21,8 +21,8 @@ std::unordered_map<std::string, ll::Plugin> plugins;
 bool ll::PluginManager::registerPlugin(
     HMODULE                            handle,
     std::string const&                 name,
-    std::string                        desc,
-    ll::Version                        version,
+    std::string const&                 desc,
+    ll::Version const&                 version,
     std::map<std::string, std::string> others
 ) {
 
@@ -38,7 +38,7 @@ bool ll::PluginManager::registerPlugin(
         }
     }
 
-    ll::Plugin plugin{name, std::move(desc), version, others};
+    ll::Plugin plugin{name, desc, version, others};
     plugin.handle = handle;
     try {
         plugin.type = others.at("PluginType") == "Script Plugin" ? Plugin::PluginType::ScriptPlugin
@@ -69,7 +69,7 @@ bool ll::PluginManager::unRegisterPlugin(std::string const& name) {
 }
 
 // Helper
-ll::Plugin* GetPlugin_Raw(std::string const& name, bool includeScriptPlugin) {
+ll::Plugin* ll::PluginManager::getPlugin(std::string const& name, bool includeScriptPlugin) {
     for (auto& it : plugins) {
         if (it.second.name == name
             || u8str2str(std::filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name) {
@@ -77,21 +77,6 @@ ll::Plugin* GetPlugin_Raw(std::string const& name, bool includeScriptPlugin) {
             return &it.second;
         }
     }
-    return nullptr;
-}
-
-ll::Plugin* ll::PluginManager::getPlugin(std::string const& name, bool includeScriptPlugin) {
-    auto res = GetPlugin_Raw(name, includeScriptPlugin);
-    if (res) return res;
-    /* issue #510
-    try
-    {
-        name = u8str2str(filesystem::path(str2wstr(name)).stem().u8string());
-        return GetPlugin_Raw(name, includeScriptPlugin);
-    }
-    catch(...)
-    { }
-    */
     return nullptr;
 }
 
