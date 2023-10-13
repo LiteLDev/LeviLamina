@@ -4,6 +4,11 @@
 
 #include "ll/api/base/StdInt.h"
 
+template <typename T>
+constexpr void hashCombine(T const& v, size_t& seed) {
+    seed ^= v + 2654435769LL + (seed << 6LL) + (seed >> 2LL);
+}
+
 constexpr uint64 do_hash(std::string_view x) {
     // ap hash
     uint64 rval = 0;

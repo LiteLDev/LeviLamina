@@ -85,6 +85,7 @@ public:
             return false;
         }
         std::vector<SimpleForm::ButtonCallback> buttonCallbacks;
+        buttonCallbacks.reserve(mElements.size());
         for (auto& e : mElements) {
             // Currently, SimpleFormElement can only be Button
             buttonCallbacks.push_back(((Button*)e.get())->mCallback);

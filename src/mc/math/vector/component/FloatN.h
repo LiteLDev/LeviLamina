@@ -2,7 +2,7 @@
 #include "mc/math/vector/component/base/Field.h"
 
 template <typename T, typename... Components>
-    requires AllSame<Components...>
+    requires ll::concepts::IsAllSame<Components...>
 class LL_EBO FloatN : public Field<T, Components...>, FloatNTag {
 public:
     using first_type = Field<T, Components...>::first_type;
