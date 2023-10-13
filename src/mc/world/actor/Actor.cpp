@@ -3,6 +3,7 @@
 #include "mc/common/HitDetection.h"
 #include "mc/dataloadhelper/DefaultDataLoadHelper.h"
 #include "mc/entity/EntityContext.h"
+#include "mc/entity/flags/SimulatedPlayerFlag.h"
 #include "mc/entity/systems/OnFireSystem.h"
 #include "mc/entity/utilities/ActorCategory.h"
 #include "mc/entity/utilities/ActorCollision.h"
@@ -20,6 +21,7 @@
 #include "mc/world/actor/ActorClassTree.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/components/FlagComponent.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"
 
@@ -38,11 +40,11 @@ class Vec3 Actor::getHeadPos() const { return getAttachPos(ActorLocation::Head);
 
 class BlockPos Actor::getFeetBlockPos() const { return {CommandUtils::getFeetPos(this)}; }
 
-bool Actor::isSimulatedPlayer() const { return dynamic_cast<SimulatedPlayer const*>(this) != nullptr; }
+bool Actor::isSimulatedPlayer() const { return getEntityContext().contains<FlagComponent<SimulatedPlayerFlag>>(); }
 
 bool Actor::isPlayer(bool allowSimulatedPlayer) const {
-    if (isSimulatedPlayer()) { return allowSimulatedPlayer; }
-    return dynamic_cast<ServerPlayer const*>(this) != nullptr;
+    if (allowSimulatedPlayer) { return hasCategory(ActorCategory::Player); }
+    return hasCategory(ActorCategory::Player) && !isSimulatedPlayer();
 }
 bool Actor::isItemActor() const { return hasCategory(ActorCategory::Item); }
 bool Actor::isOnGround() const { return ActorCollision::isOnGround(getEntityContext()); }
@@ -74,7 +76,7 @@ class HitResult Actor::traceRay(
     HitResult result{};
 
     if (includeActor) {
-        auto player = dynamic_cast<Player*>(const_cast<Actor*>(this));
+        auto player = isPlayer() ? static_cast<Player*>(const_cast<Actor*>(this)) : nullptr; // NOLINT
 
         float  resDistance = -1.0f;
         Actor* resActor    = nullptr;
@@ -90,7 +92,7 @@ class HitResult Actor::traceRay(
             resDistance,
             resActor,
             resPos,
-            player != nullptr
+            isPlayer()
         );
         if (resActor != nullptr) { result = std::move(HitResult{origin, rayDir, *resActor, resPos}); }
     }

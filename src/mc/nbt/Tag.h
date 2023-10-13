@@ -50,19 +50,19 @@ public:
 
     template <std::derived_from<Tag> T>
     T const* as_ptr() const {
-        return dynamic_cast<T const*>(this);
+        return static_cast<T const*>(this);
     }
     template <std::derived_from<Tag> T>
     T* as_ptr() {
-        return dynamic_cast<T*>(this);
+        return static_cast<T*>(this);
     }
     template <std::derived_from<Tag> T>
     T const& as() const {
-        return *dynamic_cast<T const*>(this);
+        return *static_cast<T const*>(this);
     }
     template <std::derived_from<Tag> T>
     T& as() {
-        return *dynamic_cast<T*>(this);
+        return *static_cast<T*>(this);
     }
 
     LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const;

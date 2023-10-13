@@ -16,8 +16,14 @@ public:
     }
 
     template <class T>
-    constexpr T* tryGetComponent() const {
-        return const_cast<T*>(_enttRegistry().try_get<T>(_getEntityId()));
+    MCAPI T* tryGetComponent() const;
+
+    template <class T>
+    MCAPI bool hasComponent() const;
+
+    template <class T>
+    constexpr bool contains() const {
+        return _enttRegistry().any_of<T>(_getEntityId());
     }
 
 public:
