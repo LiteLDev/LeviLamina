@@ -505,9 +505,6 @@ private:
             return std::is_same_v<std::vector<BlockStateCommandParam>, std::remove_cv_t<_Ty>>;
         case ParameterType::Effect:
             return std::is_same_v<MobEffect const*, std::remove_cv_t<_Ty>>;
-        // case ParameterType::Position:
-        //     return std::is_same_v<ParameterDataType::Position, std::remove_cv_t<_Ty>> || std::is_same_v<BlockPos,
-        //     std::remove_cv_t<_Ty>> || std::is_same_v<Vec3, std::remove_cv_t<_Ty>>;
         case ParameterType::Enum:
             return std::is_same_v<int, std::remove_cv_t<_Ty>> || std::is_same_v<std::string, std::remove_cv_t<_Ty>>
                 || std::is_enum_v<_Ty>;
@@ -528,6 +525,9 @@ private:
     LLAPI static DynamicCommandInstance*   _setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
 
 public:
+    // please call this when command registry. such as in ServerCommands::setupStandardServer.
+    // this funtion will registry all dynamic command and enum.
+    // call this when all dynamic command setup complete
     static bool onServerCommandsRegister(CommandRegistry& registry);
 
     friend class DynamicCommandInstance;
@@ -641,13 +641,10 @@ public:
     std::unordered_map<std::string, DynamicCommand::ParameterPtr> parameterPtrs = {};
 
     // Use unique_ptr to keep the address of enumName.c_str() immutable
-    std::vector<std::unique_ptr<std::string>> enumNames  = {};
-    std::vector<std::string>                  enumValues = {};
-    // unordered_map{ enumName, pair{ enumIndex, enumSize } }
+    std::vector<std::unique_ptr<std::string>>                       enumNames  = {};
+    std::vector<std::string>                                        enumValues = {};
     std::unordered_map<std::string_view, std::pair<size_t, size_t>> enumRanges = {};
 
-    //// unordered_map{ enumName, pair{ enumIndex, enumConstraint } }
-    // std::unordered_map<std::string_view, std::pair<size_t, SemanticConstraint>> enumConstraints = {};
 
     // SoftEnum
     mutable std::unordered_map<std::string, std::vector<std::string>> softEnums;
@@ -741,7 +738,6 @@ public:
     LLAPI bool setAlias(std::string const& alias);
     LLAPI void setCallback(DynamicCommand::CallBackFn&& callback) const;
     LLAPI void removeCallback() const;
-    // LLAPI static bool updateSoftEnum(std::string const& name = "") const;
     LLAPI std::string setSoftEnum(std::string const& name, std::vector<std::string> const& values) const;
     LLAPI bool        addSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
     LLAPI bool        removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;

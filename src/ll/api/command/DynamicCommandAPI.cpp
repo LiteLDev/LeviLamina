@@ -90,7 +90,7 @@ typedef CommandItem                         Item;
 typedef CommandBlockName                    Block;
 typedef std::vector<BlockStateCommandParam> BlockState;
 typedef MobEffect const*                    Effect;
-// typedef CommandPosition Position;
+
 #ifdef USE_PARSE_ENUM_STRING
 typedef std::pair<std::string, int> Enum;
 #else
@@ -192,7 +192,6 @@ inline bool DynamicCommand::ParameterPtr::isValueSet(DynamicCommand const* comma
 }
 
 Result ParameterPtr::getResult(DynamicCommand const* command, CommandOrigin const* origin) const {
-    // auto commandInstance = dynamicCommandInstances.at(command->getCommandName()).get();
     return {this, command, origin};
 }
 
@@ -506,13 +505,6 @@ inline DynamicCommandInstance const* DynamicCommand::Result::getInstance() const
 
 #pragma region DynamicCommand
 
-// std::unique_ptr<Command> DynamicCommand::commandBuilder()
-//{
-//     std::unique_ptr<Command> command;
-//     commandBuilder2(&command, latestAllocateName);
-//     return std::move(command);
-// }
-
 inline char
 DynamicCommand::builderCallbackHanler(DCCallback* /*cb*/, DCArgs* args, DCValue* /*result*/, void* userdata) {
     DynamicCommandInstance& command = *(DynamicCommandInstance*)userdata;
@@ -563,7 +555,6 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
         if (!commandInstance) throw std::runtime_error("Command instance is null");
         if (!commandInstance->callback_) throw std::runtime_error("Can't setup command without callback");
         if (commandInstance->overloads.empty()) throw std::runtime_error("Can't setup command without overloads");
-        // commandInstance->updateSoftEnum();
 
         for (auto& param : commandInstance->parameterDatas) {
             if (param.type == ParameterType::Enum) {
@@ -732,8 +723,6 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
         delaySetupLock.unlock();
         return uptr.get();
     }
-    // logger.warn("Registering command \"{}\" after RegCmdEvent, note that this is unstable!",
-    // commandInstance->getCommandName());
     Schedule::nextTick([instance{commandInstance.release()}]() {
         if (!_setup(std::unique_ptr<class DynamicCommandInstance>(instance)))
             logger.warn("Registering command \"{}\" failed", instance->getCommandName());
@@ -1018,34 +1007,6 @@ DynamicCommandInstance::buildOverload(std::vector<ParameterIndex> const& overloa
     return datas;
 }
 
-// bool DynamicCommandInstance::updateSoftEnum(std::string const& name) const
-//{
-//     if (!hasRegistered())
-//     {
-//         for (auto& [key, values] : softEnumValues)
-//         {
-//             ll::Global<CommandRegistry>->addSoftEnum(key, values);
-//         }
-//         return true;
-//     }
-//     if (!name.empty())
-//     {
-//         auto iter = softEnumValues.find(name);
-//         if (iter != softEnumValues.end())
-//             CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Set, iter->first,
-//             iter->second);
-//         else
-//             return false;
-//         return true;
-//     }
-//     else
-//     {
-//         for (auto& [key, values] : softEnumValues)
-//         {
-//             CommandSoftEnumRegistry(Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Set, key, values);
-//         }
-//     }
-// }
 std::string DynamicCommandInstance::setSoftEnum(std::string const& name, std::vector<std::string> const& values) const {
     if (!hasRegistered()) {
         softEnums.emplace(name, values);

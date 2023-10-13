@@ -1,3 +1,5 @@
+#ifdef DEBUG
+
 #include "ll/api/command/RegCommandAPI.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/core/LeviLamina.h"
@@ -8,6 +10,7 @@
 #include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/MinecraftCommands.h"
 #include "mc/server/commands/ServerCommands.h"
+#include "mc/server/commands/CommandRawText.h"
 #include "mc/world/Minecraft.h"
 #include "mc/world/level/Command.h"
 
@@ -20,6 +23,7 @@ class TestCommand : public Command {
     int         index        = -1;
     bool        target_isSet = false;
     bool        index_isSet  = false;
+    CommandRawText testTest;
 
 
 public:
@@ -135,20 +139,26 @@ public:
                 &TestCommand::index_isSet
             )
         );
+        registry.registerOverload<TestCommand>(
+            "testcommand",
+            makeMandatory<CommandParameterDataType::Basic>(&TestCommand::testTest, "rawtext")
+        );
     }
 };
 
-// LL_AUTO_STATIC_HOOK(
-//     ServerCommandsService,
-//     HookPriority::Normal,
-//     ServerCommands::setupStandardServer,
-//     void,
-//     Minecraft&             server,
-//     std::string const&     networkCommands,
-//     std::string const&     networkTestCommands,
-//     class PermissionsFile* permissionsFile
-// ) {
-//     origin(server, networkCommands, networkTestCommands, permissionsFile);
-//     // Test CommandRegistry
-//     TestCommand::setup(server.getCommands().getRegistry());
-// }
+LL_AUTO_STATIC_HOOK(
+    ServerCommandsCommandTest,
+    HookPriority::Normal,
+    ServerCommands::setupStandardServer,
+    void,
+    Minecraft&             server,
+    std::string const&     networkCommands,
+    std::string const&     networkTestCommands,
+    class PermissionsFile* permissionsFile
+) {
+    origin(server, networkCommands, networkTestCommands, permissionsFile);
+    // Test CommandRegistry
+    TestCommand::setup(server.getCommands().getRegistry());
+}
+
+#endif // DEBUG

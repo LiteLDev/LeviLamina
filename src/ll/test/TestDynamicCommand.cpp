@@ -1,4 +1,3 @@
-#define DEBUG
 #ifdef DEBUG
 
 #include "ll/api/LLAPI.h"
@@ -8,6 +7,7 @@
 #include "ll/api/memory/Hook.h"
 #include "ll/api/utils/Hash.h"
 #include "ll/core/Levilamina.h"
+#include "mc/server/commands/ServerCommands.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/level/storage/LevelData.h"
 
@@ -293,28 +293,19 @@ void setupEnumCommand() {
 // echo command
 void setupEchoCommand() {
     auto command = DynamicCommand::createCommand("echo", "show message", CommandPermissionLevel::Any);
-    command->addOverload(command->mandatory("text", ParamType::RawText),command->mandatory("int",ParamType::Int));
+    command->addOverload(command->mandatory("text", ParamType::RawText));
     command->setCallback([](DynamicCommand const&                                    cmd,
                             CommandOrigin const&                                     origin,
                             CommandOutput&                                           output,
                             std::unordered_map<std::string, DynamicCommand::Result>& results) {
-        auto& text = results["text"].getRaw<std::string>();
+        auto text = results["text"].getRaw<std::string>();
         output.success(text);
     });
     DynamicCommand::setup(std::move(command));
 }
 
-// setupRemoveCommand();
-// setupTestEnumCommand();
-// setupTestParamCommand();
-// setupExampleCommand();
-// setupEnumCommand();
-// setupEchoCommand();
-
-#include "mc/server/commands/ServerCommands.h"
-
 LL_AUTO_STATIC_HOOK(
-    ServerCommandsService,
+    ServerCommandsDynamicCommandTest,
     HookPriority::Normal,
     ServerCommands::setupStandardServer,
     void,
@@ -326,12 +317,13 @@ LL_AUTO_STATIC_HOOK(
     origin(server, networkCommands, networkTestCommands, permissionsFile);
     // Test DynamicCommandRegistry
 
-    // setupRemoveCommand();
-    // setupTestEnumCommand();
-    // setupTestParamCommand();
-    // setupExampleCommand();
-    // setupEnumCommand();
+    setupRemoveCommand();
+    setupTestEnumCommand();
+    setupTestParamCommand();
+    setupExampleCommand();
+    setupEnumCommand();
     setupEchoCommand();
+    // onServerCommandsRegister must be at the end
     DynamicCommand::onServerCommandsRegister(server.getCommands().getRegistry());
 }
 
