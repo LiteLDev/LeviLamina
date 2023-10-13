@@ -5,7 +5,7 @@ template <size_t N>
 class doubleN;
 
 template <typename T, typename... Components>
-    requires AllSame<Components...>
+    requires ll::concepts::IsAllSame<Components...>
 class LL_EBO IntN : public Field<T, Components...>, IntNTag {
 public:
     using first_type = Field<T, Components...>::first_type;

@@ -7,7 +7,7 @@ namespace ll::form {
 
 class ModalForm::ModalFormImpl : public FormImpl {
 public:
-    using Callback = std::function<void(Player&, bool)>;
+    using Callback = ModalForm::Callback;
 
     std::string mTitle{};
     std::string mContent{};
@@ -45,7 +45,7 @@ public:
             ll::logger.error("ModalForm callback is null");
             return false;
         }
-        int  id   = handler::addFormHandler(std::make_unique<handler::ModalFormHandler>(std::move(callback)));
+        uint id   = handler::addFormHandler(std::make_unique<handler::ModalFormHandler>(std::move(callback)));
         auto json = serialize();
         if (json.is_null()) { return false; }
         ModalFormRequestPacket(id, json.dump()).sendTo(player);

@@ -6,57 +6,10 @@
 #include <type_traits>
 #include <utility>
 
+#include "ll/api/base/Concepts.h"
 #include "ll/api/base/Macro.h"
-
-template <typename T>
-constexpr void hashCombine(T const& v, std::size_t& seed) {
-    seed ^= v + 2654435769LL + (seed << 6LL) + (seed >> 2LL);
-}
-
-template <typename T, typename... Types>
-constexpr bool is_all_same_v = (std::is_same_v<T, Types> && ...);
-
-template <typename... Types>
-concept AllSame = is_all_same_v<Types...>;
-
-template <typename... Components, typename F>
-constexpr void unrollWithArgs(F&& func) {
-    size_t i = 0;
-    ((func.template operator()<Components>(i++)), ...);
-}
-
-template <typename Fn, size_t... N>
-constexpr void unroll_impl(Fn fn, std::integer_sequence<size_t, N...>) {
-    (void(fn(N)), ...);
-}
-
-template <size_t N, typename Fn>
-constexpr void unroll(Fn fn) {
-    unroll_impl(fn, std::make_index_sequence<N>());
-}
-
-template <std::size_t N, typename T, typename... Types>
-struct get_type {
-    using type = typename get_type<N - 1, Types...>::type;
-};
-
-template <typename T, typename... Types>
-struct get_type<0, T, Types...> {
-    using type = T;
-};
-
-template <std::size_t N, typename... Types>
-using get_type_t = typename get_type<N, Types...>::type;
-
-template <typename T, typename U, typename... Args>
-struct max_type {
-    using type = typename max_type<T, typename max_type<U, Args...>::type>::type;
-};
-
-template <typename T, typename U>
-struct max_type<T, U> {
-    using type = typename std::conditional<(sizeof(T) < sizeof(U)), U, T>::type;
-};
+#include "ll/api/base/Meta.h"
+#include "ll/api/utils/Hash.h"
 
 template <typename T, typename = void>
 struct has_toString : std::false_type {};
@@ -96,18 +49,18 @@ class boolN;
 template <typename T, typename... Components>
 class LL_EBO VectorBase : VectorBaseTag {
 public:
-    using first_type = typename max_type<Components...>::type;
+    using first_type = typename ll::meta::max_type<Components...>::type;
 
     [[nodiscard]] consteval static size_t size() noexcept { return sizeof...(Components); }
 
     template <typename F>
     constexpr static void forEachComponent(F&& func) noexcept {
-        unrollWithArgs<Components...>(func);
+        ll::meta::unrollWithArgs<Components...>(func);
     }
 
     [[nodiscard]] constexpr std::string toString() const noexcept {
         std::string res("(");
-        unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
             res  = std::move(std::format("{}{}", res, static_cast<T const*>(this)->template get<axis_type>(iter)));
             res += ((iter < size() - 1) ? ", " : ")");
         });
@@ -116,7 +69,7 @@ public:
 
     [[nodiscard]] constexpr bool operator==(T const& b) const noexcept {
         bool res = true;
-        unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
             res =
                 res && (b.template get<axis_type>(iter) == static_cast<T const*>(this)->template get<axis_type>(iter));
         });
@@ -128,20 +81,20 @@ public:
     }
 
     [[nodiscard]] constexpr first_type& operator[](size_t index) noexcept
-        requires AllSame<Components...>
+        requires ll::concepts::IsAllSame<Components...>
     {
         return static_cast<T*>(this)->template get<first_type>(index);
     }
 
     [[nodiscard]] constexpr first_type operator[](size_t index) const noexcept
-        requires AllSame<Components...>
+        requires ll::concepts::IsAllSame<Components...>
     {
         return static_cast<T const*>(this)->template get<first_type>(index);
     }
 
-    [[nodiscard]] constexpr std::size_t hash() const noexcept {
-        std::size_t res = 0;
-        unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+    [[nodiscard]] constexpr size_t hash() const noexcept {
+        size_t res = 0;
+        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
             if constexpr (std::is_integral_v<axis_type>) {
                 hashCombine(static_cast<T const*>(this)->template get<axis_type>(iter), res);
             } else if constexpr (has_hash<axis_type>::value) {
@@ -163,7 +116,7 @@ public:
     [[nodiscard]] constexpr class boolN<sizeof...(Components)> eq(T const& b) const noexcept
         requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
         boolN<sizeof...(Components)> res = true;
-        unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
             res[iter] = (b.template get<axis_type>(iter) == static_cast<T const*>(this)->template get<axis_type>(iter));
         });
         return res;
@@ -172,7 +125,7 @@ public:
     [[nodiscard]] constexpr class boolN<sizeof...(Components)>
     ne(T const& b) const noexcept requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
         boolN<sizeof...(Components)> res = true;
-        unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
             res[iter] = (b.template get<axis_type>(iter) != static_cast<T const*>(this)->template get<axis_type>(iter));
         });
         return res;
@@ -204,7 +157,7 @@ struct formatter<T, CharT> : public std::formatter<string_view, CharT> {
 
 template <IsVectorBase T>
 struct hash<T> {
-    std::size_t operator()(T const& vec) const noexcept { return vec.hash(); }
+    size_t operator()(T const& vec) const noexcept { return vec.hash(); }
 };
 
 } // namespace std

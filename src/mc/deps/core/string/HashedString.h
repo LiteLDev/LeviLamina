@@ -112,7 +112,7 @@ namespace std {
 
 template <>
 struct hash<HashedString> {
-    std::size_t operator()(HashedString const& str) const noexcept { return str.getHash(); }
+    size_t operator()(HashedString const& str) const noexcept { return str.getHash(); }
 };
 
 } // namespace std
