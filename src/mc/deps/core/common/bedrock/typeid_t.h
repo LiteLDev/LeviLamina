@@ -84,7 +84,7 @@ MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSe
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandItem>();
 template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class ActorDefinitionIdentifier const*>();
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, struct ActorDefinitionIdentifier const*>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandRawText>();
 template <>

@@ -39,8 +39,8 @@ class GlobalService {
     T* value = nullptr;
 
 public:
-    GlobalService();
-    void init(T* ptr);
+    LLAPI GlobalService();
+    void  init(T* ptr);
 
     T* get() { return value; }
     T* operator->() { return value; }

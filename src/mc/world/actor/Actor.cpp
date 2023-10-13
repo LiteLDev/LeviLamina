@@ -40,13 +40,17 @@ class Vec3 Actor::getHeadPos() const { return getAttachPos(ActorLocation::Head);
 
 class BlockPos Actor::getFeetBlockPos() const { return {CommandUtils::getFeetPos(this)}; }
 
-bool Actor::isSimulatedPlayer() const { return getEntityContext().contains<FlagComponent<SimulatedPlayerFlag>>(); }
+bool Actor::isSimulatedPlayer() const {
+    // return getEntityContext().contains<FlagComponent<SimulatedPlayerFlag>>();
+    return *(void**)this == LL_RESOLVE_SYMBOL("??_7SimulatedPlayer@@6B@");
+}
 
 bool Actor::isPlayer(bool allowSimulatedPlayer) const {
     if (allowSimulatedPlayer) { return hasCategory(ActorCategory::Player); }
     return hasCategory(ActorCategory::Player) && !isSimulatedPlayer();
 }
 bool Actor::isItemActor() const { return hasCategory(ActorCategory::Item); }
+
 bool Actor::isOnGround() const { return ActorCollision::isOnGround(getEntityContext()); }
 
 void Actor::setOnFire(int num, bool isEffect) {
@@ -94,7 +98,7 @@ class HitResult Actor::traceRay(
             resPos,
             isPlayer()
         );
-        if (resActor != nullptr) { result = std::move(HitResult{origin, rayDir, *resActor, resPos}); }
+        if (resActor != nullptr) { result = HitResult{origin, rayDir, *resActor, resPos}; }
     }
 
     if (includeBlock) {

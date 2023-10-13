@@ -12,7 +12,7 @@ namespace ll::form::handler {
 
 void SimpleFormHandler::handle(Player& player, std::string const& data) const {
     int selected = data != "null" ? stoi(data) : -1;
-    if (selected >= 0 && selected < mButtonCallbacks.size()) {
+    if (selected >= 0 && selected < (int)mButtonCallbacks.size()) {
         if (mButtonCallbacks[selected]) { mButtonCallbacks[selected](player); }
     }
     if (mCallback) { mCallback(player, selected); }

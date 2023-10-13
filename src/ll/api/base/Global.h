@@ -3,6 +3,8 @@
 #pragma warning(disable : 4250)
 #pragma warning(disable : 4949)
 
+#pragma clang diagnostic ignored "-Wpragma-system-header-outside-header"
+
 #include "ll/api/base/Macro.h"
 #include "mc/_HeaderOutputPredefine.h"
 

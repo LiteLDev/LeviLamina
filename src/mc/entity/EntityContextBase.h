@@ -21,10 +21,10 @@ public:
     template <class T>
     MCAPI bool hasComponent() const;
 
-    template <class T>
-    constexpr bool contains() const {
-        return _enttRegistry().any_of<T>(_getEntityId());
-    }
+    // template <class T>
+    // constexpr bool contains() const {
+    //     return _enttRegistry().any_of<T>(_getEntityId());
+    // }
 
 public:
     // NOLINTBEGIN

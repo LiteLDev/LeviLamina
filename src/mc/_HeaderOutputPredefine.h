@@ -1,5 +1,7 @@
 #pragma once
 
+#pragma clang diagnostic ignored "-Wignored-qualifiers"
+
 #pragma warning(disable : 4099)
 #pragma warning(disable : 4201)
 
