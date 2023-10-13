@@ -17,8 +17,8 @@
 using ll::StringUtils::str2wstr;
 
 namespace {
-inline int stoi(std::string_view str) {
-    int ret = -1;
+inline ushort stoi(std::string_view str) {
+    ushort ret = -1;
     std::from_chars(str.data(), str.data() + str.size(), ret);
     return ret;
 }
@@ -50,7 +50,7 @@ HMODULE ll::getLoaderHandle() { return GetCurrentModule(); }
 namespace ll {
 
 // region ### Version ###
-Version::Version(int major, int minor, int patch, PreRelease preRelease)
+Version::Version(ushort major, ushort minor, ushort patch, PreRelease preRelease)
 : mMajor(major),
   mMinor(minor),
   mPatch(patch),
@@ -72,7 +72,7 @@ std::string Version::toString() const { return fmt::format("{}.{}.{}", mMajor, m
 
 std::string Version::toFullString() const {
     if (mPreRelease == PreRelease::None) return toString();
-    return fmt::format("{}-{}", toString(), PRE_RELEASE_STRINGS[(uchar)mPreRelease]);
+    return fmt::format("{}-{}", toString(), PRE_RELEASE_STRINGS[(ushort)mPreRelease]);
 }
 
 Version Version::parse(std::string const& str) {
@@ -86,9 +86,9 @@ Version Version::parse(std::string const& str) {
         std::transform(suffix.begin(), suffix.end(), suffix.begin(), ::tolower);
     }
 
-    for (int i = 0; i < PRE_RELEASE_STRINGS.size(); ++i) {
+    for (ushort i = 0; i < (ushort)PRE_RELEASE_STRINGS.size(); ++i) {
         if (suffix == PRE_RELEASE_STRINGS[i]) {
-            result.mPreRelease = static_cast<PreRelease>((uchar)i);
+            result.mPreRelease = static_cast<PreRelease>((ushort)i);
             break;
         }
     }

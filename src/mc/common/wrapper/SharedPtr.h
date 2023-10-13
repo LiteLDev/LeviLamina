@@ -13,20 +13,26 @@ public:
 
     explicit SharedPtr(T* p) : counter(new SharedCounter<T>(p)) {}
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    explicit SharedPtr(SharedPtr<Y> const& other) {
+    template <class Y>
+    explicit SharedPtr(SharedPtr<Y> const& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
         counter = other.counter;
         if (counter) { counter->addShareCount(); }
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    explicit SharedPtr(SharedPtr<Y>&& other) {
+    template <class Y>
+    explicit SharedPtr(SharedPtr<Y>&& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
         counter       = other.counter;
         other.counter = nullptr;
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    explicit SharedPtr(WeakPtr<Y> const& other) {
+    template <class Y>
+    explicit SharedPtr(WeakPtr<Y> const& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
         counter = other.counter;
         if (other) { counter->addShareCount(); }
     }
@@ -35,8 +41,10 @@ public:
         if (counter) { counter->release(); }
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    SharedPtr<T>& operator=(SharedPtr<Y> const& other) {
+    template <class Y>
+    SharedPtr<T>& operator=(SharedPtr<Y> const& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
         if (counter != other.counter) {
             counter = other.counter;
             if (counter) { counter->addShareCount(); }
@@ -44,8 +52,10 @@ public:
         return *this;
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    SharedPtr<T>& operator=(SharedPtr<Y>&& other) {
+    template <class Y>
+    SharedPtr<T>& operator=(SharedPtr<Y>&& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
         if (counter != other.counter) {
             counter       = other.counter;
             other.counter = nullptr;
@@ -53,8 +63,10 @@ public:
         return *this;
     }
 
-    template <class Y, std::enable_if_t<std::is_convertible_v<Y*, T*>, int> = 0>
-    SharedPtr<T>& operator=(WeakPtr<Y> const& other) {
+    template <class Y>
+    SharedPtr<T>& operator=(WeakPtr<Y> const& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
         counter = other.counter;
         if (other) { counter->addShareCount(); }
     }

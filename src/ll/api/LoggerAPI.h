@@ -26,6 +26,7 @@
 
 #pragma once
 
+#include "ll/api/base/Concepts.h"
 #include "ll/api/i18n/I18nAPI.h"
 #include "ll/api/utils/FileHelper.h"
 #include "ll/api/utils/PluginOwnData.h"
@@ -48,9 +49,6 @@
 #include "FMT/printf.h"
 
 #define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
-
-template <bool B, class T = void>
-using enable_if_type = typename std::enable_if<B, T>::type;
 
 class Logger {
 public:
@@ -107,7 +105,7 @@ public:
             return *this;
         }
 
-        template <typename S, typename... Args, enable_if_type<(fmt::v9::detail::is_string<S>::value), int> = 0>
+        template <ll::concepts::IsString S, typename... Args>
         void operator()(S const& formatStr, Args const&... args) {
             if constexpr (0 == sizeof...(args)) {
                 // Avoid fmt if only one argument

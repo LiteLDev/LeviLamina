@@ -14,8 +14,8 @@ public:
     LLAPI static bool registerPlugin(
         HMODULE                            handle,
         std::string const&                 name,
-        std::string                        desc,
-        ll::Version                        version,
+        std::string const&                 desc,
+        ll::Version const&                 version,
         std::map<std::string, std::string> others
     );
 

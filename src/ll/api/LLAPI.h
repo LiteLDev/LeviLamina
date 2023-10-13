@@ -23,15 +23,15 @@ namespace ll {
  * @see  https://semver.org/
  */
 struct Version {
-    enum class PreRelease : uchar { None = 255, Alpha = 0, Beta = 1 };
+    enum class PreRelease : ushort { None = 0xFFFF, Alpha = 0, Beta = 1 };
 
-    int        mMajor      = 0;
-    int        mMinor      = 0;
-    int        mPatch      = 0;
+    ushort     mMajor      = 0;
+    ushort     mMinor      = 0;
+    ushort     mPatch      = 0;
     PreRelease mPreRelease = PreRelease::None;
 
     explicit Version() = default;
-    LLAPI Version(int major, int minor, int patch, PreRelease preRelease = PreRelease::None);
+    LLAPI Version(ushort major, ushort minor, ushort patch, PreRelease preRelease = PreRelease::None);
 
     LLAPI bool operator<(Version const& other) const;
     LLAPI bool operator==(Version const& other) const;
@@ -90,9 +90,9 @@ struct Plugin {
 };
 } // namespace ll
 
-inline bool operator<=(ll::Version a, ll::Version b) { return a < b || a == b; }
-inline bool operator>(ll::Version a, ll::Version b) { return b < a; }
-inline bool operator>=(ll::Version a, ll::Version b) { return b < a || b == a; }
+inline bool operator<=(ll::Version const& a, ll::Version const& b) { return a < b || a == b; }
+inline bool operator>(ll::Version const& a, ll::Version const& b) { return b < a; }
+inline bool operator>=(ll::Version const& a, ll::Version const& b) { return b < a || b == a; }
 
 // Loader APIs
 namespace ll {
@@ -137,12 +137,12 @@ LLAPI std::string getDataPath(std::string const& pluginName);
  * @note   The implementation of this function must be in header file(because of `GetCurrentModule`)
  */
 inline bool registerPlugin(
-    std::string name,
-    std::string desc,
-    ll::Version version,
-    std::string git     = "",
-    std::string license = "",
-    std::string website = ""
+    std::string const& name,
+    std::string const& desc,
+    ll::Version const& version,
+    std::string const& git     = "",
+    std::string const& license = "",
+    std::string const& website = ""
 ) {
     std::map<std::string, std::string> others;
     if (!git.empty()) others.emplace("Git", git);
@@ -166,8 +166,12 @@ inline bool registerPlugin(
  * ll::registerPlugin("Test", "A test plugin", Version(0, 0, 1, Version::Alpha), {{"Note","This is Note"}});
  * @endcode
  */
-inline bool
-registerPlugin(std::string name, std::string desc, ll::Version version, std::map<std::string, std::string> others) {
+inline bool registerPlugin(
+    std::string const&                        name,
+    std::string const&                        desc,
+    ll::Version const&                        version,
+    std::map<std::string, std::string> const& others
+) {
     return PluginManager::registerPlugin(GetCurrentModule(), name, desc, version, others);
 }
 
