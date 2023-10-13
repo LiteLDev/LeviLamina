@@ -172,16 +172,16 @@ void checkRunningBDS() {
 void printLogo() {
     if (!ll::globalConfig.enableWelcomeText) return;
 
-    logger.info(R"(                                                                       )");
-    logger.info(R"(        _               _ _                    _                       )");
-    logger.info(R"(       | |    _____   _(_) |    __ _ _ __ ___ (_)_ __   __ _           )");
-    logger.info(R"(       | |   / _ \ \ / / | |   / _` | '_ ` _ \| | '_ \ / _` |          )");
-    logger.info(R"(       | |__|  __/\ V /| | |__| (_| | | | | | | | | | | (_| |          )");
-    logger.info(R"(       |_____\___| \_/ |_|_____\__,_|_| |_| |_|_|_| |_|\__,_|          )");
-    logger.info(R"(                                                                       )");
-    logger.info(R"(       --------   Light-Weight BDS Plugin Loader   ----------          )");
-    logger.info(R"(                                                                       )");
-    logger.info(R"(                                                                       )");
+    logger.info(R"(                                                                      )");
+    logger.info(R"(         _               _ _                    _                     )");
+    logger.info(R"(        | |    _____   _(_) |    __ _ _ __ ___ (_)_ __   __ _         )");
+    logger.info(R"(        | |   / _ \ \ / / | |   / _` | '_ ` _ \| | '_ \ / _` |        )");
+    logger.info(R"(        | |__|  __/\ V /| | |__| (_| | | | | | | | | | | (_| |        )");
+    logger.info(R"(        |_____\___| \_/ |_|_____\__,_|_| |_| |_|_|_| |_|\__,_|        )");
+    logger.info(R"(                                                                      )");
+    logger.info(R"(        --------   Light-Weight BDS Plugin Loader   ----------        )");
+    logger.info(R"(                                                                      )");
+    logger.info(R"(                                                                      )");
 
     logger.info(tr("ll.notice.license", "LGPLv3"));
     logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
@@ -255,7 +255,7 @@ void registerBStats();
 
 void leviLaminaMain() {
     // If SEH Protection is not enabled (Debug mode), restore old SE translator
-    if (ll::isDebugMode()) _set_se_translator(seh_exception::TranslateSEHtoCE);
+    if (!ll::isDebugMode()) _set_se_translator(seh_exception::TranslateSEHtoCE);
 
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);

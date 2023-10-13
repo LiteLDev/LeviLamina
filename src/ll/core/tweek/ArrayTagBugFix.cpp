@@ -8,6 +8,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     HookPriority::Normal,
     ByteArrayTag,
     "?equals@ByteArrayTag@@UEBA_NAEBVTag@@@Z",
+    // &ByteArrayTag::equals,
     bool,
     Tag const& other
 ) {
@@ -20,6 +21,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     HookPriority::Normal,
     IntArrayTag,
     "?equals@IntArrayTag@@UEBA_NAEBVTag@@@Z",
+    // &IntArrayTag::equals,
     bool,
     Tag const& other
 ) {

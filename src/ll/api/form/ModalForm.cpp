@@ -7,7 +7,7 @@ namespace ll::form {
 
 class ModalForm::ModalFormImpl : public FormImpl {
 public:
-    using Callback = std::function<void(Player&, bool)>;
+    using Callback = ModalForm::Callback;
 
     std::string mTitle{};
     std::string mContent{};

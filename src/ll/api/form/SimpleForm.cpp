@@ -15,7 +15,7 @@ protected:
 class Button : public SimpleFormElement {
 
 public:
-    using ButtonCallback = std::function<void(Player&)>;
+    using ButtonCallback = SimpleForm::ButtonCallback;
 
     std::string    mText;
     std::string    mImage;
@@ -53,7 +53,7 @@ protected:
 class SimpleForm::SimpleFormImpl : public FormImpl {
 
 public:
-    using Callback = std::function<void(Player&, int)>;
+    using Callback = SimpleForm::Callback;
 
     std::string                                     mTitle;
     std::string                                     mContent;

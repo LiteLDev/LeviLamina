@@ -241,7 +241,7 @@ public:
 class CustomForm::CustomFormImpl : public FormImpl {
 
 public:
-    using Callback = std::function<void(Player&, CustomFormResult const&)>;
+    using Callback = CustomForm::Callback;
 
     std::string                                     mTitle;
     std::vector<std::shared_ptr<CustomFormElement>> mElements{};
