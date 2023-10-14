@@ -6,7 +6,7 @@
 struct CommandOriginData {
 public:
     CommandOriginType mType;
-    mce::UUID         mUUID;
+    mce::UUID         mUuid;
     std::string       mRequestId;
     int64             mPlayerId;
 

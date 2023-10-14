@@ -6,7 +6,11 @@
 #pragma warning(disable : 4201)
 
 #define MCAPI  __declspec(dllimport)
-#define MCVAPI __declspec(dllimport)
+#define MCVAPI MCAPI
+
+#define MCTAPI                                                                                                         \
+    template <>                                                                                                        \
+    MCAPI
 
 #include <algorithm>     // STL general algorithms
 #include <array>         // STL array container
@@ -109,6 +113,8 @@ using uint64 = uint64_t;
 
 using schar = int8_t;
 using int64 = int64_t;
+
+using FacingID = uchar;
 
 // clang-format off
 template <typename T0, typename T1>

@@ -20,20 +20,13 @@ public:
         serialize<T>::write(x, *this);
     }
 
-    template <>
-    MCAPI void writeType(struct CommandOriginData const&);
-    template <>
-    MCAPI void writeType(std::vector<std::unique_ptr<class DataItem>> const&);
-    template <>
-    MCAPI void writeType(class NetworkItemStackDescriptor const&);
-    template <>
-    MCAPI void writeType(class MoveActorAbsoluteData const&);
-    template <>
-    MCAPI void writeType(class NetworkItemInstanceDescriptor const&);
-    template <>
-    MCAPI void writeType(struct ItemStackRequestSlotInfo const&);
-    template <>
-    MCAPI void writeType(class RecipeIngredient const&);
+    MCTAPI void writeType(struct CommandOriginData const&);
+    MCTAPI void writeType(std::vector<std::unique_ptr<class DataItem>> const&);
+    MCTAPI void writeType(class NetworkItemStackDescriptor const&);
+    MCTAPI void writeType(class MoveActorAbsoluteData const&);
+    MCTAPI void writeType(class NetworkItemInstanceDescriptor const&);
+    MCTAPI void writeType(struct ItemStackRequestSlotInfo const&);
+    MCTAPI void writeType(class RecipeIngredient const&);
 
 public:
     // NOLINTBEGIN

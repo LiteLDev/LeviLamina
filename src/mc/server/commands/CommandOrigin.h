@@ -18,7 +18,7 @@ namespace mce { class UUID; }
 
 class CommandOrigin {
 public:
-    mce::UUID mUUID; // this+0x8
+    mce::UUID mUuid; // this+0x8
 
 public:
     // NOLINTBEGIN

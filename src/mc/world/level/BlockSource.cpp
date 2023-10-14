@@ -44,7 +44,7 @@ optional_ref<Container> BlockSource::tryGetContainer(class BlockPos const& pos) 
 }
 
 optional_ref<Actor>
-BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<DimensionType> dimID) const {
+BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<DimensionType> dimId) const {
 
     auto nbt = origin.saveToNBT();
 
@@ -58,7 +58,7 @@ BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<Dime
 
     Dimension* dim = &getDimension();
 
-    if (dimID.has_value()) { dim = level.getDimension(dimID.value()).get(); }
+    if (dimId.has_value()) { dim = level.getDimension(dimId.value()).get(); }
 
     if (!dim) { return nullptr; }
 

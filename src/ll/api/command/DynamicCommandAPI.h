@@ -16,7 +16,6 @@ copies or substantial portions of the Software.
 
 #pragma once
 
-#define USE_PARSE_ENUM_STRING
 // #define ENABLE_PARAMETER_TYPE_POSTFIX
 
 #include "magic_enum.hpp"
@@ -274,7 +273,7 @@ public:
 
         template <typename T>
         inline enable_if_supported_t<T, T const&> getRaw() const {
-#ifdef USE_PARSE_ENUM_STRING
+
             if (type == ParameterType::Enum) {
                 auto& val = ll::memory::dAccess<std::pair<std::string, int>>(command, offset);
                 if constexpr (std::is_same_v<std::remove_cv_t<T>, int> || std::is_enum_v<T>) {
@@ -283,11 +282,6 @@ public:
                     return static_cast<T const&>(val.first);
                 }
             }
-#else
-            if constexpr (std::is_same_v<std::remove_cv_t<T>, std::string>) {
-                if (type == ParameterType::Enum) return getEnumValue();
-            }
-#endif // USE_PARSE_ENUM_STRING
             if (checkTempateType<T>(type)) return ll::memory::dAccess<T>(command, offset);
             throw std::runtime_error(fmt::format(
                 "Raw type not match, parameter Type: {}, data type: {}",
@@ -314,11 +308,6 @@ public:
             std::add_lvalue_reference_t<std::add_const_t<std::remove_reference_t<T>>>,
             T>
         get() const {
-            static_assert(
-                is_supported_result_type_v<T>
-                    || (std::is_lvalue_reference_v<T> && is_supported_result_type_v<std::remove_reference_t<T>>),
-                "Unsupported Result Type in " __FUNCTION__
-            );
             if constexpr (std::is_lvalue_reference_v<T>) return getRaw<std::remove_reference_t<T>>();
             else return getRaw<T>();
         }
@@ -450,7 +439,7 @@ public:
             this->description = enumOptions;
             return true;
         }
-        inline bool setParameterOption(CommandParameterOption parameterOption) { this->option = parameterOption; }
+        inline void setParameterOption(CommandParameterOption parameterOption) { this->option = parameterOption; }
 
         inline ParameterData(
             std::string const&     name,

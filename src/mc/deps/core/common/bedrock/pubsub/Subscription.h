@@ -1,10 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/pubsub/SubscriptionBase.h"
 
 namespace Bedrock::PubSub {
 
-class Subscription {
+class Subscription : public SubscriptionBase {
 public:
     // prevent constructor by default
     Subscription& operator=(Subscription const&);

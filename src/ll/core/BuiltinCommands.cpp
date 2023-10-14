@@ -133,8 +133,6 @@ public:
 
         registry->registerOverload<TeleportDimensionCommand>("tpdim", victimParam, dimensionTypeParam, positionParam);
         registry->registerOverload<TeleportDimensionCommand>("tpdim", victimParam, dimensionIdParam, positionParam);
-        // registry->registerOverload<TeleportDimensionCommand>(
-        //     "tpdim", dimensionTypeParam, positionParam);
         registry->registerOverload<TeleportDimensionCommand>("tpdim", dimensionIdParam, positionParam);
     }
 };

@@ -123,7 +123,7 @@ class HitResult Actor::traceRay(
     return result;
 }
 
-void Actor::teleport(class Vec3 const& pos, int dimID, class Vec2 const& rotation) {
+void Actor::teleport(class Vec3 const& pos, int dimId, class Vec2 const& rotation) {
     Vec2 relativeRotation = rotation - getRotation();
     TeleportCommand::applyTarget(
         *this,
@@ -131,7 +131,7 @@ void Actor::teleport(class Vec3 const& pos, int dimID, class Vec2 const& rotatio
             *this,
             pos,
             nullptr,
-            dimID,
+            dimId,
             RotationCommandUtils::RotationData{relativeRotation.x, relativeRotation.y, std::nullopt},
             1
         ),
@@ -139,10 +139,10 @@ void Actor::teleport(class Vec3 const& pos, int dimID, class Vec2 const& rotatio
     );
 }
 
-void Actor::teleport(class Vec3 const& pos, int dimID) {
+void Actor::teleport(class Vec3 const& pos, int dimId) {
     TeleportCommand::applyTarget(
         *this,
-        TeleportCommand::computeTarget(*this, pos, nullptr, dimID, std::nullopt, 1),
+        TeleportCommand::computeTarget(*this, pos, nullptr, dimId, std::nullopt, 1),
         false
     );
 }

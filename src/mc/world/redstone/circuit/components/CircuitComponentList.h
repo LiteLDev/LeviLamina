@@ -17,7 +17,7 @@ public:
         class BaseCircuitComponent* mComponent = nullptr;
         int                         mDampening{};
         class BlockPos              mPos {};
-        ::FacingID                  mDirection = FacingID::Unknown;
+        ::FacingID                  mDirection = Face::Unknown;
         bool                        mDirectlyPowered{};
         int                         mData{};
 

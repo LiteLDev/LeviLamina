@@ -9,7 +9,7 @@
 optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     std::string const& name,
     class Vec3 const&  pos,
-    DimensionType      dimID,
+    DimensionType      dimId,
     class Vec2 const&  rotation
 ) {
     OwnerPtrT<EntityRefTraits> ownerPtr =
@@ -29,12 +29,12 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
 
     player->setRespawnReady(pos + Vec3{0, 1.62001, 0});
 
-    player->setRespawnPosition(pos, dimID);
+    player->setRespawnPosition(pos, dimId);
 
     player->setLocalPlayerAsInitialized();
     player->doInitialSpawn();
 
-    player->teleport(pos, dimID, rotation);
+    player->teleport(pos, dimId, rotation);
 
     return player;
 }

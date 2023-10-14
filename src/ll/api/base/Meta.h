@@ -80,7 +80,11 @@ struct max_type<T, U> {
 };
 
 template <typename... TL>
-struct TypeList {
+class TypeList {
+public:
+    template <typename T>
+    static constexpr bool contains = (std::is_same_v<T, TL> || ...);
+
     template <template <typename> class W>
     using wrap = TypeList<W<TL>...>;
 

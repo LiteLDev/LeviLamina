@@ -22,22 +22,14 @@ public:
         }
         return res;
     }
-    template <>
-    MCAPI Bedrock::Result<void> readType(class CompoundTag&);
-    template <>
-    MCAPI Bedrock::Result<void> readType(struct CommandOriginData&);
-    template <>
-    MCAPI Bedrock::Result<void> readType(class Experiments&);
-    template <>
-    MCAPI Bedrock::Result<void> readType(struct ItemStackRequestSlotInfo&);
-    template <>
-    MCAPI Bedrock::Result<void> readType(class MoveActorAbsoluteData&);
-    template <>
-    MCAPI Bedrock::Result<void> readType(class NetworkItemStackDescriptor&);
-    template <>
-    MCAPI Bedrock::Result<void> readType(class StructureSettings&);
-    template <>
-    MCAPI Bedrock::Result<void> readType(std::vector<std::unique_ptr<class DataItem>>&);
+    MCTAPI Bedrock::Result<void> readType(class CompoundTag&);
+    MCTAPI Bedrock::Result<void> readType(struct CommandOriginData&);
+    MCTAPI Bedrock::Result<void> readType(class Experiments&);
+    MCTAPI Bedrock::Result<void> readType(struct ItemStackRequestSlotInfo&);
+    MCTAPI Bedrock::Result<void> readType(class MoveActorAbsoluteData&);
+    MCTAPI Bedrock::Result<void> readType(class NetworkItemStackDescriptor&);
+    MCTAPI Bedrock::Result<void> readType(class StructureSettings&);
+    MCTAPI Bedrock::Result<void> readType(std::vector<std::unique_ptr<class DataItem>>&);
 
     // prevent constructor by default
     ReadOnlyBinaryStream& operator=(ReadOnlyBinaryStream const&);

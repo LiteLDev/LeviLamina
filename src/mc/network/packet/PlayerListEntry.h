@@ -17,9 +17,9 @@ namespace mce { class UUID; }
 class PlayerListEntry {
 public:
     ActorUniqueID  mId;               // this+0x0
-    mce::UUID      mUUID;             // this+0x8
+    mce::UUID      mUuid;             // this+0x8
     std::string    mName;             // this+0x18
-    std::string    mXUID;             // this+0x38
+    std::string    mXuid;             // this+0x38
     std::string    mPlatformOnlineId; // this+0x58
     BuildPlatform  mBuildPlatform;    // this+0x78
     SerializedSkin mSkin;             // this+0x80

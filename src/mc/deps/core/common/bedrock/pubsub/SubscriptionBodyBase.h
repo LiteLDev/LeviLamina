@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/pubsub/PublisherDisconnector.h"
+#include "mc/deps/core/common/bedrock/pubsub/SubscriptionContext.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,10 +18,17 @@ public:
     SubscriptionBodyBase(SubscriptionBodyBase const&);
     SubscriptionBodyBase();
 
+    SubscriptionBodyBase* mNext; // this+0x0
+    SubscriptionBodyBase* mPrev; // this+0x8
+
+    std::shared_ptr<SubscriptionBodyBase>                 mStrongSelf;   // this+0x18
+    PublisherDisconnector*                                mDisconnector; // this+0x28
+    std::unique_ptr<Bedrock::PubSub::SubscriptionContext> mContext;      // this+0x30
+    int                                                   mGroup;        // this+0x38
 public:
     // NOLINTBEGIN
     // symbol: ??1SubscriptionBodyBase@Detail@PubSub@Bedrock@@UEAA@XZ
-    MCVAPI ~SubscriptionBodyBase();
+    virtual ~SubscriptionBodyBase();
 
     // symbol:
     // ??0SubscriptionBodyBase@Detail@PubSub@Bedrock@@QEAA@$$QEAV?$unique_ptr@VSubscriptionContext@PubSub@Bedrock@@U?$default_delete@VSubscriptionContext@PubSub@Bedrock@@@std@@@std@@@Z

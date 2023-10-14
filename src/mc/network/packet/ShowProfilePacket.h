@@ -9,7 +9,7 @@
 
 class ShowProfilePacket : public ::Packet {
 public:
-    std::string mPlayerXUID; // this+0x30
+    std::string mPlayerXiud; // this+0x30
 
     // prevent constructor by default
     ShowProfilePacket& operator=(ShowProfilePacket const&);

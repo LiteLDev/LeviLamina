@@ -25,7 +25,7 @@ public:
     bool                               mIsOptional;    // this+0x58
     CommandParameterOption             mOptions;       // this+0x59
 
-    CommandParameterData() : mTypeIndex(mTypeIndex){};
+    CommandParameterData() : mTypeIndex(0){};
 
     CommandParameterData(
         const Bedrock::typeid_t<CommandRegistry>& typeIndex,

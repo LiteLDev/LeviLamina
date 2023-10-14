@@ -46,7 +46,7 @@ public:
     LLAPI static optional_ref<SimulatedPlayer> create(
         std::string const& name,
         class Vec3 const&  pos      = Vec3::MIN,
-        DimensionType      dimID    = 0,
+        DimensionType      dimId    = 0,
         class Vec2 const&  rotation = Vec2::ZERO
     );
 
