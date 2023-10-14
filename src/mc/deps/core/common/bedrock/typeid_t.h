@@ -28,7 +28,6 @@ public:
     typeid_t<T0>(ushort value) : value(value) {}
     typeid_t<T0>() : value(++_getCounter()) {}
 
-private:
     static std::atomic_ushort& _getCounter() {
 
         // MCAPI // error C2201

@@ -1,3 +1,5 @@
+#ifdef DEBUG
+
 #include "ll/api/command/RegCommandAPI.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/core/LeviLamina.h"
@@ -8,6 +10,7 @@
 #include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/MinecraftCommands.h"
 #include "mc/server/commands/ServerCommands.h"
+#include "mc/server/commands/CommandRawText.h"
 #include "mc/world/Minecraft.h"
 #include "mc/world/level/Command.h"
 
@@ -20,6 +23,7 @@ class TestCommand : public Command {
     int         index        = -1;
     bool        target_isSet = false;
     bool        index_isSet  = false;
+    CommandRawText testTest;
 
 
 public:
@@ -60,7 +64,6 @@ public:
 
         registry.addSoftEnum("SoftEnumName", {"one_softenum", "two_softenum", "three_softenum", "four_softenum"});
 
-        // addons list
         registry.addEnum<Operation>(
             "Operation_List",
             {
@@ -90,7 +93,6 @@ public:
             )
         );
 
-        // addons install
         registry.addEnum<Operation>(
             "Operation_Install",
             {
@@ -98,25 +100,13 @@ public:
         }
         );
 
-        try {
 
-            registry.registerOverload<TestCommand>(
-                "testcommand",
-                makeMandatory<CommandParameterDataType::Enum>(
-                    &TestCommand::operation,
-                    "operation",
-                    "Operation_Addons_Install"
-                )
-                    .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-                makeMandatory<CommandParameterDataType::Basic>(&TestCommand::target, "enumName")
-            );
-        } catch (std::exception const& e) {
-            ll::logger.error("Exception occurred in registerOverload Operation_Addons_Install");
-            ll::logger.error("Error message: {} , type: {}", TextEncoding::toUTF8(e.what()), typeid(e).name());
-        } catch (...) { ll::logger.error("Unknown Exception occurred in registerOverload Operation_Addons_Install"); }
-
-
-        // addons uninstall
+        registry.registerOverload<TestCommand>(
+            "testcommand",
+            makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_Install")
+                .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
+            makeMandatory<CommandParameterDataType::Basic>(&TestCommand::target, "enumName")
+        );
 
         registry.addEnum<Operation>(
             "Operation_Others",
@@ -134,7 +124,7 @@ public:
             makeMandatory<CommandParameterDataType::SoftEnum>(
                 &TestCommand::target,
                 "enumName",
-                "EnumName",
+                "SoftEnumName",
                 &TestCommand::target_isSet
             )
         );
@@ -149,11 +139,15 @@ public:
                 &TestCommand::index_isSet
             )
         );
+        registry.registerOverload<TestCommand>(
+            "testcommand",
+            makeMandatory<CommandParameterDataType::Basic>(&TestCommand::testTest, "rawtext")
+        );
     }
 };
 
 LL_AUTO_STATIC_HOOK(
-    ServerCommandsService,
+    ServerCommandsCommandTest,
     HookPriority::Normal,
     ServerCommands::setupStandardServer,
     void,
@@ -164,10 +158,7 @@ LL_AUTO_STATIC_HOOK(
 ) {
     origin(server, networkCommands, networkTestCommands, permissionsFile);
     // Test CommandRegistry
-    try {
-        TestCommand::setup(server.getCommands().getRegistry());
-    } catch (std::exception const& e) {
-        ll::logger.error("Exception occurred in TestCommand::setup");
-        ll::logger.error("Error message: {} , type: {}", TextEncoding::toUTF8(e.what()), typeid(e).name());
-    } catch (...) { ll::logger.error("Unknown Exception occurred in TestCommand::setup!"); }
+    TestCommand::setup(server.getCommands().getRegistry());
 }
+
+#endif // DEBUG

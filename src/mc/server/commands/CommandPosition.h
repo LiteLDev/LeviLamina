@@ -2,6 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/math/Vec3.h"
+#include "mc/nbt/CompoundTag.h"
 
 class CommandPosition {
 public:

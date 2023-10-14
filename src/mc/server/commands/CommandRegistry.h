@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/AvailableCommandsPacket.h"
 #include "mc/server/commands/CommandCompareOperator.h"
 #include "mc/server/commands/CommandFlag.h"
 #include "mc/server/commands/CommandOperator.h"

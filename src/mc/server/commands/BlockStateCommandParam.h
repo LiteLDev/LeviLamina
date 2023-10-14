@@ -5,9 +5,6 @@
 class BlockStateCommandParam {
 public:
     // BlockStateCommandParam inner types define
-    enum class Type {};
-
-public:
     enum class Type : int {
         Integer = 0x0,
         Float   = 0x1,
