@@ -125,16 +125,16 @@ void setupTestEnumCommand() {
            std::unordered_map<std::string, DynamicCommand::Result>& results) {
             auto& action = results["testEnum"].getRaw<std::string>();
             switch (do_hash(action.c_str())) {
-            case do_hash("add"):
+            case "add"_h:
                 if (results["testInt"].isSet) output.success(fmt::format("add {}", results["testInt"].getRaw<int>()));
                 else output.success("add nothing");
                 break;
-            case do_hash("remove"):
+            case "remove"_h:
                 if (results["testInt"].isSet)
                     output.success(fmt::format("remove {}", results["testInt"].getRaw<int>()));
                 else output.success("remove nothing");
                 break;
-            case do_hash("list"):
+            case "list"_h:
                 output.success("list");
                 break;
             default:
@@ -165,13 +165,13 @@ void setupExampleCommand() {
                             CommandOutput&                                           output,
                             std::unordered_map<std::string, DynamicCommand::Result>& results) {
         switch (do_hash(results["testEnum"].getRaw<std::string>().c_str())) {
-        case do_hash("add"):
+        case "add"_h:
             output.success(fmt::format("Add - {}", results["testString"].getRaw<std::string>()));
             break;
-        case do_hash("remove"):
+        case "remove"_h:
             output.success(fmt::format("Remove - {}", results["testString"].getRaw<std::string>()));
             break;
-        case do_hash("list"):
+        case "list"_h:
             output.success("List");
             break;
         default:

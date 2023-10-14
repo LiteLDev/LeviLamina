@@ -704,9 +704,8 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
     auto ptr = commandInstance.get();
     if (!ptr) throw std::runtime_error("DynamicCommand::setup - commandInstance is null");
     if (!serverCommandsRegistered) {
-        delaySetupLock.lock();
-        auto& uptr = delaySetupCommandInstances.emplace_back(std::move(commandInstance));
-        delaySetupLock.unlock();
+        SRWLockHolder locker(delaySetupLock);
+        auto&         uptr = delaySetupCommandInstances.emplace_back(std::move(commandInstance));
         return uptr.get();
     }
     Schedule::nextTick([instance{commandInstance.release()}]() {
@@ -798,7 +797,7 @@ inline std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(
     CommandFlag            flag,
     HMODULE                handle
 ) {
-    if (ll::globalRuntimeConfig.serverStatus != ll::LLServerStatus::Running) {
+    if (ll::globalRuntimeConfig.serverStatus != ll::ServerStatus::Running) {
         for (auto& cmd : delaySetupCommandInstances) {
             if (cmd->name_ == name) {
                 logger.error("Command \"{}\" already exists", name);

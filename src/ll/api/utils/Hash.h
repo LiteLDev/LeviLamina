@@ -47,6 +47,8 @@ constexpr uint64 do_hash(const char* x, size_t len) {
     return rval;
 }
 
+constexpr uint64 operator""_h(const char* x, size_t len) { return do_hash(x, len); }
+
 constexpr uint64 do_hash2(std::string_view x) {
     // ap hash
     uint64 rval = 0;

@@ -167,7 +167,7 @@ ScheduleTaskQueueType taskQueue;
 
 namespace Schedule {
 ScheduleTask delay(std::function<void(void)> task, uint64 tickDelay, HMODULE handle) {
-    if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping) return {(uint)-1};
+    if (ll::globalRuntimeConfig.serverStatus >= ll::ServerStatus::Stopping) return {(uint)-1};
     ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, std::move(task), tickDelay, -1, -1, handle);
     locker.lock();
     pendingTaskList.push_back(sche);
@@ -176,7 +176,7 @@ ScheduleTask delay(std::function<void(void)> task, uint64 tickDelay, HMODULE han
 }
 
 ScheduleTask repeat(std::function<void(void)> task, uint64 tickRepeat, int maxCount, HMODULE handle) {
-    if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping) return {(uint)-1};
+    if (ll::globalRuntimeConfig.serverStatus >= ll::ServerStatus::Stopping) return {(uint)-1};
     ScheduleTaskData::TaskType type =
         maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
     ScheduleTaskData
@@ -189,7 +189,7 @@ ScheduleTask repeat(std::function<void(void)> task, uint64 tickRepeat, int maxCo
 
 ScheduleTask
 delayRepeat(std::function<void(void)> task, uint64 tickDelay, uint64 tickRepeat, int maxCount, HMODULE handle) {
-    if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping) return {(uint)-1};
+    if (ll::globalRuntimeConfig.serverStatus >= ll::ServerStatus::Stopping) return {(uint)-1};
     ScheduleTaskData::TaskType type =
         maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
     ScheduleTaskData sche(type, std::move(task), tickDelay, std::max(tickRepeat, 1ull), maxCount, handle);
@@ -200,7 +200,7 @@ delayRepeat(std::function<void(void)> task, uint64 tickDelay, uint64 tickRepeat,
 }
 
 ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle) {
-    if (ll::globalRuntimeConfig.serverStatus >= ll::LLServerStatus::Stopping) return {(uint)-1};
+    if (ll::globalRuntimeConfig.serverStatus >= ll::ServerStatus::Stopping) return {(uint)-1};
     ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, std::move(task), 1, -1, -1, handle);
     locker.lock();
     pendingTaskList.push_back(sche);

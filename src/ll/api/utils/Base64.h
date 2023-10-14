@@ -15,8 +15,8 @@ inline size_t getEncodeLength(size_t len) { return (len + 2 - ((len + 2) % 3)) /
 inline size_t getEncodeLength(std::string const& str) { return getEncodeLength(str.length()); }
 
 inline size_t getDecodeLength(std::string const& in) {
-    unsigned char count      = 0;
-    size_t        input_size = in.size();
+    uchar  count      = 0;
+    size_t input_size = in.size();
     for (auto it = in.rbegin(); *it == '='; ++it) { ++count; }
     input_size -= count;     // remove padding size
     count       = 0;         // reset padding counter

@@ -1,5 +1,4 @@
 #pragma once
-#include "ll/api/LoggerAPI.h"
 #include "ll/api/base/Global.h"
 #include <fstream>
 #include <optional>

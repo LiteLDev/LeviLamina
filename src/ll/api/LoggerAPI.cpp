@@ -86,42 +86,42 @@ bool checkLogLevel(int level, int outLevel) {
 fmt::text_style getModeColor(std::string const& a1) {
     if (!ll::globalConfig.colorLog) return {};
     switch (do_hash(a1)) {
-    case do_hash("INFO"):
+    case "INFO"_h:
         return fmt::fg(fmt::color::light_sea_green);
-    case do_hash("WARN"):
+    case "WARN"_h:
         return fmt::fg(fmt::color::yellow);
-    case do_hash("DEBUG"):
+    case "DEBUG"_h:
         return fmt::fg(fmt::color::white);
-    case do_hash("ERROR"):
+    case "ERROR"_h:
         return fmt::fg(fmt::terminal_color::bright_red);
-    case do_hash("FATAL"):
+    case "FATAL"_h:
         return fmt::fg(fmt::color::red);
     }
     return fmt::fg(fmt::color::white);
 }
 
 template <typename S, typename Char>
-std::string applyTextStyle(fmt::v9::text_style const& ts, S const& format_str, bool reset) {
-    fmt::v9::basic_memory_buffer<Char> buf;
-    auto                               fmt       = fmt::detail::to_string_view(format_str);
-    bool                               has_style = false;
+std::string applyTextStyle(fmt::text_style const& ts, S const& format_str, bool reset) {
+    fmt::basic_memory_buffer<Char> buf;
+    auto                           fmt       = fmt::detail::to_string_view(format_str);
+    bool                           has_style = false;
     if (ts.has_emphasis()) {
         has_style     = true;
-        auto emphasis = fmt::v9::detail::make_emphasis<Char>(ts.get_emphasis());
+        auto emphasis = fmt::detail::make_emphasis<Char>(ts.get_emphasis());
         buf.append(emphasis.begin(), emphasis.end());
     }
     if (ts.has_foreground()) {
         has_style       = true;
-        auto foreground = fmt::v9::detail::make_foreground_color<Char>(ts.get_foreground());
+        auto foreground = fmt::detail::make_foreground_color<Char>(ts.get_foreground());
         buf.append(foreground.begin(), foreground.end());
     }
     if (ts.has_background()) {
         has_style       = true;
-        auto background = fmt::v9::detail::make_background_color<Char>(ts.get_background());
+        auto background = fmt::detail::make_background_color<Char>(ts.get_background());
         buf.append(background.begin(), background.end());
     }
     buf.append(fmt.begin(), fmt.end());
-    if (has_style && reset) fmt::v9::detail::reset_color<Char>(buf);
+    if (has_style && reset) fmt::detail::reset_color<Char>(buf);
     return fmt::to_string(buf);
 }
 

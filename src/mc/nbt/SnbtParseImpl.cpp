@@ -151,11 +151,11 @@ int get_codepoint(std::string_view& s) {
         auto current = get(s);
 
         if (current >= '0' && current <= '9') {
-            codepoint += static_cast<int>((static_cast<unsigned int>(current) - 0x30u) << factor);
+            codepoint += static_cast<int>((static_cast<uint>(current) - 0x30u) << factor);
         } else if (current >= 'A' && current <= 'F') {
-            codepoint += static_cast<int>((static_cast<unsigned int>(current) - 0x37u) << factor);
+            codepoint += static_cast<int>((static_cast<uint>(current) - 0x37u) << factor);
         } else if (current >= 'a' && current <= 'f') {
-            codepoint += static_cast<int>((static_cast<unsigned int>(current) - 0x57u) << factor);
+            codepoint += static_cast<int>((static_cast<uint>(current) - 0x57u) << factor);
         } else {
             return -1;
         }

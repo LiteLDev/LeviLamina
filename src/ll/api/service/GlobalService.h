@@ -42,16 +42,16 @@ public:
     LLAPI GlobalService();
     void  init(T* ptr);
 
-    T* get() { return value; }
-    T* operator->() { return value; }
-    T& operator*() { return *value; }
-    operator T*() { return value; } // NOLINT(google-explicit-constructor)
+    constexpr T* get() { return value; }
+    constexpr T* operator->() { return value; }
+    constexpr T& operator*() { return *value; }
+    constexpr    operator T*() { return value; } // NOLINT(google-explicit-constructor)
     template <typename U>
-    explicit operator U*() {
+    constexpr explicit operator U*() {
         return static_cast<U*>(value);
     }
-    explicit operator bool() { return value != nullptr; }
-    bool has_value() { return value != nullptr; }
+    constexpr explicit operator bool() { return value != nullptr; }
+    constexpr bool has_value() { return value != nullptr; }
 };
 
 template <IsGlobalService T>

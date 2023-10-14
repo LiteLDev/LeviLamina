@@ -19,7 +19,11 @@ public:
     // clang-format on
 
     // RakPeerHelper inner types define
-    enum class PeerPurpose {};
+    enum class PeerPurpose : int {
+        Gameplay      = 0x0,
+        LAN_Discovery = 0x1,
+        Count         = 0x2,
+    };
 
     class IPSupportInterface {
     public:

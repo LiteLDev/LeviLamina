@@ -14,7 +14,6 @@ namespace ll {
 struct CommandLineOption {
     bool noColorOption = false;
 };
-enum class LLServerStatus { Starting, Running, Stopping };
 struct LLConfig {
     bool        debugMode = false;
     bool        colorLog  = true;
@@ -54,7 +53,7 @@ struct LLConfig {
 };
 
 struct LLRuntimeConfig {
-    LLServerStatus  serverStatus = LLServerStatus::Starting;
+    ServerStatus    serverStatus = ServerStatus::Starting;
     std::thread::id tickThreadId;
 };
 

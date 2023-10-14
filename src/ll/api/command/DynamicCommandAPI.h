@@ -111,19 +111,19 @@ class DynamicCommandInstance;
  *     auto& action = results["testEnum"].get<std::string>();
  *     switch (do_hash(action.c_str()))
  *     {
- *       case do_hash("add"):
+ *       case "add"_h:
  *         if (results["testInt"].isSet)
  *           output.success(fmt::format("add {}", results["testInt"].getRaw<int>()));
  *         else
  *           output.success("add nothing");
  *         break;
- *       case do_hash("remove"):
+ *       case "remove"_h:
  *         if (results["testInt"].isSet)
  *           output.success(fmt::format("remove {}", results["testInt"].getRaw<int>()));
  *         else
  *           output.success("remove nothing");
  *         break;
- *       case do_hash("list"):
+ *       case "list"_h:
  *         output.success("list");
  *         break;
  *       default:
@@ -734,11 +734,11 @@ public:
     LLAPI static std::vector<std::string> getSoftEnumNames();
 
     template <typename T>
-    inline std::enable_if_t<fmt::v9::detail::is_string<T>::value, ParameterIndex> toIndex(T const& arg) {
+    inline std::enable_if_t<fmt::detail::is_string<T>::value, ParameterIndex> toIndex(T const& arg) {
         return findParameterIndex(arg);
     }
     template <typename T>
-    inline std::enable_if_t<!fmt::v9::detail::is_string<T>::value, ParameterIndex> toIndex(T const& arg) = delete;
+    inline std::enable_if_t<!fmt::detail::is_string<T>::value, ParameterIndex> toIndex(T const& arg) = delete;
     template <>
     inline ParameterIndex toIndex(ParameterIndex const& arg) {
         return arg;

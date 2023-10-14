@@ -28,9 +28,9 @@
 #include "windows.h"
 
 
-Logger ll::logger("LeviLamina");
-time_t ll::startTime;
-time_t ll::endTime;
+Logger                                ll::logger("LeviLamina");
+std::chrono::steady_clock::time_point ll::SeverStartBeginTime;
+std::chrono::steady_clock::time_point ll::SeverStartEndTime;
 
 using namespace ll;
 
@@ -334,13 +334,23 @@ void leviLaminaMain() {
 
 using namespace ll::memory;
 
-// int main(int argc, char* argv[]);
-
 LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Normal, "main", int, int argc, char* argv[]) {
-    startTime = clock();
+
+    SeverStartBeginTime = std::chrono::steady_clock::now();
+
     for (int i = 0; i < argc; ++i) {
-        if (strcmp(argv[i], "--noColor") == 0) {
+        switch (do_hash(argv[i])) {
+        case "--noColor"_h:
             ll::commandLineOption.noColorOption = true;
+            break;
+        case "-v"_h:
+        case "--version"_h:
+            fmt::print("{}", ll::getBdsVersion());
+            return 0;
+        case "--protocolversion"_h:
+            fmt::print("{}", ll::getServerProtocolVersion());
+            return 0;
+        default:
             break;
         }
     }
@@ -348,4 +358,4 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Normal, "main", int, int a
     return origin(argc, argv);
 }
 
-[[maybe_unused]] BOOL WINAPI DllMain(HMODULE, DWORD , LPVOID) { return TRUE; }
+[[maybe_unused]] BOOL WINAPI DllMain(HMODULE, DWORD, LPVOID) { return TRUE; }

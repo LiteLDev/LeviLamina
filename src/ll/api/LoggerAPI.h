@@ -167,5 +167,5 @@ private:
     LLAPI static std::mutex& getLocker();
 };
 
-template <typename S, typename Char = fmt::v9::char_t<S>>
-std::string applyTextStyle(fmt::v9::text_style const& ts, S const& format_str, bool reset = true);
+template <typename S, typename Char = fmt::char_t<S>>
+std::string applyTextStyle(fmt::text_style const& ts, S const& format_str, bool reset = true);
