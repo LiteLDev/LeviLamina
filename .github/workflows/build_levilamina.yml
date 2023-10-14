@@ -3,13 +3,13 @@ on:
     paths:
       - .github/workflows/build_levilamina.yml
       - scripts/localbdslibrary.lua
-      - src
+      - src/**
       - xmake.lua
   pull_request:
     paths:
       - .github/workflows/build_levilamina.yml
       - scripts/localbdslibrary.lua
-      - src
+      - src/**
       - xmake.lua
   workflow_dispatch:
 

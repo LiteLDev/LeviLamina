@@ -2,7 +2,7 @@ on:
   push:
     paths:
       - .github/workflows/build_docs.yml
-      - docs
+      - docs/**
       - mkdocs.yml
       - requirements.txt
   workflow_dispatch:
