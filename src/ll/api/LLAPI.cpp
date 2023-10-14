@@ -109,7 +109,7 @@ Version getLoaderVersion() {
 
 } // namespace ll
 
-ll::ServerStatus ll::getServerStatus() { return (ll::ServerStatus)(ll::globalRuntimeConfig.serverStatus); }
+ll::ServerStatus ll::getServerStatus() { return ll::globalRuntimeConfig.serverStatus; }
 
 bool ll::isServerStarting() { return getServerStatus() == ll::ServerStatus::Starting; }
 
