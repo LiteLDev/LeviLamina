@@ -132,12 +132,13 @@ public:
     };
 
     struct LexicalToken {
-        const char* mText;           // this+0x0
-        uint        mLength;         // this+0x8
-        Symbol      mType;           // this+0xC
-        Symbol      mIdentifierInfo; // this+0x10
-    private:
-        CommandRegistry const& mRegistry; // this+0x18
+        const char*            mText;           // this+0x0
+        uint                   mLength;         // this+0x8
+        Symbol                 mType;           // this+0xC
+        Symbol                 mIdentifierInfo; // this+0x10
+        CommandRegistry const& mRegistry;       // this+0x18
+
+        LexicalToken(CommandRegistry& registry): mRegistry(registry) {}
 
     public:
         // NOLINTBEGIN

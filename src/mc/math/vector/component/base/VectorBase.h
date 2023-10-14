@@ -81,13 +81,13 @@ public:
     }
 
     [[nodiscard]] constexpr first_type& operator[](size_t index) noexcept
-        requires ll::concepts::IsAllSame<Components...>
+        requires ll::concepts::IsAllSame<first_type, Components...>
     {
         return static_cast<T*>(this)->template get<first_type>(index);
     }
 
     [[nodiscard]] constexpr first_type operator[](size_t index) const noexcept
-        requires ll::concepts::IsAllSame<Components...>
+        requires ll::concepts::IsAllSame<first_type, Components...>
     {
         return static_cast<T const*>(this)->template get<first_type>(index);
     }

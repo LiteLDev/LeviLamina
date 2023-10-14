@@ -12,8 +12,11 @@ public:
 
     constexpr EntityId& operator=(EntityId const&) = default;
 
-    template <typename T>
+    template <std::integral T>
     constexpr EntityId(T rawId) : mRawId(static_cast<entity_type>(rawId)) {}
 
-    constexpr operator entity_type() const { return mRawId; }
+    template <std::integral T>
+    constexpr operator T() const {
+        return mRawId;
+    }
 };

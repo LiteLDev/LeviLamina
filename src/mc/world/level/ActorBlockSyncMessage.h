@@ -1,8 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorUniqueID.h"
 
-class ActorBlockSyncMessage {
+struct ActorBlockSyncMessage {
 public:
     // ActorBlockSyncMessage inner types define
     enum class MessageId : int {
