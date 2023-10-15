@@ -1012,6 +1012,10 @@ MCTAPI bool CommandRegistry::parse<CommandSelector<
     Actor>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
     const;
 
+MCTAPI bool CommandRegistry::parse<CommandSelector<
+    Player>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+    const;
+
 MCTAPI bool CommandRegistry::parse<
     CommandWildcardInt>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
     const;
