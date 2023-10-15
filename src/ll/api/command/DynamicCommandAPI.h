@@ -24,7 +24,9 @@ copies or substantial portions of the Software.
 #include "ll/api/service/GlobalService.h"
 #include "ll/api/utils/WinHelper.h"
 #include "mc/deps/json/Value.h"
+#include "mc/server/commands/CommandBlockName.h"
 #include "mc/server/commands/CommandItem.h"
+#include "mc/server/commands/CommandMessage.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOutput.h"
 #include "mc/server/commands/CommandParameterData.h"
@@ -36,6 +38,7 @@ copies or substantial portions of the Software.
 #include "mc/server/commands/MinecraftCommands.h"
 #include "mc/world/Minecraft.h"
 #include "mc/world/actor/player/Player.h"
+#include "mc/world/effect/MobEffect.h"
 #include "mc/world/level/Command.h"
 
 struct DCCallback;
@@ -43,11 +46,6 @@ struct DCArgs;
 typedef union DCValue_ DCValue;
 
 class Actor;
-class CommandMessage;
-class CommandOutput;
-class CommandItem;
-class CommandBlockName;
-class MobEffect;
 class DynamicCommandInstance;
 
 
