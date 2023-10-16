@@ -1,6 +1,6 @@
 #ifdef DEBUG
 
-#include "ll/api/command/RegCommandAPI.h"
+#include "ll/api/command/RegisterCommandHelper.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/server/commands/CommandOrigin.h"

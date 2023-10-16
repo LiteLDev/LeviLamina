@@ -2,7 +2,7 @@
 #include "ll/api/event/EventManager.h"
 #include "ll/api/memory/Hook.h"
 
-#include "ll/api/DynamicCommandAPI.h"
+#include "ll/api/DynamicCommand.h"
 
 #include "ll/api/event/impl/EventImpl.inl"
 #include "ll/api/event/impl/EventManagerImpl.inl"

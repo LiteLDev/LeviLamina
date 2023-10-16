@@ -3,7 +3,7 @@
 #include "ll/api/LLAPI.h"
 #include "ll/api/LoggerAPI.h"
 #include "ll/api/ScheduleAPI.h"
-#include "ll/api/command/DynamicCommandAPI.h"
+#include "ll/api/command/DynamicCommand.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/utils/Hash.h"
 #include "ll/core/Levilamina.h"

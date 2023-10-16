@@ -11,7 +11,8 @@
 #include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/CommandSelector.h"
 
-namespace ll::RegisterCommandHelper {
+namespace ll::command::RegisterCommandHelper {
+
 template <typename Command, typename Type>
 static int getOffset(Type Command::*src) {
     union {
@@ -89,4 +90,5 @@ static CommandParameterData makeOptional(
         isSet ? getOffset(isSet) : -1,
     };
 }
-} // namespace ll::RegisterCommandHelper
+
+} // namespace ll::command::RegisterCommandHelper

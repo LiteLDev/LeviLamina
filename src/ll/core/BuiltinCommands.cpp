@@ -1,6 +1,6 @@
 ﻿#include "ll/api/LLAPI.h"
 #include "ll/api/ServerAPI.h"
-#include "ll/api/command/RegCommandAPI.h"
+#include "ll/api/command/RegisterCommandHelper.h"
 #include "ll/core/Config.h"
 #include "ll/core/PluginManager.h"
 
@@ -17,8 +17,8 @@
 #include "mc/world/level/dimension/VanillaDimensions.h"
 
 using namespace ll;
-using namespace ll::RegisterCommandHelper;
 using namespace ll::StringUtils;
+using namespace ll::command::RegisterCommandHelper;
 
 class TeleportDimensionCommand : public Command {
 

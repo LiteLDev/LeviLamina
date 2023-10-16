@@ -1,5 +1,5 @@
 ﻿// #define COMMAND_REGISTRY_EXTRA
-#include "ll/api/command/DynamicCommandAPI.h"
+#include "ll/api/command/DynamicCommand.h"
 #include "dyncall/dyncall_callback.h"
 #include "ll/api/LLAPI.h"
 #include "ll/api/LoggerAPI.h"

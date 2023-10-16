@@ -1,7 +1,7 @@
 #include "ll/core/AddonsHelper.h"
 #include "ll/api/LLAPI.h"
 #include "ll/api/LoggerAPI.h"
-#include "ll/api/RegCommandAPI.h"
+#include "ll/api/RegisterCommandHelper.h"
 #include "ll/api/event/LegacyEvents.h"
 #include "ll/api/event/server/RegisterCommandEvent.h"
 #include "ll/api/i18n/I18nAPI.h"
