@@ -1,6 +1,8 @@
 ﻿// #define COMMAND_REGISTRY_EXTRA
 #include "ll/api/command/DynamicCommand.h"
+
 #include "dyncall/dyncall_callback.h"
+
 #include "ll/api/LLAPI.h"
 #include "ll/api/LoggerAPI.h"
 #include "ll/api/ScheduleAPI.h"
@@ -9,6 +11,7 @@
 #include "ll/api/utils/SRWLock.h"
 #include "ll/core/Config.h"
 #include "ll/core/Levilamina.h"
+
 #include "mc/network/packet/AvailableCommandsPacket.h"
 #include "mc/server/LoopbackPacketSender.h"
 #include "mc/server/commands/BlockStateCommandParam.h"
@@ -120,7 +123,13 @@ auto const ParameterSizeMap = std::unordered_map<ParameterType, size_t>{
 #endif  // ENABLE_PARAMETER_TYPE_POSTFIX
 };
 
-inline void OutputError(std::string errorMsg, int errorCode, std::string errorWhat, std::string func, HMODULE handle) {
+inline void OutputError(
+    const std::string& errorMsg,
+    int                errorCode,
+    const std::string& errorWhat,
+    const std::string& func,
+    HMODULE            handle
+) {
     logger.error(errorMsg);
     logger.error("Error: Code [{}] {}", errorCode, errorWhat);
     logger.error("In Function ({})", func);

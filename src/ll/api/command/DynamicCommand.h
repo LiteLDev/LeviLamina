@@ -1,28 +1,13 @@
-/*
-MIT License
-
-Copyright (c) 2022 LiteLDev
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-*/
-
 #pragma once
 
 // #define ENABLE_PARAMETER_TYPE_POSTFIX
 
+#include "fmt/core.h"
 #include "magic_enum.hpp"
 
-#include "fmt/core.h"
 #include "ll/api/service/GlobalService.h"
 #include "ll/api/utils/WinHelper.h"
+
 #include "mc/deps/json/Value.h"
 #include "mc/server/commands/CommandBlockName.h"
 #include "mc/server/commands/CommandItem.h"
@@ -40,6 +25,7 @@ copies or substantial portions of the Software.
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/effect/MobEffect.h"
 #include "mc/world/level/Command.h"
+
 
 struct DCCallback;
 struct DCArgs;
@@ -270,7 +256,7 @@ public:
         LLAPI DynamicCommandInstance const* getInstance() const;
 
         template <typename T>
-        inline enable_if_supported_t<T, T const&> getRaw() const {
+        enable_if_supported_t<T, T const&> getRaw() const {
 
             if (type == ParameterType::Enum) {
                 auto& val = ll::memory::dAccess<std::pair<std::string, int>>(command, offset);
@@ -289,7 +275,7 @@ public:
         }
 
         template <typename T>
-        inline enable_if_supported_t<T, T const&> value_or(T const& defaultValue) {
+        enable_if_supported_t<T, T const&> value_or(T const& defaultValue) {
             if (isSet) return getRaw<T>();
             return defaultValue;
         }
@@ -301,7 +287,7 @@ public:
          * @return The value with type `T`
          */
         template <typename T>
-        inline std::conditional_t<
+        std::conditional_t<
             std::is_lvalue_reference_v<T>,
             std::add_lvalue_reference_t<std::add_const_t<std::remove_reference_t<T>>>,
             T>
@@ -311,7 +297,7 @@ public:
         }
 
         template <>
-        inline std::vector<Actor*> get<std::vector<Actor*>>() const {
+        std::vector<Actor*> get<std::vector<Actor*>>() const {
             if (type == ParameterType::Player) {
                 auto                players = get<std::vector<Player*>>();
                 std::vector<Actor*> actors(players.size());
@@ -325,18 +311,18 @@ public:
             return rtn;
         }
         template <>
-        inline std::vector<Player*> get<std::vector<Player*>>() const {
+        std::vector<Player*> get<std::vector<Player*>>() const {
             std::vector<Player*> rtn;
             for (auto& result : getRaw<CommandSelector<Player>>().results(*origin)) { rtn.push_back(result); }
             return rtn;
         }
         template <>
-        inline BlockPos get<BlockPos>() const {
+        BlockPos get<BlockPos>() const {
             auto& pos = getRaw<CommandPosition>();
             return pos.getBlockPos(0, *origin, Vec3::ZERO);
         }
         template <>
-        inline Vec3 get<Vec3>() const {
+        Vec3 get<Vec3>() const {
             auto& pos = getRaw<CommandPositionFloat>();
             return pos.getPosition(0, *origin, Vec3::ZERO);
         }
@@ -355,7 +341,7 @@ public:
         LLAPI bool   isValueSet(DynamicCommand const* command) const;
         LLAPI Result getResult(DynamicCommand const* command, CommandOrigin const* origin) const;
 
-        inline size_t getOffset() const { return offset; }
+        size_t getOffset() const { return offset; }
     };
 
     /**
@@ -407,7 +393,7 @@ public:
         friend class DynamicCommand;
 
         template <ParameterType type>
-        inline static constexpr CommandParameterDataType getCommandParameterDataType() {
+        static constexpr CommandParameterDataType getCommandParameterDataType() {
             if constexpr (type == ParameterType::Enum) return CommandParameterDataType::Enum;
             else if constexpr (type == ParameterType::SoftEnum) return CommandParameterDataType::SoftEnum;
             // else if constexpr (type == ParameterType::Postfix)
@@ -430,16 +416,16 @@ public:
             return param;
         }
 
-        inline void setOptional(bool _optional) { this->optional = _optional; }
-        inline bool setEnumOptions(std::string const& enumOptions) {
+        void setOptional(bool _optional) { this->optional = _optional; }
+        bool setEnumOptions(std::string const& enumOptions) {
             if (type != DynamicCommand::ParameterType::Enum && type != DynamicCommand::ParameterType::SoftEnum)
                 return false;
             this->description = enumOptions;
             return true;
         }
-        inline void setParameterOption(CommandParameterOption parameterOption) { this->option = parameterOption; }
+        void setParameterOption(CommandParameterOption parameterOption) { this->option = parameterOption; }
 
-        inline ParameterData(
+        ParameterData(
             std::string const&     name,
             ParameterType          type,
             const char*            enumOptions     = "",
@@ -459,7 +445,7 @@ public:
 
 private:
     template <typename _Ty>
-    inline static enable_if_supported_t<_Ty, bool> checkTempateType(ParameterType type) {
+    static enable_if_supported_t<_Ty, bool> checkTempateType(ParameterType type) {
         switch (type) {
         case ParameterType::Bool:
             return std::is_same_v<bool, std::remove_cv_t<_Ty>>;
@@ -560,7 +546,7 @@ public:
      *
      * @note The command name only consists of lowercase letters and `_` .
      */
-    inline static DynamicCommandInstance const* setup(
+    static DynamicCommandInstance const* setup(
         std::string const&                                          name,
         std::string const&                                          description,
         std::unordered_map<std::string, std::vector<std::string>>&& enums,
@@ -606,9 +592,9 @@ public:
         DynamicCommandInstance* instance;
         size_t                  index;
         ParameterIndex(DynamicCommandInstance* instance, size_t index) : instance(instance), index(index){};
-        inline operator size_t() const { return index; }
-        inline DynamicCommand::ParameterData& operator->() { return instance->parameterDatas.at(index); }
-        inline bool                           isValid() const {
+        operator size_t() const { return index; }
+        DynamicCommand::ParameterData& operator->() { return instance->parameterDatas.at(index); }
+        bool                           isValid() const {
             size_t size = instance->parameterDatas.size();
             return index >= 0 && index < size;
         }
@@ -732,37 +718,37 @@ public:
     LLAPI static std::vector<std::string> getSoftEnumNames();
 
     template <typename T>
-    inline std::enable_if_t<fmt::detail::is_string<T>::value, ParameterIndex> toIndex(T const& arg) {
+    std::enable_if_t<fmt::detail::is_string<T>::value, ParameterIndex> toIndex(T const& arg) {
         return findParameterIndex(arg);
     }
     template <typename T>
-    inline std::enable_if_t<!fmt::detail::is_string<T>::value, ParameterIndex> toIndex(T const& arg) = delete;
+    std::enable_if_t<!fmt::detail::is_string<T>::value, ParameterIndex> toIndex(T const& arg) = delete;
     template <>
-    inline ParameterIndex toIndex(ParameterIndex const& arg) {
+    ParameterIndex toIndex(ParameterIndex const& arg) {
         return arg;
     }
     template <>
-    inline ParameterIndex toIndex(DynamicCommand::ParameterData const& arg) {
+    ParameterIndex toIndex(DynamicCommand::ParameterData const& arg) {
         return newParameter(DynamicCommand::ParameterData(arg));
     }
     template <typename... Args>
-    inline bool addOverload(Args const&... args) {
+    bool addOverload(Args const&... args) {
         return addOverload(std::vector<ParameterIndex>{toIndex(args)...});
     }
 
     template <typename T>
-    inline bool addOverload(std::initializer_list<T>&& params) {
+    bool addOverload(std::initializer_list<T>&& params) {
         return addOverload((std::vector<T>)params);
     }
     LLAPI std::string const& getCommandName() const;
-    inline ParameterIndex    newParameter(
-           std::string const&            name,
-           DynamicCommand::ParameterType type,
-           const char*                   description,
-           std::string const&            identifier,
-           CommandParameterOption        parameterOption = CommandParameterOption::None
-       ) {
+    ParameterIndex           newParameter(
+                  std::string const&            name,
+                  DynamicCommand::ParameterType type,
+                  const char*                   description,
+                  std::string const&            identifier,
+                  CommandParameterOption        parameterOption = CommandParameterOption::None
+              ) {
         return newParameter(name, type, false, (std::string const&)description, identifier, parameterOption);
     };
-    inline bool hasRegistered() const { return DynamicCommand::getInstance(getCommandName()) != nullptr; };
+    bool hasRegistered() const { return DynamicCommand::getInstance(getCommandName()) != nullptr; };
 };
