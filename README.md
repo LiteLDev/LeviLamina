@@ -13,7 +13,7 @@ LeviLamina is an unofficial plugin loader designed to offer indispensable API su
 
 Developers can effortlessly author plugins in languages such as C++, JavaScript, Lua, Python, C#, and others. This seamless integration empowers them to effortlessly expand and personalize BDS functionality, facilitating an intuitive learning experience and unparalleled flexibility.
 
-For more information, please refer to [the documentation](https://docs.levilamina.liteldev.com).
+For more information, please refer to [the documentation](https://levilamina.liteldev.com).
 
 ## Table of Contents
 
@@ -42,7 +42,7 @@ Then, install LeviLamina bundled with Minecraft Bedrock Server using lip:
 $ lip install github.com/tooth-hub/corepack
 ```
 
-For more information, please refer to [the documentation](https://docs.levilamina.liteldev.com).
+For more information, please refer to [the documentation](https://levilamina.liteldev.com).
 
 ### Updating
 
@@ -59,7 +59,7 @@ To start the server, simply run `bedrock_server_mod.exe`:
 $ ./bedrock_server_mod.exe
 ```
 
-For more information, please refer to [the documentation](https://docs.levilamina.liteldev.com).
+For more information, please refer to [the documentation](https://levilamina.liteldev.com).
 
 ## Contributing
 

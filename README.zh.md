@@ -13,7 +13,7 @@ LeviLamina是一个非官方的插件加载器，旨在为Minecraft Bedrock Serv
 
 开发者可以轻松地使用C++、JavaScript、Lua、Python、C#等语言编写插件。这种无缝集成使他们能够轻松扩展和个性化BDS功能，提供直观的学习体验和无与伦比的灵活性。
 
-更多信息，请参阅[文档](https://docs.levilamina.liteldev.com)。
+更多信息，请参阅[文档](https://levilamina.liteldev.com)。
 
 ## 目录
 
@@ -42,7 +42,7 @@ $ cd myserver
 $ lip install github.com/tooth-hub/corepack
 ```
 
-更多信息，请参阅[文档](https://docs.levilamina.liteldev.com)。
+更多信息，请参阅[文档](https://levilamina.liteldev.com)。
 
 ### 更新
 
@@ -59,7 +59,7 @@ $ lip install github.com/tooth-hub/corepack
 $ ./bedrock_server_mod.exe
 ```
 
-更多信息，请参阅[文档](https://docs.levilamina.liteldev.com)。
+更多信息，请参阅[文档](https://levilamina.liteldev.com)。
 
 ## 贡献
 
