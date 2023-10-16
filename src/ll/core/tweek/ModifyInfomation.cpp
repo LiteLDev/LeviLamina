@@ -1,6 +1,7 @@
+#include "ll/api/ServerAPI.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/core/LeviLamina.h"
-#include "mc/common/Common.h"
+#include "ll/core/Version.h"
 
 #include "mc/deps/core/common/debug/LogDetails.h"
 
@@ -15,8 +16,21 @@ static std::unordered_map<uint, decltype(serverLogger.debug)&> loggerMap = {
 
 static bool serverStarted = false;
 
-void tryLogServerStarted(std::string& s) {
-    if (s != "Server started.") return;
+void tryModifyServerStartInfo(std::string& s) {
+    if (s != "Server started.") {
+        if (s.starts_with("Version: ")) {
+            s += fmt::format(
+                "(ProtocolVersion {}) with {}",
+                ll::getServerProtocolVersion(),
+                fmt::format(
+                    fg(fmt::color::light_sky_blue) | fmt::emphasis::bold | fmt::emphasis::italic,
+                    "LeviLamina {}",
+                    LL_FILE_VERSION_STRING
+                )
+            );
+        }
+        return;
+    }
     serverStarted = true;
 
     ll::SeverStartEndTime = std::chrono::steady_clock::now();
@@ -54,8 +68,8 @@ LL_AUTO_STATIC_HOOK(
 
     while (std::getline(iss, line)) {
         if (!line.empty() && line.back() == '\n') { line.pop_back(); }
-        if (!serverStarted) tryLogServerStarted(line);
-        logger << line << Logger::endl;
+        if (!serverStarted) tryModifyServerStartInfo(line);
+        logger(line);
     }
 }
 

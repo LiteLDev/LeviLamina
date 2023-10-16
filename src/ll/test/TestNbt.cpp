@@ -88,38 +88,38 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     )");
 
 
-    ll::logger.info("\n{}", nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
+    ll::logger.debug("\n{}", nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
 
-    ll::logger.info("\n{}", nbt2.toSnbt(SnbtFormat::Colored | SnbtFormat::Console));
+    ll::logger.debug("\n{}", nbt2.toSnbt(SnbtFormat::Colored | SnbtFormat::Console));
 
-    ll::logger.info(
+    ll::logger.debug(
         "\n{}",
         ((StringTag*)(Tag::parseSnbt(StringTag{nbt2.toNetworkNBT()}.toSnbt()).get()))
             ->toSnbt(SnbtFormat::PrettyConsolePrint | SnbtFormat::ForceAscii)
     );
 
-    ll::logger.info("\n{}", nbt.equals(nbt2));
+    ll::logger.debug("\n{}", nbt.equals(nbt2));
 
-    ll::logger.info("\n{}", nbt.toSnbt() == nbt2.toSnbt());
+    ll::logger.debug("\n{}", nbt.toSnbt() == nbt2.toSnbt());
 
-    ll::logger.info("\n{}", nbt.toBinaryNBT() == nbt2.toBinaryNBT());
+    ll::logger.debug("\n{}", nbt.toBinaryNBT() == nbt2.toBinaryNBT());
 
-    ll::logger.info("\n{}", nbt.toNetworkNBT() == nbt2.toNetworkNBT());
+    ll::logger.debug("\n{}", nbt.toNetworkNBT() == nbt2.toNetworkNBT());
 
-    ll::logger.info("\n{}", nbt.toNetworkNBT() == nbt.toNetworkNBT());
+    ll::logger.debug("\n{}", nbt.toNetworkNBT() == nbt.toNetworkNBT());
 
-    ll::logger.info("\n{}", nbt.toBinaryNBT() == nbt.toBinaryNBT());
+    ll::logger.debug("\n{}", nbt.toBinaryNBT() == nbt.toBinaryNBT());
 
-    ll::logger.info(ColorFormat::AQUA);
-    ll::logger.info(ColorFormat::MINECOIN_GOLD);
-    ll::logger.info(ColorFormat::LIGHT_PURPLE);
-    ll::logger.info(ColorFormat::ColorFromColorCode(ColorFormat::AQUA)->toString());
-    ll::logger.info(ColorFormat::ColorFromColorCode(ColorFormat::MINECOIN_GOLD)->toString());
-    ll::logger.info(ColorFormat::ColorFromColorCode(ColorFormat::LIGHT_PURPLE)->toString());
-    ll::logger.info(ColorFormat::ColorFromColorCode(ColorFormat::LIGHT_PURPLE)->toString());
-    ll::logger.info("{}", ColorFormat::FormatCodeFromName("Bold"));
+    ll::logger.debug(ColorFormat::AQUA);
+    ll::logger.debug(ColorFormat::MINECOIN_GOLD);
+    ll::logger.debug(ColorFormat::LIGHT_PURPLE);
+    ll::logger.debug(ColorFormat::ColorFromColorCode(ColorFormat::AQUA)->toString());
+    ll::logger.debug(ColorFormat::ColorFromColorCode(ColorFormat::MINECOIN_GOLD)->toString());
+    ll::logger.debug(ColorFormat::ColorFromColorCode(ColorFormat::LIGHT_PURPLE)->toString());
+    ll::logger.debug(ColorFormat::ColorFromColorCode(ColorFormat::LIGHT_PURPLE)->toString());
+    ll::logger.debug("{}", ColorFormat::FormatCodeFromName("Bold"));
 
     using namespace ll::StringUtils;
 
-    ll::logger.info("\n{}", replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console)));
+    ll::logger.debug("\n{}", replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console)));
 }

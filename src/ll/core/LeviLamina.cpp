@@ -186,7 +186,7 @@ void printLogo() {
     logger.info(tr("ll.notice.license", "LGPLv3"));
     logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
     logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
-    logger.info("Thanks to RhyMC(rhymc.com) for the support");
+    logger.info("ll.notice.sponsor.thanks");
     logger.info("");
 }
 
@@ -263,6 +263,9 @@ void leviLaminaMain() {
     // Disable Output-Sync
     std::ios::sync_with_stdio(false);
 
+    // Init LL Logger
+    Logger::setDefaultFile("logs/LeviLamina-latest.log", false);
+
     // Create Plugin Directory
     std::error_code ec;
     std::filesystem::create_directories("plugins", ec);
@@ -288,9 +291,6 @@ void leviLaminaMain() {
     // Fix problems
     fixUpCWD();
     fixPluginsLibDir();
-
-    // Init LL Logger
-    Logger::setDefaultFile("logs/LeviLamina-latest.log", false);
 
     // Check Running BDS(Requires Config)
     checkRunningBDS();

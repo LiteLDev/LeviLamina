@@ -55,92 +55,49 @@ public:
     class OutputStream {
         friend class Logger;
 
-    protected:
-        LLAPI explicit OutputStream() = default;
+    private:
+        LLAPI void print(std::string_view) const;
 
     public:
-        Logger*            logger{};
-        int                level{};
-        std::string        consoleFormat;
-        std::string        fileFormat;
-        std::string        playerFormat;
-        fmt::text_style    style;
-        std::string        levelPrefix;
-        std::ostringstream os;
-        bool               locked = false; // Deprecated
+        using playerOutputFunc = std::function<void(std::string_view)>;
+
+        Logger&                             logger;
+        std::string                         levelPrefix;
+        int                                 level;
+        std::array<fmt::text_style, 4>      style;
+        std::pair<std::string, std::string> consoleFormat;
+        std::pair<std::string, std::string> fileFormat;
+        std::pair<std::string, std::string> playerFormat;
+        playerOutputFunc                    playerOutputCallback;
 
         LLAPI explicit OutputStream(
-            Logger*           logger,
-            int               level,
-            std::string&&     consoleFormat,
-            std::string&&     fileFormat,
-            std::string&&     playerFormat,
-            fmt::text_style&& style,
-            std::string&&     mode
+            Logger&                                    logger,
+            std::string                                levelPrefix,
+            int                                        level,
+            std::array<fmt::text_style, 4> const&      style         = {{}},
+            std::pair<std::string, std::string> const& playerFormat  = {"<{2}|{1}> [{0}] {3}", "{0:%T}"},
+            std::pair<std::string, std::string> const& consoleFormat = {"{0} {1} [{2}] {3}", "{0:%T}"},
+            std::pair<std::string, std::string> const& fileFormat    = {"[{0} {1}][{2}] {3}", "{0:%F %T}"}
         );
-
-        template <typename T>
-        OutputStream& operator<<(T&& t) {
-            std::unique_lock lock(getLocker());
-            os << std::forward<T>(t);
-            return *this;
-        }
-
-        OutputStream& operator<<(std::wstring const& wstr) {
-            using ll::StringUtils::wstr2str;
-            std::unique_lock lock(getLocker());
-            os << wstr2str(wstr);
-            return *this;
-        }
-
-        OutputStream& operator<<(const wchar_t* wstr) {
-            using ll::StringUtils::wstr2str;
-            std::unique_lock lock(getLocker());
-            os << wstr2str(wstr);
-            return *this;
-        }
-
-        OutputStream& operator<<(void (*t)(OutputStream&)) {
-            t(*this);
-            return *this;
-        }
 
         template <ll::concepts::IsString S, typename... Args>
         void operator()(S const& fmt, Args const&... args) {
             if constexpr (0 == sizeof...(args)) {
-                // Avoid fmt if only one argument
-                *this << fmt << endl;
+                print(fmt);
             } else {
-                std::string str = fmt::format(fmt::runtime(fmt), args...);
-                *this << str << endl;
+                print(fmt::format(fmt::runtime(fmt), args...));
             }
         }
+
+        void setPlayerOutputFunc(playerOutputFunc const& func) { playerOutputCallback = func; }
     };
-
-private:
-    LLAPI static bool setDefaultFileImpl(HMODULE hPlugin, std::string const& logFile, bool appendMode);
-    LLAPI static bool setDefaultFileImpl(HMODULE hPlugin, nullptr_t);
-
-    LLAPI static void endlImpl(HMODULE hPlugin, OutputStream& o);
 
 public:
-    std::string   title;
-    std::ofstream ofs;
-    int           consoleLevel = -1;
-    int           fileLevel    = -1;
-
-    ~Logger() { setFile(nullptr); }
-
-    inline static bool setDefaultFile(std::string const& logFile, bool appendMode) {
-        return setDefaultFileImpl(GetCurrentModule(), logFile, appendMode);
-    };
-
-    inline static bool setDefaultFile(nullptr_t a0) { return setDefaultFileImpl(GetCurrentModule(), a0); };
-
-    inline static void endl(OutputStream& o) { return endlImpl(GetCurrentModule(), o); };
-
-    LLAPI bool setFile(std::string const& logFile, bool appendMode = true);
-    LLAPI bool setFile(nullptr_t);
+    std::string                  title;
+    std::optional<std::ofstream> ofs          = std::nullopt;
+    int                          consoleLevel = -1;
+    int                          fileLevel    = -1;
+    int                          playerLevel  = -1;
 
     OutputStream debug;
     OutputStream info;
@@ -148,9 +105,28 @@ public:
     OutputStream error;
     OutputStream fatal;
 
-    inline Logger() : Logger("") {}
-    LLAPI explicit Logger(std::string const& title);
+    LLAPI explicit Logger(std::string title = __builtin_FUNCTION());
+
+    ~Logger() { resetFile(); }
+
+    LLAPI void resetFile();
+    LLAPI bool setFile(std::string const& logFile, bool appendMode = true);
+
+    LLAPI static bool setDefaultFile(std::string const& logFile, bool appendMode);
+
+    void setPlayerOutputFunc(OutputStream::playerOutputFunc&& func) {
+        debug.setPlayerOutputFunc(func);
+        info.setPlayerOutputFunc(func);
+        warn.setPlayerOutputFunc(func);
+        error.setPlayerOutputFunc(func);
+        fatal.setPlayerOutputFunc(func);
+    }
+
+    std::ofstream& getFile() {
+        if (ofs) { return ofs.value(); }
+        return defaultFile;
+    }
 
 private:
-    LLAPI static std::mutex& getLocker();
+    LLAPI static std::ofstream defaultFile;
 };

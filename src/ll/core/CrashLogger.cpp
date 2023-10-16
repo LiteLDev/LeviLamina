@@ -44,7 +44,7 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
     );
     if (!CreateProcess(nullptr, daemonCmd, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error(tr("ll.crashLogger.error.cannotCreateDaemonProcess"));
-        crashLogger.error << GetLastErrorMessage() << Logger::endl;
+        crashLogger.error(GetLastErrorMessage());
         return false;
     }
 
