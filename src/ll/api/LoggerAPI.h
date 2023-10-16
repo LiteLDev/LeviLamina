@@ -56,7 +56,7 @@ public:
         friend class Logger;
 
     protected:
-        LLAPI explicit OutputStream();
+        LLAPI explicit OutputStream() = default;
 
     public:
         Logger*            logger{};
@@ -106,23 +106,12 @@ public:
         }
 
         template <ll::concepts::IsString S, typename... Args>
-        void operator()(S const& formatStr, Args const&... args) {
+        void operator()(S const& fmt, Args const&... args) {
             if constexpr (0 == sizeof...(args)) {
                 // Avoid fmt if only one argument
-                *this << formatStr << endl;
+                *this << fmt << endl;
             } else {
-                std::string str = fmt::format(fmt::runtime(formatStr), args...);
-                *this << str << endl;
-            }
-        }
-
-        template <typename... Args>
-        void operator()(const char* formatStr, Args const&... args) {
-            if constexpr (0 == sizeof...(args)) {
-                // Avoid fmt if only one argument
-                *this << formatStr << endl;
-            } else {
-                std::string str = fmt::format(fmt::runtime(std::string(formatStr)), args...);
+                std::string str = fmt::format(fmt::runtime(fmt), args...);
                 *this << str << endl;
             }
         }
@@ -139,7 +128,6 @@ public:
     std::ofstream ofs;
     int           consoleLevel = -1;
     int           fileLevel    = -1;
-    int           playerLevel  = -1;
 
     ~Logger() { setFile(nullptr); }
 
@@ -166,6 +154,3 @@ public:
 private:
     LLAPI static std::mutex& getLocker();
 };
-
-template <typename S, typename Char = fmt::char_t<S>>
-std::string applyTextStyle(fmt::text_style const& ts, S const& format_str, bool reset = true);

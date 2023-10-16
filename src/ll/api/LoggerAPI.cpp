@@ -7,9 +7,6 @@
 #include "ll/api/utils/Hash.h"
 #include "ll/core/Config.h"
 
-#define LOGGER_CURRENT_TITLE "ll_plugin_logger_title"
-#define LOGGER_CURRENT_FILE  "ll_plugin_logger_file"
-
 using namespace ll::StringUtils;
 
 std::mutex loggerLock;
@@ -57,8 +54,6 @@ bool Logger::setFile(nullptr_t) {
 
 std::mutex& Logger::getLocker() { return loggerLock; }
 
-Logger::OutputStream::OutputStream() = default;
-
 Logger::OutputStream::OutputStream(
     Logger*           logger,
     int               level,
@@ -100,30 +95,7 @@ fmt::text_style getModeColor(std::string const& a1) {
     return fmt::fg(fmt::color::white);
 }
 
-template <typename S, typename Char>
-std::string applyTextStyle(fmt::text_style const& ts, S const& format_str, bool reset) {
-    fmt::basic_memory_buffer<Char> buf;
-    auto                           fmt       = fmt::detail::to_string_view(format_str);
-    bool                           has_style = false;
-    if (ts.has_emphasis()) {
-        has_style     = true;
-        auto emphasis = fmt::detail::make_emphasis<Char>(ts.get_emphasis());
-        buf.append(emphasis.begin(), emphasis.end());
-    }
-    if (ts.has_foreground()) {
-        has_style       = true;
-        auto foreground = fmt::detail::make_foreground_color<Char>(ts.get_foreground());
-        buf.append(foreground.begin(), foreground.end());
-    }
-    if (ts.has_background()) {
-        has_style       = true;
-        auto background = fmt::detail::make_background_color<Char>(ts.get_background());
-        buf.append(background.begin(), background.end());
-    }
-    buf.append(fmt.begin(), fmt.end());
-    if (has_style && reset) fmt::detail::reset_color<Char>(buf);
-    return fmt::to_string(buf);
-}
+
 
 void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
     try {
@@ -173,14 +145,6 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
                 else PluginOwnData::getImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE) << fileContent << std::flush;
             }
         }
-
-        // if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player) &&
-        //     (ll::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
-        //     o.logger->player->sendTextPacket(
-        //         fmt::format(fmt::runtime(o.playerFormat), fmt::localtime(_time64(nullptr)), o.levelPrefix, title,
-        //         text)
-        //     );
-        // }
 
         o.os.str("");
         o.os.clear();

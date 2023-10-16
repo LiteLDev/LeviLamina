@@ -118,4 +118,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     ll::logger.info(ColorFormat::ColorFromColorCode(ColorFormat::LIGHT_PURPLE)->toString());
     ll::logger.info(ColorFormat::ColorFromColorCode(ColorFormat::LIGHT_PURPLE)->toString());
     ll::logger.info("{}", ColorFormat::FormatCodeFromName("Bold"));
+
+    using namespace ll::StringUtils;
+
+    ll::logger.info("\n{}", replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console)));
 }

@@ -83,6 +83,35 @@ inline std::string intToHexStr(T value, bool upperCase = true, bool no0x = true,
     return result;
 }
 
+template <typename S, typename Char = fmt::char_t<S>>
+std::string applyTextStyle(fmt::text_style const& ts, S const& format_str) {
+    fmt::basic_memory_buffer<Char> buf;
+    auto                           fmt       = fmt::detail::to_string_view(format_str);
+    bool                           has_style = false;
+    if (ts.has_emphasis()) {
+        has_style     = true;
+        auto emphasis = fmt::detail::make_emphasis<Char>(ts.get_emphasis());
+        buf.append(emphasis.begin(), emphasis.end());
+    }
+    if (ts.has_foreground()) {
+        has_style       = true;
+        auto foreground = fmt::detail::make_foreground_color<Char>(ts.get_foreground());
+        buf.append(foreground.begin(), foreground.end());
+    }
+    if (ts.has_background()) {
+        has_style       = true;
+        auto background = fmt::detail::make_background_color<Char>(ts.get_background());
+        buf.append(background.begin(), background.end());
+    }
+    buf.append(fmt.begin(), fmt.end());
+    if (has_style) fmt::detail::reset_color<Char>(buf);
+    return fmt::to_string(buf);
+}
+
+std::string removeAnsiEscapeCode(std::string_view str);
+
+std::string replaceAnsiToMcCode(std::string_view str);
+
 namespace Encoding {
 enum : uint {
     UTF16 = 0,
