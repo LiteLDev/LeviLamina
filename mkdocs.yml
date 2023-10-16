@@ -14,7 +14,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
   favicon: img/favicon.ico
-  logo: img/logo.png
+  logo: img/logo.svg
   palette:
     primary: white
 
