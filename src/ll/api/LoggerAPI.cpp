@@ -10,6 +10,8 @@
 
 using namespace ll::StringUtils;
 
+std::mutex logger_mutex;
+
 bool checkLogLevel(int level, int outLevel) {
     if (level >= outLevel) return true;
     if (level == -1 && ll::globalConfig.logLevel >= outLevel) return true;
@@ -17,36 +19,37 @@ bool checkLogLevel(int level, int outLevel) {
 }
 
 void Logger::OutputStream::print(std::string_view s) const {
+    std::lock_guard lock(logger_mutex);
     try {
         auto time = fmt::localtime(_time64(nullptr));
 
         if (checkLogLevel(logger.consoleLevel, level)) {
             std::string str = fmt::format(
-                fmt::runtime(consoleFormat.first),
-                applyTextStyle(style[0], fmt::format(fmt::runtime(consoleFormat.second), time)),
-                applyTextStyle(style[1], levelPrefix),
-                applyTextStyle(style[2], logger.title),
-                applyTextStyle<std::string_view, char>(style[3], s)
+                fmt::runtime(consoleFormat[0]),
+                applyTextStyle(style[0], fmt::format(fmt::runtime(consoleFormat[1]), time)),
+                applyTextStyle(style[1], fmt::format(fmt::runtime(consoleFormat[2]), levelPrefix)),
+                applyTextStyle(style[2], fmt::format(fmt::runtime(consoleFormat[3]), logger.title)),
+                applyTextStyle(style[3], fmt::format(fmt::runtime(consoleFormat[4]), s))
             );
             if (!ll::globalConfig.colorLog) { str = removeAnsiEscapeCode(str); }
             fmt::print("{}\n", str);
         }
         if (logger.getFile().is_open() && checkLogLevel(logger.fileLevel, level)) {
             logger.getFile() << removeAnsiEscapeCode(fmt::format(
-                fmt::runtime(fileFormat.first),
-                fmt::format(fmt::runtime(fileFormat.second), time),
-                levelPrefix,
-                logger.title,
-                s
+                fmt::runtime(fileFormat[0]),
+                fmt::format(fmt::runtime(fileFormat[1]), time),
+                fmt::format(fmt::runtime(fileFormat[2]), levelPrefix),
+                fmt::format(fmt::runtime(fileFormat[3]), logger.title),
+                fmt::format(fmt::runtime(fileFormat[4]), s)
             )) << std::endl;
         }
         if (playerOutputCallback && checkLogLevel(logger.playerLevel, level)) {
             std::string str = replaceAnsiToMcCode(fmt::format(
-                fmt::runtime(playerFormat.first),
-                applyTextStyle(style[0], fmt::format(fmt::runtime(playerFormat.second), time)),
-                applyTextStyle(style[1], levelPrefix),
-                applyTextStyle(style[2], logger.title),
-                applyTextStyle<std::string_view, char>(style[3], s)
+                fmt::runtime(playerFormat[0]),
+                applyTextStyle(style[0], fmt::format(fmt::runtime(playerFormat[1]), time)),
+                applyTextStyle(style[1], fmt::format(fmt::runtime(playerFormat[2]), levelPrefix)),
+                applyTextStyle(style[2], fmt::format(fmt::runtime(playerFormat[3]), logger.title)),
+                applyTextStyle(style[3], fmt::format(fmt::runtime(playerFormat[4]), s))
             ));
             playerOutputCallback(str);
         }
@@ -56,13 +59,13 @@ void Logger::OutputStream::print(std::string_view s) const {
 }
 
 Logger::OutputStream::OutputStream(
-    Logger&                                    logger,
-    std::string                                levelPrefix,
-    int                                        level,
-    std::array<fmt::text_style, 4> const&      style,
-    std::pair<std::string, std::string> const& playerFormat,
-    std::pair<std::string, std::string> const& consoleFormat,
-    std::pair<std::string, std::string> const& fileFormat
+    Logger&                               logger,
+    std::string                           levelPrefix,
+    int                                   level,
+    std::array<fmt::text_style, 4> const& style,
+    std::array<std::string, 5> const&     playerFormat,
+    std::array<std::string, 5> const&     consoleFormat,
+    std::array<std::string, 5> const&     fileFormat
 )
 : logger(logger),
   levelPrefix(std::move(levelPrefix)),
@@ -81,7 +84,7 @@ Logger::Logger(std::string title)
       {
         fmt::fg(fmt::color::light_blue),
         fmt::fg(fmt::color::lemon_chiffon),
-        {},
+        fmt::emphasis::italic,
         fmt::emphasis::italic,
         }
 }),
@@ -102,7 +105,7 @@ Logger::Logger(std::string title)
       {
           fmt::fg(fmt::color::light_blue),
           fmt::fg(fmt::color::yellow),
-          {},
+          fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold,
           fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold,
       }}),
   error(OutputStream{
@@ -112,7 +115,7 @@ Logger::Logger(std::string title)
       {
           fmt::fg(fmt::color::light_blue),
           fmt::fg(fmt::terminal_color::bright_red),
-          {},
+          fmt::fg(fmt::color::red) | fmt::emphasis::bold,
           fmt::fg(fmt::color::red) | fmt::emphasis::bold,
       }}),
   fatal(OutputStream{
@@ -122,7 +125,7 @@ Logger::Logger(std::string title)
       {
           fmt::fg(fmt::color::light_blue),
           fmt::fg(fmt::color::red),
-          {},
+          fmt::fg(fmt::terminal_color::red) | fmt::emphasis::bold | fmt::emphasis::italic,
           fmt::fg(fmt::terminal_color::red) | fmt::emphasis::bold | fmt::emphasis::italic,
       }}) {}
 
