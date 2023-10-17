@@ -201,7 +201,7 @@ Result ParameterPtr::getResult(DynamicCommand const* command, CommandOrigin cons
 DynamicCommand::ParameterData::ParameterData(ParameterData const& right)
 : ParameterData(right.name, right.type, right.optional, right.description, right.identifier, right.option) {
     offset = right.offset;
-};
+}
 
 inline DynamicCommand::ParameterData::ParameterData(
     std::string const&     name,
@@ -650,7 +650,7 @@ bool DynamicCommand::onServerCommandsRegister(CommandRegistry& /*registry*/) {
             if (!res) throw std::runtime_error("Command \"" + name + "\" setup failed");
         }
         CatchDynamicCommandError("DynamicCommand::_setup - " + name, handle);
-    };
+    }
     delaySetupCommandInstances.clear();
     return true;
 }
@@ -787,7 +787,7 @@ inline DynamicCommandInstance::DynamicCommandInstance(
   description_(std::make_unique<std::string>(description)),
   permission_(permission),
   flag_(flag),
-  handle_(handle){};
+  handle_(handle){}
 
 inline DynamicCommandInstance::~DynamicCommandInstance() {
     if (this->builder_) dcbFreeCallback((DCCallback*)this->builder_);
@@ -904,7 +904,7 @@ inline ParameterIndex DynamicCommandInstance::mandatory(
     CommandParameterOption        parameterOption
 ) {
     return mandatory(name, type, description, "", parameterOption);
-};
+}
 
 inline ParameterIndex DynamicCommandInstance::mandatory(
     std::string const&            name,
@@ -912,7 +912,7 @@ inline ParameterIndex DynamicCommandInstance::mandatory(
     CommandParameterOption        parameterOption
 ) {
     return mandatory(name, type, "", "", parameterOption);
-};
+}
 
 inline ParameterIndex DynamicCommandInstance::optional(
     std::string const&            name,
@@ -1017,7 +1017,7 @@ bool DynamicCommandInstance::addSoftEnumValues(std::string const& name, std::vec
         CommandSoftEnumRegistry(ll::Global<CommandRegistry>).updateSoftEnum(SoftEnumUpdateType::Add, name, values);
     }
     return true;
-};
+}
 
 bool DynamicCommandInstance::removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values)
     const {

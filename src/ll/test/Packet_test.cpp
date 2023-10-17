@@ -1,11 +1,16 @@
-﻿#include "ll/api/memory/Hook.h"
-#include "ll/api/utils/FileHelper.h"
-#include "ll/core/LeviLamina.h"
+﻿// #define GENERATE_PACKET
+
+#ifdef GENERATE_PACKET
+
 #include "mc/network/MinecraftPackets.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/world/Minecraft.h"
 #include <filesystem>
+
+#include "ll/api/memory/Hook.h"
+#include "ll/api/utils/FileHelper.h"
+#include "ll/core/LeviLamina.h"
 
 #include "magic_enum.hpp"
 
@@ -15,10 +20,6 @@ struct magic_enum::customize::enum_range<MinecraftPacketIds> {
     static constexpr int max = (int)MinecraftPacketIds::EndId;
     // (max - min) must be less than UINT16_MAX.
 };
-
-// #define GENERATE_PACKET
-
-#ifdef GENERATE_PACKET
 
 std::string getVTableName(void* vtable) {
     auto res = ll::memory::lookupSymbol(*((void**)vtable));

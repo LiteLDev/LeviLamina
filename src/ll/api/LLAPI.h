@@ -33,8 +33,8 @@ struct Version {
     explicit Version() = default;
     LLAPI Version(ushort major, ushort minor, ushort patch, PreRelease preRelease = PreRelease::None);
 
-    LLAPI bool operator<(Version const& other) const;
-    LLAPI bool operator==(Version const& other) const;
+    LLNDAPI bool operator<(Version const& other) const;
+    LLNDAPI bool operator==(Version const& other) const;
 
     /**
      * @brief Convert the version to a string
@@ -52,7 +52,7 @@ struct Version {
      * @param str The string to parse
      * @return Version The version instance
      */
-    LLAPI static Version parse(std::string const& str);
+    LLNDAPI static Version parse(std::string const& str);
 
 private:
     static constexpr std::array<std::string_view, 2> PRE_RELEASE_STRINGS = {"alpha", "beta"};
@@ -102,19 +102,19 @@ namespace ll {
  *
  * @return std::string  The loader version
  */
-LLAPI std::string getLoaderVersionString();
+LLNDAPI std::string getLoaderVersionString();
 /**
  * @brief Get the loader version as a Version object
  *
  * @return ll::Version  The loader version
  */
-LLAPI Version getLoaderVersion();
+LLNDAPI Version getLoaderVersion();
 /**
  * @brief Get whether LeviLamina is in debug mode
  *
  * @return bool  True if it is in debug mode
  */
-LLAPI bool isDebugMode();
+LLNDAPI bool isDebugMode();
 
 /**
  * @brief Get the data path of the plugin
@@ -122,7 +122,7 @@ LLAPI bool isDebugMode();
  * @param  pluginName   The name of the plugin
  * @return std::string  The data path of the plugin
  */
-LLAPI std::string getDataPath(std::string const& pluginName);
+LLNDAPI std::string getDataPath(std::string const& pluginName);
 
 /**
  * @brief Register a plugin
@@ -181,14 +181,14 @@ inline bool registerPlugin(
  * @param  name         The name of the plugin
  * @return ll::Plugin*  The plugin(nullptr if not found)
  */
-LLAPI ll::Plugin* getPlugin(std::string const& name);
+LLNDAPI ll::Plugin* getPlugin(std::string const& name);
 /**
  * @brief Get a loaded plugin by HMODULE handle
  *
  * @param  handle       The HMODULE handle of the plugin
  * @return ll::Plugin*  The plugin(nullptr if not found)
  */
-LLAPI ll::Plugin* getPlugin(HMODULE handle);
+LLNDAPI ll::Plugin* getPlugin(HMODULE handle);
 
 /**
  * @brief Get whether the plugin is loaded
@@ -196,27 +196,27 @@ LLAPI ll::Plugin* getPlugin(HMODULE handle);
  * @param  name  The name of the plugin
  * @return bool  True if the plugin is loaded
  */
-LLAPI bool hasPlugin(std::string const& name);
+LLNDAPI bool hasPlugin(std::string const& name);
 
 /**
  * @brief Get the All the loaded plugins
  *
  * @return std::unordered_map<std::string, ll::Plugin*>  The loaded plugins(name-plugin)
  */
-LLAPI std::unordered_map<std::string, ll::Plugin*> getAllPlugins();
+LLNDAPI std::unordered_map<std::string, ll::Plugin*> getAllPlugins();
 
 /**
  * @brief Get the handle of LeviLamina.dll.
  *
  * @return HMODULE  The handle
  */
-LLAPI HMODULE getLoaderHandle();
+LLNDAPI HMODULE getLoaderHandle();
 
 /// Server Status
 enum class ServerStatus { Starting, Running, Stopping };
-LLAPI ServerStatus getServerStatus();
-LLAPI bool         isServerStarting();
-LLAPI bool         isServerStopping();
+LLNDAPI ServerStatus getServerStatus();
+LLNDAPI bool         isServerStarting();
+LLNDAPI bool         isServerStopping();
 
 /**
  * @breif Get LeviLamina's current language
@@ -224,4 +224,4 @@ LLAPI bool         isServerStopping();
  * @return std::string  Language(such as: en, zh_CN, ja, ru)
  */
 std::string getLanguage();
-}; // namespace ll
+} // namespace ll

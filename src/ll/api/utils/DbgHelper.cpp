@@ -22,8 +22,6 @@ using namespace ll::StringUtils;
 
 using ll::logger;
 
-#define DBGHELP_TRANSLATE_TCHAR
-
 /////////////////////////////////// Symbol Loader ///////////////////////////////////
 
 std::set<std::wstring> loadedSymbolDir;

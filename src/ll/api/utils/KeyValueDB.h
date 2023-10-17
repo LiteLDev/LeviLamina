@@ -20,10 +20,10 @@ private:
     KeyValueDB() = default;
 
 public:
-    LLAPI static std::unique_ptr<KeyValueDB>
+    LLNDAPI static std::unique_ptr<KeyValueDB>
     create(std::string const& path, bool readCache = true, int cacheSize = 0, int filterBit = 0);
 
-    LLAPI static std::unique_ptr<KeyValueDB>
+    LLNDAPI static std::unique_ptr<KeyValueDB>
     open(std::string const& path, bool create = true, bool readCache = true, int cacheSize = 0, int filterBit = 0);
 
     LLAPI ~KeyValueDB();
@@ -46,7 +46,7 @@ public:
 
     LLNDAPI bool isValid() const;
 
-    LLAPI operator bool() const; // NOLINT(google-explicit-constructor)
+    LLNDAPI operator bool() const; // NOLINT(google-explicit-constructor)
 };
 
 } // namespace ll

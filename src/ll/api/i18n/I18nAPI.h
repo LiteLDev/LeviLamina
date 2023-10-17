@@ -117,7 +117,7 @@ public:
      * @param defaultLocaleName  The default language code(if empty, default the system default language)
      * @param defaultLangData  The default translation data
      */
-    SingleFileI18N(
+    explicit SingleFileI18N(
         std::string const& filePath,
         std::string const& defaultLocaleName = "",
         LangData const&    defaultLangData   = {}
@@ -133,10 +133,10 @@ public:
         load(filePath);
     }
     /// Copy constructor
-    SingleFileI18N(SingleFileI18N const& other) { *this = other; }
-    ~SingleFileI18N() = default;
+    SingleFileI18N(SingleFileI18N const& other) = default;
+    ~SingleFileI18N() override = default;
 
-    LLAPI Type getType();
+    LLAPI Type getType() override;
 };
 
 class MultiFileI18N : public I18nBase {
@@ -155,7 +155,7 @@ public:
      * @param defaultLocaleName  The default language code
      * @param defaultLangData  The default translation data
      */
-    MultiFileI18N(
+    explicit MultiFileI18N(
         std::string const& dirPath,
         std::string const& defaultLocaleName = "",
         LangData const&    defaultLangData   = {}
@@ -171,10 +171,10 @@ public:
         load(dirPath);
     }
     /// Copy constructor
-    MultiFileI18N(MultiFileI18N const& other) { *this = other; }
-    ~MultiFileI18N() = default;
+    MultiFileI18N(MultiFileI18N const& other) = default;
+    ~MultiFileI18N() override = default;
 
-    LLAPI Type getType();
+    LLAPI Type getType() override;
 };
 
 #ifdef UNICODE
@@ -305,7 +305,7 @@ inline I18nBase* getI18N(HMODULE hPlugin = nullptr) {
     return nullptr;
 }
 
-}; // namespace Translation
+} // namespace Translation
 
 /**
  * @brief Translate a str.
@@ -352,15 +352,13 @@ inline std::string trl(std::string const& localeName, S const& formatStr, Args&&
     return res;
 }
 
-namespace Translation {
-namespace literals {
+namespace Translation::literals {
 
 inline std::string operator""_tr(const char* x, size_t len) {
     return Translation::trImpl(GetCurrentModule(), std::string{x, len});
 }
 
-} // namespace literals
-} // namespace Translation
+} // namespace Translation::literals
 
 // For text encoding
 namespace TextEncoding {

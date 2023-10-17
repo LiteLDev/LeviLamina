@@ -50,3 +50,5 @@ public:
 
     // NOLINTEND
 };
+
+inline StringTag operator""_tag(const char* x, size_t len) { return StringTag(std::string{x, len}); }

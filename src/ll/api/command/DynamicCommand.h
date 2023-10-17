@@ -489,7 +489,6 @@ private:
             return std::is_same_v<std::unique_ptr<Command>, std::remove_cv_t<_Ty>>;
         default:
             return false;
-            break;
         }
     }
 

@@ -36,8 +36,6 @@ using namespace Translation::literals;
 #include "FMT/os.h"
 #include "FMT/printf.h"
 
-#define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
-
 class Logger {
 public:
     class OutputStream {

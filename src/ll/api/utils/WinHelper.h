@@ -4,8 +4,8 @@
 #include <string>
 
 // GetLastError() -> string
-LLAPI std::string GetLastErrorMessage();
-LLAPI std::string GetLastErrorMessage(DWORD error_message_id);
+LLNDAPI std::string GetLastErrorMessage();
+LLNDAPI std::string GetLastErrorMessage(DWORD error_message_id);
 
 // Create a new process and get its output when exited
 LLAPI bool
@@ -31,16 +31,16 @@ HMODULE inline GetCurrentModule() {
 }
 
 // Get the module path from a module handle
-LLAPI std::string GetModulePath(HMODULE handle);
-LLAPI std::string GetModuleName(HMODULE handle);
+LLNDAPI std::string GetModulePath(HMODULE handle);
+LLNDAPI std::string GetModuleName(HMODULE handle);
 
 /**
  * @brief Get the system locale name.
  *
  * @return  std::string  The system locale name.
  */
-LLAPI std::string GetSystemLocaleName();
+LLNDAPI std::string GetSystemLocaleName();
 
-LLAPI bool IsWineEnvironment();
+LLNDAPI bool IsWineEnvironment();
 
-LLAPI uintptr_t FindSig(const char* szSignature);
+LLNDAPI uintptr_t FindSig(const char* szSignature);

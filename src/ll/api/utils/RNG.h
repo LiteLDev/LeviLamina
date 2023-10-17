@@ -81,7 +81,7 @@ inline float rand() {
         float f;
     } x;
     x.u = (rand<uint>() >> 9u) | 0x3f800000u;
-    /* Trick from MTGP: generate an uniformly distributed
+    /* Trick from MTGP: generate a uniformly distributed
     single precision number in [1,2) and subtract 1. */
     return x.f - 1.0f;
 }
@@ -98,7 +98,7 @@ inline double rand() {
         double f;
     } x;
     x.u = (rand<uint64>() >> 12ull) | 0x3ff0000000000000ull;
-    /* Trick from MTGP: generate an uniformly distributed
+    /* Trick from MTGP: generate a uniformly distributed
     single precision number in [1,2) and subtract 1. */
     return x.f - 1.0;
 }

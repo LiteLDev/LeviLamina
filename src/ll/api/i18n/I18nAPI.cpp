@@ -116,7 +116,6 @@ I18nBase::Type SingleFileI18N::getType() { return Type::SingleFile; }
 I18nBase::SubLangData NestedHelper(nlohmann::json const& j, std::string const& prefix = "") {
     I18nBase::SubLangData data;
     if (!j.is_object()) {
-        // throw std::exception("Error when parsing I18nBase data: The value must be object!");
         return data; // Empty
     }
     for (auto& it : j.items()) {
@@ -198,7 +197,7 @@ I18nBase* loadI18nImpl(
     I18nBase::LangData const& defaultLangData
 ) {
     try {
-        I18nBase* res = nullptr;
+        I18nBase* res;
         if (path.ends_with('/') || path.ends_with('\\') || fs::is_directory(path)) { // Directory
             res = new MultiFileI18N(path, defaultLocaleName, defaultLangData);
         } else {
@@ -223,7 +222,7 @@ I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
     return nullptr;
 }
 
-}; // namespace Translation
+} // namespace Translation
 
 
 // Encoding-CodePage Map

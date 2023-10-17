@@ -159,7 +159,6 @@ void checkRunningBDS() {
                     }
                     if (input == 'e' || input == 'E') {
                         std::terminate();
-                        break;
                     }
                 }
             }

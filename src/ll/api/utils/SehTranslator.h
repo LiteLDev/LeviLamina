@@ -17,9 +17,11 @@
 
 #pragma comment(lib, "ntdll")
 
+#include "ll/api/base/StdInt.h"
+
 namespace {
 namespace WinAPI {
-// import windows api manually to avoid windows headers import
+// import Windows api manually to avoid windows headers import
 extern "C" {
 long __stdcall RtlNtStatusToDosError(long Status);
 __declspec(dllimport) ulong __stdcall FormatMessageA(
@@ -37,9 +39,9 @@ namespace FormatMessageFlags {
 constexpr int FROM_HMODULE    = 0x00000800;
 constexpr int FROM_SYSTEM     = 0x00001000;
 constexpr int ALLOCATE_BUFFER = 0x00000100;
-}; // namespace FormatMessageFlags
-}; // namespace WinAPI
-}; // namespace
+} // namespace FormatMessageFlags
+} // namespace WinAPI
+} // namespace
 
 class seh_exception : std::exception {
 public:

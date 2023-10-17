@@ -115,4 +115,4 @@ LLAPI ScheduleTask delayRepeat(
  */
 LLAPI ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle = GetCurrentModule());
 
-}; // namespace Schedule
+} // namespace Schedule

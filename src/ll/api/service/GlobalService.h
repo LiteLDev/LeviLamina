@@ -7,7 +7,7 @@
 
 namespace RakNet {
 class RakPeer;
-};
+}
 class AllowListFile;
 class Minecraft;
 class PropertiesSettings;
