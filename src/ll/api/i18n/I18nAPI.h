@@ -364,13 +364,13 @@ inline std::string operator""_tr(const char* x, size_t len) {
 
 // For text encoding
 namespace TextEncoding {
-LLAPI Encoding getLocalEncoding();
-LLAPI Encoding detectEncoding(std::string const& text, bool* isReliable = nullptr);
+LLAPI ::Encoding getLocalEncoding();
+LLAPI ::Encoding detectEncoding(std::string const& text, bool* isReliable = nullptr);
 
-LLAPI std::string fromUnicode(std::wstring const& text, Encoding to = Encoding::UTF8);
-LLAPI std::wstring toUnicode(std::string const& text, Encoding from = Encoding::UTF8);
+LLAPI std::string fromUnicode(std::wstring const& text, ::Encoding to = ::Encoding::UTF8);
+LLAPI std::wstring toUnicode(std::string const& text, ::Encoding from = ::Encoding::UTF8);
 LLAPI std::string toUTF8(std::string const& text);
-LLAPI std::string toUTF8(std::string const& text, Encoding from);
+LLAPI std::string toUTF8(std::string const& text, ::Encoding from);
 
-LLAPI std::string convert(std::string const& text, Encoding from, Encoding to);
+LLAPI std::string convert(std::string const& text, ::Encoding from, ::Encoding to);
 } // namespace TextEncoding
