@@ -8,7 +8,6 @@
 #include "ll/api/ScheduleAPI.h"
 #include "ll/api/i18n/I18nAPI.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/utils/SRWLock.h"
 #include "ll/core/Config.h"
 #include "ll/core/Levilamina.h"
 
@@ -63,7 +62,7 @@ namespace {
 bool                                                                     serverCommandsRegistered = false;
 std::unordered_map<std::string, std::unique_ptr<DynamicCommandInstance>> dynamicCommandInstances;
 std::vector<std::unique_ptr<DynamicCommandInstance>>                     delaySetupCommandInstances;
-SRWLock                                                                  delaySetupLock;
+std::shared_mutex                                                        delaySetupLock;
 
 
 using Result         = DynamicCommand::Result;
@@ -640,7 +639,7 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
 
 bool DynamicCommand::onServerCommandsRegister(CommandRegistry& /*registry*/) {
     serverCommandsRegistered = true;
-    SRWLockHolder locker(delaySetupLock);
+    std::unique_lock locker(delaySetupLock);
     for (auto& command : delaySetupCommandInstances) {
         std::string name   = command->getCommandName();
         auto        handle = command->handle_;
@@ -709,8 +708,8 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
     auto ptr = commandInstance.get();
     if (!ptr) throw std::runtime_error("DynamicCommand::setup - commandInstance is null");
     if (!serverCommandsRegistered) {
-        SRWLockHolder locker(delaySetupLock);
-        auto&         uptr = delaySetupCommandInstances.emplace_back(std::move(commandInstance));
+        std::unique_lock locker(delaySetupLock);
+        auto&            uptr = delaySetupCommandInstances.emplace_back(std::move(commandInstance));
         return uptr.get();
     }
     Schedule::nextTick([instance{commandInstance.release()}]() {
@@ -1081,7 +1080,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     class Level&               level
 ) {
     if (ll::globalRuntimeConfig.tickThreadId != std::this_thread::get_id()) {
-        SRWLockSharedHolder locker(delaySetupLock);
+        std::shared_lock locker(delaySetupLock);
         return origin(commandOrigin, level);
     }
     return origin(commandOrigin, level);
