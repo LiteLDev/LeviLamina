@@ -23,7 +23,7 @@ void tryModifyServerStartInfo(std::string& s) {
                 "(ProtocolVersion {}) with {}",
                 ll::getServerProtocolVersion(),
                 fmt::format(
-                    fg(fmt::color::light_sky_blue) | fmt::emphasis::bold | fmt::emphasis::italic,
+                    fg(fmt::color::light_sky_blue) | fmt::emphasis::bold,
                     "LeviLamina {}",
                     LL_FILE_VERSION_STRING
                 )

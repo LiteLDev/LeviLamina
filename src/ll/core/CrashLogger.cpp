@@ -15,11 +15,11 @@ Logger crashLogger("CrashLogger");
 
 bool ll::CrashLogger::startCrashLoggerProcess() {
     if (IsDebuggerPresent()) {
-        crashLogger.info(tr("ll.crashLogger.existsingDebuggerDetected"));
+        crashLogger.info("ll.crashLogger.existsingDebuggerDetected"_tr);
         return true;
     }
     if (IsWineEnvironment()) {
-        crashLogger.info(tr("ll.crashLogger.wineDetected"));
+        crashLogger.info("ll.crashLogger.wineDetected"_tr);
         return true;
     }
 
@@ -43,7 +43,7 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
         ll::StringUtils::str2wstr(serverVersion).c_str()
     );
     if (!CreateProcess(nullptr, daemonCmd, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
-        crashLogger.error(tr("ll.crashLogger.error.cannotCreateDaemonProcess"));
+        crashLogger.error("ll.crashLogger.error.cannotCreateDaemonProcess"_tr);
         crashLogger.error(GetLastErrorMessage());
         return false;
     }
@@ -56,18 +56,16 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
 void ll::CrashLogger::initCrashLogger(bool enableCrashLogger) {
 
     if (!enableCrashLogger) {
-        crashLogger.warn(tr("ll.crashLogger.warning.crashLoggerDisabled.1"));
-        crashLogger.warn(tr("ll.crashLogger.warning.crashLoggerDisabled.2"));
-        crashLogger.warn(tr("ll.crashLogger.warning.crashLoggerDisabled.3"));
+        crashLogger.warn("ll.crashLogger.warning.crashLoggerDisabled.1"_tr);
+        crashLogger.warn("ll.crashLogger.warning.crashLoggerDisabled.2"_tr);
+        crashLogger.warn("ll.crashLogger.warning.crashLoggerDisabled.3"_tr);
         crashLogger.warn("");
-        crashLogger.warn(tr("ll.crashLogger.warning.crashLoggerDisabled.4"));
+        crashLogger.warn("ll.crashLogger.warning.crashLoggerDisabled.4"_tr);
         return;
     }
     // Start CrashLogger
-    if (startCrashLoggerProcess()) {
-        // Logger::Info("CrashLogger Daemon Process attached.");
-    } else {
-        crashLogger.warn(tr("ll.crashLogger.init.fail.msg"));
-        crashLogger.warn(tr("ll.crashLogger.init.fail.tip"));
+    if (!startCrashLoggerProcess()) {
+        crashLogger.warn("ll.crashLogger.init.fail.msg"_tr);
+        crashLogger.warn("ll.crashLogger.init.fail.tip"_tr);
     }
 }

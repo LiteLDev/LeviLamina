@@ -73,7 +73,7 @@ void unzipNodeModules() {
             30000
         );
         if (res.first != 0) {
-            logger.error(tr("ll.unzipNodeModules.fail"));
+            logger.error("ll.unzipNodeModules.fail"_tr);
         } else {
             std::filesystem::remove(R"(.\plugins\lib\node_modules.tar)", ec);
         }
@@ -95,7 +95,7 @@ void decompressResourcePacks() {
             30000
         );
         if (res.first != 0) {
-            logger.error(tr("ll.decompressResourcePacks.fail"));
+            logger.error("ll.decompressResourcePacks.fail"_tr);
         } else {
             std::filesystem::remove(R"(.\plugins\LeviLamina\ResourcePacks\LeviLamina-CUI.tar)", ec);
         }
@@ -144,8 +144,8 @@ void checkRunningBDS() {
 
             // Compare the path
             if (path == currentPath) {
-                logger.error(tr("ll.main.checkRunningBDS.detected"));
-                logger.error(tr("ll.main.checkRunningBDS.tip"));
+                logger.error("ll.main.checkRunningBDS.detected"_tr);
+                logger.error("ll.main.checkRunningBDS.tip"_tr);
                 while (true) {
                     logger.error(tr("ll.main.checkRunningBDS.ask", pid));
                     char input;
@@ -183,29 +183,29 @@ void printLogo() {
     logger.info(R"(                                                                      )");
     logger.info(R"(                                                                      )");
 
-    logger.info(tr("ll.notice.license", "LGPLv3"));
-    logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
-    logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
+    logger.info("ll.notice.license"_tr, "LGPLv3");
+    logger.info("ll.notice.newForum"_tr, "https://forum.litebds.com");
+    logger.info("ll.notice.translateText"_tr, "https://crowdin.com/project/liteloaderbds");
     logger.info("ll.notice.sponsor.thanks");
     logger.info("");
 }
 
 void checkDevMode() {
-    if (ll::globalConfig.debugMode) logger.warn(tr("ll.main.warning.inDevMode"));
+    if (ll::globalConfig.debugMode) logger.warn("ll.main.warning.inDevMode"_tr);
 }
 
 void checkBetaVersion() {
     if (ll::getLoaderVersion().mPreRelease != ll::Version::PreRelease::None) {
-        logger.warn(tr("ll.main.warning.betaVersion"));
-        logger.warn(tr("ll.main.warning.productionEnv"));
+        logger.warn("ll.main.warning.betaVersion"_tr);
+        logger.warn("ll.main.warning.productionEnv"_tr);
     }
 }
 
 void checkProtocolVersion() {
     auto currentProtocol = ll::getServerProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-        logger.warn(tr("ll.main.warning.protocolVersionNotMatch.1"), TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
-        logger.warn(tr("ll.main.warning.protocolVersionNotMatch.2"));
+        logger.warn("ll.main.warning.protocolVersionNotMatch.1"_tr, TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
+        logger.warn("ll.main.warning.protocolVersionNotMatch.2"_tr);
     }
 }
 

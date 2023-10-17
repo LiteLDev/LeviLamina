@@ -179,7 +179,7 @@ inline bool SaveConfig(nlohmann::json& config) {
         of << config.dump(4);
         return true;
     } else {
-        ll::logger.error(tr("ll.config.save.fail"));
+        ll::logger.error("ll.config.save.fail"_tr);
         return false;
     }
 }
@@ -202,7 +202,7 @@ bool ll::LoadLLConfig() {
                 auto config      = nlohmann::json(ll::globalConfig);
                 if (out != config) {
                     ll::logger.warn(tr("ll.config.warning.configOutdated", LL_CONFIG_FILE));
-                    ll::logger.warn(tr("ll.config.updating"));
+                    ll::logger.warn("ll.config.updating"_tr);
                     ll::globalConfig.language = "system";
                     config                    = nlohmann::json(ll::globalConfig);
                     return SaveConfig(config);

@@ -48,7 +48,7 @@ inline std::vector<std::string> getPreloadList() {
 }
 
 void ll::LoadMain() {
-    ll::logger.info(tr("ll.loader.loadMain.start"));
+    ll::logger.info("ll.loader.loadMain.start"_tr);
 
     // Load plugins
     int                      pluginCount = 0;

@@ -1,12 +1,12 @@
-#include "mc/nbt/CompoundTag.h"
-
 #include "ll/api/memory/Hook.h"
 #include "ll/api/utils/FileHelper.h"
+#include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
-#include "mc/server/ServerInstance.h"
 
 #include "mc/common/ColorFormat.h"
 #include "mc/deps/core/mce/Color.h"
+#include "mc/nbt/CompoundTag.h"
+#include "mc/server/ServerInstance.h"
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     NbtTest,

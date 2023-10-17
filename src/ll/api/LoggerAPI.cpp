@@ -6,6 +6,7 @@
 #include <utility>
 
 #include "ll/api/utils/Hash.h"
+#include "ll/api/utils/StringUtils.h"
 #include "ll/core/Config.h"
 
 using namespace ll::StringUtils;
@@ -73,7 +74,8 @@ Logger::OutputStream::OutputStream(
   style(style),
   consoleFormat(consoleFormat),
   fileFormat(fileFormat),
-  playerFormat(playerFormat) {}
+  playerFormat(playerFormat),
+  playerOutputCallback(nullptr) {}
 
 Logger::Logger(std::string title)
 : title(std::move(title)),

@@ -6,21 +6,11 @@
 //  [Create Logger]
 //
 //  Logger logger("MyPlugin");                  // Create a logger (default: only log to console)
-//  logger.setFile("logs/MyPlugin.log");        // Optional, also record log to File
-//
-//  auto pl = mc.getPlayer("Jim");
-//  if(pl)
-//      logger.setPlayer(pl);                   // Optional, also record log to a Player
-//  ......
-//  logger.setFile(nullptr);                    // Stop record log to File (Passing nullptr to setPlayer works like
-//  this)
-//
 //
 //  [Use Logger]
 //
 //  logger.info("Infomation");                                  // Common
 //  logger.error("Error! Code:{}",GetLastError());              // FMT Format
-//  logger.warn << "Warning! Fail to do sth." << logger.endl;   // STL Format
 //
 ////////////////////////////////////////////////////////////////////////
 
@@ -28,10 +18,8 @@
 
 #include "ll/api/base/Concepts.h"
 #include "ll/api/i18n/I18nAPI.h"
-#include "ll/api/utils/FileHelper.h"
-#include "ll/api/utils/PluginOwnData.h"
-#include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinHelper.h"
+
+using namespace Translation::literals;
 
 #include <filesystem>
 #include <fstream>
@@ -61,14 +49,14 @@ public:
     public:
         using playerOutputFunc = std::function<void(std::string_view)>;
 
-        Logger&                        logger;
-        std::string                    levelPrefix;
-        int                            level;
-        std::array<fmt::text_style, 4> style;
-        std::array<std::string, 5>     consoleFormat;
-        std::array<std::string, 5>     fileFormat;
-        std::array<std::string, 5>     playerFormat;
-        playerOutputFunc               playerOutputCallback;
+        Logger&                              logger;
+        std::string const                    levelPrefix;
+        int const                            level;
+        std::array<fmt::text_style, 4> const style;
+        std::array<std::string, 5> const     consoleFormat;
+        std::array<std::string, 5> const     fileFormat;
+        std::array<std::string, 5> const     playerFormat;
+        playerOutputFunc                     playerOutputCallback;
 
         LLAPI explicit OutputStream(
             Logger&                               logger,
@@ -81,7 +69,7 @@ public:
         );
 
         template <ll::concepts::IsString S, typename... Args>
-        void operator()(S const& fmt, Args const&... args) {
+        void operator()(S const& fmt, Args const&... args) const {
             if constexpr (0 == sizeof...(args)) {
                 print(fmt);
             } else {
