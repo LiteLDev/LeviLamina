@@ -352,13 +352,9 @@ inline std::string trl(std::string const& localeName, S const& formatStr, Args&&
     return res;
 }
 
-namespace Translation::literals {
-
 inline std::string operator""_tr(const char* x, size_t len) {
     return Translation::trImpl(GetCurrentModule(), std::string{x, len});
 }
-
-} // namespace Translation::literals
 
 // For text encoding
 namespace TextEncoding {

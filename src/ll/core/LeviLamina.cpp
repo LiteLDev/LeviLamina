@@ -185,7 +185,7 @@ void printLogo() {
     logger.info("ll.notice.license"_tr, "LGPLv3");
     logger.info("ll.notice.newForum"_tr, "https://forum.litebds.com");
     logger.info("ll.notice.translateText"_tr, "https://crowdin.com/project/liteloaderbds");
-    logger.info("ll.notice.sponsor.thanks");
+    logger.info("ll.notice.sponsor.thanks"_tr);
     logger.info("");
 }
 

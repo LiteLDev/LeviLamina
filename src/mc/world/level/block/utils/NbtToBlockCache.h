@@ -1,15 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/block/utils/NBTState.h"
 
 namespace BlockSerializationUtils {
 
 struct NbtToBlockCache {
 public:
-    // prevent constructor by default
-    NbtToBlockCache& operator=(NbtToBlockCache const&);
-    NbtToBlockCache(NbtToBlockCache const&);
-    NbtToBlockCache();
+    std::map<ulong, std::pair<BlockSerializationUtils::NBTState, const class Block*>> mCache;
+    std::mutex                                                                        mMutex;
 
 public:
     // NOLINTBEGIN

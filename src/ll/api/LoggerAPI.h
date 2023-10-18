@@ -19,8 +19,6 @@
 #include "ll/api/base/Concepts.h"
 #include "ll/api/i18n/I18nAPI.h"
 
-using namespace Translation::literals;
-
 #include <filesystem>
 #include <fstream>
 #include <iostream>

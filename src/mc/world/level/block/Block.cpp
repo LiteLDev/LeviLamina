@@ -40,24 +40,24 @@ optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name, Blo
     auto* rawPtr = blockLegacyPtr.get();
     if (!BlockTypeRegistry::isComplexAliasBlock(nameHash)) { return rawPtr->getDefaultState(); }
     std::vector<BlockTypeRegistry::BlockComplexAliasBlockState> stateList;
-    for (auto& state : states) {
-        HashedString stateNameHash{state.first};
+    for (auto& [k, v] : states) {
+        HashedString stateNameHash{k};
         auto*        stateBase = rawPtr->getBlockState(stateNameHash);
         if (stateBase == nullptr) { continue; }
         int         value = 0;
         CompoundTag stateNBT{};
-        switch (state.second.index()) {
+        switch (v.index()) {
         case 0:
-            stateNBT.putInt(state.first, std::get<0>(state.second));
+            stateNBT.putInt(k, std::get<int>(v));
             break;
         case 1:
-            stateNBT.putFloat(state.first, std::get<1>(state.second));
+            stateNBT.putFloat(k, std::get<float>(v));
             break;
         case 2:
-            stateNBT.putBoolean(state.first, std::get<2>(state.second));
+            stateNBT.putBoolean(k, std::get<bool>(v));
             break;
         case 3:
-            stateNBT.putString(state.first, std::get<3>(state.second));
+            stateNBT.putString(k, std::get<std::string>(v));
             break;
         default:
             break;

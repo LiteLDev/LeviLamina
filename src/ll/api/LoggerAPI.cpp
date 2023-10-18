@@ -22,7 +22,7 @@ bool checkLogLevel(int level, int outLevel) {
 void Logger::OutputStream::print(std::string_view s) const {
     std::lock_guard lock(logger_mutex);
     try {
-        auto time = fmt::localtime(_time64(nullptr));
+        auto time =std::chrono::system_clock::now();
 
         if (checkLogLevel(logger.consoleLevel, level)) {
             std::string str = fmt::format(

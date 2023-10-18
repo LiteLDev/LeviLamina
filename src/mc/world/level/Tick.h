@@ -6,11 +6,9 @@ struct Tick {
 public:
     uint64 t;
 
-    constexpr explicit operator uint64() const { return t; }
+    constexpr operator uint64() const { return t; } // NOLINT
 
-    constexpr explicit operator uint64&() { return t; }
-
-    constexpr explicit Tick(uint64 v) : t(v){};
+    constexpr Tick(uint64 v) : t(v){}; // NOLINT
 
     constexpr Tick(Tick const& v) = default;
 
