@@ -29,7 +29,8 @@ public:
 
     template <class Y>
     explicit WeakPtr(WeakPtr<Y>&& other)
-        requires(std::convertible_to<Y*, T*>) {
+        requires(std::convertible_to<Y*, T*>)
+    {
         counter       = other.counter;
         other.counter = nullptr;
     }
@@ -40,7 +41,8 @@ public:
 
     template <class Y>
     WeakPtr<T>& operator=(SharedPtr<Y> const& other)
-        requires(std::convertible_to<Y*, T*>) {
+        requires(std::convertible_to<Y*, T*>)
+    {
         if (counter != other.counter) {
             counter = other.counter;
             if (counter) { counter->addWeakCount(); }
@@ -49,8 +51,9 @@ public:
     }
 
     template <class Y>
-    WeakPtr<T>& operator=(WeakPtr<Y> const& other) 
-        requires(std::convertible_to<Y*, T*>){
+    WeakPtr<T>& operator=(WeakPtr<Y> const& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
         if (counter != other.counter) {
             counter = other.counter;
             if (counter) { counter->addWeakCount(); }
@@ -60,7 +63,8 @@ public:
 
     template <class Y>
     WeakPtr<T>& operator=(WeakPtr<Y>&& other)
-        requires(std::convertible_to<Y*, T*>) {
+        requires(std::convertible_to<Y*, T*>)
+    {
         if (counter != other.counter) {
             counter       = other.counter;
             other.counter = nullptr;

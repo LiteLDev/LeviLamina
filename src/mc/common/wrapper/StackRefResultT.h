@@ -7,4 +7,6 @@ template <typename T0>
 class StackRefResultT : public T0::StackResultStorage {
 public:
     using StackRef = typename T0::StackRef;
+    using Base     = typename T0::StackResultStorage;
+    using Base::Base;
 };
