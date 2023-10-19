@@ -17,20 +17,44 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 8, symbol:
+    // ?createGenerator@TheEndDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
+    virtual std::unique_ptr<class WorldGenerator> createGenerator();
+
+    // vIndex: 9, symbol: ?upgradeLevelChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
+    virtual void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
+    
+    // vIndex: 10, symbol: ?fixWallChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+    virtual void fixWallChunk(class ChunkSource&, class LevelChunk&);
+
+    // vIndex: 11, symbol: ?levelChunkNeedsUpgrade@TheEndDimension@@UEBA_NAEBVLevelChunk@@@Z
+    virtual bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
+
+    // vIndex: 29, symbol: ?translatePosAcrossDimension@TheEndDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
+    virtual class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
+
+    // vIndex: 37, symbol: ?_upgradeOldLimboEntity@TheEndDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
+    virtual void _upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion);
+
+    // vIndex: 38, symbol:
+    // ?_wrapStorageForVersionCompatibility@TheEndDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
+    virtual std::unique_ptr<class ChunkSource>
+           _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
+
     // symbol: ?_upgradeOldLimboEntity@NetherDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
-    MCVAPI void _upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion);
+    // MCVAPI void _upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion);
 
     // symbol:
     // ?_wrapStorageForVersionCompatibility@NetherDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
-    MCVAPI std::unique_ptr<class ChunkSource>
-           _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
+    // MCVAPI std::unique_ptr<class ChunkSource>
+    //        _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
 
     // symbol:
     // ?createGenerator@NetherDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
-    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
+    // MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
 
     // symbol: ?fixWallChunk@NetherDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-    MCVAPI void fixWallChunk(class ChunkSource&, class LevelChunk&);
+    // MCVAPI void fixWallChunk(class ChunkSource&, class LevelChunk&);
 
     // symbol: ?forceCheckAllNeighChunkSavedStat@NetherDimension@@UEBA_NXZ
     MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
@@ -54,7 +78,7 @@ public:
     MCVAPI bool isValidSpawn(int, int) const;
 
     // symbol: ?levelChunkNeedsUpgrade@NetherDimension@@UEBA_NAEBVLevelChunk@@@Z
-    MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
+    // MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
 
     // symbol: ?mayRespawnViaBed@NetherDimension@@UEBA_NXZ
     MCVAPI bool mayRespawnViaBed() const;
@@ -63,10 +87,10 @@ public:
     MCVAPI bool showSky() const;
 
     // symbol: ?translatePosAcrossDimension@NetherDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
-    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
+    // MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
 
     // symbol: ?upgradeLevelChunk@NetherDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
-    MCVAPI void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
+    // MCVAPI void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
 
     // symbol: ??0NetherDimension@@QEAA@AEAVILevel@@AEAVScheduler@@@Z
     MCAPI NetherDimension(class ILevel&, class Scheduler&);

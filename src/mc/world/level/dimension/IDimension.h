@@ -11,8 +11,10 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 1, symbol: __unk_vfn_1
+    virtual ~IDimension();
     // symbol: ??1IDimension@@UEAA@XZ
-    MCVAPI ~IDimension();
+    // MCVAPI ~IDimension();
 
     // NOLINTEND
 };

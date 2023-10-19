@@ -8,7 +8,9 @@
 #include "mc/world/AutomaticID.h"
 #include "mc/world/level/dimension/Dimension.h"
 
+class EndDragonFight;
 class TheEndDimension : public ::Dimension {
+    std::unique_ptr<EndDragonFight> mDragonFight;
 public:
     // prevent constructor by default
     TheEndDimension& operator=(TheEndDimension const&);
@@ -17,23 +19,47 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 8, symbol:
+    // ?createGenerator@TheEndDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
+    virtual std::unique_ptr<class WorldGenerator> createGenerator();
+
+    // vIndex: 9, symbol: ?upgradeLevelChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
+    virtual void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
+    
+    // vIndex: 10, symbol: ?fixWallChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+    virtual void fixWallChunk(class ChunkSource&, class LevelChunk&);
+
+    // vIndex: 11, symbol: ?levelChunkNeedsUpgrade@TheEndDimension@@UEBA_NAEBVLevelChunk@@@Z
+    virtual bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
+
+    // vIndex: 29, symbol: ?translatePosAcrossDimension@TheEndDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
+    virtual class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
+
+    // vIndex: 37, symbol: ?_upgradeOldLimboEntity@TheEndDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
+    virtual void _upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion);
+
+    // vIndex: 38, symbol:
+    // ?_wrapStorageForVersionCompatibility@TheEndDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
+    virtual std::unique_ptr<class ChunkSource>
+           _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
+
     // symbol: ?_upgradeOldLimboEntity@TheEndDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
-    MCVAPI void _upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion);
+    // MCVAPI void _upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion);
 
     // symbol:
     // ?_wrapStorageForVersionCompatibility@TheEndDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
-    MCVAPI std::unique_ptr<class ChunkSource>
-           _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
+    // MCVAPI std::unique_ptr<class ChunkSource>
+    //        _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
 
     // symbol:
     // ?createGenerator@TheEndDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
-    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
+    // MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
 
     // symbol: ?deserialize@TheEndDimension@@UEAAXAEBVCompoundTag@@@Z
     MCVAPI void deserialize(class CompoundTag const&);
 
     // symbol: ?fixWallChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-    MCVAPI void fixWallChunk(class ChunkSource&, class LevelChunk&);
+    // MCVAPI void fixWallChunk(class ChunkSource&, class LevelChunk&);
 
     // symbol: ?getCloudHeight@TheEndDimension@@UEBAFXZ
     MCVAPI short getCloudHeight() const;
@@ -72,7 +98,7 @@ public:
     MCVAPI bool isValidSpawn(int, int) const;
 
     // symbol: ?levelChunkNeedsUpgrade@TheEndDimension@@UEBA_NAEBVLevelChunk@@@Z
-    MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
+    // MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
 
     // symbol: ?mayRespawnViaBed@TheEndDimension@@UEBA_NXZ
     MCVAPI bool mayRespawnViaBed() const;
@@ -87,10 +113,10 @@ public:
     MCVAPI void tick();
 
     // symbol: ?translatePosAcrossDimension@TheEndDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
-    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
+    // MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
 
     // symbol: ?upgradeLevelChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
-    MCVAPI void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
+    // MCVAPI void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
 
     // symbol: ?AMBIENT_MULTIPLIER@TheEndDimension@@2MB
     MCAPI static float const AMBIENT_MULTIPLIER;

@@ -14,46 +14,58 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockSourceListener@@UEAA@XZ
+    virtual ~BlockSourceListener();
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ?onSourceCreated@BlockSourceListener@@UEAAXAEAVBlockSource@@@Z
+    virtual void onSourceCreated(class BlockSource&);
 
     // vIndex: 2, symbol: ?onSourceDestroyed@BlockSourceListener@@UEAAXAEAVBlockSource@@@Z
     virtual void onSourceDestroyed(class BlockSource&);
 
-    // vIndex: 3, symbol: __unk_vfn_3
-    virtual void __unk_vfn_3();
+    // vIndex: 3, symbol: ?onAreaChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    virtual void onAreaChanged(class BlockSource&, class BlockPos const&, class BlockPos const&);
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol:
+    // ?onBlockChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z
+    virtual void
+    onBlockChanged(class BlockSource&, class BlockPos const&, uint, class Block const&, class Block const&, int, struct ActorBlockSyncMessage const*, ::BlockChangedEventTarget, class Actor*);
 
     // vIndex: 5, symbol: ?onBrightnessChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onBrightnessChanged(class BlockSource&, class BlockPos const&);
 
+    // vIndex: 6, symbol: ?onBlockEntityChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEAVBlockActor@@@Z
+    virtual void onBlockEntityChanged(class BlockSource&, class BlockActor&);
+
+    // vIndex: 7, symbol: ?onEntityChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEAVActor@@@Z
+    virtual void onEntityChanged(class BlockSource&, class Actor&);
+
+    // vIndex: 8, symbol: ?onBlockEvent@BlockSourceListener@@UEAAXAEAVBlockSource@@HHHHH@Z
+    virtual void onBlockEvent(class BlockSource&, int, int, int, int, int);
+
     // symbol: ?onAreaChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    MCVAPI void onAreaChanged(class BlockSource&, class BlockPos const&, class BlockPos const&);
+    // MCVAPI void onAreaChanged(class BlockSource&, class BlockPos const&, class BlockPos const&);
 
     // symbol:
     // ?onBlockChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z
-    MCVAPI void
-    onBlockChanged(class BlockSource&, class BlockPos const&, uint, class Block const&, class Block const&, int, struct ActorBlockSyncMessage const*, ::BlockChangedEventTarget, class Actor*);
+    // MCVAPI void
+    // onBlockChanged(class BlockSource&, class BlockPos const&, uint, class Block const&, class Block const&, int,
+    // struct ActorBlockSyncMessage const*, ::BlockChangedEventTarget, class Actor*);
 
     // symbol: ?onBlockEntityChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEAVBlockActor@@@Z
-    MCVAPI void onBlockEntityChanged(class BlockSource&, class BlockActor&);
+    // MCVAPI void onBlockEntityChanged(class BlockSource&, class BlockActor&);
 
     // symbol: ?onBlockEvent@BlockSourceListener@@UEAAXAEAVBlockSource@@HHHHH@Z
-    MCVAPI void onBlockEvent(class BlockSource&, int, int, int, int, int);
+    // MCVAPI void onBlockEvent(class BlockSource&, int, int, int, int, int);
 
     // symbol: ?onEntityChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEAVActor@@@Z
-    MCVAPI void onEntityChanged(class BlockSource&, class Actor&);
+    // MCVAPI void onEntityChanged(class BlockSource&, class Actor&);
 
     // symbol: ?onSourceCreated@BlockSourceListener@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void onSourceCreated(class BlockSource&);
+    // MCVAPI void onSourceCreated(class BlockSource&);
 
     // symbol: ??1BlockSourceListener@@UEAA@XZ
-    MCVAPI ~BlockSourceListener();
+    // MCVAPI ~BlockSourceListener();
 
     // NOLINTEND
 };
