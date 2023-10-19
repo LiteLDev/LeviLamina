@@ -7,7 +7,7 @@ namespace ll::gamechrono {
 using ticks = std::ratio<1, 20>;
 
 struct clock {
-    using rep                       = Tick;
+    using rep                       = Tick::Type;
     using period                    = ticks;
     using duration                  = std::chrono::duration<rep, period>;
     using time_point                = std::chrono::time_point<clock>;

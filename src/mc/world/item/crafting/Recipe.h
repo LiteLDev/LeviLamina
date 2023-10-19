@@ -1,6 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/UUID.h"
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/world/item/crafting/RecipeIngredient.h"
+#include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
 
 // auto generated inclusion list
 #include "mc/network/TypedServerNetId.h"
@@ -16,6 +20,16 @@ public:
     Recipe& operator=(Recipe const&);
     Recipe(Recipe const&);
     Recipe();
+
+    std::string                   mRecipeId;      // this+0x8
+    mce::UUID                     mMyId;          // this+0x28
+    int                           mWidth;         // this+0x38
+    int                           mHeight;        // this+0x3C
+    int                           mPriority;      // this+0x40
+    RecipeNetId                   mRecipeNetId;   // this+0x44
+    std::vector<RecipeIngredient> mMyIngredients; // this+0x48
+    RecipeUnlockingRequirement    mUnlockingRequirement;
+    HashedString                  mTag;
 
 public:
     // NOLINTBEGIN

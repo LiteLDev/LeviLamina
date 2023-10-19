@@ -9,7 +9,8 @@ class SharedPtr;
 template <typename T>
 class WeakPtr {
 public:
-    WeakPtr() : counter(nullptr) {}
+    WeakPtr() noexcept : counter(nullptr) {}
+    WeakPtr(std::nullptr_t) noexcept : counter(nullptr) {}
 
     template <class Y>
     explicit WeakPtr(SharedPtr<Y> const& other)

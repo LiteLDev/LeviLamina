@@ -12,12 +12,26 @@ namespace cf = ColorFormat;
 
 static constexpr auto base64Id = std::string{" /*BASE64*/"};
 
-template <typename T>
-std::string getString(T&& value) {
-    return std::format("{}", value);
+template <std::integral T>
+std::string getString(T value) {
+    return fmt::format("{}", value);
+}
+
+template <std::floating_point T>
+std::string getString(T value) {
+    if (std::round(value) == value) { return fmt::format("{:.1f}", value); }
+    return fmt::format("{}", value);
+}
+
+bool isMinimize(SnbtFormat format) {
+    return !(
+        static_cast<bool>(format & SnbtFormat::CompoundNewLine) || static_cast<bool>(format & SnbtFormat::ListNewLine)
+    );
 }
 
 std::string WrapColorCode(std::string const& str, std::string const& code) { return code + str + cf::RESET; }
+
+extern bool isTrivialChar(char c);
 
 std::string toDumpString(std::string const& str, fmt::color defaultc, std::string const& defaultmc, SnbtFormat format) {
 
@@ -25,17 +39,28 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
 
     bool base64 = false;
 
-    try {
-        res = nlohmann::json{str}.dump(
-            -1,
-            ' ',
-            (bool)((int)format & (int)SnbtFormat::ForceAscii),
-            nlohmann::json::error_handler_t::strict
-        );
-        res = res.substr(1, res.size() - 2);
-    } catch (...) {
-        base64 = true;
-        res    = "\"" + ll::base64::Encode(str) + "\"";
+    bool isTrivial = true;
+    if (!static_cast<bool>(format & SnbtFormat::Jsonify)) {
+        for (auto c : str) {
+            if (!isTrivialChar(c)) {
+                isTrivial = false;
+                break;
+            }
+        }
+    } else {
+        isTrivial = false;
+    }
+    if (isTrivial) {
+        res = str;
+    } else {
+        try {
+            res = nlohmann::json{str}
+                      .dump(-1, ' ', (bool)(format & SnbtFormat::ForceAscii), nlohmann::json::error_handler_t::strict);
+            res = res.substr(1, res.size() - 2);
+        } catch (...) {
+            base64 = true;
+            res    = "\"" + ll::base64::Encode(str) + "\"";
+        }
     }
 
     if ((int)format & (int)SnbtFormat::Colored) {
@@ -76,18 +101,30 @@ std::string TypedToSnbt(EndTag&, uchar, SnbtFormat format) {
     return res;
 }
 std::string TypedToSnbt(ByteTag& self, uchar, SnbtFormat format) {
-    return toDumpNumber(getString(self.data) + 'b', format);
+    return toDumpNumber(
+        getString(self.data) + (static_cast<bool>(format & SnbtFormat::Jsonify) ? " /*b*/" : "b"),
+        format
+    );
 }
 std::string TypedToSnbt(ShortTag& self, uchar, SnbtFormat format) {
-    return toDumpNumber(getString(self.data) + 's', format);
+    return toDumpNumber(
+        getString(self.data) + (static_cast<bool>(format & SnbtFormat::Jsonify) ? " /*s*/" : "s"),
+        format
+    );
 }
 std::string TypedToSnbt(IntTag& self, uchar, SnbtFormat format) { return toDumpNumber(getString(self.data), format); }
 
 std::string TypedToSnbt(Int64Tag& self, uchar, SnbtFormat format) {
-    return toDumpNumber(getString(self.data) + 'l', format);
+    return toDumpNumber(
+        getString(self.data) + (static_cast<bool>(format & SnbtFormat::Jsonify) ? " /*l*/" : "l"),
+        format
+    );
 }
 std::string TypedToSnbt(FloatTag& self, uchar, SnbtFormat format) {
-    return toDumpNumber(getString(self.data) + 'f', format);
+    return toDumpNumber(
+        getString(self.data) + (static_cast<bool>(format & SnbtFormat::Jsonify) ? " /*f*/" : "f"),
+        format
+    );
 }
 std::string TypedToSnbt(DoubleTag& self, uchar, SnbtFormat format) {
     return toDumpNumber(getString(self.data), format);
@@ -120,7 +157,7 @@ std::string TypedToSnbt(ListTag& self, uchar indent, SnbtFormat format) {
     size_t      i = self.mList.size();
     std::string indentSpace(indent, ' ');
 
-    bool isMinimized = format == SnbtFormat::Minimize;
+    bool isMinimized = isMinimize(format);
     bool isNewLine   = (int)format & (int)SnbtFormat::ListNewLine;
 
     if (isNewLine) { res += '\n'; }
@@ -171,7 +208,7 @@ std::string TypedToSnbt(CompoundTag& self, uchar indent, SnbtFormat format) {
     size_t      i = self.mTags.size();
     std::string indentSpace(indent, ' ');
 
-    bool isMinimized = format == SnbtFormat::Minimize;
+    bool isMinimized = isMinimize(format);
     bool isNewLine   = (int)format & (int)SnbtFormat::CompoundNewLine;
 
     if (isNewLine) { res += '\n'; }
@@ -214,7 +251,7 @@ std::string TypedToSnbt(ByteArrayTag& self, uchar indent, SnbtFormat format) {
     std::string res;
 
     std::string lbracket{"[B;"}, rbracket{"]"};
-
+    if (static_cast<bool>(format & SnbtFormat::Jsonify)) { lbracket = "[ /*B;*/"; }
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
@@ -231,16 +268,19 @@ std::string TypedToSnbt(ByteArrayTag& self, uchar indent, SnbtFormat format) {
     size_t      i = self.view().size();
     std::string indentSpace(indent, ' ');
 
-    bool isMinimized = format == SnbtFormat::Minimize;
+    bool isMinimized = isMinimize(format);
     bool isNewLine   = (int)format & (int)SnbtFormat::ListNewLine;
 
     if (isNewLine) { res += '\n'; }
+
+    std::string back{"b"};
+    if (static_cast<bool>(format & SnbtFormat::Jsonify)) { back = " /*b*/"; }
 
     for (auto& tag : self.view()) {
         i--;
         if (isNewLine) { res += indentSpace; }
 
-        res += toDumpNumber(getString(tag) + 'b', format);
+        res += toDumpNumber(getString(tag) + back, format);
 
         if (i > 0) {
             res += ',';
@@ -260,7 +300,7 @@ std::string TypedToSnbt(IntArrayTag& self, uchar indent, SnbtFormat format) {
     std::string res;
 
     std::string lbracket{"[I;"}, rbracket{"]"};
-
+    if (static_cast<bool>(format & SnbtFormat::Jsonify)) { lbracket = "[ /*I;*/"; }
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
@@ -277,7 +317,7 @@ std::string TypedToSnbt(IntArrayTag& self, uchar indent, SnbtFormat format) {
     size_t      i = self.view().size();
     std::string indentSpace(indent, ' ');
 
-    bool isMinimized = format == SnbtFormat::Minimize;
+    bool isMinimized = isMinimize(format);
     bool isNewLine   = (int)format & (int)SnbtFormat::ListNewLine;
 
     if (isNewLine) { res += '\n'; }

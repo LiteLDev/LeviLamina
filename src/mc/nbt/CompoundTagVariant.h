@@ -67,34 +67,10 @@ public:
     }
 
     std::unique_ptr<Tag> toUnique() const {
-        switch (mTagStorage.index()) {
-        case 0:
-            return std::make_unique<EndTag>(get<EndTag>());
-        case 1:
-            return std::make_unique<ByteTag>(get<ByteTag>());
-        case 2:
-            return std::make_unique<ShortTag>(get<ShortTag>());
-        case 3:
-            return std::make_unique<IntTag>(get<IntTag>());
-        case 4:
-            return std::make_unique<Int64Tag>(get<Int64Tag>());
-        case 5:
-            return std::make_unique<FloatTag>(get<FloatTag>());
-        case 6:
-            return std::make_unique<DoubleTag>(get<DoubleTag>());
-        case 7:
-            return std::make_unique<ByteArrayTag>(get<ByteArrayTag>());
-        case 8:
-            return std::make_unique<StringTag>(get<StringTag>());
-        case 9:
-            return std::make_unique<ListTag>(get<ListTag>());
-        case 10:
-            return std::make_unique<CompoundTag>(get<CompoundTag>());
-        case 11:
-            return std::make_unique<IntArrayTag>(get<IntArrayTag>());
-        default:
-            return nullptr;
-        }
+        return std::visit(
+            [](auto&& val) -> std::unique_ptr<Tag> { return std::make_unique<std::decay_t<decltype(val)>>(val); },
+            mTagStorage
+        );
     }
 
 public:

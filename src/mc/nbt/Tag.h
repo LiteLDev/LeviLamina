@@ -13,6 +13,7 @@ enum class SnbtFormat {
     Colored            = 1 << 2,
     Console            = 1 << 3,
     ForceAscii         = 1 << 4,
+    Jsonify            = 1 << 5,
     PartialNewLine     = CompoundNewLine,
     AlwaysNewLine      = CompoundNewLine | ListNewLine,
     PrettyFilePrint    = CompoundNewLine,

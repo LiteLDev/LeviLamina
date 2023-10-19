@@ -12,6 +12,9 @@ public:
     CraftingContainer(CraftingContainer const&);
     CraftingContainer();
 
+    std::vector<ItemStack> mItems; // this+0xE0
+    int                    mWidth; // this+0xF8
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0

@@ -13,9 +13,11 @@ public:
     };
     std::weak_ptr<T> mHandle;
 
-    WeakStorageSharePtr() = default;
+    WeakStorageSharePtr() noexcept = default;
 
     ~WeakStorageSharePtr() = default;
+
+    WeakStorageSharePtr(std::nullptr_t) noexcept {}
 
     template <class Y>
     WeakStorageSharePtr(std::shared_ptr<Y> const& ptr)
@@ -102,9 +104,11 @@ public:
     };
     std::shared_ptr<T> mHandle;
 
-    OwnerStorageSharePtr() = default;
+    OwnerStorageSharePtr() noexcept = default;
 
     ~OwnerStorageSharePtr() = default;
+
+    OwnerStorageSharePtr(std::nullptr_t) noexcept {}
 
     template <class Y>
     OwnerStorageSharePtr(std::shared_ptr<Y> const& ptr)
@@ -169,9 +173,11 @@ class StackResultStorageSharePtr {
 public:
     std::shared_ptr<T> mHandle;
 
-    StackResultStorageSharePtr() = default;
+    StackResultStorageSharePtr() noexcept = default;
 
     ~StackResultStorageSharePtr() = default;
+
+    StackResultStorageSharePtr(std::nullptr_t) noexcept {}
 
     template <class Y>
     StackResultStorageSharePtr(std::shared_ptr<Y> const& ptr)

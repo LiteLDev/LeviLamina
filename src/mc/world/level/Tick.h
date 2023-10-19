@@ -4,11 +4,13 @@
 
 struct Tick {
 public:
-    uint64 t;
+    using Type = uint64;
 
-    constexpr operator uint64() const { return t; } // NOLINT
+    Type t;
 
-    constexpr Tick(uint64 v) : t(v){}; // NOLINT
+    constexpr operator Type() const { return t; } // NOLINT
+
+    constexpr Tick(Type v) : t(v){}; // NOLINT
 
     constexpr Tick(Tick const& v) = default;
 

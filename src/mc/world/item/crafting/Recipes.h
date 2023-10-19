@@ -4,6 +4,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/world/item/crafting/Recipe.h"
 #include "mc/world/item/crafting/RecipeIngredient.h"
 
 // auto generated inclusion list
@@ -15,6 +16,9 @@
 namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
+
+class Item;
+class Block;
 
 class Recipes {
 public:
@@ -68,7 +72,7 @@ public:
         RecipeIngredient   mIngredient;
         char               mC;
 
-        constexpr Type(std::string const& name, char label, int aux, ushort count)
+        inline Type(std::string const& name, char label, int aux, ushort count)
         : mIngredient(name, aux, count),
           mC(label) {
             mItem  = mIngredient.getItem();

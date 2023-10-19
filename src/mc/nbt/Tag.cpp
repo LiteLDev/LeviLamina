@@ -16,6 +16,7 @@ extern std::string TypedToSnbt(IntArrayTag&, uchar, SnbtFormat);
 extern std::string TypedToSnbt(EndTag&, uchar, SnbtFormat);
 
 std::string Tag::toSnbt(SnbtFormat snbtFormat, uchar indent) const {
+    if (!this) { return "null"; }
     switch (getId()) {
     case Type::Byte:
         return TypedToSnbt(*(ByteTag*)this, indent, snbtFormat);

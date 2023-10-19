@@ -12,6 +12,8 @@ namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
+class BinaryStream;
+
 class ItemDescriptor {
 public:
     // ItemDescriptor inner types declare

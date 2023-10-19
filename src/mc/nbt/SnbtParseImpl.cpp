@@ -1,7 +1,10 @@
 #include "ll/api/utils/Base64.h"
+#include "ll/api/utils/Hash.h"
 #include "mc/nbt/CompoundTag.h"
 
 std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s);
+
+bool isTrivialChar(char c) { return isalnum(c) || c == '-' || c == '+' || c == '_' || c == '.'; }
 
 bool scanComment(std::string_view& s) noexcept {
     size_t i = 0;
@@ -132,17 +135,47 @@ std::optional<CompoundTagVariant> parseNumber(std::string_view& s) {
     case 'D':
         s.remove_prefix(1);
         return DoubleTag{(double)(res.value())};
+    case 'i':
+    case 'I':
+        s.remove_prefix(1);
+        return IntTag{(int)(res.value())};
     default:
         break;
     }
+    if (s.size() >= 6) switch (do_hash(s.substr(0, 6))) {
+        case " /*b*/"_h:
+        case " /*B*/"_h:
+            s.remove_prefix(6);
+            return ByteTag{(schar)(res.value())};
+        case " /*s*/"_h:
+        case " /*S*/"_h:
+            s.remove_prefix(6);
+            return ShortTag{(short)(res.value())};
+        case " /*l*/"_h:
+        case " /*L*/"_h:
+            s.remove_prefix(6);
+            return Int64Tag{(int64)(res.value())};
+        case " /*f*/"_h:
+        case " /*F*/"_h:
+            s.remove_prefix(6);
+            return FloatTag{(float)(res.value())};
+        case " /*d*/"_h:
+        case " /*D*/"_h:
+            s.remove_prefix(6);
+            return DoubleTag{(double)(res.value())};
+        case " /*i*/"_h:
+        case " /*I*/"_h:
+            s.remove_prefix(6);
+            return IntTag{(int)(res.value())};
+        default:
+            break;
+        }
     if (isInt) {
         return IntTag{(int)(res.value())};
     } else {
         return DoubleTag{(double)(res.value())};
     }
 }
-
-bool isTrivialChar(char c) { return isalnum(c) || c == '-' || c == '+' || c == '_' || c == '.'; }
 
 int get_codepoint(std::string_view& s) {
     int codepoint = 0;
@@ -409,6 +442,14 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
         return std::nullopt;
     } else if (s.starts_with("[I;")) {
         s.remove_prefix(3);
+        if (auto array = parseIntArray(s); array) { return array.value(); }
+        return std::nullopt;
+    } else if (s.starts_with("[ /*B;*/")) {
+        s.remove_prefix(8);
+        if (auto array = parseByteArray(s); array) { return array.value(); }
+        return std::nullopt;
+    } else if (s.starts_with("[ /*I;*/")) {
+        s.remove_prefix(8);
         if (auto array = parseIntArray(s); array) { return array.value(); }
         return std::nullopt;
     }

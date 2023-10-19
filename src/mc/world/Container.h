@@ -7,13 +7,28 @@
 #include "mc/world/TypedRuntimeId.h"
 #include "mc/world/containers/ContainerType.h"
 
+class ItemStack;
+class ContainerContentChangeListener;
+class ContainerSizeChangeListener;
+
 class Container {
 public:
-    LLNDAPI inline std::string const& getTypeName() const { return getContainerTypeName(getContainerType()); }
+    [[nodiscard]] inline std::string const& getTypeName() const { return getContainerTypeName(getContainerType()); }
 
     // prevent constructor by default
     Container& operator=(Container const&);
     Container();
+
+    using TransactionContext = std::function<void(Container&, int, ItemStack const&, ItemStack const&)>;
+
+    ContainerType                                       mContainerType;           // this+0x8
+    ContainerType                                       mGameplayContainerType;   // this+0x9
+    std::unordered_set<ContainerContentChangeListener*> mContentChangeListeners;  // this+0x10
+    std::unordered_set<ContainerSizeChangeListener*>    mSizeChangeListeners;     // this+0x50
+    std::deque<TransactionContext>                      mTransactionContextStack; // this+0x90
+    std::string                                         mName;                    // this+0xB8
+    bool                                                mCustomName;              // this+0xD8
+    ContainerRuntimeId                                  mContainerRuntimeId;      // this+0xDC
 
 public:
     // NOLINTBEGIN
@@ -120,8 +135,7 @@ public:
 
     // vIndex: 33, symbol:
     // ?createTransactionContext@Container@@UEAAXV?$function@$$A6AXAEAVContainer@@HAEBVItemStack@@1@Z@std@@V?$function@$$A6AXXZ@3@@Z
-    virtual void
-        createTransactionContext(std::function<void(class Container&, int, class ItemStack const&, class ItemStack const&)>, std::function<void(void)>);
+    virtual void createTransactionContext(TransactionContext, std::function<void(void)>);
 
     // vIndex: 34, symbol: ?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z
     virtual void initializeContainerContents(class BlockSource&);

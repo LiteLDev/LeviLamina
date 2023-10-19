@@ -8,6 +8,9 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/memory/MemoryUtils.h"
 
+#include "FMT/color.h"
+#include "FMT/core.h"
+
 namespace ll::StringUtils {
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
