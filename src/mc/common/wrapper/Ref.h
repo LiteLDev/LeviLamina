@@ -26,7 +26,7 @@ public:
         requires(std::convertible_to<Y*, T*>)
     : mHandle(ptr) {}
     template <class Y>
-    WeakStorageSharePtr(std::weak_ptr<Y>&& ptr)
+    WeakStorageSharePtr(std::weak_ptr<Y>&& ptr) noexcept
         requires(std::convertible_to<Y*, T*>)
     : mHandle(std::move(ptr)) {}
     template <class Y>
@@ -111,7 +111,7 @@ public:
         requires(std::convertible_to<Y*, T*>)
     : mHandle(ptr) {}
     template <class Y>
-    OwnerStorageSharePtr(std::shared_ptr<Y>&& ptr)
+    OwnerStorageSharePtr(std::shared_ptr<Y>&& ptr) noexcept
         requires(std::convertible_to<Y*, T*>)
     : mHandle(std::move(ptr)) {}
     template <class Y>
@@ -178,7 +178,7 @@ public:
         requires(std::convertible_to<Y*, T*>)
     : mHandle(ptr) {}
     template <class Y>
-    StackResultStorageSharePtr(std::shared_ptr<Y>&& ptr)
+    StackResultStorageSharePtr(std::shared_ptr<Y>&& ptr) noexcept
         requires(std::convertible_to<Y*, T*>)
     : mHandle(std::move(ptr)) {}
     template <class Y>
