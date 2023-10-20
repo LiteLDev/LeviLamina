@@ -1,3 +1,5 @@
+#define DEBUG
+
 #ifdef DEBUG
 
 #include "ll/api/LLAPI.h"
@@ -11,14 +13,9 @@
 #include "mc/world/actor/Actor.h"
 #include "mc/world/level/storage/LevelData.h"
 
-#define TEST_DYNAMIC_COMMAND
-#define successf(...) success(fmt::format(__VA_ARGS__))
-#define errorf(...)   error(fmt::format(__VA_ARGS__))
 using Param      = DynamicCommand::ParameterData;
 using ParamType  = DynamicCommand::ParameterType;
 using ParamIndex = DynamicCommandInstance::ParameterIndex;
-
-#ifdef TEST_DYNAMIC_COMMAND
 
 void setupTestParamCommand() {
     using Param     = DynamicCommand::ParameterData;
@@ -42,7 +39,8 @@ void setupTestParamCommand() {
     Param CommandParam("testCommand", ParamType::Command, true);
     // Param posParam(ParamType::Position, "testPos", true);
     //  Test Command:
-    //    param true 123 3.14 string @e @a 1 2 3 ~1 ~2 ~3 msg {"a":123} stick bedrock ["persistent_bit"=true] npc poison help param rawtext
+    //    param true 123 3.14 string @e @a 1 2 3 ~1 ~2 ~3 msg {"a":123} stick bedrock ["persistent_bit"=true] npc poison
+    //    help param rawtext
     DynamicCommand::setup(
         "param",
         "dynamic command",
@@ -67,25 +65,23 @@ void setupTestParamCommand() {
             CommandParam,
             RawTextParam,
         },
-        {{
-            "testBool",
-            "testInt",
-            "testFloat",
-            "testStr",
-            "testActor",
-            "testPlayer",
-            "testBlockPos",
-            "testVec3",
-            "testMessage",
-            "testJsonValue",
-            "testItem",
-            "testBlock",
-            "testBlockState",
-            "testActorType",
-            "testEffect",
-            "testCommand",
-            "testRawText"
-        }},
+        {{"testBool",
+          "testInt",
+          "testFloat",
+          "testStr",
+          "testActor",
+          "testPlayer",
+          "testBlockPos",
+          "testVec3",
+          "testMessage",
+          "testJsonValue",
+          "testItem",
+          "testBlock",
+          "testBlockState",
+          "testActorType",
+          "testEffect",
+          "testCommand",
+          "testRawText"}},
         [](DynamicCommand const&                                    command,
            CommandOrigin const&                                     origin,
            CommandOutput&                                           output,
@@ -204,7 +200,7 @@ void setupRemoveCommand() {
                     if (res) {
                         DynamicCommand::unregisterCommand(fullName);
                         ll::logger.info("unregister command " + fullName);
-                        ((DynamicCommandInstance*)0)
+                        ((DynamicCommandInstance*)nullptr)
                             ->setSoftEnum("CommandNames", ll::Global<CommandRegistry>->getEnumValues("CommandName"));
                     } else ll::logger.error("error in unregister command " + fullName);
                 },
@@ -234,8 +230,6 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     return true;
 };
 
-#endif // TEST_DYNAMIC_COMMAND
-
 // enum command
 void onEnumExecute(
     DynamicCommand const&                                    cmd,
@@ -252,7 +246,7 @@ void onEnumExecute(
         bool  found    = false;
         if (std::find(enumNames.begin(), enumNames.end(), enumName) != enumNames.end()) {
             found = true;
-            output.successf("§eEnum §l{}§r§e Values:", enumName);
+            output.trSuccess("§eEnum §l{}§r§e Values:", enumName);
             for (auto& val : ll::Global<CommandRegistry>->getEnumValues(enumName)) {
                 output.success(val);
                 // output.addToResultList("enums", val);
@@ -261,10 +255,10 @@ void onEnumExecute(
         }
         if (std::find(softEnumNames.begin(), softEnumNames.end(), enumName) != softEnumNames.end()) {
             found = true;
-            output.successf("§eSoft Enum §l{}§r§e Values:", enumName);
+            output.trSuccess("§eSoft Enum §l{}§r§e Values:", enumName);
             for (auto& val : ll::Global<CommandRegistry>->getSoftEnumValues(enumName)) { output.success(val); }
         }
-        if (!found) output.errorf("Enum or Soft Enum \"{}\" not found", enumName);
+        if (!found) output.trError("Enum or Soft Enum \"{}\" not found", enumName);
     } else {
         output.success("§eEnum Names:");
         for (auto& val : ll::Global<CommandRegistry>->getEnumNames()) { output.success(val); }

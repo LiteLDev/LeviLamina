@@ -48,10 +48,10 @@ using ll::logger;
 
 #define CatchDynamicCommandError(func, handle)                                                                         \
     catch (const seh_exception& e) {                                                                                   \
-        OutputError("Uncaught SEH Exception Detected!", e.code(), TextEncoding::toUTF8(e.what()), func, handle);       \
+        OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), func, handle);                             \
     }                                                                                                                  \
     catch (const std::exception& e) {                                                                                  \
-        OutputError("Uncaught C++ Exception Detected!", errno, TextEncoding::toUTF8(e.what()), func, handle);          \
+        OutputError("Uncaught C++ Exception Detected!", errno, e.what(), func, handle);                                \
     }                                                                                                                  \
     catch (...) {                                                                                                      \
         OutputError("Uncaught Exception Detected!", -1, "", func, handle);                                             \
@@ -787,7 +787,7 @@ inline DynamicCommandInstance::DynamicCommandInstance(
   description_(std::make_unique<std::string>(description)),
   permission_(permission),
   flag_(flag),
-  handle_(handle){}
+  handle_(handle) {}
 
 inline DynamicCommandInstance::~DynamicCommandInstance() {
     if (this->builder_) dcbFreeCallback((DCCallback*)this->builder_);

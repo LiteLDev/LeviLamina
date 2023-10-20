@@ -10,7 +10,7 @@
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     NbtTest,
-    ll::memory::HookPriority::Normal,
+    HookPriority::Normal,
     ServerInstance,
     &ServerInstance::startServerThread,
     void
@@ -130,4 +130,5 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     using namespace ll::StringUtils;
 
     ll::logger.debug("\n{}", replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console)));
+    ll::logger.debug("\n{}", (nbt.toSnbt(SnbtFormat::Colored )));
 }

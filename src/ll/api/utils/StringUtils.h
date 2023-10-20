@@ -111,9 +111,11 @@ std::string applyTextStyle(fmt::text_style const& ts, S const& format_str) {
     return fmt::to_string(buf);
 }
 
-std::string removeAnsiEscapeCode(std::string_view str);
+std::string removeEscapeCode(std::string_view str);
 
 std::string replaceAnsiToMcCode(std::string_view str);
+
+std::string replaceMcToAnsiCode(std::string_view str);
 
 namespace Encoding {
 enum : uint {

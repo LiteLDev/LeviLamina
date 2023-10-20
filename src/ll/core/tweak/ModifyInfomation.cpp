@@ -64,11 +64,14 @@ LL_AUTO_STATIC_HOOK(
     std::istringstream iss(Buffer);
     std::string        line;
 
-    auto& logger = loggerMap.contains(priority) ? loggerMap.at(priority) : serverLogger.info;
+    bool knownPriority = loggerMap.contains(priority);
+
+    auto& logger = knownPriority ? loggerMap.at(priority) : serverLogger.warn;
 
     while (std::getline(iss, line)) {
         if (!line.empty() && line.back() == '\n') { line.pop_back(); }
         if (!serverStarted) tryModifyServerStartInfo(line);
+        if (!knownPriority) { line = std::format("<LVL|{}> {}", priority, line); }
         logger(line);
     }
 }

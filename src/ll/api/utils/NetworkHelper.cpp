@@ -59,7 +59,7 @@ bool HttpGet(
             ll::logger.error("In HttpGet callback");
             PrintCurrentStackTraceback();
         } catch (std::exception const& e) {
-            ll::logger.error("Uncaught C++ Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
+            ll::logger.error("Uncaught C++ Exception Detected!\n{}", e.what());
             ll::logger.error("In HttpGet callback");
             PrintCurrentStackTraceback();
         } catch (...) {
@@ -111,7 +111,7 @@ bool HttpPost(
             ll::logger.error("In HttpPost callback");
             PrintCurrentStackTraceback();
         } catch (std::exception const& e) {
-            ll::logger.error("Uncaught C++ Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
+            ll::logger.error("Uncaught C++ Exception Detected!\n{}", e.what());
             ll::logger.error("In HttpGet callback");
             PrintCurrentStackTraceback();
         } catch (...) {

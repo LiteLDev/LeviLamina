@@ -30,13 +30,13 @@ void Logger::OutputStream::print(std::string_view s) const {
                 applyTextStyle(style[0], fmt::format(fmt::runtime(consoleFormat[1]), time)),
                 applyTextStyle(style[1], fmt::format(fmt::runtime(consoleFormat[2]), levelPrefix)),
                 applyTextStyle(style[2], fmt::format(fmt::runtime(consoleFormat[3]), logger.title)),
-                applyTextStyle(style[3], fmt::format(fmt::runtime(consoleFormat[4]), s))
+                applyTextStyle(style[3], fmt::format(fmt::runtime(consoleFormat[4]), replaceMcToAnsiCode(s)))
             );
-            if (!ll::globalConfig.colorLog) { str = removeAnsiEscapeCode(str); }
+            if (!ll::globalConfig.colorLog) { str = removeEscapeCode(str); }
             fmt::print("{}\n", str);
         }
         if (logger.getFile().is_open() && checkLogLevel(logger.fileLevel, level)) {
-            logger.getFile() << removeAnsiEscapeCode(fmt::format(
+            logger.getFile() << removeEscapeCode(fmt::format(
                 fmt::runtime(fileFormat[0]),
                 fmt::format(fmt::runtime(fileFormat[1]), time),
                 fmt::format(fmt::runtime(fileFormat[2]), levelPrefix),

@@ -112,7 +112,7 @@ bool NewProcess(std::string const& process, std::function<void(int, std::string)
         try {
             if (callback) callback((int)exitCode, strOutput);
         } catch (seh_exception const& e) {
-            ll::logger.error("SEH Uncaught Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
+            ll::logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
             ll::logger.error("In NewProcess callback");
             PrintCurrentStackTraceback();
         } catch (...) {

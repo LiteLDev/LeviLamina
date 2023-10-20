@@ -206,7 +206,7 @@ I18nBase* loadI18nImpl(
         return &PluginOwnData::setWithoutNewImpl<I18nBase>(hPlugin, I18nBase::POD_KEY, res);
     } catch (std::exception const& e) {
         ll::logger.error("Fail to load translation file <{}> !", path);
-        ll::logger.error("- {}", TextEncoding::toUTF8(e.what()));
+        ll::logger.error("- {}", e.what());
     } catch (...) { ll::logger.error("Fail to load translation file <{}> !", path); }
     return nullptr;
 }

@@ -10,9 +10,9 @@ class Color;
 
 class Color : public floatN4<Color> {
 public:
-    template <std::floating_point T0>
-    constexpr Color(T0 const& v = 0) noexcept : floatN4(v) {} // NOLINT
-    template <std::integral T0, std::integral T1, std::integral T2, std::integral T3>
+    constexpr explicit Color(uint hex) noexcept : Color((hex >> 16) & 0xFF, (hex >> 8) & 0xFF, hex & 0xFF) {}
+
+    template <std::integral T0, std::integral T1, std::integral T2, std::integral T3 = uint>
     constexpr Color(T0 const& ir, T1 const& ig, T2 const& ib, T3 const& ia = 255) noexcept
     : floatN4(
         static_cast<float>(ir) / 255.0f,
@@ -20,10 +20,10 @@ public:
         static_cast<float>(ib) / 255.0f,
         static_cast<float>(ia) / 255.0f
     ) {}
-    template <std::floating_point T0, std::floating_point T1, std::floating_point T2, std::floating_point T3>
+    template <std::floating_point T0, std::floating_point T1, std::floating_point T2, std::floating_point T3 = double>
     constexpr Color(T0 const& r, T1 const& g, T2 const& b, T3 const& a = 1) noexcept : floatN4(r, g, b, a) {}
 
-    template <IsFloatN V, std::floating_point A>
+    template <IsFloatN V, std::floating_point A = double>
     constexpr Color(V const& v, A const& a = 1) noexcept // NOLINT
         requires(V::size() == 3)
     : floatN4(v.r, v.g, v.b, a) {}
@@ -112,9 +112,96 @@ public:
         );
     }
 
-    LLNDAPI double deltaE94(Color const& dst) const noexcept; // 1.0 for JND
+    [[nodiscard]] [[maybe_unused]] inline double deltaE94(Color const& dst) const noexcept { // 1.0 for JND
+        auto m1 = this->sRGBToLinear().LinearToXYZ().XYZToLab().toVec3();
+        Vec2 ab1{m1.y, m1.z};
+        auto m2 = dst.sRGBToLinear().LinearToXYZ().XYZToLab().toVec3();
+        Vec2 ab2{m2.y, m2.z};
+        auto C1 = ab1.length();
+        auto C2 = ab2.length();
+        auto dC = C1 - C2;
+        Vec3 D{m1.x - m2.x, dC, sqrt(ab1.distanceToSqr(ab2) - dC)};
+        return (D / Vec3{1.0, 1.0 + 0.045 * C1, 1.0 + 0.015 * C2}).length();
+    }
 
-    LLNDAPI double deltaE00(Color const& dst) const noexcept; // 1.0 for JND
+    [[nodiscard]] [[maybe_unused]] inline double deltaE00(Color const& dst) const noexcept { // 1.0 for JND
+        auto ma = this->sRGBToLinear().LinearToXYZ().XYZToLab().toVec3();
+        auto mb = dst.sRGBToLinear().LinearToXYZ().XYZToLab().toVec3();
+
+        // https://doi.org/10.1002/col.20070
+        // The CIEDE2000 color-difference formula: Implementation notes,
+        // supplementary test data, and mathematical observations
+
+        constexpr auto rtod = std::numbers::pi / 180.0;
+        constexpr auto dtor = 180.0 / std::numbers::pi;
+        constexpr auto tpi  = std::numbers::pi * 2;
+        constexpr auto cons = 6103515625; /*25^7*/
+
+        double L1  = ma.r;
+        double L2  = mb.r;
+        double a1  = ma.g;
+        double a2  = mb.g;
+        double b1  = ma.b;
+        double b2  = mb.b;
+        double dL  = L1 - L2;
+        double C1  = sqrt(a1 * a1 + b1 * b1);
+        double C2  = sqrt(a2 * a2 + b2 * b2);
+        double L_  = (L1 + L2) * 0.5;
+        double C_  = (C1 + C2) * 0.5;
+        double C_7 = std::pow(C_, 7);
+        double G   = (1 - sqrt(C_7 / (C_7 + cons))) * 0.5;
+        double a1p = a1 * (1 + G);
+        double a2p = a2 * (1 + G);
+        double C1p = sqrt(a1p * a1p + b1 * b1);
+        double C2p = sqrt(a2p * a2p + b2 * b2);
+        double C_p = (C1p + C2p) * 0.5;
+        double dCp = C1p - C2p;
+        double h1p = atan2(b1, a1p);
+        double h2p = atan2(b2, a2p);
+        if (h1p < 0) h1p += tpi;
+        if (h2p < 0) h2p += tpi;
+        h1p        *= dtor;
+        h2p        *= dtor;
+        double h_p  = (h1p + h2p) * 0.5;
+        double dhp  = 0;
+        double H_p  = 0;
+        if (C1p == 0 || C2p == 0) {
+            H_p = h_p * 2;
+        } else {
+            if (180 < abs(h1p - h2p)) {
+                if (h2p <= h1p) {
+                    dhp = h2p - h1p + 360;
+                } else {
+                    dhp = h2p - h1p - 360;
+                }
+                if (h2p + h1p < 360) {
+                    H_p = h_p + 180;
+                } else {
+                    H_p = h_p - 180;
+                }
+            } else {
+                dhp = h2p - h1p;
+                H_p = h_p;
+            }
+        }
+        double T = 1 - 0.17 * cos((H_p - 30) * rtod) + 0.24 * cos((2 * H_p) * rtod) + 0.32 * cos((3 * H_p + 6) * rtod)
+                 - 0.20 * cos((4 * H_p - 63.0) * rtod);
+        double dHp   = 2 * sqrt(C1p * C2p) * sin(dhp * 0.5 * rtod);
+        L_          -= 50;
+        L_          *= L_;
+        double SL    = 1.0 + 0.015 * L_ / sqrt(L_ + 20);
+        double SC    = 1.0 + 0.045 * C_p;
+        double SH    = 1.0 + 0.015 * C_p * T;
+        double C_p7  = std::pow(C_p, 7);
+        double kH    = (H_p - 275) / 25;
+        double RT    = -2 * sqrt(C_p7 / (C_p7 + cons)) * sin(60 * exp(-kH * kH) * rtod);
+
+        dL  = dL / SL;
+        dCp = dCp / SC;
+        dHp = dHp / SH;
+
+        return sqrt(dL * dL + dCp * dCp + dHp * dHp + RT * dCp * dHp);
+    }
 
     [[nodiscard]] [[maybe_unused]] inline double distanceTo(Color const& dst) const noexcept { return deltaE00(dst); }
 

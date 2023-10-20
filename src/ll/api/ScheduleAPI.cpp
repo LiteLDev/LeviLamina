@@ -135,13 +135,13 @@ public:
                     }
                 } catch (seh_exception const& e) {
                     ll::logger.error("SEH exception occurred in ScheduleTask!");
-                    ll::logger.error("{}", TextEncoding::toUTF8(e.what()));
+                    ll::logger.error("{}", e.what());
                     ll::logger.error("TaskId: {}", t.taskId);
                     if (auto plugin = ll::getPlugin(t.handle))
                         ll::logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
                 } catch (std::exception const& e) {
                     ll::logger.error("Exception occurred in ScheduleTask!");
-                    ll::logger.error("{}", TextEncoding::toUTF8(e.what()));
+                    ll::logger.error("{}", e.what());
                     ll::logger.error("TaskId: {}", t.taskId);
                     if (auto plugin = ll::getPlugin(t.handle))
                         ll::logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());

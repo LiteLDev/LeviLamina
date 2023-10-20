@@ -37,7 +37,7 @@ public:
         if (!status.ok()) {
             auto output = status.ToString();
             output.erase(std::remove(output.begin(), output.end(), '\n'), output.end());
-            ll::logger.error(": Fail to load KeyValueDB <{}>: {}", path, TextEncoding::toUTF8(output));
+            ll::logger.error(": Fail to load KeyValueDB <{}>: {}", path, output);
         }
     }
 
