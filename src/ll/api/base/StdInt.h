@@ -2,9 +2,9 @@
 
 #include <cstdint>
 
-using ushort = uint16_t;
-using uint   = uint32_t;
-using ulong  = unsigned long;
+using ushort  = uint16_t;
+using uint    = uint32_t;
+using ulong   = unsigned long;
 
 using uchar = uint8_t;
 using schar = int8_t;
@@ -32,3 +32,4 @@ using u8  = uint8_t;
 
 using f32 = float;
 using f64 = double;
+using ldouble = long double;

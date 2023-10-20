@@ -82,12 +82,12 @@ char get(std::string_view& s) {
     return c;
 }
 
-inline std::optional<long double> stold(std::string_view const& s, size_t& n) {
+inline std::optional<ldouble> stold(std::string_view const& s, size_t& n) {
     int&        errnoRef = errno; // Nonzero cost, pay it once
     const char* ptr      = s.data();
     char*       eptr;
     errnoRef              = 0;
-    const long double res = strtold(ptr, &eptr);
+    const ldouble res = strtold(ptr, &eptr);
 
     if (ptr == eptr) { return std::nullopt; }
 

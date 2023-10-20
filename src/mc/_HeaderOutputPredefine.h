@@ -109,6 +109,7 @@ using uchar  = uint8_t;
 using ushort = uint16_t;
 using uint   = uint32_t;
 using ulong  = unsigned long;
+using ldouble  = long double;
 using uint64 = uint64_t;
 
 using schar = int8_t;

@@ -51,4 +51,4 @@ public:
     // NOLINTEND
 };
 
-inline FloatTag operator""_f(long double num) { return FloatTag{(float)num}; }
+inline FloatTag operator""_f(ldouble num) { return FloatTag{(float)num}; }

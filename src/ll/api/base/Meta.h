@@ -92,13 +92,13 @@ public:
     using map = TypeList<typename M<TL>::type...>;
 
     template <typename T>
-    using append = TypeList<TL..., T>;
+    using push_back = TypeList<TL..., T>;
 
     template <typename T>
-    using prepend = TypeList<T, TL...>;
+    using push_front = TypeList<T, TL...>;
 
     template <size_t N>
-    using get = get_type_t<N, TL...>;
+    using get = get_type_t<N + 1, void, TL...>;
 
     template <template <typename...> class U>
     using to = U<TL...>;

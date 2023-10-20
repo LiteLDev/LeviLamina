@@ -47,4 +47,4 @@ public:
     // NOLINTEND
 };
 
-inline DoubleTag operator""_d(long double num) { return DoubleTag{(double)num}; }
+inline DoubleTag operator""_d(ldouble num) { return DoubleTag{(double)num}; }

@@ -19,7 +19,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     auto nbt = CompoundTag{
         {
-         {"string?", StringTag{R"(streee _ _o-ix 我超, utf8 "\asfa%"*)##q)$\\"\Q34\\""'':)"}},
+         {"string?", R"(streee _ _o-ix 我超, utf8 "\asfa%"*)##q)$\\"\Q34\\""'':)"_tag},
          {"num", 1_i},
          {"nums", 3_s},
          {"byte", 127_b},
