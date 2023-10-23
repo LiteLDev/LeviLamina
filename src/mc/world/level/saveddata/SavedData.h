@@ -23,8 +23,5 @@ public:
     // vIndex: 2, symbol: ?serialize@PortalForcer@@UEBAXAEAVCompoundTag@@@Z
     virtual void serialize(class CompoundTag&) const = 0;
 
-    // symbol: ??1SavedData@@UEAA@XZ
-    // MCVAPI ~SavedData();
-
     // NOLINTEND
 };

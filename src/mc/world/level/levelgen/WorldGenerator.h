@@ -1,13 +1,19 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/chunk/ChunkSource.h"
+#include "mc/world/level/levelgen/v1/IPreliminarySurfaceProvider.h"
+
 
 // auto generated inclusion list
 #include "mc/deps/core/data/DividedPos2d.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
-class WorldGenerator {
+class HardcodedSpawnAreaRegistry;
+class StructureFeatureRegistry;
+
+class WorldGenerator : public ChunkSource, public IPreliminarySurfaceProvider {
 public:
     // WorldGenerator inner types declare
     // clang-format off
@@ -16,12 +22,13 @@ public:
 
     // WorldGenerator inner types define
     struct BlockVolumeDimensions {
-    public:
-        // prevent constructor by default
-        BlockVolumeDimensions& operator=(BlockVolumeDimensions const&);
-        BlockVolumeDimensions(BlockVolumeDimensions const&);
-        BlockVolumeDimensions();
+        uint mWidth;  // this+0x0
+        uint mDepth;  // this+0x4
+        uint mHeight; // this+0x8
     };
+
+    std::unique_ptr<HardcodedSpawnAreaRegistry> mHardcodedSpawnTypes;      // this+0x58
+    std::unique_ptr<StructureFeatureRegistry>   mStructureFeatureRegistry; // this+0x60
 
 public:
     // prevent constructor by default

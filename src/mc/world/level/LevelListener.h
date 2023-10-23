@@ -90,59 +90,5 @@ public:
     // vIndex: 19, symbol: ?playerListChanged@LevelListener@@UEAAXXZ
     virtual void playerListChanged();
 
-    // symbol: ?addBreakingItemParticleEffect@LevelListener@@UEAAXAEBVVec3@@W4ParticleType@@AEBUResolvedItemIconInfo@@@Z
-    // MCVAPI void addBreakingItemParticleEffect(class Vec3 const&, ::ParticleType, struct ResolvedItemIconInfo const&);
-
-    // symbol: ?addParticleEffect@LevelListener@@UEAAXAEBVHashedString@@AEBVActor@@0AEBVVec3@@AEBVMolangVariableMap@@@Z
-    // MCVAPI void
-    // addParticleEffect(class HashedString const&, class Actor const&, class HashedString const&, class Vec3 const&,
-    // class MolangVariableMap const&);
-
-    // symbol: ?addTerrainParticleEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
-    // MCVAPI void
-    // addTerrainParticleEffect(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float);
-
-    // symbol: ?addTerrainSlideEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
-    // MCVAPI void
-    // addTerrainSlideEffect(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float);
-
-    // symbol: ?allChanged@LevelListener@@UEAAXXZ
-    // MCVAPI void allChanged();
-
-    // symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
-    // MCVAPI void levelEvent(::LevelEvent, class CompoundTag const&);
-
-    // symbol: ?onChunkReloaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-    // MCVAPI void onChunkReloaded(class ChunkSource&, class LevelChunk&);
-
-    // symbol: ?onEntityAdded@LevelListener@@UEAAXAEAVActor@@@Z
-    // MCVAPI void onEntityAdded(class Actor&);
-
-    // symbol: ?onEntityRemoved@LevelListener@@UEAAXAEAVActor@@@Z
-    // MCVAPI void onEntityRemoved(class Actor&);
-
-    // symbol: ?onSubChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@F_N@Z
-    // MCVAPI void onSubChunkLoaded(class ChunkSource&, class LevelChunk&, short, bool);
-
-    // symbol:
-    // ?playMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
-    // MCVAPI void playMusic(std::string const&, class Vec3 const&, float, float);
-
-    // symbol:
-    // ?playStreamingMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
-    // MCVAPI void playStreamingMusic(std::string const&, int, int, int);
-
-    // symbol: ?playerListChanged@LevelListener@@UEAAXXZ
-    // MCVAPI void playerListChanged();
-
-    // symbol: ?sendServerLegacyParticle@LevelListener@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
-    // MCVAPI void sendServerLegacyParticle(::ParticleType, class Vec3 const&, class Vec3 const&, int);
-
-    // symbol: ?takePicture@LevelListener@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
-    // MCVAPI void takePicture(class cg::ImageBuffer&, class Actor*, class Actor*, struct ScreenshotOptions&);
-
-    // symbol: ??1LevelListener@@UEAA@XZ
-    // MCVAPI ~LevelListener();
-
     // NOLINTEND
 };
