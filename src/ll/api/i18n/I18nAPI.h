@@ -7,7 +7,6 @@
 //  Translation::load("plugins/xxx/lang.json");
 //  ...
 //  tr("There are {0} days before {1} to come back", 3, "alex");          // return translated string [std::string]
-//  trc("There are {0} days before {1} to come back", 3, "alex");         // return translated string [const char*]
 //
 //  ** In Translation File: plugins/xxx/lang.json
 //  {
@@ -45,6 +44,10 @@
 #include "FMT/core.h"
 #include "FMT/os.h"
 #include "Nlohmann/json.hpp"
+#include "compact_enc_det/util/encodings/encodings.h"
+#define UNICODE
+
+namespace ll::i18n {
 
 class I18nBase {
 
@@ -134,7 +137,7 @@ public:
     }
     /// Copy constructor
     SingleFileI18N(SingleFileI18N const& other) = default;
-    ~SingleFileI18N() override = default;
+    ~SingleFileI18N() override                  = default;
 
     LLAPI Type getType() override;
 };
@@ -172,17 +175,10 @@ public:
     }
     /// Copy constructor
     MultiFileI18N(MultiFileI18N const& other) = default;
-    ~MultiFileI18N() override = default;
+    ~MultiFileI18N() override                 = default;
 
     LLAPI Type getType() override;
 };
-
-#ifdef UNICODE
-#include "compact_enc_det/util/encodings/encodings.h"
-#define UNICODE
-#else
-#include "compact_enc_det/util/encodings/encodings.h"
-#endif
 
 namespace Translation {
 
@@ -352,10 +348,6 @@ inline std::string trl(std::string const& localeName, S const& formatStr, Args&&
     return res;
 }
 
-inline std::string operator""_tr(const char* x, size_t len) {
-    return Translation::trImpl(GetCurrentModule(), std::string{x, len});
-}
-
 // For text encoding
 namespace TextEncoding {
 LLAPI ::Encoding getLocalEncoding();
@@ -368,3 +360,8 @@ LLAPI std::string toUTF8(std::string const& text, ::Encoding from);
 
 LLAPI std::string convert(std::string const& text, ::Encoding from, ::Encoding to);
 } // namespace TextEncoding
+} // namespace ll::i18n
+
+inline std::string operator""_tr(char const* x, size_t len) {
+    return ll::i18n::Translation::trImpl(GetCurrentModule(), std::string{x, len});
+}

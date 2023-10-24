@@ -132,13 +132,13 @@ public:
     };
 
     struct LexicalToken {
-        const char*            mText;           // this+0x0
+        char const*            mText;           // this+0x0
         uint                   mLength;         // this+0x8
         Symbol                 mType;           // this+0xC
         Symbol                 mIdentifierInfo; // this+0x10
         CommandRegistry const& mRegistry;       // this+0x18
 
-        LexicalToken(CommandRegistry& registry): mRegistry(registry) {}
+        LexicalToken(CommandRegistry& registry) : mRegistry(registry) {}
 
     public:
         // NOLINTBEGIN
@@ -213,7 +213,7 @@ public:
         std::unique_ptr<ParseToken> child;  // this+0x0
         std::unique_ptr<ParseToken> next;   // this+0x8
         ParseToken*                 parent; // this+0x10
-        const char*                 text;   // this+0x18
+        char const*                 text;   // this+0x18
         uint                        length; // this+0x20
         Symbol                      type;   // this+0x24
 
@@ -434,33 +434,6 @@ public:
     };
 
     // following sections add sections for directive parameter enumeration
-
-    template <typename Type>
-    struct DefaultIdConverter {
-        template <typename Target, typename Source>
-        static Target convert(Source source) {
-            return static_cast<Target>(source);
-        }
-        uint64_t operator()(Type value) const { return convert<uint64_t, Type>(value); }
-        Type     operator()(uint64_t value) const { return convert<Type, uint64_t>(value); }
-    };
-
-    bool
-    parseEnumInt(void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-        const {
-        auto data     = getEnumData(token);
-        *(int*)target = (int)data;
-        return true;
-    };
-
-    bool
-    parseEnumString(void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-        const {
-        auto data             = token.toString();
-        *(std::string*)target = data;
-        return true;
-    };
-
     bool
     parseEnumStringAndInt(void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
         const {
@@ -470,41 +443,21 @@ public:
         return true;
     };
 
-    template <typename Type, typename IDConverter = CommandRegistry::DefaultIdConverter<Type>>
+    template <typename Type>
     bool
     parseEnum(void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
         const {
         auto data      = getEnumData(token);
-        *(Type*)target = IDConverter{}(data);
+        *(Type*)target = (Type)(data);
         return true;
     };
 
-    template <typename Type, typename IDConverter = CommandRegistry::DefaultIdConverter<Type>>
-    uint addEnumValues(
-        std::string const&                               name,
-        Bedrock::typeid_t<CommandRegistry>               tid,
-        std::vector<std::pair<std::string, Type>> const& values
-    ) {
-        std::vector<std::pair<std::string, uint64_t>> converted;
-        IDConverter                                   converter;
-        for (auto& value : values) converted.emplace_back(value.first, converter(value.second));
-        return _addEnumValuesInternal(name, converted, tid, &CommandRegistry::parseEnum<Type, IDConverter>).mValue;
-    };
-
-    uint addEnumValues(
-        std::string const&                        name,
-        const Bedrock::typeid_t<CommandRegistry>& tid,
-        std::initializer_list<std::string> const& values
-    ) {
-        std::vector<std::pair<std::string, uint64_t>> converted;
-        uint64_t                                      idx = 0;
-        for (auto& value : values) converted.emplace_back(value, ++idx);
-        return _addEnumValuesInternal(name, converted, tid, &CommandRegistry::parseEnumInt).mValue;
-    };
-
     template <typename T>
-    CommandRegistry* addEnum(char const* name, std::vector<std::pair<std::string, T>> const& values) {
-        this->addEnumValues<T>(name, Bedrock::type_id<CommandRegistry, T>(), values);
+    CommandRegistry* addEnum(std::string const& name, std::vector<std::pair<std::string, T>> const& values) {
+        std::vector<std::pair<std::string, uint64>> converted;
+        converted.reserve(values.size());
+        for (auto& value : values) converted.emplace_back(value.first, (uint64)(value.second));
+        _addEnumValuesInternal(name, converted, Bedrock::type_id<CommandRegistry, T>(), &CommandRegistry::parseEnum<T>);
         return this;
     }
 

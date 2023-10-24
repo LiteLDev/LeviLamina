@@ -1,4 +1,4 @@
-#include "ll/api/LoggerAPI.h"
+#include "ll/api/Logger.h"
 
 #include <mutex>
 #include <regex>
@@ -11,6 +11,7 @@
 
 using namespace ll::StringUtils;
 
+namespace ll {
 std::mutex logger_mutex;
 
 bool checkLogLevel(int level, int outLevel) {
@@ -162,3 +163,4 @@ bool Logger::setDefaultFile(std::string const& logFile, bool appendMode) {
 }
 
 std::ofstream Logger::defaultFile{};
+} // namespace ll

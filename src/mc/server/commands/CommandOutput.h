@@ -22,12 +22,12 @@ public:
 
     template <typename... Args>
     inline void trSuccess(std::string const& format, Args&&... args) {
-        success(tr(format, std::forward<Args>(args)...));
+        success(ll::i18n::tr(format, std::forward<Args>(args)...));
     }
 
     template <typename... Args>
     inline void trError(std::string const& format, Args&&... args) {
-        error(tr(format, std::forward<Args>(args)...));
+        error(ll::i18n::tr(format, std::forward<Args>(args)...));
     }
 
 public:

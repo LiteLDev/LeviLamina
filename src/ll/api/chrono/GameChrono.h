@@ -1,3 +1,5 @@
+#pragma once
+
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 #include <chrono>
@@ -17,11 +19,22 @@ struct ServerClock {
     using rep                       = duration::rep;
     using period                    = duration::period;
     using time_point                = std::chrono::time_point<ServerClock>;
+    static constexpr bool is_steady = true;
+
+    LLNDAPI static time_point now() noexcept;
+};
+struct GameTimeClock {
+    using duration                  = ticks;
+    using rep                       = duration::rep;
+    using period                    = duration::period;
+    using time_point                = std::chrono::time_point<GameTimeClock>;
     static constexpr bool is_steady = false;
 
     LLNDAPI static time_point now() noexcept;
 };
 
 } // namespace ll::gamechrono
+
+using namespace std::literals::chrono_literals;
 
 constexpr ll::gamechrono::ticks operator""_tick(uint64 val) noexcept { return ll::gamechrono::ticks{val}; }

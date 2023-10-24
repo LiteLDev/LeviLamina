@@ -1,13 +1,9 @@
-﻿// #define COMMAND_REGISTRY_EXTRA
-#include "ll/api/command/DynamicCommand.h"
+﻿#include "ll/api/command/DynamicCommand.h"
 
 #include "dyncall/dyncall_callback.h"
 
 #include "ll/api/LLAPI.h"
-#include "ll/api/LoggerAPI.h"
-#include "ll/api/ScheduleAPI.h"
-#include "ll/api/i18n/I18nAPI.h"
-#include "ll/api/memory/Hook.h"
+#include "ll/api/Logger.h"
 #include "ll/core/Config.h"
 #include "ll/core/Levilamina.h"
 
@@ -59,11 +55,7 @@ using ll::logger;
 
 // global variable and function
 namespace {
-bool                                                                     serverCommandsRegistered = false;
 std::unordered_map<std::string, std::unique_ptr<DynamicCommandInstance>> dynamicCommandInstances;
-std::vector<std::unique_ptr<DynamicCommandInstance>>                     delaySetupCommandInstances;
-std::shared_mutex                                                        delaySetupLock;
-
 
 using Result         = DynamicCommand::Result;
 using ParameterType  = DynamicCommand::ParameterType;
@@ -92,9 +84,6 @@ typedef std::pair<std::string, int>         Enum;
 typedef std::string                         SoftEnum;
 typedef ActorDefinitionIdentifier const*    ActorType;
 typedef std::unique_ptr<Command>            Command;
-#ifdef ENABLE_PARAMETER_TYPE_POSTFIX
-typedef int Postfix;
-#endif // ENABLE_PARAMETER_TYPE_POSTFIX
 } // namespace ParameterDataType
 
 auto const ParameterSizeMap = std::unordered_map<ParameterType, size_t>{
@@ -117,9 +106,6 @@ auto const ParameterSizeMap = std::unordered_map<ParameterType, size_t>{
     {ParameterType::SoftEnum,   std::max((size_t)8, sizeof(ParameterDataType::SoftEnum))  },
     {ParameterType::ActorType,  std::max((size_t)8, sizeof(ParameterDataType::ActorType)) },
     {ParameterType::Command,    std::max((size_t)8, sizeof(ParameterDataType::Command))   },
-#ifdef ENABLE_PARAMETER_TYPE_POSTFIX
-    {ParameterType::Postfix,    std::max((size_t)8, sizeof(ParameterDataType::Postfix))   },
-#endif  // ENABLE_PARAMETER_TYPE_POSTFIX
 };
 
 inline void OutputError(
@@ -136,51 +122,6 @@ inline void OutputError(
 }
 
 } // namespace
-
-#pragma region Command init and destroy
-
-template <typename T>
-inline void destruct(void* command, size_t offset) {
-    ll::memory::dAccess<T>(command, offset).~T();
-}
-
-template <typename T>
-inline void initValue(void* command, size_t offset) {
-    ll::memory::dAccess<T>(command, offset) = T();
-}
-
-template <>
-inline void initValue<std::string>(void* command, size_t offset) {
-    ll::memory::dAccess<std::string>(command, offset).basic_string::basic_string();
-}
-
-template <>
-inline void initValue<CommandItem>(void* command, size_t offset) {
-    ll::memory::dAccess<CommandItem>(command, offset).CommandItem::CommandItem();
-}
-
-template <>
-inline void initValue<CommandMessage>(void* command, size_t offset) {
-    ll::memory::dAccess<CommandMessage>(command, offset).CommandMessage::CommandMessage();
-}
-
-template <>
-inline void initValue<CommandSelector<Actor>>(void* command, size_t offset) {
-    ll::memory::dAccess<CommandSelector<Actor>>(command, offset).CommandSelector<Actor>::CommandSelector();
-}
-
-template <>
-inline void initValue<CommandSelector<Player>>(void* command, size_t offset) {
-    ll::memory::dAccess<CommandSelector<Player>>(command, offset).CommandSelector<Player>::CommandSelector();
-}
-
-template <>
-inline void initValue<WildcardCommandSelector<Actor>>(void* command, size_t offset) {
-    ll::memory::dAccess<WildcardCommandSelector<Actor>>(command, offset)
-        .WildcardCommandSelector<Actor>::WildcardCommandSelector();
-}
-
-#pragma endregion
 
 #pragma region ParameterPtr
 
@@ -267,8 +208,6 @@ inline CommandParameterData DynamicCommand::ParameterData::makeParameterData() c
         return makeParameterData<ParameterType::BlockState, ParameterDataType::BlockState>();
     case ParameterType::Effect:
         return makeParameterData<ParameterType::Effect, ParameterDataType::Effect>();
-        // case ParameterType::Position:
-        //     return makeParameterData<ParameterType::Position, ParameterDataType::Position>();
     case ParameterType::Enum:
         return makeParameterData<ParameterType::Enum, ParameterDataType::Enum>();
     case ParameterType::SoftEnum:
@@ -277,10 +216,6 @@ inline CommandParameterData DynamicCommand::ParameterData::makeParameterData() c
         return makeParameterData<ParameterType::ActorType, ParameterDataType::ActorType>();
     case ParameterType::Command:
         return makeParameterData<ParameterType::Command, ParameterDataType::Command>();
-#ifdef ENABLE_PARAMETER_TYPE_POSTFIX
-    case ParameterType::Postfix:
-        return makeParameterData<ParameterType::Postfix, ParameterDataType::Postfix>();
-#endif // ENABLE_PARAMETER_TYPE_POSTFIX
     default:
         return {};
     }
@@ -347,8 +282,6 @@ std::string DynamicCommand::Result::toDebugString() const {
             getRaw<float>()
         );
     case ParameterType::Actor:
-        // return fmt::format("name: {:15s}, type: {:15s}, isSet: {:5}, value: {}", name, typeName, isSet,
-        // getRaw<CommandSelector<Actor>>().getName());
     case ParameterType::Player: {
         std::vector<Actor*> actors = get<std::vector<Actor*>>();
         std::ostringstream  oss;
@@ -477,16 +410,6 @@ std::string DynamicCommand::Result::toDebugString() const {
             isSet,
             isSet ? getRaw<std::unique_ptr<Command>>()->getCommandName() : "Null"
         );
-#ifdef ENABLE_PARAMETER_TYPE_POSTFIX
-    case ParameterType::Postfix:
-        return fmt::format(
-            "name: {:15s}, type: {:15s}, isSet: {:5}, value: {}",
-            name,
-            typeName,
-            isSet,
-            get<std::string>()
-        );
-#endif // ENABLE_PARAMETER_TYPE_POSTFIX
     default:
         logger.error("Unknown Parameter Type {}, name: {}", typeName, name);
         return "";
@@ -515,7 +438,7 @@ DynamicCommand::builderCallbackHanler(DCCallback* /*cb*/, DCArgs* args, DCValue*
 std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command>* rtn, std::string name) {
 #define CaseInitBreak(type)                                                                                            \
     case ParameterType::type:                                                                                          \
-        initValue<ParameterDataType::type>(command, offset);                                                           \
+        ll::memory::construct<ParameterDataType::type>(command, offset);                                                 \
         break;
 
     assert(dynamicCommandInstances.count(name) == 1);
@@ -637,28 +560,10 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
     return nullptr;
 }
 
-bool DynamicCommand::onServerCommandsRegister(CommandRegistry& /*registry*/) {
-    serverCommandsRegistered = true;
-    std::unique_lock locker(delaySetupLock);
-    for (auto& command : delaySetupCommandInstances) {
-        std::string name   = command->getCommandName();
-        auto        handle = command->handle_;
-        try {
-            if (!ll::getPlugin(handle) && handle != GetCurrentModule())
-                throw std::runtime_error("Plugin that registered command \"" + name + "\" not found");
-            auto res = DynamicCommand::_setup(std::move(command));
-            if (!res) throw std::runtime_error("Command \"" + name + "\" setup failed");
-        }
-        CatchDynamicCommandError("DynamicCommand::_setup - " + name, handle);
-    }
-    delaySetupCommandInstances.clear();
-    return true;
-}
-
 DynamicCommand::~DynamicCommand() {
 #define CaseDestructBreak(type)                                                                                        \
     case ParameterType::type:                                                                                          \
-        destruct<ParameterDataType::type>(this, offset);                                                               \
+        ll::memory::destruct<ParameterDataType::type>(this, offset);                                                     \
         break;
 
     std::string commandName = getCommandName();
@@ -705,18 +610,10 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
 
 
 DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> commandInstance) {
-    auto ptr = commandInstance.get();
-    if (!ptr) throw std::runtime_error("DynamicCommand::setup - commandInstance is null");
-    if (!serverCommandsRegistered) {
-        std::unique_lock locker(delaySetupLock);
-        auto&            uptr = delaySetupCommandInstances.emplace_back(std::move(commandInstance));
-        return uptr.get();
-    }
-    Schedule::nextTick([instance{commandInstance.release()}]() {
-        if (!_setup(std::unique_ptr<class DynamicCommandInstance>(instance)))
-            logger.warn("Registering command \"{}\" failed", instance->getCommandName());
-        updateAvailableCommands();
-    });
+    auto name = commandInstance->getCommandName();
+    auto ptr  = _setup(std::move(commandInstance));
+    if (!ptr) logger.warn("Registering command \"{}\" failed", name);
+    updateAvailableCommands();
     return ptr;
 }
 
@@ -801,14 +698,7 @@ inline std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(
     CommandFlag            flag,
     HMODULE                handle
 ) {
-    if (ll::globalRuntimeConfig.serverStatus != ll::ServerStatus::Running) {
-        for (auto& cmd : delaySetupCommandInstances) {
-            if (cmd->name_ == name) {
-                logger.error("Command \"{}\" already exists", name);
-                return {};
-            }
-        }
-    } else if (ll::Global<CommandRegistry>->findCommand(name)) {
+    if (ll::Global<CommandRegistry>->findCommand(name)) {
         logger.error("Command \"{}\" already exists", name);
         return {};
     }
@@ -1068,20 +958,3 @@ inline DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder() {
 }
 
 #pragma endregion
-
-
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    BaseCommandBlockService,
-    HookPriority::Normal,
-    BaseCommandBlock,
-    &BaseCommandBlock::compile,
-    void,
-    class CommandOrigin const& commandOrigin,
-    class Level&               level
-) {
-    if (ll::globalRuntimeConfig.tickThreadId != std::this_thread::get_id()) {
-        std::shared_lock locker(delaySetupLock);
-        return origin(commandOrigin, level);
-    }
-    return origin(commandOrigin, level);
-}

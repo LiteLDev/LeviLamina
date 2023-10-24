@@ -117,17 +117,17 @@ std::string replaceAnsiToMcCode(std::string_view str);
 
 std::string replaceMcToAnsiCode(std::string_view str);
 
-namespace Encoding {
+namespace CodePage {
 enum : uint {
     UTF16 = 0,
     ANSI  = 936,
     UTF8  = 65001,
 };
-} // namespace Encoding
+} // namespace CodePage
 
-LLNDAPI std::wstring str2wstr(std::string_view str, uint codePage = Encoding::UTF8);
+LLNDAPI std::wstring str2wstr(std::string_view str, uint codePage = CodePage::UTF8);
 
-LLNDAPI std::string wstr2str(std::wstring_view str, uint codePage = Encoding::UTF8);
+LLNDAPI std::string wstr2str(std::wstring_view str, uint codePage = CodePage::UTF8);
 
 LLNDAPI std::string str2str(std::string_view str, uint fromCodePage, uint toCodePage);
 
@@ -150,7 +150,7 @@ inline std::u8string const& str2u8strConst(std::string const& str) {
 }
 
 inline std::string_view u8sv2sv(std::u8string_view str) {
-    return {reinterpret_cast<const char*>(str.data()), str.size()};
+    return {reinterpret_cast<char const*>(str.data()), str.size()};
 }
 
 inline std::u8string_view sv2u8sv(std::string_view str) {

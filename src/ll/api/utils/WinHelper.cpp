@@ -252,8 +252,8 @@ inline std::vector<std::string> split(std::string str, std::string const& patter
     return result;
 }
 
-uintptr_t FindSig(const char* szSignature) {
-    const char*            pattern    = szSignature;
+uintptr_t FindSig(char const* szSignature) {
+    char const*            pattern    = szSignature;
     uintptr_t              firstMatch = 0;
     DWORD                  processId  = GetCurrentProcessId();
     static const uintptr_t rangeStart = GetProcessBaseAddress(processId);
@@ -267,7 +267,7 @@ uintptr_t FindSig(const char* szSignature) {
 
     static const uintptr_t rangeEnd = rangeStart + miModInfo.SizeOfImage;
     BYTE                   patByte  = GET_BYTE(pattern);
-    const char*            oldPat   = pattern;
+    char const*            oldPat   = pattern;
 
     for (uintptr_t pCur = rangeStart; pCur < rangeEnd; pCur++) {
         if (!*pattern) return firstMatch;

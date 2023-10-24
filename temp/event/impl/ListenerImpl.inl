@@ -7,7 +7,7 @@
 
 #include "ll/core/LeviLamina.h"
 
-#include "ll/api/LoggerAPI.h"
+#include "ll/api/Logger.h"
 #include "ll/api/event/Listener.h"
 
 namespace ll::event {

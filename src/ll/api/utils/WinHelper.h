@@ -43,4 +43,4 @@ LLNDAPI std::string GetSystemLocaleName();
 
 LLNDAPI bool IsWineEnvironment();
 
-LLNDAPI uintptr_t FindSig(const char* szSignature);
+LLNDAPI uintptr_t FindSig(char const* szSignature);

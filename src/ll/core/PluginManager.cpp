@@ -5,7 +5,7 @@
 #include <utility>
 
 #include "ll/api/LLAPI.h"
-#include "ll/api/LoggerAPI.h"
+#include "ll/api/Logger.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinHelper.h"
 #include "ll/core/LeviLamina.h"

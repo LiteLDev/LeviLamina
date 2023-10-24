@@ -15,9 +15,9 @@ public:
     Bedrock::typeid_t<CommandRegistry> mTypeIndex;     // this+0x0
     ParseFn                            mParse;         // this+0x8
     std::string                        mName;          // this+0x10
-    const char*                        mEnumName;      // this+0x30
+    char const*                        mEnumName;      // this+0x30
     int                                mEnumSymbol;    // this+0x38
-    const char*                        mPostfix;       // this+0x40
+    char const*                        mPostfix;       // this+0x40
     int                                mPostfixSymbol; // this+0x48
     CommandParameterDataType           mParamType;     // this+0x4c
     int                                mOffset;        // this+0x50

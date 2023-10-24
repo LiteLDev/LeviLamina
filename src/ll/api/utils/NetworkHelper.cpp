@@ -5,7 +5,7 @@
 
 #include "ll/api/utils/DbgHelper.h"
 
-#include "ll/api/LoggerAPI.h"
+#include "ll/api/Logger.h"
 #include "ll/api/i18n/I18nAPI.h"
 
 #include "ll/core/Config.h"
@@ -46,7 +46,7 @@ bool HttpGet(
     }
     if (timeout > 0) cli->set_connection_timeout(timeout, 0);
 
-    std::thread([cli, headers, callback, path{std::move(path)}]() {
+    std::thread([cli, headers, callback, path{std::move(path)}] {
         if (!ll::isDebugMode()) _set_se_translator(seh_exception::TranslateSEHtoCE);
         try {
             auto response = cli->Get(path, headers);
@@ -99,7 +99,7 @@ bool HttpPost(
     }
     if (timeout > 0) cli->set_connection_timeout(timeout, 0);
 
-    std::thread([cli, headers, data, type, callback, path{std::move(path)}]() {
+    std::thread([cli, headers, data, type, callback, path{std::move(path)}] {
         if (!ll::isDebugMode()) _set_se_translator(seh_exception::TranslateSEHtoCE);
         try {
             auto response = cli->Post(path, headers, data, type);

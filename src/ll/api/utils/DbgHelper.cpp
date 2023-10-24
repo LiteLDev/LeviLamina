@@ -4,7 +4,7 @@
 #include <string>
 #include <thread>
 
-#include "ll/api/LoggerAPI.h"
+#include "ll/api/Logger.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinHelper.h"
 
@@ -106,8 +106,8 @@ std::wstring MapModuleFromAddr(HANDLE hProcess, void* address) {
 
 #define MACHINE_TYPE IMAGE_FILE_MACHINE_AMD64
 
-bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
-    Logger& debugLogger = l ? *l : logger;
+bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, ll::Logger* l) {
+    ll::Logger& debugLogger = l ? *l : logger;
     if (!ll::globalConfig.enableErrorStackTraceback) {
         logger.error("* Stack traceback is disabled by config file.");
         return true;
@@ -119,7 +119,7 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
     bool   cacheSymbol = ll::globalConfig.cacheErrorStackTracebackSymbol;
     bool   res         = false;
 
-    std::thread printThread([e, hProcess, hThread, threadId, cacheSymbol, &res, &debugLogger]() {
+    std::thread printThread([e, hProcess, hThread, threadId, cacheSymbol, &res, &debugLogger] {
         // Set global SEH-Exception handler
         _set_se_translator(seh_exception::TranslateSEHtoCE);
 

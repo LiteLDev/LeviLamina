@@ -17,9 +17,9 @@ public:
     // Constructors
     constexpr HashedString(std::nullptr_t = nullptr) noexcept : hash(0), lastMatch(nullptr) {} // NOLINT
 
-    constexpr HashedString(uint64 h, const char* str) noexcept : hash(h), str(str), lastMatch(nullptr) {}
+    constexpr HashedString(uint64 h, char const* str) noexcept : hash(h), str(str), lastMatch(nullptr) {}
 
-    constexpr HashedString(const char* str) noexcept : hash(computeHash(str)), str(str), lastMatch(nullptr) {} // NOLINT
+    constexpr HashedString(char const* str) noexcept : hash(computeHash(str)), str(str), lastMatch(nullptr) {} // NOLINT
 
     constexpr HashedString(std::string const& str) noexcept // NOLINT
     : hash(computeHash(str)),
@@ -54,7 +54,7 @@ public:
     }
 
     // Accessors
-    [[nodiscard]] constexpr const char* c_str() const noexcept { return str.c_str(); }
+    [[nodiscard]] constexpr char const* c_str() const noexcept { return str.c_str(); }
 
     [[nodiscard]] constexpr std::string const& getString() const noexcept { return str; }
 

@@ -1,3 +1,6 @@
+#pragma once
+
+#include "ll/api/base/StdInt.h"
 #include <string_view>
 #include <utility>
 
@@ -113,5 +116,31 @@ public:
         unrollWithArgs<TL...>(func);
     }
 };
+
+template <typename G, auto Id>
+struct TypeCounter {
+    using tag = TypeCounter;
+
+    struct GenerateTag {
+        friend consteval auto isDefined(tag) { return true; }
+    };
+    friend consteval auto isDefined(tag);
+
+    template <typename Tag = tag, auto = isDefined(Tag{})>
+    static consteval auto exists(auto) {
+        return true;
+    }
+
+    static consteval auto exists(...) { return GenerateTag(), false; }
+};
+
+template <typename G, typename T, auto Id = int64{}>
+consteval auto uniqueId() {
+    if constexpr (TypeCounter<G, Id>::exists(Id)) {
+        return uniqueId<G, T, Id + 1>();
+    } else {
+        return Id;
+    }
+}
 
 } // namespace ll::meta

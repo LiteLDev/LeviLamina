@@ -34,6 +34,7 @@
 #include "FMT/os.h"
 #include "FMT/printf.h"
 
+namespace ll {
 class Logger {
 public:
     class OutputStream {
@@ -114,3 +115,4 @@ public:
 private:
     LLAPI static std::ofstream defaultFile;
 };
+}

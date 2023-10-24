@@ -11,7 +11,7 @@
 #include "mc/Player.hpp"
 
 #include "ll/api/LLAPI.h"
-#include "ll/api/LoggerAPI.h"
+#include "ll/api/Logger.h"
 #include "ll/api/ScheduleAPI.h"
 #include "ll/api/event/EventManager.h"
 #include "ll/api/event/LegacyEvents.h"

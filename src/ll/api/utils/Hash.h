@@ -22,7 +22,7 @@ constexpr uint64 do_hash(std::string_view x) {
     return rval;
 }
 
-constexpr uint64 do_hash(const char* x) {
+constexpr uint64 do_hash(char const* x) {
     // ap hash
     uint64 rval = 0;
     for (size_t i = 0; x[i]; ++i) {
@@ -34,7 +34,7 @@ constexpr uint64 do_hash(const char* x) {
     }
     return rval;
 }
-constexpr uint64 do_hash(const char* x, size_t len) {
+constexpr uint64 do_hash(char const* x, size_t len) {
     // ap hash
     uint64 rval = 0;
     for (size_t i = 0; i < len; ++i) {
@@ -47,7 +47,7 @@ constexpr uint64 do_hash(const char* x, size_t len) {
     return rval;
 }
 
-constexpr uint64 operator""_h(const char* x, size_t len) { return do_hash(x, len); }
+constexpr uint64 operator""_h(char const* x, size_t len) { return do_hash(x, len); }
 
 constexpr uint64 do_hash2(std::string_view x) {
     // ap hash

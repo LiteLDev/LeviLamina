@@ -12,7 +12,7 @@ int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority pri
 
 bool unhook(FuncPtr target, FuncPtr detour) { return pl::hook::pl_unhook(target, detour); }
 
-FuncPtr resolveIdentifier(const char* identifier) {
+FuncPtr resolveIdentifier(char const* identifier) {
     auto p = resolveSymbol(identifier);
     return p != nullptr ? p : resolveSignature(identifier);
 }

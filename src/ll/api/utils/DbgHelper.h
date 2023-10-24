@@ -2,11 +2,14 @@
 #include "ll/api/base/Global.h"
 #include <string>
 
+namespace ll {
 class Logger;
+}
 
-LLAPI bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e = nullptr, Logger* logger = nullptr);
 
-inline bool PrintCurrentStackTraceback(Logger* logger) { return PrintCurrentStackTraceback(nullptr, logger); }
+LLAPI bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e = nullptr, ll::Logger* logger = nullptr);
+
+inline bool PrintCurrentStackTraceback(ll::Logger* logger) { return PrintCurrentStackTraceback(nullptr, logger); }
 
 // flag: VS_VERSION.dwFileFlags
 LLNDAPI HMODULE GetCallerModule(ulong FramesToSkip = 0);

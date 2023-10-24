@@ -2,7 +2,7 @@
 
 #include <magic_enum.hpp>
 
-#include "ll/api/LoggerAPI.h"
+#include "ll/api/Logger.h"
 #include "ll/api/event/EventManager.h"
 #include "ll/api/event/LegacyEvents.h"
 #include "ll/api/memory/Hook.h"

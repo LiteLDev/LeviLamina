@@ -12,8 +12,8 @@
 
 #include "ll/api/memory/Hook.h"
 
-#include "ll/api/LoggerAPI.h"
-#include "ll/api/ServerAPI.h"
+#include "ll/api/Logger.h"
+#include "ll/api/ServerInfo.h"
 #include "ll/api/event/LegacyEvents.h"
 #include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/event/server/ServerStoppedEvent.h"

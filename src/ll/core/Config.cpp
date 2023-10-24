@@ -5,7 +5,7 @@
 
 #include "Nlohmann/json.hpp"
 
-#include "ll/api/LoggerAPI.h"
+#include "ll/api/Logger.h"
 #include "ll/api/utils/FileHelper.h"
 
 #include "ll/core/LeviLamina.h"
@@ -189,7 +189,7 @@ bool ll::LoadLLConfig() {
         auto content = ReadAllFile(LL_CONFIG_FILE);
 
         if (!content || content.value().empty()) {
-            ll::logger.warn(tr("ll.config.creating", LL_CONFIG_FILE));
+            ll::logger.warn("ll.config.creating"_tr, LL_CONFIG_FILE);
             // if (IsWineEnvironment()) {
             //     ChooseLanguage();
             // }
@@ -201,7 +201,7 @@ bool ll::LoadLLConfig() {
                 ll::globalConfig = out;
                 auto config      = nlohmann::json(ll::globalConfig);
                 if (out != config) {
-                    ll::logger.warn(tr("ll.config.warning.configOutdated", LL_CONFIG_FILE));
+                    ll::logger.warn("ll.config.warning.configOutdated"_tr, LL_CONFIG_FILE);
                     ll::logger.warn("ll.config.updating"_tr);
                     ll::globalConfig.language = "system";
                     config                    = nlohmann::json(ll::globalConfig);

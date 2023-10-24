@@ -250,7 +250,7 @@ public:
     }
 
     std::shared_ptr<T>& operator[](std::string const& name) {
-        auto def  = std::make_shared<T>(new T);
+        auto def  = std::make_shared<T>();
         def->name = name;
         return this->getOrCreate(name, def);
     }

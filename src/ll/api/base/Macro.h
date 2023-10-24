@@ -17,4 +17,8 @@
 #define LLNDAPI [[nodiscard]] LLAPI
 #endif
 
+#ifndef LLETAPI
+#define LLETAPI LLAPI extern
+#endif
+
 #define LL_EBO __declspec(empty_bases)

@@ -61,7 +61,7 @@
 
 #include "ll/api/DynamicCommand.h"
 #include "ll/api/i18n/I18nAPI.h"
-#include "ll/api/LoggerAPI.h"
+#include "ll/api/Logger.h"
 #include "ll/api/RegisterCommandHelper.h"
 #include "ll/api/ScheduleAPI.h"
 

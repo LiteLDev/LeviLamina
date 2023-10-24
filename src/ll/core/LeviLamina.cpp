@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 
-#include "ll/api/LoggerAPI.h"
-#include "ll/api/ServerAPI.h"
+#include "ll/api/Logger.h"
+#include "ll/api/ServerInfo.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/GlobalService.h"
 #include "ll/api/utils/FileHelper.h"
@@ -28,7 +28,7 @@
 #include "windows.h"
 
 
-Logger                                ll::logger("LeviLamina");
+ll::Logger                            ll::logger("LeviLamina");
 std::chrono::steady_clock::time_point ll::SeverStartBeginTime;
 std::chrono::steady_clock::time_point ll::SeverStartEndTime;
 
@@ -47,6 +47,7 @@ void fixPluginsLibDir() {
     GetCurrentDirectoryW(MAX_PATH_LEN, buffer);
     std::wstring currentDir(buffer);
 
+    delete[] buffer;
     // append plugins path to environment path
     SetEnvironmentVariableW(L"PATH", (currentDir + L"\\plugins;" + path).c_str());
 }
@@ -59,6 +60,8 @@ void fixUpCWD() {
 
     GetModuleFileNameW(nullptr, buffer, MAX_PATH_LEN);
     std::wstring path(buffer);
+
+    delete[] buffer;
 
     SetCurrentDirectoryW(path.substr(0, path.find_last_of(L'\\')).c_str());
 }
@@ -147,7 +150,7 @@ void checkRunningBDS() {
                 logger.error("ll.main.checkRunningBDS.detected"_tr);
                 logger.error("ll.main.checkRunningBDS.tip"_tr);
                 while (true) {
-                    logger.error(tr("ll.main.checkRunningBDS.ask", pid));
+                    logger.error("ll.main.checkRunningBDS.ask"_tr, pid);
                     char input;
                     rewind(stdin);
                     input = static_cast<char>(getchar());
@@ -157,9 +160,7 @@ void checkRunningBDS() {
                         TerminateProcess(handle, 1);
                         break;
                     }
-                    if (input == 'e' || input == 'E') {
-                        std::terminate();
-                    }
+                    if (input == 'e' || input == 'E') { std::terminate(); }
                 }
             }
             CloseHandle(handle);
@@ -270,7 +271,7 @@ void leviLaminaMain() {
     std::filesystem::create_directories("plugins", ec);
 
     // I18n
-    auto i18n = Translation::load("plugins/LeviLamina/LangPack/");
+    auto i18n = ll::i18n::Translation::load("plugins/LeviLamina/LangPack/");
 
     // Load Config
     ll::LoadLLConfig();

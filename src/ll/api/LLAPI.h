@@ -82,7 +82,7 @@ struct Plugin {
      * @exception          std::runtime_error if the symbol is not found
      */
     template <typename ReturnType = void, typename... Args>
-    inline ReturnType callFunction(const char* sym, Args... args) {
+    inline ReturnType callFunction(char const* sym, Args... args) {
         void* address = reinterpret_cast<void*>(GetProcAddress(handle, sym));
         if (!address) throw std::runtime_error("ll::Plugin::callFunction: The symbol is not found!");
         return reinterpret_cast<ReturnType (*)(Args...)>(address)(std::forward<Args>(args)...);

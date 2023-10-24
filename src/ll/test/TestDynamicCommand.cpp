@@ -3,8 +3,7 @@
 #ifdef DEBUG
 
 #include "ll/api/LLAPI.h"
-#include "ll/api/LoggerAPI.h"
-#include "ll/api/ScheduleAPI.h"
+#include "ll/api/Logger.h"
 #include "ll/api/command/DynamicCommand.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/utils/Hash.h"
@@ -13,9 +12,15 @@
 #include "mc/world/actor/Actor.h"
 #include "mc/world/level/storage/LevelData.h"
 
+#include "ll/api/schedule/Scheduler.h"
+
 using Param      = DynamicCommand::ParameterData;
 using ParamType  = DynamicCommand::ParameterType;
 using ParamIndex = DynamicCommandInstance::ParameterIndex;
+
+using namespace ll::schedule;
+
+GameTimeScheduler scheduler;
 
 void setupTestParamCommand() {
     using Param     = DynamicCommand::ParameterData;
@@ -37,7 +42,6 @@ void setupTestParamCommand() {
     Param ActorTypeParam("testActorType", ParamType::ActorType, true);
     Param EffectParam("testEffect", ParamType::Effect, true);
     Param CommandParam("testCommand", ParamType::Command, true);
-    // Param posParam(ParamType::Position, "testPos", true);
     //  Test Command:
     //    param true 123 3.14 string @e @a 1 2 3 ~1 ~2 ~3 msg {"a":123} stick bedrock ["persistent_bit"=true] npc poison
     //    help param rawtext
@@ -194,18 +198,17 @@ void setupRemoveCommand() {
         auto  fullName = ll::Global<CommandRegistry>->getCommandFullName(name);
         if (fullName == cmd.getCommandName()) {
             output.success("Request unregister itself");
-            Schedule::delay(
-                [fullName]() {
-                    auto res = ll::Global<CommandRegistry>->unregisterCommand(fullName);
-                    if (res) {
-                        DynamicCommand::unregisterCommand(fullName);
-                        ll::logger.info("unregister command " + fullName);
-                        ((DynamicCommandInstance*)nullptr)
-                            ->setSoftEnum("CommandNames", ll::Global<CommandRegistry>->getEnumValues("CommandName"));
-                    } else ll::logger.error("error in unregister command " + fullName);
-                },
-                20
-            );
+
+            scheduler.add<DelayTask>(1s, [fullName] {
+                auto res = ll::Global<CommandRegistry>->unregisterCommand(fullName);
+                if (res) {
+                    DynamicCommand::unregisterCommand(fullName);
+                    ll::logger.info("unregister command " + fullName);
+                    ((DynamicCommandInstance*)nullptr)
+                        ->setSoftEnum("CommandNames", ll::Global<CommandRegistry>->getEnumValues("CommandName"));
+                } else ll::logger.error("error in unregister command " + fullName);
+            });
+
             return;
         }
         auto res = ll::Global<CommandRegistry>->unregisterCommand(fullName);
@@ -276,14 +279,11 @@ void setupEnumCommand() {
     command->addOverload();
     command->setCallback(onEnumExecute);
     auto cmd = DynamicCommand::setup(std::move(command));
-    Schedule::delay(
-        [cmd]() {
-            auto packet = ll::Global<CommandRegistry>->serializeAvailableCommands();
-            cmd->setSoftEnum("EnumNameList", packet.getEnumNames());
-            cmd->addSoftEnumValues("EnumNameList", packet.getSoftEnumNames());
-        },
-        10
-    );
+    scheduler.add<DelayTask>(1s, [cmd] {
+        auto packet = ll::Global<CommandRegistry>->serializeAvailableCommands();
+        cmd->setSoftEnum("EnumNameList", packet.getEnumNames());
+        cmd->addSoftEnumValues("EnumNameList", packet.getSoftEnumNames());
+    });
 }
 
 // echo command
@@ -319,8 +319,6 @@ LL_AUTO_STATIC_HOOK(
     setupExampleCommand();
     setupEnumCommand();
     setupEchoCommand();
-    // onServerCommandsRegister must be at the end
-    DynamicCommand::onServerCommandsRegister(server.getCommands().getRegistry());
 }
 
 #endif // DEBUG

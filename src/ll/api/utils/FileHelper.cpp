@@ -2,7 +2,7 @@
 
 #include <filesystem>
 
-#include "ll/api/LoggerAPI.h"
+#include "ll/api/Logger.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinHelper.h"
 #include "ll/core/Config.h"
@@ -11,8 +11,6 @@
 
 using namespace ll::StringUtils;
 namespace fs = std::filesystem;
-
-Logger logger("FileHelper");
 
 ///////////// Hacker to get private FILE* /////////////
 
@@ -74,10 +72,6 @@ std::vector<std::string> GetFileNameList(std::string const& dir) {
 bool CreateDirs(std::string const& path) {
     std::error_code ec;
     auto            ret = fs::create_directories(fs::path(str2wstr(path)), ec);
-    if (ec.value() != 0) {
-        logger.error("Fail to create dir, err code: {}", ec.value());
-        logger.error(ec.message());
-    }
     return ret;
 }
 
@@ -86,8 +80,6 @@ std::pair<int, std::string> UncompressFile(std::string const& filePath, std::str
     fs::create_directories(toDir, ec);
     toDir = u8str2str(fs::canonical(toDir, ec).u8string());
     if (ec.value() != 0) {
-        logger.error("Fail to create dir, err code: {}", ec.value());
-        logger.error(ec.message());
         return {ec.value(), ec.message()};
     }
     if (!toDir.ends_with("/")) { toDir += "/"; }

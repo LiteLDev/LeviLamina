@@ -5,12 +5,16 @@
 
 #include "stringapiset.h"
 
+#include "compact_enc_det/compact_enc_det.h"
+#define UNICODE
 
 namespace fs = std::filesystem;
 
 using ll::StringUtils::splitByPattern;
 using ll::StringUtils::str2wstr;
 using ll::StringUtils::wstr2str;
+
+namespace ll::i18n {
 
 std::vector<std::string> GeneralLanguages{"en", "zh"};
 
@@ -224,16 +228,6 @@ I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
 
 } // namespace Translation
 
-
-// Encoding-CodePage Map
-#ifdef UNICODE
-#undef UNICODE
-#include "compact_enc_det/compact_enc_det.h"
-#define UNICODE
-#else
-#include "compact_enc_det/compact_enc_det.h"
-#endif
-
 namespace TextEncoding {
 const std::unordered_map<Encoding, UINT> Encoding_CodePage_Map = {
     {Encoding::ISO_8859_1,           28591  },
@@ -310,7 +304,6 @@ const std::unordered_map<Encoding, UINT> Encoding_CodePage_Map = {
     {Encoding::SOFTBANK_ISO_2022_JP, 50220  },
 };
 }
-#define UNICODE
 ///////////////////////////// Encoding-CodePage Map /////////////////////////////
 
 namespace TextEncoding {
@@ -326,7 +319,7 @@ Encoding detectEncoding(std::string const& text, bool* isReliable) {
     bool temp;
     int  bytes_consumed;
 
-    return DetectEncoding(
+    return CompactEncDet::DetectEncoding(
         text.c_str(),
         (int)text.size(),
         nullptr,
@@ -366,3 +359,4 @@ std::string convert(std::string const& text, Encoding from, Encoding to) {
     return fromUnicode(uni, to);
 }
 } // namespace TextEncoding
+} // namespace ll::i18n

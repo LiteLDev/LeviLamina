@@ -53,14 +53,14 @@ inline void memcpy_t(void* dst, const void* src) {
  * @param symbol Symbol
  * @return function pointer
  */
-LLNDAPI FuncPtr resolveSymbol(const char* symbol);
+LLNDAPI FuncPtr resolveSymbol(char const* symbol);
 
 /**
  * @brief resolve signature to function pointer
  * @param t Signature
  * @return function pointer
  */
-LLNDAPI FuncPtr resolveSignature(const char* signature);
+LLNDAPI FuncPtr resolveSignature(char const* signature);
 
 /**
  * @brief lookup symbol name of a function address
@@ -82,6 +82,16 @@ template <typename T>
 template <typename T>
 [[nodiscard]] constexpr T const& dAccess(void const* ptr, uintptr_t off) {
     return *(T*)(((uintptr_t)ptr) + off);
+}
+
+template <typename T>
+constexpr void destruct(void* ptr, uintptr_t off) noexcept {
+    std::destroy_at(std::launder(reinterpret_cast<T*>(((uintptr_t)ptr) + off)));
+}
+
+template <typename T, class... Types>
+constexpr auto construct(void* ptr, uintptr_t off, Types&&... args) {
+    return std::construct_at(std::launder(reinterpret_cast<T*>(((uintptr_t)ptr) + off)), std::forward<Types>(args)...);
 }
 
 [[nodiscard]] inline size_t getMemSizeFromPtr(void* ptr) {

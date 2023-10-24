@@ -80,7 +80,7 @@ public:
         }
 
         [[nodiscard]] constexpr ArrayIndex  index() const { return index_; }
-        [[nodiscard]] constexpr const char* c_str() const { return cstr_; }
+        [[nodiscard]] constexpr char const* c_str() const { return cstr_; }
         [[nodiscard]] constexpr bool        isStaticString() const {
             return storage_.policy_ == DuplicationPolicy::noDuplication;
         }

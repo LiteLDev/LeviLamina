@@ -9,7 +9,7 @@
 #include "ll/api/utils/WinHelper.h"
 
 #include "ll/api/LLAPI.h"
-#include "ll/api/LoggerAPI.h"
+#include "ll/api/Logger.h"
 #include "ll/api/i18n/I18nAPI.h"
 #include "ll/api/perm/PermissionAPI.h"
 
@@ -82,9 +82,9 @@ void ll::LoadMain() {
 
             if (PluginManager::getPlugin(lib) == nullptr) {
                 if (!ll::PluginManager::registerPlugin(lib, pluginFileName, pluginFileName, ll::Version(1, 0, 0), {})) {
-                    ll::logger.error(tr("ll.pluginManager.error.failToRegisterPlugin", u8str2str(path.u8string())));
+                    ll::logger.error("ll.pluginManager.error.failToRegisterPlugin"_tr, u8str2str(path.u8string()));
                     if (PluginManager::getPlugin(pluginFileName)) {
-                        ll::logger.error(tr("ll.pluginManager.error.hasBeenRegistered", pluginFileName));
+                        ll::logger.error("ll.pluginManager.error.hasBeenRegistered"_tr, pluginFileName);
                     }
                 }
             }
@@ -99,5 +99,5 @@ void ll::LoadMain() {
     }
 
     // TODO: call OnPostInit Event
-    ll::logger.info(tr("ll.loader.loadMain.done", pluginCount));
+    ll::logger.info("ll.loader.loadMain.done"_tr, pluginCount);
 }

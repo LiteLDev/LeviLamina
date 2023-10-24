@@ -42,13 +42,18 @@ std::string Player::getRealName() const {
     return ExtendedCertificate::getIdentityName(*certificate);
 }
 
-void Player::disconnect(std::string& reason) const {
-    Global<ServerNetworkHandler>->disconnectClient(getNetworkIdentifier(), Connection::DisconnectFailReason::Unknown, reason, false);
+void Player::disconnect(std::string const& reason) const {
+    Global<ServerNetworkHandler>->disconnectClient(
+        getNetworkIdentifier(),
+        Connection::DisconnectFailReason::Unknown,
+        reason,
+        false
+    );
 }
 
-void Player::sendMessage(std::string& msg) const {
-    auto* pkt = new TextPacket();
-    pkt->mType = TextPacketType::Raw;
-    pkt->mMessage = msg;
-    sendNetworkPacket(*pkt);
+void Player::sendMessage(std::string const& msg) const {
+    TextPacket pkt{};
+    pkt.mType    = TextPacketType::Raw;
+    pkt.mMessage = msg;
+    sendNetworkPacket(pkt);
 }

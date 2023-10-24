@@ -1,11 +1,11 @@
-#include "ll/api/ServerAPI.h"
+#include "ll/api/ServerInfo.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/Version.h"
 
 #include "mc/deps/core/common/debug/LogDetails.h"
 
-Logger serverLogger("Server");
+ll::Logger serverLogger("Server");
 
 static std::unordered_map<uint, decltype(serverLogger.debug)&> loggerMap = {
     {1u, serverLogger.debug},
@@ -42,7 +42,7 @@ void tryModifyServerStartInfo(std::string& s) {
     );
 }
 
-MCAPI void BedrockLogOut(uint priority, const char* pszFormat, ...);
+MCAPI void BedrockLogOut(uint priority, char const* pszFormat, ...);
 
 LL_AUTO_STATIC_HOOK(
     BedrockLogOutHook,
@@ -50,7 +50,7 @@ LL_AUTO_STATIC_HOOK(
     BedrockLogOut,
     void,
     uint        priority,
-    const char* pszFormat,
+    char const* pszFormat,
     ...
 ) {
     constexpr const int BUFFER_SIZE = 4096; // from ida

@@ -1,7 +1,5 @@
 #pragma once
 
-// #define ENABLE_PARAMETER_TYPE_POSTFIX
-
 #include "fmt/core.h"
 #include "magic_enum.hpp"
 
@@ -215,10 +213,6 @@ public:
         Command,          // std::unique_ptr<Command>
         WildcardSelector, // WildcardCommandSelector<Actor>
         BlockState,
-
-#ifdef ENABLE_PARAMETER_TYPE_POSTFIX
-        Postfix, // int?
-#endif           // ENABLE_PARAMETER_TYPE_POSTFIX
     };
     struct ParameterPtr;
 
@@ -428,7 +422,7 @@ public:
         ParameterData(
             std::string const&     name,
             ParameterType          type,
-            const char*            enumOptions     = "",
+            char const*            enumOptions     = "",
             std::string const&     identifer       = "",
             CommandParameterOption parameterOption = CommandParameterOption::None
         )
@@ -497,10 +491,6 @@ private:
     LLAPI static DynamicCommandInstance*   _setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
 
 public:
-    // please call this when command registry. such as in ServerCommands::setupStandardServer.
-    // this funtion will registry all dynamic command and enum.
-    // call this when all dynamic command setup complete
-    static bool onServerCommandsRegister(CommandRegistry& registry);
 
     friend class DynamicCommandInstance;
 
@@ -743,7 +733,7 @@ public:
     ParameterIndex           newParameter(
                   std::string const&            name,
                   DynamicCommand::ParameterType type,
-                  const char*                   description,
+                  char const*                   description,
                   std::string const&            identifier,
                   CommandParameterOption        parameterOption = CommandParameterOption::None
               ) {

@@ -46,17 +46,17 @@ public:
     template <std::derived_from<Tag> T>
     [[nodiscard]] CompoundTagVariant(T tag) : mTagStorage(std::move(tag)) {}
 
-    template <typename T>
+    template <std::derived_from<Tag> T>
     [[nodiscard]] bool hold() const {
         return std::holds_alternative<T>(mTagStorage);
     }
 
-    template <typename T>
+    template <std::derived_from<Tag> T>
     [[nodiscard]] T& get() {
         return std::get<T>(mTagStorage);
     }
 
-    template <typename T>
+    template <std::derived_from<Tag> T>
     [[nodiscard]] T const& get() const {
         return std::get<T>(mTagStorage);
     }

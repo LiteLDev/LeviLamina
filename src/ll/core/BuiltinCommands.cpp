@@ -1,5 +1,5 @@
 ﻿#include "ll/api/LLAPI.h"
-#include "ll/api/ServerAPI.h"
+#include "ll/api/ServerInfo.h"
 #include "ll/api/command/RegisterCommandHelper.h"
 #include "ll/core/Config.h"
 #include "ll/core/PluginManager.h"

@@ -2,7 +2,7 @@
 
 #include "ll/api/base/Global.h"
 #include "ll/api/ScheduleAPI.h"
-#include "ll/api/ServerAPI.h"
+#include "ll/api/ServerInfo.h"
 #include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/utils/NetworkHelper.h"
 #include "ll/api/utils/StringUtils.h"

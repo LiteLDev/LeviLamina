@@ -26,6 +26,7 @@
 #include "mc/enums/MobSpawnMethod.h"
 #include "mc/enums/NewInteractionModel.h"
 #include "mc/enums/SubClientId.h"
+#include "mc/enums/TextPacketType.h"
 #include "mc/enums/TravelMethod.h"
 #include "mc/events/ActorEvent.h"
 #include "mc/events/LevelSoundEvent.h"
@@ -41,7 +42,6 @@
 #include "mc/world/events/MovementEventType.h"
 #include "mc/world/item/components/ItemUseMethod.h"
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
-#include "mc/enums/TextPacketType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -125,11 +125,11 @@ public:
     /**
      * @brief Disconnect player's client
      */
-    LLNDAPI void disconnect(std::string& reason) const;
+    LLAPI void disconnect(std::string const& reason) const;
     /**
      * @brief Send a message to player
      */
-    LLNDAPI void sendMessage(std::string& msg) const;
+    LLAPI void sendMessage(std::string const& msg) const;
 
     // prevent constructor by default
     Player& operator=(Player const&);

@@ -6,11 +6,11 @@ namespace Json {
 
 class StaticString {
 public:
-    const char* str_;
+    char const* str_;
 
-    explicit StaticString(const char* czstring) : str_(czstring) {}
-    explicit operator const char*() const { return str_; }
-    [[nodiscard]] const char* c_str() const { return str_; }
+    explicit StaticString(char const* czstring) : str_(czstring) {}
+    explicit operator char const*() const { return str_; }
+    [[nodiscard]] char const* c_str() const { return str_; }
 };
 
 }; // namespace Json

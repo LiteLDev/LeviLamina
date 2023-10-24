@@ -26,7 +26,7 @@ copies or substantial portions of the Software.
 
 #include "ll/api/base/Global.h"
 #include "ll/api/LLAPI.h"
-#include "ll/api/LoggerAPI.h"
+#include "ll/api/Logger.h"
 #include "ll/api/utils/WinHelper.h"
 #include "mc/AABB.hpp"
 #include "mc/BlockInstance.hpp"

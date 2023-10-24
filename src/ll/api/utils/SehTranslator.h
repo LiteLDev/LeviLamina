@@ -46,7 +46,7 @@ constexpr int ALLOCATE_BUFFER = 0x00000100;
 class seh_exception : std::exception {
 public:
     const uint                 _expCode = 0;
-    const char*                _expMsg  = nullptr;
+    char const*                _expMsg  = nullptr;
     const SEH_EXP_INFO_POINTER _expInfo = nullptr;
 
     seh_exception(uint ExpCode, SEH_EXP_INFO_POINTER ExpInfo) : _expCode(ExpCode), _expInfo(ExpInfo) {}
@@ -58,7 +58,7 @@ public:
         }
     };
 
-    [[nodiscard]] const char* what() const noexcept override {
+    [[nodiscard]] char const* what() const noexcept override {
 
         ulong messageLength = WinAPI::FormatMessageA(
             WinAPI::FormatMessageFlags::ALLOCATE_BUFFER | WinAPI::FormatMessageFlags::FROM_SYSTEM

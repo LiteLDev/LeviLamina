@@ -84,7 +84,7 @@ char get(std::string_view& s) {
 
 inline std::optional<ldouble> stold(std::string_view const& s, size_t& n) {
     int&        errnoRef = errno; // Nonzero cost, pay it once
-    const char* ptr      = s.data();
+    char const* ptr      = s.data();
     char*       eptr;
     errnoRef              = 0;
     const ldouble res = strtold(ptr, &eptr);

@@ -51,4 +51,4 @@ public:
     // NOLINTEND
 };
 
-inline StringTag operator""_tag(const char* x, size_t len) { return StringTag(std::string{x, len}); }
+inline StringTag operator""_tag(char const* x, size_t len) { return StringTag(std::string{x, len}); }

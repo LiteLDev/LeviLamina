@@ -1,6 +1,6 @@
 #include "ll/core/AddonsHelper.h"
 #include "ll/api/LLAPI.h"
-#include "ll/api/LoggerAPI.h"
+#include "ll/api/Logger.h"
 #include "ll/api/RegisterCommandHelper.h"
 #include "ll/api/event/LegacyEvents.h"
 #include "ll/api/event/server/RegisterCommandEvent.h"

@@ -22,7 +22,7 @@ public:
     class Token;
     // clang-format on
 
-    using Location = const char*;
+    using Location = char const*;
 
     // Reader inner types define
     enum class TokenType {

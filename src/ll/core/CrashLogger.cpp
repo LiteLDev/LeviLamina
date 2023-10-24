@@ -5,13 +5,13 @@
 #include "mc/common/Common.h"
 #include "mc/common/SharedConstants.h"
 
-#include "ll/api/LoggerAPI.h"
-#include "ll/api/ServerAPI.h"
+#include "ll/api/Logger.h"
+#include "ll/api/ServerInfo.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinHelper.h"
 #include "ll/core/Config.h"
 
-Logger crashLogger("CrashLogger");
+ll::Logger crashLogger("CrashLogger");
 
 bool ll::CrashLogger::startCrashLoggerProcess() {
     if (IsDebuggerPresent()) {

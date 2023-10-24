@@ -6,9 +6,9 @@
 
 namespace ll::memory {
 
-FuncPtr resolveSymbol(const char* symbol) { return pl::symbol_provider::pl_resolve_symbol(symbol); }
+FuncPtr resolveSymbol(char const* symbol) { return pl::symbol_provider::pl_resolve_symbol(symbol); }
 
-FuncPtr resolveSignature(const char* signature) { return reinterpret_cast<FuncPtr>(FindSig(signature)); }
+FuncPtr resolveSignature(char const* signature) { return reinterpret_cast<FuncPtr>(FindSig(signature)); }
 
 std::vector<std::string> lookupSymbol(FuncPtr func) {
     std::vector<std::string> symbols;
