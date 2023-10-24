@@ -44,37 +44,3 @@ std::string Player::getRealName() const {
 void Player::disconnect(std::string& reason) const {
     Global<ServerNetworkHandler>->disconnectClient(getNetworkIdentifier(), Connection::DisconnectFailReason::Unknown, reason, false);
 }
-
-void Player::sendTextPacket(std::string& text, TextPacketType type) const {
-    BinaryStream wp;
-    wp.mOwnedBuffer.reserve(40 + text.size());
-    wp.writeUnsignedChar((char)type);
-    wp.writeBool(true);
-    switch (type) {
-        case TextPacketType::Chat:
-        case TextPacketType::Whisper:
-        case TextPacketType::Announcement:
-            wp.writeString("Server");
-        case TextPacketType::Raw:
-        case TextPacketType::Tip:
-        case TextPacketType::SystemMessage:
-        case TextPacketType::TextObjectWhisper:
-        case TextPacketType::TextObject:
-        case TextPacketType::TextObjectAnnouncement:
-
-            wp.writeString(text);
-            break;
-        case TextPacketType::Translate:
-        case TextPacketType::Popup:
-        case TextPacketType::JukeboxPopup:
-            wp.writeString(text);
-            wp.writeUnsignedVarInt(0);
-            break;
-    }
-    wp.writeString("");
-    wp.writeString("");
-
-    std::shared_ptr<Packet> pkt = MinecraftPackets::createPacket(MinecraftPacketIds::Text);
-    pkt->read(wp);
-    sendNetworkPacket(*pkt);
-}
