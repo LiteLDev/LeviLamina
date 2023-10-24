@@ -61,16 +61,16 @@ void Logger::OutputStream::print(std::string_view s) const {
 }
 
 Logger::OutputStream::OutputStream(
-    Logger&                               logger,
-    std::string                           levelPrefix,
-    int                                   level,
-    std::array<fmt::text_style, 4> const& style,
-    std::array<std::string, 5> const&     playerFormat,
-    std::array<std::string, 5> const&     consoleFormat,
-    std::array<std::string, 5> const&     fileFormat
+    Logger&                                logger,
+    std::string_view                       levelPrefix,
+    int                                    level,
+    std::array<fmt::text_style, 4> const&  style,
+    std::array<std::string_view, 5> const& playerFormat,
+    std::array<std::string_view, 5> const& consoleFormat,
+    std::array<std::string_view, 5> const& fileFormat
 )
 : logger(logger),
-  levelPrefix(std::move(levelPrefix)),
+  levelPrefix(levelPrefix),
   level(level),
   style(style),
   consoleFormat(consoleFormat),
@@ -78,8 +78,8 @@ Logger::OutputStream::OutputStream(
   playerFormat(playerFormat),
   playerOutputCallback(nullptr) {}
 
-Logger::Logger(std::string title)
-: title(std::move(title)),
+Logger::Logger(std::string_view title)
+: title(title),
   debug(OutputStream{
       *this,
       "DEBUG",

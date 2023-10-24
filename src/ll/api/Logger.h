@@ -46,23 +46,23 @@ public:
     public:
         using playerOutputFunc = std::function<void(std::string_view)>;
 
-        Logger&                              logger;
-        std::string const                    levelPrefix;
-        int const                            level;
-        std::array<fmt::text_style, 4> const style;
-        std::array<std::string, 5> const     consoleFormat;
-        std::array<std::string, 5> const     fileFormat;
-        std::array<std::string, 5> const     playerFormat;
-        playerOutputFunc                     playerOutputCallback;
+        Logger&                               logger;
+        std::string_view                      levelPrefix;
+        int const                             level;
+        std::array<fmt::text_style, 4> const  style;
+        std::array<std::string_view, 5> const consoleFormat;
+        std::array<std::string_view, 5> const fileFormat;
+        std::array<std::string_view, 5> const playerFormat;
+        playerOutputFunc                      playerOutputCallback;
 
         LLAPI explicit OutputStream(
-            Logger&                               logger,
-            std::string                           levelPrefix,
-            int                                   level,
-            std::array<fmt::text_style, 4> const& style         = {{}},
-            std::array<std::string, 5> const&     playerFormat  = {"<{2}|{1}> [{0}] {3}", "{:%T}", "{}", "{}", "{}"},
-            std::array<std::string, 5> const&     consoleFormat = {"{0} {1} {2} {3}", "{:%T}", "{}", "[{}]", "{}"},
-            std::array<std::string, 5> const&     fileFormat    = {"[{0} {1}][{2}] {3}", "{:%F %T}", "{}", "{}", "{}"}
+            Logger&                                logger,
+            std::string_view                       levelPrefix,
+            int                                    level,
+            std::array<fmt::text_style, 4> const&  style         = {{}},
+            std::array<std::string_view, 5> const& playerFormat  = {"<{2}|{1}> [{0}] {3}", "{:%T}", "{}", "{}", "{}"},
+            std::array<std::string_view, 5> const& consoleFormat = {"{0} {1} {2} {3}", "{:%T}", "{}", "[{}]", "{}"},
+            std::array<std::string_view, 5> const& fileFormat    = {"[{0} {1}][{2}] {3}", "{:%F %T}", "{}", "{}", "{}"}
         );
 
         template <ll::concepts::IsString S, typename... Args>
@@ -78,7 +78,7 @@ public:
     };
 
 public:
-    std::string                  title;
+    std::string_view             title;
     std::optional<std::ofstream> ofs          = std::nullopt;
     int                          consoleLevel = -1;
     int                          fileLevel    = -1;
@@ -90,7 +90,7 @@ public:
     OutputStream error;
     OutputStream fatal;
 
-    LLAPI explicit Logger(std::string title = __builtin_FUNCTION());
+    LLAPI explicit Logger(std::string_view title = __builtin_FUNCTION());
 
     ~Logger() { resetFile(); }
 
@@ -115,4 +115,4 @@ public:
 private:
     LLAPI static std::ofstream defaultFile;
 };
-}
+} // namespace ll
