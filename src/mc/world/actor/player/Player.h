@@ -126,10 +126,6 @@ public:
      * @brief Disconnect player's client
      */
     LLNDAPI void disconnect(std::string& reason) const;
-    /**
-     * @brief Send a text message to player
-     */
-    LLNDAPI void sendTextPacket(std::string& text, TextPacketType type) const;
 
     // prevent constructor by default
     Player& operator=(Player const&);
