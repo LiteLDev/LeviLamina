@@ -41,6 +41,7 @@
 #include "mc/world/events/MovementEventType.h"
 #include "mc/world/item/components/ItemUseMethod.h"
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
+#include "mc/enums/TextPacketType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -121,6 +122,14 @@ public:
 
     LLNDAPI std::string getDeviceId() const;
     LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
+    /**
+     * @brief Disconnect player's client
+     */
+    LLNDAPI void disconnect(std::string& reason) const;
+    /**
+     * @brief Send a message to player
+     */
+    LLNDAPI void sendMessage(std::string& msg) const;
 
     // prevent constructor by default
     Player& operator=(Player const&);

@@ -17,6 +17,8 @@
 #include "mc/world/systems/NetworkSystem.h"
 
 #include "ll/api/service/GlobalService.h"
+#include "mc/network/packet/TextPacket.h"
+#include <memory>
 
 using ll::Global;
 
@@ -38,4 +40,15 @@ std::string Player::getRealName() const {
     auto certificate = getCertificate();
     if (!certificate) { return getName(); }
     return ExtendedCertificate::getIdentityName(*certificate);
+}
+
+void Player::disconnect(std::string& reason) const {
+    Global<ServerNetworkHandler>->disconnectClient(getNetworkIdentifier(), Connection::DisconnectFailReason::Unknown, reason, false);
+}
+
+void Player::sendMessage(std::string& msg) const {
+    auto* pkt = new TextPacket();
+    pkt->mType = TextPacketType::Raw;
+    pkt->mMessage = msg;
+    sendNetworkPacket(*pkt);
 }
