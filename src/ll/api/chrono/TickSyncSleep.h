@@ -3,10 +3,17 @@
 #include "ll/api/chrono/GameChrono.h"
 #include <chrono>
 #include <mutex>
+#include <variant>
 
 namespace ll::gamechrono {
 
-extern std::vector<std::pair<void*, bool>> ticklist;
+template <class Clock>
+class TickSyncSleep;
+
+extern std::vector<std::variant<
+    std::reference_wrapper<TickSyncSleep<ServerClock>>,
+    std::reference_wrapper<TickSyncSleep<GameTimeClock>>>>
+    ticklist;
 
 template <class Clock>
 class TickSyncSleep {
@@ -21,6 +28,8 @@ public:
     TickSyncSleep& operator=(const TickSyncSleep&) noexcept = delete;
     TickSyncSleep& operator=(TickSyncSleep&&) noexcept      = delete;
 
+    using ClockType = typename Clock;
+
     Clock::time_point timepoint;
 
     enum class State {
@@ -32,7 +41,7 @@ public:
 
     TickSyncSleep() {
         id = ticklist.size();
-        ticklist.emplace_back(this, Clock::is_steady);
+        ticklist.emplace_back(std::ref(*this));
     }
 
     ~TickSyncSleep() {

@@ -117,7 +117,7 @@ public:
     }
 };
 
-template <typename G, auto Id>
+template <auto Id>
 struct TypeCounter {
     using tag = TypeCounter;
 
@@ -134,10 +134,10 @@ struct TypeCounter {
     static consteval auto exists(...) { return GenerateTag(), false; }
 };
 
-template <typename G, typename T, auto Id = int64{}>
+template <typename T, auto Id = int64{}>
 consteval auto uniqueId() {
-    if constexpr (TypeCounter<G, Id>::exists(Id)) {
-        return uniqueId<G, T, Id + 1>();
+    if constexpr (TypeCounter<Id>::exists(Id)) {
+        return uniqueId<T, Id + 1>();
     } else {
         return Id;
     }

@@ -35,6 +35,7 @@ add_requires("pcg_cpp v1.0.0")
 add_requires("preloader v1.3.0")
 add_requires("symbolprovider v1.1.0")
 add_requires("ctre 3.8.1")
+add_requires("pfr 2.1.1")
 
 if has_config("localbdslibrary") then
     add_requires("localbdslibrary")
@@ -64,7 +65,7 @@ target("LeviLamina")
     -- xmake-repo
     add_packages("asio", "cpp-httplib", "entt", "fmt", "gsl", "gtest", "leveldb", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
     -- liteldev-repo
-    add_packages("fifo_map", "pcg_cpp", "compact_enc_det", "dyncall", "preloader", "symbolprovider", "ctre")
+    add_packages("fifo_map", "pcg_cpp", "compact_enc_det", "dyncall", "preloader", "symbolprovider", "ctre", "pfr")
     if has_config("localbdslibrary") then
         add_packages("localbdslibrary")
     else

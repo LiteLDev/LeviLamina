@@ -15,7 +15,7 @@ GameTickScheduler   s2;
 GameTimeScheduler   s3;
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    ServerStartedEventHook,
+    SchedulerTestHook,
     HookPriority::Normal,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,

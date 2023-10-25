@@ -10,8 +10,8 @@ using ticks   = std::chrono::duration<int64, std::ratio<1, 20>>;
 using days    = std::chrono::duration<int64, std::ratio_multiply<std::ratio<24000>, ticks::period>>;
 using hours   = std::chrono::duration<int64, std::ratio_divide<days::period, std::ratio<24>>>;
 using minutes = std::chrono::duration<int64, std::ratio_divide<hours::period, std::ratio<60>>>;
-using weeks   = std::chrono::duration<int64, std::ratio_multiply<std::ratio<7>, days::period>>;
-using years   = std::chrono::duration<int64, std::ratio_multiply<std::ratio<146097, 400>, days::period>>;
+using weeks   = std::chrono::duration<int64, std::ratio_multiply<days::period, std::ratio<7>>>;
+using years   = std::chrono::duration<int64, std::ratio_multiply<days::period, std::ratio<146097, 400>>>;
 using months  = std::chrono::duration<int64, std::ratio_divide<years::period, std::ratio<12>>>;
 
 struct ServerClock {

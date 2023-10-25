@@ -249,7 +249,7 @@ void LLSettingsCommand(
             auto path = nlohmann::json::json_pointer(key);
             auto val  = j[path];
             output.trSuccess("ll.cmd.settings.get.success", key);
-            output.success(val.dump(4));
+             output.success(val.dump(4));
             break;
         }
         case LLSettingsOperation::Set: {
