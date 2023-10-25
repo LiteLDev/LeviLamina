@@ -177,10 +177,11 @@ constexpr void fromJson(T& arr, J const& j)
     using ValueType = typename T::value_type;
     if (!j.is_array()) return;
     if constexpr (requires(T a, ValueType v) { a.push_back(v); }) {
+
         arr.resize(j.size());
         for (size_t i = 0; i < j.size(); i++) { fromJson<ValueType, J>(arr[i], j[i]); }
-    }
-    if constexpr (requires(T a, ValueType v) { a.insert(ValueType{}); }) {
+
+    } else if constexpr (requires(T a, ValueType v) { a.insert(ValueType{}); }) {
 
         for (size_t i = 0; i < j.size(); i++) {
             ValueType tmp{};
