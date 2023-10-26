@@ -48,13 +48,14 @@ private:
     ll::thread::ThreadPool threads;
 
     std::weak_ptr<Task<Clock>> addTask(TaskPtr t) {
-        if (t->cancelled) { return nullptr; }
+        std::weak_ptr<Task<Clock>> res = t;
+        if (t->cancelled) { return res; }
 
         auto time = t->getNextTime();
-        if (time >= TimePoint::max()) { return nullptr; }
+        if (time >= TimePoint::max()) { return res; }
 
         std::lock_guard l{mutex};
-        std::weak_ptr<Task<Clock>> res = t;
+
         tasks.emplace(time, std::move(t));
         sleeper.interrupt();
         return res;
