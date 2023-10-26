@@ -28,7 +28,7 @@ public:
     TickSyncSleep& operator=(const TickSyncSleep&) noexcept = delete;
     TickSyncSleep& operator=(TickSyncSleep&&) noexcept      = delete;
 
-    using ClockType = typename Clock;
+    using ClockType = Clock;
 
     Clock::time_point timepoint;
 

@@ -17,7 +17,7 @@ class CommandPositionFloat;
 class MobEffect;
 class RelativeFloat;
 class CommandItem;
-class ActorDefinitionIdentifier;
+struct ActorDefinitionIdentifier;
 class CommandRawText;
 class CommandWildcardInt;
 class Player;

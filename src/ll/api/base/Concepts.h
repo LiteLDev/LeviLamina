@@ -40,13 +40,19 @@ template <typename T>
 concept ArrayLike = Rangeable<T> && !requires { typename T::mapped_type; };
 
 template <typename T, template <typename...> class Z>
-inline constexpr bool is_specialization_of = false;
+inline constexpr bool is_specialization_of_v = false;
 
 template <template <typename...> class Z, class... Args>
-inline constexpr bool is_specialization_of<Z<Args...>, Z> = true;
+inline constexpr bool is_specialization_of_v<Z<Args...>, Z> = true;
 
 template <typename T, template <typename...> class Z>
-concept Specializes = is_specialization_of<T, Z>;
+struct is_specialization_of : std::bool_constant<is_specialization_of_v<T, Z>> {};
+
+template <typename T, template <typename...> class Z>
+concept Specializes = is_specialization_of_v<T, Z>;
+
+template <class>
+inline constexpr bool always_false = false;
 
 template <typename T>
 concept Stringable = requires(T t) {

@@ -46,7 +46,7 @@ class GameEventDispatcher;
 class ChunkBuildOrderPolicyBase;
 class VillageManager;
 class CircuitSystem;
-class NetworkIdentifierWithSubId;
+struct NetworkIdentifierWithSubId;
 class ChunkLoadActionList;
 class DelayActionList;
 class ILevel;
@@ -78,8 +78,8 @@ public:
     struct PlayerReplicationStructures {
     public:
         struct PlayerAtChunk {
-            class ChunkPos chunkPos;    // this+0x0
-            ushort         playerIndex; // this+0x8
+            class ChunkPos chunkPos;      // this+0x0
+            ushort         playerIndex{}; // this+0x8
         };
         std::unordered_map<class ChunkPos, std::vector<ushort>> mPlayersAtChunks;    // this+0x0
         std::vector<PlayerAtChunk>                              mPlayerInterestMap;  // this+0x40
