@@ -11,8 +11,6 @@
 #include "ll/api/LLAPI.h"
 #include "ll/api/Logger.h"
 #include "ll/api/i18n/I18nAPI.h"
-#include "ll/api/perm/PermissionAPI.h"
-
 
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
@@ -37,7 +35,6 @@ inline std::vector<std::string> getPreloadList() {
 
                 if (preloadName.empty() || preloadName.front() == '#') continue;
                 if (preloadName.find("LeviLamina.dll") != std::string::npos) continue;
-                if (preloadName.find("LiteXLoader.dll") != std::string::npos) continue;
 
                 preloadList.emplace_back(preloadName);
             }
