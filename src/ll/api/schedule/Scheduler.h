@@ -54,9 +54,10 @@ private:
         if (time >= TimePoint::max()) { return nullptr; }
 
         std::lock_guard l{mutex};
+        std::weak_ptr<Task<Clock>> res = t;
         tasks.emplace(time, std::move(t));
         sleeper.interrupt();
-        return t;
+        return res;
     }
 
     void manageTasks() {
