@@ -18,7 +18,7 @@ public:
 
     [[nodiscard]] Type getType() const override { return Type::Label; }
 
-    [[nodiscard]] fifo_json serialize() const override {
+    [[nodiscard]] nlohmann::ordered_json serialize() const override {
         try {
             return {
                 {"type", "label"},
@@ -30,7 +30,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(fifo_json const&) const override { return {}; }
+    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const&) const override { return {}; }
 };
 
 class Input : public CustomFormElement {
@@ -49,9 +49,9 @@ public:
 
     [[nodiscard]] Type getType() const override { return Type::Input; }
 
-    [[nodiscard]] fifo_json serialize() const override {
+    [[nodiscard]] nlohmann::ordered_json serialize() const override {
         try {
-            fifo_json input = {
+            nlohmann::ordered_json input = {
                 {"type", "input"},
                 {"text", mText  }
             };
@@ -64,7 +64,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(fifo_json const& data) const override {
+    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override {
         return data.get<std::string>();
     }
 };
@@ -83,7 +83,7 @@ public:
 
     [[nodiscard]] Type getType() const override { return Type::Toggle; }
 
-    [[nodiscard]] fifo_json serialize() const override {
+    [[nodiscard]] nlohmann::ordered_json serialize() const override {
         try {
             return {
                 {"type",    "toggle"},
@@ -96,7 +96,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(fifo_json const& data) const override { return data.get<bool>(); }
+    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override { return data.get<bool>(); }
 };
 
 class Dropdown : public CustomFormElement {
@@ -115,7 +115,7 @@ public:
 
     [[nodiscard]] Type getType() const override { return Type::Dropdown; }
 
-    [[nodiscard]] fifo_json serialize() const override {
+    [[nodiscard]] nlohmann::ordered_json serialize() const override {
         try {
             return {
                 {"type",    "dropdown"},
@@ -129,7 +129,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(fifo_json const& data) const override {
+    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override {
         return mOptions[data.get<int>()];
     }
 };
@@ -168,7 +168,7 @@ public:
 
     [[nodiscard]] Type getType() const override { return Type::Slider; }
 
-    [[nodiscard]] fifo_json serialize() const override {
+    [[nodiscard]] nlohmann::ordered_json serialize() const override {
         try {
             if (!isValid()) {
                 ll::logger.error("Failed to serialize Slider: invalid data");
@@ -188,7 +188,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(fifo_json const& data) const override { return data.get<double>(); }
+    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override { return data.get<double>(); }
 };
 
 class StepSlider : public CustomFormElement {
@@ -215,7 +215,7 @@ public:
 
     [[nodiscard]] Type getType() const override { return Type::StepSlider; }
 
-    [[nodiscard]] fifo_json serialize() const override {
+    [[nodiscard]] nlohmann::ordered_json serialize() const override {
         try {
             if (!isValid()) {
                 ll::logger.error("Failed to serialize StepSlider: invalid data");
@@ -233,7 +233,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(fifo_json const& data) const override {
+    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override {
         return mSteps[data.get<int>()];
     }
 };
@@ -313,15 +313,15 @@ public:
 protected:
     [[nodiscard]] FormType getType() const override { return FormType::CustomForm; }
 
-    [[nodiscard]] fifo_json serialize() const override {
+    [[nodiscard]] nlohmann::ordered_json serialize() const override {
         try {
-            fifo_json form = {
+            nlohmann::ordered_json form = {
                 {"title",   mTitle            },
                 {"type",    "custom_form"     },
-                {"content", fifo_json::array()}
+                {"content", nlohmann::ordered_json::array()}
             };
             for (auto& e : mElements) {
-                fifo_json element = e->serialize();
+                nlohmann::ordered_json element = e->serialize();
                 if (!element.empty()) { form["content"].push_back(element); }
             }
             return form;

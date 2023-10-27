@@ -31,26 +31,26 @@ public:
         switch (operation) {
         case Operation::List:
             if (target_isSet || index_isSet) {
-                ll::logger.info("Command Operation::List is set");
-            } else ll::logger.info("Command Operation::List isn't set");
+                ll::logger.debug("Command Operation::List is set");
+            } else ll::logger.debug("Command Operation::List isn't set");
             break;
         case Operation::Install:
-            ll::logger.info("Command Operation::Install");
+            ll::logger.debug("Command Operation::Install");
             break;
         case Operation::Uninstall:
-            ll::logger.info("Command Operation::Uninstall");
+            ll::logger.debug("Command Operation::Uninstall");
             break;
 
         case Operation::Enable:
-            ll::logger.info("Command Operation::Enable");
+            ll::logger.debug("Command Operation::Enable");
             break;
 
         case Operation::Disable:
-            ll::logger.info("Command Operation::Disable");
+            ll::logger.debug("Command Operation::Disable");
             break;
 
         default:
-            ll::logger.info("Command default");
+            ll::logger.debug("Command default");
             break;
         }
     }

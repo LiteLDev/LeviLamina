@@ -3,6 +3,7 @@
 #include "fmt/core.h"
 #include "magic_enum.hpp"
 
+#include "ll/api/base/Concepts.h"
 #include "ll/api/service/GlobalService.h"
 #include "ll/api/utils/WinHelper.h"
 
@@ -31,14 +32,6 @@ typedef union DCValue_ DCValue;
 
 class Actor;
 class DynamicCommandInstance;
-
-
-#define AllResultType                                                                                                  \
-    bool const*, int const*, float const*, std::string const*, CommandSelector<Actor> const*,                          \
-        CommandSelector<Player> const*, CommandPosition const*, CommandPositionFloat const*, CommandRawText const*,    \
-        CommandMessage const*, Json::Value const*, CommandItem const*, CommandBlockName const*,                        \
-        MobEffect const* const*, ActorDefinitionIdentifier const* const*, std::unique_ptr<Command> const*,             \
-        std::vector<class BlockStateCommandParam> const*
 
 /**
  * @brief The dynamic command
@@ -118,14 +111,29 @@ class DynamicCommandInstance;
  *
  */
 class DynamicCommand : public Command {
-    template <typename _Ty, class... _Types>
-    static constexpr bool is_one_of_v =
-        std::_Meta_find_unique_index<std::variant<_Types...>, std::add_pointer_t<std::add_const_t<_Ty>>>::value
-        < sizeof...(_Types);
-    template <typename _Ty>
-    static constexpr bool is_supported_result_type_v = is_one_of_v<_Ty, AllResultType>;
-    template <typename _Ty, typename Type>
-    using enable_if_supported_t = std::enable_if_t<is_supported_result_type_v<_Ty>, Type>;
+    template <typename T>
+    static constexpr bool valid_type_v = ll::concepts::is_one_of_v<
+        T,
+        bool,
+        int,
+        float,
+        std::string,
+        CommandSelector<Actor>,
+        CommandSelector<Player>,
+        CommandPosition,
+        CommandPositionFloat,
+        CommandRawText,
+        CommandMessage,
+        Json::Value,
+        CommandItem,
+        CommandBlockName,
+        MobEffect const*,
+        ActorDefinitionIdentifier const*,
+        std::unique_ptr<Command>,
+        std::vector<class BlockStateCommandParam>>;
+
+    template <typename T>
+    struct valid_type : std::bool_constant<valid_type_v<T>> {};
 
 public:
     /**
@@ -249,8 +257,8 @@ public:
         LLAPI std::string                   toDebugString() const;
         LLAPI DynamicCommandInstance const* getInstance() const;
 
-        template <typename T>
-        enable_if_supported_t<T, T const&> getRaw() const {
+        template <ll::concepts::ConceptFor<valid_type> T>
+        T const& getRaw() const {
 
             if (type == ParameterType::Enum) {
                 auto& val = ll::memory::dAccess<std::pair<std::string, int>>(command, offset);
@@ -268,8 +276,8 @@ public:
             ));
         }
 
-        template <typename T>
-        enable_if_supported_t<T, T const&> value_or(T const& defaultValue) {
+        template <ll::concepts::ConceptFor<valid_type> T>
+        T const& value_or(T const& defaultValue) {
             if (isSet) return getRaw<T>();
             return defaultValue;
         }
@@ -410,7 +418,7 @@ public:
             return param;
         }
 
-        void setOptional(bool _optional) { this->optional = _optional; }
+        void setOptional(bool opt) { this->optional = opt; }
         bool setEnumOptions(std::string const& enumOptions) {
             if (type != DynamicCommand::ParameterType::Enum && type != DynamicCommand::ParameterType::SoftEnum)
                 return false;
@@ -438,49 +446,46 @@ public:
     using BuilderFn  = std::unique_ptr<Command> (*)();
 
 private:
-    template <typename _Ty>
-    static enable_if_supported_t<_Ty, bool> checkTempateType(ParameterType type) {
+    template <class T>
+    static bool checkTempateType(ParameterType type) {
         switch (type) {
         case ParameterType::Bool:
-            return std::is_same_v<bool, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<bool, T>;
         case ParameterType::Int:
-            return std::is_same_v<int, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<int, T>;
         case ParameterType::Float:
-            return std::is_same_v<float, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<float, T>;
         case ParameterType::String:
-            return std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<std::string, T>;
         case ParameterType::Actor:
-            return std::is_same_v<CommandSelector<Actor>, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<CommandSelector<Actor>, T>;
         case ParameterType::Player:
-            return std::is_same_v<CommandSelector<Player>, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<CommandSelector<Player>, T>;
         case ParameterType::BlockPos:
         case ParameterType::Vec3:
-            return std::is_same_v<CommandPosition, std::remove_cv_t<_Ty>>
-                || std::is_same_v<CommandPositionFloat, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<CommandPosition, T> || std::is_same_v<CommandPositionFloat, T>;
         case ParameterType::RawText:
-            return std::is_same_v<CommandRawText, std::remove_cv_t<_Ty>>
-                || std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<CommandRawText, T> || std::is_same_v<std::string, T>;
         case ParameterType::Message:
-            return std::is_same_v<CommandMessage, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<CommandMessage, T>;
         case ParameterType::JsonValue:
-            return std::is_same_v<Json::Value, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<Json::Value, T>;
         case ParameterType::Item:
-            return std::is_same_v<CommandItem, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<CommandItem, T>;
         case ParameterType::Block:
-            return std::is_same_v<CommandBlockName, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<CommandBlockName, T>;
         case ParameterType::BlockState:
-            return std::is_same_v<std::vector<BlockStateCommandParam>, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<std::vector<BlockStateCommandParam>, T>;
         case ParameterType::Effect:
-            return std::is_same_v<MobEffect const*, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<MobEffect const*, T>;
         case ParameterType::Enum:
-            return std::is_same_v<int, std::remove_cv_t<_Ty>> || std::is_same_v<std::string, std::remove_cv_t<_Ty>>
-                || std::is_enum_v<_Ty>;
+            return std::is_same_v<int, T> || std::is_same_v<std::string, T> || std::is_enum_v<T>;
         case ParameterType::SoftEnum:
-            return std::is_same_v<std::string, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<std::string, T>;
         case ParameterType::ActorType:
-            return std::is_same_v<ActorDefinitionIdentifier const*, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<ActorDefinitionIdentifier const*, T>;
         case ParameterType::Command:
-            return std::is_same_v<std::unique_ptr<Command>, std::remove_cv_t<_Ty>>;
+            return std::is_same_v<std::unique_ptr<Command>, T>;
         default:
             return false;
         }
@@ -488,10 +493,9 @@ private:
 
     LLAPI static char builderCallbackHanler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata);
     LLAPI static std::unique_ptr<Command>* commandBuilder(std::unique_ptr<Command>* rtn, std::string name);
-    LLAPI static DynamicCommandInstance*   _setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
+    LLAPI static DynamicCommandInstance*   preSetup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
 
 public:
-
     friend class DynamicCommandInstance;
 
 public:

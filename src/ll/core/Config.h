@@ -3,76 +3,69 @@
 #include <string>
 #include <thread>
 
-#include "Nlohmann/json.hpp"
 #include "ll/api/LLAPI.h"
+#include "nlohmann/json.hpp"
 
 /////////////////////// LL Configs ///////////////////////
-#define LL_CONFIG_FILE "plugins/LeviLamina/config.json"
 
 namespace ll {
 
-struct CommandLineOption {
-    bool noColorOption = false;
-};
 struct LLConfig {
+    int version = 3;
+
     bool        debugMode = false;
-    bool        colorLog  = true;
-    int         version   = 1;
-    int         logLevel  = 4;
     std::string language  = "system";
+    struct {
+        bool colorLog = true;
+        int  logLevel = 4;
+    } logger{};
 
-    bool enableScriptEngine       = true;
-    bool alwaysLaunchScriptEngine = false;
+    struct ExtraMainPluginSettings {
+        bool enabled      = true;
+        bool alwaysLaunch = false;
+    };
+    ExtraMainPluginSettings scriptEngine{};
+    ExtraMainPluginSettings economyCore{};
 
-    bool        enableAddonsHelper = true;
-    std::string addonsInstallPath  = R"(.\plugins\AddonsHelper\)";
+    struct {
+        struct {
+            bool        enabled = true;
+            std::string path    = R"(.\plugins\LeviLamina\CrashLogger.exe)";
+        } crashLogger{};
 
-    bool                               enableCrashLogger              = true;
-    std::string                        crashLoggerPath                = R"(.\plugins\LeviLamina\CrashLogger.exe)";
-    bool                               enableSimpleServerLogger       = true;
-    bool                               enableFixListenPort            = false;
-    bool                               enableUnlockCmd                = true;
-    bool                               enableErrorStackTraceback      = true;
-    bool                               cacheErrorStackTracebackSymbol = false;
-    bool                               enableUnoccupyPort19132        = true;
-    bool                               enableCheckRunningBDS          = true;
-    bool                               enableWelcomeText              = true;
-    bool                               enableFixMcBug                 = true;
-    bool                               disableAutoCompactionLog       = true;
-    bool                               enableFixBroadcastBug          = true;
-    bool                               enableOutputFilter             = false;
-    bool                               onlyFilterConsoleOutput        = true;
-    bool                               enableEconomyCore              = true;
-    bool                               enableTpdimCommand             = true;
-    bool                               enableForceUtf8Input           = false;
-    bool                               enableFixBDSCrash              = true;
-    bool                               enableParticleAPI              = false;
-    bool                               enableFixAbility               = true;
-    std::vector<std::string>           outputFilterRegex              = {};
-    std::map<std::string, std::string> resourcePackEncryptionMap      = {};
+        struct {
+            bool                     enabled         = true;
+            std::vector<std::string> autoInstallPath = {R"(.\plugins\AddonsHelper\)"};
+            std::string              tempPath        = {R"(.\plugins\AddonsHelper\Temp\)"};
+            std::set<std::string>    extension       = {".mcpack", ".mcaddon", ".zip"};
+        } addonsHelper{};
+
+        struct {
+            std::string path = R"(.\plugins\LeviLamina\7z\7za.exe)";
+        } compressor{};
+
+        struct {
+            bool tpdimCommand             = true;
+            bool settingsCommand          = true;
+            bool disableAutoCompactionLog = true;
+        } tweak{};
+        struct {
+            bool fixArrayTagCompareBug = true;
+        } bugfix{};
+
+        bool checkRunningBDS    = true;
+        bool simpleServerLogger = true;
+
+        std::map<std::string, std::string> resourcePackEncryptionMap = {
+            {"UUID", "KEY"}
+        };
+
+    } modules{};
 };
 
-struct LLRuntimeConfig {
-    ServerStatus    serverStatus = ServerStatus::Starting;
-    std::thread::id tickThreadId;
-};
-
-LLETAPI LLConfig          globalConfig;
-LLETAPI LLRuntimeConfig   globalRuntimeConfig;
-LLETAPI CommandLineOption commandLineOption;
-
-void inline to_json(nlohmann::json& j, LLConfig const& conf);
-
-void inline from_json(nlohmann::json const& j, LLConfig& conf);
+LLETAPI LLConfig globalConfig;
 
 bool LoadLLConfig();
 
 bool SaveLLConfig();
 } // namespace ll
-
-/////////////////////// Addon Helper ///////////////////////
-
-#define ZIP_PROGRAM_PATH           "./plugins/LeviLamina/7z/7za.exe"
-#define ADDON_INSTALL_TEMP_DIR     "./plugins/LeviLamina/Temp/"
-#define ADDON_INSTALL_MAX_WAIT     30000
-#define VALID_ADDON_FILE_EXTENSION std::set<std::string>({".mcpack", ".mcaddon", ".zip"})

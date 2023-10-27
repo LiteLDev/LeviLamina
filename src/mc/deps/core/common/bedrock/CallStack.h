@@ -48,7 +48,6 @@ public:
     struct FrameWithContext {
     public:
         uchar filler[80];
-        FrameWithContext() = delete;
 
         // prevent constructor by default
         FrameWithContext& operator=(FrameWithContext const&);

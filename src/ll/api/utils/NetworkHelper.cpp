@@ -57,15 +57,12 @@ bool HttpGet(
         } catch (seh_exception const& e) {
             ll::logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
             ll::logger.error("In HttpGet callback");
-            PrintCurrentStackTraceback();
         } catch (std::exception const& e) {
             ll::logger.error("Uncaught C++ Exception Detected!\n{}", e.what());
             ll::logger.error("In HttpGet callback");
-            PrintCurrentStackTraceback();
         } catch (...) {
             ll::logger.error("HttpGet Callback Failed!");
             ll::logger.error("Uncaught Exception Detected!");
-            PrintCurrentStackTraceback();
         }
     }).detach();
 
@@ -109,15 +106,12 @@ bool HttpPost(
         } catch (seh_exception const& e) {
             ll::logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
             ll::logger.error("In HttpPost callback");
-            PrintCurrentStackTraceback();
         } catch (std::exception const& e) {
             ll::logger.error("Uncaught C++ Exception Detected!\n{}", e.what());
             ll::logger.error("In HttpGet callback");
-            PrintCurrentStackTraceback();
         } catch (...) {
             ll::logger.error("HttpPost Callback Failed!");
             ll::logger.error("Uncaught Exception Detected!");
-            PrintCurrentStackTraceback();
         }
     }).detach();
     return true;

@@ -22,3 +22,6 @@
 
 # MkDocs
 /site/
+
+# Debug
+/src/ll/test/include_all.cpp

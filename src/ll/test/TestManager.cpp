@@ -1,7 +1,7 @@
 #include "TestManager.h"
 
-#include "FMT/color.h"
-#include "FMT/format.h"
+#include "fmt/color.h"
+#include "fmt/format.h"
 
 namespace ll::test {
 

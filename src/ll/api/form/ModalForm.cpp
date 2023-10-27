@@ -55,7 +55,7 @@ public:
 protected:
     [[nodiscard]] FormType getType() const override { return FormType::ModalForm; }
 
-    [[nodiscard]] fifo_json serialize() const override {
+    [[nodiscard]] nlohmann::ordered_json serialize() const override {
         try {
             return {
                 {"type",    "modal"     },
@@ -66,7 +66,7 @@ protected:
             };
         } catch (...) {
             ll::logger.error("Failed to serialize ModalForm");
-            return fifo_json{};
+            return nlohmann::ordered_json{};
         }
     }
 };

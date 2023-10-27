@@ -41,9 +41,9 @@
 
 #include <string>
 
-#include "FMT/core.h"
-#include "FMT/os.h"
-#include "Nlohmann/json.hpp"
+#include "fmt/core.h"
+#include "fmt/os.h"
+#include "nlohmann/json.hpp"
 #include "compact_enc_det/util/encodings/encodings.h"
 #define UNICODE
 

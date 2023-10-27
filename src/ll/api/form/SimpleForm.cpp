@@ -8,7 +8,7 @@ namespace ll::form {
 class SimpleFormElement {
 protected:
     virtual ~SimpleFormElement()  = default;
-    virtual fifo_json serialize() = 0;
+    virtual nlohmann::ordered_json serialize() = 0;
     friend class SimpleForm;
 };
 
@@ -32,9 +32,9 @@ public:
     }
 
 protected:
-    fifo_json serialize() override {
+    nlohmann::ordered_json serialize() override {
         try {
-            fifo_json button;
+            nlohmann::ordered_json button;
             button["text"] = mText;
             if (!mImage.empty()) {
                 button["image"] = {
@@ -45,7 +45,7 @@ protected:
             return button;
         } catch (...) {
             ll::logger.error("Failed to serialize Button");
-            return fifo_json{};
+            return nlohmann::ordered_json{};
         }
     }
 };
@@ -101,22 +101,22 @@ public:
 protected:
     [[nodiscard]] FormType getType() const override { return FormType::SimpleForm; }
 
-    [[nodiscard]] fifo_json serialize() const override {
+    [[nodiscard]] nlohmann::ordered_json serialize() const override {
         try {
-            fifo_json form = {
+            nlohmann::ordered_json form = {
                 {"title",   mTitle            },
                 {"type",    "form"            },
                 {"content", mContent          },
-                {"buttons", fifo_json::array()}
+                {"buttons", nlohmann::ordered_json::array()}
             };
             for (auto& e : mElements) {
-                fifo_json element = e->serialize();
+                nlohmann::ordered_json element = e->serialize();
                 if (!element.empty()) { form["buttons"].push_back(element); }
             }
             return form.dump();
-        } catch (fifo_json::exception const&) {
+        } catch (nlohmann::ordered_json::exception const&) {
             ll::logger.error("Failed to serialize SimpleForm");
-            return fifo_json{};
+            return nlohmann::ordered_json{};
         }
     }
 };

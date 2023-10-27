@@ -24,18 +24,18 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
 
     s.add<RepeatTask>(100_tick, [&] {
-        logger.info("hi, 100_tick life {}", ll::gamechrono::GameTimeClock::now().time_since_epoch());
+        logger.debug("hi, 100_tick life {}", ll::gamechrono::GameTimeClock::now().time_since_epoch());
     });
 
     s2.add<DelayTask>(1_tick, [&] {
-        logger.info("try GameTime {}", ll::gamechrono::GameTimeClock::now().time_since_epoch());
+        logger.debug("try GameTime {}", ll::gamechrono::GameTimeClock::now().time_since_epoch());
         s3.add<RepeatTask>(100_tick, [&] {
-            logger.info("hi, 100_tick gt   {}", ll::gamechrono::GameTimeClock::now().time_since_epoch());
+            logger.debug("hi, 100_tick gt   {}", ll::gamechrono::GameTimeClock::now().time_since_epoch());
         });
     });
 
     s2.add<RepeatTask>(100_tick, [&] {
-        logger.info("hi, 100_tick game {}", ll::gamechrono::GameTimeClock::now().time_since_epoch());
+        logger.debug("hi, 100_tick game {}", ll::gamechrono::GameTimeClock::now().time_since_epoch());
     });
 
     return origin(ins);

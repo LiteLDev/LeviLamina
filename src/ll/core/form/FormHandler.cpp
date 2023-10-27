@@ -25,7 +25,7 @@ void CustomFormHandler::handle(Player& player, std::string const& data) const {
     }
 
     try {
-        fifo_json dataJson = fifo_json::parse(data);
+        nlohmann::ordered_json dataJson = nlohmann::ordered_json::parse(data);
 
         if (!dataJson.is_array()) {
             ll::logger.error("Failed to parse CustomForm result: not an array");

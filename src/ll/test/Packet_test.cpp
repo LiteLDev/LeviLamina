@@ -11,6 +11,7 @@
 #include "ll/api/memory/Hook.h"
 #include "ll/api/utils/FileHelper.h"
 #include "ll/core/LeviLamina.h"
+#include "ll/core/Version.h"
 
 #include "magic_enum.hpp"
 
@@ -81,7 +82,7 @@ void autoGenerate() {
 
     std::string path = __FILE__;
 
-    path = R"(D:\code\c++\LiteLoader\)" + path; // for OEOTYAN
+    path = LL_WORKSPACE_FOLDER + path;
 
     auto file = ReadAllFile(path, false);
     if (!file) {

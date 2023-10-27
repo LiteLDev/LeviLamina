@@ -8,8 +8,7 @@ LLNDAPI std::string GetLastErrorMessage();
 LLNDAPI std::string GetLastErrorMessage(DWORD error_message_id);
 
 // Create a new process and get its output when exited
-LLAPI bool
-NewProcess(std::string const& process, std::function<void(int, std::string)> callback = nullptr, int timeLimit = -1);
+
 LLAPI std::pair<int, std::string>
       NewProcessSync(std::string const& process, int timeLimit = -1, bool noReadOutput = true);
 

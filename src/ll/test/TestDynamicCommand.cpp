@@ -203,7 +203,7 @@ void setupRemoveCommand() {
                 auto res = ll::Global<CommandRegistry>->unregisterCommand(fullName);
                 if (res) {
                     DynamicCommand::unregisterCommand(fullName);
-                    ll::logger.info("unregister command " + fullName);
+                    ll::logger.debug("unregister command " + fullName);
                     ((DynamicCommandInstance*)nullptr)
                         ->setSoftEnum("CommandNames", ll::Global<CommandRegistry>->getEnumValues("CommandName"));
                 } else ll::logger.error("error in unregister command " + fullName);

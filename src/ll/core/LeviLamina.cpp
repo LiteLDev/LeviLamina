@@ -72,7 +72,11 @@ void unzipNodeModules() {
         // if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
         //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
         auto res = NewProcessSync(
-            fmt::format(R"({} x "{}" -o".\plugins\lib\" -aoa)", ZIP_PROGRAM_PATH, R"(.\plugins\lib\node_modules.tar)"),
+            fmt::format(
+                R"({} x "{}" -o".\plugins\lib\" -aoa)",
+                ll::globalConfig.modules.compressor.path,
+                R"(.\plugins\lib\node_modules.tar)"
+            ),
             30000
         );
         if (res.first != 0) {
@@ -92,7 +96,7 @@ void decompressResourcePacks() {
         auto res = NewProcessSync(
             fmt::format(
                 R"({} x "{}" -o".\plugins\LeviLamina\ResourcePacks\" -aoa)",
-                ZIP_PROGRAM_PATH,
+                ll::globalConfig.modules.compressor.path,
                 R"(.\plugins\LeviLamina\ResourcePacks\LeviLamina-CUI.tar)"
             ),
             30000
@@ -107,10 +111,11 @@ void decompressResourcePacks() {
 
 void checkRunningBDS() {
 
+    if (!ll::globalConfig.modules.checkRunningBDS) return;
+
     constexpr const DWORD MAX_PATH_LEN = 32767;
     auto*                 buffer       = new wchar_t[MAX_PATH_LEN];
 
-    if (!ll::globalConfig.enableCheckRunningBDS) return;
 
     // get all processes id with name "bedrock_server.exe" or "bedrock_server_mod.exe"
     // and pid is not current process
@@ -170,7 +175,6 @@ void checkRunningBDS() {
 }
 
 void printLogo() {
-    if (!ll::globalConfig.enableWelcomeText) return;
 
     logger.info(R"(                                                                      )");
     logger.info(R"(         _               _ _                    _                     )");
@@ -188,10 +192,6 @@ void printLogo() {
     logger.info("ll.notice.translateText"_tr, "https://crowdin.com/project/liteloaderbds");
     logger.info("ll.notice.sponsor.thanks"_tr);
     logger.info("");
-}
-
-void checkDevMode() {
-    if (ll::globalConfig.debugMode) logger.warn("ll.main.warning.inDevMode"_tr);
 }
 
 void checkBetaVersion() {
@@ -296,7 +296,7 @@ void leviLaminaMain() {
     checkRunningBDS();
 
     // Builtin CrashLogger
-    ll::CrashLogger::initCrashLogger(ll::globalConfig.enableCrashLogger);
+    ll::CrashLogger::initCrashLogger(ll::globalConfig.modules.crashLogger.enabled);
 
     // Rename Window
     HWND         hwnd = GetConsoleWindow();
@@ -312,7 +312,7 @@ void leviLaminaMain() {
     printLogo();
 
     // DebugMode
-    checkDevMode();
+    if (ll::globalConfig.debugMode) logger.warn("ll.main.warning.inDevMode"_tr);
 
     // Addon Helper
     // if (ll::globalConfig.enableAddonsHelper) {
@@ -341,7 +341,7 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Normal, "main", int, int a
     for (int i = 0; i < argc; ++i) {
         switch (do_hash(argv[i])) {
         case "--noColor"_h:
-            ll::commandLineOption.noColorOption = true;
+            ll::globalConfig.logger.colorLog = false;
             break;
         case "-v"_h:
         case "--version"_h:

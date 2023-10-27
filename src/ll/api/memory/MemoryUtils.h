@@ -70,8 +70,8 @@ LLNDAPI FuncPtr resolveSignature(char const* signature);
 LLNDAPI std::vector<std::string> lookupSymbol(FuncPtr func);
 
 template <uintptr_t off, typename RTN = void, typename... Args>
-auto constexpr virtualCall(void const* _this, Args&&... args) -> RTN {
-    return (*(RTN(**)(void const*, Args&&...))(*(uintptr_t*)_this + off))(_this, std::forward<Args>(args)...);
+auto constexpr virtualCall(void const* self, Args&&... args) -> RTN {
+    return (*(RTN(**)(void const*, Args&&...))(*(uintptr_t*)self + off))(self, std::forward<Args>(args)...);
 }
 
 template <typename T>

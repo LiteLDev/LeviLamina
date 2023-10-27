@@ -131,12 +131,4 @@ Version getLoaderVersion() {
     return {LL_VERSION_MAJOR, LL_VERSION_MINOR, LL_VERSION_PATCH, (Version::PreRelease)LL_VERSION_PRE_RELEASE};
 }
 
-ServerStatus getServerStatus() { return globalRuntimeConfig.serverStatus; }
-
-bool isServerStarting() { return getServerStatus() == ServerStatus::Starting; }
-
-bool isServerStopping() { return getServerStatus() == ServerStatus::Stopping; }
-
-std::string getLanguage() { return globalConfig.language; }
-
 } // namespace ll

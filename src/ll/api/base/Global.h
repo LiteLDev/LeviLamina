@@ -17,11 +17,11 @@
 // windows types
 #include "minwindef.h"
 
-#include "FMT/chrono.h"
-#include "FMT/color.h"
-#include "FMT/core.h"
-#include "FMT/os.h"
-#include "FMT/printf.h"
+#include "fmt/chrono.h"
+#include "fmt/color.h"
+#include "fmt/core.h"
+#include "fmt/os.h"
+#include "fmt/printf.h"
 #include "gsl/gsl"
 
 #include "ll/api/memory/MemoryUtils.h"

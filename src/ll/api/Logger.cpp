@@ -16,14 +16,15 @@ std::mutex logger_mutex;
 
 bool checkLogLevel(int level, int outLevel) {
     if (level >= outLevel) return true;
-    if (level == -1 && ll::globalConfig.logLevel >= outLevel) return true;
+    if (level == -1 && ll::globalConfig.logger.logLevel >= outLevel) return true;
     return false;
 }
 
 void Logger::OutputStream::print(std::string_view s) const {
     std::lock_guard lock(logger_mutex);
     try {
-        auto time = std::chrono::system_clock::now();
+        using Clock = std::chrono::system_clock;
+        auto time   = fmt::localtime(Clock::to_time_t(Clock::now()));
 
         if (checkLogLevel(logger.consoleLevel, level)) {
             std::string str = fmt::format(
@@ -33,7 +34,7 @@ void Logger::OutputStream::print(std::string_view s) const {
                 applyTextStyle(style[2], fmt::format(fmt::runtime(consoleFormat[3]), logger.title)),
                 applyTextStyle(style[3], fmt::format(fmt::runtime(consoleFormat[4]), replaceMcToAnsiCode(s)))
             );
-            if (!ll::globalConfig.colorLog) { str = removeEscapeCode(str); }
+            if (!ll::globalConfig.logger.colorLog) { str = removeEscapeCode(str); }
             fmt::print("{}\n", str);
         }
         if (logger.getFile().is_open() && checkLogLevel(logger.fileLevel, level)) {

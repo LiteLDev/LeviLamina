@@ -14,14 +14,14 @@ public:
 
     std::string mName{};
 
-    [[nodiscard]] virtual Type              getType() const                          = 0;
-    [[nodiscard]] virtual FormElementResult parseResult(fifo_json const& data) const = 0;
+    [[nodiscard]] virtual Type              getType() const                                       = 0;
+    [[nodiscard]] virtual FormElementResult parseResult(nlohmann::ordered_json const& data) const = 0;
 
 protected:
     explicit CustomFormElement(std::string name) : mName(std::move(name)) {}
     virtual ~CustomFormElement() = default;
 
-    [[nodiscard]] virtual fifo_json serialize() const = 0;
+    [[nodiscard]] virtual nlohmann::ordered_json serialize() const = 0;
 
     friend class CustomForm;
 };

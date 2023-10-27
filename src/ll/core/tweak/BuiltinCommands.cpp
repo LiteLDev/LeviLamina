@@ -172,7 +172,7 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
         outs.emplace("File Path", plugin->filePath);
         outs.merge(plugin->others);
         size_t width = 10;
-        for (auto& [k, _] : outs) width = std::max(width, k.length());
+        for (auto& [k, v] : outs) { width = std::max(width, k.length()); }
         for (auto& [k, v] : outs) {
             if (k != "PluginType" && k != "PluginFilePath")
                 oss << "- §l" << std::setw((int64)width) << std::left << k << "§r: " << v << std::endl;
@@ -234,7 +234,7 @@ void LLReloadPluginCommand(CommandOutput& output, std::string const& pluginName,
 }
 
 enum class LLSettingsOperation { Get, Set, Delete, Reload, Save, List };
-
+/*
 void LLSettingsCommand(
     CommandOutput&      output,
     LLSettingsOperation operation,
@@ -249,7 +249,7 @@ void LLSettingsCommand(
             auto path = nlohmann::json::json_pointer(key);
             auto val  = j[path];
             output.trSuccess("ll.cmd.settings.get.success", key);
-             output.success(val.dump(4));
+            output.success(val.dump(4));
             break;
         }
         case LLSettingsOperation::Set: {
@@ -294,6 +294,7 @@ void LLSettingsCommand(
         }
     } catch (std::exception const& e) { output.trError("{}", e.what()); }
 }
+*/
 
 class LLCommand : public Command {
 public:
@@ -339,15 +340,15 @@ public:
             else LLReloadPluginCommand(output, "", true);
             break;
         case Operation::Settings:
-            if (hasKeySet) {
-                if (hasValueSet) {
-                    LLSettingsCommand(output, settingsOperation, key, value);
-                } else {
-                    LLSettingsCommand(output, settingsOperation, key, "");
-                }
-            } else {
-                LLSettingsCommand(output, settingsOperation, "", "");
-            }
+            // if (hasKeySet) {
+            //     if (hasValueSet) {
+            //         LLSettingsCommand(output, settingsOperation, key, value);
+            //     } else {
+            //         LLSettingsCommand(output, settingsOperation, key, "");
+            //     }
+            // } else {
+            //     LLSettingsCommand(output, settingsOperation, "", "");
+            // }
             break;
         case Operation::Help:
             LLHelpCommand(output);

@@ -8,8 +8,8 @@
 #include "ll/api/base/StdInt.h"
 #include "ll/api/memory/MemoryUtils.h"
 
-#include "FMT/color.h"
-#include "FMT/core.h"
+#include "fmt/color.h"
+#include "fmt/core.h"
 
 namespace ll::StringUtils {
 
@@ -46,7 +46,7 @@ inline std::string replaceAll(std::string str, std::string const& oldValue, std:
     return str;
 }
 
-// "hello {Jim}" -> "hello {{Jim}}"  (for FMT bug)
+// "hello {Jim}" -> "hello {{Jim}}"  (for fmt bug)
 inline std::string escapeCurlyBracket(std::string str) {
     replaceAll(str, "{", "{{");
     replaceAll(str, "}", "}}");

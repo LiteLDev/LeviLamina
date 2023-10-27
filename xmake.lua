@@ -16,21 +16,23 @@ option_end()
 
 -- xmake-repo
 add_requires("asio 1.28.0")
-add_requires("cpp-httplib v0.12.1")
-add_requires("entt v3.11.1")
-add_requires("fmt 9.1.0")
-add_requires("gsl v3.1.0")
-add_requires("gtest 1.12.1")
+add_requires("entt v3.12.2")
+add_requires("gsl v4.0.0")
 add_requires("leveldb 1.23")
 add_requires("openssl 1.1.1-t")
-add_requires("magic_enum v0.8.2")
-add_requires("nlohmann_json v3.11.2")
 add_requires("rapidjson v1.1.0")
+
+-- ^^^ for mc / for ll vvv
+
+add_requires("cpp-httplib 0.14.0")
+add_requires("fmt 10.1.1")
+add_requires("magic_enum v0.9.0")
+add_requires("nlohmann_json v3.11.2")
+add_requires("gtest 1.12.1")
 
 -- liteldev-repo
 add_requires("dyncall 1.4")
 add_requires("compact_enc_det v1.0.1")
-add_requires("fifo_map v1.0.0")
 add_requires("pcg_cpp v1.0.0")
 add_requires("preloader v1.3.0")
 add_requires("symbolprovider v1.1.0")
@@ -52,6 +54,7 @@ target("LeviLamina")
     set_pcxxheader("src/ll/api/base/Global.h")
     set_configdir("$(buildir)/config")
     add_configfiles("src/(**.in)")
+    set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     add_headerfiles("src/(**.h)")
     add_includedirs("./src", "$(buildir)/config")
     add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4")
@@ -65,7 +68,7 @@ target("LeviLamina")
     -- xmake-repo
     add_packages("asio", "cpp-httplib", "entt", "fmt", "gsl", "gtest", "leveldb", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
     -- liteldev-repo
-    add_packages("fifo_map", "pcg_cpp", "compact_enc_det", "dyncall", "preloader", "symbolprovider", "ctre", "pfr")
+    add_packages("pcg_cpp", "compact_enc_det", "dyncall", "preloader", "symbolprovider", "ctre", "pfr")
     if has_config("localbdslibrary") then
         add_packages("localbdslibrary")
     else
@@ -81,6 +84,7 @@ target("LeviLamina")
         end
         target:set("configvar", "LL_VERSION_MAJOR", major)
         target:set("configvar", "LL_VERSION_MINOR", minor)
+        target:set("configvar", "LL_VERSION_PATCH", patch)
         target:set("configvar", "LL_VERSION_PATCH", patch)
     end)
 

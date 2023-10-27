@@ -13,7 +13,7 @@ using namespace ll::StringUtils;
 namespace fs = std::filesystem;
 
 ///////////// Hacker to get private FILE* /////////////
-
+namespace ll {
 struct meta_auxiliary {
     using type1 = FILE* std::filebuf::*;
     friend type1        get(meta_auxiliary);
@@ -40,7 +40,7 @@ std::optional<std::string> ReadAllFile(std::string const& filePath, bool isBinar
 
     fRead.open(str2wstr(filePath), mode);
     if (!fRead.is_open()) { return std::nullopt; }
-    std::string data((std::istreambuf_iterator<char>(fRead)), std::istreambuf_iterator<char>());
+    std::string data((std::istreambuf_iterator<char>(fRead)), {});
     fRead.close();
     return data;
 }
@@ -79,11 +79,12 @@ std::pair<int, std::string> UncompressFile(std::string const& filePath, std::str
     std::error_code ec;
     fs::create_directories(toDir, ec);
     toDir = u8str2str(fs::canonical(toDir, ec).u8string());
-    if (ec.value() != 0) {
-        return {ec.value(), ec.message()};
-    }
+    if (ec.value() != 0) { return {ec.value(), ec.message()}; }
     if (!toDir.ends_with("/")) { toDir += "/"; }
-    auto&& [exitCode, output] =
-        NewProcessSync(fmt::format(R"({} x "{}" -o"{}" -aoa)", ZIP_PROGRAM_PATH, filePath, toDir), processTimeout);
+    auto&& [exitCode, output] = NewProcessSync(
+        fmt::format(R"({} x "{}" -o"{}" -aoa)", ll::globalConfig.modules.compressor.path, filePath, toDir),
+        processTimeout
+    );
     return {exitCode, std::move(output)};
 }
+} // namespace ll

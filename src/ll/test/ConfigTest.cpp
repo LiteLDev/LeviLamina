@@ -3,7 +3,9 @@
 #include "ll/core/LeviLamina.h"
 #include "mc/server/ServerInstance.h"
 
-#include "ll/api/reflection/Reflection.h"
+#include "ll/api/Config.h"
+
+#include "nlohmann/json.hpp"
 
 // #include "ll/api/schedule/Scheduler.h"
 // #include "ll/api/service/GlobalService.h"
@@ -14,8 +16,12 @@
 // using namespace ll::schedule;
 // GameTickScheduler s;
 
+template <class T>
+
 class TestClass {
 public:
+    int version = 2;
+
     bool someFlag = false;
     bool eeeeFlag = true;
     struct {
@@ -57,35 +63,10 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
     origin();
 
-    auto helloReflection = TestClass{};
+    auto helloReflection = TestClass<int>{};
 
-    ll::logger.debug("\n{}", ll::reflection::toJson<TestClass>(helloReflection).dump(4));
+    ll::config::saveConfig(helloReflection, "plugins/Test/testconfig.json");
 
-
-    // s.add<DelayTask>(1_tick, [&] {
-    //     std::unordered_set<BlockPos> sbset;
-    //     ll::logger.debug("hellowwwwwwww DelayTask");
-    //     ll::Global<Level>->getLevelStorage().forEachKeyWithPrefix(
-    //         "",
-    //         DBHelpers::Category::Chunk,
-    //         [&](std::string_view key, std::string_view) {
-    //             auto sz = key.size();
-    //             if (sz == 9 || sz == 10 || sz == 13 || sz == 14) {
-    //                 int x   = *reinterpret_cast<const int*>(key.data());
-    //                 int z   = *reinterpret_cast<const int*>(key.data() + 4);
-    //                 int dim = 0;
-    //                 int idx = 8;
-    //                 if (sz > 12) {
-    //                     dim = *reinterpret_cast<const int*>(key.data() + 8);
-    //                     idx = 12;
-    //                 }
-    //                 if (!magic_enum::enum_contains<LevelChunkTag>(key[idx])) { return; }
-    //                 auto p = BlockPos{x * 16, z * 16, dim};
-    //                 if (sbset.contains(p)) { return; }
-    //                 sbset.insert(p);
-    //                 ll::logger.debug("key: {} {}", p.toString(), sz);
-    //             }
-    //         }
-    //     );
-    // });
+    ll::logger.debug("{} for load config", ll::config::loadConfig(helloReflection, "plugins/Test/testconfig.json"));
+    ll::logger.debug("\n{}", ll::reflection::serialize<nlohmann::ordered_json>(helloReflection).dump(4));
 }

@@ -438,7 +438,7 @@ DynamicCommand::builderCallbackHanler(DCCallback* /*cb*/, DCArgs* args, DCValue*
 std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command>* rtn, std::string name) {
 #define CaseInitBreak(type)                                                                                            \
     case ParameterType::type:                                                                                          \
-        ll::memory::construct<ParameterDataType::type>(command, offset);                                                 \
+        ll::memory::construct<ParameterDataType::type>(command, offset);                                               \
         break;
 
     assert(dynamicCommandInstances.count(name) == 1);
@@ -462,9 +462,9 @@ std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command
     return rtn;
 }
 
-DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicCommandInstance> commandInstance) {
+DynamicCommandInstance* DynamicCommand::preSetup(std::unique_ptr<class DynamicCommandInstance> commandInstance) {
     std::string name = commandInstance->getCommandName();
-    logger.info("Setting up command \"{}\"", name);
+    logger.debug("Setting up command \"{}\"", name);
 
     // Check if there is another command with the same name
     auto signature = ll::Global<CommandRegistry>->findCommand(name);
@@ -556,14 +556,14 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
         auto res = dynamicCommandInstances.emplace(commandInstance->name_, std::move(commandInstance));
         return res.first->second.get();
     }
-    CatchDynamicCommandError("DynamicCommand::_setup - " + name, commandInstance->handle_);
+    CatchDynamicCommandError("DynamicCommand::preSetup - " + name, commandInstance->handle_);
     return nullptr;
 }
 
 DynamicCommand::~DynamicCommand() {
 #define CaseDestructBreak(type)                                                                                        \
     case ParameterType::type:                                                                                          \
-        ll::memory::destruct<ParameterDataType::type>(this, offset);                                                     \
+        ll::memory::destruct<ParameterDataType::type>(this, offset);                                                   \
         break;
 
     std::string commandName = getCommandName();
@@ -611,7 +611,7 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
 
 DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class DynamicCommandInstance> commandInstance) {
     auto name = commandInstance->getCommandName();
-    auto ptr  = _setup(std::move(commandInstance));
+    auto ptr  = preSetup(std::move(commandInstance));
     if (!ptr) logger.warn("Registering command \"{}\" failed", name);
     updateAvailableCommands();
     return ptr;

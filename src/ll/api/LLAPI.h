@@ -193,16 +193,4 @@ LLNDAPI std::unordered_map<std::string, ll::Plugin*> getAllPlugins();
  */
 LLNDAPI HMODULE getLoaderHandle();
 
-/// Server Status
-enum class ServerStatus { Starting, Running, Stopping };
-LLNDAPI ServerStatus getServerStatus();
-LLNDAPI bool         isServerStarting();
-LLNDAPI bool         isServerStopping();
-
-/**
- * @breif Get LeviLamina's current language
- *
- * @return std::string  Language(such as: en, zh_CN, ja, ru)
- */
-std::string getLanguage();
 } // namespace ll

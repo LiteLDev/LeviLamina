@@ -38,7 +38,7 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
     wsprintf(
         daemonCmd,
         L"%ls %u \"%ls\"",
-        ll::StringUtils::str2wstr(globalConfig.crashLoggerPath).c_str(),
+        ll::StringUtils::str2wstr(globalConfig.modules.crashLogger.path).c_str(),
         GetCurrentProcessId(),
         ll::StringUtils::str2wstr(serverVersion).c_str()
     );

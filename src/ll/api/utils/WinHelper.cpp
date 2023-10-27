@@ -63,68 +63,6 @@ wchar_t* str2cwstr(std::string const& str) {
 
 #define READ_BUFFER_SIZE 4096
 
-bool NewProcess(std::string const& process, std::function<void(int, std::string)> callback, int timeLimit) {
-    SECURITY_ATTRIBUTES sa;
-    HANDLE              hRead, hWrite;
-    sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
-    sa.lpSecurityDescriptor = nullptr;
-    sa.bInheritHandle       = TRUE;
-
-    if (!CreatePipe(&hRead, &hWrite, &sa, 0)) return false;
-    STARTUPINFOW        si = {};
-    PROCESS_INFORMATION pi;
-
-    si.cb = sizeof(STARTUPINFO);
-    GetStartupInfoW(&si);
-    si.hStdOutput = si.hStdError = hWrite;
-    si.dwFlags                   = STARTF_USESTDHANDLES;
-
-    auto wCmd = str2cwstr(process);
-    if (!CreateProcessW(nullptr, wCmd, nullptr, nullptr, TRUE, 0, nullptr, nullptr, &si, &pi)) {
-        delete[] wCmd;
-        return false;
-    }
-    CloseHandle(hWrite);
-    CloseHandle(pi.hThread);
-
-    std::thread([hRead{hRead}, hProcess{pi.hProcess}, callback{std::move(callback)}, timeLimit{timeLimit}, wCmd{wCmd}](
-                ) {
-        if (!ll::isDebugMode()) _set_se_translator(seh_exception::TranslateSEHtoCE);
-        if (timeLimit == -1) WaitForSingleObject(hProcess, INFINITE);
-        else {
-            WaitForSingleObject(hProcess, timeLimit);
-            TerminateProcess(hProcess, UINT32_MAX);
-        }
-        char        buffer[READ_BUFFER_SIZE];
-        std::string strOutput;
-        DWORD       bytesRead, exitCode;
-
-        delete[] wCmd;
-        GetExitCodeProcess(hProcess, &exitCode);
-        while (true) {
-            ZeroMemory(buffer, READ_BUFFER_SIZE);
-            if (!ReadFile(hRead, buffer, READ_BUFFER_SIZE, &bytesRead, nullptr)) break;
-            strOutput.append(buffer, bytesRead);
-        }
-        CloseHandle(hRead);
-        CloseHandle(hProcess);
-
-        try {
-            if (callback) callback((int)exitCode, strOutput);
-        } catch (seh_exception const& e) {
-            ll::logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
-            ll::logger.error("In NewProcess callback");
-            PrintCurrentStackTraceback();
-        } catch (...) {
-            ll::logger.error("NewProcess Callback Failed!");
-            ll::logger.error("Uncaught Exception Detected!");
-            PrintCurrentStackTraceback();
-        }
-    }).detach();
-
-    return true;
-}
-
 std::pair<int, std::string> NewProcessSync(std::string const& process, int timeLimit, bool noReadOutput) {
     SECURITY_ATTRIBUTES sa;
     HANDLE              hRead, hWrite;
