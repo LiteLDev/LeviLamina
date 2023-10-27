@@ -93,7 +93,7 @@ bool NewProcess(std::string const& process, std::function<void(int, std::string)
         if (timeLimit == -1) WaitForSingleObject(hProcess, INFINITE);
         else {
             WaitForSingleObject(hProcess, timeLimit);
-            TerminateProcess(hProcess, -1);
+            TerminateProcess(hProcess, UINT32_MAX);
         }
         char        buffer[READ_BUFFER_SIZE];
         std::string strOutput;
@@ -152,7 +152,7 @@ std::pair<int, std::string> NewProcessSync(std::string const& process, int timeL
     if (timeLimit == -1) WaitForSingleObject(pi.hProcess, INFINITE);
     else {
         WaitForSingleObject(pi.hProcess, timeLimit);
-        TerminateProcess(pi.hProcess, -1);
+        TerminateProcess(pi.hProcess, UINT32_MAX);
     }
     char        buffer[READ_BUFFER_SIZE];
     std::string strOutput;

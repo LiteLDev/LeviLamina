@@ -3,14 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 class SavedData {
+public:
     bool        mDirty;
     std::string mId;
-
-public:
-    // prevent constructor by default
-    SavedData& operator=(SavedData const&);
-    SavedData(SavedData const&);
-    SavedData();
 
 public:
     // NOLINTBEGIN

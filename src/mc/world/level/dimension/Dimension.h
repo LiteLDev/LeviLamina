@@ -10,6 +10,8 @@
 #include "mc/world/level/SubChunkPos.h"
 #include "mc/world/level/chunk/ChunkKey.h"
 #include "mc/world/level/chunk/LevelChunkGarbageCollector.h"
+#include "mc/world/level/dimension/ActorChunkTransferEntry.h"
+#include "mc/world/level/dimension/ActorUnloadedChunkTransferEntry.h"
 #include "mc/world/level/dimension/DimensionHeightRange.h"
 #include "mc/world/level/dimension/IDimension.h"
 #include "mc/world/level/levelgen/v1/FeatureTerrainAdjustments.h"
@@ -28,6 +30,7 @@
 namespace mce { class Color; }
 // clang-format on
 
+class ServerPlayer;
 class BaseLightTextureImageBuilder;
 class DimensionBrightnessRamp;
 class LevelChunkMetaData;
@@ -51,17 +54,6 @@ class ChunkLoadActionList;
 class DelayActionList;
 class ILevel;
 
-struct ActorChunkTransferEntry {
-    ChunkPos mOldChunkPos;
-    ChunkPos mNewChunkPos;
-};
-
-struct ActorUnloadedChunkTransferEntry {
-    ChunkKey                     mFromChunkKey;    // this+0x0
-    std::string                  mActorStorageKey; // this+0x10
-    std::unique_ptr<CompoundTag> mActorTag;        // this+0x30
-};
-
 class Dimension : public IDimension,
                   public LevelListener,
                   public SavedData,
@@ -78,12 +70,12 @@ public:
     struct PlayerReplicationStructures {
     public:
         struct PlayerAtChunk {
-            class ChunkPos chunkPos;      // this+0x0
-            ushort         playerIndex{}; // this+0x8
+            ChunkPos chunkPos;      // this+0x0
+            ushort   playerIndex{}; // this+0x8
         };
-        std::unordered_map<class ChunkPos, std::vector<ushort>> mPlayersAtChunks;    // this+0x0
-        std::vector<PlayerAtChunk>                              mPlayerInterestMap;  // this+0x40
-        std::vector<gsl::not_null<class ServerPlayer*>>         unwrappedPlayerList; // this+0x58
+        std::unordered_map<ChunkPos, std::vector<ushort>> mPlayersAtChunks;    // this+0x0
+        std::vector<PlayerAtChunk>                        mPlayerInterestMap;  // this+0x40
+        std::vector<gsl::not_null<ServerPlayer*>>         unwrappedPlayerList; // this+0x58
 
     public:
         // NOLINTBEGIN
@@ -109,7 +101,7 @@ public:
     std::unique_ptr<DimensionBrightnessRamp>         mDimensionBrightnessRamp;                           // this+0x128
     std::shared_ptr<LevelChunkMetaData>              mTargetMetaData;                                    // this+0x130
     std::string                                      mName;                                              // this+0x140
-    AutomaticID<Dimension, int>                      mId;                                                // this+0x160
+    DimensionType                                    mId;                                                // this+0x160
     bool                                             mUltraWarm;                                         // this+0x164
     bool                                             mHasCeiling;                                        // this+0x165
     bool                                             mHasWeather;                                        // this+0x166
@@ -149,9 +141,8 @@ public:
         mBlocksChangedBySubChunkMap; // this+0x5B8
 
     // Scripting::StrongObjectHandle
-    char mClientScriptDimension[0x20]; // this+0x5F8
+    uchar mClientScriptDimension[0x20]; // this+0x5F8
 
-    // std::mutex mSynchedChunkMutex; 这个不知被优化去哪了
     std::unique_ptr<PlayerReplicationStructures> mReplicationStructures; // this+0x618
     std::vector<WeakEntityRef>                   mPlayersToReplicate;    // this+0x620
     bool                                         mRunChunkGenWatchDog;   // this+0x638

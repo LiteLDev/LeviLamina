@@ -1,11 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/level/ChunkPos.h"
 
 struct ChunkPositionAndDimension {
 public:
-    // prevent constructor by default
-    ChunkPositionAndDimension& operator=(ChunkPositionAndDimension const&);
-    ChunkPositionAndDimension(ChunkPositionAndDimension const&);
-    ChunkPositionAndDimension();
+    ChunkPos      mPos; // this+0x0
+    DimensionType mType; // this+0x8
 };

@@ -1,11 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/chunk/ChunkKey.h"
 
-class DBChunkStorageKey {
+class DBChunkStorageKey : public ChunkKey{
 public:
-    // prevent constructor by default
-    DBChunkStorageKey& operator=(DBChunkStorageKey const&);
-    DBChunkStorageKey(DBChunkStorageKey const&);
-    DBChunkStorageKey();
+    using ChunkKey::ChunkKey;
 };

@@ -19,13 +19,18 @@ public:
     bool                     mLocalize;   // this+0x90
     std::string              mXuid;       // this+0x98
     std::string              mPlatformId; // this+0xB8
-    // prevent constructor by default
-    TextPacket(TextPacket const&);
+
+    [[nodiscard]] inline static TextPacket createRawMessage(std::string const& msg) {
+        auto res     = TextPacket{};
+        res.mType    = TextPacketType::Raw;
+        res.mMessage = msg;
+        return res;
+    }
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1TextPacket@@UEAA@XZ
+    virtual ~TextPacket();
 
     // vIndex: 1, symbol: ?getId@TextPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -38,9 +43,6 @@ public:
 
     // vIndex: 7, symbol: ?_read@TextPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1TextPacket@@UEAA@XZ
-    MCVAPI ~TextPacket();
 
     // symbol: ??0TextPacket@@QEAA@XZ
     MCAPI TextPacket();

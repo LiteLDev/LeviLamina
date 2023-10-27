@@ -1,20 +1,7 @@
 ﻿#pragma once
-#include <memory>
-#pragma warning(disable : 26812)
-#include <string>
-#include <unordered_map>
-
-#ifndef WIN32_LEAN_AND_MEAN
-#define WIN32_LEAN_AND_MEAN
-#endif
-
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
 
 #include "ll/api/base/Global.h"
 #include "ll/api/utils/WinHelper.h"
-#include "ll/core/PluginManager.h"
 
 namespace ll {
 
@@ -136,20 +123,15 @@ LLNDAPI std::string getDataPath(std::string const& pluginName);
  * @return bool     True if the plugin is registered successfully
  * @note   The implementation of this function must be in header file(because of `GetCurrentModule`)
  */
-inline bool registerPlugin(
+LLAPI bool registerPlugin(
     std::string const& name,
     std::string const& desc,
     ll::Version const& version,
     std::string const& git     = "",
     std::string const& license = "",
-    std::string const& website = ""
-) {
-    std::map<std::string, std::string> others;
-    if (!git.empty()) others.emplace("Git", git);
-    if (!license.empty()) others.emplace("License", license);
-    if (!website.empty()) others.emplace("Website", website);
-    return PluginManager::registerPlugin(GetCurrentModule(), name, desc, version, others);
-}
+    std::string const& website = "",
+    HMODULE            handle  = GetCurrentModule()
+);
 
 /**
  * @brief Register a plugin
@@ -166,14 +148,13 @@ inline bool registerPlugin(
  * ll::registerPlugin("Test", "A test plugin", Version(0, 0, 1, Version::Alpha), {{"Note","This is Note"}});
  * @endcode
  */
-inline bool registerPlugin(
+LLAPI bool registerPlugin(
     std::string const&                        name,
     std::string const&                        desc,
     ll::Version const&                        version,
-    std::map<std::string, std::string> const& others
-) {
-    return PluginManager::registerPlugin(GetCurrentModule(), name, desc, version, others);
-}
+    std::map<std::string, std::string> const& others,
+    HMODULE                                   handle = GetCurrentModule()
+);
 
 /**
  * @brief Get a loaded plugin by name

@@ -75,23 +75,23 @@ auto constexpr virtualCall(void const* _this, Args&&... args) -> RTN {
 }
 
 template <typename T>
-[[nodiscard]] constexpr T& dAccess(void* ptr, uintptr_t off) {
-    return *(T*)(((uintptr_t)ptr) + off);
+[[nodiscard]] constexpr T& dAccess(void* ptr, intptr_t off) {
+    return *(T*)(((uintptr_t)ptr) + (uintptr_t)(off));
 }
 
 template <typename T>
-[[nodiscard]] constexpr T const& dAccess(void const* ptr, uintptr_t off) {
-    return *(T*)(((uintptr_t)ptr) + off);
+[[nodiscard]] constexpr T const& dAccess(void const* ptr, intptr_t off) {
+    return *(T*)(((uintptr_t)ptr) + (uintptr_t)off);
 }
 
 template <typename T>
-constexpr void destruct(void* ptr, uintptr_t off) noexcept {
-    std::destroy_at(std::launder(reinterpret_cast<T*>(((uintptr_t)ptr) + off)));
+constexpr void destruct(void* ptr, intptr_t off) noexcept {
+    std::destroy_at(std::launder(reinterpret_cast<T*>(((uintptr_t)ptr) + (uintptr_t)off)));
 }
 
 template <typename T, class... Types>
-constexpr auto construct(void* ptr, uintptr_t off, Types&&... args) {
-    return std::construct_at(std::launder(reinterpret_cast<T*>(((uintptr_t)ptr) + off)), std::forward<Types>(args)...);
+constexpr auto construct(void* ptr, intptr_t off, Types&&... args) {
+    return std::construct_at(std::launder(reinterpret_cast<T*>(((uintptr_t)ptr) + (uintptr_t)off)), std::forward<Types>(args)...);
 }
 
 [[nodiscard]] inline size_t getMemSizeFromPtr(void* ptr) {

@@ -14,40 +14,64 @@
 #include "ll/core/Version.h"
 
 
-using ll::StringUtils::str2wstr;
+namespace ll {
 
 namespace {
 inline ushort stoi(std::string_view str) {
-    ushort ret = -1;
+    ushort ret = UINT16_MAX;
     std::from_chars(str.data(), str.data() + str.size(), ret);
     return ret;
 }
 } // namespace
 
-std::string ll::getDataPath(std::string const& pluginName) {
+bool registerPlugin(
+    std::string const& name,
+    std::string const& desc,
+    ll::Version const& version,
+    std::string const& git     ,
+    std::string const& license ,
+    std::string const& website ,
+    HMODULE            handle  
+) {
+    std::map<std::string, std::string> others;
+    if (!git.empty()) others.emplace("Git", git);
+    if (!license.empty()) others.emplace("License", license);
+    if (!website.empty()) others.emplace("Website", website);
+    return PluginManager::registerPlugin(handle, name, desc, version, others);
+}
+
+bool registerPlugin(
+    std::string const&                        name,
+    std::string const&                        desc,
+    ll::Version const&                        version,
+    std::map<std::string, std::string> const& others,
+    HMODULE                                   handle
+) {
+    return PluginManager::registerPlugin(handle, name, desc, version, others);
+}
+
+std::string getDataPath(std::string const& pluginName) {
     std::string dataPath = "plugins\\LeviLamina\\" + pluginName;
-    if (!std::filesystem::exists(str2wstr(dataPath))) {
+    if (!std::filesystem::exists(StringUtils::str2wstr(dataPath))) {
         std::error_code ec;
-        std::filesystem::create_directories(str2wstr(dataPath), ec);
+        std::filesystem::create_directories(StringUtils::str2wstr(dataPath), ec);
     }
     return dataPath;
 }
 
-std::string ll::getLoaderVersionString() { return getLoaderVersion().toString(); }
+std::string getLoaderVersionString() { return getLoaderVersion().toString(); }
 
-bool ll::isDebugMode() { return ll::globalConfig.debugMode; }
+bool isDebugMode() { return globalConfig.debugMode; }
 
-ll::Plugin* ll::getPlugin(std::string const& name) { return PluginManager::getPlugin(name); }
+Plugin* getPlugin(std::string const& name) { return PluginManager::getPlugin(name); }
 
-ll::Plugin* ll::getPlugin(HMODULE handle) { return PluginManager::getPlugin(handle); }
+Plugin* getPlugin(HMODULE handle) { return PluginManager::getPlugin(handle); }
 
-bool ll::hasPlugin(std::string const& name) { return PluginManager::hasPlugin(name); }
+bool hasPlugin(std::string const& name) { return PluginManager::hasPlugin(name); }
 
-std::unordered_map<std::string, ll::Plugin*> ll::getAllPlugins() { return PluginManager::getAllPlugins(); }
+std::unordered_map<std::string, Plugin*> getAllPlugins() { return PluginManager::getAllPlugins(); }
 
-HMODULE ll::getLoaderHandle() { return GetCurrentModule(); }
-
-namespace ll {
+HMODULE getLoaderHandle() { return GetCurrentModule(); }
 
 // region ### Version ###
 Version::Version(ushort major, ushort minor, ushort patch, PreRelease preRelease)
@@ -93,7 +117,7 @@ Version Version::parse(std::string const& str) {
         }
     }
 
-    auto res = ll::StringUtils::splitByPattern(&basic, ".");
+    auto res = StringUtils::splitByPattern(&basic, ".");
 
     if (!res.empty()) result.mMajor = stoi(res[0]);
     if (res.size() >= 2) result.mMinor = stoi(res[1]);
@@ -107,12 +131,12 @@ Version getLoaderVersion() {
     return {LL_VERSION_MAJOR, LL_VERSION_MINOR, LL_VERSION_PATCH, (Version::PreRelease)LL_VERSION_PRE_RELEASE};
 }
 
+ServerStatus getServerStatus() { return globalRuntimeConfig.serverStatus; }
+
+bool isServerStarting() { return getServerStatus() == ServerStatus::Starting; }
+
+bool isServerStopping() { return getServerStatus() == ServerStatus::Stopping; }
+
+std::string getLanguage() { return globalConfig.language; }
+
 } // namespace ll
-
-ll::ServerStatus ll::getServerStatus() { return ll::globalRuntimeConfig.serverStatus; }
-
-bool ll::isServerStarting() { return getServerStatus() == ll::ServerStatus::Starting; }
-
-bool ll::isServerStopping() { return getServerStatus() == ll::ServerStatus::Stopping; }
-
-std::string ll::getLanguage() { return ll::globalConfig.language; }

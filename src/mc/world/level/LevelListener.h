@@ -83,7 +83,6 @@ public:
     // vIndex: 17, symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
     virtual void levelEvent(::LevelEvent, class Vec3 const&, int);
 
-    // 可能实际与十六的互换
     // vIndex: 18, symbol: ?takePicture@LevelListener@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
     virtual void takePicture(class cg::ImageBuffer&, class Actor*, class Actor*, struct ScreenshotOptions&);
 

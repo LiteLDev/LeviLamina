@@ -9,13 +9,13 @@
 #include "mc/world/level/dimension/Dimension.h"
 
 
-void Packet::sendTo(Player& player) { player.sendNetworkPacket(*this); }
+void Packet::sendTo(Player const& player) { player.sendNetworkPacket(*this); }
 
-void Packet::sendTo(BlockPos const& pos, DimensionType type, optional_ref<Player> except) const {
+void Packet::sendTo(BlockPos const& pos, DimensionType type, optional_ref<Player const> except) const {
     ll::Global<Minecraft>->getLevel()->getDimension(type)->sendPacketForPosition(pos, *this, except.as_ptr());
 }
 
-void Packet::sendTo(Actor& actor, optional_ref<Player> except) const {
+void Packet::sendTo(Actor const& actor, optional_ref<Player const> except) const {
     actor.getDimension().sendPacketForEntity(actor, *this, except.as_ptr());
 }
 

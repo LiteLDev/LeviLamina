@@ -52,7 +52,7 @@ target("LeviLamina")
     set_pcxxheader("src/ll/api/base/Global.h")
     set_configdir("$(buildir)/config")
     add_configfiles("src/(**.in)")
-    add_headerfiles("src/(**.h)", "src/(**.hpp)")
+    add_headerfiles("src/(**.h)")
     add_includedirs("./src", "$(buildir)/config")
     add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4")
     add_defines(

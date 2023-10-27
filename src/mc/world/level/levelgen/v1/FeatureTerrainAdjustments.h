@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/ChunkPos.h"
 
 class FeatureTerrainAdjustments {
 public:

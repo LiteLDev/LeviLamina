@@ -2,8 +2,8 @@
 
 #pragma clang diagnostic ignored "-Wignored-qualifiers"
 
-#pragma warning(disable : 4099)
-#pragma warning(disable : 4201)
+#pragma warning(disable : 4099) // for MOJANG : type name first seen using 'class' now seen using 'struct'
+#pragma warning(disable : 4201) // for MOJANG : nonstandard extension used : nameless struct/union
 
 #define MCAPI  __declspec(dllimport)
 #define MCVAPI MCAPI
@@ -105,12 +105,12 @@
 
 #include "mc/common/wrapper/optional_ref.h" // replace optional<reference_wrapper<>>
 
-using uchar  = uint8_t;
-using ushort = uint16_t;
-using uint   = uint32_t;
-using ulong  = unsigned long;
-using ldouble  = long double;
-using uint64 = uint64_t;
+using uchar   = uint8_t;
+using ushort  = uint16_t;
+using uint    = uint32_t;
+using ulong   = unsigned long;
+using ldouble = long double;
+using uint64  = uint64_t;
 
 using schar = int8_t;
 using int64 = int64_t;

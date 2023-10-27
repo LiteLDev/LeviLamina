@@ -51,9 +51,4 @@ void Player::disconnect(std::string const& reason) const {
     );
 }
 
-void Player::sendMessage(std::string const& msg) const {
-    TextPacket pkt{};
-    pkt.mType    = TextPacketType::Raw;
-    pkt.mMessage = msg;
-    sendNetworkPacket(pkt);
-}
+void Player::sendMessage(std::string const& msg) const { TextPacket::createRawMessage(msg).sendTo(*this); }

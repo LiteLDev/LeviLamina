@@ -4,9 +4,6 @@
 
 struct Brightness {
 public:
-    // prevent constructor by default
-    Brightness();
-
     uchar value;
 
 public:

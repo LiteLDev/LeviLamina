@@ -7,13 +7,9 @@
 #include "mc/world/AutomaticID.h"
 
 class ChunkKey {
-    ChunkPos pos;					// this+0x0
-	AutomaticID<Dimension, int> id; // this+0x8
 public:
-    // prevent constructor by default
-    ChunkKey& operator=(ChunkKey const&);
-    ChunkKey(ChunkKey const&);
-    ChunkKey();
+    ChunkPos      pos; // this+0x0
+    DimensionType id;  // this+0x8
 
 public:
     // NOLINTBEGIN

@@ -30,20 +30,15 @@ public:
     )
     : mPriority(priority),
       mReliability(reliability),
-      mClientSubId(clientSubId) {
-        if (compress) {
-            mCompressible = Compressibility::Compressible;
-        } else {
-            mCompressible = Compressibility::Incompressible;
-        }
-    }
+      mClientSubId(clientSubId),
+      mCompressible(compress ? Compressibility::Compressible : Compressibility::Incompressible) {}
 
     /**
      * Send the packet to a specific server player.
      *
      * @param player The server player to send the packet to.
      */
-    LLAPI void sendTo(class Player&);
+    LLAPI void sendTo(class Player const&);
 
     /**
      * Send the packet to all relevant players in a 2D plane at a position in a given dimension.
@@ -51,7 +46,7 @@ public:
      * @param type The type of dimension to send the packet in.
      * @param except exclude this player.
      */
-    LLAPI void sendTo(class BlockPos const&, DimensionType, optional_ref<class Player>) const;
+    LLAPI void sendTo(class BlockPos const&, DimensionType, optional_ref<class Player const>) const;
 
     /**
      * Send the packet to all relevant players within a specific actor.
@@ -59,7 +54,7 @@ public:
      * @param actor The actor to send the packet to.
      * @param except exclude this player.
      */
-    LLAPI void sendTo(class Actor&, optional_ref<class Player>) const;
+    LLAPI void sendTo(class Actor const&, optional_ref<class Player const>) const;
 
     /**
      * Send the packet to a specific client identified by network identifier and sub-client ID.

@@ -9,13 +9,15 @@
 #include "mc/world/level/dimension/Dimension.h"
 
 class EndDragonFight;
+
 class TheEndDimension : public ::Dimension {
-    std::unique_ptr<EndDragonFight> mDragonFight;
 public:
     // prevent constructor by default
     TheEndDimension& operator=(TheEndDimension const&);
     TheEndDimension(TheEndDimension const&);
     TheEndDimension();
+
+    std::unique_ptr<EndDragonFight> mDragonFight;
 
 public:
     // NOLINTBEGIN
@@ -25,14 +27,15 @@ public:
 
     // vIndex: 9, symbol: ?upgradeLevelChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
     virtual void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
-    
+
     // vIndex: 10, symbol: ?fixWallChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
     virtual void fixWallChunk(class ChunkSource&, class LevelChunk&);
 
     // vIndex: 11, symbol: ?levelChunkNeedsUpgrade@TheEndDimension@@UEBA_NAEBVLevelChunk@@@Z
     virtual bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
 
-    // vIndex: 29, symbol: ?translatePosAcrossDimension@TheEndDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
+    // vIndex: 29, symbol:
+    // ?translatePosAcrossDimension@TheEndDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
     virtual class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
 
     // vIndex: 37, symbol: ?_upgradeOldLimboEntity@TheEndDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
@@ -41,7 +44,7 @@ public:
     // vIndex: 38, symbol:
     // ?_wrapStorageForVersionCompatibility@TheEndDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
     virtual std::unique_ptr<class ChunkSource>
-           _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
+        _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
 
     // symbol: ?_upgradeOldLimboEntity@TheEndDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
     // MCVAPI void _upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion);
