@@ -49,6 +49,9 @@ inline bool loadConfig(T& config, std::string const& path, bool overwriteAfterFa
                 }
             }
             ll::reflection::deserialize<J, T>(config, data);
+        } else {
+            configLogger.warn("config.file.empty"_tr); // TODO i18n
+            res = false;
         }
     } catch (...) {}
     if (!res && overwriteAfterFail) saveConfig<T, J>(config, path);

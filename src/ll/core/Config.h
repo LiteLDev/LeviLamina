@@ -45,13 +45,13 @@ struct LLConfig {
         } compressor{};
 
         struct {
+            struct {
+                bool fixArrayTagCompareBug = true;
+            } bugfix{};
             bool tpdimCommand             = true;
             bool settingsCommand          = true;
             bool disableAutoCompactionLog = true;
         } tweak{};
-        struct {
-            bool fixArrayTagCompareBug = true;
-        } bugfix{};
 
         bool checkRunningBDS    = true;
         bool simpleServerLogger = true;

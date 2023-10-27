@@ -312,7 +312,7 @@ void leviLaminaMain() {
     printLogo();
 
     // DebugMode
-    if (ll::globalConfig.debugMode) logger.warn("ll.main.warning.inDevMode"_tr);
+    if (ll::isDebugMode()) logger.warn("ll.main.warning.inDevMode"_tr);
 
     // Addon Helper
     // if (ll::globalConfig.enableAddonsHelper) {
