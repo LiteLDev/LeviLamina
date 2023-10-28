@@ -47,7 +47,8 @@ struct LLConfig {
         struct {
             struct {
                 bool fixArrayTagCompareBug = true;
-            } bugfix{};
+            } bugfixes{};
+
             bool tpdimCommand             = true;
             bool settingsCommand          = true;
             bool disableAutoCompactionLog = true;
@@ -57,7 +58,7 @@ struct LLConfig {
         bool simpleServerLogger = true;
 
         std::map<std::string, std::string> resourcePackEncryptionMap = {
-            {"UUID", "KEY"}
+            {"<UUID>", "<KEY>"}
         };
 
     } modules{};
@@ -65,7 +66,7 @@ struct LLConfig {
 
 LLETAPI LLConfig globalConfig;
 
-bool LoadLLConfig();
+bool loadLLConfig();
 
-bool SaveLLConfig();
+bool saveLLConfig();
 } // namespace ll

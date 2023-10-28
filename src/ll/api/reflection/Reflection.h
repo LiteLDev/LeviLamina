@@ -65,6 +65,7 @@ consteval std::string_view typeRawName() noexcept {
 consteval std::string_view removeTypePrefix(std::string_view s) noexcept {
     if (s.starts_with("enum ")) { s.remove_prefix(sizeof("enum ") - 1); }
     if (s.starts_with("class ")) { s.remove_prefix(sizeof("class ") - 1); }
+    if (s.starts_with("union ")) { s.remove_prefix(sizeof("union ") - 1); }
     if (s.starts_with("struct ")) { s.remove_prefix(sizeof("struct ") - 1); }
     return s;
 }

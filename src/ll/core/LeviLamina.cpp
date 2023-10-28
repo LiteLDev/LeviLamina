@@ -247,7 +247,15 @@ void unixSignalHandler(int signum) {
 
 extern void RegisterCommands();
 
-extern void EndScheduleSystem();
+
+// bugfix
+
+extern void enableArrayTagBugFix();
+
+void setupBugFixes() {
+    auto& bugfixSettings = ll::globalConfig.modules.tweak.bugfixes;
+    if (bugfixSettings.fixArrayTagCompareBug) { enableArrayTagBugFix(); }
+}
 
 namespace bstats {
 void registerBStats();
@@ -274,16 +282,20 @@ void leviLaminaMain() {
     auto i18n = ll::i18n::Translation::load("plugins/LeviLamina/LangPack/");
 
     // Load Config
-    ll::LoadLLConfig();
+    ll::loadLLConfig();
+
+    // Setup bug fixes
+    setupBugFixes();
+
+    // Update default language
+    if (i18n && ll::globalConfig.language != "system") { i18n->defaultLocaleName = ll::globalConfig.language; }
+
 
     // Unzip packed Node Modules
     unzipNodeModules();
 
     // Decompress resource packs
     decompressResourcePacks();
-
-    // Update default language
-    if (i18n && ll::globalConfig.language != "system") { i18n->defaultLocaleName = ll::globalConfig.language; }
 
     // Check Protocol Version
     checkProtocolVersion();

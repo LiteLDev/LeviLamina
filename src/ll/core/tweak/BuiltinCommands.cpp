@@ -282,11 +282,11 @@ void LLSettingsCommand(
             break;
         }
         case LLSettingsOperation::Reload:
-            ll::LoadLLConfig();
+            ll::loadLLConfig();
             output.trSuccess("ll.cmd.settings.reload.success");
             break;
         case LLSettingsOperation::Save:
-            ll::SaveLLConfig();
+            ll::saveLLConfig();
             output.trSuccess("ll.cmd.settings.save.success");
             break;
         default:

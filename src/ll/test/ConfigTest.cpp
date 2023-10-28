@@ -44,7 +44,7 @@ public:
     };
     std::tuple<int, bool, float>                       tuple;
     std::pair<std::string_view, MyPair>                pair;
-    std::array<int, 5>                                 array;
+    std::array<int, 5>                                 array{};
     std::optional<std::vector<float>>                  vector     = std::vector<float>{{}, {}, {}};
     std::optional<std::vector<float>>                  nullvector = std::nullopt;
     std::multiset<std::pair<std::string_view, double>> mulset     = {{}, {}};

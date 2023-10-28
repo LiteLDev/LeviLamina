@@ -17,11 +17,12 @@ concept IsConfig =
 template <IsConfig T, typename J = nlohmann::ordered_json>
 inline bool saveConfig(T const& config, std::string const& path) noexcept {
     try {
+        namespace fs = std::filesystem;
         auto data{ll::reflection::serialize<J, T>(config)};
         data.erase("version");
         data[metaDataName]["name"]    = ll::reflection::type_name_v<T>;
         data[metaDataName]["version"] = config.version;
-        std::filesystem::create_directories(std::filesystem::path(path).remove_filename());
+        fs::create_directories(fs::path(path).remove_filename());
         std::ofstream{path} << data.dump(4);
         return true;
     } catch (...) {}
@@ -42,8 +43,10 @@ inline bool loadConfig(T& config, std::string const& path, bool overwriteAfterFa
                 res = false;
             } else {
                 auto& metaData = data[metaDataName];
-                if ((!metaData.contains("name") || (std::string)metaData["name"] != ll::reflection::type_name_v<T>)
-                    || (!metaData.contains("version") || (int64)metaData["version"] != config.version)) {
+                if (!((metaData.contains("name") && metaData["name"].is_string() && (std::string)metaData["name"] == ll::reflection::type_name_v<T>)&&(
+                        metaData.contains("version") && metaData["version"].is_number()
+                        && (int64)metaData["version"] == config.version
+                    ))) {
                     configLogger.warn("config.metadata.unmatch"_tr); // TODO i18n
                     res = false;
                 }
