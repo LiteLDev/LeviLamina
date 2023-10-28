@@ -17,7 +17,7 @@
 #ifdef TestRecipes
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    ServerStartedEventHook,
+    TestRecipesHook,
     HookPriority::Normal,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,

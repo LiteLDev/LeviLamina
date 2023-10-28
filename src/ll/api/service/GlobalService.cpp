@@ -29,16 +29,14 @@ namespace {
 
 using namespace ll::memory;
 
-// Minecraft
-LL_AUTO_TYPED_INSTANCE_HOOK(MinecraftService, HookPriority::High, Minecraft, &Minecraft::initAsDedicatedServer, void) {
+LL_AUTO_TYPED_INSTANCE_HOOK(MinecraftServiceHook, HookPriority::High, Minecraft, &Minecraft::initAsDedicatedServer, void) {
     ll::Global<Minecraft>.init(this);
     origin();
     ll::Global<CommandRegistry>.init(&getCommands().getRegistry());
 }
 
-// ServerLevel
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    ServerStartedEventHook,
+    ServerLevelServiceHook,
     HookPriority::High,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,
@@ -55,9 +53,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     origin(ins);
 }
 
-// ServerNetworkHandler
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    ServerNetworkHandlerService,
+    ServerNetworkHandlerServiceHook,
     HookPriority::High,
     ServerNetworkHandler,
     &ServerNetworkHandler::allowIncomingConnections,
@@ -70,9 +67,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     origin(a1, a2);
 }
 
-// AllowListFile
 LL_AUTO_TYPED_STATIC_HOOK(
-    AllowListFileService,
+    AllowListFileServiceHook,
     HookPriority::High,
     AllowListCommand,
     AllowListCommand::setup,
@@ -84,9 +80,8 @@ LL_AUTO_TYPED_STATIC_HOOK(
     origin(reg, file);
 }
 
-// PropertiesSettings
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    PropertiesSettingsService,
+    PropertiesSettingsServiceHook,
     HookPriority::High,
     PropertiesSettings,
     &PropertiesSettings::isPropertiesFileLoaded,
@@ -97,9 +92,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     return origin();
 }
 
-// ResourcePackRepository
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    ResourcePackInitEventHook,
+    ResourcePackRepositoryServiceHook,
     HookPriority::High,
     ResourcePackRepository,
     &ResourcePackRepository::_initialize,

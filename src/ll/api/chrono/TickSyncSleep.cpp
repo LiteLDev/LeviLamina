@@ -9,7 +9,13 @@ std::vector<std::variant<
     std::reference_wrapper<TickSyncSleep<GameTimeClock>>>>
     ticklist;
 
-LL_AUTO_TYPED_INSTANCE_HOOK(ScheduleTaskTickHook, HookPriority::Normal, ServerLevel, &ServerLevel::_subTick, void) {
+LL_AUTO_TYPED_INSTANCE_HOOK(
+    TickSyncSleepInterrruptHook,
+    HookPriority::Normal,
+    ServerLevel,
+    &ServerLevel::_subTick,
+    void
+) {
     origin();
     for (auto& e : ticklist) {
         std::visit(

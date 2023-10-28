@@ -146,7 +146,7 @@ public:
     }
 };
 
-LL_AUTO_STATIC_HOOK(
+LL_AUTO_STATIC_HOOK(  // TODO: To Event
     ServerCommandsCommandTest,
     HookPriority::Normal,
     ServerCommands::setupStandardServer,

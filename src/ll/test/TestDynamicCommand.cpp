@@ -222,17 +222,6 @@ void setupRemoveCommand() {
     DynamicCommand::setup(std::move(command));
 }
 
-// force enable cheat
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    LevelDataService,
-    HookPriority::Normal,
-    LevelData,
-    "?hasCommandsEnabled@LevelData@@QEBA_NXZ",
-    bool
-) {
-    return true;
-};
-
 // enum command
 void onEnumExecute(
     DynamicCommand const&                                    cmd,
