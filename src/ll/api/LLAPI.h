@@ -10,15 +10,15 @@ namespace ll {
  * @see  https://semver.org/
  */
 struct Version {
-    enum class PreRelease : ushort { None = 0xFFFF, Alpha = 0, Beta = 1 };
+    enum class Label : ushort { None = 0xFFFF, Alpha = 0, Beta = 1 };
 
-    ushort     mMajor      = 0;
-    ushort     mMinor      = 0;
-    ushort     mPatch      = 0;
-    PreRelease mPreRelease = PreRelease::None;
+    ushort mMajor = 0;
+    ushort mMinor = 0;
+    ushort mPatch = 0;
+    Label  mLabel = Label::None;
 
     explicit Version() = default;
-    LLAPI Version(ushort major, ushort minor, ushort patch, PreRelease preRelease = PreRelease::None);
+    LLAPI Version(ushort major, ushort minor, ushort patch, Label label = Label::None);
 
     LLNDAPI bool operator<(Version const& other) const;
     LLNDAPI bool operator==(Version const& other) const;
@@ -41,8 +41,6 @@ struct Version {
      */
     LLNDAPI static Version parse(std::string const& str);
 
-private:
-    static constexpr std::array<std::string_view, 2> PRE_RELEASE_STRINGS = {"alpha", "beta"};
 };
 
 struct Plugin {

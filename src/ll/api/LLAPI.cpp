@@ -1,4 +1,6 @@
 #include <charconv>
+#include <magic_enum.hpp>
+
 #pragma comment(lib, "version")
 
 #include <filesystem>
@@ -74,29 +76,32 @@ std::unordered_map<std::string, Plugin*> getAllPlugins() { return PluginManager:
 HMODULE getLoaderHandle() { return GetCurrentModule(); }
 
 // region ### Version ###
-Version::Version(ushort major, ushort minor, ushort patch, PreRelease preRelease)
+
+inline std::array<std::string, 2> LABEL_NAMES = {"alpha", "beta"};
+
+Version::Version(ushort major, ushort minor, ushort patch, Label label)
 : mMajor(major),
   mMinor(minor),
   mPatch(patch),
-  mPreRelease(preRelease) {}
+  mLabel(label) {}
 
 bool Version::operator<(Version const& other) const {
     return mMajor < other.mMajor || (mMajor == other.mMajor && mMinor < other.mMinor)
         || (mMajor == other.mMajor && mMinor == other.mMinor && mPatch < other.mPatch)
         || (mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch
-            && mPreRelease < other.mPreRelease);
+            && mLabel < other.mLabel);
 }
 
 bool Version::operator==(Version const& other) const {
     return mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch
-        && mPreRelease == other.mPreRelease;
+        && mLabel == other.mLabel;
 }
 
 std::string Version::toString() const { return fmt::format("{}.{}.{}", mMajor, mMinor, mPatch); }
 
 std::string Version::toFullString() const {
-    if (mPreRelease == PreRelease::None) return toString();
-    return fmt::format("{}-{}", toString(), PRE_RELEASE_STRINGS[(ushort)mPreRelease]);
+    if (mLabel == Label::None) return toString();
+    return fmt::format("{}-{}", toString(), LABEL_NAMES[(ushort)mLabel]);
 }
 
 Version Version::parse(std::string const& str) {
@@ -110,9 +115,9 @@ Version Version::parse(std::string const& str) {
         std::transform(suffix.begin(), suffix.end(), suffix.begin(), ::tolower);
     }
 
-    for (ushort i = 0; i < (ushort)PRE_RELEASE_STRINGS.size(); ++i) {
-        if (suffix == PRE_RELEASE_STRINGS[i]) {
-            result.mPreRelease = static_cast<PreRelease>((ushort)i);
+    for (ushort i = 0; i < (ushort)LABEL_NAMES.size(); ++i) {
+        if (suffix == LABEL_NAMES[i]) {
+            result.mLabel = static_cast<Label>((ushort)i);
             break;
         }
     }
@@ -128,7 +133,7 @@ Version Version::parse(std::string const& str) {
 // endregion
 
 Version getLoaderVersion() {
-    return {LL_VERSION_MAJOR, LL_VERSION_MINOR, LL_VERSION_PATCH, (Version::PreRelease)LL_VERSION_PRE_RELEASE};
+    return {LL_VERSION_MAJOR, LL_VERSION_MINOR, LL_VERSION_PATCH, (Version::Label)LL_VERSION_LABEL};
 }
 
 } // namespace ll
