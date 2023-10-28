@@ -12,7 +12,6 @@
 using namespace ll::StringUtils;
 
 namespace ll {
-std::mutex logger_mutex;
 
 bool checkLogLevel(int level, int outLevel) {
     if (level >= outLevel) return true;
@@ -21,7 +20,6 @@ bool checkLogLevel(int level, int outLevel) {
 }
 
 void Logger::OutputStream::print(std::string_view s) const {
-    std::lock_guard lock(logger_mutex);
     try {
         using Clock = std::chrono::system_clock;
         auto time   = fmt::localtime(Clock::to_time_t(Clock::now()));

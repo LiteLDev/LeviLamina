@@ -21,10 +21,6 @@ public:
       z(static_cast<schar>((std::is_floating_point_v<T2>) ? floor(z) : z)),
       y(static_cast<short>((std::is_floating_point_v<T1>) ? floor(y) : y)){};
 
-    [[nodiscard]] constexpr ushort toLegacyIndex() const noexcept {
-        return static_cast<ushort>((y.mVal & 0xF) + 16 * (z + 16 * x));
-    }
-
     template <typename T>
     [[nodiscard]] constexpr T& get(size_t index) {
         switch (index) {
@@ -47,6 +43,10 @@ public:
         default:
             return (T)x;
         }
+    }
+
+    [[nodiscard]] constexpr ushort toLegacyIndex() const noexcept {
+        return static_cast<ushort>((y.mVal & 0xF) + 16 * (z + 16 * x));
     }
 
 public:

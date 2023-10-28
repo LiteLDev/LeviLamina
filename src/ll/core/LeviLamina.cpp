@@ -344,9 +344,8 @@ void leviLaminaMain() {
     // bstats::registerBStats();
 }
 
-using namespace ll::memory;
 
-LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Normal, "main", int, int argc, char* argv[]) {
+LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Highest, "main", int, int argc, char* argv[]) {
 
     SeverStartBeginTime = std::chrono::steady_clock::now();
 

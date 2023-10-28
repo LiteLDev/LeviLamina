@@ -303,22 +303,20 @@ std::string DynamicCommand::Result::toDebugString() const {
             getRaw<std::string>()
         );
     case ParameterType::BlockPos:
-        // TODO use CompoundTag::toSNBT, not toString
         return fmt::format(
             "name: {:15s}, type: {:15s}, isSet: {:5}, value: {}",
             name,
             typeName,
             isSet,
-            getRaw<CommandPosition>().serialize().toString()
+            getRaw<CommandPosition>().serialize().toSnbt()
         );
     case ParameterType::Vec3:
-        // TODO use CompoundTag::toSNBT, not toString
         return fmt::format(
             "name: {:15s}, type: {:15s}, isSet: {:5}, value: {}",
             name,
             typeName,
             isSet,
-            getRaw<CommandPositionFloat>().serialize().toString()
+            getRaw<CommandPositionFloat>().serialize().toSnbt()
         );
     case ParameterType::RawText:
         return fmt::format(

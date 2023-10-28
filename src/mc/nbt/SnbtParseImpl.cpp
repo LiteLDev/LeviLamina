@@ -9,23 +9,6 @@ bool isTrivialChar(char c) { return isalnum(c) || c == '-' || c == '+' || c == '
 bool scanComment(std::string_view& s) noexcept {
     size_t i = 0;
     switch (s[i++]) {
-    // single-line comments skip input until a newline or EOF is read
-    case '/': {
-        while (i < s.size()) {
-            switch (s[i++]) {
-            case '\n':
-            case '\r':
-            case std::char_traits<char>::eof():
-            case '\0':
-                s.remove_prefix(std::min(i, s.size()));
-                return true;
-
-            default:
-                break;
-            }
-        }
-    }
-
     // multi-line comments skip input until */ is read
     case '*': {
         while (i < s.size()) {
@@ -49,13 +32,33 @@ bool scanComment(std::string_view& s) noexcept {
                 continue;
             }
         }
+        break;
     }
+    default:
+        // {
+        //     // unexpected character after reading '/'
+        //     return false;
+        // }
+        // // single-line comments skip input until a newline or EOF is read
+        // case '/':
+        {
+            while (i < s.size()) {
+                switch (s[i++]) {
+                case '\n':
+                case '\r':
+                case std::char_traits<char>::eof():
+                case '\0':
+                    s.remove_prefix(std::min(i, s.size()));
+                    return true;
 
-    // unexpected character after reading '/'
-    default: {
-        return false;
+                default:
+                    break;
+                }
+            }
+            break;
+        }
     }
-    }
+    return false;
 }
 
 bool scanSpaces(std::string_view& s) noexcept {
@@ -67,7 +70,7 @@ bool scanSpaces(std::string_view& s) noexcept {
 
 bool skipWhitespace(std::string_view& s) {
     scanSpaces(s);
-    while (s.front() == '/') {
+    while (s.front() == '/' || s.front() == '#' || s.front() == ';') {
         s.remove_prefix(1);
         if (!scanComment(s)) { return false; }
         scanSpaces(s);
@@ -86,7 +89,7 @@ inline std::optional<ldouble> stold(std::string_view const& s, size_t& n) {
     int&        errnoRef = errno; // Nonzero cost, pay it once
     char const* ptr      = s.data();
     char*       eptr;
-    errnoRef              = 0;
+    errnoRef          = 0;
     const ldouble res = strtold(ptr, &eptr);
 
     if (ptr == eptr) { return std::nullopt; }
@@ -102,10 +105,13 @@ std::optional<CompoundTagVariant> parseNumber(std::string_view& s) {
 
     size_t n = 0;
 
-    auto res = stold(s, n);
+    ldouble res;
 
-    if (!res) { return std::nullopt; }
-
+    if (auto tmp = stold(s, n); tmp) {
+        res = *tmp;
+    } else {
+        return std::nullopt;
+    }
     bool isInt = true;
 
     for (size_t i = 0; i < n; i++) {
@@ -118,27 +124,27 @@ std::optional<CompoundTagVariant> parseNumber(std::string_view& s) {
     case 'b':
     case 'B':
         s.remove_prefix(1);
-        return ByteTag{(schar)(res.value())};
+        return ByteTag{(schar)res};
     case 's':
     case 'S':
         s.remove_prefix(1);
-        return ShortTag{(short)(res.value())};
+        return ShortTag{(short)res};
     case 'l':
     case 'L':
         s.remove_prefix(1);
-        return Int64Tag{(int64)(res.value())};
+        return Int64Tag{(int64)res};
     case 'f':
     case 'F':
         s.remove_prefix(1);
-        return FloatTag{(float)(res.value())};
+        return FloatTag{(float)res};
     case 'd':
     case 'D':
         s.remove_prefix(1);
-        return DoubleTag{(double)(res.value())};
+        return DoubleTag{(double)res};
     case 'i':
     case 'I':
         s.remove_prefix(1);
-        return IntTag{(int)(res.value())};
+        return IntTag{(int)res};
     default:
         break;
     }
@@ -146,34 +152,38 @@ std::optional<CompoundTagVariant> parseNumber(std::string_view& s) {
         case " /*b*/"_h:
         case " /*B*/"_h:
             s.remove_prefix(6);
-            return ByteTag{(schar)(res.value())};
+            return ByteTag{(schar)res};
         case " /*s*/"_h:
         case " /*S*/"_h:
             s.remove_prefix(6);
-            return ShortTag{(short)(res.value())};
+            return ShortTag{(short)res};
         case " /*l*/"_h:
         case " /*L*/"_h:
             s.remove_prefix(6);
-            return Int64Tag{(int64)(res.value())};
+            return Int64Tag{(int64)res};
         case " /*f*/"_h:
         case " /*F*/"_h:
             s.remove_prefix(6);
-            return FloatTag{(float)(res.value())};
+            return FloatTag{(float)res};
         case " /*d*/"_h:
         case " /*D*/"_h:
             s.remove_prefix(6);
-            return DoubleTag{(double)(res.value())};
+            return DoubleTag{(double)res};
         case " /*i*/"_h:
         case " /*I*/"_h:
             s.remove_prefix(6);
-            return IntTag{(int)(res.value())};
+            return IntTag{(int)res};
         default:
             break;
         }
     if (isInt) {
-        return IntTag{(int)(res.value())};
+        if (res <= INT32_MAX) {
+            return IntTag{(int)res};
+        } else {
+            return Int64Tag{(int64)res};
+        }
     } else {
-        return DoubleTag{(double)(res.value())};
+        return DoubleTag{(double)res};
     }
 }
 
@@ -380,6 +390,10 @@ std::optional<ByteArrayTag> parseByteArray(std::string_view& s) {
     while (!s.empty()) {
 
         if (!skipWhitespace(s)) { return std::nullopt; }
+        if (s.front() == ']') {
+            s.remove_prefix(1);
+            return res;
+        }
         auto value = parseNumber(s);
         if (!skipWhitespace(s)) { return std::nullopt; }
 
@@ -393,9 +407,8 @@ std::optional<ByteArrayTag> parseByteArray(std::string_view& s) {
             return res;
         case ',':
             s.remove_prefix(1);
-            break;
         default:
-            return std::nullopt;
+            break;
         }
     }
 
@@ -413,6 +426,10 @@ std::optional<IntArrayTag> parseIntArray(std::string_view& s) {
     while (!s.empty()) {
 
         if (!skipWhitespace(s)) { return std::nullopt; }
+        if (s.front() == ']') {
+            s.remove_prefix(1);
+            return res;
+        }
         auto value = parseNumber(s);
         if (!skipWhitespace(s)) { return std::nullopt; }
 
@@ -426,9 +443,8 @@ std::optional<IntArrayTag> parseIntArray(std::string_view& s) {
             return res;
         case ',':
             s.remove_prefix(1);
-            break;
         default:
-            return std::nullopt;
+            break;
         }
     }
 
@@ -468,7 +484,7 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
 
         auto value = parseSnbtValue(s);
 
-        if (!value) { return std::nullopt; }
+        if (!value) { return res; }
 
         if (type == Tag::Type::End) {
             type = value.value().get()->getId();
@@ -484,9 +500,8 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
             return res;
         case ',':
             s.remove_prefix(1);
-            break;
         default:
-            return std::nullopt;
+            break;
         }
     }
 
@@ -504,18 +519,22 @@ std::optional<CompoundTag> parseCompound(std::string_view& s) {
     auto res = CompoundTag{};
     while (!s.empty()) {
         if (!skipWhitespace(s)) { return std::nullopt; }
-
+        if (s.front() == '}') {
+            s.remove_prefix(1);
+            return res;
+        }
         auto key = parseString(s);
 
         if (!key) { return std::nullopt; }
 
         if (!skipWhitespace(s)) { return std::nullopt; }
 
-        if (get(s) != ':') { return std::nullopt; }
+        auto p = get(s);
+        if (p != ':' && p != '=') { return std::nullopt; }
 
         auto value = parseSnbtValue(s);
 
-        if (!value) { return std::nullopt; }
+        if (!value) { return res; }
 
         res[key.value()] = value.value();
 
@@ -525,9 +544,8 @@ std::optional<CompoundTag> parseCompound(std::string_view& s) {
             return res;
         case ',':
             s.remove_prefix(1);
-            break;
         default:
-            return std::nullopt;
+            break;
         }
     }
 
@@ -541,6 +559,9 @@ std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s) {
     std::optional<CompoundTagVariant> res = std::nullopt;
 
     switch (s.front()) {
+    case ']':
+    case '}':
+        s.remove_prefix(1);
     case '\0':
         return std::nullopt;
 

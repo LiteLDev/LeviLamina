@@ -49,56 +49,56 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     auto nbt2 = *CompoundTag::fromSnbt(R"(
 
 {
-    "byte": 127b,
-    "bytearray": [B;1b, 2b, 3b, 4b, 5b, -2b, -3b, -6b],
-    "compound": {
-        "sdouble": 1.0 /*d*/,
-        "double": 0.3D,
-        "float": 0.1f,
-        "long": 10000l
+    byte = 127b,
+    bytearray = [B;1b, 2b, 3b, 4b, 5b, -2b, -3b, -6b],
+    compound = {
+        sdouble = 1.0 /*d*/,
+        double = 0.3D,
+        float = 0.1f,
+        long = 10000l
     },
-    "hello": {
-        "Nzg52/4=" /*BASE64*/: {
-            "ሴ56": "XG5cdFxyXGJcdTEyMzRcdWZmZmZmZmZm2/4=" /*BASE64*/  // hellow
+    hello = {
+        "Nzg52/4=" /*BASE64*/= {
+            'ሴ56' = "XG5cdFxyXGJcdTEyMzRcdWZmZmZmZmZm2/4=" /*BASE64*/ // hellow
         }
     },
-    "intarray": [I;1, 2, 3, 4, 5, -2, -3, -6],
-    "list": [5b, 1b, 0b, -2b],
-    "num": 1,
-    "nums": 3s,
-    "some": {
-        "new": {
-            "compound": {
-                "byte": 127b,
-                "bytearray": [B;1b, 2b, 3b, 4b, 5b, -2b, -3b, -6b],  // orld   /**/ /*     34t */
-                "compound": {
-                    "sdouble": 1.0 /*d*/,
-                    "double": 0.3D,
-                    "float": 0.1f,
-                    "long": 10000l
-                },
-                "intarray": [ /*I;*/1,2,3,4,5,-2,-3,-6],
-                "list": [
-                    5 /*b*/,
-                    1 /*b*/,
+    intarray = [I;1, 2, 3, 4, 5, -2, -3, -6],
+    list = [5b, 1b, 0b, -2b],
+    num = 1,
+    nums = 3s,                # teabawwb 4atg @zg5y 
+    some = {
+        new = {              ; hi
+            compound = {
+                "byte" = 127b
+                "bytearray" = [B;1b, 2b, 3b, 4b, 5b, -2b, -3b, -6b],  // orld   /**/ /*     34t */
+                "compound" = {
+                    "sdouble" = 1.0 /*d*/
+                    "double" = 0.3D
+                    "float" = 0.1f
+                    "long" = 10000l
+                }
+                "intarray": [ /*I;*/1,2,3,4,5,-2,-3,-6]
+                list = [
+                    5 /*b*/
+                    1 /*b*/
                     0 /*b*/,
-                    -2 /*b*/
-                ],
-                "num": 1,
-                "nums": 3s,
-                "string?": "streee _ _o-ix 我超, utf8 \"\\asfa%\"*)##q)$\\\\\"\\Q34\\\\\"\"'':"
+                    -2 /*b*/,
+                ]
+                "num": 1
+                "nums": 3s
+                "string?": "streee _ _o-ix 我超, utf8 \"\\asfa%\"*)##q)$\\\\\"\\Q34\\\\\"\"'':",
             }
         }
-    },
+    }
     "string?": "streee _ _o-ix 我超, utf8 \"\\asfa%\"*)##q)$\\\\\"\\Q34\\\\\"\"'':"
 }
 
     )");
 
 
-    ll::logger.debug("\n{}", nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
+    ll::logger.debug("\n{}", nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console | SnbtFormat::Jsonify));
 
-    ll::logger.debug("\n{}", nbt2.toSnbt(SnbtFormat::Colored | SnbtFormat::Console | SnbtFormat::Jsonify));
+    ll::logger.debug("\n{}", nbt2.toSnbt(SnbtFormat::PrettyConsolePrint));
 
     ll::logger.debug(
         "\n{}",

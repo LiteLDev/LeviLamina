@@ -69,4 +69,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     ll::logger.debug("{} for load config", ll::config::loadConfig(helloReflection, "plugins/Test/testconfig.json"));
     ll::logger.debug("\n{}", ll::reflection::serialize<nlohmann::ordered_json>(helloReflection).dump(4));
+
+    ll::logger.debug("789\xDB\xFE");
+    ll::logger.debug("789\xDB\xFE");
 }

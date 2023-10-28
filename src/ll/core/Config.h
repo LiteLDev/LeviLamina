@@ -4,7 +4,6 @@
 #include <thread>
 
 #include "ll/api/LLAPI.h"
-#include "nlohmann/json.hpp"
 
 /////////////////////// LL Configs ///////////////////////
 
@@ -57,7 +56,7 @@ struct LLConfig {
         bool checkRunningBDS    = true;
         bool simpleServerLogger = true;
 
-        std::map<std::string, std::string> resourcePackEncryptionMap = {
+        std::unordered_map<std::string, std::string> resourcePackEncryptionMap = {
             {"<UUID>", "<KEY>"}
         };
 

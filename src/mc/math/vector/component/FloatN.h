@@ -45,7 +45,6 @@ GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, atan)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, acosh)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, asinh)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, atanh)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, atan2)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, ceil)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, cos)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, cosh)
@@ -62,10 +61,20 @@ GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, sqrt)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, tan)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, tanh)
 
+// GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, atan2)
 // GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, fmod)
 // GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, modf)
 // GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, pow)
 
+
+template <IsFloatN T>
+[[nodiscard]] constexpr T atan2(T const& a, T const& b) noexcept {
+    T tmp;
+    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
+        tmp.template get<axis_type>(iter) = atan2(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+    });
+    return tmp;
+}
 
 template <IsFloatN T>
 [[nodiscard]] constexpr T fmod(T const& a, T const& b) noexcept {

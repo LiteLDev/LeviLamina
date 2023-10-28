@@ -18,7 +18,6 @@
 
 #include "WinHelper.h"
 #include "ll/api/base/Global.h"
-#include "minwindef.h"
 #include <string_view>
 #include <unordered_map>
 
