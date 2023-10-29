@@ -5,7 +5,7 @@
 
 // GetLastError() -> string
 LLNDAPI std::string GetLastErrorMessage();
-LLNDAPI std::string GetLastErrorMessage(DWORD error_message_id);
+LLNDAPI std::string GetLastErrorMessage(DWORD errorMessageId);
 
 // Create a new process and get its output when exited
 

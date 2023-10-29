@@ -15,14 +15,14 @@
 
 using namespace ll::StringUtils;
 
-std::string GetLastErrorMessage(DWORD error_message_id) {
-    if (error_message_id == 0) return "";
+std::string GetLastErrorMessage(DWORD errorMessageId) {
+    if (errorMessageId == 0) return "";
 
     LPWSTR message_buffer = nullptr;
     FormatMessage(
         FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
         nullptr,
-        error_message_id,
+        errorMessageId,
         MAKELANGID(0x09, SUBLANG_DEFAULT),
         (LPWSTR)&message_buffer,
         0,
@@ -134,8 +134,8 @@ std::string GetSystemLocaleName() {
 inline bool isWine() {
     HMODULE ntdll = GetModuleHandle(L"ntdll.dll");
     if (!ntdll) return false;
-    auto pwine_get_version = GetProcAddress(ntdll, "wine_get_version");
-    if (pwine_get_version) return true;
+    auto funcWineGetVersion = GetProcAddress(ntdll, "wine_get_version");
+    if (funcWineGetVersion) return true;
     else return false;
 }
 
