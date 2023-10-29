@@ -47,9 +47,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0AABB@@QEAA@AEBVVec3@@0@Z
-    MCAPI AABB(class Vec3 const&, class Vec3 const&);
-
     // symbol: ??0AABB@@QEAA@AEBVVec3@@M@Z
     MCAPI AABB(class Vec3 const&, float);
 

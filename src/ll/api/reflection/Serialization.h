@@ -1,3 +1,5 @@
+#pragma once
+
 #include "ll/api/reflection/Reflection.h"
 
 namespace ll::reflection {

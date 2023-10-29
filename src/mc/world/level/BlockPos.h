@@ -31,7 +31,7 @@ public:
     MCAPI BlockPos(class SubChunkPos const&);
 
     // symbol: ??0BlockPos@@QEAA@AEBVVec3@@@Z
-    MCAPI explicit BlockPos(class Vec3 const&);
+    MCAPI BlockPos(class Vec3 const&);
 
     // symbol: ??0BlockPos@@QEAA@AEBVChunkPos@@H@Z
     MCAPI BlockPos(class ChunkPos const&, int);
