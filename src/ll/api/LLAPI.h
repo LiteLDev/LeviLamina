@@ -12,10 +12,10 @@ namespace ll {
 struct Version {
     enum class Label : ushort { None = 0xFFFF, Alpha = 0, Beta = 1 };
 
-    ushort mMajor = 0;
-    ushort mMinor = 0;
-    ushort mPatch = 0;
-    Label  mLabel = Label::None;
+    ushort mMajor   = 0;
+    ushort mMinor   = 0;
+    ushort mPatch   = 0;
+    Label  mLabel   = Label::None;
     ushort mLabelId = 0;
 
     explicit Version() = default;
@@ -46,7 +46,6 @@ struct Version {
      * @return Version The version instance
      */
     LLNDAPI static Version parse(std::string const& str);
-
 };
 
 struct Plugin {
@@ -59,6 +58,24 @@ struct Plugin {
     HMODULE mHandle = nullptr;
 
     LLNDAPI std::string getDefaultDataPath();
+
+    void addSharedData(std::string const& key, std::any const& value) { mSharedData[key] = value; }
+
+    template <typename T>
+    std::optional<T> getSharedData(std::string const& key) {
+        if (mSharedData.contains(key)) {
+            if (mSharedData[key].type() == typeid(T)) { return std::any_cast<T>(mSharedData[key]); }
+        }
+        return std::nullopt;
+    }
+
+    template <typename T>
+    T getSharedData(std::string const& key, T const& defaultValue) {
+        if (mSharedData.contains(key)) {
+            if (mSharedData[key].type() == typeid(T)) { return std::any_cast<T>(mSharedData[key]); }
+        }
+        return defaultValue;
+    }
 };
 
 } // namespace ll
