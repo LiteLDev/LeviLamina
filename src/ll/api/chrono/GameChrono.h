@@ -35,6 +35,10 @@ struct GameTimeClock {
 
 } // namespace ll::gamechrono
 
+namespace ll::chrono_literals {
+
 using namespace std::literals::chrono_literals;
 
 constexpr ll::gamechrono::ticks operator""_tick(uint64 val) noexcept { return ll::gamechrono::ticks{val}; }
+
+} // namespace ll::chrono_literals

@@ -9,7 +9,6 @@ namespace ll::config {
 static constexpr const std::string_view metaDataName{".meta"};
 
 LLETAPI ll::Logger configLogger;
-using namespace ll::i18n_literals;
 
 template <typename T>
 concept IsConfig =
@@ -17,6 +16,7 @@ concept IsConfig =
 
 template <IsConfig T, typename J = nlohmann::ordered_json>
 inline bool saveConfig(T const& config, std::string const& path) noexcept {
+    using namespace ll::i18n_literals;
     try {
         namespace fs = std::filesystem;
         auto data{ll::reflection::serialize<J, T>(config)};
@@ -33,6 +33,7 @@ inline bool saveConfig(T const& config, std::string const& path) noexcept {
 
 template <IsConfig T, typename J = nlohmann::ordered_json>
 inline bool loadConfig(T& config, std::string const& path, bool overwriteAfterFail = true) noexcept {
+    using namespace ll::i18n_literals;
     bool res = true;
     try {
         auto content = ll::ReadAllFile(path);
@@ -59,7 +60,10 @@ inline bool loadConfig(T& config, std::string const& path, bool overwriteAfterFa
             res = false;
         }
     } catch (...) {}
-    if (!res && overwriteAfterFail) saveConfig<T, J>(config, path);
+    if (!res && overwriteAfterFail) {
+        configLogger.warn("config.save.rewrite"_tr); // TODO i18n
+        saveConfig<T, J>(config, path);
+    }
     return res;
 }
 

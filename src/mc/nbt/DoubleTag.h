@@ -46,5 +46,6 @@ public:
 
     // NOLINTEND
 };
-
+namespace ll::nbt_literals {
 inline DoubleTag operator""_d(ldouble num) { return DoubleTag{(double)num}; }
+} // namespace ll::nbt_literals

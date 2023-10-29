@@ -46,5 +46,6 @@ public:
 
     // NOLINTEND
 };
-
+namespace ll::nbt_literals {
 inline ShortTag operator""_s(uint64 num) { return ShortTag{(short)num}; }
+} // namespace ll::nbt_literals

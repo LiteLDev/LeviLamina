@@ -27,6 +27,9 @@
 #include "processenv.h"
 #include "windows.h"
 
+using namespace ll::hash;
+using namespace ll::hash_literals;
+
 
 ll::Logger                            ll::logger("LeviLamina");
 std::chrono::steady_clock::time_point ll::severStartBeginTime;
@@ -264,7 +267,6 @@ void registerBStats();
 void leviLaminaMain() {
 
 #if !defined(LL_DEBUG)
-    // If SEH Protection is not enabled (Debug mode), restore old SE translator
     _set_se_translator(seh_exception::TranslateSEHtoCE);
 #endif
     // Prohibit pop-up windows to facilitate automatic restart

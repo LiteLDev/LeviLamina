@@ -54,5 +54,6 @@ public:
 
     // NOLINTEND
 };
-
+namespace ll::nbt_literals {
 inline ByteTag operator""_b(uint64 num) { return ByteTag{(uchar)num}; }
+} // namespace ll::nbt_literals

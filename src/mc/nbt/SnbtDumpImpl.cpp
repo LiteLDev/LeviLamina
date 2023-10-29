@@ -6,6 +6,10 @@
 #include "mc/nbt/CompoundTag.h"
 #include "nlohmann/json.hpp"
 
+extern bool isTrivialNbtStringChar(char c);
+
+namespace {
+
 using namespace ll::StringUtils;
 
 namespace cf = ColorFormat;
@@ -31,8 +35,6 @@ bool isMinimize(SnbtFormat format) {
 
 std::string WrapColorCode(std::string const& str, std::string const& code) { return code + str + cf::RESET; }
 
-extern bool isTrivialChar(char c);
-
 std::string toDumpString(std::string const& str, fmt::color defaultc, std::string const& defaultmc, SnbtFormat format) {
 
     std::string res;
@@ -42,7 +44,7 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
     bool isTrivial = true;
     if (!static_cast<bool>(format & SnbtFormat::Jsonify)) {
         for (auto c : str) {
-            if (!isTrivialChar(c)) {
+            if (!isTrivialNbtStringChar(c)) {
                 isTrivial = false;
                 break;
             }
@@ -87,6 +89,7 @@ std::string toDumpNumber(std::string str, SnbtFormat format) {
     }
     return str;
 }
+} // namespace
 
 std::string TypedToSnbt(EndTag&, uchar, SnbtFormat format) {
     std::string res = "null";

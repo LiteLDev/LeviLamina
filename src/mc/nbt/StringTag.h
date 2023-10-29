@@ -50,5 +50,6 @@ public:
 
     // NOLINTEND
 };
-
+namespace ll::nbt_literals {
 inline StringTag operator""_tag(char const* x, size_t len) { return StringTag(std::string{x, len}); }
+} // namespace ll::nbt_literals

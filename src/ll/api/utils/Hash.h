@@ -4,6 +4,8 @@
 
 #include "ll/api/base/StdInt.h"
 
+namespace ll::hash {
+
 template <typename T>
 constexpr void hashCombine(T const& v, size_t& seed) {
     seed ^= v + 2654435769LL + (seed << 6LL) + (seed >> 2LL);
@@ -47,8 +49,6 @@ constexpr uint64 do_hash(char const* x, size_t len) {
     return rval;
 }
 
-constexpr uint64 operator""_h(char const* x, size_t len) { return do_hash(x, len); }
-
 constexpr uint64 do_hash2(std::string_view x) {
     // ap hash
     uint64 rval = 0;
@@ -59,3 +59,9 @@ constexpr uint64 do_hash2(std::string_view x) {
     }
     return rval;
 }
+
+} // namespace ll::hash
+
+namespace ll::hash_literals {
+constexpr uint64 operator""_h(char const* x, size_t len) { return ll::hash::do_hash(x, len); }
+} // namespace ll::hash_literals

@@ -4,7 +4,12 @@
 
 std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s);
 
-bool isTrivialChar(char c) { return isalnum(c) || c == '-' || c == '+' || c == '_' || c == '.'; }
+bool isTrivialNbtStringChar(char c) { return isalnum(c) || c == '-' || c == '+' || c == '_' || c == '.'; }
+
+namespace {
+
+using namespace ll::hash_literals;
+using namespace ll::hash;
 
 bool scanComment(std::string_view& s) noexcept {
     size_t i = 0;
@@ -211,7 +216,7 @@ std::optional<std::string> parseString(std::string_view& s) {
 
     char starts = s.front();
 
-    if (starts != '\"' && starts != '\'' && !isTrivialChar(starts)) { return std::nullopt; }
+    if (starts != '\"' && starts != '\'' && !isTrivialNbtStringChar(starts)) { return std::nullopt; }
 
     auto res = std::vector<char>{};
 
@@ -220,7 +225,7 @@ std::optional<std::string> parseString(std::string_view& s) {
     } else {
         while (!s.empty()) {
             auto fc = s.front();
-            if (isTrivialChar(fc)) {
+            if (isTrivialNbtStringChar(fc)) {
                 s.remove_prefix(1);
                 res.push_back(fc);
             } else {
@@ -551,6 +556,7 @@ std::optional<CompoundTag> parseCompound(std::string_view& s) {
 
     return std::nullopt;
 }
+} // namespace
 
 std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s) {
 

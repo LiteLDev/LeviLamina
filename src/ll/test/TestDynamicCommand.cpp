@@ -14,11 +14,14 @@
 
 #include "ll/api/schedule/Scheduler.h"
 
+#include "ll/api/Literals.h"
+
 using Param      = DynamicCommand::ParameterData;
 using ParamType  = DynamicCommand::ParameterType;
 using ParamIndex = DynamicCommandInstance::ParameterIndex;
 
 using namespace ll::schedule;
+using namespace ll::hash;
 
 GameTimeScheduler scheduler;
 
