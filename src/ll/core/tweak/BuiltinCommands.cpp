@@ -145,37 +145,35 @@ void LLListPluginsCommand(CommandOutput& output) {
     for (auto& [name, plugin] : plugins) {
         std::string pluginName = name;
         if (pluginName.find("§") == std::string::npos) pluginName.insert(0, "§b");
-        std::string desc = plugin->desc;
+        std::string desc = plugin.mDescription;
         if (desc.find("§") == std::string::npos) desc.insert(0, "§7");
 
-        auto fileName = u8str2str(std::filesystem::path(str2wstr(plugin->filePath)).filename().u8string());
-        oss << fmt::format("- {} §a[v{}] §8({})\n  {}\n", pluginName, plugin->version.toString(), fileName, desc);
+        auto fileName = u8str2str(std::filesystem::path(GetModulePath(plugin.mHandle)).filename().u8string());
+        oss << fmt::format("- {} §a[v{}] §8({})\n  {}\n", pluginName, plugin.mVersion.toFullString(), fileName, desc);
     }
     output.success(oss.str() + '\n');
     output.trSuccess("ll.cmd.listPlugin.tip");
 }
 
 void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
-    auto plugin = ll::getPlugin(pluginName);
-    if (plugin) {
+    auto plugin = ll::findPlugin(pluginName);
+    if (plugin.has_value()) {
         std::map<std::string, std::string> outs;
         std::ostringstream                 oss;
-        auto        fn         = u8str2str(std::filesystem::path(str2wstr(plugin->filePath)).filename().u8string());
-        std::string pluginType = plugin->type == Plugin::PluginType::ScriptPlugin ? "Script Plugin" : "DLL Plugin";
 
         output.trSuccess("ll.cmd.pluginInfo.title", pluginName);
 
-        outs.emplace("Name", fmt::format("{} ({})", plugin->name, fn));
-        outs.emplace("Description", plugin->desc);
-        outs.emplace("Version", "v" + plugin->version.toString());
-        outs.emplace("Type", pluginType);
-        outs.emplace("File Path", plugin->filePath);
-        outs.merge(plugin->others);
+        std::filesystem::path path(GetModulePath(plugin->mHandle));
+
+        outs.emplace("Name", fmt::format("{} ({})", plugin->mName, path.filename().string()));
+        outs.emplace("Description", plugin->mDescription);
+        outs.emplace("Version", "v" + plugin->mVersion.toFullString());
+        outs.emplace("FilePath", path.string());
+        outs.merge(plugin->mExtraInfo);
         size_t width = 10;
         for (auto& [k, v] : outs) { width = std::max(width, k.length()); }
         for (auto& [k, v] : outs) {
-            if (k != "PluginType" && k != "PluginFilePath")
-                oss << "- §l" << std::setw((int64)width) << std::left << k << "§r: " << v << std::endl;
+            oss << "- §l" << std::setw((int64)width) << std::left << k << "§r: " << v << std::endl;
         }
         auto text = oss.str();
         text.pop_back();
@@ -189,7 +187,7 @@ void LLVersionCommand(CommandOutput& output) {
     output.trSuccess(
         "ll.cmd.version.msg",
         ll::getBdsVersion(),
-        ll::getLoaderVersionString(),
+        ll::getLoaderVersion().toFullString(),
         ll::getServerProtocolVersion()
     );
 }

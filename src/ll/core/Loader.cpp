@@ -77,10 +77,10 @@ void ll::LoadMain() {
         if (lib) {
             ++pluginCount;
 
-            if (PluginManager::getPlugin(lib) == nullptr) {
+            if (!PluginManager::findPlugin(lib).has_value()) {
                 if (!ll::PluginManager::registerPlugin(lib, pluginFileName, pluginFileName, ll::Version(1, 0, 0), {})) {
                     ll::logger.error("ll.pluginManager.error.failToRegisterPlugin"_tr, u8str2str(path.u8string()));
-                    if (PluginManager::getPlugin(pluginFileName)) {
+                    if (PluginManager::findPlugin(pluginFileName).has_value()) {
                         ll::logger.error("ll.pluginManager.error.hasBeenRegistered"_tr, pluginFileName);
                     }
                 }

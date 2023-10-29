@@ -2,102 +2,56 @@
 
 #include <string>
 #include <unordered_map>
-#include <utility>
 
 #include "ll/api/LLAPI.h"
-#include "ll/api/Logger.h"
-#include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinHelper.h"
 #include "ll/core/LeviLamina.h"
 
 #include "windows.h"
 
-using namespace ll::StringUtils;
+namespace ll {
 
-using ll::logger;
+std::unordered_map<std::string, Plugin> plugins;
 
-std::unordered_map<std::string, ll::Plugin> plugins;
-
-bool ll::PluginManager::registerPlugin(
-    HMODULE                            handle,
-    std::string const&                 name,
-    std::string const&                 desc,
-    ll::Version const&                 version,
-    std::map<std::string, std::string> others
+bool PluginManager::registerPlugin(
+    HMODULE                                          handle,
+    std::string const&                               name,
+    std::string const&                               description,
+    Version const&                                   version,
+    std::map<std::string, std::string> const&        extraInfo,
+    std::unordered_map<std::string, std::any> const& sharedData
 ) {
-
-    others["PluginType"]     = "DLL Plugin";
-    others["PluginFilePath"] = handle ? GetModulePath(handle) : name;
-    if (handle != nullptr) {
-        if (getPlugin(handle) != nullptr) {
-            std::erase_if(plugins, [&handle](auto& data) { // Allow plugins to overwrite their own plugin registry
-                return data.second.handle == handle;
-            });
-        } else if (getPlugin(name) != nullptr) {
-            return false; // Reject overwriting other's data
-        }
+    if (handle == nullptr) {
+        logger.error("Failed to register plugin: handle is nullptr");
+        return false;
     }
-
-    ll::Plugin plugin{name, desc, version, others};
-    plugin.handle = handle;
-    try {
-        plugin.type = others.at("PluginType") == "Script Plugin" ? Plugin::PluginType::ScriptPlugin
-                                                                 : Plugin::PluginType::DllPlugin;
-        others.erase("PluginType");
-    } catch (...) { plugin.type = handle ? Plugin::PluginType::DllPlugin : Plugin::PluginType::ScriptPlugin; }
-
-    try {
-        plugin.filePath =
-            u8str2str(std::filesystem::path(str2wstr(others.at("PluginFilePath"))).lexically_normal().u8string());
-        others.erase("PluginFilePath");
-    } catch (...) {
-        if (handle) plugin.filePath = GetModulePath(handle);
-    }
-
+    Plugin plugin{name, description, version, extraInfo, sharedData, handle};
     plugins.emplace(name, plugin);
     return true;
 }
 
-bool ll::PluginManager::unRegisterPlugin(std::string const& name) {
-    auto plugin = getPlugin(name);
-    if (plugin == nullptr) {
-        return false;
-    } else {
-        plugins.erase(plugin->name);
+std::optional<Plugin> PluginManager::findPlugin(HMODULE handle) {
+    auto it = std::find_if(plugins.begin(), plugins.end(), [handle](auto const& pair) {
+        return pair.second.mHandle == handle;
+    });
+    return std::nullopt;
+}
+
+std::optional<Plugin> PluginManager::findPlugin(std::string const& name) {
+    auto it = plugins.find(name);
+    if (it != plugins.end()) { return it->second; }
+    return std::nullopt;
+}
+
+std::unordered_map<std::string, Plugin> PluginManager::getAllPlugins() { return plugins; }
+
+bool PluginManager::unregisterPlugin(std::string const& name) {
+    auto plugin = findPlugin(name);
+    if (plugin.has_value()) {
+        plugins.erase(name);
         return true;
+    } else {
+        return false;
     }
 }
 
-// Helper
-ll::Plugin* ll::PluginManager::getPlugin(std::string const& name, bool includeScriptPlugin) {
-    for (auto& it : plugins) {
-        if (it.second.name == name
-            || u8str2str(std::filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name) {
-            if (!includeScriptPlugin && it.second.type == ll::Plugin::PluginType::ScriptPlugin) continue;
-            return &it.second;
-        }
-    }
-    return nullptr;
-}
-
-ll::Plugin* ll::PluginManager::getPlugin(HMODULE handle) {
-    if (!handle) return nullptr;
-
-    for (auto& it : plugins) {
-        if (it.second.handle == handle) { return &it.second; }
-    }
-    return nullptr;
-}
-
-bool ll::PluginManager::hasPlugin(std::string const& name, bool includeScriptPlugin) {
-    return getPlugin(name, includeScriptPlugin) != nullptr;
-}
-
-std::unordered_map<std::string, ll::Plugin*> ll::PluginManager::getAllPlugins(bool includeScriptPlugin) {
-    std::unordered_map<std::string, ll::Plugin*> res;
-    for (auto& [k, v] : plugins) {
-        if (!includeScriptPlugin && v.type == Plugin::PluginType::ScriptPlugin) continue;
-        res[k] = &v;
-    }
-    return res;
-}
+} // namespace ll

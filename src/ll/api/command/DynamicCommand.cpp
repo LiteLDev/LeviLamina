@@ -118,7 +118,8 @@ inline void OutputError(
     logger.error(errorMsg);
     logger.error("Error: Code [{}] {}", errorCode, errorWhat);
     logger.error("In Function ({})", func);
-    if (auto plugin = ll::getPlugin(handle)) logger.error("In Plugin <{}>", plugin->name);
+    auto plugin = ll::findPlugin(handle);
+    if (plugin.has_value()) logger.error("In Plugin <{}>", plugin.value().mName);
 }
 
 } // namespace

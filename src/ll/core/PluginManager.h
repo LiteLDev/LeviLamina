@@ -12,19 +12,19 @@ class PluginManager {
 
 public:
     LLAPI static bool registerPlugin(
-        HMODULE                            handle,
-        std::string const&                 name,
-        std::string const&                 desc,
-        ll::Version const&                 version,
-        std::map<std::string, std::string> others
+        HMODULE                                          handle,
+        std::string const&                               name,
+        std::string const&                               description,
+        ll::Version const&                               version,
+        std::map<std::string, std::string> const&        extraInfo,
+        std::unordered_map<std::string, std::any> const& sharedData = {}
     );
 
-    LLNDAPI static ll::Plugin* getPlugin(HMODULE handle);
-    LLNDAPI static ll::Plugin* getPlugin(std::string const& name, bool includeScriptPlugin = true);
-    LLAPI static bool        hasPlugin(std::string const& name, bool includeScriptPlugin = true);
-    LLNDAPI static std::unordered_map<std::string, ll::Plugin*> getAllPlugins(bool includeScriptPlugin = true);
+    LLNDAPI static std::optional<Plugin>                   findPlugin(HMODULE handle);
+    LLNDAPI static std::optional<Plugin>                   findPlugin(std::string const& name);
+    LLNDAPI static std::unordered_map<std::string, Plugin> getAllPlugins();
 
-    LLAPI static bool unRegisterPlugin(std::string const& name);
+    LLAPI static bool unregisterPlugin(std::string const& name);
 };
 
 } // namespace ll

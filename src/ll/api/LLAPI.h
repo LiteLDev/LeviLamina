@@ -50,35 +50,17 @@ struct Version {
 };
 
 struct Plugin {
-    std::string                        name;
-    std::string                        desc;
-    Version                            version;
-    std::map<std::string, std::string> others;
+    std::string                               mName{};
+    std::string                               mDescription{};
+    Version                                   mVersion{};
+    std::map<std::string, std::string>        mExtraInfo{};
+    std::unordered_map<std::string, std::any> mSharedData{};
 
-    std::string filePath;
-    HMODULE     handle;
+    HMODULE mHandle = nullptr;
 
-    enum class PluginType { DllPlugin, ScriptPlugin };
-
-    PluginType type;
-
-    /*
-     * @brief Call a function exported by the plugin using a symbol string
-     *
-     * @tparam ReturnType  The return type of the function
-     * @tparam Args        The arguments type of the function
-     * @param  sym         The symbol string
-     * @param  args        The arguments
-     * @return ReturnType  The return value of the function
-     * @exception          std::runtime_error if the symbol is not found
-     */
-    template <typename ReturnType = void, typename... Args>
-    inline ReturnType callFunction(char const* sym, Args... args) {
-        void* address = reinterpret_cast<void*>(GetProcAddress(handle, sym));
-        if (!address) throw std::runtime_error("ll::Plugin::callFunction: The symbol is not found!");
-        return reinterpret_cast<ReturnType (*)(Args...)>(address)(std::forward<Args>(args)...);
-    }
+    LLNDAPI std::string getDefaultDataPath();
 };
+
 } // namespace ll
 
 inline bool operator<=(ll::Version const& a, ll::Version const& b) { return a < b || a == b; }
@@ -94,6 +76,7 @@ namespace ll {
  * @return ll::Version  The loader version
  */
 LLNDAPI Version getLoaderVersion();
+
 /**
  * @brief Get whether LeviLamina is in debug mode
  *
@@ -118,41 +101,33 @@ LLNDAPI bool isDebugMode();
  */
 LLAPI bool registerPlugin(
     std::string const&                        name,
-    std::string const&                        desc,
+    std::string const&                        description,
     ll::Version const&                        version,
-    std::map<std::string, std::string> const& others,
-    HMODULE                                   handle = GetCurrentModule()
+    std::map<std::string, std::string> const& extraInfo = {},
+    HMODULE                                   handle    = GetCurrentModule()
 );
 
 /**
- * @brief Get a loaded plugin by name
+ * @brief Find a loaded plugin by name
  *
  * @param  name         The name of the plugin
- * @return ll::Plugin*  The plugin(nullptr if not found)
  */
-LLNDAPI ll::Plugin* getPlugin(std::string const& name);
-/**
- * @brief Get a loaded plugin by HMODULE handle
- *
- * @param  handle       The HMODULE handle of the plugin
- * @return ll::Plugin*  The plugin(nullptr if not found)
- */
-LLNDAPI ll::Plugin* getPlugin(HMODULE handle);
+LLNDAPI std::optional<Plugin> findPlugin(std::string const& name);
 
 /**
- * @brief Get whether the plugin is loaded
+ * @brief Find a loaded plugin by HMODULE handle
  *
- * @param  name  The name of the plugin
- * @return bool  True if the plugin is loaded
+ * @param  handle       The HMODULE handle of the plugin
+ * @return std::optional<Plugin>  The plugin(nullopt if not found)
  */
-LLNDAPI bool hasPlugin(std::string const& name);
+LLNDAPI std::optional<Plugin> findPlugin(HMODULE handle);
 
 /**
  * @brief Get the All the loaded plugins
  *
- * @return std::unordered_map<std::string, ll::Plugin*>  The loaded plugins(name-plugin)
+ * @return std::unordered_map<std::string, ll::Plugin>  The loaded plugins(name-plugin)
  */
-LLNDAPI std::unordered_map<std::string, ll::Plugin*> getAllPlugins();
+LLNDAPI std::unordered_map<std::string, ll::Plugin> getAllPlugins();
 
 /**
  * @brief Get the handle of LeviLamina.dll.

@@ -26,31 +26,6 @@ inline ushort stoi(std::string_view str) {
 }
 } // namespace
 
-bool registerPlugin(
-    std::string const& name,
-    std::string const& desc,
-    ll::Version const& version,
-    std::string const& git     ,
-    std::string const& license ,
-    std::string const& website ,
-    HMODULE            handle  
-) {
-    std::map<std::string, std::string> others;
-    if (!git.empty()) others.emplace("Git", git);
-    if (!license.empty()) others.emplace("License", license);
-    if (!website.empty()) others.emplace("Website", website);
-    return PluginManager::registerPlugin(handle, name, desc, version, others);
-}
-
-bool registerPlugin(
-    std::string const&                        name,
-    std::string const&                        desc,
-    ll::Version const&                        version,
-    std::map<std::string, std::string> const& others,
-    HMODULE                                   handle
-) {
-    return PluginManager::registerPlugin(handle, name, desc, version, others);
-}
 // region ### Version ###
 
 inline std::array<std::string, 2> LABEL_NAMES = {"alpha", "beta"};
@@ -131,18 +106,37 @@ Version Version::parse(std::string const& str) {
     return result;
 }
 // endregion
+
+// region ### Plugin ###
+std::string Plugin::getDefaultDataPath() {
+    std::string dataPath = "plugins\\LeviLamina\\" + mName;
+    if (!std::filesystem::exists(StringUtils::str2wstr(dataPath))) {
+        std::error_code ec;
+        std::filesystem::create_directories(StringUtils::str2wstr(dataPath), ec);
+    }
+    return dataPath;
+}
+// endregion
+
+bool registerPlugin(
+    std::string const&                        name,
+    std::string const&                        description,
+    ll::Version const&                        version,
+    std::map<std::string, std::string> const& extraInfo,
+    HMODULE                                   handle
+) {
+    return PluginManager::registerPlugin(handle, name, description, version, extraInfo);
+}
+
 bool isDebugMode() { return globalConfig.debugMode; }
 
-Plugin* getPlugin(std::string const& name) { return PluginManager::getPlugin(name); }
+std::optional<Plugin> findPlugin(HMODULE handle) { return PluginManager::findPlugin(handle); }
 
-Plugin* getPlugin(HMODULE handle) { return PluginManager::getPlugin(handle); }
+std::optional<Plugin> findPlugin(std::string const& name) { return PluginManager::findPlugin(name); }
 
-bool hasPlugin(std::string const& name) { return PluginManager::hasPlugin(name); }
-
-std::unordered_map<std::string, Plugin*> getAllPlugins() { return PluginManager::getAllPlugins(); }
+std::unordered_map<std::string, Plugin> getAllPlugins() { return PluginManager::getAllPlugins(); }
 
 HMODULE getLoaderHandle() { return GetCurrentModule(); }
-
 
 Version getLoaderVersion() {
     return {LL_VERSION_MAJOR, LL_VERSION_MINOR, LL_VERSION_PATCH, (Version::Label)LL_VERSION_LABEL, LL_VERSION_LABEL_ID};

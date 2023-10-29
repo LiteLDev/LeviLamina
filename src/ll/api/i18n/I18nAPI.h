@@ -45,7 +45,7 @@
 #include "fmt/os.h"
 #include "nlohmann/json.hpp"
 #include "compact_enc_det/util/encodings/encodings.h"
-#define UNICODE
+#define UNICODE // compact_enc_det undefined UNICODE, so we need to define it again
 
 namespace ll::i18n {
 
@@ -276,13 +276,13 @@ inline I18nBase* load(Args&&... args) {
 /**
  * @brief Load translation from another plugin.
  *
- * @param  plugin  The plugin name.
+ * @param  name  The plugin name.
  * @return I18nBase*   The pointer to the I18nBase object in PluginOwnData, null if failed
  */
-inline I18nBase* loadFrom(std::string const& plugin) {
-    if (ll::hasPlugin(plugin)) {
-        auto p = ll::getPlugin(plugin);
-        if (p) { return loadFromImpl(GetCurrentModule(), p->handle); }
+inline I18nBase* loadFrom(std::string const& name) {
+    auto plugin = ll::findPlugin(name);
+    if (plugin.has_value()) {
+        return loadFromImpl(GetCurrentModule(), plugin->mHandle);
     }
     return nullptr;
 }
