@@ -128,8 +128,6 @@ bool registerPlugin(
     return PluginManager::registerPlugin(handle, name, description, version, extraInfo);
 }
 
-bool isDebugMode() { return globalConfig.debugMode; }
-
 std::optional<Plugin> findPlugin(HMODULE handle) { return PluginManager::findPlugin(handle); }
 
 std::optional<Plugin> findPlugin(std::string const& name) { return PluginManager::findPlugin(name); }

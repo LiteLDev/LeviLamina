@@ -95,13 +95,6 @@ namespace ll {
 LLNDAPI Version getLoaderVersion();
 
 /**
- * @brief Get whether LeviLamina is in debug mode
- *
- * @return bool  True if it is in debug mode
- */
-LLNDAPI bool isDebugMode();
-
-/**
  * @brief Register a plugin
  *
  * @param  name     The name of the plugin

@@ -12,7 +12,6 @@ namespace ll {
 struct LLConfig {
     int version = 3;
 
-    bool        debugMode = false;
     std::string language  = "system";
     struct {
         bool colorLog = true;

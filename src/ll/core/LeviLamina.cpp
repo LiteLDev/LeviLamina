@@ -262,9 +262,11 @@ void registerBStats();
 }
 
 void leviLaminaMain() {
-    // If SEH Protection is not enabled (Debug mode), restore old SE translator
-    if (!ll::isDebugMode()) _set_se_translator(seh_exception::TranslateSEHtoCE);
 
+#if !defined(LL_DEBUG)
+    // If SEH Protection is not enabled (Debug mode), restore old SE translator
+    _set_se_translator(seh_exception::TranslateSEHtoCE);
+#endif
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
 
@@ -323,8 +325,10 @@ void leviLaminaMain() {
     // Welcome
     printLogo();
 
+#if defined(LL_DEBUG)
     // DebugMode
-    if (ll::isDebugMode()) logger.warn("ll.main.warning.inDevMode"_tr);
+    logger.warn("ll.main.warning.inDebugMode"_tr);
+#endif
 
     // Addon Helper
     // if (ll::globalConfig.enableAddonsHelper) {
