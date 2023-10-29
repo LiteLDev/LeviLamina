@@ -13,12 +13,12 @@ namespace Core { class Path; }
 
 namespace Bedrock::Detail {
 // NOLINTBEGIN
-// symbol: ?createContext@Detail@Bedrock@@YA?AUnullopt_t@std@@XZ
-MCAPI std::nullopt_t createContext();
-
 // symbol:
 // ?createContext@Detail@Bedrock@@YA?AUContext@CallStack@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI struct Bedrock::CallStack::Context createContext(std::string);
+
+// symbol: ?createContext@Detail@Bedrock@@YA?AUnullopt_t@std@@XZ
+MCAPI std::nullopt_t createContext();
 
 // symbol: ?createError@Detail@Bedrock@@YA?AU?$ErrorInfoBuilder@Verror_code@std@@@12@W4errc@std@@@Z
 MCAPI struct Bedrock::Detail::ErrorInfoBuilder<std::error_code> createError(std::errc);

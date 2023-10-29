@@ -44,11 +44,11 @@ public:
     // symbol: ?getMapFoliageColor@FoliageColor@@SAHMM@Z
     MCAPI static int getMapFoliageColor(float, float);
 
-    // symbol: ?getMapGrassColor@FoliageColor@@SAHMM@Z
-    MCAPI static int getMapGrassColor(float, float);
-
     // symbol: ?getMapGrassColor@FoliageColor@@SAHAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static int getMapGrassColor(class BlockSource&, class BlockPos const&);
+
+    // symbol: ?getMapGrassColor@FoliageColor@@SAHMM@Z
+    MCAPI static int getMapGrassColor(float, float);
 
     // NOLINTEND
 

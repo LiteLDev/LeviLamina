@@ -22,11 +22,11 @@ public:
     // symbol: ?getTotalNumberOfChunks@FileChunkManager@@QEAAHXZ
     MCAPI int getTotalNumberOfChunks();
 
-    // symbol: ?reset@FileChunkManager@@QEAAX_KI@Z
-    MCAPI void reset(uint64, uint);
-
     // symbol: ?reset@FileChunkManager@@QEAAXXZ
     MCAPI void reset();
+
+    // symbol: ?reset@FileChunkManager@@QEAAX_KI@Z
+    MCAPI void reset(uint64, uint);
 
     // symbol: ??1FileChunkManager@@QEAA@XZ
     MCAPI ~FileChunkManager();

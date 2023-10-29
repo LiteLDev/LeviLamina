@@ -71,11 +71,11 @@ public:
     // symbol: ??4LayeredAbilities@@QEAAAEAV0@AEBV0@@Z
     MCAPI class LayeredAbilities& operator=(class LayeredAbilities const&);
 
-    // symbol: ?setAbility@LayeredAbilities@@QEAAXW4AbilitiesIndex@@M@Z
-    MCAPI void setAbility(::AbilitiesIndex, float);
-
     // symbol: ?setAbility@LayeredAbilities@@QEAAXW4AbilitiesIndex@@_N@Z
     MCAPI void setAbility(::AbilitiesIndex, bool);
+
+    // symbol: ?setAbility@LayeredAbilities@@QEAAXW4AbilitiesIndex@@M@Z
+    MCAPI void setAbility(::AbilitiesIndex, float);
 
     // symbol: ?setCommandPermissions@LayeredAbilities@@QEAAXW4CommandPermissionLevel@@@Z
     MCAPI void setCommandPermissions(::CommandPermissionLevel);

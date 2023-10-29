@@ -5,20 +5,18 @@
 // auto generated inclusion list
 #include "mc/network/ERelayServerConfigurationResult.h"
 #include "mc/network/ESendType.h"
-#include "mc/network/INetherNetTransportInterface.h"
 #include "mc/network/IWebRTCSignalingInterface.h"
 #include "mc/network/SignalingHostConnectionStatus.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace NetherNet { class INetherNetTransportInterface; }
 namespace NetherNet { class IWebRTCSignalingInterface; }
 namespace NetherNet { struct NetherNetTransportServerConfiguration; }
 namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct SessionState; }
 // clang-format on
 
-class NetherNetTransportStub : public ::NetherNet::INetherNetTransportInterface {
+class NetherNetTransportStub {
 public:
     // prevent constructor by default
     NetherNetTransportStub& operator=(NetherNetTransportStub const&);

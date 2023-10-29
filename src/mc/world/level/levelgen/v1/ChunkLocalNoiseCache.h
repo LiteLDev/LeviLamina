@@ -28,11 +28,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ChunkLocalNoiseCache@@QEAA@V?$DividedPos2d@$03@@H@Z
-    MCAPI ChunkLocalNoiseCache(class DividedPos2d<4>, int);
-
     // symbol: ??0ChunkLocalNoiseCache@@QEAA@XZ
     MCAPI ChunkLocalNoiseCache();
+
+    // symbol: ??0ChunkLocalNoiseCache@@QEAA@V?$DividedPos2d@$03@@H@Z
+    MCAPI ChunkLocalNoiseCache(class DividedPos2d<4>, int);
 
     // symbol: ?getCacheEntry@ChunkLocalNoiseCache@@QEBAAEBUCacheEntry@1@AEBV?$DividedPos2d@$03@@@Z
     MCAPI struct ChunkLocalNoiseCache::CacheEntry const& getCacheEntry(class DividedPos2d<4> const&) const;

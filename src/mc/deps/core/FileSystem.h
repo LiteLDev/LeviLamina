@@ -102,12 +102,12 @@ public:
     MCAPI static class Core::Result
     openFile(class Core::Path const&, class Core::File&, class Core::FileOpenMode, ::Core::FileBufferingMode);
 
+    // symbol: ?readFileData@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
+    MCAPI static class Core::Result readFileData(class Core::Path const&, std::vector<uchar>&);
+
     // symbol:
     // ?readFileData@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@_K1AEAV?$vector@EV?$allocator@E@std@@@std@@AEA_K@Z
     MCAPI static class Core::Result readFileData(class Core::Path const&, uint64, uint64, std::vector<uchar>&, uint64&);
-
-    // symbol: ?readFileData@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-    MCAPI static class Core::Result readFileData(class Core::Path const&, std::vector<uchar>&);
 
     // symbol: ?removeIgnoredThrottlePath@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@@Z
     MCAPI static class Core::Result removeIgnoredThrottlePath(class Core::Path const&);

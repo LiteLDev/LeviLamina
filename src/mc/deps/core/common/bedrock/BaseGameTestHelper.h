@@ -38,15 +38,15 @@ public:
     MCAPI void failIf(std::function<std::optional<struct gametest::GameTestError>(void)>);
 
     // symbol:
+    // ?generateErrorWithContext@BaseGameTestHelper@gametest@@QEBA?AUGameTestError@2@W4GameTestErrorType@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@@Z
+    MCAPI struct gametest::GameTestError
+    generateErrorWithContext(::gametest::GameTestErrorType, std::string, class BlockPos const&) const;
+
+    // symbol:
     // ?generateErrorWithContext@BaseGameTestHelper@gametest@@QEBA?AUGameTestError@2@W4GameTestErrorType@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@6@AEBVBlockPos@@@Z
     MCAPI struct gametest::GameTestError
     generateErrorWithContext(::gametest::GameTestErrorType, std::string, std::vector<std::string>, class BlockPos const&)
         const;
-
-    // symbol:
-    // ?generateErrorWithContext@BaseGameTestHelper@gametest@@QEBA?AUGameTestError@2@W4GameTestErrorType@2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@@Z
-    MCAPI struct gametest::GameTestError
-    generateErrorWithContext(::gametest::GameTestErrorType, std::string, class BlockPos const&) const;
 
     // symbol: ?getTestDirection@BaseGameTestHelper@gametest@@QEBAEXZ
     MCAPI uchar getTestDirection() const;

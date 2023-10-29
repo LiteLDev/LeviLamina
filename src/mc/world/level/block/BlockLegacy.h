@@ -931,12 +931,12 @@ public:
     // symbol: ?addTrait@BlockLegacy@@QEAAAEAV1@AEBVITrait@BlockTrait@@@Z
     MCAPI class BlockLegacy& addTrait(class BlockTrait::ITrait const&);
 
+    // symbol: ?anyOf@BlockLegacy@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@@Z
+    MCAPI bool anyOf(std::initializer_list<class HashedString const>) const;
+
     // symbol:
     // ?anyOf@BlockLegacy@@QEBA_NAEBV?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@@Z
     MCAPI bool anyOf(std::vector<std::reference_wrapper<class HashedString const>> const&) const;
-
-    // symbol: ?anyOf@BlockLegacy@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@@Z
-    MCAPI bool anyOf(std::initializer_list<class HashedString const>) const;
 
     // symbol:
     // ?buildDescriptionName@BlockLegacy@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
@@ -1206,11 +1206,11 @@ public:
     // symbol: ?getPlacementFacingAllExceptAxisY@BlockLegacy@@SAEAEBVActor@@AEBVBlockPos@@M@Z
     MCAPI static uchar getPlacementFacingAllExceptAxisY(class Actor const&, class BlockPos const&, float);
 
-    // symbol: ?popResource@BlockLegacy@@SAPEAVItemActor@@AEAVBlockSource@@AEBVBlockPos@@AEBVItemStack@@@Z
-    MCAPI static class ItemActor* popResource(class BlockSource&, class BlockPos const&, class ItemStack const&);
-
     // symbol: ?popResource@BlockLegacy@@SAPEAVItemActor@@AEAVBlockSource@@AEBVBlockPos@@AEBVItemInstance@@@Z
     MCAPI static class ItemActor* popResource(class BlockSource&, class BlockPos const&, class ItemInstance const&);
+
+    // symbol: ?popResource@BlockLegacy@@SAPEAVItemActor@@AEAVBlockSource@@AEBVBlockPos@@AEBVItemStack@@@Z
+    MCAPI static class ItemActor* popResource(class BlockSource&, class BlockPos const&, class ItemStack const&);
 
     // symbol: ?BLOCK_DESCRIPTION_PREFIX@BlockLegacy@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;

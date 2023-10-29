@@ -84,12 +84,12 @@ public:
     MCAPI class Bedrock::Result<short> getSignedShort();
 
     // symbol:
-    // ?getString@ReadOnlyBinaryStream@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Bedrock::Result<void> getString(std::string&);
-
-    // symbol:
     // ?getString@ReadOnlyBinaryStream@@QEAA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@Verror_code@2@@Bedrock@@XZ
     MCAPI class Bedrock::Result<std::string> getString();
+
+    // symbol:
+    // ?getString@ReadOnlyBinaryStream@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class Bedrock::Result<void> getString(std::string&);
 
     // symbol: ?getUnsignedChar@ReadOnlyBinaryStream@@QEAA?AV?$Result@EVerror_code@std@@@Bedrock@@XZ
     MCAPI class Bedrock::Result<uchar> getUnsignedChar();

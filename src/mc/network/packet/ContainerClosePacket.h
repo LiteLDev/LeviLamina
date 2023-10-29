@@ -40,11 +40,11 @@ public:
     // symbol: ??1ContainerClosePacket@@UEAA@XZ
     MCVAPI ~ContainerClosePacket();
 
-    // symbol: ??0ContainerClosePacket@@QEAA@W4ContainerID@@_N@Z
-    MCAPI ContainerClosePacket(::ContainerID, bool);
-
     // symbol: ??0ContainerClosePacket@@QEAA@XZ
     MCAPI ContainerClosePacket();
+
+    // symbol: ??0ContainerClosePacket@@QEAA@W4ContainerID@@_N@Z
+    MCAPI ContainerClosePacket(::ContainerID, bool);
 
     // NOLINTEND
 };

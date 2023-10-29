@@ -37,10 +37,10 @@ public:
     // vIndex: 6, symbol: ?isInInvalidLocation@MineshaftPiece@@UEAA_NAEAVBlockSource@@AEBVBoundingBox@@@Z
     virtual bool isInInvalidLocation(class BlockSource&, class BoundingBox const&);
 
-    // vIndex: 7, symbol: ?getWorldX@OceanMonumentPiece@@UEAAHHH@Z
+    // vIndex: 7, symbol: ?getWorldX@StructurePiece@@UEAAHHH@Z
     virtual int getWorldX(int, int);
 
-    // vIndex: 8, symbol: ?getWorldZ@OceanMonumentPiece@@UEAAHHH@Z
+    // vIndex: 8, symbol: ?getWorldZ@StructurePiece@@UEAAHHH@Z
     virtual int getWorldZ(int, int);
 
     // vIndex: 9, symbol: ?placeBlock@StructurePiece@@UEAAXAEAVBlockSource@@AEBVBlock@@HHHAEBVBoundingBox@@@Z

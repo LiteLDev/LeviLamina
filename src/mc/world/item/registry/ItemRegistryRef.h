@@ -66,11 +66,11 @@ public:
     MCAPI std::vector<std::reference_wrapper<class HashedString const>> const&
           getComplexAliasSplitNames(class HashedString const&) const;
 
-    // symbol: ?getItem@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@F@Z
-    MCAPI class WeakPtr<class Item> getItem(short) const;
-
     // symbol: ?getItem@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
     MCAPI class WeakPtr<class Item> getItem(class HashedString const&) const;
+
+    // symbol: ?getItem@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@F@Z
+    MCAPI class WeakPtr<class Item> getItem(short) const;
 
     // symbol: ?getItemCount@ItemRegistryRef@@QEBAHXZ
     MCAPI int getItemCount() const;
@@ -109,23 +109,23 @@ public:
     // symbol: ?lockItemWorldCompatibilityMutex@ItemRegistryRef@@QEBA?AVLockGuard@1@XZ
     MCAPI class ItemRegistryRef::LockGuard lockItemWorldCompatibilityMutex() const;
 
+    // symbol: ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
+    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const&) const;
+
     // symbol:
     // ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAHV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI class WeakPtr<class Item> lookupByName(int&, std::string_view) const;
-
-    // symbol: ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const&) const;
 
     // symbol:
     // ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAH0V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI class WeakPtr<class Item> lookupByName(int&, int&, std::string_view) const;
 
+    // symbol: ?lookupByNameNoAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
+    MCAPI class WeakPtr<class Item> lookupByNameNoAlias(class HashedString const&) const;
+
     // symbol:
     // ?lookupByNameNoAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string_view) const;
-
-    // symbol: ?lookupByNameNoAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> lookupByNameNoAlias(class HashedString const&) const;
 
     // symbol: ?lookupByNameNoParsing@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAHAEBVHashedString@@@Z
     MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int&, class HashedString const&) const;

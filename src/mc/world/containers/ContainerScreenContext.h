@@ -13,14 +13,14 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ContainerScreenContext@@QEAA@XZ
+    MCAPI ContainerScreenContext();
+
     // symbol: ??0ContainerScreenContext@@QEAA@AEAVPlayer@@W4ContainerType@@AEBVBlockPos@@@Z
     MCAPI ContainerScreenContext(class Player&, ::ContainerType, class BlockPos const&);
 
     // symbol: ??0ContainerScreenContext@@QEAA@AEAVPlayer@@W4ContainerType@@AEBUActorUniqueID@@@Z
     MCAPI ContainerScreenContext(class Player&, ::ContainerType, struct ActorUniqueID const&);
-
-    // symbol: ??0ContainerScreenContext@@QEAA@XZ
-    MCAPI ContainerScreenContext();
 
     // symbol: ?getPlayer@ContainerScreenContext@@QEBAAEAVPlayer@@XZ
     MCAPI class Player& getPlayer() const;

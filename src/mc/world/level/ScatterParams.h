@@ -37,11 +37,11 @@ public:
         // symbol: ??0CoordinateRange@ScatterParams@@QEAA@XZ
         MCAPI CoordinateRange();
 
-        // symbol: ??0CoordinateRange@ScatterParams@@QEAA@AEBU01@@Z
-        MCAPI CoordinateRange(struct ScatterParams::CoordinateRange const&);
-
         // symbol: ??0CoordinateRange@ScatterParams@@QEAA@$$QEAU01@@Z
         MCAPI CoordinateRange(struct ScatterParams::CoordinateRange&&);
+
+        // symbol: ??0CoordinateRange@ScatterParams@@QEAA@AEBU01@@Z
+        MCAPI CoordinateRange(struct ScatterParams::CoordinateRange const&);
 
         // symbol: ?_eval@CoordinateRange@ScatterParams@@QEBAHHHAEAIAEAVRandom@@@Z
         MCAPI int _eval(int, int, uint&, class Random&) const;

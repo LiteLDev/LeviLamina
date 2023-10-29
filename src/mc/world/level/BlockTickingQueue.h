@@ -34,11 +34,11 @@ public:
         // symbol: ??4TickDataSet@BlockTickingQueue@@QEAAAEAV01@$$QEAV01@@Z
         MCAPI class BlockTickingQueue::TickDataSet& operator=(class BlockTickingQueue::TickDataSet&&);
 
-        // symbol: ?remove@TickDataSet@BlockTickingQueue@@QEAA_NAEBVBlockPos@@AEBVBlock@@@Z
-        MCAPI bool remove(class BlockPos const&, class Block const&);
-
         // symbol: ?remove@TickDataSet@BlockTickingQueue@@QEAA_NAEBV?$function@$$A6A_NAEBVTickNextTickData@@@Z@std@@@Z
         MCAPI bool remove(std::function<bool(class TickNextTickData const&)> const&);
+
+        // symbol: ?remove@TickDataSet@BlockTickingQueue@@QEAA_NAEBVBlockPos@@AEBVBlock@@@Z
+        MCAPI bool remove(class BlockPos const&, class Block const&);
 
         // symbol: ??1TickDataSet@BlockTickingQueue@@QEAA@XZ
         MCAPI ~TickDataSet();
@@ -57,11 +57,11 @@ public:
     // symbol: ?acquireAllRandomTicks@BlockTickingQueue@@QEAAXAEAVLevelChunk@@@Z
     MCAPI void acquireAllRandomTicks(class LevelChunk&);
 
-    // symbol: ?acquireAllTicks@BlockTickingQueue@@QEAAXAEAVLevelChunk@@@Z
-    MCAPI void acquireAllTicks(class LevelChunk&);
-
     // symbol: ?acquireAllTicks@BlockTickingQueue@@QEAAXAEAV1@@Z
     MCAPI void acquireAllTicks(class BlockTickingQueue&);
+
+    // symbol: ?acquireAllTicks@BlockTickingQueue@@QEAAXAEAVLevelChunk@@@Z
+    MCAPI void acquireAllTicks(class LevelChunk&);
 
     // symbol: ?add@BlockTickingQueue@@QEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@HH@Z
     MCAPI void add(class BlockSource&, class BlockPos const&, class Block const&, int, int);
@@ -110,11 +110,11 @@ public:
     // symbol: ?load@BlockTickingQueue@@QEAAXAEBVCompoundTag@@AEBVBlockPalette@@@Z
     MCAPI void load(class CompoundTag const&, class BlockPalette const&);
 
-    // symbol: ?remove@BlockTickingQueue@@QEAAXAEBVBlockPos@@AEBVBlock@@@Z
-    MCAPI void remove(class BlockPos const&, class Block const&);
-
     // symbol: ?remove@BlockTickingQueue@@QEAAXAEBV?$function@$$A6A_NAEBVTickNextTickData@@@Z@std@@@Z
     MCAPI void remove(std::function<bool(class TickNextTickData const&)> const&);
+
+    // symbol: ?remove@BlockTickingQueue@@QEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    MCAPI void remove(class BlockPos const&, class Block const&);
 
     // symbol: ?save@BlockTickingQueue@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void save(class CompoundTag&) const;

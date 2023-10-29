@@ -51,14 +51,14 @@ public:
     // symbol: ??1BossEventPacket@@UEAA@XZ
     MCVAPI ~BossEventPacket();
 
-    // symbol: ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@UActorUniqueID@@AEAVBossComponent@@@Z
-    MCAPI BossEventPacket(::BossEventUpdateType, struct ActorUniqueID, class BossComponent&);
+    // symbol: ??0BossEventPacket@@QEAA@XZ
+    MCAPI BossEventPacket();
 
     // symbol: ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@AEAVRaidBossComponent@@@Z
     MCAPI BossEventPacket(::BossEventUpdateType, class RaidBossComponent&);
 
-    // symbol: ??0BossEventPacket@@QEAA@XZ
-    MCAPI BossEventPacket();
+    // symbol: ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@UActorUniqueID@@AEAVBossComponent@@@Z
+    MCAPI BossEventPacket(::BossEventUpdateType, struct ActorUniqueID, class BossComponent&);
 
     // NOLINTEND
 };

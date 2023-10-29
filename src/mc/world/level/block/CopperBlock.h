@@ -157,13 +157,13 @@ public:
     virtual void __unk_vfn_183();
 
     // symbol:
+    // ??0CopperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CopperType@@AEBVHashedString@@@Z
+    MCAPI CopperBlock(std::string const&, int, ::CopperType, class HashedString const&);
+
+    // symbol:
     // ??0CopperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CopperType@@AEBVHashedString@@22@Z
     MCAPI
     CopperBlock(std::string const&, int, ::CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
-
-    // symbol:
-    // ??0CopperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CopperType@@AEBVHashedString@@@Z
-    MCAPI CopperBlock(std::string const&, int, ::CopperType, class HashedString const&);
 
     // NOLINTEND
 };

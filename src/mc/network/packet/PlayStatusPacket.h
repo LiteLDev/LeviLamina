@@ -39,11 +39,11 @@ public:
     // symbol: ??1PlayStatusPacket@@UEAA@XZ
     MCVAPI ~PlayStatusPacket();
 
-    // symbol: ??0PlayStatusPacket@@QEAA@W4PlayStatus@@@Z
-    MCAPI explicit PlayStatusPacket(::PlayStatus);
-
     // symbol: ??0PlayStatusPacket@@QEAA@XZ
     MCAPI PlayStatusPacket();
+
+    // symbol: ??0PlayStatusPacket@@QEAA@W4PlayStatus@@@Z
+    MCAPI explicit PlayStatusPacket(::PlayStatus);
 
     // NOLINTEND
 };

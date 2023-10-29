@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/module/IGameModuleShared.h"
-
-class VanillaGameModuleDedicatedServer : public ::IGameModuleShared {
+class VanillaGameModuleDedicatedServer {
 public:
     // prevent constructor by default
     VanillaGameModuleDedicatedServer& operator=(VanillaGameModuleDedicatedServer const&);

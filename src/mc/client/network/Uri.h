@@ -39,11 +39,11 @@ public:
     // symbol: ??0Uri@httpclient@xbox@@QEAA@XZ
     MCAPI Uri();
 
-    // symbol: ??0Uri@httpclient@xbox@@QEAA@AEBV012@@Z
-    MCAPI Uri(class xbox::httpclient::Uri const&);
-
     // symbol: ??0Uri@httpclient@xbox@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$http_stl_allocator@D@@@std@@@Z
     MCAPI explicit Uri(http_string const&);
+
+    // symbol: ??0Uri@httpclient@xbox@@QEAA@AEBV012@@Z
+    MCAPI Uri(class xbox::httpclient::Uri const&);
 
     // symbol: ??4Uri@httpclient@xbox@@QEAAAEAV012@$$QEAV012@@Z
     MCAPI class xbox::httpclient::Uri& operator=(class xbox::httpclient::Uri&&);

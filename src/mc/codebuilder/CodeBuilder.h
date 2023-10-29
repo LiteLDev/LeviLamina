@@ -40,8 +40,8 @@ MCAPI struct MCRESULT deserialize(class Json::Value const&, struct CodeBuilder::
 MCAPI bool fromString(std::string const&, ::CodeBuilder::RequestPurpose&);
 
 // symbol:
-// ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUChatMessage@1@AEBV23@@Z
-MCAPI std::string serialize(struct CodeBuilder::ChatMessage const&, std::string const&);
+// ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUAgentMessage@1@@Z
+MCAPI std::string serialize(struct CodeBuilder::AgentMessage const&);
 
 // symbol:
 // ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUChatMessage@1@@Z
@@ -52,24 +52,24 @@ MCAPI std::string serialize(struct CodeBuilder::ChatMessage const&);
 MCAPI std::string serialize(struct CodeBuilder::CommandMessage const&);
 
 // symbol:
-// ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUEventMessage@1@@Z
-MCAPI std::string serialize(struct CodeBuilder::EventMessage const&);
-
-// symbol:
-// ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUErrorMessage@1@@Z
-MCAPI std::string serialize(struct CodeBuilder::ErrorMessage const&);
+// ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUDataMessage@1@@Z
+MCAPI std::string serialize(struct CodeBuilder::DataMessage const&);
 
 // symbol:
 // ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUEncryptionResult@1@@Z
 MCAPI std::string serialize(struct CodeBuilder::EncryptionResult const&);
 
 // symbol:
-// ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUDataMessage@1@@Z
-MCAPI std::string serialize(struct CodeBuilder::DataMessage const&);
+// ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUErrorMessage@1@@Z
+MCAPI std::string serialize(struct CodeBuilder::ErrorMessage const&);
 
 // symbol:
-// ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUAgentMessage@1@@Z
-MCAPI std::string serialize(struct CodeBuilder::AgentMessage const&);
+// ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUEventMessage@1@@Z
+MCAPI std::string serialize(struct CodeBuilder::EventMessage const&);
+
+// symbol:
+// ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUChatMessage@1@AEBV23@@Z
+MCAPI std::string serialize(struct CodeBuilder::ChatMessage const&, std::string const&);
 
 // symbol:
 // ?toString@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ResponsePurpose@1@@Z

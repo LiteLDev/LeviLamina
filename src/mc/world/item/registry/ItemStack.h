@@ -14,17 +14,17 @@ public:
     ItemStackNetIdVariant mNetIdVariant;
 
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ItemStack@@UEAA@XZ
+    virtual ~ItemStack();
 
     // vIndex: 1, symbol: ?reinit@ItemStack@@UEAAXAEBVItem@@HH@Z
-    virtual void reinit(class Item const&, int, int);
+    virtual void reinit(class Item const& item, int count = 1, int auxValue = 0);
 
     // vIndex: 2, symbol: ?reinit@ItemStack@@UEAAXAEBVBlockLegacy@@H@Z
-    virtual void reinit(class BlockLegacy const&, int);
+    virtual void reinit(class BlockLegacy const& blockLegacy, int count = 1);
 
     // vIndex: 3, symbol: ?reinit@ItemStack@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@Z
-    virtual void reinit(std::string_view, int, int);
+    virtual void reinit(std::string_view name, int count = 1, int auxValue = 0);
 
     // vIndex: 4, symbol:
     // ?setNull@ItemStack@@UEAAXV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
@@ -37,34 +37,29 @@ public:
     // ?toDebugString@ItemStack@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string toDebugString() const;
 
-    // symbol: ??1ItemStack@@UEAA@XZ
-    MCVAPI ~ItemStack();
+    // symbol: ??0ItemStack@@QEAA@XZ
+    MCAPI ItemStack();
 
     // symbol: ??0ItemStack@@QEAA@AEBVItemInstance@@@Z
     MCAPI explicit ItemStack(class ItemInstance const&);
 
-    // symbol: ??0ItemStack@@QEAA@AEBVRecipeIngredient@@@Z
-    MCAPI explicit ItemStack(class RecipeIngredient const&);
-
-    // symbol: ??0ItemStack@@QEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
-    MCAPI
-    ItemStack(class Item const& item, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
-
-    // symbol: ??0ItemStack@@QEAA@XZ
-    MCAPI ItemStack();
-
     // symbol: ??0ItemStack@@QEAA@AEBV0@@Z
     MCAPI ItemStack(class ItemStack const&);
 
-    // symbol: ??0ItemStack@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHPEBVCompoundTag@@@Z
-    MCAPI
-    ItemStack(std::string_view name, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
+    // symbol: ??0ItemStack@@QEAA@AEBVRecipeIngredient@@@Z
+    MCAPI explicit ItemStack(class RecipeIngredient const&);
 
     // symbol: ??0ItemStack@@QEAA@AEBVBlockLegacy@@H@Z
     MCAPI ItemStack(class BlockLegacy const& blockLegacy, int count = 1);
 
     // symbol: ??0ItemStack@@QEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
     MCAPI ItemStack(class Block const& block, int count = 1, class CompoundTag const* userData = nullptr);
+
+    // symbol: ??0ItemStack@@QEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
+    MCAPI ItemStack(class Item const& item, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
+
+    // symbol: ??0ItemStack@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHPEBVCompoundTag@@@Z
+    MCAPI ItemStack(std::string_view name, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
 
     // symbol: ?_assignNetIdVariant@ItemStack@@QEBAXAEBV1@@Z
     MCAPI void _assignNetIdVariant(class ItemStack const&) const;
@@ -136,11 +131,11 @@ public:
     // symbol: ?fromDescriptor@ItemStack@@SA?AV1@AEBVNetworkItemStackDescriptor@@AEAVBlockPalette@@_N@Z
     MCAPI static class ItemStack fromDescriptor(class NetworkItemStackDescriptor const&, class BlockPalette&, bool);
 
-    // symbol: ?fromTag@ItemStack@@SA?AV1@AEBVCompoundTag@@AEAVLevel@@@Z
-    MCAPI static class ItemStack fromTag(class CompoundTag const&, class Level&);
-
     // symbol: ?fromTag@ItemStack@@SA?AV1@AEBVCompoundTag@@@Z
     MCAPI static class ItemStack fromTag(class CompoundTag const&);
+
+    // symbol: ?fromTag@ItemStack@@SA?AV1@AEBVCompoundTag@@AEAVLevel@@@Z
+    MCAPI static class ItemStack fromTag(class CompoundTag const&, class Level&);
 
     // symbol: ?EMPTY_ITEM@ItemStack@@2V1@B
     MCAPI static class ItemStack const EMPTY_ITEM;

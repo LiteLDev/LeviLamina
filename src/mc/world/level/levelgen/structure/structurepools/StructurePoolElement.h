@@ -106,20 +106,20 @@ public:
     MCVAPI ~StructurePoolElement();
 
     // symbol:
+    // ??0StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UStructurePoolElementSettings@@@Z
+    MCAPI StructurePoolElement(
+        Bedrock::NotNullNonOwnerPtr<class StructureManager>,
+        std::string const&,
+        struct StructurePoolElementSettings
+    );
+
+    // symbol:
     // ??0StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Projection@@W4PostProcessSettings@@@Z
     MCAPI StructurePoolElement(
         Bedrock::NotNullNonOwnerPtr<class StructureManager>,
         std::string const&,
         ::Projection,
         ::PostProcessSettings
-    );
-
-    // symbol:
-    // ??0StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UStructurePoolElementSettings@@@Z
-    MCAPI StructurePoolElement(
-        Bedrock::NotNullNonOwnerPtr<class StructureManager>,
-        std::string const&,
-        struct StructurePoolElementSettings
     );
 
     // symbol:

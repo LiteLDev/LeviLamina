@@ -86,16 +86,16 @@ public:
     MCAPI explicit BasicSchema(struct cereal::ReflectionCtx const&);
 
     // symbol:
-    // ??0BasicSchema@internal@cereal@@QEAA@USerializerTraits@2@AEBUReflectionCtx@2@V?$unique_ptr@VConstraint@cereal@@U?$default_delete@VConstraint@cereal@@@std@@@std@@@Z
-    MCAPI
-    BasicSchema(struct cereal::SerializerTraits, struct cereal::ReflectionCtx const&, std::unique_ptr<class cereal::Constraint>);
-
-    // symbol:
     // ??0BasicSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@V?$unique_ptr@VConstraint@cereal@@U?$default_delete@VConstraint@cereal@@@std@@@std@@@Z
     MCAPI BasicSchema(struct cereal::ReflectionCtx const&, std::unique_ptr<class cereal::Constraint>);
 
     // symbol: ??0BasicSchema@internal@cereal@@QEAA@USerializerTraits@2@AEBUReflectionCtx@2@@Z
     MCAPI BasicSchema(struct cereal::SerializerTraits, struct cereal::ReflectionCtx const&);
+
+    // symbol:
+    // ??0BasicSchema@internal@cereal@@QEAA@USerializerTraits@2@AEBUReflectionCtx@2@V?$unique_ptr@VConstraint@cereal@@U?$default_delete@VConstraint@cereal@@@std@@@std@@@Z
+    MCAPI
+    BasicSchema(struct cereal::SerializerTraits, struct cereal::ReflectionCtx const&, std::unique_ptr<class cereal::Constraint>);
 
     // symbol: ?ctx@BasicSchema@internal@cereal@@QEBAAEBUReflectionCtx@3@XZ
     MCAPI struct cereal::ReflectionCtx const& ctx() const;

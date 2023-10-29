@@ -38,11 +38,11 @@ public:
     // symbol: ??1MoveActorDeltaPacket@@UEAA@XZ
     MCVAPI ~MoveActorDeltaPacket();
 
-    // symbol: ??0MoveActorDeltaPacket@@QEAA@AEBVMoveActorDeltaData@@@Z
-    MCAPI explicit MoveActorDeltaPacket(class MoveActorDeltaData const&);
-
     // symbol: ??0MoveActorDeltaPacket@@QEAA@XZ
     MCAPI MoveActorDeltaPacket();
+
+    // symbol: ??0MoveActorDeltaPacket@@QEAA@AEBVMoveActorDeltaData@@@Z
+    MCAPI explicit MoveActorDeltaPacket(class MoveActorDeltaData const&);
 
     // NOLINTEND
 };

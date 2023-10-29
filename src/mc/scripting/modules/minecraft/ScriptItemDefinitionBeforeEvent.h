@@ -28,6 +28,9 @@ public:
     // symbol: ??1ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptItemDefinitionBeforeEvent();
 
+    // symbol: ??0ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
+    MCAPI ScriptItemDefinitionBeforeEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent&&);
+
     // symbol: ??0ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptItemDefinitionBeforeEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent const&);
 
@@ -35,9 +38,6 @@ public:
     // ??0ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEAUItemDefinitionEventTriggeredEvent@@AEBVWeakLifetimeScope@3@@Z
     MCAPI
     ScriptItemDefinitionBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemDefinitionEventTriggeredEvent&, class Scripting::WeakLifetimeScope const&);
-
-    // symbol: ??0ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
-    MCAPI ScriptItemDefinitionBeforeEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent&&);
 
     // symbol: ??4ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent&

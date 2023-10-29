@@ -30,11 +30,11 @@ public:
     // symbol: ?addBuff@AttributeInstance@@QEAAXAEBVAttributeBuff@@@Z
     MCAPI void addBuff(class AttributeBuff const&);
 
-    // symbol: ?addModifier@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeModifier@@@std@@@Z
-    MCAPI void addModifier(std::shared_ptr<class AttributeModifier>);
-
     // symbol: ?addModifier@AttributeInstance@@QEAAXAEBVAttributeModifier@@@Z
     MCAPI void addModifier(class AttributeModifier const&);
+
+    // symbol: ?addModifier@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeModifier@@@std@@@Z
+    MCAPI void addModifier(std::shared_ptr<class AttributeModifier>);
 
     // symbol: ?getAttribute@AttributeInstance@@QEBAPEBVAttribute@@XZ
     MCAPI class Attribute const* getAttribute() const;
@@ -68,11 +68,11 @@ public:
     // symbol: ?hasModifier@AttributeInstance@@QEBA_NAEBVAttributeModifier@@@Z
     MCAPI bool hasModifier(class AttributeModifier const&) const;
 
-    // symbol: ?hasModifier@AttributeInstance@@QEBA_NV?$shared_ptr@VAttributeModifier@@@std@@@Z
-    MCAPI bool hasModifier(std::shared_ptr<class AttributeModifier>) const;
-
     // symbol: ?hasModifier@AttributeInstance@@QEBA_NAEBVUUID@mce@@@Z
     MCAPI bool hasModifier(class mce::UUID const&) const;
+
+    // symbol: ?hasModifier@AttributeInstance@@QEBA_NV?$shared_ptr@VAttributeModifier@@@std@@@Z
+    MCAPI bool hasModifier(std::shared_ptr<class AttributeModifier>) const;
 
     // symbol: ?hasModifiers@AttributeInstance@@QEBA_NXZ
     MCAPI bool hasModifiers() const;
@@ -92,23 +92,23 @@ public:
     // symbol: ?registerListener@AttributeInstance@@QEAAXAEBV1@@Z
     MCAPI void registerListener(class AttributeInstance const&);
 
-    // symbol: ?removeBuff@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeBuff@@@std@@@Z
-    MCAPI void removeBuff(std::shared_ptr<class AttributeBuff>);
-
     // symbol: ?removeBuff@AttributeInstance@@QEAAXAEBVAttributeBuff@@@Z
     MCAPI void removeBuff(class AttributeBuff const&);
 
+    // symbol: ?removeBuff@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeBuff@@@std@@@Z
+    MCAPI void removeBuff(std::shared_ptr<class AttributeBuff>);
+
     // symbol: ?removeBuffs@AttributeInstance@@QEAAXXZ
     MCAPI void removeBuffs();
-
-    // symbol: ?removeModifier@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeModifier@@@std@@@Z
-    MCAPI void removeModifier(std::shared_ptr<class AttributeModifier>);
 
     // symbol: ?removeModifier@AttributeInstance@@QEAA_NAEBVUUID@mce@@@Z
     MCAPI bool removeModifier(class mce::UUID const&);
 
     // symbol: ?removeModifier@AttributeInstance@@QEAAXAEBVAttributeModifier@@@Z
     MCAPI void removeModifier(class AttributeModifier const&);
+
+    // symbol: ?removeModifier@AttributeInstance@@QEAAXV?$shared_ptr@VAttributeModifier@@@std@@@Z
+    MCAPI void removeModifier(std::shared_ptr<class AttributeModifier>);
 
     // symbol: ?removeModifiers@AttributeInstance@@QEAAXXZ
     MCAPI void removeModifiers();
@@ -153,11 +153,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_calculateValue@AttributeInstance@@AEAAMAEBVAttributeBuff@@@Z
-    MCAPI float _calculateValue(class AttributeBuff const&);
-
     // symbol: ?_calculateValue@AttributeInstance@@AEAAMXZ
     MCAPI float _calculateValue();
+
+    // symbol: ?_calculateValue@AttributeInstance@@AEAAMAEBVAttributeBuff@@@Z
+    MCAPI float _calculateValue(class AttributeBuff const&);
 
     // symbol: ?_sanitizeValue@AttributeInstance@@AEAAMM@Z
     MCAPI float _sanitizeValue(float);

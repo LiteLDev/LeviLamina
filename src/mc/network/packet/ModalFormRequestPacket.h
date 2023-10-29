@@ -35,11 +35,11 @@ public:
     // ?_read@ModalFormRequestPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
-    // symbol: ??0ModalFormRequestPacket@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ModalFormRequestPacket(uint, std::string const&);
-
     // symbol: ??0ModalFormRequestPacket@@QEAA@XZ
     MCAPI ModalFormRequestPacket();
+
+    // symbol: ??0ModalFormRequestPacket@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI ModalFormRequestPacket(uint, std::string const&);
 
     // NOLINTEND
 };

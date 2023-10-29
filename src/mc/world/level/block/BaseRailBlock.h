@@ -254,11 +254,11 @@ public:
     // symbol: ?isFacingWestEast@BaseRailBlock@@SA_NAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isFacingWestEast(class BlockSource const&, class BlockPos const&);
 
-    // symbol: ?isRail@BaseRailBlock@@SA_NAEBVIConstBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool isRail(class IConstBlockSource const&, class BlockPos const&);
-
     // symbol: ?isRail@BaseRailBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isRail(class Block const&);
+
+    // symbol: ?isRail@BaseRailBlock@@SA_NAEBVIConstBlockSource@@AEBVBlockPos@@@Z
+    MCAPI static bool isRail(class IConstBlockSource const&, class BlockPos const&);
 
     // symbol: ?isSlope@BaseRailBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isSlope(class Block const&);

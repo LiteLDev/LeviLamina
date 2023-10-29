@@ -38,11 +38,11 @@ public:
     // symbol: ??1ToastRequestPacket@@UEAA@XZ
     MCVAPI ~ToastRequestPacket();
 
-    // symbol: ??0ToastRequestPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI ToastRequestPacket(std::string const&, std::string const&);
-
     // symbol: ??0ToastRequestPacket@@QEAA@XZ
     MCAPI ToastRequestPacket();
+
+    // symbol: ??0ToastRequestPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+    MCAPI ToastRequestPacket(std::string const&, std::string const&);
 
     // NOLINTEND
 };

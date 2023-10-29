@@ -54,13 +54,13 @@ public:
     // ?getFillLevel@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getFillLevel();
 
-    // symbol: ??4BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
-    MCAPI class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent&
-    operator=(class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent const&);
-
     // symbol: ??4BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent&
     operator=(class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent&&);
+
+    // symbol: ??4BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
+    MCAPI class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent&
+    operator=(class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent const&);
 
     // symbol:
     // ?bind@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VBaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@@Scripting@@XZ

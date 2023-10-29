@@ -10,20 +10,20 @@ namespace cereal { struct ReflectionCtx; }
 struct ComponentItemComponentData_v1_20_30 {
 public:
     // NOLINTBEGIN
-    // symbol: ??0ComponentItemComponentData_v1_20_30@@QEAA@$$QEAU0@@Z
-    MCAPI ComponentItemComponentData_v1_20_30(struct ComponentItemComponentData_v1_20_30&&);
-
     // symbol: ??0ComponentItemComponentData_v1_20_30@@QEAA@XZ
     MCAPI ComponentItemComponentData_v1_20_30();
+
+    // symbol: ??0ComponentItemComponentData_v1_20_30@@QEAA@$$QEAU0@@Z
+    MCAPI ComponentItemComponentData_v1_20_30(struct ComponentItemComponentData_v1_20_30&&);
 
     // symbol: ??0ComponentItemComponentData_v1_20_30@@QEAA@AEBU0@@Z
     MCAPI ComponentItemComponentData_v1_20_30(struct ComponentItemComponentData_v1_20_30 const&);
 
-    // symbol: ??4ComponentItemComponentData_v1_20_30@@QEAAAEAU0@AEBU0@@Z
-    MCAPI struct ComponentItemComponentData_v1_20_30& operator=(struct ComponentItemComponentData_v1_20_30 const&);
-
     // symbol: ??4ComponentItemComponentData_v1_20_30@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct ComponentItemComponentData_v1_20_30& operator=(struct ComponentItemComponentData_v1_20_30&&);
+
+    // symbol: ??4ComponentItemComponentData_v1_20_30@@QEAAAEAU0@AEBU0@@Z
+    MCAPI struct ComponentItemComponentData_v1_20_30& operator=(struct ComponentItemComponentData_v1_20_30 const&);
 
     // symbol: ??1ComponentItemComponentData_v1_20_30@@QEAA@XZ
     MCAPI ~ComponentItemComponentData_v1_20_30();

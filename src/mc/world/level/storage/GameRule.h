@@ -90,11 +90,11 @@ public:
     // symbol: ?getValue@GameRule@@QEBAAEBTValue@1@XZ
     MCAPI union GameRule::Value const& getValue() const;
 
-    // symbol: ??4GameRule@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class GameRule& operator=(class GameRule const&);
-
     // symbol: ??4GameRule@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class GameRule& operator=(class GameRule&&);
+
+    // symbol: ??4GameRule@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class GameRule& operator=(class GameRule const&);
 
     // symbol: ?requiresCheats@GameRule@@QEBA_NXZ
     MCAPI bool requiresCheats() const;
@@ -125,11 +125,11 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_setDefaultValue@GameRule@@IEAAAEAV1@H@Z
-    MCAPI class GameRule& _setDefaultValue(int);
-
     // symbol: ?_setDefaultValue@GameRule@@IEAAAEAV1@_N@Z
     MCAPI class GameRule& _setDefaultValue(bool);
+
+    // symbol: ?_setDefaultValue@GameRule@@IEAAAEAV1@H@Z
+    MCAPI class GameRule& _setDefaultValue(int);
 
     // NOLINTEND
 

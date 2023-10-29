@@ -9,11 +9,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Interaction@@QEAA@$$QEAU0@@Z
-    MCAPI Interaction(struct Interaction&&);
-
     // symbol: ??0Interaction@@QEAA@XZ
     MCAPI Interaction();
+
+    // symbol: ??0Interaction@@QEAA@$$QEAU0@@Z
+    MCAPI Interaction(struct Interaction&&);
 
     // symbol: ??0Interaction@@QEAA@AEBU0@@Z
     MCAPI Interaction(struct Interaction const&);

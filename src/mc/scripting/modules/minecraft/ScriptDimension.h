@@ -250,14 +250,14 @@ public:
         bindScriptWeatherType();
 
     // symbol:
-    // ?getOrCreateHandle@ScriptDimension@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptDimension@ScriptModuleMinecraft@@@Scripting@@V?$AutomaticID@VDimension@@H@@AEAVLevel@@AEBVWeakLifetimeScope@4@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>
-    getOrCreateHandle(DimensionType, class Level&, class Scripting::WeakLifetimeScope const&);
-
-    // symbol:
     // ?getOrCreateHandle@ScriptDimension@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptDimension@ScriptModuleMinecraft@@@Scripting@@AEAVDimension@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>
     getOrCreateHandle(class Dimension&, class Scripting::WeakLifetimeScope const&);
+
+    // symbol:
+    // ?getOrCreateHandle@ScriptDimension@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptDimension@ScriptModuleMinecraft@@@Scripting@@V?$AutomaticID@VDimension@@H@@AEAVLevel@@AEBVWeakLifetimeScope@4@@Z
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>
+    getOrCreateHandle(DimensionType, class Level&, class Scripting::WeakLifetimeScope const&);
 
     // NOLINTEND
 };

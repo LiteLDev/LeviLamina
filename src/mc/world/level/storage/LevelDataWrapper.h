@@ -13,17 +13,17 @@ public:
     // symbol: ??0LevelDataWrapper@@QEAA@XZ
     MCAPI LevelDataWrapper();
 
-    // symbol: ??DLevelDataWrapper@@QEBAAEBVLevelData@@XZ
-    MCAPI class LevelData const& operator*() const;
-
     // symbol: ??DLevelDataWrapper@@QEAAAEAVLevelData@@XZ
     MCAPI class LevelData& operator*();
 
-    // symbol: ??CLevelDataWrapper@@QEBAPEBVLevelData@@XZ
-    MCAPI class LevelData const* operator->() const;
+    // symbol: ??DLevelDataWrapper@@QEBAAEBVLevelData@@XZ
+    MCAPI class LevelData const& operator*() const;
 
     // symbol: ??CLevelDataWrapper@@QEAAPEAVLevelData@@XZ
     MCAPI class LevelData* operator->();
+
+    // symbol: ??CLevelDataWrapper@@QEBAPEBVLevelData@@XZ
+    MCAPI class LevelData const* operator->() const;
 
     // symbol: ?setLevelData@LevelDataWrapper@@QEAAXAEAVLevelData@@@Z
     MCAPI void setLevelData(class LevelData&);

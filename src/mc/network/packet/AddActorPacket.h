@@ -55,7 +55,7 @@ public:
     virtual void write(class BinaryStream&) const;
 
     // vIndex: 4, symbol:
-    // ?read@AvailableActorIdentifiersPacket@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // ?read@PlayerListPacket@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
 
     // vIndex: 5, symbol: ?disallowBatching@Packet@@UEBA_NXZ
@@ -71,11 +71,11 @@ public:
     // symbol: ??1AddActorPacket@@UEAA@XZ
     MCVAPI ~AddActorPacket();
 
-    // symbol: ??0AddActorPacket@@QEAA@AEAVActor@@@Z
-    MCAPI explicit AddActorPacket(class Actor&);
-
     // symbol: ??0AddActorPacket@@QEAA@XZ
     MCAPI AddActorPacket();
+
+    // symbol: ??0AddActorPacket@@QEAA@AEAVActor@@@Z
+    MCAPI explicit AddActorPacket(class Actor&);
 
     // NOLINTEND
 };

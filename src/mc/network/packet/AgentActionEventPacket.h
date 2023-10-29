@@ -42,12 +42,12 @@ public:
     // symbol: ??1AgentActionEventPacket@@UEAA@XZ
     MCVAPI ~AgentActionEventPacket();
 
+    // symbol: ??0AgentActionEventPacket@@QEAA@XZ
+    MCAPI AgentActionEventPacket();
+
     // symbol:
     // ??0AgentActionEventPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4AgentActionType@@AEBVValue@Json@@@Z
     MCAPI AgentActionEventPacket(std::string const&, ::AgentActionType, class Json::Value const&);
-
-    // symbol: ??0AgentActionEventPacket@@QEAA@XZ
-    MCAPI AgentActionEventPacket();
 
     // NOLINTEND
 };

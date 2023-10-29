@@ -22,6 +22,13 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0Event@Events@Social@@QEAA@AEBV012@@Z
+    MCAPI Event(class Social::Events::Event const&);
+
+    // symbol:
+    // ??0Event@Events@Social@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@@std@@@2@@4@H@Z
+    MCAPI Event(uint, std::string const&, std::unordered_map<std::string, class Social::Events::Property>&&, int);
+
     // symbol:
     // ??0Event@Events@Social@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@@std@@@2@@4@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@H@Z
     MCAPI Event(
@@ -31,13 +38,6 @@ public:
         class Bedrock::NonOwnerPointer<class AppPlatform> const&,
         int
     );
-
-    // symbol:
-    // ??0Event@Events@Social@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@@std@@@2@@4@H@Z
-    MCAPI Event(uint, std::string const&, std::unordered_map<std::string, class Social::Events::Property>&&, int);
-
-    // symbol: ??0Event@Events@Social@@QEAA@AEBV012@@Z
-    MCAPI Event(class Social::Events::Event const&);
 
     // symbol: ?addProperty@Event@Events@Social@@QEAAXAEBVProperty@23@@Z
     MCAPI void addProperty(class Social::Events::Property const&);

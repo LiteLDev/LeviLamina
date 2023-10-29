@@ -39,11 +39,11 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0WeakStorageEntity@@IEAA@AEBVStackResultStorageEntity@@@Z
-    MCAPI explicit WeakStorageEntity(class StackResultStorageEntity const&);
-
     // symbol: ??0WeakStorageEntity@@IEAA@AEBVOwnerStorageEntity@@@Z
     MCAPI explicit WeakStorageEntity(class OwnerStorageEntity const&);
+
+    // symbol: ??0WeakStorageEntity@@IEAA@AEBVStackResultStorageEntity@@@Z
+    MCAPI explicit WeakStorageEntity(class StackResultStorageEntity const&);
 
     // symbol: ??0WeakStorageEntity@@IEAA@W4EmptyInit@0@@Z
     MCAPI explicit WeakStorageEntity(::WeakStorageEntity::EmptyInit);

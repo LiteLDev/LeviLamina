@@ -45,11 +45,11 @@ public:
     // symbol: ??0Blob@mce@@QEAA@XZ
     MCAPI Blob();
 
-    // symbol: ??0Blob@mce@@QEAA@_K@Z
-    MCAPI explicit Blob(size_type);
-
     // symbol: ??0Blob@mce@@QEAA@$$QEAV01@@Z
     MCAPI Blob(class mce::Blob&&);
+
+    // symbol: ??0Blob@mce@@QEAA@_K@Z
+    MCAPI explicit Blob(uint64);
 
     // symbol: ?cbegin@Blob@mce@@QEBAPEBEXZ
     MCAPI const_iterator cbegin() const;

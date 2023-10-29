@@ -27,15 +27,15 @@ public:
     // symbol: ??1ScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptItemUseOnBeforeEvent();
 
-    // symbol:
-    // ??0ScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@QEAA@AEAUItemUseOnEvent@@PEAVPlayer@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI ScriptItemUseOnBeforeEvent(struct ItemUseOnEvent&, class Player*, class Scripting::WeakLifetimeScope const&);
-
     // symbol: ??0ScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptItemUseOnBeforeEvent(struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
 
     // symbol: ??0ScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptItemUseOnBeforeEvent(struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent const&);
+
+    // symbol:
+    // ??0ScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@QEAA@AEAUItemUseOnEvent@@PEAVPlayer@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI ScriptItemUseOnBeforeEvent(struct ItemUseOnEvent&, class Player*, class Scripting::WeakLifetimeScope const&);
 
     // symbol: ??4ScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&

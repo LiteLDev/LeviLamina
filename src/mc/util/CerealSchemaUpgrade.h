@@ -21,7 +21,7 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol:
-    // ?previousSchema@BlockDisplayName11910Upgrade@BlockDisplayNameVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z
+    // ?previousSchema@BlockLightDampening11940Upgrade@BlockLightDampeningVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z
     virtual void previousSchema(class cereal::SchemaFactory&) const = 0;
 
     // vIndex: 2, symbol:

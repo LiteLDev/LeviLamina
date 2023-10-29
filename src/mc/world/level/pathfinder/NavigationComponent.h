@@ -13,19 +13,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0NavigationComponent@@QEAA@AEBV0@@Z
-    MCAPI NavigationComponent(class NavigationComponent const&);
-
     // symbol: ??0NavigationComponent@@QEAA@XZ
     MCAPI NavigationComponent();
 
-    // symbol:
-    // ?createPath@NavigationComponent@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVMob@@AEBVVec3@@@Z
-    MCAPI std::unique_ptr<class Path> createPath(class Mob&, class Vec3 const&);
+    // symbol: ??0NavigationComponent@@QEAA@AEBV0@@Z
+    MCAPI NavigationComponent(class NavigationComponent const&);
 
     // symbol:
     // ?createPath@NavigationComponent@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVMob@@AEAVActor@@@Z
     MCAPI std::unique_ptr<class Path> createPath(class Mob&, class Actor&);
+
+    // symbol:
+    // ?createPath@NavigationComponent@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVMob@@AEBVVec3@@@Z
+    MCAPI std::unique_ptr<class Path> createPath(class Mob&, class Vec3 const&);
 
     // symbol: ?getAvoidDamageBlocks@NavigationComponent@@QEBA_NXZ
     MCAPI bool getAvoidDamageBlocks() const;
@@ -125,17 +125,17 @@ public:
     // symbol: ?isStuck@NavigationComponent@@QEBA_NH@Z
     MCAPI bool isStuck(int) const;
 
-    // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEBVVec3@@M@Z
-    MCAPI bool moveTo(class Mob&, class Vec3 const&, float);
-
     // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEAVActor@@M@Z
     MCAPI bool moveTo(class Mob&, class Actor&, float);
 
-    // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEBVVec3@@M1@Z
-    MCAPI bool moveTo(class Mob&, class Vec3 const&, float, class Vec3 const&);
+    // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEBVVec3@@M@Z
+    MCAPI bool moveTo(class Mob&, class Vec3 const&, float);
 
     // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@V?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@M@Z
     MCAPI bool moveTo(class Mob&, std::unique_ptr<class Path>, float);
+
+    // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEBVVec3@@M1@Z
+    MCAPI bool moveTo(class Mob&, class Vec3 const&, float, class Vec3 const&);
 
     // symbol: ??4NavigationComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class NavigationComponent& operator=(class NavigationComponent&&);

@@ -135,12 +135,12 @@ public:
     // symbol: ??1ScriptV010Events@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptV010Events();
 
+    // symbol: ??0ScriptV010Events@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
+    MCAPI ScriptV010Events(class ScriptModuleMinecraft::ScriptV010Events&&);
+
     // symbol:
     // ??0ScriptV010Events@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVLevel@@@gsl@@@Z
     MCAPI ScriptV010Events(class Scripting::WeakLifetimeScope const&, gsl::not_null<class Level*>);
-
-    // symbol: ??0ScriptV010Events@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
-    MCAPI ScriptV010Events(class ScriptModuleMinecraft::ScriptV010Events&&);
 
     // symbol:
     // ?onActorCreated@ScriptV010Events@ScriptModuleMinecraft@@QEAAXAEAV?$StrongTypedObjectHandle@UScriptActorCreateEvent@ScriptModuleMinecraft@@@Scripting@@@Z

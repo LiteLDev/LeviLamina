@@ -35,6 +35,12 @@ public:
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
+    // vIndex: 9, symbol:
+    // ?addAABBs@ButtonBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
+    virtual void
+    addAABBs(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&)
+        const;
+
     // vIndex: 10, symbol:
     // ?getOutline@ButtonBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
     virtual class AABB const&
@@ -238,8 +244,8 @@ public:
     // symbol: ?_checkPressed@ButtonBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _checkPressed(class BlockSource&, class BlockPos const&) const;
 
-    // symbol: ?_getShape@ButtonBlock@@AEBAXAEAVAABB@@_NE1@Z
-    MCAPI void _getShape(class AABB&, bool, uchar, bool) const;
+    // symbol: ?_getShape@ButtonBlock@@AEBA?AVAABB@@_NE0@Z
+    MCAPI class AABB _getShape(bool, uchar, bool) const;
 
     // NOLINTEND
 };

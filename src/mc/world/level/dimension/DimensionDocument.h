@@ -103,11 +103,11 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??4Dimension@DimensionDocument@@QEAAAEAU01@AEBU01@@Z
-        MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension const&);
-
         // symbol: ??4Dimension@DimensionDocument@@QEAAAEAU01@$$QEAU01@@Z
         MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension&&);
+
+        // symbol: ??4Dimension@DimensionDocument@@QEAAAEAU01@AEBU01@@Z
+        MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension const&);
 
         // symbol: ??1Dimension@DimensionDocument@@QEAA@XZ
         MCAPI ~Dimension();

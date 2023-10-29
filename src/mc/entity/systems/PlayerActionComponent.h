@@ -10,11 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PlayerActionComponent@@QEAA@$$QEAU0@@Z
-    MCAPI PlayerActionComponent(struct PlayerActionComponent&&);
-
     // symbol: ??0PlayerActionComponent@@QEAA@XZ
     MCAPI PlayerActionComponent();
+
+    // symbol: ??0PlayerActionComponent@@QEAA@$$QEAU0@@Z
+    MCAPI PlayerActionComponent(struct PlayerActionComponent&&);
 
     // symbol: ?addAbortDestroyBlock@PlayerActionComponent@@QEAAXAEBVBlockPos@@H@Z
     MCAPI void addAbortDestroyBlock(class BlockPos const&, int);

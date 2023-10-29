@@ -8,11 +8,11 @@ public:
     // symbol: ??0ActorDefinitionDescriptor@@QEAA@XZ
     MCAPI ActorDefinitionDescriptor();
 
-    // symbol: ??0ActorDefinitionDescriptor@@QEAA@AEBV0@@Z
-    MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor const&);
-
     // symbol: ??0ActorDefinitionDescriptor@@QEAA@$$QEAV0@@Z
     MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor&&);
+
+    // symbol: ??0ActorDefinitionDescriptor@@QEAA@AEBV0@@Z
+    MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor const&);
 
     // symbol: ?combine@ActorDefinitionDescriptor@@QEAAAEAV1@AEBV1@@Z
     MCAPI class ActorDefinitionDescriptor& combine(class ActorDefinitionDescriptor const&);
@@ -36,11 +36,11 @@ public:
     // symbol: ?hasNavigationSubComponent@ActorDefinitionDescriptor@@QEAA_NXZ
     MCAPI bool hasNavigationSubComponent();
 
-    // symbol: ??4ActorDefinitionDescriptor@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class ActorDefinitionDescriptor& operator=(class ActorDefinitionDescriptor const&);
-
     // symbol: ??4ActorDefinitionDescriptor@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ActorDefinitionDescriptor& operator=(class ActorDefinitionDescriptor&&);
+
+    // symbol: ??4ActorDefinitionDescriptor@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class ActorDefinitionDescriptor& operator=(class ActorDefinitionDescriptor const&);
 
     // symbol: ?overlaps@ActorDefinitionDescriptor@@QEBA_NAEBV1@@Z
     MCAPI bool overlaps(class ActorDefinitionDescriptor const&) const;

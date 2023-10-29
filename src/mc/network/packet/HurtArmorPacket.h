@@ -41,11 +41,11 @@ public:
     // symbol: ??1HurtArmorPacket@@UEAA@XZ
     MCVAPI ~HurtArmorPacket();
 
-    // symbol: ??0HurtArmorPacket@@QEAA@W4ActorDamageCause@@HV?$bitset@$03@std@@@Z
-    MCAPI HurtArmorPacket(::ActorDamageCause, int, std::bitset<4>);
-
     // symbol: ??0HurtArmorPacket@@QEAA@XZ
     MCAPI HurtArmorPacket();
+
+    // symbol: ??0HurtArmorPacket@@QEAA@W4ActorDamageCause@@HV?$bitset@$03@std@@@Z
+    MCAPI HurtArmorPacket(::ActorDamageCause, int, std::bitset<4>);
 
     // NOLINTEND
 };

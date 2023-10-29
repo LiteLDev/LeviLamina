@@ -37,11 +37,11 @@ public:
     // symbol: ??1SetCommandsEnabledPacket@@UEAA@XZ
     MCVAPI ~SetCommandsEnabledPacket();
 
-    // symbol: ??0SetCommandsEnabledPacket@@QEAA@_N@Z
-    MCAPI explicit SetCommandsEnabledPacket(bool);
-
     // symbol: ??0SetCommandsEnabledPacket@@QEAA@XZ
     MCAPI SetCommandsEnabledPacket();
+
+    // symbol: ??0SetCommandsEnabledPacket@@QEAA@_N@Z
+    MCAPI explicit SetCommandsEnabledPacket(bool);
 
     // NOLINTEND
 };

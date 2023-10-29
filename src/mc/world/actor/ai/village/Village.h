@@ -194,11 +194,11 @@ public:
     // symbol: ?isValidRegisteredPOI@Village@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isValidRegisteredPOI(class BlockSource&, class BlockPos const&);
 
-    // symbol: ?isVillagePOI@Village@@SA_NAEBVVillageManager@@AEBVBlock@@@Z
-    MCAPI static bool isVillagePOI(class VillageManager const&, class Block const&);
-
     // symbol: ?isVillagePOI@Village@@SA_NAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isVillagePOI(class BlockSource const&, class BlockPos const&);
+
+    // symbol: ?isVillagePOI@Village@@SA_NAEBVVillageManager@@AEBVBlock@@@Z
+    MCAPI static bool isVillagePOI(class VillageManager const&, class Block const&);
 
     // symbol: ?DEBUG_DRAWING@Village@@2_NA
     MCAPI static bool DEBUG_DRAWING;

@@ -112,13 +112,13 @@ public:
     tryPlaceStructureInWorld(std::unique_ptr<class CommandArea>, class ServerLevel&, class Dimension&, class BoundingBox const&, class BlockPos const&, class StructureSettings const&, class StructureTemplate const&, std::unique_ptr<class StructureAnimationData>);
 
     // symbol:
+    // ?getStructurePath@StructureManager@@SA?AV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> getStructurePath(std::string const&);
+
+    // symbol:
     // ?getStructurePath@StructureManager@@SA?AV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>>
     getStructurePath(std::string const&, std::string const&);
-
-    // symbol:
-    // ?getStructurePath@StructureManager@@SA?AV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> getStructurePath(std::string const&);
 
     // NOLINTEND
 
@@ -129,14 +129,14 @@ public:
     MCAPI std::string _createLevelStorageId(std::string const&, std::string const&);
 
     // symbol:
-    // ?_findResource@StructureManager@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@1AEBVPackInstance@@AEAV23@@Z
-    MCAPI bool
-    _findResource(std::string const&, class Core::PathBuffer<class Core::StackString<char, 1024>> const&, class Core::PathBuffer<class Core::StackString<char, 1024>> const&, class PackInstance const&, std::string&);
-
-    // symbol:
     // ?_findResource@StructureManager@@AEAA_NAEBV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@AEBVPackInstance@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool
     _findResource(class Core::PathBuffer<class Core::StackString<char, 1024>> const&, class PackInstance const&, std::string&);
+
+    // symbol:
+    // ?_findResource@StructureManager@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@1AEBVPackInstance@@AEAV23@@Z
+    MCAPI bool
+    _findResource(std::string const&, class Core::PathBuffer<class Core::StackString<char, 1024>> const&, class Core::PathBuffer<class Core::StackString<char, 1024>> const&, class PackInstance const&, std::string&);
 
     // symbol: ?_placeSegment@StructureManager@@AEAA_NAEAVStructureAnimationData@@@Z
     MCAPI bool _placeSegment(class StructureAnimationData&);

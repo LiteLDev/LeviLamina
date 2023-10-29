@@ -37,11 +37,11 @@ public:
     // symbol: ??1OnScreenTextureAnimationPacket@@UEAA@XZ
     MCVAPI ~OnScreenTextureAnimationPacket();
 
-    // symbol: ??0OnScreenTextureAnimationPacket@@QEAA@I@Z
-    MCAPI explicit OnScreenTextureAnimationPacket(uint);
-
     // symbol: ??0OnScreenTextureAnimationPacket@@QEAA@XZ
     MCAPI OnScreenTextureAnimationPacket();
+
+    // symbol: ??0OnScreenTextureAnimationPacket@@QEAA@I@Z
+    MCAPI explicit OnScreenTextureAnimationPacket(uint);
 
     // NOLINTEND
 };

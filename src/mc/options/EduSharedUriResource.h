@@ -13,14 +13,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0EduSharedUriResource@@QEAA@$$QEAU0@@Z
-    MCAPI EduSharedUriResource(struct EduSharedUriResource&&);
-
     // symbol: ??0EduSharedUriResource@@QEAA@XZ
     MCAPI EduSharedUriResource();
 
     // symbol: ??0EduSharedUriResource@@QEAA@AEBVCompoundTag@@@Z
     MCAPI explicit EduSharedUriResource(class CompoundTag const&);
+
+    // symbol: ??0EduSharedUriResource@@QEAA@$$QEAU0@@Z
+    MCAPI EduSharedUriResource(struct EduSharedUriResource&&);
 
     // symbol: ??1EduSharedUriResource@@QEAA@XZ
     MCAPI ~EduSharedUriResource();

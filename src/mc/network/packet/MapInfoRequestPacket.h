@@ -39,14 +39,14 @@ public:
     // symbol: ??1MapInfoRequestPacket@@UEAA@XZ
     MCVAPI ~MapInfoRequestPacket();
 
-    // symbol: ??0MapInfoRequestPacket@@QEAA@UActorUniqueID@@AEAVMapItemSavedData@@@Z
-    MCAPI MapInfoRequestPacket(struct ActorUniqueID, class MapItemSavedData&);
+    // symbol: ??0MapInfoRequestPacket@@QEAA@XZ
+    MCAPI MapInfoRequestPacket();
 
     // symbol: ??0MapInfoRequestPacket@@QEAA@UActorUniqueID@@@Z
     MCAPI explicit MapInfoRequestPacket(struct ActorUniqueID);
 
-    // symbol: ??0MapInfoRequestPacket@@QEAA@XZ
-    MCAPI MapInfoRequestPacket();
+    // symbol: ??0MapInfoRequestPacket@@QEAA@UActorUniqueID@@AEAVMapItemSavedData@@@Z
+    MCAPI MapInfoRequestPacket(struct ActorUniqueID, class MapItemSavedData&);
 
     // symbol: ?getMapId@MapInfoRequestPacket@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getMapId() const;

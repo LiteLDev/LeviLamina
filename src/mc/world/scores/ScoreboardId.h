@@ -13,14 +13,14 @@ public:
     }
 
     // NOLINTBEGIN
+    // symbol: ??0ScoreboardId@@QEAA@XZ
+    MCAPI ScoreboardId();
+
     // symbol: ??0ScoreboardId@@QEAA@_J@Z
     MCAPI explicit ScoreboardId(int64);
 
     // symbol: ??0ScoreboardId@@QEAA@AEBU0@@Z
     MCAPI ScoreboardId(struct ScoreboardId const&);
-
-    // symbol: ??0ScoreboardId@@QEAA@XZ
-    MCAPI ScoreboardId();
 
     // symbol: ?getHash@ScoreboardId@@QEBA_KXZ
     MCAPI uint64 getHash() const;

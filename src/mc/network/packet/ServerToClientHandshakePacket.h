@@ -37,12 +37,12 @@ public:
     // symbol: ??1ServerToClientHandshakePacket@@UEAA@XZ
     MCVAPI ~ServerToClientHandshakePacket();
 
+    // symbol: ??0ServerToClientHandshakePacket@@QEAA@XZ
+    MCAPI ServerToClientHandshakePacket();
+
     // symbol:
     // ??0ServerToClientHandshakePacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit ServerToClientHandshakePacket(std::string const&);
-
-    // symbol: ??0ServerToClientHandshakePacket@@QEAA@XZ
-    MCAPI ServerToClientHandshakePacket();
 
     // NOLINTEND
 };

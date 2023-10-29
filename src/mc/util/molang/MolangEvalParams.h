@@ -30,11 +30,11 @@ public:
     // symbol: ?popHash@MolangEvalParams@@QEAA_KXZ
     MCAPI uint64 popHash();
 
-    // symbol: ?popMissingVariableOrActorAddress@MolangEvalParams@@QEAA_KW4MolangVariableIndex@@@Z
-    MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex);
-
     // symbol: ?popMissingVariableOrActorAddress@MolangEvalParams@@QEAA_KAEBVHashedString@@@Z
     MCAPI uint64 popMissingVariableOrActorAddress(class HashedString const&);
+
+    // symbol: ?popMissingVariableOrActorAddress@MolangEvalParams@@QEAA_KW4MolangVariableIndex@@@Z
+    MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex);
 
     // symbol: ?popPublicAccessMode@MolangEvalParams@@QEAA_NXZ
     MCAPI bool popPublicAccessMode();

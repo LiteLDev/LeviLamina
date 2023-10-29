@@ -16,11 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0IntRange@@QEAA@HH@Z
-    MCAPI IntRange(int, int);
-
     // symbol: ??0IntRange@@QEAA@H@Z
     MCAPI explicit IntRange(int);
+
+    // symbol: ??0IntRange@@QEAA@HH@Z
+    MCAPI IntRange(int, int);
 
     // symbol: ?getValue@IntRange@@QEBAHAEAVRandom@@@Z
     MCAPI int getValue(class Random&) const;

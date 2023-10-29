@@ -38,11 +38,11 @@ public:
     // symbol: ??1ItemComponentPacket@@UEAA@XZ
     MCVAPI ~ItemComponentPacket();
 
-    // symbol: ??0ItemComponentPacket@@QEAA@VItemRegistryRef@@@Z
-    MCAPI explicit ItemComponentPacket(class ItemRegistryRef);
-
     // symbol: ??0ItemComponentPacket@@QEAA@XZ
     MCAPI ItemComponentPacket();
+
+    // symbol: ??0ItemComponentPacket@@QEAA@VItemRegistryRef@@@Z
+    MCAPI explicit ItemComponentPacket(class ItemRegistryRef);
 
     // NOLINTEND
 };

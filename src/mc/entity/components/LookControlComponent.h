@@ -47,11 +47,11 @@ public:
     // ?setInternalType@LookControlComponent@@QEAAXV?$unique_ptr@VLookControl@@U?$default_delete@VLookControl@@@std@@@std@@@Z
     MCAPI void setInternalType(std::unique_ptr<class LookControl>);
 
-    // symbol: ?setLookAtPosition@LookControlComponent@@QEAAXAEBVVec3@@MM@Z
-    MCAPI void setLookAtPosition(class Vec3 const&, float, float);
-
     // symbol: ?setLookAtPosition@LookControlComponent@@QEAAXPEBVActor@@MM@Z
     MCAPI void setLookAtPosition(class Actor const*, float, float);
+
+    // symbol: ?setLookAtPosition@LookControlComponent@@QEAAXAEBVVec3@@MM@Z
+    MCAPI void setLookAtPosition(class Vec3 const&, float, float);
 
     // symbol: ?setLookAtRotation@LookControlComponent@@QEAAXAEBVVec3@@MM@Z
     MCAPI void setLookAtRotation(class Vec3 const&, float, float);

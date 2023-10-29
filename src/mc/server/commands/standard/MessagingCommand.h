@@ -21,7 +21,7 @@ public:
     // vIndex: 1, symbol: ?collectOptionalArguments@Command@@MEAA_NXZ
     virtual bool collectOptionalArguments();
 
-    // vIndex: 2, symbol: ?execute@CloneCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2, symbol: ?execute@TakePictureCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const = 0;
 
     // symbol: ??1MessagingCommand@@UEAA@XZ
@@ -38,14 +38,14 @@ public:
     MCAPI bool checkChatPermissions(class CommandOrigin const&, class CommandOutput&) const;
 
     // symbol:
-    // ?checkMutedAndSendToastIfMuted@MessagingCommand@@KAXAEBUCommandOriginIdentity@@AEBVLevel@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@@Z
-    MCAPI static void
-    checkMutedAndSendToastIfMuted(struct CommandOriginIdentity const&, class Level const&, std::vector<::Safety::TextFilteringEvent> const&);
-
-    // symbol:
     // ?checkMutedAndSendToastIfMuted@MessagingCommand@@KAXAEBVPlayer@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@@Z
     MCAPI static void
     checkMutedAndSendToastIfMuted(class Player const&, std::vector<::Safety::TextFilteringEvent> const&);
+
+    // symbol:
+    // ?checkMutedAndSendToastIfMuted@MessagingCommand@@KAXAEBUCommandOriginIdentity@@AEBVLevel@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@@Z
+    MCAPI static void
+    checkMutedAndSendToastIfMuted(struct CommandOriginIdentity const&, class Level const&, std::vector<::Safety::TextFilteringEvent> const&);
 
     // NOLINTEND
 };

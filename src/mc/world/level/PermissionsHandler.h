@@ -16,11 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PermissionsHandler@@QEAA@AEBV0@@Z
-    MCAPI PermissionsHandler(class PermissionsHandler const&);
-
     // symbol: ??0PermissionsHandler@@QEAA@XZ
     MCAPI PermissionsHandler();
+
+    // symbol: ??0PermissionsHandler@@QEAA@AEBV0@@Z
+    MCAPI PermissionsHandler(class PermissionsHandler const&);
 
     // symbol: ?addSaveData@PermissionsHandler@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addSaveData(class CompoundTag&) const;

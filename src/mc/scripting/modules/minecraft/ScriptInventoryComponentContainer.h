@@ -47,12 +47,12 @@ public:
     // symbol: ??1ScriptInventoryComponentContainer@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptInventoryComponentContainer();
 
+    // symbol: ??0ScriptInventoryComponentContainer@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
+    MCAPI ScriptInventoryComponentContainer(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
+
     // symbol:
     // ??0ScriptInventoryComponentContainer@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptInventoryComponentContainer(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&);
-
-    // symbol: ??0ScriptInventoryComponentContainer@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
-    MCAPI ScriptInventoryComponentContainer(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
 
     // symbol: ??4ScriptInventoryComponentContainer@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptInventoryComponentContainer&

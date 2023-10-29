@@ -21,14 +21,14 @@ MCAPI bool
 decorateBiome(class LevelChunk&, class BlockSource&, class Random&, gsl::span<struct BiomeDecorationFeature>, std::string const&, class Biome const*, class IPreliminarySurfaceProvider const&);
 
 // symbol:
-// ?decorateLargeFeature@BiomeDecorationSystem@@YAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI void
-decorateLargeFeature(class Biome&, class LevelChunk&, class BlockVolumeTarget&, class Random&, class ChunkPos const&, std::string const&);
-
-// symbol:
 // ?decorateLargeFeature@BiomeDecorationSystem@@YA_NW4GeneratorType@@AEBIAEAVBlockVolumeTarget@@AEAVRandom@@V?$span@UBiomeDecorationFeature@@$0?0@gsl@@AEBVChunkPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI bool
 decorateLargeFeature(::GeneratorType, uint const&, class BlockVolumeTarget&, class Random&, gsl::span<struct BiomeDecorationFeature>, class ChunkPos const&, std::string const&);
+
+// symbol:
+// ?decorateLargeFeature@BiomeDecorationSystem@@YAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+MCAPI void
+decorateLargeFeature(class Biome&, class LevelChunk&, class BlockVolumeTarget&, class Random&, class ChunkPos const&, std::string const&);
 // NOLINTEND
 
 }; // namespace BiomeDecorationSystem

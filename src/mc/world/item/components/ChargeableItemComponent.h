@@ -40,11 +40,11 @@ public:
     // symbol: ?getMovementModifier@ChargeableItemComponent@@QEBAMXZ
     MCAPI float getMovementModifier() const;
 
-    // symbol: ??4ChargeableItemComponent@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class ChargeableItemComponent& operator=(class ChargeableItemComponent const&);
-
     // symbol: ??4ChargeableItemComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ChargeableItemComponent& operator=(class ChargeableItemComponent&&);
+
+    // symbol: ??4ChargeableItemComponent@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class ChargeableItemComponent& operator=(class ChargeableItemComponent const&);
 
     // symbol: ?use@ChargeableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
     MCAPI bool use(class ItemStack&, class Player&) const;

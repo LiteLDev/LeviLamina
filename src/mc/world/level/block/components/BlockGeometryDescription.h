@@ -61,11 +61,11 @@ public:
     // symbol: ??1BlockGeometryDescription@@UEAA@XZ
     MCVAPI ~BlockGeometryDescription();
 
-    // symbol: ??0BlockGeometryDescription@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit BlockGeometryDescription(std::string const&);
-
     // symbol: ??0BlockGeometryDescription@@QEAA@XZ
     MCAPI BlockGeometryDescription();
+
+    // symbol: ??0BlockGeometryDescription@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI explicit BlockGeometryDescription(std::string const&);
 
     // symbol: ?bindType@BlockGeometryDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

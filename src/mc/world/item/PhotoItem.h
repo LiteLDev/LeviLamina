@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/item/Item.h"
-
-class PhotoItem : public ::Item {
+class PhotoItem {
 public:
     // prevent constructor by default
     PhotoItem& operator=(PhotoItem const&);

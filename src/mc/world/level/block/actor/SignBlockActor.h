@@ -228,12 +228,12 @@ public:
     MCAPI void setIsGlowing(::SignTextSide, bool);
 
     // symbol:
-    // ?setMessageForServerScripingOnly@SignBlockActor@@QEAAXW4SignTextSide@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-    MCAPI void setMessageForServerScripingOnly(::SignTextSide, std::string, std::string);
-
-    // symbol:
     // ?setMessageForServerScripingOnly@SignBlockActor@@QEAAXW4SignTextSide@@VTextObjectRoot@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setMessageForServerScripingOnly(::SignTextSide, class TextObjectRoot, std::string);
+
+    // symbol:
+    // ?setMessageForServerScripingOnly@SignBlockActor@@QEAAXW4SignTextSide@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
+    MCAPI void setMessageForServerScripingOnly(::SignTextSide, std::string, std::string);
 
     // symbol: ?setSignTextColor@SignBlockActor@@QEAAXW4SignTextSide@@AEBVColor@mce@@@Z
     MCAPI void setSignTextColor(::SignTextSide, class mce::Color const&);

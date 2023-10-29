@@ -2,15 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
-// clang-format on
-
-class ChunkRecyclerTelemetryData : public ::Bedrock::EnableNonOwnerReferences {
+class ChunkRecyclerTelemetryData {
 public:
     // ChunkRecyclerTelemetryData inner types declare
     // clang-format off

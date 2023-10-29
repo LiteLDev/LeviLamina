@@ -10,11 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BiomeDecorationFeature@@QEAA@AEBU0@@Z
-    MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature const&);
-
     // symbol: ??0BiomeDecorationFeature@@QEAA@$$QEAU0@@Z
     MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature&&);
+
+    // symbol: ??0BiomeDecorationFeature@@QEAA@AEBU0@@Z
+    MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature const&);
 
     // symbol: ??1BiomeDecorationFeature@@QEAA@XZ
     MCAPI ~BiomeDecorationFeature();

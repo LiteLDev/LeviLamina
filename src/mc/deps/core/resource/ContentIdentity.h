@@ -13,9 +13,6 @@ public:
     mce::UUID uuid;
     bool      valid;
     // NOLINTBEGIN
-    // symbol: ??0ContentIdentity@@QEAA@AEBVUUID@mce@@@Z
-    MCAPI explicit ContentIdentity(class mce::UUID const&);
-
     // symbol: ??0ContentIdentity@@QEAA@XZ
     MCAPI ContentIdentity();
 
@@ -24,6 +21,9 @@ public:
 
     // symbol: ??0ContentIdentity@@QEAA@AEBV0@@Z
     MCAPI ContentIdentity(class ContentIdentity const&);
+
+    // symbol: ??0ContentIdentity@@QEAA@AEBVUUID@mce@@@Z
+    MCAPI explicit ContentIdentity(class mce::UUID const&);
 
     // symbol: ?asString@ContentIdentity@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string asString() const;
@@ -37,11 +37,11 @@ public:
     // symbol: ??9ContentIdentity@@QEBA_NAEBV0@@Z
     MCAPI bool operator!=(class ContentIdentity const&) const;
 
-    // symbol: ??4ContentIdentity@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class ContentIdentity& operator=(class ContentIdentity const&);
-
     // symbol: ??4ContentIdentity@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ContentIdentity& operator=(class ContentIdentity&&);
+
+    // symbol: ??4ContentIdentity@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class ContentIdentity& operator=(class ContentIdentity const&);
 
     // symbol: ??8ContentIdentity@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class ContentIdentity const&) const;

@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/resources/IContentAccessibilityProvider.h"
-
-class ServerContentKeyProvider : public ::IContentAccessibilityProvider {
+class ServerContentKeyProvider {
 public:
     // prevent constructor by default
     ServerContentKeyProvider& operator=(ServerContentKeyProvider const&);
@@ -21,9 +18,8 @@ public:
     // ?getContentKey@ServerContentKeyProvider@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@@Z
     virtual std::string getContentKey(class ContentIdentity const&) const;
 
-    // vIndex: 2, symbol:
-    // ?getAlternateContentKey@IContentKeyProvider@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@@Z
-    virtual std::string getAlternateContentKey(class ContentIdentity const&) const;
+    // vIndex: 2, symbol: __unk_vfn_2
+    virtual void __unk_vfn_2();
 
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();

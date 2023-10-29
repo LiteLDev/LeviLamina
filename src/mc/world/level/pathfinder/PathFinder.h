@@ -25,11 +25,11 @@ public:
     // symbol: ??0PathFinder@@QEAA@AEAVBlockSource@@AEBVNavigationComponent@@@Z
     MCAPI PathFinder(class BlockSource&, class NavigationComponent const&);
 
-    // symbol: ?findPath@PathFinder@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVActor@@HHHM@Z
-    MCAPI std::unique_ptr<class Path> findPath(class Actor&, int, int, int, float);
-
     // symbol: ?findPath@PathFinder@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVActor@@0M@Z
     MCAPI std::unique_ptr<class Path> findPath(class Actor&, class Actor&, float);
+
+    // symbol: ?findPath@PathFinder@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVActor@@HHHM@Z
+    MCAPI std::unique_ptr<class Path> findPath(class Actor&, int, int, int, float);
 
     // symbol:
     // ?isFree@PathFinder@@QEAA?AW4NodeType@@AEAVActor@@AEBVBlockPos@@11W4CanJumpIntoNode@@W4CanClimbIntoNode@@@Z
@@ -99,10 +99,6 @@ public:
     MCAPI bool _findNearestPathableNeighbor(class BlockPos&, struct ActorPathingData const&, class BlockPos const&);
 
     // symbol:
-    // ?_findPath@PathFinder@@AEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEBUActorPathingData@@MMMM@Z
-    MCAPI std::unique_ptr<class Path> _findPath(struct ActorPathingData const&, float, float, float, float);
-
-    // symbol:
     // ?_findPath@PathFinder@@AEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEBUActorPathingData@@PEAVPathfinderNode@@1AEBV5@M@Z
     MCAPI std::unique_ptr<class Path> _findPath(
         struct ActorPathingData const&,
@@ -111,6 +107,10 @@ public:
         class PathfinderNode const&,
         float
     );
+
+    // symbol:
+    // ?_findPath@PathFinder@@AEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEBUActorPathingData@@MMMM@Z
+    MCAPI std::unique_ptr<class Path> _findPath(struct ActorPathingData const&, float, float, float, float);
 
     // symbol: ?_getAABBForPathfinding@PathFinder@@AEBA?AVAABB@@AEBVBlockPos@@AEBVBlock@@@Z
     MCAPI class AABB _getAABBForPathfinding(class BlockPos const&, class Block const&) const;
@@ -131,6 +131,9 @@ public:
         uint
     );
 
+    // symbol: ?_getNode@PathFinder@@AEAAPEAVPathfinderNode@@AEBVBlockPos@@W4NodeType@@@Z
+    MCAPI class PathfinderNode* _getNode(class BlockPos const&, ::NodeType);
+
     // symbol:
     // ?_getNode@PathFinder@@AEAAPEAVPathfinderNode@@AEBUActorPathingData@@AEBVBlockPos@@1AEBV2@MW4CanClimbIntoNode@@@Z
     MCAPI class PathfinderNode* _getNode(
@@ -141,9 +144,6 @@ public:
         float,
         ::CanClimbIntoNode
     );
-
-    // symbol: ?_getNode@PathFinder@@AEAAPEAVPathfinderNode@@AEBVBlockPos@@W4NodeType@@@Z
-    MCAPI class PathfinderNode* _getNode(class BlockPos const&, ::NodeType);
 
     // symbol:
     // ?_getPartialBlockNodeType@PathFinder@@AEAA?AV?$optional@W4NodeType@@@std@@AEBVBlockPos@@0AEBUActorPathingData@@@Z

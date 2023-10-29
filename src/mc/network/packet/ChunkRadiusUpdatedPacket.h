@@ -37,11 +37,11 @@ public:
     // symbol: ??1ChunkRadiusUpdatedPacket@@UEAA@XZ
     MCVAPI ~ChunkRadiusUpdatedPacket();
 
-    // symbol: ??0ChunkRadiusUpdatedPacket@@QEAA@H@Z
-    MCAPI explicit ChunkRadiusUpdatedPacket(int);
-
     // symbol: ??0ChunkRadiusUpdatedPacket@@QEAA@XZ
     MCAPI ChunkRadiusUpdatedPacket();
+
+    // symbol: ??0ChunkRadiusUpdatedPacket@@QEAA@H@Z
+    MCAPI explicit ChunkRadiusUpdatedPacket(int);
 
     // NOLINTEND
 };

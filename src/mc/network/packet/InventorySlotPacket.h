@@ -42,11 +42,11 @@ public:
     // symbol: ??1InventorySlotPacket@@UEAA@XZ
     MCVAPI ~InventorySlotPacket();
 
-    // symbol: ??0InventorySlotPacket@@QEAA@W4ContainerID@@IAEBVItemStack@@@Z
-    MCAPI InventorySlotPacket(::ContainerID, uint, class ItemStack const&);
-
     // symbol: ??0InventorySlotPacket@@QEAA@XZ
     MCAPI InventorySlotPacket();
+
+    // symbol: ??0InventorySlotPacket@@QEAA@W4ContainerID@@IAEBVItemStack@@@Z
+    MCAPI InventorySlotPacket(::ContainerID, uint, class ItemStack const&);
 
     // NOLINTEND
 };

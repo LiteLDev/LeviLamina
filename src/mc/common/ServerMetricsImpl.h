@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/ServerMetrics.h"
-
-class ServerMetricsImpl : public ::ServerMetrics {
+class ServerMetricsImpl {
 public:
     // prevent constructor by default
     ServerMetricsImpl& operator=(ServerMetricsImpl const&);

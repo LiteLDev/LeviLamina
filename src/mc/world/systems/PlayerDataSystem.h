@@ -46,12 +46,12 @@ MCAPI std::unique_ptr<class CompoundTag> loadPlayerDataFromTag(class LevelStorag
 MCAPI std::string playerKey(std::string_view);
 
 // symbol:
-// ?serverKey@PlayerDataSystem@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelStorage@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
-MCAPI std::string serverKey(class LevelStorage&, std::string_view);
-
-// symbol:
 // ?serverKey@PlayerDataSystem@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelStorage@@AEBVPlayer@@@Z
 MCAPI std::string serverKey(class LevelStorage&, class Player const&);
+
+// symbol:
+// ?serverKey@PlayerDataSystem@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelStorage@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
+MCAPI std::string serverKey(class LevelStorage&, std::string_view);
 // NOLINTEND
 
 }; // namespace PlayerDataSystem

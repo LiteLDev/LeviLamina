@@ -13,11 +13,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Result@Core@@QEAA@_NV?$function@$$A6AXPEAVResult@Core@@@Z@std@@@Z
-    MCAPI Result(bool, std::function<void(class Core::Result*)>);
-
     // symbol: ??0Result@Core@@QEAA@$$QEAV01@@Z
     MCAPI Result(class Core::Result&&);
+
+    // symbol: ??0Result@Core@@QEAA@_NV?$function@$$A6AXPEAVResult@Core@@@Z@std@@@Z
+    MCAPI Result(bool, std::function<void(class Core::Result*)>);
 
     // symbol: ?architecturalProblem@Result@Core@@QEBAXXZ
     MCAPI void architecturalProblem() const;
@@ -61,11 +61,11 @@ public:
     // symbol: ?either@Result@Core@@SA?AV12@$$QEAV12@0@Z
     MCAPI static class Core::Result either(class Core::Result&&, class Core::Result&&);
 
-    // symbol: ?makeFailure@Result@Core@@SA?AV12@$$QEAV?$function@$$A6AXPEAVResult@Core@@@Z@std@@@Z
-    MCAPI static class Core::Result makeFailure(std::function<void(class Core::Result*)>&&);
-
     // symbol: ?makeFailure@Result@Core@@SA?AV12@XZ
     MCAPI static class Core::Result makeFailure();
+
+    // symbol: ?makeFailure@Result@Core@@SA?AV12@$$QEAV?$function@$$A6AXPEAVResult@Core@@@Z@std@@@Z
+    MCAPI static class Core::Result makeFailure(std::function<void(class Core::Result*)>&&);
 
     // symbol: ?makeFailureNotImplemented@Result@Core@@SA?AV12@XZ
     MCAPI static class Core::Result makeFailureNotImplemented();

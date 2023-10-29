@@ -37,11 +37,11 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0BaseBlockLocationIterator@@IEAA@AEBVBlockPos@@0_N@Z
-    MCAPI BaseBlockLocationIterator(class BlockPos const&, class BlockPos const&, bool);
-
     // symbol: ??0BaseBlockLocationIterator@@IEAA@XZ
     MCAPI BaseBlockLocationIterator();
+
+    // symbol: ??0BaseBlockLocationIterator@@IEAA@AEBVBlockPos@@0_N@Z
+    MCAPI BaseBlockLocationIterator(class BlockPos const&, class BlockPos const&, bool);
 
     // symbol: ??4BaseBlockLocationIterator@@IEAAAEAV0@AEBV0@@Z
     MCAPI class BaseBlockLocationIterator& operator=(class BaseBlockLocationIterator const&);

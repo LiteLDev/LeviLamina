@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-#include "mc/enums/FeatureOptionID.h"
-#include "mc/enums/FeatureOptionTabID.h"
+#include "mc/world/level/levelgen/feature/FeatureOptionID.h"
+#include "mc/world/level/levelgen/feature/FeatureOptionTabID.h"
 
 // auto generated forward declare list
 // clang-format off

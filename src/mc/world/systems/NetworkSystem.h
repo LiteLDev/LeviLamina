@@ -136,12 +136,12 @@ public:
     MCAPI class NetworkIdentifier getPrimaryNetworkId() const;
 
     // symbol:
-    // ?getRemoteConnector@NetworkSystem@@QEAA?AV?$not_null@V?$NonOwnerPointer@VRemoteConnector@@@Bedrock@@@gsl@@XZ
-    MCAPI Bedrock::NotNullNonOwnerPtr<class RemoteConnector> getRemoteConnector();
-
-    // symbol:
     // ?getRemoteConnector@NetworkSystem@@QEBA?AV?$not_null@V?$NonOwnerPointer@$$CBVRemoteConnector@@@Bedrock@@@gsl@@XZ
     MCAPI Bedrock::NotNullNonOwnerPtr<class RemoteConnector const> getRemoteConnector() const;
+
+    // symbol:
+    // ?getRemoteConnector@NetworkSystem@@QEAA?AV?$not_null@V?$NonOwnerPointer@VRemoteConnector@@@Bedrock@@@gsl@@XZ
+    MCAPI Bedrock::NotNullNonOwnerPtr<class RemoteConnector> getRemoteConnector();
 
     // symbol:
     // ?getResourcePackUploadManager@NetworkSystem@@QEAAAEAVResourcePackFileUploadManager@@AEAVPacketSender@@AEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

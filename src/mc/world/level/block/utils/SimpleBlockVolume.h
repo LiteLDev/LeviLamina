@@ -21,11 +21,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SimpleBlockVolume@@QEAA@AEBV0@@Z
-    MCAPI SimpleBlockVolume(class SimpleBlockVolume const&);
-
     // symbol: ??0SimpleBlockVolume@@QEAA@$$QEAV0@@Z
     MCAPI SimpleBlockVolume(class SimpleBlockVolume&&);
+
+    // symbol: ??0SimpleBlockVolume@@QEAA@AEBV0@@Z
+    MCAPI SimpleBlockVolume(class SimpleBlockVolume const&);
 
     // symbol: ?begin@SimpleBlockVolume@@QEBA?AVSimpleBlockVolumeIterator@@XZ
     MCAPI class SimpleBlockVolumeIterator begin() const;
@@ -66,11 +66,11 @@ public:
     // symbol: ?intersects@SimpleBlockVolume@@QEBA?AW4IntersectionResult@1@AEBV1@@Z
     MCAPI ::SimpleBlockVolume::IntersectionResult intersects(class SimpleBlockVolume const&) const;
 
-    // symbol: ??4SimpleBlockVolume@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class SimpleBlockVolume& operator=(class SimpleBlockVolume const&);
-
     // symbol: ??4SimpleBlockVolume@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class SimpleBlockVolume& operator=(class SimpleBlockVolume&&);
+
+    // symbol: ??4SimpleBlockVolume@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class SimpleBlockVolume& operator=(class SimpleBlockVolume const&);
 
     // symbol: ??8SimpleBlockVolume@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class SimpleBlockVolume const&) const;

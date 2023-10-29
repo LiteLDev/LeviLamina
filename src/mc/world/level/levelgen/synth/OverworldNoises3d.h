@@ -20,11 +20,11 @@ public:
     // symbol: ??0OverworldNoises3d@@QEAA@AEBU0@@Z
     MCAPI OverworldNoises3d(struct OverworldNoises3d const&);
 
-    // symbol: ?sample@OverworldNoises3d@@QEBA?AUTargetPoint@@HAEBUCacheEntry@ChunkLocalNoiseCache@@@Z
-    MCAPI struct TargetPoint sample(int, struct ChunkLocalNoiseCache::CacheEntry const&) const;
-
     // symbol: ?sample@OverworldNoises3d@@QEBA?AUTargetPoint@@VBlockPos@@@Z
     MCAPI struct TargetPoint sample(class BlockPos) const;
+
+    // symbol: ?sample@OverworldNoises3d@@QEBA?AUTargetPoint@@HAEBUCacheEntry@ChunkLocalNoiseCache@@@Z
+    MCAPI struct TargetPoint sample(int, struct ChunkLocalNoiseCache::CacheEntry const&) const;
 
     // symbol: ??1OverworldNoises3d@@QEAA@XZ
     MCAPI ~OverworldNoises3d();

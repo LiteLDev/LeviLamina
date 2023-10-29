@@ -25,11 +25,11 @@ namespace mce {
 // ?featuresMap@mce@@3AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4RenderState@mce@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4RenderState@mce@@@std@@@2@@std@@EB
 MCAPI extern std::unordered_map<std::string, ::mce::RenderState> const& featuresMap;
 
-// symbol: ??Dmce@@YA?AURadian@0@U10@M@Z
-MCAPI struct mce::Radian operator*(struct mce::Radian, float);
-
 // symbol: ??Dmce@@YA?AUDegree@0@MU10@@Z
 MCAPI struct mce::Degree operator*(float, struct mce::Degree);
+
+// symbol: ??Dmce@@YA?AURadian@0@U10@M@Z
+MCAPI struct mce::Radian operator*(struct mce::Radian, float);
 
 // symbol: ??Hmce@@YA?AUDegree@0@U10@M@Z
 MCAPI struct mce::Degree operator+(struct mce::Degree, float);

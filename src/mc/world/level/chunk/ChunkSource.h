@@ -152,11 +152,11 @@ public:
     // vIndex: 32, symbol: ?chunkPosNeedsBlending@ChunkSource@@UEAA_NAEBVChunkPos@@@Z
     virtual bool chunkPosNeedsBlending(class ChunkPos const&);
 
-    // symbol: ??0ChunkSource@@QEAA@PEAVDimension@@H@Z
-    MCAPI ChunkSource(class Dimension*, int);
-
     // symbol: ??0ChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@@Z
     MCAPI explicit ChunkSource(std::unique_ptr<class ChunkSource>);
+
+    // symbol: ??0ChunkSource@@QEAA@PEAVDimension@@H@Z
+    MCAPI ChunkSource(class Dimension*, int);
 
     // symbol: ?checkAndLaunchChunkGenerationTasks@ChunkSource@@QEAAX_N@Z
     MCAPI void checkAndLaunchChunkGenerationTasks(bool);

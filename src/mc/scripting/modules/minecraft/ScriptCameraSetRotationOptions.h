@@ -15,13 +15,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptCameraSetRotationOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptCameraSetRotationOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptCameraSetRotationOptions const&);
-
     // symbol: ??4ScriptCameraSetRotationOptions@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptCameraSetRotationOptions&
     operator=(struct ScriptModuleMinecraft::ScriptCameraSetRotationOptions&&);
+
+    // symbol: ??4ScriptCameraSetRotationOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptCameraSetRotationOptions&
+    operator=(struct ScriptModuleMinecraft::ScriptCameraSetRotationOptions const&);
 
     // symbol: ??8ScriptCameraSetRotationOptions@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
     MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptCameraSetRotationOptions const&) const;

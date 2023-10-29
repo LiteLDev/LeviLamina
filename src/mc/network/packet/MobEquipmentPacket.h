@@ -49,17 +49,17 @@ public:
     // symbol: ??1MobEquipmentPacket@@UEAA@XZ
     MCVAPI ~MobEquipmentPacket();
 
-    // symbol: ??0MobEquipmentPacket@@QEAA@VActorRuntimeID@@AEBVItemStack@@HHW4ContainerID@@@Z
-    MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const&, int, int, ::ContainerID);
+    // symbol: ??0MobEquipmentPacket@@QEAA@XZ
+    MCAPI MobEquipmentPacket();
 
     // symbol: ??0MobEquipmentPacket@@QEAA@$$QEAV0@@Z
     MCAPI MobEquipmentPacket(class MobEquipmentPacket&&);
 
+    // symbol: ??0MobEquipmentPacket@@QEAA@VActorRuntimeID@@AEBVItemStack@@HHW4ContainerID@@@Z
+    MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const&, int, int, ::ContainerID);
+
     // symbol: ??0MobEquipmentPacket@@QEAA@VActorRuntimeID@@AEBVNetworkItemStackDescriptor@@HHW4ContainerID@@@Z
     MCAPI MobEquipmentPacket(class ActorRuntimeID, class NetworkItemStackDescriptor const&, int, int, ::ContainerID);
-
-    // symbol: ??0MobEquipmentPacket@@QEAA@XZ
-    MCAPI MobEquipmentPacket();
 
     // NOLINTEND
 };

@@ -44,12 +44,12 @@ public:
     // symbol: ??1InventoryTransactionPacket@@UEAA@XZ
     MCVAPI ~InventoryTransactionPacket();
 
+    // symbol: ??0InventoryTransactionPacket@@QEAA@XZ
+    MCAPI InventoryTransactionPacket();
+
     // symbol:
     // ??0InventoryTransactionPacket@@QEAA@V?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@_N@Z
     MCAPI InventoryTransactionPacket(std::unique_ptr<class ComplexInventoryTransaction>, bool);
-
-    // symbol: ??0InventoryTransactionPacket@@QEAA@XZ
-    MCAPI InventoryTransactionPacket();
 
     // symbol: ?postLoadItems@InventoryTransactionPacket@@QEBAXAEAVBlockPalette@@_N@Z
     MCAPI void postLoadItems(class BlockPalette&, bool) const;

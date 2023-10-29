@@ -56,11 +56,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0GameRules@@QEAA@AEBV0@@Z
-    MCAPI GameRules(class GameRules const&);
-
     // symbol: ??0GameRules@@QEAA@XZ
     MCAPI GameRules();
+
+    // symbol: ??0GameRules@@QEAA@AEBV0@@Z
+    MCAPI GameRules(class GameRules const&);
 
     // symbol:
     // ?createAllGameRulesPacket@GameRules@@QEBA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@XZ

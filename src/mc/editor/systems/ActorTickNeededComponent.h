@@ -15,11 +15,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ActorTickNeededComponent@@QEAA@AEAVBlockSource@@@Z
-    MCAPI explicit ActorTickNeededComponent(class BlockSource&);
-
     // symbol: ??0ActorTickNeededComponent@@QEAA@$$QEAV0@@Z
     MCAPI ActorTickNeededComponent(class ActorTickNeededComponent&&);
+
+    // symbol: ??0ActorTickNeededComponent@@QEAA@AEAVBlockSource@@@Z
+    MCAPI explicit ActorTickNeededComponent(class BlockSource&);
 
     // symbol: ?getBlockSource@ActorTickNeededComponent@@QEAA?AV?$WeakRefT@U?$SharePtrRefTraits@VBlockSource@@@@@@XZ
     MCAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource>> getBlockSource();

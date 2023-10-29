@@ -38,11 +38,11 @@ public:
     // symbol: ??1NetworkSettingsPacket@@UEAA@XZ
     MCVAPI ~NetworkSettingsPacket();
 
-    // symbol: ??0NetworkSettingsPacket@@QEAA@AEBUNetworkSettingOptions@@@Z
-    MCAPI explicit NetworkSettingsPacket(struct NetworkSettingOptions const&);
-
     // symbol: ??0NetworkSettingsPacket@@QEAA@XZ
     MCAPI NetworkSettingsPacket();
+
+    // symbol: ??0NetworkSettingsPacket@@QEAA@AEBUNetworkSettingOptions@@@Z
+    MCAPI explicit NetworkSettingsPacket(struct NetworkSettingOptions const&);
 
     // NOLINTEND
 };

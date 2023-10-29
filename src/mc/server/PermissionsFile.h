@@ -43,12 +43,12 @@ public:
     MCAPI bool isPermissionsSet(std::string const&, ::PlayerPermissionLevel) const;
 
     // symbol:
-    // ?persistPlayerPermissionsToDisk@PermissionsFile@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PlayerPermissionLevel@@@Z
-    MCAPI void persistPlayerPermissionsToDisk(std::string const&, ::PlayerPermissionLevel);
-
-    // symbol:
     // ?persistPlayerPermissionsToDisk@PermissionsFile@@QEAAXAEBVUserEntityIdentifierComponent@@W4PlayerPermissionLevel@@@Z
     MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const&, ::PlayerPermissionLevel);
+
+    // symbol:
+    // ?persistPlayerPermissionsToDisk@PermissionsFile@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PlayerPermissionLevel@@@Z
+    MCAPI void persistPlayerPermissionsToDisk(std::string const&, ::PlayerPermissionLevel);
 
     // symbol: ?reload@PermissionsFile@@QEAA?AW4FileReadResult@@XZ
     MCAPI ::FileReadResult reload();

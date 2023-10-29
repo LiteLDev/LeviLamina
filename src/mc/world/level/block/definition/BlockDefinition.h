@@ -15,11 +15,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BlockDefinition@@QEAA@$$QEAU0@@Z
-    MCAPI BlockDefinition(struct BlockDefinition&&);
-
     // symbol: ??0BlockDefinition@@QEAA@XZ
     MCAPI BlockDefinition();
+
+    // symbol: ??0BlockDefinition@@QEAA@$$QEAU0@@Z
+    MCAPI BlockDefinition(struct BlockDefinition&&);
 
     // symbol: ??0BlockDefinition@@QEAA@AEBU0@@Z
     MCAPI BlockDefinition(struct BlockDefinition const&);

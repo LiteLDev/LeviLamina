@@ -927,11 +927,11 @@ public:
     // symbol: ??1Actor@@UEAA@XZ
     MCVAPI ~Actor();
 
-    // symbol: ??0Actor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Actor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
-
     // symbol: ??0Actor@@QEAA@AEAVILevel@@AEAVEntityContext@@@Z
     MCAPI Actor(class ILevel&, class EntityContext&);
+
+    // symbol: ??0Actor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+    MCAPI Actor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
     // symbol: ?_sendDirtyActorData@Actor@@QEAAXXZ
     MCAPI void _sendDirtyActorData();
@@ -1146,11 +1146,11 @@ public:
     // symbol: ?getDimensionId@Actor@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ
     MCAPI DimensionType getDimensionId() const;
 
-    // symbol: ?getEffect@Actor@@QEBAPEBVMobEffectInstance@@I@Z
-    MCAPI class MobEffectInstance const* getEffect(uint) const;
-
     // symbol: ?getEffect@Actor@@QEBAPEBVMobEffectInstance@@AEBVMobEffect@@@Z
     MCAPI class MobEffectInstance const* getEffect(class MobEffect const&) const;
+
+    // symbol: ?getEffect@Actor@@QEBAPEBVMobEffectInstance@@I@Z
+    MCAPI class MobEffectInstance const* getEffect(uint) const;
 
     // symbol: ?getEntityData@Actor@@QEAAAEAVSynchedActorDataEntityWrapper@@XZ
     MCAPI class SynchedActorDataEntityWrapper& getEntityData();
@@ -1176,11 +1176,11 @@ public:
     // symbol: ?getFirstPassenger@Actor@@QEBAPEAV1@XZ
     MCAPI class Actor* getFirstPassenger() const;
 
-    // symbol: ?getHandContainer@Actor@@QEBAAEBVSimpleContainer@@XZ
-    MCAPI class SimpleContainer const& getHandContainer() const;
-
     // symbol: ?getHandContainer@Actor@@QEAAAEAVSimpleContainer@@XZ
     MCAPI class SimpleContainer& getHandContainer();
+
+    // symbol: ?getHandContainer@Actor@@QEBAAEBVSimpleContainer@@XZ
+    MCAPI class SimpleContainer const& getHandContainer() const;
 
     // symbol: ?getHealth@Actor@@QEBAHXZ
     MCAPI int getHealth() const;
@@ -1227,11 +1227,11 @@ public:
     // symbol: ?getLeashHolder@Actor@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getLeashHolder() const;
 
-    // symbol: ?getLevel@Actor@@QEBAAEBVLevel@@XZ
-    MCAPI class Level const& getLevel() const;
-
     // symbol: ?getLevel@Actor@@QEAAAEAVLevel@@XZ
     MCAPI class Level& getLevel();
+
+    // symbol: ?getLevel@Actor@@QEBAAEBVLevel@@XZ
+    MCAPI class Level const& getLevel() const;
 
     // symbol: ?getLevelTimeStamp@Actor@@QEBA_KXZ
     MCAPI uint64 getLevelTimeStamp() const;
@@ -1324,11 +1324,11 @@ public:
     // symbol: ?getSlideOffset@Actor@@QEBA?AVVec2@@XZ
     MCAPI class Vec2 getSlideOffset() const;
 
-    // symbol: ?getSpatialNetworkData@Actor@@QEBAAEBVSpatialActorNetworkData@@XZ
-    MCAPI class SpatialActorNetworkData const& getSpatialNetworkData() const;
-
     // symbol: ?getSpatialNetworkData@Actor@@QEAAAEAVSpatialActorNetworkData@@XZ
     MCAPI class SpatialActorNetworkData& getSpatialNetworkData();
+
+    // symbol: ?getSpatialNetworkData@Actor@@QEBAAEBVSpatialActorNetworkData@@XZ
+    MCAPI class SpatialActorNetworkData const& getSpatialNetworkData() const;
 
     // symbol: ?getSpeedInMetersPerSecond@Actor@@QEBAMXZ
     MCAPI float getSpeedInMetersPerSecond() const;
@@ -1469,11 +1469,11 @@ public:
     // symbol: ?initActorProperties@Actor@@QEAAXXZ
     MCAPI void initActorProperties();
 
-    // symbol: ?initParams@Actor@@QEAAXAEAVVariantParameterList@@@Z
-    MCAPI void initParams(class VariantParameterList&);
-
     // symbol: ?initParams@Actor@@QEAAXAEAVRenderParams@@@Z
     MCAPI void initParams(class RenderParams&);
+
+    // symbol: ?initParams@Actor@@QEAAXAEAVVariantParameterList@@@Z
+    MCAPI void initParams(class VariantParameterList&);
 
     // symbol: ?isActorLocationInMaterial@Actor@@QEBA_NW4ActorLocation@@W4MaterialType@@@Z
     MCAPI bool isActorLocationInMaterial(::ActorLocation, ::MaterialType) const;
@@ -2152,14 +2152,14 @@ public:
     // symbol: ?tryGetFromEntity@Actor@@SAPEAV1@AEAVEntityContext@@_N@Z
     MCAPI static class Actor* tryGetFromEntity(class EntityContext&, bool);
 
-    // symbol: ?tryGetFromEntity@Actor@@SAPEBV1@AEBVEntityContext@@_N@Z
-    MCAPI static class Actor const* tryGetFromEntity(class EntityContext const&, bool);
-
     // symbol: ?tryGetFromEntity@Actor@@SAPEAV1@V?$StackRefResultT@UEntityRefTraits@@@@_N@Z
     MCAPI static class Actor* tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
 
     // symbol: ?tryGetFromEntity@Actor@@SAPEAV1@AEBVStrictEntityContext@@AEAVEntityRegistry@@_N@Z
     MCAPI static class Actor* tryGetFromEntity(class StrictEntityContext const&, class EntityRegistry&, bool);
+
+    // symbol: ?tryGetFromEntity@Actor@@SAPEBV1@AEBVEntityContext@@_N@Z
+    MCAPI static class Actor const* tryGetFromEntity(class EntityContext const&, bool);
 
     // NOLINTEND
 

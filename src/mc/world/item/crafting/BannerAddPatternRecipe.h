@@ -46,11 +46,11 @@ public:
     // vIndex: 7, symbol: ?size@BannerAddPatternRecipe@@UEBAHXZ
     virtual int size() const;
 
-    // symbol: ??0BannerAddPatternRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
-    MCAPI BannerAddPatternRecipe(std::string_view, class mce::UUID const&);
-
     // symbol: ??0BannerAddPatternRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI explicit BannerAddPatternRecipe(std::string_view);
+
+    // symbol: ??0BannerAddPatternRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
+    MCAPI BannerAddPatternRecipe(std::string_view, class mce::UUID const&);
 
     // symbol:
     // ?matchPatterns@BannerAddPatternRecipe@@QEBA?BV?$NonOwnerPointer@$$CBVBannerPattern@@@Bedrock@@AEBVCraftingContainer@@@Z

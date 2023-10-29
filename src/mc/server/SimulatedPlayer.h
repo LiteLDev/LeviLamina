@@ -236,11 +236,11 @@ public:
     // symbol: ?setXuid@SimulatedPlayer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setXuid(std::string const&);
 
-    // symbol: ?simulateAttack@SimulatedPlayer@@QEAA_NPEAVActor@@@Z
-    MCAPI bool simulateAttack(class Actor*);
-
     // symbol: ?simulateAttack@SimulatedPlayer@@QEAA_NXZ
     MCAPI bool simulateAttack();
+
+    // symbol: ?simulateAttack@SimulatedPlayer@@QEAA_NPEAVActor@@@Z
+    MCAPI bool simulateAttack(class Actor*);
 
     // symbol: ?simulateDestroyBlock@SimulatedPlayer@@QEAA_NAEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@@Z
     MCAPI bool simulateDestroyBlock(class BlockPos const&, ::ScriptModuleMinecraft::ScriptFacing);
@@ -257,11 +257,11 @@ public:
     // symbol: ?simulateGiveItem@SimulatedPlayer@@QEAA_NAEAVItemStack@@_N@Z
     MCAPI bool simulateGiveItem(class ItemStack&, bool);
 
-    // symbol: ?simulateInteract@SimulatedPlayer@@QEAA_NAEAVActor@@@Z
-    MCAPI bool simulateInteract(class Actor&);
-
     // symbol: ?simulateInteract@SimulatedPlayer@@QEAA_NXZ
     MCAPI bool simulateInteract();
+
+    // symbol: ?simulateInteract@SimulatedPlayer@@QEAA_NAEAVActor@@@Z
+    MCAPI bool simulateInteract(class Actor&);
 
     // symbol: ?simulateInteract@SimulatedPlayer@@QEAA_NAEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@@Z
     MCAPI bool simulateInteract(class BlockPos const&, ::ScriptModuleMinecraft::ScriptFacing);
@@ -272,11 +272,11 @@ public:
     // symbol: ?simulateLocalMove@SimulatedPlayer@@QEAAXAEBVVec3@@M@Z
     MCAPI void simulateLocalMove(class Vec3 const&, float);
 
-    // symbol: ?simulateLookAt@SimulatedPlayer@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void simulateLookAt(class BlockPos const&);
-
     // symbol: ?simulateLookAt@SimulatedPlayer@@QEAAXAEAVActor@@@Z
     MCAPI void simulateLookAt(class Actor&);
+
+    // symbol: ?simulateLookAt@SimulatedPlayer@@QEAAXAEBVBlockPos@@@Z
+    MCAPI void simulateLookAt(class BlockPos const&);
 
     // symbol: ?simulateLookAt@SimulatedPlayer@@QEAAXAEBVVec3@@@Z
     MCAPI void simulateLookAt(class Vec3 const&);

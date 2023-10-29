@@ -140,12 +140,6 @@ public:
     // symbol: ?lockForRegistryModifications@BlockTypeRegistry@@SA?AVBlockTypeRegistryModificationsLock@@XZ
     MCAPI static class BlockTypeRegistryModificationsLock lockForRegistryModifications();
 
-    // symbol: ?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBVHashedString@@_N@Z
-    MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const&, bool logNotFound = false);
-
-    // symbol: ?lookupByName@BlockTypeRegistry@@SAPEBVBlock@@AEBVHashedString@@H_N@Z
-    MCAPI static class Block const* lookupByName(class HashedString const&, int data, bool logNotFound = false);
-
     // symbol:
     // ?lookupByName@BlockTypeRegistry@@SAPEBVBlock@@AEBVHashedString@@AEBV?$vector@UBlockComplexAliasBlockState@BlockTypeRegistry@@V?$allocator@UBlockComplexAliasBlockState@BlockTypeRegistry@@@std@@@std@@_N@Z
     MCAPI static class Block const* lookupByName(
@@ -153,6 +147,12 @@ public:
         std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const&,
         bool logNotFound = false
     );
+
+    // symbol: ?lookupByName@BlockTypeRegistry@@SAPEBVBlock@@AEBVHashedString@@H_N@Z
+    MCAPI static class Block const* lookupByName(class HashedString const&, int, bool logNotFound = false);
+
+    // symbol: ?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBVHashedString@@_N@Z
+    MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const&, bool logNotFound = false);
 
     // symbol: ?prepareBlocks@BlockTypeRegistry@@SAXI@Z
     MCAPI static void prepareBlocks(uint);

@@ -59,11 +59,11 @@ public:
     // symbol: ??1BlockPalette@@UEAA@XZ
     MCVAPI ~BlockPalette();
 
-    // symbol: ??0BlockPalette@@QEAA@UConstructorToken@0@@Z
-    MCAPI explicit BlockPalette(struct BlockPalette::ConstructorToken);
-
     // symbol: ??0BlockPalette@@QEAA@AEAVLevel@@@Z
     MCAPI explicit BlockPalette(class Level&);
+
+    // symbol: ??0BlockPalette@@QEAA@UConstructorToken@0@@Z
+    MCAPI explicit BlockPalette(struct BlockPalette::ConstructorToken);
 
     // symbol: ?cacheBlockComponentData@BlockPalette@@QEAAXXZ
     MCAPI void cacheBlockComponentData();

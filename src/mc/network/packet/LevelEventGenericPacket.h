@@ -40,11 +40,11 @@ public:
     // symbol: ??1LevelEventGenericPacket@@UEAA@XZ
     MCVAPI ~LevelEventGenericPacket();
 
-    // symbol: ??0LevelEventGenericPacket@@QEAA@W4LevelEvent@@AEBVCompoundTag@@@Z
-    MCAPI LevelEventGenericPacket(::LevelEvent, class CompoundTag const&);
-
     // symbol: ??0LevelEventGenericPacket@@QEAA@XZ
     MCAPI LevelEventGenericPacket();
+
+    // symbol: ??0LevelEventGenericPacket@@QEAA@W4LevelEvent@@AEBVCompoundTag@@@Z
+    MCAPI LevelEventGenericPacket(::LevelEvent, class CompoundTag const&);
 
     // NOLINTEND
 };

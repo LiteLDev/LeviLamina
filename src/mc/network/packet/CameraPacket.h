@@ -37,11 +37,11 @@ public:
     // symbol: ??1CameraPacket@@UEAA@XZ
     MCVAPI ~CameraPacket();
 
-    // symbol: ??0CameraPacket@@QEAA@UActorUniqueID@@0@Z
-    MCAPI CameraPacket(struct ActorUniqueID, struct ActorUniqueID);
-
     // symbol: ??0CameraPacket@@QEAA@XZ
     MCAPI CameraPacket();
+
+    // symbol: ??0CameraPacket@@QEAA@UActorUniqueID@@0@Z
+    MCAPI CameraPacket(struct ActorUniqueID, struct ActorUniqueID);
 
     // NOLINTEND
 };

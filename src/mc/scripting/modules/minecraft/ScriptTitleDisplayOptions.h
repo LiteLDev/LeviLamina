@@ -14,11 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptTitleDisplayOptions@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
-    MCAPI ScriptTitleDisplayOptions(struct ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
-
     // symbol: ??0ScriptTitleDisplayOptions@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptTitleDisplayOptions(struct ScriptModuleMinecraft::ScriptTitleDisplayOptions&&);
+
+    // symbol: ??0ScriptTitleDisplayOptions@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
+    MCAPI ScriptTitleDisplayOptions(struct ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
 
     // symbol: ??4ScriptTitleDisplayOptions@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptTitleDisplayOptions&

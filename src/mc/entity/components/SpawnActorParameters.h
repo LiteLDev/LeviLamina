@@ -9,14 +9,14 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0SpawnActorParameters@@QEAA@XZ
+    MCAPI SpawnActorParameters();
+
     // symbol: ??0SpawnActorParameters@@QEAA@$$QEAU0@@Z
     MCAPI SpawnActorParameters(struct SpawnActorParameters&&);
 
     // symbol: ??0SpawnActorParameters@@QEAA@AEBU0@@Z
     MCAPI SpawnActorParameters(struct SpawnActorParameters const&);
-
-    // symbol: ??0SpawnActorParameters@@QEAA@XZ
-    MCAPI SpawnActorParameters();
 
     // symbol: ?setItem@SpawnActorParameters@@QEAAXAEBVItemDescriptor@@@Z
     MCAPI void setItem(class ItemDescriptor const&);

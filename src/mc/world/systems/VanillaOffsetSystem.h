@@ -56,6 +56,9 @@ public:
     // symbol: ?createSystem@VanillaOffsetSystem@@SA?AUTickingSystemWithInfo@@_N@Z
     MCAPI static struct TickingSystemWithInfo createSystem(bool);
 
+    // symbol: ?getCameraPosition@VanillaOffsetSystem@@SA?AVVec3@@AEBVActor@@M@Z
+    MCAPI static class Vec3 getCameraPosition(class Actor const&, float);
+
     // symbol:
     // ?getCameraPosition@VanillaOffsetSystem@@SA?AVVec3@@AEBV2@PEBUPassengerRenderingRidingOffsetComponent@@PEBUVanillaOffsetComponent@@M@Z
     MCAPI static class Vec3 getCameraPosition(
@@ -64,9 +67,6 @@ public:
         struct VanillaOffsetComponent const*,
         float
     );
-
-    // symbol: ?getCameraPosition@VanillaOffsetSystem@@SA?AVVec3@@AEBVActor@@M@Z
-    MCAPI static class Vec3 getCameraPosition(class Actor const&, float);
 
     // NOLINTEND
 };

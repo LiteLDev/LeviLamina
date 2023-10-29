@@ -45,11 +45,11 @@ public:
     // vIndex: 7, symbol: ?size@DecoratedPotRecipe@@UEBAHXZ
     virtual int size() const;
 
-    // symbol: ??0DecoratedPotRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
-    MCAPI DecoratedPotRecipe(std::string_view, class mce::UUID const&);
-
     // symbol: ??0DecoratedPotRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI explicit DecoratedPotRecipe(std::string_view);
+
+    // symbol: ??0DecoratedPotRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
+    MCAPI DecoratedPotRecipe(std::string_view, class mce::UUID const&);
 
     // symbol: ?ID@DecoratedPotRecipe@@2VUUID@mce@@B
     MCAPI static class mce::UUID const ID;

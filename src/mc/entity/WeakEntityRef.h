@@ -24,11 +24,11 @@ public:
     // symbol: ??4WeakEntityRef@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class WeakEntityRef& operator=(class WeakEntityRef&&);
 
-    // symbol: ??8WeakEntityRef@@QEBA_NV?$WeakRefT@UEntityRefTraits@@@@@Z
-    MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
-
     // symbol: ??8WeakEntityRef@@QEBA_NV0@@Z
     MCAPI bool operator==(class WeakEntityRef) const;
+
+    // symbol: ??8WeakEntityRef@@QEBA_NV?$WeakRefT@UEntityRefTraits@@@@@Z
+    MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
 
     // symbol: ??1WeakEntityRef@@QEAA@XZ
     MCAPI ~WeakEntityRef();

@@ -141,7 +141,7 @@ public:
     // vIndex: 249, symbol: ?destroy@Minecart@@UEAAXAEBVActorDamageSource@@_N@Z
     virtual void destroy(class ActorDamageSource const&, bool);
 
-    // vIndex: 250, symbol: ?getType@MinecartChest@@UEAA?AW4MinecartType@@XZ
+    // vIndex: 250, symbol: ?getType@MinecartRideable@@UEAA?AW4MinecartType@@XZ
     virtual ::MinecartType getType() = 0;
 
     // vIndex: 251, symbol: ?getDefaultDisplayBlock@Minecart@@UEBAPEBVBlock@@XZ

@@ -39,11 +39,11 @@ public:
     // symbol: ??1GameTestResultsPacket@@UEAA@XZ
     MCVAPI ~GameTestResultsPacket();
 
-    // symbol: ??0GameTestResultsPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
-    MCAPI GameTestResultsPacket(std::string const&, std::string const&, bool);
-
     // symbol: ??0GameTestResultsPacket@@QEAA@XZ
     MCAPI GameTestResultsPacket();
+
+    // symbol: ??0GameTestResultsPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
+    MCAPI GameTestResultsPacket(std::string const&, std::string const&, bool);
 
     // NOLINTEND
 };

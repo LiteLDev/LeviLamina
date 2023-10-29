@@ -43,13 +43,13 @@ public:
     // ?getBlockLocation_V010@ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEBA?AV?$Result@VBlockPos@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<class BlockPos> getBlockLocation_V010() const;
 
-    // symbol: ??4ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent const&);
-
     // symbol: ??4ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&&);
+
+    // symbol: ??4ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent const&);
 
     // symbol:
     // ?bind@ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ

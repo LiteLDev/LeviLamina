@@ -33,14 +33,14 @@ public:
     // symbol: ?addAdditionalSaveData@ContainerComponent@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
 
-    // symbol: ?addItem@ContainerComponent@@QEAA_NAEAVItemStack@@HH@Z
-    MCAPI bool addItem(class ItemStack&, int, int);
-
     // symbol: ?addItem@ContainerComponent@@QEAA_NAEAVItemActor@@@Z
     MCAPI bool addItem(class ItemActor&);
 
     // symbol: ?addItem@ContainerComponent@@QEAA_NAEAVItemStack@@@Z
     MCAPI bool addItem(class ItemStack&);
+
+    // symbol: ?addItem@ContainerComponent@@QEAA_NAEAVItemStack@@HH@Z
+    MCAPI bool addItem(class ItemStack&, int, int);
 
     // symbol: ?canBeSiphonedFrom@ContainerComponent@@QEBA_NXZ
     MCAPI bool canBeSiphonedFrom() const;

@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/server/commands/ServerCommand.h"
-
-class ChangeSettingCommand : public ::ServerCommand {
+class ChangeSettingCommand {
 public:
     // prevent constructor by default
     ChangeSettingCommand& operator=(ChangeSettingCommand const&);
@@ -17,8 +14,8 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?collectOptionalArguments@Command@@MEAA_NXZ
-    virtual bool collectOptionalArguments();
+    // vIndex: 1, symbol: __unk_vfn_1
+    virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?execute@ChangeSettingCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

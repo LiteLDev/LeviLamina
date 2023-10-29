@@ -38,11 +38,11 @@ public:
     // symbol: ??1EduUriResourcePacket@@UEAA@XZ
     MCVAPI ~EduUriResourcePacket();
 
-    // symbol: ??0EduUriResourcePacket@@QEAA@AEBUEduSharedUriResource@@@Z
-    MCAPI explicit EduUriResourcePacket(struct EduSharedUriResource const&);
-
     // symbol: ??0EduUriResourcePacket@@QEAA@XZ
     MCAPI EduUriResourcePacket();
+
+    // symbol: ??0EduUriResourcePacket@@QEAA@AEBUEduSharedUriResource@@@Z
+    MCAPI explicit EduUriResourcePacket(struct EduSharedUriResource const&);
 
     // NOLINTEND
 };

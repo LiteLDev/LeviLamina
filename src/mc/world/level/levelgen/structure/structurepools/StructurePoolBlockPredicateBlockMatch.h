@@ -26,12 +26,12 @@ public:
     // vIndex: 3, symbol: ?finalize@IStructurePoolBlockPredicate@@UEAA_NAEAVBlockSource@@AEAVIRandom@@@Z
     virtual bool finalize(class BlockSource&, class IRandom&);
 
+    // symbol: ??0StructurePoolBlockPredicateBlockMatch@@QEAA@AEBVBlock@@@Z
+    MCAPI explicit StructurePoolBlockPredicateBlockMatch(class Block const&);
+
     // symbol:
     // ??0StructurePoolBlockPredicateBlockMatch@@QEAA@V?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@std@@@Z
     MCAPI explicit StructurePoolBlockPredicateBlockMatch(std::vector<class HashedString>);
-
-    // symbol: ??0StructurePoolBlockPredicateBlockMatch@@QEAA@AEBVBlock@@@Z
-    MCAPI explicit StructurePoolBlockPredicateBlockMatch(class Block const&);
 
     // NOLINTEND
 };

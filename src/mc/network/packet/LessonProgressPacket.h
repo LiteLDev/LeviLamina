@@ -41,12 +41,12 @@ public:
     // symbol: ??1LessonProgressPacket@@UEAA@XZ
     MCVAPI ~LessonProgressPacket();
 
+    // symbol: ??0LessonProgressPacket@@QEAA@XZ
+    MCAPI LessonProgressPacket();
+
     // symbol:
     // ??0LessonProgressPacket@@QEAA@W4LessonAction@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI LessonProgressPacket(::LessonAction, int, std::string const&);
-
-    // symbol: ??0LessonProgressPacket@@QEAA@XZ
-    MCAPI LessonProgressPacket();
 
     // NOLINTEND
 };

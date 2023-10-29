@@ -40,12 +40,12 @@ public:
     // symbol: ??1ResourcePackChunkDataPacket@@UEAA@XZ
     MCVAPI ~ResourcePackChunkDataPacket();
 
+    // symbol: ??0ResourcePackChunkDataPacket@@QEAA@XZ
+    MCAPI ResourcePackChunkDataPacket();
+
     // symbol:
     // ??0ResourcePackChunkDataPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_KAEBV?$vector@EV?$allocator@E@std@@@2@@Z
     MCAPI ResourcePackChunkDataPacket(std::string const&, int, uint64, std::vector<uchar> const&);
-
-    // symbol: ??0ResourcePackChunkDataPacket@@QEAA@XZ
-    MCAPI ResourcePackChunkDataPacket();
 
     // NOLINTEND
 };

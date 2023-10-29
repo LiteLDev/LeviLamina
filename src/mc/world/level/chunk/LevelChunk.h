@@ -309,11 +309,11 @@ public:
     // symbol: ?getPosition@LevelChunk@@QEBAAEBVChunkPos@@XZ
     MCAPI class ChunkPos const& getPosition() const;
 
-    // symbol: ?getPreWorldGenHeightmap@LevelChunk@@QEBA?AVHeightmapWrapper@@XZ
-    MCAPI class HeightmapWrapper getPreWorldGenHeightmap() const;
-
     // symbol: ?getPreWorldGenHeightmap@LevelChunk@@QEBA?AVChunkLocalHeight@@AEBVChunkBlockPos@@@Z
     MCAPI class ChunkLocalHeight getPreWorldGenHeightmap(class ChunkBlockPos const&) const;
+
+    // symbol: ?getPreWorldGenHeightmap@LevelChunk@@QEBA?AVHeightmapWrapper@@XZ
+    MCAPI class HeightmapWrapper getPreWorldGenHeightmap() const;
 
     // symbol:
     // ?getPreservedBlockEntities@LevelChunk@@QEBAAEBV?$vector@V?$shared_ptr@VBlockActor@@@std@@V?$allocator@V?$shared_ptr@VBlockActor@@@std@@@2@@std@@XZ
@@ -341,11 +341,11 @@ public:
     // symbol: ?getSurfaceBiome@LevelChunk@@QEBAAEBVBiome@@VChunkBlockPos@@@Z
     MCAPI class Biome const& getSurfaceBiome(class ChunkBlockPos) const;
 
-    // symbol: ?getTickQueue@LevelChunk@@QEBAAEBVBlockTickingQueue@@XZ
-    MCAPI class BlockTickingQueue const& getTickQueue() const;
-
     // symbol: ?getTickQueue@LevelChunk@@QEAAAEAVBlockTickingQueue@@XZ
     MCAPI class BlockTickingQueue& getTickQueue();
+
+    // symbol: ?getTickQueue@LevelChunk@@QEBAAEBVBlockTickingQueue@@XZ
+    MCAPI class BlockTickingQueue const& getTickQueue() const;
 
     // symbol: ?getTopRainBlockPos@LevelChunk@@QEAA?BVBlockPos@@AEBVChunkBlockPos@@@Z
     MCAPI class BlockPos const getTopRainBlockPos(class ChunkBlockPos const&);
@@ -711,12 +711,12 @@ public:
     MCAPI void
     _replaceBiomeStorage(ushort, std::unique_ptr<class SubChunkStorage<class Biome>>, class Bedrock::Threading::UniqueLock<std::shared_mutex> const&);
 
+    // symbol: ?_setBiome@LevelChunk@@AEAAXAEBVBiome@@AEBVChunkBlockPos@@_N@Z
+    MCAPI void _setBiome(class Biome const&, class ChunkBlockPos const&, bool);
+
     // symbol: ?_setBiome@LevelChunk@@AEAAXAEBVBiome@@GGAEBV?$UniqueLock@Vshared_mutex@std@@@Threading@Bedrock@@@Z
     MCAPI void
     _setBiome(class Biome const&, ushort, ushort, class Bedrock::Threading::UniqueLock<std::shared_mutex> const&);
-
-    // symbol: ?_setBiome@LevelChunk@@AEAAXAEBVBiome@@AEBVChunkBlockPos@@_N@Z
-    MCAPI void _setBiome(class Biome const&, class ChunkBlockPos const&, bool);
 
     // symbol: ?_tickSnowAndIce@LevelChunk@@AEAAXAEAVBlockSource@@AEAVRandom@@HHAEAVWeather@@@Z
     MCAPI void _tickSnowAndIce(class BlockSource&, class Random&, int, int, class Weather&);

@@ -73,11 +73,11 @@ public:
     // symbol: ?index@BlockVolume@@QEBAIAEBVPos@@@Z
     MCAPI uint index(class Pos const&) const;
 
-    // symbol: ?indexNoBoundsCheck@BlockVolume@@QEBAIAEBVPos@@@Z
-    MCAPI uint indexNoBoundsCheck(class Pos const&) const;
-
     // symbol: ?indexNoBoundsCheck@BlockVolume@@QEBAIAEBVBlockPos@@@Z
     MCAPI uint indexNoBoundsCheck(class BlockPos const&) const;
+
+    // symbol: ?indexNoBoundsCheck@BlockVolume@@QEBAIAEBVPos@@@Z
+    MCAPI uint indexNoBoundsCheck(class Pos const&) const;
 
     // symbol: ?isInBounds@BlockVolume@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool isInBounds(class BlockPos const&) const;

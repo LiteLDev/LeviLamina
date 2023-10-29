@@ -13,11 +13,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PathfinderNode@@QEAA@AEBVBlockPos@@W4NodeType@@@Z
-    MCAPI PathfinderNode(class BlockPos const&, ::NodeType);
-
     // symbol: ??0PathfinderNode@@QEAA@AEBV0@@Z
     MCAPI PathfinderNode(class PathfinderNode const&);
+
+    // symbol: ??0PathfinderNode@@QEAA@AEBVBlockPos@@W4NodeType@@@Z
+    MCAPI PathfinderNode(class BlockPos const&, ::NodeType);
 
     // symbol: ?distanceTo@PathfinderNode@@QEBAMPEAV1@@Z
     MCAPI float distanceTo(class PathfinderNode*) const;

@@ -6,7 +6,6 @@
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
 #include "mc/enums/safety/ChatFloodingAction.h"
 #include "mc/events/TextFilteringEvent.h"
-#include "mc/server/TextFilteringProcessor.h"
 #include "mc/world/events/TextProcessingEventOrigin.h"
 
 // auto generated forward declare list
@@ -14,7 +13,7 @@
 namespace Json { class Value; }
 // clang-format on
 
-class CommunitySiftProcessor : public ::TextFilteringProcessor {
+class CommunitySiftProcessor {
 public:
     // prevent constructor by default
     CommunitySiftProcessor& operator=(CommunitySiftProcessor const&);

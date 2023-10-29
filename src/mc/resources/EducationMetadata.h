@@ -15,11 +15,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0EducationMetadata@@QEAA@AEBU0@@Z
-    MCAPI EducationMetadata(struct EducationMetadata const&);
-
     // symbol: ??0EducationMetadata@@QEAA@XZ
     MCAPI EducationMetadata();
+
+    // symbol: ??0EducationMetadata@@QEAA@AEBU0@@Z
+    MCAPI EducationMetadata(struct EducationMetadata const&);
 
     // symbol: ??1EducationMetadata@@QEAA@XZ
     MCAPI ~EducationMetadata();

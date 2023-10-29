@@ -45,11 +45,11 @@ public:
     // vIndex: 7, symbol: ?size@BookCloningRecipe@@UEBAHXZ
     virtual int size() const;
 
-    // symbol: ??0BookCloningRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
-    MCAPI BookCloningRecipe(std::string_view, class mce::UUID const&);
-
     // symbol: ??0BookCloningRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI explicit BookCloningRecipe(std::string_view);
+
+    // symbol: ??0BookCloningRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
+    MCAPI BookCloningRecipe(std::string_view, class mce::UUID const&);
 
     // symbol: ?ID@BookCloningRecipe@@2VUUID@mce@@B
     MCAPI static class mce::UUID const ID;

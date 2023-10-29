@@ -15,13 +15,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptBlockRaycastHit@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
-    MCAPI class ScriptModuleMinecraft::ScriptBlockRaycastHit&
-    operator=(class ScriptModuleMinecraft::ScriptBlockRaycastHit const&);
-
     // symbol: ??4ScriptBlockRaycastHit@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptBlockRaycastHit&
     operator=(class ScriptModuleMinecraft::ScriptBlockRaycastHit&&);
+
+    // symbol: ??4ScriptBlockRaycastHit@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
+    MCAPI class ScriptModuleMinecraft::ScriptBlockRaycastHit&
+    operator=(class ScriptModuleMinecraft::ScriptBlockRaycastHit const&);
 
     // symbol: ??1ScriptBlockRaycastHit@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptBlockRaycastHit();

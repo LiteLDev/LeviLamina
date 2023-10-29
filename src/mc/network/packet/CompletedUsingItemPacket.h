@@ -38,11 +38,11 @@ public:
     // symbol: ??1CompletedUsingItemPacket@@UEAA@XZ
     MCVAPI ~CompletedUsingItemPacket();
 
-    // symbol: ??0CompletedUsingItemPacket@@QEAA@FH@Z
-    MCAPI CompletedUsingItemPacket(short, int);
-
     // symbol: ??0CompletedUsingItemPacket@@QEAA@XZ
     MCAPI CompletedUsingItemPacket();
+
+    // symbol: ??0CompletedUsingItemPacket@@QEAA@FH@Z
+    MCAPI CompletedUsingItemPacket(short, int);
 
     // NOLINTEND
 };

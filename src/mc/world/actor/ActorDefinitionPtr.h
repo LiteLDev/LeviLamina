@@ -9,14 +9,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ActorDefinitionPtr@@QEAA@AEAVActorDefinitionGroup@@AEAVActorDefinition@@@Z
-    MCAPI ActorDefinitionPtr(class ActorDefinitionGroup&, class ActorDefinition&);
+    // symbol: ??0ActorDefinitionPtr@@QEAA@XZ
+    MCAPI ActorDefinitionPtr();
 
     // symbol: ??0ActorDefinitionPtr@@QEAA@AEBV0@@Z
     MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const&);
 
-    // symbol: ??0ActorDefinitionPtr@@QEAA@XZ
-    MCAPI ActorDefinitionPtr();
+    // symbol: ??0ActorDefinitionPtr@@QEAA@AEAVActorDefinitionGroup@@AEAVActorDefinition@@@Z
+    MCAPI ActorDefinitionPtr(class ActorDefinitionGroup&, class ActorDefinition&);
 
     // symbol: ??4ActorDefinitionPtr@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ActorDefinitionPtr& operator=(class ActorDefinitionPtr&&);

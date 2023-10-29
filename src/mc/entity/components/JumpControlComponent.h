@@ -8,11 +8,11 @@
 class JumpControlComponent {
 public:
     // NOLINTBEGIN
-    // symbol: ??0JumpControlComponent@@QEAA@AEBV0@@Z
-    MCAPI JumpControlComponent(class JumpControlComponent const&);
-
     // symbol: ??0JumpControlComponent@@QEAA@XZ
     MCAPI JumpControlComponent();
+
+    // symbol: ??0JumpControlComponent@@QEAA@AEBV0@@Z
+    MCAPI JumpControlComponent(class JumpControlComponent const&);
 
     // symbol: ?getAnimationDuration@JumpControlComponent@@QEBAHXZ
     MCAPI int getAnimationDuration() const;

@@ -33,13 +33,13 @@ public:
     MCAPI
     ScriptItemUseAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemUseEvent const&, class Scripting::WeakLifetimeScope const&);
 
-    // symbol: ??4ScriptItemUseAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptItemUseAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemUseAfterEvent const&);
-
     // symbol: ??4ScriptItemUseAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemUseAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptItemUseAfterEvent&&);
+
+    // symbol: ??4ScriptItemUseAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptItemUseAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptItemUseAfterEvent const&);
 
     // symbol:
     // ?bind@ScriptItemUseAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ

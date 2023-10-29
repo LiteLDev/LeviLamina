@@ -14,12 +14,12 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?lookup@SerializerEnumMapping@cereal@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEA_J@Z
-    MCAPI bool lookup(std::string const&, int64&) const;
-
-    // symbol:
     // ?lookup@SerializerEnumMapping@cereal@@QEBA_N_JAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool lookup(int64, std::string&) const;
+
+    // symbol:
+    // ?lookup@SerializerEnumMapping@cereal@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEA_J@Z
+    MCAPI bool lookup(std::string const&, int64&) const;
 
     // symbol: ??4SerializerEnumMapping@cereal@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class cereal::SerializerEnumMapping& operator=(class cereal::SerializerEnumMapping&&);

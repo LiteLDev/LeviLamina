@@ -15,11 +15,11 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0WeakStorageFeature@@IEAA@W4EmptyInit@0@@Z
-    MCAPI explicit WeakStorageFeature(::WeakStorageFeature::EmptyInit);
-
     // symbol: ??0WeakStorageFeature@@IEAA@$$QEAV0@@Z
     MCAPI WeakStorageFeature(class WeakStorageFeature&&);
+
+    // symbol: ??0WeakStorageFeature@@IEAA@W4EmptyInit@0@@Z
+    MCAPI explicit WeakStorageFeature(::WeakStorageFeature::EmptyInit);
 
     // symbol: ??4WeakStorageFeature@@IEAAAEAV0@$$QEAV0@@Z
     MCAPI class WeakStorageFeature& operator=(class WeakStorageFeature&&);

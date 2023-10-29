@@ -23,11 +23,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptItemEnchantments@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
-    MCAPI ScriptItemEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments const&);
-
     // symbol: ??0ScriptItemEnchantments@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptItemEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments&&);
+
+    // symbol: ??0ScriptItemEnchantments@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
+    MCAPI ScriptItemEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments const&);
 
     // symbol:
     // ?addEnchantment@ScriptItemEnchantments@ScriptModuleMinecraft@@QEAA_NAEBUScriptItemEnchantmentInstance@2@@Z

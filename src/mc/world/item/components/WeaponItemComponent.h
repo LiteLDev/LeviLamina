@@ -47,11 +47,11 @@ public:
     // symbol: ??1WeaponItemComponent@@UEAA@XZ
     MCVAPI ~WeaponItemComponent();
 
-    // symbol: ??0WeaponItemComponent@@QEAA@AEBV0@@Z
-    MCAPI WeaponItemComponent(class WeaponItemComponent const&);
-
     // symbol: ??0WeaponItemComponent@@QEAA@XZ
     MCAPI WeaponItemComponent();
+
+    // symbol: ??0WeaponItemComponent@@QEAA@AEBV0@@Z
+    MCAPI WeaponItemComponent(class WeaponItemComponent const&);
 
     // symbol: ??4WeaponItemComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class WeaponItemComponent& operator=(class WeaponItemComponent&&);

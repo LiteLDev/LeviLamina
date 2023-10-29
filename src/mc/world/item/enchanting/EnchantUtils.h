@@ -22,11 +22,11 @@ public:
     // symbol: ?applyEnchant@EnchantUtils@@SA_NAEAVItemStackBase@@AEBVEnchantmentInstance@@_N@Z
     MCAPI static bool applyEnchant(class ItemStackBase&, class EnchantmentInstance const&, bool);
 
-    // symbol: ?applyEnchant@EnchantUtils@@SAHAEAVItemStackBase@@AEBVItemEnchants@@_N@Z
-    MCAPI static int applyEnchant(class ItemStackBase&, class ItemEnchants const&, bool);
-
     // symbol: ?applyEnchant@EnchantUtils@@SA_NAEAVItemStackBase@@W4Type@Enchant@@H_N@Z
     MCAPI static bool applyEnchant(class ItemStackBase&, ::Enchant::Type, int, bool);
+
+    // symbol: ?applyEnchant@EnchantUtils@@SAHAEAVItemStackBase@@AEBVItemEnchants@@_N@Z
+    MCAPI static int applyEnchant(class ItemStackBase&, class ItemEnchants const&, bool);
 
     // symbol: ?canEnchant@EnchantUtils@@SA?AUEnchantResult@@AEBVItemStackBase@@AEBVEnchantmentInstance@@_N@Z
     MCAPI static struct EnchantResult canEnchant(class ItemStackBase const&, class EnchantmentInstance const&, bool);
@@ -112,11 +112,11 @@ public:
     // symbol: ?isCurse@EnchantUtils@@SA_NW4Type@Enchant@@@Z
     MCAPI static bool isCurse(::Enchant::Type);
 
-    // symbol: ?randomlyEnchant@EnchantUtils@@SAXAEAVItemStack@@HH_N@Z
-    MCAPI static void randomlyEnchant(class ItemStack&, int, int, bool);
-
     // symbol: ?randomlyEnchant@EnchantUtils@@SAXAEAVItemInstance@@HH_N@Z
     MCAPI static void randomlyEnchant(class ItemInstance&, int, int, bool);
+
+    // symbol: ?randomlyEnchant@EnchantUtils@@SAXAEAVItemStack@@HH_N@Z
+    MCAPI static void randomlyEnchant(class ItemStack&, int, int, bool);
 
     // symbol: ?removeEnchants@EnchantUtils@@SAXAEAVItemStack@@@Z
     MCAPI static void removeEnchants(class ItemStack&);
