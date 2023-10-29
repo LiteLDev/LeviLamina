@@ -5,11 +5,12 @@
 
 namespace ll {
 
-static const std::string LLConfigPath{R"(plugins\LeviLamina\config.json)"};
+static const std::string leviConfigPath{R"(plugins\LeviLamina\config.json)"};
 
-LLConfig globalConfig;
+LeviConfig globalConfig;
 
-bool loadLLConfig() { return ll::config::loadConfig(globalConfig, LLConfigPath); }
+bool loadLeviConfig() { return ll::config::loadConfig(globalConfig, leviConfigPath); }
 
-bool saveLLConfig() { return ll::config::saveConfig(globalConfig, LLConfigPath); }
+bool saveLeviConfig() { return ll::config::saveConfig(globalConfig, leviConfigPath); }
+
 } // namespace ll

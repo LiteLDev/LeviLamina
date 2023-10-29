@@ -29,8 +29,8 @@
 
 
 ll::Logger                            ll::logger("LeviLamina");
-std::chrono::steady_clock::time_point ll::SeverStartBeginTime;
-std::chrono::steady_clock::time_point ll::SeverStartEndTime;
+std::chrono::steady_clock::time_point ll::severStartBeginTime;
+std::chrono::steady_clock::time_point ll::severStartEndTime;
 
 using namespace ll;
 
@@ -284,7 +284,7 @@ void leviLaminaMain() {
     auto i18n = ll::i18n::Translation::load("plugins/LeviLamina/LangPack/");
 
     // Load Config
-    ll::loadLLConfig();
+    ll::loadLeviConfig();
 
     // Setup bug fixes
     setupBugFixes();
@@ -351,7 +351,7 @@ void leviLaminaMain() {
 
 LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Highest, "main", int, int argc, char* argv[]) {
 
-    SeverStartBeginTime = std::chrono::steady_clock::now();
+    severStartBeginTime = std::chrono::steady_clock::now();
 
     for (int i = 0; i < argc; ++i) {
         switch (do_hash(argv[i])) {

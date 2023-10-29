@@ -280,11 +280,11 @@ void LLSettingsCommand(
             break;
         }
         case LLSettingsOperation::Reload:
-            ll::loadLLConfig();
+            ll::loadLeviConfig();
             output.trSuccess("ll.cmd.settings.reload.success");
             break;
         case LLSettingsOperation::Save:
-            ll::saveLLConfig();
+            ll::saveLeviConfig();
             output.trSuccess("ll.cmd.settings.save.success");
             break;
         default:

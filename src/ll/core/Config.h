@@ -9,7 +9,7 @@
 
 namespace ll {
 
-struct LLConfig {
+struct LeviConfig {
     int version = 3;
 
     std::string language  = "system";
@@ -62,9 +62,10 @@ struct LLConfig {
     } modules{};
 };
 
-LLETAPI LLConfig globalConfig;
+LLETAPI LeviConfig globalConfig;
 
-bool loadLLConfig();
+bool loadLeviConfig();
 
-bool saveLLConfig();
+bool saveLeviConfig();
+
 } // namespace ll

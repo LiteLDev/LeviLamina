@@ -35,11 +35,11 @@ void tryModifyServerStartInfo(std::string& s) {
     }
     serverStarted = true;
 
-    ll::SeverStartEndTime = std::chrono::steady_clock::now();
+    ll::severStartEndTime = std::chrono::steady_clock::now();
 
     s = std::format(
         R"(Server started in ({:.1f}s)! For help, type "help" or "?")",
-        std::chrono::duration_cast<std::chrono::duration<double>>(ll::SeverStartEndTime - ll::SeverStartBeginTime)
+        std::chrono::duration_cast<std::chrono::duration<double>>(ll::severStartEndTime - ll::severStartBeginTime)
             .count()
     );
 }
