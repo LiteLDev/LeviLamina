@@ -5,7 +5,7 @@
 
 #include "mc/deps/core/common/debug/LogDetails.h"
 
-#include "ll/core/tweak/OutputRedirector.h"
+#include "ll/api/utils/OutputRedirector.h"
 
 ll::Logger serverLogger("Server");
 
