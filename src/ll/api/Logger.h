@@ -44,7 +44,7 @@ public:
         LLAPI void print(std::string_view) const;
 
     public:
-        using playerOutputFunc = std::function<void(std::string_view)>;
+        using PlayerOutputFunc = std::function<void(std::string_view)>;
 
         Logger&                               logger;
         std::string_view                      levelPrefix;
@@ -53,7 +53,7 @@ public:
         std::array<std::string_view, 5> const consoleFormat;
         std::array<std::string_view, 5> const fileFormat;
         std::array<std::string_view, 5> const playerFormat;
-        playerOutputFunc                      playerOutputCallback;
+        PlayerOutputFunc                      playerOutputCallback;
 
         LLAPI explicit OutputStream(
             Logger&                                logger,
@@ -74,7 +74,7 @@ public:
             }
         }
 
-        void setPlayerOutputFunc(playerOutputFunc const& func) { playerOutputCallback = func; }
+        void setPlayerOutputFunc(PlayerOutputFunc const& func) { playerOutputCallback = func; }
     };
 
 public:
@@ -99,7 +99,7 @@ public:
 
     LLAPI static bool setDefaultFile(std::string const& logFile, bool appendMode);
 
-    void setPlayerOutputFunc(OutputStream::playerOutputFunc&& func) {
+    void setPlayerOutputFunc(OutputStream::PlayerOutputFunc&& func) {
         debug.setPlayerOutputFunc(func);
         info.setPlayerOutputFunc(func);
         warn.setPlayerOutputFunc(func);
