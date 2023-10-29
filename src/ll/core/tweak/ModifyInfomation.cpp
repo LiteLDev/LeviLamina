@@ -5,7 +5,8 @@
 
 #include "mc/deps/core/common/debug/LogDetails.h"
 
-#include "ll/api/utils/OutputRedirector.h"
+#include "ll/api/io/FunctionStream.h"
+#include "ll/api/io/StreamRedirector.h"
 
 ll::Logger serverLogger("Server");
 
@@ -80,21 +81,29 @@ LL_AUTO_STATIC_HOOK(
 
 LL_AUTO_STATIC_HOOK(CppOutputRedirectHook, HookPriority::High, "main", int, int argc, char* argv[]) {
 
-    ll::Logger coutlogger("std::cout");
-    ll::Logger cerrlogger("std::cerr");
-
-    ll::redirect::ofuncstream      coutfs{[&](std::string_view s) {
+    ll::Logger           coutlogger("std::cout");
+    ll::io::ofuncstream  coutfs{[&](std::string_view s) {
         if (s.ends_with("\n")) { s.remove_suffix(1); }
         if (s.empty()) { return; }
         coutlogger.warn(s);
     }};
-    ll::redirect::ofuncstream      cerrfs{[&](std::string_view s) {
+    ll::StreamRedirector coutsr(std::cout, coutfs.rdbuf());
+
+    ll::Logger           cloglogger("std::clog");
+    ll::io::ofuncstream  clogfs{[&](std::string_view s) {
         if (s.ends_with("\n")) { s.remove_suffix(1); }
         if (s.empty()) { return; }
-        cerrlogger.error(s);
+        cloglogger.error(s);
     }};
-    ll::redirect::StreamRedirector coutsr(std::cout, coutfs.rdbuf());
-    ll::redirect::StreamRedirector cerrsr(std::cerr, cerrfs.rdbuf());
+    ll::StreamRedirector clogsr(std::clog, clogfs.rdbuf());
+
+    ll::Logger           cerrlogger("std::cerr");
+    ll::io::ofuncstream  cerrfs{[&](std::string_view s) {
+        if (s.ends_with("\n")) { s.remove_suffix(1); }
+        if (s.empty()) { return; }
+        cerrlogger.fatal(s);
+    }};
+    ll::StreamRedirector cerrsr(std::cerr, cerrfs.rdbuf());
 
     return origin(argc, argv);
 }
