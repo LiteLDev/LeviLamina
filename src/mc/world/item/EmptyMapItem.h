@@ -92,11 +92,11 @@ public:
     // symbol: ??0EmptyMapItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
     MCAPI EmptyMapItem(std::string const&, short);
 
-    // symbol: ?addPlayerMarker@EmptyMapItem@@SAXAEAVItemStack@@@Z
-    MCAPI static void addPlayerMarker(class ItemStack&);
-
     // symbol: ?addPlayerMarker@EmptyMapItem@@SAXAEAVItemInstance@@@Z
     MCAPI static void addPlayerMarker(class ItemInstance&);
+
+    // symbol: ?addPlayerMarker@EmptyMapItem@@SAXAEAVItemStack@@@Z
+    MCAPI static void addPlayerMarker(class ItemStack&);
 
     // symbol: ?isLocatorMap@EmptyMapItem@@SA_NAEBVItemStack@@@Z
     MCAPI static bool isLocatorMap(class ItemStack const&);

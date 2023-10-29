@@ -145,11 +145,11 @@ public:
     // symbol: ??0Throwable@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Throwable(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
-    // symbol: ?shoot@Throwable@@QEAAXAEBVVec3@@MM0@Z
-    MCAPI void shoot(class Vec3 const&, float, float, class Vec3 const&);
-
     // symbol: ?shoot@Throwable@@QEAAXAEAVMob@@@Z
     MCAPI void shoot(class Mob&);
+
+    // symbol: ?shoot@Throwable@@QEAAXAEBVVec3@@MM0@Z
+    MCAPI void shoot(class Vec3 const&, float, float, class Vec3 const&);
 
     // symbol: ?spawnPlayerProjectile@Throwable@@SAPEAVActor@@AEBUActorDefinitionIdentifier@@AEAVPlayer@@@Z
     MCAPI static class Actor* spawnPlayerProjectile(struct ActorDefinitionIdentifier const&, class Player&);

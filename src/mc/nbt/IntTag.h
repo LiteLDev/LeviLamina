@@ -40,11 +40,11 @@ public:
     // symbol: ??1IntTag@@UEAA@XZ
     MCVAPI ~IntTag();
 
-    // symbol: ??0IntTag@@QEAA@H@Z
-    MCAPI explicit IntTag(int);
-
     // symbol: ??0IntTag@@QEAA@XZ
     MCAPI IntTag();
+
+    // symbol: ??0IntTag@@QEAA@H@Z
+    MCAPI explicit IntTag(int);
 
     // NOLINTEND
 };

@@ -10,11 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptSettings@@QEAA@$$QEAU0@@Z
-    MCAPI ScriptSettings(struct ScriptSettings&&);
-
     // symbol: ??0ScriptSettings@@QEAA@XZ
     MCAPI ScriptSettings();
+
+    // symbol: ??0ScriptSettings@@QEAA@$$QEAU0@@Z
+    MCAPI ScriptSettings(struct ScriptSettings&&);
 
     // symbol: ??1ScriptSettings@@QEAA@XZ
     MCAPI ~ScriptSettings();

@@ -20,13 +20,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptPlayerSoundOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerSoundOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerSoundOptions const&);
-
     // symbol: ??4ScriptPlayerSoundOptions@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerSoundOptions&
     operator=(struct ScriptModuleMinecraft::ScriptPlayerSoundOptions&&);
+
+    // symbol: ??4ScriptPlayerSoundOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptPlayerSoundOptions&
+    operator=(struct ScriptModuleMinecraft::ScriptPlayerSoundOptions const&);
 
     // symbol: ?validate@ScriptPlayerSoundOptions@ScriptModuleMinecraft@@QEBA?AV?$optional@UError@Scripting@@@std@@XZ
     MCAPI std::optional<struct Scripting::Error> validate() const;

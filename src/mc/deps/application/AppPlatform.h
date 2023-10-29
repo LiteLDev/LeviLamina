@@ -138,11 +138,11 @@ public:
     MCVAPI std::shared_ptr<class Core::FileStorageArea>
            createLoggingStorageArea(::Core::FileAccessType, class Core::Path const&);
 
-    // symbol: ?createUserInput@AppPlatform@@UEAAXXZ
-    MCVAPI void createUserInput();
-
     // symbol: ?createUserInput@AppPlatform@@UEAAXH@Z
     MCVAPI void createUserInput(int);
+
+    // symbol: ?createUserInput@AppPlatform@@UEAAXXZ
+    MCVAPI void createUserInput();
 
     // symbol:
     // ?createWebview@AppPlatform@@UEBA?AV?$shared_ptr@VWebviewInterface@@@std@@$$QEAVPlatformArguments@Webview@@@Z

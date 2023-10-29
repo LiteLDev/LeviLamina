@@ -2,12 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/external/lib_http_client/ThreadPoolActionStatus.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace OS { struct ThreadPoolActionStatus; }
 struct _TP_CALLBACK_INSTANCE;
 struct _TP_WORK;
 // clang-format on
@@ -22,7 +18,7 @@ public:
     // clang-format on
 
     // ThreadPoolImpl inner types define
-    struct ActionStatusImpl : public ::OS::ThreadPoolActionStatus {
+    struct ActionStatusImpl {
     public:
         // prevent constructor by default
         ActionStatusImpl& operator=(ActionStatusImpl const&);

@@ -14,11 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Abilities@@QEAA@AEBV0@@Z
-    MCAPI Abilities(class Abilities const&);
-
     // symbol: ??0Abilities@@QEAA@_N@Z
     MCAPI explicit Abilities(bool);
+
+    // symbol: ??0Abilities@@QEAA@AEBV0@@Z
+    MCAPI Abilities(class Abilities const&);
 
     // symbol: ?addSaveData@Abilities@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addSaveData(class CompoundTag&) const;

@@ -45,11 +45,11 @@ public:
     // vIndex: 7, symbol: ?size@BannerDuplicateRecipe@@UEBAHXZ
     virtual int size() const;
 
-    // symbol: ??0BannerDuplicateRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
-    MCAPI BannerDuplicateRecipe(std::string_view, class mce::UUID const&);
-
     // symbol: ??0BannerDuplicateRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI explicit BannerDuplicateRecipe(std::string_view);
+
+    // symbol: ??0BannerDuplicateRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
+    MCAPI BannerDuplicateRecipe(std::string_view, class mce::UUID const&);
 
     // symbol: ?ID@BannerDuplicateRecipe@@2VUUID@mce@@B
     MCAPI static class mce::UUID const ID;

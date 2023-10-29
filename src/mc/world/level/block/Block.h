@@ -137,15 +137,15 @@ public:
     // symbol: ?checkIsPathable@Block@@QEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     MCAPI bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
+    // symbol: ?clip@Block@@QEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2W4ShapeType@@AEBVAABB@@@Z
+    MCAPI class HitResult
+    clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class AABB const&)
+        const;
+
     // symbol:
     // ?clip@Block@@QEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     MCAPI class HitResult
     clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
-
-    // symbol: ?clip@Block@@QEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2W4ShapeType@@AEBVAABB@@@Z
-    MCAPI class HitResult
-    clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class AABB const&)
         const;
 
     // symbol: ?computeRawSerializationIdHashForNetwork@Block@@QEBAIXZ
@@ -433,11 +433,11 @@ public:
     // symbol: ?mayConsumeFertilizer@Block@@QEBA_NAEAVBlockSource@@@Z
     MCAPI bool mayConsumeFertilizer(class BlockSource&) const;
 
-    // symbol: ?mayPick@Block@@QEBA_NAEBVBlockSource@@_N@Z
-    MCAPI bool mayPick(class BlockSource const&, bool) const;
-
     // symbol: ?mayPick@Block@@QEBA_NXZ
     MCAPI bool mayPick() const;
+
+    // symbol: ?mayPick@Block@@QEBA_NAEBVBlockSource@@_N@Z
+    MCAPI bool mayPick(class BlockSource const&, bool) const;
 
     // symbol: ?mayPlace@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool mayPlace(class BlockSource&, class BlockPos const&) const;

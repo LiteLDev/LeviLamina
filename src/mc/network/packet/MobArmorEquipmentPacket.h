@@ -35,11 +35,11 @@ public:
     // symbol: ??1MobArmorEquipmentPacket@@UEAA@XZ
     MCVAPI ~MobArmorEquipmentPacket();
 
-    // symbol: ??0MobArmorEquipmentPacket@@QEAA@AEBVActor@@@Z
-    MCAPI explicit MobArmorEquipmentPacket(class Actor const&);
-
     // symbol: ??0MobArmorEquipmentPacket@@QEAA@XZ
     MCAPI MobArmorEquipmentPacket();
+
+    // symbol: ??0MobArmorEquipmentPacket@@QEAA@AEBVActor@@@Z
+    MCAPI explicit MobArmorEquipmentPacket(class Actor const&);
 
     // NOLINTEND
 };

@@ -10,11 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0MobEffectComponent@@QEAA@$$QEAV0@@Z
-    MCAPI MobEffectComponent(class MobEffectComponent&&);
-
     // symbol: ??0MobEffectComponent@@QEAA@XZ
     MCAPI MobEffectComponent();
+
+    // symbol: ??0MobEffectComponent@@QEAA@$$QEAV0@@Z
+    MCAPI MobEffectComponent(class MobEffectComponent&&);
 
     // symbol: ?addAdditionalSaveData@MobEffectComponent@@QEBAXAEAVCompoundTag@@AEBVActor@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag&, class Actor const&) const;

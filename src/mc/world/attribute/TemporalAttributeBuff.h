@@ -34,12 +34,12 @@ public:
     // symbol: ??1TemporalAttributeBuff@@UEAA@XZ
     MCVAPI ~TemporalAttributeBuff();
 
+    // symbol: ??0TemporalAttributeBuff@@QEAA@AEBV0@@Z
+    MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const&);
+
     // symbol:
     // ??0TemporalAttributeBuff@@QEAA@MHW4AttributeBuffType@@_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI TemporalAttributeBuff(float, int, ::AttributeBuffType, bool, std::string const&);
-
-    // symbol: ??0TemporalAttributeBuff@@QEAA@AEBV0@@Z
-    MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const&);
 
     // symbol: ?getBaseAmount@TemporalAttributeBuff@@QEBAMXZ
     MCAPI float getBaseAmount() const;

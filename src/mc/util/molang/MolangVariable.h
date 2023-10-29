@@ -20,14 +20,14 @@ public:
     // symbol: ??1MolangVariable@@QEAA@XZ
     MCAPI ~MolangVariable();
 
+    // symbol: ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@AEBVHashedString@@@Z
+    MCAPI static ::MolangVariableIndex getVariableIndex(class HashedString const&);
+
     // symbol: ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@_K@Z
     MCAPI static ::MolangVariableIndex getVariableIndex(uint64);
 
     // symbol: ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@_KPEBD_N@Z
     MCAPI static ::MolangVariableIndex getVariableIndex(uint64, char const*, bool);
-
-    // symbol: ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@AEBVHashedString@@@Z
-    MCAPI static ::MolangVariableIndex getVariableIndex(class HashedString const&);
 
     // symbol: ?getVariableName@MolangVariable@@SAAEBVHashedString@@W4MolangVariableIndex@@@Z
     MCAPI static class HashedString const& getVariableName(::MolangVariableIndex);

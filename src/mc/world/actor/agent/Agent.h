@@ -205,11 +205,11 @@ public:
     // symbol: ?setGameType@Agent@@QEAAXW4GameType@@@Z
     MCAPI void setGameType(::GameType);
 
-    // symbol: ?setMoveTarget@Agent@@QEAAXM@Z
-    MCAPI void setMoveTarget(float);
-
     // symbol: ?setMoveTarget@Agent@@QEAAXVVec2@@@Z
     MCAPI void setMoveTarget(class Vec2);
+
+    // symbol: ?setMoveTarget@Agent@@QEAAXM@Z
+    MCAPI void setMoveTarget(float);
 
     // symbol: ?setNameTagFromOwner@Agent@@QEAAXAEBVPlayer@@@Z
     MCAPI void setNameTagFromOwner(class Player const&);

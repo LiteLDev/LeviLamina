@@ -32,12 +32,12 @@ public:
     // symbol: ??1EntitySystems@@UEAA@XZ
     MCVAPI ~EntitySystems();
 
+    // symbol: ??0EntitySystems@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI explicit EntitySystems(std::string);
+
     // symbol:
     // ??0EntitySystems@@QEAA@V?$unique_ptr@UIEntitySystemsCollection@@U?$default_delete@UIEntitySystemsCollection@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z
     MCAPI EntitySystems(std::unique_ptr<struct IEntitySystemsCollection>, std::string);
-
-    // symbol: ??0EntitySystems@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit EntitySystems(std::string);
 
     // symbol: ?getPlayerInteractionSystem@EntitySystems@@QEAAAEAVPlayerInteractionSystem@@XZ
     MCAPI class PlayerInteractionSystem& getPlayerInteractionSystem();
@@ -70,13 +70,13 @@ public:
     // symbol: ?_hasSingleTickCategory@EntitySystems@@AEBA_NV?$typeid_t@USystemCategory@@@Bedrock@@@Z
     MCAPI bool _hasSingleTickCategory(class Bedrock::typeid_t<struct SystemCategory>) const;
 
+    // symbol: ?_singleTickCategory@EntitySystems@@AEAAXV?$typeid_t@USystemCategory@@@Bedrock@@AEAVEntityContext@@@Z
+    MCAPI void _singleTickCategory(class Bedrock::typeid_t<struct SystemCategory>, class EntityContext&);
+
     // symbol:
     // ?_singleTickCategory@EntitySystems@@AEAAXV?$typeid_t@USystemCategory@@@Bedrock@@AEAVStrictEntityContext@@AEAVEntityRegistry@@@Z
     MCAPI void
     _singleTickCategory(class Bedrock::typeid_t<struct SystemCategory>, class StrictEntityContext&, class EntityRegistry&);
-
-    // symbol: ?_singleTickCategory@EntitySystems@@AEAAXV?$typeid_t@USystemCategory@@@Bedrock@@AEAVEntityContext@@@Z
-    MCAPI void _singleTickCategory(class Bedrock::typeid_t<struct SystemCategory>, class EntityContext&);
 
     // NOLINTEND
 };

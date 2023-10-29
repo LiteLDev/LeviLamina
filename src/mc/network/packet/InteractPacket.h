@@ -39,11 +39,11 @@ public:
     // symbol: ??1InteractPacket@@UEAA@XZ
     MCVAPI ~InteractPacket();
 
-    // symbol: ??0InteractPacket@@QEAA@W4Action@0@VActorRuntimeID@@AEBVVec3@@@Z
-    MCAPI InteractPacket(::InteractPacket::Action, class ActorRuntimeID, class Vec3 const&);
-
     // symbol: ??0InteractPacket@@QEAA@XZ
     MCAPI InteractPacket();
+
+    // symbol: ??0InteractPacket@@QEAA@W4Action@0@VActorRuntimeID@@AEBVVec3@@@Z
+    MCAPI InteractPacket(::InteractPacket::Action, class ActorRuntimeID, class Vec3 const&);
 
     // NOLINTEND
 };

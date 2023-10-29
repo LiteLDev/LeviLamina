@@ -14,11 +14,11 @@ public:
     // symbol: ?allocateInstruction@MolangProgramBuildState@@QEAA_KXZ
     MCAPI uint64 allocateInstruction();
 
-    // symbol: ?emplaceInstruction@MolangProgramBuildState@@QEAAX_KV?$function@$$A6AXAEAUMolangEvalParams@@@Z@std@@@Z
-    MCAPI void emplaceInstruction(uint64, std::function<void(struct MolangEvalParams&)>);
-
     // symbol: ?emplaceInstruction@MolangProgramBuildState@@QEAAXV?$function@$$A6AXAEAUMolangEvalParams@@@Z@std@@@Z
     MCAPI void emplaceInstruction(std::function<void(struct MolangEvalParams&)>);
+
+    // symbol: ?emplaceInstruction@MolangProgramBuildState@@QEAAX_KV?$function@$$A6AXAEAUMolangEvalParams@@@Z@std@@@Z
+    MCAPI void emplaceInstruction(uint64, std::function<void(struct MolangEvalParams&)>);
 
     // symbol: ?insertJumpWithMaddAtIndex@MolangProgramBuildState@@QEAAX_K0MM@Z
     MCAPI void insertJumpWithMaddAtIndex(uint64, uint64, float, float);

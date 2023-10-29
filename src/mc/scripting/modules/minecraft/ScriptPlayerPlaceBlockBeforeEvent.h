@@ -29,13 +29,13 @@ public:
     // symbol: ??0ScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptPlayerPlaceBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&&);
 
+    // symbol: ??0ScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
+    MCAPI ScriptPlayerPlaceBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
+
     // symbol:
     // ??0ScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@AEAVDimension@@AEBVBlockPos@@EAEBVVec3@@AEBVItemStackBase@@AEBVWeakLifetimeScope@3@@Z
     MCAPI
     ScriptPlayerPlaceBlockBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>, class Dimension&, class BlockPos const&, uchar, class Vec3 const&, class ItemStackBase const&, class Scripting::WeakLifetimeScope const&);
-
-    // symbol: ??0ScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
-    MCAPI ScriptPlayerPlaceBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
 
     // symbol: ??4ScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&

@@ -29,13 +29,13 @@ public:
     // symbol: ??1ScriptStringBlockProperty@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptStringBlockProperty();
 
+    // symbol: ??0ScriptStringBlockProperty@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
+    MCAPI ScriptStringBlockProperty(class ScriptModuleMinecraft::ScriptStringBlockProperty&&);
+
     // symbol:
     // ??0ScriptStringBlockProperty@ScriptModuleMinecraft@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockState@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@@Z
     MCAPI
     ScriptStringBlockProperty(std::string, class BlockState const&, std::vector<std::string>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>);
-
-    // symbol: ??0ScriptStringBlockProperty@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
-    MCAPI ScriptStringBlockProperty(class ScriptModuleMinecraft::ScriptStringBlockProperty&&);
 
     // symbol:
     // ?getState@ScriptStringBlockProperty@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$V@Scripting@@XZ

@@ -127,11 +127,11 @@ public:
     // symbol: ?sendInput@DirectPlayerMovementProxy@@UEAAXXZ
     MCVAPI void sendInput();
 
-    // symbol: ?sendPacket@DirectPlayerMovementProxy@@UEAAXAEAVPlayerActionPacket@@@Z
-    MCVAPI void sendPacket(class PlayerActionPacket&);
-
     // symbol: ?sendPacket@DirectPlayerMovementProxy@@UEAAXAEAVPassengerJumpPacket@@@Z
     MCVAPI void sendPacket(class PassengerJumpPacket&);
+
+    // symbol: ?sendPacket@DirectPlayerMovementProxy@@UEAAXAEAVPlayerActionPacket@@@Z
+    MCVAPI void sendPacket(class PlayerActionPacket&);
 
     // symbol: ?sendPlayerMove@DirectPlayerMovementProxy@@UEAAXXZ
     MCVAPI void sendPlayerMove();

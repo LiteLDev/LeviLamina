@@ -27,11 +27,11 @@ public:
         // symbol: ??0BlockInfo@DiggerItemComponent@@QEAA@AEBU01@@Z
         MCAPI BlockInfo(struct DiggerItemComponent::BlockInfo const&);
 
-        // symbol: ??4BlockInfo@DiggerItemComponent@@QEAAAEAU01@AEBU01@@Z
-        MCAPI struct DiggerItemComponent::BlockInfo& operator=(struct DiggerItemComponent::BlockInfo const&);
-
         // symbol: ??4BlockInfo@DiggerItemComponent@@QEAAAEAU01@$$QEAU01@@Z
         MCAPI struct DiggerItemComponent::BlockInfo& operator=(struct DiggerItemComponent::BlockInfo&&);
+
+        // symbol: ??4BlockInfo@DiggerItemComponent@@QEAAAEAU01@AEBU01@@Z
+        MCAPI struct DiggerItemComponent::BlockInfo& operator=(struct DiggerItemComponent::BlockInfo const&);
 
         // symbol: ??8BlockInfo@DiggerItemComponent@@QEBA_NAEBU01@@Z
         MCAPI bool operator==(struct DiggerItemComponent::BlockInfo const&) const;
@@ -84,11 +84,11 @@ public:
     // symbol: ??0DiggerItemComponent@@QEAA@AEBV0@@Z
     MCAPI DiggerItemComponent(class DiggerItemComponent const&);
 
-    // symbol: ??4DiggerItemComponent@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class DiggerItemComponent& operator=(class DiggerItemComponent const&);
-
     // symbol: ??4DiggerItemComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class DiggerItemComponent& operator=(class DiggerItemComponent&&);
+
+    // symbol: ??4DiggerItemComponent@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class DiggerItemComponent& operator=(class DiggerItemComponent const&);
 
     // symbol:
     // ?bindType@DiggerItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

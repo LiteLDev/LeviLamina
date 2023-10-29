@@ -10,11 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0PerlinSimplexNoise@@QEAA@IH@Z
-    MCAPI PerlinSimplexNoise(uint, int);
-
     // symbol: ??0PerlinSimplexNoise@@QEAA@AEBV0@@Z
     MCAPI PerlinSimplexNoise(class PerlinSimplexNoise const&);
+
+    // symbol: ??0PerlinSimplexNoise@@QEAA@IH@Z
+    MCAPI PerlinSimplexNoise(uint, int);
 
     // symbol: ??0PerlinSimplexNoise@@QEAA@AEAVIRandom@@H_N@Z
     MCAPI PerlinSimplexNoise(class IRandom&, int, bool);
@@ -28,11 +28,11 @@ public:
     // symbol: ?getValue@PerlinSimplexNoise@@QEBAMMM@Z
     MCAPI float getValue(float, float) const;
 
-    // symbol: ?getValueNormalized@PerlinSimplexNoise@@QEBAMMM@Z
-    MCAPI float getValueNormalized(float, float) const;
-
     // symbol: ?getValueNormalized@PerlinSimplexNoise@@QEBAMAEBVVec3@@@Z
     MCAPI float getValueNormalized(class Vec3 const&) const;
+
+    // symbol: ?getValueNormalized@PerlinSimplexNoise@@QEBAMMM@Z
+    MCAPI float getValueNormalized(float, float) const;
 
     // symbol: ??1PerlinSimplexNoise@@QEAA@XZ
     MCAPI ~PerlinSimplexNoise();

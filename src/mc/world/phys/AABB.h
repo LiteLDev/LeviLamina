@@ -10,14 +10,14 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0AABB@@QEAA@AEBVVec3@@0@Z
+    MCAPI AABB(class Vec3 const&, class Vec3 const&);
+
     // symbol: ??0AABB@@QEAA@AEBVVec3@@M@Z
     MCAPI AABB(class Vec3 const&, float);
 
     // symbol: ??0AABB@@QEAA@MMMMMM@Z
     MCAPI AABB(float, float, float, float, float, float);
-
-    // symbol: ??0AABB@@QEAA@AEBVVec3@@0@Z
-    MCAPI AABB(class Vec3 const&, class Vec3 const&);
 
     // symbol: ?axisInside@AABB@@QEBA?AVVec3@@AEBV1@V2@@Z
     MCAPI class Vec3 axisInside(class AABB const&, class Vec3) const;
@@ -100,11 +100,11 @@ public:
     // symbol: ?set@AABB@@QEAAAEAV1@AEBV1@@Z
     MCAPI class AABB& set(class AABB const&);
 
-    // symbol: ?set@AABB@@QEAAAEAV1@MMMMMM@Z
-    MCAPI class AABB& set(float, float, float, float, float, float);
-
     // symbol: ?set@AABB@@QEAAAEAV1@AEBVVec3@@0@Z
     MCAPI class AABB& set(class Vec3 const&, class Vec3 const&);
+
+    // symbol: ?set@AABB@@QEAAAEAV1@MMMMMM@Z
+    MCAPI class AABB& set(float, float, float, float, float, float);
 
     // symbol: ?shrink@AABB@@QEAAAEAV1@AEBVVec3@@@Z
     MCAPI class AABB& shrink(class Vec3 const&);

@@ -24,13 +24,13 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ScriptServerSecrets@ScriptModuleMinecraftServerAdmin@@QEAA@$$QEAV01@@Z
+    MCAPI ScriptServerSecrets(class ScriptModuleMinecraftServerAdmin::ScriptServerSecrets&&);
+
     // symbol:
     // ??0ScriptServerSecrets@ScriptModuleMinecraftServerAdmin@@QEAA@V?$NonOwnerPointer@VScriptPackConfigurationManager@@@Bedrock@@AEBUContextConfig@Scripting@@@Z
     MCAPI
     ScriptServerSecrets(class Bedrock::NonOwnerPointer<class ScriptPackConfigurationManager>, struct Scripting::ContextConfig const&);
-
-    // symbol: ??0ScriptServerSecrets@ScriptModuleMinecraftServerAdmin@@QEAA@$$QEAV01@@Z
-    MCAPI ScriptServerSecrets(class ScriptModuleMinecraftServerAdmin::ScriptServerSecrets&&);
 
     // symbol:
     // ?get@ScriptServerSecrets@ScriptModuleMinecraftServerAdmin@@QEBA?AV?$optional@VScriptSecretString@ScriptModuleMinecraftServerAdmin@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z

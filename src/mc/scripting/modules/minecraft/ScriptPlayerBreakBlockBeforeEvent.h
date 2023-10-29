@@ -25,16 +25,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@AEAVDimension@@AEBVBlockPos@@AEBVItemStackBase@@AEBVWeakLifetimeScope@3@@Z
-    MCAPI
-    ScriptPlayerBreakBlockBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>, class Dimension&, class BlockPos const&, class ItemStackBase const&, class Scripting::WeakLifetimeScope const&);
+    // symbol: ??0ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
+    MCAPI ScriptPlayerBreakBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
 
     // symbol: ??0ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptPlayerBreakBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
 
-    // symbol: ??0ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
-    MCAPI ScriptPlayerBreakBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
+    // symbol:
+    // ??0ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@AEAVDimension@@AEBVBlockPos@@AEBVItemStackBase@@AEBVWeakLifetimeScope@3@@Z
+    MCAPI
+    ScriptPlayerBreakBlockBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>, class Dimension&, class BlockPos const&, class ItemStackBase const&, class Scripting::WeakLifetimeScope const&);
 
     // symbol: ??4ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&

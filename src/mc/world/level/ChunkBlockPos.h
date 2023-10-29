@@ -11,11 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ChunkBlockPos@@QEAA@EVChunkLocalHeight@@E@Z
-    MCAPI ChunkBlockPos(uchar, class ChunkLocalHeight, uchar);
-
     // symbol: ??0ChunkBlockPos@@QEAA@AEBVBlockPos@@F@Z
     MCAPI ChunkBlockPos(class BlockPos const&, short);
+
+    // symbol: ??0ChunkBlockPos@@QEAA@EVChunkLocalHeight@@E@Z
+    MCAPI ChunkBlockPos(uchar, class ChunkLocalHeight, uchar);
 
     // symbol: ?toPos@ChunkBlockPos@@QEBA?AVPos@@XZ
     MCAPI class Pos toPos() const;

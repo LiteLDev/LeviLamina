@@ -51,13 +51,13 @@ public:
     MCAPI std::vector<class MobEffectInstance> const& getMobEffects() const;
 
     // symbol:
+    // ?getPotentencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@M@Z
+    MCAPI std::string getPotentencyDescription(::Potion::PotionType, float) const;
+
+    // symbol:
     // ?getPotentencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@MV?$basic_string_view@DU?$char_traits@D@std@@@3@AEBVMobEffectInstance@@@Z
     MCAPI std::string
           getPotentencyDescription(::Potion::PotionType, float, std::string_view, class MobEffectInstance const&) const;
-
-    // symbol:
-    // ?getPotentencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@M@Z
-    MCAPI std::string getPotentencyDescription(::Potion::PotionType, float) const;
 
     // symbol: ?getPotionId@Potion@@QEBAHXZ
     MCAPI int getPotionId() const;

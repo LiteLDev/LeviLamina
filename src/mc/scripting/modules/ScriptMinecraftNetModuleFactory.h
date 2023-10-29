@@ -11,7 +11,6 @@ namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDescriptor; }
-namespace Scripting { struct UUID; }
 namespace Scripting { struct Version; }
 namespace mce { class UUID; }
 // clang-format on
@@ -28,12 +27,11 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol:
-    // ?getName@GenericModuleBindingFactory@Scripting@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    virtual std::string getName() const;
+    // vIndex: 1, symbol: __unk_vfn_1
+    virtual void __unk_vfn_1();
 
-    // vIndex: 2, symbol: ?getUUID@GenericModuleBindingFactory@Scripting@@UEBA?AUUUID@2@XZ
-    virtual struct Scripting::UUID getUUID() const;
+    // vIndex: 2, symbol: __unk_vfn_2
+    virtual void __unk_vfn_2();
 
     // vIndex: 3, symbol:
     // ?hasAlias@GenericModuleBindingFactory@Scripting@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

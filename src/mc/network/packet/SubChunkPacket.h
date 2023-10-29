@@ -57,12 +57,12 @@ public:
 
     public:
         // NOLINTBEGIN
+        // symbol: ??0SubChunkPacketData@SubChunkPacket@@QEAA@$$QEAU01@@Z
+        MCAPI SubChunkPacketData(struct SubChunkPacket::SubChunkPacketData&&);
+
         // symbol: ??0SubChunkPacketData@SubChunkPacket@@QEAA@AEBUSubChunkPosOffset@1@W4SubChunkRequestResult@1@@Z
         MCAPI
         SubChunkPacketData(struct SubChunkPacket::SubChunkPosOffset const&, ::SubChunkPacket::SubChunkRequestResult);
-
-        // symbol: ??0SubChunkPacketData@SubChunkPacket@@QEAA@$$QEAU01@@Z
-        MCAPI SubChunkPacketData(struct SubChunkPacket::SubChunkPacketData&&);
 
         // symbol: ??1SubChunkPacketData@SubChunkPacket@@QEAA@XZ
         MCAPI ~SubChunkPacketData();

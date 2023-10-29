@@ -14,11 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ResourceDropsContext@@QEAA@MAEBVItemStack@@AEAVILevel@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI ResourceDropsContext(float, class ItemStack const&, class ILevel&, DimensionType);
-
     // symbol: ??0ResourceDropsContext@@QEAA@MAEBVItemStack@@AEBVBlockSource@@@Z
     MCAPI ResourceDropsContext(float, class ItemStack const&, class BlockSource const&);
+
+    // symbol: ??0ResourceDropsContext@@QEAA@MAEBVItemStack@@AEAVILevel@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI ResourceDropsContext(float, class ItemStack const&, class ILevel&, DimensionType);
 
     // symbol: ?getRandom@ResourceDropsContext@@QEBAAEAVRandom@@XZ
     MCAPI class Random& getRandom() const;

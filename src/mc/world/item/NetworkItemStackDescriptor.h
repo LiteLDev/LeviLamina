@@ -29,14 +29,14 @@ public:
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStack@@@Z
     MCAPI explicit NetworkItemStackDescriptor(class ItemStack const&);
 
-    // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBV0@@Z
-    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const&);
-
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStackDescriptor@@@Z
     MCAPI explicit NetworkItemStackDescriptor(class ItemStackDescriptor const&);
 
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@$$QEAV0@@Z
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor&&);
+
+    // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBV0@@Z
+    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const&);
 
     // symbol:
     // ?read@NetworkItemStackDescriptor@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z

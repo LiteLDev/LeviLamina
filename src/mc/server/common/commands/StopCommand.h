@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/Command.h"
-
-class StopCommand : public ::Command {
+class StopCommand {
 public:
     // prevent constructor by default
     StopCommand& operator=(StopCommand const&);
@@ -16,6 +13,9 @@ public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol: __unk_vfn_1
+    virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?execute@StopCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

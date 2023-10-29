@@ -65,11 +65,11 @@ public:
     // ?addComponents@ItemStackBase@@QEAA_NAEBVValue@Json@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool addComponents(class Json::Value const&, std::string&);
 
-    // symbol: ?addCustomUserData@ItemStackBase@@QEAAXAEAVBlockActor@@AEAVBlockSource@@@Z
-    MCAPI void addCustomUserData(class BlockActor&, class BlockSource&);
-
     // symbol: ?addCustomUserData@ItemStackBase@@QEAAXAEAVContainerComponent@@@Z
     MCAPI void addCustomUserData(class ContainerComponent&);
+
+    // symbol: ?addCustomUserData@ItemStackBase@@QEAAXAEAVBlockActor@@AEAVBlockSource@@@Z
+    MCAPI void addCustomUserData(class BlockActor&, class BlockSource&);
 
     // symbol: ?canBeCharged@ItemStackBase@@QEBA_NXZ
     MCAPI bool canBeCharged() const;
@@ -304,12 +304,12 @@ public:
     // symbol: ?isOffhandItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool isOffhandItem() const;
 
+    // symbol: ?isOneOfBlockInstances@ItemStackBase@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@@Z
+    MCAPI bool isOneOfBlockInstances(std::initializer_list<class HashedString const>) const;
+
     // symbol:
     // ?isOneOfBlockInstances@ItemStackBase@@QEBA_NAEBV?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@@Z
     MCAPI bool isOneOfBlockInstances(std::vector<std::reference_wrapper<class HashedString const>> const&) const;
-
-    // symbol: ?isOneOfBlockInstances@ItemStackBase@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@@Z
-    MCAPI bool isOneOfBlockInstances(std::initializer_list<class HashedString const>) const;
 
     // symbol: ?isOneOfInstances@ItemStackBase@@QEBA_NV?$initializer_list@$$CBVHashedString@@@std@@_N@Z
     MCAPI bool isOneOfInstances(std::initializer_list<class HashedString const>, bool) const;
@@ -489,26 +489,26 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0ItemStackBase@@IEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
-    MCAPI ItemStackBase(class Item const&, int, int, class CompoundTag const*);
+    // symbol: ??0ItemStackBase@@IEAA@XZ
+    MCAPI ItemStackBase();
 
     // symbol: ??0ItemStackBase@@IEAA@AEBV0@@Z
     MCAPI ItemStackBase(class ItemStackBase const&);
 
-    // symbol: ??0ItemStackBase@@IEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHPEBVCompoundTag@@@Z
-    MCAPI ItemStackBase(std::string_view, int, int, class CompoundTag const*);
+    // symbol: ??0ItemStackBase@@IEAA@AEBVRecipeIngredient@@@Z
+    MCAPI explicit ItemStackBase(class RecipeIngredient const&);
 
     // symbol: ??0ItemStackBase@@IEAA@AEBVBlockLegacy@@H@Z
     MCAPI ItemStackBase(class BlockLegacy const&, int);
 
-    // symbol: ??0ItemStackBase@@IEAA@XZ
-    MCAPI ItemStackBase();
-
     // symbol: ??0ItemStackBase@@IEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
     MCAPI ItemStackBase(class Block const&, int, class CompoundTag const*);
 
-    // symbol: ??0ItemStackBase@@IEAA@AEBVRecipeIngredient@@@Z
-    MCAPI explicit ItemStackBase(class RecipeIngredient const&);
+    // symbol: ??0ItemStackBase@@IEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
+    MCAPI ItemStackBase(class Item const&, int, int, class CompoundTag const*);
+
+    // symbol: ??0ItemStackBase@@IEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHPEBVCompoundTag@@@Z
+    MCAPI ItemStackBase(std::string_view, int, int, class CompoundTag const*);
 
     // symbol:
     // ?_getHoverFormattingPrefix@ItemStackBase@@IEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -517,14 +517,14 @@ public:
     // symbol: ?_setItem@ItemStackBase@@IEAA_NH_N@Z
     MCAPI bool _setItem(int, bool);
 
-    // symbol: ?init@ItemStackBase@@IEAAXAEBVItem@@HHPEBVCompoundTag@@_N@Z
-    MCAPI void init(class Item const&, int, int, class CompoundTag const*, bool);
-
     // symbol: ?init@ItemStackBase@@IEAAXAEBVBlockLegacy@@H@Z
     MCAPI void init(class BlockLegacy const&, int);
 
     // symbol: ?init@ItemStackBase@@IEAAXHHH_N@Z
     MCAPI void init(int, int, int, bool);
+
+    // symbol: ?init@ItemStackBase@@IEAAXAEBVItem@@HHPEBVCompoundTag@@_N@Z
+    MCAPI void init(class Item const&, int, int, class CompoundTag const*, bool);
 
     // symbol: ??4ItemStackBase@@IEAAAEAV0@AEBV0@@Z
     MCAPI class ItemStackBase& operator=(class ItemStackBase const&);

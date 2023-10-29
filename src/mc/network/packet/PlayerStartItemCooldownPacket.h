@@ -35,12 +35,12 @@ public:
     // symbol: ??1PlayerStartItemCooldownPacket@@UEAA@XZ
     MCVAPI ~PlayerStartItemCooldownPacket();
 
+    // symbol: ??0PlayerStartItemCooldownPacket@@QEAA@XZ
+    MCAPI PlayerStartItemCooldownPacket();
+
     // symbol:
     // ??0PlayerStartItemCooldownPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI PlayerStartItemCooldownPacket(std::string const&, int);
-
-    // symbol: ??0PlayerStartItemCooldownPacket@@QEAA@XZ
-    MCAPI PlayerStartItemCooldownPacket();
 
     // NOLINTEND
 };

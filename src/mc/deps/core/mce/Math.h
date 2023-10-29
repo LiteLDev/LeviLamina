@@ -37,11 +37,11 @@ public:
     // symbol: ?ceil@Math@mce@@SAHM@Z
     MCAPI static int ceil(float);
 
-    // symbol: ?clamp@Math@mce@@SAHHHH@Z
-    MCAPI static int clamp(int, int, int);
-
     // symbol: ?clamp@Math@mce@@SAMMMM@Z
     MCAPI static float clamp(float, float, float);
+
+    // symbol: ?clamp@Math@mce@@SAHHHH@Z
+    MCAPI static int clamp(int, int, int);
 
     // symbol: ?clampRotate@Math@mce@@SAMMMM@Z
     MCAPI static float clampRotate(float, float, float);
@@ -103,11 +103,11 @@ public:
     // symbol: ?signum@Math@mce@@SAMM@Z
     MCAPI static float signum(float);
 
-    // symbol: ?sin@Math@mce@@SAMURadian@2@@Z
-    MCAPI static float sin(struct mce::Radian);
-
     // symbol: ?sin@Math@mce@@SAMM@Z
     MCAPI static float sin(float);
+
+    // symbol: ?sin@Math@mce@@SAMURadian@2@@Z
+    MCAPI static float sin(struct mce::Radian);
 
     // symbol: ?snapRotationToCardinal@Math@mce@@SAMM@Z
     MCAPI static float snapRotationToCardinal(float);

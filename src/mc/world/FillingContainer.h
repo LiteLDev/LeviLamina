@@ -83,11 +83,11 @@ public:
     // symbol: ??4FillingContainer@@QEAAAEAV0@AEBV0@@Z
     MCAPI class FillingContainer& operator=(class FillingContainer const&);
 
-    // symbol: ?removeResource@FillingContainer@@QEAAHAEBVItemStack@@_N1H@Z
-    MCAPI int removeResource(class ItemStack const&, bool, bool, int);
-
     // symbol: ?removeResource@FillingContainer@@QEAA_NH@Z
     MCAPI bool removeResource(int);
+
+    // symbol: ?removeResource@FillingContainer@@QEAAHAEBVItemStack@@_N1H@Z
+    MCAPI int removeResource(class ItemStack const&, bool, bool, int);
 
     // symbol: ?save@FillingContainer@@QEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class ListTag> save() const;

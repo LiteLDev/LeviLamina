@@ -35,11 +35,11 @@ public:
     // symbol: ??1NetworkChunkPublisherUpdatePacket@@UEAA@XZ
     MCVAPI ~NetworkChunkPublisherUpdatePacket();
 
-    // symbol: ??0NetworkChunkPublisherUpdatePacket@@QEAA@AEBVBlockPos@@I@Z
-    MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const&, uint);
-
     // symbol: ??0NetworkChunkPublisherUpdatePacket@@QEAA@XZ
     MCAPI NetworkChunkPublisherUpdatePacket();
+
+    // symbol: ??0NetworkChunkPublisherUpdatePacket@@QEAA@AEBVBlockPos@@I@Z
+    MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const&, uint);
 
     // NOLINTEND
 };

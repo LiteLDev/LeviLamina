@@ -85,12 +85,12 @@ public:
     // symbol: ??1BlockCommandOrigin@@UEAA@XZ
     MCVAPI ~BlockCommandOrigin();
 
+    // symbol: ??0BlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBVBlockPos@@@Z
+    MCAPI BlockCommandOrigin(class BlockSource&, class BlockPos const&);
+
     // symbol:
     // ??0BlockCommandOrigin@@QEAA@AEAVLevel@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@@Z
     MCAPI BlockCommandOrigin(class Level&, DimensionType, std::string const&, class BlockPos const&);
-
-    // symbol: ??0BlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI BlockCommandOrigin(class BlockSource&, class BlockPos const&);
 
     // NOLINTEND
 

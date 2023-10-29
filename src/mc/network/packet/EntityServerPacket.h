@@ -28,11 +28,11 @@ public:
     // symbol: ??1EntityServerPacket@@UEAA@XZ
     MCVAPI ~EntityServerPacket();
 
-    // symbol: ??0EntityServerPacket@@QEAA@AEBVEntityContext@@@Z
-    MCAPI explicit EntityServerPacket(class EntityContext const&);
-
     // symbol: ??0EntityServerPacket@@QEAA@XZ
     MCAPI EntityServerPacket();
+
+    // symbol: ??0EntityServerPacket@@QEAA@AEBVEntityContext@@@Z
+    MCAPI explicit EntityServerPacket(class EntityContext const&);
 
     // NOLINTEND
 };

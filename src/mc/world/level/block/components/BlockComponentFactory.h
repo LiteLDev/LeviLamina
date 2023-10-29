@@ -26,11 +26,11 @@ public:
         // symbol: ??0Constructor@BlockComponentFactory@@QEAA@AEBU01@@Z
         MCAPI Constructor(struct BlockComponentFactory::Constructor const&);
 
-        // symbol: ??4Constructor@BlockComponentFactory@@QEAAAEAU01@AEBU01@@Z
-        MCAPI struct BlockComponentFactory::Constructor& operator=(struct BlockComponentFactory::Constructor const&);
-
         // symbol: ??4Constructor@BlockComponentFactory@@QEAAAEAU01@$$QEAU01@@Z
         MCAPI struct BlockComponentFactory::Constructor& operator=(struct BlockComponentFactory::Constructor&&);
+
+        // symbol: ??4Constructor@BlockComponentFactory@@QEAAAEAU01@AEBU01@@Z
+        MCAPI struct BlockComponentFactory::Constructor& operator=(struct BlockComponentFactory::Constructor const&);
 
         // symbol: ??1Constructor@BlockComponentFactory@@QEAA@XZ
         MCAPI ~Constructor();

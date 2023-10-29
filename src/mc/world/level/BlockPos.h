@@ -20,20 +20,20 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0BlockPos@@QEAA@AEBVSubChunkPos@@@Z
+    MCAPI explicit BlockPos(class SubChunkPos const&);
+
     // symbol: ??0BlockPos@@QEAA@AEBVVec3@@@Z
     MCAPI explicit BlockPos(class Vec3 const&);
 
-    // symbol: ??0BlockPos@@QEAA@MMM@Z
-    MCAPI BlockPos(float, float, float);
-
-    // symbol: ??0BlockPos@@QEAA@AEBVSubChunkPos@@@Z
-    MCAPI explicit BlockPos(class SubChunkPos const&);
+    // symbol: ??0BlockPos@@QEAA@AEBVChunkPos@@H@Z
+    MCAPI BlockPos(class ChunkPos const&, int);
 
     // symbol: ??0BlockPos@@QEAA@AEBVChunkPos@@AEBVChunkBlockPos@@F@Z
     MCAPI BlockPos(class ChunkPos const&, class ChunkBlockPos const&, short);
 
-    // symbol: ??0BlockPos@@QEAA@AEBVChunkPos@@H@Z
-    MCAPI BlockPos(class ChunkPos const&, int);
+    // symbol: ??0BlockPos@@QEAA@MMM@Z
+    MCAPI BlockPos(float, float, float);
 
     // symbol: ?above@BlockPos@@QEBA?AV1@XZ
     MCAPI class BlockPos above() const;

@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?containerContentChanged@LegacyActorArmorChangedListener@@UEAAXH@Z
+    // vIndex: 0, symbol: ?containerContentChanged@HudContainerModel@@UEAAXH@Z
     virtual void containerContentChanged(int) = 0;
 
     // symbol: ??1ContainerContentChangeListener@@UEAA@XZ

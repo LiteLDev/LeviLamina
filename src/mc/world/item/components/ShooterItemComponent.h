@@ -42,13 +42,13 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??4ShooterAmmunitionEntry@ShooterItemComponent@@QEAAAEAU01@AEBU01@@Z
-        MCAPI struct ShooterItemComponent::ShooterAmmunitionEntry&
-        operator=(struct ShooterItemComponent::ShooterAmmunitionEntry const&);
-
         // symbol: ??4ShooterAmmunitionEntry@ShooterItemComponent@@QEAAAEAU01@$$QEAU01@@Z
         MCAPI struct ShooterItemComponent::ShooterAmmunitionEntry&
         operator=(struct ShooterItemComponent::ShooterAmmunitionEntry&&);
+
+        // symbol: ??4ShooterAmmunitionEntry@ShooterItemComponent@@QEAAAEAU01@AEBU01@@Z
+        MCAPI struct ShooterItemComponent::ShooterAmmunitionEntry&
+        operator=(struct ShooterItemComponent::ShooterAmmunitionEntry const&);
 
         // symbol: ??8ShooterAmmunitionEntry@ShooterItemComponent@@QEBA_NAEBU01@@Z
         MCAPI bool operator==(struct ShooterItemComponent::ShooterAmmunitionEntry const&) const;
@@ -99,11 +99,11 @@ public:
     // symbol: ??0ShooterItemComponent@@QEAA@AEBV0@@Z
     MCAPI ShooterItemComponent(class ShooterItemComponent const&);
 
-    // symbol: ??4ShooterItemComponent@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class ShooterItemComponent& operator=(class ShooterItemComponent const&);
-
     // symbol: ??4ShooterItemComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ShooterItemComponent& operator=(class ShooterItemComponent&&);
+
+    // symbol: ??4ShooterItemComponent@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class ShooterItemComponent& operator=(class ShooterItemComponent const&);
 
     // symbol: ?releaseUsing@ShooterItemComponent@@QEBA_NAEAVItemStack@@PEAVPlayer@@H@Z
     MCAPI bool releaseUsing(class ItemStack&, class Player*, int) const;

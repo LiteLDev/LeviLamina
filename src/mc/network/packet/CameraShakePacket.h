@@ -37,14 +37,14 @@ public:
     // symbol: ??1CameraShakePacket@@UEAA@XZ
     MCVAPI ~CameraShakePacket();
 
-    // symbol: ??0CameraShakePacket@@QEAA@MMW4CameraShakeType@@@Z
-    MCAPI CameraShakePacket(float, float, ::CameraShakeType);
-
     // symbol: ??0CameraShakePacket@@QEAA@XZ
     MCAPI CameraShakePacket();
 
     // symbol: ??0CameraShakePacket@@QEAA@W4CameraShakeAction@@@Z
     MCAPI explicit CameraShakePacket(::CameraShakeAction);
+
+    // symbol: ??0CameraShakePacket@@QEAA@MMW4CameraShakeType@@@Z
+    MCAPI CameraShakePacket(float, float, ::CameraShakeType);
 
     // NOLINTEND
 };

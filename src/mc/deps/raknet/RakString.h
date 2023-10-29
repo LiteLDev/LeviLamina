@@ -42,23 +42,23 @@ public:
     // symbol: ?IsEmpty@RakString@RakNet@@QEBA_NXZ
     MCAPI bool IsEmpty() const;
 
+    // symbol: ??0RakString@RakNet@@QEAA@XZ
+    MCAPI RakString();
+
     // symbol: ??0RakString@RakNet@@QEAA@AEBV01@@Z
     MCAPI RakString(class RakNet::RakString const&);
 
     // symbol: ??0RakString@RakNet@@QEAA@PEBDZZ
     MCAPI RakString(char const*, ...);
 
-    // symbol: ??0RakString@RakNet@@QEAA@XZ
-    MCAPI RakString();
-
-    // symbol: ??4RakString@RakNet@@QEAAAEAV01@AEBV01@@Z
-    MCAPI class RakNet::RakString& operator=(class RakNet::RakString const&);
+    // symbol: ??4RakString@RakNet@@QEAAAEAV01@PEAD@Z
+    MCAPI class RakNet::RakString& operator=(char*);
 
     // symbol: ??4RakString@RakNet@@QEAAAEAV01@PEBD@Z
     MCAPI class RakNet::RakString& operator=(char const*);
 
-    // symbol: ??4RakString@RakNet@@QEAAAEAV01@PEAD@Z
-    MCAPI class RakNet::RakString& operator=(char*);
+    // symbol: ??4RakString@RakNet@@QEAAAEAV01@AEBV01@@Z
+    MCAPI class RakNet::RakString& operator=(class RakNet::RakString const&);
 
     // symbol: ??8RakString@RakNet@@QEBA_NAEBV01@@Z
     MCAPI bool operator==(class RakNet::RakString const&) const;
@@ -82,11 +82,11 @@ public:
     // symbol: ?Allocate@RakString@RakNet@@IEAAX_K@Z
     MCAPI void Allocate(uint64);
 
-    // symbol: ?Assign@RakString@RakNet@@IEAAXPEBDPEAD@Z
-    MCAPI void Assign(char const*, char*);
-
     // symbol: ?Assign@RakString@RakNet@@IEAAXPEBD@Z
     MCAPI void Assign(char const*);
+
+    // symbol: ?Assign@RakString@RakNet@@IEAAXPEBDPEAD@Z
+    MCAPI void Assign(char const*, char*);
 
     // symbol: ?Free@RakString@RakNet@@IEAAXXZ
     MCAPI void Free();

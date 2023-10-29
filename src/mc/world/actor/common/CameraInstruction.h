@@ -181,11 +181,11 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??4SetInstruction@CameraInstruction@@QEAAAEAU01@AEBU01@@Z
-        MCAPI struct CameraInstruction::SetInstruction& operator=(struct CameraInstruction::SetInstruction const&);
-
         // symbol: ??4SetInstruction@CameraInstruction@@QEAAAEAU01@$$QEAU01@@Z
         MCAPI struct CameraInstruction::SetInstruction& operator=(struct CameraInstruction::SetInstruction&&);
+
+        // symbol: ??4SetInstruction@CameraInstruction@@QEAAAEAU01@AEBU01@@Z
+        MCAPI struct CameraInstruction::SetInstruction& operator=(struct CameraInstruction::SetInstruction const&);
 
         // symbol: ??8SetInstruction@CameraInstruction@@QEBA_NAEBU01@@Z
         MCAPI bool operator==(struct CameraInstruction::SetInstruction const&) const;

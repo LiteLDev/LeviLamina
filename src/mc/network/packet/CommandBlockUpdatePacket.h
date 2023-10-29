@@ -34,11 +34,11 @@ public:
     // symbol: ??1CommandBlockUpdatePacket@@UEAA@XZ
     MCVAPI ~CommandBlockUpdatePacket();
 
-    // symbol: ??0CommandBlockUpdatePacket@@QEAA@AEBV0@@Z
-    MCAPI CommandBlockUpdatePacket(class CommandBlockUpdatePacket const&);
-
     // symbol: ??0CommandBlockUpdatePacket@@QEAA@XZ
     MCAPI CommandBlockUpdatePacket();
+
+    // symbol: ??0CommandBlockUpdatePacket@@QEAA@AEBV0@@Z
+    MCAPI CommandBlockUpdatePacket(class CommandBlockUpdatePacket const&);
 
     // NOLINTEND
 };

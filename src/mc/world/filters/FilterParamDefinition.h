@@ -17,22 +17,22 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
+    // ??0FilterParamDefinition@@QEAA@W4FilterParamType@@W4FilterParamRequirement@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VFilterInput@@UFilterStringMap@@@Z
+    MCAPI FilterParamDefinition(
+        ::FilterParamType,
+        ::FilterParamRequirement,
+        std::string,
+        class FilterInput,
+        struct FilterStringMap
+    );
+
+    // symbol:
     // ??0FilterParamDefinition@@QEAA@W4FilterParamType@@W4FilterParamRequirement@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4FilterParamOption@@VFilterInput@@UFilterStringMap@@@Z
     MCAPI FilterParamDefinition(
         ::FilterParamType,
         ::FilterParamRequirement,
         std::string,
         ::FilterParamOption,
-        class FilterInput,
-        struct FilterStringMap
-    );
-
-    // symbol:
-    // ??0FilterParamDefinition@@QEAA@W4FilterParamType@@W4FilterParamRequirement@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VFilterInput@@UFilterStringMap@@@Z
-    MCAPI FilterParamDefinition(
-        ::FilterParamType,
-        ::FilterParamRequirement,
-        std::string,
         class FilterInput,
         struct FilterStringMap
     );

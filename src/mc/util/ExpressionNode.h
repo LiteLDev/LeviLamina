@@ -18,34 +18,34 @@ namespace cereal { struct ReflectionCtx; }
 class ExpressionNode {
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
-    MCAPI ExpressionNode(std::string const&, ::MolangVersion, gsl::span<class HashedString const>);
+    // symbol: ??0ExpressionNode@@QEAA@XZ
+    MCAPI ExpressionNode();
+
+    // symbol: ??0ExpressionNode@@QEAA@$$QEAV0@@Z
+    MCAPI ExpressionNode(class ExpressionNode&&);
+
+    // symbol: ??0ExpressionNode@@QEAA@AEBV0@@Z
+    MCAPI ExpressionNode(class ExpressionNode const&);
+
+    // symbol: ??0ExpressionNode@@QEAA@M@Z
+    MCAPI explicit ExpressionNode(float);
+
+    // symbol: ??0ExpressionNode@@QEAA@AEAUMolangScriptArg@@W4ExpressionOp@@@Z
+    MCAPI ExpressionNode(struct MolangScriptArg&, ::ExpressionOp);
+
+    // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@AEBVSemVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
+    MCAPI ExpressionNode(class Json::Value const&, class SemVersion const&, gsl::span<class HashedString const>);
+
+    // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
+    MCAPI ExpressionNode(class Json::Value const&, ::MolangVersion, gsl::span<class HashedString const>);
 
     // symbol:
     // ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
     MCAPI ExpressionNode(std::string const&, class SemVersion const&, gsl::span<class HashedString const>);
 
-    // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
-    MCAPI ExpressionNode(class Json::Value const&, ::MolangVersion, gsl::span<class HashedString const>);
-
-    // symbol: ??0ExpressionNode@@QEAA@AEBV0@@Z
-    MCAPI ExpressionNode(class ExpressionNode const&);
-
-    // symbol: ??0ExpressionNode@@QEAA@XZ
-    MCAPI ExpressionNode();
-
-    // symbol: ??0ExpressionNode@@QEAA@AEAUMolangScriptArg@@W4ExpressionOp@@@Z
-    MCAPI ExpressionNode(struct MolangScriptArg&, ::ExpressionOp);
-
-    // symbol: ??0ExpressionNode@@QEAA@M@Z
-    MCAPI explicit ExpressionNode(float);
-
-    // symbol: ??0ExpressionNode@@QEAA@$$QEAV0@@Z
-    MCAPI ExpressionNode(class ExpressionNode&&);
-
-    // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@AEBVSemVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
-    MCAPI ExpressionNode(class Json::Value const&, class SemVersion const&, gsl::span<class HashedString const>);
+    // symbol:
+    // ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
+    MCAPI ExpressionNode(std::string const&, ::MolangVersion, gsl::span<class HashedString const>);
 
     // symbol: ?clear@ExpressionNode@@QEAAXXZ
     MCAPI void clear();
@@ -90,11 +90,11 @@ public:
     // symbol: ?isValid@ExpressionNode@@QEBA_NXZ
     MCAPI bool isValid() const;
 
-    // symbol: ?link@ExpressionNode@@QEBA?AW4MolangCompileResult@@W4MolangVersion@@@Z
-    MCAPI ::MolangCompileResult link(::MolangVersion) const;
-
     // symbol: ?link@ExpressionNode@@QEBA?AW4MolangCompileResult@@XZ
     MCAPI ::MolangCompileResult link() const;
+
+    // symbol: ?link@ExpressionNode@@QEBA?AW4MolangCompileResult@@W4MolangVersion@@@Z
+    MCAPI ::MolangCompileResult link(::MolangVersion) const;
 
     // symbol: ?moveConstantChildToValueIfFloatOrHashType@ExpressionNode@@QEAAXH@Z
     MCAPI void moveConstantChildToValueIfFloatOrHashType(int);

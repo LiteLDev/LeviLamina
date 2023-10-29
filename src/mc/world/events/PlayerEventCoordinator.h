@@ -21,12 +21,12 @@ public:
     // ?registerPlayerGameplayHandler@PlayerEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VPlayerGameplayHandler@@U?$default_delete@VPlayerGameplayHandler@@@std@@@std@@@Z
     MCAPI void registerPlayerGameplayHandler(std::unique_ptr<class PlayerGameplayHandler>&&);
 
-    // symbol: ?sendEvent@PlayerEventCoordinator@@QEAAXAEBV?$EventRef@U?$PlayerGameplayEvent@X@@@@@Z
-    MCAPI void sendEvent(class EventRef<struct PlayerGameplayEvent<void>> const&);
-
     // symbol:
     // ?sendEvent@PlayerEventCoordinator@@QEAA?AW4CoordinatorResult@@AEBV?$EventRef@U?$PlayerGameplayEvent@W4CoordinatorResult@@@@@@@Z
     MCAPI ::CoordinatorResult sendEvent(class EventRef<struct PlayerGameplayEvent<::CoordinatorResult>> const&);
+
+    // symbol: ?sendEvent@PlayerEventCoordinator@@QEAAXAEBV?$EventRef@U?$PlayerGameplayEvent@X@@@@@Z
+    MCAPI void sendEvent(class EventRef<struct PlayerGameplayEvent<void>> const&);
 
     // symbol:
     // ?sendPlayerAwardAchievement@PlayerEventCoordinator@@QEAAXAEAVPlayer@@W4AchievementIds@MinecraftEventing@@@Z

@@ -36,11 +36,11 @@ public:
     // symbol: ??1SetLastHurtByPacket@@UEAA@XZ
     MCVAPI ~SetLastHurtByPacket();
 
-    // symbol: ??0SetLastHurtByPacket@@QEAA@W4ActorType@@@Z
-    MCAPI explicit SetLastHurtByPacket(::ActorType);
-
     // symbol: ??0SetLastHurtByPacket@@QEAA@XZ
     MCAPI SetLastHurtByPacket();
+
+    // symbol: ??0SetLastHurtByPacket@@QEAA@W4ActorType@@@Z
+    MCAPI explicit SetLastHurtByPacket(::ActorType);
 
     // NOLINTEND
 };

@@ -17,11 +17,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0FileStream@Core@@QEAA@AEBVPath@1@H@Z
-    MCAPI FileStream(class Core::Path const&, int);
-
     // symbol: ??0FileStream@Core@@QEAA@XZ
     MCAPI FileStream();
+
+    // symbol: ??0FileStream@Core@@QEAA@AEBVPath@1@H@Z
+    MCAPI FileStream(class Core::Path const&, int);
 
     // symbol: ?close@FileStream@Core@@QEAAXXZ
     MCAPI void close();

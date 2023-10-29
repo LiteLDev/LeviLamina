@@ -36,11 +36,11 @@ public:
     // symbol: ??1AgentAnimationPacket@@UEAA@XZ
     MCVAPI ~AgentAnimationPacket();
 
-    // symbol: ??0AgentAnimationPacket@@QEAA@W4AgentAnimation@@VActorRuntimeID@@@Z
-    MCAPI AgentAnimationPacket(::AgentAnimation, class ActorRuntimeID);
-
     // symbol: ??0AgentAnimationPacket@@QEAA@XZ
     MCAPI AgentAnimationPacket();
+
+    // symbol: ??0AgentAnimationPacket@@QEAA@W4AgentAnimation@@VActorRuntimeID@@@Z
+    MCAPI AgentAnimationPacket(::AgentAnimation, class ActorRuntimeID);
 
     // NOLINTEND
 };

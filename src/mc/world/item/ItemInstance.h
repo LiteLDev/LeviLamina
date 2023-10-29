@@ -32,17 +32,17 @@ public:
     // symbol: ??0ItemInstance@@QEAA@AEBVItemStackBase@@@Z
     MCAPI explicit ItemInstance(class ItemStackBase const&);
 
-    // symbol: ??0ItemInstance@@QEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
-    MCAPI ItemInstance(class Block const&, int, class CompoundTag const*);
-
     // symbol: ??0ItemInstance@@QEAA@AEBVBlockLegacy@@H@Z
     MCAPI ItemInstance(class BlockLegacy const&, int);
 
-    // symbol: ??0ItemInstance@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHPEBVCompoundTag@@@Z
-    MCAPI ItemInstance(std::string_view, int, int, class CompoundTag const*);
+    // symbol: ??0ItemInstance@@QEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
+    MCAPI ItemInstance(class Block const&, int, class CompoundTag const*);
 
     // symbol: ??0ItemInstance@@QEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
     MCAPI ItemInstance(class Item const&, int, int, class CompoundTag const*);
+
+    // symbol: ??0ItemInstance@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHPEBVCompoundTag@@@Z
+    MCAPI ItemInstance(std::string_view, int, int, class CompoundTag const*);
 
     // symbol: ?clone@ItemInstance@@QEBA?AV1@XZ
     MCAPI class ItemInstance clone() const;

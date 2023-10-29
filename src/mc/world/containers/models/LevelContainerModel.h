@@ -60,6 +60,9 @@ public:
     // vIndex: 22, symbol: ?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z
     virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
 
+    // symbol: ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@UActorUniqueID@@W4ContainerCategory@@@Z
+    MCAPI LevelContainerModel(::ContainerEnumName, int, class Player&, struct ActorUniqueID, ::ContainerCategory);
+
     // symbol:
     // ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@W4BlockActorType@@AEBVBlockPos@@W4ContainerCategory@@@Z
     MCAPI LevelContainerModel(
@@ -70,9 +73,6 @@ public:
         class BlockPos const&,
         ::ContainerCategory
     );
-
-    // symbol: ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@UActorUniqueID@@W4ContainerCategory@@@Z
-    MCAPI LevelContainerModel(::ContainerEnumName, int, class Player&, struct ActorUniqueID, ::ContainerCategory);
 
     // symbol: ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@AEBUActorUniqueID@@@Z
     MCAPI static class Container* getContainerHelper(class Player&, struct ActorUniqueID const&);

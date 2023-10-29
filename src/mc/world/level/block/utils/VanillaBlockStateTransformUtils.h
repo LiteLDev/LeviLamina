@@ -20,11 +20,11 @@ public:
     // symbol: ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4CommonDirection@@@Z
     MCAPI static class Block const* transformBlock(class Block const&, ::CommonDirection);
 
-    // symbol: ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Rotation@@W4Mirror@@@Z
-    MCAPI static class Block const* transformBlock(class Block const&, ::Rotation, ::Mirror);
-
     // symbol: ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Name@Facing@@@Z
     MCAPI static class Block const* transformBlock(class Block const&, ::Facing::Name);
+
+    // symbol: ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Rotation@@W4Mirror@@@Z
+    MCAPI static class Block const* transformBlock(class Block const&, ::Rotation, ::Mirror);
 
     // symbol:
     // ?transformMultiFaceDirectionBits@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Rotation@@W4Mirror@@@Z

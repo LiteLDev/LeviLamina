@@ -10,11 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ConditionalBandwidthOptimization@@QEAAAEAU0@AEBU0@@Z
-    MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization const&);
-
     // symbol: ??4ConditionalBandwidthOptimization@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization&&);
+
+    // symbol: ??4ConditionalBandwidthOptimization@@QEAAAEAU0@AEBU0@@Z
+    MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization const&);
 
     // symbol: ??1ConditionalBandwidthOptimization@@QEAA@XZ
     MCAPI ~ConditionalBandwidthOptimization();

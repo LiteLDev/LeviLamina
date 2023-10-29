@@ -35,11 +35,11 @@ public:
     // symbol: ??1CommandOutputPacket@@UEAA@XZ
     MCVAPI ~CommandOutputPacket();
 
-    // symbol: ??0CommandOutputPacket@@QEAA@AEBVCommandOrigin@@AEBVCommandOutput@@@Z
-    MCAPI CommandOutputPacket(class CommandOrigin const&, class CommandOutput const&);
-
     // symbol: ??0CommandOutputPacket@@QEAA@XZ
     MCAPI CommandOutputPacket();
+
+    // symbol: ??0CommandOutputPacket@@QEAA@AEBVCommandOrigin@@AEBVCommandOutput@@@Z
+    MCAPI CommandOutputPacket(class CommandOrigin const&, class CommandOutput const&);
 
     // NOLINTEND
 };

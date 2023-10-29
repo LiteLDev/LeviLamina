@@ -35,11 +35,11 @@ public:
     // symbol: ??1AutomationClientConnectPacket@@UEAA@XZ
     MCVAPI ~AutomationClientConnectPacket();
 
-    // symbol: ??0AutomationClientConnectPacket@@QEAA@UWebSocketPacketData@@@Z
-    MCAPI explicit AutomationClientConnectPacket(struct WebSocketPacketData);
-
     // symbol: ??0AutomationClientConnectPacket@@QEAA@XZ
     MCAPI AutomationClientConnectPacket();
+
+    // symbol: ??0AutomationClientConnectPacket@@QEAA@UWebSocketPacketData@@@Z
+    MCAPI explicit AutomationClientConnectPacket(struct WebSocketPacketData);
 
     // NOLINTEND
 };

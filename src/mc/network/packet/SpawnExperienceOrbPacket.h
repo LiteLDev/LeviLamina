@@ -35,11 +35,11 @@ public:
     // symbol: ??1SpawnExperienceOrbPacket@@UEAA@XZ
     MCVAPI ~SpawnExperienceOrbPacket();
 
-    // symbol: ??0SpawnExperienceOrbPacket@@QEAA@AEBVVec3@@H@Z
-    MCAPI SpawnExperienceOrbPacket(class Vec3 const&, int);
-
     // symbol: ??0SpawnExperienceOrbPacket@@QEAA@XZ
     MCAPI SpawnExperienceOrbPacket();
+
+    // symbol: ??0SpawnExperienceOrbPacket@@QEAA@AEBVVec3@@H@Z
+    MCAPI SpawnExperienceOrbPacket(class Vec3 const&, int);
 
     // NOLINTEND
 };

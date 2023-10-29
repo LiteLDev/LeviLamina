@@ -20,6 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0PackInstance@@QEAA@AEBV0@@Z
+    MCAPI PackInstance(class PackInstance const&);
+
     // symbol:
     // ??0PackInstance@@QEAA@V?$not_null@V?$NonOwnerPointer@VResourcePack@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NPEAVPackSettings@@@Z
     MCAPI PackInstance(Bedrock::NotNullNonOwnerPtr<class ResourcePack>, std::string const&, bool, class PackSettings*);
@@ -27,9 +30,6 @@ public:
     // symbol:
     // ??0PackInstance@@QEAA@V?$not_null@V?$NonOwnerPointer@VResourcePack@@@Bedrock@@@gsl@@H_NPEAVPackSettings@@@Z
     MCAPI PackInstance(Bedrock::NotNullNonOwnerPtr<class ResourcePack>, int, bool, class PackSettings*);
-
-    // symbol: ??0PackInstance@@QEAA@AEBV0@@Z
-    MCAPI PackInstance(class PackInstance const&);
 
     // symbol: ?forEachIn@PackInstance@@QEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@_N@Z
     MCAPI void forEachIn(class Core::Path const&, std::function<void(class Core::Path const&)>, bool) const;
@@ -40,11 +40,11 @@ public:
     // symbol: ?getLoadTime@PackInstance@@QEBANXZ
     MCAPI double getLoadTime() const;
 
-    // symbol: ?getManifest@PackInstance@@QEBAAEBVPackManifest@@XZ
-    MCAPI class PackManifest const& getManifest() const;
-
     // symbol: ?getManifest@PackInstance@@QEAAAEAVPackManifest@@XZ
     MCAPI class PackManifest& getManifest();
+
+    // symbol: ?getManifest@PackInstance@@QEBAAEBVPackManifest@@XZ
+    MCAPI class PackManifest const& getManifest() const;
 
     // symbol: ?getPackCategory@PackInstance@@QEBA?AW4PackCategory@@XZ
     MCAPI ::PackCategory getPackCategory() const;

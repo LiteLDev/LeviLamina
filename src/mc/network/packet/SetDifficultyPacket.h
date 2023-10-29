@@ -36,11 +36,11 @@ public:
     // symbol: ??1SetDifficultyPacket@@UEAA@XZ
     MCVAPI ~SetDifficultyPacket();
 
-    // symbol: ??0SetDifficultyPacket@@QEAA@W4Difficulty@@@Z
-    MCAPI explicit SetDifficultyPacket(::Difficulty);
-
     // symbol: ??0SetDifficultyPacket@@QEAA@XZ
     MCAPI SetDifficultyPacket();
+
+    // symbol: ??0SetDifficultyPacket@@QEAA@W4Difficulty@@@Z
+    MCAPI explicit SetDifficultyPacket(::Difficulty);
 
     // symbol: ?getDifficulty@SetDifficultyPacket@@QEBA?AW4Difficulty@@XZ
     MCAPI ::Difficulty getDifficulty() const;

@@ -16,11 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0SkinData@@QEAA@AEBVValue@Json@@@Z
-    MCAPI explicit SkinData(class Json::Value const&);
-
     // symbol: ??0SkinData@@QEAA@AEBVActor@@@Z
     MCAPI explicit SkinData(class Actor const&);
+
+    // symbol: ??0SkinData@@QEAA@AEBVValue@Json@@@Z
+    MCAPI explicit SkinData(class Json::Value const&);
 
     // symbol: ?applyToActor@SkinData@@QEBAXAEAVActor@@@Z
     MCAPI void applyToActor(class Actor&) const;

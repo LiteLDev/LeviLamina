@@ -9,11 +9,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BehaviorTreeDefinitionPtr@@QEAA@$$QEAV0@@Z
-    MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr&&);
-
     // symbol: ??0BehaviorTreeDefinitionPtr@@QEAA@XZ
     MCAPI BehaviorTreeDefinitionPtr();
+
+    // symbol: ??0BehaviorTreeDefinitionPtr@@QEAA@$$QEAV0@@Z
+    MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr&&);
 
     // symbol: ??4BehaviorTreeDefinitionPtr@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class BehaviorTreeDefinitionPtr& operator=(class BehaviorTreeDefinitionPtr&&);

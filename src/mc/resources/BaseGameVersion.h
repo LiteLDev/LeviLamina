@@ -8,11 +8,11 @@
 class BaseGameVersion {
 public:
     // NOLINTBEGIN
-    // symbol: ??0BaseGameVersion@@QEAA@AEBV0@@Z
-    MCAPI BaseGameVersion(class BaseGameVersion const&);
-
     // symbol: ??0BaseGameVersion@@QEAA@XZ
     MCAPI BaseGameVersion();
+
+    // symbol: ??0BaseGameVersion@@QEAA@AEBV0@@Z
+    MCAPI BaseGameVersion(class BaseGameVersion const&);
 
     // symbol: ??0BaseGameVersion@@QEAA@AEBVSemVersion@@@Z
     MCAPI explicit BaseGameVersion(class SemVersion const&);

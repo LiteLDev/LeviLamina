@@ -35,11 +35,11 @@ public:
     // symbol: ??1ScriptMessagePacket@@UEAA@XZ
     MCVAPI ~ScriptMessagePacket();
 
-    // symbol: ??0ScriptMessagePacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI ScriptMessagePacket(std::string const&, std::string const&);
-
     // symbol: ??0ScriptMessagePacket@@QEAA@XZ
     MCAPI ScriptMessagePacket();
+
+    // symbol: ??0ScriptMessagePacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+    MCAPI ScriptMessagePacket(std::string const&, std::string const&);
 
     // symbol:
     // ?getMessageId@ScriptMessagePacket@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

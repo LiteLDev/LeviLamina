@@ -175,9 +175,8 @@ public:
     MCAPI int modifyPlayerScore(bool&, struct ScoreboardId const&, class Objective&, int, ::PlayerScoreSetFunction);
 
     // symbol:
-    // ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBUPlayerScoreboardId@@@Z
-    MCAPI class ScoreboardIdentityRef const&
-    registerScoreboardIdentity(struct ScoreboardId const&, struct PlayerScoreboardId const&);
+    // ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class ScoreboardIdentityRef const& registerScoreboardIdentity(struct ScoreboardId const&, std::string const&);
 
     // symbol:
     // ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBUActorUniqueID@@@Z
@@ -185,8 +184,9 @@ public:
     registerScoreboardIdentity(struct ScoreboardId const&, struct ActorUniqueID const&);
 
     // symbol:
-    // ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class ScoreboardIdentityRef const& registerScoreboardIdentity(struct ScoreboardId const&, std::string const&);
+    // ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBUPlayerScoreboardId@@@Z
+    MCAPI class ScoreboardIdentityRef const&
+    registerScoreboardIdentity(struct ScoreboardId const&, struct PlayerScoreboardId const&);
 
     // symbol: ?removeObjective@Scoreboard@@QEAA_NPEAVObjective@@@Z
     MCAPI bool removeObjective(class Objective*);

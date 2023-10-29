@@ -35,11 +35,11 @@ public:
     // symbol: ??1UpdateAdventureSettingsPacket@@UEAA@XZ
     MCVAPI ~UpdateAdventureSettingsPacket();
 
-    // symbol: ??0UpdateAdventureSettingsPacket@@QEAA@AEBUAdventureSettings@@@Z
-    MCAPI explicit UpdateAdventureSettingsPacket(struct AdventureSettings const&);
-
     // symbol: ??0UpdateAdventureSettingsPacket@@QEAA@XZ
     MCAPI UpdateAdventureSettingsPacket();
+
+    // symbol: ??0UpdateAdventureSettingsPacket@@QEAA@AEBUAdventureSettings@@@Z
+    MCAPI explicit UpdateAdventureSettingsPacket(struct AdventureSettings const&);
 
     // NOLINTEND
 };

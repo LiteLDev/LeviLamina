@@ -16,13 +16,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4ScriptScoreTargetSelectorOption@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
-    operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption const&);
-
     // symbol: ??4ScriptScoreTargetSelectorOption@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
     operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&&);
+
+    // symbol: ??4ScriptScoreTargetSelectorOption@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
+    operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption const&);
 
     // symbol: ??1ScriptScoreTargetSelectorOption@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptScoreTargetSelectorOption();

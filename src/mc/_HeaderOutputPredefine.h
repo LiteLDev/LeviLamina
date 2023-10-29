@@ -100,6 +100,9 @@ using uint64 = uint64_t;
 using schar = int8_t;
 using int64 = int64_t;
 
+using ldouble  = long double;
+using FacingID = uchar;
+
 // clang-format off
 template <typename T0, typename T1>
 class AutomaticID;

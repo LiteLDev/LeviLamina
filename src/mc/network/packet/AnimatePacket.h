@@ -40,14 +40,14 @@ public:
     // symbol: ??0AnimatePacket@@QEAA@XZ
     MCAPI AnimatePacket();
 
-    // symbol: ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@M@Z
-    MCAPI AnimatePacket(::AnimatePacket::Action, class ActorRuntimeID, float);
+    // symbol: ??0AnimatePacket@@QEAA@W4Action@0@AEAVActor@@@Z
+    MCAPI AnimatePacket(::AnimatePacket::Action, class Actor&);
 
     // symbol: ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@@Z
     MCAPI AnimatePacket(::AnimatePacket::Action, class ActorRuntimeID);
 
-    // symbol: ??0AnimatePacket@@QEAA@W4Action@0@AEAVActor@@@Z
-    MCAPI AnimatePacket(::AnimatePacket::Action, class Actor&);
+    // symbol: ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@M@Z
+    MCAPI AnimatePacket(::AnimatePacket::Action, class ActorRuntimeID, float);
 
     // NOLINTEND
 };

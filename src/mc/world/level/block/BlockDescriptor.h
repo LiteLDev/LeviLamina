@@ -84,21 +84,21 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BlockDescriptor@@QEAA@AEBV0@@Z
-    MCAPI BlockDescriptor(class BlockDescriptor const&);
+    // symbol: ??0BlockDescriptor@@QEAA@XZ
+    MCAPI BlockDescriptor();
 
     // symbol: ??0BlockDescriptor@@QEAA@$$QEAV0@@Z
     MCAPI BlockDescriptor(class BlockDescriptor&&);
 
-    // symbol: ??0BlockDescriptor@@QEAA@XZ
-    MCAPI BlockDescriptor();
+    // symbol: ??0BlockDescriptor@@QEAA@AEBV0@@Z
+    MCAPI BlockDescriptor(class BlockDescriptor const&);
+
+    // symbol: ??0BlockDescriptor@@QEAA@AEBVHashedString@@@Z
+    MCAPI explicit BlockDescriptor(class HashedString const&);
 
     // symbol:
     // ??0BlockDescriptor@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$vector@UState@BlockDescriptor@@V?$allocator@UState@BlockDescriptor@@@std@@@2@@Z
     MCAPI BlockDescriptor(std::string const&, std::vector<struct BlockDescriptor::State>&&);
-
-    // symbol: ??0BlockDescriptor@@QEAA@AEBVHashedString@@@Z
-    MCAPI explicit BlockDescriptor(class HashedString const&);
 
     // symbol: ?getBlockOrUnknownBlock@BlockDescriptor@@QEBAAEBVBlock@@XZ
     MCAPI class Block const& getBlockOrUnknownBlock() const;
@@ -120,17 +120,17 @@ public:
     // symbol: ?isValid@BlockDescriptor@@QEBA_NXZ
     MCAPI bool isValid() const;
 
-    // symbol: ?matches@BlockDescriptor@@QEBA_NAEBV1@@Z
-    MCAPI bool matches(class BlockDescriptor const&) const;
-
     // symbol: ?matches@BlockDescriptor@@QEBA_NAEBVBlock@@@Z
     MCAPI bool matches(class Block const&) const;
 
-    // symbol: ??4BlockDescriptor@@QEAAXAEBV0@@Z
-    MCAPI void operator=(class BlockDescriptor const&);
+    // symbol: ?matches@BlockDescriptor@@QEBA_NAEBV1@@Z
+    MCAPI bool matches(class BlockDescriptor const&) const;
 
     // symbol: ??4BlockDescriptor@@QEAAX$$QEAV0@@Z
     MCAPI void operator=(class BlockDescriptor&&);
+
+    // symbol: ??4BlockDescriptor@@QEAAXAEBV0@@Z
+    MCAPI void operator=(class BlockDescriptor const&);
 
     // symbol: ??8BlockDescriptor@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class BlockDescriptor const&) const;
@@ -149,12 +149,12 @@ public:
     MCAPI ~BlockDescriptor();
 
     // symbol:
-    // ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBV1@@Z
-    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class BlockDescriptor const&);
-
-    // symbol:
     // ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBVBlock@@@Z
     MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class Block const&);
+
+    // symbol:
+    // ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBV1@@Z
+    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class BlockDescriptor const&);
 
     // symbol: ?bindType@BlockDescriptor@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

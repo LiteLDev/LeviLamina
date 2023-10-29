@@ -2,7 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DBStoragePerformanceData {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
+class DBStoragePerformanceData : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // DBStoragePerformanceData inner types declare
     // clang-format off

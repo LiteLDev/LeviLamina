@@ -35,11 +35,11 @@ public:
     // symbol: ??1MapCreateLockedCopyPacket@@UEAA@XZ
     MCVAPI ~MapCreateLockedCopyPacket();
 
-    // symbol: ??0MapCreateLockedCopyPacket@@QEAA@UActorUniqueID@@0@Z
-    MCAPI MapCreateLockedCopyPacket(struct ActorUniqueID, struct ActorUniqueID);
-
     // symbol: ??0MapCreateLockedCopyPacket@@QEAA@XZ
     MCAPI MapCreateLockedCopyPacket();
+
+    // symbol: ??0MapCreateLockedCopyPacket@@QEAA@UActorUniqueID@@0@Z
+    MCAPI MapCreateLockedCopyPacket(struct ActorUniqueID, struct ActorUniqueID);
 
     // symbol: ?getNewMapId@MapCreateLockedCopyPacket@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getNewMapId() const;

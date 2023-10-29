@@ -14,19 +14,19 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0Localization@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI explicit Localization(std::string const&);
+
     // symbol: ??0Localization@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV0@@Z
     MCAPI Localization(std::string const&, class Localization*);
 
-    // symbol: ??0Localization@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit Localization(std::string const&);
+    // symbol: ?appendTranslations@Localization@@QEAAXAEBV1@@Z
+    MCAPI void appendTranslations(class Localization const&);
 
     // symbol:
     // ?appendTranslations@Localization@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@10@Z
     MCAPI void
     appendTranslations(std::string const&, std::vector<std::string> const&, std::vector<std::string> const&, std::string const&);
-
-    // symbol: ?appendTranslations@Localization@@QEAAXAEBV1@@Z
-    MCAPI void appendTranslations(class Localization const&);
 
     // symbol:
     // ?get@Localization@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z

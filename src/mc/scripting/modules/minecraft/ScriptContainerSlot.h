@@ -26,14 +26,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptContainerSlot@ScriptModuleMinecraft@@QEAA@VItemContext@@VWeakLifetimeScope@Scripting@@@Z
-    MCAPI ScriptContainerSlot(class ItemContext, class Scripting::WeakLifetimeScope);
-
     // symbol: ??0ScriptContainerSlot@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptContainerSlot(class ScriptModuleMinecraft::ScriptContainerSlot&&);
 
     // symbol: ??0ScriptContainerSlot@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptContainerSlot(class ScriptModuleMinecraft::ScriptContainerSlot const&);
+
+    // symbol: ??0ScriptContainerSlot@ScriptModuleMinecraft@@QEAA@VItemContext@@VWeakLifetimeScope@Scripting@@@Z
+    MCAPI ScriptContainerSlot(class ItemContext, class Scripting::WeakLifetimeScope);
 
     // symbol: ?getAmount@ScriptContainerSlot@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getAmount() const;

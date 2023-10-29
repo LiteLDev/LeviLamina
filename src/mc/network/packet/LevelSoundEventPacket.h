@@ -33,12 +33,12 @@ public:
     // ?_read@LevelSoundEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
+    // symbol: ??0LevelSoundEventPacket@@QEAA@XZ
+    MCAPI LevelSoundEventPacket();
+
     // symbol:
     // ??0LevelSoundEventPacket@@QEAA@W4LevelSoundEvent@@AEBVVec3@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N3@Z
     MCAPI LevelSoundEventPacket(::LevelSoundEvent, class Vec3 const&, int, std::string const&, bool, bool);
-
-    // symbol: ??0LevelSoundEventPacket@@QEAA@XZ
-    MCAPI LevelSoundEventPacket();
 
     // NOLINTEND
 };

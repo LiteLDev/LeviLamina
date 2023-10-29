@@ -39,12 +39,12 @@ public:
     // symbol: ??0FilterGroup@@QEAA@AEBV0@@Z
     MCAPI FilterGroup(class FilterGroup const&);
 
-    // symbol: ?addFilterTest@FilterGroup@@QEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-    MCAPI bool addFilterTest(struct FilterTest::Definition const&, struct FilterInputs const&);
-
     // symbol:
     // ?addFilterTest@FilterGroup@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUFilterInputs@@@Z
     MCAPI bool addFilterTest(std::string const&, struct FilterInputs const&);
+
+    // symbol: ?addFilterTest@FilterGroup@@QEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
+    MCAPI bool addFilterTest(struct FilterTest::Definition const&, struct FilterInputs const&);
 
     // symbol: ?empty@FilterGroup@@QEBA_NXZ
     MCAPI bool empty() const;

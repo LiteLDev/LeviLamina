@@ -35,11 +35,11 @@ public:
     // symbol: ??1CompressedBiomeDefinitionListPacket@@UEAA@XZ
     MCVAPI ~CompressedBiomeDefinitionListPacket();
 
-    // symbol: ??0CompressedBiomeDefinitionListPacket@@QEAA@VCompoundTag@@@Z
-    MCAPI explicit CompressedBiomeDefinitionListPacket(class CompoundTag);
-
     // symbol: ??0CompressedBiomeDefinitionListPacket@@QEAA@XZ
     MCAPI CompressedBiomeDefinitionListPacket();
+
+    // symbol: ??0CompressedBiomeDefinitionListPacket@@QEAA@VCompoundTag@@@Z
+    MCAPI explicit CompressedBiomeDefinitionListPacket(class CompoundTag);
 
     // NOLINTEND
 };

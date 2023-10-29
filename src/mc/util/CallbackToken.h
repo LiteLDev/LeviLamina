@@ -10,14 +10,14 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0CallbackToken@@QEAA@XZ
+    MCAPI CallbackToken();
+
     // symbol: ??0CallbackToken@@QEAA@$$QEAV0@@Z
     MCAPI CallbackToken(class CallbackToken&&);
 
     // symbol: ??0CallbackToken@@QEAA@V?$weak_ptr@VCallbackTokenCancelState@@@std@@@Z
     MCAPI explicit CallbackToken(std::weak_ptr<class CallbackTokenCancelState>);
-
-    // symbol: ??0CallbackToken@@QEAA@XZ
-    MCAPI CallbackToken();
 
     // symbol: ?cancelCallback@CallbackToken@@QEAAXXZ
     MCAPI void cancelCallback();

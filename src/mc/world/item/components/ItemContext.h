@@ -15,14 +15,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ItemContext@@QEAA@AEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI ItemContext(class BlockSource&, class BlockPos const&, int);
-
     // symbol: ??0ItemContext@@QEAA@AEBVWeakEntityRef@@W4EquipmentSlot@@@Z
     MCAPI ItemContext(class WeakEntityRef const&, ::EquipmentSlot);
 
     // symbol: ??0ItemContext@@QEAA@AEBVWeakEntityRef@@H@Z
     MCAPI ItemContext(class WeakEntityRef const&, int);
+
+    // symbol: ??0ItemContext@@QEAA@AEAVBlockSource@@AEBVBlockPos@@H@Z
+    MCAPI ItemContext(class BlockSource&, class BlockPos const&, int);
 
     // symbol: ?getAmount@ItemContext@@QEBA?AV?$optional@H@std@@XZ
     MCAPI std::optional<int> getAmount() const;

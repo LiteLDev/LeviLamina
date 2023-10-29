@@ -136,11 +136,11 @@ public:
     // vIndex: 32, symbol: ?onEvent@DebugInfoComponent@@UEAA?AW4EventResult@@AEBUActorDefinitionTriggeredEvent@@@Z
     virtual ::EventResult onEvent(struct ActorDefinitionTriggeredEvent const&);
 
-    // symbol: ??0DebugInfoComponent@@QEAA@AEBV0@@Z
-    MCAPI DebugInfoComponent(class DebugInfoComponent const&);
-
     // symbol: ??0DebugInfoComponent@@QEAA@$$QEAV0@@Z
     MCAPI DebugInfoComponent(class DebugInfoComponent&&);
+
+    // symbol: ??0DebugInfoComponent@@QEAA@AEBV0@@Z
+    MCAPI DebugInfoComponent(class DebugInfoComponent const&);
 
     // symbol: ?addListener@DebugInfoComponent@@QEAAXAEBVHashedString@@VNetworkIdentifier@@W4SubClientId@@@Z
     MCAPI void addListener(class HashedString const&, class NetworkIdentifier, ::SubClientId);

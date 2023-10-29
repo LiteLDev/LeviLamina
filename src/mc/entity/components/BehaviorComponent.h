@@ -10,11 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0BehaviorComponent@@QEAA@$$QEAV0@@Z
-    MCAPI BehaviorComponent(class BehaviorComponent&&);
-
     // symbol: ??0BehaviorComponent@@QEAA@XZ
     MCAPI BehaviorComponent();
+
+    // symbol: ??0BehaviorComponent@@QEAA@$$QEAV0@@Z
+    MCAPI BehaviorComponent(class BehaviorComponent&&);
 
     // symbol: ??4BehaviorComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class BehaviorComponent& operator=(class BehaviorComponent&&);

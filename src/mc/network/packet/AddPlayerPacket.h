@@ -29,7 +29,7 @@ public:
     virtual void write(class BinaryStream&) const;
 
     // vIndex: 4, symbol:
-    // ?read@AvailableActorIdentifiersPacket@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // ?read@PlayerListPacket@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
 
     // vIndex: 5, symbol: ?disallowBatching@Packet@@UEBA_NXZ

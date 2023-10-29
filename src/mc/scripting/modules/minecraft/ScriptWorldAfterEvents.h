@@ -329,12 +329,12 @@ public:
     // symbol: ??1ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptWorldAfterEvents();
 
+    // symbol: ??0ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
+    MCAPI ScriptWorldAfterEvents(class ScriptModuleMinecraft::ScriptWorldAfterEvents&&);
+
     // symbol:
     // ??0ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVLevel@@@gsl@@@Z
     MCAPI ScriptWorldAfterEvents(class Scripting::WeakLifetimeScope const&, gsl::not_null<class Level*>);
-
-    // symbol: ??0ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
-    MCAPI ScriptWorldAfterEvents(class ScriptModuleMinecraft::ScriptWorldAfterEvents&&);
 
     // symbol: ??4ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptWorldAfterEvents&

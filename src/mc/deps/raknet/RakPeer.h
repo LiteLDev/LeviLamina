@@ -421,11 +421,11 @@ public:
     // symbol: ?AddPacketToProducer@RakPeer@RakNet@@IEAAXPEAUPacket@2@@Z
     MCAPI void AddPacketToProducer(struct RakNet::Packet*);
 
-    // symbol: ?AllocPacket@RakPeer@RakNet@@IEAAPEAUPacket@2@IPEAEPEBDI@Z
-    MCAPI struct RakNet::Packet* AllocPacket(uint, uchar*, char const*, uint);
-
     // symbol: ?AllocPacket@RakPeer@RakNet@@IEAAPEAUPacket@2@IPEBDI@Z
     MCAPI struct RakNet::Packet* AllocPacket(uint, char const*, uint);
+
+    // symbol: ?AllocPacket@RakPeer@RakNet@@IEAAPEAUPacket@2@IPEAEPEBDI@Z
+    MCAPI struct RakNet::Packet* AllocPacket(uint, uchar*, char const*, uint);
 
     // symbol: ?AllowIncomingConnections@RakPeer@RakNet@@IEBA_NXZ
     MCAPI bool AllowIncomingConnections() const;
@@ -546,11 +546,6 @@ public:
         uint
     );
 
-    // symbol:
-    // ?SendConnectionRequest@RakPeer@RakNet@@IEAA?AW4ConnectionAttemptResult@2@PEBDG0HPEAUPublicKey@2@IIIIIPEAVRakNetSocket2@2@@Z
-    MCAPI ::RakNet::ConnectionAttemptResult
-    SendConnectionRequest(char const*, ushort, char const*, int, struct RakNet::PublicKey*, uint, uint, uint, uint, uint, class RakNet::RakNetSocket2*);
-
     // symbol: ?SendConnectionRequest@RakPeer@RakNet@@IEAA?AW4ConnectionAttemptResult@2@PEBDG0HPEAUPublicKey@2@IIIII@Z
     MCAPI ::RakNet::ConnectionAttemptResult SendConnectionRequest(
         char const*,
@@ -564,6 +559,11 @@ public:
         uint,
         uint
     );
+
+    // symbol:
+    // ?SendConnectionRequest@RakPeer@RakNet@@IEAA?AW4ConnectionAttemptResult@2@PEBDG0HPEAUPublicKey@2@IIIIIPEAVRakNetSocket2@2@@Z
+    MCAPI ::RakNet::ConnectionAttemptResult
+    SendConnectionRequest(char const*, ushort, char const*, int, struct RakNet::PublicKey*, uint, uint, uint, uint, uint, class RakNet::RakNetSocket2*);
 
     // symbol:
     // ?SendImmediate@RakPeer@RakNet@@IEAA_NPEADIW4PacketPriority@@W4PacketReliability@@DUAddressOrGUID@2@_N4_KI@Z

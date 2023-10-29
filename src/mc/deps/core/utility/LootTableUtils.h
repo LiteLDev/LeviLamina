@@ -60,14 +60,14 @@ public:
     );
 
     // symbol:
-    // ?getRandomItems@LootTableUtils@Util@@SA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@AEAVRandom@@AEAVLootTableContext@@@Z
-    MCAPI static std::vector<class ItemStack>
-    getRandomItems(std::string const&, class Random&, class LootTableContext&);
-
-    // symbol:
     // ?getRandomItems@LootTableUtils@Util@@SA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVLootTable@@AEAVRandom@@AEAVLootTableContext@@@Z
     MCAPI static std::vector<class ItemStack>
     getRandomItems(class LootTable const&, class Random&, class LootTableContext&);
+
+    // symbol:
+    // ?getRandomItems@LootTableUtils@Util@@SA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@AEAVRandom@@AEAVLootTableContext@@@Z
+    MCAPI static std::vector<class ItemStack>
+    getRandomItems(std::string const&, class Random&, class LootTableContext&);
 
     // symbol:
     // ?givePlayer@LootTableUtils@Util@@SAHAEAVPlayer@@AEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@_N@Z

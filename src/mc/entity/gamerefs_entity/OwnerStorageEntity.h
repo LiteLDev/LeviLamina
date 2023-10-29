@@ -17,14 +17,14 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ??0OwnerStorageEntity@@IEAA@W4VariadicInit@0@AEAVEntityRegistry@@@Z
-    MCAPI OwnerStorageEntity(::OwnerStorageEntity::VariadicInit, class EntityRegistry&);
-
     // symbol: ??0OwnerStorageEntity@@IEAA@$$QEAV0@@Z
     MCAPI OwnerStorageEntity(class OwnerStorageEntity&&);
 
     // symbol: ??0OwnerStorageEntity@@IEAA@W4EmptyInit@0@@Z
     MCAPI explicit OwnerStorageEntity(::OwnerStorageEntity::EmptyInit);
+
+    // symbol: ??0OwnerStorageEntity@@IEAA@W4VariadicInit@0@AEAVEntityRegistry@@@Z
+    MCAPI OwnerStorageEntity(::OwnerStorageEntity::VariadicInit, class EntityRegistry&);
 
     // symbol: ?_getStackRef@OwnerStorageEntity@@IEBAAEAVEntityContext@@XZ
     MCAPI class EntityContext& _getStackRef() const;

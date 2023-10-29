@@ -132,12 +132,12 @@ public:
     // symbol: ?postNormalTick@ExperienceOrb@@QEAAXXZ
     MCAPI void postNormalTick();
 
+    // symbol: ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HW4DropType@1@PEAVPlayer@@@Z
+    MCAPI static void spawnOrbs(class BlockSource&, class Vec3 const&, int, ::ExperienceOrb::DropType, class Player*);
+
     // symbol: ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HHW4DropType@1@PEAVPlayer@@@Z
     MCAPI static void
     spawnOrbs(class BlockSource&, class Vec3 const&, int, int, ::ExperienceOrb::DropType, class Player*);
-
-    // symbol: ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HW4DropType@1@PEAVPlayer@@@Z
-    MCAPI static void spawnOrbs(class BlockSource&, class Vec3 const&, int, ::ExperienceOrb::DropType, class Player*);
 
     // NOLINTEND
 

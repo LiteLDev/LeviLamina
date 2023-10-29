@@ -434,14 +434,14 @@ public:
     getHandle(class Actor const*, class Scripting::WeakLifetimeScope const&);
 
     // symbol:
-    // ?getHandle@ScriptActor@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@4@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const&);
-
-    // symbol:
     // ?getHandle@ScriptActor@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@V?$StackRefResultT@UEntityRefTraits@@@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
     getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const&);
+
+    // symbol:
+    // ?getHandle@ScriptActor@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@4@@Z
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
+    getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const&);
 
     // symbol:
     // ?tryGetActor@ScriptActor@ScriptModuleMinecraft@@SAPEAVActor@@AEBU?$TypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@AEBVWeakLifetimeScope@5@@Z

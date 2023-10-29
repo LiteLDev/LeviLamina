@@ -8,24 +8,24 @@
 struct GoalDefinition {
 public:
     // NOLINTBEGIN
-    // symbol: ??0GoalDefinition@@QEAA@AEBU0@@Z
-    MCAPI GoalDefinition(struct GoalDefinition const&);
-
     // symbol: ??0GoalDefinition@@QEAA@XZ
     MCAPI GoalDefinition();
 
     // symbol: ??0GoalDefinition@@QEAA@$$QEAU0@@Z
     MCAPI GoalDefinition(struct GoalDefinition&&);
 
+    // symbol: ??0GoalDefinition@@QEAA@AEBU0@@Z
+    MCAPI GoalDefinition(struct GoalDefinition const&);
+
     // symbol:
     // ?_getPOITypeFromString@GoalDefinition@@QEAA?AW4POIType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI ::POIType _getPOITypeFromString(std::string);
 
-    // symbol: ??4GoalDefinition@@QEAAAEAU0@AEBU0@@Z
-    MCAPI struct GoalDefinition& operator=(struct GoalDefinition const&);
-
     // symbol: ??4GoalDefinition@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct GoalDefinition& operator=(struct GoalDefinition&&);
+
+    // symbol: ??4GoalDefinition@@QEAAAEAU0@AEBU0@@Z
+    MCAPI struct GoalDefinition& operator=(struct GoalDefinition const&);
 
     // symbol: ?parse@GoalDefinition@@QEAA_NAEBUConstDeserializeDataParams@@H@Z
     MCAPI bool parse(struct ConstDeserializeDataParams const&, int);

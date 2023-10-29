@@ -35,11 +35,11 @@ public:
     // symbol: ??1DisconnectPacket@@UEAA@XZ
     MCVAPI ~DisconnectPacket();
 
-    // symbol: ??0DisconnectPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI DisconnectPacket(std::string const&, bool);
-
     // symbol: ??0DisconnectPacket@@QEAA@XZ
     MCAPI DisconnectPacket();
+
+    // symbol: ??0DisconnectPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    MCAPI DisconnectPacket(std::string const&, bool);
 
     // NOLINTEND
 };

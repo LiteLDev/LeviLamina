@@ -26,32 +26,32 @@ public:
     // symbol: ??1ItemDescriptorCount@@UEAA@XZ
     MCVAPI ~ItemDescriptorCount();
 
-    // symbol: ??0ItemDescriptorCount@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI explicit ItemDescriptorCount(class ReadOnlyBinaryStream&);
+    // symbol: ??0ItemDescriptorCount@@QEAA@XZ
+    MCAPI ItemDescriptorCount();
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBV0@@Z
     MCAPI ItemDescriptorCount(class ItemDescriptorCount const&);
 
+    // symbol: ??0ItemDescriptorCount@@QEAA@AEAVReadOnlyBinaryStream@@@Z
+    MCAPI explicit ItemDescriptorCount(class ReadOnlyBinaryStream&);
+
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBVBlock@@G@Z
     MCAPI ItemDescriptorCount(class Block const&, ushort);
 
-    // symbol: ??0ItemDescriptorCount@@QEAA@AEBVItem@@HG@Z
-    MCAPI ItemDescriptorCount(class Item const&, int, ushort);
-
-    // symbol: ??0ItemDescriptorCount@@QEAA@AEBUItemTag@@G@Z
-    MCAPI ItemDescriptorCount(struct ItemTag const&, ushort);
-
-    // symbol: ??0ItemDescriptorCount@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HG@Z
-    MCAPI ItemDescriptorCount(std::string_view, int, ushort);
-
-    // symbol: ??0ItemDescriptorCount@@QEAA@XZ
-    MCAPI ItemDescriptorCount();
+    // symbol: ??0ItemDescriptorCount@@QEAA@AEBVBlockLegacy@@G@Z
+    MCAPI ItemDescriptorCount(class BlockLegacy const&, ushort);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBVItemDescriptor@@G@Z
     MCAPI ItemDescriptorCount(class ItemDescriptor const&, ushort);
 
-    // symbol: ??0ItemDescriptorCount@@QEAA@AEBVBlockLegacy@@G@Z
-    MCAPI ItemDescriptorCount(class BlockLegacy const&, ushort);
+    // symbol: ??0ItemDescriptorCount@@QEAA@AEBUItemTag@@G@Z
+    MCAPI ItemDescriptorCount(struct ItemTag const&, ushort);
+
+    // symbol: ??0ItemDescriptorCount@@QEAA@AEBVItem@@HG@Z
+    MCAPI ItemDescriptorCount(class Item const&, int, ushort);
+
+    // symbol: ??0ItemDescriptorCount@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HG@Z
+    MCAPI ItemDescriptorCount(std::string_view, int, ushort);
 
     // symbol: ?getStackSize@ItemDescriptorCount@@QEBAFXZ
     MCAPI short getStackSize() const;

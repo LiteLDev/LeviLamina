@@ -162,11 +162,11 @@ public:
     // symbol: ?dieNaturally@EnderDragon@@QEAAXXZ
     MCAPI void dieNaturally();
 
-    // symbol: ?findClosestNode@EnderDragon@@QEAAHAEBVVec3@@@Z
-    MCAPI int findClosestNode(class Vec3 const&);
-
     // symbol: ?findClosestNode@EnderDragon@@QEAAHXZ
     MCAPI int findClosestNode();
+
+    // symbol: ?findClosestNode@EnderDragon@@QEAAHAEBVVec3@@@Z
+    MCAPI int findClosestNode(class Vec3 const&);
 
     // symbol:
     // ?findPath@EnderDragon@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@HHPEAVPathfinderNode@@@Z

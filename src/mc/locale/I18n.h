@@ -28,11 +28,11 @@ public:
     MCAPI static void
     appendLanguageStringsFromPack(class PackManifest const&, std::multimap<std::string, std::pair<std::string, std::string>> const&);
 
-    // symbol: ?chooseLanguage@I18n@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static void chooseLanguage(std::string const&);
-
     // symbol: ?chooseLanguage@I18n@@SAXAEBVLocalization@@@Z
     MCAPI static void chooseLanguage(class Localization const&);
+
+    // symbol: ?chooseLanguage@I18n@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI static void chooseLanguage(std::string const&);
 
     // symbol:
     // ?findAvailableLanguageNames@I18n@@SA?AV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEAVResourcePackManager@@@Z
@@ -42,12 +42,12 @@ public:
     // ?findAvailableLanguages@I18n@@SA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEAVResourcePackManager@@@Z
     MCAPI static std::vector<std::string> findAvailableLanguages(class ResourcePackManager&);
 
+    // symbol: ?get@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@PEBVLocalization@@@Z
+    MCAPI static std::string get(std::string const&, class Localization const*);
+
     // symbol:
     // ?get@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@PEBVLocalization@@@Z
     MCAPI static std::string get(std::string const&, std::vector<std::string> const&, class Localization const*);
-
-    // symbol: ?get@I18n@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@PEBVLocalization@@@Z
-    MCAPI static std::string get(std::string const&, class Localization const*);
 
     // symbol: ?getCurrentLanguage@I18n@@SA?AV?$optional_ref@$$CBVLocalization@@@@XZ
     MCAPI static class optional_ref<class Localization const> getCurrentLanguage();

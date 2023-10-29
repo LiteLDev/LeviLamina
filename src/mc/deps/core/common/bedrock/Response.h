@@ -18,17 +18,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Response@Http@Bedrock@@QEAA@$$QEAV012@@Z
-    MCAPI Response(class Bedrock::Http::Response&&);
-
     // symbol: ??0Response@Http@Bedrock@@QEAA@XZ
     MCAPI Response();
 
-    // symbol: ??0Response@Http@Bedrock@@QEAA@VStatus@12@@Z
-    MCAPI explicit Response(class Bedrock::Http::Status);
+    // symbol: ??0Response@Http@Bedrock@@QEAA@$$QEAV012@@Z
+    MCAPI Response(class Bedrock::Http::Response&&);
 
     // symbol: ??0Response@Http@Bedrock@@QEAA@AEBV012@@Z
     MCAPI Response(class Bedrock::Http::Response const&);
+
+    // symbol: ??0Response@Http@Bedrock@@QEAA@VStatus@12@@Z
+    MCAPI explicit Response(class Bedrock::Http::Status);
 
     // symbol: ?getBodyAsBytes@Response@Http@Bedrock@@QEBA?AV?$span@$$CBE$0?0@gsl@@XZ
     MCAPI gsl::span<uchar const> getBodyAsBytes() const;

@@ -17,23 +17,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0MobEffectInstance@@QEAA@IH@Z
-    MCAPI MobEffectInstance(uint, int);
+    // symbol: ??0MobEffectInstance@@QEAA@$$QEAV0@@Z
+    MCAPI MobEffectInstance(class MobEffectInstance&&);
 
     // symbol: ??0MobEffectInstance@@QEAA@AEBV0@@Z
     MCAPI MobEffectInstance(class MobEffectInstance const&);
+
+    // symbol: ??0MobEffectInstance@@QEAA@I@Z
+    MCAPI explicit MobEffectInstance(uint);
+
+    // symbol: ??0MobEffectInstance@@QEAA@IH@Z
+    MCAPI MobEffectInstance(uint, int);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHH@Z
     MCAPI MobEffectInstance(uint, int, int);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHH_N00@Z
     MCAPI MobEffectInstance(uint, int, int, bool, bool, bool);
-
-    // symbol: ??0MobEffectInstance@@QEAA@$$QEAV0@@Z
-    MCAPI MobEffectInstance(class MobEffectInstance&&);
-
-    // symbol: ??0MobEffectInstance@@QEAA@I@Z
-    MCAPI explicit MobEffectInstance(uint);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHHHHH_N00@Z
     MCAPI MobEffectInstance(uint, int, int, int, int, int, bool, bool, bool);
@@ -84,11 +84,11 @@ public:
     // symbol: ??9MobEffectInstance@@QEBA_NAEBV0@@Z
     MCAPI bool operator!=(class MobEffectInstance const&) const;
 
-    // symbol: ??4MobEffectInstance@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class MobEffectInstance& operator=(class MobEffectInstance const&);
-
     // symbol: ??4MobEffectInstance@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class MobEffectInstance& operator=(class MobEffectInstance&&);
+
+    // symbol: ??4MobEffectInstance@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class MobEffectInstance& operator=(class MobEffectInstance const&);
 
     // symbol: ??8MobEffectInstance@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class MobEffectInstance const&) const;

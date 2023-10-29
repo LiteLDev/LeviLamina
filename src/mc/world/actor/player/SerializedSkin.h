@@ -9,20 +9,20 @@
 class SerializedSkin {
 public:
     // NOLINTBEGIN
-    // symbol: ??0SerializedSkin@@QEAA@AEBVSubClientConnectionRequest@@@Z
-    MCAPI explicit SerializedSkin(class SubClientConnectionRequest const&);
-
-    // symbol: ??0SerializedSkin@@QEAA@AEBV0@@Z
-    MCAPI SerializedSkin(class SerializedSkin const&);
-
     // symbol: ??0SerializedSkin@@QEAA@XZ
     MCAPI SerializedSkin();
+
+    // symbol: ??0SerializedSkin@@QEAA@AEBVConnectionRequest@@@Z
+    MCAPI explicit SerializedSkin(class ConnectionRequest const&);
 
     // symbol: ??0SerializedSkin@@QEAA@$$QEAV0@@Z
     MCAPI SerializedSkin(class SerializedSkin&&);
 
-    // symbol: ??0SerializedSkin@@QEAA@AEBVConnectionRequest@@@Z
-    MCAPI explicit SerializedSkin(class ConnectionRequest const&);
+    // symbol: ??0SerializedSkin@@QEAA@AEBV0@@Z
+    MCAPI SerializedSkin(class SerializedSkin const&);
+
+    // symbol: ??0SerializedSkin@@QEAA@AEBVSubClientConnectionRequest@@@Z
+    MCAPI explicit SerializedSkin(class SubClientConnectionRequest const&);
 
     // symbol: ?getAnimationFrames@SerializedSkin@@QEBAMW4AnimatedTextureType@persona@@@Z
     MCAPI float getAnimationFrames(::persona::AnimatedTextureType) const;

@@ -26,12 +26,12 @@ public:
     // symbol: ??0CreativeItemRegistry@@QEAA@XZ
     MCAPI CreativeItemRegistry();
 
+    // symbol: ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBVItemInstance@@@Z
+    MCAPI class CreativeItemEntry* findCreativeItemEntry(class ItemInstance const&);
+
     // symbol:
     // ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@@Z
     MCAPI class CreativeItemEntry* findCreativeItemEntry(CreativeItemNetId const&);
-
-    // symbol: ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBVItemInstance@@@Z
-    MCAPI class CreativeItemEntry* findCreativeItemEntry(class ItemInstance const&);
 
     // symbol: ?getCreativeCategory@CreativeItemRegistry@@QEAAPEAVCreativeItemGroupCategory@@W4CreativeItemCategory@@@Z
     MCAPI class CreativeItemGroupCategory* getCreativeCategory(::CreativeItemCategory);

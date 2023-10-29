@@ -17,11 +17,11 @@ public:
     // symbol: ?roll@ChanceInformation@@QEBA_NAEAVRandom@@@Z
     MCAPI bool roll(class Random&) const;
 
-    // symbol: ?set@ChanceInformation@@QEAAXII@Z
-    MCAPI void set(uint, uint);
-
     // symbol: ?set@ChanceInformation@@QEAAXM@Z
     MCAPI void set(float);
+
+    // symbol: ?set@ChanceInformation@@QEAAXII@Z
+    MCAPI void set(uint, uint);
 
     // NOLINTEND
 };

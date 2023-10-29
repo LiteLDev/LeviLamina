@@ -99,6 +99,9 @@ public:
     // vIndex: 30, symbol: ?isValid@VirtualCommandOrigin@@UEBA_NXZ
     virtual bool isValid() const;
 
+    // symbol: ??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@AEAVActor@@AEBVCommandPositionFloat@@H@Z
+    MCAPI VirtualCommandOrigin(class CommandOrigin const&, class Actor&, class CommandPositionFloat const&, int);
+
     // symbol: ??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@0AEBVCommandPositionFloat@@H@Z
     MCAPI VirtualCommandOrigin(
         class CommandOrigin const&,
@@ -115,9 +118,6 @@ public:
         class CommandPositionFloat const&,
         int
     );
-
-    // symbol: ??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@AEAVActor@@AEBVCommandPositionFloat@@H@Z
-    MCAPI VirtualCommandOrigin(class CommandOrigin const&, class Actor&, class CommandPositionFloat const&, int);
 
     // symbol: ?getOrigin@VirtualCommandOrigin@@QEBAPEAVCommandOrigin@@XZ
     MCAPI class CommandOrigin* getOrigin() const;

@@ -35,13 +35,13 @@ public:
     // symbol: ??1ScriptActorComponent@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptActorComponent();
 
+    // symbol: ??0ScriptActorComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
+    MCAPI ScriptActorComponent(class ScriptModuleMinecraft::ScriptActorComponent const&);
+
     // symbol:
     // ??0ScriptActorComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI
     ScriptActorComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
-
-    // symbol: ??0ScriptActorComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
-    MCAPI ScriptActorComponent(class ScriptModuleMinecraft::ScriptActorComponent const&);
 
     // symbol:
     // ?getEntity@ScriptActorComponent@ScriptModuleMinecraft@@QEBA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@XZ

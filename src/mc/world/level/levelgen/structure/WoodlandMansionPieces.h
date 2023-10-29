@@ -335,6 +335,15 @@ public:
         MCVAPI ~WoodlandMansionPiece();
 
         // symbol:
+        // ??0WoodlandMansionPiece@WoodlandMansionPieces@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4Rotation@@@Z
+        MCAPI WoodlandMansionPiece(
+            Bedrock::NotNullNonOwnerPtr<class StructureManager>,
+            std::string const&,
+            class BlockPos const&,
+            ::Rotation
+        );
+
+        // symbol:
         // ??0WoodlandMansionPiece@WoodlandMansionPieces@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4Rotation@@W4Mirror@@@Z
         MCAPI WoodlandMansionPiece(
             Bedrock::NotNullNonOwnerPtr<class StructureManager>,
@@ -342,15 +351,6 @@ public:
             class BlockPos const&,
             ::Rotation,
             ::Mirror
-        );
-
-        // symbol:
-        // ??0WoodlandMansionPiece@WoodlandMansionPieces@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4Rotation@@@Z
-        MCAPI WoodlandMansionPiece(
-            Bedrock::NotNullNonOwnerPtr<class StructureManager>,
-            std::string const&,
-            class BlockPos const&,
-            ::Rotation
         );
 
         // NOLINTEND

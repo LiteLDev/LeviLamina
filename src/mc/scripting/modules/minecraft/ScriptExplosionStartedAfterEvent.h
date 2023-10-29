@@ -21,16 +21,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
-    // ??0ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUExplosionStartedEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI
-    ScriptExplosionStartedAfterEvent(struct ExplosionStartedEvent const&, class Scripting::WeakLifetimeScope const&);
+    // symbol: ??0ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
+    MCAPI ScriptExplosionStartedAfterEvent(struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent&&);
 
     // symbol: ??0ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptExplosionStartedAfterEvent(struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent const&);
 
-    // symbol: ??0ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
-    MCAPI ScriptExplosionStartedAfterEvent(struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent&&);
+    // symbol:
+    // ??0ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUExplosionStartedEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI
+    ScriptExplosionStartedAfterEvent(struct ExplosionStartedEvent const&, class Scripting::WeakLifetimeScope const&);
 
     // symbol: ?copyTo@ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEBAXAEAUExplosionStartedEvent@@@Z
     MCAPI void copyTo(struct ExplosionStartedEvent&) const;
@@ -39,13 +39,13 @@ public:
     // ?getImpactedBlocks@ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEBA?AV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@XZ
     MCAPI std::vector<class Vec3> getImpactedBlocks() const;
 
-    // symbol: ??4ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent const&);
-
     // symbol: ??4ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent&&);
+
+    // symbol: ??4ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent const&);
 
     // symbol: ??1ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptExplosionStartedAfterEvent();

@@ -39,11 +39,11 @@ public:
     // symbol: ??1NpcDialoguePacket@@UEAA@XZ
     MCVAPI ~NpcDialoguePacket();
 
-    // symbol: ??0NpcDialoguePacket@@QEAA@UActorUniqueID@@@Z
-    MCAPI explicit NpcDialoguePacket(struct ActorUniqueID);
-
     // symbol: ??0NpcDialoguePacket@@QEAA@XZ
     MCAPI NpcDialoguePacket();
+
+    // symbol: ??0NpcDialoguePacket@@QEAA@UActorUniqueID@@@Z
+    MCAPI explicit NpcDialoguePacket(struct ActorUniqueID);
 
     // symbol:
     // ?initializePacket@NpcDialoguePacket@@SA_NAEAV1@PEBVNpcDialogueStorage@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

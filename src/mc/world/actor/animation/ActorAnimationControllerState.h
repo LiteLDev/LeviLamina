@@ -15,11 +15,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addAnimation@ActorAnimationControllerState@@QEAAXAEBVHashedString@@AEBVExpressionNode@@@Z
-    MCAPI void addAnimation(class HashedString const&, class ExpressionNode const&);
-
     // symbol: ?addAnimation@ActorAnimationControllerState@@QEAAXAEBVHashedString@@@Z
     MCAPI void addAnimation(class HashedString const&);
+
+    // symbol: ?addAnimation@ActorAnimationControllerState@@QEAAXAEBVHashedString@@AEBVExpressionNode@@@Z
+    MCAPI void addAnimation(class HashedString const&, class ExpressionNode const&);
 
     // symbol: ?addBlendTransitionKeyFrame@ActorAnimationControllerState@@QEAAXMM@Z
     MCAPI void addBlendTransitionKeyFrame(float, float);

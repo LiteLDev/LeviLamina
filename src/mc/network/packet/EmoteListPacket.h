@@ -35,11 +35,11 @@ public:
     // symbol: ??1EmoteListPacket@@UEAA@XZ
     MCVAPI ~EmoteListPacket();
 
-    // symbol: ??0EmoteListPacket@@QEAA@VActorRuntimeID@@@Z
-    MCAPI explicit EmoteListPacket(class ActorRuntimeID);
-
     // symbol: ??0EmoteListPacket@@QEAA@XZ
     MCAPI EmoteListPacket();
+
+    // symbol: ??0EmoteListPacket@@QEAA@VActorRuntimeID@@@Z
+    MCAPI explicit EmoteListPacket(class ActorRuntimeID);
 
     // symbol: ?MAX_EMOTE_PIECE_IDS@EmoteListPacket@@2HB
     MCAPI static int const MAX_EMOTE_PIECE_IDS;

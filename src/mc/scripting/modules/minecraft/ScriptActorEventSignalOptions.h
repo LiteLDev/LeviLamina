@@ -17,13 +17,13 @@ public:
     // symbol: ??0ScriptActorEventSignalOptions@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptActorEventSignalOptions(struct ScriptModuleMinecraft::ScriptActorEventSignalOptions const&);
 
-    // symbol: ??4ScriptActorEventSignalOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptActorEventSignalOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptActorEventSignalOptions const&);
-
     // symbol: ??4ScriptActorEventSignalOptions@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptActorEventSignalOptions&
     operator=(struct ScriptModuleMinecraft::ScriptActorEventSignalOptions&&);
+
+    // symbol: ??4ScriptActorEventSignalOptions@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptActorEventSignalOptions&
+    operator=(struct ScriptModuleMinecraft::ScriptActorEventSignalOptions const&);
 
     // symbol: ??1ScriptActorEventSignalOptions@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptActorEventSignalOptions();

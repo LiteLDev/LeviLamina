@@ -10,14 +10,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in6@@@Z
-    MCAPI explicit NetworkIdentifier(struct sockaddr_in6 const&);
+    // symbol: ??0NetworkIdentifier@@QEAA@XZ
+    MCAPI NetworkIdentifier();
 
     // symbol: ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in@@@Z
     MCAPI explicit NetworkIdentifier(struct sockaddr_in const&);
 
-    // symbol: ??0NetworkIdentifier@@QEAA@XZ
-    MCAPI NetworkIdentifier();
+    // symbol: ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in6@@@Z
+    MCAPI explicit NetworkIdentifier(struct sockaddr_in6 const&);
 
     // symbol: ?getAddress@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getAddress() const;

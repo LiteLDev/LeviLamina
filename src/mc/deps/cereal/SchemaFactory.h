@@ -23,13 +23,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
+    // ??0SchemaFactory@cereal@@QEAA@AEAUReflectionCtx@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
+    MCAPI SchemaFactory(struct cereal::ReflectionCtx&, std::string const&, std::string const&);
+
+    // symbol:
     // ??0SchemaFactory@cereal@@QEAA@USerializerTraits@1@AEAUReflectionCtx@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@2@Z
     MCAPI
     SchemaFactory(struct cereal::SerializerTraits, struct cereal::ReflectionCtx&, std::string const&, std::string const&);
-
-    // symbol:
-    // ??0SchemaFactory@cereal@@QEAA@AEAUReflectionCtx@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-    MCAPI SchemaFactory(struct cereal::ReflectionCtx&, std::string const&, std::string const&);
 
     // symbol:
     // ?bind@SchemaFactory@cereal@@QEAAAEAV12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z

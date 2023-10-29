@@ -10,14 +10,14 @@
 struct ItemStackNetIdVariant {
 public:
     // NOLINTBEGIN
+    // symbol: ??0ItemStackNetIdVariant@@QEAA@XZ
+    MCAPI ItemStackNetIdVariant();
+
     // symbol: ??0ItemStackNetIdVariant@@QEAA@$$QEAU0@@Z
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant&&);
 
     // symbol: ??0ItemStackNetIdVariant@@QEAA@AEBU0@@Z
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant const&);
-
-    // symbol: ??0ItemStackNetIdVariant@@QEAA@XZ
-    MCAPI ItemStackNetIdVariant();
 
     // symbol:
     // ?deserialize@ItemStackNetIdVariant@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -32,14 +32,14 @@ public:
     // symbol: ??4ItemStackNetIdVariant@@QEAAAEAU0@AEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@@Z
     MCAPI struct ItemStackNetIdVariant& operator=(ItemStackLegacyRequestId const&);
 
+    // symbol: ??4ItemStackNetIdVariant@@QEAAAEAU0@AEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@@Z
+    MCAPI struct ItemStackNetIdVariant& operator=(ItemStackNetId const&);
+
     // symbol: ??4ItemStackNetIdVariant@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant&&);
 
     // symbol: ??4ItemStackNetIdVariant@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant const&);
-
-    // symbol: ??4ItemStackNetIdVariant@@QEAAAEAU0@AEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@@Z
-    MCAPI struct ItemStackNetIdVariant& operator=(ItemStackNetId const&);
 
     // symbol: ??8ItemStackNetIdVariant@@QEBA_NAEBU0@@Z
     MCAPI bool operator==(struct ItemStackNetIdVariant const&) const;
