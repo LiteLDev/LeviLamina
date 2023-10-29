@@ -16,16 +16,17 @@ struct Version {
     ushort mMinor = 0;
     ushort mPatch = 0;
     Label  mLabel = Label::None;
+    ushort mLabelId = 0;
 
     explicit Version() = default;
-    LLAPI Version(ushort major, ushort minor, ushort patch, Label label = Label::None);
+    LLAPI Version(ushort major, ushort minor, ushort patch, Label label = Label::None, ushort labelId = 0);
 
     LLNDAPI bool operator<(Version const& other) const;
     LLNDAPI bool operator==(Version const& other) const;
 
     /**
-     * @brief Convert the version to a string
-     * @return std::string The version string like `1.0.0`
+     * @brief Convert the version core to a string
+     * @return std::string The version core string like `1.0.0`
      */
     LLNDAPI std::string toString() const;
     /**
@@ -33,6 +34,11 @@ struct Version {
      * @return std::string The version string like `1.0.0-alpha`
      */
     LLNDAPI std::string toFullString() const;
+    /**
+     * @brief Convert the version to another version without pre-release information
+     * @return Version The version without pre-release information
+     */
+    LLNDAPI Version toCoreVersion() const;
 
     /**
      * @brief Parse a string to a version
@@ -83,12 +89,6 @@ inline bool operator>=(ll::Version const& a, ll::Version const& b) { return b < 
 namespace ll {
 
 /**
- * @brief Get the loader version as a string
- *
- * @return std::string  The loader version
- */
-LLNDAPI std::string getLoaderVersionString();
-/**
  * @brief Get the loader version as a Version object
  *
  * @return ll::Version  The loader version
@@ -100,36 +100,6 @@ LLNDAPI Version getLoaderVersion();
  * @return bool  True if it is in debug mode
  */
 LLNDAPI bool isDebugMode();
-
-/**
- * @brief Get the data path of the plugin
- *
- * @param  pluginName   The name of the plugin
- * @return std::string  The data path of the plugin
- */
-LLNDAPI std::string getDataPath(std::string const& pluginName);
-
-/**
- * @brief Register a plugin
- *
- * @param  name     The name of the plugin
- * @param  desc     The description(introduction) of the plugin
- * @param  version  The version of the plugin(ll::Version)
- * @param  git      The git information of the plugin
- * @param  license  The license of the plugin
- * @param  website  The website
- * @return bool     True if the plugin is registered successfully
- * @note   The implementation of this function must be in header file(because of `GetCurrentModule`)
- */
-LLAPI bool registerPlugin(
-    std::string const& name,
-    std::string const& desc,
-    ll::Version const& version,
-    std::string const& git     = "",
-    std::string const& license = "",
-    std::string const& website = "",
-    HMODULE            handle  = GetCurrentModule()
-);
 
 /**
  * @brief Register a plugin

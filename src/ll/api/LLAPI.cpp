@@ -51,18 +51,86 @@ bool registerPlugin(
 ) {
     return PluginManager::registerPlugin(handle, name, desc, version, others);
 }
+// region ### Version ###
 
-std::string getDataPath(std::string const& pluginName) {
-    std::string dataPath = "plugins\\LeviLamina\\" + pluginName;
-    if (!std::filesystem::exists(StringUtils::str2wstr(dataPath))) {
-        std::error_code ec;
-        std::filesystem::create_directories(StringUtils::str2wstr(dataPath), ec);
-    }
-    return dataPath;
+inline std::array<std::string, 2> LABEL_NAMES = {"alpha", "beta"};
+
+Version::Version(ushort major, ushort minor, ushort patch, Label label, ushort labelId)
+: mMajor(major),
+  mMinor(minor),
+  mPatch(patch),
+  mLabel(label),
+  mLabelId(labelId) {}
+
+bool Version::operator<(Version const& other) const {
+    return mMajor < other.mMajor || (mMajor == other.mMajor && mMinor < other.mMinor)
+        || (mMajor == other.mMajor && mMinor == other.mMinor && mPatch < other.mPatch)
+        || (mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch && mLabel < other.mLabel)
+        || (mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch && mLabel == other.mLabel
+            && mLabelId < other.mLabelId);
 }
 
-std::string getLoaderVersionString() { return getLoaderVersion().toString(); }
+bool Version::operator==(Version const& other) const {
+    return mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch && mLabel == other.mLabel
+        && mLabelId == other.mLabelId;
+}
 
+std::string Version::toString() const { return fmt::format("{}.{}.{}", mMajor, mMinor, mPatch); }
+
+std::string Version::toFullString() const {
+    if (mLabel == Label::None) return toString();
+    if (mLabelId != 0) return fmt::format("{}-{}.{}", toString(), LABEL_NAMES[(ushort)mLabel], mLabelId);
+    return fmt::format("{}-{}", toString(), LABEL_NAMES[(ushort)mLabel]);
+}
+
+Version Version::toCoreVersion() const { return {mMajor, mMinor, mPatch}; }
+
+Version Version::parse(std::string const& str) {
+    Version     result;
+    std::string core = str;
+    std::string label;
+    size_t      pos = 0;
+    if (core.starts_with("v")) {
+        core = core.substr(1);
+    }
+
+    if ((pos = core.find_last_of('-')) != std::string::npos) {
+        core   = core.substr(0, pos);
+        label  = core.substr(pos + 1);
+        std::transform(label.begin(), label.end(), label.begin(), ::tolower);
+    }
+
+    if ((pos = label.find_first_of('.')) != std::string::npos) { // 1.0.0-alpha.1
+        label = label.substr(0, pos);
+        auto suffix = label.substr(pos + 1);
+        if ((pos = label.find_first_of('+')) != std::string::npos) { // 1.0.0-alpha.1+build.1
+            suffix = label.substr(0, pos);
+        }
+        try {
+            result.mLabelId = (ushort)std::stoi(suffix);
+        } catch (...) {
+            result.mLabelId = 0;
+        }
+    } else if ((pos = label.find_first_of('+')) != std::string::npos) { // 1.0.0-alpha+build.1
+        label = label.substr(0, pos);
+    }
+
+    for (ushort i = 0; i < (ushort)LABEL_NAMES.size(); ++i) {
+        if (label == LABEL_NAMES[i]) {
+            result.mLabel = static_cast<Label>((ushort)i);
+            break;
+        }
+    }
+
+    auto res = StringUtils::splitByPattern(&core, ".");
+
+    if (!res.empty()) result.mMajor = stoi(res[0]);
+    if (res.size() >= 2) result.mMinor = stoi(res[1]);
+    if (res.size() >= 3) result.mPatch = stoi(res[2]);
+
+    return result;
+}
+// endregion
 bool isDebugMode() { return globalConfig.debugMode; }
 
 Plugin* getPlugin(std::string const& name) { return PluginManager::getPlugin(name); }
@@ -75,65 +143,9 @@ std::unordered_map<std::string, Plugin*> getAllPlugins() { return PluginManager:
 
 HMODULE getLoaderHandle() { return GetCurrentModule(); }
 
-// region ### Version ###
-
-inline std::array<std::string, 2> LABEL_NAMES = {"alpha", "beta"};
-
-Version::Version(ushort major, ushort minor, ushort patch, Label label)
-: mMajor(major),
-  mMinor(minor),
-  mPatch(patch),
-  mLabel(label) {}
-
-bool Version::operator<(Version const& other) const {
-    return mMajor < other.mMajor || (mMajor == other.mMajor && mMinor < other.mMinor)
-        || (mMajor == other.mMajor && mMinor == other.mMinor && mPatch < other.mPatch)
-        || (mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch
-            && mLabel < other.mLabel);
-}
-
-bool Version::operator==(Version const& other) const {
-    return mMajor == other.mMajor && mMinor == other.mMinor && mPatch == other.mPatch
-        && mLabel == other.mLabel;
-}
-
-std::string Version::toString() const { return fmt::format("{}.{}.{}", mMajor, mMinor, mPatch); }
-
-std::string Version::toFullString() const {
-    if (mLabel == Label::None) return toString();
-    return fmt::format("{}-{}", toString(), LABEL_NAMES[(ushort)mLabel]);
-}
-
-Version Version::parse(std::string const& str) {
-    Version     result;
-    std::string basic = str;
-    std::string suffix;
-    size_t      pos = 0;
-    if ((pos = str.find_last_of('-')) != std::string::npos) {
-        basic  = str.substr(0, pos);
-        suffix = str.substr(pos + 1);
-        std::transform(suffix.begin(), suffix.end(), suffix.begin(), ::tolower);
-    }
-
-    for (ushort i = 0; i < (ushort)LABEL_NAMES.size(); ++i) {
-        if (suffix == LABEL_NAMES[i]) {
-            result.mLabel = static_cast<Label>((ushort)i);
-            break;
-        }
-    }
-
-    auto res = StringUtils::splitByPattern(&basic, ".");
-
-    if (!res.empty()) result.mMajor = stoi(res[0]);
-    if (res.size() >= 2) result.mMinor = stoi(res[1]);
-    if (res.size() >= 3) result.mPatch = stoi(res[2]);
-
-    return result;
-}
-// endregion
 
 Version getLoaderVersion() {
-    return {LL_VERSION_MAJOR, LL_VERSION_MINOR, LL_VERSION_PATCH, (Version::Label)LL_VERSION_LABEL};
+    return {LL_VERSION_MAJOR, LL_VERSION_MINOR, LL_VERSION_PATCH, (Version::Label)LL_VERSION_LABEL, LL_VERSION_LABEL_ID};
 }
 
 } // namespace ll
