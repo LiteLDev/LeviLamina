@@ -9,6 +9,7 @@ namespace ll::config {
 static constexpr const std::string_view metaDataName{".meta"};
 
 LLETAPI ll::Logger configLogger;
+using namespace ll::i18n_literals;
 
 template <typename T>
 concept IsConfig =
@@ -26,7 +27,7 @@ inline bool saveConfig(T const& config, std::string const& path) noexcept {
         std::ofstream{path} << data.dump(4);
         return true;
     } catch (...) {}
-    configLogger.error("config.save.fail"_tr); // TODO i18n
+    configLogger.error("config.save.fail"_tr);
     return false;
 }
 
@@ -34,12 +35,13 @@ template <IsConfig T, typename J = nlohmann::ordered_json>
 inline bool loadConfig(T& config, std::string const& path, bool overwriteAfterFail = true) noexcept {
     bool res = true;
     try {
-        if (auto content = ll::ReadAllFile(path); content && !content.value().empty()) {
+        auto content = ll::ReadAllFile(path);
+        if (content && !content.value().empty()) {
 
             auto data{J::parse(content.value(), nullptr, false, true)};
 
             if (!data.contains(metaDataName)) {
-                configLogger.warn("config.metadata.empty"_tr); // TODO i18n
+                configLogger.warn("config.metadata.empty"_tr);
                 res = false;
             } else {
                 auto& metaData = data[metaDataName];

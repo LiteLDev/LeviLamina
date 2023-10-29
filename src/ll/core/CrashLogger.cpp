@@ -11,6 +11,8 @@
 #include "ll/api/utils/WinHelper.h"
 #include "ll/core/Config.h"
 
+using namespace ll::i18n_literals;
+
 ll::Logger crashLogger("CrashLogger");
 
 bool ll::CrashLogger::startCrashLoggerProcess() {

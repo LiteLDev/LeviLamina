@@ -41,10 +41,10 @@
 
 #include <string>
 
+#include "compact_enc_det/util/encodings/encodings.h"
 #include "fmt/core.h"
 #include "fmt/os.h"
 #include "nlohmann/json.hpp"
-#include "compact_enc_det/util/encodings/encodings.h"
 #define UNICODE // compact_enc_det undefined UNICODE, so we need to define it again
 
 namespace ll::i18n {
@@ -281,9 +281,7 @@ inline I18nBase* load(Args&&... args) {
  */
 inline I18nBase* loadFrom(std::string const& name) {
     auto plugin = ll::findPlugin(name);
-    if (plugin.has_value()) {
-        return loadFromImpl(GetCurrentModule(), plugin->mHandle);
-    }
+    if (plugin.has_value()) { return loadFromImpl(GetCurrentModule(), plugin->mHandle); }
     return nullptr;
 }
 
@@ -362,6 +360,10 @@ LLAPI std::string convert(std::string const& text, ::Encoding from, ::Encoding t
 } // namespace TextEncoding
 } // namespace ll::i18n
 
+namespace ll::i18n_literals {
+
 inline std::string operator""_tr(char const* x, size_t len) {
     return ll::i18n::Translation::trImpl(GetCurrentModule(), std::string{x, len});
 }
+
+} // namespace ll::i18n_literals
