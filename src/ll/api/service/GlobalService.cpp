@@ -43,14 +43,14 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void,
     ::ServerInstance& ins
 ) {
-    ll::Global<RakNet::RakPeer>.init(
-        (RakNet::RakPeer*)((RakNetConnector&)(*ll::Global<Minecraft>->getNetworkSystem().getRemoteConnector()))
-            .getPeer()
-    );
     ll::Global<StructureManager>.init(ll::Global<Minecraft>->getStructureManager().get());
     ll::Global<Level>.init(ll::Global<Minecraft>->getLevel());
     ll::Global<ServerLevel>.init((ServerLevel*)ll::Global<Level>);
     origin(ins);
+    ll::Global<RakNet::RakPeer>.init(
+        (RakNet::RakPeer*)((RakNetConnector&)(*ll::Global<Minecraft>->getNetworkSystem().getRemoteConnector()))
+            .getPeer()
+    );
 }
 
 LL_AUTO_TYPED_INSTANCE_HOOK(

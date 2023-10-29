@@ -54,8 +54,8 @@ void Logger::OutputStream::print(std::string_view s) const {
             ));
             playerOutputCallback(str);
         }
-    } catch (std::exception& e) { std::cerr << "ERROR IN LOGGER API : " << e.what() << std::endl; } catch (...) {
-        std::cerr << "UNKNOWN ERROR IN LOGGER API" << std::endl;
+    } catch (std::exception& e) { std::cerr << "ERROR IN LOGGER API : " << e.what(); } catch (...) {
+        std::cerr << "UNKNOWN ERROR IN LOGGER API";
     }
 }
 
@@ -86,7 +86,7 @@ Logger::Logger(std::string_view title)
       {
         fmt::fg(fmt::color::light_blue),
         fmt::fg(fmt::color::lemon_chiffon),
-        fmt::emphasis::italic,
+        {},
         fmt::emphasis::italic,
         }
 }),
@@ -107,8 +107,8 @@ Logger::Logger(std::string_view title)
       {
           fmt::fg(fmt::color::light_blue),
           fmt::fg(fmt::color::yellow),
-          fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold,
-          fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold,
+          fmt::fg(fmt::terminal_color::bright_yellow),
+          fmt::fg(fmt::terminal_color::bright_yellow) | fmt::emphasis::bold,
       }}),
   error(OutputStream{
       *this,
@@ -116,9 +116,9 @@ Logger::Logger(std::string_view title)
       2,
       {
           fmt::fg(fmt::color::light_blue),
+          fmt::fg(fmt::color::tomato),
           fmt::fg(fmt::terminal_color::bright_red),
-          fmt::fg(fmt::color::red) | fmt::emphasis::bold,
-          fmt::fg(fmt::color::red) | fmt::emphasis::bold,
+          fmt::fg(fmt::terminal_color::bright_red) | fmt::emphasis::bold,
       }}),
   fatal(OutputStream{
       *this,
@@ -126,9 +126,9 @@ Logger::Logger(std::string_view title)
       1,
       {
           fmt::fg(fmt::color::light_blue),
+          fmt::fg(fmt::color::crimson),
           fmt::fg(fmt::color::red),
-          fmt::fg(fmt::terminal_color::red) | fmt::emphasis::bold | fmt::emphasis::italic,
-          fmt::fg(fmt::terminal_color::red) | fmt::emphasis::bold | fmt::emphasis::italic,
+          fmt::fg(fmt::color::red) | fmt::emphasis::bold | fmt::emphasis::italic,
       }}) {}
 
 void Logger::resetFile() {
