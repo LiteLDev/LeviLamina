@@ -1,37 +1,4 @@
 #pragma once
-//////////////////////////////////////////////////////
-// For Internationalization
-//
-// [Usage - Translation]
-//
-//  Translation::load("plugins/xxx/lang.json");
-//  ...
-//  tr("There are {0} days before {1} to come back", 3, "alex");          // return translated string [std::string]
-//
-//  ** In Translation File: plugins/xxx/lang.json
-//  {
-//      "zh_CN": {
-//          "There are {0} days before {1} to come back": "在{1}回来前还剩{0}天",
-//          "...": "...",
-//          "...": "..."
-//      }
-//  }
-//
-//
-// [Usage - Text Encoding]
-//
-//  Encoding local = encoding::getLocalEncoding();                      // Get local encoding
-//  Encoding code = encoding::detectEncoding("你好吗？");                // Detect the encoding of text
-//
-//  string hello = encoding::fromUnicode(L"Hello");                     // Convert Unicode wstring -> MBCS string
-//  wstring world = encoding::toUnicode("World");                       // Convert MBCS string -> Unicode wstring
-//
-//  string tomorrow = encoding::toUTF8("明天");                          // Convert MBCS string of any encoding to
-//  UTF8 string string tonight = encoding::convert("今天晚上", Encoding::CHINESE_GB, Encoding::UTF8);
-//                                                                          // Convert from one MBCS encoding to another
-//
-//////////////////////////////////////////////////////
-
 #include "ll/api/LLAPI.h"
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Global.h"
@@ -40,11 +7,9 @@
 
 #include <string>
 
-#include "compact_enc_det/util/encodings/encodings.h"
 #include "fmt/core.h"
 #include "fmt/os.h"
 #include "nlohmann/json.hpp"
-#define UNICODE // compact_enc_det undefined UNICODE, so we need to define it again
 
 namespace ll::i18n {
 
@@ -209,20 +174,7 @@ inline std::string trl(std::string const& localeName, S const& formatStr, Args&&
     return res;
 }
 
-
 } // namespace ll::i18n
-
-namespace encoding {
-LLAPI ::Encoding getLocalEncoding();
-LLAPI ::Encoding detectEncoding(std::string const& text, bool* isReliable = nullptr);
-
-LLAPI std::string fromUnicode(std::wstring const& text, ::Encoding to = ::Encoding::UTF8);
-LLAPI std::wstring toUnicode(std::string const& text, ::Encoding from = ::Encoding::UTF8);
-LLAPI std::string toUTF8(std::string const& text);
-LLAPI std::string toUTF8(std::string const& text, ::Encoding from);
-
-LLAPI std::string convert(std::string const& text, ::Encoding from, ::Encoding to);
-} // namespace encoding
 
 namespace ll::i18n_literals {
 
