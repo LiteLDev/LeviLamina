@@ -37,6 +37,8 @@ std::chrono::steady_clock::time_point ll::severStartEndTime;
 
 using namespace ll;
 
+std::unique_ptr<i18n::I18N> i18n::I18N::INSTANCE = std::make_unique<i18n::MultiFileI18N>("plugins/LeviLamina/LangPack/");
+
 // Add plugins folder to path
 void fixPluginsLibDir() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
@@ -282,9 +284,6 @@ void leviLaminaMain() {
     std::error_code ec;
     std::filesystem::create_directories("plugins", ec);
 
-    // I18n
-    auto i18n = ll::i18n::Translation::load("plugins/LeviLamina/LangPack/");
-
     // Load Config
     ll::loadLeviConfig();
 
@@ -292,7 +291,7 @@ void leviLaminaMain() {
     setupBugFixes();
 
     // Update default language
-    if (i18n && ll::globalConfig.language != "system") { i18n->defaultLocaleName = ll::globalConfig.language; }
+    if (i18n::I18N::INSTANCE && ll::globalConfig.language != "system") { i18n::I18N::INSTANCE->mDefaultLocaleName = ll::globalConfig.language; }
 
 
     // Unzip packed Node Modules
