@@ -8,6 +8,32 @@
 #include "ll/api/io/FunctionStream.h"
 #include "ll/api/io/StreamRedirector.h"
 
+#include "ll/core/Config.h"
+#include "mc/deps/core/common/bedrock/Interface.h"
+
+// disable auto compaction log
+LL_AUTO_STATIC_HOOK(
+    DiagnosticsLogHook,
+    HookPriority::Normal,
+    Bedrock::Diagnostics::Interface::log,
+    void,
+    ::BedrockLog::LogCategory category,
+    std::bitset<3>            channelMask,
+    ::BedrockLog::LogRule     rule,
+    ::LogAreaID               area,
+    uint                      priority,
+    char const*               func,
+    int                       line,
+    char const*               pszFormat,
+    char*                     va
+) {
+    if (ll::globalConfig.modules.tweak.disableAutoCompactionLog
+        && std::string_view{func}.starts_with("DBStorage::_scheduleNextAutoCompaction")) {
+        return;
+    }
+    origin(category, channelMask, rule, area, priority, func, line, pszFormat, va);
+}
+
 ll::Logger serverLogger("Server");
 
 static std::unordered_map<uint, decltype(serverLogger.debug)&> loggerMap = {
@@ -68,7 +94,10 @@ LL_AUTO_STATIC_HOOK(
     }
     va_end(va);
 
-    if (!success) return;
+    if (!success) {
+        serverLogger.fatal("!!! Unable to format log output message !!!");
+        return;
+    }
 
     std::istringstream iss(buffer);
     std::string        line;

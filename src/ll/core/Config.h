@@ -12,7 +12,7 @@ namespace ll {
 struct LeviConfig {
     int version = 3;
 
-    std::string language  = "system";
+    std::string language = "system";
     struct {
         bool colorLog = true;
         int  logLevel = 4;
