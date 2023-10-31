@@ -152,7 +152,7 @@ void LLListPluginsCommand(CommandOutput& output) {
         if (desc.find("§") == std::string::npos) desc.insert(0, "§7");
 
         auto fileName = u8str2str(std::filesystem::path(GetModulePath(plugin.mHandle)).filename().u8string());
-        oss << fmt::format("- {} §a[v{}] §8({})\n  {}\n", pluginName, plugin.mVersion.toFullString(), fileName, desc);
+        oss << fmt::format("- {} §a[v{}] §8({})\n  {}\n", pluginName, plugin.mVersion.to_string(), fileName, desc);
     }
     output.success(oss.str() + '\n');
     output.trSuccess("ll.cmd.listPlugin.tip");
@@ -170,7 +170,7 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
 
         outs.emplace("Name", fmt::format("{} ({})", plugin->mName, path.filename().string()));
         outs.emplace("Description", plugin->mDescription);
-        outs.emplace("Version", "v" + plugin->mVersion.toFullString());
+        outs.emplace("Version", "v" + plugin->mVersion.to_string());
         outs.emplace("FilePath", path.string());
         outs.merge(plugin->mExtraInfo);
         size_t width = 10;
@@ -190,7 +190,7 @@ void LLVersionCommand(CommandOutput& output) {
     output.trSuccess(
         "ll.cmd.version.msg",
         ll::getBdsVersion(),
-        ll::getLoaderVersion().toFullString(),
+        ll::getLoaderVersion().to_string(),
         ll::getServerProtocolVersion()
     );
 }

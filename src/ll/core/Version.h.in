@@ -1,18 +1,16 @@
 #pragma once
 
 // clang-format off
-
 #define LL_LABEL_ALPHA 0
 #define LL_LABEL_BETA  1
 #define LL_LABEL_NONE  255
 
-#define LL_VERSION_MAJOR    ${LL_VERSION_MAJOR}
-#define LL_VERSION_MINOR    ${LL_VERSION_MINOR}
-#define LL_VERSION_PATCH    ${LL_VERSION_PATCH}
-#define LL_VERSION_LABEL    ${LL_VERSION_LABEL}
-#define LL_VERSION_LABEL_ID ${LL_VERSION_LABEL_ID}
-
+#define LL_VERSION_MAJOR         ${LL_VERSION_MAJOR}
+#define LL_VERSION_MINOR         ${LL_VERSION_MINOR}
+#define LL_VERSION_PATCH         ${LL_VERSION_PATCH}
+${define LL_VERSION_PRERELEASE}
 #define LL_VERSION_COMMIT_SHA ${GIT_COMMIT}
+// clang-format on
 
 #define LL_WORKSPACE_FOLDER R"(${LL_WORKSPACE_FOLDER}\)"
 
@@ -21,28 +19,16 @@
 #define LL_VERSION_TO_STRING_INNER(ver) #ver
 #define LL_VERSION_TO_STRING(ver)       LL_VERSION_TO_STRING_INNER(ver)
 
-// Used in LeviLamina.rc or ScriptEngine.rc
-#if LL_VERSION_LABEL == LL_LABEL_ALPHA
+#ifdef LL_VERSION_PRERELEASE
 #define LL_FILE_VERSION_FLAG VS_FF_DEBUG
-#define LL_FILE_VERSION_STRING                                                                                 \
-    LL_VERSION_TO_STRING(LL_VERSION_MAJOR)                                                                     \
-    "." LL_VERSION_TO_STRING(LL_VERSION_MINOR) "." LL_VERSION_TO_STRING(LL_VERSION_PATCH               \
-    ) "-alpha." LL_VERSION_TO_STRING(LL_VERSION_LABEL_ID                                                 \
-    ) "+" LL_VERSION_TO_STRING(LL_VERSION_COMMIT_SHA)
-#elif LL_VERSION_LABEL == LL_LABEL_BETA
-#define LL_FILE_VERSION_FLAG VS_FF_DEBUG
-#define LL_FILE_VERSION_STRING                                                                                 \
-    LL_VERSION_TO_STRING(LL_VERSION_MAJOR)                                                                     \
-    "." LL_VERSION_TO_STRING(LL_VERSION_MINOR) "." LL_VERSION_TO_STRING(LL_VERSION_PATCH               \
-    ) "-beta." LL_VERSION_TO_STRING(LL_VERSION_LABEL_ID                                                  \
-    ) "+" LL_VERSION_TO_STRING(LL_VERSION_COMMIT_SHA)
-
+#define LL_FILE_VERSION_STRING                                                                                         \
+    LL_VERSION_TO_STRING(LL_VERSION_MAJOR)                                                                             \
+    "." LL_VERSION_TO_STRING(LL_VERSION_MINOR) "." LL_VERSION_TO_STRING(LL_VERSION_PATCH) LL_VERSION_PRERELEASE        \
+    LL_VERSION_TO_STRING(LL_VERSION_LABEL_ID) "+" LL_VERSION_TO_STRING(LL_VERSION_COMMIT_SHA)
 #else
 #define LL_FILE_VERSION_FLAG 0x00000000L
-#define LL_FILE_VERSION_STRING                                                                                 \
-    LL_VERSION_TO_STRING(LL_VERSION_MAJOR)                                                                     \
-    "." LL_VERSION_TO_STRING(LL_VERSION_MINOR) "." LL_VERSION_TO_STRING(LL_VERSION_PATCH               \
+#define LL_FILE_VERSION_STRING                                                                                         \
+    LL_VERSION_TO_STRING(LL_VERSION_MAJOR)                                                                             \
+    "." LL_VERSION_TO_STRING(LL_VERSION_MINOR) "." LL_VERSION_TO_STRING(LL_VERSION_PATCH                               \
     ) "+" LL_VERSION_TO_STRING(LL_VERSION_COMMIT_SHA)
 #endif
-
-// clang-format on

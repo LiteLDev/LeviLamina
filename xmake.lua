@@ -81,25 +81,17 @@ target("LeviLamina")
             print("Failed to parse version tag, using 0.0.0")
             major, minor, patch = 0, 0, 0
         end
-        local label, id = "none", 0
-        local mapping = {
-            ["none"] = "LL_LABEL_NONE",
-            ["alpha"] = "LL_LABEL_ALPHA",
-            ["beta"] = "LL_LABEL_BETA",
-        }
         if suffix then
-            label, id = suffix:match("-(%a+)%.(%d+)") -- like -alpha.1
-            if not label or not mapping[label] then
-                print("Version tag has suffix but failed to parse, using default label(none) and id(0)")
-                label, id = "none", 0
+            prerelease = suffix:match("-(.*)")
+            if prerelease then
+                prerelease = prerelease:gsub("\n", "")
+            end
+            if prerelease then
+                target:set("configvar", "LL_VERSION_PRERELEASE", prerelease)
             end
         end
-        label = mapping[label]
-        target:set("configvar", "LL_VERSION_LABEL", label)
-        target:set("configvar", "LL_VERSION_LABEL_ID", id)
         target:set("configvar", "LL_VERSION_MAJOR", major)
         target:set("configvar", "LL_VERSION_MINOR", minor)
-        target:set("configvar", "LL_VERSION_PATCH", patch)
         target:set("configvar", "LL_VERSION_PATCH", patch)
     end)
 

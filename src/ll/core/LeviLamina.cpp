@@ -155,7 +155,7 @@ void printLogo() {
 }
 
 void checkBetaVersion() {
-    if (ll::getLoaderVersion().mLabel != ll::Version::Label::None) {
+    if (ll::getLoaderVersion().preRelease) {
         logger.warn("ll.main.warning.betaVersion"_tr);
         logger.warn("ll.main.warning.productionEnv"_tr);
     }

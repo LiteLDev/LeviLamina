@@ -14,7 +14,7 @@
 namespace ll::string_utils {
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
-[[nodiscard]] inline std::vector<std::string_view> splitByPattern(std::string_view s, std::string_view pattern) {
+[[nodiscard]] constexpr std::vector<std::string_view> splitByPattern(std::string_view s, std::string_view pattern) {
     if (s.empty()) return {};
     size_t pos  = s.find(pattern);
     size_t size = s.size();

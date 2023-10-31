@@ -1,12 +1,11 @@
 #pragma once
-#include "ll/api/base/Global.h"
+
 #include <string>
 #include <unordered_map>
 
-namespace ll {
+#include "ll/api/plugin/Plugin.h"
 
-struct Plugin;
-struct Version;
+namespace ll::plugin {
 
 class PluginManager {
 
@@ -15,7 +14,7 @@ public:
         HMODULE                                          handle,
         std::string const&                               name,
         std::string const&                               description,
-        ll::Version const&                               version,
+        Version const&                                   version,
         std::map<std::string, std::string> const&        extraInfo,
         std::unordered_map<std::string, std::any> const& sharedData = {}
     );
@@ -27,4 +26,4 @@ public:
     LLAPI static bool unregisterPlugin(std::string const& name);
 };
 
-} // namespace ll
+} // namespace ll::plugin

@@ -8,7 +8,7 @@
 
 #include "windows.h"
 
-namespace ll {
+namespace ll::plugin {
 
 std::unordered_map<std::string, Plugin> plugins;
 
@@ -55,4 +55,4 @@ bool PluginManager::unregisterPlugin(std::string const& name) {
     }
 }
 
-} // namespace ll
+} // namespace ll::plugin

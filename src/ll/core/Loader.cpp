@@ -19,6 +19,8 @@
 #include "windows.h"
 
 using namespace ll::string_utils;
+using ll::plugin::PluginManager;
+using ll::plugin::Version;
 
 void ll::LoadMain() {
     ll::logger.info("ll.loader.loadMain.start"_tr);
@@ -44,7 +46,7 @@ void ll::LoadMain() {
             ++pluginCount;
 
             if (!PluginManager::findPlugin(lib).has_value()) {
-                if (!ll::PluginManager::registerPlugin(lib, pluginFileName, pluginFileName, ll::Version(1, 0, 0), {})) {
+                if (!PluginManager::registerPlugin(lib, pluginFileName, pluginFileName, {}, {})) {
                     ll::logger.error("ll.pluginManager.error.failToRegisterPlugin"_tr, u8str2str(path.u8string()));
                     if (PluginManager::findPlugin(pluginFileName).has_value()) {
                         ll::logger.error("ll.pluginManager.error.hasBeenRegistered"_tr, pluginFileName);
