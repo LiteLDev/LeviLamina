@@ -6,9 +6,9 @@
 
 namespace fs = std::filesystem;
 
-using ll::StringUtils::splitByPattern;
-using ll::StringUtils::str2wstr;
-using ll::StringUtils::wstr2str;
+using ll::string_utils::splitByPattern;
+using ll::string_utils::str2wstr;
+using ll::string_utils::wstr2str;
 
 namespace ll::i18n {
 
@@ -172,7 +172,7 @@ void MultiFileI18N::save(bool nested) {
             if (nested) {
                 auto out = nlohmann::json::object();
                 for (auto& [k, v] : lv) {
-                    auto keys = splitByPattern(&k, ".");
+                    auto keys = splitByPattern(k, ".");
                     auto name = keys.back();
                     keys.pop_back();
                     nlohmann::json& j = out;

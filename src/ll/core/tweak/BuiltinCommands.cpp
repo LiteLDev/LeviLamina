@@ -1,6 +1,5 @@
 ﻿#include "ll/api/LLAPI.h"
 #include "ll/api/ServerInfo.h"
-#include "ll/api/command/RegisterCommandHelper.h"
 #include "ll/core/Config.h"
 #include "ll/core/PluginManager.h"
 
@@ -17,8 +16,7 @@
 #include "mc/world/level/dimension/VanillaDimensions.h"
 
 using namespace ll;
-using namespace ll::StringUtils;
-using namespace ll::command::RegisterCommandHelper;
+using namespace ll::string_utils;
 
 class TeleportDimensionCommand : public Command {
 
@@ -116,16 +114,21 @@ public:
                 {"e",         DimensionType::TheEnd   },
         }
         );
-        auto dimensionTypeParam = makeMandatory<CommandParameterDataType::Enum>(
+        auto dimensionTypeParam = CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
             &TeleportDimensionCommand::DimensionId,
             "Dimension",
             "DimensionType"
         );
-        auto dimensionIdParam =
-            makeMandatory((int TeleportDimensionCommand::*)&TeleportDimensionCommand::DimensionId, "DimensionId");
-        auto victimParam =
-            makeMandatory(&TeleportDimensionCommand::Victim, "victim", &TeleportDimensionCommand::Victim_isSet);
-        auto positionParam = makeOptional(
+        auto dimensionIdParam = CommandParameterData::makeMandatory(
+            (int TeleportDimensionCommand::*)&TeleportDimensionCommand::DimensionId,
+            "DimensionId"
+        );
+        auto victimParam = CommandParameterData::makeMandatory(
+            &TeleportDimensionCommand::Victim,
+            "victim",
+            &TeleportDimensionCommand::Victim_isSet
+        );
+        auto positionParam = CommandParameterData::makeOptional(
             &TeleportDimensionCommand::CommandPos,
             "Position",
             &TeleportDimensionCommand::CommandPos_isSet
@@ -375,7 +378,11 @@ public:
         );
         registry->registerOverload<LLCommand>(
             "ll",
-            makeMandatory<CommandParameterDataType::Enum>(&LLCommand::operation, "Operation", "Operation_Common")
+            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
+                &LLCommand::operation,
+                "Operation",
+                "Operation_Common"
+            )
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion)
         );
 
@@ -399,16 +406,20 @@ public:
         );
         registry->registerOverload<LLCommand>(
             "ll",
-            makeMandatory<CommandParameterDataType::Enum>(&LLCommand::operation, "Operation", "Operation_Settings")
+            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
+                &LLCommand::operation,
+                "Operation",
+                "Operation_Settings"
+            )
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            makeMandatory<CommandParameterDataType::Enum>(
+            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
                 &LLCommand::settingsOperation,
                 "SettingsOperation",
                 "SettingsOperation"
             )
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            makeOptional(&LLCommand::key, "JsonPointer", &LLCommand::hasKeySet),
-            makeOptional(&LLCommand::value, "Value", &LLCommand::hasValueSet)
+            CommandParameterData::makeOptional(&LLCommand::key, "JsonPointer", &LLCommand::hasKeySet),
+            CommandParameterData::makeOptional(&LLCommand::value, "Value", &LLCommand::hasValueSet)
         );
 
         // ll load
@@ -420,9 +431,13 @@ public:
         );
         registry->registerOverload<LLCommand>(
             "ll",
-            makeMandatory<CommandParameterDataType::Enum>(&LLCommand::operation, "Operation", "Operation_FreeFilePath")
+            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
+                &LLCommand::operation,
+                "Operation",
+                "Operation_FreeFilePath"
+            )
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            makeMandatory<CommandParameterDataType::Basic>(
+            CommandParameterData::makeMandatory<CommandParameterDataType::Basic>(
                 &LLCommand::pluginNameToDoOperation,
                 "pluginPath",
                 nullptr,
@@ -439,13 +454,13 @@ public:
         );
         registry->registerOverload<LLCommand>(
             "ll",
-            makeMandatory<CommandParameterDataType::Enum>(
+            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
                 &LLCommand::operation,
                 "Operation",
                 "Operation_MustPluginName"
             )
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            makeMandatory<CommandParameterDataType::SoftEnum>(
+            CommandParameterData::makeMandatory<CommandParameterDataType::SoftEnum>(
                 (std::string LLCommand::*)&LLCommand::pluginNameToDoOperation,
                 "pluginName",
                 "PluginName",
@@ -464,13 +479,13 @@ public:
         );
         registry->registerOverload<LLCommand>(
             "ll",
-            makeMandatory<CommandParameterDataType::Enum>(
+            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
                 &LLCommand::operation,
                 "Operation",
                 "Operation_OptionalPluginName"
             )
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            makeOptional<CommandParameterDataType::SoftEnum>(
+            CommandParameterData::makeOptional<CommandParameterDataType::SoftEnum>(
                 (std::string LLCommand::*)&LLCommand::pluginNameToDoOperation,
                 "pluginName",
                 "PluginName",

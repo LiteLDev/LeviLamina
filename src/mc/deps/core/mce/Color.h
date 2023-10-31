@@ -10,7 +10,7 @@ class Color;
 
 class Color : public floatN4<Color> {
 public:
-    constexpr explicit Color(uint hex) noexcept : Color((hex >> 16) & 0xFF, (hex >> 8) & 0xFF, hex & 0xFF) {}
+    constexpr Color(uint hex) noexcept : Color((hex >> 16) & 0xFF, (hex >> 8) & 0xFF, hex & 0xFF) {}
 
     template <std::integral T0, std::integral T1, std::integral T2, std::integral T3 = uint>
     constexpr Color(T0 const& ir, T1 const& ig, T2 const& ib, T3 const& ia = 255) noexcept
@@ -51,19 +51,19 @@ public:
         }
     };
 
-    [[nodiscard]] [[maybe_unused]] constexpr class Vec3 toVec3() const noexcept { return {r, g, b}; }
+    [[nodiscard]] constexpr class Vec3 toVec3() const noexcept { return {r, g, b}; }
 
-    [[nodiscard]] [[maybe_unused]] constexpr class mce::Color sRGBToLinear() const noexcept {
+    [[nodiscard]] constexpr class mce::Color sRGBToLinear() const noexcept {
         auto color{toVec3()};
         return {select(color.gt(0.04045f), ::pow(color / 1.055f + 0.055f, {2.4f}), color / 12.92f), a};
     }
 
-    [[nodiscard]] [[maybe_unused]] constexpr class mce::Color LinearTosRGB() const noexcept {
+    [[nodiscard]] constexpr class mce::Color LinearTosRGB() const noexcept {
         auto color{toVec3()};
         return {select(color.gt(0.0031308f), ::pow(color, {1.0f / 2.4f}) * 1.055f - 0.055f, color * 12.92f), a};
     }
 
-    [[nodiscard]] [[maybe_unused]] constexpr class mce::Color LinearToXYZ() const noexcept {
+    [[nodiscard]] constexpr class mce::Color LinearToXYZ() const noexcept {
         auto color{toVec3()};
         return {
             color.dot({0.4124f, 0.3576f, 0.1805f}),
@@ -72,7 +72,7 @@ public:
             a};
     }
 
-    [[nodiscard]] [[maybe_unused]] constexpr class mce::Color XYZToLinear() const noexcept {
+    [[nodiscard]] constexpr class mce::Color XYZToLinear() const noexcept {
         auto color{toVec3()};
         return {
             color.dot({3.2410f, -1.5374f, -0.4986f}),
@@ -81,7 +81,7 @@ public:
             a};
     }
 
-    [[nodiscard]] [[maybe_unused]] constexpr class mce::Color XYZToLab() const noexcept {
+    [[nodiscard]] constexpr class mce::Color XYZToLab() const noexcept {
         auto color = toVec3() / Vec3{0.950489f, 1.0f, 1.08884f};
 
         constexpr float delta  = 6.0f / 29.0f;
@@ -92,7 +92,7 @@ public:
         return {116.0f * color.y - 16.0f, 500.0f * (color.x - color.y), 200.0f * (color.y - color.z), a};
     }
 
-    [[nodiscard]] [[maybe_unused]] constexpr class mce::Color LabToXYZ() const noexcept {
+    [[nodiscard]] constexpr class mce::Color LabToXYZ() const noexcept {
         float tmpy = (r + 16.0f) / 116.0f;
         Vec3  color{tmpy + g / 500.0f, tmpy, tmpy - b / 200.0f};
 
@@ -106,13 +106,13 @@ public:
         };
     }
 
-    [[nodiscard]] [[maybe_unused]] constexpr double deltaE76(Color const& dst) const noexcept { // 2.3 for JND
+    [[nodiscard]] constexpr double deltaE76(Color const& dst) const noexcept { // 2.3 for JND
         return this->sRGBToLinear().LinearToXYZ().XYZToLab().toVec3().distanceTo(
             dst.sRGBToLinear().LinearToXYZ().XYZToLab().toVec3()
         );
     }
 
-    [[nodiscard]] [[maybe_unused]] inline double deltaE94(Color const& dst) const noexcept { // 1.0 for JND
+    [[nodiscard]] inline double deltaE94(Color const& dst) const noexcept { // 1.0 for JND
         auto m1 = this->sRGBToLinear().LinearToXYZ().XYZToLab().toVec3();
         Vec2 ab1{m1.y, m1.z};
         auto m2 = dst.sRGBToLinear().LinearToXYZ().XYZToLab().toVec3();
@@ -124,7 +124,7 @@ public:
         return (D / Vec3{1.0, 1.0 + 0.045 * C1, 1.0 + 0.015 * C2}).length();
     }
 
-    [[nodiscard]] [[maybe_unused]] inline double deltaE00(Color const& dst) const noexcept { // 1.0 for JND
+    [[nodiscard]] inline double deltaE00(Color const& dst) const noexcept { // 1.0 for JND
         auto ma = this->sRGBToLinear().LinearToXYZ().XYZToLab().toVec3();
         auto mb = dst.sRGBToLinear().LinearToXYZ().XYZToLab().toVec3();
 
@@ -203,7 +203,7 @@ public:
         return sqrt(dL * dL + dCp * dCp + dHp * dHp + RT * dCp * dHp);
     }
 
-    [[nodiscard]] [[maybe_unused]] inline double distanceTo(Color const& dst) const noexcept { return deltaE00(dst); }
+    [[nodiscard]] inline double distanceTo(Color const& dst) const noexcept { return deltaE00(dst); }
 
 private:
     constexpr uchar static hexToNum(char hex) noexcept {

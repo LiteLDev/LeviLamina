@@ -11,12 +11,10 @@
 #include "fmt/color.h"
 #include "fmt/core.h"
 
-namespace ll::StringUtils {
+namespace ll::string_utils {
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
-// for lifetime reason, use pointer instead of reference
-inline std::vector<std::string_view> splitByPattern(const std::string* str, std::string const& pattern) {
-    std::string_view s = *str;
+[[nodiscard]] inline std::vector<std::string_view> splitByPattern(std::string_view s, std::string_view pattern) {
     if (s.empty()) return {};
     size_t pos  = s.find(pattern);
     size_t size = s.size();
@@ -38,18 +36,11 @@ inline std::vector<std::string_view> splitByPattern(const std::string* str, std:
  * @param newValue  The string to replace with
  * @return std::string  The modified input std::string
  */
-inline std::string replaceAll(std::string str, std::string const& oldValue, std::string const& newValue) {
+[[nodiscard]] inline std::string replaceAll(std::string str, std::string const& oldValue, std::string const& newValue) {
     for (std::string::size_type pos(0); pos != std::string::npos; pos += newValue.length()) {
         if ((pos = str.find(oldValue, pos)) != std::string::npos) str.replace(pos, oldValue.length(), newValue);
         else break;
     }
-    return str;
-}
-
-// "hello {Jim}" -> "hello {{Jim}}"  (for fmt bug)
-inline std::string escapeCurlyBracket(std::string str) {
-    replaceAll(str, "{", "{{");
-    replaceAll(str, "}", "}}");
     return str;
 }
 
@@ -71,7 +62,8 @@ inline std::string escapeCurlyBracket(std::string str) {
  */
 template <typename T>
     requires std::is_integral_v<T>
-inline std::string intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero = true) {
+[[nodiscard]] inline std::string
+intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero = true) {
     std::string result;
     if (value < 0) result += '-';
     if (!no0x) result += "0x";
@@ -87,7 +79,7 @@ inline std::string intToHexStr(T value, bool upperCase = true, bool no0x = true,
 }
 
 template <typename S, typename Char = fmt::char_t<S>>
-std::string applyTextStyle(fmt::text_style const& ts, S const& format_str) {
+[[nodiscard]] inline std::string applyTextStyle(fmt::text_style const& ts, S const& format_str) {
     fmt::basic_memory_buffer<Char> buf;
     auto                           fmt       = fmt::detail::to_string_view(format_str);
     bool                           has_style = false;
@@ -111,11 +103,11 @@ std::string applyTextStyle(fmt::text_style const& ts, S const& format_str) {
     return fmt::to_string(buf);
 }
 
-std::string removeEscapeCode(std::string_view str);
+LLNDAPI std::string removeEscapeCode(std::string_view str);
 
-std::string replaceAnsiToMcCode(std::string_view str);
+LLNDAPI std::string replaceAnsiToMcCode(std::string_view str);
 
-std::string replaceMcToAnsiCode(std::string_view str);
+LLNDAPI std::string replaceMcToAnsiCode(std::string_view str);
 
 namespace CodePage {
 enum : uint {
@@ -129,32 +121,95 @@ LLNDAPI std::wstring str2wstr(std::string_view str, uint codePage = CodePage::UT
 
 LLNDAPI std::string wstr2str(std::wstring_view str, uint codePage = CodePage::UTF8);
 
-LLNDAPI std::string str2str(std::string_view str, uint fromCodePage, uint toCodePage);
+LLNDAPI std::string str2str(std::string_view str, uint fromCodePage, uint toCodePage = CodePage::UTF8);
 
-inline std::string u8str2str(std::u8string str) {
+[[nodiscard]] inline std::string u8str2str(std::u8string str) {
     std::string& tmp = *reinterpret_cast<std::string*>(&str);
     return {std::move(tmp)};
 }
 
-inline std::u8string str2u8str(std::string str) {
+[[nodiscard]] inline std::u8string str2u8str(std::string str) {
     std::u8string& tmp = *reinterpret_cast<std::u8string*>(&str);
     return {std::move(tmp)};
 }
 
-inline std::string const& u8str2strConst(std::u8string const& str) {
+[[nodiscard]] inline std::string const& u8str2strConst(std::u8string const& str) {
     return *reinterpret_cast<const std::string*>(&str);
 }
 
-inline std::u8string const& str2u8strConst(std::string const& str) {
+[[nodiscard]] inline std::u8string const& str2u8strConst(std::string const& str) {
     return *reinterpret_cast<const std::u8string*>(&str);
 }
 
-inline std::string_view u8sv2sv(std::u8string_view str) {
+[[nodiscard]] inline std::string_view u8sv2sv(std::u8string_view str) {
     return {reinterpret_cast<char const*>(str.data()), str.size()};
 }
 
-inline std::u8string_view sv2u8sv(std::string_view str) {
+[[nodiscard]] inline std::u8string_view sv2u8sv(std::string_view str) {
     return {reinterpret_cast<const char8_t*>(str.data()), str.size()};
 }
+template <class T, auto f>
+[[nodiscard]] inline T svtonum(std::string_view str, size_t* idx, int base) {
+    int&        errnoRef = errno;
+    const char* ptr      = str.data();
+    char*       eptr;
+    errnoRef       = 0;
+    const auto ans = f(ptr, &eptr, base);
+    if (ptr == eptr) { throw std::invalid_argument("invalid stoi argument"); }
+    if (errnoRef == ERANGE) { throw std::out_of_range("stoi argument out of range"); }
+    if (idx) { *idx = static_cast<size_t>(eptr - ptr); }
+    return static_cast<T>(ans);
+}
+template <class T, auto f>
+[[nodiscard]] inline T svtonum(std::string_view str, size_t* idx) {
+    int&        errnoRef = errno;
+    const char* ptr      = str.data();
+    char*       eptr;
+    errnoRef       = 0;
+    const auto ans = f(ptr, &eptr);
+    if (ptr == eptr) { throw std::invalid_argument("invalid stoi argument"); }
+    if (errnoRef == ERANGE) { throw std::out_of_range("stoi argument out of range"); }
+    if (idx) { *idx = static_cast<size_t>(eptr - ptr); }
+    return static_cast<T>(ans);
+}
 
-} // namespace ll::StringUtils
+[[nodiscard]] inline schar svtoc(std::string_view str, size_t* idx = nullptr, int base = 10) {
+    return svtonum<schar, strtol>(str, idx, base);
+}
+[[nodiscard]] inline uchar svtouc(std::string_view str, size_t* idx = nullptr, int base = 10) {
+    return svtonum<uchar, strtoul>(str, idx, base);
+}
+[[nodiscard]] inline short svtos(std::string_view str, size_t* idx = nullptr, int base = 10) {
+    return svtonum<short, strtol>(str, idx, base);
+}
+[[nodiscard]] inline ushort svtous(std::string_view str, size_t* idx = nullptr, int base = 10) {
+    return svtonum<ushort, strtoul>(str, idx, base);
+}
+[[nodiscard]] inline int svtoi(std::string_view str, size_t* idx = nullptr, int base = 10) {
+    return svtonum<int, strtol>(str, idx, base);
+}
+[[nodiscard]] inline uint svtoui(std::string_view str, size_t* idx = nullptr, int base = 10) {
+    return svtonum<uint, strtoul>(str, idx, base);
+}
+[[nodiscard]] inline long svtol(std::string_view str, size_t* idx = nullptr, int base = 10) {
+    return svtonum<long, strtol>(str, idx, base);
+}
+[[nodiscard]] inline ulong svtoul(std::string_view str, size_t* idx = nullptr, int base = 10) {
+    return svtonum<ulong, strtoul>(str, idx, base);
+}
+[[nodiscard]] inline int64 svtoll(std::string_view str, size_t* idx = nullptr, int base = 10) {
+    return svtonum<int64, strtoll>(str, idx, base);
+}
+[[nodiscard]] inline uint64 svtoull(std::string_view str, size_t* idx = nullptr, int base = 10) {
+    return svtonum<uint64, strtoull>(str, idx, base);
+}
+[[nodiscard]] inline float svtof(std::string_view str, size_t* idx = nullptr) {
+    return svtonum<float, strtof>(str, idx);
+}
+[[nodiscard]] inline double svtod(std::string_view str, size_t* idx = nullptr) {
+    return svtonum<double, strtof>(str, idx);
+}
+[[nodiscard]] inline ldouble svtold(std::string_view str, size_t* idx = nullptr) {
+    return svtonum<ldouble, strtof>(str, idx);
+}
+} // namespace ll::string_utils

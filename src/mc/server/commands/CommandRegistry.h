@@ -422,7 +422,7 @@ public:
     // following is the command parameter overloading
 
     template <typename T>
-    inline static std::unique_ptr<Command> allocateCommand() {
+    [[nodiscard]] inline static std::unique_ptr<Command> allocateCommand() {
         return std::make_unique<T>();
     };
 
@@ -904,7 +904,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    inline auto& $ParseRuleSymbols() { return ParseRuleSymbols; }
+    auto& $ParseRuleSymbols() { return ParseRuleSymbols; }
 
     // NOLINTEND
 };

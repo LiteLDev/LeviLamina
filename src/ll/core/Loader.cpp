@@ -18,13 +18,13 @@
 
 #include "windows.h"
 
-using namespace ll::StringUtils;
+using namespace ll::string_utils;
 
 void ll::LoadMain() {
     ll::logger.info("ll.loader.loadMain.start"_tr);
 
     // Load plugins
-    int                      pluginCount = 0;
+    int pluginCount = 0;
 
     std::filesystem::directory_iterator ent("plugins");
     for (auto& file : ent) {
@@ -32,10 +32,8 @@ void ll::LoadMain() {
         if (!file.is_regular_file()) { continue; }
         std::filesystem::path const& path = file.path();
 
-        auto ext = path.extension().u8string();
-
         // Check is dll
-        if (ext != u8".dll") { continue; }
+        if (path.extension() != ".dll") { continue; }
 
         // Avoid preloaded plugin
         auto pluginFileName = u8str2str(path.filename().u8string());
@@ -60,6 +58,5 @@ void ll::LoadMain() {
         }
     }
 
-    // TODO: call OnPostInit Event
     ll::logger.info("ll.loader.loadMain.done"_tr, pluginCount);
 }

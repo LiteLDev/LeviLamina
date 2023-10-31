@@ -209,16 +209,17 @@ extern void RegisterCommands();
 
 
 // bugfix
-
+namespace ll::bugfix {
 extern void enableArrayTagBugFix();
-
+} // namespace ll::bugfix
 void setupBugFixes() {
     auto& bugfixSettings = ll::globalConfig.modules.tweak.bugfixes;
+    using namespace ll::bugfix;
     if (bugfixSettings.fixArrayTagCompareBug) { enableArrayTagBugFix(); }
 }
 
 namespace bstats {
-void registerBStats();
+extern void registerBStats();
 }
 
 namespace ll::i18n {
@@ -227,9 +228,8 @@ extern std::string globalDefaultLocaleName;
 
 void leviLaminaMain() {
 
-#if !defined(LL_DEBUG)
     _set_se_translator(seh_exception::TranslateSEHtoCE);
-#endif
+
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
 
@@ -270,7 +270,7 @@ void leviLaminaMain() {
 
     // Rename Window
     HWND         hwnd = GetConsoleWindow();
-    std::wstring s    = ll::StringUtils::str2wstr("Bedrock Dedicated Server " + ll::getBdsVersion());
+    std::wstring s    = ll::string_utils::str2wstr("Bedrock Dedicated Server " + ll::getBdsVersion());
     SetWindowText(hwnd, s.c_str());
 
     // Register Exit Event Handler.

@@ -32,7 +32,6 @@ add_requires("gtest 1.12.1")
 
 -- liteldev-repo
 add_requires("dyncall 1.4")
-add_requires("compact_enc_det v1.0.1")
 add_requires("pcg_cpp v1.0.0")
 add_requires("preloader v1.3.0")
 add_requires("symbolprovider v1.1.0")
@@ -68,7 +67,7 @@ target("LeviLamina")
     -- xmake-repo
     add_packages("asio", "cpp-httplib", "entt", "fmt", "gsl", "gtest", "leveldb", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
     -- liteldev-repo
-    add_packages("pcg_cpp", "compact_enc_det", "dyncall", "preloader", "symbolprovider", "ctre", "pfr")
+    add_packages("pcg_cpp", "dyncall", "preloader", "symbolprovider", "ctre", "pfr")
     if has_config("localbdslibrary") then
         add_packages("localbdslibrary")
     else

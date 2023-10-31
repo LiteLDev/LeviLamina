@@ -9,7 +9,7 @@ LLNDAPI std::string GetLastErrorMessage(DWORD errorMessageId);
 
 // Create a new process and get its output when exited
 
-LLAPI std::pair<int, std::string>
+LLNDAPI std::pair<int, std::string>
       NewProcessSync(std::string const& process, int timeLimit = -1, bool noReadOutput = true);
 
 /**
@@ -17,7 +17,7 @@ LLAPI std::pair<int, std::string>
  *
  * @return  HMODULE  DLL Module Handler
  */
-HMODULE inline GetCurrentModule() {
+[[nodiscard]] inline HMODULE GetCurrentModule() {
     HMODULE hModule = nullptr;
     if (GetModuleHandleEx(
             GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,

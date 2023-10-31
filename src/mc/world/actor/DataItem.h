@@ -17,19 +17,19 @@ public:
     bool           mDirty = true;
 
     template <typename T>
-    inline optional_ref<T const> getData() const;
+    [[nodiscard]] inline optional_ref<T const> getData() const;
     template <typename T>
-    inline optional_ref<T> getData();
+    [[nodiscard]] inline optional_ref<T> getData();
     template <typename T>
     inline bool setData(T const& value);
 
     DataItem(DataItemType type, ushort id) : mType(type), mId(id) {}
 
     template <typename T>
-    inline static std::unique_ptr<DataItem> create(ushort key, T const& value);
+    [[nodiscard]] inline static std::unique_ptr<DataItem> create(ushort key, T const& value);
 
     template <typename T>
-    inline static std::unique_ptr<DataItem> create(::ActorDataIDs key, T const& value);
+    [[nodiscard]] inline static std::unique_ptr<DataItem> create(::ActorDataIDs key, T const& value);
 
 public:
     // NOLINTBEGIN

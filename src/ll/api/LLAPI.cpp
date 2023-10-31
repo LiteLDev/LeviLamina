@@ -18,13 +18,7 @@
 
 namespace ll {
 
-namespace {
-inline ushort stoi(std::string_view str) {
-    ushort ret = UINT16_MAX;
-    std::from_chars(str.data(), str.data() + str.size(), ret);
-    return ret;
-}
-} // namespace
+using ll::string_utils::svtous;
 
 #pragma region Version
 
@@ -87,7 +81,7 @@ Version Version::parse(std::string const& str) {
             suffix = label.substr(0, pos);
         }
         try {
-            result.mLabelId = (ushort)std::stoi(suffix);
+            result.mLabelId = svtous(suffix);
         } catch (...) { result.mLabelId = 0; }
     } else if ((pos = label.find_first_of('+')) != std::string::npos) { // 1.0.0-alpha+build.1
         label = label.substr(0, pos);
@@ -100,11 +94,11 @@ Version Version::parse(std::string const& str) {
         }
     }
 
-    auto res = StringUtils::splitByPattern(&core, ".");
+    auto res = string_utils::splitByPattern(core, ".");
 
-    if (!res.empty()) result.mMajor = stoi(res[0]);
-    if (res.size() >= 2) result.mMinor = stoi(res[1]);
-    if (res.size() >= 3) result.mPatch = stoi(res[2]);
+    if (!res.empty()) result.mMajor = svtous(res[0]);
+    if (res.size() >= 2) result.mMinor = svtous(res[1]);
+    if (res.size() >= 3) result.mPatch = svtous(res[2]);
 
     return result;
 }
@@ -113,9 +107,9 @@ Version Version::parse(std::string const& str) {
 #pragma region Plugin
 std::string    Plugin::getDefaultDataPath() const {
     std::string dataPath = "plugins\\" + mName;
-    if (!std::filesystem::exists(StringUtils::str2wstr(dataPath))) {
+    if (!std::filesystem::exists(string_utils::str2wstr(dataPath))) {
         std::error_code ec;
-        std::filesystem::create_directories(StringUtils::str2wstr(dataPath), ec);
+        std::filesystem::create_directories(string_utils::str2wstr(dataPath), ec);
     }
     return dataPath;
 }

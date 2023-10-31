@@ -1,17 +1,18 @@
 #include "ll/api/utils/StringUtils.h"
-
 #include "ctre/ctre-unicode.hpp"
-
 #include "ll/api/base/Global.h"
-
+#include "magic_enum.hpp"
+#include "mc/deps/core/mce/Color.h"
 #include "windows.h"
 
-namespace ll::StringUtils {
+namespace ll::string_utils {
 
 fmt::text_style getTextStyleFromCode(std::string_view code) {
     if (code.starts_with("§")) {
         switch (code[2]) {
             // clang-format off
+        default :
+        case 'f': return fmt::fg(fmt::terminal_color::bright_white);
         case '0': return fmt::fg(fmt::terminal_color::black);
         case '1': return fmt::fg(fmt::rgb(0x0000AA));
         case '2': return fmt::fg(fmt::rgb(0x00AA00));
@@ -38,23 +39,116 @@ fmt::text_style getTextStyleFromCode(std::string_view code) {
         case 's': return fmt::fg(fmt::rgb(0x2CBAA8));
         case 't': return fmt::fg(fmt::rgb(0x21497B));
         case 'u': return fmt::fg(fmt::rgb(0x9A5CC6));
-        case 'k': return fmt::emphasis::reverse;
+        case 'k': return fmt::emphasis::blink;
         case 'l': return fmt::emphasis::bold;
         case 'o': return fmt::emphasis::italic;
         case 'r': return {};
-        case 'f':
-        default : return fmt::fg(fmt::terminal_color::bright_white);
             // clang-format on
         }
     } else if (code.starts_with('\x1B')) {
-        // TODO
+        code.remove_prefix(2);
+        code.remove_suffix(1);
+        if (code.find(';') != std::string_view::npos) {
+            bool background = code.starts_with('4');
+            code.remove_prefix(1);
+            if (!code.starts_with("8;2;")) { return {}; }
+            code.remove_prefix(4);
+            auto svec = splitByPattern(code, ";");
+            if (svec.size() != 3) { return {}; }
+            auto colorFromCode = fmt::rgb(svtouc(svec[0]), svtouc(svec[1]), svtouc(svec[2]));
+            if (background) {
+                return fmt::bg(colorFromCode);
+            } else {
+                return fmt::fg(colorFromCode);
+            }
+        } else {
+            int num = svtoi(code);
+            if (magic_enum::enum_contains<fmt::terminal_color>((uchar)num)) {
+                return fmt::fg((fmt::terminal_color)num);
+            } else if (magic_enum::enum_contains<fmt::terminal_color>((uchar)(num - 10))) {
+                return fmt::bg((fmt::terminal_color)(num - 10));
+            } else {
+                switch (num) {
+                    // clang-format off
+                    case 1: return fmt::emphasis::bold;
+                    case 2: return fmt::emphasis::faint;
+                    case 3: return fmt::emphasis::italic;
+                    case 4: return fmt::emphasis::underline;
+                    case 5: return fmt::emphasis::blink;
+                    case 7: return fmt::emphasis::reverse;
+                    case 8: return fmt::emphasis::conceal;
+                    case 9: return fmt::emphasis::strikethrough;
+                    default: break;
+                    // clang-format on
+                }
+            }
+        }
     }
 
     return {};
 }
 
 std::string getMcCodeFromTextStyle(fmt::text_style style) {
-    // TODO
+    std::string res;
+    bool        hasMcStyle = false;
+    if (style.has_emphasis()) {
+        hasMcStyle = true;
+        if ((uchar)(fmt::emphasis::blink) & (uchar)(style.get_emphasis())) { res += "§k"; }
+        if ((uchar)(fmt::emphasis::bold) & (uchar)(style.get_emphasis())) { res += "§l"; }
+        if ((uchar)(fmt::emphasis::italic) & (uchar)(style.get_emphasis())) { res += "§o"; }
+    }
+    if (style.has_foreground()) {
+        hasMcStyle = true;
+        auto fg    = style.get_foreground();
+        if (fg.is_rgb) {
+            auto color = mce::Color(fg.value.rgb_color);
+            // clang-format off
+            static const std::unordered_map<std::string_view, mce::Color> carr{
+                {"§0", 0x000000}, {"§1", 0x0000AA}, {"§2", 0x00AA00}, {"§3", 0x00AAAA},
+                {"§4", 0xAA0000}, {"§5", 0xAA00AA}, {"§6", 0xFFAA00}, {"§7", 0xAAAAAA},
+                {"§8", 0x555555}, {"§9", 0x5555FF}, {"§a", 0x55FF55}, {"§b", 0x55FFFF},
+                {"§c", 0xFF5555}, {"§d", 0xFF55FF}, {"§e", 0xFFFF55}, {"§g", 0xDDD605},
+                {"§h", 0xE3D4D1}, {"§i", 0xCECACA}, {"§j", 0x443A3B}, {"§m", 0x971607},
+                {"§n", 0xB4684D}, {"§p", 0xDEB12D}, {"§q", 0x47A036}, {"§s", 0x2CBAA8},
+                {"§t", 0x21497B}, {"§u", 0x9A5CC6}, {"§f", 0xFFFFFF}
+            };
+            // clang-format on
+            double           minDis = DBL_MAX;
+            std::string_view minStr;
+            for (auto& [k, v] : carr) {
+                auto dis = v.distanceTo(color);
+                if (dis < minDis) {
+                    minDis = dis;
+                    minStr = k;
+                }
+            }
+            res += minStr;
+        } else {
+            switch ((fmt::terminal_color)(fg.value.term_color)) {
+            // clang-format off
+            case fmt::terminal_color::black:          res += "§0"; break;
+            case fmt::terminal_color::red:            res += "§4"; break;
+            case fmt::terminal_color::green:          res += "§2"; break;
+            case fmt::terminal_color::yellow:         res += "§6"; break;
+            case fmt::terminal_color::blue:           res += "§1"; break;
+            case fmt::terminal_color::magenta:        res += "§5"; break;
+            case fmt::terminal_color::cyan:           res += "§3"; break;
+            case fmt::terminal_color::white:          res += "§7"; break;
+            case fmt::terminal_color::bright_black:   res += "§8"; break;
+            case fmt::terminal_color::bright_red:     res += "§c"; break;
+            case fmt::terminal_color::bright_green:   res += "§a"; break;
+            case fmt::terminal_color::bright_yellow:  res += "§e"; break;
+            case fmt::terminal_color::bright_blue:    res += "§9"; break;
+            case fmt::terminal_color::bright_magenta: res += "§d"; break;
+            case fmt::terminal_color::bright_cyan:    res += "§b"; break;
+            case fmt::terminal_color::bright_white:
+            default :                                 res += "§f"; break;
+                // clang-format on
+            }
+        }
+    }
+    if (style.has_background()) { hasMcStyle = true; }
+    if (hasMcStyle) { return res; }
     return "§r";
 }
 
@@ -135,4 +229,4 @@ std::string replaceMcToAnsiCode(std::string_view str) {
     return res.str();
 }
 
-} // namespace ll::StringUtils
+} // namespace ll::string_utils

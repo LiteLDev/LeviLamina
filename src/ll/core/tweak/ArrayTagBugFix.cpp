@@ -28,8 +28,9 @@ LL_TYPED_INSTANCE_HOOK(
     if (getId() != other.getId() || data.mSize != ((IntArrayTag&)other).data.mSize) { return false; }
     return memcmp(data.mBuffer.get(), ((IntArrayTag&)other).data.mBuffer.get(), data.mSize * sizeof(int)) == 0;
 }
-
+namespace ll::bugfix {
 void enableArrayTagBugFix() {
     static ll::memory::HookAutoRegister<ByteArrayTagEqualsHook> r1;
     static ll::memory::HookAutoRegister<IntArrayTagEqualsHook>  r2;
 }
+} // namespace ll::bugfix

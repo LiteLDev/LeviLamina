@@ -12,7 +12,7 @@
 #include "Psapi.h"
 #include "Windows.h"
 
-using namespace ll::StringUtils;
+using namespace ll::string_utils;
 
 std::string GetLastErrorMessage(DWORD errorMessageId) {
     if (errorMessageId == 0) return "";

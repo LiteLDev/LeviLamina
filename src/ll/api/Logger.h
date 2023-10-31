@@ -37,6 +37,8 @@
 namespace ll {
 class Logger {
 public:
+    using PlayerOutputFunc = std::function<void(std::string_view)>;
+
     class OutputStream {
         friend class Logger;
 
@@ -44,8 +46,6 @@ public:
         LLAPI void print(std::string_view) const;
 
     public:
-        using PlayerOutputFunc = std::function<void(std::string_view)>;
-
         Logger&                               logger;
         std::string_view                      levelPrefix;
         int const                             level;
@@ -99,7 +99,7 @@ public:
 
     LLAPI static bool setDefaultFile(std::string const& logFile, bool appendMode);
 
-    void setPlayerOutputFunc(OutputStream::PlayerOutputFunc&& func) {
+    void setPlayerOutputFunc(PlayerOutputFunc&& func) {
         debug.setPlayerOutputFunc(func);
         info.setPlayerOutputFunc(func);
         warn.setPlayerOutputFunc(func);
@@ -107,12 +107,15 @@ public:
         fatal.setPlayerOutputFunc(func);
     }
 
+    LLAPI static void setDefaultPlayerOutputFunc(PlayerOutputFunc&& func) { defaultPlayerOutputCallback = func; }
+
     std::ofstream& getFile() {
         if (ofs) { return ofs.value(); }
         return defaultFile;
     }
 
 private:
-    LLAPI static std::ofstream defaultFile;
+    LLAPI static std::ofstream    defaultFile;
+    LLAPI static PlayerOutputFunc defaultPlayerOutputCallback;
 };
 } // namespace ll

@@ -40,9 +40,9 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
     wsprintf(
         daemonCmd,
         L"%ls %u \"%ls\"",
-        ll::StringUtils::str2wstr(globalConfig.modules.crashLogger.path).c_str(),
+        ll::string_utils::str2wstr(globalConfig.modules.crashLogger.path).c_str(),
         GetCurrentProcessId(),
-        ll::StringUtils::str2wstr(serverVersion).c_str()
+        ll::string_utils::str2wstr(serverVersion).c_str()
     );
     if (!CreateProcess(nullptr, daemonCmd, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("ll.crashLogger.error.cannotCreateDaemonProcess"_tr);

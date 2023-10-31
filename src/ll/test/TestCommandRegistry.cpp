@@ -1,6 +1,5 @@
 #ifdef DEBUG
 
-#include "ll/api/command/RegisterCommandHelper.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/server/commands/CommandOrigin.h"
@@ -57,8 +56,6 @@ public:
 
     static void setup(CommandRegistry& registry) {
 
-        using namespace ll::RegisterCommandHelper;
-
         registry
             .registerCommand("testcommand", "LeviLamina CommandRegistry Test", CommandPermissionLevel::GameDirectors);
 
@@ -72,9 +69,13 @@ public:
         );
         registry.registerOverload<TestCommand>(
             "testcommand",
-            makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_List")
+            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
+                &TestCommand::operation,
+                "operation",
+                "Operation_List"
+            )
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            makeOptional<CommandParameterDataType::SoftEnum>(
+            CommandParameterData::makeOptional<CommandParameterDataType::SoftEnum>(
                 &TestCommand::target,
                 "SoftEnumName",
                 "SoftEnumName",
@@ -83,9 +84,13 @@ public:
         );
         registry.registerOverload<TestCommand>(
             "testcommand",
-            makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_List")
+            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
+                &TestCommand::operation,
+                "operation",
+                "Operation_List"
+            )
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            makeOptional<CommandParameterDataType::Basic>(
+            CommandParameterData::makeOptional<CommandParameterDataType::Basic>(
                 &TestCommand::index,
                 "enumIndex",
                 nullptr,
@@ -103,9 +108,13 @@ public:
 
         registry.registerOverload<TestCommand>(
             "testcommand",
-            makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_Install")
+            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
+                &TestCommand::operation,
+                "operation",
+                "Operation_Install"
+            )
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            makeMandatory<CommandParameterDataType::Basic>(&TestCommand::target, "enumName")
+            CommandParameterData::makeMandatory<CommandParameterDataType::Basic>(&TestCommand::target, "enumName")
         );
 
         registry.addEnum<Operation>(
@@ -119,9 +128,13 @@ public:
         );
         registry.registerOverload<TestCommand>(
             "testcommand",
-            makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_Others")
+            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
+                &TestCommand::operation,
+                "operation",
+                "Operation_Others"
+            )
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            makeMandatory<CommandParameterDataType::SoftEnum>(
+            CommandParameterData::makeMandatory<CommandParameterDataType::SoftEnum>(
                 &TestCommand::target,
                 "enumName",
                 "SoftEnumName",
@@ -130,9 +143,13 @@ public:
         );
         registry.registerOverload<TestCommand>(
             "testcommand",
-            makeMandatory<CommandParameterDataType::Enum>(&TestCommand::operation, "operation", "Operation_Others")
+            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
+                &TestCommand::operation,
+                "operation",
+                "Operation_Others"
+            )
                 .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            makeMandatory<CommandParameterDataType::Basic>(
+            CommandParameterData::makeMandatory<CommandParameterDataType::Basic>(
                 &TestCommand::index,
                 "enumIndex",
                 nullptr,
@@ -141,12 +158,12 @@ public:
         );
         registry.registerOverload<TestCommand>(
             "testcommand",
-            makeMandatory<CommandParameterDataType::Basic>(&TestCommand::testTest, "rawtext")
+            CommandParameterData::makeMandatory<CommandParameterDataType::Basic>(&TestCommand::testTest, "rawtext")
         );
     }
 };
 
-LL_AUTO_STATIC_HOOK( // TODO: To Event
+LL_AUTO_STATIC_HOOK(
     ServerCommandsCommandTest,
     HookPriority::Normal,
     ServerCommands::setupStandardServer,

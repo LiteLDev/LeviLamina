@@ -9,7 +9,7 @@
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/Config.h"
 
-using namespace ll::StringUtils;
+using namespace ll::string_utils;
 
 namespace ll {
 
@@ -44,7 +44,7 @@ void Logger::OutputStream::print(std::string_view s) const {
                 fmt::format(fmt::runtime(fileFormat[4]), s)
             )) << std::endl;
         }
-        if (playerOutputCallback && checkLogLevel(logger.playerLevel, level)) {
+        if ((playerOutputCallback || Logger::defaultPlayerOutputCallback) && checkLogLevel(logger.playerLevel, level)) {
             std::string str = replaceAnsiToMcCode(fmt::format(
                 fmt::runtime(playerFormat[0]),
                 applyTextStyle(style[0], fmt::format(fmt::runtime(playerFormat[1]), time)),
@@ -52,7 +52,11 @@ void Logger::OutputStream::print(std::string_view s) const {
                 applyTextStyle(style[2], fmt::format(fmt::runtime(playerFormat[3]), logger.title)),
                 applyTextStyle(style[3], fmt::format(fmt::runtime(playerFormat[4]), s))
             ));
-            playerOutputCallback(str);
+            if (playerOutputCallback) {
+                playerOutputCallback(str);
+            } else {
+                Logger::defaultPlayerOutputCallback(str);
+            }
         }
     } catch (std::exception& e) { std::cerr << "ERROR IN LOGGER API : " << e.what(); } catch (...) {
         std::cerr << "UNKNOWN ERROR IN LOGGER API";
@@ -161,5 +165,6 @@ bool Logger::setDefaultFile(std::string const& logFile, bool appendMode) {
     return defaultFile.is_open();
 }
 
-std::ofstream Logger::defaultFile{};
+std::ofstream            Logger::defaultFile{};
+Logger::PlayerOutputFunc Logger::defaultPlayerOutputCallback;
 } // namespace ll

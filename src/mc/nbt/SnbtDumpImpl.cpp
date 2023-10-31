@@ -10,7 +10,7 @@ extern bool isTrivialNbtStringChar(char c);
 
 namespace {
 
-using namespace ll::StringUtils;
+using namespace ll::string_utils;
 
 namespace cf = ColorFormat;
 

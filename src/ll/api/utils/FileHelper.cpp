@@ -9,7 +9,7 @@
 
 #include "io.h"
 
-using namespace ll::StringUtils;
+using namespace ll::string_utils;
 namespace fs = std::filesystem;
 
 ///////////// Hacker to get private FILE* /////////////
