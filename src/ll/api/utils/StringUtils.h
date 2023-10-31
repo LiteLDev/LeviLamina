@@ -36,7 +36,8 @@ namespace ll::string_utils {
  * @param newValue  The string to replace with
  * @return std::string  The modified input std::string
  */
-[[nodiscard]] inline std::string replaceAll(std::string str, std::string const& oldValue, std::string const& newValue) {
+[[nodiscard]] constexpr std::string
+replaceAll(std::string str, std::string const& oldValue, std::string const& newValue) {
     for (std::string::size_type pos(0); pos != std::string::npos; pos += newValue.length()) {
         if ((pos = str.find(oldValue, pos)) != std::string::npos) str.replace(pos, oldValue.length(), newValue);
         else break;
@@ -79,7 +80,7 @@ intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero
 }
 
 template <typename S, typename Char = fmt::char_t<S>>
-[[nodiscard]] inline std::string applyTextStyle(fmt::text_style const& ts, S const& format_str) {
+[[nodiscard]] constexpr std::string applyTextStyle(fmt::text_style const& ts, S const& format_str) {
     fmt::basic_memory_buffer<Char> buf;
     auto                           fmt       = fmt::detail::to_string_view(format_str);
     bool                           has_style = false;
@@ -155,8 +156,8 @@ template <class T, auto f>
     char*       eptr;
     errnoRef       = 0;
     const auto ans = f(ptr, &eptr, base);
-    if (ptr == eptr) { throw std::invalid_argument("invalid stoi argument"); }
-    if (errnoRef == ERANGE) { throw std::out_of_range("stoi argument out of range"); }
+    if (ptr == eptr) { throw std::invalid_argument("invalid svtonum argument"); }
+    if (errnoRef == ERANGE) { throw std::out_of_range("svtonum argument out of range"); }
     if (idx) { *idx = static_cast<size_t>(eptr - ptr); }
     return static_cast<T>(ans);
 }
@@ -167,8 +168,8 @@ template <class T, auto f>
     char*       eptr;
     errnoRef       = 0;
     const auto ans = f(ptr, &eptr);
-    if (ptr == eptr) { throw std::invalid_argument("invalid stoi argument"); }
-    if (errnoRef == ERANGE) { throw std::out_of_range("stoi argument out of range"); }
+    if (ptr == eptr) { throw std::invalid_argument("invalid svtonum argument"); }
+    if (errnoRef == ERANGE) { throw std::out_of_range("svtonum argument out of range"); }
     if (idx) { *idx = static_cast<size_t>(eptr - ptr); }
     return static_cast<T>(ans);
 }

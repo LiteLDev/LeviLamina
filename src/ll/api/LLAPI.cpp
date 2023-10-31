@@ -8,7 +8,6 @@
 #include "magic_enum.hpp"
 
 #include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinHelper.h"
 #include "ll/core/Config.h"
 #include "ll/core/PluginManager.h"
 #include "ll/core/Version.h"
@@ -22,13 +21,10 @@ bool registerPlugin(
     std::string const&                        name,
     std::string const&                        description,
     ll::Version const&                        version,
-    std::map<std::string, std::string> const& extraInfo,
-    HMODULE                                   handle
+    std::map<std::string, std::string> const& extraInfo
 ) {
-    return PluginManager::registerPlugin(handle, name, description, version, extraInfo);
+    return PluginManager::registerPlugin( name, description, version, extraInfo);
 }
-
-optional_ref<Plugin> findPlugin(HMODULE handle) { return PluginManager::findPlugin(handle); }
 
 optional_ref<Plugin> findPlugin(std::string const& name) { return PluginManager::findPlugin(name); }
 

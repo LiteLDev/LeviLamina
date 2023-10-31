@@ -7,8 +7,6 @@
 namespace fs = std::filesystem;
 
 using ll::string_utils::splitByPattern;
-using ll::string_utils::str2wstr;
-using ll::string_utils::wstr2str;
 
 namespace ll::i18n {
 

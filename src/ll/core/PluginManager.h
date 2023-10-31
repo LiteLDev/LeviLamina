@@ -11,7 +11,6 @@ class PluginManager {
 
 public:
     LLAPI static bool registerPlugin(
-        HMODULE                                          handle,
         std::string const&                               name,
         std::string const&                               description,
         Version const&                                   version,
@@ -19,7 +18,6 @@ public:
         std::unordered_map<std::string, std::any> const& sharedData = {}
     );
 
-    LLNDAPI static optional_ref<Plugin>                     findPlugin(HMODULE handle);
     LLNDAPI static optional_ref<Plugin>                     findPlugin(std::string const& name);
     LLNDAPI static std::unordered_map<std::string, Plugin>& getAllPlugins();
 

@@ -98,7 +98,7 @@ private:
 };
 
 std::unique_ptr<KeyValueDB> KeyValueDB::create(std::string const& path, bool readCache, int cacheSize, int filterBit) {
-    CreateDirs(path);
+    createDirs(path);
     auto db  = std::unique_ptr<KeyValueDB>(new KeyValueDB());
     db->impl = std::make_unique<KeyValueDBImpl>(path, true, readCache, cacheSize, filterBit);
     return db;
@@ -106,7 +106,7 @@ std::unique_ptr<KeyValueDB> KeyValueDB::create(std::string const& path, bool rea
 
 std::unique_ptr<KeyValueDB>
 KeyValueDB::open(std::string const& path, bool create, bool readCache, int cacheSize, int filterBit) {
-    CreateDirs(path);
+    createDirs(path);
     auto db  = std::unique_ptr<KeyValueDB>(new KeyValueDB());
     db->impl = std::make_unique<KeyValueDBImpl>(path, create, readCache, cacheSize, filterBit);
     return db;

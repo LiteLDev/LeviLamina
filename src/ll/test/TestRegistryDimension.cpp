@@ -1,4 +1,4 @@
-#ifdef DEBUG
+#ifdef LL_DEBUG
 
 #include "ll/api/memory/Hook.h"
 #include "mc/common/wrapper/OwnerPtrFactory.h"
@@ -65,4 +65,4 @@ LL_AUTO_TYPED_INSTANCE_HOOK(RegistryDimensionTest1, HookPriority::Normal, Dimens
 };
 
 
-#endif // DEBUG
+#endif // LL_DEBUG

@@ -81,18 +81,17 @@ target("LeviLamina")
             print("Failed to parse version tag, using 0.0.0")
             major, minor, patch = 0, 0, 0
         end
+        prerelease = ""
         if suffix then
             prerelease = suffix:match("-(.*)")
             if prerelease then
                 prerelease = prerelease:gsub("\n", "")
             end
-            if prerelease then
-                target:set("configvar", "LL_VERSION_PRERELEASE", prerelease)
-            end
         end
         target:set("configvar", "LL_VERSION_MAJOR", major)
         target:set("configvar", "LL_VERSION_MINOR", minor)
         target:set("configvar", "LL_VERSION_PATCH", patch)
+        target:set("configvar", "LL_VERSION_PRERELEASE", prerelease)
     end)
 
 task("bds-lib")

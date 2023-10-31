@@ -11,8 +11,7 @@
 
 class BaseCircuitComponent {
 public:
-    CircuitComponentList mSources;
-    // Core::RefCountedSet<BaseCircuitComponent*> mDestinations; // DEBUG
+    CircuitComponentList   mSources;
     bool                   mIgnoreFirstUpdate;
     bool                   mIsFirstTime;
     bool                   mNeedsUpdate;

@@ -1,6 +1,4 @@
-#define DEBUG
-
-#ifdef DEBUG
+#ifdef LL_DEBUG
 
 #include "ll/api/LLAPI.h"
 #include "ll/api/Logger.h"
@@ -89,8 +87,8 @@ void setupTestParamCommand() {
           "testEffect",
           "testCommand",
           "testRawText"}},
-        [](DynamicCommand const&                                    command,
-           CommandOrigin const&                                     origin,
+        [](DynamicCommand const&,
+           CommandOrigin const&,
            CommandOutput&                                           output,
            std::unordered_map<std::string, DynamicCommand::Result>& results) {
             for (auto& [name, result] : results) { output.success(result.toDebugString()); }
@@ -124,8 +122,8 @@ void setupTestEnumCommand() {
             {"TestEnum2"},            // testenum <list>
         },
         // dynamic command callback
-        [](DynamicCommand const&                                    command,
-           CommandOrigin const&                                     origin,
+        [](DynamicCommand const&,
+           CommandOrigin const&,
            CommandOutput&                                           output,
            std::unordered_map<std::string, DynamicCommand::Result>& results) {
             auto& action = results["testEnum"].getRaw<std::string>();
@@ -165,8 +163,8 @@ void setupExampleCommand() {
     command->addOverload({optionsAdd, "testString"}); // dyncmd <add|remove> <testString:string>
     command->addOverload({"TestOperation2"});         // dyncmd <list>
 
-    command->setCallback([](DynamicCommand const&                                    command,
-                            CommandOrigin const&                                     origin,
+    command->setCallback([](DynamicCommand const&,
+                            CommandOrigin const&,
                             CommandOutput&                                           output,
                             std::unordered_map<std::string, DynamicCommand::Result>& results) {
         switch (do_hash(results["testEnum"].getRaw<std::string>().c_str())) {
@@ -193,8 +191,8 @@ void setupRemoveCommand() {
     command->setAlias("remove");
     auto name = command->mandatory("name", ParamType::SoftEnum, command->setSoftEnum("CommandNames", {}));
     command->addOverload(name);
-    command->setCallback([](DynamicCommand const&                                    cmd,
-                            CommandOrigin const&                                     origin,
+    command->setCallback([](DynamicCommand const& cmd,
+                            CommandOrigin const&,
                             CommandOutput&                                           output,
                             std::unordered_map<std::string, DynamicCommand::Result>& results) {
         auto& name     = results["name"].getRaw<std::string>();
@@ -227,8 +225,8 @@ void setupRemoveCommand() {
 
 // enum command
 void onEnumExecute(
-    DynamicCommand const&                                    cmd,
-    CommandOrigin const&                                     origin,
+    DynamicCommand const& cmd,
+    CommandOrigin const&,
     CommandOutput&                                           output,
     std::unordered_map<std::string, DynamicCommand::Result>& results
 ) {
@@ -282,8 +280,8 @@ void setupEnumCommand() {
 void setupEchoCommand() {
     auto command = DynamicCommand::createCommand("echo", "show message", CommandPermissionLevel::Any);
     command->addOverload(command->mandatory("text", ParamType::RawText));
-    command->setCallback([](DynamicCommand const&                                    cmd,
-                            CommandOrigin const&                                     origin,
+    command->setCallback([](DynamicCommand const&,
+                            CommandOrigin const&,
                             CommandOutput&                                           output,
                             std::unordered_map<std::string, DynamicCommand::Result>& results) {
         auto text = results["text"].getRaw<std::string>();
@@ -313,4 +311,4 @@ LL_AUTO_STATIC_HOOK(
     setupEchoCommand();
 }
 
-#endif // DEBUG
+#endif // LL_DEBUG

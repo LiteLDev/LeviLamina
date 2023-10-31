@@ -204,9 +204,17 @@ void unixSignalHandler(int signum) {
 }
 
 // extern
+namespace ll {
+extern void RegisterLeviCommands();
+}
 
-extern void RegisterCommands();
+namespace bstats {
+extern void registerBStats();
+}
 
+namespace ll::i18n {
+extern std::string globalDefaultLocaleName;
+}
 
 // bugfix
 namespace ll::bugfix {
@@ -216,14 +224,6 @@ void setupBugFixes() {
     auto& bugfixSettings = ll::globalConfig.modules.tweak.bugfixes;
     using namespace ll::bugfix;
     if (bugfixSettings.fixArrayTagCompareBug) { enableArrayTagBugFix(); }
-}
-
-namespace bstats {
-extern void registerBStats();
-}
-
-namespace ll::i18n {
-extern std::string globalDefaultLocaleName;
 }
 
 void leviLaminaMain() {
@@ -295,7 +295,7 @@ void leviLaminaMain() {
     ll::LoadMain();
 
     // Register built-in commands
-    RegisterCommands();
+    RegisterLeviCommands();
 
     // Register simple server logger
     // ll::SimpleServerLogger::registerSimpleServerLogger();

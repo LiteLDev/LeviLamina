@@ -17,7 +17,7 @@
 
 using namespace ll;
 using namespace ll::string_utils;
-
+namespace {
 class TeleportDimensionCommand : public Command {
 
     enum class DimensionType {
@@ -151,8 +151,7 @@ void LLListPluginsCommand(CommandOutput& output) {
         std::string desc = plugin.mDescription;
         if (desc.find("§") == std::string::npos) desc.insert(0, "§7");
 
-        auto fileName = u8str2str(std::filesystem::path(GetModulePath(plugin.mHandle)).filename().u8string());
-        oss << fmt::format("- {} §a[v{}] §8({})\n  {}\n", pluginName, plugin.mVersion.to_string(), fileName, desc);
+        oss << fmt::format("- {} §a[v{}]\n  {}\n", pluginName, plugin.mVersion.to_string(), desc);
     }
     output.success(oss.str() + '\n');
     output.trSuccess("ll.cmd.listPlugin.tip");
@@ -166,12 +165,9 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
 
         output.trSuccess("ll.cmd.pluginInfo.title", pluginName);
 
-        std::filesystem::path path(GetModulePath(plugin->mHandle));
-
-        outs.emplace("Name", fmt::format("{} ({})", plugin->mName, path.filename().string()));
+        outs.emplace("Name", fmt::format("{}", plugin->mName));
         outs.emplace("Description", plugin->mDescription);
         outs.emplace("Version", "v" + plugin->mVersion.to_string());
-        outs.emplace("FilePath", path.string());
         outs.merge(plugin->mExtraInfo);
         size_t width = 10;
         for (auto& [k, v] : outs) { width = std::max(width, k.length()); }
@@ -216,8 +212,6 @@ void LLUnloadPluginCommand(CommandOutput& output, std::string const& pluginName)
 }
 
 void LLReloadPluginCommand(CommandOutput& output, std::string const& pluginName, bool reloadAll) {
-    // if (!ll::isDebugMode())
-    //     return;
     if (!reloadAll) {
         // if (PluginManager::reloadPlugin(pluginName, true)) {
         //     output.trSuccess("ll.cmd.reloadPlugin.success", pluginName);
@@ -499,9 +493,9 @@ class VersionCommand : public Command {
 
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
-#ifdef DEBUG
+#ifdef LL_DEBUG
         Logger("CommandOrigin").warn(ori.serialize().toSnbt());
-#endif // DEBUG
+#endif // LL_DEBUG
         LLVersionCommand(output);
     }
 
@@ -510,8 +504,9 @@ public:
         registry->registerOverload<VersionCommand>("version");
     }
 };
-
-void RegisterCommands() {
+} // namespace
+namespace ll {
+void RegisterLeviCommands() {
     //     using ll::event::server::RegisterCommandEvent;
     //     RegisterCommandEvent::subscribe([](RegisterCommandEvent const& event) { // Register commands
     //         LLCommand::setup(event.getRegistry());
@@ -520,3 +515,4 @@ void RegisterCommands() {
     //         return true;
     //     });
 }
+} // namespace ll

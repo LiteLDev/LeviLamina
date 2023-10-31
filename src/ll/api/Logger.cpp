@@ -1,9 +1,6 @@
 #include "ll/api/Logger.h"
 
-#include <mutex>
-#include <regex>
-#include <unordered_map>
-#include <utility>
+#include <cmath>
 
 #include "ll/api/utils/Hash.h"
 #include "ll/api/utils/StringUtils.h"
@@ -21,9 +18,7 @@ bool checkLogLevel(int level, int outLevel) {
 
 void Logger::OutputStream::print(std::string_view s) const {
     try {
-        using Clock = std::chrono::system_clock;
-        auto time   = fmt::localtime(Clock::to_time_t(Clock::now()));
-
+        auto time = fmt::localtime(_time64(nullptr));
         if (checkLogLevel(logger.consoleLevel, level)) {
             std::string str = fmt::format(
                 fmt::runtime(consoleFormat[0]),
@@ -120,9 +115,9 @@ Logger::Logger(std::string_view title)
       2,
       {
           fmt::fg(fmt::color::light_blue),
-          fmt::fg(fmt::color::tomato),
           fmt::fg(fmt::terminal_color::bright_red),
-          fmt::fg(fmt::terminal_color::bright_red) | fmt::emphasis::bold,
+          fmt::fg(fmt::color::tomato),
+          fmt::fg(fmt::color::tomato) | fmt::emphasis::bold,
       }}),
   fatal(OutputStream{
       *this,
@@ -130,9 +125,9 @@ Logger::Logger(std::string_view title)
       1,
       {
           fmt::fg(fmt::color::light_blue),
-          fmt::fg(fmt::color::crimson),
           fmt::fg(fmt::color::red),
-          fmt::fg(fmt::color::red) | fmt::emphasis::bold | fmt::emphasis::italic,
+          fmt::fg(fmt::color::crimson),
+          fmt::fg(fmt::color::crimson) | fmt::emphasis::bold | fmt::emphasis::italic,
       }}) {}
 
 void Logger::resetFile() {

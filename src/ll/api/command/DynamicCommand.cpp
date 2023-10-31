@@ -42,15 +42,15 @@ using ll::logger;
     func(Command);                                                                                                     \
     func(WildcardSelector);
 
-#define CatchDynamicCommandError(func, handle)                                                                         \
+#define CatchDynamicCommandError(command)                                                                              \
     catch (const seh_exception& e) {                                                                                   \
-        OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), func, handle);                             \
+        OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), __FUNCTION__, command);                    \
     }                                                                                                                  \
     catch (const std::exception& e) {                                                                                  \
-        OutputError("Uncaught C++ Exception Detected!", errno, e.what(), func, handle);                                \
+        OutputError("Uncaught C++ Exception Detected!", errno, e.what(), __FUNCTION__, command);                       \
     }                                                                                                                  \
     catch (...) {                                                                                                      \
-        OutputError("Uncaught Exception Detected!", -1, "", func, handle);                                             \
+        OutputError("Uncaught Exception Detected!", -1, "", __FUNCTION__, command);                                    \
     }
 
 // global variable and function
@@ -113,13 +113,12 @@ inline void OutputError(
     int                errorCode,
     const std::string& errorWhat,
     const std::string& func,
-    HMODULE            handle
+    const std::string& command
 ) {
     logger.error(errorMsg);
     logger.error("Error: Code [{}] {}", errorCode, errorWhat);
     logger.error("In Function ({})", func);
-    auto plugin = ll::findPlugin(handle);
-    if (plugin.has_value()) logger.error("In Plugin <{}>", plugin.value().mName);
+    logger.error("In Command <{}>", command);
 }
 
 } // namespace
@@ -555,7 +554,7 @@ DynamicCommandInstance* DynamicCommand::preSetup(std::unique_ptr<class DynamicCo
         auto res = dynamicCommandInstances.emplace(commandInstance->name_, std::move(commandInstance));
         return res.first->second.get();
     }
-    CatchDynamicCommandError("DynamicCommand::preSetup - " + name, commandInstance->handle_);
+    CatchDynamicCommandError(name);
     return nullptr;
 }
 
@@ -593,7 +592,7 @@ void DynamicCommand::execute(CommandOrigin const& origin, CommandOutput& output)
         for (auto& [name, param] : commandIns.parameterPtrs) { results.emplace(name, param.getResult(this, &origin)); }
         commandIns.callback_(*this, origin, output, results);
     }
-    CatchDynamicCommandError("DynamicCommand::execute", commandIns.handle_);
+    CatchDynamicCommandError(getCommandName());
 }
 
 std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
@@ -601,10 +600,9 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
     std::string const&     description,
     CommandPermissionLevel permission,
     CommandFlag            flag1,
-    CommandFlag            flag2,
-    HMODULE                handle
+    CommandFlag            flag2
 ) {
-    return DynamicCommandInstance::create(name, description, permission, flag1 |= flag2, handle);
+    return DynamicCommandInstance::create(name, description, permission, flag1 |= flag2);
 }
 
 
@@ -625,10 +623,9 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
     CallBackFn                                                  callback,
     CommandPermissionLevel                                      permission,
     CommandFlag                                                 flag1,
-    CommandFlag                                                 flag2,
-    HMODULE                                                     handle
+    CommandFlag                                                 flag2
 ) {
-    auto command = createCommand(name, description, permission, flag1, flag2, handle);
+    auto command = createCommand(name, description, permission, flag1, flag2);
     if (!command) return std::unique_ptr<class DynamicCommandInstance>();
     for (auto& [desc, values] : enums) { command->setEnum(desc, std::move(values)); }
     for (auto& param : params) { command->newParameter(std::move(param)); }
@@ -676,14 +673,12 @@ inline DynamicCommandInstance::DynamicCommandInstance(
     std::string const&     name,
     std::string const&     description,
     CommandPermissionLevel permission,
-    CommandFlag            flag,
-    HMODULE                handle
+    CommandFlag            flag
 )
 : name_(name),
   description_(std::make_unique<std::string>(description)),
   permission_(permission),
-  flag_(flag),
-  handle_(handle) {}
+  flag_(flag) {}
 
 inline DynamicCommandInstance::~DynamicCommandInstance() {
     if (this->builder_) dcbFreeCallback((DCCallback*)this->builder_);
@@ -694,16 +689,13 @@ inline std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(
     std::string const&     name,
     std::string const&     description,
     CommandPermissionLevel permission,
-    CommandFlag            flag,
-    HMODULE                handle
+    CommandFlag            flag
 ) {
     if (ll::Global<CommandRegistry>->findCommand(name)) {
         logger.error("Command \"{}\" already exists", name);
         return {};
     }
-    return std::unique_ptr<DynamicCommandInstance>(
-        new DynamicCommandInstance(name, description, permission, flag, handle)
-    );
+    return std::unique_ptr<DynamicCommandInstance>(new DynamicCommandInstance(name, description, permission, flag));
 }
 
 inline bool DynamicCommandInstance::addOverload(std::vector<DynamicCommand::ParameterData>&& params) {

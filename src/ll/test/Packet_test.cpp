@@ -84,7 +84,7 @@ void autoGenerate() {
 
     path = LL_WORKSPACE_FOLDER + path;
 
-    auto file = ReadAllFile(path, false);
+    auto file = readAllFile(path, false);
     if (!file) {
         ll::logger.error("Couldn't open file {}", path);
         return;

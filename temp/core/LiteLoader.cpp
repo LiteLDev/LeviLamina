@@ -178,7 +178,7 @@ void checkRunningBDS() {
 void fixAllowList() {
     if (filesystem::exists("whitelist.json")) {
         if (filesystem::exists("allowlist.json")) {
-            auto res = ReadAllFile("allowlist.json");
+            auto res = readAllFile("allowlist.json");
             if (res && (res->empty() || nlohmann::json::parse(*res, nullptr, true, true).empty())) {
                 logger.warn(tr("ll.main.fixAllowList.removeEmptyAllowlist"));
                 filesystem::remove("allowlist.json");

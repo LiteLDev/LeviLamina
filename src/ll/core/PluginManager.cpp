@@ -13,28 +13,15 @@ namespace ll::plugin {
 std::unordered_map<std::string, Plugin> plugins;
 
 bool PluginManager::registerPlugin(
-    HMODULE                                          handle,
     std::string const&                               name,
     std::string const&                               description,
     Version const&                                   version,
     std::map<std::string, std::string> const&        extraInfo,
     std::unordered_map<std::string, std::any> const& sharedData
 ) {
-    if (handle == nullptr) {
-        logger.error("Failed to register plugin: handle is nullptr");
-        return false;
-    }
-    Plugin plugin{name, description, version, extraInfo, sharedData, handle};
-    plugins.emplace(name, plugin);
+    if (plugins.contains(name)) { return false; }
+    plugins.emplace(name, Plugin{name, description, version, extraInfo, sharedData});
     return true;
-}
-
-optional_ref<Plugin> PluginManager::findPlugin(HMODULE handle) {
-    auto it = std::find_if(plugins.begin(), plugins.end(), [handle](auto const& pair) {
-        return pair.second.mHandle == handle;
-    });
-    if (it != plugins.end()) { return it->second; }
-    return std::nullopt;
 }
 
 optional_ref<Plugin> PluginManager::findPlugin(std::string const& name) {

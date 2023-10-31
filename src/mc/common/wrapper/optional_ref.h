@@ -75,7 +75,7 @@ public:
     [[nodiscard]] constexpr T& operator*() const { return get(); }
 
     template <class T2>
-    [[nodiscard]] constexpr std::remove_cv_t<T> value_or(T2&& right) const&
+    [[nodiscard]] constexpr std::remove_cv_t<T> const& value_or(T2&& right) const&
         requires(std::is_convertible_v<T const&, std::remove_cv_t<T>> && std::is_convertible_v<T2, T>)
     {
         if (has_value()) { return static_cast<T const&>(*mPtr); }

@@ -5,7 +5,6 @@
 
 #include "ll/api/base/Concepts.h"
 #include "ll/api/service/GlobalService.h"
-#include "ll/api/utils/WinHelper.h"
 
 #include "mc/deps/json/Value.h"
 #include "mc/server/commands/CommandBlockName.h"
@@ -507,8 +506,7 @@ public:
         std::string const&     description,
         CommandPermissionLevel permission = CommandPermissionLevel::GameDirectors,
         CommandFlag            flag1      = CommandFlagValue::NotCheat,
-        CommandFlag            flag2      = CommandFlagValue::None,
-        HMODULE                handle     = GetCurrentModule()
+        CommandFlag            flag2      = CommandFlagValue::None
     );
     LLAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(
         std::string const&                                          name,
@@ -519,8 +517,7 @@ public:
         CallBackFn                                                  callback,
         CommandPermissionLevel                                      permission = CommandPermissionLevel::GameDirectors,
         CommandFlag                                                 flag1      = CommandFlagValue::NotCheat,
-        CommandFlag                                                 flag2      = CommandFlagValue::None,
-        HMODULE                                                     handle     = GetCurrentModule()
+        CommandFlag                                                 flag2      = CommandFlagValue::None
     );
 
     LLAPI static DynamicCommandInstance const* setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
@@ -548,8 +545,7 @@ public:
         CallBackFn                                                  callback,
         CommandPermissionLevel                                      permission = CommandPermissionLevel::GameDirectors,
         CommandFlag                                                 flag1      = CommandFlagValue::NotCheat,
-        CommandFlag                                                 flag2      = CommandFlagValue::None,
-        HMODULE                                                     handle     = GetCurrentModule()
+        CommandFlag                                                 flag2      = CommandFlagValue::None
     ) {
         return setup(createCommand(
             name,
@@ -560,8 +556,7 @@ public:
             std::move(callback),
             permission,
             flag1,
-            flag2,
-            handle
+            flag2
         ));
     };
 
@@ -621,7 +616,6 @@ private:
     std::vector<std::vector<ParameterIndex>> overloads = {}; // indices of parameter instance
 
     mutable DynamicCommand::CallBackFn callback_ = nullptr;
-    HMODULE                            handle_   = nullptr;
 
     friend class DynamicCommand;
 
@@ -629,8 +623,7 @@ private:
         std::string const&     name,
         std::string const&     description,
         CommandPermissionLevel permission = CommandPermissionLevel::GameDirectors,
-        CommandFlag            flag       = CommandFlagValue::NotCheat,
-        HMODULE                handle     = GetCurrentModule()
+        CommandFlag            flag       = CommandFlagValue::NotCheat
     );
 
     LLAPI bool setBuilder(DynamicCommand::BuilderFn builder);
@@ -644,8 +637,7 @@ public:
         std::string const&     name,
         std::string const&     description,
         CommandPermissionLevel permission,
-        CommandFlag            flag,
-        HMODULE                handle = GetCurrentModule()
+        CommandFlag            flag
     );
     LLAPI std::string const& setEnum(std::string const& description, std::vector<std::string> const& values);
     LLAPI std::string const& getEnumValue(int index) const;

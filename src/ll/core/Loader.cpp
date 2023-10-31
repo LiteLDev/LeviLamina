@@ -4,12 +4,11 @@
 #include <string>
 #include <vector>
 
-#include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinHelper.h"
-
 #include "ll/api/LLAPI.h"
 #include "ll/api/Logger.h"
 #include "ll/api/i18n/I18nAPI.h"
+#include "ll/api/utils/StringUtils.h"
+#include "ll/api/utils/WinHelper.h"
 
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
@@ -45,12 +44,9 @@ void ll::LoadMain() {
         if (lib) {
             ++pluginCount;
 
-            if (!PluginManager::findPlugin(lib).has_value()) {
-                if (!PluginManager::registerPlugin(lib, pluginFileName, pluginFileName, {}, {})) {
+            if (!PluginManager::findPlugin(pluginFileName).has_value()) {
+                if (!PluginManager::registerPlugin(pluginFileName, pluginFileName, {}, {})) {
                     ll::logger.error("ll.pluginManager.error.failToRegisterPlugin"_tr, u8str2str(path.u8string()));
-                    if (PluginManager::findPlugin(pluginFileName).has_value()) {
-                        ll::logger.error("ll.pluginManager.error.hasBeenRegistered"_tr, pluginFileName);
-                    }
                 }
             }
         } else {

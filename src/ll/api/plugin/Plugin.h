@@ -2,7 +2,6 @@
 
 #include "ll/api/base/Global.h"
 #include "ll/api/plugin/Version.h"
-#include "ll/api/utils/WinHelper.h"
 
 
 namespace ll::plugin {
@@ -14,26 +13,18 @@ struct Plugin {
     std::map<std::string, std::string>        mExtraInfo;
     std::unordered_map<std::string, std::any> mSharedData;
 
-    HMODULE mHandle = nullptr;
-
     LLNDAPI std::string getDefaultDataPath() const;
 
-    void addSharedData(std::string const& key, std::any const& value) { mSharedData[key] = value; }
-
-    template <typename T>
-    std::optional<T> getSharedData(std::string const& key) {
-        if (mSharedData.contains(key)) {
-            if (mSharedData[key].type() == typeid(T)) { return std::any_cast<T>(mSharedData[key]); }
-        }
-        return std::nullopt;
+    template <typename T, typename... Args>
+    void addSharedData(std::string const& key, Args&&... args)
+        requires(std::is_constructible_v<std::any, std::in_place_type_t<T>, Args...>)
+    {
+        mSharedData[key] = std::make_any<T>(std::forward<Args>(args)...);
     }
-
     template <typename T>
-    T getSharedData(std::string const& key, T const& defaultValue) {
-        if (mSharedData.contains(key)) {
-            if (mSharedData[key].type() == typeid(T)) { return std::any_cast<T>(mSharedData[key]); }
-        }
-        return defaultValue;
+    optional_ref<T> getSharedData(std::string const& key) {
+        if (mSharedData.contains(key)) { return std::any_cast<T>(&mSharedData[key]); }
+        return std::nullopt;
     }
 };
 

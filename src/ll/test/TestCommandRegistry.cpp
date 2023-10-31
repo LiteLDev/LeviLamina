@@ -1,4 +1,4 @@
-#ifdef DEBUG
+#ifdef LL_DEBUG
 
 #include "ll/api/memory/Hook.h"
 #include "ll/core/LeviLamina.h"
@@ -178,4 +178,4 @@ LL_AUTO_STATIC_HOOK(
     TestCommand::setup(server.getCommands().getRegistry());
 }
 
-#endif // DEBUG
+#endif // LL_DEBUG

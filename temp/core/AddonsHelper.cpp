@@ -66,7 +66,7 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path const& addonPath) 
             manifestPath = addonPath;
             manifestPath.append("pack_manifest.json");
         }
-        auto manifestFile = ReadAllFile(u8str2str(manifestPath.u8string()));
+        auto manifestFile = readAllFile(u8str2str(manifestPath.u8string()));
         if (!manifestFile || manifestFile->empty()) throw std::exception("manifest.json not found!");
         std::string content = FixMojangJson(*manifestFile);
 
@@ -110,7 +110,7 @@ bool RemoveAddonFromList(Addon& addon) {
         return false;
     }
 
-    auto addonJsonContent = ReadAllFile(jsonFile);
+    auto addonJsonContent = readAllFile(jsonFile);
     if (!addonJsonContent || addonJsonContent->empty()) {
         addonLogger.error(tr("ll.addonsHelper.error.addonConfigNotFound"));
         return false;
@@ -144,7 +144,7 @@ bool AddAddonToList(Addon& addon) {
     try {
 
         bool exists    = false;
-        auto addonList = nlohmann::json::parse(*ReadAllFile(addonListFile), nullptr, false, true);
+        auto addonList = nlohmann::json::parse(*readAllFile(addonListFile), nullptr, false, true);
         // Auto fix Addon List File
         if (!addonList.is_array()) {
             auto backupPath = u8str2str(filesystem::path(str2wstr(addonListFile)).stem().u8string()) + "_error.json";
@@ -614,7 +614,7 @@ void FindAddons(string jsonPath, string packsDir) {
         if (!filesystem::exists(str2wstr(jsonPath))) WriteAllFile(jsonPath, "[]");
         if (!filesystem::exists(str2wstr(packsDir))) filesystem::create_directories(str2wstr(packsDir));
 
-        auto content = ReadAllFile(jsonPath);
+        auto content = readAllFile(jsonPath);
         if (!content || content->empty()) {
             WriteAllFile(jsonPath, "[]");
             content = "[]";
