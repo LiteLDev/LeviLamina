@@ -29,7 +29,13 @@ namespace {
 
 using namespace ll::memory;
 
-LL_AUTO_TYPED_INSTANCE_HOOK(MinecraftServiceHook, HookPriority::High, Minecraft, &Minecraft::initAsDedicatedServer, void) {
+LL_AUTO_TYPED_INSTANCE_HOOK(
+    MinecraftServiceHook,
+    HookPriority::High,
+    Minecraft,
+    &Minecraft::initAsDedicatedServer,
+    void
+) {
     ll::Global<Minecraft>.init(this);
     origin();
     ll::Global<CommandRegistry>.init(&getCommands().getRegistry());

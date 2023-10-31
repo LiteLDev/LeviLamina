@@ -42,7 +42,8 @@ public:
     MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& actor, class Vec3 const& hitPos);
 
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEBVBlockPos@@E0@Z
-    MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class BlockPos const&, uchar, class Vec3 const&);
+    MCAPI
+    HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class BlockPos const&, uchar, class Vec3 const&);
 
     // symbol: ?distanceTo@HitResult@@QEBAMAEBVActor@@@Z
     MCAPI float distanceTo(class Actor const&) const;

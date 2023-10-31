@@ -10,13 +10,7 @@
 
 #include "ll/api/Literals.h"
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    NbtTest,
-    HookPriority::Normal,
-    ServerInstance,
-    &ServerInstance::startServerThread,
-    void
-) {
+LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &ServerInstance::startServerThread, void) {
     origin();
 
     auto nbt = CompoundTag{
@@ -132,5 +126,5 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     using namespace ll::StringUtils;
 
     ll::logger.debug("\n{}", replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console)));
-    ll::logger.debug("\n{}", (nbt.toSnbt(SnbtFormat::Colored )));
+    ll::logger.debug("\n{}", (nbt.toSnbt(SnbtFormat::Colored)));
 }

@@ -29,20 +29,21 @@ bool PluginManager::registerPlugin(
     return true;
 }
 
-std::optional<Plugin> PluginManager::findPlugin(HMODULE handle) {
+optional_ref<Plugin> PluginManager::findPlugin(HMODULE handle) {
     auto it = std::find_if(plugins.begin(), plugins.end(), [handle](auto const& pair) {
         return pair.second.mHandle == handle;
     });
+    if (it != plugins.end()) { return it->second; }
     return std::nullopt;
 }
 
-std::optional<Plugin> PluginManager::findPlugin(std::string const& name) {
+optional_ref<Plugin> PluginManager::findPlugin(std::string const& name) {
     auto it = plugins.find(name);
     if (it != plugins.end()) { return it->second; }
     return std::nullopt;
 }
 
-std::unordered_map<std::string, Plugin> PluginManager::getAllPlugins() { return plugins; }
+std::unordered_map<std::string, Plugin>& PluginManager::getAllPlugins() { return plugins; }
 
 bool PluginManager::unregisterPlugin(std::string const& name) {
     auto plugin = findPlugin(name);

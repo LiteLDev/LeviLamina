@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 
-#include "ll/api/utils/DbgHelper.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinHelper.h"
 
@@ -73,7 +72,7 @@ void ll::LoadMain() {
         if (loaded) continue;
 
         // Do load
-        auto lib = LoadLibraryW(path.wstring().c_str());
+        auto lib = LoadLibrary(path.wstring().c_str());
         if (lib) {
             ++pluginCount;
 
@@ -86,11 +85,8 @@ void ll::LoadMain() {
                 }
             }
         } else {
-            DWORD       lastError   = GetLastError();
-            std::string fileVersion = GetFileVersionString(u8str2str(path.u8string()), true);
-            std::string info        = pluginFileName;
-            if (!fileVersion.empty()) { info += " [" + fileVersion + "]"; }
-            ll::logger.error("Fail to load plugin <{}>!", info);
+            DWORD lastError = GetLastError();
+            ll::logger.error("Fail to load plugin <{}>!", pluginFileName);
             ll::logger.error("Error: Code[{}] {}", lastError, GetLastErrorMessage(lastError));
         }
     }

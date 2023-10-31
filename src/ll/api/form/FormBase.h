@@ -13,8 +13,8 @@ protected:
 
 class FormImpl {
 protected:
-    virtual ~FormImpl()                               = default;
-    [[nodiscard]] virtual FormType  getType() const   = 0;
+    virtual ~FormImpl()                                            = default;
+    [[nodiscard]] virtual FormType               getType() const   = 0;
     [[nodiscard]] virtual nlohmann::ordered_json serialize() const = 0;
 };
 

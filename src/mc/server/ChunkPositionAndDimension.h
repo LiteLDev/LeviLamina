@@ -6,6 +6,6 @@
 
 struct ChunkPositionAndDimension {
 public:
-    ChunkPos      mPos; // this+0x0
+    ChunkPos      mPos;  // this+0x0
     DimensionType mType; // this+0x8
 };

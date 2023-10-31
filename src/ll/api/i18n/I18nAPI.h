@@ -1,4 +1,5 @@
 #pragma once
+
 #include "ll/api/LLAPI.h"
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Global.h"
@@ -28,7 +29,7 @@ public:
 
     LangData    mLangData{};
     LangData    mDefaultLangData{};
-    std::string mDefaultLocaleName = "en_US";
+    std::string mDefaultLocaleName;
 
     virtual ~I18N() = default;
 
@@ -48,15 +49,6 @@ public:
      * @return  The type of the i18n object
      */
     LLAPI virtual Type getType() = 0;
-
-    /**
-     * @brief Clone a new i18n object.
-     *
-     * @return  The new i18n object.
-     */
-    LLAPI virtual std::unique_ptr<I18N> clone() = 0;
-
-    static std::unique_ptr<I18N> INSTANCE;
 };
 
 class SingleFileI18N : public I18N {
@@ -90,8 +82,6 @@ public:
     ~SingleFileI18N() override                  = default;
 
     LLAPI Type getType() override;
-
-    LLAPI virtual std::unique_ptr<I18N> clone() override;
 };
 
 class MultiFileI18N : public I18N {
@@ -125,9 +115,23 @@ public:
     ~MultiFileI18N() override                 = default;
 
     LLAPI Type getType() override;
-
-    LLAPI virtual std::unique_ptr<I18N> clone() override;
 };
+
+inline std::unique_ptr<I18N>& getInstance() {
+    static std::unique_ptr<I18N> instance;
+    return instance;
+}
+inline void load(std::string const& path) {
+    try {
+        if (std::filesystem::is_directory(path)) {
+            getInstance() = std::make_unique<MultiFileI18N>(path);
+        } else {
+            getInstance() = std::make_unique<SingleFileI18N>(path);
+        }
+        return;
+    } catch (...) {}
+    getInstance() = nullptr;
+}
 
 /**
  * @brief Translate a str.
@@ -146,7 +150,7 @@ public:
  */
 template <ll::concepts::IsString S, typename... Args>
 inline std::string tr(S const& formatStr, Args&&... args) {
-    auto res = I18N::INSTANCE->get(formatStr);
+    auto res = getInstance()->get(formatStr);
     if constexpr (sizeof...(args) != 0) { return fmt::format(fmt::runtime(res), args...); }
     return res;
 }
@@ -169,7 +173,7 @@ inline std::string tr(S const& formatStr, Args&&... args) {
  */
 template <ll::concepts::IsString S, typename... Args>
 inline std::string trl(std::string const& localeName, S const& formatStr, Args&&... args) {
-    auto res = I18N::INSTANCE->get(formatStr, localeName);
+    auto res = getInstance()->get(formatStr, localeName);
     if constexpr (sizeof...(args) != 0) { return fmt::format(fmt::runtime(res), args...); }
     return res;
 }
@@ -178,8 +182,6 @@ inline std::string trl(std::string const& localeName, S const& formatStr, Args&&
 
 namespace ll::i18n_literals {
 
-inline std::string operator""_tr(char const* x, size_t len) {
-    return ll::i18n::tr(std::string{x, len});
-}
+inline std::string operator""_tr(char const* x, size_t len) { return ll::i18n::tr(std::string{x, len}); }
 
 } // namespace ll::i18n_literals

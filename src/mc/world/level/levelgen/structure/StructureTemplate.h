@@ -38,7 +38,7 @@ public:
 
     // always success
     LLNDAPI static std::unique_ptr<StructureTemplate> create(
-        const std::string&        name,
+        const std::string& name,
         BlockSource&       blockSource,
         BoundingBox const& boundingBox,
         bool               ignoreBlocks   = false,

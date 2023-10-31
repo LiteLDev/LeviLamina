@@ -37,8 +37,6 @@ std::chrono::steady_clock::time_point ll::severStartEndTime;
 
 using namespace ll;
 
-std::unique_ptr<i18n::I18N> i18n::I18N::INSTANCE = std::make_unique<i18n::MultiFileI18N>("plugins/LeviLamina/LangPack/");
-
 // Add plugins folder to path
 void fixPluginsLibDir() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
@@ -46,15 +44,15 @@ void fixPluginsLibDir() {
     auto* buffer = new (std::nothrow) wchar_t[MAX_PATH_LEN];
     if (!buffer) return;
 
-    GetEnvironmentVariableW(L"PATH", buffer, MAX_PATH_LEN);
+    GetEnvironmentVariable(L"PATH", buffer, MAX_PATH_LEN);
     std::wstring path(buffer);
 
-    GetCurrentDirectoryW(MAX_PATH_LEN, buffer);
+    GetCurrentDirectory(MAX_PATH_LEN, buffer);
     std::wstring currentDir(buffer);
 
     delete[] buffer;
     // append plugins path to environment path
-    SetEnvironmentVariableW(L"PATH", (currentDir + L"\\plugins;" + path).c_str());
+    SetEnvironmentVariable(L"PATH", (currentDir + L"\\plugins;" + path).c_str());
 }
 
 void fixUpCWD() {
@@ -63,55 +61,12 @@ void fixUpCWD() {
     auto* buffer = new (std::nothrow) wchar_t[MAX_PATH_LEN];
     if (!buffer) return;
 
-    GetModuleFileNameW(nullptr, buffer, MAX_PATH_LEN);
+    GetModuleFileName(nullptr, buffer, MAX_PATH_LEN);
     std::wstring path(buffer);
 
     delete[] buffer;
 
-    SetCurrentDirectoryW(path.substr(0, path.find_last_of(L'\\')).c_str());
-}
-
-void unzipNodeModules() {
-    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\lib\\node_modules.tar")))) {
-        std::error_code ec;
-        // if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
-        //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
-        auto res = NewProcessSync(
-            fmt::format(
-                R"({} x "{}" -o".\plugins\lib\" -aoa)",
-                ll::globalConfig.modules.compressor.path,
-                R"(.\plugins\lib\node_modules.tar)"
-            ),
-            30000
-        );
-        if (res.first != 0) {
-            logger.error("ll.unzipNodeModules.fail"_tr);
-        } else {
-            std::filesystem::remove(R"(.\plugins\lib\node_modules.tar)", ec);
-        }
-    }
-}
-
-void decompressResourcePacks() {
-    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\LeviLamina\\ResourcePacks\\LeviLamina-CUI.tar"))
-        )) {
-        std::error_code ec;
-        // if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
-        //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
-        auto res = NewProcessSync(
-            fmt::format(
-                R"({} x "{}" -o".\plugins\LeviLamina\ResourcePacks\" -aoa)",
-                ll::globalConfig.modules.compressor.path,
-                R"(.\plugins\LeviLamina\ResourcePacks\LeviLamina-CUI.tar)"
-            ),
-            30000
-        );
-        if (res.first != 0) {
-            logger.error("ll.decompressResourcePacks.fail"_tr);
-        } else {
-            std::filesystem::remove(R"(.\plugins\LeviLamina\ResourcePacks\LeviLamina-CUI.tar)", ec);
-        }
-    }
+    SetCurrentDirectory(path.substr(0, path.find_last_of(L'\\')).c_str());
 }
 
 void checkRunningBDS() {
@@ -142,7 +97,7 @@ void checkRunningBDS() {
 
     // Get current process path
     std::wstring currentPath;
-    GetModuleFileNameW(nullptr, buffer, MAX_PATH_LEN);
+    GetModuleFileName(nullptr, buffer, MAX_PATH_LEN);
     currentPath = buffer;
 
     // Get the BDS process paths
@@ -152,7 +107,7 @@ void checkRunningBDS() {
         if (handle) {
             // Get the full path of the process
             std::wstring path;
-            GetModuleFileNameExW(handle, nullptr, buffer, MAX_PATH_LEN);
+            GetModuleFileNameEx(handle, nullptr, buffer, MAX_PATH_LEN);
             path = buffer;
 
             // Compare the path
@@ -266,6 +221,10 @@ namespace bstats {
 void registerBStats();
 }
 
+namespace ll::i18n {
+extern std::string globalDefaultLocaleName;
+}
+
 void leviLaminaMain() {
 
 #if !defined(LL_DEBUG)
@@ -284,21 +243,17 @@ void leviLaminaMain() {
     std::error_code ec;
     std::filesystem::create_directories("plugins", ec);
 
+    // I18n
+    ll::i18n::load("plugins/LeviLamina/LangPack");
+
     // Load Config
     ll::loadLeviConfig();
 
+    // Update default language
+    if (ll::globalConfig.language != "system") { i18n::globalDefaultLocaleName = ll::globalConfig.language; }
+
     // Setup bug fixes
     setupBugFixes();
-
-    // Update default language
-    if (i18n::I18N::INSTANCE && ll::globalConfig.language != "system") { i18n::I18N::INSTANCE->mDefaultLocaleName = ll::globalConfig.language; }
-
-
-    // Unzip packed Node Modules
-    unzipNodeModules();
-
-    // Decompress resource packs
-    decompressResourcePacks();
 
     // Check Protocol Version
     checkProtocolVersion();

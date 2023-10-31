@@ -1,3 +1,4 @@
+#include "ll/api/chrono/GameChrono.h"
 #include "ll/api/i18n/I18nAPI.h"
 #include "ll/api/utils/Hash.h"
 #include "mc/nbt/ByteTag.h"
@@ -7,7 +8,6 @@
 #include "mc/nbt/IntTag.h"
 #include "mc/nbt/ShortTag.h"
 #include "mc/nbt/StringTag.h"
-#include "ll/api/chrono/GameChrono.h"
 
 using namespace ll::nbt_literals;
 using namespace ll::hash_literals;

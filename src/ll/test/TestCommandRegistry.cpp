@@ -7,10 +7,10 @@
 #include "mc/server/commands/CommandOutput.h"
 #include "mc/server/commands/CommandParameterData.h"
 #include "mc/server/commands/CommandParameterDataType.h"
+#include "mc/server/commands/CommandRawText.h"
 #include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/MinecraftCommands.h"
 #include "mc/server/commands/ServerCommands.h"
-#include "mc/server/commands/CommandRawText.h"
 #include "mc/world/Minecraft.h"
 #include "mc/world/level/Command.h"
 
@@ -18,11 +18,11 @@
 class TestCommand : public Command {
     enum Operation : int { List, Install, Uninstall, Enable, Disable };
 
-    Operation   operation = static_cast<Operation>(-1);
-    std::string target;
-    int         index        = -1;
-    bool        target_isSet = false;
-    bool        index_isSet  = false;
+    Operation      operation = static_cast<Operation>(-1);
+    std::string    target;
+    int            index        = -1;
+    bool           target_isSet = false;
+    bool           index_isSet  = false;
     CommandRawText testTest;
 
 
@@ -146,7 +146,7 @@ public:
     }
 };
 
-LL_AUTO_STATIC_HOOK(  // TODO: To Event
+LL_AUTO_STATIC_HOOK( // TODO: To Event
     ServerCommandsCommandTest,
     HookPriority::Normal,
     ServerCommands::setupStandardServer,

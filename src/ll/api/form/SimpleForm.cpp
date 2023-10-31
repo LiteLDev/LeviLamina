@@ -7,7 +7,7 @@ namespace ll::form {
 
 class SimpleFormElement {
 protected:
-    virtual ~SimpleFormElement()  = default;
+    virtual ~SimpleFormElement()               = default;
     virtual nlohmann::ordered_json serialize() = 0;
     friend class SimpleForm;
 };
@@ -104,9 +104,9 @@ protected:
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
         try {
             nlohmann::ordered_json form = {
-                {"title",   mTitle            },
-                {"type",    "form"            },
-                {"content", mContent          },
+                {"title",   mTitle                         },
+                {"type",    "form"                         },
+                {"content", mContent                       },
                 {"buttons", nlohmann::ordered_json::array()}
             };
             for (auto& e : mElements) {

@@ -49,7 +49,11 @@ public:
 
     // symbol:
     // ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
-    MCAPI ExpressionNode(std::string const&, ::MolangVersion version = MolangVersion::Latest, gsl::span<class HashedString const> = gsl::span<class HashedString const>{{HashedString{"default"}}});
+    MCAPI ExpressionNode(
+        std::string const&,
+        ::MolangVersion version             = MolangVersion::Latest,
+        gsl::span<class HashedString const> = gsl::span<class HashedString const>{{HashedString{"default"}}}
+    );
 
     // symbol: ?clear@ExpressionNode@@QEAAXXZ
     MCAPI void clear();

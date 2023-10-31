@@ -34,8 +34,8 @@ constexpr int ALLOCATE_BUFFER = 0x00000100;
 
 class seh_exception : std::exception {
 public:
-    const uint                 _expCode = 0;
-    char const*                _expMsg  = nullptr;
+    const uint  _expCode = 0;
+    char const* _expMsg  = nullptr;
     const void* _expInfo = nullptr;
 
     seh_exception(uint ExpCode, void* ExpInfo) : _expCode(ExpCode), _expInfo(ExpInfo) {}

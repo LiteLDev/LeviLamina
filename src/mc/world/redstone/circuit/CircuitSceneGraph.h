@@ -17,7 +17,6 @@ public:
     // CircuitSceneGraph inner types define
     class PendingEntry {
     public:
-
         class BaseCircuitComponent*                 mRawComponentPtr;
         std::unique_ptr<class BaseCircuitComponent> mComponent;
         class BlockPos                              mPos;

@@ -12,8 +12,8 @@ struct basic_functionbuf;
 template <class Char, class Traits = std::char_traits<Char>>
 struct basic_ofuncstream;
 
-using ofuncstream = basic_ofuncstream<char>;
-using functionbuf = basic_functionbuf<char>;
+using ofuncstream  = basic_ofuncstream<char>;
+using functionbuf  = basic_functionbuf<char>;
 using wofuncstream = basic_ofuncstream<wchar_t>;
 using wfunctionbuf = basic_functionbuf<wchar_t>;
 

@@ -57,7 +57,7 @@ struct Plugin {
 
     HMODULE mHandle = nullptr;
 
-    LLNDAPI std::string getDefaultDataPath();
+    LLNDAPI std::string getDefaultDataPath() const;
 
     void addSharedData(std::string const& key, std::any const& value) { mSharedData[key] = value; }
 
@@ -122,7 +122,7 @@ LLAPI bool registerPlugin(
  *
  * @param  name         The name of the plugin
  */
-LLNDAPI std::optional<Plugin> findPlugin(std::string const& name);
+LLNDAPI optional_ref<Plugin> findPlugin(std::string const& name);
 
 /**
  * @brief Find a loaded plugin by HMODULE handle
@@ -130,20 +130,13 @@ LLNDAPI std::optional<Plugin> findPlugin(std::string const& name);
  * @param  handle       The HMODULE handle of the plugin
  * @return std::optional<Plugin>  The plugin(nullopt if not found)
  */
-LLNDAPI std::optional<Plugin> findPlugin(HMODULE handle);
+LLNDAPI optional_ref<Plugin> findPlugin(HMODULE handle);
 
 /**
  * @brief Get the All the loaded plugins
  *
  * @return std::unordered_map<std::string, ll::Plugin>  The loaded plugins(name-plugin)
  */
-LLNDAPI std::unordered_map<std::string, ll::Plugin> getAllPlugins();
-
-/**
- * @brief Get the handle of LeviLamina.dll.
- *
- * @return HMODULE  The handle
- */
-LLNDAPI HMODULE getLoaderHandle();
+LLNDAPI std::unordered_map<std::string, ll::Plugin>& getAllPlugins();
 
 } // namespace ll

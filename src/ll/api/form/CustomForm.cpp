@@ -96,7 +96,9 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override { return data.get<bool>(); }
+    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override {
+        return data.get<bool>();
+    }
 };
 
 class Dropdown : public CustomFormElement {
@@ -188,7 +190,9 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override { return data.get<double>(); }
+    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override {
+        return data.get<double>();
+    }
 };
 
 class StepSlider : public CustomFormElement {
@@ -316,8 +320,8 @@ protected:
     [[nodiscard]] nlohmann::ordered_json serialize() const override {
         try {
             nlohmann::ordered_json form = {
-                {"title",   mTitle            },
-                {"type",    "custom_form"     },
+                {"title",   mTitle                         },
+                {"type",    "custom_form"                  },
                 {"content", nlohmann::ordered_json::array()}
             };
             for (auto& e : mElements) {

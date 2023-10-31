@@ -1,6 +1,6 @@
 #pragma once
-#include "ll/api/base/Global.h"
 #include "compact_enc_det/util/encodings/encodings.h"
+#include "ll/api/base/Global.h"
 #define UNICODE // compact_enc_det undefined UNICODE, so we need to define it again
 
 namespace encoding {

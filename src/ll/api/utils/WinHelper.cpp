@@ -2,7 +2,6 @@
 
 #include <string>
 
-#include "ll/api/utils/DbgHelper.h"
 #include "ll/api/utils/StringUtils.h"
 
 #include "ll/api/i18n/I18nAPI.h"
@@ -75,12 +74,12 @@ std::pair<int, std::string> NewProcessSync(std::string const& process, int timeL
     PROCESS_INFORMATION pi;
 
     si.cb = sizeof(STARTUPINFO);
-    GetStartupInfoW(&si);
+    GetStartupInfo(&si);
     si.hStdOutput = si.hStdError = hWrite;
     si.dwFlags                   = STARTF_USESTDHANDLES;
 
     auto wCmd = str2cwstr(process);
-    if (!CreateProcessW(nullptr, wCmd, nullptr, nullptr, TRUE, 0, nullptr, nullptr, &si, &pi)) {
+    if (!CreateProcess(nullptr, wCmd, nullptr, nullptr, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         delete[] wCmd;
         return {-1, ""};
     }

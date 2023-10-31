@@ -6,8 +6,8 @@
 namespace Json {
 
 class ValueConstIterator : public ValueIteratorBase {
-    public:
-        using ValueIteratorBase::ValueIteratorBase;
+public:
+    using ValueIteratorBase::ValueIteratorBase;
 };
 
 }; // namespace Json

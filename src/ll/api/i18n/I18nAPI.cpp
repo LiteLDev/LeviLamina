@@ -2,6 +2,8 @@
 
 #include "ll/api/utils/StringUtils.h"
 
+#include "ll/api/utils/WinHelper.h"
+
 namespace fs = std::filesystem;
 
 using ll::StringUtils::splitByPattern;
@@ -10,9 +12,11 @@ using ll::StringUtils::wstr2str;
 
 namespace ll::i18n {
 
+std::string globalDefaultLocaleName = GetSystemLocaleName();
+
 const std::array<std::string, 2> GENERAL_LANGUAGES = {"en", "zh"};
 
-// region ### I18N ###
+#pragma region I18N
 
 bool findTranslation(
     I18N::LangData const& langData,
@@ -42,7 +46,13 @@ bool findTranslation(
 }
 
 std::string I18N::get(std::string const& key, std::string localeName) {
-    if (localeName.empty()) { localeName = mDefaultLocaleName; }
+    if (localeName.empty()) {
+        if (mDefaultLocaleName.empty()) {
+            localeName = globalDefaultLocaleName;
+        } else {
+            localeName = mDefaultLocaleName;
+        }
+    }
     auto        localeType = localeName.substr(0, 2);
     std::string result;
     // Try finding the translation in loaded language data
@@ -65,9 +75,9 @@ std::string I18N::get(std::string const& key, std::string localeName) {
     return key;
 }
 
-// endregion
+#pragma endregion
 
-// region ### SingleFileI18N ###
+#pragma region SingleFileI18N
 
 void SingleFileI18N::load(std::string const& fileName) {
     this->mFilePath = fileName;
@@ -107,18 +117,9 @@ void SingleFileI18N::save() {
 
 I18N::Type SingleFileI18N::getType() { return Type::SingleFile; }
 
-std::unique_ptr<I18N> SingleFileI18N::clone() {
-    auto result                = std::make_unique<SingleFileI18N>();
-    result->mDefaultLangData   = this->mDefaultLangData;
-    result->mLangData          = this->mLangData;
-    result->mDefaultLocaleName = this->mDefaultLocaleName;
-    result->mFilePath          = this->mFilePath;
-    return result;
-}
+#pragma endregion
 
-// endregion
-
-// region ### MultiFileI18N ###
+#pragma region MultiFileI18N
 
 I18N::SubLangData parseNestedData(nlohmann::json const& j, std::string const& prefix = "") {
     I18N::SubLangData data;
@@ -191,15 +192,6 @@ void MultiFileI18N::save(bool nested) {
 
 I18N::Type MultiFileI18N::getType() { return Type::MultiFile; }
 
-std::unique_ptr<I18N> MultiFileI18N::clone() {
-    auto result                = std::make_unique<MultiFileI18N>();
-    result->mDefaultLangData   = this->mDefaultLangData;
-    result->mLangData          = this->mLangData;
-    result->mDefaultLocaleName = this->mDefaultLocaleName;
-    result->mDirPath           = this->mDirPath;
-    return result;
-}
-
-// endregion
+#pragma endregion
 
 } // namespace ll::i18n

@@ -20,9 +20,9 @@ public:
         std::unordered_map<std::string, std::any> const& sharedData = {}
     );
 
-    LLNDAPI static std::optional<Plugin>                   findPlugin(HMODULE handle);
-    LLNDAPI static std::optional<Plugin>                   findPlugin(std::string const& name);
-    LLNDAPI static std::unordered_map<std::string, Plugin> getAllPlugins();
+    LLNDAPI static optional_ref<Plugin>                     findPlugin(HMODULE handle);
+    LLNDAPI static optional_ref<Plugin>                     findPlugin(std::string const& name);
+    LLNDAPI static std::unordered_map<std::string, Plugin>& getAllPlugins();
 
     LLAPI static bool unregisterPlugin(std::string const& name);
 };

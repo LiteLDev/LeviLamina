@@ -91,7 +91,10 @@ constexpr void destruct(void* ptr, intptr_t off) noexcept {
 
 template <typename T, class... Types>
 constexpr auto construct(void* ptr, intptr_t off, Types&&... args) {
-    return std::construct_at(std::launder(reinterpret_cast<T*>(((uintptr_t)ptr) + (uintptr_t)off)), std::forward<Types>(args)...);
+    return std::construct_at(
+        std::launder(reinterpret_cast<T*>(((uintptr_t)ptr) + (uintptr_t)off)),
+        std::forward<Types>(args)...
+    );
 }
 
 [[nodiscard]] inline size_t getMemSizeFromPtr(void* ptr) {
