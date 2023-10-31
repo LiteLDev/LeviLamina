@@ -20,35 +20,11 @@
 
 using namespace ll::StringUtils;
 
-inline std::vector<std::string> getPreloadList() {
-    // Not load if is already loaded in preloader
-    std::vector<std::string> preloadList{};
-
-    if (std::filesystem::exists(std::filesystem::path(".\\plugins\\preload.conf"))) {
-        std::ifstream preloadConf{".\\plugins\\preload.conf"};
-        if (preloadConf) {
-            std::string preloadName;
-            while (getline(preloadConf, preloadName)) {
-                if (preloadName.back() == '\n') preloadName.pop_back();
-                if (preloadName.back() == '\r') preloadName.pop_back();
-
-                if (preloadName.empty() || preloadName.front() == '#') continue;
-                if (preloadName.find("LeviLamina.dll") != std::string::npos) continue;
-
-                preloadList.emplace_back(preloadName);
-            }
-            preloadConf.close();
-        }
-    }
-    return preloadList;
-}
-
 void ll::LoadMain() {
     ll::logger.info("ll.loader.loadMain.start"_tr);
 
     // Load plugins
     int                      pluginCount = 0;
-    std::vector<std::string> preloadList = getPreloadList();
 
     std::filesystem::directory_iterator ent("plugins");
     for (auto& file : ent) {
@@ -63,13 +39,6 @@ void ll::LoadMain() {
 
         // Avoid preloaded plugin
         auto pluginFileName = u8str2str(path.filename().u8string());
-        bool loaded         = false;
-        for (auto& p : preloadList)
-            if (p.find(pluginFileName) != std::string::npos) {
-                loaded = true;
-                break;
-            }
-        if (loaded) continue;
 
         // Do load
         auto lib = LoadLibrary(path.wstring().c_str());
