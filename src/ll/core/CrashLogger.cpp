@@ -30,8 +30,6 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
     sa.lpSecurityDescriptor = nullptr;
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
 
-    std::cout<<"eeeeeeeeeeeeeeee"<<std::endl;
-
     std::wstring cmd{ll::string_utils::str2wstr(fmt::format(
         "{} {} \"{}\"",
         globalConfig.modules.crashLogger.path,
