@@ -1,7 +1,6 @@
-﻿#include "ll/api/LLAPI.h"
-#include "ll/api/ServerInfo.h"
+﻿#include "ll/api/ServerInfo.h"
+#include "ll/api/plugin/PluginManager.h"
 #include "ll/core/Config.h"
-#include "ll/core/PluginManager.h"
 
 #include "mc/network/packet/Packet.h"
 #include "mc/server/ServerPlayer.h"
@@ -141,7 +140,7 @@ public:
 };
 
 void LLListPluginsCommand(CommandOutput& output) {
-    auto plugins = ll::getAllPlugins();
+    auto plugins =plugin::manager::getAllPlugins();
     output.trSuccess("ll.cmd.listPlugin.overview", plugins.size());
 
     std::ostringstream oss;
@@ -158,7 +157,7 @@ void LLListPluginsCommand(CommandOutput& output) {
 }
 
 void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
-    auto plugin = ll::findPlugin(pluginName);
+    auto plugin = plugin::manager::findPlugin(pluginName);
     if (plugin.has_value()) {
         std::map<std::string, std::string> outs;
         std::ostringstream                 oss;
@@ -185,7 +184,7 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
 void LLVersionCommand(CommandOutput& output) {
     output.trSuccess(
         "ll.cmd.version.msg",
-        ll::getBdsVersion(),
+        ll::getBdsVersion().to_string(),
         ll::getLoaderVersion().to_string(),
         ll::getServerProtocolVersion()
     );
@@ -195,7 +194,7 @@ void LLHelpCommand(CommandOutput& output) { output.trSuccess("ll.cmd.help.msg");
 
 void LLLoadPluginCommand(CommandOutput& output, std::string const& path) {
 
-    // if (PluginManager::loadPlugin(path, true)) {
+    // if (manager::loadPlugin(path, true)) {
     //     output.trSuccess("ll.cmd.loadPlugin.success", path);
     // } else {
     //     output.trError("ll.cmd.loadPlugin.fail", path);
@@ -204,7 +203,7 @@ void LLLoadPluginCommand(CommandOutput& output, std::string const& path) {
 
 void LLUnloadPluginCommand(CommandOutput& output, std::string const& pluginName) {
 
-    // if (PluginManager::unloadPlugin(pluginName, true)) {
+    // if (manager::unloadPlugin(pluginName, true)) {
     //     output.trSuccess("ll.cmd.unloadPlugin.success", pluginName);
     // } else {
     //     output.trError("ll.cmd.unloadPlugin.fail", pluginName);
@@ -213,13 +212,13 @@ void LLUnloadPluginCommand(CommandOutput& output, std::string const& pluginName)
 
 void LLReloadPluginCommand(CommandOutput& output, std::string const& pluginName, bool reloadAll) {
     if (!reloadAll) {
-        // if (PluginManager::reloadPlugin(pluginName, true)) {
+        // if (manager::reloadPlugin(pluginName, true)) {
         //     output.trSuccess("ll.cmd.reloadPlugin.success", pluginName);
         // } else {
         //     output.trError("ll.cmd.reloadPlugin.fail", pluginName);
         // }
     } else {
-        // int cnt = PluginManager::reloadAllPlugins(true);
+        // int cnt = manager::reloadAllPlugins(true);
         // if (cnt > 0) {
         //     output.trSuccess("ll.cmd.reloadAllPlugins.success", cnt);
         // } else {
@@ -359,7 +358,7 @@ public:
 
         // Register softenum
         std::vector<std::string> pluginList;
-        for (auto& [name, p] : ll::getAllPlugins()) { pluginList.push_back(name); }
+        for (auto& [name, p] : plugin::manager::getAllPlugins()) { pluginList.push_back(name); }
         registry->addSoftEnum("PluginName", pluginList);
 
         // ll version & help

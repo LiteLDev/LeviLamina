@@ -270,7 +270,7 @@ void leviLaminaMain() {
 
     // Rename Window
     HWND         hwnd = GetConsoleWindow();
-    std::wstring s    = ll::string_utils::str2wstr("Bedrock Dedicated Server " + ll::getBdsVersion());
+    std::wstring s    = ll::string_utils::str2wstr("Bedrock Dedicated Server " + ll::getBdsVersion().to_string());
     SetWindowText(hwnd, s.c_str());
 
     // Register Exit Event Handler.
@@ -316,7 +316,7 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Highest, "main", int, int 
             break;
         case "-v"_h:
         case "--version"_h:
-            fmt::print("{}", ll::getBdsVersion());
+            fmt::print("{}", ll::getBdsVersion().to_string());
             return 0;
         case "--protocolversion"_h:
             fmt::print("{}", ll::getServerProtocolVersion());

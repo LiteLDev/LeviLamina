@@ -54,7 +54,7 @@ void tryModifyServerStartInfo(std::string& s) {
                 fmt::format(
                     fg(fmt::color::light_sky_blue) | fmt::emphasis::bold,
                     "LeviLamina {}",
-                    LL_FILE_VERSION_STRING
+                    ll::getLoaderVersion().to_string()
                 )
             );
         }

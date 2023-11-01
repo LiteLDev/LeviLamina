@@ -1,18 +1,10 @@
-#include "ll/core/PluginManager.h"
+#include "ll/api/plugin/PluginManager.h"
 
-#include <string>
-#include <unordered_map>
-
-#include "ll/api/LLAPI.h"
-#include "ll/core/LeviLamina.h"
-
-#include "windows.h"
-
-namespace ll::plugin {
+namespace ll::plugin::manager {
 
 std::unordered_map<std::string, Plugin> plugins;
 
-bool PluginManager::registerPlugin(
+bool registerPlugin(
     std::string const&                               name,
     std::string const&                               description,
     Version const&                                   version,
@@ -24,17 +16,17 @@ bool PluginManager::registerPlugin(
     return true;
 }
 
-optional_ref<Plugin> PluginManager::findPlugin(std::string const& name) {
+optional_ref<Plugin> findPlugin(std::string const& name) {
     auto it = plugins.find(name);
     if (it != plugins.end()) { return it->second; }
     return std::nullopt;
 }
 
-std::unordered_map<std::string, Plugin>& PluginManager::getAllPlugins() { return plugins; }
+std::unordered_map<std::string, Plugin>& getAllPlugins() { return plugins; }
 
-bool PluginManager::unregisterPlugin(std::string const& name) {
+bool unregisterPlugin(std::string const& name) {
     auto plugin = findPlugin(name);
-    if (plugin.has_value()) {
+    if (plugin) {
         plugins.erase(name);
         return true;
     } else {
@@ -42,4 +34,4 @@ bool PluginManager::unregisterPlugin(std::string const& name) {
     }
 }
 
-} // namespace ll::plugin
+} // namespace ll::plugin::manager

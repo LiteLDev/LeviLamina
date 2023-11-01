@@ -4,21 +4,19 @@
 #include <string>
 #include <vector>
 
-#include "ll/api/LLAPI.h"
 #include "ll/api/Logger.h"
 #include "ll/api/i18n/I18nAPI.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinHelper.h"
 
+#include "ll/api/plugin/PluginManager.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
-#include "ll/core/PluginManager.h"
 #include "ll/core/Version.h"
 
 #include "windows.h"
 
 using namespace ll::string_utils;
-using ll::plugin::PluginManager;
 using ll::plugin::Version;
 
 void ll::LoadMain() {
@@ -44,8 +42,8 @@ void ll::LoadMain() {
         if (lib) {
             ++pluginCount;
 
-            if (!PluginManager::findPlugin(pluginFileName).has_value()) {
-                if (!PluginManager::registerPlugin(pluginFileName, pluginFileName, {}, {})) {
+            if (!plugin::manager::findPlugin(pluginFileName).has_value()) {
+                if (!plugin::manager::registerPlugin(pluginFileName, pluginFileName, {}, {})) {
                     ll::logger.error("ll.pluginManager.error.failToRegisterPlugin"_tr, u8str2str(path.u8string()));
                 }
             }

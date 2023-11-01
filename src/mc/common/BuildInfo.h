@@ -6,10 +6,10 @@ namespace Common {
 
 struct BuildInfo {
 public:
-    // prevent constructor by default
-    BuildInfo& operator=(BuildInfo const&);
-    BuildInfo(BuildInfo const&);
-    BuildInfo();
+    std::string mBuildId;  // this+0x0
+    std::string mCommitId; // this+0x20
+    std::string mBranchId; // this+0x40
+    std::string mFlavor;   // this+0x60
 
 public:
     // NOLINTBEGIN
