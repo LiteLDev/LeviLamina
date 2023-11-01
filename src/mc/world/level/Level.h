@@ -47,6 +47,7 @@ class BlockSource;
 class Dimension;
 class Player;
 class Actor;
+class BiomeRegistry;
 
 class Level : public ILevel, public BlockSourceListener, public IWorldRegistriesProvider {
 public:

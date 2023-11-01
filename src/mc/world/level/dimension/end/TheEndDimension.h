@@ -46,80 +46,58 @@ public:
     virtual std::unique_ptr<class ChunkSource>
         _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
 
-    // symbol: ?_upgradeOldLimboEntity@TheEndDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
-    // MCVAPI void _upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion);
-
-    // symbol:
-    // ?_wrapStorageForVersionCompatibility@TheEndDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
-    // MCVAPI std::unique_ptr<class ChunkSource>
-    //        _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
-
-    // symbol:
-    // ?createGenerator@TheEndDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
-    // MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
-
-    // symbol: ?deserialize@TheEndDimension@@UEAAXAEBVCompoundTag@@@Z
-    MCVAPI void deserialize(class CompoundTag const&);
-
-    // symbol: ?fixWallChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-    // MCVAPI void fixWallChunk(class ChunkSource&, class LevelChunk&);
-
-    // symbol: ?getCloudHeight@TheEndDimension@@UEBAFXZ
-    MCVAPI short getCloudHeight() const;
-
-    // symbol: ?getDefaultBiome@TheEndDimension@@UEBA?AVHashedString@@XZ
-    MCVAPI class HashedString getDefaultBiome() const;
-
-    // symbol: ?getSpawnPos@TheEndDimension@@UEBA?AVBlockPos@@XZ
-    MCVAPI class BlockPos getSpawnPos() const;
-
-    // symbol: ?getSpawnYPosition@TheEndDimension@@UEBAHXZ
-    MCVAPI int getSpawnYPosition() const;
-
-    // symbol: ?getSunIntensity@TheEndDimension@@UEBAMMAEBVVec3@@M@Z
-    MCVAPI float getSunIntensity(float, class Vec3 const&, float) const;
-
-    // symbol: ?getTimeOfDay@TheEndDimension@@UEBAMHM@Z
-    MCVAPI float getTimeOfDay(int, float) const;
-
-    // symbol: ?hasGround@TheEndDimension@@UEBA_NXZ
-    MCVAPI bool hasGround() const;
+    // Dimension function reload
+    // symbol: ?isNaturalDimension@TheEndDimension@@UEBA_NXZ
+    virtual bool isNaturalDimension() const;
 
     // symbol: ?init@TheEndDimension@@UEAAXXZ
-    MCVAPI void init();
-
-    // symbol: ?isDay@TheEndDimension@@UEBA_NXZ
-    MCVAPI bool isDay() const;
-
-    // symbol: ?isFoggyAt@TheEndDimension@@UEBA_NHH@Z
-    MCVAPI bool isFoggyAt(int, int) const;
-
-    // symbol: ?isNaturalDimension@TheEndDimension@@UEBA_NXZ
-    MCVAPI bool isNaturalDimension() const;
-
-    // symbol: ?isValidSpawn@TheEndDimension@@UEBA_NHH@Z
-    MCVAPI bool isValidSpawn(int, int) const;
-
-    // symbol: ?levelChunkNeedsUpgrade@TheEndDimension@@UEBA_NAEBVLevelChunk@@@Z
-    // MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
-
-    // symbol: ?mayRespawnViaBed@TheEndDimension@@UEBA_NXZ
-    MCVAPI bool mayRespawnViaBed() const;
-
-    // symbol: ?serialize@TheEndDimension@@UEBAXAEAVCompoundTag@@@Z
-    MCVAPI void serialize(class CompoundTag&) const;
-
-    // symbol: ?startLeaveGame@TheEndDimension@@UEAAXXZ
-    MCVAPI void startLeaveGame();
+    virtual void init();
 
     // symbol: ?tick@TheEndDimension@@UEAAXXZ
-    MCVAPI void tick();
+    virtual void tick();
 
-    // symbol: ?translatePosAcrossDimension@TheEndDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
-    // MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
+    // symbol: ?isValidSpawn@TheEndDimension@@UEBA_NHH@Z
+    virtual bool isValidSpawn(int, int) const;
 
-    // symbol: ?upgradeLevelChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
-    // MCVAPI void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
+    // symbol: ?isFoggyAt@TheEndDimension@@UEBA_NHH@Z
+    virtual bool isFoggyAt(int, int) const;
+
+    // symbol: ?getCloudHeight@TheEndDimension@@UEBAFXZ
+    virtual short getCloudHeight() const;
+
+    // symbol: ?getDefaultBiome@TheEndDimension@@UEBA?AVHashedString@@XZ
+    virtual class HashedString getDefaultBiome() const;
+
+    // symbol: ?mayRespawnViaBed@TheEndDimension@@UEBA_NXZ
+    virtual bool mayRespawnViaBed() const;
+
+    // symbol: ?hasGround@TheEndDimension@@UEBA_NXZ
+    virtual bool hasGround() const;
+
+    // symbol: ?getSpawnPos@TheEndDimension@@UEBA?AVBlockPos@@XZ
+    virtual class BlockPos getSpawnPos() const;
+
+    // symbol: ?getSpawnYPosition@TheEndDimension@@UEBAHXZ
+    virtual int getSpawnYPosition() const;
+
+    // symbol: ?isDay@TheEndDimension@@UEBA_NXZ
+    virtual bool isDay() const;
+
+    // symbol: ?getTimeOfDay@TheEndDimension@@UEBAMHM@Z
+    virtual float getTimeOfDay(int, float) const;
+
+    // symbol: ?getSunIntensity@TheEndDimension@@UEBAMMAEBVVec3@@M@Z
+    virtual float getSunIntensity(float, class Vec3 const&, float) const;
+
+    // symbol: ?startLeaveGame@TheEndDimension@@UEAAXXZ
+    virtual void startLeaveGame();
+
+    // SavedData Function reload
+    // symbol: ?deserialize@TheEndDimension@@UEAAXAEBVCompoundTag@@@Z
+    virtual void deserialize(class CompoundTag const&);
+
+    // symbol: ?serialize@TheEndDimension@@UEBAXAEAVCompoundTag@@@Z
+    virtual void serialize(class CompoundTag&) const;
 
     // symbol: ?AMBIENT_MULTIPLIER@TheEndDimension@@2MB
     MCAPI static float const AMBIENT_MULTIPLIER;

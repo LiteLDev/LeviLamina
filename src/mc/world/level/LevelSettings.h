@@ -10,6 +10,8 @@
 #include "mc/world/level/PermissionsHandler.h"
 #include "mc/world/level/SpawnSettings.h"
 #include "mc/world/level/storage/GameRules.h"
+#include "mc/world/level/storage/ExperimentStorage.h"
+#include "mc/resources/BaseGameVersion.h"
 
 // auto generated inclusion list
 #include "mc/client/social/GamePublishSetting.h"
@@ -25,6 +27,7 @@
 #include "mc/world/actor/player/PlayerPermissionLevel.h"
 #include "mc/world/level/levelgen/GeneratorType.h"
 
+class PackInstanceId;
 
 class LevelSettings {
 public:

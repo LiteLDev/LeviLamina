@@ -10,12 +10,12 @@ public:
     // prevent constructor by default
     NetherBrightnessRamp& operator=(NetherBrightnessRamp const&);
     NetherBrightnessRamp(NetherBrightnessRamp const&);
-    NetherBrightnessRamp();
+    NetherBrightnessRamp() = default;
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    virtual ~NetherBrightnessRamp() = default;
 
     // vIndex: 2, symbol: ?getBaseAmbientValue@NetherBrightnessRamp@@UEBAMXZ
     virtual float getBaseAmbientValue() const;

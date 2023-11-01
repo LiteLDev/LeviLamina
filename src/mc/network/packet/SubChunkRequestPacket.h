@@ -29,7 +29,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    virtual ~SubChunkRequestPacket() = default;
 
     // vIndex: 1, symbol: ?getId@SubChunkRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

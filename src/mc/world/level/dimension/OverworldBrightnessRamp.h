@@ -10,12 +10,12 @@ public:
     // prevent constructor by default
     OverworldBrightnessRamp& operator=(OverworldBrightnessRamp const&);
     OverworldBrightnessRamp(OverworldBrightnessRamp const&);
-    OverworldBrightnessRamp();
+    OverworldBrightnessRamp() = default;
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    virtual ~OverworldBrightnessRamp() = default;
 
     // NOLINTEND
 };

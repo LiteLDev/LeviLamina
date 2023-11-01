@@ -13,6 +13,8 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 
 class PacketSender : public ::Bedrock::EnableNonOwnerReferences {
 public:
+    SubClientId mSenderSubId; // this+0x18
+
     // prevent constructor by default
     PacketSender& operator=(PacketSender const&);
     PacketSender(PacketSender const&);
@@ -21,7 +23,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    virtual ~PacketSender() = default;
 
     // vIndex: 1, symbol: ?send@LoopbackPacketSender@@UEAAXAEAVPacket@@@Z
     virtual void send(class Packet&) = 0;

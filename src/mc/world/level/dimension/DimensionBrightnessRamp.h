@@ -4,15 +4,16 @@
 
 class DimensionBrightnessRamp {
 public:
+    float mBrightnessRamp[16] = {0};
     // prevent constructor by default
     DimensionBrightnessRamp& operator=(DimensionBrightnessRamp const&);
     DimensionBrightnessRamp(DimensionBrightnessRamp const&);
-    DimensionBrightnessRamp();
+    DimensionBrightnessRamp() = default;
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    virtual ~DimensionBrightnessRamp() = default;
 
     // vIndex: 1, symbol: ?buildBrightnessRamp@DimensionBrightnessRamp@@UEAAXXZ
     virtual void buildBrightnessRamp();

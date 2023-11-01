@@ -5,8 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
+class StructureFeature;
 class StructureFeatureRegistry {
 public:
+
+    std::vector<std::unique_ptr<StructureFeature>> mStructureFeatures;
+
     // prevent constructor by default
     StructureFeatureRegistry& operator=(StructureFeatureRegistry const&);
     StructureFeatureRegistry(StructureFeatureRegistry const&);
