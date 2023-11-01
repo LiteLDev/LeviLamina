@@ -23,7 +23,7 @@ bool registerPlugin(
     ll::Version const&                        version,
     std::map<std::string, std::string> const& extraInfo
 ) {
-    return PluginManager::registerPlugin( name, description, version, extraInfo);
+    return PluginManager::registerPlugin(name, description, version, extraInfo);
 }
 
 optional_ref<Plugin> findPlugin(std::string const& name) { return PluginManager::findPlugin(name); }
@@ -31,13 +31,16 @@ optional_ref<Plugin> findPlugin(std::string const& name) { return PluginManager:
 std::unordered_map<std::string, Plugin>& getAllPlugins() { return PluginManager::getAllPlugins(); }
 
 Version getLoaderVersion() {
-    return {
+    auto v = Version{
         LL_VERSION_MAJOR,
         LL_VERSION_MINOR,
         LL_VERSION_PATCH,
-        LL_VERSION_PRERELEASE,
-        LL_VERSION_TO_STRING(LL_VERSION_COMMIT_SHA),
     };
+    v.build = LL_VERSION_TO_STRING(LL_VERSION_COMMIT_SHA);
+#ifdef LL_VERSION_PRERELEASE
+    v.preRelease = PreRelease{LL_VERSION_PRERELEASE};
+#endif
+    return v;
 }
 
 } // namespace ll

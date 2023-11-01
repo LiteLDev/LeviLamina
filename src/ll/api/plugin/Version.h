@@ -97,10 +97,6 @@ struct PreRelease {
     }
 
     constexpr detail::from_chars_result from_chars(const char* first, const char* last) noexcept {
-        if (detail::is_hyphen(*first)) {
-            ++first;
-        } else return {first, std::errc::invalid_argument};
-
         auto begin = first;
         while (first != last && !detail::is_plus(*first)) { first++; }
         std::string                   s{begin, first};
@@ -191,7 +187,7 @@ struct Version {
                 if (!next) { return {nullptr, std::errc::invalid_argument}; }
                 if (detail::check_delimiter(next, last, '-')) {
                     PreRelease pre;
-                    auto       result = pre.from_chars(next, last);
+                    auto       result = pre.from_chars(++next, last);
                     if (!result) return result;
                     if (pre.values.empty()) return {next, std::errc::invalid_argument};
                     preRelease = pre;
