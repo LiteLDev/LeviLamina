@@ -61,7 +61,8 @@ inline J serialize(T const& obj)
     forEachMember(obj, [&](std::string_view name, auto& member) {
         using MemberType = std::remove_cvref_t<decltype(member)>;
         if constexpr (requires(MemberType& m) { serialize<J, MemberType>(m); }) {
-            res[std::string{name}] = serialize<J, MemberType>(member);
+            auto j = serialize<J, MemberType>(member);
+            if (!j.is_null()) res[std::string{name}] = j;
         } else {
             static_assert(ll::concepts::always_false<MemberType>, "this type can't serialize");
         }
@@ -71,10 +72,10 @@ inline J serialize(T const& obj)
 template <class J, Reflectable T>
 inline void deserialize(T& obj, J const& j) {
     forEachMember(obj, [&](std::string_view name, auto& member) {
-        if (j.contains(std::string{name})) {
+        if (auto sname = std::string{name}; j.contains(sname)) {
             using MemberType = std::remove_cvref_t<decltype(member)>;
             if constexpr (requires(MemberType& o, J const& s) { deserialize<J, MemberType>(o, s); }) {
-                deserialize<J, MemberType>(member, j[std::string{name}]);
+                deserialize<J, MemberType>(member, j[sname]);
             } else {
                 static_assert(ll::concepts::always_false<MemberType>, "this type can't deserialize");
             }

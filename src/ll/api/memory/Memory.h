@@ -79,8 +79,15 @@ LLNDAPI std::vector<std::string> lookupSymbol(FuncPtr func);
  */
 LLAPI void modify(void* ptr, size_t len, const std::function<void()>& callback);
 
-template <uintptr_t off, typename RTN = void, typename... Args>
-auto constexpr virtualCall(void const* self, Args&&... args) -> RTN {
+template <class T>
+inline void modify(T& ref, std::remove_cvref_t<T>&& to) {
+    modify((void*)std::addressof(ref), sizeof(ref), [&ref, t = std::forward<T>(to)] {
+        (std::remove_cvref_t<T>&)(ref) = std::forward<T>(t);
+    });
+}
+
+template <typename RTN = void, typename... Args>
+constexpr auto virtualCall(void const* self, uintptr_t off, Args&&... args) -> RTN {
     return (*(RTN(**)(void const*, Args&&...))(*(uintptr_t*)self + off))(self, std::forward<Args>(args)...);
 }
 
