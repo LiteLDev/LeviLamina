@@ -1,8 +1,12 @@
 #pragma once
+
 #include "ll/api/base/StdInt.h"
-#include "memoryapi.h"
+#include "ll/api/memory/Memory.h"
+
 #include <exception>
+#include <functional>
 #include <string>
+
 
 // An Example to shou you how to use PatchHelper<> to patch the program
 // in this example, we change the code to call Item::_useOn via vftable in specific function
@@ -43,31 +47,33 @@
 //    }
 //}
 
+namespace ll::utils {
+
 template <size_t len>
 struct PatchHelper {
     uchar data[len];
     using ref_t = uchar (&)[len];
-    constexpr bool      operator==(ref_t ref) const noexcept { return memcmp(data, ref, sizeof data) == 0; }
-    constexpr bool      operator!=(ref_t ref) const noexcept { return memcmp(data, ref, sizeof data) != 0; }
-    constexpr bool      operator==(PatchHelper ref) const noexcept { return memcmp(data, ref.data, sizeof data) == 0; }
-    constexpr bool      operator!=(PatchHelper ref) const noexcept { return memcmp(data, ref.data, sizeof data) != 0; }
-    inline PatchHelper& operator=(ref_t ref) { memcpy(data, ref, sizeof data); }
-    inline bool         DoPatch(PatchHelper expected, PatchHelper patched) {
+    constexpr bool operator==(ref_t ref) const noexcept { return memcmp(data, ref, sizeof data) == 0; }
+    constexpr bool operator!=(ref_t ref) const noexcept { return memcmp(data, ref, sizeof data) != 0; }
+    constexpr bool operator==(PatchHelper ref) const noexcept { return memcmp(data, ref.data, sizeof data) == 0; }
+    constexpr bool operator!=(PatchHelper ref) const noexcept { return memcmp(data, ref.data, sizeof data) != 0; }
+    PatchHelper&   operator=(ref_t ref) { memcpy(data, ref, sizeof data); }
+
+    bool doPatch(PatchHelper expected, PatchHelper patched) {
         if (*this == expected) {
             *this = patched;
             return true;
         }
         return false;
     }
-    inline bool EasyPatch(PatchHelper expected, PatchHelper patched) {
-        DWORD old, tmp;
-        VirtualProtect((LPVOID)this, (SIZE_T)len, PAGE_EXECUTE_READWRITE, &old);
-        bool result = DoPatch(expected, patched);
-        VirtualProtect((LPVOID)this, (SIZE_T)len, old, &tmp);
+
+    bool easyPatch(PatchHelper expected, PatchHelper patched) {
+        bool result = false;
+        ll::memory::modify((void*)this, len, [&]() { result = doPatch(expected, patched); });
         return result;
     }
 
-    [[nodiscard]] inline std::string Dump() const noexcept {
+    [[nodiscard]] std::string dump() const noexcept {
         char  buffer[2 * len + 1] = {};
         char* ptr                 = buffer;
         for (auto& ch : data) ptr += sprintf(ptr, "%02X", (uint)ch);
@@ -77,9 +83,10 @@ struct PatchHelper {
 
 struct NopFiller {
     template <size_t len>
-    inline explicit operator PatchHelper<len>() {
+    explicit operator PatchHelper<len>() {
         PatchHelper<len> ret;
         memset(ret.data, 0x90, len);
         return ret;
     }
 };
+} // namespace ll::utils

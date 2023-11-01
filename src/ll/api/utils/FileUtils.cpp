@@ -1,4 +1,4 @@
-#include "ll/api/utils/FileHelper.h"
+#include "ll/api/utils/FileUtils.h"
 
 #include <filesystem>
 
@@ -6,13 +6,11 @@
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/Config.h"
 
-#include "io.h"
-
-using namespace ll::string_utils;
+using namespace ll::utils::string_utils;
 namespace fs = std::filesystem;
 
 ///////////// Hacker to get private FILE* /////////////
-namespace ll {
+namespace ll::utils::file_utils {
 std::optional<std::string> readAllFile(std::string const& filePath, bool isBinary) {
     std::ifstream fRead;
 
@@ -55,4 +53,5 @@ bool createDirs(std::string const& path) {
     auto            ret = fs::create_directories(str2u8str(path), ec);
     return ret;
 }
-} // namespace ll
+
+} // namespace ll::utils::file_utils

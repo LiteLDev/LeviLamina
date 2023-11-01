@@ -1,4 +1,6 @@
 #include "mc/deps/core/mce/UUID.h"
-#include "ll/api/utils/RNG.h"
+#include "ll/api/utils/random.h"
 
-mce::UUID::UUID() : a(RNG::rand<uint64>()), b(RNG::rand<uint64>()) {}
+using namespace ll::utils;
+
+mce::UUID::UUID() : a(random::rand<uint64>()), b(random::rand<uint64>()) {}

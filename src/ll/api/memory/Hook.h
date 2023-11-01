@@ -4,7 +4,7 @@
 #include <type_traits>
 
 #include "ll/api/base/Macro.h"
-#include "ll/api/memory/MemoryUtils.h"
+#include "ll/api/memory/Memory.h"
 
 namespace ll::memory {
 

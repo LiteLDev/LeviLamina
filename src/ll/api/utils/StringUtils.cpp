@@ -5,7 +5,7 @@
 #include "mc/deps/core/mce/Color.h"
 #include "windows.h"
 
-namespace ll::string_utils {
+namespace ll::utils::string_utils {
 
 fmt::text_style getTextStyleFromCode(std::string_view code) {
     if (code.starts_with("§")) {
@@ -69,7 +69,7 @@ fmt::text_style getTextStyleFromCode(std::string_view code) {
                 return fmt::bg((fmt::terminal_color)(num - 10));
             } else {
                 switch (num) {
-                    // clang-format off
+                // clang-format off
                     case 1: return fmt::emphasis::bold;
                     case 2: return fmt::emphasis::faint;
                     case 3: return fmt::emphasis::italic;
@@ -229,4 +229,4 @@ std::string replaceMcToAnsiCode(std::string_view str) {
     return res.str();
 }
 
-} // namespace ll::string_utils
+} // namespace ll::utils::string_utils

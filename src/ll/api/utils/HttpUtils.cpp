@@ -1,17 +1,15 @@
-#include "ll/api/utils/NetworkHelper.h"
+#include "ll/api/utils/HttpUtils.h"
 
-#include "httplib.h"
 #include <thread>
 
 #include "ll/api/Logger.h"
-#include "ll/api/i18n/I18nAPI.h"
-
-#include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 
 // TODO rewrite this file
 
-void SplitHttpUrl(std::string const& url, std::string& host, std::string& path) {
+namespace ll::utils::http_utils {
+
+void splitUrl(std::string const& url, std::string& host, std::string& path) {
     host = url;
 
     bool foundProtocol = host.find('/') != std::string::npos;
@@ -25,18 +23,11 @@ void SplitHttpUrl(std::string const& url, std::string& host, std::string& path) 
     }
 }
 
-bool HttpGet(std::string const& url, std::function<void(int, std::string)> const& callback, int timeout) {
-    return HttpGet(url, {}, callback, timeout);
-}
+bool get(std::string const& url, Callback const& callback, int timeout) { return get(url, {}, callback, timeout); }
 
-bool HttpGet(
-    std::string const&                           url,
-    httplib::Headers const&                      headers,
-    std::function<void(int, std::string)> const& callback,
-    int                                          timeout
-) {
+bool get(std::string const& url, Headers const& headers, Callback const& callback, int timeout) {
     std::string host, path;
-    SplitHttpUrl(url, host, path);
+    splitUrl(url, host, path);
 
     auto* cli = new httplib::Client(host);
     if (!cli->is_valid()) {
@@ -67,26 +58,26 @@ bool HttpGet(
     return true;
 }
 
-bool HttpPost(
-    std::string const&                           url,
-    std::string const&                           data,
-    std::string const&                           type,
-    const std::function<void(int, std::string)>& callback,
-    int                                          timeout
+bool post(
+    std::string const& url,
+    std::string const& data,
+    std::string const& type,
+    const Callback&    callback,
+    int                timeout
 ) {
-    return HttpPost(url, {}, data, type, callback, timeout);
+    return post(url, {}, data, type, callback, timeout);
 }
 
-bool HttpPost(
-    std::string const&                           url,
-    httplib::Headers const&                      headers,
-    std::string const&                           data,
-    std::string const&                           type,
-    const std::function<void(int, std::string)>& callback,
-    int                                          timeout
+bool post(
+    std::string const& url,
+    Headers const&     headers,
+    std::string const& data,
+    std::string const& type,
+    const Callback&    callback,
+    int                timeout
 ) {
     std::string host, path;
-    SplitHttpUrl(url, host, path);
+    splitUrl(url, host, path);
     auto* cli = new httplib::Client(host);
     if (!cli->is_valid()) {
         delete cli;
@@ -114,9 +105,9 @@ bool HttpPost(
     return true;
 }
 
-bool HttpGetSync(std::string const& url, int* statusRtn, std::string* dataRtn, int timeout) {
+bool getSync(std::string const& url, int* statusRtn, std::string* dataRtn, int timeout) {
     std::string host, path;
-    SplitHttpUrl(url, host, path);
+    splitUrl(url, host, path);
 
     httplib::Client cli(host);
     if (!cli.is_valid()) { return false; }
@@ -131,3 +122,5 @@ bool HttpGetSync(std::string const& url, int* statusRtn, std::string* dataRtn, i
     }
     return true;
 }
+
+} // namespace ll::utils::http_utils

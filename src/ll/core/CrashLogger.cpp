@@ -2,11 +2,12 @@
 #include "ll/api/Logger.h"
 #include "ll/api/ServerInfo.h"
 #include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinHelper.h"
+#include "ll/api/utils/WinUtils.h"
 #include "ll/core/Config.h"
 #include <filesystem>
 
 using namespace ll::i18n_literals;
+using namespace ll::utils;
 
 ll::Logger crashLogger("CrashLogger");
 
@@ -15,7 +16,7 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
         crashLogger.info("ll.crashLogger.existsingDebuggerDetected"_tr);
         return true;
     }
-    if (IsWineEnvironment()) {
+    if (win_utils::isWine()) {
         crashLogger.info("ll.crashLogger.wineDetected"_tr);
         return true;
     }
@@ -30,7 +31,7 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
     sa.lpSecurityDescriptor = nullptr;
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
 
-    std::wstring cmd{ll::string_utils::str2wstr(fmt::format(
+    std::wstring cmd{string_utils::str2wstr(fmt::format(
         "{} {} \"{}\"",
         globalConfig.modules.crashLogger.path,
         GetCurrentProcessId(),
@@ -38,7 +39,7 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
     ))};
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("ll.crashLogger.error.cannotCreateDaemonProcess"_tr);
-        crashLogger.error(GetLastErrorMessage());
+        crashLogger.error(win_utils::getLastErrorMessage());
         return false;
     }
 

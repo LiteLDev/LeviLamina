@@ -7,7 +7,7 @@
 #include "ll/api/Logger.h"
 #include "ll/api/i18n/I18nAPI.h"
 #include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinHelper.h"
+#include "ll/api/utils/WinUtils.h"
 
 #include "ll/api/plugin/PluginManager.h"
 #include "ll/core/Config.h"
@@ -16,7 +16,7 @@
 
 #include "windows.h"
 
-using namespace ll::string_utils;
+using namespace ll::utils;
 using ll::plugin::Version;
 
 void ll::LoadMain() {
@@ -35,7 +35,7 @@ void ll::LoadMain() {
         if (path.extension() != ".dll") { continue; }
 
         // Avoid preloaded plugin
-        auto pluginFileName = u8str2str(path.filename().u8string());
+        auto pluginFileName = string_utils::u8str2str(path.filename().u8string());
 
         // Do load
         auto lib = LoadLibrary(path.wstring().c_str());
@@ -44,13 +44,16 @@ void ll::LoadMain() {
 
             if (!plugin::manager::findPlugin(pluginFileName).has_value()) {
                 if (!plugin::manager::registerPlugin(pluginFileName, pluginFileName, {}, {})) {
-                    ll::logger.error("ll.pluginManager.error.failToRegisterPlugin"_tr, u8str2str(path.u8string()));
+                    ll::logger.error(
+                        "ll.pluginManager.error.failToRegisterPlugin"_tr,
+                        string_utils::u8str2str(path.u8string())
+                    );
                 }
             }
         } else {
             DWORD lastError = GetLastError();
             ll::logger.error("Fail to load plugin <{}>!", pluginFileName);
-            ll::logger.error("Error: Code[{}] {}", lastError, GetLastErrorMessage(lastError));
+            ll::logger.error("Error: Code[{}] {}", lastError, win_utils::getLastErrorMessage(lastError));
         }
     }
 

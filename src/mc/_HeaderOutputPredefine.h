@@ -101,7 +101,7 @@
 
 #include "ll/api/base/Macro.h" // for LLAPI
 
-#include "ll/api/memory/MemoryUtils.h" // for dAccess
+#include "ll/api/memory/Memory.h" // for dAccess
 
 #include "mc/common/wrapper/optional_ref.h" // replace optional<reference_wrapper<>>
 

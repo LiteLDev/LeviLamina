@@ -1,6 +1,8 @@
 #pragma once
 #pragma warning(error : 4834)
 
+#define LL_VA_EXPAND(...) __VA_ARGS__
+
 #ifndef LLAPI
 #ifdef LL_EXPORT
 #define LLAPI [[maybe_unused]] __declspec(dllexport)

@@ -10,7 +10,7 @@ extern bool isTrivialNbtStringChar(char c);
 
 namespace {
 
-using namespace ll::string_utils;
+using namespace ll::utils::string_utils;
 
 namespace cf = ColorFormat;
 
@@ -61,7 +61,7 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
             res = res.substr(1, res.size() - 2);
         } catch (...) {
             base64 = true;
-            res    = "\"" + ll::base64::Encode(str) + "\"";
+            res    = "\"" + ll::utils::base64::encode(str) + "\"";
         }
     }
 

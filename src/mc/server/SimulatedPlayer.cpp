@@ -1,10 +1,12 @@
 #include "mc/server/SimulatedPlayer.h"
 #include "ll/api/service/GlobalService.h"
-#include "ll/api/utils/RNG.h"
+#include "ll/api/utils/random.h"
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/server/ServerLevel.h"
+
+using namespace ll::utils;
 
 optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     std::string const& name,
@@ -13,7 +15,7 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     class Vec2 const&  rotation
 ) {
     OwnerPtrT<EntityRefTraits> ownerPtr =
-        ll::Global<ServerNetworkHandler>->createSimulatedPlayer(name, '-' + std::to_string(RNG::rand<uint64>()));
+        ll::Global<ServerNetworkHandler>->createSimulatedPlayer(name, '-' + std::to_string(random::rand<uint64>()));
     auto player = ownerPtr.tryUnwrap<SimulatedPlayer>();
 
     if (player == nullptr) { return nullptr; }

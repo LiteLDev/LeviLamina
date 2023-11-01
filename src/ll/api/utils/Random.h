@@ -13,65 +13,65 @@
 #include <random>
 
 
-namespace RNG {
+namespace ll::utils::random {
 
-static pcg64 GolbalRandom64{pcg_extras::seed_seq_from<std::random_device>{}};
+static pcg64 GlobalRandom64{pcg_extras::seed_seq_from<std::random_device>{}};
 
-static pcg32 GolbalRandom32{pcg_extras::seed_seq_from<std::random_device>{}};
+static pcg32 GlobalRandom32{pcg_extras::seed_seq_from<std::random_device>{}};
 
 template <class T>
 inline T rand() {
-    return static_cast<T>(GolbalRandom64());
+    return static_cast<T>(GlobalRandom64());
 }
 
 template <class T>
 inline T rand(T min, T max) {
-    return min + static_cast<T>(GolbalRandom64(max - min + 1));
+    return min + static_cast<T>(GlobalRandom64(max - min + 1));
 }
 
 template <>
 inline bool rand() {
-    return static_cast<bool>(GolbalRandom32(2));
+    return static_cast<bool>(GlobalRandom32(2));
 }
 
 template <>
 inline uint rand() {
-    return GolbalRandom32();
+    return GlobalRandom32();
 }
 
 template <>
 inline uint rand(uint min, uint max) {
-    return min + GolbalRandom32(max - min + 1);
+    return min + GlobalRandom32(max - min + 1);
 }
 
 template <>
 inline int rand() {
-    return static_cast<int>(GolbalRandom32());
+    return static_cast<int>(GlobalRandom32());
 }
 
 template <>
 inline int rand(int min, int max) {
-    return (static_cast<int>(min) + GolbalRandom32(static_cast<uint>(static_cast<int>(max) - min + 1)));
+    return (static_cast<int>(min) + GlobalRandom32(static_cast<uint>(static_cast<int>(max) - min + 1)));
 }
 
 template <>
 inline int64 rand() {
-    return static_cast<int64>(GolbalRandom64());
+    return static_cast<int64>(GlobalRandom64());
 }
 
 template <>
 inline int64 rand(int64 min, int64 max) {
-    return min + static_cast<int64>(GolbalRandom64(static_cast<uint64>(max - min + 1)));
+    return min + static_cast<int64>(GlobalRandom64(static_cast<uint64>(max - min + 1)));
 }
 
 template <>
 inline uint64 rand() {
-    return GolbalRandom64();
+    return GlobalRandom64();
 }
 
 template <>
 inline uint64 rand(uint64 min, uint64 max) {
-    return min + GolbalRandom64(max - min + 1);
+    return min + GlobalRandom64(max - min + 1);
 }
 
 template <>
@@ -128,4 +128,4 @@ inline T leftCloseIntervalRand(T min = 0, T max = 1) {
     return rand<T>(min, max);
 }
 
-} // namespace RNG
+} // namespace ll::utils::random

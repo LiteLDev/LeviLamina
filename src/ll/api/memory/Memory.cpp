@@ -1,14 +1,18 @@
-#include "ll/api/memory/MemoryUtils.h"
+#include "ll/api/memory/Memory.h"
 
 #include "pl/SymbolProvider.h"
 
-#include "ll/api/utils/WinHelper.h"
+#include "ll/api/utils/WinUtils.h"
+
+#include <memoryapi.h>
+
+using namespace ll::utils;
 
 namespace ll::memory {
 
 FuncPtr resolveSymbol(char const* symbol) { return pl::symbol_provider::pl_resolve_symbol(symbol); }
 
-FuncPtr resolveSignature(char const* signature) { return reinterpret_cast<FuncPtr>(FindSig(signature)); }
+FuncPtr resolveSignature(char const* signature) { return reinterpret_cast<FuncPtr>(win_utils::findSig(signature)); }
 
 std::vector<std::string> lookupSymbol(FuncPtr func) {
     std::vector<std::string> symbols;
@@ -18,6 +22,13 @@ std::vector<std::string> lookupSymbol(FuncPtr func) {
     for (size_t i = 0; i < length; i++) { symbols.emplace_back(result[i]); }
     pl::symbol_provider::pl_free_lookup_result(result);
     return symbols;
+}
+
+void modify(void* ptr, size_t len, const std::function<void()>& callback) {
+    DWORD oldProtect;
+    VirtualProtect(ptr, len, PAGE_EXECUTE_READWRITE, &oldProtect);
+    callback();
+    VirtualProtect(ptr, len, oldProtect, &oldProtect);
 }
 
 } // namespace ll::memory

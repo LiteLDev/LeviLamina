@@ -1,9 +1,9 @@
 #include "ll/api/plugin/Plugin.h"
-#include "ll/api/utils/FileHelper.h"
 
 #include <filesystem>
 
 namespace fs = std::filesystem;
+using namespace ll::utils;
 
 namespace ll::plugin {
 std::string Plugin::getDefaultDataPath() const {

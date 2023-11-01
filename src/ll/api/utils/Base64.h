@@ -4,7 +4,7 @@
 
 #include "ll/api/base/StdInt.h"
 
-namespace ll::base64 {
+namespace ll::utils::base64 {
 
 inline const char base64Table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                   "abcdefghijklmnopqrstuvwxyz"
@@ -36,7 +36,7 @@ constexpr uchar decodeLookup(uchar c) {
     return 64;
 }
 
-inline std::string Encode(std::string const& text_input) {
+inline std::string encode(std::string const& text_input) {
     std::string result;
     result.reserve(getEncodeLength(text_input));
 
@@ -60,7 +60,7 @@ inline std::string Encode(std::string const& text_input) {
     return result;
 }
 
-inline std::string Decode(std::string const& base64_input) {
+inline std::string decode(std::string const& base64_input) {
     size_t      input_size  = base64_input.size();
     size_t      output_size = getDecodeLength(base64_input);
     std::string out;
@@ -79,4 +79,4 @@ inline std::string Decode(std::string const& base64_input) {
     }
     return out;
 }
-} // namespace ll::base64
+} // namespace ll::utils::base64

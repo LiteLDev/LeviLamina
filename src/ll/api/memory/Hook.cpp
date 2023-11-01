@@ -2,7 +2,7 @@
 
 #include "pl/Hook.h"
 
-#include "ll/api/memory/MemoryUtils.h"
+#include "ll/api/memory/Memory.h"
 
 namespace ll::memory {
 

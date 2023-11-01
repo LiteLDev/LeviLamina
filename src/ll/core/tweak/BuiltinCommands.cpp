@@ -15,7 +15,7 @@
 #include "mc/world/level/dimension/VanillaDimensions.h"
 
 using namespace ll;
-using namespace ll::string_utils;
+using namespace ll::utils::string_utils;
 namespace {
 class TeleportDimensionCommand : public Command {
 

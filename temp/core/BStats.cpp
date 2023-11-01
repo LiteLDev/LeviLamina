@@ -6,7 +6,7 @@
 #include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/utils/NetworkHelper.h"
 #include "ll/api/utils/StringUtils.h"
-#include "ll/api/utils/WinHelper.h"
+#include "ll/api/utils/WinUtils.h"
 #include "mc/Level.hpp"
 #include "mc/PropertiesSettings.hpp"
 #include "mc/ServerNetworkHandler.hpp"

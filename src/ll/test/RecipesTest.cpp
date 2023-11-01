@@ -26,7 +26,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
     origin(ins);
 
-    using namespace ll::string_utils;
+    using namespace ll::utils::string_utils;
 
     nlohmann::json json;
 

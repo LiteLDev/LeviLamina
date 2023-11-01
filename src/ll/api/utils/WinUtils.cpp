@@ -1,22 +1,22 @@
-#include "ll/api/utils/WinHelper.h"
+#include "ll/api/utils/WinUtils.h"
 
 #include <string>
 
-#include "ll/api/utils/StringUtils.h"
-
 #include "ll/api/i18n/I18nAPI.h"
+#include "ll/api/utils/StringUtils.h"
 
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 
-#include "Psapi.h"
-#include "Windows.h"
+#include <libloaderapi.h>
+#include <psapi.h>
+#include <windows.h>
 
-using namespace ll::string_utils;
+using namespace ll::utils::string_utils;
+namespace ll::utils::win_utils {
 
-std::string GetLastErrorMessage(DWORD errorMessageId) {
+std::string getLastErrorMessage(ulong errorMessageId) {
     if (errorMessageId == 0) return "";
-
     LPWSTR message_buffer = nullptr;
     FormatMessage(
         FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
@@ -32,7 +32,7 @@ std::string GetLastErrorMessage(DWORD errorMessageId) {
     return res;
 }
 
-std::string GetLastErrorMessage() {
+std::string getLastErrorMessage() {
     DWORD error_message_id = ::GetLastError();
     if (error_message_id == 0) return "";
 
@@ -51,7 +51,7 @@ std::string GetLastErrorMessage() {
     return res;
 }
 
-std::string GetSystemLocaleName() {
+std::string getSystemLocaleName() {
     wchar_t buf[256] = {0};
     auto    lcid     = GetSystemDefaultLCID();
     GetSystemDefaultLocaleName(buf, (int)lcid);
@@ -60,25 +60,23 @@ std::string GetSystemLocaleName() {
     return str;
 }
 
-inline bool isWine() {
-    HMODULE ntdll = GetModuleHandle(L"ntdll.dll");
-    if (!ntdll) return false;
-    auto funcWineGetVersion = GetProcAddress(ntdll, "wine_get_version");
-    if (funcWineGetVersion) return true;
-    else return false;
-}
-
-bool IsWineEnvironment() {
-    static bool result = isWine();
+bool isWine() {
+    static bool result = []() {
+        HMODULE ntdll = GetModuleHandleW(L"ntdll.dll");
+        if (!ntdll) return false;
+        auto funcWineGetVersion = GetProcAddress(ntdll, "wine_get_version");
+        if (funcWineGetVersion) return true;
+        else return false;
+    }();
     return result;
 }
 
 #define IN_RANGE(x, a, b) ((x) >= (a) && (x) <= (b))
-#define GET_BYTE(x)       (GET_BITS((x)[0]) << 4 | GET_BITS((x)[1]))
 #define GET_BITS(x)                                                                                                    \
     (IN_RANGE(((x) & (~0x20)), 'A', 'F') ? (((x) & (~0x20)) - 'A' + 0xa) : (IN_RANGE(x, '0', '9') ? (x) - '0' : 0))
+#define GET_BYTE(x) (GET_BITS((x)[0]) << 4 | GET_BITS((x)[1]))
 
-inline DWORD_PTR GetProcessBaseAddress(DWORD processId) {
+inline DWORD_PTR GetProcessBaseAddr(DWORD processId) {
     DWORD_PTR baseAddress   = 0;
     HANDLE    processHandle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, processId);
     HMODULE*  moduleArray;
@@ -103,27 +101,11 @@ Ret:
     return baseAddress;
 }
 
-inline std::vector<std::string> split(std::string str, std::string const& pattern) {
-    std::string::size_type   pos;
-    std::vector<std::string> result;
-    str         += pattern;
-    size_t size  = str.size();
-    for (size_t i = 0; i < size; i++) {
-        pos = str.find(pattern, i);
-        if (pos < size) {
-            std::string s = str.substr(i, pos - i);
-            result.push_back(s);
-            i = pos + pattern.size() - 1;
-        }
-    }
-    return result;
-}
-
-uintptr_t FindSig(char const* szSignature) {
+uintptr_t findSig(char const* szSignature) {
     char const*            pattern    = szSignature;
     uintptr_t              firstMatch = 0;
     DWORD                  processId  = GetCurrentProcessId();
-    static const uintptr_t rangeStart = GetProcessBaseAddress(processId);
+    static const uintptr_t rangeStart = GetProcessBaseAddr(processId);
     static MODULEINFO      miModInfo;
     static bool            init = false;
 
@@ -163,3 +145,5 @@ uintptr_t FindSig(char const* szSignature) {
 #undef IN_RANGE
 #undef GET_BYTE
 #undef GET_BITS
+
+} // namespace ll::utils::win_utils

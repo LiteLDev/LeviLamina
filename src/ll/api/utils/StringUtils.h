@@ -6,12 +6,12 @@
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
-#include "ll/api/memory/MemoryUtils.h"
+#include "ll/api/memory/Memory.h"
 
 #include "fmt/color.h"
 #include "fmt/core.h"
 
-namespace ll::string_utils {
+namespace ll::utils::string_utils {
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
 [[nodiscard]] constexpr std::vector<std::string_view> splitByPattern(std::string_view s, std::string_view pattern) {
@@ -213,4 +213,4 @@ template <class T, auto f>
 [[nodiscard]] inline ldouble svtold(std::string_view str, size_t* idx = nullptr) {
     return svtonum<ldouble, strtof>(str, idx);
 }
-} // namespace ll::string_utils
+} // namespace ll::utils::string_utils

@@ -101,7 +101,7 @@ struct PreRelease {
         while (first != last && !detail::is_plus(*first)) { first++; }
         std::string                   s{begin, first};
         std::vector<std::string_view> tokens;
-        tokens = ll::string_utils::splitByPattern(s, ".");
+        tokens = ll::utils::string_utils::splitByPattern(s, ".");
         for (const auto& token : tokens) {
             std::optional<std::uint16_t> value;
             if (detail::from_chars(token.data(), token.data() + token.length(), value); value) {

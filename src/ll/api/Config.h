@@ -1,7 +1,7 @@
 #pragma once
 #include "ll/api/Logger.h"
 #include "ll/api/reflection/Serialization.h"
-#include "ll/api/utils/FileHelper.h"
+#include "ll/api/utils/FileUtils.h"
 #include "nlohmann/json.hpp"
 
 namespace ll::config {
@@ -34,7 +34,7 @@ inline bool loadConfig(T& config, std::string const& path, bool overwriteAfterFa
     using namespace ll::i18n_literals;
     bool res = true;
     try {
-        auto content = ll::readAllFile(path);
+        auto content = ll::utils::file_utils::readAllFile(path);
         if (content && !content.value().empty()) {
 
             auto data{J::parse(content.value(), nullptr, false, true)};
