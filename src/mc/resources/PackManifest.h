@@ -40,9 +40,6 @@ public:
     // symbol: ??0PackManifest@@QEAA@W4ManifestType@@@Z
     MCAPI explicit PackManifest(::ManifestType);
 
-    // symbol: ?addModule@PackManifest@@QEAAXAEBVResourceInformation@@@Z
-    MCAPI void addModule(class ResourceInformation const&);
-
     // symbol: ?addPackDependency@PackManifest@@QEAAXAEBUPackIdVersion@@@Z
     MCAPI void addPackDependency(struct PackIdVersion const&);
 

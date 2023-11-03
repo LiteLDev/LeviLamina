@@ -17,10 +17,10 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?_onDisable@ServerLocator@@EEAAXXZ
+    // vIndex: 1, symbol: ?_onDisable@RakNetServerLocator@@EEAAXXZ
     virtual void _onDisable() = 0;
 
-    // vIndex: 2, symbol: ?_onEnable@ServerLocator@@EEAAXXZ
+    // vIndex: 2, symbol: ?_onEnable@RakNetServerLocator@@EEAAXXZ
     virtual void _onEnable() = 0;
 
     // symbol: ??1NetworkEnableDisableListener@@UEAA@XZ

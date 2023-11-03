@@ -64,6 +64,9 @@ MCAPI void displayLocalizableMessage(bool, class Player&, std::string const&, st
 // symbol: ?getActorName@CommandUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@@Z
 MCAPI std::string getActorName(class Actor const&);
 
+// symbol: ?getFeetBlockPos@CommandUtils@@YA?AVBlockPos@@PEBVActor@@@Z
+MCAPI class BlockPos getFeetBlockPos(class Actor const*);
+
 // symbol: ?getFeetPos@CommandUtils@@YA?AVVec3@@PEBVActor@@@Z
 MCAPI class Vec3 getFeetPos(class Actor const*);
 

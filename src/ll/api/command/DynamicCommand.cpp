@@ -2,7 +2,6 @@
 
 #include "dyncall/dyncall_callback.h"
 
-#include "ll/api/LLAPI.h"
 #include "ll/api/Logger.h"
 #include "ll/core/Config.h"
 #include "ll/core/Levilamina.h"

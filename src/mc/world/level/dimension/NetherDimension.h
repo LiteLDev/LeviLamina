@@ -1,8 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/dimension/NetherBrightnessRamp.h"
-#include "mc/world/level/dimension/VanillaDimensions.h"
 
 // auto generated inclusion list
 #include "mc/enums/LimboEntitiesVersion.h"
@@ -12,12 +10,6 @@
 
 class NetherDimension : public ::Dimension {
 public:
-    NetherDimension(ILevel& ilevel, Scheduler& scheduler)
-    : Dimension(ilevel, VanillaDimensions::Nether, DimensionHeightRange(0, 256), scheduler, "Nether"){
-        mSeaLevel = 32;
-        mDimensionBrightnessRamp = std::make_unique<NetherBrightnessRamp>();
-        mDimensionBrightnessRamp->buildBrightnessRamp();
-    };
     // prevent constructor by default
     NetherDimension& operator=(NetherDimension const&);
     NetherDimension(NetherDimension const&);
@@ -81,7 +73,7 @@ public:
     virtual bool showSky() const;
 
     // symbol: ??0NetherDimension@@QEAA@AEAVILevel@@AEAVScheduler@@@Z
-    // MCAPI NetherDimension(class ILevel&, class Scheduler&);
+    MCAPI NetherDimension(class ILevel&, class Scheduler&);
 
     // NOLINTEND
 

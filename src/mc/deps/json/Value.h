@@ -4,7 +4,6 @@
 #include "mc/deps/json/ValueType.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/CommentPlacement.h"
 #include "mc/deps/json/ValueType.h"
 
 // auto generated forward declare list
@@ -20,6 +19,7 @@ public:
     // Value inner types declare
     // clang-format off
     class CZString;
+    struct CZStringCompare;
     // clang-format on
 
     friend class ValueIteratorBase;
@@ -87,11 +87,41 @@ public:
 
     public:
         // NOLINTBEGIN
+        // symbol: ??0CZString@Value@Json@@QEAA@XZ
+        MCAPI CZString();
+
+        // symbol: ??0CZString@Value@Json@@QEAA@PEBD@Z
+        MCAPI explicit CZString(char const*);
+
+        // symbol: ??0CZString@Value@Json@@QEAA@$$QEAV012@@Z
+        MCAPI CZString(class Json::Value::CZString&&);
+
         // symbol: ??0CZString@Value@Json@@QEAA@AEBV012@@Z
         MCAPI CZString(class Json::Value::CZString const&);
 
+        // symbol: ??0CZString@Value@Json@@QEAA@PEAD_N@Z
+        MCAPI CZString(char*, bool);
+
+        // symbol: ?c_str@CZString@Value@Json@@QEBAPEBDXZ
+        // MCAPI char const* c_str() const;
+
         // symbol: ??1CZString@Value@Json@@QEAA@XZ
         MCAPI ~CZString();
+
+        // NOLINTEND
+    };
+
+    struct CZStringCompare {
+    public:
+        // prevent constructor by default
+        CZStringCompare& operator=(CZStringCompare const&);
+        CZStringCompare(CZStringCompare const&);
+        CZStringCompare();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??RCZStringCompare@Value@Json@@QEBA_NAEBVCZString@12@0@Z
+        MCAPI bool operator()(class Json::Value::CZString const&, class Json::Value::CZString const&) const;
 
         // NOLINTEND
     };
@@ -132,6 +162,9 @@ public:
     // symbol: ??0Value@Json@@QEAA@AEBV01@@Z
     MCAPI Value(class Json::Value const&);
 
+    // symbol: ??0Value@Json@@QEAA@PEAVCZString@01@@Z
+    MCAPI explicit Value(class Json::Value::CZString*);
+
     // symbol: ??0Value@Json@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit Value(std::string const&);
 
@@ -149,6 +182,9 @@ public:
 
     // symbol: ??0Value@Json@@QEAA@I@Z
     MCAPI explicit Value(uint);
+
+    // symbol: ?append@Value@Json@@QEAAAEAV12@$$QEAV12@@Z
+    MCAPI class Json::Value& append(class Json::Value&&);
 
     // symbol: ?append@Value@Json@@QEAAAEAV12@AEBV12@@Z
     MCAPI class Json::Value& append(class Json::Value const&);
@@ -214,15 +250,8 @@ public:
     MCAPI class Json::Value get(std::string const&, class Json::Value const&) const;
 
     // symbol:
-    // ?getComment@Value@Json@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CommentPlacement@2@@Z
-    MCAPI std::string getComment(::Json::CommentPlacement) const;
-
-    // symbol:
     // ?getMemberNames@Value@Json@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     MCAPI std::vector<std::string> getMemberNames() const;
-
-    // symbol: ?hasComment@Value@Json@@QEBA_NW4CommentPlacement@2@@Z
-    MCAPI bool hasComment(::Json::CommentPlacement) const;
 
     // symbol: ?isArray@Value@Json@@QEBA_NXZ
     MCAPI bool isArray() const;
@@ -308,10 +337,6 @@ public:
     // symbol: ?resize@Value@Json@@QEAAXI@Z
     MCAPI void resize(uint);
 
-    // symbol:
-    // ?setComment@Value@Json@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CommentPlacement@2@@Z
-    MCAPI void setComment(std::string const&, ::Json::CommentPlacement);
-
     // symbol: ?size@Value@Json@@QEBAIXZ
     MCAPI uint size() const;
 
@@ -358,8 +383,11 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?resolveReference@Value@Json@@AEAAAEAV12@PEBD_N@Z
-    MCAPI class Json::Value& resolveReference(char const*, bool);
+    // symbol: ?_insert@Value@Json@@AEAAX$$QEAVCZString@12@$$QEAV12@_N@Z
+    MCAPI void _insert(class Json::Value::CZString&&, class Json::Value&&, bool);
+
+    // symbol: ?_resolveReference@Value@Json@@AEAAAEAV12@PEBD@Z
+    MCAPI class Json::Value& _resolveReference(char const*);
 
     // NOLINTEND
 };

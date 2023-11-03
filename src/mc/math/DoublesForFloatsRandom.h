@@ -44,7 +44,7 @@ public:
     // vIndex: 6, symbol: ?nextDouble@DelegatingRandom@NoiseUtils@@UEAANXZ
     virtual double nextDouble();
 
-    // vIndex: 7, symbol: ?nextGaussianDouble@XoroshiroRandom@@UEAANXZ
+    // vIndex: 7, symbol: ?nextGaussianDouble@Random@Core@@UEAANXZ
     virtual double nextGaussianDouble();
 
     // vIndex: 8, symbol: ?consumeCount@DelegatingRandom@NoiseUtils@@UEAAXI@Z

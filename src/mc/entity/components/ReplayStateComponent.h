@@ -33,8 +33,8 @@ public:
     shouldSendCorrectionToClient(class EntityContext&, class IConstBlockSource const&, class PlayerAuthInputPacket const&)
         const;
 
-    // symbol: ?tick@ReplayStateComponent@@QEAAXPEAUIActorMovementProxy@@_KPEAVEntityRegistry@@@Z
-    MCAPI void tick(struct IActorMovementProxy*, uint64, class EntityRegistry*);
+    // symbol: ?tick@ReplayStateComponent@@QEAAXPEAVActor@@_KPEAVEntityRegistry@@@Z
+    MCAPI void tick(class Actor*, uint64, class EntityRegistry*);
 
     // symbol: ??1ReplayStateComponent@@QEAA@XZ
     MCAPI ~ReplayStateComponent();

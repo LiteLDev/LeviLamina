@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/TagRegistry.h"
+#include "mc/common/wrapper/IDType.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
@@ -25,26 +27,20 @@ public:
     virtual bool shouldPostProcessMobs() const;
 
     // vIndex: 3, symbol:
-    // ?getNearestGeneratedFeature@StructureFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
-    virtual bool getNearestGeneratedFeature(
-        class Dimension&,
-        class BiomeSource const&,
-        class BlockPos const&,
-        class BlockPos&,
-        class IPreliminarySurfaceProvider const&,
-        bool
-    );
+    // ?getNearestGeneratedFeature@StructureFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_NAEBV?$optional@VHashedString@@@std@@@Z
+    virtual bool
+    getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool, std::optional<class HashedString> const&);
 
     // vIndex: 4, symbol: ?initMobSpawnTypes@StructureFeature@@UEAAXAEAVHardcodedSpawnAreaRegistry@@@Z
     virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
 
     // vIndex: 5, symbol:
-    // ?isFeatureChunk@RuinedPortalFeature@@MEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
+    // ?isFeatureChunk@AncientCityFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
     virtual bool
     isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, uint, class IPreliminarySurfaceProvider const&, class Dimension const&) = 0;
 
     // vIndex: 6, symbol:
-    // ?createStructureStart@RuinedPortalFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
+    // ?createStructureStart@AncientCityFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
     virtual std::unique_ptr<class StructureStart>
     createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&) = 0;
 
@@ -96,11 +92,12 @@ public:
     MCAPI void waitForFeatureBlueprints();
 
     // symbol:
-    // ?findNearestFeaturePositionBySpacing@StructureFeature@@SA_NAEAVDimension@@AEBVIPreliminarySurfaceProvider@@AEAV1@AEBVBiomeSource@@AEBVBlockPos@@AEAV5@HHH_NH6@Z
+    // ?findNearestFeaturePositionBySpacing@StructureFeature@@SA_NAEAVDimension@@AEBVIPreliminarySurfaceProvider@@AEAV1@AEBV?$optional@VHashedString@@@std@@AEBVBiomeSource@@AEBVBlockPos@@AEAV7@HHH_NH7@Z
     MCAPI static bool findNearestFeaturePositionBySpacing(
         class Dimension&,
         class IPreliminarySurfaceProvider const&,
         class StructureFeature&,
+        std::optional<class HashedString> const&,
         class BiomeSource const&,
         class BlockPos const&,
         class BlockPos&,
@@ -111,6 +108,11 @@ public:
         int,
         bool
     );
+
+    // symbol:
+    // ?getBiomeForFeatureGeneration@StructureFeature@@SA?AU?$pair@$$CBVBlockPos@@PEBVBiome@@@std@@AEBVBiomeSource@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
+    MCAPI static std::pair<class BlockPos const, class Biome const*>
+    getBiomeForFeatureGeneration(class BiomeSource const&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 
     // symbol: ?getChunkPosInSpace@StructureFeature@@SA?AVChunkPos@@AEBV2@AEAVRandom@@IHHH_N@Z
     MCAPI static class ChunkPos getChunkPosInSpace(class ChunkPos const&, class Random&, uint, int, int, int, bool);
@@ -126,6 +128,15 @@ public:
     // ?addFeature@StructureFeature@@IEAAXAEAVDimension@@AEAVRandom@@AEBVChunkPos@@AEBVBiomeSource@@AEBVIPreliminarySurfaceProvider@@@Z
     MCAPI void
     addFeature(class Dimension&, class Random&, class ChunkPos const&, class BiomeSource const&, class IPreliminarySurfaceProvider const&);
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?_doesBiomeHaveTag@StructureFeature@@CA_NAEBV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@AEBVBiomeSource@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@AEBVHashedString@@@Z
+    MCAPI static bool
+    _doesBiomeHaveTag(class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const&, class BiomeSource const&, class ChunkPos const&, class IPreliminarySurfaceProvider const&, class HashedString const&);
 
     // NOLINTEND
 };

@@ -52,8 +52,8 @@ public:
     // vIndex: 8, symbol: ?flush@LoopbackPacketSender@@UEAAXAEBVNetworkIdentifier@@$$QEAV?$function@$$A6AXXZ@std@@@Z
     virtual void flush(class NetworkIdentifier const&, std::function<void(void)>&&);
 
-    // symbol: ??0LoopbackPacketSender@@QEAA@W4SubClientId@@AEAVNetworkSystem@@@Z
-    MCAPI LoopbackPacketSender(::SubClientId, class NetworkSystem&);
+    // symbol: ??0LoopbackPacketSender@@QEAA@W4SubClientId@@AEAVServerNetworkSystem@@@Z
+    MCAPI LoopbackPacketSender(::SubClientId, class ServerNetworkSystem&);
 
     // symbol: ?addLoopbackCallback@LoopbackPacketSender@@QEAAXAEAVNetEventCallback@@@Z
     MCAPI void addLoopbackCallback(class NetEventCallback&);

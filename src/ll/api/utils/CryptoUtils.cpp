@@ -6,7 +6,7 @@
 #include "ll/api/base/StdInt.h"
 
 
-namespace ll::crypto {
+namespace ll::utils::crypto_utils {
 
 template <size_t N>
 inline std::string cryptoTransfrom(std::string_view input, decltype(MD5) func) {
@@ -31,4 +31,4 @@ std::string sha256(std::string_view input) { return cryptoTransfrom<SHA256_DIGES
 std::string sha384(std::string_view input) { return cryptoTransfrom<SHA384_DIGEST_LENGTH>(input, SHA384); }
 std::string sha512(std::string_view input) { return cryptoTransfrom<SHA512_DIGEST_LENGTH>(input, SHA512); }
 
-} // namespace ll::crypto
+} // namespace ll::utils::crypto_utils

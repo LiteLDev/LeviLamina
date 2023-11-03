@@ -8,6 +8,7 @@
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
 #include "mc/server/commands/CommandBlockMode.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/ActorBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"

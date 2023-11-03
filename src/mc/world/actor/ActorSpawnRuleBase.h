@@ -54,5 +54,10 @@ public:
     // ?_readJsonHeader@ActorSpawnRuleBase@@IEAA_N$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorSpawnRuleDefinition@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorSpawnRuleDefinition@@@std@@@2@@3@@Z
     MCAPI bool _readJsonHeader(std::string&&, std::unordered_map<std::string, struct ActorSpawnRuleDefinition>&);
 
+    // symbol:
+    // ?_registerSpawnRules@ActorSpawnRuleBase@@IEAAXV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEAVBiomeFilterGroup@@AEAVMobSpawnRules@@AEBVSemVersion@@@Z@std@@AEBVMobSpawnRules@@AEAVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVSemVersion@@@Z
+    MCAPI void
+    _registerSpawnRules(std::function<void(std::string const&, int, class BiomeFilterGroup&, class MobSpawnRules&, class SemVersion const&)>, class MobSpawnRules const&, class Json::Value&, std::string const&, class SemVersion const&);
+
     // NOLINTEND
 };

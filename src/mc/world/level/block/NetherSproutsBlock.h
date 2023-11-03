@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -127,6 +128,12 @@ public:
     // vIndex: 100, symbol: ?neighborChanged@NetherSproutsBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
 
+    // vIndex: 103, symbol:
+    // ?spawnResources@NetherSproutsBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
+    virtual void
+    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+        const;
+
     // vIndex: 104, symbol: ?asItemInstance@NetherSproutsBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
@@ -177,12 +184,6 @@ public:
 
     // vIndex: 183, symbol: __unk_vfn_183
     virtual void __unk_vfn_183();
-
-    // vIndex: 184, symbol: ?playerDestroy@NetherSproutsBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual void playerDestroy(class Player&, class BlockPos const&, class Block const&) const;
-
-    // vIndex: 185, symbol: ?getResourceItem@NetherSproutsBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // symbol: ?canBeSilkTouched@NetherSproutsBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;

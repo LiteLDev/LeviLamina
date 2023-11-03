@@ -20,11 +20,12 @@ class IDimensionFactory;
 class DimensionManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     std::unordered_map<AutomaticID<Dimension, int>, OwnerPtrT<SharePtrRefTraits<Dimension>>> mDimensions;
-    Bedrock::NotNullNonOwnerPtr<IDimensionFactory> mDimensionFactory;
-    //Bedrock::PubSub::Publisher<void (Dimension &),Bedrock::PubSub::ThreadModel::MultiThreaded> mOnNewDimensionCreatedPublisher;
-    char unk[128];
+    Bedrock::NotNullNonOwnerPtr<IDimensionFactory>                                           mDimensionFactory;
+    // Bedrock::PubSub::Publisher<void (Dimension &),Bedrock::PubSub::ThreadModel::MultiThreaded>
+    // mOnNewDimensionCreatedPublisher;
+    char                                    unk[128];
     std::optional<DimensionDefinitionGroup> mDimensionDefinitions;
-    
+
     // prevent constructor by default
     DimensionManager& operator=(DimensionManager const&);
     DimensionManager(DimensionManager const&);

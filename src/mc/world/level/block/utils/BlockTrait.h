@@ -10,6 +10,8 @@
 // clang-format off
 namespace BlockTrait { class IGetPlacementBlockCallback; }
 namespace BlockTrait { class ITrait; }
+namespace BlockTrait { class PlacementDirection; }
+namespace BlockTrait { class PlacementPosition; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 

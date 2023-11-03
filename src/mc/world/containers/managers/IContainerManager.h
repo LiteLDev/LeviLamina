@@ -46,7 +46,7 @@ public:
     // vIndex: 9, symbol: ?setData@ElementConstructorContainerManagerModel@@UEAAXHH@Z
     virtual void setData(int, int) = 0;
 
-    // vIndex: 10, symbol: ?broadcastChanges@LoomContainerManagerModel@@UEAAXXZ
+    // vIndex: 10, symbol: ?broadcastChanges@FurnaceContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges() = 0;
 
     // symbol: ??1IContainerManager@@UEAA@XZ

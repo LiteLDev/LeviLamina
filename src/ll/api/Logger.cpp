@@ -6,7 +6,7 @@
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/Config.h"
 
-using namespace ll::string_utils;
+using namespace ll::utils::string_utils;
 
 namespace ll {
 

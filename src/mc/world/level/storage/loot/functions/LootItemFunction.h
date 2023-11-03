@@ -19,13 +19,13 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?apply@SetItemNameFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1, symbol: ?apply@SetSpawnEggFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemStack&, class Random&, class LootTableContext&) = 0;
 
     // vIndex: 2, symbol: ?apply@LootItemFunction@@UEAAHAEAVItemStack@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
     virtual int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
 
-    // vIndex: 3, symbol: ?apply@SetItemNameFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 3, symbol: ?apply@SetSpawnEggFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemInstance&, class Random&, class LootTableContext&) = 0;
 
     // vIndex: 4, symbol:

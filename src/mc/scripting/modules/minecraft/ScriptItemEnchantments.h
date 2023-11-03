@@ -63,9 +63,6 @@ public:
     MCAPI class Scripting::Result<void>
         removeEnchantment(std::variant<struct ScriptModuleMinecraft::ScriptItemEnchantmentType, std::string>);
 
-    // symbol: ??1ScriptItemEnchantments@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptItemEnchantments();
-
     // symbol:
     // ?bind@ScriptItemEnchantments@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemEnchantments@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemEnchantments> bind();

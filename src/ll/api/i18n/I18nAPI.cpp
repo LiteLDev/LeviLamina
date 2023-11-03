@@ -2,15 +2,16 @@
 
 #include "ll/api/utils/StringUtils.h"
 
-#include "ll/api/utils/WinHelper.h"
+#include "ll/api/utils/WinUtils.h"
 
 namespace fs = std::filesystem;
 
-using ll::string_utils::splitByPattern;
+using ll::utils::string_utils::splitByPattern;
+using ll::utils::win_utils::getSystemLocaleName;
 
 namespace ll::i18n {
 
-std::string globalDefaultLocaleName = GetSystemLocaleName();
+std::string globalDefaultLocaleName = getSystemLocaleName();
 
 const std::array<std::string, 2> GENERAL_LANGUAGES = {"en", "zh"};
 

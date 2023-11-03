@@ -7,7 +7,7 @@ namespace ll {
 
 static const std::string leviConfigPath{R"(plugins\LeviLamina\config.json)"};
 
-LeviConfig globalConfig;
+struct LeviConfig globalConfig;
 
 bool loadLeviConfig() { return ll::config::loadConfig(globalConfig, leviConfigPath); }
 

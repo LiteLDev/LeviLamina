@@ -47,9 +47,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_checkForDamagingBlocks@RollGoal@@AEBA_NXZ
-    MCAPI bool _checkForDamagingBlocks() const;
-
     // symbol: ?_handleRoll@RollGoal@@AEBAXHAEAVVec3@@AEAM1@Z
     MCAPI void _handleRoll(int, class Vec3&, float&, float&) const;
 

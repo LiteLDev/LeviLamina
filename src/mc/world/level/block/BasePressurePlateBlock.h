@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -107,8 +108,9 @@ public:
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 65, symbol: ?shouldConnectToRedstone@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    // vIndex: 65, symbol:
+    // ?shouldConnectToRedstone@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
     // vIndex: 70, symbol: ?checkIsPathable@BasePressurePlateBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
@@ -201,13 +203,13 @@ public:
     // vIndex: 192, symbol: ?getTickDelay@BasePressurePlateBlock@@UEBAHXZ
     virtual int getTickDelay() const;
 
-    // vIndex: 193, symbol: ?getSignalStrength@WeightedPressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 193, symbol: ?getSignalStrength@PressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual int getSignalStrength(class BlockSource&, class BlockPos const&) const = 0;
 
-    // vIndex: 194, symbol: ?getSignalForData@WeightedPressurePlateBlock@@MEBAHH@Z
+    // vIndex: 194, symbol: ?getSignalForData@PressurePlateBlock@@MEBAHH@Z
     virtual int getSignalForData(int) const = 0;
 
-    // vIndex: 195, symbol: ?getRedstoneSignal@WeightedPressurePlateBlock@@MEBAHH@Z
+    // vIndex: 195, symbol: ?getRedstoneSignal@PressurePlateBlock@@MEBAHH@Z
     virtual int getRedstoneSignal(int) const = 0;
 
     // vIndex: 196, symbol: ?getSensitiveAABB@BasePressurePlateBlock@@MEBA?BVAABB@@AEBVBlockPos@@@Z

@@ -10,7 +10,6 @@
 #include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/entity/utilities/ActorFlags.h"
 #include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/AnimationComponentGroupType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
 #include "mc/enums/ArmorTextureType.h"
@@ -21,7 +20,6 @@
 #include "mc/enums/MaterialType.h"
 #include "mc/enums/NewInteractionModel.h"
 #include "mc/enums/SubClientId.h"
-#include "mc/enums/TravelMethod.h"
 #include "mc/events/ActorEvent.h"
 #include "mc/events/LevelSoundEvent.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
@@ -69,157 +67,129 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 12, symbol:
+    // vIndex: 6, symbol:
     // ?initializeComponents@SimulatedPlayer@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void initializeComponents(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 16, symbol: __unk_vfn_16
-    virtual void __unk_vfn_16();
+    // vIndex: 10, symbol: __unk_vfn_10
+    virtual void __unk_vfn_10();
 
-    // vIndex: 35, symbol: __unk_vfn_35
-    virtual void __unk_vfn_35();
+    // vIndex: 23, symbol: __unk_vfn_23
+    virtual void __unk_vfn_23();
 
-    // vIndex: 38, symbol: ?teleportTo@SimulatedPlayer@@UEAAXAEBVVec3@@_NHH1@Z
+    // vIndex: 26, symbol: ?teleportTo@SimulatedPlayer@@UEAAXAEBVVec3@@_NHH1@Z
     virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
 
-    // vIndex: 54, symbol: __unk_vfn_54
-    virtual void __unk_vfn_54();
+    // vIndex: 39, symbol: __unk_vfn_39
+    virtual void __unk_vfn_39();
+
+    // vIndex: 41, symbol: __unk_vfn_41
+    virtual void __unk_vfn_41();
+
+    // vIndex: 44, symbol: __unk_vfn_44
+    virtual void __unk_vfn_44();
+
+    // vIndex: 47, symbol: __unk_vfn_47
+    virtual void __unk_vfn_47();
+
+    // vIndex: 52, symbol: __unk_vfn_52
+    virtual void __unk_vfn_52();
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
 
-    // vIndex: 70, symbol: __unk_vfn_70
-    virtual void __unk_vfn_70();
+    // vIndex: 62, symbol: __unk_vfn_62
+    virtual void __unk_vfn_62();
 
-    // vIndex: 76, symbol: __unk_vfn_76
-    virtual void __unk_vfn_76();
+    // vIndex: 63, symbol: __unk_vfn_63
+    virtual void __unk_vfn_63();
 
-    // vIndex: 82, symbol: __unk_vfn_82
-    virtual void __unk_vfn_82();
+    // vIndex: 109, symbol: __unk_vfn_109
+    virtual void __unk_vfn_109();
 
-    // vIndex: 85, symbol: __unk_vfn_85
-    virtual void __unk_vfn_85();
+    // vIndex: 147, symbol: __unk_vfn_147
+    virtual void __unk_vfn_147();
 
-    // vIndex: 92, symbol: __unk_vfn_92
-    virtual void __unk_vfn_92();
+    // vIndex: 148, symbol: __unk_vfn_148
+    virtual void __unk_vfn_148();
 
-    // vIndex: 94, symbol: __unk_vfn_94
-    virtual void __unk_vfn_94();
+    // vIndex: 165, symbol: __unk_vfn_165
+    virtual void __unk_vfn_165();
 
-    // vIndex: 95, symbol: __unk_vfn_95
-    virtual void __unk_vfn_95();
+    // vIndex: 170, symbol: __unk_vfn_170
+    virtual void __unk_vfn_170();
 
-    // vIndex: 97, symbol: __unk_vfn_97
-    virtual void __unk_vfn_97();
+    // vIndex: 172, symbol: __unk_vfn_172
+    virtual void __unk_vfn_172();
 
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
+    // vIndex: 181, symbol: ?aiStep@SimulatedPlayer@@UEAAXXZ
+    virtual void aiStep();
 
-    // vIndex: 174, symbol: __unk_vfn_174
-    virtual void __unk_vfn_174();
+    // vIndex: 222, symbol: __unk_vfn_222
+    virtual void __unk_vfn_222();
 
-    // vIndex: 198, symbol: __unk_vfn_198
-    virtual void __unk_vfn_198();
+    // vIndex: 227, symbol: __unk_vfn_227
+    virtual void __unk_vfn_227();
 
-    // vIndex: 199, symbol: __unk_vfn_199
-    virtual void __unk_vfn_199();
+    // vIndex: 228, symbol: __unk_vfn_228
+    virtual void __unk_vfn_228();
 
-    // vIndex: 215, symbol: __unk_vfn_215
-    virtual void __unk_vfn_215();
+    // vIndex: 230, symbol: __unk_vfn_230
+    virtual void __unk_vfn_230();
 
-    // vIndex: 218, symbol: __unk_vfn_218
-    virtual void __unk_vfn_218();
+    // vIndex: 231, symbol: __unk_vfn_231
+    virtual void __unk_vfn_231();
+
+    // vIndex: 232, symbol: __unk_vfn_232
+    virtual void __unk_vfn_232();
+
+    // vIndex: 233, symbol: __unk_vfn_233
+    virtual void __unk_vfn_233();
 
     // vIndex: 235, symbol: __unk_vfn_235
     virtual void __unk_vfn_235();
 
-    // vIndex: 243, symbol: __unk_vfn_243
-    virtual void __unk_vfn_243();
+    // vIndex: 238, symbol: __unk_vfn_238
+    virtual void __unk_vfn_238();
+
+    // vIndex: 239, symbol: __unk_vfn_239
+    virtual void __unk_vfn_239();
 
     // vIndex: 248, symbol: __unk_vfn_248
     virtual void __unk_vfn_248();
 
-    // vIndex: 259, symbol: ?aiStep@SimulatedPlayer@@UEAAXXZ
-    virtual void aiStep();
-
-    // vIndex: 270, symbol: __unk_vfn_270
-    virtual void __unk_vfn_270();
-
-    // vIndex: 274, symbol: __unk_vfn_274
-    virtual void __unk_vfn_274();
-
-    // vIndex: 326, symbol: __unk_vfn_326
-    virtual void __unk_vfn_326();
-
-    // vIndex: 333, symbol: __unk_vfn_333
-    virtual void __unk_vfn_333();
-
-    // vIndex: 334, symbol: __unk_vfn_334
-    virtual void __unk_vfn_334();
-
-    // vIndex: 336, symbol: __unk_vfn_336
-    virtual void __unk_vfn_336();
-
-    // vIndex: 337, symbol: __unk_vfn_337
-    virtual void __unk_vfn_337();
-
-    // vIndex: 342, symbol: __unk_vfn_342
-    virtual void __unk_vfn_342();
-
-    // vIndex: 343, symbol: __unk_vfn_343
-    virtual void __unk_vfn_343();
-
-    // vIndex: 346, symbol: __unk_vfn_346
-    virtual void __unk_vfn_346();
-
-    // vIndex: 349, symbol: __unk_vfn_349
-    virtual void __unk_vfn_349();
-
-    // vIndex: 350, symbol: __unk_vfn_350
-    virtual void __unk_vfn_350();
-
-    // vIndex: 361, symbol: __unk_vfn_361
-    virtual void __unk_vfn_361();
-
-    // vIndex: 362, symbol: ?isHostingPlayer@SimulatedPlayer@@UEBA_NXZ
+    // vIndex: 249, symbol: ?isHostingPlayer@SimulatedPlayer@@UEBA_NXZ
     virtual bool isHostingPlayer() const;
 
-    // vIndex: 365, symbol: __unk_vfn_365
-    virtual void __unk_vfn_365();
+    // vIndex: 252, symbol: __unk_vfn_252
+    virtual void __unk_vfn_252();
 
-    // vIndex: 372, symbol: __unk_vfn_372
-    virtual void __unk_vfn_372();
+    // vIndex: 273, symbol: __unk_vfn_273
+    virtual void __unk_vfn_273();
 
-    // vIndex: 395, symbol: __unk_vfn_395
-    virtual void __unk_vfn_395();
-
-    // vIndex: 396, symbol:
+    // vIndex: 274, symbol:
     // ?getXuid@SimulatedPlayer@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getXuid() const;
 
-    // vIndex: 397, symbol: ?getMovementSettings@SimulatedPlayer@@UEBAAEBUPlayerMovementSettings@@XZ
+    // vIndex: 275, symbol: ?getMovementSettings@SimulatedPlayer@@UEBAAEBUPlayerMovementSettings@@XZ
     virtual struct PlayerMovementSettings const& getMovementSettings() const;
 
-    // vIndex: 398, symbol: __unk_vfn_398
-    virtual void __unk_vfn_398();
-
-    // vIndex: 401, symbol:
+    // vIndex: 278, symbol:
     // ?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z
     virtual std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource&);
 
-    // vIndex: 405, symbol: ?_getSpawnChunkLimit@SimulatedPlayer@@MEBAHXZ
+    // vIndex: 282, symbol: ?_getSpawnChunkLimit@SimulatedPlayer@@MEBAHXZ
     virtual int _getSpawnChunkLimit() const;
 
-    // vIndex: 406, symbol: ?_updateChunkPublisherView@SimulatedPlayer@@MEAAXAEBVVec3@@M@Z
+    // vIndex: 283, symbol: ?_updateChunkPublisherView@SimulatedPlayer@@MEAAXAEBVVec3@@M@Z
     virtual void _updateChunkPublisherView(class Vec3 const&, float);
 
     // symbol: ?isSimulated@SimulatedPlayer@@UEBA_NXZ
     MCVAPI bool isSimulated() const;
 
     // symbol:
-    // ??0SimulatedPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVNetworkSystem@@AEAVActiveTransfersManager@Server@ClientBlobCache@@W4GameType@@AEBVNetworkIdentifier@@W4SubClientId@@V?$function@$$A6AXAEAVServerPlayer@@@Z@std@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@H_NAEAVEntityContext@@@Z
-    MCAPI
-    SimulatedPlayer(class Level&, class PacketSender&, class NetworkSystem&, class ClientBlobCache::Server::ActiveTransfersManager&, ::GameType, class NetworkIdentifier const&, ::SubClientId, std::function<void(class ServerPlayer&)>, class mce::UUID, std::string const&, std::unique_ptr<class Certificate>, int, bool, class EntityContext&);
+    // ??0SimulatedPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVServerNetworkSystem@@AEAVActiveTransfersManager@Server@ClientBlobCache@@W4GameType@@AEBVNetworkIdentifier@@W4SubClientId@@V?$function@$$A6AXAEAVServerPlayer@@@Z@std@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@H_NAEAVEntityContext@@@Z
+    MCAPI SimulatedPlayer(class Level&, class PacketSender&, class ServerNetworkSystem&, class ClientBlobCache::Server::ActiveTransfersManager&, ::GameType, class NetworkIdentifier const&, ::SubClientId, std::function<void(class ServerPlayer&)>, class mce::UUID, std::string const&, std::unique_ptr<class Certificate>, int, bool, class EntityContext&);
 
     // symbol: ?getGameTestHelper@SimulatedPlayer@@QEBA?AV?$NonOwnerPointer@VBaseGameTestHelper@gametest@@@Bedrock@@XZ
     MCAPI class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper> getGameTestHelper() const;
@@ -241,6 +211,9 @@ public:
 
     // symbol: ?simulateAttack@SimulatedPlayer@@QEAA_NPEAVActor@@@Z
     MCAPI bool simulateAttack(class Actor*);
+
+    // symbol: ?simulateChat@SimulatedPlayer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void simulateChat(std::string const&);
 
     // symbol: ?simulateDestroyBlock@SimulatedPlayer@@QEAA_NAEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@@Z
     MCAPI bool simulateDestroyBlock(class BlockPos const&, ::ScriptModuleMinecraft::ScriptFacing);

@@ -2,12 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/SerializerContext.h"
+#include "mc/deps/puv/CerealUpgraderBase.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
 namespace Puv { class LoadResultAny; }
 namespace Puv { class ParserBase; }
 namespace Puv { class Upgrader; }
+namespace Puv { struct Logger; }
+namespace Puv::internal { struct PathElement; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Puv::internal {

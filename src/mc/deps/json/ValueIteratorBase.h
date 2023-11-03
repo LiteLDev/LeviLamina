@@ -37,11 +37,11 @@ public:
     // symbol: ??0ValueIteratorBase@Json@@QEAA@AEBV01@@Z
     MCAPI ValueIteratorBase(class Json::ValueIteratorBase const&);
 
-    // symbol: ?key@ValueIteratorBase@Json@@QEBA?AVValue@2@XZ
-    MCAPI class Json::Value key() const;
-
     // symbol: ?memberName@ValueIteratorBase@Json@@QEBAPEBDXZ
     MCAPI char const* memberName() const;
+
+    // symbol: ??1ValueIteratorBase@Json@@QEAA@XZ
+    MCAPI ~ValueIteratorBase();
 
     // NOLINTEND
 

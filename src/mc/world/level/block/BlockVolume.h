@@ -16,9 +16,9 @@ public:
 
     // BlockVolume inner types define
     struct BlockVolumeIter {
-    //    Pos                                     pos;       // this+0x0
-    //    Pos                                     dims;      // this+0xC
-    //    buffer_span_mut<Block const*>::iterator blockIter; // this+0x18
+        // Pos                                     pos;       // this+0x0
+        // Pos                                     dims;      // this+0xC
+        // buffer_span_mut<Block const*>::iterator blockIter; // this+0x18
 
         // prevent constructor by default
         BlockVolumeIter& operator=(BlockVolumeIter const&);

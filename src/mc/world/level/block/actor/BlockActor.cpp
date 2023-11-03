@@ -46,11 +46,13 @@ std::unique_ptr<class CompoundTag> BlockActor::saveToNBT() const {
 }
 
 void BlockActor::loadFromNBT(class CompoundTag const& nbt, optional_ref<class BlockSource> blockSource) {
+    if (!Global<Level>) { return; }
     load(*Global<Level>, nbt, DefaultDataLoadHelper::globalHelper);
     refresh(blockSource);
 }
 
 std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt) {
+    if (!Global<Level>) { return nullptr; }
     return loadStatic(*Global<Level>, nbt, DefaultDataLoadHelper::globalHelper);
 }
 

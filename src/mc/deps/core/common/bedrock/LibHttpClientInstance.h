@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
+
 namespace Bedrock::Http {
 
 class LibHttpClientInstance {
@@ -28,8 +33,8 @@ public:
 
 private:
     // NOLINTBEGIN
-    // symbol: ?sMutex@LibHttpClientInstance@Http@Bedrock@@0Vmutex@std@@A
-    MCAPI static std::mutex sMutex;
+    // symbol: ?sMutex@LibHttpClientInstance@Http@Bedrock@@0VMutex@Threading@3@A
+    MCAPI static class Bedrock::Threading::Mutex sMutex;
 
     // symbol:
     // ?sWeakInstance@LibHttpClientInstance@Http@Bedrock@@0V?$weak_ptr@VLibHttpClientInstance@Http@Bedrock@@@std@@A

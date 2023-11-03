@@ -35,4 +35,11 @@ public:
     virtual bool canUpdatePath(class Mob const&) const;
 
     // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_isInsideBorderBlock@WallClimberPathNavigation@@AEBA_NAEBVAABB@@AEBVBlockSource@@M@Z
+    MCAPI bool _isInsideBorderBlock(class AABB const&, class BlockSource const&, float) const;
+
+    // NOLINTEND
 };

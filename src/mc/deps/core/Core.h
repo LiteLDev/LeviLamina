@@ -26,6 +26,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class EnableNonOwnerReferences; }
+namespace Bedrock::Threading { class Mutex; }
 namespace Core { class DiskAccessTracker; }
 namespace Core { class File; }
 namespace Core { class FileImpl; }

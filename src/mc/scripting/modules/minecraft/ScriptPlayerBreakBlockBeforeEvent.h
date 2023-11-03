@@ -40,9 +40,6 @@ public:
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&
     operator=(struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
 
-    // symbol: ??1ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptPlayerBreakBlockBeforeEvent();
-
     // symbol:
     // ?bind@ScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent>

@@ -246,7 +246,7 @@ std::optional<std::string> parseString(std::string_view& s) {
             if (starts == '\"') {
                 auto ans = std::string{res.begin(), res.end()};
 
-                if (s.starts_with(" /*BASE64*/")) { return ll::base64::Decode(ans); }
+                if (s.starts_with(" /*BASE64*/")) { return ll::utils::base64::decode(ans); }
 
                 return ans;
             }

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/cereal/SchemaReader.h"
 #include "mc/deps/cereal/SchemaReaderState.h"
+#include "mc/deps/core/common/bedrock/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -35,42 +36,53 @@ public:
     // vIndex: 3, symbol: ?isArray@RapidJSONSchemaReader@cereal@@UEBA?AW4SchemaReaderState@2@XZ
     virtual ::cereal::SchemaReaderState isArray() const;
 
-    // vIndex: 4, symbol: ?asBool@RapidJSONSchemaReader@cereal@@UEAA?AV?$optional@_N@std@@AEBUSerializerTraits@2@@Z
-    virtual std::optional<bool> asBool(struct cereal::SerializerTraits const&);
+    // vIndex: 4, symbol:
+    // ?asBool@RapidJSONSchemaReader@cereal@@UEAA?AV?$Result@_NVerror_code@std@@@Bedrock@@AEBUSerializerTraits@2@@Z
+    virtual class Bedrock::Result<bool> asBool(struct cereal::SerializerTraits const&);
 
-    // vIndex: 5, symbol: ?asInt8@RapidJSONSchemaReader@cereal@@UEAA?AV?$optional@C@std@@AEBUSerializerTraits@2@@Z
-    virtual std::optional<schar> asInt8(struct cereal::SerializerTraits const&);
+    // vIndex: 5, symbol:
+    // ?asInt8@RapidJSONSchemaReader@cereal@@UEAA?AV?$Result@CVerror_code@std@@@Bedrock@@AEBUSerializerTraits@2@@Z
+    virtual class Bedrock::Result<schar> asInt8(struct cereal::SerializerTraits const&);
 
-    // vIndex: 6, symbol: ?asUInt8@RapidJSONSchemaReader@cereal@@UEAA?AV?$optional@E@std@@AEBUSerializerTraits@2@@Z
-    virtual std::optional<uchar> asUInt8(struct cereal::SerializerTraits const&);
+    // vIndex: 6, symbol:
+    // ?asUInt8@RapidJSONSchemaReader@cereal@@UEAA?AV?$Result@EVerror_code@std@@@Bedrock@@AEBUSerializerTraits@2@@Z
+    virtual class Bedrock::Result<uchar> asUInt8(struct cereal::SerializerTraits const&);
 
-    // vIndex: 7, symbol: ?asInt16@RapidJSONSchemaReader@cereal@@UEAA?AV?$optional@F@std@@AEBUSerializerTraits@2@@Z
-    virtual std::optional<short> asInt16(struct cereal::SerializerTraits const&);
+    // vIndex: 7, symbol:
+    // ?asInt16@RapidJSONSchemaReader@cereal@@UEAA?AV?$Result@FVerror_code@std@@@Bedrock@@AEBUSerializerTraits@2@@Z
+    virtual class Bedrock::Result<short> asInt16(struct cereal::SerializerTraits const&);
 
-    // vIndex: 8, symbol: ?asUInt16@RapidJSONSchemaReader@cereal@@UEAA?AV?$optional@G@std@@AEBUSerializerTraits@2@@Z
-    virtual std::optional<ushort> asUInt16(struct cereal::SerializerTraits const&);
+    // vIndex: 8, symbol:
+    // ?asUInt16@RapidJSONSchemaReader@cereal@@UEAA?AV?$Result@GVerror_code@std@@@Bedrock@@AEBUSerializerTraits@2@@Z
+    virtual class Bedrock::Result<ushort> asUInt16(struct cereal::SerializerTraits const&);
 
-    // vIndex: 9, symbol: ?asInt32@RapidJSONSchemaReader@cereal@@UEAA?AV?$optional@H@std@@AEBUSerializerTraits@2@@Z
-    virtual std::optional<int> asInt32(struct cereal::SerializerTraits const&);
+    // vIndex: 9, symbol:
+    // ?asInt32@RapidJSONSchemaReader@cereal@@UEAA?AV?$Result@HVerror_code@std@@@Bedrock@@AEBUSerializerTraits@2@@Z
+    virtual class Bedrock::Result<int> asInt32(struct cereal::SerializerTraits const&);
 
-    // vIndex: 10, symbol: ?asUInt32@RapidJSONSchemaReader@cereal@@UEAA?AV?$optional@I@std@@AEBUSerializerTraits@2@@Z
-    virtual std::optional<uint> asUInt32(struct cereal::SerializerTraits const&);
+    // vIndex: 10, symbol:
+    // ?asUInt32@RapidJSONSchemaReader@cereal@@UEAA?AV?$Result@IVerror_code@std@@@Bedrock@@AEBUSerializerTraits@2@@Z
+    virtual class Bedrock::Result<uint> asUInt32(struct cereal::SerializerTraits const&);
 
-    // vIndex: 11, symbol: ?asInt64@RapidJSONSchemaReader@cereal@@UEAA?AV?$optional@_J@std@@AEBUSerializerTraits@2@@Z
-    virtual std::optional<int64> asInt64(struct cereal::SerializerTraits const&);
+    // vIndex: 11, symbol:
+    // ?asInt64@RapidJSONSchemaReader@cereal@@UEAA?AV?$Result@_JVerror_code@std@@@Bedrock@@AEBUSerializerTraits@2@@Z
+    virtual class Bedrock::Result<int64> asInt64(struct cereal::SerializerTraits const&);
 
-    // vIndex: 12, symbol: ?asUInt64@RapidJSONSchemaReader@cereal@@UEAA?AV?$optional@_K@std@@AEBUSerializerTraits@2@@Z
-    virtual std::optional<uint64> asUInt64(struct cereal::SerializerTraits const&);
+    // vIndex: 12, symbol:
+    // ?asUInt64@RapidJSONSchemaReader@cereal@@UEAA?AV?$Result@_KVerror_code@std@@@Bedrock@@AEBUSerializerTraits@2@@Z
+    virtual class Bedrock::Result<uint64> asUInt64(struct cereal::SerializerTraits const&);
 
-    // vIndex: 13, symbol: ?asFloat@RapidJSONSchemaReader@cereal@@UEAA?AV?$optional@M@std@@AEBUSerializerTraits@2@@Z
-    virtual std::optional<float> asFloat(struct cereal::SerializerTraits const&);
+    // vIndex: 13, symbol:
+    // ?asFloat@RapidJSONSchemaReader@cereal@@UEAA?AV?$Result@MVerror_code@std@@@Bedrock@@AEBUSerializerTraits@2@@Z
+    virtual class Bedrock::Result<float> asFloat(struct cereal::SerializerTraits const&);
 
-    // vIndex: 14, symbol: ?asDouble@RapidJSONSchemaReader@cereal@@UEAA?AV?$optional@N@std@@AEBUSerializerTraits@2@@Z
-    virtual std::optional<double> asDouble(struct cereal::SerializerTraits const&);
+    // vIndex: 14, symbol:
+    // ?asDouble@RapidJSONSchemaReader@cereal@@UEAA?AV?$Result@NVerror_code@std@@@Bedrock@@AEBUSerializerTraits@2@@Z
+    virtual class Bedrock::Result<double> asDouble(struct cereal::SerializerTraits const&);
 
     // vIndex: 15, symbol:
-    // ?asString@RapidJSONSchemaReader@cereal@@UEAA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBUSerializerTraits@2@@Z
-    virtual std::optional<std::string> asString(struct cereal::SerializerTraits const&);
+    // ?asString@RapidJSONSchemaReader@cereal@@UEAA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@Verror_code@2@@Bedrock@@AEBUSerializerTraits@2@@Z
+    virtual class Bedrock::Result<std::string> asString(struct cereal::SerializerTraits const&);
 
     // vIndex: 16, symbol: __unk_vfn_16
     virtual void __unk_vfn_16();

@@ -31,6 +31,9 @@ public:
     // vIndex: 2, symbol: ?initializeComponent@BlockRandomTickingDescription@@UEBAXAEAVEntityContext@@@Z
     virtual void initializeComponent(class EntityContext&) const;
 
+    // vIndex: 5, symbol: __unk_vfn_5
+    virtual void __unk_vfn_5();
+
     // symbol: ?bindType@BlockRandomTickingDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 

@@ -31,19 +31,22 @@ public:
     // vIndex: 3, symbol: ?initializeComponent@BlockSelectionBoxDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponent(class BlockComponentStorage&) const;
 
-    // vIndex: 5, symbol: ?initializeComponentFromCode@BlockSelectionBoxDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 4, symbol: ?initializeComponentFromCode@BlockSelectionBoxDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponentFromCode(class BlockComponentStorage&) const;
+
+    // vIndex: 5, symbol: __unk_vfn_5
+    virtual void __unk_vfn_5();
 
     // vIndex: 7, symbol: ?isNetworkComponent@BlockSelectionBoxDescription@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 8, symbol:
-    // ?buildNetworkTag@BlockSelectionBoxDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx&) const;
+    // ?buildNetworkTag@BlockSelectionBoxDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
     // vIndex: 9, symbol:
-    // ?initializeFromNetwork@BlockSelectionBoxDescription@@UEAAXAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
-    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx&);
+    // ?initializeFromNetwork@BlockSelectionBoxDescription@@UEAAXAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
     // symbol: ??1BlockSelectionBoxDescription@@UEAA@XZ
     MCVAPI ~BlockSelectionBoxDescription();

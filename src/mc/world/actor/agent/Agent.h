@@ -8,7 +8,6 @@
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/AgentAnimation.h"
 #include "mc/enums/AgentTravelType.h"
-#include "mc/enums/AnimationComponentGroupType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
 #include "mc/enums/ArmorTextureType.h"
@@ -35,131 +34,110 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 12, symbol: ?initializeComponents@Agent@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+    // vIndex: 6, symbol: ?initializeComponents@Agent@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void initializeComponents(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 16, symbol: __unk_vfn_16
-    virtual void __unk_vfn_16();
+    // vIndex: 10, symbol: __unk_vfn_10
+    virtual void __unk_vfn_10();
 
-    // vIndex: 35, symbol: __unk_vfn_35
-    virtual void __unk_vfn_35();
+    // vIndex: 23, symbol: __unk_vfn_23
+    virtual void __unk_vfn_23();
 
-    // vIndex: 38, symbol: ?teleportTo@Agent@@UEAAXAEBVVec3@@_NHH1@Z
+    // vIndex: 26, symbol: ?teleportTo@Agent@@UEAAXAEBVVec3@@_NHH1@Z
     virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
 
-    // vIndex: 43, symbol: ?normalTick@Agent@@UEAAXXZ
+    // vIndex: 29, symbol: ?normalTick@Agent@@UEAAXXZ
     virtual void normalTick();
 
-    // vIndex: 52, symbol: ?isInvisible@Agent@@UEBA_NXZ
+    // vIndex: 37, symbol: ?isInvisible@Agent@@UEBA_NXZ
     virtual bool isInvisible() const;
 
-    // vIndex: 53, symbol: ?canShowNameTag@Agent@@UEBA_NXZ
+    // vIndex: 38, symbol: ?canShowNameTag@Agent@@UEBA_NXZ
     virtual bool canShowNameTag() const;
 
-    // vIndex: 54, symbol: __unk_vfn_54
-    virtual void __unk_vfn_54();
+    // vIndex: 39, symbol: __unk_vfn_39
+    virtual void __unk_vfn_39();
 
-    // vIndex: 58, symbol:
+    // vIndex: 40, symbol:
     // ?getFormattedNameTag@Agent@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getFormattedNameTag() const;
+
+    // vIndex: 41, symbol: __unk_vfn_41
+    virtual void __unk_vfn_41();
+
+    // vIndex: 44, symbol: __unk_vfn_44
+    virtual void __unk_vfn_44();
+
+    // vIndex: 47, symbol: __unk_vfn_47
+    virtual void __unk_vfn_47();
+
+    // vIndex: 51, symbol: ?isPickable@Agent@@UEAA_NXZ
+    virtual bool isPickable();
+
+    // vIndex: 52, symbol: __unk_vfn_52
+    virtual void __unk_vfn_52();
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
 
-    // vIndex: 70, symbol: __unk_vfn_70
-    virtual void __unk_vfn_70();
+    // vIndex: 62, symbol: __unk_vfn_62
+    virtual void __unk_vfn_62();
 
-    // vIndex: 76, symbol: __unk_vfn_76
-    virtual void __unk_vfn_76();
+    // vIndex: 63, symbol: __unk_vfn_63
+    virtual void __unk_vfn_63();
 
-    // vIndex: 81, symbol: ?isPickable@Agent@@UEAA_NXZ
-    virtual bool isPickable();
-
-    // vIndex: 82, symbol: __unk_vfn_82
-    virtual void __unk_vfn_82();
-
-    // vIndex: 85, symbol: __unk_vfn_85
-    virtual void __unk_vfn_85();
-
-    // vIndex: 92, symbol: __unk_vfn_92
-    virtual void __unk_vfn_92();
-
-    // vIndex: 94, symbol: __unk_vfn_94
-    virtual void __unk_vfn_94();
-
-    // vIndex: 95, symbol: __unk_vfn_95
-    virtual void __unk_vfn_95();
-
-    // vIndex: 97, symbol: __unk_vfn_97
-    virtual void __unk_vfn_97();
-
-    // vIndex: 105, symbol: ?setOwner@Agent@@UEAAXUActorUniqueID@@@Z
+    // vIndex: 69, symbol: ?setOwner@Agent@@UEAAXUActorUniqueID@@@Z
     virtual void setOwner(struct ActorUniqueID);
 
-    // vIndex: 125, symbol: ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 84, symbol: ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent, int);
 
-    // vIndex: 142, symbol: ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
+    // vIndex: 93, symbol: ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
     virtual void setCarriedItem(class ItemStack const&);
 
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
+    // vIndex: 109, symbol: __unk_vfn_109
+    virtual void __unk_vfn_109();
 
-    // vIndex: 172, symbol: ?canBePulledIntoVehicle@Agent@@UEBA_NXZ
+    // vIndex: 117, symbol: ?canBePulledIntoVehicle@Agent@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
 
-    // vIndex: 174, symbol: __unk_vfn_174
-    virtual void __unk_vfn_174();
-
-    // vIndex: 188, symbol: ?canBeAffected@Agent@@UEBA_NI@Z
+    // vIndex: 126, symbol: ?canBeAffected@Agent@@UEBA_NI@Z
     virtual bool canBeAffected(uint) const;
 
-    // vIndex: 198, symbol: __unk_vfn_198
-    virtual void __unk_vfn_198();
+    // vIndex: 147, symbol: __unk_vfn_147
+    virtual void __unk_vfn_147();
 
-    // vIndex: 199, symbol: __unk_vfn_199
-    virtual void __unk_vfn_199();
+    // vIndex: 148, symbol: __unk_vfn_148
+    virtual void __unk_vfn_148();
 
-    // vIndex: 215, symbol: __unk_vfn_215
-    virtual void __unk_vfn_215();
-
-    // vIndex: 218, symbol: __unk_vfn_218
-    virtual void __unk_vfn_218();
-
-    // vIndex: 219, symbol: ?kill@Agent@@UEAAXXZ
+    // vIndex: 149, symbol: ?kill@Agent@@UEAAXXZ
     virtual void kill();
 
-    // vIndex: 233, symbol: ?updateEntitySpecificMolangVariables@Agent@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 163, symbol: ?updateEntitySpecificMolangVariables@Agent@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
 
-    // vIndex: 235, symbol: __unk_vfn_235
-    virtual void __unk_vfn_235();
+    // vIndex: 165, symbol: __unk_vfn_165
+    virtual void __unk_vfn_165();
 
-    // vIndex: 236, symbol: ?_hurt@Agent@@EEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 166, symbol: ?_hurt@Agent@@EEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
 
-    // vIndex: 243, symbol: __unk_vfn_243
-    virtual void __unk_vfn_243();
+    // vIndex: 170, symbol: __unk_vfn_170
+    virtual void __unk_vfn_170();
 
-    // vIndex: 248, symbol: __unk_vfn_248
-    virtual void __unk_vfn_248();
+    // vIndex: 172, symbol: __unk_vfn_172
+    virtual void __unk_vfn_172();
 
-    // vIndex: 249, symbol: ?knockback@Agent@@UEAAXPEAVActor@@HMMMMM@Z
+    // vIndex: 173, symbol: ?knockback@Agent@@UEAAXPEAVActor@@HMMMMM@Z
     virtual void knockback(class Actor*, int, float, float, float, float, float);
 
-    // vIndex: 270, symbol: __unk_vfn_270
-    virtual void __unk_vfn_270();
-
-    // vIndex: 274, symbol: __unk_vfn_274
-    virtual void __unk_vfn_274();
-
-    // vIndex: 300, symbol: ?createAIGoals@Agent@@UEAA_NXZ
+    // vIndex: 203, symbol: ?createAIGoals@Agent@@UEAA_NXZ
     virtual bool createAIGoals();
 
-    // vIndex: 307, symbol: ?canExistWhenDisallowMob@Agent@@UEBA_NXZ
+    // vIndex: 209, symbol: ?canExistWhenDisallowMob@Agent@@UEBA_NXZ
     virtual bool canExistWhenDisallowMob() const;
 
-    // vIndex: 311, symbol:
+    // vIndex: 210, symbol:
     // ?initBodyControl@Agent@@EEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
     virtual std::unique_ptr<class BodyControl> initBodyControl();
 
@@ -192,6 +170,9 @@ public:
 
     // symbol: ?getSelectedSlot@Agent@@QEBAHXZ
     MCAPI int getSelectedSlot() const;
+
+    // symbol: ?getSwingAnimationDuration@Agent@@QEBAHXZ
+    MCAPI int getSwingAnimationDuration() const;
 
     // symbol: ?handleAnimationEvent@Agent@@QEAAXW4AgentAnimation@@@Z
     MCAPI void handleAnimationEvent(::AgentAnimation);

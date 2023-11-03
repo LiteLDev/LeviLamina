@@ -16,9 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?boost@BoostableComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void boost(class Actor&);
-
     // symbol: ?getBoostTime@BoostableComponent@@QEBAHXZ
     MCAPI int getBoostTime() const;
 

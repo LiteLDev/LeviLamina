@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/events/LevelEvent.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
@@ -42,20 +41,16 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptWorld@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@PEAVServerLevel@@@Z
-    MCAPI ScriptWorld(class Scripting::WeakLifetimeScope const&, class ServerLevel*);
-
     // symbol:
-    // ?_playOrQueueMusic@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@UScriptMusicOptions@ScriptModuleMinecraft@@@6@W4LevelEvent@@@Z
-    MCAPI class Scripting::Result<void> _playOrQueueMusic(
-        std::string const&,
-        std::optional<struct ScriptModuleMinecraft::ScriptMusicOptions>,
-        ::LevelEvent
-    );
+    // ??0ScriptWorld@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVServerLevel@@@gsl@@@Z
+    MCAPI ScriptWorld(class Scripting::WeakLifetimeScope const&, gsl::not_null<class ServerLevel*>);
 
     // symbol:
     // ?broadcastClientMessage@ScriptWorld@ScriptModuleMinecraft@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI void broadcastClientMessage(std::string const&, std::string const&);
+
+    // symbol: ?clearDynamicProperties@ScriptWorld@ScriptModuleMinecraft@@QEAAXAEBUContextConfig@Scripting@@@Z
+    MCAPI void clearDynamicProperties(struct Scripting::ContextConfig const&);
 
     // symbol: ?getAbsoluteTime@ScriptWorld@ScriptModuleMinecraft@@QEBAHXZ
     MCAPI int getAbsoluteTime() const;
@@ -86,9 +81,21 @@ public:
     getDimension(std::string const&) const;
 
     // symbol:
-    // ?getDynamicProperty@ScriptWorld@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$variant@M_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@std@@$$V@Scripting@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Scripting::Result<std::optional<std::variant<float, bool, std::string, class Vec3>>>
-    getDynamicProperty(struct Scripting::ContextConfig const&, std::string const&) const;
+    // ?getDynamicProperty@ScriptWorld@ScriptModuleMinecraft@@QEBA?AV?$optional@V?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@std@@AEBUContextConfig@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
+    MCAPI std::optional<std::variant<double, float, bool, std::string, class Vec3>>
+          getDynamicProperty(struct Scripting::ContextConfig const&, std::string const&) const;
+
+    // symbol:
+    // ?getDynamicPropertyIds@ScriptWorld@ScriptModuleMinecraft@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBUContextConfig@Scripting@@@Z
+    MCAPI std::vector<std::string> getDynamicPropertyIds(struct Scripting::ContextConfig const&) const;
+
+    // symbol: ?getDynamicPropertyTotalByteCount@ScriptWorld@ScriptModuleMinecraft@@QEBAHAEBUContextConfig@Scripting@@@Z
+    MCAPI int getDynamicPropertyTotalByteCount(struct Scripting::ContextConfig const&) const;
+
+    // symbol:
+    // ?getDynamicProperty_V010@ScriptWorld@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@std@@$$V@Scripting@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class Scripting::Result<std::optional<std::variant<double, float, bool, std::string, class Vec3>>>
+    getDynamicProperty_V010(struct Scripting::ContextConfig const&, std::string const&) const;
 
     // symbol:
     // ?getEntity@ScriptWorld@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -136,9 +143,9 @@ public:
     queueMusic(std::string const&, std::optional<struct ScriptModuleMinecraft::ScriptMusicOptions>);
 
     // symbol:
-    // ?removeDynamicProperty@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // ?removeDynamicProperty_V010@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$Result@_N$$V@Scripting@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<bool>
-    removeDynamicProperty(struct Scripting::ContextConfig const&, std::string const&);
+    removeDynamicProperty_V010(struct Scripting::ContextConfig const&, std::string const&);
 
     // symbol:
     // ?sendMessage@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBUContextConfig@4@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@V?$vector@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@V?$allocator@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@2@@2@@std@@@Z
@@ -152,9 +159,14 @@ public:
         setDefaultSpawnLocation(class Vec3 const&);
 
     // symbol:
-    // ?setDynamicProperty@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$variant@M_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@7@@Z
+    // ?setDynamicProperty@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$optional@V?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@7@@Z
     MCAPI class Scripting::Result<void>
-    setDynamicProperty(struct Scripting::ContextConfig const&, std::string const&, std::variant<float, bool, std::string, class Vec3> const&);
+    setDynamicProperty(struct Scripting::ContextConfig const&, std::string const&, std::optional<std::variant<double, float, bool, std::string, class Vec3>> const&);
+
+    // symbol:
+    // ?setDynamicProperty_V010@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBUContextConfig@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@7@@Z
+    MCAPI class Scripting::Result<void>
+    setDynamicProperty_V010(struct Scripting::ContextConfig const&, std::string const&, std::variant<double, float, bool, std::string, class Vec3>&);
 
     // symbol:
     // ?setTimeOfDay@ScriptWorld@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@V?$variant@HW4ScriptTimeOfDay@ScriptModuleMinecraft@@@std@@@Z
@@ -175,14 +187,20 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
+    // ?_playOrQueueMusic@ScriptWorld@ScriptModuleMinecraft@@AEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@UScriptMusicOptions@ScriptModuleMinecraft@@@6@_N@Z
+    MCAPI class Scripting::Result<void>
+    _playOrQueueMusic(std::string const&, std::optional<struct ScriptModuleMinecraft::ScriptMusicOptions>, bool);
+
+    // symbol:
     // ?_playSoundInternal@ScriptWorld@ScriptModuleMinecraft@@AEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@V?$optional@UScriptWorldSoundOptions@ScriptModuleMinecraft@@@6@@Z
     MCAPI class Scripting::Result<void>
     _playSoundInternal(std::string const&, class Vec3 const&, std::optional<struct ScriptModuleMinecraft::ScriptWorldSoundOptions>);
 
     // symbol:
-    // ?_validateDynamicProperty@ScriptWorld@ScriptModuleMinecraft@@AEBA?AV?$optional@UError@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@PEBV?$variant@M_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@4@@Z
+    // ?_validateDynamicProperty_V010@ScriptWorld@ScriptModuleMinecraft@@AEBA?AV?$optional@UError@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@PEBV?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@4@@Z
     MCAPI std::optional<struct Scripting::Error>
-          _validateDynamicProperty(std::string const&, std::variant<float, bool, std::string, class Vec3> const*) const;
+    _validateDynamicProperty_V010(std::string const&, std::variant<double, float, bool, std::string, class Vec3> const*)
+        const;
 
     // NOLINTEND
 };

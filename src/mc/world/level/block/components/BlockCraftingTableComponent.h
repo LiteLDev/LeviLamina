@@ -20,5 +20,8 @@ public:
     // symbol: ??4BlockCraftingTableComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct BlockCraftingTableComponent& operator=(struct BlockCraftingTableComponent&&);
 
+    // symbol: ?usesNewComponentStorage@BlockCraftingTableComponent@@SA_NXZ
+    MCAPI static bool usesNewComponentStorage();
+
     // NOLINTEND
 };

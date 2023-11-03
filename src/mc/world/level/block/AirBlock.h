@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -217,9 +218,6 @@ public:
 
     // symbol: ?canBeSilkTouched@AirBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
-
-    // symbol: ?canHaveExtraData@AirBlock@@UEBA_NXZ
-    MCVAPI bool canHaveExtraData() const;
 
     // symbol: ??0AirBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI AirBlock(std::string const&, int, class Material const&);

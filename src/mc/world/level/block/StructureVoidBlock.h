@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -166,9 +167,6 @@ public:
 
     // symbol: ?canBeSilkTouched@StructureVoidBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
-
-    // symbol: ?canHaveExtraData@StructureVoidBlock@@UEBA_NXZ
-    MCVAPI bool canHaveExtraData() const;
 
     // symbol: ??0StructureVoidBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI StructureVoidBlock(std::string const&, int);

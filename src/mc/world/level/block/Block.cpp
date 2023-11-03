@@ -14,6 +14,7 @@
 using ll::Global;
 
 optional_ref<Block const> Block::tryGetFromRegistry(uint runtimeID) {
+    if (!Global<Level>) { return nullptr; }
     auto& res = Global<Level>->getBlockPalette().getBlock(runtimeID);
     if (res.getRuntimeId() != runtimeID) { return nullptr; }
     return res;

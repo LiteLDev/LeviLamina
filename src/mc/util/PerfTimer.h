@@ -42,5 +42,9 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
+    auto& $MultiplyDeBruijnBitPosition() { return MultiplyDeBruijnBitPosition; }
+
+    auto& $mPath() { return mPath; }
+
     // NOLINTEND
 };

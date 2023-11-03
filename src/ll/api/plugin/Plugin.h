@@ -1,8 +1,14 @@
 #pragma once
 
-#include "ll/api/base/Global.h"
+#include <any>
+#include <map>
+#include <optional>
+#include <string>
+#include <unordered_map>
+
 #include "ll/api/plugin/Version.h"
 
+#include "mc/common/wrapper/optional_ref.h"
 
 namespace ll::plugin {
 

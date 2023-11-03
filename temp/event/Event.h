@@ -10,7 +10,7 @@
 #include "ll/api/LLAPI.h"
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/Listener.h"
-#include "ll/api/utils/WinHelper.h"
+#include "ll/api/utils/WinUtils.h"
 
 namespace ll::event {
 

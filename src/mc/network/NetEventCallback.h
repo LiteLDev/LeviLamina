@@ -154,12 +154,12 @@ public:
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVModalFormResponsePacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class ModalFormResponsePacket const&);
 
-    // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VLevelChunkPacket@@@std@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, std::shared_ptr<class LevelChunkPacket>);
-
     // symbol:
     // ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VClientCacheMissResponsePacket@@@std@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, std::shared_ptr<class ClientCacheMissResponsePacket>);
+
+    // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VInventoryTransactionPacket@@@std@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, std::shared_ptr<class InventoryTransactionPacket>);
 
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAgentActionEventPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class AgentActionEventPacket const&);
@@ -208,9 +208,6 @@ public:
 
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBossEventPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class BossEventPacket const&);
-
-    // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class InventoryTransactionPacket const&);
 
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVServerSettingsRequestPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class ServerSettingsRequestPacket const&);
@@ -380,6 +377,9 @@ public:
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMultiplayerSettingsPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class MultiplayerSettingsPacket const&);
 
+    // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSubClientLoginPacket@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, class SubClientLoginPacket const&);
+
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVActorPickRequestPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class ActorPickRequestPacket const&);
 
@@ -454,9 +454,6 @@ public:
 
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVNetworkStackLatencyPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class NetworkStackLatencyPacket const&);
-
-    // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSubClientLoginPacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class SubClientLoginPacket const&);
 
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerInputPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class PlayerInputPacket const&);
@@ -671,6 +668,9 @@ public:
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VBlockActorDataPacket@@@std@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, std::shared_ptr<class BlockActorDataPacket>);
 
+    // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VLevelChunkPacket@@@std@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, std::shared_ptr<class LevelChunkPacket>);
+
     // symbol: ?onConnect@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@@Z
     MCVAPI void onConnect(class NetworkIdentifier const&);
 
@@ -693,8 +693,9 @@ public:
     // ?onTransferRequest@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCVAPI void onTransferRequest(class NetworkIdentifier const&, std::string const&, int);
 
-    // symbol: ?onUnableToConnect@NetEventCallback@@UEAAXXZ
-    MCVAPI void onUnableToConnect();
+    // symbol:
+    // ?onUnableToConnect@NetEventCallback@@UEAAXW4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCVAPI void onUnableToConnect(::Connection::DisconnectFailReason, std::string const&);
 
     // symbol: ??1NetEventCallback@@UEAA@XZ
     MCVAPI ~NetEventCallback();

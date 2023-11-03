@@ -15,5 +15,5 @@
 #include "fmt/printf.h"
 #include "gsl/gsl"
 
-#include "ll/api/memory/MemoryUtils.h"
+#include "ll/api/memory/Memory.h"
 #include "ll/api/utils/SehTranslator.h"

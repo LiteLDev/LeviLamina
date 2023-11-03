@@ -40,9 +40,8 @@ public:
         // symbol: ??0Definition@RandomSearchAndDigGoal@@QEAA@XZ
         MCAPI Definition();
 
-        // symbol:
-        // ?addWeightedChoiceEntry@Definition@RandomSearchAndDigGoal@@QEAAXAEBURandomSearchAndDigItemChoiceEntry@@@Z
-        MCAPI void addWeightedChoiceEntry(struct RandomSearchAndDigItemChoiceEntry const&);
+        // symbol: ?addBlockDescriptor@Definition@RandomSearchAndDigGoal@@QEAAXAEBVBlockDescriptor@@@Z
+        MCAPI void addBlockDescriptor(class BlockDescriptor const&);
 
         // symbol: ?initialize@Definition@RandomSearchAndDigGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class RandomSearchAndDigGoal&) const;
@@ -95,14 +94,14 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_emitDiggingParticles@RandomSearchAndDigGoal@@AEAAXXZ
-    MCAPI void _emitDiggingParticles();
+    // symbol: ?_digUpItems@RandomSearchAndDigGoal@@AEAAXXZ
+    MCAPI void _digUpItems();
+
+    // symbol: ?_isValidTarget@RandomSearchAndDigGoal@@AEBA_NAEBVBlockSource@@VBlockPos@@@Z
+    MCAPI bool _isValidTarget(class BlockSource const&, class BlockPos) const;
 
     // symbol: ?_triggerEvent@RandomSearchAndDigGoal@@AEBAXAEBVActorDefinitionTrigger@@@Z
     MCAPI void _triggerEvent(class ActorDefinitionTrigger const&) const;
-
-    // symbol: ?_isValidTarget@RandomSearchAndDigGoal@@CA_NAEBVBlockSource@@VBlockPos@@@Z
-    MCAPI static bool _isValidTarget(class BlockSource const&, class BlockPos);
 
     // NOLINTEND
 };

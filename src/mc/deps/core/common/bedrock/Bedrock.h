@@ -83,6 +83,8 @@ namespace Bedrock::PubSub::Detail { class PublisherBase; }
 namespace Bedrock::PubSub::Detail { class PublisherDisconnector; }
 namespace Bedrock::PubSub::Detail { class SubscriptionBodyBase; }
 namespace Bedrock::Threading { class AssignedThread; }
+namespace Bedrock::Threading { class EnableQueueForThread; }
+namespace Bedrock::Threading { class Mutex; }
 namespace Bedrock::Threading { class OSThreadPriority; }
 namespace Bedrock::Threading { class SharedRecursiveMutexBase; }
 namespace Bedrock::Threading::AsyncResult { class ToXAsyncBlock; }

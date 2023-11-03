@@ -12,7 +12,6 @@ class AppPlatform;
 namespace Core { class Path; }
 namespace Social::Events { class Event; }
 namespace Social::Events { class IEventListener; }
-namespace Social::Events { class SummaryEvent; }
 // clang-format on
 
 namespace Social::Events {
@@ -34,22 +33,22 @@ public:
     virtual void
     recordEvent(class Social::Events::Event const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
 
-    // vIndex: 3, symbol: ?sendEvents@AggregationEventListener@Events@Social@@UEAAX_N@Z
+    // vIndex: 2, symbol: ?sendEvents@AggregationEventListener@Events@Social@@UEAAX_N@Z
     virtual void sendEvents(bool);
 
-    // vIndex: 5, symbol: ?stopDebugEventLogging@AggregationEventListener@Events@Social@@UEAAXXZ
+    // vIndex: 4, symbol: ?stopDebugEventLogging@AggregationEventListener@Events@Social@@UEAAXXZ
     virtual void stopDebugEventLogging();
 
-    // vIndex: 6, symbol: ?sendEvent@OneDSEventListener@Events@Social@@UEAAXAEBVEvent@23@@Z
+    // vIndex: 5, symbol: ?sendEvent@OneDSEventListener@Events@Social@@UEAAXAEBVEvent@23@@Z
     virtual void sendEvent(class Social::Events::Event const&) = 0;
 
-    // vIndex: 7, symbol: ?_flushEventQueue@AggregationEventListener@Events@Social@@MEAAXXZ
+    // vIndex: 6, symbol: ?_flushEventQueue@AggregationEventListener@Events@Social@@MEAAXXZ
     virtual void _flushEventQueue();
 
-    // vIndex: 8, symbol: ?_checkAgainstEventAllowlist@AggregationEventListener@Events@Social@@MEBA_NAEBVEvent@23@@Z
+    // vIndex: 7, symbol: ?_checkAgainstEventAllowlist@AggregationEventListener@Events@Social@@MEBA_NAEBVEvent@23@@Z
     virtual bool _checkAgainstEventAllowlist(class Social::Events::Event const&) const;
 
-    // vIndex: 9, symbol: ?_isListenerReadyForEvents@AggregationEventListener@Events@Social@@MEBA_NXZ
+    // vIndex: 8, symbol: ?_isListenerReadyForEvents@AggregationEventListener@Events@Social@@MEBA_NXZ
     virtual bool _isListenerReadyForEvents() const;
 
     // symbol: ??1AggregationEventListener@Events@Social@@UEAA@XZ

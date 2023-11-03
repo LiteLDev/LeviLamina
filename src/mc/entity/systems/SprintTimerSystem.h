@@ -2,34 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/world/components/FlagComponent.h"
+namespace SprintTimerSystem {
+// NOLINTBEGIN
+// symbol: ?createSystem@SprintTimerSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createSystem();
+// NOLINTEND
 
-class SprintTimerSystem {
-public:
-    // prevent constructor by default
-    SprintTimerSystem& operator=(SprintTimerSystem const&);
-    SprintTimerSystem(SprintTimerSystem const&);
-    SprintTimerSystem();
-
-public:
-    // NOLINTBEGIN
-    // symbol: ?createSprintTimerSystem@SprintTimerSystem@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo createSprintTimerSystem();
-
-    // symbol:
-    // ?tickSprintTimerSystem@SprintTimerSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@@@$$CBUMoveInputComponent@@UPlayerInputRequestComponent@@UVanillaClientGameplayComponent@@@@@Z
-    MCAPI static void tickSprintTimerSystem(class ViewT<
-                                            class StrictEntityContext,
-                                            class EntityRegistryBase,
-                                            struct Include<
-                                                class FlagComponent<struct ActorMovementTickNeededFlag>,
-                                                class FlagComponent<struct LocalPlayerComponentFlag>>,
-                                            struct MoveInputComponent const,
-                                            struct PlayerInputRequestComponent,
-                                            struct VanillaClientGameplayComponent>);
-
-    // NOLINTEND
-};
+}; // namespace SprintTimerSystem

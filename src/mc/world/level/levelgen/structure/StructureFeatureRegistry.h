@@ -21,16 +21,9 @@ public:
     MCAPI StructureFeatureRegistry();
 
     // symbol:
-    // ?findNearestStructureFeature@StructureFeatureRegistry@@QEAA_NAEAVDimension@@AEAVIPreliminarySurfaceProvider@@W4StructureFeatureType@@AEBVBlockPos@@AEAV5@AEBVBiomeSource@@_N@Z
-    MCAPI bool findNearestStructureFeature(
-        class Dimension&,
-        class IPreliminarySurfaceProvider&,
-        ::StructureFeatureType,
-        class BlockPos const&,
-        class BlockPos&,
-        class BiomeSource const&,
-        bool
-    );
+    // ?findNearestStructureFeature@StructureFeatureRegistry@@QEAA_NAEAVDimension@@AEAVIPreliminarySurfaceProvider@@W4StructureFeatureType@@AEBVBlockPos@@AEAV5@AEBVBiomeSource@@_NV?$optional@VHashedString@@@std@@@Z
+    MCAPI bool
+    findNearestStructureFeature(class Dimension&, class IPreliminarySurfaceProvider&, ::StructureFeatureType, class BlockPos const&, class BlockPos&, class BiomeSource const&, bool, std::optional<class HashedString>);
 
     // symbol: ?findStructureFeatureTypeAt@StructureFeatureRegistry@@QEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
     MCAPI ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const&);

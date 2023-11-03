@@ -11,4 +11,11 @@ public:
     BlockDestructibleByMiningComponent& operator=(BlockDestructibleByMiningComponent const&);
     BlockDestructibleByMiningComponent(BlockDestructibleByMiningComponent const&);
     BlockDestructibleByMiningComponent();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ?usesNewComponentStorage@BlockDestructibleByMiningComponent@@SA_NXZ
+    MCAPI static bool usesNewComponentStorage();
+
+    // NOLINTEND
 };

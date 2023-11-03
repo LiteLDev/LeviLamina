@@ -7,16 +7,9 @@
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/enums/MinecraftPacketIds.h"
 #include "mc/enums/SubClientId.h"
-#include "mc/enums/TrackerType.h"
 #include "mc/enums/TransportLayer.h"
 #include "mc/enums/connection/DisconnectFailReason.h"
 #include "mc/resources/PacketViolationResponse.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { struct RakNetStatistics; }
-namespace Social { class GameConnectionInfo; }
-// clang-format on
 
 class NetworkSystem {
 public:
@@ -55,18 +48,11 @@ public:
     // symbol: ?_onEnable@NetworkSystem@@EEAAXXZ
     MCVAPI void _onEnable();
 
-    // symbol: ?getConnectionInfo@NetworkSystem@@UEBAAEBVGameConnectionInfo@Social@@XZ
-    MCVAPI class Social::GameConnectionInfo const& getConnectionInfo() const;
-
     // symbol: ?getDefaultGamePort@NetworkSystem@@UEBAGXZ
     MCVAPI ushort getDefaultGamePort() const;
 
     // symbol: ?getDefaultGamePortv6@NetworkSystem@@UEBAGXZ
     MCVAPI ushort getDefaultGamePortv6() const;
-
-    // symbol:
-    // ?getMultiplayerCorrelationId@NetworkSystem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCVAPI std::string getMultiplayerCorrelationId() const;
 
     // symbol:
     // ?onAllConnectionsClosed@NetworkSystem@@EEAAXW4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
@@ -89,8 +75,9 @@ public:
     // ?onNewOutgoingConnection@NetworkSystem@@EEAA_NAEBVNetworkIdentifier@@$$QEAV?$shared_ptr@VNetworkPeer@@@std@@@Z
     MCVAPI bool onNewOutgoingConnection(class NetworkIdentifier const&, std::shared_ptr<class NetworkPeer>&&);
 
-    // symbol: ?onOutgoingConnectionFailed@NetworkSystem@@EEAAXXZ
-    MCVAPI void onOutgoingConnectionFailed();
+    // symbol:
+    // ?onOutgoingConnectionFailed@NetworkSystem@@EEAAXW4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCVAPI void onOutgoingConnectionFailed(::Connection::DisconnectFailReason, std::string const&);
 
     // symbol:
     // ?onWebsocketRequest@NetworkSystem@@EEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z
@@ -160,9 +147,6 @@ public:
     // symbol: ?isHostingPlayer@NetworkSystem@@QEBA_NAEBVNetworkIdentifier@@AEBW4SubClientId@@@Z
     MCAPI bool isHostingPlayer(class NetworkIdentifier const&, ::SubClientId const&) const;
 
-    // symbol: ?isServer@NetworkSystem@@QEBA_NXZ
-    MCAPI bool isServer() const;
-
     // symbol: ?registerServerInstance@NetworkSystem@@QEAAXAEAVNetEventCallback@@@Z
     MCAPI void registerServerInstance(class NetEventCallback&);
 
@@ -190,11 +174,6 @@ public:
     // NOLINTBEGIN
     // symbol: ??0NetworkSystem@@IEAA@$$QEAUDependencies@0@@Z
     MCAPI explicit NetworkSystem(struct NetworkSystem::Dependencies&&);
-
-    // symbol:
-    // ?_createNetworkStatistics@NetworkSystem@@IEAAXW4TrackerType@@$$QEAV?$function@$$A6A_NAEAURakNetStatistics@RakNet@@@Z@std@@$$QEAV?$not_null@V?$NonOwnerPointer@VNetworkDebugManager@@@Bedrock@@@gsl@@@Z
-    MCAPI void
-    _createNetworkStatistics(::TrackerType, std::function<bool(struct RakNet::RakNetStatistics&)>&&, Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>&&);
 
     // symbol: ?_getTransportLayer@NetworkSystem@@IEBA?AW4TransportLayer@@XZ
     MCAPI ::TransportLayer _getTransportLayer() const;

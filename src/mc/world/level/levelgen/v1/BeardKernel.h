@@ -13,15 +13,8 @@ public:
     // symbol: ??0BeardKernel@@QEAA@XZ
     MCAPI BeardKernel();
 
-    // symbol: ?getContribution@BeardKernel@@QEBAMHHH@Z
-    MCAPI float getContribution(int, int, int) const;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?createBeardKernel@BeardKernel@@AEAA?BV?$array@M$0DGAA@@std@@XZ
-    MCAPI std::array<float, 13824> const createBeardKernel();
+    // symbol: ?getContribution@BeardKernel@@SAMHHH@Z
+    MCAPI static float getContribution(int, int, int);
 
     // NOLINTEND
 };

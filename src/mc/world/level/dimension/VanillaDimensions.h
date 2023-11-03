@@ -10,7 +10,6 @@
 
 class VanillaDimensions {
 public:
-
     // prevent constructor by default
     VanillaDimensions& operator=(VanillaDimensions const&);
     VanillaDimensions(VanillaDimensions const&);
@@ -69,5 +68,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
+    auto& $DimensionMap() { return DimensionMap; }
+
     // NOLINTEND
 };

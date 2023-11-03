@@ -49,8 +49,9 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleGameTest::ScriptSculkSpreader> bind();
 
     // symbol:
-    // ?getHandle@ScriptSculkSpreader@ScriptModuleGameTest@@SA?AV?$StrongTypedObjectHandle@VScriptSculkSpreader@ScriptModuleGameTest@@@Scripting@@AEAVBlockSource@@AEBVBlockPos@@AEBVWeakLifetimeScope@4@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptSculkSpreader>
+    // ?getHandle@ScriptSculkSpreader@ScriptModuleGameTest@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptSculkSpreader@ScriptModuleGameTest@@@Scripting@@@std@@AEAVBlockSource@@AEBVBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI static std::optional<
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptSculkSpreader>>
     getHandle(class BlockSource&, class BlockPos const&, class Scripting::WeakLifetimeScope const&);
 
     // NOLINTEND

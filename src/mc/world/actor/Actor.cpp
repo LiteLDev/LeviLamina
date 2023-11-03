@@ -1,5 +1,5 @@
 #include "mc/world/actor/Actor.h"
-#include "ll/api/memory/MemoryUtils.h"
+#include "ll/api/memory/Memory.h"
 #include "mc/common/HitDetection.h"
 #include "mc/dataloadhelper/DefaultDataLoadHelper.h"
 #include "mc/entity/EntityContext.h"

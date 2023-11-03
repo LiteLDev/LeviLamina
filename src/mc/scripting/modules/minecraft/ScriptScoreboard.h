@@ -34,9 +34,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptScoreboard@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptScoreboard();
-
     // symbol:
     // ??0ScriptScoreboard@ScriptModuleMinecraft@@QEAA@AEAVScoreboard@@AEAVLevel@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptScoreboard(class Scoreboard&, class Level&, class Scripting::WeakLifetimeScope const&);

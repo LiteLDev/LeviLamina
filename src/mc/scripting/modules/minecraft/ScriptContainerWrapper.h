@@ -30,9 +30,9 @@ public:
     MCAPI explicit ScriptContainerWrapper(std::unique_ptr<class ScriptModuleMinecraft::ScriptContainer>);
 
     // symbol:
-    // ?addItem@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBVScriptItemStack@2@@Z
+    // ?addItem@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@AEBVScriptItemStack@2@@Z
     MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
     addItem(class ScriptModuleMinecraft::ScriptItemStack const&) const;
 
     // symbol: ?clearAll@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@XZ
@@ -68,9 +68,9 @@ public:
     MCAPI class Scripting::Result<void> swapItems(int, int, class ScriptModuleMinecraft::ScriptContainerWrapper&) const;
 
     // symbol:
-    // ?transferItem@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@HAEAV12@@Z
+    // ?transferItem@ScriptContainerWrapper@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@HAEAV12@@Z
     MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
     transferItem(int, class ScriptModuleMinecraft::ScriptContainerWrapper&) const;
 
     // symbol:

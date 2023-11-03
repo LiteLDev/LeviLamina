@@ -9,7 +9,7 @@
 #include <filesystem>
 
 #include "ll/api/memory/Hook.h"
-#include "ll/api/utils/FileHelper.h"
+#include "ll/api/utils/FileUtils.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/Version.h"
 

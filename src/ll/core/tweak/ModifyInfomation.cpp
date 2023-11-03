@@ -54,7 +54,7 @@ void tryModifyServerStartInfo(std::string& s) {
                 fmt::format(
                     fg(fmt::color::light_sky_blue) | fmt::emphasis::bold,
                     "LeviLamina {}",
-                    LL_FILE_VERSION_STRING
+                    ll::getLoaderVersion().to_string()
                 )
             );
         }
@@ -64,7 +64,7 @@ void tryModifyServerStartInfo(std::string& s) {
 
     ll::severStartEndTime = std::chrono::steady_clock::now();
 
-    s = std::format(
+    s = fmt::format(
         R"(Server started in ({:.1f}s)! For help, type "help" or "?")",
         std::chrono::duration_cast<std::chrono::duration<double>>(ll::severStartEndTime - ll::severStartBeginTime)
             .count()
@@ -111,7 +111,7 @@ LL_AUTO_STATIC_HOOK(
 
         if (!serverStarted) tryModifyServerStartInfo(line);
 
-        if (!knownPriority) { line = std::format("<LVL|{}> {}", priority, line); }
+        if (!knownPriority) { line = fmt::format("<LVL|{}> {}", priority, line); }
         logger(line);
     }
 }

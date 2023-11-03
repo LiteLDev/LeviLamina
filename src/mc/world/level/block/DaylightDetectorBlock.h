@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/ActorBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -101,8 +102,9 @@ public:
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 65, symbol: ?shouldConnectToRedstone@DaylightDetectorBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    // vIndex: 65, symbol:
+    // ?shouldConnectToRedstone@DaylightDetectorBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
     // vIndex: 70, symbol: ?checkIsPathable@DaylightDetectorBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;

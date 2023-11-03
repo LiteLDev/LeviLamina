@@ -4,7 +4,7 @@
 #include "mc/deps/json/Features.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/CommentPlacement.h"
+#include "mc/deps/json/Value.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -109,22 +109,21 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?addComment@Reader@Json@@AEAAXPEBD0W4CommentPlacement@2@@Z
-    MCAPI void addComment(char const*, char const*, ::Json::CommentPlacement);
-
     // symbol:
     // ?addError@Reader@Json@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVToken@12@PEBD@Z
     MCAPI bool addError(std::string const&, class Json::Reader::Token&, char const*);
 
-    // symbol: ?decodeDouble@Reader@Json@@AEAA_NAEAVToken@12@@Z
-    MCAPI bool decodeDouble(class Json::Reader::Token&);
+    // symbol: ?decodeDouble@Reader@Json@@AEAA?AVValue@2@AEAVToken@12@AEA_N@Z
+    MCAPI class Json::Value decodeDouble(class Json::Reader::Token&, bool&);
 
-    // symbol: ?decodeNumber@Reader@Json@@AEAA_NAEAVToken@12@@Z
-    MCAPI bool decodeNumber(class Json::Reader::Token&);
+    // symbol: ?decodeNumber@Reader@Json@@AEAA?AVValue@2@AEAVToken@12@AEA_N@Z
+    MCAPI class Json::Value decodeNumber(class Json::Reader::Token&, bool&);
 
-    // symbol:
-    // ?decodeString@Reader@Json@@AEAA_NAEAVToken@12@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool decodeString(class Json::Reader::Token&, std::string&);
+    // symbol: ?decodeString@Reader@Json@@AEAA_NAEAVToken@12@PEAD@Z
+    MCAPI bool decodeString(class Json::Reader::Token&, char*);
+
+    // symbol: ?decodeString@Reader@Json@@AEAA?AVCZString@Value@2@AEAVToken@12@AEA_N@Z
+    MCAPI class Json::Value::CZString decodeString(class Json::Reader::Token&, bool&);
 
     // symbol: ?decodeUnicodeCodePoint@Reader@Json@@AEAA_NAEAVToken@12@AEAPEBDPEBDAEAI@Z
     MCAPI bool decodeUnicodeCodePoint(class Json::Reader::Token&, char const*&, char const*, uint&);
@@ -139,26 +138,20 @@ public:
     // symbol: ?parse@Reader@Json@@AEAA_NPEBD0AEAVValue@2@_N@Z
     MCAPI bool parse(char const*, char const*, class Json::Value&, bool);
 
-    // symbol: ?readArray@Reader@Json@@AEAA_NAEAVToken@12@@Z
-    MCAPI bool readArray(class Json::Reader::Token&);
+    // symbol: ?readArray@Reader@Json@@AEAA?AVValue@2@AEAVToken@12@AEA_N@Z
+    MCAPI class Json::Value readArray(class Json::Reader::Token&, bool&);
 
-    // symbol: ?readComment@Reader@Json@@AEAA_NXZ
-    MCAPI bool readComment();
-
-    // symbol: ?readObject@Reader@Json@@AEAA_NAEAVToken@12@@Z
-    MCAPI bool readObject(class Json::Reader::Token&);
+    // symbol: ?readObject@Reader@Json@@AEAA?AVValue@2@AEAVToken@12@AEA_N@Z
+    MCAPI class Json::Value readObject(class Json::Reader::Token&, bool&);
 
     // symbol: ?readToken@Reader@Json@@AEAA_NAEAVToken@12@@Z
     MCAPI bool readToken(class Json::Reader::Token&);
 
-    // symbol: ?readValue@Reader@Json@@AEAA_NXZ
-    MCAPI bool readValue();
+    // symbol: ?readValue@Reader@Json@@AEAA?AVValue@2@AEA_N@Z
+    MCAPI class Json::Value readValue(bool&);
 
     // symbol: ?recoverFromError@Reader@Json@@AEAA_NW4TokenType@12@@Z
     MCAPI bool recoverFromError(::Json::Reader::TokenType);
-
-    // symbol: ?skipCommentTokens@Reader@Json@@AEAAXAEAVToken@12@@Z
-    MCAPI void skipCommentTokens(class Json::Reader::Token&);
 
     // NOLINTEND
 };

@@ -7,6 +7,11 @@
 #include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/entity/utilities/ActorType.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct Version; }
+// clang-format on
+
 class ActorDamageSource {
 public:
     ::ActorDamageCause mCause;
@@ -91,8 +96,13 @@ public:
     MCAPI void setCause(::ActorDamageCause);
 
     // symbol:
-    // ?generateDamageCauseCommandEnum@ActorDamageSource@@SA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@@2@@std@@XZ
-    MCAPI static std::vector<std::pair<std::string, ::ActorDamageCause>> generateDamageCauseCommandEnum();
+    // ?generateDamageCauseCommandEnum@ActorDamageSource@@SA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@@2@@std@@V?$optional@UVersion@Scripting@@@3@@Z
+    MCAPI static std::vector<std::pair<std::string, ::ActorDamageCause>>
+        generateDamageCauseCommandEnum(std::optional<struct Scripting::Version>);
+
+    // symbol:
+    // ?generateVersionedDamageCauseCommandEnum@ActorDamageSource@@SA?AV?$vector@VVersionedActorDamageCause@@V?$allocator@VVersionedActorDamageCause@@@std@@@std@@XZ
+    MCAPI static std::vector<class VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
 
     // symbol: ?isDamageCausedByMob@ActorDamageSource@@SA_NW4ActorDamageCause@@@Z
     MCAPI static bool isDamageCausedByMob(::ActorDamageCause);

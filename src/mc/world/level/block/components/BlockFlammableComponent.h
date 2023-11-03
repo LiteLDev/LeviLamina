@@ -11,4 +11,11 @@ public:
     BlockFlammableComponent& operator=(BlockFlammableComponent const&);
     BlockFlammableComponent(BlockFlammableComponent const&);
     BlockFlammableComponent();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ?usesNewComponentStorage@BlockFlammableComponent@@SA_NXZ
+    MCAPI static bool usesNewComponentStorage();
+
+    // NOLINTEND
 };

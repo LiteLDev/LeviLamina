@@ -1,11 +1,12 @@
 ﻿#include "ll/api/utils/KeyValueDB.h"
 
 #include "ll/api/i18n/I18nAPI.h"
-#include "ll/api/utils/FileHelper.h"
+#include "ll/api/utils/FileUtils.h"
 #include "ll/core/LeviLamina.h"
 #include <optional>
 
 using namespace ll;
+using namespace ll::utils;
 
 class KeyValueDB::KeyValueDBImpl {
 public:
@@ -98,7 +99,7 @@ private:
 };
 
 std::unique_ptr<KeyValueDB> KeyValueDB::create(std::string const& path, bool readCache, int cacheSize, int filterBit) {
-    createDirs(path);
+    file_utils::createDirs(path);
     auto db  = std::unique_ptr<KeyValueDB>(new KeyValueDB());
     db->impl = std::make_unique<KeyValueDBImpl>(path, true, readCache, cacheSize, filterBit);
     return db;
@@ -106,7 +107,7 @@ std::unique_ptr<KeyValueDB> KeyValueDB::create(std::string const& path, bool rea
 
 std::unique_ptr<KeyValueDB>
 KeyValueDB::open(std::string const& path, bool create, bool readCache, int cacheSize, int filterBit) {
-    createDirs(path);
+    file_utils::createDirs(path);
     auto db  = std::unique_ptr<KeyValueDB>(new KeyValueDB());
     db->impl = std::make_unique<KeyValueDBImpl>(path, create, readCache, cacheSize, filterBit);
     return db;

@@ -13,6 +13,7 @@
 class Scheduler;
 class WorkerPool;
 namespace Bedrock::Threading { class AssignedThread; }
+namespace Bedrock::Threading { class EnableQueueForThread; }
 namespace Bedrock::Threading { class OSThreadPriority; }
 namespace Bedrock::Threading { class SharedRecursiveMutexBase; }
 namespace Bedrock::Threading::AsyncResult { class ToXAsyncBlock; }
@@ -21,7 +22,6 @@ struct XTaskQueueObject;
 // clang-format on
 
 namespace Bedrock::Threading {
-using Mutex = std::mutex;
 // NOLINTBEGIN
 // symbol: ?IS_RUNNING_STATICS@Threading@Bedrock@@YA_NXZ
 MCAPI bool IS_RUNNING_STATICS();

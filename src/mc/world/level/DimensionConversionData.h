@@ -6,7 +6,7 @@
 class DimensionConversionData {
 public:
     Vec3 mOverworldSpawnPoint;
-    int mNetherScale;
+    int  mNetherScale;
     // prevent constructor by default
     DimensionConversionData& operator=(DimensionConversionData const&);
     DimensionConversionData(DimensionConversionData const&);

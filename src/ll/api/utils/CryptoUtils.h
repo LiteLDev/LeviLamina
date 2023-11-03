@@ -5,7 +5,7 @@
 
 #include "ll/api/base/Macro.h"
 
-namespace ll::crypto {
+namespace ll::utils::crypto_utils {
 
 LLNDAPI std::string md5(std::string_view input);
 
@@ -19,4 +19,4 @@ LLNDAPI std::string sha384(std::string_view input);
 
 LLNDAPI std::string sha512(std::string_view input);
 
-} // namespace ll::crypto
+} // namespace ll::utils::crypto_utils

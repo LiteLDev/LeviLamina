@@ -183,9 +183,9 @@ public:
     getFenceConnectivity(class Vec3 const&);
 
     // symbol:
-    // ?getSculkSpreader@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptSculkSpreader@ScriptModuleGameTest@@@Scripting@@UGameTestError@gametest@@@Scripting@@AEBVVec3@@@Z
+    // ?getSculkSpreader@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptSculkSpreader@ScriptModuleGameTest@@@Scripting@@@std@@UGameTestError@gametest@@@Scripting@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptSculkSpreader>,
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptSculkSpreader>>,
         struct gametest::GameTestError>
     getSculkSpreader(class Vec3 const&);
 

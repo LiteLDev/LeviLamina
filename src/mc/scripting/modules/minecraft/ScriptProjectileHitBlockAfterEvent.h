@@ -25,9 +25,6 @@ public:
     // ?getBlockHit@ScriptProjectileHitBlockAfterEvent@ScriptModuleMinecraft@@QEBA?AUScriptBlockHitInformation@2@XZ
     MCAPI struct ScriptModuleMinecraft::ScriptBlockHitInformation getBlockHit() const;
 
-    // symbol: ??1ScriptProjectileHitBlockAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptProjectileHitBlockAfterEvent();
-
     // symbol:
     // ?bind@ScriptProjectileHitBlockAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptProjectileHitBlockAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>

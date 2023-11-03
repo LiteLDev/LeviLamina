@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 namespace Scripting { class WeakLifetimeScope; }
 struct ChatEvent;
 // clang-format on
@@ -27,8 +28,9 @@ public:
     MCAPI ScriptChatSendAfterEvent(struct ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
 
     // symbol:
-    // ??0ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUChatEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI ScriptChatSendAfterEvent(struct ChatEvent const&, class Scripting::WeakLifetimeScope const&);
+    // ??0ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUChatEvent@@AEBVPlayer@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI
+    ScriptChatSendAfterEvent(struct ChatEvent const&, class Player const&, class Scripting::WeakLifetimeScope const&);
 
     // symbol:
     // ?copyTo@ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEBAXAEAUChatEvent@@AEBVWeakLifetimeScope@Scripting@@@Z

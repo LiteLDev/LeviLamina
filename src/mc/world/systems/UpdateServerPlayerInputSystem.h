@@ -11,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?createPlayerInputUpdateSystem@UpdateServerPlayerInputSystem@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo createPlayerInputUpdateSystem();
-
-    // symbol: ?createSneakUpdateSystem@UpdateServerPlayerInputSystem@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo createSneakUpdateSystem();
+    // symbol: ?createSystem@UpdateServerPlayerInputSystem@@SA?AUTickingSystemWithInfo@@XZ
+    MCAPI static struct TickingSystemWithInfo createSystem();
 
     // NOLINTEND
 };

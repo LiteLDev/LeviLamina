@@ -8,7 +8,7 @@
 #include "ll/api/ServerInfo.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/GlobalService.h"
-#include "ll/api/utils/FileHelper.h"
+#include "ll/api/utils/FileUtils.h"
 #include "ll/api/utils/SehTranslator.h"
 #include "ll/api/utils/StringUtils.h"
 
@@ -29,7 +29,7 @@
 
 using namespace ll::hash;
 using namespace ll::hash_literals;
-
+using namespace ll::utils;
 
 ll::Logger                            ll::logger("LeviLamina");
 std::chrono::steady_clock::time_point ll::severStartBeginTime;
@@ -270,7 +270,7 @@ void leviLaminaMain() {
 
     // Rename Window
     HWND         hwnd = GetConsoleWindow();
-    std::wstring s    = ll::string_utils::str2wstr("Bedrock Dedicated Server " + ll::getBdsVersion());
+    std::wstring s    = string_utils::str2wstr("Bedrock Dedicated Server " + ll::getBdsVersion().to_string());
     SetWindowText(hwnd, s.c_str());
 
     // Register Exit Event Handler.
@@ -316,7 +316,7 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Highest, "main", int, int 
             break;
         case "-v"_h:
         case "--version"_h:
-            fmt::print("{}", ll::getBdsVersion());
+            fmt::print("{}", ll::getBdsVersion().to_string());
             return 0;
         case "--protocolversion"_h:
             fmt::print("{}", ll::getServerProtocolVersion());

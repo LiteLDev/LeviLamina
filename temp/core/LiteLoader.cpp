@@ -6,7 +6,7 @@
 #include <processenv.h>
 #include <string>
 
-#include "ll/api/utils/FileHelper.h"
+#include "ll/api/utils/FileUtils.h"
 #include "ll/api/utils/SehTranslator.h"
 #include "ll/api/utils/StringUtils.h"
 

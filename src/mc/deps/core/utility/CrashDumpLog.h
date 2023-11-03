@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
+
 class CrashDumpLog {
 public:
     // prevent constructor by default
@@ -59,42 +64,42 @@ protected:
 
 private:
     // NOLINTBEGIN
-    // symbol: ?mAssertDataMutex@CrashDumpLog@@0Vmutex@std@@A
-    MCAPI static std::mutex mAssertDataMutex;
+    // symbol: ?mAssertDataMutex@CrashDumpLog@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mAssertDataMutex;
 
     // symbol:
     // ?mCrashDumpLog_logThread@CrashDumpLog@@0V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@A
     MCAPI static std::unique_ptr<std::thread> mCrashDumpLog_logThread;
 
-    // symbol: ?mCrashDumpThreadMutex@CrashDumpLog@@0Vmutex@std@@A
-    MCAPI static std::mutex mCrashDumpThreadMutex;
+    // symbol: ?mCrashDumpThreadMutex@CrashDumpLog@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mCrashDumpThreadMutex;
 
     // symbol: ?mCrashDumpThreadMutexCV@CrashDumpLog@@0Vcondition_variable@std@@A
     MCAPI static std::condition_variable mCrashDumpThreadMutexCV;
 
-    // symbol: ?mEventDataMutex@CrashDumpLog@@0Vmutex@std@@A
-    MCAPI static std::mutex mEventDataMutex;
+    // symbol: ?mEventDataMutex@CrashDumpLog@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mEventDataMutex;
 
-    // symbol: ?mFrameDataMutex@CrashDumpLog@@0Vmutex@std@@A
-    MCAPI static std::mutex mFrameDataMutex;
+    // symbol: ?mFrameDataMutex@CrashDumpLog@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mFrameDataMutex;
 
-    // symbol: ?mGameplayDataMutex@CrashDumpLog@@0Vmutex@std@@A
-    MCAPI static std::mutex mGameplayDataMutex;
+    // symbol: ?mGameplayDataMutex@CrashDumpLog@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mGameplayDataMutex;
 
-    // symbol: ?mGlobalDataMutex@CrashDumpLog@@0Vmutex@std@@A
-    MCAPI static std::mutex mGlobalDataMutex;
+    // symbol: ?mGlobalDataMutex@CrashDumpLog@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mGlobalDataMutex;
 
     // symbol: ?mIsThreadRunning@CrashDumpLog@@0_NA
     MCAPI static bool mIsThreadRunning;
 
-    // symbol: ?mKeyValueDataMutex@CrashDumpLog@@0Vmutex@std@@A
-    MCAPI static std::mutex mKeyValueDataMutex;
+    // symbol: ?mKeyValueDataMutex@CrashDumpLog@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mKeyValueDataMutex;
 
-    // symbol: ?mPlayerDataMutex@CrashDumpLog@@0Vmutex@std@@A
-    MCAPI static std::mutex mPlayerDataMutex;
+    // symbol: ?mPlayerDataMutex@CrashDumpLog@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mPlayerDataMutex;
 
-    // symbol: ?mRenderDataMutex@CrashDumpLog@@0Vmutex@std@@A
-    MCAPI static std::mutex mRenderDataMutex;
+    // symbol: ?mRenderDataMutex@CrashDumpLog@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mRenderDataMutex;
 
     // NOLINTEND
 
@@ -124,6 +129,8 @@ public:
     auto& $mPlayerDataMutex() { return mPlayerDataMutex; }
 
     auto& $mRenderDataMutex() { return mRenderDataMutex; }
+
+    auto& $mAllData() { return mAllData; }
 
     // NOLINTEND
 };

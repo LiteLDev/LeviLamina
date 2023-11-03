@@ -125,6 +125,9 @@ public:
     // symbol: ?getDynamicPropertiesDefinition@ServerLevel@@QEAAAEAVDynamicPropertiesDefinition@@XZ
     MCAPI class DynamicPropertiesDefinition& getDynamicPropertiesDefinition();
 
+    // symbol: ?getDynamicPropertiesManager@ServerLevel@@QEBAAEAVDynamicPropertiesManager@@XZ
+    MCAPI class DynamicPropertiesManager& getDynamicPropertiesManager() const;
+
     // symbol: ?getMobEvents@ServerLevel@@QEAAAEAVMobEvents@@XZ
     MCAPI class MobEvents& getMobEvents();
 

@@ -133,6 +133,9 @@ MCAPI std::string getNameWithoutNamespace(std::string const&);
 // symbol: ?getNamespace@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 MCAPI std::string getNamespace(std::string const&);
 
+// symbol: ?hashCode@Util@@YAIV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+MCAPI uint hashCode(std::string_view);
+
 // symbol: ?hashCodeAsUtf16@Util@@YAIV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
 MCAPI uint hashCodeAsUtf16(std::string_view);
 

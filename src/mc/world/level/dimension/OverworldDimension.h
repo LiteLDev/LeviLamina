@@ -13,8 +13,8 @@
 // clang-format off
 namespace mce { class Color; }
 // clang-format on
-namespace unity_5c986e6b9d6571cc96912b0bfa0329e2{
-    MCAPI DimensionHeightRange computeOverworldHeightRange(ILevel&);
+namespace unity_5c986e6b9d6571cc96912b0bfa0329e2 {
+MCAPI DimensionHeightRange computeOverworldHeightRange(ILevel&);
 }
 
 class OverworldDimension : public ::Dimension {
@@ -27,8 +27,6 @@ public:
         scheduler,
         "Overworld"
     ) {
-        auto temp = unity_5c986e6b9d6571cc96912b0bfa0329e2::computeOverworldHeightRange(ilevel);
-        std::cout<<"Max: "<<temp.max << " Min: "<< temp.min <<std::endl;
         mHasWeather            = true;
         mDefaultBrightness.sky = Brightness::MAX;
         mSeaLevel              = 63;

@@ -72,9 +72,6 @@ public:
     // symbol: ??0EndGatewayBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit EndGatewayBlockActor(class BlockPos const&);
 
-    // symbol: ?canTeleport@EndGatewayBlockActor@@QEBA_NPEBVGetCollisionShapeInterface@@AEBVBlockSource@@@Z
-    MCAPI bool canTeleport(class GetCollisionShapeInterface const*, class BlockSource const&) const;
-
     // symbol: ?setExitPosition@EndGatewayBlockActor@@QEAAXAEBVBlockPos@@@Z
     MCAPI void setExitPosition(class BlockPos const&);
 
