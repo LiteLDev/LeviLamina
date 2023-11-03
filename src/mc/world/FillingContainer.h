@@ -41,9 +41,6 @@ public:
     // vIndex: 18, symbol: ?startOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player&);
 
-    // vIndex: 19, symbol: ?stopOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
-    virtual void stopOpen(class Player&);
-
     // vIndex: 25, symbol: __unk_vfn_25
     virtual void __unk_vfn_25();
 

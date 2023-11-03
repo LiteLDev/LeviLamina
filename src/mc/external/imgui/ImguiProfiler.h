@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class EnableNonOwnerReferences; }
+namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 struct ImguiProfiler : public ::Bedrock::EnableNonOwnerReferences {
@@ -182,8 +183,8 @@ private:
     // symbol: ?sProduceRecords@ImguiProfiler@@0HA
     MCAPI static int sProduceRecords;
 
-    // symbol: ?sRecordMutex@ImguiProfiler@@0Vmutex@std@@A
-    MCAPI static std::mutex sRecordMutex;
+    // symbol: ?sRecordMutex@ImguiProfiler@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex sRecordMutex;
 
     // NOLINTEND
 

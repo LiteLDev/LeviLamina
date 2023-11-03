@@ -9,6 +9,7 @@
 #include "mc/enums/Flip.h"
 #include "mc/enums/NewLogType.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/LogBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"

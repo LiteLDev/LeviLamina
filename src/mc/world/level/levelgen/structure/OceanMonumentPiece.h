@@ -82,5 +82,19 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
+    auto& $mGridroomLeftWingConnectIndex() { return mGridroomLeftWingConnectIndex; }
+
+    auto& $mGridroomRightWingConnectIndex() { return mGridroomRightWingConnectIndex; }
+
+    auto& $mGridroomSourceIndex() { return mGridroomSourceIndex; }
+
+    auto& $mGridroomTopConnectIndex() { return mGridroomTopConnectIndex; }
+
+    auto& $mLeftWingIndex() { return mLeftWingIndex; }
+
+    auto& $mPenthouseIndex() { return mPenthouseIndex; }
+
+    auto& $mRightWingIndex() { return mRightWingIndex; }
+
     // NOLINTEND
 };

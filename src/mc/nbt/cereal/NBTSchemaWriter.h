@@ -44,15 +44,15 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol:
+    // vIndex: 1, symbol: ?write@NBTSchemaWriter@@UEAA_NMAEBUSerializerTraits@cereal@@@Z
+    virtual bool write(float, struct cereal::SerializerTraits const&);
+
+    // vIndex: 2, symbol: ?write@NBTSchemaWriter@@UEAA_NNAEBUSerializerTraits@cereal@@@Z
+    virtual bool write(double, struct cereal::SerializerTraits const&);
+
+    // vIndex: 3, symbol:
     // ?write@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUSerializerTraits@cereal@@@Z
     virtual bool write(std::string const&, struct cereal::SerializerTraits const&);
-
-    // vIndex: 2, symbol: __unk_vfn_2
-    virtual void __unk_vfn_2();
-
-    // vIndex: 3, symbol: ?write@NBTSchemaWriter@@UEAA_NMAEBUSerializerTraits@cereal@@@Z
-    virtual bool write(float, struct cereal::SerializerTraits const&);
 
     // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4();
@@ -103,8 +103,11 @@ public:
     // symbol: ?write@NBTSchemaWriter@@UEAA_N_JAEBUSerializerTraits@cereal@@@Z
     MCVAPI bool write(int64, struct cereal::SerializerTraits const&);
 
-    // symbol: ?write@NBTSchemaWriter@@UEAA_NNAEBUSerializerTraits@cereal@@@Z
-    MCVAPI bool write(double, struct cereal::SerializerTraits const&);
+    // symbol: ?write@NBTSchemaWriter@@UEAA_NIAEBUSerializerTraits@cereal@@@Z
+    MCVAPI bool write(uint, struct cereal::SerializerTraits const&);
+
+    // symbol: ?write@NBTSchemaWriter@@UEAA_NHAEBUSerializerTraits@cereal@@@Z
+    MCVAPI bool write(int, struct cereal::SerializerTraits const&);
 
     // symbol: ?write@NBTSchemaWriter@@UEAA_N_NAEBUSerializerTraits@cereal@@@Z
     MCVAPI bool write(bool, struct cereal::SerializerTraits const&);
@@ -120,12 +123,6 @@ public:
 
     // symbol: ?write@NBTSchemaWriter@@UEAA_NFAEBUSerializerTraits@cereal@@@Z
     MCVAPI bool write(short, struct cereal::SerializerTraits const&);
-
-    // symbol: ?write@NBTSchemaWriter@@UEAA_NIAEBUSerializerTraits@cereal@@@Z
-    MCVAPI bool write(uint, struct cereal::SerializerTraits const&);
-
-    // symbol: ?write@NBTSchemaWriter@@UEAA_NHAEBUSerializerTraits@cereal@@@Z
-    MCVAPI bool write(int, struct cereal::SerializerTraits const&);
 
     // symbol: ??1NBTSchemaWriter@@UEAA@XZ
     MCVAPI ~NBTSchemaWriter();

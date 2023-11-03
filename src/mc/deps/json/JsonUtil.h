@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
 namespace JsonUtil { class JsonSchemaNodeBase; }
 // clang-format on
@@ -28,6 +29,10 @@ MCAPI void LogUnknownChildSchemaOption(std::string const&, ::LogArea, class Json
 MCAPI void eraseSchema(class HashedString const&, class SemVersion const&);
 
 // symbol:
+// ?getBlockLegacy@JsonUtil@@YAPEBVBlockLegacy@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+MCAPI class BlockLegacy const* getBlockLegacy(std::string const&);
+
+// symbol:
 // ?getMemberByCaseInsensitiveName@JsonUtil@@YAAEAVValue@Json@@AEAV23@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
 MCAPI class Json::Value& getMemberByCaseInsensitiveName(class Json::Value&, std::string_view const&);
 
@@ -40,8 +45,8 @@ MCAPI class Json::Value const& getMemberByCaseInsensitiveNameConst(class Json::V
 MCAPI std::map<class HashedString, std::map<class SemVersion, std::shared_ptr<class JsonUtil::JsonSchemaNodeBase>>>&
       getSchemaMap();
 
-// symbol: ?getSchemaMapLock@JsonUtil@@YAAEAVmutex@std@@XZ
-MCAPI std::mutex& getSchemaMapLock();
+// symbol: ?getSchemaMapLock@JsonUtil@@YAAEAVMutex@Threading@Bedrock@@XZ
+MCAPI class Bedrock::Threading::Mutex& getSchemaMapLock();
 
 // symbol: ?parseBannerBlockType@JsonUtil@@YA_NAEAW4BannerBlockType@@AEBVValue@Json@@@Z
 MCAPI bool parseBannerBlockType(::BannerBlockType&, class Json::Value const&);

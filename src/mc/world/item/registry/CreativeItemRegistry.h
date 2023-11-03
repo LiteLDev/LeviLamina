@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class EnableNonOwnerReferences; }
+namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class CreativeItemRegistry : public ::Bedrock::EnableNonOwnerReferences {
@@ -78,8 +79,8 @@ public:
     // ?setCurrentRegistry@CreativeItemRegistry@@SAX$$QEAV?$unique_ptr@VCreativeItemRegistry@@U?$default_delete@VCreativeItemRegistry@@@std@@@std@@@Z
     MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry>&&);
 
-    // symbol: ?mCreativeListMutex@CreativeItemRegistry@@2Vmutex@std@@A
-    MCAPI static std::mutex mCreativeListMutex;
+    // symbol: ?mCreativeListMutex@CreativeItemRegistry@@2VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mCreativeListMutex;
 
     // NOLINTEND
 

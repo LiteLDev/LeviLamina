@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/ActorBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -190,6 +191,9 @@ public:
 
     // symbol: ?isSupportedBlock@FlowerPotBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isSupportedBlock(class Block const&);
+
+    // symbol: ?isValidResource@FlowerPotBlock@@SA_NAEBVBlock@@@Z
+    MCAPI static bool isValidResource(class Block const&);
 
     // NOLINTEND
 

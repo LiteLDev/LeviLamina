@@ -44,11 +44,6 @@ public:
     // symbol: ??1NetworkStatistics@@UEAA@XZ
     MCVAPI ~NetworkStatistics();
 
-    // symbol:
-    // ??0NetworkStatistics@@QEAA@V?$not_null@V?$NonOwnerPointer@VNetworkSystem@@@Bedrock@@@gsl@@W4TrackerType@@$$QEAV?$function@$$A6A_NAEAURakNetStatistics@RakNet@@@Z@std@@V?$not_null@V?$NonOwnerPointer@VNetworkDebugManager@@@Bedrock@@@2@@Z
-    MCAPI
-    NetworkStatistics(Bedrock::NotNullNonOwnerPtr<class NetworkSystem>, ::TrackerType, std::function<bool(struct RakNet::RakNetStatistics&)>&&, Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>);
-
     // symbol: ?getVerboseInfo@NetworkStatistics@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getVerboseInfo() const;
 
@@ -56,6 +51,11 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol:
+    // ??0NetworkStatistics@@AEAA@$$QEAVClientOrServerNetworkSystemRef@@W4TrackerType@@$$QEAV?$function@$$A6A_NAEAURakNetStatistics@RakNet@@@Z@std@@V?$not_null@V?$NonOwnerPointer@VNetworkDebugManager@@@Bedrock@@@gsl@@@Z
+    MCAPI
+    NetworkStatistics(class ClientOrServerNetworkSystemRef&&, ::TrackerType, std::function<bool(struct RakNet::RakNetStatistics&)>&&, Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>);
+
     // symbol: ?_clearCSVStats@NetworkStatistics@@AEAAXXZ
     MCAPI void _clearCSVStats();
 

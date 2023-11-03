@@ -4,8 +4,11 @@
 
 namespace DesiredMoveDirectionSystem {
 // NOLINTBEGIN
-// symbol: ?createSystem@DesiredMoveDirectionSystem@@YA?AUTickingSystemWithInfo@@XZ
-MCAPI struct TickingSystemWithInfo createSystem();
+// symbol: ?createPassengerSystem@DesiredMoveDirectionSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createPassengerSystem();
+
+// symbol: ?createVehicleSystem@DesiredMoveDirectionSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createVehicleSystem();
 // NOLINTEND
 
 }; // namespace DesiredMoveDirectionSystem

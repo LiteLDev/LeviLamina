@@ -35,6 +35,15 @@ public:
     MCAPI ScriptItemStack(class ScriptModuleMinecraft::ScriptItemStack const&);
 
     // symbol:
+    // ??0ScriptItemStack@ScriptModuleMinecraft@@QEAA@AEBVScriptItemType@1@V?$StrongTypedObjectHandle@VScriptItemType@ScriptModuleMinecraft@@@Scripting@@HH@Z
+    MCAPI ScriptItemStack(
+        class ScriptModuleMinecraft::ScriptItemType const&,
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemType>,
+        int,
+        int
+    );
+
+    // symbol:
     // ?clone@ScriptItemStack@ScriptModuleMinecraft@@QEBA?AV?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@VWeakLifetimeScope@4@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>
         clone(class Scripting::WeakLifetimeScope) const;

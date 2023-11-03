@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct CameraPreset {
 public:
     // CameraPreset inner types define
@@ -34,8 +39,8 @@ public:
     // symbol: ??1CameraPreset@@QEAA@XZ
     MCAPI ~CameraPreset();
 
-    // symbol: ?bindType@CameraPreset@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@CameraPreset@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol: ?read@CameraPreset@@SA?AV?$Result@UCameraPreset@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCAPI static class Bedrock::Result<struct CameraPreset> read(class ReadOnlyBinaryStream&);

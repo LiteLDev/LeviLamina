@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 namespace ScriptModuleMinecraft { class ScriptItemEvent; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -29,9 +30,9 @@ public:
     MCVAPI ~ScriptItemUseAfterEvent();
 
     // symbol:
-    // ??0ScriptItemUseAfterEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBUItemUseEvent@@AEBVWeakLifetimeScope@3@@Z
+    // ??0ScriptItemUseAfterEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBVPlayer@@AEBUItemUseEvent@@AEBVWeakLifetimeScope@3@@Z
     MCAPI
-    ScriptItemUseAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemUseEvent const&, class Scripting::WeakLifetimeScope const&);
+    ScriptItemUseAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, class Player const&, struct ItemUseEvent const&, class Scripting::WeakLifetimeScope const&);
 
     // symbol: ??4ScriptItemUseAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemUseAfterEvent&

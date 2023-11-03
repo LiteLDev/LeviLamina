@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -122,8 +123,8 @@ private:
     // ?mAdditionalTranslationsBackup@I18n@@0V?$vector@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@V?$allocator@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@@2@@std@@A
     MCAPI static std::vector<std::unique_ptr<class Localization>> mAdditionalTranslationsBackup;
 
-    // symbol: ?mAdditionalTranslationsBackupMutex@I18n@@0Vmutex@std@@A
-    MCAPI static std::mutex mAdditionalTranslationsBackupMutex;
+    // symbol: ?mAdditionalTranslationsBackupMutex@I18n@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mAdditionalTranslationsBackupMutex;
 
     // symbol: ?mCurrentLanguage@I18n@@0PEBVLocalization@@EB
     MCAPI static class Localization const* mCurrentLanguage;
@@ -164,8 +165,8 @@ private:
     // symbol: ?mResourcePackManager@I18n@@0PEAVResourcePackManager@@EA
     MCAPI static class ResourcePackManager* mResourcePackManager;
 
-    // symbol: ?mSubject@I18n@@0V?$Subject@VI18nObserver@@Vmutex@std@@@Core@@A
-    MCAPI static class Core::Subject<class I18nObserver, std::mutex> mSubject;
+    // symbol: ?mSubject@I18n@@0V?$Subject@VI18nObserver@@VMutex@Threading@Bedrock@@@Core@@A
+    MCAPI static class Core::Subject<class I18nObserver, class Bedrock::Threading::Mutex> mSubject;
 
     // NOLINTEND
 

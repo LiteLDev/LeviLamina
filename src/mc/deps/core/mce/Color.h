@@ -58,6 +58,9 @@ public:
     // symbol: ?PURPLE@Color@mce@@2V12@B
     MCAPI static class mce::Color const PURPLE;
 
+    // symbol: ?REBECCA_PURPLE@Color@mce@@2V12@B
+    MCAPI static class mce::Color const REBECCA_PURPLE;
+
     // symbol: ?RED@Color@mce@@2V12@B
     MCAPI static class mce::Color const RED;
 

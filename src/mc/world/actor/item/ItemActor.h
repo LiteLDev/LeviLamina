@@ -6,7 +6,6 @@
 #include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/entity/utilities/ActorFlags.h"
 #include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/AnimationComponentGroupType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
 #include "mc/enums/ArmorTextureType.h"
@@ -31,102 +30,87 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: ?reloadHardcoded@ItemActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+    // vIndex: 4, symbol: ?reloadHardcoded@ItemActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void reloadHardcoded(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 16, symbol: __unk_vfn_16
-    virtual void __unk_vfn_16();
+    // vIndex: 10, symbol: __unk_vfn_10
+    virtual void __unk_vfn_10();
 
-    // vIndex: 20, symbol: ?isRuntimePredictedMovementEnabled@ItemActor@@UEBA_NXZ
+    // vIndex: 14, symbol: ?isRuntimePredictedMovementEnabled@ItemActor@@UEBA_NXZ
     virtual bool isRuntimePredictedMovementEnabled() const;
 
-    // vIndex: 34, symbol: ?isFireImmune@ItemActor@@UEBA_NXZ
+    // vIndex: 22, symbol: ?isFireImmune@ItemActor@@UEBA_NXZ
     virtual bool isFireImmune() const;
 
-    // vIndex: 35, symbol: __unk_vfn_35
-    virtual void __unk_vfn_35();
+    // vIndex: 23, symbol: __unk_vfn_23
+    virtual void __unk_vfn_23();
 
-    // vIndex: 42, symbol:
+    // vIndex: 28, symbol:
     // ?tryCreateAddActorPacket@ItemActor@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
 
-    // vIndex: 54, symbol: __unk_vfn_54
-    virtual void __unk_vfn_54();
+    // vIndex: 39, symbol: __unk_vfn_39
+    virtual void __unk_vfn_39();
+
+    // vIndex: 41, symbol: __unk_vfn_41
+    virtual void __unk_vfn_41();
+
+    // vIndex: 44, symbol: __unk_vfn_44
+    virtual void __unk_vfn_44();
+
+    // vIndex: 47, symbol: __unk_vfn_47
+    virtual void __unk_vfn_47();
+
+    // vIndex: 48, symbol: ?playerTouch@ItemActor@@UEAAXAEAVPlayer@@@Z
+    virtual void playerTouch(class Player&);
+
+    // vIndex: 52, symbol: __unk_vfn_52
+    virtual void __unk_vfn_52();
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
 
-    // vIndex: 70, symbol: __unk_vfn_70
-    virtual void __unk_vfn_70();
+    // vIndex: 62, symbol: __unk_vfn_62
+    virtual void __unk_vfn_62();
 
-    // vIndex: 76, symbol: __unk_vfn_76
-    virtual void __unk_vfn_76();
+    // vIndex: 63, symbol: __unk_vfn_63
+    virtual void __unk_vfn_63();
 
-    // vIndex: 77, symbol: ?playerTouch@ItemActor@@UEAAXAEAVPlayer@@@Z
-    virtual void playerTouch(class Player&);
-
-    // vIndex: 82, symbol: __unk_vfn_82
-    virtual void __unk_vfn_82();
-
-    // vIndex: 85, symbol: __unk_vfn_85
-    virtual void __unk_vfn_85();
-
-    // vIndex: 92, symbol: __unk_vfn_92
-    virtual void __unk_vfn_92();
-
-    // vIndex: 94, symbol: __unk_vfn_94
-    virtual void __unk_vfn_94();
-
-    // vIndex: 95, symbol: __unk_vfn_95
-    virtual void __unk_vfn_95();
-
-    // vIndex: 97, symbol: __unk_vfn_97
-    virtual void __unk_vfn_97();
-
-    // vIndex: 119, symbol: ?isInvulnerableTo@ItemActor@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 79, symbol: ?isInvulnerableTo@ItemActor@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
 
-    // vIndex: 125, symbol: ?handleEntityEvent@ItemActor@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 84, symbol: ?handleEntityEvent@ItemActor@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent, int);
 
-    // vIndex: 153, symbol: ?getSourceUniqueID@ItemActor@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 102, symbol: ?getSourceUniqueID@ItemActor@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
+    // vIndex: 109, symbol: __unk_vfn_109
+    virtual void __unk_vfn_109();
 
-    // vIndex: 174, symbol: __unk_vfn_174
-    virtual void __unk_vfn_174();
-
-    // vIndex: 177, symbol: ?canSynchronizeNewEntity@ItemActor@@UEBA_NXZ
+    // vIndex: 120, symbol: ?canSynchronizeNewEntity@ItemActor@@UEBA_NXZ
     virtual bool canSynchronizeNewEntity() const;
 
-    // vIndex: 198, symbol: __unk_vfn_198
-    virtual void __unk_vfn_198();
+    // vIndex: 147, symbol: __unk_vfn_147
+    virtual void __unk_vfn_147();
 
-    // vIndex: 199, symbol: __unk_vfn_199
-    virtual void __unk_vfn_199();
+    // vIndex: 148, symbol: __unk_vfn_148
+    virtual void __unk_vfn_148();
 
-    // vIndex: 215, symbol: __unk_vfn_215
-    virtual void __unk_vfn_215();
+    // vIndex: 165, symbol: __unk_vfn_165
+    virtual void __unk_vfn_165();
 
-    // vIndex: 218, symbol: __unk_vfn_218
-    virtual void __unk_vfn_218();
-
-    // vIndex: 235, symbol: __unk_vfn_235
-    virtual void __unk_vfn_235();
-
-    // vIndex: 236, symbol: ?_hurt@ItemActor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 166, symbol: ?_hurt@ItemActor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
 
-    // vIndex: 239, symbol: ?readAdditionalSaveData@ItemActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 167, symbol: ?readAdditionalSaveData@ItemActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
 
-    // vIndex: 240, symbol: ?addAdditionalSaveData@ItemActor@@MEBAXAEAVCompoundTag@@@Z
+    // vIndex: 168, symbol: ?addAdditionalSaveData@ItemActor@@MEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag&) const;
 
-    // vIndex: 243, symbol: __unk_vfn_243
-    virtual void __unk_vfn_243();
+    // vIndex: 170, symbol: __unk_vfn_170
+    virtual void __unk_vfn_170();
 
     // symbol: ?canMakeStepSound@ItemActor@@UEBA_NXZ
     MCVAPI bool canMakeStepSound() const;

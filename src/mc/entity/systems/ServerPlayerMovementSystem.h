@@ -19,17 +19,17 @@ public:
     MCAPI static void
     _updateFallDistance(struct ServerPlayerCurrentMovementComponent const&, struct StateVectorComponent const&, struct FallDistanceComponent&);
 
-    // symbol: ?createPostInputSystems@ServerPlayerMovementSystem@@SA?AV?$array@UTickingSystemWithInfo@@$01@std@@XZ
-    MCAPI static std::array<struct TickingSystemWithInfo, 2> createPostInputSystems();
+    // symbol: ?createClearPlayerActionComponentSystem@ServerPlayerMovementSystem@@SA?AUTickingSystemWithInfo@@XZ
+    MCAPI static struct TickingSystemWithInfo createClearPlayerActionComponentSystem();
 
     // symbol: ?createPostTravelSystems@ServerPlayerMovementSystem@@SA?AV?$array@UTickingSystemWithInfo@@$03@std@@_N@Z
     MCAPI static std::array<struct TickingSystemWithInfo, 4> createPostTravelSystems(bool);
 
-    // symbol: ?createPreInputSystems@ServerPlayerMovementSystem@@SA?AV?$array@UTickingSystemWithInfo@@$02@std@@XZ
-    MCAPI static std::array<struct TickingSystemWithInfo, 3> createPreInputSystems();
-
     // symbol: ?createServerPlayerMovementFinalSystem@ServerPlayerMovementSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createServerPlayerMovementFinalSystem();
+
+    // symbol: ?createServerPlayerResetFallDistanceSystem@ServerPlayerMovementSystem@@SA?AUTickingSystemWithInfo@@XZ
+    MCAPI static struct TickingSystemWithInfo createServerPlayerResetFallDistanceSystem();
 
     // NOLINTEND
 };

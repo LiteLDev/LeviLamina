@@ -28,19 +28,22 @@ public:
     // ?getName@BlockCraftingTableDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
 
-    // vIndex: 2, symbol: ?initializeComponent@BlockCraftingTableDescription@@UEBAXAEAVEntityContext@@@Z
-    virtual void initializeComponent(class EntityContext&) const;
+    // vIndex: 3, symbol: ?initializeComponent@BlockCraftingTableDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    virtual void initializeComponent(class BlockComponentStorage&) const;
+
+    // vIndex: 5, symbol: __unk_vfn_5
+    virtual void __unk_vfn_5();
 
     // vIndex: 7, symbol: ?isNetworkComponent@BlockCraftingTableDescription@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 8, symbol:
-    // ?buildNetworkTag@BlockCraftingTableDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx&) const;
+    // ?buildNetworkTag@BlockCraftingTableDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
     // vIndex: 9, symbol:
-    // ?initializeFromNetwork@BlockCraftingTableDescription@@UEAAXAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
-    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx&);
+    // ?initializeFromNetwork@BlockCraftingTableDescription@@UEAAXAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
     // symbol: ?bindType@BlockCraftingTableDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

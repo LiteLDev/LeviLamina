@@ -9,6 +9,7 @@
 // clang-format off
 namespace BlockDescriptorSerializer { struct BlockDescriptorProxy; }
 namespace BlockDescriptorSerializer { struct StatesProxy; }
+namespace Puv::v1_20_50::BlockDescriptor { struct Compound; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 

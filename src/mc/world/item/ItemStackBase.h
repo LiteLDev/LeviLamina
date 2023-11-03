@@ -292,6 +292,9 @@ public:
     // symbol: ?isInstance@ItemStackBase@@QEBA_NAEBVHashedString@@_N@Z
     MCAPI bool isInstance(class HashedString const&, bool) const;
 
+    // symbol: ?isItem@ItemStackBase@@QEBA_NXZ
+    MCAPI bool isItem() const;
+
     // symbol: ?isLiquidClipItem@ItemStackBase@@QEBA_NXZ
     MCAPI bool isLiquidClipItem() const;
 
@@ -543,9 +546,6 @@ public:
     // symbol: ?_cloneComponents@ItemStackBase@@AEAAXAEBV1@@Z
     MCAPI void _cloneComponents(class ItemStackBase const&);
 
-    // symbol: ?_isInstance@ItemStackBase@@AEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI bool _isInstance(std::string_view) const;
-
     // symbol: ?_loadItem@ItemStackBase@@AEAAXAEBVCompoundTag@@@Z
     MCAPI void _loadItem(class CompoundTag const&);
 
@@ -589,6 +589,12 @@ private:
 public:
     // NOLINTBEGIN
     auto& $MAX_STACK_SIZE() { return MAX_STACK_SIZE; }
+
+    auto& $TAG_CHARGED_ITEM() { return TAG_CHARGED_ITEM; }
+
+    auto& $TAG_STORE_CAN_DESTROY() { return TAG_STORE_CAN_DESTROY; }
+
+    auto& $TAG_STORE_CAN_PLACE_ON() { return TAG_STORE_CAN_PLACE_ON; }
 
     // NOLINTEND
 };

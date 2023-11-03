@@ -66,9 +66,21 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
+    // ?_getDisableIfOtherOptionDisabledSetupCallback@FeatureToggles@@AEBA?AV?$function@$$A6AXAEAVOption@@@Z@std@@W4FeatureOptionID@@@Z
+    MCAPI std::function<void(class Option&)> _getDisableIfOtherOptionDisabledSetupCallback(::FeatureOptionID) const;
+
+    // symbol:
     // ?_getDisabledIfOptionExpectationsNotMetSetupCallback@FeatureToggles@@AEAA?AV?$function@$$A6AXAEAVOption@@@Z@std@@V?$vector@W4FeatureOptionID@@V?$allocator@W4FeatureOptionID@@@std@@@3@0@Z
     MCAPI std::function<void(class Option&)>
         _getDisabledIfOptionExpectationsNotMetSetupCallback(std::vector<::FeatureOptionID>, std::vector<::FeatureOptionID>);
+
+    // symbol:
+    // ?_getDisabledIfOtherOptionsEnabledSetupCallback@FeatureToggles@@AEAA?AV?$function@$$A6AXAEAVOption@@@Z@std@@V?$vector@W4FeatureOptionID@@V?$allocator@W4FeatureOptionID@@@std@@@3@@Z
+    MCAPI std::function<void(class Option&)>
+          _getDisabledIfOtherOptionsEnabledSetupCallback(std::vector<::FeatureOptionID>);
+
+    // symbol: ?_getForceEnableCallback@FeatureToggles@@AEAA?AV?$function@$$A6AXAEAVOption@@@Z@std@@XZ
+    MCAPI std::function<void(class Option&)> _getForceEnableCallback();
 
     // symbol:
     // ?_getLockIfInGameOrOptionExpectationsNotMetLockCallback@FeatureToggles@@AEAA?AV?$function@$$A6AXAEA_N@Z@std@@V?$vector@W4FeatureOptionID@@V?$allocator@W4FeatureOptionID@@@std@@@3@0@Z

@@ -22,6 +22,9 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
+    // vIndex: 1, symbol: ?readfromJSON@ArrowEffectSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+    virtual void readfromJSON(class Json::Value&, class SemVersion const&);
+
     // vIndex: 2, symbol: ?writetoJSON@ArrowEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
     virtual void writetoJSON(class Json::Value&) const;
 

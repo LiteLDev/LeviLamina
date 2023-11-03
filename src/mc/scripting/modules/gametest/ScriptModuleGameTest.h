@@ -6,7 +6,6 @@
 #include "mc/enums/GameType.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Closure.h"
-#include "mc/external/scripting/Future.h"
 #include "mc/external/scripting/Promise.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"

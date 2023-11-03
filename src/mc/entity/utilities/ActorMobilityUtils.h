@@ -36,21 +36,9 @@ MCAPI void applyFinalFriction(
     bool
 );
 
-// symbol:
-// ?canActivateElytra@ActorMobilityUtils@@YA_NAEBUMoveInputComponent@@AEBUVanillaClientGameplayComponent@@AEBUSynchedActorDataComponent@@AEBUAbilitiesComponent@@@Z
+// symbol: ?canActivateElytra@ActorMobilityUtils@@YA_NAEBUMoveInputComponent@@AEBUVanillaClientGameplayComponent@@_N2@Z
 MCAPI bool
-canActivateElytra(struct MoveInputComponent const&, struct VanillaClientGameplayComponent const&, struct SynchedActorDataComponent const&, struct AbilitiesComponent const&);
-
-// symbol:
-// ?canBeginOrContinueClimbingLadder@ActorMobilityUtils@@YA_NAEBUAABBShapeComponent@@AEBVIConstBlockSource@@AEBUStateVectorComponent@@AEBUSynchedActorDataComponent@@_N4@Z
-MCAPI bool canBeginOrContinueClimbingLadder(
-    struct AABBShapeComponent const&,
-    class IConstBlockSource const&,
-    struct StateVectorComponent const&,
-    struct SynchedActorDataComponent const&,
-    bool,
-    bool
-);
+canActivateElytra(struct MoveInputComponent const&, struct VanillaClientGameplayComponent const&, bool, bool);
 
 // symbol:
 // ?canJump@ActorMobilityUtils@@YA_NAEBUSynchedActorDataComponent@@AEBVIConstBlockSource@@AEBUStateVectorComponent@@AEBUAABBShapeComponent@@AEBVGetCollisionShapeInterface@@@Z
@@ -61,11 +49,6 @@ canJump(struct SynchedActorDataComponent const&, class IConstBlockSource const&,
 // ?endJump@ActorMobilityUtils@@YAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@AEAUMobJumpComponent@@AEAUSynchedActorDataComponent@@PEBUVehicleComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UParrotFlag@@@@@@$$CBUPassengerComponent@@@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UExitFromPassengerFlag@@@@V?$FlagComponent@UStopRidingRequestFlag@@@@V?$FlagComponent@UMobIsJumpingFlag@@@@@@@Z
 MCAPI void
 endJump(class StrictEntityContext const&, struct StateVectorComponent const&, struct MobJumpComponent&, struct SynchedActorDataComponent&, struct VehicleComponent const*, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ParrotFlag>>, struct PassengerComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ExitFromPassengerFlag>, class FlagComponent<struct StopRidingRequestFlag>, class FlagComponent<struct MobIsJumpingFlag>>&);
-
-// symbol:
-// ?getBlockWhenClimbing@ActorMobilityUtils@@YAAEBVBlock@@AEBUAABBShapeComponent@@AEBVIConstBlockSource@@AEBUStateVectorComponent@@@Z
-MCAPI class Block const&
-getBlockWhenClimbing(struct AABBShapeComponent const&, class IConstBlockSource const&, struct StateVectorComponent const&);
 
 // symbol:
 // ?getBrightness@ActorMobilityUtils@@YAMAEBVStrictEntityContext@@MAEBVIConstBlockSource@@AEBUAABBShapeComponent@@AEBUOffsetsComponent@@AEBUStateVectorComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UBlazeFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@ULavaSlimeFlag@@@@@@@@@Z
@@ -91,9 +74,6 @@ getSpeed(class StrictEntityContext const&, class ViewT<class StrictEntityContext
 
 // symbol: ?isFlying@ActorMobilityUtils@@YA_NAEBUAbilitiesComponent@@@Z
 MCAPI bool isFlying(struct AbilitiesComponent const&);
-
-// symbol: ?isFree@ActorMobilityUtils@@YA_NAEBVIConstBlockSource@@AEBVAABB@@AEBVVec3@@M@Z
-MCAPI bool isFree(class IConstBlockSource const&, class AABB const&, class Vec3 const&, float);
 
 // symbol: ?isGliding@ActorMobilityUtils@@YA_NAEBUSynchedActorDataComponent@@@Z
 MCAPI bool isGliding(struct SynchedActorDataComponent const&);
@@ -125,16 +105,6 @@ MCAPI bool isUnderLiquid(class Vec3 const&, class Vec3 const&, class IConstBlock
 
 // symbol: ?moveBBs@ActorMobilityUtils@@YAXAEBVVec3@@AEAUAABBShapeComponent@@AEAUSubBBsComponent@@@Z
 MCAPI void moveBBs(class Vec3 const&, struct AABBShapeComponent&, struct SubBBsComponent&);
-
-// symbol:
-// ?onClimbableBlock@ActorMobilityUtils@@YA_NAEBUAABBShapeComponent@@AEBVIConstBlockSource@@AEBUStateVectorComponent@@_N3@Z
-MCAPI bool onClimbableBlock(
-    struct AABBShapeComponent const&,
-    class IConstBlockSource const&,
-    struct StateVectorComponent const&,
-    bool,
-    bool
-);
 
 // symbol: ?onHoverableBlock@ActorMobilityUtils@@YA_NAEBVIConstBlockSource@@AEBVVec3@@AEBVAABB@@@Z
 MCAPI bool onHoverableBlock(class IConstBlockSource const&, class Vec3 const&, class AABB const&);

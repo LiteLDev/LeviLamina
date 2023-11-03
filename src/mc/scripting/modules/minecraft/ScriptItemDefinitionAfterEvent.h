@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 namespace ScriptModuleMinecraft { class ScriptItemEvent; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -34,9 +35,14 @@ public:
     MCAPI ScriptItemDefinitionAfterEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent const&);
 
     // symbol:
-    // ??0ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBUItemDefinitionEventTriggeredEvent@@AEBVWeakLifetimeScope@3@@Z
+    // ??0ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBUItemDefinitionEventTriggeredEvent@@@Z
     MCAPI
-    ScriptItemDefinitionAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemDefinitionEventTriggeredEvent const&, class Scripting::WeakLifetimeScope const&);
+    ScriptItemDefinitionAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemDefinitionEventTriggeredEvent const&);
+
+    // symbol:
+    // ??0ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBVPlayer@@AEBUItemDefinitionEventTriggeredEvent@@AEBVWeakLifetimeScope@3@@Z
+    MCAPI
+    ScriptItemDefinitionAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, class Player const&, struct ItemDefinitionEventTriggeredEvent const&, class Scripting::WeakLifetimeScope const&);
 
     // symbol: ??4ScriptItemDefinitionAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent&

@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/MultifaceBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -108,6 +109,12 @@ public:
     // vIndex: 89, symbol: ?canBeFertilized@GlowLichenBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
+    // vIndex: 103, symbol:
+    // ?spawnResources@GlowLichenBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
+    virtual void
+    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+        const;
+
     // vIndex: 106, symbol: __unk_vfn_106
     virtual void __unk_vfn_106();
 
@@ -152,12 +159,6 @@ public:
 
     // vIndex: 183, symbol: __unk_vfn_183
     virtual void __unk_vfn_183();
-
-    // vIndex: 184, symbol: ?playerDestroy@GlowLichenBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual void playerDestroy(class Player&, class BlockPos const&, class Block const&) const;
-
-    // vIndex: 186, symbol: ?getResourceCount@GlowLichenBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // vIndex: 192, symbol: ?getMultifaceBlock@GlowLichenBlock@@UEBAAEBVBlock@@XZ
     virtual class Block const& getMultifaceBlock() const;

@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/math/IRandom.h"
-
-class SimpleRandom : public ::IRandom {
+class SimpleRandom {
 public:
     // prevent constructor by default
     SimpleRandom& operator=(SimpleRandom const&);
@@ -14,39 +11,48 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // symbol: ?consumeCount@SimpleRandom@@UEAAXI@Z
+    MCVAPI void consumeCount(uint);
 
-    // vIndex: 1, symbol: ?nextInt@SimpleRandom@@UEAAHXZ
-    virtual int nextInt();
+    // symbol: ?fork@SimpleRandom@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
+    MCVAPI std::unique_ptr<class IRandom> fork();
 
-    // vIndex: 2, symbol: ?nextInt@SimpleRandom@@UEAAHH@Z
-    virtual int nextInt(int);
-
-    // vIndex: 3, symbol: ?nextLong@SimpleRandom@@UEAA_JXZ
-    virtual int64 nextLong();
-
-    // vIndex: 4, symbol: ?nextBoolean@SimpleRandom@@UEAA_NXZ
-    virtual bool nextBoolean();
-
-    // vIndex: 5, symbol: ?nextFloat@SimpleRandom@@UEAAMXZ
-    virtual float nextFloat();
-
-    // vIndex: 6, symbol: ?nextDouble@SimpleRandom@@UEAANXZ
-    virtual double nextDouble();
-
-    // vIndex: 7, symbol: ?nextGaussianDouble@SimpleRandom@@UEAANXZ
-    virtual double nextGaussianDouble();
-
-    // vIndex: 8, symbol: ?consumeCount@SimpleRandom@@UEAAXI@Z
-    virtual void consumeCount(uint);
-
-    // vIndex: 9, symbol: ?fork@SimpleRandom@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
-    virtual std::unique_ptr<class IRandom> fork();
-
-    // vIndex: 10, symbol:
+    // symbol:
     // ?forkPositional@SimpleRandom@@UEAA?AV?$unique_ptr@VIPositionalRandomFactory@@U?$default_delete@VIPositionalRandomFactory@@@std@@@std@@XZ
-    virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
+    MCVAPI std::unique_ptr<class IPositionalRandomFactory> forkPositional();
+
+    // symbol: ?nextBoolean@SimpleRandom@@UEAA_NXZ
+    MCVAPI bool nextBoolean();
+
+    // symbol: ?nextDouble@SimpleRandom@@UEAANXZ
+    MCVAPI double nextDouble();
+
+    // symbol: ?nextFloat@SimpleRandom@@UEAAMXZ
+    MCVAPI float nextFloat();
+
+    // symbol: ?nextGaussianDouble@SimpleRandom@@UEAANXZ
+    MCVAPI double nextGaussianDouble();
+
+    // symbol: ?nextInt@SimpleRandom@@UEAAHXZ
+    MCVAPI int nextInt();
+
+    // symbol: ?nextInt@SimpleRandom@@UEAAHH@Z
+    MCVAPI int nextInt(int);
+
+    // symbol: ?nextLong@SimpleRandom@@UEAA_JXZ
+    MCVAPI int64 nextLong();
+
+    // symbol: ?seed128@SimpleRandom@@UEBA?AUSeed128Bit@@XZ
+    MCVAPI struct Seed128Bit seed128() const;
+
+    // symbol: ?seed64@SimpleRandom@@UEBA_JXZ
+    MCVAPI int64 seed64() const;
+
+    // symbol: ?setSeed@SimpleRandom@@UEAAXUSeed128Bit@@@Z
+    MCVAPI void setSeed(struct Seed128Bit);
+
+    // symbol: ?setSeed@SimpleRandom@@UEAAX_J@Z
+    MCVAPI void setSeed(int64);
 
     // symbol: ??1SimpleRandom@@UEAA@XZ
     MCVAPI ~SimpleRandom();

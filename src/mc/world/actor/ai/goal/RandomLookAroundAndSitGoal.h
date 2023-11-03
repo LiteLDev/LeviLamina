@@ -37,8 +37,8 @@ public:
     // ?appendDebugInfo@RandomLookAroundAndSitGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
 
-    // symbol: ??0RandomLookAroundAndSitGoal@@QEAA@AEAVMob@@_NHHMMHHMH@Z
-    MCAPI RandomLookAroundAndSitGoal(class Mob&, bool, int, int, float, float, int, int, float, int);
+    // symbol: ??0RandomLookAroundAndSitGoal@@QEAA@AEAVMob@@_N1HHMMHHMH@Z
+    MCAPI RandomLookAroundAndSitGoal(class Mob&, bool, bool, int, int, float, float, int, int, float, int);
 
     // NOLINTEND
 };

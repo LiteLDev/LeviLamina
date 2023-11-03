@@ -37,8 +37,10 @@ public:
     // symbol: ?match@BlockPatternBuilder@@QEAA?AUBuildMatch@@AEBVBlockPos@@HHEE@Z
     MCAPI struct BuildMatch match(class BlockPos const&, int, int, uchar, uchar);
 
-    // symbol: ?replaceBlocks@BlockPatternBuilder@@QEAAXDUBuildMatch@@AEBVBlock@@@Z
-    MCAPI void replaceBlocks(char, struct BuildMatch, class Block const&);
+    // symbol:
+    // ?replaceBlocks@BlockPatternBuilder@@QEAAXDUBuildMatch@@AEBVBlock@@V?$function@$$A6AXAEBVBlock@@AEBVBlockPos@@@Z@std@@@Z
+    MCAPI void
+    replaceBlocks(char, struct BuildMatch, class Block const&, std::function<void(class Block const&, class BlockPos const&)>);
 
     // symbol:
     // ?start@BlockPatternBuilder@@SA?AV?$unique_ptr@VBlockPatternBuilder@@U?$default_delete@VBlockPatternBuilder@@@std@@@std@@AEAVBlockSource@@@Z

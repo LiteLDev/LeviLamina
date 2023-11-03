@@ -26,9 +26,6 @@ public:
     // ??0ScriptActorRemoveBeforeEvent@ScriptModuleMinecraft@@QEAA@PEBVActor@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptActorRemoveBeforeEvent(class Actor const*, class Scripting::WeakLifetimeScope const&);
 
-    // symbol: ??1ScriptActorRemoveBeforeEvent@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptActorRemoveBeforeEvent();
-
     // symbol:
     // ?bind@ScriptActorRemoveBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptActorRemoveBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorRemoveBeforeEvent>

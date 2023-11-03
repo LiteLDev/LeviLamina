@@ -24,8 +24,14 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_tickLiquidSplash@LiquidSplashSystem@@CAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UWaterSplashEffectRequestFlag@@@@@@VActorOwnerComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UPostSplashGameEventRequestFlag@@@@@@VActorOwnerComponent@@@@@Z
-    MCAPI static void _tickLiquidSplash(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct WaterSplashEffectRequestFlag>>, class ActorOwnerComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PostSplashGameEventRequestFlag>>, class ActorOwnerComponent>);
+    // ?_emitWaterSplashEffect@LiquidSplashSystem@@CAXAEAVActorOwnerComponent@@AEBUWaterSplashEffectRequestComponent@@@Z
+    MCAPI static void
+    _emitWaterSplashEffect(class ActorOwnerComponent&, struct WaterSplashEffectRequestComponent const&);
+
+    // symbol:
+    // ?_tickLiquidSplash@LiquidSplashSystem@@CAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUWaterSplashEffectRequestComponent@@VActorOwnerComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UPostSplashGameEventRequestFlag@@@@@@VActorOwnerComponent@@@@@Z
+    MCAPI static void
+        _tickLiquidSplash(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct WaterSplashEffectRequestComponent const, class ActorOwnerComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PostSplashGameEventRequestFlag>>, class ActorOwnerComponent>);
 
     // NOLINTEND
 };

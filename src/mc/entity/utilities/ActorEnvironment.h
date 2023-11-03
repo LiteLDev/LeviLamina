@@ -7,6 +7,9 @@ namespace ActorEnvironment {
 // symbol: ?getHeadInWater@ActorEnvironment@@YA_NAEBVEntityContext@@@Z
 MCAPI bool getHeadInWater(class EntityContext const&);
 
+// symbol: ?getIsInLava@ActorEnvironment@@YA_NAEBVEntityContext@@@Z
+MCAPI bool getIsInLava(class EntityContext const&);
+
 // symbol: ?getIsInWater@ActorEnvironment@@YA_NAEBVEntityContext@@@Z
 MCAPI bool getIsInWater(class EntityContext const&);
 

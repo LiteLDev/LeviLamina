@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/actor/item/FallingBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -212,9 +213,6 @@ public:
 
     // vIndex: 183, symbol: __unk_vfn_183
     virtual void __unk_vfn_183();
-
-    // vIndex: 184, symbol: ?playerDestroy@TopSnowBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual void playerDestroy(class Player&, class BlockPos const&, class Block const&) const;
 
     // vIndex: 185, symbol: ?getResourceItem@TopSnowBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;

@@ -31,8 +31,10 @@ public:
     // ?decorateWorldGenPostProcess@FlatWorldGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
     MCVAPI void decorateWorldGenPostProcess(class Biome&, class LevelChunk&, class BlockSource&, class Random&) const;
 
-    // symbol: ?findNearestStructureFeature@FlatWorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z
-    MCVAPI bool findNearestStructureFeature(::StructureFeatureType, class BlockPos const&, class BlockPos&, bool);
+    // symbol:
+    // ?findNearestStructureFeature@FlatWorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_NV?$optional@VHashedString@@@std@@@Z
+    MCVAPI bool
+    findNearestStructureFeature(::StructureFeatureType, class BlockPos const&, class BlockPos&, bool, std::optional<class HashedString>);
 
     // symbol: ?findSpawnPosition@FlatWorldGenerator@@UEBA?AVBlockPos@@XZ
     MCVAPI class BlockPos findSpawnPosition() const;

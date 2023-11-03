@@ -29,6 +29,7 @@ namespace Bedrock::Http { class Status; }
 namespace Bedrock::Http { class WebSocketInterface; }
 namespace Bedrock::Http::Internal { class IRequestBody; }
 namespace Bedrock::Http::Internal { class IResponseBody; }
+namespace Bedrock::Threading { class Mutex; }
 struct HC_CALL;
 struct HC_PERFORM_ENV;
 struct HC_WEBSOCKET_OBSERVER;

@@ -2,17 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class StorePreviousClientInputSystem {
-public:
-    // prevent constructor by default
-    StorePreviousClientInputSystem& operator=(StorePreviousClientInputSystem const&);
-    StorePreviousClientInputSystem(StorePreviousClientInputSystem const&);
-    StorePreviousClientInputSystem();
+namespace StorePreviousClientInputSystem {
+// NOLINTBEGIN
+// symbol: ?createSystem@StorePreviousClientInputSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createSystem();
+// NOLINTEND
 
-public:
-    // NOLINTBEGIN
-    // symbol: ?createStorePreviousClientInputSystem@StorePreviousClientInputSystem@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo createStorePreviousClientInputSystem();
-
-    // NOLINTEND
-};
+}; // namespace StorePreviousClientInputSystem

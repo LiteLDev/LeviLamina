@@ -28,11 +28,19 @@ public:
     // symbol: ?addStopDestroyBlock@PlayerActionComponent@@QEAAXXZ
     MCAPI void addStopDestroyBlock();
 
+    // symbol: ?clear@PlayerActionComponent@@QEAAXXZ
+    MCAPI void clear();
+
     // symbol: ??4PlayerActionComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct PlayerActionComponent& operator=(struct PlayerActionComponent&&);
 
     // symbol: ??1PlayerActionComponent@@QEAA@XZ
     MCAPI ~PlayerActionComponent();
+
+    // symbol:
+    // ?getDiffOfPlayerAuthInputPacket@PlayerActionComponent@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBU1@0@Z
+    MCAPI static std::string
+    getDiffOfPlayerAuthInputPacket(struct PlayerActionComponent const&, struct PlayerActionComponent const&);
 
     // NOLINTEND
 };

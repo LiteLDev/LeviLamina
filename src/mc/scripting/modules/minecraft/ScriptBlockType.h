@@ -35,9 +35,6 @@ public:
     // ?getId@ScriptBlockType@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getId() const;
 
-    // symbol: ??1ScriptBlockType@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptBlockType();
-
     // symbol:
     // ?bind@ScriptBlockType@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockType@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockType> bind();

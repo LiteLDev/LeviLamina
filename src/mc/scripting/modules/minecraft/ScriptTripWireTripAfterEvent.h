@@ -16,9 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptTripWireTripAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptTripWireTripAfterEvent();
-
     // symbol:
     // ?bind@ScriptTripWireTripAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptTripWireTripAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent>

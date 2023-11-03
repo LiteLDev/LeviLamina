@@ -16,9 +16,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptActorLoadAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptActorLoadAfterEvent();
-
     // symbol:
     // ?bind@ScriptActorLoadAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptActorLoadAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorLoadAfterEvent> bind();

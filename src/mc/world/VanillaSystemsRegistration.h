@@ -57,14 +57,6 @@ registerEnvironmentSensingSystems(class EntitySystems&, struct VanillaSystemsReg
 MCAPI void
 registerMinecartMovementSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
 
-// symbol: ?registerMoveIntentSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEBURegistrationOptions@1@@Z
-MCAPI void
-registerMoveIntentSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
-
-// symbol: ?registerMoveSpeedSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEBURegistrationOptions@1@@Z
-MCAPI void
-registerMoveSpeedSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
-
 // symbol: ?registerMovementInputSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEBURegistrationOptions@1@@Z
 MCAPI void
 registerMovementInputSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
@@ -72,6 +64,11 @@ registerMovementInputSystems(class EntitySystems&, struct VanillaSystemsRegistra
 // symbol: ?registerPostMovementSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEBURegistrationOptions@1@@Z
 MCAPI void
 registerPostMovementSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
+
+// symbol:
+// ?registerPreMoveTravelVelocitySystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEBURegistrationOptions@1@@Z
+MCAPI void
+registerPreMoveTravelVelocitySystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
 
 // symbol: ?registerSharedVanillaPlayerInteractionSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@@Z
 MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems&);

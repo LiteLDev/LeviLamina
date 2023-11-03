@@ -46,9 +46,9 @@ public:
     MCAPI class Block const& getBlock() const;
 
     // symbol:
-    // ?getItemStack@ScriptBlockPermutation@ScriptModuleMinecraft@@QEBA?AV?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@H@Z
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack> getItemStack(int
-    ) const;
+    // ?getItemStack@ScriptBlockPermutation@ScriptModuleMinecraft@@QEBA?AV?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@H@Z
+    MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
+          getItemStack(int) const;
 
     // symbol:
     // ?getPropertyV010@ScriptBlockPermutation@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VIScriptBlockProperty@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -86,9 +86,6 @@ public:
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>>
     withState(struct Scripting::ContextConfig const&, class Scripting::WeakLifetimeScope, std::string, std::variant<int, std::string, bool>);
-
-    // symbol: ??1ScriptBlockPermutation@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptBlockPermutation();
 
     // symbol:
     // ?bind@ScriptBlockPermutation@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@XZ

@@ -4,7 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakPtr.h"
-#include "mc/world/item/registry/ItemRegistry.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
 
 class ItemRegistryRef {
 public:
@@ -23,8 +27,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??0LockGuard@ItemRegistryRef@@QEAA@V?$shared_ptr@Vmutex@std@@@std@@@Z
-        MCAPI explicit LockGuard(std::shared_ptr<std::mutex>);
+        // symbol: ??0LockGuard@ItemRegistryRef@@QEAA@V?$shared_ptr@VMutex@Threading@Bedrock@@@std@@@Z
+        MCAPI explicit LockGuard(std::shared_ptr<class Bedrock::Threading::Mutex>);
 
         // symbol: ??1LockGuard@ItemRegistryRef@@QEAA@XZ
         MCAPI ~LockGuard();
@@ -35,12 +39,17 @@ public:
 public:
     // prevent constructor by default
     ItemRegistryRef& operator=(ItemRegistryRef const&);
-    ItemRegistryRef();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ItemRegistryRef@@QEAA@XZ
+    MCAPI ItemRegistryRef();
+
     // symbol: ??0ItemRegistryRef@@QEAA@AEBV0@@Z
     MCAPI ItemRegistryRef(class ItemRegistryRef const&);
+
+    // symbol: ??0ItemRegistryRef@@QEAA@V?$weak_ptr@VItemRegistry@@@std@@@Z
+    MCAPI explicit ItemRegistryRef(std::weak_ptr<class ItemRegistry>);
 
     // symbol: ?addItemToTagMap@ItemRegistryRef@@QEBAXAEBVItem@@@Z
     MCAPI void addItemToTagMap(class Item const&) const;
@@ -106,6 +115,9 @@ public:
     // symbol: ?isServerInitializingCreativeItems@ItemRegistryRef@@QEBA_NXZ
     MCAPI bool isServerInitializingCreativeItems() const;
 
+    // symbol: ?isValid@ItemRegistryRef@@QEBA_NXZ
+    MCAPI bool isValid() const;
+
     // symbol: ?lockItemWorldCompatibilityMutex@ItemRegistryRef@@QEBA?AVLockGuard@1@XZ
     MCAPI class ItemRegistryRef::LockGuard lockItemWorldCompatibilityMutex() const;
 
@@ -141,9 +153,9 @@ public:
     MCAPI void registerAlias(class HashedString const&, class HashedString const&, class BaseGameVersion const&) const;
 
     // symbol:
-    // ?registerComplexAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@AEBUComplexAlias@ItemRegistry@@@Z
+    // ?registerComplexAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@AEBUItemRegistryComplexAlias@@@Z
     MCAPI class WeakPtr<class Item>
-    registerComplexAlias(class HashedString const&, struct ItemRegistry::ComplexAlias const&) const;
+    registerComplexAlias(class HashedString const&, struct ItemRegistryComplexAlias const&) const;
 
     // symbol: ?registerExtraItemInitCallback@ItemRegistryRef@@QEBAXV?$function@$$A6AXVItemRegistryRef@@@Z@std@@@Z
     MCAPI void registerExtraItemInitCallback(std::function<void(class ItemRegistryRef)>) const;

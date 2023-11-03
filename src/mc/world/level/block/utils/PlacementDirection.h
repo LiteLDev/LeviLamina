@@ -124,11 +124,14 @@ public:
     // symbol: ??1PlacementDirection@BlockTrait@@UEAA@XZ
     MCVAPI ~PlacementDirection();
 
-    // symbol: ??0PlacementDirection@BlockTrait@@QEAA@_N0M@Z
-    MCAPI PlacementDirection(bool, bool, float);
-
     // symbol: ?setRotationOffset@PlacementDirection@BlockTrait@@QEAAXAEBM@Z
     MCAPI void setRotationOffset(float const&);
+
+    // symbol: ?CardinalDirection@PlacementDirection@BlockTrait@@SA?AV12@M@Z
+    MCAPI static class BlockTrait::PlacementDirection CardinalDirection(float);
+
+    // symbol: ?FacingDirection@PlacementDirection@BlockTrait@@SA?AV12@M@Z
+    MCAPI static class BlockTrait::PlacementDirection FacingDirection(float);
 
     // symbol: ?bindType@PlacementDirection@BlockTrait@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

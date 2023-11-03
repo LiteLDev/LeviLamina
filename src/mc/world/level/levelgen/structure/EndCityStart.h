@@ -20,9 +20,6 @@ public:
     // vIndex: 2, symbol: ?isValid@EndCityStart@@UEBA_NXZ
     virtual bool isValid() const;
 
-    // symbol: ??0EndCityStart@@QEAA@AEAVDimension@@AEAVRandom@@AEBVChunkPos@@@Z
-    MCAPI EndCityStart(class Dimension&, class Random&, class ChunkPos const&);
-
     // symbol: ?getYPositionForFeature@EndCityStart@@SAHAEBVChunkPos@@AEAVDimension@@@Z
     MCAPI static int getYPositionForFeature(class ChunkPos const&, class Dimension&);
 

@@ -9,6 +9,7 @@
 #include "mc/enums/MaterialType.h"
 #include "mc/enums/ShapeType.h"
 #include "mc/enums/TorchFacing.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"

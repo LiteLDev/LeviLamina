@@ -25,6 +25,9 @@ public:
     // symbol: ??0EntityComponentFactoryCereal@@QEAA@AEAUReflectionCtx@cereal@@@Z
     MCAPI explicit EntityComponentFactoryCereal(struct cereal::ReflectionCtx&);
 
+    // symbol: ?cerealContext@EntityComponentFactoryCereal@@QEAAAEAUReflectionCtx@cereal@@XZ
+    MCAPI struct cereal::ReflectionCtx& cerealContext();
+
     // symbol: ?cerealContext@EntityComponentFactoryCereal@@QEBAAEBUReflectionCtx@cereal@@XZ
     MCAPI struct cereal::ReflectionCtx const& cerealContext() const;
 

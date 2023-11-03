@@ -65,9 +65,6 @@ public:
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
     thenWaitAfter(int, class Scripting::Closure<void(void)>);
 
-    // symbol: ??1ScriptGameTestSequence@ScriptModuleGameTest@@QEAA@XZ
-    MCAPI ~ScriptGameTestSequence();
-
     // NOLINTEND
 };
 

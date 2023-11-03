@@ -30,32 +30,33 @@ public:
     // vIndex: 2, symbol: ?registerOnGameplayUserAddedSubscription@MapDataManager@@UEAAXAEAVGameplayUserManager@@@Z
     virtual void registerOnGameplayUserAddedSubscription(class GameplayUserManager&);
 
-    // vIndex: 3, symbol: ?createMapSavedData@MapDataManager@@UEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@_N@Z
-    virtual class MapItemSavedData& createMapSavedData(struct ActorUniqueID const&, bool);
+    // vIndex: 3, symbol: ?createMapSavedData@MapDataManager@@UEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@@Z
+    virtual class MapItemSavedData& createMapSavedData(struct ActorUniqueID const&);
 
     // symbol: ??1MapDataManager@@UEAA@XZ
     MCVAPI ~MapDataManager();
 
     // symbol:
-    // ??0MapDataManager@@QEAA@AEAVDimensionManager@@PEAVLevelStorage@@V?$function@$$A6A?AUActorUniqueID@@XZ@std@@@Z
-    MCAPI MapDataManager(class DimensionManager&, class LevelStorage*, std::function<struct ActorUniqueID(void)>);
+    // ??0MapDataManager@@QEAA@AEAVDimensionManager@@PEAVLevelStorage@@V?$unique_ptr@VIMapDataManagerOptions@@U?$default_delete@VIMapDataManagerOptions@@@std@@@std@@V?$function@$$A6A?AUActorUniqueID@@XZ@4@@Z
+    MCAPI
+    MapDataManager(class DimensionManager&, class LevelStorage*, std::unique_ptr<class IMapDataManagerOptions>, std::function<struct ActorUniqueID(void)>);
 
     // symbol:
-    // ?createMapSavedData@MapDataManager@@QEAAAEAVMapItemSavedData@@AEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@H_N331@Z
+    // ?createMapSavedData@MapDataManager@@QEAAAEAVMapItemSavedData@@AEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@H@Z
     MCAPI class MapItemSavedData&
-    createMapSavedData(std::vector<struct ActorUniqueID> const&, class BlockPos const&, DimensionType, int, bool, bool, bool, class BlockPos const&);
+    createMapSavedData(std::vector<struct ActorUniqueID> const&, class BlockPos const&, DimensionType, int);
 
     // symbol:
-    // ?createMapSavedData@MapDataManager@@QEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@H_N331@Z
+    // ?createMapSavedData@MapDataManager@@QEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@H@Z
     MCAPI class MapItemSavedData&
-    createMapSavedData(struct ActorUniqueID const&, class BlockPos const&, DimensionType, int, bool, bool, bool, class BlockPos const&);
+    createMapSavedData(struct ActorUniqueID const&, class BlockPos const&, DimensionType, int);
 
     // symbol:
     // ?getAllMapData@MapDataManager@@QEAAAEAV?$unordered_map@UActorUniqueID@@V?$unique_ptr@VMapItemSavedData@@U?$default_delete@VMapItemSavedData@@@std@@@std@@U?$hash@UActorUniqueID@@@3@U?$equal_to@UActorUniqueID@@@3@V?$allocator@U?$pair@$$CBUActorUniqueID@@V?$unique_ptr@VMapItemSavedData@@U?$default_delete@VMapItemSavedData@@@std@@@std@@@std@@@3@@std@@XZ
     MCAPI std::unordered_map<struct ActorUniqueID, std::unique_ptr<class MapItemSavedData>>& getAllMapData();
 
-    // symbol: ?getMapSavedData@MapDataManager@@QEAAPEAVMapItemSavedData@@UActorUniqueID@@_N@Z
-    MCAPI class MapItemSavedData* getMapSavedData(struct ActorUniqueID, bool);
+    // symbol: ?getMapSavedData@MapDataManager@@QEAAPEAVMapItemSavedData@@UActorUniqueID@@@Z
+    MCAPI class MapItemSavedData* getMapSavedData(struct ActorUniqueID);
 
     // symbol: ?registerOnSaveLevelDataSubscription@MapDataManager@@QEAAXAEAVLevelStorageManager@@@Z
     MCAPI void registerOnSaveLevelDataSubscription(class LevelStorageManager&);
@@ -64,8 +65,8 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_loadMapData@MapDataManager@@IEAAPEAVMapItemSavedData@@AEBUActorUniqueID@@_N@Z
-    MCAPI class MapItemSavedData* _loadMapData(struct ActorUniqueID const&, bool);
+    // symbol: ?_loadMapData@MapDataManager@@IEAAPEAVMapItemSavedData@@AEBUActorUniqueID@@@Z
+    MCAPI class MapItemSavedData* _loadMapData(struct ActorUniqueID const&);
 
     // symbol: ?_onSaveLevelData@MapDataManager@@IEAAXAEAVLevelStorage@@@Z
     MCAPI void _onSaveLevelData(class LevelStorage&);

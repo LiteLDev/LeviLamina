@@ -837,5 +837,7 @@ public:
     // NOLINTBEGIN
     auto& $mIsInitialized() { return mIsInitialized; }
 
+    auto& $SHADERCACHE_PATH() { return SHADERCACHE_PATH; }
+
     // NOLINTEND
 };

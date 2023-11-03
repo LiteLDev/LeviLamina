@@ -10,6 +10,7 @@
 #include "mc/enums/MaterialType.h"
 #include "mc/enums/ParticleType.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/actor/item/FallingBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"

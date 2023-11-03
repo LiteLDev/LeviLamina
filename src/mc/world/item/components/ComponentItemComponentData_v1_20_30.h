@@ -32,9 +32,9 @@ public:
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol:
-    // ?upgrade@ComponentItemComponentData_v1_20_30@@SA?AU1@AEAV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@UIItemComponentLegacyFactoryData@@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@UIItemComponentLegacyFactoryData@@@2@@std@@@2@@std@@@Z
+    // ?upgrade@ComponentItemComponentData_v1_20_30@@SA?AU1@$$QEAV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@UIItemComponentLegacyFactoryData@@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@UIItemComponentLegacyFactoryData@@@2@@std@@@2@@std@@@Z
     MCAPI static struct ComponentItemComponentData_v1_20_30
-    upgrade(std::map<std::string, std::shared_ptr<struct IItemComponentLegacyFactoryData>>&);
+    upgrade(std::map<std::string, std::shared_ptr<struct IItemComponentLegacyFactoryData>>&&);
 
     // symbol: ?FIRST_VERSION@ComponentItemComponentData_v1_20_30@@2VSemVersion@@B
     MCAPI static class SemVersion const FIRST_VERSION;

@@ -26,8 +26,8 @@ public:
 
     // protected:
     // NOLINTBEGIN
-    // symbol: ?_load@FlatWorldGeneratorOptions@@IEAA_NAEBVValue@Json@@AEBVBlockPalette@@AEBVLevelData@@@Z
-    MCAPI bool _load(class Json::Value const&, class BlockPalette const&, class LevelData const&);
+    // symbol: ?_load@FlatWorldGeneratorOptions@@IEAA_NAEBVValue@Json@@AEBVLevelData@@@Z
+    MCAPI bool _load(class Json::Value const&, class LevelData const&);
 
     // NOLINTEND
 };

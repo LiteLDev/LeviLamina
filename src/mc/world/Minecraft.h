@@ -57,9 +57,8 @@ public:
     MCVAPI ~Minecraft();
 
     // symbol:
-    // ??0Minecraft@@QEAA@AEAVIMinecraftApp@@AEAVGameCallbacks@@AEAVAllowList@@PEAVPermissionsFile@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@AEAVIMinecraftEventing@@AEAVNetworkSystem@@AEAVPacketSender@@W4SubClientId@@AEAVTimer@@AEAVTimer@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@6@PEAVServerMetrics@@@Z
-    MCAPI
-    Minecraft(class IMinecraftApp&, class GameCallbacks&, class AllowList&, class PermissionsFile*, Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&, std::chrono::seconds, class IMinecraftEventing&, class NetworkSystem&, class PacketSender&, ::SubClientId, class Timer&, class Timer&, Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const&, class ServerMetrics*);
+    // ??0Minecraft@@QEAA@AEAVIMinecraftApp@@AEAVGameCallbacks@@AEAVAllowList@@PEAVPermissionsFile@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@AEAVIMinecraftEventing@@VClientOrServerNetworkSystemRef@@AEAVPacketSender@@W4SubClientId@@AEAVTimer@@AEAVTimer@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@6@PEAVServerMetrics@@@Z
+    MCAPI Minecraft(class IMinecraftApp&, class GameCallbacks&, class AllowList&, class PermissionsFile*, Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&, std::chrono::seconds, class IMinecraftEventing&, class ClientOrServerNetworkSystemRef, class PacketSender&, ::SubClientId, class Timer&, class Timer&, Bedrock::NotNullNonOwnerPtr<class IContentTierManager const> const&, class ServerMetrics*);
 
     // symbol: ?activateAllowList@Minecraft@@QEAAXXZ
     MCAPI void activateAllowList();
@@ -73,6 +72,9 @@ public:
 
     // symbol: ?earlyShutdownMainthread@Minecraft@@QEAAXXZ
     MCAPI void earlyShutdownMainthread();
+
+    // symbol: ?getClientNetworkSystem@Minecraft@@QEAAAEAVClientNetworkSystem@@XZ
+    MCAPI class ClientNetworkSystem& getClientNetworkSystem();
 
     // symbol: ?getCommands@Minecraft@@QEAAAEAVMinecraftCommands@@XZ
     MCAPI class MinecraftCommands& getCommands();
@@ -92,14 +94,14 @@ public:
     // symbol: ?getLevel@Minecraft@@QEBAPEAVLevel@@XZ
     MCAPI class Level* getLevel() const;
 
-    // symbol: ?getNetworkSystem@Minecraft@@QEAAAEAVNetworkSystem@@XZ
-    MCAPI class NetworkSystem& getNetworkSystem();
-
     // symbol: ?getResourceLoader@Minecraft@@QEAAAEAVResourcePackManager@@XZ
     MCAPI class ResourcePackManager& getResourceLoader();
 
     // symbol: ?getServerNetworkHandler@Minecraft@@QEAA?AV?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@XZ
     MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler();
+
+    // symbol: ?getServerNetworkSystem@Minecraft@@QEAAAEAVServerNetworkSystem@@XZ
+    MCAPI class ServerNetworkSystem& getServerNetworkSystem();
 
     // symbol:
     // ?getStructureManager@Minecraft@@QEAA?AV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@XZ

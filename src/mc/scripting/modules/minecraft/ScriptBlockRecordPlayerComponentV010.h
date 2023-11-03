@@ -40,9 +40,9 @@ public:
     bind();
 
     // symbol:
-    // ?tryCreate@ScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@@Scripting@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@4@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<
-        class ScriptModuleMinecraft::ScriptBlockRecordPlayerComponentV010>
+    // ?tryCreate@ScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI static std::optional<
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockRecordPlayerComponentV010>>
     tryCreate(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
 
     // symbol: ?ComponentId@ScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@2PEBDEB

@@ -18,15 +18,9 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 3, symbol:
-    // ?getNearestGeneratedFeature@BuriedTreasureFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
-    virtual bool getNearestGeneratedFeature(
-        class Dimension&,
-        class BiomeSource const&,
-        class BlockPos const&,
-        class BlockPos&,
-        class IPreliminarySurfaceProvider const&,
-        bool
-    );
+    // ?getNearestGeneratedFeature@BuriedTreasureFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_NAEBV?$optional@VHashedString@@@std@@@Z
+    virtual bool
+    getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool, std::optional<class HashedString> const&);
 
     // vIndex: 5, symbol:
     // ?isFeatureChunk@BuriedTreasureFeature@@MEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z

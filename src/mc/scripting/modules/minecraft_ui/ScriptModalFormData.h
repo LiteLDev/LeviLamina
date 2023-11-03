@@ -106,9 +106,6 @@ public:
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptModalFormData>
     toggleV010(std::string const&, std::optional<bool>);
 
-    // symbol: ??1ScriptModalFormData@ScriptModuleMinecraftServerUI@@QEAA@XZ
-    MCAPI ~ScriptModalFormData();
-
     // symbol:
     // ?bind@ScriptModalFormData@ScriptModuleMinecraftServerUI@@SA?AV?$ClassBindingBuilder@VScriptModalFormData@ScriptModuleMinecraftServerUI@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptModalFormData> bind();

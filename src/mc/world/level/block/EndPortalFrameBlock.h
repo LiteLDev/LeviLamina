@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -188,6 +189,9 @@ public:
     // NOLINTBEGIN
     // symbol: ?createPortal@EndPortalFrameBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static void createPortal(class BlockSource&, class BlockPos const&);
+
+    // symbol: ?removePortal@EndPortalFrameBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    MCAPI static void removePortal(class BlockSource&, class BlockPos const&);
 
     // NOLINTEND
 };

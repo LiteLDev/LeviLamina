@@ -10,6 +10,13 @@ public:
     ValueConstIterator& operator=(ValueConstIterator const&);
     ValueConstIterator(ValueConstIterator const&);
     ValueConstIterator();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??1ValueConstIterator@Json@@QEAA@XZ
+    MCAPI ~ValueConstIterator();
+
+    // NOLINTEND
 };
 
 }; // namespace Json

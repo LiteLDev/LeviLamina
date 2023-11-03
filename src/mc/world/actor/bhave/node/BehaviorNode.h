@@ -17,7 +17,7 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?tick@FindActorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+    // vIndex: 1, symbol: ?tick@FindBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
     virtual ::BehaviorStatus tick(class Actor&) = 0;
 
     // vIndex: 2, symbol: ?initializeFromDefinition@BehaviorNode@@MEAAXAEAVActor@@@Z

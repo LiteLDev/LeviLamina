@@ -16,6 +16,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0ScriptActorDieAfterEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
+    MCAPI ScriptActorDieAfterEvent(struct ScriptModuleMinecraft::ScriptActorDieAfterEvent&&);
+
     // symbol: ??1ScriptActorDieAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptActorDieAfterEvent();
 

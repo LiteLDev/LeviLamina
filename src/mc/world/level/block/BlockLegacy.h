@@ -12,6 +12,7 @@
 #include "mc/enums/Flip.h"
 #include "mc/enums/LavaFlammable.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/utils/BlockActorType.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -176,9 +177,9 @@ public:
     virtual bool hasTag(class BlockSource&, class BlockPos const&, class Block const&, std::string const&) const;
 
     // vIndex: 5, symbol:
-    // ?clip@BlockLegacy@@UEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+    // ?clip@BlockLegacy@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual class HitResult
-    clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
+    clip(class Block const&, class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
     // vIndex: 6, symbol:
@@ -221,8 +222,9 @@ public:
     // vIndex: 13, symbol: ?getUIShape@BlockLegacy@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const& getUIShape(class Block const&, class AABB&) const;
 
-    // vIndex: 14, symbol: ?getLiquidClipVolume@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
-    virtual bool getLiquidClipVolume(class BlockSource&, class BlockPos const&, class AABB&) const;
+    // vIndex: 14, symbol:
+    // ?getLiquidClipVolume@BlockLegacy@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
+    virtual bool getLiquidClipVolume(class Block const&, class BlockSource&, class BlockPos const&, class AABB&) const;
 
     // vIndex: 15, symbol: ?isObstructingChests@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool isObstructingChests(class BlockSource&, class BlockPos const&, class Block const&) const;
@@ -377,8 +379,9 @@ public:
     // vIndex: 64, symbol: ?getRequiredMedium@BlockLegacy@@UEBA?AV?$optional@VHashedString@@@std@@XZ
     virtual std::optional<class HashedString> getRequiredMedium() const;
 
-    // vIndex: 65, symbol: ?shouldConnectToRedstone@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    // vIndex: 65, symbol:
+    // ?shouldConnectToRedstone@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
     // vIndex: 66, symbol: ?handlePrecipitation@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@MM@Z
     virtual void handlePrecipitation(class BlockSource&, class BlockPos const&, float, float) const;
@@ -939,11 +942,6 @@ public:
 
     // symbol: ?canReactToNeighborsDuringInstatick@BlockLegacy@@QEBA_NXZ
     MCAPI bool canReactToNeighborsDuringInstatick() const;
-
-    // symbol: ?clip@BlockLegacy@@QEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2W4ShapeType@@AEBVAABB@@@Z
-    MCAPI class HitResult
-    clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class AABB const&)
-        const;
 
     // symbol: ?createBlockPermutations@BlockLegacy@@QEAAXI@Z
     MCAPI void createBlockPermutations(uint);

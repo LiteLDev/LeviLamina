@@ -28,19 +28,22 @@ public:
     // ?getName@BlockDisplayNameDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
 
-    // vIndex: 2, symbol: ?initializeComponent@BlockDisplayNameDescription@@UEBAXAEAVEntityContext@@@Z
-    virtual void initializeComponent(class EntityContext&) const;
+    // vIndex: 3, symbol: ?initializeComponent@BlockDisplayNameDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    virtual void initializeComponent(class BlockComponentStorage&) const;
+
+    // vIndex: 5, symbol: __unk_vfn_5
+    virtual void __unk_vfn_5();
 
     // vIndex: 7, symbol: ?isNetworkComponent@BlockDisplayNameDescription@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
 
     // vIndex: 8, symbol:
-    // ?buildNetworkTag@BlockDisplayNameDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx&) const;
+    // ?buildNetworkTag@BlockDisplayNameDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
     // vIndex: 9, symbol:
-    // ?initializeFromNetwork@BlockDisplayNameDescription@@UEAAXAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
-    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx&);
+    // ?initializeFromNetwork@BlockDisplayNameDescription@@UEAAXAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
     // symbol: ?bindType@BlockDisplayNameDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

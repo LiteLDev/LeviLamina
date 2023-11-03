@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/json/JsonSchemaObjectNode.h"
 #include "mc/entity/utilities/ActorLocation.h"
 #include "mc/enums/InHandUpdateType.h"
 #include "mc/enums/UseAnimation.h"
@@ -18,7 +17,6 @@
 // clang-format off
 namespace Core { class Path; }
 namespace Json { class Value; }
-namespace JsonUtil { class EmptyClass; }
 namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct Schema; }
 namespace mce { class Color; }
@@ -327,28 +325,15 @@ public:
     MCAPI void _addCerealItemsToMap();
 
     // symbol:
-    // ?_buildItemsFileSchema@ComponentItem@@QEAA?AV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VComponentItem@@@JsonUtil@@@std@@AEAV23@_NAEBVSemVersion@@@Z
-    MCAPI std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem>>
-    _buildItemsFileSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem>>&, bool, class SemVersion const&);
-
-    // symbol:
-    // ?_validateClientSchemaAndInitItem@ComponentItem@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@AEAUReflectionCtx@cereal@@@Z
+    // ?_validateSchemaAndInitItem@ComponentItem@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@_N2AEBVExperiments@@AEAUReflectionCtx@cereal@@@Z
     MCAPI bool
-    _validateClientSchemaAndInitItem(class Json::Value&, class SemVersion const&, bool, class Experiments const&, struct cereal::ReflectionCtx&);
-
-    // symbol:
-    // ?_validateServerSchemaAndInitItem@ComponentItem@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI bool
-    _validateServerSchemaAndInitItem(class Json::Value&, class SemVersion const&, bool, class Experiments const&, struct cereal::ReflectionCtx&);
+    _validateSchemaAndInitItem(class Json::Value&, class SemVersion const&, bool, bool, class Experiments const&, struct cereal::ReflectionCtx&);
 
     // symbol: ?checkComponentDataForContentErrors@ComponentItem@@QEBA_NXZ
     MCAPI bool checkComponentDataForContentErrors() const;
 
     // symbol: ?executeTrigger@ComponentItem@@QEBA_NAEAVItemStackBase@@AEBVDefinitionTrigger@@AEAVRenderParams@@@Z
     MCAPI bool executeTrigger(class ItemStackBase&, class DefinitionTrigger const&, class RenderParams&) const;
-
-    // symbol: ?parseJsonEvents@ComponentItem@@QEAA_NAEBVValue@Json@@AEBVSemVersion@@@Z
-    MCAPI bool parseJsonEvents(class Json::Value const&, class SemVersion const&);
 
     // symbol: ?setAttackDamage@ComponentItem@@QEAAXH@Z
     MCAPI void setAttackDamage(int);
@@ -422,15 +407,8 @@ public:
     // symbol: ?_loadItemTagsNetworkTag@ComponentItem@@AEAAXAEBVListTag@@@Z
     MCAPI void _loadItemTagsNetworkTag(class ListTag const&);
 
-    // symbol:
-    // ?_parseCereal@ComponentItem@@AEAA_NAEBVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI bool
-    _parseCereal(class Json::Value const&, class SemVersion const&, bool, class Experiments const&, struct cereal::ReflectionCtx&);
-
-    // symbol:
-    // ?_validateCerealComponent@ComponentItem@@AEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@_NAEBVExperiments@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI bool
-    _validateCerealComponent(std::string, class SemVersion const&, bool, class Experiments const&, struct cereal::ReflectionCtx&);
+    // symbol: ?_moveDataToComponentItem@ComponentItem@@CAXAEAV1@AEAUComponentItemData_Legacy@@@Z
+    MCAPI static void _moveDataToComponentItem(class ComponentItem&, struct ComponentItemData_Legacy&);
 
     // symbol: ?getEnTTMetaType@ComponentItem@@CA?AVmeta_type@entt@@AEAUReflectionCtx@cereal@@@Z
     MCAPI static entt::meta_type getEnTTMetaType(struct cereal::ReflectionCtx&);

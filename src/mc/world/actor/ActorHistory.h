@@ -33,20 +33,23 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?addFrame@ActorHistory@@QEAA_NAEAUIActorMovementProxy@@_KAEAVEntityRegistry@@@Z
-    MCAPI bool addFrame(struct IActorMovementProxy&, uint64, class EntityRegistry&);
+    // symbol: ?addFrame@ActorHistory@@QEAA_NAEAVEntityContext@@_KAEAVEntityRegistry@@@Z
+    MCAPI bool addFrame(class EntityContext&, uint64, class EntityRegistry&);
 
     // symbol: ?addInputToFrontOfFrame@ActorHistory@@QEAAXV?$shared_ptr@UIReplayableActorInput@@@std@@_K@Z
     MCAPI void addInputToFrontOfFrame(std::shared_ptr<struct IReplayableActorInput>, uint64);
 
-    // symbol: ?createSnapshot@ActorHistory@@QEBA?AUSnapshot@1@AEAUIActorMovementProxy@@AEAVEntityRegistry@@@Z
-    MCAPI struct ActorHistory::Snapshot createSnapshot(struct IActorMovementProxy&, class EntityRegistry&) const;
+    // symbol: ?createSnapshot@ActorHistory@@QEBA?AUSnapshot@1@AEBVEntityContext@@AEAVEntityRegistry@@@Z
+    MCAPI struct ActorHistory::Snapshot createSnapshot(class EntityContext const&, class EntityRegistry&) const;
 
     // symbol: ?getFrame@ActorHistory@@QEBAPEBUSnapshot@1@_K@Z
     MCAPI struct ActorHistory::Snapshot const* getFrame(uint64) const;
 
     // symbol: ??1ActorHistory@@QEAA@XZ
     MCAPI ~ActorHistory();
+
+    // symbol: ?copyEntityState@ActorHistory@@SAXAEBVEntityContext@@AEAV2@_N@Z
+    MCAPI static void copyEntityState(class EntityContext const&, class EntityContext&, bool);
 
     // NOLINTEND
 };

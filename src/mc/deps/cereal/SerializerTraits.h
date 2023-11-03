@@ -25,6 +25,9 @@ public:
     // symbol: ??0SerializerTraits@cereal@@QEAA@AEBU01@@Z
     MCAPI SerializerTraits(struct cereal::SerializerTraits const&);
 
+    // symbol: ?name@SerializerTraits@cereal@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& name() const;
+
     // symbol:
     // ?name@SerializerTraits@cereal@@QEAAAEAU12@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI struct cereal::SerializerTraits& name(std::string);

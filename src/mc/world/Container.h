@@ -30,7 +30,7 @@ public:
     // vIndex: 4, symbol: ?removeContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z
     virtual void removeContentChangeListener(class ContainerContentChangeListener*);
 
-    // vIndex: 5, symbol: ?getItem@SimpleContainer@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 5, symbol: ?getItem@FillingContainer@@UEBAAEBVItemStack@@H@Z
     virtual class ItemStack const& getItem(int) const = 0;
 
     // vIndex: 6, symbol: ?hasRoomForItem@Container@@UEAA_NAEBVItemStack@@@Z
@@ -72,8 +72,8 @@ public:
     // vIndex: 18, symbol: ?startOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player&) = 0;
 
-    // vIndex: 19, symbol: ?stopOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
-    virtual void stopOpen(class Player&) = 0;
+    // vIndex: 19, symbol: ?stopOpen@Container@@UEAAXAEAVPlayer@@@Z
+    virtual void stopOpen(class Player&);
 
     // vIndex: 20, symbol: ?getSlotCopies@Container@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
     virtual std::vector<class ItemStack> getSlotCopies() const;
@@ -142,6 +142,9 @@ public:
     // symbol: ??0Container@@QEAA@W4ContainerType@@@Z
     MCAPI explicit Container(::ContainerType);
 
+    // symbol: ?addCloseListener@Container@@QEAAXPEAVContainerCloseListener@@@Z
+    MCAPI void addCloseListener(class ContainerCloseListener*);
+
     // symbol: ?getContainerType@Container@@QEBA?AW4ContainerType@@XZ
     MCAPI ::ContainerType getContainerType() const;
 
@@ -159,6 +162,9 @@ public:
 
     // symbol: ?initRuntimeId@Container@@QEAAXXZ
     MCAPI void initRuntimeId();
+
+    // symbol: ?removeCloseListener@Container@@QEAAXPEAVContainerCloseListener@@@Z
+    MCAPI void removeCloseListener(class ContainerCloseListener*);
 
     // symbol: ?serverInitItemStackIdsAll@Container@@QEAAXV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     MCAPI void serverInitItemStackIdsAll(std::function<void(int, class ItemStack const&)>);
@@ -203,5 +209,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
+    auto& $containerTypeMap() { return containerTypeMap; }
+
     // NOLINTEND
 };

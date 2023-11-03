@@ -7,6 +7,11 @@
 #include "mc/deps/core/StackString.h"
 #include "mc/deps/core/common/bedrock/Result.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 class CameraPresets {
 public:
     // CameraPresets inner types declare
@@ -29,8 +34,8 @@ public:
         // symbol: ??1CameraList@CameraPresets@@QEAA@XZ
         MCAPI ~CameraList();
 
-        // symbol: ?bindType@CameraList@CameraPresets@@SAXXZ
-        MCAPI static void bindType();
+        // symbol: ?bindType@CameraList@CameraPresets@@SAXAEAUReflectionCtx@cereal@@@Z
+        MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
         // NOLINTEND
     };
@@ -68,8 +73,8 @@ public:
     // symbol: ??1CameraPresets@@QEAA@XZ
     MCAPI ~CameraPresets();
 
-    // symbol: ?bindType@CameraPresets@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@CameraPresets@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol:
     // ?isAllowedEaseTarget@CameraPresets@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

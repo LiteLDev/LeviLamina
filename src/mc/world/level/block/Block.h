@@ -8,7 +8,6 @@
 #include "mc/enums/ShapeType.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockActorType.h"
-#include "mc/world/level/block/utils/BlockOcclusionType.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
 #include "mc/world/level/block/utils/BlockSupportType.h"
@@ -98,6 +97,9 @@ public:
     // symbol: ?canConnect@Block@@QEBA_NAEBV1@E0@Z
     MCAPI bool canConnect(class Block const&, uchar, class Block const&) const;
 
+    // symbol: ?canContainLiquid@Block@@QEBA_NXZ
+    MCAPI bool canContainLiquid() const;
+
     // symbol: ?canDamperVibrations@Block@@QEBA_NXZ
     MCAPI bool canDamperVibrations() const;
 
@@ -137,10 +139,8 @@ public:
     // symbol: ?checkIsPathable@Block@@QEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     MCAPI bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
-    // symbol: ?clip@Block@@QEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2W4ShapeType@@AEBVAABB@@@Z
-    MCAPI class HitResult
-    clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, ::ShapeType, class AABB const&)
-        const;
+    // symbol: ?clip@Block@@QEBA?AVHitResult@@AEBVBlockPos@@AEBVVec3@@1AEBVAABB@@@Z
+    MCAPI class HitResult clip(class BlockPos const&, class Vec3 const&, class Vec3 const&, class AABB const&) const;
 
     // symbol:
     // ?clip@Block@@QEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -333,9 +333,6 @@ public:
 
     // symbol: ?isButtonBlock@Block@@QEBA_NXZ
     MCAPI bool isButtonBlock() const;
-
-    // symbol: ?isClimbable@Block@@QEBA_NAEBVActor@@@Z
-    MCAPI bool isClimbable(class Actor const&) const;
 
     // symbol: ?isContainerBlock@Block@@QEBA_NXZ
     MCAPI bool isContainerBlock() const;
@@ -598,11 +595,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getBlockOcclusionType@Block@@AEBA?AW4BlockOcclusionType@@XZ
-    MCAPI ::BlockOcclusionType _getBlockOcclusionType() const;
-
-    // symbol: ?_isUnitCube@Block@@AEBA_NXZ
-    MCAPI bool _isUnitCube() const;
+    // symbol: ?_isSolid@Block@@AEBA_NXZ
+    MCAPI bool _isSolid() const;
 
     // symbol: ?_lockRegistryForRead@Block@@AEBA?AVBlockTypeRegistryReadLock@@XZ
     MCAPI class BlockTypeRegistryReadLock _lockRegistryForRead() const;

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/core/utility/buffer_span_mut.h"
 
@@ -59,33 +60,30 @@ public:
     // symbol: ?cacheBlockComponentData@BlockPalette@@QEAAXXZ
     MCAPI void cacheBlockComponentData();
 
-    // symbol: ?convertLegacyBlock@BlockPalette@@QEBAAEBVBlock@@UBlockID@@G@Z
-    MCAPI class Block const& convertLegacyBlock(struct BlockID, ushort) const;
-
-    // symbol:
-    // ?convertLegacyBlocks@BlockPalette@@QEBA_NV?$buffer_span_mut@PEBVBlock@@@@V?$buffer_span@UBlockID@@@@V?$buffer_span@UNibblePair@@@@_K@Z
-    MCAPI bool convertLegacyBlocks(
-        class buffer_span_mut<class Block const*>,
-        class buffer_span<struct BlockID>,
-        class buffer_span<struct NibblePair>,
-        uint64
-    ) const;
-
-    // symbol: ?getBlock@BlockPalette@@QEBAAEBVBlock@@AEBVCompoundTag@@@Z
-    MCAPI class Block const& getBlock(class CompoundTag const&) const;
-
     // symbol: ?getBlockFromLegacyData@BlockPalette@@QEBAAEBVBlock@@UNewBlockID@@I@Z
     MCAPI class Block const& getBlockFromLegacyData(struct NewBlockID, uint) const;
 
     // symbol:
-    // ?getBlockLegacy@BlockPalette@@QEBAPEBVBlockLegacy@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class BlockLegacy const* getBlockLegacy(std::string const&) const;
+    // ?getUnknownBlockTypeRegistry@BlockPalette@@QEBA?BV?$NonOwnerPointer@VIUnknownBlockTypeRegistry@@@Bedrock@@XZ
+    MCAPI class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> const getUnknownBlockTypeRegistry() const;
 
     // symbol: ?initFromBlockDefinitions@BlockPalette@@QEAAXXZ
     MCAPI void initFromBlockDefinitions();
 
     // symbol: ?switchBlock@BlockPalette@@QEBAAEBVBlock@@AEBV2@AEBVBlockLegacy@@@Z
     MCAPI class Block const& switchBlock(class Block const&, class BlockLegacy const&) const;
+
+    // symbol: ?convertLegacyBlock@BlockPalette@@SAAEBVBlock@@UBlockID@@G@Z
+    MCAPI static class Block const& convertLegacyBlock(struct BlockID, ushort);
+
+    // symbol:
+    // ?convertLegacyBlocks@BlockPalette@@SA_NV?$buffer_span_mut@PEBVBlock@@@@V?$buffer_span@UBlockID@@@@V?$buffer_span@UNibblePair@@@@_K@Z
+    MCAPI static bool convertLegacyBlocks(
+        class buffer_span_mut<class Block const*>,
+        class buffer_span<struct BlockID>,
+        class buffer_span<struct NibblePair>,
+        uint64
+    );
 
     // NOLINTEND
 

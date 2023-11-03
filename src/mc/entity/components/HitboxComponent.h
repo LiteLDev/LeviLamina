@@ -6,11 +6,13 @@ class HitboxComponent {
 public:
     // prevent constructor by default
     HitboxComponent& operator=(HitboxComponent const&);
-    HitboxComponent(HitboxComponent const&);
     HitboxComponent();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0HitboxComponent@@QEAA@AEBV0@@Z
+    MCAPI HitboxComponent(class HitboxComponent const&);
+
     // symbol: ?addAdditionalSaveData@HitboxComponent@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
 
@@ -22,6 +24,9 @@ public:
 
     // symbol: ?toCompoundTag@HitboxComponent@@QEAAXAEAVCompoundTag@@@Z
     MCAPI void toCompoundTag(class CompoundTag&);
+
+    // symbol: ??1HitboxComponent@@QEAA@XZ
+    MCAPI ~HitboxComponent();
 
     // NOLINTEND
 };

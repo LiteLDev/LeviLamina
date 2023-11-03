@@ -31,15 +31,13 @@ public:
     // ?registerOnGameplayUserAddedSubscription@ServerMapDataManager@@UEAAXAEAVGameplayUserManager@@@Z
     virtual void registerOnGameplayUserAddedSubscription(class GameplayUserManager&);
 
-    // vIndex: 3, symbol: ?createMapSavedData@ServerMapDataManager@@UEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@_N@Z
-    virtual class MapItemSavedData& createMapSavedData(struct ActorUniqueID const&, bool);
-
-    // symbol: ??1ServerMapDataManager@@UEAA@XZ
-    MCVAPI ~ServerMapDataManager();
+    // vIndex: 3, symbol: ?createMapSavedData@ServerMapDataManager@@UEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@@Z
+    virtual class MapItemSavedData& createMapSavedData(struct ActorUniqueID const&);
 
     // symbol:
-    // ??0ServerMapDataManager@@QEAA@AEAVDimensionManager@@PEAVLevelStorage@@V?$function@$$A6A?AUActorUniqueID@@XZ@std@@@Z
-    MCAPI ServerMapDataManager(class DimensionManager&, class LevelStorage*, std::function<struct ActorUniqueID(void)>);
+    // ??0ServerMapDataManager@@QEAA@AEAVDimensionManager@@PEAVLevelStorage@@V?$unique_ptr@VIMapDataManagerOptions@@U?$default_delete@VIMapDataManagerOptions@@@std@@@std@@V?$function@$$A6A?AUActorUniqueID@@XZ@4@@Z
+    MCAPI
+    ServerMapDataManager(class DimensionManager&, class LevelStorage*, std::unique_ptr<class IMapDataManagerOptions>, std::function<struct ActorUniqueID(void)>);
 
     // NOLINTEND
 

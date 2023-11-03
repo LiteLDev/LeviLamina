@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/enums/MinecraftPacketIds.h"
+#include "mc/enums/connection/DisconnectFailReason.h"
 #include "mc/network/packet/Packet.h"
 
 class DisconnectPacket : public ::Packet {
@@ -38,8 +39,9 @@ public:
     // symbol: ??0DisconnectPacket@@QEAA@XZ
     MCAPI DisconnectPacket();
 
-    // symbol: ??0DisconnectPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI DisconnectPacket(std::string const&, bool);
+    // symbol:
+    // ??0DisconnectPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NW4DisconnectFailReason@Connection@@@Z
+    MCAPI DisconnectPacket(std::string const&, bool, ::Connection::DisconnectFailReason);
 
     // NOLINTEND
 };

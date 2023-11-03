@@ -20,9 +20,6 @@ public:
     MCAPI struct ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent&&);
 
-    // symbol: ??1ScriptItemStopUseOnAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptItemStopUseOnAfterEvent();
-
     // symbol:
     // ?bind@ScriptItemStopUseOnAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemStopUseOnAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent>

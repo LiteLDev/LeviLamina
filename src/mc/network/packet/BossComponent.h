@@ -79,6 +79,9 @@ public:
     // symbol: ?sendDeathTelemetry@BossComponent@@QEAAXAEAVActor@@@Z
     MCAPI void sendDeathTelemetry(class Actor&);
 
+    // symbol: ?setColor@BossComponent@@QEAAXAEAVActor@@W4BossBarColor@@@Z
+    MCAPI void setColor(class Actor&, ::BossBarColor);
+
     // symbol: ?setHealthBarVisible@BossComponent@@QEAAXAEAVActor@@_N@Z
     MCAPI void setHealthBarVisible(class Actor&, bool);
 

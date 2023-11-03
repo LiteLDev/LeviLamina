@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -28,12 +29,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
-
-    // vIndex: 9, symbol:
-    // ?addAABBs@EndRodBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-    virtual void
-    addAABBs(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&)
-        const;
 
     // vIndex: 12, symbol: ?getVisualShape@EndRodBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
@@ -124,9 +119,6 @@ public:
 
     // vIndex: 97, symbol: ?breaksFallingBlocks@EndRodBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
-
-    // vIndex: 100, symbol: ?neighborChanged@EndRodBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
 
     // vIndex: 106, symbol: __unk_vfn_106
     virtual void __unk_vfn_106();

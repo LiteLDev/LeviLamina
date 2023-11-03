@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/CreativeItemCategory.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -29,6 +32,11 @@ public:
 
     // symbol: ?bindType@ComponentItemMenuCategoryData_v1_20_20@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
+
+    // symbol:
+    // ?upgrade@ComponentItemMenuCategoryData_v1_20_20@@SA?AV?$optional@UComponentItemMenuCategoryData_v1_20_20@@@std@@$$QEAV?$optional@W4CreativeItemCategory@@@3@@Z
+    MCAPI static std::optional<struct ComponentItemMenuCategoryData_v1_20_20>
+    upgrade(std::optional<::CreativeItemCategory>&&);
 
     // symbol: ?FIRST_VERSION@ComponentItemMenuCategoryData_v1_20_20@@2VSemVersion@@B
     MCAPI static class SemVersion const FIRST_VERSION;
