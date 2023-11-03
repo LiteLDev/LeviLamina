@@ -20,9 +20,6 @@ public:
     MCAPI class ScriptModuleMinecraft::ScriptActorTypeIterator&
     operator=(class ScriptModuleMinecraft::ScriptActorTypeIterator&&);
 
-    // symbol: ??1ScriptActorTypeIterator@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptActorTypeIterator();
-
     // symbol:
     // ?bind@ScriptActorTypeIterator@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptActorTypeIterator@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorTypeIterator> bind();

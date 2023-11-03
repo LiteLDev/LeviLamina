@@ -122,8 +122,8 @@ public:
     // symbol: ?getMapId@MapItem@@SA?AUActorUniqueID@@PEBVCompoundTag@@@Z
     MCAPI static struct ActorUniqueID getMapId(class CompoundTag const*);
 
-    // symbol: ?markForRegeneration@MapItem@@SAXAEAVItemInstance@@@Z
-    MCAPI static void markForRegeneration(class ItemInstance&);
+    // symbol: ?markForRegeneration@MapItem@@SAXAEAVItemStackBase@@@Z
+    MCAPI static void markForRegeneration(class ItemStackBase&);
 
     // symbol: ?renderBiomePreviewMap@MapItem@@SAXAEAVDimension@@AEAVMapItemSavedData@@@Z
     MCAPI static void renderBiomePreviewMap(class Dimension&, class MapItemSavedData&);
@@ -137,11 +137,8 @@ public:
     // ?serializeMapData@MapItem@@SAXAEBV?$vector@UMapSample@@V?$allocator@UMapSample@@@std@@@std@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCAPI static void serializeMapData(std::vector<struct MapSample> const&, std::string&);
 
-    // symbol: ?setItemInstanceInfo@MapItem@@SAXAEAVItemInstance@@AEAVMapItemSavedData@@@Z
-    MCAPI static void setItemInstanceInfo(class ItemInstance&, class MapItemSavedData&);
-
-    // symbol: ?setItemInstanceInfo@MapItem@@SAXAEAVItemStack@@AEAVMapItemSavedData@@@Z
-    MCAPI static void setItemInstanceInfo(class ItemStack&, class MapItemSavedData&);
+    // symbol: ?setItemInstanceInfo@MapItem@@SAXAEAVItemStackBase@@AEAVMapItemSavedData@@@Z
+    MCAPI static void setItemInstanceInfo(class ItemStackBase&, class MapItemSavedData&);
 
     // symbol: ?setMapNameIndex@MapItem@@SAXAEAVItemStack@@H@Z
     MCAPI static void setMapNameIndex(class ItemStack&, int);
@@ -171,10 +168,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol:
-    // ?_makeNewExplorationMap@MapItem@@AEBAXAEAVItemStack@@AEAVLevel@@PEAVActor@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void _makeNewExplorationMap(class ItemStack&, class Level&, class Actor*, std::string&) const;
-
     // symbol:
     // ?_scheduleMapChunkRendering@MapItem@@CAXAEAVDimension@@AEBVMapItemSavedData@@UChunkBounds@3@V?$shared_ptr@_N@std@@@Z
     MCAPI static void

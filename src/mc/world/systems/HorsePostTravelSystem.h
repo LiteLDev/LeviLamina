@@ -2,30 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/wrapper/Optional.h"
-#include "mc/world/components/FlagComponent.h"
+namespace HorsePostTravelSystem {
+// NOLINTBEGIN
+// symbol: ?createJumpResetSystem@HorsePostTravelSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createJumpResetSystem();
 
-class HorsePostTravelSystem {
-public:
-    // prevent constructor by default
-    HorsePostTravelSystem& operator=(HorsePostTravelSystem const&);
-    HorsePostTravelSystem(HorsePostTravelSystem const&);
-    HorsePostTravelSystem();
+// symbol: ?createPostTravelSystem@HorsePostTravelSystem@@YA?AUTickingSystemWithInfo@@XZ
+MCAPI struct TickingSystemWithInfo createPostTravelSystem();
+// NOLINTEND
 
-public:
-    // NOLINTBEGIN
-    // symbol: ?createSystem@HorsePostTravelSystem@@SA?AUTickingSystemWithInfo@@XZ
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol:
-    // ?_doHorsePostTravelSystem@HorsePostTravelSystem@@CAXAEBVStrictEntityContext@@V?$Optional@$$CBV?$FlagComponent@UWasOnGroundPreTravelFlag@@@@@@AEAVActorOwnerComponent@@@Z
-    MCAPI static void
-    _doHorsePostTravelSystem(class StrictEntityContext const&, class Optional<class FlagComponent<struct WasOnGroundPreTravelFlag> const>, class ActorOwnerComponent&);
-
-    // NOLINTEND
-};
+}; // namespace HorsePostTravelSystem

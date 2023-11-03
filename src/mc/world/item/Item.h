@@ -47,8 +47,8 @@ public:
         MCAPI ScopedCreativeGroup(std::string const&, class Block const*, class CompoundTag const*);
 
         // symbol:
-        // ??0ScopedCreativeGroup@Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV1@FPEBVCompoundTag@@@Z
-        MCAPI ScopedCreativeGroup(std::string const&, class Item*, short, class CompoundTag const*);
+        // ??0ScopedCreativeGroup@Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@FFPEBVCompoundTag@@@Z
+        MCAPI ScopedCreativeGroup(std::string const&, short, short, class CompoundTag const*);
 
         // symbol: ??1ScopedCreativeGroup@Item@@QEAA@XZ
         MCAPI ~ScopedCreativeGroup();
@@ -773,9 +773,6 @@ public:
     // NOLINTBEGIN
     // symbol: ?_addLooseCreativeItemsClient@Item@@CAXXZ
     MCAPI static void _addLooseCreativeItemsClient();
-
-    // symbol: ?_addLooseCreativeItemsServer@Item@@CAXAEBVBaseGameVersion@@VItemRegistryRef@@@Z
-    MCAPI static void _addLooseCreativeItemsServer(class BaseGameVersion const&, class ItemRegistryRef);
 
     // NOLINTEND
 

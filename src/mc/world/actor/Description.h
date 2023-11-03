@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@MobEffectChangeDescription@@UEBAPEBDXZ
+    // vIndex: 0, symbol: ?getJsonName@NavigationFloatDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const = 0;
 
     // vIndex: 1, symbol: __unk_vfn_1

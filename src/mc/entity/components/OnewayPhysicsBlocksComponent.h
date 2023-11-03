@@ -8,4 +8,11 @@ public:
     OnewayPhysicsBlocksComponent& operator=(OnewayPhysicsBlocksComponent const&);
     OnewayPhysicsBlocksComponent(OnewayPhysicsBlocksComponent const&);
     OnewayPhysicsBlocksComponent();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??1OnewayPhysicsBlocksComponent@@QEAA@XZ
+    MCAPI ~OnewayPhysicsBlocksComponent();
+
+    // NOLINTEND
 };

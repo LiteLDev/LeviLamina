@@ -10,12 +10,6 @@ namespace BedrockBlockTypes {
 // symbol: ?mAir@BedrockBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
 MCAPI extern class WeakPtr<class BlockLegacy> mAir;
 
-// symbol: ?mClientRequestPlaceholderBlock@BedrockBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-MCAPI extern class WeakPtr<class BlockLegacy> mClientRequestPlaceholderBlock;
-
-// symbol: ?mUnknown@BedrockBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
-MCAPI extern class WeakPtr<class BlockLegacy> mUnknown;
-
 // symbol: ?registerBlocks@BedrockBlockTypes@@YAXAEBVBaseGameVersion@@@Z
 MCAPI void registerBlocks(class BaseGameVersion const&);
 

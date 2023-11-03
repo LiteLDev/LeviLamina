@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/wrapper/Include.h"
-#include "mc/common/wrapper/ViewT.h"
-#include "mc/world/components/FlagComponent.h"
-
 namespace GetControllingPlayerUtility {
 // NOLINTBEGIN
 // symbol:
@@ -20,10 +15,6 @@ isPassengerControllingVehicle(class StrictEntityContext const&, struct VehicleCo
 
 // symbol: ?isWASDControlled@GetControllingPlayerUtility@@YA_NAEBUSynchedActorDataComponent@@@Z
 MCAPI bool isWASDControlled(struct SynchedActorDataComponent const&);
-
-// symbol:
-// ?tryGetControllingPlayerContext@GetControllingPlayerUtility@@YA?AV?$optional@VStrictEntityContext@@@std@@VStrictEntityContext@@PEAV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBV?$FlagComponent@ULocalPlayerComponentFlag@@@@@@PEAV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBV?$FlagComponent@UServerPlayerComponentFlag@@@@@@PEAV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UBoatFlag@@@@@@$$CBUVehicleComponent@@@@PEAV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UHorseFlag@@@@@@$$CBUVehicleComponent@@$$CBUSynchedActorDataComponent@@@@@Z
-MCAPI std::optional<class StrictEntityContext> tryGetControllingPlayerContext(class StrictEntityContext, class ViewT<class StrictEntityContext, class EntityRegistryBase, class FlagComponent<struct LocalPlayerComponentFlag> const>*, class ViewT<class StrictEntityContext, class EntityRegistryBase, class FlagComponent<struct ServerPlayerComponentFlag> const>*, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct BoatFlag>>, struct VehicleComponent const>*, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct HorseFlag>>, struct VehicleComponent const, struct SynchedActorDataComponent const>*);
 // NOLINTEND
 
 }; // namespace GetControllingPlayerUtility

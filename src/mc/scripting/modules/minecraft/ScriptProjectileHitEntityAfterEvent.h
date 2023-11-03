@@ -25,9 +25,6 @@ public:
     // ?getEntityHit@ScriptProjectileHitEntityAfterEvent@ScriptModuleMinecraft@@QEBA?AUScriptEntityHitInformation@2@XZ
     MCAPI struct ScriptModuleMinecraft::ScriptEntityHitInformation getEntityHit() const;
 
-    // symbol: ??1ScriptProjectileHitEntityAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptProjectileHitEntityAfterEvent();
-
     // symbol:
     // ?bind@ScriptProjectileHitEntityAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptProjectileHitEntityAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent>

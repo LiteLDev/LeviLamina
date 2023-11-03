@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -122,6 +123,12 @@ public:
     // vIndex: 100, symbol: ?neighborChanged@VineBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
 
+    // vIndex: 103, symbol:
+    // ?spawnResources@VineBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
+    virtual void
+    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+        const;
+
     // vIndex: 106, symbol: __unk_vfn_106
     virtual void __unk_vfn_106();
 
@@ -185,12 +192,6 @@ public:
 
     // vIndex: 183, symbol: __unk_vfn_183
     virtual void __unk_vfn_183();
-
-    // vIndex: 184, symbol: ?playerDestroy@VineBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual void playerDestroy(class Player&, class BlockPos const&, class Block const&) const;
-
-    // vIndex: 186, symbol: ?getResourceCount@VineBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol: ?canBeSilkTouched@VineBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;

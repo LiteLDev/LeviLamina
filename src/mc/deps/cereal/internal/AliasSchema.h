@@ -9,6 +9,7 @@
 // clang-format off
 namespace cereal { class SerializerContext; }
 namespace cereal { struct ReflectionCtx; }
+namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal { struct SerializerTraits; }
@@ -40,6 +41,9 @@ public:
     virtual void
     unpack(std::vector<std::reference_wrapper<class cereal::internal::BasicSchema const>>&, entt::dense_map<std::string, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>&)
         const;
+
+    // vIndex: 6, symbol: ?description@AliasSchema@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
+    virtual struct cereal::SchemaDescription description() const;
 
     // symbol:
     // ??0AliasSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z

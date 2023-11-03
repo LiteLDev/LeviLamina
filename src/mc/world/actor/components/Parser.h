@@ -85,6 +85,10 @@ public:
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEA_NPEBD_N@Z
     MCAPI static void parse(class Json::Value const&, class SemVersion const&, bool&, char const*, bool);
 
+    // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAVFilterGroup@@PEBD3@Z
+    MCAPI static void
+    parse(class Json::Value const&, class SemVersion const&, class FilterGroup&, char const*, char const*);
+
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAVHashedString@@PEBD3@Z
     MCAPI static void
     parse(class Json::Value const&, class SemVersion const&, class HashedString&, char const*, char const*);

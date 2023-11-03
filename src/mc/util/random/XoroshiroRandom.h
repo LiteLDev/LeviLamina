@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/math/IRandom.h"
-
-class XoroshiroRandom : public ::IRandom {
+class XoroshiroRandom {
 public:
     // prevent constructor by default
     XoroshiroRandom& operator=(XoroshiroRandom const&);
@@ -14,40 +11,48 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // symbol: ?consumeCount@XoroshiroRandom@@UEAAXI@Z
+    MCVAPI void consumeCount(uint);
 
-    // vIndex: 1, symbol: ?nextInt@XoroshiroRandom@@UEAAHXZ
-    virtual int nextInt();
+    // symbol: ?fork@XoroshiroRandom@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
+    MCVAPI std::unique_ptr<class IRandom> fork();
 
-    // vIndex: 2, symbol: ?nextInt@XoroshiroRandom@@UEAAHH@Z
-    virtual int nextInt(int);
-
-    // vIndex: 3, symbol: ?nextLong@XoroshiroRandom@@UEAA_JXZ
-    virtual int64 nextLong();
-
-    // vIndex: 4, symbol: ?nextBoolean@XoroshiroRandom@@UEAA_NXZ
-    virtual bool nextBoolean();
-
-    // vIndex: 5, symbol: ?nextFloat@XoroshiroRandom@@UEAAMXZ
-    virtual float nextFloat();
-
-    // vIndex: 6, symbol: ?nextDouble@XoroshiroRandom@@UEAANXZ
-    virtual double nextDouble();
-
-    // vIndex: 7, symbol: ?nextGaussianDouble@XoroshiroRandom@@UEAANXZ
-    virtual double nextGaussianDouble();
-
-    // vIndex: 8, symbol: ?consumeCount@XoroshiroRandom@@UEAAXI@Z
-    virtual void consumeCount(uint);
-
-    // vIndex: 9, symbol:
-    // ?fork@XoroshiroRandom@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
-    virtual std::unique_ptr<class IRandom> fork();
-
-    // vIndex: 10, symbol:
+    // symbol:
     // ?forkPositional@XoroshiroRandom@@UEAA?AV?$unique_ptr@VIPositionalRandomFactory@@U?$default_delete@VIPositionalRandomFactory@@@std@@@std@@XZ
-    virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
+    MCVAPI std::unique_ptr<class IPositionalRandomFactory> forkPositional();
+
+    // symbol: ?nextBoolean@XoroshiroRandom@@UEAA_NXZ
+    MCVAPI bool nextBoolean();
+
+    // symbol: ?nextDouble@XoroshiroRandom@@UEAANXZ
+    MCVAPI double nextDouble();
+
+    // symbol: ?nextFloat@XoroshiroRandom@@UEAAMXZ
+    MCVAPI float nextFloat();
+
+    // symbol: ?nextGaussianDouble@XoroshiroRandom@@UEAANXZ
+    MCVAPI double nextGaussianDouble();
+
+    // symbol: ?nextInt@XoroshiroRandom@@UEAAHXZ
+    MCVAPI int nextInt();
+
+    // symbol: ?nextInt@XoroshiroRandom@@UEAAHH@Z
+    MCVAPI int nextInt(int);
+
+    // symbol: ?nextLong@XoroshiroRandom@@UEAA_JXZ
+    MCVAPI int64 nextLong();
+
+    // symbol: ?seed128@XoroshiroRandom@@UEBA?AUSeed128Bit@@XZ
+    MCVAPI struct Seed128Bit seed128() const;
+
+    // symbol: ?seed64@XoroshiroRandom@@UEBA_JXZ
+    MCVAPI int64 seed64() const;
+
+    // symbol: ?setSeed@XoroshiroRandom@@UEAAX_J@Z
+    MCVAPI void setSeed(int64);
+
+    // symbol: ?setSeed@XoroshiroRandom@@UEAAXUSeed128Bit@@@Z
+    MCVAPI void setSeed(struct Seed128Bit);
 
     // symbol: ??1XoroshiroRandom@@UEAA@XZ
     MCVAPI ~XoroshiroRandom();

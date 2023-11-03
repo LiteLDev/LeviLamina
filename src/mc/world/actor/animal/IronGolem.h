@@ -6,7 +6,6 @@
 #include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/entity/utilities/ActorFlags.h"
 #include "mc/entity/utilities/ActorType.h"
-#include "mc/enums/AnimationComponentGroupType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
 #include "mc/enums/ArmorTextureType.h"
@@ -32,98 +31,77 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 16, symbol: __unk_vfn_16
-    virtual void __unk_vfn_16();
+    // vIndex: 10, symbol: __unk_vfn_10
+    virtual void __unk_vfn_10();
 
-    // vIndex: 35, symbol: __unk_vfn_35
-    virtual void __unk_vfn_35();
+    // vIndex: 23, symbol: __unk_vfn_23
+    virtual void __unk_vfn_23();
 
-    // vIndex: 54, symbol: __unk_vfn_54
-    virtual void __unk_vfn_54();
+    // vIndex: 39, symbol: __unk_vfn_39
+    virtual void __unk_vfn_39();
+
+    // vIndex: 41, symbol: __unk_vfn_41
+    virtual void __unk_vfn_41();
+
+    // vIndex: 42, symbol: ?getShadowRadius@IronGolem@@UEBAMXZ
+    virtual float getShadowRadius() const;
+
+    // vIndex: 44, symbol: __unk_vfn_44
+    virtual void __unk_vfn_44();
+
+    // vIndex: 47, symbol: __unk_vfn_47
+    virtual void __unk_vfn_47();
+
+    // vIndex: 52, symbol: __unk_vfn_52
+    virtual void __unk_vfn_52();
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
 
-    // vIndex: 68, symbol: ?getShadowRadius@IronGolem@@UEBAMXZ
-    virtual float getShadowRadius() const;
+    // vIndex: 62, symbol: __unk_vfn_62
+    virtual void __unk_vfn_62();
 
-    // vIndex: 70, symbol: __unk_vfn_70
-    virtual void __unk_vfn_70();
+    // vIndex: 63, symbol: __unk_vfn_63
+    virtual void __unk_vfn_63();
 
-    // vIndex: 76, symbol: __unk_vfn_76
-    virtual void __unk_vfn_76();
-
-    // vIndex: 82, symbol: __unk_vfn_82
-    virtual void __unk_vfn_82();
-
-    // vIndex: 85, symbol: __unk_vfn_85
-    virtual void __unk_vfn_85();
-
-    // vIndex: 92, symbol: __unk_vfn_92
-    virtual void __unk_vfn_92();
-
-    // vIndex: 94, symbol: __unk_vfn_94
-    virtual void __unk_vfn_94();
-
-    // vIndex: 95, symbol: __unk_vfn_95
-    virtual void __unk_vfn_95();
-
-    // vIndex: 97, symbol: __unk_vfn_97
-    virtual void __unk_vfn_97();
-
-    // vIndex: 125, symbol: ?handleEntityEvent@IronGolem@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 84, symbol: ?handleEntityEvent@IronGolem@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent, int);
 
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
+    // vIndex: 109, symbol: __unk_vfn_109
+    virtual void __unk_vfn_109();
 
-    // vIndex: 174, symbol: __unk_vfn_174
-    virtual void __unk_vfn_174();
+    // vIndex: 147, symbol: __unk_vfn_147
+    virtual void __unk_vfn_147();
 
-    // vIndex: 198, symbol: __unk_vfn_198
-    virtual void __unk_vfn_198();
+    // vIndex: 148, symbol: __unk_vfn_148
+    virtual void __unk_vfn_148();
 
-    // vIndex: 199, symbol: __unk_vfn_199
-    virtual void __unk_vfn_199();
-
-    // vIndex: 215, symbol: __unk_vfn_215
-    virtual void __unk_vfn_215();
-
-    // vIndex: 218, symbol: __unk_vfn_218
-    virtual void __unk_vfn_218();
-
-    // vIndex: 220, symbol: ?die@IronGolem@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 150, symbol: ?die@IronGolem@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const&);
 
-    // vIndex: 233, symbol: ?updateEntitySpecificMolangVariables@IronGolem@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 163, symbol: ?updateEntitySpecificMolangVariables@IronGolem@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
 
-    // vIndex: 235, symbol: __unk_vfn_235
-    virtual void __unk_vfn_235();
+    // vIndex: 165, symbol: __unk_vfn_165
+    virtual void __unk_vfn_165();
 
-    // vIndex: 241, symbol: ?_playStepSound@IronGolem@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 169, symbol: ?_playStepSound@IronGolem@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const&, class Block const&);
 
-    // vIndex: 243, symbol: __unk_vfn_243
-    virtual void __unk_vfn_243();
+    // vIndex: 170, symbol: __unk_vfn_170
+    virtual void __unk_vfn_170();
 
-    // vIndex: 248, symbol: __unk_vfn_248
-    virtual void __unk_vfn_248();
+    // vIndex: 172, symbol: __unk_vfn_172
+    virtual void __unk_vfn_172();
 
-    // vIndex: 256, symbol: ?hurtEffects@IronGolem@@UEAAXAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 180, symbol: ?hurtEffects@IronGolem@@UEAAXAEBVActorDamageSource@@M_N1@Z
     virtual void hurtEffects(class ActorDamageSource const&, float, bool, bool);
 
-    // vIndex: 259, symbol: ?aiStep@IronGolem@@UEAAXXZ
+    // vIndex: 181, symbol: ?aiStep@IronGolem@@UEAAXXZ
     virtual void aiStep();
 
-    // vIndex: 270, symbol: __unk_vfn_270
-    virtual void __unk_vfn_270();
-
-    // vIndex: 273, symbol: ?doHurtTarget@IronGolem@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
+    // vIndex: 190, symbol: ?doHurtTarget@IronGolem@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
     virtual bool doHurtTarget(class Actor*, ::ActorDamageCause const&);
-
-    // vIndex: 274, symbol: __unk_vfn_274
-    virtual void __unk_vfn_274();
 
     // symbol: ??0IronGolem@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI IronGolem(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);

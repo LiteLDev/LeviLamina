@@ -44,13 +44,13 @@ public:
     // vIndex: 1, symbol: ?setup@FilterTest@@UEAA_NAEBUDefinition@1@AEBUFilterInputs@@@Z
     virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
 
-    // vIndex: 2, symbol: ?evaluate@FilterTestLightLevel@@UEBA_NAEBUFilterContext@@@Z
+    // vIndex: 2, symbol: ?evaluate@ActorInactivityTimerTest@@UEBA_NAEBUFilterContext@@@Z
     virtual bool evaluate(struct FilterContext const&) const = 0;
 
     // vIndex: 3, symbol: ?finalizeParsedValue@FilterTest@@UEAAXAEAVIWorldRegistriesProvider@@@Z
     virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
 
-    // vIndex: 4, symbol: ?getName@FilterTestLightLevel@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
+    // vIndex: 4, symbol: ?getName@ActorInactivityTimerTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     virtual std::string_view getName() const = 0;
 
     // vIndex: 5, symbol: ?_serializeDomain@FilterTest@@MEBA?AVValue@Json@@XZ

@@ -51,6 +51,9 @@ public:
     // symbol: ??0Random@@QEAA@XZ
     MCAPI Random();
 
+    // symbol: ??0Random@@QEAA@I_N@Z
+    MCAPI Random(uint, bool);
+
     // symbol: ?nextFloat@Random@@QEAAMMM@Z
     MCAPI float nextFloat(float, float);
 

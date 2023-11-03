@@ -15,7 +15,6 @@
 #include "mc/enums/InitializationMethod.h"
 #include "mc/enums/SignTextSide.h"
 #include "mc/enums/WatchdogTerminateReason.h"
-#include "mc/events/LevelEvent.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Closure.h"
 #include "mc/external/scripting/EnumBindingBuilder.h"
@@ -246,8 +245,15 @@ namespace ScriptModuleMinecraft { struct ScriptPistonActionBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayAnimationOptions; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerDimensionChangeAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerInteractEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithBlockAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithBlockBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithEntityAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithEntityBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerJoinAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerLeaveAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerLeaveBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerSoundOptions; }
@@ -282,6 +288,7 @@ namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextConfig; }
+namespace Scripting { struct EngineError; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct JSON; }
 namespace Scripting { struct ModuleDescriptor; }

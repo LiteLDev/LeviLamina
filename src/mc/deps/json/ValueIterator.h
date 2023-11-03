@@ -20,6 +20,9 @@ public:
     // symbol: ??0ValueIterator@Json@@QEAA@AEBV01@@Z
     MCAPI ValueIterator(class Json::ValueIterator const&);
 
+    // symbol: ??1ValueIterator@Json@@QEAA@XZ
+    MCAPI ~ValueIterator();
+
     // NOLINTEND
 };
 

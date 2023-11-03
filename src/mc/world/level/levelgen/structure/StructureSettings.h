@@ -9,8 +9,6 @@
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
-#include "mc/enums/AnimationMode.h"
-#include "mc/enums/Mirror.h"
 #include "mc/enums/Rotation.h"
 
 class StructureSettings {
@@ -53,48 +51,8 @@ public:
     // symbol: ??0StructureSettings@@QEAA@AEBV0@@Z
     MCAPI StructureSettings(class StructureSettings const&);
 
-    // symbol: ?getAnimationMode@StructureSettings@@QEBA?AW4AnimationMode@@XZ
-    MCAPI ::AnimationMode getAnimationMode() const;
-
-    // symbol: ?getAnimationSeconds@StructureSettings@@QEBAMXZ
-    MCAPI float getAnimationSeconds() const;
-
     // symbol: ?getAnimationTicks@StructureSettings@@QEBAIXZ
     MCAPI uint getAnimationTicks() const;
-
-    // symbol: ?getIgnoreBlocks@StructureSettings@@QEBA_NXZ
-    MCAPI bool getIgnoreBlocks() const;
-
-    // symbol: ?getIgnoreEntities@StructureSettings@@QEBA_NXZ
-    MCAPI bool getIgnoreEntities() const;
-
-    // symbol: ?getIntegritySeed@StructureSettings@@QEBAIXZ
-    MCAPI uint getIntegritySeed() const;
-
-    // symbol: ?getIntegrityValue@StructureSettings@@QEBAMXZ
-    MCAPI float getIntegrityValue() const;
-
-    // symbol: ?getLastTouchedByPlayerID@StructureSettings@@QEBA?AUActorUniqueID@@XZ
-    MCAPI struct ActorUniqueID getLastTouchedByPlayerID() const;
-
-    // symbol: ?getMirror@StructureSettings@@QEBA?AW4Mirror@@XZ
-    MCAPI ::Mirror getMirror() const;
-
-    // symbol:
-    // ?getPaletteName@StructureSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string const& getPaletteName() const;
-
-    // symbol: ?getPivot@StructureSettings@@QEBAAEBVVec3@@XZ
-    MCAPI class Vec3 const& getPivot() const;
-
-    // symbol: ?getRotation@StructureSettings@@QEBA?AW4Rotation@@XZ
-    MCAPI ::Rotation getRotation() const;
-
-    // symbol: ?getStructureOffset@StructureSettings@@QEBAAEBVBlockPos@@XZ
-    MCAPI class BlockPos const& getStructureOffset() const;
-
-    // symbol: ?getStructureSize@StructureSettings@@QEBAAEBVBlockPos@@XZ
-    MCAPI class BlockPos const& getStructureSize() const;
 
     // symbol: ?isAnimated@StructureSettings@@QEBA_NXZ
     MCAPI bool isAnimated() const;
@@ -108,12 +66,6 @@ public:
     // symbol: ?setAllowNonTickingPlayerAndTickingAreaChunks@StructureSettings@@QEAAX_N@Z
     MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);
 
-    // symbol: ?setAnimationMode@StructureSettings@@QEAAXW4AnimationMode@@@Z
-    MCAPI void setAnimationMode(::AnimationMode);
-
-    // symbol: ?setAnimationSeconds@StructureSettings@@QEAAXM@Z
-    MCAPI void setAnimationSeconds(float);
-
     // symbol: ?setIgnoreBlocks@StructureSettings@@QEAAX_N@Z
     MCAPI void setIgnoreBlocks(bool);
 
@@ -125,18 +77,6 @@ public:
 
     // symbol: ?setIntegritySeed@StructureSettings@@QEAAXI@Z
     MCAPI void setIntegritySeed(uint);
-
-    // symbol: ?setIntegrityValue@StructureSettings@@QEAAXM@Z
-    MCAPI void setIntegrityValue(float);
-
-    // symbol: ?setLastTouchedByPlayerID@StructureSettings@@QEAAXUActorUniqueID@@@Z
-    MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID);
-
-    // symbol: ?setMirror@StructureSettings@@QEAAXW4Mirror@@@Z
-    MCAPI void setMirror(::Mirror);
-
-    // symbol: ?setPaletteName@StructureSettings@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setPaletteName(std::string);
 
     // symbol: ?setPivot@StructureSettings@@QEAAXAEBVVec3@@@Z
     MCAPI void setPivot(class Vec3 const&);

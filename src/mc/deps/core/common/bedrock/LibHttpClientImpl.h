@@ -12,6 +12,7 @@ namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
 namespace Bedrock::Http::Internal { class IResponseBody; }
+namespace Bedrock::Threading { class Mutex; }
 struct HC_CALL;
 // clang-format on
 
@@ -96,8 +97,8 @@ private:
     // symbol: ?sWeakThis@LibHttpClientImpl@Http@Bedrock@@0V?$weak_ptr@VLibHttpClientImpl@Http@Bedrock@@@std@@A
     MCAPI static std::weak_ptr<class Bedrock::Http::LibHttpClientImpl> sWeakThis;
 
-    // symbol: ?sWeakThisMutex@LibHttpClientImpl@Http@Bedrock@@0Vmutex@std@@A
-    MCAPI static std::mutex sWeakThisMutex;
+    // symbol: ?sWeakThisMutex@LibHttpClientImpl@Http@Bedrock@@0VMutex@Threading@3@A
+    MCAPI static class Bedrock::Threading::Mutex sWeakThisMutex;
 
     // NOLINTEND
 

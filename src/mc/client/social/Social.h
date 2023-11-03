@@ -18,9 +18,6 @@ namespace Social::Events { class AggregationEventListener; }
 namespace Social::Events { class Event; }
 namespace Social::Events { class IEventListener; }
 namespace Social::Events { class Property; }
-namespace Social::Events { class SummaryBlock; }
-namespace Social::Events { class SummaryEvent; }
-namespace Social::Events { class SummaryProperty; }
 // clang-format on
 
 namespace Social {

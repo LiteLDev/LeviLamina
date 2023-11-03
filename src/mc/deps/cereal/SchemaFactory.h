@@ -8,7 +8,6 @@ namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct Schema; }
 namespace cereal { struct SerializerTraits; }
 namespace cereal::internal { class BasicCompositeSchema; }
-namespace cereal::internal { class BasicSchema; }
 // clang-format on
 
 namespace cereal {
@@ -56,11 +55,6 @@ public:
 
     // symbol: ?schema@SchemaFactory@cereal@@QEBA?AUSchema@2@XZ
     MCAPI struct cereal::Schema schema() const;
-
-    // symbol:
-    // ?lookup@SchemaFactory@cereal@@SAPEBVBasicSchema@internal@2@AEBUReflectionCtx@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-    MCAPI static class cereal::internal::BasicSchema const*
-    lookup(struct cereal::ReflectionCtx const&, std::string const&, std::string const&);
 
     // NOLINTEND
 

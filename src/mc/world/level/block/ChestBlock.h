@@ -8,6 +8,7 @@
 #include "mc/enums/Flip.h"
 #include "mc/enums/MaterialType.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/ActorBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -106,8 +107,9 @@ public:
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 65, symbol: ?shouldConnectToRedstone@ChestBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    // vIndex: 65, symbol:
+    // ?shouldConnectToRedstone@ChestBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
     // vIndex: 72, symbol: ?dispense@ChestBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
@@ -132,10 +134,6 @@ public:
 
     // vIndex: 106, symbol: __unk_vfn_106
     virtual void __unk_vfn_106();
-
-    // vIndex: 107, symbol: ?getPlacementBlock@ChestBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
 
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();

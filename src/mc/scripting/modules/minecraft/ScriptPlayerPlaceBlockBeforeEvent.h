@@ -26,9 +26,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
-    MCAPI ScriptPlayerPlaceBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&&);
-
     // symbol: ??0ScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBU01@@Z
     MCAPI ScriptPlayerPlaceBlockBeforeEvent(struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
 
@@ -40,9 +37,6 @@ public:
     // symbol: ??4ScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&
     operator=(struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent&&);
-
-    // symbol: ??1ScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptPlayerPlaceBlockBeforeEvent();
 
     // symbol:
     // ?bind@ScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ

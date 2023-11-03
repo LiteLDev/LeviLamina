@@ -54,9 +54,6 @@ public:
     // ?runTimeout@ScriptSystem@ScriptModuleMinecraft@@QEAAIV?$Closure@$$A6AXXZ$$V@Scripting@@V?$optional@I@std@@@Z
     MCAPI uint runTimeout(class Scripting::Closure<void(void)>, std::optional<uint>);
 
-    // symbol: ??1ScriptSystem@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptSystem();
-
     // symbol:
     // ?bind@ScriptSystem@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptSystem@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptSystem> bind();

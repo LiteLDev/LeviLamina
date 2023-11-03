@@ -3,17 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/ArmorSlot.h"
+#include "mc/enums/GameType.h"
 #include "mc/enums/Mirror.h"
 #include "mc/enums/Rotation.h"
 #include "mc/external/scripting/EnumBindingBuilder.h"
 #include "mc/external/scripting/ErrorBindingBuilder.h"
 #include "mc/external/scripting/InterfaceBindingBuilder.h"
 #include "mc/gametest/framework/GameTestErrorType.h"
+#include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class EnableNonOwnerReferences; }
+namespace ScriptModuleGameTest { class ScriptGameTestConnectivity; }
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { class BaseGameTestInstance; }

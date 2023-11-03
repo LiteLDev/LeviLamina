@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/StackRefResultT.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
@@ -15,11 +14,11 @@ class Actor;
 class Player;
 class Scoreboard;
 class Vec3;
-class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptCamera; }
 namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
+namespace ScriptModuleMinecraft { struct ScriptMusicOptions; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerSoundOptions; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptScreenDisplay; }
@@ -27,7 +26,6 @@ namespace ScriptModuleMinecraft { struct ScriptSoundOptions; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct Error; }
-struct EntityRefTraits;
 struct ScoreboardId;
 // clang-format on
 
@@ -65,9 +63,6 @@ public:
     // vIndex: 10, symbol:
     // ?_getScoreboardId@ScriptPlayer@ScriptModuleMinecraft@@EEBAAEBUScoreboardId@@AEBVScoreboard@@@Z
     virtual struct ScoreboardId const& _getScoreboardId(class Scoreboard const&) const;
-
-    // symbol: ??1ScriptPlayer@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptPlayer();
 
     // symbol: ??0ScriptPlayer@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptPlayer(class ScriptModuleMinecraft::ScriptPlayer&&);
@@ -139,6 +134,11 @@ public:
     MCAPI class ScriptModuleMinecraft::ScriptPlayer& operator=(class ScriptModuleMinecraft::ScriptPlayer&&);
 
     // symbol:
+    // ?playMusic@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@UScriptMusicOptions@ScriptModuleMinecraft@@@6@@Z
+    MCAPI class Scripting::Result<void>
+    playMusic(std::string const&, std::optional<struct ScriptModuleMinecraft::ScriptMusicOptions>);
+
+    // symbol:
     // ?playSound@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@UScriptPlayerSoundOptions@ScriptModuleMinecraft@@@6@@Z
     MCAPI class Scripting::Result<void>
     playSound(std::string const&, std::optional<struct ScriptModuleMinecraft::ScriptPlayerSoundOptions>);
@@ -151,6 +151,11 @@ public:
     // symbol:
     // ?postClientMessage@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI class Scripting::Result<void> postClientMessage(std::string const&, std::string const&);
+
+    // symbol:
+    // ?queueMusic@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@UScriptMusicOptions@ScriptModuleMinecraft@@@6@@Z
+    MCAPI class Scripting::Result<void>
+    queueMusic(std::string const&, std::optional<struct ScriptModuleMinecraft::ScriptMusicOptions>);
 
     // symbol: ?resetPlayerLevel@ScriptPlayer@ScriptModuleMinecraft@@QEBA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> resetPlayerLevel() const;
@@ -177,6 +182,9 @@ public:
     // ?startItemCooldown@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI class Scripting::Result<void> startItemCooldown(std::string const&, int);
 
+    // symbol: ?stopMusic@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<void> stopMusic();
+
     // symbol: ?tryGetPlayer@ScriptPlayer@ScriptModuleMinecraft@@QEBAPEAVPlayer@@XZ
     MCAPI class Player* tryGetPlayer() const;
 
@@ -189,20 +197,19 @@ public:
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>
     getHandle(class Player const&, class Scripting::WeakLifetimeScope const&);
 
-    // symbol:
-    // ?getHandle@ScriptPlayer@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$StackRefResultT@UEntityRefTraits@@@@AEBVWeakLifetimeScope@4@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>
-    getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const&);
-
-    // symbol:
-    // ?getHandle@ScriptPlayer@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@4@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>
-    getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const&);
-
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
+    // symbol:
+    // ?_playOrQueueMusic@ScriptPlayer@ScriptModuleMinecraft@@AEAA?AV?$Result@X$$V@Scripting@@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@UScriptMusicOptions@ScriptModuleMinecraft@@@7@_N@Z
+    MCAPI class Scripting::Result<void> _playOrQueueMusic(
+        class Player&,
+        std::string const&,
+        std::optional<struct ScriptModuleMinecraft::ScriptMusicOptions>,
+        bool
+    );
+
     // symbol:
     // ?_playSoundInternal@ScriptPlayer@ScriptModuleMinecraft@@AEAA?AV?$Result@X$$V@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@UScriptPlayerSoundOptions@ScriptModuleMinecraft@@@6@@Z
     MCAPI class Scripting::Result<void>

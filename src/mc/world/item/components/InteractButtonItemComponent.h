@@ -15,6 +15,7 @@ class InteractButtonItemComponent : public ::ItemComponent {
 public:
     // prevent constructor by default
     InteractButtonItemComponent(InteractButtonItemComponent const&);
+    InteractButtonItemComponent();
 
 public:
     // NOLINTBEGIN
@@ -25,21 +26,18 @@ public:
     virtual bool isNetworkComponent() const;
 
     // vIndex: 4, symbol:
-    // ?buildNetworkTag@InteractButtonItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx&) const;
+    // ?buildNetworkTag@InteractButtonItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
     // vIndex: 5, symbol:
-    // ?initializeFromNetwork@InteractButtonItemComponent@@UEAA_NAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
-    virtual bool initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx&);
+    // ?initializeFromNetwork@InteractButtonItemComponent@@UEAA_NAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    virtual bool initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
     // vIndex: 9, symbol: ?_initializeComponent@InteractButtonItemComponent@@UEBAXXZ
     virtual void _initializeComponent() const;
 
     // symbol: ??1InteractButtonItemComponent@@UEAA@XZ
     MCVAPI ~InteractButtonItemComponent();
-
-    // symbol: ??0InteractButtonItemComponent@@QEAA@XZ
-    MCAPI InteractButtonItemComponent();
 
     // symbol:
     // ?getInteractText@InteractButtonItemComponent@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

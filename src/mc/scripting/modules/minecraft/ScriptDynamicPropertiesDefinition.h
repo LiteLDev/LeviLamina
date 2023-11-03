@@ -61,9 +61,6 @@ public:
     MCAPI class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&
     operator=(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
 
-    // symbol: ??1ScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptDynamicPropertiesDefinition();
-
     // symbol:
     // ?bind@ScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptDynamicPropertiesDefinition@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>

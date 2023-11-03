@@ -12,11 +12,11 @@ public:
     std::vector<std::unique_ptr<MolangVariable>> mVariables;
     bool                                         mHasPublicVariables;
 
-    // prevent constructor by default
-    MolangVariableMap();
-
 public:
     // NOLINTBEGIN
+    // symbol: ??0MolangVariableMap@@QEAA@XZ
+    MCAPI MolangVariableMap();
+
     // symbol: ??0MolangVariableMap@@QEAA@$$QEAV0@@Z
     MCAPI MolangVariableMap(class MolangVariableMap&&);
 

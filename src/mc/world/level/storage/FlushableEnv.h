@@ -15,15 +15,15 @@ public:
     virtual void __unk_vfn_0();
 
     // vIndex: 1, symbol:
-    // ?NewSequentialFile@EnvWrapper@leveldb@@UEAA?AVStatus@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVSequentialFile@2@@Z
+    // ?NewSequentialFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVSequentialFile@3@@Z
     virtual leveldb::Status NewSequentialFile(std::string const&, leveldb::SequentialFile**);
 
     // vIndex: 2, symbol:
-    // ?NewRandomAccessFile@EnvWrapper@leveldb@@UEAA?AVStatus@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVRandomAccessFile@2@@Z
+    // ?NewRandomAccessFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVRandomAccessFile@3@@Z
     virtual leveldb::Status NewRandomAccessFile(std::string const&, leveldb::RandomAccessFile**);
 
     // vIndex: 3, symbol:
-    // ?NewWritableFile@EnvWrapper@leveldb@@UEAA?AVStatus@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@2@@Z
+    // ?NewWritableFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
     virtual leveldb::Status NewWritableFile(std::string const&, leveldb::WritableFile**);
 
     // vIndex: 4, symbol:
@@ -39,7 +39,7 @@ public:
     virtual leveldb::Status GetChildren(std::string const&, std::vector<std::string>*);
 
     // vIndex: 7, symbol:
-    // ?DeleteFileA@EnvWrapper@leveldb@@UEAA?AVStatus@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // ?DeleteFileA@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual leveldb::Status DeleteFileA(std::string const&);
 
     // vIndex: 8, symbol:
@@ -55,7 +55,7 @@ public:
     virtual leveldb::Status GetFileSize(std::string const&, uint64*);
 
     // vIndex: 11, symbol:
-    // ?RenameFile@EnvWrapper@leveldb@@UEAA?AVStatus@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+    // ?RenameFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     virtual leveldb::Status RenameFile(std::string const&, std::string const&);
 
     // vIndex: 12, symbol:

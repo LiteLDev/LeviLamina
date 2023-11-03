@@ -55,9 +55,6 @@ public:
     // vIndex: 9, symbol: ?_isValid@ScriptSimulatedPlayer@ScriptModuleGameTest@@EEBA_NXZ
     virtual bool _isValid() const;
 
-    // symbol: ??1ScriptSimulatedPlayer@ScriptModuleGameTest@@UEAA@XZ
-    MCVAPI ~ScriptSimulatedPlayer();
-
     // symbol: ?attack@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> attack() const;
 
@@ -68,6 +65,10 @@ public:
     // symbol:
     // ?breakBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@AEBVVec3@@W4ScriptFacing@ScriptModuleMinecraft@@@Z
     MCAPI class Scripting::Result<bool> breakBlock(class Vec3 const&, ::ScriptModuleMinecraft::ScriptFacing) const;
+
+    // symbol:
+    // ?chat@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI class Scripting::Result<void> chat(std::string const&) const;
 
     // symbol: ?disconnect@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> disconnect() const;

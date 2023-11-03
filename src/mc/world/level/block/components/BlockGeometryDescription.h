@@ -26,17 +26,17 @@ public:
     // ?getName@BlockGeometryDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
 
-    // vIndex: 2, symbol: ?initializeComponent@BlockGeometryDescription@@UEBAXAEAVEntityContext@@@Z
+    // vIndex: 2, symbol: ?initializeComponent@BlockComponentDescription@@UEBAXAEAVEntityContext@@@Z
     virtual void initializeComponent(class EntityContext&) const;
 
-    // vIndex: 3, symbol: ?initializeComponent@BlockComponentDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 3, symbol: ?initializeComponent@BlockGeometryDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponent(class BlockComponentStorage&) const;
 
-    // vIndex: 4, symbol: ?initializeComponentFromCode@BlockGeometryDescription@@UEBAXAEAVEntityContext@@@Z
-    virtual void initializeComponentFromCode(class EntityContext&) const;
-
-    // vIndex: 5, symbol: ?initializeComponentFromCode@BlockComponentDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 4, symbol: ?initializeComponentFromCode@BlockGeometryDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponentFromCode(class BlockComponentStorage&) const;
+
+    // vIndex: 5, symbol: __unk_vfn_5
+    virtual void __unk_vfn_5();
 
     // vIndex: 6, symbol:
     // ?buildSchema@BlockComponentDescription@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z
@@ -48,12 +48,12 @@ public:
     virtual bool isNetworkComponent() const;
 
     // vIndex: 8, symbol:
-    // ?buildNetworkTag@BlockComponentDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAUReflectionCtx@cereal@@@Z
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx&) const;
+    // ?buildNetworkTag@BlockComponentDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
 
     // vIndex: 9, symbol:
-    // ?initializeFromNetwork@BlockComponentDescription@@UEAAXAEBVCompoundTag@@AEAUReflectionCtx@cereal@@@Z
-    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx&);
+    // ?initializeFromNetwork@BlockComponentDescription@@UEAAXAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
     // vIndex: 10, symbol: ?handleVersionBasedInitialization@BlockGeometryDescription@@UEAAXAEBVSemVersion@@@Z
     virtual void handleVersionBasedInitialization(class SemVersion const&);

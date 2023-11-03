@@ -45,5 +45,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
+    auto& $sNextId() { return sNextId; }
+
     // NOLINTEND
 };

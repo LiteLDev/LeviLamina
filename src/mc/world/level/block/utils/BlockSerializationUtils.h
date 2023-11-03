@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/world/level/block/utils/NBTState.h"
 
 // auto generated forward declare list
@@ -23,6 +24,11 @@ MCAPI void clearBlockReplaceDataMap();
 
 // symbol: ?clearNBTToBlockCache@BlockSerializationUtils@@YAXXZ
 MCAPI void clearNBTToBlockCache();
+
+// symbol:
+// ?getBlockFromNBT@BlockSerializationUtils@@YAAEBVBlock@@AEBVCompoundTag@@V?$NonOwnerPointer@VIUnknownBlockTypeRegistry@@@Bedrock@@@Z
+MCAPI class Block const&
+getBlockFromNBT(class CompoundTag const&, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>);
 
 // symbol: ?initBlockReplaceDataMap@BlockSerializationUtils@@YAXXZ
 MCAPI void initBlockReplaceDataMap();

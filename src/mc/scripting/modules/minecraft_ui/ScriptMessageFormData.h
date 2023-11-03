@@ -90,9 +90,6 @@ public:
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
     titleV010(std::string const&);
 
-    // symbol: ??1ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA@XZ
-    MCAPI ~ScriptMessageFormData();
-
     // symbol:
     // ?bind@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@SA?AV?$ClassBindingBuilder@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>

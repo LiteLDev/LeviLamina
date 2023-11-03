@@ -16,6 +16,9 @@ namespace ScriptModuleMinecraft { struct ScriptItemUseBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseOnBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPistonActionBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithBlockBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithEntityBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerLeaveBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockBeforeEvent; }
 // clang-format on
 
@@ -30,6 +33,26 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0();
+
+    // vIndex: 1, symbol: __unk_vfn_1
+    virtual void __unk_vfn_1();
+
+    // vIndex: 2, symbol: __unk_vfn_2
+    virtual void __unk_vfn_2();
+
+    // vIndex: 3, symbol: __unk_vfn_3
+    virtual void __unk_vfn_3();
+
+    // vIndex: 4, symbol: __unk_vfn_4
+    virtual void __unk_vfn_4();
+
+    // vIndex: 5, symbol:
+    // ?onBeforePlayerLeave@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptPlayerLeaveBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    virtual void onBeforePlayerLeave(class Scripting::StrongTypedObjectHandle<
+                                     struct ScriptModuleMinecraft::ScriptPlayerLeaveBeforeEvent>);
+
     // symbol:
     // ?onBeforeActivatePiston@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptPistonActionBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     MCVAPI void onBeforeActivatePiston(class Scripting::StrongTypedObjectHandle<
@@ -75,6 +98,18 @@ public:
     // ?onBeforePlayerBreakBlock@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     MCVAPI void onBeforePlayerBreakBlock(class Scripting::StrongTypedObjectHandle<
                                          struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent>);
+
+    // symbol:
+    // ?onBeforePlayerInteractWithBlock@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptPlayerInteractWithBlockBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    MCVAPI void
+        onBeforePlayerInteractWithBlock(class Scripting::StrongTypedObjectHandle<
+                                        struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>);
+
+    // symbol:
+    // ?onBeforePlayerInteractWithEntity@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptPlayerInteractWithEntityBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    MCVAPI void
+        onBeforePlayerInteractWithEntity(class Scripting::StrongTypedObjectHandle<
+                                         struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>);
 
     // symbol:
     // ?onBeforePlayerPlaceBlock@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace CameraPresetsInternals { struct VerboseCameraList; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace CameraPresetsInternals {

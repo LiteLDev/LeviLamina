@@ -86,6 +86,14 @@ public:
     // symbol: ?init@ActorFactory@@QEAAXAEBVExperiments@@@Z
     MCAPI void init(class Experiments const&);
 
+    // symbol: ?loadActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@PEAVCompoundTag@@AEAVDataLoadHelper@@@Z
+    MCAPI class OwnerPtrT<struct EntityRefTraits> loadActor(class CompoundTag*, class DataLoadHelper&);
+
+    // symbol:
+    // ?loadActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@PEAVCompoundTag@@AEAVDataLoadHelper@@AEBVDimensionHeightRange@@@Z
+    MCAPI class OwnerPtrT<struct EntityRefTraits>
+    loadActor(class CompoundTag*, class DataLoadHelper&, class DimensionHeightRange const&);
+
     // symbol:
     // ?loadActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@PEAVCompoundTag@@AEAVDataLoadHelper@@AEBVDimensionHeightRange@@PEBVLevelChunk@@@Z
     MCAPI class OwnerPtrT<struct EntityRefTraits>

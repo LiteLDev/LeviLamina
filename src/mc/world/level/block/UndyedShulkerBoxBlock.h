@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/ChestBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -230,5 +231,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
+    auto& $SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
+
     // NOLINTEND
 };

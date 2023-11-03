@@ -52,22 +52,12 @@ public:
     // symbol: ?writeArrayValue@StyledWriter@Json@@AEAAXAEBVValue@2@@Z
     MCAPI void writeArrayValue(class Json::Value const&);
 
-    // symbol: ?writeCommentAfterValueOnSameLine@StyledWriter@Json@@AEAAXAEBVValue@2@@Z
-    MCAPI void writeCommentAfterValueOnSameLine(class Json::Value const&);
-
-    // symbol: ?writeCommentBeforeValue@StyledWriter@Json@@AEAAXAEBVValue@2@@Z
-    MCAPI void writeCommentBeforeValue(class Json::Value const&);
-
     // symbol: ?writeValue@StyledWriter@Json@@AEAAXAEBVValue@2@@Z
     MCAPI void writeValue(class Json::Value const&);
 
     // symbol:
     // ?writeWithIndent@StyledWriter@Json@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void writeWithIndent(std::string const&);
-
-    // symbol:
-    // ?normalizeEOL@StyledWriter@Json@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z
-    MCAPI static std::string normalizeEOL(std::string const&);
 
     // NOLINTEND
 };

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 struct ComponentInfo {
 public:
     // prevent constructor by default
@@ -19,8 +24,8 @@ public:
     // symbol: ??1ComponentInfo@@QEAA@XZ
     MCAPI ~ComponentInfo();
 
-    // symbol: ?bindType@ComponentInfo@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@ComponentInfo@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 };

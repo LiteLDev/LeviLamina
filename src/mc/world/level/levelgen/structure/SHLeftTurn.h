@@ -18,7 +18,7 @@ public:
     // vIndex: 0, symbol: __unk_vfn_0
     virtual void __unk_vfn_0();
 
-    // vIndex: 1, symbol: ?moveBoundingBox@MineshaftRoom@@UEAAXHHH@Z
+    // vIndex: 1, symbol: ?moveBoundingBox@TemplateStructurePiece@@UEAAXHHH@Z
     virtual void moveBoundingBox(int, int, int);
 
     // vIndex: 2, symbol: ?getType@SHLeftTurn@@UEBA?AW4StructurePieceType@@XZ

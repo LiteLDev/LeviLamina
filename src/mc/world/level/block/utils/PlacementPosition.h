@@ -124,8 +124,11 @@ public:
     // symbol: ??1PlacementPosition@BlockTrait@@UEAA@XZ
     MCVAPI ~PlacementPosition();
 
-    // symbol: ??0PlacementPosition@BlockTrait@@QEAA@_N0@Z
-    MCAPI PlacementPosition(bool, bool);
+    // symbol: ?BlockFace@PlacementPosition@BlockTrait@@SA?AV12@XZ
+    MCAPI static class BlockTrait::PlacementPosition BlockFace();
+
+    // symbol: ?VerticalHalf@PlacementPosition@BlockTrait@@SA?AV12@XZ
+    MCAPI static class BlockTrait::PlacementPosition VerticalHalf();
 
     // symbol: ?bindType@PlacementPosition@BlockTrait@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
+
 class SaveCommand {
 public:
     // SaveCommand inner types define
@@ -48,8 +53,8 @@ private:
     // ?mSaveAllFileList@SaveCommand@@0V?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@A
     MCAPI static std::vector<struct SnapshotFilenameAndLength> mSaveAllFileList;
 
-    // symbol: ?mSaveAllMutex@SaveCommand@@0Vmutex@std@@A
-    MCAPI static std::mutex mSaveAllMutex;
+    // symbol: ?mSaveAllMutex@SaveCommand@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex mSaveAllMutex;
 
     // symbol: ?mState@SaveCommand@@0W4State@1@A
     MCAPI static ::SaveCommand::State mState;

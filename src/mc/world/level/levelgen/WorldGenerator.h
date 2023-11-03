@@ -44,8 +44,10 @@ public:
     // symbol: ?debugRender@WorldGenerator@@UEAAXXZ
     MCVAPI void debugRender();
 
-    // symbol: ?findNearestStructureFeature@WorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z
-    MCVAPI bool findNearestStructureFeature(::StructureFeatureType, class BlockPos const&, class BlockPos&, bool);
+    // symbol:
+    // ?findNearestStructureFeature@WorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_NV?$optional@VHashedString@@@std@@@Z
+    MCVAPI bool
+    findNearestStructureFeature(::StructureFeatureType, class BlockPos const&, class BlockPos&, bool, std::optional<class HashedString>);
 
     // symbol: ?findStructureFeatureTypeAt@WorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
     MCVAPI ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const&);
@@ -102,5 +104,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
+    auto& $TICKING_QUEUE_PASS_LIMIT() { return TICKING_QUEUE_PASS_LIMIT; }
+
     // NOLINTEND
 };

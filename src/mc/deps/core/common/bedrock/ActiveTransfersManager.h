@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class NetworkIdentifier;
-class NetworkSystem;
+class ServerNetworkSystem;
 namespace Bedrock { class EnableNonOwnerReferences; }
 namespace ClientBlobCache::Server { class Blob; }
 namespace ClientBlobCache::Server { class TransferBuilder; }
@@ -75,8 +75,8 @@ public:
     // ?startTransfer@ActiveTransfersManager@Server@ClientBlobCache@@QEBA?AVTransferBuilder@23@AEBVNetworkIdentifier@@@Z
     MCAPI class ClientBlobCache::Server::TransferBuilder startTransfer(class NetworkIdentifier const&) const;
 
-    // symbol: ?updateNetworkConditions@ActiveTransfersManager@Server@ClientBlobCache@@QEAAXAEAVNetworkSystem@@@Z
-    MCAPI void updateNetworkConditions(class NetworkSystem&);
+    // symbol: ?updateNetworkConditions@ActiveTransfersManager@Server@ClientBlobCache@@QEAAXAEAVServerNetworkSystem@@@Z
+    MCAPI void updateNetworkConditions(class ServerNetworkSystem&);
 
     // NOLINTEND
 

@@ -9,7 +9,6 @@
 // clang-format off
 class AppPlatform;
 namespace Social::Events { class Event; }
-namespace Social::Events { class SummaryEvent; }
 // clang-format on
 
 namespace Social::Events {
@@ -31,18 +30,13 @@ public:
     virtual void
     recordEvent(class Social::Events::Event const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&) = 0;
 
-    // vIndex: 2, symbol:
-    // ?recordSummaryEvent@IEventListener@Events@Social@@UEAAXAEBVSummaryEvent@23@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-    virtual void
-    recordSummaryEvent(class Social::Events::SummaryEvent const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
-
-    // vIndex: 3, symbol: ?sendEvents@AggregationEventListener@Events@Social@@UEAAX_N@Z
+    // vIndex: 2, symbol: ?sendEvents@AggregationEventListener@Events@Social@@UEAAX_N@Z
     virtual void sendEvents(bool) = 0;
 
-    // vIndex: 4, symbol: ?getEventTagsFilter@OneDSEventListener@Events@Social@@UEBAHXZ
+    // vIndex: 3, symbol: ?getEventTagsFilter@OneDSEventListener@Events@Social@@UEBAHXZ
     virtual int getEventTagsFilter() const = 0;
 
-    // vIndex: 5, symbol: ?stopDebugEventLogging@AggregationEventListener@Events@Social@@UEAAXXZ
+    // vIndex: 4, symbol: ?stopDebugEventLogging@AggregationEventListener@Events@Social@@UEAAXXZ
     virtual void stopDebugEventLogging() = 0;
 
     // symbol: ??1IEventListener@Events@Social@@UEAA@XZ

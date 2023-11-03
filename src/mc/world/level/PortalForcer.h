@@ -33,6 +33,9 @@ public:
     // symbol: ?createPortal@PortalForcer@@QEAAAEBVPortalRecord@@AEBVActor@@H@Z
     MCAPI class PortalRecord const& createPortal(class Actor const&, int);
 
+    // symbol: ?findPortal@PortalForcer@@QEBA_NV?$AutomaticID@VDimension@@H@@AEBVBlockPos@@HAEAV3@@Z
+    MCAPI bool findPortal(DimensionType, class BlockPos const&, int, class BlockPos&) const;
+
     // symbol: ?force@PortalForcer@@QEAAXAEAVActor@@AEBUDimensionTransitionComponent@@@Z
     MCAPI void force(class Actor&, struct DimensionTransitionComponent const&);
 

@@ -4,9 +4,6 @@
 
 namespace MobJump {
 // NOLINTBEGIN
-// symbol: ?getJumpStartPosition@MobJump@@YA?AVVec3@@AEBVEntityContext@@@Z
-MCAPI class Vec3 getJumpStartPosition(class EntityContext const&);
-
 // symbol: ?getNoJumpDelay@MobJump@@YAHAEBVEntityContext@@@Z
 MCAPI int getNoJumpDelay(class EntityContext const&);
 
@@ -24,6 +21,9 @@ MCAPI void setJumpStartPosition(class EntityContext&, class Vec3 const&);
 
 // symbol: ?setJumpVelRedux@MobJump@@YAXAEAVEntityContext@@_N@Z
 MCAPI void setJumpVelRedux(class EntityContext&, bool);
+
+// symbol: ?setJumping@MobJump@@YAXAEAVEntityContext@@_N@Z
+MCAPI void setJumping(class EntityContext&, bool);
 
 // symbol: ?setNoJumpDelay@MobJump@@YAXAEAVEntityContext@@H@Z
 MCAPI void setNoJumpDelay(class EntityContext&, int);

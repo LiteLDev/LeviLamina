@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Threading { class Mutex; }
 namespace Core { class FileOpenMode; }
 namespace Core { class FileSystemImpl; }
 namespace Core { class Result; }
@@ -144,8 +145,8 @@ private:
     // symbol: ?sAllFiles@FileImpl@Core@@0V?$vector@PEAVFileImpl@Core@@V?$allocator@PEAVFileImpl@Core@@@std@@@std@@A
     MCAPI static std::vector<class Core::FileImpl*> sAllFiles;
 
-    // symbol: ?sAllFilesLock@FileImpl@Core@@0Vmutex@std@@A
-    MCAPI static std::mutex sAllFilesLock;
+    // symbol: ?sAllFilesLock@FileImpl@Core@@0VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex sAllFilesLock;
 
     // NOLINTEND
 

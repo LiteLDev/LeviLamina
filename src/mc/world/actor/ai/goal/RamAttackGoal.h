@@ -113,8 +113,5 @@ public:
     // symbol: ?_tryKnockbackTarget@RamAttackGoal@@AEAAXXZ
     MCAPI void _tryKnockbackTarget();
 
-    // symbol: ?_verifyTargetStillInPositionAndPrepareForRamAttack@RamAttackGoal@@AEAA_NXZ
-    MCAPI bool _verifyTargetStillInPositionAndPrepareForRamAttack();
-
     // NOLINTEND
 };

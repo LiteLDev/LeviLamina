@@ -93,15 +93,15 @@ public:
     virtual class ItemContext _getItemContext(int) const = 0;
 
     // symbol:
-    // ?addItem@ScriptContainer@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBVScriptItemStack@2@@Z
+    // ?addItem@ScriptContainer@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@AEBVScriptItemStack@2@@Z
     MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
     addItem(class ScriptModuleMinecraft::ScriptItemStack const&) const;
 
     // symbol:
-    // ?transferItem@ScriptContainer@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@HAEAVScriptContainerWrapper@2@@Z
+    // ?transferItem@ScriptContainer@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@HAEAVScriptContainerWrapper@2@@Z
     MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
     transferItem(int, class ScriptModuleMinecraft::ScriptContainerWrapper&) const;
 
     // symbol:

@@ -8,6 +8,7 @@
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
 #include "mc/enums/SignTextSide.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/ActorBlock.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -52,10 +53,6 @@ public:
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
-
-    // vIndex: 10, symbol: ?getOutline@SignBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
-    virtual class AABB const&
-    getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
     // vIndex: 12, symbol: ?getVisualShape@SignBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
@@ -236,9 +233,6 @@ public:
         class BlockPos const&,
         uchar
     );
-
-    // symbol: ?_getShape@SignBlock@@CAXHAEAVAABB@@@Z
-    MCAPI static void _getShape(int, class AABB&);
 
     // NOLINTEND
 };

@@ -38,11 +38,4 @@ public:
     MCAPI FindCoverGoal(class Mob&, float, float);
 
     // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?getHidePos@FindCoverGoal@@AEBA_NAEAVVec3@@@Z
-    MCAPI bool getHidePos(class Vec3&) const;
-
-    // NOLINTEND
 };

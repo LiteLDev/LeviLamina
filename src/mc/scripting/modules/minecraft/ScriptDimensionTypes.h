@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list
@@ -29,11 +28,6 @@ public:
     // ?get@ScriptDimensionTypes@ScriptModuleMinecraft@@QEAA?AV?$optional@VScriptDimensionType@ScriptModuleMinecraft@@@std@@VWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
     MCAPI std::optional<class ScriptModuleMinecraft::ScriptDimensionType>
           get(class Scripting::WeakLifetimeScope, std::string const&);
-
-    // symbol:
-    // ?getAll@ScriptDimensionTypes@ScriptModuleMinecraft@@QEAA?AV?$vector@V?$StrongTypedObjectHandle@VScriptDimensionType@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptDimensionType@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@VWeakLifetimeScope@Scripting@@@Z
-    MCAPI std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimensionType>>
-          getAll(class Scripting::WeakLifetimeScope);
 
     // symbol:
     // ?_getDimensionStringNames@ScriptDimensionTypes@ScriptModuleMinecraft@@SA?AV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ

@@ -48,9 +48,9 @@ public:
     bind();
 
     // symbol:
-    // ?tryCreate@ScriptBlockPotionContainerComponent@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptBlockPotionContainerComponent@ScriptModuleMinecraft@@@Scripting@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@4@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<
-        class ScriptModuleMinecraft::ScriptBlockPotionContainerComponent>
+    // ?tryCreate@ScriptBlockPotionContainerComponent@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptBlockPotionContainerComponent@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI static std::optional<
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPotionContainerComponent>>
     tryCreate(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
 
     // symbol: ?ComponentId@ScriptBlockPotionContainerComponent@ScriptModuleMinecraft@@2PEBDEB

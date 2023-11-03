@@ -3,11 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableQueueForThread.h"
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class EnableQueueForThread; }
+// clang-format on
 
 namespace Bedrock::Threading {
 
-class EnableQueueForMainThread {
+class EnableQueueForMainThread : public ::Bedrock::Threading::EnableQueueForThread {
 public:
     // prevent constructor by default
     EnableQueueForMainThread& operator=(EnableQueueForMainThread const&);

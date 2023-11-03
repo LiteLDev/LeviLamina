@@ -16,7 +16,6 @@ public:
     // prevent constructor by default
     SemVersionConstraint& operator=(SemVersionConstraint const&);
     SemVersionConstraint(SemVersionConstraint const&);
-    SemVersionConstraint();
 
 public:
     // NOLINTBEGIN
@@ -25,6 +24,9 @@ public:
 
     // symbol: ??1SemVersionConstraint@@UEAA@XZ
     MCVAPI ~SemVersionConstraint();
+
+    // symbol: ??0SemVersionConstraint@@QEAA@XZ
+    MCAPI SemVersionConstraint();
 
     // symbol: ?min@SemVersionConstraint@@QEAAAEAV1@AEBVSemVersion@@@Z
     MCAPI class SemVersionConstraint& min(class SemVersion const&);

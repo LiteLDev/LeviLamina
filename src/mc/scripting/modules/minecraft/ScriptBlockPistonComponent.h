@@ -62,8 +62,9 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockPistonComponent> bind();
 
     // symbol:
-    // ?tryCreate@ScriptBlockPistonComponent@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptBlockPistonComponent@ScriptModuleMinecraft@@@Scripting@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@4@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPistonComponent>
+    // ?tryCreate@ScriptBlockPistonComponent@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptBlockPistonComponent@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI static std::optional<
+        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPistonComponent>>
     tryCreate(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
 
     // symbol: ?ComponentId@ScriptBlockPistonComponent@ScriptModuleMinecraft@@2PEBDEB

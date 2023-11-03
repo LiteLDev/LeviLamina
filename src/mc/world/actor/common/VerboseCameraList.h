@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace CameraPresetsInternals {
 
 struct VerboseCameraList {
@@ -23,8 +28,8 @@ public:
     // symbol: ??1VerboseCameraList@CameraPresetsInternals@@QEAA@XZ
     MCAPI ~VerboseCameraList();
 
-    // symbol: ?bindType@VerboseCameraList@CameraPresetsInternals@@SAXXZ
-    MCAPI static void bindType();
+    // symbol: ?bindType@VerboseCameraList@CameraPresetsInternals@@SAXAEAUReflectionCtx@cereal@@@Z
+    MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 };

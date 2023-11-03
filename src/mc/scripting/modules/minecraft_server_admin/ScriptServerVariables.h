@@ -24,9 +24,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ScriptServerVariables@ScriptModuleMinecraftServerAdmin@@QEAA@$$QEAV01@@Z
-    MCAPI ScriptServerVariables(class ScriptModuleMinecraftServerAdmin::ScriptServerVariables&&);
-
     // symbol:
     // ??0ScriptServerVariables@ScriptModuleMinecraftServerAdmin@@QEAA@V?$NonOwnerPointer@VScriptPackConfigurationManager@@@Bedrock@@AEBUContextConfig@Scripting@@@Z
     MCAPI

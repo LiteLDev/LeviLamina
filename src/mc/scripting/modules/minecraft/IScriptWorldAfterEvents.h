@@ -34,6 +34,9 @@ namespace ScriptModuleMinecraft { struct ScriptItemUseOnAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptLeverActionAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPistonActionAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerDimensionChangeAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithBlockAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithEntityAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerJoinAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerLeaveAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockAfterEvent; }
@@ -189,6 +192,21 @@ public:
     // ?onPlayerBreakBlock@IScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptPlayerBreakBlockAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     MCVAPI void onPlayerBreakBlock(class Scripting::StrongTypedObjectHandle<
                                    struct ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent>&);
+
+    // symbol:
+    // ?onPlayerDimensionChange@IScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptPlayerDimensionChangeAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    MCVAPI void onPlayerDimensionChange(class Scripting::StrongTypedObjectHandle<
+                                        struct ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent>&);
+
+    // symbol:
+    // ?onPlayerInteractWithBlock@IScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptPlayerInteractWithBlockAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    MCVAPI void onPlayerInteractWithBlock(class Scripting::StrongTypedObjectHandle<
+                                          struct ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent>&);
+
+    // symbol:
+    // ?onPlayerInteractWithEntity@IScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptPlayerInteractWithEntityAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    MCVAPI void onPlayerInteractWithEntity(class Scripting::StrongTypedObjectHandle<
+                                           struct ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent>&);
 
     // symbol:
     // ?onPlayerJoin@IScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptPlayerJoinAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z

@@ -20,9 +20,5 @@ public:
     // vIndex: 2, symbol: ?isValid@VillageStart@@UEBA_NXZ
     virtual bool isValid() const;
 
-    // symbol: ??0VillageStart@@QEAA@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@HHAEBVIPreliminarySurfaceProvider@@@Z
-    MCAPI
-    VillageStart(class Dimension&, class BiomeSource const&, class Random&, int, int, class IPreliminarySurfaceProvider const&);
-
     // NOLINTEND
 };

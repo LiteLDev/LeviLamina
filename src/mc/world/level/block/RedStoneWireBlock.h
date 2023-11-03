@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -104,8 +105,9 @@ public:
     // vIndex: 63, symbol: ?canContainLiquid@RedStoneWireBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 65, symbol: ?shouldConnectToRedstone@RedStoneWireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
+    // vIndex: 65, symbol:
+    // ?shouldConnectToRedstone@RedStoneWireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@W4Type@Direction@@@Z
+    virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
     // vIndex: 74, symbol: ?onRedstoneUpdate@RedStoneWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
     virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;

@@ -34,6 +34,10 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
+    auto& $instance() { return instance; }
+
+    auto& $referenceCount() { return referenceCount; }
+
     // NOLINTEND
 };
 

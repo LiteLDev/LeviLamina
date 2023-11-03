@@ -57,6 +57,9 @@ public:
     // symbol: ?setSelectedItem@ItemUseInventoryTransaction@@QEAAAEAV1@AEBVItemStack@@@Z
     MCAPI class ItemUseInventoryTransaction& setSelectedItem(class ItemStack const&);
 
+    // symbol: ?setTargetBlock@ItemUseInventoryTransaction@@QEAAAEAV1@AEBVBlock@@@Z
+    MCAPI class ItemUseInventoryTransaction& setTargetBlock(class Block const&);
+
     // NOLINTEND
 
 private:

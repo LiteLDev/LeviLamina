@@ -37,11 +37,11 @@ public:
     // symbol: ?nextGaussianDouble@DelegatingRandom@NoiseUtils@@UEAANXZ
     MCVAPI double nextGaussianDouble();
 
-    // symbol: ?nextInt@DelegatingRandom@NoiseUtils@@UEAAHH@Z
-    MCVAPI int nextInt(int);
-
     // symbol: ?nextInt@DelegatingRandom@NoiseUtils@@UEAAHXZ
     MCVAPI int nextInt();
+
+    // symbol: ?nextInt@DelegatingRandom@NoiseUtils@@UEAAHH@Z
+    MCVAPI int nextInt(int);
 
     // symbol: ?nextLong@DelegatingRandom@NoiseUtils@@UEAA_JXZ
     MCVAPI int64 nextLong();

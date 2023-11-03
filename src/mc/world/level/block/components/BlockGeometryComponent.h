@@ -10,12 +10,14 @@ public:
     // prevent constructor by default
     BlockGeometryComponent& operator=(BlockGeometryComponent const&);
     BlockGeometryComponent(BlockGeometryComponent const&);
-    BlockGeometryComponent();
 
 public:
     // NOLINTBEGIN
     // symbol: ??1BlockGeometryComponent@@UEAA@XZ
     MCVAPI ~BlockGeometryComponent();
+
+    // symbol: ??0BlockGeometryComponent@@QEAA@XZ
+    MCAPI BlockGeometryComponent();
 
     // symbol: ??0BlockGeometryComponent@@QEAA@$$QEAU0@@Z
     MCAPI BlockGeometryComponent(struct BlockGeometryComponent&&);

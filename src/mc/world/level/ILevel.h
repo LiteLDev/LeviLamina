@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,6 +31,13 @@ public:
 
     // symbol: ??1ILevel@@UEAA@XZ
     MCVAPI ~ILevel();
+
+    // symbol: ?addParticleEffect@ILevel@@QEAAXAEBVHashedString@@AEBVVec3@@@Z
+    MCAPI void addParticleEffect(class HashedString const&, class Vec3 const&);
+
+    // symbol:
+    // ?createMapSavedData@ILevel@@QEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@@Z
+    MCAPI class MapItemSavedData& createMapSavedData(struct ActorUniqueID const&, class BlockPos const&, DimensionType);
 
     // NOLINTEND
 };

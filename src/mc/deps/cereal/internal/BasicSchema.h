@@ -7,6 +7,7 @@
 namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
 namespace cereal { struct ReflectionCtx; }
+namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal { struct SerializerTraits; }
@@ -78,6 +79,9 @@ public:
     virtual void
     unpack(std::vector<std::reference_wrapper<class cereal::internal::BasicSchema const>>&, entt::dense_map<std::string, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>&)
         const;
+
+    // vIndex: 6, symbol: ?description@?$CompositeSchema@MX@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
+    virtual struct cereal::SchemaDescription description() const = 0;
 
     // symbol: ??1BasicSchema@internal@cereal@@UEAA@XZ
     MCVAPI ~BasicSchema();

@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class EnableNonOwnerReferences; }
+namespace Bedrock::Threading { class Mutex; }
 namespace Bedrock::Threading { class OSThreadPriority; }
 // clang-format on
 
@@ -62,13 +63,17 @@ protected:
     // symbol: ?sAllPools@WorkerPool@@1V?$SmallSet@PEAVWorkerPool@@@@A
     MCAPI static class SmallSet<class WorkerPool*> sAllPools;
 
-    // symbol: ?sAllPoolsMutex@WorkerPool@@1Vmutex@std@@A
-    MCAPI static std::mutex sAllPoolsMutex;
+    // symbol: ?sAllPoolsMutex@WorkerPool@@1VMutex@Threading@Bedrock@@A
+    MCAPI static class Bedrock::Threading::Mutex sAllPoolsMutex;
 
     // NOLINTEND
 
     // member accessor
 public:
     // NOLINTBEGIN
+    auto& $sAllPools() { return sAllPools; }
+
+    auto& $sAllPoolsMutex() { return sAllPoolsMutex; }
+
     // NOLINTEND
 };

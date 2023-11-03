@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/BlockDescriptor.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -18,6 +21,10 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol:
+    // ??0BlockDescriptorProxy@BlockDescriptorSerializer@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@UState@BlockDescriptor@@V?$allocator@UState@BlockDescriptor@@@std@@@3@0@Z
+    MCAPI BlockDescriptorProxy(std::string, std::vector<struct BlockDescriptor::State>, std::string);
+
     // symbol: ??1BlockDescriptorProxy@BlockDescriptorSerializer@@QEAA@XZ
     MCAPI ~BlockDescriptorProxy();
 

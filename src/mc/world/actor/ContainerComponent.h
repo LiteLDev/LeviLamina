@@ -4,10 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/AutomaticID.h"
-#include "mc/world/ContainerContentChangeListener.h"
 #include "mc/world/containers/ContainerType.h"
 
-class ContainerComponent : public ::ContainerContentChangeListener {
+class ContainerComponent {
 public:
     // prevent constructor by default
     ContainerComponent& operator=(ContainerComponent const&);
@@ -15,8 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?containerContentChanged@ContainerComponent@@UEAAXH@Z
-    virtual void containerContentChanged(int);
+    // symbol: ?containerClosed@ContainerComponent@@UEAAXAEAVPlayer@@@Z
+    MCVAPI void containerClosed(class Player&);
+
+    // symbol: ?containerContentChanged@ContainerComponent@@UEAAXH@Z
+    MCVAPI void containerContentChanged(int);
 
     // symbol: ??1ContainerComponent@@UEAA@XZ
     MCVAPI ~ContainerComponent();

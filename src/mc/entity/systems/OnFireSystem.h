@@ -17,9 +17,6 @@ public:
     // symbol: ?extinguishFire@OnFireSystem@@SAXAEAVActor@@@Z
     MCAPI static void extinguishFire(class Actor&);
 
-    // symbol: ?onFireChanged@OnFireSystem@@SAXAEAVActor@@@Z
-    MCAPI static void onFireChanged(class Actor&);
-
     // symbol: ?setOnFire@OnFireSystem@@SAXAEAVActor@@H@Z
     MCAPI static void setOnFire(class Actor&, int);
 

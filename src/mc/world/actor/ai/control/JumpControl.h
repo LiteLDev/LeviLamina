@@ -42,6 +42,18 @@ public:
     // vIndex: 8, symbol: ?resetSpeedModifier@JumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z
     virtual void resetSpeedModifier(class JumpControlComponent const&, class Mob&);
 
+    // vIndex: 9, symbol: __unk_vfn_9
+    virtual void __unk_vfn_9();
+
+    // vIndex: 10, symbol: __unk_vfn_10
+    virtual void __unk_vfn_10();
+
+    // vIndex: 11, symbol: __unk_vfn_11
+    virtual void __unk_vfn_11();
+
+    // vIndex: 12, symbol: ?initializeInternal@LookControl@@UEAAXAEAVMob@@@Z
+    virtual void initializeInternal(class Mob&);
+
     // symbol: ??0JumpControl@@QEAA@XZ
     MCAPI JumpControl();
 

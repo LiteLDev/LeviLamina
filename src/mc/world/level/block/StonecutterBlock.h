@@ -7,6 +7,7 @@
 #include "mc/enums/FertilizerType.h"
 #include "mc/enums/Flip.h"
 #include "mc/enums/ShapeType.h"
+#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 #include "mc/world/level/block/utils/BlockRenderLayer.h"
@@ -110,10 +111,6 @@ public:
     // vIndex: 106, symbol: __unk_vfn_106
     virtual void __unk_vfn_106();
 
-    // vIndex: 107, symbol: ?getPlacementBlock@StonecutterBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
-
     // vIndex: 122, symbol: __unk_vfn_122
     virtual void __unk_vfn_122();
 
@@ -128,6 +125,9 @@ public:
 
     // vIndex: 130, symbol: __unk_vfn_130
     virtual void __unk_vfn_130();
+
+    // vIndex: 149, symbol: ?init@StonecutterBlock@@UEAAAEAVBlockLegacy@@XZ
+    virtual class BlockLegacy& init();
 
     // vIndex: 153, symbol: __unk_vfn_153
     virtual void __unk_vfn_153();

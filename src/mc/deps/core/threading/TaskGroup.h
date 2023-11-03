@@ -8,6 +8,11 @@
 #include "mc/deps/core/threading/TaskStartInfoEx.h"
 #include "mc/enums/TaskGroupState.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
+
 class TaskGroup {
 public:
     // prevent constructor by default
@@ -98,9 +103,9 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_forAllTasks@TaskGroup@@AEAAXAEAV?$UniqueLock@Vmutex@std@@@Threading@Bedrock@@V?$function@$$A6AXAEBV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z@std@@@Z
+    // ?_forAllTasks@TaskGroup@@AEAAXAEAV?$UniqueLock@VMutex@Threading@Bedrock@@@Threading@Bedrock@@V?$function@$$A6AXAEBV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z@std@@@Z
     MCAPI void
-    _forAllTasks(class Bedrock::Threading::UniqueLock<std::mutex>&, std::function<void(std::shared_ptr<class BackgroundTaskBase> const&)>);
+    _forAllTasks(class Bedrock::Threading::UniqueLock<class Bedrock::Threading::Mutex>&, std::function<void(std::shared_ptr<class BackgroundTaskBase> const&)>);
 
     // symbol: ?_isEmptyInternal@TaskGroup@@AEBA_NXZ
     MCAPI bool _isEmptyInternal() const;

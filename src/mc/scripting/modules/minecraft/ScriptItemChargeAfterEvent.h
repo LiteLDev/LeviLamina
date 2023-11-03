@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 namespace ScriptModuleMinecraft { class ScriptItemEvent; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -26,9 +27,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0ScriptItemChargeAfterEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBUItemChargeEvent@@AEBVWeakLifetimeScope@3@@Z
+    // ??0ScriptItemChargeAfterEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBVPlayer@@AEBUItemChargeEvent@@AEBVWeakLifetimeScope@3@@Z
     MCAPI
-    ScriptItemChargeAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemChargeEvent const&, class Scripting::WeakLifetimeScope const&);
+    ScriptItemChargeAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, class Player const&, struct ItemChargeEvent const&, class Scripting::WeakLifetimeScope const&);
 
     // NOLINTEND
 };

@@ -11,9 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??4PlayerChangeDimensionRequestComponent@@QEAAAEAU0@$$QEAU0@@Z
-    MCAPI struct PlayerChangeDimensionRequestComponent& operator=(struct PlayerChangeDimensionRequestComponent&&);
-
     // symbol: ??1PlayerChangeDimensionRequestComponent@@QEAA@XZ
     MCAPI ~PlayerChangeDimensionRequestComponent();
 

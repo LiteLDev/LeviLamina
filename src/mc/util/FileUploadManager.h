@@ -114,5 +114,7 @@ public:
     // NOLINTBEGIN
     auto& $BOUNDARY() { return BOUNDARY; }
 
+    auto& $CHUNK_UPLOAD_SIZE() { return CHUNK_UPLOAD_SIZE; }
+
     // NOLINTEND
 };
