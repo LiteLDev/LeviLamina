@@ -31,7 +31,7 @@ public:
     float         mIntegrityValue;                            // this+0x60
     uint          mIntegritySeed;                             // this+0x64
 
-    inline StructureSettings(BlockPos const& size, bool ignoreBlocks, bool ignoreEntities) : StructureSettings() {
+    [[nodiscard]] inline StructureSettings(BlockPos const& size, bool ignoreBlocks, bool ignoreEntities) : StructureSettings() {
         setIgnoreBlocks(ignoreBlocks);
         setIgnoreEntities(ignoreEntities);
         setStructureSize(size);

@@ -19,7 +19,7 @@ public:
 
     ByteArrayTag() = default;
 
-    ByteArrayTag(std::vector<schar> const& arr) : data((uchar*)arr.data(), arr.size()) {}
+    ByteArrayTag(std::vector<schar> const& arr) : data(std::span{arr}) {}
 
     std::span<schar> view() const { return std::span<schar>((schar*)data.mBuffer.get(), data.mSize); }
 

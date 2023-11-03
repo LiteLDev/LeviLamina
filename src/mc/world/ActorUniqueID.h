@@ -11,7 +11,7 @@ public:
 
     [[nodiscard]] constexpr int64 get() const { return id; }
 
-    constexpr explicit operator int64() const { return id; }
+    [[nodiscard]] constexpr operator int64() const { return id; } // NOLINT
 
 public:
     // NOLINTBEGIN

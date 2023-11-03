@@ -12,7 +12,7 @@ public:
 
     LLNDAPI UUID();
 
-    explicit inline operator bool() const { return !isEmpty(); }
+    [[nodiscard]] inline explicit operator bool() const { return !isEmpty(); }
 
 public:
     // NOLINTBEGIN

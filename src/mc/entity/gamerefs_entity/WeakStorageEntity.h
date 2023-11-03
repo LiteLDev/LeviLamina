@@ -20,7 +20,7 @@ public:
     class EntityId                    mEntity;
 
     template <class Entity, bool IncludeRemoved = false>
-    constexpr Entity* tryUnwrap() {
+    [[nodiscard]] constexpr Entity* tryUnwrap() {
         return StackResultStorageEntity(*this).tryUnwrap<Entity, IncludeRemoved>();
     }
 

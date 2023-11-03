@@ -14,7 +14,7 @@ class ModalForm : public Form {
 public:
     using Callback = std::function<void(Player&, bool)>;
 
-    LLAPI ModalForm(
+    LLNDAPI ModalForm(
         std::string title,
         std::string content,
         std::string buttonLeft,

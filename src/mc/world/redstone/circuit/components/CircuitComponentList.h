@@ -21,9 +21,9 @@ public:
         bool                        mDirectlyPowered{};
         int                         mData{};
 
-        constexpr Item() = delete;
+        [[nodiscard]] constexpr Item() = delete;
 
-        constexpr Item(BaseCircuitComponent* component, int dampening, BlockPos const& pos)
+        [[nodiscard]] constexpr Item(BaseCircuitComponent* component, int dampening, BlockPos const& pos)
         : mComponent(component),
           mDampening(dampening),
           mPos(pos) {}

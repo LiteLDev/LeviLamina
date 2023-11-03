@@ -32,9 +32,9 @@ public:
     constexpr static ushort count = 0;
 
     ushort value;
-    constexpr typeid_t<T0>(typeid_t<T0> const& id) : value(id.value) {}
-    constexpr typeid_t<T0>(ushort value) : value(value) {}
-    inline typeid_t<T0>() : value(++_getCounter()) {}
+    [[nodiscard]] constexpr typeid_t<T0>(typeid_t<T0> const& id) : value(id.value) {}
+    [[nodiscard]] constexpr typeid_t<T0>(ushort value) : value(value) {}
+    [[nodiscard]] inline typeid_t<T0>() : value(++_getCounter()) {}
 
     static std::atomic_ushort& _getCounter() {
 

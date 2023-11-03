@@ -19,9 +19,7 @@ public:
 
     IntArrayTag() = default;
 
-    IntArrayTag(std::vector<int> const& arr) : data((uchar*)arr.data(), arr.size() * sizeof(int)) {
-        data.mSize = arr.size();
-    }
+    IntArrayTag(std::vector<int> const& arr) : data(std::span{arr}) { data.mSize = arr.size(); }
 
     std::span<int> view() const { return std::span<int>((int*)data.mBuffer.get(), data.mSize); }
 

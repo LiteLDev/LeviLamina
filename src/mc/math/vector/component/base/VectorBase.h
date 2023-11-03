@@ -54,7 +54,7 @@ public:
     [[nodiscard]] consteval static size_t size() noexcept { return sizeof...(Components); }
 
     template <typename F>
-    constexpr static void forEachComponent(F&& func) noexcept {
+    static constexpr void forEachComponent(F&& func) noexcept {
         ll::meta::unrollWithArgs<Components...>(func);
     }
 

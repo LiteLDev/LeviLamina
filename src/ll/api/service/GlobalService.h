@@ -41,7 +41,7 @@ class GlobalService {
     T* value = nullptr;
 
 public:
-    LLAPI GlobalService();
+    LLNDAPI GlobalService();
     void  init(T* ptr);
 
     constexpr T* get() { return value; }

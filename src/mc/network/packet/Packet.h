@@ -11,6 +11,9 @@
 #include "mc/enums/MinecraftPacketIds.h"
 #include "mc/enums/SubClientId.h"
 
+class BinaryStream;
+class ReadOnlyBinaryStream;
+
 class Packet {
 public:
     static const bool                SHARE_WITH_HANDLER = false;                                     // constant
@@ -22,7 +25,7 @@ public:
     const IPacketHandlerDispatcher*  mHandler      = nullptr;                                        // this+0x20
     Compressibility                  mCompressible = Compressibility::Compressible;                  // this+0x28
 
-    constexpr explicit Packet(
+    [[nodiscard]] constexpr explicit Packet(
         PacketPriority           priority    = PacketPriority::Medium,
         NetworkPeer::Reliability reliability = NetworkPeer::Reliability::ReliableOrdered,
         SubClientId              clientSubId = SubClientId::PrimaryClient,

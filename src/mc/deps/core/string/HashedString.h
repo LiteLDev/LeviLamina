@@ -8,27 +8,30 @@ public:
     std::string         str;
     class HashedString* lastMatch;
 
-    constexpr static uint64 computeHash(std::string_view str) {
+    [[nodiscard]] constexpr static uint64 computeHash(std::string_view str) {
         uint64 hash = 0xCBF29CE484222325ULL;
         for (char s : str) { hash = s ^ (0x100000001B3ULL * hash); }
         return hash;
     }
 
     // Constructors
-    constexpr HashedString(std::nullptr_t = nullptr) noexcept : hash(0), lastMatch(nullptr) {} // NOLINT
+    [[nodiscard]] constexpr HashedString(std::nullptr_t = nullptr) noexcept : hash(0), lastMatch(nullptr) {} // NOLINT
 
-    constexpr HashedString(uint64 h, char const* str) noexcept : hash(h), str(str), lastMatch(nullptr) {}
+    [[nodiscard]] constexpr HashedString(uint64 h, char const* str) noexcept : hash(h), str(str), lastMatch(nullptr) {}
 
-    constexpr HashedString(char const* str) noexcept : hash(computeHash(str)), str(str), lastMatch(nullptr) {} // NOLINT
+    [[nodiscard]] constexpr HashedString(char const* str) noexcept : hash(computeHash(str)), str(str), lastMatch(nullptr) {} // NOLINT
 
-    constexpr HashedString(std::string const& str) noexcept // NOLINT
+    [[nodiscard]] constexpr HashedString(std::string const& str) noexcept // NOLINT
     : hash(computeHash(str)),
       str(str),
       lastMatch(nullptr) {}
 
-    constexpr HashedString(HashedString const& other) noexcept : hash(other.hash), str(other.str), lastMatch(nullptr) {}
+    [[nodiscard]] constexpr HashedString(HashedString const& other) noexcept
+    : hash(other.hash),
+      str(other.str),
+      lastMatch(nullptr) {}
 
-    constexpr HashedString(HashedString&& other) noexcept
+    [[nodiscard]] constexpr HashedString(HashedString&& other) noexcept
     : hash(other.hash),
       str(std::move(other.str)),
       lastMatch(other.lastMatch) {
@@ -85,16 +88,18 @@ public:
     [[nodiscard]] constexpr bool operator!=(HashedString const& other) const noexcept { return hash != other.hash; }
 
     template <typename StringType>
-    constexpr std::strong_ordering operator<=>(StringType const& other) const noexcept {
+    [[nodiscard]] constexpr std::strong_ordering operator<=>(StringType const& other) const noexcept {
         return str <=> other.str;
     }
 
-    constexpr std::strong_ordering operator<=>(HashedString const& other) const noexcept { return str <=> other.str; }
+    [[nodiscard]] constexpr std::strong_ordering operator<=>(HashedString const& other) const noexcept {
+        return str <=> other.str;
+    }
 
     // Convertors
-    constexpr explicit operator std::string() const { return str; }
+    [[nodiscard]] constexpr explicit operator std::string() const { return str; }
 
-    constexpr explicit operator std::string_view() const { return std::string_view(str); }
+    [[nodiscard]] constexpr explicit operator std::string_view() const { return std::string_view(str); }
 
 public:
     // NOLINTBEGIN

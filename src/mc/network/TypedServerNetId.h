@@ -8,5 +8,5 @@ public:
     T1              mRawId;
     MCAPI static T1 sNextRawId;
     TypedServerNetId(T1 const& rawId) : mRawId(rawId) {}
-    constexpr explicit operator T1() { return mRawId; }
+    [[nodiscard]] constexpr explicit operator T1() { return mRawId; }
 };

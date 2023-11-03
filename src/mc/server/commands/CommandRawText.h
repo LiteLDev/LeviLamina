@@ -5,7 +5,7 @@
 class CommandRawText {
 public:
     std::string text;
-    constexpr explicit operator std::string() const { return text; }
+    [[nodiscard]] constexpr explicit operator std::string() const { return text; }
 
 public:
     // NOLINTBEGIN

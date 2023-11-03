@@ -9,9 +9,9 @@ public:
 
     using Type = A;
 
-    constexpr AutomaticID() : id(0) {}
+    [[nodiscard]] constexpr AutomaticID() : id(0) {}
 
-    constexpr AutomaticID(T x) : id(x) {} // NOLINT
+    [[nodiscard]] constexpr AutomaticID(T x) : id(x) {} // NOLINT
 
-    constexpr operator T() const { return id; } // NOLINT
+    [[nodiscard]] constexpr operator T() const { return id; } // NOLINT
 };

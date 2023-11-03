@@ -1,10 +1,5 @@
 #include "mc/nbt/TagMemoryChunk.h"
 
-TagMemoryChunk::TagMemoryChunk(uchar data[], size_t size) : mSize(size), mCapacity(size) {
-    this->mBuffer = std::unique_ptr<uchar[]>(new uchar[mCapacity]);
-    memcpy(this->mBuffer.get(), data, mCapacity);
-}
-
 TagMemoryChunk::TagMemoryChunk(TagMemoryChunk const& a1) { *this = a1.copy(); }
 
 TagMemoryChunk::TagMemoryChunk(TagMemoryChunk&& a1) noexcept

@@ -15,44 +15,44 @@ private:
         std::is_same_v<std::decay_t<T>, std::decay_t<U>> && std::is_convertible_v<U*, T*>;
     // NOLINTBEGIN
 public:
-    constexpr optional_ref() noexcept = default;
+    [[nodiscard]] constexpr optional_ref() noexcept = default;
 
-    constexpr optional_ref(std::nullopt_t) noexcept {}
+    [[nodiscard]] constexpr optional_ref(std::nullopt_t) noexcept {}
 
-    constexpr optional_ref(std::nullptr_t) noexcept {}
+    [[nodiscard]] constexpr optional_ref(std::nullptr_t) noexcept {}
 
     template <typename U>
-    constexpr optional_ref(std::optional<U>& o)
+    [[nodiscard]] constexpr optional_ref(std::optional<U>& o)
         requires(IsCompatibleV<U>)
     : mPtr(o ? &*o : nullptr) {}
 
     template <typename U>
-    constexpr optional_ref(U* p)
+    [[nodiscard]] constexpr optional_ref(U* p)
         requires(IsCompatibleV<U>)
     : mPtr(p) {}
 
     template <typename U>
-    constexpr optional_ref(U& r)
+    [[nodiscard]] constexpr optional_ref(U& r)
         requires(IsCompatibleV<U>)
     : mPtr(std::addressof(r)) {}
 
     template <typename U>
-    constexpr optional_ref(const U& r)
+    [[nodiscard]] constexpr optional_ref(const U& r)
         requires(IsCompatibleV<U>)
     : mPtr(std::addressof(r)) {}
 
     template <typename U>
-    constexpr optional_ref(const std::optional<U>& o)
+    [[nodiscard]] constexpr optional_ref(const std::optional<U>& o)
         requires(std::is_const_v<T> && IsCompatibleV<U>)
     : mPtr(o ? &*o : nullptr) {}
 
 
     template <typename U = T>
-    constexpr optional_ref(optional_ref<std::remove_const_t<U>> rhs)
+    [[nodiscard]] constexpr optional_ref(optional_ref<std::remove_const_t<U>> rhs)
         requires(std::is_const_v<U>)
     : mPtr(rhs.as_ptr()) {}
 
-    constexpr optional_ref(optional_ref const&) = default;
+    [[nodiscard]] constexpr optional_ref(optional_ref const&) = default;
 
     optional_ref& operator=(optional_ref const& other) = delete;
 
@@ -62,7 +62,7 @@ public:
 
     [[nodiscard]] constexpr T* as_ptr() const noexcept { return mPtr; }
 
-    constexpr T* operator->() const {
+    [[nodiscard]] constexpr T* operator->() const {
         if (!has_value()) { throw std::runtime_error{"bas optional_ref access"}; }
         return mPtr;
     }

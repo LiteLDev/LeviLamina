@@ -26,19 +26,19 @@
         union {                                                                                                        \
             TYPE y, g, t, z, b, p;                                                                                     \
         };                                                                                                             \
-        constexpr NAME() noexcept : x(0), z(0){};                                                                      \
+        [[nodiscard]] constexpr NAME() noexcept : x(0), z(0){};                                                        \
         template <std::convertible_to<TYPE> TALL>                                                                      \
-        constexpr NAME(TALL all) noexcept                                                                              \
+        [[nodiscard]] constexpr NAME(TALL all) noexcept                                                                \
         : x(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
         ),                                                                                                             \
           z(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
           ){};                                                                                                         \
         template <std::convertible_to<TYPE> T0, std::convertible_to<TYPE> T1>                                          \
-        constexpr NAME(T0 x, T1 z) noexcept                                                                            \
+        [[nodiscard]] constexpr NAME(T0 x, T1 z) noexcept                                                              \
         : x(static_cast<TYPE>((std::is_floating_point_v<T0> && !std::is_floating_point_v<TYPE>) ? floor(x) : x)),      \
           z(static_cast<TYPE>((std::is_floating_point_v<T1> && !std::is_floating_point_v<TYPE>) ? floor(z) : z)){};    \
         template <IsField T>                                                                                           \
-        constexpr NAME(T const& vec)                                                                                   \
+        [[nodiscard]] constexpr NAME(T const& vec)                                                                     \
             requires((IsIntN<T> || IsFloatN<T> || IsBoolN<T>) && T::size() == 2)                                       \
         : NAME() {                                                                                                     \
             T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {                                       \
@@ -67,9 +67,9 @@
         VEC_X_MEMBER_(TYPE);                                                                                           \
         VEC_Y_MEMBER_(TYPE);                                                                                           \
         VEC_Z_MEMBER_(TYPE);                                                                                           \
-        constexpr NAME() noexcept : x(0), y(0), z(0){};                                                                \
+        [[nodiscard]] constexpr NAME() noexcept : x(0), y(0), z(0){};                                                  \
         template <std::convertible_to<TYPE> TALL>                                                                      \
-        constexpr NAME(TALL all) noexcept                                                                              \
+        [[nodiscard]] constexpr NAME(TALL all) noexcept                                                                \
         : x(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
         ),                                                                                                             \
           y(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
@@ -77,12 +77,12 @@
           z(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
           ){};                                                                                                         \
         template <std::convertible_to<TYPE> T0, std::convertible_to<TYPE> T1, std::convertible_to<TYPE> T2>            \
-        constexpr NAME(T0 x, T1 y, T2 z) noexcept                                                                      \
+        [[nodiscard]] constexpr NAME(T0 x, T1 y, T2 z) noexcept                                                        \
         : x(static_cast<TYPE>((std::is_floating_point_v<T0> && !std::is_floating_point_v<TYPE>) ? floor(x) : x)),      \
           y(static_cast<TYPE>((std::is_floating_point_v<T1> && !std::is_floating_point_v<TYPE>) ? floor(y) : y)),      \
           z(static_cast<TYPE>((std::is_floating_point_v<T2> && !std::is_floating_point_v<TYPE>) ? floor(z) : z)){};    \
         template <IsField T>                                                                                           \
-        constexpr NAME(T const& vec)                                                                                   \
+        [[nodiscard]] constexpr NAME(T const& vec)                                                                                   \
             requires((IsIntN<T> || IsFloatN<T> || IsBoolN<T>) && T::size() == 3)                                       \
         : NAME() {                                                                                                     \
             T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {                                       \
@@ -124,9 +124,9 @@
         VEC_Y_MEMBER_(TYPE);                                                                                           \
         VEC_Z_MEMBER_(TYPE);                                                                                           \
         VEC_W_MEMBER_(TYPE);                                                                                           \
-        constexpr NAME() noexcept : x(0), y(0), z(0), w(0){};                                                          \
+        [[nodiscard]] constexpr NAME() noexcept : x(0), y(0), z(0), w(0){};                                            \
         template <std::convertible_to<TYPE> TALL>                                                                      \
-        constexpr NAME(TALL all) noexcept                                                                              \
+        [[nodiscard]] constexpr NAME(TALL all) noexcept                                                                \
         : x(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
         ),                                                                                                             \
           y(static_cast<TYPE>((std::is_floating_point_v<TALL> && !std::is_floating_point_v<TYPE>) ? floor(all) : all)  \
@@ -140,13 +140,13 @@
             std::convertible_to<TYPE> T1,                                                                              \
             std::convertible_to<TYPE> T2,                                                                              \
             std::convertible_to<TYPE> T3>                                                                              \
-        constexpr NAME(T0 x, T1 y, T2 z, T3 w) noexcept                                                                \
+        [[nodiscard]] constexpr NAME(T0 x, T1 y, T2 z, T3 w) noexcept                                                  \
         : x(static_cast<TYPE>((std::is_floating_point_v<T0> && !std::is_floating_point_v<TYPE>) ? floor(x) : x)),      \
           y(static_cast<TYPE>((std::is_floating_point_v<T1> && !std::is_floating_point_v<TYPE>) ? floor(y) : y)),      \
           z(static_cast<TYPE>((std::is_floating_point_v<T2> && !std::is_floating_point_v<TYPE>) ? floor(z) : z)),      \
           w(static_cast<TYPE>((std::is_floating_point_v<T3> && !std::is_floating_point_v<TYPE>) ? floor(w) : w)){};    \
         template <IsField T>                                                                                           \
-        constexpr NAME(T const& vec)                                                                                   \
+        [[nodiscard]] constexpr NAME(T const& vec)                                                                     \
             requires((IsIntN<T> || IsFloatN<T> || IsBoolN<T>) && T::size() == 4)                                       \
         : NAME() {                                                                                                     \
             T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {                                       \

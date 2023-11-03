@@ -90,7 +90,7 @@ public:
     OutputStream error;
     OutputStream fatal;
 
-    LLAPI explicit Logger(std::string_view title = __builtin_FUNCTION());
+    LLNDAPI explicit Logger(std::string_view title = __builtin_FUNCTION());
 
     ~Logger() { resetFile(); }
 

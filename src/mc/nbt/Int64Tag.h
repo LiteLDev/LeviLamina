@@ -48,5 +48,5 @@ public:
     // NOLINTEND
 };
 namespace ll::nbt_literals {
-inline Int64Tag operator""_l(uint64 num) { return Int64Tag{(int64)num}; }
+[[nodiscard]] inline Int64Tag operator""_l(uint64 num) { return Int64Tag{(int64)num}; }
 } // namespace ll::nbt_literals

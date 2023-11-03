@@ -40,14 +40,14 @@ public:
      * @return std::string  The translation
      * @see    I18N::mDefaultLocaleName
      */
-    LLAPI std::string get(std::string const& key, std::string localeName = "");
+    LLNDAPI std::string get(std::string const& key, std::string localeName = "");
 
     /**
      * @brief Get the type of the i18n object.
      *
      * @return  The type of the i18n object
      */
-    LLAPI virtual Type getType() = 0;
+    LLNDAPI virtual Type getType() = 0;
 };
 
 class SingleFileI18N : public I18N {
@@ -80,7 +80,7 @@ public:
     SingleFileI18N(SingleFileI18N const& other) = default;
     ~SingleFileI18N() override                  = default;
 
-    LLAPI Type getType() override;
+    LLNDAPI Type getType() override;
 };
 
 class MultiFileI18N : public I18N {
@@ -113,10 +113,10 @@ public:
     MultiFileI18N(MultiFileI18N const& other) = default;
     ~MultiFileI18N() override                 = default;
 
-    LLAPI Type getType() override;
+    LLNDAPI Type getType() override;
 };
 
-inline std::unique_ptr<I18N>& getInstance() {
+[[nodiscard]] inline std::unique_ptr<I18N>& getInstance() {
     static std::unique_ptr<I18N> instance;
     return instance;
 }
@@ -171,7 +171,7 @@ inline std::string tr(S const& formatStr, Args&&... args) {
  * @endcode
  */
 template <ll::concepts::IsString S, typename... Args>
-inline std::string trl(std::string const& localeName, S const& formatStr, Args&&... args) {
+[[nodiscard]] inline std::string trl(std::string const& localeName, S const& formatStr, Args&&... args) {
     auto res = getInstance()->get(formatStr, localeName);
     if constexpr (sizeof...(args) != 0) { return fmt::format(fmt::runtime(res), args...); }
     return res;
@@ -181,6 +181,6 @@ inline std::string trl(std::string const& localeName, S const& formatStr, Args&&
 
 namespace ll::i18n_literals {
 
-inline std::string operator""_tr(char const* x, size_t len) { return ll::i18n::tr(std::string{x, len}); }
+[[nodiscard]] inline std::string operator""_tr(char const* x, size_t len) { return ll::i18n::tr(std::string{x, len}); }
 
 } // namespace ll::i18n_literals

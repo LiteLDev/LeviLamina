@@ -90,7 +90,7 @@ char get(std::string_view& s) {
     return c;
 }
 
-inline std::optional<ldouble> stold(std::string_view const& s, size_t& n) {
+std::optional<ldouble> stold(std::string_view const& s, size_t& n) {
     int&        errnoRef = errno; // Nonzero cost, pay it once
     char const* ptr      = s.data();
     char*       eptr;

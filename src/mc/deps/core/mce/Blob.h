@@ -35,7 +35,7 @@ public:
 
     [[nodiscard]] inline Blob clone() const { return {data(), size()}; }
 
-    inline Blob(uchar const* srcData, size_type dataSize) : mSize(dataSize) {
+    [[nodiscard]] inline Blob(uchar const* srcData, size_type dataSize) : mSize(dataSize) {
         mBlob = pointer_type(new value_type[dataSize], Deleter());
         std::copy(srcData, srcData + dataSize, mBlob.get());
     }

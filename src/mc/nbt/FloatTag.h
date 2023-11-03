@@ -51,5 +51,5 @@ public:
     // NOLINTEND
 };
 namespace ll::nbt_literals {
-inline FloatTag operator""_f(ldouble num) { return FloatTag{(float)num}; }
+[[nodiscard]] inline FloatTag operator""_f(ldouble num) { return FloatTag{(float)num}; }
 } // namespace ll::nbt_literals

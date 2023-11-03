@@ -10,10 +10,10 @@ class Color;
 
 class Color : public floatN4<Color> {
 public:
-    constexpr Color(uint hex) noexcept : Color((hex >> 16) & 0xFF, (hex >> 8) & 0xFF, hex & 0xFF) {}
+    [[nodiscard]] constexpr Color(uint hex) noexcept : Color((hex >> 16) & 0xFF, (hex >> 8) & 0xFF, hex & 0xFF) {}
 
     template <std::integral T0, std::integral T1, std::integral T2, std::integral T3 = uint>
-    constexpr Color(T0 const& ir, T1 const& ig, T2 const& ib, T3 const& ia = 255) noexcept
+    [[nodiscard]] constexpr Color(T0 const& ir, T1 const& ig, T2 const& ib, T3 const& ia = 255) noexcept
     : floatN4(
         static_cast<float>(ir) / 255.0f,
         static_cast<float>(ig) / 255.0f,
@@ -21,14 +21,14 @@ public:
         static_cast<float>(ia) / 255.0f
     ) {}
     template <std::floating_point T0, std::floating_point T1, std::floating_point T2, std::floating_point T3 = double>
-    constexpr Color(T0 const& r, T1 const& g, T2 const& b, T3 const& a = 1) noexcept : floatN4(r, g, b, a) {}
+    [[nodiscard]] constexpr Color(T0 const& r, T1 const& g, T2 const& b, T3 const& a = 1) noexcept : floatN4(r, g, b, a) {}
 
     template <IsFloatN V, std::floating_point A = double>
-    constexpr Color(V const& v, A const& a = 1) noexcept // NOLINT
+    [[nodiscard]] constexpr Color(V const& v, A const& a = 1) noexcept // NOLINT
         requires(V::size() == 3)
     : floatN4(v.r, v.g, v.b, a) {}
 
-    constexpr Color(std::string_view hex) noexcept : floatN4(0, 0, 0, 1) { // NOLINT
+    [[nodiscard]] constexpr Color(std::string_view hex) noexcept : floatN4(0, 0, 0, 1) { // NOLINT
         if (hex[0] == '#') { hex = hex.substr(1); }
 
         switch (hex.length()) {
@@ -206,7 +206,7 @@ public:
     [[nodiscard]] inline double distanceTo(Color const& dst) const noexcept { return deltaE00(dst); }
 
 private:
-    constexpr uchar static hexToNum(char hex) noexcept {
+    [[nodiscard]] constexpr uchar static hexToNum(char hex) noexcept {
         if ('A' <= hex && hex <= 'F') { return 10 + (hex - 'A'); }
         if ('a' <= hex && hex <= 'f') { return 10 + (hex - 'a'); }
         if ('0' <= hex && hex <= '9') { return (hex - '0'); }

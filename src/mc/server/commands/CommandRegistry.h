@@ -115,7 +115,7 @@ public:
 
         Symbol() = default;
 
-        inline bool operator==(Symbol const& right) const { return mValue == right.mValue; }
+        [[nodiscard]] inline bool operator==(Symbol const& right) const { return mValue == right.mValue; }
 
     public:
         // NOLINTBEGIN

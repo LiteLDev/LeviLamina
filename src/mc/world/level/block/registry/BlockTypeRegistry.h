@@ -87,16 +87,8 @@ public:
     };
 
 public:
-    // clang-format off
-    constexpr static std::map<class HashedString, class SharedPtr<class BlockLegacy>>& getBlockLookupMap() {
-        return mBlockLookupMap;
-    }
-    // clang-format on
-
-
     // prevent constructor by default
-    BlockTypeRegistry&
-    operator=(BlockTypeRegistry const&);
+    BlockTypeRegistry& operator=(BlockTypeRegistry const&);
     BlockTypeRegistry(BlockTypeRegistry const&);
     BlockTypeRegistry();
 
