@@ -27,11 +27,13 @@ UserEntityIdentifierComponent& Player::getUserEntityIdentifier() const {
 }
 
 std::string Player::getDeviceId() const {
+    if (!Global<ServerNetworkHandler>) { return ""; }
     return Global<ServerNetworkHandler>->fetchConnectionRequest(getNetworkIdentifier()).getDeviceId();
 }
 
 std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
-    auto peer = Global<Minecraft>->getNetworkSystem().getPeerForUser(getNetworkIdentifier());
+    if (!Global<NetworkSystem>) { return std::nullopt; }
+    auto peer = Global<NetworkSystem>->getPeerForUser(getNetworkIdentifier());
     if (!peer) { return std::nullopt; }
     return peer->getNetworkStatus();
 }
@@ -43,6 +45,7 @@ std::string Player::getRealName() const {
 }
 
 void Player::disconnect(std::string const& reason) const {
+    if (!Global<ServerNetworkHandler>) { return; }
     Global<ServerNetworkHandler>->disconnectClient(
         getNetworkIdentifier(),
         Connection::DisconnectFailReason::Unknown,

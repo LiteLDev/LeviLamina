@@ -22,7 +22,6 @@ struct XTaskQueueObject;
 // clang-format on
 
 namespace Bedrock::Threading {
-using Mutex = std::mutex;
 // NOLINTBEGIN
 // symbol: ?IS_RUNNING_STATICS@Threading@Bedrock@@YA_NXZ
 MCAPI bool IS_RUNNING_STATICS();

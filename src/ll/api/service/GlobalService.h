@@ -17,6 +17,7 @@ class ServerNetworkHandler;
 class StructureManager;
 class ResourcePackRepository;
 class CommandRegistry;
+class NetworkSystem;
 
 namespace ll {
 
@@ -31,6 +32,7 @@ concept IsGlobalService = concepts::IsOneOf<
     ServerNetworkHandler,
     StructureManager,
     RakNet::RakPeer,
+    NetworkSystem,
     ResourcePackRepository,
     CommandRegistry>;
 
@@ -52,6 +54,11 @@ public:
     }
     constexpr explicit operator bool() { return value != nullptr; }
     constexpr bool has_value() { return value != nullptr; }
+
+    GlobalService(GlobalService const&)                     = delete;
+    GlobalService(GlobalService&&) noexcept                 = delete;
+    GlobalService& operator=(GlobalService const&) noexcept = delete;
+    GlobalService& operator=(GlobalService&&) noexcept      = delete;
 };
 
 template <IsGlobalService T>

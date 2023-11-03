@@ -41,7 +41,7 @@ add_requires("pfr 2.1.1")
 if has_config("localbdslibrary") then
     add_requires("localbdslibrary")
 else
-    add_requires("bdslibrary 1.20.30.02")
+    add_requires("bdslibrary 1.20.41.02")
 end
 
 target("LeviLamina")

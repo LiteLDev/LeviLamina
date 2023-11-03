@@ -33,10 +33,8 @@ public:
         bool            ignoreEntities = false
     ) const;
 
-    // nullptr if invalid nbt
     LLNDAPI static std::unique_ptr<StructureTemplate> create(const std::string& name, CompoundTag const& tag);
 
-    // always success
     LLNDAPI static std::unique_ptr<StructureTemplate> create(
         const std::string& name,
         BlockSource&       blockSource,

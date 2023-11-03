@@ -103,7 +103,7 @@ public:
         MCAPI CZString(char*, bool);
 
         // symbol: ?c_str@CZString@Value@Json@@QEBAPEBDXZ
-        MCAPI char const* c_str() const;
+        // MCAPI char const* c_str() const;
 
         // symbol: ??1CZString@Value@Json@@QEAA@XZ
         MCAPI ~CZString();
