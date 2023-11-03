@@ -9,6 +9,9 @@
 #include "mc/deps/core/common/bedrock/IDimensionFactory.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
+class ILevel;
+class Scheduler;
+class Dimension;
 class DimensionFactory : public ::IDimensionFactory {
 public:
     // prevent constructor by default
@@ -16,10 +19,14 @@ public:
     DimensionFactory(DimensionFactory const&);
     DimensionFactory();
 
+    Bedrock::NotNullNonOwnerPtr<ILevel> mLevel;
+    Bedrock::NotNullNonOwnerPtr<Scheduler> mScheduler;
+    OwnerPtrFactory<Dimension,ILevel &,Scheduler &> mDimensionFactory;
+
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1DimensionFactory@@UEAA@XZ
+    virtual ~DimensionFactory();
 
     // vIndex: 1, symbol:
     // ?create@DimensionFactory@@UEBA?AV?$OwnerPtrT@U?$SharePtrRefTraits@VDimension@@@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -27,9 +34,6 @@ public:
 
     // vIndex: 2, symbol: ?initializeDimension@DimensionFactory@@UEBAXAEAVDimension@@@Z
     virtual void initializeDimension(class Dimension&) const;
-
-    // symbol: ??1DimensionFactory@@UEAA@XZ
-    MCVAPI ~DimensionFactory();
 
     // symbol:
     // ??0DimensionFactory@@QEAA@V?$not_null@V?$NonOwnerPointer@VILevel@@@Bedrock@@@gsl@@V?$not_null@V?$NonOwnerPointer@VScheduler@@@Bedrock@@@2@@Z

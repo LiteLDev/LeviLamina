@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??1IDimensionFactory@@UEAA@XZ
-    MCVAPI ~IDimensionFactory();
+    virtual ~IDimensionFactory();
 
     // NOLINTEND
 };

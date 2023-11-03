@@ -15,9 +15,16 @@
 namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
+class IDimensionFactory;
 
 class DimensionManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
+    std::unordered_map<AutomaticID<Dimension, int>, OwnerPtrT<SharePtrRefTraits<Dimension>>> mDimensions;
+    Bedrock::NotNullNonOwnerPtr<IDimensionFactory> mDimensionFactory;
+    //Bedrock::PubSub::Publisher<void (Dimension &),Bedrock::PubSub::ThreadModel::MultiThreaded> mOnNewDimensionCreatedPublisher;
+    char unk[128];
+    std::optional<DimensionDefinitionGroup> mDimensionDefinitions;
+    
     // prevent constructor by default
     DimensionManager& operator=(DimensionManager const&);
     DimensionManager(DimensionManager const&);
@@ -26,7 +33,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??1DimensionManager@@UEAA@XZ
-    MCVAPI ~DimensionManager();
+    virtual ~DimensionManager();
 
     // symbol:
     // ??0DimensionManager@@QEAA@V?$not_null@V?$NonOwnerPointer@VIDimensionFactory@@@Bedrock@@@gsl@@V?$optional@VDimensionDefinitionGroup@@@std@@@Z

@@ -7,9 +7,9 @@
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
 #include "mc/world/AutomaticID.h"
 
+
 class VanillaDimensions {
 public:
-    constexpr static const DimensionType TestDimension = AutomaticID<Dimension, int>(3);
 
     // prevent constructor by default
     VanillaDimensions& operator=(VanillaDimensions const&);
