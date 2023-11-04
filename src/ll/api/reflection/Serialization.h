@@ -7,6 +7,9 @@ namespace ll::reflection {
 template <class J, Reflectable T>
 inline J serialize(T const&)
     requires(!std::convertible_to<T, J>);
+template <class J, Reflectable T, class F>
+inline J serialize(T const&, F&&)
+    requires(!std::convertible_to<T, J>);
 template <class J, Reflectable T>
 inline void deserialize(T&, J const&);
 
@@ -59,6 +62,23 @@ inline J serialize(T const& obj)
 {
     J res;
     forEachMember(obj, [&](std::string_view name, auto& member) {
+        using MemberType = std::remove_cvref_t<decltype(member)>;
+        if constexpr (requires(MemberType& m) { serialize<J, MemberType>(m); }) {
+            auto j = serialize<J, MemberType>(member);
+            if (!j.is_null()) res[std::string{name}] = j;
+        } else {
+            static_assert(ll::concepts::always_false<MemberType>, "this type can't serialize");
+        }
+    });
+    return res;
+}
+template <class J, Reflectable T, class F>
+inline J serialize(T const& obj, F&& f)
+    requires(!std::convertible_to<T, J>)
+{
+    J res;
+    forEachMember(obj, [&](std::string_view name, auto& member) {
+        if (!std::forward<F>(f)(name, std::forward<decltype(member)>(member))) { return; }
         using MemberType = std::remove_cvref_t<decltype(member)>;
         if constexpr (requires(MemberType& m) { serialize<J, MemberType>(m); }) {
             auto j = serialize<J, MemberType>(member);
