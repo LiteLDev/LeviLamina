@@ -82,7 +82,7 @@ void autoGenerate() {
 
     std::string path = __FILE__;
 
-    // path = LL_WORKSPACE_FOLDER + path;
+    if (!path.starts_with(LL_WORKSPACE_FOLDER)) { path = LL_WORKSPACE_FOLDER + path; }
 
     auto file = ll::utils::file_utils::readAllFile(path, false);
     if (!file) {
