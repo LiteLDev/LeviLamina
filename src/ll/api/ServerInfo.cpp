@@ -26,7 +26,7 @@ plugin::Version getLoaderVersion() {
     };
     v.build = LL_VERSION_TO_STRING(LL_VERSION_COMMIT_SHA);
 #ifdef LL_VERSION_PRERELEASE
-    v.preRelease = PreRelease{LL_VERSION_PRERELEASE};
+    v.preRelease = plugin::PreRelease{LL_VERSION_PRERELEASE};
 #endif
     return v;
 }

@@ -1,6 +1,6 @@
 #include "ll/api/Logger.h"
 
-#include <cmath>
+#include "fmt/color.h"
 
 #include "ll/api/utils/Hash.h"
 #include "ll/api/utils/StringUtils.h"
@@ -105,7 +105,7 @@ Logger::Logger(std::string_view title)
       3,
       {
           fmt::fg(fmt::color::light_blue),
-          fmt::fg(fmt::color::yellow),
+          fmt::fg(fmt::terminal_color::bright_yellow),
           fmt::fg(fmt::terminal_color::bright_yellow),
           fmt::fg(fmt::terminal_color::bright_yellow) | fmt::emphasis::bold,
       }}),
@@ -116,8 +116,8 @@ Logger::Logger(std::string_view title)
       {
           fmt::fg(fmt::color::light_blue),
           fmt::fg(fmt::terminal_color::bright_red),
-          fmt::fg(fmt::color::tomato),
-          fmt::fg(fmt::color::tomato) | fmt::emphasis::bold,
+          fmt::fg(fmt::terminal_color::bright_red),
+          fmt::fg(fmt::terminal_color::bright_red) | fmt::emphasis::bold,
       }}),
   fatal(OutputStream{
       *this,
@@ -126,8 +126,8 @@ Logger::Logger(std::string_view title)
       {
           fmt::fg(fmt::color::light_blue),
           fmt::fg(fmt::color::red),
-          fmt::fg(fmt::color::crimson),
-          fmt::fg(fmt::color::crimson) | fmt::emphasis::bold | fmt::emphasis::italic,
+          fmt::fg(fmt::color::red),
+          fmt::fg(fmt::color::red) | fmt::emphasis::bold,
       }}) {}
 
 void Logger::resetFile() {

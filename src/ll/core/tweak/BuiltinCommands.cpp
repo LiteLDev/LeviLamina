@@ -16,6 +16,9 @@
 
 using namespace ll;
 using namespace ll::utils::string_utils;
+
+using ll::plugin::PluginManager;
+
 namespace {
 class TeleportDimensionCommand : public Command {
 
@@ -140,34 +143,35 @@ public:
 };
 
 void LLListPluginsCommand(CommandOutput& output) {
-    auto plugins =plugin::manager::getAllPlugins();
+    auto plugins = PluginManager::getInstance().getAllPlugins();
     output.trSuccess("ll.cmd.listPlugin.overview", plugins.size());
 
     std::ostringstream oss;
     for (auto& [name, plugin] : plugins) {
         std::string pluginName = name;
         if (pluginName.find("§") == std::string::npos) pluginName.insert(0, "§b");
-        std::string desc = plugin.mDescription;
+        std::string desc = plugin.getManifest().description;
         if (desc.find("§") == std::string::npos) desc.insert(0, "§7");
 
-        oss << fmt::format("- {} §a[v{}]\n  {}\n", pluginName, plugin.mVersion.to_string(), desc);
+        oss << fmt::format("- {} §a[v{}]\n  {}\n", pluginName, plugin.getManifest().version, desc);
     }
     output.success(oss.str() + '\n');
     output.trSuccess("ll.cmd.listPlugin.tip");
 }
 
 void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
-    auto plugin = plugin::manager::findPlugin(pluginName);
+    auto plugin = PluginManager::getInstance().findPlugin(pluginName);
     if (plugin.has_value()) {
         std::map<std::string, std::string> outs;
         std::ostringstream                 oss;
 
         output.trSuccess("ll.cmd.pluginInfo.title", pluginName);
 
-        outs.emplace("Name", fmt::format("{}", plugin->mName));
-        outs.emplace("Description", plugin->mDescription);
-        outs.emplace("Version", "v" + plugin->mVersion.to_string());
-        outs.merge(plugin->mExtraInfo);
+        outs.emplace("Name", fmt::format("{}", plugin->getManifest().name));
+        outs.emplace("Description", plugin->getManifest().description);
+        outs.emplace("Version", "v" + plugin->getManifest().version);
+        auto& extraInfo = plugin->getManifest().extraInfo;
+        for (auto& [k, v] : extraInfo) { outs.emplace(k, v); }
         size_t width = 10;
         for (auto& [k, v] : outs) { width = std::max(width, k.length()); }
         for (auto& [k, v] : outs) {
@@ -358,7 +362,7 @@ public:
 
         // Register softenum
         std::vector<std::string> pluginList;
-        for (auto& [name, p] : plugin::manager::getAllPlugins()) { pluginList.push_back(name); }
+        for (auto& [name, p] : PluginManager::getInstance().getAllPlugins()) { pluginList.push_back(name); }
         registry->addSoftEnum("PluginName", pluginList);
 
         // ll version & help

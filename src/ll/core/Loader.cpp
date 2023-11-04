@@ -23,9 +23,11 @@ void ll::LoadMain() {
     ll::logger.info("ll.loader.loadMain.start"_tr);
 
     // Load plugins
-    int pluginCount = 0;
+    int   pluginCount   = 0;
+    auto& pluginManager = plugin::PluginManager::getInstance();
 
     std::filesystem::directory_iterator ent("plugins");
+
     for (auto& file : ent) {
 
         if (!file.is_regular_file()) { continue; }
@@ -38,12 +40,11 @@ void ll::LoadMain() {
         auto pluginFileName = string_utils::u8str2str(path.filename().u8string());
 
         // Do load
-        auto lib = LoadLibrary(path.wstring().c_str());
+        auto lib = LoadLibraryW(path.wstring().c_str());
         if (lib) {
             ++pluginCount;
-
-            if (!plugin::manager::findPlugin(pluginFileName).has_value()) {
-                if (!plugin::manager::registerPlugin(pluginFileName, pluginFileName, {}, {})) {
+            if (!pluginManager.findPlugin(pluginFileName).has_value()) {
+                if (!pluginManager.registerPlugin(plugin::Manifest{pluginFileName}, lib)) { // TODO: read manifest
                     ll::logger.error(
                         "ll.pluginManager.error.failToRegisterPlugin"_tr,
                         string_utils::u8str2str(path.u8string())
