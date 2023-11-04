@@ -13,7 +13,7 @@ concept IsConfig =
     ll::reflection::Reflectable<T> && std::integral<std::remove_cvref_t<decltype(std::declval<T>().version)>>;
 
 template <IsConfig T, typename J = nlohmann::ordered_json>
-inline bool saveConfig(T const& config, std::string const& path) noexcept {
+inline bool saveConfig(T const& config, std::string const& path, bool logFailed = true) noexcept {
     using namespace ll::i18n_literals;
     try {
         namespace fs = std::filesystem;
@@ -25,8 +25,9 @@ inline bool saveConfig(T const& config, std::string const& path) noexcept {
         std::ofstream{path} << data.dump(4);
         return true;
     } catch (...) {}
-    std::cout << fmt::format(fmt::runtime("config.save.fail"_tr), ll::reflection::type_name_v<T>)
-              << std::endl; // TODO i18n
+    if (logFailed)
+        std::cout << fmt::format(fmt::runtime("config.save.fail"_tr), ll::reflection::type_name_v<T>)
+                  << std::endl; // TODO i18n
     return false;
 }
 
@@ -57,7 +58,8 @@ inline bool loadConfig(T& config, std::string const& path, bool overwriteAfterFa
         }
     } catch (...) {}
     if (!res && overwriteAfterFail) {
-        std::cout << fmt::format(fmt::runtime("config.save.rewrite"_tr), ll::reflection::type_name_v<T>) << std::endl; // TODO i18n
+        std::cout << fmt::format(fmt::runtime("config.save.rewrite"_tr), ll::reflection::type_name_v<T>)
+                  << std::endl; // TODO i18n
         saveConfig<T, J>(config, path);
     }
     return res;
