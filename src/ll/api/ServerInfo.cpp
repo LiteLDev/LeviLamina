@@ -9,26 +9,32 @@
 
 namespace ll {
 plugin::Version getBdsVersion() {
-    auto info    = Common::getBuildInfo();
-    auto v       = plugin::Version{info.mBuildId};
-    v.preRelease = plugin::PreRelease{};
-    v.preRelease.value().values.emplace_back((uint16_t)SharedConstants::RevisionVersion);
-    v.preRelease.value().values.emplace_back((uint16_t)SharedConstants::NetworkProtocolVersion);
-    v.build = info.mCommitId.substr(0, 9);
-    return v;
+    static auto ver = [] {
+        auto info    = Common::getBuildInfo();
+        auto v       = plugin::Version{info.mBuildId};
+        v.preRelease = plugin::PreRelease{};
+        v.preRelease.value().values.emplace_back((uint16_t)SharedConstants::RevisionVersion);
+        v.preRelease.value().values.emplace_back((uint16_t)SharedConstants::NetworkProtocolVersion);
+        v.build = info.mCommitId.substr(0, 9);
+        return v;
+    }();
+    return ver;
 }
 
 plugin::Version getLoaderVersion() {
-    auto v = plugin::Version{
-        LL_VERSION_MAJOR,
-        LL_VERSION_MINOR,
-        LL_VERSION_PATCH,
-    };
-    v.build = LL_VERSION_TO_STRING(LL_VERSION_COMMIT_SHA);
+    static auto ver = [] {
+        auto v = plugin::Version{
+            LL_VERSION_MAJOR,
+            LL_VERSION_MINOR,
+            LL_VERSION_PATCH,
+        };
+        v.build = LL_VERSION_TO_STRING(LL_VERSION_COMMIT_SHA);
 #ifdef LL_VERSION_PRERELEASE
-    v.preRelease = plugin::PreRelease{LL_VERSION_PRERELEASE};
+        v.preRelease = plugin::PreRelease{LL_VERSION_PRERELEASE};
 #endif
-    return v;
+        return v;
+    }();
+    return ver;
 }
 
 int getServerProtocolVersion() { return SharedConstants::NetworkProtocolVersion; }

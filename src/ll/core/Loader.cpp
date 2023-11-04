@@ -42,13 +42,16 @@ void ll::LoadMain() {
         // Do load
         auto lib = LoadLibraryW(path.wstring().c_str());
         if (lib) {
-            ++pluginCount;
             if (!pluginManager.findPlugin(pluginFileName).has_value()) {
-                if (!pluginManager.registerPlugin(plugin::Manifest{pluginFileName}, lib)) { // TODO: read manifest
+                if (auto pManifest = plugin::Manifest{pluginFileName};
+                    !pluginManager.registerPlugin(pManifest)) { // TODO: read manifest
                     ll::logger.error(
                         "ll.pluginManager.error.failToRegisterPlugin"_tr,
                         string_utils::u8str2str(path.u8string())
                     );
+                } else {
+                    pluginManager.addDllMapping(lib, pManifest.name);
+                    ++pluginCount;
                 }
             }
         } else {

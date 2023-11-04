@@ -1,7 +1,6 @@
 #pragma once
 
-#include <string>
-#include <thread>
+#include "ll/api/base/Global.h"
 
 /////////////////////// LL Configs ///////////////////////
 

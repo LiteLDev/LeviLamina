@@ -153,7 +153,7 @@ void LLListPluginsCommand(CommandOutput& output) {
         std::string desc = plugin.getManifest().description;
         if (desc.find("§") == std::string::npos) desc.insert(0, "§7");
 
-        oss << fmt::format("- {} §a[v{}]\n  {}\n", pluginName, plugin.getManifest().version, desc);
+        oss << fmt::format("- {} §a[v{}]\n  {}\n", pluginName, plugin.getManifest().version.to_string(), desc);
     }
     output.success(oss.str() + '\n');
     output.trSuccess("ll.cmd.listPlugin.tip");
@@ -169,7 +169,7 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
 
         outs.emplace("Name", fmt::format("{}", plugin->getManifest().name));
         outs.emplace("Description", plugin->getManifest().description);
-        outs.emplace("Version", "v" + plugin->getManifest().version);
+        outs.emplace("Version", "v" + plugin->getManifest().version.to_string());
         auto& extraInfo = plugin->getManifest().extraInfo;
         for (auto& [k, v] : extraInfo) { outs.emplace(k, v); }
         size_t width = 10;

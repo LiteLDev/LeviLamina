@@ -27,16 +27,19 @@ using PluginStorage = std::unordered_map<std::string, Plugin, transparent_string
 class PluginManager {
     struct Impl;
     std::unique_ptr<Impl> mImpl;
-
-public:
+    using Handle = void*;
     PluginManager();
 
-    static auto getInstance() -> PluginManager&;
+public:
+    LLNDAPI static auto getInstance() -> PluginManager&;
+    LLNDAPI static auto getCurrentPlugin() -> Plugin&;
 
-    LLAPI auto   registerPlugin(Manifest manifest, Handle handle) -> bool;
+    void addDllMapping(Handle, std::string_view);
+
+    LLAPI auto   registerPlugin(Manifest manifest) -> bool;
     LLAPI auto   unregisterPlugin(std::string_view name) -> bool;
-    LLNDAPI auto findPlugin(std::string_view name) -> optional_ref<Plugin>;
-    LLNDAPI auto getAllPlugins() -> const PluginStorage&;
+    LLNDAPI auto findPlugin(std::string_view name) -> optional_ref<Plugin const>;
+    LLNDAPI auto getAllPlugins() -> PluginStorage const&;
 };
 
 } // namespace ll::plugin

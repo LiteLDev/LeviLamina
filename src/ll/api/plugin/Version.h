@@ -255,6 +255,15 @@ struct Version {
     }
 };
 
+template <class J>
+inline J serialize(Version const& ver) {
+    return ver.to_string();
+}
+template <class J>
+inline void deserialize(Version& ver, J const& j) {
+    if (j.is_string()) { ver.from_string(j.get<std::string>()); }
+}
+
 namespace literals {
 [[nodiscard]] constexpr Version operator""_version(const char* str, std::size_t length) {
     return Version{

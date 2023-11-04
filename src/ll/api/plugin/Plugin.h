@@ -1,9 +1,8 @@
 #pragma once
 
 #include <any>
-#include <map>
-#include <optional>
 #include <string>
+#include <filesystem>
 #include <unordered_map>
 
 #include "ll/api/plugin/Manifest.h"
@@ -13,19 +12,16 @@
 
 namespace ll::plugin {
 
-using Handle = void*;
-
 class Plugin {
-    Manifest                                  mManifest;
-    std::unordered_map<std::string, std::any> mSharedData;
-    Handle                                    mHandle;
+    Manifest                                          mManifest;
+    mutable std::unordered_map<std::string, std::any> mSharedData;
 
 public:
-    LLAPI explicit Plugin(Manifest manifest, Handle handle);
+    LLAPI explicit Plugin(Manifest manifest);
 
     LLNDAPI const Manifest& getManifest() const;
 
-    LLNDAPI std::unordered_map<std::string, std::any>& getSharedData();
+    LLNDAPI std::unordered_map<std::string, std::any>& getSharedData() const;
 
     LLNDAPI std::filesystem::path getDefaultDataPath() const;
 
@@ -37,7 +33,7 @@ public:
     }
 
     template <typename T>
-    optional_ref<T> getSharedData(std::string const& key) {
+    optional_ref<T> getSharedData(std::string const& key) const {
         if (getSharedData().contains(key)) { return std::any_cast<T>(&getSharedData()[key]); }
         return std::nullopt;
     }

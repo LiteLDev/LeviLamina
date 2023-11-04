@@ -9,18 +9,21 @@ using namespace ll::utils;
 namespace ll::plugin {
 
 fs::path Plugin::getDefaultDataPath() const {
-    std::string dataPath = "plugins\\" + mManifest.name;
-    if (!fs::exists(string_utils::sv2u8sv(dataPath))) {
-        std::error_code ec;
-        fs::create_directories(string_utils::sv2u8sv(dataPath), ec);
-    }
-    return dataPath;
+    static auto path = [&] {
+        fs::path dataPath = string_utils::str2u8str("plugins\\" + mManifest.name);
+        if (!fs::exists(dataPath)) {
+            std::error_code ec;
+            fs::create_directories(dataPath, ec);
+        }
+        return dataPath;
+    }();
+    return path;
 }
 
-Plugin::Plugin(Manifest manifest, Handle handle) : mManifest(std::move(manifest)), mHandle(handle) {}
+Plugin::Plugin(Manifest manifest) : mManifest(std::move(manifest)) {}
 
 const Manifest& Plugin::getManifest() const { return mManifest; }
 
-std::unordered_map<std::string, std::any>& Plugin::getSharedData() { return mSharedData; }
+std::unordered_map<std::string, std::any>& Plugin::getSharedData() const { return mSharedData; }
 
 } // namespace ll::plugin
