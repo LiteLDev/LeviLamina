@@ -82,9 +82,9 @@ void autoGenerate() {
 
     std::string path = __FILE__;
 
-    path = LL_WORKSPACE_FOLDER + path;
+    // path = LL_WORKSPACE_FOLDER + path;
 
-    auto file = readAllFile(path, false);
+    auto file = ll::utils::file_utils::readAllFile(path, false);
     if (!file) {
         ll::logger.error("Couldn't open file {}", path);
         return;
@@ -114,7 +114,7 @@ void autoGenerate() {
     oss.clear();
     oss.str("");
 
-    WriteAllFile(path, content, false);
+    ll::utils::file_utils::WriteAllFile(path, content, false);
 }
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
@@ -341,7 +341,7 @@ PACKET_SIZE_ASSERT(LoginPacket, 0x40);
 PACKET_SIZE_ASSERT(PlayStatusPacket, 0x38);
 PACKET_SIZE_ASSERT(ServerToClientHandshakePacket, 0x50);
 PACKET_SIZE_ASSERT(ClientToServerHandshakePacket, 0x30);
-PACKET_SIZE_ASSERT(DisconnectPacket, 0x58);
+PACKET_SIZE_ASSERT(DisconnectPacket, 0x60);
 PACKET_SIZE_ASSERT(ResourcePacksInfoPacket, 0x80);
 PACKET_SIZE_ASSERT(ResourcePackStackPacket, 0x128);
 PACKET_SIZE_ASSERT(ResourcePackClientResponsePacket, 0x48);
