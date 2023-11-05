@@ -1,7 +1,7 @@
+# LeviLamina
+
 > [!IMPORTANT]
 > Looking for LiteLoaderBDS, the predecessor of LeviLamina? Go to <https://github.com/LiteLDev/LiteLoaderBDSv2>.
-
-# LeviLamina
 
 ![LeviLamina](https://socialify.git.ci/LiteLDev/LeviLamina/image?description=1&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLeviLamina%2FHEAD%2Fdocs%2Fimg%2Flogo.svg&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
@@ -20,9 +20,10 @@ For more information, please refer to [the documentation](https://levilamina.lit
 - [Install](#install)
   - [Updating](#updating)
 - [Usage](#usage)
+- [Thanks](#thanks)
 - [Contributing](#contributing)
-- [Contributors](#contributors)
 - [License](#license)
+- [Star History](#star-history)
 - [Disclaimer](#disclaimer)
 
 ## Install
@@ -32,14 +33,14 @@ This project uses [lip](https://github.com/lippkg/lip). Go check them out if you
 First, create a new directory for your Minecraft server and enter it:
 
 ```sh
-$ mkdir myserver
-$ cd myserver
+mkdir myserver
+cd myserver
 ```
 
 Then, install LeviLamina bundled with Minecraft Bedrock Server using lip:
 
 ```sh
-$ lip install github.com/tooth-hub/corepack
+lip install github.com/tooth-hub/corepack
 ```
 
 For more information, please refer to [the documentation](https://levilamina.liteldev.com).
@@ -53,25 +54,25 @@ Considering data security, we do not provide an update method. If you would like
 
 ## Usage
 
-To start the server, simply run `bedrock_server_mod.exe`: 
+To start the server, simply run `bedrock_server_mod.exe`:
 
 ```sh
-$ ./bedrock_server_mod.exe
+./bedrock_server_mod.exe
 ```
 
 For more information, please refer to [the documentation](https://levilamina.liteldev.com).
-
-## Contributing
-
-Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LeviLamina/issues/new/choose) or submit PRs.
-
-LeviLamina follows the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) Code of Conduct.
 
 ## Thanks
 
 This project exists thanks to all the people who contribute.
 
 ![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
+
+## Contributing
+
+Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LeviLamina/issues/new/choose) or submit PRs.
+
+LeviLamina follows the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) Code of Conduct.
 
 ## License
 
@@ -83,26 +84,26 @@ This project exists thanks to all the people who contribute.
 
 ## Disclaimer
 
-LeviLamina (hereinafter referred to as "this software") is developed and 
-provided by LiteLDev (hereinafter referred to as "the developer"). This software is designed 
-to help users manage and install various software packages, but is not responsible for any 
-content, quality, functionality, security or legality of any software package. Users should 
+LeviLamina (hereinafter referred to as "this software") is developed and
+provided by LiteLDev (hereinafter referred to as "the developer"). This software is designed
+to help users manage and install various software packages, but is not responsible for any
+content, quality, functionality, security or legality of any software package. Users should
 use this software at their own discretion and assume all related risks.
 
-The developer does not guarantee the stability, reliability, accuracy or completeness of this 
-software. The developer is not liable for any defects, errors, viruses or other harmful components 
-that may exist in this software. The developer is not liable for any direct or indirect damages 
-(including but not limited to data loss, device damage, profit loss etc.) caused by the use of 
+The developer does not guarantee the stability, reliability, accuracy or completeness of this
+software. The developer is not liable for any defects, errors, viruses or other harmful components
+that may exist in this software. The developer is not liable for any direct or indirect damages
+(including but not limited to data loss, device damage, profit loss etc.) caused by the use of
 this software.
 
-The developer reserves the right to modify, update or terminate this software and its related 
-services at any time without prior notice to users. Users should back up important data and check 
+The developer reserves the right to modify, update or terminate this software and its related
+services at any time without prior notice to users. Users should back up important data and check
 regularly for updates of this software.
 
-Users should comply with relevant laws and regulations when using this software, respect the 
-intellectual property rights and privacy rights of others, and not use this software for any 
-illegal or infringing activities. If users violate the above provisions and cause any damage 
-to any third party or are claimed by any third party, the developer does not bear any 
+Users should comply with relevant laws and regulations when using this software, respect the
+intellectual property rights and privacy rights of others, and not use this software for any
+illegal or infringing activities. If users violate the above provisions and cause any damage
+to any third party or are claimed by any third party, the developer does not bear any
 responsibility.
 
 If you have any questions or comments about this disclaimer, please contact the developer.
