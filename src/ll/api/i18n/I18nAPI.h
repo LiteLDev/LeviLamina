@@ -120,6 +120,7 @@ public:
     static std::unique_ptr<I18N> instance;
     return instance;
 }
+
 inline void load(std::string const& path) {
     try {
         if (std::filesystem::is_directory(path)) {
