@@ -67,7 +67,7 @@ Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LeviLamina/iss
 
 LeviLamina follows the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) Code of Conduct.
 
-## Contributors
+## Thanks
 
 This project exists thanks to all the people who contribute.
 
@@ -76,6 +76,10 @@ This project exists thanks to all the people who contribute.
 ## License
 
 [LGPL-3.0-only](LICENSE) © 2021-2023 LiteLDev
+
+## Star History
+
+![Star History Chart](https://api.star-history.com/svg?repos=LiteLDev/LeviLamina&type=Date)
 
 ## Disclaimer
 

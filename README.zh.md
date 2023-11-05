@@ -61,21 +61,25 @@ $ ./bedrock_server_mod.exe
 
 更多信息，请参阅[文档](https://levilamina.liteldev.com)。
 
+## 致谢
+
+感谢所有为此项目做出贡献的人。
+
+![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
+
 ## 贡献
 
 请随意参与！[提交问题](https://github.com/LiteLDev/LeviLamina/issues/new/choose)或提交PR。
 
 LeviLamina遵循[Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)行为准则。
 
-## 贡献者
-
-感谢所有为此项目做出贡献的人。
-
-![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
-
 ## 许可证
 
 [LGPL-3.0-only](LICENSE) © 2021-2023 LiteLDev
+
+## 星星的历史
+
+![Star History Chart](https://api.star-history.com/svg?repos=LiteLDev/LeviLamina&type=Date)
 
 ## 免责声明
 
