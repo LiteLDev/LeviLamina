@@ -55,6 +55,13 @@ public:
         ConnectionCallbacks& operator=(ConnectionCallbacks const&);
         ConnectionCallbacks(ConnectionCallbacks const&);
         ConnectionCallbacks();
+
+    public:
+        // NOLINTBEGIN
+        // vIndex: 0, symbol: ??1ConnectionCallbacks@@@UEAA@XZ
+        virtual ~ConnectionCallbacks();
+
+        // NOLINTEND
     };
 
     struct PingCallbackData {
@@ -103,8 +110,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1RakNetNetworkPeer@@@UEAA@XZ
+        virtual ~RakNetNetworkPeer();
 
         // vIndex: 1, symbol:
         // ?sendPacket@RakNetNetworkPeer@RakNetConnector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@W4Compressibility@@@Z

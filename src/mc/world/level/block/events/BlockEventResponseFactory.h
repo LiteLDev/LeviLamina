@@ -14,17 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockEventResponseFactory@@UEAA@XZ
+    virtual ~BlockEventResponseFactory();
 
     // vIndex: 1, symbol: ?initializeFactory@BlockEventResponseFactory@@UEAAXAEBVExperiments@@@Z
     virtual void initializeFactory(class Experiments const&);
 
     // vIndex: 2, symbol: ?initSchema@BlockEventResponseFactory@@UEAAXXZ
     virtual void initSchema();
-
-    // symbol: ??1BlockEventResponseFactory@@UEAA@XZ
-    MCVAPI ~BlockEventResponseFactory();
 
     // NOLINTEND
 };

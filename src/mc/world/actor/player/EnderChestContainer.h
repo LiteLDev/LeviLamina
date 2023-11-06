@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~EnderChestContainer();
 
     // vIndex: 18, symbol: ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player&);
@@ -27,6 +27,9 @@ public:
 
     // vIndex: 26, symbol: __unk_vfn_26
     virtual void __unk_vfn_26();
+
+    // vIndex: 34, symbol: __unk_vfn_34
+    virtual void __unk_vfn_34();
 
     // symbol: ??0EnderChestContainer@@QEAA@XZ
     MCAPI EnderChestContainer();

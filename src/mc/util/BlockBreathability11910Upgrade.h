@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockBreathability11910Upgrade@@@UEAA@XZ
+    virtual ~BlockBreathability11910Upgrade();
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockBreathability11910Upgrade@BlockBreathabilityVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

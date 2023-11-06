@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1OnPlayerDestroyedTrigger@@UEAA@XZ
-    MCVAPI ~OnPlayerDestroyedTrigger();
+    // vIndex: 0, symbol: ??1OnPlayerDestroyedTrigger@@UEAA@XZ
+    virtual ~OnPlayerDestroyedTrigger();
 
     // symbol: ??0OnPlayerDestroyedTrigger@@QEAA@$$QEAV0@@Z
     MCAPI OnPlayerDestroyedTrigger(class OnPlayerDestroyedTrigger&&);

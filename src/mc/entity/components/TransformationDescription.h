@@ -16,14 +16,11 @@ public:
     // vIndex: 0, symbol: ?getJsonName@TransformationDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1TransformationDescription@@UEAA@XZ
+    virtual ~TransformationDescription();
 
     // vIndex: 2, symbol: ?deserializeData@TransformationDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1TransformationDescription@@UEAA@XZ
-    MCVAPI ~TransformationDescription();
 
     // symbol: ??0TransformationDescription@@QEAA@XZ
     MCAPI TransformationDescription();

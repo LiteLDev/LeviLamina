@@ -13,14 +13,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1MonsterRoomFeature@@UEAA@XZ
+    virtual ~MonsterRoomFeature();
 
     // vIndex: 3, symbol: ?place@MonsterRoomFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-
-    // symbol: ??1MonsterRoomFeature@@UEAA@XZ
-    MCVAPI ~MonsterRoomFeature();
 
     // symbol: ??0MonsterRoomFeature@@QEAA@XZ
     MCAPI MonsterRoomFeature();

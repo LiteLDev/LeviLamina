@@ -40,8 +40,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptPlayer@@@UEAA@XZ
+    virtual ~ScriptPlayer();
 
     // vIndex: 1, symbol: ?setUnloaded@ScriptPlayer@ScriptModuleMinecraft@@UEAAXAEAVActor@@@Z
     virtual void setUnloaded(class Actor&);

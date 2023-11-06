@@ -57,8 +57,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1UpdateCardinalGetPlacementBlockCallback@PlacementDirection@@@UEAA@XZ
+        virtual ~UpdateCardinalGetPlacementBlockCallback();
 
         // vIndex: 1, symbol:
         // ?getPlacementBlock@UpdateCardinalGetPlacementBlockCallback@PlacementDirection@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
@@ -83,8 +83,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1UpdateFacingGetPlacementBlockCallback@PlacementDirection@@@UEAA@XZ
+        virtual ~UpdateFacingGetPlacementBlockCallback();
 
         // vIndex: 1, symbol:
         // ?getPlacementBlock@UpdateFacingGetPlacementBlockCallback@PlacementDirection@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
@@ -108,8 +108,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1PlacementDirection@BlockTrait@@UEAA@XZ
+    virtual ~PlacementDirection();
 
     // vIndex: 1, symbol: ?applyToBlockLegacy@PlacementDirection@BlockTrait@@UEBAXAEAVBlockLegacy@@@Z
     virtual void applyToBlockLegacy(class BlockLegacy&) const;
@@ -120,9 +120,6 @@ public:
 
     // vIndex: 3, symbol: ?initializeFromNetwork@PlacementDirection@BlockTrait@@UEAAXAEBVCompoundTag@@@Z
     virtual void initializeFromNetwork(class CompoundTag const&);
-
-    // symbol: ??1PlacementDirection@BlockTrait@@UEAA@XZ
-    MCVAPI ~PlacementDirection();
 
     // symbol: ?setRotationOffset@PlacementDirection@BlockTrait@@QEAAXAEBM@Z
     MCAPI void setRotationOffset(float const&);

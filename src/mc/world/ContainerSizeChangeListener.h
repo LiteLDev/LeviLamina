@@ -11,8 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ContainerSizeChangeListener@@UEAA@XZ
-    MCVAPI ~ContainerSizeChangeListener();
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0() = 0;
+
+    // vIndex: 1, symbol: ??1ContainerSizeChangeListener@@UEAA@XZ
+    virtual ~ContainerSizeChangeListener();
 
     // NOLINTEND
 };

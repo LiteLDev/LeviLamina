@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockActorLevelListener@@UEAA@XZ
+    virtual ~BlockActorLevelListener();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -79,9 +79,6 @@ public:
 
     // vIndex: 24, symbol: __unk_vfn_24
     virtual void __unk_vfn_24();
-
-    // symbol: ??1BlockActorLevelListener@@UEAA@XZ
-    MCVAPI ~BlockActorLevelListener();
 
     // symbol: ??0BlockActorLevelListener@@QEAA@XZ
     MCAPI BlockActorLevelListener();

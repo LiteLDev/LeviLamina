@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ItemUseInventoryTransaction@@UEAA@XZ
+    virtual ~ItemUseInventoryTransaction();
 
     // vIndex: 1, symbol:
     // ?read@ItemUseInventoryTransaction@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -38,9 +38,6 @@ public:
     // vIndex: 5, symbol:
     // ?onTransactionError@ItemUseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
     virtual void onTransactionError(class Player&, ::InventoryTransactionError) const;
-
-    // symbol: ??1ItemUseInventoryTransaction@@UEAA@XZ
-    MCVAPI ~ItemUseInventoryTransaction();
 
     // symbol: ??0ItemUseInventoryTransaction@@QEAA@AEBV0@@Z
     MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const&);

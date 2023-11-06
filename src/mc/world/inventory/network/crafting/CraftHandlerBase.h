@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1CraftHandlerBase@@UEAA@XZ
+    virtual ~CraftHandlerBase();
 
     // vIndex: 1, symbol:
     // ?handleConsumedItem@CraftHandlerBase@@UEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z
@@ -31,7 +31,7 @@ public:
     virtual void endRequestBatch();
 
     // vIndex: 4, symbol:
-    // ?_handleCraftAction@CraftHandlerEnchant@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+    // ?_handleCraftAction@CraftHandlerLoom@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&) = 0;
 
     // vIndex: 5, symbol: ?_postCraftRequest@CraftHandlerBase@@MEAAX_N@Z
@@ -39,9 +39,6 @@ public:
 
     // vIndex: 6, symbol: ?_getLevelRecipes@CraftHandlerBase@@MEBAPEBVRecipes@@XZ
     virtual class Recipes const* _getLevelRecipes() const;
-
-    // symbol: ??1CraftHandlerBase@@UEAA@XZ
-    MCVAPI ~CraftHandlerBase();
 
     // NOLINTEND
 };

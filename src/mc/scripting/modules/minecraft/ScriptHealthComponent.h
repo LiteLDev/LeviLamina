@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptHealthComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptHealthComponent();
 
     // vIndex: 3, symbol:
     // ?setCurrent@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@AEBM@Z
@@ -41,9 +41,6 @@ public:
     // vIndex: 9, symbol:
     // ?resetToDefaultValue@ScriptHealthComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@X$$V@Scripting@@XZ
     virtual class Scripting::Result<void> resetToDefaultValue() const;
-
-    // symbol: ??1ScriptHealthComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptHealthComponent();
 
     // symbol:
     // ?bind@ScriptHealthComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptHealthComponent@ScriptModuleMinecraft@@@Scripting@@XZ

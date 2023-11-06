@@ -35,8 +35,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1LevelStorageWriteBatch@@UEAA@XZ
+    virtual ~LevelStorageWriteBatch();
 
     // vIndex: 1, symbol:
     // ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@W4Category@DBHelpers@@@Z
@@ -60,9 +60,6 @@ public:
 
     // vIndex: 6, symbol: ?flush@LevelStorageWriteBatch@@UEAAXAEAVLevelStorage@@@Z
     virtual void flush(class LevelStorage&);
-
-    // symbol: ??1LevelStorageWriteBatch@@UEAA@XZ
-    MCVAPI ~LevelStorageWriteBatch();
 
     // symbol: ??0LevelStorageWriteBatch@@QEAA@XZ
     MCAPI LevelStorageWriteBatch();

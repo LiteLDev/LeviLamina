@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual ~DoubleTag() {}
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~DoubleTag();
 
     // vIndex: 2, symbol: ?write@DoubleTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;

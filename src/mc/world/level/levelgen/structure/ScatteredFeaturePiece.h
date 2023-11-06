@@ -15,11 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScatteredFeaturePiece@@UEAA@XZ
-    MCVAPI ~ScatteredFeaturePiece();
+    // vIndex: 0, symbol: ??1ScatteredFeaturePiece@@UEAA@XZ
+    virtual ~ScatteredFeaturePiece();
 
     // NOLINTEND
 

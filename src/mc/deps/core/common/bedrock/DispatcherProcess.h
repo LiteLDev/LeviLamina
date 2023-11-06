@@ -22,11 +22,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1DispatcherProcess@Http@Bedrock@@UEAA@XZ
+    virtual ~DispatcherProcess();
 
     // vIndex: 1, symbol:
-    // ?send@HttpUrlValidator@Http@Bedrock@@UEAA?AV?$shared_ptr@V?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@std@@$$QEAVRequest@23@@Z
+    // ?send@DispatchQueue@Http@Bedrock@@UEAA?AV?$shared_ptr@V?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@std@@$$QEAVRequest@23@@Z
     virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
     send(class Bedrock::Http::Request&&) = 0;
 
@@ -41,9 +41,6 @@ public:
 
     // vIndex: 5, symbol: ?resume@DispatcherProcess@Http@Bedrock@@UEAAXXZ
     virtual void resume();
-
-    // symbol: ??1DispatcherProcess@Http@Bedrock@@UEAA@XZ
-    MCVAPI ~DispatcherProcess();
 
     // symbol: ??0DispatcherProcess@Http@Bedrock@@QEAA@V?$shared_ptr@VDispatcherProcess@Http@Bedrock@@@std@@@Z
     MCAPI explicit DispatcherProcess(std::shared_ptr<class Bedrock::Http::DispatcherProcess>);

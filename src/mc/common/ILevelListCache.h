@@ -8,4 +8,11 @@ public:
     ILevelListCache& operator=(ILevelListCache const&);
     ILevelListCache(ILevelListCache const&);
     ILevelListCache();
+
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ILevelListCache();
+
+    // NOLINTEND
 };

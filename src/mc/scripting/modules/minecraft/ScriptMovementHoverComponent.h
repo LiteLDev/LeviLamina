@@ -23,11 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptMovementHoverComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptMovementHoverComponent();
+    // vIndex: 0, symbol: ??1ScriptMovementHoverComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptMovementHoverComponent();
 
     // symbol:
     // ?bind@ScriptMovementHoverComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementHoverComponent@ScriptModuleMinecraft@@@Scripting@@XZ

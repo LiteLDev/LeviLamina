@@ -57,8 +57,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1UpdateBlockFaceGetPlacementBlockCallback@PlacementPosition@@@UEAA@XZ
+        virtual ~UpdateBlockFaceGetPlacementBlockCallback();
 
         // vIndex: 1, symbol:
         // ?getPlacementBlock@UpdateBlockFaceGetPlacementBlockCallback@PlacementPosition@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
@@ -83,8 +83,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1UpdateVerticalHalfGetPlacementBlockCallback@PlacementPosition@@@UEAA@XZ
+        virtual ~UpdateVerticalHalfGetPlacementBlockCallback();
 
         // vIndex: 1, symbol:
         // ?getPlacementBlock@UpdateVerticalHalfGetPlacementBlockCallback@PlacementPosition@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
@@ -108,8 +108,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1PlacementPosition@BlockTrait@@UEAA@XZ
+    virtual ~PlacementPosition();
 
     // vIndex: 1, symbol: ?applyToBlockLegacy@PlacementPosition@BlockTrait@@UEBAXAEAVBlockLegacy@@@Z
     virtual void applyToBlockLegacy(class BlockLegacy&) const;
@@ -120,9 +120,6 @@ public:
 
     // vIndex: 3, symbol: ?initializeFromNetwork@PlacementPosition@BlockTrait@@UEAAXAEBVCompoundTag@@@Z
     virtual void initializeFromNetwork(class CompoundTag const&);
-
-    // symbol: ??1PlacementPosition@BlockTrait@@UEAA@XZ
-    MCVAPI ~PlacementPosition();
 
     // symbol: ?BlockFace@PlacementPosition@BlockTrait@@SA?AV12@XZ
     MCAPI static class BlockTrait::PlacementPosition BlockFace();

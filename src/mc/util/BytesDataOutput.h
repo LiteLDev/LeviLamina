@@ -8,8 +8,8 @@
 class BytesDataOutput : public ::IDataOutput {
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual ~BytesDataOutput() = default;
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~BytesDataOutput();
 
     // vIndex: 1, symbol: ?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     virtual void writeString(std::string_view);

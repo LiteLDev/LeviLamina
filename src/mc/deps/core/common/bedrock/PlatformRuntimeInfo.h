@@ -12,8 +12,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1PlatformRuntimeInfo@Bedrock@@UEAA@XZ
-    MCVAPI ~PlatformRuntimeInfo();
+    // vIndex: 0, symbol: ??1PlatformRuntimeInfo@Bedrock@@UEAA@XZ
+    virtual ~PlatformRuntimeInfo();
 
     // symbol: ??0PlatformRuntimeInfo@Bedrock@@QEAA@XZ
     MCAPI PlatformRuntimeInfo();

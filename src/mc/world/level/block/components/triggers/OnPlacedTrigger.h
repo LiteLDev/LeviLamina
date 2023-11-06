@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1OnPlacedTrigger@@UEAA@XZ
-    MCVAPI ~OnPlacedTrigger();
+    // vIndex: 0, symbol: ??1OnPlacedTrigger@@UEAA@XZ
+    virtual ~OnPlacedTrigger();
 
     // symbol: ??0OnPlacedTrigger@@QEAA@$$QEAV0@@Z
     MCAPI OnPlacedTrigger(class OnPlacedTrigger&&);

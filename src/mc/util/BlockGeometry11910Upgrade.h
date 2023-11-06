@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockGeometry11910Upgrade@@@UEAA@XZ
+    virtual ~BlockGeometry11910Upgrade();
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockGeometry11910Upgrade@BlockGeometryVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

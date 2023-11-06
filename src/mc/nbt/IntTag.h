@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1IntTag@@UEAA@XZ
-    virtual ~IntTag() {}
+    virtual ~IntTag();
 
     // vIndex: 2, symbol: ?write@IntTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;

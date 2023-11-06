@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IItemComponentLegacyFactoryData@@UEAA@XZ
-    MCVAPI ~IItemComponentLegacyFactoryData();
+    // vIndex: 0, symbol: ??1IItemComponentLegacyFactoryData@@UEAA@XZ
+    virtual ~IItemComponentLegacyFactoryData();
 
     // NOLINTEND
 };

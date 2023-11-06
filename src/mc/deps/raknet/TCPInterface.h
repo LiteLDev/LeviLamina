@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1TCPInterface@RakNet@@UEAA@XZ
+    virtual ~TCPInterface();
 
     // vIndex: 1, symbol: ?Send@TCPInterface@RakNet@@UEAAXPEBDIAEBUSystemAddress@2@_N@Z
     virtual void Send(char const*, uint, struct RakNet::SystemAddress const&, bool);
@@ -35,9 +35,6 @@ public:
 
     // vIndex: 5, symbol: ?PushBackPacket@TCPInterface@RakNet@@UEAAXPEAUPacket@2@_N@Z
     virtual void PushBackPacket(struct RakNet::Packet*, bool);
-
-    // symbol: ??1TCPInterface@RakNet@@UEAA@XZ
-    MCVAPI ~TCPInterface();
 
     // symbol: ?CloseConnection@TCPInterface@RakNet@@QEAAXUSystemAddress@2@@Z
     MCAPI void CloseConnection(struct RakNet::SystemAddress);

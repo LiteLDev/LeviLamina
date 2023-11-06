@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ShapelessRecipe@@UEAA@XZ
+    virtual ~ShapelessRecipe();
 
     // vIndex: 1, symbol:
     // ?assemble@ShapelessRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
@@ -50,9 +50,6 @@ public:
 
     // symbol: ?isShapeless@ShapelessRecipe@@UEBA_NXZ
     MCVAPI bool isShapeless() const;
-
-    // symbol: ??1ShapelessRecipe@@UEAA@XZ
-    MCVAPI ~ShapelessRecipe();
 
     // symbol:
     // ??0ShapelessRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@HPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z

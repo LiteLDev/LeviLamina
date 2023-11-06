@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockCraftingTable11910Upgrade@@@UEAA@XZ
+    virtual ~BlockCraftingTable11910Upgrade();
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockCraftingTable11910Upgrade@BlockCraftingTableVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

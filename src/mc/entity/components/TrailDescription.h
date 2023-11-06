@@ -16,14 +16,11 @@ public:
     // vIndex: 0, symbol: ?getJsonName@TrailDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1TrailDescription@@UEAA@XZ
+    virtual ~TrailDescription();
 
     // vIndex: 2, symbol: ?deserializeData@TrailDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1TrailDescription@@UEAA@XZ
-    MCVAPI ~TrailDescription();
 
     // symbol: ??0TrailDescription@@QEAA@XZ
     MCAPI TrailDescription();

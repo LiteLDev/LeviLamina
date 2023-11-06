@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1DirectoryPackAccessStrategy@@UEAA@XZ
+    virtual ~DirectoryPackAccessStrategy();
 
     // vIndex: 1, symbol: ?getPackSize@DirectoryPackAccessStrategy@@UEBA_KXZ
     virtual uint64 getPackSize() const;
@@ -81,9 +81,6 @@ public:
 
     // vIndex: 19, symbol: ?unload@DirectoryPackAccessStrategy@@UEAAXXZ
     virtual void unload();
-
-    // symbol: ??1DirectoryPackAccessStrategy@@UEAA@XZ
-    MCVAPI ~DirectoryPackAccessStrategy();
 
     // symbol: ??0DirectoryPackAccessStrategy@@QEAA@AEBVResourceLocation@@_N@Z
     MCAPI DirectoryPackAccessStrategy(class ResourceLocation const&, bool);

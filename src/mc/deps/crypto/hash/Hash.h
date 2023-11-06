@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Hash@0Crypto@@UEAA@XZ
+    virtual ~Hash();
 
     // vIndex: 1, symbol: ?reset@Hash@1Crypto@@UEAAXXZ
     virtual void reset();
@@ -37,9 +37,6 @@ public:
 
     // vIndex: 4, symbol: ?resultSize@Hash@1Crypto@@UEBA_KXZ
     virtual uint64 resultSize() const;
-
-    // symbol: ??1Hash@0Crypto@@UEAA@XZ
-    MCVAPI ~Hash();
 
     // symbol: ??0Hash@0Crypto@@QEAA@W4HashType@01@@Z
     MCAPI explicit Hash(::Crypto::Hash::HashType);

@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1AddEntityPacket@@UEAA@XZ
+    virtual ~AddEntityPacket();
 
     // vIndex: 1, symbol: ?getId@AddEntityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -25,9 +25,6 @@ public:
     // vIndex: 2, symbol:
     // ?getName@AddEntityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const;
-
-    // symbol: ??1AddEntityPacket@@UEAA@XZ
-    MCVAPI ~AddEntityPacket();
 
     // symbol: ??0AddEntityPacket@@QEAA@AEBVEntityContext@@@Z
     MCAPI explicit AddEntityPacket(class EntityContext const&);

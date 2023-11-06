@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1NBTSchemaReader@@UEAA@XZ
+    virtual ~NBTSchemaReader();
 
     // vIndex: 1, symbol: ?isValid@NBTSchemaReader@@UEBA_NXZ
     virtual bool isValid() const;
@@ -104,9 +104,6 @@ public:
 
     // vIndex: 22, symbol: ?isSequenceReader@SchemaReader@cereal@@UEBA_NXZ
     virtual bool isSequenceReader() const;
-
-    // symbol: ??1NBTSchemaReader@@UEAA@XZ
-    MCVAPI ~NBTSchemaReader();
 
     // symbol: ??0NBTSchemaReader@@QEAA@V?$not_null@PEBVCompoundTag@@@gsl@@@Z
     MCAPI explicit NBTSchemaReader(gsl::not_null<class CompoundTag const*>);

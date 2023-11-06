@@ -26,14 +26,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptActorComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptActorComponent();
 
     // vIndex: 1, symbol: ?_isValid@ScriptActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;
-
-    // symbol: ??1ScriptActorComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptActorComponent();
 
     // symbol: ??0ScriptActorComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptActorComponent(class ScriptModuleMinecraft::ScriptActorComponent const&);

@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BlockCraftingTableComponent@@UEAA@XZ
-    MCVAPI ~BlockCraftingTableComponent();
+    // vIndex: 0, symbol: ??1BlockCraftingTableComponent@@UEAA@XZ
+    virtual ~BlockCraftingTableComponent();
 
     // symbol: ??4BlockCraftingTableComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct BlockCraftingTableComponent& operator=(struct BlockCraftingTableComponent&&);

@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual ~Int64Tag() {}
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~Int64Tag();
 
     // vIndex: 2, symbol: ?write@Int64Tag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;

@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ComplexItem@@UEAA@XZ
+    virtual ~ComplexItem();
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -75,15 +75,15 @@ public:
     // vIndex: 116, symbol: __unk_vfn_116
     virtual void __unk_vfn_116();
 
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
+
     // vIndex: 136, symbol:
     // ?getUpdatePacket@ComplexItem@@UEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVItemStack@@AEAVLevel@@AEAVActor@@@Z
     virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const&, class Level&, class Actor&) const;
 
     // symbol: ?isComplex@ComplexItem@@UEBA_NXZ
     MCVAPI bool isComplex() const;
-
-    // symbol: ??1ComplexItem@@UEAA@XZ
-    MCVAPI ~ComplexItem();
 
     // symbol: ??0ComplexItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ComplexItem(std::string const&, int);

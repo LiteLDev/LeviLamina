@@ -89,8 +89,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1MobEffect@@UEAA@XZ
+    virtual ~MobEffect();
 
     // vIndex: 1, symbol: ?applyEffects@MobEffect@@UEBAXPEAVActor@@HH@Z
     virtual void applyEffects(class Actor*, int, int) const;
@@ -109,9 +109,6 @@ public:
 
     // vIndex: 6, symbol: ?getAttributeModifierValue@MobEffect@@UEBAMHAEBVAttributeModifier@@@Z
     virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
-
-    // symbol: ??1MobEffect@@UEAA@XZ
-    MCVAPI ~MobEffect();
 
     // symbol:
     // ??0MobEffect@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH01AEBUFactorCalculationData@0@@Z

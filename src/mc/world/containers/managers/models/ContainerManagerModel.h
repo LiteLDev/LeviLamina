@@ -17,8 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ContainerManagerModel@@UEAA@XZ
+    virtual ~ContainerManagerModel();
 
     // vIndex: 1, symbol: ?getContainerId@ContainerManagerModel@@UEBA?AW4ContainerID@@XZ
     virtual ::ContainerID getContainerId() const;
@@ -53,11 +53,8 @@ public:
     // vIndex: 16, symbol: ?isValid@ContainerManagerModel@@UEAA_NM@Z
     virtual bool isValid(float);
 
-    // vIndex: 17, symbol: ?_postInit@DispenserContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+    // vIndex: 17, symbol: ?_postInit@HudContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
     virtual class ContainerScreenContext _postInit() = 0;
-
-    // symbol: ??1ContainerManagerModel@@UEAA@XZ
-    MCVAPI ~ContainerManagerModel();
 
     // symbol: ??0ContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z
     MCAPI ContainerManagerModel(::ContainerID, class Player&);

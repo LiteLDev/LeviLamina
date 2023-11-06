@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BaseGameTestFunction@gametest@@UEAA@XZ
+    virtual ~BaseGameTestFunction();
 
     // vIndex: 1, symbol:
     // ?createContext@BaseScriptGameTestFunction@ScriptModuleGameTest@@UEBA?AV?$unique_ptr@VIGameTestFunctionContext@gametest@@U?$default_delete@VIGameTestFunctionContext@gametest@@@std@@@std@@AEAVBaseGameTestHelper@gametest@@@Z
@@ -29,12 +29,9 @@ public:
     createContext(class gametest::BaseGameTestHelper&) const = 0;
 
     // vIndex: 2, symbol:
-    // ?run@ScriptAsyncGameTestFunction@ScriptModuleGameTest@@UEBA?AV?$unique_ptr@VIGameTestFunctionRunResult@gametest@@U?$default_delete@VIGameTestFunctionRunResult@gametest@@@std@@@std@@AEAVBaseGameTestHelper@gametest@@AEAVIGameTestFunctionContext@6@@Z
+    // ?run@SyncScriptGameTestFunction@ScriptModuleGameTest@@UEBA?AV?$unique_ptr@VIGameTestFunctionRunResult@gametest@@U?$default_delete@VIGameTestFunctionRunResult@gametest@@@std@@@std@@AEAVBaseGameTestHelper@gametest@@AEAVIGameTestFunctionContext@6@@Z
     virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult>
     run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const = 0;
-
-    // symbol: ??1BaseGameTestFunction@gametest@@UEAA@XZ
-    MCVAPI ~BaseGameTestFunction();
 
     // symbol:
     // ??0BaseGameTestFunction@gametest@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00HHH_N1HHV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z

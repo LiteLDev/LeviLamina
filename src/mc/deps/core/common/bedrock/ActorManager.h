@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorManager@@UEAA@XZ
-    MCVAPI ~ActorManager();
+    // vIndex: 0, symbol: ??1ActorManager@@UEAA@XZ
+    virtual ~ActorManager();
 
     // symbol: ??0ActorManager@@QEAA@XZ
     MCAPI ActorManager();

@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1RotatedPillarBlock@@UEAA@XZ
+    virtual ~RotatedPillarBlock();
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
@@ -157,9 +157,6 @@ public:
 
     // vIndex: 185, symbol: ?getResourceItem@RotatedPillarBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
-
-    // symbol: ??1RotatedPillarBlock@@UEAA@XZ
-    MCVAPI ~RotatedPillarBlock();
 
     // symbol:
     // ??0RotatedPillarBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z

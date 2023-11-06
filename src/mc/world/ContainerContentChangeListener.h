@@ -11,11 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?containerContentChanged@HudContainerModel@@UEAAXH@Z
+    // vIndex: 0, symbol: ?containerContentChanged@ContainerModel@@UEAAXH@Z
     virtual void containerContentChanged(int) = 0;
 
-    // symbol: ??1ContainerContentChangeListener@@UEAA@XZ
-    MCVAPI ~ContainerContentChangeListener();
+    // vIndex: 1, symbol: ??1ContainerContentChangeListener@@UEAA@XZ
+    virtual ~ContainerContentChangeListener();
 
     // NOLINTEND
 };

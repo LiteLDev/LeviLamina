@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ISecureStorageKeySystem@@UEAA@XZ
-    MCVAPI ~ISecureStorageKeySystem();
+    // vIndex: 0, symbol: ??1ISecureStorageKeySystem@@UEAA@XZ
+    virtual ~ISecureStorageKeySystem();
 
     // NOLINTEND
 };

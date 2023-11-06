@@ -22,40 +22,40 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~CommandOrigin();
 
     // vIndex: 1, symbol:
-    // ?getRequestId@BlockCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // ?getRequestId@ServerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getRequestId() const = 0;
 
     // vIndex: 2, symbol:
-    // ?getName@AutomationPlayerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // ?getName@ServerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const = 0;
 
-    // vIndex: 3, symbol: ?getBlockPosition@PrecompiledCommandOrigin@@UEBA?AVBlockPos@@XZ
+    // vIndex: 3, symbol: ?getBlockPosition@ServerCommandOrigin@@UEBA?AVBlockPos@@XZ
     virtual class BlockPos getBlockPosition() const = 0;
 
-    // vIndex: 4, symbol: ?getWorldPosition@ClientAutomationCommandOrigin@@UEBA?AVVec3@@XZ
+    // vIndex: 4, symbol: ?getWorldPosition@ServerCommandOrigin@@UEBA?AVVec3@@XZ
     virtual class Vec3 getWorldPosition() const = 0;
 
-    // vIndex: 5, symbol: ?getRotation@ClientAutomationCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+    // vIndex: 5, symbol: ?getRotation@ServerCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
     virtual std::optional<class Vec2> getRotation() const = 0;
 
-    // vIndex: 6, symbol: ?getLevel@ScriptCommandOrigin@@UEBAPEAVLevel@@XZ
+    // vIndex: 6, symbol: ?getLevel@ServerCommandOrigin@@UEBAPEAVLevel@@XZ
     virtual class Level* getLevel() const = 0;
 
-    // vIndex: 7, symbol: ?getDimension@ScriptCommandOrigin@@UEBAPEAVDimension@@XZ
+    // vIndex: 7, symbol: ?getDimension@ServerCommandOrigin@@UEBAPEAVDimension@@XZ
     virtual class Dimension* getDimension() const = 0;
 
-    // vIndex: 8, symbol: ?getEntity@ScriptActorCommandOrigin@@UEBAPEAVActor@@XZ
+    // vIndex: 8, symbol: ?getEntity@ServerCommandOrigin@@UEBAPEAVActor@@XZ
     virtual class Actor* getEntity() const = 0;
 
-    // vIndex: 9, symbol: ?getPermissionsLevel@ScriptCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+    // vIndex: 9, symbol: ?getPermissionsLevel@ServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
     virtual ::CommandPermissionLevel getPermissionsLevel() const = 0;
 
     // vIndex: 10, symbol:
-    // ?clone@ScriptActorCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+    // ?clone@ServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
     virtual std::unique_ptr<class CommandOrigin> clone() const = 0;
 
     // vIndex: 11, symbol: ?getCursorHitBlockPos@CommandOrigin@@UEBA?AV?$optional@VBlockPos@@@std@@XZ
@@ -94,7 +94,7 @@ public:
     // vIndex: 22, symbol: ?getIdentity@CommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ
     virtual struct CommandOriginIdentity getIdentity() const;
 
-    // vIndex: 23, symbol: ?getOriginType@AutomationPlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    // vIndex: 23, symbol: ?getOriginType@ServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
     virtual ::CommandOriginType getOriginType() const = 0;
 
     // vIndex: 24, symbol: ?toCommandOriginData@CommandOrigin@@UEBA?AUCommandOriginData@@XZ
@@ -116,7 +116,7 @@ public:
     // vIndex: 29, symbol: ?serialize@CommandOrigin@@UEBA?AVCompoundTag@@XZ
     virtual class CompoundTag serialize() const;
 
-    // vIndex: 30, symbol: ?isValid@ServerCommandOrigin@@UEBA_NXZ
+    // vIndex: 30, symbol: ?isValid@PlayerCommandOrigin@@UEBA_NXZ
     virtual bool isValid() const = 0;
 
     // vIndex: 31, symbol: ?_setUUID@CommandOrigin@@MEAAXAEBVUUID@mce@@@Z

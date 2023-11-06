@@ -17,8 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ServerToClientHandshakePacket@@UEAA@XZ
+    virtual ~ServerToClientHandshakePacket();
 
     // vIndex: 1, symbol: ?getId@ServerToClientHandshakePacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -33,9 +33,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@ServerToClientHandshakePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1ServerToClientHandshakePacket@@UEAA@XZ
-    MCVAPI ~ServerToClientHandshakePacket();
 
     // symbol: ??0ServerToClientHandshakePacket@@QEAA@XZ
     MCAPI ServerToClientHandshakePacket();

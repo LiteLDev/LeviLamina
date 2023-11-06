@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockTranformationVersioning11980Upgrade@@@UEAA@XZ
+    virtual ~BlockTranformationVersioning11980Upgrade();
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockTranformationVersioning11980Upgrade@BlockTranformationVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~Inventory();
 
     // vIndex: 1, symbol: ?init@Inventory@@UEAAXXZ
     virtual void init();
@@ -34,6 +34,9 @@ public:
 
     // vIndex: 26, symbol: __unk_vfn_26
     virtual void __unk_vfn_26();
+
+    // vIndex: 34, symbol: __unk_vfn_34
+    virtual void __unk_vfn_34();
 
     // vIndex: 36, symbol: ?add@Inventory@@UEAA_NAEAVItemStack@@@Z
     virtual bool add(class ItemStack&);

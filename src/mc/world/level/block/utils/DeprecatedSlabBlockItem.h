@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1DeprecatedSlabBlockItem@@UEAA@XZ
+    virtual ~DeprecatedSlabBlockItem();
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -75,6 +75,9 @@ public:
     // vIndex: 116, symbol: __unk_vfn_116
     virtual void __unk_vfn_116();
 
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
+
     // vIndex: 133, symbol:
     // ?_calculatePlacePos@DeprecatedSlabBlockItem@@UEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
     virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uchar&, class BlockPos&) const;
@@ -83,9 +86,6 @@ public:
     // ?_useOn@DeprecatedSlabBlockItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
-
-    // symbol: ??1DeprecatedSlabBlockItem@@UEAA@XZ
-    MCVAPI ~DeprecatedSlabBlockItem();
 
     // NOLINTEND
 

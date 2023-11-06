@@ -25,11 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptRidingComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptRidingComponent();
+    // vIndex: 0, symbol: ??1ScriptRidingComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptRidingComponent();
 
     // symbol:
     // ?getEntityRidingOn@ScriptRidingComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ

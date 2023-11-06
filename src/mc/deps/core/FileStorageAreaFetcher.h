@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FileStorageAreaFetcher@@@UEAA@XZ
+    virtual ~FileStorageAreaFetcher();
 
     // vIndex: 1, symbol:
     // ?getStorageAreaForPath@FileStorageAreaFetcher@Core@@UEBA?AVResult@2@AEAV?$shared_ptr@VFileStorageArea@Core@@@std@@AEBVPath@2@@Z

@@ -16,14 +16,11 @@ public:
     // vIndex: 0, symbol: ?getJsonName@TeleportDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1TeleportDescription@@UEAA@XZ
+    virtual ~TeleportDescription();
 
     // vIndex: 2, symbol: ?deserializeData@TeleportDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1TeleportDescription@@UEAA@XZ
-    MCVAPI ~TeleportDescription();
 
     // symbol: ??0TeleportDescription@@QEAA@XZ
     MCAPI TeleportDescription();

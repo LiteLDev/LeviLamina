@@ -43,8 +43,11 @@ public:
     // vIndex: 4, symbol: ?reloadHardcoded@Zombie@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void reloadHardcoded(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: __unk_vfn_10
-    virtual void __unk_vfn_10();
+    // vIndex: 10, symbol: ??1Zombie@@UEAA@XZ
+    virtual ~Zombie();
+
+    // vIndex: 14, symbol: __unk_vfn_14
+    virtual void __unk_vfn_14();
 
     // vIndex: 23, symbol: __unk_vfn_23
     virtual void __unk_vfn_23();
@@ -58,8 +61,14 @@ public:
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44();
 
+    // vIndex: 45, symbol: __unk_vfn_45
+    virtual void __unk_vfn_45();
+
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
+
+    // vIndex: 48, symbol: __unk_vfn_48
+    virtual void __unk_vfn_48();
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -73,17 +82,32 @@ public:
     // vIndex: 63, symbol: __unk_vfn_63
     virtual void __unk_vfn_63();
 
+    // vIndex: 71, symbol: __unk_vfn_71
+    virtual void __unk_vfn_71();
+
+    // vIndex: 72, symbol: __unk_vfn_72
+    virtual void __unk_vfn_72();
+
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
 
     // vIndex: 116, symbol: ?canPickupItem@Zombie@@UEBA_NAEBVItemStack@@@Z
     virtual bool canPickupItem(class ItemStack const&) const;
 
+    // vIndex: 120, symbol: __unk_vfn_120
+    virtual void __unk_vfn_120();
+
+    // vIndex: 142, symbol: __unk_vfn_142
+    virtual void __unk_vfn_142();
+
+    // vIndex: 143, symbol: __unk_vfn_143
+    virtual void __unk_vfn_143();
+
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
 
-    // vIndex: 148, symbol: __unk_vfn_148
-    virtual void __unk_vfn_148();
+    // vIndex: 154, symbol: __unk_vfn_154
+    virtual void __unk_vfn_154();
 
     // vIndex: 165, symbol: __unk_vfn_165
     virtual void __unk_vfn_165();
@@ -100,8 +124,11 @@ public:
     // vIndex: 191, symbol: ?getArmorValue@Zombie@@MEBAHXZ
     virtual int getArmorValue() const;
 
-    // symbol: ??1Zombie@@UEAA@XZ
-    MCVAPI ~Zombie();
+    // vIndex: 204, symbol: __unk_vfn_204
+    virtual void __unk_vfn_204();
+
+    // vIndex: 212, symbol: __unk_vfn_212
+    virtual void __unk_vfn_212();
 
     // symbol: ??0Zombie@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Zombie(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);

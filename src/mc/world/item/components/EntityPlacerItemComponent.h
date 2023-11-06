@@ -13,25 +13,8 @@ namespace cereal { struct ReflectionCtx; }
 class EntityPlacerItemComponent {
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
-    virtual bool checkComponentDataForContentErrors() const;
-
-    // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
-    virtual void writeSettings();
-
-    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
-    virtual bool isNetworkComponent() const;
-
-    // vIndex: 4, symbol:
-    // ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
-
-    // vIndex: 5, symbol:
-    // ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
-    virtual bool initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+    // vIndex: 0, symbol: ??1EntityPlacerItemComponent@@UEAA@XZ
+    virtual ~EntityPlacerItemComponent();
 
     // vIndex: 6, symbol: ?handleVersionBasedInitialization@EntityPlacerItemComponent@@UEAAXAEBVSemVersion@@@Z
     virtual void handleVersionBasedInitialization(class SemVersion const&);
@@ -44,9 +27,6 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@EntityPlacerItemComponent@@UEBAXXZ
     virtual void _initializeComponent() const;
-
-    // symbol: ??1EntityPlacerItemComponent@@UEAA@XZ
-    MCVAPI ~EntityPlacerItemComponent();
 
     // symbol: ??0EntityPlacerItemComponent@@QEAA@XZ
     MCAPI EntityPlacerItemComponent();

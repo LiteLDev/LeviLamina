@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class StrengthDescription {
+// auto generated inclusion list
+#include "mc/world/actor/AttributeDescription.h"
+
+class StrengthDescription : public ::AttributeDescription {
 public:
     // prevent constructor by default
     StrengthDescription& operator=(StrengthDescription const&);
@@ -14,14 +17,11 @@ public:
     // vIndex: 0, symbol: ?getJsonName@StrengthDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1StrengthDescription@@UEAA@XZ
+    virtual ~StrengthDescription();
 
     // vIndex: 2, symbol: ?deserializeData@StrengthDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1StrengthDescription@@UEAA@XZ
-    MCVAPI ~StrengthDescription();
 
     // NOLINTEND
 };

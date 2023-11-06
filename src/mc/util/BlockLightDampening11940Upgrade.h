@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockLightDampening11940Upgrade@@@UEAA@XZ
+    virtual ~BlockLightDampening11940Upgrade();
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockLightDampening11940Upgrade@BlockLightDampeningVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

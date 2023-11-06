@@ -38,6 +38,9 @@ public:
         // ?setData@StorageSystem@FileSecureStorage@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VPath@Core@@@Z
         virtual void setData(std::string const&, class Core::Path);
 
+        // vIndex: 2, symbol: ??1StorageSystem@@@UEAA@XZ
+        virtual ~StorageSystem();
+
         // NOLINTEND
     };
 
@@ -58,6 +61,9 @@ public:
         // ?setData@FileStorageSystem@FileSecureStorage@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VPath@Core@@@Z
         virtual void setData(std::string const&, class Core::Path);
 
+        // vIndex: 2, symbol: ??1FileStorageSystem@@@UEAA@XZ
+        virtual ~FileStorageSystem();
+
         // NOLINTEND
     };
 
@@ -69,8 +75,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~FileSecureStorage();
 
     // vIndex: 1, symbol:
     // ?add@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z

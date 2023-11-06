@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~LayEggGoal();
 
     // vIndex: 1, symbol: ?canUse@LayEggGoal@@UEAA_NXZ
     virtual bool canUse();

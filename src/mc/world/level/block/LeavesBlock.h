@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1LeavesBlock@@UEAA@XZ
+    virtual ~LeavesBlock();
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
@@ -194,9 +194,6 @@ public:
 
     // vIndex: 192, symbol: ?getExtraResourceItem@LeavesBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getExtraResourceItem(class Block const&) const;
-
-    // symbol: ??1LeavesBlock@@UEAA@XZ
-    MCVAPI ~LeavesBlock();
 
     // symbol:
     // ??0LeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z

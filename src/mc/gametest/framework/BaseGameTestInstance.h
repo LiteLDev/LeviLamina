@@ -30,8 +30,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BaseGameTestInstance@gametest@@UEAA@XZ
+    virtual ~BaseGameTestInstance();
 
     // vIndex: 1, symbol: ?initialize@BaseGameTestInstance@gametest@@UEAAXXZ
     virtual void initialize();
@@ -71,9 +71,6 @@ public:
 
     // vIndex: 13, symbol: ?_removeSimulatedPlayers@BaseGameTestInstance@gametest@@MEAAXXZ
     virtual void _removeSimulatedPlayers();
-
-    // symbol: ??1BaseGameTestInstance@gametest@@UEAA@XZ
-    MCVAPI ~BaseGameTestInstance();
 
     // symbol:
     // ??0BaseGameTestInstance@gametest@@QEAA@AEBVBaseGameTestFunction@1@V?$unique_ptr@VIGameTestHelperProvider@gametest@@U?$default_delete@VIGameTestHelperProvider@gametest@@@std@@@std@@@Z

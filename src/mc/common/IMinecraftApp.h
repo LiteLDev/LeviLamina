@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IMinecraftApp@@UEAA@XZ
-    MCVAPI ~IMinecraftApp();
+    // vIndex: 0, symbol: ??1IMinecraftApp@@UEAA@XZ
+    virtual ~IMinecraftApp();
 
     // NOLINTEND
 };

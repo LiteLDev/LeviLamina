@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptCommandOrigin@@UEAA@XZ
+    virtual ~ScriptCommandOrigin();
 
     // vIndex: 1, symbol:
     // ?getRequestId@ScriptCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -75,9 +75,6 @@ public:
 
     // vIndex: 30, symbol: ?isValid@ScriptCommandOrigin@@UEBA_NXZ
     virtual bool isValid() const;
-
-    // symbol: ??1ScriptCommandOrigin@@UEAA@XZ
-    MCVAPI ~ScriptCommandOrigin();
 
     // symbol:
     // ??0ScriptCommandOrigin@@QEAA@AEAVServerLevel@@PEAVDimension@@V?$function@$$A6AXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z@std@@V?$optional@W4CommandPermissionLevel@@@4@@Z

@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockComponentDescription@@UEAA@XZ
+    virtual ~BlockComponentDescription();
 
     // vIndex: 1, symbol:
     // ?getName@BlockComponentDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -61,9 +61,6 @@ public:
 
     // symbol: ?initializeComponentFromCode@BlockComponentDescription@@UEBAXAEAVEntityContext@@@Z
     MCVAPI void initializeComponentFromCode(class EntityContext&) const;
-
-    // symbol: ??1BlockComponentDescription@@UEAA@XZ
-    MCVAPI ~BlockComponentDescription();
 
     // symbol: ?bindType@BlockComponentDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

@@ -13,14 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // vIndex: 1, symbol: ?_isValid@ScriptItemComponent@ScriptModuleMinecraft@@MEBA_NXZ
-    virtual bool _isValid() const;
-
-    // symbol: ??1ScriptSkinIdComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptSkinIdComponent();
+    // vIndex: 0, symbol: ??1ScriptSkinIdComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptSkinIdComponent();
 
     // symbol:
     // ?sClassName@ScriptSkinIdComponent@ScriptModuleMinecraft@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B

@@ -21,8 +21,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IRNS2_Berkley@RakNet@@UEAA@XZ
-    MCVAPI ~IRNS2_Berkley();
+    // vIndex: 0, symbol: ??1IRNS2_Berkley@RakNet@@UEAA@XZ
+    virtual ~IRNS2_Berkley();
+
+    // vIndex: 1, symbol: __unk_vfn_1
+    virtual void __unk_vfn_1();
 
     // NOLINTEND
 };

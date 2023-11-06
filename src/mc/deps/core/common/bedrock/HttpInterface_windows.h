@@ -10,6 +10,13 @@ public:
     HttpInterface_windows& operator=(HttpInterface_windows const&);
     HttpInterface_windows(HttpInterface_windows const&);
     HttpInterface_windows();
+
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1HttpInterface_windows@Http@@@UEAA@XZ
+    virtual ~HttpInterface_windows();
+
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

@@ -21,8 +21,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1DataProxy@BehaviorData@@UEAA@XZ
-        MCVAPI ~DataProxy();
+        // vIndex: 0, symbol: ??1DataProxy@BehaviorData@@UEAA@XZ
+        virtual ~DataProxy();
 
         // NOLINTEND
     };

@@ -25,16 +25,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BaseScriptGameTestFunction@ScriptModuleGameTest@@UEAA@XZ
+    virtual ~BaseScriptGameTestFunction();
 
     // vIndex: 1, symbol:
     // ?createContext@BaseScriptGameTestFunction@ScriptModuleGameTest@@UEBA?AV?$unique_ptr@VIGameTestFunctionContext@gametest@@U?$default_delete@VIGameTestFunctionContext@gametest@@@std@@@std@@AEAVBaseGameTestHelper@gametest@@@Z
     virtual std::unique_ptr<class gametest::IGameTestFunctionContext>
     createContext(class gametest::BaseGameTestHelper&) const;
-
-    // symbol: ??1BaseScriptGameTestFunction@ScriptModuleGameTest@@UEAA@XZ
-    MCVAPI ~BaseScriptGameTestFunction();
 
     // symbol:
     // ??0BaseScriptGameTestFunction@ScriptModuleGameTest@@QEAA@VWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

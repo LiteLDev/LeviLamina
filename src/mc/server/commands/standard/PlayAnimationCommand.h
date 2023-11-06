@@ -15,14 +15,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1PlayAnimationCommand@@UEAA@XZ
+    virtual ~PlayAnimationCommand();
 
     // vIndex: 2, symbol: ?execute@PlayAnimationCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-
-    // symbol: ??1PlayAnimationCommand@@UEAA@XZ
-    MCVAPI ~PlayAnimationCommand();
 
     // symbol: ?setup@PlayAnimationCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry&);

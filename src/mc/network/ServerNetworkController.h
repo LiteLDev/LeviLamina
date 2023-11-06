@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ServerNetworkController();
 
     // vIndex: 1, symbol: ?isDedicatedServer@ServerNetworkController@@UEBA_NXZ
     virtual bool isDedicatedServer() const;

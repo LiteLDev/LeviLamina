@@ -16,14 +16,11 @@ public:
     // vIndex: 0, symbol: ?getJsonName@TickWorldDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1TickWorldDescription@@UEAA@XZ
+    virtual ~TickWorldDescription();
 
     // vIndex: 2, symbol: ?deserializeData@TickWorldDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1TickWorldDescription@@UEAA@XZ
-    MCVAPI ~TickWorldDescription();
 
     // symbol: ??0TickWorldDescription@@QEAA@XZ
     MCAPI TickWorldDescription();

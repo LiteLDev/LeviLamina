@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IContentTierManager@@UEAA@XZ
-    MCVAPI ~IContentTierManager();
+    // vIndex: 0, symbol: ??1IContentTierManager@@UEAA@XZ
+    virtual ~IContentTierManager();
 
     // NOLINTEND
 };

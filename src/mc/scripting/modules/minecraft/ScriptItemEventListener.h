@@ -33,8 +33,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptItemEventListener@@@UEAA@XZ
+    virtual ~ScriptItemEventListener();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -112,9 +112,6 @@ public:
     // vIndex: 23, symbol:
     // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemStopUseEvent@@@Z
     virtual ::EventResult onEvent(struct ItemStopUseEvent const&);
-
-    // vIndex: 24, symbol: ?onEvent@ItemEventListener@@UEAA?AW4EventResult@@AEBUItemNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct ItemNotificationEvent const&);
 
     // vIndex: 25, symbol: __unk_vfn_25
     virtual void __unk_vfn_25();

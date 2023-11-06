@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1TargetGoal@@UEAA@XZ
+    virtual ~TargetGoal();
 
     // vIndex: 2, symbol: ?canContinueToUse@TargetGoal@@UEAA_NXZ
     virtual bool canContinueToUse();
@@ -39,9 +39,6 @@ public:
 
     // vIndex: 10, symbol: ?_canAttack@TargetGoal@@MEAA_NPEAVMob@@PEAVActor@@_N2PEAPEBUMobDescriptor@@@Z
     virtual bool _canAttack(class Mob*, class Actor*, bool, bool, struct MobDescriptor const**);
-
-    // symbol: ??1TargetGoal@@UEAA@XZ
-    MCVAPI ~TargetGoal();
 
     // symbol: ??0TargetGoal@@QEAA@AEAVMob@@_NH1M1H@Z
     MCAPI TargetGoal(class Mob&, bool, int, bool, float, bool, int);

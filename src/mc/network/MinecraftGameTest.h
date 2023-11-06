@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1MinecraftGameTest@@UEAA@XZ
+    virtual ~MinecraftGameTest();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -89,9 +89,6 @@ public:
 
     // vIndex: 24, symbol: __unk_vfn_24
     virtual void __unk_vfn_24();
-
-    // symbol: ??1MinecraftGameTest@@UEAA@XZ
-    MCVAPI ~MinecraftGameTest();
 
     // symbol: ??0MinecraftGameTest@@QEAA@AEAVLevel@@@Z
     MCAPI explicit MinecraftGameTest(class Level&);

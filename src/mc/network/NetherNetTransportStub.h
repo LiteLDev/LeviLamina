@@ -25,6 +25,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~NetherNetTransportStub();
+
     // symbol: ?AcceptSessionWithUser@NetherNetTransportStub@@UEAA_NUNetworkID@NetherNet@@@Z
     MCVAPI bool AcceptSessionWithUser(struct NetherNet::NetworkID);
 

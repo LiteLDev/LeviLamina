@@ -2,4 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class IPacketHandlerDispatcher {};
+class IPacketHandlerDispatcher {
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~IPacketHandlerDispatcher();
+
+    // NOLINTEND
+};

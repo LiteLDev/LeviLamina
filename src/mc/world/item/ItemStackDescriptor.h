@@ -19,11 +19,8 @@ public:
     std::unique_ptr<CompoundTag, std::default_delete<CompoundTag>> mUserData; // this+0x18
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ItemStackDescriptor@@UEAA@XZ
-    MCVAPI ~ItemStackDescriptor();
+    // vIndex: 0, symbol: ??1ItemStackDescriptor@@UEAA@XZ
+    virtual ~ItemStackDescriptor();
 
     // symbol: ??0ItemStackDescriptor@@QEAA@XZ
     MCAPI ItemStackDescriptor();

@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ItemStackNetManagerBase@@UEAA@XZ
+    virtual ~ItemStackNetManagerBase();
 
     // vIndex: 1, symbol: ?isEnabled@ItemStackNetManagerBase@@UEBA_NXZ
     virtual bool isEnabled() const;
@@ -53,9 +53,6 @@ public:
 
     // vIndex: 10, symbol: ?_initScreen@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@@Z
     virtual void _initScreen(class ItemStackNetManagerScreen&);
-
-    // symbol: ??1ItemStackNetManagerBase@@UEAA@XZ
-    MCVAPI ~ItemStackNetManagerBase();
 
     // symbol: ??0ItemStackNetManagerBase@@QEAA@AEAVPlayer@@_N1@Z
     MCAPI ItemStackNetManagerBase(class Player&, bool, bool);

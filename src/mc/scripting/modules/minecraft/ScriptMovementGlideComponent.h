@@ -23,11 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptMovementGlideComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptMovementGlideComponent();
+    // vIndex: 0, symbol: ??1ScriptMovementGlideComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptMovementGlideComponent();
 
     // symbol:
     // ?getSpeedWhenTurning@ScriptMovementGlideComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ

@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptItemDefinitionBeforeEvent();
+    // vIndex: 0, symbol: ??1ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptItemDefinitionBeforeEvent();
 
     // symbol: ??0ScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@QEAA@$$QEAU01@@Z
     MCAPI ScriptItemDefinitionBeforeEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent&&);

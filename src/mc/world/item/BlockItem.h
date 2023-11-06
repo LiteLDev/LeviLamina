@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockItem@@UEAA@XZ
+    virtual ~BlockItem();
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -94,6 +94,9 @@ public:
     // vIndex: 125, symbol: ?getIconYOffset@BlockItem@@UEBAHXZ
     virtual int getIconYOffset() const;
 
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
+
     // vIndex: 133, symbol: ?_calculatePlacePos@BlockItem@@MEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
     virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uchar&, class BlockPos&) const;
 
@@ -101,9 +104,6 @@ public:
     // ?_useOn@BlockItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
     _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
-
-    // symbol: ??1BlockItem@@UEAA@XZ
-    MCVAPI ~BlockItem();
 
     // symbol: ??0BlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI BlockItem(std::string const&, int);

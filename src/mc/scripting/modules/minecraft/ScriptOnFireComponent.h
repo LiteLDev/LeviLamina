@@ -22,11 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptOnFireComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptOnFireComponent();
+    // vIndex: 0, symbol: ??1ScriptOnFireComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptOnFireComponent();
 
     // symbol: ?getOnFireTicksRemaining@ScriptOnFireComponent@ScriptModuleMinecraft@@QEBAHXZ
     MCAPI int getOnFireTicksRemaining() const;

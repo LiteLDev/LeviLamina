@@ -60,8 +60,8 @@ public:
     // vIndex: 9, symbol: ?_doInitialMove@Mob@@MEAAXXZ
     virtual void _doInitialMove();
 
-    // vIndex: 10, symbol: __unk_vfn_10
-    virtual void __unk_vfn_10();
+    // vIndex: 10, symbol: ??1Mob@@UEAA@XZ
+    virtual ~Mob();
 
     // vIndex: 16, symbol: ?getInterpolatedBodyRot@Mob@@UEBAMM@Z
     virtual float getInterpolatedBodyRot(float) const;
@@ -110,6 +110,9 @@ public:
 
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
+
+    // vIndex: 48, symbol: __unk_vfn_48
+    virtual void __unk_vfn_48();
 
     // vIndex: 49, symbol: ?isImmobile@Mob@@UEBA_NXZ
     virtual bool isImmobile() const;
@@ -192,6 +195,9 @@ public:
     // vIndex: 118, symbol: ?inCaravan@Mob@@UEBA_NXZ
     virtual bool inCaravan() const;
 
+    // vIndex: 120, symbol: __unk_vfn_120
+    virtual void __unk_vfn_120();
+
     // vIndex: 123, symbol:
     // ?buildDebugInfo@Mob@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void buildDebugInfo(std::string&) const;
@@ -202,11 +208,14 @@ public:
     // vIndex: 134, symbol: ?swing@Mob@@UEAAXXZ
     virtual void swing();
 
+    // vIndex: 142, symbol: __unk_vfn_142
+    virtual void __unk_vfn_142();
+
+    // vIndex: 143, symbol: __unk_vfn_143
+    virtual void __unk_vfn_143();
+
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
-
-    // vIndex: 148, symbol: __unk_vfn_148
-    virtual void __unk_vfn_148();
 
     // vIndex: 149, symbol: ?kill@Mob@@UEAAXXZ
     virtual void kill();
@@ -377,9 +386,6 @@ public:
 
     // symbol: ?renderDebugServerState@Mob@@UEAAXAEBVOptions@@@Z
     MCVAPI void renderDebugServerState(class Options const&);
-
-    // symbol: ??1Mob@@UEAA@XZ
-    MCVAPI ~Mob();
 
     // symbol: ??0Mob@@QEAA@AEAVLevel@@AEAVEntityContext@@@Z
     MCAPI Mob(class Level&, class EntityContext&);

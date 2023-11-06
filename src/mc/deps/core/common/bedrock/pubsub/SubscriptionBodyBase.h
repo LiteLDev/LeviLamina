@@ -27,7 +27,7 @@ public:
     int                                                   mGroup;        // this+0x38
 public:
     // NOLINTBEGIN
-    // symbol: ??1SubscriptionBodyBase@Detail@PubSub@Bedrock@@UEAA@XZ
+    // vIndex: 0, symbol: ??1SubscriptionBodyBase@Detail@PubSub@Bedrock@@UEAA@XZ
     virtual ~SubscriptionBodyBase();
 
     // symbol:

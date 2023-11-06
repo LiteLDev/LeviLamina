@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1WebRTCNetworkPeer@@UEAA@XZ
+    virtual ~WebRTCNetworkPeer();
 
     // vIndex: 1, symbol:
     // ?sendPacket@WebRTCNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@W4Compressibility@@@Z
@@ -39,9 +39,6 @@ public:
 
     // vIndex: 7, symbol: ?isEncrypted@WebRTCNetworkPeer@@UEBA_NXZ
     virtual bool isEncrypted() const;
-
-    // symbol: ??1WebRTCNetworkPeer@@UEAA@XZ
-    MCVAPI ~WebRTCNetworkPeer();
 
     // symbol: ??0WebRTCNetworkPeer@@QEAA@$$QEAV?$NonOwnerPointer@UNetherNetConnector@@@Bedrock@@_K@Z
     MCAPI WebRTCNetworkPeer(class Bedrock::NonOwnerPointer<struct NetherNetConnector>&&, uint64);

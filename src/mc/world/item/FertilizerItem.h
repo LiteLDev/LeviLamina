@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FertilizerItem@@UEAA@XZ
+    virtual ~FertilizerItem();
 
     // vIndex: 10, symbol:
     // ?executeEvent@FertilizerItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
@@ -83,6 +83,9 @@ public:
     // vIndex: 116, symbol: __unk_vfn_116
     virtual void __unk_vfn_116();
 
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
+
     // vIndex: 135, symbol:
     // ?_useOn@FertilizerItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
@@ -90,9 +93,6 @@ public:
 
     // symbol: ?isFertilizer@FertilizerItem@@UEBA_NXZ
     MCVAPI bool isFertilizer() const;
-
-    // symbol: ??1FertilizerItem@@UEAA@XZ
-    MCVAPI ~FertilizerItem();
 
     // symbol:
     // ??0FertilizerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4FertilizerType@@@Z

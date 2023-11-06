@@ -63,6 +63,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1IScriptWorldAfterEvents@@@UEAA@XZ
+    virtual ~IScriptWorldAfterEvents();
+
     // symbol:
     // ?onActivateLever@IScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptLeverActionAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     MCVAPI void onActivateLever(class Scripting::StrongTypedObjectHandle<

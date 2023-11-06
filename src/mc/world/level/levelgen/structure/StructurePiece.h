@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1StructurePiece@@UEAA@XZ
+    virtual ~StructurePiece();
 
     // vIndex: 1, symbol: ?moveBoundingBox@StructurePiece@@UEAAXHHH@Z
     virtual void moveBoundingBox(int, int, int);
@@ -27,7 +27,7 @@ public:
     // ?addChildren@StructurePiece@@UEAAXAEAV1@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
     virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
 
-    // vIndex: 4, symbol: ?postProcess@OceanMonumentCoreRoom@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+    // vIndex: 4, symbol: ?postProcess@TemplateStructurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&) = 0;
 
     // vIndex: 5, symbol: ?postProcessMobsAt@StructurePiece@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
@@ -65,9 +65,6 @@ public:
 
     // vIndex: 12, symbol: ?addHardcodedSpawnAreas@StructurePiece@@UEBAXAEAVLevelChunk@@@Z
     virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-
-    // symbol: ??1StructurePiece@@UEAA@XZ
-    MCVAPI ~StructurePiece();
 
     // symbol: ?_getWorldPos@StructurePiece@@QEAA?AVBlockPos@@HHH@Z
     MCAPI class BlockPos _getWorldPos(int, int, int);

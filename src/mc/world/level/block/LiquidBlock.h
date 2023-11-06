@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1LiquidBlock@@UEAA@XZ
+    virtual ~LiquidBlock();
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@LiquidBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -185,9 +185,6 @@ public:
 
     // symbol: ?canBeSilkTouched@LiquidBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
-
-    // symbol: ??1LiquidBlock@@UEAA@XZ
-    MCVAPI ~LiquidBlock();
 
     // symbol: ??0LiquidBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI LiquidBlock(std::string const&, int, class Material const&);

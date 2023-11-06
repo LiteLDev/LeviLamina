@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1SignItem@@UEAA@XZ
+    virtual ~SignItem();
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -76,6 +76,9 @@ public:
     // vIndex: 116, symbol: __unk_vfn_116
     virtual void __unk_vfn_116();
 
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
+
     // vIndex: 133, symbol: ?_calculatePlacePos@SignItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
     virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uchar&, class BlockPos&) const;
 
@@ -86,9 +89,6 @@ public:
 
     // vIndex: 136, symbol: ?getBlockToPlace@SignItem@@UEBAPEBVBlock@@EAEBVActor@@VBlockPos@@@Z
     virtual class Block const* getBlockToPlace(uchar, class Actor const&, class BlockPos) const;
-
-    // symbol: ??1SignItem@@UEAA@XZ
-    MCVAPI ~SignItem();
 
     // symbol:
     // ??0SignItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4SignType@SignBlock@@@Z

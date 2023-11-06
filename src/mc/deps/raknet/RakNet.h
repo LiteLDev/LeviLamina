@@ -29,6 +29,7 @@ namespace RakNet { class RakString; }
 namespace RakNet { class SocketLayerOverride; }
 namespace RakNet { class StringCompressor; }
 namespace RakNet { class StringTable; }
+namespace RakNet { class TCPInterface; }
 namespace RakNet { struct AddressOrGUID; }
 namespace RakNet { struct InternalPacket; }
 namespace RakNet { struct NetworkAdapter; }

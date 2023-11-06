@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1DimensionManager@@UEAA@XZ
-    MCVAPI ~DimensionManager();
+    // vIndex: 0, symbol: ??1DimensionManager@@UEAA@XZ
+    virtual ~DimensionManager();
 
     // symbol:
     // ??0DimensionManager@@QEAA@V?$not_null@V?$NonOwnerPointer@VIDimensionFactory@@@Bedrock@@@gsl@@V?$optional@VDimensionDefinitionGroup@@@std@@@Z

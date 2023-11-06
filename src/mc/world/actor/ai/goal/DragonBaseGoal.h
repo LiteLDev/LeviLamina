@@ -15,11 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1DragonBaseGoal@@UEAA@XZ
-    MCVAPI ~DragonBaseGoal();
+    // vIndex: 0, symbol: ??1DragonBaseGoal@@UEAA@XZ
+    virtual ~DragonBaseGoal();
 
     // NOLINTEND
 };

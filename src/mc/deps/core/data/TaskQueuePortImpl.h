@@ -109,14 +109,11 @@ public:
     // vIndex: 17, symbol: ?ResumePort@TaskQueuePortImpl@@UEAAXXZ
     virtual void ResumePort();
 
-    // vIndex: 18, symbol: __unk_vfn_18
-    virtual void __unk_vfn_18();
+    // vIndex: 18, symbol: ??1TaskQueuePortImpl@@UEAA@XZ
+    virtual ~TaskQueuePortImpl();
 
     // vIndex: 19, symbol: ?QueryApiImpl@?$Api@$00UITaskQueuePort@@@@MEAAPEAXW4ApiId@@@Z
     virtual void* QueryApiImpl(::ApiId);
-
-    // symbol: ??1TaskQueuePortImpl@@UEAA@XZ
-    MCVAPI ~TaskQueuePortImpl();
 
     // symbol: ?Initialize@TaskQueuePortImpl@@QEAAJW4XTaskQueueDispatchMode@@@Z
     MCAPI long Initialize(::XTaskQueueDispatchMode);

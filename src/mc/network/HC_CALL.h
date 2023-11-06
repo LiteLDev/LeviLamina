@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1HC_CALL@@UEAA@XZ
-    MCVAPI ~HC_CALL();
+    // vIndex: 0, symbol: ??1HC_CALL@@UEAA@XZ
+    virtual ~HC_CALL();
 
     // symbol: ?PerformAsync@HC_CALL@@QEAAJPEAUXAsyncBlock@@@Z
     MCAPI long PerformAsync(struct XAsyncBlock*);

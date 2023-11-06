@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1StorageAreaStateListener@Core@@UEAA@XZ
+    virtual ~StorageAreaStateListener();
 
     // vIndex: 1, symbol:
     // ?onExtendDiskSpace@StorageAreaStateListener@Core@@UEAAX_NAEAV?$weak_ptr@VFileStorageArea@Core@@@std@@_KV?$function@$$A6AXXZ@4@@Z
@@ -36,9 +36,6 @@ public:
 
     // symbol: ?onOutOfDiskSpace@StorageAreaStateListener@Core@@UEAAX_N@Z
     MCVAPI void onOutOfDiskSpace(bool);
-
-    // symbol: ??1StorageAreaStateListener@Core@@UEAA@XZ
-    MCVAPI ~StorageAreaStateListener();
 
     // symbol: ??0StorageAreaStateListener@Core@@QEAA@XZ
     MCAPI StorageAreaStateListener();

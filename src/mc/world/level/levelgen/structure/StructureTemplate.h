@@ -50,8 +50,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1StructureTemplate@@UEAA@XZ
+    virtual ~StructureTemplate();
 
     // vIndex: 1, symbol: ?clear@StructureTemplate@@UEAAXXZ
     virtual void clear();
@@ -61,9 +61,6 @@ public:
 
     // vIndex: 3, symbol: ?_allowReadActor@StructureTemplate@@MEBA_NAEBVActor@@@Z
     virtual bool _allowReadActor(class Actor const&) const;
-
-    // symbol: ??1StructureTemplate@@UEAA@XZ
-    MCVAPI ~StructureTemplate();
 
     // symbol:
     // ??0StructureTemplate@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$NonOwnerPointer@VIUnknownBlockTypeRegistry@@@Bedrock@@@Z

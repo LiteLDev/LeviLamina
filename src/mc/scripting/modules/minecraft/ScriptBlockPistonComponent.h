@@ -28,11 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptBlockPistonComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptBlockPistonComponent();
+    // vIndex: 0, symbol: ??1ScriptBlockPistonComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockPistonComponent();
 
     // symbol:
     // ?getAttachedBlocks@ScriptBlockPistonComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@$$V@Scripting@@XZ

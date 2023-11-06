@@ -33,8 +33,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1AsyncQueueResult@DispatchQueue@Http@@@UEAA@XZ
+        virtual ~AsyncQueueResult();
 
         // vIndex: 1, symbol:
         // ?getStatus@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEBA?AW4AsyncStatus@23@XZ
@@ -74,16 +74,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1DispatchQueue@Http@Bedrock@@UEAA@XZ
+    virtual ~DispatchQueue();
 
     // vIndex: 1, symbol:
     // ?send@DispatchQueue@Http@Bedrock@@UEAA?AV?$shared_ptr@V?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@std@@$$QEAVRequest@23@@Z
     virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
     send(class Bedrock::Http::Request&&);
-
-    // symbol: ??1DispatchQueue@Http@Bedrock@@UEAA@XZ
-    MCVAPI ~DispatchQueue();
 
     // symbol: ??0DispatchQueue@Http@Bedrock@@QEAA@V?$shared_ptr@VDispatcherProcess@Http@Bedrock@@@std@@@Z
     MCAPI explicit DispatchQueue(std::shared_ptr<class Bedrock::Http::DispatcherProcess>);

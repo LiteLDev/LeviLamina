@@ -14,11 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1TargetGoalDefinition@@UEAA@XZ
-    MCVAPI ~TargetGoalDefinition();
+    // vIndex: 0, symbol: ??1TargetGoalDefinition@@UEAA@XZ
+    virtual ~TargetGoalDefinition();
 
     // symbol: ?initialize@TargetGoalDefinition@@QEBAXAEAVEntityContext@@AEAVTargetGoal@@@Z
     MCAPI void initialize(class EntityContext&, class TargetGoal&) const;

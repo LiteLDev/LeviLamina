@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~DBChunkStorage();
 
     // vIndex: 1, symbol: ?shutdown@DBChunkStorage@@UEAAXXZ
     virtual void shutdown();

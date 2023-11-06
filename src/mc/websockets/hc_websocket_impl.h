@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1hc_websocket_impl@httpclient@xbox@@UEAA@XZ
-    MCVAPI ~hc_websocket_impl();
+    // vIndex: 0, symbol: ??1hc_websocket_impl@httpclient@xbox@@UEAA@XZ
+    virtual ~hc_websocket_impl();
 
     // NOLINTEND
 };

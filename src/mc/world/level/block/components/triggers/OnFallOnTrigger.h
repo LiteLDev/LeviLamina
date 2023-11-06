@@ -10,8 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1OnFallOnTrigger@@UEAA@XZ
-    MCVAPI ~OnFallOnTrigger();
+    // vIndex: 0, symbol: ??1OnFallOnTrigger@@UEAA@XZ
+    virtual ~OnFallOnTrigger();
 
     // symbol: ??0OnFallOnTrigger@@QEAA@XZ
     MCAPI OnFallOnTrigger();

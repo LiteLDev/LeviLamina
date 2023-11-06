@@ -23,11 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptItemEnchantmentComponent();
+    // vIndex: 0, symbol: ??1ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptItemEnchantmentComponent();
 
     // symbol: ??0ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptItemEnchantmentComponent(class ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);

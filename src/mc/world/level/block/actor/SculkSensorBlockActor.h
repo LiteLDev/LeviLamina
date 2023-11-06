@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1SculkSensorBlockActor@@UEAA@XZ
+    virtual ~SculkSensorBlockActor();
 
     // vIndex: 1, symbol: ?load@SculkSensorBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
@@ -59,9 +59,6 @@ public:
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
-
-    // symbol: ??1SculkSensorBlockActor@@UEAA@XZ
-    MCVAPI ~SculkSensorBlockActor();
 
     // symbol: ??0SculkSensorBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit SculkSensorBlockActor(class BlockPos const&);

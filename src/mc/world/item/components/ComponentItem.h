@@ -31,8 +31,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ComponentItem@@UEAA@XZ
+    virtual ~ComponentItem();
 
     // vIndex: 1, symbol: ?initServer@ComponentItem@@UEAA_NAEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z
     virtual bool initServer(class Json::Value&, class SemVersion const&, bool, class Experiments const&);
@@ -284,6 +284,9 @@ public:
     // vIndex: 126, symbol: ?canBeCharged@ComponentItem@@UEBA_NXZ
     virtual bool canBeCharged() const;
 
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
+
     // vIndex: 131, symbol:
     // ?getAuxValuesDescription@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getAuxValuesDescription() const;
@@ -314,9 +317,6 @@ public:
 
     // symbol: ?useVariant@ComponentItem@@UEBA_NHH_N@Z
     MCVAPI bool useVariant(int, int, bool) const;
-
-    // symbol: ??1ComponentItem@@UEAA@XZ
-    MCVAPI ~ComponentItem();
 
     // symbol: ??0ComponentItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
     MCAPI ComponentItem(std::string const&, short);

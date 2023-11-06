@@ -63,8 +63,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptActor@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptActor();
 
     // vIndex: 1, symbol: ?setUnloaded@ScriptActor@ScriptModuleMinecraft@@UEAAXAEAVActor@@@Z
     virtual void setUnloaded(class Actor&);
@@ -100,9 +100,6 @@ public:
 
     // vIndex: 10, symbol: ?_getScoreboardId@ScriptActor@ScriptModuleMinecraft@@MEBAAEBUScoreboardId@@AEBVScoreboard@@@Z
     virtual struct ScoreboardId const& _getScoreboardId(class Scoreboard const&) const;
-
-    // symbol: ??1ScriptActor@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptActor();
 
     // symbol: ??0ScriptActor@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptActor(class ScriptModuleMinecraft::ScriptActor&&);

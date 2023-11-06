@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IPacketObserver@@UEAA@XZ
-    MCVAPI ~IPacketObserver();
+    // vIndex: 0, symbol: ??1IPacketObserver@@UEAA@XZ
+    virtual ~IPacketObserver();
 
     // NOLINTEND
 };

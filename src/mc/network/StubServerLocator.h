@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1StubServerLocator@@UEAA@XZ
+    virtual ~StubServerLocator();
 
     // vIndex: 3, symbol:
     // ?startAnnouncingServer@StubServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$NonOwnerPointer@VAppPlatform@@@Bedrock@@W4GameType@@HH_N3@Z
@@ -66,9 +66,6 @@ public:
     // ?checkCanConnectToCustomServerAsync@StubServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AXW4ServerConnectivityTestResult@@@Z@3@@Z
     virtual void
     checkCanConnectToCustomServerAsync(std::string, int, std::function<void(::ServerConnectivityTestResult)>);
-
-    // symbol: ??1StubServerLocator@@UEAA@XZ
-    MCVAPI ~StubServerLocator();
 
     // symbol: ??0StubServerLocator@@QEAA@XZ
     MCAPI StubServerLocator();

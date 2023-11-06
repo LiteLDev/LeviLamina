@@ -88,8 +88,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1RakNetServerLocator@@UEAA@XZ
+    virtual ~RakNetServerLocator();
 
     // vIndex: 1, symbol: ?_onDisable@RakNetServerLocator@@EEAAXXZ
     virtual void _onDisable();
@@ -144,9 +144,6 @@ public:
     // ?checkCanConnectToCustomServerAsync@RakNetServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AXW4ServerConnectivityTestResult@@@Z@3@@Z
     virtual void
     checkCanConnectToCustomServerAsync(std::string, int, std::function<void(::ServerConnectivityTestResult)>);
-
-    // symbol: ??1RakNetServerLocator@@UEAA@XZ
-    MCVAPI ~RakNetServerLocator();
 
     // symbol:
     // ??0RakNetServerLocator@@QEAA@AEAVRakNetConnector@@AEAVIPSupportInterface@RakPeerHelper@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_NW4RakNetServerLANVisibility@@W4PermissionLAN@@W4PermissionIPv6@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@V?$function@$$A6A?AV?$unique_ptr@VRakPeerInterface@RakNet@@P6AXPEAV12@@Z@std@@XZ@5@@Z

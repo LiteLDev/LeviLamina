@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~TridentRiptideEnchant();
 
     // vIndex: 1, symbol: ?isCompatibleWith@TridentRiptideEnchant@@UEBA_NW4Type@Enchant@@@Z
     virtual bool isCompatibleWith(::Enchant::Type) const;
@@ -25,6 +25,9 @@ public:
 
     // vIndex: 3, symbol: ?getMaxCost@TridentRiptideEnchant@@UEBAHH@Z
     virtual int getMaxCost(int) const;
+
+    // vIndex: 4, symbol: __unk_vfn_4
+    virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol: ?getMaxLevel@TridentRiptideEnchant@@UEBAHXZ
     virtual int getMaxLevel() const;

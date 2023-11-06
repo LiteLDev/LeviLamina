@@ -17,6 +17,13 @@ public:
     CompositeDefinition(CompositeDefinition const&);
     CompositeDefinition();
 
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~CompositeDefinition();
+
+    // NOLINTEND
+
     // protected:
     // NOLINTBEGIN
     // symbol:

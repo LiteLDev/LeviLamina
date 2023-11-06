@@ -34,8 +34,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Scoreboard@@UEAA@XZ
+    virtual ~Scoreboard();
 
     // vIndex: 1, symbol:
     // ?setDisplayObjective@Scoreboard@@UEAAPEBVDisplayObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVObjective@@W4ObjectiveSortOrder@@@Z
@@ -85,9 +85,6 @@ public:
 
     // vIndex: 15, symbol: ?isClientSide@Scoreboard@@MEBA_NXZ
     virtual bool isClientSide() const;
-
-    // symbol: ??1Scoreboard@@UEAA@XZ
-    MCVAPI ~Scoreboard();
 
     // symbol: ??0Scoreboard@@QEAA@VCommandSoftEnumRegistry@@@Z
     MCAPI explicit Scoreboard(class CommandSoftEnumRegistry);

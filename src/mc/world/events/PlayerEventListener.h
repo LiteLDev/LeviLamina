@@ -18,6 +18,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~PlayerEventListener();
+
     // symbol: ?onCameraSetPlayerRot@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec2@@@Z
     MCVAPI ::EventResult onCameraSetPlayerRot(class Player&, class Vec2 const&);
 

@@ -102,8 +102,8 @@ public:
     // vIndex: 11, symbol: ?isValid@StructurePoolElement@@UEBA_NXZ
     virtual bool isValid() const;
 
-    // symbol: ??1StructurePoolElement@@UEAA@XZ
-    MCVAPI ~StructurePoolElement();
+    // vIndex: 12, symbol: ??1StructurePoolElement@@UEAA@XZ
+    virtual ~StructurePoolElement();
 
     // symbol:
     // ??0StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UStructurePoolElementSettings@@@Z

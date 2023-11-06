@@ -26,14 +26,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BaseScriptBlockComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~BaseScriptBlockComponent();
 
     // vIndex: 1, symbol: ?_isValid@BaseScriptBlockComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;
-
-    // symbol: ??1BaseScriptBlockComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~BaseScriptBlockComponent();
 
     // symbol: ??0BaseScriptBlockComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI BaseScriptBlockComponent(class ScriptModuleMinecraft::BaseScriptBlockComponent const&);

@@ -7,11 +7,11 @@
 class ScoreboardEventCoordinator : public ::EventCoordinator<ScoreboardEventListener> {
 public:
     // prevent constructor by default
-    ScoreboardEventCoordinator() = delete;
+    ScoreboardEventCoordinator();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScoreboardEventCoordinator@@UEAA@XZ
+    // vIndex: 0, symbol: ??1ScoreboardEventCoordinator@@UEAA@XZ
     virtual ~ScoreboardEventCoordinator();
 
     // symbol:

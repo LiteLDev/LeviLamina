@@ -22,11 +22,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0() = 0;
+    // vIndex: 0, symbol: ??1NetEventCallback@@UEAA@XZ
+    virtual ~NetEventCallback();
 
     // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1() = 0;
 
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
@@ -696,9 +696,6 @@ public:
     // symbol:
     // ?onUnableToConnect@NetEventCallback@@UEAAXW4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void onUnableToConnect(::Connection::DisconnectFailReason, std::string const&);
-
-    // symbol: ??1NetEventCallback@@UEAA@XZ
-    MCVAPI ~NetEventCallback();
 
     // NOLINTEND
 };

@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~MoveToWaterGoal();
 
     // symbol: ??0MoveToWaterGoal@@QEAA@AEAVMob@@MHHHM@Z
     MCAPI MoveToWaterGoal(class Mob&, float, int, int, int, float);

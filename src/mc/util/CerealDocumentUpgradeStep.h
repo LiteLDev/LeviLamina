@@ -9,8 +9,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1CerealDocumentUpgradeStep@@UEAA@XZ
-    MCVAPI ~CerealDocumentUpgradeStep();
+    // vIndex: 0, symbol: ??1CerealDocumentUpgradeStep@@UEAA@XZ
+    virtual ~CerealDocumentUpgradeStep();
 
     // symbol: ??0CerealDocumentUpgradeStep@@QEAA@AEBV0@@Z
     MCAPI CerealDocumentUpgradeStep(class CerealDocumentUpgradeStep const&);

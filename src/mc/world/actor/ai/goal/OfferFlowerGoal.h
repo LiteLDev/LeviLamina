@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1OfferFlowerDefinition@@@UEAA@XZ
+        virtual ~OfferFlowerDefinition();
 
         // symbol: ?initialize@OfferFlowerDefinition@OfferFlowerGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class OfferFlowerGoal&) const;
@@ -55,8 +55,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~OfferFlowerGoal();
 
     // vIndex: 1, symbol: ?canUse@OfferFlowerGoal@@UEAA_NXZ
     virtual bool canUse();

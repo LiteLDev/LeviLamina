@@ -21,8 +21,8 @@ public:
     // vIndex: 0, symbol: ?containerContentChanged@LevelContainerModel@@UEAAXH@Z
     virtual void containerContentChanged(int);
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1@@UEAA@XZ
+    virtual ~LevelContainerModel();
 
     // vIndex: 2, symbol: ?postInit@LevelContainerModel@@UEAAXXZ
     virtual void postInit();

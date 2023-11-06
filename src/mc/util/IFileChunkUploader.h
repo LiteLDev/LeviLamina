@@ -14,11 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0() = 0;
+    // vIndex: 0, symbol: ??1IFileChunkUploader@@UEAA@XZ
+    virtual ~IFileChunkUploader();
 
     // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1() = 0;
 
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
@@ -61,9 +61,6 @@ public:
 
     // symbol: ?update@IFileChunkUploader@@UEAAXXZ
     MCVAPI void update();
-
-    // symbol: ??1IFileChunkUploader@@UEAA@XZ
-    MCVAPI ~IFileChunkUploader();
 
     // symbol: ??0IFileChunkUploader@@QEAA@XZ
     MCAPI IFileChunkUploader();

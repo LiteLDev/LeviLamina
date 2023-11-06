@@ -12,8 +12,8 @@ public:
     // vIndex: 0, symbol: ?invalidate@TempEPtrBase@@EEAAXXZ
     virtual void invalidate();
 
-    // symbol: ??1TempEPtrBase@@UEAA@XZ
-    MCVAPI ~TempEPtrBase();
+    // vIndex: 1, symbol: ??1TempEPtrBase@@UEAA@XZ
+    virtual ~TempEPtrBase();
 
     // symbol: ??0TempEPtrBase@@QEAA@AEBV0@@Z
     MCAPI TempEPtrBase(class TempEPtrBase const&);

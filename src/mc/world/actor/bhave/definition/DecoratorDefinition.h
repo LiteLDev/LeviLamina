@@ -17,6 +17,13 @@ public:
     DecoratorDefinition(DecoratorDefinition const&);
     DecoratorDefinition();
 
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~DecoratorDefinition();
+
+    // NOLINTEND
+
     // protected:
     // NOLINTBEGIN
     // symbol:

@@ -19,11 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1MeleeAttackDefinition@@UEAA@XZ
-    MCVAPI ~MeleeAttackDefinition();
+    // vIndex: 0, symbol: ??1MeleeAttackDefinition@@UEAA@XZ
+    virtual ~MeleeAttackDefinition();
 
     // symbol: ??0MeleeAttackDefinition@@QEAA@XZ
     MCAPI MeleeAttackDefinition();

@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptItemStopUseAfterEvent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptItemStopUseAfterEvent();
+    // vIndex: 0, symbol: ??1ScriptItemStopUseAfterEvent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptItemStopUseAfterEvent();
 
     // symbol:
     // ?bind@ScriptItemStopUseAfterEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptItemStopUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@XZ

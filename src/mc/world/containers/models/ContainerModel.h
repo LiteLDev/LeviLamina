@@ -20,8 +20,8 @@ public:
     // vIndex: 0, symbol: ?containerContentChanged@ContainerModel@@UEAAXH@Z
     virtual void containerContentChanged(int);
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1ContainerModel@@UEAA@XZ
+    virtual ~ContainerModel();
 
     // vIndex: 2, symbol: ?postInit@ContainerModel@@UEAAXXZ
     virtual void postInit();
@@ -101,9 +101,6 @@ public:
 
     // symbol: ?tick@ContainerModel@@UEAAXH@Z
     MCVAPI void tick(int);
-
-    // symbol: ??1ContainerModel@@UEAA@XZ
-    MCVAPI ~ContainerModel();
 
     // symbol: ??0ContainerModel@@QEAA@W4ContainerEnumName@@HW4ContainerCategory@@_N@Z
     MCAPI ContainerModel(::ContainerEnumName, int, ::ContainerCategory, bool);

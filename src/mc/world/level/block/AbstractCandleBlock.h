@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1AbstractCandleBlock@@UEAA@XZ
+    virtual ~AbstractCandleBlock();
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
@@ -185,9 +185,6 @@ public:
 
     // symbol: ?isInteractiveBlock@AbstractCandleBlock@@UEBA_NXZ
     MCVAPI bool isInteractiveBlock() const;
-
-    // symbol: ??1AbstractCandleBlock@@UEAA@XZ
-    MCVAPI ~AbstractCandleBlock();
 
     // symbol:
     // ??0AbstractCandleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z

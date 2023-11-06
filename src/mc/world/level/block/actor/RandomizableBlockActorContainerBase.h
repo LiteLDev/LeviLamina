@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1RandomizableBlockActorContainerBase@@UEAA@XZ
+    virtual ~RandomizableBlockActorContainerBase();
 
     // vIndex: 1, symbol:
     // ?load@RandomizableBlockActorContainerBase@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
@@ -54,9 +54,6 @@ public:
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
-
-    // symbol: ??1RandomizableBlockActorContainerBase@@UEAA@XZ
-    MCVAPI ~RandomizableBlockActorContainerBase();
 
     // symbol:
     // ?setLootTable@RandomizableBlockActorContainerBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

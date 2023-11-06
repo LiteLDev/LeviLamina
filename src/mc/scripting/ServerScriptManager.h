@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ServerScriptManager@@UEAA@XZ
+    virtual ~ServerScriptManager();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -68,9 +68,6 @@ public:
 
     // symbol: ?onServerLevelInitialized@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@AEAVLevel@@@Z
     MCVAPI ::EventResult onServerLevelInitialized(class ServerInstance&, class Level&);
-
-    // symbol: ??1ServerScriptManager@@UEAA@XZ
-    MCVAPI ~ServerScriptManager();
 
     // symbol:
     // ??0ServerScriptManager@@QEAA@UScriptSettings@@V?$NonOwnerPointer@VScheduler@@@Bedrock@@AEAVIMinecraftEventing@@_N@Z

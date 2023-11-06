@@ -19,17 +19,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1UnderwaterCanyonFeature@@UEAA@XZ
+    virtual ~UnderwaterCanyonFeature();
 
     // vIndex: 1, symbol:
     // ?carve@UnderwaterCanyonFeature@@MEBA_NAEAVBlockVolume@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@4HHHHHHMMV?$span@$$CBM$0?0@gsl@@AEBUWorldGenContext@@@Z
     virtual bool
     carve(class BlockVolume&, class BiomeSource const&, class Random&, class ChunkPos const&, class Vec3 const&, class Vec3 const&, int, int, int, int, int, int, float, float, gsl::span<float const>, struct WorldGenContext const&)
         const;
-
-    // symbol: ??1UnderwaterCanyonFeature@@UEAA@XZ
-    MCVAPI ~UnderwaterCanyonFeature();
 
     // symbol: ??0UnderwaterCanyonFeature@@QEAA@F@Z
     MCAPI explicit UnderwaterCanyonFeature(short);

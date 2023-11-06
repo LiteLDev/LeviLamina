@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BlockComponentBase@@UEAA@XZ
-    MCVAPI ~BlockComponentBase();
+    // vIndex: 0, symbol: ??1BlockComponentBase@@UEAA@XZ
+    virtual ~BlockComponentBase();
 
     // NOLINTEND
 };

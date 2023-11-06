@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1GameplayUserManager@@UEAA@XZ
-    MCVAPI ~GameplayUserManager();
+    // vIndex: 0, symbol: ??1GameplayUserManager@@UEAA@XZ
+    virtual ~GameplayUserManager();
 
     // symbol: ??0GameplayUserManager@@QEAA@XZ
     MCAPI GameplayUserManager();

@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1NBTSaver@@UEAA@XZ
-    MCVAPI ~NBTSaver();
+    // vIndex: 0, symbol: ??1NBTSaver@@UEAA@XZ
+    virtual ~NBTSaver();
 
     // symbol: ?getSavedCompoundTag@NBTSaver@@QEAA?AVCompoundTag@@XZ
     MCAPI class CompoundTag getSavedCompoundTag();

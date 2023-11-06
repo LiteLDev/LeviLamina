@@ -15,14 +15,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1AttributeInstance@@UEAA@XZ
+    virtual ~AttributeInstance();
 
     // vIndex: 1, symbol: ?tick@AttributeInstance@@UEAAXXZ
     virtual void tick();
-
-    // symbol: ??1AttributeInstance@@UEAA@XZ
-    MCVAPI ~AttributeInstance();
 
     // symbol: ??0AttributeInstance@@QEAA@AEBV0@@Z
     MCAPI AttributeInstance(class AttributeInstance const&);

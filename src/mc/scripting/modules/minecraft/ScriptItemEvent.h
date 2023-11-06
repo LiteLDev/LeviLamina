@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptItemEvent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptItemEvent();
+    // vIndex: 0, symbol: ??1ScriptItemEvent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptItemEvent();
 
     // NOLINTEND
 };

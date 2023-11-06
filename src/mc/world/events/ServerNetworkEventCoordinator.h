@@ -16,6 +16,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ServerNetworkEventCoordinator();
+
     // symbol: ?getServerNetworkEventHandler@ServerNetworkEventCoordinator@@QEAAAEAVServerNetworkEventHandler@@XZ
     MCAPI class ServerNetworkEventHandler& getServerNetworkEventHandler();
 

@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~MoveToBlockGoal();
 
     // vIndex: 1, symbol: ?canUse@MoveToBlockGoal@@UEAA_NXZ
     virtual bool canUse();

@@ -17,8 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Symmetric@0Crypto@@UEAA@XZ
+    virtual ~Symmetric();
 
     // vIndex: 1, symbol:
     // ?init@Symmetric@1Crypto@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
@@ -43,9 +43,6 @@ public:
 
     // vIndex: 7, symbol: ?encryptToBuffer@Symmetric@1Crypto@@UEAA_NV?$span@$$CBD$0?0@gsl@@V?$span@D$0?0@4@AEA_K@Z
     virtual bool encryptToBuffer(gsl::span<char const>, gsl::span<char>, uint64&);
-
-    // symbol: ??1Symmetric@0Crypto@@UEAA@XZ
-    MCVAPI ~Symmetric();
 
     // symbol: ??0Symmetric@0Crypto@@QEAA@W4System@01@W4OperationMode@01@@Z
     MCAPI Symmetric(::Crypto::Symmetric::System, ::Crypto::Symmetric::OperationMode);

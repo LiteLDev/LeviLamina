@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BlockGeometryComponent@@UEAA@XZ
-    MCVAPI ~BlockGeometryComponent();
+    // vIndex: 0, symbol: ??1BlockGeometryComponent@@UEAA@XZ
+    virtual ~BlockGeometryComponent();
 
     // symbol: ??0BlockGeometryComponent@@QEAA@XZ
     MCAPI BlockGeometryComponent();

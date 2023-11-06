@@ -13,14 +13,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1HugeMushroomFeature@@UEAA@XZ
+    virtual ~HugeMushroomFeature();
 
     // vIndex: 3, symbol: ?place@HugeMushroomFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-
-    // symbol: ??1HugeMushroomFeature@@UEAA@XZ
-    MCVAPI ~HugeMushroomFeature();
 
     // symbol: ??0HugeMushroomFeature@@QEAA@XZ
     MCAPI HugeMushroomFeature();

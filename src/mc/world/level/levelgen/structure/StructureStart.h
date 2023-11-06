@@ -11,17 +11,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1StructureStart@@UEAA@XZ
+    virtual ~StructureStart();
 
     // vIndex: 1, symbol: ?postProcess@StructureStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
 
     // vIndex: 2, symbol: ?isValid@StructureStart@@UEBA_NXZ
     virtual bool isValid() const;
-
-    // symbol: ??1StructureStart@@UEAA@XZ
-    MCVAPI ~StructureStart();
 
     // NOLINTEND
 

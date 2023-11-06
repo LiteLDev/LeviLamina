@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~OceanMonumentDoubleYZRoom();
 
     // vIndex: 2, symbol: ?getType@OceanMonumentDoubleYZRoom@@UEBA?AW4StructurePieceType@@XZ
     virtual ::StructurePieceType getType() const;

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockCollision118Upgrade@@@UEAA@XZ
+    virtual ~BlockCollision118Upgrade();
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockCollision118Upgrade@BlockCollisionVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

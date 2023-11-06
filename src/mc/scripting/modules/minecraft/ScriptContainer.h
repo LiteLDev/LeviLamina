@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptContainer@@@UEAA@XZ
+    virtual ~ScriptContainer();
 
     // vIndex: 1, symbol: ?getSize@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@H$$V@Scripting@@XZ
     virtual class Scripting::Result<int> getSize() const;
@@ -85,11 +85,11 @@ public:
     virtual class Scripting::Result<void> clearAll() const;
 
     // vIndex: 13, symbol:
-    // ?_tryGetContainer@ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@MEBAPEAVContainer@@XZ
+    // ?_tryGetContainer@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@MEBAPEAVContainer@@XZ
     virtual class Container* _tryGetContainer() const = 0;
 
     // vIndex: 14, symbol:
-    // ?_getItemContext@ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@MEBA?AVItemContext@@H@Z
+    // ?_getItemContext@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@MEBA?AVItemContext@@H@Z
     virtual class ItemContext _getItemContext(int) const = 0;
 
     // symbol:

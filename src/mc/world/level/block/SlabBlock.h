@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1SlabBlock@@UEAA@XZ
+    virtual ~SlabBlock();
 
     // vIndex: 12, symbol: ?getVisualShape@SlabBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
@@ -186,9 +186,6 @@ public:
 
     // symbol: ?isSlabBlock@SlabBlock@@UEBA_NXZ
     MCVAPI bool isSlabBlock() const;
-
-    // symbol: ??1SlabBlock@@UEAA@XZ
-    MCVAPI ~SlabBlock();
 
     // symbol:
     // ??0SlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVMaterial@@V?$WeakPtr@VBlockLegacy@@@@@Z

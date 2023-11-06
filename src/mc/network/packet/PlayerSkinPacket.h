@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1PlayerSkinPacket@@UEAA@XZ
+    virtual ~PlayerSkinPacket();
 
     // vIndex: 1, symbol: ?getId@PlayerSkinPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -42,9 +42,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@PlayerSkinPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1PlayerSkinPacket@@UEAA@XZ
-    MCVAPI ~PlayerSkinPacket();
 
     // symbol: ??0PlayerSkinPacket@@QEAA@XZ
     MCAPI PlayerSkinPacket();

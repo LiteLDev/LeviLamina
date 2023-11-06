@@ -20,6 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~HC_WEBSOCKET_OBSERVER();
+
     // symbol:
     // ?Initialize@HC_WEBSOCKET_OBSERVER@@SA?AV?$unique_ptr@UHC_WEBSOCKET_OBSERVER@@U?$http_alloc_deleter@UHC_WEBSOCKET_OBSERVER@@@@@std@@V?$shared_ptr@VWebSocket@httpclient@xbox@@@3@P6AXPEAU1@PEBDPEAX@ZP6AX1PEBEI3@ZP6AX15I_N3@ZP6AX1W4HCWebSocketCloseStatus@@3@Z3@Z
     MCAPI static std::unique_ptr<struct HC_WEBSOCKET_OBSERVER, struct http_alloc_deleter<struct HC_WEBSOCKET_OBSERVER>> Initialize(std::shared_ptr<class xbox::httpclient::WebSocket>, void (*)(struct HC_WEBSOCKET_OBSERVER*, char const*, void*), void (*)(struct HC_WEBSOCKET_OBSERVER*, uchar const*, uint, void*), void (*)(struct HC_WEBSOCKET_OBSERVER*, uchar const*, uint, bool, void*), void (*)(struct HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*), void*);

@@ -26,6 +26,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1ScriptItemChargeAfterEvent@@@UEAA@XZ
+    virtual ~ScriptItemChargeAfterEvent();
+
     // symbol:
     // ??0ScriptItemChargeAfterEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBVPlayer@@AEBUItemChargeEvent@@AEBVWeakLifetimeScope@3@@Z
     MCAPI

@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1VolumeEntityManager@@UEAA@XZ
-    MCVAPI ~VolumeEntityManager();
+    // vIndex: 0, symbol: ??1VolumeEntityManager@@UEAA@XZ
+    virtual ~VolumeEntityManager();
 
     // symbol: ?getVolumeInstanceCount@VolumeEntityManager@@QEBA_KXZ
     MCAPI uint64 getVolumeInstanceCount() const;

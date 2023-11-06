@@ -45,14 +45,14 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1BiomeRegistry@@UEAA@XZ
+    virtual ~BiomeRegistry();
+
     // symbol: ?getEntityRegistry@BiomeRegistry@@UEBA?AV?$StackRefResultT@UEntityRegistryConstRefTraits@@@@XZ
     MCVAPI class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const;
 
     // symbol: ?getEntityRegistry@BiomeRegistry@@UEAA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ
     MCVAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
-
-    // symbol: ??1BiomeRegistry@@UEAA@XZ
-    MCVAPI ~BiomeRegistry();
 
     // symbol: ??0BiomeRegistry@@QEAA@XZ
     MCAPI BiomeRegistry();

@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IScreenChangedEventing@@UEAA@XZ
-    MCVAPI ~IScreenChangedEventing();
+    // vIndex: 0, symbol: ??1IScreenChangedEventing@@UEAA@XZ
+    virtual ~IScreenChangedEventing();
 
     // NOLINTEND
 };

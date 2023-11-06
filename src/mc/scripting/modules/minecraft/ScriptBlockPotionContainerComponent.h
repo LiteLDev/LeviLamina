@@ -28,11 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptBlockPotionContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptBlockPotionContainerComponent();
+    // vIndex: 0, symbol: ??1ScriptBlockPotionContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockPotionContainerComponent();
 
     // symbol: ??4ScriptBlockPotionContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptBlockPotionContainerComponent&

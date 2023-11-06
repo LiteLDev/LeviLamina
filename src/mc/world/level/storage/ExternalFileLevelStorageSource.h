@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ExternalFileLevelStorageSource@@UEAA@XZ
+    virtual ~ExternalFileLevelStorageSource();
 
     // vIndex: 1, symbol:
     // ?getName@ExternalFileLevelStorageSource@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -124,9 +124,6 @@ public:
     // symbol:
     // ?requiresConversion@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI bool requiresConversion(std::string const&);
-
-    // symbol: ??1ExternalFileLevelStorageSource@@UEAA@XZ
-    MCVAPI ~ExternalFileLevelStorageSource();
 
     // symbol:
     // ??0ExternalFileLevelStorageSource@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@AEBV?$not_null@V?$NonOwnerPointer@VSaveTransactionManager@@@Bedrock@@@2@@Z

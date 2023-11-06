@@ -8,8 +8,8 @@
 class ItemInstance : public ::ItemStackBase {
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ItemInstance@@UEAA@XZ
+    virtual ~ItemInstance();
 
     // vIndex: 1, symbol: ?reinit@ItemInstance@@UEAAXAEBVItem@@HH@Z
     virtual void reinit(class Item const&, int, int);
@@ -19,9 +19,6 @@ public:
 
     // vIndex: 3, symbol: ?reinit@ItemInstance@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@Z
     virtual void reinit(std::string_view, int, int);
-
-    // symbol: ??1ItemInstance@@UEAA@XZ
-    MCVAPI ~ItemInstance();
 
     // symbol: ??0ItemInstance@@QEAA@XZ
     MCAPI ItemInstance();

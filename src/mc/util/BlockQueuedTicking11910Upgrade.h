@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockQueuedTicking11910Upgrade@@@UEAA@XZ
+    virtual ~BlockQueuedTicking11910Upgrade();
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockQueuedTicking11910Upgrade@BlockQueuedTickingVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

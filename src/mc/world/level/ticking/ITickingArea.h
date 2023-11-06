@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ITickingArea@@UEAA@XZ
+    virtual ~ITickingArea();
 
     // vIndex: 1, symbol: ?getId@TickingArea@@UEBAAEBVUUID@mce@@XZ
     virtual class mce::UUID const& getId() const = 0;
@@ -99,9 +99,6 @@ public:
 
     // vIndex: 26, symbol: ?updateBlockSourceCurrentTick@TickingArea@@UEAAXAEBUTick@@@Z
     virtual void updateBlockSourceCurrentTick(struct Tick const&) = 0;
-
-    // symbol: ??1ITickingArea@@UEAA@XZ
-    MCVAPI ~ITickingArea();
 
     // symbol: ?serialize@ITickingArea@@QEBA?AVCompoundTag@@XZ
     MCAPI class CompoundTag serialize() const;

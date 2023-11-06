@@ -22,11 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptItemDurabilityComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptItemDurabilityComponent();
+    // vIndex: 0, symbol: ??1ScriptItemDurabilityComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptItemDurabilityComponent();
 
     // symbol: ??0ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptItemDurabilityComponent(class ScriptModuleMinecraft::ScriptItemDurabilityComponent const&);
