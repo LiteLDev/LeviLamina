@@ -1,6 +1,8 @@
 #include "ll/api/plugin/PluginManager.h"
-#include "ll/core/LeviLamina.h"
+
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+
+#include <windows.h>
 
 namespace ll::plugin {
 
@@ -16,15 +18,15 @@ auto PluginManager::getInstance() -> PluginManager& {
     return instance;
 }
 
-auto PluginManager::getCurrentPlugin() -> Plugin& {
+auto PluginManager::getCurrentPlugin(void* base) -> Plugin& {
     HMODULE hModule = nullptr;
     GetModuleHandleEx(
         GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
-        (LPCTSTR)getCurrentPlugin,
+        reinterpret_cast<LPCTSTR>(base),
         &hModule
     );
     auto& i = *getInstance().mImpl;
-    if (!i.dllmapping.contains(hModule)) { throw std::runtime_error("Plugin didn't inject currectly."); }
+    if (!i.dllmapping.contains(hModule)) { throw std::runtime_error("Plugin didn't inject correctly."); }
     return i.plugins.at(i.dllmapping[hModule]);
 }
 

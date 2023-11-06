@@ -21,11 +21,11 @@
 
 #include "mc/world/Minecraft.h"
 
-#include "Psapi.h"
-#include "TlHelp32.h"
-#include "minwindef.h"
-#include "processenv.h"
 #include "windows.h"
+
+#include "processenv.h"
+#include "psapi.h"
+#include "tlhelp32.h"
 
 using namespace ll::hash;
 using namespace ll::hash_literals;

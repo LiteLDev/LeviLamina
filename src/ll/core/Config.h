@@ -1,6 +1,11 @@
 #pragma once
 
-#include "ll/api/base/Global.h"
+#include <set>
+#include <string>
+#include <unordered_map>
+#include <vector>
+
+#include "ll/api/base/Macro.h"
 
 /////////////////////// LL Configs ///////////////////////
 

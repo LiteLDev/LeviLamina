@@ -15,7 +15,7 @@ public:
 
     uint64             mNetherNetIdValue; // this+0x0
     RakNet::RakNetGUID mGuid;             // this+0x8
-    sockaddr_storage   mSock;             // this+0x18
+    char               mSock[0x80];       // this+0x18
     Type               mType;             // this+0x98
 
     LLNDAPI std::string getIPAndPort() const;

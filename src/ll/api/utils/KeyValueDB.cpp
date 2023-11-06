@@ -1,9 +1,13 @@
 ﻿#include "ll/api/utils/KeyValueDB.h"
 
+#include <optional>
+
+#include "leveldb/cache.h"
+#include "leveldb/filter_policy.h"
+
 #include "ll/api/i18n/I18nAPI.h"
 #include "ll/api/utils/FileUtils.h"
 #include "ll/core/LeviLamina.h"
-#include <optional>
 
 using namespace ll;
 using namespace ll::utils;

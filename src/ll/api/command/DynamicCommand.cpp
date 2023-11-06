@@ -3,6 +3,7 @@
 #include "dyncall/dyncall_callback.h"
 
 #include "ll/api/Logger.h"
+#include "ll/api/utils/SehTranslator.h"
 #include "ll/core/Config.h"
 #include "ll/core/Levilamina.h"
 
@@ -16,7 +17,6 @@
 #include "mc/world/item/ItemInstance.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/level/block/actor/BaseCommandBlock.h"
-
 
 using ll::logger;
 

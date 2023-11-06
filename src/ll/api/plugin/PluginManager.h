@@ -10,6 +10,8 @@
 
 namespace ll::plugin {
 
+extern "C" struct IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
+
 template <typename... Bases>
 struct overload : Bases... {
     using is_transparent = void;
@@ -30,9 +32,10 @@ class PluginManager {
     using Handle = void*;
     PluginManager();
 
+    LLNDAPI static auto getCurrentPlugin(void* base) -> Plugin&;
+
 public:
     LLNDAPI static auto getInstance() -> PluginManager&;
-    LLNDAPI static auto getCurrentPlugin() -> Plugin&;
 
     void addDllMapping(Handle, std::string_view);
 
@@ -40,6 +43,11 @@ public:
     LLAPI auto   unregisterPlugin(std::string_view name) -> bool;
     LLNDAPI auto findPlugin(std::string_view name) -> optional_ref<Plugin const>;
     LLNDAPI auto getAllPlugins() -> PluginStorage const&;
+
+    [[maybe_unused]] inline static auto getCurrentPlugin() -> Plugin& {
+        static auto plugin = getCurrentPlugin(&__ImageBase);
+        return plugin;
+    }
 };
 
 } // namespace ll::plugin
