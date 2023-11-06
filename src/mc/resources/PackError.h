@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~PackError();
+    virtual ~PackError() = default;
 
     // vIndex: 1, symbol:
     // ?getLocErrorMessage@PackError@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RuinedPortalStart();
+    virtual ~RuinedPortalStart() = default;
 
     // symbol: ??0RuinedPortalStart@@QEAA@AEAVBiomeRegistry@@AEBVBiomeSource@@HHAEBVIPreliminarySurfaceProvider@@@Z
     MCAPI

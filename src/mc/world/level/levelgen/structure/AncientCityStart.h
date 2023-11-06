@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~AncientCityStart();
+    virtual ~AncientCityStart() = default;
 
     // vIndex: 2, symbol: ?isValid@AncientCityStart@@UEBA_NXZ
     virtual bool isValid() const;

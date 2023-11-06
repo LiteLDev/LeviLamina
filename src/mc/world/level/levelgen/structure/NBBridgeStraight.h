@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~NBBridgeStraight();
+    virtual ~NBBridgeStraight() = default;
 
     // vIndex: 2, symbol: ?getType@NBBridgeStraight@@UEBA?AW4StructurePieceType@@XZ
     virtual ::StructurePieceType getType() const;

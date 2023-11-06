@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~VanillaServerNetworkHandler();
+    virtual ~VanillaServerNetworkHandler() = default;
 
     // vIndex: 1, symbol:
     // ?handle@VanillaServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z

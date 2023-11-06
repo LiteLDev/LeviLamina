@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DebugInfoComponent();
+    virtual ~DebugInfoComponent() = default;
 
     // vIndex: 1, symbol:
     // ?onEvent@?$EventListenerDispatcher@VActorEventListener@@@@MEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MovingBlockActor();
+    virtual ~MovingBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@MovingBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);

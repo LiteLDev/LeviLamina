@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MineshaftRoom();
+    virtual ~MineshaftRoom() = default;
 
     // vIndex: 1, symbol: ?moveBoundingBox@MineshaftRoom@@UEAAXHHH@Z
     virtual void moveBoundingBox(int, int, int);

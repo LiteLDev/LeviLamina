@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CraftHandlerEnchant();
+    virtual ~CraftHandlerEnchant() = default;
 
     // vIndex: 3, symbol: ?endRequestBatch@CraftHandlerEnchant@@MEAAXXZ
     virtual void endRequestBatch();

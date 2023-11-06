@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CurseVanishingEnchant();
+    virtual ~CurseVanishingEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@CurseVanishingEnchant@@UEBAHH@Z
     virtual int getMinCost(int) const;

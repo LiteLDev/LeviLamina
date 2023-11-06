@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ImpactDamageSubcomponent();
+    virtual ~ImpactDamageSubcomponent() = default;
 
     // vIndex: 1, symbol: ?readfromJSON@ImpactDamageSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
     virtual void readfromJSON(class Json::Value&, class SemVersion const&);

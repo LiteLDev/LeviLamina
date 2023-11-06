@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~VanillaGameModuleDedicatedServer();
+    virtual ~VanillaGameModuleDedicatedServer() = default;
 
     // vIndex: 1, symbol:
     // ?createGameModuleServer@VanillaGameModuleDedicatedServer@@UEAA?AV?$unique_ptr@VGameModuleServer@@U?$default_delete@VGameModuleServer@@@std@@@std@@XZ

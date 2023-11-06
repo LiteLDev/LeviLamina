@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RepairableItemComponent();
+    virtual ~RepairableItemComponent() = default;
 
     // symbol: ?handleItemRepair@RepairableItemComponent@@QEBA?AURepairItemResult@@AEAVItemStack@@0_N@Z
     MCAPI struct RepairItemResult handleItemRepair(class ItemStack&, class ItemStack&, bool) const;

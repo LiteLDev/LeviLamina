@@ -24,7 +24,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ItemStackNetManagerServer();
+    virtual ~ItemStackNetManagerServer() = default;
 
     // vIndex: 2, symbol:
     // ?getRequestId@ItemStackNetManagerServer@@UEBA?AV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ

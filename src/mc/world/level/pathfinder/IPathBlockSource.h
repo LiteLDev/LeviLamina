@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~IPathBlockSource();
+    virtual ~IPathBlockSource() = default;
 
     // vIndex: 1, symbol: ?isInWater@PathBlockSource@@UEBA_NXZ
     virtual bool isInWater() const = 0;

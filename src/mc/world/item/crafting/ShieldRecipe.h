@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ShieldRecipe();
+    virtual ~ShieldRecipe() = default;
 
     // vIndex: 1, symbol:
     // ?assemble@ShieldRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z

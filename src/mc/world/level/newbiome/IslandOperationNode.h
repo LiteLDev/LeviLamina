@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~IslandOperationNode();
+    virtual ~IslandOperationNode() = default;
 
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~JigsawBlockActor();
+    virtual ~JigsawBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@JigsawBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);

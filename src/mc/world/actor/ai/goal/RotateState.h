@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RotateState();
+    virtual ~RotateState() = default;
 
     // vIndex: 1, symbol: ?tick@RotateState@@UEAAXXZ
     virtual void tick();

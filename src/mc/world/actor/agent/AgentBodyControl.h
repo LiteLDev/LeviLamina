@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~AgentBodyControl();
+    virtual ~AgentBodyControl() = default;
 
     // vIndex: 1, symbol: ?clientTick@AgentBodyControl@@UEAAXAEAVMob@@@Z
     virtual void clientTick(class Mob&);

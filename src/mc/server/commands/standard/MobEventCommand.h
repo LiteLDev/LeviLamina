@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MobEventCommand();
+    virtual ~MobEventCommand() = default;
 
     // vIndex: 2, symbol: ?execute@MobEventCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

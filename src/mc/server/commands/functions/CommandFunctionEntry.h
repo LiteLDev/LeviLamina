@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CommandFunctionEntry();
+    virtual ~CommandFunctionEntry() = default;
 
     // vIndex: 1, symbol:
     // ?execute@CommandFunctionEntry@@UEAAXAEAVFunctionManager@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z

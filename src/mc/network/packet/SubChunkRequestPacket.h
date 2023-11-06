@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SubChunkRequestPacket();
+    virtual ~SubChunkRequestPacket() = default;
 
     // vIndex: 1, symbol: ?getId@SubChunkRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

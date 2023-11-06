@@ -72,7 +72,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ChalkboardBlockActor();
+    virtual ~ChalkboardBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@ChalkboardBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);

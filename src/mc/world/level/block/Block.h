@@ -27,7 +27,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~Block();
+    virtual ~Block() = default;
 
     // vIndex: 1, symbol: ?getRenderLayer@Block@@UEBA?AW4BlockRenderLayer@@XZ
     virtual ::BlockRenderLayer getRenderLayer() const;

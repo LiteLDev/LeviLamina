@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~EndGatewayBlock();
+    virtual ~EndGatewayBlock() = default;
 
     // vIndex: 2, symbol:
     // ?newBlockEntity@EndGatewayBlock@@UEBA?AV?$shared_ptr@VBlockActor@@@std@@AEBVBlockPos@@AEBVBlock@@@Z

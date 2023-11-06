@@ -22,7 +22,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BlockPlacementFilterDescription();
+    virtual ~BlockPlacementFilterDescription() = default;
 
     // vIndex: 1, symbol:
     // ?getName@BlockPlacementFilterDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

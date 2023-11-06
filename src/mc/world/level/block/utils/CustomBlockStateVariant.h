@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CustomBlockStateVariant();
+    virtual ~CustomBlockStateVariant() = default;
 
     // vIndex: 1, symbol: ?toNBT@CustomBlockStateVariant@@UEBAXAEAVCompoundTag@@H@Z
     virtual void toNBT(class CompoundTag&, int) const;

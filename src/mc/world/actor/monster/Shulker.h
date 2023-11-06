@@ -43,7 +43,7 @@ public:
     virtual void _doInitialMove();
 
     // vIndex: 10, symbol: ??1@@UEAA@XZ
-    virtual ~Shulker();
+    virtual ~Shulker() = default;
 
     // vIndex: 14, symbol: __unk_vfn_14
     virtual void __unk_vfn_14();

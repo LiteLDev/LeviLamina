@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BorderBlock();
+    virtual ~BorderBlock() = default;
 
     // vIndex: 11, symbol:
     // ?getVisualShapeInWorld@BorderBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z

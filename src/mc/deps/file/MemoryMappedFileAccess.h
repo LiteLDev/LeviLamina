@@ -83,7 +83,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MemoryMappedFileAccess();
+    virtual ~MemoryMappedFileAccess() = default;
 
     // vIndex: 1, symbol:
     // ?fopen@MemoryMappedFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DefendVillageTargetDefinition();
+    virtual ~DefendVillageTargetDefinition() = default;
 
     // symbol: ??0DefendVillageTargetDefinition@@QEAA@XZ
     MCAPI DefendVillageTargetDefinition();

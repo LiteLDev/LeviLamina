@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~AppPlatformNetworkSettings();
+    virtual ~AppPlatformNetworkSettings() = default;
 
     // vIndex: 1, symbol: ?requiresNetworkOutageMessaging@AppPlatformNetworkSettings@@UEBA_NXZ
     virtual bool requiresNetworkOutageMessaging() const;

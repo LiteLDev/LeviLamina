@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SnowballItem();
+    virtual ~SnowballItem() = default;
 
     // vIndex: 3, symbol:
     // ?setDescriptionId@SnowballItem@@UEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

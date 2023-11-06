@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BlockFlammableComponent();
+    virtual ~BlockFlammableComponent() = default;
 
     // symbol: ?usesNewComponentStorage@BlockFlammableComponent@@SA_NXZ
     MCAPI static bool usesNewComponentStorage();

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~WoodlandMansionFeature();
+    virtual ~WoodlandMansionFeature() = default;
 
     // vIndex: 2, symbol: ?shouldPostProcessMobs@WoodlandMansionFeature@@UEBA_NXZ
     virtual bool shouldPostProcessMobs() const;

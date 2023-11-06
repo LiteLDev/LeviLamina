@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ItemStackRequestActionCraftRecipeAuto();
+    virtual ~ItemStackRequestActionCraftRecipeAuto() = default;
 
     // vIndex: 4, symbol: ?_write@ItemStackRequestActionCraftRecipeAuto@@UEBAXAEAVBinaryStream@@@Z
     virtual void _write(class BinaryStream&) const;

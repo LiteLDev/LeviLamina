@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DragonHoldingPatternGoal();
+    virtual ~DragonHoldingPatternGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@DragonHoldingPatternGoal@@UEAA_NXZ
     virtual bool canUse();

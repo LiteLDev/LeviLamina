@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ShapelessChemistryRecipe();
+    virtual ~ShapelessChemistryRecipe() = default;
 
     // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5();

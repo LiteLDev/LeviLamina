@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DimensionBrightnessRamp();
+    virtual ~DimensionBrightnessRamp() = default;
 
     // vIndex: 1, symbol: ?buildBrightnessRamp@DimensionBrightnessRamp@@UEAAXXZ
     virtual void buildBrightnessRamp();

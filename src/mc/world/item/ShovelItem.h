@@ -29,7 +29,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ShovelItem();
+    virtual ~ShovelItem() = default;
 
     // vIndex: 10, symbol:
     // ?executeEvent@ShovelItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z

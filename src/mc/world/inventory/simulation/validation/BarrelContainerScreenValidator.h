@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BarrelContainerScreenValidator();
+    virtual ~BarrelContainerScreenValidator() = default;
 
     // symbol: ??0BarrelContainerScreenValidator@@QEAA@XZ
     MCAPI BarrelContainerScreenValidator();

@@ -58,7 +58,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RenderOffsetsItemComponent();
+    virtual ~RenderOffsetsItemComponent() = default;
 
     // symbol:
     // ?bindType@RenderOffsetsItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

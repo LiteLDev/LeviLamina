@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~PoweredBlockComponent();
+    virtual ~PoweredBlockComponent() = default;
 
     // vIndex: 1, symbol: ?getStrength@PoweredBlockComponent@@UEBAHXZ
     virtual int getStrength() const;

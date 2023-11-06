@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DynamicJumpControl();
+    virtual ~DynamicJumpControl() = default;
 
     // vIndex: 1, symbol: ?initializeInternal@DynamicJumpControl@@UEAAXAEAVMob@@PEAUJumpControlDescription@@@Z
     virtual void initializeInternal(class Mob&, struct JumpControlDescription*);

@@ -30,7 +30,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RectLayoutFeature();
+    virtual ~RectLayoutFeature() = default;
 
     // vIndex: 1, symbol:
     // ?place@RectLayoutFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z

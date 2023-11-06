@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~VillageFeature();
+    virtual ~VillageFeature() = default;
 
     // vIndex: 2, symbol: ?shouldPostProcessMobs@VillageFeature@@UEBA_NXZ
     virtual bool shouldPostProcessMobs() const;

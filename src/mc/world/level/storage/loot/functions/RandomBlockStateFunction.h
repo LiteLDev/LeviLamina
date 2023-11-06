@@ -24,7 +24,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RandomBlockStateFunction();
+    virtual ~RandomBlockStateFunction() = default;
 
     // vIndex: 1, symbol: ?apply@RandomBlockStateFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemStack&, class Random&, class LootTableContext&);

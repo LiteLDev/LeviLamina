@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ServerActorManagerProxy();
+    virtual ~ServerActorManagerProxy() = default;
 
     // vIndex: 1, symbol: ?initializeActor@ServerActorManagerProxy@@UEAAXAEAVActor@@@Z
     virtual void initializeActor(class Actor&);

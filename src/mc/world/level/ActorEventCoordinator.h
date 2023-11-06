@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ActorEventCoordinator();
+    virtual ~ActorEventCoordinator() = default;
 
     // symbol: ?getActorGameplayHandler@ActorEventCoordinator@@QEAAAEAVActorGameplayHandler@@XZ
     MCAPI class ActorGameplayHandler& getActorGameplayHandler();

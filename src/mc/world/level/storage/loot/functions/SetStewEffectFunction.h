@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SetStewEffectFunction();
+    virtual ~SetStewEffectFunction() = default;
 
     // vIndex: 1, symbol: ?apply@SetStewEffectFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemStack&, class Random&, class LootTableContext&);

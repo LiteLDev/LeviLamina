@@ -55,7 +55,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~InvestigateSuspiciousLocationGoal();
+    virtual ~InvestigateSuspiciousLocationGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@InvestigateSuspiciousLocationGoal@@UEAA_NXZ
     virtual bool canUse();

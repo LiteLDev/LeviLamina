@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RandomLookAroundAndSitGoal();
+    virtual ~RandomLookAroundAndSitGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@RandomLookAroundAndSitGoal@@UEAA_NXZ
     virtual bool canUse();

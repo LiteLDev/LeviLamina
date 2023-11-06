@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SquidDiveGoal();
+    virtual ~SquidDiveGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SquidDiveGoal@@UEAA_NXZ
     virtual bool canUse();

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DoubleTag();
+    virtual ~DoubleTag() = default;
 
     // vIndex: 2, symbol: ?write@DoubleTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;

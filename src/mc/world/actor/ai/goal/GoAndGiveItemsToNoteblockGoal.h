@@ -55,7 +55,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~GoAndGiveItemsToNoteblockGoal();
+    virtual ~GoAndGiveItemsToNoteblockGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@GoAndGiveItemsToNoteblockGoal@@UEAA_NXZ
     virtual bool canUse();

@@ -56,7 +56,7 @@ public:
     virtual long Terminate(bool, void*, void (*)(void*));
 
     // vIndex: 12, symbol: ??1@@UEAA@XZ
-    virtual ~TaskQueueImpl();
+    virtual ~TaskQueueImpl() = default;
 
     // vIndex: 13, symbol: ?QueryApiImpl@?$Api@$01UITaskQueue@@@@MEAAPEAXW4ApiId@@@Z
     virtual void* QueryApiImpl(::ApiId);

@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BannerBlock();
+    virtual ~BannerBlock() = default;
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@BannerBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z

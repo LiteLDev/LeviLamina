@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~EatCarriedItemGoal();
+    virtual ~EatCarriedItemGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@EatCarriedItemGoal@@UEAA_NXZ
     virtual bool canUse();

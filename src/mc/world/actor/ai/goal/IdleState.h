@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~IdleState();
+    virtual ~IdleState() = default;
 
     // vIndex: 1, symbol: ?tick@IdleState@@UEAAXXZ
     virtual void tick();

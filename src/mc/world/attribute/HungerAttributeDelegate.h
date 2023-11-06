@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~HungerAttributeDelegate();
+    virtual ~HungerAttributeDelegate() = default;
 
     // vIndex: 1, symbol: ?tick@HungerAttributeDelegate@@UEAAXXZ
     virtual void tick();

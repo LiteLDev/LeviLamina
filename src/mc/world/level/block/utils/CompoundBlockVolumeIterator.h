@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CompoundBlockVolumeIterator();
+    virtual ~CompoundBlockVolumeIterator() = default;
 
     // vIndex: 1, symbol: ??ECompoundBlockVolumeIterator@@UEAAAEAVBaseBlockLocationIterator@@XZ
     virtual class BaseBlockLocationIterator& operator++();

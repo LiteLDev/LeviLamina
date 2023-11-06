@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MerchantRecipeList();
+    virtual ~MerchantRecipeList() = default;
 
     // vIndex: 1, symbol: ?getRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBVItemInstance@@0H@Z
     virtual class MerchantRecipe* getRecipeFor(class ItemInstance const&, class ItemInstance const&, int);

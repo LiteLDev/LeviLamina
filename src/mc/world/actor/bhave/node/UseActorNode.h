@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~UseActorNode();
+    virtual ~UseActorNode() = default;
 
     // vIndex: 1, symbol: ?tick@UseActorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
     virtual ::BehaviorStatus tick(class Actor&);

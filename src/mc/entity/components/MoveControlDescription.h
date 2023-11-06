@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 1, symbol: ??1@@UEAA@XZ
-    virtual ~MoveControlDescription();
+    virtual ~MoveControlDescription() = default;
 
     // vIndex: 2, symbol: ?deserializeData@MoveControlDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);

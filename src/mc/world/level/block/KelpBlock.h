@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~KelpBlock();
+    virtual ~KelpBlock() = default;
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@KelpBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z

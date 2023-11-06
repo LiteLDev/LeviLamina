@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~GuardianAttackGoal();
+    virtual ~GuardianAttackGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@GuardianAttackGoal@@UEAA_NXZ
     virtual bool canUse();

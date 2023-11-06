@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SweetBerryBushBlock();
+    virtual ~SweetBerryBushBlock() = default;
 
     // vIndex: 4, symbol:
     // ?hasTag@SweetBerryBushBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

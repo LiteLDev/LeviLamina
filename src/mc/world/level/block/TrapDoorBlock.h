@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TrapDoorBlock();
+    virtual ~TrapDoorBlock() = default;
 
     // vIndex: 10, symbol:
     // ?getOutline@TrapDoorBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z

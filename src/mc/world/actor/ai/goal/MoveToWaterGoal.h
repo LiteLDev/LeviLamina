@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MoveToWaterGoal();
+    virtual ~MoveToWaterGoal() = default;
 
     // symbol: ??0MoveToWaterGoal@@QEAA@AEAVMob@@MHHHM@Z
     MCAPI MoveToWaterGoal(class Mob&, float, int, int, int, float);

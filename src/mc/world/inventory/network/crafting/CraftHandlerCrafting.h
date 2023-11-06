@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CraftHandlerCrafting();
+    virtual ~CraftHandlerCrafting() = default;
 
     // vIndex: 1, symbol:
     // ?handleConsumedItem@CraftHandlerCrafting@@UEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z

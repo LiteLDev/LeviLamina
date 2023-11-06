@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MoveToLiquidGoal();
+    virtual ~MoveToLiquidGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@MoveToLiquidGoal@@UEAA_NXZ
     virtual bool canUse();

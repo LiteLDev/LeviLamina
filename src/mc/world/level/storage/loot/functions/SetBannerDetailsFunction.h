@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SetBannerDetailsFunction();
+    virtual ~SetBannerDetailsFunction() = default;
 
     // vIndex: 1, symbol: ?apply@SetBannerDetailsFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemStack&, class Random&, class LootTableContext&);

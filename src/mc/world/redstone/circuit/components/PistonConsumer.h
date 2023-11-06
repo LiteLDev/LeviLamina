@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~PistonConsumer();
+    virtual ~PistonConsumer() = default;
 
     // vIndex: 6, symbol: ?canConsumePowerAnyDirection@PistonConsumer@@UEBA_NXZ
     virtual bool canConsumePowerAnyDirection() const;

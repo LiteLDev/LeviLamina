@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ItemStackRequestActionBeaconPayment();
+    virtual ~ItemStackRequestActionBeaconPayment() = default;
 
     // vIndex: 4, symbol: ?_write@ItemStackRequestActionBeaconPayment@@MEBAXAEAVBinaryStream@@@Z
     virtual void _write(class BinaryStream&) const;

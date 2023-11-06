@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MapDataManagerOptions();
+    virtual ~MapDataManagerOptions() = default;
 
     // vIndex: 1, symbol: ?isPremiumWorldTemplate@MapDataManagerOptions@@UEBA_NXZ
     virtual bool isPremiumWorldTemplate() const;

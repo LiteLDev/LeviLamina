@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CrossbowItem();
+    virtual ~CrossbowItem() = default;
 
     // vIndex: 6, symbol: ?getMaxUseDuration@CrossbowItem@@UEBAHPEBVItemStack@@@Z
     virtual int getMaxUseDuration(class ItemStack const*) const;

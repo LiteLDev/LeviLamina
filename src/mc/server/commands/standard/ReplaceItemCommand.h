@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ReplaceItemCommand();
+    virtual ~ReplaceItemCommand() = default;
 
     // vIndex: 2, symbol: ?execute@ReplaceItemCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

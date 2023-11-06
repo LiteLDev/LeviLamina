@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ItemStackRequestActionTake();
+    virtual ~ItemStackRequestActionTake() = default;
 
     // symbol: ??0ItemStackRequestActionTake@@QEAA@XZ
     MCAPI ItemStackRequestActionTake();

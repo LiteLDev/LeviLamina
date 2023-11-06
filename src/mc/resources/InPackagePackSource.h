@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~InPackagePackSource();
+    virtual ~InPackagePackSource() = default;
 
     // vIndex: 1, symbol: ?forEachPackConst@InPackagePackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
     virtual void forEachPackConst(std::function<void(class Pack const&)>) const;

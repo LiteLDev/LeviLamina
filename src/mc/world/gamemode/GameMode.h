@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~GameMode();
+    virtual ~GameMode() = default;
 
     // vIndex: 1, symbol: ?startDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z
     virtual bool startDestroyBlock(class BlockPos const&, uchar, bool&);

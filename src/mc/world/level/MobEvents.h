@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MobEvents();
+    virtual ~MobEvents() = default;
 
     // symbol: ??0MobEvents@@QEAA@AEAVLevelStorage@@@Z
     MCAPI explicit MobEvents(class LevelStorage&);

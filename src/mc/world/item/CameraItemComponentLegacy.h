@@ -24,7 +24,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CameraItemComponentLegacy();
+    virtual ~CameraItemComponentLegacy() = default;
 
     // vIndex: 1, symbol: ?blackBarsDuration@CameraItemComponentLegacy@@UEBAMXZ
     virtual float blackBarsDuration() const;

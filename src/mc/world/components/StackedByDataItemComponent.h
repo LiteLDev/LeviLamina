@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~StackedByDataItemComponent();
+    virtual ~StackedByDataItemComponent() = default;
 
     // vIndex: 9, symbol: ?_initializeComponent@StackedByDataItemComponent@@UEBAXXZ
     virtual void _initializeComponent() const;

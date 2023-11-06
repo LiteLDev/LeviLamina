@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SimplePlayerContainer();
+    virtual ~SimplePlayerContainer() = default;
 
     // vIndex: 10, symbol: ?setItem@SimplePlayerContainer@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int, class ItemStack const&);

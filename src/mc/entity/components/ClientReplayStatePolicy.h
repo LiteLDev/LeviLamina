@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ClientReplayStatePolicy();
+    virtual ~ClientReplayStatePolicy() = default;
 
     // vIndex: 1, symbol: ?isReplayNeeded@ClientReplayStatePolicy@@UEBA_NW4AdvanceFrameResult@@@Z
     virtual bool isReplayNeeded(::AdvanceFrameResult) const;

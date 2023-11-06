@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ScaredGoal();
+    virtual ~ScaredGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@ScaredGoal@@UEAA_NXZ
     virtual bool canUse();

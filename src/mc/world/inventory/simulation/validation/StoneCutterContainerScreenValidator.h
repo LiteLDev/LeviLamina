@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~StoneCutterContainerScreenValidator();
+    virtual ~StoneCutterContainerScreenValidator() = default;
 
     // vIndex: 2, symbol: ?isCraftingImplemented@StoneCutterContainerScreenValidator@@UEAA_NXZ
     virtual bool isCraftingImplemented();

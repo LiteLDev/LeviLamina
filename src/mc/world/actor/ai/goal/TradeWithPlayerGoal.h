@@ -50,7 +50,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TradeWithPlayerGoal();
+    virtual ~TradeWithPlayerGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@TradeWithPlayerGoal@@UEAA_NXZ
     virtual bool canUse();

@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SpawnChanceSubcomponent();
+    virtual ~SpawnChanceSubcomponent() = default;
 
     // vIndex: 1, symbol: ?readfromJSON@SpawnChanceSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
     virtual void readfromJSON(class Json::Value&, class SemVersion const&);

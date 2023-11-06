@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~IsSummonableDescription();
+    virtual ~IsSummonableDescription() = default;
 
     // vIndex: 1, symbol: ?getJsonName@IsSummonableDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;

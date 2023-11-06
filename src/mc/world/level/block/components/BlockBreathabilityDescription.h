@@ -22,7 +22,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BlockBreathabilityDescription();
+    virtual ~BlockBreathabilityDescription() = default;
 
     // vIndex: 1, symbol:
     // ?getName@BlockBreathabilityDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

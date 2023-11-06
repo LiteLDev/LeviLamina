@@ -66,7 +66,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ShooterItemComponent();
+    virtual ~ShooterItemComponent() = default;
 
     // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ShooterItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;

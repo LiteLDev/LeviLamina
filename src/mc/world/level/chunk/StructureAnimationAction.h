@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~StructureAnimationAction();
+    virtual ~StructureAnimationAction() = default;
 
     // vIndex: 1, symbol: ?execute@StructureAnimationAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
     virtual void execute(class ServerLevel&, class Dimension&);

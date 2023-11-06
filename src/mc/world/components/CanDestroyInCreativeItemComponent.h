@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CanDestroyInCreativeItemComponent();
+    virtual ~CanDestroyInCreativeItemComponent() = default;
 
     // vIndex: 9, symbol: ?_initializeComponent@CanDestroyInCreativeItemComponent@@UEBAXXZ
     virtual void _initializeComponent() const;

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~OceanMonumentFeature();
+    virtual ~OceanMonumentFeature() = default;
 
     // vIndex: 1, symbol: ?shouldAddHardcodedSpawnAreas@OceanMonumentFeature@@UEBA_NXZ
     virtual bool shouldAddHardcodedSpawnAreas() const;

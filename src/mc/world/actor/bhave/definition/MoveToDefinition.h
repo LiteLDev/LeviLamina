@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MoveToDefinition();
+    virtual ~MoveToDefinition() = default;
 
     // vIndex: 1, symbol: ?load@MoveToDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
     virtual void load(class Json::Value, class BehaviorFactory const&);

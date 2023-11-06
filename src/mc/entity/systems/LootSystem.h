@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LootSystem();
+    virtual ~LootSystem() = default;
 
     // vIndex: 1, symbol: ?registerEvents@LootSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
     virtual void registerEvents(entt::dispatcher&);

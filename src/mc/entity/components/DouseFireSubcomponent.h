@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DouseFireSubcomponent();
+    virtual ~DouseFireSubcomponent() = default;
 
     // vIndex: 1, symbol: ?readfromJSON@DouseFireSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
     virtual void readfromJSON(class Json::Value&, class SemVersion const&);

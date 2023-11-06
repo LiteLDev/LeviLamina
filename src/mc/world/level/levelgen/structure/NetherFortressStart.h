@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~NetherFortressStart();
+    virtual ~NetherFortressStart() = default;
 
     // symbol: ??0NetherFortressStart@@QEAA@AEAVRandom@@FHH@Z
     MCAPI NetherFortressStart(class Random&, short, int, int);

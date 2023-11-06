@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~EditorBootstrapper();
+    virtual ~EditorBootstrapper() = default;
 
     // symbol: ?getPackCapability@EditorBootstrapper@@SA?AVPackCapability@@V?$optional@_N@std@@@Z
     MCAPI static class PackCapability getPackCapability(std::optional<bool>);

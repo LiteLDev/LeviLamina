@@ -29,7 +29,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 10, symbol: ??1@@UEAA@XZ
-    virtual ~ChestBoat();
+    virtual ~ChestBoat() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();

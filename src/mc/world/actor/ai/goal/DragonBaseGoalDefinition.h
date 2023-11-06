@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DragonBaseGoalDefinition();
+    virtual ~DragonBaseGoalDefinition() = default;
 
     // vIndex: 1, symbol: ?validateMobType@DragonBaseGoalDefinition@@UEBA_NAEAVMob@@@Z
     virtual bool validateMobType(class Mob&) const;

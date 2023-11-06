@@ -52,7 +52,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ValidatorRegistry();
+    virtual ~ValidatorRegistry() = default;
 
     // symbol:
     // ?findValidators@ValidatorRegistry@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValidatorRegistryValidators@1@@Z

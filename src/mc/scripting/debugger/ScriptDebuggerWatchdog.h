@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ScriptDebuggerWatchdog();
+    virtual ~ScriptDebuggerWatchdog() = default;
 
     // vIndex: 1, symbol: ?requireClose@ScriptDebuggerWatchdog@@UEBA_NXZ
     virtual bool requireClose() const;

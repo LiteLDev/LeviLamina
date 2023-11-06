@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LabTableContainerManagerModel();
+    virtual ~LabTableContainerManagerModel() = default;
 
     // vIndex: 6, symbol:
     // ?getItemCopies@LabTableContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ

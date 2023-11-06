@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~OcelotAttackGoal();
+    virtual ~OcelotAttackGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@OcelotAttackGoal@@UEAA_NXZ
     virtual bool canUse();

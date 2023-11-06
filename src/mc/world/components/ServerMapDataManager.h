@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ServerMapDataManager();
+    virtual ~ServerMapDataManager() = default;
 
     // vIndex: 1, symbol:
     // ?registerOnCreateMapSavedDataCallback@ServerMapDataManager@@UEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVMapItemSavedData@@@Z@std@@@Z

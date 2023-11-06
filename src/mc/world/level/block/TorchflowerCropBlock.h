@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TorchflowerCropBlock();
+    virtual ~TorchflowerCropBlock() = default;
 
     // vIndex: 10, symbol:
     // ?getOutline@TorchflowerCropBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z

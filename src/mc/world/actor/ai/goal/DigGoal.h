@@ -57,7 +57,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DigGoal();
+    virtual ~DigGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@DigGoal@@UEAA_NXZ
     virtual bool canUse();

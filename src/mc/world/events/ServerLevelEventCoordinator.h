@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ServerLevelEventCoordinator();
+    virtual ~ServerLevelEventCoordinator() = default;
 
     // symbol: ?sendLevelAddedPlayer@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVPlayer@@@Z
     MCAPI void sendLevelAddedPlayer(class Level&, class Player&);

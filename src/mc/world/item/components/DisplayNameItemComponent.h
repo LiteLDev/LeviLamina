@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DisplayNameItemComponent();
+    virtual ~DisplayNameItemComponent() = default;
 
     // symbol:
     // ?setDescriptionId@DisplayNameItemComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

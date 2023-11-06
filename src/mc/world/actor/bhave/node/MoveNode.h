@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MoveNode();
+    virtual ~MoveNode() = default;
 
     // vIndex: 1, symbol: ?tick@MoveNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
     virtual ::BehaviorStatus tick(class Actor&);

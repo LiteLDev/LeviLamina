@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RandomScatteredLargeFeature();
+    virtual ~RandomScatteredLargeFeature() = default;
 
     // vIndex: 1, symbol: ?shouldAddHardcodedSpawnAreas@RandomScatteredLargeFeature@@UEBA_NXZ
     virtual bool shouldAddHardcodedSpawnAreas() const;

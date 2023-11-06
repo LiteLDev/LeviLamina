@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~WitherRandomAttackPosGoal();
+    virtual ~WitherRandomAttackPosGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@WitherRandomAttackPosGoal@@UEAA_NXZ
     virtual bool canUse();

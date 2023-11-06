@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FindCoverGoal();
+    virtual ~FindCoverGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@FindCoverGoal@@UEAA_NXZ
     virtual bool canUse();

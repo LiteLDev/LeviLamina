@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ExternalDataServerLevel();
+    virtual ~ExternalDataServerLevel() = default;
 
     // vIndex: 1, symbol: ?isInGame@ExternalDataServerLevel@@UEBA_NXZ
     virtual bool isInGame() const;

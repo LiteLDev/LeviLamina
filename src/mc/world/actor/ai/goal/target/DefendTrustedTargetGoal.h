@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DefendTrustedTargetGoal();
+    virtual ~DefendTrustedTargetGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@DefendTrustedTargetGoal@@UEAA_NXZ
     virtual bool canUse();

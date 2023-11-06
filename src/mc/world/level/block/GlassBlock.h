@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~GlassBlock();
+    virtual ~GlassBlock() = default;
 
     // vIndex: 7, symbol:
     // ?getCollisionShapeForCamera@GlassBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z

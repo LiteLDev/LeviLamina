@@ -50,7 +50,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TimerActorFlag3Goal();
+    virtual ~TimerActorFlag3Goal() = default;
 
     // symbol: ??0TimerActorFlag3Goal@@QEAA@AEAVMob@@@Z
     MCAPI explicit TimerActorFlag3Goal(class Mob&);

@@ -21,7 +21,7 @@ public:
     virtual void containerContentChanged(int);
 
     // vIndex: 1, symbol: ??1@@UEAA@XZ
-    virtual ~PlayerUIContainerModelBase();
+    virtual ~PlayerUIContainerModelBase() = default;
 
     // vIndex: 2, symbol: ?postInit@PlayerUIContainerModelBase@@UEAAXXZ
     virtual void postInit();

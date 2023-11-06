@@ -24,7 +24,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ScriptServerNetworkEventHandler();
+    virtual ~ScriptServerNetworkEventHandler() = default;
 
     // vIndex: 1, symbol:
     // ?handleEvent@ScriptServerNetworkEventHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUChatEvent@@@Z

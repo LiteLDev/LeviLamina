@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MoveToVillageGoal();
+    virtual ~MoveToVillageGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@MoveToVillageGoal@@UEAA_NXZ
     virtual bool canUse();

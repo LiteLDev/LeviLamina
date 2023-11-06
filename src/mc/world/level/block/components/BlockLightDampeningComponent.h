@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BlockLightDampeningComponent();
+    virtual ~BlockLightDampeningComponent() = default;
 
     // symbol: ?usesNewComponentStorage@BlockLightDampeningComponent@@SA_NXZ
     MCAPI static bool usesNewComponentStorage();

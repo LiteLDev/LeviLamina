@@ -59,7 +59,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~PlayDeadGoal();
+    virtual ~PlayDeadGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@PlayDeadGoal@@UEAA_NXZ
     virtual bool canUse();

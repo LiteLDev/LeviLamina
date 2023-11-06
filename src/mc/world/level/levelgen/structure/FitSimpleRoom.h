@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FitSimpleRoom();
+    virtual ~FitSimpleRoom() = default;
 
     // vIndex: 1, symbol: ?fits@FitSimpleRoom@@UEBA_NAEBVRoomDefinition@@@Z
     virtual bool fits(class RoomDefinition const&) const;

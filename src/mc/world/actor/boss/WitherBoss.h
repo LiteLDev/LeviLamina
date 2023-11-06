@@ -49,7 +49,7 @@ public:
     virtual void reloadHardcodedClient(::Actor::InitializationMethod, class VariantParameterList const&);
 
     // vIndex: 10, symbol: ??1@@UEAA@XZ
-    virtual ~WitherBoss();
+    virtual ~WitherBoss() = default;
 
     // vIndex: 13, symbol: ?remove@WitherBoss@@UEAAXXZ
     virtual void remove();

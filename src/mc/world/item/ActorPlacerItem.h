@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ActorPlacerItem();
+    virtual ~ActorPlacerItem() = default;
 
     // vIndex: 2, symbol: ?tearDown@ActorPlacerItem@@UEAAXXZ
     virtual void tearDown();

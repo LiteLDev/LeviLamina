@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SwimIdleGoal();
+    virtual ~SwimIdleGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SwimIdleGoal@@UEAA_NXZ
     virtual bool canUse();

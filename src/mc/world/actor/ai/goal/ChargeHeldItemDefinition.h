@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ChargeHeldItemDefinition();
+    virtual ~ChargeHeldItemDefinition() = default;
 
     // symbol: ?initialize@ChargeHeldItemDefinition@@QEBAXAEAVEntityContext@@AEAVChargeHeldItemGoal@@@Z
     MCAPI void initialize(class EntityContext&, class ChargeHeldItemGoal&) const;

@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~IsOnHotBlockTest();
+    virtual ~IsOnHotBlockTest() = default;
 
     // vIndex: 2, symbol: ?evaluate@IsOnHotBlockTest@@UEBA_NAEBUFilterContext@@@Z
     virtual bool evaluate(struct FilterContext const&) const;

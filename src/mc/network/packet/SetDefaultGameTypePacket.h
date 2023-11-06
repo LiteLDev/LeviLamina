@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SetDefaultGameTypePacket();
+    virtual ~SetDefaultGameTypePacket() = default;
 
     // vIndex: 1, symbol: ?getId@SetDefaultGameTypePacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

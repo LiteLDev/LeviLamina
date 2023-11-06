@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~PlayerEventCoordinator();
+    virtual ~PlayerEventCoordinator() = default;
 
     // symbol: ?getPlayerGameplayHandler@PlayerEventCoordinator@@QEAAAEAVPlayerGameplayHandler@@XZ
     MCAPI class PlayerGameplayHandler& getPlayerGameplayHandler();

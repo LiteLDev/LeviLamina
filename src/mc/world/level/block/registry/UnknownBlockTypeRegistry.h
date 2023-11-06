@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~UnknownBlockTypeRegistry();
+    virtual ~UnknownBlockTypeRegistry() = default;
 
     // vIndex: 1, symbol: ?getUnknownBlock@UnknownBlockTypeRegistry@@UEAAAEBVBlock@@AEBVCompoundTag@@@Z
     virtual class Block const& getUnknownBlock(class CompoundTag const&);

@@ -19,7 +19,7 @@ public:
     virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
 
     // vIndex: 1, symbol: ??1@@UEAA@XZ
-    virtual ~EmptyLootItem();
+    virtual ~EmptyLootItem() = default;
 
     // NOLINTEND
 };

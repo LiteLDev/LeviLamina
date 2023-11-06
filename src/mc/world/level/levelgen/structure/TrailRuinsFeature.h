@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TrailRuinsFeature();
+    virtual ~TrailRuinsFeature() = default;
 
     // vIndex: 5, symbol:
     // ?isFeatureChunk@TrailRuinsFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z

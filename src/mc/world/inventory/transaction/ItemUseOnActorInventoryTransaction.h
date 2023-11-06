@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ItemUseOnActorInventoryTransaction();
+    virtual ~ItemUseOnActorInventoryTransaction() = default;
 
     // vIndex: 1, symbol:
     // ?read@ItemUseOnActorInventoryTransaction@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z

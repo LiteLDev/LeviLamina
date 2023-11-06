@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SHStartPiece();
+    virtual ~SHStartPiece() = default;
 
     // vIndex: 2, symbol: ?getType@SHStartPiece@@UEBA?AW4StructurePieceType@@XZ
     virtual ::StructurePieceType getType() const;

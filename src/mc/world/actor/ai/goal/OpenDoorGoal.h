@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~OpenDoorGoal();
+    virtual ~OpenDoorGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@OpenDoorGoal@@UEAA_NXZ
     virtual bool canUse();

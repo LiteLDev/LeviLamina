@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LootItemRandomChanceWithSpecialModifierCondition();
+    virtual ~LootItemRandomChanceWithSpecialModifierCondition() = default;
 
     // vIndex: 1, symbol:
     // ?applies@LootItemRandomChanceWithSpecialModifierCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z

@@ -22,7 +22,7 @@ public:
     virtual void containerContentChanged(int);
 
     // vIndex: 1, symbol: ??1@@UEAA@XZ
-    virtual ~LevelContainerModel();
+    virtual ~LevelContainerModel() = default;
 
     // vIndex: 2, symbol: ?postInit@LevelContainerModel@@UEAAXXZ
     virtual void postInit();

@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~IsTakingFireDamageTest();
+    virtual ~IsTakingFireDamageTest() = default;
 
     // vIndex: 2, symbol: ?evaluate@IsTakingFireDamageTest@@UEBA_NAEBUFilterContext@@@Z
     virtual bool evaluate(struct FilterContext const&) const;

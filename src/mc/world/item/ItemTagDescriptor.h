@@ -56,7 +56,7 @@ public:
     virtual uint64 getHash() const;
 
     // vIndex: 15, symbol: ??1@@UEAA@XZ
-    virtual ~ItemTagDescriptor();
+    virtual ~ItemTagDescriptor() = default;
 
     // symbol:
     // ?deserialize@ItemTagDescriptor@@SA?AV?$Result@V?$unique_ptr@UItemTagDescriptor@@U?$default_delete@UItemTagDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z

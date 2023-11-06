@@ -40,7 +40,7 @@ public:
     virtual struct ScriptResourceStats getResourceStats() const;
 
     // vIndex: 6, symbol: ??1@@UEAA@XZ
-    virtual ~ScriptDebugger();
+    virtual ~ScriptDebugger() = default;
 
     // NOLINTEND
 

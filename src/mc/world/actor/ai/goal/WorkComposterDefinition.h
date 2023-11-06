@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~WorkComposterDefinition();
+    virtual ~WorkComposterDefinition() = default;
 
     // symbol: ??0WorkComposterDefinition@@QEAA@XZ
     MCAPI WorkComposterDefinition();

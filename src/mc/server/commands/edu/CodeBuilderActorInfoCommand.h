@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CodeBuilderActorInfoCommand();
+    virtual ~CodeBuilderActorInfoCommand() = default;
 
     // vIndex: 2, symbol: ?execute@CodeBuilderActorInfoCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

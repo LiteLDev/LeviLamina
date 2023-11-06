@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SurfaceRelativeThresholdFeature();
+    virtual ~SurfaceRelativeThresholdFeature() = default;
 
     // vIndex: 1, symbol:
     // ?place@SurfaceRelativeThresholdFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z

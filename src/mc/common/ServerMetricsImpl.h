@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ServerMetricsImpl();
+    virtual ~ServerMetricsImpl() = default;
 
     // vIndex: 1, symbol: ?sendPeriodicMetrics@ServerMetricsImpl@@UEAAXAEAVServerInstance@@@Z
     virtual void sendPeriodicMetrics(class ServerInstance&);

@@ -44,7 +44,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FunctionManager();
+    virtual ~FunctionManager() = default;
 
     // symbol:
     // ??0FunctionManager@@QEAA@V?$unique_ptr@VICommandDispatcher@@U?$default_delete@VICommandDispatcher@@@std@@@std@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@2@PEBVGameRule@@@Z

@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LevelSoundEventPacketV1();
+    virtual ~LevelSoundEventPacketV1() = default;
 
     // vIndex: 1, symbol: ?getId@LevelSoundEventPacketV1@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

@@ -163,7 +163,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ImguiProfiler();
+    virtual ~ImguiProfiler() = default;
 
     // symbol: ??0ImguiProfiler@@QEAA@XZ
     MCAPI ImguiProfiler();

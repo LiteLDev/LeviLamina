@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~HoverMoveControl();
+    virtual ~HoverMoveControl() = default;
 
     // vIndex: 2, symbol: ?tick@HoverMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
     virtual void tick(class MoveControlComponent&, class Mob&);

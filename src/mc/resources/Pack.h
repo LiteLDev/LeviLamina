@@ -24,7 +24,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~Pack();
+    virtual ~Pack() = default;
 
     // symbol:
     // ??0Pack@@QEAA@V?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@V?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@2@V?$unique_ptr@VSubpackInfoCollection@@U?$default_delete@VSubpackInfoCollection@@@std@@@2@V?$unique_ptr@VPackMetadata@@U?$default_delete@VPackMetadata@@@std@@@2@@Z

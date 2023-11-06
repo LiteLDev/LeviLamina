@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~Trade1ContainerScreenValidator();
+    virtual ~Trade1ContainerScreenValidator() = default;
 
     // symbol: ??0Trade1ContainerScreenValidator@@QEAA@XZ
     MCAPI Trade1ContainerScreenValidator();

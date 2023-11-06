@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~StructurePoolActorPredicateActorMatch();
+    virtual ~StructurePoolActorPredicateActorMatch() = default;
 
     // vIndex: 1, symbol:
     // ?test@StructurePoolActorPredicateActorMatch@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

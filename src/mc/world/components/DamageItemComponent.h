@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DamageItemComponent();
+    virtual ~DamageItemComponent() = default;
 
     // vIndex: 9, symbol: ?_initializeComponent@DamageItemComponent@@UEBAXXZ
     virtual void _initializeComponent() const;

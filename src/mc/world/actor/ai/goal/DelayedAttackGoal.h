@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DelayedAttackGoal();
+    virtual ~DelayedAttackGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@DelayedAttackGoal@@UEAA_NXZ
     virtual bool canUse();

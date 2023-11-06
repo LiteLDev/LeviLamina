@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~HarvestFarmBlockDefinition();
+    virtual ~HarvestFarmBlockDefinition() = default;
 
     // symbol: ??0HarvestFarmBlockDefinition@@QEAA@XZ
     MCAPI HarvestFarmBlockDefinition();

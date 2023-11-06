@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~WalkState();
+    virtual ~WalkState() = default;
 
     // vIndex: 1, symbol: ?tick@WalkState@@UEAAXXZ
     virtual void tick();

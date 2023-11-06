@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LookControl();
+    virtual ~LookControl() = default;
 
     // vIndex: 1, symbol: ?initializeInternal@LookControl@@UEAAXAEAVMob@@@Z
     virtual void initializeInternal(class Mob&);

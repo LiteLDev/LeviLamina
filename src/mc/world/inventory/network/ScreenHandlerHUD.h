@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ScreenHandlerHUD();
+    virtual ~ScreenHandlerHUD() = default;
 
     // vIndex: 1, symbol: ?handleAction@ScreenHandlerHUD@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
     virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const&);

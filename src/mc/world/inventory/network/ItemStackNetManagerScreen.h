@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ItemStackNetManagerScreen();
+    virtual ~ItemStackNetManagerScreen() = default;
 
     // symbol: ??0ItemStackNetManagerScreen@@QEAA@AEAVEntityRegistry@@@Z
     MCAPI explicit ItemStackNetManagerScreen(class EntityRegistry&);

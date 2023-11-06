@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ShareItemsGoal();
+    virtual ~ShareItemsGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@ShareItemsGoal@@UEAA_NXZ
     virtual bool canUse();

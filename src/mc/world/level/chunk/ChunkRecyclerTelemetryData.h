@@ -45,7 +45,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ChunkRecyclerTelemetryData();
+    virtual ~ChunkRecyclerTelemetryData() = default;
 
     // symbol: ??0ChunkRecyclerTelemetryData@@QEAA@XZ
     MCAPI ChunkRecyclerTelemetryData();

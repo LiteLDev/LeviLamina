@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~HoverPathNavigation();
+    virtual ~HoverPathNavigation() = default;
 
     // vIndex: 1, symbol: ?initializeInternal@HoverPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
     virtual void initializeInternal(class Mob&, struct NavigationDescription*);

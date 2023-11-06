@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MultiplyValueAmplifier();
+    virtual ~MultiplyValueAmplifier() = default;
 
     // vIndex: 1, symbol: ?getAmount@MultiplyValueAmplifier@@UEBAMHM@Z
     virtual float getAmount(int, float) const;

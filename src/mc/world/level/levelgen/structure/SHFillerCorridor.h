@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SHFillerCorridor();
+    virtual ~SHFillerCorridor() = default;
 
     // vIndex: 2, symbol: ?getType@SHFillerCorridor@@UEBA?AW4StructurePieceType@@XZ
     virtual ::StructurePieceType getType() const;

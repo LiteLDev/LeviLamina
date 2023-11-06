@@ -26,7 +26,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ScriptActorGameplayHandler();
+    virtual ~ScriptActorGameplayHandler() = default;
 
     // vIndex: 1, symbol:
     // ?handleEvent@ScriptActorGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUActorDefinitionStartedEvent@@@Z

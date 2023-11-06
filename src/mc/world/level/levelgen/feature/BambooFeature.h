@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BambooFeature();
+    virtual ~BambooFeature() = default;
 
     // vIndex: 3, symbol: ?place@BambooFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;

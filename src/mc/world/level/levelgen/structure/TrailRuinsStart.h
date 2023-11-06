@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TrailRuinsStart();
+    virtual ~TrailRuinsStart() = default;
 
     // vIndex: 2, symbol: ?isValid@TrailRuinsStart@@UEBA_NXZ
     virtual bool isValid() const;

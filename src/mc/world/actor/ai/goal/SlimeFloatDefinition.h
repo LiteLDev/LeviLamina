@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SlimeFloatDefinition();
+    virtual ~SlimeFloatDefinition() = default;
 
     // symbol: ??0SlimeFloatDefinition@@QEAA@XZ
     MCAPI SlimeFloatDefinition();

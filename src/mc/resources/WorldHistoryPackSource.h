@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~WorldHistoryPackSource();
+    virtual ~WorldHistoryPackSource() = default;
 
     // vIndex: 1, symbol: ?forEachPackConst@WorldHistoryPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
     virtual void forEachPackConst(std::function<void(class Pack const&)>) const;

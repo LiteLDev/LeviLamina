@@ -29,7 +29,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LeverBlock();
+    virtual ~LeverBlock() = default;
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@LeverBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z

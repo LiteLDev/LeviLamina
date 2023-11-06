@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ProducerComponent();
+    virtual ~ProducerComponent() = default;
 
     // vIndex: 3, symbol: ?setStrength@ProducerComponent@@UEAAXH@Z
     virtual void setStrength(int);

@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BaseRailTransporter();
+    virtual ~BaseRailTransporter() = default;
 
     // vIndex: 11, symbol:
     // ?addSource@BaseRailTransporter@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z

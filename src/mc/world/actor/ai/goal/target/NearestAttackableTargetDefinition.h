@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~NearestAttackableTargetDefinition();
+    virtual ~NearestAttackableTargetDefinition() = default;
 
     // vIndex: 2, symbol: ?validate@NearestAttackableTargetDefinition@@UEBA_NAEAVMob@@@Z
     virtual bool validate(class Mob&) const;

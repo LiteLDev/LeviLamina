@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~EnchantRandomEquipmentFunction();
+    virtual ~EnchantRandomEquipmentFunction() = default;
 
     // vIndex: 1, symbol:
     // ?apply@EnchantRandomEquipmentFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z

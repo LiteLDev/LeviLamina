@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~WorldLimitChunkSource();
+    virtual ~WorldLimitChunkSource() = default;
 
     // vIndex: 3, symbol:
     // ?getExistingChunk@WorldLimitChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z

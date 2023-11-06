@@ -26,7 +26,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MinecraftGameTestHelper();
+    virtual ~MinecraftGameTestHelper() = default;
 
     // vIndex: 1, symbol: ?succeedWhenEntityPresent@MinecraftGameTestHelper@@UEAAXAEBUActorDefinitionIdentifier@@HHH_N@Z
     virtual void succeedWhenEntityPresent(struct ActorDefinitionIdentifier const&, int, int, int, bool);

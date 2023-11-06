@@ -25,7 +25,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ActorServerCommandOrigin();
+    virtual ~ActorServerCommandOrigin() = default;
 
     // vIndex: 9, symbol: ?getPermissionsLevel@ActorServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
     virtual ::CommandPermissionLevel getPermissionsLevel() const;

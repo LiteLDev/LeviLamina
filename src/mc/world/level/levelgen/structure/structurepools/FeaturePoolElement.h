@@ -40,7 +40,7 @@ public:
     ) const;
 
     // vIndex: 12, symbol: ??1@@UEAA@XZ
-    virtual ~FeaturePoolElement();
+    virtual ~FeaturePoolElement() = default;
 
     // symbol:
     // ??0FeaturePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@V?$WeakRefT@UFeatureRefTraits@@@@@Z

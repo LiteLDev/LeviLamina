@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BlastFurnaceContainerScreenValidator();
+    virtual ~BlastFurnaceContainerScreenValidator() = default;
 
     // symbol: ??0BlastFurnaceContainerScreenValidator@@QEAA@XZ
     MCAPI BlastFurnaceContainerScreenValidator();

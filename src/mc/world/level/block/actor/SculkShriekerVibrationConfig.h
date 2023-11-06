@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SculkShriekerVibrationConfig();
+    virtual ~SculkShriekerVibrationConfig() = default;
 
     // vIndex: 1, symbol:
     // ?onSignalReceive@SculkShriekerVibrationConfig@@UEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVGameEvent@@PEAVActor@@MI3@Z

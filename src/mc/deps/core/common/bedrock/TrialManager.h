@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TrialManager();
+    virtual ~TrialManager() = default;
 
     // NOLINTEND
 };

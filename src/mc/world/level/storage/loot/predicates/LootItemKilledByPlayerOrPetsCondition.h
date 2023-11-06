@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LootItemKilledByPlayerOrPetsCondition();
+    virtual ~LootItemKilledByPlayerOrPetsCondition() = default;
 
     // vIndex: 1, symbol: ?applies@LootItemKilledByPlayerOrPetsCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
     virtual bool applies(class Random&, class LootTableContext&);

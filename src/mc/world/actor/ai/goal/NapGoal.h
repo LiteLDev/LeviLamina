@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~NapGoal();
+    virtual ~NapGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@NapGoal@@UEAA_NXZ
     virtual bool canUse();

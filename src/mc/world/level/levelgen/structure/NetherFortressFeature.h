@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~NetherFortressFeature();
+    virtual ~NetherFortressFeature() = default;
 
     // vIndex: 1, symbol: ?shouldAddHardcodedSpawnAreas@NetherFortressFeature@@UEBA_NXZ
     virtual bool shouldAddHardcodedSpawnAreas() const;

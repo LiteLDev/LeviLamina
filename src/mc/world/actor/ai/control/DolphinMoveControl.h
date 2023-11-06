@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DolphinMoveControl();
+    virtual ~DolphinMoveControl() = default;
 
     // vIndex: 2, symbol: ?tick@DolphinMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
     virtual void tick(class MoveControlComponent&, class Mob&);

@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FollowFlockGoal();
+    virtual ~FollowFlockGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@FollowFlockGoal@@UEAA_NXZ
     virtual bool canUse();

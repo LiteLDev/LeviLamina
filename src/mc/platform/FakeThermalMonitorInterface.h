@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FakeThermalMonitorInterface();
+    virtual ~FakeThermalMonitorInterface() = default;
 
     // vIndex: 1, symbol: ?getThermalState@FakeThermalMonitorInterface@@UEBA?AW4ThermalState@@XZ
     virtual ::ThermalState getThermalState() const;

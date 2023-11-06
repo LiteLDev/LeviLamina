@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DragonChargePlayerDefinition();
+    virtual ~DragonChargePlayerDefinition() = default;
 
     // symbol: ??0DragonChargePlayerDefinition@@QEAA@XZ
     MCAPI DragonChargePlayerDefinition();

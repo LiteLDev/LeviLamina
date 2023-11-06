@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ClientRequestPlaceholderBlock();
+    virtual ~ClientRequestPlaceholderBlock() = default;
 
     // vIndex: 5, symbol:
     // ?clip@ClientRequestPlaceholderBlock@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z

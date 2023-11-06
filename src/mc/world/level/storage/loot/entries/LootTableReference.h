@@ -24,7 +24,7 @@ public:
     virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
 
     // vIndex: 1, symbol: ??1@@UEAA@XZ
-    virtual ~LootTableReference();
+    virtual ~LootTableReference() = default;
 
     // symbol:
     // ?deserialize@LootTableReference@@SA?AV?$unique_ptr@VLootPoolEntry@@U?$default_delete@VLootPoolEntry@@@std@@@std@@VValue@Json@@HHAEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z

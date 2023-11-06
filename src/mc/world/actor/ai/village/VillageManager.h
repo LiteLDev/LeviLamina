@@ -60,7 +60,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~VillageManager();
+    virtual ~VillageManager() = default;
 
     // vIndex: 1, symbol: ?fetchClosestVillage@VillageManager@@UEBA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@HI@Z
     virtual std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int, uint) const;

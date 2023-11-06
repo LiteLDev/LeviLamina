@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SimplePositionalRandomFactory();
+    virtual ~SimplePositionalRandomFactory() = default;
 
     // vIndex: 1, symbol:
     // ?forBlockPos@SimplePositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBVBlockPos@@@Z

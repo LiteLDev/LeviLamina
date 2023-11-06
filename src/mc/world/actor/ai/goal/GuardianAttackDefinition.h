@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~GuardianAttackDefinition();
+    virtual ~GuardianAttackDefinition() = default;
 
     // vIndex: 1, symbol: ?validateMobType@GuardianAttackDefinition@@UEBA_NAEAVMob@@@Z
     virtual bool validateMobType(class Mob&) const;

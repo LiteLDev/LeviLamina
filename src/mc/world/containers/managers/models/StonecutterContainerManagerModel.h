@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~StonecutterContainerManagerModel();
+    virtual ~StonecutterContainerManagerModel() = default;
 
     // vIndex: 6, symbol:
     // ?getItemCopies@StonecutterContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ

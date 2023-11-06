@@ -67,7 +67,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FileSystemFileAccess();
+    virtual ~FileSystemFileAccess() = default;
 
     // vIndex: 1, symbol:
     // ?fopen@FileSystemFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

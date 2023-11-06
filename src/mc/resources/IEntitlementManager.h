@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~IEntitlementManager();
+    virtual ~IEntitlementManager() = default;
 
     // NOLINTEND
 };

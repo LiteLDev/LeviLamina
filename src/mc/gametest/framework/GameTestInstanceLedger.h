@@ -22,7 +22,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~GameTestInstanceLedger();
+    virtual ~GameTestInstanceLedger() = default;
 
     // vIndex: 1, symbol: ?onTestStructureLoaded@GameTestInstanceLedger@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~PillagerOutpostStart();
+    virtual ~PillagerOutpostStart() = default;
 
     // vIndex: 1, symbol: ?postProcess@PillagerOutpostStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);

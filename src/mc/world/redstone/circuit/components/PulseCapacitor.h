@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~PulseCapacitor();
+    virtual ~PulseCapacitor() = default;
 
     // vIndex: 1, symbol: ?getStrength@PulseCapacitor@@UEBAHXZ
     virtual int getStrength() const;

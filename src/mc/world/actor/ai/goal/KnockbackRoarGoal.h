@@ -56,7 +56,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~KnockbackRoarGoal();
+    virtual ~KnockbackRoarGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@KnockbackRoarGoal@@UEAA_NXZ
     virtual bool canUse();

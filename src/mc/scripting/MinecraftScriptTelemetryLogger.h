@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MinecraftScriptTelemetryLogger();
+    virtual ~MinecraftScriptTelemetryLogger() = default;
 
     // vIndex: 1, symbol: ?onPluginDiscovery@MinecraftScriptTelemetryLogger@@UEAAXAEBVScriptPluginResult@@@Z
     virtual void onPluginDiscovery(class ScriptPluginResult const&);

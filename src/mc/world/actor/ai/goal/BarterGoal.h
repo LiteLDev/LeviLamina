@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BarterGoal();
+    virtual ~BarterGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@BarterGoal@@UEAA_NXZ
     virtual bool canUse();

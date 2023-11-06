@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ActorDamageByBlockSource();
+    virtual ~ActorDamageByBlockSource() = default;
 
     // vIndex: 3, symbol: ?isBlockSource@ActorDamageByBlockSource@@UEBA_NXZ
     virtual bool isBlockSource() const;

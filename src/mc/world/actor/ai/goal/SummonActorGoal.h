@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SummonActorGoal();
+    virtual ~SummonActorGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SummonActorGoal@@UEAA_NXZ
     virtual bool canUse();

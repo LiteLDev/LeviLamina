@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DragonStrafePlayerDefinition();
+    virtual ~DragonStrafePlayerDefinition() = default;
 
     // symbol: ??0DragonStrafePlayerDefinition@@QEAA@XZ
     MCAPI DragonStrafePlayerDefinition();

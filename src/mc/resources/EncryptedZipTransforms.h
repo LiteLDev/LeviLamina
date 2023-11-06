@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~EncryptedZipTransforms();
+    virtual ~EncryptedZipTransforms() = default;
 
     // vIndex: 1, symbol: ?readTransform@EncryptedZipTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
     virtual bool readTransform(std::vector<uchar>&) const;

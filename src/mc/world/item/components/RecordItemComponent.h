@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RecordItemComponent();
+    virtual ~RecordItemComponent() = default;
 
     // symbol: ??0RecordItemComponent@@QEAA@W4LevelSoundEvent@@MH@Z
     MCAPI RecordItemComponent(::LevelSoundEvent, float, int);

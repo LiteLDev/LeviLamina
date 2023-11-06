@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BambooSaplingBlock();
+    virtual ~BambooSaplingBlock() = default;
 
     // vIndex: 17, symbol: ?randomlyModifyPosition@BambooSaplingBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
     virtual class Vec3 randomlyModifyPosition(class BlockPos const&) const;

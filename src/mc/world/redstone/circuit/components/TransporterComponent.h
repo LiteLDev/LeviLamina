@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TransporterComponent();
+    virtual ~TransporterComponent() = default;
 
     // vIndex: 7, symbol: ?canConsumerPower@TransporterComponent@@UEBA_NXZ
     virtual bool canConsumerPower() const;

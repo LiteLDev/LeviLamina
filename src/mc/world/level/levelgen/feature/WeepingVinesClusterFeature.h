@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~WeepingVinesClusterFeature();
+    virtual ~WeepingVinesClusterFeature() = default;
 
     // vIndex: 3, symbol: ?place@WeepingVinesClusterFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;

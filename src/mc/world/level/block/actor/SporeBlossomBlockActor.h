@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SporeBlossomBlockActor();
+    virtual ~SporeBlossomBlockActor() = default;
 
     // vIndex: 7, symbol: ?tick@SporeBlossomBlockActor@@UEAAXAEAVBlockSource@@@Z
     virtual void tick(class BlockSource&);

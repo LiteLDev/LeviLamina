@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LevelChunkPacket();
+    virtual ~LevelChunkPacket() = default;
 
     // vIndex: 1, symbol: ?getId@LevelChunkPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

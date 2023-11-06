@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~AttackDamageMobEffect();
+    virtual ~AttackDamageMobEffect() = default;
 
     // vIndex: 6, symbol: ?getAttributeModifierValue@AttackDamageMobEffect@@UEBAMHAEBVAttributeModifier@@@Z
     virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;

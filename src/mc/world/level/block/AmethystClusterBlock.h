@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~AmethystClusterBlock();
+    virtual ~AmethystClusterBlock() = default;
 
     // vIndex: 12, symbol: ?getVisualShape@AmethystClusterBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;

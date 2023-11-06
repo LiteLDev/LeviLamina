@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ScriptPluginPackSource();
+    virtual ~ScriptPluginPackSource() = default;
 
     // vIndex: 1, symbol: ?getManifest@ScriptPluginPackSource@@UEAAAEBVPackManifest@@XZ
     virtual class PackManifest const& getManifest();

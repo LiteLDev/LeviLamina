@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SHLeftTurn();
+    virtual ~SHLeftTurn() = default;
 
     // vIndex: 2, symbol: ?getType@SHLeftTurn@@UEBA?AW4StructurePieceType@@XZ
     virtual ::StructurePieceType getType() const;

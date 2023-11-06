@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LegacyChunkStorage();
+    virtual ~LegacyChunkStorage() = default;
 
     // vIndex: 11, symbol: ?loadChunk@LegacyChunkStorage@@UEAAXAEAVLevelChunk@@_N@Z
     virtual void loadChunk(class LevelChunk&, bool);

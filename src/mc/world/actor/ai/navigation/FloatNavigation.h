@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FloatNavigation();
+    virtual ~FloatNavigation() = default;
 
     // vIndex: 10, symbol: ?travel@FloatNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z
     virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);

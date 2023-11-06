@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 1, symbol: ??1@@UEAA@XZ
-    virtual ~ArmorContainerModel();
+    virtual ~ArmorContainerModel() = default;
 
     // vIndex: 6, symbol: __unk_vfn_6
     virtual void __unk_vfn_6();

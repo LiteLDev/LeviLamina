@@ -31,7 +31,7 @@ public:
     virtual void __unk_vfn_4();
 
     // vIndex: 10, symbol: ??1@@UEAA@XZ
-    virtual ~EnderCrystal();
+    virtual ~EnderCrystal() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();

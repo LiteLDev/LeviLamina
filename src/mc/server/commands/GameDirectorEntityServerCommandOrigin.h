@@ -25,7 +25,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~GameDirectorEntityServerCommandOrigin();
+    virtual ~GameDirectorEntityServerCommandOrigin() = default;
 
     // vIndex: 9, symbol: ?getPermissionsLevel@GameDirectorEntityServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
     virtual ::CommandPermissionLevel getPermissionsLevel() const;
