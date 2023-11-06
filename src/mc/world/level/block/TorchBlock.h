@@ -224,9 +224,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $DATA_FROM_FACING() { return DATA_FROM_FACING; }
+    static auto& $DATA_FROM_FACING() { return DATA_FROM_FACING; }
 
-    auto& $FACING_FROM_DATA() { return FACING_FROM_DATA; }
+    static auto& $FACING_FROM_DATA() { return FACING_FROM_DATA; }
 
     // NOLINTEND
 };

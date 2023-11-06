@@ -49,7 +49,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mGame() { return mGame; }
+    static auto& $mGame() { return mGame; }
 
     // NOLINTEND
 };

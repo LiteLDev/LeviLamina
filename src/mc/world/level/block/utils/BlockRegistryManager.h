@@ -35,13 +35,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mClientIdRegistryMap() { return mClientIdRegistryMap; }
+    static auto& $mClientIdRegistryMap() { return mClientIdRegistryMap; }
 
-    auto& $mClientRegistry() { return mClientRegistry; }
+    static auto& $mClientRegistry() { return mClientRegistry; }
 
-    auto& $mServerRegistry() { return mServerRegistry; }
+    static auto& $mServerRegistry() { return mServerRegistry; }
 
-    auto& $mThreadLocalRegistry() { return mThreadLocalRegistry; }
+    static auto& $mThreadLocalRegistry() { return mThreadLocalRegistry; }
 
     // NOLINTEND
 };

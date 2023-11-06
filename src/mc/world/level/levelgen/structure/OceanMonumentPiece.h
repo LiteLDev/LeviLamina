@@ -82,19 +82,19 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mGridroomLeftWingConnectIndex() { return mGridroomLeftWingConnectIndex; }
+    static auto& $mGridroomLeftWingConnectIndex() { return mGridroomLeftWingConnectIndex; }
 
-    auto& $mGridroomRightWingConnectIndex() { return mGridroomRightWingConnectIndex; }
+    static auto& $mGridroomRightWingConnectIndex() { return mGridroomRightWingConnectIndex; }
 
-    auto& $mGridroomSourceIndex() { return mGridroomSourceIndex; }
+    static auto& $mGridroomSourceIndex() { return mGridroomSourceIndex; }
 
-    auto& $mGridroomTopConnectIndex() { return mGridroomTopConnectIndex; }
+    static auto& $mGridroomTopConnectIndex() { return mGridroomTopConnectIndex; }
 
-    auto& $mLeftWingIndex() { return mLeftWingIndex; }
+    static auto& $mLeftWingIndex() { return mLeftWingIndex; }
 
-    auto& $mPenthouseIndex() { return mPenthouseIndex; }
+    static auto& $mPenthouseIndex() { return mPenthouseIndex; }
 
-    auto& $mRightWingIndex() { return mRightWingIndex; }
+    static auto& $mRightWingIndex() { return mRightWingIndex; }
 
     // NOLINTEND
 };

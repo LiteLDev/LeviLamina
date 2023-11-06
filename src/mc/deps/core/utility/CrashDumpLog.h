@@ -106,31 +106,31 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mAssertDataMutex() { return mAssertDataMutex; }
+    static auto& $mAssertDataMutex() { return mAssertDataMutex; }
 
-    auto& $mCrashDumpLog_logThread() { return mCrashDumpLog_logThread; }
+    static auto& $mCrashDumpLog_logThread() { return mCrashDumpLog_logThread; }
 
-    auto& $mCrashDumpThreadMutex() { return mCrashDumpThreadMutex; }
+    static auto& $mCrashDumpThreadMutex() { return mCrashDumpThreadMutex; }
 
-    auto& $mCrashDumpThreadMutexCV() { return mCrashDumpThreadMutexCV; }
+    static auto& $mCrashDumpThreadMutexCV() { return mCrashDumpThreadMutexCV; }
 
-    auto& $mEventDataMutex() { return mEventDataMutex; }
+    static auto& $mEventDataMutex() { return mEventDataMutex; }
 
-    auto& $mFrameDataMutex() { return mFrameDataMutex; }
+    static auto& $mFrameDataMutex() { return mFrameDataMutex; }
 
-    auto& $mGameplayDataMutex() { return mGameplayDataMutex; }
+    static auto& $mGameplayDataMutex() { return mGameplayDataMutex; }
 
-    auto& $mGlobalDataMutex() { return mGlobalDataMutex; }
+    static auto& $mGlobalDataMutex() { return mGlobalDataMutex; }
 
-    auto& $mIsThreadRunning() { return mIsThreadRunning; }
+    static auto& $mIsThreadRunning() { return mIsThreadRunning; }
 
-    auto& $mKeyValueDataMutex() { return mKeyValueDataMutex; }
+    static auto& $mKeyValueDataMutex() { return mKeyValueDataMutex; }
 
-    auto& $mPlayerDataMutex() { return mPlayerDataMutex; }
+    static auto& $mPlayerDataMutex() { return mPlayerDataMutex; }
 
-    auto& $mRenderDataMutex() { return mRenderDataMutex; }
+    static auto& $mRenderDataMutex() { return mRenderDataMutex; }
 
-    auto& $mAllData() { return mAllData; }
+    static auto& $mAllData() { return mAllData; }
 
     // NOLINTEND
 };

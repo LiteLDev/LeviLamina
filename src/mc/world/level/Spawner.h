@@ -143,7 +143,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $SPAWN_RING_OFFSETS() { return SPAWN_RING_OFFSETS; }
+    static auto& $SPAWN_RING_OFFSETS() { return SPAWN_RING_OFFSETS; }
 
     // NOLINTEND
 };

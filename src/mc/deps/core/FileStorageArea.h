@@ -264,11 +264,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sStorageAreaFileStats() { return sStorageAreaFileStats; }
+    static auto& $sStorageAreaFileStats() { return sStorageAreaFileStats; }
 
-    auto& $sStorageAreaLock() { return sStorageAreaLock; }
+    static auto& $sStorageAreaLock() { return sStorageAreaLock; }
 
-    auto& $sStorageAreas() { return sStorageAreas; }
+    static auto& $sStorageAreas() { return sStorageAreas; }
 
     // NOLINTEND
 };

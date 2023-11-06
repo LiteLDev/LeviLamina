@@ -102,7 +102,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mAssertAreas() { return mAssertAreas; }
+    static auto& $mAssertAreas() { return mAssertAreas; }
 
     // NOLINTEND
 };

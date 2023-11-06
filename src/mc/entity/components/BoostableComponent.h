@@ -60,7 +60,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $SPEED_MODIFIER_BOOSTING_UUID() { return SPEED_MODIFIER_BOOSTING_UUID; }
+    static auto& $SPEED_MODIFIER_BOOSTING_UUID() { return SPEED_MODIFIER_BOOSTING_UUID; }
 
     // NOLINTEND
 };

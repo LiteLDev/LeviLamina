@@ -1527,19 +1527,19 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mAchievementEventing() { return mAchievementEventing; }
+    static auto& $mAchievementEventing() { return mAchievementEventing; }
 
-    auto& $mAcquisitionMethodMap() { return mAcquisitionMethodMap; }
+    static auto& $mAcquisitionMethodMap() { return mAcquisitionMethodMap; }
 
-    auto& $mPlayerTelemetry() { return mPlayerTelemetry; }
+    static auto& $mPlayerTelemetry() { return mPlayerTelemetry; }
 
-    auto& $mUseMethodMap() { return mUseMethodMap; }
+    static auto& $mUseMethodMap() { return mUseMethodMap; }
 
-    auto& $sHeartbeatMutex() { return sHeartbeatMutex; }
+    static auto& $sHeartbeatMutex() { return sHeartbeatMutex; }
 
-    auto& $sMutex() { return sMutex; }
+    static auto& $sMutex() { return sMutex; }
 
-    auto& $sPlayerTelemetryMutex() { return sPlayerTelemetryMutex; }
+    static auto& $sPlayerTelemetryMutex() { return sPlayerTelemetryMutex; }
 
     // NOLINTEND
 };

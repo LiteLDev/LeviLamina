@@ -130,9 +130,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $DEFAULT_HORN_COUNT() { return DEFAULT_HORN_COUNT; }
+    static auto& $DEFAULT_HORN_COUNT() { return DEFAULT_HORN_COUNT; }
 
-    auto& $SCREAMING_GOAT_VARIANT() { return SCREAMING_GOAT_VARIANT; }
+    static auto& $SCREAMING_GOAT_VARIANT() { return SCREAMING_GOAT_VARIANT; }
 
     // NOLINTEND
 };

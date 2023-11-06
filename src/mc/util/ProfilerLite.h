@@ -64,7 +64,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $gProfilerLiteInstance() { return gProfilerLiteInstance; }
+    static auto& $gProfilerLiteInstance() { return gProfilerLiteInstance; }
 
     // NOLINTEND
 };

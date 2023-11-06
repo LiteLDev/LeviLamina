@@ -171,13 +171,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $EGG_MASK_ID() { return EGG_MASK_ID; }
+    static auto& $EGG_MASK_ID() { return EGG_MASK_ID; }
 
-    auto& $NUM_SPAWN_EGG_TEXTURES() { return NUM_SPAWN_EGG_TEXTURES; }
+    static auto& $NUM_SPAWN_EGG_TEXTURES() { return NUM_SPAWN_EGG_TEXTURES; }
 
-    auto& $mCustomSpawnEggs() { return mCustomSpawnEggs; }
+    static auto& $mCustomSpawnEggs() { return mCustomSpawnEggs; }
 
-    auto& $mEggTextureInfoMap() { return mEggTextureInfoMap; }
+    static auto& $mEggTextureInfoMap() { return mEggTextureInfoMap; }
 
     // NOLINTEND
 };

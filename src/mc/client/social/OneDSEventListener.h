@@ -103,15 +103,15 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $ENDPOINT_IDENTIFIER() { return ENDPOINT_IDENTIFIER; }
+    static auto& $ENDPOINT_IDENTIFIER() { return ENDPOINT_IDENTIFIER; }
 
-    auto& $ONEDS_URL() { return ONEDS_URL; }
+    static auto& $ONEDS_URL() { return ONEDS_URL; }
 
-    auto& $PARTA_IDENTIFIER() { return PARTA_IDENTIFIER; }
+    static auto& $PARTA_IDENTIFIER() { return PARTA_IDENTIFIER; }
 
-    auto& $SAFETY_ENDPOINT_IDENTIFIER() { return SAFETY_ENDPOINT_IDENTIFIER; }
+    static auto& $SAFETY_ENDPOINT_IDENTIFIER() { return SAFETY_ENDPOINT_IDENTIFIER; }
 
-    auto& $SAFETY_PARTA_IDENTIFIER() { return SAFETY_PARTA_IDENTIFIER; }
+    static auto& $SAFETY_PARTA_IDENTIFIER() { return SAFETY_PARTA_IDENTIFIER; }
 
     // NOLINTEND
 };

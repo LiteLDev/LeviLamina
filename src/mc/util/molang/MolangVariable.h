@@ -73,15 +73,15 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mHasSetWatermark() { return mHasSetWatermark; }
+    static auto& $mHasSetWatermark() { return mHasSetWatermark; }
 
-    auto& $mIndexToVariableNameMap() { return mIndexToVariableNameMap; }
+    static auto& $mIndexToVariableNameMap() { return mIndexToVariableNameMap; }
 
-    auto& $mIndexToVariableNameMap_LowWaterMark() { return mIndexToVariableNameMap_LowWaterMark; }
+    static auto& $mIndexToVariableNameMap_LowWaterMark() { return mIndexToVariableNameMap_LowWaterMark; }
 
-    auto& $mVariableNameToIndexMap() { return mVariableNameToIndexMap; }
+    static auto& $mVariableNameToIndexMap() { return mVariableNameToIndexMap; }
 
-    auto& $mVariableNameToIndexMap_LowWaterMark() { return mVariableNameToIndexMap_LowWaterMark; }
+    static auto& $mVariableNameToIndexMap_LowWaterMark() { return mVariableNameToIndexMap_LowWaterMark; }
 
     // NOLINTEND
 };

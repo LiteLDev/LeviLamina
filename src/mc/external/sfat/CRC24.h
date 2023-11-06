@@ -21,7 +21,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $table() { return table; }
+    static auto& $table() { return table; }
 
     // NOLINTEND
 };

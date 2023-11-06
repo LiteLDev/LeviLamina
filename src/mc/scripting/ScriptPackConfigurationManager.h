@@ -56,7 +56,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sDefaultConfigurationName() { return sDefaultConfigurationName; }
+    static auto& $sDefaultConfigurationName() { return sDefaultConfigurationName; }
 
     // NOLINTEND
 };

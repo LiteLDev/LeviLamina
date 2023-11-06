@@ -164,7 +164,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $ARM_ANIMATION_SPEED() { return ARM_ANIMATION_SPEED; }
+    static auto& $ARM_ANIMATION_SPEED() { return ARM_ANIMATION_SPEED; }
 
     // NOLINTEND
 };

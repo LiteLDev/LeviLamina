@@ -45,9 +45,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sMutex() { return sMutex; }
+    static auto& $sMutex() { return sMutex; }
 
-    auto& $sWeakInstance() { return sWeakInstance; }
+    static auto& $sWeakInstance() { return sWeakInstance; }
 
     // NOLINTEND
 };

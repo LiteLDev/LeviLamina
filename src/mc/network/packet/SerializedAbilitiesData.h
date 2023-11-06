@@ -53,7 +53,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $ABILITIES_LAYER_MAP() { return ABILITIES_LAYER_MAP; }
+    static auto& $ABILITIES_LAYER_MAP() { return ABILITIES_LAYER_MAP; }
 
     // NOLINTEND
 };

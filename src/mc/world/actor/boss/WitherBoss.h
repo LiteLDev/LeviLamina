@@ -232,7 +232,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $TIME_BEFORE_MOVING() { return TIME_BEFORE_MOVING; }
+    static auto& $TIME_BEFORE_MOVING() { return TIME_BEFORE_MOVING; }
 
     // NOLINTEND
 };

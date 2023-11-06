@@ -63,7 +63,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
+    static auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
 
     // NOLINTEND
 };

@@ -81,7 +81,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mTrialHasEnded() { return mTrialHasEnded; }
+    static auto& $mTrialHasEnded() { return mTrialHasEnded; }
 
     // NOLINTEND
 };

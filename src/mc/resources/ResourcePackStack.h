@@ -88,7 +88,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mUpgradePathMap() { return mUpgradePathMap; }
+    static auto& $mUpgradePathMap() { return mUpgradePathMap; }
 
     // NOLINTEND
 };

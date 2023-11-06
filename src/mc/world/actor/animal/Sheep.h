@@ -103,7 +103,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $EAT_ANIMATION_TICKS() { return EAT_ANIMATION_TICKS; }
+    static auto& $EAT_ANIMATION_TICKS() { return EAT_ANIMATION_TICKS; }
 
     // NOLINTEND
 };

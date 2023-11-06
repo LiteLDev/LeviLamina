@@ -97,7 +97,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $TICKING_QUEUE_PASS_LIMIT() { return TICKING_QUEUE_PASS_LIMIT; }
+    static auto& $TICKING_QUEUE_PASS_LIMIT() { return TICKING_QUEUE_PASS_LIMIT; }
 
     // NOLINTEND
 };

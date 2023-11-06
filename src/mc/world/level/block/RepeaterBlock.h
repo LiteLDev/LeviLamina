@@ -223,7 +223,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $DELAYS() { return DELAYS; }
+    static auto& $DELAYS() { return DELAYS; }
 
     // NOLINTEND
 };

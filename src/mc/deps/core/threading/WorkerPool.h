@@ -71,9 +71,9 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sAllPools() { return sAllPools; }
+    static auto& $sAllPools() { return sAllPools; }
 
-    auto& $sAllPoolsMutex() { return sAllPoolsMutex; }
+    static auto& $sAllPoolsMutex() { return sAllPoolsMutex; }
 
     // NOLINTEND
 };

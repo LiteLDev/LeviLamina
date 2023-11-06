@@ -209,33 +209,33 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $POSE_ATHENA() { return POSE_ATHENA; }
+    static auto& $POSE_ATHENA() { return POSE_ATHENA; }
 
-    auto& $POSE_BRANDISH() { return POSE_BRANDISH; }
+    static auto& $POSE_BRANDISH() { return POSE_BRANDISH; }
 
-    auto& $POSE_CANCAN_A() { return POSE_CANCAN_A; }
+    static auto& $POSE_CANCAN_A() { return POSE_CANCAN_A; }
 
-    auto& $POSE_CANCAN_B() { return POSE_CANCAN_B; }
+    static auto& $POSE_CANCAN_B() { return POSE_CANCAN_B; }
 
-    auto& $POSE_DEFAULT() { return POSE_DEFAULT; }
+    static auto& $POSE_DEFAULT() { return POSE_DEFAULT; }
 
-    auto& $POSE_ENTERTAIN() { return POSE_ENTERTAIN; }
+    static auto& $POSE_ENTERTAIN() { return POSE_ENTERTAIN; }
 
-    auto& $POSE_HERO() { return POSE_HERO; }
+    static auto& $POSE_HERO() { return POSE_HERO; }
 
-    auto& $POSE_HONOR() { return POSE_HONOR; }
+    static auto& $POSE_HONOR() { return POSE_HONOR; }
 
-    auto& $POSE_RIPOSTE() { return POSE_RIPOSTE; }
+    static auto& $POSE_RIPOSTE() { return POSE_RIPOSTE; }
 
-    auto& $POSE_SALUTE() { return POSE_SALUTE; }
+    static auto& $POSE_SALUTE() { return POSE_SALUTE; }
 
-    auto& $POSE_SOLEMN() { return POSE_SOLEMN; }
+    static auto& $POSE_SOLEMN() { return POSE_SOLEMN; }
 
-    auto& $POSE_ZERO_ROTATION() { return POSE_ZERO_ROTATION; }
+    static auto& $POSE_ZERO_ROTATION() { return POSE_ZERO_ROTATION; }
 
-    auto& $POSE_ZOMBIE() { return POSE_ZOMBIE; }
+    static auto& $POSE_ZOMBIE() { return POSE_ZOMBIE; }
 
-    auto& $STAND_POSES() { return STAND_POSES; }
+    static auto& $STAND_POSES() { return STAND_POSES; }
 
     // NOLINTEND
 };

@@ -122,7 +122,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $DEFAULT_FUSE_LENGTH() { return DEFAULT_FUSE_LENGTH; }
+    static auto& $DEFAULT_FUSE_LENGTH() { return DEFAULT_FUSE_LENGTH; }
 
     // NOLINTEND
 };

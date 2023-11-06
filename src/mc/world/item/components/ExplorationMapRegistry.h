@@ -36,7 +36,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mRegistry() { return mRegistry; }
+    static auto& $mRegistry() { return mRegistry; }
 
     // NOLINTEND
 };

@@ -35,7 +35,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mApp() { return mApp; }
+    static auto& $mApp() { return mApp; }
 
     // NOLINTEND
 };

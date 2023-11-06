@@ -29,7 +29,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $refCount() { return refCount; }
+    static auto& $refCount() { return refCount; }
 
     // NOLINTEND
 };

@@ -51,9 +51,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mInstance() { return mInstance; }
+    static auto& $mInstance() { return mInstance; }
 
-    auto& $mMutex() { return mMutex; }
+    static auto& $mMutex() { return mMutex; }
 
     // NOLINTEND
 };

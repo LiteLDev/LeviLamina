@@ -44,11 +44,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mInitialized() { return mInitialized; }
+    static auto& $mInitialized() { return mInitialized; }
 
-    auto& $mInstance() { return mInstance; }
+    static auto& $mInstance() { return mInstance; }
 
-    auto& $mIsReady() { return mIsReady; }
+    static auto& $mIsReady() { return mIsReady; }
 
     // NOLINTEND
 };

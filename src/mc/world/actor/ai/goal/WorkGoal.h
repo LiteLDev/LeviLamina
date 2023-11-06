@@ -72,9 +72,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $RAIN_CHECK_MAX_COOLDOWN() { return RAIN_CHECK_MAX_COOLDOWN; }
+    static auto& $RAIN_CHECK_MAX_COOLDOWN() { return RAIN_CHECK_MAX_COOLDOWN; }
 
-    auto& $WORK_TIMESTAMP_UPDATE_INVERVAL() { return WORK_TIMESTAMP_UPDATE_INVERVAL; }
+    static auto& $WORK_TIMESTAMP_UPDATE_INVERVAL() { return WORK_TIMESTAMP_UPDATE_INVERVAL; }
 
     // NOLINTEND
 };

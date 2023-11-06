@@ -739,7 +739,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $MAX_INACTIVITY_TIMER() { return MAX_INACTIVITY_TIMER; }
+    static auto& $MAX_INACTIVITY_TIMER() { return MAX_INACTIVITY_TIMER; }
 
     // NOLINTEND
 };

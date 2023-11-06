@@ -19,7 +19,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $MIN_TIME_LIMITED_JAVA_PARITY_VERSION() { return MIN_TIME_LIMITED_JAVA_PARITY_VERSION; }
+    static auto& $MIN_TIME_LIMITED_JAVA_PARITY_VERSION() { return MIN_TIME_LIMITED_JAVA_PARITY_VERSION; }
 
     // NOLINTEND
 };

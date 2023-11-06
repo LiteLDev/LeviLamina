@@ -353,7 +353,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sStats() { return sStats; }
+    static auto& $sStats() { return sStats; }
 
     // NOLINTEND
 };

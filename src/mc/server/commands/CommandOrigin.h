@@ -164,7 +164,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sUnknownSource() { return sUnknownSource; }
+    static auto& $sUnknownSource() { return sUnknownSource; }
 
     // NOLINTEND
 };

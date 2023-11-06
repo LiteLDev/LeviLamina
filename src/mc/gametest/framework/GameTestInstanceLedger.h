@@ -43,7 +43,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $GAME_TEST_INSTANCE_PREFIX() { return GAME_TEST_INSTANCE_PREFIX; }
+    static auto& $GAME_TEST_INSTANCE_PREFIX() { return GAME_TEST_INSTANCE_PREFIX; }
 
     // NOLINTEND
 };

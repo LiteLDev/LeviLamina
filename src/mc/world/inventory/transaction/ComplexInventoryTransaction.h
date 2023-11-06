@@ -73,7 +73,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $transactionTypeMap() { return transactionTypeMap; }
+    static auto& $transactionTypeMap() { return transactionTypeMap; }
 
     // NOLINTEND
 };

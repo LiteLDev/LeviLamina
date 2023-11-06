@@ -60,7 +60,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mLootingFunctions() { return mLootingFunctions; }
+    static auto& $mLootingFunctions() { return mLootingFunctions; }
 
     // NOLINTEND
 };

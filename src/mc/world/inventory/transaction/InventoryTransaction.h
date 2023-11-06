@@ -83,7 +83,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $inventoryTransactionErrorMap() { return inventoryTransactionErrorMap; }
+    static auto& $inventoryTransactionErrorMap() { return inventoryTransactionErrorMap; }
 
     // NOLINTEND
 };

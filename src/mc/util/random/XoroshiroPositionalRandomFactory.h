@@ -51,7 +51,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mThreadLocalDigest() { return mThreadLocalDigest; }
+    static auto& $mThreadLocalDigest() { return mThreadLocalDigest; }
 
     // NOLINTEND
 };

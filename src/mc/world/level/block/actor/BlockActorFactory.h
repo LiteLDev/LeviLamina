@@ -37,7 +37,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mCustomBlockEntityCreation() { return mCustomBlockEntityCreation; }
+    static auto& $mCustomBlockEntityCreation() { return mCustomBlockEntityCreation; }
 
     // NOLINTEND
 };

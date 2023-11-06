@@ -588,13 +588,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $MAX_STACK_SIZE() { return MAX_STACK_SIZE; }
+    static auto& $MAX_STACK_SIZE() { return MAX_STACK_SIZE; }
 
-    auto& $TAG_CHARGED_ITEM() { return TAG_CHARGED_ITEM; }
+    static auto& $TAG_CHARGED_ITEM() { return TAG_CHARGED_ITEM; }
 
-    auto& $TAG_STORE_CAN_DESTROY() { return TAG_STORE_CAN_DESTROY; }
+    static auto& $TAG_STORE_CAN_DESTROY() { return TAG_STORE_CAN_DESTROY; }
 
-    auto& $TAG_STORE_CAN_PLACE_ON() { return TAG_STORE_CAN_PLACE_ON; }
+    static auto& $TAG_STORE_CAN_PLACE_ON() { return TAG_STORE_CAN_PLACE_ON; }
 
     // NOLINTEND
 };

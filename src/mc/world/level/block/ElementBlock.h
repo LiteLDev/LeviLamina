@@ -194,7 +194,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mElements() { return mElements; }
+    static auto& $mElements() { return mElements; }
 
     // NOLINTEND
 };

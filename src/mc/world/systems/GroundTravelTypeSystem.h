@@ -31,7 +31,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $FRICTION_FIX_VERSION() { return FRICTION_FIX_VERSION; }
+    static auto& $FRICTION_FIX_VERSION() { return FRICTION_FIX_VERSION; }
 
     // NOLINTEND
 };

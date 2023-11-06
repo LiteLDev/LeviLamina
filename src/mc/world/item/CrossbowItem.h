@@ -141,7 +141,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $DEFAULT_USE_DURATION() { return DEFAULT_USE_DURATION; }
+    static auto& $DEFAULT_USE_DURATION() { return DEFAULT_USE_DURATION; }
 
     // NOLINTEND
 };

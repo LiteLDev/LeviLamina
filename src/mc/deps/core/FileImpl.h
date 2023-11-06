@@ -153,9 +153,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sAllFiles() { return sAllFiles; }
+    static auto& $sAllFiles() { return sAllFiles; }
 
-    auto& $sAllFilesLock() { return sAllFilesLock; }
+    static auto& $sAllFilesLock() { return sAllFilesLock; }
 
     // NOLINTEND
 };

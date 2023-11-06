@@ -49,7 +49,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mSubcomponentMap() { return mSubcomponentMap; }
+    static auto& $mSubcomponentMap() { return mSubcomponentMap; }
 
     // NOLINTEND
 };

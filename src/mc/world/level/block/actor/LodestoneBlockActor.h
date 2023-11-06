@@ -90,7 +90,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sTagName_Handle() { return sTagName_Handle; }
+    static auto& $sTagName_Handle() { return sTagName_Handle; }
 
     // NOLINTEND
 };

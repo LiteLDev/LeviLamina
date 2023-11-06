@@ -80,7 +80,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mThreadLocalRandom() { return mThreadLocalRandom; }
+    static auto& $mThreadLocalRandom() { return mThreadLocalRandom; }
 
     // NOLINTEND
 };

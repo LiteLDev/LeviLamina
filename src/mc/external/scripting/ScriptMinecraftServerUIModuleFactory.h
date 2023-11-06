@@ -85,11 +85,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $LegacyModuleName() { return LegacyModuleName; }
+    static auto& $LegacyModuleName() { return LegacyModuleName; }
 
-    auto& $ModuleName() { return ModuleName; }
+    static auto& $ModuleName() { return ModuleName; }
 
-    auto& $ModuleUUID() { return ModuleUUID; }
+    static auto& $ModuleUUID() { return ModuleUUID; }
 
     // NOLINTEND
 };

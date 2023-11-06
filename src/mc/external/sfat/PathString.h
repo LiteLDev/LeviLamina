@@ -21,7 +21,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mPreferedSeparator() { return mPreferedSeparator; }
+    static auto& $mPreferedSeparator() { return mPreferedSeparator; }
 
     // NOLINTEND
 };
