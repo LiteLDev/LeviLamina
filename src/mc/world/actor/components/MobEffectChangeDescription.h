@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MobEffectChangeDescription {
+// auto generated inclusion list
+#include "mc/world/actor/AttributeDescription.h"
+
+class MobEffectChangeDescription : public ::AttributeDescription {
 public:
     // prevent constructor by default
     MobEffectChangeDescription& operator=(MobEffectChangeDescription const&);
@@ -14,14 +17,11 @@ public:
     // vIndex: 0, symbol: ?getJsonName@MobEffectChangeDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1MobEffectChangeDescription@@UEAA@XZ
+    virtual ~MobEffectChangeDescription();
 
     // vIndex: 2, symbol: ?deserializeData@MobEffectChangeDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1MobEffectChangeDescription@@UEAA@XZ
-    MCVAPI ~MobEffectChangeDescription();
 
     // NOLINTEND
 };

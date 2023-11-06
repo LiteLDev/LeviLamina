@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1WallBlock@@UEAA@XZ
+    virtual ~WallBlock();
 
     // vIndex: 5, symbol:
     // ?clip@WallBlock@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -221,9 +221,6 @@ public:
 
     // symbol: ?isWallBlock@WallBlock@@UEBA_NXZ
     MCVAPI bool isWallBlock() const;
-
-    // symbol: ??1WallBlock@@UEAA@XZ
-    MCVAPI ~WallBlock();
 
     // symbol: ??0WallBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@@Z
     MCAPI WallBlock(std::string const&, int, class BlockLegacy const&);

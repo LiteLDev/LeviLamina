@@ -14,29 +14,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?writeByte@BytesDataOutput@@UEAAXD@Z
-    MCVAPI void writeByte(char);
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~BytesDataOutput();
 
-    // symbol: ?writeDouble@BytesDataOutput@@UEAAXN@Z
-    MCVAPI void writeDouble(double);
+    // vIndex: 1, symbol: ?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    virtual void writeString(std::string_view);
 
-    // symbol: ?writeFloat@BytesDataOutput@@UEAAXM@Z
-    MCVAPI void writeFloat(float);
-
-    // symbol: ?writeInt@BytesDataOutput@@UEAAXH@Z
-    MCVAPI void writeInt(int);
-
-    // symbol: ?writeLongLong@BytesDataOutput@@UEAAX_J@Z
-    MCVAPI void writeLongLong(int64);
-
-    // symbol: ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCVAPI void writeLongString(std::string_view);
-
-    // symbol: ?writeShort@BytesDataOutput@@UEAAXF@Z
-    MCVAPI void writeShort(short);
-
-    // symbol: ?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCVAPI void writeString(std::string_view);
+    // vIndex: 2, symbol: ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+    virtual void writeLongString(std::string_view);
 
     // NOLINTEND
 };

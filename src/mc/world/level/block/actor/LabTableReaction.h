@@ -14,6 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~LabTableReaction();
+
     // symbol:
     // ?addComponent@LabTableReaction@@QEAAXV?$unique_ptr@VLabTableReactionComponent@@U?$default_delete@VLabTableReactionComponent@@@std@@@std@@@Z
     MCAPI void addComponent(std::unique_ptr<class LabTableReactionComponent>);

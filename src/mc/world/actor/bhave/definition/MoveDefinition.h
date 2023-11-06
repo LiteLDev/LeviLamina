@@ -19,14 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1MoveDefinition@@UEAA@XZ
+    virtual ~MoveDefinition();
 
     // vIndex: 1, symbol: ?load@MoveDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
     virtual void load(class Json::Value, class BehaviorFactory const&);
-
-    // symbol: ??1MoveDefinition@@UEAA@XZ
-    MCVAPI ~MoveDefinition();
 
     // NOLINTEND
 };

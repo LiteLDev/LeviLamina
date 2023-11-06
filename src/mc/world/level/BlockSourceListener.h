@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockSourceListener@@UEAA@XZ
+    virtual ~BlockSourceListener();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -51,9 +51,6 @@ public:
 
     // symbol: ?onSourceCreated@BlockSourceListener@@UEAAXAEAVBlockSource@@@Z
     MCVAPI void onSourceCreated(class BlockSource&);
-
-    // symbol: ??1BlockSourceListener@@UEAA@XZ
-    MCVAPI ~BlockSourceListener();
 
     // NOLINTEND
 };

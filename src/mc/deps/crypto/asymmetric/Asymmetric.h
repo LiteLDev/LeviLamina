@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Asymmetric@Asymmetric@@@UEAA@XZ
+    virtual ~Asymmetric();
 
     // vIndex: 1, symbol:
     // ?generateKeyPair@Asymmetric@1Crypto@@UEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z

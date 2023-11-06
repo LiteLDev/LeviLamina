@@ -32,8 +32,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptPlayerInventoryComponentContainer();
 
     // vIndex: 13, symbol:
     // ?_tryGetContainer@ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@MEBAPEAVContainer@@XZ
@@ -42,9 +42,6 @@ public:
     // vIndex: 14, symbol:
     // ?_getItemContext@ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@MEBA?AVItemContext@@H@Z
     virtual class ItemContext _getItemContext(int) const;
-
-    // symbol: ??1ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptPlayerInventoryComponentContainer();
 
     // symbol:
     // ??0ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@@Z

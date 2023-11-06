@@ -17,16 +17,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptPlugin@@UEAA@XZ
+    virtual ~ScriptPlugin();
 
     // vIndex: 1, symbol:
     // ?onLoadScript@ScriptPlugin@@UEAA?AV?$optional@UScriptData@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@V?$optional@V?$vector@UModuleBinding@Scripting@@V?$allocator@UModuleBinding@Scripting@@@std@@@std@@@3@@Z
     virtual std::optional<struct Scripting::ScriptData>
     onLoadScript(std::string const&, std::optional<std::vector<struct Scripting::ModuleBinding>>);
-
-    // symbol: ??1ScriptPlugin@@UEAA@XZ
-    MCVAPI ~ScriptPlugin();
 
     // symbol: ?hasErrors@ScriptPlugin@@QEBA_NXZ
     MCAPI bool hasErrors() const;

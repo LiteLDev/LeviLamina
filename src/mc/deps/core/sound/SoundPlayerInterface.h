@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0() = 0;
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~SoundPlayerInterface();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1() = 0;
@@ -63,7 +63,7 @@ public:
     virtual void __unk_vfn_13() = 0;
 
     // vIndex: 14, symbol: __unk_vfn_14
-    virtual void __unk_vfn_14();
+    virtual void __unk_vfn_14() = 0;
 
     // vIndex: 15, symbol:
     // ?getCurrentlyPlayingMusicName@NullSoundPlayer@@UEAA?BV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ

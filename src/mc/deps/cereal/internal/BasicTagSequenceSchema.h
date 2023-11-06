@@ -27,14 +27,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol: ??1BasicTagSequenceSchema@internal@cereal@@UEAA@XZ
+    virtual ~BasicTagSequenceSchema();
 
     // vIndex: 6, symbol: ?description@BasicTagSequenceSchema@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
     virtual struct cereal::SchemaDescription description() const;
-
-    // symbol: ??1BasicTagSequenceSchema@internal@cereal@@UEAA@XZ
-    MCVAPI ~BasicTagSequenceSchema();
 
     // symbol:
     // ??0BasicTagSequenceSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z

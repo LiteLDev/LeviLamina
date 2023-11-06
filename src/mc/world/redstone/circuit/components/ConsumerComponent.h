@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ConsumerComponent@@UEAA@XZ
+    virtual ~ConsumerComponent();
 
     // vIndex: 7, symbol: ?canConsumerPower@ConsumerComponent@@UEBA_NXZ
     virtual bool canConsumerPower() const;
@@ -42,9 +42,6 @@ public:
 
     // vIndex: 23, symbol: ?getCircuitComponentType@ConsumerComponent@@UEBA?AW4CircuitComponentType@@XZ
     virtual ::CircuitComponentType getCircuitComponentType() const;
-
-    // symbol: ??1ConsumerComponent@@UEAA@XZ
-    MCVAPI ~ConsumerComponent();
 
     // symbol: ??0ConsumerComponent@@QEAA@XZ
     MCAPI ConsumerComponent();

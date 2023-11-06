@@ -14,15 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1WorldTemplatePackManifest@@UEAA@XZ
+    virtual ~WorldTemplatePackManifest();
 
     // vIndex: 1, symbol:
     // ?clone@WorldTemplatePackManifest@@UEBA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@XZ
     virtual std::unique_ptr<class PackManifest> clone() const;
-
-    // symbol: ??1WorldTemplatePackManifest@@UEAA@XZ
-    MCVAPI ~WorldTemplatePackManifest();
 
     // symbol: ??0WorldTemplatePackManifest@@QEAA@XZ
     MCAPI WorldTemplatePackManifest();

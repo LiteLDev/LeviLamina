@@ -14,20 +14,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1AttributeBuff@@UEAA@XZ
+    virtual ~AttributeBuff();
 
-    // vIndex: 1, symbol: ?isInstantaneous@InstantaneousAttributeBuff@@UEBA_NXZ
+    // vIndex: 1, symbol: ?isInstantaneous@TemporalAttributeBuff@@UEBA_NXZ
     virtual bool isInstantaneous() const = 0;
 
-    // vIndex: 2, symbol: ?isSerializable@InstantaneousAttributeBuff@@UEBA_NXZ
+    // vIndex: 2, symbol: ?isSerializable@TemporalAttributeBuff@@UEBA_NXZ
     virtual bool isSerializable() const = 0;
 
     // vIndex: 3, symbol: ?setDurationAmplifier@AttributeBuff@@UEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
     virtual void setDurationAmplifier(std::shared_ptr<class Amplifier>);
-
-    // symbol: ??1AttributeBuff@@UEAA@XZ
-    MCVAPI ~AttributeBuff();
 
     // symbol: ??0AttributeBuff@@QEAA@AEBV0@@Z
     MCAPI AttributeBuff(class AttributeBuff const&);

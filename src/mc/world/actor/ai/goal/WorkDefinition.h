@@ -12,11 +12,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1WorkDefinition@@UEAA@XZ
-    MCVAPI ~WorkDefinition();
+    // vIndex: 0, symbol: ??1WorkDefinition@@UEAA@XZ
+    virtual ~WorkDefinition();
 
     // symbol: ??0WorkDefinition@@QEAA@XZ
     MCAPI WorkDefinition();

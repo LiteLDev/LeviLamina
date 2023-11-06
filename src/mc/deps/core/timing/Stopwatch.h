@@ -10,8 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Stopwatch@@UEAA@XZ
+    virtual ~Stopwatch();
 
     // vIndex: 1, symbol: ?stop@Stopwatch@@UEAANXZ
     virtual double stop();
@@ -21,9 +21,6 @@ public:
 
     // vIndex: 3, symbol: ?print@Stopwatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void print(std::string const&);
-
-    // symbol: ??1Stopwatch@@UEAA@XZ
-    MCVAPI ~Stopwatch();
 
     // symbol: ??0Stopwatch@@QEAA@XZ
     MCAPI Stopwatch();

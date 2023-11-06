@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1CompoundTag@@UEAA@XZ
+    virtual ~CompoundTag();
 
     // vIndex: 2, symbol: ?write@CompoundTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;
@@ -40,9 +40,6 @@ public:
 
     // vIndex: 10, symbol: ?hash@CompoundTag@@UEBA_KXZ
     virtual uint64 hash() const;
-
-    // symbol: ??1CompoundTag@@UEAA@XZ
-    MCVAPI ~CompoundTag();
 
     // symbol: ??0CompoundTag@@QEAA@XZ
     MCAPI CompoundTag();

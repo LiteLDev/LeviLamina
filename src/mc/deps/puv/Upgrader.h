@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1Upgrader@Puv@@UEAA@XZ
-    MCVAPI ~Upgrader();
+    // vIndex: 0, symbol: ??1Upgrader@Puv@@UEAA@XZ
+    virtual ~Upgrader();
 
     // symbol: ??0Upgrader@Puv@@QEAA@VSemVersion@@0@Z
     MCAPI Upgrader(class SemVersion, class SemVersion);

@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1NavigationScriptActorComponent@@@UEAA@XZ
+    virtual ~NavigationScriptActorComponent();
 
     // vIndex: 2, symbol:
     // ?getIsAmphibious@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ

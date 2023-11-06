@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1RangedWeaponItem@@UEAA@XZ
+    virtual ~RangedWeaponItem();
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -93,8 +93,8 @@ public:
     // vIndex: 122, symbol: ?getAnimationFrameFor@RangedWeaponItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
     virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
 
-    // symbol: ??1RangedWeaponItem@@UEAA@XZ
-    MCVAPI ~RangedWeaponItem();
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
 
     // symbol: ??0RangedWeaponItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI RangedWeaponItem(std::string const&, int);

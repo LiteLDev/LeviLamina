@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1NetherNetTransportFactory@@UEAA@XZ
+    virtual ~NetherNetTransportFactory();
 
     // vIndex: 1, symbol:
     // ?createTransport@NetherNetTransportFactory@@UEBA?AV?$unique_ptr@VINetherNetTransportInterface@NetherNet@@V?$function@$$A6AXPEAVINetherNetTransportInterface@NetherNet@@@Z@std@@@std@@AEBUNetworkID@NetherNet@@PEAVINetherNetTransportInterfaceCallbacks@5@@Z
@@ -27,9 +27,6 @@ public:
         class NetherNet::INetherNetTransportInterface,
         std::function<void(class NetherNet::INetherNetTransportInterface*)>>
     createTransport(struct NetherNet::NetworkID const&, class NetherNet::INetherNetTransportInterfaceCallbacks*) const;
-
-    // symbol: ??1NetherNetTransportFactory@@UEAA@XZ
-    MCVAPI ~NetherNetTransportFactory();
 
     // NOLINTEND
 };

@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1SimpleContainer@@UEAA@XZ
+    virtual ~SimpleContainer();
 
     // vIndex: 2, symbol: ?serverInitItemStackIds@SimpleContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     virtual void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
@@ -45,8 +45,8 @@ public:
     // vIndex: 26, symbol: __unk_vfn_26
     virtual void __unk_vfn_26();
 
-    // symbol: ??1SimpleContainer@@UEAA@XZ
-    MCVAPI ~SimpleContainer();
+    // vIndex: 34, symbol: __unk_vfn_34
+    virtual void __unk_vfn_34();
 
     // symbol:
     // ??0SimpleContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z

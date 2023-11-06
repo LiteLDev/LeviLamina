@@ -14,14 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ServerPlayerSleepManager@@UEAA@XZ
+    virtual ~ServerPlayerSleepManager();
 
     // vIndex: 1, symbol: ?updateSleepingPlayerList@ServerPlayerSleepManager@@UEAAXM@Z
     virtual void updateSleepingPlayerList(float);
-
-    // symbol: ??1ServerPlayerSleepManager@@UEAA@XZ
-    MCVAPI ~ServerPlayerSleepManager();
 
     // symbol: ?enoughPlayersDeepSleeping@ServerPlayerSleepManager@@QEBA_NM@Z
     MCAPI bool enoughPlayersDeepSleeping(float) const;

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockCollisionBoxDescription@@UEAA@XZ
+    virtual ~BlockCollisionBoxDescription();
 
     // vIndex: 1, symbol:
     // ?getName@BlockCollisionBoxDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -47,9 +47,6 @@ public:
     // vIndex: 9, symbol:
     // ?initializeFromNetwork@BlockCollisionBoxDescription@@UEAAXAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
     virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
-
-    // symbol: ??1BlockCollisionBoxDescription@@UEAA@XZ
-    MCVAPI ~BlockCollisionBoxDescription();
 
     // symbol: ??0BlockCollisionBoxDescription@@QEAA@_N@Z
     MCAPI explicit BlockCollisionBoxDescription(bool);

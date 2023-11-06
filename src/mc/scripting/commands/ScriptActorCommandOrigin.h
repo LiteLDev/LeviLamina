@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptActorCommandOrigin@@UEAA@XZ
+    virtual ~ScriptActorCommandOrigin();
 
     // vIndex: 8, symbol: ?getEntity@ScriptActorCommandOrigin@@UEBAPEAVActor@@XZ
     virtual class Actor* getEntity() const;
@@ -33,9 +33,6 @@ public:
     // vIndex: 10, symbol:
     // ?clone@ScriptActorCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
     virtual std::unique_ptr<class CommandOrigin> clone() const;
-
-    // symbol: ??1ScriptActorCommandOrigin@@UEAA@XZ
-    MCVAPI ~ScriptActorCommandOrigin();
 
     // symbol:
     // ??0ScriptActorCommandOrigin@@QEAA@AEBVActor@@V?$function@$$A6AXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z@std@@V?$optional@W4CommandPermissionLevel@@@3@@Z

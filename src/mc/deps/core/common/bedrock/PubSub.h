@@ -12,6 +12,7 @@
 namespace Bedrock::PubSub { class DeferredSubscription; }
 namespace Bedrock::PubSub { class DeferredSubscriptionHub; }
 namespace Bedrock::PubSub { class DeferredSubscriptionHubBase; }
+namespace Bedrock::PubSub { class PriorityDeferredSubscriptionHub; }
 namespace Bedrock::PubSub { class RawSubscription; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub { class SubscriptionBase; }

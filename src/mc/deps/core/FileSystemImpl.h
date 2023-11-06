@@ -36,8 +36,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FileSystemImpl@Core@@UEAA@XZ
+    virtual ~FileSystemImpl();
 
     // vIndex: 1, symbol: ?getLastModificationTime@FileSystemImpl@Core@@UEAA?AVResult@2@AEBVPath@2@PEA_J@Z
     virtual class Core::Result getLastModificationTime(class Core::Path const&, int64*);
@@ -210,9 +210,6 @@ public:
     // symbol:
     // ?requestFlush@FileSystemImpl@Core@@UEAAXAEBV?$vector@UPendingWrite@Core@@V?$allocator@UPendingWrite@Core@@@std@@@std@@@Z
     MCVAPI void requestFlush(std::vector<struct Core::PendingWrite> const&);
-
-    // symbol: ??1FileSystemImpl@Core@@UEAA@XZ
-    MCVAPI ~FileSystemImpl();
 
     // symbol:
     // ??0FileSystemImpl@Core@@QEAA@W4FileAccessType@1@V?$shared_ptr@VFileStorageArea@Core@@@std@@W4TransactionFlags@1@V?$shared_ptr@VFlatFileManifestTracker@Core@@@4@@Z

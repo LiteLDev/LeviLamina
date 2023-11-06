@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1CommandRequestPacket@@UEAA@XZ
+    virtual ~CommandRequestPacket();
 
     // vIndex: 1, symbol: ?getId@CommandRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -32,9 +32,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@CommandRequestPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1CommandRequestPacket@@UEAA@XZ
-    MCVAPI ~CommandRequestPacket();
 
     // symbol: ??0CommandRequestPacket@@QEAA@XZ
     MCAPI CommandRequestPacket();

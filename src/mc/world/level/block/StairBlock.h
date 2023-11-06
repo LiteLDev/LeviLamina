@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1StairBlock@@UEAA@XZ
+    virtual ~StairBlock();
 
     // vIndex: 5, symbol:
     // ?clip@StairBlock@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -239,9 +239,6 @@ public:
 
     // symbol: ?isStairBlock@StairBlock@@UEBA_NXZ
     MCVAPI bool isStairBlock() const;
-
-    // symbol: ??1StairBlock@@UEAA@XZ
-    MCVAPI ~StairBlock();
 
     // symbol:
     // ??0StairBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@H@Z

@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1NearestAttackableTargetGoal@@UEAA@XZ
+    virtual ~NearestAttackableTargetGoal();
 
     // vIndex: 1, symbol: ?canUse@NearestAttackableTargetGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -33,9 +33,6 @@ public:
 
     // vIndex: 11, symbol: ?_findTarget@NearestAttackableTargetGoal@@MEAA?AUActorUniqueID@@PEAPEBUMobDescriptor@@@Z
     virtual struct ActorUniqueID _findTarget(struct MobDescriptor const**);
-
-    // symbol: ??1NearestAttackableTargetGoal@@UEAA@XZ
-    MCVAPI ~NearestAttackableTargetGoal();
 
     // symbol: ??0NearestAttackableTargetGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit NearestAttackableTargetGoal(class Mob&);

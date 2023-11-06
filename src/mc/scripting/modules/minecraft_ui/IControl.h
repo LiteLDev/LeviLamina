@@ -18,10 +18,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1IControl@@@UEAA@XZ
+    virtual ~IControl();
 
-    // vIndex: 1, symbol: ?getJson@DropdownControl@ScriptModuleMinecraftServerUI@@UEBA?AVValue@Json@@XZ
+    // vIndex: 1, symbol: ?getJson@TextInputControl@ScriptModuleMinecraftServerUI@@UEBA?AVValue@Json@@XZ
     virtual class Json::Value getJson() const = 0;
 
     // NOLINTEND

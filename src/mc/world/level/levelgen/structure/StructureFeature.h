@@ -17,8 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1StructureFeature@@UEAA@XZ
+    virtual ~StructureFeature();
 
     // vIndex: 1, symbol: ?shouldAddHardcodedSpawnAreas@StructureFeature@@UEBA_NXZ
     virtual bool shouldAddHardcodedSpawnAreas() const;
@@ -35,20 +35,17 @@ public:
     virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
 
     // vIndex: 5, symbol:
-    // ?isFeatureChunk@AncientCityFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
+    // ?isFeatureChunk@EndCityFeature@@MEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
     virtual bool
     isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, uint, class IPreliminarySurfaceProvider const&, class Dimension const&) = 0;
 
     // vIndex: 6, symbol:
-    // ?createStructureStart@AncientCityFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
+    // ?createStructureStart@EndCityFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
     virtual std::unique_ptr<class StructureStart>
     createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&) = 0;
 
     // vIndex: 7, symbol: ?getStructureAt@StructureFeature@@MEAAPEAVStructureStart@@HHH@Z
     virtual class StructureStart* getStructureAt(int, int, int);
-
-    // symbol: ??1StructureFeature@@UEAA@XZ
-    MCVAPI ~StructureFeature();
 
     // symbol: ??0StructureFeature@@QEAA@IW4StructureFeatureType@@@Z
     MCAPI StructureFeature(uint, ::StructureFeatureType);

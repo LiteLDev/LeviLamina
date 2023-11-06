@@ -11,8 +11,8 @@
 class ItemStack : public ::ItemStackBase {
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ItemStack@@UEAA@XZ
+    virtual ~ItemStack();
 
     // vIndex: 1, symbol: ?reinit@ItemStack@@UEAAXAEBVItem@@HH@Z
     virtual void reinit(class Item const&, int, int);
@@ -33,9 +33,6 @@ public:
     // vIndex: 6, symbol:
     // ?toDebugString@ItemStack@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string toDebugString() const;
-
-    // symbol: ??1ItemStack@@UEAA@XZ
-    MCVAPI ~ItemStack();
 
     // symbol: ??0ItemStack@@QEAA@XZ
     MCAPI ItemStack();

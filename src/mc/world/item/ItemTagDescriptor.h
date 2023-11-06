@@ -55,6 +55,9 @@ public:
     // vIndex: 12, symbol: ?getHash@ItemTagDescriptor@@UEBA_KXZ
     virtual uint64 getHash() const;
 
+    // vIndex: 15, symbol: ??1@@UEAA@XZ
+    virtual ~ItemTagDescriptor();
+
     // symbol:
     // ?deserialize@ItemTagDescriptor@@SA?AV?$Result@V?$unique_ptr@UItemTagDescriptor@@U?$default_delete@UItemTagDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCAPI static class Bedrock::Result<std::unique_ptr<struct ItemTagDescriptor>>

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1CreativeItemRegistry@@UEAA@XZ
-    MCVAPI ~CreativeItemRegistry();
+    // vIndex: 0, symbol: ??1CreativeItemRegistry@@UEAA@XZ
+    virtual ~CreativeItemRegistry();
 
     // symbol: ??0CreativeItemRegistry@@QEAA@XZ
     MCAPI CreativeItemRegistry();

@@ -19,6 +19,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~IContentKeyProvider();
+
     // symbol:
     // ?getAlternateContentKey@IContentKeyProvider@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@@Z
     MCVAPI std::string getAlternateContentKey(class ContentIdentity const&) const;

@@ -29,11 +29,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
-
-        // symbol: ??1MoveOutdoorsDefinition@MoveOutdoorsGoal@@UEAA@XZ
-        MCVAPI ~MoveOutdoorsDefinition();
+        // vIndex: 0, symbol: ??1MoveOutdoorsDefinition@MoveOutdoorsGoal@@UEAA@XZ
+        virtual ~MoveOutdoorsDefinition();
 
         // symbol: ??0MoveOutdoorsDefinition@MoveOutdoorsGoal@@QEAA@XZ
         MCAPI MoveOutdoorsDefinition();
@@ -57,8 +54,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~MoveOutdoorsGoal();
 
     // vIndex: 1, symbol: ?canUse@MoveOutdoorsGoal@@UEAA_NXZ
     virtual bool canUse();

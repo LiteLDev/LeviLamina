@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IManager@CodeBuilder@@UEAA@XZ
-    MCVAPI ~IManager();
+    // vIndex: 0, symbol: ??1IManager@CodeBuilder@@UEAA@XZ
+    virtual ~IManager();
 
     // NOLINTEND
 };

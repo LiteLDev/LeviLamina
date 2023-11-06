@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1PlayerUIContainer@@UEAA@XZ
+    virtual ~PlayerUIContainer();
 
     // vIndex: 25, symbol: __unk_vfn_25
     virtual void __unk_vfn_25();
@@ -23,8 +23,8 @@ public:
     // vIndex: 26, symbol: __unk_vfn_26
     virtual void __unk_vfn_26();
 
-    // symbol: ??1PlayerUIContainer@@UEAA@XZ
-    MCVAPI ~PlayerUIContainer();
+    // vIndex: 34, symbol: __unk_vfn_34
+    virtual void __unk_vfn_34();
 
     // symbol: ??0PlayerUIContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NH@Z
     MCAPI PlayerUIContainer(std::string const&, bool, int);

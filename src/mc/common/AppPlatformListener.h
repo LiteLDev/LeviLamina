@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1AppPlatformListener@@UEAA@XZ
+    virtual ~AppPlatformListener();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -90,9 +90,6 @@ public:
 
     // symbol: ?onResizeEnd@AppPlatformListener@@UEAAXXZ
     MCVAPI void onResizeEnd();
-
-    // symbol: ??1AppPlatformListener@@UEAA@XZ
-    MCVAPI ~AppPlatformListener();
 
     // symbol: ??0AppPlatformListener@@QEAA@_N@Z
     MCAPI explicit AppPlatformListener(bool);

@@ -14,15 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1PlayerScoreboardEventListener@@UEAA@XZ
+    virtual ~PlayerScoreboardEventListener();
 
     // vIndex: 4, symbol:
     // ?onScoreChanged@PlayerScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual ::EventResult onScoreChanged(struct ScoreboardId const&, std::string const&, int);
-
-    // symbol: ??1PlayerScoreboardEventListener@@UEAA@XZ
-    MCVAPI ~PlayerScoreboardEventListener();
 
     // symbol: ??0PlayerScoreboardEventListener@@QEAA@XZ
     MCAPI PlayerScoreboardEventListener();

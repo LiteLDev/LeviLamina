@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1CraftableCompounds@@UEAA@XZ
+    virtual ~CraftableCompounds();
 
     // vIndex: 1, symbol:
     // ?_registerCompound@CraftableCompounds@@MEAAXAEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVItemStack@@W4LabTableReactionType@@W4CompoundContainerType@@@Z
@@ -26,9 +26,6 @@ public:
         ::LabTableReactionType,
         ::CompoundContainerType
     );
-
-    // symbol: ??1CraftableCompounds@@UEAA@XZ
-    MCVAPI ~CraftableCompounds();
 
     // symbol: ??0CraftableCompounds@@QEAA@XZ
     MCAPI CraftableCompounds();

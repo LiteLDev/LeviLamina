@@ -14,14 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1LakeFeature@@UEAA@XZ
+    virtual ~LakeFeature();
 
     // vIndex: 3, symbol: ?place@LakeFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-
-    // symbol: ??1LakeFeature@@UEAA@XZ
-    MCVAPI ~LakeFeature();
 
     // symbol: ??0LakeFeature@@QEAA@AEBVBlock@@V?$optional@VXoroshiroPositionalRandomFactory@@@std@@@Z
     MCAPI LakeFeature(class Block const&, std::optional<class XoroshiroPositionalRandomFactory>);

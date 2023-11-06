@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IDimensionFactory@@UEAA@XZ
-    MCVAPI ~IDimensionFactory();
+    // vIndex: 0, symbol: ??1IDimensionFactory@@UEAA@XZ
+    virtual ~IDimensionFactory();
 
     // NOLINTEND
 };

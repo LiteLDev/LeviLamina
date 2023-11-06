@@ -116,8 +116,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1SignBlockActor@@UEAA@XZ
+    virtual ~SignBlockActor();
 
     // vIndex: 1, symbol: ?load@SignBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
@@ -185,9 +185,6 @@ public:
 
     // vIndex: 42, symbol: ?_playerCanUpdate@SignBlockActor@@MEBA_NAEBVPlayer@@@Z
     virtual bool _playerCanUpdate(class Player const&) const;
-
-    // symbol: ??1SignBlockActor@@UEAA@XZ
-    MCVAPI ~SignBlockActor();
 
     // symbol:
     // ??0SignBlockActor@@QEAA@AEBVBlockPos@@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

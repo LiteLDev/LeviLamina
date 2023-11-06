@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1LevelSoundManager@@UEAA@XZ
-    MCVAPI ~LevelSoundManager();
+    // vIndex: 0, symbol: ??1LevelSoundManager@@UEAA@XZ
+    virtual ~LevelSoundManager();
 
     // symbol: ??0LevelSoundManager@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VSoundPlayerInterface@@@Bedrock@@@gsl@@_N1@Z
     MCAPI LevelSoundManager(Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> const&, bool, bool);

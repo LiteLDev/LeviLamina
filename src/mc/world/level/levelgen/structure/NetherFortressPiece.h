@@ -15,17 +15,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1NetherFortressPiece@@UEAA@XZ
+    virtual ~NetherFortressPiece();
 
     // vIndex: 4, symbol: ?postProcess@NetherFortressPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
 
     // vIndex: 12, symbol: ?addHardcodedSpawnAreas@NetherFortressPiece@@UEBAXAEAVLevelChunk@@@Z
     virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-
-    // symbol: ??1NetherFortressPiece@@UEAA@XZ
-    MCVAPI ~NetherFortressPiece();
 
     // symbol: ??0NetherFortressPiece@@QEAA@H@Z
     MCAPI explicit NetherFortressPiece(int);

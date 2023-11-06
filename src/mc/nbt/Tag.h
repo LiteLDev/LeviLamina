@@ -15,22 +15,22 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Tag@@UEAA@XZ
+    virtual ~Tag();
 
     // vIndex: 1, symbol: ?deleteChildren@Tag@@UEAAXXZ
     virtual void deleteChildren();
 
-    // vIndex: 2, symbol: ?write@StringTag@@UEBAXAEAVIDataOutput@@@Z
+    // vIndex: 2, symbol: ?write@ByteTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const = 0;
 
-    // vIndex: 3, symbol: ?load@StringTag@@UEAAXAEAVIDataInput@@@Z
+    // vIndex: 3, symbol: ?load@ByteTag@@UEAAXAEAVIDataInput@@@Z
     virtual void load(class IDataInput&) = 0;
 
-    // vIndex: 4, symbol: ?toString@StringTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // vIndex: 4, symbol: ?toString@ByteTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string toString() const = 0;
 
-    // vIndex: 5, symbol: ?getId@StringTag@@UEBA?AW4Type@Tag@@XZ
+    // vIndex: 5, symbol: ?getId@ByteTag@@UEBA?AW4Type@Tag@@XZ
     virtual ::Tag::Type getId() const = 0;
 
     // vIndex: 6, symbol: ?equals@Tag@@UEBA_NAEBV1@@Z
@@ -43,14 +43,11 @@ public:
     // ?print@Tag@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPrintStream@@@Z
     virtual void print(std::string const&, class PrintStream&) const;
 
-    // vIndex: 9, symbol: ?copy@StringTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
+    // vIndex: 9, symbol: ?copy@ByteTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
     virtual std::unique_ptr<class Tag> copy() const = 0;
 
-    // vIndex: 10, symbol: ?hash@StringTag@@UEBA_KXZ
+    // vIndex: 10, symbol: ?hash@ByteTag@@UEBA_KXZ
     virtual uint64 hash() const = 0;
-
-    // symbol: ??1Tag@@UEAA@XZ
-    MCVAPI ~Tag();
 
     // symbol: ?getTagName@Tag@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Type@1@@Z
     MCAPI static std::string getTagName(::Tag::Type);

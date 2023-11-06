@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IEntityRegistryOwner@@MEAA@XZ
-    MCVAPI ~IEntityRegistryOwner();
+    // vIndex: 0, symbol: ??1IEntityRegistryOwner@@MEAA@XZ
+    virtual ~IEntityRegistryOwner();
 
     // NOLINTEND
 };

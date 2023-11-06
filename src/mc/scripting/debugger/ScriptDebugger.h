@@ -39,6 +39,9 @@ public:
     // vIndex: 5, symbol: ?getResourceStats@ScriptDebugger@@UEBA?AUScriptResourceStats@@XZ
     virtual struct ScriptResourceStats getResourceStats() const;
 
+    // vIndex: 6, symbol: ??1@@UEAA@XZ
+    virtual ~ScriptDebugger();
+
     // NOLINTEND
 
     // private:

@@ -49,8 +49,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1FeatureToggles@@UEAA@XZ
-    MCVAPI ~FeatureToggles();
+    // vIndex: 0, symbol: ??1FeatureToggles@@UEAA@XZ
+    virtual ~FeatureToggles();
 
     // symbol: ??0FeatureToggles@@QEAA@AEAVAppPlatform@@@Z
     MCAPI explicit FeatureToggles(class AppPlatform&);

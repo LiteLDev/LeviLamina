@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BlockQueuedTickingComponent@@UEAA@XZ
-    MCVAPI ~BlockQueuedTickingComponent();
+    // vIndex: 0, symbol: ??1BlockQueuedTickingComponent@@UEAA@XZ
+    virtual ~BlockQueuedTickingComponent();
 
     // symbol: ??0BlockQueuedTickingComponent@@QEAA@$$QEAU0@@Z
     MCAPI BlockQueuedTickingComponent(struct BlockQueuedTickingComponent&&);

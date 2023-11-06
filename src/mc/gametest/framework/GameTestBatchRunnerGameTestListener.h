@@ -22,6 +22,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1GameTestBatchRunnerGameTestListener@@@UEAA@XZ
+    virtual ~GameTestBatchRunnerGameTestListener();
+
     // symbol: ?onTestFailed@GameTestBatchRunnerGameTestListener@gametest@@UEAAXAEAVBaseGameTestInstance@2@@Z
     MCVAPI void onTestFailed(class gametest::BaseGameTestInstance&);
 

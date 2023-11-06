@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1OpenSSLInterface@Asymmetric@@@UEAA@XZ
+    virtual ~OpenSSLInterface();
 
     // vIndex: 1, symbol:
     // ?generateKeyPair@OpenSSLInterface@Asymmetric@Crypto@@UEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z

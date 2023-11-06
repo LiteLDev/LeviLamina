@@ -51,14 +51,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1SpikeFeature@@UEAA@XZ
+    virtual ~SpikeFeature();
 
     // vIndex: 3, symbol: ?place@SpikeFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-
-    // symbol: ??1SpikeFeature@@UEAA@XZ
-    MCVAPI ~SpikeFeature();
 
     // symbol: ??0SpikeFeature@@QEAA@AEBVEndSpike@0@@Z
     MCAPI explicit SpikeFeature(class SpikeFeature::EndSpike const&);

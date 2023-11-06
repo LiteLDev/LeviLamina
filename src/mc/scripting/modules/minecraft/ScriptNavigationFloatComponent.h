@@ -23,11 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptNavigationFloatComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptNavigationFloatComponent();
+    // vIndex: 0, symbol: ??1ScriptNavigationFloatComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptNavigationFloatComponent();
 
     // symbol:
     // ?bind@ScriptNavigationFloatComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptNavigationFloatComponent@ScriptModuleMinecraft@@@Scripting@@XZ

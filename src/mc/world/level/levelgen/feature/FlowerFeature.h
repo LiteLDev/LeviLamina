@@ -14,14 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FlowerFeature@@UEAA@XZ
+    virtual ~FlowerFeature();
 
     // vIndex: 3, symbol: ?place@FlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-
-    // symbol: ??1FlowerFeature@@UEAA@XZ
-    MCVAPI ~FlowerFeature();
 
     // symbol: ??0FlowerFeature@@QEAA@AEBVBlock@@@Z
     MCAPI explicit FlowerFeature(class Block const&);

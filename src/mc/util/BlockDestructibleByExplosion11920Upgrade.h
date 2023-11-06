@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockDestructibleByExplosion11920Upgrade@@@UEAA@XZ
+    virtual ~BlockDestructibleByExplosion11920Upgrade();
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockDestructibleByExplosion11920Upgrade@BlockExplosionResistanceVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

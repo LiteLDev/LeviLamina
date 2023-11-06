@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1EnableNonOwnerReferences@Bedrock@@UEAA@XZ
-    MCVAPI ~EnableNonOwnerReferences();
+    // vIndex: 0, symbol: ??1EnableNonOwnerReferences@Bedrock@@UEAA@XZ
+    virtual ~EnableNonOwnerReferences();
 
     // symbol: ??0EnableNonOwnerReferences@Bedrock@@QEAA@XZ
     MCAPI EnableNonOwnerReferences();

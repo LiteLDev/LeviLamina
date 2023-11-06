@@ -92,6 +92,9 @@ public:
         // vIndex: 1, symbol: ?setState@RearrangedStateCollection@BlockLegacy@@UEBAPEBVBlock@@AEBV2@HH@Z
         virtual class Block const* setState(class BlockLegacy const&, int, int) const;
 
+        // vIndex: 2, symbol: ??1RearrangedStateCollection@@@UEAA@XZ
+        virtual ~RearrangedStateCollection();
+
         // symbol:
         // ?add@RearrangedStateCollection@BlockLegacy@@SAXAEAV2@AEBVBlockState@@V?$function@$$A6A?AV?$optional@H@std@@AEBVBlockLegacy@@H@Z@std@@V?$function@$$A6APEBVBlock@@AEBVBlockLegacy@@HH@Z@5@AEBVSemVersion@@@Z
         MCAPI static void
@@ -141,6 +144,9 @@ public:
         // vIndex: 1, symbol: ?setState@RemovedStateCollection@BlockLegacy@@UEBAPEBVBlock@@AEBV2@HH@Z
         virtual class Block const* setState(class BlockLegacy const&, int, int) const;
 
+        // vIndex: 2, symbol: ??1RemovedStateCollection@@@UEAA@XZ
+        virtual ~RemovedStateCollection();
+
         // symbol:
         // ?add@RemovedStateCollection@BlockLegacy@@SAXAEBVBlockState@@$$QEAV?$vector@USplitBlock@RemovedStateCollection@BlockLegacy@@V?$allocator@USplitBlock@RemovedStateCollection@BlockLegacy@@@std@@@std@@AEBVSemVersion@@@Z
         MCAPI static void
@@ -159,8 +165,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockLegacy@@UEAA@XZ
+    virtual ~BlockLegacy();
 
     // vIndex: 1, symbol: ?getStateFromLegacyData@BlockLegacy@@UEBAAEBVBlock@@G@Z
     virtual class Block const& getStateFromLegacyData(ushort) const;
@@ -900,9 +906,6 @@ public:
 
     // symbol: ?waterSpreadCausesSpawn@BlockLegacy@@UEBA_NXZ
     MCVAPI bool waterSpreadCausesSpawn() const;
-
-    // symbol: ??1BlockLegacy@@UEAA@XZ
-    MCVAPI ~BlockLegacy();
 
     // symbol: ??0BlockLegacy@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI BlockLegacy(std::string const&, int, class Material const&);

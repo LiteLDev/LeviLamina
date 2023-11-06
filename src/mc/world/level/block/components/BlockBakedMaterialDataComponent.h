@@ -14,6 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~BlockBakedMaterialDataComponent();
+
     // symbol: ??4BlockBakedMaterialDataComponent@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct BlockBakedMaterialDataComponent& operator=(struct BlockBakedMaterialDataComponent&&);
 

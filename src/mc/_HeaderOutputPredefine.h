@@ -1,10 +1,14 @@
 #pragma once
 
-#pragma warning(disable : 4099)
-#pragma warning(disable : 4201)
+#pragma warning(disable : 4099) // for MOJANG : type name first seen using 'class' now seen using 'struct'
+#pragma warning(disable : 4201) // for MOJANG : nonstandard extension used : nameless struct/union
 
 #define MCAPI  __declspec(dllimport)
-#define MCVAPI __declspec(dllimport)
+#define MCVAPI MCAPI
+
+#define MCTAPI                                                                                                         \
+    template <>                                                                                                        \
+    MCAPI
 
 #include <algorithm>     // STL general algorithms
 #include <array>         // STL array container
@@ -55,8 +59,6 @@
 #include <variant>       // STL variant type
 #include <vector>        // STL dynamic array container
 
-#include "asio.hpp"      // Asio C++ Library
-#include "asio/ssl.hpp"  // Asio SSL C++ Library
 #include "entt/entt.hpp" // Entity Component System Library
 #include "entt/fwd.hpp"  // Entity Component Forward Declarations
 #include "gsl/gsl"       // Guideline Support Library
@@ -148,4 +150,8 @@ template <typename T0>
 class http_stl_allocator;
 using http_string  = std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>;
 using http_wstring = std::basic_string<wchar_t, std::char_traits<wchar_t>, class http_stl_allocator<wchar_t>>;
+
+namespace asio::ssl {
+class verify_context;
+}
 // clang-format on

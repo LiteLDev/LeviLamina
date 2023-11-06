@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~IDataOutput();
 
     // vIndex: 1, symbol: ?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     virtual void writeString(std::string_view) = 0;
@@ -20,25 +20,25 @@ public:
     // vIndex: 2, symbol: ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     virtual void writeLongString(std::string_view) = 0;
 
-    // vIndex: 3, symbol: ?writeFloat@BytesDataOutput@@UEAAXM@Z
+    // vIndex: 3, symbol: ?writeFloat@VarIntDataOutput@@UEAAXM@Z
     virtual void writeFloat(float) = 0;
 
-    // vIndex: 4, symbol: ?writeDouble@BytesDataOutput@@UEAAXN@Z
+    // vIndex: 4, symbol: ?writeDouble@VarIntDataOutput@@UEAAXN@Z
     virtual void writeDouble(double) = 0;
 
-    // vIndex: 5, symbol: ?writeByte@BytesDataOutput@@UEAAXD@Z
+    // vIndex: 5, symbol: ?writeByte@VarIntDataOutput@@UEAAXD@Z
     virtual void writeByte(char) = 0;
 
-    // vIndex: 6, symbol: ?writeShort@BytesDataOutput@@UEAAXF@Z
+    // vIndex: 6, symbol: ?writeShort@VarIntDataOutput@@UEAAXF@Z
     virtual void writeShort(short) = 0;
 
-    // vIndex: 7, symbol: ?writeInt@BytesDataOutput@@UEAAXH@Z
+    // vIndex: 7, symbol: ?writeInt@VarIntDataOutput@@UEAAXH@Z
     virtual void writeInt(int) = 0;
 
-    // vIndex: 8, symbol: ?writeLongLong@BytesDataOutput@@UEAAX_J@Z
+    // vIndex: 8, symbol: ?writeLongLong@VarIntDataOutput@@UEAAX_J@Z
     virtual void writeLongLong(int64) = 0;
 
-    // vIndex: 9, symbol: ?writeBytes@RakDataOutput@@UEAAXPEBX_K@Z
+    // vIndex: 9, symbol: ?writeBytes@VarIntDataOutput@@UEAAXPEBX_K@Z
     virtual void writeBytes(void const*, uint64) = 0;
 
     // NOLINTEND

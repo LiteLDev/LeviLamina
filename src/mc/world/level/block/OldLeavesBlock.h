@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~OldLeavesBlock();
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();

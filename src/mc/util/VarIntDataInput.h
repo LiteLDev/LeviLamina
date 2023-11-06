@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1VarIntDataInput@@UEAA@XZ
+    virtual ~VarIntDataInput();
 
     // vIndex: 1, symbol:
     // ?readString@VarIntDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -48,9 +48,6 @@ public:
 
     // vIndex: 10, symbol: ?numBytesLeft@VarIntDataInput@@UEBA_KXZ
     virtual uint64 numBytesLeft() const;
-
-    // symbol: ??1VarIntDataInput@@UEAA@XZ
-    MCVAPI ~VarIntDataInput();
 
     // NOLINTEND
 };

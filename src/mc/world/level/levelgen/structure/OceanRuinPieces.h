@@ -26,8 +26,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1OceanRuinPiece@@@UEAA@XZ
+        virtual ~OceanRuinPiece();
 
         // vIndex: 2, symbol: ?getType@OceanRuinPiece@OceanRuinPieces@@UEBA?AW4StructurePieceType@@XZ
         virtual ::StructurePieceType getType() const;

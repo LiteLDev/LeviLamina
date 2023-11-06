@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1WorkerPool@@UEAA@XZ
-    MCVAPI ~WorkerPool();
+    // vIndex: 0, symbol: ??1WorkerPool@@UEAA@XZ
+    virtual ~WorkerPool();
 
     // symbol: ??0WorkerPool@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVScheduler@@@Z
     MCAPI WorkerPool(std::string, class Scheduler&);

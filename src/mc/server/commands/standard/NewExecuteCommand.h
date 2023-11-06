@@ -28,8 +28,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1ExecuteChainedSubcommand@@@UEAA@XZ
+        virtual ~ExecuteChainedSubcommand();
 
         // vIndex: 1, symbol:
         // ?getCommandName@ExecuteChainedSubcommand@NewExecuteCommand@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -145,14 +145,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1NewExecuteCommand@@UEAA@XZ
+    virtual ~NewExecuteCommand();
 
     // vIndex: 2, symbol: ?execute@NewExecuteCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-
-    // symbol: ??1NewExecuteCommand@@UEAA@XZ
-    MCVAPI ~NewExecuteCommand();
 
     // symbol: ??0NewExecuteCommand@@QEAA@XZ
     MCAPI NewExecuteCommand();

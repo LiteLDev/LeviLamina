@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1EntityServerPacket@@UEAA@XZ
+    virtual ~EntityServerPacket();
 
     // vIndex: 3, symbol: ?write@EntityServerPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream&) const;
@@ -24,9 +24,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@EntityServerPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1EntityServerPacket@@UEAA@XZ
-    MCVAPI ~EntityServerPacket();
 
     // symbol: ??0EntityServerPacket@@QEAA@XZ
     MCAPI EntityServerPacket();

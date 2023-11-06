@@ -20,11 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1NetworkItemStackDescriptor@@UEAA@XZ
-    MCVAPI ~NetworkItemStackDescriptor();
+    // vIndex: 0, symbol: ??1NetworkItemStackDescriptor@@UEAA@XZ
+    virtual ~NetworkItemStackDescriptor();
 
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStack@@@Z
     MCAPI explicit NetworkItemStackDescriptor(class ItemStack const&);

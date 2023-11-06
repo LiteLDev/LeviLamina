@@ -25,15 +25,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptScriptingEventListener@@@UEAA@XZ
+    virtual ~ScriptScriptingEventListener();
 
     // vIndex: 1, symbol:
     // ?onEvent@ScriptScriptingEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScriptCommandMessageEvent@@@Z
     virtual ::EventResult onEvent(struct ScriptCommandMessageEvent const&);
-
-    // vIndex: 2, symbol: ?onEvent@ScriptingEventListener@@UEAA?AW4EventResult@@AEBUScriptingNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct ScriptingNotificationEvent const&);
 
     // symbol:
     // ??0ScriptScriptingEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@3@@Z

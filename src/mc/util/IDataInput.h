@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~IDataInput();
 
     // vIndex: 1, symbol:
     // ?readString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -40,7 +40,7 @@ public:
     // vIndex: 8, symbol: ?readLongLong@BigEndianStringByteInput@@UEAA_JXZ
     virtual int64 readLongLong() = 0;
 
-    // vIndex: 9, symbol: ?readBytes@StringByteInput@@UEAA_NPEAX_K@Z
+    // vIndex: 9, symbol: ?readBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z
     virtual bool readBytes(void*, uint64) = 0;
 
     // vIndex: 10, symbol: ?numBytesLeft@StringByteInput@@UEBA_KXZ

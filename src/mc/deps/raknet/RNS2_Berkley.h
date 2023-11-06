@@ -24,17 +24,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0() = 0;
+    // vIndex: 0, symbol: ??1RNS2_Berkley@RakNet@@UEAA@XZ
+    virtual ~RNS2_Berkley();
 
     // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1() = 0;
 
     // vIndex: 2, symbol: ?SetMulticastInterface@RNS2_Berkley@RakNet@@UEAAXH@Z
     virtual void SetMulticastInterface(int);
-
-    // symbol: ??1RNS2_Berkley@RakNet@@UEAA@XZ
-    MCVAPI ~RNS2_Berkley();
 
     // symbol: ?BlockOnStopRecvPollingThread@RNS2_Berkley@RakNet@@QEAAXXZ
     MCAPI void BlockOnStopRecvPollingThread();

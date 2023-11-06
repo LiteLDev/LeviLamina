@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BasePressurePlateBlock@@UEAA@XZ
+    virtual ~BasePressurePlateBlock();
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@BasePressurePlateBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -203,7 +203,7 @@ public:
     // vIndex: 192, symbol: ?getTickDelay@BasePressurePlateBlock@@UEBAHXZ
     virtual int getTickDelay() const;
 
-    // vIndex: 193, symbol: ?getSignalStrength@PressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 193, symbol: ?getSignalStrength@WeightedPressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual int getSignalStrength(class BlockSource&, class BlockPos const&) const = 0;
 
     // vIndex: 194, symbol: ?getSignalForData@PressurePlateBlock@@MEBAHH@Z
@@ -214,9 +214,6 @@ public:
 
     // vIndex: 196, symbol: ?getSensitiveAABB@BasePressurePlateBlock@@MEBA?BVAABB@@AEBVBlockPos@@@Z
     virtual class AABB const getSensitiveAABB(class BlockPos const&) const;
-
-    // symbol: ??1BasePressurePlateBlock@@UEAA@XZ
-    MCVAPI ~BasePressurePlateBlock();
 
     // NOLINTEND
 

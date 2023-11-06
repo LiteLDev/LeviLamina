@@ -29,11 +29,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
-
-        // symbol: ??1Definition@RamAttackGoal@@UEAA@XZ
-        MCVAPI ~Definition();
+        // vIndex: 0, symbol: ??1Definition@RamAttackGoal@@UEAA@XZ
+        virtual ~Definition();
 
         // symbol: ??0Definition@RamAttackGoal@@QEAA@XZ
         MCAPI Definition();
@@ -65,8 +62,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~RamAttackGoal();
 
     // vIndex: 1, symbol: ?canUse@RamAttackGoal@@UEAA_NXZ
     virtual bool canUse();

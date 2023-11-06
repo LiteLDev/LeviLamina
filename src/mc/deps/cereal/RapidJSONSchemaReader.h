@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1RapidJSONSchemaReader@cereal@@UEAA@XZ
+    virtual ~RapidJSONSchemaReader();
 
     // vIndex: 1, symbol: ?isValid@RapidJSONSchemaReader@cereal@@UEBA_NXZ
     virtual bool isValid() const;
@@ -112,9 +112,6 @@ public:
 
     // symbol: ?members@RapidJSONSchemaReader@cereal@@UEAA_KAEBUSerializerTraits@2@@Z
     MCVAPI uint64 members(struct cereal::SerializerTraits const&);
-
-    // symbol: ??1RapidJSONSchemaReader@cereal@@UEAA@XZ
-    MCVAPI ~RapidJSONSchemaReader();
 
     // symbol:
     // ??0RapidJSONSchemaReader@cereal@@QEAA@AEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z

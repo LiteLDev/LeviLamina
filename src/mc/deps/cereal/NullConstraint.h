@@ -22,11 +22,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?doValidate@NullConstraint@cereal@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@2@@Z
-    MCVAPI void doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
+    // vIndex: 0, symbol: ?doValidate@NullConstraint@cereal@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@2@@Z
+    virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
 
-    // symbol: ??1NullConstraint@cereal@@UEAA@XZ
-    MCVAPI ~NullConstraint();
+    // vIndex: 1, symbol: ??1NullConstraint@cereal@@UEAA@XZ
+    virtual ~NullConstraint();
 
     // NOLINTEND
 };

@@ -18,15 +18,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Writer@Json@@UEAA@XZ
+    virtual ~Writer();
 
     // vIndex: 1, symbol:
-    // ?write@FastWriter@Json@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@2@@Z
+    // ?write@StyledWriter@Json@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@2@@Z
     virtual std::string write(class Json::Value const&) = 0;
-
-    // symbol: ??1Writer@Json@@UEAA@XZ
-    MCVAPI ~Writer();
 
     // NOLINTEND
 };

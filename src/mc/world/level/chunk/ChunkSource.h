@@ -29,8 +29,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ChunkSource@@UEAA@XZ
+    virtual ~ChunkSource();
 
     // vIndex: 1, symbol: ?shutdown@ChunkSource@@UEAAXXZ
     virtual void shutdown();
@@ -136,9 +136,6 @@ public:
 
     // vIndex: 32, symbol: ?chunkPosNeedsBlending@ChunkSource@@UEAA_NAEBVChunkPos@@@Z
     virtual bool chunkPosNeedsBlending(class ChunkPos const&);
-
-    // symbol: ??1ChunkSource@@UEAA@XZ
-    MCVAPI ~ChunkSource();
 
     // symbol: ??0ChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@@Z
     MCAPI explicit ChunkSource(std::unique_ptr<class ChunkSource>);

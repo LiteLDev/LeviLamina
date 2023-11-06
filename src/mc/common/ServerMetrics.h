@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ServerMetrics@@UEAA@XZ
-    MCVAPI ~ServerMetrics();
+    // vIndex: 0, symbol: ??1ServerMetrics@@UEAA@XZ
+    virtual ~ServerMetrics();
 
     // NOLINTEND
 };

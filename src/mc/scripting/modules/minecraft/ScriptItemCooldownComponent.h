@@ -22,11 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptItemCooldownComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptItemCooldownComponent();
+    // vIndex: 0, symbol: ??1ScriptItemCooldownComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptItemCooldownComponent();
 
     // symbol: ??0ScriptItemCooldownComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptItemCooldownComponent(class ScriptModuleMinecraft::ScriptItemCooldownComponent const&);

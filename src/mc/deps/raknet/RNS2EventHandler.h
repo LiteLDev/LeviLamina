@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1RNS2EventHandler@RakNet@@UEAA@XZ
-    MCVAPI ~RNS2EventHandler();
+    // vIndex: 0, symbol: ??1RNS2EventHandler@RakNet@@UEAA@XZ
+    virtual ~RNS2EventHandler();
 
     // NOLINTEND
 };

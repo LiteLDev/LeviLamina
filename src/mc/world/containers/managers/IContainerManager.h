@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1IContainerManager@@UEAA@XZ
+    virtual ~IContainerManager();
 
     // vIndex: 1, symbol: ?getContainerId@ContainerManagerModel@@UEBA?AW4ContainerID@@XZ
     virtual ::ContainerID getContainerId() const = 0;
@@ -34,23 +34,20 @@ public:
     virtual void serverInitItemStackIds() = 0;
 
     // vIndex: 6, symbol:
-    // ?getItemCopies@HorseContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+    // ?getItemCopies@HudContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
     virtual std::vector<class ItemStack> getItemCopies() const = 0;
 
-    // vIndex: 7, symbol: ?setSlot@HorseContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+    // vIndex: 7, symbol: ?setSlot@HudContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
     virtual void setSlot(int, class ItemStack const&, bool) = 0;
 
-    // vIndex: 8, symbol: ?getSlot@HorseContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 8, symbol: ?getSlot@HudContainerManagerModel@@UEBAAEBVItemStack@@H@Z
     virtual class ItemStack const& getSlot(int) const = 0;
 
-    // vIndex: 9, symbol: ?setData@ElementConstructorContainerManagerModel@@UEAAXHH@Z
+    // vIndex: 9, symbol: ?setData@HudContainerManagerModel@@UEAAXHH@Z
     virtual void setData(int, int) = 0;
 
-    // vIndex: 10, symbol: ?broadcastChanges@FurnaceContainerManagerModel@@UEAAXXZ
+    // vIndex: 10, symbol: ?broadcastChanges@HudContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges() = 0;
-
-    // symbol: ??1IContainerManager@@UEAA@XZ
-    MCVAPI ~IContainerManager();
 
     // NOLINTEND
 };

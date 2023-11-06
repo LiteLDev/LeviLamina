@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1SharedRecursiveMutexBase@Threading@@@UEAA@XZ
+    virtual ~SharedRecursiveMutexBase();
 
     // vIndex: 1, symbol: ?_threadHoldsSharedLock@SharedRecursiveMutex@Threading@Bedrock@@MEAA_NVid@thread@std@@@Z
     virtual bool _threadHoldsSharedLock(std::thread::id) = 0;

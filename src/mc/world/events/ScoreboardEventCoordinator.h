@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScoreboardEventCoordinator@@UEAA@XZ
-    MCVAPI ~ScoreboardEventCoordinator();
+    // vIndex: 0, symbol: ??1ScoreboardEventCoordinator@@UEAA@XZ
+    virtual ~ScoreboardEventCoordinator();
 
     // symbol:
     // ?sendOnObjectiveAdded@ScoreboardEventCoordinator@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

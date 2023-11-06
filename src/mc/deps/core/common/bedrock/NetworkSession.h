@@ -20,6 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~NetworkSession();
+
     // symbol: ?getTransportLayer@NetworkSession@@QEBA?AW4TransportLayer@@XZ
     MCAPI ::TransportLayer getTransportLayer() const;
 

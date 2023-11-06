@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1LookAtActorGoal@@UEAA@XZ
+    virtual ~LookAtActorGoal();
 
     // vIndex: 1, symbol: ?canUse@LookAtActorGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -36,9 +36,6 @@ public:
     // vIndex: 7, symbol:
     // ?appendDebugInfo@LookAtActorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-
-    // symbol: ??1LookAtActorGoal@@UEAA@XZ
-    MCVAPI ~LookAtActorGoal();
 
     // symbol: ??0LookAtActorGoal@@QEAA@AEAVMob@@MMHHHH@Z
     MCAPI LookAtActorGoal(class Mob&, float, float, int, int, int, int);

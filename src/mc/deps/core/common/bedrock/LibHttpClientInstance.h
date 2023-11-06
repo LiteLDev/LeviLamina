@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1LibHttpClientInstance@Http@Bedrock@@UEAA@XZ
-    MCVAPI ~LibHttpClientInstance();
+    // vIndex: 0, symbol: ??1LibHttpClientInstance@Http@Bedrock@@UEAA@XZ
+    virtual ~LibHttpClientInstance();
 
     // NOLINTEND
 

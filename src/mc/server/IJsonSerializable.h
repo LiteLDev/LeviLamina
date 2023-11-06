@@ -16,17 +16,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1IJsonSerializable@@UEAA@XZ
+    virtual ~IJsonSerializable();
 
-    // vIndex: 1, symbol: ?serialize@AllowListEntry@@UEAAXAEAVValue@Json@@@Z
+    // vIndex: 1, symbol: ?serialize@AllowList@@UEAAXAEAVValue@Json@@@Z
     virtual void serialize(class Json::Value&) = 0;
 
-    // vIndex: 2, symbol: ?deserialize@AllowListEntry@@UEAAXAEAVValue@Json@@@Z
+    // vIndex: 2, symbol: ?deserialize@AllowList@@UEAAXAEAVValue@Json@@@Z
     virtual void deserialize(class Json::Value&) = 0;
-
-    // symbol: ??1IJsonSerializable@@UEAA@XZ
-    MCVAPI ~IJsonSerializable();
 
     // NOLINTEND
 };

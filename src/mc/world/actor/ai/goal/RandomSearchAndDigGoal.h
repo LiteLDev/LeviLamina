@@ -31,11 +31,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
-
-        // symbol: ??1Definition@RandomSearchAndDigGoal@@UEAA@XZ
-        MCVAPI ~Definition();
+        // vIndex: 0, symbol: ??1Definition@RandomSearchAndDigGoal@@UEAA@XZ
+        virtual ~Definition();
 
         // symbol: ??0Definition@RandomSearchAndDigGoal@@QEAA@XZ
         MCAPI Definition();
@@ -62,8 +59,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~RandomSearchAndDigGoal();
 
     // vIndex: 1, symbol: ?canUse@RandomSearchAndDigGoal@@UEAA_NXZ
     virtual bool canUse();

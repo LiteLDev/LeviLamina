@@ -16,11 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // vIndex: 1, symbol: ?init@OperationNodeBase@OperationNodeDetails@@UEAAX_J@Z
-    virtual void init(int64);
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~RegionHillsOperationNode();
 
     // vIndex: 2, symbol:
     // ?_allocateAndFill@?$MixerOperationNode@PEAVBiome@@VPos2d@@PEAV1@$$V@@MEBA?AV?$TransferData@PEAVBiome@@@OperationNodeDetails@@_KAEBVPos2d@@1@Z

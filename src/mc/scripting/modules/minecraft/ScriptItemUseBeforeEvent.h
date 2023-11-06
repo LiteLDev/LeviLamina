@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptItemUseBeforeEvent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptItemUseBeforeEvent();
+    // vIndex: 0, symbol: ??1ScriptItemUseBeforeEvent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptItemUseBeforeEvent();
 
     // symbol:
     // ??0ScriptItemUseBeforeEvent@ScriptModuleMinecraft@@QEAA@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@AEBVPlayer@@AEAUItemUseEvent@@AEBVWeakLifetimeScope@3@@Z

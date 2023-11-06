@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1NpcComponent@@UEAA@XZ
-    MCVAPI ~NpcComponent();
+    // vIndex: 0, symbol: ??1NpcComponent@@UEAA@XZ
+    virtual ~NpcComponent();
 
     // symbol: ??0NpcComponent@@QEAA@XZ
     MCAPI NpcComponent();

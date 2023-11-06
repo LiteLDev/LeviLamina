@@ -14,15 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BiomeRegistryMergeStrategy@@UEAA@XZ
+    virtual ~BiomeRegistryMergeStrategy();
 
     // vIndex: 1, symbol:
     // ?mergeFiles@BiomeRegistryMergeStrategy@@UEAAXAEBV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@@Z
     virtual void mergeFiles(std::vector<class LoadedResourceData> const&);
-
-    // symbol: ??1BiomeRegistryMergeStrategy@@UEAA@XZ
-    MCVAPI ~BiomeRegistryMergeStrategy();
 
     // NOLINTEND
 };

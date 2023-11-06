@@ -23,11 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptUnderwaterMovementComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptUnderwaterMovementComponent();
+    // vIndex: 0, symbol: ??1ScriptUnderwaterMovementComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptUnderwaterMovementComponent();
 
     // symbol:
     // ?bind@ScriptUnderwaterMovementComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptUnderwaterMovementComponent@ScriptModuleMinecraft@@@Scripting@@XZ

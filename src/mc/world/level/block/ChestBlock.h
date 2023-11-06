@@ -32,8 +32,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ChestBlock@@UEAA@XZ
+    virtual ~ChestBlock();
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
@@ -203,9 +203,6 @@ public:
 
     // symbol: ?isInteractiveBlock@ChestBlock@@UEBA_NXZ
     MCVAPI bool isInteractiveBlock() const;
-
-    // symbol: ??1ChestBlock@@UEAA@XZ
-    MCVAPI ~ChestBlock();
 
     // symbol:
     // ??0ChestBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ChestType@0@W4MaterialType@@@Z

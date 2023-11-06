@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BaseMoveToBlockGoal@@UEAA@XZ
+    virtual ~BaseMoveToBlockGoal();
 
     // vIndex: 1, symbol: ?canUse@BaseMoveToBlockGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -29,9 +29,6 @@ public:
 
     // vIndex: 17, symbol: ?findTargetBlock@BaseMoveToBlockGoal@@UEAA_NXZ
     virtual bool findTargetBlock();
-
-    // symbol: ??1BaseMoveToBlockGoal@@UEAA@XZ
-    MCVAPI ~BaseMoveToBlockGoal();
 
     // symbol: ??0BaseMoveToBlockGoal@@QEAA@AEAVMob@@MHHHMM@Z
     MCAPI BaseMoveToBlockGoal(class Mob&, float, int, int, int, float, float);

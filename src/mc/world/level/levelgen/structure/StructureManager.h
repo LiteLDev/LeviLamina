@@ -26,6 +26,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~StructureManager();
+
     // symbol: ??0StructureManager@@QEAA@AEAVResourcePackManager@@@Z
     MCAPI explicit StructureManager(class ResourcePackManager&);
 

@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ChangeDimensionPacket@@UEAA@XZ
+    virtual ~ChangeDimensionPacket();
 
     // vIndex: 1, symbol: ?getId@ChangeDimensionPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -32,9 +32,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@ChangeDimensionPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1ChangeDimensionPacket@@UEAA@XZ
-    MCVAPI ~ChangeDimensionPacket();
 
     // symbol: ??0ChangeDimensionPacket@@QEAA@XZ
     MCAPI ChangeDimensionPacket();

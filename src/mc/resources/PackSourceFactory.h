@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1PackSourceFactory@@UEAA@XZ
+    virtual ~PackSourceFactory();
 
     // vIndex: 1, symbol:
     // ?createWorldTemplatePackSource@PackSourceFactory@@UEAAAEAVWorldTemplatePackSource@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVWorldTemplateManager@@@Bedrock@@@gsl@@AEBVUUID@mce@@W4PackType@@W4PackOrigin@@@Z
@@ -83,9 +83,6 @@ public:
     // vIndex: 14, symbol:
     // ?setDynamicPackageRoot@PackSourceFactory@@UEAAXV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
     virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string>);
-
-    // symbol: ??1PackSourceFactory@@UEAA@XZ
-    MCVAPI ~PackSourceFactory();
 
     // symbol: ??0PackSourceFactory@@QEAA@AEBV?$shared_ptr@VIInPackagePacks@@@std@@@Z
     MCAPI explicit PackSourceFactory(std::shared_ptr<class IInPackagePacks> const&);

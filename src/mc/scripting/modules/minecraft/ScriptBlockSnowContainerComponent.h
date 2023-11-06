@@ -27,11 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptBlockSnowContainerComponent();
+    // vIndex: 0, symbol: ??1ScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockSnowContainerComponent();
 
     // symbol: ??4ScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptBlockSnowContainerComponent&

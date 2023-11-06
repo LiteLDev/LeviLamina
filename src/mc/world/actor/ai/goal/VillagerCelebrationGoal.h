@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1VillagerCelebrationDefinition@@@UEAA@XZ
+        virtual ~VillagerCelebrationDefinition();
 
         // symbol:
         // ?buildSchema@VillagerCelebrationDefinition@VillagerCelebrationGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VVillagerCelebrationDefinition@VillagerCelebrationGoal@@@JsonUtil@@@4@@Z
@@ -49,8 +49,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~VillagerCelebrationGoal();
 
     // vIndex: 1, symbol: ?canUse@VillagerCelebrationGoal@@UEAA_NXZ
     virtual bool canUse();

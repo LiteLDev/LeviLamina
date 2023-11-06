@@ -13,14 +13,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1IIslandCore@Bedrock@@UEAA@XZ
+    virtual ~IIslandCore();
 
     // vIndex: 1, symbol: ?getId@AppIsland@Bedrock@@UEAAGXZ
     virtual ushort getId() = 0;
-
-    // symbol: ??1IIslandCore@Bedrock@@UEAA@XZ
-    MCVAPI ~IIslandCore();
 
     // NOLINTEND
 };

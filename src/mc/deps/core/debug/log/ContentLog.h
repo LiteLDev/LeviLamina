@@ -65,6 +65,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ContentLog();
+
     // symbol: ??0ContentLog@@QEAA@XZ
     MCAPI ContentLog();
 

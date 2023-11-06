@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1SidePoweredComponent@@UEAA@XZ
+    virtual ~SidePoweredComponent();
 
     // vIndex: 6, symbol: ?canConsumePowerAnyDirection@SidePoweredComponent@@UEBA_NXZ
     virtual bool canConsumePowerAnyDirection() const;
@@ -43,9 +43,6 @@ public:
 
     // vIndex: 25, symbol: ?getPoweroutDirection@SidePoweredComponent@@UEBAEXZ
     virtual uchar getPoweroutDirection() const;
-
-    // symbol: ??1SidePoweredComponent@@UEAA@XZ
-    MCVAPI ~SidePoweredComponent();
 
     // symbol:
     // ?addToSideComponents@SidePoweredComponent@@QEAAXAEAV?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@VItem@CircuitComponentList@@@std@@@std@@@std@@PEAVBaseCircuitComponent@@@Z

@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol: ??1BasicGenericTypeSchema@internal@@@UEAA@XZ
+    virtual ~BasicGenericTypeSchema();
 
     // NOLINTEND
 

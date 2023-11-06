@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1IEventListener@Events@Social@@UEAA@XZ
+    virtual ~IEventListener();
 
     // vIndex: 1, symbol:
     // ?recordEvent@AggregationEventListener@Events@Social@@UEAAXAEBVEvent@23@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
@@ -38,9 +38,6 @@ public:
 
     // vIndex: 4, symbol: ?stopDebugEventLogging@AggregationEventListener@Events@Social@@UEAAXXZ
     virtual void stopDebugEventLogging() = 0;
-
-    // symbol: ??1IEventListener@Events@Social@@UEAA@XZ
-    MCVAPI ~IEventListener();
 
     // NOLINTEND
 };

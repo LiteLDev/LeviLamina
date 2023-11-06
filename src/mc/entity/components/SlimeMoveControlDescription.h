@@ -17,14 +17,11 @@ public:
     // vIndex: 0, symbol: ?getJsonName@SlimeMoveControlDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1SlimeMoveControlDescription@@UEAA@XZ
+    virtual ~SlimeMoveControlDescription();
 
     // vIndex: 2, symbol: ?deserializeData@SlimeMoveControlDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1SlimeMoveControlDescription@@UEAA@XZ
-    MCVAPI ~SlimeMoveControlDescription();
 
     // NOLINTEND
 };

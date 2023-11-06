@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1JsonSaver@cereal@@UEAA@XZ
-    MCVAPI ~JsonSaver();
+    // vIndex: 0, symbol: ??1JsonSaver@cereal@@UEAA@XZ
+    virtual ~JsonSaver();
 
     // symbol: ?toString@JsonSaver@cereal@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString();

@@ -78,11 +78,11 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1ScriptWorldAfterEventsDeferredEventListener@ScriptWorldAfterEvents@@@UEAA@XZ
+        virtual ~ScriptWorldAfterEventsDeferredEventListener();
 
-        // vIndex: 1, symbol: ?onLevelTickEnd@ScriptDeferredEventListener@@UEAAXXZ
-        virtual void onLevelTickEnd();
+        // vIndex: 1, symbol: __unk_vfn_1
+        virtual void __unk_vfn_1();
 
         // vIndex: 2, symbol: __unk_vfn_2
         virtual void __unk_vfn_2();
@@ -128,8 +128,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptWorldAfterEvents();
 
     // vIndex: 1, symbol: ?getLevel@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEBAAEAVLevel@@XZ
     virtual class Level& getLevel() const;
@@ -343,9 +343,6 @@ public:
     // ?onProjectileHitBlock@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptProjectileHitBlockAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onProjectileHitBlock(class Scripting::StrongTypedObjectHandle<
                                       struct ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>&);
-
-    // symbol: ??1ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptWorldAfterEvents();
 
     // symbol: ??0ScriptWorldAfterEvents@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptWorldAfterEvents(class ScriptModuleMinecraft::ScriptWorldAfterEvents&&);

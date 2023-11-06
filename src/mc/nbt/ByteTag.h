@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ByteTag@@UEAA@XZ
+    virtual ~ByteTag();
 
     // vIndex: 2, symbol: ?write@ByteTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;
@@ -36,9 +36,6 @@ public:
 
     // vIndex: 10, symbol: ?hash@ByteTag@@UEBA_KXZ
     virtual uint64 hash() const;
-
-    // symbol: ??1ByteTag@@UEAA@XZ
-    MCVAPI ~ByteTag();
 
     // symbol: ??0ByteTag@@QEAA@XZ
     MCAPI ByteTag();

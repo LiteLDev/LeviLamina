@@ -3,7 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/FileAccessType.h"
+#include "mc/deps/core/FileStorageArea.h"
 #include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/TransactionFlags.h"
+#include "mc/deps/core/WriteOperation.h"
 #include "mc/deps/core/common/bedrock/AsyncErrc.h"
 #include "mc/deps/core/common/bedrock/AsyncStatus.h"
 #include "mc/deps/core/common/bedrock/CallStack.h"
@@ -44,9 +48,11 @@ namespace Bedrock { class IIslandCore; }
 namespace Bedrock { class PlatformBootstrap; }
 namespace Bedrock { class WorkerPoolManager; }
 namespace Bedrock { struct CallStack; }
+namespace Bedrock::Http { class BinaryRequestBody; }
 namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Http { class HeaderCollection; }
 namespace Bedrock::Http { class HttpInterface; }
+namespace Bedrock::Http { class HttpInterfaceInternal; }
 namespace Bedrock::Http { class LibHttpClientErrorCatergory; }
 namespace Bedrock::Http { class LibHttpClientImpl; }
 namespace Bedrock::Http { class LibHttpClientInstance; }
@@ -58,6 +64,7 @@ namespace Bedrock::Http { class Response; }
 namespace Bedrock::Http { class RetryPolicy; }
 namespace Bedrock::Http { class Status; }
 namespace Bedrock::Http { class WebSocketInterface; }
+namespace Bedrock::Http { class WebSocketInterfaceInternal; }
 namespace Bedrock::Http::Internal { class IRequestBody; }
 namespace Bedrock::Http::Internal { class IResponseBody; }
 namespace Bedrock::JSONObject { class Document; }
@@ -74,6 +81,7 @@ namespace Bedrock::PlatformUtils { struct PlatformData; }
 namespace Bedrock::PubSub { class DeferredSubscription; }
 namespace Bedrock::PubSub { class DeferredSubscriptionHub; }
 namespace Bedrock::PubSub { class DeferredSubscriptionHubBase; }
+namespace Bedrock::PubSub { class PriorityDeferredSubscriptionHub; }
 namespace Bedrock::PubSub { class RawSubscription; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub { class SubscriptionBase; }
@@ -83,12 +91,15 @@ namespace Bedrock::PubSub::Detail { class PublisherBase; }
 namespace Bedrock::PubSub::Detail { class PublisherDisconnector; }
 namespace Bedrock::PubSub::Detail { class SubscriptionBodyBase; }
 namespace Bedrock::Threading { class AssignedThread; }
+namespace Bedrock::Threading { class EnableQueueForMainThread; }
 namespace Bedrock::Threading { class EnableQueueForThread; }
 namespace Bedrock::Threading { class Mutex; }
 namespace Bedrock::Threading { class OSThreadPriority; }
 namespace Bedrock::Threading { class SharedRecursiveMutexBase; }
 namespace Bedrock::Threading::AsyncResult { class ToXAsyncBlock; }
+namespace Core { class FileSystemImpl; }
 namespace Core { class Path; }
+namespace Core { class Result; }
 // clang-format on
 
 namespace Bedrock {

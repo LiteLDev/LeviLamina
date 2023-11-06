@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FileStdStreamBuf@Core@@UEAA@XZ
+    virtual ~FileStdStreamBuf();
 
     // vIndex: 1, symbol: ?_Lock@?$basic_streambuf@DU?$char_traits@D@std@@@std@@UEAAXXZ
     virtual void _Lock();
@@ -57,9 +57,6 @@ public:
 
     // vIndex: 14, symbol: ?imbue@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAXAEBVlocale@2@@Z
     virtual void imbue(std::locale const&);
-
-    // symbol: ??1FileStdStreamBuf@Core@@UEAA@XZ
-    MCVAPI ~FileStdStreamBuf();
 
     // symbol: ?close@FileStdStreamBuf@Core@@QEAAXXZ
     MCAPI void close();

@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1TransactionalWorldBlockTarget@@UEAA@XZ
+    virtual ~TransactionalWorldBlockTarget();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -101,9 +101,6 @@ public:
 
     // symbol: ?shimPlaceForOldFeatures@TransactionalWorldBlockTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z
     MCVAPI bool shimPlaceForOldFeatures(class Feature const&, class BlockPos const&, class Random&) const;
-
-    // symbol: ??1TransactionalWorldBlockTarget@@UEAA@XZ
-    MCVAPI ~TransactionalWorldBlockTarget();
 
     // symbol: ??0TransactionalWorldBlockTarget@@QEAA@AEAVIBlockWorldGenAPI@@@Z
     MCAPI explicit TransactionalWorldBlockTarget(class IBlockWorldGenAPI&);

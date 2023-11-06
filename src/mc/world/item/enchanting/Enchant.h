@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Enchant@@UEAA@XZ
+    virtual ~Enchant();
 
     // vIndex: 1, symbol: ?isCompatibleWith@Enchant@@UEBA_NW4Type@1@@Z
     virtual bool isCompatibleWith(::Enchant::Type) const;
@@ -31,8 +31,8 @@ public:
     // vIndex: 3, symbol: ?getMaxCost@Enchant@@UEBAHH@Z
     virtual int getMaxCost(int) const;
 
-    // vIndex: 4, symbol: ?getMinLevel@Enchant@@UEBAHXZ
-    virtual int getMinLevel() const;
+    // vIndex: 4, symbol: __unk_vfn_4
+    virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol: ?getMaxLevel@Enchant@@UEBAHXZ
     virtual int getMaxLevel() const;
@@ -64,6 +64,9 @@ public:
     // vIndex: 14, symbol: ?_isValidEnchantmentTypeForCategory@Enchant@@EEBA_NW4Type@1@@Z
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type) const;
 
+    // symbol: ?getMinLevel@Enchant@@UEBAHXZ
+    MCVAPI int getMinLevel() const;
+
     // symbol: ?isDiscoverable@Enchant@@UEBA_NXZ
     MCVAPI bool isDiscoverable() const;
 
@@ -75,9 +78,6 @@ public:
 
     // symbol: ?isTreasureOnly@Enchant@@UEBA_NXZ
     MCVAPI bool isTreasureOnly() const;
-
-    // symbol: ??1Enchant@@UEAA@XZ
-    MCVAPI ~Enchant();
 
     // symbol: ??0Enchant@@QEAA@W4Type@0@W4Frequency@0@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH_N@Z
     MCAPI Enchant(::Enchant::Type, ::Enchant::Frequency, std::string_view, std::string_view, int, int, bool);

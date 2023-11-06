@@ -51,6 +51,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ValidatorRegistry();
+
     // symbol:
     // ?findValidators@ValidatorRegistry@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValidatorRegistryValidators@1@@Z
     MCAPI static bool findValidators(std::string const&, class ValidatorRegistry::ValidatorRegistryValidators&);

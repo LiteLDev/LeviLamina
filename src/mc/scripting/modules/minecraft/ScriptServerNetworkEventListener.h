@@ -26,12 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // vIndex: 1, symbol:
-    // ?onEvent@ServerNetworkEventListener@@UEAA?AW4EventResult@@AEBUServerNetworkGameplayNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const&);
+    // vIndex: 0, symbol: ??1ScriptServerNetworkEventListener@@@UEAA@XZ
+    virtual ~ScriptServerNetworkEventListener();
 
     // vIndex: 2, symbol:
     // ?onMessage@ScriptServerNetworkEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUMessageEvent@@@Z

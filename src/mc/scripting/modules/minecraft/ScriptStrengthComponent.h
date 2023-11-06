@@ -23,11 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptStrengthComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptStrengthComponent();
+    // vIndex: 0, symbol: ??1ScriptStrengthComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptStrengthComponent();
 
     // symbol: ?getMax@ScriptStrengthComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getMax() const;

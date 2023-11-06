@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BaseGameTestBatchRunner@gametest@@UEAA@XZ
+    virtual ~BaseGameTestBatchRunner();
 
     // vIndex: 1, symbol:
     // ?_createGameTestInstance@MinecraftGameTestBatchRunner@@MEAA?AV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVBaseGameTestFunction@gametest@@@Z
@@ -36,9 +36,6 @@ public:
     // vIndex: 2, symbol:
     // ?_runTest@MinecraftGameTestBatchRunner@@MEAAXV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVGameTestTicker@gametest@@@Z
     virtual void _runTest(std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker&) = 0;
-
-    // symbol: ??1BaseGameTestBatchRunner@gametest@@UEAA@XZ
-    MCVAPI ~BaseGameTestBatchRunner();
 
     // symbol:
     // ??0BaseGameTestBatchRunner@gametest@@QEAA@$$QEAV?$vector@VGameTestBatch@gametest@@V?$allocator@VGameTestBatch@gametest@@@std@@@std@@AEAVGameTestTicker@1@$$QEAUTestParameters@1@@Z

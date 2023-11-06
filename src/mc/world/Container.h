@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Container@@UEAA@XZ
+    virtual ~Container();
 
     // vIndex: 1, symbol: ?init@Container@@UEAAXXZ
     virtual void init();
@@ -30,7 +30,7 @@ public:
     // vIndex: 4, symbol: ?removeContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z
     virtual void removeContentChangeListener(class ContainerContentChangeListener*);
 
-    // vIndex: 5, symbol: ?getItem@FillingContainer@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 5, symbol: ?getItem@CraftingContainer@@UEBAAEBVItemStack@@H@Z
     virtual class ItemStack const& getItem(int) const = 0;
 
     // vIndex: 6, symbol: ?hasRoomForItem@Container@@UEAA_NAEBVItemStack@@@Z
@@ -45,7 +45,7 @@ public:
     // vIndex: 9, symbol: ?addItemToFirstEmptySlot@Container@@UEAA_NAEBVItemStack@@@Z
     virtual bool addItemToFirstEmptySlot(class ItemStack const&);
 
-    // vIndex: 10, symbol: ?setItem@Inventory@@UEAAXHAEBVItemStack@@@Z
+    // vIndex: 10, symbol: ?setItem@CraftingContainer@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int, class ItemStack const&) = 0;
 
     // vIndex: 11, symbol: ?setItemWithForceBalance@Container@@UEAAXHAEBVItemStack@@_N@Z
@@ -63,13 +63,13 @@ public:
     // vIndex: 15, symbol: ?dropContents@Container@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
     virtual void dropContents(class BlockSource&, class Vec3 const&, bool);
 
-    // vIndex: 16, symbol: ?getContainerSize@FillingContainer@@UEBAHXZ
+    // vIndex: 16, symbol: ?getContainerSize@CraftingContainer@@UEBAHXZ
     virtual int getContainerSize() const = 0;
 
-    // vIndex: 17, symbol: ?getMaxStackSize@FillingContainer@@UEBAHXZ
+    // vIndex: 17, symbol: ?getMaxStackSize@CraftingContainer@@UEBAHXZ
     virtual int getMaxStackSize() const = 0;
 
-    // vIndex: 18, symbol: ?startOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 18, symbol: ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
     virtual void startOpen(class Player&) = 0;
 
     // vIndex: 19, symbol: ?stopOpen@Container@@UEAAXAEAVPlayer@@@Z
@@ -121,8 +121,8 @@ public:
     virtual void
         createTransactionContext(std::function<void(class Container&, int, class ItemStack const&, class ItemStack const&)>, std::function<void(void)>);
 
-    // vIndex: 34, symbol: ?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z
-    virtual void initializeContainerContents(class BlockSource&);
+    // vIndex: 34, symbol: __unk_vfn_34
+    virtual void __unk_vfn_34();
 
     // vIndex: 35, symbol: ?isEmpty@Container@@UEBA_NXZ
     virtual bool isEmpty() const;
@@ -133,8 +133,8 @@ public:
     // symbol: ?canPushInItem@Container@@UEBA_NHHAEBVItemStack@@@Z
     MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
 
-    // symbol: ??1Container@@UEAA@XZ
-    MCVAPI ~Container();
+    // symbol: ?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z
+    MCVAPI void initializeContainerContents(class BlockSource&);
 
     // symbol: ??0Container@@QEAA@AEBV0@@Z
     MCAPI Container(class Container const&);

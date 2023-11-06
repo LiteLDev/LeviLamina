@@ -23,8 +23,8 @@ public:
     // vIndex: 0, symbol: ?doValidate@StringConstraint@cereal@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@2@@Z
     virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
 
-    // symbol: ??1StringConstraint@cereal@@UEAA@XZ
-    MCVAPI ~StringConstraint();
+    // vIndex: 1, symbol: ??1StringConstraint@cereal@@UEAA@XZ
+    virtual ~StringConstraint();
 
     // symbol: ??0StringConstraint@cereal@@QEAA@XZ
     MCAPI StringConstraint();

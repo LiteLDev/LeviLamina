@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1HurtArmorPacket@@UEAA@XZ
+    virtual ~HurtArmorPacket();
 
     // vIndex: 1, symbol: ?getId@HurtArmorPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -32,9 +32,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@HurtArmorPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1HurtArmorPacket@@UEAA@XZ
-    MCVAPI ~HurtArmorPacket();
 
     // symbol: ??0HurtArmorPacket@@QEAA@XZ
     MCAPI HurtArmorPacket();

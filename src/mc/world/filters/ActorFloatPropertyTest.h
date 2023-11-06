@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ActorFloatPropertyTest@@UEAA@XZ
+    virtual ~ActorFloatPropertyTest();
 
     // vIndex: 1, symbol: ?setup@ActorFloatPropertyTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
     virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
@@ -36,9 +36,6 @@ public:
 
     // vIndex: 6, symbol: ?_serializeValue@ActorFloatPropertyTest@@MEBA?AVValue@Json@@XZ
     virtual class Json::Value _serializeValue() const;
-
-    // symbol: ??1ActorFloatPropertyTest@@UEAA@XZ
-    MCVAPI ~ActorFloatPropertyTest();
 
     // NOLINTEND
 };

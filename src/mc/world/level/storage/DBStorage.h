@@ -85,8 +85,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1DBStorage@@UEAA@XZ
+    virtual ~DBStorage();
 
     // vIndex: 1, symbol:
     // ?addStorageObserver@DBStorage@@UEAAXV?$unique_ptr@VLevelStorageObserver@@U?$default_delete@VLevelStorageObserver@@@std@@@std@@@Z
@@ -193,9 +193,6 @@ public:
 
     // symbol: ?getState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ
     MCVAPI struct Core::LevelStorageResult getState() const;
-
-    // symbol: ??1DBStorage@@UEAA@XZ
-    MCVAPI ~DBStorage();
 
     // symbol: ??0DBStorage@@QEAA@UDBStorageConfig@@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@gsl@@@Z
     MCAPI DBStorage(struct DBStorageConfig, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>);

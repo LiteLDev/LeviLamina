@@ -17,14 +17,11 @@ public:
     // vIndex: 0, symbol: ?getJsonName@EconomyTradeableDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1EconomyTradeableDescription@@UEAA@XZ
+    virtual ~EconomyTradeableDescription();
 
     // vIndex: 2, symbol: ?deserializeData@EconomyTradeableDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1EconomyTradeableDescription@@UEAA@XZ
-    MCVAPI ~EconomyTradeableDescription();
 
     // NOLINTEND
 };

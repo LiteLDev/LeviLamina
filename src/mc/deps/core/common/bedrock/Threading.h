@@ -12,7 +12,9 @@
 // clang-format off
 class Scheduler;
 class WorkerPool;
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Bedrock::Threading { class AssignedThread; }
+namespace Bedrock::Threading { class EnableQueueForMainThread; }
 namespace Bedrock::Threading { class EnableQueueForThread; }
 namespace Bedrock::Threading { class OSThreadPriority; }
 namespace Bedrock::Threading { class SharedRecursiveMutexBase; }

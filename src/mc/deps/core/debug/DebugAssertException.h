@@ -10,14 +10,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1DebugAssertException@@UEAA@XZ
+    virtual ~DebugAssertException();
 
     // vIndex: 1, symbol: ?what@DebugAssertException@@UEBAPEBDXZ
     virtual char const* what() const;
-
-    // symbol: ??1DebugAssertException@@UEAA@XZ
-    MCVAPI ~DebugAssertException();
 
     // symbol: ??0DebugAssertException@@QEAA@AEBV0@@Z
     MCAPI DebugAssertException(class DebugAssertException const&);

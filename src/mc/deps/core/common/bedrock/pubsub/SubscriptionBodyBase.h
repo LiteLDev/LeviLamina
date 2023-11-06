@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1SubscriptionBodyBase@Detail@PubSub@Bedrock@@UEAA@XZ
-    MCVAPI ~SubscriptionBodyBase();
+    // vIndex: 0, symbol: ??1SubscriptionBodyBase@Detail@PubSub@Bedrock@@UEAA@XZ
+    virtual ~SubscriptionBodyBase();
 
     // symbol:
     // ??0SubscriptionBodyBase@Detail@PubSub@Bedrock@@QEAA@$$QEAV?$unique_ptr@VSubscriptionContext@PubSub@Bedrock@@U?$default_delete@VSubscriptionContext@PubSub@Bedrock@@@std@@@std@@@Z

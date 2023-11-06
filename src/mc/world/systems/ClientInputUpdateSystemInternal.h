@@ -22,6 +22,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ClientInputUpdateSystemInternal();
+
     // symbol:
     // ?tick@ClientInputUpdateSystemInternal@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@UPlayerInputRequestComponent@@@@U?$Read@UActorTypeComponent@@UFallDistanceComponent@@UActorGameTypeComponent@@UVehicleComponent@@UMobBodyRotationComponent@@URenderRotationComponent@@UStandAnimationComponent@@USynchedActorDataComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UAABBShapeComponent@@UAbilitiesComponent@@UActorRotationComponent@@UAttributesComponent@@V?$FlagComponent@UCanStandOnSnowFlag@@@@UDimensionTypeComponent@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UImmuneToLavaDragFlag@@@@UMobEffectsComponent@@UPassengerComponent@@USneakingComponent@@UStateVectorComponent@@USubBBsComponent@@V?$FlagComponent@UInWaterFlag@@@@@@U?$Write@VActorOwnerComponent@@UClientInputLockComponent@@UMoveInputComponent@@URawMoveInputComponent@@USynchedActorDataComponent@@UVanillaClientGameplayComponent@@@@U?$AddRemove@$$V@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@@Z
     MCVAPI void tick(class StrictExecutionContext<

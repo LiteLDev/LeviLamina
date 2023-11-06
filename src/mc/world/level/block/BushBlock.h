@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BushBlock@@UEAA@XZ
+    virtual ~BushBlock();
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@BushBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -171,9 +171,6 @@ public:
 
     // symbol: ?waterSpreadCausesSpawn@BushBlock@@UEBA_NXZ
     MCVAPI bool waterSpreadCausesSpawn() const;
-
-    // symbol: ??1BushBlock@@UEAA@XZ
-    MCVAPI ~BushBlock();
 
     // symbol: ??0BushBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI BushBlock(std::string const&, int, class Material const&);

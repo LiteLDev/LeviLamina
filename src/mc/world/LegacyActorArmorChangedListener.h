@@ -17,6 +17,9 @@ public:
     // vIndex: 0, symbol: ?containerContentChanged@LegacyActorArmorChangedListener@@UEAAXH@Z
     virtual void containerContentChanged(int);
 
+    // vIndex: 1, symbol: ??1@@UEAA@XZ
+    virtual ~LegacyActorArmorChangedListener();
+
     // symbol: ?containerContentChanged@LegacyActorArmorChangedListener@@QEAAXAEAVActor@@@Z
     MCAPI void containerContentChanged(class Actor&);
 

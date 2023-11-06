@@ -16,6 +16,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~CommandPropertyBag();
+
     // symbol: ??0CommandPropertyBag@@QEAA@AEBVValue@Json@@@Z
     MCAPI explicit CommandPropertyBag(class Json::Value const&);
 

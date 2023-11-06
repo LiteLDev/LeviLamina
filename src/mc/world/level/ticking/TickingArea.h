@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1TickingArea@@UEAA@XZ
+    virtual ~TickingArea();
 
     // vIndex: 1, symbol: ?getId@TickingArea@@UEBAAEBVUUID@mce@@XZ
     virtual class mce::UUID const& getId() const;
@@ -114,9 +114,6 @@ public:
 
     // symbol: ?getView@TickingArea@@UEBAAEBVITickingAreaView@@XZ
     MCVAPI class ITickingAreaView const& getView() const;
-
-    // symbol: ??1TickingArea@@UEAA@XZ
-    MCVAPI ~TickingArea();
 
     // symbol:
     // ??0TickingArea@@QEAA@AEAVDimension@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUBounds@@_NW4TickingAreaLoadMode@@@Z

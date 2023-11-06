@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1JsonLoader@cereal@@UEAA@XZ
-    MCVAPI ~JsonLoader();
+    // vIndex: 0, symbol: ??1JsonLoader@cereal@@UEAA@XZ
+    virtual ~JsonLoader();
 
     // NOLINTEND
 };

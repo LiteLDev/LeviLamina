@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1PlaceCommand@@@UEAA@XZ
+    virtual ~PlaceCommand();
 
     // vIndex: 1, symbol: ?execute@PlaceCommand@AgentCommands@@UEAAXXZ
     virtual void execute();

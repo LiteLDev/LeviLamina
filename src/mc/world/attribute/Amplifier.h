@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~Amplifier();
 
     // vIndex: 1, symbol: ?getAmount@Amplifier@@UEBAMHM@Z
     virtual float getAmount(int, float) const;

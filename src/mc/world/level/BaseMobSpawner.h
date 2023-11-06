@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BaseMobSpawner@@UEAA@XZ
+    virtual ~BaseMobSpawner();
 
     // vIndex: 1, symbol: ?tick@BaseMobSpawner@@UEAAXAEAVBlockSource@@@Z
     virtual void tick(class BlockSource&);
@@ -25,9 +25,6 @@ public:
 
     // vIndex: 4, symbol: ?getPos@DefaultMobSpawner@@UEAAAEBVBlockPos@@XZ
     virtual class BlockPos const& getPos() = 0;
-
-    // symbol: ??1BaseMobSpawner@@UEAA@XZ
-    MCVAPI ~BaseMobSpawner();
 
     // symbol: ??0BaseMobSpawner@@QEAA@UActorDefinitionIdentifier@@@Z
     MCAPI explicit BaseMobSpawner(struct ActorDefinitionIdentifier);

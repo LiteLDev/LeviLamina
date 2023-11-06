@@ -71,8 +71,8 @@ public:
     // vIndex: 3, symbol: ?doVerifyInitialization@BasicSchema@internal@cereal@@EEBA_NAEBVmeta_any@entt@@@Z
     virtual bool doVerifyInitialization(entt::meta_any const&) const;
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol: ??1BasicSchema@internal@cereal@@UEAA@XZ
+    virtual ~BasicSchema();
 
     // vIndex: 5, symbol:
     // ?unpack@BasicSchema@internal@cereal@@UEBAXAEAV?$vector@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@V?$allocator@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@@2@@std@@AEAV?$dense_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@@std@@@2@@entt@@@Z
@@ -80,11 +80,8 @@ public:
     unpack(std::vector<std::reference_wrapper<class cereal::internal::BasicSchema const>>&, entt::dense_map<std::string, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>&)
         const;
 
-    // vIndex: 6, symbol: ?description@?$CompositeSchema@MX@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
+    // vIndex: 6, symbol: ?description@BasicCompositeSchema@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
     virtual struct cereal::SchemaDescription description() const = 0;
-
-    // symbol: ??1BasicSchema@internal@cereal@@UEAA@XZ
-    MCVAPI ~BasicSchema();
 
     // symbol: ??0BasicSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@@Z
     MCAPI explicit BasicSchema(struct cereal::ReflectionCtx const&);

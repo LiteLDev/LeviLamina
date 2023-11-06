@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptIntBlockProperty@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptIntBlockProperty();
+    // vIndex: 0, symbol: ??1ScriptIntBlockProperty@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptIntBlockProperty();
 
     // symbol: ??0ScriptIntBlockProperty@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptIntBlockProperty(class ScriptModuleMinecraft::ScriptIntBlockProperty&&);

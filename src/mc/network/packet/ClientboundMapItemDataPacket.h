@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ClientboundMapItemDataPacket@@UEAA@XZ
+    virtual ~ClientboundMapItemDataPacket();
 
     // vIndex: 1, symbol: ?getId@ClientboundMapItemDataPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -38,9 +38,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@ClientboundMapItemDataPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1ClientboundMapItemDataPacket@@UEAA@XZ
-    MCVAPI ~ClientboundMapItemDataPacket();
 
     // symbol: ??0ClientboundMapItemDataPacket@@QEAA@XZ
     MCAPI ClientboundMapItemDataPacket();

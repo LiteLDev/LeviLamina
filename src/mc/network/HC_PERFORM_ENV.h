@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1HC_PERFORM_ENV@@UEAA@XZ
-    MCVAPI ~HC_PERFORM_ENV();
+    // vIndex: 0, symbol: ??1HC_PERFORM_ENV@@UEAA@XZ
+    virtual ~HC_PERFORM_ENV();
 
     // symbol: ?HttpCallPerformAsyncShim@HC_PERFORM_ENV@@QEAAJPEAUHC_CALL@@PEAUXAsyncBlock@@@Z
     MCAPI long HttpCallPerformAsyncShim(struct HC_CALL*, struct XAsyncBlock*);

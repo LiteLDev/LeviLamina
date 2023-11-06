@@ -38,8 +38,11 @@ public:
     // ?reloadHardcodedClient@Guardian@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void reloadHardcodedClient(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: __unk_vfn_10
-    virtual void __unk_vfn_10();
+    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    virtual ~Guardian();
+
+    // vIndex: 14, symbol: __unk_vfn_14
+    virtual void __unk_vfn_14();
 
     // vIndex: 23, symbol: __unk_vfn_23
     virtual void __unk_vfn_23();
@@ -53,8 +56,14 @@ public:
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44();
 
+    // vIndex: 45, symbol: __unk_vfn_45
+    virtual void __unk_vfn_45();
+
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
+
+    // vIndex: 48, symbol: __unk_vfn_48
+    virtual void __unk_vfn_48();
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -71,14 +80,32 @@ public:
     // vIndex: 65, symbol: ?setTarget@Guardian@@UEAAXPEAVActor@@@Z
     virtual void setTarget(class Actor*);
 
+    // vIndex: 71, symbol: __unk_vfn_71
+    virtual void __unk_vfn_71();
+
+    // vIndex: 72, symbol: __unk_vfn_72
+    virtual void __unk_vfn_72();
+
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
+
+    // vIndex: 116, symbol: __unk_vfn_116
+    virtual void __unk_vfn_116();
+
+    // vIndex: 120, symbol: __unk_vfn_120
+    virtual void __unk_vfn_120();
+
+    // vIndex: 142, symbol: __unk_vfn_142
+    virtual void __unk_vfn_142();
+
+    // vIndex: 143, symbol: __unk_vfn_143
+    virtual void __unk_vfn_143();
 
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
 
-    // vIndex: 148, symbol: __unk_vfn_148
-    virtual void __unk_vfn_148();
+    // vIndex: 154, symbol: __unk_vfn_154
+    virtual void __unk_vfn_154();
 
     // vIndex: 165, symbol: __unk_vfn_165
     virtual void __unk_vfn_165();
@@ -106,6 +133,12 @@ public:
 
     // vIndex: 188, symbol: ?getMaxHeadXRot@Guardian@@UEAAMXZ
     virtual float getMaxHeadXRot();
+
+    // vIndex: 204, symbol: __unk_vfn_204
+    virtual void __unk_vfn_204();
+
+    // vIndex: 212, symbol: __unk_vfn_212
+    virtual void __unk_vfn_212();
 
     // vIndex: 216, symbol: ?isDarkEnoughToSpawn@Guardian@@MEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;

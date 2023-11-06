@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1SharedRecursiveMutex@Threading@Bedrock@@UEAA@XZ
+    virtual ~SharedRecursiveMutex();
 
     // vIndex: 1, symbol: ?_threadHoldsSharedLock@SharedRecursiveMutex@Threading@Bedrock@@MEAA_NVid@thread@std@@@Z
     virtual bool _threadHoldsSharedLock(std::thread::id);
@@ -32,9 +32,6 @@ public:
 
     // vIndex: 3, symbol: ?_shouldUnLockForSharedAccess@SharedRecursiveMutex@Threading@Bedrock@@MEAA_NVid@thread@std@@@Z
     virtual bool _shouldUnLockForSharedAccess(std::thread::id);
-
-    // symbol: ??1SharedRecursiveMutex@Threading@Bedrock@@UEAA@XZ
-    MCVAPI ~SharedRecursiveMutex();
 
     // NOLINTEND
 };

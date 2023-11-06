@@ -17,8 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ActorDamageByChildActorSource@@UEAA@XZ
+    virtual ~ActorDamageByChildActorSource();
 
     // vIndex: 2, symbol: ?isChildEntitySource@ActorDamageByChildActorSource@@UEBA_NXZ
     virtual bool isChildEntitySource() const;
@@ -45,9 +45,6 @@ public:
     // vIndex: 21, symbol:
     // ?clone@ActorDamageByChildActorSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
-
-    // symbol: ??1ActorDamageByChildActorSource@@UEAA@XZ
-    MCVAPI ~ActorDamageByChildActorSource();
 
     // symbol: ??0ActorDamageByChildActorSource@@QEAA@AEBVActor@@0W4ActorDamageCause@@@Z
     MCAPI ActorDamageByChildActorSource(class Actor const&, class Actor const&, ::ActorDamageCause);

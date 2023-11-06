@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1LibHttpClientImpl@Http@Bedrock@@UEAA@XZ
+    virtual ~LibHttpClientImpl();
 
     // vIndex: 1, symbol:
     // ?send@LibHttpClientImpl@Http@Bedrock@@UEAA?AV?$shared_ptr@V?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@std@@$$QEAVRequest@23@@Z
@@ -39,9 +39,6 @@ public:
 
     // vIndex: 3, symbol: ?shutdown@LibHttpClientImpl@Http@Bedrock@@UEAAXXZ
     virtual void shutdown();
-
-    // symbol: ??1LibHttpClientImpl@Http@Bedrock@@UEAA@XZ
-    MCVAPI ~LibHttpClientImpl();
 
     // symbol: ??0LibHttpClientImpl@Http@Bedrock@@QEAA@XZ
     MCAPI LibHttpClientImpl();

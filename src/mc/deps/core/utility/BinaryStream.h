@@ -14,11 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1BinaryStream@@UEAA@XZ
-    MCVAPI ~BinaryStream();
+    // vIndex: 0, symbol: ??1BinaryStream@@UEAA@XZ
+    virtual ~BinaryStream();
 
     // symbol: ??0BinaryStream@@QEAA@XZ
     MCAPI BinaryStream();

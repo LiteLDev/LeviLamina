@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1MoveActorDeltaPacket@@UEAA@XZ
+    virtual ~MoveActorDeltaPacket();
 
     // vIndex: 1, symbol: ?getId@MoveActorDeltaPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -31,9 +31,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@MoveActorDeltaPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1MoveActorDeltaPacket@@UEAA@XZ
-    MCVAPI ~MoveActorDeltaPacket();
 
     // symbol: ??0MoveActorDeltaPacket@@QEAA@XZ
     MCAPI MoveActorDeltaPacket();

@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1RandomStrollGoal@@UEAA@XZ
+    virtual ~RandomStrollGoal();
 
     // vIndex: 1, symbol: ?canUse@RandomStrollGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -39,9 +39,6 @@ public:
 
     // vIndex: 10, symbol: ?_setWantedPosition@RandomStrollGoal@@MEAA_NXZ
     virtual bool _setWantedPosition();
-
-    // symbol: ??1RandomStrollGoal@@UEAA@XZ
-    MCVAPI ~RandomStrollGoal();
 
     // symbol: ??0RandomStrollGoal@@QEAA@AEAVMob@@MHHH@Z
     MCAPI RandomStrollGoal(class Mob&, float, int, int, int);

@@ -14,14 +14,11 @@ namespace mce { class UUID; }
 class AttributeModifier {
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1AttributeModifier@@UEAA@XZ
+    virtual ~AttributeModifier();
 
     // vIndex: 1, symbol: ?isInstantaneous@AttributeModifier@@UEBA_NXZ
     virtual bool isInstantaneous() const;
-
-    // symbol: ??1AttributeModifier@@UEAA@XZ
-    MCVAPI ~AttributeModifier();
 
     // symbol: ??0AttributeModifier@@QEAA@XZ
     MCAPI AttributeModifier();

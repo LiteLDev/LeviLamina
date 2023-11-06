@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BigEndianStringByteInput@@UEAA@XZ
+    virtual ~BigEndianStringByteInput();
 
     // vIndex: 3, symbol: ?readFloat@BigEndianStringByteInput@@UEAAMXZ
     virtual float readFloat();
@@ -37,9 +37,6 @@ public:
 
     // vIndex: 11, symbol: ?readBigEndianBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z
     virtual bool readBigEndianBytes(void*, uint64);
-
-    // symbol: ??1BigEndianStringByteInput@@UEAA@XZ
-    MCVAPI ~BigEndianStringByteInput();
 
     // NOLINTEND
 };

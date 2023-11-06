@@ -19,6 +19,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~NetworkChunkPublisher();
+
     // symbol: ??0NetworkChunkPublisher@@QEAA@AEAVLevel@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
     MCAPI NetworkChunkPublisher(class Level&, class NetworkIdentifier const&, ::SubClientId);
 

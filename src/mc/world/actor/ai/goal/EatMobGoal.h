@@ -29,11 +29,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
-
-        // symbol: ??1Definition@EatMobGoal@@UEAA@XZ
-        MCVAPI ~Definition();
+        // vIndex: 0, symbol: ??1Definition@EatMobGoal@@UEAA@XZ
+        virtual ~Definition();
 
         // symbol: ??0Definition@EatMobGoal@@QEAA@XZ
         MCAPI Definition();
@@ -57,8 +54,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~EatMobGoal();
 
     // vIndex: 1, symbol: ?canUse@EatMobGoal@@UEAA_NXZ
     virtual bool canUse();

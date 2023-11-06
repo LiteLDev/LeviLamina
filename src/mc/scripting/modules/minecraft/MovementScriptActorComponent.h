@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1MovementScriptActorComponent@@@UEAA@XZ
+    virtual ~MovementScriptActorComponent();
 
     // vIndex: 2, symbol:
     // ?getMaxTurn@MovementScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@M$$V@Scripting@@XZ

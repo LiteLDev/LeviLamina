@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ResourcePackManager@@UEAA@XZ
+    virtual ~ResourcePackManager();
 
     // vIndex: 1, symbol:
     // ?load@ResourcePackManager@@UEBA_NAEBVResourceLocation@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -74,9 +74,6 @@ public:
     // vIndex: 12, symbol:
     // ?hasCapability@ResourcePackManager@@UEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     virtual bool hasCapability(std::string_view) const;
-
-    // symbol: ??1ResourcePackManager@@UEAA@XZ
-    MCVAPI ~ResourcePackManager();
 
     // symbol:
     // ??0ResourcePackManager@@QEAA@V?$function@$$A6A?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ@std@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@gsl@@_N@Z

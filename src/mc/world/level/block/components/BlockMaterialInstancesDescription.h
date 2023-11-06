@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockMaterialInstancesDescription@@UEAA@XZ
+    virtual ~BlockMaterialInstancesDescription();
 
     // vIndex: 1, symbol:
     // ?getName@BlockMaterialInstancesDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -49,9 +49,6 @@ public:
     // vIndex: 9, symbol:
     // ?initializeFromNetwork@BlockMaterialInstancesDescription@@UEAAXAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
     virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
-
-    // symbol: ??1BlockMaterialInstancesDescription@@UEAA@XZ
-    MCVAPI ~BlockMaterialInstancesDescription();
 
     // symbol:
     // ??0BlockMaterialInstancesDescription@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockRenderLayer@@_N2@Z

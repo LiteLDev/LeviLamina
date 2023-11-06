@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ResourcePack@@UEAA@XZ
-    MCVAPI ~ResourcePack();
+    // vIndex: 0, symbol: ??1ResourcePack@@UEAA@XZ
+    virtual ~ResourcePack();
 
     // symbol: ??0ResourcePack@@QEAA@AEAVPack@@@Z
     MCAPI explicit ResourcePack(class Pack&);

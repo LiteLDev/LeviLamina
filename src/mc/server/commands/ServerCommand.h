@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ServerCommand@@UEAA@XZ
-    MCVAPI ~ServerCommand();
+    // vIndex: 0, symbol: ??1ServerCommand@@UEAA@XZ
+    virtual ~ServerCommand();
 
     // symbol: ?setup@ServerCommand@@SAXAEAVMinecraft@@@Z
     MCAPI static void setup(class Minecraft&);

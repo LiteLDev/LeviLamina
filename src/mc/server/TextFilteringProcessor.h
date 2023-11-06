@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1TextFilteringProcessor@@UEAA@XZ
-    MCVAPI ~TextFilteringProcessor();
+    // vIndex: 0, symbol: ??1TextFilteringProcessor@@UEAA@XZ
+    virtual ~TextFilteringProcessor();
 
     // NOLINTEND
 };

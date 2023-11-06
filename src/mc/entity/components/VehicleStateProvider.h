@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1VehicleStateProvider@@@UEAA@XZ
+    virtual ~VehicleStateProvider();
 
     // vIndex: 1, symbol:
     // ?canAddPassenger@VehicleStateProvider@RideableComponentHelpers@@UEBA_NAEBV?$vector@UStrictActorIDEntityContextPair@@V?$allocator@UStrictActorIDEntityContextPair@@@std@@@std@@AEBURideableComponentData@@AEBVIRideableActor@2@2@Z

@@ -33,19 +33,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1NetworkPeer@@UEAA@XZ
+    virtual ~NetworkPeer();
 
     // vIndex: 1, symbol:
-    // ?sendPacket@BatchedNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@W4Compressibility@@@Z
+    // ?sendPacket@RakNetNetworkPeer@RakNetConnector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@W4Compressibility@@@Z
     virtual void sendPacket(std::string const&, ::NetworkPeer::Reliability, ::Compressibility) = 0;
 
     // vIndex: 2, symbol:
-    // ?receivePacket@BatchedNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
+    // ?receivePacket@RakNetNetworkPeer@RakNetConnector@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@6@@Z
     virtual ::NetworkPeer::DataStatus
     receivePacket(std::string&, std::shared_ptr<std::chrono::steady_clock::time_point> const&) = 0;
 
-    // vIndex: 3, symbol: ?getNetworkStatus@BatchedNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
+    // vIndex: 3, symbol: ?getNetworkStatus@RakNetNetworkPeer@RakNetConnector@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
 
     // vIndex: 4, symbol: ?update@NetworkPeer@@UEAAXXZ
@@ -59,9 +59,6 @@ public:
 
     // vIndex: 7, symbol: ?isEncrypted@NetworkPeer@@UEBA_NXZ
     virtual bool isEncrypted() const;
-
-    // symbol: ??1NetworkPeer@@UEAA@XZ
-    MCVAPI ~NetworkPeer();
 
     // NOLINTEND
 };

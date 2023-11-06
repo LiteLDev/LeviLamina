@@ -49,8 +49,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1CaveFeature@@UEAA@XZ
+    virtual ~CaveFeature();
 
     // vIndex: 1, symbol:
     // ?place@CaveFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
@@ -83,9 +83,6 @@ public:
     virtual void
     addFeature(class IBlockWorldGenAPI&, class ChunkPos const&, class Random&, class ChunkPos const&, class RenderParams&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&)
         const;
-
-    // symbol: ??1CaveFeature@@UEAA@XZ
-    MCVAPI ~CaveFeature();
 
     // symbol: ??0CaveFeature@@QEAA@XZ
     MCAPI CaveFeature();

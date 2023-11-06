@@ -29,11 +29,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
-
-        // symbol: ??1Definition@AvoidBlockGoal@@UEAA@XZ
-        MCVAPI ~Definition();
+        // vIndex: 0, symbol: ??1Definition@AvoidBlockGoal@@UEAA@XZ
+        virtual ~Definition();
 
         // symbol: ??0Definition@AvoidBlockGoal@@QEAA@XZ
         MCAPI Definition();
@@ -65,8 +62,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~AvoidBlockGoal();
 
     // vIndex: 1, symbol: ?canUse@AvoidBlockGoal@@UEAA_NXZ
     virtual bool canUse();

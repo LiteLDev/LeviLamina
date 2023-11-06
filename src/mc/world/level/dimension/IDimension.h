@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IDimension@@UEAA@XZ
-    MCVAPI ~IDimension();
+    // vIndex: 0, symbol: ??1IDimension@@UEAA@XZ
+    virtual ~IDimension();
 
     // NOLINTEND
 };

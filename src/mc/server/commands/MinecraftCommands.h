@@ -15,6 +15,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~MinecraftCommands();
+
     // symbol: ??0MinecraftCommands@@QEAA@AEAVMinecraft@@@Z
     MCAPI explicit MinecraftCommands(class Minecraft&);
 

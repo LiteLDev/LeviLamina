@@ -33,8 +33,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockPalette@@UEAA@XZ
+    virtual ~BlockPalette();
 
     // vIndex: 1, symbol: ?getPaletteType@BlockPalette@@UEAA?AW4PaletteType@1@XZ
     virtual ::BlockPalette::PaletteType getPaletteType();
@@ -47,9 +47,6 @@ public:
 
     // vIndex: 4, symbol: ?assignBlockNetworkId@BlockPalette@@MEBAXAEBVBlock@@_K@Z
     virtual void assignBlockNetworkId(class Block const&, uint64) const;
-
-    // symbol: ??1BlockPalette@@UEAA@XZ
-    MCVAPI ~BlockPalette();
 
     // symbol: ??0BlockPalette@@QEAA@AEAVLevel@@@Z
     MCAPI explicit BlockPalette(class Level&);

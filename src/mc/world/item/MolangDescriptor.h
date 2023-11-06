@@ -54,6 +54,9 @@ public:
     // vIndex: 12, symbol: ?getHash@MolangDescriptor@@UEBA_KXZ
     virtual uint64 getHash() const;
 
+    // vIndex: 15, symbol: ??1@@UEAA@XZ
+    virtual ~MolangDescriptor();
+
     // symbol:
     // ?deserialize@MolangDescriptor@@SA?AV?$Result@V?$unique_ptr@UMolangDescriptor@@U?$default_delete@UMolangDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCAPI static class Bedrock::Result<std::unique_ptr<struct MolangDescriptor>>

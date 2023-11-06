@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
+#include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 class StrongholdPiece : public ::StructurePiece {
 public:
@@ -18,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1StrongholdPiece@@UEAA@XZ
-    MCVAPI ~StrongholdPiece();
+    // vIndex: 0, symbol: ??1StrongholdPiece@@UEAA@XZ
+    virtual ~StrongholdPiece();
 
     // symbol:
     // ?findAndCreatePieceFactory@StrongholdPiece@@QEAA?AV?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@3@AEAVRandom@@HHHHH@Z

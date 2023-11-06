@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ItemFrameBlockActor@@UEAA@XZ
+    virtual ~ItemFrameBlockActor();
 
     // vIndex: 1, symbol: ?load@ItemFrameBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
@@ -73,9 +73,6 @@ public:
 
     // vIndex: 41, symbol: ?_onUpdatePacket@ItemFrameBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
-
-    // symbol: ??1ItemFrameBlockActor@@UEAA@XZ
-    MCVAPI ~ItemFrameBlockActor();
 
     // symbol: ??0ItemFrameBlockActor@@QEAA@VBlockPos@@@Z
     MCAPI explicit ItemFrameBlockActor(class BlockPos);

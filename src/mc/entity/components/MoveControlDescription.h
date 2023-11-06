@@ -14,8 +14,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?deserializeData@MoveControlDescription@@UEAAXUDeserializeDataParams@@@Z
-    MCVAPI void deserializeData(struct DeserializeDataParams);
+    // vIndex: 1, symbol: ??1@@UEAA@XZ
+    virtual ~MoveControlDescription();
+
+    // vIndex: 2, symbol: ?deserializeData@MoveControlDescription@@UEAAXUDeserializeDataParams@@@Z
+    virtual void deserializeData(struct DeserializeDataParams);
 
     // NOLINTEND
 };

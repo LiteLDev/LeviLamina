@@ -24,8 +24,8 @@ public:
     // ?doValidate@ExpressionNodeCerealConstraint@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@cereal@@@Z
     virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
 
-    // symbol: ??1ExpressionNodeCerealConstraint@@UEAA@XZ
-    MCVAPI ~ExpressionNodeCerealConstraint();
+    // vIndex: 1, symbol: ??1ExpressionNodeCerealConstraint@@UEAA@XZ
+    virtual ~ExpressionNodeCerealConstraint();
 
     // symbol: ?disallowSideEffects@ExpressionNodeCerealConstraint@@QEAAAEAV1@_N@Z
     MCAPI class ExpressionNodeCerealConstraint& disallowSideEffects(bool);

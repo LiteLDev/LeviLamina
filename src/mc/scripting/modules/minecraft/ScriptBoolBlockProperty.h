@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptBoolBlockProperty@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptBoolBlockProperty();
+    // vIndex: 0, symbol: ??1ScriptBoolBlockProperty@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBoolBlockProperty();
 
     // symbol: ??0ScriptBoolBlockProperty@ScriptModuleMinecraft@@QEAA@$$QEAV01@@Z
     MCAPI ScriptBoolBlockProperty(class ScriptModuleMinecraft::ScriptBoolBlockProperty&&);

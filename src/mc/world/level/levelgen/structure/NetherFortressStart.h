@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~NetherFortressStart();
 
     // symbol: ??0NetherFortressStart@@QEAA@AEAVRandom@@FHH@Z
     MCAPI NetherFortressStart(class Random&, short, int, int);

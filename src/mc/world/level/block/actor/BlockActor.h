@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockActor@@UEAA@XZ
+    virtual ~BlockActor();
 
     // vIndex: 1, symbol: ?load@BlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
@@ -180,9 +180,6 @@ public:
 
     // symbol: ?onNeighborChanged@BlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCVAPI void onNeighborChanged(class BlockSource&, class BlockPos const&);
-
-    // symbol: ??1BlockActor@@UEAA@XZ
-    MCVAPI ~BlockActor();
 
     // symbol:
     // ??0BlockActor@@QEAA@W4BlockActorType@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

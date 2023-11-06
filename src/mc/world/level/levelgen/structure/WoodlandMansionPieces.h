@@ -34,11 +34,11 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1FloorRoomCollection@@@UEAA@XZ
+        virtual ~FloorRoomCollection();
 
         // vIndex: 1, symbol:
-        // ?get1x1@FirstFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@@Z
+        // ?get1x1@SecondFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@@Z
         virtual std::string get1x1(class Random&) = 0;
 
         // vIndex: 2, symbol:
@@ -46,19 +46,19 @@ public:
         virtual std::string get1x1Secret(class Random&) = 0;
 
         // vIndex: 3, symbol:
-        // ?get1x2SideEntrance@FirstFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@_N@Z
+        // ?get1x2SideEntrance@SecondFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@_N@Z
         virtual std::string get1x2SideEntrance(class Random&, bool) = 0;
 
         // vIndex: 4, symbol:
-        // ?get1x2FrontEntrance@FirstFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@_N@Z
+        // ?get1x2FrontEntrance@SecondFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@_N@Z
         virtual std::string get1x2FrontEntrance(class Random&, bool) = 0;
 
         // vIndex: 5, symbol:
-        // ?get1x2Secret@FirstFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@@Z
+        // ?get1x2Secret@SecondFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@@Z
         virtual std::string get1x2Secret(class Random&) = 0;
 
         // vIndex: 6, symbol:
-        // ?get2x2@FirstFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@@Z
+        // ?get2x2@SecondFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@@Z
         virtual std::string get2x2(class Random&) = 0;
 
         // vIndex: 7, symbol:
@@ -77,8 +77,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1FirstFloorRoomCollection@@@UEAA@XZ
+        virtual ~FirstFloorRoomCollection();
 
         // vIndex: 1, symbol:
         // ?get1x1@FirstFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@@Z
@@ -169,8 +169,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1SecondFloorRoomCollection@@@UEAA@XZ
+        virtual ~SecondFloorRoomCollection();
 
         // vIndex: 1, symbol:
         // ?get1x1@SecondFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@@Z
@@ -301,8 +301,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1ThirdFloorRoomCollection@@@UEAA@XZ
+        virtual ~ThirdFloorRoomCollection();
 
         // NOLINTEND
     };
@@ -316,8 +316,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1WoodlandMansionPiece@WoodlandMansionPieces@@UEAA@XZ
+        virtual ~WoodlandMansionPiece();
 
         // vIndex: 2, symbol: ?getType@WoodlandMansionPiece@WoodlandMansionPieces@@UEBA?AW4StructurePieceType@@XZ
         virtual ::StructurePieceType getType() const;
@@ -330,9 +330,6 @@ public:
         // ?_handleDataMarker@WoodlandMansionPiece@WoodlandMansionPieces@@MEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
         virtual void
         _handleDataMarker(std::string const&, class BlockPos const&, class BlockSource&, class Random&, class BoundingBox const&);
-
-        // symbol: ??1WoodlandMansionPiece@WoodlandMansionPieces@@UEAA@XZ
-        MCVAPI ~WoodlandMansionPiece();
 
         // symbol:
         // ??0WoodlandMansionPiece@WoodlandMansionPieces@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4Rotation@@@Z

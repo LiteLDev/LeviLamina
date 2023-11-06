@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ChunkViewSource@@UEAA@XZ
+    virtual ~ChunkViewSource();
 
     // vIndex: 3, symbol: ?getExistingChunk@ChunkViewSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
     virtual std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);
@@ -40,9 +40,6 @@ public:
 
     // vIndex: 30, symbol: ?setLevelChunk@ChunkViewSource@@UEAAXV?$shared_ptr@VLevelChunk@@@std@@@Z
     virtual void setLevelChunk(std::shared_ptr<class LevelChunk>);
-
-    // symbol: ??1ChunkViewSource@@UEAA@XZ
-    MCVAPI ~ChunkViewSource();
 
     // symbol: ??0ChunkViewSource@@QEAA@AEBV0@@Z
     MCAPI ChunkViewSource(class ChunkViewSource const&);

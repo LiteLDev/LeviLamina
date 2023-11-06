@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1DiodeBlock@@UEAA@XZ
+    virtual ~DiodeBlock();
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
@@ -206,9 +206,6 @@ public:
 
     // vIndex: 205, symbol: ?getOffBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
     virtual class Block const* getOffBlock(class Block const*) const = 0;
-
-    // symbol: ??1DiodeBlock@@UEAA@XZ
-    MCVAPI ~DiodeBlock();
 
     // symbol: ??0DiodeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
     MCAPI DiodeBlock(std::string const&, int, bool);

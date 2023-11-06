@@ -11,16 +11,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1TickingAreaListBase@@UEAA@XZ
+    virtual ~TickingAreaListBase();
 
     // vIndex: 1, symbol:
     // ?removeDistantEntityAreasAndCheckForRemoved@TickingAreaListBase@@UEAA_NAEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@V?$function@$$A6AXAEBVITickingArea@@@Z@3@AEAVLevelStorage@@@Z
     virtual bool
     removeDistantEntityAreasAndCheckForRemoved(std::vector<class Vec3> const&, std::function<void(class ITickingArea const&)>, class LevelStorage&);
-
-    // symbol: ??1TickingAreaListBase@@UEAA@XZ
-    MCVAPI ~TickingAreaListBase();
 
     // symbol:
     // ?add@TickingAreaListBase@@QEAAXV?$unique_ptr@VITickingArea@@U?$default_delete@VITickingArea@@@std@@@std@@@Z

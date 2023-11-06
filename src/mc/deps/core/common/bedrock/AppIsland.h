@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1AppIsland@Bedrock@@UEAA@XZ
+    virtual ~AppIsland();
 
     // vIndex: 1, symbol: ?getId@AppIsland@Bedrock@@UEAAGXZ
     virtual ushort getId();
@@ -44,9 +44,6 @@ public:
 
     // symbol: ?suspend@AppIsland@Bedrock@@UEAA_NXZ
     MCVAPI bool suspend();
-
-    // symbol: ??1AppIsland@Bedrock@@UEAA@XZ
-    MCVAPI ~AppIsland();
 
     // symbol: ??0AppIsland@Bedrock@@QEAA@XZ
     MCAPI AppIsland();

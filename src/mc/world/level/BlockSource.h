@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockSource@@UEAA@XZ
+    virtual ~BlockSource();
 
     // vIndex: 1, symbol: ?getBlock@BlockSource@@UEBAAEBVBlock@@HHH@Z
     virtual class Block const& getBlock(int, int, int) const;
@@ -174,9 +174,6 @@ public:
 
     // symbol: ?getDimensionConst@BlockSource@@UEBAAEBVDimension@@XZ
     MCVAPI class Dimension const& getDimensionConst() const;
-
-    // symbol: ??1BlockSource@@UEAA@XZ
-    MCVAPI ~BlockSource();
 
     // symbol: ??0BlockSource@@QEAA@AEAVChunkSource@@_N1@Z
     MCAPI BlockSource(class ChunkSource&, bool, bool);

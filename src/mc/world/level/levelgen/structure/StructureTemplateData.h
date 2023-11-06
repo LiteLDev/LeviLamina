@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1StructureTemplateData@@UEAA@XZ
-    MCVAPI ~StructureTemplateData();
+    // vIndex: 0, symbol: ??1StructureTemplateData@@UEAA@XZ
+    virtual ~StructureTemplateData();
 
     // symbol: ??0StructureTemplateData@@QEAA@XZ
     MCAPI StructureTemplateData();

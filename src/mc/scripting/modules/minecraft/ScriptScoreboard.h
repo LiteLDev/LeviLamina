@@ -34,6 +34,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1ScriptScoreboard@@@UEAA@XZ
+    virtual ~ScriptScoreboard();
+
     // symbol:
     // ??0ScriptScoreboard@ScriptModuleMinecraft@@QEAA@AEAVScoreboard@@AEAVLevel@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI ScriptScoreboard(class Scoreboard&, class Level&, class Scripting::WeakLifetimeScope const&);

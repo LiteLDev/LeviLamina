@@ -8,4 +8,11 @@ public:
     IUIEventTelemetry& operator=(IUIEventTelemetry const&);
     IUIEventTelemetry(IUIEventTelemetry const&);
     IUIEventTelemetry();
+
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~IUIEventTelemetry();
+
+    // NOLINTEND
 };

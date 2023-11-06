@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ITickingAreaView@@UEAA@XZ
+    virtual ~ITickingAreaView();
 
     // vIndex: 1, symbol: ?init@TickingAreaView@@UEAAXAEBUBounds@@_N@Z
     virtual void init(struct Bounds const&, bool) = 0;
@@ -53,9 +53,6 @@ public:
 
     // vIndex: 12, symbol: ?getAvailableChunk@TickingAreaView@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
     virtual std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const&) = 0;
-
-    // symbol: ??1ITickingAreaView@@UEAA@XZ
-    MCVAPI ~ITickingAreaView();
 
     // NOLINTEND
 };

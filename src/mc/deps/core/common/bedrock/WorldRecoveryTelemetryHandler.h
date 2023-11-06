@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1WorldRecoveryTelemetryHandler@Bedrock@@UEAA@XZ
-    MCVAPI ~WorldRecoveryTelemetryHandler();
+    // vIndex: 0, symbol: ??1WorldRecoveryTelemetryHandler@Bedrock@@UEAA@XZ
+    virtual ~WorldRecoveryTelemetryHandler();
 
     // NOLINTEND
 };

@@ -31,8 +31,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ItemStackBase@@UEAA@XZ
+    virtual ~ItemStackBase();
 
     // vIndex: 1, symbol: ?reinit@ItemStackBase@@UEAAXAEBVItem@@HH@Z
     virtual void reinit(class Item const&, int, int);
@@ -54,9 +54,6 @@ public:
     // vIndex: 6, symbol:
     // ?toDebugString@ItemStackBase@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string toDebugString() const;
-
-    // symbol: ??1ItemStackBase@@UEAA@XZ
-    MCVAPI ~ItemStackBase();
 
     // symbol: ?add@ItemStackBase@@QEAAXH@Z
     MCAPI void add(int);

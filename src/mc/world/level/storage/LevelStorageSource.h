@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1LevelStorageSource@@UEAA@XZ
+    virtual ~LevelStorageSource();
 
     // vIndex: 1, symbol:
     // ?getName@ExternalFileLevelStorageSource@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -108,9 +108,6 @@ public:
     // vIndex: 21, symbol:
     // ?getPathToLevelInfo@ExternalFileLevelStorageSource@@UEBA?BV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual class Core::PathBuffer<std::string> const getPathToLevelInfo(std::string const&, bool) const = 0;
-
-    // symbol: ??1LevelStorageSource@@UEAA@XZ
-    MCVAPI ~LevelStorageSource();
 
     // symbol: ?WORLD_SAVE_FLUSH_INTERVAL@LevelStorageSource@@2V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@B
     MCAPI static std::chrono::nanoseconds const WORLD_SAVE_FLUSH_INTERVAL;

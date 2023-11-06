@@ -41,8 +41,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~FoodItemComponentLegacy();
 
     // vIndex: 1, symbol: ?getNutrition@FoodItemComponentLegacy@@UEBAHXZ
     virtual int getNutrition() const;

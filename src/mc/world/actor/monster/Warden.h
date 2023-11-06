@@ -31,8 +31,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: __unk_vfn_10
-    virtual void __unk_vfn_10();
+    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    virtual ~Warden();
+
+    // vIndex: 14, symbol: __unk_vfn_14
+    virtual void __unk_vfn_14();
 
     // vIndex: 23, symbol: __unk_vfn_23
     virtual void __unk_vfn_23();
@@ -52,8 +55,14 @@ public:
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44();
 
+    // vIndex: 45, symbol: __unk_vfn_45
+    virtual void __unk_vfn_45();
+
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
+
+    // vIndex: 48, symbol: __unk_vfn_48
+    virtual void __unk_vfn_48();
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -70,6 +79,12 @@ public:
     // vIndex: 65, symbol: ?setTarget@Warden@@UEAAXPEAVActor@@@Z
     virtual void setTarget(class Actor*);
 
+    // vIndex: 71, symbol: __unk_vfn_71
+    virtual void __unk_vfn_71();
+
+    // vIndex: 72, symbol: __unk_vfn_72
+    virtual void __unk_vfn_72();
+
     // vIndex: 79, symbol: ?isInvulnerableTo@Warden@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
 
@@ -79,11 +94,20 @@ public:
     // vIndex: 114, symbol: ?onSynchedDataUpdate@Warden@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int);
 
+    // vIndex: 116, symbol: __unk_vfn_116
+    virtual void __unk_vfn_116();
+
+    // vIndex: 120, symbol: __unk_vfn_120
+    virtual void __unk_vfn_120();
+
+    // vIndex: 142, symbol: __unk_vfn_142
+    virtual void __unk_vfn_142();
+
+    // vIndex: 143, symbol: __unk_vfn_143
+    virtual void __unk_vfn_143();
+
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
-
-    // vIndex: 148, symbol: __unk_vfn_148
-    virtual void __unk_vfn_148();
 
     // vIndex: 154, symbol: ?onPush@Warden@@UEAAXAEAVActor@@@Z
     virtual void onPush(class Actor&);
@@ -108,6 +132,12 @@ public:
 
     // vIndex: 190, symbol: ?doHurtTarget@Warden@@MEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
     virtual bool doHurtTarget(class Actor*, ::ActorDamageCause const&);
+
+    // vIndex: 204, symbol: __unk_vfn_204
+    virtual void __unk_vfn_204();
+
+    // vIndex: 212, symbol: __unk_vfn_212
+    virtual void __unk_vfn_212();
 
     // symbol: ??0Warden@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Warden(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);

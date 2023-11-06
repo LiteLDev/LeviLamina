@@ -43,6 +43,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~NetworkDebugManager();
+
     // symbol: ?MAX_NUMBER_OF_SAMPLES@NetworkDebugManager@@2HB
     MCAPI static int const MAX_NUMBER_OF_SAMPLES;
 

@@ -8,4 +8,11 @@ public:
     NpcEventCoordinator& operator=(NpcEventCoordinator const&);
     NpcEventCoordinator(NpcEventCoordinator const&);
     NpcEventCoordinator();
+
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~NpcEventCoordinator();
+
+    // NOLINTEND
 };

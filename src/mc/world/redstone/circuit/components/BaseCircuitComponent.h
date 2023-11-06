@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BaseCircuitComponent@@UEAA@XZ
+    virtual ~BaseCircuitComponent();
 
     // vIndex: 1, symbol: ?getStrength@BaseCircuitComponent@@UEBAHXZ
     virtual int getStrength() const;
@@ -96,9 +96,6 @@ public:
 
     // symbol: ?hasChildrenSource@BaseCircuitComponent@@UEBA_NXZ
     MCVAPI bool hasChildrenSource() const;
-
-    // symbol: ??1BaseCircuitComponent@@UEAA@XZ
-    MCVAPI ~BaseCircuitComponent();
 
     // symbol: ??0BaseCircuitComponent@@QEAA@XZ
     MCAPI BaseCircuitComponent();

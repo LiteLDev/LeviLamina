@@ -17,8 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1LevelContainerManagerModel@@UEAA@XZ
+    virtual ~LevelContainerManagerModel();
 
     // vIndex: 6, symbol:
     // ?getItemCopies@LevelContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
@@ -41,9 +41,6 @@ public:
 
     // vIndex: 17, symbol: ?_postInit@LevelContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
     virtual class ContainerScreenContext _postInit();
-
-    // symbol: ??1LevelContainerManagerModel@@UEAA@XZ
-    MCVAPI ~LevelContainerManagerModel();
 
     // symbol: ??0LevelContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@UActorUniqueID@@@Z
     MCAPI LevelContainerManagerModel(::ContainerID, class Player&, struct ActorUniqueID);

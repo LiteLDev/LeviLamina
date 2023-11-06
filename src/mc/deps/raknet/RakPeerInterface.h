@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1RakPeerInterface@RakNet@@UEAA@XZ
-    MCVAPI ~RakPeerInterface();
+    // vIndex: 0, symbol: ??1RakPeerInterface@RakNet@@UEAA@XZ
+    virtual ~RakPeerInterface();
 
     // symbol: ?DestroyInstance@RakPeerInterface@RakNet@@SAXPEAV12@@Z
     MCAPI static void DestroyInstance(class RakNet::RakPeerInterface*);

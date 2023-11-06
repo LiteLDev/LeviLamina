@@ -28,11 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptBlockRecordPlayerComponent();
+    // vIndex: 0, symbol: ??1ScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockRecordPlayerComponent();
 
     // symbol:
     // ?bind@ScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@@Scripting@@XZ

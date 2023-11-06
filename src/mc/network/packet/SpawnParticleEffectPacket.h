@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1SpawnParticleEffectPacket@@UEAA@XZ
+    virtual ~SpawnParticleEffectPacket();
 
     // vIndex: 1, symbol: ?getId@SpawnParticleEffectPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -31,9 +31,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@SpawnParticleEffectPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1SpawnParticleEffectPacket@@UEAA@XZ
-    MCVAPI ~SpawnParticleEffectPacket();
 
     // symbol: ??0SpawnParticleEffectPacket@@QEAA@XZ
     MCAPI SpawnParticleEffectPacket();

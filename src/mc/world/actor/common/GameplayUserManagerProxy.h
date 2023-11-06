@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1GameplayUserManagerProxy@@UEAA@XZ
+    virtual ~GameplayUserManagerProxy();
 
     // vIndex: 1, symbol:
     // ?validatePlayerName@GameplayUserManagerProxy@@UEBA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVGameplayUserManager@@@Z
@@ -23,9 +23,6 @@ public:
 
     // vIndex: 3, symbol: ?reloadActor@GameplayUserManagerProxy@@UEBAXAEAVActor@@@Z
     virtual void reloadActor(class Actor&) const;
-
-    // symbol: ??1GameplayUserManagerProxy@@UEAA@XZ
-    MCVAPI ~GameplayUserManagerProxy();
 
     // NOLINTEND
 };

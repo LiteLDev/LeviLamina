@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BigEndianStringByteOutput@@UEAA@XZ
+    virtual ~BigEndianStringByteOutput();
 
     // vIndex: 3, symbol: ?writeFloat@BigEndianStringByteOutput@@UEAAXM@Z
     virtual void writeFloat(float);
@@ -31,9 +31,6 @@ public:
 
     // vIndex: 8, symbol: ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
     virtual void writeLongLong(int64);
-
-    // symbol: ??1BigEndianStringByteOutput@@UEAA@XZ
-    MCVAPI ~BigEndianStringByteOutput();
 
     // NOLINTEND
 };
