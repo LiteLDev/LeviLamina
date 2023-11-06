@@ -7,11 +7,9 @@ std::string const& BlockLegacy::getTypeName() const {
 }
 optional_ref<BlockLegacy> BlockLegacy::tryGetFromRegistry(std::string const& name) {
     auto blockLegacyPtr = BlockTypeRegistry::lookupByName(HashedString{name});
-    if (!blockLegacyPtr) { return nullptr; }
     return blockLegacyPtr.get();
 }
 optional_ref<BlockLegacy> BlockLegacy::tryGetFromRegistry(uint legacyBlockID) {
     auto blockLegacyPtr = VanillaBlockConversion::getBlockTypeFromLegacyId(legacyBlockID);
-    if (!blockLegacyPtr) { return nullptr; }
     return blockLegacyPtr.get();
 }

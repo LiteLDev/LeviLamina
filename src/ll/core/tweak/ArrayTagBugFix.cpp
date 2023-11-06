@@ -3,6 +3,7 @@
 
 #include "ll/api/memory/Hook.h"
 
+namespace ll::bugfix {
 LL_TYPED_INSTANCE_HOOK(
     ByteArrayTagEqualsHook,
     HookPriority::Normal,
@@ -15,7 +16,6 @@ LL_TYPED_INSTANCE_HOOK(
     if (getId() != other.getId() || data.mSize != ((ByteArrayTag&)other).data.mSize) { return false; }
     return memcmp(data.mBuffer.get(), ((ByteArrayTag&)other).data.mBuffer.get(), data.mSize) == 0;
 }
-
 LL_TYPED_INSTANCE_HOOK(
     IntArrayTagEqualsHook,
     HookPriority::Normal,
@@ -28,7 +28,6 @@ LL_TYPED_INSTANCE_HOOK(
     if (getId() != other.getId() || data.mSize != ((IntArrayTag&)other).data.mSize) { return false; }
     return memcmp(data.mBuffer.get(), ((IntArrayTag&)other).data.mBuffer.get(), data.mSize * sizeof(int)) == 0;
 }
-namespace ll::bugfix {
 void enableArrayTagBugFix() {
     static ll::memory::HookAutoRegister<ByteArrayTagEqualsHook> r1;
     static ll::memory::HookAutoRegister<IntArrayTagEqualsHook>  r2;
