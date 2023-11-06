@@ -40,8 +40,5 @@ public:
     // vIndex: 7, symbol: ?onEntityChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEAVActor@@@Z
     virtual void onEntityChanged(class BlockSource&, class Actor&);
 
-    // symbol: ?onSourceCreated@BlockSourceListener@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void onSourceCreated(class BlockSource&);
-
     // NOLINTEND
 };

@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1IDimension@@UEAA@XZ
     virtual ~IDimension();
-    // modified begin
+
     // vIndex: 0, symbol: ?isNaturalDimension@Dimension@@UEBA_NXZ
     virtual bool isNaturalDimension() const = 0;
 
@@ -28,6 +28,6 @@ public:
 
     // vIndex: 4, symbol: ?initializeWithLevelStorageManager@Dimension@@UEAAXAEAVLevelStorageManager@@@Z
     virtual void initializeWithLevelStorageManager(class LevelStorageManager&) = 0;
-    // modified end
+
     // NOLINTEND
 };
