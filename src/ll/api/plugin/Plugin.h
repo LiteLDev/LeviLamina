@@ -1,8 +1,8 @@
 #pragma once
 
 #include <any>
-#include <string>
 #include <filesystem>
+#include <string>
 #include <unordered_map>
 
 #include "ll/api/plugin/Manifest.h"
@@ -26,15 +26,15 @@ public:
     LLNDAPI std::filesystem::path getDefaultDataPath() const;
 
     template <typename T, typename... Args>
-    [[maybe_unused]] void addSharedData(std::string const& key, Args&&... args)
+    [[maybe_unused]] void setSharedData(std::string const& key, Args&&... args)
         requires(std::is_constructible_v<std::any, std::in_place_type_t<T>, Args...>)
     {
-        getSharedData()[key] = std::make_any<T>(std::forward<Args>(args)...);
+        getSharedData().insert_or_assign(key, std::make_any<T>(std::forward<Args>(args)...));
     }
 
     template <typename T>
     optional_ref<T> getSharedData(std::string const& key) const {
-        if (getSharedData().contains(key)) { return std::any_cast<T>(&getSharedData()[key]); }
+        if (getSharedData().contains(key)) { return std::any_cast<T>(&getSharedData().at(key)); }
         return std::nullopt;
     }
 };
