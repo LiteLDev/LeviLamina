@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~InstantaneousMobEffect();
+    virtual ~InstantaneousMobEffect() = default;
 
     // vIndex: 5, symbol: ?isInstantaneous@InstantaneousMobEffect@@UEBA_NXZ
     virtual bool isInstantaneous() const;

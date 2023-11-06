@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~AbsorptionMobEffect();
+    virtual ~AbsorptionMobEffect() = default;
 
     // vIndex: 1, symbol: ?applyEffects@AbsorptionMobEffect@@UEBAXPEAVActor@@HH@Z
     virtual void applyEffects(class Actor*, int, int) const;

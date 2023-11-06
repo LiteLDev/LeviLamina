@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FindUnderwaterTreasureGoal();
+    virtual ~FindUnderwaterTreasureGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@FindUnderwaterTreasureGoal@@UEAA_NXZ
     virtual bool canUse();

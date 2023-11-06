@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~EatBlockGoal();
+    virtual ~EatBlockGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@EatBlockGoal@@UEAA_NXZ
     virtual bool canUse();

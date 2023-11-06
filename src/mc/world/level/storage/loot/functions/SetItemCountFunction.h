@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SetItemCountFunction();
+    virtual ~SetItemCountFunction() = default;
 
     // vIndex: 1, symbol: ?apply@SetItemCountFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemStack&, class Random&, class LootTableContext&);

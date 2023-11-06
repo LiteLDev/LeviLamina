@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~PurchaseReceiptPacket();
+    virtual ~PurchaseReceiptPacket() = default;
 
     // vIndex: 1, symbol: ?getId@PurchaseReceiptPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

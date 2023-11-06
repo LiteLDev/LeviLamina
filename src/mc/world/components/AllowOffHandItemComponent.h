@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~AllowOffHandItemComponent();
+    virtual ~AllowOffHandItemComponent() = default;
 
     // vIndex: 9, symbol: ?_initializeComponent@AllowOffHandItemComponent@@UEBAXXZ
     virtual void _initializeComponent() const;

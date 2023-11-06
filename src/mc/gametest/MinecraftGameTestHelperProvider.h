@@ -22,7 +22,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MinecraftGameTestHelperProvider();
+    virtual ~MinecraftGameTestHelperProvider() = default;
 
     // vIndex: 1, symbol:
     // ?createGameTestHelper@MinecraftGameTestHelperProvider@@UEAA?AV?$unique_ptr@VBaseGameTestHelper@gametest@@U?$default_delete@VBaseGameTestHelper@gametest@@@std@@@std@@AEAVBaseGameTestInstance@gametest@@@Z

@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MoveToBlockGoal();
+    virtual ~MoveToBlockGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@MoveToBlockGoal@@UEAA_NXZ
     virtual bool canUse();

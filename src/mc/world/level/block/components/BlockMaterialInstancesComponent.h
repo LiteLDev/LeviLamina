@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BlockMaterialInstancesComponent();
+    virtual ~BlockMaterialInstancesComponent() = default;
 
     // symbol: ??0BlockMaterialInstancesComponent@@QEAA@$$QEAU0@@Z
     MCAPI BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent&&);

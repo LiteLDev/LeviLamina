@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MoveToLavaGoal();
+    virtual ~MoveToLavaGoal() = default;
 
     // symbol: ??0MoveToLavaGoal@@QEAA@AEAVMob@@MHHHM@Z
     MCAPI MoveToLavaGoal(class Mob&, float, int, int, int, float);

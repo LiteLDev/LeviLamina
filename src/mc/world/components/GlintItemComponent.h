@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~GlintItemComponent();
+    virtual ~GlintItemComponent() = default;
 
     // vIndex: 9, symbol: ?_initializeComponent@GlintItemComponent@@UEBAXXZ
     virtual void _initializeComponent() const;

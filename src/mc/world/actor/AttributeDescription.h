@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 1, symbol: ??1@@UEAA@XZ
-    virtual ~AttributeDescription();
+    virtual ~AttributeDescription() = default;
 
     // NOLINTEND
 };

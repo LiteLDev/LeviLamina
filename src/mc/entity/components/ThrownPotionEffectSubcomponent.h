@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ThrownPotionEffectSubcomponent();
+    virtual ~ThrownPotionEffectSubcomponent() = default;
 
     // vIndex: 2, symbol: ?writetoJSON@ThrownPotionEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
     virtual void writetoJSON(class Json::Value&) const;

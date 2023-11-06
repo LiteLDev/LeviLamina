@@ -29,7 +29,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~HoeItem();
+    virtual ~HoeItem() = default;
 
     // vIndex: 10, symbol:
     // ?executeEvent@HoeItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z

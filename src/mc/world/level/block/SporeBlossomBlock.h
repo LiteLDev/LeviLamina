@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SporeBlossomBlock();
+    virtual ~SporeBlossomBlock() = default;
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@SporeBlossomBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z

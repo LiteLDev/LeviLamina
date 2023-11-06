@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MaterialReducerOutputValidation();
+    virtual ~MaterialReducerOutputValidation() = default;
 
     // vIndex: 1, symbol:
     // ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z

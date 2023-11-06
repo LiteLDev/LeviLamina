@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ServerInstanceEventCoordinator();
+    virtual ~ServerInstanceEventCoordinator() = default;
 
     // symbol:
     // ?registerServerInstanceEventHandler@ServerInstanceEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VServerInstanceEventHandler@@U?$default_delete@VServerInstanceEventHandler@@@std@@@std@@@Z

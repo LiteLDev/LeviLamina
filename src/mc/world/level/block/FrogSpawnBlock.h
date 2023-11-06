@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FrogSpawnBlock();
+    virtual ~FrogSpawnBlock() = default;
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@FrogSpawnBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z

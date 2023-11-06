@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ChorusPlantBlock();
+    virtual ~ChorusPlantBlock() = default;
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@ChorusPlantBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z

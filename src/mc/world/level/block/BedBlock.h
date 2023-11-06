@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BedBlock();
+    virtual ~BedBlock() = default;
 
     // vIndex: 3, symbol: ?getNextBlockPermutation@BedBlock@@UEBAPEBVBlock@@AEBV2@@Z
     virtual class Block const* getNextBlockPermutation(class Block const&) const;

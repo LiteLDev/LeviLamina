@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MultifaceSpreader();
+    virtual ~MultifaceSpreader() = default;
 
     // vIndex: 1, symbol: ?_canSpreadFrom@MultifaceSpreader@@MEBA_NAEBVBlock@@E@Z
     virtual bool _canSpreadFrom(class Block const&, uchar) const;

@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FuelItemComponent();
+    virtual ~FuelItemComponent() = default;
 
     // symbol: ?setFuelDuration@FuelItemComponent@@QEAAXM@Z
     MCAPI void setFuelDuration(float);

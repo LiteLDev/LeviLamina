@@ -26,7 +26,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CraftingDataPacket();
+    virtual ~CraftingDataPacket() = default;
 
     // vIndex: 1, symbol: ?getId@CraftingDataPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ChunkBuildOrderPolicy();
+    virtual ~ChunkBuildOrderPolicy() = default;
 
     // vIndex: 1, symbol: ?getChunkRebuildPriority@ChunkBuildOrderPolicy@@UEBAHAEBVChunkPos@@@Z
     virtual int getChunkRebuildPriority(class ChunkPos const&) const;

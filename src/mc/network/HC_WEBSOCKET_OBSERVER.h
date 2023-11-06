@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~HC_WEBSOCKET_OBSERVER();
+    virtual ~HC_WEBSOCKET_OBSERVER() = default;
 
     // symbol:
     // ?Initialize@HC_WEBSOCKET_OBSERVER@@SA?AV?$unique_ptr@UHC_WEBSOCKET_OBSERVER@@U?$http_alloc_deleter@UHC_WEBSOCKET_OBSERVER@@@@@std@@V?$shared_ptr@VWebSocket@httpclient@xbox@@@3@P6AXPEAU1@PEBDPEAX@ZP6AX1PEBEI3@ZP6AX15I_N3@ZP6AX1W4HCWebSocketCloseStatus@@3@Z3@Z

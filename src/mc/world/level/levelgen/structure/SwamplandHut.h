@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SwamplandHut();
+    virtual ~SwamplandHut() = default;
 
     // vIndex: 2, symbol: ?getType@SwamplandHut@@UEBA?AW4StructurePieceType@@XZ
     virtual ::StructurePieceType getType() const;

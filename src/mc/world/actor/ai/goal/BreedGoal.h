@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BreedGoal();
+    virtual ~BreedGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@BreedGoal@@UEAA_NXZ
     virtual bool canUse();

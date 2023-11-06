@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SelectorDefinition();
+    virtual ~SelectorDefinition() = default;
 
     // vIndex: 1, symbol: ?load@SelectorDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
     virtual void load(class Json::Value, class BehaviorFactory const&);

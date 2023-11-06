@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DrinkPotionGoal();
+    virtual ~DrinkPotionGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@DrinkPotionGoal@@UEAA_NXZ
     virtual bool canUse();

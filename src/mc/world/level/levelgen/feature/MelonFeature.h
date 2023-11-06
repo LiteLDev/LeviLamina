@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MelonFeature();
+    virtual ~MelonFeature() = default;
 
     // vIndex: 3, symbol: ?place@MelonFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;

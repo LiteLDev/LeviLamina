@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ClientToServerHandshakePacket();
+    virtual ~ClientToServerHandshakePacket() = default;
 
     // vIndex: 1, symbol: ?getId@ClientToServerHandshakePacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

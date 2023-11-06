@@ -46,7 +46,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SignBlock();
+    virtual ~SignBlock() = default;
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@SignBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z

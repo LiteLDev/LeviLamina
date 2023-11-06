@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ResourceLoadManager();
+    virtual ~ResourceLoadManager() = default;
 
     // symbol: ?cancel@ResourceLoadManager@@QEAAXW4ResourceLoadType@@@Z
     MCAPI void cancel(::ResourceLoadType);

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ExperienceCostCommitObject();
+    virtual ~ExperienceCostCommitObject() = default;
 
     // vIndex: 1, symbol: ?append@ExperienceCostCommitObject@@UEAA_NPEAVContainerValidationCommitObject@@@Z
     virtual bool append(class ContainerValidationCommitObject*);

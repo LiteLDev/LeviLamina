@@ -53,7 +53,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DrinkMilkGoal();
+    virtual ~DrinkMilkGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@DrinkMilkGoal@@UEAA_NXZ
     virtual bool canUse();

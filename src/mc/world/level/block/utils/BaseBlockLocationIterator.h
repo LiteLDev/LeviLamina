@@ -10,7 +10,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BaseBlockLocationIterator();
+    virtual ~BaseBlockLocationIterator() = default;
 
     // vIndex: 1, symbol: ??EBaseBlockLocationIterator@@UEAAAEAV0@XZ
     virtual class BaseBlockLocationIterator& operator++();

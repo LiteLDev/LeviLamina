@@ -63,7 +63,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~AvoidBlockGoal();
+    virtual ~AvoidBlockGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@AvoidBlockGoal@@UEAA_NXZ
     virtual bool canUse();

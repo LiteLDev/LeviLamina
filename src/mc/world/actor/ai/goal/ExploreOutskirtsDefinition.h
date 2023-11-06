@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ExploreOutskirtsDefinition();
+    virtual ~ExploreOutskirtsDefinition() = default;
 
     // symbol: ??0ExploreOutskirtsDefinition@@QEAA@XZ
     MCAPI ExploreOutskirtsDefinition();

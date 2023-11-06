@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ShiftedValueAmplifier();
+    virtual ~ShiftedValueAmplifier() = default;
 
     // vIndex: 1, symbol: ?getAmount@ShiftedValueAmplifier@@UEBAMHM@Z
     virtual float getAmount(int, float) const;

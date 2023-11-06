@@ -20,7 +20,7 @@ public:
     virtual void containerContentChanged(int);
 
     // vIndex: 1, symbol: ??1@@UEAA@XZ
-    virtual ~HudContainerModel();
+    virtual ~HudContainerModel() = default;
 
     // vIndex: 6, symbol: __unk_vfn_6
     virtual void __unk_vfn_6();

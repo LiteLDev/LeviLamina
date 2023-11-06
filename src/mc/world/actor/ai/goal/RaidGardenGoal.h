@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RaidGardenGoal();
+    virtual ~RaidGardenGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@RaidGardenGoal@@UEAA_NXZ
     virtual bool canUse();

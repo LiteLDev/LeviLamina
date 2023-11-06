@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~EditorNetworkPacket();
+    virtual ~EditorNetworkPacket() = default;
 
     // vIndex: 1, symbol: ?getId@EditorNetworkPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

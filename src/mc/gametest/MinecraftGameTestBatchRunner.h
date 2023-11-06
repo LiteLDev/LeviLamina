@@ -23,7 +23,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MinecraftGameTestBatchRunner();
+    virtual ~MinecraftGameTestBatchRunner() = default;
 
     // vIndex: 1, symbol:
     // ?_createGameTestInstance@MinecraftGameTestBatchRunner@@MEAA?AV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVBaseGameTestFunction@gametest@@@Z

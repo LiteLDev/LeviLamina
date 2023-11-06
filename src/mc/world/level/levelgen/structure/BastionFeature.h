@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BastionFeature();
+    virtual ~BastionFeature() = default;
 
     // vIndex: 2, symbol: ?shouldPostProcessMobs@BastionFeature@@UEBA_NXZ
     virtual bool shouldPostProcessMobs() const;

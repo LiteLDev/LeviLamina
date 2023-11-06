@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DragonChargePlayerGoal();
+    virtual ~DragonChargePlayerGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@DragonChargePlayerGoal@@UEAA_NXZ
     virtual bool canUse();

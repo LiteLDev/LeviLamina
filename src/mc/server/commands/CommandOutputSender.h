@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CommandOutputSender();
+    virtual ~CommandOutputSender() = default;
 
     // vIndex: 1, symbol: ?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z
     virtual void send(class CommandOrigin const&, class CommandOutput const&);

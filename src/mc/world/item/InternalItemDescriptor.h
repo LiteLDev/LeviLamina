@@ -51,7 +51,7 @@ public:
     virtual uint64 getHash() const;
 
     // vIndex: 15, symbol: ??1@@UEAA@XZ
-    virtual ~InternalItemDescriptor();
+    virtual ~InternalItemDescriptor() = default;
 
     // symbol:
     // ?deserialize@InternalItemDescriptor@@SA?AV?$Result@V?$unique_ptr@UInternalItemDescriptor@@U?$default_delete@UInternalItemDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z

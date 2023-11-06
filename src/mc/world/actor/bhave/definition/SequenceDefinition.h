@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SequenceDefinition();
+    virtual ~SequenceDefinition() = default;
 
     // vIndex: 1, symbol: ?load@SequenceDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
     virtual void load(class Json::Value, class BehaviorFactory const&);

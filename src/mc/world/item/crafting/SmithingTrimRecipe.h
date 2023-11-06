@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SmithingTrimRecipe();
+    virtual ~SmithingTrimRecipe() = default;
 
     // vIndex: 1, symbol:
     // ?assemble@SmithingTrimRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z

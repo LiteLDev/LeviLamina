@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SneezeGoal();
+    virtual ~SneezeGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SneezeGoal@@UEAA_NXZ
     virtual bool canUse();

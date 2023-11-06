@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~StructurePoolBlockPredicateTrueIfFound();
+    virtual ~StructurePoolBlockPredicateTrueIfFound() = default;
 
     // vIndex: 1, symbol: ?test@StructurePoolBlockPredicateTrueIfFound@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
     virtual bool test(class Block const&, class Randomize&) const;

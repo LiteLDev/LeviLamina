@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ExploreOutskirtsGoal();
+    virtual ~ExploreOutskirtsGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@ExploreOutskirtsGoal@@UEAA_NXZ
     virtual bool canUse();

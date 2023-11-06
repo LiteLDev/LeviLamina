@@ -23,7 +23,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SpawnGroupRegistry();
+    virtual ~SpawnGroupRegistry() = default;
 
     // vIndex: 1, symbol:
     // ?getRootKey@SpawnGroupRegistry@@MEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

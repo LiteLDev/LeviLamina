@@ -56,7 +56,7 @@ public:
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve() const;
 
     // vIndex: 15, symbol: ??1@@UEAA@XZ
-    virtual ~DeferredDescriptor();
+    virtual ~DeferredDescriptor() = default;
 
     // symbol:
     // ?deserialize@DeferredDescriptor@@SA?AV?$Result@V?$unique_ptr@UDeferredDescriptor@@U?$default_delete@UDeferredDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z

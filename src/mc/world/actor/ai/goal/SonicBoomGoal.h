@@ -53,7 +53,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SonicBoomGoal();
+    virtual ~SonicBoomGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SonicBoomGoal@@UEAA_NXZ
     virtual bool canUse();

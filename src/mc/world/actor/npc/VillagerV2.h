@@ -35,7 +35,7 @@ public:
     virtual void reloadHardcoded(::Actor::InitializationMethod, class VariantParameterList const&);
 
     // vIndex: 10, symbol: ??1@@UEAA@XZ
-    virtual ~VillagerV2();
+    virtual ~VillagerV2() = default;
 
     // vIndex: 13, symbol: ?remove@VillagerV2@@UEAAXXZ
     virtual void remove();

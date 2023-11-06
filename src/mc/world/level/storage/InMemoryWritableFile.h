@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~InMemoryWritableFile();
+    virtual ~InMemoryWritableFile() = default;
 
     // vIndex: 1, symbol: ?Append@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
     virtual leveldb::Status Append(leveldb::Slice const&);

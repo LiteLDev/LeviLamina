@@ -22,7 +22,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CreatePhotoPacket();
+    virtual ~CreatePhotoPacket() = default;
 
     // vIndex: 1, symbol: ?getId@CreatePhotoPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

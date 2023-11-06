@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LoomContainerScreenValidator();
+    virtual ~LoomContainerScreenValidator() = default;
 
     // symbol: ??0LoomContainerScreenValidator@@QEAA@XZ
     MCAPI LoomContainerScreenValidator();

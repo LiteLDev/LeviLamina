@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SwimIdleDefinition();
+    virtual ~SwimIdleDefinition() = default;
 
     // symbol:
     // ?buildSchema@SwimIdleDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSwimIdleDefinition@@@JsonUtil@@@3@@Z

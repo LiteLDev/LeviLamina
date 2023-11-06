@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~OceanRuinStart();
+    virtual ~OceanRuinStart() = default;
 
     // symbol: ?createRuin@OceanRuinStart@@QEAAXAEAVDimension@@AEAVRandom@@HH@Z
     MCAPI void createRuin(class Dimension&, class Random&, int, int);

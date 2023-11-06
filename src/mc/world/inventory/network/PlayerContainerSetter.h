@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~PlayerContainerSetter();
+    virtual ~PlayerContainerSetter() = default;
 
     // vIndex: 1, symbol: ?setArmor@PlayerContainerSetter@@UEAAXHAEBVItemStack@@@Z
     virtual void setArmor(int, class ItemStack const&);

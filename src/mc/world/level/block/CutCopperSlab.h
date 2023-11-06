@@ -29,7 +29,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CutCopperSlab();
+    virtual ~CutCopperSlab() = default;
 
     // vIndex: 19, symbol: ?onLightningHit@CutCopperSlab@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onLightningHit(class BlockSource&, class BlockPos const&) const;

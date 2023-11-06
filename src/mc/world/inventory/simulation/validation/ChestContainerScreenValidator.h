@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ChestContainerScreenValidator();
+    virtual ~ChestContainerScreenValidator() = default;
 
     // symbol: ??0ChestContainerScreenValidator@@QEAA@XZ
     MCAPI ChestContainerScreenValidator();

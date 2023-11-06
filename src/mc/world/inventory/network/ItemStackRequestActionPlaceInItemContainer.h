@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ItemStackRequestActionPlaceInItemContainer();
+    virtual ~ItemStackRequestActionPlaceInItemContainer() = default;
 
     // symbol: ??0ItemStackRequestActionPlaceInItemContainer@@QEAA@XZ
     MCAPI ItemStackRequestActionPlaceInItemContainer();

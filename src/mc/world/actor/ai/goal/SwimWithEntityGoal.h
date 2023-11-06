@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SwimWithEntityGoal();
+    virtual ~SwimWithEntityGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SwimWithEntityGoal@@UEAA_NXZ
     virtual bool canUse();

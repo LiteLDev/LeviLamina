@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~AvoidMobTypeGoal();
+    virtual ~AvoidMobTypeGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@AvoidMobTypeGoal@@UEAA_NXZ
     virtual bool canUse();

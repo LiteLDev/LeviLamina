@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~StainedGlassBlock();
+    virtual ~StainedGlassBlock() = default;
 
     // vIndex: 7, symbol:
     // ?getCollisionShapeForCamera@StainedGlassBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z

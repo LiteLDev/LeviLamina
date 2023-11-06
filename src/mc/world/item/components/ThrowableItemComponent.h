@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ThrowableItemComponent();
+    virtual ~ThrowableItemComponent() = default;
 
     // vIndex: 6, symbol: ?handleVersionBasedInitialization@ThrowableItemComponent@@UEAAXAEBVSemVersion@@@Z
     virtual void handleVersionBasedInitialization(class SemVersion const&);

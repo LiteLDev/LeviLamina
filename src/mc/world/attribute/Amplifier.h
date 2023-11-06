@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~Amplifier();
+    virtual ~Amplifier() = default;
 
     // vIndex: 1, symbol: ?getAmount@Amplifier@@UEBAMHM@Z
     virtual float getAmount(int, float) const;

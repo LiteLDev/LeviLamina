@@ -25,7 +25,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MinecartBlockCommandOrigin();
+    virtual ~MinecartBlockCommandOrigin() = default;
 
     // vIndex: 3, symbol: ?getBlockPosition@MinecartBlockCommandOrigin@@UEBA?AVBlockPos@@XZ
     virtual class BlockPos getBlockPosition() const;

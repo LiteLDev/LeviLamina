@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LootItemActorHasVariantCondition();
+    virtual ~LootItemActorHasVariantCondition() = default;
 
     // vIndex: 1, symbol: ?applies@LootItemActorHasVariantCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
     virtual bool applies(class Random&, class LootTableContext&);

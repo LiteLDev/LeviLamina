@@ -31,7 +31,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~PointedDripstoneBlock();
+    virtual ~PointedDripstoneBlock() = default;
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@PointedDripstoneBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z

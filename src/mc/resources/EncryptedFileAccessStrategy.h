@@ -24,7 +24,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~EncryptedFileAccessStrategy();
+    virtual ~EncryptedFileAccessStrategy() = default;
 
     // vIndex: 4, symbol: ?isWritable@EncryptedFileAccessStrategy@@UEBA_NXZ
     virtual bool isWritable() const;

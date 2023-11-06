@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LootEnchant();
+    virtual ~LootEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@LootEnchant@@UEBAHH@Z
     virtual int getMinCost(int) const;

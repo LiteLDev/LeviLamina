@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MaxStackSizeItemComponent();
+    virtual ~MaxStackSizeItemComponent() = default;
 
     // vIndex: 9, symbol: ?_initializeComponent@MaxStackSizeItemComponent@@UEBAXXZ
     virtual void _initializeComponent() const;

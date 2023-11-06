@@ -17,7 +17,7 @@ public:
     virtual char const* getJsonName() const;
 
     // vIndex: 1, symbol: ??1@@UEAA@XZ
-    virtual ~WaterMovementDescription();
+    virtual ~WaterMovementDescription() = default;
 
     // vIndex: 2, symbol: ?deserializeData@WaterMovementDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);

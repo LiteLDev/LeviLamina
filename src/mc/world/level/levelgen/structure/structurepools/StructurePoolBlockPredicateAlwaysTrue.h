@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~StructurePoolBlockPredicateAlwaysTrue();
+    virtual ~StructurePoolBlockPredicateAlwaysTrue() = default;
 
     // symbol: ?test@StructurePoolBlockPredicateAlwaysTrue@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
     MCVAPI bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;

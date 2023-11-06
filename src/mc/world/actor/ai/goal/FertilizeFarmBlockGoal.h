@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FertilizeFarmBlockGoal();
+    virtual ~FertilizeFarmBlockGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@FertilizeFarmBlockGoal@@UEAA_NXZ
     virtual bool canUse();

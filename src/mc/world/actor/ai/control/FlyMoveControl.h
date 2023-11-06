@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FlyMoveControl();
+    virtual ~FlyMoveControl() = default;
 
     // vIndex: 2, symbol: ?tick@FlyMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
     virtual void tick(class MoveControlComponent&, class Mob&);

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FakeBatteryMonitorInterface();
+    virtual ~FakeBatteryMonitorInterface() = default;
 
     // vIndex: 1, symbol: ?getBatteryStatus@FakeBatteryMonitorInterface@@UEBA?AW4BatteryStatus@@XZ
     virtual ::BatteryStatus getBatteryStatus() const;

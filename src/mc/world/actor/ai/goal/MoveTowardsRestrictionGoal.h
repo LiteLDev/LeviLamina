@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MoveTowardsRestrictionGoal();
+    virtual ~MoveTowardsRestrictionGoal() = default;
 
     // vIndex: 2, symbol: ?canContinueToUse@MoveTowardsRestrictionGoal@@UEAA_NXZ
     virtual bool canContinueToUse();

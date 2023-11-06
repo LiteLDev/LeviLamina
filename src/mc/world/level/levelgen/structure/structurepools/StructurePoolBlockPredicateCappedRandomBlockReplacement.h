@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~StructurePoolBlockPredicateCappedRandomBlockReplacement();
+    virtual ~StructurePoolBlockPredicateCappedRandomBlockReplacement() = default;
 
     // vIndex: 1, symbol:
     // ?test@StructurePoolBlockPredicateCappedRandomBlockReplacement@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z

@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ServerNetworkController();
+    virtual ~ServerNetworkController() = default;
 
     // vIndex: 1, symbol: ?isDedicatedServer@ServerNetworkController@@UEBA_NXZ
     virtual bool isDedicatedServer() const;

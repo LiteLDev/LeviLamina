@@ -53,7 +53,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~GoHomeGoal();
+    virtual ~GoHomeGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@GoHomeGoal@@UEAA_NXZ
     virtual bool canUse();

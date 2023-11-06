@@ -30,7 +30,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RequestAbilityPacket();
+    virtual ~RequestAbilityPacket() = default;
 
     // vIndex: 1, symbol: ?getId@RequestAbilityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

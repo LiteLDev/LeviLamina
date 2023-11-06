@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SkeletonHorseTrapGoal();
+    virtual ~SkeletonHorseTrapGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SkeletonHorseTrapGoal@@UEAA_NXZ
     virtual bool canUse();

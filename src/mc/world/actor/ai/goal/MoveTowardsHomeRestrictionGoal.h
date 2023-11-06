@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MoveTowardsHomeRestrictionGoal();
+    virtual ~MoveTowardsHomeRestrictionGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@MoveTowardsHomeRestrictionGoal@@UEAA_NXZ
     virtual bool canUse();

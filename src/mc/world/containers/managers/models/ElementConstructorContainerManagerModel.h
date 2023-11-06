@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ElementConstructorContainerManagerModel();
+    virtual ~ElementConstructorContainerManagerModel() = default;
 
     // vIndex: 6, symbol:
     // ?getItemCopies@ElementConstructorContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ

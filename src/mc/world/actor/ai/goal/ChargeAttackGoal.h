@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ChargeAttackGoal();
+    virtual ~ChargeAttackGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@ChargeAttackGoal@@UEAA_NXZ
     virtual bool canUse();

@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~UseAnimationItemComponent();
+    virtual ~UseAnimationItemComponent() = default;
 
     // vIndex: 9, symbol: ?_initializeComponent@UseAnimationItemComponent@@UEBAXXZ
     virtual void _initializeComponent() const;

@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~HurtOwnerSubcomponent();
+    virtual ~HurtOwnerSubcomponent() = default;
 
     // vIndex: 1, symbol: ?readfromJSON@HurtOwnerSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
     virtual void readfromJSON(class Json::Value&, class SemVersion const&);

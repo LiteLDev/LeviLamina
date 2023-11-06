@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SwimEnchant();
+    virtual ~SwimEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@SwimEnchant@@UEBAHH@Z
     virtual int getMinCost(int) const;

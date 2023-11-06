@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LootItemKilledByActorCondition();
+    virtual ~LootItemKilledByActorCondition() = default;
 
     // vIndex: 1, symbol: ?applies@LootItemKilledByActorCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
     virtual bool applies(class Random&, class LootTableContext&);

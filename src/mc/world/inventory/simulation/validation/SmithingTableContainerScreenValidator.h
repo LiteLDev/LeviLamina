@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SmithingTableContainerScreenValidator();
+    virtual ~SmithingTableContainerScreenValidator() = default;
 
     // symbol: ??0SmithingTableContainerScreenValidator@@QEAA@XZ
     MCAPI SmithingTableContainerScreenValidator();

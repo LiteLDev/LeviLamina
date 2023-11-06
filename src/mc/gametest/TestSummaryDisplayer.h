@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TestSummaryDisplayer();
+    virtual ~TestSummaryDisplayer() = default;
 
     // symbol: ?onTestFailed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
     MCVAPI void onTestFailed(class gametest::BaseGameTestInstance&);

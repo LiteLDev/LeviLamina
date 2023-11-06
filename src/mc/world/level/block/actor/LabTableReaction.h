@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LabTableReaction();
+    virtual ~LabTableReaction() = default;
 
     // symbol:
     // ?addComponent@LabTableReaction@@QEAAXV?$unique_ptr@VLabTableReactionComponent@@U?$default_delete@VLabTableReactionComponent@@@std@@@std@@@Z

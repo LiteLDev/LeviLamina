@@ -11,7 +11,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BlockReducer();
+    virtual ~BlockReducer() = default;
 
     // vIndex: 1, symbol:
     // ?registerBlock@BlockReducer@@UEAAXAEBVItemStack@@$$QEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z

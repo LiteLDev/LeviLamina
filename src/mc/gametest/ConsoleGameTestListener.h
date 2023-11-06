@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ConsoleGameTestListener();
+    virtual ~ConsoleGameTestListener() = default;
 
     // vIndex: 1, symbol: ?onTestStructureLoaded@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);

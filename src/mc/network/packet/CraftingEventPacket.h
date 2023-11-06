@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CraftingEventPacket();
+    virtual ~CraftingEventPacket() = default;
 
     // vIndex: 1, symbol: ?getId@CraftingEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~PillagerOutpostFeature();
+    virtual ~PillagerOutpostFeature() = default;
 
     // vIndex: 1, symbol: ?shouldAddHardcodedSpawnAreas@PillagerOutpostFeature@@UEBA_NXZ
     virtual bool shouldAddHardcodedSpawnAreas() const;

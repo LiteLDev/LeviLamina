@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~NetworkSessionOwner();
+    virtual ~NetworkSessionOwner() = default;
 
     // symbol: ??0NetworkSessionOwner@@QEAA@XZ
     MCAPI NetworkSessionOwner();

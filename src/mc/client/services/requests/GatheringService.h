@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~GatheringService();
+    virtual ~GatheringService() = default;
 
     // NOLINTEND
 };

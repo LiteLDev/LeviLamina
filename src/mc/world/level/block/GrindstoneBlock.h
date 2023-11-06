@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~GrindstoneBlock();
+    virtual ~GrindstoneBlock() = default;
 
     // vIndex: 12, symbol: ?getVisualShape@GrindstoneBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;

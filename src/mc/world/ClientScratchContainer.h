@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ClientScratchContainer();
+    virtual ~ClientScratchContainer() = default;
 
     // vIndex: 25, symbol: __unk_vfn_25
     virtual void __unk_vfn_25();

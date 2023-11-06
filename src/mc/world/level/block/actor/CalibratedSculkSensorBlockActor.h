@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CalibratedSculkSensorBlockActor();
+    virtual ~CalibratedSculkSensorBlockActor() = default;
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();

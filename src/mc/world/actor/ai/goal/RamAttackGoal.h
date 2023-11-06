@@ -63,7 +63,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RamAttackGoal();
+    virtual ~RamAttackGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@RamAttackGoal@@UEAA_NXZ
     virtual bool canUse();

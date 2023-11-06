@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DropItemForDefinition();
+    virtual ~DropItemForDefinition() = default;
 
     // symbol: ??0DropItemForDefinition@@QEAA@XZ
     MCAPI DropItemForDefinition();

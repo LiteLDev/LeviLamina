@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ItemStackRequestActionCraftRecipeOptional();
+    virtual ~ItemStackRequestActionCraftRecipeOptional() = default;
 
     // vIndex: 2, symbol: ?getFilteredStringIndex@ItemStackRequestActionCraftRecipeOptional@@UEBAHXZ
     virtual int getFilteredStringIndex() const;

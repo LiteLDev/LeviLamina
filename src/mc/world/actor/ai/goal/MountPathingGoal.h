@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MountPathingGoal();
+    virtual ~MountPathingGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@MountPathingGoal@@UEAA_NXZ
     virtual bool canUse();

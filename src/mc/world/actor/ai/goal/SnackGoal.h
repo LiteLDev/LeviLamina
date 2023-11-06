@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SnackGoal();
+    virtual ~SnackGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SnackGoal@@UEAA_NXZ
     virtual bool canUse();

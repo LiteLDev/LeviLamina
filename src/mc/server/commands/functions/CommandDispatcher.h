@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CommandDispatcher();
+    virtual ~CommandDispatcher() = default;
 
     // vIndex: 1, symbol: ?performCommand@CommandDispatcher@@UEAAHAEBVCommandOrigin@@AEAVCommand@@@Z
     virtual int performCommand(class CommandOrigin const&, class Command&);

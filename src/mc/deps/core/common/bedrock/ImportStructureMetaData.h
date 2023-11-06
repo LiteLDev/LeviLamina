@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ImportStructureMetaData();
+    virtual ~ImportStructureMetaData() = default;
 
     // symbol:
     // ?getStructure@ImportStructureMetaData@@QEAAPEBVStructureTemplate@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

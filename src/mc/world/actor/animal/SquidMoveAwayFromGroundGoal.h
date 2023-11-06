@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SquidMoveAwayFromGroundGoal();
+    virtual ~SquidMoveAwayFromGroundGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SquidMoveAwayFromGroundGoal@@UEAA_NXZ
     virtual bool canUse();

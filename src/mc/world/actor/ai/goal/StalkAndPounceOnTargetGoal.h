@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~StalkAndPounceOnTargetGoal();
+    virtual ~StalkAndPounceOnTargetGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@StalkAndPounceOnTargetGoal@@UEAA_NXZ
     virtual bool canUse();

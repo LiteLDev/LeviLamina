@@ -55,7 +55,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~StayNearNoteblockGoal();
+    virtual ~StayNearNoteblockGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@StayNearNoteblockGoal@@UEAA_NXZ
     virtual bool canUse();

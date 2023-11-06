@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FrostWalkerEnchant();
+    virtual ~FrostWalkerEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@FrostWalkerEnchant@@UEBAHH@Z
     virtual int getMinCost(int) const;

@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LookAtTradingPlayerGoal();
+    virtual ~LookAtTradingPlayerGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@LookAtTradingPlayerGoal@@UEAA_NXZ
     virtual bool canUse();

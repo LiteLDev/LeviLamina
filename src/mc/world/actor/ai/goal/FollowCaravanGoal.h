@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FollowCaravanGoal();
+    virtual ~FollowCaravanGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@FollowCaravanGoal@@UEAA_NXZ
     virtual bool canUse();

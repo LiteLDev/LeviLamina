@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MakeLoveGoal();
+    virtual ~MakeLoveGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@MakeLoveGoal@@UEAA_NXZ
     virtual bool canUse();

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ContainerScreenValidationActivate();
+    virtual ~ContainerScreenValidationActivate() = default;
 
     // vIndex: 3, symbol: ?tryActivate@ContainerScreenValidationActivate@@EEAA?AUContainerValidationResult@@XZ
     virtual struct ContainerValidationResult tryActivate();

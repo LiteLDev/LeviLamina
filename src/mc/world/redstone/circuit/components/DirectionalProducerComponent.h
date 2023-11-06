@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DirectionalProducerComponent();
+    virtual ~DirectionalProducerComponent() = default;
 
     // vIndex: 12, symbol:
     // ?allowConnection@DirectionalProducerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z

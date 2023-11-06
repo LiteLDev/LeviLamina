@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SwiftSneakEnchant();
+    virtual ~SwiftSneakEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@SwiftSneakEnchant@@UEBAHH@Z
     virtual int getMinCost(int) const;

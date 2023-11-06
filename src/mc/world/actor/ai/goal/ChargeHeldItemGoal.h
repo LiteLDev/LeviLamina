@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ChargeHeldItemGoal();
+    virtual ~ChargeHeldItemGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@ChargeHeldItemGoal@@UEAA_NXZ
     virtual bool canUse();

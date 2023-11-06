@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FixedBiomeSource();
+    virtual ~FixedBiomeSource() = default;
 
     // vIndex: 1, symbol: ?fillBiomes@FixedBiomeSource@@UEBAXAEAVLevelChunk@@AEBVChunkLocalNoiseCache@@@Z
     virtual void fillBiomes(class LevelChunk&, class ChunkLocalNoiseCache const&) const;

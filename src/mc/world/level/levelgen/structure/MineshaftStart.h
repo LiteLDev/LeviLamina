@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MineshaftStart();
+    virtual ~MineshaftStart() = default;
 
     // symbol:
     // ??0MineshaftStart@@QEAA@AEBVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z

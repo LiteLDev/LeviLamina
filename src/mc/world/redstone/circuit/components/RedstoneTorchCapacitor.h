@@ -22,7 +22,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RedstoneTorchCapacitor();
+    virtual ~RedstoneTorchCapacitor() = default;
 
     // vIndex: 1, symbol: ?getStrength@RedstoneTorchCapacitor@@UEBAHXZ
     virtual int getStrength() const;

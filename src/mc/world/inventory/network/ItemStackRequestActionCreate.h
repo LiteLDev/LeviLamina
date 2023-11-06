@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ItemStackRequestActionCreate();
+    virtual ~ItemStackRequestActionCreate() = default;
 
     // vIndex: 4, symbol: ?_write@ItemStackRequestActionCreate@@MEBAXAEAVBinaryStream@@@Z
     virtual void _write(class BinaryStream&) const;

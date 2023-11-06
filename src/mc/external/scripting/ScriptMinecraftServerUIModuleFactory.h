@@ -22,7 +22,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ScriptMinecraftServerUIModuleFactory();
+    virtual ~ScriptMinecraftServerUIModuleFactory() = default;
 
     // vIndex: 1, symbol:
     // ?getName@GenericModuleBindingFactory@Scripting@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

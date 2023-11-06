@@ -35,7 +35,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LootItemMatchToolCondition();
+    virtual ~LootItemMatchToolCondition() = default;
 
     // vIndex: 1, symbol: ?applies@LootItemMatchToolCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
     virtual bool applies(class Random&, class LootTableContext&);

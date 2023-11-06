@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~UndyedShulkerBoxBlock();
+    virtual ~UndyedShulkerBoxBlock() = default;
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@UndyedShulkerBoxBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z

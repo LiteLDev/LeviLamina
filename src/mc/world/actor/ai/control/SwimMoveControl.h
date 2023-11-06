@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SwimMoveControl();
+    virtual ~SwimMoveControl() = default;
 
     // vIndex: 1, symbol: ?initializeInternal@SwimMoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
     virtual void initializeInternal(class Mob&, struct MoveControlDescription*);

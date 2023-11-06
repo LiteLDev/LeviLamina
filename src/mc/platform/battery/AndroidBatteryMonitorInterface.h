@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~AndroidBatteryMonitorInterface();
+    virtual ~AndroidBatteryMonitorInterface() = default;
 
     // NOLINTEND
 };

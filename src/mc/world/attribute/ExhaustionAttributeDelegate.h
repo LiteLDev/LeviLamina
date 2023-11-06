@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ExhaustionAttributeDelegate();
+    virtual ~ExhaustionAttributeDelegate() = default;
 
     // vIndex: 1, symbol: ?tick@ExhaustionAttributeDelegate@@UEAAXXZ
     virtual void tick();

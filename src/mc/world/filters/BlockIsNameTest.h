@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BlockIsNameTest();
+    virtual ~BlockIsNameTest() = default;
 
     // vIndex: 2, symbol: ?evaluate@BlockIsNameTest@@UEBA_NAEBUFilterContext@@@Z
     virtual bool evaluate(struct FilterContext const&) const;

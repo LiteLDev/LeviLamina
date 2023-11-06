@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~InMemoryRandomAccessFile();
+    virtual ~InMemoryRandomAccessFile() = default;
 
     // vIndex: 1, symbol: ?Read@InMemoryRandomAccessFile@@UEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEAD@Z
     virtual leveldb::Status Read(uint64, uint64, leveldb::Slice*, char*) const;

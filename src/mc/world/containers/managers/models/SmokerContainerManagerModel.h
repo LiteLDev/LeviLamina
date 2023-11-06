@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SmokerContainerManagerModel();
+    virtual ~SmokerContainerManagerModel() = default;
 
     // symbol: ??0SmokerContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI SmokerContainerManagerModel(::ContainerID, class Player&, class BlockPos const&);

@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TimerActorFlagBaseGoal();
+    virtual ~TimerActorFlagBaseGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@TimerActorFlagBaseGoal@@UEAA_NXZ
     virtual bool canUse();

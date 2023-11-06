@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RakTcpProxy();
+    virtual ~RakTcpProxy() = default;
 
     // vIndex: 1, symbol: ?start@RakTcpProxy@@UEAA_NGGG@Z
     virtual bool start(ushort, ushort, ushort);

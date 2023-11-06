@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CartographyContainerScreenValidator();
+    virtual ~CartographyContainerScreenValidator() = default;
 
     // vIndex: 2, symbol: ?isCraftingImplemented@CartographyContainerScreenValidator@@UEAA_NXZ
     virtual bool isCraftingImplemented();

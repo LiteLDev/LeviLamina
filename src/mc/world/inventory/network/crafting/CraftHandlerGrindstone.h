@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CraftHandlerGrindstone();
+    virtual ~CraftHandlerGrindstone() = default;
 
     // vIndex: 4, symbol:
     // ?_handleCraftAction@CraftHandlerGrindstone@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z

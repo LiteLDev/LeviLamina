@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ActorDamageSource();
+    virtual ~ActorDamageSource() = default;
 
     // vIndex: 1, symbol: ?isEntitySource@ActorDamageSource@@UEBA_NXZ
     virtual bool isEntitySource() const;

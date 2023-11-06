@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LootItemRandomChanceWithLootingCondition();
+    virtual ~LootItemRandomChanceWithLootingCondition() = default;
 
     // vIndex: 1, symbol: ?applies@LootItemRandomChanceWithLootingCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
     virtual bool applies(class Random&, class LootTableContext&);

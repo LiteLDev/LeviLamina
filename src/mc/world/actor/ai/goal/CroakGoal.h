@@ -55,7 +55,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CroakGoal();
+    virtual ~CroakGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@CroakGoal@@UEAA_NXZ
     virtual bool canUse();

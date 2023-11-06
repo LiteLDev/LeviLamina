@@ -50,7 +50,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~VillagerCelebrationGoal();
+    virtual ~VillagerCelebrationGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@VillagerCelebrationGoal@@UEAA_NXZ
     virtual bool canUse();

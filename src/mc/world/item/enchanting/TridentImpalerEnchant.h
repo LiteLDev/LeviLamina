@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TridentImpalerEnchant();
+    virtual ~TridentImpalerEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@TridentImpalerEnchant@@UEBAHH@Z
     virtual int getMinCost(int) const;

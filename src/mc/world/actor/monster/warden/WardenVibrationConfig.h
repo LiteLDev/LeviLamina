@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~WardenVibrationConfig();
+    virtual ~WardenVibrationConfig() = default;
 
     // vIndex: 1, symbol:
     // ?onSignalReceive@WardenVibrationConfig@@UEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVGameEvent@@PEAVActor@@MI3@Z

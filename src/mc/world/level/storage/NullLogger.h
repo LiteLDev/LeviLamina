@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~NullLogger();
+    virtual ~NullLogger() = default;
 
     // vIndex: 1, symbol: ?Logv@NullLogger@@UEAAXPEBDPEAD@Z
     virtual void Logv(char const*, char*);

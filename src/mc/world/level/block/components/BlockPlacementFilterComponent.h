@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BlockPlacementFilterComponent();
+    virtual ~BlockPlacementFilterComponent() = default;
 
     // symbol: ?mayPlace@BlockPlacementFilterComponent@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool mayPlace(class BlockSource&, class BlockPos const&) const;

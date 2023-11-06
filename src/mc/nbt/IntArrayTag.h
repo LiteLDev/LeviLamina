@@ -26,7 +26,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~IntArrayTag();
+    virtual ~IntArrayTag() = default;
 
     // vIndex: 2, symbol: ?write@IntArrayTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;

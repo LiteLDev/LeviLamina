@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~VanillaInPackagePacks();
+    virtual ~VanillaInPackagePacks() = default;
 
     // vIndex: 1, symbol:
     // ?getPacks@VanillaInPackagePacks@@UEBA?AV?$vector@UMetaData@IInPackagePacks@@V?$allocator@UMetaData@IInPackagePacks@@@std@@@std@@W4PackType@@@Z

@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TargetDistanceTest();
+    virtual ~TargetDistanceTest() = default;
 
     // vIndex: 2, symbol: ?evaluate@TargetDistanceTest@@UEBA_NAEBUFilterContext@@@Z
     virtual bool evaluate(struct FilterContext const&) const;

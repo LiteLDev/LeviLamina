@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FunctionEntry();
+    virtual ~FunctionEntry() = default;
 
     // vIndex: 1, symbol: ?execute@FunctionEntry@@UEAAXAEAVFunctionManager@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
     virtual void execute(class FunctionManager&, class CommandOrigin const&, ::FunctionQueueOrder);

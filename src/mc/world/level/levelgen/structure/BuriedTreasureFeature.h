@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BuriedTreasureFeature();
+    virtual ~BuriedTreasureFeature() = default;
 
     // vIndex: 3, symbol:
     // ?getNearestGeneratedFeature@BuriedTreasureFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_NAEBV?$optional@VHashedString@@@std@@@Z

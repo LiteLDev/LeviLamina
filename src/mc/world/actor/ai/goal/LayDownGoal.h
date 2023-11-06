@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~LayDownGoal();
+    virtual ~LayDownGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@LayDownGoal@@UEAA_NXZ
     virtual bool canUse();

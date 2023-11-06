@@ -27,7 +27,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RepeaterCapacitor();
+    virtual ~RepeaterCapacitor() = default;
 
     // vIndex: 1, symbol: ?getStrength@RepeaterCapacitor@@UEBAHXZ
     virtual int getStrength() const;

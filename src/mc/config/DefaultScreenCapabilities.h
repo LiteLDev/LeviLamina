@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DefaultScreenCapabilities();
+    virtual ~DefaultScreenCapabilities() = default;
 
     // vIndex: 1, symbol:
     // ?isOfType@?$TypedScreenCapabilities@UDefaultScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@Bedrock@@@Z

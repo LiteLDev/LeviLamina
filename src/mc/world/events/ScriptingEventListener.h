@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ScriptingEventListener();
+    virtual ~ScriptingEventListener() = default;
 
     // vIndex: 1, symbol: ?onEvent@ScriptingEventListener@@UEAA?AW4EventResult@@AEBUScriptingNotificationEvent@@@Z
     virtual ::EventResult onEvent(struct ScriptingNotificationEvent const&);

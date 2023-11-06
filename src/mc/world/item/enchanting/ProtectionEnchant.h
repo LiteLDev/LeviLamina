@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ProtectionEnchant();
+    virtual ~ProtectionEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@ProtectionEnchant@@UEBAHH@Z
     virtual int getMinCost(int) const;

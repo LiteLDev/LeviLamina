@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~Inventory();
+    virtual ~Inventory() = default;
 
     // vIndex: 1, symbol: ?init@Inventory@@UEAAXXZ
     virtual void init();

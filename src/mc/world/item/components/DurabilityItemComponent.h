@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DurabilityItemComponent();
+    virtual ~DurabilityItemComponent() = default;
 
     // symbol: ?getDamageChanceRange@DurabilityItemComponent@@QEBA?AUIntRange@@XZ
     MCAPI struct IntRange getDamageChanceRange() const;

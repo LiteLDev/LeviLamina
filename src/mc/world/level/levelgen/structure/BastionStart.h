@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BastionStart();
+    virtual ~BastionStart() = default;
 
     // vIndex: 2, symbol: ?isValid@BastionStart@@UEBA_NXZ
     virtual bool isValid() const;

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MineshaftFeature();
+    virtual ~MineshaftFeature() = default;
 
     // vIndex: 2, symbol: ?shouldPostProcessMobs@MineshaftFeature@@UEBA_NXZ
     virtual bool shouldPostProcessMobs() const;

@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~PlayerInputPacket();
+    virtual ~PlayerInputPacket() = default;
 
     // vIndex: 1, symbol: ?getId@PlayerInputPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

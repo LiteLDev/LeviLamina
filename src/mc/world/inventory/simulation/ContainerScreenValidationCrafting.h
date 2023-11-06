@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ContainerScreenValidationCrafting();
+    virtual ~ContainerScreenValidationCrafting() = default;
 
     // vIndex: 1, symbol:
     // ?tryCraft@ContainerScreenValidationCrafting@@UEAA?AUContainerValidationResult@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z

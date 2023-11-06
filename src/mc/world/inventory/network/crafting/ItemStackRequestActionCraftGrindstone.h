@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ItemStackRequestActionCraftGrindstone();
+    virtual ~ItemStackRequestActionCraftGrindstone() = default;
 
     // vIndex: 4, symbol: ?_write@ItemStackRequestActionCraftGrindstone@@UEBAXAEAVBinaryStream@@@Z
     virtual void _write(class BinaryStream&) const;

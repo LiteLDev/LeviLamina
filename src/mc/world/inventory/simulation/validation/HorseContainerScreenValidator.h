@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~HorseContainerScreenValidator();
+    virtual ~HorseContainerScreenValidator() = default;
 
     // symbol: ??0HorseContainerScreenValidator@@QEAA@XZ
     MCAPI HorseContainerScreenValidator();

@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SendEventGoal();
+    virtual ~SendEventGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SendEventGoal@@UEAA_NXZ
     virtual bool canUse();

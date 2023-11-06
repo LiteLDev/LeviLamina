@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CDNConfig();
+    virtual ~CDNConfig() = default;
 
     // symbol: ??0CDNConfig@@QEAA@AEBVPath@Core@@@Z
     MCAPI explicit CDNConfig(class Core::Path const&);

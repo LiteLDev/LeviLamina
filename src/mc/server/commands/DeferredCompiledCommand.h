@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DeferredCompiledCommand();
+    virtual ~DeferredCompiledCommand() = default;
 
     // vIndex: 1, symbol: ?execute@DeferredCompiledCommand@@UEAAXAEAVMinecraftCommands@@@Z
     virtual void execute(class MinecraftCommands&);

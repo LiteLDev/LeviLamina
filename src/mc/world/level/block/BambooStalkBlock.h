@@ -30,7 +30,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BambooStalkBlock();
+    virtual ~BambooStalkBlock() = default;
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@BambooStalkBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z

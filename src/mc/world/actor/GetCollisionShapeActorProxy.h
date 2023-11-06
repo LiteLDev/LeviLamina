@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~GetCollisionShapeActorProxy();
+    virtual ~GetCollisionShapeActorProxy() = default;
 
     // vIndex: 1, symbol: ?getFeetAttachPosY@GetCollisionShapeActorProxy@@UEBAMXZ
     virtual float getFeetAttachPosY() const;

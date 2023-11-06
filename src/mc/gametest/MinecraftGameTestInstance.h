@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MinecraftGameTestInstance();
+    virtual ~MinecraftGameTestInstance() = default;
 
     // vIndex: 1, symbol: ?initialize@MinecraftGameTestInstance@@UEAAXXZ
     virtual void initialize();

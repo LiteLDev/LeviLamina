@@ -24,7 +24,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RequestPermissionsPacket();
+    virtual ~RequestPermissionsPacket() = default;
 
     // vIndex: 1, symbol: ?getId@RequestPermissionsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;

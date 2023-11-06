@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~HoverGoal();
+    virtual ~HoverGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@HoverGoal@@UEAA_NXZ
     virtual bool canUse();

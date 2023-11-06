@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MoveTowardsHomeRestrictionDefinition();
+    virtual ~MoveTowardsHomeRestrictionDefinition() = default;
 
     // symbol: ??0MoveTowardsHomeRestrictionDefinition@@QEAA@XZ
     MCAPI MoveTowardsHomeRestrictionDefinition();

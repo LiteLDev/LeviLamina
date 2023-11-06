@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ScriptPrintLogger();
+    virtual ~ScriptPrintLogger() = default;
 
     // vIndex: 1, symbol:
     // ?onInfo@ScriptPrintLogger@@UEBAXUContextId@Scripting@@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z

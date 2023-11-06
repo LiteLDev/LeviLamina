@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~IsSpawnableDescription();
+    virtual ~IsSpawnableDescription() = default;
 
     // vIndex: 1, symbol: ?getJsonName@IsSpawnableDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;

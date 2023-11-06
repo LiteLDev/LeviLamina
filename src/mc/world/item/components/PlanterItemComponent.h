@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~PlanterItemComponent();
+    virtual ~PlanterItemComponent() = default;
 
     // vIndex: 7, symbol: ?_canUseOn@PlanterItemComponent@@MEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
     virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;

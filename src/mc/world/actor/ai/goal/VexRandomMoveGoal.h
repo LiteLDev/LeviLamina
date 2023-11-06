@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~VexRandomMoveGoal();
+    virtual ~VexRandomMoveGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@VexRandomMoveGoal@@UEAA_NXZ
     virtual bool canUse();

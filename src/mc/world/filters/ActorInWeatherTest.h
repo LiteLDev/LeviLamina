@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ActorInWeatherTest();
+    virtual ~ActorInWeatherTest() = default;
 
     // vIndex: 1, symbol: ?setup@ActorInWeatherTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
     virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);

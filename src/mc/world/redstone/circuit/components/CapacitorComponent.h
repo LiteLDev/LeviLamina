@@ -13,7 +13,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CapacitorComponent();
+    virtual ~CapacitorComponent() = default;
 
     // vIndex: 17, symbol: __unk_vfn_17
     virtual void __unk_vfn_17();

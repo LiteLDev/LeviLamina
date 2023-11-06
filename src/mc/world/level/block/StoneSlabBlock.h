@@ -29,7 +29,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~StoneSlabBlock();
+    virtual ~StoneSlabBlock() = default;
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();

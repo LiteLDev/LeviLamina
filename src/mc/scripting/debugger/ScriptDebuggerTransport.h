@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ScriptDebuggerTransport();
+    virtual ~ScriptDebuggerTransport() = default;
 
     // vIndex: 1, symbol: ?listen@ScriptDebuggerTransport@@UEAA_NG@Z
     virtual bool listen(ushort);

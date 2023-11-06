@@ -40,7 +40,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ScriptPluginHandleCounter();
+    virtual ~ScriptPluginHandleCounter() = default;
 
     // vIndex: 1, symbol:
     // ?onMakeObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@AEBVmeta_type@entt@@I@Z

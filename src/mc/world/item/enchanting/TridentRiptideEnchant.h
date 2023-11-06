@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TridentRiptideEnchant();
+    virtual ~TridentRiptideEnchant() = default;
 
     // vIndex: 1, symbol: ?isCompatibleWith@TridentRiptideEnchant@@UEBA_NW4Type@Enchant@@@Z
     virtual bool isCompatibleWith(::Enchant::Type) const;

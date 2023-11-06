@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~TridentLoyaltyEnchant();
+    virtual ~TridentLoyaltyEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@TridentLoyaltyEnchant@@UEBAHH@Z
     virtual int getMinCost(int) const;

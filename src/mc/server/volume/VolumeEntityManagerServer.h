@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~VolumeEntityManagerServer();
+    virtual ~VolumeEntityManagerServer() = default;
 
     // symbol:
     // ??0VolumeEntityManagerServer@@QEAA@V?$StackRefResultT@UEntityRegistryRefTraits@@@@AEAUReflectionCtx@cereal@@@Z

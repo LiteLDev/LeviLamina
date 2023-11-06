@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CurseBindingEnchant();
+    virtual ~CurseBindingEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@CurseBindingEnchant@@UEBAHH@Z
     virtual int getMinCost(int) const;

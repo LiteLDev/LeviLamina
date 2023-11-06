@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RegionFile();
+    virtual ~RegionFile() = default;
 
     // symbol: ??0RegionFile@@QEAA@AEBVPath@Core@@@Z
     MCAPI explicit RegionFile(class Core::Path const&);

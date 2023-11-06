@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ScreenHandlerBeacon();
+    virtual ~ScreenHandlerBeacon() = default;
 
     // vIndex: 1, symbol: ?handleAction@ScreenHandlerBeacon@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
     virtual ::ItemStackNetResult handleAction(class ItemStackRequestAction const&);

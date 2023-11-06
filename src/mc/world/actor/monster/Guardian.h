@@ -39,7 +39,7 @@ public:
     virtual void reloadHardcodedClient(::Actor::InitializationMethod, class VariantParameterList const&);
 
     // vIndex: 10, symbol: ??1@@UEAA@XZ
-    virtual ~Guardian();
+    virtual ~Guardian() = default;
 
     // vIndex: 14, symbol: __unk_vfn_14
     virtual void __unk_vfn_14();

@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~OcelotAttackDefinition();
+    virtual ~OcelotAttackDefinition() = default;
 
     // symbol: ??0OcelotAttackDefinition@@QEAA@XZ
     MCAPI OcelotAttackDefinition();

@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ChestContainerManagerModel();
+    virtual ~ChestContainerManagerModel() = default;
 
     // vIndex: 16, symbol: ?isValid@ChestContainerManagerModel@@UEAA_NM@Z
     virtual bool isValid(float);

@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ShouldDespawnItemComponent();
+    virtual ~ShouldDespawnItemComponent() = default;
 
     // vIndex: 9, symbol: ?_initializeComponent@ShouldDespawnItemComponent@@UEBAXXZ
     virtual void _initializeComponent() const;

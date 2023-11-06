@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DelayedAttackDefinition();
+    virtual ~DelayedAttackDefinition() = default;
 
     // symbol: ??0DelayedAttackDefinition@@QEAA@XZ
     MCAPI DelayedAttackDefinition();

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DaylightDetectorBlockActor();
+    virtual ~DaylightDetectorBlockActor() = default;
 
     // vIndex: 7, symbol: ?tick@DaylightDetectorBlockActor@@UEAAXAEAVBlockSource@@@Z
     virtual void tick(class BlockSource&);

@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 10, symbol: ??1@@UEAA@XZ
-    virtual ~PigZombie();
+    virtual ~PigZombie() = default;
 
     // vIndex: 14, symbol: __unk_vfn_14
     virtual void __unk_vfn_14();

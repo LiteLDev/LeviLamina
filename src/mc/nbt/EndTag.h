@@ -9,7 +9,7 @@ class EndTag : public ::Tag {
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~EndTag();
+    virtual ~EndTag() = default;
 
     // vIndex: 2, symbol: ?write@EndTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;

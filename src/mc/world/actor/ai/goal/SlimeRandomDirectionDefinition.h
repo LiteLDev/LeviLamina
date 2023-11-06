@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SlimeRandomDirectionDefinition();
+    virtual ~SlimeRandomDirectionDefinition() = default;
 
     // symbol: ??0SlimeRandomDirectionDefinition@@QEAA@XZ
     MCAPI SlimeRandomDirectionDefinition();

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~WaterBoundPathNavigation();
+    virtual ~WaterBoundPathNavigation() = default;
 
     // vIndex: 1, symbol: ?initializeInternal@WaterBoundPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
     virtual void initializeInternal(class Mob&, struct NavigationDescription*);

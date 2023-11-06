@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~MeleeWeaponEnchant();
+    virtual ~MeleeWeaponEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@MeleeWeaponEnchant@@UEBAHH@Z
     virtual int getMinCost(int) const;

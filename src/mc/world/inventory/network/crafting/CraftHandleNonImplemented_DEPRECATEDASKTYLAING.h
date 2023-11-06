@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING();
+    virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING() = default;
 
     // vIndex: 4, symbol:
     // ?_handleCraftAction@CraftHandleNonImplemented_DEPRECATEDASKTYLAING@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z

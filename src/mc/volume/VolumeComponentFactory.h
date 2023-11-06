@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~VolumeComponentFactory();
+    virtual ~VolumeComponentFactory() = default;
 
     // symbol: ??0VolumeComponentFactory@@QEAA@AEAUReflectionCtx@cereal@@@Z
     MCAPI explicit VolumeComponentFactory(struct cereal::ReflectionCtx&);

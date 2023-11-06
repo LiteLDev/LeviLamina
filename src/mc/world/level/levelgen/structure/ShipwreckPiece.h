@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ShipwreckPiece();
+    virtual ~ShipwreckPiece() = default;
 
     // vIndex: 2, symbol: ?getType@ShipwreckPiece@@UEBA?AW4StructurePieceType@@XZ
     virtual ::StructurePieceType getType() const;

@@ -42,7 +42,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~FoodItemComponentLegacy();
+    virtual ~FoodItemComponentLegacy() = default;
 
     // vIndex: 1, symbol: ?getNutrition@FoodItemComponentLegacy@@UEBAHXZ
     virtual int getNutrition() const;

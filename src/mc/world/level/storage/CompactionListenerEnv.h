@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~CompactionListenerEnv();
+    virtual ~CompactionListenerEnv() = default;
 
     // vIndex: 14, symbol: ?Schedule@CompactionListenerEnv@@UEAAXP6AXPEAX@Z0@Z
     virtual void Schedule(void (*)(void*), void*);

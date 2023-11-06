@@ -29,7 +29,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~SculkSensorBlock();
+    virtual ~SculkSensorBlock() = default;
 
     // vIndex: 20, symbol:
     // ?liquidCanFlowIntoFromDirection@SculkSensorBlock@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z

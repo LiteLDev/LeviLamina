@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~RunAroundLikeCrazyGoal();
+    virtual ~RunAroundLikeCrazyGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@RunAroundLikeCrazyGoal@@UEAA_NXZ
     virtual bool canUse();

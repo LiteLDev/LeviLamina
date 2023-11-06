@@ -45,7 +45,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~BlockTransformationComponent();
+    virtual ~BlockTransformationComponent() = default;
 
     // symbol: ??0BlockTransformationComponent@@QEAA@$$QEAV0@@Z
     MCAPI BlockTransformationComponent(class BlockTransformationComponent&&);

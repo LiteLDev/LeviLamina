@@ -6,7 +6,7 @@ class IPacketHandlerDispatcher {
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~IPacketHandlerDispatcher();
+    virtual ~IPacketHandlerDispatcher() = default;
 
     // NOLINTEND
 };

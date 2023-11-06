@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~InspectBookshelfGoal();
+    virtual ~InspectBookshelfGoal() = default;
 
     // vIndex: 2, symbol: ?canContinueToUse@InspectBookshelfGoal@@UEAA_NXZ
     virtual bool canContinueToUse();

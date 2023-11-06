@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~DragonTakeoffGoal();
+    virtual ~DragonTakeoffGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@DragonTakeoffGoal@@UEAA_NXZ
     virtual bool canUse();

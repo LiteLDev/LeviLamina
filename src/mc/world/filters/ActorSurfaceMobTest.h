@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1@@UEAA@XZ
-    virtual ~ActorSurfaceMobTest();
+    virtual ~ActorSurfaceMobTest() = default;
 
     // vIndex: 2, symbol: ?evaluate@ActorSurfaceMobTest@@UEBA_NAEBUFilterContext@@@Z
     virtual bool evaluate(struct FilterContext const&) const;
