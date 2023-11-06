@@ -68,7 +68,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $DimensionMap() { return DimensionMap; }
+    static auto& $DimensionMap() { return DimensionMap; }
 
     // NOLINTEND
 };
