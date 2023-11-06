@@ -162,23 +162,23 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $ARENA_SIZE_CHUNKS() { return ARENA_SIZE_CHUNKS; }
+    static auto& $ARENA_SIZE_CHUNKS() { return ARENA_SIZE_CHUNKS; }
 
-    auto& $DEFAULT_PORTAL_LOCATION() { return DEFAULT_PORTAL_LOCATION; }
+    static auto& $DEFAULT_PORTAL_LOCATION() { return DEFAULT_PORTAL_LOCATION; }
 
-    auto& $GATEWAY_CHUNK_RADIUS() { return GATEWAY_CHUNK_RADIUS; }
+    static auto& $GATEWAY_CHUNK_RADIUS() { return GATEWAY_CHUNK_RADIUS; }
 
-    auto& $GATEWAY_COUNT() { return GATEWAY_COUNT; }
+    static auto& $GATEWAY_COUNT() { return GATEWAY_COUNT; }
 
-    auto& $GATEWAY_DISTANCE() { return GATEWAY_DISTANCE; }
+    static auto& $GATEWAY_DISTANCE() { return GATEWAY_DISTANCE; }
 
-    auto& $GATEWAY_HEIGHT() { return GATEWAY_HEIGHT; }
+    static auto& $GATEWAY_HEIGHT() { return GATEWAY_HEIGHT; }
 
-    auto& $TIME_BETWEEN_CRYSTAL_SCANS() { return TIME_BETWEEN_CRYSTAL_SCANS; }
+    static auto& $TIME_BETWEEN_CRYSTAL_SCANS() { return TIME_BETWEEN_CRYSTAL_SCANS; }
 
-    auto& $TIME_BETWEEN_PLAYER_SCANS() { return TIME_BETWEEN_PLAYER_SCANS; }
+    static auto& $TIME_BETWEEN_PLAYER_SCANS() { return TIME_BETWEEN_PLAYER_SCANS; }
 
-    auto& $TIME_BETWEEN_PORTAL_SCANS() { return TIME_BETWEEN_PORTAL_SCANS; }
+    static auto& $TIME_BETWEEN_PORTAL_SCANS() { return TIME_BETWEEN_PORTAL_SCANS; }
 
     // NOLINTEND
 };

@@ -85,9 +85,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mInitialized() { return mInitialized; }
+    static auto& $mInitialized() { return mInitialized; }
 
-    auto& $mMaterials() { return mMaterials; }
+    static auto& $mMaterials() { return mMaterials; }
 
     // NOLINTEND
 };

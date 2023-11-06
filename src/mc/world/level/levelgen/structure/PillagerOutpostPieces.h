@@ -103,13 +103,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $MSC_FEATURES() { return MSC_FEATURES; }
+    static auto& $MSC_FEATURES() { return MSC_FEATURES; }
 
-    auto& $PILLAGER_LOOT() { return PILLAGER_LOOT; }
+    static auto& $PILLAGER_LOOT() { return PILLAGER_LOOT; }
 
-    auto& $STRUCTURE_WATCHTOWER() { return STRUCTURE_WATCHTOWER; }
+    static auto& $STRUCTURE_WATCHTOWER() { return STRUCTURE_WATCHTOWER; }
 
-    auto& $STRUCTURE_WATCHTOWER_OVERGROWN() { return STRUCTURE_WATCHTOWER_OVERGROWN; }
+    static auto& $STRUCTURE_WATCHTOWER_OVERGROWN() { return STRUCTURE_WATCHTOWER_OVERGROWN; }
 
     // NOLINTEND
 };

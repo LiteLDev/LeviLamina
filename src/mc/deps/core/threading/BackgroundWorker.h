@@ -78,7 +78,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $gLocalWorkerMappingSingleton() { return gLocalWorkerMappingSingleton; }
+    static auto& $gLocalWorkerMappingSingleton() { return gLocalWorkerMappingSingleton; }
 
     // NOLINTEND
 };

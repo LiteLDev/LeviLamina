@@ -217,21 +217,23 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mBlockAliasLookupMap() { return mBlockAliasLookupMap; }
+    static auto& $mBlockAliasLookupMap() { return mBlockAliasLookupMap; }
 
-    auto& $mBlockComplexAliasLookupMap() { return mBlockComplexAliasLookupMap; }
+    static auto& $mBlockComplexAliasLookupMap() { return mBlockComplexAliasLookupMap; }
 
-    auto& $mBlockComplexAliasPostSplitBlockNamesLookupMap() { return mBlockComplexAliasPostSplitBlockNamesLookupMap; }
+    static auto& $mBlockComplexAliasPostSplitBlockNamesLookupMap() {
+        return mBlockComplexAliasPostSplitBlockNamesLookupMap;
+    }
 
-    auto& $mBlockLookupMap() { return mBlockLookupMap; }
+    static auto& $mBlockLookupMap() { return mBlockLookupMap; }
 
-    auto& $mBlockNameHashToStringMap() { return mBlockNameHashToStringMap; }
+    static auto& $mBlockNameHashToStringMap() { return mBlockNameHashToStringMap; }
 
-    auto& $mEntities() { return mEntities; }
+    static auto& $mEntities() { return mEntities; }
 
-    auto& $mKnownNamespaces() { return mKnownNamespaces; }
+    static auto& $mKnownNamespaces() { return mKnownNamespaces; }
 
-    auto& $mRWLock() { return mRWLock; }
+    static auto& $mRWLock() { return mRWLock; }
 
     // NOLINTEND
 };

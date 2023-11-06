@@ -57,7 +57,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $DEFAULT_OPTION() { return DEFAULT_OPTION; }
+    static auto& $DEFAULT_OPTION() { return DEFAULT_OPTION; }
 
     // NOLINTEND
 };

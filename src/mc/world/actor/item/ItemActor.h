@@ -169,7 +169,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $LIFETIME() { return LIFETIME; }
+    static auto& $LIFETIME() { return LIFETIME; }
 
     // NOLINTEND
 };

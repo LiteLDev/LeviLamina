@@ -266,11 +266,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mLastId() { return mLastId; }
+    static auto& $mLastId() { return mLastId; }
 
-    auto& $mPotionsById() { return mPotionsById; }
+    static auto& $mPotionsById() { return mPotionsById; }
 
-    auto& $mPotionsByName() { return mPotionsByName; }
+    static auto& $mPotionsByName() { return mPotionsByName; }
 
     // NOLINTEND
 };

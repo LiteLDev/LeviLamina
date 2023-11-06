@@ -247,13 +247,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $GROWL_INTERVAL_MAX() { return GROWL_INTERVAL_MAX; }
+    static auto& $GROWL_INTERVAL_MAX() { return GROWL_INTERVAL_MAX; }
 
-    auto& $GROWL_INTERVAL_MIN() { return GROWL_INTERVAL_MIN; }
+    static auto& $GROWL_INTERVAL_MIN() { return GROWL_INTERVAL_MIN; }
 
-    auto& $MAX_PATH_RADIUS() { return MAX_PATH_RADIUS; }
+    static auto& $MAX_PATH_RADIUS() { return MAX_PATH_RADIUS; }
 
-    auto& $SITTING_ALLOWED_DAMAGE_PERCENTAGE() { return SITTING_ALLOWED_DAMAGE_PERCENTAGE; }
+    static auto& $SITTING_ALLOWED_DAMAGE_PERCENTAGE() { return SITTING_ALLOWED_DAMAGE_PERCENTAGE; }
 
     // NOLINTEND
 };

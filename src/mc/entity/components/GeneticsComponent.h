@@ -80,11 +80,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $GENE_ARRAY() { return GENE_ARRAY; }
+    static auto& $GENE_ARRAY() { return GENE_ARRAY; }
 
-    auto& $HIDDEN_ALLELE() { return HIDDEN_ALLELE; }
+    static auto& $HIDDEN_ALLELE() { return HIDDEN_ALLELE; }
 
-    auto& $MAIN_ALLELE() { return MAIN_ALLELE; }
+    static auto& $MAIN_ALLELE() { return MAIN_ALLELE; }
 
     // NOLINTEND
 };

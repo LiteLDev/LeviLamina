@@ -75,11 +75,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $FIND_PARTNER_INTERVAL_TICKS() { return FIND_PARTNER_INTERVAL_TICKS; }
+    static auto& $FIND_PARTNER_INTERVAL_TICKS() { return FIND_PARTNER_INTERVAL_TICKS; }
 
-    auto& $SPEAK_INTERVAL_TICKS_MAX() { return SPEAK_INTERVAL_TICKS_MAX; }
+    static auto& $SPEAK_INTERVAL_TICKS_MAX() { return SPEAK_INTERVAL_TICKS_MAX; }
 
-    auto& $SPEAK_INTERVAL_TICKS_MIN() { return SPEAK_INTERVAL_TICKS_MIN; }
+    static auto& $SPEAK_INTERVAL_TICKS_MIN() { return SPEAK_INTERVAL_TICKS_MIN; }
 
     // NOLINTEND
 };

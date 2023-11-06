@@ -139,33 +139,33 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $EROSIONS() { return EROSIONS; }
+    static auto& $EROSIONS() { return EROSIONS; }
 
-    auto& $FULL_RANGE() { return FULL_RANGE; }
+    static auto& $FULL_RANGE() { return FULL_RANGE; }
 
-    auto& $HUMIDITIES() { return HUMIDITIES; }
+    static auto& $HUMIDITIES() { return HUMIDITIES; }
 
-    auto& $TEMPERATURES() { return TEMPERATURES; }
+    static auto& $TEMPERATURES() { return TEMPERATURES; }
 
-    auto& $coastContinentalness() { return coastContinentalness; }
+    static auto& $coastContinentalness() { return coastContinentalness; }
 
-    auto& $deepOceanContinentalness() { return deepOceanContinentalness; }
+    static auto& $deepOceanContinentalness() { return deepOceanContinentalness; }
 
-    auto& $dripstoneCavesContinentalness() { return dripstoneCavesContinentalness; }
+    static auto& $dripstoneCavesContinentalness() { return dripstoneCavesContinentalness; }
 
-    auto& $farInlandContinentalness() { return farInlandContinentalness; }
+    static auto& $farInlandContinentalness() { return farInlandContinentalness; }
 
-    auto& $inlandContinentalness() { return inlandContinentalness; }
+    static auto& $inlandContinentalness() { return inlandContinentalness; }
 
-    auto& $lushCavesHumidity() { return lushCavesHumidity; }
+    static auto& $lushCavesHumidity() { return lushCavesHumidity; }
 
-    auto& $midInlandContinentalness() { return midInlandContinentalness; }
+    static auto& $midInlandContinentalness() { return midInlandContinentalness; }
 
-    auto& $mushroomFieldsContinentalness() { return mushroomFieldsContinentalness; }
+    static auto& $mushroomFieldsContinentalness() { return mushroomFieldsContinentalness; }
 
-    auto& $nearInlandContinentalness() { return nearInlandContinentalness; }
+    static auto& $nearInlandContinentalness() { return nearInlandContinentalness; }
 
-    auto& $oceanContinentalness() { return oceanContinentalness; }
+    static auto& $oceanContinentalness() { return oceanContinentalness; }
 
     // NOLINTEND
 };

@@ -232,7 +232,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mCBModeMap() { return mCBModeMap; }
+    static auto& $mCBModeMap() { return mCBModeMap; }
 
     // NOLINTEND
 };

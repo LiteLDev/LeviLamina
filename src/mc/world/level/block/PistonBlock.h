@@ -219,7 +219,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $ARM_DIRECTION_OFFSETS() { return ARM_DIRECTION_OFFSETS; }
+    static auto& $ARM_DIRECTION_OFFSETS() { return ARM_DIRECTION_OFFSETS; }
 
     // NOLINTEND
 };

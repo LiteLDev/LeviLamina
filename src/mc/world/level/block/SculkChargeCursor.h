@@ -61,11 +61,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sDefaultSculkBehavior() { return sDefaultSculkBehavior; }
+    static auto& $sDefaultSculkBehavior() { return sDefaultSculkBehavior; }
 
-    auto& $sSculkBlockBehavior() { return sSculkBlockBehavior; }
+    static auto& $sSculkBlockBehavior() { return sSculkBlockBehavior; }
 
-    auto& $sSculkVeinBlockBehavior() { return sSculkVeinBlockBehavior; }
+    static auto& $sSculkVeinBlockBehavior() { return sSculkVeinBlockBehavior; }
 
     // NOLINTEND
 };

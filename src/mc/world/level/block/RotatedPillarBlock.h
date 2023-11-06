@@ -180,9 +180,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mRotatedX() { return mRotatedX; }
+    static auto& $mRotatedX() { return mRotatedX; }
 
-    auto& $mRotatedZ() { return mRotatedZ; }
+    static auto& $mRotatedZ() { return mRotatedZ; }
 
     // NOLINTEND
 };

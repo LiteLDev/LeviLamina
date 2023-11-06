@@ -106,11 +106,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mClientFrameIndex() { return mClientFrameIndex; }
+    static auto& $mClientFrameIndex() { return mClientFrameIndex; }
 
-    auto& $mReloadTimeStampClient() { return mReloadTimeStampClient; }
+    static auto& $mReloadTimeStampClient() { return mReloadTimeStampClient; }
 
-    auto& $mServerFrameIndex() { return mServerFrameIndex; }
+    static auto& $mServerFrameIndex() { return mServerFrameIndex; }
 
     // NOLINTEND
 };

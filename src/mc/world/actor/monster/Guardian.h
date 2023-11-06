@@ -162,9 +162,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $ATTACK_TIME() { return ATTACK_TIME; }
+    static auto& $ATTACK_TIME() { return ATTACK_TIME; }
 
-    auto& $FIRST_DAMAGE_TIME() { return FIRST_DAMAGE_TIME; }
+    static auto& $FIRST_DAMAGE_TIME() { return FIRST_DAMAGE_TIME; }
 
     // NOLINTEND
 };

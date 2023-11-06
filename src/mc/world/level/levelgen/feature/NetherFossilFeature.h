@@ -33,7 +33,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $STRUCTURE_LOCATION_FOSSIL() { return STRUCTURE_LOCATION_FOSSIL; }
+    static auto& $STRUCTURE_LOCATION_FOSSIL() { return STRUCTURE_LOCATION_FOSSIL; }
 
     // NOLINTEND
 };

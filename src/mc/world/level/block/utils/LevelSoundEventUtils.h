@@ -26,7 +26,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $MAX_INT_REPRESENTABLE_AS_FLOAT() { return MAX_INT_REPRESENTABLE_AS_FLOAT; }
+    static auto& $MAX_INT_REPRESENTABLE_AS_FLOAT() { return MAX_INT_REPRESENTABLE_AS_FLOAT; }
 
     // NOLINTEND
 };

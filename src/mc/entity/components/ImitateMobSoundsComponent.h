@@ -34,7 +34,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $imitateMobMap() { return imitateMobMap; }
+    static auto& $imitateMobMap() { return imitateMobMap; }
 
     // NOLINTEND
 };

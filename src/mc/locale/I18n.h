@@ -176,33 +176,33 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mAdditionalTranslationsBackup() { return mAdditionalTranslationsBackup; }
+    static auto& $mAdditionalTranslationsBackup() { return mAdditionalTranslationsBackup; }
 
-    auto& $mAdditionalTranslationsBackupMutex() { return mAdditionalTranslationsBackupMutex; }
+    static auto& $mAdditionalTranslationsBackupMutex() { return mAdditionalTranslationsBackupMutex; }
 
-    auto& $mCurrentLanguage() { return mCurrentLanguage; }
+    static auto& $mCurrentLanguage() { return mCurrentLanguage; }
 
-    auto& $mCurrentPackMetaLanguage() { return mCurrentPackMetaLanguage; }
+    static auto& $mCurrentPackMetaLanguage() { return mCurrentPackMetaLanguage; }
 
-    auto& $mEmptyLanguage() { return mEmptyLanguage; }
+    static auto& $mEmptyLanguage() { return mEmptyLanguage; }
 
-    auto& $mFormatDictionary() { return mFormatDictionary; }
+    static auto& $mFormatDictionary() { return mFormatDictionary; }
 
-    auto& $mLanguageCodes() { return mLanguageCodes; }
+    static auto& $mLanguageCodes() { return mLanguageCodes; }
 
-    auto& $mLanguageNames() { return mLanguageNames; }
+    static auto& $mLanguageNames() { return mLanguageNames; }
 
-    auto& $mLanguageSupportsHypenSplitting() { return mLanguageSupportsHypenSplitting; }
+    static auto& $mLanguageSupportsHypenSplitting() { return mLanguageSupportsHypenSplitting; }
 
-    auto& $mLanguages() { return mLanguages; }
+    static auto& $mLanguages() { return mLanguages; }
 
-    auto& $mPackKeywordLanguages() { return mPackKeywordLanguages; }
+    static auto& $mPackKeywordLanguages() { return mPackKeywordLanguages; }
 
-    auto& $mPackReservedKeys() { return mPackReservedKeys; }
+    static auto& $mPackReservedKeys() { return mPackReservedKeys; }
 
-    auto& $mResourcePackManager() { return mResourcePackManager; }
+    static auto& $mResourcePackManager() { return mResourcePackManager; }
 
-    auto& $mSubject() { return mSubject; }
+    static auto& $mSubject() { return mSubject; }
 
     // NOLINTEND
 };

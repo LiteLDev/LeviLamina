@@ -194,9 +194,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $threadBatch() { return threadBatch; }
+    static auto& $threadBatch() { return threadBatch; }
 
-    auto& $threadBuffer() { return threadBuffer; }
+    static auto& $threadBuffer() { return threadBuffer; }
 
     // NOLINTEND
 };

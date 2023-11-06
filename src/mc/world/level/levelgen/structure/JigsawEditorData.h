@@ -73,7 +73,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $JOINT_TYPE_TO_NAME() { return JOINT_TYPE_TO_NAME; }
+    static auto& $JOINT_TYPE_TO_NAME() { return JOINT_TYPE_TO_NAME; }
 
     // NOLINTEND
 };

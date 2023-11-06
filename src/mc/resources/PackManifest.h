@@ -212,7 +212,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $STRING_TO_PACK_SCOPE() { return STRING_TO_PACK_SCOPE; }
+    static auto& $STRING_TO_PACK_SCOPE() { return STRING_TO_PACK_SCOPE; }
 
     // NOLINTEND
 };

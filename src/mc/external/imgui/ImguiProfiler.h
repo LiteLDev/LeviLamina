@@ -191,11 +191,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sPendingRecords() { return sPendingRecords; }
+    static auto& $sPendingRecords() { return sPendingRecords; }
 
-    auto& $sProduceRecords() { return sProduceRecords; }
+    static auto& $sProduceRecords() { return sProduceRecords; }
 
-    auto& $sRecordMutex() { return sRecordMutex; }
+    static auto& $sRecordMutex() { return sRecordMutex; }
 
     // NOLINTEND
 };

@@ -105,9 +105,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sWeakThis() { return sWeakThis; }
+    static auto& $sWeakThis() { return sWeakThis; }
 
-    auto& $sWeakThisMutex() { return sWeakThisMutex; }
+    static auto& $sWeakThisMutex() { return sWeakThisMutex; }
 
     // NOLINTEND
 };

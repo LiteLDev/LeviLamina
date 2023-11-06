@@ -31,7 +31,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mEasingFuncs() { return mEasingFuncs; }
+    static auto& $mEasingFuncs() { return mEasingFuncs; }
 
     // NOLINTEND
 };

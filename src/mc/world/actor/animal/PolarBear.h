@@ -103,7 +103,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $STAND_ANIMATION_TICKS() { return STAND_ANIMATION_TICKS; }
+    static auto& $STAND_ANIMATION_TICKS() { return STAND_ANIMATION_TICKS; }
 
     // NOLINTEND
 };

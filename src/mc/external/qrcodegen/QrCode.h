@@ -30,13 +30,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $PENALTY_N1() { return PENALTY_N1; }
+    static auto& $PENALTY_N1() { return PENALTY_N1; }
 
-    auto& $PENALTY_N2() { return PENALTY_N2; }
+    static auto& $PENALTY_N2() { return PENALTY_N2; }
 
-    auto& $PENALTY_N3() { return PENALTY_N3; }
+    static auto& $PENALTY_N3() { return PENALTY_N3; }
 
-    auto& $PENALTY_N4() { return PENALTY_N4; }
+    static auto& $PENALTY_N4() { return PENALTY_N4; }
 
     // NOLINTEND
 };

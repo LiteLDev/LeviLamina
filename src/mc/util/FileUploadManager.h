@@ -112,9 +112,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $BOUNDARY() { return BOUNDARY; }
+    static auto& $BOUNDARY() { return BOUNDARY; }
 
-    auto& $CHUNK_UPLOAD_SIZE() { return CHUNK_UPLOAD_SIZE; }
+    static auto& $CHUNK_UPLOAD_SIZE() { return CHUNK_UPLOAD_SIZE; }
 
     // NOLINTEND
 };

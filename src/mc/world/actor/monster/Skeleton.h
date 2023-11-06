@@ -124,7 +124,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $SPEED_MODIFIER_ATTACK_UUID() { return SPEED_MODIFIER_ATTACK_UUID; }
+    static auto& $SPEED_MODIFIER_ATTACK_UUID() { return SPEED_MODIFIER_ATTACK_UUID; }
 
     // NOLINTEND
 };

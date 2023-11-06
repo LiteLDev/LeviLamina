@@ -110,7 +110,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $ITEMS_SIZE() { return ITEMS_SIZE; }
+    static auto& $ITEMS_SIZE() { return ITEMS_SIZE; }
 
     // NOLINTEND
 };

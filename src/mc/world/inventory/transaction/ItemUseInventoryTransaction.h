@@ -74,7 +74,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $actionTypeMap() { return actionTypeMap; }
+    static auto& $actionTypeMap() { return actionTypeMap; }
 
     // NOLINTEND
 };

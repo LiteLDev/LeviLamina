@@ -26,7 +26,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mReportsTelemetry() { return mReportsTelemetry; }
+    static auto& $mReportsTelemetry() { return mReportsTelemetry; }
 
     // NOLINTEND
 };

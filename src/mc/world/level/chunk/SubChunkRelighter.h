@@ -157,19 +157,19 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits() {
+    static auto& $mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits() {
         return mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
     }
 
-    auto& $mOuterEdgeOfComputationBits() { return mOuterEdgeOfComputationBits; }
+    static auto& $mOuterEdgeOfComputationBits() { return mOuterEdgeOfComputationBits; }
 
-    auto& $sDarkSpinLock() { return sDarkSpinLock; }
+    static auto& $sDarkSpinLock() { return sDarkSpinLock; }
 
-    auto& $sFullyDarkSubChunk() { return sFullyDarkSubChunk; }
+    static auto& $sFullyDarkSubChunk() { return sFullyDarkSubChunk; }
 
-    auto& $sFullyLitSubChunk() { return sFullyLitSubChunk; }
+    static auto& $sFullyLitSubChunk() { return sFullyLitSubChunk; }
 
-    auto& $sLitSpinLock() { return sLitSpinLock; }
+    static auto& $sLitSpinLock() { return sLitSpinLock; }
 
     // NOLINTEND
 };

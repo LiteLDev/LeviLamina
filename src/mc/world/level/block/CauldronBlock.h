@@ -294,11 +294,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $BASE_WATER_PIXEL() { return BASE_WATER_PIXEL; }
+    static auto& $BASE_WATER_PIXEL() { return BASE_WATER_PIXEL; }
 
-    auto& $CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
+    static auto& $CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
 
-    auto& $PIXEL_PER_LEVEL() { return PIXEL_PER_LEVEL; }
+    static auto& $PIXEL_PER_LEVEL() { return PIXEL_PER_LEVEL; }
 
     // NOLINTEND
 };

@@ -36,7 +36,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $pushSlotPredictionResultMap() { return pushSlotPredictionResultMap; }
+    static auto& $pushSlotPredictionResultMap() { return pushSlotPredictionResultMap; }
 
     // NOLINTEND
 };

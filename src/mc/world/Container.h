@@ -225,7 +225,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $containerTypeMap() { return containerTypeMap; }
+    static auto& $containerTypeMap() { return containerTypeMap; }
 
     // NOLINTEND
 };

@@ -30,7 +30,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mAlwaysBlockableDamageCauses() { return mAlwaysBlockableDamageCauses; }
+    static auto& $mAlwaysBlockableDamageCauses() { return mAlwaysBlockableDamageCauses; }
 
     // NOLINTEND
 };

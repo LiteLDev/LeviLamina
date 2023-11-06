@@ -144,7 +144,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mMayTakeIsSetup() { return mMayTakeIsSetup; }
+    static auto& $mMayTakeIsSetup() { return mMayTakeIsSetup; }
 
     // NOLINTEND
 };

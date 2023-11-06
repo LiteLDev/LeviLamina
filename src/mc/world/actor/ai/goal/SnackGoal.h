@@ -86,19 +86,19 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
+    static auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
 
-    auto& $EATING_TIME() { return EATING_TIME; }
+    static auto& $EATING_TIME() { return EATING_TIME; }
 
-    auto& $PATH_RANGE() { return PATH_RANGE; }
+    static auto& $PATH_RANGE() { return PATH_RANGE; }
 
-    auto& $RANDOM_EATING_END() { return RANDOM_EATING_END; }
+    static auto& $RANDOM_EATING_END() { return RANDOM_EATING_END; }
 
-    auto& $RANDOM_EATING_START() { return RANDOM_EATING_START; }
+    static auto& $RANDOM_EATING_START() { return RANDOM_EATING_START; }
 
-    auto& $SEARCH_SIZE() { return SEARCH_SIZE; }
+    static auto& $SEARCH_SIZE() { return SEARCH_SIZE; }
 
-    auto& $STOP_DIST_SQRD() { return STOP_DIST_SQRD; }
+    static auto& $STOP_DIST_SQRD() { return STOP_DIST_SQRD; }
 
     // NOLINTEND
 };

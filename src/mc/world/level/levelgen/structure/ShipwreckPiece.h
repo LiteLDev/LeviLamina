@@ -49,7 +49,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $STRUCTURE_SHIPWRECK_TYPES() { return STRUCTURE_SHIPWRECK_TYPES; }
+    static auto& $STRUCTURE_SHIPWRECK_TYPES() { return STRUCTURE_SHIPWRECK_TYPES; }
 
     // NOLINTEND
 };

@@ -224,7 +224,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mCombinedItemRegistryInstance() { return mCombinedItemRegistryInstance; }
+    static auto& $mCombinedItemRegistryInstance() { return mCombinedItemRegistryInstance; }
 
     // NOLINTEND
 };

@@ -157,9 +157,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $DWELLING_ROLES() { return DWELLING_ROLES; }
+    static auto& $DWELLING_ROLES() { return DWELLING_ROLES; }
 
-    auto& $DWELLING_TYPES() { return DWELLING_TYPES; }
+    static auto& $DWELLING_TYPES() { return DWELLING_TYPES; }
 
     // NOLINTEND
 };

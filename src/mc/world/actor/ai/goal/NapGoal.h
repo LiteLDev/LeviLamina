@@ -62,7 +62,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $MOB_DETECT_TIME() { return MOB_DETECT_TIME; }
+    static auto& $MOB_DETECT_TIME() { return MOB_DETECT_TIME; }
 
     // NOLINTEND
 };

@@ -92,7 +92,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mBeardKernel() { return mBeardKernel; }
+    static auto& $mBeardKernel() { return mBeardKernel; }
 
     // NOLINTEND
 };

@@ -29,7 +29,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $MAX_CHUNK_ATTEMPTS() { return MAX_CHUNK_ATTEMPTS; }
+    static auto& $MAX_CHUNK_ATTEMPTS() { return MAX_CHUNK_ATTEMPTS; }
 
     // NOLINTEND
 };

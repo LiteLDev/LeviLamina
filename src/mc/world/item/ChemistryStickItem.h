@@ -168,19 +168,19 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $ACTIVATION_TIMESTAMP_TAG() { return ACTIVATION_TIMESTAMP_TAG; }
+    static auto& $ACTIVATION_TIMESTAMP_TAG() { return ACTIVATION_TIMESTAMP_TAG; }
 
-    auto& $ACTIVE_BIT() { return ACTIVE_BIT; }
+    static auto& $ACTIVE_BIT() { return ACTIVE_BIT; }
 
-    auto& $COLOR_BITS() { return COLOR_BITS; }
+    static auto& $COLOR_BITS() { return COLOR_BITS; }
 
-    auto& $COLOR_MASK() { return COLOR_MASK; }
+    static auto& $COLOR_MASK() { return COLOR_MASK; }
 
-    auto& $DAMAGE_BITS() { return DAMAGE_BITS; }
+    static auto& $DAMAGE_BITS() { return DAMAGE_BITS; }
 
-    auto& $DAMAGE_MASK() { return DAMAGE_MASK; }
+    static auto& $DAMAGE_MASK() { return DAMAGE_MASK; }
 
-    auto& $DAMAGE_START_BIT() { return DAMAGE_START_BIT; }
+    static auto& $DAMAGE_START_BIT() { return DAMAGE_START_BIT; }
 
     // NOLINTEND
 };

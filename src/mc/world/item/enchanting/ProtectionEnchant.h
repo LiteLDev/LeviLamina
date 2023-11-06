@@ -66,9 +66,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $THORNS_CHANCE_PER_LEVEL() { return THORNS_CHANCE_PER_LEVEL; }
+    static auto& $THORNS_CHANCE_PER_LEVEL() { return THORNS_CHANCE_PER_LEVEL; }
 
-    auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
+    static auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
 
     // NOLINTEND
 };

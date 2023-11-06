@@ -124,9 +124,9 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $SPAWN_BONUS_UUID() { return SPAWN_BONUS_UUID; }
+    static auto& $SPAWN_BONUS_UUID() { return SPAWN_BONUS_UUID; }
 
-    auto& $SPAWN_REINFORCEMENTS_CHANCE() { return SPAWN_REINFORCEMENTS_CHANCE; }
+    static auto& $SPAWN_REINFORCEMENTS_CHANCE() { return SPAWN_REINFORCEMENTS_CHANCE; }
 
     // NOLINTEND
 };

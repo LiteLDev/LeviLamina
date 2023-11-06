@@ -32,7 +32,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mSaveAllFileList() { return mSaveAllFileList; }
+    static auto& $mSaveAllFileList() { return mSaveAllFileList; }
 
     // NOLINTEND
 };

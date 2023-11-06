@@ -787,7 +787,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mServerItemsUsedInCreativeItems() { return mServerItemsUsedInCreativeItems; }
+    static auto& $mServerItemsUsedInCreativeItems() { return mServerItemsUsedInCreativeItems; }
 
     // NOLINTEND
 };

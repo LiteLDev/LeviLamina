@@ -204,9 +204,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mInsertSettings() { return mInsertSettings; }
+    static auto& $mInsertSettings() { return mInsertSettings; }
 
-    auto& $mOverwriteSettings() { return mOverwriteSettings; }
+    static auto& $mOverwriteSettings() { return mOverwriteSettings; }
 
     // NOLINTEND
 };

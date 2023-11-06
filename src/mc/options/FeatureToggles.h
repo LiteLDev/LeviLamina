@@ -111,7 +111,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mFeatureToggles() { return mFeatureToggles; }
+    static auto& $mFeatureToggles() { return mFeatureToggles; }
 
     // NOLINTEND
 };

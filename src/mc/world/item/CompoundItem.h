@@ -137,9 +137,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mIdToSpecialCompound() { return mIdToSpecialCompound; }
+    static auto& $mIdToSpecialCompound() { return mIdToSpecialCompound; }
 
-    auto& $mTypeToSpecialCompound() { return mTypeToSpecialCompound; }
+    static auto& $mTypeToSpecialCompound() { return mTypeToSpecialCompound; }
 
     // NOLINTEND
 };

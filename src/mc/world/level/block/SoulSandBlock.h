@@ -189,7 +189,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION() { return SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION; }
+    static auto& $SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION() { return SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION; }
 
     // NOLINTEND
 };

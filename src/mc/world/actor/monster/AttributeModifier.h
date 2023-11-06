@@ -88,7 +88,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mInvalidUUID() { return mInvalidUUID; }
+    static auto& $mInvalidUUID() { return mInvalidUUID; }
 
     // NOLINTEND
 };

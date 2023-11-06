@@ -99,25 +99,25 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $FOLIAGE_BOTTOM_LEFT() { return FOLIAGE_BOTTOM_LEFT; }
+    static auto& $FOLIAGE_BOTTOM_LEFT() { return FOLIAGE_BOTTOM_LEFT; }
 
-    auto& $FOLIAGE_BOTTOM_RIGHT() { return FOLIAGE_BOTTOM_RIGHT; }
+    static auto& $FOLIAGE_BOTTOM_RIGHT() { return FOLIAGE_BOTTOM_RIGHT; }
 
-    auto& $FOLIAGE_TOP_LEFT() { return FOLIAGE_TOP_LEFT; }
+    static auto& $FOLIAGE_TOP_LEFT() { return FOLIAGE_TOP_LEFT; }
 
-    auto& $FOLIAGE_TOP_RIGHT() { return FOLIAGE_TOP_RIGHT; }
+    static auto& $FOLIAGE_TOP_RIGHT() { return FOLIAGE_TOP_RIGHT; }
 
-    auto& $GRASS_BOTTOM_LEFT() { return GRASS_BOTTOM_LEFT; }
+    static auto& $GRASS_BOTTOM_LEFT() { return GRASS_BOTTOM_LEFT; }
 
-    auto& $GRASS_BOTTOM_RIGHT() { return GRASS_BOTTOM_RIGHT; }
+    static auto& $GRASS_BOTTOM_RIGHT() { return GRASS_BOTTOM_RIGHT; }
 
-    auto& $GRASS_TOP_LEFT() { return GRASS_TOP_LEFT; }
+    static auto& $GRASS_TOP_LEFT() { return GRASS_TOP_LEFT; }
 
-    auto& $GRASS_TOP_RIGHT() { return GRASS_TOP_RIGHT; }
+    static auto& $GRASS_TOP_RIGHT() { return GRASS_TOP_RIGHT; }
 
-    auto& $mFoliagePalettes() { return mFoliagePalettes; }
+    static auto& $mFoliagePalettes() { return mFoliagePalettes; }
 
-    auto& $mGrassPalettes() { return mGrassPalettes; }
+    static auto& $mGrassPalettes() { return mGrassPalettes; }
 
     // NOLINTEND
 };
