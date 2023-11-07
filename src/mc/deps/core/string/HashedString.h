@@ -52,6 +52,7 @@ public:
     }
 
     [[nodiscard]] constexpr HashedString& operator=(HashedString&& other) noexcept {
+        if (this == &other) { return *this; }
         hash            = other.hash;
         str             = std::move(other.str);
         lastMatch       = other.lastMatch;
