@@ -18,7 +18,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1DouseFireSubcomponent@@UEAA@XZ
     virtual ~DouseFireSubcomponent() = default;
 
     // vIndex: 1, symbol: ?readfromJSON@DouseFireSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z

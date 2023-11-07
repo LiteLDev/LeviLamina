@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1DialogueCommand@@UEAA@XZ
     virtual ~DialogueCommand() = default;
 
     // vIndex: 2, symbol: ?execute@DialogueCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z

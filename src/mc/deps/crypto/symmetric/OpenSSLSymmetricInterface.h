@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1OpenSSLSymmetricInterface@Symmetric@@@UEAA@XZ
-    virtual ~OpenSSLSymmetricInterface();
+    // vIndex: 0, symbol: __gen_??1OpenSSLSymmetricInterface@Symmetric@Crypto@@UEAA@XZ
+    virtual ~OpenSSLSymmetricInterface() = default;
 
     // vIndex: 1, symbol:
     // ?init@OpenSSLSymmetricInterface@Symmetric@Crypto@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z

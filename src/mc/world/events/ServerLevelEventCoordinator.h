@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ServerLevelEventCoordinator@@UEAA@XZ
     virtual ~ServerLevelEventCoordinator() = default;
 
     // symbol: ?sendLevelAddedPlayer@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVPlayer@@@Z

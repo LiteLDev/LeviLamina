@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1StopCommand@@UEAA@XZ
     virtual ~StopCommand() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1

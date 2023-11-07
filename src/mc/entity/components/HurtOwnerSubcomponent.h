@@ -18,7 +18,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1HurtOwnerSubcomponent@@UEAA@XZ
     virtual ~HurtOwnerSubcomponent() = default;
 
     // vIndex: 1, symbol: ?readfromJSON@HurtOwnerSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z

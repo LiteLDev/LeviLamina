@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1PinkPetalsFeature@@UEAA@XZ
     virtual ~PinkPetalsFeature() = default;
 
     // vIndex: 3, symbol: ?place@PinkPetalsFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z

@@ -20,7 +20,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1WearableItemComponent@@UEAA@XZ
     virtual ~WearableItemComponent() = default;
 
     // vIndex: 9, symbol: ?_initializeComponent@WearableItemComponent@@UEBAXXZ

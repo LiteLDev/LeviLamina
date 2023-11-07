@@ -29,7 +29,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1OldLogBlock@@UEAA@XZ
     virtual ~OldLogBlock() = default;
 
     // vIndex: 22, symbol: __unk_vfn_22

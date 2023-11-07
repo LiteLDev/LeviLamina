@@ -30,8 +30,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ThrottledAccessFileSystem@@@UEAA@XZ
-    virtual ~ThrottledAccessFileSystem();
+    // vIndex: 0, symbol: __gen_??1ThrottledAccessFileSystem@Core@@UEAA@XZ
+    virtual ~ThrottledAccessFileSystem() = default;
 
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NullFrameBuilder@framebuilder@@@UEAA@XZ
-    virtual ~NullFrameBuilder();
+    // vIndex: 0, symbol: __gen_??1NullFrameBuilder@framebuilder@mce@@UEAA@XZ
+    virtual ~NullFrameBuilder() = default;
 
     // NOLINTEND
 };

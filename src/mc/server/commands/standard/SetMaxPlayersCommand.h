@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SetMaxPlayersCommand@@UEAA@XZ
     virtual ~SetMaxPlayersCommand() = default;
 
     // vIndex: 2, symbol: ?execute@SetMaxPlayersCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z

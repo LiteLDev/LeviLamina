@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1TrailRuinsStart@@UEAA@XZ
     virtual ~TrailRuinsStart() = default;
 
     // vIndex: 2, symbol: ?isValid@TrailRuinsStart@@UEBA_NXZ

@@ -16,7 +16,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1DropperContainerManagerModel@@UEAA@XZ
     virtual ~DropperContainerManagerModel() = default;
 
     // vIndex: 17, symbol: ?_postInit@DropperContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ

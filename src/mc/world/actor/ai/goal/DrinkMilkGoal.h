@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1DrinkMilkDefinition@@@UEAA@XZ
-        virtual ~DrinkMilkDefinition();
+        // vIndex: 0, symbol: __gen_??1DrinkMilkDefinition@DrinkMilkGoal@@UEAA@XZ
+        virtual ~DrinkMilkDefinition() = default;
 
         // symbol: ?initialize@DrinkMilkDefinition@DrinkMilkGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class DrinkMilkGoal&) const;
@@ -52,7 +52,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1DrinkMilkGoal@@UEAA@XZ
     virtual ~DrinkMilkGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@DrinkMilkGoal@@UEAA_NXZ

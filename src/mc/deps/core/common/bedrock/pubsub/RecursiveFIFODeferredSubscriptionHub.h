@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RecursiveFIFODeferredSubscriptionHub@PubSub@@@UEAA@XZ
-    virtual ~RecursiveFIFODeferredSubscriptionHub();
+    // vIndex: 0, symbol: __gen_??1RecursiveFIFODeferredSubscriptionHub@PubSub@Bedrock@@UEAA@XZ
+    virtual ~RecursiveFIFODeferredSubscriptionHub() = default;
 
     // NOLINTEND
 };

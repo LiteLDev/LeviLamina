@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1PlayDefinition@@@UEAA@XZ
-        virtual ~PlayDefinition();
+        // vIndex: 0, symbol: __gen_??1PlayDefinition@PlayGoal@@UEAA@XZ
+        virtual ~PlayDefinition() = default;
 
         // symbol: ?initialize@PlayDefinition@PlayGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class PlayGoal&) const;
@@ -55,7 +55,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1PlayGoal@@UEAA@XZ
     virtual ~PlayGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@PlayGoal@@UEAA_NXZ

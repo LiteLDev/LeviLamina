@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1CollectCommand@@@UEAA@XZ
-    virtual ~CollectCommand();
+    // vIndex: 0, symbol: __gen_??1CollectCommand@AgentCommands@@UEAA@XZ
+    virtual ~CollectCommand() = default;
 
     // vIndex: 1, symbol: ?execute@CollectCommand@AgentCommands@@UEAAXXZ
     virtual void execute();

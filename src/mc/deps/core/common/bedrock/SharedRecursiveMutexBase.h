@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SharedRecursiveMutexBase@Threading@@@UEAA@XZ
-    virtual ~SharedRecursiveMutexBase();
+    // vIndex: 0, symbol: __gen_??1SharedRecursiveMutexBase@Threading@Bedrock@@UEAA@XZ
+    virtual ~SharedRecursiveMutexBase() = default;
 
     // vIndex: 1, symbol: ?_threadHoldsSharedLock@SharedRecursiveMutex@Threading@Bedrock@@MEAA_NVid@thread@std@@@Z
     virtual bool _threadHoldsSharedLock(std::thread::id) = 0;

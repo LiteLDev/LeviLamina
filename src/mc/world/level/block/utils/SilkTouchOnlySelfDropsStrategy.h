@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SilkTouchOnlySelfDropsStrategy@@@UEAA@XZ
-    virtual ~SilkTouchOnlySelfDropsStrategy();
+    // vIndex: 0, symbol: __gen_??1SilkTouchOnlySelfDropsStrategy@VanillaBlockDrops@@UEAA@XZ
+    virtual ~SilkTouchOnlySelfDropsStrategy() = default;
 
     // vIndex: 1, symbol:
     // ?getResourceDrops@SilkTouchOnlySelfDropsStrategy@VanillaBlockDrops@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z

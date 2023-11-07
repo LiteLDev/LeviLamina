@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptContainer@@@UEAA@XZ
-    virtual ~ScriptContainer();
+    // vIndex: 0, symbol: __gen_??1ScriptContainer@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptContainer() = default;
 
     // vIndex: 1, symbol: ?getSize@ScriptContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@H$$V@Scripting@@XZ
     virtual class Scripting::Result<int> getSize() const;

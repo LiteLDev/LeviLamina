@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1GameTestRuleHelper@@@UEAA@XZ
-    virtual ~GameTestRuleHelper();
+    // vIndex: 0, symbol: __gen_??1GameTestRuleHelper@gametest@@UEAA@XZ
+    virtual ~GameTestRuleHelper() = default;
 
     // vIndex: 1, symbol: ?addRuleToClear@GameTestRuleHelper@gametest@@UEAAXH@Z
     virtual void addRuleToClear(int);

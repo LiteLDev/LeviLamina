@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlayerDeathInfoFacet@@@UEAA@XZ
-    virtual ~PlayerDeathInfoFacet();
+    // vIndex: 0, symbol: __gen_??1PlayerDeathInfoFacet@OreUI@@UEAA@XZ
+    virtual ~PlayerDeathInfoFacet() = default;
 
     // NOLINTEND
 };

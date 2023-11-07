@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptGameTestFunctionContext@@@UEAA@XZ
-    virtual ~ScriptGameTestFunctionContext();
+    // vIndex: 0, symbol: __gen_??1ScriptGameTestFunctionContext@ScriptModuleGameTest@@UEAA@XZ
+    virtual ~ScriptGameTestFunctionContext() = default;
 
     // symbol:
     // ??0ScriptGameTestFunctionContext@ScriptModuleGameTest@@QEAA@VWeakLifetimeScope@Scripting@@AEAVBaseGameTestHelper@gametest@@@Z

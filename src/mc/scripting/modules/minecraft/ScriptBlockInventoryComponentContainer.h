@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptBlockInventoryComponentContainer@@@UEAA@XZ
-    virtual ~ScriptBlockInventoryComponentContainer();
+    // vIndex: 0, symbol: __gen_??1ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockInventoryComponentContainer() = default;
 
     // vIndex: 2, symbol:
     // ?getEmptySlotsCount@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@UEBA?AV?$Result@H$$V@Scripting@@XZ

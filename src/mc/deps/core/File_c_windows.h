@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1File_c_windows@@@UEAA@XZ
-    virtual ~File_c_windows();
+    // vIndex: 0, symbol: __gen_??1File_c_windows@Core@@UEAA@XZ
+    virtual ~File_c_windows() = default;
 
     // vIndex: 1, symbol:
     // ?_getPath@File_c_windows@Core@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@XZ

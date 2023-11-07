@@ -30,7 +30,7 @@ public:
     // vIndex: 4, symbol: ?reloadHardcoded@FishingHook@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void reloadHardcoded(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1FishingHook@@UEAA@XZ
     virtual ~FishingHook() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11

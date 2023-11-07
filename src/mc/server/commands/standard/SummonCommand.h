@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SummonCommand@@UEAA@XZ
     virtual ~SummonCommand() = default;
 
     // vIndex: 2, symbol: ?execute@SummonCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z

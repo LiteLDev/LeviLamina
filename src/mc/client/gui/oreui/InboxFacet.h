@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1InboxFacet@@@UEAA@XZ
-    virtual ~InboxFacet();
+    // vIndex: 0, symbol: __gen_??1InboxFacet@OreUI@@UEAA@XZ
+    virtual ~InboxFacet() = default;
 
     // NOLINTEND
 };

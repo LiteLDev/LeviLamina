@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1WaterlilyFeature@@UEAA@XZ
     virtual ~WaterlilyFeature() = default;
 
     // vIndex: 3, symbol: ?place@WaterlilyFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z

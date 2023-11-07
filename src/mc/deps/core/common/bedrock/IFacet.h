@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IFacet@@@UEAA@XZ
-    virtual ~IFacet();
+    // vIndex: 0, symbol: __gen_??1IFacet@OreUI@@UEAA@XZ
+    virtual ~IFacet() = default;
 
     // NOLINTEND
 };

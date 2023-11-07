@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Definition@@@UEAA@XZ
-        virtual ~Definition();
+        // vIndex: 0, symbol: __gen_??1Definition@SonicBoomGoal@@UEAA@XZ
+        virtual ~Definition() = default;
 
         // symbol: ?initialize@Definition@SonicBoomGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class SonicBoomGoal&) const;
@@ -52,7 +52,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SonicBoomGoal@@UEAA@XZ
     virtual ~SonicBoomGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SonicBoomGoal@@UEAA_NXZ

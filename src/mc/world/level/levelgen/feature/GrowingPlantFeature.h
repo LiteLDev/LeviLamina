@@ -35,7 +35,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1GrowingPlantFeature@@UEAA@XZ
     virtual ~GrowingPlantFeature() = default;
 
     // vIndex: 1, symbol:

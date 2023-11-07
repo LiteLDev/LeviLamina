@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1InternalHeapAllocator@Memory@@@UEAA@XZ
-    virtual ~InternalHeapAllocator();
+    // vIndex: 0, symbol: __gen_??1InternalHeapAllocator@Memory@Bedrock@@UEAA@XZ
+    virtual ~InternalHeapAllocator() = default;
 
     // vIndex: 1, symbol: ?allocate@InternalHeapAllocator@Memory@Bedrock@@UEAAPEAX_K@Z
     virtual void* allocate(uint64);

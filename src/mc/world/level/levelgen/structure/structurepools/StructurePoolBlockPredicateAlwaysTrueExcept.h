@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1StructurePoolBlockPredicateAlwaysTrueExcept@@UEAA@XZ
     virtual ~StructurePoolBlockPredicateAlwaysTrueExcept() = default;
 
     // vIndex: 1, symbol: ?test@StructurePoolBlockPredicateAlwaysTrueExcept@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z

@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ITrait@@@UEAA@XZ
-    virtual ~ITrait();
+    // vIndex: 0, symbol: __gen_??1ITrait@BlockTrait@@UEAA@XZ
+    virtual ~ITrait() = default;
 
     // vIndex: 1, symbol: ?applyToBlockLegacy@PlacementDirection@BlockTrait@@UEBAXAEAVBlockLegacy@@@Z
     virtual void applyToBlockLegacy(class BlockLegacy&) const = 0;

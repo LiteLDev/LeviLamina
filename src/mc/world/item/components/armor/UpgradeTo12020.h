@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1UpgradeTo12020@@@UEAA@XZ
-    virtual ~UpgradeTo12020();
+    // vIndex: 0, symbol: __gen_??1UpgradeTo12020@ArmorItemComponentVersioning@@UEAA@XZ
+    virtual ~UpgradeTo12020() = default;
 
     // vIndex: 1, symbol: ?previousSchema@UpgradeTo12020@ArmorItemComponentVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z
     virtual void previousSchema(class cereal::SchemaFactory&) const;

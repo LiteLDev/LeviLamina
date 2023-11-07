@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1MoveToLandGoal@@UEAA@XZ
     virtual ~MoveToLandGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@MoveToLandGoal@@UEAA_NXZ

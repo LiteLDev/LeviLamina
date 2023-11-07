@@ -59,8 +59,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1EntityInside@@@UEAA@XZ
-    virtual ~EntityInside();
+    // vIndex: 0, symbol: __gen_??1EntityInside@EntityInsideSystemImpl@@UEAA@XZ
+    virtual ~EntityInside() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();

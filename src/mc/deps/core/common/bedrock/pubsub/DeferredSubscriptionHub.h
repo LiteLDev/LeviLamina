@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DeferredSubscriptionHub@PubSub@@@UEAA@XZ
-    virtual ~DeferredSubscriptionHub();
+    // vIndex: 0, symbol: __gen_??1DeferredSubscriptionHub@PubSub@Bedrock@@UEAA@XZ
+    virtual ~DeferredSubscriptionHub() = default;
 
     // vIndex: 1, symbol: ?runDeferredEvents@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_K_K@Z
     virtual uint64 runDeferredEvents(uint64) = 0;

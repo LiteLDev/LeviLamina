@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1StorageArea_windows@@@UEAA@XZ
-    virtual ~StorageArea_windows();
+    // vIndex: 0, symbol: __gen_??1StorageArea_windows@Core@@UEAA@XZ
+    virtual ~StorageArea_windows() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();

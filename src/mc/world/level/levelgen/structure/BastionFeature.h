@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1BastionFeature@@UEAA@XZ
     virtual ~BastionFeature() = default;
 
     // vIndex: 2, symbol: ?shouldPostProcessMobs@BastionFeature@@UEBA_NXZ

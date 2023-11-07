@@ -29,7 +29,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1DragonFireball@@UEAA@XZ
     virtual ~DragonFireball() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11

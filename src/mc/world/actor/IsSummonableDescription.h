@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1IsSummonableDescription@@UEAA@XZ
     virtual ~IsSummonableDescription() = default;
 
     // vIndex: 1, symbol: ?getJsonName@IsSummonableDescription@@UEBAPEBDXZ

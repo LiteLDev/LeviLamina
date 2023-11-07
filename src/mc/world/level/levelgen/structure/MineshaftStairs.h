@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1MineshaftStairs@@UEAA@XZ
     virtual ~MineshaftStairs() = default;
 
     // vIndex: 2, symbol: ?getType@MineshaftStairs@@UEBA?AW4StructurePieceType@@XZ

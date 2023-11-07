@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptItemActorComponentFactory@@@UEAA@XZ
-    virtual ~ScriptItemActorComponentFactory();
+    // vIndex: 0, symbol: __gen_??1ScriptItemActorComponentFactory@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptItemActorComponentFactory() = default;
 
     // vIndex: 1, symbol:
     // ?createComponent@ScriptItemActorComponentFactory@ScriptModuleMinecraft@@UEAA?AV?$StrongTypedObjectHandle@VScriptActorComponent@ScriptModuleMinecraft@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

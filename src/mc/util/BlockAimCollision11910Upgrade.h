@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockAimCollision11910Upgrade@@@UEAA@XZ
-    virtual ~BlockAimCollision11910Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockAimCollision11910Upgrade@BlockSelectionBoxVersioning@@UEAA@XZ
+    virtual ~BlockAimCollision11910Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockAimCollision11910Upgrade@BlockSelectionBoxVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

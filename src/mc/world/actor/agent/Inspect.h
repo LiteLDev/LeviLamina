@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Inspect@@@UEAA@XZ
-    virtual ~Inspect();
+    // vIndex: 0, symbol: __gen_??1Inspect@AgentCommands@@UEAA@XZ
+    virtual ~Inspect() = default;
 
     // vIndex: 2, symbol: ?execute@Inspect@AgentCommands@@EEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

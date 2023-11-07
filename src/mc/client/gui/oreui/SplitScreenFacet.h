@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SplitScreenFacet@@@UEAA@XZ
-    virtual ~SplitScreenFacet();
+    // vIndex: 0, symbol: __gen_??1SplitScreenFacet@OreUI@@UEAA@XZ
+    virtual ~SplitScreenFacet() = default;
 
     // NOLINTEND
 };

@@ -25,8 +25,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1PillagerOutpostPiece@@@UEAA@XZ
-        virtual ~PillagerOutpostPiece();
+        // vIndex: 0, symbol: __gen_??1PillagerOutpostPiece@PillagerOutpostPieces@@UEAA@XZ
+        virtual ~PillagerOutpostPiece() = default;
 
         // vIndex: 4, symbol:
         // ?postProcess@PillagerOutpostPiece@PillagerOutpostPieces@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z

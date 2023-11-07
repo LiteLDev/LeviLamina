@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DebugData@@@UEAA@XZ
-    virtual ~DebugData();
+    // vIndex: 0, symbol: __gen_??1DebugData@OreUI@@UEAA@XZ
+    virtual ~DebugData() = default;
 
     // NOLINTEND
 };

@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SubClientLoginPacket@@UEAA@XZ
     virtual ~SubClientLoginPacket() = default;
 
     // vIndex: 1, symbol: ?getId@SubClientLoginPacket@@UEBA?AW4MinecraftPacketIds@@XZ

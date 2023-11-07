@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Manager@@@UEAA@XZ
-    virtual ~Manager();
+    // vIndex: 0, symbol: __gen_??1Manager@CodeBuilder@@UEAA@XZ
+    virtual ~Manager() = default;
 
     // vIndex: 1, symbol:
     // ?getAutomationClient@Manager@CodeBuilder@@UEBA?AV?$not_null@V?$NonOwnerPointer@VAutomationClient@Automation@@@Bedrock@@@gsl@@XZ

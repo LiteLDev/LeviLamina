@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1GetItemCountCommand@@@UEAA@XZ
-    virtual ~GetItemCountCommand();
+    // vIndex: 0, symbol: __gen_??1GetItemCountCommand@AgentCommands@@UEAA@XZ
+    virtual ~GetItemCountCommand() = default;
 
     // vIndex: 1, symbol: ?execute@GetItemCountCommand@AgentCommands@@UEAAXXZ
     virtual void execute();

@@ -27,7 +27,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1EndRodBlock@@UEAA@XZ
     virtual ~EndRodBlock() = default;
 
     // vIndex: 12, symbol: ?getVisualShape@EndRodBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z

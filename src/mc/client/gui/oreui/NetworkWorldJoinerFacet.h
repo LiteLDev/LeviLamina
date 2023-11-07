@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NetworkWorldJoinerFacet@@@UEAA@XZ
-    virtual ~NetworkWorldJoinerFacet();
+    // vIndex: 0, symbol: __gen_??1NetworkWorldJoinerFacet@OreUI@@UEAA@XZ
+    virtual ~NetworkWorldJoinerFacet() = default;
 
     // NOLINTEND
 };

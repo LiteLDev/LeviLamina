@@ -30,8 +30,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MemoryFileSystem@@@UEAA@XZ
-    virtual ~MemoryFileSystem();
+    // vIndex: 0, symbol: __gen_??1MemoryFileSystem@Core@@UEAA@XZ
+    virtual ~MemoryFileSystem() = default;
 
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();

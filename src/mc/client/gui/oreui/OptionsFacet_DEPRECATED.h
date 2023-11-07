@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1OptionsFacet_DEPRECATED@@@UEAA@XZ
-    virtual ~OptionsFacet_DEPRECATED();
+    // vIndex: 0, symbol: __gen_??1OptionsFacet_DEPRECATED@OreUI@@UEAA@XZ
+    virtual ~OptionsFacet_DEPRECATED() = default;
 
     // NOLINTEND
 };

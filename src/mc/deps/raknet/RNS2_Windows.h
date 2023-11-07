@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RNS2_Windows@@@UEAA@XZ
-    virtual ~RNS2_Windows();
+    // vIndex: 0, symbol: __gen_??1RNS2_Windows@RakNet@@UEAA@XZ
+    virtual ~RNS2_Windows() = default;
 
     // vIndex: 1, symbol: ?Send@RNS2_Windows@RakNet@@UEAAHPEAURNS2_SendParameters@2@PEBDI@Z
     virtual int Send(struct RakNet::RNS2_SendParameters*, char const*, uint);

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1TextureSetImageContainer@@@UEAA@XZ
-    virtual ~TextureSetImageContainer();
+    // vIndex: 0, symbol: __gen_??1TextureSetImageContainer@cg@@UEAA@XZ
+    virtual ~TextureSetImageContainer() = default;
 
     // NOLINTEND
 };

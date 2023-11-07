@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1MoveTowardsDwellingRestrictionGoal@@UEAA@XZ
     virtual ~MoveTowardsDwellingRestrictionGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@MoveTowardsDwellingRestrictionGoal@@UEAA_NXZ

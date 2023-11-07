@@ -13,7 +13,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1StructurePoolBlockPredicateAlwaysTrue@@UEAA@XZ
     virtual ~StructurePoolBlockPredicateAlwaysTrue() = default;
 
     // symbol: ?test@StructurePoolBlockPredicateAlwaysTrue@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z

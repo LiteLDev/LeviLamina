@@ -62,8 +62,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PriorityDeferredSubscriptionHub@PubSub@@@UEAA@XZ
-    virtual ~PriorityDeferredSubscriptionHub();
+    // vIndex: 0, symbol: __gen_??1PriorityDeferredSubscriptionHub@PubSub@Bedrock@@UEAA@XZ
+    virtual ~PriorityDeferredSubscriptionHub() = default;
 
     // vIndex: 3, symbol: ?flushPendingEvents@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@UEAAXXZ
     virtual void flushPendingEvents();

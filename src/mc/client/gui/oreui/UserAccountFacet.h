@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1UserAccountFacet@@@UEAA@XZ
-    virtual ~UserAccountFacet();
+    // vIndex: 0, symbol: __gen_??1UserAccountFacet@OreUI@@UEAA@XZ
+    virtual ~UserAccountFacet() = default;
 
     // NOLINTEND
 };

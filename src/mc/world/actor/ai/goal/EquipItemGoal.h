@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Definition@@@UEAA@XZ
-        virtual ~Definition();
+        // vIndex: 0, symbol: __gen_??1Definition@EquipItemGoal@@UEAA@XZ
+        virtual ~Definition() = default;
 
         // symbol: ?initialize@Definition@EquipItemGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class EquipItemGoal&) const;
@@ -52,7 +52,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1EquipItemGoal@@UEAA@XZ
     virtual ~EquipItemGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@EquipItemGoal@@UEAA_NXZ

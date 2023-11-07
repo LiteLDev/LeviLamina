@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SfatFile@SFAT@@@UEAA@XZ
-    virtual ~SfatFile();
+    // vIndex: 0, symbol: __gen_??1SfatFile@SFAT@Core@@UEAA@XZ
+    virtual ~SfatFile() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();

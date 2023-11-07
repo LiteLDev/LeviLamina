@@ -29,8 +29,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptLevelEventListener@@@UEAA@XZ
-    virtual ~ScriptLevelEventListener();
+    // vIndex: 0, symbol: __gen_??1ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptLevelEventListener() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();

@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1NBMonsterThrone@@UEAA@XZ
     virtual ~NBMonsterThrone() = default;
 
     // vIndex: 2, symbol: ?getType@NBMonsterThrone@@UEBA?AW4StructurePieceType@@XZ

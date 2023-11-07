@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PublisherDisconnector@Detail@PubSub@@@UEAA@XZ
-    virtual ~PublisherDisconnector();
+    // vIndex: 0, symbol: __gen_??1PublisherDisconnector@Detail@PubSub@Bedrock@@UEAA@XZ
+    virtual ~PublisherDisconnector() = default;
 
     // NOLINTEND
 };

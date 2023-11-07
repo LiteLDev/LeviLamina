@@ -28,7 +28,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1CopperBlock@@UEAA@XZ
     virtual ~CopperBlock() = default;
 
     // vIndex: 19, symbol: ?onLightningHit@CopperBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z

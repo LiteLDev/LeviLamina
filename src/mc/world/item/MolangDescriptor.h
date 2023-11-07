@@ -54,7 +54,7 @@ public:
     // vIndex: 12, symbol: ?getHash@MolangDescriptor@@UEBA_KXZ
     virtual uint64 getHash() const;
 
-    // vIndex: 15, symbol: ??1@@UEAA@XZ
+    // vIndex: 15, symbol: __gen_??1MolangDescriptor@@UEAA@XZ
     virtual ~MolangDescriptor() = default;
 
     // symbol:

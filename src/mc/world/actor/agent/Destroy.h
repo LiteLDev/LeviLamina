@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Destroy@@@UEAA@XZ
-    virtual ~Destroy();
+    // vIndex: 0, symbol: __gen_??1Destroy@AgentCommands@@UEAA@XZ
+    virtual ~Destroy() = default;
 
     // vIndex: 2, symbol: ?execute@Destroy@AgentCommands@@EEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

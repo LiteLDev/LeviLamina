@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1HarvestFarmBlockGoal@@UEAA@XZ
     virtual ~HarvestFarmBlockGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@HarvestFarmBlockGoal@@UEAA_NXZ

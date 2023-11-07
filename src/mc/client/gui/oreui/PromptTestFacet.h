@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PromptTestFacet@@@UEAA@XZ
-    virtual ~PromptTestFacet();
+    // vIndex: 0, symbol: __gen_??1PromptTestFacet@OreUI@@UEAA@XZ
+    virtual ~PromptTestFacet() = default;
 
     // NOLINTEND
 };

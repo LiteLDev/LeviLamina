@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1MinecraftCommands@@UEAA@XZ
     virtual ~MinecraftCommands() = default;
 
     // symbol: ??0MinecraftCommands@@QEAA@AEAVMinecraft@@@Z

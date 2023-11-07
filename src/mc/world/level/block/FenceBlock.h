@@ -27,7 +27,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1FenceBlock@@UEAA@XZ
     virtual ~FenceBlock() = default;
 
     // vIndex: 5, symbol:

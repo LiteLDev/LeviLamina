@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1LookAtTradingPlayerGoal@@UEAA@XZ
     virtual ~LookAtTradingPlayerGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@LookAtTradingPlayerGoal@@UEAA_NXZ

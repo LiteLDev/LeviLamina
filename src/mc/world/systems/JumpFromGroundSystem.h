@@ -64,8 +64,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1JumpFromGroundSystem@@@UEAA@XZ
-    virtual ~JumpFromGroundSystem();
+    // vIndex: 0, symbol: __gen_??1JumpFromGroundSystem@MobJumpFromGroundSystemImpl@@UEAA@XZ
+    virtual ~JumpFromGroundSystem() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();

@@ -29,8 +29,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BaseScriptBlockLiquidContainerComponent@@@UEAA@XZ
-    virtual ~BaseScriptBlockLiquidContainerComponent();
+    // vIndex: 0, symbol: __gen_??1BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~BaseScriptBlockLiquidContainerComponent() = default;
 
     // vIndex: 1, symbol: ?_isValid@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;

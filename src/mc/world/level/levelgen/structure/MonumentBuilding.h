@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1MonumentBuilding@@UEAA@XZ
     virtual ~MonumentBuilding() = default;
 
     // vIndex: 2, symbol: ?getType@MonumentBuilding@@UEBA?AW4StructurePieceType@@XZ

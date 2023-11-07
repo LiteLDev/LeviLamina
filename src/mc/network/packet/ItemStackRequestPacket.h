@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ItemStackRequestPacket@@UEAA@XZ
     virtual ~ItemStackRequestPacket() = default;
 
     // vIndex: 1, symbol: ?getId@ItemStackRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ

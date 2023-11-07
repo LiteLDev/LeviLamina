@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ResourceAllowList@@@UEAA@XZ
-    virtual ~ResourceAllowList();
+    // vIndex: 0, symbol: __gen_??1ResourceAllowList@OreUI@@UEAA@XZ
+    virtual ~ResourceAllowList() = default;
 
     // NOLINTEND
 };

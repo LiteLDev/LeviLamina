@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1NBBridgeStraight@@UEAA@XZ
     virtual ~NBBridgeStraight() = default;
 
     // vIndex: 2, symbol: ?getType@NBBridgeStraight@@UEBA?AW4StructurePieceType@@XZ

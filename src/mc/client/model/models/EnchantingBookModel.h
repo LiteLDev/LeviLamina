@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1EnchantingBookModel@@UEAA@XZ
     virtual ~EnchantingBookModel() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IUserManager@@@UEAA@XZ
-    virtual ~IUserManager();
+    // vIndex: 0, symbol: __gen_??1IUserManager@Social@@UEAA@XZ
+    virtual ~IUserManager() = default;
 
     // NOLINTEND
 };

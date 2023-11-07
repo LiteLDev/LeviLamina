@@ -34,8 +34,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptScoreboard@@@UEAA@XZ
-    virtual ~ScriptScoreboard();
+    // vIndex: 0, symbol: __gen_??1ScriptScoreboard@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptScoreboard() = default;
 
     // symbol:
     // ??0ScriptScoreboard@ScriptModuleMinecraft@@QEAA@AEAVScoreboard@@AEAVLevel@@AEBVWeakLifetimeScope@Scripting@@@Z

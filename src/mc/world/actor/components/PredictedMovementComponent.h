@@ -114,8 +114,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1RuntimePredictionData@@@UEAA@XZ
-        virtual ~RuntimePredictionData();
+        // vIndex: 0, symbol: __gen_??1RuntimePredictionData@PredictedMovementComponent@@UEAA@XZ
+        virtual ~RuntimePredictionData() = default;
 
         // symbol: ??0RuntimePredictionData@PredictedMovementComponent@@QEAA@XZ
         MCAPI RuntimePredictionData();

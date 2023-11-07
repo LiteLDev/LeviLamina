@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScreenReaderFacet@@@UEAA@XZ
-    virtual ~ScreenReaderFacet();
+    // vIndex: 0, symbol: __gen_??1ScreenReaderFacet@OreUI@@UEAA@XZ
+    virtual ~ScreenReaderFacet() = default;
 
     // NOLINTEND
 };

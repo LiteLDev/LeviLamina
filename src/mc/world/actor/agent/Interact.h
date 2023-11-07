@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Interact@@@UEAA@XZ
-    virtual ~Interact();
+    // vIndex: 0, symbol: __gen_??1Interact@AgentCommands@@UEAA@XZ
+    virtual ~Interact() = default;
 
     // vIndex: 2, symbol: ?execute@Interact@AgentCommands@@EEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

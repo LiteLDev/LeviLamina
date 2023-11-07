@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockLightDampening11940Upgrade@@@UEAA@XZ
-    virtual ~BlockLightDampening11940Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockLightDampening11940Upgrade@BlockLightDampeningVersioning@@UEAA@XZ
+    virtual ~BlockLightDampening11940Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockLightDampening11940Upgrade@BlockLightDampeningVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

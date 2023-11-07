@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1INetherNetTransportInterface@@@UEAA@XZ
-    virtual ~INetherNetTransportInterface();
+    // vIndex: 0, symbol: __gen_??1INetherNetTransportInterface@NetherNet@@UEAA@XZ
+    virtual ~INetherNetTransportInterface() = default;
 
     // NOLINTEND
 };

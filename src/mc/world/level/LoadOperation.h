@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LoadOperation@@@UEAA@XZ
-    virtual ~LoadOperation();
+    // vIndex: 0, symbol: __gen_??1LoadOperation@PositionTrackingDB@@UEAA@XZ
+    virtual ~LoadOperation() = default;
 
     // vIndex: 1, symbol:
     // ?tick@AsyncOperationBase@PositionTrackingDB@@UEAA_NV?$weak_ptr@VPositionTrackingDBServer@PositionTrackingDB@@@std@@AEAVTrackingRecord@2@@Z

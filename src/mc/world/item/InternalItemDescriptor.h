@@ -50,7 +50,7 @@ public:
     // vIndex: 12, symbol: ?getHash@InternalItemDescriptor@@UEBA_KXZ
     virtual uint64 getHash() const;
 
-    // vIndex: 15, symbol: ??1@@UEAA@XZ
+    // vIndex: 15, symbol: __gen_??1InternalItemDescriptor@@UEAA@XZ
     virtual ~InternalItemDescriptor() = default;
 
     // symbol:

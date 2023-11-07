@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1UseDurationItemComponent@@UEAA@XZ
     virtual ~UseDurationItemComponent() = default;
 
     // vIndex: 9, symbol: ?_initializeComponent@UseDurationItemComponent@@UEBAXXZ

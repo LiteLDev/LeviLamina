@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IView@@@UEAA@XZ
-    virtual ~IView();
+    // vIndex: 0, symbol: __gen_??1IView@OreUI@@UEAA@XZ
+    virtual ~IView() = default;
 
     // NOLINTEND
 };

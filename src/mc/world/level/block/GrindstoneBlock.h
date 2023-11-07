@@ -27,7 +27,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1GrindstoneBlock@@UEAA@XZ
     virtual ~GrindstoneBlock() = default;
 
     // vIndex: 12, symbol: ?getVisualShape@GrindstoneBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z

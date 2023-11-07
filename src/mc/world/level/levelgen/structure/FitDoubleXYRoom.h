@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1FitDoubleXYRoom@@UEAA@XZ
     virtual ~FitDoubleXYRoom() = default;
 
     // vIndex: 1, symbol: ?fits@FitDoubleXYRoom@@UEBA_NAEBVRoomDefinition@@@Z

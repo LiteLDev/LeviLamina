@@ -33,8 +33,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptItemEventListener@@@UEAA@XZ
-    virtual ~ScriptItemEventListener();
+    // vIndex: 0, symbol: __gen_??1ScriptItemEventListener@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptItemEventListener() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();

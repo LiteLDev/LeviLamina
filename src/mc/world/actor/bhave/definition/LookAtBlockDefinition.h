@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1LookAtBlockDefinition@@UEAA@XZ
     virtual ~LookAtBlockDefinition() = default;
 
     // vIndex: 1, symbol: ?load@LookAtBlockDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z

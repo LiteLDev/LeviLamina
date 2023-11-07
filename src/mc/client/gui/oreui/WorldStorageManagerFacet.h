@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WorldStorageManagerFacet@@@UEAA@XZ
-    virtual ~WorldStorageManagerFacet();
+    // vIndex: 0, symbol: __gen_??1WorldStorageManagerFacet@OreUI@@UEAA@XZ
+    virtual ~WorldStorageManagerFacet() = default;
 
     // NOLINTEND
 };

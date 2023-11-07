@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LoggingInterfaceGeneric@Http@@@UEAA@XZ
-    virtual ~LoggingInterfaceGeneric();
+    // vIndex: 0, symbol: __gen_??1LoggingInterfaceGeneric@Http@Bedrock@@UEAA@XZ
+    virtual ~LoggingInterfaceGeneric() = default;
 
     // vIndex: 1, symbol: ?threadId@LoggingInterfaceGeneric@Http@Bedrock@@UEAA_KXZ
     virtual uint64 threadId();

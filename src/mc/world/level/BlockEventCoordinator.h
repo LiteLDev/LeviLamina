@@ -18,7 +18,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1BlockEventCoordinator@@UEAA@XZ
     virtual ~BlockEventCoordinator() = default;
 
     // symbol: ?getBlockGameplayHandler@BlockEventCoordinator@@QEAAAEAVBlockGameplayHandler@@XZ

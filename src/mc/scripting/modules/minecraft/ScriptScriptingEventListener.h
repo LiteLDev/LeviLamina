@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptScriptingEventListener@@@UEAA@XZ
-    virtual ~ScriptScriptingEventListener();
+    // vIndex: 0, symbol: __gen_??1ScriptScriptingEventListener@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptScriptingEventListener() = default;
 
     // vIndex: 1, symbol:
     // ?onEvent@ScriptScriptingEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScriptCommandMessageEvent@@@Z

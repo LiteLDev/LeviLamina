@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RealmListFacet_DEPRECATED@@@UEAA@XZ
-    virtual ~RealmListFacet_DEPRECATED();
+    // vIndex: 0, symbol: __gen_??1RealmListFacet_DEPRECATED@OreUI@@UEAA@XZ
+    virtual ~RealmListFacet_DEPRECATED() = default;
 
     // NOLINTEND
 };

@@ -20,7 +20,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ActorInactivityTimerTest@@UEAA@XZ
     virtual ~ActorInactivityTimerTest() = default;
 
     // vIndex: 2, symbol: ?evaluate@ActorInactivityTimerTest@@UEBA_NAEBUFilterContext@@@Z

@@ -58,8 +58,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1ConnectionCallbacks@@@UEAA@XZ
-        virtual ~ConnectionCallbacks();
+        // vIndex: 0, symbol: __gen_??1ConnectionCallbacks@RakNetConnector@@UEAA@XZ
+        virtual ~ConnectionCallbacks() = default;
 
         // NOLINTEND
     };
@@ -110,8 +110,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1RakNetNetworkPeer@@@UEAA@XZ
-        virtual ~RakNetNetworkPeer();
+        // vIndex: 0, symbol: __gen_??1RakNetNetworkPeer@RakNetConnector@@UEAA@XZ
+        virtual ~RakNetNetworkPeer() = default;
 
         // vIndex: 1, symbol:
         // ?sendPacket@RakNetNetworkPeer@RakNetConnector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@W4Compressibility@@@Z

@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SpreadPlayersCommand@@UEAA@XZ
     virtual ~SpreadPlayersCommand() = default;
 
     // vIndex: 2, symbol: ?execute@SpreadPlayersCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z

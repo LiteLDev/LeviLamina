@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WebSocketInterface_android@Http@@@UEAA@XZ
-    virtual ~WebSocketInterface_android();
+    // vIndex: 0, symbol: __gen_??1WebSocketInterface_android@Http@Bedrock@@UEAA@XZ
+    virtual ~WebSocketInterface_android() = default;
 
     // NOLINTEND
 };

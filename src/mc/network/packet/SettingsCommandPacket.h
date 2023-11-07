@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SettingsCommandPacket@@UEAA@XZ
     virtual ~SettingsCommandPacket() = default;
 
     // vIndex: 1, symbol: ?getId@SettingsCommandPacket@@UEBA?AW4MinecraftPacketIds@@XZ

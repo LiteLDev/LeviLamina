@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WebSocketInterface_windows@Http@@@UEAA@XZ
-    virtual ~WebSocketInterface_windows();
+    // vIndex: 0, symbol: __gen_??1WebSocketInterface_windows@Http@Bedrock@@UEAA@XZ
+    virtual ~WebSocketInterface_windows() = default;
 
     // NOLINTEND
 };

@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NotificationsFacet@@@UEAA@XZ
-    virtual ~NotificationsFacet();
+    // vIndex: 0, symbol: __gen_??1NotificationsFacet@OreUI@@UEAA@XZ
+    virtual ~NotificationsFacet() = default;
 
     // NOLINTEND
 };

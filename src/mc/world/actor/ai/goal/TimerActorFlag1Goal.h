@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Definition@@@UEAA@XZ
-        virtual ~Definition();
+        // vIndex: 0, symbol: __gen_??1Definition@TimerActorFlag1Goal@@UEAA@XZ
+        virtual ~Definition() = default;
 
         // symbol:
         // ?buildSchema@Definition@TimerActorFlag1Goal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@TimerActorFlag1Goal@@@JsonUtil@@@4@@Z
@@ -49,7 +49,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1TimerActorFlag1Goal@@UEAA@XZ
     virtual ~TimerActorFlag1Goal() = default;
 
     // symbol: ??0TimerActorFlag1Goal@@QEAA@AEAVMob@@@Z

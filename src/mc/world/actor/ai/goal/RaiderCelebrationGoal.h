@@ -29,8 +29,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1RaiderCelebrationDefinition@@@UEAA@XZ
-        virtual ~RaiderCelebrationDefinition();
+        // vIndex: 0, symbol: __gen_??1RaiderCelebrationDefinition@RaiderCelebrationGoal@@UEAA@XZ
+        virtual ~RaiderCelebrationDefinition() = default;
 
         // symbol: ??0RaiderCelebrationDefinition@RaiderCelebrationGoal@@QEAA@XZ
         MCAPI RaiderCelebrationDefinition();
@@ -58,7 +58,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1RaiderCelebrationGoal@@UEAA@XZ
     virtual ~RaiderCelebrationGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@RaiderCelebrationGoal@@UEAA_NXZ

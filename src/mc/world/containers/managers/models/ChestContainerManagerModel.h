@@ -17,7 +17,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ChestContainerManagerModel@@UEAA@XZ
     virtual ~ChestContainerManagerModel() = default;
 
     // vIndex: 16, symbol: ?isValid@ChestContainerManagerModel@@UEAA_NM@Z

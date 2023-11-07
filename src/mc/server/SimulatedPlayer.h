@@ -50,7 +50,7 @@ public:
     // ?initializeComponents@SimulatedPlayer@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void initializeComponents(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1SimulatedPlayer@@UEAA@XZ
     virtual ~SimulatedPlayer() = default;
 
     // vIndex: 14, symbol: __unk_vfn_14

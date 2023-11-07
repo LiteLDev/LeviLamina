@@ -16,7 +16,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SleepGoal@@UEAA@XZ
     virtual ~SleepGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SleepGoal@@UEAA_NXZ

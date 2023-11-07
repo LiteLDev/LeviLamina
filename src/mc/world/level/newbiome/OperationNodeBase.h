@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1OperationNodeBase@@@UEAA@XZ
-    virtual ~OperationNodeBase();
+    // vIndex: 0, symbol: __gen_??1OperationNodeBase@OperationNodeDetails@@UEAA@XZ
+    virtual ~OperationNodeBase() = default;
 
     // vIndex: 1, symbol: ?init@OperationNodeBase@OperationNodeDetails@@UEAAX_J@Z
     virtual void init(int64);

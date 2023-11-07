@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlayerReportFacet@@@UEAA@XZ
-    virtual ~PlayerReportFacet();
+    // vIndex: 0, symbol: __gen_??1PlayerReportFacet@OreUI@@UEAA@XZ
+    virtual ~PlayerReportFacet() = default;
 
     // NOLINTEND
 };

@@ -28,7 +28,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1CutCopperSlab@@UEAA@XZ
     virtual ~CutCopperSlab() = default;
 
     // vIndex: 19, symbol: ?onLightningHit@CutCopperSlab@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z

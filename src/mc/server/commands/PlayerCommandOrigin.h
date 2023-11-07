@@ -24,7 +24,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1PlayerCommandOrigin@@UEAA@XZ
     virtual ~PlayerCommandOrigin() = default;
 
     // vIndex: 1, symbol:

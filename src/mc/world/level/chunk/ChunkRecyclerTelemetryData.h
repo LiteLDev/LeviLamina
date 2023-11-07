@@ -44,7 +44,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ChunkRecyclerTelemetryData@@UEAA@XZ
     virtual ~ChunkRecyclerTelemetryData() = default;
 
     // symbol: ??0ChunkRecyclerTelemetryData@@QEAA@XZ

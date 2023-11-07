@@ -31,7 +31,7 @@ public:
     // vIndex: 4, symbol: ?reloadHardcoded@Balloon@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void reloadHardcoded(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1Balloon@@UEAA@XZ
     virtual ~Balloon() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11

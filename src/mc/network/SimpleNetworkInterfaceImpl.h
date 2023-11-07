@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SimpleNetworkInterfaceImpl@@@UEAA@XZ
-    virtual ~SimpleNetworkInterfaceImpl();
+    // vIndex: 0, symbol: __gen_??1SimpleNetworkInterfaceImpl@NetherNet@@UEAA@XZ
+    virtual ~SimpleNetworkInterfaceImpl() = default;
 
     // NOLINTEND
 };

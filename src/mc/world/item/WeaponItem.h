@@ -27,7 +27,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1WeaponItem@@UEAA@XZ
     virtual ~WeaponItem() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11

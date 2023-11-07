@@ -39,7 +39,7 @@ public:
         class BlockPos
     ) const;
 
-    // vIndex: 12, symbol: ??1@@UEAA@XZ
+    // vIndex: 12, symbol: __gen_??1FeaturePoolElement@@UEAA@XZ
     virtual ~FeaturePoolElement() = default;
 
     // symbol:

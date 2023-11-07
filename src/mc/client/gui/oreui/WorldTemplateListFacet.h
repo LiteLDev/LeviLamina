@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WorldTemplateListFacet@@@UEAA@XZ
-    virtual ~WorldTemplateListFacet();
+    // vIndex: 0, symbol: __gen_??1WorldTemplateListFacet@OreUI@@UEAA@XZ
+    virtual ~WorldTemplateListFacet() = default;
 
     // NOLINTEND
 };

@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1WorldBuilderCommand@@UEAA@XZ
     virtual ~WorldBuilderCommand() = default;
 
     // vIndex: 2, symbol: ?execute@WorldBuilderCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z

@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1TestForCommand@@UEAA@XZ
     virtual ~TestForCommand() = default;
 
     // vIndex: 2, symbol: ?execute@TestForCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z

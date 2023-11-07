@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1HttpInterface_android@Http@@@UEAA@XZ
-    virtual ~HttpInterface_android();
+    // vIndex: 0, symbol: __gen_??1HttpInterface_android@Http@Bedrock@@UEAA@XZ
+    virtual ~HttpInterface_android() = default;
 
     // NOLINTEND
 };

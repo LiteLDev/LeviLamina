@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PendingConditionals@Threading@@@UEAA@XZ
-    virtual ~PendingConditionals();
+    // vIndex: 0, symbol: __gen_??1PendingConditionals@Threading@Bedrock@@UEAA@XZ
+    virtual ~PendingConditionals() = default;
 
     // NOLINTEND
 };

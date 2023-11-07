@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ManagerListenerProxy@@@UEAA@XZ
-    virtual ~ManagerListenerProxy();
+    // vIndex: 0, symbol: __gen_??1ManagerListenerProxy@DynamicPackageControl@@UEAA@XZ
+    virtual ~ManagerListenerProxy() = default;
 
     // NOLINTEND
 };

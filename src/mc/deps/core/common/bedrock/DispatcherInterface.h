@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DispatcherInterface@Http@@@UEAA@XZ
-    virtual ~DispatcherInterface();
+    // vIndex: 0, symbol: __gen_??1DispatcherInterface@Http@Bedrock@@UEAA@XZ
+    virtual ~DispatcherInterface() = default;
 
     // NOLINTEND
 };

@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptAsyncGameTestFunctionRunResult@@@UEAA@XZ
-    virtual ~ScriptAsyncGameTestFunctionRunResult();
+    // vIndex: 0, symbol: __gen_??1ScriptAsyncGameTestFunctionRunResult@ScriptModuleGameTest@@UEAA@XZ
+    virtual ~ScriptAsyncGameTestFunctionRunResult() = default;
 
     // vIndex: 1, symbol: ?isComplete@ScriptAsyncGameTestFunctionRunResult@ScriptModuleGameTest@@UEBA_NXZ
     virtual bool isComplete() const;

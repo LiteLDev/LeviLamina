@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RealmsStoriesRealmDataFacet@@@UEAA@XZ
-    virtual ~RealmsStoriesRealmDataFacet();
+    // vIndex: 0, symbol: __gen_??1RealmsStoriesRealmDataFacet@OreUI@@UEAA@XZ
+    virtual ~RealmsStoriesRealmDataFacet() = default;
 
     // NOLINTEND
 };

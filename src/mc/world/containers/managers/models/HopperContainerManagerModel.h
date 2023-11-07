@@ -16,7 +16,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1HopperContainerManagerModel@@UEAA@XZ
     virtual ~HopperContainerManagerModel() = default;
 
     // vIndex: 17, symbol: ?_postInit@HopperContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ

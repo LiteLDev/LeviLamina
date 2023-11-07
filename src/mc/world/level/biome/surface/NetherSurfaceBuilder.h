@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NetherSurfaceBuilder@@@UEAA@XZ
-    virtual ~NetherSurfaceBuilder();
+    // vIndex: 0, symbol: __gen_??1NetherSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
+    virtual ~NetherSurfaceBuilder() = default;
 
     // vIndex: 1, symbol: ?init@NetherSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
     virtual void init(class EntityContext&, uint);

@@ -41,7 +41,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1EnchantBookForTradingFunction@@UEAA@XZ
     virtual ~EnchantBookForTradingFunction() = default;
 
     // vIndex: 1, symbol: ?apply@EnchantBookForTradingFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z

@@ -32,8 +32,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ValidationSystem@@@UEAA@XZ
-    virtual ~ValidationSystem();
+    // vIndex: 0, symbol: __gen_??1ValidationSystem@PlayerValidation@@UEAA@XZ
+    virtual ~ValidationSystem() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();

@@ -71,7 +71,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ChalkboardBlockActor@@UEAA@XZ
     virtual ~ChalkboardBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@ChalkboardBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z

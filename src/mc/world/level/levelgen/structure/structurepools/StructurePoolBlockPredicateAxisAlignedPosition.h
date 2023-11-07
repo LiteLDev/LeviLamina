@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1StructurePoolBlockPredicateAxisAlignedPosition@@UEAA@XZ
     virtual ~StructurePoolBlockPredicateAxisAlignedPosition() = default;
 
     // vIndex: 1, symbol: ?test@StructurePoolBlockPredicateAxisAlignedPosition@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z

@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ToggleControl@@@UEAA@XZ
-    virtual ~ToggleControl();
+    // vIndex: 0, symbol: __gen_??1ToggleControl@ScriptModuleMinecraftServerUI@@UEAA@XZ
+    virtual ~ToggleControl() = default;
 
     // vIndex: 1, symbol: ?getJson@ToggleControl@ScriptModuleMinecraftServerUI@@UEBA?AVValue@Json@@XZ
     virtual class Json::Value getJson() const;

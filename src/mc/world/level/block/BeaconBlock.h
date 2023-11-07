@@ -27,7 +27,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1BeaconBlock@@UEAA@XZ
     virtual ~BeaconBlock() = default;
 
     // vIndex: 22, symbol: __unk_vfn_22

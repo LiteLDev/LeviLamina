@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1GameMode@@UEAA@XZ
     virtual ~GameMode() = default;
 
     // vIndex: 1, symbol: ?startDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z

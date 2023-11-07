@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptAsyncGameTestFunction@@@UEAA@XZ
-    virtual ~ScriptAsyncGameTestFunction();
+    // vIndex: 0, symbol: __gen_??1ScriptAsyncGameTestFunction@ScriptModuleGameTest@@UEAA@XZ
+    virtual ~ScriptAsyncGameTestFunction() = default;
 
     // vIndex: 2, symbol:
     // ?run@ScriptAsyncGameTestFunction@ScriptModuleGameTest@@UEBA?AV?$unique_ptr@VIGameTestFunctionRunResult@gametest@@U?$default_delete@VIGameTestFunctionRunResult@gametest@@@std@@@std@@AEAVBaseGameTestHelper@gametest@@AEAVIGameTestFunctionContext@6@@Z

@@ -17,8 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FileStream@@@UEAA@XZ
-    virtual ~FileStream();
+    // vIndex: 0, symbol: __gen_??1FileStream@Core@@UEAA@XZ
+    virtual ~FileStream() = default;
 
     // symbol: ??0FileStream@Core@@QEAA@XZ
     MCAPI FileStream();

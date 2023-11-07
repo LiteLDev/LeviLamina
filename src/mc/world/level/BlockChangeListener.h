@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockChangeListener@@@UEAA@XZ
-    virtual ~BlockChangeListener();
+    // vIndex: 0, symbol: __gen_??1BlockChangeListener@CraftingContainerManagerController@@UEAA@XZ
+    virtual ~BlockChangeListener() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();

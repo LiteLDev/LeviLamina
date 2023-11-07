@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1MakeLoveGoal@@UEAA@XZ
     virtual ~MakeLoveGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@MakeLoveGoal@@UEAA_NXZ

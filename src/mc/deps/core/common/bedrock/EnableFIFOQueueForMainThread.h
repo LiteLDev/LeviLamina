@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1EnableFIFOQueueForMainThread@Threading@@@UEAA@XZ
-    virtual ~EnableFIFOQueueForMainThread();
+    // vIndex: 0, symbol: __gen_??1EnableFIFOQueueForMainThread@Threading@Bedrock@@UEAA@XZ
+    virtual ~EnableFIFOQueueForMainThread() = default;
 
     // NOLINTEND
 };

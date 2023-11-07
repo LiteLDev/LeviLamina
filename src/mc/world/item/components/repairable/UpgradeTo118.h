@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1UpgradeTo118@@@UEAA@XZ
-    virtual ~UpgradeTo118();
+    // vIndex: 0, symbol: __gen_??1UpgradeTo118@RepairableItemComponentVersioning@@UEAA@XZ
+    virtual ~UpgradeTo118() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@UpgradeTo118@RepairableItemComponentVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

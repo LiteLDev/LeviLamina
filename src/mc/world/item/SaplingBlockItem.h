@@ -27,7 +27,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SaplingBlockItem@@UEAA@XZ
     virtual ~SaplingBlockItem() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11

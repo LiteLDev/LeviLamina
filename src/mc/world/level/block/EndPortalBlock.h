@@ -27,7 +27,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1EndPortalBlock@@UEAA@XZ
     virtual ~EndPortalBlock() = default;
 
     // vIndex: 8, symbol:

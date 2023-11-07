@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlayStreamEventListener@Events@@@UEAA@XZ
-    virtual ~PlayStreamEventListener();
+    // vIndex: 0, symbol: __gen_??1PlayStreamEventListener@Events@Social@@UEAA@XZ
+    virtual ~PlayStreamEventListener() = default;
 
     // NOLINTEND
 };

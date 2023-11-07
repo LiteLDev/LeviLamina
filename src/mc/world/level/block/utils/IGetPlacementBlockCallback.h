@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IGetPlacementBlockCallback@@@UEAA@XZ
-    virtual ~IGetPlacementBlockCallback();
+    // vIndex: 0, symbol: __gen_??1IGetPlacementBlockCallback@BlockTrait@@UEAA@XZ
+    virtual ~IGetPlacementBlockCallback() = default;
 
     // vIndex: 1, symbol:
     // ?getPlacementBlock@UpdateVerticalHalfGetPlacementBlockCallback@PlacementPosition@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z

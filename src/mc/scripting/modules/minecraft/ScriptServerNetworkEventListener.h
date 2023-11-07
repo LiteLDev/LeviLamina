@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptServerNetworkEventListener@@@UEAA@XZ
-    virtual ~ScriptServerNetworkEventListener();
+    // vIndex: 0, symbol: __gen_??1ScriptServerNetworkEventListener@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptServerNetworkEventListener() = default;
 
     // vIndex: 2, symbol:
     // ?onMessage@ScriptServerNetworkEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUMessageEvent@@@Z

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RealmsUriListener@@@UEAA@XZ
-    virtual ~RealmsUriListener();
+    // vIndex: 0, symbol: __gen_??1RealmsUriListener@Social@@UEAA@XZ
+    virtual ~RealmsUriListener() = default;
 
     // NOLINTEND
 };
