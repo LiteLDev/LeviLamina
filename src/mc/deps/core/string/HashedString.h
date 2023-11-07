@@ -103,12 +103,8 @@ public:
 
     [[nodiscard]] constexpr bool operator!=(HashedString const& other) const noexcept { return !(*this == other); }
 
-    template <typename StringType>
-    [[nodiscard]] constexpr std::strong_ordering operator<=>(StringType const& other) const noexcept {
-        return str <=> other.str;
-    }
-
     [[nodiscard]] constexpr std::strong_ordering operator<=>(HashedString const& other) const noexcept {
+        if (hash != other.hash) { return hash <=> other.hash; }
         return str <=> other.str;
     }
 

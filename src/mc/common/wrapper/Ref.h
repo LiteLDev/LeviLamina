@@ -261,7 +261,7 @@ public:
     }
 
     void releaseWeak() {
-        if (--weak_count == 0) { delete this; }
+        if (--weak_count == 0 && share_count == 0) { delete this; }
     }
 
 private:

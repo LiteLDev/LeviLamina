@@ -3,6 +3,7 @@
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 #include "mc/world/level/block/Block.h"
 #include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/definition/BlockDefinitionGroup.h"
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/material/Material.h"
 
@@ -28,4 +29,20 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     origin(ins);
     // SharedPtr<BlockLegacy>::makeShared("hl:wd", 1234, Material::getMaterial(MaterialType::Dirt));
     test();
+}
+
+LL_AUTO_TYPED_INSTANCE_HOOK(
+    BlockDefinitionGroupRegisterBlocks,
+    HookPriority::Normal,
+    BlockDefinitionGroup,
+    &BlockDefinitionGroup::registerBlocks,
+    void
+) {
+    auto& map                      = BlockTypeRegistry::$mBlockLookupMap();
+    map[HashedString("test:test")] = BlockTypeRegistry::lookupByName("minecraft:stone");
+
+    auto ptr = BlockTypeRegistry::lookupByName("test:test");
+
+    std::cout << "hii  " << bool(ptr) << std::endl;
+    origin();
 }
