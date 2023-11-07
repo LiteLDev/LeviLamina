@@ -11,8 +11,8 @@ public:
 
     TagMemoryChunk() = default;
 
-    template <class T>
-    [[nodiscard]] inline TagMemoryChunk(std::span<T> v) : mSize(v.size()),
+    template <class T, size_t N>
+    [[nodiscard]] inline TagMemoryChunk(std::span<T, N> v) : mSize(v.size()),
                                                           mCapacity(mSize * sizeof(T)) {
         this->mBuffer = std::make_unique_for_overwrite<uchar[]>(mCapacity);
         memcpy(this->mBuffer.get(), v.data(), mCapacity);

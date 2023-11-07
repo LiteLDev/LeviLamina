@@ -15,16 +15,13 @@ option("localbdslibrary")
 option_end()
 
 -- xmake-repo
-add_requires("asio 1.28.0")
 add_requires("entt v3.12.2")
 add_requires("gsl v4.0.0")
 add_requires("leveldb 1.23")
-add_requires("openssl 1.1.1-t")
 add_requires("rapidjson v1.1.0")
 
 -- ^^^ for mc / for ll vvv
 
-add_requires("cpp-httplib 0.14.0")
 add_requires("fmt 10.1.1")
 add_requires("magic_enum v0.9.0")
 add_requires("nlohmann_json v3.11.2")
@@ -65,7 +62,7 @@ target("LeviLamina")
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     add_files("src/**.cpp","src/**.rc")
     -- xmake-repo
-    add_packages("asio", "cpp-httplib", "entt", "fmt", "gsl", "gtest", "leveldb", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
+    add_packages("entt", "fmt", "gsl", "gtest", "leveldb", "magic_enum", "nlohmann_json", "rapidjson")
     -- liteldev-repo
     add_packages("pcg_cpp", "dyncall", "preloader", "symbolprovider", "ctre", "pfr")
     if has_config("localbdslibrary") then

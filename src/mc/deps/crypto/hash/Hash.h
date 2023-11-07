@@ -16,10 +16,23 @@ namespace Crypto::Hash {
 
 class Hash : public ::Crypto::Hash::IHash {
 public:
-    // prevent constructor by default
-    Hash& operator=(Hash const&);
-    Hash(Hash const&);
-    Hash();
+    Crypto::Hash::HashType               mHashType;
+    std::unique_ptr<Crypto::Hash::IHash> mHash;
+
+    [[nodiscard]] inline std::string toString() {
+        const char  mp[] = "0123456789abcdef";
+        std::string hex;
+        for (uchar x : final()) {
+            hex += mp[x / 16];
+            hex += mp[x % 16];
+        }
+        return hex;
+    }
+    inline void update(std::string_view data) { update(data.data(), (uint)data.size()); }
+    template <class T, size_t N>
+    inline void update(std::span<T, N> data) {
+        update(data.data(), (uint)(data.size() * sizeof(T)));
+    }
 
 public:
     // NOLINTBEGIN
