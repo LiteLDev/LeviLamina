@@ -122,11 +122,11 @@ public:
     /**
      * @brief Disconnect player's client
      */
-    LLAPI void disconnect(std::string const& reason) const;
+    LLAPI void disconnect(std::string_view reason) const;
     /**
      * @brief Send a message to player
      */
-    LLAPI void sendMessage(std::string const& msg) const;
+    LLAPI void sendMessage(std::string_view msg) const;
 
     // prevent constructor by default
     Player& operator=(Player const&);

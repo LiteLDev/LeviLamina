@@ -20,10 +20,10 @@ public:
     std::string              mXuid;       // this+0x98
     std::string              mPlatformId; // this+0xB8
 
-    [[nodiscard]] inline static TextPacket createRawMessage(std::string const& msg) {
+    [[nodiscard]] inline static TextPacket createRawMessage(std::string_view msg) {
         auto res     = TextPacket{};
         res.mType    = TextPacketType::Raw;
-        res.mMessage = msg;
+        res.mMessage.assign(msg);
         return res;
     }
 

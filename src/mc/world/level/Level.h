@@ -59,10 +59,6 @@ public:
 
     LLNDAPI optional_ref<Player> getPlayerByNameOrXUID(std::string const& info) const;
 
-    // LLAPI void broadcastText(std::string const& text, TextType type) const;
-    // LLAPI void broadcastTitle(std::string const& text, TitleType Type, int FadeInDuration, int
-    // RemainDuration, int FadeOutDuration) const;
-
     // LLAPI bool executeCommandAs(Player* player, std::string const& cmd) const;
     // LLAPI std::pair<bool, std::string> executeCommandEx(std::string const& cmd) const;
     // LLAPI bool executeCommand(std::string const& cmd) const;
