@@ -50,6 +50,9 @@ public:
     // vIndex: 12, symbol: ?getHash@InternalItemDescriptor@@UEBA_KXZ
     virtual uint64 getHash() const;
 
+    // vIndex: 15, symbol: ??1@@UEAA@XZ
+    virtual ~InternalItemDescriptor() = default;
+
     // symbol:
     // ?deserialize@InternalItemDescriptor@@SA?AV?$Result@V?$unique_ptr@UInternalItemDescriptor@@U?$default_delete@UInternalItemDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCAPI static class Bedrock::Result<std::unique_ptr<struct InternalItemDescriptor>>

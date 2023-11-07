@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1EntityComponentFactoryJson@@UEAA@XZ
-    MCVAPI ~EntityComponentFactoryJson();
+    // vIndex: 0, symbol: ??1EntityComponentFactoryJson@@UEAA@XZ
+    virtual ~EntityComponentFactoryJson();
 
     // symbol:
     // ?tryGetDefinitionSerializer@EntityComponentFactoryJson@@QEBAPEAVIJsonDefinitionSerializer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~SnackGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SnackGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -86,19 +86,19 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
+    static auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
 
-    auto& $EATING_TIME() { return EATING_TIME; }
+    static auto& $EATING_TIME() { return EATING_TIME; }
 
-    auto& $PATH_RANGE() { return PATH_RANGE; }
+    static auto& $PATH_RANGE() { return PATH_RANGE; }
 
-    auto& $RANDOM_EATING_END() { return RANDOM_EATING_END; }
+    static auto& $RANDOM_EATING_END() { return RANDOM_EATING_END; }
 
-    auto& $RANDOM_EATING_START() { return RANDOM_EATING_START; }
+    static auto& $RANDOM_EATING_START() { return RANDOM_EATING_START; }
 
-    auto& $SEARCH_SIZE() { return SEARCH_SIZE; }
+    static auto& $SEARCH_SIZE() { return SEARCH_SIZE; }
 
-    auto& $STOP_DIST_SQRD() { return STOP_DIST_SQRD; }
+    static auto& $STOP_DIST_SQRD() { return STOP_DIST_SQRD; }
 
     // NOLINTEND
 };

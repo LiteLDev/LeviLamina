@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1CreativeItemGroupCategory@@UEAA@XZ
-    MCVAPI ~CreativeItemGroupCategory();
+    // vIndex: 0, symbol: ??1CreativeItemGroupCategory@@UEAA@XZ
+    virtual ~CreativeItemGroupCategory();
 
     // symbol: ?addAnonymousGroup@CreativeItemGroupCategory@@QEAAPEAVCreativeGroupInfo@@XZ
     MCAPI class CreativeGroupInfo* addAnonymousGroup();

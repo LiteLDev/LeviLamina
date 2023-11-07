@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~AddActorEntityProxy() = default;
 
     // vIndex: 1, symbol: ?initializeActor@AddActorEntityProxy@@UEAAXAEAVActor@@@Z
     virtual void initializeActor(class Actor&);

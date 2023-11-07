@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1NetheriteArmorEquippedListener@@UEAA@XZ
+    virtual ~NetheriteArmorEquippedListener();
 
     // vIndex: 1, symbol:
     // ?onEvent@?$EventListenerDispatcher@VActorEventListener@@@@MEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
@@ -101,9 +101,6 @@ public:
 
     // vIndex: 28, symbol: ?onEvent@NetheriteArmorEquippedListener@@UEAA?AW4EventResult@@AEBUActorEquippedArmorEvent@@@Z
     virtual ::EventResult onEvent(struct ActorEquippedArmorEvent const&);
-
-    // symbol: ??1NetheriteArmorEquippedListener@@UEAA@XZ
-    MCVAPI ~NetheriteArmorEquippedListener();
 
     // NOLINTEND
 };

@@ -12,6 +12,13 @@ public:
     ActorComponentFactory(ActorComponentFactory const&);
     ActorComponentFactory();
 
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ActorComponentFactory() = default;
+
+    // NOLINTEND
+
     // private:
     // NOLINTBEGIN
     // symbol: ?_initialize@ActorComponentFactory@@AEAAXAEBVExperiments@@@Z

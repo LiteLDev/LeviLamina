@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FaceDirectionalBlock@@UEAA@XZ
+    virtual ~FaceDirectionalBlock();
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
@@ -160,9 +160,6 @@ public:
 
     // vIndex: 183, symbol: __unk_vfn_183
     virtual void __unk_vfn_183();
-
-    // symbol: ??1FaceDirectionalBlock@@UEAA@XZ
-    MCVAPI ~FaceDirectionalBlock();
 
     // symbol:
     // ??0FaceDirectionalBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_NM@Z

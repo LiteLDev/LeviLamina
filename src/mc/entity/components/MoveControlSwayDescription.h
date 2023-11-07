@@ -17,14 +17,11 @@ public:
     // vIndex: 0, symbol: ?getJsonName@MoveControlSwayDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1MoveControlSwayDescription@@UEAA@XZ
+    virtual ~MoveControlSwayDescription();
 
     // vIndex: 2, symbol: ?deserializeData@MoveControlSwayDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1MoveControlSwayDescription@@UEAA@XZ
-    MCVAPI ~MoveControlSwayDescription();
 
     // NOLINTEND
 };

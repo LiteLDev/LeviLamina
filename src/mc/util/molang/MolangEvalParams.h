@@ -82,7 +82,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mThreadLocalMolangEvalParams() { return mThreadLocalMolangEvalParams; }
+    static auto& $mThreadLocalMolangEvalParams() { return mThreadLocalMolangEvalParams; }
 
     // NOLINTEND
 };

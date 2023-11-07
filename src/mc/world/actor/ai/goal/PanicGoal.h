@@ -17,8 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1PanicGoal@@UEAA@XZ
+    virtual ~PanicGoal();
 
     // vIndex: 1, symbol: ?canUse@PanicGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -38,9 +38,6 @@ public:
     // vIndex: 7, symbol:
     // ?appendDebugInfo@PanicGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-
-    // symbol: ??1PanicGoal@@UEAA@XZ
-    MCVAPI ~PanicGoal();
 
     // symbol:
     // ??0PanicGoal@@QEAA@AEAVMob@@M_NW4LevelSoundEvent@@UFloatRange@@11V?$vector@W4ActorDamageCause@@V?$allocator@W4ActorDamageCause@@@std@@@std@@@Z

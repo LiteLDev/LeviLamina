@@ -19,16 +19,14 @@ public:
 
     IntArrayTag() = default;
 
-    IntArrayTag(std::vector<int> const& arr) : data((uchar*)arr.data(), arr.size() * sizeof(int)) {
-        data.mSize = arr.size();
-    }
+    IntArrayTag(std::vector<int> const& arr) : data(std::span{arr}) { data.mSize = arr.size(); }
 
     std::span<int> view() const { return std::span<int>((int*)data.mBuffer.get(), data.mSize); }
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual ~IntArrayTag() {}
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~IntArrayTag() = default;
 
     // vIndex: 2, symbol: ?write@IntArrayTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;

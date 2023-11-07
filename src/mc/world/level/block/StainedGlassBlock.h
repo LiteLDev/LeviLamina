@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~StainedGlassBlock() = default;
 
     // vIndex: 7, symbol:
     // ?getCollisionShapeForCamera@StainedGlassBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z
@@ -191,7 +191,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
+    static auto& $STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
         return STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION;
     }
 

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1SetScoreboardIdentityPacket@@UEAA@XZ
+    virtual ~SetScoreboardIdentityPacket();
 
     // vIndex: 1, symbol: ?getId@SetScoreboardIdentityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -37,9 +37,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@SetScoreboardIdentityPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1SetScoreboardIdentityPacket@@UEAA@XZ
-    MCVAPI ~SetScoreboardIdentityPacket();
 
     // symbol: ?change@SetScoreboardIdentityPacket@@SA?AV1@AEBUScoreboardId@@AEBUPlayerScoreboardId@@@Z
     MCAPI static class SetScoreboardIdentityPacket change(struct ScoreboardId const&, struct PlayerScoreboardId const&);

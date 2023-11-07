@@ -252,17 +252,11 @@ public:
 
     T* get() const { return ptr; }
 
-    void reset() {
-        ptr         = nullptr;
-        share_count = 0;
-        weak_count  = 0;
-    }
-
     void release() {
         if (--share_count == 0) {
             delete ptr;
             ptr = nullptr;
-            releaseWeak();
+            if (weak_count == 0) { delete this; }
         }
     }
 

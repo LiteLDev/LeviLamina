@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1NpcSceneDialogueData@@UEAA@XZ
+    virtual ~NpcSceneDialogueData();
 
     // vIndex: 1, symbol:
     // ?getDialogueText@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -75,9 +75,6 @@ public:
 
     // symbol: ?getActor@NpcSceneDialogueData@@UEBAPEBVActor@@XZ
     MCVAPI class Actor const* getActor() const;
-
-    // symbol: ??1NpcSceneDialogueData@@UEAA@XZ
-    MCVAPI ~NpcSceneDialogueData();
 
     // symbol:
     // ??0NpcSceneDialogueData@@QEAA@VWeakEntityRef@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

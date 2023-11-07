@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BinaryRequestBody@Http@Bedrock@@UEAA@XZ
+    virtual ~BinaryRequestBody();
 
     // vIndex: 1, symbol:
     // ?read@BinaryRequestBody@Http@Bedrock@@MEAA?AUReadResult@IRequestBody@Internal@23@V?$span@E$0?0@gsl@@@Z
@@ -40,9 +40,6 @@ public:
 
     // vIndex: 5, symbol: ?getLoggableData@BinaryRequestBody@Http@Bedrock@@MEBA?AV?$span@$$CBE$0?0@gsl@@XZ
     virtual gsl::span<uchar const> getLoggableData() const;
-
-    // symbol: ??1BinaryRequestBody@Http@Bedrock@@UEAA@XZ
-    MCVAPI ~BinaryRequestBody();
 
     // symbol: ?setData@BinaryRequestBody@Http@Bedrock@@QEAAXV?$span@$$CBE$0?0@gsl@@@Z
     MCAPI void setData(gsl::span<uchar const>);

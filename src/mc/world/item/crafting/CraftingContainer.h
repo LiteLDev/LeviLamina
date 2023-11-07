@@ -17,8 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1CraftingContainer@@UEAA@XZ
+    virtual ~CraftingContainer();
 
     // vIndex: 2, symbol: ?serverInitItemStackIds@CraftingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     virtual void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
@@ -50,8 +50,8 @@ public:
     // vIndex: 27, symbol: ?setContainerChanged@CraftingContainer@@UEAAXH@Z
     virtual void setContainerChanged(int);
 
-    // symbol: ??1CraftingContainer@@UEAA@XZ
-    MCVAPI ~CraftingContainer();
+    // vIndex: 34, symbol: __unk_vfn_34
+    virtual void __unk_vfn_34();
 
     // symbol: ??0CraftingContainer@@QEAA@HH@Z
     MCAPI CraftingContainer(int, int);

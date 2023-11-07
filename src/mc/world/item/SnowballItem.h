@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~SnowballItem() = default;
 
     // vIndex: 3, symbol:
     // ?setDescriptionId@SnowballItem@@UEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -92,6 +92,9 @@ public:
 
     // vIndex: 120, symbol: ?getIconInfo@SnowballItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
 
     // symbol: ??0SnowballItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI SnowballItem(std::string const&, int);

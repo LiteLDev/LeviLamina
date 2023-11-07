@@ -17,7 +17,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1EnableNonOwnerReferences@Bedrock@@UEAA@XZ
+    // vIndex: 0, symbol: ??1EnableNonOwnerReferences@Bedrock@@UEAA@XZ
     virtual ~EnableNonOwnerReferences();
 
     // symbol: ??0EnableNonOwnerReferences@Bedrock@@QEAA@XZ

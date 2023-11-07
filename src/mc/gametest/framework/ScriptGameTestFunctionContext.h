@@ -25,6 +25,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1ScriptGameTestFunctionContext@@@UEAA@XZ
+    virtual ~ScriptGameTestFunctionContext();
+
     // symbol:
     // ??0ScriptGameTestFunctionContext@ScriptModuleGameTest@@QEAA@VWeakLifetimeScope@Scripting@@AEAVBaseGameTestHelper@gametest@@@Z
     MCAPI ScriptGameTestFunctionContext(class Scripting::WeakLifetimeScope, class gametest::BaseGameTestHelper&);

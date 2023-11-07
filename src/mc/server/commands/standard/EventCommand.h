@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~EventCommand() = default;
 
     // vIndex: 2, symbol: ?execute@EventCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

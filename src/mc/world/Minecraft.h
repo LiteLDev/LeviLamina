@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Minecraft@@UEAA@XZ
+    virtual ~Minecraft();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -52,9 +52,6 @@ public:
 
     // symbol: ?getEntityRegistry@Minecraft@@UEAA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ
     MCVAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
-
-    // symbol: ??1Minecraft@@UEAA@XZ
-    MCVAPI ~Minecraft();
 
     // symbol:
     // ??0Minecraft@@QEAA@AEAVIMinecraftApp@@AEAVGameCallbacks@@AEAVAllowList@@PEAVPermissionsFile@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@AEAVIMinecraftEventing@@VClientOrServerNetworkSystemRef@@AEAVPacketSender@@W4SubClientId@@AEAVTimer@@AEAVTimer@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@6@PEAVServerMetrics@@@Z

@@ -22,11 +22,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~FilterGroup() = default;
 
     // vIndex: 1, symbol:
-    // ?_createSubgroup@BiomeFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z
+    // ?_createSubgroup@ActorFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z
     virtual std::shared_ptr<class FilterGroup> _createSubgroup(::FilterGroup::CollectionType) const = 0;
 
     // vIndex: 2, symbol: ?_setupContext@FilterGroup@@MEBA_NAEBVFilterTest@@AEAUFilterContext@@@Z

@@ -17,6 +17,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1FileStream@@@UEAA@XZ
+    virtual ~FileStream();
+
     // symbol: ??0FileStream@Core@@QEAA@XZ
     MCAPI FileStream();
 

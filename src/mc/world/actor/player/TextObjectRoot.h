@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1TextObjectRoot@@UEAA@XZ
+    virtual ~TextObjectRoot();
 
     // vIndex: 1, symbol:
     // ?asString@TextObjectRoot@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -30,9 +30,6 @@ public:
 
     // vIndex: 3, symbol: ?resolve@TextObjectRoot@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
     virtual class Json::Value resolve(struct ResolveData const&) const;
-
-    // symbol: ??1TextObjectRoot@@UEAA@XZ
-    MCVAPI ~TextObjectRoot();
 
     // symbol: ??0TextObjectRoot@@QEAA@XZ
     MCAPI TextObjectRoot();

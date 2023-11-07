@@ -24,14 +24,14 @@ public:
         return *this;
     }
 
-    constexpr ListTag(ListTag const& other) : mType(other.mType) {
+    [[nodiscard]] constexpr ListTag(ListTag const& other) : mType(other.mType) {
         mList.clear();
         mList.reserve(other.mList.size());
         for (auto& tag : other.mList) { mList.emplace_back(tag->copy()); }
     }
 
     template <std::derived_from<Tag> T>
-    constexpr ListTag(std::vector<T> const& tags) {
+    [[nodiscard]] constexpr ListTag(std::vector<T> const& tags) {
         if (tags.empty()) {
             mType = Tag::Type::End;
         } else {
@@ -42,7 +42,7 @@ public:
     }
 
     template <std::derived_from<Tag> T>
-    constexpr ListTag(std::initializer_list<T> tags) : ListTag(std::vector<T>{std::move(tags)}) {}
+    [[nodiscard]] constexpr ListTag(std::initializer_list<T> tags) : ListTag(std::vector<T>{std::move(tags)}) {}
 
     [[nodiscard]] Tag&       operator[](size_t index) { return *mList[index]; }
     [[nodiscard]] Tag const& operator[](size_t index) const { return *mList[index]; }

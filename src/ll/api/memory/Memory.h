@@ -81,9 +81,7 @@ LLAPI void modify(void* ptr, size_t len, const std::function<void()>& callback);
 
 template <class T>
 inline void modify(T& ref, std::function<void(std::remove_cvref_t<T>&)>&& f) {
-    modify((void*)std::addressof(ref), sizeof(T), [&] {
-        f((std::remove_cvref_t<T>&)(ref));
-    });
+    modify((void*)std::addressof(ref), sizeof(T), [&] { f((std::remove_cvref_t<T>&)(ref)); });
 }
 
 template <typename RTN = void, typename... Args>
@@ -92,24 +90,24 @@ constexpr auto virtualCall(void const* self, uintptr_t off, Args&&... args) -> R
 }
 
 template <typename T>
-[[nodiscard]] constexpr T& dAccess(void* ptr, intptr_t off) {
-    return *(T*)(((uintptr_t)ptr) + (uintptr_t)(off));
+[[nodiscard]] constexpr T& dAccess(void* ptr, ptrdiff_t off) {
+    return *(T*)((uintptr_t)((uintptr_t)ptr + off));
 }
 
 template <typename T>
-[[nodiscard]] constexpr T const& dAccess(void const* ptr, intptr_t off) {
-    return *(T*)(((uintptr_t)ptr) + (uintptr_t)off);
+[[nodiscard]] constexpr T const& dAccess(void const* ptr, ptrdiff_t off) {
+    return *(T*)((uintptr_t)((uintptr_t)ptr + off));
 }
 
 template <typename T>
-constexpr void destruct(void* ptr, intptr_t off) noexcept {
-    std::destroy_at(std::launder(reinterpret_cast<T*>(((uintptr_t)ptr) + (uintptr_t)off)));
+constexpr void destruct(void* ptr, ptrdiff_t off) noexcept {
+    std::destroy_at(std::launder(reinterpret_cast<T*>((uintptr_t)((uintptr_t)ptr + off))));
 }
 
 template <typename T, class... Types>
-constexpr auto construct(void* ptr, intptr_t off, Types&&... args) {
+constexpr auto construct(void* ptr, ptrdiff_t off, Types&&... args) {
     return std::construct_at(
-        std::launder(reinterpret_cast<T*>(((uintptr_t)ptr) + (uintptr_t)off)),
+        std::launder(reinterpret_cast<T*>((uintptr_t)((uintptr_t)ptr + off))),
         std::forward<Types>(args)...
     );
 }

@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1GameTestResultsPacket@@UEAA@XZ
+    virtual ~GameTestResultsPacket();
 
     // vIndex: 1, symbol: ?getId@GameTestResultsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -35,9 +35,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@GameTestResultsPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1GameTestResultsPacket@@UEAA@XZ
-    MCVAPI ~GameTestResultsPacket();
 
     // symbol: ??0GameTestResultsPacket@@QEAA@XZ
     MCAPI GameTestResultsPacket();

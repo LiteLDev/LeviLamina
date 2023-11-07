@@ -27,7 +27,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mGameEventPairs() { return mGameEventPairs; }
+    static auto& $mGameEventPairs() { return mGameEventPairs; }
 
     // NOLINTEND
 };

@@ -34,8 +34,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1IPSupportInterface@RakPeerHelper@@UEAA@XZ
-        MCVAPI ~IPSupportInterface();
+        // vIndex: 0, symbol: ??1IPSupportInterface@RakPeerHelper@@UEAA@XZ
+        virtual ~IPSupportInterface();
 
         // NOLINTEND
     };

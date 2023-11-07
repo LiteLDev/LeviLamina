@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~DrinkPotionGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@DrinkPotionGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -61,9 +61,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $SPEED_MODIFIER_DRINKING_UUID() { return SPEED_MODIFIER_DRINKING_UUID; }
+    static auto& $SPEED_MODIFIER_DRINKING_UUID() { return SPEED_MODIFIER_DRINKING_UUID; }
 
-    auto& $THROTTLE_COOLDOWN() { return THROTTLE_COOLDOWN; }
+    static auto& $THROTTLE_COOLDOWN() { return THROTTLE_COOLDOWN; }
 
     // NOLINTEND
 };

@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~NapGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@NapGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -62,7 +62,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $MOB_DETECT_TIME() { return MOB_DETECT_TIME; }
+    static auto& $MOB_DETECT_TIME() { return MOB_DETECT_TIME; }
 
     // NOLINTEND
 };

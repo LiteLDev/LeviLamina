@@ -50,7 +50,8 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mInfoList() { return mInfoList; }
+    static auto& $mInfoList() { return mInfoList; }
+
     // NOLINTEND
 };
 

@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ScriptPackConfigurationManager@@UEAA@XZ
-    MCVAPI ~ScriptPackConfigurationManager();
+    // vIndex: 0, symbol: ??1ScriptPackConfigurationManager@@UEAA@XZ
+    virtual ~ScriptPackConfigurationManager();
 
     // symbol: ??0ScriptPackConfigurationManager@@QEAA@$$QEAV0@@Z
     MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager&&);
@@ -56,7 +56,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sDefaultConfigurationName() { return sDefaultConfigurationName; }
+    static auto& $sDefaultConfigurationName() { return sDefaultConfigurationName; }
 
     // NOLINTEND
 };

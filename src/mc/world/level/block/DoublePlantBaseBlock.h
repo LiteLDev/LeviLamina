@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~DoublePlantBaseBlock() = default;
 
     // vIndex: 3, symbol: ?getNextBlockPermutation@DoublePlantBaseBlock@@UEBAPEBVBlock@@AEBV2@@Z
     virtual class Block const* getNextBlockPermutation(class Block const&) const;

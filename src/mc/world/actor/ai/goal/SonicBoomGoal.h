@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1Definition@@@UEAA@XZ
+        virtual ~Definition();
 
         // symbol: ?initialize@Definition@SonicBoomGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class SonicBoomGoal&) const;
@@ -52,8 +52,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~SonicBoomGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SonicBoomGoal@@UEAA_NXZ
     virtual bool canUse();

@@ -24,15 +24,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1PackManifest@@UEAA@XZ
+    virtual ~PackManifest();
 
     // vIndex: 1, symbol:
     // ?clone@PackManifest@@UEBA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@XZ
     virtual std::unique_ptr<class PackManifest> clone() const;
-
-    // symbol: ??1PackManifest@@UEAA@XZ
-    MCVAPI ~PackManifest();
 
     // symbol: ??0PackManifest@@QEAA@AEBV0@@Z
     MCAPI PackManifest(class PackManifest const&);
@@ -212,7 +209,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $STRING_TO_PACK_SCOPE() { return STRING_TO_PACK_SCOPE; }
+    static auto& $STRING_TO_PACK_SCOPE() { return STRING_TO_PACK_SCOPE; }
 
     // NOLINTEND
 };

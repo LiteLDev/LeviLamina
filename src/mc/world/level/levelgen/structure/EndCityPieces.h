@@ -32,8 +32,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1EndCityPiece@@@UEAA@XZ
+        virtual ~EndCityPiece();
 
         // vIndex: 2, symbol: ?getType@EndCityPiece@EndCityPieces@@UEBA?AW4StructurePieceType@@XZ
         virtual ::StructurePieceType getType() const;
@@ -77,9 +77,12 @@ public:
     public:
         // NOLINTBEGIN
         // vIndex: 0, symbol:
-        // ?generate@FatTowerGenerator@EndCityPieces@@UEAA_NV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$vector@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@V?$allocator@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@@2@@std@@HPEAVEndCityPiece@2@AEBVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@6@AEAVRandom@@@Z
+        // ?generate@TowerBridgeGenerator@EndCityPieces@@UEAA_NV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$vector@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@V?$allocator@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@@2@@std@@HPEAVEndCityPiece@2@AEBVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@6@AEAVRandom@@@Z
         virtual bool
         generate(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&) = 0;
+
+        // vIndex: 1, symbol: ??1SectionGenerator@@@UEAA@XZ
+        virtual ~SectionGenerator();
 
         // NOLINTEND
     };
@@ -98,6 +101,9 @@ public:
         virtual bool
         generate(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
 
+        // vIndex: 1, symbol: ??1FatTowerGenerator@@@UEAA@XZ
+        virtual ~FatTowerGenerator();
+
         // NOLINTEND
     };
 
@@ -114,6 +120,9 @@ public:
         // ?generate@HouseTowerGenerator@EndCityPieces@@UEAA_NV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$vector@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@V?$allocator@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@@2@@std@@HPEAVEndCityPiece@2@AEBVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@6@AEAVRandom@@@Z
         virtual bool
         generate(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+
+        // vIndex: 1, symbol: ??1HouseTowerGenerator@@@UEAA@XZ
+        virtual ~HouseTowerGenerator();
 
         // NOLINTEND
     };
@@ -132,6 +141,9 @@ public:
         virtual bool
         generate(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
 
+        // vIndex: 1, symbol: ??1TowerBridgeGenerator@@@UEAA@XZ
+        virtual ~TowerBridgeGenerator();
+
         // NOLINTEND
     };
 
@@ -148,6 +160,9 @@ public:
         // ?generate@TowerGenerator@EndCityPieces@@UEAA_NV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$vector@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@V?$allocator@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@@2@@std@@HPEAVEndCityPiece@2@AEBVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@6@AEAVRandom@@@Z
         virtual bool
         generate(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+
+        // vIndex: 1, symbol: ??1TowerGenerator@@@UEAA@XZ
+        virtual ~TowerGenerator();
 
         // NOLINTEND
     };
@@ -204,9 +219,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mInsertSettings() { return mInsertSettings; }
+    static auto& $mInsertSettings() { return mInsertSettings; }
 
-    auto& $mOverwriteSettings() { return mOverwriteSettings; }
+    static auto& $mOverwriteSettings() { return mOverwriteSettings; }
 
     // NOLINTEND
 };

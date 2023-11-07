@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ItemComponent@@UEAA@XZ
+    virtual ~ItemComponent();
 
     // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
     virtual bool checkComponentDataForContentErrors() const;
@@ -48,9 +48,6 @@ public:
 
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEBAXXZ
     virtual void _initializeComponent() const;
-
-    // symbol: ??1ItemComponent@@UEAA@XZ
-    MCVAPI ~ItemComponent();
 
     // symbol: ??0ItemComponent@@QEAA@XZ
     MCAPI ItemComponent();

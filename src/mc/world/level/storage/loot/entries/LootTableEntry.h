@@ -18,5 +18,8 @@ public:
     // ?_createItem@LootTableEntry@@MEAA_NAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
 
+    // vIndex: 1, symbol: ??1@@UEAA@XZ
+    virtual ~LootTableEntry() = default;
+
     // NOLINTEND
 };

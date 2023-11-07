@@ -31,8 +31,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1FileSystemFileReadAccess@@@UEAA@XZ
+        virtual ~FileSystemFileReadAccess();
 
         // vIndex: 1, symbol: ?fread@FileSystemFileReadAccess@FileSystemFileAccess@@UEBA_KPEAX_K10@Z
         virtual uint64 fread(void*, uint64, uint64, void*) const;
@@ -49,8 +49,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1FileSystemFileWriteAccess@@@UEAA@XZ
+        virtual ~FileSystemFileWriteAccess();
 
         // vIndex: 1, symbol: ?fwrite@FileSystemFileWriteAccess@FileSystemFileAccess@@UEAA_KPEBX_K1PEAX@Z
         virtual uint64 fwrite(void const*, uint64, uint64, void*);
@@ -66,8 +66,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~FileSystemFileAccess() = default;
 
     // vIndex: 1, symbol:
     // ?fopen@FileSystemFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

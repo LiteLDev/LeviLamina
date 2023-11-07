@@ -44,7 +44,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mEventName() { return mEventName; }
+    static auto& $mEventName() { return mEventName; }
 
     // NOLINTEND
 };

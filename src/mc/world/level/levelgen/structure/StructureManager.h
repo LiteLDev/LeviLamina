@@ -36,6 +36,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~StructureManager() = default;
+
     // symbol: ??0StructureManager@@QEAA@AEAVResourcePackManager@@@Z
     MCAPI explicit StructureManager(class ResourcePackManager&);
 
@@ -173,9 +176,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $BEHAVIOR_PACK_STRUCTURES_FOLDER() { return BEHAVIOR_PACK_STRUCTURES_FOLDER; }
+    static auto& $BEHAVIOR_PACK_STRUCTURES_FOLDER() { return BEHAVIOR_PACK_STRUCTURES_FOLDER; }
 
-    auto& $LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX() { return LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX; }
+    static auto& $LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX() { return LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX; }
 
     // NOLINTEND
 };

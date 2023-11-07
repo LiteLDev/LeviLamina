@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1UpgradeTo118@@@UEAA@XZ
+    virtual ~UpgradeTo118();
 
     // vIndex: 1, symbol:
     // ?previousSchema@UpgradeTo118@DurabilityItemComponentVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

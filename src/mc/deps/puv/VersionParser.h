@@ -22,17 +22,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0() = 0;
+    // vIndex: 0, symbol: ??1VersionParser@Puv@@UEAA@XZ
+    virtual ~VersionParser();
 
     // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1() = 0;
 
     // vIndex: 2, symbol: ?supportsVersion@VersionParser@Puv@@UEBA_NAEBVSemVersion@@@Z
     virtual bool supportsVersion(class SemVersion const&) const;
-
-    // symbol: ??1VersionParser@Puv@@UEAA@XZ
-    MCVAPI ~VersionParser();
 
     // symbol:
     // ??0VersionParser@Puv@@QEAA@V?$vector@U?$pair@VSemVersion@@V1@@std@@V?$allocator@U?$pair@VSemVersion@@V1@@std@@@2@@std@@@Z

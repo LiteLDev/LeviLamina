@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1WorkGoal@@UEAA@XZ
+    virtual ~WorkGoal();
 
     // vIndex: 1, symbol: ?canUse@WorkGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -40,9 +40,6 @@ public:
 
     // vIndex: 18, symbol: ?useWorkstation@WorkGoal@@UEAAXXZ
     virtual void useWorkstation();
-
-    // symbol: ??1WorkGoal@@UEAA@XZ
-    MCVAPI ~WorkGoal();
 
     // symbol: ??0WorkGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit WorkGoal(class Mob&);
@@ -72,9 +69,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $RAIN_CHECK_MAX_COOLDOWN() { return RAIN_CHECK_MAX_COOLDOWN; }
+    static auto& $RAIN_CHECK_MAX_COOLDOWN() { return RAIN_CHECK_MAX_COOLDOWN; }
 
-    auto& $WORK_TIMESTAMP_UPDATE_INVERVAL() { return WORK_TIMESTAMP_UPDATE_INVERVAL; }
+    static auto& $WORK_TIMESTAMP_UPDATE_INVERVAL() { return WORK_TIMESTAMP_UPDATE_INVERVAL; }
 
     // NOLINTEND
 };

@@ -53,7 +53,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
+    // vIndex: 0, symbol: ??1BlockSource@@UEAA@XZ
     virtual ~BlockSource();
 
     // vIndex: 1, symbol: ?getBlock@BlockSource@@UEBAAEBVBlock@@HHH@Z
@@ -161,13 +161,13 @@ public:
     // vIndex: 30, symbol: ?getMinHeight@BlockSource@@UEBAFXZ
     virtual short getMinHeight() const;
 
-    // vIndex: 31, symbol: __unk_vfn_31
+    // vIndex: 31, symbol: ?getDimension@BlockSource@@UEAAAEAVDimension@@XZ
     virtual class Dimension& getDimension();
 
-    // vIndex: 32, symbol: __unk_vfn_32
+    // vIndex: 32, symbol: ?getDimension@BlockSource@@UEBAAEAVDimension@@XZ
     virtual class Dimension& getDimension() const;
 
-    // vIndex: 33, symbol: __unk_vfn_33
+    // vIndex: 33, symbol: ?getDimensionConst@BlockSource@@UEBAAEBVDimension@@XZ
     virtual class Dimension const& getDimensionConst() const;
 
     // vIndex: 34, symbol: ?getChunkAt@BlockSource@@UEBAPEAVLevelChunk@@AEBVBlockPos@@@Z
@@ -193,18 +193,6 @@ public:
 
     // vIndex: 41, symbol: ?canDoContainedItemDrops@BlockSource@@UEBA_NXZ
     virtual bool canDoContainedItemDrops() const;
-
-    // symbol: ?getDimension@BlockSource@@UEAAAEAVDimension@@XZ
-    // MCVAPI class Dimension& getDimension();
-
-    // symbol: ?getDimension@BlockSource@@UEBAAEAVDimension@@XZ
-    // MCVAPI class Dimension& getDimension() const;
-
-    // symbol: ?getDimensionConst@BlockSource@@UEBAAEBVDimension@@XZ
-    // MCVAPI class Dimension const& getDimensionConst() const;
-
-    // symbol: ??1BlockSource@@UEAA@XZ
-    // MCVAPI ~BlockSource();
 
     // symbol: ??0BlockSource@@QEAA@AEAVChunkSource@@_N1@Z
     MCAPI BlockSource(class ChunkSource&, bool, bool);

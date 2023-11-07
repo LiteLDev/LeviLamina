@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~AbstractCompassItem() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -83,6 +83,9 @@ public:
 
     // vIndex: 122, symbol: ?getAnimationFrameFor@AbstractCompassItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
     virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
+
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
 
     // symbol:
     // ??0AbstractCompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6A?AVCompassSpriteCalculator@@PEAVMob@@@Z@2@@Z

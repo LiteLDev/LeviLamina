@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ActorBlock@@UEAA@XZ
+    virtual ~ActorBlock();
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
@@ -164,9 +164,6 @@ public:
 
     // symbol: ?canBeSilkTouched@ActorBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
-
-    // symbol: ??1ActorBlock@@UEAA@XZ
-    MCVAPI ~ActorBlock();
 
     // NOLINTEND
 

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~GameTestInstanceLedger() = default;
 
     // vIndex: 1, symbol: ?onTestStructureLoaded@GameTestInstanceLedger@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
@@ -43,7 +43,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $GAME_TEST_INSTANCE_PREFIX() { return GAME_TEST_INSTANCE_PREFIX; }
+    static auto& $GAME_TEST_INSTANCE_PREFIX() { return GAME_TEST_INSTANCE_PREFIX; }
 
     // NOLINTEND
 };

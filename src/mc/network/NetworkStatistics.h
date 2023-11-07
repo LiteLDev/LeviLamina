@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1NetworkStatistics@@UEAA@XZ
+    virtual ~NetworkStatistics();
 
     // vIndex: 1, symbol: ?packetSentTo@NetworkStatistics@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
     virtual void packetSentTo(class NetworkIdentifier const&, class Packet const&, uint);
@@ -40,9 +40,6 @@ public:
 
     // vIndex: 5, symbol: ?reset@NetworkStatistics@@UEAAXXZ
     virtual void reset();
-
-    // symbol: ??1NetworkStatistics@@UEAA@XZ
-    MCVAPI ~NetworkStatistics();
 
     // symbol: ?getVerboseInfo@NetworkStatistics@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getVerboseInfo() const;

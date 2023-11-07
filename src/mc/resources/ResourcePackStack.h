@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ResourcePackStack@@UEAA@XZ
+    virtual ~ResourcePackStack();
 
     // vIndex: 1, symbol:
     // ?loadAllVersionsOf@ResourcePackStack@@UEBA?AV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@AEBVResourceLocation@@@Z
@@ -35,9 +35,6 @@ public:
     virtual bool
     loadAllVersionsOf(class ResourceLocation const&, std::function<bool(class PackInstance const&)> const&, class ResourcePackMergeStrategy&)
         const;
-
-    // symbol: ??1ResourcePackStack@@UEAA@XZ
-    MCVAPI ~ResourcePackStack();
 
     // symbol:
     // ?add@ResourcePackStack@@QEAAXVPackInstance@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@_N@Z
@@ -92,7 +89,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mUpgradePathMap() { return mUpgradePathMap; }
+    static auto& $mUpgradePathMap() { return mUpgradePathMap; }
 
     // NOLINTEND
 };

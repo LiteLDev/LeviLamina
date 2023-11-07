@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~LodestoneBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@LodestoneBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
@@ -90,7 +90,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sTagName_Handle() { return sTagName_Handle; }
+    static auto& $sTagName_Handle() { return sTagName_Handle; }
 
     // NOLINTEND
 };

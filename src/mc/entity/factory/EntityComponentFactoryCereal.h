@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1EntityComponentFactoryCereal@@UEAA@XZ
-    MCVAPI ~EntityComponentFactoryCereal();
+    // vIndex: 0, symbol: ??1EntityComponentFactoryCereal@@UEAA@XZ
+    virtual ~EntityComponentFactoryCereal();
 
     // symbol: ??0EntityComponentFactoryCereal@@QEAA@AEAUReflectionCtx@cereal@@@Z
     MCAPI explicit EntityComponentFactoryCereal(struct cereal::ReflectionCtx&);

@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorGarbageCollector@@UEAA@XZ
-    MCVAPI ~ActorGarbageCollector();
+    // vIndex: 0, symbol: ??1ActorGarbageCollector@@UEAA@XZ
+    virtual ~ActorGarbageCollector();
 
     // symbol: ??0ActorGarbageCollector@@QEAA@XZ
     MCAPI ActorGarbageCollector();

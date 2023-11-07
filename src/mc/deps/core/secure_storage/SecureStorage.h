@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1SecureStorage@@UEAA@XZ
+    virtual ~SecureStorage();
 
     // vIndex: 1, symbol:
     // ?add@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
@@ -29,9 +29,6 @@ public:
     // vIndex: 4, symbol:
     // ?get@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@@Z
     virtual bool get(std::string const&, std::string&) = 0;
-
-    // symbol: ??1SecureStorage@@UEAA@XZ
-    MCVAPI ~SecureStorage();
 
     // NOLINTEND
 };

@@ -14,6 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~BlockLightEmissionComponent() = default;
+
     // symbol: ?usesNewComponentStorage@BlockLightEmissionComponent@@SA_NXZ
     MCAPI static bool usesNewComponentStorage();
 

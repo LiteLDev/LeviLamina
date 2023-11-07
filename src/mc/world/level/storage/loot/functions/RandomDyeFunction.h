@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~RandomDyeFunction() = default;
 
     // vIndex: 1, symbol: ?apply@RandomDyeFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemStack&, class Random&, class LootTableContext&);

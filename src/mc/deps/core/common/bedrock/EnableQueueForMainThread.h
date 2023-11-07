@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1EnableQueueForMainThread@Threading@Bedrock@@UEAA@XZ
-    MCVAPI ~EnableQueueForMainThread();
+    // vIndex: 0, symbol: ??1EnableQueueForMainThread@Threading@Bedrock@@UEAA@XZ
+    virtual ~EnableQueueForMainThread();
 
     // symbol:
     // ??0EnableQueueForMainThread@Threading@Bedrock@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

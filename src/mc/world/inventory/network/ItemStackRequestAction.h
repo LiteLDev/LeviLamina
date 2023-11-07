@@ -17,8 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ItemStackRequestAction@@UEAA@XZ
+    virtual ~ItemStackRequestAction();
 
     // vIndex: 1, symbol: ?getCraftAction@ItemStackRequestAction@@UEBAPEBVItemStackRequestActionCraftBase@@XZ
     virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
@@ -29,15 +29,12 @@ public:
     // vIndex: 3, symbol: ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestAction@@UEAAXAEAVBlockPalette@@_N@Z
     virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
 
-    // vIndex: 4, symbol: ?_write@ItemStackRequestActionCraftRecipeAuto@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4, symbol: ?_write@ItemStackRequestActionDrop@@MEBAXAEAVBinaryStream@@@Z
     virtual void _write(class BinaryStream&) const = 0;
 
     // vIndex: 5, symbol:
-    // ?_read@ItemStackRequestActionCraftRecipeAuto@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // ?_read@ItemStackRequestActionDrop@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&) = 0;
-
-    // symbol: ??1ItemStackRequestAction@@UEAA@XZ
-    MCVAPI ~ItemStackRequestAction();
 
     // symbol: ??0ItemStackRequestAction@@QEAA@W4ItemStackRequestActionType@@@Z
     MCAPI explicit ItemStackRequestAction(::ItemStackRequestActionType);
@@ -69,7 +66,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $actionTypeMap() { return actionTypeMap; }
+    static auto& $actionTypeMap() { return actionTypeMap; }
 
     // NOLINTEND
 };

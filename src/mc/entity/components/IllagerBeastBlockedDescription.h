@@ -17,14 +17,11 @@ public:
     // vIndex: 0, symbol: ?getJsonName@IllagerBeastBlockedDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1IllagerBeastBlockedDescription@@UEAA@XZ
+    virtual ~IllagerBeastBlockedDescription();
 
     // vIndex: 2, symbol: ?deserializeData@IllagerBeastBlockedDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1IllagerBeastBlockedDescription@@UEAA@XZ
-    MCVAPI ~IllagerBeastBlockedDescription();
 
     // NOLINTEND
 };

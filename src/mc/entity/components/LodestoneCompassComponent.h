@@ -67,7 +67,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mSpinningLodestone() { return mSpinningLodestone; }
+    static auto& $mSpinningLodestone() { return mSpinningLodestone; }
 
     // NOLINTEND
 };

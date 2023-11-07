@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptMovementAmphibiousComponentFactory@@@UEAA@XZ
+    virtual ~ScriptMovementAmphibiousComponentFactory();
 
     // vIndex: 1, symbol:
     // ?createComponent@ScriptMovementAmphibiousComponentFactory@ScriptModuleMinecraft@@UEAA?AV?$StrongTypedObjectHandle@VScriptActorComponent@ScriptModuleMinecraft@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

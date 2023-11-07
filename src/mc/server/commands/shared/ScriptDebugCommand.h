@@ -21,11 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptDebugCommand@@UEAA@XZ
-    MCVAPI ~ScriptDebugCommand();
+    // vIndex: 0, symbol: ??1ScriptDebugCommand@@UEAA@XZ
+    virtual ~ScriptDebugCommand();
 
     // symbol: ??0ScriptDebugCommand@@QEAA@XZ
     MCAPI ScriptDebugCommand();

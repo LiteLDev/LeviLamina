@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ElementBlock() = default;
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
@@ -194,7 +194,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mElements() { return mElements; }
+    static auto& $mElements() { return mElements; }
 
     // NOLINTEND
 };

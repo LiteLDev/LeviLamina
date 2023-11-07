@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1RakWebSocket@@UEAA@XZ
+    virtual ~RakWebSocket();
 
     // vIndex: 1, symbol:
     // ?connect@RakWebSocket@@UEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
@@ -55,9 +55,6 @@ public:
 
     // vIndex: 9, symbol: ?_genMaskingKey@RakWebSocketClient@@MEBAIXZ
     virtual uint _genMaskingKey() const = 0;
-
-    // symbol: ??1RakWebSocket@@UEAA@XZ
-    MCVAPI ~RakWebSocket();
 
     // symbol: ??0RakWebSocket@@QEAA@V?$unique_ptr@VTcpProxy@@U?$default_delete@VTcpProxy@@@std@@@std@@_N@Z
     MCAPI RakWebSocket(std::unique_ptr<class TcpProxy>, bool);

@@ -19,11 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?_serializeValue@SimpleBoolFilterTest@@MEBA?AVValue@Json@@XZ
-    MCVAPI class Json::Value _serializeValue() const;
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~SimpleBoolFilterTest() = default;
 
-    // symbol: ?setup@SimpleBoolFilterTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-    MCVAPI bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
+    // vIndex: 1, symbol: ?setup@SimpleBoolFilterTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
+    virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
 
     // NOLINTEND
 };

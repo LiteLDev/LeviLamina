@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1MoveToPOIGoal@@UEAA@XZ
+    virtual ~MoveToPOIGoal();
 
     // vIndex: 1, symbol: ?canUse@MoveToPOIGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -43,9 +43,6 @@ public:
 
     // vIndex: 17, symbol: ?_getOwnedPOI@MoveToPOIGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
     virtual std::weak_ptr<class POIInstance> _getOwnedPOI(::POIType) const;
-
-    // symbol: ??1MoveToPOIGoal@@UEAA@XZ
-    MCVAPI ~MoveToPOIGoal();
 
     // symbol: ??0MoveToPOIGoal@@QEAA@AEAVMob@@MW4POIType@@M@Z
     MCAPI MoveToPOIGoal(class Mob&, float, ::POIType, float);

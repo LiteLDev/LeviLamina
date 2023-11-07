@@ -50,7 +50,7 @@ target("LeviLamina")
     set_languages("c++20")
     set_symbols("debug")
     set_exceptions("none")
-    set_pcxxheader("src/ll/api/base/Global.h")
+    set_pcxxheader("src/mc/_HeaderOutputPredefine.h")
     set_configdir("$(buildir)/config")
     add_configfiles("src/(**.in)")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
@@ -78,8 +78,8 @@ target("LeviLamina")
         local tag = os.iorun("git describe --tags --abbrev=0 --always")
         local major, minor, patch, suffix = tag:match("v(%d+)%.(%d+)%.(%d+)(.*)")
         if not major then
-            print("Failed to parse version tag, using 0.0.0")
-            major, minor, patch = 0, 0, 0
+            print("Failed to parse version tag, using 0.1.0")
+            major, minor, patch = 0, 1, 0
         end
         if suffix then
             prerelease = suffix:match("-(.*)")

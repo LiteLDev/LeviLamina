@@ -1,18 +1,12 @@
 #include "SimpleForm.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/form/FormHandler.h"
+#include "ll/core/form/FormImplBase.h"
 #include "mc/network/packet/ModalFormRequestPacket.h"
 
 namespace ll::form {
 
-class SimpleFormElement {
-protected:
-    virtual ~SimpleFormElement()               = default;
-    virtual nlohmann::ordered_json serialize() = 0;
-    friend class SimpleForm;
-};
-
-class Button : public SimpleFormElement {
+class Button {
 
 public:
     using ButtonCallback = SimpleForm::ButtonCallback;
@@ -25,14 +19,13 @@ public:
     : mText(std::move(text)),
       mImage(std::move(image)),
       mCallback(std::move(callback)) {}
-    ~Button() override = default;
+    ~Button() = default;
 
     void callback(Player& player) {
         if (mCallback) { mCallback(player); }
     }
 
-protected:
-    nlohmann::ordered_json serialize() override {
+    [[nodiscard]] nlohmann::ordered_json serialize() const {
         try {
             nlohmann::ordered_json button;
             button["text"] = mText;
@@ -55,10 +48,10 @@ class SimpleForm::SimpleFormImpl : public FormImpl {
 public:
     using Callback = SimpleForm::Callback;
 
-    std::string                                     mTitle;
-    std::string                                     mContent;
-    std::vector<std::shared_ptr<SimpleFormElement>> mElements{};
-    Callback                                        mCallback;
+    std::string         mTitle;
+    std::string         mContent;
+    std::vector<Button> mElements{};
+    Callback            mCallback;
 
     explicit SimpleFormImpl(std::string title, std::string content = "")
     : mTitle(std::move(title)),
@@ -68,14 +61,12 @@ public:
 
     void setContent(std::string const& content) { mContent = content; }
 
-    void append(const std::shared_ptr<SimpleFormElement>& element) { mElements.push_back(element); }
-
     void appendButton(
         std::string const&     text,
         std::string const&     image    = "",
         Button::ButtonCallback callback = Button::ButtonCallback()
     ) {
-        append(std::make_shared<Button>(text, image, std::move(callback)));
+        mElements.emplace_back(text, image, std::move(callback));
     }
 
     bool sendTo(Player& player, Callback callback) {
@@ -86,10 +77,7 @@ public:
         }
         std::vector<SimpleForm::ButtonCallback> buttonCallbacks;
         buttonCallbacks.reserve(mElements.size());
-        for (auto& e : mElements) {
-            // Currently, SimpleFormElement can only be Button
-            buttonCallbacks.push_back(((Button*)e.get())->mCallback);
-        }
+        for (auto& e : mElements) { buttonCallbacks.push_back(e.mCallback); }
         uint id =
             handler::addFormHandler(std::make_unique<handler::SimpleFormHandler>(std::move(callback), buttonCallbacks));
         auto json = serialize();
@@ -110,10 +98,10 @@ protected:
                 {"buttons", nlohmann::ordered_json::array()}
             };
             for (auto& e : mElements) {
-                nlohmann::ordered_json element = e->serialize();
+                nlohmann::ordered_json element = e.serialize();
                 if (!element.empty()) { form["buttons"].push_back(element); }
             }
-            return form.dump();
+            return form;
         } catch (nlohmann::ordered_json::exception const&) {
             ll::logger.error("Failed to serialize SimpleForm");
             return nlohmann::ordered_json{};

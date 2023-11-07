@@ -26,8 +26,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1OceanRuinPiece@@@UEAA@XZ
+        virtual ~OceanRuinPiece();
 
         // vIndex: 2, symbol: ?getType@OceanRuinPiece@OceanRuinPieces@@UEBA?AW4StructurePieceType@@XZ
         virtual ::StructurePieceType getType() const;
@@ -149,35 +149,35 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $BIG_RUIN_LOOT() { return BIG_RUIN_LOOT; }
+    static auto& $BIG_RUIN_LOOT() { return BIG_RUIN_LOOT; }
 
-    auto& $RUIN_LOOT() { return RUIN_LOOT; }
+    static auto& $RUIN_LOOT() { return RUIN_LOOT; }
 
-    auto& $STRUCTURE_BIG_RUIN1_BRICK() { return STRUCTURE_BIG_RUIN1_BRICK; }
+    static auto& $STRUCTURE_BIG_RUIN1_BRICK() { return STRUCTURE_BIG_RUIN1_BRICK; }
 
-    auto& $STRUCTURE_BIG_RUIN8_BRICK() { return STRUCTURE_BIG_RUIN8_BRICK; }
+    static auto& $STRUCTURE_BIG_RUIN8_BRICK() { return STRUCTURE_BIG_RUIN8_BRICK; }
 
-    auto& $STRUCTURE_RUIN_2_BRICK() { return STRUCTURE_RUIN_2_BRICK; }
+    static auto& $STRUCTURE_RUIN_2_BRICK() { return STRUCTURE_RUIN_2_BRICK; }
 
-    auto& $STRUCTURE_RUIN_3_BRICK() { return STRUCTURE_RUIN_3_BRICK; }
+    static auto& $STRUCTURE_RUIN_3_BRICK() { return STRUCTURE_RUIN_3_BRICK; }
 
-    auto& $bigRuinsBrick() { return bigRuinsBrick; }
+    static auto& $bigRuinsBrick() { return bigRuinsBrick; }
 
-    auto& $bigRuinsCracked() { return bigRuinsCracked; }
+    static auto& $bigRuinsCracked() { return bigRuinsCracked; }
 
-    auto& $bigRuinsMossy() { return bigRuinsMossy; }
+    static auto& $bigRuinsMossy() { return bigRuinsMossy; }
 
-    auto& $bigWarmRuins() { return bigWarmRuins; }
+    static auto& $bigWarmRuins() { return bigWarmRuins; }
 
-    auto& $mSettings() { return mSettings; }
+    static auto& $mSettings() { return mSettings; }
 
-    auto& $ruinsBrick() { return ruinsBrick; }
+    static auto& $ruinsBrick() { return ruinsBrick; }
 
-    auto& $ruinsCracked() { return ruinsCracked; }
+    static auto& $ruinsCracked() { return ruinsCracked; }
 
-    auto& $ruinsMossy() { return ruinsMossy; }
+    static auto& $ruinsMossy() { return ruinsMossy; }
 
-    auto& $warmRuins() { return warmRuins; }
+    static auto& $warmRuins() { return warmRuins; }
 
     // NOLINTEND
 };

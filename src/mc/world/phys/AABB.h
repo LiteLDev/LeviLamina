@@ -14,9 +14,9 @@ public:
         Vec3 max, y, g, t, z, b, p;
     };
 
-    constexpr AABB() noexcept : min(Vec3::MIN), max(Vec3::MIN){};
-    constexpr AABB(class AABB const& k) noexcept : min(k.min), max(k.max){};
-    constexpr AABB(class Vec3 const& min, class Vec3 const& max) noexcept : min(min), max(max){};
+    [[nodiscard]] constexpr AABB() noexcept : min(Vec3::MIN), max(Vec3::MIN){};
+    [[nodiscard]] constexpr AABB(class AABB const& k) noexcept : min(k.min), max(k.max){};
+    [[nodiscard]] constexpr AABB(class Vec3 const& min, class Vec3 const& max) noexcept : min(min), max(max){};
 
     inline AABB& merge(AABB const& a) noexcept {
         *this = AABB{::min(a.min, min), ::max(a.max, max)};

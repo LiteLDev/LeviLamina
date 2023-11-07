@@ -52,7 +52,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mRealmsEventInternalNames() { return mRealmsEventInternalNames; }
+    static auto& $mRealmsEventInternalNames() { return mRealmsEventInternalNames; }
 
     // NOLINTEND
 };

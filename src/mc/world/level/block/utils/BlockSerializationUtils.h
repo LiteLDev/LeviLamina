@@ -36,7 +36,7 @@ MCAPI void initBlockReplaceDataMap();
 // symbol:
 // ?tryGetBlockFromNBT@BlockSerializationUtils@@YA?AU?$pair@W4NBTState@BlockSerializationUtils@@PEBVBlock@@@std@@AEBVCompoundTag@@PEAUNbtToBlockCache@1@@Z
 MCAPI std::pair<::BlockSerializationUtils::NBTState, class Block const*>
-      tryGetBlockFromNBT(class CompoundTag const&, struct BlockSerializationUtils::NbtToBlockCache*);
+      tryGetBlockFromNBT(class CompoundTag const&, struct BlockSerializationUtils::NbtToBlockCache* = nullptr);
 // NOLINTEND
 
 }; // namespace BlockSerializationUtils

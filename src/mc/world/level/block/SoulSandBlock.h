@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~SoulSandBlock() = default;
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@SoulSandBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -189,7 +189,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION() { return SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION; }
+    static auto& $SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION() { return SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION; }
 
     // NOLINTEND
 };

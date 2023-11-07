@@ -31,8 +31,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~PistonBlock() = default;
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
@@ -219,7 +219,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $ARM_DIRECTION_OFFSETS() { return ARM_DIRECTION_OFFSETS; }
+    static auto& $ARM_DIRECTION_OFFSETS() { return ARM_DIRECTION_OFFSETS; }
 
     // NOLINTEND
 };

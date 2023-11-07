@@ -80,11 +80,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $NUM_GROUPS_ON_EASY() { return NUM_GROUPS_ON_EASY; }
+    static auto& $NUM_GROUPS_ON_EASY() { return NUM_GROUPS_ON_EASY; }
 
-    auto& $NUM_GROUPS_ON_HARD() { return NUM_GROUPS_ON_HARD; }
+    static auto& $NUM_GROUPS_ON_HARD() { return NUM_GROUPS_ON_HARD; }
 
-    auto& $NUM_GROUPS_ON_NORMAL() { return NUM_GROUPS_ON_NORMAL; }
+    static auto& $NUM_GROUPS_ON_NORMAL() { return NUM_GROUPS_ON_NORMAL; }
 
     // NOLINTEND
 };

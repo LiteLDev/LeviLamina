@@ -31,8 +31,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1InteractPacket@@UEAA@XZ
+    virtual ~InteractPacket();
 
     // vIndex: 1, symbol: ?getId@InteractPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -47,9 +47,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@InteractPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1InteractPacket@@UEAA@XZ
-    MCVAPI ~InteractPacket();
 
     // symbol: ??0InteractPacket@@QEAA@XZ
     MCAPI InteractPacket();

@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1CarpetBlock@@UEAA@XZ
+    virtual ~CarpetBlock();
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@CarpetBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -176,9 +176,6 @@ public:
 
     // symbol: ?waterSpreadCausesSpawn@CarpetBlock@@UEBA_NXZ
     MCVAPI bool waterSpreadCausesSpawn() const;
-
-    // symbol: ??1CarpetBlock@@UEAA@XZ
-    MCVAPI ~CarpetBlock();
 
     // symbol: ??0CarpetBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
     MCAPI CarpetBlock(std::string const&, int, class Material const&);

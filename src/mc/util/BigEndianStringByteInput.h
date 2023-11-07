@@ -10,7 +10,7 @@ public:
     using StringByteInput::StringByteInput;
 
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_destructor_-1
+    // vIndex: 0, symbol: ??1BigEndianStringByteInput@@UEAA@XZ
     virtual ~BigEndianStringByteInput();
 
     // vIndex: 3, symbol: ?readFloat@BigEndianStringByteInput@@UEAAMXZ

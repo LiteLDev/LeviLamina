@@ -19,14 +19,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1GetInteractionPositionForBlockDefinition@@UEAA@XZ
+    virtual ~GetInteractionPositionForBlockDefinition();
 
     // vIndex: 1, symbol: ?load@GetInteractionPositionForBlockDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
     virtual void load(class Json::Value, class BehaviorFactory const&);
-
-    // symbol: ??1GetInteractionPositionForBlockDefinition@@UEAA@XZ
-    MCVAPI ~GetInteractionPositionForBlockDefinition();
 
     // NOLINTEND
 };

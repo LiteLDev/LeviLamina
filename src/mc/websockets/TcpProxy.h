@@ -17,8 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1TcpProxy@@UEAA@XZ
+    virtual ~TcpProxy();
 
     // vIndex: 1, symbol: ?start@RakTcpProxy@@UEAA_NGGG@Z
     virtual bool start(ushort, ushort, ushort) = 0;
@@ -50,9 +50,6 @@ public:
 
     // vIndex: 10, symbol: ?nextLostConnection@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@XZ
     virtual struct RakNet::SystemAddress nextLostConnection() = 0;
-
-    // symbol: ??1TcpProxy@@UEAA@XZ
-    MCVAPI ~TcpProxy();
 
     // NOLINTEND
 };

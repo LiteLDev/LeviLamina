@@ -17,11 +17,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1CerealSchemaUpgrade@@UEAA@XZ
+    virtual ~CerealSchemaUpgrade();
 
-    // vIndex: 1, symbol:
-    // ?previousSchema@BlockLightDampening11940Upgrade@BlockLightDampeningVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z
+    // vIndex: 1, symbol: ?previousSchema@UpgradeTo12020@ArmorItemComponentVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z
     virtual void previousSchema(class cereal::SchemaFactory&) const = 0;
 
     // vIndex: 2, symbol:
@@ -30,9 +29,6 @@ public:
                                rapidjson::UTF8<char>,
                                rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
                                rapidjson::CrtAllocator>&) const;
-
-    // symbol: ??1CerealSchemaUpgrade@@UEAA@XZ
-    MCVAPI ~CerealSchemaUpgrade();
 
     // symbol:
     // ??0CerealSchemaUpgrade@@QEAA@VSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z

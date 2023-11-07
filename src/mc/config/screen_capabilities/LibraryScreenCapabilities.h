@@ -14,15 +14,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1LibraryScreenCapabilities@@UEAA@XZ
+    virtual ~LibraryScreenCapabilities();
 
     // vIndex: 1, symbol:
     // ?isOfType@?$TypedScreenCapabilities@ULibraryScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@Bedrock@@@Z
     virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities>) const;
-
-    // symbol: ??1LibraryScreenCapabilities@@UEAA@XZ
-    MCVAPI ~LibraryScreenCapabilities();
 
     // NOLINTEND
 };

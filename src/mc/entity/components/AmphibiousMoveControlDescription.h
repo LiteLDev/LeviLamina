@@ -17,14 +17,8 @@ public:
     // vIndex: 0, symbol: ?getJsonName@AmphibiousMoveControlDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2, symbol: ?deserializeData@Description@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1AmphibiousMoveControlDescription@@UEAA@XZ
-    MCVAPI ~AmphibiousMoveControlDescription();
+    // vIndex: 1, symbol: ??1AmphibiousMoveControlDescription@@UEAA@XZ
+    virtual ~AmphibiousMoveControlDescription();
 
     // NOLINTEND
 };

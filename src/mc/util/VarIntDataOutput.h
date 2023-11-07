@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1VarIntDataOutput@@UEAA@XZ
+    virtual ~VarIntDataOutput();
 
     // vIndex: 1, symbol: ?writeString@VarIntDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     virtual void writeString(std::string_view);
@@ -45,9 +45,6 @@ public:
 
     // vIndex: 9, symbol: ?writeBytes@VarIntDataOutput@@UEAAXPEBX_K@Z
     virtual void writeBytes(void const*, uint64);
-
-    // symbol: ??1VarIntDataOutput@@UEAA@XZ
-    MCVAPI ~VarIntDataOutput();
 
     // NOLINTEND
 };

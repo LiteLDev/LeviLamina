@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~MainChunkSource() = default;
 
     // vIndex: 3, symbol: ?getExistingChunk@MainChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
     virtual std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);

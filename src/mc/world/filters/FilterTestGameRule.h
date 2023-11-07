@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FilterTestGameRule@@UEAA@XZ
+    virtual ~FilterTestGameRule();
 
     // vIndex: 1, symbol: ?setup@FilterTestGameRule@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
     virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
@@ -33,9 +33,6 @@ public:
 
     // vIndex: 6, symbol: ?_serializeValue@FilterTestGameRule@@MEBA?AVValue@Json@@XZ
     virtual class Json::Value _serializeValue() const;
-
-    // symbol: ??1FilterTestGameRule@@UEAA@XZ
-    MCVAPI ~FilterTestGameRule();
 
     // NOLINTEND
 };

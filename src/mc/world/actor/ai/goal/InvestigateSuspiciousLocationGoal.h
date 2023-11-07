@@ -29,8 +29,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1Definition@@@UEAA@XZ
+        virtual ~Definition();
 
         // symbol: ??0Definition@InvestigateSuspiciousLocationGoal@@QEAA@XZ
         MCAPI Definition();
@@ -54,8 +54,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~InvestigateSuspiciousLocationGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@InvestigateSuspiciousLocationGoal@@UEAA_NXZ
     virtual bool canUse();

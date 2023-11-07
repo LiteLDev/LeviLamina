@@ -94,8 +94,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Item@@UEAA@XZ
+    virtual ~Item();
 
     // vIndex: 1, symbol: ?initServer@Item@@UEAA_NAEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z
     virtual bool initServer(class Json::Value&, class SemVersion const&, bool, class Experiments const&);
@@ -490,11 +490,11 @@ public:
     // vIndex: 126, symbol: ?canBeCharged@Item@@UEBA_NXZ
     virtual bool canBeCharged() const;
 
-    // vIndex: 127, symbol: ?playSoundIncrementally@Item@@UEBAXAEBVItemInstance@@AEAVMob@@@Z
-    virtual void playSoundIncrementally(class ItemInstance const&, class Mob&) const;
-
-    // vIndex: 128, symbol: ?playSoundIncrementally@Item@@UEBAXAEBVItemStack@@AEAVMob@@@Z
+    // vIndex: 127, symbol: ?playSoundIncrementally@Item@@UEBAXAEBVItemStack@@AEAVMob@@@Z
     virtual void playSoundIncrementally(class ItemStack const&, class Mob&) const;
+
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
 
     // vIndex: 129, symbol: ?getFurnaceBurnIntervalMultipler@Item@@UEBAMXZ
     virtual float getFurnaceBurnIntervalMultipler() const;
@@ -552,6 +552,9 @@ public:
     // symbol: ?isPattern@Item@@UEBA_NXZ
     MCVAPI bool isPattern() const;
 
+    // symbol: ?playSoundIncrementally@Item@@UEBAXAEBVItemInstance@@AEAVMob@@@Z
+    MCVAPI void playSoundIncrementally(class ItemInstance const&, class Mob&) const;
+
     // symbol: ?shouldSendInteractionGameEvents@Item@@UEBA_NXZ
     MCVAPI bool shouldSendInteractionGameEvents() const;
 
@@ -563,9 +566,6 @@ public:
 
     // symbol: ?useInterruptedByAttacking@Item@@UEBA_NXZ
     MCVAPI bool useInterruptedByAttacking() const;
-
-    // symbol: ??1Item@@UEAA@XZ
-    MCVAPI ~Item();
 
     // symbol: ??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
     MCAPI Item(std::string const&, short);
@@ -787,7 +787,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mServerItemsUsedInCreativeItems() { return mServerItemsUsedInCreativeItems; }
+    static auto& $mServerItemsUsedInCreativeItems() { return mServerItemsUsedInCreativeItems; }
 
     // NOLINTEND
 };

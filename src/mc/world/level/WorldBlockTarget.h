@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1WorldBlockTarget@@UEAA@XZ
+    virtual ~WorldBlockTarget();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -104,9 +104,6 @@ public:
 
     // symbol: ?canGetChunk@WorldBlockTarget@@UEBA_NXZ
     MCVAPI bool canGetChunk() const;
-
-    // symbol: ??1WorldBlockTarget@@UEAA@XZ
-    MCVAPI ~WorldBlockTarget();
 
     // symbol: ??0WorldBlockTarget@@QEAA@AEAVBlockSource@@AEBUWorldGenContext@@@Z
     MCAPI WorldBlockTarget(class BlockSource&, struct WorldGenContext const&);

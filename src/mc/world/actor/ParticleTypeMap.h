@@ -36,7 +36,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $map() { return map; }
+    static auto& $map() { return map; }
 
     // NOLINTEND
 };

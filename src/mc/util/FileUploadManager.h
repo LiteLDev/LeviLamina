@@ -42,8 +42,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FileUploadManager@@UEAA@XZ
+    virtual ~FileUploadManager();
 
     // vIndex: 1, symbol: ?getUploadProgress@FileUploadManager@@UEBAMXZ
     virtual float getUploadProgress() const;
@@ -51,9 +51,6 @@ public:
     // vIndex: 2, symbol:
     // ?uploadFileToRealmStorage@ResourcePackFileUploadManager@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z
     virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&) = 0;
-
-    // symbol: ??1FileUploadManager@@UEAA@XZ
-    MCVAPI ~FileUploadManager();
 
     // symbol: ??0FileUploadManager@@QEAA@AEAVTaskGroup@@V?$shared_ptr@VIFileChunkUploader@@@std@@@Z
     MCAPI FileUploadManager(class TaskGroup&, std::shared_ptr<class IFileChunkUploader>);
@@ -112,9 +109,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $BOUNDARY() { return BOUNDARY; }
+    static auto& $BOUNDARY() { return BOUNDARY; }
 
-    auto& $CHUNK_UPLOAD_SIZE() { return CHUNK_UPLOAD_SIZE; }
+    static auto& $CHUNK_UPLOAD_SIZE() { return CHUNK_UPLOAD_SIZE; }
 
     // NOLINTEND
 };

@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1EntityComponentFactoryBase@@MEAA@XZ
-    MCVAPI ~EntityComponentFactoryBase();
+    // vIndex: 0, symbol: ??1EntityComponentFactoryBase@@MEAA@XZ
+    virtual ~EntityComponentFactoryBase();
 
     // symbol:
     // ?addComponents@EntityComponentFactoryBase@@QEBAXAEAVEntityRegistry@@AEAVEntityContext@@AEBVDefinitionInstanceGroup@@@Z

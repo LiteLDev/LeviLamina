@@ -11,4 +11,11 @@ public:
     BlockAABBComponentData& operator=(BlockAABBComponentData const&);
     BlockAABBComponentData(BlockAABBComponentData const&);
     BlockAABBComponentData();
+
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~BlockAABBComponentData() = default;
+
+    // NOLINTEND
 };

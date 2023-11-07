@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1MapDataManager@@UEAA@XZ
+    virtual ~MapDataManager();
 
     // vIndex: 1, symbol:
     // ?registerOnCreateMapSavedDataCallback@MapDataManager@@UEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVMapItemSavedData@@@Z@std@@@Z
@@ -32,9 +32,6 @@ public:
 
     // vIndex: 3, symbol: ?createMapSavedData@MapDataManager@@UEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@@Z
     virtual class MapItemSavedData& createMapSavedData(struct ActorUniqueID const&);
-
-    // symbol: ??1MapDataManager@@UEAA@XZ
-    MCVAPI ~MapDataManager();
 
     // symbol:
     // ??0MapDataManager@@QEAA@AEAVDimensionManager@@PEAVLevelStorage@@V?$unique_ptr@VIMapDataManagerOptions@@U?$default_delete@VIMapDataManagerOptions@@@std@@@std@@V?$function@$$A6A?AUActorUniqueID@@XZ@4@@Z

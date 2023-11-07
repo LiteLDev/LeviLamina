@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~MoveTowardsRestrictionDefinition() = default;
 
     // symbol: ?initialize@MoveTowardsRestrictionDefinition@@QEBAXAEAVEntityContext@@AEAVMoveTowardsRestrictionGoal@@@Z
     MCAPI void initialize(class EntityContext&, class MoveTowardsRestrictionGoal&) const;

@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ActorEventListener@@UEAA@XZ
+    virtual ~ActorEventListener();
 
     // vIndex: 1, symbol: ?onEvent@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
     virtual ::EventResult onEvent(struct ActorNotificationEvent const&);
@@ -64,9 +64,6 @@ public:
 
     // symbol: ?onActorTick@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
     MCVAPI ::EventResult onActorTick(class Actor&);
-
-    // symbol: ??1ActorEventListener@@UEAA@XZ
-    MCVAPI ~ActorEventListener();
 
     // NOLINTEND
 };

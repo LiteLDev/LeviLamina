@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~SaveCommand() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -64,11 +64,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mSaveAllFileList() { return mSaveAllFileList; }
+    static auto& $mSaveAllFileList() { return mSaveAllFileList; }
 
-    auto& $mSaveAllMutex() { return mSaveAllMutex; }
+    static auto& $mSaveAllMutex() { return mSaveAllMutex; }
 
-    auto& $mState() { return mState; }
+    static auto& $mState() { return mState; }
 
     // NOLINTEND
 };

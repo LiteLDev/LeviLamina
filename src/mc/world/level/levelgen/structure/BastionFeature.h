@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~BastionFeature() = default;
 
     // vIndex: 2, symbol: ?shouldPostProcessMobs@BastionFeature@@UEBA_NXZ
     virtual bool shouldPostProcessMobs() const;

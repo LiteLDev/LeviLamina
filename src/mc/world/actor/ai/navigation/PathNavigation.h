@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1PathNavigation@@UEAA@XZ
+    virtual ~PathNavigation();
 
     // vIndex: 1, symbol: ?initializeInternal@PathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
     virtual void initializeInternal(class Mob&, struct NavigationDescription*);
@@ -56,9 +56,6 @@ public:
 
     // vIndex: 12, symbol: ?updatePath@PathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
     virtual void updatePath(class NavigationComponent&, class Mob&);
-
-    // symbol: ??1PathNavigation@@UEAA@XZ
-    MCVAPI ~PathNavigation();
 
     // NOLINTEND
 

@@ -23,11 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptMovementSwayComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptMovementSwayComponent();
+    // vIndex: 0, symbol: ??1ScriptMovementSwayComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptMovementSwayComponent();
 
     // symbol: ?getSwayAmplitude@ScriptMovementSwayComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getSwayAmplitude() const;

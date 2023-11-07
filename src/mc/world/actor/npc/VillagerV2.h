@@ -34,8 +34,8 @@ public:
     // vIndex: 4, symbol: ?reloadHardcoded@VillagerV2@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void reloadHardcoded(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: __unk_vfn_10
-    virtual void __unk_vfn_10();
+    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    virtual ~VillagerV2() = default;
 
     // vIndex: 13, symbol: ?remove@VillagerV2@@UEAAXXZ
     virtual void remove();
@@ -55,8 +55,14 @@ public:
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44();
 
+    // vIndex: 45, symbol: __unk_vfn_45
+    virtual void __unk_vfn_45();
+
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
+
+    // vIndex: 48, symbol: __unk_vfn_48
+    virtual void __unk_vfn_48();
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -70,8 +76,20 @@ public:
     // vIndex: 63, symbol: __unk_vfn_63
     virtual void __unk_vfn_63();
 
+    // vIndex: 71, symbol: __unk_vfn_71
+    virtual void __unk_vfn_71();
+
+    // vIndex: 72, symbol: __unk_vfn_72
+    virtual void __unk_vfn_72();
+
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
+
+    // vIndex: 116, symbol: __unk_vfn_116
+    virtual void __unk_vfn_116();
+
+    // vIndex: 120, symbol: __unk_vfn_120
+    virtual void __unk_vfn_120();
 
     // vIndex: 123, symbol:
     // ?buildDebugInfo@VillagerV2@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -80,14 +98,20 @@ public:
     // vIndex: 141, symbol: ?getInteraction@VillagerV2@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
     virtual bool getInteraction(class Player&, class ActorInteraction&, class Vec3 const&);
 
+    // vIndex: 142, symbol: __unk_vfn_142
+    virtual void __unk_vfn_142();
+
+    // vIndex: 143, symbol: __unk_vfn_143
+    virtual void __unk_vfn_143();
+
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
 
-    // vIndex: 148, symbol: __unk_vfn_148
-    virtual void __unk_vfn_148();
-
     // vIndex: 150, symbol: ?die@VillagerV2@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const&);
+
+    // vIndex: 154, symbol: __unk_vfn_154
+    virtual void __unk_vfn_154();
 
     // vIndex: 163, symbol: ?updateEntitySpecificMolangVariables@VillagerV2@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
@@ -101,8 +125,14 @@ public:
     // vIndex: 172, symbol: __unk_vfn_172
     virtual void __unk_vfn_172();
 
+    // vIndex: 204, symbol: __unk_vfn_204
+    virtual void __unk_vfn_204();
+
     // vIndex: 211, symbol: ?newServerAiStep@VillagerV2@@UEAAXXZ
     virtual void newServerAiStep();
+
+    // vIndex: 212, symbol: __unk_vfn_212
+    virtual void __unk_vfn_212();
 
     // symbol: ??0VillagerV2@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI VillagerV2(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);

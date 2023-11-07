@@ -31,11 +31,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptBlockSignComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptBlockSignComponent();
+    // vIndex: 0, symbol: ??1ScriptBlockSignComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockSignComponent();
 
     // symbol:
     // ?getRawText@ScriptBlockSignComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@UScriptRawTextInterface@ScriptModuleMinecraft@@@std@@$$V@Scripting@@W4SignTextSide@@@Z

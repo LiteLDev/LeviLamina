@@ -23,6 +23,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1PublisherBase@Detail@PubSub@@@UEAA@XZ
+    virtual ~PublisherBase();
+
     // symbol: ?empty@PublisherBase@Detail@PubSub@Bedrock@@QEBA_NXZ
     MCAPI bool empty() const;
 

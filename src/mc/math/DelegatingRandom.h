@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IPositionalRandomFactory;
 class IRandom;
 // clang-format on
 
@@ -21,30 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?consumeCount@DelegatingRandom@NoiseUtils@@UEAAXI@Z
-    MCVAPI void consumeCount(uint);
-
-    // symbol:
-    // ?fork@DelegatingRandom@NoiseUtils@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
-    MCVAPI std::unique_ptr<class IRandom> fork();
-
-    // symbol: ?nextBoolean@DelegatingRandom@NoiseUtils@@UEAA_NXZ
-    MCVAPI bool nextBoolean();
-
-    // symbol: ?nextDouble@DelegatingRandom@NoiseUtils@@UEAANXZ
-    MCVAPI double nextDouble();
-
-    // symbol: ?nextGaussianDouble@DelegatingRandom@NoiseUtils@@UEAANXZ
-    MCVAPI double nextGaussianDouble();
-
-    // symbol: ?nextInt@DelegatingRandom@NoiseUtils@@UEAAHXZ
-    MCVAPI int nextInt();
-
-    // symbol: ?nextInt@DelegatingRandom@NoiseUtils@@UEAAHH@Z
-    MCVAPI int nextInt(int);
-
-    // symbol: ?nextLong@DelegatingRandom@NoiseUtils@@UEAA_JXZ
-    MCVAPI int64 nextLong();
+    // vIndex: 0, symbol: ??1DelegatingRandom@@@UEAA@XZ
+    virtual ~DelegatingRandom();
 
     // NOLINTEND
 };

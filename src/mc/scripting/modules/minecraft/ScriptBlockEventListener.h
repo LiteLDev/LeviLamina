@@ -38,8 +38,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScriptBlockEventListener@@@UEAA@XZ
+    virtual ~ScriptBlockEventListener();
 
     // vIndex: 1, symbol:
     // ?onBlockPlacedByPlayer@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z
@@ -75,10 +75,6 @@ public:
 
     // vIndex: 10, symbol: __unk_vfn_10
     virtual void __unk_vfn_10();
-
-    // vIndex: 11, symbol:
-    // ?onEvent@?$EventListenerDispatcher@VBlockEventListener@@@@MEAA?AW4EventResult@@AEBUBlockNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct BlockNotificationEvent const&);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();

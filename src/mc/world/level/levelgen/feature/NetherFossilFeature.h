@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~NetherFossilFeature() = default;
 
     // vIndex: 3, symbol: ?place@NetherFossilFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
@@ -33,7 +33,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $STRUCTURE_LOCATION_FOSSIL() { return STRUCTURE_LOCATION_FOSSIL; }
+    static auto& $STRUCTURE_LOCATION_FOSSIL() { return STRUCTURE_LOCATION_FOSSIL; }
 
     // NOLINTEND
 };

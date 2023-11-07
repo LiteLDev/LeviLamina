@@ -16,8 +16,8 @@ public:
     // vIndex: 0, symbol: ?getJsonName@WaterMovementDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1@@UEAA@XZ
+    virtual ~WaterMovementDescription() = default;
 
     // vIndex: 2, symbol: ?deserializeData@WaterMovementDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);

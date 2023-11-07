@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1DoorInteractGoal@@UEAA@XZ
+    virtual ~DoorInteractGoal();
 
     // vIndex: 1, symbol: ?canUse@DoorInteractGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -34,9 +34,6 @@ public:
     // vIndex: 7, symbol:
     // ?appendDebugInfo@DoorInteractGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
-
-    // symbol: ??1DoorInteractGoal@@UEAA@XZ
-    MCVAPI ~DoorInteractGoal();
 
     // symbol: ??0DoorInteractGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit DoorInteractGoal(class Mob&);

@@ -1,8 +1,10 @@
 #include "ll/api/utils/StringUtils.h"
+
 #include "ctre/ctre-unicode.hpp"
-#include "ll/api/base/Global.h"
 #include "magic_enum.hpp"
+
 #include "mc/deps/core/mce/Color.h"
+
 #include "windows.h"
 
 namespace ll::utils::string_utils {
@@ -69,7 +71,7 @@ fmt::text_style getTextStyleFromCode(std::string_view code) {
                 return fmt::bg((fmt::terminal_color)(num - 10));
             } else {
                 switch (num) {
-                // clang-format off
+                    // clang-format off
                     case 1: return fmt::emphasis::bold;
                     case 2: return fmt::emphasis::faint;
                     case 3: return fmt::emphasis::italic;
@@ -125,7 +127,7 @@ std::string getMcCodeFromTextStyle(fmt::text_style style) {
             res += minStr;
         } else {
             switch ((fmt::terminal_color)(fg.value.term_color)) {
-            // clang-format off
+                // clang-format off
             case fmt::terminal_color::black:          res += "§0"; break;
             case fmt::terminal_color::red:            res += "§4"; break;
             case fmt::terminal_color::green:          res += "§2"; break;

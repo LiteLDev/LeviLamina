@@ -36,8 +36,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1PacketObserver@@UEAA@XZ
+    virtual ~PacketObserver();
 
     // vIndex: 1, symbol: ?packetSentTo@PacketObserver@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
     virtual void packetSentTo(class NetworkIdentifier const&, class Packet const&, uint);
@@ -55,9 +55,6 @@ public:
 
     // vIndex: 5, symbol: ?reset@PacketObserver@@UEAAXXZ
     virtual void reset();
-
-    // symbol: ??1PacketObserver@@UEAA@XZ
-    MCVAPI ~PacketObserver();
 
     // NOLINTEND
 };

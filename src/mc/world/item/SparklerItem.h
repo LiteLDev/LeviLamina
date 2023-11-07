@@ -42,8 +42,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~SparklerItem() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -109,6 +109,9 @@ public:
 
     // vIndex: 124, symbol: ?getLightEmission@SparklerItem@@UEBA?AUBrightness@@H@Z
     virtual struct Brightness getLightEmission(int) const;
+
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
 
     // symbol: ?COLORS@SparklerItem@@2QBUColorInfo@1@B
     MCAPI static struct SparklerItem::ColorInfo const COLORS[];

@@ -17,6 +17,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ScriptingEventCoordinator() = default;
+
     // symbol: ?getScriptingEventHandler@ScriptingEventCoordinator@@QEAAAEAVScriptingEventHandler@@XZ
     MCAPI class ScriptingEventHandler& getScriptingEventHandler();
 

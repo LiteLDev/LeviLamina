@@ -3,6 +3,7 @@
 #include <thread>
 
 #include "ll/api/Logger.h"
+#include "ll/api/utils/SehTranslator.h"
 #include "ll/core/LeviLamina.h"
 
 // TODO rewrite this file

@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ShipwreckPiece() = default;
 
     // vIndex: 2, symbol: ?getType@ShipwreckPiece@@UEBA?AW4StructurePieceType@@XZ
     virtual ::StructurePieceType getType() const;
@@ -49,7 +49,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $STRUCTURE_SHIPWRECK_TYPES() { return STRUCTURE_SHIPWRECK_TYPES; }
+    static auto& $STRUCTURE_SHIPWRECK_TYPES() { return STRUCTURE_SHIPWRECK_TYPES; }
 
     // NOLINTEND
 };

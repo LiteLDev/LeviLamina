@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ToXAsyncBlock@AsyncResult@Threading@@@UEAA@XZ
+    virtual ~ToXAsyncBlock();
 
     // vIndex: 1, symbol: ?getStatus@?$AsyncResultBase@PEAUXAsyncBlock@@@Threading@Bedrock@@UEBA?AW4AsyncStatus@23@XZ
     virtual ::Bedrock::Threading::AsyncStatus getStatus() const;

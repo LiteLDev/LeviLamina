@@ -49,8 +49,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActiveTransfersManager@Server@ClientBlobCache@@UEAA@XZ
-    MCVAPI ~ActiveTransfersManager();
+    // vIndex: 0, symbol: ??1ActiveTransfersManager@Server@ClientBlobCache@@UEAA@XZ
+    virtual ~ActiveTransfersManager();
 
     // symbol: ??0ActiveTransfersManager@Server@ClientBlobCache@@QEAA@XZ
     MCAPI ActiveTransfersManager();

@@ -2,7 +2,6 @@
 
 #include "ll/api/Config.h"
 
-
 namespace ll {
 
 static const std::string leviConfigPath{R"(plugins\LeviLamina\config.json)"};

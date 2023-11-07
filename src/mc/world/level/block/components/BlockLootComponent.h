@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BlockLootComponent@@UEAA@XZ
-    MCVAPI ~BlockLootComponent();
+    // vIndex: 0, symbol: ??1BlockLootComponent@@UEAA@XZ
+    virtual ~BlockLootComponent();
 
     // symbol: ??0BlockLootComponent@@QEAA@XZ
     MCAPI BlockLootComponent();

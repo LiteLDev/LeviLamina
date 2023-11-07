@@ -13,17 +13,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@NavigationFloatDescription@@UEBAPEBDXZ
-    virtual char const* getJsonName() const = 0;
-
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1NavigationDescription@@UEAA@XZ
+    virtual ~NavigationDescription();
 
     // vIndex: 2, symbol: ?deserializeData@NavigationDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1NavigationDescription@@UEAA@XZ
-    MCVAPI ~NavigationDescription();
 
     // symbol: ??0NavigationDescription@@QEAA@XZ
     MCAPI NavigationDescription();

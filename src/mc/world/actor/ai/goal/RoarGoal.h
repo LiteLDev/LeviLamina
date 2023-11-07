@@ -29,8 +29,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1Definition@@@UEAA@XZ
+        virtual ~Definition();
 
         // symbol: ??0Definition@RoarGoal@@QEAA@XZ
         MCAPI Definition();
@@ -54,8 +54,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~RoarGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@RoarGoal@@UEAA_NXZ
     virtual bool canUse();

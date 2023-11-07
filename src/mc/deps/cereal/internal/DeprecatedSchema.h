@@ -38,8 +38,8 @@ public:
     doLoad(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&)
         const;
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol: ??1DeprecatedSchema@internal@@@UEAA@XZ
+    virtual ~DeprecatedSchema();
 
     // vIndex: 6, symbol: ?description@DeprecatedSchema@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
     virtual struct cereal::SchemaDescription description() const;

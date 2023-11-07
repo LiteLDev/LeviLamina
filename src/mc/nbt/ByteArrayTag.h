@@ -19,14 +19,14 @@ public:
 
     ByteArrayTag() = default;
 
-    ByteArrayTag(std::vector<schar> const& arr) : data((uchar*)arr.data(), arr.size()) {}
+    ByteArrayTag(std::vector<schar> const& arr) : data(std::span{arr}) {}
 
     std::span<schar> view() const { return std::span<schar>((schar*)data.mBuffer.get(), data.mSize); }
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual ~ByteArrayTag() {}
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ByteArrayTag() = default;
 
     // vIndex: 2, symbol: ?write@ByteArrayTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;

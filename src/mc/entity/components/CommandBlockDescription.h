@@ -17,14 +17,11 @@ public:
     // vIndex: 0, symbol: ?getJsonName@CommandBlockDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1CommandBlockDescription@@UEAA@XZ
+    virtual ~CommandBlockDescription();
 
     // vIndex: 2, symbol: ?deserializeData@CommandBlockDescription@@UEAAXUDeserializeDataParams@@@Z
     virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1CommandBlockDescription@@UEAA@XZ
-    MCVAPI ~CommandBlockDescription();
 
     // NOLINTEND
 };

@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1GameModuleServer@@UEAA@XZ
+    virtual ~GameModuleServer();
 
     // vIndex: 1, symbol:
     // ?init@VanillaGameModuleServer@@UEAAXAEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VLevel@@@Bedrock@@@gsl@@@Z
@@ -47,9 +47,6 @@ public:
     // ?configureServerNetworkHandler@VanillaGameModuleServer@@UEAAXAEAVServerInstance@@V?$not_null@V?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@@gsl@@@Z
     virtual void
     configureServerNetworkHandler(class ServerInstance&, Bedrock::NotNullNonOwnerPtr<class ServerNetworkHandler>) = 0;
-
-    // symbol: ??1GameModuleServer@@UEAA@XZ
-    MCVAPI ~GameModuleServer();
 
     // symbol: ??0GameModuleServer@@QEAA@XZ
     MCAPI GameModuleServer();

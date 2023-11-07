@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1MeleeAttackGoal@@UEAA@XZ
+    virtual ~MeleeAttackGoal();
 
     // vIndex: 1, symbol: ?canUse@MeleeAttackGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -42,9 +42,6 @@ public:
 
     // vIndex: 11, symbol: ?_attemptAttackTarget@MeleeAttackGoal@@MEAAXAEAVActor@@MMMAEBVVec3@@@Z
     virtual void _attemptAttackTarget(class Actor&, float, float, float, class Vec3 const&);
-
-    // symbol: ??1MeleeAttackGoal@@UEAA@XZ
-    MCVAPI ~MeleeAttackGoal();
 
     // symbol: ??0MeleeAttackGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit MeleeAttackGoal(class Mob&);

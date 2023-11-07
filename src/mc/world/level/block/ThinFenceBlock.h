@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ThinFenceBlock() = default;
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@ThinFenceBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -216,7 +216,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
+    static auto& $THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
+        return THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    }
 
     // NOLINTEND
 };

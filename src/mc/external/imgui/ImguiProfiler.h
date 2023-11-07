@@ -110,8 +110,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1Timer@ImguiProfiler@@UEAA@XZ
-        MCVAPI ~Timer();
+        // vIndex: 0, symbol: ??1Timer@ImguiProfiler@@UEAA@XZ
+        virtual ~Timer();
 
         // NOLINTEND
     };
@@ -125,8 +125,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1ManualTimer@ImguiProfiler@@UEAA@XZ
-        MCVAPI ~ManualTimer();
+        // vIndex: 0, symbol: ??1ManualTimer@ImguiProfiler@@UEAA@XZ
+        virtual ~ManualTimer();
 
         // symbol: ??0ManualTimer@ImguiProfiler@@QEAA@PEBD0_N@Z
         MCAPI ManualTimer(char const*, char const*, bool);
@@ -146,8 +146,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // symbol: ??1ScopedTimer@ImguiProfiler@@UEAA@XZ
-        MCVAPI ~ScopedTimer();
+        // vIndex: 0, symbol: ??1ScopedTimer@ImguiProfiler@@UEAA@XZ
+        virtual ~ScopedTimer();
 
         // symbol: ??0ScopedTimer@ImguiProfiler@@QEAA@PEBD0_N@Z
         MCAPI ScopedTimer(char const*, char const*, bool);
@@ -162,6 +162,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ImguiProfiler() = default;
+
     // symbol: ??0ImguiProfiler@@QEAA@XZ
     MCAPI ImguiProfiler();
 
@@ -191,11 +194,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sPendingRecords() { return sPendingRecords; }
+    static auto& $sPendingRecords() { return sPendingRecords; }
 
-    auto& $sProduceRecords() { return sProduceRecords; }
+    static auto& $sProduceRecords() { return sProduceRecords; }
 
-    auto& $sRecordMutex() { return sRecordMutex; }
+    static auto& $sRecordMutex() { return sRecordMutex; }
 
     // NOLINTEND
 };

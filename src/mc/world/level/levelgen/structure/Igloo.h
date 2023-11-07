@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~Igloo() = default;
 
     // vIndex: 2, symbol: ?getType@Igloo@@UEBA?AW4StructurePieceType@@XZ
     virtual ::StructurePieceType getType() const;
@@ -50,13 +50,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR() { return STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR; }
+    static auto& $STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR() { return STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR; }
 
-    auto& $STRUCTURE_LOCATION_IGLOO_TRAPDOOR() { return STRUCTURE_LOCATION_IGLOO_TRAPDOOR; }
+    static auto& $STRUCTURE_LOCATION_IGLOO_TRAPDOOR() { return STRUCTURE_LOCATION_IGLOO_TRAPDOOR; }
 
-    auto& $STRUCTURE_LOCATION_LABORATORY() { return STRUCTURE_LOCATION_LABORATORY; }
+    static auto& $STRUCTURE_LOCATION_LABORATORY() { return STRUCTURE_LOCATION_LABORATORY; }
 
-    auto& $STRUCTURE_LOCATION_LADDER() { return STRUCTURE_LOCATION_LADDER; }
+    static auto& $STRUCTURE_LOCATION_LADDER() { return STRUCTURE_LOCATION_LADDER; }
 
     // NOLINTEND
 };

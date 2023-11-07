@@ -27,11 +27,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mPlatformToldUsLowMemory() { return mPlatformToldUsLowMemory; }
+    static auto& $mPlatformToldUsLowMemory() { return mPlatformToldUsLowMemory; }
 
-    auto& $mPleaseLeakMemory() { return mPleaseLeakMemory; }
+    static auto& $mPleaseLeakMemory() { return mPleaseLeakMemory; }
 
-    auto& $mTimeToResetWarning() { return mTimeToResetWarning; }
+    static auto& $mTimeToResetWarning() { return mTimeToResetWarning; }
 
     // NOLINTEND
 };

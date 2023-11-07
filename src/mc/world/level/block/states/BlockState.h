@@ -49,17 +49,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockState@@UEAA@XZ
+    virtual ~BlockState();
 
-    // vIndex: 1, symbol: ?toNBT@?$BlockStateVariant@E@@UEBAXAEAVCompoundTag@@H@Z
+    // vIndex: 1, symbol: ?toNBT@?$BlockStateVariant@H@@UEBAXAEAVCompoundTag@@H@Z
     virtual void toNBT(class CompoundTag&, int) const = 0;
 
-    // vIndex: 2, symbol: ?fromNBT@?$BlockStateVariant@E@@UEBA_NAEBVCompoundTag@@AEAH@Z
+    // vIndex: 2, symbol: ?fromNBT@?$BlockStateVariant@H@@UEBA_NAEBVCompoundTag@@AEAH@Z
     virtual bool fromNBT(class CompoundTag const&, int&) const = 0;
-
-    // symbol: ??1BlockState@@UEAA@XZ
-    MCVAPI ~BlockState();
 
     // symbol: ?forEachState@BlockState@@SAXV?$function@$$A6A_NAEBVBlockState@@@Z@std@@@Z
     MCAPI static void forEachState(std::function<bool(class BlockState const&)>);

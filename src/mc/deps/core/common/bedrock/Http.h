@@ -13,9 +13,12 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+namespace Bedrock::Http { class BinaryRequestBody; }
 namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Http { class HeaderCollection; }
 namespace Bedrock::Http { class HttpInterface; }
+namespace Bedrock::Http { class HttpInterfaceInternal; }
 namespace Bedrock::Http { class LibHttpClientErrorCatergory; }
 namespace Bedrock::Http { class LibHttpClientImpl; }
 namespace Bedrock::Http { class LibHttpClientInstance; }
@@ -27,6 +30,7 @@ namespace Bedrock::Http { class Response; }
 namespace Bedrock::Http { class RetryPolicy; }
 namespace Bedrock::Http { class Status; }
 namespace Bedrock::Http { class WebSocketInterface; }
+namespace Bedrock::Http { class WebSocketInterfaceInternal; }
 namespace Bedrock::Http::Internal { class IRequestBody; }
 namespace Bedrock::Http::Internal { class IResponseBody; }
 namespace Bedrock::Threading { class Mutex; }

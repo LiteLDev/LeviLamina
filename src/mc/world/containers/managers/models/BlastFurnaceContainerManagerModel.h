@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~BlastFurnaceContainerManagerModel() = default;
 
     // symbol: ??0BlastFurnaceContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI BlastFurnaceContainerManagerModel(::ContainerID, class Player&, class BlockPos const&);

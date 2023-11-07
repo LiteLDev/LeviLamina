@@ -140,8 +140,8 @@ public:
     // vIndex: 9, symbol: ?_doInitialMove@Actor@@MEAAXXZ
     virtual void _doInitialMove();
 
-    // vIndex: 10, symbol: __unk_vfn_10
-    virtual void __unk_vfn_10();
+    // vIndex: 10, symbol: ??1Actor@@UEAA@XZ
+    virtual ~Actor();
 
     // vIndex: 11, symbol: ?resetUserPos@Actor@@UEAAX_N@Z
     virtual void resetUserPos(bool);
@@ -560,8 +560,8 @@ public:
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
 
-    // vIndex: 148, symbol: __unk_vfn_148
-    virtual void __unk_vfn_148();
+    // vIndex: 148, symbol: ?getDeletionDelayTimeSeconds@Actor@@UEBAMXZ
+    virtual float getDeletionDelayTimeSeconds() const;
 
     // vIndex: 149, symbol: ?kill@Actor@@UEAAXXZ
     virtual void kill();
@@ -656,9 +656,6 @@ public:
     // symbol: ?getAlwaysShowNameTag@Actor@@UEBA_NXZ
     MCVAPI bool getAlwaysShowNameTag() const;
 
-    // symbol: ?getDeletionDelayTimeSeconds@Actor@@UEBAMXZ
-    MCVAPI float getDeletionDelayTimeSeconds() const;
-
     // symbol: ?interactPreventDefault@Actor@@UEAA_NXZ
     MCVAPI bool interactPreventDefault();
 
@@ -676,9 +673,6 @@ public:
 
     // symbol: ?renderDebugServerState@Actor@@UEAAXAEBVOptions@@@Z
     MCVAPI void renderDebugServerState(class Options const&);
-
-    // symbol: ??1Actor@@UEAA@XZ
-    MCVAPI ~Actor();
 
     // symbol: ??0Actor@@QEAA@AEAVILevel@@AEAVEntityContext@@@Z
     MCAPI Actor(class ILevel&, class EntityContext&);
@@ -2195,11 +2189,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $DAMAGE_NEARBY_MOBS_DURATION() { return DAMAGE_NEARBY_MOBS_DURATION; }
+    static auto& $DAMAGE_NEARBY_MOBS_DURATION() { return DAMAGE_NEARBY_MOBS_DURATION; }
 
-    auto& $DEFAULT_MAX_DISTANCE_OPTIMIZATION() { return DEFAULT_MAX_DISTANCE_OPTIMIZATION; }
+    static auto& $DEFAULT_MAX_DISTANCE_OPTIMIZATION() { return DEFAULT_MAX_DISTANCE_OPTIMIZATION; }
 
-    auto& $DEFAULT_MAX_TICK_DELAY_OPTIMIZATION() { return DEFAULT_MAX_TICK_DELAY_OPTIMIZATION; }
+    static auto& $DEFAULT_MAX_TICK_DELAY_OPTIMIZATION() { return DEFAULT_MAX_TICK_DELAY_OPTIMIZATION; }
 
     // NOLINTEND
 };

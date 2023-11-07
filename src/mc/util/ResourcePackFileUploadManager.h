@@ -21,15 +21,12 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ResourcePackFileUploadManager@@UEAA@XZ
+    virtual ~ResourcePackFileUploadManager();
 
     // vIndex: 2, symbol:
     // ?uploadFileToRealmStorage@ResourcePackFileUploadManager@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z
     virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&);
-
-    // symbol: ??1ResourcePackFileUploadManager@@UEAA@XZ
-    MCVAPI ~ResourcePackFileUploadManager();
 
     // symbol:
     // ?uploadResourcePack@ResourcePackFileUploadManager@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVResourceLocation@@_N2W4PackType@@@Z

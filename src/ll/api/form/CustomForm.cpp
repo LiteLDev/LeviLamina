@@ -3,7 +3,9 @@
 
 #include "ll/api/form/CustomForm.h"
 #include "ll/core/LeviLamina.h"
+#include "ll/core/form/CustomFormElement.h"
 #include "ll/core/form/FormHandler.h"
+#include "ll/core/form/FormImplBase.h"
 #include "mc/network/packet/ModalFormRequestPacket.h"
 
 namespace ll::form {
@@ -30,7 +32,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const&) const override { return {}; }
+    [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const&) const override { return {}; }
 };
 
 class Input : public CustomFormElement {
@@ -64,7 +66,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override {
+    [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
         return data.get<std::string>();
     }
 };
@@ -96,7 +98,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override {
+    [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
         return data.get<bool>();
     }
 };
@@ -131,7 +133,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override {
+    [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
         return mOptions[data.get<int>()];
     }
 };
@@ -190,7 +192,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override {
+    [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
         return data.get<double>();
     }
 };
@@ -237,7 +239,7 @@ public:
         }
     }
 
-    [[nodiscard]] FormElementResult parseResult(nlohmann::ordered_json const& data) const override {
+    [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const& data) const override {
         return mSteps[data.get<int>()];
     }
 };

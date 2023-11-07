@@ -17,11 +17,11 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol:
-    // ?_createItem@LootTableEntry@@MEAA_NAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // ?_createItem@LootTableReference@@MEAA_NAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&) = 0;
 
-    // symbol: ??1LootPoolEntry@@UEAA@XZ
-    MCVAPI ~LootPoolEntry();
+    // vIndex: 1, symbol: ??1LootPoolEntry@@UEAA@XZ
+    virtual ~LootPoolEntry();
 
     // symbol:
     // ?deserialize@LootPoolEntry@@SA?AV?$unique_ptr@VLootPoolEntry@@U?$default_delete@VLootPoolEntry@@@std@@@std@@AEBVValue@Json@@@Z

@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~TrapDoorBlock() = default;
 
     // vIndex: 10, symbol:
     // ?getOutline@TrapDoorBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
@@ -214,7 +214,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
+    static auto& $TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
+        return TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    }
 
     // NOLINTEND
 };

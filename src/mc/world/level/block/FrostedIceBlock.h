@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~FrostedIceBlock() = default;
 
     // vIndex: 22, symbol: __unk_vfn_22
     virtual void __unk_vfn_22();
@@ -186,9 +186,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $MAX_AGE() { return MAX_AGE; }
+    static auto& $MAX_AGE() { return MAX_AGE; }
 
-    auto& $MIN_NEIGHBORS() { return MIN_NEIGHBORS; }
+    static auto& $MIN_NEIGHBORS() { return MIN_NEIGHBORS; }
 
     // NOLINTEND
 };

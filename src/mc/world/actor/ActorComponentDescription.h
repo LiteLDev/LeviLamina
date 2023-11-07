@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorComponentDescription@@UEAA@XZ
-    MCVAPI ~ActorComponentDescription();
+    // vIndex: 1, symbol: ??1ActorComponentDescription@@UEAA@XZ
+    virtual ~ActorComponentDescription();
 
     // NOLINTEND
 };

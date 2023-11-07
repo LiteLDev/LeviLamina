@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~FileAccessTransforms() = default;
 
     // vIndex: 1, symbol: ?readTransform@FileAccessTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
     virtual bool readTransform(std::vector<uchar>&) const;

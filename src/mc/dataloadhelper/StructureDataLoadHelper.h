@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1StructureDataLoadHelper@@UEAA@XZ
+    virtual ~StructureDataLoadHelper();
 
     // vIndex: 1, symbol: ?loadPosition@StructureDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
     virtual class Vec3 loadPosition(class Vec3 const&);
@@ -83,9 +83,6 @@ public:
 
     // symbol: ?loadRotationRadiansX@StructureDataLoadHelper@@UEAAMM@Z
     MCVAPI float loadRotationRadiansX(float);
-
-    // symbol: ??1StructureDataLoadHelper@@UEAA@XZ
-    MCVAPI ~StructureDataLoadHelper();
 
     // symbol:
     // ??0StructureDataLoadHelper@@QEAA@AEBVBlockPos@@0AEBVVec3@@UActorUniqueID@@W4Rotation@@W4Mirror@@AEAVLevel@@@Z

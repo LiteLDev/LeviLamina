@@ -29,8 +29,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1RaiderCelebrationDefinition@@@UEAA@XZ
+        virtual ~RaiderCelebrationDefinition();
 
         // symbol: ??0RaiderCelebrationDefinition@RaiderCelebrationGoal@@QEAA@XZ
         MCAPI RaiderCelebrationDefinition();
@@ -58,8 +58,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~RaiderCelebrationGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@RaiderCelebrationGoal@@UEAA_NXZ
     virtual bool canUse();

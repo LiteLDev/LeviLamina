@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ChemistryStickItem@@UEAA@XZ
+    virtual ~ChemistryStickItem();
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -101,14 +101,14 @@ public:
     // vIndex: 116, symbol: __unk_vfn_116
     virtual void __unk_vfn_116();
 
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
+
     // symbol: ?showsDurabilityInCreative@ChemistryStickItem@@UEBA_NXZ
     MCVAPI bool showsDurabilityInCreative() const;
 
     // symbol: ?uniqueAuxValues@ChemistryStickItem@@UEBA_NXZ
     MCVAPI bool uniqueAuxValues() const;
-
-    // symbol: ??1ChemistryStickItem@@UEAA@XZ
-    MCVAPI ~ChemistryStickItem();
 
     // symbol: ??0ChemistryStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ChemistryStickItem(std::string const&, int);
@@ -168,19 +168,19 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $ACTIVATION_TIMESTAMP_TAG() { return ACTIVATION_TIMESTAMP_TAG; }
+    static auto& $ACTIVATION_TIMESTAMP_TAG() { return ACTIVATION_TIMESTAMP_TAG; }
 
-    auto& $ACTIVE_BIT() { return ACTIVE_BIT; }
+    static auto& $ACTIVE_BIT() { return ACTIVE_BIT; }
 
-    auto& $COLOR_BITS() { return COLOR_BITS; }
+    static auto& $COLOR_BITS() { return COLOR_BITS; }
 
-    auto& $COLOR_MASK() { return COLOR_MASK; }
+    static auto& $COLOR_MASK() { return COLOR_MASK; }
 
-    auto& $DAMAGE_BITS() { return DAMAGE_BITS; }
+    static auto& $DAMAGE_BITS() { return DAMAGE_BITS; }
 
-    auto& $DAMAGE_MASK() { return DAMAGE_MASK; }
+    static auto& $DAMAGE_MASK() { return DAMAGE_MASK; }
 
-    auto& $DAMAGE_START_BIT() { return DAMAGE_START_BIT; }
+    static auto& $DAMAGE_START_BIT() { return DAMAGE_START_BIT; }
 
     // NOLINTEND
 };

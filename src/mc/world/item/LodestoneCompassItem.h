@@ -29,8 +29,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~LodestoneCompassItem() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -79,6 +79,9 @@ public:
 
     // vIndex: 122, symbol: ?getAnimationFrameFor@LodestoneCompassItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
     virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
+
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
 
     // vIndex: 135, symbol:
     // ?_useOn@LodestoneCompassItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z

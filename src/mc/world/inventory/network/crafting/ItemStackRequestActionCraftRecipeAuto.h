@@ -13,18 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // vIndex: 1, symbol: ?getCraftAction@ItemStackRequestActionCraftBase@@UEBAPEBV1@XZ
-    virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
-
-    // vIndex: 2, symbol: ?getFilteredStringIndex@ItemStackRequestAction@@UEBAHXZ
-    virtual int getFilteredStringIndex() const;
-
-    // vIndex: 3, symbol:
-    // ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestActionCraftBase@@UEAAXAEAVBlockPalette@@_N@Z
-    virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ItemStackRequestActionCraftRecipeAuto() = default;
 
     // vIndex: 4, symbol: ?_write@ItemStackRequestActionCraftRecipeAuto@@UEBAXAEAVBinaryStream@@@Z
     virtual void _write(class BinaryStream&) const;

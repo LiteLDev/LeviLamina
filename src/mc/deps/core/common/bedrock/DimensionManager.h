@@ -33,7 +33,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1DimensionManager@@UEAA@XZ
+    // vIndex: 0, symbol: ??1DimensionManager@@UEAA@XZ
     virtual ~DimensionManager();
 
     // symbol:

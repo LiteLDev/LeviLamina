@@ -8,8 +8,8 @@
 class EndTag : public ::Tag {
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual ~EndTag() {}
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~EndTag() = default;
 
     // vIndex: 2, symbol: ?write@EndTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;

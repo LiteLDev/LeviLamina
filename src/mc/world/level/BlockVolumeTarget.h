@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockVolumeTarget@@UEAA@XZ
+    virtual ~BlockVolumeTarget();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -125,9 +125,6 @@ public:
 
     // symbol: ?shimPlaceForOldFeatures@BlockVolumeTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z
     MCVAPI bool shimPlaceForOldFeatures(class Feature const&, class BlockPos const&, class Random&) const;
-
-    // symbol: ??1BlockVolumeTarget@@UEAA@XZ
-    MCVAPI ~BlockVolumeTarget();
 
     // symbol:
     // ??0BlockVolumeTarget@@QEAA@AEAVBlockVolume@@AEAVLevel@@AEBVBiomeSource@@V?$AutomaticID@VDimension@@H@@AEBUWorldGenContext@@@Z

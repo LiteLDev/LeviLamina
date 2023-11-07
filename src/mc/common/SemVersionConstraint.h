@@ -22,8 +22,8 @@ public:
     // vIndex: 0, symbol: ?doValidate@SemVersionConstraint@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@cereal@@@Z
     virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
 
-    // symbol: ??1SemVersionConstraint@@UEAA@XZ
-    MCVAPI ~SemVersionConstraint();
+    // vIndex: 1, symbol: ??1SemVersionConstraint@@UEAA@XZ
+    virtual ~SemVersionConstraint();
 
     // symbol: ??0SemVersionConstraint@@QEAA@XZ
     MCAPI SemVersionConstraint();

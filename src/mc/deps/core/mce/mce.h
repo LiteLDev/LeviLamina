@@ -11,12 +11,15 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace mce { class Blob; }
 namespace mce { class Color; }
+namespace mce { class IGraphicsFeatureQuery; }
 namespace mce { class UUID; }
 namespace mce { struct Degree; }
 namespace mce { struct Image; }
 namespace mce { struct Radian; }
+namespace mce::framebuilder { class FrameBuilder; }
 // clang-format on
 
 namespace mce {

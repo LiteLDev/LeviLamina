@@ -27,11 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptEquippableComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptEquippableComponent();
+    // vIndex: 0, symbol: ??1ScriptEquippableComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptEquippableComponent();
 
     // symbol:
     // ?getEquipment@ScriptEquippableComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@W4EquipmentSlot@@@Z

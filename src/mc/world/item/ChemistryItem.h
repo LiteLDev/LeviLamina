@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ChemistryItem@@UEAA@XZ
+    virtual ~ChemistryItem();
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -78,8 +78,8 @@ public:
     // vIndex: 116, symbol: __unk_vfn_116
     virtual void __unk_vfn_116();
 
-    // symbol: ??1ChemistryItem@@UEAA@XZ
-    MCVAPI ~ChemistryItem();
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
 
     // symbol: ?validate@ChemistryItem@@SAXAEAVItemStackBase@@@Z
     MCAPI static void validate(class ItemStackBase&);

@@ -3,6 +3,7 @@
 #include "dyncall/dyncall_callback.h"
 
 #include "ll/api/Logger.h"
+#include "ll/api/utils/SehTranslator.h"
 #include "ll/core/Config.h"
 #include "ll/core/Levilamina.h"
 
@@ -16,7 +17,6 @@
 #include "mc/world/item/ItemInstance.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/level/block/actor/BaseCommandBlock.h"
-
 
 using ll::logger;
 
@@ -124,9 +124,9 @@ inline void OutputError(
 
 #pragma region ParameterPtr
 
-inline DynamicCommand::ParameterPtr::ParameterPtr(ParameterType type, size_t offset) : type(type), offset(offset) {}
+DynamicCommand::ParameterPtr::ParameterPtr(ParameterType type, size_t offset) : type(type), offset(offset) {}
 
-inline bool DynamicCommand::ParameterPtr::isValueSet(DynamicCommand const* command) const {
+bool DynamicCommand::ParameterPtr::isValueSet(DynamicCommand const* command) const {
     return ll::memory::dAccess<bool>(command, offset + ParameterSizeMap.at(type));
 }
 
@@ -143,7 +143,7 @@ DynamicCommand::ParameterData::ParameterData(ParameterData const& right)
     offset = right.offset;
 }
 
-inline DynamicCommand::ParameterData::ParameterData(
+DynamicCommand::ParameterData::ParameterData(
     std::string const&     name,
     ParameterType          type,
     bool                   optional,
@@ -166,7 +166,7 @@ inline DynamicCommand::ParameterData::ParameterData(
     }
 }
 
-inline DynamicCommand::ParameterData::ParameterData(
+DynamicCommand::ParameterData::ParameterData(
     std::string const&            name,
     DynamicCommand::ParameterType type,
     std::string const&            enumOptions,
@@ -175,7 +175,7 @@ inline DynamicCommand::ParameterData::ParameterData(
 )
 : ParameterData(name, type, false, enumOptions, identifier, parameterOption) {}
 
-inline CommandParameterData DynamicCommand::ParameterData::makeParameterData() const {
+CommandParameterData DynamicCommand::ParameterData::makeParameterData() const {
     switch (type) {
     case ParameterType::Bool:
         return makeParameterData<ParameterType::Bool, ParameterDataType::Bool>();
@@ -224,7 +224,7 @@ inline CommandParameterData DynamicCommand::ParameterData::makeParameterData() c
 
 #pragma region Result
 
-inline DynamicCommand::Result::Result(
+DynamicCommand::Result::Result(
     ParameterPtr const*           ptr,
     DynamicCommand const*         command,
     CommandOrigin const*          origin,
@@ -237,7 +237,7 @@ inline DynamicCommand::Result::Result(
   instance(instance ? instance : command->getInstance()),
   isSet(ptr->isValueSet(command)) {}
 
-inline DynamicCommand::Result::Result()
+DynamicCommand::Result::Result()
 : type((ParameterType)-1),
   offset(UINT64_MAX),
   command(nullptr),
@@ -245,7 +245,7 @@ inline DynamicCommand::Result::Result()
   instance(nullptr),
   isSet(false) {}
 
-inline std::string const& DynamicCommand::Result::getEnumValue() const {
+std::string const& DynamicCommand::Result::getEnumValue() const {
     if (getType() == ParameterType::Enum) {
         return getRaw<std::string>();
     } else if (getType() == ParameterType::SoftEnum) {
@@ -255,9 +255,9 @@ inline std::string const& DynamicCommand::Result::getEnumValue() const {
     return EMPTY_STRING;
 }
 
-inline ParameterType DynamicCommand::Result::getType() const { return type; }
+ParameterType DynamicCommand::Result::getType() const { return type; }
 
-inline std::string DynamicCommand::Result::getName() const {
+std::string DynamicCommand::Result::getName() const {
     for (auto& [name, ptr] : instance->parameterPtrs) {
         if (ptr.getOffset() == offset) return name;
     }
@@ -413,7 +413,7 @@ std::string DynamicCommand::Result::toDebugString() const {
     }
 }
 
-inline DynamicCommandInstance const* DynamicCommand::Result::getInstance() const {
+DynamicCommandInstance const* DynamicCommand::Result::getInstance() const {
     std::string commandName = command->getCommandName();
     auto        iter        = dynamicCommandInstances.find(commandName);
     if (iter == dynamicCommandInstances.end()) return nullptr;
@@ -424,8 +424,7 @@ inline DynamicCommandInstance const* DynamicCommand::Result::getInstance() const
 
 #pragma region DynamicCommand
 
-inline char
-DynamicCommand::builderCallbackHanler(DCCallback* /*cb*/, DCArgs* args, DCValue* /*result*/, void* userdata) {
+char DynamicCommand::builderCallbackHanler(DCCallback* /*cb*/, DCArgs* args, DCValue* /*result*/, void* userdata) {
     DynamicCommandInstance& command = *(DynamicCommandInstance*)userdata;
     auto                    arg1    = (std::unique_ptr<Command>*)dcbArgPointer(args);
     DynamicCommand::commandBuilder(arg1, command.getCommandName());
@@ -646,7 +645,7 @@ bool DynamicCommand::unregisterCommand(std::string const& name) {
     return false;
 }
 
-inline bool DynamicCommand::updateAvailableCommands() {
+bool DynamicCommand::updateAvailableCommands() {
 
     if (!ll::Global<CommandRegistry> || !ll::Global<Level>) return false;
     auto packet = ll::Global<CommandRegistry>->serializeAvailableCommands();
@@ -656,7 +655,7 @@ inline bool DynamicCommand::updateAvailableCommands() {
     return true;
 }
 
-inline DynamicCommandInstance const* DynamicCommand::getInstance() const { return getInstance(getCommandName()); }
+DynamicCommandInstance const* DynamicCommand::getInstance() const { return getInstance(getCommandName()); }
 
 DynamicCommandInstance const* DynamicCommand::getInstance(std::string const& commandName) {
     auto iter = dynamicCommandInstances.find(commandName);
@@ -668,7 +667,7 @@ DynamicCommandInstance const* DynamicCommand::getInstance(std::string const& com
 
 #pragma region DynamicCommandInstance
 
-inline DynamicCommandInstance::DynamicCommandInstance(
+DynamicCommandInstance::DynamicCommandInstance(
     std::string const&     name,
     std::string const&     description,
     CommandPermissionLevel permission,
@@ -679,12 +678,12 @@ inline DynamicCommandInstance::DynamicCommandInstance(
   permission_(permission),
   flag_(flag) {}
 
-inline DynamicCommandInstance::~DynamicCommandInstance() {
+DynamicCommandInstance::~DynamicCommandInstance() {
     if (this->builder_) dcbFreeCallback((DCCallback*)this->builder_);
     this->builder_ = nullptr;
 }
 
-inline std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(
+std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(
     std::string const&     name,
     std::string const&     description,
     CommandPermissionLevel permission,
@@ -697,13 +696,13 @@ inline std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(
     return std::unique_ptr<DynamicCommandInstance>(new DynamicCommandInstance(name, description, permission, flag));
 }
 
-inline bool DynamicCommandInstance::addOverload(std::vector<DynamicCommand::ParameterData>&& params) {
+bool DynamicCommandInstance::addOverload(std::vector<DynamicCommand::ParameterData>&& params) {
     std::vector<ParameterIndex> indices;
     for (auto& param : params) { indices.push_back(newParameter(std::forward<ParameterData>(param))); }
     return addOverload(std::move(indices));
 }
 
-inline std::string const&
+std::string const&
 DynamicCommandInstance::setEnum(std::string const& description, std::vector<std::string> const& values) {
     auto& desc = enumNames.emplace_back(std::make_unique<std::string>(description));
     enumRanges.emplace(*desc, std::pair{enumValues.size(), values.size()});
@@ -711,7 +710,7 @@ DynamicCommandInstance::setEnum(std::string const& description, std::vector<std:
     return *desc;
 }
 
-inline std::string const& DynamicCommandInstance::getEnumValue(int index) const {
+std::string const& DynamicCommandInstance::getEnumValue(int index) const {
     if (index < 0 || index >= enumValues.size()) throw std::runtime_error("Enum index out of range");
     return enumValues.at(index);
 }
@@ -744,7 +743,7 @@ ParameterIndex DynamicCommandInstance::newParameter(DynamicCommand::ParameterDat
     return {this, parameterDatas.size() - 1};
 }
 
-inline ParameterIndex DynamicCommandInstance::newParameter(
+ParameterIndex DynamicCommandInstance::newParameter(
     std::string const&            name,
     DynamicCommand::ParameterType type,
     bool                          optional,
@@ -755,7 +754,7 @@ inline ParameterIndex DynamicCommandInstance::newParameter(
     return newParameter(ParameterData(name, type, optional, description, identifier, parameterOption));
 }
 
-inline ParameterIndex DynamicCommandInstance::findParameterIndex(std::string const& indentifier) {
+ParameterIndex DynamicCommandInstance::findParameterIndex(std::string const& indentifier) {
     size_t index = 0;
     for (auto& paramData : parameterDatas) {
         if (paramData.identifier == indentifier || paramData.description == indentifier
@@ -767,7 +766,7 @@ inline ParameterIndex DynamicCommandInstance::findParameterIndex(std::string con
     return {this, index};
 }
 
-inline ParameterIndex DynamicCommandInstance::mandatory(
+ParameterIndex DynamicCommandInstance::mandatory(
     std::string const&            name,
     DynamicCommand::ParameterType type,
     std::string const&            description,
@@ -777,7 +776,7 @@ inline ParameterIndex DynamicCommandInstance::mandatory(
     return newParameter(ParameterData(name, type, false, description, identifier, parameterOption));
 }
 
-inline ParameterIndex DynamicCommandInstance::mandatory(
+ParameterIndex DynamicCommandInstance::mandatory(
     std::string const&            name,
     DynamicCommand::ParameterType type,
     std::string const&            description,
@@ -786,7 +785,7 @@ inline ParameterIndex DynamicCommandInstance::mandatory(
     return mandatory(name, type, description, "", parameterOption);
 }
 
-inline ParameterIndex DynamicCommandInstance::mandatory(
+ParameterIndex DynamicCommandInstance::mandatory(
     std::string const&            name,
     DynamicCommand::ParameterType type,
     CommandParameterOption        parameterOption
@@ -794,7 +793,7 @@ inline ParameterIndex DynamicCommandInstance::mandatory(
     return mandatory(name, type, "", "", parameterOption);
 }
 
-inline ParameterIndex DynamicCommandInstance::optional(
+ParameterIndex DynamicCommandInstance::optional(
     std::string const&            name,
     DynamicCommand::ParameterType type,
     std::string const&            description,
@@ -804,7 +803,7 @@ inline ParameterIndex DynamicCommandInstance::optional(
     return newParameter(ParameterData(name, type, true, description, identifier, parameterOption));
 }
 
-inline ParameterIndex DynamicCommandInstance::optional(
+ParameterIndex DynamicCommandInstance::optional(
     std::string const&            name,
     DynamicCommand::ParameterType type,
     std::string const&            description,
@@ -813,7 +812,7 @@ inline ParameterIndex DynamicCommandInstance::optional(
     return optional(name, type, description, "", parameterOption);
 }
 
-inline ParameterIndex DynamicCommandInstance::optional(
+ParameterIndex DynamicCommandInstance::optional(
     std::string const&            name,
     DynamicCommand::ParameterType type,
     CommandParameterOption        parameterOption
@@ -833,7 +832,7 @@ bool DynamicCommandInstance::addOverload(std::vector<ParameterIndex>&& params) {
     return true;
 }
 
-inline bool DynamicCommandInstance::addOverload(std::vector<char const*>&& params) {
+bool DynamicCommandInstance::addOverload(std::vector<char const*>&& params) {
     std::vector<ParameterIndex> paramIndices;
     for (auto& param : params) {
         auto index = findParameterIndex(param);
@@ -843,19 +842,18 @@ inline bool DynamicCommandInstance::addOverload(std::vector<char const*>&& param
     return addOverload(std::move(paramIndices));
 }
 
-inline bool DynamicCommandInstance::addOverload(std::vector<std::string>&& params) {
+bool DynamicCommandInstance::addOverload(std::vector<std::string>&& params) {
     std::vector<ParameterIndex> paramIndices;
     for (auto& param : params) { paramIndices.push_back(findParameterIndex(param)); }
     return addOverload(std::move(paramIndices));
 }
 
-inline bool DynamicCommandInstance::setAlias(std::string const& alias) {
+bool DynamicCommandInstance::setAlias(std::string const& alias) {
     this->alias_ = alias;
     return true;
 }
 
-inline std::vector<CommandParameterData>
-DynamicCommandInstance::buildOverload(std::vector<ParameterIndex> const& overload) {
+std::vector<CommandParameterData> DynamicCommandInstance::buildOverload(std::vector<ParameterIndex> const& overload) {
     std::vector<CommandParameterData> datas;
     for (auto& index : overload) {
         auto& param = parameterDatas.at(index);
@@ -918,29 +916,27 @@ bool DynamicCommandInstance::removeSoftEnumValues(std::string const& name, std::
     return true;
 }
 
-inline std::vector<std::string> DynamicCommandInstance::getSoftEnumValues(std::string const& name) {
+std::vector<std::string> DynamicCommandInstance::getSoftEnumValues(std::string const& name) {
     return ll::Global<CommandRegistry>->getSoftEnumValues(name);
 }
 
-inline std::vector<std::string> DynamicCommandInstance::getSoftEnumNames() {
+std::vector<std::string> DynamicCommandInstance::getSoftEnumNames() {
     return ll::Global<CommandRegistry>->getSoftEnumNames();
 }
 
-inline void DynamicCommandInstance::setCallback(DynamicCommand::CallBackFn&& callback) const {
-    this->callback_ = callback;
-}
+void DynamicCommandInstance::setCallback(DynamicCommand::CallBackFn&& callback) const { this->callback_ = callback; }
 
-inline void DynamicCommandInstance::removeCallback() const { callback_ = nullptr; }
+void DynamicCommandInstance::removeCallback() const { callback_ = nullptr; }
 
-inline std::string const& DynamicCommandInstance::getCommandName() const { return name_; }
+std::string const& DynamicCommandInstance::getCommandName() const { return name_; }
 
-inline bool DynamicCommandInstance::setBuilder(DynamicCommand::BuilderFn builder) {
+bool DynamicCommandInstance::setBuilder(DynamicCommand::BuilderFn builder) {
     if (this->builder_ == nullptr) this->builder_ = builder;
     else return false;
     return true;
 }
 
-inline DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder() {
+DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder() {
     auto builder = (DynamicCommand::BuilderFn)dcbNewCallback("ifsdl)p", &DynamicCommand::builderCallbackHanler, this);
     if (this->setBuilder(builder)) return builder;
     dcbFreeCallback((DCCallback*)builder);

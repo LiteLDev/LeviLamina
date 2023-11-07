@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ShipwreckStart() = default;
 
     // symbol: ??0ShipwreckStart@@QEAA@AEBVBiomeSource@@AEAVRandom@@HHF@Z
     MCAPI ShipwreckStart(class BiomeSource const&, class Random&, int, int, short);

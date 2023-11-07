@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FileImpl@Core@@UEAA@XZ
+    virtual ~FileImpl();
 
     // vIndex: 1, symbol:
     // ?_getPath@FlatFile@Core@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@XZ
@@ -72,9 +72,6 @@ public:
 
     // vIndex: 15, symbol: ?_setInitialFileSize@FileImpl@Core@@MEAA?AVResult@2@_K@Z
     virtual class Core::Result _setInitialFileSize(uint64);
-
-    // symbol: ??1FileImpl@Core@@UEAA@XZ
-    MCVAPI ~FileImpl();
 
     // symbol: ??0FileImpl@Core@@QEAA@PEAVFileSystemImpl@1@VFileOpenMode@1@@Z
     MCAPI FileImpl(class Core::FileSystemImpl*, class Core::FileOpenMode);
@@ -153,9 +150,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sAllFiles() { return sAllFiles; }
+    static auto& $sAllFiles() { return sAllFiles; }
 
-    auto& $sAllFilesLock() { return sAllFilesLock; }
+    static auto& $sAllFilesLock() { return sAllFilesLock; }
 
     // NOLINTEND
 };

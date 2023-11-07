@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockLoot11910Upgrade@@@UEAA@XZ
+    virtual ~BlockLoot11910Upgrade();
 
     // vIndex: 1, symbol: ?previousSchema@BlockLoot11910Upgrade@BlockLootVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z
     virtual void previousSchema(class cereal::SchemaFactory&) const;

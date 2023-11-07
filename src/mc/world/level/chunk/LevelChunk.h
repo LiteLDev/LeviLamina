@@ -733,7 +733,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $UPDATE_MAP_BIT_SHIFT() { return UPDATE_MAP_BIT_SHIFT; }
+    static auto& $UPDATE_MAP_BIT_SHIFT() { return UPDATE_MAP_BIT_SHIFT; }
 
     // NOLINTEND
 };

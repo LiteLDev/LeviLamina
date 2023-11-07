@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1DeferredSubscriptionHub@PubSub@@@UEAA@XZ
+    virtual ~DeferredSubscriptionHub();
 
     // vIndex: 1, symbol: ?runDeferredEvents@DeferredSubscriptionHubBase@PubSub@Bedrock@@UEAA_K_K@Z
     virtual uint64 runDeferredEvents(uint64) = 0;

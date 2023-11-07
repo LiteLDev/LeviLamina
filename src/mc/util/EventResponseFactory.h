@@ -10,17 +10,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1EventResponseFactory@@UEAA@XZ
+    virtual ~EventResponseFactory();
 
-    // vIndex: 1, symbol: ?initializeFactory@ItemEventResponseFactory@@UEAAXAEBVExperiments@@@Z
+    // vIndex: 1, symbol: ?initializeFactory@BlockEventResponseFactory@@UEAAXAEBVExperiments@@@Z
     virtual void initializeFactory(class Experiments const&) = 0;
 
-    // vIndex: 2, symbol: ?initSchema@ItemEventResponseFactory@@UEAAXXZ
+    // vIndex: 2, symbol: ?initSchema@BlockEventResponseFactory@@UEAAXXZ
     virtual void initSchema() = 0;
-
-    // symbol: ??1EventResponseFactory@@UEAA@XZ
-    MCVAPI ~EventResponseFactory();
 
     // symbol: ??0EventResponseFactory@@QEAA@XZ
     MCAPI EventResponseFactory();

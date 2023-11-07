@@ -16,14 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ItemDescriptorCount@@UEAA@XZ
+    virtual ~ItemDescriptorCount();
 
     // vIndex: 2, symbol: ?serialize@ItemDescriptorCount@@UEBAXAEAVBinaryStream@@@Z
     virtual void serialize(class BinaryStream&) const;
-
-    // symbol: ??1ItemDescriptorCount@@UEAA@XZ
-    MCVAPI ~ItemDescriptorCount();
 
     // symbol: ??0ItemDescriptorCount@@QEAA@XZ
     MCAPI ItemDescriptorCount();

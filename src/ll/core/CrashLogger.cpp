@@ -1,10 +1,12 @@
 #include "ll/core/CrashLogger.h"
+
 #include "ll/api/Logger.h"
 #include "ll/api/ServerInfo.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"
 #include "ll/core/Config.h"
-#include <filesystem>
+
+#include <windows.h>
 
 using namespace ll::i18n_literals;
 using namespace ll::utils;

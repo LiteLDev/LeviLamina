@@ -56,6 +56,9 @@ public:
     // vIndex: 12, symbol: ?getHash@ComplexAliasDescriptor@@UEBA_KXZ
     virtual uint64 getHash() const;
 
+    // vIndex: 15, symbol: ??1@@UEAA@XZ
+    virtual ~ComplexAliasDescriptor() = default;
+
     // symbol: ??0ComplexAliasDescriptor@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit ComplexAliasDescriptor(std::string const&);
 

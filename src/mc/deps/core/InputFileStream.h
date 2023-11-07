@@ -18,6 +18,13 @@ public:
     InputFileStream& operator=(InputFileStream const&);
     InputFileStream(InputFileStream const&);
     InputFileStream();
+
+public:
+    // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1InputFileStream@@@UEAA@XZ
+    virtual ~InputFileStream();
+
+    // NOLINTEND
 };
 
 }; // namespace Core

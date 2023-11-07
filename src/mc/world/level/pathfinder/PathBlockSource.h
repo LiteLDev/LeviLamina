@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1PathBlockSource@@UEAA@XZ
+    virtual ~PathBlockSource();
 
     // vIndex: 1, symbol: ?isInWater@PathBlockSource@@UEBA_NXZ
     virtual bool isInWater() const;
@@ -31,9 +31,6 @@ public:
 
     // vIndex: 5, symbol: ?isSolidBlock@PathBlockSource@@UEBA_NAEBVBlockPos@@@Z
     virtual bool isSolidBlock(class BlockPos const&) const;
-
-    // symbol: ??1PathBlockSource@@UEAA@XZ
-    MCVAPI ~PathBlockSource();
 
     // NOLINTEND
 };

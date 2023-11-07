@@ -55,14 +55,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ScoreboardCommand@@UEAA@XZ
+    virtual ~ScoreboardCommand();
 
     // vIndex: 2, symbol: ?execute@ScoreboardCommand@@EEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-
-    // symbol: ??1ScoreboardCommand@@UEAA@XZ
-    MCVAPI ~ScoreboardCommand();
 
     // symbol: ?setup@ScoreboardCommand@@SAXAEAVCommandRegistry@@$$QEAUInitProxy@1@@Z
     MCAPI static void setup(class CommandRegistry&, struct ScoreboardCommand::InitProxy&&);

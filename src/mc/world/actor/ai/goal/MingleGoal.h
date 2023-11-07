@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~MingleGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@MingleGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -75,11 +75,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $FIND_PARTNER_INTERVAL_TICKS() { return FIND_PARTNER_INTERVAL_TICKS; }
+    static auto& $FIND_PARTNER_INTERVAL_TICKS() { return FIND_PARTNER_INTERVAL_TICKS; }
 
-    auto& $SPEAK_INTERVAL_TICKS_MAX() { return SPEAK_INTERVAL_TICKS_MAX; }
+    static auto& $SPEAK_INTERVAL_TICKS_MAX() { return SPEAK_INTERVAL_TICKS_MAX; }
 
-    auto& $SPEAK_INTERVAL_TICKS_MIN() { return SPEAK_INTERVAL_TICKS_MIN; }
+    static auto& $SPEAK_INTERVAL_TICKS_MIN() { return SPEAK_INTERVAL_TICKS_MIN; }
 
     // NOLINTEND
 };

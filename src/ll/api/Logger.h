@@ -1,18 +1,17 @@
-////////////////////////////////////////////////////////////////////////
-//  Logger System - Log text to console, file and player easily
-//  - Created by RimuruChan on 2021/12/11.
-//
-//
-//  [Create Logger]
-//
-//  Logger logger("MyPlugin");                  // Create a logger (default: only log to console)
-//
-//  [Use Logger]
-//
-//  logger.info("Infomation");                                  // Common
-//  logger.error("Error! Code:{}",GetLastError());              // fmt Format
-//
-////////////////////////////////////////////////////////////////////////
+/**
+ *
+ * @brief Logger System - Log text to console, file and player easily
+ *
+ * Create Logger
+ * @code
+ * Logger logger("MyPlugin"); // Create a logger (default: only log to console)
+ * @endcode
+ * Use Logger
+ * @code
+ * logger.info("Infomation");                      // Common
+ * logger.error("Error! Code:{}",GetLastError());  // fmt Format
+ * @endcode
+ */
 
 #pragma once
 
@@ -90,7 +89,7 @@ public:
     OutputStream error;
     OutputStream fatal;
 
-    LLAPI explicit Logger(std::string_view title = __builtin_FUNCTION());
+    LLNDAPI explicit Logger(std::string_view title = __builtin_FUNCTION());
 
     ~Logger() { resetFile(); }
 

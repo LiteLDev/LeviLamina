@@ -42,6 +42,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ChunkPerformanceData() = default;
+
     // symbol: ??0ChunkPerformanceData@@QEAA@XZ
     MCAPI ChunkPerformanceData();
 

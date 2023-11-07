@@ -38,7 +38,7 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mRegistryCount() { return mRegistryCount; }
+    static auto& $mRegistryCount() { return mRegistryCount; }
 
     // NOLINTEND
 };

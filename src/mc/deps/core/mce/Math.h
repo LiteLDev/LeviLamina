@@ -139,9 +139,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mSinScale() { return mSinScale; }
+    static auto& $mSinScale() { return mSinScale; }
 
-    auto& $mSin() { return mSin; }
+    static auto& $mSin() { return mSin; }
 
     // NOLINTEND
 };

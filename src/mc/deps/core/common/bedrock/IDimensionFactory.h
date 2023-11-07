@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IDimensionFactory@@UEAA@XZ
+    // vIndex: 0, symbol: ??1IDimensionFactory@@UEAA@XZ
     virtual ~IDimensionFactory();
 
     // NOLINTEND

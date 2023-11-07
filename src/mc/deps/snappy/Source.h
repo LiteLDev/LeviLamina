@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1Source@snappy@@UEAA@XZ
-    MCVAPI ~Source();
+    // vIndex: 0, symbol: ??1Source@snappy@@UEAA@XZ
+    virtual ~Source();
 
     // NOLINTEND
 };

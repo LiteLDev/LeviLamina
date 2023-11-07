@@ -21,11 +21,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1IGetPlacementBlockCallback@@@UEAA@XZ
+    virtual ~IGetPlacementBlockCallback();
 
     // vIndex: 1, symbol:
-    // ?getPlacementBlock@UpdateCardinalGetPlacementBlockCallback@PlacementDirection@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // ?getPlacementBlock@UpdateVerticalHalfGetPlacementBlockCallback@PlacementPosition@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual gsl::not_null<class Block const*> getPlacementBlock(
         gsl::not_null<class Block const*>,
         class Actor const&,

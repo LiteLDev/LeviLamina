@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1LibHttpClientInstance@Http@Bedrock@@UEAA@XZ
-    MCVAPI ~LibHttpClientInstance();
+    // vIndex: 0, symbol: ??1LibHttpClientInstance@Http@Bedrock@@UEAA@XZ
+    virtual ~LibHttpClientInstance();
 
     // NOLINTEND
 
@@ -45,9 +45,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sMutex() { return sMutex; }
+    static auto& $sMutex() { return sMutex; }
 
-    auto& $sWeakInstance() { return sWeakInstance; }
+    static auto& $sWeakInstance() { return sWeakInstance; }
 
     // NOLINTEND
 };

@@ -53,7 +53,7 @@ public:
         // member accessor
     public:
         // NOLINTBEGIN
-        auto& $mSequenceIdGenerator() { return mSequenceIdGenerator; }
+        static auto& $mSequenceIdGenerator() { return mSequenceIdGenerator; }
 
         // NOLINTEND
     };
@@ -102,7 +102,7 @@ public:
             // member accessor
         public:
             // NOLINTBEGIN
-            auto& $mMaxTicks() { return mMaxTicks; }
+            static auto& $mMaxTicks() { return mMaxTicks; }
 
             // NOLINTEND
         };
@@ -114,6 +114,9 @@ public:
 
     public:
         // NOLINTBEGIN
+        // vIndex: 0, symbol: ??1RuntimePredictionData@@@UEAA@XZ
+        virtual ~RuntimePredictionData();
+
         // symbol: ??0RuntimePredictionData@PredictedMovementComponent@@QEAA@XZ
         MCAPI RuntimePredictionData();
 
@@ -181,9 +184,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $LERP_STEP_SIZE() { return LERP_STEP_SIZE; }
+    static auto& $LERP_STEP_SIZE() { return LERP_STEP_SIZE; }
 
-    auto& $mGlobalRuntimePredictionData() { return mGlobalRuntimePredictionData; }
+    static auto& $mGlobalRuntimePredictionData() { return mGlobalRuntimePredictionData; }
 
     // NOLINTEND
 };

@@ -19,7 +19,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $EXPIRED_TICK() { return EXPIRED_TICK; }
+    static auto& $EXPIRED_TICK() { return EXPIRED_TICK; }
 
     // NOLINTEND
 };

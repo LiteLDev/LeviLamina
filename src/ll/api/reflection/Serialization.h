@@ -7,6 +7,9 @@ namespace ll::reflection {
 template <class J, Reflectable T>
 inline J serialize(T const&)
     requires(!std::convertible_to<T, J>);
+template <class J, Reflectable T, class F>
+inline J serialize(T const&, F&&)
+    requires(!std::convertible_to<T, J>);
 template <class J, Reflectable T>
 inline void deserialize(T&, J const&);
 
@@ -60,8 +63,25 @@ inline J serialize(T const& obj)
     J res;
     forEachMember(obj, [&](std::string_view name, auto& member) {
         using MemberType = std::remove_cvref_t<decltype(member)>;
-        if constexpr (requires(MemberType& m) { serialize<J, MemberType>(m); }) {
-            auto j = serialize<J, MemberType>(member);
+        if constexpr (requires(MemberType& m) { serialize<J>(m); }) {
+            auto j = serialize<J>(member);
+            if (!j.is_null()) res[std::string{name}] = j;
+        } else {
+            static_assert(ll::concepts::always_false<MemberType>, "this type can't serialize");
+        }
+    });
+    return res;
+}
+template <class J, Reflectable T, class F>
+inline J serialize(T const& obj, F&& f)
+    requires(!std::convertible_to<T, J>)
+{
+    J res;
+    forEachMember(obj, [&](std::string_view name, auto& member) {
+        if (!std::forward<F>(f)(name, std::forward<decltype(member)>(member))) { return; }
+        using MemberType = std::remove_cvref_t<decltype(member)>;
+        if constexpr (requires(MemberType& m) { serialize<J>(m); }) {
+            auto j = serialize<J>(member);
             if (!j.is_null()) res[std::string{name}] = j;
         } else {
             static_assert(ll::concepts::always_false<MemberType>, "this type can't serialize");
@@ -74,8 +94,8 @@ inline void deserialize(T& obj, J const& j) {
     forEachMember(obj, [&](std::string_view name, auto& member) {
         if (auto sname = std::string{name}; j.contains(sname)) {
             using MemberType = std::remove_cvref_t<decltype(member)>;
-            if constexpr (requires(MemberType& o, J const& s) { deserialize<J, MemberType>(o, s); }) {
-                deserialize<J, MemberType>(member, j[sname]);
+            if constexpr (requires(MemberType& o, J const& s) { deserialize<J>(o, s); }) {
+                deserialize<J>(member, j[sname]);
             } else {
                 static_assert(ll::concepts::always_false<MemberType>, "this type can't deserialize");
             }
@@ -122,7 +142,7 @@ inline J serialize(T const& map)
     requires(std::is_convertible_v<typename T::key_type, std::string_view> && !std::convertible_to<T, J>)
 {
     J res;
-    for (auto& [k, v] : map) { res[std::string{k}] = serialize<J, typename T::mapped_type>(v); }
+    for (auto& [k, v] : map) { res[std::string{k}] = serialize<J>(v); }
     return res;
 }
 template <class J, ll::concepts::Associative T>
@@ -131,7 +151,7 @@ inline void deserialize(T& map, J const& j)
 {
     if (!j.is_object()) return;
     map.clear();
-    for (auto& [k, v] : j.items()) { deserialize<J, typename T::mapped_type>(map[k], v); }
+    for (auto& [k, v] : j.items()) { deserialize<J>(map[k], v); }
 }
 
 template <class J, ll::concepts::TupleLike T>
@@ -140,7 +160,7 @@ inline J serialize(T const& tuple)
 {
     J res;
     std::apply(
-        [&](auto&&... args) { ((res.push_back(serialize<J, std::remove_cvref_t<decltype(args)>>(args))), ...); },
+        [&](auto&&... args) { ((res.push_back(serialize<J>(args))), ...); },
         tuple
     );
     return res;
@@ -151,7 +171,7 @@ inline void deserialize(T& tuple, J const& j) {
     size_t i = 0;
     std::apply(
         [&](auto&... args) {
-            (((i < j.size()) ? deserialize<J, std::remove_cvref_t<decltype(args)>>(args, j[i++]) : void()), ...);
+            (((i < j.size()) ? deserialize<J>(args, j[i++]) : void()), ...);
         },
         tuple
     );
@@ -162,7 +182,7 @@ inline J serialize(T const& arr)
     requires(!std::convertible_to<T, J>)
 {
     J res;
-    for (auto& val : arr) { res.push_back(serialize<J, std::remove_cvref_t<decltype(val)>>(val)); }
+    for (auto& val : arr) { res.push_back(serialize<J>(val)); }
     return res;
 }
 template <class J, ll::concepts::ArrayLike T>
@@ -176,32 +196,32 @@ inline void deserialize(T& arr, J const& j)
     if constexpr (requires(T a, ValueType v) { a.push_back(v); }) {
 
         arr.resize(j.size());
-        for (size_t i = 0; i < j.size(); i++) { deserialize<J, ValueType>(arr[i], j[i]); }
+        for (size_t i = 0; i < j.size(); i++) { deserialize<J>(arr[i], j[i]); }
 
     } else if constexpr (requires(T a, ValueType v) { a.insert(ValueType{}); }) {
 
         for (size_t i = 0; i < j.size(); i++) {
             ValueType tmp{};
-            deserialize<J, ValueType>(tmp, j[i]);
+            deserialize<J>(tmp, j[i]);
             arr.insert(tmp);
         }
 
     } else if constexpr (requires(T a, size_t v) { a.at(v); }) {
-        for (size_t i = 0; i < arr.size(); i++) { deserialize<J, ValueType>(arr.at(i), j[i]); }
+        for (size_t i = 0; i < arr.size(); i++) { deserialize<J>(arr.at(i), j[i]); }
     }
 }
 
 template <class J, ll::concepts::IsOptional T>
 inline J serialize(T const& opt) {
     if (!opt) { return nullptr; }
-    return serialize<J, typename T::value_type>(opt.value());
+    return serialize<J>(opt.value());
 }
 template <class J, ll::concepts::IsOptional T>
 inline void deserialize(T& opt, J const& j) {
     if (j.is_null()) {
         opt = std::nullopt;
     } else {
-        deserialize<J, typename T::value_type>(opt.value(), j);
+        deserialize<J>(opt.value(), j);
     }
 }
 } // namespace ll::reflection

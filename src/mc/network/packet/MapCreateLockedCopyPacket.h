@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1MapCreateLockedCopyPacket@@UEAA@XZ
+    virtual ~MapCreateLockedCopyPacket();
 
     // vIndex: 1, symbol: ?getId@MapCreateLockedCopyPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -35,9 +35,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@MapCreateLockedCopyPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1MapCreateLockedCopyPacket@@UEAA@XZ
-    MCVAPI ~MapCreateLockedCopyPacket();
 
     // symbol: ??0MapCreateLockedCopyPacket@@QEAA@XZ
     MCAPI MapCreateLockedCopyPacket();

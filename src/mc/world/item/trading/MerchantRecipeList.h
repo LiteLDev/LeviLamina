@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~MerchantRecipeList() = default;
 
     // vIndex: 1, symbol: ?getRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBVItemInstance@@0H@Z
     virtual class MerchantRecipe* getRecipeFor(class ItemInstance const&, class ItemInstance const&, int);

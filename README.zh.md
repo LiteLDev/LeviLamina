@@ -1,7 +1,7 @@
+# LeviLamina
+
 > [!IMPORTANT]
 > 寻找LeviLamina的前身LiteLoaderBDS？请访问<https://github.com/LiteLDev/LiteLoaderBDSv2>。
-
-# LeviLamina
 
 ![LeviLamina](https://socialify.git.ci/LiteLDev/LeviLamina/image?description=1&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLeviLamina%2FHEAD%2Fdocs%2Fimg%2Flogo.svg&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
@@ -20,9 +20,10 @@ LeviLamina是一个非官方的插件加载器，旨在为Minecraft Bedrock Serv
 - [安装](#安装)
   - [更新](#更新)
 - [使用](#使用)
+- [致谢](#致谢)
 - [贡献](#贡献)
-- [贡献者](#贡献者)
 - [许可证](#许可证)
+- [星星的历史](#星星的历史)
 - [免责声明](#免责声明)
 
 ## 安装
@@ -32,14 +33,14 @@ LeviLamina是一个非官方的插件加载器，旨在为Minecraft Bedrock Serv
 首先，为您的Minecraft服务器创建一个新目录并进入其中：
 
 ```sh
-$ mkdir myserver
-$ cd myserver
+mkdir myserver
+cd myserver
 ```
 
 然后，使用lip安装捆绑了Minecraft Bedrock Server的LeviLamina：
 
 ```sh
-$ lip install github.com/tooth-hub/corepack
+lip install github.com/tooth-hub/corepack
 ```
 
 更多信息，请参阅[文档](https://levilamina.liteldev.com)。
@@ -56,10 +57,16 @@ $ lip install github.com/tooth-hub/corepack
 要启动服务器，只需运行`bedrock_server_mod.exe`：
 
 ```sh
-$ ./bedrock_server_mod.exe
+./bedrock_server_mod.exe
 ```
 
 更多信息，请参阅[文档](https://levilamina.liteldev.com)。
+
+## 致谢
+
+感谢所有为此项目做出贡献的人。
+
+![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
 
 ## 贡献
 
@@ -67,15 +74,13 @@ $ ./bedrock_server_mod.exe
 
 LeviLamina遵循[Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)行为准则。
 
-## 贡献者
-
-感谢所有为此项目做出贡献的人。
-
-![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
-
 ## 许可证
 
 [LGPL-3.0-only](LICENSE) © 2021-2023 LiteLDev
+
+## 星星的历史
+
+![Star History Chart](https://api.star-history.com/svg?repos=LiteLDev/LeviLamina&type=Date)
 
 ## 免责声明
 

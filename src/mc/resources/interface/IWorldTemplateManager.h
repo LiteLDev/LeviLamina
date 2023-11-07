@@ -20,16 +20,13 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1IWorldTemplateManager@@UEAA@XZ
+    virtual ~IWorldTemplateManager();
 
     // vIndex: 1, symbol:
     // ?findInstalledWorldTemplateByUUID@WorldTemplateManager@@UEBAPEBUWorldTemplateInfo@@AEBV?$vector@VUUID@mce@@V?$allocator@VUUID@mce@@@std@@@std@@@Z
     virtual struct WorldTemplateInfo const*
     findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const&) const = 0;
-
-    // symbol: ??1IWorldTemplateManager@@UEAA@XZ
-    MCVAPI ~IWorldTemplateManager();
 
     // NOLINTEND
 };

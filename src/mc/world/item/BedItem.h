@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~BedItem() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -84,6 +84,9 @@ public:
 
     // vIndex: 120, symbol: ?getIconInfo@BedItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
 
     // vIndex: 132, symbol: ?_checkUseOnPermissions@BedItem@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z
     virtual bool _checkUseOnPermissions(class Actor&, class ItemStackBase&, uchar const&, class BlockPos const&) const;

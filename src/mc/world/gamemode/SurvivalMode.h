@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~SurvivalMode() = default;
 
     // vIndex: 1, symbol: ?startDestroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z
     virtual bool startDestroyBlock(class BlockPos const&, uchar, bool&);
@@ -81,7 +81,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mTrialHasEnded() { return mTrialHasEnded; }
+    static auto& $mTrialHasEnded() { return mTrialHasEnded; }
 
     // NOLINTEND
 };

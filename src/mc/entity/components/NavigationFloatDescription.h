@@ -17,11 +17,8 @@ public:
     // vIndex: 0, symbol: ?getJsonName@NavigationFloatDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
-    // symbol: ??1NavigationFloatDescription@@UEAA@XZ
-    MCVAPI ~NavigationFloatDescription();
+    // vIndex: 1, symbol: ??1NavigationFloatDescription@@UEAA@XZ
+    virtual ~NavigationFloatDescription();
 
     // NOLINTEND
 };

@@ -9,8 +9,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~BaseBlockLocationIterator() = default;
 
     // vIndex: 1, symbol: ??EBaseBlockLocationIterator@@UEAAAEAV0@XZ
     virtual class BaseBlockLocationIterator& operator++();

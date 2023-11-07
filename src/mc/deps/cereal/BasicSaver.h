@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BasicSaver@cereal@@UEAA@XZ
-    MCVAPI ~BasicSaver();
+    // vIndex: 0, symbol: ??1BasicSaver@cereal@@UEAA@XZ
+    virtual ~BasicSaver();
 
     // NOLINTEND
 

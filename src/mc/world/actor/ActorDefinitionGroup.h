@@ -46,6 +46,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ActorDefinitionGroup() = default;
+
     // symbol:
     // ??0ActorDefinitionGroup@@QEAA@AEAVLevel@@AEAVResourcePackManager@@AEAVIMinecraftEventing@@AEBVExperiments@@@Z
     MCAPI

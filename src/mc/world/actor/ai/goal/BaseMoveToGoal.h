@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BaseMoveToGoal@@UEAA@XZ
+    virtual ~BaseMoveToGoal();
 
     // vIndex: 1, symbol: ?canUse@BaseMoveToGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -36,7 +36,7 @@ public:
     // vIndex: 10, symbol: ?hasReachedTarget@BaseMoveToGoal@@UEBA_NXZ
     virtual bool hasReachedTarget() const;
 
-    // vIndex: 11, symbol: ?isValidTarget@RaidGardenGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 11, symbol: ?isValidTarget@MoveToPOIGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isValidTarget(class BlockSource&, class BlockPos const&) = 0;
 
     // vIndex: 12, symbol: ?_nextStartTick@BaseMoveToGoal@@MEAAHXZ
@@ -45,7 +45,7 @@ public:
     // vIndex: 13, symbol: ?_canReach@BaseMoveToGoal@@MEAA_NAEBVBlockPos@@@Z
     virtual bool _canReach(class BlockPos const&);
 
-    // vIndex: 14, symbol: ?_moveToBlock@BaseMoveToBlockGoal@@MEAAXXZ
+    // vIndex: 14, symbol: ?_moveToBlock@MoveToPOIGoal@@MEAAXXZ
     virtual void _moveToBlock() = 0;
 
     // vIndex: 15, symbol: ?_getTargetPosition@BaseMoveToGoal@@MEBA?AVVec3@@XZ
@@ -53,9 +53,6 @@ public:
 
     // vIndex: 16, symbol: ?_getRepathTime@BaseMoveToGoal@@MEBA_KXZ
     virtual uint64 _getRepathTime() const;
-
-    // symbol: ??1BaseMoveToGoal@@UEAA@XZ
-    MCVAPI ~BaseMoveToGoal();
 
     // symbol: ??0BaseMoveToGoal@@QEAA@AEAVMob@@MMMHH@Z
     MCAPI BaseMoveToGoal(class Mob&, float, float, float, int, int);

@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1AppConfigs@@UEAA@XZ
+    virtual ~AppConfigs();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -223,9 +223,6 @@ public:
 
     // symbol: ?worldsAreSingleUse@AppConfigs@@UEBA_NXZ
     MCVAPI bool worldsAreSingleUse() const;
-
-    // symbol: ??1AppConfigs@@UEAA@XZ
-    MCVAPI ~AppConfigs();
 
     // symbol: ??0AppConfigs@@QEAA@XZ
     MCAPI AppConfigs();

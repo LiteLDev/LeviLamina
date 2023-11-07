@@ -29,11 +29,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptBlockWaterContainerComponent();
+    // vIndex: 0, symbol: ??1ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockWaterContainerComponent();
 
     // symbol:
     // ?addDye@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBVScriptItemType@2@@Z

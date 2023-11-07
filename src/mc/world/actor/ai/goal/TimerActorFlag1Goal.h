@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1Definition@@@UEAA@XZ
+        virtual ~Definition();
 
         // symbol:
         // ?buildSchema@Definition@TimerActorFlag1Goal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@TimerActorFlag1Goal@@@JsonUtil@@@4@@Z
@@ -49,8 +49,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~TimerActorFlag1Goal() = default;
 
     // symbol: ??0TimerActorFlag1Goal@@QEAA@AEAVMob@@@Z
     MCAPI explicit TimerActorFlag1Goal(class Mob&);

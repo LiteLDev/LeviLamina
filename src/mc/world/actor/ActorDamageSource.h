@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ActorDamageSource() = default;
 
     // vIndex: 1, symbol: ?isEntitySource@ActorDamageSource@@UEBA_NXZ
     virtual bool isEntitySource() const;

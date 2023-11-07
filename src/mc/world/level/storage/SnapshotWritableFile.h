@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~SnapshotWritableFile() = default;
 
     // vIndex: 1, symbol: ?Append@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
     virtual leveldb::Status Append(leveldb::Slice const&);

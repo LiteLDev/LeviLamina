@@ -25,14 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // vIndex: 1, symbol: ?_isValid@ScriptItemComponent@ScriptModuleMinecraft@@MEBA_NXZ
-    virtual bool _isValid() const;
-
-    // symbol: ??1ScriptBreathableComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptBreathableComponent();
+    // vIndex: 0, symbol: ??1ScriptBreathableComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBreathableComponent();
 
     // symbol:
     // ??0ScriptBreathableComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

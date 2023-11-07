@@ -11,7 +11,7 @@ class IDimension {
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IDimension@@UEAA@XZ
+    // vIndex: 0, symbol: ??1IDimension@@UEAA@XZ
     virtual ~IDimension();
 
     // vIndex: 0, symbol: ?isNaturalDimension@Dimension@@UEBA_NXZ

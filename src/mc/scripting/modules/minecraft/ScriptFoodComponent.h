@@ -21,11 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptFoodComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptFoodComponent();
+    // vIndex: 0, symbol: ??1ScriptFoodComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptFoodComponent();
 
     // symbol: ??0ScriptFoodComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
     MCAPI ScriptFoodComponent(class ScriptModuleMinecraft::ScriptFoodComponent const&);

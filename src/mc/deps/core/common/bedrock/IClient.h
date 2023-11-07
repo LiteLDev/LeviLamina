@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IClient@CodeBuilder@@UEAA@XZ
-    MCVAPI ~IClient();
+    // vIndex: 0, symbol: ??1IClient@CodeBuilder@@UEAA@XZ
+    virtual ~IClient();
 
     // NOLINTEND
 };

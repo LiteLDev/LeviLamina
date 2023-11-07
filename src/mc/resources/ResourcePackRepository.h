@@ -81,8 +81,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ResourcePackRepository@@UEAA@XZ
+    virtual ~ResourcePackRepository();
 
     // vIndex: 1, symbol:
     // ?getResourcePacksByPackId@ResourcePackRepository@@UEBAXAEBV?$vector@UPackInstanceId@@V?$allocator@UPackInstanceId@@@std@@@std@@AEAV?$vector@VPackInstance@@V?$allocator@VPackInstance@@@std@@@3@@Z
@@ -268,9 +268,6 @@ public:
 
     // vIndex: 53, symbol: ?isInitialized@ResourcePackRepository@@UEAA_NXZ
     virtual bool isInitialized();
-
-    // symbol: ??1ResourcePackRepository@@UEAA@XZ
-    MCVAPI ~ResourcePackRepository();
 
     // symbol:
     // ??0ResourcePackRepository@@QEAA@AEAVIMinecraftEventing@@AEAVPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@VIContentAccessibilityProvider@@@Bedrock@@@gsl@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@4@AEAVPackSourceFactory@@_N@Z

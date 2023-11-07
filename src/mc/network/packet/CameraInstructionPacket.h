@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1CameraInstructionPacket@@UEAA@XZ
+    virtual ~CameraInstructionPacket();
 
     // vIndex: 1, symbol: ?getId@CameraInstructionPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -38,9 +38,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@CameraInstructionPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1CameraInstructionPacket@@UEAA@XZ
-    MCVAPI ~CameraInstructionPacket();
 
     // symbol: ??0CameraInstructionPacket@@QEAA@XZ
     MCAPI CameraInstructionPacket();

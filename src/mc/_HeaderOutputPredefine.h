@@ -1,7 +1,5 @@
 #pragma once
 
-#pragma clang diagnostic ignored "-Wignored-qualifiers"
-
 #pragma warning(disable : 4099) // for MOJANG : type name first seen using 'class' now seen using 'struct'
 #pragma warning(disable : 4201) // for MOJANG : nonstandard extension used : nameless struct/union
 
@@ -61,8 +59,6 @@
 #include <variant>       // STL variant type
 #include <vector>        // STL dynamic array container
 
-#include "asio.hpp"      // Asio C++ Library
-#include "asio/ssl.hpp"  // Asio SSL C++ Library
 #include "entt/entt.hpp" // Entity Component System Library
 #include "entt/fwd.hpp"  // Entity Component Forward Declarations
 #include "gsl/gsl"       // Guideline Support Library
@@ -97,25 +93,13 @@
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/writer.h"
 
-#include "mc/math/vector/Vecs.h" // for vector types
-
-#include "ll/api/base/Macro.h" // for LLAPI
-
-#include "ll/api/memory/Memory.h" // for dAccess
+#include "ll/api/base/Macro.h"
+#include "ll/api/base/StdInt.h"
+#include "ll/api/memory/Memory.h"
 
 #include "mc/common/wrapper/optional_ref.h" // replace optional<reference_wrapper<>>
+#include "mc/math/vector/Vecs.h"            // for vector types
 
-using uchar   = uint8_t;
-using ushort  = uint16_t;
-using uint    = uint32_t;
-using ulong   = unsigned long;
-using ldouble = long double;
-using uint64  = uint64_t;
-
-using schar = int8_t;
-using int64 = int64_t;
-
-using ldouble  = long double;
 using FacingID = uchar;
 
 // clang-format off
@@ -163,4 +147,8 @@ template <typename T0>
 class http_stl_allocator;
 using http_string  = std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>>;
 using http_wstring = std::basic_string<wchar_t, std::char_traits<wchar_t>, class http_stl_allocator<wchar_t>>;
+
+namespace asio::ssl {
+class verify_context;
+}
 // clang-format on

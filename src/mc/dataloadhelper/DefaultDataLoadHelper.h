@@ -16,7 +16,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_destructor_-1
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
     virtual ~DefaultDataLoadHelper() = default;
 
     // vIndex: 1, symbol: ?loadPosition\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z

@@ -75,6 +75,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~FileArchiver() = default;
+
     // symbol:
     // ??0FileArchiver@@QEAA@AEAVScheduler@@AEAVILevelListCache@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@AEBV?$not_null@V?$NonOwnerPointer@VIResourcePackRepository@@@Bedrock@@@4@_NV?$unique_ptr@VIWorldConverter@FileArchiver@@U?$default_delete@VIWorldConverter@FileArchiver@@@std@@@std@@V?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@4@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@4@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@7@@Z
     MCAPI

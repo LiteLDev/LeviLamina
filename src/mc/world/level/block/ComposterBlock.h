@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ComposterBlock() = default;
 
     // vIndex: 5, symbol:
     // ?clip@ComposterBlock@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -252,9 +252,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
+    static auto& $COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
+        return COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    }
 
-    auto& $PARTICLE_OFFSET() { return PARTICLE_OFFSET; }
+    static auto& $PARTICLE_OFFSET() { return PARTICLE_OFFSET; }
 
     // NOLINTEND
 };

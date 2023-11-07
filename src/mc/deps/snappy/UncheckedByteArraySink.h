@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1UncheckedByteArraySink@snappy@@UEAA@XZ
+    virtual ~UncheckedByteArraySink();
 
     // vIndex: 1, symbol: ?Append@UncheckedByteArraySink@snappy@@UEAAXPEBD_K@Z
     virtual void Append(char const*, uint64);
@@ -27,9 +27,6 @@ public:
 
     // vIndex: 4, symbol: ?GetAppendBufferVariable@UncheckedByteArraySink@snappy@@UEAAPEAD_K0PEAD0PEA_K@Z
     virtual char* GetAppendBufferVariable(uint64, uint64, char*, uint64, uint64*);
-
-    // symbol: ??1UncheckedByteArraySink@snappy@@UEAA@XZ
-    MCVAPI ~UncheckedByteArraySink();
 
     // NOLINTEND
 };

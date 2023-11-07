@@ -1,4 +1,3 @@
-#define LL_DEBUG
 #ifdef LL_DEBUG
 
 #include "ll/api/Logger.h"

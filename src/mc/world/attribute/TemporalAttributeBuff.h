@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1TemporalAttributeBuff@@UEAA@XZ
+    virtual ~TemporalAttributeBuff();
 
     // vIndex: 1, symbol: ?isInstantaneous@TemporalAttributeBuff@@UEBA_NXZ
     virtual bool isInstantaneous() const;
@@ -30,9 +30,6 @@ public:
 
     // vIndex: 5, symbol: ?isComplete@TemporalAttributeBuff@@UEBA_NXZ
     virtual bool isComplete() const;
-
-    // symbol: ??1TemporalAttributeBuff@@UEAA@XZ
-    MCVAPI ~TemporalAttributeBuff();
 
     // symbol: ??0TemporalAttributeBuff@@QEAA@AEBV0@@Z
     MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const&);

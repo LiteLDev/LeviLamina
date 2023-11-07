@@ -115,7 +115,7 @@ public:
 
         Symbol() = default;
 
-        inline bool operator==(Symbol const& right) const { return mValue == right.mValue; }
+        [[nodiscard]] inline bool operator==(Symbol const& right) const { return mValue == right.mValue; }
 
     public:
         // NOLINTBEGIN
@@ -904,7 +904,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $ParseRuleSymbols() { return ParseRuleSymbols; }
+    static auto& $ParseRuleSymbols() { return ParseRuleSymbols; }
 
     // NOLINTEND
 };

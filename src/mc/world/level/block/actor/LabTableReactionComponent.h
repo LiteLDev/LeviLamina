@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1LabTableReactionComponent@@UEAA@XZ
+    virtual ~LabTableReactionComponent();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -28,9 +28,6 @@ public:
 
     // symbol: ?_onTick@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
     MCVAPI void _onTick(class LabTableReaction&, class BlockSource&);
-
-    // symbol: ??1LabTableReactionComponent@@UEAA@XZ
-    MCVAPI ~LabTableReactionComponent();
 
     // NOLINTEND
 };

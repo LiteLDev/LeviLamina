@@ -22,11 +22,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0() = 0;
+    // vIndex: 0, symbol: ??1RakNetSocket2@@@UEAA@XZ
+    virtual ~RakNetSocket2();
 
     // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1() = 0;
 
     // vIndex: 2, symbol: ?SetMulticastInterface@RakNetSocket2@RakNet@@UEAAXH@Z
     virtual void SetMulticastInterface(int);

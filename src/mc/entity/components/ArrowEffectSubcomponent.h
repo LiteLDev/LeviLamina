@@ -19,8 +19,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ArrowEffectSubcomponent() = default;
 
     // vIndex: 1, symbol: ?readfromJSON@ArrowEffectSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
     virtual void readfromJSON(class Json::Value&, class SemVersion const&);

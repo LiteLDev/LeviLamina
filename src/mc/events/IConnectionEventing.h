@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IConnectionEventing@@UEAA@XZ
-    MCVAPI ~IConnectionEventing();
+    // vIndex: 0, symbol: ??1IConnectionEventing@@UEAA@XZ
+    virtual ~IConnectionEventing();
 
     // NOLINTEND
 };

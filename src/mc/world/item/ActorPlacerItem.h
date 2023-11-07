@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ActorPlacerItem() = default;
 
     // vIndex: 2, symbol: ?tearDown@ActorPlacerItem@@UEAAXXZ
     virtual void tearDown();
@@ -99,6 +99,9 @@ public:
 
     // vIndex: 120, symbol: ?getIconInfo@ActorPlacerItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
 
     // vIndex: 135, symbol:
     // ?_useOn@ActorPlacerItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
@@ -171,13 +174,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $EGG_MASK_ID() { return EGG_MASK_ID; }
+    static auto& $EGG_MASK_ID() { return EGG_MASK_ID; }
 
-    auto& $NUM_SPAWN_EGG_TEXTURES() { return NUM_SPAWN_EGG_TEXTURES; }
+    static auto& $NUM_SPAWN_EGG_TEXTURES() { return NUM_SPAWN_EGG_TEXTURES; }
 
-    auto& $mCustomSpawnEggs() { return mCustomSpawnEggs; }
+    static auto& $mCustomSpawnEggs() { return mCustomSpawnEggs; }
 
-    auto& $mEggTextureInfoMap() { return mEggTextureInfoMap; }
+    static auto& $mEggTextureInfoMap() { return mEggTextureInfoMap; }
 
     // NOLINTEND
 };

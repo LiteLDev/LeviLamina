@@ -24,6 +24,9 @@ public:
     virtual void
     placeInWorld(class BlockSource&, class BlockPos const&, class LegacyStructureSettings&, class Random&) const;
 
+    // vIndex: 2, symbol: ??1@@UEAA@XZ
+    virtual ~LegacyStructureTemplate() = default;
+
     // symbol: ??0LegacyStructureTemplate@@QEAA@XZ
     MCAPI LegacyStructureTemplate();
 

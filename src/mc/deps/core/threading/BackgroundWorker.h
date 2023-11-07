@@ -23,17 +23,14 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BackgroundWorker@@UEAA@XZ
+    virtual ~BackgroundWorker();
 
     // vIndex: 1, symbol: ?isAsync@BackgroundWorker@@UEBA_NXZ
     virtual bool isAsync() const;
 
     // vIndex: 2, symbol: ?canTaskRunAgain@BackgroundWorker@@UEBA_NXZ
     virtual bool canTaskRunAgain() const;
-
-    // symbol: ??1BackgroundWorker@@UEAA@XZ
-    MCVAPI ~BackgroundWorker();
 
     // symbol:
     // ??0BackgroundWorker@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NAEBVOSThreadPriority@Threading@Bedrock@@V?$optional@_K@2@V?$optional@H@2@AEAVWorkerPool@@1@Z
@@ -78,7 +75,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $gLocalWorkerMappingSingleton() { return gLocalWorkerMappingSingleton; }
+    static auto& $gLocalWorkerMappingSingleton() { return gLocalWorkerMappingSingleton; }
 
     // NOLINTEND
 };

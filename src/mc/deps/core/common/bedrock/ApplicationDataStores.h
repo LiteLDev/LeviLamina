@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ApplicationDataStores@@@UEAA@XZ
+    virtual ~ApplicationDataStores();
 
     // vIndex: 1, symbol: ?init@ApplicationDataStores@Bedrock@@UEAAXXZ
     virtual void init();

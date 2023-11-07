@@ -307,15 +307,15 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $_defaultUnknownQueryFunction() { return _defaultUnknownQueryFunction; }
+    static auto& $_defaultUnknownQueryFunction() { return _defaultUnknownQueryFunction; }
 
-    auto& $mExperiments() { return mExperiments; }
+    static auto& $mExperiments() { return mExperiments; }
 
-    auto& $mMolangInitialized() { return mMolangInitialized; }
+    static auto& $mMolangInitialized() { return mMolangInitialized; }
 
-    auto& $mQueryFunctionAccessors() { return mQueryFunctionAccessors; }
+    static auto& $mQueryFunctionAccessors() { return mQueryFunctionAccessors; }
 
-    auto& $mQuerySets() { return mQuerySets; }
+    static auto& $mQuerySets() { return mQuerySets; }
 
     // NOLINTEND
 };

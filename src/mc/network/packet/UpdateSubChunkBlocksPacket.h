@@ -72,8 +72,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1UpdateSubChunkBlocksPacket@@UEAA@XZ
+    virtual ~UpdateSubChunkBlocksPacket();
 
     // vIndex: 1, symbol: ?getId@UpdateSubChunkBlocksPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -88,9 +88,6 @@ public:
     // vIndex: 7, symbol:
     // ?_read@UpdateSubChunkBlocksPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1UpdateSubChunkBlocksPacket@@UEAA@XZ
-    MCVAPI ~UpdateSubChunkBlocksPacket();
 
     // symbol: ??0UpdateSubChunkBlocksPacket@@QEAA@XZ
     MCAPI UpdateSubChunkBlocksPacket();

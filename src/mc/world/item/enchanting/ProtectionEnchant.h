@@ -14,14 +14,17 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ProtectionEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@ProtectionEnchant@@UEBAHH@Z
     virtual int getMinCost(int) const;
 
     // vIndex: 3, symbol: ?getMaxCost@ProtectionEnchant@@UEBAHH@Z
     virtual int getMaxCost(int) const;
+
+    // vIndex: 4, symbol: __unk_vfn_4
+    virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol: ?getMaxLevel@ProtectionEnchant@@UEBAHXZ
     virtual int getMaxLevel() const;
@@ -66,9 +69,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $THORNS_CHANCE_PER_LEVEL() { return THORNS_CHANCE_PER_LEVEL; }
+    static auto& $THORNS_CHANCE_PER_LEVEL() { return THORNS_CHANCE_PER_LEVEL; }
 
-    auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
+    static auto& $VALID_ENCHANTMENTS() { return VALID_ENCHANTMENTS; }
 
     // NOLINTEND
 };

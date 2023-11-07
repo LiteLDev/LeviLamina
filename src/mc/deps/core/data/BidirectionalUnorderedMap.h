@@ -26,9 +26,9 @@ public:
     {
         return mLeft.contains(a);
     }
-    void insert(T0 const& a1, T1 const& a2) {
-        mRight.insert(a1, a2);
-        mLeft.insert(a2, a1);
+    void emplace(T0 const& a1, T1 const& a2) {
+        mRight.emplace(a1, a2);
+        mLeft.emplace(a2, a1);
     }
     void eraser(T0 const& a) {
         if (!mRight.contains(a)) { return; }

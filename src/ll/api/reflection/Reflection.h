@@ -1,9 +1,11 @@
 #pragma once
 
+#include <type_traits>
+
+#include "magic_enum.hpp"
+
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Meta.h"
-#include "magic_enum.hpp"
-#include <type_traits>
 
 #if defined(__clang__) && !defined(BOOST_PFR_CORE_NAME_PARSING)
 #define BOOST_PFR_CORE_NAME_PARSING                                                                                    \

@@ -20,30 +20,29 @@ optional_ref<Block const> Block::tryGetFromRegistry(uint runtimeID) {
     return res;
 }
 optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name) {
-    auto blockLegacyPtr = BlockTypeRegistry::lookupByName(HashedString{name});
+    auto blockLegacyPtr = BlockLegacy::tryGetFromRegistry(name);
     if (!blockLegacyPtr) { return nullptr; }
     return blockLegacyPtr->getDefaultState();
 }
 optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name, ushort legacyData) {
-    auto blockLegacyPtr = BlockTypeRegistry::lookupByName(HashedString{name});
+    auto blockLegacyPtr = BlockLegacy::tryGetFromRegistry(name);
     if (!blockLegacyPtr) { return nullptr; }
     return blockLegacyPtr->tryGetStateFromLegacyData(legacyData);
 }
 optional_ref<Block const> Block::tryGetFromRegistry(uint legacyBlockID, ushort legacyData) {
-    auto blockLegacyPtr = VanillaBlockConversion::getBlockTypeFromLegacyId(legacyBlockID);
+    auto blockLegacyPtr = BlockLegacy::tryGetFromRegistry(legacyBlockID);
     if (!blockLegacyPtr) { return nullptr; }
     return blockLegacyPtr->tryGetStateFromLegacyData(legacyData);
 }
 optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name, Block::BlockStatesType const& states) {
-    HashedString nameHash{name};
-    auto         blockLegacyPtr = BlockTypeRegistry::lookupByName(nameHash);
+    auto blockLegacyPtr = BlockLegacy::tryGetFromRegistry(name);
     if (!blockLegacyPtr) { return nullptr; }
-    auto* rawPtr = blockLegacyPtr.get();
-    if (!BlockTypeRegistry::isComplexAliasBlock(nameHash)) { return rawPtr->getDefaultState(); }
+    HashedString nameHash{name};
+    if (!BlockTypeRegistry::isComplexAliasBlock(nameHash)) { return blockLegacyPtr->getDefaultState(); }
     std::vector<BlockTypeRegistry::BlockComplexAliasBlockState> stateList;
     for (auto& [k, v] : states) {
         HashedString stateNameHash{k};
-        auto*        stateBase = rawPtr->getBlockState(stateNameHash);
+        auto*        stateBase = blockLegacyPtr->getBlockState(stateNameHash);
         if (stateBase == nullptr) { continue; }
         int         value = 0;
         CompoundTag stateNBT{};

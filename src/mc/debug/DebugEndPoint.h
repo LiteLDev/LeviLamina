@@ -28,8 +28,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1VanillaWorldChecker@DebugEndPoint@@UEAA@XZ
+        virtual ~VanillaWorldChecker();
 
         // vIndex: 1, symbol:
         // ?onActiveResourcePacksChanged@VanillaWorldChecker@DebugEndPoint@@UEAAXAEAVResourcePackManager@@@Z
@@ -47,9 +47,6 @@ public:
         // vIndex: 5, symbol:
         // ?onResourceManagerDestroyed@VanillaWorldChecker@DebugEndPoint@@UEAAXAEAVResourcePackManager@@@Z
         virtual void onResourceManagerDestroyed(class ResourcePackManager&);
-
-        // symbol: ??1VanillaWorldChecker@DebugEndPoint@@UEAA@XZ
-        MCVAPI ~VanillaWorldChecker();
 
         // symbol: ?checkWorldData@VanillaWorldChecker@DebugEndPoint@@QEAAXAEBVPath@Core@@@Z
         MCAPI void checkWorldData(class Core::Path const&);
@@ -102,7 +99,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mAssertAreas() { return mAssertAreas; }
+    static auto& $mAssertAreas() { return mAssertAreas; }
 
     // NOLINTEND
 };

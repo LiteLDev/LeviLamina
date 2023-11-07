@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~CompoundItem() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -90,6 +90,9 @@ public:
     // vIndex: 120, symbol: ?getIconInfo@CompoundItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
 
+    // vIndex: 128, symbol: __unk_vfn_128
+    virtual void __unk_vfn_128();
+
     // symbol:
     // ??0CompoundItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVExperiments@@@Z
     MCAPI CompoundItem(std::string const&, int, class Experiments const&);
@@ -137,9 +140,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mIdToSpecialCompound() { return mIdToSpecialCompound; }
+    static auto& $mIdToSpecialCompound() { return mIdToSpecialCompound; }
 
-    auto& $mTypeToSpecialCompound() { return mTypeToSpecialCompound; }
+    static auto& $mTypeToSpecialCompound() { return mTypeToSpecialCompound; }
 
     // NOLINTEND
 };

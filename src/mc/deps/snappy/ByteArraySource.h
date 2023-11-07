@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ByteArraySource@snappy@@UEAA@XZ
+    virtual ~ByteArraySource();
 
     // vIndex: 1, symbol: ?Available@ByteArraySource@snappy@@UEBA_KXZ
     virtual uint64 Available() const;
@@ -24,9 +24,6 @@ public:
 
     // vIndex: 3, symbol: ?Skip@ByteArraySource@snappy@@UEAAX_K@Z
     virtual void Skip(uint64);
-
-    // symbol: ??1ByteArraySource@snappy@@UEAA@XZ
-    MCVAPI ~ByteArraySource();
 
     // NOLINTEND
 };

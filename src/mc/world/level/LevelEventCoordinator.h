@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1LevelEventCoordinator@@UEAA@XZ
-    MCVAPI ~LevelEventCoordinator();
+    // vIndex: 0, symbol: ??1LevelEventCoordinator@@UEAA@XZ
+    virtual ~LevelEventCoordinator();
 
     // symbol: ??0LevelEventCoordinator@@QEAA@XZ
     MCAPI LevelEventCoordinator();

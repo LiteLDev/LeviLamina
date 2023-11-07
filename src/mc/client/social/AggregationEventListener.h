@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1AggregationEventListener@Events@Social@@UEAA@XZ
+    virtual ~AggregationEventListener();
 
     // vIndex: 1, symbol:
     // ?recordEvent@AggregationEventListener@Events@Social@@UEAAXAEBVEvent@23@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
@@ -50,9 +50,6 @@ public:
 
     // vIndex: 8, symbol: ?_isListenerReadyForEvents@AggregationEventListener@Events@Social@@MEBA_NXZ
     virtual bool _isListenerReadyForEvents() const;
-
-    // symbol: ??1AggregationEventListener@Events@Social@@UEAA@XZ
-    MCVAPI ~AggregationEventListener();
 
     // NOLINTEND
 

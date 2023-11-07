@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~PistonBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@PistonBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
@@ -164,7 +164,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $ARM_ANIMATION_SPEED() { return ARM_ANIMATION_SPEED; }
+    static auto& $ARM_ANIMATION_SPEED() { return ARM_ANIMATION_SPEED; }
 
     // NOLINTEND
 };

@@ -38,19 +38,19 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FilterTest@@UEAA@XZ
+    virtual ~FilterTest();
 
     // vIndex: 1, symbol: ?setup@FilterTest@@UEAA_NAEBUDefinition@1@AEBUFilterInputs@@@Z
     virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
 
-    // vIndex: 2, symbol: ?evaluate@ActorInactivityTimerTest@@UEBA_NAEBUFilterContext@@@Z
+    // vIndex: 2, symbol: ?evaluate@ActorInContactWithWater@@UEBA_NAEBUFilterContext@@@Z
     virtual bool evaluate(struct FilterContext const&) const = 0;
 
     // vIndex: 3, symbol: ?finalizeParsedValue@FilterTest@@UEAAXAEAVIWorldRegistriesProvider@@@Z
     virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
 
-    // vIndex: 4, symbol: ?getName@ActorInactivityTimerTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
+    // vIndex: 4, symbol: ?getName@ActorInContactWithWater@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     virtual std::string_view getName() const = 0;
 
     // vIndex: 5, symbol: ?_serializeDomain@FilterTest@@MEBA?AVValue@Json@@XZ
@@ -58,9 +58,6 @@ public:
 
     // vIndex: 6, symbol: ?_serializeValue@ActorHasAllSlotsEmptyTest@@MEBA?AVValue@Json@@XZ
     virtual class Json::Value _serializeValue() const = 0;
-
-    // symbol: ??1FilterTest@@UEAA@XZ
-    MCVAPI ~FilterTest();
 
     // symbol: ?serialize@FilterTest@@QEBA?AVValue@Json@@XZ
     MCAPI class Json::Value serialize() const;

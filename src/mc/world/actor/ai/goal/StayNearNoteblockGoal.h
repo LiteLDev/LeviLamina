@@ -29,11 +29,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
-
-        // symbol: ??1Definition@StayNearNoteblockGoal@@UEAA@XZ
-        MCVAPI ~Definition();
+        // vIndex: 0, symbol: ??1Definition@StayNearNoteblockGoal@@UEAA@XZ
+        virtual ~Definition();
 
         // symbol: ??0Definition@StayNearNoteblockGoal@@QEAA@XZ
         MCAPI Definition();
@@ -57,8 +54,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~StayNearNoteblockGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@StayNearNoteblockGoal@@UEAA_NXZ
     virtual bool canUse();

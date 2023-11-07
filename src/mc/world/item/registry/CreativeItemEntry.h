@@ -20,6 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~CreativeItemEntry() = default;
+
     // symbol: ??0CreativeItemEntry@@QEAA@$$QEAV0@@Z
     MCAPI CreativeItemEntry(class CreativeItemEntry&&);
 

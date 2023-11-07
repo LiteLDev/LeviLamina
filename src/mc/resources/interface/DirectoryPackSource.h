@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1DirectoryPackSource@@UEAA@XZ
+    virtual ~DirectoryPackSource();
 
     // vIndex: 1, symbol: ?forEachPackConst@DirectoryPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
     virtual void forEachPackConst(std::function<void(class Pack const&)>) const;
@@ -41,9 +41,6 @@ public:
     // ?load@DirectoryPackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
     virtual class PackSourceReport
     load(class IPackManifestFactory&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&);
-
-    // symbol: ??1DirectoryPackSource@@UEAA@XZ
-    MCVAPI ~DirectoryPackSource();
 
     // symbol: ??0DirectoryPackSource@@QEAA@AEBVPath@Core@@W4PackType@@W4PackOrigin@@_N@Z
     MCAPI DirectoryPackSource(class Core::Path const&, ::PackType, ::PackOrigin, bool);

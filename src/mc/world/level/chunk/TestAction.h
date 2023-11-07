@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~TestAction() = default;
 
     // vIndex: 1, symbol: ?execute@TestAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
     virtual void execute(class ServerLevel&, class Dimension&);

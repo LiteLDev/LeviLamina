@@ -20,8 +20,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1IWorldAccessor@DespawnComponent@@UEAA@XZ
+        virtual ~IWorldAccessor();
 
         // vIndex: 1, symbol: ?fetchAnyInteractablePlayer@WorldAccessor@DespawnComponent@@UEBAPEAVPlayer@@AEBVVec3@@M@Z
         virtual class Player* fetchAnyInteractablePlayer(class Vec3 const&, float) const = 0;
@@ -45,9 +45,6 @@ public:
         // vIndex: 7, symbol: ?resetActorNoActionTime@WorldAccessor@DespawnComponent@@UEAAXAEAVActor@@@Z
         virtual void resetActorNoActionTime(class Actor&) = 0;
 
-        // symbol: ??1IWorldAccessor@DespawnComponent@@UEAA@XZ
-        MCVAPI ~IWorldAccessor();
-
         // NOLINTEND
     };
 
@@ -60,8 +57,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1WorldAccessor@DespawnComponent@@UEAA@XZ
+        virtual ~WorldAccessor();
 
         // vIndex: 1, symbol: ?fetchAnyInteractablePlayer@WorldAccessor@DespawnComponent@@UEBAPEAVPlayer@@AEBVVec3@@M@Z
         virtual class Player* fetchAnyInteractablePlayer(class Vec3 const&, float) const;
@@ -84,9 +81,6 @@ public:
 
         // vIndex: 7, symbol: ?resetActorNoActionTime@WorldAccessor@DespawnComponent@@UEAAXAEAVActor@@@Z
         virtual void resetActorNoActionTime(class Actor&);
-
-        // symbol: ??1WorldAccessor@DespawnComponent@@UEAA@XZ
-        MCVAPI ~WorldAccessor();
 
         // NOLINTEND
     };

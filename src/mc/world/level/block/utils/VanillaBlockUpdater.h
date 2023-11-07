@@ -89,7 +89,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mContext() { return mContext; }
+    static auto& $mContext() { return mContext; }
 
     // NOLINTEND
 };

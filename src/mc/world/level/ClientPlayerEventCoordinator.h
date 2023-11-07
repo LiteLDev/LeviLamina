@@ -14,6 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ClientPlayerEventCoordinator() = default;
+
     // symbol: ?sendPlayerDestroyedBlock@ClientPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlock@@@Z
     MCAPI void sendPlayerDestroyedBlock(class Player&, class Block const&);
 

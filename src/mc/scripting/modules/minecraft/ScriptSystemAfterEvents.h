@@ -36,11 +36,11 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1ScriptSystemAfterEventsDeferredEventListener@ScriptSystemAfterEvents@@@UEAA@XZ
+        virtual ~ScriptSystemAfterEventsDeferredEventListener();
 
-        // vIndex: 1, symbol: ?onLevelTickEnd@ScriptDeferredEventListener@@UEAAXXZ
-        virtual void onLevelTickEnd();
+        // vIndex: 1, symbol: __unk_vfn_1
+        virtual void __unk_vfn_1();
 
         // vIndex: 2, symbol: __unk_vfn_2
         virtual void __unk_vfn_2();

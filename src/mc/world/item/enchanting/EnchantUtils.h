@@ -153,7 +153,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mEnchantmentNames() { return mEnchantmentNames; }
+    static auto& $mEnchantmentNames() { return mEnchantmentNames; }
 
     // NOLINTEND
 };

@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1MobEffectSubcomponent@@UEAA@XZ
+    virtual ~MobEffectSubcomponent();
 
     // vIndex: 1, symbol: ?readfromJSON@MobEffectSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
     virtual void readfromJSON(class Json::Value&, class SemVersion const&);
@@ -32,9 +32,6 @@ public:
 
     // vIndex: 4, symbol: ?getName@MobEffectSubcomponent@@UEAAPEBDXZ
     virtual char const* getName();
-
-    // symbol: ??1MobEffectSubcomponent@@UEAA@XZ
-    MCVAPI ~MobEffectSubcomponent();
 
     // symbol: ??0MobEffectSubcomponent@@QEAA@XZ
     MCAPI MobEffectSubcomponent();

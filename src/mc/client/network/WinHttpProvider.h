@@ -29,8 +29,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1WinHttpProvider@httpclient@xbox@@UEAA@XZ
-    MCVAPI ~WinHttpProvider();
+    // vIndex: 0, symbol: ??1WinHttpProvider@httpclient@xbox@@UEAA@XZ
+    virtual ~WinHttpProvider();
 
     // symbol: ?GetWinHttpWebSocketExports@WinHttpProvider@httpclient@xbox@@SA?AUWinHttpWebSocketExports@23@XZ
     MCAPI static struct xbox::httpclient::WinHttpWebSocketExports GetWinHttpWebSocketExports();

@@ -20,6 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1ILevel@@UEAA@XZ
+    virtual ~ILevel();
+
     // symbol: ?asLevel@ILevel@@UEAAPEAVLevel@@XZ
     MCVAPI class Level* asLevel();
 
@@ -28,9 +31,6 @@ public:
 
     // symbol: ?getTradeTables@ILevel@@UEAAPEAVTradeTables@@XZ
     MCVAPI class TradeTables* getTradeTables();
-
-    // symbol: ??1ILevel@@UEAA@XZ
-    MCVAPI ~ILevel();
 
     // symbol: ?addParticleEffect@ILevel@@QEAAXAEBVHashedString@@AEBVVec3@@@Z
     MCAPI void addParticleEffect(class HashedString const&, class Vec3 const&);

@@ -18,6 +18,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~CreativeGroupInfo() = default;
+
     // symbol: ??0CreativeGroupInfo@@QEAA@AEBV0@@Z
     MCAPI CreativeGroupInfo(class CreativeGroupInfo const&);
 

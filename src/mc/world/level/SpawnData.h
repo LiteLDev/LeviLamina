@@ -10,6 +10,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~SpawnData() = default;
+
     // symbol: ??0SpawnData@@QEAA@AEBVCompoundTag@@@Z
     MCAPI explicit SpawnData(class CompoundTag const&);
 

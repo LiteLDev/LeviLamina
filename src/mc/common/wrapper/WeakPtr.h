@@ -16,7 +16,7 @@ public:
     explicit WeakPtr(SharedPtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
-        counter = other.counter;
+        counter = (SharedCounter<T>*)other.counter;
         if (counter) { counter->addWeakCount(); }
     }
 
@@ -24,7 +24,7 @@ public:
     explicit WeakPtr(WeakPtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
-        counter = other.counter;
+        counter = (SharedCounter<T>*)other.counter;
         if (counter) { counter->addWeakCount(); }
     }
 
@@ -32,7 +32,7 @@ public:
     explicit WeakPtr(WeakPtr<Y>&& other)
         requires(std::convertible_to<Y*, T*>)
     {
-        counter       = other.counter;
+        counter       = (SharedCounter<T>*)other.counter;
         other.counter = nullptr;
     }
 
@@ -44,8 +44,8 @@ public:
     WeakPtr<T>& operator=(SharedPtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
-        if (counter != other.counter) {
-            counter = other.counter;
+        if (counter != (SharedCounter<T>*)other.counter) {
+            counter = (SharedCounter<T>*)other.counter;
             if (counter) { counter->addWeakCount(); }
         }
         return *this;
@@ -55,8 +55,8 @@ public:
     WeakPtr<T>& operator=(WeakPtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
-        if (counter != other.counter) {
-            counter = other.counter;
+        if (counter != (SharedCounter<T>*)other.counter) {
+            counter = (SharedCounter<T>*)other.counter;
             if (counter) { counter->addWeakCount(); }
         }
         return *this;
@@ -66,8 +66,8 @@ public:
     WeakPtr<T>& operator=(WeakPtr<Y>&& other)
         requires(std::convertible_to<Y*, T*>)
     {
-        if (counter != other.counter) {
-            counter       = other.counter;
+        if (counter != (SharedCounter<T>*)other.counter) {
+            counter       = (SharedCounter<T>*)other.counter;
             other.counter = nullptr;
         }
         return *this;
@@ -79,14 +79,16 @@ public:
 
     SharedPtr<T> lock() const { return expired() ? SharedPtr<T>() : SharedPtr<T>(*this); }
 
-    T* operator->() const { return counter->get(); }
+    T* get() const { return counter ? counter->get() : nullptr; }
 
-    T* get() const { return counter->get(); }
+    T* operator->() const { return get(); }
 
-    T& operator*() const { return *(counter->get()); }
+    T& operator*() const { return *get(); }
 
-    explicit operator bool() const { return expired(); }
+    explicit operator bool() const { return get() != nullptr; }
 
 private:
     SharedCounter<T>* counter;
+
+    friend class SharedPtr<T>;
 };

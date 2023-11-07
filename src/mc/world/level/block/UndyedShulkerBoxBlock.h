@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~UndyedShulkerBoxBlock() = default;
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@UndyedShulkerBoxBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -231,7 +231,9 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
+    static auto& $SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION() {
+        return SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    }
 
     // NOLINTEND
 };

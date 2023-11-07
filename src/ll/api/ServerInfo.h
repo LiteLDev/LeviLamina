@@ -1,5 +1,5 @@
 #pragma once
-#include "ll/api/base/Global.h"
+
 #include "ll/api/plugin/Version.h"
 
 namespace ll {

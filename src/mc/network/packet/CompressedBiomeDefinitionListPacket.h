@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1CompressedBiomeDefinitionListPacket@@UEAA@XZ
+    virtual ~CompressedBiomeDefinitionListPacket();
 
     // vIndex: 1, symbol: ?getId@CompressedBiomeDefinitionListPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const;
@@ -31,9 +31,6 @@ public:
     // vIndex: 4, symbol:
     // ?read@CompressedBiomeDefinitionListPacket@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
-
-    // symbol: ??1CompressedBiomeDefinitionListPacket@@UEAA@XZ
-    MCVAPI ~CompressedBiomeDefinitionListPacket();
 
     // symbol: ??0CompressedBiomeDefinitionListPacket@@QEAA@XZ
     MCAPI CompressedBiomeDefinitionListPacket();

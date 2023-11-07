@@ -17,8 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FurnaceContainerManagerModel@@UEAA@XZ
+    virtual ~FurnaceContainerManagerModel();
 
     // vIndex: 6, symbol:
     // ?getItemCopies@FurnaceContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
@@ -41,9 +41,6 @@ public:
 
     // vIndex: 17, symbol: ?_postInit@FurnaceContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
     virtual class ContainerScreenContext _postInit();
-
-    // symbol: ??1FurnaceContainerManagerModel@@UEAA@XZ
-    MCVAPI ~FurnaceContainerManagerModel();
 
     // symbol: ??0FurnaceContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI FurnaceContainerManagerModel(::ContainerID, class Player&, class BlockPos const&);

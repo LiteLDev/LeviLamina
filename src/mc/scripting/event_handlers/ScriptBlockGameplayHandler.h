@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ScriptBlockGameplayHandler() = default;
 
     // vIndex: 1, symbol:
     // ?handleEvent@?$AddHandleEvent@U?$Impl@U?$type_list@U?$MutableBlockGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VBlockGameplayHandler@@@Details@@U?$GameplayHandlerResult@V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@@U?$type_list@$$CBUCraftUISetResultNameEvent@@@entt@@@?$EventHandlerDispatcher@VBlockGameplayHandler@@@Details@@UEAA?AU?$GameplayHandlerResult@V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@@AEBUCraftUISetResultNameEvent@@@Z

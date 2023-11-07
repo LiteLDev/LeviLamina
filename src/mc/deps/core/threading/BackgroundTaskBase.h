@@ -39,8 +39,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1BackgroundTaskBase@@UEAA@XZ
-    MCVAPI ~BackgroundTaskBase();
+    // vIndex: 0, symbol: ??1BackgroundTaskBase@@UEAA@XZ
+    virtual ~BackgroundTaskBase();
 
     // symbol: ??0BackgroundTaskBase@@QEAA@V?$not_null@PEAVIBackgroundTaskOwner@@@gsl@@AEBUTaskStartInfoBase@@_N@Z
     MCAPI BackgroundTaskBase(gsl::not_null<class IBackgroundTaskOwner*>, struct TaskStartInfoBase const&, bool);
@@ -76,7 +76,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $gCurrentTask() { return gCurrentTask; }
+    static auto& $gCurrentTask() { return gCurrentTask; }
 
     // NOLINTEND
 };

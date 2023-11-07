@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~EatCarriedItemGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@EatCarriedItemGoal@@UEAA_NXZ
     virtual bool canUse();
@@ -55,9 +55,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
+    static auto& $CHEW_CHANCE() { return CHEW_CHANCE; }
 
-    auto& $EATING_TIME() { return EATING_TIME; }
+    static auto& $EATING_TIME() { return EATING_TIME; }
 
     // NOLINTEND
 };

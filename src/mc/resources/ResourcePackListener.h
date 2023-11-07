@@ -11,6 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1ResourcePackListener@@UEAA@XZ
+    virtual ~ResourcePackListener();
+
     // symbol: ?onBaseGamePackDownloadComplete@ResourcePackListener@@UEAAXXZ
     MCVAPI void onBaseGamePackDownloadComplete();
 
@@ -22,9 +25,6 @@ public:
 
     // symbol: ?onResourceManagerDestroyed@ResourcePackListener@@UEAAXAEAVResourcePackManager@@@Z
     MCVAPI void onResourceManagerDestroyed(class ResourcePackManager&);
-
-    // symbol: ??1ResourcePackListener@@UEAA@XZ
-    MCVAPI ~ResourcePackListener();
 
     // NOLINTEND
 };

@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FillingContainer@@UEAA@XZ
+    virtual ~FillingContainer();
 
     // vIndex: 2, symbol: ?serverInitItemStackIds@FillingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     virtual void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
@@ -47,6 +47,9 @@ public:
     // vIndex: 26, symbol: __unk_vfn_26
     virtual void __unk_vfn_26();
 
+    // vIndex: 34, symbol: __unk_vfn_34
+    virtual void __unk_vfn_34();
+
     // vIndex: 36, symbol: ?add@FillingContainer@@UEAA_NAEAVItemStack@@@Z
     virtual bool add(class ItemStack&);
 
@@ -61,9 +64,6 @@ public:
 
     // vIndex: 40, symbol: ?load@FillingContainer@@UEAAXAEBVListTag@@AEBVSemVersion@@AEAVLevel@@@Z
     virtual void load(class ListTag const&, class SemVersion const&, class Level&);
-
-    // symbol: ??1FillingContainer@@UEAA@XZ
-    MCVAPI ~FillingContainer();
 
     // symbol: ??0FillingContainer@@QEAA@PEAVPlayer@@HW4ContainerType@@@Z
     MCAPI FillingContainer(class Player*, int, ::ContainerType);

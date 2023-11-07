@@ -22,7 +22,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
     virtual ~PacketSender() = default;
 
     // vIndex: 1, symbol: ?send@LoopbackPacketSender@@UEAAXAEAVPacket@@@Z

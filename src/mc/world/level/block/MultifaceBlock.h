@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~MultifaceBlock() = default;
 
     // vIndex: 5, symbol:
     // ?clip@MultifaceBlock@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -188,10 +188,10 @@ public:
     // vIndex: 183, symbol: __unk_vfn_183
     virtual void __unk_vfn_183();
 
-    // vIndex: 192, symbol: ?getMultifaceBlock@SculkVeinBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 192, symbol: ?getMultifaceBlock@GlowLichenBlock@@UEBAAEBVBlock@@XZ
     virtual class Block const& getMultifaceBlock() const = 0;
 
-    // vIndex: 193, symbol: ?getMultifaceSpreader@SculkVeinBlock@@UEBAAEBVMultifaceSpreader@@XZ
+    // vIndex: 193, symbol: ?getMultifaceSpreader@GlowLichenBlock@@UEBAAEBVMultifaceSpreader@@XZ
     virtual class MultifaceSpreader const& getMultifaceSpreader() const = 0;
 
     // symbol: ?isMultifaceBlock@MultifaceBlock@@UEBA_NXZ

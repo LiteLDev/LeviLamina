@@ -44,8 +44,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1WinHttpConnection@httpclient@xbox@@UEAA@XZ
-    MCVAPI ~WinHttpConnection();
+    // vIndex: 0, symbol: ??1WinHttpConnection@httpclient@xbox@@UEAA@XZ
+    virtual ~WinHttpConnection();
 
     // symbol: ?Close@WinHttpConnection@httpclient@xbox@@QEAAJV?$function@$$A6AXXZ@std@@@Z
     MCAPI long Close(std::function<void(void)>);

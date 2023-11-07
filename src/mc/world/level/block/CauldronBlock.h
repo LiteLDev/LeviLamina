@@ -31,8 +31,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~CauldronBlock() = default;
 
     // vIndex: 5, symbol:
     // ?clip@CauldronBlock@@UEBA?AVHitResult@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@3W4ShapeType@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -294,11 +294,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $BASE_WATER_PIXEL() { return BASE_WATER_PIXEL; }
+    static auto& $BASE_WATER_PIXEL() { return BASE_WATER_PIXEL; }
 
-    auto& $CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
+    static auto& $CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION() { return CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION; }
 
-    auto& $PIXEL_PER_LEVEL() { return PIXEL_PER_LEVEL; }
+    static auto& $PIXEL_PER_LEVEL() { return PIXEL_PER_LEVEL; }
 
     // NOLINTEND
 };

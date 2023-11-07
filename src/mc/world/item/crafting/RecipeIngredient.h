@@ -16,11 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1RecipeIngredient@@UEAA@XZ
-    MCVAPI ~RecipeIngredient();
+    // vIndex: 0, symbol: ??1RecipeIngredient@@UEAA@XZ
+    virtual ~RecipeIngredient();
 
     // symbol: ??0RecipeIngredient@@QEAA@AEAVReadOnlyBinaryStream@@@Z
     MCAPI explicit RecipeIngredient(class ReadOnlyBinaryStream&);

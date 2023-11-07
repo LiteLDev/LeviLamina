@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1BlockCommandOrigin@@UEAA@XZ
+    virtual ~BlockCommandOrigin();
 
     // vIndex: 1, symbol:
     // ?getRequestId@BlockCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -81,9 +81,6 @@ public:
 
     // vIndex: 33, symbol: ?_getBlockEntity@BlockCommandOrigin@@MEBAPEAVCommandBlockActor@@AEAVBlockSource@@@Z
     virtual class CommandBlockActor* _getBlockEntity(class BlockSource&) const;
-
-    // symbol: ??1BlockCommandOrigin@@UEAA@XZ
-    MCVAPI ~BlockCommandOrigin();
 
     // symbol: ??0BlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI BlockCommandOrigin(class BlockSource&, class BlockPos const&);

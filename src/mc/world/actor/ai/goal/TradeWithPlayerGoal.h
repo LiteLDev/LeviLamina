@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1TradeWithPlayerDefinition@@@UEAA@XZ
+        virtual ~TradeWithPlayerDefinition();
 
         // symbol:
         // ?buildSchema@TradeWithPlayerDefinition@TradeWithPlayerGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTradeWithPlayerDefinition@TradeWithPlayerGoal@@@JsonUtil@@@4@@Z
@@ -49,8 +49,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~TradeWithPlayerGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@TradeWithPlayerGoal@@UEAA_NXZ
     virtual bool canUse();

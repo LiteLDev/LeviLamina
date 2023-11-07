@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual ~ShortTag() {}
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ShortTag() = default;
 
     // vIndex: 2, symbol: ?write@ShortTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;
@@ -47,5 +47,5 @@ public:
     // NOLINTEND
 };
 namespace ll::nbt_literals {
-inline ShortTag operator""_s(uint64 num) { return ShortTag{(short)num}; }
+[[nodiscard]] inline ShortTag operator""_s(uint64 num) { return ShortTag{(short)num}; }
 } // namespace ll::nbt_literals

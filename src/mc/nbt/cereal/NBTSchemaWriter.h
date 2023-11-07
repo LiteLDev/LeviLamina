@@ -41,8 +41,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1NBTSchemaWriter@@UEAA@XZ
+    virtual ~NBTSchemaWriter();
 
     // vIndex: 1, symbol: ?write@NBTSchemaWriter@@UEAA_NMAEBUSerializerTraits@cereal@@@Z
     virtual bool write(float, struct cereal::SerializerTraits const&);
@@ -123,9 +123,6 @@ public:
 
     // symbol: ?write@NBTSchemaWriter@@UEAA_NFAEBUSerializerTraits@cereal@@@Z
     MCVAPI bool write(short, struct cereal::SerializerTraits const&);
-
-    // symbol: ??1NBTSchemaWriter@@UEAA@XZ
-    MCVAPI ~NBTSchemaWriter();
 
     // symbol: ??0NBTSchemaWriter@@QEAA@XZ
     MCAPI NBTSchemaWriter();

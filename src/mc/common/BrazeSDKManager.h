@@ -11,6 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~BrazeSDKManager() = default;
+
     // symbol: ?_disableBrazeSDK@BrazeSDKManager@@MEAAXXZ
     MCVAPI void _disableBrazeSDK();
 
@@ -44,11 +47,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mInitialized() { return mInitialized; }
+    static auto& $mInitialized() { return mInitialized; }
 
-    auto& $mInstance() { return mInstance; }
+    static auto& $mInstance() { return mInstance; }
 
-    auto& $mIsReady() { return mIsReady; }
+    static auto& $mIsReady() { return mIsReady; }
 
     // NOLINTEND
 };

@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~MangroveTreeRoots() = default;
 
     // vIndex: 1, symbol:
     // ?placeRoots@MangroveTreeRoots@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@@Z
@@ -58,7 +58,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $RANDOM_SKEW_CHANCE() { return RANDOM_SKEW_CHANCE; }
+    static auto& $RANDOM_SKEW_CHANCE() { return RANDOM_SKEW_CHANCE; }
 
     // NOLINTEND
 };

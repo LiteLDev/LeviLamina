@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1OceanMonumentPiece@@UEAA@XZ
+    virtual ~OceanMonumentPiece();
 
     // vIndex: 5, symbol: ?postProcessMobsAt@OceanMonumentPiece@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
@@ -29,9 +29,6 @@ public:
 
     // vIndex: 12, symbol: ?addHardcodedSpawnAreas@OceanMonumentPiece@@UEBAXAEAVLevelChunk@@@Z
     virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-
-    // symbol: ??1OceanMonumentPiece@@UEAA@XZ
-    MCVAPI ~OceanMonumentPiece();
 
     // symbol: ??0OceanMonumentPiece@@QEAA@AEAHAEAVBoundingBox@@@Z
     MCAPI OceanMonumentPiece(int&, class BoundingBox&);
@@ -82,19 +79,19 @@ protected:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mGridroomLeftWingConnectIndex() { return mGridroomLeftWingConnectIndex; }
+    static auto& $mGridroomLeftWingConnectIndex() { return mGridroomLeftWingConnectIndex; }
 
-    auto& $mGridroomRightWingConnectIndex() { return mGridroomRightWingConnectIndex; }
+    static auto& $mGridroomRightWingConnectIndex() { return mGridroomRightWingConnectIndex; }
 
-    auto& $mGridroomSourceIndex() { return mGridroomSourceIndex; }
+    static auto& $mGridroomSourceIndex() { return mGridroomSourceIndex; }
 
-    auto& $mGridroomTopConnectIndex() { return mGridroomTopConnectIndex; }
+    static auto& $mGridroomTopConnectIndex() { return mGridroomTopConnectIndex; }
 
-    auto& $mLeftWingIndex() { return mLeftWingIndex; }
+    static auto& $mLeftWingIndex() { return mLeftWingIndex; }
 
-    auto& $mPenthouseIndex() { return mPenthouseIndex; }
+    static auto& $mPenthouseIndex() { return mPenthouseIndex; }
 
-    auto& $mRightWingIndex() { return mRightWingIndex; }
+    static auto& $mRightWingIndex() { return mRightWingIndex; }
 
     // NOLINTEND
 };

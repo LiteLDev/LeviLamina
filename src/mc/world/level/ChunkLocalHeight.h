@@ -5,6 +5,6 @@
 class ChunkLocalHeight {
 public:
     short mVal = 0;
-    explicit constexpr ChunkLocalHeight(short v) noexcept : mVal(v){};
-    constexpr ChunkLocalHeight() noexcept : mVal(0){};
+    [[nodiscard]] constexpr explicit ChunkLocalHeight(short v) noexcept : mVal(v){};
+    [[nodiscard]] constexpr ChunkLocalHeight() noexcept : mVal(0){};
 };

@@ -17,11 +17,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // vIndex: 1, symbol: ?init@OperationNodeBase@OperationNodeDetails@@UEAAX_J@Z
-    virtual void init(int64);
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~OceanMixerOperationNode() = default;
 
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();

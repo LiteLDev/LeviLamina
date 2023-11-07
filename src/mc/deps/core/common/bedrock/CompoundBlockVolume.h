@@ -19,6 +19,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~CompoundBlockVolume() = default;
+
     // symbol: ??0CompoundBlockVolume@@QEAA@XZ
     MCAPI CompoundBlockVolume();
 

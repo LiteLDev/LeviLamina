@@ -25,8 +25,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1PillagerOutpostPiece@@@UEAA@XZ
+        virtual ~PillagerOutpostPiece();
 
         // vIndex: 4, symbol:
         // ?postProcess@PillagerOutpostPiece@PillagerOutpostPieces@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
@@ -103,13 +103,13 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $MSC_FEATURES() { return MSC_FEATURES; }
+    static auto& $MSC_FEATURES() { return MSC_FEATURES; }
 
-    auto& $PILLAGER_LOOT() { return PILLAGER_LOOT; }
+    static auto& $PILLAGER_LOOT() { return PILLAGER_LOOT; }
 
-    auto& $STRUCTURE_WATCHTOWER() { return STRUCTURE_WATCHTOWER; }
+    static auto& $STRUCTURE_WATCHTOWER() { return STRUCTURE_WATCHTOWER; }
 
-    auto& $STRUCTURE_WATCHTOWER_OVERGROWN() { return STRUCTURE_WATCHTOWER_OVERGROWN; }
+    static auto& $STRUCTURE_WATCHTOWER_OVERGROWN() { return STRUCTURE_WATCHTOWER_OVERGROWN; }
 
     // NOLINTEND
 };

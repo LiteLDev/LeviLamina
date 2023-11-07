@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1CanyonFeature@@UEAA@XZ
+    virtual ~CanyonFeature();
 
     // vIndex: 1, symbol:
     // ?carve@CanyonFeature@@MEBA_NAEAVBlockVolume@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@4HHHHHHMMV?$span@$$CBM$0?0@gsl@@AEBUWorldGenContext@@@Z
@@ -29,9 +29,6 @@ public:
     // ?addFeature@CanyonFeature@@MEAAXAEAVBlockVolume@@AEBVBiomeSource@@AEBUCanyonConfiguration@CanyonFeatureUtils@@AEBVChunkPos@@AEAVRandom@@HHAEBUWorldGenContext@@@Z
     virtual void
     addFeature(class BlockVolume&, class BiomeSource const&, struct CanyonFeatureUtils::CanyonConfiguration const&, class ChunkPos const&, class Random&, int, int, struct WorldGenContext const&);
-
-    // symbol: ??1CanyonFeature@@UEAA@XZ
-    MCVAPI ~CanyonFeature();
 
     // symbol: ??0CanyonFeature@@QEAA@F@Z
     MCAPI explicit CanyonFeature(short);

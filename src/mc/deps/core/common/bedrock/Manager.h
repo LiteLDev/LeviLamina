@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Manager@@@UEAA@XZ
+    virtual ~Manager();
 
     // vIndex: 1, symbol:
     // ?getAutomationClient@Manager@CodeBuilder@@UEBA?AV?$not_null@V?$NonOwnerPointer@VAutomationClient@Automation@@@Bedrock@@@gsl@@XZ

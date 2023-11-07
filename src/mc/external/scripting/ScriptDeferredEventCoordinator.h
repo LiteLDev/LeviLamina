@@ -33,6 +33,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ScriptDeferredEventCoordinator() = default;
+
     // symbol: ?sendAllDeferredEvents@ScriptDeferredEventCoordinator@@QEAAXXZ
     MCAPI void sendAllDeferredEvents();
 
@@ -60,7 +63,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sEventExecutionOrder() { return sEventExecutionOrder; }
+    static auto& $sEventExecutionOrder() { return sEventExecutionOrder; }
 
     // NOLINTEND
 };

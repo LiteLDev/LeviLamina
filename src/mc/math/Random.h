@@ -29,8 +29,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Random@Core@@UEAA@XZ
+    virtual ~Random();
 
     // vIndex: 1, symbol: ?nextInt@Random@Core@@UEAAHXZ
     virtual int nextInt();
@@ -58,9 +58,6 @@ public:
 
     // vIndex: 9, symbol: ?fork@Random@Core@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
     virtual std::unique_ptr<class IRandom> fork();
-
-    // symbol: ??1Random@Core@@UEAA@XZ
-    MCVAPI ~Random();
 
     // symbol: ??0Random@Core@@QEAA@I_N@Z
     MCAPI Random(uint, bool);
@@ -109,17 +106,17 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mFixed() { return mFixed; }
+    static auto& $mFixed() { return mFixed; }
 
-    auto& $mFixedGaussian() { return mFixedGaussian; }
+    static auto& $mFixedGaussian() { return mFixedGaussian; }
 
-    auto& $mFixedUInt32() { return mFixedUInt32; }
+    static auto& $mFixedUInt32() { return mFixedUInt32; }
 
-    auto& $mRandomDevice() { return mRandomDevice; }
+    static auto& $mRandomDevice() { return mRandomDevice; }
 
-    auto& $mThreadLocalRandom() { return mThreadLocalRandom; }
+    static auto& $mThreadLocalRandom() { return mThreadLocalRandom; }
 
-    auto& $mUnfixed() { return mUnfixed; }
+    static auto& $mUnfixed() { return mUnfixed; }
 
     // NOLINTEND
 };

@@ -1,30 +1,12 @@
 #pragma once
 
 #include "ll/api/form/FormBase.h"
-#include "ll/api/form/FormResult.h"
 #include "mc/world/actor/player/Player.h"
 
 namespace ll::form {
 
-class FormElementResult;
-
-class CustomFormElement {
-public:
-    enum class Type { None = -1, Label, Input, Toggle, Dropdown, Slider, StepSlider };
-
-    std::string mName{};
-
-    [[nodiscard]] virtual Type              getType() const                                       = 0;
-    [[nodiscard]] virtual FormElementResult parseResult(nlohmann::ordered_json const& data) const = 0;
-
-protected:
-    explicit CustomFormElement(std::string name) : mName(std::move(name)) {}
-    virtual ~CustomFormElement() = default;
-
-    [[nodiscard]] virtual nlohmann::ordered_json serialize() const = 0;
-
-    friend class CustomForm;
-};
+using CustomFormElementResult = std::variant<std::monostate, uint64, double, std::string>;
+using CustomFormResult        = std::unordered_map<std::string, CustomFormElementResult>;
 
 class CustomForm : public Form {
 
@@ -34,7 +16,7 @@ class CustomForm : public Form {
 public:
     using Callback = std::function<void(Player&, CustomFormResult const&)>;
 
-    LLAPI explicit CustomForm(std::string const& title);
+    LLNDAPI explicit CustomForm(std::string const& title);
 
     ~CustomForm() override = default;
 

@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1UriListener@@UEAA@XZ
-    MCVAPI ~UriListener();
+    // vIndex: 0, symbol: ??1UriListener@@UEAA@XZ
+    virtual ~UriListener();
 
     // NOLINTEND
 };

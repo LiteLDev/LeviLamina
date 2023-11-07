@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1CoralFan@@UEAA@XZ
+    virtual ~CoralFan();
 
     // vIndex: 6, symbol:
     // ?getCollisionShape@CoralFan@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -220,9 +220,6 @@ public:
 
     // vIndex: 192, symbol: ?checkAlive@CoralFan@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void checkAlive(class BlockSource&, class BlockPos const&) const;
-
-    // symbol: ??1CoralFan@@UEAA@XZ
-    MCVAPI ~CoralFan();
 
     // symbol: ??0CoralFan@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CoralFan(std::string const&, int);

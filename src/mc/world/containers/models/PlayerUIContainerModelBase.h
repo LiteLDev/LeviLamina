@@ -20,8 +20,8 @@ public:
     // vIndex: 0, symbol: ?containerContentChanged@PlayerUIContainerModelBase@@UEAAXH@Z
     virtual void containerContentChanged(int);
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ??1@@UEAA@XZ
+    virtual ~PlayerUIContainerModelBase() = default;
 
     // vIndex: 2, symbol: ?postInit@PlayerUIContainerModelBase@@UEAAXXZ
     virtual void postInit();

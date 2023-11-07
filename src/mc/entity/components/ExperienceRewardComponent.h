@@ -46,7 +46,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mIsExperienceDropEnabledTag() { return mIsExperienceDropEnabledTag; }
+    static auto& $mIsExperienceDropEnabledTag() { return mIsExperienceDropEnabledTag; }
 
     // NOLINTEND
 };

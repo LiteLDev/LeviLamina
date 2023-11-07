@@ -29,8 +29,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: __unk_vfn_0
-        virtual void __unk_vfn_0();
+        // vIndex: 0, symbol: ??1MoveIndoorsDefinition@@@UEAA@XZ
+        virtual ~MoveIndoorsDefinition();
 
         // symbol: ??0MoveIndoorsDefinition@MoveIndoorsGoal@@QEAA@XZ
         MCAPI MoveIndoorsDefinition();
@@ -57,8 +57,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~MoveIndoorsGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@MoveIndoorsGoal@@UEAA_NXZ
     virtual bool canUse();

@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~RandomThreadCheckManager() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -51,9 +51,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mInstance() { return mInstance; }
+    static auto& $mInstance() { return mInstance; }
 
-    auto& $mMutex() { return mMutex; }
+    static auto& $mMutex() { return mMutex; }
 
     // NOLINTEND
 };

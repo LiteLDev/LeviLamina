@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1EncryptedNetworkPeer@@UEAA@XZ
+    virtual ~EncryptedNetworkPeer();
 
     // vIndex: 1, symbol:
     // ?sendPacket@EncryptedNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@W4Compressibility@@@Z
@@ -32,9 +32,6 @@ public:
 
     // vIndex: 7, symbol: ?isEncrypted@EncryptedNetworkPeer@@UEBA_NXZ
     virtual bool isEncrypted() const;
-
-    // symbol: ??1EncryptedNetworkPeer@@UEAA@XZ
-    MCVAPI ~EncryptedNetworkPeer();
 
     // symbol: ??0EncryptedNetworkPeer@@QEAA@V?$shared_ptr@VNetworkPeer@@@std@@@Z
     MCAPI explicit EncryptedNetworkPeer(std::shared_ptr<class NetworkPeer>);

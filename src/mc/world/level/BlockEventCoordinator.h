@@ -18,6 +18,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~BlockEventCoordinator() = default;
+
     // symbol: ?getBlockGameplayHandler@BlockEventCoordinator@@QEAAAEAVBlockGameplayHandler@@XZ
     MCAPI class BlockGameplayHandler& getBlockGameplayHandler();
 

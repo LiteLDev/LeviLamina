@@ -30,8 +30,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ComplexInventoryTransaction@@UEAA@XZ
+    virtual ~ComplexInventoryTransaction();
 
     // vIndex: 1, symbol:
     // ?read@ComplexInventoryTransaction@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -49,9 +49,6 @@ public:
     // vIndex: 5, symbol:
     // ?onTransactionError@ComplexInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
     virtual void onTransactionError(class Player&, ::InventoryTransactionError) const;
-
-    // symbol: ??1ComplexInventoryTransaction@@UEAA@XZ
-    MCVAPI ~ComplexInventoryTransaction();
 
     // symbol: ??0ComplexInventoryTransaction@@QEAA@W4Type@0@@Z
     MCAPI explicit ComplexInventoryTransaction(::ComplexInventoryTransaction::Type);
@@ -83,7 +80,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $transactionTypeMap() { return transactionTypeMap; }
+    static auto& $transactionTypeMap() { return transactionTypeMap; }
 
     // NOLINTEND
 };

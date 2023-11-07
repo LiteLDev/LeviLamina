@@ -59,8 +59,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~VillageManager() = default;
 
     // vIndex: 1, symbol: ?fetchClosestVillage@VillageManager@@UEBA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@HI@Z
     virtual std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int, uint) const;
@@ -173,11 +173,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $MAX_POI_QUERIES() { return MAX_POI_QUERIES; }
+    static auto& $MAX_POI_QUERIES() { return MAX_POI_QUERIES; }
 
-    auto& $MAX_QUERY_SCAN_ITERATIONS() { return MAX_QUERY_SCAN_ITERATIONS; }
+    static auto& $MAX_QUERY_SCAN_ITERATIONS() { return MAX_QUERY_SCAN_ITERATIONS; }
 
-    auto& $VILLAGE_HERO_EFFECT_DURATION() { return VILLAGE_HERO_EFFECT_DURATION; }
+    static auto& $VILLAGE_HERO_EFFECT_DURATION() { return VILLAGE_HERO_EFFECT_DURATION; }
 
     // NOLINTEND
 };

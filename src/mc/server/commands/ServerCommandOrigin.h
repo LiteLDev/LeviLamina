@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ServerCommandOrigin@@UEAA@XZ
+    virtual ~ServerCommandOrigin();
 
     // vIndex: 1, symbol:
     // ?getRequestId@ServerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -75,9 +75,6 @@ public:
 
     // vIndex: 30, symbol: ?isValid@ServerCommandOrigin@@UEBA_NXZ
     virtual bool isValid() const;
-
-    // symbol: ??1ServerCommandOrigin@@UEAA@XZ
-    MCVAPI ~ServerCommandOrigin();
 
     // symbol:
     // ??0ServerCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVServerLevel@@W4CommandPermissionLevel@@V?$AutomaticID@VDimension@@H@@@Z

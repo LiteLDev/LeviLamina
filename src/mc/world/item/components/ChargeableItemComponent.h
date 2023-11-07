@@ -14,8 +14,8 @@ namespace cereal { struct ReflectionCtx; }
 class ChargeableItemComponent : public ::ItemComponent {
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ChargeableItemComponent@@UEAA@XZ
+    virtual ~ChargeableItemComponent();
 
     // vIndex: 3, symbol: ?isNetworkComponent@ChargeableItemComponent@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
@@ -27,9 +27,6 @@ public:
     // vIndex: 5, symbol:
     // ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
     virtual bool initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
-
-    // symbol: ??1ChargeableItemComponent@@UEAA@XZ
-    MCVAPI ~ChargeableItemComponent();
 
     // symbol: ??0ChargeableItemComponent@@QEAA@XZ
     MCAPI ChargeableItemComponent();

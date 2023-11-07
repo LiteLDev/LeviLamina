@@ -45,8 +45,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FileStorageArea@Core@@UEAA@XZ
+    virtual ~FileStorageArea();
 
     // vIndex: 1, symbol:
     // ?createTransaction@FileStorageArea@Core@@UEAA?AV?$unique_ptr@VFileSystemImpl@Core@@U?$default_delete@VFileSystemImpl@Core@@@std@@@std@@W4FileAccessType@2@W4TransactionFlags@2@@Z
@@ -188,9 +188,6 @@ public:
     // symbol: ?tick@FileStorageArea@Core@@UEAAXXZ
     MCVAPI void tick();
 
-    // symbol: ??1FileStorageArea@Core@@UEAA@XZ
-    MCVAPI ~FileStorageArea();
-
     // symbol: ?checkUserStorage@FileStorageArea@Core@@QEAAXXZ
     MCAPI void checkUserStorage();
 
@@ -264,11 +261,11 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $sStorageAreaFileStats() { return sStorageAreaFileStats; }
+    static auto& $sStorageAreaFileStats() { return sStorageAreaFileStats; }
 
-    auto& $sStorageAreaLock() { return sStorageAreaLock; }
+    static auto& $sStorageAreaLock() { return sStorageAreaLock; }
 
-    auto& $sStorageAreas() { return sStorageAreas; }
+    static auto& $sStorageAreas() { return sStorageAreas; }
 
     // NOLINTEND
 };

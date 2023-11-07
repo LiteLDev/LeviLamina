@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1NpcComponent@@UEAA@XZ
-    MCVAPI ~NpcComponent();
+    // vIndex: 0, symbol: ??1NpcComponent@@UEAA@XZ
+    virtual ~NpcComponent();
 
     // symbol: ??0NpcComponent@@QEAA@XZ
     MCAPI NpcComponent();
@@ -161,19 +161,19 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $ACTIONS_TAG() { return ACTIONS_TAG; }
+    static auto& $ACTIONS_TAG() { return ACTIONS_TAG; }
 
-    auto& $INTERACTIVE_TAG() { return INTERACTIVE_TAG; }
+    static auto& $INTERACTIVE_TAG() { return INTERACTIVE_TAG; }
 
-    auto& $NAME_RAW_TEXT_TAG() { return NAME_RAW_TEXT_TAG; }
+    static auto& $NAME_RAW_TEXT_TAG() { return NAME_RAW_TEXT_TAG; }
 
-    auto& $PLAYER_ID_TAG() { return PLAYER_ID_TAG; }
+    static auto& $PLAYER_ID_TAG() { return PLAYER_ID_TAG; }
 
-    auto& $PLAYER_SCENE_MAPPING_TAG() { return PLAYER_SCENE_MAPPING_TAG; }
+    static auto& $PLAYER_SCENE_MAPPING_TAG() { return PLAYER_SCENE_MAPPING_TAG; }
 
-    auto& $SCENE_NAME_TAG() { return SCENE_NAME_TAG; }
+    static auto& $SCENE_NAME_TAG() { return SCENE_NAME_TAG; }
 
-    auto& $URL_TAG() { return URL_TAG; }
+    static auto& $URL_TAG() { return URL_TAG; }
 
     // NOLINTEND
 };

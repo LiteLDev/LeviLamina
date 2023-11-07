@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1IntTag@@UEAA@XZ
-    virtual ~IntTag() {}
+    virtual ~IntTag();
 
     // vIndex: 2, symbol: ?write@IntTag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;
@@ -51,5 +51,5 @@ public:
     // NOLINTEND
 };
 namespace ll::nbt_literals {
-inline IntTag operator""_i(uint64 num) { return IntTag{(int)num}; }
+[[nodiscard]] inline IntTag operator""_i(uint64 num) { return IntTag{(int)num}; }
 } // namespace ll::nbt_literals

@@ -11,8 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IPackTelemetry@@UEAA@XZ
-    MCVAPI ~IPackTelemetry();
+    // vIndex: 0, symbol: ??1IPackTelemetry@@UEAA@XZ
+    virtual ~IPackTelemetry();
 
     // NOLINTEND
 };

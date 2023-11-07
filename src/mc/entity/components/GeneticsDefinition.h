@@ -45,7 +45,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $DEFAULT_MUTATION_RATE() { return DEFAULT_MUTATION_RATE; }
+    static auto& $DEFAULT_MUTATION_RATE() { return DEFAULT_MUTATION_RATE; }
 
     // NOLINTEND
 };

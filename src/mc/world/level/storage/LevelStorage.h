@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1LevelStorage@@UEAA@XZ
+    virtual ~LevelStorage();
 
     // vIndex: 1, symbol:
     // ?addStorageObserver@DBStorage@@UEAAXV?$unique_ptr@VLevelStorageObserver@@U?$default_delete@VLevelStorageObserver@@@std@@@std@@@Z
@@ -128,9 +128,6 @@ public:
 
     // vIndex: 30, symbol: ?corruptLevel@LevelStorage@@UEAAXXZ
     virtual void corruptLevel();
-
-    // symbol: ??1LevelStorage@@UEAA@XZ
-    MCVAPI ~LevelStorage();
 
     // symbol:
     // ?getServerId@LevelStorage@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUPlayerStorageIds@@@Z

@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1SculkVeinMultifaceSpreader@@UEAA@XZ
+    virtual ~SculkVeinMultifaceSpreader();
 
     // vIndex: 1, symbol: ?_canSpreadFrom@SculkVeinMultifaceSpreader@@UEBA_NAEBVBlock@@E@Z
     virtual bool _canSpreadFrom(class Block const&, uchar) const;
@@ -26,9 +26,6 @@ public:
 
     // vIndex: 3, symbol: ?_isOtherBlockValidAsSource@SculkVeinMultifaceSpreader@@UEBA_NAEBVBlock@@@Z
     virtual bool _isOtherBlockValidAsSource(class Block const&) const;
-
-    // symbol: ??1SculkVeinMultifaceSpreader@@UEAA@XZ
-    MCVAPI ~SculkVeinMultifaceSpreader();
 
     // NOLINTEND
 };

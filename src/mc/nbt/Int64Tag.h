@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual ~Int64Tag() {}
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~Int64Tag() = default;
 
     // vIndex: 2, symbol: ?write@Int64Tag@@UEBAXAEAVIDataOutput@@@Z
     virtual void write(class IDataOutput&) const;
@@ -48,5 +48,5 @@ public:
     // NOLINTEND
 };
 namespace ll::nbt_literals {
-inline Int64Tag operator""_l(uint64 num) { return Int64Tag{(int64)num}; }
+[[nodiscard]] inline Int64Tag operator""_l(uint64 num) { return Int64Tag{(int64)num}; }
 } // namespace ll::nbt_literals

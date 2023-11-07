@@ -15,7 +15,7 @@ public:
     using Callback       = std::function<void(Player&, int)>;
     using ButtonCallback = std::function<void(Player&)>;
 
-    LLAPI explicit SimpleForm(std::string const& title, std::string const& content = "");
+    LLNDAPI explicit SimpleForm(std::string const& title, std::string const& content = "");
     ~SimpleForm() override = default;
 
     LLAPI SimpleForm& setTitle(std::string const& title);

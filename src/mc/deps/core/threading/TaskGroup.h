@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1TaskGroup@@UEAA@XZ
+    virtual ~TaskGroup();
 
     // vIndex: 1, symbol:
     // ?queue@TaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
@@ -49,9 +49,6 @@ public:
 
     // vIndex: 7, symbol: ?taskComplete@TaskGroup@@UEAAXV?$not_null@PEAVBackgroundTaskBase@@@gsl@@@Z
     virtual void taskComplete(gsl::not_null<class BackgroundTaskBase*>);
-
-    // symbol: ??1TaskGroup@@UEAA@XZ
-    MCVAPI ~TaskGroup();
 
     // symbol:
     // ??0TaskGroup@@QEAA@AEAVWorkerPool@@AEAVScheduler@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

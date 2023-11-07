@@ -13,9 +13,9 @@ public:
     T* get() const { return reinterpret_cast<T*>(mControlBlock.get()); }
     explicit operator bool() const noexcept { return get() != nullptr; }
 
-    constexpr                operator T*() const { return get(); }
-    constexpr T*             operator->() const { return get(); }
-    constexpr decltype(auto) operator*() const { return *get(); }
+    [[nodiscard]] constexpr                operator T*() const { return get(); }
+    [[nodiscard]] constexpr T*             operator->() const { return get(); }
+    [[nodiscard]] constexpr decltype(auto) operator*() const { return *get(); }
 };
 
 template <class T>

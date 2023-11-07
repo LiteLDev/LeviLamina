@@ -23,11 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
-
-    // symbol: ??1ScriptBlockLavaContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
-    MCVAPI ~ScriptBlockLavaContainerComponent();
+    // vIndex: 0, symbol: ??1ScriptBlockLavaContainerComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockLavaContainerComponent();
 
     // symbol: ??4ScriptBlockLavaContainerComponent@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptBlockLavaContainerComponent&

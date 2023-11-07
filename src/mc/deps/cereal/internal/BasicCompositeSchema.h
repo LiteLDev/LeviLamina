@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol: ??1BasicCompositeSchema@internal@cereal@@UEAA@XZ
+    virtual ~BasicCompositeSchema();
 
     // vIndex: 6, symbol: ?description@BasicCompositeSchema@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
     virtual struct cereal::SchemaDescription description() const;
@@ -59,9 +59,6 @@ public:
     // vIndex: 12, symbol:
     // ?customError@BasicCompositeSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     virtual void customError(std::string const&, std::string const&);
-
-    // symbol: ??1BasicCompositeSchema@internal@cereal@@UEAA@XZ
-    MCVAPI ~BasicCompositeSchema();
 
     // symbol: ??0BasicCompositeSchema@internal@cereal@@QEAA@USerializerTraits@2@AEBUReflectionCtx@2@@Z
     MCAPI BasicCompositeSchema(struct cereal::SerializerTraits, struct cereal::ReflectionCtx const&);

@@ -20,6 +20,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~ActorAnimationGroup() = default;
+
     // symbol: ??0ActorAnimationGroup@@QEAA@XZ
     MCAPI ActorAnimationGroup();
 

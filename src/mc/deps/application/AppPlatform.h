@@ -835,9 +835,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mIsInitialized() { return mIsInitialized; }
+    static auto& $mIsInitialized() { return mIsInitialized; }
 
-    auto& $SHADERCACHE_PATH() { return SHADERCACHE_PATH; }
+    static auto& $SHADERCACHE_PATH() { return SHADERCACHE_PATH; }
 
     // NOLINTEND
 };

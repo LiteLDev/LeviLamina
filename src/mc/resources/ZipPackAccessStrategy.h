@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1ZipPackAccessStrategy@@UEAA@XZ
+    virtual ~ZipPackAccessStrategy();
 
     // vIndex: 1, symbol: ?getPackSize@ZipPackAccessStrategy@@UEBA_KXZ
     virtual uint64 getPackSize() const;
@@ -82,9 +82,6 @@ public:
 
     // vIndex: 21, symbol: ?readContentIdentity@ZipPackAccessStrategy@@UEBA?AVContentIdentity@@XZ
     virtual class ContentIdentity readContentIdentity() const;
-
-    // symbol: ??1ZipPackAccessStrategy@@UEAA@XZ
-    MCVAPI ~ZipPackAccessStrategy();
 
     // symbol:
     // ??0ZipPackAccessStrategy@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@AEBVResourceLocation@@AEBVPath@Core@@@Z

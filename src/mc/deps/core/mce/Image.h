@@ -16,7 +16,7 @@ public:
     ImageUsage  mUsage{};            // 0xC
     Blob        mImageBytes;         // 0x10
 
-    explicit inline Image(Blob&& data) : mImageBytes(std::move(data)) {}
+    [[nodiscard]] inline explicit Image(Blob&& data) : mImageBytes(std::move(data)) {}
 
     Image() = default;
 

@@ -19,6 +19,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~BannerPattern() = default;
+
     // symbol:
     // ??0BannerPattern@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0VItemStack@@F_N@Z
     MCAPI BannerPattern(std::string const&, std::string const&, class ItemStack, short, bool);

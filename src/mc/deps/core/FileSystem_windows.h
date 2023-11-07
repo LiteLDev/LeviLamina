@@ -32,8 +32,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1FileSystem_windows@@@UEAA@XZ
+    virtual ~FileSystem_windows();
 
     // vIndex: 1, symbol: ?getLastModificationTime@FileSystemImpl@Core@@UEAA?AVResult@2@AEBVPath@2@PEA_J@Z
     virtual class Core::Result getLastModificationTime(class Core::Path const&, int64*);

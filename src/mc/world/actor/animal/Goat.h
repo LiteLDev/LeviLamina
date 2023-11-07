@@ -34,8 +34,11 @@ public:
     // vIndex: 6, symbol: ?initializeComponents@Goat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void initializeComponents(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: __unk_vfn_10
-    virtual void __unk_vfn_10();
+    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    virtual ~Goat() = default;
+
+    // vIndex: 14, symbol: __unk_vfn_14
+    virtual void __unk_vfn_14();
 
     // vIndex: 23, symbol: __unk_vfn_23
     virtual void __unk_vfn_23();
@@ -49,8 +52,14 @@ public:
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44();
 
+    // vIndex: 45, symbol: __unk_vfn_45
+    virtual void __unk_vfn_45();
+
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
+
+    // vIndex: 48, symbol: __unk_vfn_48
+    virtual void __unk_vfn_48();
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -73,11 +82,23 @@ public:
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
 
+    // vIndex: 116, symbol: __unk_vfn_116
+    virtual void __unk_vfn_116();
+
+    // vIndex: 120, symbol: __unk_vfn_120
+    virtual void __unk_vfn_120();
+
+    // vIndex: 142, symbol: __unk_vfn_142
+    virtual void __unk_vfn_142();
+
+    // vIndex: 143, symbol: __unk_vfn_143
+    virtual void __unk_vfn_143();
+
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
 
-    // vIndex: 148, symbol: __unk_vfn_148
-    virtual void __unk_vfn_148();
+    // vIndex: 154, symbol: __unk_vfn_154
+    virtual void __unk_vfn_154();
 
     // vIndex: 163, symbol: ?updateEntitySpecificMolangVariables@Goat@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
@@ -130,9 +151,9 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $DEFAULT_HORN_COUNT() { return DEFAULT_HORN_COUNT; }
+    static auto& $DEFAULT_HORN_COUNT() { return DEFAULT_HORN_COUNT; }
 
-    auto& $SCREAMING_GOAT_VARIANT() { return SCREAMING_GOAT_VARIANT; }
+    static auto& $SCREAMING_GOAT_VARIANT() { return SCREAMING_GOAT_VARIANT; }
 
     // NOLINTEND
 };

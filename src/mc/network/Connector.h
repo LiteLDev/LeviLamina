@@ -50,8 +50,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1Connector@@UEAA@XZ
+    virtual ~Connector();
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();
@@ -109,9 +109,6 @@ public:
     // symbol:
     // ?startNatPunchingClient@Connector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
     MCVAPI void startNatPunchingClient(std::string const&, ushort);
-
-    // symbol: ??1Connector@@UEAA@XZ
-    MCVAPI ~Connector();
 
     // symbol: ??0Connector@@QEAA@AEAUConnectionCallbacks@0@@Z
     MCAPI explicit Connector(struct Connector::ConnectionCallbacks&);

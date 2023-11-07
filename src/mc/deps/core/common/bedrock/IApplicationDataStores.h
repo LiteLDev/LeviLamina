@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1IApplicationDataStores@Bedrock@@UEAA@XZ
-    MCVAPI ~IApplicationDataStores();
+    // vIndex: 0, symbol: ??1IApplicationDataStores@Bedrock@@UEAA@XZ
+    virtual ~IApplicationDataStores();
 
     // NOLINTEND
 };

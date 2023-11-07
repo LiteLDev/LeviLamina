@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    virtual ~EnchantingInputContainerValidation() = default;
 
     // vIndex: 1, symbol:
     // ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
@@ -31,9 +31,8 @@ public:
     // vIndex: 4, symbol: ?isItemAllowedToAdd@EnchantingInputContainerValidation@@UEBA_NAEBVItemStack@@@Z
     virtual bool isItemAllowedToAdd(class ItemStack const&) const;
 
-    // vIndex: 5, symbol:
-    // ?isItemAllowedToRemove@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
-    virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
+    // vIndex: 5, symbol: __unk_vfn_5
+    virtual void __unk_vfn_5();
 
     // vIndex: 6, symbol: ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
     virtual bool canItemMoveToContainer(class ItemStackBase const&) const;

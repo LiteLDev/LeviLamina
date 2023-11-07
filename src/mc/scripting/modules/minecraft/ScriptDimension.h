@@ -61,6 +61,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: ??1ScriptDimension@@@UEAA@XZ
+    virtual ~ScriptDimension();
+
     // symbol:
     // ?createExplosion@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@XUScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@2@@Scripting@@AEBVVec3@@MV?$optional@UScriptExplosionOptions@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::Result<

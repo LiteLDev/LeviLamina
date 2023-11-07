@@ -10,8 +10,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ActorEventResponseFactory@@UEAA@XZ
-    MCVAPI ~ActorEventResponseFactory();
+    // vIndex: 0, symbol: ??1ActorEventResponseFactory@@UEAA@XZ
+    virtual ~ActorEventResponseFactory();
 
     // symbol: ??0ActorEventResponseFactory@@QEAA@XZ
     MCAPI ActorEventResponseFactory();

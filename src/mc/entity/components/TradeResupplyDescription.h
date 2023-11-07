@@ -17,14 +17,8 @@ public:
     // vIndex: 0, symbol: ?getJsonName@TradeResupplyDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
-
-    // vIndex: 2, symbol: ?deserializeData@Description@@UEAAXUDeserializeDataParams@@@Z
-    virtual void deserializeData(struct DeserializeDataParams);
-
-    // symbol: ??1TradeResupplyDescription@@UEAA@XZ
-    MCVAPI ~TradeResupplyDescription();
+    // vIndex: 1, symbol: ??1TradeResupplyDescription@@UEAA@XZ
+    virtual ~TradeResupplyDescription();
 
     // NOLINTEND
 };

@@ -24,7 +24,7 @@ public:
     // vIndex: 1, symbol: ?collectOptionalArguments@Command@@MEAA_NXZ
     virtual bool collectOptionalArguments();
 
-    // vIndex: 2, symbol: ?execute@TakePictureCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+    // vIndex: 2, symbol: ?execute@NewExecuteCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const = 0;
 
     // symbol: ??0Command@@QEAA@XZ

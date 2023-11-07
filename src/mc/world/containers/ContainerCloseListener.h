@@ -11,8 +11,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??1ContainerCloseListener@@UEAA@XZ
-    MCVAPI ~ContainerCloseListener();
+    // vIndex: 0, symbol: __unk_vfn_0
+    virtual void __unk_vfn_0() = 0;
+
+    // vIndex: 1, symbol: ??1ContainerCloseListener@@UEAA@XZ
+    virtual ~ContainerCloseListener();
 
     // NOLINTEND
 };

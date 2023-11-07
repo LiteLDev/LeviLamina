@@ -55,6 +55,9 @@ public:
     // ?resolve@DeferredDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve() const;
 
+    // vIndex: 15, symbol: ??1@@UEAA@XZ
+    virtual ~DeferredDescriptor() = default;
+
     // symbol:
     // ?deserialize@DeferredDescriptor@@SA?AV?$Result@V?$unique_ptr@UDeferredDescriptor@@U?$default_delete@UDeferredDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCAPI static class Bedrock::Result<std::unique_ptr<struct DeferredDescriptor>>

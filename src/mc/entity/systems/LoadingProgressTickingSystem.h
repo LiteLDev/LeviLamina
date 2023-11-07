@@ -23,7 +23,7 @@ private:
     // member accessor
 public:
     // NOLINTBEGIN
-    auto& $mChunksNeededForLoadOffsets() { return mChunksNeededForLoadOffsets; }
+    static auto& $mChunksNeededForLoadOffsets() { return mChunksNeededForLoadOffsets; }
 
     // NOLINTEND
 };

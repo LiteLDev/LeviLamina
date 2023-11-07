@@ -1,8 +1,10 @@
 #pragma once
+
+#include "nlohmann/json.hpp"
+
 #include "ll/api/Logger.h"
 #include "ll/api/reflection/Serialization.h"
 #include "ll/api/utils/FileUtils.h"
-#include "nlohmann/json.hpp"
 
 namespace ll::config {
 
@@ -13,7 +15,7 @@ concept IsConfig =
     ll::reflection::Reflectable<T> && std::integral<std::remove_cvref_t<decltype(std::declval<T>().version)>>;
 
 template <IsConfig T, typename J = nlohmann::ordered_json>
-inline bool saveConfig(T const& config, std::string const& path) noexcept {
+inline bool saveConfig(T const& config, std::string const& path, bool logFailed = true) noexcept {
     using namespace ll::i18n_literals;
     try {
         namespace fs = std::filesystem;
@@ -25,7 +27,9 @@ inline bool saveConfig(T const& config, std::string const& path) noexcept {
         std::ofstream{path} << data.dump(4);
         return true;
     } catch (...) {}
-    std::clog << "config.save.fail"_tr << std::endl;
+    if (logFailed)
+        std::cout << fmt::format(fmt::runtime("config.save.fail"_tr), ll::reflection::type_name_v<T>)
+                  << std::endl; // TODO i18n
     return false;
 }
 
@@ -40,7 +44,6 @@ inline bool loadConfig(T& config, std::string const& path, bool overwriteAfterFa
             auto data{J::parse(content.value(), nullptr, false, true)};
 
             if (!data.contains(metaDataName)) {
-                std::cout << "config.metadata.empty"_tr << std::endl;
                 res = false;
             } else {
                 auto& metaData = data[metaDataName];
@@ -48,18 +51,17 @@ inline bool loadConfig(T& config, std::string const& path, bool overwriteAfterFa
                         metaData.contains("version") && metaData["version"].is_number()
                         && (int64)metaData["version"] == config.version
                     ))) {
-                    std::cout << "config.metadata.unmatch"_tr << std::endl; // TODO i18n
                     res = false;
                 }
             }
             ll::reflection::deserialize<J, T>(config, data);
         } else {
-            std::cout << "config.file.empty"_tr << std::endl; // TODO i18n
             res = false;
         }
     } catch (...) {}
     if (!res && overwriteAfterFail) {
-        std::cout << "config.save.rewrite"_tr << std::endl; // TODO i18n
+        std::cout << fmt::format(fmt::runtime("config.save.rewrite"_tr), ll::reflection::type_name_v<T>)
+                  << std::endl; // TODO i18n
         saveConfig<T, J>(config, path);
     }
     return res;

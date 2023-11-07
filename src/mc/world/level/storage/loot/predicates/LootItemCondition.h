@@ -16,14 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __unk_vfn_0
-    virtual void __unk_vfn_0();
+    // vIndex: 0, symbol: ??1LootItemCondition@@UEAA@XZ
+    virtual ~LootItemCondition();
 
-    // vIndex: 1, symbol: ?applies@LootItemRandomChanceWithLootingCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1, symbol: ?applies@LootItemActorHasMarkVariantCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
     virtual bool applies(class Random&, class LootTableContext&) = 0;
-
-    // symbol: ??1LootItemCondition@@UEAA@XZ
-    MCVAPI ~LootItemCondition();
 
     // symbol:
     // ?deserialize@LootItemCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
