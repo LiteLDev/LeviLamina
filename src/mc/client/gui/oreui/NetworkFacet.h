@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NetworkFacet@FacetCoroutineExample@@@UEAA@XZ
-    virtual ~NetworkFacet();
+    // vIndex: 0, symbol: __gen_??1NetworkFacet@FacetCoroutineExample@OreUI@@UEAA@XZ
+    virtual ~NetworkFacet() = default;
 
     // NOLINTEND
 };

@@ -16,7 +16,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1EnchantingContainerManagerModel@@UEAA@XZ
     virtual ~EnchantingContainerManagerModel() = default;
 
     // vIndex: 6, symbol:

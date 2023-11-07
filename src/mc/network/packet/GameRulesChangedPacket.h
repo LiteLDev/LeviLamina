@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1GameRulesChangedPacket@@UEAA@XZ
     virtual ~GameRulesChangedPacket() = default;
 
     // vIndex: 1, symbol: ?getId@GameRulesChangedPacket@@UEBA?AW4MinecraftPacketIds@@XZ

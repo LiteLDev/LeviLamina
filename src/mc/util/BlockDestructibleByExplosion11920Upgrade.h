@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockDestructibleByExplosion11920Upgrade@@@UEAA@XZ
-    virtual ~BlockDestructibleByExplosion11920Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockDestructibleByExplosion11920Upgrade@BlockExplosionResistanceVersioning@@UEAA@XZ
+    virtual ~BlockDestructibleByExplosion11920Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockDestructibleByExplosion11920Upgrade@BlockExplosionResistanceVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

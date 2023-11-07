@@ -19,8 +19,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1InteractionMappingBase@@@UEAA@XZ
-        virtual ~InteractionMappingBase();
+        // vIndex: 0, symbol: __gen_??1InteractionMappingBase@PlayerInteractionSystem@@UEAA@XZ
+        virtual ~InteractionMappingBase() = default;
 
         // vIndex: 1, symbol:
         // ?getInteraction@InteractionMappingBase@PlayerInteractionSystem@@UEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z

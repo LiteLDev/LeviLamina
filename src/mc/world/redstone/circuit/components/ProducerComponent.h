@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ProducerComponent@@UEAA@XZ
     virtual ~ProducerComponent() = default;
 
     // vIndex: 3, symbol: ?setStrength@ProducerComponent@@UEAAXH@Z

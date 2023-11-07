@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SfatFileStorageArea@SFAT@@@UEAA@XZ
-    virtual ~SfatFileStorageArea();
+    // vIndex: 0, symbol: __gen_??1SfatFileStorageArea@SFAT@Core@@UEAA@XZ
+    virtual ~SfatFileStorageArea() = default;
 
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockCreativeGroup11920Upgrade@@@UEAA@XZ
-    virtual ~BlockCreativeGroup11920Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockCreativeGroup11920Upgrade@BlockCreativeGroupVersioning@@UEAA@XZ
+    virtual ~BlockCreativeGroup11920Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockCreativeGroup11920Upgrade@BlockCreativeGroupVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

@@ -30,8 +30,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SystemImpl@@@UEAA@XZ
-    virtual ~SystemImpl();
+    // vIndex: 0, symbol: __gen_??1SystemImpl@ServerStandInCauldronSystem@@UEAA@XZ
+    virtual ~SystemImpl() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();

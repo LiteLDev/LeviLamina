@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptNavigationFlyComponentFactory@@@UEAA@XZ
-    virtual ~ScriptNavigationFlyComponentFactory();
+    // vIndex: 0, symbol: __gen_??1ScriptNavigationFlyComponentFactory@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptNavigationFlyComponentFactory() = default;
 
     // vIndex: 1, symbol:
     // ?createComponent@ScriptNavigationFlyComponentFactory@ScriptModuleMinecraft@@UEAA?AV?$StrongTypedObjectHandle@VScriptActorComponent@ScriptModuleMinecraft@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

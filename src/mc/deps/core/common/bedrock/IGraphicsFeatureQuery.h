@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IGraphicsFeatureQuery@@@UEAA@XZ
-    virtual ~IGraphicsFeatureQuery();
+    // vIndex: 0, symbol: __gen_??1IGraphicsFeatureQuery@mce@@UEAA@XZ
+    virtual ~IGraphicsFeatureQuery() = default;
 
     // NOLINTEND
 };

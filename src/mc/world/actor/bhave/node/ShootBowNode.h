@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ShootBowNode@@UEAA@XZ
     virtual ~ShootBowNode() = default;
 
     // vIndex: 1, symbol: ?tick@ShootBowNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z

@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WorldTransferFacet@@@UEAA@XZ
-    virtual ~WorldTransferFacet();
+    // vIndex: 0, symbol: __gen_??1WorldTransferFacet@OreUI@@UEAA@XZ
+    virtual ~WorldTransferFacet() = default;
 
     // NOLINTEND
 };

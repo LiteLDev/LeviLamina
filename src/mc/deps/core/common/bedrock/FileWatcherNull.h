@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FileWatcherNull@@@UEAA@XZ
-    virtual ~FileWatcherNull();
+    // vIndex: 0, symbol: __gen_??1FileWatcherNull@mce@@UEAA@XZ
+    virtual ~FileWatcherNull() = default;
 
     // NOLINTEND
 };

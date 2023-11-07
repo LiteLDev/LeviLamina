@@ -48,7 +48,7 @@ public:
     // ?reloadHardcodedClient@WitherBoss@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void reloadHardcodedClient(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1WitherBoss@@UEAA@XZ
     virtual ~WitherBoss() = default;
 
     // vIndex: 13, symbol: ?remove@WitherBoss@@UEAAXXZ

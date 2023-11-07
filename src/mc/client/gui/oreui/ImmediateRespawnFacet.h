@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ImmediateRespawnFacet@@@UEAA@XZ
-    virtual ~ImmediateRespawnFacet();
+    // vIndex: 0, symbol: __gen_??1ImmediateRespawnFacet@OreUI@@UEAA@XZ
+    virtual ~ImmediateRespawnFacet() = default;
 
     // NOLINTEND
 };

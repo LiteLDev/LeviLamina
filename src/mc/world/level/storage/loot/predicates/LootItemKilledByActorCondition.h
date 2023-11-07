@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1LootItemKilledByActorCondition@@UEAA@XZ
     virtual ~LootItemKilledByActorCondition() = default;
 
     // vIndex: 1, symbol: ?applies@LootItemKilledByActorCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z

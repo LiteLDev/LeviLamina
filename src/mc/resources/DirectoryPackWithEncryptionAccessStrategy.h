@@ -23,7 +23,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1DirectoryPackWithEncryptionAccessStrategy@@UEAA@XZ
     virtual ~DirectoryPackWithEncryptionAccessStrategy() = default;
 
     // vIndex: 1, symbol: ?getPackSize@DirectoryPackWithEncryptionAccessStrategy@@UEBA_KXZ

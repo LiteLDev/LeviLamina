@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1GoHomeDefinition@@@UEAA@XZ
-        virtual ~GoHomeDefinition();
+        // vIndex: 0, symbol: __gen_??1GoHomeDefinition@GoHomeGoal@@UEAA@XZ
+        virtual ~GoHomeDefinition() = default;
 
         // symbol: ?initialize@GoHomeDefinition@GoHomeGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class GoHomeGoal&) const;
@@ -52,7 +52,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1GoHomeGoal@@UEAA@XZ
     virtual ~GoHomeGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@GoHomeGoal@@UEAA_NXZ

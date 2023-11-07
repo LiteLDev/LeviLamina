@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1XboxLiveTelemetry@Events@@@UEAA@XZ
-    virtual ~XboxLiveTelemetry();
+    // vIndex: 0, symbol: __gen_??1XboxLiveTelemetry@Events@Social@@UEAA@XZ
+    virtual ~XboxLiveTelemetry() = default;
 
     // NOLINTEND
 };

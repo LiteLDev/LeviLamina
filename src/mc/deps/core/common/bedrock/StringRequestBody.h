@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1StringRequestBody@Http@@@UEAA@XZ
-    virtual ~StringRequestBody();
+    // vIndex: 0, symbol: __gen_??1StringRequestBody@Http@Bedrock@@UEAA@XZ
+    virtual ~StringRequestBody() = default;
 
     // NOLINTEND
 };

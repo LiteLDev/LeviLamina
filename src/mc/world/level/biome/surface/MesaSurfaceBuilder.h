@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MesaSurfaceBuilder@@@UEAA@XZ
-    virtual ~MesaSurfaceBuilder();
+    // vIndex: 0, symbol: __gen_??1MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
+    virtual ~MesaSurfaceBuilder() = default;
 
     // vIndex: 1, symbol: ?init@MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
     virtual void init(class EntityContext&, uint);

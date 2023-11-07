@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SwellGoal@@UEAA@XZ
     virtual ~SwellGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SwellGoal@@UEAA_NXZ

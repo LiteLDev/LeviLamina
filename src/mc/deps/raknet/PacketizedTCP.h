@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PacketizedTCP@@@UEAA@XZ
-    virtual ~PacketizedTCP();
+    // vIndex: 0, symbol: __gen_??1PacketizedTCP@RakNet@@UEAA@XZ
+    virtual ~PacketizedTCP() = default;
 
     // NOLINTEND
 };

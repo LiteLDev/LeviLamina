@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DestroyOperation@@@UEAA@XZ
-    virtual ~DestroyOperation();
+    // vIndex: 0, symbol: __gen_??1DestroyOperation@PositionTrackingDB@@UEAA@XZ
+    virtual ~DestroyOperation() = default;
 
     // vIndex: 1, symbol:
     // ?tick@AsyncOperationBase@PositionTrackingDB@@UEAA_NV?$weak_ptr@VPositionTrackingDBServer@PositionTrackingDB@@@std@@AEAVTrackingRecord@2@@Z

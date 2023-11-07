@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LegacyMesaSurfaceBuilder@@@UEAA@XZ
-    virtual ~LegacyMesaSurfaceBuilder();
+    // vIndex: 0, symbol: __gen_??1LegacyMesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
+    virtual ~LegacyMesaSurfaceBuilder() = default;
 
     // vIndex: 1, symbol: ?init@LegacyMesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
     virtual void init(class EntityContext&, uint);

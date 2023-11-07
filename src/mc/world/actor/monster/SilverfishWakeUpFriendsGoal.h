@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SilverfishWakeUpFriendsGoal@@UEAA@XZ
     virtual ~SilverfishWakeUpFriendsGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SilverfishWakeUpFriendsGoal@@UEAA_NXZ

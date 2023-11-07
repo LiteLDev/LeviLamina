@@ -28,7 +28,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1HatchetItem@@UEAA@XZ
     virtual ~HatchetItem() = default;
 
     // vIndex: 10, symbol:

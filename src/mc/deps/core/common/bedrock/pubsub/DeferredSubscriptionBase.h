@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DeferredSubscriptionBase@PubSub@@@UEAA@XZ
-    virtual ~DeferredSubscriptionBase();
+    // vIndex: 0, symbol: __gen_??1DeferredSubscriptionBase@PubSub@Bedrock@@UEAA@XZ
+    virtual ~DeferredSubscriptionBase() = default;
 
     // NOLINTEND
 };

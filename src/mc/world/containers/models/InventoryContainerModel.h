@@ -19,7 +19,7 @@ public:
     // vIndex: 0, symbol: ?containerContentChanged@InventoryContainerModel@@UEAAXH@Z
     virtual void containerContentChanged(int);
 
-    // vIndex: 1, symbol: ??1@@UEAA@XZ
+    // vIndex: 1, symbol: __gen_??1InventoryContainerModel@@UEAA@XZ
     virtual ~InventoryContainerModel() = default;
 
     // vIndex: 2, symbol: ?postInit@InventoryContainerModel@@UEAAXXZ

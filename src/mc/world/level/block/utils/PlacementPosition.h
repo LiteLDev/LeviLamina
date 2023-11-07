@@ -57,8 +57,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1UpdateBlockFaceGetPlacementBlockCallback@PlacementPosition@@@UEAA@XZ
-        virtual ~UpdateBlockFaceGetPlacementBlockCallback();
+        // vIndex: 0, symbol: __gen_??1UpdateBlockFaceGetPlacementBlockCallback@PlacementPosition@BlockTrait@@UEAA@XZ
+        virtual ~UpdateBlockFaceGetPlacementBlockCallback() = default;
 
         // vIndex: 1, symbol:
         // ?getPlacementBlock@UpdateBlockFaceGetPlacementBlockCallback@PlacementPosition@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
@@ -83,8 +83,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1UpdateVerticalHalfGetPlacementBlockCallback@PlacementPosition@@@UEAA@XZ
-        virtual ~UpdateVerticalHalfGetPlacementBlockCallback();
+        // vIndex: 0, symbol: __gen_??1UpdateVerticalHalfGetPlacementBlockCallback@PlacementPosition@BlockTrait@@UEAA@XZ
+        virtual ~UpdateVerticalHalfGetPlacementBlockCallback() = default;
 
         // vIndex: 1, symbol:
         // ?getPlacementBlock@UpdateVerticalHalfGetPlacementBlockCallback@PlacementPosition@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z

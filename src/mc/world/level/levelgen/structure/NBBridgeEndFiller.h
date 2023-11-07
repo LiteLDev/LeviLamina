@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1NBBridgeEndFiller@@UEAA@XZ
     virtual ~NBBridgeEndFiller() = default;
 
     // vIndex: 2, symbol: ?getType@NBBridgeEndFiller@@UEBA?AW4StructurePieceType@@XZ

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PresenceManager@@@UEAA@XZ
-    virtual ~PresenceManager();
+    // vIndex: 0, symbol: __gen_??1PresenceManager@Social@@UEAA@XZ
+    virtual ~PresenceManager() = default;
 
     // NOLINTEND
 };

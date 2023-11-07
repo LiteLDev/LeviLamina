@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SeedTemplateFacet@@@UEAA@XZ
-    virtual ~SeedTemplateFacet();
+    // vIndex: 0, symbol: __gen_??1SeedTemplateFacet@OreUI@@UEAA@XZ
+    virtual ~SeedTemplateFacet() = default;
 
     // NOLINTEND
 };

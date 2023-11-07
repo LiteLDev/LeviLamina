@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WebSocketInterfaceInternal@Http@@@UEAA@XZ
-    virtual ~WebSocketInterfaceInternal();
+    // vIndex: 0, symbol: __gen_??1WebSocketInterfaceInternal@Http@Bedrock@@UEAA@XZ
+    virtual ~WebSocketInterfaceInternal() = default;
 
     // symbol:
     // ?connect@WebSocketInterfaceInternal@Http@Bedrock@@UEAAJPEBD0V?$not_null@PEAUHC_WEBSOCKET_OBSERVER@@@gsl@@V?$not_null@PEAUXAsyncBlock@@@5@PEAUHC_PERFORM_ENV@@@Z

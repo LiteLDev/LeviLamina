@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1GenericRequestServiceHandler@@@UEAA@XZ
-    virtual ~GenericRequestServiceHandler();
+    // vIndex: 0, symbol: __gen_??1GenericRequestServiceHandler@Realms@@UEAA@XZ
+    virtual ~GenericRequestServiceHandler() = default;
 
     // NOLINTEND
 };

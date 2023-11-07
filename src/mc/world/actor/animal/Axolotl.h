@@ -34,7 +34,7 @@ public:
     // vIndex: 6, symbol: ?initializeComponents@Axolotl@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void initializeComponents(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1Axolotl@@UEAA@XZ
     virtual ~Axolotl() = default;
 
     // vIndex: 14, symbol: __unk_vfn_14

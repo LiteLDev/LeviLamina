@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockDisplayName11930Upgrade@@@UEAA@XZ
-    virtual ~BlockDisplayName11930Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockDisplayName11930Upgrade@BlockDisplayNameVersioning@@UEAA@XZ
+    virtual ~BlockDisplayName11930Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockDisplayName11930Upgrade@BlockDisplayNameVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

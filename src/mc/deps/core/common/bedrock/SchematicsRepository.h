@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SchematicsRepository@@@UEAA@XZ
-    virtual ~SchematicsRepository();
+    // vIndex: 0, symbol: __gen_??1SchematicsRepository@ClientBlockPipeline@@UEAA@XZ
+    virtual ~SchematicsRepository() = default;
 
     // NOLINTEND
 };

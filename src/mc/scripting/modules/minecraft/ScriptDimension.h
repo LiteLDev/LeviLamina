@@ -61,8 +61,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptDimension@@@UEAA@XZ
-    virtual ~ScriptDimension();
+    // vIndex: 0, symbol: __gen_??1ScriptDimension@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptDimension() = default;
 
     // symbol:
     // ?createExplosion@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@XUScriptLocationInUnloadedChunkError@ScriptModuleMinecraft@@UScriptLocationOutOfWorldBoundsError@2@@Scripting@@AEBVVec3@@MV?$optional@UScriptExplosionOptions@ScriptModuleMinecraft@@@std@@@Z

@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1DisplayNameItemComponent@@UEAA@XZ
     virtual ~DisplayNameItemComponent() = default;
 
     // symbol:

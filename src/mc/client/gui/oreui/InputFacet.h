@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1InputFacet@@@UEAA@XZ
-    virtual ~InputFacet();
+    // vIndex: 0, symbol: __gen_??1InputFacet@OreUI@@UEAA@XZ
+    virtual ~InputFacet() = default;
 
     // NOLINTEND
 };

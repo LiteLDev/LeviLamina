@@ -33,8 +33,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IScriptWorldBeforeEvents@@@UEAA@XZ
-    virtual ~IScriptWorldBeforeEvents();
+    // vIndex: 0, symbol: __gen_??1IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~IScriptWorldBeforeEvents() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();

@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WorldEditorFacet@@@UEAA@XZ
-    virtual ~WorldEditorFacet();
+    // vIndex: 0, symbol: __gen_??1WorldEditorFacet@OreUI@@UEAA@XZ
+    virtual ~WorldEditorFacet() = default;
 
     // NOLINTEND
 };

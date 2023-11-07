@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScreenTechStackFacet@@@UEAA@XZ
-    virtual ~ScreenTechStackFacet();
+    // vIndex: 0, symbol: __gen_??1ScreenTechStackFacet@OreUI@@UEAA@XZ
+    virtual ~ScreenTechStackFacet() = default;
 
     // NOLINTEND
 };

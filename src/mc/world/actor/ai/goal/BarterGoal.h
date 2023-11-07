@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1BarterGoal@@UEAA@XZ
     virtual ~BarterGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@BarterGoal@@UEAA_NXZ

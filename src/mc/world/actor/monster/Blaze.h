@@ -34,7 +34,7 @@ public:
     // vIndex: 5, symbol: ?reloadHardcodedClient@Blaze@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void reloadHardcodedClient(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1Blaze@@UEAA@XZ
     virtual ~Blaze() = default;
 
     // vIndex: 14, symbol: __unk_vfn_14

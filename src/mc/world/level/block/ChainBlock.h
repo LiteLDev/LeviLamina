@@ -27,7 +27,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ChainBlock@@UEAA@XZ
     virtual ~ChainBlock() = default;
 
     // vIndex: 12, symbol: ?getVisualShape@ChainBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z

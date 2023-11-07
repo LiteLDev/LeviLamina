@@ -20,7 +20,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1RecordItemComponent@@UEAA@XZ
     virtual ~RecordItemComponent() = default;
 
     // symbol: ??0RecordItemComponent@@QEAA@W4LevelSoundEvent@@MH@Z

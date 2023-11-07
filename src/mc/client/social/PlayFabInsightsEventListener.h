@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlayFabInsightsEventListener@Events@@@UEAA@XZ
-    virtual ~PlayFabInsightsEventListener();
+    // vIndex: 0, symbol: __gen_??1PlayFabInsightsEventListener@Events@Social@@UEAA@XZ
+    virtual ~PlayFabInsightsEventListener() = default;
 
     // NOLINTEND
 };

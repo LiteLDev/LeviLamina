@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ??1TypeSchemaMapOfTags@internal@@@UEAA@XZ
-    virtual ~TypeSchemaMapOfTags();
+    // vIndex: 4, symbol: __gen_??1TypeSchemaMapOfTags@internal@cereal@@UEAA@XZ
+    virtual ~TypeSchemaMapOfTags() = default;
 
     // NOLINTEND
 };

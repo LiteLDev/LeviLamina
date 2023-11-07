@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SimulationDistanceFacet@@@UEAA@XZ
-    virtual ~SimulationDistanceFacet();
+    // vIndex: 0, symbol: __gen_??1SimulationDistanceFacet@OreUI@@UEAA@XZ
+    virtual ~SimulationDistanceFacet() = default;
 
     // NOLINTEND
 };

@@ -33,8 +33,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1MaterialHelper@CappedSurfaceBuilder@@@UEAA@XZ
-        virtual ~MaterialHelper();
+        // vIndex: 0, symbol: __gen_??1MaterialHelper@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
+        virtual ~MaterialHelper() = default;
 
         // vIndex: 1, symbol:
         // ?isFoundationBlock@MaterialHelper@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEBA_NAEBVBlock@@@Z
@@ -58,8 +58,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1CappedSurfaceBuilder@@@UEAA@XZ
-    virtual ~CappedSurfaceBuilder();
+    // vIndex: 0, symbol: __gen_??1CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
+    virtual ~CappedSurfaceBuilder() = default;
 
     // vIndex: 1, symbol: ?init@CappedSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
     virtual void init(class EntityContext&, uint);

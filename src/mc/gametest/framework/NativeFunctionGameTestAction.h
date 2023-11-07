@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NativeFunctionGameTestAction@@@UEAA@XZ
-    virtual ~NativeFunctionGameTestAction();
+    // vIndex: 0, symbol: __gen_??1NativeFunctionGameTestAction@gametest@@UEAA@XZ
+    virtual ~NativeFunctionGameTestAction() = default;
 
     // vIndex: 1, symbol:
     // ?run@NativeFunctionGameTestAction@gametest@@UEAA?AV?$optional@UGameTestError@gametest@@@std@@XZ

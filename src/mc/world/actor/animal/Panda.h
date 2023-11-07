@@ -31,7 +31,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1Panda@@UEAA@XZ
     virtual ~Panda() = default;
 
     // vIndex: 14, symbol: __unk_vfn_14

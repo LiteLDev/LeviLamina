@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1CrashTelemetryProcessor@@@UEAA@XZ
-    virtual ~CrashTelemetryProcessor();
+    // vIndex: 0, symbol: __gen_??1CrashTelemetryProcessor@Bedrock@@UEAA@XZ
+    virtual ~CrashTelemetryProcessor() = default;
 
     // NOLINTEND
 };

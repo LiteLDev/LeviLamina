@@ -27,7 +27,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1TargetBlock@@UEAA@XZ
     virtual ~TargetBlock() = default;
 
     // vIndex: 18, symbol: ?onProjectileHit@TargetBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z

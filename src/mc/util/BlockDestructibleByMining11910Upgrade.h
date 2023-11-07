@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockDestructibleByMining11910Upgrade@@@UEAA@XZ
-    virtual ~BlockDestructibleByMining11910Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockDestructibleByMining11910Upgrade@BlockDestroyTimeVersioning@@UEAA@XZ
+    virtual ~BlockDestructibleByMining11910Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockDestructibleByMining11910Upgrade@BlockDestroyTimeVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

@@ -33,8 +33,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1AsyncQueueResult@DispatchQueue@Http@@@UEAA@XZ
-        virtual ~AsyncQueueResult();
+        // vIndex: 0, symbol: __gen_??1AsyncQueueResult@DispatchQueue@Http@Bedrock@@UEAA@XZ
+        virtual ~AsyncQueueResult() = default;
 
         // vIndex: 1, symbol:
         // ?getStatus@?$AsyncResultBase@VResponse@Http@Bedrock@@@Threading@Bedrock@@UEBA?AW4AsyncStatus@23@XZ

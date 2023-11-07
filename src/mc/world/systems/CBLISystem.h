@@ -38,8 +38,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1CBLISystem@@@UEAA@XZ
-    virtual ~CBLISystem();
+    // vIndex: 0, symbol: __gen_??1CBLISystem@ControlledByLocalInstanceSystemImpl@@UEAA@XZ
+    virtual ~CBLISystem() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();

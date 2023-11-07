@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1I18nObserver@@UEAA@XZ
     virtual ~I18nObserver() = default;
 
     // vIndex: 1, symbol:

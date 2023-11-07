@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LoadTimeProfiler@@@UEAA@XZ
-    virtual ~LoadTimeProfiler();
+    // vIndex: 0, symbol: __gen_??1LoadTimeProfiler@Core@@UEAA@XZ
+    virtual ~LoadTimeProfiler() = default;
 
     // symbol: ??0LoadTimeProfiler@Core@@QEAA@XZ
     MCAPI LoadTimeProfiler();

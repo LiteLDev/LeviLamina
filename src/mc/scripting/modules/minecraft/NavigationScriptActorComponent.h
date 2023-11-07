@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1NavigationScriptActorComponent@@@UEAA@XZ
-    virtual ~NavigationScriptActorComponent();
+    // vIndex: 0, symbol: __gen_??1NavigationScriptActorComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~NavigationScriptActorComponent() = default;
 
     // vIndex: 2, symbol:
     // ?getIsAmphibious@NavigationScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@XZ

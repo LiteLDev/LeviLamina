@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SharedController@@@UEAA@XZ
-    virtual ~SharedController();
+    // vIndex: 0, symbol: __gen_??1SharedController@PlayerCapabilities@@UEAA@XZ
+    virtual ~SharedController() = default;
 
     // vIndex: 1, symbol: ?canChat@SharedController@PlayerCapabilities@@UEBA_NAEBUIPlayerData@2@@Z
     virtual bool canChat(struct PlayerCapabilities::IPlayerData const&) const;

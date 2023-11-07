@@ -16,7 +16,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1BrewingStandContainerManagerModel@@UEAA@XZ
     virtual ~BrewingStandContainerManagerModel() = default;
 
     // vIndex: 6, symbol:

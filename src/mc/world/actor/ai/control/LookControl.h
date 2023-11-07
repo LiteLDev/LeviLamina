@@ -13,7 +13,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1LookControl@@UEAA@XZ
     virtual ~LookControl() = default;
 
     // vIndex: 1, symbol: ?initializeInternal@LookControl@@UEAAXAEAVMob@@@Z

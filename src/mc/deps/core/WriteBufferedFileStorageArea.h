@@ -27,8 +27,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WriteBufferedFileStorageArea@@@UEAA@XZ
-    virtual ~WriteBufferedFileStorageArea();
+    // vIndex: 0, symbol: __gen_??1WriteBufferedFileStorageArea@Core@@UEAA@XZ
+    virtual ~WriteBufferedFileStorageArea() = default;
 
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();

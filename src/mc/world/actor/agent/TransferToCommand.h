@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1TransferToCommand@@@UEAA@XZ
-    virtual ~TransferToCommand();
+    // vIndex: 0, symbol: __gen_??1TransferToCommand@AgentCommands@@UEAA@XZ
+    virtual ~TransferToCommand() = default;
 
     // vIndex: 1, symbol: ?execute@TransferToCommand@AgentCommands@@UEAAXXZ
     virtual void execute();

@@ -22,7 +22,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ClientInputUpdateSystemInternal@@UEAA@XZ
     virtual ~ClientInputUpdateSystemInternal() = default;
 
     // symbol:

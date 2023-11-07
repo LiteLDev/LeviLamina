@@ -35,7 +35,7 @@ public:
     // vIndex: 4, symbol: ?reloadHardcoded@EnderDragon@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void reloadHardcoded(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1EnderDragon@@UEAA@XZ
     virtual ~EnderDragon() = default;
 
     // vIndex: 13, symbol: ?remove@EnderDragon@@UEAAXXZ

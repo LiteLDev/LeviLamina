@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WebBrowserFacet@@@UEAA@XZ
-    virtual ~WebBrowserFacet();
+    // vIndex: 0, symbol: __gen_??1WebBrowserFacet@OreUI@@UEAA@XZ
+    virtual ~WebBrowserFacet() = default;
 
     // NOLINTEND
 };

@@ -55,7 +55,7 @@ public:
     // vIndex: 12, symbol: ?getHash@ItemTagDescriptor@@UEBA_KXZ
     virtual uint64 getHash() const;
 
-    // vIndex: 15, symbol: ??1@@UEAA@XZ
+    // vIndex: 15, symbol: __gen_??1ItemTagDescriptor@@UEAA@XZ
     virtual ~ItemTagDescriptor() = default;
 
     // symbol:

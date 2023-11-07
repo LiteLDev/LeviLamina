@@ -20,7 +20,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ActorHasNameTagTest@@UEAA@XZ
     virtual ~ActorHasNameTagTest() = default;
 
     // vIndex: 2, symbol: ?evaluate@ActorHasNameTagTest@@UEBA_NAEBUFilterContext@@@Z

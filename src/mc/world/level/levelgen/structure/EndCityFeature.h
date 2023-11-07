@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1EndCityFeature@@UEAA@XZ
     virtual ~EndCityFeature() = default;
 
     // vIndex: 2, symbol: ?shouldPostProcessMobs@EndCityFeature@@UEBA_NXZ

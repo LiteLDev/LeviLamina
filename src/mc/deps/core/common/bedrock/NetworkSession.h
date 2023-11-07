@@ -20,7 +20,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1NetworkSession@@UEAA@XZ
     virtual ~NetworkSession() = default;
 
     // symbol: ?getTransportLayer@NetworkSession@@QEBA?AW4TransportLayer@@XZ

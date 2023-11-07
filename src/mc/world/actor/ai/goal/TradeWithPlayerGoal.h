@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1TradeWithPlayerDefinition@@@UEAA@XZ
-        virtual ~TradeWithPlayerDefinition();
+        // vIndex: 0, symbol: __gen_??1TradeWithPlayerDefinition@TradeWithPlayerGoal@@UEAA@XZ
+        virtual ~TradeWithPlayerDefinition() = default;
 
         // symbol:
         // ?buildSchema@TradeWithPlayerDefinition@TradeWithPlayerGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTradeWithPlayerDefinition@TradeWithPlayerGoal@@@JsonUtil@@@4@@Z
@@ -49,7 +49,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1TradeWithPlayerGoal@@UEAA@XZ
     virtual ~TradeWithPlayerGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@TradeWithPlayerGoal@@UEAA_NXZ

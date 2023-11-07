@@ -26,7 +26,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SetItemDataFunction@@UEAA@XZ
     virtual ~SetItemDataFunction() = default;
 
     // vIndex: 1, symbol: ?apply@SetItemDataFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z

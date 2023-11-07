@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1HttpUrlValidator@Http@@@UEAA@XZ
-    virtual ~HttpUrlValidator();
+    // vIndex: 0, symbol: __gen_??1HttpUrlValidator@Http@Bedrock@@UEAA@XZ
+    virtual ~HttpUrlValidator() = default;
 
     // vIndex: 1, symbol:
     // ?send@HttpUrlValidator@Http@Bedrock@@UEAA?AV?$shared_ptr@V?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@std@@$$QEAVRequest@23@@Z

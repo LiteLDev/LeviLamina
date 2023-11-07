@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BindingTestFacet@@@UEAA@XZ
-    virtual ~BindingTestFacet();
+    // vIndex: 0, symbol: __gen_??1BindingTestFacet@OreUI@@UEAA@XZ
+    virtual ~BindingTestFacet() = default;
 
     // NOLINTEND
 };

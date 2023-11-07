@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1FindMountGoal@@UEAA@XZ
     virtual ~FindMountGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@FindMountGoal@@UEAA_NXZ

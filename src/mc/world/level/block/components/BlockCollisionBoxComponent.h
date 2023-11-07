@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1BlockCollisionBoxComponent@@UEAA@XZ
     virtual ~BlockCollisionBoxComponent() = default;
 
     // symbol: ?usesNewComponentStorage@BlockCollisionBoxComponent@@SA_NXZ

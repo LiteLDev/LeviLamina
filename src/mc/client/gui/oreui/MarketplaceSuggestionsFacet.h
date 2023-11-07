@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MarketplaceSuggestionsFacet@@@UEAA@XZ
-    virtual ~MarketplaceSuggestionsFacet();
+    // vIndex: 0, symbol: __gen_??1MarketplaceSuggestionsFacet@OreUI@@UEAA@XZ
+    virtual ~MarketplaceSuggestionsFacet() = default;
 
     // NOLINTEND
 };

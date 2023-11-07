@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1HealthAttributeDelegate@@UEAA@XZ
     virtual ~HealthAttributeDelegate() = default;
 
     // vIndex: 1, symbol: ?tick@HealthAttributeDelegate@@UEAAXXZ

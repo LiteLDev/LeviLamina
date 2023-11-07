@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Cache@@@UEAA@XZ
-    virtual ~Cache();
+    // vIndex: 0, symbol: __gen_??1Cache@ClientBlobCache@@UEAA@XZ
+    virtual ~Cache() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();

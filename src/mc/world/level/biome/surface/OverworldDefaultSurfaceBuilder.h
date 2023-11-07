@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1OverworldDefaultSurfaceBuilder@@@UEAA@XZ
-    virtual ~OverworldDefaultSurfaceBuilder();
+    // vIndex: 0, symbol: __gen_??1OverworldDefaultSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
+    virtual ~OverworldDefaultSurfaceBuilder() = default;
 
     // vIndex: 1, symbol: ?init@OverworldDefaultSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
     virtual void init(class EntityContext&, uint);

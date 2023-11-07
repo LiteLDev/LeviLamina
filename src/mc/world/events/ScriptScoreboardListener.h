@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptScoreboardListener@@@UEAA@XZ
-    virtual ~ScriptScoreboardListener();
+    // vIndex: 0, symbol: __gen_??1ScriptScoreboardListener@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptScoreboardListener() = default;
 
     // vIndex: 2, symbol:
     // ?onObjectiveRemoved@ScriptScoreboardListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

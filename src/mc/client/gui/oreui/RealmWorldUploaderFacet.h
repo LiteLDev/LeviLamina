@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RealmWorldUploaderFacet@@@UEAA@XZ
-    virtual ~RealmWorldUploaderFacet();
+    // vIndex: 0, symbol: __gen_??1RealmWorldUploaderFacet@OreUI@@UEAA@XZ
+    virtual ~RealmWorldUploaderFacet() = default;
 
     // NOLINTEND
 };

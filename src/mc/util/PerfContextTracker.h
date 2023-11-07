@@ -62,8 +62,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Timer@@@UEAA@XZ
-        virtual ~Timer();
+        // vIndex: 0, symbol: __gen_??1Timer@PerfContextTracker@@UEAA@XZ
+        virtual ~Timer() = default;
 
         // vIndex: 1, symbol: ?reset@Timer@PerfContextTracker@@UEAAXXZ
         virtual void reset();

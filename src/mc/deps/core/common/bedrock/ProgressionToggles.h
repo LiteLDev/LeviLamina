@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ProgressionToggles@@@UEAA@XZ
-    virtual ~ProgressionToggles();
+    // vIndex: 0, symbol: __gen_??1ProgressionToggles@flighting@@UEAA@XZ
+    virtual ~ProgressionToggles() = default;
 
     // NOLINTEND
 };

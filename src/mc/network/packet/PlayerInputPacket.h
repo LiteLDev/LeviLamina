@@ -20,7 +20,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1PlayerInputPacket@@UEAA@XZ
     virtual ~PlayerInputPacket() = default;
 
     // vIndex: 1, symbol: ?getId@PlayerInputPacket@@UEBA?AW4MinecraftPacketIds@@XZ

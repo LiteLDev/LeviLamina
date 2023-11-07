@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1KnockbackRoarDefinition@@@UEAA@XZ
-        virtual ~KnockbackRoarDefinition();
+        // vIndex: 0, symbol: __gen_??1KnockbackRoarDefinition@KnockbackRoarGoal@@UEAA@XZ
+        virtual ~KnockbackRoarDefinition() = default;
 
         // symbol: ?initialize@KnockbackRoarDefinition@KnockbackRoarGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class KnockbackRoarGoal&) const;
@@ -55,7 +55,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1KnockbackRoarGoal@@UEAA@XZ
     virtual ~KnockbackRoarGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@KnockbackRoarGoal@@UEAA_NXZ

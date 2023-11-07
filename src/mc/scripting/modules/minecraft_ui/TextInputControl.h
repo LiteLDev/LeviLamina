@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1TextInputControl@@@UEAA@XZ
-    virtual ~TextInputControl();
+    // vIndex: 0, symbol: __gen_??1TextInputControl@ScriptModuleMinecraftServerUI@@UEAA@XZ
+    virtual ~TextInputControl() = default;
 
     // vIndex: 1, symbol: ?getJson@TextInputControl@ScriptModuleMinecraftServerUI@@UEBA?AVValue@Json@@XZ
     virtual class Json::Value getJson() const;

@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1FoodItemComponentLegacyFactoryData@@UEAA@XZ
     virtual ~FoodItemComponentLegacyFactoryData() = default;
 
     // symbol: ??0FoodItemComponentLegacyFactoryData@@QEAA@XZ

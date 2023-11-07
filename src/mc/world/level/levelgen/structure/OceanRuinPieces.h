@@ -26,8 +26,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1OceanRuinPiece@@@UEAA@XZ
-        virtual ~OceanRuinPiece();
+        // vIndex: 0, symbol: __gen_??1OceanRuinPiece@OceanRuinPieces@@UEAA@XZ
+        virtual ~OceanRuinPiece() = default;
 
         // vIndex: 2, symbol: ?getType@OceanRuinPiece@OceanRuinPieces@@UEBA?AW4StructurePieceType@@XZ
         virtual ::StructurePieceType getType() const;

@@ -36,7 +36,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1Skeleton@@UEAA@XZ
     virtual ~Skeleton() = default;
 
     // vIndex: 14, symbol: __unk_vfn_14

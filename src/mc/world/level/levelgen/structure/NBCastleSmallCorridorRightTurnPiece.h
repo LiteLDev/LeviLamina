@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1NBCastleSmallCorridorRightTurnPiece@@UEAA@XZ
     virtual ~NBCastleSmallCorridorRightTurnPiece() = default;
 
     // vIndex: 2, symbol: ?getType@NBCastleSmallCorridorRightTurnPiece@@UEBA?AW4StructurePieceType@@XZ

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ViewRenderer@@@UEAA@XZ
-    virtual ~ViewRenderer();
+    // vIndex: 0, symbol: __gen_??1ViewRenderer@OreUI@@UEAA@XZ
+    virtual ~ViewRenderer() = default;
 
     // NOLINTEND
 };

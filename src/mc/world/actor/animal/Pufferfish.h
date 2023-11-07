@@ -31,7 +31,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1Pufferfish@@UEAA@XZ
     virtual ~Pufferfish() = default;
 
     // vIndex: 14, symbol: __unk_vfn_14

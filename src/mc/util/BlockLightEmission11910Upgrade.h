@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockLightEmission11910Upgrade@@@UEAA@XZ
-    virtual ~BlockLightEmission11910Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockLightEmission11910Upgrade@BlockLightEmissionVersioning@@UEAA@XZ
+    virtual ~BlockLightEmission11910Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockLightEmission11910Upgrade@BlockLightEmissionVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

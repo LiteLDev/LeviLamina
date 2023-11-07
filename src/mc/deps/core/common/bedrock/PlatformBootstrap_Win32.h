@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlatformBootstrap_Win32@@@UEAA@XZ
-    virtual ~PlatformBootstrap_Win32();
+    // vIndex: 0, symbol: __gen_??1PlatformBootstrap_Win32@Bedrock@@UEAA@XZ
+    virtual ~PlatformBootstrap_Win32() = default;
 
     // vIndex: 1, symbol: ?initialize@PlatformBootstrap_Win32@Bedrock@@UEAAXXZ
     virtual void initialize();

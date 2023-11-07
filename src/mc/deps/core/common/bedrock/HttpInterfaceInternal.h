@@ -24,8 +24,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1HttpInterfaceInternal@Http@@@UEAA@XZ
-    virtual ~HttpInterfaceInternal();
+    // vIndex: 0, symbol: __gen_??1HttpInterfaceInternal@Http@Bedrock@@UEAA@XZ
+    virtual ~HttpInterfaceInternal() = default;
 
     // vIndex: 1, symbol:
     // ?send@HttpInterfaceInternal@Http@Bedrock@@UEAAXV?$not_null@PEAUHC_CALL@@@gsl@@V?$not_null@PEAUXAsyncBlock@@@5@PEAUHC_PERFORM_ENV@@@Z

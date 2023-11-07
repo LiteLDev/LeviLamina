@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SoundFacet@@@UEAA@XZ
-    virtual ~SoundFacet();
+    // vIndex: 0, symbol: __gen_??1SoundFacet@OreUI@@UEAA@XZ
+    virtual ~SoundFacet() = default;
 
     // NOLINTEND
 };

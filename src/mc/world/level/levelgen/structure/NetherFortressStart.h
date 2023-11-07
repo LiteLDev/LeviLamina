@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1NetherFortressStart@@UEAA@XZ
     virtual ~NetherFortressStart() = default;
 
     // symbol: ??0NetherFortressStart@@QEAA@AEAVRandom@@FHH@Z

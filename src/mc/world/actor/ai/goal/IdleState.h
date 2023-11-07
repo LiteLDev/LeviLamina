@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1IdleState@@UEAA@XZ
     virtual ~IdleState() = default;
 
     // vIndex: 1, symbol: ?tick@IdleState@@UEAAXXZ

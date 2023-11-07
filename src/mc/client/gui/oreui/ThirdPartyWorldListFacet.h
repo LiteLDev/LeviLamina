@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ThirdPartyWorldListFacet@@@UEAA@XZ
-    virtual ~ThirdPartyWorldListFacet();
+    // vIndex: 0, symbol: __gen_??1ThirdPartyWorldListFacet@OreUI@@UEAA@XZ
+    virtual ~ThirdPartyWorldListFacet() = default;
 
     // NOLINTEND
 };

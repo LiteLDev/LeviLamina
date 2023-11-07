@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SHRoomCrossing@@UEAA@XZ
     virtual ~SHRoomCrossing() = default;
 
     // vIndex: 2, symbol: ?getType@SHRoomCrossing@@UEBA?AW4StructurePieceType@@XZ

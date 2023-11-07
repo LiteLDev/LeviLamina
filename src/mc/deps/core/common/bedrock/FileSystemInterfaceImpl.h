@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FileSystemInterfaceImpl@@@UEAA@XZ
-    virtual ~FileSystemInterfaceImpl();
+    // vIndex: 0, symbol: __gen_??1FileSystemInterfaceImpl@Core@@UEAA@XZ
+    virtual ~FileSystemInterfaceImpl() = default;
 
     // vIndex: 1, symbol:
     // ?openFile@FileSystemInterfaceImpl@Core@@UEAA?AV?$unique_ptr@VIFile@Core@@U?$default_delete@VIFile@Core@@@std@@@std@@AEBVPath@2@VFileOpenMode@2@W4FileBufferingMode@2@@Z

@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1HarvestFarmBlockDefinition@@UEAA@XZ
     virtual ~HarvestFarmBlockDefinition() = default;
 
     // symbol: ??0HarvestFarmBlockDefinition@@QEAA@XZ

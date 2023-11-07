@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SlimeKeepOnJumpingGoal@@UEAA@XZ
     virtual ~SlimeKeepOnJumpingGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SlimeKeepOnJumpingGoal@@UEAA_NXZ

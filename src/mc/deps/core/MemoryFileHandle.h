@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MemoryFileHandle@@@UEAA@XZ
-    virtual ~MemoryFileHandle();
+    // vIndex: 0, symbol: __gen_??1MemoryFileHandle@Core@@UEAA@XZ
+    virtual ~MemoryFileHandle() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();

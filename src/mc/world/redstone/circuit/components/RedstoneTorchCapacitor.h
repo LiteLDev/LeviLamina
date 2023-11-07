@@ -21,7 +21,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1RedstoneTorchCapacitor@@UEAA@XZ
     virtual ~RedstoneTorchCapacitor() = default;
 
     // vIndex: 1, symbol: ?getStrength@RedstoneTorchCapacitor@@UEBAHXZ

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ILibrary@@@UEAA@XZ
-    virtual ~ILibrary();
+    // vIndex: 0, symbol: __gen_??1ILibrary@OreUI@@UEAA@XZ
+    virtual ~ILibrary() = default;
 
     // NOLINTEND
 };

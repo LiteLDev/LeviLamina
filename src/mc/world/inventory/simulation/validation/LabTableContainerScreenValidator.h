@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1LabTableContainerScreenValidator@@UEAA@XZ
     virtual ~LabTableContainerScreenValidator() = default;
 
     // symbol: ??0LabTableContainerScreenValidator@@QEAA@XZ

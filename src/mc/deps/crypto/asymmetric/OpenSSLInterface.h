@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1OpenSSLInterface@Asymmetric@@@UEAA@XZ
-    virtual ~OpenSSLInterface();
+    // vIndex: 0, symbol: __gen_??1OpenSSLInterface@Asymmetric@Crypto@@UEAA@XZ
+    virtual ~OpenSSLInterface() = default;
 
     // vIndex: 1, symbol:
     // ?generateKeyPair@OpenSSLInterface@Asymmetric@Crypto@@UEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z

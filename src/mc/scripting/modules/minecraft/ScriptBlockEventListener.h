@@ -38,8 +38,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptBlockEventListener@@@UEAA@XZ
-    virtual ~ScriptBlockEventListener();
+    // vIndex: 0, symbol: __gen_??1ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptBlockEventListener() = default;
 
     // vIndex: 1, symbol:
     // ?onBlockPlacedByPlayer@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z

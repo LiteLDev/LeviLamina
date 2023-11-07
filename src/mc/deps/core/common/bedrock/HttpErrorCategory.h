@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1HttpErrorCategory@Http@@@UEAA@XZ
-    virtual ~HttpErrorCategory();
+    // vIndex: 0, symbol: __gen_??1HttpErrorCategory@Http@Bedrock@@UEAA@XZ
+    virtual ~HttpErrorCategory() = default;
 
     // vIndex: 1, symbol: ?name@HttpErrorCategory@Http@Bedrock@@UEBAPEBDXZ
     virtual char const* name() const;

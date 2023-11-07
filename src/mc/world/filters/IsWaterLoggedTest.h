@@ -20,7 +20,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1IsWaterLoggedTest@@UEAA@XZ
     virtual ~IsWaterLoggedTest() = default;
 
     // vIndex: 2, symbol: ?evaluate@IsWaterLoggedTest@@UEBA_NAEBUFilterContext@@@Z

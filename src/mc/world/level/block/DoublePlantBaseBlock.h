@@ -27,7 +27,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1DoublePlantBaseBlock@@UEAA@XZ
     virtual ~DoublePlantBaseBlock() = default;
 
     // vIndex: 3, symbol: ?getNextBlockPermutation@DoublePlantBaseBlock@@UEBAPEBVBlock@@AEBV2@@Z

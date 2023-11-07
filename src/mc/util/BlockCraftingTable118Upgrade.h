@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockCraftingTable118Upgrade@@@UEAA@XZ
-    virtual ~BlockCraftingTable118Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockCraftingTable118Upgrade@BlockCraftingTableVersioning@@UEAA@XZ
+    virtual ~BlockCraftingTable118Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockCraftingTable118Upgrade@BlockCraftingTableVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

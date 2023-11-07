@@ -18,7 +18,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1CreativeGroupInfo@@UEAA@XZ
     virtual ~CreativeGroupInfo() = default;
 
     // symbol: ??0CreativeGroupInfo@@QEAA@AEBV0@@Z

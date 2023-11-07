@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlaceCommand@@@UEAA@XZ
-    virtual ~PlaceCommand();
+    // vIndex: 0, symbol: __gen_??1PlaceCommand@AgentCommands@@UEAA@XZ
+    virtual ~PlaceCommand() = default;
 
     // vIndex: 1, symbol: ?execute@PlaceCommand@AgentCommands@@UEAAXXZ
     virtual void execute();

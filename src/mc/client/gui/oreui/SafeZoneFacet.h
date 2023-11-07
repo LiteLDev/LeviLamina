@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SafeZoneFacet@@@UEAA@XZ
-    virtual ~SafeZoneFacet();
+    // vIndex: 0, symbol: __gen_??1SafeZoneFacet@OreUI@@UEAA@XZ
+    virtual ~SafeZoneFacet() = default;
 
     // NOLINTEND
 };

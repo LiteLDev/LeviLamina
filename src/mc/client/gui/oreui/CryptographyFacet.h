@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1CryptographyFacet@FacetCoroutineExample@@@UEAA@XZ
-    virtual ~CryptographyFacet();
+    // vIndex: 0, symbol: __gen_??1CryptographyFacet@FacetCoroutineExample@OreUI@@UEAA@XZ
+    virtual ~CryptographyFacet() = default;
 
     // NOLINTEND
 };

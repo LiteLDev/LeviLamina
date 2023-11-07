@@ -31,8 +31,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Definition@@@UEAA@XZ
-        virtual ~Definition();
+        // vIndex: 0, symbol: __gen_??1Definition@DigGoal@@UEAA@XZ
+        virtual ~Definition() = default;
 
         // symbol: ??0Definition@DigGoal@@QEAA@XZ
         MCAPI Definition();
@@ -56,7 +56,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1DigGoal@@UEAA@XZ
     virtual ~DigGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@DigGoal@@UEAA_NXZ

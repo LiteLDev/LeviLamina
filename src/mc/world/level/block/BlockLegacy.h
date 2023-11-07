@@ -92,8 +92,8 @@ public:
         // vIndex: 1, symbol: ?setState@RearrangedStateCollection@BlockLegacy@@UEBAPEBVBlock@@AEBV2@HH@Z
         virtual class Block const* setState(class BlockLegacy const&, int, int) const;
 
-        // vIndex: 2, symbol: ??1RearrangedStateCollection@@@UEAA@XZ
-        virtual ~RearrangedStateCollection();
+        // vIndex: 2, symbol: __gen_??1RearrangedStateCollection@BlockLegacy@@UEAA@XZ
+        virtual ~RearrangedStateCollection() = default;
 
         // symbol:
         // ?add@RearrangedStateCollection@BlockLegacy@@SAXAEAV2@AEBVBlockState@@V?$function@$$A6A?AV?$optional@H@std@@AEBVBlockLegacy@@H@Z@std@@V?$function@$$A6APEBVBlock@@AEBVBlockLegacy@@HH@Z@5@AEBVSemVersion@@@Z
@@ -144,8 +144,8 @@ public:
         // vIndex: 1, symbol: ?setState@RemovedStateCollection@BlockLegacy@@UEBAPEBVBlock@@AEBV2@HH@Z
         virtual class Block const* setState(class BlockLegacy const&, int, int) const;
 
-        // vIndex: 2, symbol: ??1RemovedStateCollection@@@UEAA@XZ
-        virtual ~RemovedStateCollection();
+        // vIndex: 2, symbol: __gen_??1RemovedStateCollection@BlockLegacy@@UEAA@XZ
+        virtual ~RemovedStateCollection() = default;
 
         // symbol:
         // ?add@RemovedStateCollection@BlockLegacy@@SAXAEBVBlockState@@$$QEAV?$vector@USplitBlock@RemovedStateCollection@BlockLegacy@@V?$allocator@USplitBlock@RemovedStateCollection@BlockLegacy@@@std@@@std@@AEBVSemVersion@@@Z

@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1MoveToWaterGoal@@UEAA@XZ
     virtual ~MoveToWaterGoal() = default;
 
     // symbol: ??0MoveToWaterGoal@@QEAA@AEAVMob@@MHHHM@Z

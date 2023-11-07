@@ -30,8 +30,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ThrottledAccessTransaction@@@UEAA@XZ
-    virtual ~ThrottledAccessTransaction();
+    // vIndex: 0, symbol: __gen_??1ThrottledAccessTransaction@Core@@UEAA@XZ
+    virtual ~ThrottledAccessTransaction() = default;
 
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();

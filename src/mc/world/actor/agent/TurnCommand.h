@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1TurnCommand@@@UEAA@XZ
-    virtual ~TurnCommand();
+    // vIndex: 0, symbol: __gen_??1TurnCommand@AgentCommands@@UEAA@XZ
+    virtual ~TurnCommand() = default;
 
     // vIndex: 1, symbol: ?execute@TurnCommand@AgentCommands@@UEAAXXZ
     virtual void execute();

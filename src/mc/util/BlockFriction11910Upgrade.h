@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockFriction11910Upgrade@@@UEAA@XZ
-    virtual ~BlockFriction11910Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockFriction11910Upgrade@BlockFrictionVersioning@@UEAA@XZ
+    virtual ~BlockFriction11910Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockFriction11910Upgrade@BlockFrictionVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

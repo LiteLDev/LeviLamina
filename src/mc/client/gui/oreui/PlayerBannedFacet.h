@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlayerBannedFacet@@@UEAA@XZ
-    virtual ~PlayerBannedFacet();
+    // vIndex: 0, symbol: __gen_??1PlayerBannedFacet@OreUI@@UEAA@XZ
+    virtual ~PlayerBannedFacet() = default;
 
     // NOLINTEND
 };

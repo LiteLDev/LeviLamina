@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FriendsListFacet@@@UEAA@XZ
-    virtual ~FriendsListFacet();
+    // vIndex: 0, symbol: __gen_??1FriendsListFacet@OreUI@@UEAA@XZ
+    virtual ~FriendsListFacet() = default;
 
     // NOLINTEND
 };

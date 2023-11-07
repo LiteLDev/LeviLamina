@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1MineshaftCrossing@@UEAA@XZ
     virtual ~MineshaftCrossing() = default;
 
     // vIndex: 2, symbol: ?getType@MineshaftCrossing@@UEBA?AW4StructurePieceType@@XZ

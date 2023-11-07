@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1RiseToLiquidLevelGoal@@UEAA@XZ
     virtual ~RiseToLiquidLevelGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@RiseToLiquidLevelGoal@@UEAA_NXZ

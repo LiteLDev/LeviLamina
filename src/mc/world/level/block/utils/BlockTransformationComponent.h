@@ -44,7 +44,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1BlockTransformationComponent@@UEAA@XZ
     virtual ~BlockTransformationComponent() = default;
 
     // symbol: ??0BlockTransformationComponent@@QEAA@$$QEAV0@@Z

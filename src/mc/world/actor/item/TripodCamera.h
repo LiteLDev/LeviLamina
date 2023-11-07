@@ -34,7 +34,7 @@ public:
     // vIndex: 4, symbol: ?reloadHardcoded@TripodCamera@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void reloadHardcoded(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1TripodCamera@@UEAA@XZ
     virtual ~TripodCamera() = default;
 
     // vIndex: 13, symbol: ?remove@TripodCamera@@UEAAXXZ

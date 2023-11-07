@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RealmsTrialFacet@@@UEAA@XZ
-    virtual ~RealmsTrialFacet();
+    // vIndex: 0, symbol: __gen_??1RealmsTrialFacet@OreUI@@UEAA@XZ
+    virtual ~RealmsTrialFacet() = default;
 
     // NOLINTEND
 };

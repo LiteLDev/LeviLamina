@@ -18,7 +18,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1IgniteSubcomponent@@UEAA@XZ
     virtual ~IgniteSubcomponent() = default;
 
     // vIndex: 1, symbol: ?readfromJSON@IgniteSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z

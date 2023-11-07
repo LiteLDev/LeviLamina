@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockGeometry11910Upgrade@@@UEAA@XZ
-    virtual ~BlockGeometry11910Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockGeometry11910Upgrade@BlockGeometryVersioning@@UEAA@XZ
+    virtual ~BlockGeometry11910Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockGeometry11910Upgrade@BlockGeometryVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

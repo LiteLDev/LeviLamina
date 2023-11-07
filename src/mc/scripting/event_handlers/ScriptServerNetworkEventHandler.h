@@ -23,7 +23,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ScriptServerNetworkEventHandler@@UEAA@XZ
     virtual ~ScriptServerNetworkEventHandler() = default;
 
     // vIndex: 1, symbol:

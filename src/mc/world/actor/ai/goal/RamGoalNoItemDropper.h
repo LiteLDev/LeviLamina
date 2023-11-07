@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RamGoalNoItemDropper@@@UEAA@XZ
-    virtual ~RamGoalNoItemDropper();
+    // vIndex: 0, symbol: __gen_??1RamGoalNoItemDropper@RamAttackGoalUtils@@UEAA@XZ
+    virtual ~RamGoalNoItemDropper() = default;
 
     // vIndex: 1, symbol: ?tryDropHorn@RamGoalNoItemDropper@RamAttackGoalUtils@@UEBAXVVec3@@@Z
     virtual void tryDropHorn(class Vec3) const;

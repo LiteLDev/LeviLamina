@@ -41,8 +41,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BaseGameTestHelper@@@UEAA@XZ
-    virtual ~BaseGameTestHelper();
+    // vIndex: 0, symbol: __gen_??1BaseGameTestHelper@gametest@@UEAA@XZ
+    virtual ~BaseGameTestHelper() = default;
 
     // vIndex: 1, symbol: ?succeedWhenEntityPresent@MinecraftGameTestHelper@@UEAAXAEBUActorDefinitionIdentifier@@HHH_N@Z
     virtual void succeedWhenEntityPresent(struct ActorDefinitionIdentifier const&, int, int, int, bool) = 0;

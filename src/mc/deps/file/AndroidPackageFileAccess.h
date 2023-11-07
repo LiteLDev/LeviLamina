@@ -23,8 +23,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1AndroidPackageFileReadAccess@@@UEAA@XZ
-        virtual ~AndroidPackageFileReadAccess();
+        // vIndex: 0, symbol: __gen_??1AndroidPackageFileReadAccess@AndroidPackageFileAccess@@UEAA@XZ
+        virtual ~AndroidPackageFileReadAccess() = default;
 
         // NOLINTEND
     };
@@ -37,7 +37,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1AndroidPackageFileAccess@@UEAA@XZ
     virtual ~AndroidPackageFileAccess() = default;
 
     // NOLINTEND

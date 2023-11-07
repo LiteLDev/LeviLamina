@@ -5,7 +5,7 @@
 class IDataOutput {
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1IDataOutput@@UEAA@XZ
     virtual ~IDataOutput() = default;
 
     // vIndex: 1, symbol: ?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z

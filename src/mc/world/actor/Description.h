@@ -14,7 +14,7 @@ public:
     // vIndex: 0, symbol: ?getJsonName@MoveControlBasicDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const = 0;
 
-    // vIndex: 1, symbol: ??1@@UEAA@XZ
+    // vIndex: 1, symbol: __gen_??1Description@@UEAA@XZ
     virtual ~Description() = default;
 
     // vIndex: 2, symbol: ?deserializeData@Description@@UEAAXUDeserializeDataParams@@@Z

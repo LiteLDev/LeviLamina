@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1StructureCommand@@UEAA@XZ
     virtual ~StructureCommand() = default;
 
     // vIndex: 2, symbol: ?execute@StructureCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z

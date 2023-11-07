@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1DragonStrafePlayerGoal@@UEAA@XZ
     virtual ~DragonStrafePlayerGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@DragonStrafePlayerGoal@@UEAA_NXZ

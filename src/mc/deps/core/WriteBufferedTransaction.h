@@ -30,8 +30,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WriteBufferedTransaction@@@UEAA@XZ
-    virtual ~WriteBufferedTransaction();
+    // vIndex: 0, symbol: __gen_??1WriteBufferedTransaction@Core@@UEAA@XZ
+    virtual ~WriteBufferedTransaction() = default;
 
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();

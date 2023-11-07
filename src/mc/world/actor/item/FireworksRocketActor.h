@@ -28,7 +28,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1FireworksRocketActor@@UEAA@XZ
     virtual ~FireworksRocketActor() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11

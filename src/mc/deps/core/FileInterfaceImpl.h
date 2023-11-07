@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FileInterfaceImpl@@@UEAA@XZ
-    virtual ~FileInterfaceImpl();
+    // vIndex: 0, symbol: __gen_??1FileInterfaceImpl@Core@@UEAA@XZ
+    virtual ~FileInterfaceImpl() = default;
 
     // vIndex: 1, symbol: ?readExactly@FileInterfaceImpl@Core@@UEAA?AVResult@2@PEAX_K@Z
     virtual class Core::Result readExactly(void*, uint64);
