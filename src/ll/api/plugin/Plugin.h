@@ -17,23 +17,47 @@ class Plugin : std::enable_shared_from_this<Plugin> {
 private:
     using Handle = memory::Handle;
 
+    friend class PluginManager;
+
     struct Impl;
     std::unique_ptr<Impl> mImpl;
 
-    LLAPI explicit Plugin(Manifest manifest, Handle handle);
+    explicit Plugin(Manifest manifest, Handle handle);
+
+    bool onLoad();
+
+    bool onUnload();
+
+    bool onEnable();
+
+    bool onDisable();
 
 public:
     LLAPI ~Plugin();
 
     LLNDAPI static std::shared_ptr<Plugin> create(Manifest manifest, Handle handle);
 
-    LLNDAPI const Manifest& getManifest() const;
+    LLNDAPI Manifest const& getManifest() const;
 
     LLNDAPI Handle getHandle() const;
 
-    LLNDAPI std::unordered_map<std::string, std::any>& getSharedData() const;
+    LLNDAPI std::unordered_map<std::string, std::any> const& getSharedData() const;
 
-    LLNDAPI std::filesystem::path getDefaultDataPath() const;
+    LLNDAPI std::unordered_map<std::string, std::any>& getSharedData();
+
+    LLNDAPI std::filesystem::path getPluginDir() const;
+
+    LLNDAPI std::filesystem::path getDataDir() const;
+
+    LLNDAPI std::filesystem::path getConfigDir() const;
+
+    LLAPI void onLoad(std::function<bool()> const& func);
+
+    LLAPI void onUnload(std::function<bool()> const& func);
+
+    LLAPI void onEnable(std::function<bool()> const& func);
+
+    LLAPI void onDisable(std::function<bool()> const& func);
 
     template <typename T, typename... Args>
         requires(std::is_constructible_v<std::any, std::in_place_type_t<T>, Args...>)
@@ -43,7 +67,7 @@ public:
 
     template <typename T>
     optional_ref<T> getSharedData(std::string const& key) const {
-        if (getSharedData().contains(key)) { return std::any_cast<T>(&getSharedData().at(key)); }
+        if (getSharedData().contains(key)) { return std::any_cast<T>(&*getSharedData().find(key)); }
         return std::nullopt;
     }
 };

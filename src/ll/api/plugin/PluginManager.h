@@ -21,11 +21,11 @@ public:
     LLNDAPI static PluginManager& getInstance();
 
     LLAPI auto registerPlugin(std::shared_ptr<Plugin> const& plugin) -> bool;
-    LLAPI auto unregisterPlugin(std::weak_ptr<Plugin> const& plugin) -> bool;
+    LLAPI auto unregisterPlugin(std::weak_ptr<const Plugin> const& plugin) -> bool;
 
-    LLNDAPI auto findPlugin(std::string_view name) -> std::weak_ptr<Plugin>;
-    LLNDAPI auto findPlugin(Handle handle) -> std::weak_ptr<Plugin>;
-    LLNDAPI auto getAllPlugins() -> std::vector<std::weak_ptr<Plugin>>;
+    LLNDAPI auto findPlugin(std::string_view name) -> std::weak_ptr<const Plugin>;
+    LLNDAPI auto findPlugin(Handle handle) -> std::weak_ptr<const Plugin>;
+    LLNDAPI auto getAllPlugins() -> std::vector<std::weak_ptr<const Plugin>>;
 
     auto unregisterPlugin(std::string_view name) -> bool {
         if (auto plugin = findPlugin(name).lock()) { return unregisterPlugin(plugin); }
@@ -41,9 +41,11 @@ public:
     [[maybe_unused]] static auto getCurrentPlugin() -> Plugin& {
         static auto& plugin = []() -> Plugin& {
             if (auto p = getInstance().findPlugin(memory::getCurrentModuleHandle()).lock()) {
-                return *p;
+                return const_cast<Plugin&>(*p);
             } else {
-                throw std::runtime_error("Plugin not found");
+                throw std::runtime_error(
+                    "Plugin not found, make sure you are calling this function from a plugin registered properly"
+                );
             }
         }();
         return plugin;

@@ -31,11 +31,11 @@ void modify(void* ptr, size_t len, const std::function<void()>& callback) {
     VirtualProtect(ptr, len, oldProtect, &oldProtect);
 }
 
-Handle getCurrentModuleHandle(void* base) {
+Handle getModuleHandle(void* addr) {
     HMODULE hModule = nullptr;
     GetModuleHandleEx(
         GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
-        reinterpret_cast<LPCTSTR>(base),
+        reinterpret_cast<LPCTSTR>(addr),
         &hModule
     );
     return hModule;
