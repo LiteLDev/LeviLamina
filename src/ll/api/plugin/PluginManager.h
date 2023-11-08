@@ -10,42 +10,42 @@
 
 namespace ll::plugin {
 
-extern "C" struct IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
-
-template <typename... Bases>
-struct overload : Bases... {
-    using is_transparent = void;
-    using Bases::operator()...;
-};
-
-struct char_pointer_hash {
-    auto operator()(const char* ptr) const noexcept { return std::hash<std::string_view>{}(ptr); }
-};
-
-using transparent_string_hash = overload<std::hash<std::string>, std::hash<std::string_view>, char_pointer_hash>;
-
-using PluginStorage = std::unordered_map<std::string, Plugin, transparent_string_hash, std::equal_to<>>;
-
 class PluginManager {
+    using Handle = memory::Handle;
+
     struct Impl;
     std::unique_ptr<Impl> mImpl;
-    using Handle = void*;
     PluginManager();
 
-    LLNDAPI static auto getCurrentPlugin(void* base) -> Plugin&;
-
 public:
-    LLNDAPI static auto getInstance() -> PluginManager&;
+    LLNDAPI static PluginManager& getInstance();
 
-    void addDllMapping(Handle, std::string_view);
+    LLAPI auto registerPlugin(std::shared_ptr<Plugin> const& plugin) -> bool;
+    LLAPI auto unregisterPlugin(std::weak_ptr<Plugin> const& plugin) -> bool;
 
-    LLAPI auto   registerPlugin(Manifest manifest) -> bool;
-    LLAPI auto   unregisterPlugin(std::string_view name) -> bool;
-    LLNDAPI auto findPlugin(std::string_view name) -> optional_ref<Plugin const>;
-    LLNDAPI auto getAllPlugins() -> PluginStorage const&;
+    LLNDAPI auto findPlugin(std::string_view name) -> std::weak_ptr<Plugin>;
+    LLNDAPI auto findPlugin(Handle handle) -> std::weak_ptr<Plugin>;
+    LLNDAPI auto getAllPlugins() -> std::vector<std::weak_ptr<Plugin>>;
 
-    [[maybe_unused]] inline static auto getCurrentPlugin() -> Plugin& {
-        static auto plugin = getCurrentPlugin(&__ImageBase);
+    auto unregisterPlugin(std::string_view name) -> bool {
+        if (auto plugin = findPlugin(name).lock()) { return unregisterPlugin(plugin); }
+        return false;
+    }
+
+    auto unregisterPlugin(Handle handle) -> bool {
+        if (auto plugin = findPlugin(handle).lock()) { return unregisterPlugin(plugin); }
+        return false;
+    }
+
+    // throw exception if not found
+    [[maybe_unused]] static auto getCurrentPlugin() -> Plugin& {
+        static auto& plugin = []() -> Plugin& {
+            if (auto p = getInstance().findPlugin(memory::getCurrentModuleHandle()).lock()) {
+                return *p;
+            } else {
+                throw std::runtime_error("Plugin not found");
+            }
+        }();
         return plugin;
     }
 };

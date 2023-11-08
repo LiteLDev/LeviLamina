@@ -4,7 +4,7 @@
 
 #include "ll/api/utils/WinUtils.h"
 
-#include <memoryapi.h>
+#include <windows.h>
 
 using namespace ll::utils;
 
@@ -29,6 +29,16 @@ void modify(void* ptr, size_t len, const std::function<void()>& callback) {
     VirtualProtect(ptr, len, PAGE_EXECUTE_READWRITE, &oldProtect);
     callback();
     VirtualProtect(ptr, len, oldProtect, &oldProtect);
+}
+
+Handle getCurrentModuleHandle(void* base) {
+    HMODULE hModule = nullptr;
+    GetModuleHandleEx(
+        GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+        reinterpret_cast<LPCTSTR>(base),
+        &hModule
+    );
+    return hModule;
 }
 
 } // namespace ll::memory

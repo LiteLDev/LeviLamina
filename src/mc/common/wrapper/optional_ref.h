@@ -4,11 +4,10 @@
 #include <stdexcept>
 
 template <typename T>
+    requires(!std::is_reference_v<T>)
 class optional_ref {
 private:
     T* const mPtr = nullptr;
-
-    static_assert(!std::is_reference_v<T>, "T must not be a reference type (use a pointer?)");
 
     template <typename U>
     static constexpr bool IsCompatibleV =
