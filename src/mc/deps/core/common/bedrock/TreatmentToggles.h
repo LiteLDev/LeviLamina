@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1TreatmentToggles@@@UEAA@XZ
-    virtual ~TreatmentToggles();
+    // vIndex: 0, symbol: __gen_??1TreatmentToggles@flighting@@UEAA@XZ
+    virtual ~TreatmentToggles() = default;
 
     // NOLINTEND
 };

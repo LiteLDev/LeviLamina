@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PerformanceFacet@@@UEAA@XZ
-    virtual ~PerformanceFacet();
+    // vIndex: 0, symbol: __gen_??1PerformanceFacet@OreUI@@UEAA@XZ
+    virtual ~PerformanceFacet() = default;
 
     // NOLINTEND
 };

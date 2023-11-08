@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FileSystemFacet@FacetCoroutineExample@@@UEAA@XZ
-    virtual ~FileSystemFacet();
+    // vIndex: 0, symbol: __gen_??1FileSystemFacet@FacetCoroutineExample@OreUI@@UEAA@XZ
+    virtual ~FileSystemFacet() = default;
 
     // NOLINTEND
 };

@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ExternalServerWorldListFacet@@@UEAA@XZ
-    virtual ~ExternalServerWorldListFacet();
+    // vIndex: 0, symbol: __gen_??1ExternalServerWorldListFacet@OreUI@@UEAA@XZ
+    virtual ~ExternalServerWorldListFacet() = default;
 
     // NOLINTEND
 };

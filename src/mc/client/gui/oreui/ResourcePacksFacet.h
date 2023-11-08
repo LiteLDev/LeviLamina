@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ResourcePacksFacet@@@UEAA@XZ
-    virtual ~ResourcePacksFacet();
+    // vIndex: 0, symbol: __gen_??1ResourcePacksFacet@OreUI@@UEAA@XZ
+    virtual ~ResourcePacksFacet() = default;
 
     // NOLINTEND
 };

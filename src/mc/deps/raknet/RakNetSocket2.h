@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RakNetSocket2@@@UEAA@XZ
-    virtual ~RakNetSocket2();
+    // vIndex: 0, symbol: __gen_??1RakNetSocket2@RakNet@@UEAA@XZ
+    virtual ~RakNetSocket2() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1() = 0;

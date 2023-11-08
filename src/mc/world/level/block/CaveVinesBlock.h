@@ -28,7 +28,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1CaveVinesBlock@@UEAA@XZ
     virtual ~CaveVinesBlock() = default;
 
     // vIndex: 4, symbol:

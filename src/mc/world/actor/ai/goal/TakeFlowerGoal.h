@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1TakeFlowerDefinition@@@UEAA@XZ
-        virtual ~TakeFlowerDefinition();
+        // vIndex: 0, symbol: __gen_??1TakeFlowerDefinition@TakeFlowerGoal@@UEAA@XZ
+        virtual ~TakeFlowerDefinition() = default;
 
         // symbol:
         // ?buildSchema@TakeFlowerDefinition@TakeFlowerGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTakeFlowerDefinition@TakeFlowerGoal@@@JsonUtil@@@4@@Z
@@ -49,7 +49,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1TakeFlowerGoal@@UEAA@XZ
     virtual ~TakeFlowerGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@TakeFlowerGoal@@UEAA_NXZ

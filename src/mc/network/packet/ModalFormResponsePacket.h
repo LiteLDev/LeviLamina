@@ -21,7 +21,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ModalFormResponsePacket@@UEAA@XZ
     virtual ~ModalFormResponsePacket() = default;
 
     // vIndex: 1, symbol: ?getId@ModalFormResponsePacket@@UEBA?AW4MinecraftPacketIds@@XZ

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockFlammable11910Upgrade@@@UEAA@XZ
-    virtual ~BlockFlammable11910Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockFlammable11910Upgrade@BlockFlammableVersioning@@UEAA@XZ
+    virtual ~BlockFlammable11910Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockFlammable11910Upgrade@BlockFlammableVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

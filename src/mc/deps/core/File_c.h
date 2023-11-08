@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1File_c@@@UEAA@XZ
-    virtual ~File_c();
+    // vIndex: 0, symbol: __gen_??1File_c@Core@@UEAA@XZ
+    virtual ~File_c() = default;
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();

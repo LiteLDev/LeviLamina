@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1CompactionListenerEnv@@UEAA@XZ
     virtual ~CompactionListenerEnv() = default;
 
     // vIndex: 14, symbol: ?Schedule@CompactionListenerEnv@@UEAAXP6AXPEAX@Z0@Z

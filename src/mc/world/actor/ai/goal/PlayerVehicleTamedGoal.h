@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1PlayerVehicleTamedGoal@@UEAA@XZ
     virtual ~PlayerVehicleTamedGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@PlayerVehicleTamedGoal@@UEAA_NXZ

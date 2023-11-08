@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WorldCloudSyncFacet@@@UEAA@XZ
-    virtual ~WorldCloudSyncFacet();
+    // vIndex: 0, symbol: __gen_??1WorldCloudSyncFacet@OreUI@@UEAA@XZ
+    virtual ~WorldCloudSyncFacet() = default;
 
     // NOLINTEND
 };

@@ -17,7 +17,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1OceanMixerOperationNode@@UEAA@XZ
     virtual ~OceanMixerOperationNode() = default;
 
     // vIndex: 2, symbol: __unk_vfn_2

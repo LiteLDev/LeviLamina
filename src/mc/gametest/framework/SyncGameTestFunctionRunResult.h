@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SyncGameTestFunctionRunResult@@@UEAA@XZ
-    virtual ~SyncGameTestFunctionRunResult();
+    // vIndex: 0, symbol: __gen_??1SyncGameTestFunctionRunResult@gametest@@UEAA@XZ
+    virtual ~SyncGameTestFunctionRunResult() = default;
 
     // vIndex: 1, symbol: ?isComplete@SyncGameTestFunctionRunResult@gametest@@UEBA_NXZ
     virtual bool isComplete() const;

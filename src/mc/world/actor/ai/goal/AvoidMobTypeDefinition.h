@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1AvoidMobTypeDefinition@@UEAA@XZ
     virtual ~AvoidMobTypeDefinition() = default;
 
     // symbol: ??0AvoidMobTypeDefinition@@QEAA@XZ

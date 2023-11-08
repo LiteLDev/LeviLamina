@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1LevelDbSequentialFile@@UEAA@XZ
     virtual ~LevelDbSequentialFile() = default;
 
     // vIndex: 1, symbol: ?Read@LevelDbSequentialFile@@UEAA?AVStatus@leveldb@@_KPEAVSlice@3@PEAD@Z

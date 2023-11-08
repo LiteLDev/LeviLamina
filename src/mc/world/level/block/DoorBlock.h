@@ -31,7 +31,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1DoorBlock@@UEAA@XZ
     virtual ~DoorBlock() = default;
 
     // vIndex: 3, symbol: ?getNextBlockPermutation@DoorBlock@@UEBAPEBVBlock@@AEBV2@@Z

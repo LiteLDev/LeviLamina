@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FeatureFlagsFacet@@@UEAA@XZ
-    virtual ~FeatureFlagsFacet();
+    // vIndex: 0, symbol: __gen_??1FeatureFlagsFacet@OreUI@@UEAA@XZ
+    virtual ~FeatureFlagsFacet() = default;
 
     // NOLINTEND
 };

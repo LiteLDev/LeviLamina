@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1FishingEnchant@@UEAA@XZ
     virtual ~FishingEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@FishingEnchant@@UEBAHH@Z

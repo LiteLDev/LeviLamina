@@ -31,8 +31,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1FileSystemFileReadAccess@@@UEAA@XZ
-        virtual ~FileSystemFileReadAccess();
+        // vIndex: 0, symbol: __gen_??1FileSystemFileReadAccess@FileSystemFileAccess@@UEAA@XZ
+        virtual ~FileSystemFileReadAccess() = default;
 
         // vIndex: 1, symbol: ?fread@FileSystemFileReadAccess@FileSystemFileAccess@@UEBA_KPEAX_K10@Z
         virtual uint64 fread(void*, uint64, uint64, void*) const;
@@ -49,8 +49,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1FileSystemFileWriteAccess@@@UEAA@XZ
-        virtual ~FileSystemFileWriteAccess();
+        // vIndex: 0, symbol: __gen_??1FileSystemFileWriteAccess@FileSystemFileAccess@@UEAA@XZ
+        virtual ~FileSystemFileWriteAccess() = default;
 
         // vIndex: 1, symbol: ?fwrite@FileSystemFileWriteAccess@FileSystemFileAccess@@UEAA_KPEBX_K1PEAX@Z
         virtual uint64 fwrite(void const*, uint64, uint64, void*);
@@ -66,7 +66,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1FileSystemFileAccess@@UEAA@XZ
     virtual ~FileSystemFileAccess() = default;
 
     // vIndex: 1, symbol:

@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptUnderwaterMovementComponentFactory@@@UEAA@XZ
-    virtual ~ScriptUnderwaterMovementComponentFactory();
+    // vIndex: 0, symbol: __gen_??1ScriptUnderwaterMovementComponentFactory@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptUnderwaterMovementComponentFactory() = default;
 
     // vIndex: 1, symbol:
     // ?createComponent@ScriptUnderwaterMovementComponentFactory@ScriptModuleMinecraft@@UEAA?AV?$StrongTypedObjectHandle@VScriptActorComponent@ScriptModuleMinecraft@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

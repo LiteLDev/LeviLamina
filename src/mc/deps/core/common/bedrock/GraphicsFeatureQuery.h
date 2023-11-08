@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1GraphicsFeatureQuery@@@UEAA@XZ
-    virtual ~GraphicsFeatureQuery();
+    // vIndex: 0, symbol: __gen_??1GraphicsFeatureQuery@mce@@UEAA@XZ
+    virtual ~GraphicsFeatureQuery() = default;
 
     // NOLINTEND
 };

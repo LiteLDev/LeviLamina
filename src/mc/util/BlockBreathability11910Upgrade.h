@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockBreathability11910Upgrade@@@UEAA@XZ
-    virtual ~BlockBreathability11910Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockBreathability11910Upgrade@BlockBreathabilityVersioning@@UEAA@XZ
+    virtual ~BlockBreathability11910Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockBreathability11910Upgrade@BlockBreathabilityVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

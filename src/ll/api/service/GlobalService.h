@@ -27,7 +27,6 @@ concept IsGlobalService = concepts::IsOneOf<
     AllowListFile,
     Minecraft,
     PropertiesSettings,
-    ServerLevel,
     Level,
     ServerNetworkHandler,
     StructureManager,

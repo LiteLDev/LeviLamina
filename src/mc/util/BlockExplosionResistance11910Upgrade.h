@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockExplosionResistance11910Upgrade@@@UEAA@XZ
-    virtual ~BlockExplosionResistance11910Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockExplosionResistance11910Upgrade@BlockExplosionResistanceVersioning@@UEAA@XZ
+    virtual ~BlockExplosionResistance11910Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockExplosionResistance11910Upgrade@BlockExplosionResistanceVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

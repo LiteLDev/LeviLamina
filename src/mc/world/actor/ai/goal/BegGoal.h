@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1BegGoal@@UEAA@XZ
     virtual ~BegGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@BegGoal@@UEAA_NXZ

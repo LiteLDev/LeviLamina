@@ -25,7 +25,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1NetherNetTransportStub@@UEAA@XZ
     virtual ~NetherNetTransportStub() = default;
 
     // symbol: ?AcceptSessionWithUser@NetherNetTransportStub@@UEAA_NUNetworkID@NetherNet@@@Z

@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1OfferFlowerDefinition@@@UEAA@XZ
-        virtual ~OfferFlowerDefinition();
+        // vIndex: 0, symbol: __gen_??1OfferFlowerDefinition@OfferFlowerGoal@@UEAA@XZ
+        virtual ~OfferFlowerDefinition() = default;
 
         // symbol: ?initialize@OfferFlowerDefinition@OfferFlowerGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
         MCAPI void initialize(class EntityContext&, class OfferFlowerGoal&) const;
@@ -55,7 +55,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1OfferFlowerGoal@@UEAA@XZ
     virtual ~OfferFlowerGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@OfferFlowerGoal@@UEAA_NXZ

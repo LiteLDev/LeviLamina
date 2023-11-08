@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1LocalWorldListFacet@@@UEAA@XZ
-    virtual ~LocalWorldListFacet();
+    // vIndex: 0, symbol: __gen_??1LocalWorldListFacet@OreUI@@UEAA@XZ
+    virtual ~LocalWorldListFacet() = default;
 
     // NOLINTEND
 };

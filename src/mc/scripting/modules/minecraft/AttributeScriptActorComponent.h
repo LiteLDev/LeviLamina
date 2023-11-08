@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1AttributeScriptActorComponent@@@UEAA@XZ
-    virtual ~AttributeScriptActorComponent();
+    // vIndex: 0, symbol: __gen_??1AttributeScriptActorComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~AttributeScriptActorComponent() = default;
 
     // vIndex: 1, symbol: ?_isValid@AttributeScriptActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const;

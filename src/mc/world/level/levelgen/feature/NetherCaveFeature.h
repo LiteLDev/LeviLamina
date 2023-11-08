@@ -20,7 +20,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1NetherCaveFeature@@UEAA@XZ
     virtual ~NetherCaveFeature() = default;
 
     // vIndex: 1, symbol:

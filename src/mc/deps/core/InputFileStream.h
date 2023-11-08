@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1InputFileStream@@@UEAA@XZ
-    virtual ~InputFileStream();
+    // vIndex: 0, symbol: __gen_??1InputFileStream@Core@@UEAA@XZ
+    virtual ~InputFileStream() = default;
 
     // NOLINTEND
 };

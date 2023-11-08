@@ -54,7 +54,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1MoveOutdoorsGoal@@UEAA@XZ
     virtual ~MoveOutdoorsGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@MoveOutdoorsGoal@@UEAA_NXZ

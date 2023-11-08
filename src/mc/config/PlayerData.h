@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlayerData@@@UEAA@XZ
-    virtual ~PlayerData();
+    // vIndex: 0, symbol: __gen_??1PlayerData@PlayerCapabilities@@UEAA@XZ
+    virtual ~PlayerData() = default;
 
     // vIndex: 1, symbol: ?isAbilityEnabled@PlayerData@PlayerCapabilities@@UEBA_NW4AbilitiesIndex@@@Z
     virtual bool isAbilityEnabled(::AbilitiesIndex) const;

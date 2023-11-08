@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FacetRegistry@@@UEAA@XZ
-    virtual ~FacetRegistry();
+    // vIndex: 0, symbol: __gen_??1FacetRegistry@OreUI@@UEAA@XZ
+    virtual ~FacetRegistry() = default;
 
     // NOLINTEND
 };

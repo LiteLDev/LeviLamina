@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptNavigationClimbComponentFactory@@@UEAA@XZ
-    virtual ~ScriptNavigationClimbComponentFactory();
+    // vIndex: 0, symbol: __gen_??1ScriptNavigationClimbComponentFactory@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptNavigationClimbComponentFactory() = default;
 
     // vIndex: 1, symbol:
     // ?createComponent@ScriptNavigationClimbComponentFactory@ScriptModuleMinecraft@@UEAA?AV?$StrongTypedObjectHandle@VScriptActorComponent@ScriptModuleMinecraft@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

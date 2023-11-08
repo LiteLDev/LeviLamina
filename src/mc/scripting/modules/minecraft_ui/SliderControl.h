@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SliderControl@@@UEAA@XZ
-    virtual ~SliderControl();
+    // vIndex: 0, symbol: __gen_??1SliderControl@ScriptModuleMinecraftServerUI@@UEAA@XZ
+    virtual ~SliderControl() = default;
 
     // vIndex: 1, symbol: ?getJson@SliderControl@ScriptModuleMinecraftServerUI@@UEBA?AVValue@Json@@XZ
     virtual class Json::Value getJson() const;

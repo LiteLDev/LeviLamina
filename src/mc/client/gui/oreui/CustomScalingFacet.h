@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1CustomScalingFacet@@@UEAA@XZ
-    virtual ~CustomScalingFacet();
+    // vIndex: 0, symbol: __gen_??1CustomScalingFacet@OreUI@@UEAA@XZ
+    virtual ~CustomScalingFacet() = default;
 
     // NOLINTEND
 };

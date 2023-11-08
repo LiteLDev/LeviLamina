@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WorldStartupFacet@@@UEAA@XZ
-    virtual ~WorldStartupFacet();
+    // vIndex: 0, symbol: __gen_??1WorldStartupFacet@OreUI@@UEAA@XZ
+    virtual ~WorldStartupFacet() = default;
 
     // NOLINTEND
 };

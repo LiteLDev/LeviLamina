@@ -20,8 +20,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1md5@Hash@@@UEAA@XZ
-    virtual ~md5();
+    // vIndex: 0, symbol: __gen_??1md5@Hash@Crypto@@UEAA@XZ
+    virtual ~md5() = default;
 
     // vIndex: 1, symbol: ?reset@md5@Hash@Crypto@@UEAAXXZ
     virtual void reset();

@@ -27,7 +27,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SmallDripleafBlock@@UEAA@XZ
     virtual ~SmallDripleafBlock() = default;
 
     // vIndex: 6, symbol:

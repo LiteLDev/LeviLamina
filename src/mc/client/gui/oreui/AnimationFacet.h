@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1AnimationFacet@@@UEAA@XZ
-    virtual ~AnimationFacet();
+    // vIndex: 0, symbol: __gen_??1AnimationFacet@OreUI@@UEAA@XZ
+    virtual ~AnimationFacet() = default;
 
     // NOLINTEND
 };

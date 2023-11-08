@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1AttackCommand@@@UEAA@XZ
-    virtual ~AttackCommand();
+    // vIndex: 0, symbol: __gen_??1AttackCommand@AgentCommands@@UEAA@XZ
+    virtual ~AttackCommand() = default;
 
     // vIndex: 1, symbol: ?execute@AttackCommand@AgentCommands@@UEAAXXZ
     virtual void execute();

@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ApplicationDataStores@@@UEAA@XZ
-    virtual ~ApplicationDataStores();
+    // vIndex: 0, symbol: __gen_??1ApplicationDataStores@Bedrock@@UEAA@XZ
+    virtual ~ApplicationDataStores() = default;
 
     // vIndex: 1, symbol: ?init@ApplicationDataStores@Bedrock@@UEAAXXZ
     virtual void init();

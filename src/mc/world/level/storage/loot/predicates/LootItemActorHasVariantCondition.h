@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1LootItemActorHasVariantCondition@@UEAA@XZ
     virtual ~LootItemActorHasVariantCondition() = default;
 
     // vIndex: 1, symbol: ?applies@LootItemActorHasVariantCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z

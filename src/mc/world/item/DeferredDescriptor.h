@@ -55,7 +55,7 @@ public:
     // ?resolve@DeferredDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve() const;
 
-    // vIndex: 15, symbol: ??1@@UEAA@XZ
+    // vIndex: 15, symbol: __gen_??1DeferredDescriptor@@UEAA@XZ
     virtual ~DeferredDescriptor() = default;
 
     // symbol:

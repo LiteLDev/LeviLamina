@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DynamicPackageSourceListener@DynamicPackage@@@UEAA@XZ
-    virtual ~DynamicPackageSourceListener();
+    // vIndex: 0, symbol: __gen_??1DynamicPackageSourceListener@DynamicPackage@Bedrock@@UEAA@XZ
+    virtual ~DynamicPackageSourceListener() = default;
 
     // NOLINTEND
 };

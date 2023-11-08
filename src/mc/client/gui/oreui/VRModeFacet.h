@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1VRModeFacet@@@UEAA@XZ
-    virtual ~VRModeFacet();
+    // vIndex: 0, symbol: __gen_??1VRModeFacet@OreUI@@UEAA@XZ
+    virtual ~VRModeFacet() = default;
 
     // NOLINTEND
 };

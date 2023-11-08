@@ -78,8 +78,9 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1ScriptWorldAfterEventsDeferredEventListener@ScriptWorldAfterEvents@@@UEAA@XZ
-        virtual ~ScriptWorldAfterEventsDeferredEventListener();
+        // vIndex: 0, symbol:
+        // __gen_??1ScriptWorldAfterEventsDeferredEventListener@ScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAA@XZ
+        virtual ~ScriptWorldAfterEventsDeferredEventListener() = default;
 
         // vIndex: 1, symbol: __unk_vfn_1
         virtual void __unk_vfn_1();

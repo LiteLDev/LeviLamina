@@ -43,7 +43,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1NetworkDebugManager@@UEAA@XZ
     virtual ~NetworkDebugManager() = default;
 
     // symbol: ?MAX_NUMBER_OF_SAMPLES@NetworkDebugManager@@2HB

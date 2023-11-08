@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1InviteUriListener@@@UEAA@XZ
-    virtual ~InviteUriListener();
+    // vIndex: 0, symbol: __gen_??1InviteUriListener@Social@@UEAA@XZ
+    virtual ~InviteUriListener() = default;
 
     // NOLINTEND
 };

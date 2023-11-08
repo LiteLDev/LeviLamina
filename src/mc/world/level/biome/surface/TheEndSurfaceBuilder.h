@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1TheEndSurfaceBuilder@@@UEAA@XZ
-    virtual ~TheEndSurfaceBuilder();
+    // vIndex: 0, symbol: __gen_??1TheEndSurfaceBuilder@VanillaSurfaceBuilders@@UEAA@XZ
+    virtual ~TheEndSurfaceBuilder() = default;
 
     // vIndex: 1, symbol: ?init@TheEndSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
     virtual void init(class EntityContext&, uint);

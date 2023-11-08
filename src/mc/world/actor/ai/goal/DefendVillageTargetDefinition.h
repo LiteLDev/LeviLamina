@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1DefendVillageTargetDefinition@@UEAA@XZ
     virtual ~DefendVillageTargetDefinition() = default;
 
     // symbol: ??0DefendVillageTargetDefinition@@QEAA@XZ

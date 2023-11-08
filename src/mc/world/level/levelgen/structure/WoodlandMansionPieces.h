@@ -34,8 +34,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1FloorRoomCollection@@@UEAA@XZ
-        virtual ~FloorRoomCollection();
+        // vIndex: 0, symbol: __gen_??1FloorRoomCollection@WoodlandMansionPieces@@UEAA@XZ
+        virtual ~FloorRoomCollection() = default;
 
         // vIndex: 1, symbol:
         // ?get1x1@SecondFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@@Z
@@ -77,8 +77,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1FirstFloorRoomCollection@@@UEAA@XZ
-        virtual ~FirstFloorRoomCollection();
+        // vIndex: 0, symbol: __gen_??1FirstFloorRoomCollection@WoodlandMansionPieces@@UEAA@XZ
+        virtual ~FirstFloorRoomCollection() = default;
 
         // vIndex: 1, symbol:
         // ?get1x1@FirstFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@@Z
@@ -169,8 +169,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1SecondFloorRoomCollection@@@UEAA@XZ
-        virtual ~SecondFloorRoomCollection();
+        // vIndex: 0, symbol: __gen_??1SecondFloorRoomCollection@WoodlandMansionPieces@@UEAA@XZ
+        virtual ~SecondFloorRoomCollection() = default;
 
         // vIndex: 1, symbol:
         // ?get1x1@SecondFloorRoomCollection@WoodlandMansionPieces@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRandom@@@Z
@@ -301,8 +301,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1ThirdFloorRoomCollection@@@UEAA@XZ
-        virtual ~ThirdFloorRoomCollection();
+        // vIndex: 0, symbol: __gen_??1ThirdFloorRoomCollection@WoodlandMansionPieces@@UEAA@XZ
+        virtual ~ThirdFloorRoomCollection() = default;
 
         // NOLINTEND
     };

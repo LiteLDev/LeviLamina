@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1Material@@@UEAA@XZ
-    virtual ~Material();
+    // vIndex: 0, symbol: __gen_??1Material@ClientBlockPipeline@@UEAA@XZ
+    virtual ~Material() = default;
 
     // NOLINTEND
 };

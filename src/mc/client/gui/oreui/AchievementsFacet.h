@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1AchievementsFacet@@@UEAA@XZ
-    virtual ~AchievementsFacet();
+    // vIndex: 0, symbol: __gen_??1AchievementsFacet@OreUI@@UEAA@XZ
+    virtual ~AchievementsFacet() = default;
 
     // NOLINTEND
 };

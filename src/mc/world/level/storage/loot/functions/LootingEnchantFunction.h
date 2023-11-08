@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1LootingEnchantFunction@@UEAA@XZ
     virtual ~LootingEnchantFunction() = default;
 
     // vIndex: 1, symbol: ?apply@LootingEnchantFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z

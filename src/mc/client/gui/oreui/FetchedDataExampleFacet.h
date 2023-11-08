@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FetchedDataExampleFacet@@@UEAA@XZ
-    virtual ~FetchedDataExampleFacet();
+    // vIndex: 0, symbol: __gen_??1FetchedDataExampleFacet@OreUI@@UEAA@XZ
+    virtual ~FetchedDataExampleFacet() = default;
 
     // NOLINTEND
 };

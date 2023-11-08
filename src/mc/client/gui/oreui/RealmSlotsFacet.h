@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RealmSlotsFacet@@@UEAA@XZ
-    virtual ~RealmSlotsFacet();
+    // vIndex: 0, symbol: __gen_??1RealmSlotsFacet@OreUI@@UEAA@XZ
+    virtual ~RealmSlotsFacet() = default;
 
     // NOLINTEND
 };

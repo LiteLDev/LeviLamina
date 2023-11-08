@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1EditorBootstrapper@@UEAA@XZ
     virtual ~EditorBootstrapper() = default;
 
     // symbol: ?getPackCapability@EditorBootstrapper@@SA?AVPackCapability@@V?$optional@_N@std@@@Z

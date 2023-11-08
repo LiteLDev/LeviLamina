@@ -29,8 +29,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Definition@@@UEAA@XZ
-        virtual ~Definition();
+        // vIndex: 0, symbol: __gen_??1Definition@CroakGoal@@UEAA@XZ
+        virtual ~Definition() = default;
 
         // symbol: ??0Definition@CroakGoal@@QEAA@XZ
         MCAPI Definition();
@@ -54,7 +54,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1CroakGoal@@UEAA@XZ
     virtual ~CroakGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@CroakGoal@@UEAA_NXZ

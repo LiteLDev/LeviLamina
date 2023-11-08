@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DropAllCommand@@@UEAA@XZ
-    virtual ~DropAllCommand();
+    // vIndex: 0, symbol: __gen_??1DropAllCommand@AgentCommands@@UEAA@XZ
+    virtual ~DropAllCommand() = default;
 
     // vIndex: 1, symbol: ?execute@DropAllCommand@AgentCommands@@UEAAXXZ
     virtual void execute();

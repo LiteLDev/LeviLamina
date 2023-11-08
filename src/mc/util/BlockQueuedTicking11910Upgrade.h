@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockQueuedTicking11910Upgrade@@@UEAA@XZ
-    virtual ~BlockQueuedTicking11910Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockQueuedTicking11910Upgrade@BlockQueuedTickingVersioning@@UEAA@XZ
+    virtual ~BlockQueuedTicking11910Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockQueuedTicking11910Upgrade@BlockQueuedTickingVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

@@ -63,8 +63,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IScriptWorldAfterEvents@@@UEAA@XZ
-    virtual ~IScriptWorldAfterEvents();
+    // vIndex: 0, symbol: __gen_??1IScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~IScriptWorldAfterEvents() = default;
 
     // symbol:
     // ?onActivateLever@IScriptWorldAfterEvents@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptLeverActionAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z

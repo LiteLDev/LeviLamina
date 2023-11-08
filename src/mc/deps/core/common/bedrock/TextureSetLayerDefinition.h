@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1TextureSetLayerDefinition@@@UEAA@XZ
-    virtual ~TextureSetLayerDefinition();
+    // vIndex: 0, symbol: __gen_??1TextureSetLayerDefinition@cg@@UEAA@XZ
+    virtual ~TextureSetLayerDefinition() = default;
 
     // NOLINTEND
 };

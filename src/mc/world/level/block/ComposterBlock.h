@@ -28,7 +28,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1ComposterBlock@@UEAA@XZ
     virtual ~ComposterBlock() = default;
 
     // vIndex: 5, symbol:

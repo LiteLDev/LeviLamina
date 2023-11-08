@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1OpenSSLHashInterface@Hash@@@UEAA@XZ
-    virtual ~OpenSSLHashInterface();
+    // vIndex: 0, symbol: __gen_??1OpenSSLHashInterface@Hash@Crypto@@UEAA@XZ
+    virtual ~OpenSSLHashInterface() = default;
 
     // vIndex: 1, symbol: ?reset@OpenSSLHashInterface@Hash@Crypto@@UEAAXXZ
     virtual void reset();

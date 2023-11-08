@@ -27,7 +27,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1LadderBlock@@UEAA@XZ
     virtual ~LadderBlock() = default;
 
     // vIndex: 12, symbol: ?getVisualShape@LadderBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z

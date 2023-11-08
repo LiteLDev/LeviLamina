@@ -13,7 +13,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1WeightedRandomFeature@@UEAA@XZ
     virtual ~WeightedRandomFeature() = default;
 
     // vIndex: 1, symbol:

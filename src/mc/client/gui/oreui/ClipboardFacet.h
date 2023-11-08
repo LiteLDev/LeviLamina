@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ClipboardFacet@@@UEAA@XZ
-    virtual ~ClipboardFacet();
+    // vIndex: 0, symbol: __gen_??1ClipboardFacet@OreUI@@UEAA@XZ
+    virtual ~ClipboardFacet() = default;
 
     // NOLINTEND
 };

@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1BlastFurnaceContainerScreenValidator@@UEAA@XZ
     virtual ~BlastFurnaceContainerScreenValidator() = default;
 
     // symbol: ??0BlastFurnaceContainerScreenValidator@@QEAA@XZ

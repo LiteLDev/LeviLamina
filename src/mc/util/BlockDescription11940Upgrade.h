@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockDescription11940Upgrade@@@UEAA@XZ
-    virtual ~BlockDescription11940Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockDescription11940Upgrade@BlockDescriptionVersioning@@UEAA@XZ
+    virtual ~BlockDescription11940Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockDescription11940Upgrade@BlockDescriptionVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

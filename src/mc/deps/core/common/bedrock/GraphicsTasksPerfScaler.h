@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1GraphicsTasksPerfScaler@Threading@@@UEAA@XZ
-    virtual ~GraphicsTasksPerfScaler();
+    // vIndex: 0, symbol: __gen_??1GraphicsTasksPerfScaler@Threading@Bedrock@@UEAA@XZ
+    virtual ~GraphicsTasksPerfScaler() = default;
 
     // NOLINTEND
 };

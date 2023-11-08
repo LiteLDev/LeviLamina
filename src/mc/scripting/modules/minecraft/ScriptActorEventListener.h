@@ -35,8 +35,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptActorEventListener@@@UEAA@XZ
-    virtual ~ScriptActorEventListener();
+    // vIndex: 0, symbol: __gen_??1ScriptActorEventListener@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptActorEventListener() = default;
 
     // vIndex: 1, symbol:
     // ?onEvent@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUActorRemoveEffectEvent@@@Z

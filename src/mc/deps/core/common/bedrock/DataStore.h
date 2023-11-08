@@ -73,8 +73,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Viewer@DataStore@@@UEAA@XZ
-        virtual ~Viewer();
+        // vIndex: 0, symbol: __gen_??1Viewer@DataStore@Bedrock@@UEAA@XZ
+        virtual ~Viewer() = default;
 
         // vIndex: 1, symbol: __unk_vfn_1
         virtual void __unk_vfn_1() = 0;
@@ -98,8 +98,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1Editor@DataStore@@@UEAA@XZ
-        virtual ~Editor();
+        // vIndex: 0, symbol: __gen_??1Editor@DataStore@Bedrock@@UEAA@XZ
+        virtual ~Editor() = default;
 
         // vIndex: 1, symbol: __unk_vfn_1
         virtual void __unk_vfn_1();
@@ -119,8 +119,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1EditorImpl@DataStore@@@UEAA@XZ
-        virtual ~EditorImpl();
+        // vIndex: 0, symbol: __gen_??1EditorImpl@DataStore@Bedrock@@UEAA@XZ
+        virtual ~EditorImpl() = default;
 
         // vIndex: 1, symbol: __unk_vfn_1
         virtual void __unk_vfn_1();
@@ -159,8 +159,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1ViewerImpl@DataStore@@@UEAA@XZ
-        virtual ~ViewerImpl();
+        // vIndex: 0, symbol: __gen_??1ViewerImpl@DataStore@Bedrock@@UEAA@XZ
+        virtual ~ViewerImpl() = default;
 
         // vIndex: 1, symbol: __unk_vfn_1
         virtual void __unk_vfn_1();

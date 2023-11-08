@@ -4,11 +4,12 @@
 
 class HashedString {
 public:
-    uint64              hash;
-    std::string         str;
-    class HashedString* lastMatch;
+    uint64                      hash;
+    std::string                 str;
+    mutable HashedString const* lastMatch;
 
     [[nodiscard]] constexpr static uint64 computeHash(std::string_view str) {
+        if (str.empty()) return 0;
         uint64 hash = 0xCBF29CE484222325ULL;
         for (char s : str) { hash = s ^ (0x100000001B3ULL * hash); }
         return hash;
@@ -19,7 +20,10 @@ public:
 
     [[nodiscard]] constexpr HashedString(uint64 h, char const* str) noexcept : hash(h), str(str), lastMatch(nullptr) {}
 
-    [[nodiscard]] constexpr HashedString(char const* str) noexcept : hash(computeHash(str)), str(str), lastMatch(nullptr) {} // NOLINT
+    [[nodiscard]] constexpr HashedString(char const* str) noexcept
+    : hash(computeHash(str)),
+      str(str),
+      lastMatch(nullptr) {} // NOLINT
 
     [[nodiscard]] constexpr HashedString(std::string const& str) noexcept // NOLINT
     : hash(computeHash(str)),
@@ -48,6 +52,7 @@ public:
     }
 
     [[nodiscard]] constexpr HashedString& operator=(HashedString&& other) noexcept {
+        if (this == &other) { return *this; }
         hash            = other.hash;
         str             = std::move(other.str);
         lastMatch       = other.lastMatch;
@@ -78,21 +83,28 @@ public:
         return str == rhs;
     }
 
-    [[nodiscard]] constexpr bool operator==(HashedString const& other) const noexcept { return hash == other.hash; }
+    [[nodiscard]] constexpr bool operator==(HashedString const& other) const noexcept {
+        if (hash == other.hash) {
+            if (lastMatch == std::addressof(other) && other.lastMatch == this) { return true; }
+            if (str == other.str) {
+                lastMatch       = std::addressof(other);
+                other.lastMatch = this;
+                return true;
+            }
+        }
+        lastMatch = nullptr;
+        return false;
+    }
 
     template <typename StringType>
     [[nodiscard]] constexpr bool operator!=(StringType const& rhs) const noexcept {
         return str != rhs;
     }
 
-    [[nodiscard]] constexpr bool operator!=(HashedString const& other) const noexcept { return hash != other.hash; }
-
-    template <typename StringType>
-    [[nodiscard]] constexpr std::strong_ordering operator<=>(StringType const& other) const noexcept {
-        return str <=> other.str;
-    }
+    [[nodiscard]] constexpr bool operator!=(HashedString const& other) const noexcept { return !(*this == other); }
 
     [[nodiscard]] constexpr std::strong_ordering operator<=>(HashedString const& other) const noexcept {
+        if (hash != other.hash) { return hash <=> other.hash; }
         return str <=> other.str;
     }
 

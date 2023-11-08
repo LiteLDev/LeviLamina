@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScatteredFeatureStart@@@UEAA@XZ
-    virtual ~ScatteredFeatureStart();
+    // vIndex: 0, symbol: __gen_??1ScatteredFeatureStart@RandomScatteredLargeFeatureDetails@@UEAA@XZ
+    virtual ~ScatteredFeatureStart() = default;
 
     // symbol:
     // ??0ScatteredFeatureStart@RandomScatteredLargeFeatureDetails@@QEAA@AEBVBiomeSource@@FHHAEBVIPreliminarySurfaceProvider@@@Z

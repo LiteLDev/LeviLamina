@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptMovementSwayComponentFactory@@@UEAA@XZ
-    virtual ~ScriptMovementSwayComponentFactory();
+    // vIndex: 0, symbol: __gen_??1ScriptMovementSwayComponentFactory@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~ScriptMovementSwayComponentFactory() = default;
 
     // vIndex: 1, symbol:
     // ?createComponent@ScriptMovementSwayComponentFactory@ScriptModuleMinecraft@@UEAA?AV?$StrongTypedObjectHandle@VScriptActorComponent@ScriptModuleMinecraft@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

@@ -10,7 +10,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SpawnData@@UEAA@XZ
     virtual ~SpawnData() = default;
 
     // symbol: ??0SpawnData@@QEAA@AEBVCompoundTag@@@Z

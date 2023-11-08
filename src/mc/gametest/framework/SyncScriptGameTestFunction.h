@@ -28,8 +28,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1SyncScriptGameTestFunction@@@UEAA@XZ
-    virtual ~SyncScriptGameTestFunction();
+    // vIndex: 0, symbol: __gen_??1SyncScriptGameTestFunction@ScriptModuleGameTest@@UEAA@XZ
+    virtual ~SyncScriptGameTestFunction() = default;
 
     // vIndex: 2, symbol:
     // ?run@SyncScriptGameTestFunction@ScriptModuleGameTest@@UEBA?AV?$unique_ptr@VIGameTestFunctionRunResult@gametest@@U?$default_delete@VIGameTestFunctionRunResult@gametest@@@std@@@std@@AEAVBaseGameTestHelper@gametest@@AEAVIGameTestFunctionContext@6@@Z

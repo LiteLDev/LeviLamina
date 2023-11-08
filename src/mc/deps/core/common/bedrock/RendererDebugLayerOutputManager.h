@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RendererDebugLayerOutputManager@@@UEAA@XZ
-    virtual ~RendererDebugLayerOutputManager();
+    // vIndex: 0, symbol: __gen_??1RendererDebugLayerOutputManager@mce@@UEAA@XZ
+    virtual ~RendererDebugLayerOutputManager() = default;
 
     // NOLINTEND
 };

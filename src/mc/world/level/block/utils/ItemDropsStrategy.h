@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ItemDropsStrategy@@@UEAA@XZ
-    virtual ~ItemDropsStrategy();
+    // vIndex: 0, symbol: __gen_??1ItemDropsStrategy@VanillaBlockDrops@@UEAA@XZ
+    virtual ~ItemDropsStrategy() = default;
 
     // vIndex: 1, symbol:
     // ?getResourceDrops@ItemDropsStrategy@VanillaBlockDrops@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z

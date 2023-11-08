@@ -34,7 +34,7 @@ public:
     // vIndex: 4, symbol: ?reloadHardcoded@Ghast@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
     virtual void reloadHardcoded(::Actor::InitializationMethod, class VariantParameterList const&);
 
-    // vIndex: 10, symbol: ??1@@UEAA@XZ
+    // vIndex: 10, symbol: __gen_??1Ghast@@UEAA@XZ
     virtual ~Ghast() = default;
 
     // vIndex: 14, symbol: __unk_vfn_14

@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BuildSettingsFacet@@@UEAA@XZ
-    virtual ~BuildSettingsFacet();
+    // vIndex: 0, symbol: __gen_??1BuildSettingsFacet@OreUI@@UEAA@XZ
+    virtual ~BuildSettingsFacet() = default;
 
     // NOLINTEND
 };

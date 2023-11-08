@@ -28,8 +28,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1ExecuteChainedSubcommand@@@UEAA@XZ
-        virtual ~ExecuteChainedSubcommand();
+        // vIndex: 0, symbol: __gen_??1ExecuteChainedSubcommand@NewExecuteCommand@@UEAA@XZ
+        virtual ~ExecuteChainedSubcommand() = default;
 
         // vIndex: 1, symbol:
         // ?getCommandName@ExecuteChainedSubcommand@NewExecuteCommand@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

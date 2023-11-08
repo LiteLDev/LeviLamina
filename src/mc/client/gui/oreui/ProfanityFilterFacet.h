@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ProfanityFilterFacet@@@UEAA@XZ
-    virtual ~ProfanityFilterFacet();
+    // vIndex: 0, symbol: __gen_??1ProfanityFilterFacet@OreUI@@UEAA@XZ
+    virtual ~ProfanityFilterFacet() = default;
 
     // NOLINTEND
 };

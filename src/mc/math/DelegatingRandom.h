@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DelegatingRandom@@@UEAA@XZ
-    virtual ~DelegatingRandom();
+    // vIndex: 0, symbol: __gen_??1DelegatingRandom@NoiseUtils@@UEAA@XZ
+    virtual ~DelegatingRandom() = default;
 
     // NOLINTEND
 };

@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MultiplayerServiceManager@@@UEAA@XZ
-    virtual ~MultiplayerServiceManager();
+    // vIndex: 0, symbol: __gen_??1MultiplayerServiceManager@Social@@UEAA@XZ
+    virtual ~MultiplayerServiceManager() = default;
 
     // NOLINTEND
 };

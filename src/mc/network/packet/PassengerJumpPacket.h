@@ -17,7 +17,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1PassengerJumpPacket@@UEAA@XZ
     virtual ~PassengerJumpPacket() = default;
 
     // vIndex: 1, symbol: ?getId@PassengerJumpPacket@@UEBA?AW4MinecraftPacketIds@@XZ

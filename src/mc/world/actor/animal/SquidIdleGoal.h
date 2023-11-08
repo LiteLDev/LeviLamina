@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1SquidIdleGoal@@UEAA@XZ
     virtual ~SquidIdleGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@SquidIdleGoal@@UEAA_NXZ

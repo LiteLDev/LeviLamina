@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1LegacyChunkStorage@@UEAA@XZ
     virtual ~LegacyChunkStorage() = default;
 
     // vIndex: 11, symbol: ?loadChunk@LegacyChunkStorage@@UEAAXAEAVLevelChunk@@_N@Z

@@ -18,8 +18,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1IFile@@@UEAA@XZ
-    virtual ~IFile();
+    // vIndex: 0, symbol: __gen_??1IFile@Core@@UEAA@XZ
+    virtual ~IFile() = default;
 
     // vIndex: 1, symbol: ?readExactly@FileInterfaceImpl@Core@@UEAA?AVResult@2@PEAX_K@Z
     virtual class Core::Result readExactly(void*, uint64) = 0;

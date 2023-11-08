@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1WorkerPoolHandle@@@UEAA@XZ
-    virtual ~WorkerPoolHandle();
+    // vIndex: 0, symbol: __gen_??1WorkerPoolHandle@Bedrock@@UEAA@XZ
+    virtual ~WorkerPoolHandle() = default;
 
     // vIndex: 1, symbol:
     // ?get@WorkerPoolHandle@Bedrock@@UEBA?AV?$not_null@V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@@gsl@@XZ

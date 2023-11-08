@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockMapColor11910Upgrade@@@UEAA@XZ
-    virtual ~BlockMapColor11910Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockMapColor11910Upgrade@BlockMapColorVersioning@@UEAA@XZ
+    virtual ~BlockMapColor11910Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockMapColor11910Upgrade@BlockMapColorVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

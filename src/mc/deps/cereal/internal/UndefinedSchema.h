@@ -38,8 +38,8 @@ public:
     doLoad(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&)
         const;
 
-    // vIndex: 4, symbol: ??1UndefinedSchema@internal@@@UEAA@XZ
-    virtual ~UndefinedSchema();
+    // vIndex: 4, symbol: __gen_??1UndefinedSchema@internal@cereal@@UEAA@XZ
+    virtual ~UndefinedSchema() = default;
 
     // vIndex: 6, symbol: ?description@UndefinedSchema@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
     virtual struct cereal::SchemaDescription description() const;

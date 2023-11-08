@@ -29,6 +29,40 @@ namespace {
 
 using namespace ll::memory;
 
+// AllowListFile
+
+LL_AUTO_STATIC_HOOK(
+    AllowListFileConstructor,
+    HookPriority::High,
+    "??0AllowListFile@@QEAA@AEBVPath@Core@@@Z",
+    AllowListFile*,
+    class Core::Path const& path
+) {
+    auto self = origin(path);
+    ll::Global<AllowListFile>.init(self);
+    return self;
+}
+LL_AUTO_STATIC_HOOK(AllowListFileDestructor, HookPriority::High, "??1AllowListFile@@QEAA@XZ", void) {
+    ll::Global<AllowListFile>.init(nullptr);
+    origin();
+}
+
+// StructureManager
+
+LL_AUTO_STATIC_HOOK(
+    StructureManagerConstructor,
+    HookPriority::High,
+    "??0StructureManager@@QEAA@AEAVResourcePackManager@@@Z",
+    StructureManager*,
+    class ResourcePackManager& resourcePackManager
+) {
+    auto self = origin(resourcePackManager);
+    ll::Global<StructureManager>.init(self);
+    return self;
+}
+
+// Minecraft
+
 LL_AUTO_TYPED_INSTANCE_HOOK(
     MinecraftServiceHook,
     HookPriority::High,
@@ -38,29 +72,32 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
     ll::Global<Minecraft>.init(this);
     origin();
-    ll::Global<CommandRegistry>.init(&getCommands().getRegistry());
+}
+LL_AUTO_STATIC_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UEAA@XZ", void) {
+    ll::Global<StructureManager>.init(nullptr); // ~StructureManager is inlined
+    ll::Global<Minecraft>.init(nullptr);
+    origin();
 }
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    ServerLevelServiceHook,
+// PropertiesSettings
+
+LL_AUTO_STATIC_HOOK(
+    PropertiesSettingsConstructor,
     HookPriority::High,
-    ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerThreadStarted,
-    void,
-    ::ServerInstance& ins
+    "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+    PropertiesSettings*,
+    std::string const& path
 ) {
-    ll::Global<StructureManager>.init(ll::Global<Minecraft>->getStructureManager().get());
-    ll::Global<Level>.init(ll::Global<Minecraft>->getLevel());
-    ll::Global<ServerLevel>.init((ServerLevel*)ll::Global<Level>);
-    origin(ins);
-    ll::Global<NetworkSystem>.init(
-        // offset from ida ServerNetworkSystem::~ServerNetworkSystem
-        &ll::memory::dAccess<NetworkSystem>(&ll::Global<Minecraft>->getServerNetworkSystem(), 24)
-    );
-    ll::Global<RakNet::RakPeer>.init(
-        (RakNet::RakPeer*)((RakNetConnector&)(*ll::Global<NetworkSystem>->getRemoteConnector())).getPeer()
-    );
+    auto self = origin(path);
+    ll::Global<PropertiesSettings>.init(self);
+    return self;
 }
+LL_AUTO_STATIC_HOOK(PropertiesSettingsDestructor, HookPriority::High, "??1PropertiesSettings@@QEAA@XZ", void) {
+    ll::Global<PropertiesSettings>.init(nullptr);
+    origin();
+}
+
+// ServerNetworkHandler
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ServerNetworkHandlerServiceHook,
@@ -75,31 +112,60 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     unhook();
     origin(a1, a2);
 }
-
-LL_AUTO_TYPED_STATIC_HOOK(
-    AllowListFileServiceHook,
-    HookPriority::High,
-    AllowListCommand,
-    AllowListCommand::setup,
-    void,
-    class CommandRegistry& reg,
-    class AllowListFile&   file
-) {
-    ll::Global<AllowListFile>.init(&file);
-    origin(reg, file);
+LL_AUTO_STATIC_HOOK(ServerNetworkHandlerDestructor, HookPriority::High, "??1ServerNetworkHandler@@UEAA@XZ", void) {
+    ll::Global<ServerNetworkHandler>.init(nullptr);
+    origin();
 }
+
+// NetworkSystem
+
+LL_AUTO_STATIC_HOOK(
+    NetworkSystemConstructor,
+    HookPriority::High,
+    "??0NetworkSystem@@IEAA@$$QEAUDependencies@0@@Z",
+    NetworkSystem*,
+    struct NetworkSystem::Dependencies&& dependencies
+) {
+    auto self = origin(std::move(dependencies));
+    ll::Global<NetworkSystem>.init(self);
+    return self;
+}
+LL_AUTO_STATIC_HOOK(NetworkSystemDestructor, HookPriority::High, "??1NetworkSystem@@MEAA@XZ", void) {
+    ll::Global<NetworkSystem>.init(nullptr);
+    origin();
+}
+
+// Level
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    PropertiesSettingsServiceHook,
+    ServerLevelServiceHook,
     HookPriority::High,
-    PropertiesSettings,
-    &PropertiesSettings::isPropertiesFileLoaded,
-    bool const
+    ServerInstanceEventCoordinator,
+    &ServerInstanceEventCoordinator::sendServerThreadStarted,
+    void,
+    ::ServerInstance& ins
 ) {
-    ll::Global<PropertiesSettings>.init(this);
-    unhook();
-    return origin();
+    ll::Global<Level>.init(ll::Global<Minecraft>->getLevel());
+    origin(ins);
 }
+LL_AUTO_STATIC_HOOK(LevelDestructor, HookPriority::High, "??1Level@@UEAA@XZ", void) {
+    ll::Global<Level>.init(nullptr);
+    origin();
+}
+
+// RakNet::RakPeer
+
+LL_AUTO_STATIC_HOOK(RakNetRakPeerConstructor, HookPriority::High, "??1RakPeer@RakNet@@UEAA@XZ", RakNet::RakPeer*) {
+    auto self = origin();
+    ll::Global<RakNet::RakPeer>.init(self);
+    return self;
+}
+LL_AUTO_STATIC_HOOK(RakNetRakPeerDestructor, HookPriority::High, "??0RakPeer@RakNet@@QEAA@XZ", void) {
+    ll::Global<RakNet::RakPeer>.init(nullptr);
+    origin();
+}
+
+// ResourcePackRepository
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ResourcePackRepositoryServiceHook,
@@ -109,6 +175,22 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void
 ) {
     ll::Global<ResourcePackRepository>.init(this);
+    origin();
+}
+LL_AUTO_STATIC_HOOK(ResourcePackRepositoryDestructor, HookPriority::High, "??1ResourcePackRepository@@QEAA@XZ", void) {
+    ll::Global<ResourcePackRepository>.init(nullptr);
+    origin();
+}
+
+// CommandRegistry
+
+LL_AUTO_STATIC_HOOK(CommandRegistryConstructor, HookPriority::High, "??0CommandRegistry@@QEAA@XZ", CommandRegistry*) {
+    auto self = origin();
+    ll::Global<CommandRegistry>.init(self);
+    return self;
+}
+LL_AUTO_STATIC_HOOK(CommandRegistryDestructor, HookPriority::High, "??1CommandRegistry@@QEAA@XZ", void) {
+    ll::Global<CommandRegistry>.init(nullptr);
     origin();
 }
 

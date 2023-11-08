@@ -26,8 +26,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FlatFile@@@UEAA@XZ
-    virtual ~FlatFile();
+    // vIndex: 0, symbol: __gen_??1FlatFile@Core@@UEAA@XZ
+    virtual ~FlatFile() = default;
 
     // vIndex: 1, symbol:
     // ?_getPath@FlatFile@Core@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@XZ

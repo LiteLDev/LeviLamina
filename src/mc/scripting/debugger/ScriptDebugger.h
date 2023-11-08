@@ -39,7 +39,7 @@ public:
     // vIndex: 5, symbol: ?getResourceStats@ScriptDebugger@@UEBA?AUScriptResourceStats@@XZ
     virtual struct ScriptResourceStats getResourceStats() const;
 
-    // vIndex: 6, symbol: ??1@@UEAA@XZ
+    // vIndex: 6, symbol: __gen_??1ScriptDebugger@@UEAA@XZ
     virtual ~ScriptDebugger() = default;
 
     // NOLINTEND

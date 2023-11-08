@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DebugSettingsFacet@@@UEAA@XZ
-    virtual ~DebugSettingsFacet();
+    // vIndex: 0, symbol: __gen_??1DebugSettingsFacet@OreUI@@UEAA@XZ
+    virtual ~DebugSettingsFacet() = default;
 
     // NOLINTEND
 };

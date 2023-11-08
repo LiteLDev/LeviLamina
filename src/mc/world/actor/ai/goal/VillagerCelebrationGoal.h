@@ -30,8 +30,8 @@ public:
 
     public:
         // NOLINTBEGIN
-        // vIndex: 0, symbol: ??1VillagerCelebrationDefinition@@@UEAA@XZ
-        virtual ~VillagerCelebrationDefinition();
+        // vIndex: 0, symbol: __gen_??1VillagerCelebrationDefinition@VillagerCelebrationGoal@@UEAA@XZ
+        virtual ~VillagerCelebrationDefinition() = default;
 
         // symbol:
         // ?buildSchema@VillagerCelebrationDefinition@VillagerCelebrationGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VVillagerCelebrationDefinition@VillagerCelebrationGoal@@@JsonUtil@@@4@@Z
@@ -49,7 +49,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1VillagerCelebrationGoal@@UEAA@XZ
     virtual ~VillagerCelebrationGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@VillagerCelebrationGoal@@UEAA_NXZ

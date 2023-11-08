@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1VexCopyOwnerTargetGoal@@UEAA@XZ
     virtual ~VexCopyOwnerTargetGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@VexCopyOwnerTargetGoal@@UEAA_NXZ

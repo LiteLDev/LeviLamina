@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlayerRespawnFacet@@@UEAA@XZ
-    virtual ~PlayerRespawnFacet();
+    // vIndex: 0, symbol: __gen_??1PlayerRespawnFacet@OreUI@@UEAA@XZ
+    virtual ~PlayerRespawnFacet() = default;
 
     // NOLINTEND
 };

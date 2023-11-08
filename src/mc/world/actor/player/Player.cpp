@@ -44,14 +44,14 @@ std::string Player::getRealName() const {
     return ExtendedCertificate::getIdentityName(*certificate);
 }
 
-void Player::disconnect(std::string const& reason) const {
+void Player::disconnect(std::string_view reason) const {
     if (!Global<ServerNetworkHandler>) { return; }
     Global<ServerNetworkHandler>->disconnectClient(
         getNetworkIdentifier(),
         Connection::DisconnectFailReason::Unknown,
-        reason,
+        std::string{reason},
         false
     );
 }
 
-void Player::sendMessage(std::string const& msg) const { TextPacket::createRawMessage(msg).sendTo(*this); }
+void Player::sendMessage(std::string_view msg) const { TextPacket::createRawMessage(msg).sendTo(*this); }

@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1RealmsStoriesLocalScreenshotsFacet@@@UEAA@XZ
-    virtual ~RealmsStoriesLocalScreenshotsFacet();
+    // vIndex: 0, symbol: __gen_??1RealmsStoriesLocalScreenshotsFacet@OreUI@@UEAA@XZ
+    virtual ~RealmsStoriesLocalScreenshotsFacet() = default;
 
     // NOLINTEND
 };

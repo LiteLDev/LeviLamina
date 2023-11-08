@@ -268,11 +268,6 @@ void leviLaminaMain() {
     // Builtin CrashLogger
     ll::CrashLogger::initCrashLogger(ll::globalConfig.modules.crashLogger.enabled);
 
-    // Rename Window
-    HWND         hwnd = GetConsoleWindow();
-    std::wstring s    = string_utils::str2wstr("Bedrock Dedicated Server " + ll::getBdsVersion().to_string());
-    SetWindowText(hwnd, s.c_str());
-
     // Register Exit Event Handler.
     SetConsoleCtrlHandler(ConsoleExitHandler, TRUE);
     signal(SIGTERM, unixSignalHandler);

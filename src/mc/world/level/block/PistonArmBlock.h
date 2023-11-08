@@ -28,7 +28,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1PistonArmBlock@@UEAA@XZ
     virtual ~PistonArmBlock() = default;
 
     // vIndex: 5, symbol:

@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1GetTopSolidBlockCommand@@UEAA@XZ
     virtual ~GetTopSolidBlockCommand() = default;
 
     // vIndex: 2, symbol: ?execute@GetTopSolidBlockCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z

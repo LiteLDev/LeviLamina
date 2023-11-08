@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1AttackDefinition@@UEAA@XZ
     virtual ~AttackDefinition() = default;
 
     // vIndex: 1, symbol: ?load@AttackDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z

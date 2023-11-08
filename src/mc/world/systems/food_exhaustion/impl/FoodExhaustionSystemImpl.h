@@ -55,8 +55,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1FoodExhaustionSystemImpl@@@UEAA@XZ
-    virtual ~FoodExhaustionSystemImpl();
+    // vIndex: 0, symbol: __gen_??1FoodExhaustionSystemImpl@FoodExhaustionSystemImpl@@UEAA@XZ
+    virtual ~FoodExhaustionSystemImpl() = default;
 
     // vIndex: 1, symbol: __unk_vfn_1
     virtual void __unk_vfn_1();

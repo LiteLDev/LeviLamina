@@ -13,8 +13,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1TelemetryFacet@@@UEAA@XZ
-    virtual ~TelemetryFacet();
+    // vIndex: 0, symbol: __gen_??1TelemetryFacet@OreUI@@UEAA@XZ
+    virtual ~TelemetryFacet() = default;
 
     // NOLINTEND
 };

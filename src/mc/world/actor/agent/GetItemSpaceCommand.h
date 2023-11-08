@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1GetItemSpaceCommand@@@UEAA@XZ
-    virtual ~GetItemSpaceCommand();
+    // vIndex: 0, symbol: __gen_??1GetItemSpaceCommand@AgentCommands@@UEAA@XZ
+    virtual ~GetItemSpaceCommand() = default;
 
     // vIndex: 1, symbol: ?execute@GetItemSpaceCommand@AgentCommands@@UEAAXXZ
     virtual void execute();

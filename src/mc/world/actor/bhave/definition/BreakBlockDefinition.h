@@ -19,7 +19,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1BreakBlockDefinition@@UEAA@XZ
     virtual ~BreakBlockDefinition() = default;
 
     // vIndex: 1, symbol: ?load@BreakBlockDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z

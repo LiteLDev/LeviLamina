@@ -75,6 +75,7 @@ public:
     {
         counter = (SharedCounter<T>*)other.counter;
         if (other) { counter->addShareCount(); }
+        return *this;
     }
 
     T* get() const { return counter ? counter->get() : nullptr; }

@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1BreakDoorGoal@@UEAA@XZ
     virtual ~BreakDoorGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@BreakDoorGoal@@UEAA_NXZ

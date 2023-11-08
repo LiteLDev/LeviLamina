@@ -37,8 +37,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ScriptSimulatedPlayer@@@UEAA@XZ
-    virtual ~ScriptSimulatedPlayer();
+    // vIndex: 0, symbol: __gen_??1ScriptSimulatedPlayer@ScriptModuleGameTest@@UEAA@XZ
+    virtual ~ScriptSimulatedPlayer() = default;
 
     // vIndex: 2, symbol:
     // ?clearVelocity@ScriptSimulatedPlayer@ScriptModuleGameTest@@UEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@@Z

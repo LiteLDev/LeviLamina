@@ -16,7 +16,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1AdmireItemGoal@@UEAA@XZ
     virtual ~AdmireItemGoal() = default;
 
     // vIndex: 1, symbol: ?canUse@AdmireItemGoal@@UEAA_NXZ

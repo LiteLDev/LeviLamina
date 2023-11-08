@@ -16,7 +16,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1WorkComposterGoal@@UEAA@XZ
     virtual ~WorkComposterGoal() = default;
 
     // vIndex: 4, symbol: ?start@WorkComposterGoal@@UEAAXXZ

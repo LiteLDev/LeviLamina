@@ -23,7 +23,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1EncryptedFileAccessStrategy@@UEAA@XZ
     virtual ~EncryptedFileAccessStrategy() = default;
 
     // vIndex: 4, symbol: ?isWritable@EncryptedFileAccessStrategy@@UEBA_NXZ

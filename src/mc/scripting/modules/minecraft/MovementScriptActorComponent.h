@@ -23,8 +23,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1MovementScriptActorComponent@@@UEAA@XZ
-    virtual ~MovementScriptActorComponent();
+    // vIndex: 0, symbol: __gen_??1MovementScriptActorComponent@ScriptModuleMinecraft@@UEAA@XZ
+    virtual ~MovementScriptActorComponent() = default;
 
     // vIndex: 2, symbol:
     // ?getMaxTurn@MovementScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@M$$V@Scripting@@XZ

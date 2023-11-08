@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1PlayFabServiceClient@@@UEAA@XZ
-    virtual ~PlayFabServiceClient();
+    // vIndex: 0, symbol: __gen_??1PlayFabServiceClient@Social@@UEAA@XZ
+    virtual ~PlayFabServiceClient() = default;
 
     // NOLINTEND
 };

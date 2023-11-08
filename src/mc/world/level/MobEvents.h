@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1MobEvents@@UEAA@XZ
     virtual ~MobEvents() = default;
 
     // symbol: ??0MobEvents@@QEAA@AEAVLevelStorage@@@Z

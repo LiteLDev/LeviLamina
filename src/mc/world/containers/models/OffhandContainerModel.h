@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 1, symbol: ??1@@UEAA@XZ
+    // vIndex: 1, symbol: __gen_??1OffhandContainerModel@@UEAA@XZ
     virtual ~OffhandContainerModel() = default;
 
     // vIndex: 6, symbol: __unk_vfn_6

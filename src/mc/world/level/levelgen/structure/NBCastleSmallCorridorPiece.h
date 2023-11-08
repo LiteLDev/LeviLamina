@@ -15,7 +15,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1NBCastleSmallCorridorPiece@@UEAA@XZ
     virtual ~NBCastleSmallCorridorPiece() = default;
 
     // vIndex: 2, symbol: ?getType@NBCastleSmallCorridorPiece@@UEBA?AW4StructurePieceType@@XZ

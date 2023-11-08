@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1VehicleStateProvider@@@UEAA@XZ
-    virtual ~VehicleStateProvider();
+    // vIndex: 0, symbol: __gen_??1VehicleStateProvider@RideableComponentHelpers@@UEAA@XZ
+    virtual ~VehicleStateProvider() = default;
 
     // vIndex: 1, symbol:
     // ?canAddPassenger@VehicleStateProvider@RideableComponentHelpers@@UEBA_NAEBV?$vector@UStrictActorIDEntityContextPair@@V?$allocator@UStrictActorIDEntityContextPair@@@std@@@std@@AEBURideableComponentData@@AEBVIRideableActor@2@2@Z

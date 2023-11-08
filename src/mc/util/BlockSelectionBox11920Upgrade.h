@@ -21,8 +21,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockSelectionBox11920Upgrade@@@UEAA@XZ
-    virtual ~BlockSelectionBox11920Upgrade();
+    // vIndex: 0, symbol: __gen_??1BlockSelectionBox11920Upgrade@BlockSelectionBoxVersioning@@UEAA@XZ
+    virtual ~BlockSelectionBox11920Upgrade() = default;
 
     // vIndex: 1, symbol:
     // ?previousSchema@BlockSelectionBox11920Upgrade@BlockSelectionBoxVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z

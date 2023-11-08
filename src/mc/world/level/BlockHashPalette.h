@@ -14,7 +14,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1@@UEAA@XZ
+    // vIndex: 0, symbol: __gen_??1BlockHashPalette@@UEAA@XZ
     virtual ~BlockHashPalette() = default;
 
     // vIndex: 1, symbol: ?getPaletteType@BlockHashPalette@@UEAA?AW4PaletteType@BlockPalette@@XZ
