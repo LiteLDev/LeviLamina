@@ -3,10 +3,13 @@
 #include "ll/api/Logger.h"
 #include "ll/api/ServerInfo.h"
 #include "ll/api/utils/StringUtils.h"
+#include "ll/api/utils/SystemError.h"
 #include "ll/api/utils/WinUtils.h"
 #include "ll/core/Config.h"
 
-#include <windows.h>
+#include "debugapi.h"
+#include "handleapi.h"
+#include "processthreadsapi.h"
 
 using namespace ll::i18n_literals;
 using namespace ll::utils;
@@ -41,7 +44,8 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
     ))};
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("ll.crashLogger.error.cannotCreateDaemonProcess"_tr);
-        crashLogger.error(win_utils::getLastErrorMessage());
+        auto lastError = syserr_utils::getLastError();
+        crashLogger.error("{} {}", lastError.code(), lastError.what());
         return false;
     }
 
@@ -64,5 +68,7 @@ void ll::CrashLogger::initCrashLogger(bool enableCrashLogger) {
     if (!startCrashLoggerProcess()) {
         crashLogger.warn("ll.crashLogger.init.fail.msg"_tr);
         crashLogger.warn("ll.crashLogger.init.fail.tip"_tr);
+    } else {
+        crashLogger.info("ll.crashLogger.init.success.msg"_tr);
     }
 }

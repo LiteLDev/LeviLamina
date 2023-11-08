@@ -9,7 +9,7 @@
  * Use Logger
  * @code
  * logger.info("Infomation");                      // Common
- * logger.error("Error! Code:{}",GetLastError());  // fmt Format
+ * logger.error("Error! Code:{}", -1);             // fmt Format
  * @endcode
  */
 
@@ -32,6 +32,7 @@
 #include "fmt/core.h"
 #include "fmt/os.h"
 #include "fmt/printf.h"
+#include "fmt/std.h"
 
 namespace ll {
 class Logger {

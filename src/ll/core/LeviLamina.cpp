@@ -20,11 +20,10 @@
 
 #include "mc/world/Minecraft.h"
 
-#include "windows.h"
-
 #include "processenv.h"
 #include "psapi.h"
 #include "tlhelp32.h"
+#include "windows.h"
 
 using namespace ll::hash;
 using namespace ll::hash_literals;
@@ -52,7 +51,7 @@ void fixPluginsLibDir() {
     SetEnvironmentVariable(L"PATH", (currentDir + L"\\plugins;" + path).c_str());
 }
 
-void fixUpCWD() {
+void fixCurrentDirectory() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
     auto*                 buffer       = new (std::nothrow) wchar_t[MAX_PATH_LEN];
     if (!buffer) return;
@@ -63,10 +62,9 @@ void fixUpCWD() {
 }
 
 void checkOtherBdsInstance() {
-    if (!ll::globalConfig.modules.checkRunningBDS) return;
     constexpr const DWORD MAX_PATH_LEN = 32767;
-    auto*                 buffer       = new wchar_t[MAX_PATH_LEN];
-
+    auto*                 buffer       = new (std::nothrow) wchar_t[MAX_PATH_LEN];
+    if (!buffer) return;
     // get all processes id with name "bedrock_server.exe" or "bedrock_server_mod.exe"
     // and pid is not current process
     std::vector<DWORD> pids;
@@ -143,13 +141,6 @@ void printWelcomeMsg() {
     logger.info("");
 }
 
-void checkBetaVersion() {
-    if (ll::getLoaderVersion().preRelease) {
-        logger.warn("ll.main.warning.betaVersion"_tr);
-        logger.warn("ll.main.warning.productionEnv"_tr);
-    }
-}
-
 void checkProtocolVersion() {
     auto currentProtocol = ll::getServerProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
@@ -213,8 +204,20 @@ void setupBugFixes() {
     if (bugfixSettings.fixArrayTagCompareBug) { enableArrayTagBugFix(); }
 }
 
+#include "ll/api/utils/WinUtils.h"
+
 void leviLaminaMain() {
     _set_se_translator(seh_exception::TranslateSEHtoCE);
+
+    logger.warn("llhandle: {}", memory::getCurrentModuleHandle());
+
+    logger.warn("begin: {}", (void*)utils::win_utils::getImageRangeSpan().data());
+    logger.warn(
+        "end: {}",
+        (void*)(utils::win_utils::getImageRangeSpan().data() + utils::win_utils::getImageRangeSpan().size())
+    );
+    logger.warn("size: {}", utils::win_utils::getImageRangeSpan().size());
+
 
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
@@ -240,10 +243,10 @@ void leviLaminaMain() {
     checkProtocolVersion();
 
     // Fix problems
-    fixUpCWD();
+    fixCurrentDirectory();
     fixPluginsLibDir();
 
-    checkOtherBdsInstance();
+    if (ll::globalConfig.modules.checkRunningBDS) checkOtherBdsInstance();
 
     ll::CrashLogger::initCrashLogger(ll::globalConfig.modules.crashLogger.enabled);
 
@@ -261,9 +264,7 @@ void leviLaminaMain() {
 #endif
 
     // Addon Helper
-    // if (ll::globalConfig.enableAddonsHelper) {
-    //     InitAddonsHelper();
-    // }
+    // if (ll::globalConfig.enableAddonsHelper) InitAddonsHelper();
 
     ll::plugin_loader::loadPlugins();
 

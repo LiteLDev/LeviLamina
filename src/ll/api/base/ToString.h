@@ -25,7 +25,7 @@ std::ostream& operator<<(std::ostream& os, T const& t) {
 
 // fmt support
 template <ll::concepts::Stringable T>
-struct fmt::formatter<T> : formatter<std::string> {
+struct fmt::formatter<T> : fmt::formatter<std::string> {
     template <typename FormatContext>
     auto format(T const& t, FormatContext& ctx) {
         return formatter<std::string>::format(t.toString(), ctx);

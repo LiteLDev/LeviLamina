@@ -9,9 +9,7 @@
 
 namespace ll::utils::file_utils {
 
-LLNDAPI std::vector<std::string> getFileNameList(std::filesystem::path const& dir);
-
-LLAPI bool createDirs(std::filesystem::path const& path);
+LLNDAPI std::filesystem::path u8path(std::string_view src);
 
 LLNDAPI std::optional<std::string> readFile(std::filesystem::path const& filePath, bool isBinary = false);
 

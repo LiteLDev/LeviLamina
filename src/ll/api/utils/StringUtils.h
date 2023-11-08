@@ -21,11 +21,11 @@ namespace ll::utils::string_utils {
 
     std::vector<std::string_view> ret;
     while (pos != std::string::npos) {
-        ret.push_back(s.substr(0, pos));
+        if (pos != 0) ret.push_back(s.substr(0, pos));
         s   = s.substr(pos + pattern.size(), size - pos - pattern.size());
         pos = s.find(pattern);
     }
-    ret.push_back(s);
+    if (!s.empty()) ret.push_back(s);
     return ret;
 }
 

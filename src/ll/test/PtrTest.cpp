@@ -39,7 +39,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void
 ) {
     auto& map                      = BlockTypeRegistry::$mBlockLookupMap();
-    map[HashedString("test:test")] = BlockTypeRegistry::lookupByName("minecraft:stone");
+    map["test:test"] = BlockTypeRegistry::lookupByName("minecraft:stone");
 
     auto ptr = BlockTypeRegistry::lookupByName("test:test");
 

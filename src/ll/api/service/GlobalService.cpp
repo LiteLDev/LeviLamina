@@ -31,7 +31,7 @@ using namespace ll::memory;
 
 // AllowListFile
 
-LL_AUTO_STATIC_HOOK(
+LL_AUTO_INSTANCE_HOOK(
     AllowListFileConstructor,
     HookPriority::High,
     "??0AllowListFile@@QEAA@AEBVPath@Core@@@Z",
@@ -49,7 +49,7 @@ LL_AUTO_STATIC_HOOK(AllowListFileDestructor, HookPriority::High, "??1AllowListFi
 
 // StructureManager
 
-LL_AUTO_STATIC_HOOK(
+LL_AUTO_INSTANCE_HOOK(
     StructureManagerConstructor,
     HookPriority::High,
     "??0StructureManager@@QEAA@AEAVResourcePackManager@@@Z",
@@ -81,7 +81,7 @@ LL_AUTO_STATIC_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UEAA
 
 // PropertiesSettings
 
-LL_AUTO_STATIC_HOOK(
+LL_AUTO_INSTANCE_HOOK(
     PropertiesSettingsConstructor,
     HookPriority::High,
     "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
@@ -119,7 +119,7 @@ LL_AUTO_STATIC_HOOK(ServerNetworkHandlerDestructor, HookPriority::High, "??1Serv
 
 // NetworkSystem
 
-LL_AUTO_STATIC_HOOK(
+LL_AUTO_INSTANCE_HOOK(
     NetworkSystemConstructor,
     HookPriority::High,
     "??0NetworkSystem@@IEAA@$$QEAUDependencies@0@@Z",
@@ -155,7 +155,7 @@ LL_AUTO_STATIC_HOOK(LevelDestructor, HookPriority::High, "??1Level@@UEAA@XZ", vo
 
 // RakNet::RakPeer
 
-LL_AUTO_STATIC_HOOK(RakNetRakPeerConstructor, HookPriority::High, "??1RakPeer@RakNet@@UEAA@XZ", RakNet::RakPeer*) {
+LL_AUTO_INSTANCE_HOOK(RakNetRakPeerConstructor, HookPriority::High, "??1RakPeer@RakNet@@UEAA@XZ", RakNet::RakPeer*) {
     auto self = origin();
     ll::Global<RakNet::RakPeer>.init(self);
     return self;
@@ -184,7 +184,7 @@ LL_AUTO_STATIC_HOOK(ResourcePackRepositoryDestructor, HookPriority::High, "??1Re
 
 // CommandRegistry
 
-LL_AUTO_STATIC_HOOK(CommandRegistryConstructor, HookPriority::High, "??0CommandRegistry@@QEAA@XZ", CommandRegistry*) {
+LL_AUTO_INSTANCE_HOOK(CommandRegistryConstructor, HookPriority::High, "??0CommandRegistry@@QEAA@XZ", CommandRegistry*) {
     auto self = origin();
     ll::Global<CommandRegistry>.init(self);
     return self;

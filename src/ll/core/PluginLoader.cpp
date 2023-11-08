@@ -6,6 +6,7 @@
 
 #include "nlohmann/json.hpp"
 
+#include "libloaderapi.h"
 #include "ll/api/Config.h"
 #include "ll/api/Logger.h"
 #include "ll/api/i18n/I18nAPI.h"
@@ -14,13 +15,11 @@
 #include "ll/api/plugin/PluginManager.h"
 #include "ll/api/reflection/Serialization.h"
 #include "ll/api/utils/StringUtils.h"
+#include "ll/api/utils/SystemError.h"
 #include "ll/api/utils/WinUtils.h"
-
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/Version.h"
-
-#include "windows.h"
 
 using namespace ll;
 using namespace ll::utils;
@@ -53,11 +52,11 @@ bool loadPlugin(fs::path const& dir) {
         return false;
     }
 
-    auto lib = LoadLibraryW(fs::path{manifest.entry}.wstring().c_str());
+    auto lib = LoadLibraryW(file_utils::u8path(manifest.entry).wstring().c_str());
     if (!lib) {
-        DWORD lastError = GetLastError();
         ll::logger.error("Fail to load plugin <{}> ({})!", manifest.name, manifest.entry);
-        ll::logger.error("Error: Code[{}] {}", lastError, win_utils::getLastErrorMessage(lastError));
+        auto lastError = syserr_utils::getLastError();
+        ll::logger.error("{} {}", lastError.code(), lastError.what());
         return false;
     }
 

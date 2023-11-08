@@ -10,6 +10,9 @@ using namespace ll::utils::string_utils;
 namespace fs = std::filesystem;
 
 namespace ll::utils::file_utils {
+
+std::filesystem::path u8path(std::string_view src) { return std::filesystem::path{sv2u8sv(src)}; }
+
 std::optional<std::string> readFile(const fs::path& filePath, bool isBinary) {
     std::ifstream           fRead;
     std::ios_base::openmode mode = std::ios_base::in;
@@ -30,20 +33,6 @@ bool writeFile(const fs::path& filePath, std::string_view content, bool isBinary
     fWrite << content;
     fWrite.close();
     return true;
-}
-
-std::vector<std::string> getFileNameList(const fs::path& dir) {
-    fs::directory_entry d(dir);
-    if (!d.is_directory()) return {};
-    std::vector<std::string> list;
-    fs::directory_iterator   deps(d);
-    for (auto& i : deps) { list.push_back(u8str2str(i.path().filename().u8string())); }
-    return list;
-}
-
-bool createDirs(const fs::path& path) {
-    std::error_code ec;
-    return fs::create_directories(path, ec);
 }
 
 } // namespace ll::utils::file_utils

@@ -1,5 +1,5 @@
 #include "ll/api/plugin/Plugin.h"
-
+#include "ll/api/utils/FileUtils.h"
 #include <filesystem>
 #include <utility>
 
@@ -39,7 +39,7 @@ std::shared_ptr<Plugin> Plugin::create(Manifest manifest, Plugin::Handle handle)
 
 fs::path Plugin::getPluginDir() const {
     static auto path = [&] {
-        fs::path dataPath = string_utils::str2u8str("plugins/" + mImpl->manifest.name);
+        auto dataPath = file_utils::u8path("plugins/" + mImpl->manifest.name);
         if (!fs::exists(dataPath)) {
             std::error_code ec;
             fs::create_directories(dataPath, ec);

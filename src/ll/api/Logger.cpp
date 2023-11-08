@@ -2,10 +2,12 @@
 
 #include "fmt/color.h"
 
+#include "ll/api/utils/FileUtils.h"
 #include "ll/api/utils/Hash.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/Config.h"
 
+using namespace ll::utils;
 using namespace ll::utils::string_utils;
 
 namespace ll {
@@ -143,7 +145,7 @@ bool Logger::setFile(std::string const& logFile, bool appendMode) {
     if (logFile.empty()) { return true; }
 
     std::error_code ec;
-    std::filesystem::create_directories(std::filesystem::path(sv2u8sv(logFile)).remove_filename(), ec);
+    std::filesystem::create_directories(file_utils::u8path(logFile).remove_filename(), ec);
     ofs = std::ofstream(logFile, appendMode ? std::ios::app : std::ios::out);
     return ofs.value().is_open();
 }
@@ -155,7 +157,7 @@ bool Logger::setDefaultFile(std::string const& logFile, bool appendMode) {
     }
 
     std::error_code ec;
-    std::filesystem::create_directories(std::filesystem::path(sv2u8sv(logFile)).remove_filename(), ec);
+    std::filesystem::create_directories(file_utils::u8path(logFile).remove_filename(), ec);
     defaultFile.open(logFile, appendMode ? std::ios::app : std::ios::out);
     return defaultFile.is_open();
 }
