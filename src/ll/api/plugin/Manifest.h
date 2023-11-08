@@ -13,6 +13,7 @@ struct Manifest {
         std::string name;
         Version     version;
     };
+    std::string                        entry;
     std::string                        name;
     std::string                        description;
     std::string                        author;

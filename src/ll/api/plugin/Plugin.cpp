@@ -8,9 +8,6 @@ using namespace ll::utils;
 
 namespace ll::plugin {
 
-using Callback   = std::function<bool()>;
-using SharedData = std::unordered_map<std::string, std::any>;
-
 struct Plugin::Impl {
     Manifest   manifest;
     Handle     handle{};
@@ -27,14 +24,14 @@ Plugin::Plugin(Manifest manifest, Handle handle) {
     mImpl->handle   = handle;
 }
 
-Plugin::~Plugin() {}
+Plugin::~Plugin() = default;
 
 const Manifest& Plugin::getManifest() const { return mImpl->manifest; }
 
 Plugin::Handle Plugin::getHandle() const { return mImpl->handle; }
 
-std::unordered_map<std::string, std::any> const& Plugin::getSharedData() const { return mImpl->sharedData; }
-std::unordered_map<std::string, std::any>&       Plugin::getSharedData() { return mImpl->sharedData; }
+Plugin::SharedData const& Plugin::getSharedData() const { return mImpl->sharedData; }
+Plugin::SharedData&       Plugin::getSharedData() { return mImpl->sharedData; }
 
 std::shared_ptr<Plugin> Plugin::create(Manifest manifest, Plugin::Handle handle) {
     return std::shared_ptr<Plugin>(new Plugin(std::move(manifest), handle));
@@ -70,12 +67,12 @@ bool Plugin::onEnable() { return !mImpl->onEnable || mImpl->onEnable(); }
 
 bool Plugin::onDisable() { return !mImpl->onDisable || mImpl->onDisable(); }
 
-void Plugin::onLoad(const Callback& func) { mImpl->onLoad = func; }
+void Plugin::onLoad(Callback const& func) { mImpl->onLoad = func; }
 
-void Plugin::onUnload(const Callback& func) { mImpl->onUnload = func; }
+void Plugin::onUnload(Callback const& func) { mImpl->onUnload = func; }
 
-void Plugin::onEnable(const Callback& func) { mImpl->onEnable = func; }
+void Plugin::onEnable(Callback const& func) { mImpl->onEnable = func; }
 
-void Plugin::onDisable(const Callback& func) { mImpl->onDisable = func; }
+void Plugin::onDisable(Callback const& func) { mImpl->onDisable = func; }
 
 } // namespace ll::plugin

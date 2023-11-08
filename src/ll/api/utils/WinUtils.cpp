@@ -27,7 +27,9 @@ std::string getLastErrorMessage(ulong errorMessageId) {
         0,
         nullptr
     );
-    std::string res = wstr2str(std::wstring(message_buffer));
+    auto res = wstr2str(message_buffer);
+    // remove if trailing newline
+    if (!res.empty() && res.back() == '\n') { res.pop_back(); }
     LocalFree(message_buffer);
     return res;
 }

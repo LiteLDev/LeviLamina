@@ -2,30 +2,15 @@
 
 #include <mutex>
 
-#include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "ll/api/utils/UnorderedStringMap.h"
 
 namespace ll::plugin {
-
-template <typename... Bases>
-struct overload : Bases... {
-    using is_transparent = void;
-    using Bases::operator()...;
-};
-
-struct char_pointer_hash {
-    auto operator()(const char* ptr) const noexcept { return std::hash<std::string_view>{}(ptr); }
-};
-
-using transparent_string_hash = overload<std::hash<std::string>, std::hash<std::string_view>, char_pointer_hash>;
-
-template <typename T>
-using UnorderedStringMap = std::unordered_map<std::string, T, transparent_string_hash, std::equal_to<>>;
 
 struct PluginManager::Impl {
     std::mutex                                        mutex;
     std::vector<std::shared_ptr<Plugin>>              plugins;
     std::unordered_map<Handle, std::weak_ptr<Plugin>> handleMap;
-    UnorderedStringMap<std::weak_ptr<Plugin>>         nameMap;
+    utils::UnorderedStringMap<std::weak_ptr<Plugin>>  nameMap;
 };
 
 PluginManager::PluginManager() { mImpl = std::make_unique<Impl>(); }

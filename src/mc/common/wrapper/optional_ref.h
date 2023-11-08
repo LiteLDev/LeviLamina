@@ -88,9 +88,8 @@ public:
     }
 
     template <typename U = std::decay_t<T>>
-    [[nodiscard]] constexpr std::optional<U> copy_as_optional() const
         requires(std::is_constructible_v<U, T>)
-    {
+    [[nodiscard]] constexpr std::optional<U> copy_as_optional() const {
         return mPtr ? std::optional<U>(*mPtr) : std::nullopt;
     }
 

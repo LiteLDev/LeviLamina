@@ -8,6 +8,7 @@
 #include "ll/api/memory/Memory.h"
 #include "ll/api/plugin/Manifest.h"
 #include "ll/api/plugin/Version.h"
+#include "ll/api/utils/UnorderedStringMap.h"
 
 #include "mc/common/wrapper/optional_ref.h"
 
@@ -15,7 +16,9 @@ namespace ll::plugin {
 
 class Plugin : std::enable_shared_from_this<Plugin> {
 private:
-    using Handle = memory::Handle;
+    using Handle     = memory::Handle;
+    using Callback   = std::function<bool()>;
+    using SharedData = utils::UnorderedStringMap<std::any>;
 
     friend class PluginManager;
 
@@ -41,9 +44,9 @@ public:
 
     LLNDAPI Handle getHandle() const;
 
-    LLNDAPI std::unordered_map<std::string, std::any> const& getSharedData() const;
+    LLNDAPI SharedData const& getSharedData() const;
 
-    LLNDAPI std::unordered_map<std::string, std::any>& getSharedData();
+    LLNDAPI SharedData& getSharedData();
 
     LLNDAPI std::filesystem::path getPluginDir() const;
 
@@ -51,13 +54,32 @@ public:
 
     LLNDAPI std::filesystem::path getConfigDir() const;
 
-    LLAPI void onLoad(std::function<bool()> const& func);
+    LLAPI void onLoad(Callback const& func);
 
-    LLAPI void onUnload(std::function<bool()> const& func);
+    LLAPI void onUnload(Callback const& func);
 
-    LLAPI void onEnable(std::function<bool()> const& func);
+    LLAPI void onEnable(Callback const& func);
 
-    LLAPI void onDisable(std::function<bool()> const& func);
+    LLAPI void onDisable(Callback const& func);
+
+    bool hasSharedData(std::string_view key) const { return getSharedData().contains(key); }
+
+    template <typename T>
+    bool hasSharedData(std::string_view key) const {
+        return getSharedData().contains(key);
+    }
+
+    template <typename T>
+    optional_ref<std::add_const_t<T>> getSharedData(std::string_view key) const {
+        if (getSharedData().contains(key)) { return std::any_cast<T>(&getSharedData().find(key)->second); }
+        return std::nullopt;
+    }
+
+    template <typename T>
+    optional_ref<T> getSharedData(std::string_view key) {
+        if (getSharedData().contains(key)) { return std::any_cast<T>(&getSharedData().find(key)->second); }
+        return std::nullopt;
+    }
 
     template <typename T, typename... Args>
         requires(std::is_constructible_v<std::any, std::in_place_type_t<T>, Args...>)
@@ -65,10 +87,9 @@ public:
         getSharedData().insert_or_assign(key, std::make_any<T>(std::forward<Args>(args)...));
     }
 
-    template <typename T>
-    optional_ref<T> getSharedData(std::string const& key) const {
-        if (getSharedData().contains(key)) { return std::any_cast<T>(&*getSharedData().find(key)); }
-        return std::nullopt;
+    [[maybe_unused]] void removeSharedData(std::string_view key) {
+        auto it = getSharedData().find(key);
+        if (it != getSharedData().end()) { getSharedData().erase(it); }
     }
 };
 
