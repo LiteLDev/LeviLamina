@@ -38,7 +38,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     &BlockDefinitionGroup::registerBlocks,
     void
 ) {
-    auto& map                      = BlockTypeRegistry::$mBlockLookupMap();
+    auto& map        = BlockTypeRegistry::$mBlockLookupMap();
     map["test:test"] = BlockTypeRegistry::lookupByName("minecraft:stone");
 
     auto ptr = BlockTypeRegistry::lookupByName("test:test");

@@ -20,10 +20,11 @@
 
 #include "mc/world/Minecraft.h"
 
+#include "windows.h"
+
 #include "processenv.h"
 #include "psapi.h"
 #include "tlhelp32.h"
-#include "windows.h"
 
 using namespace ll::hash;
 using namespace ll::hash_literals;
@@ -204,20 +205,8 @@ void setupBugFixes() {
     if (bugfixSettings.fixArrayTagCompareBug) { enableArrayTagBugFix(); }
 }
 
-#include "ll/api/utils/WinUtils.h"
-
 void leviLaminaMain() {
     _set_se_translator(seh_exception::TranslateSEHtoCE);
-
-    logger.warn("llhandle: {}", memory::getCurrentModuleHandle());
-
-    logger.warn("begin: {}", (void*)utils::win_utils::getImageRangeSpan().data());
-    logger.warn(
-        "end: {}",
-        (void*)(utils::win_utils::getImageRangeSpan().data() + utils::win_utils::getImageRangeSpan().size())
-    );
-    logger.warn("size: {}", utils::win_utils::getImageRangeSpan().size());
-
 
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);

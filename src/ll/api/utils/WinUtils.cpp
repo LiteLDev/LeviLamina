@@ -18,9 +18,8 @@ using namespace ll::utils::string_utils;
 namespace ll::utils::win_utils {
 
 std::string getSystemLocaleName() {
-    wchar_t buf[256] = {};
-    auto    lcid     = GetSystemDefaultLCID();
-    GetSystemDefaultLocaleName(buf, (int)lcid);
+    wchar_t buf[LOCALE_NAME_MAX_LENGTH]{};
+    GetSystemDefaultLocaleName(buf, LOCALE_NAME_MAX_LENGTH);
     auto str = wstr2str(buf);
     std::replace(str.begin(), str.end(), '-', '_');
     return str;

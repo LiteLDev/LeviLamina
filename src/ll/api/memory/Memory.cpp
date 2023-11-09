@@ -8,8 +8,8 @@
 #include "memoryapi.h"
 
 #include <optional>
-#include <vector>
 #include <ranges>
+#include <vector>
 
 using namespace ll::utils;
 
@@ -19,7 +19,7 @@ FuncPtr resolveSymbol(char const* symbol) { return pl::symbol_provider::pl_resol
 
 FuncPtr resolveSignature(char const* signature) {
     std::string_view pattern = signature;
-    void* match = nullptr;
+    void*            match   = nullptr;
 
     for (auto& c : win_utils::getImageRangeSpan()) {
         while (pattern.starts_with(' ')) pattern.remove_prefix(1);
@@ -27,7 +27,7 @@ FuncPtr resolveSignature(char const* signature) {
         if (!match) match = &c;
         if (pattern.starts_with('?')) {
             pattern.remove_prefix(1);
-        } else if (c == string_utils::svtouc(pattern.substr(0, 2), nullptr, 16)) {
+        } else if (pattern.size() >= 2 && c == string_utils::svtouc(pattern.substr(0, 2), nullptr, 16)) {
             pattern.remove_prefix(2);
         } else {
             pattern = signature;
