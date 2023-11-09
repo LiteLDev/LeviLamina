@@ -9,13 +9,14 @@ using namespace ll::utils;
 namespace ll::plugin {
 
 struct Plugin::Impl {
-    Manifest   manifest;
-    Handle     handle{};
-    SharedData sharedData;
-    Callback   onLoad;
-    Callback   onUnload;
-    Callback   onEnable;
-    Callback   onDisable;
+    PluginState state = PluginState::Disabled;
+    Manifest    manifest;
+    Handle      handle{};
+    SharedData  sharedData;
+    Callback    onLoad;
+    Callback    onUnload;
+    Callback    onEnable;
+    Callback    onDisable;
 };
 
 Plugin::Plugin(Manifest manifest, Handle handle) {
@@ -59,13 +60,13 @@ fs::path Plugin::getConfigDir() const {
     return path;
 }
 
-bool Plugin::onLoad() { return !mImpl->onLoad || mImpl->onLoad(); }
+bool Plugin::onLoad() const { return !mImpl->onLoad || mImpl->onLoad(); }
 
-bool Plugin::onUnload() { return !mImpl->onUnload || mImpl->onUnload(); }
+bool Plugin::onUnload() const { return !mImpl->onUnload || mImpl->onUnload(); }
 
-bool Plugin::onEnable() { return !mImpl->onEnable || mImpl->onEnable(); }
+bool Plugin::onEnable() const { return !mImpl->onEnable || mImpl->onEnable(); }
 
-bool Plugin::onDisable() { return !mImpl->onDisable || mImpl->onDisable(); }
+bool Plugin::onDisable() const { return !mImpl->onDisable || mImpl->onDisable(); }
 
 void Plugin::onLoad(Callback const& func) { mImpl->onLoad = func; }
 
@@ -74,5 +75,9 @@ void Plugin::onUnload(Callback const& func) { mImpl->onUnload = func; }
 void Plugin::onEnable(Callback const& func) { mImpl->onEnable = func; }
 
 void Plugin::onDisable(Callback const& func) { mImpl->onDisable = func; }
+
+void Plugin::setState(PluginState state) const { mImpl->state = state; }
+
+PluginState Plugin::getState() const { return mImpl->state; }
 
 } // namespace ll::plugin

@@ -36,16 +36,16 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
     sa.lpSecurityDescriptor = nullptr;
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
 
-    std::wstring cmd{string_utils::str2wstr(fmt::format(
+    std::wstring cmd = string_utils::str2wstr(fmt::format(
         "{} {} \"{}\"",
         globalConfig.modules.crashLogger.path,
         GetCurrentProcessId(),
         ll::getBdsVersion().to_string()
-    ))};
+    ));
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("ll.crashLogger.error.cannotCreateDaemonProcess"_tr);
-        auto lastError = syserr_utils::getLastError();
-        crashLogger.error("{} {}", lastError.code(), lastError.what());
+        auto lastError = system_error::getLastError();
+        crashLogger.error("{} {}", lastError.value(), lastError.message());
         return false;
     }
 

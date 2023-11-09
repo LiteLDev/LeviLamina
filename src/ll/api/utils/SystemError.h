@@ -1,6 +1,9 @@
-#include "ll/api/base/Macro.h"
 #include <system_error>
 
-namespace ll::utils::syserr_utils {
-LLNDAPI std::system_error getLastError() noexcept;
+#include "ll/api/base/Macro.h"
+
+namespace ll::utils::system_error {
+
+LLNDAPI std::error_code getLastError() noexcept;
+
 }

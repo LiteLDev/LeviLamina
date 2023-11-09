@@ -14,6 +14,11 @@
 
 namespace ll::plugin {
 
+enum class PluginState : char {
+    Enabled,
+    Disabled,
+};
+
 class Plugin : std::enable_shared_from_this<Plugin> {
 private:
     using Handle     = memory::Handle;
@@ -27,18 +32,22 @@ private:
 
     explicit Plugin(Manifest manifest, Handle handle);
 
-    bool onLoad();
+    void setState(PluginState state) const;
 
-    bool onUnload();
+    bool onLoad() const;
 
-    bool onEnable();
+    bool onUnload() const;
 
-    bool onDisable();
+    bool onEnable() const;
+
+    bool onDisable() const;
 
 public:
     LLAPI ~Plugin();
 
     LLNDAPI static std::shared_ptr<Plugin> create(Manifest manifest, Handle handle);
+
+    LLNDAPI PluginState getState() const;
 
     LLNDAPI Manifest const& getManifest() const;
 

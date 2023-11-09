@@ -7,13 +7,13 @@
 #include "ll/api/Logger.h"
 #include "ll/api/ServerInfo.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/api/plugin/PluginManager.h"
 #include "ll/api/service/GlobalService.h"
 #include "ll/api/utils/SehTranslator.h"
 #include "ll/api/utils/StringUtils.h"
 
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
-#include "ll/core/PluginLoader.h"
 #include "ll/core/Version.h"
 // #include "ll/core/AddonsHelper.h"
 // #include "ll/core/SimpleServerLogger.h"
@@ -22,13 +22,13 @@
 
 #include "windows.h"
 
-#include "processenv.h"
 #include "psapi.h"
 #include "tlhelp32.h"
 
 using namespace ll::hash;
 using namespace ll::hash_literals;
 using namespace ll::utils;
+using namespace ll::i18n_literals;
 using namespace ll;
 
 namespace fs = std::filesystem;
@@ -255,7 +255,7 @@ void leviLaminaMain() {
     // Addon Helper
     // if (ll::globalConfig.enableAddonsHelper) InitAddonsHelper();
 
-    ll::plugin_loader::loadPlugins();
+    ll::plugin::PluginManager::getInstance().loadAllPlugins();
 
     // Register built-in commands
     RegisterLeviCommands();

@@ -1,15 +1,14 @@
 #include "ll/api/memory/Memory.h"
 
+#include <ranges>
+#include <vector>
+
 #include "pl/SymbolProvider.h"
 
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"
 
-#include "memoryapi.h"
-
-#include <optional>
-#include <ranges>
-#include <vector>
+#include "windows.h"
 
 using namespace ll::utils;
 
@@ -78,6 +77,16 @@ void modify(void* ptr, size_t len, const std::function<void()>& callback) {
     VirtualProtect(ptr, len, PAGE_EXECUTE_READWRITE, &oldProtect);
     callback();
     VirtualProtect(ptr, len, oldProtect, &oldProtect);
+}
+
+Handle getModuleHandle(void* addr) {
+    HMODULE hModule = nullptr;
+    GetModuleHandleEx(
+        GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+        reinterpret_cast<LPCTSTR>(addr),
+        &hModule
+    );
+    return hModule;
 }
 
 } // namespace ll::memory

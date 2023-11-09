@@ -8,10 +8,8 @@
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 
-#include "WinNls.h"
-#include "handleapi.h"
-#include "libloaderapi.h"
-#include "processthreadsapi.h"
+#include "windows.h"
+
 #include "psapi.h"
 
 using namespace ll::utils::string_utils;
