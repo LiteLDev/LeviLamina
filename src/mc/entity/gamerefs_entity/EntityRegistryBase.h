@@ -5,10 +5,7 @@
 
 class EntityRegistryBase {
 public:
-    void*                                 mCanModifyDuringView;
     entt::basic_registry<class EntityId>& mRegistry;
-    EntityId                              mViewedEntity;
-    bool                                  mViewUsesViewedContext;
     uint                                  mId;
 
 public:

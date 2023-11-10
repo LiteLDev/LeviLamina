@@ -31,6 +31,11 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     test();
 }
 
+class Test;
+
+#include "mc/entity/flags/ExitFromPassengerFlag.h"
+#include "mc/world/components/FlagComponent.h"
+
 LL_AUTO_TYPED_INSTANCE_HOOK(
     BlockDefinitionGroupRegisterBlocks,
     HookPriority::Normal,
@@ -38,6 +43,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     &BlockDefinitionGroup::registerBlocks,
     void
 ) {
+    std::cout << "type_hash  " <<  entt::type_hash<FlagComponent<ExitFromPassengerFlag>>::value() << std::endl;
+
     auto& map        = BlockTypeRegistry::$mBlockLookupMap();
     map["test:test"] = BlockTypeRegistry::lookupByName("minecraft:stone");
 

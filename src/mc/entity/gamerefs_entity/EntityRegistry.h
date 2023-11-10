@@ -7,6 +7,14 @@
 #include "mc/common/wrapper/WeakRefT.h"
 
 class EntityRegistry : public EntityRegistryBase, public std::enable_shared_from_this<EntityRegistry> {
+public:
+    // prevent constructor by default
+    EntityRegistry& operator=(EntityRegistry const&);
+    EntityRegistry(EntityRegistry const&);
+    EntityRegistry();
+
+    std::string                          mName;
+    entt::basic_registry<class EntityId> mOwnedRegistry;
 
 public:
     // NOLINTBEGIN
