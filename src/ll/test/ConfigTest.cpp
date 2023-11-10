@@ -91,26 +91,6 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     puts("hi I'm SB Plugin 7\n");
 
-    putchar('h');
-    putchar('a');
-    putchar('h');
-    putchar('a');
-    putchar(' ');
-    putchar('8');
-    putchar('\n');
-
-    std::clog << std::flush;
-
-    fputc('h', stdout);
-    fputc('a', stdout);
-    fputc('h', stdout);
-    fputc('a', stdout);
-    fputc(' ', stdout);
-    fputc('9', stdout);
-    fputc('\n', stdout);
-
-    std::clog << std::flush;
-
     fputs("hi I'm SB Plugin 10\n", stdout);
 
     fwrite("hi I'm SB Plugin 11\n", sizeof(char), 20, stdout);

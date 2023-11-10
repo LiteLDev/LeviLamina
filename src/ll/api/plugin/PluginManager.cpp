@@ -120,7 +120,7 @@ auto PluginManager::loadPlugin(std::string_view pluginName) -> std::shared_ptr<P
     if (!lib) {
         ll::logger.error("Fail to load plugin <{}> ({})!", manifest.name, manifest.entry);
         auto lastError = system_error::getLastError();
-        ll::logger.error("{} {}", lastError.value(), lastError.message());
+        ll::logger.error("{} {}", lastError.code(), lastError.what());
         return {};
     }
 

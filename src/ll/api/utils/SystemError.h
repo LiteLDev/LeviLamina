@@ -4,6 +4,5 @@
 
 namespace ll::utils::system_error {
 
-LLNDAPI std::error_code getLastError() noexcept;
-
+LLNDAPI std::system_error getLastError() noexcept;
 }

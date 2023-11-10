@@ -12,6 +12,8 @@ using namespace ll::utils::string_utils;
 
 namespace ll {
 
+std::mutex loggerMutex;
+
 bool checkLogLevel(int level, int outLevel) {
     if (level >= outLevel) return true;
     if (level == -1 && ll::globalConfig.logger.logLevel >= outLevel) return true;
@@ -20,7 +22,8 @@ bool checkLogLevel(int level, int outLevel) {
 
 void Logger::OutputStream::print(std::string_view s) const {
     try {
-        auto time = fmt::localtime(_time64(nullptr));
+        std::lock_guard lock(loggerMutex);
+        auto            time = fmt::localtime(_time64(nullptr));
         if (checkLogLevel(logger.consoleLevel, level)) {
             std::string str = fmt::format(
                 fmt::runtime(consoleFormat[0]),
@@ -55,9 +58,12 @@ void Logger::OutputStream::print(std::string_view s) const {
                 Logger::defaultPlayerOutputCallback(str);
             }
         }
-    } catch (std::exception& e) { std::cerr << "ERROR IN LOGGER API : " << e.what(); } catch (...) {
-        std::cerr << "UNKNOWN ERROR IN LOGGER API";
-    }
+    } catch (std::exception& e) {
+        try {
+            auto err = fmt::format("ERROR IN LOGGER API : {}", e.what());
+            fputs(err.c_str(), stderr);
+        } catch (...) { fputs("UNKNOWN ERROR IN LOGGER API ERROR OUTPUT", stderr); }
+    } catch (...) { fputs("UNKNOWN ERROR IN LOGGER API", stderr); }
 }
 
 Logger::OutputStream::OutputStream(
