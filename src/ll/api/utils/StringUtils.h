@@ -63,45 +63,56 @@ replaceAll(std::string str, std::string const& oldValue, std::string const& newV
  */
 template <typename T>
     requires std::is_integral_v<T>
-[[nodiscard]] inline std::string
+[[nodiscard]] constexpr std::string
 intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero = true) {
     std::string result;
     if (value < 0) result += '-';
     if (!no0x) result += "0x";
-    auto hexStr      = upperCase ? "0123456789ABCDEF" : "0123456789abcdef";
-    bool leadingZero = true;
+    constexpr char hexStr[2][17] = {"0123456789abcdef", "0123456789ABCDEF"};
+    bool           leadingZero   = true;
     for (int i = sizeof(T) * 2; i > 0; --i) {
         auto hex = (value >> (i - 1) * 4) & 0xF;
         if (noLeadingZero && leadingZero && hex == 0) continue;
         leadingZero  = false;
-        result      += hexStr[hex];
+        result      += hexStr[upperCase][hex];
     }
     return result;
 }
 
-template <typename S, typename Char = fmt::char_t<S>>
-[[nodiscard]] constexpr std::string applyTextStyle(fmt::text_style const& ts, S const& format_str) {
-    fmt::basic_memory_buffer<Char> buf;
-    auto                           fmt       = fmt::detail::to_string_view(format_str);
-    bool                           has_style = false;
+[[nodiscard]] constexpr std::string strToHexStr(std::string_view value, bool upperCase = false, bool addSpace = false) {
+    constexpr char hexStr[2][17] = {"0123456789abcdef", "0123456789ABCDEF"};
+    std::string    hex;
+    hex.reserve(value.size() * (addSpace ? 3 : 2));
+    for (uchar x : value) {
+        hex += hexStr[upperCase][x / 16];
+        hex += hexStr[upperCase][x % 16];
+        if (addSpace) hex += ' ';
+    }
+    if (addSpace) hex.pop_back();
+    return hex;
+}
+
+[[nodiscard]] constexpr std::string applyTextStyle(fmt::text_style const& ts, std::string_view str) {
+    std::string res;
+    bool        has_style = false;
     if (ts.has_emphasis()) {
         has_style     = true;
-        auto emphasis = fmt::detail::make_emphasis<Char>(ts.get_emphasis());
-        buf.append(emphasis.begin(), emphasis.end());
+        auto emphasis = fmt::detail::make_emphasis<char>(ts.get_emphasis());
+        res.append(emphasis.begin(), emphasis.end());
     }
     if (ts.has_foreground()) {
         has_style       = true;
-        auto foreground = fmt::detail::make_foreground_color<Char>(ts.get_foreground());
-        buf.append(foreground.begin(), foreground.end());
+        auto foreground = fmt::detail::make_foreground_color<char>(ts.get_foreground());
+        res.append(foreground.begin(), foreground.end());
     }
     if (ts.has_background()) {
         has_style       = true;
-        auto background = fmt::detail::make_background_color<Char>(ts.get_background());
-        buf.append(background.begin(), background.end());
+        auto background = fmt::detail::make_background_color<char>(ts.get_background());
+        res.append(background.begin(), background.end());
     }
-    buf.append(fmt.begin(), fmt.end());
-    if (has_style) fmt::detail::reset_color<Char>(buf);
-    return fmt::to_string(buf);
+    res += str;
+    if (has_style) res += "\x1b[0m";
+    return res;
 }
 
 LLNDAPI std::string removeEscapeCode(std::string_view str);
@@ -109,6 +120,8 @@ LLNDAPI std::string removeEscapeCode(std::string_view str);
 LLNDAPI std::string replaceAnsiToMcCode(std::string_view str);
 
 LLNDAPI std::string replaceMcToAnsiCode(std::string_view str);
+
+LLNDAPI bool isValidUtf8String(std::string_view str) noexcept;
 
 namespace CodePage {
 enum : uint {

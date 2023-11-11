@@ -59,11 +59,14 @@ void Logger::OutputStream::print(std::string_view s) const {
             }
         }
     } catch (std::exception& e) {
-        try {
-            auto err = fmt::format("ERROR IN LOGGER API : {}", e.what());
-            fputs(err.c_str(), stderr);
-        } catch (...) { fputs("UNKNOWN ERROR IN LOGGER API ERROR OUTPUT", stderr); }
-    } catch (...) { fputs("UNKNOWN ERROR IN LOGGER API", stderr); }
+        if (isValidUtf8String(e.what())) {
+            try {
+                fmt::print("\x1b[31mERROR IN LOGGER API: {}\n", e.what());
+                return;
+            } catch (...) {}
+        }
+        fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API ERROR OUTPUT\n");
+    } catch (...) { fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API\n"); }
 }
 
 Logger::OutputStream::OutputStream(
