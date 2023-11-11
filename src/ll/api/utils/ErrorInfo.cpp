@@ -114,8 +114,13 @@ nextNest:
     } catch (const std::string& e) { res += string_utils::tou8str(e); } catch (const char* e) {
         res += string_utils::tou8str(e);
     } catch (...) {
-        std::cout << GetLastError() << std::endl;
-        res += "unknown error type";
+        auto unkExc = std::current_exception();
+        if (unkExc) {
+            auto& realType  = *(std::shared_ptr<const EXCEPTION_RECORD>*)(&unkExc);
+            res            += ntstatus_category().message((int)realType->ExceptionCode);
+        } else {
+            res += "unknown exception type error";
+        }
     }
 
     if (eptr) {
