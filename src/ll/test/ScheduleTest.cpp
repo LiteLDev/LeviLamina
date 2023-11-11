@@ -45,11 +45,16 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     });
 
     s2.add<RepeatTask>(0.1min, [&] {
+        std::lock_guard lock(ll::Logger::loggerMutex);
         schedulelogger.info(
             "hi, 0.1min   game {} ramdom {}",
             ll::gamechrono::GameTimeClock::now().time_since_epoch(),
             ll::utils::random::rand<int64>()
         );
+        auto ramdom  = ll::utils::random::rand<int64>();
+        ramdom      /= 0;
+        schedulelogger.info("{}", ramdom);
+        throw std::runtime_error("I'm a error from schedule Task!");
     });
 
     return origin(ins);

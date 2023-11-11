@@ -30,7 +30,7 @@ struct basic_functionbuf : public std::basic_streambuf<Char, Traits> {
 
 
 private:
-    Char buffer[1024]{};
+    Char buffer[4096]{};
 
     std::function<void(view)> function;
 

@@ -295,7 +295,7 @@ void LLSettingsCommand(
         default:
             output.error("Unknown operation");
         }
-    } catch (std::exception const& e) { output.trError("{}", e.what()); }
+    } catch (...) {}
 }
 */
 

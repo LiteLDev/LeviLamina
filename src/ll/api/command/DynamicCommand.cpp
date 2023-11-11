@@ -3,7 +3,7 @@
 #include "dyncall/dyncall_callback.h"
 
 #include "ll/api/Logger.h"
-#include "ll/api/utils/SehTranslator.h"
+#include "ll/api/utils/ErrorInfo.h"
 #include "ll/core/Config.h"
 #include "ll/core/Levilamina.h"
 
@@ -40,17 +40,6 @@ using ll::logger;
     func(ActorType);                                                                                                   \
     func(Command);                                                                                                     \
     func(WildcardSelector);
-
-#define CatchDynamicCommandError(command)                                                                              \
-    catch (const seh_exception& e) {                                                                                   \
-        OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), __FUNCTION__, command);                    \
-    }                                                                                                                  \
-    catch (const std::exception& e) {                                                                                  \
-        OutputError("Uncaught C++ Exception Detected!", errno, e.what(), __FUNCTION__, command);                       \
-    }                                                                                                                  \
-    catch (...) {                                                                                                      \
-        OutputError("Uncaught Exception Detected!", -1, "", __FUNCTION__, command);                                    \
-    }
 
 // global variable and function
 namespace {
@@ -107,15 +96,9 @@ auto const ParameterSizeMap = std::unordered_map<ParameterType, size_t>{
     {ParameterType::Command,    std::max((size_t)8, sizeof(ParameterDataType::Command))   },
 };
 
-inline void OutputError(
-    const std::string& errorMsg,
-    int                errorCode,
-    const std::string& errorWhat,
-    const std::string& func,
-    const std::string& command
-) {
-    logger.error(errorMsg);
-    logger.error("Error: Code [{}] {}", errorCode, errorWhat);
+inline void OutputError(const std::string& command, const std::string& func = __builtin_FUNCTION()) {
+    std::lock_guard lock(ll::Logger::loggerMutex);
+    ll::utils::error_info::printCurrentException();
     logger.error("In Function ({})", func);
     logger.error("In Command <{}>", command);
 }
@@ -551,8 +534,7 @@ DynamicCommandInstance* DynamicCommand::preSetup(std::unique_ptr<class DynamicCo
         // commandInstance->overloads.clear();
         auto res = dynamicCommandInstances.emplace(commandInstance->name_, std::move(commandInstance));
         return res.first->second.get();
-    }
-    CatchDynamicCommandError(name);
+    } catch (...) { OutputError(name); }
     return nullptr;
 }
 
@@ -589,8 +571,7 @@ void DynamicCommand::execute(CommandOrigin const& origin, CommandOutput& output)
 
         for (auto& [name, param] : commandIns.parameterPtrs) { results.emplace(name, param.getResult(this, &origin)); }
         commandIns.callback_(*this, origin, output, results);
-    }
-    CatchDynamicCommandError(getCommandName());
+    } catch (...) { OutputError(getCommandName()); }
 }
 
 std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(

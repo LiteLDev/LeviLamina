@@ -2,8 +2,8 @@
 
 #include <mutex>
 
+#include "ll/api/utils/ErrorInfo.h"
 #include "ll/api/utils/FileUtils.h"
-#include "ll/api/utils/SystemError.h"
 #include "ll/api/utils/UnorderedStringMap.h"
 
 #include "ll/core/LeviLamina.h"
@@ -119,8 +119,7 @@ auto PluginManager::loadPlugin(std::string_view pluginName) -> std::shared_ptr<P
     auto lib = LoadLibraryW(file_utils::u8path(manifest.entry).wstring().c_str());
     if (!lib) {
         ll::logger.error("Fail to load plugin <{}> ({})!", manifest.name, manifest.entry);
-        auto lastError = system_error::getLastError();
-        ll::logger.error("{} {}", lastError.code(), lastError.what());
+        error_info::printException(error_info::getLastWinError());
         return {};
     }
 

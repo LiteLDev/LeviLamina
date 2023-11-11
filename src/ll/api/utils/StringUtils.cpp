@@ -71,7 +71,7 @@ fmt::text_style getTextStyleFromCode(std::string_view code) {
                 return fmt::bg((fmt::terminal_color)(num - 10));
             } else {
                 switch (num) {
-                    // clang-format off
+                // clang-format off
                     case 1: return fmt::emphasis::bold;
                     case 2: return fmt::emphasis::faint;
                     case 3: return fmt::emphasis::italic;
@@ -231,7 +231,7 @@ std::string replaceMcToAnsiCode(std::string_view str) {
     return res.str();
 }
 
-bool isValidUtf8String(std::string_view str) noexcept {
+bool isu8str(std::string_view str) noexcept {
     bool res = true;
     fmt::detail::for_each_codepoint(str, [&](uint32_t cp, fmt::string_view) {
         if (cp == fmt::detail::invalid_code_point) {
@@ -241,6 +241,14 @@ bool isValidUtf8String(std::string_view str) noexcept {
         return true;
     });
     return res;
+}
+
+std::string tou8str(std::string_view str) {
+    if (isu8str(str)) {
+        return std::string{str};
+    } else {
+        return str2str(str);
+    }
 }
 
 } // namespace ll::utils::string_utils

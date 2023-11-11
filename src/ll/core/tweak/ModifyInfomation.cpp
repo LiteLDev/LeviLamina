@@ -137,6 +137,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
 LL_AUTO_STATIC_HOOK(CppOutputRedirectHook, HookPriority::Lowest, "main", int, int argc, char* argv[]) {
 
+    std::ios::sync_with_stdio(false);
+
     ll::Logger           coutlogger("std::cout");
     ll::io::ofuncstream  coutfs{[&](std::string_view s) {
         if (s.ends_with('\n')) { s.remove_suffix(1); }

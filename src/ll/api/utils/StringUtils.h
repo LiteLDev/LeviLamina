@@ -36,8 +36,7 @@ namespace ll::utils::string_utils {
  * @param newValue  The string to replace with
  * @return std::string  The modified input std::string
  */
-[[nodiscard]] constexpr std::string
-replaceAll(std::string str, std::string const& oldValue, std::string const& newValue) {
+constexpr std::string& replaceAll(std::string& str, std::string const& oldValue, std::string const& newValue) {
     for (std::string::size_type pos(0); pos != std::string::npos; pos += newValue.length()) {
         if ((pos = str.find(oldValue, pos)) != std::string::npos) str.replace(pos, oldValue.length(), newValue);
         else break;
@@ -121,7 +120,9 @@ LLNDAPI std::string replaceAnsiToMcCode(std::string_view str);
 
 LLNDAPI std::string replaceMcToAnsiCode(std::string_view str);
 
-LLNDAPI bool isValidUtf8String(std::string_view str) noexcept;
+LLNDAPI bool isu8str(std::string_view str) noexcept;
+
+LLNDAPI std::string tou8str(std::string_view str);
 
 namespace CodePage {
 enum : uint {
@@ -135,7 +136,7 @@ LLNDAPI std::wstring str2wstr(std::string_view str, uint codePage = CodePage::UT
 
 LLNDAPI std::string wstr2str(std::wstring_view str, uint codePage = CodePage::UTF8);
 
-LLNDAPI std::string str2str(std::string_view str, uint fromCodePage, uint toCodePage = CodePage::UTF8);
+LLNDAPI std::string str2str(std::string_view str, uint fromCodePage = CodePage::ANSI, uint toCodePage = CodePage::UTF8);
 
 [[nodiscard]] inline std::string u8str2str(std::u8string str) {
     std::string& tmp = *reinterpret_cast<std::string*>(&str);

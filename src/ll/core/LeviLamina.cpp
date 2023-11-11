@@ -9,7 +9,7 @@
 #include "ll/api/memory/Hook.h"
 #include "ll/api/plugin/PluginManager.h"
 #include "ll/api/service/GlobalService.h"
-#include "ll/api/utils/SehTranslator.h"
+#include "ll/api/utils/ErrorInfo.h"
 #include "ll/api/utils/StringUtils.h"
 
 #include "ll/core/Config.h"
@@ -124,6 +124,7 @@ void checkOtherBdsInstance() {
 }
 
 void printWelcomeMsg() {
+    std::lock_guard lock(Logger::loggerMutex);
     logger.info(R"(                                                                      )");
     logger.info(R"(         _               _ _                    _                     )");
     logger.info(R"(        | |    _____   _(_) |    __ _ _ __ ___ (_)_ __   __ _         )");
@@ -206,13 +207,10 @@ void setupBugFixes() {
 }
 
 void leviLaminaMain() {
-    _set_se_translator(seh_exception::TranslateSEHtoCE);
+    _set_se_translator(error_info::TranslateSEHtoCE);
 
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
-
-    // Disable Output-Sync
-    std::ios::sync_with_stdio(false);
 
     // Init LL Logger
     Logger::setDefaultFile("logs/LeviLamina-latest.log", false);

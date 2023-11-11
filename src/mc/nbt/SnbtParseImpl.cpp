@@ -182,7 +182,7 @@ std::optional<CompoundTagVariant> parseNumber(std::string_view& s) {
             break;
         }
     if (isInt) {
-        if (res <= INT32_MAX) {
+        if (abs(res) <= INT32_MAX) {
             return IntTag{(int)res};
         } else {
             return Int64Tag{(int64)res};

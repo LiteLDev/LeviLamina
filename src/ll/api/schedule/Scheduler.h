@@ -72,11 +72,17 @@ private:
             if (task->cancelled) { continue; }
             if (task->interval) {
                 threads.addTask([this, task] {
-                    task->f();
+                    try {
+                        task->f();
+                    } catch (...) { detail::printScheduleError(); }
                     addTask(task);
                 });
             } else {
-                threads.addTask([task] { task->f(); });
+                threads.addTask([task] {
+                    try {
+                        task->f();
+                    } catch (...) { detail::printScheduleError(); }
+                });
                 if (task->cancelled) { continue; }
                 auto time = task->getNextTime();
                 if (time < TimePoint::max()) { temp.emplace(time, std::move(task)); }

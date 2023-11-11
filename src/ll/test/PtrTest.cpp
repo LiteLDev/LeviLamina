@@ -7,6 +7,9 @@
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/material/Material.h"
 
+#include "ll/api/utils/ErrorInfo.h"
+#include "ll/core/LeviLamina.h"
+
 auto test() {
     auto exists = BlockTypeRegistry::lookupByName("minecraft:stone");
 
@@ -43,13 +46,42 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     &BlockDefinitionGroup::registerBlocks,
     void
 ) {
-    std::cout << "type_hash  " <<  entt::type_hash<FlagComponent<ExitFromPassengerFlag>>::value() << std::endl;
+    std::cout << "type_hash  " << entt::type_hash<FlagComponent<ExitFromPassengerFlag>>::value() << std::endl;
+
+    ll::utils::error_info::printException(ll::utils::error_info::getLastWinError());
+
+    try {
+        char* pp = nullptr;
+        *pp      = 'a';
+    } catch (...) { ll::utils::error_info::printCurrentException(); }
+
+    try {
+        int a = 0;
+        int b = 2 / a;
+        std::cout << "b = " << b << std::endl;
+    } catch (...) {
+        ll::utils::error_info::printCurrentException();
+        ll::utils::error_info::printException(ll::utils::error_info::getLastWinError());
+    }
+
+    try {
+        try {
+            std::string s{"nonexistent.file"};
+            try {
+                std::ifstream file(s);
+                file.exceptions(std::ios_base::failbit);
+            } catch (...) { std::throw_with_nested(std::runtime_error("Couldn't open " + s)); }
+        } catch (...) {
+            std::throw_with_nested(std::system_error(std::error_code{1, std::generic_category()}, "run() failed"));
+        }
+    } catch (...) { ll::utils::error_info::printCurrentException(); }
 
     auto& map        = BlockTypeRegistry::$mBlockLookupMap();
     map["test:test"] = BlockTypeRegistry::lookupByName("minecraft:stone");
 
     auto ptr = BlockTypeRegistry::lookupByName("test:test");
 
-    std::cout << "hii  " << bool(ptr) << std::endl;
+    std::clog << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
+    std::cout << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
     origin();
 }

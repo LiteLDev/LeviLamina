@@ -1,5 +1,6 @@
 #include "mc/server/commands/CommandRegistry.h"
 #include "ll/api/service/GlobalService.h"
+#include "ll/api/utils/ErrorInfo.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/server/commands/CommandParameterData.h"
@@ -106,20 +107,13 @@ bool CommandRegistry::unregisterCommand(std::string const& name) {
             return r == sig->second.main_symbol || r == sig->second.alt_symbol;
         });
 
-        // std::erase_if(mRules, [&](ParseRule const& r) {
-        //     return r.sym == sig->second.main_symbol || r.sym == sig->second.alt_symbol;
-        // });
-
         std::erase_if(mFactorizations, [&](Factorization const& r) {
             return r.commandSymbol == sig->second.main_symbol || r.commandSymbol == sig->second.alt_symbol;
         });
 
-
         mSignatures.erase(sig);
         mAliases.erase(command);
         return true;
-    } catch (std::exception& e) {
-        ll::logger.error("Error in CommandRegistry::unregisterCommand : {}", e.what());
-    } catch (...) { ll::logger.error("Error in CommandRegistry::unregisterCommand"); }
+    } catch (...) { ll::utils::error_info::printCurrentException(); }
     return false;
 }

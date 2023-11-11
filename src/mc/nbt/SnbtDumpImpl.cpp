@@ -171,11 +171,9 @@ std::string TypedToSnbt(ListTag& self, uchar indent, SnbtFormat format) {
 
         auto key = tag->toSnbt(format, indent);
 
-        if (isNewLine) {
-            res += replaceAll(key, "\n", "\n" + indentSpace);
-        } else {
-            res += key;
-        }
+        if (isNewLine) { replaceAll(key, "\n", "\n" + indentSpace); }
+        res += key;
+
 
         if (i > 0) {
             res += ',';
@@ -230,11 +228,8 @@ std::string TypedToSnbt(CompoundTag& self, uchar indent, SnbtFormat format) {
 
         auto key = v.get()->toSnbt(format, indent);
 
-        if (isNewLine) {
-            res += replaceAll(key, "\n", "\n" + indentSpace);
-        } else {
-            res += key;
-        }
+        if (isNewLine) { replaceAll(key, "\n", "\n" + indentSpace); }
+        res += key;
 
         if (i > 0) {
             res += ',';

@@ -71,6 +71,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     ll::config::saveConfig(helloReflection, "plugins/Test/testconfig.json");
 
+    std::lock_guard lock(ll::Logger::loggerMutex); // test logger order
+
     ll::logger.debug("{} for load config", ll::config::loadConfig(helloReflection, "plugins/Test/testconfig.json"));
     ll::logger.debug("\n{}", ll::reflection::serialize<nlohmann::ordered_json>(helloReflection).dump(4));
 

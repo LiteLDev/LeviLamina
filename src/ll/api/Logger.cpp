@@ -13,7 +13,6 @@ using namespace ll::utils::string_utils;
 namespace ll {
 
 namespace {
-std::mutex loggerMutex;
 bool checkLogLevel(int level, int outLevel) {
     if (level >= outLevel) return true;
     if (level == -1 && ll::globalConfig.logger.logLevel >= outLevel) return true;
@@ -21,7 +20,7 @@ bool checkLogLevel(int level, int outLevel) {
 }
 } // namespace
 
-void Logger::OutputStream::print(std::string_view s) const {
+void Logger::OutputStream::print(std::string_view s) const noexcept {
     try {
         std::lock_guard lock(loggerMutex);
         auto            time = fmt::localtime(_time64(nullptr));
@@ -60,14 +59,18 @@ void Logger::OutputStream::print(std::string_view s) const {
             }
         }
     } catch (std::exception& e) {
-        if (isValidUtf8String(e.what())) {
-            try {
-                fmt::print("\x1b[31mERROR IN LOGGER API: {}\n", e.what());
-                return;
-            } catch (...) {}
-        }
-        fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API ERROR OUTPUT\n");
-    } catch (...) { fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API\n"); }
+        try {
+            fmt::print("\x1b[31mERROR IN LOGGER API: {}\n", tou8str(e.what()));
+            return;
+        } catch (...) {}
+        try {
+            fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API ERROR OUTPUT\n");
+        } catch (...) {}
+    } catch (...) {
+        try {
+            fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API\n");
+        } catch (...) {}
+    }
 }
 
 Logger::OutputStream::OutputStream(
@@ -172,6 +175,7 @@ bool Logger::setDefaultFile(std::string const& logFile, bool appendMode) {
     return defaultFile.is_open();
 }
 
+std::recursive_mutex     Logger::loggerMutex;
 std::ofstream            Logger::defaultFile{};
 Logger::PlayerOutputFunc Logger::defaultPlayerOutputCallback;
 } // namespace ll

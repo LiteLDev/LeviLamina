@@ -43,7 +43,7 @@ public:
         friend class Logger;
 
     private:
-        LLAPI void print(std::string_view) const;
+        LLAPI void print(std::string_view) const noexcept;
 
     public:
         Logger&                               logger;
@@ -66,8 +66,8 @@ public:
         );
 
         template <ll::concepts::IsString S, typename... Args>
-        void operator()(S const& fmt, Args const&... args) const {
-            if constexpr (0 == sizeof...(args)) {
+        void operator()(S const& fmt, Args const&... args) const noexcept(sizeof...(args) == 0) {
+            if constexpr (sizeof...(args) == 0) {
                 print(fmt);
             } else {
                 print(fmt::format(fmt::runtime(fmt), args...));
@@ -113,6 +113,8 @@ public:
         if (ofs) { return ofs.value(); }
         return defaultFile;
     }
+
+    LLAPI static std::recursive_mutex loggerMutex;
 
 private:
     LLAPI static std::ofstream    defaultFile;
