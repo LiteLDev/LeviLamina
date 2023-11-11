@@ -17,15 +17,17 @@ public:
     std::optional<EntityContext> mContext;
 
     template <class Entity, bool IncludeRemoved = false>
-    [[nodiscard]] constexpr Entity* tryUnwrap() {
+    [[nodiscard]] inline Entity* tryUnwrap() {
         if (_hasValue()) { return Entity::tryGetFromEntity(_getStackRef(), IncludeRemoved); }
         return nullptr;
     }
 
-    operator bool() const { return _hasValue(); } // NOLINT
+    [[nodiscard]] inline operator bool() const { return _hasValue(); } // NOLINT
 
 public:
-    OwnerStorageEntity() = delete;
+    OwnerStorageEntity& operator=(OwnerStorageEntity const&) = delete;
+    OwnerStorageEntity(OwnerStorageEntity const&)            = delete;
+    OwnerStorageEntity()                                     = delete;
 
     // protected:
     // NOLINTBEGIN

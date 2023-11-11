@@ -13,8 +13,8 @@ public:
     EntityRegistry(EntityRegistry const&);
     EntityRegistry();
 
-    std::string                          mName;
-    entt::basic_registry<class EntityId> mOwnedRegistry;
+    std::string                    mName;
+    entt::basic_registry<EntityId> mOwnedRegistry;
 
 public:
     // NOLINTBEGIN

@@ -7,6 +7,8 @@
 #include "mc/common/wrapper/WeakRefT.h"
 
 class EntityContext : public EntityContextBase {
+public:
+    EntityContext() = delete;
 
 public:
     // NOLINTBEGIN

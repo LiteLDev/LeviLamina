@@ -25,10 +25,9 @@ public:
     }
 
 public:
-    // prevent constructor by default
-    WeakStorageEntity& operator=(WeakStorageEntity const&);
-    WeakStorageEntity(WeakStorageEntity const&);
-    WeakStorageEntity();
+    WeakStorageEntity& operator=(WeakStorageEntity const&) = delete;
+    WeakStorageEntity(WeakStorageEntity const&)            = delete;
+    WeakStorageEntity()                                    = delete;
 
 public:
     // NOLINTBEGIN

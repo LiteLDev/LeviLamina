@@ -9,28 +9,33 @@ public:
     class EntityRegistryBase& mRegistry;
     class EntityId            mEntity;
 
-    [[nodiscard]] inline class entt::basic_registry<EntityId>& _enttRegistry() {
+    [[nodiscard]] inline class entt::basic_registry<EntityId>& getRegistry() {
         return mRegistry.mRegistry;
-    } 
-    
-    [[nodiscard]] inline class entt::basic_registry<EntityId> const& _enttRegistry() const {
+    }
+
+    [[nodiscard]] inline class entt::basic_registry<EntityId> const&
+    getRegistry() const {
         return mRegistry.mRegistry;
     }
 
     template <class T>
     [[nodiscard]] inline T* tryGetComponent() const {
-        return _enttRegistry().try_get<T>(mEntity);
+        return getRegistry().try_get<T>(mEntity);
     }
 
     template <class T>
     [[nodiscard]] inline bool hasComponent() const {
-        return _enttRegistry().all_of<T>(mEntity);
+        return getRegistry().all_of<T>(mEntity);
     }
 
     template <class T, typename... Args>
     [[nodiscard]] inline T& getOrAddComponent(Args&&... args) const {
-        return _enttRegistry().get_or_emplace<T>(mEntity, std::forward<Args>(args)...);
+        return getRegistry().get_or_emplace<T>(mEntity, std::forward<Args>(args)...);
     }
+
+    [[nodiscard]] inline operator bool() const { return isValid(); }
+
+    EntityContextBase() = delete;
 
 public:
     // NOLINTBEGIN

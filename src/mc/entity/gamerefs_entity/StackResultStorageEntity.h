@@ -8,17 +8,16 @@ public:
     std::optional<EntityContext> mContext;
 
     template <class Entity, bool IncludeRemoved = false>
-    [[nodiscard]] constexpr Entity* tryUnwrap() {
+    [[nodiscard]] inline Entity* tryUnwrap() {
         if (_hasValue()) { return Entity::tryGetFromEntity(_getStackRef(), IncludeRemoved); }
         return nullptr;
     }
 
-    operator bool() const { return _hasValue(); } // NOLINT
-
-    // prevent constructor by default
-    StackResultStorageEntity& operator=(StackResultStorageEntity const&);
-    StackResultStorageEntity(StackResultStorageEntity const&);
-    StackResultStorageEntity();
+    [[nodiscard]] inline operator bool() const { return _hasValue(); } // NOLINT
+public:
+    StackResultStorageEntity& operator=(StackResultStorageEntity const&) = delete;
+    StackResultStorageEntity(StackResultStorageEntity const&)            = delete;
+    StackResultStorageEntity()                                           = delete;
 
     // protected:
     // NOLINTBEGIN
