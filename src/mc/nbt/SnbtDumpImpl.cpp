@@ -14,7 +14,7 @@ using namespace ll::utils::string_utils;
 
 namespace cf = ColorFormat;
 
-static constexpr auto base64Id = std::string{" /*BASE64*/"};
+constexpr auto base64Id = std::string{" /*BASE64*/"};
 
 template <std::integral T>
 std::string getString(T value) {

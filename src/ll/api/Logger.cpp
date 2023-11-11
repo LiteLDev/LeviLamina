@@ -12,13 +12,14 @@ using namespace ll::utils::string_utils;
 
 namespace ll {
 
+namespace {
 std::mutex loggerMutex;
-
 bool checkLogLevel(int level, int outLevel) {
     if (level >= outLevel) return true;
     if (level == -1 && ll::globalConfig.logger.logLevel >= outLevel) return true;
     return false;
 }
+} // namespace
 
 void Logger::OutputStream::print(std::string_view s) const {
     try {

@@ -260,6 +260,11 @@ std::optional<std::string> parseString(std::string_view& s) {
         // escapes
         case '\\': {
             switch (get(s)) {
+            // multiline string
+            case '\n':
+            case '\r':
+                if (!skipWhitespace(s)) { return std::nullopt; }
+                break;
 
             // quotation mark
             case '\"': {

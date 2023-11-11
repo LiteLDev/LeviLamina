@@ -55,7 +55,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
     },
     hello = {
         "Nzg52/4=" /*BASE64*/= {
-            'ሴ56' = "XG5cdFxyXGJcdTEyMzRcdWZmZmZmZmZm2/4=" /*BASE64*/ // hellow
+            'ሴ56' = "XG5cdFxyXGJcdTEyMzRc\
+                //hi
+            dWZmZmZmZmZm2/4=" /*BASE64*/ // hellow
         }
     },
     intarray = [I;1, 2, 3, 4, 5, -2, -3, -6],
