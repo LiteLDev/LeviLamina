@@ -40,8 +40,8 @@ class GlobalService {
     T* value = nullptr;
 
 public:
-    LLNDAPI GlobalService();
-    void  init(T* ptr);
+    GlobalService();
+    void init(T* ptr);
 
     constexpr T* get() { return value; }
     constexpr T* operator->() { return value; }

@@ -207,7 +207,7 @@ void setupBugFixes() {
 }
 
 void leviLaminaMain() {
-    _set_se_translator(error_info::TranslateSEHtoCE);
+    ll::utils::error_info::setSehTranslator();
 
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);

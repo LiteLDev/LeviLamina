@@ -14,15 +14,19 @@ class Logger;
 namespace ll::utils::error_info {
 
 class seh_exception : public std::system_error {
-public:
+private:
+    uint  ntStatus;
     void* expPtr;
 
-    LLNDAPI seh_exception(uint ntStatus, void* expPtr);
+public:
+    LLAPI seh_exception(uint ntStatus, void* expPtr);
+
+    LLNDAPI uint getNtStatus() const noexcept;
+
+    LLNDAPI void* getExceptionPointer() const noexcept;
 };
 
-inline void TranslateSEHtoCE(uint ntStatus, struct _EXCEPTION_POINTERS* expPtr) {
-    throw seh_exception(ntStatus, expPtr);
-}
+LLAPI void setSehTranslator() noexcept;
 
 LLNDAPI std::error_category const& u8system_category() noexcept;
 
@@ -30,9 +34,9 @@ LLNDAPI std::error_category const& ntstatus_category() noexcept;
 
 LLNDAPI std::system_error getLastWinError() noexcept;
 
-LLNDAPI std::string makeExceptionString(std::exception_ptr eptr);
+LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr);
 
-LLNDAPI void printCurrentException(
+LLAPI void printCurrentException(
     optional_ref<ll::Logger>  = nullptr,
     std::exception_ptr const& = std::current_exception()
 ) noexcept;

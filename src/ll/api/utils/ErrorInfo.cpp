@@ -9,9 +9,8 @@
 
 namespace ll::utils::error_info {
 
-namespace {
 template <class T>
-std::exception_ptr getNested(T const& e) {
+static std::exception_ptr getNested(T const& e) {
     constexpr bool can_use_dynamic_cast =
         std::is_polymorphic_v<T>
         && (!std::is_base_of_v<std::nested_exception, T> || std::is_convertible_v<T*, std::nested_exception*>);
@@ -22,8 +21,6 @@ std::exception_ptr getNested(T const& e) {
     }
     return nullptr;
 }
-
-} // namespace
 
 struct u8system_category : public std::_System_error_category {
     constexpr u8system_category() noexcept : _System_error_category() {}
@@ -47,8 +44,8 @@ std::error_category const& u8system_category() noexcept {
 struct ntstatus_category : public std::error_category {
     constexpr ntstatus_category() noexcept : error_category() {}
     [[nodiscard]] std::string message(int errCode) const override {
-        char* msg = nullptr;
-        DWORD langId;
+        wchar_t* msg = nullptr;
+        DWORD    langId;
         if (GetLocaleInfoEx(
                 LOCALE_NAME_SYSTEM_DEFAULT,
                 LOCALE_ILANGUAGE | LOCALE_RETURN_NUMBER,
@@ -58,17 +55,17 @@ struct ntstatus_category : public std::error_category {
             == 0) {
             langId = 0;
         }
-        auto size = FormatMessageA(
+        auto size = FormatMessageW(
             FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_HMODULE | FORMAT_MESSAGE_IGNORE_INSERTS,
             GetModuleHandleA("ntdll"),
             errCode,
             langId,
-            (char*)&msg,
+            (wchar_t*)&msg,
             0,
             nullptr
         );
         if (size) {
-            std::string res{string_utils::str2str({msg, size})};
+            std::string res{string_utils::wstr2str({msg, size})};
             LocalFree(msg);
             if (res.ends_with('\n')) { res.pop_back(); }
             if (res.ends_with('\r')) { res.pop_back(); }
@@ -86,19 +83,28 @@ std::error_category const& ntstatus_category() noexcept {
 
 seh_exception::seh_exception(uint ntStatus, void* expPtr)
 : std::system_error(std::error_code{(int)ntStatus, ntstatus_category()}),
+  ntStatus(ntStatus),
   expPtr(expPtr) {}
+
+uint seh_exception::getNtStatus() const noexcept { return ntStatus; }
+
+void* seh_exception::getExceptionPointer() const noexcept { return expPtr; }
+
+void setSehTranslator() noexcept {
+    _set_se_translator([](auto ntStatus, auto expPtr) { throw seh_exception(ntStatus, expPtr); });
+}
 
 std::system_error getLastWinError() noexcept { return std::error_code{(int)GetLastError(), u8system_category()}; }
 
-std::string makeExceptionString(std::exception_ptr eptr) {
-    if (!eptr) { throw std::bad_exception(); }
+std::string makeExceptionString(std::exception_ptr ePtr) {
+    if (!ePtr) { throw std::bad_exception(); }
 
     std::string res;
     std::size_t numNested = 0;
 nextNest:
     try {
         std::exception_ptr yeptr;
-        std::swap(eptr, yeptr);
+        std::swap(ePtr, yeptr);
         std::rethrow_exception(yeptr);
     } catch (const std::system_error& e) {
         res += fmt::format(
@@ -107,10 +113,10 @@ nextNest:
             e.code().category().name(),
             string_utils::tou8str(e.what())
         );
-        eptr = getNested(e);
+        ePtr = getNested(e);
     } catch (const std::exception& e) {
         res  += string_utils::tou8str(e.what());
-        eptr  = getNested(e);
+        ePtr  = getNested(e);
     } catch (const std::string& e) { res += string_utils::tou8str(e); } catch (const char* e) {
         res += string_utils::tou8str(e);
     } catch (...) {
@@ -123,7 +129,7 @@ nextNest:
         }
     }
 
-    if (eptr) {
+    if (ePtr) {
         res += ", with: (";
         numNested++;
         goto nextNest;
