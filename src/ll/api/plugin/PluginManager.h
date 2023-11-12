@@ -31,8 +31,8 @@ public:
 
     LLAPI auto loadPlugin(std::string_view pluginName) -> std::shared_ptr<Plugin>;
     LLAPI auto unloadPlugin(std::weak_ptr<const Plugin> const& plugin) -> bool;
-    LLAPI static auto enablePlugin(std::weak_ptr<const Plugin> const& plugin) -> bool;
-    LLAPI static auto disablePlugin(std::weak_ptr<const Plugin> const& plugin) -> bool;
+    LLAPI auto enablePlugin(std::weak_ptr<const Plugin> const& plugin) -> bool;
+    LLAPI auto disablePlugin(std::weak_ptr<const Plugin> const& plugin) -> bool;
 
     LLNDAPI auto findPlugin(std::string_view name) -> std::weak_ptr<const Plugin>;
     LLNDAPI auto findPlugin(Handle handle) -> std::weak_ptr<const Plugin>;
