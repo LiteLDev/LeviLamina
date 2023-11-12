@@ -1,7 +1,7 @@
 #include "ll/api/Logger.h"
+#include "ll/api/base/Random.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/schedule/Scheduler.h"
-#include "ll/api/utils/Random.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
@@ -29,7 +29,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         schedulelogger.info(
             "hi, 100_tick life {} ramdom {}",
             ll::chrono::GameTimeClock::now().time_since_epoch(),
-            ll::utils::random::rand<uint>()
+            ll::random::rand<uint>()
         );
     });
 
@@ -39,7 +39,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
             schedulelogger.info(
                 "hi, 5s       gt   {} ramdom {}",
                 ll::chrono::GameTimeClock::now().time_since_epoch(),
-                ll::utils::random::rand<double>()
+                ll::random::rand<double>()
             );
         });
     });
@@ -47,13 +47,13 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     s2.add<RepeatTask>(0.1min, [&] {
         std::lock_guard lock(ll::Logger::loggerMutex);
         schedulelogger.info(
-            "hi, 0.1min   game {} ramdom {}",
+            "hi, 0.1min   game {} random {}",
             ll::chrono::GameTimeClock::now().time_since_epoch(),
-            ll::utils::random::rand<int64>()
+            ll::random::rand<int64>()
         );
-        auto ramdom  = ll::utils::random::rand<int64>();
-        ramdom      /= 0;
-        schedulelogger.info("{}", ramdom);
+        auto random  = ll::random::rand<int64>();
+        random      /= 0;
+        schedulelogger.info("{}", random);
         throw std::runtime_error("I'm a error from schedule Task!");
     });
 

@@ -6,8 +6,6 @@
 #include <string_view>
 #include <unordered_map>
 
-#include "leveldb/db.h"
-
 #include "ll/api/base/Macro.h"
 
 namespace ll {

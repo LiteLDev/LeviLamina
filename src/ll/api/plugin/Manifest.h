@@ -4,7 +4,7 @@
 #include <set>
 #include <string>
 
-#include "ll/api/plugin/Version.h"
+#include "ll/api/base/Version.h"
 
 namespace ll::plugin {
 

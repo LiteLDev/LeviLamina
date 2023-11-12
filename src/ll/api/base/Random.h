@@ -1,13 +1,14 @@
 #pragma once
 
-#include "ll/api/base/StdInt.h"
-#include "pcg_cpp/pcg_random.hpp"
 #include <numeric>
 #include <random>
 #include <type_traits>
 
+#include "pcg_cpp/pcg_random.hpp"
 
-namespace ll::utils::random {
+#include "ll/api/base/StdInt.h"
+
+namespace ll::random {
 
 template <std::integral T>
 inline T rand(T upBound = 0) {
@@ -66,4 +67,4 @@ inline T leftCloseIntervalRand(T min = 0, T max = 1) {
     return rand<T>(min, max);
 }
 
-} // namespace ll::utils::random
+} // namespace ll::random

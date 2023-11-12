@@ -5,10 +5,10 @@
 #include <string>
 #include <unordered_map>
 
+#include "ll/api/base/UnorderedStringMap.h"
+#include "ll/api/base/Version.h"
 #include "ll/api/memory/Memory.h"
 #include "ll/api/plugin/Manifest.h"
-#include "ll/api/plugin/Version.h"
-#include "ll/api/utils/UnorderedStringMap.h"
 
 #include "mc/common/wrapper/optional_ref.h"
 
@@ -23,7 +23,7 @@ class Plugin : std::enable_shared_from_this<Plugin> {
 private:
     using Handle     = memory::Handle;
     using Callback   = std::function<bool()>;
-    using SharedData = utils::UnorderedStringMap<std::any>;
+    using SharedData = UnorderedStringMap<std::any>;
 
     friend class PluginManager;
 

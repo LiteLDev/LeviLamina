@@ -2,17 +2,17 @@
 
 #include <mutex>
 
-#include "ll/api/utils/ErrorInfo.h"
-#include "ll/api/utils/FileUtils.h"
-#include "ll/api/utils/UnorderedStringMap.h"
+#include "ll/api/base/ErrorInfo.h"
+#include "ll/api/base/UnorderedStringMap.h"
+#include "ll/api/io/FileUtils.h"
 
 #include "ll/core/LeviLamina.h"
 
 #include "windows.h"
 
 using namespace ll::utils;
-using namespace ll::i18n_literals;
 using namespace ll::utils::string_utils;
+using namespace ll::i18n_literals;
 
 namespace fs = std::filesystem;
 
@@ -24,7 +24,7 @@ struct PluginManager::Impl {
     std::recursive_mutex                              mutex;
     std::vector<std::shared_ptr<Plugin>>              plugins;
     std::unordered_map<Handle, std::weak_ptr<Plugin>> handleMap;
-    utils::UnorderedStringMap<std::weak_ptr<Plugin>>  nameMap;
+    UnorderedStringMap<std::weak_ptr<Plugin>>         nameMap;
 };
 
 PluginManager::PluginManager() { mImpl = std::make_unique<Impl>(); }
@@ -130,7 +130,7 @@ auto PluginManager::loadPlugin(std::string_view pluginName) -> std::shared_ptr<P
     auto lib = LoadLibraryW(file_utils::u8path(manifest.entry).wstring().c_str());
     if (!lib) {
         ll::logger.error("Fail to load plugin <{}> ({})!", manifest.name, manifest.entry);
-        error_info::printException(error_info::getLastWinError());
+        error_info::printException(error_info::getWinLastError());
         return {};
     }
 

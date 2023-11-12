@@ -9,20 +9,14 @@
 
 #include "ll/api/utils/StringUtils.h"
 
-namespace ll::plugin {
+namespace ll {
 
-struct ParseError : std::runtime_error {
-    explicit ParseError(const std::string& what_arg) : std::runtime_error(what_arg) {}
-};
-
-namespace detail {
+namespace details {
 
 // Min version string length = 1(<major>) + 1(.) + 1(<minor>) + 1(.) + 1(<patch>) = 5.
 inline constexpr auto min_version_string_length = 5;
 
 constexpr bool is_digit(char c) noexcept { return c >= '0' && c <= '9'; }
-
-constexpr bool is_hyphen(char c) noexcept { return c == '-'; }
 
 constexpr bool is_plus(char c) noexcept { return c == '+'; }
 
@@ -64,7 +58,11 @@ struct from_chars_result : std::from_chars_result {
     }
 };
 
-} // namespace detail
+} // namespace details
+
+struct VersionParseError : std::runtime_error {
+    explicit VersionParseError(const std::string& what_arg) : std::runtime_error(what_arg) {}
+};
 
 struct PreRelease {
     std::vector<std::variant<std::string, uint16_t>> values;
@@ -96,15 +94,15 @@ struct PreRelease {
         return values.size() <=> other.values.size();
     }
 
-    constexpr detail::from_chars_result from_chars(const char* first, const char* last) noexcept {
+    constexpr details::from_chars_result from_chars(const char* first, const char* last) noexcept {
         auto begin = first;
-        while (first != last && !detail::is_plus(*first)) { first++; }
+        while (first != last && !details::is_plus(*first)) { first++; }
         std::string                   s{begin, first};
         std::vector<std::string_view> tokens;
         tokens = ll::utils::string_utils::splitByPattern(s, ".");
         for (const auto& token : tokens) {
             std::optional<std::uint16_t> value;
-            if (detail::from_chars(token.data(), token.data() + token.length(), value); value) {
+            if (details::from_chars(token.data(), token.data() + token.length(), value); value) {
                 values.emplace_back(value.value());
             } else {
                 values.emplace_back(std::string{token});
@@ -118,7 +116,7 @@ struct PreRelease {
     }
 
     constexpr PreRelease& from_string(std::string_view str) {
-        if (!from_string_noexcept(str)) { throw ParseError("Invalid version string."); }
+        if (!from_string_noexcept(str)) { throw VersionParseError("Invalid version string."); }
         return *this;
     }
 
@@ -176,16 +174,16 @@ struct Version {
 
     explicit constexpr Version(std::string_view str) : Version() { from_string(str); }
 
-    [[nodiscard]] constexpr detail::from_chars_result from_chars(const char* first, const char* last) noexcept {
-        if (first == nullptr || last == nullptr || (last - first) < detail::min_version_string_length) {
+    [[nodiscard]] constexpr details::from_chars_result from_chars(const char* first, const char* last) noexcept {
+        if (first == nullptr || last == nullptr || (last - first) < details::min_version_string_length) {
             return {first, std::errc::invalid_argument};
         }
         auto next = first;
-        if (next = detail::from_chars(next, last, major); detail::check_delimiter(next, last, '.')) {
-            if (next = detail::from_chars(++next, last, minor); detail::check_delimiter(next, last, '.')) {
-                if (next = detail::from_chars(++next, last, patch); next == last) { return {next, std::errc{}}; }
+        if (next = details::from_chars(next, last, major); details::check_delimiter(next, last, '.')) {
+            if (next = details::from_chars(++next, last, minor); details::check_delimiter(next, last, '.')) {
+                if (next = details::from_chars(++next, last, patch); next == last) { return {next, std::errc{}}; }
                 if (!next) { return {nullptr, std::errc::invalid_argument}; }
-                if (detail::check_delimiter(next, last, '-')) {
+                if (details::check_delimiter(next, last, '-')) {
                     PreRelease pre;
                     auto       result = pre.from_chars(++next, last);
                     if (!result) return result;
@@ -194,12 +192,12 @@ struct Version {
                     next       = result.ptr;
                     if (result && next == last) { return {next, std::errc{}}; }
                 }
-                if (detail::check_delimiter(next, last, '+')) {
+                if (details::check_delimiter(next, last, '+')) {
                     build = {++next, static_cast<size_t>(last - next)};
                     if (build->empty()) { return {nullptr, std::errc::invalid_argument}; }
                     next = last;
                     if (std::any_of(build->begin(), build->end(), [](char c) {
-                            return !detail::is_digit(c) && !detail::is_letter(c);
+                            return !details::is_digit(c) && !details::is_letter(c);
                         })) {
                         return {nullptr, std::errc::invalid_argument};
                     }
@@ -215,7 +213,7 @@ struct Version {
     }
 
     constexpr Version& from_string(std::string_view str) {
-        if (!from_string_noexcept(str)) { throw ParseError("Invalid version string."); }
+        if (!from_string_noexcept(str)) { throw VersionParseError("Invalid version string."); }
         return *this;
     }
 
@@ -261,7 +259,7 @@ inline J serialize(Version const& ver) {
 }
 template <class J>
 inline void deserialize(Version& ver, J const& j) {
-    if (j.is_string()) { ver.from_string(j.get<std::string>()); }
+    if (j.is_string()) { ver.from_string(j.template get<std::string>()); }
 }
 
 namespace literals {
@@ -272,4 +270,4 @@ namespace literals {
 }
 } // namespace literals
 
-} // namespace ll::plugin
+} // namespace ll

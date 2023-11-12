@@ -1,5 +1,5 @@
 #include "ll/api/Logger.h"
-#include "ll/api/utils/Base64.h"
+#include "ll/api/base/Base64.h"
 #include "ll/api/utils/StringUtils.h"
 #include "mc/common/ColorFormat.h"
 #include "mc/deps/core/mce/Color.h"
@@ -61,7 +61,7 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
             res = res.substr(1, res.size() - 2);
         } catch (...) {
             base64 = true;
-            res    = "\"" + ll::utils::base64::encode(str) + "\"";
+            res    = "\"" + ll::base64::encode(str) + "\"";
         }
     }
 

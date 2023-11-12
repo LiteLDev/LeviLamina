@@ -1,6 +1,6 @@
 #include "ll/api/schedule/Task.h"
 #include "ll/api/Logger.h"
-#include "ll/api/utils/ErrorInfo.h"
+#include "ll/api/base/ErrorInfo.h"
 
 namespace ll::schedule {
 std::atomic_ullong TaskId{0};

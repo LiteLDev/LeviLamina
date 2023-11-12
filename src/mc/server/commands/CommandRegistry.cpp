@@ -1,6 +1,5 @@
 #include "mc/server/commands/CommandRegistry.h"
-#include "ll/api/service/GlobalService.h"
-#include "ll/api/utils/ErrorInfo.h"
+#include "ll/api/base/ErrorInfo.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/server/commands/CommandParameterData.h"

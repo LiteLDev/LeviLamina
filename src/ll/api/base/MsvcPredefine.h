@@ -1,6 +1,6 @@
 #pragma once
-// MSVC has customized some functions and classes inside the compiler, but they are not included in IntelLisense. This
-// header file is only used for IntelLisense.
+// MSVC has customized some functions and classes inside the compiler, but they are not included in IntelliSense. This
+// header file is only used for IntelliSense.
 #if defined(__INTELLISENSE__) || defined(__clang__)
 // NOLINTBEGIN
 #pragma pack(push, ehdata, 4)

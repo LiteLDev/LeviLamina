@@ -3,7 +3,7 @@
 #include <string>
 #include <unordered_map>
 
-namespace ll::utils {
+namespace ll {
 
 namespace details {
 template <typename... Bases>
@@ -22,4 +22,4 @@ using transparent_string_hash = overload<std::hash<std::string>, std::hash<std::
 template <typename T>
 using UnorderedStringMap = std::unordered_map<std::string, T, details::transparent_string_hash, std::equal_to<>>;
 
-} // namespace ll::utils
+} // namespace ll

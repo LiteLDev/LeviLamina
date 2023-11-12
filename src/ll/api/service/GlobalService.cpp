@@ -13,8 +13,8 @@
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 #include "mc/world/systems/NetworkSystem.h"
 
+#include "ll/api/base/Hash.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/utils/Hash.h"
 #include "ll/core/LeviLamina.h"
 
 template <ll::IsGlobalService T>

@@ -3,7 +3,7 @@
 #include "dyncall/dyncall_callback.h"
 
 #include "ll/api/Logger.h"
-#include "ll/api/utils/ErrorInfo.h"
+#include "ll/api/base/ErrorInfo.h"
 #include "ll/core/Config.h"
 #include "ll/core/Levilamina.h"
 

@@ -2,8 +2,8 @@
 
 #include "fmt/color.h"
 
-#include "ll/api/utils/FileUtils.h"
-#include "ll/api/utils/Hash.h"
+#include "ll/api/base/Hash.h"
+#include "ll/api/io/FileUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/Config.h"
 

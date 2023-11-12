@@ -6,8 +6,8 @@
 #include <type_traits>
 #include <vector>
 
+#include "ll/api/base/FixedString.h"
 #include "ll/api/base/Macro.h"
-#include "ll/api/utils/FixedString.h"
 
 namespace ll::memory {
 

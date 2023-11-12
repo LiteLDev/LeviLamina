@@ -2,7 +2,7 @@
 
 #include "ll/api/Logger.h"
 #include "ll/api/ServerInfo.h"
-#include "ll/api/utils/ErrorInfo.h"
+#include "ll/api/base/ErrorInfo.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"
 #include "ll/core/Config.h"
@@ -44,7 +44,7 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
     ));
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("ll.crashLogger.error.cannotCreateDaemonProcess"_tr);
-        error_info::printException(error_info::getLastWinError(), crashLogger);
+        error_info::printException(error_info::getWinLastError(), crashLogger);
         return false;
     }
 

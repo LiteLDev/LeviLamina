@@ -1,12 +1,12 @@
 #include "mc/server/SimulatedPlayer.h"
+#include "ll/api/base/Random.h"
 #include "ll/api/service/GlobalService.h"
-#include "ll/api/utils/random.h"
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/server/ServerLevel.h"
 
-using namespace ll::utils;
+using namespace ll;
 
 optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     std::string const& name,

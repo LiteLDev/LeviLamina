@@ -6,10 +6,10 @@
 
 #include "ll/api/Logger.h"
 #include "ll/api/ServerInfo.h"
+#include "ll/api/base/ErrorInfo.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/plugin/PluginManager.h"
 #include "ll/api/service/GlobalService.h"
-#include "ll/api/utils/ErrorInfo.h"
 #include "ll/api/utils/StringUtils.h"
 
 #include "ll/core/Config.h"
@@ -207,7 +207,7 @@ void setupBugFixes() {
 }
 
 void leviLaminaMain() {
-    error_info::setThisThreadSehTranslator();
+    error_info::setSehTranslator();
 
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);

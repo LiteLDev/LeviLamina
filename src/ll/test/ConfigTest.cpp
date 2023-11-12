@@ -7,7 +7,7 @@
 
 #include "nlohmann/json.hpp"
 
-#include "ll/api/plugin/Version.h"
+#include "ll/api/base/Version.h"
 
 // #include "ll/api/schedule/Scheduler.h"
 // #include "ll/api/service/GlobalService.h"
@@ -24,7 +24,7 @@ class TestClass {
 public:
     int version = 2;
 
-    ll::plugin::Version ver;
+    ll::Version ver;
 
     bool someFlag = false;
     bool eeeeFlag = true;

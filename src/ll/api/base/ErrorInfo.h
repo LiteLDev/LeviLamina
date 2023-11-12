@@ -8,12 +8,13 @@
 
 #include "mc/common/wrapper/optional_ref.h"
 
-#include "ll/api/utils/MsvcPredefine.h"
+#include "ll/api/base/MsvcPredefine.h"
 
 namespace ll {
 class Logger;
 }
-struct _EXCEPTION_RECORD;
+
+struct _EXCEPTION_RECORD; // NOLINT(bugprone-reserved-identifier)
 
 namespace ll::utils::error_info {
 
@@ -28,8 +29,8 @@ public:
 };
 
 struct UntypedException {
-
-    static constexpr uint exceptionCodeOfCpp = ('msc' | 0xE0000000);
+    static constexpr uint msc                = 0x6D7363; // 'msc'
+    static constexpr uint exceptionCodeOfCpp = (msc | 0xE0000000);
 
     LLNDAPI explicit UntypedException(_EXCEPTION_RECORD const& er);
 
@@ -65,13 +66,14 @@ inline void translateSEHtoCE(uint ntStatus, struct _EXCEPTION_POINTERS* expPtr) 
     throw seh_exception(ntStatus, expPtr);
 }
 
-LLAPI void setThisThreadSehTranslator();
+// only set for the current thread
+LLAPI void setSehTranslator();
 
 LLNDAPI std::error_category const& u8system_category() noexcept;
 
 LLNDAPI std::error_category const& ntstatus_category() noexcept;
 
-LLNDAPI std::system_error getLastWinError() noexcept;
+LLNDAPI std::system_error getWinLastError() noexcept;
 
 LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr);
 

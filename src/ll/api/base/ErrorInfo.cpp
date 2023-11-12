@@ -1,4 +1,5 @@
-#include "ll/api/utils/ErrorInfo.h"
+#include "ll/api/base/ErrorInfo.h"
+
 #include "ll/api/memory/Memory.h"
 #include "ll/api/plugin/PluginManager.h"
 #include "ll/api/utils/StringUtils.h"
@@ -94,11 +95,11 @@ seh_exception::seh_exception(uint ntStatus, void* expPtr)
 : std::system_error(std::error_code{(int)ntStatus, ntstatus_category()}),
   expPtr(expPtr) {}
 
-void setThisThreadSehTranslator() { _set_se_translator(error_info::translateSEHtoCE); }
+void setSehTranslator() { _set_se_translator(error_info::translateSEHtoCE); }
 
 void* seh_exception::getExceptionPointer() const noexcept { return expPtr; }
 
-std::system_error getLastWinError() noexcept { return std::error_code{(int)GetLastError(), u8system_category()}; }
+std::system_error getWinLastError() noexcept { return std::error_code{(int)GetLastError(), u8system_category()}; }
 
 std::string makeExceptionString(std::exception_ptr ePtr) {
     if (!ePtr) { throw std::bad_exception(); }

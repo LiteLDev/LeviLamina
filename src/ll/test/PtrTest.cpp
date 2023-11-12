@@ -7,7 +7,7 @@
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/material/Material.h"
 
-#include "ll/api/utils/ErrorInfo.h"
+#include "ll/api/base/ErrorInfo.h"
 #include "ll/core/LeviLamina.h"
 
 auto test() {
@@ -48,7 +48,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
     std::cout << "type_hash  " << entt::type_hash<FlagComponent<ExitFromPassengerFlag>>::value() << std::endl;
 
-    ll::utils::error_info::printException(ll::utils::error_info::getLastWinError());
+    ll::utils::error_info::printException(ll::utils::error_info::getWinLastError());
 
     try {
         char* pp = (char*)(0x123);
@@ -61,7 +61,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         std::cout << "b = " << b << std::endl;
     } catch (...) {
         ll::utils::error_info::printCurrentException();
-        ll::utils::error_info::printException(ll::utils::error_info::getLastWinError());
+        ll::utils::error_info::printException(ll::utils::error_info::getWinLastError());
     }
 
     try {

@@ -1,6 +1,6 @@
+#include "ll/api/base/Hash.h"
 #include "ll/api/chrono/GameChrono.h"
 #include "ll/api/i18n/I18nAPI.h"
-#include "ll/api/utils/Hash.h"
 #include "mc/nbt/ByteTag.h"
 #include "mc/nbt/DoubleTag.h"
 #include "mc/nbt/FloatTag.h"
