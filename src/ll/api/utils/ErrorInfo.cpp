@@ -1,13 +1,22 @@
 #include "ll/api/utils/ErrorInfo.h"
+#include "ll/api/memory/Memory.h"
+#include "ll/api/plugin/PluginManager.h"
 #include "ll/api/utils/StringUtils.h"
-
 #include "ll/core/LeviLamina.h"
-
-#include "errhandlingapi.h"
 
 #include "windows.h"
 
 namespace ll::utils::error_info {
+
+UntypedException::UntypedException(const EXCEPTION_RECORD& er)
+: exception_object(reinterpret_cast<void*>(er.ExceptionInformation[1])),
+  exc(&er) {
+    if (exc->NumberParameters >= 3) {
+        handle    = (exc->NumberParameters >= 4) ? (void*)exc->ExceptionInformation[3] : nullptr;
+        throwInfo = (RealInternal::ThrowInfo const*)exc->ExceptionInformation[2];
+        if (throwInfo) cArray = rva2va<_CatchableTypeArray const*>(throwInfo->pCatchableTypeArray);
+    }
+}
 
 template <class T>
 static std::exception_ptr getNested(T const& e) {
@@ -25,7 +34,7 @@ static std::exception_ptr getNested(T const& e) {
 struct u8system_category : public std::_System_error_category {
     constexpr u8system_category() noexcept : _System_error_category() {}
     [[nodiscard]] std::string message(int errCode) const override {
-        const std::_System_error_message msg(static_cast<unsigned long>(errCode));
+        const std::_System_error_message msg(static_cast<ulong>(errCode));
         if (msg._Length) {
             std::string res{string_utils::str2str({msg._Str, msg._Length})};
             if (res.ends_with('\n')) { res.pop_back(); }
@@ -83,16 +92,11 @@ std::error_category const& ntstatus_category() noexcept {
 
 seh_exception::seh_exception(uint ntStatus, void* expPtr)
 : std::system_error(std::error_code{(int)ntStatus, ntstatus_category()}),
-  ntStatus(ntStatus),
   expPtr(expPtr) {}
 
-uint seh_exception::getNtStatus() const noexcept { return ntStatus; }
+void setThisThreadSehTranslator() { _set_se_translator(error_info::translateSEHtoCE); }
 
 void* seh_exception::getExceptionPointer() const noexcept { return expPtr; }
-
-void setSehTranslator() noexcept {
-    _set_se_translator([](auto ntStatus, auto expPtr) { throw seh_exception(ntStatus, expPtr); });
-}
 
 std::system_error getLastWinError() noexcept { return std::error_code{(int)GetLastError(), u8system_category()}; }
 
@@ -122,8 +126,14 @@ nextNest:
     } catch (...) {
         auto unkExc = std::current_exception();
         if (unkExc) {
-            auto& realType  = *(std::shared_ptr<const EXCEPTION_RECORD>*)(&unkExc);
-            res            += ntstatus_category().message((int)realType->ExceptionCode);
+            auto& realType = *(std::shared_ptr<const EXCEPTION_RECORD>*)(&unkExc);
+
+            res += fmt::format(
+                "[0x{:0>8X}:{}] {}",
+                (uint)realType->ExceptionCode,
+                ntstatus_category().name(),
+                ntstatus_category().message((int)realType->ExceptionCode)
+            );
         } else {
             res += "unknown exception type error";
         }
@@ -140,8 +150,41 @@ nextNest:
 }
 
 void printCurrentException(optional_ref<ll::Logger> l, std::exception_ptr const& e) noexcept {
+    auto& rlogger = l.value_or(logger);
     try {
-        l.value_or(logger).error(makeExceptionString(e));
-    } catch (...) { l.value_or(logger).error("unknown error"); }
+        auto& realType = *(std::shared_ptr<const EXCEPTION_RECORD>*)(&e);
+
+        if (realType) {
+            std::lock_guard lock(Logger::loggerMutex);
+            if (realType->ExceptionCode == UntypedException::exceptionCodeOfCpp) {
+                try {
+                    UntypedException exc{*realType};
+                    std::string      handleName;
+                    if (auto p = plugin::PluginManager::getInstance().findPlugin(exc.handle).lock(); p) {
+                        handleName = p->getManifest().name;
+                    } else {
+                        wchar_t buffer[MAX_PATH];
+                        auto    size = GetModuleFileNameW((HMODULE)exc.handle, buffer, MAX_PATH);
+                        if (size) {
+                            handleName =
+                                string_utils::u8str2str(std::filesystem::path({buffer, size}).stem().u8string());
+                        }
+                    }
+                    auto expTypeName =
+                        exc.getNumCatchableTypes() > 0 ? exc.getTypeInfo(0)->name() : "unknown exception";
+                    if (expTypeName == typeid(seh_exception).name()) {
+                        rlogger.error("Translated Seh Exception, from <{}>:", handleName);
+                    } else {
+                        rlogger.error("C++ Exception: {}, from <{}>:", expTypeName, handleName);
+                    }
+                } catch (...) {}
+            } else {
+                rlogger.error("Raw Seh Exception:");
+            }
+            rlogger.error(makeExceptionString(e));
+            return;
+        }
+    } catch (...) {}
+    rlogger.error("unknown error");
 }
 } // namespace ll::utils::error_info

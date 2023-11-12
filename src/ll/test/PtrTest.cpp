@@ -51,7 +51,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     ll::utils::error_info::printException(ll::utils::error_info::getLastWinError());
 
     try {
-        char* pp = nullptr;
+        char* pp = (char*)(0x123);
         *pp      = 'a';
     } catch (...) { ll::utils::error_info::printCurrentException(); }
 
