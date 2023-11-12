@@ -28,17 +28,17 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     s.add<RepeatTask>(100_tick, [&] {
         schedulelogger.info(
             "hi, 100_tick life {} ramdom {}",
-            ll::gamechrono::GameTimeClock::now().time_since_epoch(),
+            ll::chrono::GameTimeClock::now().time_since_epoch(),
             ll::utils::random::rand<uint>()
         );
     });
 
     s2.add<DelayTask>(1_tick, [&] {
-        schedulelogger.info("try GameTime {}", ll::gamechrono::GameTimeClock::now().time_since_epoch());
+        schedulelogger.info("try GameTime {}", ll::chrono::GameTimeClock::now().time_since_epoch());
         s3.add<RepeatTask>(5s, [&] {
             schedulelogger.info(
                 "hi, 5s       gt   {} ramdom {}",
-                ll::gamechrono::GameTimeClock::now().time_since_epoch(),
+                ll::chrono::GameTimeClock::now().time_since_epoch(),
                 ll::utils::random::rand<double>()
             );
         });
@@ -48,7 +48,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         std::lock_guard lock(ll::Logger::loggerMutex);
         schedulelogger.info(
             "hi, 0.1min   game {} ramdom {}",
-            ll::gamechrono::GameTimeClock::now().time_since_epoch(),
+            ll::chrono::GameTimeClock::now().time_since_epoch(),
             ll::utils::random::rand<int64>()
         );
         auto ramdom  = ll::utils::random::rand<int64>();

@@ -1,8 +1,8 @@
 #include "ModalForm.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/form/FormHandler.h"
-#include "mc/network/packet/ModalFormRequestPacket.h"
 #include "ll/core/form/FormImplBase.h"
+#include "mc/network/packet/ModalFormRequestPacket.h"
 
 namespace ll::form {
 

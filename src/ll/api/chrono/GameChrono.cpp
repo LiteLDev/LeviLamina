@@ -1,11 +1,12 @@
 #include "ll/api/chrono/GameChrono.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/GlobalService.h"
+
 #include "mc/server/ServerLevel.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/level/Tick.h"
 
-namespace ll::gamechrono {
+namespace ll::chrono::game_chrono {
 
 std::atomic_llong servertime{0};
 
@@ -21,4 +22,4 @@ GameTimeClock::time_point GameTimeClock::now() noexcept {
     return time_point(duration((int64)(ll::Global<Level>->getCurrentTick().t)));
 }
 
-} // namespace ll::gamechrono
+} // namespace ll::chrono::game_chrono

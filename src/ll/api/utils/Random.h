@@ -30,13 +30,13 @@ inline T rand() {
         uintmax_t u;
         T         f;
     } x;
-    auto r = rand<uintmax_t>();
+    auto r  = rand<uintmax_t>();
     x.f     = std::numeric_limits<T>::max();
-    r       &= x.u;
+    r      &= x.u;
     x.f     = std::numeric_limits<T>::infinity();
-    r       &= ~x.u;
+    r      &= ~x.u;
     x.f     = static_cast<T>(1);
-    x.u |= r;
+    x.u    |= r;
     /* Trick from MTGP: generate a uniformly distributed
     float number in [1,2) and subtract 1. */
     return x.f - static_cast<T>(1);
