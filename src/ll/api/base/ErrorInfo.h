@@ -62,7 +62,7 @@ struct UntypedException {
     _CatchableTypeArray const*     cArray    = nullptr;
 };
 
-inline void translateSEHtoCE(uint ntStatus, struct _EXCEPTION_POINTERS* expPtr) {
+[[noreturn]] inline void translateSEHtoCE(uint ntStatus, struct _EXCEPTION_POINTERS* expPtr) {
     throw seh_exception(ntStatus, expPtr);
 }
 

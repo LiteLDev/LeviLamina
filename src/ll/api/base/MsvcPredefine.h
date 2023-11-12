@@ -1,4 +1,5 @@
 #pragma once
+#include "ll/api/base/StdInt.h"
 // MSVC has customized some functions and classes inside the compiler, but they are not included in IntelliSense. This
 // header file is only used for IntelliSense.
 #if defined(__INTELLISENSE__) || defined(__clang__)
@@ -6,9 +7,9 @@
 #pragma pack(push, ehdata, 4)
 
 typedef struct _PMD {
-    int mdisp;
-    int pdisp;
-    int vdisp;
+    int mdisp; // member displacement
+    int pdisp; // vbtable displacement
+    int vdisp; // displacement inside vbtable
 } _PMD;
 
 typedef void (*_PMFN)(void);
@@ -57,10 +58,10 @@ extern "C" void __cdecl __CxxUnregisterExceptionObject(void* storage, int rethro
 #pragma pack(push, rttidata, 4)
 
 typedef const struct _s__RTTIBaseClassDescriptor {
-    _TypeDescriptor* pTypeDescriptor;
-    uint32_t         numContainedBases;
-    _PMD             where;
-    uint32_t         attributes;
+    _TypeDescriptor* pTypeDescriptor;   // type descriptor of the class
+    uint             numContainedBases; // number of nested classes following in the Base Class Array
+    _PMD             where;             // pointer-to-member displacement info
+    uint             attributes;        // flags, usually 0
 } __RTTIBaseClassDescriptor;
 
 #pragma warning(disable : 4200)
@@ -70,23 +71,29 @@ typedef const struct _s__RTTIBaseClassArray {
 #pragma warning(default : 4200)
 
 typedef const struct _s__RTTIClassHierarchyDescriptor {
-    uint32_t              signature;
-    uint32_t              attributes;
-    uint32_t              numBaseClasses;
+    uint                  signature;      // always zero?
+    uint                  attributes;     // bit 0 set = multiple inheritance, bit 1 set = virtual inheritance
+    uint                  numBaseClasses; // number of classes in pBaseClassArray
     __RTTIBaseClassArray* pBaseClassArray;
 } __RTTIClassHierarchyDescriptor;
 
 typedef const struct _s__RTTICompleteObjectLocator {
-    uint32_t                        signature;
-    uint32_t                        offset;
-    uint32_t                        cdOffset;
-    _TypeDescriptor*                pTypeDescriptor;
-    __RTTIClassHierarchyDescriptor* pClassDescriptor;
+    uint                            signature;        // always zero ?
+    uint                            offset;           // offset of this vtable in the complete class
+    uint                            cdOffset;         // constructor displacement offset
+    _TypeDescriptor*                pTypeDescriptor;  // TypeDescriptor of the complete class
+    __RTTIClassHierarchyDescriptor* pClassDescriptor; // describes inheritance hierarchy
 } __RTTICompleteObjectLocator;
 
 typedef const class type_info& __RTtypeidReturnType;
 
-extern "C" void* __cdecl __RTDynamicCast(void*, long, void*, void*, int);
+extern "C" void* __cdecl __RTDynamicCast(
+    void const*            ptr,
+    long                   offset,
+    _TypeDescriptor const* fromType,
+    _TypeDescriptor const* toType,
+    int                    isReference
+);
 extern "C" void* __cdecl __RTtypeid(void*);
 extern "C" void* __cdecl __RTCastToVoid(void*);
 
@@ -99,17 +106,17 @@ namespace RealInternal {
 #if defined(_WIN64) && !(defined(__INTELLISENSE__) || defined(__clang__))
 #pragma pack(push, 4)
 struct CatchableType {
-    uint32_t properties;
-    uint32_t pType;
-    _PMD     thisDisplacement;
-    uint32_t sizeOrOffset;
-    uint32_t copyFunction;
+    uint properties;
+    uint pType;
+    _PMD thisDisplacement;
+    uint sizeOrOffset;
+    uint copyFunction;
 };
 struct ThrowInfo {
-    uint32_t attributes;
-    uint32_t pmfnUnwind;
-    uint32_t pForwardCompat;
-    uint32_t pCatchableTypeArray;
+    uint attributes;
+    uint pmfnUnwind;
+    uint pForwardCompat;
+    uint pCatchableTypeArray;
 };
 #pragma pack(pop)
 #else
