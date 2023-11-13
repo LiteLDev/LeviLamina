@@ -77,9 +77,10 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         }
     } catch (...) {
         ll::utils::error_info::printCurrentException();
-
+#if _HAS_CXX23
         auto stack = std::stacktrace::current();
         ll::logger.debug("\n{}", ll::utils::stacktrace_utils::toString(stack));
+#endif
     }
 
     // auto& map        = BlockTypeRegistry::$mBlockLookupMap();
