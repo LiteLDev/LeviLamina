@@ -3,6 +3,10 @@
 #include <system_error>
 #include <typeinfo>
 
+#if _HAS_CXX23
+#include <stacktrace>
+#endif
+
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 
@@ -15,6 +19,7 @@ class Logger;
 }
 
 struct _EXCEPTION_RECORD; // NOLINT(bugprone-reserved-identifier)
+struct _CONTEXT;          // NOLINT(bugprone-reserved-identifier)
 
 namespace ll::utils::error_info {
 
@@ -31,6 +36,12 @@ public:
 struct UntypedException {
     static constexpr uint msc                = 0x6D7363; // 'msc'
     static constexpr uint exceptionCodeOfCpp = (msc | 0xE0000000);
+
+    void*                          exception_object;
+    _EXCEPTION_RECORD const*       exc;
+    void*                          handle    = nullptr;
+    RealInternal::ThrowInfo const* throwInfo = nullptr;
+    _CatchableTypeArray const*     cArray    = nullptr;
 
     LLNDAPI explicit UntypedException(_EXCEPTION_RECORD const& er);
 
@@ -54,12 +65,17 @@ struct UntypedException {
         return reinterpret_cast<T>(addr);
 #endif
     }
+};
 
-    void*                          exception_object;
-    _EXCEPTION_RECORD const*       exc;
-    void*                          handle    = nullptr;
-    RealInternal::ThrowInfo const* throwInfo = nullptr;
-    _CatchableTypeArray const*     cArray    = nullptr;
+class SymbolLoader {
+    void* handle;
+
+public:
+    SymbolLoader(SymbolLoader const&)            = delete;
+    SymbolLoader& operator=(SymbolLoader const&) = delete;
+
+    LLAPI SymbolLoader();
+    LLAPI ~SymbolLoader();
 };
 
 [[noreturn]] inline void translateSEHtoCE(uint ntStatus, struct _EXCEPTION_POINTERS* expPtr) {
@@ -74,6 +90,16 @@ LLNDAPI std::error_category const& u8system_category() noexcept;
 LLNDAPI std::error_category const& ntstatus_category() noexcept;
 
 LLNDAPI std::system_error getWinLastError() noexcept;
+
+LLNDAPI _EXCEPTION_RECORD& current_exception() noexcept;
+LLNDAPI _CONTEXT&          current_exception_context() noexcept;
+
+#if _HAS_CXX23
+LLNDAPI std::stacktrace stacktraceFromCurrExc(_CONTEXT& = current_exception_context());
+
+LLNDAPI std::string makeStacktraceEntryString(std::stacktrace_entry const&);
+LLNDAPI std::string makeStacktraceString(std::stacktrace const&);
+#endif
 
 LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr);
 

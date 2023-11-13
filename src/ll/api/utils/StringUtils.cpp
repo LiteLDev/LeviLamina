@@ -247,7 +247,8 @@ std::string tou8str(std::string_view str) {
     if (isu8str(str)) {
         return std::string{str};
     } else {
-        return str2str(str);
+        auto res = str2str(str);
+        return isu8str(res) ? res : "unknown codepage";
     }
 }
 

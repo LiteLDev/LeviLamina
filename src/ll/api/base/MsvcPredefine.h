@@ -7,9 +7,9 @@
 #pragma pack(push, ehdata, 4)
 
 typedef struct _PMD {
-    int mdisp; // member displacement
-    int pdisp; // vbtable displacement
-    int vdisp; // displacement inside vbtable
+    int mdisp; // Offset of intended data within base
+    int pdisp; // Displacement to virtual base pointer
+    int vdisp; // Index within vbTable to offset of base
 } _PMD;
 
 typedef void (*_PMFN)(void);
@@ -17,40 +17,58 @@ typedef void (*_PMFN)(void);
 #pragma warning(disable : 4200)
 #pragma pack(push, _TypeDescriptor, 8)
 typedef struct _TypeDescriptor {
-    const void* pVFTable;
-    void*       spare;
-    char        name[];
+    const void* pVFTable; // Field overloaded by RTTI
+    void*       spare;    // reserved, possible for RTTI
+    char        name[];   // The decorated name of the type; 0 terminated.
 } _TypeDescriptor;
 #pragma pack(pop, _TypeDescriptor)
 #pragma warning(default : 4200)
 
 typedef const struct _s__CatchableType {
-    unsigned int     properties;
-    _TypeDescriptor* pType;
-    _PMD             thisDisplacement;
-    int              sizeOrOffset;
-    _PMFN            copyFunction;
+    unsigned int     properties;       // Catchable Type properties (Bit field)
+    _TypeDescriptor* pType;            // Image relative offset of TypeDescriptor
+    _PMD             thisDisplacement; // Pointer to instance of catch type within thrown object.
+    int   sizeOrOffset; // Size of simple-type object or offset into buffer of 'this' pointer for catch object
+    _PMFN copyFunction; // Copy constructor or CC-closure
 } _CatchableType;
 
 #pragma warning(disable : 4200)
 typedef const struct _s__CatchableTypeArray {
     int             nCatchableTypes;
-    _CatchableType* arrayOfCatchableTypes[];
+    _CatchableType* arrayOfCatchableTypes[]; // Image relative offset of Catchable Types
 } _CatchableTypeArray;
 #pragma warning(default : 4200)
 
 typedef const struct _s__ThrowInfo {
-    unsigned int attributes;
-    _PMFN        pmfnUnwind;
-    int(__cdecl* pForwardCompat)(...);
-    _CatchableTypeArray* pCatchableTypeArray;
+    unsigned int attributes;                  // Throw Info attributes (Bit field)
+    _PMFN        pmfnUnwind;                  // Destructor to call when exception has been handled or aborted
+    int(__cdecl* pForwardCompat)(...);        // Image relative offset of Forward compatibility frame handler
+    _CatchableTypeArray* pCatchableTypeArray; // Image relative offset of CatchableTypeArray
 } _ThrowInfo;
 
+//
+// Here's how to throw:
+// _ThrowInfo is the name of the type that is 'pre-injected' into the
+// since this prototype is known to the FE along with the pre-injected
+// types, it has to match exactly.
+//
 __declspec(noreturn) extern "C" void __stdcall _CxxThrowException(void* pExceptionObject, _ThrowInfo* pThrowInfo);
 extern "C" int __cdecl __CxxExceptionFilter(void*, void*, int, void*);
+
+// Returns true if the object is really a C++ exception
+// If it is, stores the previous exception in *storage, and saves the current one
+// This is needed to keep track of the current exception object (used for rethrow & destruction)
 extern "C" int __cdecl __CxxRegisterExceptionObject(void* exception, void* storage);
+
+// Returns true if exception is a C++ rethrown exception
+// This is needed, so Unregister can know whether or not to destroy the object
 extern "C" int __cdecl __CxxDetectRethrow(void* exception);
+
+// Returns the byte count of stack space required to store the exception info
 extern "C" int __cdecl __CxxQueryExceptionSize(void);
+
+// Pops the current exception, restoring the previous one from *storage
+// This detects whether or not the exception object needs to be destroyed
 extern "C" void __cdecl __CxxUnregisterExceptionObject(void* storage, int rethrow);
 
 #pragma pack(pop, ehdata)

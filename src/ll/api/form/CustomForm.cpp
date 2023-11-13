@@ -340,6 +340,8 @@ protected:
 
 CustomForm::CustomForm(std::string const& title) : impl(std::make_unique<CustomFormImpl>(title)) {}
 
+CustomForm::~CustomForm() = default;
+
 CustomForm& CustomForm::setTitle(std::string const& title) {
     impl->setTitle(title);
     return *this;

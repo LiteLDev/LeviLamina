@@ -99,9 +99,9 @@ Logger::Logger(std::string_view title)
       5,
       {
         fmt::fg(fmt::color::light_blue),
-        fmt::fg(fmt::color::lemon_chiffon),
-        {},
-        fmt::emphasis::italic,
+        fmt::fg(fmt::color::light_golden_rod_yellow),
+        fmt::fg(fmt::color::light_golden_rod_yellow),
+        fmt::fg(fmt::color::light_golden_rod_yellow) | fmt::emphasis::italic,
         }
 }),
   info(OutputStream{

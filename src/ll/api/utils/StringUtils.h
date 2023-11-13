@@ -94,7 +94,7 @@ intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero
         hex += hexStr[upperCase][x % 16];
         if (addSpace) hex += ' ';
     }
-    if (addSpace) hex.pop_back();
+    if (addSpace && hex.ends_with(' ')) hex.pop_back();
     return hex;
 }
 

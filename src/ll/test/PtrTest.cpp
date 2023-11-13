@@ -59,29 +59,34 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         int a = 0;
         int b = 2 / a;
         std::cout << "b = " << b << std::endl;
-    } catch (...) {
-        ll::utils::error_info::printCurrentException();
-        ll::utils::error_info::printException(ll::utils::error_info::getWinLastError());
-    }
-
+    } catch (...) { ll::utils::error_info::printCurrentException(); }
+#if _HAS_CXX23
+    static ll::utils::error_info::SymbolLoader sl{};
+#endif
     try {
         try {
             std::string s{"nonexistent.file"};
             try {
                 std::ifstream file(s);
                 file.exceptions(std::ios_base::failbit);
-            } catch (...) { std::throw_with_nested(std::runtime_error("Couldn't open " + s)); }
+            } catch (...) {
+#if _HAS_CXX23
+                auto stack = ll::utils::error_info::stacktraceFromCurrExc();
+                ll::logger.debug("\n{}", ll::utils::error_info::makeStacktraceString(stack));
+#endif
+                std::throw_with_nested(std::runtime_error("Couldn't open " + s));
+            }
         } catch (...) {
             std::throw_with_nested(std::system_error(std::error_code{1, std::generic_category()}, "run() failed"));
         }
     } catch (...) { ll::utils::error_info::printCurrentException(); }
 
-    auto& map        = BlockTypeRegistry::$mBlockLookupMap();
-    map["test:test"] = BlockTypeRegistry::lookupByName("minecraft:stone");
+    // auto& map        = BlockTypeRegistry::$mBlockLookupMap();
+    // map["test:test"] = BlockTypeRegistry::lookupByName("minecraft:stone");
 
-    auto ptr = BlockTypeRegistry::lookupByName("test:test");
+    // auto ptr = BlockTypeRegistry::lookupByName("test:test");
 
-    std::clog << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
-    std::cout << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
+    // std::clog << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
+    // std::cout << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
     origin();
 }

@@ -9,14 +9,14 @@ namespace ll::form {
 class SimpleForm : public Form {
 
     class SimpleFormImpl;
-    std::unique_ptr<SimpleFormImpl> impl{};
+    std::unique_ptr<SimpleFormImpl> impl;
 
 public:
     using Callback       = std::function<void(Player&, int)>;
     using ButtonCallback = std::function<void(Player&)>;
 
     LLNDAPI explicit SimpleForm(std::string const& title, std::string const& content = "");
-    ~SimpleForm() override = default;
+    LLAPI ~SimpleForm() override;
 
     LLAPI SimpleForm& setTitle(std::string const& title);
 

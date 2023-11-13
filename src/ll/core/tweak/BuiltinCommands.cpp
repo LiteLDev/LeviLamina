@@ -180,10 +180,10 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
         size_t width = 10;
         for (auto& [k, v] : outs) { width = std::max(width, k.length()); }
         for (auto& [k, v] : outs) {
-            oss << "- §l" << std::setw((int64)width) << std::left << k << "§r: " << v << std::endl;
+            oss << "- §l" << std::setw((int64)width) << std::left << k << "§r: " << v << '\n';
         }
         auto text = oss.str();
-        text.pop_back();
+        if (text.ends_with('\n')) { text.pop_back(); }
         output.success(text, {});
     } else {
         output.trError("ll.cmd.pluginInfo.error.pluginNotFound", pluginName);

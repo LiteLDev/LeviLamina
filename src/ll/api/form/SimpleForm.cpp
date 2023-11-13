@@ -112,6 +112,8 @@ protected:
 SimpleForm::SimpleForm(std::string const& title, std::string const& content)
 : impl(std::make_unique<SimpleFormImpl>(title, content)) {}
 
+SimpleForm::~SimpleForm() = default;
+
 SimpleForm& SimpleForm::setTitle(std::string const& title) {
     impl->setTitle(title);
     return *this;

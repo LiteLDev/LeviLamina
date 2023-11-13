@@ -7,6 +7,10 @@
 
 #include "windows.h"
 
+#include "dbghelp.h"
+#pragma comment(lib, "dbghelp.lib")
+// #include "Psapi.h"
+
 namespace ll::utils::error_info {
 
 UntypedException::UntypedException(const EXCEPTION_RECORD& er)
@@ -99,7 +103,120 @@ void setSehTranslator() { _set_se_translator(error_info::translateSEHtoCE); }
 
 void* seh_exception::getExceptionPointer() const noexcept { return expPtr; }
 
+SymbolLoader::SymbolLoader() : handle(GetCurrentProcess()) {
+
+    // wchar_t      buffer[MAX_PATH];
+    // auto         size = GetModuleFileNameExW(handle, nullptr, buffer, MAX_PATH);
+    // std::wstring symbolPath;
+    // if (size) {
+    //     auto path  = std::filesystem::path({buffer, size}).parent_path();
+    //     symbolPath = path.wstring();
+    //     logger.debug("emm: {}", string_utils::wstr2str(symbolPath));
+    // }
+
+    // SymInitializeW(handle, symbolPath.c_str(), true);
+
+    SymInitializeW(handle, nullptr, true);
+    DWORD options  = SymGetOptions();
+    options       |= SYMOPT_LOAD_LINES;
+    SymSetOptions(options);
+}
+SymbolLoader::~SymbolLoader() { SymCleanup(handle); }
+
 std::system_error getWinLastError() noexcept { return std::error_code{(int)GetLastError(), u8system_category()}; }
+
+extern "C" PEXCEPTION_RECORD* __current_exception();         // NOLINT
+extern "C" PCONTEXT*          __current_exception_context(); // NOLINT
+
+_EXCEPTION_RECORD& current_exception() noexcept { return **__current_exception(); }
+_CONTEXT&          current_exception_context() noexcept { return **__current_exception_context(); }
+
+#if _HAS_CXX23
+
+std::stacktrace stacktraceFromCurrExc(_CONTEXT& context) {
+    STACKFRAME64 sf{};
+#if defined(_WIN64)
+    sf.AddrPC.Offset    = context.Rip;
+    sf.AddrStack.Offset = context.Rsp;
+    sf.AddrFrame.Offset = context.Rbp;
+#else
+    sf.AddrPC.Offset    = context.Eip;
+    sf.AddrStack.Offset = context.Esp;
+    sf.AddrFrame.Offset = context.Ebp;
+#endif
+    sf.AddrPC.Mode    = AddrModeFlat;
+    sf.AddrStack.Mode = AddrModeFlat;
+    sf.AddrFrame.Mode = AddrModeFlat;
+    HANDLE thread     = GetCurrentThread();
+    HANDLE process    = GetCurrentProcess();
+
+    struct RealStacktrace {
+        std::vector<decltype(sf.AddrPC.Offset)> addresses;
+        ulong                                   hash{};
+    } realStacktrace;
+
+    static_assert(sizeof(RealStacktrace) == sizeof(std::stacktrace));
+    static_assert(sizeof(std::stacktrace_entry) == sizeof(sf.AddrPC.Offset));
+
+    constexpr auto machine =
+#if defined(_WIN64)
+        IMAGE_FILE_MACHINE_AMD64;
+#else
+        IMAGE_FILE_MACHINE_I386;
+#endif
+
+    for (;;) {
+        SetLastError(0);
+        BOOL correct = StackWalk64(
+            machine,
+            process,
+            thread,
+            &sf,
+            &context,
+            nullptr,
+            &SymFunctionTableAccess64,
+            &SymGetModuleBase64,
+            nullptr
+        );
+        if (!correct || !sf.AddrFrame.Offset) break;
+        realStacktrace.addresses.push_back(sf.AddrPC.Offset);
+    }
+    return *(std::stacktrace*)&realStacktrace;
+}
+
+std::string makeStacktraceEntryString(std::stacktrace_entry const& entry) {
+    std::string res;
+    auto        description = entry.description();
+    auto        pluspos     = description.find_last_of('+');
+    auto        offset      = description.substr(1 + pluspos);
+    description             = description.substr(0, pluspos);
+    if (description.contains('!')) {
+        auto notpos = description.find_first_of('!');
+        res = fmt::format("module: {}, function: {}\n", description.substr(0, notpos), description.substr(1 + notpos));
+    } else if (!description.empty()) {
+        res = fmt::format("module: {}\n", description);
+    }
+    res += fmt::format("address: {}", entry.native_handle());
+    if (!offset.empty()) res += fmt::format(", offset: {}", offset);
+    auto filepath = entry.source_file();
+    if (!filepath.empty()) res += fmt::format("\nat: {}({})", filepath, entry.source_line());
+    return res;
+}
+
+std::string makeStacktraceString(std::stacktrace const& t) {
+    std::string res;
+    auto        maxsize    = std::to_string(t.size() - 1).size();
+    auto        fillterstr = "\n" + std::string(maxsize + 2, ' ');
+    for (size_t i = 0; i < t.size(); i++) {
+        auto entrystr = makeStacktraceEntryString(t[i]);
+        string_utils::replaceAll(entrystr, "\n", fillterstr);
+        res += fmt::format("{1:>{0}}> {2}\n", maxsize, i, entrystr);
+    }
+    if (res.ends_with('\n')) { res.pop_back(); }
+    return res;
+}
+
+#endif
 
 std::string makeExceptionString(std::exception_ptr ePtr) {
     if (!ePtr) { throw std::bad_exception(); }

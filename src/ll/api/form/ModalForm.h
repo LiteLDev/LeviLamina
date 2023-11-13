@@ -9,7 +9,7 @@ namespace ll::form {
 class ModalForm : public Form {
 
     class ModalFormImpl;
-    std::unique_ptr<ModalFormImpl> impl{};
+    std::unique_ptr<ModalFormImpl> impl;
 
 public:
     using Callback = std::function<void(Player&, bool)>;
@@ -21,7 +21,7 @@ public:
         std::string buttonRight,
         Callback    callback = Callback()
     );
-    ~ModalForm() override = default;
+    LLAPI ~ModalForm() override;
 
     LLAPI ModalForm& setTitle(std::string const& title);
 

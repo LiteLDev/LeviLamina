@@ -87,6 +87,8 @@ ModalForm::ModalForm(
     std::move(callback)
 )) {}
 
+ModalForm::~ModalForm() = default;
+
 ModalForm& ModalForm::setTitle(std::string const& title) {
     impl->setTitle(title);
     return *this;

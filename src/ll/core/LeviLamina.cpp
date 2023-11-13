@@ -162,12 +162,12 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
         } else {
             std::terminate();
         }
-        return TRUE;
+        return true;
     }
     default:
         break;
     }
-    return FALSE;
+    return false;
 }
 
 void unixSignalHandler(int signum) {
@@ -238,7 +238,7 @@ void leviLaminaMain() {
     ll::CrashLogger::initCrashLogger(ll::globalConfig.modules.crashLogger.enabled);
 
     // Register Exit Event Handler.
-    SetConsoleCtrlHandler(ConsoleExitHandler, TRUE);
+    SetConsoleCtrlHandler(ConsoleExitHandler, true);
     signal(SIGTERM, unixSignalHandler);
     signal(SIGINT, unixSignalHandler);
 

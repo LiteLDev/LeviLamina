@@ -130,7 +130,7 @@ struct PreRelease {
             }
             str += '.';
         }
-        str.pop_back();
+        if (str.ends_with('.')) { str.pop_back(); }
         return str;
     }
 };

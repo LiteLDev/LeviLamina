@@ -37,7 +37,7 @@ bool isWine() {
 std::span<uchar> getImageRangeSpan() {
     static const uintptr_t rangeStart = [] {
         DWORD_PTR baseAddress   = 0;
-        HANDLE    processHandle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, GetCurrentProcessId());
+        HANDLE    processHandle = OpenProcess(PROCESS_ALL_ACCESS, false, GetCurrentProcessId());
         HMODULE*  moduleArray;
         DWORD     bytesRequired = 0;
 

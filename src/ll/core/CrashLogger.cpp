@@ -32,7 +32,7 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
     PROCESS_INFORMATION pi;
 
     SECURITY_ATTRIBUTES sa;
-    sa.bInheritHandle       = TRUE;
+    sa.bInheritHandle       = true;
     sa.lpSecurityDescriptor = nullptr;
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
 
@@ -42,7 +42,7 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
         GetCurrentProcessId(),
         ll::getBdsVersion().to_string()
     ));
-    if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
+    if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("ll.crashLogger.error.cannotCreateDaemonProcess"_tr);
         error_info::printException(error_info::getWinLastError(), crashLogger);
         return false;
