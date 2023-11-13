@@ -12,7 +12,7 @@
 namespace ll {
 
 struct LeviConfig {
-    int version = 3;
+    int version = 4;
 
     std::string language = "system";
     struct {
@@ -29,8 +29,11 @@ struct LeviConfig {
 
     struct {
         struct {
-            bool        enabled = true;
-            std::string path    = R"(.\plugins\LeviLamina\CrashLogger.exe)";
+            bool        enabled    = true;
+            std::string path       = R"(.\plugins\LeviLamina\CrashLogger.exe)";
+            std::string logPath    = R"(.\logs\crash)";
+            std::string dumpPrefix = "minidump_";
+            std::string logPrefix  = "trace_";
         } crashLogger{};
 
         struct {

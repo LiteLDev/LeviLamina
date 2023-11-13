@@ -46,23 +46,23 @@ public:
         LLAPI void print(std::string_view) const noexcept;
 
     public:
-        Logger&                               logger;
-        std::string_view                      levelPrefix;
-        int const                             level;
-        std::array<fmt::text_style, 4> const  style;
-        std::array<std::string_view, 5> const consoleFormat;
-        std::array<std::string_view, 5> const fileFormat;
-        std::array<std::string_view, 5> const playerFormat;
-        PlayerOutputFunc                      playerOutputCallback;
+        Logger*                        logger;
+        std::string                    levelPrefix;
+        int                            level;
+        std::array<fmt::text_style, 4> style;
+        std::array<std::string, 5>     consoleFormat;
+        std::array<std::string, 5>     fileFormat;
+        std::array<std::string, 5>     playerFormat;
+        PlayerOutputFunc               playerOutputCallback;
 
         LLAPI explicit OutputStream(
-            Logger&                                logger,
-            std::string_view                       levelPrefix,
-            int                                    level,
-            std::array<fmt::text_style, 4> const&  style         = {{}},
-            std::array<std::string_view, 5> const& playerFormat  = {"<{2}|{1}> [{0}] {3}", "{:%T}", "{}", "{}", "{}"},
-            std::array<std::string_view, 5> const& consoleFormat = {"{0} {1} {2} {3}", "{:%T}", "{}", "[{}]", "{}"},
-            std::array<std::string_view, 5> const& fileFormat    = {"[{0} {1}][{2}] {3}", "{:%F %T}", "{}", "{}", "{}"}
+            Logger&                               logger,
+            std::string                           levelPrefix,
+            int                                   level,
+            std::array<fmt::text_style, 4> const& style         = {{}},
+            std::array<std::string, 5> const&     playerFormat  = {"<{2}|{1}> [{0}] {3}", "{:%T}", "{}", "{}", "{}"},
+            std::array<std::string, 5> const&     consoleFormat = {"{0} {1} {2} {3}", "{:%T}", "{}", "[{}]", "{}"},
+            std::array<std::string, 5> const&     fileFormat    = {"[{0} {1}][{2}] {3}", "{:%F %T}", "{}", "{}", "{}"}
         );
 
         template <ll::concepts::IsString S, typename... Args>

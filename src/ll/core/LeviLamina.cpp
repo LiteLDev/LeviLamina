@@ -206,6 +206,14 @@ void setupBugFixes() {
     if (bugfixSettings.fixArrayTagCompareBug) { enableArrayTagBugFix(); }
 }
 
+void startCrashLogger() {
+#if !LL_BUILTIN_CRASHLOGGER
+    ll::CrashLogger::initCrashLogger(ll::globalConfig.modules.crashLogger.enabled);
+#else
+    static ll::CrashLoggerNew crashLogger{};
+#endif
+}
+
 void leviLaminaMain() {
     error_info::setSehTranslator();
 
@@ -235,7 +243,7 @@ void leviLaminaMain() {
 
     if (ll::globalConfig.modules.checkRunningBDS) checkOtherBdsInstance();
 
-    ll::CrashLogger::initCrashLogger(ll::globalConfig.modules.crashLogger.enabled);
+    if (ll::globalConfig.modules.crashLogger.enabled) { startCrashLogger(); }
 
     // Register Exit Event Handler.
     SetConsoleCtrlHandler(ConsoleExitHandler, true);

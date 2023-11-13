@@ -3,26 +3,33 @@
 #include <iostream>
 
 #include "fmt/format.h"
+#include "ll/api/base/ErrorInfo.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/utils/StringUtils.h"
 
 #include "windows.h"
 
 #include "DbgHelp.h"
-#pragma comment(lib, "dbghelp.lib")
+#pragma comment(lib, "DbgHelp.lib")
 
 namespace ll::utils::stacktrace_utils {
 
 SymbolLoader::SymbolLoader() : handle(GetCurrentProcess()) {
-    SymInitializeW(handle, nullptr, true);
+    if (!SymInitializeW(handle, nullptr, true)) { throw error_info::getWinLastError(); }
     DWORD options  = SymGetOptions();
-    options       |= SYMOPT_LOAD_LINES;
+    options       |= SYMOPT_LOAD_LINES | SYMOPT_EXACT_SYMBOLS;
+    SymSetOptions(options);
+}
+SymbolLoader::SymbolLoader(std::string const& path) : handle(GetCurrentProcess()) {
+    if (!SymInitializeW(handle, string_utils::str2wstr(path).c_str(), true)) { throw error_info::getWinLastError(); }
+    DWORD options  = SymGetOptions();
+    options       |= SYMOPT_LOAD_LINES | SYMOPT_EXACT_SYMBOLS;
     SymSetOptions(options);
 }
 SymbolLoader::~SymbolLoader() { SymCleanup(handle); }
 
 std::string toString(std::stacktrace_entry const& entry) {
-    std::string res         = fmt::format("at: 0x{:X}", (uint64)entry.native_handle());
+    std::string res         = fmt::format("at: 0x{:0>12X}", (uint64)entry.native_handle());
     std::string description = entry.description();
     auto        plusPos     = description.find_last_of('+');
     std::string offset      = description.substr(1 + plusPos);
@@ -47,7 +54,8 @@ std::string toString(std::stacktrace_entry const& entry) {
         function = module.substr(1 + pos);
         module   = module.substr(0, pos);
     } else {
-        auto pSymbol          = (PSYMBOL_INFOW) new char[sizeof(SYMBOL_INFOW) + MAX_SYM_NAME * sizeof(WCHAR)];
+        auto buf     = std::make_unique_for_overwrite<char[]>(sizeof(SYMBOL_INFOW) + MAX_SYM_NAME * sizeof(WCHAR));
+        auto pSymbol = (PSYMBOL_INFOW)buf.get();
         pSymbol->SizeOfStruct = sizeof(SYMBOL_INFO);
         pSymbol->MaxNameLen   = MAX_SYM_NAME;
         DWORD64 displacement;
@@ -55,7 +63,6 @@ std::string toString(std::stacktrace_entry const& entry) {
             function = string_utils::wstr2str({pSymbol->Name, pSymbol->NameLen});
             offset   = fmt::format("0x{:X}", displacement);
         }
-        delete[] ((char*)pSymbol);
     }
     if (!module.empty()) res += fmt::format(" {}", module);
     if (!function.empty()) res += fmt::format(" -> {}", function);
@@ -70,6 +77,25 @@ std::string toString(std::stacktrace const& t) {
     for (size_t i = 0; i < t.size(); i++) { res += fmt::format("{1:>{0}}> {2}\n", maxsize, i, toString(t[i])); }
     if (res.ends_with('\n')) { res.pop_back(); }
     return res;
+}
+std::string toString(_CONTEXT const& c) {
+    return fmt::format("RAX: 0x{:016X}  RBX: 0x{:016X}  RCX: 0x{:016X}\n", c.Rax, c.Rbx, c.Rcx)
+         + fmt::format("RDX: 0x{:016X}  RSI: 0x{:016X}  RDI: 0x{:016X}\n", c.Rdx, c.Rsi, c.Rdi)
+         + fmt::format("RBP: 0x{:016X}  RSP: 0x{:016X}  R8:  0x{:016X}\n", c.Rbp, c.Rsp, c.R8)
+         + fmt::format("R9:  0x{:016X}  R10: 0x{:016X}  R11: 0x{:016X}\n", c.R9, c.R10, c.R11)
+         + fmt::format("R12: 0x{:016X}  R13: 0x{:016X}  R14: 0x{:016X}\n", c.R12, c.R13, c.R14)
+         + fmt::format("R15: 0x{:016X}\n", c.R15) + fmt::format("RIP: 0x{:016X}  EFLAGS: 0x{:08X}\n", c.Rip, c.EFlags)
+         + fmt::format("DR0: 0x{:016X}  DR1: 0x{:016X}  DR2: 0x{:016X}\n", c.Dr0, c.Dr1, c.Dr2)
+         + fmt::format("DR3: 0x{:016X}  DR6: 0x{:016X}  DR7: 0x{:016X}\n", c.Dr3, c.Dr6, c.Dr7)
+         + fmt::format(
+               "CS:  0x{:04X}  DS: 0x{:04X}  ES:  0x{:04X}  FS: 0x{:04X}  GS:  0x{:04X}  SS: 0x{:04X}",
+               c.SegCs,
+               c.SegDs,
+               c.SegEs,
+               c.SegFs,
+               c.SegGs,
+               c.SegSs
+         );
 }
 } // namespace ll::utils::stacktrace_utils
 

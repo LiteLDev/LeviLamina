@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "ll/api/base/Macro.h"
+#include "ll/api/base/Version.h"
 
 namespace ll::utils::file_utils {
 
@@ -16,4 +17,5 @@ LLNDAPI std::optional<std::string> readFile(std::filesystem::path const& filePat
 
 LLAPI bool writeAllFile(std::filesystem::path const& filePath, std::string_view content, bool isBinary = false);
 
+LLNDAPI Version getVersion(std::filesystem::path const& filePath);
 } // namespace ll::utils::file_utils

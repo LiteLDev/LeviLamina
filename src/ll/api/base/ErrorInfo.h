@@ -83,8 +83,10 @@ LLNDAPI std::system_error getWinLastError() noexcept;
 LLNDAPI _EXCEPTION_RECORD& current_exception() noexcept;
 LLNDAPI _CONTEXT&          current_exception_context() noexcept;
 
+LLNDAPI std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const&) noexcept;
+
 #if _HAS_CXX23
-LLNDAPI std::stacktrace stacktraceFromCurrExc(_CONTEXT& = current_exception_context());
+LLNDAPI std::stacktrace stacktraceFromCurrExc(_CONTEXT const& = current_exception_context());
 #endif
 
 LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr);
@@ -94,6 +96,9 @@ LLAPI void printCurrentException(
     std::exception_ptr const& = std::current_exception()
 ) noexcept;
 
+inline void printException(_EXCEPTION_RECORD const& e, optional_ref<ll::Logger> l = nullptr) noexcept {
+    printCurrentException(l, createExceptionPtr(e));
+}
 template <class T>
     requires(!std::is_same_v<T, std::exception_ptr>)
 inline void printException(T const& e, optional_ref<ll::Logger> l = nullptr) noexcept {

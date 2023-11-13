@@ -14,18 +14,19 @@
 namespace ll::utils::string_utils {
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
-[[nodiscard]] constexpr std::vector<std::string_view> splitByPattern(std::string_view s, std::string_view pattern) {
+[[nodiscard]] constexpr std::vector<std::string_view>
+splitByPattern(std::string_view s, std::string_view pattern, bool keepEmpty = false) {
     if (s.empty()) return {};
     size_t pos  = s.find(pattern);
     size_t size = s.size();
 
     std::vector<std::string_view> ret;
     while (pos != std::string::npos) {
-        if (pos != 0) ret.push_back(s.substr(0, pos));
+        if (keepEmpty || pos != 0) ret.push_back(s.substr(0, pos));
         s   = s.substr(pos + pattern.size(), size - pos - pattern.size());
         pos = s.find(pattern);
     }
-    if (!s.empty()) ret.push_back(s);
+    if (keepEmpty || !s.empty()) ret.push_back(s);
     return ret;
 }
 

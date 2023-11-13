@@ -7,8 +7,8 @@
 
 #include "windows.h"
 
-#include "dbghelp.h"
-#pragma comment(lib, "dbghelp.lib")
+#include "DbgHelp.h"
+#pragma comment(lib, "DbgHelp.lib")
 // #include "Psapi.h"
 
 namespace ll::utils::error_info {
@@ -111,9 +111,16 @@ extern "C" PCONTEXT*          __current_exception_context(); // NOLINT
 _EXCEPTION_RECORD& current_exception() noexcept { return **__current_exception(); }
 _CONTEXT&          current_exception_context() noexcept { return **__current_exception_context(); }
 
+LLNDAPI std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const& rec) noexcept {
+    auto               realType = std::make_shared<_EXCEPTION_RECORD>(rec);
+    std::exception_ptr res;
+    __ExceptionPtrAssign(&res, &realType);
+    return res;
+}
+
 #if _HAS_CXX23
 
-std::stacktrace stacktraceFromCurrExc(_CONTEXT& context) {
+std::stacktrace stacktraceFromCurrExc(_CONTEXT const& context) {
     STACKFRAME64 sf{};
 #if defined(_WIN64)
     sf.AddrPC.Offset    = context.Rip;
@@ -145,6 +152,8 @@ std::stacktrace stacktraceFromCurrExc(_CONTEXT& context) {
         IMAGE_FILE_MACHINE_I386;
 #endif
 
+    auto tmpCtx = context;
+
     for (;;) {
         SetLastError(0);
         BOOL correct = StackWalk64(
@@ -152,7 +161,7 @@ std::stacktrace stacktraceFromCurrExc(_CONTEXT& context) {
             process,
             thread,
             &sf,
-            &context,
+            &tmpCtx,
             nullptr,
             &SymFunctionTableAccess64,
             &SymGetModuleBase64,
@@ -170,6 +179,33 @@ std::string makeExceptionString(std::exception_ptr ePtr) {
     if (!ePtr) { throw std::bad_exception(); }
 
     std::string res;
+    auto&       rt = *(std::shared_ptr<const EXCEPTION_RECORD>*)(&ePtr);
+
+    if (rt->ExceptionCode == UntypedException::exceptionCodeOfCpp) {
+        try {
+            UntypedException exc{*rt};
+            std::string      handleName;
+            if (auto p = plugin::PluginManager::getInstance().findPlugin(exc.handle).lock(); p) {
+                handleName = p->getManifest().name;
+            } else {
+                wchar_t buffer[MAX_PATH];
+                auto    size = GetModuleFileNameW((HMODULE)exc.handle, buffer, MAX_PATH);
+                if (size) {
+                    handleName = string_utils::u8str2str(std::filesystem::path({buffer, size}).stem().u8string());
+                }
+            }
+            auto expTypeName = exc.getNumCatchableTypes() > 0 ? exc.getTypeInfo(0)->name() : "unknown exception";
+            if (expTypeName == typeid(seh_exception).name()) {
+                res += fmt::format("Translated Seh Exception, from <{}>:\n", handleName);
+            } else {
+                res += fmt::format("C++ Exception: {}, from <{}>:\n", expTypeName, handleName);
+            }
+        } catch (...) {}
+    } else {
+        res += "Raw Seh Exception:\n";
+    }
+
+
     std::size_t numNested = 0;
 nextNest:
     try {
@@ -190,19 +226,13 @@ nextNest:
     } catch (const std::string& e) { res += string_utils::tou8str(e); } catch (const char* e) {
         res += string_utils::tou8str(e);
     } catch (...) {
-        auto unkExc = std::current_exception();
-        if (unkExc) {
-            auto& realType = *(std::shared_ptr<const EXCEPTION_RECORD>*)(&unkExc);
-
-            res += fmt::format(
-                "[0x{:0>8X}:{}] {}",
-                (uint)realType->ExceptionCode,
-                ntstatus_category().name(),
-                ntstatus_category().message((int)realType->ExceptionCode)
-            );
-        } else {
-            res += "unknown exception type error";
-        }
+        auto unkExc  = current_exception();
+        res         += fmt::format(
+            "[0x{:0>8X}:{}] {}",
+            (uint)unkExc.ExceptionCode,
+            ntstatus_category().name(),
+            ntstatus_category().message((int)unkExc.ExceptionCode)
+        );
     }
 
     if (ePtr) {
@@ -218,38 +248,9 @@ nextNest:
 void printCurrentException(optional_ref<ll::Logger> l, std::exception_ptr const& e) noexcept {
     auto& rlogger = l.value_or(logger);
     try {
-        auto& realType = *(std::shared_ptr<const EXCEPTION_RECORD>*)(&e);
-
-        if (realType) {
-            std::lock_guard lock(Logger::loggerMutex);
-            if (realType->ExceptionCode == UntypedException::exceptionCodeOfCpp) {
-                try {
-                    UntypedException exc{*realType};
-                    std::string      handleName;
-                    if (auto p = plugin::PluginManager::getInstance().findPlugin(exc.handle).lock(); p) {
-                        handleName = p->getManifest().name;
-                    } else {
-                        wchar_t buffer[MAX_PATH];
-                        auto    size = GetModuleFileNameW((HMODULE)exc.handle, buffer, MAX_PATH);
-                        if (size) {
-                            handleName =
-                                string_utils::u8str2str(std::filesystem::path({buffer, size}).stem().u8string());
-                        }
-                    }
-                    auto expTypeName =
-                        exc.getNumCatchableTypes() > 0 ? exc.getTypeInfo(0)->name() : "unknown exception";
-                    if (expTypeName == typeid(seh_exception).name()) {
-                        rlogger.error("Translated Seh Exception, from <{}>:", handleName);
-                    } else {
-                        rlogger.error("C++ Exception: {}, from <{}>:", expTypeName, handleName);
-                    }
-                } catch (...) {}
-            } else {
-                rlogger.error("Raw Seh Exception:");
-            }
-            rlogger.error(makeExceptionString(e));
-            return;
-        }
+        auto res = makeExceptionString(e);
+        for (auto& sv : string_utils::splitByPattern(res, "\n")) { rlogger.error(sv); }
+        return;
     } catch (...) {}
     rlogger.error("unknown error");
 }

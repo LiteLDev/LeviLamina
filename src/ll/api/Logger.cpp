@@ -1,3 +1,5 @@
+#include <utility>
+
 #include "ll/api/Logger.h"
 
 #include "fmt/color.h"
@@ -24,32 +26,32 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
     try {
         std::lock_guard lock(loggerMutex);
         auto            time = fmt::localtime(_time64(nullptr));
-        if (checkLogLevel(logger.consoleLevel, level)) {
+        if (checkLogLevel(logger->consoleLevel, level)) {
             std::string str = fmt::format(
                 fmt::runtime(consoleFormat[0]),
                 applyTextStyle(style[0], fmt::format(fmt::runtime(consoleFormat[1]), time)),
                 applyTextStyle(style[1], fmt::format(fmt::runtime(consoleFormat[2]), levelPrefix)),
-                applyTextStyle(style[2], fmt::format(fmt::runtime(consoleFormat[3]), logger.title)),
+                applyTextStyle(style[2], fmt::format(fmt::runtime(consoleFormat[3]), logger->title)),
                 applyTextStyle(style[3], fmt::format(fmt::runtime(consoleFormat[4]), replaceMcToAnsiCode(s)))
             );
             if (!ll::globalConfig.logger.colorLog) { str = removeEscapeCode(str); }
             fmt::print("{}\n", str);
         }
-        if (logger.getFile().is_open() && checkLogLevel(logger.fileLevel, level)) {
-            logger.getFile() << removeEscapeCode(fmt::format(
+        if (logger->getFile().is_open() && checkLogLevel(logger->fileLevel, level)) {
+            logger->getFile() << removeEscapeCode(fmt::format(
                 fmt::runtime(fileFormat[0]),
                 fmt::format(fmt::runtime(fileFormat[1]), time),
                 fmt::format(fmt::runtime(fileFormat[2]), levelPrefix),
-                fmt::format(fmt::runtime(fileFormat[3]), logger.title),
+                fmt::format(fmt::runtime(fileFormat[3]), logger->title),
                 fmt::format(fmt::runtime(fileFormat[4]), s)
             )) << std::endl;
         }
-        if ((playerOutputCallback || Logger::defaultPlayerOutputCallback) && checkLogLevel(logger.playerLevel, level)) {
+        if ((playerOutputCallback || Logger::defaultPlayerOutputCallback) && checkLogLevel(logger->playerLevel, level)) {
             std::string str = replaceAnsiToMcCode(fmt::format(
                 fmt::runtime(playerFormat[0]),
                 applyTextStyle(style[0], fmt::format(fmt::runtime(playerFormat[1]), time)),
                 applyTextStyle(style[1], fmt::format(fmt::runtime(playerFormat[2]), levelPrefix)),
-                applyTextStyle(style[2], fmt::format(fmt::runtime(playerFormat[3]), logger.title)),
+                applyTextStyle(style[2], fmt::format(fmt::runtime(playerFormat[3]), logger->title)),
                 applyTextStyle(style[3], fmt::format(fmt::runtime(playerFormat[4]), s))
             ));
             if (playerOutputCallback) {
@@ -74,16 +76,16 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
 }
 
 Logger::OutputStream::OutputStream(
-    Logger&                                logger,
-    std::string_view                       levelPrefix,
-    int                                    level,
-    std::array<fmt::text_style, 4> const&  style,
-    std::array<std::string_view, 5> const& playerFormat,
-    std::array<std::string_view, 5> const& consoleFormat,
-    std::array<std::string_view, 5> const& fileFormat
+    Logger&                               logger,
+    std::string                           levelPrefix,
+    int                                   level,
+    std::array<fmt::text_style, 4> const& style,
+    std::array<std::string, 5> const&     playerFormat,
+    std::array<std::string, 5> const&     consoleFormat,
+    std::array<std::string, 5> const&     fileFormat
 )
-: logger(logger),
-  levelPrefix(levelPrefix),
+: logger(&logger),
+  levelPrefix(std::move(levelPrefix)),
   level(level),
   style(style),
   consoleFormat(consoleFormat),

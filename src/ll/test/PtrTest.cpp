@@ -57,7 +57,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         std::cout << "b = " << b << std::endl;
     } catch (...) { ll::utils::error_info::printCurrentException(); }
 #if _HAS_CXX23
-    static ll::utils::stacktrace_utils::SymbolLoader sl{};
+    // static ll::utils::stacktrace_utils::SymbolLoader sl{};
 #endif
     try {
         try {
@@ -82,6 +82,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         ll::logger.debug("\n{}", ll::utils::stacktrace_utils::toString(stack));
 #endif
     }
+    throw std::runtime_error("Test New Crash Logger");
 
     // auto& map        = BlockTypeRegistry::$mBlockLookupMap();
     // map["test:test"] = BlockTypeRegistry::lookupByName("minecraft:stone");
