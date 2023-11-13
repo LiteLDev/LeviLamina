@@ -67,17 +67,6 @@ struct UntypedException {
     }
 };
 
-class SymbolLoader {
-    void* handle;
-
-public:
-    SymbolLoader(SymbolLoader const&)            = delete;
-    SymbolLoader& operator=(SymbolLoader const&) = delete;
-
-    LLAPI SymbolLoader();
-    LLAPI ~SymbolLoader();
-};
-
 [[noreturn]] inline void translateSEHtoCE(uint ntStatus, struct _EXCEPTION_POINTERS* expPtr) {
     throw seh_exception(ntStatus, expPtr);
 }
@@ -96,9 +85,6 @@ LLNDAPI _CONTEXT&          current_exception_context() noexcept;
 
 #if _HAS_CXX23
 LLNDAPI std::stacktrace stacktraceFromCurrExc(_CONTEXT& = current_exception_context());
-
-LLNDAPI std::string makeStacktraceEntryString(std::stacktrace_entry const&);
-LLNDAPI std::string makeStacktraceString(std::stacktrace const&);
 #endif
 
 LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr);

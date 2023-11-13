@@ -103,26 +103,6 @@ void setSehTranslator() { _set_se_translator(error_info::translateSEHtoCE); }
 
 void* seh_exception::getExceptionPointer() const noexcept { return expPtr; }
 
-SymbolLoader::SymbolLoader() : handle(GetCurrentProcess()) {
-
-    // wchar_t      buffer[MAX_PATH];
-    // auto         size = GetModuleFileNameExW(handle, nullptr, buffer, MAX_PATH);
-    // std::wstring symbolPath;
-    // if (size) {
-    //     auto path  = std::filesystem::path({buffer, size}).parent_path();
-    //     symbolPath = path.wstring();
-    //     logger.debug("emm: {}", string_utils::wstr2str(symbolPath));
-    // }
-
-    // SymInitializeW(handle, symbolPath.c_str(), true);
-
-    SymInitializeW(handle, nullptr, true);
-    DWORD options  = SymGetOptions();
-    options       |= SYMOPT_LOAD_LINES;
-    SymSetOptions(options);
-}
-SymbolLoader::~SymbolLoader() { SymCleanup(handle); }
-
 std::system_error getWinLastError() noexcept { return std::error_code{(int)GetLastError(), u8system_category()}; }
 
 extern "C" PEXCEPTION_RECORD* __current_exception();         // NOLINT
@@ -182,38 +162,6 @@ std::stacktrace stacktraceFromCurrExc(_CONTEXT& context) {
         realStacktrace.addresses.push_back(sf.AddrPC.Offset);
     }
     return *(std::stacktrace*)&realStacktrace;
-}
-
-std::string makeStacktraceEntryString(std::stacktrace_entry const& entry) {
-    std::string res;
-    auto        description = entry.description();
-    auto        pluspos     = description.find_last_of('+');
-    auto        offset      = description.substr(1 + pluspos);
-    description             = description.substr(0, pluspos);
-    if (description.contains('!')) {
-        auto notpos = description.find_first_of('!');
-        res = fmt::format("module: {}, function: {}\n", description.substr(0, notpos), description.substr(1 + notpos));
-    } else if (!description.empty()) {
-        res = fmt::format("module: {}\n", description);
-    }
-    res += fmt::format("address: {}", entry.native_handle());
-    if (!offset.empty()) res += fmt::format(", offset: {}", offset);
-    auto filepath = entry.source_file();
-    if (!filepath.empty()) res += fmt::format("\nat: {}({})", filepath, entry.source_line());
-    return res;
-}
-
-std::string makeStacktraceString(std::stacktrace const& t) {
-    std::string res;
-    auto        maxsize    = std::to_string(t.size() - 1).size();
-    auto        fillterstr = "\n" + std::string(maxsize + 2, ' ');
-    for (size_t i = 0; i < t.size(); i++) {
-        auto entrystr = makeStacktraceEntryString(t[i]);
-        string_utils::replaceAll(entrystr, "\n", fillterstr);
-        res += fmt::format("{1:>{0}}> {2}\n", maxsize, i, entrystr);
-    }
-    if (res.ends_with('\n')) { res.pop_back(); }
-    return res;
 }
 
 #endif

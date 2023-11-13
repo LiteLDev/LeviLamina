@@ -8,15 +8,11 @@
 #include "mc/world/level/material/Material.h"
 
 #include "ll/api/base/ErrorInfo.h"
+#include "ll/api/utils/StacktraceUtils.h"
 #include "ll/core/LeviLamina.h"
 
 auto test() {
     auto exists = BlockTypeRegistry::lookupByName("minecraft:stone");
-
-    std::cout << HashedString("").hash << std::endl;
-    std::cout << HashedString::computeHash("") << std::endl;
-
-    std::cout << "123" << std::endl;
     if (exists) { std::cout << exists->getTypeName() << std::endl; }
     return exists;
 }
@@ -61,7 +57,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         std::cout << "b = " << b << std::endl;
     } catch (...) { ll::utils::error_info::printCurrentException(); }
 #if _HAS_CXX23
-    static ll::utils::error_info::SymbolLoader sl{};
+    static ll::utils::stacktrace_utils::SymbolLoader sl{};
 #endif
     try {
         try {
@@ -72,14 +68,19 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
             } catch (...) {
 #if _HAS_CXX23
                 auto stack = ll::utils::error_info::stacktraceFromCurrExc();
-                ll::logger.debug("\n{}", ll::utils::error_info::makeStacktraceString(stack));
+                ll::logger.debug("\n{}", ll::utils::stacktrace_utils::toString(stack));
 #endif
                 std::throw_with_nested(std::runtime_error("Couldn't open " + s));
             }
         } catch (...) {
             std::throw_with_nested(std::system_error(std::error_code{1, std::generic_category()}, "run() failed"));
         }
-    } catch (...) { ll::utils::error_info::printCurrentException(); }
+    } catch (...) {
+        ll::utils::error_info::printCurrentException();
+
+        auto stack = std::stacktrace::current();
+        ll::logger.debug("\n{}", ll::utils::stacktrace_utils::toString(stack));
+    }
 
     // auto& map        = BlockTypeRegistry::$mBlockLookupMap();
     // map["test:test"] = BlockTypeRegistry::lookupByName("minecraft:stone");
