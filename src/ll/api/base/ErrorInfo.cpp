@@ -125,11 +125,11 @@ std::stacktrace stacktraceFromCurrExc(_CONTEXT const& context) {
     sf.AddrPC.Offset    = context.Rip;
     sf.AddrStack.Offset = context.Rsp;
     sf.AddrFrame.Offset = context.Rbp;
-    sf.AddrPC.Mode    = AddrModeFlat;
-    sf.AddrStack.Mode = AddrModeFlat;
-    sf.AddrFrame.Mode = AddrModeFlat;
-    HANDLE thread     = GetCurrentThread();
-    HANDLE process    = GetCurrentProcess();
+    sf.AddrPC.Mode      = AddrModeFlat;
+    sf.AddrStack.Mode   = AddrModeFlat;
+    sf.AddrFrame.Mode   = AddrModeFlat;
+    HANDLE thread       = GetCurrentThread();
+    HANDLE process      = GetCurrentProcess();
 
     struct RealStacktrace {
         std::vector<decltype(sf.AddrPC.Offset)> addresses;
@@ -157,6 +157,7 @@ std::stacktrace stacktraceFromCurrExc(_CONTEXT const& context) {
             nullptr
         );
         if (!correct || !sf.AddrFrame.Offset) break;
+        realStacktrace.hash += (ulong)sf.AddrPC.Offset;
         realStacktrace.addresses.push_back(sf.AddrPC.Offset);
     }
     return *(std::stacktrace*)&realStacktrace;

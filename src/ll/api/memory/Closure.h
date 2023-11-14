@@ -9,8 +9,9 @@ namespace detail {
 static constexpr size_t magic = 0x58ffffbffdffffafui64;
 
 #pragma pack(push, 1)
+//    ...    [data]
 // push rax
-// mov  rax, addr
+// mov  rax, [addr]
 // jmp  rax
 struct Prologue {
     uintptr_t data;
@@ -27,9 +28,34 @@ inline Ret nativeClosureImpl() {
     auto               stored = (typename NativeClosure<Ret>::PackedData*)data;
     return (*stored->func)(stored->data);
 }
-LLAPI void initNativeClosure(void*);
-LLAPI void releaseNativeClosure(void*);
+LLAPI size_t getVolatileOffset(void*);
+LLAPI void   initNativeClosure(void*);
+LLAPI void   releaseNativeClosure(void*);
 } // namespace detail
+
+//                The principle of NativeClosure
+//--------------------------------------------------------------
+// | First we need an impl function as the actual            |
+// | implementation, and put a volatile variable at the      |
+// | beginning of the function, so that the compiler will    |
+// | theoretically push the value of this variable at the    |
+// | beginning. We set it to a value that should not appear  |
+// | in The number in the assembly, and then find the offset |
+// | of this number from the beginning of the function       |
+// | pointer in the constructor of each closure, then        |
+// | allocate a small piece of memory, copy the Prologue of  |
+// | the function itself, but replace the value of that      |
+// | variable with what we want Incoming data.               |
+//--------------------------------------------------------------
+// |from compiler|        <copy from mem>        >wirte by hand<
+//--------------------------------------------------------------
+//      |..... pargs .....|            <..... pargs .....>
+//      |mov  rax , [mgic]|            <mov  rax>, [data]<
+// addr |mov qword ptr    |    --->    >push rax         <
+//      |  [rbp-8], rax   |            >mov  rax , [addr]<
+//      |    ...   ...    |            >jmp  rax         <
+//      |.... orifunc ....|       addr |    ...   ...    |
+//--------------------------------------------------------------
 template <class Ret>
 class NativeClosure {
 public:
