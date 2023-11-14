@@ -11,6 +11,8 @@
 #include "ll/api/utils/StacktraceUtils.h"
 #include "ll/core/LeviLamina.h"
 
+#include "ll/api/memory/Closure.h"
+
 auto test() {
     auto exists = BlockTypeRegistry::lookupByName("minecraft:stone");
     if (exists) { std::cout << exists->getTypeName() << std::endl; }
@@ -34,6 +36,12 @@ class Test;
 
 #include "mc/entity/flags/ExitFromPassengerFlag.h"
 #include "mc/world/components/FlagComponent.h"
+
+size_t printHello(size_t data) {
+    ll::logger.warn("hello aaaaaaaa {}", data);
+    if (data != 123) throw std::runtime_error("Test New Crash Logger");
+    return 0;
+}
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     BlockDefinitionGroupRegisterBlocks,
@@ -82,7 +90,17 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         ll::logger.debug("\n{}", ll::utils::stacktrace_utils::toString(stack));
 #endif
     }
-    throw std::runtime_error("Test New Crash Logger");
+    // throw std::runtime_error("Test New Crash Logger");
+
+    auto c1 = ll::NativeClosure(printHello, 123);
+
+    auto f = std::function<void(void)>(std::bind(printHello, 123));
+
+    // auto c2 = ll::NativeClosure(printHello, 49795726147);
+
+    (*c1.get())();
+    f();
+    // (*c2.get())();
 
     // auto& map        = BlockTypeRegistry::$mBlockLookupMap();
     // map["test:test"] = BlockTypeRegistry::lookupByName("minecraft:stone");

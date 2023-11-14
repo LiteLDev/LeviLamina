@@ -59,11 +59,7 @@ struct UntypedException {
 
     template <class T>
     [[nodiscard]] T rva2va(auto addr) const {
-#if defined(_WIN64)
         return reinterpret_cast<T>((uintptr_t)handle + (uintptr_t)(addr));
-#else
-        return reinterpret_cast<T>(addr);
-#endif
     }
 };
 

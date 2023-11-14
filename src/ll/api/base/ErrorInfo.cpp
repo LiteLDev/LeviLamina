@@ -122,15 +122,9 @@ LLNDAPI std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const& rec) noex
 
 std::stacktrace stacktraceFromCurrExc(_CONTEXT const& context) {
     STACKFRAME64 sf{};
-#if defined(_WIN64)
     sf.AddrPC.Offset    = context.Rip;
     sf.AddrStack.Offset = context.Rsp;
     sf.AddrFrame.Offset = context.Rbp;
-#else
-    sf.AddrPC.Offset    = context.Eip;
-    sf.AddrStack.Offset = context.Esp;
-    sf.AddrFrame.Offset = context.Ebp;
-#endif
     sf.AddrPC.Mode    = AddrModeFlat;
     sf.AddrStack.Mode = AddrModeFlat;
     sf.AddrFrame.Mode = AddrModeFlat;
@@ -145,12 +139,7 @@ std::stacktrace stacktraceFromCurrExc(_CONTEXT const& context) {
     static_assert(sizeof(RealStacktrace) == sizeof(std::stacktrace));
     static_assert(sizeof(std::stacktrace_entry) == sizeof(sf.AddrPC.Offset));
 
-    constexpr auto machine =
-#if defined(_WIN64)
-        IMAGE_FILE_MACHINE_AMD64;
-#else
-        IMAGE_FILE_MACHINE_I386;
-#endif
+    constexpr auto machine = IMAGE_FILE_MACHINE_AMD64;
 
     auto tmpCtx = context;
 

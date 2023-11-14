@@ -1,5 +1,7 @@
 #pragma once
 
+#include "vcruntime.h"
+
 #if _HAS_CXX23
 #define LL_BUILTIN_CRASHLOGGER 1
 #else
@@ -13,7 +15,6 @@ public:
     static void initCrashLogger(bool enableCrashLogger);
 };
 #if _HAS_CXX23
-class EventCallbacks;
 class CrashLoggerNew {
     void* previous{};
 
