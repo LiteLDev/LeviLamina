@@ -92,11 +92,11 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     }
     // throw std::runtime_error("Test New Crash Logger");
 
-    auto c1 = ll::NativeClosure(printHello, 123);
+    auto c1 = ll::memory::NativeClosure(printHello, 123);
 
-    auto f = std::function<void(int)>([](int a) { return printHello(123, a); });
+    auto f = std::function<size_t(int)>([](int a) { return printHello(123, a); });
 
-    auto c2 = ll::FunctionalClosure(f);
+    auto c2 = ll::memory::FunctionalClosure(f);
 
     (*c1.get())(654367);
     f(6376774);

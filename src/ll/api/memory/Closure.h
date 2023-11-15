@@ -3,7 +3,7 @@
 #include <functional>
 #include <memory>
 
-namespace ll {
+namespace ll::memory {
 namespace detail {
 static constexpr size_t closureMagicNumber = 0x58ffffbffdffffafui64;
 
@@ -22,8 +22,8 @@ struct NativeClosurePrologue {
 #pragma pack(pop)
 
 LLAPI size_t getVolatileOffset(void*);
-LLAPI void   initNativeClosure(void*);
-LLAPI void   releaseNativeClosure(void*);
+LLAPI void   initNativeClosure(void* self, void* impl, size_t offset, size_t size);
+LLAPI void   releaseNativeClosure(void* self, size_t size);
 } // namespace detail
 
 //                The principle of NativeClosure
@@ -40,7 +40,7 @@ LLAPI void   releaseNativeClosure(void*);
 // | the function itself, but replace the value of that      |
 // | variable with what we want Incoming data.               |
 //--------------------------------------------------------------
-// |from compiler|        <copy from mem>        >wirte by hand<
+// |from compiler|        <copy from mem>        >write by hand<
 //--------------------------------------------------------------
 //      |..... pargs .....|            <..... pargs .....>
 //      |mov  rax , [mgic]|            <mov  rax>, [data]<
@@ -56,6 +56,8 @@ class NativeClosure {
         auto               stored = (PackedData*)data;
         return (*stored->func)(stored->data, std::forward<Args>(args)...);
     }
+    static inline size_t implOffset  = detail::getVolatileOffset(closureImpl);
+    static inline size_t closureSize = implOffset + sizeof(detail::NativeClosurePrologue);
 
 public:
     using Origin  = Ret(uintptr_t, Args...);
@@ -65,18 +67,16 @@ public:
         Origin*   func;
         uintptr_t data;
     } stored;
-    void*                    impl;
     ulong                    oldProtectFlags{};
     std::unique_ptr<uchar[]> closure;
-    size_t                   closureSize;
 
-    LLAPI NativeClosure(Origin* func, uintptr_t data) : stored({func, data}), impl(NativeClosure::closureImpl) {
-        detail::initNativeClosure(this);
+    LLAPI NativeClosure(Origin* func, uintptr_t data) : stored({func, data}) {
+        detail::initNativeClosure(this, closureImpl, implOffset, closureSize);
     }
 
     LLAPI Closure* get() const { return (Closure*)closure.get(); }
 
-    LLAPI ~NativeClosure() { detail::releaseNativeClosure(this); }
+    LLAPI ~NativeClosure() { detail::releaseNativeClosure(this, closureSize); }
 };
 template <class Ret, class... Args>
 class FunctionalClosure : public NativeClosure<Ret, Args...> {
@@ -90,7 +90,7 @@ public:
     std::function<Closure> func;
 
     FunctionalClosure(std::function<Closure> const& func)
-    : NativeClosure<Ret, Args...>(FunctionalClosure::closureImpl, (uintptr_t)this),
+    : NativeClosure<Ret, Args...>(closureImpl, (uintptr_t)this),
       func(func) {}
 };
-} // namespace ll
+} // namespace ll::memory

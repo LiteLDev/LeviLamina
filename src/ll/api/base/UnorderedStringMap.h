@@ -5,7 +5,7 @@
 
 namespace ll {
 
-namespace details {
+namespace detail {
 template <typename... Bases>
 struct overload : Bases... {
     using is_transparent = void;
@@ -17,9 +17,9 @@ struct char_pointer_hash {
 };
 
 using transparent_string_hash = overload<std::hash<std::string>, std::hash<std::string_view>, char_pointer_hash>;
-} // namespace details
+} // namespace detail
 
 template <typename T>
-using UnorderedStringMap = std::unordered_map<std::string, T, details::transparent_string_hash, std::equal_to<>>;
+using UnorderedStringMap = std::unordered_map<std::string, T, detail::transparent_string_hash, std::equal_to<>>;
 
 } // namespace ll

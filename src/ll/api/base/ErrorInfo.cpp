@@ -1,6 +1,7 @@
 #include "ll/api/base/ErrorInfo.h"
 #include "ll/api/memory/Memory.h"
 #include "ll/api/plugin/Plugin.h"
+#include "ll/api/reflection/Reflection.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
 
@@ -187,7 +188,11 @@ std::string makeExceptionString(std::exception_ptr ePtr) {
             if (expTypeName == typeid(seh_exception).name()) {
                 res += fmt::format("Translated Seh Exception, from <{}>:\n", handleName);
             } else {
-                res += fmt::format("C++ Exception: {}, from <{}>:\n", expTypeName, handleName);
+                res += fmt::format(
+                    "C++ Exception: {}, from <{}>:\n",
+                    reflection::removeTypePrefix(expTypeName),
+                    handleName
+                );
             }
         } catch (...) {}
     } else {
@@ -222,6 +227,9 @@ nextNest:
             ntstatus_category().name(),
             ntstatus_category().message((int)unkExc.ExceptionCode)
         );
+        for (size_t i = 0; i <= unkExc.NumberParameters; i++) {
+            res += fmt::format("\nParameter {}: {}", i, (void*)unkExc.ExceptionInformation[i]);
+        }
     }
 
     if (ePtr) {
