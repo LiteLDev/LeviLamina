@@ -1,5 +1,5 @@
-#include "ll/api/utils/Base64.h"
-#include "ll/api/utils/Hash.h"
+#include "ll/api/base/Base64.h"
+#include "ll/api/base/Hash.h"
 #include "mc/nbt/CompoundTag.h"
 
 std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s);
@@ -182,7 +182,7 @@ std::optional<CompoundTagVariant> parseNumber(std::string_view& s) {
             break;
         }
     if (isInt) {
-        if (res <= INT32_MAX) {
+        if (abs(res) <= INT32_MAX) {
             return IntTag{(int)res};
         } else {
             return Int64Tag{(int64)res};
@@ -246,7 +246,7 @@ std::optional<std::string> parseString(std::string_view& s) {
             if (starts == '\"') {
                 auto ans = std::string{res.begin(), res.end()};
 
-                if (s.starts_with(" /*BASE64*/")) { return ll::utils::base64::decode(ans); }
+                if (s.starts_with(" /*BASE64*/")) { return ll::base64::decode(ans); }
 
                 return ans;
             }
@@ -260,6 +260,11 @@ std::optional<std::string> parseString(std::string_view& s) {
         // escapes
         case '\\': {
             switch (get(s)) {
+            // multiline string
+            case '\n':
+            case '\r':
+                if (!skipWhitespace(s)) { return std::nullopt; }
+                break;
 
             // quotation mark
             case '\"': {

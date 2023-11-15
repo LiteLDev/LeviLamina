@@ -1,10 +1,10 @@
 #pragma once
 
-#include "ll/api/plugin/Version.h"
+#include "ll/api/base/Version.h"
 
 namespace ll {
-LLNDAPI plugin::Version getBdsVersion();
-LLNDAPI plugin::Version getLoaderVersion();
-LLNDAPI int             getServerProtocolVersion();
-LLNDAPI bool            setServerMotd(std::string const& motd);
+LLNDAPI Version getBdsVersion();
+LLNDAPI Version getLoaderVersion();
+LLNDAPI int     getServerProtocolVersion();
+LLNDAPI bool    setServerMotd(std::string const& motd);
 } // namespace ll

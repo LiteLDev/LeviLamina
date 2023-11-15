@@ -125,4 +125,8 @@ public:
         return time;
     }
 };
+
+namespace detail {
+LLAPI void printScheduleError() noexcept;
+}
 } // namespace ll::schedule

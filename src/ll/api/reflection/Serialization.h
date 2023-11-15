@@ -159,22 +159,14 @@ inline J serialize(T const& tuple)
     requires(!std::convertible_to<T, J>)
 {
     J res;
-    std::apply(
-        [&](auto&&... args) { ((res.push_back(serialize<J>(args))), ...); },
-        tuple
-    );
+    std::apply([&](auto&&... args) { ((res.push_back(serialize<J>(args))), ...); }, tuple);
     return res;
 }
 template <class J, ll::concepts::TupleLike T>
 inline void deserialize(T& tuple, J const& j) {
     if (!j.is_array()) return;
     size_t i = 0;
-    std::apply(
-        [&](auto&... args) {
-            (((i < j.size()) ? deserialize<J>(args, j[i++]) : void()), ...);
-        },
-        tuple
-    );
+    std::apply([&](auto&... args) { (((i < j.size()) ? deserialize<J>(args, j[i++]) : void()), ...); }, tuple);
 }
 
 template <class J, ll::concepts::ArrayLike T>

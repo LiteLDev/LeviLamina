@@ -4,11 +4,10 @@
 #include <stdexcept>
 
 template <typename T>
+    requires(!std::is_reference_v<T>)
 class optional_ref {
 private:
     T* const mPtr = nullptr;
-
-    static_assert(!std::is_reference_v<T>, "T must not be a reference type (use a pointer?)");
 
     template <typename U>
     static constexpr bool IsCompatibleV =
@@ -76,11 +75,9 @@ public:
     [[nodiscard]] constexpr T& operator*() const { return get(); }
 
     template <class T2>
-    [[nodiscard]] constexpr std::remove_cv_t<T> const& value_or(T2&& right) const&
-        requires(std::is_convertible_v<T const&, std::remove_cv_t<T>> && std::is_convertible_v<T2, T>)
-    {
-        if (has_value()) { return static_cast<T const&>(*mPtr); }
-        return static_cast<std::remove_cv_t<T>>(std::forward<T2>(right));
+    [[nodiscard]] constexpr T& value_or(T2&& right) const& {
+        if (has_value()) { return *mPtr; }
+        return std::forward<T2>(right);
     }
 
     [[nodiscard]] constexpr operator T&() const {
@@ -89,9 +86,8 @@ public:
     }
 
     template <typename U = std::decay_t<T>>
-    [[nodiscard]] constexpr std::optional<U> copy_as_optional() const
         requires(std::is_constructible_v<U, T>)
-    {
+    [[nodiscard]] constexpr std::optional<U> copy_as_optional() const {
         return mPtr ? std::optional<U>(*mPtr) : std::nullopt;
     }
 

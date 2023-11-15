@@ -4,7 +4,7 @@
 #include <set>
 #include <string>
 
-#include "ll/api/plugin/Version.h"
+#include "ll/api/base/Version.h"
 
 namespace ll::plugin {
 
@@ -13,6 +13,7 @@ struct Manifest {
         std::string name;
         Version     version;
     };
+    std::string                        entry;
     std::string                        name;
     std::string                        description;
     std::string                        author;

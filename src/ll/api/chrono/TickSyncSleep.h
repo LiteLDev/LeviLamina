@@ -1,19 +1,20 @@
 #pragma once
 
-#include "ll/api/chrono/GameChrono.h"
 #include <chrono>
 #include <mutex>
 #include <variant>
 
-namespace ll::gamechrono {
+#include "ll/api/chrono/GameChrono.h"
+
+namespace ll::chrono {
 
 template <class Clock>
 class TickSyncSleep;
 
 extern std::vector<std::variant<
-    std::reference_wrapper<TickSyncSleep<ServerClock>>,
-    std::reference_wrapper<TickSyncSleep<GameTimeClock>>>>
-    ticklist;
+    std::reference_wrapper<TickSyncSleep<game_chrono::ServerClock>>,
+    std::reference_wrapper<TickSyncSleep<game_chrono::GameTimeClock>>>>
+    tickList;
 
 template <class Clock>
 class TickSyncSleep {
@@ -40,14 +41,14 @@ public:
     } state{State::None};
 
     TickSyncSleep() {
-        id = ticklist.size();
-        ticklist.emplace_back(std::ref(*this));
+        id = tickList.size();
+        tickList.emplace_back(std::ref(*this));
     }
 
     ~TickSyncSleep() {
         state = State::None;
-        std::swap(ticklist[id], ticklist.back());
-        ticklist.pop_back();
+        std::swap(tickList[id], tickList.back());
+        tickList.pop_back();
     }
 
     void sleepFor(Clock::duration duration) {
@@ -80,4 +81,4 @@ public:
         cv.notify_one();
     }
 };
-} // namespace ll::gamechrono
+} // namespace ll::chrono

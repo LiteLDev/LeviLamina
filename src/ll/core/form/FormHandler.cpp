@@ -99,7 +99,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     if (!modalPacket.mFormCancelReason && modalPacket.mJSONResponse) {
         data = modalPacket.mJSONResponse.value().toStyledString();
-        if (data.back() == '\n') { data.pop_back(); }
+        if (data.ends_with('\n')) { data.pop_back(); }
     }
 
     ll::form::handler::handleFormPacket(player, modalPacket.mFormId, data);

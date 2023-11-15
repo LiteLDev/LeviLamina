@@ -24,10 +24,10 @@
 #include "mc/world/effect/MobEffect.h"
 #include "mc/world/level/Command.h"
 
-
-struct DCCallback;
-struct DCArgs;
-typedef union DCValue_ DCValue;
+namespace ll {
+template <class Ret>
+class NativeClosure;
+}
 
 class Actor;
 class DynamicCommandInstance;
@@ -412,7 +412,8 @@ public:
                 description == "" ? nullptr : description.data(),
                 (int)offset,
                 optional,
-                (int)offset + std::max(8, (int)sizeof(T))};
+                (int)offset + std::max(8, (int)sizeof(T))
+            };
             param.addOptions(option);
             return param;
         }
@@ -490,9 +491,7 @@ private:
         }
     }
 
-    LLAPI static char builderCallbackHanler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata);
-    LLAPI static std::unique_ptr<Command>* commandBuilder(std::unique_ptr<Command>* rtn, std::string name);
-    LLAPI static DynamicCommandInstance*   preSetup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
+    LLAPI static DynamicCommandInstance* preSetup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
 
 public:
     friend class DynamicCommandInstance;
@@ -594,7 +593,8 @@ private:
     std::unique_ptr<std::string> description_;
     CommandPermissionLevel       permission_;
     CommandFlag                  flag_;
-    DynamicCommand::BuilderFn    builder_ = nullptr;
+
+    std::unique_ptr<ll::NativeClosure<std::unique_ptr<Command>>> builder;
 
 public:
     // Parameter Pointers to DynamicCommand Extra Part
@@ -626,7 +626,6 @@ private:
         CommandFlag            flag       = CommandFlagValue::NotCheat
     );
 
-    LLAPI bool setBuilder(DynamicCommand::BuilderFn builder);
     LLAPI DynamicCommand::BuilderFn initCommandBuilder();
     LLAPI std::vector<CommandParameterData> buildOverload(std::vector<ParameterIndex> const& overload);
 

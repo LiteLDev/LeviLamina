@@ -2,6 +2,7 @@
 
 #include <string_view>
 
+namespace ll {
 template <size_t N>
 struct FixedString {
     char buf[N + 1]{};
@@ -12,3 +13,4 @@ struct FixedString {
 
 template <size_t N>
 FixedString(char const (&)[N]) -> FixedString<N - 1>;
+} // namespace ll

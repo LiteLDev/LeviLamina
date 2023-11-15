@@ -9,7 +9,7 @@
  * Use Logger
  * @code
  * logger.info("Infomation");                      // Common
- * logger.error("Error! Code:{}",GetLastError());  // fmt Format
+ * logger.error("Error! Code:{}", -1);             // fmt Format
  * @endcode
  */
 
@@ -32,6 +32,7 @@
 #include "fmt/core.h"
 #include "fmt/os.h"
 #include "fmt/printf.h"
+#include "fmt/std.h"
 
 namespace ll {
 class Logger {
@@ -42,31 +43,31 @@ public:
         friend class Logger;
 
     private:
-        LLAPI void print(std::string_view) const;
+        LLAPI void print(std::string_view) const noexcept;
 
     public:
-        Logger&                               logger;
-        std::string_view                      levelPrefix;
-        int const                             level;
-        std::array<fmt::text_style, 4> const  style;
-        std::array<std::string_view, 5> const consoleFormat;
-        std::array<std::string_view, 5> const fileFormat;
-        std::array<std::string_view, 5> const playerFormat;
-        PlayerOutputFunc                      playerOutputCallback;
+        Logger*                        logger;
+        std::string                    levelPrefix;
+        int                            level;
+        std::array<fmt::text_style, 4> style;
+        std::array<std::string, 5>     consoleFormat;
+        std::array<std::string, 5>     fileFormat;
+        std::array<std::string, 5>     playerFormat;
+        PlayerOutputFunc               playerOutputCallback;
 
         LLAPI explicit OutputStream(
-            Logger&                                logger,
-            std::string_view                       levelPrefix,
-            int                                    level,
-            std::array<fmt::text_style, 4> const&  style         = {{}},
-            std::array<std::string_view, 5> const& playerFormat  = {"<{2}|{1}> [{0}] {3}", "{:%T}", "{}", "{}", "{}"},
-            std::array<std::string_view, 5> const& consoleFormat = {"{0} {1} {2} {3}", "{:%T}", "{}", "[{}]", "{}"},
-            std::array<std::string_view, 5> const& fileFormat    = {"[{0} {1}][{2}] {3}", "{:%F %T}", "{}", "{}", "{}"}
+            Logger&                               logger,
+            std::string                           levelPrefix,
+            int                                   level,
+            std::array<fmt::text_style, 4> const& style         = {{}},
+            std::array<std::string, 5> const&     playerFormat  = {"<{2}|{1}> [{0}] {3}", "{:%T}", "{}", "{}", "{}"},
+            std::array<std::string, 5> const&     consoleFormat = {"{0} {1} {2} {3}", "{:%T}", "{}", "[{}]", "{}"},
+            std::array<std::string, 5> const&     fileFormat    = {"[{0} {1}][{2}] {3}", "{:%F %T}", "{}", "{}", "{}"}
         );
 
         template <ll::concepts::IsString S, typename... Args>
-        void operator()(S const& fmt, Args const&... args) const {
-            if constexpr (0 == sizeof...(args)) {
+        void operator()(S const& fmt, Args const&... args) const noexcept(sizeof...(args) == 0) {
+            if constexpr (sizeof...(args) == 0) {
                 print(fmt);
             } else {
                 print(fmt::format(fmt::runtime(fmt), args...));
@@ -112,6 +113,8 @@ public:
         if (ofs) { return ofs.value(); }
         return defaultFile;
     }
+
+    LLAPI static std::recursive_mutex loggerMutex;
 
 private:
     LLAPI static std::ofstream    defaultFile;

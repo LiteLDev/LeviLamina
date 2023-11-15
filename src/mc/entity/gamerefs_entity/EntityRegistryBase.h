@@ -5,16 +5,18 @@
 
 class EntityRegistryBase {
 public:
-    void*                                 mCanModifyDuringView;
-    entt::basic_registry<class EntityId>& mRegistry;
-    EntityId                              mViewedEntity;
-    bool                                  mViewUsesViewedContext;
-    uint                                  mId;
+    // prevent constructor by default
+    EntityRegistryBase& operator=(EntityRegistryBase const&);
+    EntityRegistryBase(EntityRegistryBase const&);
+    EntityRegistryBase();
+
+    entt::basic_registry<EntityId>& mRegistry;
+    uint                            mId;
 
 public:
     // NOLINTBEGIN
     // symbol: ??0EntityRegistryBase@@QEAA@AEAV?$basic_registry@VEntityId@@V?$allocator@VEntityId@@@std@@@entt@@@Z
-    MCAPI explicit EntityRegistryBase(entt::basic_registry<class EntityId>&);
+    MCAPI explicit EntityRegistryBase(entt::basic_registry<EntityId>&);
 
     // symbol: ?isValidEntity@EntityRegistryBase@@QEBA_NAEBVEntityContextBase@@@Z
     MCAPI bool isValidEntity(class EntityContextBase const&) const;

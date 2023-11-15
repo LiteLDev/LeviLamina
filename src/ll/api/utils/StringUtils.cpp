@@ -5,7 +5,7 @@
 
 #include "mc/deps/core/mce/Color.h"
 
-#include "windows.h"
+#include "stringapiset.h"
 
 namespace ll::utils::string_utils {
 
@@ -229,6 +229,27 @@ std::string replaceMcToAnsiCode(std::string_view str) {
     if (begin != sbu8.end()) res << u8sv2sv(std::u8string_view{begin, sbu8.end()});
     res << getAnsiCodeFromTextStyle({});
     return res.str();
+}
+
+bool isu8str(std::string_view str) noexcept {
+    bool res = true;
+    fmt::detail::for_each_codepoint(str, [&](uint32_t cp, fmt::string_view) {
+        if (cp == fmt::detail::invalid_code_point) {
+            res = false;
+            return false;
+        }
+        return true;
+    });
+    return res;
+}
+
+std::string tou8str(std::string_view str) {
+    if (isu8str(str)) {
+        return std::string{str};
+    } else {
+        auto res = str2str(str);
+        return isu8str(res) ? res : "unknown codepage";
+    }
 }
 
 } // namespace ll::utils::string_utils

@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+#include "ll/api/utils/StringUtils.h"
+
 // auto generated inclusion list
 #include "mc/deps/crypto/hash/HashType.h"
 #include "mc/deps/crypto/hash/IHash.h"
@@ -19,16 +21,10 @@ public:
     Crypto::Hash::HashType               mHashType;
     std::unique_ptr<Crypto::Hash::IHash> mHash;
 
-    [[nodiscard]] inline std::string toString() {
-        const char  mp[] = "0123456789abcdef";
-        std::string hex;
-        for (uchar x : final()) {
-            hex += mp[x / 16];
-            hex += mp[x % 16];
-        }
-        return hex;
-    }
+    [[nodiscard]] inline std::string toString() { return ll::utils::string_utils::strToHexStr(final()); }
+
     inline void update(std::string_view data) { update(data.data(), (uint)data.size()); }
+
     template <class T, size_t N>
     inline void update(std::span<T, N> data) {
         update(data.data(), (uint)(data.size() * sizeof(T)));

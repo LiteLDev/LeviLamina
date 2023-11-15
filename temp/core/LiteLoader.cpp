@@ -6,7 +6,7 @@
 #include <processenv.h>
 #include <string>
 
-#include "ll/api/utils/FileUtils.h"
+#include "ll/api/io/FileUtils.h"
 #include "ll/api/utils/SehTranslator.h"
 #include "ll/api/utils/StringUtils.h"
 
@@ -23,8 +23,8 @@
 #include "ll/core/AddonsHelper.h"
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
-#include "ll/core/Loader.h"
 #include "ll/core/PlayerDeathPositions.h"
+#include "ll/core/PluginLoader.h"
 #include "ll/core/SimpleServerLogger.h"
 #include "ll/core/Version.h"
 
@@ -108,7 +108,7 @@ void decompressResourcePacks() {
     }
 }
 
-void checkRunningBDS() {
+void checkOtherBdsInstance() {
 
     constexpr const DWORD MAX_PATH_LEN = 32767;
     auto*                 buffer       = new wchar_t[MAX_PATH_LEN];
@@ -195,7 +195,7 @@ void fixAllowList() {
     }
 }
 
-void printLogo() {
+void printWelcomeMsg() {
     if (!ll::globalConfig.enableWelcomeText) return;
 
     cout << R"(

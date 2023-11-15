@@ -147,21 +147,26 @@ void LLListPluginsCommand(CommandOutput& output) {
     output.trSuccess("ll.cmd.listPlugin.overview", plugins.size());
 
     std::ostringstream oss;
-    for (auto& [name, plugin] : plugins) {
-        std::string pluginName = name;
-        if (pluginName.find("§") == std::string::npos) pluginName.insert(0, "§b");
-        std::string desc = plugin.getManifest().description;
-        if (desc.find("§") == std::string::npos) desc.insert(0, "§7");
+    for (auto& ptr : plugins) {
+        if (auto plugin = ptr.lock()) {
+            auto& manifest = plugin->getManifest();
+            auto& name     = manifest.name;
+            if (name.empty()) continue;
+            std::string pluginName = name;
+            if (pluginName.find("§") == std::string::npos) pluginName.insert(0, "§b");
+            std::string desc = manifest.description;
+            if (desc.find("§") == std::string::npos) desc.insert(0, "§7");
 
-        oss << fmt::format("- {} §a[v{}]\n  {}\n", pluginName, plugin.getManifest().version.to_string(), desc);
+            oss << fmt::format("- {} §a[v{}]\n  {}\n", pluginName, manifest.version.to_string(), desc);
+        }
     }
     output.success(oss.str() + '\n');
     output.trSuccess("ll.cmd.listPlugin.tip");
 }
 
 void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
-    auto plugin = PluginManager::getInstance().findPlugin(pluginName);
-    if (plugin.has_value()) {
+    auto ptr = PluginManager::getInstance().findPlugin(pluginName);
+    if (auto plugin = ptr.lock()) {
         std::map<std::string, std::string> outs;
         std::ostringstream                 oss;
 
@@ -175,10 +180,10 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
         size_t width = 10;
         for (auto& [k, v] : outs) { width = std::max(width, k.length()); }
         for (auto& [k, v] : outs) {
-            oss << "- §l" << std::setw((int64)width) << std::left << k << "§r: " << v << std::endl;
+            oss << "- §l" << std::setw((int64)width) << std::left << k << "§r: " << v << '\n';
         }
         auto text = oss.str();
-        text.pop_back();
+        if (text.ends_with('\n')) { text.pop_back(); }
         output.success(text, {});
     } else {
         output.trError("ll.cmd.pluginInfo.error.pluginNotFound", pluginName);
@@ -290,7 +295,7 @@ void LLSettingsCommand(
         default:
             output.error("Unknown operation");
         }
-    } catch (std::exception const& e) { output.trError("{}", e.what()); }
+    } catch (...) {}
 }
 */
 
@@ -362,7 +367,9 @@ public:
 
         // Register softenum
         std::vector<std::string> pluginList;
-        for (auto& [name, p] : PluginManager::getInstance().getAllPlugins()) { pluginList.push_back(name); }
+        for (auto& p : PluginManager::getInstance().getAllPlugins()) {
+            if (auto plugin = p.lock()) pluginList.push_back(plugin->getManifest().name);
+        }
         registry->addSoftEnum("PluginName", pluginList);
 
         // ll version & help

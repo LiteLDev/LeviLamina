@@ -6,48 +6,38 @@
 
 #include "ll/api/Config.h"
 #include "ll/api/plugin/Manifest.h"
-#include "ll/api/plugin/Plugin.h"
 
 namespace ll::plugin {
 
-extern "C" struct IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
-
-template <typename... Bases>
-struct overload : Bases... {
-    using is_transparent = void;
-    using Bases::operator()...;
-};
-
-struct char_pointer_hash {
-    auto operator()(const char* ptr) const noexcept { return std::hash<std::string_view>{}(ptr); }
-};
-
-using transparent_string_hash = overload<std::hash<std::string>, std::hash<std::string_view>, char_pointer_hash>;
-
-using PluginStorage = std::unordered_map<std::string, Plugin, transparent_string_hash, std::equal_to<>>;
+class Plugin;
 
 class PluginManager {
+private:
+    using Handle = memory::Handle;
+
     struct Impl;
     std::unique_ptr<Impl> mImpl;
-    using Handle = void*;
     PluginManager();
 
-    LLNDAPI static auto getCurrentPlugin(void* base) -> Plugin&;
+    auto registerPlugin(std::shared_ptr<Plugin> const& plugin) -> bool;
+    auto unregisterPlugin(std::weak_ptr<const Plugin> const& plugin) -> bool;
 
 public:
-    LLNDAPI static auto getInstance() -> PluginManager&;
+    LLNDAPI static PluginManager& getInstance();
 
-    void addDllMapping(Handle, std::string_view);
+    LLAPI auto loadAllPlugins() -> void;
+    LLAPI auto unloadAllPlugins() -> void;
+    LLAPI auto enableAllPlugins() -> void;
+    LLAPI auto disableAllPlugins() -> void;
 
-    LLAPI auto   registerPlugin(Manifest manifest) -> bool;
-    LLAPI auto   unregisterPlugin(std::string_view name) -> bool;
-    LLNDAPI auto findPlugin(std::string_view name) -> optional_ref<Plugin const>;
-    LLNDAPI auto getAllPlugins() -> PluginStorage const&;
+    LLAPI auto loadPlugin(std::string_view pluginName) -> std::shared_ptr<Plugin>;
+    LLAPI auto unloadPlugin(std::weak_ptr<const Plugin> const& plugin) -> bool;
+    LLAPI auto enablePlugin(std::weak_ptr<const Plugin> const& plugin) -> bool;
+    LLAPI auto disablePlugin(std::weak_ptr<const Plugin> const& plugin) -> bool;
 
-    [[maybe_unused]] inline static auto getCurrentPlugin() -> Plugin& {
-        static auto plugin = getCurrentPlugin(&__ImageBase);
-        return plugin;
-    }
+    LLNDAPI auto findPlugin(std::string_view name) -> std::weak_ptr<const Plugin>;
+    LLNDAPI auto findPlugin(Handle handle) -> std::weak_ptr<const Plugin>;
+    LLNDAPI auto getAllPlugins() -> std::vector<std::weak_ptr<const Plugin>>;
 };
 
 } // namespace ll::plugin

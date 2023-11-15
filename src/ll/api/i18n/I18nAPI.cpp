@@ -1,11 +1,11 @@
 #include "ll/api/i18n/I18nAPI.h"
-
+#include "ll/api/io/FileUtils.h"
 #include "ll/api/utils/StringUtils.h"
-
 #include "ll/api/utils/WinUtils.h"
 
 namespace fs = std::filesystem;
 
+using ll::utils::file_utils::u8path;
 using ll::utils::string_utils::splitByPattern;
 using ll::utils::win_utils::getSystemLocaleName;
 
@@ -81,7 +81,7 @@ std::string I18N::get(std::string const& key, std::string localeName) {
 void SingleFileI18N::load(std::string const& fileName) {
     this->mFilePath = fileName;
     if (!fs::exists(fileName)) {
-        fs::create_directories(fs::path(fileName).parent_path());
+        fs::create_directories(u8path(fileName).parent_path());
         std::fstream   file(fileName, std::ios::out | std::ios::app);
         nlohmann::json j = mDefaultLangData;
         file << std::setw(4) << j; // Dump default language data
@@ -161,7 +161,7 @@ void MultiFileI18N::save(bool nested) {
     if (!fs::exists(mDirPath)) {
         fs::create_directories(mDirPath);
         for (auto& [lc, lv] : this->mDefaultLangData) {
-            auto         fileName = fs::path(mDirPath).append(lc + ".json").wstring();
+            auto         fileName = u8path(mDirPath).append(lc + ".json").wstring();
             std::fstream file;
             if (fs::exists(fileName)) {
                 file.open(fileName, std::ios::out | std::ios::ate);

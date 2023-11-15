@@ -7,13 +7,14 @@
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/material/Material.h"
 
+#include "ll/api/base/ErrorInfo.h"
+#include "ll/api/utils/StacktraceUtils.h"
+#include "ll/core/LeviLamina.h"
+
+#include "ll/api/memory/Closure.h"
+
 auto test() {
     auto exists = BlockTypeRegistry::lookupByName("minecraft:stone");
-
-    std::cout << HashedString("").hash << std::endl;
-    std::cout << HashedString::computeHash("") << std::endl;
-
-    std::cout << "123" << std::endl;
     if (exists) { std::cout << exists->getTypeName() << std::endl; }
     return exists;
 }
@@ -31,6 +32,17 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     test();
 }
 
+class Test;
+
+#include "mc/entity/flags/ExitFromPassengerFlag.h"
+#include "mc/world/components/FlagComponent.h"
+
+size_t printHello(size_t data) {
+    ll::logger.warn("hello aaaaaaaa {}", data);
+    if (data != 123) throw std::runtime_error("Test New Crash Logger");
+    return 0;
+}
+
 LL_AUTO_TYPED_INSTANCE_HOOK(
     BlockDefinitionGroupRegisterBlocks,
     HookPriority::Normal,
@@ -38,11 +50,64 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     &BlockDefinitionGroup::registerBlocks,
     void
 ) {
-    auto& map                      = BlockTypeRegistry::$mBlockLookupMap();
-    map[HashedString("test:test")] = BlockTypeRegistry::lookupByName("minecraft:stone");
+    std::cout << "type_hash  " << entt::type_hash<FlagComponent<ExitFromPassengerFlag>>::value() << std::endl;
 
-    auto ptr = BlockTypeRegistry::lookupByName("test:test");
+    ll::utils::error_info::printException(ll::utils::error_info::getWinLastError());
 
-    std::cout << "hii  " << bool(ptr) << std::endl;
+    try {
+        char* pp = (char*)(0x123);
+        *pp      = 'a';
+    } catch (...) { ll::utils::error_info::printCurrentException(); }
+
+    try {
+        int a = 0;
+        int b = 2 / a;
+        std::cout << "b = " << b << std::endl;
+    } catch (...) { ll::utils::error_info::printCurrentException(); }
+#if _HAS_CXX23
+    // static ll::utils::stacktrace_utils::SymbolLoader sl{};
+#endif
+    try {
+        try {
+            std::string s{"nonexistent.file"};
+            try {
+                std::ifstream file(s);
+                file.exceptions(std::ios_base::failbit);
+            } catch (...) {
+#if _HAS_CXX23
+                auto stack = ll::utils::error_info::stacktraceFromCurrExc();
+                ll::logger.debug("\n{}", ll::utils::stacktrace_utils::toString(stack));
+#endif
+                std::throw_with_nested(std::runtime_error("Couldn't open " + s));
+            }
+        } catch (...) {
+            std::throw_with_nested(std::system_error(std::error_code{1, std::generic_category()}, "run() failed"));
+        }
+    } catch (...) {
+        ll::utils::error_info::printCurrentException();
+#if _HAS_CXX23
+        auto stack = std::stacktrace::current();
+        ll::logger.debug("\n{}", ll::utils::stacktrace_utils::toString(stack));
+#endif
+    }
+    // throw std::runtime_error("Test New Crash Logger");
+
+    auto c1 = ll::NativeClosure(printHello, 123);
+
+    auto f = std::function<void(void)>(std::bind(printHello, 123));
+
+    // auto c2 = ll::NativeClosure(printHello, 49795726147);
+
+    (*c1.get())();
+    f();
+    // (*c2.get())();
+
+    // auto& map        = BlockTypeRegistry::$mBlockLookupMap();
+    // map["test:test"] = BlockTypeRegistry::lookupByName("minecraft:stone");
+
+    // auto ptr = BlockTypeRegistry::lookupByName("test:test");
+
+    // std::clog << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
+    // std::cout << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
     origin();
 }

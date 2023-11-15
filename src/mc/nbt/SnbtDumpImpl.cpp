@@ -1,5 +1,5 @@
 #include "ll/api/Logger.h"
-#include "ll/api/utils/Base64.h"
+#include "ll/api/base/Base64.h"
 #include "ll/api/utils/StringUtils.h"
 #include "mc/common/ColorFormat.h"
 #include "mc/deps/core/mce/Color.h"
@@ -14,7 +14,7 @@ using namespace ll::utils::string_utils;
 
 namespace cf = ColorFormat;
 
-static constexpr auto base64Id = std::string{" /*BASE64*/"};
+constexpr auto base64Id = std::string{" /*BASE64*/"};
 
 template <std::integral T>
 std::string getString(T value) {
@@ -61,7 +61,7 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
             res = res.substr(1, res.size() - 2);
         } catch (...) {
             base64 = true;
-            res    = "\"" + ll::utils::base64::encode(str) + "\"";
+            res    = "\"" + ll::base64::encode(str) + "\"";
         }
     }
 
@@ -171,11 +171,9 @@ std::string TypedToSnbt(ListTag& self, uchar indent, SnbtFormat format) {
 
         auto key = tag->toSnbt(format, indent);
 
-        if (isNewLine) {
-            res += replaceAll(key, "\n", "\n" + indentSpace);
-        } else {
-            res += key;
-        }
+        if (isNewLine) { replaceAll(key, "\n", "\n" + indentSpace); }
+        res += key;
+
 
         if (i > 0) {
             res += ',';
@@ -230,11 +228,8 @@ std::string TypedToSnbt(CompoundTag& self, uchar indent, SnbtFormat format) {
 
         auto key = v.get()->toSnbt(format, indent);
 
-        if (isNewLine) {
-            res += replaceAll(key, "\n", "\n" + indentSpace);
-        } else {
-            res += key;
-        }
+        if (isNewLine) { replaceAll(key, "\n", "\n" + indentSpace); }
+        res += key;
 
         if (i > 0) {
             res += ',';

@@ -7,7 +7,7 @@
 
 #include "nlohmann/json.hpp"
 
-#include "ll/api/plugin/Version.h"
+#include "ll/api/base/Version.h"
 
 // #include "ll/api/schedule/Scheduler.h"
 // #include "ll/api/service/GlobalService.h"
@@ -24,7 +24,7 @@ class TestClass {
 public:
     int version = 2;
 
-    ll::plugin::Version ver;
+    ll::Version ver;
 
     bool someFlag = false;
     bool eeeeFlag = true;
@@ -71,6 +71,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     ll::config::saveConfig(helloReflection, "plugins/Test/testconfig.json");
 
+    std::lock_guard lock(ll::Logger::loggerMutex); // test logger order
+
     ll::logger.debug("{} for load config", ll::config::loadConfig(helloReflection, "plugins/Test/testconfig.json"));
     ll::logger.debug("\n{}", ll::reflection::serialize<nlohmann::ordered_json>(helloReflection).dump(4));
 
@@ -90,26 +92,6 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     fprintf(stderr, "hi I'm SB Plugin 6\n");
 
     puts("hi I'm SB Plugin 7\n");
-
-    putchar('h');
-    putchar('a');
-    putchar('h');
-    putchar('a');
-    putchar(' ');
-    putchar('8');
-    putchar('\n');
-
-    std::clog << std::flush;
-
-    fputc('h', stdout);
-    fputc('a', stdout);
-    fputc('h', stdout);
-    fputc('a', stdout);
-    fputc(' ', stdout);
-    fputc('9', stdout);
-    fputc('\n', stdout);
-
-    std::clog << std::flush;
 
     fputs("hi I'm SB Plugin 10\n", stdout);
 

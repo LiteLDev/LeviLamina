@@ -1,8 +1,8 @@
 #include "ModalForm.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/form/FormHandler.h"
-#include "mc/network/packet/ModalFormRequestPacket.h"
 #include "ll/core/form/FormImplBase.h"
+#include "mc/network/packet/ModalFormRequestPacket.h"
 
 namespace ll::form {
 
@@ -86,6 +86,8 @@ ModalForm::ModalForm(
     std::move(buttonRight),
     std::move(callback)
 )) {}
+
+ModalForm::~ModalForm() = default;
 
 ModalForm& ModalForm::setTitle(std::string const& title) {
     impl->setTitle(title);

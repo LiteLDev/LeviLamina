@@ -6,12 +6,15 @@
 #include <type_traits>
 #include <vector>
 
+#include "ll/api/base/FixedString.h"
 #include "ll/api/base/Macro.h"
-#include "ll/api/utils/FixedString.h"
 
 namespace ll::memory {
 
 using FuncPtr = void*;
+using Handle  = void*;
+
+extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
 
 template <typename T>
     requires(sizeof(T) == sizeof(FuncPtr))
@@ -23,7 +26,6 @@ constexpr FuncPtr toFuncPtr(T t) {
     u.t = t;
     return u.fp;
 }
-
 
 template <typename T>
     requires(std::is_member_function_pointer_v<T> && sizeof(T) == sizeof(FuncPtr) + sizeof(ptrdiff_t))
@@ -78,6 +80,10 @@ LLNDAPI std::vector<std::string> lookupSymbol(FuncPtr func);
  * @param callback Callback
  */
 LLAPI void modify(void* ptr, size_t len, const std::function<void()>& callback);
+
+LLAPI Handle getModuleHandle(void* addr);
+
+inline Handle getCurrentModuleHandle() { return &__ImageBase; }
 
 template <class T>
 inline void modify(T& ref, std::function<void(std::remove_cvref_t<T>&)>&& f) {

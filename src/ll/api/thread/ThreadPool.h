@@ -10,6 +10,8 @@
 #include <thread>
 #include <vector>
 
+#include "ll/api/base/ErrorInfo.h"
+
 namespace ll::thread {
 class ThreadPool {
 private:
@@ -23,6 +25,7 @@ public:
     explicit ThreadPool(size_t nThreads) {
         for (size_t i = 0; i < nThreads; ++i) {
             workers.emplace_back([this] {
+                ll::utils::error_info::setSehTranslator();
                 for (;;) {
                     std::function<void()> task;
                     {

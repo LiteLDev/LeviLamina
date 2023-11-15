@@ -1,5 +1,5 @@
+#include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/utils/FileUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
 
@@ -55,7 +55,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
     },
     hello = {
         "Nzg52/4=" /*BASE64*/= {
-            'ሴ56' = "XG5cdFxyXGJcdTEyMzRcdWZmZmZmZmZm2/4=" /*BASE64*/ // hellow
+            'ሴ56' = "XG5cdFxyXGJcdTEyMzRc\
+                //hi
+            dWZmZmZmZmZm2/4=" /*BASE64*/ // hellow
         }
     },
     intarray = [I;1, 2, 3, 4, 5, -2, -3, -6],
@@ -91,6 +93,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
 
     )");
 
+    std::lock_guard lock(ll::Logger::loggerMutex);
 
     ll::logger.debug("\n{}", nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console | SnbtFormat::Jsonify));
 

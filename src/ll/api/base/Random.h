@@ -1,13 +1,14 @@
 #pragma once
 
-#include "ll/api/base/StdInt.h"
-#include "pcg_cpp/pcg_random.hpp"
 #include <numeric>
 #include <random>
 #include <type_traits>
 
+#include "pcg_cpp/pcg_random.hpp"
 
-namespace ll::utils::random {
+#include "ll/api/base/StdInt.h"
+
+namespace ll::random {
 
 template <std::integral T>
 inline T rand(T upBound = 0) {
@@ -30,13 +31,13 @@ inline T rand() {
         uintmax_t u;
         T         f;
     } x;
-    auto r = rand<uintmax_t>();
+    auto r  = rand<uintmax_t>();
     x.f     = std::numeric_limits<T>::max();
-    r       &= x.u;
+    r      &= x.u;
     x.f     = std::numeric_limits<T>::infinity();
-    r       &= ~x.u;
+    r      &= ~x.u;
     x.f     = static_cast<T>(1);
-    x.u |= r;
+    x.u    |= r;
     /* Trick from MTGP: generate a uniformly distributed
     float number in [1,2) and subtract 1. */
     return x.f - static_cast<T>(1);
@@ -66,4 +67,4 @@ inline T leftCloseIntervalRand(T min = 0, T max = 1) {
     return rand<T>(min, max);
 }
 
-} // namespace ll::utils::random
+} // namespace ll::random

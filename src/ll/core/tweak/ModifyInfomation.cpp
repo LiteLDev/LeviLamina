@@ -135,7 +135,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
 // Redirect C++ output
 
-LL_AUTO_STATIC_HOOK(CppOutputRedirectHook, HookPriority::High, "main", int, int argc, char* argv[]) {
+LL_AUTO_STATIC_HOOK(CppOutputRedirectHook, HookPriority::Lowest, "main", int, int argc, char* argv[]) {
+
+    std::ios::sync_with_stdio(false);
 
     ll::Logger           coutlogger("std::cout");
     ll::io::ofuncstream  coutfs{[&](std::string_view s) {
@@ -175,10 +177,20 @@ enum class PrintFileType {
     Custom,
 };
 
+void redirectStdIo(std::string_view str, FILE* stream) {
+    if (str.ends_with('\n')) { str.remove_suffix(1); }
+    if (str.empty()) { return; }
+    if (stream == stdout) {
+        stdoutlogger.warn(str);
+    } else {
+        stderrlogger.fatal(str);
+    }
+}
+
 LL_AUTO_STATIC_HOOK(
     StdioPrintRedirectHook,
-    HookPriority::Highest,
-    __stdio_common_vfprintf,
+    HookPriority::Lowest,
+    __stdio_common_vfprintf_s,
     int,
     uint64      options,
     FILE*       stream,
@@ -203,21 +215,15 @@ LL_AUTO_STATIC_HOOK(
 
     _vsprintf_l(buffer.data(), format, locale, argList);
 
-    if (buffer.ends_with('\n')) { buffer.pop_back(); }
-
-    if (type == PrintFileType::Stdout) {
-        stdoutlogger.warn(buffer);
-    } else {
-        stderrlogger.fatal(buffer);
-    }
+    redirectStdIo(buffer, stream);
 
     return bufferCount;
 }
 
 LL_AUTO_STATIC_HOOK(
     StdioPrintSRedirectHook,
-    HookPriority::Highest,
-    __stdio_common_vfprintf_s,
+    HookPriority::Lowest,
+    __stdio_common_vfprintf,
     int,
     uint64      options,
     FILE*       stream,
@@ -226,12 +232,12 @@ LL_AUTO_STATIC_HOOK(
     va_list     argList
 ) {
     if (stream != stdout && stream != stderr) { return origin(options, stream, format, locale, argList); }
-    return __stdio_common_vfprintf(options, stream, format, locale, argList);
+    return __stdio_common_vfprintf_s(options, stream, format, locale, argList);
 }
 
 LL_AUTO_STATIC_HOOK(
     StdioPrintPRedirectHook,
-    HookPriority::Highest,
+    HookPriority::Lowest,
     __stdio_common_vfprintf_p,
     int,
     uint64      options,
@@ -245,41 +251,24 @@ LL_AUTO_STATIC_HOOK(
     if (bufferCount <= 0) { return 0; }
     auto buffer = std::string(bufferCount, ' ');
     _vsprintf_p_l(buffer.data(), bufferCount, format, locale, argList);
-    fprintf(stream, buffer.c_str());
+    redirectStdIo(buffer, stream);
     return bufferCount;
 }
 
-LL_AUTO_STATIC_HOOK(StdioPutsRedirectHook, HookPriority::Highest, puts, int, char const* str) {
-    printf(str);
+LL_AUTO_STATIC_HOOK(StdioPutsRedirectHook, HookPriority::Lowest, puts, int, char const* str) {
+    redirectStdIo(str, stdout);
     return 0;
 }
 
-LL_AUTO_STATIC_HOOK(StdioFPutsRedirectHook, HookPriority::Highest, fputs, int, char const* str, FILE* stream) {
+LL_AUTO_STATIC_HOOK(StdioFPutsRedirectHook, HookPriority::Lowest, fputs, int, char const* str, FILE* stream) {
     if (stream != stdout && stream != stderr) { return origin(str, stream); }
-    fprintf(stream, str);
-    return 0;
-}
-
-LL_AUTO_STATIC_HOOK(StdioPutcharRedirectHook, HookPriority::Highest, putchar, int, int c) {
-    std::clog << (char)c;
-    return 0;
-}
-
-LL_AUTO_STATIC_HOOK(StdioPutcRedirectHook, HookPriority::Highest, putc, int, int c, FILE* stream) {
-    if (stream != stdout && stream != stderr) { return origin(c, stream); }
-    std::clog << (char)c;
-    return 0;
-}
-
-LL_AUTO_STATIC_HOOK(StdioFPutcRedirectHook, HookPriority::Highest, fputc, int, int c, FILE* stream) {
-    if (stream != stdout && stream != stderr) { return origin(c, stream); }
-    std::clog << (char)c;
+    redirectStdIo(str, stream);
     return 0;
 }
 
 LL_AUTO_STATIC_HOOK(
     StdioFWriteRedirectHook,
-    HookPriority::Highest,
+    HookPriority::Lowest,
     fwrite,
     size_t,
     void const* buffer,
@@ -287,8 +276,10 @@ LL_AUTO_STATIC_HOOK(
     size_t      elementCount,
     FILE*       stream
 ) {
-    if (stream != stdout && stream != stderr) { return origin(buffer, elementSize, elementCount, stream); }
-    auto sbuffer = std::string((char const*)buffer, elementCount * elementSize);
-    fprintf(stream, sbuffer.c_str());
-    return 0;
+    try {
+        if (stream != stdout && stream != stderr) { return origin(buffer, elementSize, elementCount, stream); }
+        auto sbuffer = std::string((char const*)buffer, elementCount * elementSize);
+        redirectStdIo(sbuffer, stream);
+        return elementCount;
+    } catch (...) { return 0; }
 }

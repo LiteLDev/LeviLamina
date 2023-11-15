@@ -1,12 +1,13 @@
-﻿#include "ll/api/utils/KeyValueDB.h"
+﻿#include "KeyValueDB.h"
 
 #include <optional>
 
 #include "leveldb/cache.h"
+#include "leveldb/db.h"
 #include "leveldb/filter_policy.h"
 
 #include "ll/api/i18n/I18nAPI.h"
-#include "ll/api/utils/FileUtils.h"
+#include "ll/api/io/FileUtils.h"
 #include "ll/core/LeviLamina.h"
 
 using namespace ll;
@@ -103,7 +104,8 @@ private:
 };
 
 std::unique_ptr<KeyValueDB> KeyValueDB::create(std::string const& path, bool readCache, int cacheSize, int filterBit) {
-    file_utils::createDirs(path);
+    std::error_code ec;
+    std::filesystem::create_directories(file_utils::u8path(path), ec);
     auto db  = std::unique_ptr<KeyValueDB>(new KeyValueDB());
     db->impl = std::make_unique<KeyValueDBImpl>(path, true, readCache, cacheSize, filterBit);
     return db;
@@ -111,7 +113,8 @@ std::unique_ptr<KeyValueDB> KeyValueDB::create(std::string const& path, bool rea
 
 std::unique_ptr<KeyValueDB>
 KeyValueDB::open(std::string const& path, bool create, bool readCache, int cacheSize, int filterBit) {
-    file_utils::createDirs(path);
+    std::error_code ec;
+    std::filesystem::create_directories(file_utils::u8path(path), ec);
     auto db  = std::unique_ptr<KeyValueDB>(new KeyValueDB());
     db->impl = std::make_unique<KeyValueDBImpl>(path, create, readCache, cacheSize, filterBit);
     return db;

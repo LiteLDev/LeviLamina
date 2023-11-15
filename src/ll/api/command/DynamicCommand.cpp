@@ -1,9 +1,8 @@
 ﻿#include "ll/api/command/DynamicCommand.h"
 
-#include "dyncall/dyncall_callback.h"
-
 #include "ll/api/Logger.h"
-#include "ll/api/utils/SehTranslator.h"
+#include "ll/api/base/ErrorInfo.h"
+#include "ll/api/memory/Closure.h"
 #include "ll/core/Config.h"
 #include "ll/core/Levilamina.h"
 
@@ -40,17 +39,6 @@ using ll::logger;
     func(ActorType);                                                                                                   \
     func(Command);                                                                                                     \
     func(WildcardSelector);
-
-#define CatchDynamicCommandError(command)                                                                              \
-    catch (const seh_exception& e) {                                                                                   \
-        OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), __FUNCTION__, command);                    \
-    }                                                                                                                  \
-    catch (const std::exception& e) {                                                                                  \
-        OutputError("Uncaught C++ Exception Detected!", errno, e.what(), __FUNCTION__, command);                       \
-    }                                                                                                                  \
-    catch (...) {                                                                                                      \
-        OutputError("Uncaught Exception Detected!", -1, "", __FUNCTION__, command);                                    \
-    }
 
 // global variable and function
 namespace {
@@ -107,15 +95,9 @@ auto const ParameterSizeMap = std::unordered_map<ParameterType, size_t>{
     {ParameterType::Command,    std::max((size_t)8, sizeof(ParameterDataType::Command))   },
 };
 
-inline void OutputError(
-    const std::string& errorMsg,
-    int                errorCode,
-    const std::string& errorWhat,
-    const std::string& func,
-    const std::string& command
-) {
-    logger.error(errorMsg);
-    logger.error("Error: Code [{}] {}", errorCode, errorWhat);
+inline void OutputError(const std::string& command, const std::string& func = __builtin_FUNCTION()) {
+    std::lock_guard lock(ll::Logger::loggerMutex);
+    ll::utils::error_info::printCurrentException();
     logger.error("In Function ({})", func);
     logger.error("In Command <{}>", command);
 }
@@ -424,40 +406,6 @@ DynamicCommandInstance const* DynamicCommand::Result::getInstance() const {
 
 #pragma region DynamicCommand
 
-char DynamicCommand::builderCallbackHanler(DCCallback* /*cb*/, DCArgs* args, DCValue* /*result*/, void* userdata) {
-    DynamicCommandInstance& command = *(DynamicCommandInstance*)userdata;
-    auto                    arg1    = (std::unique_ptr<Command>*)dcbArgPointer(args);
-    DynamicCommand::commandBuilder(arg1, command.getCommandName());
-    return 'p';
-}
-
-std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command>* rtn, std::string name) {
-#define CaseInitBreak(type)                                                                                            \
-    case ParameterType::type:                                                                                          \
-        ll::memory::construct<ParameterDataType::type>(command, offset);                                               \
-        break;
-
-    assert(dynamicCommandInstances.count(name) == 1);
-    if (dynamicCommandInstances.count(name) == 0) {
-        logger.error("Error in allocate dynamic command");
-        return rtn;
-    }
-    auto& commandInstance = *dynamicCommandInstances.at(name);
-    auto  command         = new char[commandInstance.commandSize]{0};
-    (*(DynamicCommand*)command).DynamicCommand::DynamicCommand();
-    for (auto& [str, param] : commandInstance.parameterPtrs) {
-        size_t offset                                                                = param.getOffset();
-        ll::memory::dAccess<bool>(command, offset + ParameterSizeMap.at(param.type)) = false; // XXXX_isSet;
-        switch (param.type) {
-            ForEachParameterType(CaseInitBreak);
-        default:
-            break;
-        }
-    }
-    rtn->reset(std::move((Command*)command));
-    return rtn;
-}
-
 DynamicCommandInstance* DynamicCommand::preSetup(std::unique_ptr<class DynamicCommandInstance> commandInstance) {
     std::string name = commandInstance->getCommandName();
     logger.debug("Setting up command \"{}\"", name);
@@ -551,8 +499,7 @@ DynamicCommandInstance* DynamicCommand::preSetup(std::unique_ptr<class DynamicCo
         // commandInstance->overloads.clear();
         auto res = dynamicCommandInstances.emplace(commandInstance->name_, std::move(commandInstance));
         return res.first->second.get();
-    }
-    CatchDynamicCommandError(name);
+    } catch (...) { OutputError(name); }
     return nullptr;
 }
 
@@ -589,8 +536,7 @@ void DynamicCommand::execute(CommandOrigin const& origin, CommandOutput& output)
 
         for (auto& [name, param] : commandIns.parameterPtrs) { results.emplace(name, param.getResult(this, &origin)); }
         commandIns.callback_(*this, origin, output, results);
-    }
-    CatchDynamicCommandError(getCommandName());
+    } catch (...) { OutputError(getCommandName()); }
 }
 
 std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
@@ -678,10 +624,7 @@ DynamicCommandInstance::DynamicCommandInstance(
   permission_(permission),
   flag_(flag) {}
 
-DynamicCommandInstance::~DynamicCommandInstance() {
-    if (this->builder_) dcbFreeCallback((DCCallback*)this->builder_);
-    this->builder_ = nullptr;
-}
+DynamicCommandInstance::~DynamicCommandInstance() = default;
 
 std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(
     std::string const&     name,
@@ -930,17 +873,31 @@ void DynamicCommandInstance::removeCallback() const { callback_ = nullptr; }
 
 std::string const& DynamicCommandInstance::getCommandName() const { return name_; }
 
-bool DynamicCommandInstance::setBuilder(DynamicCommand::BuilderFn builder) {
-    if (this->builder_ == nullptr) this->builder_ = builder;
-    else return false;
-    return true;
+static std::unique_ptr<Command> commandBuilder(uintptr_t t) {
+#define CaseInitBreak(type)                                                                                            \
+    case ParameterType::type:                                                                                          \
+        ll::memory::construct<ParameterDataType::type>(command, offset);                                               \
+        break;
+
+    auto& commandInstance = *(DynamicCommandInstance*)t;
+    auto  command         = new char[commandInstance.commandSize]{0};
+    (*(DynamicCommand*)command).DynamicCommand::DynamicCommand();
+    for (auto& [str, param] : commandInstance.parameterPtrs) {
+        size_t offset                                                                = param.getOffset();
+        ll::memory::dAccess<bool>(command, offset + ParameterSizeMap.at(param.type)) = false; // XXXX_isSet;
+        switch (param.type) {
+            ForEachParameterType(CaseInitBreak);
+        default:
+            break;
+        }
+    }
+    return std::unique_ptr<Command>{(Command*)command};
 }
 
+
 DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder() {
-    auto builder = (DynamicCommand::BuilderFn)dcbNewCallback("ifsdl)p", &DynamicCommand::builderCallbackHanler, this);
-    if (this->setBuilder(builder)) return builder;
-    dcbFreeCallback((DCCallback*)builder);
-    return nullptr;
+    this->builder = std::make_unique<ll::NativeClosure<std::unique_ptr<Command>>>(commandBuilder, (uintptr_t)this);
+    return this->builder->get();
 }
 
 #pragma endregion

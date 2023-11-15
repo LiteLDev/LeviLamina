@@ -4,7 +4,7 @@
 
 #include "ll/api/base/StdInt.h"
 
-namespace ll::utils::base64 {
+namespace ll::base64 {
 
 inline const char base64Table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                   "abcdefghijklmnopqrstuvwxyz"
@@ -79,4 +79,4 @@ inline std::string decode(std::string const& base64_input) {
     }
     return out;
 }
-} // namespace ll::utils::base64
+} // namespace ll::base64

@@ -7,9 +7,9 @@
 #include <utility>
 
 #include "ll/api/base/Concepts.h"
+#include "ll/api/base/Hash.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/Meta.h"
-#include "ll/api/utils/Hash.h"
 
 template <typename T, typename = void>
 struct has_toString : std::false_type {};

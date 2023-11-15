@@ -1,12 +1,13 @@
 #pragma once
 
-#include "ll/api/chrono/TickSyncSleep.h"
-#include "ll/api/schedule/Task.h"
-#include "ll/api/thread/InterruptableSleep.h"
-#include "ll/api/thread/ThreadPool.h"
 #include <chrono>
 #include <map>
 #include <ranges>
+
+#include "ll/api/chrono/Chrono.h"
+#include "ll/api/schedule/Task.h"
+#include "ll/api/thread/InterruptableSleep.h"
+#include "ll/api/thread/ThreadPool.h"
 
 namespace ll::schedule {
 
@@ -16,20 +17,20 @@ struct SleeperType {
 };
 
 template <>
-struct SleeperType<ll::gamechrono::ServerClock> {
-    using Type = ll::gamechrono::TickSyncSleep<ll::gamechrono::ServerClock>;
+struct SleeperType<ll::chrono::ServerClock> {
+    using Type = ll::chrono::TickSyncSleep<ll::chrono::ServerClock>;
 };
 
 template <>
-struct SleeperType<ll::gamechrono::GameTimeClock> {
-    using Type = ll::gamechrono::TickSyncSleep<ll::gamechrono::GameTimeClock>;
+struct SleeperType<ll::chrono::GameTimeClock> {
+    using Type = ll::chrono::TickSyncSleep<ll::chrono::GameTimeClock>;
 };
 
 template <class Clock, class Sleeper = SleeperType<Clock>::Type>
 class Scheduler;
 
-using GameTickScheduler = Scheduler<ll::gamechrono::ServerClock>;
-using GameTimeScheduler = Scheduler<ll::gamechrono::GameTimeClock>;
+using GameTickScheduler = Scheduler<ll::chrono::ServerClock>;
+using GameTimeScheduler = Scheduler<ll::chrono::GameTimeClock>;
 
 using SystemTimeScheduler = Scheduler<std::chrono::system_clock>;
 
@@ -72,11 +73,17 @@ private:
             if (task->cancelled) { continue; }
             if (task->interval) {
                 threads.addTask([this, task] {
-                    task->f();
+                    try {
+                        task->f();
+                    } catch (...) { detail::printScheduleError(); }
                     addTask(task);
                 });
             } else {
-                threads.addTask([task] { task->f(); });
+                threads.addTask([task] {
+                    try {
+                        task->f();
+                    } catch (...) { detail::printScheduleError(); }
+                });
                 if (task->cancelled) { continue; }
                 auto time = task->getNextTime();
                 if (time < TimePoint::max()) { temp.emplace(time, std::move(task)); }

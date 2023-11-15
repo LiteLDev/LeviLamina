@@ -2,12 +2,12 @@
 #include "ll/api/memory/Hook.h"
 #include "mc/server/ServerLevel.h"
 
-namespace ll::gamechrono {
+namespace ll::chrono {
 
 std::vector<std::variant<
-    std::reference_wrapper<TickSyncSleep<ServerClock>>,
-    std::reference_wrapper<TickSyncSleep<GameTimeClock>>>>
-    ticklist;
+    std::reference_wrapper<TickSyncSleep<game_chrono::ServerClock>>,
+    std::reference_wrapper<TickSyncSleep<game_chrono::GameTimeClock>>>>
+    tickList;
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     TickSyncSleepInterrruptHook,
@@ -17,7 +17,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void
 ) {
     origin();
-    for (auto& e : ticklist) {
+    for (auto& e : tickList) {
         std::visit(
             [&](auto& ptr) -> void {
                 auto& sleeper = ptr.get();
@@ -43,4 +43,4 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     }
 }
 
-} // namespace ll::gamechrono
+} // namespace ll::chrono

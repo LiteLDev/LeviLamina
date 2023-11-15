@@ -11,14 +11,14 @@ using CustomFormResult        = std::unordered_map<std::string, CustomFormElemen
 class CustomForm : public Form {
 
     class CustomFormImpl;
-    std::unique_ptr<CustomFormImpl> impl{};
+    std::unique_ptr<CustomFormImpl> impl;
 
 public:
     using Callback = std::function<void(Player&, CustomFormResult const&)>;
 
     LLNDAPI explicit CustomForm(std::string const& title);
 
-    ~CustomForm() override = default;
+    LLAPI ~CustomForm() override;
 
     LLAPI CustomForm& setTitle(std::string const& title);
 
