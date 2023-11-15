@@ -11,6 +11,9 @@ public:
     RakPeerInterface(RakPeerInterface const&);
     RakPeerInterface();
 
+using Deleter = void(RakPeerInterface*);
+using InstanceOwner = std::unique_ptr<RakPeerInterface, Deleter*>;
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1RakPeerInterface@RakNet@@UEAA@XZ
@@ -26,3 +29,5 @@ public:
 };
 
 }; // namespace RakNet
+
+MCAPI RakNet::RakPeerInterface::InstanceOwner createUniqueRakPeer();
