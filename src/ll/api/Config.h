@@ -2,7 +2,6 @@
 
 #include "nlohmann/json.hpp"
 
-#include "ll/api/Logger.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/reflection/Serialization.h"
 
@@ -15,8 +14,7 @@ concept IsConfig =
     ll::reflection::Reflectable<T> && std::integral<std::remove_cvref_t<decltype(std::declval<T>().version)>>;
 
 template <IsConfig T, typename J = nlohmann::ordered_json>
-inline bool saveConfig(T const& config, std::string_view path, bool logFailed = true) noexcept {
-    using namespace ll::i18n_literals;
+inline bool saveConfig(T const& config, std::string_view path) noexcept {
     using namespace ll::utils;
     try {
         namespace fs = std::filesystem;
@@ -28,15 +26,11 @@ inline bool saveConfig(T const& config, std::string_view path, bool logFailed = 
         std::ofstream{file_utils::u8path(path)} << data.dump(4);
         return true;
     } catch (...) {}
-    if (logFailed)
-        std::cout << fmt::format(fmt::runtime("config.save.fail"_tr), ll::reflection::type_name_v<T>)
-                  << std::endl; // TODO i18n
     return false;
 }
 
 template <IsConfig T, typename J = nlohmann::ordered_json>
 inline bool loadConfig(T& config, std::string_view path, bool overwriteAfterFail = true) noexcept {
-    using namespace ll::i18n_literals;
     using namespace ll::utils;
     bool res = true;
     try {
@@ -61,11 +55,7 @@ inline bool loadConfig(T& config, std::string_view path, bool overwriteAfterFail
             res = false;
         }
     } catch (...) {}
-    if (!res && overwriteAfterFail) {
-        std::cout << fmt::format(fmt::runtime("config.save.rewrite"_tr), ll::reflection::type_name_v<T>)
-                  << std::endl; // TODO i18n
-        saveConfig<T, J>(config, path);
-    }
+    if (!res && overwriteAfterFail) { saveConfig<T, J>(config, path); }
     return res;
 }
 

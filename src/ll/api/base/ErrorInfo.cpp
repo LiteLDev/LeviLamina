@@ -1,7 +1,6 @@
 #include "ll/api/base/ErrorInfo.h"
-
 #include "ll/api/memory/Memory.h"
-#include "ll/api/plugin/PluginManager.h"
+#include "ll/api/plugin/Plugin.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
 

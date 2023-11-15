@@ -15,6 +15,7 @@
 
 #include "ll/api/base/Hash.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/api/reflection/Reflection.h"
 #include "ll/core/LeviLamina.h"
 
 template <ll::IsGlobalService T>
@@ -23,6 +24,8 @@ ll::GlobalService<T>::GlobalService() = default;
 template <ll::IsGlobalService T>
 void ll::GlobalService<T>::init(T* ptr) {
     value = ptr;
+    ll::logger
+        .debug("Initializing GlobalService<{}> to 0x{:X}", ll::reflection::type_unprefix_name_v<T>, (size_t)value);
 }
 
 namespace {
@@ -155,12 +158,12 @@ LL_AUTO_STATIC_HOOK(LevelDestructor, HookPriority::Low, "??1Level@@UEAA@XZ", voi
 
 // RakNet::RakPeer
 
-LL_AUTO_INSTANCE_HOOK(RakNetRakPeerConstructor, HookPriority::Low, "??1RakPeer@RakNet@@UEAA@XZ", RakNet::RakPeer*) {
+LL_AUTO_INSTANCE_HOOK(RakNetRakPeerConstructor, HookPriority::Low, "??0RakPeer@RakNet@@QEAA@XZ", RakNet::RakPeer*) {
     auto self = origin();
     ll::Global<RakNet::RakPeer>.init(self);
     return self;
 }
-LL_AUTO_STATIC_HOOK(RakNetRakPeerDestructor, HookPriority::Low, "??0RakPeer@RakNet@@QEAA@XZ", void) {
+LL_AUTO_STATIC_HOOK(RakNetRakPeerDestructor, HookPriority::Low, "??1RakPeer@RakNet@@UEAA@XZ", void) {
     ll::Global<RakNet::RakPeer>.init(nullptr);
     origin();
 }

@@ -164,7 +164,7 @@ static void dumpSystemInfo() {
     crashInfo.logger.info(
         "  |LocalTime: {}",
         fmt::format(
-            "{0:%Y-%m-%dT%H:%M:%S} {1}(UTC{0:%z})",
+            "{0:%F %T} {1}(UTC{0:%z})",
             fmt::localtime(_time64(nullptr)),
             tou8str(fmt::format("{:%Z}", fmt::localtime(_time64(nullptr))))
         )

@@ -25,7 +25,7 @@
 #include "mc/world/level/Command.h"
 
 namespace ll {
-template <class Ret>
+template <class Ret, class... Args>
 class NativeClosure;
 }
 
