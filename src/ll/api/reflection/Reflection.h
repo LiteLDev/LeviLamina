@@ -73,7 +73,7 @@ consteval std::string_view removeTypePrefix(std::string_view s) noexcept {
 }
 
 consteval std::string_view removeTypeSuffix(std::string_view s) noexcept {
-    auto k = s.find("<");
+    auto k = s.find('<');
     if (k != std::string_view::npos) { return s.substr(0, k); }
     return s;
 }

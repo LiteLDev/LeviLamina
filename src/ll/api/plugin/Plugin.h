@@ -9,6 +9,7 @@
 #include "ll/api/base/Version.h"
 #include "ll/api/memory/Memory.h"
 #include "ll/api/plugin/Manifest.h"
+#include "ll/api/plugin/PluginManager.h"
 
 #include "mc/common/wrapper/optional_ref.h"
 
@@ -19,7 +20,7 @@ enum class PluginState : char {
     Disabled,
 };
 
-class Plugin : std::enable_shared_from_this<Plugin> {
+class Plugin : public std::enable_shared_from_this<Plugin> {
 private:
     using Handle     = memory::Handle;
     using Callback   = std::function<bool()>;
@@ -99,6 +100,20 @@ public:
     [[maybe_unused]] void removeSharedData(std::string_view key) {
         auto it = getSharedData().find(key);
         if (it != getSharedData().end()) { getSharedData().erase(it); }
+    }
+
+    // throw exception if not found
+    [[maybe_unused]] static Plugin& current() {
+        static auto& plugin = []() -> Plugin& {
+            if (auto p = PluginManager::getInstance().findPlugin(memory::getCurrentModuleHandle()).lock()) {
+                return const_cast<Plugin&>(*p);
+            } else {
+                throw std::runtime_error(
+                    "Plugin not found, make sure you are calling this function from a plugin registered properly"
+                );
+            }
+        }();
+        return plugin;
     }
 };
 

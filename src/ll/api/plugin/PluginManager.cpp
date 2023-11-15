@@ -5,6 +5,7 @@
 #include "ll/api/base/ErrorInfo.h"
 #include "ll/api/base/UnorderedStringMap.h"
 #include "ll/api/io/FileUtils.h"
+#include "ll/api/plugin/Plugin.h"
 
 #include "ll/core/LeviLamina.h"
 

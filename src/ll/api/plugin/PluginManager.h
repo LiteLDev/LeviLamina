@@ -6,9 +6,10 @@
 
 #include "ll/api/Config.h"
 #include "ll/api/plugin/Manifest.h"
-#include "ll/api/plugin/Plugin.h"
 
 namespace ll::plugin {
+
+class Plugin;
 
 class PluginManager {
 private:
@@ -37,30 +38,6 @@ public:
     LLNDAPI auto findPlugin(std::string_view name) -> std::weak_ptr<const Plugin>;
     LLNDAPI auto findPlugin(Handle handle) -> std::weak_ptr<const Plugin>;
     LLNDAPI auto getAllPlugins() -> std::vector<std::weak_ptr<const Plugin>>;
-
-    auto unregisterPlugin(std::string_view name) -> bool {
-        if (auto plugin = findPlugin(name).lock()) { return unregisterPlugin(plugin); }
-        return false;
-    }
-
-    auto unregisterPlugin(Handle handle) -> bool {
-        if (auto plugin = findPlugin(handle).lock()) { return unregisterPlugin(plugin); }
-        return false;
-    }
-
-    // throw exception if not found
-    [[maybe_unused]] static auto getCurrentPlugin() -> Plugin& {
-        static auto& plugin = []() -> Plugin& {
-            if (auto p = getInstance().findPlugin(memory::getCurrentModuleHandle()).lock()) {
-                return const_cast<Plugin&>(*p);
-            } else {
-                throw std::runtime_error(
-                    "Plugin not found, make sure you are calling this function from a plugin registered properly"
-                );
-            }
-        }();
-        return plugin;
-    }
 };
 
 } // namespace ll::plugin
