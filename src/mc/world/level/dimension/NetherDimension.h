@@ -17,7 +17,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    virtual ~NetherDimension();
+    virtual ~NetherDimension() = default;
 
     // vIndex: 8, symbol:
     // ?createGenerator@TheEndDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ

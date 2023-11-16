@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/dimension/VanillaDimensions.h"
 
 // auto generated inclusion list
 #include "mc/enums/LimboEntitiesVersion.h"
@@ -12,9 +13,28 @@
 // clang-format off
 namespace mce { class Color; }
 // clang-format on
+namespace unity_5c986e6b9d6571cc96912b0bfa0329e2 {
+MCAPI DimensionHeightRange computeOverworldHeightRange(ILevel&);
+}
 
 class OverworldDimension : public ::Dimension {
 public:
+    OverworldDimension(ILevel& ilevel, Scheduler& scheduler)
+    : Dimension(
+        ilevel,
+        VanillaDimensions::Overworld,
+        unity_5c986e6b9d6571cc96912b0bfa0329e2::computeOverworldHeightRange(ilevel),
+        scheduler,
+        "Overworld"
+    ) {
+        mHasWeather            = true;
+        mDefaultBrightness.sky = Brightness::MAX;
+        mSeaLevel              = 63;
+        if (getLevel().getLevelData().getGenerator() == GeneratorType::Flat) { mSeaLevel = 5; }
+        mDimensionBrightnessRamp = std::make_unique<OverworldBrightnessRamp>();
+        mDimensionBrightnessRamp->buildBrightnessRamp();
+    };
+
     // prevent constructor by default
     OverworldDimension& operator=(OverworldDimension const&);
     OverworldDimension(OverworldDimension const&);
@@ -22,38 +42,41 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?_upgradeOldLimboEntity@OverworldDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
-    MCVAPI void _upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion);
-
-    // symbol:
-    // ?_wrapStorageForVersionCompatibility@OverworldDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
-    MCVAPI std::unique_ptr<class ChunkSource>
-           _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
+    // virtual ~OverworldDimension();
 
     // symbol:
     // ?createGenerator@OverworldDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
-    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
-
-    // symbol: ?fixWallChunk@OverworldDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-    MCVAPI void fixWallChunk(class ChunkSource&, class LevelChunk&);
-
-    // symbol: ?getBrightnessDependentFogColor@OverworldDimension@@UEBA?AVColor@mce@@AEBV23@M@Z
-    MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const&, float) const;
-
-    // symbol: ?getCloudHeight@OverworldDimension@@UEBAFXZ
-    MCVAPI short getCloudHeight() const;
-
-    // symbol: ?hasPrecipitationFog@OverworldDimension@@UEBA_NXZ
-    MCVAPI bool hasPrecipitationFog() const;
-
-    // symbol: ?levelChunkNeedsUpgrade@OverworldDimension@@UEBA_NAEBVLevelChunk@@@Z
-    MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
-
-    // symbol: ?translatePosAcrossDimension@OverworldDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
-    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
+    virtual std::unique_ptr<class WorldGenerator> createGenerator();
 
     // symbol: ?upgradeLevelChunk@OverworldDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
-    MCVAPI void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
+    virtual void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
+
+    // symbol: ?fixWallChunk@OverworldDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+    virtual void fixWallChunk(class ChunkSource&, class LevelChunk&);
+
+    // symbol: ?levelChunkNeedsUpgrade@OverworldDimension@@UEBA_NAEBVLevelChunk@@@Z
+    virtual bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
+
+    // symbol: ?translatePosAcrossDimension@OverworldDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
+    virtual class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
+
+    // symbol: ?_upgradeOldLimboEntity@OverworldDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
+    virtual void _upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion);
+
+    // symbol:
+    // ?_wrapStorageForVersionCompatibility@OverworldDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
+    virtual std::unique_ptr<class ChunkSource>
+        _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
+
+    // Reload function
+    // symbol: ?getBrightnessDependentFogColor@OverworldDimension@@UEBA?AVColor@mce@@AEBV23@M@Z
+    virtual class mce::Color getBrightnessDependentFogColor(class mce::Color const&, float) const;
+
+    // symbol: ?getCloudHeight@OverworldDimension@@UEBAFXZ
+    virtual short getCloudHeight() const;
+
+    // symbol: ?hasPrecipitationFog@OverworldDimension@@UEBA_NXZ
+    virtual bool hasPrecipitationFog() const;
 
     // NOLINTEND
 

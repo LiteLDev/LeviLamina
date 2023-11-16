@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/buffer_span_mut.h"
 
+class Block;
+
 class BlockVolume {
 public:
     // BlockVolume inner types declare
@@ -14,13 +16,15 @@ public:
 
     // BlockVolume inner types define
     struct BlockVolumeIter {
-    public:
+        // Pos                                     pos;       // this+0x0
+        // Pos                                     dims;      // this+0xC
+        // buffer_span_mut<Block const*>::iterator blockIter; // this+0x18
+
         // prevent constructor by default
         BlockVolumeIter& operator=(BlockVolumeIter const&);
         BlockVolumeIter(BlockVolumeIter const&);
         BlockVolumeIter();
 
-    public:
         // NOLINTBEGIN
         // symbol: ??9BlockVolumeIter@BlockVolume@@QEBA_NAEBU01@@Z
         MCAPI bool operator!=(struct BlockVolume::BlockVolumeIter const&) const;
@@ -33,6 +37,13 @@ public:
 
         // NOLINTEND
     };
+
+    buffer_span_mut<Block const*> mBlocks;          // this+0x0
+    unsigned int                  mWidth;           // this+0x10
+    unsigned int                  mHeight;          // this+0x14
+    unsigned int                  mDepth;           // this+0x18
+    int                           mDimensionBottom; // this+0x1C
+    const Block*                  mInitBlock;       // this+0x20
 
 public:
     // prevent constructor by default

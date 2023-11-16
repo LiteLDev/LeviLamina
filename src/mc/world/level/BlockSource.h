@@ -44,6 +44,7 @@ public:
         optional_ref<ItemStack> tool      = std::nullopt,
         optional_ref<Mob>       toolOwner = std::nullopt
     );
+    char unk[248];
 
     // prevent constructor by default
     BlockSource& operator=(BlockSource const&);
@@ -160,14 +161,14 @@ public:
     // vIndex: 30, symbol: ?getMinHeight@BlockSource@@UEBAFXZ
     virtual short getMinHeight() const;
 
-    // vIndex: 31, symbol: __unk_vfn_31
-    virtual void __unk_vfn_31();
+    // vIndex: 31, symbol: ?getDimension@BlockSource@@UEAAAEAVDimension@@XZ
+    virtual class Dimension& getDimension();
 
-    // vIndex: 32, symbol: __unk_vfn_32
-    virtual void __unk_vfn_32();
+    // vIndex: 32, symbol: ?getDimension@BlockSource@@UEBAAEAVDimension@@XZ
+    virtual class Dimension& getDimension() const;
 
-    // vIndex: 33, symbol: __unk_vfn_33
-    virtual void __unk_vfn_33();
+    // vIndex: 33, symbol: ?getDimensionConst@BlockSource@@UEBAAEBVDimension@@XZ
+    virtual class Dimension const& getDimensionConst() const;
 
     // vIndex: 34, symbol: ?getChunkAt@BlockSource@@UEBAPEAVLevelChunk@@AEBVBlockPos@@@Z
     virtual class LevelChunk* getChunkAt(class BlockPos const&) const;
@@ -192,15 +193,6 @@ public:
 
     // vIndex: 41, symbol: ?canDoContainedItemDrops@BlockSource@@UEBA_NXZ
     virtual bool canDoContainedItemDrops() const;
-
-    // symbol: ?getDimension@BlockSource@@UEAAAEAVDimension@@XZ
-    MCVAPI class Dimension& getDimension();
-
-    // symbol: ?getDimension@BlockSource@@UEBAAEAVDimension@@XZ
-    MCVAPI class Dimension& getDimension() const;
-
-    // symbol: ?getDimensionConst@BlockSource@@UEBAAEBVDimension@@XZ
-    MCVAPI class Dimension const& getDimensionConst() const;
 
     // symbol: ??0BlockSource@@QEAA@AEAVChunkSource@@_N1@Z
     MCAPI BlockSource(class ChunkSource&, bool, bool);

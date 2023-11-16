@@ -7,6 +7,7 @@
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
 #include "mc/world/AutomaticID.h"
 
+
 class VanillaDimensions {
 public:
     // prevent constructor by default

@@ -10,7 +10,7 @@ public:
     // prevent constructor by default
     NetherBrightnessRamp& operator=(NetherBrightnessRamp const&);
     NetherBrightnessRamp(NetherBrightnessRamp const&);
-    NetherBrightnessRamp();
+    NetherBrightnessRamp() = default;
 
 public:
     // NOLINTBEGIN

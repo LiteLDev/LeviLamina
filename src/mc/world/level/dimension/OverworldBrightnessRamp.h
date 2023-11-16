@@ -10,7 +10,7 @@ public:
     // prevent constructor by default
     OverworldBrightnessRamp& operator=(OverworldBrightnessRamp const&);
     OverworldBrightnessRamp(OverworldBrightnessRamp const&);
-    OverworldBrightnessRamp();
+    OverworldBrightnessRamp() = default;
 
 public:
     // NOLINTBEGIN

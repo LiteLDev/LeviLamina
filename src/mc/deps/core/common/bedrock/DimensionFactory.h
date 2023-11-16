@@ -9,12 +9,19 @@
 #include "mc/deps/core/common/bedrock/IDimensionFactory.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
+class ILevel;
+class Scheduler;
+class Dimension;
 class DimensionFactory : public ::IDimensionFactory {
 public:
     // prevent constructor by default
     DimensionFactory& operator=(DimensionFactory const&);
     DimensionFactory(DimensionFactory const&);
     DimensionFactory();
+
+    Bedrock::NotNullNonOwnerPtr<ILevel>             mLevel;
+    Bedrock::NotNullNonOwnerPtr<Scheduler>          mScheduler;
+    OwnerPtrFactory<Dimension, ILevel&, Scheduler&> mDimensionFactory;
 
 public:
     // NOLINTBEGIN

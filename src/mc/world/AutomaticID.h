@@ -15,3 +15,11 @@ public:
 
     [[nodiscard]] constexpr operator T() const { return id; } // NOLINT
 };
+
+namespace std {
+template <>
+class hash<AutomaticID<Dimension, int>> {
+public:
+    size_t operator()(const AutomaticID<Dimension, int>& dimId) const { return std::hash<int>()(dimId.id); }
+};
+} // namespace std

@@ -13,6 +13,8 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 
 class PacketSender : public ::Bedrock::EnableNonOwnerReferences {
 public:
+    SubClientId mSenderSubId; // this+0x18
+
     // prevent constructor by default
     PacketSender& operator=(PacketSender const&);
     PacketSender(PacketSender const&);

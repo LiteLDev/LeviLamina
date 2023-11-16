@@ -4,10 +4,11 @@
 
 class DimensionBrightnessRamp {
 public:
+    float mBrightnessRamp[16] = {0};
     // prevent constructor by default
     DimensionBrightnessRamp& operator=(DimensionBrightnessRamp const&);
     DimensionBrightnessRamp(DimensionBrightnessRamp const&);
-    DimensionBrightnessRamp();
+    DimensionBrightnessRamp() = default;
 
 public:
     // NOLINTBEGIN

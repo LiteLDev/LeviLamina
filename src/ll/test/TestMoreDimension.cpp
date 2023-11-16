@@ -3,6 +3,8 @@
 #include "ll/api/Logger.h"
 #include "ll/api/memory/Hook.h"
 #include "mc/common/wrapper/OwnerPtrFactory.h"
+#include "mc/deps/core/common/bedrock/DimensionFactory.h"
+#include "mc/deps/core/common/bedrock/DimensionManager.h"
 #include "mc/deps/core/mce/Color.h"
 #include "mc/deps/json/Value.h"
 #include "mc/math/Vec3.h"
@@ -13,12 +15,10 @@
 #include "mc/world/level/chunk/LevelChunk.h"
 #include "mc/world/level/chunk/VanillaLevelChunkUpgrade.h"
 #include "mc/world/level/dimension/Dimension.h"
-#include "mc/world/level/dimension/NetherDimension.h"
 #include "mc/world/level/dimension/OverworldBrightnessRamp.h"
 #include "mc/world/level/dimension/OverworldDimension.h"
 #include "mc/world/level/dimension/VanillaDimensionFactory.h"
 #include "mc/world/level/dimension/VanillaDimensions.h"
-#include "mc/world/level/levelgen/WorldGenerator.h"
 #include "mc/world/level/levelgen/flat/FlatWorldGenerator.h"
 #include "mc/world/level/levelgen/structure/StructureFeatureRegistry.h"
 #include "mc/world/level/storage/LevelData.h"
@@ -30,31 +30,41 @@ class CompoundTag;
 class StructureFeatureRegistry;
 using namespace ll::memory;
 
-using OwnerT = OwnerPtrFactory<Dimension, ILevel&, Scheduler&>;
-
 namespace {
-typedef void (*V_PTR)(); // typedef一下函数指针，相当于把返回值为void型的
-// 函数指针定义成 V_PTR.
+ll::Logger logger("TestMoreDimension");
 
-// 打印虚函数表
-void PrintPFTable(V_PTR* table) {
-    // 因为虚表最后一个为nllptr，我们可以利用这个打印虚表。
-    for (size_t i = 0; table[i] != nullptr; ++i) { printf("table[%d] : %p->\n", i, table[i]); }
+void addDimMap() {
+    ll::memory::modify(VanillaDimensions::$DimensionMap(), [&](auto& dimMap) {
+        logger.debug("Add new dimension");
+        dimMap.mRight.insert(std::make_pair("test dimension", 3));
+        dimMap.mLeft.insert(std::make_pair(3, "test dimension"));
+    });
+    ll::memory::modify(VanillaDimensions::Undefined, [&](auto& dimId) {
+        logger.debug("Set VanillaDimensions::Undefined to 4");
+        dimId.id = 4;
+    });
 }
-
-ll::Logger logger("TestRegistryDimension");
-
 } // namespace
+
+namespace CustomizeDimension {
+struct DimensionNameAndID {
+    DimensionNameAndID(std::string_view n, AutomaticID<Dimension, int> i) : name(n), id(i){};
+    std::string                 name;
+    AutomaticID<Dimension, int> id;
+};
+
+const DimensionNameAndID TestDimension = DimensionNameAndID("test dimension", 3);
+}; // namespace CustomizeDimension
 
 class TestDimension : public Dimension {
 public:
     TestDimension(ILevel& ilevel, Scheduler& scheduler)
     : Dimension(
         ilevel,
-        VanillaDimensions::Overworld,
+        CustomizeDimension::TestDimension.id,
         DimensionHeightRange(-64, 320),
         scheduler,
-        VanillaDimensions::toString(VanillaDimensions::Overworld)
+        CustomizeDimension::TestDimension.name
     ) {
         logger.debug("TestDimension::TestDimension");
         mDefaultBrightness.sky   = Brightness::MAX;
@@ -103,7 +113,7 @@ public:
     Vec3 translatePosAcrossDimension(Vec3 const& pos, DimensionType did) const final {
         logger.debug("TestDimension::translatePosAcrossDimension");
         auto data  = getLevel().getDimensionConversionData();
-        auto testd = VanillaDimensions::Overworld;
+        auto testd = CustomizeDimension::TestDimension.id;
         auto topos = Vec3();
         VanillaDimensions::convertPointBetweenDimensions(pos, topos, did, testd, data);
         if (topos.x >= 31999872) topos.x = 31999872;
@@ -126,7 +136,7 @@ public:
         auto  result = color;
         result.r     = color.r * temp;
         result.g     = color.g * temp;
-        result.b     = color.b * temp;
+        result.b     = color.b * temp2;
         return result;
     };
 
@@ -141,62 +151,100 @@ public:
     };
 };
 
-// using fact = OwnerPtrFactory<Dimension, ILevel&, Scheduler&>;
-// LL_AUTO_STATIC_HOOK(TestDimensionSercive,
-//                    HookPriority::Normal,
-//                    VanillaDimensionFactory::registerDimensionTypes,
-//                    void,
-//                    fact& factory){
-//    origin(factory);
-//    if(num) {
-//        std::cout<< "Hook::registerFactory"<<std::endl;
-//        factory.registerFactory(
-//            "test dimension",
-//            [](ILevel& ilevel, Scheduler& scheduler) -> OwnerPtrT<SharePtrRefTraits<Dimension>> {
-//                return std::make_shared<TestDimension>(ilevel, scheduler);
-//            }
-//        );
-//        num = false;
-//    }
-// }
-
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    RegistryDimensionTest,
+LL_AUTO_STATIC_HOOK(
+    VanillaDimensionsConverHook,
     HookPriority::Normal,
-    OwnerT,
-    &OwnerT::registerFactory,
-    void,
-    const std::string&                                                          worldName,
-    std::function<OwnerPtrT<SharePtrRefTraits<Dimension>>(ILevel&, Scheduler&)> faction
+    VanillaDimensions::convertPointBetweenDimensions,
+    bool,
+    Vec3 const&                    oldPos,
+    Vec3&                          toPos,
+    DimensionType                  oldDim,
+    DimensionType                  toDim,
+    DimensionConversionData const& data
 ) {
-    if (worldName == "overworld") {
-        faction = [](ILevel& ilevel, Scheduler& scheduler) -> OwnerPtrT<SharePtrRefTraits<Dimension>> {
-            logger.debug("Overworld create");
-            logger.debug("Overworld flat replace!!");
-            auto dim = std::make_shared<TestDimension>(ilevel, scheduler);
-            // auto refp = dim.get();
-            // print IDimension::vftable
-            // PrintPFTable((V_PTR*)*(__int64*)refp);
-
-            // print LevelListener::vftable
-            // PrintPFTable((V_PTR*)*(__int64*)((char*)refp+8));
-
-            // print SavedData::vftable
-            // PrintPFTable((V_PTR*)*(__int64*)((char*)refp+16));
-
-            // print Bedrock::EnableNonOwnerReferences::vftable
-            // PrintPFTable((V_PTR*)*(__int64*)((char*)refp+64));
-            return dim;
-        };
-    };
-    origin(worldName, faction);
+    if (oldDim <= 2 && toDim <= 2) return origin(oldPos, toPos, oldDim, toDim, data);
+    toPos = oldPos;
+    return true;
 };
 
-// registry dimensoin when in ll, must reload Dimension::getWeakRef
-LL_AUTO_TYPED_INSTANCE_HOOK(RegistryDimensionTest1, HookPriority::Normal, Dimension, &Dimension::getWeakRef, WeakRefT<SharePtrRefTraits<Dimension>>) {
-    if (this->getDimensionId() == 0) return weak_from_this();
-    return origin();
+using BedResult_Dim = Bedrock::Result<DimensionType>;
+using BedResult_int = Bedrock::Result<int>&;
+
+LL_AUTO_STATIC_HOOK(
+    VanillaDimensionsFromSerializedIntHook,
+    HookPriority::Normal,
+    "?fromSerializedInt@VanillaDimensions@@SA?AV?$Result@V?$AutomaticID@VDimension@@H@@Verror_code@std@@@Bedrock@@$$"
+    "QEAV?$Result@HVerror_code@std@@@3@@Z",
+    BedResult_Dim,
+    BedResult_int& dim
+) {
+    if (dim.value() <= 2) return origin(dim);
+    if (dim.value() == CustomizeDimension::TestDimension.id)
+        return Bedrock::Result<DimensionType>(CustomizeDimension::TestDimension.id.id);
+    return origin(dim);
+};
+
+LL_AUTO_STATIC_HOOK(
+    VanillaDimensionsFromSerializedIntHookI,
+    HookPriority::Normal,
+    "?fromSerializedInt@VanillaDimensions@@SA?AV?$AutomaticID@VDimension@@H@@H@Z",
+    DimensionType,
+    int dim
+) {
+    if (dim <= 2) return origin(dim);
+    if (dim == CustomizeDimension::TestDimension.id) return CustomizeDimension::TestDimension.id;
+    return origin(dim);
 }
+
+LL_AUTO_STATIC_HOOK(
+    VanillaDimensionsToSerializedIntHook,
+    HookPriority::Normal,
+    VanillaDimensions::toSerializedInt,
+    int,
+    DimensionType const& dim
+) {
+    if (dim <= 2) return origin(dim);
+    if (dim.id == CustomizeDimension::TestDimension.id) return CustomizeDimension::TestDimension.id;
+    return origin(dim);
+}
+
+LL_AUTO_STATIC_HOOK(
+    VanillaDimensionsToStringHook,
+    HookPriority::Normal,
+    VanillaDimensions::toString,
+    std::string const,
+    DimensionType const& dim
+) {
+    if (dim.id == CustomizeDimension::TestDimension.id) return CustomizeDimension::TestDimension.name;
+    return origin(dim);
+}
+
+using fact = OwnerPtrFactory<Dimension, ILevel&, Scheduler&>;
+LL_AUTO_STATIC_HOOK(
+    RegistryDimensionSercive,
+    HookPriority::Normal,
+    VanillaDimensionFactory::registerDimensionTypes,
+    void,
+    fact& factory
+) {
+    origin(factory);
+    addDimMap();
+    logger.debug("VanillaDimensions::Undefined id: {}", VanillaDimensions::Undefined.id);
+    logger.debug("Hook::registerFactory");
+    factory.registerFactory(
+        CustomizeDimension::TestDimension.name,
+        [](ILevel& ilevel, Scheduler& scheduler) -> OwnerPtrT<SharePtrRefTraits<Dimension>> {
+            logger.debug("create test dimension");
+            return std::make_shared<TestDimension>(ilevel, scheduler);
+        }
+    );
+}
+
+// registry dimensoin when in ll, must reload Dimension::getWeakRef
+LL_AUTO_TYPED_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimension, &Dimension::getWeakRef, WeakRefT<SharePtrRefTraits<Dimension>>) {
+    if (this->getDimensionId() == 3) return weak_from_this();
+    return origin();
+};
 
 
 #endif // LL_DEBUG
