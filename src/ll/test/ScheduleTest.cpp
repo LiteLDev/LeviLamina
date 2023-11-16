@@ -8,13 +8,15 @@
 
 using namespace ll::schedule;
 
-#include "ll/api/Literals.h"
+using namespace ll::chrono_literals;
 
 ll::Logger schedulelogger("Schedule");
 
 SystemTimeScheduler s;
 GameTickScheduler   s2;
 GameTimeScheduler   s3;
+
+#include "mc/network/packet/TextPacket.h"
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     SchedulerTestHook,
@@ -24,6 +26,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void,
     ::ServerInstance& ins
 ) {
+
+    ll::Logger::setDefaultPlayerOutputFunc([](std::string_view sv) { TextPacket::createRawMessage(sv).sendToClients(); }
+    );
 
     s.add<RepeatTask>(100_tick, [&] {
         schedulelogger.info(

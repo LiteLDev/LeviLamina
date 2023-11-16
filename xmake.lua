@@ -69,6 +69,19 @@ target("LeviLamina")
     else
         add_packages("bdslibrary")
     end
+    before_build(function (target)
+        headers = ""
+        for _,x in ipairs(os.files("src/ll/api/**.h")) do
+         headers = headers.."#include \""..path.relative(x, "src/").."\"\n"
+        end
+        for _,x in ipairs(os.files("src/mc/**.h")) do
+         headers = headers.."#include \""..path.relative(x, "src/").."\"\n"
+        end
+        file = io.open("src/ll/LeviLamina.hpp", "w")
+        file:write("#pragma once\n\n")
+        file:write(headers)
+        file:close()
+    end)
 
     on_load(function (target)
         local tag = os.iorun("git describe --tags --abbrev=0 --always")

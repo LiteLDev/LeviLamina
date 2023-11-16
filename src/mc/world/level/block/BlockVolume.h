@@ -30,7 +30,7 @@ public:
         MCAPI bool operator!=(struct BlockVolume::BlockVolumeIter const&) const;
 
         // symbol: ??DBlockVolumeIter@BlockVolume@@QEAA?BU?$pair@PEBVBlock@@VPos@@@std@@XZ
-        MCAPI std::pair<class Block const*, class Pos> operator const*();
+        MCAPI std::pair<class Block const*, class Pos> const operator*();
 
         // symbol: ??EBlockVolumeIter@BlockVolume@@QEAAAEAU01@XZ
         MCAPI struct BlockVolume::BlockVolumeIter& operator++();

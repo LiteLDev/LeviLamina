@@ -99,7 +99,7 @@ public:
 
     LLAPI static bool setDefaultFile(std::string const& logFile, bool appendMode);
 
-    void setPlayerOutputFunc(PlayerOutputFunc&& func) {
+    void setPlayerOutputFunc(PlayerOutputFunc const& func) {
         debug.setPlayerOutputFunc(func);
         info.setPlayerOutputFunc(func);
         warn.setPlayerOutputFunc(func);
@@ -107,7 +107,7 @@ public:
         fatal.setPlayerOutputFunc(func);
     }
 
-    LLAPI static void setDefaultPlayerOutputFunc(PlayerOutputFunc&& func) { defaultPlayerOutputCallback = func; }
+    LLAPI static void setDefaultPlayerOutputFunc(PlayerOutputFunc const& func) { defaultPlayerOutputCallback = func; }
 
     std::ofstream& getFile() {
         if (ofs) { return ofs.value(); }

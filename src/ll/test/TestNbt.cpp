@@ -8,7 +8,7 @@
 #include "mc/nbt/CompoundTag.h"
 #include "mc/server/ServerInstance.h"
 
-#include "ll/api/Literals.h"
+using namespace ll::nbt_literals;
 
 LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &ServerInstance::startServerThread, void) {
     origin();

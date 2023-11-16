@@ -8,7 +8,6 @@
 #include "mc/world/Minecraft.h"
 #include "mc/world/level/dimension/Dimension.h"
 
-
 void Packet::sendTo(Player const& player) { player.sendNetworkPacket(*this); }
 
 void Packet::sendTo(BlockPos const& pos, DimensionType type, optional_ref<Player const> except) const {
