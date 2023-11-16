@@ -21,7 +21,7 @@ class Logger;
 struct _EXCEPTION_RECORD; // NOLINT(bugprone-reserved-identifier)
 struct _CONTEXT;          // NOLINT(bugprone-reserved-identifier)
 
-namespace ll::utils::error_info {
+namespace ll::error_info {
 
 class seh_exception : public std::system_error {
 private:
@@ -101,4 +101,4 @@ inline void printException(T const& e, optional_ref<ll::Logger> l = nullptr) noe
     printCurrentException(l, std::make_exception_ptr(e));
 }
 
-} // namespace ll::utils::error_info
+} // namespace ll::error_info

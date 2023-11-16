@@ -16,6 +16,7 @@
 
 using namespace ll;
 using namespace ll::utils::string_utils;
+using namespace ll::i18n_literals;
 
 using ll::plugin::PluginManager;
 
@@ -57,7 +58,7 @@ class TeleportDimensionCommand : public Command {
         auto dim = VanillaDimensions::toString((int)DimensionId);
         auto pos = getTargetPos(ori, actor);
         actor->teleport(pos, (int)DimensionId);
-        output.trSuccess("ll.cmd.tpdim.success", actor->getNameTag(), dim, pos.x, pos.y, pos.z);
+        output.success("ll.cmd.tpdim.success"_tr, actor->getNameTag(), dim, pos.x, pos.y, pos.z);
         return true;
     }
 
@@ -72,7 +73,7 @@ class TeleportDimensionCommand : public Command {
             output.success();
         }
         if (output.getSuccessCount() == 0) {
-            output.trError("ll.cmd.tpdim.error.noActorTeleported");
+            output.error("ll.cmd.tpdim.error.noActorTeleported"_tr);
             return false;
         } else {
             std::string message = fmt::format("Teleported {} to {}", names.substr(2), dim);
@@ -88,17 +89,17 @@ class TeleportDimensionCommand : public Command {
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
         if ((int)DimensionId < 0 || (int)DimensionId > 2) {
-            output.trError("ll.cmd.tpdim.invalidDimid", (int)DimensionId);
+            output.error("ll.cmd.tpdim.invalidDimid"_tr, (int)DimensionId);
             return;
         }
         if (Victim_isSet) {
             auto result = Victim.results(ori);
-            if (result.empty()) output.trError("ll.cmd.tpdim.error.noActorSpecified");
+            if (result.empty()) output.error("ll.cmd.tpdim.error.noActorSpecified"_tr);
             else if (result.count() == 1) teleportTarget(ori, output, *result.begin());
             else teleportTargets(ori, output, result);
         } else {
             auto actor = ori.getEntity();
-            if (!actor) output.trError("ll.cmd.tpdim.error.noActorSpecified");
+            if (!actor) output.error("ll.cmd.tpdim.error.noActorSpecified"_tr);
             else teleportTarget(ori, output, actor);
         }
     }
@@ -144,7 +145,7 @@ public:
 
 void LLListPluginsCommand(CommandOutput& output) {
     auto plugins = PluginManager::getInstance().getAllPlugins();
-    output.trSuccess("ll.cmd.listPlugin.overview", plugins.size());
+    output.success("ll.cmd.listPlugin.overview"_tr, plugins.size());
 
     std::ostringstream oss;
     for (auto& ptr : plugins) {
@@ -161,7 +162,7 @@ void LLListPluginsCommand(CommandOutput& output) {
         }
     }
     output.success(oss.str() + '\n');
-    output.trSuccess("ll.cmd.listPlugin.tip");
+    output.success("ll.cmd.listPlugin.tip"_tr);
 }
 
 void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
@@ -170,7 +171,7 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
         std::map<std::string, std::string> outs;
         std::ostringstream                 oss;
 
-        output.trSuccess("ll.cmd.pluginInfo.title", pluginName);
+        output.success("ll.cmd.pluginInfo.title"_tr, pluginName);
 
         outs.emplace("Name", fmt::format("{}", plugin->getManifest().name));
         outs.emplace("Description", plugin->getManifest().description);
@@ -184,52 +185,52 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
         if (text.ends_with('\n')) { text.pop_back(); }
         output.success(text, {});
     } else {
-        output.trError("ll.cmd.pluginInfo.error.pluginNotFound", pluginName);
+        output.error("ll.cmd.pluginInfo.error.pluginNotFound"_tr, pluginName);
     }
 }
 
 void LLVersionCommand(CommandOutput& output) {
-    output.trSuccess(
-        "ll.cmd.version.msg",
+    output.success(
+        "ll.cmd.version.msg"_tr,
         ll::getBdsVersion().to_string(),
         ll::getLoaderVersion().to_string(),
         ll::getServerProtocolVersion()
     );
 }
 
-void LLHelpCommand(CommandOutput& output) { output.trSuccess("ll.cmd.help.msg"); }
+void LLHelpCommand(CommandOutput& output) { output.success("ll.cmd.help.msg"_tr); }
 
 void LLLoadPluginCommand(CommandOutput& output, std::string const& path) {
 
     // if (manager::loadPlugin(path, true)) {
-    //     output.trSuccess("ll.cmd.loadPlugin.success", path);
+    //     output.success("ll.cmd.loadPlugin.success"_tr, path);
     // } else {
-    //     output.trError("ll.cmd.loadPlugin.fail", path);
+    //     output.error("ll.cmd.loadPlugin.fail"_tr, path);
     // }
 }
 
 void LLUnloadPluginCommand(CommandOutput& output, std::string const& pluginName) {
 
     // if (manager::unloadPlugin(pluginName, true)) {
-    //     output.trSuccess("ll.cmd.unloadPlugin.success", pluginName);
+    //     output.success("ll.cmd.unloadPlugin.success"_tr, pluginName);
     // } else {
-    //     output.trError("ll.cmd.unloadPlugin.fail", pluginName);
+    //     output.error("ll.cmd.unloadPlugin.fail"_tr, pluginName);
     // }
 }
 
 void LLReloadPluginCommand(CommandOutput& output, std::string const& pluginName, bool reloadAll) {
     if (!reloadAll) {
         // if (manager::reloadPlugin(pluginName, true)) {
-        //     output.trSuccess("ll.cmd.reloadPlugin.success", pluginName);
+        //     output.success("ll.cmd.reloadPlugin.success"_tr, pluginName);
         // } else {
-        //     output.trError("ll.cmd.reloadPlugin.fail", pluginName);
+        //     output.error("ll.cmd.reloadPlugin.fail"_tr, pluginName);
         // }
     } else {
         // int cnt = manager::reloadAllPlugins(true);
         // if (cnt > 0) {
-        //     output.trSuccess("ll.cmd.reloadAllPlugins.success", cnt);
+        //     output.success("ll.cmd.reloadAllPlugins.success"_tr, cnt);
         // } else {
-        //     output.trError("ll.cmd.reloadAllPlugins.fail");
+        //     output.error("ll.cmd.reloadAllPlugins.fail"_tr);
         // }
     }
 }
@@ -249,7 +250,7 @@ void LLSettingsCommand(
             ll::to_json(j, ll::globalConfig);
             auto path = nlohmann::json::json_pointer(key);
             auto val  = j[path];
-            output.trSuccess("ll.cmd.settings.get.success", key);
+            output.success("ll.cmd.settings.get.success"_tr, key);
             output.success(val.dump(4));
             break;
         }
@@ -259,12 +260,12 @@ void LLSettingsCommand(
             auto path = nlohmann::json::json_pointer(key);
             j[path]   = nlohmann::json::parse(value);
             ll::from_json(j, ll::globalConfig);
-            output.trSuccess("ll.cmd.settings.set.success", key, j[path].dump());
+            output.success("ll.cmd.settings.set.success"_tr, key, j[path].dump());
             break;
         }
         case LLSettingsOperation::Delete: {
             if (key.empty()) {
-                output.trError("ll.cmd.settings.delete.error.emptyKey");
+                output.error("ll.cmd.settings.delete.error.emptyKey"_tr);
                 break;
             }
             nlohmann::json j;
@@ -272,23 +273,23 @@ void LLSettingsCommand(
             auto path = nlohmann::json::json_pointer(key);
             j.erase(path.to_string());
             ll::from_json(j, ll::globalConfig);
-            output.trSuccess("ll.cmd.settings.delete.success", key);
+            output.success("ll.cmd.settings.delete.success"_tr, key);
             break;
         }
         case LLSettingsOperation::List: {
             nlohmann::json j;
             ll::to_json(j, ll::globalConfig);
-            output.trSuccess("ll.cmd.settings.list.success");
+            output.success("ll.cmd.settings.list.success"_tr);
             output.success(j.dump(4));
             break;
         }
         case LLSettingsOperation::Reload:
             ll::loadLeviConfig();
-            output.trSuccess("ll.cmd.settings.reload.success");
+            output.success("ll.cmd.settings.reload.success"_tr);
             break;
         case LLSettingsOperation::Save:
             ll::saveLeviConfig();
-            output.trSuccess("ll.cmd.settings.save.success");
+            output.success("ll.cmd.settings.save.success"_tr);
             break;
         default:
             output.error("Unknown operation");
@@ -330,11 +331,11 @@ public:
             break;
         case Operation::Load:
             if (hasPluginNameSet) LLLoadPluginCommand(output, pluginName);
-            else output.trError("ll.cmd.error.noPathSpecified");
+            else output.error("ll.cmd.error.noPathSpecified"_tr);
             break;
         case Operation::Unload:
             if (hasPluginNameSet) LLUnloadPluginCommand(output, pluginName);
-            else output.trError("ll.cmd.error.noNameSpecified");
+            else output.error("ll.cmd.error.noNameSpecified"_tr);
             break;
         case Operation::Reload:
             if (hasPluginNameSet) LLReloadPluginCommand(output, pluginName, false);

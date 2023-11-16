@@ -43,7 +43,7 @@ end
 target("LeviLamina")
     set_license("LGPL-3")
     set_kind("shared")
-    set_languages("c++20")
+    set_languages("c++23")
     set_symbols("debug")
     set_exceptions("none")
     set_pcxxheader("src/mc/_HeaderOutputPredefine.h")

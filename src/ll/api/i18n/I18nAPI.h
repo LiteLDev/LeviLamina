@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ll/api/base/Concepts.h"
+#include "ll/api/base/UnorderedStringMap.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/utils/StringUtils.h"
 
@@ -10,13 +11,15 @@
 #include "fmt/os.h"
 #include "nlohmann/json.hpp"
 
+// #define LL_I18N_COLLECT_STRINGS
+
 namespace ll::i18n {
 
 class I18N {
 
 public:
-    using SubLangData = std::unordered_map<std::string, std::string>;
-    using LangData    = std::map<std::string, SubLangData>;
+    using SubLangData = UnorderedStringMap<std::string>;
+    using LangData    = UnorderedStringMap<SubLangData>;
 
     enum class Type : schar {
         None,
@@ -39,7 +42,7 @@ public:
      * @return std::string  The translation
      * @see    I18N::mDefaultLocaleName
      */
-    LLNDAPI std::string get(std::string const& key, std::string localeName = "");
+    LLNDAPI std::string get(std::string_view key, std::string localeName = "");
 
     /**
      * @brief Get the type of the i18n object.
@@ -179,8 +182,26 @@ template <ll::concepts::IsString S, typename... Args>
 
 } // namespace ll::i18n
 
+#ifdef LL_I18N_COLLECT_STRINGS
+#include "ll/api/base/FixedString.h"
 namespace ll::i18n_literals {
-
-[[nodiscard]] inline std::string operator""_tr(char const* x, size_t len) { return ll::i18n::tr(std::string{x, len}); }
-
+namespace detail {
+template <FixedString str>
+struct TrString {
+    static inline int output = [] {
+        fmt::print("\"{}\",\n", (std::string_view)str);
+        return 0;
+    }();
+};
+} // namespace detail
+template <FixedString str>
+[[nodiscard]] inline std::string operator""_tr() {
+    static detail::TrString<str> e{};
+    return ll::i18n::tr((std::string_view)str);
+}
 } // namespace ll::i18n_literals
+#else
+namespace ll::i18n_literals {
+[[nodiscard]] inline std::string operator""_tr(char const* x, size_t len) { return ll::i18n::tr(std::string{x, len}); }
+} // namespace ll::i18n_literals
+#endif

@@ -4,6 +4,7 @@
 
 #include "fmt/color.h"
 
+#include "ll/api/base/ErrorInfo.h"
 #include "ll/api/base/Hash.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/utils/StringUtils.h"
@@ -14,13 +15,11 @@ using namespace ll::utils::string_utils;
 
 namespace ll {
 
-namespace {
-bool checkLogLevel(int level, int outLevel) {
+static bool checkLogLevel(int level, int outLevel) {
     if (level >= outLevel) return true;
     if (level == -1 && ll::globalConfig.logger.logLevel >= outLevel) return true;
     return false;
 }
-} // namespace
 
 void Logger::OutputStream::print(std::string_view s) const noexcept {
     try {
@@ -61,21 +60,19 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
                 Logger::defaultPlayerOutputCallback(str);
             }
         }
-    } catch (std::exception& e) {
-        try {
-            fmt::print("\x1b[31mERROR IN LOGGER API: {}\n", tou8str(e.what()));
-            return;
-        } catch (...) {}
-        try {
-            fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API ERROR OUTPUT\n");
-        } catch (...) {}
     } catch (...) {
         try {
-            fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API\n");
-        } catch (...) {}
+            fmt::print(
+                "\x1b[31mERROR IN LOGGER API:\n{}\x1b[0m\n",
+                error_info::makeExceptionString(std::current_exception())
+            );
+        } catch (...) {
+            try {
+                fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API\x1b[0m\n");
+            } catch (...) {}
+        }
     }
 }
-
 Logger::OutputStream::OutputStream(
     Logger&                               logger,
     std::string                           levelPrefix,
@@ -116,7 +113,8 @@ Logger::Logger(std::string_view title)
           fmt::fg(fmt::color::light_sea_green),
           {},
           {},
-      }}),
+      }
+  }),
   warn(OutputStream{
       *this,
       "WARN",
@@ -126,7 +124,8 @@ Logger::Logger(std::string_view title)
           fmt::fg(fmt::terminal_color::bright_yellow),
           fmt::fg(fmt::terminal_color::bright_yellow),
           fmt::fg(fmt::terminal_color::bright_yellow) | fmt::emphasis::bold,
-      }}),
+      }
+  }),
   error(OutputStream{
       *this,
       "ERROR",
@@ -136,7 +135,8 @@ Logger::Logger(std::string_view title)
           fmt::fg(fmt::terminal_color::bright_red),
           fmt::fg(fmt::terminal_color::bright_red),
           fmt::fg(fmt::terminal_color::bright_red) | fmt::emphasis::bold,
-      }}),
+      }
+  }),
   fatal(OutputStream{
       *this,
       "FATAL",
@@ -146,7 +146,8 @@ Logger::Logger(std::string_view title)
           fmt::fg(fmt::color::red),
           fmt::fg(fmt::color::red),
           fmt::fg(fmt::color::red) | fmt::emphasis::bold,
-      }}) {}
+      }
+  }) {}
 
 void Logger::resetFile() {
     if (ofs) {

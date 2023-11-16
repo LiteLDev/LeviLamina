@@ -19,9 +19,9 @@ const std::array<std::string, 2> GENERAL_LANGUAGES = {"en", "zh"};
 
 bool findTranslation(
     I18N::LangData const& langData,
-    std::string const&    key,
-    std::string const&    localeName,
-    std::string const&    localeType,
+    std::string_view    key,
+    std::string_view    localeName,
+    std::string_view    localeType,
     std::string&          dest
 ) {
     if (auto lang = langData.find(localeName); lang != langData.end()) { // If there is a translation for the language
@@ -44,7 +44,7 @@ bool findTranslation(
     return false;
 }
 
-std::string I18N::get(std::string const& key, std::string localeName) {
+std::string I18N::get(std::string_view key, std::string localeName) {
     if (localeName.empty()) {
         if (mDefaultLocaleName.empty()) {
             localeName = globalDefaultLocaleName;
@@ -71,7 +71,7 @@ std::string I18N::get(std::string const& key, std::string localeName) {
         if (auto it = lang.find(key); it != lang.end()) { return it->second; }
     }
     // Finally, still not found, return the key
-    return key;
+    return std::string{key};
 }
 
 #pragma endregion

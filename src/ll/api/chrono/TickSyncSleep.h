@@ -3,6 +3,7 @@
 #include <chrono>
 #include <mutex>
 #include <variant>
+#include <vector>
 
 #include "ll/api/chrono/GameChrono.h"
 
@@ -10,11 +11,13 @@ namespace ll::chrono {
 
 template <class Clock>
 class TickSyncSleep;
-
-extern std::vector<std::variant<
+namespace detail {
+LLETAPI std::mutex listMutex;
+LLETAPI            std::vector<std::variant<
     std::reference_wrapper<TickSyncSleep<game_chrono::ServerClock>>,
     std::reference_wrapper<TickSyncSleep<game_chrono::GameTimeClock>>>>
-    tickList;
+                   tickList;
+}; // namespace detail
 
 template <class Clock>
 class TickSyncSleep {
@@ -41,11 +44,15 @@ public:
     } state{State::None};
 
     TickSyncSleep() {
+        using namespace detail;
+        std::lock_guard lock(listMutex);
         id = tickList.size();
         tickList.emplace_back(std::ref(*this));
     }
 
     ~TickSyncSleep() {
+        using namespace detail;
+        std::lock_guard lock(listMutex);
         state = State::None;
         std::swap(tickList[id], tickList.back());
         tickList.pop_back();

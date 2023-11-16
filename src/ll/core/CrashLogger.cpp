@@ -260,7 +260,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
             genMiniDumpFile(e);
         } catch (...) {
             crashInfo.logger.error("!!! Error In GenMiniDumpFile !!!");
-            ll::utils::error_info::printCurrentException(crashInfo.logger);
+            ll::error_info::printCurrentException(crashInfo.logger);
         }
         stacktrace_utils::SymbolLoader symbol{};
 
@@ -288,7 +288,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         }
     } catch (...) {
         crashInfo.logger.error("!!! Error In CrashLogger !!!");
-        ll::utils::error_info::printCurrentException(crashInfo.logger);
+        ll::error_info::printCurrentException(crashInfo.logger);
         crashInfo.logger.error("");
         crashInfo.logger.error("\n{}", ll::utils::stacktrace_utils::toString(std::stacktrace::current()));
     }

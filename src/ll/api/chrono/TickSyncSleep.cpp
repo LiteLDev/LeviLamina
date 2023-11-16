@@ -3,12 +3,13 @@
 #include "mc/server/ServerLevel.h"
 
 namespace ll::chrono {
-
+namespace detail {
+std::mutex listMutex;
 std::vector<std::variant<
     std::reference_wrapper<TickSyncSleep<game_chrono::ServerClock>>,
     std::reference_wrapper<TickSyncSleep<game_chrono::GameTimeClock>>>>
     tickList;
-
+} // namespace detail
 LL_AUTO_TYPED_INSTANCE_HOOK(
     TickSyncSleepInterrruptHook,
     HookPriority::Normal,
@@ -17,29 +18,33 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void
 ) {
     origin();
-    for (auto& e : tickList) {
-        std::visit(
-            [&](auto& ptr) -> void {
-                auto& sleeper = ptr.get();
+    using namespace detail;
+    if (!tickList.empty()) {
+        std::lock_guard lock(listMutex);
+        for (auto& e : tickList) {
+            std::visit(
+                [&](auto& ptr) -> void {
+                    auto& sleeper = ptr.get();
 
-                using Sleeper = std::decay_t<decltype(sleeper)>;
-                using Clock   = typename Sleeper::ClockType;
-                using State   = typename Sleeper::State;
+                    using Sleeper = std::decay_t<decltype(sleeper)>;
+                    using Clock   = typename Sleeper::ClockType;
+                    using State   = typename Sleeper::State;
 
-                switch (sleeper.state) {
-                case State::SleepFor:
-                case State::SleepUntil:
-                    if (Clock::now() >= sleeper.timepoint || sleeper.timepoint >= Clock::time_point::max()) {
-                        sleeper.interrupt();
+                    switch (sleeper.state) {
+                    case State::SleepFor:
+                    case State::SleepUntil:
+                        if (Clock::now() >= sleeper.timepoint || sleeper.timepoint >= Clock::time_point::max()) {
+                            sleeper.interrupt();
+                        }
+                    case State::None:
+                    case State::Sleep:
+                    default:
+                        return;
                     }
-                case State::None:
-                case State::Sleep:
-                default:
-                    return;
-                }
-            },
-            e
-        );
+                },
+                e
+            );
+        }
     }
 }
 

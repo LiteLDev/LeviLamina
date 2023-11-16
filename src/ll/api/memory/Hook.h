@@ -1,10 +1,39 @@
 #pragma once
 
+// #define LL_HOOK_DEBUG
+
 #include <memory>
 #include <type_traits>
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/memory/Memory.h"
+
+#ifdef LL_HOOK_DEBUG
+#include "ll/api/Logger.h"
+#define LL_HOOK_DEBUG_OUTPUT(IDENTIFIER)                                                                               \
+    static inline int debugger() {                                                                                     \
+        try {                                                                                                          \
+            static FuncPtr t = ll::memory::resolveIdentifier<OriginFuncType>(IDENTIFIER);                              \
+            if (t == nullptr) {                                                                                        \
+                fmt::print("\x1b[91mCan't resolve: [" #IDENTIFIER "]\x1b[0m\n");                                       \
+            } else {                                                                                                   \
+                auto symbols = ll::memory::lookupSymbol(t);                                                            \
+                if (symbols.size() > 1) {                                                                              \
+                    fmt::print(                                                                                        \
+                        "\x1b[93m[" #IDENTIFIER "] has {} matches, probability cause bugs.\x1b[0m\n",                  \
+                        symbols.size()                                                                                 \
+                    );                                                                                                 \
+                }                                                                                                      \
+                fmt::print("\x1b[96m v resolve [" #IDENTIFIER "] to:\x1b[0m\n");                                       \
+                for (auto& str : symbols) { fmt::print(" {} {}\n", (&str == &symbols.back()) ? '-' : '|', str); }      \
+            }                                                                                                          \
+        } catch (...) { fmt::print("\x1b[91m!!! Exception in resolve: [" #IDENTIFIER "]\x1b[0m\n"); }                  \
+        return 0;                                                                                                      \
+    };                                                                                                                 \
+    static inline int debugging = debugger()
+#else
+#define LL_HOOK_DEBUG_OUTPUT(...)
+#endif
 
 namespace ll::memory {
 
@@ -97,6 +126,8 @@ struct HookAutoRegister {
                                                                                                                        \
         inline static FuncPtr        target{};                                                                         \
         inline static OriginFuncType originFunc{};                                                                     \
+                                                                                                                       \
+        LL_HOOK_DEBUG_OUTPUT(IDENTIFIER);                                                                              \
                                                                                                                        \
         template <typename... Args>                                                                                    \
         STATIC RET_TYPE origin(Args&&... params) {                                                                     \

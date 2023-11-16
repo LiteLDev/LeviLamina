@@ -11,7 +11,8 @@
 #pragma comment(lib, "DbgHelp.lib")
 // #include "Psapi.h"
 
-namespace ll::utils::error_info {
+namespace ll::error_info {
+using namespace ll::utils;
 
 UntypedException::UntypedException(const EXCEPTION_RECORD& er)
 : exception_object(reinterpret_cast<void*>(er.ExceptionInformation[1])),
@@ -251,4 +252,4 @@ void printCurrentException(optional_ref<ll::Logger> l, std::exception_ptr const&
     } catch (...) {}
     rlogger.error("unknown error");
 }
-} // namespace ll::utils::error_info
+} // namespace ll::error_info

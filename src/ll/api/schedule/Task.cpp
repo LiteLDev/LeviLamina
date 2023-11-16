@@ -35,7 +35,7 @@ void printScheduleError() noexcept {
     try {
         logger.error("Error in schedule thread [{}]:", std::this_thread::get_id());
     } catch (...) {}
-    utils::error_info::printCurrentException(logger);
+    error_info::printCurrentException(logger);
 }
 } // namespace detail
 

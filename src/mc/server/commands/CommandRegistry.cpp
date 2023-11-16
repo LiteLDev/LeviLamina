@@ -113,6 +113,6 @@ bool CommandRegistry::unregisterCommand(std::string const& name) {
         mSignatures.erase(sig);
         mAliases.erase(command);
         return true;
-    } catch (...) { ll::utils::error_info::printCurrentException(); }
+    } catch (...) { ll::error_info::printCurrentException(); }
     return false;
 }

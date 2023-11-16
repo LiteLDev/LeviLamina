@@ -20,14 +20,16 @@ public:
     CommandOutput& operator=(CommandOutput const&);
     CommandOutput();
 
-    template <typename... Args>
-    inline void trSuccess(std::string const& format, Args&&... args) {
-        success(ll::i18n::tr(format, std::forward<Args>(args)...));
+    template <ll::concepts::IsString S, class First, typename... Args>
+        requires(!std::is_same_v<std::decay_t<First>, std::vector<class CommandOutputParameter>>)
+    inline void success(S const& fmt, First&& arg, Args&&... args) {
+        success(fmt::format(fmt::runtime(fmt), std::forward<First>(arg), std::forward<Args>(args)...));
     }
 
-    template <typename... Args>
-    inline void trError(std::string const& format, Args&&... args) {
-        error(ll::i18n::tr(format, std::forward<Args>(args)...));
+    template <ll::concepts::IsString S, class First, typename... Args>
+        requires(!std::is_same_v<std::decay_t<First>, std::vector<class CommandOutputParameter>>)
+    inline void error(S const& fmt, First&& arg, Args&&... args) {
+        error(fmt::format(fmt::runtime(fmt), std::forward<First>(arg), std::forward<Args>(args)...));
     }
 
 public:
@@ -47,7 +49,7 @@ public:
 
     // symbol:
     // ?error@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@@Z
-    MCAPI void error(std::string const&, std::vector<class CommandOutputParameter> const& = {});
+    MCAPI void error(std::string const& str, std::vector<class CommandOutputParameter> const& = {});
 
     // symbol:
     // ?forceOutput@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@@Z
@@ -82,7 +84,7 @@ public:
 
     // symbol:
     // ?success@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@@Z
-    MCAPI void success(std::string const&, std::vector<class CommandOutputParameter> const& = {});
+    MCAPI void success(std::string const& str, std::vector<class CommandOutputParameter> const& = {});
 
     // symbol: ?wantsData@CommandOutput@@QEBA_NXZ
     MCAPI bool wantsData() const;

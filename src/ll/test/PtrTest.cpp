@@ -52,18 +52,18 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
     std::cout << "type_hash  " << entt::type_hash<FlagComponent<ExitFromPassengerFlag>>::value() << std::endl;
 
-    ll::utils::error_info::printException(ll::utils::error_info::getWinLastError());
+    ll::error_info::printException(ll::error_info::getWinLastError());
 
     try {
         char* pp = (char*)(0x123);
         *pp      = 'a';
-    } catch (...) { ll::utils::error_info::printCurrentException(); }
+    } catch (...) { ll::error_info::printCurrentException(); }
 
     try {
         int a = 0;
         int b = 2 / a;
         std::cout << "b = " << b << std::endl;
-    } catch (...) { ll::utils::error_info::printCurrentException(); }
+    } catch (...) { ll::error_info::printCurrentException(); }
 #if _HAS_CXX23
     // static ll::utils::stacktrace_utils::SymbolLoader sl{};
 #endif
@@ -75,7 +75,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
                 file.exceptions(std::ios_base::failbit);
             } catch (...) {
 #if _HAS_CXX23
-                auto stack = ll::utils::error_info::stacktraceFromCurrExc();
+                auto stack = ll::error_info::stacktraceFromCurrExc();
                 ll::logger.debug("\n{}", ll::utils::stacktrace_utils::toString(stack));
 #endif
                 std::throw_with_nested(std::runtime_error("Couldn't open " + s));
@@ -84,7 +84,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
             std::throw_with_nested(std::system_error(std::error_code{1, std::generic_category()}, "run() failed"));
         }
     } catch (...) {
-        ll::utils::error_info::printCurrentException();
+        ll::error_info::printCurrentException();
 #if _HAS_CXX23
         auto stack = std::stacktrace::current();
         ll::logger.debug("\n{}", ll::utils::stacktrace_utils::toString(stack));

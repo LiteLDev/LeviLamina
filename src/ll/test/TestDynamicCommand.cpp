@@ -238,7 +238,7 @@ void onEnumExecute(
         bool  found    = false;
         if (std::find(enumNames.begin(), enumNames.end(), enumName) != enumNames.end()) {
             found = true;
-            output.trSuccess("§eEnum §l{}§r§e Values:", enumName);
+            output.success("§eEnum §l{}§r§e Values:"_tr, enumName);
             for (auto& val : ll::Global<CommandRegistry>->getEnumValues(enumName)) {
                 output.success(val);
                 // output.addToResultList("enums", val);
@@ -247,10 +247,10 @@ void onEnumExecute(
         }
         if (std::find(softEnumNames.begin(), softEnumNames.end(), enumName) != softEnumNames.end()) {
             found = true;
-            output.trSuccess("§eSoft Enum §l{}§r§e Values:", enumName);
+            output.success("§eSoft Enum §l{}§r§e Values:"_tr, enumName);
             for (auto& val : ll::Global<CommandRegistry>->getSoftEnumValues(enumName)) { output.success(val); }
         }
-        if (!found) output.trError("Enum or Soft Enum \"{}\" not found", enumName);
+        if (!found) output.error("Enum or Soft Enum \"{}\" not found"_tr, enumName);
     } else {
         output.success("§eEnum Names:");
         for (auto& val : ll::Global<CommandRegistry>->getEnumNames()) { output.success(val); }

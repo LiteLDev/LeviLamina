@@ -25,7 +25,7 @@ public:
     explicit ThreadPool(size_t nThreads) {
         for (size_t i = 0; i < nThreads; ++i) {
             workers.emplace_back([this] {
-                ll::utils::error_info::setSehTranslator();
+                ll::error_info::setSehTranslator();
                 for (;;) {
                     std::function<void()> task;
                     {
