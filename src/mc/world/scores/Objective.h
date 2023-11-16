@@ -8,7 +8,7 @@ public:
     std::unordered_map<ScoreboardId, int> mScores;
     const std::string                     mName;
     std::string                           mDisplayName;
-    const ObjectiveCriteria*              mCriteria;
+    ObjectiveCriteria const*              mCriteria;
 
 public:
     // prevent constructor by default

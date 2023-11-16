@@ -20,7 +20,7 @@ class FlatWorldGenerator : public ::WorldGenerator {
 public:
     std::vector<Block const*>         mPrototypeBlocks; // this+0x88
     BlockVolume                       mPrototype;       // this+0xA0
-    const Biome*                      mBiome;           // this+0xC8
+    Biome const*                      mBiome;           // this+0xC8
     std::unique_ptr<FixedBiomeSource> mBiomeSource;     // this+0xD0
 
     // prevent constructor by default

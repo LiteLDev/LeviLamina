@@ -33,16 +33,15 @@ using namespace ll::memory;
 using OwnerT = OwnerPtrFactory<Dimension, ILevel&, Scheduler&>;
 
 namespace {
-typedef void (*V_PTR)(); // typedef一下函数指针，相当于把返回值为void型的
-// 函数指针定义成 V_PTR.
-
-// 打印虚函数表
-void PrintPFTable(V_PTR* table) {
-    // 因为虚表最后一个为nllptr，我们可以利用这个打印虚表。
-    for (size_t i = 0; table[i] != nullptr; ++i) { printf("table[%d] : %p->\n", i, table[i]); }
-}
 
 ll::Logger logger("TestRegistryDimension");
+
+void printVfable(void** table) {
+    for (size_t i = 0; table[i] != nullptr; ++i) {
+        logger.info("v table[{}] : {}", i, table[i]);
+        for (auto& str : lookupSymbol(table[i])) { logger.info("| {}", str); }
+    }
+}
 
 } // namespace
 
@@ -63,12 +62,12 @@ public:
         mDimensionBrightnessRamp = std::make_unique<OverworldBrightnessRamp>();
         mDimensionBrightnessRamp->buildBrightnessRamp();
     }
-    void init() final {
+    void init() override {
         logger.debug("TestDimension::init");
         setSkylight(false);
         Dimension::init();
     }
-    std::unique_ptr<WorldGenerator> createGenerator() final {
+    std::unique_ptr<WorldGenerator> createGenerator() override {
         logger.debug("TestDimension::createGenerator");
         auto& level     = getLevel();
         auto& levelData = level.getLevelData();
@@ -77,64 +76,62 @@ public:
         return std::make_unique<FlatWorldGenerator>(*this, 123, layer);
     }
 
-    void upgradeLevelChunk(ChunkSource& cs, LevelChunk& lc, LevelChunk& generatedChunk) final {
+    void upgradeLevelChunk(ChunkSource& cs, LevelChunk& lc, LevelChunk& generatedChunk) override {
         logger.debug("TestDimension::upgradeLevelChunk");
         BlockSource blockSource = BlockSource(getLevel(), *this, cs, false, true, false);
         VanillaLevelChunkUpgrade::_upgradeLevelChunkViaMetaData(lc, generatedChunk, blockSource);
         VanillaLevelChunkUpgrade::_upgradeLevelChunkLegacy(lc, blockSource);
     }
 
-    void fixWallChunk(ChunkSource& cs, LevelChunk& lc) final {
+    void fixWallChunk(ChunkSource& cs, LevelChunk& lc) override {
         logger.debug("TestDimension::fixWallChunk");
         BlockSource blockSource = BlockSource(getLevel(), *this, cs, false, true, false);
         VanillaLevelChunkUpgrade::fixWallChunk(lc, blockSource);
     }
 
-    bool levelChunkNeedsUpgrade(LevelChunk const& lc) const final {
+    bool levelChunkNeedsUpgrade(LevelChunk const& lc) const override {
         logger.debug("TestDimension::levelChunkNeedsUpgrade");
         return VanillaLevelChunkUpgrade::levelChunkNeedsUpgrade(lc);
     }
-    void _upgradeOldLimboEntity(CompoundTag& tag, ::LimboEntitiesVersion vers) final {
+    void _upgradeOldLimboEntity(CompoundTag& tag, ::LimboEntitiesVersion vers) override {
         logger.debug("TestDimension::_upgradeOldLimboEntity");
         auto isTemplate = this->getLevel().getLevelData().isFromWorldTemplate();
         return VanillaLevelChunkUpgrade::upgradeOldLimboEntity(tag, vers, isTemplate);
     }
 
-    Vec3 translatePosAcrossDimension(Vec3 const& pos, DimensionType did) const final {
+    Vec3 translatePosAcrossDimension(Vec3 const& pos, DimensionType did) const override {
         logger.debug("TestDimension::translatePosAcrossDimension");
         auto data  = getLevel().getDimensionConversionData();
         auto testd = VanillaDimensions::Overworld;
         auto topos = Vec3();
         VanillaDimensions::convertPointBetweenDimensions(pos, topos, did, testd, data);
-        if (topos.x >= 31999872) topos.x = 31999872;
-        if (topos.x <= -31999872) topos.x = -31999872;
-        if (topos.z >= 31999872) topos.z = 31999872;
-        if (topos.z <= -31999872) topos.z = -31999872;
+        topos.x = std::clamp(topos.x, -32000000.0f, 32000000.0f);
+        topos.z = std::clamp(topos.z, -32000000.0f, 32000000.0f);
         return topos;
     }
 
     std::unique_ptr<ChunkSource>
-    _wrapStorageForVersionCompatibility(std::unique_ptr<ChunkSource> cs, ::StorageVersion ver) final {
+    _wrapStorageForVersionCompatibility(std::unique_ptr<ChunkSource> cs, ::StorageVersion /*ver*/) override {
         logger.debug("TestDimension::_wrapStorageForVersionCompatibility");
         return cs;
     }
 
-    mce::Color getBrightnessDependentFogColor(mce::Color const& color, float brightness) const {
+    mce::Color getBrightnessDependentFogColor(mce::Color const& color, float brightness) const override {
         logger.debug("TestDimension::getBrightnessDependentFogColor");
-        float temp   = (brightness * 0.94) + 0.059999999;
-        float temp2  = (brightness * 0.91000003) + 0.090000004;
-        auto  result = color;
-        result.r     = color.r * temp;
-        result.g     = color.g * temp;
-        result.b     = color.b * temp;
+        float temp = (brightness * 0.94f) + 0.06f;
+        // float temp2  = (brightness * 0.91f) + 0.09f;
+        auto result = color;
+        result.r    = color.r * temp;
+        result.g    = color.g * temp;
+        result.b    = color.b * temp;
         return result;
     };
 
-    short getCloudHeight() const { return 192; };
+    short getCloudHeight() const override { return 192; };
 
-    bool hasPrecipitationFog() const { return true; };
+    bool hasPrecipitationFog() const override { return true; };
 
-    std::unique_ptr<StructureFeatureRegistry>
+    static std::unique_ptr<StructureFeatureRegistry>
     makeStructureFeatures(uint a1, bool a2, BaseGameVersion const& a3, Experiments const& a4) {
         logger.debug("TestDimension::makeStructureFeatures");
         return OverworldDimension::makeStructureFeatures(a1, a2, a3, a4);
@@ -174,18 +171,18 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
             logger.debug("Overworld create");
             logger.debug("Overworld flat replace!!");
             auto dim = std::make_shared<TestDimension>(ilevel, scheduler);
-            // auto refp = dim.get();
+            auto refp = dim.get();
             // print IDimension::vftable
-            // PrintPFTable((V_PTR*)*(__int64*)refp);
+            printVfable((void**)refp);
 
             // print LevelListener::vftable
-            // PrintPFTable((V_PTR*)*(__int64*)((char*)refp+8));
+            printVfable((void**)((char*)refp+8));
 
             // print SavedData::vftable
-            // PrintPFTable((V_PTR*)*(__int64*)((char*)refp+16));
+            printVfable((void**)((char*)refp+16));
 
             // print Bedrock::EnableNonOwnerReferences::vftable
-            // PrintPFTable((V_PTR*)*(__int64*)((char*)refp+64));
+            printVfable((void**)((char*)refp+64));
             return dim;
         };
     };

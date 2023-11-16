@@ -13,5 +13,5 @@ public:
 
     void* vftable;
 
-    const Dimension* mDimension; // this+0x8
+    Dimension const* mDimension; // this+0x8
 };

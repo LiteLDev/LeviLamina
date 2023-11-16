@@ -4,7 +4,6 @@
 
 class DimensionHeightRange {
 public:
-    DimensionHeightRange(short mi, short ma) : min(mi), max(ma){};
-    short min;
-    short max;
+    short min{};
+    short max{};
 };

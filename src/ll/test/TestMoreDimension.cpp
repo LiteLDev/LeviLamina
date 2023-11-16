@@ -124,15 +124,15 @@ public:
     }
 
     std::unique_ptr<ChunkSource>
-    _wrapStorageForVersionCompatibility(std::unique_ptr<ChunkSource> cs, ::StorageVersion ver) final {
+    _wrapStorageForVersionCompatibility(std::unique_ptr<ChunkSource> cs, ::StorageVersion /*ver*/) override {
         logger.debug("TestDimension::_wrapStorageForVersionCompatibility");
         return cs;
     }
 
-    mce::Color getBrightnessDependentFogColor(mce::Color const& color, float brightness) const {
+    mce::Color getBrightnessDependentFogColor(mce::Color const& color, float brightness) const override {
         logger.debug("TestDimension::getBrightnessDependentFogColor");
-        float temp   = (brightness * 0.94) + 0.059999999;
-        float temp2  = (brightness * 0.91000003) + 0.090000004;
+        float temp   = (brightness * 0.94f) + 0.06f;
+        float temp2  = (brightness * 0.91f) + 0.09f;
         auto  result = color;
         result.r     = color.r * temp;
         result.g     = color.g * temp;
@@ -140,11 +140,11 @@ public:
         return result;
     };
 
-    short getCloudHeight() const { return 192; };
+    short getCloudHeight() const override { return 192; };
 
-    bool hasPrecipitationFog() const { return true; };
+    bool hasPrecipitationFog() const override { return true; };
 
-    std::unique_ptr<StructureFeatureRegistry>
+    static std::unique_ptr<StructureFeatureRegistry>
     makeStructureFeatures(uint a1, bool a2, BaseGameVersion const& a3, Experiments const& a4) {
         logger.debug("TestDimension::makeStructureFeatures");
         return OverworldDimension::makeStructureFeatures(a1, a2, a3, a4);

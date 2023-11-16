@@ -174,7 +174,7 @@ LLNDAPI std::string str2str(std::string_view str, uint fromCodePage = CodePage::
 template <class T, auto f>
 [[nodiscard]] inline T svtonum(std::string_view str, size_t* idx, int base) {
     int&        errnoRef = errno;
-    const char* ptr      = str.data();
+    char const* ptr      = str.data();
     char*       eptr;
     errnoRef       = 0;
     const auto ans = f(ptr, &eptr, base);
@@ -186,7 +186,7 @@ template <class T, auto f>
 template <class T, auto f>
 [[nodiscard]] inline T svtonum(std::string_view str, size_t* idx) {
     int&        errnoRef = errno;
-    const char* ptr      = str.data();
+    char const* ptr      = str.data();
     char*       eptr;
     errnoRef       = 0;
     const auto ans = f(ptr, &eptr);

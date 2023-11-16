@@ -33,7 +33,7 @@ int        fakeDimension          = 0; // Overworld, Make the client think of th
 int        realDimension          = 3; // test dimension, real dimension
 int        temporaryID            = 2; // TheEnd, Dimensions of transit
 
-Packet& changePacketDimension(Packet& packet, int id, const NetworkIdentifier& netId) {
+Packet& changePacketDimension(Packet& packet, int id, NetworkIdentifier const& netId) {
     auto packId = packet.getId();
     switch (packId) {
     case MinecraftPacketIds::ChangeDimension: {
@@ -135,7 +135,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     LoopbackPacketSender,
     "?sendToClient@LoopbackPacketSender@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@W4SubClientId@@@Z",
     void,
-    const NetworkIdentifier& netId,
+    NetworkIdentifier const& netId,
     Packet&                  packet,
     ::SubClientId            subId
 ) {

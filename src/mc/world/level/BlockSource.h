@@ -44,6 +44,7 @@ public:
         optional_ref<ItemStack> tool      = std::nullopt,
         optional_ref<Mob>       toolOwner = std::nullopt
     );
+
     char unk[248];
 
     // prevent constructor by default

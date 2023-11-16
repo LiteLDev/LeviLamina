@@ -88,7 +88,7 @@ struct ntstatus_category : public std::error_category {
         }
         return "unknown error";
     }
-    [[nodiscard]] const char* name() const noexcept override { return "ntstatus"; }
+    [[nodiscard]] char const* name() const noexcept override { return "ntstatus"; }
 };
 
 std::error_category const& ntstatus_category() noexcept {
@@ -218,7 +218,7 @@ nextNest:
     } catch (const std::exception& e) {
         res  += string_utils::tou8str(e.what());
         ePtr  = getNested(e);
-    } catch (const std::string& e) { res += string_utils::tou8str(e); } catch (const char* e) {
+    } catch (const std::string& e) { res += string_utils::tou8str(e); } catch (char const* e) {
         res += string_utils::tou8str(e);
     } catch (...) {
         auto unkExc  = current_exception();

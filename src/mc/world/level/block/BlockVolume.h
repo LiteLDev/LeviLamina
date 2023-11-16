@@ -30,7 +30,7 @@ public:
         MCAPI bool operator!=(struct BlockVolume::BlockVolumeIter const&) const;
 
         // symbol: ??DBlockVolumeIter@BlockVolume@@QEAA?BU?$pair@PEBVBlock@@VPos@@@std@@XZ
-        MCAPI std::pair<class Block const*, class Pos> const operator*();
+        MCAPI std::pair<class Block const*, class Pos> operator const*();
 
         // symbol: ??EBlockVolumeIter@BlockVolume@@QEAAAEAU01@XZ
         MCAPI struct BlockVolume::BlockVolumeIter& operator++();
@@ -43,7 +43,7 @@ public:
     unsigned int                  mHeight;          // this+0x14
     unsigned int                  mDepth;           // this+0x18
     int                           mDimensionBottom; // this+0x1C
-    const Block*                  mInitBlock;       // this+0x20
+    Block const*                  mInitBlock;       // this+0x20
 
 public:
     // prevent constructor by default

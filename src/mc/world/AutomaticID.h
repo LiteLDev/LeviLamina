@@ -17,9 +17,9 @@ public:
 };
 
 namespace std {
-template <>
-class hash<AutomaticID<Dimension, int>> {
+template <typename A, typename T>
+class hash<AutomaticID<A, T>> {
 public:
-    size_t operator()(const AutomaticID<Dimension, int>& dimId) const { return std::hash<int>()(dimId.id); }
+    size_t operator()(const AutomaticID<A, T>& dimId) const { return std::hash<T>()(dimId.id); }
 };
 } // namespace std

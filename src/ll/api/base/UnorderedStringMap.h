@@ -13,7 +13,7 @@ struct overload : Bases... {
 };
 
 struct char_pointer_hash {
-    auto operator()(const char* ptr) const noexcept { return std::hash<std::string_view>{}(ptr); }
+    auto operator()(char const* ptr) const noexcept { return std::hash<std::string_view>{}(ptr); }
 };
 
 using transparent_string_hash = overload<std::hash<std::string>, std::hash<std::string_view>, char_pointer_hash>;

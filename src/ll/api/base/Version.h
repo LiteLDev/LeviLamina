@@ -24,7 +24,7 @@ constexpr bool is_letter(char c) noexcept { return (c >= 'A' && c <= 'Z') || (c 
 
 constexpr std::uint16_t to_digit(char c) noexcept { return static_cast<std::uint16_t>(c - '0'); }
 
-constexpr const char* from_chars(const char* first, const char* last, std::uint16_t& d) noexcept {
+constexpr char const* from_chars(char const* first, char const* last, std::uint16_t& d) noexcept {
     if (first != last && is_digit(*first)) {
         std::int32_t t = 0;
         for (; first != last && is_digit(*first); ++first) { t = t * 10 + to_digit(*first); }
@@ -36,7 +36,7 @@ constexpr const char* from_chars(const char* first, const char* last, std::uint1
     return nullptr;
 }
 
-constexpr const char* from_chars(const char* first, const char* last, std::optional<std::uint16_t>& d) noexcept {
+constexpr char const* from_chars(char const* first, char const* last, std::optional<std::uint16_t>& d) noexcept {
     if (first != last && is_digit(*first)) {
         std::int32_t t = 0;
         for (; first != last && is_digit(*first); ++first) { t = t * 10 + to_digit(*first); }
@@ -48,7 +48,7 @@ constexpr const char* from_chars(const char* first, const char* last, std::optio
     return nullptr;
 }
 
-constexpr bool check_delimiter(const char* first, const char* last, char d) noexcept {
+constexpr bool check_delimiter(char const* first, char const* last, char d) noexcept {
     return first != last && first != nullptr && *first == d;
 }
 
@@ -71,7 +71,7 @@ struct PreRelease {
     constexpr ~PreRelease() = default;
     constexpr explicit PreRelease(std::string_view s) { from_string(s); }
 
-    constexpr std::strong_ordering operator<=>(const PreRelease& other) const noexcept {
+    constexpr std::strong_ordering operator<=>(PreRelease const& other) const noexcept {
         for (std::size_t i = 0; i < std::min(values.size(), other.values.size()); ++i) {
             if (std::holds_alternative<std::string>(values[i])) {
                 if (std::holds_alternative<std::string>(other.values[i])) {
@@ -94,13 +94,13 @@ struct PreRelease {
         return values.size() <=> other.values.size();
     }
 
-    constexpr detail::from_chars_result from_chars(const char* first, const char* last) noexcept {
+    constexpr detail::from_chars_result from_chars(char const* first, char const* last) noexcept {
         auto begin = first;
         while (first != last && !detail::is_plus(*first)) { first++; }
         std::string                   s{begin, first};
         std::vector<std::string_view> tokens;
         tokens = ll::utils::string_utils::splitByPattern(s, ".");
-        for (const auto& token : tokens) {
+        for (auto const& token : tokens) {
             std::optional<std::uint16_t> value;
             if (detail::from_chars(token.data(), token.data() + token.length(), value); value) {
                 values.emplace_back(value.value());
@@ -122,7 +122,7 @@ struct PreRelease {
 
     [[nodiscard]] constexpr std::string to_string() const noexcept {
         std::string str;
-        for (const auto& value : values) {
+        for (auto const& value : values) {
             if (std::holds_alternative<std::string>(value)) {
                 str += std::get<std::string>(value);
             } else {
@@ -174,7 +174,7 @@ struct Version {
 
     explicit constexpr Version(std::string_view str) : Version() { from_string(str); }
 
-    [[nodiscard]] constexpr detail::from_chars_result from_chars(const char* first, const char* last) noexcept {
+    [[nodiscard]] constexpr detail::from_chars_result from_chars(char const* first, char const* last) noexcept {
         if (first == nullptr || last == nullptr || (last - first) < detail::min_version_string_length) {
             return {first, std::errc::invalid_argument};
         }
@@ -231,7 +231,7 @@ struct Version {
         return str;
     }
 
-    [[nodiscard]] constexpr std::strong_ordering operator<=>(const Version& other) const noexcept {
+    [[nodiscard]] constexpr std::strong_ordering operator<=>(Version const& other) const noexcept {
         if (major != other.major) { return major <=> other.major; }
         if (minor != other.minor) { return minor <=> other.minor; }
         if (patch != other.patch) { return patch <=> other.patch; }
@@ -244,7 +244,7 @@ struct Version {
         return std::strong_ordering::equal;
     }
 
-    [[nodiscard]] constexpr bool operator==(const Version& other) const noexcept {
+    [[nodiscard]] constexpr bool operator==(Version const& other) const noexcept {
         return *this <=> other == std::strong_ordering::equal;
     }
 
@@ -263,7 +263,7 @@ inline void deserialize(Version& ver, J const& j) {
 }
 
 namespace literals {
-[[nodiscard]] constexpr Version operator""_version(const char* str, std::size_t length) {
+[[nodiscard]] constexpr Version operator""_version(char const* str, std::size_t length) {
     return Version{
         std::string_view{str, length}
     };

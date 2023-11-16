@@ -16,17 +16,12 @@ namespace mce { class Color; }
 namespace unity_5c986e6b9d6571cc96912b0bfa0329e2 {
 MCAPI DimensionHeightRange computeOverworldHeightRange(ILevel&);
 }
+using namespace unity_5c986e6b9d6571cc96912b0bfa0329e2;
 
 class OverworldDimension : public ::Dimension {
 public:
     OverworldDimension(ILevel& ilevel, Scheduler& scheduler)
-    : Dimension(
-        ilevel,
-        VanillaDimensions::Overworld,
-        unity_5c986e6b9d6571cc96912b0bfa0329e2::computeOverworldHeightRange(ilevel),
-        scheduler,
-        "Overworld"
-    ) {
+    : Dimension(ilevel, VanillaDimensions::Overworld, computeOverworldHeightRange(ilevel), scheduler, "Overworld") {
         mHasWeather            = true;
         mDefaultBrightness.sky = Brightness::MAX;
         mSeaLevel              = 63;

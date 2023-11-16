@@ -42,12 +42,12 @@ constexpr FuncPtr toFuncPtr(T t) {
 }
 
 template <typename T>
-inline void memcpy_t(void* dst, const void* src, size_t count) {
+inline void memcpy_t(void* dst, void const* src, size_t count) {
     memcpy(dst, src, count * sizeof(T));
 }
 
 template <typename T>
-inline void memcpy_t(void* dst, const void* src) {
+inline void memcpy_t(void* dst, void const* src) {
     memcpy(dst, src, sizeof(T));
 }
 

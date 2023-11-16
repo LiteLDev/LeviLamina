@@ -39,7 +39,7 @@ public:
 
     [[nodiscard]] CompoundTagVariant()                          = default;
     [[nodiscard]] CompoundTagVariant(CompoundTagVariant const&) = default;
-    CompoundTagVariant& operator=(const CompoundTagVariant&)    = default;
+    CompoundTagVariant& operator=(CompoundTagVariant const&)    = default;
 
     [[nodiscard]] CompoundTagVariant(Variant tag) : mTagStorage(std::move(tag)) {}
 

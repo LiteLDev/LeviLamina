@@ -27,7 +27,7 @@ Plugin::Plugin(Manifest manifest, Handle handle) {
 
 Plugin::~Plugin() = default;
 
-const Manifest& Plugin::getManifest() const { return mImpl->manifest; }
+Manifest const& Plugin::getManifest() const { return mImpl->manifest; }
 
 Plugin::Handle Plugin::getHandle() const { return mImpl->handle; }
 

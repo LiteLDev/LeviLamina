@@ -265,7 +265,7 @@ public:
     class Parser {
     public:
         CommandRegistry const&                     mRegistry;                 // this+0x0
-        const ParseTable*                          mParseTable;               // this+0x8
+        ParseTable const*                          mParseTable;               // this+0x8
         std::deque<std::pair<Symbol, ParseToken*>> mStack;                    // this+0x10
         LexicalToken                               mNext;                     // this+0x38
         std::string                                mInput;                    // this+0x58

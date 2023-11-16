@@ -250,7 +250,7 @@ void onEnumExecute(
             output.success("§eSoft Enum §l{}§r§e Values:"_tr, enumName);
             for (auto& val : ll::Global<CommandRegistry>->getSoftEnumValues(enumName)) { output.success(val); }
         }
-        if (!found) output.error("Enum or Soft Enum \"{}\" not found"_tr, enumName);
+        if (!found) output.error(R"(Enum or Soft Enum "{}" not found)", enumName);
     } else {
         output.success("§eEnum Names:");
         for (auto& val : ll::Global<CommandRegistry>->getEnumNames()) { output.success(val); }

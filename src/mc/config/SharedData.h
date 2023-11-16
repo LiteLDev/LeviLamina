@@ -17,7 +17,7 @@ struct ISharedData {};
 
 struct SharedData : public ISharedData {
 public:
-    const Level* mLevel;
+    Level const* mLevel;
 
     // prevent constructor by default
     SharedData& operator=(SharedData const&);

@@ -32,7 +32,7 @@ std::string toString(std::stacktrace_entry const& entry) {
     std::string res         = fmt::format("at: 0x{:0>12X}", (uint64)entry.native_handle());
     std::string description = entry.description();
     auto        plusPos     = description.find_last_of('+');
-    std::string offset      = description.substr(1 + plusPos);
+    std::string offset      = description.contains('+') ? description.substr(1 + plusPos) : "";
     std::string module      = description.substr(0, plusPos);
     std::string filepath    = entry.source_file();
     auto        fileline    = entry.source_line();

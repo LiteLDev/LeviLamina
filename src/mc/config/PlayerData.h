@@ -16,7 +16,7 @@ namespace PlayerCapabilities {
 
 class PlayerData : public ::PlayerCapabilities::IPlayerData {
 public:
-    const Player* mPlayer;
+    Player const* mPlayer;
 
     // prevent constructor by default
     PlayerData& operator=(PlayerData const&);

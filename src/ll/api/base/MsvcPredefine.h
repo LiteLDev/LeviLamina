@@ -17,7 +17,7 @@ typedef void (*_PMFN)(void);
 #pragma warning(disable : 4200)
 #pragma pack(push, _TypeDescriptor, 8)
 typedef struct _TypeDescriptor {
-    const void* pVFTable; // Field overloaded by RTTI
+    void const* pVFTable; // Field overloaded by RTTI
     void*       spare;    // reserved, possible for RTTI
     char        name[];   // The decorated name of the type; 0 terminated.
 } _TypeDescriptor;

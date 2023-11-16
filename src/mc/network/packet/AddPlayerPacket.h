@@ -39,7 +39,7 @@ public:
     BuildPlatform                          mBuildPlatform;
     GameType                               mPlayerGameType;
     NetworkItemStackDescriptor             mCarriedItem;
-    const SynchedActorDataEntityWrapper*   mEntityData;
+    SynchedActorDataEntityWrapper const*   mEntityData;
     PropertySyncData                       mSynchedProperties;
 
     // prevent constructor by default

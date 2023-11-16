@@ -36,7 +36,7 @@ public:
     : mPtr(std::addressof(r)) {}
 
     template <typename U>
-    [[nodiscard]] constexpr optional_ref(const U& r)
+    [[nodiscard]] constexpr optional_ref(U const& r)
         requires(IsCompatibleV<U>)
     : mPtr(std::addressof(r)) {}
 

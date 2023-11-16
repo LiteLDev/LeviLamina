@@ -27,9 +27,9 @@ class TickSyncSleep {
     size_t                  id;
 
 public:
-    TickSyncSleep(const TickSyncSleep&)                     = delete;
+    TickSyncSleep(TickSyncSleep const&)                     = delete;
     TickSyncSleep(TickSyncSleep&&) noexcept                 = delete;
-    TickSyncSleep& operator=(const TickSyncSleep&) noexcept = delete;
+    TickSyncSleep& operator=(TickSyncSleep const&) noexcept = delete;
     TickSyncSleep& operator=(TickSyncSleep&&) noexcept      = delete;
 
     using ClockType = Clock;

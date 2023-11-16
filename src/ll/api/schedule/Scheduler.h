@@ -95,9 +95,9 @@ private:
     }
 
 public:
-    Scheduler(const Scheduler&)                = delete;
+    Scheduler(Scheduler const&)                = delete;
     Scheduler(Scheduler&&) noexcept            = delete;
-    Scheduler& operator=(const Scheduler&)     = delete;
+    Scheduler& operator=(Scheduler const&)     = delete;
     Scheduler& operator=(Scheduler&&) noexcept = delete;
 
     explicit Scheduler(int maxThreads = 1) : done(false), threads(std::max<int>(1, maxThreads) + 1) {

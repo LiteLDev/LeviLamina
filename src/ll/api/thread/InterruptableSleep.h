@@ -11,9 +11,9 @@ private:
     std::condition_variable cv;
 
 public:
-    InterruptableSleep(const InterruptableSleep&)                     = delete;
+    InterruptableSleep(InterruptableSleep const&)                     = delete;
     InterruptableSleep(InterruptableSleep&&) noexcept                 = delete;
-    InterruptableSleep& operator=(const InterruptableSleep&) noexcept = delete;
+    InterruptableSleep& operator=(InterruptableSleep const&) noexcept = delete;
     InterruptableSleep& operator=(InterruptableSleep&&) noexcept      = delete;
 
     InterruptableSleep() = default;

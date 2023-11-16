@@ -9,7 +9,7 @@
 class DisplayObjective {
 public:
     // prevent constructor by default
-    const Objective*   mObjective; // this+0x0
+    Objective const*   mObjective; // this+0x0
     ObjectiveSortOrder mSortOrder; // this+0x8
 public:
     // prevent constructor by default

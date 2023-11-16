@@ -7,12 +7,7 @@
 
 class OverworldBrightnessRamp : public ::DimensionBrightnessRamp {
 public:
-    // prevent constructor by default
-    OverworldBrightnessRamp& operator=(OverworldBrightnessRamp const&);
-    OverworldBrightnessRamp(OverworldBrightnessRamp const&);
-    OverworldBrightnessRamp() = default;
 
-public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1OverworldBrightnessRamp@@UEAA@XZ
     virtual ~OverworldBrightnessRamp() = default;

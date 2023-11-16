@@ -22,7 +22,7 @@ public:
     SubClientId                      mClientSubId       = SubClientId::PrimaryClient;                // this+0x10
     bool                             mIsHandled         = false;                                     // this+0x11
     NetworkPeer::PacketRecvTimepoint mReceiveTimepoint;                                              // this+0x18
-    const IPacketHandlerDispatcher*  mHandler      = nullptr;                                        // this+0x20
+    IPacketHandlerDispatcher const*  mHandler      = nullptr;                                        // this+0x20
     Compressibility                  mCompressible = Compressibility::Compressible;                  // this+0x28
 
     [[nodiscard]] constexpr explicit Packet(
