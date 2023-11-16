@@ -9,8 +9,8 @@ class SharedPtr;
 template <typename T>
 class WeakPtr {
 public:
-    WeakPtr() noexcept : counter(nullptr) {}
-    WeakPtr(std::nullptr_t) noexcept : counter(nullptr) {}
+    WeakPtr() noexcept : counter(nullptr) {}               // NOLINT
+    WeakPtr(std::nullptr_t) noexcept : counter(nullptr) {} // NOLINT
 
     template <class Y>
     explicit WeakPtr(SharedPtr<Y> const& other)
@@ -87,8 +87,5 @@ public:
 
     explicit operator bool() const { return get() != nullptr; }
 
-private:
     SharedCounter<T>* counter;
-
-    friend class SharedPtr<T>;
 };

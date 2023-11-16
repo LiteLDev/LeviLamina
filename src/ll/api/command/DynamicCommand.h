@@ -24,8 +24,8 @@
 #include "mc/world/effect/MobEffect.h"
 #include "mc/world/level/Command.h"
 
-namespace ll {
-template <class Ret>
+namespace ll::memory {
+template <class Ret, class... Args>
 class NativeClosure;
 }
 
@@ -594,7 +594,7 @@ private:
     CommandPermissionLevel       permission_;
     CommandFlag                  flag_;
 
-    std::unique_ptr<ll::NativeClosure<std::unique_ptr<Command>>> builder;
+    std::unique_ptr<ll::memory::NativeClosure<std::unique_ptr<Command>>> builder;
 
 public:
     // Parameter Pointers to DynamicCommand Extra Part
@@ -701,17 +701,13 @@ public:
     LLAPI static std::vector<std::string> getSoftEnumValues(std::string const& name);
     LLAPI static std::vector<std::string> getSoftEnumNames();
 
-    template <typename T>
-    std::enable_if_t<fmt::detail::is_string<T>::value, ParameterIndex> toIndex(T const& arg) {
+    template <ll::concepts::IsString T>
+    ParameterIndex toIndex(T const& arg) {
         return findParameterIndex(arg);
     }
-    template <typename T>
-    std::enable_if_t<!fmt::detail::is_string<T>::value, ParameterIndex> toIndex(T const& arg) = delete;
-    template <>
     ParameterIndex toIndex(ParameterIndex const& arg) {
         return arg;
     }
-    template <>
     ParameterIndex toIndex(DynamicCommand::ParameterData const& arg) {
         return newParameter(DynamicCommand::ParameterData(arg));
     }

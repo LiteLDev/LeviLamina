@@ -1,5 +1,5 @@
 ﻿#include "ll/api/ServerInfo.h"
-#include "ll/api/plugin/PluginManager.h"
+#include "ll/api/plugin/Plugin.h"
 #include "ll/core/Config.h"
 
 #include "mc/network/packet/Packet.h"

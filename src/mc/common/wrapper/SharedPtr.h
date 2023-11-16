@@ -14,8 +14,8 @@ public:
         return SharedPtr<T>(new T(std::forward<Args>(args)...));
     }
 
-    SharedPtr() noexcept : counter(nullptr) {}
-    SharedPtr(std::nullptr_t) noexcept : counter(nullptr) {}
+    SharedPtr() noexcept : counter(nullptr) {}               // NOLINT
+    SharedPtr(std::nullptr_t) noexcept : counter(nullptr) {} // NOLINT
 
     explicit SharedPtr(T* p) : counter(new SharedCounter<T>(p)) {}
 
@@ -95,8 +95,5 @@ public:
         }
     }
 
-private:
     SharedCounter<T>* counter;
-
-    friend class WeakPtr<T>;
 };

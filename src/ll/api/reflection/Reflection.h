@@ -64,7 +64,7 @@ consteval std::string_view typeRawName() noexcept {
     return n.substr(p, n.size() - p - s);
 }
 
-consteval std::string_view removeTypePrefix(std::string_view s) noexcept {
+constexpr std::string_view removeTypePrefix(std::string_view s) noexcept {
     if (s.starts_with("enum ")) { s.remove_prefix(sizeof("enum ") - 1); }
     if (s.starts_with("class ")) { s.remove_prefix(sizeof("class ") - 1); }
     if (s.starts_with("union ")) { s.remove_prefix(sizeof("union ") - 1); }
@@ -72,7 +72,7 @@ consteval std::string_view removeTypePrefix(std::string_view s) noexcept {
     return s;
 }
 
-consteval std::string_view removeTypeSuffix(std::string_view s) noexcept {
+constexpr std::string_view removeTypeSuffix(std::string_view s) noexcept {
     auto k = s.find('<');
     if (k != std::string_view::npos) { return s.substr(0, k); }
     return s;

@@ -8,7 +8,7 @@
 #include "ll/api/ServerInfo.h"
 #include "ll/api/base/ErrorInfo.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/plugin/PluginManager.h"
+#include "ll/api/plugin/Plugin.h"
 #include "ll/api/service/GlobalService.h"
 #include "ll/api/utils/StringUtils.h"
 

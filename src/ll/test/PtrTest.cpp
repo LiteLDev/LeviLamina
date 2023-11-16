@@ -37,8 +37,8 @@ class Test;
 #include "mc/entity/flags/ExitFromPassengerFlag.h"
 #include "mc/world/components/FlagComponent.h"
 
-size_t printHello(size_t data) {
-    ll::logger.warn("hello aaaaaaaa {}", data);
+size_t printHello(size_t data, int a) {
+    ll::logger.warn("hello aaaaaaaa {} {}", data, a);
     if (data != 123) throw std::runtime_error("Test New Crash Logger");
     return 0;
 }
@@ -92,15 +92,15 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     }
     // throw std::runtime_error("Test New Crash Logger");
 
-    auto c1 = ll::NativeClosure(printHello, 123);
+    auto c1 = ll::memory::NativeClosure(printHello, 123);
 
-    auto f = std::function<void(void)>(std::bind(printHello, 123));
+    auto f = std::function<size_t(int)>([](int a) { return printHello(123, a); });
 
-    // auto c2 = ll::NativeClosure(printHello, 49795726147);
+    auto c2 = ll::memory::FunctionalClosure(f);
 
-    (*c1.get())();
-    f();
-    // (*c2.get())();
+    (*c1.get())(654367);
+    f(6376774);
+    (*c2.get())(4619735);
 
     // auto& map        = BlockTypeRegistry::$mBlockLookupMap();
     // map["test:test"] = BlockTypeRegistry::lookupByName("minecraft:stone");

@@ -896,7 +896,7 @@ static std::unique_ptr<Command> commandBuilder(uintptr_t t) {
 
 
 DynamicCommand::BuilderFn DynamicCommandInstance::initCommandBuilder() {
-    this->builder = std::make_unique<ll::NativeClosure<std::unique_ptr<Command>>>(commandBuilder, (uintptr_t)this);
+    this->builder = std::make_unique<ll::memory::NativeClosure<std::unique_ptr<Command>>>(commandBuilder, (uintptr_t)this);
     return this->builder->get();
 }
 
