@@ -81,8 +81,7 @@ public:
 template <class Ret, class... Args>
 class FunctionalClosure : public NativeClosure<Ret, Args...> {
     static inline Ret closureImpl(uintptr_t data, Args... args) {
-        auto self = (FunctionalClosure*)data;
-        return self->func(std::forward<Args>(args)...);
+        return ((FunctionalClosure*)data)->func(std::forward<Args>(args)...);
     }
 
 public:

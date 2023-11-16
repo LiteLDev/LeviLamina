@@ -705,9 +705,7 @@ public:
     ParameterIndex toIndex(T const& arg) {
         return findParameterIndex(arg);
     }
-    ParameterIndex toIndex(ParameterIndex const& arg) {
-        return arg;
-    }
+    ParameterIndex toIndex(ParameterIndex const& arg) { return arg; }
     ParameterIndex toIndex(DynamicCommand::ParameterData const& arg) {
         return newParameter(DynamicCommand::ParameterData(arg));
     }

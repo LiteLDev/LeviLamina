@@ -11,8 +11,8 @@ public:
     RakPeerInterface(RakPeerInterface const&);
     RakPeerInterface();
 
-using Deleter = void(RakPeerInterface*);
-using InstanceOwner = std::unique_ptr<RakPeerInterface, Deleter*>;
+    using Deleter       = void(RakPeerInterface*);
+    using InstanceOwner = std::unique_ptr<RakPeerInterface, Deleter*>;
 
 public:
     // NOLINTBEGIN

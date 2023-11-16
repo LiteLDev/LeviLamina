@@ -86,7 +86,7 @@ LLAPI Handle getModuleHandle(void* addr);
 inline Handle getCurrentModuleHandle() { return &__ImageBase; }
 
 template <class T>
-inline void modify(T& ref, std::function<void(std::remove_cvref_t<T>&)>&& f) {
+inline void modify(T& ref, std::function<void(std::remove_cvref_t<T>&)> const& f) {
     modify((void*)std::addressof(ref), sizeof(T), [&] { f((std::remove_cvref_t<T>&)(ref)); });
 }
 

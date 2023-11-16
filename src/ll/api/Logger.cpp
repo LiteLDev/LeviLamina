@@ -46,7 +46,8 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
                 fmt::format(fmt::runtime(fileFormat[4]), s)
             )) << std::endl;
         }
-        if ((playerOutputCallback || Logger::defaultPlayerOutputCallback) && checkLogLevel(logger->playerLevel, level)) {
+        if ((playerOutputCallback || Logger::defaultPlayerOutputCallback)
+            && checkLogLevel(logger->playerLevel, level)) {
             std::string str = replaceAnsiToMcCode(fmt::format(
                 fmt::runtime(playerFormat[0]),
                 applyTextStyle(style[0], fmt::format(fmt::runtime(playerFormat[1]), time)),

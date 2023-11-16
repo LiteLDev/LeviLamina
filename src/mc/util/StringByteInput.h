@@ -10,7 +10,9 @@ public:
     size_t           mIdx;
     std::string_view mBuffer;
 
-    [[nodiscard]] constexpr StringByteInput(std::string_view strv, size_t offset = 0) noexcept : mIdx(offset), mBuffer(strv) {}
+    [[nodiscard]] constexpr StringByteInput(std::string_view sv, size_t offset = 0) noexcept
+    : mIdx(offset),
+      mBuffer(sv) {}
 
 public:
     // NOLINTBEGIN

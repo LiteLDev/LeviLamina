@@ -82,7 +82,7 @@
           y(static_cast<TYPE>((std::is_floating_point_v<T1> && !std::is_floating_point_v<TYPE>) ? floor(y) : y)),      \
           z(static_cast<TYPE>((std::is_floating_point_v<T2> && !std::is_floating_point_v<TYPE>) ? floor(z) : z)){};    \
         template <IsField T>                                                                                           \
-        [[nodiscard]] constexpr NAME(T const& vec)                                                                                   \
+        [[nodiscard]] constexpr NAME(T const& vec)                                                                     \
             requires((IsIntN<T> || IsFloatN<T> || IsBoolN<T>) && T::size() == 3)                                       \
         : NAME() {                                                                                                     \
             T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {                                       \

@@ -21,8 +21,8 @@ public:
     std::string              mPlatformId; // this+0xB8
 
     [[nodiscard]] inline static TextPacket createRawMessage(std::string_view msg) {
-        auto res     = TextPacket{};
-        res.mType    = TextPacketType::Raw;
+        auto res  = TextPacket{};
+        res.mType = TextPacketType::Raw;
         res.mMessage.assign(msg);
         return res;
     }

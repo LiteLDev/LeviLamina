@@ -20,7 +20,7 @@ public:
     bool                        cancelled{false};
     uint64                      id;
 
-    Task(std::function<void()>&& f, bool interval = false) : f(f), interval(interval), id(TaskId++) {}
+    Task(std::function<void()> const& f, bool interval = false) : f(f), interval(interval), id(TaskId++) {}
 
     inline void cancel() { cancelled = true; }
 
@@ -39,8 +39,8 @@ private:
 
 public:
     template <class R, class P>
-    RepeatTask(std::chrono::duration<R, P> duration, std::function<void()>&& f, size_t count = 0)
-    : Task<Clock>(std::move(f), false),
+    RepeatTask(std::chrono::duration<R, P> duration, std::function<void()> const& f, size_t count = 0)
+    : Task<Clock>(f, false),
       time(Clock::now()),
       duration(std::chrono::duration_cast<Duration>(duration)),
       count(count),
@@ -72,8 +72,8 @@ private:
 
 public:
     template <class R, class P>
-    IntervalTask(std::chrono::duration<R, P> duration, std::function<void()>&& f, size_t count = 0)
-    : Task<Clock>(std::move(f), true),
+    IntervalTask(std::chrono::duration<R, P> duration, std::function<void()> const& f, size_t count = 0)
+    : Task<Clock>(f, true),
       first(true),
       duration(std::chrono::duration_cast<Duration>(duration)),
       count(count),
@@ -106,18 +106,18 @@ private:
     bool            finished;
 
 public:
-    DelayTask(TimePoint time, std::function<void()>&& f)
-    : Task<Clock>(std::move(f), false),
+    DelayTask(TimePoint time, std::function<void()> const& f)
+    : Task<Clock>(f, false),
       time(time),
       finished(false) {}
 
     template <class R, class P>
-    DelayTask(std::chrono::duration<R, P> duration, std::function<void()>&& f)
-    : DelayTask<Clock>(Clock::now() + std::chrono::duration_cast<Duration>(duration), std::move(f)) {}
+    DelayTask(std::chrono::duration<R, P> duration, std::function<void()> const& f)
+    : DelayTask<Clock>(Clock::now() + std::chrono::duration_cast<Duration>(duration), f) {}
 
-    DelayTask(std::string const& timestr, std::function<void()>&& f)
+    DelayTask(std::string const& timestr, std::function<void()> const& f)
         requires(std::is_same_v<Clock, std::chrono::system_clock>)
-    : DelayTask<Clock>(parseTime(timestr), std::move(f)) {}
+    : DelayTask<Clock>(parseTime(timestr), f) {}
 
     TimePoint getNextTime() override {
         if (finished) { return TimePoint::max(); }

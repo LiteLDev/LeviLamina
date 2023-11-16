@@ -48,7 +48,7 @@ public:
 
     [[nodiscard]] constexpr bool operator==(CommandFlag const& rhs) const noexcept { return value == rhs.value; }
     [[nodiscard]] constexpr bool operator!=(CommandFlag const& rhs) const noexcept { return value != rhs.value; }
-    CommandFlag&   operator|=(CommandFlag const& rhs) {
+    CommandFlag&                 operator|=(CommandFlag const& rhs) {
         value = rhs.value | value;
         return *this;
     }

@@ -32,7 +32,8 @@ std::string getVTableName(void* vtable) {
     }
 }
 
-inline void forEachPacket(std::function<void(Packet const& packet, std::string className, size_t size)>&& callback) {
+inline void forEachPacket(std::function<void(Packet const& packet, std::string className, size_t size)> const& callback
+) {
     int packetId = 0;
     while (packetId < 500) {
         auto packet = MinecraftPackets::createPacket((MinecraftPacketIds)packetId);

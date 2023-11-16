@@ -24,7 +24,7 @@ struct basic_functionbuf : public std::basic_streambuf<Char, Traits> {
     using view     = std::basic_string_view<Char>;
     using int_type = typename Traits::int_type;
 
-    explicit basic_functionbuf(std::function<void(view)>&& function) : function(std::move(function)) {
+    explicit basic_functionbuf(std::function<void(view)> const& function) : function(std::move(function)) {
         this->setp(buffer, buffer + sizeof(buffer) - 1);
     }
 
@@ -56,7 +56,7 @@ struct basic_ofuncstream : private virtual basic_functionbuf<Char, Traits>, publ
 
     using view = typename basic_functionbuf<Char, Traits>::view;
 
-    explicit basic_ofuncstream(std::function<void(view)>&& function)
+    explicit basic_ofuncstream(std::function<void(view)> const& function)
     : basic_functionbuf<Char, Traits>(std::move(function)),
       std::basic_ostream<Char, Traits>(this) {
         this->setf(std::ios_base::unitbuf);

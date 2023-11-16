@@ -21,7 +21,8 @@ public:
         static_cast<float>(ia) / 255.0f
     ) {}
     template <std::floating_point T0, std::floating_point T1, std::floating_point T2, std::floating_point T3 = double>
-    [[nodiscard]] constexpr Color(T0 const& r, T1 const& g, T2 const& b, T3 const& a = 1) noexcept : floatN4(r, g, b, a) {}
+    [[nodiscard]] constexpr Color(T0 const& r, T1 const& g, T2 const& b, T3 const& a = 1) noexcept
+    : floatN4(r, g, b, a) {}
 
     template <IsFloatN V, std::floating_point A = double>
     [[nodiscard]] constexpr Color(V const& v, A const& a = 1) noexcept // NOLINT

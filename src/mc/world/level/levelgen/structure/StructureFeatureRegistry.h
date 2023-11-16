@@ -8,7 +8,6 @@
 class StructureFeature;
 class StructureFeatureRegistry {
 public:
-
     std::vector<std::unique_ptr<StructureFeature>> mStructureFeatures;
 
     // prevent constructor by default
