@@ -96,7 +96,7 @@ LL_AUTO_INSTANCE_HOOK(
     ll::Global<PropertiesSettings>.init(self);
     return self;
 }
-LL_AUTO_STATIC_HOOK(PropertiesSettingsDestructor, HookPriority::Low, "??1PropertiesSettings@@QEAA@XZ", void) {
+LL_AUTO_INSTANCE_HOOK(PropertiesSettingsDestructor, HookPriority::Low, "??1PropertiesSettings@@QEAA@XZ", void) {
     ll::Global<PropertiesSettings>.init(nullptr);
     origin();
 }
