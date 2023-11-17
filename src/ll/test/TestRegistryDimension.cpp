@@ -36,7 +36,8 @@ namespace {
 
 ll::Logger logger("TestRegistryDimension");
 
-void printVfable(void** table) {
+void printVfable(void** t) {
+    void** table = (void**)(*t);
     for (size_t i = 0; table[i] != nullptr; ++i) {
         logger.info("v table[{}] : {}", i, table[i]);
         for (auto& str : lookupSymbol(table[i])) { logger.info("| {}", str); }
