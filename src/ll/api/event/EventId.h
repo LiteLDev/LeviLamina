@@ -28,8 +28,8 @@ static constexpr EventId EmptyEventId{""};
 template <class T>
 constexpr EventId getEventId = []() -> EventId {
     using Self = std::remove_cvref_t<T>;
-    if constexpr (Self::Id != EmptyEventId) {
-        return Self::Id;
+    if constexpr (Self::CustomEventId != EmptyEventId) {
+        return Self::CustomEventId;
     } else {
         return EventId{ll::reflection::type_raw_name_v<Self>};
     }

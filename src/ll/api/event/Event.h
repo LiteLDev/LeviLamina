@@ -10,7 +10,7 @@ protected:
     constexpr Event() = default;
 
 public:
-    static constexpr ll::event::EventId Id{EmptyEventId};
+    static constexpr ll::event::EventId CustomEventId{EmptyEventId};
 
     static constexpr void tryRegisterHook() {}
 };

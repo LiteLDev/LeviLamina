@@ -36,13 +36,27 @@ public:
         publish(e, getEventId<T>);
     }
     template <std::derived_from<Event> T, class LT>
-        requires(std::derived_from<T, LT>)
+        requires(std::derived_from<T, LT> && !std::same_as<T, LT>)
     inline bool addListener(std::shared_ptr<Listener<LT>> const& listener) {
         if (addListener(listener, getEventId<T>)) {
             T::tryRegisterHook();
             return true;
         }
         return false;
+    }
+    template <std::derived_from<Event> T>
+    inline bool addListener(std::shared_ptr<Listener<T>> const& listener) {
+        if (addListener(listener, getEventId<T>)) {
+            T::tryRegisterHook();
+            return true;
+        }
+        return false;
+    }
+    template <std::derived_from<Event> T, std::derived_from<ListenerBase> L = Listener<T>, class... Args>
+    inline auto emplaceListener(Args&&... args) {
+        auto res = std::make_shared<L>(std::forward<Args>(args)...);
+        if (addListener(res, getEventId<T>)) { T::tryRegisterHook(); }
+        return res;
     }
 
     inline bool removeListener(std::shared_ptr<ListenerBase> const& listener) {

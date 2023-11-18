@@ -13,7 +13,7 @@ private:
     Callback callback;
 
 public:
-    virtual ~Listener() = default;
+    ~Listener() override = default;
 
     constexpr Listener(Callback const& fn, EventPriority priority = EventPriority::Normal)
     : ListenerBase(priority),
