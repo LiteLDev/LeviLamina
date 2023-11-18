@@ -9,7 +9,12 @@
 namespace ll::event {
 
 class CallbackStream {
-    std::set<std::shared_ptr<ListenerBase>> listeners;
+    struct ListenerComparator {
+        using Type = std::shared_ptr<ListenerBase>;
+        bool operator()(Type const& lhs, Type const& rhs) const { return *lhs < *rhs; }
+    };
+
+    std::set<std::shared_ptr<ListenerBase>, ListenerComparator> listeners;
 
 public:
     void publish(EventBase& event) {

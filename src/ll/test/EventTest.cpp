@@ -66,6 +66,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     auto listener2 = registry.emplaceListener<TestEvent2>(
         [](TestEventB& ev) {
             ll::logger.debug("I'm 2, receive: {}, str: {}, {}", typeid(ev).name(), ev.some, times++);
+            if (times.load() == 5) { throw std::runtime_error("hello"); }
         },
         ll::event::EventPriority::High
     );
