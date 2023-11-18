@@ -135,7 +135,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
 // Redirect C++ output
 
-LL_AUTO_STATIC_HOOK(CppOutputRedirectHook, HookPriority::Lowest, "main", int, int argc, char* argv[]) {
+LL_AUTO_STATIC_HOOK(CppOutputRedirectHook, HookPriority::Highest, "main", int, int argc, char* argv[]) {
 
     std::ios::sync_with_stdio(false);
 
@@ -189,7 +189,7 @@ void redirectStdIo(std::string_view str, FILE* stream) {
 
 LL_AUTO_STATIC_HOOK(
     StdioPrintRedirectHook,
-    HookPriority::Lowest,
+    HookPriority::Highest,
     __stdio_common_vfprintf_s,
     int,
     uint64      options,
@@ -222,7 +222,7 @@ LL_AUTO_STATIC_HOOK(
 
 LL_AUTO_STATIC_HOOK(
     StdioPrintSRedirectHook,
-    HookPriority::Lowest,
+    HookPriority::Highest,
     __stdio_common_vfprintf,
     int,
     uint64      options,
@@ -237,7 +237,7 @@ LL_AUTO_STATIC_HOOK(
 
 LL_AUTO_STATIC_HOOK(
     StdioPrintPRedirectHook,
-    HookPriority::Lowest,
+    HookPriority::Highest,
     __stdio_common_vfprintf_p,
     int,
     uint64      options,
@@ -255,12 +255,12 @@ LL_AUTO_STATIC_HOOK(
     return bufferCount;
 }
 
-LL_AUTO_STATIC_HOOK(StdioPutsRedirectHook, HookPriority::Lowest, puts, int, char const* str) {
+LL_AUTO_STATIC_HOOK(StdioPutsRedirectHook, HookPriority::Highest, puts, int, char const* str) {
     redirectStdIo(str, stdout);
     return 0;
 }
 
-LL_AUTO_STATIC_HOOK(StdioFPutsRedirectHook, HookPriority::Lowest, fputs, int, char const* str, FILE* stream) {
+LL_AUTO_STATIC_HOOK(StdioFPutsRedirectHook, HookPriority::Highest, fputs, int, char const* str, FILE* stream) {
     if (stream != stdout && stream != stderr) { return origin(str, stream); }
     redirectStdIo(str, stream);
     return 0;
@@ -268,7 +268,7 @@ LL_AUTO_STATIC_HOOK(StdioFPutsRedirectHook, HookPriority::Lowest, fputs, int, ch
 
 LL_AUTO_STATIC_HOOK(
     StdioFWriteRedirectHook,
-    HookPriority::Lowest,
+    HookPriority::Highest,
     fwrite,
     size_t,
     void const* buffer,

@@ -78,6 +78,12 @@ constexpr std::string_view removeTypeSuffix(std::string_view s) noexcept {
     return s;
 }
 
+constexpr std::string_view removeTypeNamespace(std::string_view s) noexcept {
+    auto k = s.rfind("::", s.find('<'));
+    if (k != std::string_view::npos) { return s.substr(k + 2); }
+    return s;
+}
+
 template <typename T>
 inline constexpr std::string_view type_raw_name_v = typeRawName<T>();
 
@@ -86,6 +92,9 @@ inline constexpr std::string_view type_unprefix_name_v = removeTypePrefix(type_r
 
 template <typename T>
 inline constexpr std::string_view type_name_v = removeTypeSuffix(type_unprefix_name_v<T>);
+
+template <typename T>
+inline constexpr std::string_view type_stem_name_v = removeTypeNamespace(type_name_v<T>);
 
 template <typename T>
 inline constexpr bool is_template_v = type_raw_name_v<T>.find("<") != std::string_view::npos;

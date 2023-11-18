@@ -37,7 +37,7 @@ using namespace ll::memory;
 
 LL_AUTO_INSTANCE_HOOK(
     AllowListFileConstructor,
-    HookPriority::Low,
+    HookPriority::High,
     "??0AllowListFile@@QEAA@AEBVPath@Core@@@Z",
     AllowListFile*,
     class Core::Path const& path
@@ -46,7 +46,7 @@ LL_AUTO_INSTANCE_HOOK(
     ll::Global<AllowListFile>.init(self);
     return self;
 }
-LL_AUTO_INSTANCE_HOOK(AllowListFileDestructor, HookPriority::Low, "??1AllowListFile@@QEAA@XZ", void) {
+LL_AUTO_INSTANCE_HOOK(AllowListFileDestructor, HookPriority::High, "??1AllowListFile@@QEAA@XZ", void) {
     if ((void*)this == (void*)ll::Global<AllowListFile>.get()) ll::Global<AllowListFile>.init(nullptr);
     origin();
 }
@@ -55,7 +55,7 @@ LL_AUTO_INSTANCE_HOOK(AllowListFileDestructor, HookPriority::Low, "??1AllowListF
 
 LL_AUTO_INSTANCE_HOOK(
     StructureManagerConstructor,
-    HookPriority::Low,
+    HookPriority::High,
     "??0StructureManager@@QEAA@AEAVResourcePackManager@@@Z",
     StructureManager*,
     class ResourcePackManager& resourcePackManager
@@ -69,7 +69,7 @@ LL_AUTO_INSTANCE_HOOK(
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     MinecraftServiceHook,
-    HookPriority::Low,
+    HookPriority::High,
     Minecraft,
     &Minecraft::initAsDedicatedServer,
     void
@@ -77,7 +77,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     ll::Global<Minecraft>.init(this);
     origin();
 }
-LL_AUTO_INSTANCE_HOOK(MinecraftDestructor, HookPriority::Low, "??1Minecraft@@UEAA@XZ", void) {
+LL_AUTO_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UEAA@XZ", void) {
     ll::Global<StructureManager>.init(nullptr); // ~StructureManager is inlined
     ll::Global<Minecraft>.init(nullptr);
     origin();
@@ -87,7 +87,7 @@ LL_AUTO_INSTANCE_HOOK(MinecraftDestructor, HookPriority::Low, "??1Minecraft@@UEA
 
 LL_AUTO_INSTANCE_HOOK(
     PropertiesSettingsConstructor,
-    HookPriority::Low,
+    HookPriority::High,
     "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
     PropertiesSettings*,
     std::string const& path
@@ -96,7 +96,7 @@ LL_AUTO_INSTANCE_HOOK(
     ll::Global<PropertiesSettings>.init(self);
     return self;
 }
-LL_AUTO_INSTANCE_HOOK(PropertiesSettingsDestructor, HookPriority::Low, "??1PropertiesSettings@@QEAA@XZ", void) {
+LL_AUTO_INSTANCE_HOOK(PropertiesSettingsDestructor, HookPriority::High, "??1PropertiesSettings@@QEAA@XZ", void) {
     ll::Global<PropertiesSettings>.init(nullptr);
     origin();
 }
@@ -105,7 +105,7 @@ LL_AUTO_INSTANCE_HOOK(PropertiesSettingsDestructor, HookPriority::Low, "??1Prope
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ServerNetworkHandlerServiceHook,
-    HookPriority::Low,
+    HookPriority::High,
     ServerNetworkHandler,
     &ServerNetworkHandler::allowIncomingConnections,
     void,
@@ -116,7 +116,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     unhook();
     origin(a1, a2);
 }
-LL_AUTO_INSTANCE_HOOK(ServerNetworkHandlerDestructor, HookPriority::Low, "??1ServerNetworkHandler@@UEAA@XZ", void) {
+LL_AUTO_INSTANCE_HOOK(ServerNetworkHandlerDestructor, HookPriority::High, "??1ServerNetworkHandler@@UEAA@XZ", void) {
     ll::Global<ServerNetworkHandler>.init(nullptr);
     origin();
 }
@@ -125,7 +125,7 @@ LL_AUTO_INSTANCE_HOOK(ServerNetworkHandlerDestructor, HookPriority::Low, "??1Ser
 
 LL_AUTO_INSTANCE_HOOK(
     NetworkSystemConstructor,
-    HookPriority::Low,
+    HookPriority::High,
     "??0NetworkSystem@@IEAA@$$QEAUDependencies@0@@Z",
     NetworkSystem*,
     struct NetworkSystem::Dependencies&& dependencies
@@ -134,7 +134,7 @@ LL_AUTO_INSTANCE_HOOK(
     ll::Global<NetworkSystem>.init(self);
     return self;
 }
-LL_AUTO_INSTANCE_HOOK(NetworkSystemDestructor, HookPriority::Low, "??1NetworkSystem@@MEAA@XZ", void) {
+LL_AUTO_INSTANCE_HOOK(NetworkSystemDestructor, HookPriority::High, "??1NetworkSystem@@MEAA@XZ", void) {
     ll::Global<NetworkSystem>.init(nullptr);
     origin();
 }
@@ -143,7 +143,7 @@ LL_AUTO_INSTANCE_HOOK(NetworkSystemDestructor, HookPriority::Low, "??1NetworkSys
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ServerLevelServiceHook,
-    HookPriority::Low,
+    HookPriority::High,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,
     void,
@@ -152,7 +152,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     ll::Global<Level>.init(ll::Global<Minecraft>->getLevel());
     origin(ins);
 }
-LL_AUTO_INSTANCE_HOOK(LevelDestructor, HookPriority::Low, "??1Level@@UEAA@XZ", void) {
+LL_AUTO_INSTANCE_HOOK(LevelDestructor, HookPriority::High, "??1Level@@UEAA@XZ", void) {
     ll::Global<Level>.init(nullptr);
     origin();
 }
@@ -161,7 +161,7 @@ LL_AUTO_INSTANCE_HOOK(LevelDestructor, HookPriority::Low, "??1Level@@UEAA@XZ", v
 
 LL_AUTO_STATIC_HOOK(
     RakNetRakPeerCreater,
-    HookPriority::Low,
+    HookPriority::High,
     createUniqueRakPeer,
     RakNet::RakPeerInterface::InstanceOwner
 ) {
@@ -169,7 +169,7 @@ LL_AUTO_STATIC_HOOK(
     ll::Global<RakNet::RakPeer>.init((RakNet::RakPeer*)self.get());
     return self;
 }
-LL_AUTO_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::Low, "??1RakPeer@RakNet@@UEAA@XZ", void) {
+LL_AUTO_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::High, "??1RakPeer@RakNet@@UEAA@XZ", void) {
     ll::Global<RakNet::RakPeer>.init(nullptr);
     origin();
 }
@@ -178,7 +178,7 @@ LL_AUTO_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::Low, "??1RakPeer@Ra
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ResourcePackRepositoryServiceHook,
-    HookPriority::Low,
+    HookPriority::High,
     ResourcePackRepository,
     &ResourcePackRepository::_initialize,
     void
@@ -186,19 +186,19 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     ll::Global<ResourcePackRepository>.init(this);
     origin();
 }
-LL_AUTO_INSTANCE_HOOK(ResourcePackRepositoryDestructor, HookPriority::Low, "??1ResourcePackRepository@@QEAA@XZ", void) {
+LL_AUTO_INSTANCE_HOOK(ResourcePackRepositoryDestructor, HookPriority::High, "??1ResourcePackRepository@@QEAA@XZ", void) {
     ll::Global<ResourcePackRepository>.init(nullptr);
     origin();
 }
 
 // CommandRegistry
 
-LL_AUTO_INSTANCE_HOOK(CommandRegistryConstructor, HookPriority::Low, "??0CommandRegistry@@QEAA@XZ", CommandRegistry*) {
+LL_AUTO_INSTANCE_HOOK(CommandRegistryConstructor, HookPriority::High, "??0CommandRegistry@@QEAA@XZ", CommandRegistry*) {
     auto self = origin();
     ll::Global<CommandRegistry>.init((CommandRegistry*)this);
     return self;
 }
-LL_AUTO_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::Low, "??1CommandRegistry@@QEAA@XZ", void) {
+LL_AUTO_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, "??1CommandRegistry@@QEAA@XZ", void) {
     ll::Global<CommandRegistry>.init(nullptr);
     origin();
 }

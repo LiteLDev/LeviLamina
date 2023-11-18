@@ -443,7 +443,6 @@ public:
         CommandOutput&                           output,
         std::unordered_map<std::string, Result>& results
     )>;
-    using BuilderFn  = std::unique_ptr<Command> (*)();
 
 private:
     template <class T>
@@ -594,9 +593,8 @@ private:
     CommandPermissionLevel       permission_;
     CommandFlag                  flag_;
 
-    std::unique_ptr<ll::memory::NativeClosure<std::unique_ptr<Command>>> builder;
-
 public:
+    std::unique_ptr<ll::memory::NativeClosure<std::unique_ptr<Command>>> builder;
     // Parameter Pointers to DynamicCommand Extra Part
     size_t                                                        commandSize   = sizeof(DynamicCommand);
     std::unordered_map<std::string, DynamicCommand::ParameterPtr> parameterPtrs = {};
@@ -625,8 +623,6 @@ private:
         CommandPermissionLevel permission = CommandPermissionLevel::GameDirectors,
         CommandFlag            flag       = CommandFlagValue::NotCheat
     );
-
-    LLAPI DynamicCommand::BuilderFn initCommandBuilder();
     LLAPI std::vector<CommandParameterData> buildOverload(std::vector<ParameterIndex> const& overload);
 
 public:

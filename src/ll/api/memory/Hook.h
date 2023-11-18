@@ -67,11 +67,11 @@ using AddConstAtMemberFunIfOriginIs = std::conditional_t<IsConstMemberFunV<U>, A
  * @details The lower priority, the hook will be executed earlier
  */
 enum class HookPriority : int {
-    Lowest  = 0,
-    Low     = 100,
+    Highest = 0,
+    High    = 100,
     Normal  = 200,
-    High    = 300,
-    Highest = 400,
+    Low     = 300,
+    Lowest  = 400,
 };
 
 LLAPI int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority);
