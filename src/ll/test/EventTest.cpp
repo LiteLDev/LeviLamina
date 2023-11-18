@@ -1,11 +1,9 @@
+#include "ll/api/base/ErrorInfo.h"
+#include "ll/api/event/EventBus.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/core/LeviLamina.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
-
-#include "ll/api/event/EventRegistry.h"
-#include "ll/core/LeviLamina.h"
-
-#include "ll/api/base/ErrorInfo.h"
 
 class TestEventB : public ll::event::Event {
 protected:
@@ -53,7 +51,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
     origin(ins);
 
-    auto& registry = ll::event::EventRegistry::getInstance();
+    auto& registry = ll::event::EventBus::getInstance();
 
     static std::atomic_uint times{};
 
@@ -85,7 +83,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     ll::logger.debug("remove 1, 2");
 
-    registry.addListener(listener2);
+    registry.addListener<TestEvent2>(listener2);
 
     registry.publish(TestEvent1{});
     registry.publish(TestEvent2{});

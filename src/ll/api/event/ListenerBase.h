@@ -1,10 +1,10 @@
 #pragma once
 
 #include "ll/api/base/StdInt.h"
-#include "ll/api/event/base/EventBase.h"
+#include "ll/api/event/Event.h"
 
 namespace ll::event {
-class EventRegistry;
+class EventBus;
 
 enum class EventPriority {
     Highest = 0,
@@ -15,7 +15,7 @@ enum class EventPriority {
 };
 
 class ListenerBase {
-    friend EventRegistry;
+    friend EventBus;
     EventPriority priority;
     uint          id{};
     void          setId(uint i) { id = i; }
@@ -37,6 +37,6 @@ public:
 
     virtual ~ListenerBase() = default;
 
-    virtual void call(EventBase& event) = 0;
+    virtual void call(Event& event) = 0;
 };
 } // namespace ll::event

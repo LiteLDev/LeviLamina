@@ -1,29 +1,19 @@
 #pragma once
 
+#include "ll/api/base/Macro.h"
+
 namespace ll::event {
-/**
- * @brief Cancellable event interface.
- */
+
+// FIXME: abi stability is not guaranteed
 class Cancellable {
 private:
-    bool cancelled = false;
+    bool mCancelled = false;
 
 public:
-    /**
-     * @brief Get if the event is cancelled.
-     * @return True if the event is cancelled.
-     */
-    [[nodiscard]] bool isCancelled() const { return cancelled; }
+    LLNDAPI virtual bool isCancelled() const;
 
-    /**
-     * @brief Set if the event is cancelled.
-     * @param cancelled True if the event is cancelled.
-     */
-    void setCancelled(bool _cancelled) { this->cancelled = _cancelled; }
+    LLAPI virtual void setCancelled(bool cancelled);
 
-    /**
-     * @brief Cancel the event.
-     */
-    void cancel() { cancelled = true; }
+    void cancel() { setCancelled(true); }
 };
 } // namespace ll::event

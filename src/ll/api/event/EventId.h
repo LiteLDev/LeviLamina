@@ -8,7 +8,9 @@ class EventId {
 public:
     std::string_view const name;
     size_t const           hash;
-    [[nodiscard]] constexpr EventId(std::string_view name) noexcept : name(name), hash(ll::hash::do_hash(name)) {}
+    [[nodiscard]] constexpr explicit EventId(std::string_view name) noexcept
+    : name(name),
+      hash(ll::hash::do_hash(name)) {}
 
     [[nodiscard]] constexpr bool operator==(EventId const& other) const noexcept {
         return hash == other.hash && name == other.name;

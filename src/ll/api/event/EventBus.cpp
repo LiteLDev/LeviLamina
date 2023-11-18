@@ -1,10 +1,9 @@
-#include "ll/api/event/EventRegistry.h"
-#include <ranges>
+#include "ll/api/event/EventBus.h"
+
+#include <mutex>
 #include <set>
 #include <unordered_map>
 #include <unordered_set>
-
-#include <mutex>
 
 namespace ll::event {
 
@@ -17,7 +16,7 @@ class CallbackStream {
     std::set<std::shared_ptr<ListenerBase>, ListenerComparator> listeners;
 
 public:
-    void publish(EventBase& event) {
+    void publish(Event& event) {
         for (auto& l : listeners) { l->call(event); }
     }
     bool addListener(std::shared_ptr<ListenerBase> const& listener) { return listeners.insert(listener).second; }
@@ -27,7 +26,7 @@ public:
     [[nodiscard]] bool empty() const { return listeners.empty(); }
 };
 
-class EventRegistry::EventRegistryImpl {
+class EventBus::EventBusImpl {
     std::atomic_uint lid{};
 
 public:
@@ -53,19 +52,19 @@ public:
     }
 };
 
-EventRegistry::EventRegistry() : impl(std::make_unique<EventRegistryImpl>()) {}
+EventBus::EventBus() : impl(std::make_unique<EventBusImpl>()) {}
 
-EventRegistry& EventRegistry::getInstance() {
-    static EventRegistry instance;
+EventBus& EventBus::getInstance() {
+    static EventBus instance;
     return instance;
 }
 
-void EventRegistry::publish(EventBase& event, EventId const& eventId) {
+void EventBus::publish(Event& event, EventId const& eventId) {
     std::lock_guard lock(impl->mutex);
     impl->streams[eventId].publish(event);
 }
 
-bool EventRegistry::addListener(std::shared_ptr<ListenerBase> const& listener, EventId const& eventId) {
+bool EventBus::addListener(std::shared_ptr<ListenerBase> const& listener, EventId const& eventId) {
     std::lock_guard lock(impl->mutex);
     if (listener->getId() == 0) { listener->setId(impl->getNewListenerId()); }
     auto& info    = impl->listeners[listener->getId()];
@@ -73,7 +72,7 @@ bool EventRegistry::addListener(std::shared_ptr<ListenerBase> const& listener, E
     info.watches.emplace(eventId);
     return impl->streams[eventId].addListener(listener);
 }
-bool EventRegistry::removeListener(std::shared_ptr<ListenerBase> const& listener, EventId const& eventId) {
+bool EventBus::removeListener(std::shared_ptr<ListenerBase> const& listener, EventId const& eventId) {
     std::lock_guard lock(impl->mutex);
     auto&           watches = impl->listeners[listener->getId()].watches;
     if (eventId == EmptyEventId) {
@@ -87,7 +86,7 @@ bool EventRegistry::removeListener(std::shared_ptr<ListenerBase> const& listener
         return impl->removeListener(listener, eventId);
     }
 }
-bool EventRegistry::hasListener(uint id, EventId const& eventId) const {
+bool EventBus::hasListener(uint id, EventId const& eventId) const {
     std::lock_guard lock(impl->mutex);
     if (!impl->listeners.contains(id)) { return false; }
     if (eventId == EmptyEventId) {
@@ -96,11 +95,11 @@ bool EventRegistry::hasListener(uint id, EventId const& eventId) const {
         return impl->listeners[id].watches.contains(eventId);
     }
 }
-bool EventRegistry::removeListener(uint id, EventId const& eventId) {
+bool EventBus::removeListener(uint id, EventId const& eventId) {
     auto listener = impl->listeners[id].listener.lock();
     return removeListener(listener, eventId);
 }
-bool EventRegistry::hasListener(std::shared_ptr<ListenerBase> const& listener, EventId const& eventId) const {
+bool EventBus::hasListener(std::shared_ptr<ListenerBase> const& listener, EventId const& eventId) const {
     return hasListener(listener->getId(), eventId);
 }
 
