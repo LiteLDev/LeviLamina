@@ -9,9 +9,7 @@ namespace ll::event {
 
 class CallbackStream {
     struct ListenerComparator {
-        bool operator()(ListenerPtr const& lhs, ListenerPtr const& rhs) const {
-            return *lhs < *rhs;
-        }
+        bool operator()(ListenerPtr const& lhs, ListenerPtr const& rhs) const { return *lhs < *rhs; }
     };
 
     std::set<ListenerPtr, ListenerComparator> listeners;
@@ -93,7 +91,7 @@ bool EventBus::removeListener(ListenerPtr const& listener, EventId const& eventI
     if (eventId == EmptyEventId) {
         for (auto& eid : watches) { res |= impl->removeListener(listener, eid); }
         impl->listeners.erase(listener->getId());
-        canneller.listeners.emplace(listener->getId());
+        canneller.listeners.erase(listener->getId());
     } else {
         res = impl->removeListener(listener, eventId);
         if (res) {

@@ -19,10 +19,11 @@ private:
 
     class Canneller {
         friend EventBus;
-        std::unordered_set<ListenerId> listeners;
+        std::unordered_set<ListenerId> listeners{};
         Canneller() = default;
         ~Canneller() {
-            for (auto id : listeners) { EventBus::getInstance().removeListener(id); }
+            auto list = listeners;
+            for (auto id : list) { EventBus::getInstance().removeListener(id); }
         }
 
     public:
