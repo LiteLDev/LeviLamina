@@ -8,7 +8,7 @@ namespace ll::event {
 namespace detail {
 LLAPI void printListenerError(std::string_view) noexcept;
 }
-template <typename T>
+template <class T>
     requires(std::derived_from<T, Event>)
 class Listener : public ListenerBase {
 public:

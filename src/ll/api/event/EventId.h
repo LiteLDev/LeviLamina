@@ -40,7 +40,7 @@ constexpr EventId getEventId = []() -> EventId {
 
 namespace std {
 template <>
-struct hash<ll::event::EventId> { // NOLINT(cert-dcl58-cpp)
+struct hash<ll::event::EventId> {
     size_t operator()(ll::event::EventId const& id) const noexcept { return id.hash; }
 };
 } // namespace std

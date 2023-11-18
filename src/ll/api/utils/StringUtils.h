@@ -68,7 +68,7 @@ replaceAll(std::string const& str, std::string_view oldValue, std::string_view n
  * IntToHexStr(16, true, true, false); // "0000000F"
  * @endcode
  */
-template <typename T>
+template <class T>
     requires std::is_integral_v<T>
 [[nodiscard]] constexpr std::string
 intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero = true) {

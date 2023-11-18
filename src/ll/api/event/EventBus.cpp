@@ -9,25 +9,31 @@ namespace ll::event {
 
 class CallbackStream {
     struct ListenerComparator {
-        using Type = std::shared_ptr<ListenerBase>;
-        bool operator()(Type const& lhs, Type const& rhs) const { return *lhs < *rhs; }
+        bool operator()(ListenerPtr const& lhs, ListenerPtr const& rhs) const {
+            return *lhs < *rhs;
+        }
     };
 
-    std::set<std::shared_ptr<ListenerBase>, ListenerComparator> listeners;
+    std::set<ListenerPtr, ListenerComparator> listeners;
 
 public:
+    // std::function<void()> tryHook;
+
     void publish(Event& event) {
         for (auto& l : listeners) { l->call(event); }
     }
-    bool addListener(std::shared_ptr<ListenerBase> const& listener) { return listeners.insert(listener).second; }
+    bool addListener(ListenerPtr const& listener) {
+        // if (tryHook) { tryHook(); }
+        return listeners.insert(listener).second;
+    }
 
-    bool removeListener(std::shared_ptr<ListenerBase> const& listener) { return listeners.erase(listener); }
+    bool removeListener(ListenerPtr const& listener) { return listeners.erase(listener); }
 
     [[nodiscard]] bool empty() const { return listeners.empty(); }
 };
 
 class EventBus::EventBusImpl {
-    std::atomic_uint lid{};
+    std::atomic<ListenerId> lid{};
 
 public:
     std::unordered_map<EventId, CallbackStream> streams;
@@ -39,11 +45,11 @@ public:
         std::unordered_set<EventId> watches;
     };
 
-    std::unordered_map<uint, ListenerInfo> listeners;
+    std::unordered_map<ListenerId, ListenerInfo> listeners;
 
-    uint getNewListenerId() { return ++lid; }
+    ListenerId getNewListenerId() { return ++lid; }
 
-    bool removeListener(std::shared_ptr<ListenerBase> const& listener, EventId const& eventId) {
+    bool removeListener(ListenerPtr const& listener, EventId const& eventId) {
         if (streams.contains(eventId) && streams.at(eventId).removeListener(listener)) {
             if (streams.at(eventId).empty()) { streams.erase(eventId); }
             return true;
@@ -58,35 +64,56 @@ EventBus& EventBus::getInstance() {
     static EventBus instance;
     return instance;
 }
-
 void EventBus::publish(Event& event, EventId const& eventId) {
     std::lock_guard lock(impl->mutex);
     impl->streams[eventId].publish(event);
 }
-
-bool EventBus::addListener(std::shared_ptr<ListenerBase> const& listener, EventId const& eventId) {
+// void EventBus::registerDelayHook(std::function<void()> const& fn, EventId const& eventId) {
+//     std::lock_guard lock(impl->mutex);
+//     impl->streams[eventId].tryHook = fn;
+// }
+bool EventBus::addListener(ListenerPtr const& listener, EventId const& eventId, Canneller& canneller) {
+    if (!listener) { return false; }
     std::lock_guard lock(impl->mutex);
     if (listener->getId() == 0) { listener->setId(impl->getNewListenerId()); }
     auto& info    = impl->listeners[listener->getId()];
     info.listener = listener;
-    info.watches.emplace(eventId);
-    return impl->streams[eventId].addListener(listener);
+    if (impl->streams[eventId].addListener(listener)) {
+        info.watches.emplace(eventId);
+        canneller.listeners.emplace(listener->getId());
+        return true;
+    }
+    return false;
 }
-bool EventBus::removeListener(std::shared_ptr<ListenerBase> const& listener, EventId const& eventId) {
+bool EventBus::removeListener(ListenerPtr const& listener, EventId const& eventId, Canneller& canneller) {
+    if (!listener) { return false; }
     std::lock_guard lock(impl->mutex);
     auto&           watches = impl->listeners[listener->getId()].watches;
+    bool            res     = false;
     if (eventId == EmptyEventId) {
-        bool res = false;
         for (auto& eid : watches) { res |= impl->removeListener(listener, eid); }
         impl->listeners.erase(listener->getId());
-        return res;
+        canneller.listeners.emplace(listener->getId());
     } else {
-        watches.erase(eventId);
-        if (watches.empty()) { impl->listeners.erase(listener->getId()); }
-        return impl->removeListener(listener, eventId);
+        res = impl->removeListener(listener, eventId);
+        if (res) {
+            watches.erase(eventId);
+            if (watches.empty()) {
+                impl->listeners.erase(listener->getId());
+                canneller.listeners.erase(listener->getId());
+            }
+        }
     }
+    return res;
 }
-bool EventBus::hasListener(uint id, EventId const& eventId) const {
+ListenerPtr EventBus::getListener(ListenerId id) const {
+    if (id == 0) { return nullptr; }
+    std::lock_guard lock(impl->mutex);
+    if (!impl->listeners.contains(id)) { return nullptr; }
+    return impl->listeners[id].listener.lock();
+}
+bool EventBus::hasListener(ListenerId id, EventId const& eventId) const {
+    if (id == 0) { return false; }
     std::lock_guard lock(impl->mutex);
     if (!impl->listeners.contains(id)) { return false; }
     if (eventId == EmptyEventId) {
@@ -95,12 +122,4 @@ bool EventBus::hasListener(uint id, EventId const& eventId) const {
         return impl->listeners[id].watches.contains(eventId);
     }
 }
-bool EventBus::removeListener(uint id, EventId const& eventId) {
-    auto listener = impl->listeners[id].listener.lock();
-    return removeListener(listener, eventId);
-}
-bool EventBus::hasListener(std::shared_ptr<ListenerBase> const& listener, EventId const& eventId) const {
-    return hasListener(listener->getId(), eventId);
-}
-
 } // namespace ll::event

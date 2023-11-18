@@ -34,7 +34,7 @@ public:
     }
 };
 
-template <typename T>
+template <class T>
 concept Testable = std::is_base_of<ll::test::Test, T>::value;
 
 template <Testable T>

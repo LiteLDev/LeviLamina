@@ -21,7 +21,7 @@ class NetworkSystem;
 
 namespace ll {
 
-template <typename T>
+template <class T>
 concept IsGlobalService = concepts::IsOneOf<
     T,
     AllowListFile,
@@ -47,7 +47,7 @@ public:
     constexpr T* operator->() { return value; }
     constexpr T& operator*() { return *value; }
     constexpr    operator T*() { return value; } // NOLINT(google-explicit-constructor)
-    template <typename U>
+    template <class U>
     constexpr explicit operator U*() {
         return static_cast<U*>(value);
     }

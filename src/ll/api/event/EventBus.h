@@ -2,6 +2,7 @@
 
 #include <concepts>
 #include <memory>
+#include <unordered_set>
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/event/Event.h"
@@ -11,18 +12,33 @@
 namespace ll::event {
 
 class EventBus {
+private:
     class EventBusImpl;
     std::unique_ptr<EventBusImpl> impl;
     EventBus();
 
-    LLAPI void publish(Event& event, EventId const& eventId);
-    LLAPI bool addListener(std::shared_ptr<ListenerBase> const& listener, EventId const& eventId);
+    class Canneller {
+        friend EventBus;
+        std::unordered_set<ListenerId> listeners;
+        Canneller() = default;
+        ~Canneller() {
+            for (auto id : listeners) { EventBus::getInstance().removeListener(id); }
+        }
 
-    LLAPI bool removeListener(std::shared_ptr<ListenerBase> const& listener, EventId const& eventId);
-    LLAPI bool removeListener(uint id, EventId const& eventId);
+    public:
+        static Canneller& getInstance() {
+            static Canneller ins{};
+            return ins;
+        }
+    };
 
-    LLNDAPI bool hasListener(std::shared_ptr<ListenerBase> const& listener, EventId const& eventId) const;
-    LLNDAPI bool hasListener(uint id, EventId const& eventId) const;
+    LLAPI void publish(Event&, EventId const&);
+
+    LLAPI bool addListener(ListenerPtr const&, EventId const&, Canneller& = Canneller::getInstance());
+
+    LLAPI bool removeListener(ListenerPtr const&, EventId const&, Canneller& = Canneller::getInstance());
+
+    LLNDAPI bool hasListener(ListenerId, EventId const&) const;
 
 public:
     LLNDAPI static EventBus& getInstance();
@@ -55,32 +71,35 @@ public:
         if (addListener(res, getEventId<T>)) { T::tryRegisterHook(); }
         return res;
     }
-
-    bool removeListener(std::shared_ptr<ListenerBase> const& listener) {
-        return removeListener(listener, EmptyEventId);
-    }
-    bool removeListener(uint id) { return removeListener(id, EmptyEventId); }
-
+    bool removeListener(ListenerPtr const& listener) { return removeListener(listener, EmptyEventId); }
     template <std::derived_from<Event> T>
-    bool removeListener(std::shared_ptr<ListenerBase> const& listener) {
+    bool removeListener(ListenerPtr const& listener) {
         return removeListener(listener, getEventId<T>);
     }
+
+    [[nodiscard]] bool hasListener(ListenerPtr const& listener) const {
+        return hasListener(listener->getId(), EmptyEventId);
+    }
     template <std::derived_from<Event> T>
-    bool removeListener(uint id) {
-        return removeListener(id, getEventId<T>);
+    [[nodiscard]] bool hasListener(ListenerPtr const& listener) const {
+        return hasListener(listener->getId(), getEventId<T>);
     }
 
-    [[nodiscard]] bool hasListener(std::shared_ptr<ListenerBase> const& listener) const {
-        return hasListener(listener, EmptyEventId);
+    LLNDAPI ListenerPtr getListener(ListenerId id) const;
+
+    bool removeListener(ListenerId id) {
+        if (auto listener = getListener(id); listener) { return removeListener(listener, EmptyEventId); }
+        return false;
     }
-    [[nodiscard]] bool hasListener(uint id) const { return hasListener(id, EmptyEventId); }
+    template <std::derived_from<Event> T>
+    bool removeListener(ListenerId id) {
+        if (auto listener = getListener(id); listener) { return removeListener(listener, getEventId<T>); }
+        return false;
+    }
+    [[nodiscard]] bool hasListener(ListenerId id) const { return hasListener(id, EmptyEventId); }
 
     template <std::derived_from<Event> T>
-    [[nodiscard]] bool hasListener(std::shared_ptr<ListenerBase> const& listener) const {
-        return hasListener(listener, getEventId<T>);
-    }
-    template <std::derived_from<Event> T>
-    [[nodiscard]] bool hasListener(uint id) const {
+    [[nodiscard]] bool hasListener(ListenerId id) const {
         return hasListener(id, getEventId<T>);
     }
 };

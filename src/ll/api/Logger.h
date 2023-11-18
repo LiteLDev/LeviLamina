@@ -65,7 +65,7 @@ public:
             std::array<std::string, 5> const&     fileFormat    = {"[{0} {1}][{2}] {3}", "{:%F %T}", "{}", "{}", "{}"}
         );
 
-        template <ll::concepts::IsString S, typename... Args>
+        template <ll::concepts::IsString S, class... Args>
         void operator()(S const& fmt, Args const&... args) const noexcept(sizeof...(args) == 0) {
             if constexpr (sizeof...(args) == 0) {
                 print(fmt);

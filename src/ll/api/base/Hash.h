@@ -6,9 +6,9 @@
 
 namespace ll::hash {
 
-template <typename T>
+template <class T>
 constexpr void hashCombine(T const& v, size_t& seed) {
-    seed ^= v + 2654435769LL + (seed << 6LL) + (seed >> 2LL);
+    seed ^= v + 2654435769ui64 + (seed << 6ui64) + (seed >> 2ui64);
 }
 
 constexpr uint64 do_hash(std::string_view x) {

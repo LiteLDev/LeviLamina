@@ -23,4 +23,6 @@
 #define LLETAPI LLAPI extern
 #endif
 
+#ifndef LL_EBO
 #define LL_EBO __declspec(empty_bases)
+#endif

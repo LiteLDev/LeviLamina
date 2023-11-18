@@ -14,17 +14,19 @@ enum class EventPriority {
     Lowest  = 400,
 };
 
+using ListenerId = uint64;
+
 class ListenerBase {
     friend EventBus;
+    ListenerId    id{};
     EventPriority priority;
-    uint          id{};
-    void          setId(uint i) { id = i; }
+    void          setId(ListenerId i) { id = i; }
 
 protected:
     constexpr explicit ListenerBase(EventPriority priority) : priority(priority) {}
 
 public:
-    [[nodiscard]] constexpr uint          getId() const { return id; }
+    [[nodiscard]] constexpr ListenerId    getId() const { return id; }
     [[nodiscard]] constexpr EventPriority getPriority() const { return priority; }
 
     [[nodiscard]] constexpr bool operator==(ListenerBase const& other) const noexcept { return id == other.id; }
@@ -39,4 +41,6 @@ public:
 
     virtual void call(Event& event) = 0;
 };
+
+using ListenerPtr = std::shared_ptr<ListenerBase>;
 } // namespace ll::event

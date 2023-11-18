@@ -37,29 +37,29 @@
 
 namespace ll::memory {
 
-template <typename T>
+template <class T>
 struct IsConstMemberFun : std::false_type {};
 
-template <typename T, typename Ret, typename... Args>
+template <class T, class Ret, class... Args>
 struct IsConstMemberFun<Ret (T::*)(Args...) const> : std::true_type {};
 
-template <typename T>
+template <class T>
 inline constexpr bool IsConstMemberFunV = IsConstMemberFun<T>::value;
 
-template <typename T>
+template <class T>
 struct AddConstAtMemberFun {
     using type = T;
 };
 
-template <typename T, typename Ret, typename... Args>
+template <class T, class Ret, class... Args>
 struct AddConstAtMemberFun<Ret (T::*)(Args...)> {
     using type = Ret (T::*)(Args...) const;
 };
 
-template <typename T>
+template <class T>
 using AddConstAtMemberFunT = typename AddConstAtMemberFun<T>::type;
 
-template <typename T, typename U>
+template <class T, class U>
 using AddConstAtMemberFunIfOriginIs = std::conditional_t<IsConstMemberFunV<U>, AddConstAtMemberFunT<T>, T>;
 
 /**
@@ -86,28 +86,28 @@ LLAPI bool unhook(FuncPtr target, FuncPtr detour);
  */
 LLNDAPI FuncPtr resolveIdentifier(char const* identifier);
 
-template <typename T>
+template <class T>
 concept FuncPtrType = std::is_function_v<std::remove_pointer_t<T>> || std::is_member_function_pointer_v<T>;
 
-template <typename T>
+template <class T>
     requires(FuncPtrType<T> || std::is_same_v<T, uintptr_t>)
 constexpr FuncPtr resolveIdentifier(T identifier) {
     return toFuncPtr(identifier);
 }
 
 // redirect to resolveIdentifier(char const*)
-template <typename T>
+template <class T>
 constexpr FuncPtr resolveIdentifier(char const* identifier) {
     return resolveIdentifier(identifier);
 }
 
 // redirect to resolveIdentifier(uintptr_t)
-template <typename T>
+template <class T>
 constexpr FuncPtr resolveIdentifier(uintptr_t address) {
     return resolveIdentifier(address);
 }
 
-template <typename T>
+template <class T>
 struct HookAutoRegister {
     HookAutoRegister() { T::hook(); }
     ~HookAutoRegister() { T::unhook(); }
@@ -129,7 +129,7 @@ struct HookAutoRegister {
                                                                                                                        \
         LL_HOOK_DEBUG_OUTPUT(IDENTIFIER);                                                                              \
                                                                                                                        \
-        template <typename... Args>                                                                                    \
+        template <class... Args>                                                                                       \
         STATIC RET_TYPE origin(Args&&... params) {                                                                     \
             return CALL(std::forward<Args>(params)...);                                                                \
         }                                                                                                              \

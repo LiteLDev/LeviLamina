@@ -9,11 +9,11 @@ namespace ll::config {
 
 constexpr std::string_view metaDataName = ".meta";
 
-template <typename T>
+template <class T>
 concept IsConfig =
     ll::reflection::Reflectable<T> && std::integral<std::remove_cvref_t<decltype(std::declval<T>().version)>>;
 
-template <IsConfig T, typename J = nlohmann::ordered_json>
+template <IsConfig T, class J = nlohmann::ordered_json>
 inline bool saveConfig(T const& config, std::string_view path) noexcept {
     using namespace ll::utils;
     try {
@@ -29,7 +29,7 @@ inline bool saveConfig(T const& config, std::string_view path) noexcept {
     return false;
 }
 
-template <IsConfig T, typename J = nlohmann::ordered_json>
+template <IsConfig T, class J = nlohmann::ordered_json>
 inline bool loadConfig(T& config, std::string_view path, bool overwriteAfterFail = true) noexcept {
     using namespace ll::utils;
     bool res = true;
