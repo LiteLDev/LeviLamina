@@ -16,14 +16,14 @@
 #include "boost/pfr.hpp"
 
 namespace ll::reflection {
-template <typename T>
+template <class T>
 inline constexpr bool is_reflectable_v =
     std::is_aggregate_v<std::remove_cvref_t<T>> && !requires { typename T::size_type; };
 
-template <typename T>
+template <class T>
 concept Reflectable = is_reflectable_v<T>;
 
-template <Reflectable T, typename F>
+template <Reflectable T, class F>
 constexpr void forEachMember(T&& value, F&& func) {
     using Type                            = std::remove_cvref_t<T>;
     static constexpr auto const namearray = boost::pfr::names_as_array<Type>();
@@ -48,7 +48,7 @@ consteval std::string_view valueRawName() noexcept {
     return n.substr(p, n.size() - p - s);
 }
 
-template <typename f>
+template <class f>
 consteval std::string_view typeRawName() noexcept {
     constexpr std::string_view n{__FUNCSIG__};
 #if defined(__clang__)
@@ -78,22 +78,31 @@ constexpr std::string_view removeTypeSuffix(std::string_view s) noexcept {
     return s;
 }
 
-template <typename T>
+constexpr std::string_view removeTypeNamespace(std::string_view s) noexcept {
+    auto k = s.rfind("::", s.find('<'));
+    if (k != std::string_view::npos) { return s.substr(k + 2); }
+    return s;
+}
+
+template <class T>
 inline constexpr std::string_view type_raw_name_v = typeRawName<T>();
 
-template <typename T>
+template <class T>
 inline constexpr std::string_view type_unprefix_name_v = removeTypePrefix(type_raw_name_v<T>);
 
-template <typename T>
+template <class T>
 inline constexpr std::string_view type_name_v = removeTypeSuffix(type_unprefix_name_v<T>);
 
-template <typename T>
+template <class T>
+inline constexpr std::string_view type_stem_name_v = removeTypeNamespace(type_name_v<T>);
+
+template <class T>
 inline constexpr bool is_template_v = type_raw_name_v<T>.find("<") != std::string_view::npos;
 
-template <typename T>
+template <class T>
 inline constexpr bool is_class_v = std::is_class_v<T> && type_raw_name_v<T>.starts_with("class ");
 
-template <typename T>
+template <class T>
 inline constexpr bool is_struct_v = std::is_class_v<T> && type_raw_name_v<T>.starts_with("struct ");
 
 } // namespace ll::reflection

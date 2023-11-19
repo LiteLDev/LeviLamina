@@ -74,24 +74,24 @@ public:
 
     bool hasSharedData(std::string_view key) const { return getSharedData().contains(key); }
 
-    template <typename T>
+    template <class T>
     bool hasSharedData(std::string_view key) const {
         return getSharedData().contains(key);
     }
 
-    template <typename T>
+    template <class T>
     optional_ref<std::add_const_t<T>> getSharedData(std::string_view key) const {
         if (getSharedData().contains(key)) { return std::any_cast<T>(&getSharedData().find(key)->second); }
         return std::nullopt;
     }
 
-    template <typename T>
+    template <class T>
     optional_ref<T> getSharedData(std::string_view key) {
         if (getSharedData().contains(key)) { return std::any_cast<T>(&getSharedData().find(key)->second); }
         return std::nullopt;
     }
 
-    template <typename T, typename... Args>
+    template <class T, class... Args>
         requires(std::is_constructible_v<std::any, std::in_place_type_t<T>, Args...>)
     [[maybe_unused]] void setSharedData(std::string const& key, Args&&... args) {
         getSharedData().insert_or_assign(key, std::make_any<T>(std::forward<Args>(args)...));

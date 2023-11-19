@@ -13,17 +13,17 @@ inline J serialize(T const&, F&&)
 template <class J, Reflectable T>
 inline void deserialize(T&, J const&);
 
-template <class J, typename T>
+template <class J, class T>
 inline J serialize(T const&)
     requires(std::is_enum_v<T>);
-template <class J, typename T>
+template <class J, class T>
 inline void deserialize(T&, J const&)
     requires(std::is_enum_v<T>);
 
 template <class J, std::convertible_to<J> T>
 inline J serialize(T const&)
     requires(!std::is_enum_v<T>);
-template <class J, typename T>
+template <class J, class T>
 inline void deserialize(T&, J const&)
     requires(
         !std::is_enum_v<T>
@@ -103,13 +103,13 @@ inline void deserialize(T& obj, J const& j) {
     });
 }
 
-template <class J, typename T>
+template <class J, class T>
 inline J serialize(T const& e)
     requires(std::is_enum_v<T>)
 {
     return magic_enum::enum_name(e);
 }
-template <class J, typename T>
+template <class J, class T>
 inline void deserialize(T& e, J const& j)
     requires(std::is_enum_v<T>)
 {
@@ -127,7 +127,7 @@ inline J serialize(T const& obj)
 {
     return obj;
 }
-template <class J, typename T>
+template <class J, class T>
 inline void deserialize(T& obj, J const& j) // TODO: improve this
     requires(
         !std::is_enum_v<T>

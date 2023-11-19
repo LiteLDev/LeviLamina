@@ -75,7 +75,7 @@ public:
     [[nodiscard]] constexpr T& operator*() const { return get(); }
 
     template <class T2>
-    [[nodiscard]] constexpr T& value_or(T2&& right) const& {
+    [[nodiscard]] constexpr T& value_or(T2&& right) const {
         if (has_value()) { return *mPtr; }
         return std::forward<T2>(right);
     }

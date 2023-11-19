@@ -110,7 +110,7 @@ class DynamicCommandInstance;
  *
  */
 class DynamicCommand : public Command {
-    template <typename T>
+    template <class T>
     static constexpr bool valid_type_v = ll::concepts::is_one_of_v<
         T,
         bool,
@@ -131,7 +131,7 @@ class DynamicCommand : public Command {
         std::unique_ptr<Command>,
         std::vector<class BlockStateCommandParam>>;
 
-    template <typename T>
+    template <class T>
     struct valid_type : std::bool_constant<valid_type_v<T>> {};
 
 public:
@@ -287,7 +287,7 @@ public:
          * @tparam T Get with this type
          * @return The value with type `T`
          */
-        template <typename T>
+        template <class T>
         std::conditional_t<
             std::is_lvalue_reference_v<T>,
             std::add_lvalue_reference_t<std::add_const_t<std::remove_reference_t<T>>>,
@@ -401,7 +401,7 @@ public:
             //     return CommandParameterDataType::POSIFIX;
             else return CommandParameterDataType::Basic;
         }
-        template <ParameterType type, typename T>
+        template <ParameterType type, class T>
         CommandParameterData makeParameterData() const {
             CommandParameterData param{
                 type == ParameterType::Enum ? Bedrock::typeid_t<CommandRegistry>::_getCounter().fetch_add(1)
@@ -443,7 +443,6 @@ public:
         CommandOutput&                           output,
         std::unordered_map<std::string, Result>& results
     )>;
-    using BuilderFn  = std::unique_ptr<Command> (*)();
 
 private:
     template <class T>
@@ -594,9 +593,8 @@ private:
     CommandPermissionLevel       permission_;
     CommandFlag                  flag_;
 
-    std::unique_ptr<ll::memory::NativeClosure<std::unique_ptr<Command>>> builder;
-
 public:
+    std::unique_ptr<ll::memory::NativeClosure<std::unique_ptr<Command>>> builder;
     // Parameter Pointers to DynamicCommand Extra Part
     size_t                                                        commandSize   = sizeof(DynamicCommand);
     std::unordered_map<std::string, DynamicCommand::ParameterPtr> parameterPtrs = {};
@@ -625,8 +623,6 @@ private:
         CommandPermissionLevel permission = CommandPermissionLevel::GameDirectors,
         CommandFlag            flag       = CommandFlagValue::NotCheat
     );
-
-    LLAPI DynamicCommand::BuilderFn initCommandBuilder();
     LLAPI std::vector<CommandParameterData> buildOverload(std::vector<ParameterIndex> const& overload);
 
 public:
@@ -709,12 +705,12 @@ public:
     ParameterIndex toIndex(DynamicCommand::ParameterData const& arg) {
         return newParameter(DynamicCommand::ParameterData(arg));
     }
-    template <typename... Args>
+    template <class... Args>
     bool addOverload(Args const&... args) {
         return addOverload(std::vector<ParameterIndex>{toIndex(args)...});
     }
 
-    template <typename T>
+    template <class T>
     bool addOverload(std::initializer_list<T>&& params) {
         return addOverload((std::vector<T>)params);
     }

@@ -29,7 +29,7 @@ std::chrono::system_clock::time_point parseTime(std::string const& expression) {
 
 namespace detail {
 void printScheduleError() noexcept {
-    static Logger logger("scheduler");
+    static Logger logger("Scheduler");
 
     std::lock_guard lock(Logger::loggerMutex);
     try {

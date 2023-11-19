@@ -6,7 +6,7 @@
 namespace ll {
 
 namespace detail {
-template <typename... Bases>
+template <class... Bases>
 struct overload : Bases... {
     using is_transparent = void;
     using Bases::operator()...;
@@ -19,7 +19,7 @@ struct char_pointer_hash {
 using transparent_string_hash = overload<std::hash<std::string>, std::hash<std::string_view>, char_pointer_hash>;
 } // namespace detail
 
-template <typename T>
+template <class T>
 using UnorderedStringMap = std::unordered_map<std::string, T, detail::transparent_string_hash, std::equal_to<>>;
 
 } // namespace ll

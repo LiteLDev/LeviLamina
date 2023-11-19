@@ -16,7 +16,7 @@ using Handle  = void*;
 
 extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
 
-template <typename T>
+template <class T>
     requires(sizeof(T) == sizeof(FuncPtr))
 constexpr FuncPtr toFuncPtr(T t) {
     union {
@@ -27,7 +27,7 @@ constexpr FuncPtr toFuncPtr(T t) {
     return u.fp;
 }
 
-template <typename T>
+template <class T>
     requires(std::is_member_function_pointer_v<T> && sizeof(T) == sizeof(FuncPtr) + sizeof(ptrdiff_t))
 constexpr FuncPtr toFuncPtr(T t) {
     union {
@@ -41,12 +41,12 @@ constexpr FuncPtr toFuncPtr(T t) {
     return u.fp;
 }
 
-template <typename T>
+template <class T>
 inline void memcpy_t(void* dst, void const* src, size_t count) {
     memcpy(dst, src, count * sizeof(T));
 }
 
-template <typename T>
+template <class T>
 inline void memcpy_t(void* dst, void const* src) {
     memcpy(dst, src, sizeof(T));
 }
@@ -90,27 +90,27 @@ inline void modify(T& ref, std::function<void(std::remove_cvref_t<T>&)> const& f
     modify((void*)std::addressof(ref), sizeof(T), [&] { f((std::remove_cvref_t<T>&)(ref)); });
 }
 
-template <typename RTN = void, typename... Args>
+template <class RTN = void, class... Args>
 constexpr auto virtualCall(void const* self, uintptr_t off, Args&&... args) -> RTN {
     return (*(RTN(**)(void const*, Args&&...))(*(uintptr_t*)self + off))(self, std::forward<Args>(args)...);
 }
 
-template <typename T>
+template <class T>
 [[nodiscard]] constexpr T& dAccess(void* ptr, ptrdiff_t off) {
     return *(T*)((uintptr_t)((uintptr_t)ptr + off));
 }
 
-template <typename T>
+template <class T>
 [[nodiscard]] constexpr T const& dAccess(void const* ptr, ptrdiff_t off) {
     return *(T*)((uintptr_t)((uintptr_t)ptr + off));
 }
 
-template <typename T>
+template <class T>
 constexpr void destruct(void* ptr, ptrdiff_t off) noexcept {
     std::destroy_at(std::launder(reinterpret_cast<T*>((uintptr_t)((uintptr_t)ptr + off))));
 }
 
-template <typename T, class... Types>
+template <class T, class... Types>
 constexpr auto construct(void* ptr, ptrdiff_t off, Types&&... args) {
     return std::construct_at(
         std::launder(reinterpret_cast<T*>((uintptr_t)((uintptr_t)ptr + off))),
@@ -123,13 +123,13 @@ constexpr auto construct(void* ptr, ptrdiff_t off, Types&&... args) {
     return _msize(ptr);
 }
 
-template <typename T, typename D>
+template <class T, class D>
 [[nodiscard]] inline size_t getMemSizeFromPtr(std::unique_ptr<T, D>& ptr) {
     if (!ptr) { return 0; }
     return _msize(ptr.get());
 }
 
-template <template <typename> typename P, typename T>
+template <template <class> class P, class T>
 [[nodiscard]] inline size_t getMemSizeFromPtr(P<T>& ptr)
     requires(std::derived_from<P<T>, std::_Ptr_base<T>>)
 {

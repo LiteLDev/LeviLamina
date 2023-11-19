@@ -150,7 +150,7 @@ inline void load(std::string const& path) {
  * tr(std::string("There are {0} days before {1} to come back"), 3, "alex");
  * @endcode
  */
-template <ll::concepts::IsString S, typename... Args>
+template <ll::concepts::IsString S, class... Args>
 inline std::string tr(S const& formatStr, Args&&... args) {
     auto res = getInstance()->get(formatStr);
     if constexpr (sizeof...(args) != 0) { return fmt::format(fmt::runtime(res), args...); }
@@ -173,7 +173,7 @@ inline std::string tr(S const& formatStr, Args&&... args) {
  * trl("zh_CN", "There are {0} days before {1} to come back", 3, "alex");
  * @endcode
  */
-template <ll::concepts::IsString S, typename... Args>
+template <ll::concepts::IsString S, class... Args>
 [[nodiscard]] inline std::string trl(std::string const& localeName, S const& formatStr, Args&&... args) {
     auto res = getInstance()->get(formatStr, localeName);
     if constexpr (sizeof...(args) != 0) { return fmt::format(fmt::runtime(res), args...); }
