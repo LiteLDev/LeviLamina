@@ -15,13 +15,10 @@ class CallbackStream {
     std::set<ListenerPtr, ListenerComparator> listeners;
 
 public:
-    // std::function<void()> tryHook;
-
     void publish(Event& event) {
         for (auto& l : listeners) { l->call(event); }
     }
     bool addListener(ListenerPtr const& listener) {
-        // if (tryHook) { tryHook(); }
         return listeners.insert(listener).second;
     }
 
@@ -66,10 +63,6 @@ void EventBus::publish(Event& event, EventId const& eventId) {
     std::lock_guard lock(impl->mutex);
     impl->streams[eventId].publish(event);
 }
-// void EventBus::registerDelayHook(std::function<void()> const& fn, EventId const& eventId) {
-//     std::lock_guard lock(impl->mutex);
-//     impl->streams[eventId].tryHook = fn;
-// }
 bool EventBus::addListener(ListenerPtr const& listener, EventId const& eventId, Canneller& canneller) {
     if (!listener) { return false; }
     std::lock_guard lock(impl->mutex);

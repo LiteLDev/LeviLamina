@@ -1,7 +1,5 @@
 #pragma once
 
-#include <concepts>
-
 #include "ll/api/event/EventId.h"
 
 namespace ll::event {
