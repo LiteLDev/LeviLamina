@@ -1,14 +1,15 @@
 #pragma once
 
 #include "ll/api/base/Macro.h"
+#include "ll/api/event/Event.h"
 
 namespace ll::event {
-template <class T>
+template <std::derived_from<Event> T>
 class Cancellable : public T {
 public:
-    [[nodiscard]] constexpr bool isCancelled() { return *(bool*)((char*)this + 8); }
+    [[nodiscard]] constexpr bool isCancelled() { return Event::mCancelled; }
 
-    constexpr void setCancelled(bool cancelled) { *(bool*)((char*)this + 8) = cancelled; }
+    constexpr void setCancelled(bool cancelled) { Event::mCancelled = cancelled; }
 
     constexpr void cancel() { setCancelled(true); }
 };
