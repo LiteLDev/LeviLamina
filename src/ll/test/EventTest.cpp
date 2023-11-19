@@ -27,7 +27,7 @@ public:
         }();
     }
 };
-class TestEvent2 : public TestEventB, public ll::event::Cancellable {
+class TestEvent2 : public ll::event::Cancellable<TestEventB> {
 public:
     TestEvent2() { some = "TestEvent2 haha"; }
     explicit TestEvent2(std::string_view v) { some.assign(v); }
@@ -69,30 +69,11 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         [](TestEvent2& ev) {
             ll::logger.debug("I'm 2, receive: {}, str: {}, {}", typeid(ev).name(), ev.some, times++);
 
-#if !_HAS_CXX23
-            using namespace ll::event;
-
-
-            ll::logger.debug("I'm 2, this can cancel, now isCancelled: {}", isCancelled(ev));
-
-            ll::logger.debug("try cancel");
-
-            cancel(ev);
-
-            ll::logger.debug("I'm 2, this can cancel, now isCancelled: {}", isCancelled(ev));
-
-#else
-
             ll::logger.debug("I'm 2, this can cancel, now isCancelled: {}", ev.isCancelled());
-
             ll::logger.debug("try cancel");
-
             ev.cancel();
-
             ll::logger.debug("I'm 2, this can cancel, now isCancelled: {}", ev.isCancelled());
 
-
-#endif
             if (times.load() == 5) { throw std::runtime_error("hello"); }
         },
         ll::event::EventPriority::High
