@@ -1,8 +1,10 @@
 #pragma once
 
 #include <concepts>
+#include <memory>
 
 #include "ll/api/event/EventId.h"
+#include "ll/api/event/ListenerBase.h"
 
 namespace ll::event {
 class Event;

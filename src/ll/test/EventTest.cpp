@@ -1,7 +1,9 @@
 #include "ll/api/base/ErrorInfo.h"
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/EventBus.h"
+#include "ll/api/event/filesystem/FileActionEvent.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/api/schedule/Scheduler.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
@@ -43,6 +45,13 @@ class TestEvent3 : public ll::event::Event {
 public:
 };
 
+
+using namespace ll::schedule;
+
+using namespace ll::chrono_literals;
+
+SystemTimeScheduler remover;
+
 LL_AUTO_TYPED_INSTANCE_HOOK(
     EventTestH,
     ll::memory::HookPriority::Normal,
@@ -59,13 +68,13 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     static std::atomic_uint times{};
 
-    auto listener = std::make_shared<ll::event::Listener<TestEventB>>([](TestEventB& ev) {
+    auto listener = ll::event::Listener<TestEventB>::create([](TestEventB& ev) {
         ll::logger.debug("I'm 1, receive: {}, str: {}, {}", typeid(ev).name(), ev.some, times++);
     });
     bus.addListener<TestEvent1>(listener);
     bus.addListener<TestEvent2>(listener);
 
-    auto listener2 = bus.emplaceListener<TestEvent2>(
+    auto listener2 = ll::event::Listener<TestEvent2>::create(
         [](TestEvent2& ev) {
             ll::logger.debug("I'm 2, receive: {}, str: {}, {}", typeid(ev).name(), ev.some, times++);
 
@@ -98,4 +107,22 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     bus.publish(TestEvent1{});
     bus.publish(TestEvent2{});
     bus.publish(e2);
+
+    using namespace ll::event;
+    auto listener3 = Listener<FileActionEvent<"./">>::create([](DynamicFileActionEvent& ev) {
+        ll::logger.debug(
+            "cst receive: {}, {} {}",
+            typeid(ev).name(),
+            std::filesystem::canonical(ev.path),
+            magic_enum::enum_name(ev.type)
+        );
+    });
+    bus.addListener(listener3);
+    auto listener4 = Listener<DynamicFileActionEvent>::create("./", [](auto& ev) {
+        ll::logger.debug("dyn receive: {}, {} {}", typeid(ev).name(), ev.path, magic_enum::enum_name(ev.type));
+    });
+    bus.addListener(listener4);
+
+    remover.add<DelayTask>(1.5min, [=, &bus] { bus.removeListener(listener3); });
+    remover.add<DelayTask>(2min, [=, &bus] { bus.removeListener(listener4); });
 }

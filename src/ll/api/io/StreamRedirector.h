@@ -4,7 +4,7 @@
 #include <iostream>
 #include <utility>
 
-namespace ll {
+namespace ll::io {
 
 template <class Char = char, class Traits = std::char_traits<Char>>
 struct StreamRedirector {
@@ -23,4 +23,4 @@ private:
     std::basic_ostream<Char, Traits>&   stream;
     std::basic_streambuf<Char, Traits>* rdbuf_old;
 };
-} // namespace ll
+} // namespace ll::io

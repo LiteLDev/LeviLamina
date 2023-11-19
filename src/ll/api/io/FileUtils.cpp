@@ -39,7 +39,7 @@ bool writeFile(const fs::path& filePath, std::string_view content, bool isBinary
     return true;
 }
 
-static bool GetFileVersion(
+static bool getFileVersion(
     const wchar_t*  filePath,
     unsigned short* ver1,
     unsigned short* ver2,
@@ -80,7 +80,7 @@ Version getVersion(std::filesystem::path const& filePath) {
     auto           ModuleName = filePath.c_str();
     unsigned short build_ver{};
     unsigned int   flag{};
-    if (!GetFileVersion(ModuleName, &version.major, &version.minor, &version.patch, &build_ver, &flag)) {
+    if (!getFileVersion(ModuleName, &version.major, &version.minor, &version.patch, &build_ver, &flag)) {
         version = Version{};
     } else {
         version.preRelease = PreRelease{};

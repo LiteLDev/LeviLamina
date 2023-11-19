@@ -1,10 +1,10 @@
 #pragma once
 
 #include "ll/api/base/StdInt.h"
-#include "ll/api/event/Event.h"
 
 namespace ll::event {
 class EventBus;
+class Event;
 
 enum class EventPriority {
     Highest = 0,
@@ -26,6 +26,11 @@ protected:
     constexpr explicit ListenerBase(EventPriority priority) : priority(priority) {}
 
 public:
+    ListenerBase(ListenerBase&&)                 = delete;
+    ListenerBase(ListenerBase const&)            = delete;
+    ListenerBase& operator=(ListenerBase&&)      = delete;
+    ListenerBase& operator=(ListenerBase const&) = delete;
+
     [[nodiscard]] constexpr ListenerId    getId() const { return id; }
     [[nodiscard]] constexpr EventPriority getPriority() const { return priority; }
 

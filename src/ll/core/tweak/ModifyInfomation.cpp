@@ -71,7 +71,7 @@ void tryModifyServerStartInfo(std::string& s) {
     );
 }
 
-MCAPI void BedrockLogOut(uint priority, char const* pszFormat, ...);
+MCAPI void BedrockLogOut(uint priority, char const* pszFormat, ...); // NOLINT
 
 LL_AUTO_STATIC_HOOK(
     BedrockLogOutHook,
@@ -139,29 +139,29 @@ LL_AUTO_STATIC_HOOK(CppOutputRedirectHook, HookPriority::Highest, "main", int, i
 
     std::ios::sync_with_stdio(false);
 
-    ll::Logger           coutlogger("std::cout");
-    ll::io::ofuncstream  coutfs{[&](std::string_view s) {
+    ll::Logger               coutlogger("std::cout");
+    ll::io::ofuncstream      coutfs{[&](std::string_view s) {
         if (s.ends_with('\n')) { s.remove_suffix(1); }
         if (s.empty()) { return; }
         coutlogger.warn(s);
     }};
-    ll::StreamRedirector coutsr(std::cout, coutfs.rdbuf());
+    ll::io::StreamRedirector coutsr(std::cout, coutfs.rdbuf());
 
-    ll::Logger           cloglogger("std::clog");
-    ll::io::ofuncstream  clogfs{[&](std::string_view s) {
+    ll::Logger               cloglogger("std::clog");
+    ll::io::ofuncstream      clogfs{[&](std::string_view s) {
         if (s.ends_with('\n')) { s.remove_suffix(1); }
         if (s.empty()) { return; }
         cloglogger.error(s);
     }};
-    ll::StreamRedirector clogsr(std::clog, clogfs.rdbuf());
+    ll::io::StreamRedirector clogsr(std::clog, clogfs.rdbuf());
 
-    ll::Logger           cerrlogger("std::cerr");
-    ll::io::ofuncstream  cerrfs{[&](std::string_view s) {
+    ll::Logger               cerrlogger("std::cerr");
+    ll::io::ofuncstream      cerrfs{[&](std::string_view s) {
         if (s.ends_with('\n')) { s.remove_suffix(1); }
         if (s.empty()) { return; }
         cerrlogger.fatal(s);
     }};
-    ll::StreamRedirector cerrsr(std::cerr, cerrfs.rdbuf());
+    ll::io::StreamRedirector cerrsr(std::cerr, cerrfs.rdbuf());
 
     return origin(argc, argv);
 }

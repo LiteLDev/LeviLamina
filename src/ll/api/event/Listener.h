@@ -5,30 +5,22 @@
 #include "ll/api/reflection/Reflection.h"
 
 namespace ll::event {
-namespace detail {
-LLAPI void printListenerError(std::string_view) noexcept;
-}
-template <class T>
-    requires(std::derived_from<T, Event>)
+template <std::derived_from<Event> T>
 class Listener : public ListenerBase {
 public:
     using EventType = T;
     using Callback  = std::function<void(EventType&)>;
 
-    ~Listener() override = default;
-
     constexpr explicit Listener(Callback const& fn, EventPriority priority = EventPriority::Normal)
     : ListenerBase(priority),
       callback(fn) {}
 
-    void call(Event& event) override {
-        try {
-            callback(static_cast<EventType&>(event));
-        } catch (...) { detail::printListenerError(reflection::type_stem_name_v<T>); }
-    }
+    ~Listener() override = default;
 
-    static std::shared_ptr<Listener<T>> create(Callback const& fn, EventPriority priority = EventPriority::Normal) {
-        return std::make_shared<Listener<T>>(fn, priority);
+    void call(Event& event) override { callback(static_cast<EventType&>(event)); }
+
+    static std::shared_ptr<Listener> create(Callback const& fn, EventPriority priority = EventPriority::Normal) {
+        return std::make_shared<Listener>(fn, priority);
     }
 
 private:

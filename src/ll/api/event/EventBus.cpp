@@ -5,7 +5,11 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "ll/api/Logger.h"
+#include "ll/api/base/ErrorInfo.h"
+
 namespace ll::event {
+static Logger eventBusLogger("EventBus");
 
 class CallbackStream {
     struct ListenerComparator {
@@ -16,11 +20,24 @@ class CallbackStream {
 
 public:
     void publish(Event& event) {
-        for (auto& l : listeners) { l->call(event); }
+        for (auto& l : listeners) {
+            try {
+                l->call(event);
+            } catch (...) {
+                std::lock_guard lock(Logger::loggerMutex);
+                try {
+                    std::string_view name = typeid(*l).name();
+                    name.remove_suffix(1);
+                    eventBusLogger.error(
+                        "Error in [{}::call]:",
+                        ll::reflection::typeNameStem(name.substr(name.find('<') + 1))
+                    );
+                } catch (...) {}
+                error_info::printCurrentException(eventBusLogger);
+            }
+        }
     }
-    bool addListener(ListenerPtr const& listener) {
-        return listeners.insert(listener).second;
-    }
+    bool addListener(ListenerPtr const& listener) { return listeners.insert(listener).second; }
 
     bool removeListener(ListenerPtr const& listener) { return listeners.erase(listener); }
 
@@ -45,9 +62,12 @@ public:
     ListenerId getNewListenerId() { return ++lid; }
 
     bool removeListener(ListenerPtr const& listener, EventId const& eventId) {
-        if (streams.contains(eventId) && streams.at(eventId).removeListener(listener)) {
-            if (streams.at(eventId).empty()) { streams.erase(eventId); }
-            return true;
+        if (auto i = streams.find(eventId); i != streams.end()) {
+            auto& stream = i->second;
+            if (stream.removeListener(listener)) {
+                if (stream.empty()) { streams.erase(i); }
+                return true;
+            }
         }
         return false;
     }
@@ -61,7 +81,8 @@ EventBus& EventBus::getInstance() {
 }
 void EventBus::publish(Event& event, EventId const& eventId) {
     std::lock_guard lock(impl->mutex);
-    impl->streams[eventId].publish(event);
+
+    if (auto i = impl->streams.find(eventId); i != impl->streams.end()) { i->second.publish(event); }
 }
 bool EventBus::addListener(ListenerPtr const& listener, EventId const& eventId, Canneller& canneller) {
     if (!listener) { return false; }

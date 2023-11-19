@@ -33,16 +33,14 @@ private:
         }
     };
 
-    LLAPI void publish(Event&, EventId const&);
-
-    LLAPI bool addListener(ListenerPtr const&, EventId const&, Canneller& = Canneller::getInstance());
-
-    LLAPI bool removeListener(ListenerPtr const&, EventId const&, Canneller& = Canneller::getInstance());
-
+    LLAPI bool   addListener(ListenerPtr const&, EventId const&, Canneller& = Canneller::getInstance());
+    LLAPI bool   removeListener(ListenerPtr const&, EventId const&, Canneller& = Canneller::getInstance());
     LLNDAPI bool hasListener(ListenerId, EventId const&) const;
 
 public:
     LLNDAPI static EventBus& getInstance();
+
+    LLAPI void publish(Event&, EventId const&);
 
     template <class T>
         requires(std::derived_from<std::remove_cvref_t<T>, Event>)
@@ -50,25 +48,29 @@ public:
         publish(event, getEventId<T>);
     }
 
-    template <class T, class LT>
-        requires(std::derived_from<T, LT>)
-    bool addListener(std::shared_ptr<Listener<LT>> const& listener) {
-        if (addListener(listener, getEventId<T>)) {
-            T::tryRegisterHook();
-            return true;
+    template <class T, template <class> class L, class LT>
+        requires(std::derived_from<T, LT> && std::derived_from<L<LT>, ListenerBase>)
+    bool addListener(std::shared_ptr<L<LT>> const& listener) {
+        bool res{};
+        if constexpr (requires(L<LT> a) {
+                          { a.getEventId() } -> std::same_as<EventId>;
+                      }) {
+            res = addListener(listener, listener->getEventId());
+        } else {
+            res = addListener(listener, getEventId<T>);
         }
-        return false;
+        if (res) { T::tryRegisterHook(); }
+        return res;
     }
-
-    template <class T = void, class LT>
-        requires(std::same_as<T, void>)
-    bool addListener(std::shared_ptr<Listener<LT>> const& listener) {
+    template <class T = void, template <class> class L, class LT>
+        requires(std::same_as<T, void> && std::derived_from<L<LT>, ListenerBase>)
+    bool addListener(std::shared_ptr<L<LT>> const& listener) {
         return addListener<LT>(listener);
     }
 
     template <std::derived_from<Event> T, std::derived_from<ListenerBase> L = Listener<T>, class... Args>
     inline auto emplaceListener(Args&&... args) {
-        auto res = std::make_shared<L>(std::forward<Args>(args)...);
+        auto res = L::create(std::forward<Args>(args)...);
         if (addListener(res, getEventId<T>)) { T::tryRegisterHook(); }
         return res;
     }

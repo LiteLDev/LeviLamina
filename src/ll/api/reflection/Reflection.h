@@ -84,6 +84,11 @@ constexpr std::string_view removeTypeNamespace(std::string_view s) noexcept {
     return s;
 }
 
+constexpr std::string_view typeNameStem(std::string_view s) noexcept {
+    return removeTypeNamespace(removeTypeSuffix(removeTypePrefix(s)));
+}
+
+
 template <class T>
 inline constexpr std::string_view type_raw_name_v = typeRawName<T>();
 
