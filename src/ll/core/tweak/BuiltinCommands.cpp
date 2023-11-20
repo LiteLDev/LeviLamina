@@ -155,10 +155,15 @@ void LLListPluginsCommand(CommandOutput& output) {
             if (name.empty()) continue;
             std::string pluginName = name;
             if (pluginName.find("§") == std::string::npos) pluginName.insert(0, "§b");
-            std::string desc = manifest.description;
+            std::string desc = manifest.description.value_or("");
             if (desc.find("§") == std::string::npos) desc.insert(0, "§7");
 
-            oss << fmt::format("- {} §a[v{}]\n  {}\n", pluginName, manifest.version.to_string(), desc);
+            oss << fmt::format(
+                "- {} §a[v{}]\n  {}\n",
+                pluginName,
+                manifest.version.value_or(Version{}).to_string(),
+                desc
+            );
         }
     }
     output.success(oss.str() + '\n');
@@ -174,10 +179,10 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
         output.success("ll.cmd.pluginInfo.title"_tr, pluginName);
 
         outs.emplace("Name", fmt::format("{}", plugin->getManifest().name));
-        outs.emplace("Description", plugin->getManifest().description);
-        outs.emplace("Version", "v" + plugin->getManifest().version.to_string());
-        auto& extraInfo = plugin->getManifest().extraInfo;
-        for (auto& [k, v] : extraInfo) { outs.emplace(k, v); }
+        outs.emplace("Description", plugin->getManifest().description.value_or(""));
+        outs.emplace("Version", "v" + plugin->getManifest().version.value_or(Version{}).to_string());
+        if (plugin->getManifest().extraInfo)
+            for (auto& [k, v] : *plugin->getManifest().extraInfo) { outs.emplace(k, v); }
         size_t width = 10;
         for (auto& [k, v] : outs) { width = std::max(width, k.length()); }
         for (auto& [k, v] : outs) { oss << "- §l" << std::setw((int64)width) << std::left << k << "§r: " << v << '\n'; }

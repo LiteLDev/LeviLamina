@@ -4,6 +4,11 @@
 
 namespace ll::reflection {
 
+class SerializationError : public std::runtime_error {
+public:
+    explicit SerializationError(std::string const& msg) : std::runtime_error(msg) {}
+};
+
 template <class J, Reflectable T>
 inline J serialize(T const&)
     requires(!std::convertible_to<T, J>);
@@ -75,12 +80,19 @@ inline J serialize(T const& obj)
 template <class J, Reflectable T>
 inline void deserialize(T& obj, J const& j) {
     forEachMember(obj, [&](std::string_view name, auto& member) {
-        if (auto sname = std::string{name}; j.contains(sname)) {
-            using MemberType = std::remove_cvref_t<decltype(member)>;
+        using MemberType = std::remove_cvref_t<decltype(member)>;
+        auto sname       = std::string{name};
+        if (j.contains(sname)) {
             if constexpr (requires(MemberType& o, J const& s) { deserialize<J>(o, s); }) {
                 deserialize<J>(member, j[sname]);
             } else {
                 static_assert(ll::concepts::always_false<MemberType>, "this type can't deserialize");
+            }
+        } else {
+            if constexpr (!ll::concepts::IsOptional<MemberType>) {
+                throw SerializationError("missing deserialization mandatory field: " + sname);
+            } else {
+                member = std::nullopt;
             }
         }
     });
@@ -117,7 +129,12 @@ inline void deserialize(T& obj, J const& j) // TODO: improve this
         && (std::is_convertible_v<T, std::string_view> || std::is_floating_point_v<T> || std::is_integral_v<T>)
     )
 {
-    if (!j.empty()) obj = j;
+    if constexpr (std::is_convertible_v<T, std::string_view>) {
+        if (!j.is_string()) throw SerializationError("field must be a string");
+    } else {
+        if (!j.is_number()) throw SerializationError("field must be a number");
+    }
+    obj = j;
 }
 
 template <class J, ll::concepts::Associative T>
@@ -132,7 +149,7 @@ template <class J, ll::concepts::Associative T>
 inline void deserialize(T& map, J const& j)
     requires(std::is_convertible_v<typename T::key_type, std::string_view>)
 {
-    if (!j.is_object()) return;
+    if (!j.is_object()) throw SerializationError("field must be an object");
     map.clear();
     for (auto& [k, v] : j.items()) { deserialize<J>(map[k], v); }
 }
@@ -147,7 +164,7 @@ inline J serialize(T const& tuple)
 }
 template <class J, ll::concepts::TupleLike T>
 inline void deserialize(T& tuple, J const& j) {
-    if (!j.is_array()) return;
+    if (!j.is_array()) throw SerializationError("field must be an array");
     size_t i = 0;
     std::apply([&](auto&... args) { (((i < j.size()) ? deserialize<J>(args, j[i++]) : void()), ...); }, tuple);
 }
@@ -164,8 +181,10 @@ template <class J, ll::concepts::ArrayLike T>
 inline void deserialize(T& arr, J const& j)
     requires(!std::is_convertible_v<T, std::string_view>)
 {
+    if (!j.is_array()) throw SerializationError("field must be an array");
+
     using ValueType = typename T::value_type;
-    if (!j.is_array()) return;
+
     if constexpr (requires(T a) { a.clear(); }) { arr.clear(); }
 
     if constexpr (requires(T a, ValueType v) { a.push_back(v); }) {
@@ -189,14 +208,14 @@ inline void deserialize(T& arr, J const& j)
 template <class J, ll::concepts::IsOptional T>
 inline J serialize(T const& opt) {
     if (!opt) { return nullptr; }
-    return serialize<J>(opt.value());
+    return serialize<J>(*opt);
 }
 template <class J, ll::concepts::IsOptional T>
 inline void deserialize(T& opt, J const& j) {
     if (j.is_null()) {
         opt = std::nullopt;
     } else {
-        deserialize<J>(opt.value(), j);
+        deserialize<J>(*opt, j);
     }
 }
 } // namespace ll::reflection

@@ -13,8 +13,11 @@
 
 #include "windows.h"
 
+#if _HAS_CXX23
 #include "DbgHelp.h"
 #pragma comment(lib, "DbgHelp.lib")
+#endif
+
 namespace ll {
 using namespace i18n_literals;
 using namespace utils;

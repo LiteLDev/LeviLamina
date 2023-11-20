@@ -93,9 +93,6 @@ Version getVersion(std::filesystem::path const& filePath) {
         if (flag & VS_FF_INFOINFERRED) vec.emplace_back("infoInferred");
         if (flag & VS_FF_SPECIALBUILD) vec.emplace_back("specialBuild");
     }
-    if (filePath.filename() == "bedrock_server_mod.exe" || filePath.filename() == "bedrock_server.exe") {
-        version = ll::getBdsVersion();
-    }
     return version;
 }
 

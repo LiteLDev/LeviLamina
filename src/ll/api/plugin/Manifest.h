@@ -1,6 +1,7 @@
 #pragma once
 
 #include <map>
+#include <optional>
 #include <set>
 #include <string>
 
@@ -13,16 +14,16 @@ struct Manifest {
         std::string name;
         Version     version;
     };
-    std::string                        entry;
-    std::string                        name;
-    std::string                        description;
-    std::string                        author;
-    Version                            version;
-    std::vector<Dependency>            dependencies;
-    std::vector<Dependency>            optionalDependencies;
-    std::vector<Dependency>            conflicts;
-    std::vector<Dependency>            loadBefore;
-    std::map<std::string, std::string> extraInfo;
+    std::string                                       entry;
+    std::string                                       name;
+    std::optional<std::string>                        description;
+    std::optional<std::string>                        author;
+    std::optional<Version>                            version;
+    std::optional<std::vector<Dependency>>            dependencies;
+    std::optional<std::vector<Dependency>>            optionalDependencies;
+    std::optional<std::vector<Dependency>>            conflicts;
+    std::optional<std::vector<Dependency>>            loadBefore;
+    std::optional<std::map<std::string, std::string>> extraInfo;
 };
 
 } // namespace ll::plugin

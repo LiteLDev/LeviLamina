@@ -30,7 +30,7 @@ inline bool saveConfig(T const& config, std::string_view path) noexcept {
 }
 
 template <IsConfig T, class J = nlohmann::ordered_json>
-inline bool loadConfig(T& config, std::string_view path, bool overwriteAfterFail = true) noexcept {
+inline bool loadConfig(T& config, std::string_view path, bool overwriteAfterFail = false) noexcept {
     using namespace ll::utils;
     bool res = true;
     try {

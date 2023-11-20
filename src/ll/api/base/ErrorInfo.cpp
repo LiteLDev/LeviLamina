@@ -7,9 +7,10 @@
 
 #include "windows.h"
 
+#if _HAS_CXX23
 #include "DbgHelp.h"
 #pragma comment(lib, "DbgHelp.lib")
-// #include "Psapi.h"
+#endif
 
 namespace ll::error_info {
 using namespace ll::utils;
@@ -22,19 +23,6 @@ UntypedException::UntypedException(const EXCEPTION_RECORD& er)
         throwInfo = (RealInternal::ThrowInfo const*)exc->ExceptionInformation[2];
         if (throwInfo) cArray = rva2va<_CatchableTypeArray const*>(throwInfo->pCatchableTypeArray);
     }
-}
-
-template <class T>
-static std::exception_ptr getNested(T const& e) {
-    constexpr bool can_use_dynamic_cast =
-        std::is_polymorphic_v<T>
-        && (!std::is_base_of_v<std::nested_exception, T> || std::is_convertible_v<T*, std::nested_exception*>);
-
-    if constexpr (can_use_dynamic_cast) {
-        const auto n = dynamic_cast<std::nested_exception const*>(std::addressof(e));
-        if (n) { return n->nested_ptr(); }
-    }
-    return nullptr;
 }
 
 struct u8system_category : public std::_System_error_category {
@@ -63,7 +51,7 @@ struct ntstatus_category : public std::error_category {
         DWORD    langId;
         if (GetLocaleInfoEx(
                 LOCALE_NAME_SYSTEM_DEFAULT,
-                LOCALE_ILANGUAGE | LOCALE_RETURN_NUMBER,
+                LOCALE_SNAME | LOCALE_RETURN_NUMBER,
                 reinterpret_cast<LPWSTR>(&langId),
                 sizeof(langId) / sizeof(wchar_t)
             )
@@ -72,7 +60,7 @@ struct ntstatus_category : public std::error_category {
         }
         auto size = FormatMessageW(
             FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_HMODULE | FORMAT_MESSAGE_IGNORE_INSERTS,
-            GetModuleHandleA("ntdll"),
+            GetModuleHandleW(L"ntdll"),
             errCode,
             langId,
             (wchar_t*)&msg,
@@ -166,11 +154,27 @@ std::stacktrace stacktraceFromCurrExc(_CONTEXT const& context) {
 
 #endif
 
+template <class T>
+static std::exception_ptr getNested(T const& e) {
+    constexpr bool can_use_dynamic_cast =
+        std::is_polymorphic_v<T>
+        && (!std::is_base_of_v<std::nested_exception, T> || std::is_convertible_v<T*, std::nested_exception*>);
+
+    if constexpr (can_use_dynamic_cast) {
+        const auto n = dynamic_cast<std::nested_exception const*>(std::addressof(e));
+        if (n) { return n->nested_ptr(); }
+    }
+    return nullptr;
+}
+
 std::string makeExceptionString(std::exception_ptr ePtr) {
     if (!ePtr) { throw std::bad_exception(); }
 
     std::string res;
-    auto&       rt = *(std::shared_ptr<const EXCEPTION_RECORD>*)(&ePtr);
+
+nextNest:
+
+    auto& rt = *(std::shared_ptr<const EXCEPTION_RECORD>*)(&ePtr);
 
     if (rt->ExceptionCode == UntypedException::exceptionCodeOfCpp) {
         try {
@@ -199,10 +203,6 @@ std::string makeExceptionString(std::exception_ptr ePtr) {
     } else {
         res += "Raw Seh Exception:\n";
     }
-
-
-    std::size_t numNested = 0;
-nextNest:
     try {
         std::exception_ptr yeptr;
         std::swap(ePtr, yeptr);
@@ -228,18 +228,16 @@ nextNest:
             ntstatus_category().name(),
             ntstatus_category().message((int)unkExc.ExceptionCode)
         );
-        for (size_t i = 0; i <= unkExc.NumberParameters; i++) {
+        for (size_t i = 0; i < unkExc.NumberParameters; i++) {
             res += fmt::format("\nParameter {}: {}", i, (void*)unkExc.ExceptionInformation[i]);
         }
     }
 
     if (ePtr) {
-        res += ", with: (";
-        numNested++;
+        res += ",\nwith: ";
         goto nextNest;
     }
 
-    res += std::string(numNested, ')');
     return res;
 }
 
