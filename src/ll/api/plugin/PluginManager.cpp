@@ -106,7 +106,7 @@ auto PluginManager::disableAllPlugins() -> void {
 
 auto PluginManager::loadPlugin(std::string_view pluginName) -> std::shared_ptr<Plugin> {
     std::lock_guard<std::recursive_mutex> lock(mImpl->mutex);
-    auto                                  manifestPath = pluginDir / pluginName / "manifest.json";
+    auto                                  manifestPath = pluginDir / sv2u8sv(pluginName) / "manifest.json";
     if (!fs::exists(manifestPath)) { return {}; }
     auto content = file_utils::readFile(manifestPath);
     if (!content) { return {}; }
@@ -128,7 +128,7 @@ auto PluginManager::loadPlugin(std::string_view pluginName) -> std::shared_ptr<P
         return {};
     }
 
-    auto lib = LoadLibraryW(file_utils::u8path(manifest.entry).wstring().c_str());
+    auto lib = LoadLibraryW((pluginDir / sv2u8sv(pluginName) / file_utils::u8path(manifest.entry)).wstring().c_str());
     if (!lib) {
         ll::logger.error("Fail to load plugin <{}> ({})!", manifest.name, manifest.entry);
         error_info::printException(error_info::getWinLastError());
