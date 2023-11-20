@@ -18,6 +18,9 @@ GameTimeScheduler   s3;
 
 #include "mc/network/packet/TextPacket.h"
 
+#pragma warning(push)
+#pragma warning(disable : 4723)
+
 LL_AUTO_TYPED_INSTANCE_HOOK(
     SchedulerTestHook,
     HookPriority::Normal,
@@ -64,3 +67,5 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     return origin(ins);
 }
+
+#pragma warning(pop)

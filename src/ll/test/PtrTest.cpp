@@ -43,6 +43,9 @@ size_t printHello(size_t data, int a) {
     return 0;
 }
 
+#pragma warning(push)
+#pragma warning(disable : 4723)
+
 LL_AUTO_TYPED_INSTANCE_HOOK(
     BlockDefinitionGroupRegisterBlocks,
     HookPriority::Normal,
@@ -111,3 +114,5 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     // std::cout << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
     origin();
 }
+
+#pragma warning(pop)
