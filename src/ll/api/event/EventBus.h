@@ -51,29 +51,34 @@ public:
     template <class T, template <class> class L, class LT>
         requires(std::derived_from<T, LT> && std::derived_from<L<LT>, ListenerBase>)
     bool addListener(std::shared_ptr<L<LT>> const& listener) {
-        bool res{};
-        if constexpr (requires(L<LT> a) {
-                          { a.getEventId() } -> std::same_as<EventId>;
-                      }) {
-            res = addListener(listener, listener->getEventId());
-        } else {
-            res = addListener(listener, getEventId<T>);
+        if (addListener(listener, getEventId<T>)) {
+            T::tryRegisterHook();
+            return true;
         }
-        if (res) { T::tryRegisterHook(); }
-        return res;
+        return false;
     }
     template <class T = void, template <class> class L, class LT>
         requires(std::same_as<T, void> && std::derived_from<L<LT>, ListenerBase>)
     bool addListener(std::shared_ptr<L<LT>> const& listener) {
-        return addListener<LT>(listener);
+        if constexpr (requires(L<LT> a) {
+                          { a.getEventId() } -> std::same_as<EventId>;
+                      }) {
+            if (addListener(listener, listener->getEventId())) {
+                LT::tryRegisterHook();
+                return true;
+            }
+            return false;
+        } else {
+            return addListener<LT>(listener);
+        }
     }
-
     template <std::derived_from<Event> T, std::derived_from<ListenerBase> L = Listener<T>, class... Args>
     inline auto emplaceListener(Args&&... args) {
         auto res = L::create(std::forward<Args>(args)...);
-        if (addListener(res, getEventId<T>)) { T::tryRegisterHook(); }
+        if (addListener<T>(res)) { T::tryRegisterHook(); }
         return res;
     }
+
     bool removeListener(ListenerPtr const& listener) { return removeListener(listener, EmptyEventId); }
     template <std::derived_from<Event> T>
     bool removeListener(ListenerPtr const& listener) {
