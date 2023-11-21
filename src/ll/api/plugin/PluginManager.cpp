@@ -114,9 +114,13 @@ auto PluginManager::loadPlugin(std::string_view pluginName) -> std::shared_ptr<P
     if (json.is_discarded()) { return {}; }
 
     Manifest manifest;
-    try { // TODO: ensure some fields must be present
+    try {
         ll::reflection::deserialize<nlohmann::json, Manifest>(manifest, json);
-    } catch (...) { return {}; }
+    } catch (...) {
+        ll::logger.error("Plugin <{}> manifest file error!", pluginName);
+        error_info::printCurrentException();
+        return {};
+    }
 
     if (manifest.name != pluginName) {
         ll::logger.error("Plugin name <{}> does not match folder name <{}>!", manifest.name, pluginName);
