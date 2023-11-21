@@ -9,6 +9,8 @@
 
 #include "ll/api/base/Version.h"
 
+#include "ll/api/base/ErrorInfo.h"
+
 // #include "ll/api/schedule/Scheduler.h"
 // #include "ll/api/service/GlobalService.h"
 // #include "mc/world/level/BlockPos.h"
@@ -67,11 +69,18 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
     origin();
 
-    // auto helloReflection = TestClass<int>{};
+    auto helloReflection = TestClass<int>{};
 
-    // ll::config::saveConfig(helloReflection, "plugins/Test/testconfig.json");
+    // ll::config::saveConfig(helloReflection, "plugins/Test/config/testconfig.json");
 
     std::lock_guard lock(ll::Logger::loggerMutex); // test logger order
+
+    try {
+        ll::reflection::deserialize(
+            helloReflection,
+            nlohmann::ordered_json::parse(R"({"version":""})", nullptr, false, true)
+        );
+    } catch (...) { ll::error_info::printCurrentException(); }
 
     // ll::logger.debug("{} for load config", ll::config::loadConfig(helloReflection, "plugins/Test/testconfig.json"));
     // ll::logger.debug("\n{}", ll::reflection::serialize<nlohmann::ordered_json>(helloReflection).dump(4));

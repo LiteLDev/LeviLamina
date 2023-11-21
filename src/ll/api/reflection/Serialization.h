@@ -69,8 +69,12 @@ inline J serialize(T const& obj)
     forEachMember(obj, [&](std::string_view name, auto& member) {
         using MemberType = std::remove_cvref_t<decltype(member)>;
         if constexpr (requires(MemberType& m) { serialize<J>(m); }) {
-            auto j = serialize<J>(member);
-            if (!j.is_null()) res[std::string{name}] = j;
+            try {
+                auto j = serialize<J>(member);
+                if (!j.is_null()) res[std::string{name}] = j;
+            } catch (...) {
+                std::throw_with_nested(SerializationError("error in serialize field: " + std::string{name}));
+            }
         } else {
             static_assert(ll::concepts::always_false<MemberType>, "this type can't serialize");
         }
@@ -84,7 +88,9 @@ inline void deserialize(T& obj, J const& j) {
         auto sname       = std::string{name};
         if (j.contains(sname)) {
             if constexpr (requires(MemberType& o, J const& s) { deserialize<J>(o, s); }) {
-                deserialize<J>(member, j[sname]);
+                try {
+                    deserialize<J>(member, j[sname]);
+                } catch (...) { std::throw_with_nested(SerializationError("error in deserialize field: " + sname)); }
             } else {
                 static_assert(ll::concepts::always_false<MemberType>, "this type can't deserialize");
             }
