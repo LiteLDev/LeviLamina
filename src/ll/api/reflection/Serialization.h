@@ -132,7 +132,7 @@ inline void deserialize(T& obj, J const& j) // TODO: improve this
     if constexpr (std::is_convertible_v<T, std::string_view>) {
         if (!j.is_string()) throw SerializationError("field must be a string");
     } else {
-        if (!j.is_number()) throw SerializationError("field must be a number");
+        if (!j.is_number() && !j.is_boolean()) throw SerializationError("field must be a number");
     }
     obj = j;
 }

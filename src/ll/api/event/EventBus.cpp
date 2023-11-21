@@ -19,6 +19,10 @@ class CallbackStream {
     std::set<ListenerPtr, ListenerComparator> listeners;
 
 public:
+    std::unique_ptr<Emitter> emitter;
+
+    size_t count() const { return listeners.size(); }
+
     void publish(Event& event) {
         for (auto& l : listeners) {
             try {
@@ -61,6 +65,18 @@ public:
 
     ListenerId getNewListenerId() { return ++lid; }
 
+    bool addListener(ListenerPtr const& listener, EventId const& eventId) {
+        if (auto i = streams.find(eventId); i != streams.end()) {
+            return i->second.addListener(listener);
+        } else {
+            if (streams[eventId].addListener(listener)) {
+                streams[eventId].emitter = listener->getEmitter();
+                return true;
+            }
+            return false;
+        }
+    }
+
     bool removeListener(ListenerPtr const& listener, EventId const& eventId) {
         if (auto i = streams.find(eventId); i != streams.end()) {
             auto& stream = i->second;
@@ -84,13 +100,18 @@ void EventBus::publish(Event& event, EventId const& eventId) {
 
     if (auto i = impl->streams.find(eventId); i != impl->streams.end()) { i->second.publish(event); }
 }
+size_t EventBus::getListenerCount(EventId const& eventId) {
+    std::lock_guard lock(impl->mutex);
+    if (auto i = impl->streams.find(eventId); i != impl->streams.end()) { return i->second.count(); }
+    return 0;
+}
 bool EventBus::addListener(ListenerPtr const& listener, EventId const& eventId, Canneller& canneller) {
     if (!listener) { return false; }
     std::lock_guard lock(impl->mutex);
     if (listener->getId() == 0) { listener->setId(impl->getNewListenerId()); }
-    auto& info    = impl->listeners[listener->getId()];
-    info.listener = listener;
-    if (impl->streams[eventId].addListener(listener)) {
+    if (impl->addListener(listener, eventId)) {
+        auto& info    = impl->listeners[listener->getId()];
+        info.listener = listener;
         info.watches.emplace(eventId);
         canneller.listeners.emplace(listener->getId());
         return true;

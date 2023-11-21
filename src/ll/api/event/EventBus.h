@@ -48,6 +48,13 @@ public:
         publish(event, getEventId<T>);
     }
 
+    LLNDAPI size_t getListenerCount(EventId const&);
+
+    template <std::derived_from<Event> T>
+    [[nodiscard]] size_t getListenerCount() {
+        return getListenerCount(getEventId<T>);
+    }
+
     template <class T, template <class> class L, class LT>
         requires(std::derived_from<T, LT> && std::derived_from<L<LT>, ListenerBase>)
     bool addListener(std::shared_ptr<L<LT>> const& listener) {

@@ -48,13 +48,15 @@ inline bool loadConfig(T& config, std::string_view path, bool overwriteAfterFail
                         && (int64)metaData["version"] == config.version
                     ))) {
                     res = false;
+                } else {
+                    data["version"] = config.version;
                 }
             }
             ll::reflection::deserialize<J, T>(config, data);
         } else {
             res = false;
         }
-    } catch (...) {}
+    } catch (...) { res = false; }
     if (!res && overwriteAfterFail) { saveConfig<T, J>(config, path); }
     return res;
 }

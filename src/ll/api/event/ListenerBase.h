@@ -1,6 +1,9 @@
 #pragma once
 
+#include <memory>
+
 #include "ll/api/base/StdInt.h"
+#include "ll/api/event/Emitter.h"
 
 namespace ll::event {
 class EventBus;
@@ -45,6 +48,8 @@ public:
     virtual ~ListenerBase() = default;
 
     virtual void call(Event& event) = 0;
+
+    virtual std::unique_ptr<Emitter> getEmitter() { return nullptr; }
 };
 
 using ListenerPtr = std::shared_ptr<ListenerBase>;

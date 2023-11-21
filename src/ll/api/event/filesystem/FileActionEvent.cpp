@@ -223,38 +223,17 @@ public:
     FileWatch& operator=(FileWatch const& other) = delete;
 };
 
-struct FileWatchPair {
-    size_t                     count{1};
-    std::unique_ptr<FileWatch> watch;
-    FileWatchPair(const FileWatch::Path& path, std::function<void(FileWatch::Path const&, FileActionType)> callback)
-    : watch(new FileWatch(path, std::move(callback))) {}
-};
 
-std::unordered_map<std::string, FileWatchPair> fileWatcheres;
-std::mutex                                     fileWatcheresMutex;
-
-void tryAddFileWatcher(std::string const& path) {
-    std::lock_guard lock(fileWatcheresMutex);
-    if (fileWatcheres.contains(path)) {
-        fileWatcheres.at(path).count++;
-    } else {
-        fileWatcheres.emplace(
-            path,
-            FileWatchPair{
-                utils::file_utils::u8path(path),
-                [path](FileWatch::Path const& p, FileActionType e) {
-                    std::string eventName{ll::reflection::type_name_v<FileActionEvent<"">>};
-                    eventName += "|";
-                    eventName += path;
-                    DynamicFileActionEvent ev{p, e};
-                    ll::event::EventBus::getInstance().publish(ev, EventId{eventName});
-                }
-            }
-        );
-    }
+FileActionEmitter::FileActionEmitter(std::string const& path) {
+    watcher = std::make_unique<FileWatch>(
+        utils::file_utils::u8path(path),
+        [id =
+             (std::string{ll::reflection::type_name_v<FileActionEvent<"">>} + "|" + path
+             )](FileWatch::Path const& p, FileActionType e) {
+            DynamicFileActionEvent ev{p, e};
+            ll::event::EventBus::getInstance().publish(ev, EventId{id});
+        }
+    );
 }
-void tryRemoveFileWatcher(std::string const& path) {
-    std::lock_guard lock(fileWatcheresMutex);
-    if ((--fileWatcheres.at(path).count) == 0) { fileWatcheres.erase(path); }
-}
+FileActionEmitter::~FileActionEmitter() = default;
 } // namespace ll::event::detail

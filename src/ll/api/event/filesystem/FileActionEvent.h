@@ -8,8 +8,14 @@
 
 namespace ll::event {
 namespace detail {
-LLAPI void tryAddFileWatcher(std::string const& path);
-LLAPI void tryRemoveFileWatcher(std::string const& path);
+class FileWatch;
+class FileActionEmitter : public Emitter {
+    std::unique_ptr<FileWatch> watcher;
+
+public:
+    LLAPI FileActionEmitter(std::string const& path);
+    ~FileActionEmitter() override;
+};
 } // namespace detail
 
 
@@ -49,13 +55,13 @@ public:
 
     explicit Listener(Callback const& fn, EventPriority priority = EventPriority::Normal)
     : ListenerBase(priority),
-      callback(fn) {
-        detail::tryAddFileWatcher(WatchedPath);
-    }
+      callback(fn) {}
 
-    ~Listener() override { detail::tryRemoveFileWatcher(WatchedPath); }
+    ~Listener() override = default;
 
     void call(Event& event) override { callback(static_cast<EventType&>(event)); }
+
+    std::unique_ptr<Emitter> getEmitter() override { return std::make_unique<detail::FileActionEmitter>(WatchedPath); }
 
     static std::shared_ptr<Listener> create(Callback const& fn, EventPriority priority = EventPriority::Normal) {
         return std::make_shared<Listener>(fn, priority);
@@ -75,7 +81,6 @@ public:
     : ListenerBase(priority),
       callback(fn),
       path(path) {
-        detail::tryAddFileWatcher(path);
         nativeId.assign(ll::reflection::type_name_v<FileActionEvent<"">>);
         nativeId += "|";
         nativeId += path;
@@ -83,9 +88,11 @@ public:
 
     EventId getEventId() const { return EventId{nativeId}; }
 
-    ~Listener() override { detail::tryRemoveFileWatcher(path); }
+    ~Listener() override = default;
 
     void call(Event& event) override { callback(static_cast<EventType&>(event)); }
+
+    std::unique_ptr<Emitter> getEmitter() override { return std::make_unique<detail::FileActionEmitter>(path); }
 
     static std::shared_ptr<Listener>
     create(std::string const& path, Callback const& fn, EventPriority priority = EventPriority::Normal) {
