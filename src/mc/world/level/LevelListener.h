@@ -78,10 +78,10 @@ public:
     virtual void onLevelDestruction(std::string const&);
 
     // vIndex: 16, symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
-    virtual void levelEvent(::LevelEvent, class CompoundTag const&);
+    virtual void levelEvent(::LevelEvent, class Vec3 const&, int);
 
     // vIndex: 17, symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
-    virtual void levelEvent(::LevelEvent, class Vec3 const&, int);
+    virtual void levelEvent(::LevelEvent, class CompoundTag const&);
 
     // vIndex: 18, symbol: ?takePicture@LevelListener@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
     virtual void takePicture(class cg::ImageBuffer&, class Actor*, class Actor*, struct ScreenshotOptions&);
