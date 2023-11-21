@@ -5,8 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/v1/BiomeSource.h"
 
+class Biome;
+
 class FixedBiomeSource : public ::BiomeSource {
 public:
+    Biome const* mFixedBiome;
+
     // prevent constructor by default
     FixedBiomeSource& operator=(FixedBiomeSource const&);
     FixedBiomeSource(FixedBiomeSource const&);

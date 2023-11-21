@@ -21,7 +21,7 @@ class CallbackStream {
 public:
     std::unique_ptr<Emitter> emitter;
 
-    size_t count() const { return listeners.size(); }
+    [[nodiscard]] size_t count() const { return listeners.size(); }
 
     void publish(Event& event) {
         for (auto& l : listeners) {

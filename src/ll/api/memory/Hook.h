@@ -15,19 +15,19 @@
         try {                                                                                                          \
             static FuncPtr t = ll::memory::resolveIdentifier<OriginFuncType>(IDENTIFIER);                              \
             if (t == nullptr) {                                                                                        \
-                fmt::print("\x1b[91mCan't resolve: [" #IDENTIFIER "]\x1b[0m\n");                                       \
+                fmt::print("\x1b[91mCan't resolve: [" #IDENTIFIER "]\x1b[0m\r\n");                                     \
             } else {                                                                                                   \
                 auto symbols = ll::memory::lookupSymbol(t);                                                            \
                 if (symbols.size() > 1) {                                                                              \
                     fmt::print(                                                                                        \
-                        "\x1b[93m[" #IDENTIFIER "] has {} matches, probability cause bugs.\x1b[0m\n",                  \
+                        "\x1b[93m[" #IDENTIFIER "] has {} matches, probability cause bugs.\x1b[0m\r\n",                \
                         symbols.size()                                                                                 \
                     );                                                                                                 \
                 }                                                                                                      \
-                fmt::print("\x1b[96m v resolve [" #IDENTIFIER "] to:\x1b[0m\n");                                       \
-                for (auto& str : symbols) { fmt::print(" {} {}\n", (&str == &symbols.back()) ? '-' : '|', str); }      \
+                fmt::print("\x1b[96m v resolve [" #IDENTIFIER "] to:\x1b[0m\r\n");                                     \
+                for (auto& str : symbols) { fmt::print(" {} {}\r\n", (&str == &symbols.back()) ? '-' : '|', str); }    \
             }                                                                                                          \
-        } catch (...) { fmt::print("\x1b[91m!!! Exception in resolve: [" #IDENTIFIER "]\x1b[0m\n"); }                  \
+        } catch (...) { fmt::print("\x1b[91m!!! Exception in resolve: [" #IDENTIFIER "]\x1b[0m\r\n"); }                  \
         return 0;                                                                                                      \
     };                                                                                                                 \
     static inline int debugging = debugger()

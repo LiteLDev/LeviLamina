@@ -2,6 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/block/BlockVolume.h"
+#include "mc/world/level/biome/source/FixedBiomeSource.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/buffer_span.h"
@@ -12,9 +13,6 @@
 // clang-format off
 namespace Json { class Value; }
 // clang-format on
-
-class FixedBiomeSource;
-class Biome;
 
 class FlatWorldGenerator : public ::WorldGenerator {
 public:

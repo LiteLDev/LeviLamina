@@ -23,6 +23,10 @@
 #include "mc/world/level/levelgen/structure/StructureFeatureRegistry.h"
 #include "mc/world/level/storage/LevelData.h"
 
+#if _HAS_CXX23
+#include "ll/api/utils/StacktraceUtils.h"
+#endif
+
 class ILevel;
 class Scheduler;
 class Dimension;
@@ -36,11 +40,21 @@ namespace {
 
 ll::Logger logger("TestRegistryDimension");
 
-void printVfable(void** t) {
-    void** table = (void**)(*t);
+void printVfable(void* t) {
+    std::lock_guard lock(ll::Logger::loggerMutex);
+
+    void** table = *(void***)t;
+#if _HAS_CXX23
+    logger.info("{}", ll::utils::stacktrace_utils::toString(*(std::stacktrace_entry*)&table));
+#else
+    logger.info("{}", (void*)table);
+#endif
     for (size_t i = 0; table[i] != nullptr; ++i) {
+#if _HAS_CXX23
+        logger.info("v table[{:02}] : {}", i, ll::utils::stacktrace_utils::toString(*(std::stacktrace_entry*)&table[i]));
+#else
         logger.info("v table[{}] : {}", i, table[i]);
-        for (auto& str : lookupSymbol(table[i])) { logger.info("| {}", str); }
+#endif
     }
 }
 
@@ -171,19 +185,19 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         faction = [](ILevel& ilevel, Scheduler& scheduler) -> OwnerPtrT<SharePtrRefTraits<Dimension>> {
             logger.debug("Overworld create");
             logger.debug("Overworld flat replace!!");
-            auto dim = std::make_shared<TestDimension>(ilevel, scheduler);
+            auto dim  = std::make_shared<TestDimension>(ilevel, scheduler);
             auto refp = dim.get();
             // print IDimension::vftable
-            printVfable((void**)refp);
+            printVfable(refp);
 
             // print LevelListener::vftable
-            printVfable((void**)((char*)refp+8));
+            printVfable(((char*)refp + 8));
 
             // print SavedData::vftable
-            printVfable((void**)((char*)refp+16));
+            printVfable(((char*)refp + 16));
 
             // print Bedrock::EnableNonOwnerReferences::vftable
-            printVfable((void**)((char*)refp+64));
+            printVfable(((char*)refp + 64));
             return dim;
         };
     };
@@ -195,6 +209,5 @@ LL_AUTO_TYPED_INSTANCE_HOOK(RegistryDimensionTest1, HookPriority::Normal, Dimens
     if (this->getDimensionId() == 0) return weak_from_this();
     return origin();
 }
-
 
 #endif // LL_DEBUG

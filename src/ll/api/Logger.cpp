@@ -34,7 +34,7 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
                 applyTextStyle(style[3], fmt::format(fmt::runtime(consoleFormat[4]), replaceMcToAnsiCode(s)))
             );
             if (!ll::globalConfig.logger.colorLog) { str = removeEscapeCode(str); }
-            fmt::print("{}\n", str);
+            fmt::print("{}\r\n", str);
         }
         if (logger->getFile().is_open() && checkLogLevel(logger->fileLevel, level)) {
             logger->getFile() << removeEscapeCode(fmt::format(
@@ -63,12 +63,12 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
     } catch (...) {
         try {
             fmt::print(
-                "\x1b[31mERROR IN LOGGER API:\n{}\x1b[0m\n",
+                "\x1b[31mERROR IN LOGGER API:\r\n{}\x1b[0m\r\n",
                 error_info::makeExceptionString(std::current_exception())
             );
         } catch (...) {
             try {
-                fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API\x1b[0m\n");
+                fmt::print("\x1b[31mUNKNOWN ERROR IN LOGGER API\x1b[0m\r\n");
             } catch (...) {}
         }
     }
