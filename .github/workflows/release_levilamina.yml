@@ -49,20 +49,14 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: levilamina-windows-x64-${{ github.sha }}
-          path: release/lib
+          path: bin
 
       - run: |
-          python scripts/make_include.py
-
-      - run: |
-          cp -r include release/
-
-      - run: |
-          cp CHANGELOG.md LICENSE.md README.md release/
+          cp CHANGELOG.md LICENSE.md README.md bin/
 
       - name: Archive release
         run: |
-          cd release
+          cd bin
           zip -r ../levilamina-windows-x64.zip *
           cd ..
 
