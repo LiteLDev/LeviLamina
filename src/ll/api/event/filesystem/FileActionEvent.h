@@ -90,7 +90,7 @@ public:
         nativeId += path;
     }
 
-    EventId getEventId() const { return EventId{nativeId}; }
+    [[nodiscard]] EventId getEventId() const { return EventId{nativeId}; }
 
     ~Listener() override = default;
 

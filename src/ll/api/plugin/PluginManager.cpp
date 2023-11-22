@@ -167,12 +167,18 @@ auto PluginManager::loadPlugin(std::string_view pluginName) -> std::shared_ptr<P
 
     auto plugin = plugin::Plugin::create(manifest, lib);
     if (registerPlugin(plugin)) {
-        using ll_plugin_init_t = void (*)(ll::plugin::Plugin*);
-        auto init              = reinterpret_cast<ll_plugin_init_t>(GetProcAddress(lib, "ll_plugin_init"));
-        if (init) {
-            init(plugin.get());
+        auto load    = reinterpret_cast<Plugin::ll_plugin_load_t>(GetProcAddress(lib, "ll_plugin_load"));
+        auto unload  = reinterpret_cast<Plugin::ll_plugin_unload_t>(GetProcAddress(lib, "ll_plugin_unload"));
+        auto enable  = reinterpret_cast<Plugin::ll_plugin_enable_t>(GetProcAddress(lib, "ll_plugin_enable"));
+        auto disable = reinterpret_cast<Plugin::ll_plugin_disable_t>(GetProcAddress(lib, "ll_plugin_disable"));
+        if (load) plugin->onLoad(load);
+        if (unload) plugin->onUnload(unload);
+        if (enable) plugin->onEnable(enable);
+        if (disable) plugin->onDisable(disable);
+        if (load) {
+            load(*plugin);
         } else {
-            ll::logger.warn("Plugin <{}> does not have init function!", manifest.name);
+            ll::logger.warn("Plugin <{}> does not have load function!", manifest.name);
         }
         ll::logger.info("Plugin <{}> loaded!", manifest.name);
         return plugin;
@@ -181,58 +187,58 @@ auto PluginManager::loadPlugin(std::string_view pluginName) -> std::shared_ptr<P
 }
 
 auto PluginManager::unloadPlugin(const std::weak_ptr<const Plugin>& plugin) -> bool {
-    std::lock_guard<std::recursive_mutex> lock(mImpl->mutex);
-    if (auto ptr = plugin.lock()) {
-        if (ptr->getState() != PluginState::Disabled) {
-            disablePlugin(plugin);
-        }
-        if (!ptr->onUnload()) {
-            ll::logger.error("Fail to unload plugin <{}>!", ptr->getManifest().name);
-            return false;
-        }
-        if (!unregisterPlugin(plugin)) {
-            ll::logger.error("Fail to unregister plugin <{}>!", ptr->getManifest().name);
-            return false;
-        }
-        if (!FreeLibrary(static_cast<HMODULE>(ptr->getHandle()))) {
-            ll::logger.error("Fail to free library of plugin <{}>! Server may crash!", ptr->getManifest().name);
-            return false;
-        }
-        return true;
+    auto lock = std::lock_guard(mImpl->mutex);
+    auto sp   = plugin.lock();
+    if (!sp) return false;
+    auto& p = const_cast<Plugin&>(*sp);
+    if (p.getState() != PluginState::Disabled) {
+        disablePlugin(plugin);
     }
-    return false;
+    if (!p.onUnload()) {
+        ll::logger.error("Fail to unload plugin <{}>!", p.getManifest().name);
+        return false;
+    }
+    if (!unregisterPlugin(plugin)) {
+        ll::logger.error("Fail to unregister plugin <{}>!", p.getManifest().name);
+        return false;
+    }
+    if (!FreeLibrary(static_cast<HMODULE>(p.getHandle()))) {
+        ll::logger.error("Fail to free library of plugin <{}>! Server may crash!", p.getManifest().name);
+        return false;
+    }
+    return true;
 }
 
 auto PluginManager::enablePlugin(const std::weak_ptr<const Plugin>& plugin) -> bool {
-    std::lock_guard<std::recursive_mutex> lock(mImpl->mutex);
-    if (auto ptr = plugin.lock()) {
-        if (ptr->getState() == PluginState::Enabled) {
-            return true;
-        }
-        if (!ptr->onEnable()) {
-            ll::logger.error("Fail to enable plugin <{}>!", ptr->getManifest().name);
-            return false;
-        }
-        ptr->setState(PluginState::Enabled);
+    auto lock = std::lock_guard(mImpl->mutex);
+    auto sp   = plugin.lock();
+    if (!sp) return false;
+    auto& p = const_cast<Plugin&>(*sp);
+    if (p.getState() == PluginState::Enabled) {
         return true;
     }
-    return false;
+    if (!p.onEnable()) {
+        ll::logger.error("Fail to enable plugin <{}>!", p.getManifest().name);
+        return false;
+    }
+    p.setState(PluginState::Enabled);
+    return true;
 }
 
 auto PluginManager::disablePlugin(const std::weak_ptr<const Plugin>& plugin) -> bool {
-    std::lock_guard<std::recursive_mutex> lock(mImpl->mutex);
-    if (auto ptr = plugin.lock()) {
-        if (ptr->getState() == PluginState::Disabled) {
-            return true;
-        }
-        if (!ptr->onDisable()) {
-            ll::logger.error("Fail to disable plugin <{}>!", ptr->getManifest().name);
-            return false;
-        }
-        ptr->setState(PluginState::Disabled);
+    auto lock = std::lock_guard(mImpl->mutex);
+    auto sp   = plugin.lock();
+    if (!sp) return false;
+    auto& p = const_cast<Plugin&>(*sp);
+    if (p.getState() == PluginState::Disabled) {
         return true;
     }
-    return false;
+    if (!p.onDisable()) {
+        ll::logger.error("Fail to disable plugin <{}>!", p.getManifest().name);
+        return false;
+    }
+    p.setState(PluginState::Disabled);
+    return true;
 }
 
 } // namespace ll::plugin

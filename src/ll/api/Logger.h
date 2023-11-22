@@ -78,7 +78,7 @@ public:
     };
 
 public:
-    std::string_view             title;
+    std::string                  title;
     std::optional<std::ofstream> ofs          = std::nullopt;
     int                          consoleLevel = -1;
     int                          fileLevel    = -1;

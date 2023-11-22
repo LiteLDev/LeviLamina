@@ -5,6 +5,7 @@
 #include <string>
 #include <unordered_map>
 
+#include "ll/api/Logger.h"
 #include "ll/api/base/UnorderedStringMap.h"
 #include "ll/api/base/Version.h"
 #include "ll/api/memory/Memory.h"
@@ -22,9 +23,13 @@ enum class PluginState : char {
 
 class Plugin : public std::enable_shared_from_this<Plugin> {
 private:
-    using Handle     = memory::Handle;
-    using Callback   = std::function<bool()>;
-    using SharedData = UnorderedStringMap<std::any>;
+    using Handle              = memory::Handle;
+    using Callback            = std::function<bool(Plugin&)>;
+    using SharedData          = UnorderedStringMap<std::any>;
+    using ll_plugin_load_t    = bool (*)(Plugin&);
+    using ll_plugin_unload_t  = bool (*)(Plugin&);
+    using ll_plugin_enable_t  = bool (*)(Plugin&);
+    using ll_plugin_disable_t = bool (*)(Plugin&);
 
     friend class PluginManager;
 
@@ -35,13 +40,13 @@ private:
 
     void setState(PluginState state) const;
 
-    bool onLoad() const;
+    bool onLoad();
 
-    bool onUnload() const;
+    bool onUnload();
 
-    bool onEnable() const;
+    bool onEnable();
 
-    bool onDisable() const;
+    bool onDisable();
 
 public:
     LLAPI ~Plugin();
@@ -63,6 +68,8 @@ public:
     LLNDAPI std::filesystem::path getDataDir() const;
 
     LLNDAPI std::filesystem::path getConfigDir() const;
+
+    LLNDAPI Logger& getLogger() const;
 
     LLAPI void onLoad(Callback func);
 

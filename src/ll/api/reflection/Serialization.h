@@ -26,6 +26,9 @@ public:
         );
     }
 
+    SerializationError(std::string_view field, std::string_view msg)
+    : SerializationError(field, std::runtime_error{msg.data()}) {}
+
     explicit SerializationError(std::string_view field) : mField(field) {
         mMsg = fmt::format("Serialization error in field '{}'", field);
     }
@@ -142,7 +145,7 @@ inline void deserialize(T& obj, J const& j) {
             }
         } else {
             if constexpr (!ll::concepts::IsOptional<MemberType>) {
-                throw SerializationError(sname, std::runtime_error("missing required field when deserializing"));
+                throw SerializationError{sname, "missing required field when deserializing"};
             } else {
                 member = std::nullopt;
             }

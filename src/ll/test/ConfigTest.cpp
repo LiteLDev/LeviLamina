@@ -87,26 +87,4 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     ll::logger.debug("789\xDB\xFE");
     ll::logger.debug("789\xDB\xFE");
-
-    std::cout << "hi I'm SB Plugin 1" << std::endl;
-
-    std::clog << "hi I'm SB Plugin 2" << std::endl;
-
-    std::cerr << "hi I'm SB Plugin 3" << std::endl;
-
-    printf("hi I'm SB Plugin %d\n", 4);
-
-    fprintf(stdout, "hi I'm SB Plugin 5\n");
-
-    fprintf(stderr, "hi I'm SB Plugin 6\n");
-
-    puts("hi I'm SB Plugin 7\n");
-
-    fputs("hi I'm SB Plugin 10\n", stdout);
-
-    fwrite("hi I'm SB Plugin 11\n", sizeof(char), 20, stdout);
-
-    printf_s("hi I'm SB Plugin %d\n", 12);
-
-    _printf_p("hi I'm SB Plugin %d\n", 13);
 }

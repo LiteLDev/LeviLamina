@@ -60,10 +60,11 @@ target("LeviLamina")
     )
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     add_files("src/**.cpp","src/**.rc")
-    -- xmake-repo
-    add_packages("entt", "fmt", "gsl", "gtest", "leveldb", "magic_enum", "nlohmann_json", "rapidjson", { public = true })
-    -- liteldev-repo
-    add_packages("pcg_cpp", "preloader", "symbolprovider", "ctre", "pfr")
+    add_packages("entt", "fmt", "gsl", "gtest", "leveldb",
+                 "magic_enum", "nlohmann_json", "rapidjson",
+                 "pcg_cpp", "symbolprovider", "ctre", "pfr",
+                 "preloader", { public = true }
+    )
     if has_config("localbdslibrary") then
         add_packages("localbdslibrary")
     else

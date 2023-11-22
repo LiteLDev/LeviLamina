@@ -12,6 +12,7 @@ struct Plugin::Impl {
     PluginState state = PluginState::Disabled;
     Manifest    manifest;
     Handle      handle{};
+    Logger      logger;
     SharedData  sharedData;
     Callback    onLoad;
     Callback    onUnload;
@@ -20,9 +21,10 @@ struct Plugin::Impl {
 };
 
 Plugin::Plugin(Manifest manifest, Handle handle) {
-    mImpl           = std::make_unique<Impl>();
-    mImpl->manifest = std::move(manifest);
-    mImpl->handle   = handle;
+    mImpl               = std::make_unique<Impl>();
+    mImpl->manifest     = std::move(manifest);
+    mImpl->handle       = handle;
+    mImpl->logger.title = mImpl->manifest.name;
 }
 
 Plugin::~Plugin() = default;
@@ -60,13 +62,13 @@ fs::path Plugin::getConfigDir() const {
     return path;
 }
 
-bool Plugin::onLoad() const { return !mImpl->onLoad || mImpl->onLoad(); }
+bool Plugin::onLoad() { return !mImpl->onLoad || mImpl->onLoad(*this); }
 
-bool Plugin::onUnload() const { return !mImpl->onUnload || mImpl->onUnload(); }
+bool Plugin::onUnload() { return !mImpl->onUnload || mImpl->onUnload(*this); }
 
-bool Plugin::onEnable() const { return !mImpl->onEnable || mImpl->onEnable(); }
+bool Plugin::onEnable() { return !mImpl->onEnable || mImpl->onEnable(*this); }
 
-bool Plugin::onDisable() const { return !mImpl->onDisable || mImpl->onDisable(); }
+bool Plugin::onDisable() { return !mImpl->onDisable || mImpl->onDisable(*this); }
 
 void Plugin::onLoad(Callback func) { mImpl->onLoad = std::move(func); }
 
@@ -79,5 +81,7 @@ void Plugin::onDisable(Callback func) { mImpl->onDisable = std::move(func); }
 void Plugin::setState(PluginState state) const { mImpl->state = state; }
 
 PluginState Plugin::getState() const { return mImpl->state; }
+
+Logger& Plugin::getLogger() const { return mImpl->logger; }
 
 } // namespace ll::plugin
