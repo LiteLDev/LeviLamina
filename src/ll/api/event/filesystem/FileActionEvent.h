@@ -28,24 +28,28 @@ enum class FileActionType {
     RenamedNew,
 };
 
-// usually for not native plugins
-class DynamicFileActionEvent : public Event {
+class FileActionEventBase : public Event {
 public:
-    std::filesystem::path path;
-    FileActionType        type;
+    std::filesystem::path const path;
+    FileActionType const        type;
 
-    DynamicFileActionEvent(std::filesystem::path p, FileActionType e) : path(std::move(p)), type(e) {}
+    FileActionEventBase(std::filesystem::path p, FileActionType e) : path(std::move(p)), type(e) {}
 };
+class DynamicFileActionEvent : public FileActionEventBase {};
 
 template <FixedString WatchedPath>
-class FileActionEvent : public DynamicFileActionEvent {
+class FileActionEvent : public FileActionEventBase {
     static constexpr auto CustomIdOwn{
         FixedString<ll::reflection::type_name_v<FileActionEvent>.size()>{ll::reflection::type_name_v<FileActionEvent>}
-        + FixedString{"|"} + WatchedPath};
+        + FixedString{"|"} + WatchedPath
+    };
 
 public:
     static constexpr EventId CustomEventId{CustomIdOwn};
 };
+
+template <>
+class Listener<FileActionEventBase> {}; // avoid to listen FileActionEventBase
 
 template <FixedString WatchedPath>
 class Listener<FileActionEvent<WatchedPath>> : public ListenerBase {
@@ -90,7 +94,7 @@ public:
 
     ~Listener() override = default;
 
-    void call(Event& event) override { callback(dynamic_cast<EventType&>(event)); }
+    void call(Event& event) override { callback(static_cast<EventType&>(event)); }
 
     std::unique_ptr<Emitter> getEmitter() override { return std::make_unique<detail::FileActionEmitter>(path); }
 

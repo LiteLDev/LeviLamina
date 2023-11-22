@@ -112,7 +112,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     bus.publish(e2);
 
     using namespace ll::event;
-    auto listener3 = Listener<FileActionEvent<"./">>::create([](DynamicFileActionEvent& ev) {
+    auto listener3 = Listener<FileActionEvent<"./">>::create([](FileActionEventBase& ev) {
         ll::logger.debug(
             "cst receive: {}, {} {}",
             typeid(ev).name(),
@@ -121,7 +121,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         );
     });
     bus.addListener(listener3);
-    auto listener4 = Listener<DynamicFileActionEvent>::create("./", [](auto& ev) {
+    auto listener4 = Listener<DynamicFileActionEvent>::create("./", [](FileActionEventBase& ev) {
         ll::logger.debug("dyn receive: {}, {} {}", typeid(ev).name(), ev.path, magic_enum::enum_name(ev.type));
     });
     bus.addListener(listener4);

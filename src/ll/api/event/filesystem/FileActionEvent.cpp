@@ -241,7 +241,7 @@ FileActionEmitter::FileActionEmitter(std::string const& path) {
         [id =
              (std::string{ll::reflection::type_name_v<FileActionEvent<"">>} + "|" + path
              )](FileWatch::Path const& p, FileActionType e) {
-            DynamicFileActionEvent ev{p, e};
+            FileActionEventBase ev{p, e};
             ll::event::EventBus::getInstance().publish(ev, EventId{id});
         }
     );

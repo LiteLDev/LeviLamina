@@ -142,7 +142,7 @@ inline void deserialize(T& obj, J const& j) {
             }
         } else {
             if constexpr (!ll::concepts::IsOptional<MemberType>) {
-                throw std::runtime_error("missing required field when deserializing");
+                throw SerializationError(sname, std::runtime_error("missing required field when deserializing"));
             } else {
                 member = std::nullopt;
             }

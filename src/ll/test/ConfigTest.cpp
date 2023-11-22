@@ -21,24 +21,25 @@ template <class T>
 
 class TestClass {
 public:
-    int version = 2;
-
-    ll::Version ver;
-
-    bool someFlag = false;
-    bool eeeeFlag = true;
     struct {
         int   hello = 233;
         float trs   = 0.2f;
     } structure;
-    bool        ssbbFlag = false;
-    std::string str      = R"(\1hellow)";
-    int         plain    = 1111;
     class MyPair {
     public:
         std::string typo          = "hellotype";
         long long   I_am_a_number = 12415276547;
     };
+
+    int version = 2;
+
+    ll::Version ver;
+
+    bool        someFlag = false;
+    bool        eeeeFlag = true;
+    bool        ssbbFlag = false;
+    std::string str      = R"(\1hellow)";
+    int         plain    = 1111;
 
     std::map<std::string, MyPair> amap = {
         {"key1", {}                 },
@@ -75,7 +76,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     try {
         ll::reflection::deserialize(
             helloReflection,
-            nlohmann::ordered_json::parse(R"({"version":""})", nullptr, false, true)
+            nlohmann::ordered_json::parse(R"({"structure":{"hello":""}})", nullptr, false, true)
         );
     } catch (...) {
         ll::error_info::printCurrentException();
