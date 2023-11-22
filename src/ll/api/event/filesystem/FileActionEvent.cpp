@@ -30,7 +30,7 @@ public:
 private:
     std::function<void(Path const& file, FileActionType eventType)> callback;
 
-    std::wstring filename; // non empty for single file
+    std::wstring filename; // not empty for single file
 
     std::thread watchThread;
 
@@ -55,9 +55,9 @@ private:
 
         callbackThread = std::thread([this]() {
             try {
-                while (destory == false) {
+                while (!destory) {
                     std::unique_lock lock(callbackMutex);
-                    if (callbackInfo.empty() && destory == false) {
+                    if (callbackInfo.empty() && !destory) {
                         cv.wait(lock, [this] { return !callbackInfo.empty() || destory; });
                     }
                     decltype(callbackInfo) callback_information = {};
@@ -90,7 +90,7 @@ private:
 
                 std::array<void*, 2> handles{overlapped_buffer.hEvent, closeEvent};
 
-                auto async_pending = false;
+                bool async_pending;
                 running.set_value();
                 do {
                     std::vector<std::pair<Path, FileActionType>> parsed_information;
@@ -151,7 +151,7 @@ private:
                         callbackInfo.insert(callbackInfo.end(), parsed_information.begin(), parsed_information.end());
                     }
                     cv.notify_one();
-                } while (destory == false);
+                } while (!destory);
 
                 if (async_pending) {
                     // clean up running async io

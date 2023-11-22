@@ -21,6 +21,8 @@ fs::path pluginDir = u8"plugins";
 
 namespace ll::plugin {
 
+auto ll = Plugin::create(Manifest{"LeviLamina", "LeviLamina.dll"}, memory::getCurrentModuleHandle());
+
 struct PluginManager::Impl {
     std::recursive_mutex                              mutex;
     std::vector<std::shared_ptr<Plugin>>              plugins;
@@ -31,7 +33,11 @@ struct PluginManager::Impl {
 PluginManager::PluginManager() { mImpl = std::make_unique<Impl>(); }
 
 auto PluginManager::getInstance() -> PluginManager& {
-    static PluginManager instance;
+    static PluginManager instance = []() -> PluginManager {
+        PluginManager pm{};
+        pm.registerPlugin(ll);
+        return pm;
+    }();
     return instance;
 }
 

@@ -64,13 +64,13 @@ public:
 
     LLNDAPI std::filesystem::path getConfigDir() const;
 
-    LLAPI void onLoad(Callback const& func);
+    LLAPI void onLoad(Callback func);
 
-    LLAPI void onUnload(Callback const& func);
+    LLAPI void onUnload(Callback func);
 
-    LLAPI void onEnable(Callback const& func);
+    LLAPI void onEnable(Callback func);
 
-    LLAPI void onDisable(Callback const& func);
+    LLAPI void onDisable(Callback func);
 
     bool hasSharedData(std::string_view key) const { return getSharedData().contains(key); }
 

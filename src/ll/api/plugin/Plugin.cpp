@@ -68,13 +68,13 @@ bool Plugin::onEnable() const { return !mImpl->onEnable || mImpl->onEnable(); }
 
 bool Plugin::onDisable() const { return !mImpl->onDisable || mImpl->onDisable(); }
 
-void Plugin::onLoad(Callback const& func) { mImpl->onLoad = func; }
+void Plugin::onLoad(Callback func) { mImpl->onLoad = std::move(func); }
 
-void Plugin::onUnload(Callback const& func) { mImpl->onUnload = func; }
+void Plugin::onUnload(Callback func) { mImpl->onUnload = std::move(func); }
 
-void Plugin::onEnable(Callback const& func) { mImpl->onEnable = func; }
+void Plugin::onEnable(Callback func) { mImpl->onEnable = std::move(func); }
 
-void Plugin::onDisable(Callback const& func) { mImpl->onDisable = func; }
+void Plugin::onDisable(Callback func) { mImpl->onDisable = std::move(func); }
 
 void Plugin::setState(PluginState state) const { mImpl->state = state; }
 

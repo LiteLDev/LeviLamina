@@ -92,7 +92,7 @@ LL_AUTO_STATIC_HOOK(
     }
     if (success && bufferCount > 0) {
         buffer = std::string(bufferCount, ' ');
-        vsprintf_s(buffer.data(), bufferCount, pszFormat, va);
+        vsprintf(buffer.data(), pszFormat, va);
     }
     va_end(va);
 
@@ -237,7 +237,7 @@ LL_AUTO_STATIC_HOOK(
 
     auto buffer = std::string(bufferCount, ' ');
 
-    _vsprintf_s_l(buffer.data(), bufferCount, format, locale, argList);
+    _vsprintf_l(buffer.data(), format, locale, argList);
 
     redirectStdIo(buffer, stream);
 

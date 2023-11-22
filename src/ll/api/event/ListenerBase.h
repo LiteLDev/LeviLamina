@@ -4,6 +4,7 @@
 
 #include "ll/api/base/StdInt.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/plugin/Plugin.h"
 
 namespace ll::event {
 class EventBus;
@@ -21,12 +22,19 @@ using ListenerId = uint64;
 
 class ListenerBase {
     friend EventBus;
-    ListenerId    id{};
-    EventPriority priority;
-    void          setId(ListenerId i) { id = i; }
+    ListenerId                    id{};
+    EventPriority                 priority;
+    std::weak_ptr<plugin::Plugin> pluginPtr;
+
+    void setId(ListenerId i) { id = i; }
 
 protected:
-    constexpr explicit ListenerBase(EventPriority priority) : priority(priority) {}
+    explicit ListenerBase(
+        EventPriority                        priority,
+        std::weak_ptr<plugin::Plugin> const& plugin = plugin::Plugin::current().weak_from_this()
+    )
+    : priority(priority),
+      pluginPtr(plugin) {}
 
 public:
     ListenerBase(ListenerBase&&)                 = delete;
@@ -34,13 +42,13 @@ public:
     ListenerBase& operator=(ListenerBase&&)      = delete;
     ListenerBase& operator=(ListenerBase const&) = delete;
 
-    [[nodiscard]] constexpr ListenerId    getId() const { return id; }
-    [[nodiscard]] constexpr EventPriority getPriority() const { return priority; }
+    [[nodiscard]] ListenerId    getId() const { return id; }
+    [[nodiscard]] EventPriority getPriority() const { return priority; }
 
-    [[nodiscard]] constexpr bool operator==(ListenerBase const& other) const noexcept { return id == other.id; }
-    [[nodiscard]] constexpr bool operator!=(ListenerBase const& other) const noexcept { return id != other.id; }
+    [[nodiscard]] bool operator==(ListenerBase const& other) const noexcept { return id == other.id; }
+    [[nodiscard]] bool operator!=(ListenerBase const& other) const noexcept { return id != other.id; }
 
-    [[nodiscard]] constexpr std::strong_ordering operator<=>(ListenerBase const& other) const noexcept {
+    [[nodiscard]] std::strong_ordering operator<=>(ListenerBase const& other) const noexcept {
         if (priority != other.priority) {
             return priority <=> other.priority;
         }
