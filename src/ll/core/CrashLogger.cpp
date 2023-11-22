@@ -103,16 +103,24 @@ static void dumpSystemInfo() {
                 auto fxPtr = (RtlGetVersionPtr)::GetProcAddress(hMod, "RtlGetVersion");
                 if (fxPtr != nullptr) {
                     osVersionInfoW.dwOSVersionInfoSize = sizeof(osVersionInfoW);
-                    if (0 == fxPtr(&osVersionInfoW)) { return osVersionInfoW; }
+                    if (0 == fxPtr(&osVersionInfoW)) {
+                        return osVersionInfoW;
+                    }
                 }
             }
             return osVersionInfoW;
         }();
-        if (osVersionInfoW.dwMajorVersion == 0) { return "Unknown"; }
+        if (osVersionInfoW.dwMajorVersion == 0) {
+            return "Unknown";
+        }
         std::string osVersion =
             std::to_string(osVersionInfoW.dwMajorVersion) + "." + std::to_string(osVersionInfoW.dwMinorVersion);
-        if (osVersionInfoW.dwBuildNumber != 0) { osVersion += "." + std::to_string(osVersionInfoW.dwBuildNumber); }
-        if (osVersionInfoW.szCSDVersion[0] != 0) { osVersion += " " + wstr2str(osVersionInfoW.szCSDVersion); }
+        if (osVersionInfoW.dwBuildNumber != 0) {
+            osVersion += "." + std::to_string(osVersionInfoW.dwBuildNumber);
+        }
+        if (osVersionInfoW.szCSDVersion[0] != 0) {
+            osVersion += " " + wstr2str(osVersionInfoW.szCSDVersion);
+        }
         return osVersion;
     }());
     crashInfo.logger.info("  |Is Wine: {}", win_utils::isWine());
@@ -176,7 +184,9 @@ static void dumpSystemInfo() {
 static void dumpStacktrace(_CONTEXT const& c) {
     crashInfo.logger.info("Stacktrace:");
     auto str = stacktrace_utils::toString(error_info::stacktraceFromCurrExc(c));
-    for (auto& sv : splitByPattern(str, "\n")) { crashInfo.logger.info("  |{}", sv); }
+    for (auto& sv : splitByPattern(str, "\n")) {
+        crashInfo.logger.info("  |{}", sv);
+    }
 }
 
 static BOOL CALLBACK dumpModules(
@@ -201,7 +211,9 @@ static bool genMiniDumpFile(PEXCEPTION_POINTERS e) {
 
     auto hDumpFile =
         CreateFileW(dumpFilePath.c_str(), GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
-    if (hDumpFile == INVALID_HANDLE_VALUE || hDumpFile == nullptr) { throw error_info::getWinLastError(); }
+    if (hDumpFile == INVALID_HANDLE_VALUE || hDumpFile == nullptr) {
+        throw error_info::getWinLastError();
+    }
 
     MINIDUMP_EXCEPTION_INFORMATION dumpInfo;
     ZeroMemory(&dumpInfo, sizeof(MINIDUMP_EXCEPTION_INFORMATION));
@@ -274,13 +286,17 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.logger.info("Exception:");
         {
             auto str = error_info::makeExceptionString(error_info::createExceptionPtr(*e->ExceptionRecord));
-            for (auto& sv : string_utils::splitByPattern(str, "\n")) { crashInfo.logger.info("  |{}", sv); }
+            for (auto& sv : string_utils::splitByPattern(str, "\n")) {
+                crashInfo.logger.info("  |{}", sv);
+            }
         }
         crashInfo.logger.info("");
         crashInfo.logger.info("Registers:");
         {
             auto str = stacktrace_utils::toString(*e->ContextRecord);
-            for (auto& sv : splitByPattern(str, "\n")) { crashInfo.logger.info("  |{}", sv); }
+            for (auto& sv : splitByPattern(str, "\n")) {
+                crashInfo.logger.info("  |{}", sv);
+            }
         }
         crashInfo.logger.info("");
         dumpStacktrace(*e->ContextRecord);

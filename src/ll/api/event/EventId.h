@@ -20,7 +20,9 @@ public:
     }
 
     [[nodiscard]] constexpr std::strong_ordering operator<=>(EventId const& other) const noexcept {
-        if (hash != other.hash) { return hash <=> other.hash; }
+        if (hash != other.hash) {
+            return hash <=> other.hash;
+        }
         return name <=> other.name;
     }
 };

@@ -24,7 +24,7 @@ AlignConsecutiveBitFields:
   AcrossEmptyLines: false
   AcrossComments: false
 AllowShortLambdasOnASingleLine: All
-AllowShortBlocksOnASingleLine: Always
+AllowShortBlocksOnASingleLine: Empty
 AllowShortIfStatementsOnASingleLine: AllIfsAndElse
 AllowShortLoopsOnASingleLine: true
 AlwaysBreakAfterDefinitionReturnType: None

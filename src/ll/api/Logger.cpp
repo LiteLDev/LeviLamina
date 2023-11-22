@@ -33,7 +33,9 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
                 applyTextStyle(style[2], fmt::format(fmt::runtime(consoleFormat[3]), logger->title)),
                 applyTextStyle(style[3], fmt::format(fmt::runtime(consoleFormat[4]), replaceMcToAnsiCode(s)))
             );
-            if (!ll::globalConfig.logger.colorLog) { str = removeEscapeCode(str); }
+            if (!ll::globalConfig.logger.colorLog) {
+                str = removeEscapeCode(str);
+            }
             fmt::print("{}\r\n", str);
         }
         if (logger->getFile().is_open() && checkLogLevel(logger->fileLevel, level)) {
@@ -113,8 +115,7 @@ Logger::Logger(std::string_view title)
           fmt::fg(fmt::color::light_sea_green),
           {},
           {},
-      }
-  }),
+      }}),
   warn(OutputStream{
       *this,
       "WARN",
@@ -124,8 +125,7 @@ Logger::Logger(std::string_view title)
           fmt::fg(fmt::terminal_color::bright_yellow),
           fmt::fg(fmt::terminal_color::bright_yellow),
           fmt::fg(fmt::terminal_color::bright_yellow) | fmt::emphasis::bold,
-      }
-  }),
+      }}),
   error(OutputStream{
       *this,
       "ERROR",
@@ -135,8 +135,7 @@ Logger::Logger(std::string_view title)
           fmt::fg(fmt::terminal_color::bright_red),
           fmt::fg(fmt::terminal_color::bright_red),
           fmt::fg(fmt::terminal_color::bright_red) | fmt::emphasis::bold,
-      }
-  }),
+      }}),
   fatal(OutputStream{
       *this,
       "FATAL",
@@ -146,8 +145,7 @@ Logger::Logger(std::string_view title)
           fmt::fg(fmt::color::red),
           fmt::fg(fmt::color::red),
           fmt::fg(fmt::color::red) | fmt::emphasis::bold,
-      }
-  }) {}
+      }}) {}
 
 void Logger::resetFile() {
     if (ofs) {
@@ -159,7 +157,9 @@ void Logger::resetFile() {
 
 bool Logger::setFile(std::string const& logFile, bool appendMode) {
     resetFile();
-    if (logFile.empty()) { return true; }
+    if (logFile.empty()) {
+        return true;
+    }
 
     std::error_code ec;
     std::filesystem::create_directories(file_utils::u8path(logFile).remove_filename(), ec);
@@ -169,7 +169,9 @@ bool Logger::setFile(std::string const& logFile, bool appendMode) {
 
 bool Logger::setDefaultFile(std::string const& logFile, bool appendMode) {
     if (logFile.empty()) {
-        if (defaultFile.is_open()) { defaultFile.close(); }
+        if (defaultFile.is_open()) {
+            defaultFile.close();
+        }
         return true;
     }
 

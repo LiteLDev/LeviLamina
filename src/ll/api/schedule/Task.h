@@ -106,10 +106,7 @@ private:
     bool            finished;
 
 public:
-    DelayTask(TimePoint time, std::function<void()> const& f)
-    : Task<Clock>(f, false),
-      time(time),
-      finished(false) {}
+    DelayTask(TimePoint time, std::function<void()> const& f) : Task<Clock>(f, false), time(time), finished(false) {}
 
     template <class R, class P>
     DelayTask(std::chrono::duration<R, P> duration, std::function<void()> const& f)
@@ -120,7 +117,9 @@ public:
     : DelayTask<Clock>(parseTime(timestr), f) {}
 
     TimePoint getNextTime() override {
-        if (finished) { return TimePoint::max(); }
+        if (finished) {
+            return TimePoint::max();
+        }
         finished = true;
         return time;
     }

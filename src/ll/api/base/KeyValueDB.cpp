@@ -34,8 +34,12 @@ public:
         options.reuse_logs           = true; // @warning: experimental
         options.create_if_missing    = create;
 
-        if (cacheSize) { options.block_cache = leveldb::NewLRUCache(cacheSize); }
-        if (filterBit) { options.filter_policy = leveldb::NewBloomFilterPolicy(filterBit); }
+        if (cacheSize) {
+            options.block_cache = leveldb::NewLRUCache(cacheSize);
+        }
+        if (filterBit) {
+            options.filter_policy = leveldb::NewBloomFilterPolicy(filterBit);
+        }
 
         leveldb::DB* database = nullptr;
         status                = leveldb::DB::Open(options, path, &database);
@@ -52,7 +56,9 @@ public:
     [[nodiscard]] std::optional<std::string> get(std::string_view key) const {
         std::string result;
         auto        s = db->Get(readOptions, leveldb::Slice(key.data(), key.size()), &result);
-        if (!s.ok()) { return std::nullopt; }
+        if (!s.ok()) {
+            return std::nullopt;
+        }
         return result;
     }
 
@@ -79,7 +85,9 @@ public:
         for (it->SeekToFirst(); it->Valid(); it->Next()) {
             auto k = it->key();
             auto v = it->value();
-            if (!fn({k.data(), k.size()}, {v.data(), v.size()})) { break; }
+            if (!fn({k.data(), k.size()}, {v.data(), v.size()})) {
+                break;
+            }
         }
         delete it;
     }

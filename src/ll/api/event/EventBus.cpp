@@ -81,7 +81,9 @@ public:
         if (auto i = streams.find(eventId); i != streams.end()) {
             auto& stream = i->second;
             if (stream.removeListener(listener)) {
-                if (stream.empty()) { streams.erase(i); }
+                if (stream.empty()) {
+                    streams.erase(i);
+                }
                 return true;
             }
         }
@@ -98,17 +100,25 @@ EventBus& EventBus::getInstance() {
 void EventBus::publish(Event& event, EventId const& eventId) {
     std::lock_guard lock(impl->mutex);
 
-    if (auto i = impl->streams.find(eventId); i != impl->streams.end()) { i->second.publish(event); }
+    if (auto i = impl->streams.find(eventId); i != impl->streams.end()) {
+        i->second.publish(event);
+    }
 }
 size_t EventBus::getListenerCount(EventId const& eventId) {
     std::lock_guard lock(impl->mutex);
-    if (auto i = impl->streams.find(eventId); i != impl->streams.end()) { return i->second.count(); }
+    if (auto i = impl->streams.find(eventId); i != impl->streams.end()) {
+        return i->second.count();
+    }
     return 0;
 }
 bool EventBus::addListener(ListenerPtr const& listener, EventId const& eventId, Canneller& canneller) {
-    if (!listener) { return false; }
+    if (!listener) {
+        return false;
+    }
     std::lock_guard lock(impl->mutex);
-    if (listener->getId() == 0) { listener->setId(impl->getNewListenerId()); }
+    if (listener->getId() == 0) {
+        listener->setId(impl->getNewListenerId());
+    }
     if (impl->addListener(listener, eventId)) {
         auto& info    = impl->listeners[listener->getId()];
         info.listener = listener;
@@ -119,12 +129,16 @@ bool EventBus::addListener(ListenerPtr const& listener, EventId const& eventId, 
     return false;
 }
 bool EventBus::removeListener(ListenerPtr const& listener, EventId const& eventId, Canneller& canneller) {
-    if (!listener) { return false; }
+    if (!listener) {
+        return false;
+    }
     std::lock_guard lock(impl->mutex);
     auto&           watches = impl->listeners[listener->getId()].watches;
     bool            res     = false;
     if (eventId == EmptyEventId) {
-        for (auto& eid : watches) { res |= impl->removeListener(listener, eid); }
+        for (auto& eid : watches) {
+            res |= impl->removeListener(listener, eid);
+        }
         impl->listeners.erase(listener->getId());
         canneller.listeners.erase(listener->getId());
     } else {
@@ -140,15 +154,23 @@ bool EventBus::removeListener(ListenerPtr const& listener, EventId const& eventI
     return res;
 }
 ListenerPtr EventBus::getListener(ListenerId id) const {
-    if (id == 0) { return nullptr; }
+    if (id == 0) {
+        return nullptr;
+    }
     std::lock_guard lock(impl->mutex);
-    if (!impl->listeners.contains(id)) { return nullptr; }
+    if (!impl->listeners.contains(id)) {
+        return nullptr;
+    }
     return impl->listeners[id].listener.lock();
 }
 bool EventBus::hasListener(ListenerId id, EventId const& eventId) const {
-    if (id == 0) { return false; }
+    if (id == 0) {
+        return false;
+    }
     std::lock_guard lock(impl->mutex);
-    if (!impl->listeners.contains(id)) { return false; }
+    if (!impl->listeners.contains(id)) {
+        return false;
+    }
     if (eventId == EmptyEventId) {
         return true;
     } else {

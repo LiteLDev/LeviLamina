@@ -56,8 +56,12 @@ inline bool loadConfig(T& config, std::string_view path, bool overwriteAfterFail
         } else {
             res = false;
         }
-    } catch (...) { res = false; }
-    if (!res && overwriteAfterFail) { saveConfig<T, J>(config, path); }
+    } catch (...) {
+        res = false;
+    }
+    if (!res && overwriteAfterFail) {
+        saveConfig<T, J>(config, path);
+    }
     return res;
 }
 

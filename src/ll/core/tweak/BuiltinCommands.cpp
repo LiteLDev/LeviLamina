@@ -67,7 +67,9 @@ class TeleportDimensionCommand : public Command {
         std::string names;
         for (auto& actor : actors) {
             std::string actorName = actor->getNameTag();
-            if (actorName.empty()) { actorName = actor->getTypeName(); }
+            if (actorName.empty()) {
+                actorName = actor->getTypeName();
+            }
             names.append(", ").append(actorName);
             actor->teleport(getTargetPos(ori, actor), (int)DimensionId);
             output.success();
@@ -182,12 +184,20 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
         outs.emplace("Description", plugin->getManifest().description.value_or(""));
         outs.emplace("Version", "v" + plugin->getManifest().version.value_or(Version{}).to_string());
         if (plugin->getManifest().extraInfo)
-            for (auto& [k, v] : *plugin->getManifest().extraInfo) { outs.emplace(k, v); }
+            for (auto& [k, v] : *plugin->getManifest().extraInfo) {
+                outs.emplace(k, v);
+            }
         size_t width = 10;
-        for (auto& [k, v] : outs) { width = std::max(width, k.length()); }
-        for (auto& [k, v] : outs) { oss << "- §l" << std::setw((int64)width) << std::left << k << "§r: " << v << '\n'; }
+        for (auto& [k, v] : outs) {
+            width = std::max(width, k.length());
+        }
+        for (auto& [k, v] : outs) {
+            oss << "- §l" << std::setw((int64)width) << std::left << k << "§r: " << v << '\n';
+        }
         auto text = oss.str();
-        if (text.ends_with('\n')) { text.pop_back(); }
+        if (text.ends_with('\n')) {
+            text.pop_back();
+        }
         output.success(text, {});
     } else {
         output.error("ll.cmd.pluginInfo.error.pluginNotFound"_tr, pluginName);

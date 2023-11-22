@@ -7,7 +7,9 @@
 namespace ll::memory::detail {
 size_t getVolatileOffset(void* fn) {
     for (size_t offset = 0; offset < 4096; offset++) {
-        if (*(uintptr_t*)((uintptr_t)fn + offset) == (uintptr_t)closureMagicNumber) { return offset; }
+        if (*(uintptr_t*)((uintptr_t)fn + offset) == (uintptr_t)closureMagicNumber) {
+            return offset;
+        }
     }
     throw std::runtime_error("can't parse closure asm offset");
 };

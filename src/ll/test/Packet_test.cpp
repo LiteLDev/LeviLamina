@@ -74,7 +74,9 @@ inline bool replaceString(
     if (exclude) startOffset += start.size();
     auto endOffset = end.empty() ? std::string::npos : content.find(end, startOffset);
 
-    if (endOffset != std::string::npos && !exclude) { endOffset += end.size(); }
+    if (endOffset != std::string::npos && !exclude) {
+        endOffset += end.size();
+    }
     content.replace(startOffset, endOffset - startOffset, str);
     return true;
 }
@@ -83,7 +85,9 @@ void autoGenerate() {
 
     std::string path = __FILE__;
 
-    if (!path.starts_with(LL_WORKSPACE_FOLDER)) { path = LL_WORKSPACE_FOLDER + path; }
+    if (!path.starts_with(LL_WORKSPACE_FOLDER)) {
+        path = LL_WORKSPACE_FOLDER + path;
+    }
 
     auto file = ll::utils::file_utils::readAllFile(path, false);
     if (!file) {

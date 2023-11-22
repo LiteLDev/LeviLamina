@@ -41,7 +41,9 @@ public:
     [[nodiscard]] constexpr bool operator!=(ListenerBase const& other) const noexcept { return id != other.id; }
 
     [[nodiscard]] constexpr std::strong_ordering operator<=>(ListenerBase const& other) const noexcept {
-        if (priority != other.priority) { return priority <=> other.priority; }
+        if (priority != other.priority) {
+            return priority <=> other.priority;
+        }
         return id <=> other.id;
     }
 

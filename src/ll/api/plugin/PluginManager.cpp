@@ -37,7 +37,9 @@ auto PluginManager::getInstance() -> PluginManager& {
 
 auto PluginManager::registerPlugin(std::shared_ptr<Plugin> const& plugin) -> bool {
     std::lock_guard<std::recursive_mutex> lock(mImpl->mutex);
-    if (mImpl->nameMap.contains(plugin->getManifest().name)) { return false; }
+    if (mImpl->nameMap.contains(plugin->getManifest().name)) {
+        return false;
+    }
     mImpl->plugins.push_back(plugin);
     mImpl->handleMap.insert_or_assign(plugin->getHandle(), plugin);
     mImpl->nameMap.insert_or_assign(plugin->getManifest().name, plugin);
@@ -69,7 +71,9 @@ auto PluginManager::findPlugin(Handle handle) -> std::weak_ptr<const Plugin> {
 auto PluginManager::getAllPlugins() -> std::vector<std::weak_ptr<const Plugin>> {
     std::lock_guard<std::recursive_mutex>    lock(mImpl->mutex);
     std::vector<std::weak_ptr<const Plugin>> plugins;
-    for (auto& plugin : mImpl->plugins) { plugins.push_back(plugin); }
+    for (auto& plugin : mImpl->plugins) {
+        plugins.push_back(plugin);
+    }
     return plugins;
 }
 
@@ -82,8 +86,12 @@ auto PluginManager::loadAllPlugins() -> void {
     fs::directory_iterator ent(pluginDir);
 
     for (auto& file : ent) {
-        if (!file.is_directory()) { continue; }
-        if (loadPlugin(u8sv2sv(file.path().filename().u8string()))) { pluginCount++; }
+        if (!file.is_directory()) {
+            continue;
+        }
+        if (loadPlugin(u8sv2sv(file.path().filename().u8string()))) {
+            pluginCount++;
+        }
     }
 
     ll::logger.info("ll.loader.loadMain.done"_tr, pluginCount);
@@ -91,27 +99,39 @@ auto PluginManager::loadAllPlugins() -> void {
 
 auto PluginManager::unloadAllPlugins() -> void {
     std::lock_guard<std::recursive_mutex> lock(mImpl->mutex);
-    for (auto& plugin : mImpl->plugins) { unloadPlugin(plugin); }
+    for (auto& plugin : mImpl->plugins) {
+        unloadPlugin(plugin);
+    }
 }
 
 auto PluginManager::enableAllPlugins() -> void {
     std::lock_guard<std::recursive_mutex> lock(mImpl->mutex);
-    for (auto& plugin : mImpl->plugins) { enablePlugin(plugin); }
+    for (auto& plugin : mImpl->plugins) {
+        enablePlugin(plugin);
+    }
 }
 
 auto PluginManager::disableAllPlugins() -> void {
     std::lock_guard<std::recursive_mutex> lock(mImpl->mutex);
-    for (auto& plugin : mImpl->plugins) { disablePlugin(plugin); }
+    for (auto& plugin : mImpl->plugins) {
+        disablePlugin(plugin);
+    }
 }
 
 auto PluginManager::loadPlugin(std::string_view pluginName) -> std::shared_ptr<Plugin> {
     std::lock_guard<std::recursive_mutex> lock(mImpl->mutex);
     auto                                  manifestPath = pluginDir / sv2u8sv(pluginName) / "manifest.json";
-    if (!fs::exists(manifestPath)) { return {}; }
+    if (!fs::exists(manifestPath)) {
+        return {};
+    }
     auto content = file_utils::readFile(manifestPath);
-    if (!content) { return {}; }
+    if (!content) {
+        return {};
+    }
     auto json = nlohmann::json::parse(content.value(), nullptr, false, true);
-    if (json.is_discarded()) { return {}; }
+    if (json.is_discarded()) {
+        return {};
+    }
 
     Manifest manifest;
     try {
@@ -157,7 +177,9 @@ auto PluginManager::loadPlugin(std::string_view pluginName) -> std::shared_ptr<P
 auto PluginManager::unloadPlugin(const std::weak_ptr<const Plugin>& plugin) -> bool {
     std::lock_guard<std::recursive_mutex> lock(mImpl->mutex);
     if (auto ptr = plugin.lock()) {
-        if (ptr->getState() != PluginState::Disabled) { disablePlugin(plugin); }
+        if (ptr->getState() != PluginState::Disabled) {
+            disablePlugin(plugin);
+        }
         if (!ptr->onUnload()) {
             ll::logger.error("Fail to unload plugin <{}>!", ptr->getManifest().name);
             return false;
@@ -178,7 +200,9 @@ auto PluginManager::unloadPlugin(const std::weak_ptr<const Plugin>& plugin) -> b
 auto PluginManager::enablePlugin(const std::weak_ptr<const Plugin>& plugin) -> bool {
     std::lock_guard<std::recursive_mutex> lock(mImpl->mutex);
     if (auto ptr = plugin.lock()) {
-        if (ptr->getState() == PluginState::Enabled) { return true; }
+        if (ptr->getState() == PluginState::Enabled) {
+            return true;
+        }
         if (!ptr->onEnable()) {
             ll::logger.error("Fail to enable plugin <{}>!", ptr->getManifest().name);
             return false;
@@ -192,7 +216,9 @@ auto PluginManager::enablePlugin(const std::weak_ptr<const Plugin>& plugin) -> b
 auto PluginManager::disablePlugin(const std::weak_ptr<const Plugin>& plugin) -> bool {
     std::lock_guard<std::recursive_mutex> lock(mImpl->mutex);
     if (auto ptr = plugin.lock()) {
-        if (ptr->getState() == PluginState::Disabled) { return true; }
+        if (ptr->getState() == PluginState::Disabled) {
+            return true;
+        }
         if (!ptr->onDisable()) {
             ll::logger.error("Fail to disable plugin <{}>!", ptr->getManifest().name);
             return false;

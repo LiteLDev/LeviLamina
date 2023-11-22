@@ -65,22 +65,34 @@ consteval std::string_view typeRawName() noexcept {
 }
 
 constexpr std::string_view removeTypePrefix(std::string_view s) noexcept {
-    if (s.starts_with("enum ")) { s.remove_prefix(sizeof("enum ") - 1); }
-    if (s.starts_with("class ")) { s.remove_prefix(sizeof("class ") - 1); }
-    if (s.starts_with("union ")) { s.remove_prefix(sizeof("union ") - 1); }
-    if (s.starts_with("struct ")) { s.remove_prefix(sizeof("struct ") - 1); }
+    if (s.starts_with("enum ")) {
+        s.remove_prefix(sizeof("enum ") - 1);
+    }
+    if (s.starts_with("class ")) {
+        s.remove_prefix(sizeof("class ") - 1);
+    }
+    if (s.starts_with("union ")) {
+        s.remove_prefix(sizeof("union ") - 1);
+    }
+    if (s.starts_with("struct ")) {
+        s.remove_prefix(sizeof("struct ") - 1);
+    }
     return s;
 }
 
 constexpr std::string_view removeTypeSuffix(std::string_view s) noexcept {
     auto k = s.find('<');
-    if (k != std::string_view::npos) { return s.substr(0, k); }
+    if (k != std::string_view::npos) {
+        return s.substr(0, k);
+    }
     return s;
 }
 
 constexpr std::string_view removeTypeNamespace(std::string_view s) noexcept {
     auto k = s.rfind("::", s.find('<'));
-    if (k != std::string_view::npos) { return s.substr(k + 2); }
+    if (k != std::string_view::npos) {
+        return s.substr(k + 2);
+    }
     return s;
 }
 

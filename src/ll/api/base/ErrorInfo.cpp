@@ -31,8 +31,12 @@ struct u8system_category : public std::_System_error_category {
         const std::_System_error_message msg(static_cast<ulong>(errCode));
         if (msg._Length) {
             std::string res{string_utils::str2str({msg._Str, msg._Length})};
-            if (res.ends_with('\n')) { res.pop_back(); }
-            if (res.ends_with('\r')) { res.pop_back(); }
+            if (res.ends_with('\n')) {
+                res.pop_back();
+            }
+            if (res.ends_with('\r')) {
+                res.pop_back();
+            }
             return string_utils::replaceAll(res, "\r\n", ", ");
         }
         return "unknown error";
@@ -70,8 +74,12 @@ struct ntstatus_category : public std::error_category {
         if (size) {
             std::string res{string_utils::wstr2str({msg, size})};
             LocalFree(msg);
-            if (res.ends_with('\n')) { res.pop_back(); }
-            if (res.ends_with('\r')) { res.pop_back(); }
+            if (res.ends_with('\n')) {
+                res.pop_back();
+            }
+            if (res.ends_with('\r')) {
+                res.pop_back();
+            }
             return string_utils::replaceAll(res, "\r\n", ", ");
         }
         return "unknown error";
@@ -162,13 +170,17 @@ static std::exception_ptr getNested(T const& e) {
 
     if constexpr (can_use_dynamic_cast) {
         const auto n = dynamic_cast<std::nested_exception const*>(std::addressof(e));
-        if (n) { return n->nested_ptr(); }
+        if (n) {
+            return n->nested_ptr();
+        }
     }
     return nullptr;
 }
 
 std::string makeExceptionString(std::exception_ptr ePtr) {
-    if (!ePtr) { throw std::bad_exception(); }
+    if (!ePtr) {
+        throw std::bad_exception();
+    }
 
     std::string res;
 
@@ -191,7 +203,7 @@ nextNest:
             }
             auto expTypeName = exc.getNumCatchableTypes() > 0 ? exc.getTypeInfo(0)->name() : "unknown exception";
             if (expTypeName == typeid(seh_exception).name()) {
-                res += fmt::format("Translated Seh Exception, from <{}>:\n", handleName);
+                res += fmt::format("Seh Exception, from <{}>:\n", handleName);
             } else {
                 res += fmt::format(
                     "C++ Exception: {}, from <{}>:\n",
@@ -218,7 +230,9 @@ nextNest:
     } catch (const std::exception& e) {
         res  += string_utils::tou8str(e.what());
         ePtr  = getNested(e);
-    } catch (const std::string& e) { res += string_utils::tou8str(e); } catch (char const* e) {
+    } catch (const std::string& e) {
+        res += string_utils::tou8str(e);
+    } catch (char const* e) {
         res += string_utils::tou8str(e);
     } catch (...) {
         auto unkExc  = current_exception();
@@ -245,7 +259,9 @@ void printCurrentException(optional_ref<ll::Logger> l, std::exception_ptr const&
     auto& rlogger = l.value_or(logger);
     try {
         auto res = makeExceptionString(e);
-        for (auto& sv : string_utils::splitByPattern(res, "\n")) { rlogger.error(sv); }
+        for (auto& sv : string_utils::splitByPattern(res, "\n")) {
+            rlogger.error(sv);
+        }
         return;
     } catch (...) {}
     rlogger.error("unknown error");

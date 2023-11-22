@@ -81,13 +81,17 @@ public:
 
     template <class T>
     optional_ref<std::add_const_t<T>> getSharedData(std::string_view key) const {
-        if (getSharedData().contains(key)) { return std::any_cast<T>(&getSharedData().find(key)->second); }
+        if (getSharedData().contains(key)) {
+            return std::any_cast<T>(&getSharedData().find(key)->second);
+        }
         return std::nullopt;
     }
 
     template <class T>
     optional_ref<T> getSharedData(std::string_view key) {
-        if (getSharedData().contains(key)) { return std::any_cast<T>(&getSharedData().find(key)->second); }
+        if (getSharedData().contains(key)) {
+            return std::any_cast<T>(&getSharedData().find(key)->second);
+        }
         return std::nullopt;
     }
 
@@ -99,7 +103,9 @@ public:
 
     [[maybe_unused]] void removeSharedData(std::string_view key) {
         auto it = getSharedData().find(key);
-        if (it != getSharedData().end()) { getSharedData().erase(it); }
+        if (it != getSharedData().end()) {
+            getSharedData().erase(it);
+        }
     }
 
     // throw exception if not found

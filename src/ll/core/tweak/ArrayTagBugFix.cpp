@@ -13,7 +13,9 @@ LL_TYPED_INSTANCE_HOOK(
     bool,
     Tag const& other
 ) {
-    if (getId() != other.getId() || data.mSize != ((ByteArrayTag&)other).data.mSize) { return false; }
+    if (getId() != other.getId() || data.mSize != ((ByteArrayTag&)other).data.mSize) {
+        return false;
+    }
     return memcmp(data.mBuffer.get(), ((ByteArrayTag&)other).data.mBuffer.get(), data.mSize) == 0;
 }
 LL_TYPED_INSTANCE_HOOK(
@@ -25,7 +27,9 @@ LL_TYPED_INSTANCE_HOOK(
     bool,
     Tag const& other
 ) {
-    if (getId() != other.getId() || data.mSize != ((IntArrayTag&)other).data.mSize) { return false; }
+    if (getId() != other.getId() || data.mSize != ((IntArrayTag&)other).data.mSize) {
+        return false;
+    }
     return memcmp(data.mBuffer.get(), ((IntArrayTag&)other).data.mBuffer.get(), data.mSize * sizeof(int)) == 0;
 }
 void enableArrayTagBugFix() {

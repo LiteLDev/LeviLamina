@@ -48,7 +48,9 @@ public:
         }
         uint id   = handler::addFormHandler(std::make_unique<handler::ModalFormHandler>(std::move(callback)));
         auto json = serialize();
-        if (json.is_null()) { return false; }
+        if (json.is_null()) {
+            return false;
+        }
         ModalFormRequestPacket(id, json.dump()).sendTo(player);
         return true;
     }

@@ -58,7 +58,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
                     // ukj["Item"] = item.getFullItemName();
                     // ukj["Data"] = data;
                     std::string iname = item.getFullItemName();
-                    if (data != 32767) { iname += ":" + std::to_string(data); }
+                    if (data != 32767) {
+                        iname += ":" + std::to_string(data);
+                    }
                     rijson["BaseMap"].push_back(iname);
                     return false;
                 });
@@ -117,14 +119,18 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     for (auto& recipe : json["crafting_table"].items()) {
         for (auto& i : recipe.value()["RecipeIngredient"]) {
-            if (i["StackSize"] < 1) { continue; }
+            if (i["StackSize"] < 1) {
+                continue;
+            }
             std::string key;
             if (i.contains("BaseMap")) {
                 for (auto& name : i["BaseMap"]) {
                     auto& table = multitable[name];
                     for (auto item : recipe.value()["ResultItem"]) {
                         item.erase("Count");
-                        if (!table.contains(item)) { table.push_back(item); }
+                        if (!table.contains(item)) {
+                            table.push_back(item);
+                        }
                     }
                 }
             }
@@ -132,7 +138,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
             auto& table = multitable[key];
             for (auto item : recipe.value()["ResultItem"]) {
                 item.erase("Count");
-                if (!table.contains(item)) { table.push_back(item); }
+                if (!table.contains(item)) {
+                    table.push_back(item);
+                }
             }
         }
     }

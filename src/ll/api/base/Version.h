@@ -27,7 +27,9 @@ constexpr std::uint16_t to_digit(char c) noexcept { return static_cast<std::uint
 constexpr char const* from_chars(char const* first, char const* last, std::uint16_t& d) noexcept {
     if (first != last && is_digit(*first)) {
         std::int32_t t = 0;
-        for (; first != last && is_digit(*first); ++first) { t = t * 10 + to_digit(*first); }
+        for (; first != last && is_digit(*first); ++first) {
+            t = t * 10 + to_digit(*first);
+        }
         if (t <= (std::numeric_limits<std::uint16_t>::max)()) {
             d = static_cast<std::uint16_t>(t);
             return first;
@@ -39,7 +41,9 @@ constexpr char const* from_chars(char const* first, char const* last, std::uint1
 constexpr char const* from_chars(char const* first, char const* last, std::optional<std::uint16_t>& d) noexcept {
     if (first != last && is_digit(*first)) {
         std::int32_t t = 0;
-        for (; first != last && is_digit(*first); ++first) { t = t * 10 + to_digit(*first); }
+        for (; first != last && is_digit(*first); ++first) {
+            t = t * 10 + to_digit(*first);
+        }
         if (t <= (std::numeric_limits<std::uint16_t>::max)()) {
             d = static_cast<std::uint16_t>(t);
             return first;
@@ -96,7 +100,9 @@ struct PreRelease {
 
     constexpr detail::from_chars_result from_chars(char const* first, char const* last) noexcept {
         auto begin = first;
-        while (first != last && !detail::is_plus(*first)) { first++; }
+        while (first != last && !detail::is_plus(*first)) {
+            first++;
+        }
         std::string                   s{begin, first};
         std::vector<std::string_view> tokens;
         tokens = ll::utils::string_utils::splitByPattern(s, ".");
@@ -116,7 +122,9 @@ struct PreRelease {
     }
 
     constexpr PreRelease& from_string(std::string_view str) {
-        if (!from_string_noexcept(str)) { throw VersionParseError("Invalid version string."); }
+        if (!from_string_noexcept(str)) {
+            throw VersionParseError("Invalid version string.");
+        }
         return *this;
     }
 
@@ -130,7 +138,9 @@ struct PreRelease {
             }
             str += '.';
         }
-        if (str.ends_with('.')) { str.pop_back(); }
+        if (str.ends_with('.')) {
+            str.pop_back();
+        }
         return str;
     }
 };
@@ -181,8 +191,12 @@ struct Version {
         auto next = first;
         if (next = detail::from_chars(next, last, major); detail::check_delimiter(next, last, '.')) {
             if (next = detail::from_chars(++next, last, minor); detail::check_delimiter(next, last, '.')) {
-                if (next = detail::from_chars(++next, last, patch); next == last) { return {next, std::errc{}}; }
-                if (!next) { return {nullptr, std::errc::invalid_argument}; }
+                if (next = detail::from_chars(++next, last, patch); next == last) {
+                    return {next, std::errc{}};
+                }
+                if (!next) {
+                    return {nullptr, std::errc::invalid_argument};
+                }
                 if (detail::check_delimiter(next, last, '-')) {
                     PreRelease pre;
                     auto       result = pre.from_chars(++next, last);
@@ -190,11 +204,15 @@ struct Version {
                     if (pre.values.empty()) return {next, std::errc::invalid_argument};
                     preRelease = pre;
                     next       = result.ptr;
-                    if (result && next == last) { return {next, std::errc{}}; }
+                    if (result && next == last) {
+                        return {next, std::errc{}};
+                    }
                 }
                 if (detail::check_delimiter(next, last, '+')) {
                     build = {++next, static_cast<size_t>(last - next)};
-                    if (build->empty()) { return {nullptr, std::errc::invalid_argument}; }
+                    if (build->empty()) {
+                        return {nullptr, std::errc::invalid_argument};
+                    }
                     next = last;
                     if (std::any_of(build->begin(), build->end(), [](char c) {
                             return !detail::is_digit(c) && !detail::is_letter(c);
@@ -202,7 +220,9 @@ struct Version {
                         return {nullptr, std::errc::invalid_argument};
                     }
                 }
-                if (next == last) { return {next, std::errc{}}; }
+                if (next == last) {
+                    return {next, std::errc{}};
+                }
             }
         }
         return {first, std::errc::invalid_argument};
@@ -213,7 +233,9 @@ struct Version {
     }
 
     constexpr Version& from_string(std::string_view str) {
-        if (!from_string_noexcept(str)) { throw VersionParseError("Invalid version string."); }
+        if (!from_string_noexcept(str)) {
+            throw VersionParseError("Invalid version string.");
+        }
         return *this;
     }
 
@@ -232,11 +254,19 @@ struct Version {
     }
 
     [[nodiscard]] constexpr std::strong_ordering operator<=>(Version const& other) const noexcept {
-        if (major != other.major) { return major <=> other.major; }
-        if (minor != other.minor) { return minor <=> other.minor; }
-        if (patch != other.patch) { return patch <=> other.patch; }
+        if (major != other.major) {
+            return major <=> other.major;
+        }
+        if (minor != other.minor) {
+            return minor <=> other.minor;
+        }
+        if (patch != other.patch) {
+            return patch <=> other.patch;
+        }
         if (preRelease.has_value()) {
-            if (other.preRelease.has_value()) { return preRelease.value() <=> other.preRelease.value(); }
+            if (other.preRelease.has_value()) {
+                return preRelease.value() <=> other.preRelease.value();
+            }
             return std::strong_ordering::less;
         } else if (other.preRelease.has_value()) {
             return std::strong_ordering::greater;
@@ -259,7 +289,9 @@ inline J serialize(Version const& ver) {
 }
 template <class J>
 inline void deserialize(Version& ver, J const& j) {
-    if (j.is_string()) { ver.from_string(j.template get<std::string>()); }
+    if (j.is_string()) {
+        ver.from_string(j.template get<std::string>());
+    }
 }
 
 namespace literals {

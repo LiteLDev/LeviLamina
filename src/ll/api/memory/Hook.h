@@ -25,9 +25,13 @@
                     );                                                                                                 \
                 }                                                                                                      \
                 fmt::print("\x1b[96m v resolve [" #IDENTIFIER "] to:\x1b[0m\r\n");                                     \
-                for (auto& str : symbols) { fmt::print(" {} {}\r\n", (&str == &symbols.back()) ? '-' : '|', str); }    \
+                for (auto& str : symbols) {                                                                            \
+                    fmt::print(" {} {}\r\n", (&str == &symbols.back()) ? '-' : '|', str);                              \
+                }                                                                                                      \
             }                                                                                                          \
-        } catch (...) { fmt::print("\x1b[91m!!! Exception in resolve: [" #IDENTIFIER "]\x1b[0m\r\n"); }                  \
+        } catch (...) {                                                                                                \
+            fmt::print("\x1b[91m!!! Exception in resolve: [" #IDENTIFIER "]\x1b[0m\r\n");                              \
+        }                                                                                                              \
         return 0;                                                                                                      \
     };                                                                                                                 \
     static inline int debugging = debugger()
@@ -138,7 +142,9 @@ struct HookAutoRegister {
                                                                                                                        \
         static int hook() {                                                                                            \
             target = ll::memory::resolveIdentifier<OriginFuncType>(IDENTIFIER);                                        \
-            if (target == nullptr) { return -1; }                                                                      \
+            if (target == nullptr) {                                                                                   \
+                return -1;                                                                                             \
+            }                                                                                                          \
             return ll::memory::hook(                                                                                   \
                 target,                                                                                                \
                 ll::memory::toFuncPtr(&DEF_TYPE::detour),                                                              \

@@ -23,7 +23,9 @@ private:
         Canneller() = default;
         ~Canneller() {
             auto list = listeners;
-            for (auto id : list) { EventBus::getInstance().removeListener(id); }
+            for (auto id : list) {
+                EventBus::getInstance().removeListener(id);
+            }
         }
 
     public:
@@ -82,7 +84,9 @@ public:
     template <std::derived_from<Event> T, std::derived_from<ListenerBase> L = Listener<T>, class... Args>
     inline auto emplaceListener(Args&&... args) {
         auto res = L::create(std::forward<Args>(args)...);
-        if (addListener<T>(res)) { T::tryRegisterHook(); }
+        if (addListener<T>(res)) {
+            T::tryRegisterHook();
+        }
         return res;
     }
 
@@ -103,12 +107,16 @@ public:
     LLNDAPI ListenerPtr getListener(ListenerId id) const;
 
     bool removeListener(ListenerId id) {
-        if (auto listener = getListener(id); listener) { return removeListener(listener, EmptyEventId); }
+        if (auto listener = getListener(id); listener) {
+            return removeListener(listener, EmptyEventId);
+        }
         return false;
     }
     template <std::derived_from<Event> T>
     bool removeListener(ListenerId id) {
-        if (auto listener = getListener(id); listener) { return removeListener(listener, getEventId<T>); }
+        if (auto listener = getListener(id); listener) {
+            return removeListener(listener, getEventId<T>);
+        }
         return false;
     }
     [[nodiscard]] bool hasListener(ListenerId id) const { return hasListener(id, EmptyEventId); }

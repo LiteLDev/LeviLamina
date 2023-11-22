@@ -91,7 +91,9 @@ void setupTestParamCommand() {
            CommandOrigin const&,
            CommandOutput&                                           output,
            std::unordered_map<std::string, DynamicCommand::Result>& results) {
-            for (auto& [name, result] : results) { output.success(result.toDebugString()); }
+            for (auto& [name, result] : results) {
+                output.success(result.toDebugString());
+            }
         },
         CommandPermissionLevel::Any
     );
@@ -249,14 +251,20 @@ void onEnumExecute(
         if (std::find(softEnumNames.begin(), softEnumNames.end(), enumName) != softEnumNames.end()) {
             found = true;
             output.success("§eSoft Enum §l{}§r§e Values:"_tr, enumName);
-            for (auto& val : ll::Global<CommandRegistry>->getSoftEnumValues(enumName)) { output.success(val); }
+            for (auto& val : ll::Global<CommandRegistry>->getSoftEnumValues(enumName)) {
+                output.success(val);
+            }
         }
         if (!found) output.error(R"(Enum or Soft Enum "{}" not found)", enumName);
     } else {
         output.success("§eEnum Names:");
-        for (auto& val : ll::Global<CommandRegistry>->getEnumNames()) { output.success(val); }
+        for (auto& val : ll::Global<CommandRegistry>->getEnumNames()) {
+            output.success(val);
+        }
         output.success("§eSoft Enum Names:");
-        for (auto& val : ll::Global<CommandRegistry>->getSoftEnumNames()) { output.success(val); }
+        for (auto& val : ll::Global<CommandRegistry>->getSoftEnumNames()) {
+            output.success(val);
+        }
     }
 }
 

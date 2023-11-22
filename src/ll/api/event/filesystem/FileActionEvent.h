@@ -40,8 +40,7 @@ template <FixedString WatchedPath>
 class FileActionEvent : public DynamicFileActionEvent {
     static constexpr auto CustomIdOwn{
         FixedString<ll::reflection::type_name_v<FileActionEvent>.size()>{ll::reflection::type_name_v<FileActionEvent>}
-        + FixedString{"|"} + WatchedPath
-    };
+        + FixedString{"|"} + WatchedPath};
 
 public:
     static constexpr EventId CustomEventId{CustomIdOwn};

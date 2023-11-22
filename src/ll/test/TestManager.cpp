@@ -15,7 +15,9 @@ void TestManager::initAllTests() {
             failed++;
             fmt::print("Test {0} init failed: {1}\n", test->getName(), result.message);
         }
-        if (status == TestStatus::NotStarted) { status = result.isPassed ? TestStatus::Running : TestStatus::Failed; }
+        if (status == TestStatus::NotStarted) {
+            status = result.isPassed ? TestStatus::Running : TestStatus::Failed;
+        }
     }
     fmt::print(
         "Initialized {0} tests, success {1}, failed {2}\n",

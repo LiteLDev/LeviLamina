@@ -15,13 +15,17 @@
 namespace ll::utils::stacktrace_utils {
 
 SymbolLoader::SymbolLoader() : handle(GetCurrentProcess()) {
-    if (!SymInitializeW(handle, nullptr, true)) { throw error_info::getWinLastError(); }
+    if (!SymInitializeW(handle, nullptr, true)) {
+        throw error_info::getWinLastError();
+    }
     DWORD options  = SymGetOptions();
     options       |= SYMOPT_LOAD_LINES | SYMOPT_EXACT_SYMBOLS;
     SymSetOptions(options);
 }
 SymbolLoader::SymbolLoader(std::string const& path) : handle(GetCurrentProcess()) {
-    if (!SymInitializeW(handle, string_utils::str2wstr(path).c_str(), true)) { throw error_info::getWinLastError(); }
+    if (!SymInitializeW(handle, string_utils::str2wstr(path).c_str(), true)) {
+        throw error_info::getWinLastError();
+    }
     DWORD options  = SymGetOptions();
     options       |= SYMOPT_LOAD_LINES | SYMOPT_EXACT_SYMBOLS;
     SymSetOptions(options);
@@ -74,8 +78,12 @@ std::string toString(std::stacktrace_entry const& entry) {
 std::string toString(std::stacktrace const& t) {
     std::string res;
     auto        maxsize = std::to_string(t.size() - 1).size();
-    for (size_t i = 0; i < t.size(); i++) { res += fmt::format("{1:>{0}}> {2}\n", maxsize, i, toString(t[i])); }
-    if (res.ends_with('\n')) { res.pop_back(); }
+    for (size_t i = 0; i < t.size(); i++) {
+        res += fmt::format("{1:>{0}}> {2}\n", maxsize, i, toString(t[i]));
+    }
+    if (res.ends_with('\n')) {
+        res.pop_back();
+    }
     return res;
 }
 std::string toString(_CONTEXT const& c) {

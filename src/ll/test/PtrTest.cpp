@@ -15,7 +15,9 @@
 
 auto test() {
     auto exists = BlockTypeRegistry::lookupByName("minecraft:stone");
-    if (exists) { std::cout << exists->getTypeName() << std::endl; }
+    if (exists) {
+        std::cout << exists->getTypeName() << std::endl;
+    }
     return exists;
 }
 
@@ -60,13 +62,17 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     try {
         char* pp = (char*)(0x123);
         *pp      = 'a';
-    } catch (...) { ll::error_info::printCurrentException(); }
+    } catch (...) {
+        ll::error_info::printCurrentException();
+    }
 
     try {
         int a = 0;
         int b = 2 / a;
         std::cout << "b = " << b << std::endl;
-    } catch (...) { ll::error_info::printCurrentException(); }
+    } catch (...) {
+        ll::error_info::printCurrentException();
+    }
 #if _HAS_CXX23
     // static ll::utils::stacktrace_utils::SymbolLoader sl{};
 #endif

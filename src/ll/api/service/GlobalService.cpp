@@ -186,7 +186,12 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     ll::Global<ResourcePackRepository>.init(this);
     origin();
 }
-LL_AUTO_INSTANCE_HOOK(ResourcePackRepositoryDestructor, HookPriority::High, "??1ResourcePackRepository@@QEAA@XZ", void) {
+LL_AUTO_INSTANCE_HOOK(
+    ResourcePackRepositoryDestructor,
+    HookPriority::High,
+    "??1ResourcePackRepository@@QEAA@XZ",
+    void
+) {
     ll::Global<ResourcePackRepository>.init(nullptr);
     origin();
 }

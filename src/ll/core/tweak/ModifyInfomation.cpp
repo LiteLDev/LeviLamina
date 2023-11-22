@@ -87,10 +87,12 @@ LL_AUTO_STATIC_HOOK(
     va_list     va;
     va_start(va, pszFormat);
     auto bufferCount = _vscprintf(pszFormat, va);
-    if (bufferCount >= 0) { success = true; }
+    if (bufferCount >= 0) {
+        success = true;
+    }
     if (success && bufferCount > 0) {
         buffer = std::string(bufferCount, ' ');
-        vsprintf(buffer.data(), pszFormat, va);
+        vsprintf_s(buffer.data(), bufferCount, pszFormat, va);
     }
     va_end(va);
 
@@ -107,11 +109,15 @@ LL_AUTO_STATIC_HOOK(
     auto& logger = knownPriority ? loggerMap.at(priority) : serverLogger.warn;
 
     while (std::getline(iss, line)) {
-        if (line.ends_with('\n')) { line.pop_back(); }
+        if (line.ends_with('\n')) {
+            line.pop_back();
+        }
 
         if (!serverStarted) tryModifyServerStartInfo(line);
 
-        if (!knownPriority) { line = fmt::format("<LVL|{}> {}", priority, line); }
+        if (!knownPriority) {
+            line = fmt::format("<LVL|{}> {}", priority, line);
+        }
         logger(line);
     }
 }
@@ -141,24 +147,36 @@ LL_AUTO_STATIC_HOOK(CppOutputRedirectHook, HookPriority::Highest, "main", int, i
 
     ll::Logger               coutlogger("std::cout");
     ll::io::ofuncstream      coutfs{[&](std::string_view s) {
-        if (s.ends_with('\n')) { s.remove_suffix(1); }
-        if (s.empty()) { return; }
+        if (s.ends_with('\n')) {
+            s.remove_suffix(1);
+        }
+        if (s.empty()) {
+            return;
+        }
         coutlogger.warn(s);
     }};
     ll::io::StreamRedirector coutsr(std::cout, coutfs.rdbuf());
 
     ll::Logger               cloglogger("std::clog");
     ll::io::ofuncstream      clogfs{[&](std::string_view s) {
-        if (s.ends_with('\n')) { s.remove_suffix(1); }
-        if (s.empty()) { return; }
+        if (s.ends_with('\n')) {
+            s.remove_suffix(1);
+        }
+        if (s.empty()) {
+            return;
+        }
         cloglogger.error(s);
     }};
     ll::io::StreamRedirector clogsr(std::clog, clogfs.rdbuf());
 
     ll::Logger               cerrlogger("std::cerr");
     ll::io::ofuncstream      cerrfs{[&](std::string_view s) {
-        if (s.ends_with('\n')) { s.remove_suffix(1); }
-        if (s.empty()) { return; }
+        if (s.ends_with('\n')) {
+            s.remove_suffix(1);
+        }
+        if (s.empty()) {
+            return;
+        }
         cerrlogger.fatal(s);
     }};
     ll::io::StreamRedirector cerrsr(std::cerr, cerrfs.rdbuf());
@@ -178,8 +196,12 @@ enum class PrintFileType {
 };
 
 void redirectStdIo(std::string_view str, FILE* stream) {
-    if (str.ends_with('\n')) { str.remove_suffix(1); }
-    if (str.empty()) { return; }
+    if (str.ends_with('\n')) {
+        str.remove_suffix(1);
+    }
+    if (str.empty()) {
+        return;
+    }
     if (stream == stdout) {
         stdoutlogger.warn(str);
     } else {
@@ -209,11 +231,13 @@ LL_AUTO_STATIC_HOOK(
     }
     auto bufferCount = _vscprintf_l(format, locale, argList);
 
-    if (bufferCount <= 0) { return 0; }
+    if (bufferCount <= 0) {
+        return 0;
+    }
 
     auto buffer = std::string(bufferCount, ' ');
 
-    _vsprintf_l(buffer.data(), format, locale, argList);
+    _vsprintf_s_l(buffer.data(), bufferCount, format, locale, argList);
 
     redirectStdIo(buffer, stream);
 
@@ -231,7 +255,9 @@ LL_AUTO_STATIC_HOOK(
     _locale_t   locale,
     va_list     argList
 ) {
-    if (stream != stdout && stream != stderr) { return origin(options, stream, format, locale, argList); }
+    if (stream != stdout && stream != stderr) {
+        return origin(options, stream, format, locale, argList);
+    }
     return __stdio_common_vfprintf_s(options, stream, format, locale, argList);
 }
 
@@ -246,9 +272,13 @@ LL_AUTO_STATIC_HOOK(
     _locale_t   locale,
     va_list     argList
 ) {
-    if (stream != stdout && stream != stderr) { return origin(options, stream, format, locale, argList); }
+    if (stream != stdout && stream != stderr) {
+        return origin(options, stream, format, locale, argList);
+    }
     auto bufferCount = _vscprintf_p_l(format, locale, argList);
-    if (bufferCount <= 0) { return 0; }
+    if (bufferCount <= 0) {
+        return 0;
+    }
     auto buffer = std::string(bufferCount, ' ');
     _vsprintf_p_l(buffer.data(), bufferCount, format, locale, argList);
     redirectStdIo(buffer, stream);
@@ -261,7 +291,9 @@ LL_AUTO_STATIC_HOOK(StdioPutsRedirectHook, HookPriority::Highest, puts, int, cha
 }
 
 LL_AUTO_STATIC_HOOK(StdioFPutsRedirectHook, HookPriority::Highest, fputs, int, char const* str, FILE* stream) {
-    if (stream != stdout && stream != stderr) { return origin(str, stream); }
+    if (stream != stdout && stream != stderr) {
+        return origin(str, stream);
+    }
     redirectStdIo(str, stream);
     return 0;
 }
@@ -277,9 +309,13 @@ LL_AUTO_STATIC_HOOK(
     FILE*       stream
 ) {
     try {
-        if (stream != stdout && stream != stderr) { return origin(buffer, elementSize, elementCount, stream); }
+        if (stream != stdout && stream != stderr) {
+            return origin(buffer, elementSize, elementCount, stream);
+        }
         auto sbuffer = std::string((char const*)buffer, elementCount * elementSize);
         redirectStdIo(sbuffer, stream);
         return elementCount;
-    } catch (...) { return 0; }
+    } catch (...) {
+        return 0;
+    }
 }

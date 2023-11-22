@@ -412,7 +412,9 @@ DynamicCommandInstance* DynamicCommand::preSetup(std::unique_ptr<class DynamicCo
 
     // Check if there is another command with the same name
     auto signature = ll::Global<CommandRegistry>->findCommand(name);
-    if (signature) { throw std::runtime_error("There is already a command named " + signature->name); }
+    if (signature) {
+        throw std::runtime_error("There is already a command named " + signature->name);
+    }
 
     try {
         if (!commandInstance) throw std::runtime_error("Command instance is null");
@@ -456,7 +458,9 @@ DynamicCommandInstance* DynamicCommand::preSetup(std::unique_ptr<class DynamicCo
                         namePtr->swap(fixedName);
                         fixedView = *namePtr;
                         for (auto& data : commandInstance->parameterDatas) {
-                            if (data.description == fixedName) { data.description = *namePtr; }
+                            if (data.description == fixedName) {
+                                data.description = *namePtr;
+                            }
                         }
                         break;
                     }
@@ -499,7 +503,9 @@ DynamicCommandInstance* DynamicCommand::preSetup(std::unique_ptr<class DynamicCo
         // commandInstance->overloads.clear();
         auto res = dynamicCommandInstances.emplace(commandInstance->name_, std::move(commandInstance));
         return res.first->second.get();
-    } catch (...) { OutputError(name); }
+    } catch (...) {
+        OutputError(name);
+    }
     return nullptr;
 }
 
@@ -528,15 +534,23 @@ DynamicCommand::~DynamicCommand() {
 
 void DynamicCommand::execute(CommandOrigin const& origin, CommandOutput& output) const {
     auto iter = dynamicCommandInstances.find(getCommandName());
-    if (iter == dynamicCommandInstances.end()) { return output.error("Dynamic Command Not Found"); }
+    if (iter == dynamicCommandInstances.end()) {
+        return output.error("Dynamic Command Not Found");
+    }
     auto& commandIns = *iter->second;
-    if (!commandIns.callback_) { return output.error(fmt::format("Command {} has been removed.", getCommandName())); }
+    if (!commandIns.callback_) {
+        return output.error(fmt::format("Command {} has been removed.", getCommandName()));
+    }
     try {
         std::unordered_map<std::string, Result> results;
 
-        for (auto& [name, param] : commandIns.parameterPtrs) { results.emplace(name, param.getResult(this, &origin)); }
+        for (auto& [name, param] : commandIns.parameterPtrs) {
+            results.emplace(name, param.getResult(this, &origin));
+        }
         commandIns.callback_(*this, origin, output, results);
-    } catch (...) { OutputError(getCommandName()); }
+    } catch (...) {
+        OutputError(getCommandName());
+    }
 }
 
 std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
@@ -571,10 +585,16 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
 ) {
     auto command = createCommand(name, description, permission, flag1, flag2);
     if (!command) return std::unique_ptr<class DynamicCommandInstance>();
-    for (auto& [desc, values] : enums) { command->setEnum(desc, std::move(values)); }
-    for (auto& param : params) { command->newParameter(std::move(param)); }
+    for (auto& [desc, values] : enums) {
+        command->setEnum(desc, std::move(values));
+    }
+    for (auto& param : params) {
+        command->newParameter(std::move(param));
+    }
     if (overloads.size() > 0) {
-        for (auto& overload : overloads) { command->addOverload(std::move(overload)); }
+        for (auto& overload : overloads) {
+            command->addOverload(std::move(overload));
+        }
     } else {
         command->addOverload();
     }
@@ -663,7 +683,9 @@ std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(
 
 bool DynamicCommandInstance::addOverload(std::vector<DynamicCommand::ParameterData>&& params) {
     std::vector<ParameterIndex> indices;
-    for (auto& param : params) { indices.push_back(newParameter(std::forward<ParameterData>(param))); }
+    for (auto& param : params) {
+        indices.push_back(newParameter(std::forward<ParameterData>(param)));
+    }
     return addOverload(std::move(indices));
 }
 
@@ -801,7 +823,9 @@ bool DynamicCommandInstance::addOverload(std::vector<char const*>&& params) {
     std::vector<ParameterIndex> paramIndices;
     for (auto& param : params) {
         auto index = findParameterIndex(param);
-        if (!index.isValid()) { throw std::runtime_error("Parameter " + std::string(param) + "not found"); }
+        if (!index.isValid()) {
+            throw std::runtime_error("Parameter " + std::string(param) + "not found");
+        }
         paramIndices.push_back(index);
     }
     return addOverload(std::move(paramIndices));
@@ -809,7 +833,9 @@ bool DynamicCommandInstance::addOverload(std::vector<char const*>&& params) {
 
 bool DynamicCommandInstance::addOverload(std::vector<std::string>&& params) {
     std::vector<ParameterIndex> paramIndices;
-    for (auto& param : params) { paramIndices.push_back(findParameterIndex(param)); }
+    for (auto& param : params) {
+        paramIndices.push_back(findParameterIndex(param));
+    }
     return addOverload(std::move(paramIndices));
 }
 

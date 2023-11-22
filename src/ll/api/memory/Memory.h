@@ -119,13 +119,17 @@ constexpr auto construct(void* ptr, ptrdiff_t off, Types&&... args) {
 }
 
 [[nodiscard]] inline size_t getMemSizeFromPtr(void* ptr) {
-    if (!ptr) { return 0; }
+    if (!ptr) {
+        return 0;
+    }
     return _msize(ptr);
 }
 
 template <class T, class D>
 [[nodiscard]] inline size_t getMemSizeFromPtr(std::unique_ptr<T, D>& ptr) {
-    if (!ptr) { return 0; }
+    if (!ptr) {
+        return 0;
+    }
     return _msize(ptr.get());
 }
 
@@ -134,11 +138,17 @@ template <template <class> class P, class T>
     requires(std::derived_from<P<T>, std::_Ptr_base<T>>)
 {
     auto& refc = dAccess<std::_Ref_count_base*>(std::addressof(ptr), 8);
-    if (!refc) { return 0; }
+    if (!refc) {
+        return 0;
+    }
     auto& rawptr = dAccess<T*>(std::addressof(ptr), 0);
-    if (!rawptr) { return 0; }
+    if (!rawptr) {
+        return 0;
+    }
     if constexpr (!std::is_array_v<T>) {
-        if (rawptr == dAccess<T*>(refc, 8 + 4 * 2)) { return getMemSizeFromPtr(rawptr); }
+        if (rawptr == dAccess<T*>(refc, 8 + 4 * 2)) {
+            return getMemSizeFromPtr(rawptr);
+        }
     }
     // clang-format off
     return _msize(refc // ptr* 8, rep* 8

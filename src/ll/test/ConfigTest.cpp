@@ -1,15 +1,12 @@
-
-#include "ll/api/memory/Hook.h"
-#include "ll/core/LeviLamina.h"
-#include "mc/server/ServerInstance.h"
-
-#include "ll/api/Config.h"
-
 #include "nlohmann/json.hpp"
 
-#include "ll/api/base/Version.h"
-
+#include "ll/api/Config.h"
 #include "ll/api/base/ErrorInfo.h"
+#include "ll/api/base/Version.h"
+#include "ll/api/memory/Hook.h"
+#include "ll/core/LeviLamina.h"
+
+#include "mc/server/ServerInstance.h"
 
 // #include "ll/api/schedule/Scheduler.h"
 // #include "ll/api/service/GlobalService.h"
@@ -80,7 +77,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
             helloReflection,
             nlohmann::ordered_json::parse(R"({"version":""})", nullptr, false, true)
         );
-    } catch (...) { ll::error_info::printCurrentException(); }
+    } catch (...) {
+        ll::error_info::printCurrentException();
+    }
 
     // ll::logger.debug("{} for load config", ll::config::loadConfig(helloReflection, "plugins/Test/testconfig.json"));
     // ll::logger.debug("\n{}", ll::reflection::serialize<nlohmann::ordered_json>(helloReflection).dump(4));

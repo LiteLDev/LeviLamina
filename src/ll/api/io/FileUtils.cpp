@@ -22,7 +22,9 @@ std::optional<std::string> readFile(const fs::path& filePath, bool isBinary) {
     std::ios_base::openmode mode = std::ios_base::in;
     if (isBinary) mode |= std::ios_base::binary;
     fRead.open(filePath, mode);
-    if (!fRead.is_open()) { return std::nullopt; }
+    if (!fRead.is_open()) {
+        return std::nullopt;
+    }
     std::string data((std::istreambuf_iterator<char>(fRead)), {});
     fRead.close();
     return data;
@@ -33,7 +35,9 @@ bool writeFile(const fs::path& filePath, std::string_view content, bool isBinary
     std::ios_base::openmode mode = std::ios_base::out;
     if (isBinary) mode |= std::ios_base::binary;
     fWrite.open(filePath, mode);
-    if (!fWrite.is_open()) { return false; }
+    if (!fWrite.is_open()) {
+        return false;
+    }
     fWrite << content;
     fWrite.close();
     return true;
@@ -50,9 +54,13 @@ static bool getFileVersion(
 
     DWORD dwHandle = 0;
     DWORD dwLen    = GetFileVersionInfoSizeW(filePath, &dwHandle);
-    if (0 >= dwLen) { return false; }
+    if (0 >= dwLen) {
+        return false;
+    }
     auto* pBlock = new (std::nothrow) wchar_t[dwLen];
-    if (nullptr == pBlock) { return false; }
+    if (nullptr == pBlock) {
+        return false;
+    }
     if (!GetFileVersionInfoW(filePath, dwHandle, dwLen, pBlock)) {
         delete[] pBlock;
         return false;

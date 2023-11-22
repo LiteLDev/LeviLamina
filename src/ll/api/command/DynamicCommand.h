@@ -308,13 +308,17 @@ public:
                 return actors;
             }
             std::vector<Actor*> rtn;
-            for (auto& result : getRaw<CommandSelector<Actor>>().results(*origin)) { rtn.push_back(result); }
+            for (auto& result : getRaw<CommandSelector<Actor>>().results(*origin)) {
+                rtn.push_back(result);
+            }
             return rtn;
         }
         template <>
         std::vector<Player*> get<std::vector<Player*>>() const {
             std::vector<Player*> rtn;
-            for (auto& result : getRaw<CommandSelector<Player>>().results(*origin)) { rtn.push_back(result); }
+            for (auto& result : getRaw<CommandSelector<Player>>().results(*origin)) {
+                rtn.push_back(result);
+            }
             return rtn;
         }
         template <>
@@ -412,8 +416,7 @@ public:
                 description == "" ? nullptr : description.data(),
                 (int)offset,
                 optional,
-                (int)offset + std::max(8, (int)sizeof(T))
-            };
+                (int)offset + std::max(8, (int)sizeof(T))};
             param.addOptions(option);
             return param;
         }

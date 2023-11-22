@@ -51,7 +51,8 @@ void printVfable(void* t) {
 #endif
     for (size_t i = 0; table[i] != nullptr; ++i) {
 #if _HAS_CXX23
-        logger.info("v table[{:02}] : {}", i, ll::utils::stacktrace_utils::toString(*(std::stacktrace_entry*)&table[i]));
+        logger
+            .info("v table[{:02}] : {}", i, ll::utils::stacktrace_utils::toString(*(std::stacktrace_entry*)&table[i]));
 #else
         logger.info("v table[{}] : {}", i, table[i]);
 #endif

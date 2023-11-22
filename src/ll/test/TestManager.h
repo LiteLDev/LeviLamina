@@ -35,7 +35,7 @@ public:
 };
 
 template <class T>
-concept Testable = std::is_base_of<ll::test::Test, T>::value;
+concept Testable = std::is_base_of_v<ll::test::Test, T>;
 
 template <Testable T>
 class TestRegister {

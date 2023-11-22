@@ -55,13 +55,12 @@ target("LeviLamina")
     add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4")
     add_defines(
         "UNICODE", "LL_EXPORT", "WIN32_LEAN_AND_MEAN",
-        "CPPHTTPLIB_OPENSSL_SUPPORT", "_AMD64_", "NOMINMAX",
-        "_CRT_SECURE_NO_WARNINGS"
+        "CPPHTTPLIB_OPENSSL_SUPPORT", "_AMD64_", "NOMINMAX"
     )
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     add_files("src/**.cpp","src/**.rc")
     -- xmake-repo
-    add_packages("entt", "fmt", "gsl", "gtest", "leveldb", "magic_enum", "nlohmann_json", "rapidjson")
+    add_packages("entt", "fmt", "gsl", "gtest", "leveldb", "magic_enum", "nlohmann_json", "rapidjson", { public = true })
     -- liteldev-repo
     add_packages("pcg_cpp", "preloader", "symbolprovider", "ctre", "pfr")
     if has_config("localbdslibrary") then

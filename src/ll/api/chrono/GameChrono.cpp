@@ -18,7 +18,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(ServerClockTickHook, HookPriority::Normal, ServerLev
 }
 
 GameTimeClock::time_point GameTimeClock::now() noexcept {
-    if (!ll::Global<Level>) { return time_point::max(); }
+    if (!ll::Global<Level>) {
+        return time_point::max();
+    }
     return time_point(duration((int64)(ll::Global<Level>->getCurrentTick().t)));
 }
 

@@ -72,7 +72,9 @@ void checkOtherBdsInstance() {
     PROCESSENTRY32     pe32;
     pe32.dwSize         = sizeof(PROCESSENTRY32);
     HANDLE hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-    if (hProcessSnap == INVALID_HANDLE_VALUE) { return; }
+    if (hProcessSnap == INVALID_HANDLE_VALUE) {
+        return;
+    }
     if (Process32First(hProcessSnap, &pe32)) {
         do {
             if (pe32.th32ProcessID != GetCurrentProcessId()
@@ -109,12 +111,16 @@ void checkOtherBdsInstance() {
                     rewind(stdin);
                     input = static_cast<char>(getchar());
                     rewind(stdin);
-                    if (input == 'n' || input == 'N') { break; }
+                    if (input == 'n' || input == 'N') {
+                        break;
+                    }
                     if (input == 'y' || input == 'Y') {
                         TerminateProcess(handle, 1);
                         break;
                     }
-                    if (input == 'e' || input == 'E') { std::terminate(); }
+                    if (input == 'e' || input == 'E') {
+                        std::terminate();
+                    }
                 }
             }
             CloseHandle(handle);
@@ -203,7 +209,9 @@ extern void enableArrayTagBugFix();
 void setupBugFixes() {
     auto& bugfixSettings = ll::globalConfig.modules.tweak.bugfixes;
     using namespace ll::bugfix;
-    if (bugfixSettings.fixArrayTagCompareBug) { enableArrayTagBugFix(); }
+    if (bugfixSettings.fixArrayTagCompareBug) {
+        enableArrayTagBugFix();
+    }
 }
 
 void startCrashLogger() {
@@ -232,7 +240,9 @@ void leviLaminaMain() {
     ll::loadLeviConfig();
 
     // Update default language
-    if (ll::globalConfig.language != "system") { i18n::globalDefaultLocaleName = ll::globalConfig.language; }
+    if (ll::globalConfig.language != "system") {
+        i18n::globalDefaultLocaleName = ll::globalConfig.language;
+    }
 
     setupBugFixes();
     checkProtocolVersion();
@@ -243,7 +253,9 @@ void leviLaminaMain() {
 
     if (ll::globalConfig.modules.checkRunningBDS) checkOtherBdsInstance();
 
-    if (ll::globalConfig.modules.crashLogger.enabled) { startCrashLogger(); }
+    if (ll::globalConfig.modules.crashLogger.enabled) {
+        startCrashLogger();
+    }
 
     // Register Exit Event Handler.
     SetConsoleCtrlHandler(ConsoleExitHandler, true);

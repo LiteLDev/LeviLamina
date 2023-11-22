@@ -17,7 +17,9 @@ inline size_t getEncodeLength(std::string const& str) { return getEncodeLength(s
 inline size_t getDecodeLength(std::string const& in) {
     uchar  count      = 0;
     size_t input_size = in.size();
-    for (auto it = in.rbegin(); *it == '='; ++it) { ++count; }
+    for (auto it = in.rbegin(); *it == '='; ++it) {
+        ++count;
+    }
     input_size -= count;     // remove padding size
     count       = 0;         // reset padding counter
     while (input_size % 4) { // redo padding
@@ -52,10 +54,14 @@ inline std::string encode(std::string const& text_input) {
         }
     }
 
-    if (j > -6) { result += base64Table[((i << 8) >> (j + 8)) & 0x3F]; }
+    if (j > -6) {
+        result += base64Table[((i << 8) >> (j + 8)) & 0x3F];
+    }
 
     // padding
-    while (result.size() % 4) { result.push_back('='); }
+    while (result.size() % 4) {
+        result.push_back('=');
+    }
 
     return result;
 }

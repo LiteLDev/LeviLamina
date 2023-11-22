@@ -48,7 +48,9 @@ private:
     void init() {
 
         closeEvent = CreateEventW(nullptr, TRUE, FALSE, nullptr);
-        if (!closeEvent) { throw ll::error_info::getWinLastError(); }
+        if (!closeEvent) {
+            throw ll::error_info::getWinLastError();
+        }
 
 
         callbackThread = std::thread([this]() {
@@ -82,7 +84,9 @@ private:
                 OVERLAPPED        overlapped_buffer{0};
 
                 overlapped_buffer.hEvent = CreateEventW(nullptr, TRUE, FALSE, nullptr);
-                if (!overlapped_buffer.hEvent) { std::cerr << "Error creating monitor event" << std::endl; }
+                if (!overlapped_buffer.hEvent) {
+                    std::cerr << "Error creating monitor event" << std::endl;
+                }
 
                 std::array<void*, 2> handles{overlapped_buffer.hEvent, closeEvent};
 
@@ -112,21 +116,24 @@ private:
                         }
                         async_pending = false;
 
-                        if (bytes_returned == 0) { break; }
+                        if (bytes_returned == 0) {
+                            break;
+                        }
 
                         auto* file_information = reinterpret_cast<FILE_NOTIFY_INFORMATION*>(&buffer[0]);
                         do {
                             std::wstring changed_file{
                                 file_information->FileName,
-                                file_information->FileNameLength / sizeof(file_information->FileName[0])
-                            };
+                                file_information->FileNameLength / sizeof(file_information->FileName[0])};
                             if (passFilter(changed_file)) {
                                 parsed_information.emplace_back(
                                     Path{changed_file},
                                     (FileActionType)file_information->Action
                                 );
                             }
-                            if (file_information->NextEntryOffset == 0) { break; }
+                            if (file_information->NextEntryOffset == 0) {
+                                break;
+                            }
 
                             file_information = reinterpret_cast<FILE_NOTIFY_INFORMATION*>(
                                 reinterpret_cast<BYTE*>(file_information) + file_information->NextEntryOffset
@@ -189,7 +196,9 @@ private:
                 return path;
             } else {
                 filename = path.filename();
-                if (!path.has_parent_path()) { return Path{u8"./"}; }
+                if (!path.has_parent_path()) {
+                    return Path{u8"./"};
+                }
                 return path.parent_path();
             }
         }();
@@ -204,7 +213,9 @@ private:
             nullptr
         ); // file with attributes to copy
 
-        if (directory == INVALID_HANDLE_VALUE) { throw ll::error_info::getWinLastError(); }
+        if (directory == INVALID_HANDLE_VALUE) {
+            throw ll::error_info::getWinLastError();
+        }
         return directory;
     }
 

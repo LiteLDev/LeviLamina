@@ -50,10 +50,14 @@ private:
 
     std::weak_ptr<Task<Clock>> addTask(TaskPtr t) {
         std::weak_ptr<Task<Clock>> res = t;
-        if (t->cancelled) { return res; }
+        if (t->cancelled) {
+            return res;
+        }
 
         auto time = t->getNextTime();
-        if (time >= TimePoint::max()) { return res; }
+        if (time >= TimePoint::max()) {
+            return res;
+        }
 
         std::lock_guard l{mutex};
 
@@ -65,28 +69,40 @@ private:
     void manageTasks() {
         std::lock_guard l{mutex};
         auto            end = tasks.upper_bound(Clock::now());
-        if (end == tasks.begin()) { return; }
+        if (end == tasks.begin()) {
+            return;
+        }
         TaskType temp;
 
         for (auto i = tasks.begin(); i != end; ++i) {
             auto& task = i->second;
-            if (task->cancelled) { continue; }
+            if (task->cancelled) {
+                continue;
+            }
             if (task->interval) {
                 threads.addTask([this, task] {
                     try {
                         task->f();
-                    } catch (...) { detail::printScheduleError(); }
+                    } catch (...) {
+                        detail::printScheduleError();
+                    }
                     addTask(task);
                 });
             } else {
                 threads.addTask([task] {
                     try {
                         task->f();
-                    } catch (...) { detail::printScheduleError(); }
+                    } catch (...) {
+                        detail::printScheduleError();
+                    }
                 });
-                if (task->cancelled) { continue; }
+                if (task->cancelled) {
+                    continue;
+                }
                 auto time = task->getNextTime();
-                if (time < TimePoint::max()) { temp.emplace(time, std::move(task)); }
+                if (time < TimePoint::max()) {
+                    temp.emplace(time, std::move(task));
+                }
             }
         }
         tasks.erase(tasks.begin(), end);

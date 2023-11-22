@@ -178,9 +178,15 @@ template <class T, auto f>
     char*       eptr;
     errnoRef       = 0;
     const auto ans = f(ptr, &eptr, base);
-    if (ptr == eptr) { throw std::invalid_argument("invalid svtonum argument"); }
-    if (errnoRef == ERANGE) { throw std::out_of_range("svtonum argument out of range"); }
-    if (idx) { *idx = static_cast<size_t>(eptr - ptr); }
+    if (ptr == eptr) {
+        throw std::invalid_argument("invalid svtonum argument");
+    }
+    if (errnoRef == ERANGE) {
+        throw std::out_of_range("svtonum argument out of range");
+    }
+    if (idx) {
+        *idx = static_cast<size_t>(eptr - ptr);
+    }
     return static_cast<T>(ans);
 }
 template <class T, auto f>
@@ -190,9 +196,15 @@ template <class T, auto f>
     char*       eptr;
     errnoRef       = 0;
     const auto ans = f(ptr, &eptr);
-    if (ptr == eptr) { throw std::invalid_argument("invalid svtonum argument"); }
-    if (errnoRef == ERANGE) { throw std::out_of_range("svtonum argument out of range"); }
-    if (idx) { *idx = static_cast<size_t>(eptr - ptr); }
+    if (ptr == eptr) {
+        throw std::invalid_argument("invalid svtonum argument");
+    }
+    if (errnoRef == ERANGE) {
+        throw std::out_of_range("svtonum argument out of range");
+    }
+    if (idx) {
+        *idx = static_cast<size_t>(eptr - ptr);
+    }
     return static_cast<T>(ans);
 }
 

@@ -19,9 +19,9 @@ const std::array<std::string, 2> GENERAL_LANGUAGES = {"en", "zh"};
 
 bool findTranslation(
     I18N::LangData const& langData,
-    std::string_view    key,
-    std::string_view    localeName,
-    std::string_view    localeType,
+    std::string_view      key,
+    std::string_view      localeName,
+    std::string_view      localeType,
     std::string&          dest
 ) {
     if (auto lang = langData.find(localeName); lang != langData.end()) { // If there is a translation for the language
@@ -33,7 +33,9 @@ bool findTranslation(
     }
     // Search for the similar language in mLangData
     for (auto& [name, translations] : langData) {
-        if (name.length() < 2) { continue; }
+        if (name.length() < 2) {
+            continue;
+        }
         if (name.substr(0, 2) == localeType) {
             if (auto it = translations.find(key); it != translations.end()) {
                 dest = it->second;
@@ -55,20 +57,28 @@ std::string I18N::get(std::string_view key, std::string localeName) {
     auto        localeType = localeName.substr(0, 2);
     std::string result;
     // Try finding the translation in loaded language data
-    if (findTranslation(mLangData, key, localeName, localeType, result)) { return result; }
+    if (findTranslation(mLangData, key, localeName, localeType, result)) {
+        return result;
+    }
     // If not found, try falling back to the default language data
     if (!mDefaultLangData.empty() && findTranslation(mDefaultLangData, key, localeName, localeType, result)) {
         return result;
     }
     // Try finding general languages
     for (auto& lang : GENERAL_LANGUAGES) {
-        if (findTranslation(mLangData, key, lang, lang, result)) { return result; }
-        if (!mDefaultLangData.empty() && findTranslation(mDefaultLangData, key, lang, lang, result)) { return result; }
+        if (findTranslation(mLangData, key, lang, lang, result)) {
+            return result;
+        }
+        if (!mDefaultLangData.empty() && findTranslation(mDefaultLangData, key, lang, lang, result)) {
+            return result;
+        }
     }
     // Use the first (dictionary order) language data
     if (!mLangData.empty()) {
         auto& lang = mLangData.begin()->second;
-        if (auto it = lang.find(key); it != lang.end()) { return it->second; }
+        if (auto it = lang.find(key); it != lang.end()) {
+            return it->second;
+        }
     }
     // Finally, still not found, return the key
     return std::string{key};
@@ -98,7 +108,9 @@ void SingleFileI18N::load(std::string const& fileName) {
     for (auto& [lang, dat] : mLangData) {
         if (mDefaultLangData.count(lang)) {
             for (auto& [k, v] : mDefaultLangData[lang]) {
-                if (!dat.count(k)) { dat[k] = v; }
+                if (!dat.count(k)) {
+                    dat[k] = v;
+                }
             }
         }
     }
@@ -141,13 +153,17 @@ I18N::SubLangData parseNestedData(nlohmann::json const& j, std::string const& pr
 void MultiFileI18N::load(std::string const& dirPath) {
     this->mDirPath = dirPath;
     if (!fs::exists(dirPath) || fs::is_empty(dirPath)) {
-        if (this->mDefaultLangData.empty()) { return; }
+        if (this->mDefaultLangData.empty()) {
+            return;
+        }
         this->mLangData = this->mDefaultLangData;
         save();
         return;
     }
     for (auto& f : fs::directory_iterator(dirPath)) {
-        if (!f.is_regular_file() || f.path().extension() != ".json") { continue; }
+        if (!f.is_regular_file() || f.path().extension() != ".json") {
+            continue;
+        }
         auto           langName = f.path().stem().string();
         std::fstream   file(f.path().wstring(), std::ios::in);
         nlohmann::json j;

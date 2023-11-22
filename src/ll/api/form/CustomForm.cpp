@@ -57,8 +57,12 @@ public:
                 {"type", "input"},
                 {"text", mText  }
             };
-            if (!mPlaceholder.empty()) { input["placeholder"] = mPlaceholder; }
-            if (!mDefault.empty()) { input["default"] = mDefault; }
+            if (!mPlaceholder.empty()) {
+                input["placeholder"] = mPlaceholder;
+            }
+            if (!mDefault.empty()) {
+                input["default"] = mDefault;
+            }
             return input;
         } catch (...) {
             ll::logger.error("Failed to serialize Input");
@@ -150,8 +154,12 @@ public:
     [[nodiscard]] bool isValid() const { return mMin <= mMax && mStep > 0.0 && mDefault >= mMin && mDefault <= mMax; }
 
     void validate() {
-        if (mMin > mMax) { std::swap(mMin, mMax); }
-        if (mStep <= 0.0) { mStep = 1.0; }
+        if (mMin > mMax) {
+            std::swap(mMin, mMax);
+        }
+        if (mStep <= 0.0) {
+            mStep = 1.0;
+        }
         if (mDefault < mMin) {
             mDefault = mMin;
         } else if (mDefault > mMax) {
@@ -207,7 +215,9 @@ public:
     [[nodiscard]] bool isValid() const { return !mSteps.empty() && mDefault < mSteps.size(); }
 
     void validate() {
-        if (mDefault >= mSteps.size()) { mDefault = mSteps.size() - 1; }
+        if (mDefault >= mSteps.size()) {
+            mDefault = mSteps.size() - 1;
+        }
     }
 
     StepSlider(std::string name, std::string text, std::vector<std::string> steps, size_t defaultVal = 0)
@@ -311,7 +321,9 @@ public:
         }
         uint id = handler::addFormHandler(std::make_unique<handler::CustomFormHandler>(std::move(callback), mElements));
         auto json = serialize();
-        if (json.is_null()) { return false; }
+        if (json.is_null()) {
+            return false;
+        }
         ModalFormRequestPacket(id, json.dump()).sendTo(player);
         return true;
     }
@@ -328,7 +340,9 @@ protected:
             };
             for (auto& e : mElements) {
                 nlohmann::ordered_json element = e->serialize();
-                if (!element.empty()) { form["content"].push_back(element); }
+                if (!element.empty()) {
+                    form["content"].push_back(element);
+                }
             }
             return form;
         } catch (...) {

@@ -22,7 +22,9 @@ public:
     ~Button() = default;
 
     void callback(Player& player) {
-        if (mCallback) { mCallback(player); }
+        if (mCallback) {
+            mCallback(player);
+        }
     }
 
     [[nodiscard]] nlohmann::ordered_json serialize() const {
@@ -77,11 +79,15 @@ public:
         }
         std::vector<SimpleForm::ButtonCallback> buttonCallbacks;
         buttonCallbacks.reserve(mElements.size());
-        for (auto& e : mElements) { buttonCallbacks.push_back(e.mCallback); }
+        for (auto& e : mElements) {
+            buttonCallbacks.push_back(e.mCallback);
+        }
         uint id =
             handler::addFormHandler(std::make_unique<handler::SimpleFormHandler>(std::move(callback), buttonCallbacks));
         auto json = serialize();
-        if (json.is_null()) { return false; }
+        if (json.is_null()) {
+            return false;
+        }
         ModalFormRequestPacket(id, json.dump()).sendTo(player);
         return true;
     }
@@ -99,7 +105,9 @@ protected:
             };
             for (auto& e : mElements) {
                 nlohmann::ordered_json element = e.serialize();
-                if (!element.empty()) { form["buttons"].push_back(element); }
+                if (!element.empty()) {
+                    form["buttons"].push_back(element);
+                }
             }
             return form;
         } catch (nlohmann::ordered_json::exception const&) {

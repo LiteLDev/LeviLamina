@@ -110,7 +110,9 @@ public:
     LLAPI static void setDefaultPlayerOutputFunc(PlayerOutputFunc const& func) { defaultPlayerOutputCallback = func; }
 
     std::ofstream& getFile() {
-        if (ofs) { return ofs.value(); }
+        if (ofs) {
+            return ofs.value();
+        }
         return defaultFile;
     }
 

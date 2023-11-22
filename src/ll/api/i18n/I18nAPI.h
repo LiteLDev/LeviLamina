@@ -153,7 +153,9 @@ inline void load(std::string const& path) {
 template <ll::concepts::IsString S, class... Args>
 inline std::string tr(S const& formatStr, Args&&... args) {
     auto res = getInstance()->get(formatStr);
-    if constexpr (sizeof...(args) != 0) { return fmt::format(fmt::runtime(res), args...); }
+    if constexpr (sizeof...(args) != 0) {
+        return fmt::format(fmt::runtime(res), args...);
+    }
     return res;
 }
 
@@ -176,7 +178,9 @@ inline std::string tr(S const& formatStr, Args&&... args) {
 template <ll::concepts::IsString S, class... Args>
 [[nodiscard]] inline std::string trl(std::string const& localeName, S const& formatStr, Args&&... args) {
     auto res = getInstance()->get(formatStr, localeName);
-    if constexpr (sizeof...(args) != 0) { return fmt::format(fmt::runtime(res), args...); }
+    if constexpr (sizeof...(args) != 0) {
+        return fmt::format(fmt::runtime(res), args...);
+    }
     return res;
 }
 

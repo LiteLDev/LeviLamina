@@ -16,6 +16,7 @@ public:
     std::string some       = "hello world";
     ~TestEventB() override = default;
 };
+
 class TestEvent1 : public TestEventB {
 public:
     static constexpr ll::event::EventId CustomEventId{"My custom Id"};
@@ -29,6 +30,7 @@ public:
         }();
     }
 };
+
 class TestEvent2 : public ll::event::Cancellable<TestEventB> {
 public:
     TestEvent2() { some = "TestEvent2 haha"; }
@@ -41,13 +43,12 @@ public:
         }();
     }
 };
+
 class TestEvent3 : public ll::event::Event {
 public:
 };
 
-
 using namespace ll::schedule;
-
 using namespace ll::chrono_literals;
 
 SystemTimeScheduler remover;
@@ -83,7 +84,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
             ev.cancel();
             ll::logger.debug("I'm 2, this can cancel, now isCancelled: {}", ev.isCancelled());
 
-            if (times.load() == 5) { throw std::runtime_error("hello"); }
+            if (times.load() == 5) {
+                throw std::runtime_error("hello");
+            }
         },
         ll::event::EventPriority::High
     );
