@@ -99,7 +99,7 @@ auto PluginManager::loadAllPlugins() -> void {
             pluginCount++;
         }
     }
-
+    enableAllPlugins();
     ll::logger.info("ll.loader.loadMain.done"_tr, pluginCount);
 }
 
