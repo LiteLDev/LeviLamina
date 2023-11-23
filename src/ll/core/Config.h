@@ -64,6 +64,9 @@ struct LeviConfig {
             {"<UUID>", "<KEY>"}
         };
 
+        std::unordered_map<std::string, std::string> resourcePackCDNUrls={
+            {"<UUID>","<Url>"}
+        };
     } modules{};
 };
 
