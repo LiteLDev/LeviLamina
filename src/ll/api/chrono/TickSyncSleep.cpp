@@ -2,14 +2,14 @@
 #include "ll/api/memory/Hook.h"
 #include "mc/server/ServerLevel.h"
 
-namespace ll::chrono {
-namespace detail {
-std::mutex listMutex;
+namespace ll::chrono::detail {
+std::mutex         listMutex;
+std::atomic_size_t tickListSize{};
+std::atomic_bool   hooked{};
 std::vector<std::variant<
     std::reference_wrapper<TickSyncSleep<game_chrono::ServerClock>>,
     std::reference_wrapper<TickSyncSleep<game_chrono::GameTimeClock>>>>
     tickList;
-} // namespace detail
 LL_AUTO_TYPED_INSTANCE_HOOK(
     TickSyncSleepInterrruptHook,
     HookPriority::Normal,
@@ -17,9 +17,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     &ServerLevel::_subTick,
     void
 ) {
-    origin();
     using namespace detail;
-    if (!tickList.empty()) {
+    if (tickListSize > 0) {
         std::lock_guard lock(listMutex);
         for (auto& e : tickList) {
             std::visit(
@@ -45,7 +44,13 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
                 e
             );
         }
+    } else {
+        unhook();
+        hooked = false;
     }
+    origin();
 }
-
-} // namespace ll::chrono
+void notify() {
+    if (!hooked) TickSyncSleepInterrruptHook::hook();
+}
+} // namespace ll::chrono::detail

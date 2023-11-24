@@ -13,10 +13,12 @@ template <class Clock>
 class TickSyncSleep;
 namespace detail {
 LLETAPI std::mutex listMutex;
-LLETAPI            std::vector<std::variant<
+LLETAPI std::atomic_size_t tickListSize;
+LLETAPI                    std::vector<std::variant<
     std::reference_wrapper<TickSyncSleep<game_chrono::ServerClock>>,
     std::reference_wrapper<TickSyncSleep<game_chrono::GameTimeClock>>>>
-                   tickList;
+                           tickList;
+LLAPI void                 notify();
 }; // namespace detail
 
 template <class Clock>
@@ -48,6 +50,8 @@ public:
         std::lock_guard lock(listMutex);
         id = tickList.size();
         tickList.emplace_back(std::ref(*this));
+        ++tickListSize;
+        notify();
     }
 
     ~TickSyncSleep() {
@@ -56,6 +60,7 @@ public:
         state = State::None;
         std::swap(tickList[id], tickList.back());
         tickList.pop_back();
+        --tickListSize;
     }
 
     void sleepFor(Clock::duration duration) {

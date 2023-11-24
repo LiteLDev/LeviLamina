@@ -3,7 +3,6 @@
 #include "ll/api/service/GlobalService.h"
 
 #include "mc/server/ServerLevel.h"
-#include "mc/world/level/Level.h"
 #include "mc/world/level/Tick.h"
 
 namespace ll::chrono::game_chrono {

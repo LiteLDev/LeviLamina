@@ -8,6 +8,7 @@
 #include "ll/api/schedule/Task.h"
 #include "ll/api/thread/InterruptableSleep.h"
 #include "ll/api/thread/ThreadPool.h"
+#include "ll/api/thread/TickSyncTaskPool.h"
 
 namespace ll::schedule {
 
@@ -26,15 +27,17 @@ struct SleeperType<ll::chrono::GameTimeClock> {
     using Type = ll::chrono::TickSyncSleep<ll::chrono::GameTimeClock>;
 };
 
-template <class Clock, class Sleeper = SleeperType<Clock>::Type, class Pool = ll::thread::ThreadPool>
+template <class Clock, class Pool = ll::thread::ThreadPool, class Sleeper = SleeperType<Clock>::Type>
 class Scheduler;
 
 using GameTickScheduler = Scheduler<ll::chrono::ServerClock>;
 using GameTimeScheduler = Scheduler<ll::chrono::GameTimeClock>;
-
 using SystemTimeScheduler = Scheduler<std::chrono::system_clock>;
 
-template <class Clock, class Sleeper, class Pool>
+using GameSyncTickScheduler = Scheduler<ll::chrono::ServerClock, ll::thread::TickSyncTaskPool>;
+using GameSyncTimeScheduler = Scheduler<ll::chrono::GameTimeClock, ll::thread::TickSyncTaskPool>;
+
+template <class Clock, class Pool, class Sleeper>
 class Scheduler {
 private:
     using TimePoint = typename Clock::time_point;
@@ -46,7 +49,8 @@ private:
     std::atomic<bool> done;
     std::mutex        mutex;
     Sleeper           sleeper;
-    Pool              threads;
+    Pool              workers;
+    std::thread       manager;
 
     std::weak_ptr<Task<Clock>> addTask(TaskPtr t) {
         std::weak_ptr<Task<Clock>> res = t;
@@ -80,7 +84,7 @@ private:
                 continue;
             }
             if (task->interval) {
-                threads.addTask([this, task] {
+                workers.addTask([this, task] {
                     try {
                         task->f();
                     } catch (...) {
@@ -89,7 +93,7 @@ private:
                     addTask(task);
                 });
             } else {
-                threads.addTask([task] {
+                workers.addTask([task] {
                     try {
                         task->f();
                     } catch (...) {
@@ -116,8 +120,8 @@ public:
     Scheduler& operator=(Scheduler const&)     = delete;
     Scheduler& operator=(Scheduler&&) noexcept = delete;
 
-    explicit Scheduler(int maxThreads = 1) : done(false), threads(std::max<int>(1, maxThreads) + 1) {
-        threads.addTask([this] {
+    explicit Scheduler(int maxThreads = 1) : done(false), workers(std::max<int>(1, maxThreads)) {
+        manager = std::thread([this] {
             while (!done) {
                 if (tasks.empty()) {
                     sleeper.sleep();
@@ -132,6 +136,7 @@ public:
     ~Scheduler() {
         done = true;
         sleeper.interrupt();
+        manager.join();
     }
 
     template <template <class> class T, class... Args>
