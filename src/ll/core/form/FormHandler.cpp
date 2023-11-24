@@ -113,6 +113,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         data = modalPacket.mJSONResponse.value().toStyledString();
         if (data.ends_with('\n')) {
             data.pop_back();
+            if (data.ends_with('\r')) {
+                data.pop_back();
+            }
         }
     }
 

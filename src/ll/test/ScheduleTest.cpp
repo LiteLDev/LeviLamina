@@ -6,6 +6,8 @@
 #include "mc/server/ServerLevel.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
+// #include "ll/api/thread/GlobalThreadPauser.h"
+
 using namespace ll::schedule;
 
 using namespace ll::chrono_literals;
@@ -64,6 +66,19 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         schedulelogger.info("{}", random);
         throw std::runtime_error("I'm a error from schedule Task!");
     });
+
+    // s2.add<RepeatTask>(0.3min, [&] {
+    //     auto            pause = ll::thread::GlobalThreadPauser{};
+
+    //     schedulelogger.info("hello I paused all threads 1s");
+
+    //     std::this_thread::sleep_for(1s);
+    //     schedulelogger.info("hello I paused all threads 2s");
+
+    //     std::this_thread::sleep_for(1s);
+
+    //     schedulelogger.info("hello I resumed all threads");
+    // });
 
     return origin(ins);
 }

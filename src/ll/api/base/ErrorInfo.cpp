@@ -33,9 +33,9 @@ struct u8system_category : public std::_System_error_category {
             std::string res{string_utils::str2str({msg._Str, msg._Length})};
             if (res.ends_with('\n')) {
                 res.pop_back();
-            }
-            if (res.ends_with('\r')) {
-                res.pop_back();
+                if (res.ends_with('\r')) {
+                    res.pop_back();
+                }
             }
             return string_utils::replaceAll(res, "\r\n", ", ");
         }
@@ -51,20 +51,25 @@ std::error_category const& u8system_category() noexcept {
 struct ntstatus_category : public std::error_category {
     constexpr ntstatus_category() noexcept : error_category() {}
     [[nodiscard]] std::string message(int errCode) const override {
-        wchar_t* msg = nullptr;
-        DWORD    langId;
-        if (GetLocaleInfoEx(
-                LOCALE_NAME_SYSTEM_DEFAULT,
-                LOCALE_SNAME | LOCALE_RETURN_NUMBER,
-                reinterpret_cast<LPWSTR>(&langId),
-                sizeof(langId) / sizeof(wchar_t)
-            )
-            == 0) {
-            langId = 0;
-        }
-        auto size = FormatMessageW(
+        static DWORD langId = [] {
+            DWORD res;
+            if (GetLocaleInfoEx(
+                    LOCALE_NAME_SYSTEM_DEFAULT,
+                    LOCALE_SNAME | LOCALE_RETURN_NUMBER,
+                    reinterpret_cast<LPWSTR>(&res),
+                    sizeof(res) / sizeof(wchar_t)
+                )
+                == 0) {
+                res = 0;
+            }
+            return res;
+        }();
+        static auto nt = GetModuleHandleW(L"ntdll");
+
+        wchar_t* msg  = nullptr;
+        auto     size = FormatMessageW(
             FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_HMODULE | FORMAT_MESSAGE_IGNORE_INSERTS,
-            GetModuleHandleW(L"ntdll"),
+            nt,
             errCode,
             langId,
             (wchar_t*)&msg,
@@ -76,9 +81,9 @@ struct ntstatus_category : public std::error_category {
             LocalFree(msg);
             if (res.ends_with('\n')) {
                 res.pop_back();
-            }
-            if (res.ends_with('\r')) {
-                res.pop_back();
+                if (res.ends_with('\r')) {
+                    res.pop_back();
+                }
             }
             return string_utils::replaceAll(res, "\r\n", ", ");
         }

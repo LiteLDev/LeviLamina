@@ -26,7 +26,7 @@ struct SleeperType<ll::chrono::GameTimeClock> {
     using Type = ll::chrono::TickSyncSleep<ll::chrono::GameTimeClock>;
 };
 
-template <class Clock, class Sleeper = SleeperType<Clock>::Type>
+template <class Clock, class Sleeper = SleeperType<Clock>::Type, class Pool = ll::thread::ThreadPool>
 class Scheduler;
 
 using GameTickScheduler = Scheduler<ll::chrono::ServerClock>;
@@ -34,7 +34,7 @@ using GameTimeScheduler = Scheduler<ll::chrono::GameTimeClock>;
 
 using SystemTimeScheduler = Scheduler<std::chrono::system_clock>;
 
-template <class Clock, class Sleeper>
+template <class Clock, class Sleeper, class Pool>
 class Scheduler {
 private:
     using TimePoint = typename Clock::time_point;
@@ -42,11 +42,11 @@ private:
     using TaskPtr   = std::shared_ptr<Task<Clock>>;
     using TaskType  = std::multimap<TimePoint, TaskPtr>;
 
-    TaskType               tasks;
-    std::atomic<bool>      done;
-    std::mutex             mutex;
-    Sleeper                sleeper;
-    ll::thread::ThreadPool threads;
+    TaskType          tasks;
+    std::atomic<bool> done;
+    std::mutex        mutex;
+    Sleeper           sleeper;
+    Pool              threads;
 
     std::weak_ptr<Task<Clock>> addTask(TaskPtr t) {
         std::weak_ptr<Task<Clock>> res = t;

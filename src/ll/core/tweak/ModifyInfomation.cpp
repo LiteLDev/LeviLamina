@@ -111,6 +111,9 @@ LL_AUTO_STATIC_HOOK(
     while (std::getline(iss, line)) {
         if (line.ends_with('\n')) {
             line.pop_back();
+            if (line.ends_with('\r')) {
+                line.pop_back();
+            }
         }
 
         if (!serverStarted) tryModifyServerStartInfo(line);
