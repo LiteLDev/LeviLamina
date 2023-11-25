@@ -3,27 +3,74 @@ on:
     paths:
       - .github/workflows/build_docs.yml
       - docs/**
+      - src/**/*.h
       - mkdocs.yml
       - requirements.txt
   workflow_dispatch:
 
 jobs:
-  build:
+  build-doxygen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - run: |
+          mkdir site
+      
+      - uses: mattnotmitt/doxygen-action@1.9.5
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: levilamina-docs-doxygen-${{ github.sha }}
+          path: |
+            site/
+
+  build-mkdocs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - run: |
           pip install -r requirements.txt
+
       - run: |
           mkdocs build
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: levilamina-docs-mkdocs-${{ github.sha }}
+          path: |
+            site/
+
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: levilamina-docs-doxygen-${{ github.sha }}
+          path: doxygen/
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: levilamina-docs-mkdocs-${{ github.sha }}
+          path: mkdocs/
+
+      - name: Merge pages
+        run: |
+          mkdir site
+          cp -r doxygen/* site/
+          cp -r mkdocs/* site/
+
       - uses: actions/upload-pages-artifact@v2
         with:
           path: site/
 
   deploy:
     # if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    needs: build
+    needs:
+      - merge
     permissions:
       id-token: write
       pages: write
