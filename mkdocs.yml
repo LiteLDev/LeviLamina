@@ -8,6 +8,10 @@ nav:
     - usage.md
     - faq.md
 
+  - APIs:
+    - Overview: api/index.md
+    - Native: api/native
+
 theme:
   name: material
   features:
@@ -57,7 +61,10 @@ plugins:
         - locale: zh
           name: 中文
           nav_translations:
+            APIs: 接口
             Basics: 基础
+            Native: 原生
             Overview: 概述
+
 
 

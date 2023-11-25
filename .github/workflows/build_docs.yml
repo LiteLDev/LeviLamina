@@ -45,6 +45,9 @@ jobs:
             site/
 
   merge:
+    needs:
+      - build-doxygen
+      - build-mkdocs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3
