@@ -8,6 +8,11 @@
 #include "mc/world/Minecraft.h"
 
 namespace ll {
+std::atomic<ServerStatus>& getServerStatus() {
+    static std::atomic<ServerStatus> status;
+    return status;
+}
+
 Version getBdsVersion() {
     static auto ver = [] {
         auto info    = Common::getBuildInfo();

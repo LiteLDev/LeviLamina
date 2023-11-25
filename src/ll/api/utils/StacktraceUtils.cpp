@@ -1,6 +1,6 @@
 #include "ll/api/utils/StacktraceUtils.h"
 #if _HAS_CXX23
-#include <iostream>
+#include <mutex>
 
 #include "fmt/format.h"
 #include "ll/api/base/ErrorInfo.h"
@@ -12,7 +12,150 @@
 #include "DbgHelp.h"
 #pragma comment(lib, "DbgHelp.lib")
 
+#include "DbgEng.h"
+
 namespace ll::utils::stacktrace_utils {
+namespace detail {
+static void lockRelease() noexcept;
+
+class [[nodiscard]] DbgEngData {
+public:
+    DbgEngData() noexcept { AcquireSRWLockExclusive(&srw); }
+
+    ~DbgEngData() { ReleaseSRWLockExclusive(&srw); }
+
+    DbgEngData(const DbgEngData&)            = delete;
+    DbgEngData& operator=(const DbgEngData&) = delete;
+
+    void release() noexcept { // NOLINT(readability-convert-member-functions-to-static)
+        // "Phoenix singleton" - destroy and set to null, so that it can be initialized later again
+
+        if (debugClient != nullptr) {
+            if (attached) {
+                (void)debugClient->DetachProcesses();
+                attached = false;
+            }
+
+            debugClient->Release();
+            debugClient = nullptr;
+        }
+
+        if (debugControl != nullptr) {
+            debugControl->Release();
+            debugControl = nullptr;
+        }
+
+        if (debugSymbols != nullptr) {
+            debugSymbols->Release();
+            debugSymbols = nullptr;
+        }
+
+        if (dbgEng != nullptr) {
+            (void)FreeLibrary(dbgEng);
+            dbgEng = nullptr;
+        }
+
+        initializeAttempted = false;
+    }
+
+    [[nodiscard]] bool tryInit() noexcept { // NOLINT(readability-convert-member-functions-to-static)
+        if (!initializeAttempted) {
+            initializeAttempted = true;
+
+            if (std::atexit(lockRelease) != 0) {
+                return false;
+            }
+
+            dbgEng = LoadLibraryExW(L"dbgeng.dll", nullptr, LOAD_LIBRARY_SEARCH_SYSTEM32);
+
+            if (dbgEng != nullptr) {
+                const auto debug_create =
+                    reinterpret_cast<decltype(&DebugCreate)>(GetProcAddress(dbgEng, "DebugCreate"));
+
+                // Deliberately not calling CoInitialize[Ex]. DbgEng.h API works fine without it.
+                // COM initialization may have undesired interference with user's code.
+                if (debug_create != nullptr
+                    && SUCCEEDED(debug_create(IID_IDebugClient, reinterpret_cast<void**>(&debugClient)))
+                    && SUCCEEDED(debugClient->QueryInterface(IID_IDebugSymbols, reinterpret_cast<void**>(&debugSymbols))
+                    )
+                    && SUCCEEDED(debugClient->QueryInterface(IID_IDebugControl, reinterpret_cast<void**>(&debugControl))
+                    )) {
+                    attached = SUCCEEDED(debugClient->AttachProcess(
+                        0,
+                        GetCurrentProcessId(),
+                        DEBUG_ATTACH_NONINVASIVE | DEBUG_ATTACH_NONINVASIVE_NO_SUSPEND
+                    ));
+                    if (attached) {
+                        (void)debugControl->WaitForEvent(0, INFINITE);
+                    }
+                    std::string path(32767, '\0');
+                    GetModuleFileNameA(nullptr, path.data(), (DWORD)path.size());
+                    path = path.substr(0, path.find_last_of('\\'));
+                    (void)debugSymbols->AppendSymbolPath(path.c_str());
+
+                    (void)debugSymbols->RemoveSymbolOptions(
+                        SYMOPT_NO_CPP | SYMOPT_LOAD_ANYTHING | SYMOPT_NO_UNQUALIFIED_LOADS | SYMOPT_IGNORE_NT_SYMPATH
+                        | SYMOPT_PUBLICS_ONLY | SYMOPT_NO_PUBLICS | SYMOPT_NO_IMAGE_SEARCH
+                    );
+                    (void)debugSymbols->AddSymbolOptions(
+                        SYMOPT_CASE_INSENSITIVE | SYMOPT_UNDNAME | SYMOPT_DEFERRED_LOADS | SYMOPT_LOAD_LINES
+                        | SYMOPT_OMAP_FIND_NEAREST | SYMOPT_EXACT_SYMBOLS | SYMOPT_FAIL_CRITICAL_ERRORS
+                        | SYMOPT_AUTO_PUBLICS | SYMOPT_NO_PROMPTS
+                    );
+                }
+            }
+        }
+
+        return attached;
+    }
+
+    auto getInfo( // NOLINT(readability-convert-member-functions-to-static)
+        const void* const address
+    ) {
+        std::optional<size_t> displacement = 0;
+        std::string           name;
+        std::optional<ulong>  line = 0;
+        std::string           file;
+        if (ulong bufSize;
+            S_OK == debugSymbols->GetNameByOffset((uintptr_t)(address), nullptr, 0, &bufSize, &*displacement)) {
+            std::string buf(bufSize - 1, '\0');
+            if (S_OK == debugSymbols->GetNameByOffset((uintptr_t)(address), buf.data(), bufSize, nullptr, nullptr)) {
+                name = std::move(buf);
+            }
+        } else {
+            displacement = std::nullopt;
+        }
+        if (ulong bufSize;
+            S_OK == debugSymbols->GetLineByOffset((uintptr_t)(address), &*line, nullptr, 0, &bufSize, nullptr)) {
+            std::string buf(bufSize - 1, '\0');
+            if (S_OK
+                == debugSymbols
+                       ->GetLineByOffset((uintptr_t)(address), nullptr, buf.data(), bufSize, nullptr, nullptr)) {
+                file = std::move(buf);
+            }
+        } else {
+            line = std::nullopt;
+        }
+        return std::make_tuple(displacement, name, line, file);
+    }
+
+private:
+    inline static SRWLOCK        srw                 = SRWLOCK_INIT;
+    inline static IDebugClient*  debugClient         = nullptr;
+    inline static IDebugSymbols* debugSymbols        = nullptr;
+    inline static IDebugControl* debugControl        = nullptr;
+    inline static bool           attached            = false;
+    inline static bool           initializeAttempted = false;
+    inline static HMODULE        dbgEng              = nullptr;
+};
+
+void lockRelease() noexcept {
+    DbgEngData data;
+
+    data.release();
+}
+} // namespace detail
+using namespace detail;
 
 SymbolLoader::SymbolLoader() : handle(GetCurrentProcess()) {
     if (!SymInitializeW(handle, nullptr, true)) {
@@ -33,45 +176,33 @@ SymbolLoader::SymbolLoader(std::string const& path) : handle(GetCurrentProcess()
 SymbolLoader::~SymbolLoader() { SymCleanup(handle); }
 
 std::string toString(std::stacktrace_entry const& entry) {
-    std::string res         = fmt::format("at: 0x{:0>12X}", (uint64)entry.native_handle());
-    std::string description = entry.description();
-    auto        plusPos     = description.find_last_of('+');
-    std::string offset      = description.contains('+') ? description.substr(1 + plusPos) : "";
-    std::string module      = description.substr(0, plusPos);
-    std::string filepath    = entry.source_file();
-    auto        fileline    = entry.source_line();
-    std::string function;
-    if (filepath.empty()) {
-        IMAGEHLP_LINEW64 line{};
-        DWORD            lineDisplacement{};
-        line.SizeOfStruct = sizeof(IMAGEHLP_LINEW64);
-        if (SymGetLineFromAddrW64(GetCurrentProcess(), (DWORD64)entry.native_handle(), &lineDisplacement, &line)) {
-            filepath = string_utils::u8str2str(std::filesystem::path(line.FileName).filename().u8string());
-            fileline = line.LineNumber;
-        }
-    } else {
-        filepath = string_utils::u8str2str(file_utils::u8path(filepath).filename().u8string());
+    std::string res = fmt::format("at: 0x{:0>12X}", (uint64)entry.native_handle());
+    DbgEngData  data;
+    if (!data.tryInit()) {
+        return res;
     }
 
-    if (description.contains('!')) {
-        auto pos = description.find_first_of('!');
-        function = module.substr(1 + pos);
-        module   = module.substr(0, pos);
+    auto [displacement, name, line, file] = data.getInfo(entry.native_handle());
+    std::string module;
+    std::string function;
+    if (name.contains('!')) {
+        auto pos = name.find_first_of('!');
+        function = name.substr(1 + pos);
+        module   = name.substr(0, pos);
     } else {
-        auto buf     = std::make_unique_for_overwrite<char[]>(sizeof(SYMBOL_INFOW) + MAX_SYM_NAME * sizeof(WCHAR));
-        auto pSymbol = (PSYMBOL_INFOW)buf.get();
-        pSymbol->SizeOfStruct = sizeof(SYMBOL_INFO);
-        pSymbol->MaxNameLen   = MAX_SYM_NAME;
-        DWORD64 displacement;
-        if (SymFromAddrW(GetCurrentProcess(), (DWORD64)entry.native_handle(), &displacement, pSymbol)) {
-            function = string_utils::wstr2str({pSymbol->Name, pSymbol->NameLen});
-            offset   = fmt::format("0x{:X}", displacement);
-        }
+        module = name;
     }
     if (!module.empty()) res += fmt::format(" {}", module);
     if (!function.empty()) res += fmt::format(" -> {}", function);
-    if (!offset.empty()) res += fmt::format(" + {}", offset);
-    if (!filepath.empty()) res += fmt::format(" [{}:{}L]", filepath, fileline);
+    if (displacement) res += fmt::format(" + 0x{:X}", *displacement);
+    if (!file.empty()) {
+        file = string_utils::u8str2str(file_utils::u8path(file).filename().u8string());
+        if (line) {
+            res += fmt::format(" [{}:{}L]", file, *line);
+        } else {
+            res += fmt::format(" [{}]", file);
+        }
+    }
     return res;
 }
 

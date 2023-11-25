@@ -72,6 +72,8 @@ LLAPI void setSehTranslator();
 
 LLNDAPI std::error_category const& u8system_category() noexcept;
 
+LLNDAPI std::error_category const& hresult_category() noexcept;
+
 LLNDAPI std::error_category const& ntstatus_category() noexcept;
 
 LLNDAPI std::system_error getWinLastError() noexcept;

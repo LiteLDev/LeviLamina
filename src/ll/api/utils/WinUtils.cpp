@@ -48,7 +48,7 @@ std::span<uchar> getImageRangeSpan() {
             return baseAddress;
         }
 
-        std::string tmp(bytesRequired, ' ');
+        std::string tmp(bytesRequired, '\0');
 
         moduleArray = (HMODULE*)tmp.data();
         if (EnumProcessModules(processHandle, moduleArray, bytesRequired, &bytesRequired)) {

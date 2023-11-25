@@ -91,7 +91,7 @@ LL_AUTO_STATIC_HOOK(
         success = true;
     }
     if (success && bufferCount > 0) {
-        buffer = std::string(bufferCount, ' ');
+        buffer = std::string(bufferCount, '\0');
         vsprintf(buffer.data(), pszFormat, va);
     }
     va_end(va);

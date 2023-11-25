@@ -1,10 +1,18 @@
 #pragma once
 
+#include <atomic>
+
 #include "ll/api/base/Version.h"
 
 namespace ll {
-LLNDAPI Version getBdsVersion();
-LLNDAPI Version getLoaderVersion();
-LLNDAPI int     getServerProtocolVersion();
-LLNDAPI bool    setServerMotd(std::string const& motd);
+enum class ServerStatus {
+    Default = 0,
+    Running = 1,
+};
+
+LLNDAPI std::atomic<ServerStatus>& getServerStatus();
+LLNDAPI Version                    getBdsVersion();
+LLNDAPI Version                    getLoaderVersion();
+LLNDAPI int                        getServerProtocolVersion();
+LLNDAPI bool                       setServerMotd(std::string const& motd);
 } // namespace ll

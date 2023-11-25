@@ -43,7 +43,7 @@ end
 target("LeviLamina")
     set_license("LGPL-3")
     set_kind("shared")
-    set_languages("c++20")
+    set_languages("c++23")
     set_symbols("debug")
     set_exceptions("none")
     set_pcxxheader("src/mc/_HeaderOutputPredefine.h")
@@ -56,7 +56,7 @@ target("LeviLamina")
     add_defines(
         "UNICODE", "LL_EXPORT", "WIN32_LEAN_AND_MEAN",
         "CPPHTTPLIB_OPENSSL_SUPPORT", "_AMD64_", "NOMINMAX",
-        "_CRT_SECURE_NO_WARNINGS"
+        "_CRT_SECURE_NO_WARNINGS", "_ENABLE_CONSTEXPR_MUTEX_CONSTRUCTOR"
     )
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     add_files("src/**.cpp","src/**.rc")

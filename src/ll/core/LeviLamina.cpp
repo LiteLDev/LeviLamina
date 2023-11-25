@@ -305,6 +305,7 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Normal, "main", int, int a
         }
     }
     leviLaminaMain();
+    getServerStatus() = ServerStatus::Running;
     return origin(argc, argv);
 }
 

@@ -64,7 +64,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         auto random  = ll::random::rand<int64>();
         random      /= 0;
         schedulelogger.info("{}", random);
-        throw std::runtime_error("I'm a error from schedule Task!");
+        throw std::system_error(std::error_code(0, ll::error_info::hresult_category()));
     });
 
     // s2.add<RepeatTask>(0.3min, [&] {
