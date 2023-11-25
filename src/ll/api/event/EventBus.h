@@ -10,6 +10,7 @@
 #include "ll/api/event/Listener.h"
 
 namespace ll::event {
+class EmitterBase;
 
 class EventBus {
 private:
@@ -35,14 +36,22 @@ private:
         }
     };
 
-    LLAPI bool   addListener(ListenerPtr const&, EventId const&, Canneller& = Canneller::getInstance());
-    LLAPI bool   removeListener(ListenerPtr const&, EventId const&, Canneller& = Canneller::getInstance());
-    LLNDAPI bool hasListener(ListenerId, EventId const&) const;
+    LLAPI bool   addListener(ListenerPtr const&, EventId, Canneller& = Canneller::getInstance());
+    LLAPI bool   removeListener(ListenerPtr const&, EventId, Canneller& = Canneller::getInstance());
+    LLNDAPI bool hasListener(ListenerId, EventId) const;
+
 
 public:
     LLNDAPI static EventBus& getInstance();
 
-    LLAPI void publish(Event&, EventId const&);
+    LLAPI void publish(Event&, EventId);
+
+    LLAPI void setEventEmitter(std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn, EventId eventId);
+
+    template <std::derived_from<Event> T>
+    void setEventEmitter(std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn) {
+        setEventEmitter(std::move(fn), getEventId<T>);
+    }
 
     template <class T>
         requires(std::derived_from<std::remove_cvref_t<T>, Event>)
@@ -50,7 +59,7 @@ public:
         publish(event, getEventId<T>);
     }
 
-    LLNDAPI size_t getListenerCount(EventId const&);
+    LLNDAPI size_t getListenerCount(EventId);
 
     template <std::derived_from<Event> T>
     [[nodiscard]] size_t getListenerCount() {
@@ -63,17 +72,9 @@ public:
         if constexpr (requires(L<LT> a) {
                           { a.getEventId() } -> std::same_as<EventId>;
                       } && std::is_same_v<T, LT>) {
-            if (addListener(listener, listener->getEventId())) {
-                T::tryRegisterHook();
-                return true;
-            }
-        } else {
-            if (addListener(listener, getEventId<T>)) {
-                T::tryRegisterHook();
-                return true;
-            }
+            return addListener(listener, listener->getEventId());
         }
-        return false;
+        return addListener(listener, getEventId<T>);
     }
     template <class T = void, template <class> class L, class LT>
         requires(std::same_as<T, void> && std::derived_from<L<LT>, ListenerBase>)
@@ -83,10 +84,7 @@ public:
     template <std::derived_from<Event> T, std::derived_from<ListenerBase> L = Listener<T>, class... Args>
     inline auto emplaceListener(Args&&... args) {
         auto res = L::create(std::forward<Args>(args)...);
-        if (addListener<T>(res)) {
-            T::tryRegisterHook();
-        }
-        return res;
+        return addListener<T>(res);
     }
 
     bool removeListener(ListenerPtr const& listener) { return removeListener(listener, EmptyEventId); }

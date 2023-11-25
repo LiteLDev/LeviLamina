@@ -7,6 +7,8 @@
 
 #include "ll/api/Logger.h"
 #include "ll/api/base/ErrorInfo.h"
+#include "ll/api/event/EmitterBase.h"
+#include "ll/api/thread/SharedRecursiveMutex.h"
 
 namespace ll::event {
 static Logger eventBusLogger("EventBus");
@@ -19,7 +21,7 @@ class CallbackStream {
     std::set<ListenerPtr, ListenerComparator> listeners;
 
 public:
-    std::unique_ptr<Emitter> emitter;
+    std::unique_ptr<EmitterBase> emitter;
 
     [[nodiscard]] size_t count() const { return listeners.size(); }
 
@@ -52,9 +54,11 @@ class EventBus::EventBusImpl {
     std::atomic<ListenerId> lid{};
 
 public:
+    std::unordered_map<EventId, std::function<std::unique_ptr<EmitterBase>(ListenerBase&)>> emitterFactory;
+
     std::unordered_map<EventId, CallbackStream> streams;
 
-    std::recursive_mutex mutex;
+    ll::thread::SharedRecursiveMutex mutex;
 
     struct ListenerInfo {
         std::weak_ptr<ListenerBase> listener;
@@ -65,19 +69,21 @@ public:
 
     ListenerId getNewListenerId() { return ++lid; }
 
-    bool addListener(ListenerPtr const& listener, EventId const& eventId) {
+    bool addListener(ListenerPtr const& listener, EventId eventId) {
         if (auto i = streams.find(eventId); i != streams.end()) {
             return i->second.addListener(listener);
         } else {
             if (streams[eventId].addListener(listener)) {
-                streams[eventId].emitter = listener->getEmitter();
+                if (auto fac = emitterFactory.find(listener->factoryId(eventId)); fac != emitterFactory.end()) {
+                    streams[eventId].emitter = fac->second(*listener);
+                }
                 return true;
             }
             return false;
         }
     }
 
-    bool removeListener(ListenerPtr const& listener, EventId const& eventId) {
+    bool removeListener(ListenerPtr const& listener, EventId eventId) {
         if (auto i = streams.find(eventId); i != streams.end()) {
             auto& stream = i->second;
             if (stream.removeListener(listener)) {
@@ -97,21 +103,25 @@ EventBus& EventBus::getInstance() {
     static EventBus instance;
     return instance;
 }
-void EventBus::publish(Event& event, EventId const& eventId) {
+void EventBus::setEventEmitter(std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn, EventId eventId) {
     std::lock_guard lock(impl->mutex);
+    impl->emitterFactory[eventId] = std::move(fn);
+}
+void EventBus::publish(Event& event, EventId eventId) {
+    std::shared_lock lock(impl->mutex);
 
     if (auto i = impl->streams.find(eventId); i != impl->streams.end()) {
         i->second.publish(event);
     }
 }
-size_t EventBus::getListenerCount(EventId const& eventId) {
-    std::lock_guard lock(impl->mutex);
+size_t EventBus::getListenerCount(EventId eventId) {
+    std::shared_lock lock(impl->mutex);
     if (auto i = impl->streams.find(eventId); i != impl->streams.end()) {
         return i->second.count();
     }
     return 0;
 }
-bool EventBus::addListener(ListenerPtr const& listener, EventId const& eventId, Canneller& canneller) {
+bool EventBus::addListener(ListenerPtr const& listener, EventId eventId, Canneller& canneller) {
     if (!listener) {
         return false;
     }
@@ -128,7 +138,7 @@ bool EventBus::addListener(ListenerPtr const& listener, EventId const& eventId, 
     }
     return false;
 }
-bool EventBus::removeListener(ListenerPtr const& listener, EventId const& eventId, Canneller& canneller) {
+bool EventBus::removeListener(ListenerPtr const& listener, EventId eventId, Canneller& canneller) {
     if (!listener) {
         return false;
     }
@@ -157,17 +167,17 @@ ListenerPtr EventBus::getListener(ListenerId id) const {
     if (id == 0) {
         return nullptr;
     }
-    std::lock_guard lock(impl->mutex);
+    std::shared_lock lock(impl->mutex);
     if (!impl->listeners.contains(id)) {
         return nullptr;
     }
     return impl->listeners[id].listener.lock();
 }
-bool EventBus::hasListener(ListenerId id, EventId const& eventId) const {
+bool EventBus::hasListener(ListenerId id, EventId eventId) const {
     if (id == 0) {
         return false;
     }
-    std::lock_guard lock(impl->mutex);
+    std::shared_lock lock(impl->mutex);
     if (!impl->listeners.contains(id)) {
         return false;
     }

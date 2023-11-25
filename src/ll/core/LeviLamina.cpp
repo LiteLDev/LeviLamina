@@ -287,6 +287,7 @@ void leviLaminaMain() {
 
 
 LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Normal, "main", int, int argc, char* argv[]) {
+    getServerStatus()   = ServerStatus::Default;
     severStartBeginTime = std::chrono::steady_clock::now();
     for (int i = 0; i < argc; ++i) {
         switch (do_hash(argv[i])) {
@@ -306,7 +307,9 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Normal, "main", int, int a
     }
     leviLaminaMain();
     getServerStatus() = ServerStatus::Running;
-    return origin(argc, argv);
+    auto res          = origin(argc, argv);
+    getServerStatus() = ServerStatus::Default;
+    return res;
 }
 
 [[maybe_unused]] BOOL WINAPI DllMain(HMODULE, DWORD, LPVOID) { return true; }

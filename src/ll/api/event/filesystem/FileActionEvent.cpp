@@ -21,9 +21,9 @@
 
 #include "windows.h"
 
-namespace ll::event::detail {
+namespace ll::event {
 // modified from Thomas Monkman's
-class FileWatch {
+class FileWatcher : public Emitter<FileActionEvent> {
 public:
     using Path = std::filesystem::path;
 
@@ -124,7 +124,8 @@ private:
                         do {
                             std::wstring changed_file{
                                 file_information->FileName,
-                                file_information->FileNameLength / sizeof(file_information->FileName[0])};
+                                file_information->FileNameLength / sizeof(file_information->FileName[0])
+                            };
                             if (passFilter(changed_file)) {
                                 parsed_information.emplace_back(
                                     Path{changed_file},
@@ -220,31 +221,24 @@ private:
     }
 
 public:
-    FileWatch(Path const& path, std::function<void(Path const&, FileActionType)> callback)
+    FileWatcher(Path const& path, std::function<void(Path const&, FileActionType)> callback)
     : callback(std::move(callback)),
       directoryHandle(getDirectory(path)) {
         init();
     }
 
-    ~FileWatch() { destroy(); }
-
-    FileWatch(FileWatch&&)                       = delete;
-    FileWatch(FileWatch const& other)            = delete;
-    FileWatch& operator=(FileWatch&&)            = delete;
-    FileWatch& operator=(FileWatch const& other) = delete;
+    ~FileWatcher() override { destroy(); }
 };
 
-
-FileActionEmitter::FileActionEmitter(std::string const& path) {
-    watcher = std::make_unique<FileWatch>(
+std::unique_ptr<EmitterBase> FileActionEvent::emitterFactory(ListenerBase& l) {
+    auto& path = ((Listener<FileActionEvent>&)l).path;
+    return std::make_unique<FileWatcher>(
         utils::file_utils::u8path(path),
         [id =
-             (std::string{ll::reflection::type_name_v<FileActionEvent<"">>} + "|" + path
-             )](FileWatch::Path const& p, FileActionType e) {
-            FileActionEventBase ev{p, e};
+             (std::string{getEventId<FileActionEvent>.name} + "|" + path)](FileWatcher::Path const& p, FileActionType e) {
+            FileActionEvent ev{p, e};
             ll::event::EventBus::getInstance().publish(ev, EventId{id});
         }
     );
 }
-FileActionEmitter::~FileActionEmitter() = default;
-} // namespace ll::event::detail
+} // namespace ll::event

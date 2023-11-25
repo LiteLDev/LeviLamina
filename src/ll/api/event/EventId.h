@@ -8,18 +8,19 @@ class EventId {
 public:
     std::string_view const name;
     size_t const           hash;
+
     [[nodiscard]] constexpr explicit EventId(std::string_view name) noexcept
     : name(name),
       hash(ll::hash::do_hash(name)) {}
 
-    [[nodiscard]] constexpr bool operator==(EventId const& other) const noexcept {
+    [[nodiscard]] constexpr bool operator==(EventId other) const noexcept {
         return hash == other.hash && name == other.name;
     }
-    [[nodiscard]] constexpr bool operator!=(EventId const& other) const noexcept {
+    [[nodiscard]] constexpr bool operator!=(EventId other) const noexcept {
         return hash != other.hash || name != other.name;
     }
 
-    [[nodiscard]] constexpr std::strong_ordering operator<=>(EventId const& other) const noexcept {
+    [[nodiscard]] constexpr std::strong_ordering operator<=>(EventId other) const noexcept {
         if (hash != other.hash) {
             return hash <=> other.hash;
         }
@@ -43,6 +44,6 @@ constexpr EventId getEventId = []() -> EventId {
 namespace std {
 template <>
 struct hash<ll::event::EventId> {
-    size_t operator()(ll::event::EventId const& id) const noexcept { return id.hash; }
+    size_t operator()(ll::event::EventId id) const noexcept { return id.hash; }
 };
 } // namespace std

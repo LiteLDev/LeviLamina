@@ -22,26 +22,12 @@ public:
     static constexpr ll::event::EventId CustomEventId{"My custom Id"};
 
     TestEvent1() { some = "TestEvent1 haha"; }
-
-    static void tryRegisterHook() {
-        static int hook = [] {
-            ll::logger.debug("TestEvent1 tryRegisterHook");
-            return 0;
-        }();
-    }
 };
 
 class TestEvent2 : public ll::event::Cancellable<TestEventB> {
 public:
     TestEvent2() { some = "TestEvent2 haha"; }
     explicit TestEvent2(std::string_view v) { some.assign(v); }
-
-    static void tryRegisterHook() {
-        static int hook = [] {
-            ll::logger.debug("TestEvent2 tryRegisterHook");
-            return 0;
-        }();
-    }
 };
 
 class TestEvent3 : public ll::event::Event {
@@ -112,20 +98,11 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     bus.publish(e2);
 
     using namespace ll::event;
-    auto listener3 = Listener<FileActionEvent<"./">>::create([](FileActionEventBase& ev) {
-        ll::logger.debug(
-            "cst receive: {}, {} {}",
-            typeid(ev).name(),
-            std::filesystem::canonical(ev.path),
-            magic_enum::enum_name(ev.type)
-        );
-    });
-    bus.addListener(listener3);
-    auto listener4 = Listener<DynamicFileActionEvent>::create("./", [](FileActionEventBase& ev) {
+
+    auto listener4 = Listener<FileActionEvent>::create("./", [](FileActionEvent& ev) {
         ll::logger.debug("dyn receive: {}, {} {}", typeid(ev).name(), ev.path, magic_enum::enum_name(ev.type));
     });
     bus.addListener(listener4);
 
-    remover.add<DelayTask>(1.5min, [=, &bus] { bus.removeListener(listener3); });
     remover.add<DelayTask>(2min, [=, &bus] { bus.removeListener(listener4); });
 }

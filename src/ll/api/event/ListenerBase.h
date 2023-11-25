@@ -3,7 +3,7 @@
 #include <memory>
 
 #include "ll/api/base/StdInt.h"
-#include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventId.h"
 #include "ll/api/plugin/Plugin.h"
 
 namespace ll::event {
@@ -59,7 +59,7 @@ public:
 
     virtual void call(Event& event) = 0;
 
-    virtual std::unique_ptr<Emitter> getEmitter() { return nullptr; }
+    virtual EventId factoryId(EventId eid) const { return eid; }
 };
 
 using ListenerPtr = std::shared_ptr<ListenerBase>;

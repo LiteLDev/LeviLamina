@@ -3,6 +3,7 @@
 #include <concepts>
 #include <memory>
 
+#include "ll/api/event/EmitterBase.h"
 #include "ll/api/event/EventId.h"
 #include "ll/api/event/ListenerBase.h"
 
@@ -26,6 +27,6 @@ public:
 
     static constexpr ll::event::EventId CustomEventId{EmptyEventId};
 
-    static constexpr void tryRegisterHook() {}
+    static constexpr std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return nullptr; }
 };
 } // namespace ll::event
