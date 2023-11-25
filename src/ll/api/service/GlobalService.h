@@ -18,6 +18,7 @@ class StructureManager;
 class ResourcePackRepository;
 class CommandRegistry;
 class NetworkSystem;
+class MoreDimensionManager;
 
 namespace ll {
 
@@ -33,7 +34,8 @@ concept IsGlobalService = concepts::IsOneOf<
     RakNet::RakPeer,
     NetworkSystem,
     ResourcePackRepository,
-    CommandRegistry>;
+    CommandRegistry,
+    MoreDimensionManager>;
 
 template <IsGlobalService T>
 class GlobalService {

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/biome/Biome.h"
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/v1/BiomeSource.h"
@@ -9,7 +10,7 @@ class Biome;
 
 class FixedBiomeSource : public ::BiomeSource {
 public:
-    Biome const* mFixedBiome;
+    const Biome* mFixedBiome;
 
     // prevent constructor by default
     FixedBiomeSource& operator=(FixedBiomeSource const&);
@@ -33,14 +34,14 @@ public:
     // vIndex: 4, symbol: ?containsOnly@FixedBiomeSource@@UEBA_NHHHHV?$span@$$CB_K$0?0@gsl@@@Z
     virtual bool containsOnly(int, int, int, int, gsl::span<uint64 const>) const;
 
-    // symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
-    MCVAPI class Biome const* getBiome(class BlockPos const&) const;
+    // vIndex: 5, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
+    virtual class Biome const* getBiome(class BlockPos const&) const;
 
-    // symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBUGetBiomeOptions@@@Z
-    MCVAPI class Biome const* getBiome(struct GetBiomeOptions const&) const;
+    // vIndex: 6, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBUGetBiomeOptions@@@Z
+    virtual class Biome const* getBiome(struct GetBiomeOptions const&) const;
 
-    // symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@HHH@Z
-    MCVAPI class Biome const* getBiome(int, int, int) const;
+    // vIndex: 7, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@HHH@Z
+    virtual class Biome const* getBiome(int, int, int) const;
 
     // symbol: ??0FixedBiomeSource@@QEAA@AEBVBiome@@@Z
     MCAPI explicit FixedBiomeSource(class Biome const&);

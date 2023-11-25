@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/biome/source/FixedBiomeSource.h"
 #include "mc/world/level/block/BlockVolume.h"
 #include "mc/world/level/biome/source/FixedBiomeSource.h"
 

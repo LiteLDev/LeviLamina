@@ -4,8 +4,8 @@
 
 struct YBlendingBugSettings {
 public:
-    // prevent constructor by default
-    YBlendingBugSettings& operator=(YBlendingBugSettings const&);
-    YBlendingBugSettings(YBlendingBugSettings const&);
-    YBlendingBugSettings();
+    bool  emulateBug;                   // this+0x0
+    bool  extraBlendAtOldWorldgenStart; // this+0x1
+    float oldWorldgenStartYInputPos;    // this+0x4
+    bool  alwaysUseYZeroFor2DBlending;  // this+0x8
 };

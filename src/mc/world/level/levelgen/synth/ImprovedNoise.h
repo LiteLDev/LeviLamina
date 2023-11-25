@@ -1,9 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/level/levelgen/synth/YBlendingBugSettings.h"
 
 class ImprovedNoise {
 public:
+    Vec3                 mOrigin;            // this+0x0
+    int                  mNoiseMap[512];     // this+0xC
+    YBlendingBugSettings mYBlendingSettings; // this+0x80C
+
     // prevent constructor by default
     ImprovedNoise& operator=(ImprovedNoise const&);
     ImprovedNoise(ImprovedNoise const&);

@@ -5,8 +5,14 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
+class WorldChangeTransaction;
+
 class Feature : public ::IFeature {
 public:
+    int                     unk;
+    ActorUniqueID           mPlacerID;    // this+0x8
+    WorldChangeTransaction* mTransaction; // this+0x10
+
     // prevent constructor by default
     Feature& operator=(Feature const&);
     Feature(Feature const&);
