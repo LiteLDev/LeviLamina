@@ -20,11 +20,11 @@ For more information, please refer to [the documentation](https://levilamina.lit
 - [Install](#install)
   - [Updating](#updating)
 - [Usage](#usage)
-- [Thanks](#thanks)
-- [Contributing](#contributing)
-- [License](#license)
 - [Star History](#star-history)
 - [Disclaimer](#disclaimer)
+- [Contributing](#contributing)
+  - [Contributors](#contributors)
+- [License](#license)
 
 ## Install
 
@@ -62,22 +62,6 @@ To start the server, simply run `bedrock_server_mod.exe`:
 
 For more information, please refer to [the documentation](https://levilamina.liteldev.com).
 
-## Thanks
-
-This project exists thanks to all the people who contribute.
-
-![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
-
-## Contributing
-
-Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LeviLamina/issues/new/choose) or submit PRs.
-
-LeviLamina follows the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) Code of Conduct.
-
-## License
-
-[LGPL-3.0-only](LICENSE) © 2021-2023 LiteLDev
-
 ## Star History
 
 ![Star History Chart](https://api.star-history.com/svg?repos=LiteLDev/LeviLamina&type=Date)
@@ -107,3 +91,19 @@ to any third party or are claimed by any third party, the developer does not bea
 responsibility.
 
 If you have any questions or comments about this disclaimer, please contact the developer.
+
+## Contributing
+
+Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LeviLamina/issues/new/choose) or submit PRs.
+
+LeviLamina follows the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) Code of Conduct.
+
+### Contributors
+
+This project exists thanks to all the people who contribute.
+
+![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
+
+## License
+
+[LGPL-3.0-only](LICENSE) © 2021-2023 LiteLDev
