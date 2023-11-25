@@ -22,7 +22,7 @@ jobs:
       - uses: mattnotmitt/doxygen-action@1.9.5
 
       - run: |
-          tar -cvf artifact.tar site/
+          tar -cvf artifact.tar -C site/ *
 
       - uses: actions/upload-artifact@v3
         with:
@@ -42,7 +42,7 @@ jobs:
           mkdocs build
 
       - run: |
-          tar -cvf artifact.tar site/
+          tar -cvf artifact.tar -C site/ *
 
       - uses: actions/upload-artifact@v3
         with:
