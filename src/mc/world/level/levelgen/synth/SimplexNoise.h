@@ -4,6 +4,9 @@
 
 class SimplexNoise {
 public:
+    Vec3 mOrigin;        // this+0x0
+    int  mNoiseMap[512]; // this+0xC
+
     // prevent constructor by default
     SimplexNoise& operator=(SimplexNoise const&);
     SimplexNoise(SimplexNoise const&);
