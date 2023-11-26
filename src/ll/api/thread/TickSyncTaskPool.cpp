@@ -9,8 +9,7 @@ std::vector<std::function<void()>> TickSyncTaskPool::tasks;
 std::atomic_bool                   TickSyncTaskPool::hasTask;
 std::mutex                         TickSyncTaskPool::mutex;
 
-LL_TYPED_INSTANCE_HOOK(TickSyncTaskPoolWorker, HookPriority::Normal, ServerLevel, &ServerLevel::_subTick, void) {
-    origin();
+LL_TYPED_INSTANCE_HOOK(TickSyncTaskPoolWorker, HookPriority::Low, ServerLevel, &ServerLevel::_subTick, void) {
     if (TickSyncTaskPool::hasTask) {
         std::lock_guard lock{TickSyncTaskPool::mutex};
         for (auto& task : TickSyncTaskPool::tasks) {
@@ -19,6 +18,7 @@ LL_TYPED_INSTANCE_HOOK(TickSyncTaskPoolWorker, HookPriority::Normal, ServerLevel
         TickSyncTaskPool::tasks.clear();
         TickSyncTaskPool::hasTask = false;
     }
+    origin();
 }
 
 void TickSyncTaskPool::notify() {

@@ -14,9 +14,9 @@ using namespace ll::chrono_literals;
 
 ll::Logger schedulelogger("Schedule");
 
-SystemTimeScheduler   s;
-GameSyncTickScheduler s2;
-GameTimeScheduler     s3;
+SystemTimeScheduler    s;
+GameTickAsyncScheduler s2;
+GameTimeScheduler      s3;
 
 #include "mc/network/packet/TextPacket.h"
 

@@ -51,6 +51,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     origin();
 }
 void notify() {
-    if (!hooked) TickSyncSleepInterrruptHook::hook();
+    if (!hooked) {
+        hooked = true;
+        TickSyncSleepInterrruptHook::hook();
+    }
 }
 } // namespace ll::chrono::detail

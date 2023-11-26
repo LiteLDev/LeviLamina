@@ -30,12 +30,12 @@ struct SleeperType<ll::chrono::GameTimeClock> {
 template <class Clock, class Pool = ll::thread::ThreadPool, class Sleeper = SleeperType<Clock>::Type>
 class Scheduler;
 
-using GameTickScheduler = Scheduler<ll::chrono::ServerClock>;
-using GameTimeScheduler = Scheduler<ll::chrono::GameTimeClock>;
-using SystemTimeScheduler = Scheduler<std::chrono::system_clock>;
+using GameTickAsyncScheduler = Scheduler<ll::chrono::ServerClock>;
+using GameTimeAsyncScheduler = Scheduler<ll::chrono::GameTimeClock>;
+using SystemTimeScheduler    = Scheduler<std::chrono::system_clock>;
 
-using GameSyncTickScheduler = Scheduler<ll::chrono::ServerClock, ll::thread::TickSyncTaskPool>;
-using GameSyncTimeScheduler = Scheduler<ll::chrono::GameTimeClock, ll::thread::TickSyncTaskPool>;
+using GameTickScheduler = Scheduler<ll::chrono::ServerClock, ll::thread::TickSyncTaskPool>;
+using GameTimeScheduler = Scheduler<ll::chrono::GameTimeClock, ll::thread::TickSyncTaskPool>;
 
 template <class Clock, class Pool, class Sleeper>
 class Scheduler {
