@@ -8,7 +8,7 @@
 #include "mc/server/commands/CommandContext.h"
 #include "mc/server/commands/MinecraftCommands.h"
 
-namespace ll::event {
+namespace ll::event::command {
 class ExecutingCommandEvent : public Cancellable<Event> {
 public:
     MinecraftCommands& minecraftCommands;
@@ -46,4 +46,4 @@ public:
 
     LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
-} // namespace ll::event
+} // namespace ll::event::command

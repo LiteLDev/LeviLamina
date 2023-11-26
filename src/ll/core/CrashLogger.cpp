@@ -122,8 +122,7 @@ static void dumpSystemInfo() {
             osVersion += " " + wstr2str(osVersionInfoW.szCSDVersion);
         }
         return osVersion;
-    }());
-    crashInfo.logger.info("  |Is Wine: {}", win_utils::isWine());
+    }() + (win_utils::isWine() ? " (wine)" : ""));
     crashInfo.logger.info("  |CPU: {}", []() -> std::string {
         int cpuInfo[4] = {-1};
         __cpuid(cpuInfo, (int)0x80000000);

@@ -6,9 +6,9 @@
 namespace ll::event {
 template <std::derived_from<Event> T>
 class Emitter : public EmitterBase {
-    static inline int reg = [] {
+    static inline bool reg = [] {
         EventBus::getInstance().setEventEmitter<T>(T::emitterFactory);
-        return 0;
+        return true;
     }();
 
 protected:

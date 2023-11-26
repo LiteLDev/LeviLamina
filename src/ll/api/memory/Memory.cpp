@@ -20,7 +20,9 @@ FuncPtr resolveSignature(char const* signature) {
     std::string_view pattern = signature;
     void*            match   = nullptr;
 
-    for (auto& c : win_utils::getImageRangeSpan()) {
+    static auto span = win_utils::getImageRange("");
+
+    for (auto& c : span) {
         while (pattern.starts_with(' ')) pattern.remove_prefix(1);
         if (pattern.empty()) return match;
         if (!match) match = &c;
@@ -46,7 +48,6 @@ FuncPtr resolveSignature(char const* signature) {
     //     }
     // }
     // if (pattern.empty()) { return nullptr; }
-    // auto span = win_utils::getImageRangeSpan();
     // for (size_t i = 0; i < span.size() - pattern.size(); ++i) {
     //     bool   match = true;
     //     size_t iter  = 0;

@@ -8,9 +8,9 @@ class UUID {
 public:
     uint64 a, b;
 
-    UUID(uint64 a, uint64 b) : a(a), b(b) {}
+    UUID(uint64 a = 0, uint64 b = 0) : a(a), b(b) {}
 
-    LLNDAPI UUID();
+    LLNDAPI static mce::UUID random();
 
     [[nodiscard]] inline explicit operator bool() const { return !isEmpty(); }
 

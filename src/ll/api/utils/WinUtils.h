@@ -7,15 +7,11 @@
 #include "ll/api/base/StdInt.h"
 
 namespace ll::utils::win_utils {
-/**
- * @brief Get the system locale name.
- *
- * @return  std::string  The system locale name.
- */
+
 LLNDAPI std::string getSystemLocaleName();
 
 LLNDAPI bool isWine();
 
-LLNDAPI std::span<uchar> getImageRangeSpan();
+LLNDAPI std::span<uchar> getImageRange(std::string const& name = "");
 
 } // namespace ll::utils::win_utils

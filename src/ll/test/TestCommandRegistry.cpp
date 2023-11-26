@@ -163,19 +163,12 @@ public:
     }
 };
 
-LL_AUTO_STATIC_HOOK(
-    ServerCommandsCommandTest,
-    HookPriority::Normal,
-    ServerCommands::setupStandardServer,
-    void,
-    Minecraft&             server,
-    std::string const&     networkCommands,
-    std::string const&     networkTestCommands,
-    class PermissionsFile* permissionsFile
-) {
-    origin(server, networkCommands, networkTestCommands, permissionsFile);
-    // Test CommandRegistry
-    TestCommand::setup(server.getCommands().getRegistry());
-}
+static bool reg = [] {
+    using namespace ll::event;
+    EventBus::getInstance().emplaceListener<command::SetupCommandEvent>([](command::SetupCommandEvent& ev) {
+        TestCommand::setup(ev.commandRegistry);
+    });
+    return true;
+}();
 
 #endif // LL_DEBUG

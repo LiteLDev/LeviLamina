@@ -8,11 +8,7 @@ class CommandContext {
 public:
     std::string                    mCommand;
     std::unique_ptr<CommandOrigin> mOrigin;
-    int                            mVersion = CommandVersion::CurrentVersion;
-
-    [[nodiscard]] std::string&         getCommand() { return mCommand; }
-    [[nodiscard]] std::string const&   getCommand() const { return mCommand; }
-    [[nodiscard]] class CommandOrigin& getOrigin() const { return *mOrigin; }
+    int                            mVersion;
 
 public:
     // NOLINTBEGIN

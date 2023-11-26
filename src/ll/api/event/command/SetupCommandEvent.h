@@ -5,7 +5,7 @@
 
 #include "mc/server/commands/CommandRegistry.h"
 
-namespace ll::event {
+namespace ll::event::command {
 class SetupCommandEvent : public Event {
 public:
     CommandRegistry& commandRegistry;
@@ -14,4 +14,4 @@ public:
 
     LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
-} // namespace ll::event
+} // namespace ll::event::command

@@ -12,7 +12,7 @@
 namespace ll {
 
 struct LeviConfig {
-    int version = 4;
+    int version = 5;
 
     std::string language = "system";
     struct {
@@ -44,10 +44,6 @@ struct LeviConfig {
         } addonsHelper{};
 
         struct {
-            std::string path = R"(.\plugins\LeviLamina\7z\7za.exe)";
-        } compressor{};
-
-        struct {
             struct {
                 bool fixArrayTagCompareBug = true;
             } bugfixes{};
@@ -57,8 +53,14 @@ struct LeviConfig {
             bool disableAutoCompactionLog = true;
         } tweak{};
 
-        bool checkRunningBDS    = true;
-        bool simpleServerLogger = true;
+        bool checkRunningBDS = true;
+
+        struct {
+            bool enabled          = false;
+            bool playerCommand    = true;
+            bool playerPermission = true;
+            bool playerChat       = true;
+        } simpleServerLogger{};
 
         std::unordered_map<std::string, std::string> resourcePackEncryptionMap = {
             {"<UUID>", "<KEY>"}

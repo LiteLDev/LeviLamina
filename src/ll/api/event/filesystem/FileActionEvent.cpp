@@ -21,7 +21,7 @@
 
 #include "windows.h"
 
-namespace ll::event {
+namespace ll::event::fs {
 // modified from Thomas Monkman's
 class FileWatcher : public Emitter<FileActionEvent> {
 public:
@@ -235,10 +235,11 @@ std::unique_ptr<EmitterBase> FileActionEvent::emitterFactory(ListenerBase& l) {
     return std::make_unique<FileWatcher>(
         utils::file_utils::u8path(path),
         [id =
-             (std::string{getEventId<FileActionEvent>.name} + "|" + path)](FileWatcher::Path const& p, FileActionType e) {
+             (std::string{getEventId<FileActionEvent>.name} + "|" + path
+             )](FileWatcher::Path const& p, FileActionType e) {
             FileActionEvent ev{p, e};
             ll::event::EventBus::getInstance().publish(ev, EventId{id});
         }
     );
 }
-} // namespace ll::event
+} // namespace ll::event::fs

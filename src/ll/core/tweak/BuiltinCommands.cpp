@@ -1,4 +1,6 @@
 ﻿#include "ll/api/ServerInfo.h"
+#include "ll/api/event/EventBus.h"
+#include "ll/api/event/command/SetupCommandEvent.h"
 #include "ll/api/plugin/Plugin.h"
 #include "ll/core/Config.h"
 
@@ -106,9 +108,9 @@ public:
         }
     }
 
-    static void setup(CommandRegistry* registry) {
-        registry->registerCommand("tpdim", "Teleport to Dimension", CommandPermissionLevel::GameDirectors);
-        registry->addEnum<DimensionType>(
+    static void setup(CommandRegistry& registry) {
+        registry.registerCommand("tpdim", "Teleport to Dimension", CommandPermissionLevel::GameDirectors);
+        registry.addEnum<DimensionType>(
             "DimensionType",
             {
                 {"overworld", DimensionType::OverWorld},
@@ -139,9 +141,9 @@ public:
             &TeleportDimensionCommand::CommandPos_isSet
         );
 
-        registry->registerOverload<TeleportDimensionCommand>("tpdim", victimParam, dimensionTypeParam, positionParam);
-        registry->registerOverload<TeleportDimensionCommand>("tpdim", victimParam, dimensionIdParam, positionParam);
-        registry->registerOverload<TeleportDimensionCommand>("tpdim", dimensionIdParam, positionParam);
+        registry.registerOverload<TeleportDimensionCommand>("tpdim", victimParam, dimensionTypeParam, positionParam);
+        registry.registerOverload<TeleportDimensionCommand>("tpdim", victimParam, dimensionIdParam, positionParam);
+        registry.registerOverload<TeleportDimensionCommand>("tpdim", dimensionIdParam, positionParam);
     }
 };
 
@@ -215,40 +217,40 @@ void LLVersionCommand(CommandOutput& output) {
 
 void LLHelpCommand(CommandOutput& output) { output.success("ll.cmd.help.msg"_tr); }
 
-void LLLoadPluginCommand(CommandOutput& output, std::string const& path) {
+// void LLLoadPluginCommand(CommandOutput& output, std::string const& path) {
 
-    // if (manager::loadPlugin(path, true)) {
-    //     output.success("ll.cmd.loadPlugin.success"_tr, path);
-    // } else {
-    //     output.error("ll.cmd.loadPlugin.fail"_tr, path);
-    // }
-}
+// if (manager::loadPlugin(path, true)) {
+//     output.success("ll.cmd.loadPlugin.success"_tr, path);
+// } else {
+//     output.error("ll.cmd.loadPlugin.fail"_tr, path);
+// }
+// }
 
-void LLUnloadPluginCommand(CommandOutput& output, std::string const& pluginName) {
+// void LLUnloadPluginCommand(CommandOutput& output, std::string const& pluginName) {
 
-    // if (manager::unloadPlugin(pluginName, true)) {
-    //     output.success("ll.cmd.unloadPlugin.success"_tr, pluginName);
-    // } else {
-    //     output.error("ll.cmd.unloadPlugin.fail"_tr, pluginName);
-    // }
-}
+// if (manager::unloadPlugin(pluginName, true)) {
+//     output.success("ll.cmd.unloadPlugin.success"_tr, pluginName);
+// } else {
+//     output.error("ll.cmd.unloadPlugin.fail"_tr, pluginName);
+// }
+// }
 
-void LLReloadPluginCommand(CommandOutput& output, std::string const& pluginName, bool reloadAll) {
-    if (!reloadAll) {
-        // if (manager::reloadPlugin(pluginName, true)) {
-        //     output.success("ll.cmd.reloadPlugin.success"_tr, pluginName);
-        // } else {
-        //     output.error("ll.cmd.reloadPlugin.fail"_tr, pluginName);
-        // }
-    } else {
-        // int cnt = manager::reloadAllPlugins(true);
-        // if (cnt > 0) {
-        //     output.success("ll.cmd.reloadAllPlugins.success"_tr, cnt);
-        // } else {
-        //     output.error("ll.cmd.reloadAllPlugins.fail"_tr);
-        // }
-    }
-}
+// void LLReloadPluginCommand(CommandOutput& output, std::string const& pluginName, bool reloadAll) {
+//     if (!reloadAll) {
+// if (manager::reloadPlugin(pluginName, true)) {
+//     output.success("ll.cmd.reloadPlugin.success"_tr, pluginName);
+// } else {
+//     output.error("ll.cmd.reloadPlugin.fail"_tr, pluginName);
+// }
+// } else {
+// int cnt = manager::reloadAllPlugins(true);
+// if (cnt > 0) {
+//     output.success("ll.cmd.reloadAllPlugins.success"_tr, cnt);
+// } else {
+//     output.error("ll.cmd.reloadAllPlugins.fail"_tr);
+// }
+// }
+// }
 
 enum class LLSettingsOperation { Get, Set, Delete, Reload, Save, List };
 /*
@@ -344,18 +346,18 @@ public:
             if (!hasPluginNameSet) LLListPluginsCommand(output);
             else LLPluginInfoCommand(output, pluginName);
             break;
-        case Operation::Load:
-            if (hasPluginNameSet) LLLoadPluginCommand(output, pluginName);
-            else output.error("ll.cmd.error.noPathSpecified"_tr);
-            break;
-        case Operation::Unload:
-            if (hasPluginNameSet) LLUnloadPluginCommand(output, pluginName);
-            else output.error("ll.cmd.error.noNameSpecified"_tr);
-            break;
-        case Operation::Reload:
-            if (hasPluginNameSet) LLReloadPluginCommand(output, pluginName, false);
-            else LLReloadPluginCommand(output, "", true);
-            break;
+        // case Operation::Load:
+        //     if (hasPluginNameSet) LLLoadPluginCommand(output, pluginName);
+        //     else output.error("ll.cmd.error.noPathSpecified"_tr);
+        //     break;
+        // case Operation::Unload:
+        //     if (hasPluginNameSet) LLUnloadPluginCommand(output, pluginName);
+        //     else output.error("ll.cmd.error.noNameSpecified"_tr);
+        //     break;
+        // case Operation::Reload:
+        //     if (hasPluginNameSet) LLReloadPluginCommand(output, pluginName, false);
+        //     else LLReloadPluginCommand(output, "", true);
+        //     break;
         case Operation::Settings:
             // if (hasKeySet) {
             //     if (hasValueSet) {
@@ -375,26 +377,26 @@ public:
         }
     }
 
-    static void setup(CommandRegistry* registry) {
+    static void setup(CommandRegistry& registry) {
         // Register Cmd
-        registry->registerCommand("ll", "LeviLamina plugin operations", CommandPermissionLevel::Host);
+        registry.registerCommand("ll", "LeviLamina plugin operations", CommandPermissionLevel::Host);
 
         // Register softenum
         std::vector<std::string> pluginList;
         for (auto& p : PluginManager::getInstance().getAllPlugins()) {
             if (auto plugin = p.lock()) pluginList.push_back(plugin->getManifest().name);
         }
-        registry->addSoftEnum("PluginName", pluginList);
+        registry.addSoftEnum("PluginName", pluginList);
 
         // ll version & help
-        registry->addEnum<Operation>(
+        registry.addEnum<Operation>(
             "Operation_Common",
             {
                 {"version", Operation::Version},
                 {"help",    Operation::Help   }
         }
         );
-        registry->registerOverload<LLCommand>(
+        registry.registerOverload<LLCommand>(
             "ll",
             CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
                 &LLCommand::operation,
@@ -405,13 +407,13 @@ public:
         );
 
         // ll settings
-        registry->addEnum<Operation>(
+        registry.addEnum<Operation>(
             "Operation_Settings",
             {
                 {"settings", Operation::Settings}
         }
         );
-        registry->addEnum<LLSettingsOperation>(
+        registry.addEnum<LLSettingsOperation>(
             "SettingsOperation",
             {
                 {"get",    LLSettingsOperation::Get   },
@@ -422,7 +424,7 @@ public:
                 {"list",   LLSettingsOperation::List  }
         }
         );
-        registry->registerOverload<LLCommand>(
+        registry.registerOverload<LLCommand>(
             "ll",
             CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
                 &LLCommand::operation,
@@ -441,13 +443,13 @@ public:
         );
 
         // ll load
-        registry->addEnum<Operation>(
+        registry.addEnum<Operation>(
             "Operation_FreeFilePath",
             {
                 {"load", Operation::Load},
         }
         );
-        registry->registerOverload<LLCommand>(
+        registry.registerOverload<LLCommand>(
             "ll",
             CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
                 &LLCommand::operation,
@@ -464,13 +466,13 @@ public:
         );
 
         // ll unload
-        registry->addEnum<Operation>(
+        registry.addEnum<Operation>(
             "Operation_MustPluginName",
             {
                 {"unload", Operation::Unload},
         }
         );
-        registry->registerOverload<LLCommand>(
+        registry.registerOverload<LLCommand>(
             "ll",
             CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
                 &LLCommand::operation,
@@ -487,7 +489,7 @@ public:
         );
 
         // ll list & reload
-        registry->addEnum<Operation>(
+        registry.addEnum<Operation>(
             "Operation_OptionalPluginName",
             {
                 {"list",    Operation::List  },
@@ -495,7 +497,7 @@ public:
                 {"reload",  Operation::Reload},
         }
         );
-        registry->registerOverload<LLCommand>(
+        registry.registerOverload<LLCommand>(
             "ll",
             CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
                 &LLCommand::operation,
@@ -516,27 +518,30 @@ public:
 class VersionCommand : public Command {
 
 public:
-    void execute(CommandOrigin const& ori, CommandOutput& output) const override {
+    void execute(CommandOrigin const&, CommandOutput& output) const override {
 #ifdef LL_DEBUG
         Logger("CommandOrigin").warn(ori.serialize().toSnbt());
 #endif // LL_DEBUG
         LLVersionCommand(output);
     }
 
-    static void setup(CommandRegistry* registry) {
-        registry->registerCommand("version", "Get the version of this server", CommandPermissionLevel::GameDirectors);
-        registry->registerOverload<VersionCommand>("version");
+    static void setup(CommandRegistry& registry) {
+        registry.registerCommand("version", "Get the version of this server", CommandPermissionLevel::GameDirectors);
+        registry.registerOverload<VersionCommand>("version");
     }
 };
 } // namespace
 namespace ll {
-void RegisterLeviCommands() {
-    //     using ll::event::server::RegisterCommandEvent;
-    //     RegisterCommandEvent::subscribe([](RegisterCommandEvent const& event) { // Register commands
-    //         LLCommand::setup(event.getRegistry());
-    //         VersionCommand::setup(event.getRegistry());
-    //         if (ll::globalConfig.enableTpdimCommand) { TeleportDimensionCommand::setup(event.getRegistry()); }
-    //         return true;
-    //     });
+void registerLeviCommands() {
+    using namespace event;
+    EventBus::getInstance().emplaceListener<command::SetupCommandEvent>([](command::SetupCommandEvent& ev) {
+        if (globalConfig.modules.tweak.tpdimCommand) {
+            TeleportDimensionCommand::setup(ev.commandRegistry);
+        }
+        if (globalConfig.modules.tweak.settingsCommand) {
+            VersionCommand::setup(ev.commandRegistry);
+            LLCommand::setup(ev.commandRegistry);
+        }
+    });
 }
 } // namespace ll

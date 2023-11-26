@@ -34,39 +34,21 @@ bool isWine() {
     return result;
 }
 
-std::span<uchar> getImageRangeSpan() {
-    static const uintptr_t rangeStart = [] {
-        DWORD_PTR baseAddress   = 0;
-        HANDLE    processHandle = OpenProcess(PROCESS_ALL_ACCESS, false, GetCurrentProcessId());
-        HMODULE*  moduleArray;
-        DWORD     bytesRequired = 0;
-
-        if (!processHandle) return baseAddress;
-
-        if (!EnumProcessModules(processHandle, nullptr, 0, &bytesRequired) || !bytesRequired) {
-            CloseHandle(processHandle);
-            return baseAddress;
+std::span<uchar> getImageRange(std::string const& name) {
+    static auto process = GetCurrentProcess();
+    HMODULE     rangeStart;
+    if (name.empty()) {
+        rangeStart = GetModuleHandle(nullptr);
+    } else {
+        rangeStart = GetModuleHandle(str2wstr(name).c_str());
+    }
+    if (rangeStart) {
+        MODULEINFO miModInfo;
+        if (GetModuleInformation(process, rangeStart, &miModInfo, sizeof(MODULEINFO))) {
+            return {(uchar*)rangeStart, miModInfo.SizeOfImage};
         }
-
-        std::string tmp(bytesRequired, '\0');
-
-        moduleArray = (HMODULE*)tmp.data();
-        if (EnumProcessModules(processHandle, moduleArray, bytesRequired, &bytesRequired)) {
-            baseAddress = (DWORD_PTR)moduleArray[0];
-        }
-
-        CloseHandle(processHandle);
-        return baseAddress;
-    }();
-
-    static MODULEINFO miModInfo;
-    static bool       init = [&] {
-        GetModuleInformation(GetCurrentProcess(), (HMODULE)rangeStart, &miModInfo, sizeof(MODULEINFO));
-        return true;
-    }();
-    static const uintptr_t rangeEnd = rangeStart + miModInfo.SizeOfImage;
-
-    return {(uchar*)rangeStart, (uchar*)rangeEnd};
+    }
+    return {};
 }
 
 } // namespace ll::utils::win_utils

@@ -8,6 +8,7 @@
 #include "ll/api/event/Listener.h"
 
 namespace ll::event {
+namespace fs{
 enum class FileActionType {
     Added = 1,
     Removed,
@@ -25,13 +26,14 @@ public:
 
     LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
+} // namespace
 
 template <>
-class Listener<FileActionEvent> : public ListenerBase {
-    friend FileActionEvent;
+class Listener<fs::FileActionEvent> : public ListenerBase {
+    friend fs::FileActionEvent;
 
 public:
-    using EventType = FileActionEvent;
+    using EventType = fs::FileActionEvent;
     using Callback  = std::function<void(EventType&)>;
 
     explicit Listener(std::string const& path, Callback fn, EventPriority priority = EventPriority::Normal)

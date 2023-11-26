@@ -3,13 +3,15 @@
 #include "ll/api/Logger.h"
 #include "ll/api/base/Hash.h"
 #include "ll/api/command/DynamicCommand.h"
-#include "ll/api/memory/Hook.h"
 #include "ll/core/Levilamina.h"
 #include "mc/server/commands/ServerCommands.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/level/storage/LevelData.h"
 
 #include "ll/api/schedule/Scheduler.h"
+
+#include "ll/api/event/EventBus.h"
+#include "ll/api/event/command/SetupCommandEvent.h"
 
 using Param      = DynamicCommand::ParameterData;
 using ParamType  = DynamicCommand::ParameterType;
@@ -23,7 +25,7 @@ using namespace ll::i18n_literals;
 
 GameTimeScheduler scheduler;
 
-void setupTestParamCommand() {
+static void setupTestParamCommand() {
     using Param     = DynamicCommand::ParameterData;
     using ParamType = DynamicCommand::ParameterType;
     Param boolParam("testBool", ParamType::Bool, true);
@@ -99,7 +101,7 @@ void setupTestParamCommand() {
     );
 }
 
-void setupTestEnumCommand() {
+static void setupTestEnumCommand() {
     using ParamType = DynamicCommand::ParameterType;
     using Param     = DynamicCommand::ParameterData;
     DynamicCommand::setup(
@@ -150,7 +152,7 @@ void setupTestEnumCommand() {
     );
 }
 
-void setupExampleCommand() {
+static void setupExampleCommand() {
     using ParamType = DynamicCommand::ParameterType;
     // create a dynamic command
     auto command = DynamicCommand::createCommand("testcmd", "dynamic command", CommandPermissionLevel::GameDirectors);
@@ -188,7 +190,7 @@ void setupExampleCommand() {
 }
 
 // "remove command" command
-void setupRemoveCommand() {
+static void setupRemoveCommand() {
     auto command = DynamicCommand::createCommand("unregister", "unregister command", CommandPermissionLevel::Any);
     command->setAlias("remove");
     auto name = command->mandatory("name", ParamType::SoftEnum, command->setSoftEnum("CommandNames", {}));
@@ -268,7 +270,7 @@ void onEnumExecute(
     }
 }
 
-void setupEnumCommand() {
+static void setupEnumCommand() {
     auto command =
         DynamicCommand::createCommand("enum", "get command enum names or values", CommandPermissionLevel::Any);
     command->setAlias("enums");
@@ -285,7 +287,7 @@ void setupEnumCommand() {
 }
 
 // echo command
-void setupEchoCommand() {
+static void setupEchoCommand() {
     auto command = DynamicCommand::createCommand("echo", "show message", CommandPermissionLevel::Any);
     command->addOverload(command->mandatory("text", ParamType::RawText));
     command->setCallback([](DynamicCommand const&,
@@ -297,26 +299,33 @@ void setupEchoCommand() {
     });
     DynamicCommand::setup(std::move(command));
 }
-
-LL_AUTO_STATIC_HOOK(
-    ServerCommandsDynamicCommandTest,
-    HookPriority::Normal,
-    ServerCommands::setupStandardServer,
-    void,
-    Minecraft&             server,
-    std::string const&     networkCommands,
-    std::string const&     networkTestCommands,
-    class PermissionsFile* permissionsFile
-) {
-    origin(server, networkCommands, networkTestCommands, permissionsFile);
-    // Test DynamicCommandRegistry
-
-    setupRemoveCommand();
-    setupTestEnumCommand();
-    setupTestParamCommand();
-    setupExampleCommand();
-    setupEnumCommand();
-    setupEchoCommand();
+static void setupCrashCommand() {
+    auto command = DynamicCommand::createCommand("crash", "crash", CommandPermissionLevel::Host);
+    command->addOverload();
+    command->setCallback([](DynamicCommand const&,
+                            CommandOrigin const&,
+                            CommandOutput&,
+                            std::unordered_map<std::string, DynamicCommand::Result>&) {
+        new std::thread([] {
+            char* null = (char*)0x456;
+            *null      = 'a';
+        });
+    });
+    DynamicCommand::setup(std::move(command));
 }
+
+static bool reg = [] {
+    using namespace ll::event;
+    EventBus::getInstance().emplaceListener<command::SetupCommandEvent>([](command::SetupCommandEvent&) {
+        setupRemoveCommand();
+        setupTestEnumCommand();
+        setupTestParamCommand();
+        setupExampleCommand();
+        setupEnumCommand();
+        setupEchoCommand();
+        setupCrashCommand();
+    });
+    return true;
+}();
 
 // #endif // LL_DEBUG

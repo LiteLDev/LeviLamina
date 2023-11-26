@@ -38,20 +38,6 @@ std::chrono::steady_clock::time_point ll::severStartBeginTime;
 std::chrono::steady_clock::time_point ll::severStartEndTime;
 
 namespace {
-// Add plugins folder to path
-void fixPluginsLibDir() {
-    constexpr const DWORD MAX_PATH_LEN = 32767;
-    auto*                 buffer       = new (std::nothrow) wchar_t[MAX_PATH_LEN];
-    if (!buffer) return;
-    GetEnvironmentVariable(L"PATH", buffer, MAX_PATH_LEN);
-    std::wstring path(buffer);
-    GetCurrentDirectory(MAX_PATH_LEN, buffer);
-    std::wstring currentDir(buffer);
-    delete[] buffer;
-    // append plugins path to environment path
-    SetEnvironmentVariable(L"PATH", (currentDir + L"\\plugins;" + path).c_str());
-}
-
 void fixCurrentDirectory() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
     auto*                 buffer       = new (std::nothrow) wchar_t[MAX_PATH_LEN];
@@ -191,8 +177,9 @@ void unixSignalHandler(int signum) {
 
 // extern
 namespace ll {
-extern void RegisterLeviCommands();
-}
+extern void registerLeviCommands();
+extern void setupSimpleServerLogger();
+} // namespace ll
 
 namespace bstats {
 extern void registerBStats();
@@ -244,12 +231,11 @@ void leviLaminaMain() {
         i18n::globalDefaultLocaleName = ll::globalConfig.language;
     }
 
-    setupBugFixes();
     checkProtocolVersion();
 
     // Fix problems
+    setupBugFixes();
     fixCurrentDirectory();
-    fixPluginsLibDir();
 
     if (ll::globalConfig.modules.checkRunningBDS) checkOtherBdsInstance();
 
@@ -262,26 +248,22 @@ void leviLaminaMain() {
     signal(SIGTERM, unixSignalHandler);
     signal(SIGINT, unixSignalHandler);
 
-    // Welcome
     printWelcomeMsg();
 
 #if defined(LL_DEBUG)
-    // DebugMode
     logger.warn("ll.main.warning.inDebugMode"_tr);
 #endif
 
-    // Addon Helper
     // if (ll::globalConfig.enableAddonsHelper) InitAddonsHelper();
 
     ll::plugin::PluginManager::getInstance().loadAllPlugins();
 
-    // Register built-in commands
-    RegisterLeviCommands();
+    registerLeviCommands();
 
-    // Register simple server logger
-    // ll::SimpleServerLogger::registerSimpleServerLogger();
+    if (globalConfig.modules.simpleServerLogger.enabled) {
+        setupSimpleServerLogger();
+    }
 
-    // Register BStats
     // bstats::registerBStats();
 }
 

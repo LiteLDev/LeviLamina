@@ -5,7 +5,7 @@
 #include "mc/codebuilder/MCRESULT.h"
 #include "mc/server/commands/MinecraftCommands.h"
 
-namespace ll::event {
+namespace ll::event::command {
 
 LL_TYPED_INSTANCE_HOOK(
     ExecutingCommandEventHook,
@@ -20,9 +20,8 @@ LL_TYPED_INSTANCE_HOOK(
     EventBus::getInstance().publish(event);
     if (event.isCancelled()) {
         return MCRESULT_CommandsDisabled;
-    } else {
-        return origin(context, suppressOutput);
     }
+    return origin(context, suppressOutput);
 }
 
 class ExecutingCommandEventEmitter : public Emitter<ExecutingCommandEvent> {
@@ -61,4 +60,4 @@ public:
 std::unique_ptr<EmitterBase> ExecutedCommandEvent::emitterFactory(ListenerBase&) {
     return std::make_unique<ExecutedCommandEventEmitter>();
 }
-} // namespace ll::event
+} // namespace ll::event::command
