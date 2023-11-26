@@ -64,9 +64,9 @@ Or refer to the [`Fake Header`](https://github.com/LiteLDev/LeviLamina/tree/deve
 ### A Simple Hook Example
 ```cpp
 #include "ll/api/Logger.h"
-#include <mc/server/common/DedicatedServer.h>
+#include "mc/server/common/DedicatedServer.h"
 
-ll::Logger DedicatedServerLogger("DedicatedServer");
+ll::Logger dedicatedServerLogger("DedicatedServer");
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     DedicatedServerHook,
@@ -76,7 +76,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void
 ) {
     origin();
-    DedicatedServerLogger.info("DedicatedServer::DedicatedServer");
+    dedicatedServerLogger.info("DedicatedServer::DedicatedServer");
 }
 ```
 This code hooks the constructor of DedicatedServer and prints a log message when the constructor is called.

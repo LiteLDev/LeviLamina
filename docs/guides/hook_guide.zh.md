@@ -64,9 +64,9 @@ TYPED 标注的 Hook 会给你的 DEF_TYPE 继承到你指定的类型。
 ### 简单的Hook示例
 ```cpp
 #include "ll/api/Logger.h"
-#include <mc/server/common/DedicatedServer.h>
+#include "mc/server/common/DedicatedServer.h"
 
-ll::Logger DedicatedServerLogger("DedicatedServer");
+ll::Logger dedicatedServerLogger("DedicatedServer");
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     DedicatedServerHook,
@@ -76,7 +76,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void
 ) {
     origin();
-    DedicatedServerLogger.info("DedicatedServer::DedicatedServer");
+    dedicatedServerLogger.info("DedicatedServer::DedicatedServer");
 }
 ```
 这段代码会 Hook DedicatedServer 的构造函数，并在构造函数被调用时打印一条日志。
