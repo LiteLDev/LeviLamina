@@ -18,8 +18,11 @@
 ## 安装方法
 
 你可以通过不同的方式安装 LeviLamina，取决于你的需求：
+
 - 你可以[通过 lip 安装](#通过-lip-安装)，以便于安装和升级任务。这是推荐的方法。
+
 - 你可以[通过 lipUI 安装](#通过-lipui-安装)，这是 lip 的图形用户界面。这对于不熟悉命令行的用户很有用。
+
 - 你可以下载模块并[手动安装](#手动安装)并完全手动管理升级。这在一些情况下很有用，比如在没有网络访问的隔离系统上安装 LeviLamina。
 
 ### 通过 lip 安装
@@ -28,26 +31,26 @@
 
 安装 lip 后，你可以通过运行以下命令来安装 LeviLamina：
 
-```
-powershell lip install github.com/tooth-hub/levilamina
+```powershell
+lip install github.com/tooth-hub/levilamina
 ```
 
 要安装 LeviLamina 的特定版本，例如，1.0.0，你可以运行以下命令：
 
-```
-powershell lip install github.com/tooth-hub/levilamina@1.0.0
+```powershell
+lip install github.com/tooth-hub/levilamina@1.0.0
 ```
 
 在安装过程中，你可能会被要求确认一些提示。你可以按 `y` 来确认提示。要跳过提示，你可以在命令中添加 `-y` 选项。
 
-```
-powershell lip install -y github.com/tooth-hub/levilamina
+```powershell
+lip install -y github.com/tooth-hub/levilamina
 ```
 
 你现在已经成功安装了 LeviLamina。要升级 LeviLamina，你可以运行以下命令：
 
-```
-powershell lip install --upgrade github.com/tooth-hub/levilamina
+```powershell
+lip install --upgrade github.com/tooth-hub/levilamina
 ```
 
 !!! danger
