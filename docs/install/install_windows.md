@@ -13,7 +13,7 @@ To run Bedrock Dedicated Server for Minecraft, you need to install the following
 
 - [Visual C++ Redistributable for Visual Studio 2015, 2017, 2019, and 2022](https://aka.ms/vs/17/release/vc_redist.x64.exe)
 
-Since LeviLamina is not compatible with the previous LeviLamina 2, you need to uninstall LeviLamina 2 before installing LeviLamina.
+Since LeviLamina is not compatible with the previous LiteLoaderBDS 2, you need to uninstall LiteLoaderBDS 2 before installing LeviLamina.
 
 ## Installation Methods
 
