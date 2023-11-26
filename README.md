@@ -5,7 +5,8 @@
 
 ![LeviLamina](https://socialify.git.ci/LiteLDev/LeviLamina/image?description=1&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLeviLamina%2FHEAD%2Fdocs%2Fimg%2Flogo.svg&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
-![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)&nbsp;[![中文](https://img.shields.io/badge/简体中文-informational?style=for-the-badge)](README.zh.md)
+![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)
+[![中文](https://img.shields.io/badge/简体中文-informational?style=for-the-badge)](README.zh.md)
 
 A lightweight, modular and versatile plugin loader for Minecraft Bedrock Server BDS, formerly known as LiteLoaderBDS
 
@@ -17,14 +18,37 @@ For more information, please refer to [the documentation](https://levilamina.lit
 
 ## Table of Contents
 
+- [Security](#security)
+- [Background](#background)
 - [Install](#install)
   - [Updating](#updating)
 - [Usage](#usage)
 - [Star History](#star-history)
-- [Disclaimer](#disclaimer)
 - [Contributing](#contributing)
   - [Contributors](#contributors)
 - [License](#license)
+
+## Security
+
+LeviLamina (hereinafter referred to as "this software") is developed and provided by LiteLDev (hereinafter referred to as "the developer"). This software is designed to enable users to extend the functionality of Minecraft Bedrock Server BDS (hereinafter referred to as "BDS") by loading plugins. This software is not affiliated with Mojang Studios (hereinafter referred to as "Mojang") or Microsoft Corporation (hereinafter referred to as "Microsoft"). The developer is not responsible for any content, quality, functionality, security or legality of any plugins loaded by this software. Users should use this software at their own discretion and assume all related risks.
+
+The developer does not guarantee the stability, reliability, accuracy or completeness of this software. The developer is not liable for any defects, errors, viruses or other harmful components that may exist in this software. The developer is not liable for any direct or indirect damages (including but not limited to data loss, device damage, profit loss etc.) caused by the use of this software.
+
+The developer reserves the right to modify, update or terminate this software and its related services at any time without prior notice to users. Users should back up important data and check regularly for updates of this software.
+
+Users should comply with relevant laws and regulations when using this software, respect the intellectual property rights and privacy rights of others, and not use this software for any illegal or infringing activities. If users violate the above provisions and cause any damage to any third party or are claimed by any third party, the developer does not bear any responsibility.
+
+If you have any questions or comments about this disclaimer, please contact the developer.
+
+## Background
+
+The initial versions of Minecraft Bedrock Edition lacked the extensive mod and server plugin ecosystem present in Minecraft Java Edition, thereby limiting its gameplay possibilities. A collective of C++ enthusiasts, well-versed in Minecraft Bedrock Server, conducted an analysis and utilized reverse engineering techniques and hook injection mechanisms to intervene in the operation of the game server, thus pioneering the development of the first set of server plugins.
+
+However, this development paradigm encountered several challenges. Primarily, the absence of underlying framework support necessitated the reliance on diverse low-level tools for symbol analysis, injection implementation, hook registration, and other functionalities during plugin development. Consequently, this led to code redundancy and duplication across different plugins, as well as the potential for unforeseen conflicts among them. Moreover, the lack of explicit type definitions compelled developers to engage in reverse engineering analysis while creating plugins, resulting in elevated development barriers and diminished efficiency.
+
+In response to these predicaments, the maintainers of the precursor project, LiteLoaderBDS, constructed an injection-based plugin loading engine and a plugin development framework. In addition, they provided type information, enabling plugin developers to create plugins without requiring an exhaustive comprehension of the underlying principles. This significantly mitigated the entry barriers for plugin development and facilitated the flourishing of the plugin ecosystem.
+
+Nevertheless, as LiteLoaderBDS progressed, certain issues came to the fore. The early design failed to account for future advancements, rendering many aspects obsolete and impeding the utilization of contemporary tools, thereby falling short of meeting the latest performance requirements. Furthermore, its tightly coupled design engendered substantial efforts when adapting to new iterations of Minecraft Bedrock Server. Consequently, LiteLDev made the decision to commence from scratch, leveraging existing expertise, and undertaking a comprehensive framework redesign to cultivate a plugin engine that promotes user-friendliness for maintainers, developers, and users alike.
 
 ## Install
 
@@ -47,10 +71,13 @@ For more information, please refer to [the documentation](https://levilamina.lit
 
 ### Updating
 
-Considering data security, we do not provide an update method. If you would like to update LeviLamina, please install the new version somewhere else and copy the files shown below to your server directory:
+When it comes to data security, we advise against updating LeviLamina in its current location. Instead, we recommend creating a new directory, installing the new version of LeviLamina there, and subsequently copying the `worlds` directory from the old location to the new one. Next, follow the instructions provided by the plugin developers to migrate the configuration files and data files of the plugins you are using to the new directory.
 
-- `worlds/`
-- `server.properties`
+However, if you insist on updating in the same location, you can utilize the following command to update LeviLamina:
+
+```sh
+lip install --upgrade github.com/tooth-hub/corepack
+```
 
 ## Usage
 
@@ -65,32 +92,6 @@ For more information, please refer to [the documentation](https://levilamina.lit
 ## Star History
 
 ![Star History Chart](https://api.star-history.com/svg?repos=LiteLDev/LeviLamina&type=Date)
-
-## Disclaimer
-
-LeviLamina (hereinafter referred to as "this software") is developed and
-provided by LiteLDev (hereinafter referred to as "the developer"). This software is designed
-to help users manage and install various software packages, but is not responsible for any
-content, quality, functionality, security or legality of any software package. Users should
-use this software at their own discretion and assume all related risks.
-
-The developer does not guarantee the stability, reliability, accuracy or completeness of this
-software. The developer is not liable for any defects, errors, viruses or other harmful components
-that may exist in this software. The developer is not liable for any direct or indirect damages
-(including but not limited to data loss, device damage, profit loss etc.) caused by the use of
-this software.
-
-The developer reserves the right to modify, update or terminate this software and its related
-services at any time without prior notice to users. Users should back up important data and check
-regularly for updates of this software.
-
-Users should comply with relevant laws and regulations when using this software, respect the
-intellectual property rights and privacy rights of others, and not use this software for any
-illegal or infringing activities. If users violate the above provisions and cause any damage
-to any third party or are claimed by any third party, the developer does not bear any
-responsibility.
-
-If you have any questions or comments about this disclaimer, please contact the developer.
 
 ## Contributing
 
