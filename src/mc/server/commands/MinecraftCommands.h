@@ -39,7 +39,7 @@ public:
     MCAPI bool enqueueDeferredScriptCommand(std::unique_ptr<class DeferredScriptCommand>);
 
     // symbol: ?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@AEAVCommandContext@@_N@Z
-    MCAPI struct MCRESULT executeCommand(class CommandContext&, bool) const;
+    MCAPI struct MCRESULT executeCommand(class CommandContext& context, bool suppressOutput) const;
 
     // symbol: ?getRegistry@MinecraftCommands@@QEAAAEAVCommandRegistry@@XZ
     MCAPI class CommandRegistry& getRegistry();
