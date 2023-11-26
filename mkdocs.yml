@@ -2,15 +2,16 @@ site_name: LeviLamina
 repo_url: https://github.com/LiteLDev/LeviLamina
 
 nav:
-  - Basics:
-    - Overview: index.md
-    - install_windows.md
-    - usage.md
-    - faq.md
+  - Home: index.md
 
-  - APIs:
-    - Overview: api/index.md
-    - Native: api/native
+  - Install:
+    - Windows: install_windows.md
+
+  - Usage: usage.md
+
+  - FAQ: faq.md
+
+  - Native APIs: api/native
 
 theme:
   name: material
@@ -61,10 +62,12 @@ plugins:
         - locale: zh
           name: 中文
           nav_translations:
-            APIs: 接口
-            Basics: 基础
-            Native: 原生
+            FAQ: 常见问题
+            Home: 主页
+            Install: 安装
+            Native APIs: 原生API
             Overview: 概述
+            Usage: 使用
 
 
 

@@ -107,4 +107,4 @@ This project exists thanks to all the people who contribute.
 
 ## License
 
-[LGPL-3.0-only](LICENSE) © 2021-2023 LiteLDev
+[LGPL-3.0-only](LICENSE.md) © 2021-2023 LiteLDev
