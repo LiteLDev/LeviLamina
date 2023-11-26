@@ -5,11 +5,17 @@ nav:
   - Home: index.md
 
   - Install:
-    - Windows: install_windows.md
+    - install/install_windows.md
 
-  - Usage: usage.md
+  - quickstart.md
 
-  - FAQ: faq.md
+  - Tutorials:
+    - tutorials/create_your_first_plugin.md
+
+  - Guides:
+    - guides/hook_guide.md
+
+  - faq.md
 
   - Native APIs: api/native
 
@@ -62,12 +68,11 @@ plugins:
         - locale: zh
           name: 中文
           nav_translations:
-            FAQ: 常见问题
             Home: 主页
             Install: 安装
+            Tutorials: 教程
+            Guides: 指南
             Native APIs: 原生API
-            Overview: 概述
-            Usage: 使用
 
 
 

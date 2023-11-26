@@ -1,4 +1,4 @@
-# Frequent Asked Questions
+# FAQ
 
 ## Where does LeviLamina come from?
 
