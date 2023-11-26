@@ -1,4 +1,4 @@
-# Hooking Tutorial
+# Hooking Guide
 
 ## Introduction
 Hook is a technique for modifying the behavior of functions at runtime. It is commonly used to alter the behavior of functions without modifying the original source code.

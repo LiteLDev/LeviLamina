@@ -3,6 +3,7 @@
 
 ## 安装必要的开发工具
 - [xmake](https://xmake.io/#/zh-cn/guide/installation)
+- [visual studio](https://visualstudio.microsoft.com/zh-hans/vs/) 需要包含 C++ 开发工具
 - [visual studio code](https://code.visualstudio.com/)
 - [git](https://git-scm.com/downloads)
 

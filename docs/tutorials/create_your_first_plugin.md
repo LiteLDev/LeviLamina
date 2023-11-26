@@ -3,6 +3,7 @@ This tutorial will teach you how to write a plugin that outputs `Hello World!` w
 
 ## Installing Necessary Development Tools
 - [xmake](https://xmake.io/#/en/guide/installation)
+- [visual studio](https://visualstudio.microsoft.com/en-us/vs/) with C++ development tools included
 - [visual studio code](https://code.visualstudio.com/)
 - [git](https://git-scm.com/downloads)
 
