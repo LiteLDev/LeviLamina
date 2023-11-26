@@ -130,7 +130,7 @@ void checkOtherBdsInstance() {
 }
 
 void printWelcomeMsg() {
-    std::lock_guard lock(Logger::loggerMutex);
+    auto lock = ll::Logger::lock();
     logger.info(R"(                                                                      )");
     logger.info(R"(         _               _ _                    _                     )");
     logger.info(R"(        | |    _____   _(_) |    __ _ _ __ ___ (_)_ __   __ _         )");

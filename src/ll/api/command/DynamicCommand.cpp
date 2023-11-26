@@ -96,7 +96,7 @@ auto const ParameterSizeMap = std::unordered_map<ParameterType, size_t>{
 };
 
 inline void OutputError(const std::string& command, const std::string& func = __builtin_FUNCTION()) {
-    std::lock_guard lock(ll::Logger::loggerMutex);
+    auto lock = ll::Logger::lock();
     ll::error_info::printCurrentException();
     logger.error("In Function ({})", func);
     logger.error("In Command <{}>", command);

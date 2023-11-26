@@ -30,14 +30,13 @@ public:
             try {
                 l->call(event);
             } catch (...) {
-                std::lock_guard lock(Logger::loggerMutex);
+                auto lock = ll::Logger::lock();
                 try {
-                    std::string_view name = typeid(*l).name();
-                    name.remove_suffix(1);
-                    eventBusLogger.error(
-                        "Error in [{}::call]:",
-                        ll::reflection::typeNameStem(name.substr(name.find('<') + 1))
-                    );
+                    auto& weak = l->pluginPtr;
+                    eventBusLogger.error("Error in [{}:{}] of <{}>:",
+                                         ll::reflection::removeTypePrefix(typeid(*l).name()),
+                                         l->getId(),
+                                         weak.expired() ? "unknown plugin" : weak.lock()->getManifest().name);
                 } catch (...) {}
                 error_info::printCurrentException(eventBusLogger);
             }

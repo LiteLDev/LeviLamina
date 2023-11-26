@@ -8,6 +8,9 @@
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
+#include "ll/api/event/command/ExecuteCommandEvent.h"
+#include "mc/nbt/CompoundTag.h"
+
 class TestEventB : public ll::event::Event {
 protected:
     TestEventB() = default;
@@ -48,8 +51,6 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     ::ServerInstance& ins
 ) {
     origin(ins);
-
-    std::lock_guard lock(ll::Logger::loggerMutex);
 
     auto& bus = ll::event::EventBus::getInstance();
 
@@ -105,4 +106,13 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     bus.addListener(listener4);
 
     remover.add<DelayTask>(2min, [=, &bus] { bus.removeListener(listener4); });
+
+    bus.emplaceListener<ExecutingCommandEvent>([](ExecutingCommandEvent& ev) {
+        ll::logger.debug("ExecutingCommandEvent: {}", ev.commandContext.mCommand);
+        ll::logger.debug("origin: {}", ev.commandContext.mOrigin->serialize().toSnbt());
+    });
+    bus.emplaceListener<ExecutedCommandEvent>([](ExecutedCommandEvent& ev) {
+        ll::logger.debug("ExecutedCommandEvent: {}", ev.commandContext.mCommand);
+        ll::logger.debug("result: {}", ev.result.getFullCode());
+    });
 }

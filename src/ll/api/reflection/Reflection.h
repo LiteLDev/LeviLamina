@@ -1,7 +1,7 @@
 #pragma once
 
-#include <type_traits>
 #include <string_view>
+#include <type_traits>
 
 #include "magic_enum.hpp"
 
@@ -34,13 +34,13 @@ constexpr void forEachMember(T&& value, F&& func) {
 }
 
 template <auto f>
-consteval std::string_view valueRawName() noexcept {
+consteval std::string_view getRawName() noexcept {
     constexpr std::string_view n{__FUNCSIG__};
 #if defined(__clang__)
     constexpr std::string_view k{"[f = "};
     constexpr std::string_view l{"]"};
 #else
-    constexpr std::string_view k{"valueRawName<"};
+    constexpr std::string_view k{"getRawName<"};
     constexpr std::string_view l{">(void) noexcept"};
 #endif
     constexpr auto s = l.size();
@@ -50,13 +50,13 @@ consteval std::string_view valueRawName() noexcept {
 }
 
 template <class f>
-consteval std::string_view typeRawName() noexcept {
+consteval std::string_view getRawName() noexcept {
     constexpr std::string_view n{__FUNCSIG__};
 #if defined(__clang__)
     constexpr std::string_view k{"[f = "};
     constexpr std::string_view l{"]"};
 #else
-    constexpr std::string_view k{"typeRawName<"};
+    constexpr std::string_view k{"getRawName<"};
     constexpr std::string_view l{">(void) noexcept"};
 #endif
     constexpr auto s = l.size();
@@ -103,7 +103,7 @@ constexpr std::string_view typeNameStem(std::string_view s) noexcept {
 
 
 template <class T>
-inline constexpr std::string_view type_raw_name_v = typeRawName<T>();
+inline constexpr std::string_view type_raw_name_v = getRawName<T>();
 
 template <class T>
 inline constexpr std::string_view type_unprefix_name_v = removeTypePrefix(type_raw_name_v<T>);

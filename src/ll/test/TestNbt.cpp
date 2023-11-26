@@ -93,7 +93,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
 
     )");
 
-    std::lock_guard lock(ll::Logger::loggerMutex);
+    auto lock = ll::Logger::lock();
 
     ll::logger.debug("\n{}", nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console | SnbtFormat::Jsonify));
 

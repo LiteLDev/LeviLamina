@@ -116,7 +116,7 @@ public:
         return defaultFile;
     }
 
-    LLAPI static std::recursive_mutex loggerMutex;
+    LLAPI static std::lock_guard<std::recursive_mutex> lock();
 
 private:
     LLAPI static std::ofstream    defaultFile;

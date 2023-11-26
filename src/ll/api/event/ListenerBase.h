@@ -9,6 +9,7 @@
 namespace ll::event {
 class EventBus;
 class Event;
+class CallbackStream;
 
 enum class EventPriority {
     Highest = 0,
@@ -22,6 +23,7 @@ using ListenerId = uint64;
 
 class ListenerBase {
     friend EventBus;
+    friend CallbackStream;
     ListenerId                    id{};
     EventPriority                 priority;
     std::weak_ptr<plugin::Plugin> pluginPtr;

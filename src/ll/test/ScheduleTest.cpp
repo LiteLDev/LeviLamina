@@ -55,7 +55,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     });
 
     s2.add<RepeatTask>(0.1min, [&] {
-        std::lock_guard lock(ll::Logger::loggerMutex);
+        auto lock = ll::Logger::lock();
         schedulelogger.info(
             "hi, 0.1min   game {} random {}",
             ll::chrono::GameTimeClock::now().time_since_epoch(),

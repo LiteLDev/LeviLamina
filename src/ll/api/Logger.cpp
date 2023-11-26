@@ -23,8 +23,8 @@ static bool checkLogLevel(int level, int outLevel) {
 
 void Logger::OutputStream::print(std::string_view s) const noexcept {
     try {
-        std::lock_guard lock(loggerMutex);
-        auto            time = fmt::localtime(_time64(nullptr));
+        auto lock = Logger::lock();
+        auto time = fmt::localtime(_time64(nullptr));
         if (checkLogLevel(logger->consoleLevel, level)) {
             std::string str = fmt::format(
                 fmt::runtime(consoleFormat[0]),
@@ -115,7 +115,8 @@ Logger::Logger(std::string_view title)
           fmt::fg(fmt::color::light_sea_green),
           {},
           {},
-      }}),
+      }
+  }),
   warn(OutputStream{
       *this,
       "WARN",
@@ -125,7 +126,8 @@ Logger::Logger(std::string_view title)
           fmt::fg(fmt::terminal_color::bright_yellow),
           fmt::fg(fmt::terminal_color::bright_yellow),
           fmt::fg(fmt::terminal_color::bright_yellow) | fmt::emphasis::bold,
-      }}),
+      }
+  }),
   error(OutputStream{
       *this,
       "ERROR",
@@ -135,7 +137,8 @@ Logger::Logger(std::string_view title)
           fmt::fg(fmt::terminal_color::bright_red),
           fmt::fg(fmt::terminal_color::bright_red),
           fmt::fg(fmt::terminal_color::bright_red) | fmt::emphasis::bold,
-      }}),
+      }
+  }),
   fatal(OutputStream{
       *this,
       "FATAL",
@@ -145,7 +148,8 @@ Logger::Logger(std::string_view title)
           fmt::fg(fmt::color::red),
           fmt::fg(fmt::color::red),
           fmt::fg(fmt::color::red) | fmt::emphasis::bold,
-      }}) {}
+      }
+  }) {}
 
 void Logger::resetFile() {
     if (ofs) {
@@ -180,8 +184,10 @@ bool Logger::setDefaultFile(std::string const& logFile, bool appendMode) {
     defaultFile.open(logFile, appendMode ? std::ios::app : std::ios::out);
     return defaultFile.is_open();
 }
-
-std::recursive_mutex     Logger::loggerMutex;
+std::lock_guard<std::recursive_mutex> Logger::lock() {
+    static std::recursive_mutex mutex;
+    return std::lock_guard(mutex);
+}
 std::ofstream            Logger::defaultFile{};
 Logger::PlayerOutputFunc Logger::defaultPlayerOutputCallback;
 } // namespace ll

@@ -41,7 +41,7 @@ namespace {
 ll::Logger logger("TestRegistryDimension");
 
 void printVfable(void* t) {
-    std::lock_guard lock(ll::Logger::loggerMutex);
+    auto lock = ll::Logger::lock();
 
     void** table = *(void***)t;
 #if _HAS_CXX23
