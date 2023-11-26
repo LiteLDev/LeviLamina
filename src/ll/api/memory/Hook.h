@@ -68,7 +68,7 @@ using AddConstAtMemberFunIfOriginIs = std::conditional_t<IsConstMemberFunV<U>, A
 
 /**
  * @brief Hook priority enum.
- * @details The lower priority, the hook will be executed earlier
+ * @details The higher priority, the hook will be executed earlier
  */
 enum class HookPriority : int {
     Highest = 0,
