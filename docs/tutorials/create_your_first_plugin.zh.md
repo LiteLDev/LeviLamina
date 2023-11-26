@@ -51,8 +51,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
 如果你的插件加载成功，你将会在控制台看到如下输出：
 ```powershell  
-22:21:59 INFO [LeviLamina] Plugin <levilamina-plugin-template> loaded!
 22:21:59 INFO [my-first-plugin] Plugin loaded
+22:21:59 INFO [LeviLamina] Plugin <my-first-plugin> loaded!
 ```
 
 然后，你将会在控制台看到如下输出：

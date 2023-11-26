@@ -51,8 +51,8 @@ Copy the `my-first-plugin` folder from the project directory `/bin` to the BDS `
 
 If your plugin loads successfully, you will see the following output in the console:
 ```powershell  
-22:21:59 INFO [LeviLamina] Plugin <levilamina-plugin-template> loaded!
 22:21:59 INFO [my-first-plugin] Plugin loaded
+22:21:59 INFO [LeviLamina] Plugin <my-first-plugin> loaded!
 ```
 
 Then, you will see the following output in the console:
