@@ -251,6 +251,11 @@ std::string              mMessage;    // this+0x58
 
 Using this, we can directly use `textPacket.mMessage` instead of the offset to get the player's chat content.
 
+!!! Danger
+    However, it is important to note that we are not the official source, and the structural information we provide may not be entirely accurate. The structure may change with version updates, and we may not update it in time. Therefore, when using structures to replace offsets, you must be careful!
+    
+    Of course, if you discover such issues, you are welcome to submit a PR.
+
 ## Conclusion
 
 This article introduced how to understand the functions in BDS and how to find the functions you want in BDS.
