@@ -11,6 +11,7 @@ nav:
 
   - Tutorials:
     - tutorials/create_your_first_plugin.md
+    - tutorials/understanding_functions_in_bds.md
 
   - Guides:
     - guides/hook_guide.md
