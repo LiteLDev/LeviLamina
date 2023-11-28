@@ -19,10 +19,27 @@ struct FixedString {
     consteval auto operator+(const FixedString<Ny>& other) {
         FixedString<N + Ny> res{};
         std::copy_n(buf, N, res.buf);
-        std::copy_n(other.buf, Ny, res.buf + N);
+        std::copy_n(other.buf, Ny, N + res.buf);
         return res;
     }
 };
+
+struct StringView {
+    char const* data;
+    size_t      size;
+    consteval StringView(std::string_view v) { // NOLINT
+        data = v.data();
+        size = v.size();
+    }
+    consteval operator std::string_view() const { // NOLINT
+        return std::string_view{data, size};
+    }
+};
+
+template <StringView s>
+consteval auto toFixedString() {
+    return FixedString<s.size>(s.data);
+}
 
 template <size_t N>
 FixedString(char const (&)[N]) -> FixedString<N - 1>;

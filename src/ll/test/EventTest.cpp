@@ -11,6 +11,8 @@
 #include "ll/api/event/command/ExecuteCommandEvent.h"
 #include "mc/nbt/CompoundTag.h"
 
+#include "ll/api/base/FixedString.h"
+
 class TestEventB : public ll::event::Event {
 protected:
     TestEventB() = default;
@@ -99,6 +101,10 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     bus.publish(e2);
 
     using namespace ll::event;
+
+    auto str = ll::toFixedString<ll::reflection::type_raw_name_v<fs::FileActionEvent>>();
+
+    ll::logger.debug("{}", str.buf);
 
     auto listener4 = Listener<fs::FileActionEvent>::create("./", [](fs::FileActionEvent& ev) {
         ll::logger.debug("dyn receive: {}, {} {}", typeid(ev).name(), ev.path, magic_enum::enum_name(ev.type));
