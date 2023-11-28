@@ -1,6 +1,7 @@
 # Hook指南
 
 ## 介绍
+
 Hook 是一种在运行时修改函数行为的技术。通常用于在不修改源代码的情况下修改函数行为。
 
 wikipedia 关于 Hook 的解释：[Hooking](https://en.wikipedia.org/wiki/Hooking)
@@ -29,18 +30,19 @@ wikipedia 关于 Hook 的解释：[Hooking](https://en.wikipedia.org/wiki/Hookin
 #define LL_AUTO_INSTANCE_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)
 ```
 
-```
 其中，AUTO 标注的 Hook 会自动注册，即运行时自动调用hook()函数进行注册。
 TYPED 标注的 Hook 会给你的 DEF_TYPE 继承到你指定的类型。
-```
 
 ### STATIC_HOOK
+
 针对静态函数的Hook。
 
 ### INSTANCE_HOOK
+
 针对成员函数的Hook。
 
 ## Hook的参数解释
+
 ```DEF_TYPE```：你给你这个 Hook 的起的类型名。
 
 ```PRIORITY```：[Hook的优先级](https://github.com/LiteLDev/LeviLamina/blob/develop/src/ll/api/memory/Hook.h#L73)，例如```ll::memory::HookPriority::Normal```
@@ -57,11 +59,13 @@ TYPED 标注的 Hook 会给你的 DEF_TYPE 继承到你指定的类型。
 ```...```：Hook 的函数的参数列表。
 
 ## Hook的使用
+
 你可以查阅静态程序分析工具，例如 IDA Pro，来获取你想要Hook的函数的符号或特征码。
 
 或者查阅 LeviLamina 提供的[```Fake Header```](https://github.com/LiteLDev/LeviLamina/tree/develop/src/mc)来获取你想要 Hook 的函数的符号或者定义。
 
 ### 简单的Hook示例
+
 ```cpp
 #include "ll/api/Logger.h"
 #include "mc/server/common/DedicatedServer.h"
@@ -79,6 +83,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     dedicatedServerLogger.info("DedicatedServer::DedicatedServer");
 }
 ```
+
 这段代码会 Hook DedicatedServer 的构造函数，并在构造函数被调用时打印一条日志。
 
 解析：
@@ -94,9 +99,11 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ### Hook的注册和卸载
 
 #### 注册
+
 针对非自动注册的 Hook，你需要在你插件需要注册 Hook 的时机调用```hook()```函数进行注册。
 
 #### 卸载
+
 所有的 Hook 都会在 BDS 卸载时自动卸载，你也可以在你插件需要卸载 Hook 的时机调用```unhook()```函数进行卸载。
 
 ## 写在最后

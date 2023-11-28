@@ -4,14 +4,13 @@
 
 ## 如何开始？
 
-在开始之前，你最好已经阅读了[Hook指南](../../guides/hook_guide)。并且对 C++ 和底层知识有一定的了解。
+在开始之前，你最好已经阅读了[Hook指南](../guides/hook_guide.md)。并且对 C++ 和底层知识有一定的了解。
 
 ### 需要的工具
 
 `IDA Pro`：用于反编译 BDS 的二进制文件。
-!!! Note 
+!!! Note
     如果你没有购买 IDA Pro，可以使用[IDA Free](https://hex-rays.com/ida-free/)，但是 IDA Free 没有将函数反编译为C语言的功能。
-
 
 ## 为什么要理解BDS的函数？
 
@@ -32,7 +31,7 @@ class Player : public ::Mob {
 ```
 
 很明显，Player 继承了 Mob 类，而依次类推，Mob 又是继承的 Actor，在 Actor 类中，我们终于找到了
-    
+
 ```cpp
 class Vec3 const& getPosition() const;
 ```
@@ -46,7 +45,6 @@ class Vec3 const& getPosition() const;
 IDA Pro给出这样的结果：
 
 === "汇编"
-    
     ```ASM
     .text:00000001415B8D50 ; const struct Vec3 *__fastcall Actor::getPosition(Actor *__hidden this)
     .text:00000001415B8D50 ?getPosition@Actor@@QEBAAEBVVec3@@XZ proc near
@@ -69,7 +67,7 @@ IDA Pro给出这样的结果：
 
 === "伪代码"
     ```cpp
-    const struct Vec3 *__fastcall Actor::getPosition(Actor *this)
+    const struct Vec3 *__fastcall Actor::getPosition(Actor*this)
     {
     const struct Vec3 *result; // rax
 
@@ -109,7 +107,7 @@ public: virtual void __cdecl ServerNetworkHandler::handle(class NetworkIdentifie
 //symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z
 ```
 
-利用我们在[Hook指南](../../guides/hook_guide)中学到的知识，我们可以很容易的 Hook 这个函数，实现我们的功能。（吗？）
+利用我们在[Hook指南](../guides/hook_guide.md)中学到的知识，我们可以很容易的 Hook 这个函数，实现我们的功能。（吗？）
 
 好吧，事实上我们遇到第二个问题，这里似乎没有一个 `std::string` 类型的参数，我们似乎无法获取到玩家的聊天内容。
 
@@ -253,6 +251,7 @@ v5 = (const struct Player *)(*(__int64 (__fastcall **)(char *, const struct Netw
         return {handler._getServerPlayer(source, subId)};
     }
 ```
+
 和前面的伪代码可以看出，直接调用 _getServerPlayer 并不可行，我们需要对NetworkIdentifier 指针做一个 -16 的偏移才能正确的获取玩家指针，为了方便开发，LeviLamina提供了一个封装，我们可以跳过这个步骤，直接使用这个封装来获取玩家的指针。
 
 就此，我们已经实现了我们的目标，我们可以Hook这个函数，实现我们的功能。
@@ -269,7 +268,6 @@ std::string              mMessage;    // this+0x58
 
 !!! Danger
     但是我们不是官方，提供的结构体信息并不一定完全正确，可能随着版本的更新，这个结构体会发生变化，而我们可能没有及时更新，所以，使用结构体替代偏移的时候，一定要注意！
-    
     当然，如果你发现了这样的问题，欢迎提交PR。
 
 ## 总结

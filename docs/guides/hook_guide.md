@@ -1,6 +1,7 @@
-# Hooking Guide
+# Hook Guide
 
 ## Introduction
+
 Hook is a technique for modifying the behavior of functions at runtime. It is commonly used to alter the behavior of functions without modifying the original source code.
 
 Explanation of Hook on Wikipedia: [Hooking](https://en.wikipedia.org/wiki/Hooking)
@@ -29,18 +30,19 @@ In [`ll/api/memory/Hook.h`](https://github.com/LiteLDev/LeviLamina/blob/develop/
 #define LL_AUTO_INSTANCE_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)
 ```
 
-```
 The AUTO-marked Hooks automatically register, i.e., call the hook() function to register at runtime.
 The TYPED-marked Hooks inherit your DEF_TYPE to the specified type.
-```
 
 ### STATIC_HOOK
+
 For hooking static functions.
 
 ### INSTANCE_HOOK
+
 For hooking member functions.
 
 ## Explanation of Hook Parameters
+
 `DEF_TYPE`: The type name you give to your Hook.
 
 `PRIORITY`: [Hook priority](https://github.com/LiteLDev/LeviLamina/blob/develop/src/ll/api/memory/Hook.h#L73), e.g., `ll::memory::HookPriority::Normal`
@@ -57,11 +59,13 @@ For hooking member functions.
 `...`: The parameter list of the Hook function.
 
 ## Using Hooks
+
 You can refer to static program analysis tools, such as IDA Pro, to obtain the symbols or signatures of the functions you want to Hook.
 
 Or refer to the [`Fake Header`](https://github.com/LiteLDev/LeviLamina/tree/develop/src/mc) provided by LeviLamina to obtain the symbols or definitions of the functions you want to Hook.
 
 ### A Simple Hook Example
+
 ```cpp
 #include "ll/api/Logger.h"
 #include "mc/server/common/DedicatedServer.h"
@@ -79,6 +83,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     dedicatedServerLogger.info("DedicatedServer::DedicatedServer");
 }
 ```
+
 This code hooks the constructor of DedicatedServer and prints a log message when the constructor is called.
 
 Analysis:
@@ -94,11 +99,13 @@ Finally, for convenience, we used the `TYPED`-marked Hook, so we can directly ca
 ### Registering and Unloading Hooks
 
 #### Registration
+
 For non-automatically registered Hooks, you need
 
  to call the `hook()` function to register at the moment your plugin needs to register the Hook.
 
 #### Unloading
+
 All Hooks will automatically unload when BDS unloads. You can also call the `unhook()` function to unload when your plugin needs to unload the Hook.
 
 ## In Conclusion

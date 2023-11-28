@@ -4,12 +4,12 @@ This article will introduce how to understand the functions in BDS and how to fi
 
 ## How to Start?
 
-Before you begin, it's best if you have already read the [Hook Guide](../../guides/hook_guide). You should also have some understanding of C++ and low-level knowledge.
+Before you begin, it's best if you have already read the [Hook Guide](../guides/hook_guide.md). You should also have some understanding of C++ and low-level knowledge.
 
 ### Tools Needed
 
 `IDA Pro`: Used for decompiling the binary files of BDS.
-!!! Note 
+!!! Note
     If you haven't purchased IDA Pro, you can use [IDA Free](https://hex-rays.com/ida-free/), but IDA Free does not have the feature to decompile functions into C language.
 
 ## Why Understand BDS Functions?
@@ -43,7 +43,7 @@ We open IDA Pro and search for `Actor::getPosition`.
 IDA Pro gives us this result:
 
 === "Assembly"
-    
+
     ```ASM
     .text:00000001415B8D50 ; const struct Vec3 *__fastcall Actor::getPosition(Actor *__hidden this)
     .text:00000001415B8D50 ?getPosition@Actor@@QEBAAEBVVec3@@XZ proc near
@@ -66,7 +66,7 @@ IDA Pro gives us this result:
 
 === "Pseudocode"
     ```cpp
-    const struct Vec3 *__fastcall Actor::getPosition(Actor *this)
+    const struct Vec3 *__fastcall Actor::getPosition(Actor*this)
     {
     const struct Vec3 *result; // rax
 
@@ -106,7 +106,7 @@ public: virtual void __cdecl ServerNetworkHandler::handle(class NetworkIdentifie
 //symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z
 ```
 
-Using the knowledge we learned in the [Hook Guide](../../guides/hook_guide), we can easily hook this function to achieve our functionality. (Right?)
+Using the knowledge we learned in the [Hook Guide](../guides/hook_guide.md), we can easily hook this function to achieve our functionality. (Right?)
 
 Well, actually, we encounter a second problem: there doesn't seem to be a `std::string` type parameter here, and we seem unable to get the player's chat content.
 
@@ -253,7 +253,6 @@ Using this, we can directly use `textPacket.mMessage` instead of the offset to g
 
 !!! Danger
     However, it is important to note that we are not the official source, and the structural information we provide may not be entirely accurate. The structure may change with version updates, and we may not update it in time. Therefore, when using structures to replace offsets, you must be careful!
-    
     Of course, if you discover such issues, you are welcome to submit a PR.
 
 ## Conclusion
