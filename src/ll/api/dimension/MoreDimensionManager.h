@@ -9,11 +9,21 @@ ll::Logger loggerMoreDimMag("MoreDimensionManager");
 }
 
 class MoreDimensionManager {
+    const std::string dimensionConfigPath = R"(worlds\Bedrock level\dimension_config.json)";
+
+    void              init();
+    void              setDimensionConfigPath();
+
 public:
+    MoreDimensionManager() { init(); };
+
+    static MoreDimensionManager getInstance() { return {}; }
+
     struct DimensionInfo {
-        DimensionInfo(std::string_view dimensionName, AutomaticID<Dimension, int> dimensionId)
+        DimensionInfo(std::string_view dimensionName, AutomaticID<Dimension, int> dimensionId, uint sd)
         : name(dimensionName),
-          id(dimensionId){};
+          id(dimensionId),
+          seed(sd){};
 
         std::string                 name;
         AutomaticID<Dimension, int> id;
@@ -22,5 +32,8 @@ public:
     };
     std::unordered_map<int, DimensionInfo> MoreDimensionMap;
 
-    LLAPI void AddDimension(std::string_view dimensionName, AutomaticID<Dimension, int> dimensionId);
+    AutomaticID<Dimension, int> getNewDimensionId();
+
+    LLAPI bool AddDimension(std::string_view dimensionName, uint seed, AutomaticID<Dimension, int> dimensionId);
+    LLAPI AutomaticID<Dimension, int> AddDimension(std::string_view dimensionName, uint seed);
 };

@@ -1,5 +1,6 @@
 #include "ll/api/service/GlobalService.h"
 
+#include "ll/api/dimension/MoreDimensionManager.h"
 #include "mc/deps/raknet/RakPeer.h"
 #include "mc/deps/raknet/RakPeerInterface.h"
 #include "mc/network/RakNetConnector.h"
@@ -150,10 +151,13 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     ::ServerInstance& ins
 ) {
     ll::Global<Level>.init(ll::Global<Minecraft>->getLevel());
+    ll::Global<MoreDimensionManager>.init(new MoreDimensionManager());
     origin(ins);
 }
 LL_AUTO_INSTANCE_HOOK(LevelDestructor, HookPriority::High, "??1Level@@UEAA@XZ", void) {
     ll::Global<Level>.init(nullptr);
+    ll::Global<MoreDimensionManager>->~MoreDimensionManager();
+    ll::Global<MoreDimensionManager>.init(nullptr);
     origin();
 }
 
