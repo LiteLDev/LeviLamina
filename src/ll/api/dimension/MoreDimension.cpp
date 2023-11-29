@@ -19,7 +19,7 @@
 
 
 MoreDimension::MoreDimension(ILevel& ilevel, Scheduler& scheduler, MoreDimensionManager::DimensionInfo& dimensionInfo)
-: Dimension(ilevel, dimensionInfo.id, DimensionHeightRange(-64, 320), scheduler, dimensionInfo.name) {
+: Dimension(ilevel, dimensionInfo.id, {-64, 320}, scheduler, dimensionInfo.name) {
     loggerMoreDim.debug("MoreDimension::MoreDimension dimension name:{}", dimensionInfo.name);
     mDefaultBrightness.sky = Brightness::MAX;
     auto generatorType     = dimensionInfo.generatorType;

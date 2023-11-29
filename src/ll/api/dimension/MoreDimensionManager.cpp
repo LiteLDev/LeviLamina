@@ -9,8 +9,23 @@
 #include "mc/world/level/dimension/VanillaDimensionFactory.h"
 #include "mc/world/level/dimension/VanillaDimensions.h"
 
-void MoreDimensionManager::AddDimension(std::string_view dimensionName, AutomaticID<Dimension, int> dimensionId) {
-    MoreDimensionMap.emplace(dimensionId.id, DimensionInfo(dimensionName, dimensionId));
+void MoreDimensionManager::init() {}
+
+bool MoreDimensionManager::AddDimension(
+    std::string_view            dimensionName,
+    uint                        seed,
+    AutomaticID<Dimension, int> dimensionId
+) {
+    if (MoreDimensionMap.find(dimensionId.id) != MoreDimensionMap.end()) {
+        loggerMoreDimMag.error("The Dimension Id Already exists. Id: {}", dimensionId.id);
+        return false;
+    }
+    if (dimensionId == VanillaDimensions::Overworld || dimensionId == VanillaDimensions::Nether
+        || dimensionId == VanillaDimensions::TheEnd) {
+        loggerMoreDimMag.error("Cannot use vanilla dimension id, Id: {}", dimensionId.id);
+        return false;
+    }
+    MoreDimensionMap.emplace(dimensionId.id, DimensionInfo(dimensionName, dimensionId, seed));
     ll::memory::modify(VanillaDimensions::$DimensionMap(), [&](auto& dimMap) {
         loggerMoreDimMag.debug("Add new dimension");
         dimMap.mRight.insert(std::make_pair(dimensionName, dimensionId));
@@ -20,6 +35,7 @@ void MoreDimensionManager::AddDimension(std::string_view dimensionName, Automati
         dimId.id += 1;
         loggerMoreDimMag.debug("Set VanillaDimensions::Undefined to {}", dimId.id);
     });
+    return true;
 }
 
 LL_AUTO_STATIC_HOOK(
@@ -86,6 +102,7 @@ LL_AUTO_STATIC_HOOK(
     return ll::Global<MoreDimensionManager>->MoreDimensionMap.at(dim.id).name;
 }
 
+// Registry New Dimension Hook
 using fact = OwnerPtrFactory<Dimension, ILevel&, Scheduler&>;
 LL_AUTO_STATIC_HOOK(
     RegistryDimensionSercive,
@@ -109,12 +126,7 @@ LL_AUTO_STATIC_HOOK(
 }
 
 // registry dimensoin when in ll, must reload Dimension::getWeakRef
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    DimensionGetWeakRefHook,
-    HookPriority::Normal,
-    Dimension,
-    &Dimension::getWeakRef,
-    WeakRefT<SharePtrRefTraits<Dimension>>) {
+LL_AUTO_TYPED_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimension, &Dimension::getWeakRef, WeakRefT<SharePtrRefTraits<Dimension>>) {
     if (this->getDimensionId() > 2 && this->getDimensionId() != VanillaDimensions::Undefined.id)
         return weak_from_this();
     return origin();

@@ -73,13 +73,13 @@ public:
     // ?fetchCollisionShapes@BlockSource@@UEBAXAEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@AEBVAABB@@_NV?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual void
     fetchCollisionShapes(std::vector<class AABB>&, class AABB const&, bool, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+        const = 0;
 
     // vIndex: 19, symbol:
     // ?getTallestCollisionShape@BlockSource@@UEBA?AVAABB@@AEBV2@PEAM_NV?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual class AABB
     getTallestCollisionShape(class AABB const&, float*, bool, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+        const = 0;
 
     // vIndex: 20, symbol: ?getBrightness@BlockSource@@UEBAMAEBVBlockPos@@@Z
     virtual float getBrightness(class BlockPos const&) const = 0;
