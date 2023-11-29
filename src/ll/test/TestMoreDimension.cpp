@@ -23,6 +23,41 @@
 #include "mc/world/level/levelgen/structure/StructureFeatureRegistry.h"
 #include "mc/world/level/storage/LevelData.h"
 
+// Dimension need to test virtual tables
+/* Dimension related virtual tables
+ *
+ *                                    ∕-- IDimension
+ * OverworldDimension --∖           ∕-- LevelListener --- BlockSourceListener
+ * NetherDimension    --- Dimension --- SavedData
+ * TheEndDimension    --∕           ∖-- Bedrock::EnableNonOwnerReferences
+ *                                    ∖-- std::enable_shared_from_this<Dimension>
+ *
+ */
+
+/* WorldGenerator related virtual tables
+ *
+ *                          FlatWorldGenerator  --∖
+ *                          NetherGenerator      --∖
+ * OverworldGenerator2d --- OverworldGenerator2d --- WorldGenerator --- ChunkSource --- Bedrock::EnableNonOwnerReferences
+ *                          TheEndGenerator      --∕                ∖-- IPreliminarySurfaceProvider
+ *                          VoidGenerator       --∕
+ *
+ */
+
+/* DimensionBrightnessRamp related virtual tables
+ *
+ * NetherBrightnessRamp   --∖
+ * OverworldBrightnessRamp --- DimensionBrightnessRamp
+ *
+ */
+
+/* BlockSource related virtual tables
+ *
+ * BlockSource --- IBlockSource --- IConstBlockSource
+ *             ∖-- std::enable_shared_from_this<BlockSource>
+ *
+ */
+
 class ILevel;
 class Scheduler;
 class Dimension;
