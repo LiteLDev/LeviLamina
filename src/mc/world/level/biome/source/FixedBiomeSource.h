@@ -35,14 +35,14 @@ public:
     // vIndex: 4, symbol: ?containsOnly@FixedBiomeSource@@UEBA_NHHHHV?$span@$$CB_K$0?0@gsl@@@Z
     virtual bool containsOnly(int, int, int, int, gsl::span<uint64 const> allowed) const;
 
-    // vIndex: 5, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
-    virtual class Biome const* getBiome(class BlockPos const& blockPos) const;
+    // vIndex: 5, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@HHH@Z
+    virtual class Biome const* getBiome(int blockX, int blockY, int blockZ) const;
 
     // vIndex: 6, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBUGetBiomeOptions@@@Z
     virtual class Biome const* getBiome(struct GetBiomeOptions const& getBiomeOptions) const;
 
-    // vIndex: 7, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@HHH@Z
-    virtual class Biome const* getBiome(int blockX, int blockY, int blockZ) const;
+    // vIndex: 7, symbol: ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
+    virtual class Biome const* getBiome(class BlockPos const& blockPos) const;
 
     // symbol: ??0FixedBiomeSource@@QEAA@AEBVBiome@@@Z
     MCAPI explicit FixedBiomeSource(class Biome const& fixedBiome);

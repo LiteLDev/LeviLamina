@@ -57,6 +57,12 @@
  *
  */
 
+/* BiomeSource related virtual tables
+ *
+ * FixedBiomeSource --- BiomeSource
+ *
+ */
+
 class ILevel;
 class Scheduler;
 class Dimension;
