@@ -2,6 +2,9 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
+#include "mc/network/ConnectionRequest.h"
+#include "mc/network/NetworkIdentifier.h"
+
 #include "mc/network/ServerNetworkHandler.h"
 
 
@@ -11,14 +14,13 @@ LL_TYPED_INSTANCE_HOOK(
     PlayerConnectEventHook,
     HookPriority::Normal,
     ServerNetworkHandler,
-    "?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVConnectionRequest@@AEAVServerPlayer@@"
-    "@Z",
+    &ServerNetworkHandler::sendLoginMessageLocal,
     void,
-    const NetworkIdentifier& ni,
-    const ConnectionRequest& cr,
-    const ServerPlayer&      sp
+    NetworkIdentifier const& ni,
+    ConnectionRequest const& cr,
+    ServerPlayer&            sp
 ) {
-    auto event = PlayerConnectEvent(sp);
+    auto event = PlayerConnectEvent{ni, cr, sp};
     EventBus::getInstance().publish(event);
     if (event.isCancelled()) {
         return;

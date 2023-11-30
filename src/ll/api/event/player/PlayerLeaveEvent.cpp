@@ -7,8 +7,7 @@
 namespace ll::event::player {
 
 LL_TYPED_INSTANCE_HOOK(PlayerLeaveEventHook, HookPriority::Normal, ServerPlayer, &ServerPlayer::disconnect, void) {
-    auto event = PlayerLeaveEvent(*this);
-    EventBus::getInstance().publish(event);
+    EventBus::getInstance().publish(PlayerLeaveEvent{*this});
     origin();
 }
 

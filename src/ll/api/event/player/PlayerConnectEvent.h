@@ -6,12 +6,24 @@
 
 #include "mc/server/ServerPlayer.h"
 
+class ConnectionRequest;
+class NetworkIdentifier;
+
 namespace ll::event::player {
 class PlayerConnectEvent : public Cancellable<Event> {
 public:
-    const ServerPlayer& player;
+    NetworkIdentifier const& networkIdentifier;
+    ConnectionRequest const& connectionRequest;
+    ServerPlayer&            player;
 
-    constexpr explicit PlayerConnectEvent(const ServerPlayer& player) : player(player) {}
+    constexpr explicit PlayerConnectEvent(
+        NetworkIdentifier const& networkIdentifier,
+        ConnectionRequest const& connectionRequest,
+        ServerPlayer&            player
+    )
+    : networkIdentifier(networkIdentifier),
+      connectionRequest(connectionRequest),
+      player(player) {}
 
     LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };

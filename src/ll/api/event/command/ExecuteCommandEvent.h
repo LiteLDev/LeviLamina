@@ -4,9 +4,10 @@
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/Event.h"
 
-#include "mc/codebuilder/MCRESULT.h"
 #include "mc/server/commands/CommandContext.h"
-#include "mc/server/commands/MinecraftCommands.h"
+
+struct MCRESULT;
+class MinecraftCommands;
 
 namespace ll::event::command {
 class ExecutingCommandEvent : public Cancellable<Event> {
@@ -31,13 +32,13 @@ public:
     MCRESULT&             result;
     MinecraftCommands&    minecraftCommands;
     CommandContext const& commandContext;
-    bool                  suppressOutput;
+    bool const&           suppressOutput;
 
     constexpr explicit ExecutedCommandEvent(
         MCRESULT&          result,
         MinecraftCommands& minecraftCommands,
         CommandContext&    commandContext,
-        bool               suppressOutput
+        bool const&        suppressOutput
     )
     : result(result),
       minecraftCommands(minecraftCommands),

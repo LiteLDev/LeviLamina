@@ -12,6 +12,7 @@
 #include "ll/api/event/player/PlayerConnectEvent.h"
 #include "ll/api/event/player/PlayerJoinEvent.h"
 #include "ll/api/event/player/PlayerLeaveEvent.h"
+#include "mc/codebuilder/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
 
 #include "ll/api/base/FixedString.h"
@@ -125,7 +126,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         ll::logger.debug("result: {}", ev.result.getFullCode());
     });
     bus.emplaceListener<player::PlayerConnectEvent>([](player::PlayerConnectEvent& ev) {
-        ll::logger.debug("Player connect: {}", ev.player.getRealName());
+        ll::logger.debug("Player connect: {} {}", ev.player.getRealName(), ev.player.getIPAndPort());
     });
     bus.emplaceListener<player::PlayerJoinEvent>([](player::PlayerJoinEvent& ev) {
         ll::logger.debug("Player join: {}", ev.player.getRealName());
