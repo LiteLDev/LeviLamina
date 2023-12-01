@@ -19,6 +19,10 @@ os.mkdir(include_dir)
 
 # Copy all header files recursively
 for root, dirs, files in os.walk(source_dir):
+    # Skip the test directory
+    if root.startswith(os.path.join(source_dir, "ll", "test")):
+        continue
+
     for file in files:
         if file.endswith(".h"):
             # Calculate source file path
