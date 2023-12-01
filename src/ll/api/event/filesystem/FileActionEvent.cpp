@@ -21,7 +21,7 @@
 
 #include "windows.h"
 
-namespace ll::event::fs {
+namespace ll::event::inline fs {
 // modified from Thomas Monkman's
 class FileWatcher : public Emitter<FileActionEvent> {
 public:
@@ -242,4 +242,4 @@ std::unique_ptr<EmitterBase> FileActionEvent::emitterFactory(ListenerBase& l) {
         }
     );
 }
-} // namespace ll::event::fs
+} // namespace ll::event::inline fs

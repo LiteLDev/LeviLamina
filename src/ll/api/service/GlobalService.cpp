@@ -159,18 +159,14 @@ LL_AUTO_INSTANCE_HOOK(LevelDestructor, HookPriority::High, "??1Level@@UEAA@XZ", 
 
 // RakNet::RakPeer
 
-LL_AUTO_STATIC_HOOK(
-    RakNetRakPeerCreater,
-    HookPriority::High,
-    createUniqueRakPeer,
-    RakNet::RakPeerInterface::InstanceOwner
-) {
+LL_AUTO_INSTANCE_HOOK(RakNetRakPeerConstructor, HookPriority::High, "??0RakPeer@RakNet@@QEAA@XZ", RakNet::RakPeer*) {
     auto self = origin();
-    ll::Global<RakNet::RakPeer>.init((RakNet::RakPeer*)self.get());
+    ll::Global<RakNet::RakPeer>.init(self);
+    unhook();
     return self;
 }
 LL_AUTO_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::High, "??1RakPeer@RakNet@@UEAA@XZ", void) {
-    ll::Global<RakNet::RakPeer>.init(nullptr);
+    if ((void*)this == (void*)ll::Global<RakNet::RakPeer>.get()) ll::Global<RakNet::RakPeer>.init(nullptr);
     origin();
 }
 

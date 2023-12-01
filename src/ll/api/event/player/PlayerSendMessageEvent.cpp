@@ -7,7 +7,7 @@
 
 #include "mc/network/ServerNetworkHandler.h"
 
-namespace ll::event::player {
+namespace ll::event::inline player {
 
 LL_TYPED_INSTANCE_HOOK(
     PlayerSendMessageEventHook,
@@ -37,4 +37,4 @@ public:
 std::unique_ptr<EmitterBase> PlayerSendMessageEvent::emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerSendMessageEventEmitter>();
 }
-} // namespace ll::event::player
+} // namespace ll::event::inline player

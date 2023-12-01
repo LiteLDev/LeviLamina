@@ -8,7 +8,7 @@
 #include "ll/api/event/Listener.h"
 
 namespace ll::event {
-namespace fs{
+inline namespace fs {
 enum class FileActionType {
     Added = 1,
     Removed,
@@ -26,7 +26,7 @@ public:
 
     LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
-} // namespace
+} // namespace fs
 
 template <>
 class Listener<fs::FileActionEvent> : public ListenerBase {

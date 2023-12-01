@@ -9,7 +9,21 @@
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/api/event/command/ExecuteCommandEvent.h"
+#include "ll/api/event/player/PlayerAddExperienceEvent.h"
+#include "ll/api/event/player/PlayerAttackEvent.h"
+#include "ll/api/event/player/PlayerAttackedEvent.h"
+#include "ll/api/event/player/PlayerConnectEvent.h"
+#include "ll/api/event/player/PlayerDieEvent.h"
+#include "ll/api/event/player/PlayerJoinEvent.h"
+#include "ll/api/event/player/PlayerJumpEvent.h"
+#include "ll/api/event/player/PlayerLeaveEvent.h"
+#include "ll/api/event/player/PlayerRespawnEvent.h"
+#include "ll/api/event/player/PlayerTakeDropItemEvent.h"
+#include "mc/codebuilder/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
+#include "mc/world/actor/ActorDamageSource.h"
+#include "mc/world/item/registry/ItemStack.h"
+
 
 #include "ll/api/base/FixedString.h"
 
@@ -102,23 +116,63 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     using namespace ll::event;
 
-    auto str = ll::toFixedString<ll::reflection::type_raw_name_v<fs::FileActionEvent>>();
+    auto str = ll::toFixedString<ll::reflection::type_raw_name_v<FileActionEvent>>();
 
     ll::logger.debug("{}", str.buf);
 
-    auto listener4 = Listener<fs::FileActionEvent>::create("./", [](fs::FileActionEvent& ev) {
+    auto listener4 = Listener<FileActionEvent>::create("./", [](FileActionEvent& ev) {
         ll::logger.debug("dyn receive: {}, {} {}", typeid(ev).name(), ev.path, magic_enum::enum_name(ev.type));
     });
     bus.addListener(listener4);
 
     remover.add<DelayTask>(2min, [=, &bus] { bus.removeListener(listener4); });
 
-    bus.emplaceListener<command::ExecutingCommandEvent>([](command::ExecutingCommandEvent& ev) {
+    bus.emplaceListener<ExecutingCommandEvent>([](ExecutingCommandEvent& ev) {
         ll::logger.debug("ExecutingCommandEvent: {}", ev.commandContext.mCommand);
         ll::logger.debug("origin: {}", ev.commandContext.mOrigin->serialize().toSnbt());
     });
-    bus.emplaceListener<command::ExecutedCommandEvent>([](command::ExecutedCommandEvent& ev) {
+    bus.emplaceListener<ExecutedCommandEvent>([](ExecutedCommandEvent& ev) {
         ll::logger.debug("ExecutedCommandEvent: {}", ev.commandContext.mCommand);
         ll::logger.debug("result: {}", ev.result.getFullCode());
+    });
+    bus.emplaceListener<PlayerConnectEvent>([](PlayerConnectEvent& ev) {
+        ll::logger.debug("Player connect: {} {}", ev.player.getRealName(), ev.player.getIPAndPort());
+    });
+    bus.emplaceListener<PlayerJoinEvent>([](PlayerJoinEvent& ev) {
+        ll::logger.debug("Player join: {}", ev.player.getRealName());
+    });
+    bus.emplaceListener<PlayerLeaveEvent>([](PlayerLeaveEvent& ev) {
+        ll::logger.debug("Player leave: {}", ev.player.getRealName());
+    });
+    bus.emplaceListener<PlayerAttackEvent>([](PlayerAttackEvent& ev) {
+        ll::logger.debug(
+            "Player {} attack {} cause {}",
+            ev.source.getRealName(),
+            ev.target.getTypeName(),
+            magic_enum::enum_name(ev.cause)
+        );
+    });
+    bus.emplaceListener<PlayerAttackedEvent>([](PlayerAttackedEvent& ev) {
+        ll::logger
+            .debug("Player {} attacked {} damage {}", ev.source.getRealName(), ev.target.getTypeName(), ev.damage);
+    });
+    bus.emplaceListener<PlayerDieEvent>([](PlayerDieEvent& ev) {
+        ll::logger
+            .debug("Player {} died source {}", ev.player.getRealName(), magic_enum::enum_name(ev.source.getCause()));
+    });
+    bus.emplaceListener<PlayerRespawnEvent>([](PlayerRespawnEvent& ev) {
+        ll::logger.debug("Player {} respawned", ev.player.getRealName());
+    });
+    bus.emplaceListener<PlayerJumpEvent>([](PlayerJumpEvent& ev) {
+        ll::logger.debug("Player {} jumped", ev.player.getRealName());
+    });
+    bus.emplaceListener<PlayerAddExperienceEvent>([](PlayerAddExperienceEvent& ev) {
+        ll::logger.debug("Player {} add experience {}", ev.player.getRealName(), ev.exp);
+        if (ev.exp == 114514) {
+            ev.cancel();
+        }
+    });
+    bus.emplaceListener<PlayerTakeDropItemEvent>([](PlayerTakeDropItemEvent& ev) {
+        ll::logger.debug("Player {} take {}", ev.player.getRealName(), ev.itemActor.mItem.getTypeName());
     });
 }

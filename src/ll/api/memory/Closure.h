@@ -70,13 +70,13 @@ public:
     ulong                    oldProtectFlags{};
     std::unique_ptr<uchar[]> closure;
 
-    LLAPI NativeClosure(Origin* func, uintptr_t data) : stored({func, data}) {
+    NativeClosure(Origin* func, uintptr_t data) : stored({func, data}) {
         detail::initNativeClosure(this, closureImpl, implOffset, closureSize);
     }
 
-    LLAPI Closure* get() const { return (Closure*)closure.get(); }
+    Closure* get() const { return (Closure*)closure.get(); }
 
-    LLAPI ~NativeClosure() { detail::releaseNativeClosure(this, closureSize); }
+    ~NativeClosure() { detail::releaseNativeClosure(this, closureSize); }
 };
 template <class Ret, class... Args>
 class FunctionalClosure : public NativeClosure<Ret, Args...> {

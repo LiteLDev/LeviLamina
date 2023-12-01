@@ -12,7 +12,7 @@ namespace ll {
 void setupSimpleServerLogger() {
     using namespace event;
     if (globalConfig.modules.simpleServerLogger.playerCommand)
-        EventBus::getInstance().emplaceListener<command::ExecutingCommandEvent>([](command::ExecutingCommandEvent& ev) {
+        EventBus::getInstance().emplaceListener<ExecutingCommandEvent>([](ExecutingCommandEvent& ev) {
             if (ev.commandContext.getCommandOrigin().getOriginType() != CommandOriginType::Player) {
                 return;
             }
@@ -24,12 +24,12 @@ void setupSimpleServerLogger() {
             );
         });
     if (globalConfig.modules.simpleServerLogger.playerChat)
-        EventBus::getInstance().emplaceListener<player::PlayerSendMessageEvent>([](player::PlayerSendMessageEvent& ev) {
+        EventBus::getInstance().emplaceListener<PlayerSendMessageEvent>([](PlayerSendMessageEvent& ev) {
             static Logger logger("PlayerChat");
             logger.info("<{}> {}", ev.player.getRealName(), ev.message);
         });
     if (globalConfig.modules.simpleServerLogger.playerPermission)
-        EventBus::getInstance().emplaceListener<player::PlayerChangePermEvent>([](player::PlayerChangePermEvent& ev) {
+        EventBus::getInstance().emplaceListener<PlayerChangePermEvent>([](PlayerChangePermEvent& ev) {
             static Logger logger("PlayerPerm");
             logger.info(
                 "<{}> {}({}) -> {}({})",

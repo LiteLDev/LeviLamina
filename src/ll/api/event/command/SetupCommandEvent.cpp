@@ -4,7 +4,7 @@
 
 #include "mc/server/common/commands/SaveCommand.h"
 
-namespace ll::event::command {
+namespace ll::event::inline command {
 
 LL_TYPED_STATIC_HOOK(
     SetupCommandEventHook,
