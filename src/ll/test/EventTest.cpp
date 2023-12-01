@@ -9,6 +9,7 @@
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/api/event/command/ExecuteCommandEvent.h"
+#include "ll/api/event/player/PlayerAddExperienceEvent.h"
 #include "ll/api/event/player/PlayerAttackEvent.h"
 #include "ll/api/event/player/PlayerAttackedEvent.h"
 #include "ll/api/event/player/PlayerConnectEvent.h"
@@ -157,5 +158,11 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     });
     bus.emplaceListener<player::PlayerJumpEvent>([](player::PlayerJumpEvent& ev) {
         ll::logger.debug("Player {} jumped", ev.player.getRealName());
+    });
+    bus.emplaceListener<player::PlayerAddExperienceEvent>([](player::PlayerAddExperienceEvent& ev) {
+        ll::logger.debug("Player {} add experience {}", ev.player.getRealName(), ev.exp);
+        if (ev.exp == 114514) {
+            ev.cancel();
+        }
     });
 }
