@@ -10,16 +10,16 @@ namespace ll::event::player {
 /**
  * @brief Player attack event.
  */
-class PlayerAttackEvent : public Cancellable<Event> {
+class PlayerAttackedEvent : public Cancellable<Event> {
 public:
-    Player&                 source;
-    Actor&                  target;
-    ActorDamageCause const& cause;
+    Player& source;
+    Actor&  target;
+    float&  damage;
 
-    constexpr explicit PlayerAttackEvent(Player& source, Actor& target, ActorDamageCause const& cause)
+    constexpr explicit PlayerAttackedEvent(Player& source, Actor& target, float& damage)
     : source(source),
       target(target),
-      cause(cause) {}
+      damage(damage) {}
 
     LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };

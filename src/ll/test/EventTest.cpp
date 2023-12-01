@@ -10,11 +10,14 @@
 
 #include "ll/api/event/command/ExecuteCommandEvent.h"
 #include "ll/api/event/player/PlayerAttackEvent.h"
+#include "ll/api/event/player/PlayerAttackedEvent.h"
 #include "ll/api/event/player/PlayerConnectEvent.h"
+#include "ll/api/event/player/PlayerDieEvent.h"
 #include "ll/api/event/player/PlayerJoinEvent.h"
 #include "ll/api/event/player/PlayerLeaveEvent.h"
 #include "mc/codebuilder/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
+#include "mc/world/actor/ActorDamageSource.h"
 
 
 #include "ll/api/base/FixedString.h"
@@ -137,6 +140,14 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         ll::logger.debug("Player leave: {}", ev.player.getRealName());
     });
     bus.emplaceListener<player::PlayerAttackEvent>([](player::PlayerAttackEvent& ev) {
-        ll::logger.debug("Player {} attacked {}", ev.source.getRealName(), ev.target.getTypeName());
+        ll::logger
+            .debug("Player {} attack {} cause {}", ev.source.getRealName(), ev.target.getTypeName(), (int)ev.cause);
+    });
+    bus.emplaceListener<player::PlayerAttackedEvent>([](player::PlayerAttackedEvent& ev) {
+        ll::logger
+            .debug("Player {} attacked {} damage {}", ev.source.getRealName(), ev.target.getTypeName(), ev.damage);
+    });
+    bus.emplaceListener<player::PlayerDieEvent>([](player::PlayerDieEvent& ev) {
+        ll::logger.debug("Player {} died source {}", ev.player.getRealName(), (int)ev.source.getCause());
     });
 }

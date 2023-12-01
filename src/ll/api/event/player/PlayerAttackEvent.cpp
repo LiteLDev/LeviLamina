@@ -7,63 +7,27 @@
 
 namespace ll::event::player {
 
-struct {
-    Player* player{};
-    Actor*  target{};
-    bool    cancelled = false;
-} currentAttackingPlayer;
-
 LL_TYPED_INSTANCE_HOOK(
-    PlayerAttackEventHook1,
+    PlayerAttackEventHook,
     HookPriority::Normal,
     Player,
     "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",
     bool,
     Actor&                  ac,
-    const ActorDamageCause& cause
+    ActorDamageCause const& cause
 ) {
-    currentAttackingPlayer.player = this;
-    currentAttackingPlayer.target = &ac;
-    auto res                      = origin(ac, cause);
-    if (currentAttackingPlayer.cancelled) {
-        currentAttackingPlayer.cancelled = false;
+    auto ev = PlayerAttackEvent(*this, ac, cause);
+    EventBus::getInstance().publish(ev);
+    if (ev.isCancelled()) {
         return false;
     }
-    return res;
-}
-LL_TYPED_INSTANCE_HOOK(
-    PlayerAttackEventHook2,
-    HookPriority::Normal,
-    Actor,
-    &Actor::calculateAttackDamage,
-    float,
-    Actor& other
-) {
-    auto damage = origin(other);
-    if ((Actor*)currentAttackingPlayer.player == this && currentAttackingPlayer.target == &other) {
-        PlayerAttackEvent event(*(Player*)this, other, damage);
-        currentAttackingPlayer.player = nullptr;
-        currentAttackingPlayer.target = nullptr;
-        EventBus::getInstance().publish(event);
-        if (event.isCancelled()) {
-            currentAttackingPlayer.cancelled = true;
-            return 0;
-        }
-        return event.damage;
-    }
-    return damage;
+    return origin(ac, cause);
 }
 
 class PlayerAttackEventEmitter : public Emitter<PlayerAttackEvent> {
 public:
-    PlayerAttackEventEmitter() {
-        PlayerAttackEventHook1::hook();
-        PlayerAttackEventHook2::hook();
-    } // namespace ll::event::player
-    ~PlayerAttackEventEmitter() override {
-        PlayerAttackEventHook1::unhook();
-        PlayerAttackEventHook2::unhook();
-    }
+    PlayerAttackEventEmitter() { PlayerAttackEventHook::hook(); } // namespace ll::event::player
+    ~PlayerAttackEventEmitter() override { PlayerAttackEventHook::unhook(); }
 };
 
 std::unique_ptr<EmitterBase> PlayerAttackEvent::emitterFactory(ListenerBase&) {
