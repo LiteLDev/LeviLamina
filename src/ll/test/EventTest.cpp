@@ -9,11 +9,13 @@
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/api/event/command/ExecuteCommandEvent.h"
+#include "ll/api/event/player/PlayerAttackEvent.h"
 #include "ll/api/event/player/PlayerConnectEvent.h"
 #include "ll/api/event/player/PlayerJoinEvent.h"
 #include "ll/api/event/player/PlayerLeaveEvent.h"
 #include "mc/codebuilder/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
+
 
 #include "ll/api/base/FixedString.h"
 
@@ -133,5 +135,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     });
     bus.emplaceListener<player::PlayerLeaveEvent>([](player::PlayerLeaveEvent& ev) {
         ll::logger.debug("Player leave: {}", ev.player.getRealName());
+    });
+    bus.emplaceListener<player::PlayerAttackEvent>([](player::PlayerAttackEvent& ev) {
+        ll::logger.debug("Player {} attacked {}", ev.source.getRealName(), ev.target.getTypeName());
     });
 }
