@@ -14,6 +14,7 @@
 #include "ll/api/event/player/PlayerConnectEvent.h"
 #include "ll/api/event/player/PlayerDieEvent.h"
 #include "ll/api/event/player/PlayerJoinEvent.h"
+#include "ll/api/event/player/PlayerJumpEvent.h"
 #include "ll/api/event/player/PlayerLeaveEvent.h"
 #include "ll/api/event/player/PlayerRespawnEvent.h"
 #include "mc/codebuilder/MCRESULT.h"
@@ -153,5 +154,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     });
     bus.emplaceListener<player::PlayerRespawnEvent>([](player::PlayerRespawnEvent& ev) {
         ll::logger.debug("Player {} respawned", ev.player.getRealName());
+    });
+    bus.emplaceListener<player::PlayerJumpEvent>([](player::PlayerJumpEvent& ev) {
+        ll::logger.debug("Player {} jumped", ev.player.getRealName());
     });
 }

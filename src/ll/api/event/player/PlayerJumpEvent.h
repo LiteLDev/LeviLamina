@@ -8,18 +8,13 @@
 
 namespace ll::event::player {
 /**
- * @brief Player attacked event.
+ * @brief Player jump event.
  */
-class PlayerAttackedEvent : public Cancellable<Event> {
+class PlayerJumpEvent : public Event {
 public:
-    Player& source;
-    Actor&  target;
-    float&  damage;
+    Player& player;
 
-    constexpr explicit PlayerAttackedEvent(Player& source, Actor& target, float& damage)
-    : source(source),
-      target(target),
-      damage(damage) {}
+    constexpr explicit PlayerJumpEvent(Player& player) : player(player) {}
 
     LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };

@@ -8,7 +8,7 @@
 
 namespace ll::event::player {
 /**
- * @brief Player attack event.
+ * @brief Player respawn event.
  */
 class PlayerRespawnEvent : public Event {
 public:
