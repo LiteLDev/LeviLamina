@@ -18,9 +18,11 @@
 #include "ll/api/event/player/PlayerJumpEvent.h"
 #include "ll/api/event/player/PlayerLeaveEvent.h"
 #include "ll/api/event/player/PlayerRespawnEvent.h"
+#include "ll/api/event/player/PlayerTakeDropItemEvent.h"
 #include "mc/codebuilder/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/world/actor/ActorDamageSource.h"
+#include "mc/world/item/registry/ItemStack.h"
 
 
 #include "ll/api/base/FixedString.h"
@@ -164,5 +166,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         if (ev.exp == 114514) {
             ev.cancel();
         }
+    });
+    bus.emplaceListener<player::PlayerTakeDropItemEvent>([](player::PlayerTakeDropItemEvent& ev) {
+        ll::logger.debug("Player {} take {}", ev.player.getRealName(), ev.itemActor.mItem.getTypeName());
     });
 }

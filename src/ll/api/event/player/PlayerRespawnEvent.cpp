@@ -8,8 +8,11 @@
 namespace ll::event::player {
 
 LL_TYPED_INSTANCE_HOOK(PlayerRespawnEventHook, HookPriority::Normal, Player, "?respawn@Player@@UEAAXXZ", void) {
-    auto ev = PlayerRespawnEvent(*this);
-    EventBus::getInstance().publish(ev);
+    // If the player returns from end or just joins server, his health will > 0
+    if (this->getHealth() <= 0) {
+        auto ev = PlayerRespawnEvent(*this);
+        EventBus::getInstance().publish(ev);
+    }
     origin();
 }
 
