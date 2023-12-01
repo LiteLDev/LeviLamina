@@ -8,8 +8,7 @@
 namespace ll::event::inline player {
 
 LL_TYPED_INSTANCE_HOOK(PlayerJumpEventHook, HookPriority::Normal, Player, &Player::handleJumpEffects, void) {
-    auto ev = PlayerJumpEvent(*this);
-    EventBus::getInstance().publish(ev);
+    EventBus::getInstance().publish(PlayerJumpEvent(*this));
     return origin();
 }
 

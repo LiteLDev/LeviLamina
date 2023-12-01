@@ -15,8 +15,7 @@ LL_TYPED_INSTANCE_HOOK(
     void,
     ActorDamageSource const& source
 ) {
-    auto ev = PlayerDieEvent(*this, source);
-    EventBus::getInstance().publish(ev);
+    EventBus::getInstance().publish(PlayerDieEvent(*this, source));
     origin(source);
 }
 
