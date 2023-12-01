@@ -9,7 +9,7 @@
 class ConnectionRequest;
 class NetworkIdentifier;
 
-namespace ll::event::player {
+namespace ll::event::inline player {
 class PlayerConnectEvent : public Cancellable<Event> {
 public:
     NetworkIdentifier const& networkIdentifier;
@@ -27,4 +27,4 @@ public:
 
     LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
-} // namespace ll::event::player
+} // namespace ll::event::inline player

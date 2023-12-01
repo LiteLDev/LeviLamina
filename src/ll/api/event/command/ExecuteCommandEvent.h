@@ -9,7 +9,7 @@
 struct MCRESULT;
 class MinecraftCommands;
 
-namespace ll::event::command {
+namespace ll::event::inline command {
 class ExecutingCommandEvent : public Cancellable<Event> {
 public:
     MinecraftCommands& minecraftCommands;
@@ -47,4 +47,4 @@ public:
 
     LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
-} // namespace ll::event::command
+} // namespace ll::event::inline command

@@ -6,7 +6,7 @@
 
 #include "mc/server/ServerPlayer.h"
 
-namespace ll::event::player {
+namespace ll::event::inline player {
 class PlayerJoinEvent : public Cancellable<Event> {
 public:
     ServerPlayer& player;
@@ -15,4 +15,4 @@ public:
 
     LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
-} // namespace ll::event::player
+} // namespace ll::event::inline player

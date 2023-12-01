@@ -4,7 +4,7 @@
 
 #include "mc/server/ServerPlayer.h"
 
-namespace ll::event::player {
+namespace ll::event::inline player {
 
 LL_TYPED_INSTANCE_HOOK(PlayerLeaveEventHook, HookPriority::Normal, ServerPlayer, &ServerPlayer::disconnect, void) {
     EventBus::getInstance().publish(PlayerLeaveEvent{*this});
@@ -20,4 +20,4 @@ public:
 std::unique_ptr<EmitterBase> PlayerLeaveEvent::emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerLeaveEventEmitter>();
 }
-} // namespace ll::event::player
+} // namespace ll::event::inline player

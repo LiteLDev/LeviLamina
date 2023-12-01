@@ -2,7 +2,7 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
-namespace ll::event::player {
+namespace ll::event::inline player {
 
 LL_TYPED_INSTANCE_HOOK(
     PlayerChangePermEventHook,
@@ -29,4 +29,4 @@ public:
 std::unique_ptr<EmitterBase> PlayerChangePermEvent::emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerChangePermEventEmitter>();
 }
-} // namespace ll::event::player
+} // namespace ll::event::inline player

@@ -5,7 +5,7 @@
 
 #include "mc/world/actor/player/Player.h"
 
-namespace ll::event::player {
+namespace ll::event::inline player {
 
 LL_TYPED_INSTANCE_HOOK(PlayerJumpEventHook, HookPriority::Normal, Player, &Player::handleJumpEffects, void) {
     auto ev = PlayerJumpEvent(*this);
@@ -15,7 +15,7 @@ LL_TYPED_INSTANCE_HOOK(PlayerJumpEventHook, HookPriority::Normal, Player, &Playe
 
 class PlayerJumpEventEmitter : public Emitter<PlayerJumpEvent> {
 public:
-    PlayerJumpEventEmitter() { PlayerJumpEventHook::hook(); } // namespace ll::event::player
+    PlayerJumpEventEmitter() { PlayerJumpEventHook::hook(); }
     ~PlayerJumpEventEmitter() override { PlayerJumpEventHook::unhook(); }
 };
 
@@ -23,4 +23,4 @@ std::unique_ptr<EmitterBase> PlayerJumpEvent::emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerJumpEventEmitter>();
 }
 
-} // namespace ll::event::player
+} // namespace ll::event::inline player

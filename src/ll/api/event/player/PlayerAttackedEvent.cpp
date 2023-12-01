@@ -5,7 +5,7 @@
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/player/Player.h"
 
-namespace ll::event::player {
+namespace ll::event::inline player {
 LL_TYPED_INSTANCE_HOOK(
     PlayerAttackedEventHook,
     HookPriority::Normal,
@@ -28,7 +28,7 @@ LL_TYPED_INSTANCE_HOOK(
 
 class PlayerAttackedEventEmitter : public Emitter<PlayerAttackedEvent> {
 public:
-    PlayerAttackedEventEmitter() { PlayerAttackedEventHook::hook(); } // namespace ll::event::player
+    PlayerAttackedEventEmitter() { PlayerAttackedEventHook::hook(); }
     ~PlayerAttackedEventEmitter() override { PlayerAttackedEventHook::unhook(); }
 };
 
@@ -36,4 +36,4 @@ std::unique_ptr<EmitterBase> PlayerAttackedEvent::emitterFactory(ListenerBase&) 
     return std::make_unique<PlayerAttackedEventEmitter>();
 }
 
-} // namespace ll::event::player
+} // namespace ll::event::inline player

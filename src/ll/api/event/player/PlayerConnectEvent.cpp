@@ -8,7 +8,7 @@
 #include "mc/network/ServerNetworkHandler.h"
 
 
-namespace ll::event::player {
+namespace ll::event::inline player {
 
 LL_TYPED_INSTANCE_HOOK(
     PlayerConnectEventHook,
@@ -37,4 +37,4 @@ public:
 std::unique_ptr<EmitterBase> PlayerConnectEvent::emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerConnectEventEmitter>();
 }
-} // namespace ll::event::player
+} // namespace ll::event::inline player

@@ -4,7 +4,7 @@
 
 #include "mc/server/ServerPlayer.h"
 
-namespace ll::event::player {
+namespace ll::event::inline player {
 
 LL_TYPED_INSTANCE_HOOK(
     PlayerJoinEventHook,
@@ -30,4 +30,4 @@ public:
 std::unique_ptr<EmitterBase> PlayerJoinEvent::emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerJoinEventEmitter>();
 }
-} // namespace ll::event::player
+} // namespace ll::event::inline player

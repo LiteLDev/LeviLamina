@@ -5,7 +5,7 @@
 
 #include "mc/world/actor/player/Player.h"
 
-namespace ll::event::player {
+namespace ll::event::inline player {
 
 LL_TYPED_INSTANCE_HOOK(
     PlayerAddExperienceEventHook,
@@ -25,7 +25,7 @@ LL_TYPED_INSTANCE_HOOK(
 
 class PlayerAddExperienceEventEmitter : public Emitter<PlayerAddExperienceEvent> {
 public:
-    PlayerAddExperienceEventEmitter() { PlayerAddExperienceEventHook::hook(); } // namespace ll::event::player
+    PlayerAddExperienceEventEmitter() { PlayerAddExperienceEventHook::hook(); }
     ~PlayerAddExperienceEventEmitter() override { PlayerAddExperienceEventHook::unhook(); }
 };
 
@@ -33,4 +33,4 @@ std::unique_ptr<EmitterBase> PlayerAddExperienceEvent::emitterFactory(ListenerBa
     return std::make_unique<PlayerAddExperienceEventEmitter>();
 }
 
-} // namespace ll::event::player
+} // namespace ll::event::inline player

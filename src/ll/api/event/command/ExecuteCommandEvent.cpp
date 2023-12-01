@@ -5,7 +5,7 @@
 #include "mc/codebuilder/MCRESULT.h"
 #include "mc/server/commands/MinecraftCommands.h"
 
-namespace ll::event::command {
+namespace ll::event::inline command {
 
 LL_TYPED_INSTANCE_HOOK(
     ExecutingCommandEventHook,
@@ -60,4 +60,4 @@ public:
 std::unique_ptr<EmitterBase> ExecutedCommandEvent::emitterFactory(ListenerBase&) {
     return std::make_unique<ExecutedCommandEventEmitter>();
 }
-} // namespace ll::event::command
+} // namespace ll::event::inline command

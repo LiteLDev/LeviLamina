@@ -116,58 +116,58 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     using namespace ll::event;
 
-    auto str = ll::toFixedString<ll::reflection::type_raw_name_v<fs::FileActionEvent>>();
+    auto str = ll::toFixedString<ll::reflection::type_raw_name_v<FileActionEvent>>();
 
     ll::logger.debug("{}", str.buf);
 
-    auto listener4 = Listener<fs::FileActionEvent>::create("./", [](fs::FileActionEvent& ev) {
+    auto listener4 = Listener<FileActionEvent>::create("./", [](FileActionEvent& ev) {
         ll::logger.debug("dyn receive: {}, {} {}", typeid(ev).name(), ev.path, magic_enum::enum_name(ev.type));
     });
     bus.addListener(listener4);
 
     remover.add<DelayTask>(2min, [=, &bus] { bus.removeListener(listener4); });
 
-    bus.emplaceListener<command::ExecutingCommandEvent>([](command::ExecutingCommandEvent& ev) {
+    bus.emplaceListener<ExecutingCommandEvent>([](ExecutingCommandEvent& ev) {
         ll::logger.debug("ExecutingCommandEvent: {}", ev.commandContext.mCommand);
         ll::logger.debug("origin: {}", ev.commandContext.mOrigin->serialize().toSnbt());
     });
-    bus.emplaceListener<command::ExecutedCommandEvent>([](command::ExecutedCommandEvent& ev) {
+    bus.emplaceListener<ExecutedCommandEvent>([](ExecutedCommandEvent& ev) {
         ll::logger.debug("ExecutedCommandEvent: {}", ev.commandContext.mCommand);
         ll::logger.debug("result: {}", ev.result.getFullCode());
     });
-    bus.emplaceListener<player::PlayerConnectEvent>([](player::PlayerConnectEvent& ev) {
+    bus.emplaceListener<PlayerConnectEvent>([](PlayerConnectEvent& ev) {
         ll::logger.debug("Player connect: {} {}", ev.player.getRealName(), ev.player.getIPAndPort());
     });
-    bus.emplaceListener<player::PlayerJoinEvent>([](player::PlayerJoinEvent& ev) {
+    bus.emplaceListener<PlayerJoinEvent>([](PlayerJoinEvent& ev) {
         ll::logger.debug("Player join: {}", ev.player.getRealName());
     });
-    bus.emplaceListener<player::PlayerLeaveEvent>([](player::PlayerLeaveEvent& ev) {
+    bus.emplaceListener<PlayerLeaveEvent>([](PlayerLeaveEvent& ev) {
         ll::logger.debug("Player leave: {}", ev.player.getRealName());
     });
-    bus.emplaceListener<player::PlayerAttackEvent>([](player::PlayerAttackEvent& ev) {
+    bus.emplaceListener<PlayerAttackEvent>([](PlayerAttackEvent& ev) {
         ll::logger
             .debug("Player {} attack {} cause {}", ev.source.getRealName(), ev.target.getTypeName(), (int)ev.cause);
     });
-    bus.emplaceListener<player::PlayerAttackedEvent>([](player::PlayerAttackedEvent& ev) {
+    bus.emplaceListener<PlayerAttackedEvent>([](PlayerAttackedEvent& ev) {
         ll::logger
             .debug("Player {} attacked {} damage {}", ev.source.getRealName(), ev.target.getTypeName(), ev.damage);
     });
-    bus.emplaceListener<player::PlayerDieEvent>([](player::PlayerDieEvent& ev) {
+    bus.emplaceListener<PlayerDieEvent>([](PlayerDieEvent& ev) {
         ll::logger.debug("Player {} died source {}", ev.player.getRealName(), (int)ev.source.getCause());
     });
-    bus.emplaceListener<player::PlayerRespawnEvent>([](player::PlayerRespawnEvent& ev) {
+    bus.emplaceListener<PlayerRespawnEvent>([](PlayerRespawnEvent& ev) {
         ll::logger.debug("Player {} respawned", ev.player.getRealName());
     });
-    bus.emplaceListener<player::PlayerJumpEvent>([](player::PlayerJumpEvent& ev) {
+    bus.emplaceListener<PlayerJumpEvent>([](PlayerJumpEvent& ev) {
         ll::logger.debug("Player {} jumped", ev.player.getRealName());
     });
-    bus.emplaceListener<player::PlayerAddExperienceEvent>([](player::PlayerAddExperienceEvent& ev) {
+    bus.emplaceListener<PlayerAddExperienceEvent>([](PlayerAddExperienceEvent& ev) {
         ll::logger.debug("Player {} add experience {}", ev.player.getRealName(), ev.exp);
         if (ev.exp == 114514) {
             ev.cancel();
         }
     });
-    bus.emplaceListener<player::PlayerTakeDropItemEvent>([](player::PlayerTakeDropItemEvent& ev) {
+    bus.emplaceListener<PlayerTakeDropItemEvent>([](PlayerTakeDropItemEvent& ev) {
         ll::logger.debug("Player {} take {}", ev.player.getRealName(), ev.itemActor.mItem.getTypeName());
     });
 }

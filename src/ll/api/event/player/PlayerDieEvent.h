@@ -6,7 +6,7 @@
 #include "mc/world/actor/player/Player.h"
 
 
-namespace ll::event::player {
+namespace ll::event::inline player {
 /**
  * @brief Player die event.
  */
@@ -22,4 +22,4 @@ public:
     LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
 
-} // namespace ll::event::player
+} // namespace ll::event::inline player

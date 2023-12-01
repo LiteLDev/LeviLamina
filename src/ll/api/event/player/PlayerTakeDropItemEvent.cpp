@@ -5,7 +5,7 @@
 
 #include "mc/world/actor/player/Player.h"
 
-namespace ll::event::player {
+namespace ll::event::inline player {
 
 LL_TYPED_INSTANCE_HOOK(
     PlayerTakeDropItemEventHook,
@@ -29,7 +29,7 @@ LL_TYPED_INSTANCE_HOOK(
 
 class PlayerTakeDropItemEventEmitter : public Emitter<PlayerTakeDropItemEvent> {
 public:
-    PlayerTakeDropItemEventEmitter() { PlayerTakeDropItemEventHook::hook(); } // namespace ll::event::player
+    PlayerTakeDropItemEventEmitter() { PlayerTakeDropItemEventHook::hook(); }
     ~PlayerTakeDropItemEventEmitter() override { PlayerTakeDropItemEventHook::unhook(); }
 };
 
@@ -37,4 +37,4 @@ std::unique_ptr<EmitterBase> PlayerTakeDropItemEvent::emitterFactory(ListenerBas
     return std::make_unique<PlayerTakeDropItemEventEmitter>();
 }
 
-} // namespace ll::event::player
+} // namespace ll::event::inline player
