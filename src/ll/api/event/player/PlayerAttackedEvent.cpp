@@ -12,11 +12,11 @@ LL_TYPED_INSTANCE_HOOK(
     Actor,
     &Actor::calculateAttackDamage,
     float,
-    Actor& target
+    Actor& targetAc
 ) {
-    auto damage = origin(target);
+    auto damage = origin(targetAc);
     if (this->isType(ActorType::Player)) {
-        PlayerAttackedEvent event(*(Player*)this, target, damage);
+        PlayerAttackedEvent event(*(Player*)this, targetAc, damage);
         EventBus::getInstance().publish(event);
         if (event.isCancelled()) {
             return 0;

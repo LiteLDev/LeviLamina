@@ -15,6 +15,7 @@
 #include "ll/api/event/player/PlayerDieEvent.h"
 #include "ll/api/event/player/PlayerJoinEvent.h"
 #include "ll/api/event/player/PlayerLeaveEvent.h"
+#include "ll/api/event/player/PlayerRespawnEvent.h"
 #include "mc/codebuilder/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/world/actor/ActorDamageSource.h"
@@ -149,5 +150,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     });
     bus.emplaceListener<player::PlayerDieEvent>([](player::PlayerDieEvent& ev) {
         ll::logger.debug("Player {} died source {}", ev.player.getRealName(), (int)ev.source.getCause());
+    });
+    bus.emplaceListener<player::PlayerRespawnEvent>([](player::PlayerRespawnEvent& ev) {
+        ll::logger.debug("Player {} respawned", ev.player.getRealName());
     });
 }
