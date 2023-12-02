@@ -17,7 +17,9 @@ public:
         requires(std::convertible_to<Y*, T*>)
     {
         counter = (SharedCounter<T>*)other.counter;
-        if (counter) { counter->addWeakCount(); }
+        if (counter) {
+            counter->addWeakCount();
+        }
     }
 
     template <class Y>
@@ -25,7 +27,9 @@ public:
         requires(std::convertible_to<Y*, T*>)
     {
         counter = (SharedCounter<T>*)other.counter;
-        if (counter) { counter->addWeakCount(); }
+        if (counter) {
+            counter->addWeakCount();
+        }
     }
 
     template <class Y>
@@ -37,7 +41,9 @@ public:
     }
 
     ~WeakPtr() {
-        if (counter) { counter->releaseWeak(); }
+        if (counter) {
+            counter->releaseWeak();
+        }
     }
 
     template <class Y>
@@ -46,7 +52,9 @@ public:
     {
         if (counter != (SharedCounter<T>*)other.counter) {
             counter = (SharedCounter<T>*)other.counter;
-            if (counter) { counter->addWeakCount(); }
+            if (counter) {
+                counter->addWeakCount();
+            }
         }
         return *this;
     }
@@ -57,7 +65,9 @@ public:
     {
         if (counter != (SharedCounter<T>*)other.counter) {
             counter = (SharedCounter<T>*)other.counter;
-            if (counter) { counter->addWeakCount(); }
+            if (counter) {
+                counter->addWeakCount();
+            }
         }
         return *this;
     }

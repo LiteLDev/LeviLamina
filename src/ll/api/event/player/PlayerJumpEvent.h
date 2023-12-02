@@ -15,7 +15,6 @@ public:
     Player& player;
 
     constexpr explicit PlayerJumpEvent(Player& player) : player(player) {}
-
 };
 
 } // namespace ll::event::inline player

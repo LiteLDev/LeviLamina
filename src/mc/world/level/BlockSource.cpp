@@ -25,7 +25,9 @@ BlockSource::getEntities(class AABB const& range, float extendDistance, ActorTyp
     for (int x = minChunk.x; x <= maxChunk.x; x++)
         for (int z = minChunk.z; z <= maxChunk.z; z++) {
             auto* chunk = getChunk(x, z);
-            if (chunk == nullptr) { continue; }
+            if (chunk == nullptr) {
+                continue;
+            }
             for (auto& weakEntityRef : chunk->getChunkEntities()) {
                 auto* actor = weakEntityRef.tryUnwrap<Actor>();
                 if (actor != nullptr
@@ -48,7 +50,9 @@ BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<Dime
 
     auto nbt = origin.saveToNBT();
 
-    if (!nbt) { return nullptr; }
+    if (!nbt) {
+        return nullptr;
+    }
 
     if (auto* nbtPos = nbt->getList("Pos"); nbtPos) {
         ll::meta::unroll<3>([&](size_t i) { nbtPos[i].as<FloatTag>() = pos[i]; });
@@ -58,17 +62,25 @@ BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<Dime
 
     Dimension* dim = &getDimension();
 
-    if (dimId.has_value()) { dim = level.getDimension(dimId.value()).get(); }
+    if (dimId.has_value()) {
+        dim = level.getDimension(dimId.value()).get();
+    }
 
-    if (!dim) { return nullptr; }
+    if (!dim) {
+        return nullptr;
+    }
 
     auto actorOwnerPtr = level.getActorFactory().createSpawnedActor(origin.getActorIdentifier(), nullptr, pos);
 
-    if (!actorOwnerPtr) { return nullptr; }
+    if (!actorOwnerPtr) {
+        return nullptr;
+    }
 
     auto* actor = actorOwnerPtr.tryUnwrap<Actor>();
 
-    if (!actor) { return nullptr; }
+    if (!actor) {
+        return nullptr;
+    }
 
     actor->_setLevelPtr(&level);
 
@@ -87,18 +99,26 @@ bool BlockSource::destroyBlock(BlockPos const& pos, optional_ref<ItemStack> tool
 
     if (tool && toolOwner && toolOwner->isCreative()) {
         auto* item = tool->getItem();
-        if (item && !item->canDestroyInCreative()) { return false; }
+        if (item && !item->canDestroyInCreative()) {
+            return false;
+        }
     }
 
     auto& block = getBlock(pos);
-    if (block.isUnbreakable()) { return false; }
+    if (block.isUnbreakable()) {
+        return false;
+    }
     auto& material = block.getMaterial();
 
     bool shouldDrop = material.isAlwaysDestroyable() || tool->canDestroySpecial(block);
 
     bool res = getLevel().destroyBlock(*this, pos, shouldDrop);
 
-    if (!tool) { return res; }
-    if (res) { tool->mineBlock(block, pos.x, pos.y, pos.z, toolOwner.as_ptr()); }
+    if (!tool) {
+        return res;
+    }
+    if (res) {
+        tool->mineBlock(block, pos.x, pos.y, pos.z, toolOwner.as_ptr());
+    }
     return res;
 }

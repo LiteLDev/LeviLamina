@@ -20,7 +20,6 @@ public:
     : source(source),
       target(target),
       damage(damage) {}
-
 };
 
 } // namespace ll::event::inline player

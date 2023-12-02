@@ -24,6 +24,5 @@ public:
     : networkIdentifier(networkIdentifier),
       connectionRequest(connectionRequest),
       player(player) {}
-
 };
 } // namespace ll::event::inline player

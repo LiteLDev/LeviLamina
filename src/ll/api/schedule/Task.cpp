@@ -34,8 +34,8 @@ std::chrono::system_clock::time_point parseTime(std::string const& expression) {
 namespace detail {
 void printScheduleError() noexcept {
     static Logger logger("Scheduler");
-    
-    auto          lock = ll::Logger::lock();
+
+    auto lock = ll::Logger::lock();
     try {
         logger.error("Error in schedule thread [{}]:", std::this_thread::get_id());
     } catch (...) {}

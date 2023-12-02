@@ -23,7 +23,6 @@ public:
     FileActionType const        type;
 
     FileActionEvent(std::filesystem::path p, FileActionType e) : path(std::move(p)), type(e) {}
-
 };
 } // namespace fs
 

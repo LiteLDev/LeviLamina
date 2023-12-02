@@ -62,7 +62,9 @@ public:
     }
 
     [[nodiscard]] CompoundTagVariant& operator[](std::string const& index) {
-        if (!hold<CompoundTag>()) { mTagStorage = CompoundTag{}; }
+        if (!hold<CompoundTag>()) {
+            mTagStorage = CompoundTag{};
+        }
         return std::get<CompoundTag>(mTagStorage)[index];
     }
 

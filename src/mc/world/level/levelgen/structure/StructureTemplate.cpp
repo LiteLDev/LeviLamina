@@ -17,7 +17,9 @@ void StructureTemplate::placeInWorld(
     bool            ignoreBlocks,
     bool            ignoreEntities
 ) const {
-    if (!Global<Level>) { return; }
+    if (!Global<Level>) {
+        return;
+    }
     auto setting    = StructureSettings(getSize(), ignoreBlocks, ignoreEntities);
     setting.mMirror = mirror;
     setting.setRotation(rotation);
@@ -26,11 +28,15 @@ void StructureTemplate::placeInWorld(
 
 
 std::unique_ptr<StructureTemplate> StructureTemplate::create(const std::string& name, CompoundTag const& tag) {
-    if (!Global<StructureManager>) { return nullptr; }
+    if (!Global<StructureManager>) {
+        return nullptr;
+    }
     auto& unknownBlockRegistry = Global<StructureManager>->mUnknownBlockRegistry;
     auto  res                  = std::make_unique<StructureTemplate>(name, unknownBlockRegistry);
     bool  success{res->load(tag)};
-    if (!success) { return nullptr; }
+    if (!success) {
+        return nullptr;
+    }
     return res;
 }
 
@@ -41,7 +47,9 @@ std::unique_ptr<StructureTemplate> StructureTemplate::create(
     bool               ignoreBlocks,
     bool               ignoreEntities
 ) {
-    if (!Global<StructureManager>) { return nullptr; }
+    if (!Global<StructureManager>) {
+        return nullptr;
+    }
     auto& unknownBlockRegistry = Global<StructureManager>->mUnknownBlockRegistry;
     auto  res                  = std::make_unique<StructureTemplate>(name, unknownBlockRegistry);
     auto  setting              = StructureSettings(boundingBox.getSideLength(), ignoreBlocks, ignoreEntities);

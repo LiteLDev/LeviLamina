@@ -25,10 +25,6 @@ LL_TYPED_INSTANCE_HOOK(
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 class PlayerSwingEventEmitter : public Emitter<PlayerSwingEvent, emitterFactory> {
     memory::HookAutoRegister<PlayerSwingEventHook> hook;
-
-public:
-    PlayerSwingEventEmitter()=default;
-    ~PlayerSwingEventEmitter() override=default;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {

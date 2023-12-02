@@ -10,11 +10,11 @@ class NonOwnerPointer {
 public:
     std::shared_ptr<Bedrock::EnableNonOwnerReferences::ControlBlock> mControlBlock;
     NonOwnerPointer(std::nullptr_t) noexcept {} // NOLINT
-    T* get() const { return reinterpret_cast<T*>(mControlBlock.get()); }
+    T*       get() const { return reinterpret_cast<T*>(mControlBlock.get()); }
     explicit operator bool() const noexcept { return get() != nullptr; }
 
-    [[nodiscard]] constexpr                operator T*() const { return get(); }
-    [[nodiscard]] constexpr T*             operator->() const { return get(); }
+    [[nodiscard]] constexpr    operator T*() const { return get(); }
+    [[nodiscard]] constexpr T* operator->() const { return get(); }
     [[nodiscard]] constexpr decltype(auto) operator*() const { return *get(); }
 };
 

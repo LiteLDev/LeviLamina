@@ -21,7 +21,9 @@ optional_ref<Player> Level::getPlayerByNameOrXUID(std::string const& info) const
         if (pName.find(target) == 0) {
             // 0 ís the index where the "target" appear in "pName"
             size_t curDelta = pName.length() - target.length();
-            if (curDelta == 0) { found = &player; }
+            if (curDelta == 0) {
+                found = &player;
+            }
 
             if (curDelta < delta) {
                 found = &player;

@@ -24,7 +24,6 @@ public:
     : minecraftCommands(minecraftCommands),
       commandContext(commandContext),
       suppressOutput(suppressOutput) {}
-
 };
 class ExecutedCommandEvent : public Event {
 public:
@@ -43,6 +42,5 @@ public:
       minecraftCommands(minecraftCommands),
       commandContext(commandContext),
       suppressOutput(suppressOutput) {}
-
 };
 } // namespace ll::event::inline command

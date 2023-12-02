@@ -23,7 +23,9 @@ std::string getString(T value) {
 
 template <std::floating_point T>
 std::string getString(T value) {
-    if (std::round(value) == value) { return fmt::format("{:.1f}", value); }
+    if (std::round(value) == value) {
+        return fmt::format("{:.1f}", value);
+    }
     return fmt::format("{}", value);
 }
 
@@ -68,13 +70,19 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
             res = applyTextStyle(fmt::fg(defaultc), res);
-            if (base64) { res += applyTextStyle(fmt::fg(fmt::color::olive_drab), base64Id); }
+            if (base64) {
+                res += applyTextStyle(fmt::fg(fmt::color::olive_drab), base64Id);
+            }
         } else {
             res = WrapColorCode(res, defaultmc);
-            if (base64) { res += WrapColorCode(base64Id, cf::MATERIAL_EMERALD); }
+            if (base64) {
+                res += WrapColorCode(base64Id, cf::MATERIAL_EMERALD);
+            }
         }
     } else {
-        if (base64) { res += base64Id; }
+        if (base64) {
+            res += base64Id;
+        }
     }
     return res;
 }
@@ -163,23 +171,33 @@ std::string TypedToSnbt(ListTag& self, uchar indent, SnbtFormat format) {
     bool isMinimized = isMinimize(format);
     bool isNewLine   = (int)format & (int)SnbtFormat::ListNewLine;
 
-    if (isNewLine) { res += '\n'; }
+    if (isNewLine) {
+        res += '\n';
+    }
 
     for (auto& tag : self.mList) {
         i--;
-        if (isNewLine) { res += indentSpace; }
+        if (isNewLine) {
+            res += indentSpace;
+        }
 
         auto key = tag->toSnbt(format, indent);
 
-        if (isNewLine) { replaceAll(key, "\n", "\n" + indentSpace); }
+        if (isNewLine) {
+            replaceAll(key, "\n", "\n" + indentSpace);
+        }
         res += key;
 
 
         if (i > 0) {
             res += ',';
-            if (!isMinimized && !isNewLine) { res += ' '; }
+            if (!isMinimized && !isNewLine) {
+                res += ' ';
+            }
         }
-        if (isNewLine) { res += '\n'; }
+        if (isNewLine) {
+            res += '\n';
+        }
     }
 
     res += rbracket;
@@ -212,11 +230,15 @@ std::string TypedToSnbt(CompoundTag& self, uchar indent, SnbtFormat format) {
     bool isMinimized = isMinimize(format);
     bool isNewLine   = (int)format & (int)SnbtFormat::CompoundNewLine;
 
-    if (isNewLine) { res += '\n'; }
+    if (isNewLine) {
+        res += '\n';
+    }
 
     for (auto& [k, v] : self.mTags) {
         i--;
-        if (isNewLine) { res += indentSpace; }
+        if (isNewLine) {
+            res += indentSpace;
+        }
 
         auto keyStr = toDumpString(k, fmt::color::sky_blue, cf::AQUA, format);
 
@@ -224,18 +246,26 @@ std::string TypedToSnbt(CompoundTag& self, uchar indent, SnbtFormat format) {
 
         res += ':';
 
-        if (!isMinimized) { res += ' '; }
+        if (!isMinimized) {
+            res += ' ';
+        }
 
         auto key = v.get()->toSnbt(format, indent);
 
-        if (isNewLine) { replaceAll(key, "\n", "\n" + indentSpace); }
+        if (isNewLine) {
+            replaceAll(key, "\n", "\n" + indentSpace);
+        }
         res += key;
 
         if (i > 0) {
             res += ',';
-            if (!isMinimized && !isNewLine) { res += ' '; }
+            if (!isMinimized && !isNewLine) {
+                res += ' ';
+            }
         }
-        if (isNewLine) { res += '\n'; }
+        if (isNewLine) {
+            res += '\n';
+        }
     }
 
     res += rbracket;
@@ -249,7 +279,9 @@ std::string TypedToSnbt(ByteArrayTag& self, uchar indent, SnbtFormat format) {
     std::string res;
 
     std::string lbracket{"[B;"}, rbracket{"]"};
-    if (static_cast<bool>(format & SnbtFormat::Jsonify)) { lbracket = "[ /*B;*/"; }
+    if (static_cast<bool>(format & SnbtFormat::Jsonify)) {
+        lbracket = "[ /*B;*/";
+    }
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
@@ -269,22 +301,32 @@ std::string TypedToSnbt(ByteArrayTag& self, uchar indent, SnbtFormat format) {
     bool isMinimized = isMinimize(format);
     bool isNewLine   = (int)format & (int)SnbtFormat::ListNewLine;
 
-    if (isNewLine) { res += '\n'; }
+    if (isNewLine) {
+        res += '\n';
+    }
 
     std::string back{"b"};
-    if (static_cast<bool>(format & SnbtFormat::Jsonify)) { back = " /*b*/"; }
+    if (static_cast<bool>(format & SnbtFormat::Jsonify)) {
+        back = " /*b*/";
+    }
 
     for (auto& tag : self.view()) {
         i--;
-        if (isNewLine) { res += indentSpace; }
+        if (isNewLine) {
+            res += indentSpace;
+        }
 
         res += toDumpNumber(getString(tag) + back, format);
 
         if (i > 0) {
             res += ',';
-            if (!isMinimized && !isNewLine) { res += ' '; }
+            if (!isMinimized && !isNewLine) {
+                res += ' ';
+            }
         }
-        if (isNewLine) { res += '\n'; }
+        if (isNewLine) {
+            res += '\n';
+        }
     }
 
     res += rbracket;
@@ -298,7 +340,9 @@ std::string TypedToSnbt(IntArrayTag& self, uchar indent, SnbtFormat format) {
     std::string res;
 
     std::string lbracket{"[I;"}, rbracket{"]"};
-    if (static_cast<bool>(format & SnbtFormat::Jsonify)) { lbracket = "[ /*I;*/"; }
+    if (static_cast<bool>(format & SnbtFormat::Jsonify)) {
+        lbracket = "[ /*I;*/";
+    }
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
@@ -318,19 +362,27 @@ std::string TypedToSnbt(IntArrayTag& self, uchar indent, SnbtFormat format) {
     bool isMinimized = isMinimize(format);
     bool isNewLine   = (int)format & (int)SnbtFormat::ListNewLine;
 
-    if (isNewLine) { res += '\n'; }
+    if (isNewLine) {
+        res += '\n';
+    }
 
     for (auto& tag : self.view()) {
         i--;
-        if (isNewLine) { res += indentSpace; }
+        if (isNewLine) {
+            res += indentSpace;
+        }
 
         res += toDumpNumber(getString(tag), format);
 
         if (i > 0) {
             res += ',';
-            if (!isMinimized && !isNewLine) { res += ' '; }
+            if (!isMinimized && !isNewLine) {
+                res += ' ';
+            }
         }
-        if (isNewLine) { res += '\n'; }
+        if (isNewLine) {
+            res += '\n';
+        }
     }
 
     res += rbracket;

@@ -15,6 +15,5 @@ public:
     constexpr explicit PlayerSendMessageEvent(Player& player, std::string& message)
     : player(player),
       message(message) {}
-
 };
 } // namespace ll::event::inline player

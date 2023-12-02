@@ -30,7 +30,9 @@ public:
     : floatN4(v.r, v.g, v.b, a) {}
 
     [[nodiscard]] constexpr Color(std::string_view hex) noexcept : floatN4(0, 0, 0, 1) { // NOLINT
-        if (hex[0] == '#') { hex = hex.substr(1); }
+        if (hex[0] == '#') {
+            hex = hex.substr(1);
+        }
 
         switch (hex.length()) {
         case 4:
@@ -70,7 +72,8 @@ public:
             color.dot({0.4124f, 0.3576f, 0.1805f}),
             color.dot({0.2126f, 0.7152f, 0.0722f}),
             color.dot({0.0193f, 0.1192f, 0.9505f}),
-            a};
+            a
+        };
     }
 
     [[nodiscard]] constexpr class mce::Color XYZToLinear() const noexcept {
@@ -79,7 +82,8 @@ public:
             color.dot({3.2410f, -1.5374f, -0.4986f}),
             color.dot({-0.9692f, 1.8760f, 0.0416f}),
             color.dot({0.0556f, -0.2040f, 1.0570f}),
-            a};
+            a
+        };
     }
 
     [[nodiscard]] constexpr class mce::Color XYZToLab() const noexcept {
@@ -208,9 +212,15 @@ public:
 
 private:
     [[nodiscard]] constexpr uchar static hexToNum(char hex) noexcept {
-        if ('A' <= hex && hex <= 'F') { return 10 + (hex - 'A'); }
-        if ('a' <= hex && hex <= 'f') { return 10 + (hex - 'a'); }
-        if ('0' <= hex && hex <= '9') { return (hex - '0'); }
+        if ('A' <= hex && hex <= 'F') {
+            return 10 + (hex - 'A');
+        }
+        if ('a' <= hex && hex <= 'f') {
+            return 10 + (hex - 'a');
+        }
+        if ('0' <= hex && hex <= '9') {
+            return (hex - '0');
+        }
         return 0;
     }
 

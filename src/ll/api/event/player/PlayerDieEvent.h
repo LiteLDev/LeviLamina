@@ -18,7 +18,6 @@ public:
     constexpr explicit PlayerDieEvent(Player& player, ActorDamageSource const& source)
     : player(player),
       source(source) {}
-
 };
 
 } // namespace ll::event::inline player

@@ -62,7 +62,9 @@ public:
             storage_.length_ = length & 0x3FFFFFFF;
         }
         constexpr CZString& operator=(CZString const& other) {
-            if (this == &other) { return *this; }
+            if (this == &other) {
+                return *this;
+            }
             cstr_  = other.cstr_;
             index_ = other.index_;
             return *this;

@@ -116,8 +116,6 @@ template <class T>
 struct HookAutoRegister {
     HookAutoRegister() { T::hook(); }
     ~HookAutoRegister() { T::unhook(); }
-    static int  hook() { return T::hook(); }
-    static bool unhook() { return T::unhook(); }
 };
 
 template <class T>

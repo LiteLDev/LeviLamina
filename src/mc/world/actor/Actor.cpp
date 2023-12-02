@@ -46,7 +46,9 @@ bool Actor::isSimulatedPlayer() const {
 }
 
 bool Actor::isPlayer(bool allowSimulatedPlayer) const {
-    if (allowSimulatedPlayer) { return hasCategory(ActorCategory::Player); }
+    if (allowSimulatedPlayer) {
+        return hasCategory(ActorCategory::Player);
+    }
     return hasCategory(ActorCategory::Player) && !isSimulatedPlayer();
 }
 bool Actor::isItemActor() const { return hasCategory(ActorCategory::Item); }
@@ -65,7 +67,9 @@ void Actor::stopFire() { OnFireSystem::stopFire(*this); }
 float Actor::getPosDeltaPerSecLength() const { return static_cast<float>(getPosDelta().length() * 20.0); }
 
 bool Actor::hurt(float damage, ActorDamageCause cause, optional_ref<Actor> attacker) {
-    if (attacker) { return _hurt(ActorDamageByActorSource(attacker.value(), cause), damage, true, false); }
+    if (attacker) {
+        return _hurt(ActorDamageByActorSource(attacker.value(), cause), damage, true, false);
+    }
     return _hurt(ActorDamageSource(cause), damage, true, false);
 }
 
@@ -98,7 +102,9 @@ class HitResult Actor::traceRay(
             resPos,
             isPlayer()
         );
-        if (resActor != nullptr) { result = HitResult{origin, rayDir, *resActor, resPos}; }
+        if (resActor != nullptr) {
+            result = HitResult{origin, rayDir, *resActor, resPos};
+        }
     }
 
     if (includeBlock) {
@@ -161,7 +167,9 @@ std::unique_ptr<CompoundTag> Actor::saveToNBT() const {
 
     bool success = save(*res);
 
-    if (success) { return res; }
+    if (success) {
+        return res;
+    }
     return nullptr;
 }
 

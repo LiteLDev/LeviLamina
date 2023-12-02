@@ -4,7 +4,7 @@
 
 class CommandRawText {
 public:
-    std::string text;
+    std::string                      text;
     [[nodiscard]] constexpr explicit operator std::string() const { return text; }
 
 public:

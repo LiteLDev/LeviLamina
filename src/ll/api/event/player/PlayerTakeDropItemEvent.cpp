@@ -30,10 +30,6 @@ LL_TYPED_INSTANCE_HOOK(
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 class PlayerTakeDropItemEventEmitter : public Emitter<PlayerTakeDropItemEvent, emitterFactory> {
     memory::HookAutoRegister<PlayerTakeDropItemEventHook> hook;
-
-public:
-    PlayerTakeDropItemEventEmitter()=default;
-    ~PlayerTakeDropItemEventEmitter() override=default;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {

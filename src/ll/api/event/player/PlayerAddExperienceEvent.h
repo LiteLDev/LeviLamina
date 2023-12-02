@@ -16,7 +16,6 @@ public:
     int&    exp;
 
     constexpr explicit PlayerAddExperienceEvent(Player& player, int& exp) : player(player), exp(exp) {}
-
 };
 
 } // namespace ll::event::inline player

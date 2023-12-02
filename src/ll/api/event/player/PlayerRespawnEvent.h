@@ -15,7 +15,6 @@ public:
     Player& player;
 
     constexpr explicit PlayerRespawnEvent(Player& player) : player(player) {}
-
 };
 
 } // namespace ll::event::inline player
