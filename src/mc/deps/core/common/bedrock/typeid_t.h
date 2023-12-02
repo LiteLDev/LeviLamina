@@ -10,19 +10,6 @@ template <typename>
 class CommandSelector;
 template <typename>
 class WildcardCommandSelector;
-class CommandBlockName;
-class CommandMessage;
-class CommandPosition;
-class CommandPositionFloat;
-class MobEffect;
-class RelativeFloat;
-class CommandItem;
-struct ActorDefinitionIdentifier;
-class CommandRawText;
-class CommandWildcardInt;
-class Player;
-class Actor;
-class Command;
 
 namespace Bedrock {
 
