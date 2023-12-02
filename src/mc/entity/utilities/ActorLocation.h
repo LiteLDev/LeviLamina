@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/typeid_t.h"
 
 enum class ActorLocation : int {
     Feet              = 0x0,
@@ -14,3 +15,5 @@ enum class ActorLocation : int {
     Mouth             = 0x8,
     Count             = 0x9,
 };
+
+MCTAPI class Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<class CommandRegistry, enum class ActorLocation>();
