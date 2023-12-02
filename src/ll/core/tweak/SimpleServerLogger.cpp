@@ -35,9 +35,9 @@ void setupSimpleServerLogger() {
                 "<{}> {}({}) -> {}({})",
                 ev.player.getRealName(),
                 magic_enum::enum_name(ev.player.getCommandPermissionLevel()),
-                std::to_underlying(ev.player.getCommandPermissionLevel()),
+                fmt::underlying(ev.player.getCommandPermissionLevel()),
                 magic_enum::enum_name(ev.newPerm),
-                std::to_underlying(ev.newPerm)
+                fmt::underlying(ev.newPerm)
             );
         });
 }

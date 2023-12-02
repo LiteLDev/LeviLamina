@@ -26,7 +26,5 @@ public:
     virtual ~Event() = default;
 
     static constexpr ll::event::EventId CustomEventId{EmptyEventId};
-
-    static constexpr std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return nullptr; }
 };
 } // namespace ll::event

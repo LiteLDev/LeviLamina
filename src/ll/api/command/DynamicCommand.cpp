@@ -408,7 +408,9 @@ DynamicCommandInstance const* DynamicCommand::Result::getInstance() const {
 
 DynamicCommandInstance* DynamicCommand::preSetup(std::unique_ptr<class DynamicCommandInstance> commandInstance) {
     std::string name = commandInstance->getCommandName();
+#if defined(LL_DEBUG)
     logger.debug("Setting up command \"{}\"", name);
+#endif
 
     // Check if there is another command with the same name
     auto signature = ll::Global<CommandRegistry>->findCommand(name);

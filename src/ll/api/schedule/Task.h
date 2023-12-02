@@ -25,6 +25,8 @@ public:
     inline void cancel() { cancelled = true; }
 
     virtual TimePoint getNextTime() = 0;
+
+    virtual ~Task() = default;
 };
 
 template <class Clock>
