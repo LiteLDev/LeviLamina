@@ -4,6 +4,8 @@
 
 #include "mc/deps/raknet/RakPeer.h"
 #include "mc/deps/raknet/RakPeerInterface.h"
+#include "mc/entity/systems/EntitySystems.h"
+#include "mc/entity/systems/IEntitySystemsCollection.h"
 #include "mc/network/RakNetConnector.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/resources/ResourcePackRepository.h"
@@ -14,6 +16,7 @@
 #include "mc/server/common/commands/AllowListCommand.h"
 #include "mc/world/Minecraft.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
+#include "mc/world/systems/EntitySystemsCollection.h"
 #include "mc/world/systems/NetworkSystem.h"
 
 #include "ll/api/base/Hash.h"
@@ -205,6 +208,19 @@ LL_AUTO_INSTANCE_HOOK(CommandRegistryConstructor, HookPriority::High, "??0Comman
 }
 LL_AUTO_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, "??1CommandRegistry@@QEAA@XZ", void) {
     ll::Global<CommandRegistry>.init(nullptr);
+    origin();
+}
+
+// EntitySystemsCollection
+
+LL_AUTO_STATIC_HOOK(EntitySystemsCollectionCreater, HookPriority::High, EntitySystemsCollection::create, std::unique_ptr<IEntitySystemsCollection>) {
+    auto res = origin();
+    ll::Global<IEntitySystemsCollection>.init(res.get());
+    return res;
+}
+
+LL_AUTO_INSTANCE_HOOK(EntitySystemsCollectionDestructor, HookPriority::High, "??1EntitySystems@@UEAA@XZ", void) {
+    ll::Global<IEntitySystemsCollection>.init(nullptr);
     origin();
 }
 

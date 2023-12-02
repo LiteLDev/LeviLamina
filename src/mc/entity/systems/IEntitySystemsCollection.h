@@ -13,6 +13,7 @@ public:
     IEntitySystemsCollection();
 
 public:
+    virtual ~IEntitySystemsCollection() = default;
     // NOLINTBEGIN
     // symbol:
     // ?registerTickingSystem@IEntitySystemsCollection@@QEAAXV?$initializer_list@V?$typeid_t@USystemCategory@@@Bedrock@@@std@@V?$unique_ptr@VITickingSystem@@U?$default_delete@VITickingSystem@@@std@@@3@AEBUSystemInfo@@UEntitySystemTickingMode@@@Z

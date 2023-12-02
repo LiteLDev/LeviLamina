@@ -66,9 +66,7 @@ target("LeviLamina")
         "UNICODE",
         "WIN32_LEAN_AND_MEAN"
     )
-    add_defines(
-        "LL_EXPORT"
-    )
+    add_defines("LL_EXPORT")
     add_files(
         "src/ll/api/**.cpp",
         "src/ll/core/**.cpp",
@@ -103,9 +101,7 @@ target("LeviLamina")
         "mode.debug",
         "mode.release"
     )
-    add_shflags(
-        "/DELAYLOAD:bedrock_server.dll"
-    )
+    add_shflags("/DELAYLOAD:bedrock_server.dll")
     set_configdir("$(buildir)/config")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     set_exceptions("none")
@@ -117,7 +113,12 @@ target("LeviLamina")
 
     if has_config("tests") then
         add_packages("gtest")
+        add_defines("LL_DEBUG")
         add_files("src/ll/test/**.cpp")
+    end
+
+    if is_mode("debug") then
+        add_defines("LL_DEBUG")
     end
 
     -- if is_toolchain("clang-cl") then

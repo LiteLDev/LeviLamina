@@ -39,9 +39,9 @@ public:
     };
 
     buffer_span_mut<Block const*> mBlocks;          // this+0x0
-    unsigned int                  mWidth;           // this+0x10
-    unsigned int                  mHeight;          // this+0x14
-    unsigned int                  mDepth;           // this+0x18
+    uint                          mWidth;           // this+0x10
+    uint                          mHeight;          // this+0x14
+    uint                          mDepth;           // this+0x18
     int                           mDimensionBottom; // this+0x1C
     Block const*                  mInitBlock;       // this+0x20
 

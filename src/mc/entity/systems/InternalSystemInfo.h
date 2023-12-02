@@ -1,14 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/systems/SystemInfo.h"
 
-struct InternalSystemInfo {
-public:
-    // prevent constructor by default
-    InternalSystemInfo& operator=(InternalSystemInfo const&);
-    InternalSystemInfo(InternalSystemInfo const&);
-    InternalSystemInfo();
-
+struct InternalSystemInfo : public SystemInfo {
 public:
     // NOLINTBEGIN
     // symbol: ??0InternalSystemInfo@@QEAA@$$QEAU0@@Z

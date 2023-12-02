@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/systems/Dependencies.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -8,6 +9,10 @@ namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct SystemInfo {
+    std::string  mName;
+    Dependencies mDependencies;
+    void*        mGenerateDetailedInfo;
+
 public:
     // NOLINTBEGIN
     // symbol: ??0SystemInfo@@QEAA@XZ

@@ -9,6 +9,10 @@ namespace cereal { struct ReflectionCtx; }
 
 struct Dependencies {
 public:
+    bool                             mBlocking;
+    bool                             mUsesEntityFactory;
+    std::array<std::vector<uint>, 6> mAccessGroups;
+
     // prevent constructor by default
     Dependencies(Dependencies const&);
     Dependencies();

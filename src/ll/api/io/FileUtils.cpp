@@ -45,11 +45,11 @@ bool writeFile(const fs::path& filePath, std::string_view content, bool isBinary
 
 static bool getFileVersion(
     const wchar_t*  filePath,
-    unsigned short* ver1,
-    unsigned short* ver2,
-    unsigned short* ver3,
-    unsigned short* ver4,
-    unsigned int*   flag
+    ushort* ver1,
+    ushort* ver2,
+    ushort* ver3,
+    ushort* ver4,
+    uint*   flag
 ) {
 
     DWORD dwHandle = 0;
@@ -65,7 +65,7 @@ static bool getFileVersion(
     }
 
     VS_FIXEDFILEINFO* lpBuffer;
-    unsigned int      uLen = 0;
+    uint      uLen = 0;
     if (!VerQueryValueW(path.c_str(), L"\\", (void**)&lpBuffer, &uLen)) {
         return false;
     }
@@ -82,8 +82,8 @@ static bool getFileVersion(
 Version getVersion(std::filesystem::path const& filePath) {
     ll::Version    version;
     auto           ModuleName = filePath.c_str();
-    unsigned short build_ver{};
-    unsigned int   flag{};
+    ushort build_ver{};
+    uint   flag{};
     if (!getFileVersion(ModuleName, &version.major, &version.minor, &version.patch, &build_ver, &flag)) {
         version = Version{};
     } else {

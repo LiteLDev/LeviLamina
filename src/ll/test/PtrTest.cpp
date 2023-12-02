@@ -13,17 +13,80 @@
 
 #include "ll/api/memory/Closure.h"
 
+struct SystemCategory;
+
+#include "ll/api/service/GlobalService.h"
+#include "mc/entity/gamerefs_entity/EntityRegistry.h"
+#include "mc/entity/systems/ComponentInfo.h"
+#include "mc/entity/systems/EntitySystems.h"
+#include "mc/entity/systems/IEntitySystemsCollection.h"
+#include "mc/entity/systems/ISystem.h"
+#include "mc/entity/systems/InternalSystemInfo.h"
+#include "mc/entity/systems/SystemTiming.h"
+
+class DefaultEntitySystemsCollection : public IEntitySystemsCollection {
+public:
+    struct ECSTiming {
+        int   mCount;  // this+0x0
+        float mMsTime; // this+0x4
+    };
+    struct TickingSystemsInCategory {
+        Bedrock::typeid_t<SystemCategory> mCategory; // this+0x0
+        std::vector<uint>                 mSystems;  // this+0x8
+        std::vector<ECSTiming>            mTimings;  // this+0x20
+    };
+
+    std::vector<std::shared_ptr<ISystem>> mAllSystems;              // this+0x8
+    std::vector<InternalSystemInfo>       mAllSystemsInfo;          // this+0x20
+    std::vector<TickingSystemsInCategory> mTickingSystemCategories; // this+0x38
+    entt::dense_map<uint, ComponentInfo>  mAllComponentsInfo;       // this+0x50
+    std::mutex                            mTimingMutex;             // this+0x98
+};
+
 auto test() {
-    auto exists = BlockTypeRegistry::lookupByName("minecraft:stone");
-    if (exists) {
-        std::cout << exists->getTypeName() << std::endl;
+    ll::logger.warn("mAllSystemsInfo");
+    for (auto& info : ((DefaultEntitySystemsCollection*)ll::Global<IEntitySystemsCollection>)->mAllSystemsInfo) {
+        ll::logger.warn("info {}", info.mName);
     }
-    return exists;
+
+// struct EntitySystems::EditorSystemCategory
+// struct EntitySystems::GameSystemCategory
+// struct EntitySystems::UsedInClientMovementCorrections
+// struct EntitySystems::UsedInServerPlayerMovement
+// struct VanillaSystemCategories::ActorMove
+// struct VanillaSystemCategories::ExitVehicle
+// struct VanillaSystemCategories::MobJumpFromGround
+// struct VanillaSystemCategories::PositionPassenger
+// struct VanillaSystemCategories::RemovePassenger
+// struct VanillaSystemCategories::StopRiding
+// struct VanillaSystemCategories::UpdateEntityInside
+// struct VanillaSystemCategories::UpdateWaterState
+// struct VanillaSystemCategories::UsedByClientAndServerAuth
+
+    // auto& vec = ((DefaultEntitySystemsCollection*)ll::Global<IEntitySystemsCollection>)->mTickingSystemCategories;
+
+    // ll::logger.warn("info safe:{} ", ((char*)&*vec.end() - (char*)&*vec.begin()) / vec.size());
+    // for (auto& category :
+    //      ((DefaultEntitySystemsCollection*)ll::Global<IEntitySystemsCollection>)->mTickingSystemCategories) {
+    //     ll::logger.warn("category :{} ", category.mCategory.value);
+    //     for (auto id : category.mSystems) {
+    //         ll::logger.warn("category sys:{} ", id);
+    //     }
+    //     ll::logger.warn("timing :{} ", category.mTimings.size());
+    //     for (auto timing : category.mTimings) {
+    //         ll::logger.warn("category sys:{} {}", timing.mMsTime,timing.mCount);
+    //     }
+    // }
+    ll::logger.warn(
+        "mAllSystemsInfo size {} {}",
+        ((DefaultEntitySystemsCollection*)ll::Global<IEntitySystemsCollection>)->mAllSystemsInfo.size(),
+        ((DefaultEntitySystemsCollection*)ll::Global<IEntitySystemsCollection>)->mAllSystems.size()
+    );
 }
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ServerStartedEventHook,
-    ll::memory::HookPriority::Normal,
+    ll::memory::HookPriority::Low,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,
     void,
@@ -118,7 +181,32 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     // std::clog << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
     // std::cout << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
+    ll::logger.warn(
+        "{}",
+        ll::memory::resolveSymbol("`anonymous namespace'::DefaultEntitySystemsCollection::internalGatherSystemTimings")
+    );
+    ll::logger.warn(
+        "{}",
+        ll::utils::stacktrace_utils::tryGetSymbolAddress(
+            "`anonymous namespace'::DefaultEntitySystemsCollection::internalGatherSystemTimings"
+        )
+    );
+
+
     origin();
 }
 
 #pragma warning(pop)
+
+
+// LL_AUTO_TYPED_INSTANCE_HOOK(
+//     EStickHook,
+//     HookPriority::Normal,
+//     EntitySystems,
+//     &EntitySystems::tick,
+//     void,
+//     EntityRegistry& registry
+// ) {
+//     ll::logger.debug("tick {} {}", registry.mName, std::chrono::system_clock::now());
+//     origin(registry);
+// }
