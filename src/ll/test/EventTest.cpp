@@ -9,6 +9,7 @@
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/api/event/command/ExecuteCommandEvent.h"
+#include "ll/api/event/player/PlayerActionEvent.h"
 #include "ll/api/event/player/PlayerAddExperienceEvent.h"
 #include "ll/api/event/player/PlayerAttackEvent.h"
 #include "ll/api/event/player/PlayerAttackedEvent.h"
@@ -178,5 +179,17 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     });
     bus.emplaceListener<PlayerSwingEvent>([](PlayerSwingEvent& ev) {
         ll::logger.debug("Player {} left click", ev.player.getRealName());
+    });
+    bus.emplaceListener<PlayerStartSprintEvent>([](PlayerStartSprintEvent& ev) {
+        ll::logger.debug("Player {} start sprint", ev.player.getRealName());
+    });
+    bus.emplaceListener<PlayerStopSprintEvent>([](PlayerStopSprintEvent& ev) {
+        ll::logger.debug("Player {} stop sprint", ev.player.getRealName());
+    });
+    bus.emplaceListener<PlayerStartSneakEvent>([](PlayerStartSneakEvent& ev) {
+        ll::logger.debug("Player {} start sneak", ev.player.getRealName());
+    });
+    bus.emplaceListener<PlayerStopSneakEvent>([](PlayerStopSneakEvent& ev) {
+        ll::logger.debug("Player {} stop sneak", ev.player.getRealName());
     });
 }
