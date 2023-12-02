@@ -44,7 +44,7 @@ option("localbdslibrary")
 
 target("LeviLamina")
     add_configfiles("src/(**.in)")
-    add_cxflags("/O2", "/utf-8", "/permissive-", "/EHa", "/W4","/w45204","/w44265","/w44289","/w44296","/w45263","/w44738")
+    add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4","/w45204","/w44265","/w44289","/w44296","/w45263","/w44738")
     add_defines(
         "_AMD64_",
         "_CRT_SECURE_NO_WARNINGS",
@@ -96,6 +96,8 @@ target("LeviLamina")
     if has_config("tests") then
         add_packages("gtest")
         add_files("src/ll/test/**.cpp")
+    else 
+    add_cxflags("/O2")
     end
 
     if has_config("localbdslibrary") then
