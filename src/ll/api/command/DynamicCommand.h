@@ -416,7 +416,8 @@ public:
                 description == "" ? nullptr : description.data(),
                 (int)offset,
                 optional,
-                (int)offset + std::max(8, (int)sizeof(T))};
+                (int)offset + std::max(8, (int)sizeof(T))
+            };
             param.addOptions(option);
             return param;
         }
@@ -585,7 +586,7 @@ public:
         DynamicCommand::ParameterData& operator->() { return instance->parameterDatas.at(index); }
         bool                           isValid() const {
             size_t size = instance->parameterDatas.size();
-            return index >= 0 && index < size;
+            return index < size;
         }
     };
 
