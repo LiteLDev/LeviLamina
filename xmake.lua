@@ -101,7 +101,7 @@ target("LeviLamina")
     )
     add_rules(
         "mode.debug",
-        "mode.releasedbg"
+        "mode.release"
     )
     add_shflags(
         "/DELAYLOAD:bedrock_server.dll"
@@ -112,6 +112,7 @@ target("LeviLamina")
     set_kind("shared")
     set_languages("c++23")
     set_pcxxheader("src/mc/_HeaderOutputPredefine.h")
+    set_symbols("debug")
     set_strip("all")
 
     if has_config("tests") then
