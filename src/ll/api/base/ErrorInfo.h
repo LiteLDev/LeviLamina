@@ -87,7 +87,7 @@ LLNDAPI std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const&) noexcept
 LLNDAPI std::stacktrace stacktraceFromCurrExc(_CONTEXT const& = current_exception_context());
 #endif
 
-LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr);
+LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr) noexcept;
 
 LLAPI void printCurrentException(
     optional_ref<ll::Logger>  = nullptr,

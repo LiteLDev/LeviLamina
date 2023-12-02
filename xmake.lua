@@ -101,7 +101,7 @@ target("LeviLamina")
     )
     add_rules(
         "mode.debug",
-        "mode.releasedbg"
+        "mode.release"
     )
     add_shflags(
         "/DELAYLOAD:bedrock_server.dll"
@@ -112,12 +112,18 @@ target("LeviLamina")
     set_kind("shared")
     set_languages("c++23")
     set_pcxxheader("src/mc/_HeaderOutputPredefine.h")
+    set_symbols("debug")
     set_strip("all")
 
     if has_config("tests") then
         add_packages("gtest")
         add_files("src/ll/test/**.cpp")
     end
+
+    -- if is_toolchain("clang-cl") then
+        -- set_languages("c++20")
+        -- add_defines("_HAS_CXX23")
+    -- end
 
     if has_config("localbdslibrary") then
         add_packages("localbdslibrary")

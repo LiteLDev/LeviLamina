@@ -559,10 +559,9 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
     std::string const&     name,
     std::string const&     description,
     CommandPermissionLevel permission,
-    CommandFlag            flag1,
-    CommandFlag            flag2
+    CommandFlag            flag
 ) {
-    return DynamicCommandInstance::create(name, description, permission, flag1 |= flag2);
+    return DynamicCommandInstance::create(name, description, permission, flag);
 }
 
 
@@ -582,10 +581,9 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
     std::vector<std::vector<std::string>>&&                     overloads,
     CallBackFn                                                  callback,
     CommandPermissionLevel                                      permission,
-    CommandFlag                                                 flag1,
-    CommandFlag                                                 flag2
+    CommandFlag                                                 flag
 ) {
-    auto command = createCommand(name, description, permission, flag1, flag2);
+    auto command = createCommand(name, description, permission, flag);
     if (!command) return std::unique_ptr<class DynamicCommandInstance>();
     for (auto& [desc, values] : enums) {
         command->setEnum(desc, std::move(values));

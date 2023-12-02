@@ -1,3 +1,5 @@
+#pragma once
+
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 #include <functional>

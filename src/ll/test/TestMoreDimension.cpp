@@ -1,5 +1,4 @@
-#ifdef LL_DEBUG
-
+/*
 #include "ll/api/Logger.h"
 #include "ll/api/memory/Hook.h"
 #include "mc/common/wrapper/OwnerPtrFactory.h"
@@ -124,7 +123,7 @@ public:
     }
 
     std::unique_ptr<ChunkSource>
-    _wrapStorageForVersionCompatibility(std::unique_ptr<ChunkSource> cs, ::StorageVersion /*ver*/) override {
+    _wrapStorageForVersionCompatibility(std::unique_ptr<ChunkSource> cs, ::StorageVersion) override {
         logger.debug("TestDimension::_wrapStorageForVersionCompatibility");
         return cs;
     }
@@ -245,6 +244,4 @@ LL_AUTO_TYPED_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimen
     if (this->getDimensionId() == 3) return weak_from_this();
     return origin();
 };
-
-
-#endif // LL_DEBUG
+*/

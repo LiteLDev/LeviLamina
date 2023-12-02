@@ -73,8 +73,9 @@ public:
                           { a.getEventId() } -> std::same_as<EventId>;
                       } && std::is_same_v<T, LT>) {
             return addListener(listener, listener->getEventId());
+        } else {
+            return addListener(listener, getEventId<T>);
         }
-        return addListener(listener, getEventId<T>);
     }
     template <class T = void, template <class> class L, class LT>
         requires(std::same_as<T, void> && std::derived_from<L<LT>, ListenerBase>)

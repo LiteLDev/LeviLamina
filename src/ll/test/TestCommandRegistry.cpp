@@ -1,7 +1,8 @@
-#ifdef LL_DEBUG
 
 #include "ll/api/memory/Hook.h"
 #include "ll/core/LeviLamina.h"
+#include "ll/api/event/command/SetupCommandEvent.h"
+#include "ll/api/event/EventBus.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOutput.h"
 #include "mc/server/commands/CommandParameterData.h"
@@ -165,10 +166,9 @@ public:
 
 static bool reg = [] {
     using namespace ll::event;
-    EventBus::getInstance().emplaceListener<command::SetupCommandEvent>([](command::SetupCommandEvent& ev) {
+    EventBus::getInstance().emplaceListener<SetupCommandEvent>([](SetupCommandEvent& ev) {
         TestCommand::setup(ev.commandRegistry);
     });
     return true;
 }();
 
-#endif // LL_DEBUG

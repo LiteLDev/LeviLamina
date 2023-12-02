@@ -118,9 +118,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     using namespace ll::event;
 
-    auto str = ll::toFixedString<ll::reflection::type_raw_name_v<FileActionEvent>>();
+    // auto str = ll::toFixedString<ll::reflection::type_raw_name_v<FileActionEvent>>();
 
-    ll::logger.debug("{}", str.buf);
+    // ll::logger.debug("{}", str.buf);
 
     auto listener4 = Listener<FileActionEvent>::create("./", [](FileActionEvent& ev) {
         ll::logger.debug("dyn receive: {}, {} {}", typeid(ev).name(), ev.path, magic_enum::enum_name(ev.type));

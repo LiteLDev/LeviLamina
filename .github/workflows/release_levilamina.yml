@@ -24,7 +24,7 @@ jobs:
           xmake repo -u
 
       - run: |
-          xmake f -a x64 -m releasedbg -p windows -v -y --ccache=n
+          xmake f -a x64 -m release -p windows -v -y --ccache=n
 
       - run: |
           xmake -w -y

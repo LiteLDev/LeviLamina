@@ -212,82 +212,84 @@ static std::exception_ptr getNested(T const& e) {
     return nullptr;
 }
 
-std::string makeExceptionString(std::exception_ptr ePtr) {
+std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
     if (!ePtr) {
-        throw std::bad_exception();
-    }
-
-    std::string res;
-
-nextNest:
-
-    auto& rt = *(std::shared_ptr<const EXCEPTION_RECORD>*)(&ePtr);
-
-    if (rt->ExceptionCode == UntypedException::exceptionCodeOfCpp) {
-        try {
-            UntypedException exc{*rt};
-            std::string      handleName("unknown module");
-            if (auto p = plugin::PluginManager::getInstance().findPlugin(exc.handle).lock(); p) {
-                handleName = p->getManifest().name;
-            } else {
-                wchar_t buffer[MAX_PATH];
-                auto    size = GetModuleFileNameW((HMODULE)exc.handle, buffer, MAX_PATH);
-                if (size) {
-                    handleName = string_utils::u8str2str(std::filesystem::path({buffer, size}).stem().u8string());
-                }
-            }
-            auto expTypeName = exc.getNumCatchableTypes() > 0 ? exc.getTypeInfo(0)->name() : "unknown exception";
-            if (expTypeName == typeid(seh_exception).name()) {
-                res += fmt::format("Seh Exception, from <{}>:\n", handleName);
-            } else {
-                res += fmt::format(
-                    "C++ Exception: {}, from <{}>:\n",
-                    reflection::removeTypePrefix(expTypeName),
-                    handleName
-                );
-            }
-        } catch (...) {}
-    } else {
-        res += "Raw Seh Exception:\n";
+        return "bad exception, can't make exception string";
     }
     try {
-        std::exception_ptr yeptr;
-        std::swap(ePtr, yeptr);
-        std::rethrow_exception(yeptr);
-    } catch (const std::system_error& e) {
-        res += fmt::format(
-            "[0x{:0>8X}:{}] {}",
-            (uint)e.code().value(),
-            e.code().category().name(),
-            string_utils::tou8str(e.what())
-        );
-        ePtr = getNested(e);
-    } catch (const std::exception& e) {
-        res  += string_utils::tou8str(e.what());
-        ePtr  = getNested(e);
-    } catch (const std::string& e) {
-        res += string_utils::tou8str(e);
-    } catch (char const* e) {
-        res += string_utils::tou8str(e);
-    } catch (...) {
-        auto unkExc  = current_exception();
-        res         += fmt::format(
-            "[0x{:0>8X}:{}] {}",
-            (uint)unkExc.ExceptionCode,
-            ntstatus_category().name(),
-            ntstatus_category().message((int)unkExc.ExceptionCode)
-        );
-        for (size_t i = 0; i < unkExc.NumberParameters; i++) {
-            res += fmt::format("\nParameter {}: {}", i, (void*)unkExc.ExceptionInformation[i]);
+        std::string res;
+
+    nextNest:
+
+        auto& rt = *(std::shared_ptr<const EXCEPTION_RECORD>*)(&ePtr);
+
+        if (rt->ExceptionCode == UntypedException::exceptionCodeOfCpp) {
+            try {
+                UntypedException exc{*rt};
+                std::string      handleName("unknown module");
+                if (auto p = plugin::PluginManager::getInstance().findPlugin(exc.handle).lock(); p) {
+                    handleName = p->getManifest().name;
+                } else {
+                    wchar_t buffer[MAX_PATH];
+                    auto    size = GetModuleFileNameW((HMODULE)exc.handle, buffer, MAX_PATH);
+                    if (size) {
+                        handleName = string_utils::u8str2str(std::filesystem::path({buffer, size}).stem().u8string());
+                    }
+                }
+                auto expTypeName = exc.getNumCatchableTypes() > 0 ? exc.getTypeInfo(0)->name() : "unknown exception";
+                if (expTypeName == typeid(seh_exception).name()) {
+                    res += fmt::format("Seh Exception, from <{}>:\n", handleName);
+                } else {
+                    res += fmt::format(
+                        "C++ Exception: {}, from <{}>:\n",
+                        reflection::removeTypePrefix(expTypeName),
+                        handleName
+                    );
+                }
+            } catch (...) {}
+        } else {
+            res += "Raw Seh Exception:\n";
         }
-    }
+        try {
+            std::exception_ptr yeptr;
+            std::swap(ePtr, yeptr);
+            std::rethrow_exception(yeptr);
+        } catch (const std::system_error& e) {
+            res += fmt::format(
+                "[0x{:0>8X}:{}] {}",
+                (uint)e.code().value(),
+                e.code().category().name(),
+                string_utils::tou8str(e.what())
+            );
+            ePtr = getNested(e);
+        } catch (const std::exception& e) {
+            res  += string_utils::tou8str(e.what());
+            ePtr  = getNested(e);
+        } catch (const std::string& e) {
+            res += string_utils::tou8str(e);
+        } catch (char const* e) {
+            res += string_utils::tou8str(e);
+        } catch (...) {
+            auto unkExc  = current_exception();
+            res         += fmt::format(
+                "[0x{:0>8X}:{}] {}",
+                (uint)unkExc.ExceptionCode,
+                ntstatus_category().name(),
+                ntstatus_category().message((int)unkExc.ExceptionCode)
+            );
+            for (size_t i = 0; i < unkExc.NumberParameters; i++) {
+                res += fmt::format("\nParameter {}: {}", i, (void*)unkExc.ExceptionInformation[i]);
+            }
+        }
 
-    if (ePtr) {
-        res += ",\nwith: ";
-        goto nextNest;
-    }
+        if (ePtr) {
+            res += ",\nwith: ";
+            goto nextNest;
+        }
 
-    return res;
+        return res;
+    } catch (...) {}
+    return "unknown error when make exception string";
 }
 
 void printCurrentException(optional_ref<ll::Logger> l, std::exception_ptr const& e) noexcept {

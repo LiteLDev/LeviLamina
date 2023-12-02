@@ -15,20 +15,10 @@ private:
 
     std::unique_ptr<KeyValueDBImpl> impl;
 
-    KeyValueDB() = default;
-
 public:
-    LLNDAPI static std::unique_ptr<KeyValueDB>
-    create(std::string const& path, bool readCache = true, int cacheSize = 0, int filterBit = 0);
-
-    LLNDAPI static std::unique_ptr<KeyValueDB>
-    open(std::string const& path, bool create = true, bool readCache = true, int cacheSize = 0, int filterBit = 0);
+    LLNDAPI KeyValueDB(std::string const& path, bool createIfMiss = true, int bloomFilterBit = 0);
 
     LLAPI ~KeyValueDB();
-
-    KeyValueDB(KeyValueDB const&) = delete;
-
-    KeyValueDB& operator=(KeyValueDB const&) = delete;
 
     LLNDAPI std::optional<std::string> get(std::string_view key) const;
 
@@ -38,13 +28,7 @@ public:
 
     LLAPI void iter(std::function<bool(std::string_view, std::string_view)> const& fn) const;
 
-    LLNDAPI std::string error() const;
-
     LLNDAPI std::vector<std::string> getAllKeys() const;
-
-    LLNDAPI bool isValid() const;
-
-    LLNDAPI operator bool() const; // NOLINT(google-explicit-constructor)
 };
 
 } // namespace ll

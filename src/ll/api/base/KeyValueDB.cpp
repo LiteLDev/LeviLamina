@@ -19,35 +19,20 @@ public:
     leveldb::ReadOptions         readOptions;
     leveldb::WriteOptions        writeOptions;
     leveldb::Options             options;
-    leveldb::Status              status;
     std::string                  dbPath;
 
-    KeyValueDBImpl(std::string const& path, bool create, bool readCache, int cacheSize, bool filterBit) {
-        readOptions  = leveldb::ReadOptions();
-        writeOptions = leveldb::WriteOptions();
-        options      = leveldb::Options();
-        dbPath       = path;
-
-        readOptions.fill_cache       = readCache;
-        readOptions.verify_checksums = false;
-        writeOptions.sync            = false;
-        options.reuse_logs           = true; // @warning: experimental
-        options.create_if_missing    = create;
-
-        if (cacheSize) {
-            options.block_cache = leveldb::NewLRUCache(cacheSize);
+    KeyValueDBImpl(std::string const& path, bool createIfMiss, bool bloomFilterBit) {
+        readOptions               = leveldb::ReadOptions();
+        writeOptions              = leveldb::WriteOptions();
+        options                   = leveldb::Options();
+        dbPath                    = path;
+        options.create_if_missing = createIfMiss;
+        if (bloomFilterBit) {
+            options.filter_policy = leveldb::NewBloomFilterPolicy(bloomFilterBit);
         }
-        if (filterBit) {
-            options.filter_policy = leveldb::NewBloomFilterPolicy(filterBit);
-        }
-
-        leveldb::DB* database = nullptr;
-        status                = leveldb::DB::Open(options, path, &database);
-        db.reset(database);
+        auto status = leveldb::DB::Open(options, path, std::out_ptr(db));
         if (!status.ok()) {
-            auto output = status.ToString();
-            output.erase(std::remove(output.begin(), output.end(), '\n'), output.end());
-            ll::logger.error(": Fail to load KeyValueDB <{}>: {}", path, output);
+            throw std::runtime_error(status.ToString());
         }
     }
 
@@ -63,25 +48,16 @@ public:
     }
 
     [[nodiscard]] bool set(std::string_view key, std::string_view val) const {
-        auto s = db->Put(writeOptions, leveldb::Slice(key.data(), key.size()), leveldb::Slice(val.data(), val.size()));
-        if (!s.ok()) {
-            ll::logger.error("Fail to put {} {}", dbPath, s.ToString());
-            return false;
-        }
-        return true;
+        return db->Put(writeOptions, leveldb::Slice(key.data(), key.size()), leveldb::Slice(val.data(), val.size()))
+            .ok();
     }
 
     [[nodiscard]] bool del(std::string_view key) const {
-        auto s = db->Delete(writeOptions, leveldb::Slice(key.data(), key.size()));
-        if (!s.ok()) {
-            ll::logger.error("Fail to del {} {}", dbPath, s.ToString());
-            return false;
-        }
-        return true;
+        return db->Delete(writeOptions, leveldb::Slice(key.data(), key.size())).ok();
     }
 
     inline void iter(std::function<bool(std::string_view, std::string_view)> const& fn) const {
-        leveldb::Iterator* it = db->NewIterator(readOptions);
+        std::unique_ptr<leveldb::Iterator> it(db->NewIterator(readOptions));
         for (it->SeekToFirst(); it->Valid(); it->Next()) {
             auto k = it->key();
             auto v = it->value();
@@ -89,43 +65,26 @@ public:
                 break;
             }
         }
-        delete it;
     }
 
     [[nodiscard]] std::vector<std::string> getAllKeys() const {
-        std::vector<std::string> keys;
-        leveldb::Iterator*       it = db->NewIterator(readOptions);
+        std::vector<std::string>           keys;
+        std::unique_ptr<leveldb::Iterator> it(db->NewIterator(readOptions));
         for (it->SeekToFirst(); it->Valid(); it->Next()) {
             auto k = it->key();
             keys.emplace_back(k.data(), k.size());
         }
-        delete it;
         return keys;
     }
-
-    [[nodiscard]] bool isValid() const { return status.ok(); }
-
-    [[nodiscard]] std::string error() const { return status.ToString(); }
 
 private:
     KeyValueDBImpl() = default;
 };
 
-std::unique_ptr<KeyValueDB> KeyValueDB::create(std::string const& path, bool readCache, int cacheSize, int filterBit) {
+KeyValueDB::KeyValueDB(std::string const& path, bool createIfMiss, int bloomFilterBit) {
     std::error_code ec;
     std::filesystem::create_directories(file_utils::u8path(path), ec);
-    auto db  = std::unique_ptr<KeyValueDB>(new KeyValueDB());
-    db->impl = std::make_unique<KeyValueDBImpl>(path, true, readCache, cacheSize, filterBit);
-    return db;
-}
-
-std::unique_ptr<KeyValueDB>
-KeyValueDB::open(std::string const& path, bool create, bool readCache, int cacheSize, int filterBit) {
-    std::error_code ec;
-    std::filesystem::create_directories(file_utils::u8path(path), ec);
-    auto db  = std::unique_ptr<KeyValueDB>(new KeyValueDB());
-    db->impl = std::make_unique<KeyValueDBImpl>(path, create, readCache, cacheSize, filterBit);
-    return db;
+    impl = std::make_unique<KeyValueDBImpl>(path, createIfMiss, bloomFilterBit);
 }
 
 KeyValueDB::~KeyValueDB() = default;
@@ -139,9 +98,3 @@ bool KeyValueDB::del(std::string_view key) { return impl->del(key); }
 void KeyValueDB::iter(std::function<bool(std::string_view, std::string_view)> const& fn) const { impl->iter(fn); }
 
 std::vector<std::string> KeyValueDB::getAllKeys() const { return impl->getAllKeys(); }
-
-bool KeyValueDB::isValid() const { return impl->isValid(); }
-
-KeyValueDB::operator bool() const { return isValid(); }
-
-std::string KeyValueDB::error() const { return impl->error(); }

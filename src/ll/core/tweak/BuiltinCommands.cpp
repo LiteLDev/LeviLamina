@@ -518,7 +518,7 @@ public:
 class VersionCommand : public Command {
 
 public:
-    void execute(CommandOrigin const&, CommandOutput& output) const override {
+    void execute(CommandOrigin const& [[maybe_unused]] ori, CommandOutput& output) const override {
 #ifdef LL_DEBUG
         Logger("VersionCommand").warn(ori.serialize().toSnbt());
 #endif // LL_DEBUG

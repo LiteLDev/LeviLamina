@@ -57,19 +57,16 @@ static bool getFileVersion(
     if (0 >= dwLen) {
         return false;
     }
-    auto* pBlock = new (std::nothrow) wchar_t[dwLen];
-    if (nullptr == pBlock) {
-        return false;
-    }
-    if (!GetFileVersionInfoW(filePath, dwHandle, dwLen, pBlock)) {
-        delete[] pBlock;
+
+    std::wstring path(dwLen, '\0');
+
+    if (!GetFileVersionInfoW(filePath, dwHandle, dwLen, path.data())) {
         return false;
     }
 
     VS_FIXEDFILEINFO* lpBuffer;
     unsigned int      uLen = 0;
-    if (!VerQueryValueW(pBlock, L"\\", (void**)&lpBuffer, &uLen)) {
-        delete[] pBlock;
+    if (!VerQueryValueW(path.c_str(), L"\\", (void**)&lpBuffer, &uLen)) {
         return false;
     }
 
@@ -79,7 +76,6 @@ static bool getFileVersion(
     if (ver4) *ver4 = lpBuffer->dwFileVersionLS & 0x0000FFFF;
     if (flag) *flag = lpBuffer->dwFileFlags;
 
-    delete[] pBlock;
     return true;
 }
 

@@ -1,3 +1,5 @@
+#define LL_GLOBAL_SERVICE_IMPL
+
 #include "ll/api/service/GlobalService.h"
 
 #include "mc/deps/raknet/RakPeer.h"

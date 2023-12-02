@@ -1,5 +1,4 @@
-#ifdef LL_DEBUG
-
+/*
 #include "ll/api/Logger.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/GlobalService.h"
@@ -198,5 +197,4 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     return origin(netId, packet);
 };
-
-#endif // LL_DEBUG
+*/

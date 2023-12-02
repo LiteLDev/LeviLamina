@@ -39,19 +39,12 @@ std::chrono::steady_clock::time_point ll::severStartEndTime;
 
 namespace {
 void fixCurrentDirectory() {
-    constexpr const DWORD MAX_PATH_LEN = 32767;
-    auto*                 buffer       = new (std::nothrow) wchar_t[MAX_PATH_LEN];
-    if (!buffer) return;
-    GetModuleFileName(nullptr, buffer, MAX_PATH_LEN);
-    std::wstring path(buffer);
-    delete[] buffer;
+    std::wstring path(32767, '\0');
+    GetModuleFileName(nullptr, path.data(), 32767);
     SetCurrentDirectory(path.substr(0, path.find_last_of(L'\\')).c_str());
 }
 
 void checkOtherBdsInstance() {
-    constexpr const DWORD MAX_PATH_LEN = 32767;
-    auto*                 buffer       = new (std::nothrow) wchar_t[MAX_PATH_LEN];
-    if (!buffer) return;
     // get all processes id with name "bedrock_server.exe" or "bedrock_server_mod.exe"
     // and pid is not current process
     std::vector<DWORD> pids;
@@ -73,9 +66,8 @@ void checkOtherBdsInstance() {
     CloseHandle(hProcessSnap);
 
     // Get current process path
-    std::wstring currentPath;
-    GetModuleFileName(nullptr, buffer, MAX_PATH_LEN);
-    currentPath = buffer;
+    std::wstring currentPath(32767, '\0');
+    GetModuleFileName(nullptr, currentPath.data(), 32767);
 
     // Get the BDS process paths
     for (auto& pid : pids) {
@@ -84,8 +76,7 @@ void checkOtherBdsInstance() {
         if (handle) {
             // Get the full path of the process
             std::wstring path;
-            GetModuleFileNameEx(handle, nullptr, buffer, MAX_PATH_LEN);
-            path = buffer;
+            GetModuleFileNameEx(handle, nullptr, path.data(), 32767);
 
             // Compare the path
             if (path == currentPath) {
@@ -112,7 +103,6 @@ void checkOtherBdsInstance() {
             CloseHandle(handle);
         }
     }
-    delete[] buffer;
 }
 
 void printWelcomeMsg() {

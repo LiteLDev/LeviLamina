@@ -1,4 +1,3 @@
-// #ifdef LL_DEBUG
 
 #include "ll/api/Logger.h"
 #include "ll/api/base/Hash.h"
@@ -328,4 +327,3 @@ static bool reg = [] {
     return true;
 }();
 
-// #endif // LL_DEBUG

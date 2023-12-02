@@ -59,8 +59,17 @@ public:
     GlobalService& operator=(GlobalService const&) noexcept = delete;
     GlobalService& operator=(GlobalService&&) noexcept      = delete;
 };
-
+#ifdef __clang__
+template <IsGlobalService T>
+#ifdef LL_GLOBAL_SERVICE_IMPL
+__declspec(dllexport)
+#else
+__declspec(dllimport)
+#endif
+    GlobalService<T> Global;
+#else
 template <IsGlobalService T>
 LLAPI GlobalService<T> Global;
+#endif
 
 } // namespace ll

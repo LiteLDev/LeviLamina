@@ -507,8 +507,7 @@ public:
         std::string const&     name,
         std::string const&     description,
         CommandPermissionLevel permission = CommandPermissionLevel::GameDirectors,
-        CommandFlag            flag1      = CommandFlagValue::NotCheat,
-        CommandFlag            flag2      = CommandFlagValue::None
+        CommandFlag            flag      = CommandFlagValue::NotCheat
     );
     LLAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(
         std::string const&                                          name,
@@ -518,8 +517,7 @@ public:
         std::vector<std::vector<std::string>>&&                     overloads,
         CallBackFn                                                  callback,
         CommandPermissionLevel                                      permission = CommandPermissionLevel::GameDirectors,
-        CommandFlag                                                 flag1      = CommandFlagValue::NotCheat,
-        CommandFlag                                                 flag2      = CommandFlagValue::None
+        CommandFlag                                                 flag      = CommandFlagValue::NotCheat
     );
 
     LLAPI static DynamicCommandInstance const* setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
@@ -546,21 +544,8 @@ public:
         std::vector<std::vector<std::string>>&&                     overloads,
         CallBackFn                                                  callback,
         CommandPermissionLevel                                      permission = CommandPermissionLevel::GameDirectors,
-        CommandFlag                                                 flag1      = CommandFlagValue::NotCheat,
-        CommandFlag                                                 flag2      = CommandFlagValue::None
-    ) {
-        return setup(createCommand(
-            name,
-            description,
-            std::move(enums),
-            std::move(params),
-            std::move(overloads),
-            std::move(callback),
-            permission,
-            flag1,
-            flag2
-        ));
-    };
+        CommandFlag                                                 flag      = CommandFlagValue::NotCheat
+    );
 
     // Experiment
     LLAPI static bool unregisterCommand(std::string const& name);
@@ -729,4 +714,26 @@ public:
         return newParameter(name, type, false, (std::string const&)description, identifier, parameterOption);
     };
     bool hasRegistered() const { return DynamicCommand::getInstance(getCommandName()) != nullptr; };
+};
+
+inline DynamicCommandInstance const* DynamicCommand::setup(
+    std::string const&                                          name,
+    std::string const&                                          description,
+    std::unordered_map<std::string, std::vector<std::string>>&& enums,
+    std::vector<ParameterData>&&                                params,
+    std::vector<std::vector<std::string>>&&                     overloads,
+    CallBackFn                                                  callback,
+    CommandPermissionLevel                                      permission,
+    CommandFlag                                                 flag
+) {
+    return setup(createCommand(
+        name,
+        description,
+        std::move(enums),
+        std::move(params),
+        std::move(overloads),
+        std::move(callback),
+        permission,
+        flag
+    ));
 };
