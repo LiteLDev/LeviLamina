@@ -19,13 +19,14 @@ LL_TYPED_INSTANCE_HOOK(
     origin(source);
 }
 
-class PlayerDieEventEmitter : public Emitter<PlayerDieEvent> {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+class PlayerDieEventEmitter : public Emitter<PlayerDieEvent, emitterFactory> {
 public:
     PlayerDieEventEmitter() { PlayerDieEventHook::hook(); }
     ~PlayerDieEventEmitter() override { PlayerDieEventHook::unhook(); }
 };
 
-std::unique_ptr<EmitterBase> PlayerDieEvent::emitterFactory(ListenerBase&) {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerDieEventEmitter>();
 }
 

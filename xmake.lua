@@ -49,7 +49,6 @@ target("LeviLamina")
         "_AMD64_",
         "_CRT_SECURE_NO_WARNINGS",
         "_ENABLE_CONSTEXPR_MUTEX_CONSTRUCTOR",
-        "CPPHTTPLIB_OPENSSL_SUPPORT",
         "LL_EXPORT",
         "NOMINMAX",
         "UNICODE",

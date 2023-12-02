@@ -28,13 +28,14 @@ LL_TYPED_INSTANCE_HOOK(
     origin(identifier, packet);
 }
 
-class PlayerSendMessageEventEmitter : public Emitter<PlayerSendMessageEvent> {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+class PlayerSendMessageEventEmitter : public Emitter<PlayerSendMessageEvent, emitterFactory> {
 public:
     PlayerSendMessageEventEmitter() { PlayerSendMessageEventHook::hook(); }
     ~PlayerSendMessageEventEmitter() override { PlayerSendMessageEventHook::unhook(); }
 };
 
-std::unique_ptr<EmitterBase> PlayerSendMessageEvent::emitterFactory(ListenerBase&) {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerSendMessageEventEmitter>();
 }
 } // namespace ll::event::inline player

@@ -21,7 +21,6 @@ public:
       target(target),
       damage(damage) {}
 
-    LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
 
 } // namespace ll::event::inline player

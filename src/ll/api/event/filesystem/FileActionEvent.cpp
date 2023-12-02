@@ -22,8 +22,9 @@
 #include "windows.h"
 
 namespace ll::event::inline fs {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase& l);
 // modified from Thomas Monkman's
-class FileWatcher : public Emitter<FileActionEvent> {
+class FileWatcher : public Emitter<FileActionEvent, emitterFactory> {
 public:
     using Path = std::filesystem::path;
 
@@ -230,7 +231,7 @@ public:
     ~FileWatcher() override { destroy(); }
 };
 
-std::unique_ptr<EmitterBase> FileActionEvent::emitterFactory(ListenerBase& l) {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase& l) {
     auto& path = ((Listener<FileActionEvent>&)l).path;
     return std::make_unique<FileWatcher>(
         utils::file_utils::u8path(path),

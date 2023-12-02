@@ -16,7 +16,6 @@ public:
 
     constexpr explicit PlayerRespawnEvent(Player& player) : player(player) {}
 
-    LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
 
 } // namespace ll::event::inline player

@@ -18,13 +18,14 @@ LL_TYPED_STATIC_HOOK(
     origin(reg);
 }
 
-class SetupCommandEventEmitter : public Emitter<SetupCommandEvent> {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+class SetupCommandEventEmitter : public Emitter<SetupCommandEvent, emitterFactory> {
 public:
     SetupCommandEventEmitter() { SetupCommandEventHook::hook(); }
     ~SetupCommandEventEmitter() override { SetupCommandEventHook::unhook(); }
 };
 
-std::unique_ptr<EmitterBase> SetupCommandEvent::emitterFactory(ListenerBase&) {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<SetupCommandEventEmitter>();
 }
-} // namespace ll::event
+} // namespace ll::event::inline command

@@ -12,6 +12,5 @@ public:
 
     constexpr explicit SetupCommandEvent(CommandRegistry& reg) : commandRegistry(reg) {}
 
-    LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
 } // namespace ll::event::inline command

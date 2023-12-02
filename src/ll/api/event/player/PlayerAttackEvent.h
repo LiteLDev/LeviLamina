@@ -20,8 +20,6 @@ public:
     : source(source),
       target(target),
       cause(cause) {}
-
-    LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
 
 } // namespace ll::event::inline player

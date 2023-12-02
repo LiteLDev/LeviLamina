@@ -25,7 +25,6 @@ public:
       commandContext(commandContext),
       suppressOutput(suppressOutput) {}
 
-    LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
 class ExecutedCommandEvent : public Event {
 public:
@@ -45,6 +44,5 @@ public:
       commandContext(commandContext),
       suppressOutput(suppressOutput) {}
 
-    LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
 } // namespace ll::event::inline command

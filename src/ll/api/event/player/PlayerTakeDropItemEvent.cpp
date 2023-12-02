@@ -27,13 +27,14 @@ LL_TYPED_INSTANCE_HOOK(
     return origin(itemActor, i0, i1);
 }
 
-class PlayerTakeDropItemEventEmitter : public Emitter<PlayerTakeDropItemEvent> {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+class PlayerTakeDropItemEventEmitter : public Emitter<PlayerTakeDropItemEvent, emitterFactory> {
 public:
     PlayerTakeDropItemEventEmitter() { PlayerTakeDropItemEventHook::hook(); }
     ~PlayerTakeDropItemEventEmitter() override { PlayerTakeDropItemEventHook::unhook(); }
 };
 
-std::unique_ptr<EmitterBase> PlayerTakeDropItemEvent::emitterFactory(ListenerBase&) {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerTakeDropItemEventEmitter>();
 }
 

@@ -28,13 +28,14 @@ LL_TYPED_INSTANCE_HOOK(
     origin(ni, cr, sp);
 }
 
-class PlayerConnectEventEmitter : public Emitter<PlayerConnectEvent> {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+class PlayerConnectEventEmitter : public Emitter<PlayerConnectEvent, emitterFactory> {
 public:
     PlayerConnectEventEmitter() { PlayerConnectEventHook::hook(); }
     ~PlayerConnectEventEmitter() override { PlayerConnectEventHook::unhook(); }
 };
 
-std::unique_ptr<EmitterBase> PlayerConnectEvent::emitterFactory(ListenerBase&) {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerConnectEventEmitter>();
 }
 } // namespace ll::event::inline player

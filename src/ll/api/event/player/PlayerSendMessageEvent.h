@@ -16,6 +16,5 @@ public:
     : player(player),
       message(message) {}
 
-    LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
 } // namespace ll::event::inline player

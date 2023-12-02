@@ -24,7 +24,6 @@ public:
 
     FileActionEvent(std::filesystem::path p, FileActionType e) : path(std::move(p)), type(e) {}
 
-    LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
 } // namespace fs
 
@@ -33,6 +32,8 @@ class Listener<fs::FileActionEvent> : public ListenerBase {
     friend fs::FileActionEvent;
 
 public:
+    std::string path;
+
     using EventType = fs::FileActionEvent;
     using Callback  = std::function<void(EventType&)>;
 
@@ -60,7 +61,6 @@ public:
 
 private:
     Callback    callback;
-    std::string path;
     std::string nativeId;
 };
 } // namespace ll::event

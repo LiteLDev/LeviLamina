@@ -12,14 +12,13 @@ LL_TYPED_INSTANCE_HOOK(PlayerJumpEventHook, HookPriority::Normal, Player, &Playe
     return origin();
 }
 
-class PlayerJumpEventEmitter : public Emitter<PlayerJumpEvent> {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+class PlayerJumpEventEmitter : public Emitter<PlayerJumpEvent, emitterFactory> {
 public:
     PlayerJumpEventEmitter() { PlayerJumpEventHook::hook(); }
     ~PlayerJumpEventEmitter() override { PlayerJumpEventHook::unhook(); }
 };
 
-std::unique_ptr<EmitterBase> PlayerJumpEvent::emitterFactory(ListenerBase&) {
-    return std::make_unique<PlayerJumpEventEmitter>();
-}
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return std::make_unique<PlayerJumpEventEmitter>(); }
 
 } // namespace ll::event::inline player

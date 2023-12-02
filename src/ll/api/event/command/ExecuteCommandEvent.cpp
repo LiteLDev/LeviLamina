@@ -24,13 +24,14 @@ LL_TYPED_INSTANCE_HOOK(
     return origin(context, suppressOutput);
 }
 
-class ExecutingCommandEventEmitter : public Emitter<ExecutingCommandEvent> {
+static std::unique_ptr<EmitterBase> executingEmitterFactory(ListenerBase&);
+class ExecutingCommandEventEmitter : public Emitter<ExecutingCommandEvent, executingEmitterFactory> {
 public:
     ExecutingCommandEventEmitter() { ExecutingCommandEventHook::hook(); }
     ~ExecutingCommandEventEmitter() override { ExecutingCommandEventHook::unhook(); }
 };
 
-std::unique_ptr<EmitterBase> ExecutingCommandEvent::emitterFactory(ListenerBase&) {
+static std::unique_ptr<EmitterBase> executingEmitterFactory(ListenerBase&) {
     return std::make_unique<ExecutingCommandEventEmitter>();
 }
 
@@ -51,13 +52,14 @@ LL_TYPED_INSTANCE_HOOK(
     return res;
 }
 
-class ExecutedCommandEventEmitter : public Emitter<ExecutedCommandEvent> {
+static std::unique_ptr<EmitterBase> executedEmitterFactory(ListenerBase&);
+class ExecutedCommandEventEmitter : public Emitter<ExecutedCommandEvent, executedEmitterFactory> {
 public:
     ExecutedCommandEventEmitter() { ExecutedCommandEventHook::hook(); }
     ~ExecutedCommandEventEmitter() override { ExecutedCommandEventHook::unhook(); }
 };
 
-std::unique_ptr<EmitterBase> ExecutedCommandEvent::emitterFactory(ListenerBase&) {
+static std::unique_ptr<EmitterBase> executedEmitterFactory(ListenerBase&) {
     return std::make_unique<ExecutedCommandEventEmitter>();
 }
 } // namespace ll::event::inline command

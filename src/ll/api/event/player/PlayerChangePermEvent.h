@@ -15,7 +15,5 @@ public:
     constexpr explicit PlayerChangePermEvent(Player& player, CommandPermissionLevel& newPerm)
     : player(player),
       newPerm(newPerm) {}
-
-    LLNDAPI static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 };
 } // namespace ll::event::inline player

@@ -26,13 +26,14 @@ LL_TYPED_INSTANCE_HOOK(
     return damage;
 }
 
-class PlayerAttackedEventEmitter : public Emitter<PlayerAttackedEvent> {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+class PlayerAttackedEventEmitter : public Emitter<PlayerAttackedEvent, emitterFactory> {
 public:
     PlayerAttackedEventEmitter() { PlayerAttackedEventHook::hook(); }
     ~PlayerAttackedEventEmitter() override { PlayerAttackedEventHook::unhook(); }
 };
 
-std::unique_ptr<EmitterBase> PlayerAttackedEvent::emitterFactory(ListenerBase&) {
+static std::unique_ptr<EmitterBase>emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerAttackedEventEmitter>();
 }
 

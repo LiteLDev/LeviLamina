@@ -22,13 +22,14 @@ LL_TYPED_INSTANCE_HOOK(
     origin(id, packet);
 }
 
-class PlayerSwingEventEmitter : public Emitter<PlayerSwingEvent> {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
+class PlayerSwingEventEmitter : public Emitter<PlayerSwingEvent, emitterFactory> {
 public:
     PlayerSwingEventEmitter() { PlayerSwingEventHook::hook(); }
     ~PlayerSwingEventEmitter() override { PlayerSwingEventHook::unhook(); }
 };
 
-std::unique_ptr<EmitterBase> PlayerSwingEvent::emitterFactory(ListenerBase&) {
+static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerSwingEventEmitter>();
 }
 
