@@ -51,12 +51,16 @@
         }                                                                                                              \
         template <typename T>                                                                                          \
         [[nodiscard]] constexpr T& get(size_t index) noexcept {                                                        \
-            if (index == 1) { return (T&)z; }                                                                          \
+            if (index == 1) {                                                                                          \
+                return (T&)z;                                                                                          \
+            }                                                                                                          \
             return (T&)x;                                                                                              \
         }                                                                                                              \
         template <typename T>                                                                                          \
         [[nodiscard]] constexpr T get(size_t index) const noexcept {                                                   \
-            if (index == 1) { return (T)z; }                                                                           \
+            if (index == 1) {                                                                                          \
+                return (T)z;                                                                                           \
+            }                                                                                                          \
             return (T)x;                                                                                               \
         }                                                                                                              \
     }

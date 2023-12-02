@@ -20,9 +20,7 @@ LL_TYPED_STATIC_HOOK(
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 class SetupCommandEventEmitter : public Emitter<SetupCommandEvent, emitterFactory> {
-public:
-    SetupCommandEventEmitter() { SetupCommandEventHook::hook(); }
-    ~SetupCommandEventEmitter() override { SetupCommandEventHook::unhook(); }
+    memory::HookAutoRegister<SetupCommandEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {

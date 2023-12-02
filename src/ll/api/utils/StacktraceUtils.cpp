@@ -20,6 +20,7 @@ static void lockRelease() noexcept;
 
 class [[nodiscard]] DbgEngData {
 public:
+    // NOLINTBEGIN(readability-convert-member-functions-to-static)
     DbgEngData() noexcept { AcquireSRWLockExclusive(&srw); }
 
     ~DbgEngData() { ReleaseSRWLockExclusive(&srw); }
@@ -27,7 +28,7 @@ public:
     DbgEngData(const DbgEngData&)            = delete;
     DbgEngData& operator=(const DbgEngData&) = delete;
 
-    void release() noexcept { // NOLINT(readability-convert-member-functions-to-static)
+    void release() noexcept {
         // "Phoenix singleton" - destroy and set to null, so that it can be initialized later again
 
         if (debugClient != nullptr) {
@@ -58,7 +59,7 @@ public:
         initializeAttempted = false;
     }
 
-    [[nodiscard]] bool tryInit() noexcept { // NOLINT(readability-convert-member-functions-to-static)
+    [[nodiscard]] bool tryInit() noexcept {
         if (!initializeAttempted) {
             initializeAttempted = true;
 
@@ -109,9 +110,7 @@ public:
         return attached;
     }
 
-    auto getInfo( // NOLINT(readability-convert-member-functions-to-static)
-        const void* const address
-    ) {
+    auto getInfo(const void* const address) {
         std::optional<size_t> displacement = 0;
         std::string           name;
         std::optional<ulong>  line = 0;
@@ -139,6 +138,13 @@ public:
         return std::make_tuple(displacement, name, line, file);
     }
 
+    uintptr_t getSymbol(std::string_view sv) {
+        if (uintptr_t res{}; S_OK == debugSymbols->GetOffsetByName(sv.data(), &res)) {
+            return res;
+        }
+        return 0;
+    }
+    // NOLINTEND(readability-convert-member-functions-to-static)
 private:
     inline static SRWLOCK        srw                 = SRWLOCK_INIT;
     inline static IDebugClient*  debugClient         = nullptr;
@@ -174,6 +180,14 @@ SymbolLoader::SymbolLoader(std::string const& path) : handle(GetCurrentProcess()
     SymSetOptions(options);
 }
 SymbolLoader::~SymbolLoader() { SymCleanup(handle); }
+
+uintptr_t tryGetSymbolAddress(std::string_view symbol) {
+    DbgEngData data;
+    if (!data.tryInit()) {
+        return 0;
+    }
+    return data.getSymbol(symbol);
+}
 
 std::string toString(std::stacktrace_entry const& entry) {
     std::string res = fmt::format("at: 0x{:0>12X}", (uint64)entry.native_handle());

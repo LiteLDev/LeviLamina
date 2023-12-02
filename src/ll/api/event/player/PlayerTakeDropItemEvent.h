@@ -19,7 +19,6 @@ public:
     constexpr explicit PlayerTakeDropItemEvent(Player& player, ItemActor& itemActor)
     : player(player),
       itemActor(itemActor) {}
-
 };
 
 } // namespace ll::event::inline player

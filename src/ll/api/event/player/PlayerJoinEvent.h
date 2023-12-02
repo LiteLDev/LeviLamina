@@ -12,6 +12,5 @@ public:
     ServerPlayer& player;
 
     constexpr explicit PlayerJoinEvent(ServerPlayer& player) : player(player) {}
-
 };
 } // namespace ll::event::inline player

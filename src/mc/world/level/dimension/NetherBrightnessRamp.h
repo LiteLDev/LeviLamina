@@ -7,7 +7,6 @@
 
 class NetherBrightnessRamp : public ::DimensionBrightnessRamp {
 public:
-
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1NetherBrightnessRamp@@UEAA@XZ
     virtual ~NetherBrightnessRamp() = default;

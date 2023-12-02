@@ -11,6 +11,5 @@ public:
     CommandRegistry& commandRegistry;
 
     constexpr explicit SetupCommandEvent(CommandRegistry& reg) : commandRegistry(reg) {}
-
 };
 } // namespace ll::event::inline command

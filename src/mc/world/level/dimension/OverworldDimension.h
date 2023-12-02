@@ -25,7 +25,9 @@ public:
         mHasWeather            = true;
         mDefaultBrightness.sky = Brightness::MAX;
         mSeaLevel              = 63;
-        if (getLevel().getLevelData().getGenerator() == GeneratorType::Flat) { mSeaLevel = 5; }
+        if (getLevel().getLevelData().getGenerator() == GeneratorType::Flat) {
+            mSeaLevel = 5;
+        }
         mDimensionBrightnessRamp = std::make_unique<OverworldBrightnessRamp>();
         mDimensionBrightnessRamp->buildBrightnessRamp();
     };

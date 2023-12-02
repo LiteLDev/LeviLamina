@@ -14,12 +14,16 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     DimensionType      dimId,
     class Vec2 const&  rotation
 ) {
-    if (!ll::Global<ServerNetworkHandler>) { return nullptr; }
+    if (!ll::Global<ServerNetworkHandler>) {
+        return nullptr;
+    }
     OwnerPtrT<EntityRefTraits> ownerPtr =
         ll::Global<ServerNetworkHandler>->createSimulatedPlayer(name, std::to_string(INT32_MAX + random::rand<uint>()));
     auto player = ownerPtr.tryUnwrap<SimulatedPlayer>();
 
-    if (player == nullptr) { return nullptr; }
+    if (player == nullptr) {
+        return nullptr;
+    }
 
     player->postLoad(true);
     player->getLevel().addUser(std::move(ownerPtr));
@@ -46,6 +50,8 @@ bool SimulatedPlayer::simulateDestroyLookAt(float handLength) {
 
     auto hitResult = traceRay(handLength, false);
 
-    if (hitResult.mType != HitResultType::Tile) { return false; }
+    if (hitResult.mType != HitResultType::Tile) {
+        return false;
+    }
     return simulateDestroyBlock(hitResult.mBlockPos, (ScriptModuleMinecraft::ScriptFacing)hitResult.mFacing);
 }

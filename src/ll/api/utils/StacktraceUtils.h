@@ -19,6 +19,7 @@ public:
     LLAPI ~SymbolLoader();
 };
 
+LLNDAPI uintptr_t tryGetSymbolAddress(std::string_view);
 LLNDAPI std::string toString(std::stacktrace_entry const&);
 LLNDAPI std::string toString(std::stacktrace const&);
 LLNDAPI std::string toString(_CONTEXT const&);

@@ -68,7 +68,9 @@ public:
     WeakStorageSharePtr& operator=(WeakStorageSharePtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
-        if (this != &other) { mHandle = other.mHandle; }
+        if (this != &other) {
+            mHandle = other.mHandle;
+        }
         return *this;
     }
 
@@ -76,7 +78,9 @@ public:
     WeakStorageSharePtr& operator=(WeakStorageSharePtr<Y>&& other) noexcept
         requires(std::convertible_to<Y*, T*>)
     {
-        if (this != &other) { mHandle = std::move(other.mHandle); }
+        if (this != &other) {
+            mHandle = std::move(other.mHandle);
+        }
         return *this;
     }
 
@@ -86,7 +90,9 @@ public:
 
     T* get() const {
         auto sp = mHandle.lock();
-        if (!sp) { return nullptr; }
+        if (!sp) {
+            return nullptr;
+        }
         return sp.get();
     }
 
@@ -147,7 +153,9 @@ public:
     OwnerStorageSharePtr& operator=(OwnerStorageSharePtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
-        if (this != &other) { mHandle = other.mHandle; }
+        if (this != &other) {
+            mHandle = other.mHandle;
+        }
         return *this;
     }
 
@@ -155,7 +163,9 @@ public:
     OwnerStorageSharePtr& operator=(OwnerStorageSharePtr<Y>&& other) noexcept
         requires(std::convertible_to<Y*, T*>)
     {
-        if (this != &other) { mHandle = std::move(other.mHandle); }
+        if (this != &other) {
+            mHandle = std::move(other.mHandle);
+        }
         return *this;
     }
 
@@ -216,7 +226,9 @@ public:
     StackResultStorageSharePtr& operator=(StackResultStorageSharePtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
-        if (this != &other) { mHandle = other.mHandle; }
+        if (this != &other) {
+            mHandle = other.mHandle;
+        }
         return *this;
     }
 
@@ -224,7 +236,9 @@ public:
     StackResultStorageSharePtr& operator=(StackResultStorageSharePtr<Y>&& other) noexcept
         requires(std::convertible_to<Y*, T*>)
     {
-        if (this != &other) { mHandle = std::move(other.mHandle); }
+        if (this != &other) {
+            mHandle = std::move(other.mHandle);
+        }
         return *this;
     }
 
@@ -256,12 +270,16 @@ public:
         if (--share_count == 0) {
             delete ptr;
             ptr = nullptr;
-            if (weak_count == 0) { delete this; }
+            if (weak_count == 0) {
+                delete this;
+            }
         }
     }
 
     void releaseWeak() {
-        if (--weak_count == 0 && share_count == 0) { delete this; }
+        if (--weak_count == 0 && share_count == 0) {
+            delete this;
+        }
     }
 
 private:

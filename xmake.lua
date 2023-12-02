@@ -60,7 +60,10 @@ target("LeviLamina")
         "src/ll/core/**.rc",
         "src/mc/**.cpp"
     )
-    -- add_headerfiles("src/(**.h)")
+    add_headerfiles(
+        "src/(ll/api/**.h)",
+        "src/(mc/**.h)"
+    )
     add_includedirs(
         "./src",
         "$(buildir)/config"

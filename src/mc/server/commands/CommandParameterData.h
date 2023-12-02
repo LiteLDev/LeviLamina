@@ -62,7 +62,8 @@ public:
             nullptr,
             getOffset(field),
             false,
-            isSet ? getOffset(isSet) : -1};
+            isSet ? getOffset(isSet) : -1
+        };
     }
     template <CommandParameterDataType DataType, typename Command, typename Type>
     [[nodiscard]] inline static CommandParameterData makeMandatory(
@@ -80,7 +81,8 @@ public:
             desc,
             getOffset(field),
             false,
-            isSet ? getOffset(isSet) : -1};
+            isSet ? getOffset(isSet) : -1
+        };
     }
     template <typename Command, typename Type>
     [[nodiscard]] inline static CommandParameterData

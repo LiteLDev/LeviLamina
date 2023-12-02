@@ -824,7 +824,9 @@ class Block const* mYellowWool;
 
 void assignBlocks() {
 
-    for (int i = 0; i < 119; ++i) { INIT_BLOCK(Elements[i]); }
+    for (int i = 0; i < 119; ++i) {
+        INIT_BLOCK(Elements[i]);
+    }
 
     INIT_BLOCK(AcaciaButton);
     INIT_BLOCK(AcaciaDoor);

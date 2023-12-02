@@ -62,11 +62,15 @@ public:
     [[nodiscard]] constexpr T* as_ptr() const noexcept { return mPtr; }
 
     [[nodiscard]] constexpr T* operator->() const {
-        if (!has_value()) { throw std::runtime_error{"bas optional_ref access"}; }
+        if (!has_value()) {
+            throw std::runtime_error{"bas optional_ref access"};
+        }
         return mPtr;
     }
     [[nodiscard]] constexpr T& get() const {
-        if (!has_value()) { throw std::runtime_error{"bas optional_ref access"}; }
+        if (!has_value()) {
+            throw std::runtime_error{"bas optional_ref access"};
+        }
         return *mPtr;
     }
 
@@ -76,12 +80,16 @@ public:
 
     template <class T2>
     [[nodiscard]] constexpr T& value_or(T2&& right) const {
-        if (has_value()) { return *mPtr; }
+        if (has_value()) {
+            return *mPtr;
+        }
         return std::forward<T2>(right);
     }
 
     [[nodiscard]] constexpr operator T&() const {
-        if (!has_value()) { throw std::runtime_error{"bas optional_ref access"}; }
+        if (!has_value()) {
+            throw std::runtime_error{"bas optional_ref access"};
+        }
         return *mPtr;
     }
 

@@ -26,9 +26,7 @@ LL_TYPED_INSTANCE_HOOK(
 
 static std::unique_ptr<EmitterBase> executingEmitterFactory(ListenerBase&);
 class ExecutingCommandEventEmitter : public Emitter<ExecutingCommandEvent, executingEmitterFactory> {
-public:
-    ExecutingCommandEventEmitter() { ExecutingCommandEventHook::hook(); }
-    ~ExecutingCommandEventEmitter() override { ExecutingCommandEventHook::unhook(); }
+    memory::HookAutoRegister<ExecutingCommandEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> executingEmitterFactory(ListenerBase&) {
@@ -54,9 +52,7 @@ LL_TYPED_INSTANCE_HOOK(
 
 static std::unique_ptr<EmitterBase> executedEmitterFactory(ListenerBase&);
 class ExecutedCommandEventEmitter : public Emitter<ExecutedCommandEvent, executedEmitterFactory> {
-public:
-    ExecutedCommandEventEmitter() { ExecutedCommandEventHook::hook(); }
-    ~ExecutedCommandEventEmitter() override { ExecutedCommandEventHook::unhook(); }
+    memory::HookAutoRegister<ExecutedCommandEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> executedEmitterFactory(ListenerBase&) {

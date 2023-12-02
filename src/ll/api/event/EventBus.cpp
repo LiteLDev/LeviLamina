@@ -33,10 +33,12 @@ public:
                 auto lock = ll::Logger::lock();
                 try {
                     auto& weak = l->pluginPtr;
-                    eventBusLogger.error("Error in [{}:{}] of <{}>:",
-                                         ll::reflection::removeTypePrefix(typeid(*l).name()),
-                                         l->getId(),
-                                         weak.expired() ? "unknown plugin" : weak.lock()->getManifest().name);
+                    eventBusLogger.error(
+                        "Error in [{}:{}] of <{}>:",
+                        ll::reflection::removeTypePrefix(typeid(*l).name()),
+                        l->getId(),
+                        weak.expired() ? "unknown plugin" : weak.lock()->getManifest().name
+                    );
                 } catch (...) {}
                 error_info::printCurrentException(eventBusLogger);
             }

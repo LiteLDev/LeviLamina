@@ -11,7 +11,9 @@ public:
     [[nodiscard]] constexpr static uint64 computeHash(std::string_view str) {
         if (str.empty()) return 0;
         uint64 hash = 0xCBF29CE484222325ULL;
-        for (char s : str) { hash = s ^ (0x100000001B3ULL * hash); }
+        for (char s : str) {
+            hash = s ^ (0x100000001B3ULL * hash);
+        }
         return hash;
     }
 
@@ -44,7 +46,9 @@ public:
     }
 
     [[nodiscard]] constexpr HashedString& operator=(HashedString const& other) noexcept {
-        if (this == &other) { return *this; }
+        if (this == &other) {
+            return *this;
+        }
         hash      = other.hash;
         str       = other.str;
         lastMatch = nullptr;
@@ -52,7 +56,9 @@ public:
     }
 
     [[nodiscard]] constexpr HashedString& operator=(HashedString&& other) noexcept {
-        if (this == &other) { return *this; }
+        if (this == &other) {
+            return *this;
+        }
         hash            = other.hash;
         str             = std::move(other.str);
         lastMatch       = other.lastMatch;
@@ -85,7 +91,9 @@ public:
 
     [[nodiscard]] constexpr bool operator==(HashedString const& other) const noexcept {
         if (hash == other.hash) {
-            if (lastMatch == std::addressof(other) && other.lastMatch == this) { return true; }
+            if (lastMatch == std::addressof(other) && other.lastMatch == this) {
+                return true;
+            }
             if (str == other.str) {
                 lastMatch       = std::addressof(other);
                 other.lastMatch = this;
@@ -104,7 +112,9 @@ public:
     [[nodiscard]] constexpr bool operator!=(HashedString const& other) const noexcept { return !(*this == other); }
 
     [[nodiscard]] constexpr std::strong_ordering operator<=>(HashedString const& other) const noexcept {
-        if (hash != other.hash) { return hash <=> other.hash; }
+        if (hash != other.hash) {
+            return hash <=> other.hash;
+        }
         return str <=> other.str;
     }
 

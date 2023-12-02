@@ -15,7 +15,6 @@ public:
     Player& player;
 
     constexpr explicit PlayerSwingEvent(Player& player) : player(player) {}
-
 };
 
 } // namespace ll::event::inline player

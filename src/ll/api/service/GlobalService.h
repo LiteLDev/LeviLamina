@@ -52,7 +52,7 @@ public:
         return static_cast<U*>(value);
     }
     constexpr explicit operator bool() { return value != nullptr; }
-    constexpr bool has_value() { return value != nullptr; }
+    constexpr bool     has_value() { return value != nullptr; }
 
     GlobalService(GlobalService const&)                     = delete;
     GlobalService(GlobalService&&) noexcept                 = delete;

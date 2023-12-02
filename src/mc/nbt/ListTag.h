@@ -19,7 +19,9 @@ public:
             mType = other.mType;
             mList.clear();
             mList.reserve(other.mList.size());
-            for (auto& tag : other.mList) { mList.emplace_back(tag->copy()); }
+            for (auto& tag : other.mList) {
+                mList.emplace_back(tag->copy());
+            }
         }
         return *this;
     }
@@ -27,7 +29,9 @@ public:
     [[nodiscard]] constexpr ListTag(ListTag const& other) : mType(other.mType) {
         mList.clear();
         mList.reserve(other.mList.size());
-        for (auto& tag : other.mList) { mList.emplace_back(tag->copy()); }
+        for (auto& tag : other.mList) {
+            mList.emplace_back(tag->copy());
+        }
     }
 
     template <std::derived_from<Tag> T>
@@ -37,7 +41,9 @@ public:
         } else {
             mType = tags[0].getId();
             mList.reserve(tags.size());
-            for (auto& tag : tags) { mList.emplace_back(std::make_unique<T>(tag)); }
+            for (auto& tag : tags) {
+                mList.emplace_back(std::make_unique<T>(tag));
+            }
         }
     }
 

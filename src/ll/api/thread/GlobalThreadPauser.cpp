@@ -19,7 +19,7 @@ GlobalThreadPauser::GlobalThreadPauser() {
     te.dwSize = sizeof(te);
     if (Thread32First(h, &te)) {
         do {
-            if (te.dwSize >= FIELD_OFFSET(THREADENTRY32, th32OwnerProcessID) + sizeof(te.th32OwnerProcessID)) {
+            if (te.dwSize >= offsetof(THREADENTRY32, th32OwnerProcessID) + sizeof(te.th32OwnerProcessID)) {
                 // Suspend all threads EXCEPT the one we want to keep running
                 if (te.th32OwnerProcessID == processId && te.th32ThreadID != threadId) {
                     HANDLE thread = OpenThread(THREAD_ALL_ACCESS, false, te.th32ThreadID);

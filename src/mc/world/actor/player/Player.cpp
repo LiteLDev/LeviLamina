@@ -27,25 +27,35 @@ UserEntityIdentifierComponent& Player::getUserEntityIdentifier() const {
 }
 
 std::string Player::getDeviceId() const {
-    if (!Global<ServerNetworkHandler>) { return ""; }
+    if (!Global<ServerNetworkHandler>) {
+        return "";
+    }
     return Global<ServerNetworkHandler>->fetchConnectionRequest(getNetworkIdentifier()).getDeviceId();
 }
 
 std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
-    if (!Global<NetworkSystem>) { return std::nullopt; }
+    if (!Global<NetworkSystem>) {
+        return std::nullopt;
+    }
     auto peer = Global<NetworkSystem>->getPeerForUser(getNetworkIdentifier());
-    if (!peer) { return std::nullopt; }
+    if (!peer) {
+        return std::nullopt;
+    }
     return peer->getNetworkStatus();
 }
 
 std::string Player::getRealName() const {
     auto certificate = getCertificate();
-    if (!certificate) { return getName(); }
+    if (!certificate) {
+        return getName();
+    }
     return ExtendedCertificate::getIdentityName(*certificate);
 }
 
 void Player::disconnect(std::string_view reason) const {
-    if (!Global<ServerNetworkHandler>) { return; }
+    if (!Global<ServerNetworkHandler>) {
+        return;
+    }
     Global<ServerNetworkHandler>->disconnectClient(
         getNetworkIdentifier(),
         Connection::DisconnectFailReason::Unknown,

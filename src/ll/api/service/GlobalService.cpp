@@ -25,8 +25,10 @@ ll::GlobalService<T>::GlobalService() = default;
 template <ll::IsGlobalService T>
 void ll::GlobalService<T>::init(T* ptr) {
     value = ptr;
+#if defined(LL_DEBUG)
     ll::logger
         .debug("Initializing GlobalService<{}> to 0x{:X}", ll::reflection::type_unprefix_name_v<T>, (size_t)value);
+#endif
 }
 
 namespace {

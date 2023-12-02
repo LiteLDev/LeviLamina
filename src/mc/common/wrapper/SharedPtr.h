@@ -24,7 +24,9 @@ public:
         requires(std::convertible_to<Y*, T*>)
     {
         counter = (SharedCounter<T>*)other.counter;
-        if (counter) { counter->addShareCount(); }
+        if (counter) {
+            counter->addShareCount();
+        }
     }
 
     template <class Y>
@@ -40,11 +42,15 @@ public:
         requires(std::convertible_to<Y*, T*>)
     {
         counter = (SharedCounter<T>*)other.counter;
-        if (other) { counter->addShareCount(); }
+        if (other) {
+            counter->addShareCount();
+        }
     }
 
     ~SharedPtr() {
-        if (counter) { counter->release(); }
+        if (counter) {
+            counter->release();
+        }
     }
 
     template <class Y>
@@ -53,7 +59,9 @@ public:
     {
         if (counter != (SharedCounter<T>*)other.counter) {
             counter = (SharedCounter<T>*)other.counter;
-            if (counter) { counter->addShareCount(); }
+            if (counter) {
+                counter->addShareCount();
+            }
         }
         return *this;
     }
@@ -74,7 +82,9 @@ public:
         requires(std::convertible_to<Y*, T*>)
     {
         counter = (SharedCounter<T>*)other.counter;
-        if (other) { counter->addShareCount(); }
+        if (other) {
+            counter->addShareCount();
+        }
         return *this;
     }
 

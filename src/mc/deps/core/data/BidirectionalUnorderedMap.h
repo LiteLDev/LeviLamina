@@ -31,12 +31,16 @@ public:
         mLeft.emplace(a2, a1);
     }
     void eraser(T0 const& a) {
-        if (!mRight.contains(a)) { return; }
+        if (!mRight.contains(a)) {
+            return;
+        }
         mRight.erase(a);
         mLeft.erase(mRight[a]);
     }
     void erasel(T1 const& a) {
-        if (!mLeft.contains(a)) { return; }
+        if (!mLeft.contains(a)) {
+            return;
+        }
         mLeft.erase(a);
         mRight.erase(mLeft[a]);
     }
