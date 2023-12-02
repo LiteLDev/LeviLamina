@@ -171,14 +171,7 @@ static void dumpSystemInfo() {
         }()) / 1024
             / 1024 / 1024
     );
-    crashInfo.logger.info(
-        "  |LocalTime: {}",
-        fmt::format(
-            "{0:%F %T} {1}(UTC{0:%z})",
-            fmt::localtime(_time64(nullptr)),
-            tou8str(fmt::format("{:%Z}", fmt::localtime(_time64(nullptr))))
-        )
-    );
+    crashInfo.logger.info("  |LocalTime: {}", fmt::format("{0:%F %T} (UTC{0:%z})", fmt::localtime(_time64(nullptr))));
 }
 static void dumpStacktrace(_CONTEXT const& c) {
     crashInfo.logger.info("Stacktrace:");
