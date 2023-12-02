@@ -12,7 +12,9 @@
 #pragma comment(lib, "DbgHelp.lib")
 #endif
 
+#pragma warning(push, 3)
 #include "comdef.h"
+#pragma warning(pop)
 
 namespace ll::error_info {
 using namespace ll::utils;

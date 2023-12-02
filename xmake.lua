@@ -44,7 +44,7 @@ option("localbdslibrary")
 
 target("LeviLamina")
     add_configfiles("src/(**.in)")
-    add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4")
+    add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4","/w45204")
     add_defines(
         "_AMD64_",
         "_CRT_SECURE_NO_WARNINGS",

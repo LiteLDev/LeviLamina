@@ -14,6 +14,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~IConstBlockSource() = default;
+
     // vIndex: 1, symbol: ?getBlock@BlockSource@@UEBAAEBVBlock@@HHH@Z
     virtual class Block const& getBlock(int, int, int) const = 0;
 
