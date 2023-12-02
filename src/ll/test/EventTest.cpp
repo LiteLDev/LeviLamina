@@ -18,6 +18,7 @@
 #include "ll/api/event/player/PlayerJumpEvent.h"
 #include "ll/api/event/player/PlayerLeaveEvent.h"
 #include "ll/api/event/player/PlayerRespawnEvent.h"
+#include "ll/api/event/player/PlayerSwingEvent.h"
 #include "ll/api/event/player/PlayerTakeDropItemEvent.h"
 #include "mc/codebuilder/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
@@ -174,5 +175,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     });
     bus.emplaceListener<PlayerTakeDropItemEvent>([](PlayerTakeDropItemEvent& ev) {
         ll::logger.debug("Player {} take {}", ev.player.getRealName(), ev.itemActor.mItem.getTypeName());
+    });
+    bus.emplaceListener<PlayerSwingEvent>([](PlayerSwingEvent& ev) {
+        ll::logger.debug("Player {} left click", ev.player.getRealName());
     });
 }

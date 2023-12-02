@@ -21,6 +21,8 @@ namespace Social { class MultiplayerServiceManager; }
 namespace mce { class UUID; }
 // clang-format on
 
+class NetworkIdentifier;
+
 class ServerNetworkHandler {
 public:
     // ServerNetworkHandler inner types declare
