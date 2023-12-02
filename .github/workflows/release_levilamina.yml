@@ -33,9 +33,9 @@ jobs:
         with:
           name: levilamina-windows-x64-${{ github.sha }}
           path: |
-            build/windows/x64/release/LeviLamina.dll
-            build/windows/x64/release/LeviLamina.lib
-            build/windows/x64/release/LeviLamina.pdb
+            build/windows/x64/releasedbg/LeviLamina.dll
+            build/windows/x64/releasedbg/LeviLamina.lib
+            build/windows/x64/releasedbg/LeviLamina.pdb
 
   upload-to-release:
     needs:
