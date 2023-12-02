@@ -43,16 +43,31 @@ option("localbdslibrary")
     set_description("Use local bdslibrary")
 
 target("LeviLamina")
-    add_configfiles("src/(**.in)")
-    add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4","/w45204","/w44265","/w44289","/w44296","/w45263","/w44738")
+    add_configfiles(
+        "src/(ll/core/Version.h.in)"
+    )
+    add_cxflags(
+        "/utf-8",
+        "/permissive-",
+        "/EHa",
+        "/W4",
+        "/w44265",
+        "/w44289",
+        "/w44296",
+        "/w45263",
+        "/w44738",
+        "/w45204"
+    )
     add_defines(
         "_AMD64_",
         "_CRT_SECURE_NO_WARNINGS",
         "_ENABLE_CONSTEXPR_MUTEX_CONSTRUCTOR",
-        "LL_EXPORT",
         "NOMINMAX",
         "UNICODE",
         "WIN32_LEAN_AND_MEAN"
+    )
+    add_defines(
+        "LL_EXPORT"
     )
     add_files(
         "src/ll/api/**.cpp",
@@ -65,7 +80,7 @@ target("LeviLamina")
         "src/(mc/**.h)"
     )
     add_includedirs(
-        "./src",
+        "src",
         "$(buildir)/config"
     )
     add_packages(
@@ -81,23 +96,27 @@ target("LeviLamina")
         "pfr",
         "preloader",
         "symbolprovider",
+
         { public = true }
     )
-    add_rules("mode.release")
-    add_shflags("/DELAYLOAD:bedrock_server.dll")
+    add_rules(
+        "mode.debug",
+        "mode.releasedbg"
+    )
+    add_shflags(
+        "/DELAYLOAD:bedrock_server.dll"
+    )
     set_configdir("$(buildir)/config")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     set_exceptions("none")
     set_kind("shared")
     set_languages("c++23")
     set_pcxxheader("src/mc/_HeaderOutputPredefine.h")
-    set_symbols("debug")
+    set_strip("all")
 
     if has_config("tests") then
         add_packages("gtest")
         add_files("src/ll/test/**.cpp")
-    else 
-    add_cxflags("/O2")
     end
 
     if has_config("localbdslibrary") then
