@@ -46,3 +46,36 @@ jobs:
             build/windows/x64/release/LeviLamina.dll
             build/windows/x64/release/LeviLamina.lib
             build/windows/x64/release/LeviLamina.pdb
+
+  build-with-tests:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: xmake-io/github-action-setup-xmake@v1
+
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/AppData/Local/.xmake
+            .xmake
+          key: xmake-levilamina-with-tests-windows-x64-${{ github.sha }}
+          restore-keys: |
+            xmake-levilamina-with-tests-windows-x64-
+
+      - run: |
+          xmake repo -u
+
+      - run: |
+          xmake f -a x64 -m release -p windows -v -y --ccache=n --tests=true
+
+      - run: |
+          xmake -w -y
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: levilamina-with-tests-windows-x64-${{ github.sha }}
+          path: |
+            build/windows/x64/release/LeviLamina.dll
+            build/windows/x64/release/LeviLamina.lib
+            build/windows/x64/release/LeviLamina.pdb
