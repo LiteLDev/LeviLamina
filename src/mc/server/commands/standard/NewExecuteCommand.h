@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/typeid_t.h"
 
 // auto generated inclusion list
 #include "mc/server/commands/CommandChainedSubcommand.h"
@@ -191,3 +192,6 @@ public:
 
     // NOLINTEND
 };
+
+MCTAPI Bedrock::typeid_t<CommandRegistry>
+       Bedrock::type_id<CommandRegistry, NewExecuteCommand::ExecuteChainedSubcommand>();
