@@ -44,7 +44,7 @@ option("localbdslibrary")
 
 target("LeviLamina")
     add_configfiles("src/(**.in)")
-    add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4","/w45204","/w44265","/w44289","/w44296","/w45263","/w44738")
+    add_cxflags("/O2", "/utf-8", "/permissive-", "/EHa", "/W4","/w45204","/w44265","/w44289","/w44296","/w45263","/w44738")
     add_defines(
         "_AMD64_",
         "_CRT_SECURE_NO_WARNINGS",
@@ -83,7 +83,7 @@ target("LeviLamina")
         "symbolprovider",
         { public = true }
     )
-    add_rules("mode.debug", "mode.release")
+    add_rules("mode.release")
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     set_configdir("$(buildir)/config")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
