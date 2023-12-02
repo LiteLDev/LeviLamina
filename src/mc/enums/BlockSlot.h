@@ -7,3 +7,6 @@ enum class BlockSlot : int {
     Container = 0,
     Count     = 1,
 };
+
+#include "mc/deps/core/common/bedrock/typeid_t.h"
+MCTAPI class Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<class CommandRegistry, enum class BlockSlot>();
