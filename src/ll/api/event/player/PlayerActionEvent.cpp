@@ -18,32 +18,36 @@ LL_TYPED_INSTANCE_HOOK(
     PlayerActionPacket const& packet
 ) {
     switch (packet.mAction) {
-    case PlayerActionType::StartSprinting: {
-        EventBus::getInstance().publish(PlayerStartSprintEvent(this->getServerPlayer(id, packet.mClientSubId)));
-        break;
-    }
-    case PlayerActionType::StopSprinting: {
-        EventBus::getInstance().publish(PlayerStopSprintEvent(this->getServerPlayer(id, packet.mClientSubId)));
-        break;
-    case PlayerActionType::StartSneaking: {
-        auto ev = PlayerStartSneakEvent(this->getServerPlayer(id, packet.mClientSubId));
-        EventBus::getInstance().publish(ev);
-        if (ev.isCancelled()) {
-            return;
+    case PlayerActionType::StartSprinting:
+        if (auto player = this->getServerPlayer(id, packet.mClientSubId); player) {
+            EventBus::getInstance().publish(PlayerStartSprintEvent(player));
+            break;
         }
-        break;
-    }
-    case PlayerActionType::StopSneaking: {
-        auto ev = PlayerStopSneakEvent(this->getServerPlayer(id, packet.mClientSubId));
-        EventBus::getInstance().publish(ev);
-        if (ev.isCancelled()) {
-            return;
+    case PlayerActionType::StopSprinting:
+        if (auto player = this->getServerPlayer(id, packet.mClientSubId); player) {
+            EventBus::getInstance().publish(PlayerStopSprintEvent(player));
+            break;
         }
-        break;
-    }
+    case PlayerActionType::StartSneaking:
+        if (auto player = this->getServerPlayer(id, packet.mClientSubId); player) {
+            auto ev = PlayerStartSneakEvent(player);
+            EventBus::getInstance().publish(ev);
+            if (ev.isCancelled()) {
+                return;
+            }
+            break;
+        }
+    case PlayerActionType::StopSneaking:
+        if (auto player = this->getServerPlayer(id, packet.mClientSubId); player) {
+            auto ev = PlayerStopSneakEvent(player);
+            EventBus::getInstance().publish(ev);
+            if (ev.isCancelled()) {
+                return;
+            }
+            break;
+        }
     default:
         break;
-    }
     }
     origin(id, packet);
 }
