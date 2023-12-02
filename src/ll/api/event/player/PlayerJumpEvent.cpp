@@ -14,9 +14,11 @@ LL_TYPED_INSTANCE_HOOK(PlayerJumpEventHook, HookPriority::Normal, Player, &Playe
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 class PlayerJumpEventEmitter : public Emitter<PlayerJumpEvent, emitterFactory> {
+    memory::HookAutoRegister<PlayerJumpEventHook> hook;
+
 public:
-    PlayerJumpEventEmitter() { PlayerJumpEventHook::hook(); }
-    ~PlayerJumpEventEmitter() override { PlayerJumpEventHook::unhook(); }
+    PlayerJumpEventEmitter()=default;
+    ~PlayerJumpEventEmitter() override=default;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return std::make_unique<PlayerJumpEventEmitter>(); }

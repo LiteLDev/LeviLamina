@@ -30,9 +30,11 @@ LL_TYPED_INSTANCE_HOOK(
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 class PlayerConnectEventEmitter : public Emitter<PlayerConnectEvent, emitterFactory> {
+    memory::HookAutoRegister<PlayerConnectEventHook> hook;
+
 public:
-    PlayerConnectEventEmitter() { PlayerConnectEventHook::hook(); }
-    ~PlayerConnectEventEmitter() override { PlayerConnectEventHook::unhook(); }
+    PlayerConnectEventEmitter()           = default;
+    ~PlayerConnectEventEmitter() override = default;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {

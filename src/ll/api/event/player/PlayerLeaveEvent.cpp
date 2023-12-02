@@ -13,9 +13,11 @@ LL_TYPED_INSTANCE_HOOK(PlayerLeaveEventHook, HookPriority::Normal, ServerPlayer,
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 class PlayerLeaveEventEmitter : public Emitter<PlayerLeaveEvent, emitterFactory> {
+    memory::HookAutoRegister<PlayerLeaveEventHook> hook;
+
 public:
-    PlayerLeaveEventEmitter() { PlayerLeaveEventHook::hook(); }
-    ~PlayerLeaveEventEmitter() override { PlayerLeaveEventHook::unhook(); }
+    PlayerLeaveEventEmitter()=default;
+    ~PlayerLeaveEventEmitter() override=default;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {

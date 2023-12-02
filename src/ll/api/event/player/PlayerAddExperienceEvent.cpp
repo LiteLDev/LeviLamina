@@ -25,9 +25,11 @@ LL_TYPED_INSTANCE_HOOK(
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 class PlayerAddExperienceEventEmitter : public Emitter<PlayerAddExperienceEvent, emitterFactory> {
+    memory::HookAutoRegister<PlayerAddExperienceEventHook> hook;
+
 public:
-    PlayerAddExperienceEventEmitter() { PlayerAddExperienceEventHook::hook(); }
-    ~PlayerAddExperienceEventEmitter() override { PlayerAddExperienceEventHook::unhook(); }
+    PlayerAddExperienceEventEmitter()=default;
+    ~PlayerAddExperienceEventEmitter() override=default;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
