@@ -18,7 +18,7 @@ class StructureManager;
 class ResourcePackRepository;
 class CommandRegistry;
 class NetworkSystem;
-struct IEntitySystemsCollection;
+class DefaultEntitySystemsCollection;
 
 namespace ll {
 
@@ -35,7 +35,7 @@ concept IsGlobalService = concepts::IsOneOf<
     NetworkSystem,
     ResourcePackRepository,
     CommandRegistry,
-    IEntitySystemsCollection>;
+    DefaultEntitySystemsCollection>;
 
 template <IsGlobalService T>
 class GlobalService {

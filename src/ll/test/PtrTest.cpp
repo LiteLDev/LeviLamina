@@ -17,57 +17,35 @@ struct SystemCategory;
 
 #include "ll/api/service/GlobalService.h"
 #include "mc/entity/gamerefs_entity/EntityRegistry.h"
-#include "mc/entity/systems/ComponentInfo.h"
 #include "mc/entity/systems/EntitySystems.h"
-#include "mc/entity/systems/IEntitySystemsCollection.h"
-#include "mc/entity/systems/ISystem.h"
-#include "mc/entity/systems/InternalSystemInfo.h"
-#include "mc/entity/systems/SystemTiming.h"
 
-class DefaultEntitySystemsCollection : public IEntitySystemsCollection {
-public:
-    struct ECSTiming {
-        int   mCount;  // this+0x0
-        float mMsTime; // this+0x4
-    };
-    struct TickingSystemsInCategory {
-        Bedrock::typeid_t<SystemCategory> mCategory; // this+0x0
-        std::vector<uint>                 mSystems;  // this+0x8
-        std::vector<ECSTiming>            mTimings;  // this+0x20
-    };
-
-    std::vector<std::shared_ptr<ISystem>> mAllSystems;              // this+0x8
-    std::vector<InternalSystemInfo>       mAllSystemsInfo;          // this+0x20
-    std::vector<TickingSystemsInCategory> mTickingSystemCategories; // this+0x38
-    entt::dense_map<uint, ComponentInfo>  mAllComponentsInfo;       // this+0x50
-    std::mutex                            mTimingMutex;             // this+0x98
-};
+#include "mc/entity/systems/DefaultEntitySystemsCollection.h"
 
 auto test() {
     ll::logger.warn("mAllSystemsInfo");
-    for (auto& info : ((DefaultEntitySystemsCollection*)ll::Global<IEntitySystemsCollection>)->mAllSystemsInfo) {
+    for (auto& info : ll::Global<DefaultEntitySystemsCollection>->mAllSystemsInfo) {
         ll::logger.warn("info {}", info.mName);
     }
 
-// struct EntitySystems::EditorSystemCategory
-// struct EntitySystems::GameSystemCategory
-// struct EntitySystems::UsedInClientMovementCorrections
-// struct EntitySystems::UsedInServerPlayerMovement
-// struct VanillaSystemCategories::ActorMove
-// struct VanillaSystemCategories::ExitVehicle
-// struct VanillaSystemCategories::MobJumpFromGround
-// struct VanillaSystemCategories::PositionPassenger
-// struct VanillaSystemCategories::RemovePassenger
-// struct VanillaSystemCategories::StopRiding
-// struct VanillaSystemCategories::UpdateEntityInside
-// struct VanillaSystemCategories::UpdateWaterState
-// struct VanillaSystemCategories::UsedByClientAndServerAuth
+    // struct EntitySystems::EditorSystemCategory
+    // struct EntitySystems::GameSystemCategory
+    // struct EntitySystems::UsedInClientMovementCorrections
+    // struct EntitySystems::UsedInServerPlayerMovement
+    // struct VanillaSystemCategories::ActorMove
+    // struct VanillaSystemCategories::ExitVehicle
+    // struct VanillaSystemCategories::MobJumpFromGround
+    // struct VanillaSystemCategories::PositionPassenger
+    // struct VanillaSystemCategories::RemovePassenger
+    // struct VanillaSystemCategories::StopRiding
+    // struct VanillaSystemCategories::UpdateEntityInside
+    // struct VanillaSystemCategories::UpdateWaterState
+    // struct VanillaSystemCategories::UsedByClientAndServerAuth
 
-    // auto& vec = ((DefaultEntitySystemsCollection*)ll::Global<IEntitySystemsCollection>)->mTickingSystemCategories;
+    // auto& vec = ll::Global<DefaultEntitySystemsCollection>->mTickingSystemCategories;
 
     // ll::logger.warn("info safe:{} ", ((char*)&*vec.end() - (char*)&*vec.begin()) / vec.size());
     // for (auto& category :
-    //      ((DefaultEntitySystemsCollection*)ll::Global<IEntitySystemsCollection>)->mTickingSystemCategories) {
+    //      ll::Global<DefaultEntitySystemsCollection>->mTickingSystemCategories) {
     //     ll::logger.warn("category :{} ", category.mCategory.value);
     //     for (auto id : category.mSystems) {
     //         ll::logger.warn("category sys:{} ", id);
@@ -79,8 +57,8 @@ auto test() {
     // }
     ll::logger.warn(
         "mAllSystemsInfo size {} {}",
-        ((DefaultEntitySystemsCollection*)ll::Global<IEntitySystemsCollection>)->mAllSystemsInfo.size(),
-        ((DefaultEntitySystemsCollection*)ll::Global<IEntitySystemsCollection>)->mAllSystems.size()
+        ll::Global<DefaultEntitySystemsCollection>->mAllSystemsInfo.size(),
+        ll::Global<DefaultEntitySystemsCollection>->mAllSystems.size()
     );
 }
 

@@ -6,17 +6,12 @@
 
 class EntityContextBase {
 public:
-    class EntityRegistryBase& mRegistry;
-    class EntityId            mEntity;
+    EntityRegistryBase& mRegistry;
+    EntityId            mEntity;
 
-    [[nodiscard]] inline class entt::basic_registry<EntityId>& getRegistry() {
-        return mRegistry.mRegistry;
-    }
+    [[nodiscard]] inline entt::basic_registry<EntityId>& getRegistry() { return mRegistry.mRegistry; }
 
-    [[nodiscard]] inline class entt::basic_registry<EntityId> const&
-    getRegistry() const {
-        return mRegistry.mRegistry;
-    }
+    [[nodiscard]] inline entt::basic_registry<EntityId> const& getRegistry() const { return mRegistry.mRegistry; }
 
     template <class T>
     [[nodiscard]] inline T* tryGetComponent() const {
