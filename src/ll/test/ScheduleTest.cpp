@@ -46,7 +46,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     s2.add<DelayTask>(1_tick, [&] {
         schedulelogger.info("try GameTime {}", ll::chrono::GameTimeClock::now().time_since_epoch());
         s3.add<RepeatTask>(5s, [&] {
-            schedulelogger.info(
+            schedulelogger.warn(
                 "hi, 5s       gt   {} ramdom {}",
                 ll::chrono::GameTimeClock::now().time_since_epoch(),
                 ll::random::rand<double>()

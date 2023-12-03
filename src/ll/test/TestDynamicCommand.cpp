@@ -299,7 +299,7 @@ static void setupEchoCommand() {
     DynamicCommand::setup(std::move(command));
 }
 static void setupCrashCommand() {
-    auto command = DynamicCommand::createCommand("crash", "crash", CommandPermissionLevel::Host);
+    auto command = DynamicCommand::createCommand("crash", "crash", CommandPermissionLevel::GameDirectors);
     command->addOverload();
     command->setCallback([](DynamicCommand const&,
                             CommandOrigin const&,

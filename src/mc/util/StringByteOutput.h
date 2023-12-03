@@ -9,7 +9,7 @@ class StringByteOutput : public ::BytesDataOutput {
 public:
     std::string* mBuffer;
 
-    [[nodiscard]] constexpr StringByteOutput(std::string& str) noexcept : mBuffer(std::addressof(str)) {}
+    [[nodiscard]] constexpr explicit StringByteOutput(std::string& str) noexcept : mBuffer(std::addressof(str)) {}
 
 public:
     // NOLINTBEGIN

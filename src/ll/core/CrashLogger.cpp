@@ -234,8 +234,8 @@ static bool genMiniDumpFile(PEXCEPTION_POINTERS e) {
 }
 
 static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
+    auto lock = Logger::lock();
     try {
-
         crashInfo.date                      = fmt::format("{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(_time64(nullptr)));
         crashInfo.logger.playerLevel        = -2;
         crashInfo.logger.fileLevel          = INT32_MAX;
