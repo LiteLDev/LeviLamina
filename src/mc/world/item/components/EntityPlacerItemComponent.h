@@ -16,6 +16,23 @@ public:
     // vIndex: 0, symbol: ??1EntityPlacerItemComponent@@UEAA@XZ
     virtual ~EntityPlacerItemComponent();
 
+    // vIndex: 1, symbol: ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
+    virtual bool checkComponentDataForContentErrors() const;
+
+    // vIndex: 2, symbol: ?writeSettings@ItemComponent@@UEAAXXZ
+    virtual void writeSettings();
+
+    // vIndex: 3, symbol: ?isNetworkComponent@InteractButtonItemComponent@@UEBA_NXZ
+    virtual bool isNetworkComponent() const;
+
+    // vIndex: 4, symbol:
+    // ?buildNetworkTag@?$NetworkedItemComponent@VEntityPlacerItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag(struct cereal::ReflectionCtx const&) const;
+
+    // vIndex: 5, symbol:
+    // ?initializeFromNetwork@?$NetworkedItemComponent@VEntityPlacerItemComponent@@@@UEAA_NAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
+    virtual bool initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+
     // vIndex: 6, symbol: ?handleVersionBasedInitialization@EntityPlacerItemComponent@@UEAAXAEBVSemVersion@@@Z
     virtual void handleVersionBasedInitialization(class SemVersion const&);
 

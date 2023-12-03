@@ -74,9 +74,6 @@ public:
     // vIndex: 10, symbol: __gen_??1SimulatedPlayer@@UEAA@XZ
     virtual ~SimulatedPlayer() = default;
 
-    // vIndex: 14, symbol: __unk_vfn_14
-    virtual void __unk_vfn_14();
-
     // vIndex: 23, symbol: __unk_vfn_23
     virtual void __unk_vfn_23();
 
@@ -95,9 +92,6 @@ public:
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
 
-    // vIndex: 48, symbol: __unk_vfn_48
-    virtual void __unk_vfn_48();
-
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
 
@@ -110,32 +104,11 @@ public:
     // vIndex: 63, symbol: __unk_vfn_63
     virtual void __unk_vfn_63();
 
-    // vIndex: 71, symbol: __unk_vfn_71
-    virtual void __unk_vfn_71();
-
-    // vIndex: 72, symbol: __unk_vfn_72
-    virtual void __unk_vfn_72();
-
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
 
-    // vIndex: 116, symbol: __unk_vfn_116
-    virtual void __unk_vfn_116();
-
-    // vIndex: 120, symbol: __unk_vfn_120
-    virtual void __unk_vfn_120();
-
-    // vIndex: 142, symbol: __unk_vfn_142
-    virtual void __unk_vfn_142();
-
-    // vIndex: 143, symbol: __unk_vfn_143
-    virtual void __unk_vfn_143();
-
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
-
-    // vIndex: 154, symbol: __unk_vfn_154
-    virtual void __unk_vfn_154();
 
     // vIndex: 165, symbol: __unk_vfn_165
     virtual void __unk_vfn_165();
@@ -148,12 +121,6 @@ public:
 
     // vIndex: 181, symbol: ?aiStep@SimulatedPlayer@@UEAAXXZ
     virtual void aiStep();
-
-    // vIndex: 204, symbol: __unk_vfn_204
-    virtual void __unk_vfn_204();
-
-    // vIndex: 212, symbol: __unk_vfn_212
-    virtual void __unk_vfn_212();
 
     // vIndex: 222, symbol: __unk_vfn_222
     virtual void __unk_vfn_222();

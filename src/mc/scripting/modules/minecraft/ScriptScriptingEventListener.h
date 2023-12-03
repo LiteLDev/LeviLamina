@@ -32,6 +32,10 @@ public:
     // ?onEvent@ScriptScriptingEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScriptCommandMessageEvent@@@Z
     virtual ::EventResult onEvent(struct ScriptCommandMessageEvent const&);
 
+    // vIndex: 2, symbol:
+    // ?onEvent@?$EventListenerDispatcher@VScriptingEventListener@@@@MEAA?AW4EventResult@@AEBUScriptingNotificationEvent@@@Z
+    virtual ::EventResult onEvent(struct ScriptingNotificationEvent const&);
+
     // symbol:
     // ??0ScriptScriptingEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@3@@Z
     MCAPI

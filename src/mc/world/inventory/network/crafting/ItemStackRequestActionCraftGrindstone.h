@@ -16,6 +16,16 @@ public:
     // vIndex: 0, symbol: __gen_??1ItemStackRequestActionCraftGrindstone@@UEAA@XZ
     virtual ~ItemStackRequestActionCraftGrindstone() = default;
 
+    // vIndex: 1, symbol: ?getCraftAction@ItemStackRequestActionCraftBase@@UEBAPEBV1@XZ
+    virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
+
+    // vIndex: 2, symbol: ?getFilteredStringIndex@ItemStackRequestAction@@UEBAHXZ
+    virtual int getFilteredStringIndex() const;
+
+    // vIndex: 3, symbol:
+    // ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestActionCraftBase@@UEAAXAEAVBlockPalette@@_N@Z
+    virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
+
     // vIndex: 4, symbol: ?_write@ItemStackRequestActionCraftGrindstone@@UEBAXAEAVBinaryStream@@@Z
     virtual void _write(class BinaryStream&) const;
 

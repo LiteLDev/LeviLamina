@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/AttributeDescription.h"
-
-class MobEffectChangeDescription : public ::AttributeDescription {
+class MobEffectChangeDescription {
 public:
     // prevent constructor by default
     MobEffectChangeDescription& operator=(MobEffectChangeDescription const&);

@@ -80,7 +80,7 @@ public:
     unpack(std::vector<std::reference_wrapper<class cereal::internal::BasicSchema const>>&, entt::dense_map<std::string, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>&)
         const;
 
-    // vIndex: 6, symbol: ?description@BasicCompositeSchema@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
+    // vIndex: 6, symbol: ?description@AliasSchema@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
     virtual struct cereal::SchemaDescription description() const = 0;
 
     // symbol: ??0BasicSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@@Z

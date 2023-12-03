@@ -68,11 +68,11 @@ public:
     // ?onPlayerCreated@PlayerEventListener@@UEAA?AW4EventResult@@AEAVLocalPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1_N@Z
     MCVAPI ::EventResult onPlayerCreated(class LocalPlayer&, std::string const&, std::string const&, bool);
 
-    // symbol: ?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@HHH@Z
-    MCVAPI ::EventResult onPlayerDestroyedBlock(class Player&, int, int, int);
-
     // symbol: ?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@@Z
     MCVAPI ::EventResult onPlayerDestroyedBlock(class Player&, class Block const&);
+
+    // symbol: ?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@HHH@Z
+    MCVAPI ::EventResult onPlayerDestroyedBlock(class Player&, int, int, int);
 
     // symbol:
     // ?onPlayerEnchantedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemStack@@AEBVItemEnchants@@@Z

@@ -16,6 +16,9 @@ public:
     // vIndex: 0, symbol: ??1ScriptIsSaddledComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptIsSaddledComponent();
 
+    // vIndex: 1, symbol: ?_isValid@ScriptActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ?sClassName@ScriptIsSaddledComponent@ScriptModuleMinecraft@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const sClassName;

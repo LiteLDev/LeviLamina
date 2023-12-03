@@ -17,10 +17,10 @@ public:
     // vIndex: 0, symbol: ??1AttributeBuff@@UEAA@XZ
     virtual ~AttributeBuff();
 
-    // vIndex: 1, symbol: ?isInstantaneous@TemporalAttributeBuff@@UEBA_NXZ
+    // vIndex: 1, symbol: ?isInstantaneous@InstantaneousAttributeBuff@@UEBA_NXZ
     virtual bool isInstantaneous() const = 0;
 
-    // vIndex: 2, symbol: ?isSerializable@TemporalAttributeBuff@@UEBA_NXZ
+    // vIndex: 2, symbol: ?isSerializable@InstantaneousAttributeBuff@@UEBA_NXZ
     virtual bool isSerializable() const = 0;
 
     // vIndex: 3, symbol: ?setDurationAmplifier@AttributeBuff@@UEAAXV?$shared_ptr@VAmplifier@@@std@@@Z

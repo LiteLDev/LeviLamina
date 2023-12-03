@@ -55,9 +55,6 @@ public:
     // vIndex: 10, symbol: ??1ServerPlayer@@UEAA@XZ
     virtual ~ServerPlayer();
 
-    // vIndex: 14, symbol: __unk_vfn_14
-    virtual void __unk_vfn_14();
-
     // vIndex: 23, symbol: __unk_vfn_23
     virtual void __unk_vfn_23();
 
@@ -76,9 +73,6 @@ public:
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
 
-    // vIndex: 48, symbol: __unk_vfn_48
-    virtual void __unk_vfn_48();
-
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
 
@@ -93,12 +87,6 @@ public:
 
     // vIndex: 66, symbol: ?isValidTarget@ServerPlayer@@UEBA_NPEAVActor@@@Z
     virtual bool isValidTarget(class Actor*) const;
-
-    // vIndex: 71, symbol: __unk_vfn_71
-    virtual void __unk_vfn_71();
-
-    // vIndex: 72, symbol: __unk_vfn_72
-    virtual void __unk_vfn_72();
 
     // vIndex: 84, symbol: ?handleEntityEvent@ServerPlayer@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent, int);
@@ -127,12 +115,6 @@ public:
     // vIndex: 112, symbol: ?checkFallDamage@ServerPlayer@@UEAAXM_N0@Z
     virtual void checkFallDamage(float, bool, bool);
 
-    // vIndex: 116, symbol: __unk_vfn_116
-    virtual void __unk_vfn_116();
-
-    // vIndex: 120, symbol: __unk_vfn_120
-    virtual void __unk_vfn_120();
-
     // vIndex: 128, symbol: ?onEffectAdded@ServerPlayer@@MEAAXAEAVMobEffectInstance@@@Z
     virtual void onEffectAdded(class MobEffectInstance&);
 
@@ -142,20 +124,11 @@ public:
     // vIndex: 130, symbol: ?onEffectRemoved@ServerPlayer@@MEAAXAEAVMobEffectInstance@@@Z
     virtual void onEffectRemoved(class MobEffectInstance&);
 
-    // vIndex: 142, symbol: __unk_vfn_142
-    virtual void __unk_vfn_142();
-
-    // vIndex: 143, symbol: __unk_vfn_143
-    virtual void __unk_vfn_143();
-
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
 
     // vIndex: 150, symbol: ?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const&);
-
-    // vIndex: 154, symbol: __unk_vfn_154
-    virtual void __unk_vfn_154();
 
     // vIndex: 165, symbol: __unk_vfn_165
     virtual void __unk_vfn_165();
@@ -189,12 +162,6 @@ public:
 
     // vIndex: 201, symbol: ?sendInventory@ServerPlayer@@UEAAX_N@Z
     virtual void sendInventory(bool);
-
-    // vIndex: 204, symbol: __unk_vfn_204
-    virtual void __unk_vfn_204();
-
-    // vIndex: 212, symbol: __unk_vfn_212
-    virtual void __unk_vfn_212();
 
     // vIndex: 216, symbol: ?prepareRegion@ServerPlayer@@UEAAXAEAVChunkSource@@@Z
     virtual void prepareRegion(class ChunkSource&);

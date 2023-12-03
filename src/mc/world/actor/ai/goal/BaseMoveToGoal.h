@@ -36,7 +36,7 @@ public:
     // vIndex: 10, symbol: ?hasReachedTarget@BaseMoveToGoal@@UEBA_NXZ
     virtual bool hasReachedTarget() const;
 
-    // vIndex: 11, symbol: ?isValidTarget@MoveToPOIGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 11, symbol: ?isValidTarget@DropItemForGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isValidTarget(class BlockSource&, class BlockPos const&) = 0;
 
     // vIndex: 12, symbol: ?_nextStartTick@BaseMoveToGoal@@MEAAHXZ
@@ -45,7 +45,7 @@ public:
     // vIndex: 13, symbol: ?_canReach@BaseMoveToGoal@@MEAA_NAEBVBlockPos@@@Z
     virtual bool _canReach(class BlockPos const&);
 
-    // vIndex: 14, symbol: ?_moveToBlock@MoveToPOIGoal@@MEAAXXZ
+    // vIndex: 14, symbol: ?_moveToBlock@BaseMoveToBlockGoal@@MEAAXXZ
     virtual void _moveToBlock() = 0;
 
     // vIndex: 15, symbol: ?_getTargetPosition@BaseMoveToGoal@@MEBA?AVVec3@@XZ

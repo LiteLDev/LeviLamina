@@ -76,6 +76,10 @@ public:
     // vIndex: 10, symbol: __unk_vfn_10
     virtual void __unk_vfn_10();
 
+    // vIndex: 11, symbol:
+    // ?onEvent@?$EventListenerDispatcher@VBlockEventListener@@@@MEAA?AW4EventResult@@AEBUBlockNotificationEvent@@@Z
+    virtual ::EventResult onEvent(struct BlockNotificationEvent const&);
+
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
 

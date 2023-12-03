@@ -31,7 +31,7 @@ public:
     virtual void endRequestBatch();
 
     // vIndex: 4, symbol:
-    // ?_handleCraftAction@CraftHandlerLoom@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+    // ?_handleCraftAction@CraftHandleNonImplemented_DEPRECATEDASKTYLAING@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&) = 0;
 
     // vIndex: 5, symbol: ?_postCraftRequest@CraftHandlerBase@@MEAAX_N@Z

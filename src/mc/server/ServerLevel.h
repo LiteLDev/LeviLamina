@@ -92,12 +92,12 @@ public:
     // symbol: ?registerEventCoordinators@ServerLevel@@UEAAXXZ
     MCVAPI void registerEventCoordinators();
 
+    // symbol: ?runCommand@ServerLevel@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z
+    MCVAPI void runCommand(class Command&, class CommandOrigin&, ::CommandOriginSystem);
+
     // symbol:
     // ?runCommand@ServerLevel@@UEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CommandOriginSystem@@W4CurrentCmdVersion@@@Z
     MCVAPI void runCommand(class HashedString const&, class CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion);
-
-    // symbol: ?runCommand@ServerLevel@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z
-    MCVAPI void runCommand(class Command&, class CommandOrigin&, ::CommandOriginSystem);
 
     // symbol: ?setCommandsEnabled@ServerLevel@@UEAAX_N@Z
     MCVAPI void setCommandsEnabled(bool);

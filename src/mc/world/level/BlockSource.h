@@ -407,11 +407,11 @@ public:
     // symbol: ?getHeightmapPos@BlockSource@@QEBA?AVBlockPos@@AEBV2@@Z
     MCAPI class BlockPos getHeightmapPos(class BlockPos const&) const;
 
-    // symbol: ?getLevel@BlockSource@@QEAAAEAVLevel@@XZ
-    MCAPI class Level& getLevel();
-
     // symbol: ?getLevel@BlockSource@@QEBAAEAVLevel@@XZ
     MCAPI class Level& getLevel() const;
+
+    // symbol: ?getLevel@BlockSource@@QEAAAEAVLevel@@XZ
+    MCAPI class Level& getLevel();
 
     // symbol: ?getLevelConst@BlockSource@@QEBAAEBVLevel@@XZ
     MCAPI class Level const& getLevelConst() const;
