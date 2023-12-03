@@ -11,7 +11,9 @@ nav:
   - quickstart.md
 
   - Tutorials:
+    - tutorials/ai_npc_and_assistant.md
     - tutorials/create_your_first_plugin.md
+    - tutorials/customized_terrain_generation.md
     - tutorials/fly_in_survival.md
     - tutorials/more_dimensions.md
     - tutorials/understanding_functions_in_bds.md
