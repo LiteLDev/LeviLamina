@@ -6,6 +6,7 @@ nav:
 
   - Install:
     - install/install_windows.md
+    - install/install_docker.md
 
   - quickstart.md
 
