@@ -11,7 +11,7 @@
 #include "fmt/color.h"
 #include "fmt/core.h"
 
-namespace ll::utils::string_utils {
+namespace ll::inline utils::string_utils {
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
 [[nodiscard]] constexpr std::vector<std::string_view>
@@ -247,4 +247,4 @@ template <class T, auto f>
 [[nodiscard]] inline ldouble svtold(std::string_view str, size_t* idx = nullptr) {
     return svtonum<ldouble, strtof>(str, idx);
 }
-} // namespace ll::utils::string_utils
+} // namespace ll::inline utils::string_utils

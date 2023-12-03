@@ -11,7 +11,7 @@
 
 #pragma comment(lib, "Version.lib")
 
-namespace ll::utils::file_utils {
+namespace ll::inline utils::file_utils {
 using namespace string_utils;
 namespace fs = std::filesystem;
 
@@ -100,4 +100,4 @@ Version getVersion(std::filesystem::path const& filePath) {
     return version;
 }
 
-} // namespace ll::utils::file_utils
+} // namespace ll::inline utils::file_utils

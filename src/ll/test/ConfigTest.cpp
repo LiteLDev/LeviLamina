@@ -75,13 +75,13 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     // ll::config::saveConfig(helloReflection, "plugins/Test/config/testconfig.json");
 
     ll::logger.debug("0x{:X}", (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute));
-    ll::logger.debug("0x{:X}", (uintptr_t)ll::utils::win_utils::getImageRange().data());
+    ll::logger.debug("0x{:X}", (uintptr_t)ll::win_utils::getImageRange().data());
 
-    ll::logger.debug("0x{:X}", (uintptr_t)ll::utils::win_utils::getImageRange().size());
+    ll::logger.debug("0x{:X}", (uintptr_t)ll::win_utils::getImageRange().size());
     ll::logger.debug(
         "0x{:X}",
         (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute)
-            - (uintptr_t)ll::utils::win_utils::getImageRange("LeviLamina.dll").data()
+            - (uintptr_t)ll::win_utils::getImageRange("LeviLamina.dll").data()
     );
 
     ll::logger.debug("{}", ll::reflection::getRawName<&FillCommand::execute>());

@@ -6,7 +6,7 @@
 
 struct _CONTEXT; // NOLINT(bugprone-reserved-identifier)
 
-namespace ll::utils::stacktrace_utils {
+namespace ll::inline utils::stacktrace_utils {
 class SymbolLoader {
     void* handle;
 
@@ -23,6 +23,6 @@ LLNDAPI uintptr_t tryGetSymbolAddress(std::string_view);
 LLNDAPI std::string toString(std::stacktrace_entry const&);
 LLNDAPI std::string toString(std::stacktrace const&);
 LLNDAPI std::string toString(_CONTEXT const&);
-} // namespace ll::utils::stacktrace_utils
+} // namespace ll::inline utils::stacktrace_utils
 
 #endif

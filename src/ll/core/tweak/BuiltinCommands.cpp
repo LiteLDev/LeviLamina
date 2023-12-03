@@ -17,7 +17,7 @@
 #include "mc/world/level/dimension/VanillaDimensions.h"
 
 using namespace ll;
-using namespace ll::utils::string_utils;
+using namespace ll::string_utils;
 using namespace ll::i18n_literals;
 
 using ll::plugin::PluginManager;

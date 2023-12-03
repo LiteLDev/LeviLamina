@@ -15,7 +15,6 @@ concept IsConfig =
 
 template <IsConfig T, class J = nlohmann::ordered_json>
 inline bool saveConfig(T const& config, std::string_view path) noexcept {
-    using namespace ll::utils;
     try {
         namespace fs = std::filesystem;
         auto data{ll::reflection::serialize<J, T>(config)};
@@ -31,7 +30,6 @@ inline bool saveConfig(T const& config, std::string_view path) noexcept {
 
 template <IsConfig T, class J = nlohmann::ordered_json>
 inline bool loadConfig(T& config, std::string_view path, bool overwriteAfterFail = false) noexcept {
-    using namespace ll::utils;
     bool res = true;
     try {
         auto content = file_utils::readFile(path);

@@ -12,8 +12,8 @@
 
 #include "psapi.h"
 
-using namespace ll::utils::string_utils;
-namespace ll::utils::win_utils {
+using namespace ll::string_utils;
+namespace ll::inline utils::win_utils {
 
 std::string getSystemLocaleName() {
     wchar_t buf[LOCALE_NAME_MAX_LENGTH]{};
@@ -51,4 +51,4 @@ std::span<uchar> getImageRange(std::string const& name) {
     return {};
 }
 
-} // namespace ll::utils::win_utils
+} // namespace ll::inline utils::win_utils

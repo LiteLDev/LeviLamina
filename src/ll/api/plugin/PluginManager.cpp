@@ -11,8 +11,7 @@
 
 #include "windows.h"
 
-using namespace ll::utils;
-using namespace ll::utils::string_utils;
+using namespace ll::string_utils;
 using namespace ll::i18n_literals;
 
 namespace fs = std::filesystem;

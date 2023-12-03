@@ -18,10 +18,10 @@ namespace Crypto::Hash {
 
 class Hash : public ::Crypto::Hash::IHash {
 public:
-    Crypto::Hash::HashType               mHashType;
-    std::unique_ptr<Crypto::Hash::IHash> mHash;
+    HashType               mHashType;
+    std::unique_ptr<IHash> mHash;
 
-    [[nodiscard]] inline std::string toString() { return ll::utils::string_utils::strToHexStr(final()); }
+    [[nodiscard]] inline std::string toString() { return ll::string_utils::strToHexStr(final()); }
 
     inline void update(std::string_view data) { update(data.data(), (uint)data.size()); }
 

@@ -11,7 +11,6 @@
 #include "ll/core/LeviLamina.h"
 
 using namespace ll;
-using namespace ll::utils;
 
 class KeyValueDB::KeyValueDBImpl {
 public:

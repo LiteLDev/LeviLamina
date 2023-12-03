@@ -2,7 +2,7 @@
 #include "mc/deps/crypto/hash/Hash.h"
 
 
-namespace ll::utils::crypto_utils {
+namespace ll::inline utils::crypto_utils {
 
 std::string hash(::Crypto::Hash::HashType type, std::string_view sv) {
     auto e = Crypto::Hash::Hash(type);
@@ -16,4 +16,4 @@ std::string sha256(std::string_view input) { return hash(Crypto::Hash::HashType:
 std::string sha384(std::string_view input) { return hash(Crypto::Hash::HashType::SHA384, input); }
 std::string sha512(std::string_view input) { return hash(Crypto::Hash::HashType::SHA512, input); }
 
-} // namespace ll::utils::crypto_utils
+} // namespace ll::inline utils::crypto_utils

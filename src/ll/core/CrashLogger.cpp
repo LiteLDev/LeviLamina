@@ -301,7 +301,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.logger.error("!!! Error In CrashLogger !!!");
         ll::error_info::printCurrentException(crashInfo.logger);
         crashInfo.logger.error("");
-        crashInfo.logger.error("\n{}", ll::utils::stacktrace_utils::toString(std::stacktrace::current()));
+        crashInfo.logger.error("\n{}", ll::stacktrace_utils::toString(std::stacktrace::current()));
     }
     std::exit((int)e->ExceptionRecord->ExceptionCode);
 }

@@ -126,7 +126,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
     ll::logger.debug(ColorFormat::ColorFromColorCode(ColorFormat::LIGHT_PURPLE)->toString());
     ll::logger.debug("{}", ColorFormat::FormatCodeFromName("Bold"));
 
-    using namespace ll::utils::string_utils;
+    using namespace ll::string_utils;
 
     ll::logger.debug("\n{}", replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console)));
     ll::logger.debug("\n{}", (nbt.toSnbt(SnbtFormat::Colored)));

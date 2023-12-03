@@ -105,7 +105,7 @@ struct PreRelease {
         }
         std::string                   s{begin, first};
         std::vector<std::string_view> tokens;
-        tokens = ll::utils::string_utils::splitByPattern(s, ".");
+        tokens = ll::string_utils::splitByPattern(s, ".");
         for (auto const& token : tokens) {
             std::optional<std::uint16_t> value;
             if (detail::from_chars(token.data(), token.data() + token.length(), value); value) {

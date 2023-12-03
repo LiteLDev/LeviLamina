@@ -7,7 +7,7 @@
 
 #include "stringapiset.h"
 
-namespace ll::utils::string_utils {
+namespace ll::inline utils::string_utils {
 
 fmt::text_style getTextStyleFromCode(std::string_view code) {
     if (code.starts_with("§")) {
@@ -270,4 +270,4 @@ std::string tou8str(std::string_view str) {
     }
 }
 
-} // namespace ll::utils::string_utils
+} // namespace ll::inline utils::string_utils

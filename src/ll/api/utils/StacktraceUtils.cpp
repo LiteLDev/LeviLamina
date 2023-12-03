@@ -14,7 +14,7 @@
 
 #include "DbgEng.h"
 
-namespace ll::utils::stacktrace_utils {
+namespace ll::inline utils::stacktrace_utils {
 namespace detail {
 static void lockRelease() noexcept;
 
@@ -250,6 +250,6 @@ std::string toString(_CONTEXT const& c) {
                c.SegSs
          );
 }
-} // namespace ll::utils::stacktrace_utils
+} // namespace ll::inline utils::stacktrace_utils
 
 #endif

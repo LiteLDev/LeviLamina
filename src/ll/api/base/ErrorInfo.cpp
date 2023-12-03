@@ -17,7 +17,6 @@
 #pragma warning(pop)
 
 namespace ll::error_info {
-using namespace ll::utils;
 
 UntypedException::UntypedException(const EXCEPTION_RECORD& er)
 : exception_object(reinterpret_cast<void*>(er.ExceptionInformation[1])),

@@ -89,7 +89,7 @@ void autoGenerate() {
         path = LL_WORKSPACE_FOLDER + path;
     }
 
-    auto file = ll::utils::file_utils::readAllFile(path, false);
+    auto file = ll::file_utils::readAllFile(path, false);
     if (!file) {
         ll::logger.error("Couldn't open file {}", path);
         return;
@@ -119,7 +119,7 @@ void autoGenerate() {
     oss.clear();
     oss.str("");
 
-    ll::utils::file_utils::WriteAllFile(path, content, false);
+    ll::file_utils::WriteAllFile(path, content, false);
 }
 
 LL_AUTO_TYPED_INSTANCE_HOOK(

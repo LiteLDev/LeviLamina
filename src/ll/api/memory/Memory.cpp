@@ -10,7 +10,6 @@
 
 #include "windows.h"
 
-using namespace ll::utils;
 
 namespace ll::memory {
 

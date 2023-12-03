@@ -44,14 +44,14 @@ void printVfable(void* t) {
 
     void** table = *(void***)t;
 #if _HAS_CXX23
-    logger.info("{}", ll::utils::stacktrace_utils::toString(*(std::stacktrace_entry*)&table));
+    logger.info("{}", ll::stacktrace_utils::toString(*(std::stacktrace_entry*)&table));
 #else
     logger.info("{}", (void*)table);
 #endif
     for (size_t i = 0; table[i] != nullptr; ++i) {
 #if _HAS_CXX23
         logger
-            .info("v table[{:02}] : {}", i, ll::utils::stacktrace_utils::toString(*(std::stacktrace_entry*)&table[i]));
+            .info("v table[{:02}] : {}", i, ll::stacktrace_utils::toString(*(std::stacktrace_entry*)&table[i]));
 #else
         logger.info("v table[{}] : {}", i, table[i]);
 #endif

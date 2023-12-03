@@ -115,7 +115,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         ll::error_info::printCurrentException();
     }
 #if _HAS_CXX23
-    // static ll::utils::stacktrace_utils::SymbolLoader sl{};
+    // static ll::stacktrace_utils::SymbolLoader sl{};
 #endif
     try {
         try {
@@ -126,7 +126,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
             } catch (...) {
 #if _HAS_CXX23
                 auto stack = ll::error_info::stacktraceFromCurrExc();
-                ll::logger.debug("\n{}", ll::utils::stacktrace_utils::toString(stack));
+                ll::logger.debug("\n{}", ll::stacktrace_utils::toString(stack));
 #endif
                 std::throw_with_nested(std::runtime_error("Couldn't open " + s));
             }
@@ -137,7 +137,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         ll::error_info::printCurrentException();
 #if _HAS_CXX23
         auto stack = std::stacktrace::current();
-        ll::logger.debug("\n{}", ll::utils::stacktrace_utils::toString(stack));
+        ll::logger.debug("\n{}", ll::stacktrace_utils::toString(stack));
 #endif
     }
     // throw std::runtime_error("Test New Crash Logger");
@@ -165,7 +165,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     );
     ll::logger.warn(
         "{}",
-        ll::utils::stacktrace_utils::tryGetSymbolAddress(
+        ll::stacktrace_utils::tryGetSymbolAddress(
             "`anonymous namespace'::DefaultEntitySystemsCollection::internalGatherSystemTimings"
         )
     );

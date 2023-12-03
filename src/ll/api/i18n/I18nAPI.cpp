@@ -5,9 +5,9 @@
 
 namespace fs = std::filesystem;
 
-using ll::utils::file_utils::u8path;
-using ll::utils::string_utils::splitByPattern;
-using ll::utils::win_utils::getSystemLocaleName;
+using ll::file_utils::u8path;
+using ll::string_utils::splitByPattern;
+using ll::win_utils::getSystemLocaleName;
 
 namespace ll::i18n {
 

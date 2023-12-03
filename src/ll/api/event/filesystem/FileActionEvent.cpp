@@ -234,7 +234,7 @@ public:
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase& l) {
     auto& path = ((Listener<FileActionEvent>&)l).path;
     return std::make_unique<FileWatcher>(
-        utils::file_utils::u8path(path),
+        file_utils::u8path(path),
         [id =
              (std::string{getEventId<FileActionEvent>.name} + "|" + path
              )](FileWatcher::Path const& p, FileActionType e) {
