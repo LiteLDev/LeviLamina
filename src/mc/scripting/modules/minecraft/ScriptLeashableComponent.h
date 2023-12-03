@@ -27,6 +27,10 @@ public:
     // vIndex: 0, symbol: ??1ScriptLeashableComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptLeashableComponent();
 
+    // vIndex: 1, symbol:
+    // ?_isValid@?$ECSScriptActorComponent@VLeashableComponent@@VLeashableDefinition@@@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ??0ScriptLeashableComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI

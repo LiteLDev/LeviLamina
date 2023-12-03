@@ -127,11 +127,11 @@ public:
     // ?playAttached@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$function@$$A6AXAEAUSoundInstanceProperties@@@Z@3@@Z
     MCVAPI uint64 playAttached(std::string const&, std::function<void(struct SoundInstanceProperties&)>&&);
 
-    // symbol: ?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MAEAI@Z
-    MCVAPI void playMusic(std::string const&, float, uint&);
-
     // symbol: ?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z
     MCVAPI void playMusic(std::string const&, float);
+
+    // symbol: ?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MAEAI@Z
+    MCVAPI void playMusic(std::string const&, float, uint&);
 
     // symbol: ?playUI@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MM@Z
     MCVAPI uint64 playUI(std::string const&, float, float);

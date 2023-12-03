@@ -27,8 +27,8 @@ public:
     // vIndex: 1, symbol: ?isEntitySource@ActorDamageSource@@UEBA_NXZ
     virtual bool isEntitySource() const;
 
-    // vIndex: 2, symbol: ?isChildEntitySource@ActorDamageSource@@UEBA_NXZ
-    virtual bool isChildEntitySource() const;
+    // vIndex: 2, symbol: __unk_vfn_2
+    virtual void __unk_vfn_2();
 
     // vIndex: 3, symbol: ?isBlockSource@ActorDamageSource@@UEBA_NXZ
     virtual bool isBlockSource() const;
@@ -88,6 +88,9 @@ public:
     // vIndex: 21, symbol:
     // ?clone@ActorDamageSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
+
+    // symbol: ?isChildEntitySource@ActorDamageSource@@UEBA_NXZ
+    MCVAPI bool isChildEntitySource() const;
 
     // symbol: ??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z
     MCAPI explicit ActorDamageSource(::ActorDamageCause);

@@ -40,9 +40,6 @@ public:
     // vIndex: 10, symbol: __gen_??1Npc@@UEAA@XZ
     virtual ~Npc() = default;
 
-    // vIndex: 14, symbol: __unk_vfn_14
-    virtual void __unk_vfn_14();
-
     // vIndex: 23, symbol: __unk_vfn_23
     virtual void __unk_vfn_23();
 
@@ -62,14 +59,8 @@ public:
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44();
 
-    // vIndex: 45, symbol: __unk_vfn_45
-    virtual void __unk_vfn_45();
-
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
-
-    // vIndex: 48, symbol: __unk_vfn_48
-    virtual void __unk_vfn_48();
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -83,23 +74,11 @@ public:
     // vIndex: 63, symbol: __unk_vfn_63
     virtual void __unk_vfn_63();
 
-    // vIndex: 71, symbol: __unk_vfn_71
-    virtual void __unk_vfn_71();
-
-    // vIndex: 72, symbol: __unk_vfn_72
-    virtual void __unk_vfn_72();
-
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
 
-    // vIndex: 116, symbol: __unk_vfn_116
-    virtual void __unk_vfn_116();
-
     // vIndex: 117, symbol: ?canBePulledIntoVehicle@Npc@@UEBA_NXZ
     virtual bool canBePulledIntoVehicle() const;
-
-    // vIndex: 120, symbol: __unk_vfn_120
-    virtual void __unk_vfn_120();
 
     // vIndex: 123, symbol:
     // ?buildDebugInfo@Npc@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -108,20 +87,11 @@ public:
     // vIndex: 126, symbol: ?canBeAffected@Npc@@UEBA_NI@Z
     virtual bool canBeAffected(uint) const;
 
-    // vIndex: 142, symbol: __unk_vfn_142
-    virtual void __unk_vfn_142();
-
-    // vIndex: 143, symbol: __unk_vfn_143
-    virtual void __unk_vfn_143();
-
     // vIndex: 147, symbol: __unk_vfn_147
     virtual void __unk_vfn_147();
 
     // vIndex: 150, symbol: ?die@Npc@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const&);
-
-    // vIndex: 154, symbol: __unk_vfn_154
-    virtual void __unk_vfn_154();
 
     // vIndex: 165, symbol: __unk_vfn_165
     virtual void __unk_vfn_165();
@@ -141,20 +111,14 @@ public:
     // vIndex: 173, symbol: ?knockback@Npc@@UEAAXPEAVActor@@HMMMMM@Z
     virtual void knockback(class Actor*, int, float, float, float, float, float);
 
-    // vIndex: 204, symbol: __unk_vfn_204
-    virtual void __unk_vfn_204();
-
     // vIndex: 209, symbol: ?canExistWhenDisallowMob@Npc@@UEBA_NXZ
     virtual bool canExistWhenDisallowMob() const;
 
     // vIndex: 211, symbol: ?newServerAiStep@Npc@@UEAAXXZ
     virtual void newServerAiStep();
 
-    // vIndex: 212, symbol: __unk_vfn_212
-    virtual void __unk_vfn_212();
-
-    // symbol: ?_serverAiMobStep@Npc@@MEAAXXZ
-    MCVAPI void _serverAiMobStep();
+    // vIndex: 212, symbol: ?_serverAiMobStep@Npc@@MEAAXXZ
+    virtual void _serverAiMobStep();
 
     // symbol: ?breaksFallingBlocks@Npc@@UEBA_NXZ
     MCVAPI bool breaksFallingBlocks() const;

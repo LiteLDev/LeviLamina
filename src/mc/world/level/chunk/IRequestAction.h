@@ -18,7 +18,7 @@ public:
     // vIndex: 0, symbol: ??1IRequestAction@@UEAA@XZ
     virtual ~IRequestAction();
 
-    // vIndex: 1, symbol: ?execute@StructureAnimationAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
+    // vIndex: 1, symbol: ?execute@FunctionAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
     virtual void execute(class ServerLevel&, class Dimension&) = 0;
 
     // vIndex: 2, symbol: ?serialize@IRequestAction@@UEAAXAEAVCompoundTag@@@Z

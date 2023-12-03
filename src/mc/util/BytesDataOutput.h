@@ -23,5 +23,8 @@ public:
     // vIndex: 2, symbol: ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     virtual void writeLongString(std::string_view);
 
+    // vIndex: 5, symbol: ?writeByte@BytesDataOutput@@UEAAXD@Z
+    virtual void writeByte(char);
+
     // NOLINTEND
 };

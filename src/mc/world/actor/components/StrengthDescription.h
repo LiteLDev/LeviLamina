@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/AttributeDescription.h"
-
-class StrengthDescription : public ::AttributeDescription {
+class StrengthDescription {
 public:
     // prevent constructor by default
     StrengthDescription& operator=(StrengthDescription const&);

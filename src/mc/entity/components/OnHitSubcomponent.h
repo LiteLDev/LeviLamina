@@ -18,13 +18,13 @@ public:
     // vIndex: 0, symbol: ??1OnHitSubcomponent@@UEAA@XZ
     virtual ~OnHitSubcomponent();
 
-    // vIndex: 1, symbol: ?readfromJSON@SpawnAoECloudSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+    // vIndex: 1, symbol: ?readfromJSON@ActorDefinitionEventSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
     virtual void readfromJSON(class Json::Value&, class SemVersion const&) = 0;
 
-    // vIndex: 2, symbol: ?writetoJSON@SpawnAoECloudSubcomponent@@UEBAXAEAVValue@Json@@@Z
+    // vIndex: 2, symbol: ?writetoJSON@ActorDefinitionEventSubcomponent@@UEBAXAEAVValue@Json@@@Z
     virtual void writetoJSON(class Json::Value&) const = 0;
 
-    // vIndex: 3, symbol: ?doOnHitEffect@IgniteSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+    // vIndex: 3, symbol: ?doOnHitEffect@ActorDefinitionEventSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
     virtual void doOnHitEffect(class Actor&, class ProjectileComponent&) = 0;
 
     // vIndex: 4, symbol: ?getName@OnHitSubcomponent@@UEAAPEBDXZ

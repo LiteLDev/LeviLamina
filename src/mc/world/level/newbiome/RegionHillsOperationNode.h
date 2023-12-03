@@ -19,6 +19,9 @@ public:
     // vIndex: 0, symbol: __gen_??1RegionHillsOperationNode@@UEAA@XZ
     virtual ~RegionHillsOperationNode() = default;
 
+    // vIndex: 1, symbol: ?init@OperationNodeBase@OperationNodeDetails@@UEAAX_J@Z
+    virtual void init(int64);
+
     // vIndex: 2, symbol:
     // ?_allocateAndFill@?$MixerOperationNode@PEAVBiome@@VPos2d@@PEAV1@$$V@@MEBA?AV?$TransferData@PEAVBiome@@@OperationNodeDetails@@_KAEBVPos2d@@1@Z
     virtual class OperationNodeDetails::TransferData<class Biome*>

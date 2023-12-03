@@ -402,16 +402,16 @@ public:
     MCVAPI void fireEventFeedbackSubmitted(std::string const&, bool, bool);
 
     // symbol:
+    // ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXMMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCVAPI void fireEventGameRulesUpdated(float, float, std::string const&);
+
+    // symbol:
     // ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireEventGameRulesUpdated(int, int, std::string const&);
 
     // symbol:
     // ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAX_N0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireEventGameRulesUpdated(bool, bool, std::string const&);
-
-    // symbol:
-    // ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXMMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireEventGameRulesUpdated(float, float, std::string const&);
 
     // symbol: ?fireEventGoogleAccountHoldWarning@MinecraftEventing@@UEAAX_N@Z
     MCVAPI void fireEventGoogleAccountHoldWarning(bool);

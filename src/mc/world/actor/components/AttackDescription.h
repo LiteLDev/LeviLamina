@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/AttributeDescription.h"
-
-class AttackDescription : public ::AttributeDescription {
+class AttackDescription {
 public:
     // prevent constructor by default
     AttackDescription& operator=(AttackDescription const&);

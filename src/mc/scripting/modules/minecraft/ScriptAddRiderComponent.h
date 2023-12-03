@@ -26,6 +26,10 @@ public:
     // vIndex: 0, symbol: ??1ScriptAddRiderComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptAddRiderComponent();
 
+    // vIndex: 1, symbol:
+    // ?_isValid@?$ECSScriptActorComponent@VAddRiderComponent@@VAddRiderDefinition@@@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ??0ScriptAddRiderComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI

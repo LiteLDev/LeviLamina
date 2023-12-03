@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace RakNet { struct RakNetGUID; }

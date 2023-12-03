@@ -28,6 +28,10 @@ public:
     // vIndex: 0, symbol: ??1ScriptBreathableComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptBreathableComponent();
 
+    // vIndex: 1, symbol:
+    // ?_isValid@?$ECSScriptActorComponent@VBreathableComponent@@VBreathableDefinition@@@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ??0ScriptBreathableComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI

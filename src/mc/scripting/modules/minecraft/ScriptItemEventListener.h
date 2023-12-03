@@ -113,6 +113,10 @@ public:
     // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemStopUseEvent@@@Z
     virtual ::EventResult onEvent(struct ItemStopUseEvent const&);
 
+    // vIndex: 24, symbol:
+    // ?onEvent@?$EventListenerDispatcher@VItemEventListener@@@@MEAA?AW4EventResult@@AEBUItemNotificationEvent@@@Z
+    virtual ::EventResult onEvent(struct ItemNotificationEvent const&);
+
     // vIndex: 25, symbol: __unk_vfn_25
     virtual void __unk_vfn_25();
 

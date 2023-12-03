@@ -28,6 +28,10 @@ public:
     // vIndex: 0, symbol: ??1ScriptHealableComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptHealableComponent();
 
+    // vIndex: 1, symbol:
+    // ?_isValid@?$ECSScriptActorComponent@VHealableComponent@@VHealableDefinition@@@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ??0ScriptHealableComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI

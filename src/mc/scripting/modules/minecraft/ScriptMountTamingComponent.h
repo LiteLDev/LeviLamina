@@ -26,6 +26,10 @@ public:
     // vIndex: 0, symbol: ??1ScriptMountTamingComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptMountTamingComponent();
 
+    // vIndex: 1, symbol:
+    // ?_isValid@?$ECSScriptActorComponent@VMountTamingComponent@@VMountTameableDefinition@@@ScriptModuleMinecraft@@MEBA_NXZ
+    virtual bool _isValid() const;
+
     // symbol:
     // ??0ScriptMountTamingComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI

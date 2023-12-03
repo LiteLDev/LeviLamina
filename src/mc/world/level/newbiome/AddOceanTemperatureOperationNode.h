@@ -18,6 +18,9 @@ public:
     // vIndex: 0, symbol: __gen_??1AddOceanTemperatureOperationNode@@UEAA@XZ
     virtual ~AddOceanTemperatureOperationNode() = default;
 
+    // vIndex: 1, symbol: ?init@OperationNodeBase@OperationNodeDetails@@UEAAX_J@Z
+    virtual void init(int64);
+
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
 

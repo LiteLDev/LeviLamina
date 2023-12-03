@@ -27,8 +27,24 @@ public:
     // ?getName@OnInteractTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
 
+    // vIndex: 2, symbol: ?initializeComponent@BlockComponentDescription@@UEBAXAEAVEntityContext@@@Z
+    virtual void initializeComponent(class EntityContext&) const;
+
+    // vIndex: 3, symbol:
+    // ?initializeComponent@?$BlockTriggerDescription@VOnInteractTrigger@@@@UEBAXAEAVBlockComponentStorage@@@Z
+    virtual void initializeComponent(class BlockComponentStorage&) const;
+
+    // vIndex: 4, symbol: ?initializeComponentFromCode@BlockComponentDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    virtual void initializeComponentFromCode(class BlockComponentStorage&) const;
+
     // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5();
+
+    // vIndex: 6, symbol:
+    // ?buildSchema@?$BlockTriggerDescription@VOnInteractTrigger@@@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z
+    virtual void
+    buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&)
+        const;
 
     // vIndex: 7, symbol: ?isNetworkComponent@OnInteractTriggerDescription@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
@@ -40,6 +56,9 @@ public:
     // vIndex: 9, symbol:
     // ?initializeFromNetwork@OnInteractTriggerDescription@@UEAAXAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
     virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
+
+    // vIndex: 10, symbol: ?handleVersionBasedInitialization@BlockComponentDescription@@UEAAXAEBVSemVersion@@@Z
+    virtual void handleVersionBasedInitialization(class SemVersion const&);
 
     // symbol: ?NameID@OnInteractTriggerDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const NameID;

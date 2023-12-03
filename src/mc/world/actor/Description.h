@@ -11,7 +11,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?getJsonName@MoveControlBasicDescription@@UEBAPEBDXZ
+    // vIndex: 0, symbol: ?getJsonName@AmphibiousMoveControlDescription@@UEBAPEBDXZ
     virtual char const* getJsonName() const = 0;
 
     // vIndex: 1, symbol: __gen_??1Description@@UEAA@XZ

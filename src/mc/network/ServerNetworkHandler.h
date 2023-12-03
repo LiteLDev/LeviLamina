@@ -69,9 +69,6 @@ public:
     // symbol: ?getGameSpecificNetEventCallback@ServerNetworkHandler@@UEAAPEAVGameSpecificNetEventCallback@@XZ
     MCVAPI class GameSpecificNetEventCallback* getGameSpecificNetEventCallback();
 
-    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVFilterTextPacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class FilterTextPacket const&);
-
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCodeBuilderSourcePacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class CodeBuilderSourcePacket const&);
 
@@ -102,14 +99,11 @@ public:
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVMultiplayerSettingsPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class MultiplayerSettingsPacket const&);
 
-    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerSkinPacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class PlayerSkinPacket const&);
-
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVStructureTemplateDataRequestPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class StructureTemplateDataRequestPacket const&);
 
-    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVModalFormResponsePacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class ModalFormResponsePacket const&);
+    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerSkinPacket@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, class PlayerSkinPacket const&);
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSubChunkRequestPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class SubChunkRequestPacket const&);
@@ -126,8 +120,8 @@ public:
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVStructureBlockUpdatePacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class StructureBlockUpdatePacket const&);
 
-    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPositionTrackingDBClientRequestPacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class PositionTrackingDBClientRequestPacket const&);
+    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCraftingEventPacket@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, class CraftingEventPacket const&);
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVItemFrameDropItemPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class ItemFrameDropItemPacket const&);
@@ -156,11 +150,11 @@ public:
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVMoveActorAbsolutePacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class MoveActorAbsolutePacket const&);
 
-    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class DisconnectPacket const&);
-
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerHotbarPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class PlayerHotbarPacket const&);
+
+    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPositionTrackingDBClientRequestPacket@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, class PositionTrackingDBClientRequestPacket const&);
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVEmotePacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class EmotePacket const&);
@@ -179,6 +173,9 @@ public:
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVGameTestRequestPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class GameTestRequestPacket const&);
+
+    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, class DisconnectPacket const&);
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSetDifficultyPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class SetDifficultyPacket const&);
@@ -199,6 +196,9 @@ public:
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSimpleEventPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class SimpleEventPacket const&);
 
+    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVModalFormResponsePacket@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, class ModalFormResponsePacket const&);
+
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVAnvilDamagePacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class AnvilDamagePacket const&);
 
@@ -208,14 +208,14 @@ public:
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VBlockActorDataPacket@@@std@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, std::shared_ptr<class BlockActorDataPacket>);
 
-    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCraftingEventPacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class CraftingEventPacket const&);
-
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVMapInfoRequestPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class MapInfoRequestPacket const&);
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVScriptMessagePacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class ScriptMessagePacket const&);
+
+    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSetPlayerGameTypePacket@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, class SetPlayerGameTypePacket const&);
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVAnimatePacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class AnimatePacket const&);
@@ -256,14 +256,14 @@ public:
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTickSyncPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class TickSyncPacket const&);
 
-    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSetPlayerGameTypePacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class SetPlayerGameTypePacket const&);
-
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDebugInfoPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class DebugInfoPacket const&);
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLevelSoundEventPacketV1@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class LevelSoundEventPacketV1 const&);
+
+    // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVFilterTextPacket@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, class FilterTextPacket const&);
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerInputPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class PlayerInputPacket const&);

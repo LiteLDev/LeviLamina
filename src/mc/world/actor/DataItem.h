@@ -18,7 +18,7 @@ public:
     virtual bool isDataEqual(class DataItem const&) const;
 
     // vIndex: 2, symbol:
-    // ?clone@?$DataItem2@H@@UEBA?AV?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@XZ
+    // ?clone@?$DataItem2@M@@UEBA?AV?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@XZ
     virtual std::unique_ptr<class DataItem> clone() const = 0;
 
     // NOLINTEND
