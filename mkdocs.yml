@@ -16,6 +16,8 @@ nav:
     - tutorials/customized_terrain_generation.md
     - tutorials/fly_in_survival.md
     - tutorials/more_dimensions.md
+    - tutorials/publish_your_first_pack.md
+    - tutorials/publish_your_first_plugin.md
     - tutorials/understanding_functions_in_bds.md
 
   - Guides:
