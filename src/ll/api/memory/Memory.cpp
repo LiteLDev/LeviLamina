@@ -16,6 +16,11 @@ namespace ll::memory {
 
 FuncPtr resolveSymbol(char const* symbol) { return pl::symbol_provider::pl_resolve_symbol(symbol); }
 
+FuncPtr resolveSymbol(std::string_view symbol, bool) // TODO: add support in preloader
+{
+    return pl::symbol_provider::pl_resolve_symbol(symbol.data());
+}
+
 FuncPtr resolveSignature(std::string_view signature) {
     static auto      bdsSpan = win_utils::getImageRange();
     std::span<uchar> span;
@@ -50,7 +55,7 @@ FuncPtr resolveSignature(std::string_view signature) {
     if (pattern.empty()) {
         return nullptr;
     }
-    for (size_t i = 0; i < span.size() - pattern.size(); ++i) { // TODO: optimize this search
+    for (size_t i = 0; i < span.size() - pattern.size(); ++i) {
         bool   match = true;
         size_t iter  = 0;
         for (auto& c : pattern) {

@@ -27,16 +27,18 @@ bool unhook(FuncPtr target, FuncPtr detour) {
     }
 }
 
-FuncPtr resolveIdentifier(std::string_view identifier) {
-    if (auto pl = resolveSymbol(identifier.data()); pl) {
+FuncPtr resolveIdentifier(std::string_view identifier, bool disableErrorOutput) {
+    if (auto pl = resolveSymbol(identifier.data(), true); pl) {
         return pl;
     } else if (auto sig = resolveSignature(identifier); sig) {
         return sig;
     } else if (auto dbgeng = (FuncPtr)stacktrace_utils::tryGetSymbolAddress(identifier); dbgeng) {
         return dbgeng;
     }
-    logger.fatal("Could not find symbol/signature in memory: {}", identifier);
-    logger.fatal("In module: {}", win_utils::getCallerModuleFileName());
+    if (!disableErrorOutput) {
+        logger.fatal("Could not find symbol/signature in memory: {}", identifier);
+        logger.fatal("In module: {}", win_utils::getCallerModuleFileName());
+    }
     return nullptr;
 }
 

@@ -89,7 +89,7 @@ LLAPI bool unhook(FuncPtr target, FuncPtr detour);
  * @param identifier symbol or signature
  * @return FuncPtr
  */
-LLNDAPI FuncPtr resolveIdentifier(std::string_view identifier);
+LLNDAPI FuncPtr resolveIdentifier(std::string_view identifier, bool disableErrorOutput = false);
 
 template <class T>
 concept FuncPtrType = std::is_function_v<std::remove_pointer_t<T>> || std::is_member_function_pointer_v<T>;

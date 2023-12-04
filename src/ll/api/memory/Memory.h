@@ -58,6 +58,8 @@ inline void memcpy_t(void* dst, void const* src) {
  */
 LLNDAPI FuncPtr resolveSymbol(char const* symbol);
 
+LLNDAPI FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput);
+
 /**
  * @brief resolve signature to function pointer
  * @param t Signature
