@@ -1,6 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/wrapper/OwnerPtrT.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/entity/events/EcsEventDispatcher.h"
+#include "mc/entity/systems/DefaultEntitySystemsCollection.h"
+#include "mc/entity/systems/IEntitySystems.h"
+#include "mc/entity/systems/PlayerInteractionSystem.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/typeid_t.h"
@@ -10,15 +16,21 @@
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class EntitySystems {
+class EntitySystems : public IEntitySystems, public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    EntitySystems& operator=(EntitySystems const&);
-    EntitySystems(EntitySystems const&);
-    EntitySystems();
+    std::unique_ptr<PlayerInteractionSystem>         mPlayerInteractionSystem; // this+0x20
+    std::unique_ptr<IEntitySystemsCollection>        mSystems;                 // this+0x28
+    OwnerPtrT<SharePtrRefTraits<EcsEventDispatcher>> mDispatcher;              // this+0x30
+    std::string                                      mName;                    // this+0x40
+    bool                                             mEnableTimingCapture;     // this+0x60
+
+    DefaultEntitySystemsCollection& getDefaultCollection() { return *(DefaultEntitySystemsCollection*)mSystems.get(); }
 
 public:
     // NOLINTBEGIN
+    // symbol: ??1EntitySystems@@UEAA@XZ
+    virtual ~EntitySystems();
+
     // symbol:
     // ?registerTickingSystem@EntitySystems@@UEAAXV?$span@$$CBV?$typeid_t@USystemCategory@@@Bedrock@@$0?0@gsl@@V?$unique_ptr@VITickingSystem@@U?$default_delete@VITickingSystem@@@std@@@std@@AEBUSystemInfo@@UEntitySystemTickingMode@@@Z
     MCVAPI void registerTickingSystem(
@@ -33,9 +45,6 @@ public:
 
     // symbol: ?tickMovementCorrectionReplay@EntitySystems@@UEAAXAEAVEntityRegistry@@@Z
     MCVAPI void tickMovementCorrectionReplay(class EntityRegistry&);
-
-    // symbol: ??1EntitySystems@@UEAA@XZ
-    MCVAPI ~EntitySystems();
 
     // symbol: ??0EntitySystems@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI explicit EntitySystems(std::string);

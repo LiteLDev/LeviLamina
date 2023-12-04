@@ -7,6 +7,7 @@
 #include <string_view>
 
 namespace ll::schedule {
+inline namespace task {
 LLETAPI std::atomic_ullong TaskId;
 
 template <class Clock>
@@ -126,7 +127,7 @@ public:
         return time;
     }
 };
-
+} // namespace task
 namespace detail {
 LLAPI void printScheduleError() noexcept;
 }

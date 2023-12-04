@@ -1,4 +1,5 @@
 #include "ll/api/memory/Hook.h"
+#include "mc/entity/gamerefs_entity/EntityRegistry.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 #include "mc/world/level/block/Block.h"
@@ -16,16 +17,17 @@
 struct SystemCategory;
 
 #include "ll/api/service/GlobalService.h"
-#include "mc/entity/gamerefs_entity/EntityRegistry.h"
 #include "mc/entity/systems/EntitySystems.h"
+#include "mc/world/level/Level.h"
 
-#include "mc/entity/systems/DefaultEntitySystemsCollection.h"
 
 auto test() {
-    ll::logger.warn("mAllSystemsInfo");
-    for (auto& info : ll::Global<DefaultEntitySystemsCollection>->mAllSystemsInfo) {
-        ll::logger.warn("info {}", info.mName);
-    }
+    // ll::logger.warn("mAllSystemsInfo");
+    // auto& systems = ll::Global<Level>->getEntitySystems().getDefaultCollection();
+
+    // for (auto& info : systems.mAllSystemsInfo) {
+    //     ll::logger.warn("info {}", info.mName);
+    // }
 
     // struct EntitySystems::EditorSystemCategory
     // struct EntitySystems::GameSystemCategory
@@ -41,11 +43,11 @@ auto test() {
     // struct VanillaSystemCategories::UpdateWaterState
     // struct VanillaSystemCategories::UsedByClientAndServerAuth
 
-    // auto& vec = ll::Global<DefaultEntitySystemsCollection>->mTickingSystemCategories;
+    // auto& vec = systems.mTickingSystemCategories;
 
     // ll::logger.warn("info safe:{} ", ((char*)&*vec.end() - (char*)&*vec.begin()) / vec.size());
     // for (auto& category :
-    //      ll::Global<DefaultEntitySystemsCollection>->mTickingSystemCategories) {
+    //      systems.mTickingSystemCategories) {
     //     ll::logger.warn("category :{} ", category.mCategory.value);
     //     for (auto id : category.mSystems) {
     //         ll::logger.warn("category sys:{} ", id);
@@ -55,11 +57,7 @@ auto test() {
     //         ll::logger.warn("category sys:{} {}", timing.mMsTime,timing.mCount);
     //     }
     // }
-    ll::logger.warn(
-        "mAllSystemsInfo size {} {}",
-        ll::Global<DefaultEntitySystemsCollection>->mAllSystemsInfo.size(),
-        ll::Global<DefaultEntitySystemsCollection>->mAllSystems.size()
-    );
+    // ll::logger.warn("mAllSystemsInfo size {} {}", systems.mAllSystemsInfo.size(), systems.mAllSystems.size());
 }
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
@@ -161,7 +159,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     // std::cout << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
     ll::logger.warn(
         "{}",
-        ll::memory::resolveIdentifier("`anonymous namespace'::DefaultEntitySystemsCollection::internalGatherSystemTimings")
+        ll::memory::resolveIdentifier(
+            "`anonymous namespace'::DefaultEntitySystemsCollection::internalGatherSystemTimings"
+        )
     );
 
     origin();

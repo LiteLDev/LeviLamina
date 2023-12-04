@@ -59,10 +59,10 @@ public:
             Logger&                               logger,
             std::string                           levelPrefix,
             int                                   level,
-            std::array<fmt::text_style, 4> const& style         = {{}},
-            std::array<std::string, 5> const&     playerFormat  = {"<{2}|{1}> [{0}] {3}", "{:%T}", "{}", "{}", "{}"},
-            std::array<std::string, 5> const&     consoleFormat = {"{0} {1} {2} {3}", "{:%T}", "{}", "[{}]", "{}"},
-            std::array<std::string, 5> const&     fileFormat    = {"[{0} {1}][{2}] {3}", "{:%F %T}", "{}", "{}", "{}"}
+            std::array<fmt::text_style, 4> const& style        = {{}},
+            std::array<std::string, 5> const&     playerFormat = {"<{2}|{1}> [{0}] {3}", "{:%T}", "{}", "{}", "{}"},
+            std::array<std::string, 5> const& consoleFormat = {"{0} {1} {2} {3}", "{:%T}.{:0>3}", "{}", "[{}]", "{}"},
+            std::array<std::string, 5> const& fileFormat = {"[{0} {1}][{2}] {3}", "{:%F %T}.{:0>3}", "{}", "{}", "{}"}
         );
 
         template <ll::concepts::IsString S, class... Args>

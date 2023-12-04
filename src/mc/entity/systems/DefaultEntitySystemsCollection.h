@@ -10,8 +10,8 @@
 class DefaultEntitySystemsCollection : public IEntitySystemsCollection {
 public:
     struct ECSTiming {
-        int   mCount;  // this+0x0
-        float mMsTime; // this+0x4
+        int   mCount{0};  // this+0x0
+        float mMsTime{0}; // this+0x4
     };
     struct TickingSystemsInCategory {
         Bedrock::typeid_t<struct SystemCategory> mCategory;  // this+0x0

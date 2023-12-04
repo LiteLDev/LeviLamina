@@ -4,9 +4,6 @@
 
 #include "mc/deps/raknet/RakPeer.h"
 #include "mc/deps/raknet/RakPeerInterface.h"
-#include "mc/entity/systems/DefaultEntitySystemsCollection.h"
-#include "mc/entity/systems/EntitySystems.h"
-#include "mc/entity/systems/IEntitySystemsCollection.h"
 #include "mc/network/RakNetConnector.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/resources/ResourcePackRepository.h"
@@ -211,18 +208,4 @@ LL_AUTO_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, "??1Command
     ll::Global<CommandRegistry>.init(nullptr);
     origin();
 }
-
-// EntitySystemsCollection
-
-LL_AUTO_STATIC_HOOK(EntitySystemsCollectionCreater, HookPriority::High, EntitySystemsCollection::create, std::unique_ptr<IEntitySystemsCollection>) {
-    auto res = origin();
-    ll::Global<DefaultEntitySystemsCollection>.init((DefaultEntitySystemsCollection*)res.get());
-    return res;
-}
-
-LL_AUTO_INSTANCE_HOOK(EntitySystemsCollectionDestructor, HookPriority::High, "??1EntitySystems@@UEAA@XZ", void) {
-    ll::Global<DefaultEntitySystemsCollection>.init(nullptr);
-    origin();
-}
-
 } // namespace

@@ -3,6 +3,7 @@
 #include "ll/api/base/ErrorInfo.h"
 
 namespace ll::schedule {
+inline namespace task {
 std::atomic_ullong TaskId{0};
 
 std::optional<time_t> tryParseTime(std::string const& expression, std::string_view format) {
@@ -30,7 +31,7 @@ std::chrono::system_clock::time_point parseTime(std::string const& expression) {
             .value_or(tryParseTime(expression, "%Y/%m/%d %H:%M:%S").value_or(0))
     );
 }
-
+} // namespace task
 namespace detail {
 void printScheduleError() noexcept {
     static Logger logger("Scheduler");

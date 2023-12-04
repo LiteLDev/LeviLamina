@@ -22,12 +22,16 @@ static bool checkLogLevel(int level, int outLevel) {
 
 void Logger::OutputStream::print(std::string_view s) const noexcept {
     try {
-        auto lock = Logger::lock();
-        auto time = fmt::localtime(_time64(nullptr));
+        auto        lock = Logger::lock();
+        static auto zone = std::chrono::current_zone();
+        auto        now  = zone->to_local(std::chrono::system_clock::now());
+        auto        time = std::chrono::floor<std::chrono::seconds>(now);
+        auto        ms   = (std::chrono::floor<std::chrono::milliseconds>(now) - time).count();
+
         if (checkLogLevel(logger->consoleLevel, level)) {
             std::string str = fmt::format(
                 fmt::runtime(consoleFormat[0]),
-                applyTextStyle(style[0], fmt::format(fmt::runtime(consoleFormat[1]), time)),
+                applyTextStyle(style[0], fmt::format(fmt::runtime(consoleFormat[1]), time, ms)),
                 applyTextStyle(style[1], fmt::format(fmt::runtime(consoleFormat[2]), levelPrefix)),
                 applyTextStyle(style[2], fmt::format(fmt::runtime(consoleFormat[3]), logger->title)),
                 applyTextStyle(style[3], fmt::format(fmt::runtime(consoleFormat[4]), replaceMcToAnsiCode(s)))
@@ -40,7 +44,7 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
         if (logger->getFile().is_open() && checkLogLevel(logger->fileLevel, level)) {
             logger->getFile() << removeEscapeCode(fmt::format(
                 fmt::runtime(fileFormat[0]),
-                fmt::format(fmt::runtime(fileFormat[1]), time),
+                fmt::format(fmt::runtime(fileFormat[1]), time, ms),
                 fmt::format(fmt::runtime(fileFormat[2]), levelPrefix),
                 fmt::format(fmt::runtime(fileFormat[3]), logger->title),
                 fmt::format(fmt::runtime(fileFormat[4]), s)
@@ -50,7 +54,7 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
             && checkLogLevel(logger->playerLevel, level)) {
             std::string str = replaceAnsiToMcCode(fmt::format(
                 fmt::runtime(playerFormat[0]),
-                applyTextStyle(style[0], fmt::format(fmt::runtime(playerFormat[1]), time)),
+                applyTextStyle(style[0], fmt::format(fmt::runtime(playerFormat[1]), time, ms)),
                 applyTextStyle(style[1], fmt::format(fmt::runtime(playerFormat[2]), levelPrefix)),
                 applyTextStyle(style[2], fmt::format(fmt::runtime(playerFormat[3]), logger->title)),
                 applyTextStyle(style[3], fmt::format(fmt::runtime(playerFormat[4]), s))

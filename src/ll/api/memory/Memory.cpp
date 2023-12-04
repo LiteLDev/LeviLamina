@@ -16,7 +16,7 @@ namespace ll::memory {
 
 FuncPtr resolveSymbol(char const* symbol) { return pl::symbol_provider::pl_resolve_symbol(symbol); }
 
-FuncPtr resolveSymbol(std::string_view symbol, bool) // TODO: add support in preloader
+FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) // TODO: add support in preloader
 {
     return pl::symbol_provider::pl_resolve_symbol(symbol.data());
 }
@@ -34,22 +34,17 @@ FuncPtr resolveSignature(std::string_view signature) {
     if (span.empty()) {
         return nullptr;
     }
-    for (auto& c : signature) {
-        if (!isxdigit(c) && c != ' ' && c != '?') {
-            return nullptr;
-        }
-    }
-
     std::vector<std::optional<uchar>> pattern;
-    for (;;) {
-        while (signature.starts_with(' ')) signature.remove_prefix(1);
-        if (signature.empty()) break;
-        if (signature.starts_with('?')) {
+    for (size_t i = 0; i < signature.size(); ++i) {
+        auto& c = signature[i];
+        if (c == ' ') {
+            continue;
+        } else if (c == '?') {
             pattern.emplace_back(std::nullopt);
-            signature.remove_prefix(1);
+        } else if (isxdigit(c) && (++i < signature.size() && isxdigit(signature[i]))) {
+            pattern.emplace_back(string_utils::svtouc(signature.substr(i - 1, 2), nullptr, 16));
         } else {
-            pattern.emplace_back(string_utils::svtouc(signature.substr(0, 2), nullptr, 16));
-            signature.remove_prefix(2);
+            return nullptr;
         }
     }
     if (pattern.empty()) {
@@ -59,7 +54,7 @@ FuncPtr resolveSignature(std::string_view signature) {
         bool   match = true;
         size_t iter  = 0;
         for (auto& c : pattern) {
-            if (c && span[i + iter] != *c) {
+            if (span[i + iter] != c) {
                 match = false;
                 break;
             }

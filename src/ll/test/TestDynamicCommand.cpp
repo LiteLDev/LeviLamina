@@ -16,13 +16,12 @@ using Param      = DynamicCommand::ParameterData;
 using ParamType  = DynamicCommand::ParameterType;
 using ParamIndex = DynamicCommandInstance::ParameterIndex;
 
-using namespace ll::schedule;
 using namespace ll::hash;
 using namespace ll::hash_literals;
 using namespace ll::chrono_literals;
 using namespace ll::i18n_literals;
 
-GameTimeScheduler scheduler;
+ll::schedule::GameTimeScheduler scheduler;
 
 static void setupTestParamCommand() {
     using Param     = DynamicCommand::ParameterData;
@@ -203,7 +202,7 @@ static void setupRemoveCommand() {
         if (fullName == cmd.getCommandName()) {
             output.success("Request unregister itself");
 
-            scheduler.add<DelayTask>(1s, [fullName] {
+            scheduler.add<ll::schedule::DelayTask>(1s, [fullName] {
                 auto res = ll::Global<CommandRegistry>->unregisterCommand(fullName);
                 if (res) {
                     DynamicCommand::unregisterCommand(fullName);
@@ -278,7 +277,7 @@ static void setupEnumCommand() {
     command->addOverload();
     command->setCallback(onEnumExecute);
     auto cmd = DynamicCommand::setup(std::move(command));
-    scheduler.add<DelayTask>(1s, [cmd] {
+    scheduler.add<ll::schedule::DelayTask>(1s, [cmd] {
         auto packet = ll::Global<CommandRegistry>->serializeAvailableCommands();
         cmd->setSoftEnum("EnumNameList", packet.getEnumNames());
         cmd->addSoftEnumValues("EnumNameList", packet.getSoftEnumNames());
@@ -305,11 +304,89 @@ static void setupCrashCommand() {
                             CommandOrigin const&,
                             CommandOutput&,
                             std::unordered_map<std::string, DynamicCommand::Result>&) {
-        new std::thread([] {
+        auto crash = std::thread([] {
             char* null = (char*)0x456;
             *null      = 'a';
         });
+        crash.detach();
     });
+    DynamicCommand::setup(std::move(command));
+}
+
+#include "ll/api/service/GlobalService.h"
+#include "mc/entity/systems/EntitySystems.h"
+#include "mc/world/level/Level.h"
+#include <ranges>
+
+static void setupTimingCommand() {
+    auto command = DynamicCommand::createCommand("timing", "timing", CommandPermissionLevel::GameDirectors);
+    command->addOverload();
+    command->setCallback([](DynamicCommand const&,
+                            CommandOrigin const&,
+                            CommandOutput&,
+                            std::unordered_map<std::string, DynamicCommand::Result>&) {
+        auto thread = std::thread([] {
+            auto& system = ll::Global<Level>->getEntitySystems();
+
+            auto& collection = system.getDefaultCollection();
+            {
+                std::lock_guard lock(collection.mTimingMutex);
+                system.mEnableTimingCapture = true;
+                ll::logger.warn("EnableTimingCapture");
+            }
+
+            std::unordered_map<uint, DefaultEntitySystemsCollection::ECSTiming> timings{};
+            using namespace ll::chrono;
+            TickSyncSleep<GameTimeClock> sleeper;
+            for (size_t i = 0; i < 100; i++) {
+                {
+                    std::lock_guard lock(collection.mTimingMutex);
+                    for (auto& collectCategory : collection.mTickingSystemCategories) {
+                        auto& tickTimings = collectCategory.mTimings;
+                        for (size_t j = 0; j < tickTimings.size(); j++) {
+                            auto& timing    = timings[collectCategory.mSystems.at(j)];
+                            timing.mCount  += tickTimings.at(j).mCount;
+                            timing.mMsTime += tickTimings.at(j).mMsTime;
+                        }
+                    }
+                }
+                sleeper.sleepFor(1_tick);
+            }
+            {
+                std::lock_guard lock(collection.mTimingMutex);
+                system.mEnableTimingCapture = false;
+            }
+            struct TimingData {
+                uint                                      id;
+                DefaultEntitySystemsCollection::ECSTiming timing;
+            };
+
+            std::vector<TimingData> orderdTiming;
+            orderdTiming.reserve(timings.size());
+            double allTime = 0.0;
+            for (auto& [systemId, timing] : timings) {
+                orderdTiming.emplace_back(systemId, timing);
+                allTime += double(timing.mMsTime) / timing.mCount;
+            }
+
+            std::ranges::sort(orderdTiming, [](TimingData const& a, TimingData const& b) {
+                return a.timing.mMsTime > b.timing.mMsTime;
+            });
+
+            ll::logger.warn("Total {:.5f}ms", allTime);
+
+            for (int i = 0; i < orderdTiming.size() && i < 20; i++) {
+                auto& data = orderdTiming[i];
+                ll::logger.warn(
+                    "  | {:.5f}ms for {}",
+                    double(data.timing.mMsTime) / data.timing.mCount,
+                    collection.mAllSystemsInfo[data.id].mName
+                );
+            }
+        });
+        thread.detach();
+    });
+
     DynamicCommand::setup(std::move(command));
 }
 
@@ -323,7 +400,7 @@ static bool reg = [] {
         setupEnumCommand();
         setupEchoCommand();
         setupCrashCommand();
+        setupTimingCommand();
     });
     return true;
 }();
-

@@ -240,7 +240,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.logger.playerLevel        = -2;
         crashInfo.logger.fileLevel          = INT32_MAX;
         crashInfo.logger.consoleLevel       = INT32_MAX;
-        crashInfo.logger.info.consoleFormat = {"{0} [{1}] {3}", "{:%T}", "{}", "", "{}"};
+        crashInfo.logger.info.consoleFormat = {"{0} [{1}] {3}", "{:%T}.{:0>3}", "{}", "", "{}"};
         crashInfo.logger.info.style         = {
             fmt::fg(fmt::color::light_blue),
             fmt::fg(fmt::color::light_green),
@@ -253,7 +253,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
             u8str2str((crashInfo.path / (crashInfo.settings.logPrefix + crashInfo.date + ".log")).u8string())
         );
 
-        crashInfo.logger.info.fileFormat = {"{0} [{1}] {3}", "{:%F %T}", "{}", "", "{}"};
+        crashInfo.logger.info.fileFormat = {"{0} [{1}] {3}", "{:%F %T}.{:0>3}", "{}", "", "{}"};
         crashInfo.logger.error           = crashInfo.logger.info;
         crashInfo.process                = GetCurrentProcess();
         crashInfo.thread                 = GetCurrentThread();

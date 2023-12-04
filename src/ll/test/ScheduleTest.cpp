@@ -1,3 +1,4 @@
+
 #include "ll/api/Logger.h"
 #include "ll/api/base/Random.h"
 #include "ll/api/memory/Hook.h"
@@ -34,51 +35,52 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     ll::Logger::setDefaultPlayerOutputFunc([](std::string_view sv) { TextPacket::createRawMessage(sv).sendToClients(); }
     );
-
-    s.add<RepeatTask>(100_tick, [&] {
-        schedulelogger.info(
-            "hi, 100_tick life {} ramdom {}",
-            ll::chrono::GameTimeClock::now().time_since_epoch(),
-            ll::random::rand<uint>()
-        );
-    });
-
-    s2.add<DelayTask>(1_tick, [&] {
-        schedulelogger.info("try GameTime {}", ll::chrono::GameTimeClock::now().time_since_epoch());
-        s3.add<RepeatTask>(5s, [&] {
-            schedulelogger.warn(
-                "hi, 5s       gt   {} ramdom {}",
+    /*
+        s.add<RepeatTask>(100_tick, [&] {
+            schedulelogger.info(
+                "hi, 100_tick life {} ramdom {}",
                 ll::chrono::GameTimeClock::now().time_since_epoch(),
-                ll::random::rand<double>()
+                ll::random::rand<uint>()
             );
         });
-    });
 
-    s2.add<RepeatTask>(0.1min, [&] {
-        auto lock = ll::Logger::lock();
-        schedulelogger.info(
-            "hi, 0.1min   game {} random {}",
-            ll::chrono::GameTimeClock::now().time_since_epoch(),
-            ll::random::rand<int64>()
-        );
-        auto random  = ll::random::rand<int64>();
-        random      /= 0;
-        schedulelogger.info("{}", random);
-        throw std::system_error(std::error_code(0, ll::error_info::hresult_category()));
-    });
+        s2.add<DelayTask>(1_tick, [&] {
+            schedulelogger.info("try GameTime {}", ll::chrono::GameTimeClock::now().time_since_epoch());
+            s3.add<RepeatTask>(5s, [&] {
+                schedulelogger.warn(
+                    "hi, 5s       gt   {} ramdom {}",
+                    ll::chrono::GameTimeClock::now().time_since_epoch(),
+                    ll::random::rand<double>()
+                );
+            });
+        });
 
-    // s2.add<RepeatTask>(0.3min, [&] {
-    //     auto            pause = ll::thread::GlobalThreadPauser{};
+        s2.add<RepeatTask>(0.1min, [&] {
+            auto lock = ll::Logger::lock();
+            schedulelogger.info(
+                "hi, 0.1min   game {} random {}",
+                ll::chrono::GameTimeClock::now().time_since_epoch(),
+                ll::random::rand<int64>()
+            );
+            auto random  = ll::random::rand<int64>();
+            random      /= 0;
+            schedulelogger.info("{}", random);
+            throw std::system_error(std::error_code(0, ll::error_info::hresult_category()));
+        });
 
-    //     schedulelogger.info("hello I paused all threads 1s");
+        // s2.add<RepeatTask>(0.3min, [&] {
+        //     auto            pause = ll::thread::GlobalThreadPauser{};
 
-    //     std::this_thread::sleep_for(1s);
-    //     schedulelogger.info("hello I paused all threads 2s");
+        //     schedulelogger.info("hello I paused all threads 1s");
 
-    //     std::this_thread::sleep_for(1s);
+        //     std::this_thread::sleep_for(1s);
+        //     schedulelogger.info("hello I paused all threads 2s");
 
-    //     schedulelogger.info("hello I resumed all threads");
-    // });
+        //     std::this_thread::sleep_for(1s);
+
+        //     schedulelogger.info("hello I resumed all threads");
+        // });
+    */
 
     return origin(ins);
 }
