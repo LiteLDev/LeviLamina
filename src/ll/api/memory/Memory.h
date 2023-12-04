@@ -63,7 +63,7 @@ LLNDAPI FuncPtr resolveSymbol(char const* symbol);
  * @param t Signature
  * @return function pointer
  */
-LLNDAPI FuncPtr resolveSignature(char const* signature);
+LLNDAPI FuncPtr resolveSignature(std::string_view signature);
 
 /**
  * @brief lookup symbol name of a function address

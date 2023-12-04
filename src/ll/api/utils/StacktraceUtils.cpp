@@ -199,8 +199,7 @@ std::string toString(std::stacktrace_entry const& entry) {
     auto [displacement, name, line, file] = data.getInfo(entry.native_handle());
     std::string module;
     std::string function;
-    if (name.contains('!')) {
-        auto pos = name.find_first_of('!');
+    if (auto pos = name.find('!'); pos != std::string_view::npos) {
         function = name.substr(1 + pos);
         module   = name.substr(0, pos);
     } else {

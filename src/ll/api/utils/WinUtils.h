@@ -12,6 +12,8 @@ LLNDAPI std::string getSystemLocaleName();
 
 LLNDAPI bool isWine();
 
-LLNDAPI std::span<uchar> getImageRange(std::string const& name = "");
+LLNDAPI std::span<uchar> getImageRange(std::string_view name = "");
+
+LLNDAPI std::string getCallerModuleFileName(ulong framesToSkip = 0);
 
 } // namespace ll::inline utils::win_utils

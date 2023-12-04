@@ -3,6 +3,7 @@
 #include <string>
 
 #include "ll/api/i18n/I18nAPI.h"
+#include "ll/api/memory/Memory.h"
 #include "ll/api/utils/StringUtils.h"
 
 #include "ll/core/Config.h"
@@ -34,7 +35,7 @@ bool isWine() {
     return result;
 }
 
-std::span<uchar> getImageRange(std::string const& name) {
+std::span<uchar> getImageRange(std::string_view name) {
     static auto process = GetCurrentProcess();
     HMODULE     rangeStart;
     if (name.empty()) {
@@ -43,12 +44,22 @@ std::span<uchar> getImageRange(std::string const& name) {
         rangeStart = GetModuleHandle(str2wstr(name).c_str());
     }
     if (rangeStart) {
-        MODULEINFO miModInfo;
-        if (GetModuleInformation(process, rangeStart, &miModInfo, sizeof(MODULEINFO))) {
-            return {(uchar*)rangeStart, miModInfo.SizeOfImage};
+        MODULEINFO moduleInfo;
+        if (GetModuleInformation(process, rangeStart, &moduleInfo, sizeof(MODULEINFO))) {
+            return {(uchar*)rangeStart, moduleInfo.SizeOfImage};
         }
     }
     return {};
 }
+std::string getCallerModuleFileName(ulong framesToSkip) {
+    void* frames[1];
+    int   frameCount = CaptureStackBackTrace(framesToSkip + 2, 1, frames, nullptr);
 
+    if (0 < frameCount) {
+        std::wstring path(32767, '\0');
+        GetModuleFileName((HMODULE)memory::getModuleHandle(frames[0]), path.data(), 32767);
+        return u8str2str(std::filesystem::path(path).filename().u8string());
+    }
+    return "unknown";
+}
 } // namespace ll::inline utils::win_utils

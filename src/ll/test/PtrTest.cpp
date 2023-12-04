@@ -161,15 +161,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     // std::cout << "hii  " << bool(ptr) << ' ' << ptr->getTypeName() << std::endl;
     ll::logger.warn(
         "{}",
-        ll::memory::resolveSymbol("`anonymous namespace'::DefaultEntitySystemsCollection::internalGatherSystemTimings")
+        ll::memory::resolveIdentifier("`anonymous namespace'::DefaultEntitySystemsCollection::internalGatherSystemTimings")
     );
-    ll::logger.warn(
-        "{}",
-        ll::stacktrace_utils::tryGetSymbolAddress(
-            "`anonymous namespace'::DefaultEntitySystemsCollection::internalGatherSystemTimings"
-        )
-    );
-
 
     origin();
 }
