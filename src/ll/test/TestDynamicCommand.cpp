@@ -412,31 +412,14 @@ static void setupCreateSimulatePlayerCommand() {
         auto name = results["name"].getRaw<std::string>();
         auto num  = results["number"];
 
-        auto createAndInitializePlayer = [&](const std::string& playerName) {
-            std::random_device                      rd;
-            std::mt19937_64                         eng(rd());
-            std::uniform_int_distribution<uint64_t> distr;
-            uint64_t                                random_number = distr(eng);
-            OwnerPtrT<EntityRefTraits>              ownerPtr = ll::Global<ServerNetworkHandler>->createSimulatedPlayer(
-                playerName,
-                '-' + std::to_string(HashedString::computeHash(playerName) ^ random_number)
-            );
-            auto player = ownerPtr.tryUnwrap<SimulatedPlayer>();
-            if (!player) return false;
+        auto entity = ori.getEntity();
 
-            player->postLoad(true);
-            Level& level = player->getLevel();
-            level.addUser(std::move(ownerPtr));
-            player->setRespawnReady(Vec3(0, 32768, 0));
-            player->setLocalPlayerAsInitialized();
-            player->doInitialSpawn();
-
-            Vec3 pos = {0, 0, 0};
-            if (ori.getEntity()) {
-                pos = ori.getEntity()->getFeetPos();
-                player->teleport(pos, ori.getEntity()->getDimensionId());
+        auto createSimulatedPlayer = [entity, &name]() {
+            if (entity) {
+                return SimulatedPlayer::create(name, entity->getFeetPos(), entity->getDimensionId());
+            } else {
+                return SimulatedPlayer::create(name);
             }
-            return true;
         };
 
         if (num.isSet) {
@@ -444,7 +427,7 @@ static void setupCreateSimulatePlayerCommand() {
             auto successCount = 0;
 
             for (int i = 0; i < number; i++) {
-                if (createAndInitializePlayer(name)) successCount++;
+                if (createSimulatedPlayer()) successCount++;
             }
 
             if (successCount == 0) {
@@ -454,7 +437,7 @@ static void setupCreateSimulatePlayerCommand() {
             output.success("createSimulatePlayer {} * {}", name, successCount);
             return;
         }
-        if (!createAndInitializePlayer(name)) {
+        if (!createSimulatedPlayer()) {
             output.error("createSimulatePlayer {} failed", name);
             return;
         }
