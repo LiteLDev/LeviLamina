@@ -45,11 +45,13 @@ std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
 }
 
 std::string Player::getRealName() const {
-    auto certificate = getCertificate();
-    if (!certificate) {
-        return getName();
+    std::string res;
+    auto        certificate = getCertificate();
+    if (certificate) {
+        res = ExtendedCertificate::getIdentityName(*certificate);
     }
-    return ExtendedCertificate::getIdentityName(*certificate);
+    if (res.empty()) res = getName();
+    return res;
 }
 
 void Player::disconnect(std::string_view reason) const {

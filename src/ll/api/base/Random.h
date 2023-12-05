@@ -46,7 +46,7 @@ template <std::floating_point T>
 inline T rand(T max) {
     return rand<T>() * max;
 }
-template <std::floating_point T>
+template <class T>
 inline T rand(T min, T max) {
     return min + rand<T>(max - min);
 }

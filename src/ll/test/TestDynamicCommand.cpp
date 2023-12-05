@@ -320,6 +320,8 @@ static void setupCrashCommand() {
 #include <ranges>
 
 static void setupTimingCommand() {
+    constexpr static size_t counttick = 100;
+
     auto command = DynamicCommand::createCommand("timing", "timing", CommandPermissionLevel::GameDirectors);
     command->addOverload();
     command->setCallback([](DynamicCommand const&,
@@ -339,10 +341,12 @@ static void setupTimingCommand() {
             std::unordered_map<uint, DefaultEntitySystemsCollection::ECSTiming> timings{};
             using namespace ll::chrono;
             TickSyncSleep<GameTimeClock> sleeper;
-            for (size_t i = 0; i < 100; i++) {
+            auto                         begin = std::chrono::steady_clock::now();
+            for (size_t i = 0; i < counttick; i++) {
+                sleeper.sleepFor(1_tick);
                 {
                     std::lock_guard lock(collection.mTimingMutex);
-                    for (auto& collectCategory : collection.mTickingSystemCategories) {
+                     for (auto& collectCategory : collection.mTickingSystemCategories) {
                         auto& tickTimings = collectCategory.mTimings;
                         for (size_t j = 0; j < tickTimings.size(); j++) {
                             auto& timing    = timings[collectCategory.mSystems.at(j)];
@@ -351,36 +355,38 @@ static void setupTimingCommand() {
                         }
                     }
                 }
-                sleeper.sleepFor(1_tick);
             }
+            auto end = std::chrono::steady_clock::now();
             {
                 std::lock_guard lock(collection.mTimingMutex);
                 system.mEnableTimingCapture = false;
             }
             struct TimingData {
-                uint                                      id;
-                DefaultEntitySystemsCollection::ECSTiming timing;
+                uint   id;
+                double avg;
+                uint   count;
             };
 
             std::vector<TimingData> orderdTiming;
             orderdTiming.reserve(timings.size());
             double allTime = 0.0;
             for (auto& [systemId, timing] : timings) {
-                orderdTiming.emplace_back(systemId, timing);
-                allTime += double(timing.mMsTime) / timing.mCount;
+                orderdTiming.emplace_back(systemId, double(timing.mMsTime) / counttick, timing.mCount);
+                allTime += double(timing.mMsTime) / counttick;
             }
 
-            std::ranges::sort(orderdTiming, [](TimingData const& a, TimingData const& b) {
-                return a.timing.mMsTime > b.timing.mMsTime;
-            });
+            std::ranges::sort(orderdTiming, [](TimingData const& a, TimingData const& b) { return a.avg > b.avg; });
 
-            ll::logger.warn("Total {:.5f}ms", allTime);
+            ll::logger.warn("TPS: {:.5f}", double(counttick) / std::chrono::duration<double>(end - begin).count());
+            ll::logger.warn("ECS cost {:.5f}ms per tick", allTime);
 
             for (int i = 0; i < orderdTiming.size() && i < 20; i++) {
                 auto& data = orderdTiming[i];
                 ll::logger.warn(
-                    "  | {:.5f}ms for {}",
-                    double(data.timing.mMsTime) / data.timing.mCount,
+                    "  | {:.5f}ms {} for {:0>3} {}",
+                    data.avg,
+                    data.count/counttick,
+                    data.id,
                     collection.mAllSystemsInfo[data.id].mName
                 );
             }
@@ -392,7 +398,6 @@ static void setupTimingCommand() {
 }
 
 
-#include "mc/network/ServerNetworkHandler.h"
 #include "mc/server/SimulatedPlayer.h"
 #include "mc/world/actor/Actor.h"
 
@@ -456,9 +461,8 @@ static void kickAllSimulatePlayerCommand() {
                             CommandOutput& output,
                             std::unordered_map<std::string, DynamicCommand::Result>&) {
         ll::Global<Level>->forEachPlayer([&](Player& player) {
-            if (*(void**)&player == LL_RESOLVE_SYMBOL("??_7SimulatedPlayer@@6B@")) {
-                player.remove();
-                player.disconnect("");
+            if (player.isSimulatedPlayer()) {
+                ((SimulatedPlayer&)player).simulateDisconnect();
             }
             return true;
         });

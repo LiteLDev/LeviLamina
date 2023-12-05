@@ -43,40 +43,41 @@ public:
 
     [[nodiscard]] inline CompoundTagVariant(Variant tag) : mTagStorage(std::move(tag)) {}
 
-    [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag> const& tag) {
+    [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag>&& tag) {
         if (!tag) {
             return;
         }
         switch (tag->getId()) {
         case Tag::Type::Byte:
-            mTagStorage = (ByteTag&)*tag;
+            mTagStorage = std::move((ByteTag&)*tag);
         case Tag::Type::Short:
-            mTagStorage = (ShortTag&)*tag;
+            mTagStorage = std::move((ShortTag&)*tag);
         case Tag::Type::Int:
-            mTagStorage = (IntTag&)*tag;
+            mTagStorage = std::move((IntTag&)*tag);
         case Tag::Type::Int64:
-            mTagStorage = (Int64Tag&)*tag;
+            mTagStorage = std::move((Int64Tag&)*tag);
         case Tag::Type::Float:
-            mTagStorage = (FloatTag&)*tag;
+            mTagStorage = std::move((FloatTag&)*tag);
         case Tag::Type::Double:
-            mTagStorage = (DoubleTag&)*tag;
+            mTagStorage = std::move((DoubleTag&)*tag);
         case Tag::Type::ByteArray:
-            mTagStorage = (ByteArrayTag&)*tag;
+            mTagStorage = std::move((ByteArrayTag&)*tag);
         case Tag::Type::String:
-            mTagStorage = (StringTag&)*tag;
+            mTagStorage = std::move((StringTag&)*tag);
         case Tag::Type::List:
-            mTagStorage = (ListTag&)*tag;
+            mTagStorage = std::move((ListTag&)*tag);
         case Tag::Type::Compound:
-            mTagStorage = (CompoundTag&)*tag;
+            mTagStorage = std::move((CompoundTag&)*tag);
         case Tag::Type::IntArray:
-            mTagStorage = (IntArrayTag&)*tag;
+            mTagStorage = std::move((IntArrayTag&)*tag);
         case Tag::Type::End:
         default:
-            mTagStorage = (EndTag&)*tag;
+            mTagStorage = std::move((EndTag&)*tag);
         }
     }
+    [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag> const& tag) : CompoundTagVariant(std::move(tag->copy())) {}
     template <std::derived_from<Tag> T>
-    [[nodiscard]] constexpr CompoundTagVariant(T tag) : mTagStorage(std::forward<T>(tag)) {}
+    [[nodiscard]] constexpr CompoundTagVariant(T tag) : mTagStorage(std::move(tag)) {}
     template <std::integral T>
     [[nodiscard]] constexpr CompoundTagVariant(T integer) { // NOLINT
         constexpr size_t size = sizeof(T);
@@ -96,6 +97,7 @@ public:
 
     [[nodiscard]] inline CompoundTagVariant(std::string s) : mTagStorage(StringTag{std::move(s)}) {} // NOLINT
 
+    [[nodiscard]] Tag::Type index() const { return (Tag::Type)mTagStorage.index(); }
     template <std::derived_from<Tag> T>
     [[nodiscard]] bool hold() const {
         return std::holds_alternative<T>(mTagStorage);
@@ -109,6 +111,14 @@ public:
     template <std::derived_from<Tag> T>
     [[nodiscard]] T const& get() const {
         return std::get<T>(mTagStorage);
+    }
+
+    [[nodiscard]] Tag& get() {
+        return std::visit([](auto& val) -> Tag& { return (Tag&)val; }, mTagStorage);
+    }
+
+    [[nodiscard]] Tag const& get() const {
+        return std::visit([](auto& val) -> Tag const& { return (Tag const&)val; }, mTagStorage);
     }
 
     [[nodiscard]] CompoundTagVariant operator[](size_t index) const {
@@ -138,22 +148,6 @@ public:
             mTagStorage
         );
     }
-
-public:
-    // NOLINTBEGIN
-    // symbol: ?emplace@CompoundTagVariant@@QEAAAEAVTag@@$$QEAV2@@Z
-    MCAPI class Tag& emplace(class Tag&&);
-
-    // symbol: ?get@CompoundTagVariant@@QEAAPEAVTag@@XZ
-    MCAPI class Tag* get();
-
-    // symbol: ?get@CompoundTagVariant@@QEBAPEBVTag@@XZ
-    MCAPI class Tag const* get() const;
-
-    // symbol: ??1CompoundTagVariant@@QEAA@XZ
-    MCAPI ~CompoundTagVariant();
-
-    // NOLINTEND
 };
 
 #endif // COMPOUND_TAG_VARIANT_HEADER

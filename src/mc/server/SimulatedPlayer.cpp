@@ -17,8 +17,10 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     if (!ll::Global<ServerNetworkHandler>) {
         return nullptr;
     }
-    OwnerPtrT<EntityRefTraits> ownerPtr =
-        ll::Global<ServerNetworkHandler>->createSimulatedPlayer(name, std::to_string(INT32_MAX + random::rand<uint>()));
+    OwnerPtrT<EntityRefTraits> ownerPtr = ll::Global<ServerNetworkHandler>->createSimulatedPlayer(
+        name,
+        std::to_string(random::rand<int64>(INT64_MIN, -1))
+    );
     auto player = ownerPtr.tryUnwrap<SimulatedPlayer>();
 
     if (player == nullptr) {

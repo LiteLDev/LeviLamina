@@ -601,8 +601,8 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
         }
 
         if (type == Tag::Type::End) {
-            type = value.value().get()->getId();
-        } else if (value.value().get()->getId() != type) {
+            type = value.value().index();
+        } else if (value.value().index() != type) {
             return std::nullopt;
         }
         res.mList.emplace_back(value.value().toUnique());

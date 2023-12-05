@@ -3,7 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/entity/EntityIdTraits.h"
 
-class EntityId : public entt::basic_entt_traits<EntityIdTraits> {
+template <>
+class entt::entt_traits<EntityId> : public entt::basic_entt_traits<EntityIdTraits> {
+public:
+    static constexpr entity_type page_size = 2048;
+};
+
+class EntityId : public entt::entt_traits<EntityId> {
 public:
     entity_type mRawId{};
 

@@ -26,8 +26,12 @@
 #include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/item/registry/ItemStack.h"
 
-
 #include "ll/api/base/FixedString.h"
+
+#include "ll/api/base/Hash.h"
+
+using namespace ll::hash;
+using namespace ll::hash_literals;
 
 class TestEventB : public ll::event::Event {
 protected:
@@ -180,12 +184,20 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     bus.emplaceListener<PlayerSwingEvent>([](PlayerSwingEvent& ev) {
         ll::logger.debug("Player {} left click", ev.player.getRealName());
     });
-    bus.emplaceListener<PlayerStartSprintEvent>([](PlayerStartSprintEvent& ev) {
-        ll::logger.debug("Player {} start sprint", ev.player.getRealName());
+    auto listenersp = Listener<PlayerSprintEvent>::create([](PlayerSprintEvent& ev) {
+        switch (do_hash(typeid(ev).name())) {
+        case do_hash(ll::reflection::type_raw_name_v<PlayerStartSprintEvent>): {
+            ll::logger.debug("Player {} start sprint", ev.player.getRealName());
+        } break;
+        case do_hash(ll::reflection::type_raw_name_v<PlayerStopSprintEvent>): {
+            ll::logger.debug("Player {} stop sprint", ev.player.getRealName());
+        } break;
+        default:
+            break;
+        }
     });
-    bus.emplaceListener<PlayerStopSprintEvent>([](PlayerStopSprintEvent& ev) {
-        ll::logger.debug("Player {} stop sprint", ev.player.getRealName());
-    });
+    bus.addListener<PlayerStartSprintEvent>(listenersp);
+    bus.addListener<PlayerStopSprintEvent>(listenersp);
     bus.emplaceListener<PlayerStartSneakEvent>([](PlayerStartSneakEvent& ev) {
         ll::logger.debug("Player {} start sneak", ev.player.getRealName());
     });

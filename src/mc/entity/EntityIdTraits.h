@@ -12,5 +12,4 @@ struct EntityIdTraits {
 
     static constexpr entity_type entity_mask  = 0x3FFFF;
     static constexpr entity_type version_mask = 0x3FFF;
-    static constexpr entity_type page_size    = 2048;
 };
