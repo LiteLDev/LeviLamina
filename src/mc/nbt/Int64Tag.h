@@ -16,7 +16,11 @@ public:
 
     constexpr operator int64() const { return data; } // NOLINT
 
-    [[nodiscard]] constexpr explicit Int64Tag(int64 value = 0) : data(value) {}
+    template <std::integral T>
+        requires(sizeof(T) == 8)
+    [[nodiscard]] constexpr explicit Int64Tag(T value = 0) : data((int64)value) {}
+
+    Int64Tag operator-() const { return Int64Tag{(int64)-data}; }
 
 public:
     // NOLINTBEGIN

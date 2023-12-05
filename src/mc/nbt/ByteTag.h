@@ -16,9 +16,13 @@ public:
 
     constexpr operator schar() const { return data; } // NOLINT
 
-    [[nodiscard]] constexpr explicit ByteTag(int value = 0) : data((schar)value) {}
+    template <std::integral T>
+        requires(sizeof(T) == 1)
+    [[nodiscard]] constexpr explicit ByteTag(T value = 0) : data((schar)value) {}
 
-    constexpr operator bool() const { return data != 0; } // NOLINT
+    constexpr explicit operator bool() const { return data != 0; }
+
+    ByteTag operator-() const { return ByteTag{(schar)-data}; }
 
 public:
     // NOLINTBEGIN
@@ -49,5 +53,5 @@ public:
     // NOLINTEND
 };
 namespace ll::nbt_literals {
-[[nodiscard]] inline ByteTag operator""_b(uint64 num) { return ByteTag{(uchar)num}; }
+[[nodiscard]] inline ByteTag operator""_b(uint64 num) { return ByteTag{(schar)num}; }
 } // namespace ll::nbt_literals

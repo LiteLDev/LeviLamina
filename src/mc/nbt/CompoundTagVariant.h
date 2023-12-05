@@ -37,14 +37,64 @@ public:
 
     Variant mTagStorage;
 
-    [[nodiscard]] CompoundTagVariant()                          = default;
-    [[nodiscard]] CompoundTagVariant(CompoundTagVariant const&) = default;
-    CompoundTagVariant& operator=(CompoundTagVariant const&)    = default;
+    [[nodiscard]] constexpr CompoundTagVariant() = default;
 
-    [[nodiscard]] CompoundTagVariant(Variant tag) : mTagStorage(std::move(tag)) {}
+    [[nodiscard]] constexpr CompoundTagVariant(std::nullptr_t) {}
 
+    [[nodiscard]] inline CompoundTagVariant(Variant tag) : mTagStorage(std::move(tag)) {}
+
+    [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag> const& tag) {
+        if (!tag) {
+            return;
+        }
+        switch (tag->getId()) {
+        case Tag::Type::Byte:
+            mTagStorage = (ByteTag&)*tag;
+        case Tag::Type::Short:
+            mTagStorage = (ShortTag&)*tag;
+        case Tag::Type::Int:
+            mTagStorage = (IntTag&)*tag;
+        case Tag::Type::Int64:
+            mTagStorage = (Int64Tag&)*tag;
+        case Tag::Type::Float:
+            mTagStorage = (FloatTag&)*tag;
+        case Tag::Type::Double:
+            mTagStorage = (DoubleTag&)*tag;
+        case Tag::Type::ByteArray:
+            mTagStorage = (ByteArrayTag&)*tag;
+        case Tag::Type::String:
+            mTagStorage = (StringTag&)*tag;
+        case Tag::Type::List:
+            mTagStorage = (ListTag&)*tag;
+        case Tag::Type::Compound:
+            mTagStorage = (CompoundTag&)*tag;
+        case Tag::Type::IntArray:
+            mTagStorage = (IntArrayTag&)*tag;
+        case Tag::Type::End:
+        default:
+            mTagStorage = (EndTag&)*tag;
+        }
+    }
     template <std::derived_from<Tag> T>
-    [[nodiscard]] CompoundTagVariant(T tag) : mTagStorage(std::move(tag)) {}
+    [[nodiscard]] constexpr CompoundTagVariant(T tag) : mTagStorage(std::forward<T>(tag)) {}
+    template <std::integral T>
+    [[nodiscard]] constexpr CompoundTagVariant(T integer) { // NOLINT
+        constexpr size_t size = sizeof(T);
+        if constexpr (size == 1) {
+            mTagStorage = ByteTag{integer};
+        } else if constexpr (size == 2) {
+            mTagStorage = ShortTag{integer};
+        } else if constexpr (size == 4) {
+            mTagStorage = IntTag{integer};
+        } else {
+            mTagStorage = Int64Tag{integer};
+        }
+    }
+    [[nodiscard]] inline CompoundTagVariant(float f) : mTagStorage(FloatTag{f}) {} // NOLINT
+
+    [[nodiscard]] inline CompoundTagVariant(double d) : mTagStorage(DoubleTag{d}) {} // NOLINT
+
+    [[nodiscard]] inline CompoundTagVariant(std::string s) : mTagStorage(StringTag{std::move(s)}) {} // NOLINT
 
     template <std::derived_from<Tag> T>
     [[nodiscard]] bool hold() const {
@@ -61,11 +111,23 @@ public:
         return std::get<T>(mTagStorage);
     }
 
+    [[nodiscard]] CompoundTagVariant operator[](size_t index) const {
+        if (hold<ListTag>()) {
+            return get<ListTag>()[index];
+        } else if (hold<IntArrayTag>()) {
+            return get<IntArrayTag>()[index];
+        } else if (hold<ByteArrayTag>()) {
+            return get<ByteArrayTag>()[index];
+        } else {
+            throw std::range_error("tag not hold a integer index range");
+        }
+    }
+
     [[nodiscard]] CompoundTagVariant& operator[](std::string const& index) {
         if (!hold<CompoundTag>()) {
             mTagStorage = CompoundTag{};
         }
-        return std::get<CompoundTag>(mTagStorage)[index];
+        return get<CompoundTag>()[index];
     }
 
     std::unique_ptr<Tag> toUnique() const {

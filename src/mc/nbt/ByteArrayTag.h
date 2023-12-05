@@ -20,6 +20,8 @@ public:
 
     std::span<schar> view() const { return std::span<schar>((schar*)data.mBuffer.get(), data.mSize); }
 
+    [[nodiscard]] constexpr schar& operator[](size_t index) const { return view()[index]; }
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1ByteArrayTag@@UEAA@XZ

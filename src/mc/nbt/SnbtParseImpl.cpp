@@ -2,14 +2,16 @@
 #include "ll/api/base/Hash.h"
 #include "mc/nbt/CompoundTag.h"
 
+namespace ll::nbt::detail {
 std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s);
 
 bool isTrivialNbtStringChar(char c) { return isalnum(c) || c == '-' || c == '+' || c == '_' || c == '.'; }
-
+} // namespace ll::nbt::detail
 namespace {
 
 using namespace ll::hash_literals;
 using namespace ll::hash;
+using namespace ll::nbt::detail;
 
 bool scanComment(std::string_view& s) noexcept {
     size_t i = 0;
@@ -676,7 +678,7 @@ std::optional<CompoundTag> parseCompound(std::string_view& s) {
     return std::nullopt;
 }
 } // namespace
-
+namespace ll::nbt::detail {
 std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s) {
 
     if (!skipWhitespace(s)) {
@@ -744,3 +746,4 @@ std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s) {
 
     return res;
 }
+} // namespace ll::nbt::detail

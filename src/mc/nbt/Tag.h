@@ -32,6 +32,9 @@ enum class SnbtFormat {
 }
 
 class Tag {
+protected:
+    constexpr Tag() = default;
+
 public:
     // Tag inner types define
     enum class Type : uchar {
@@ -68,7 +71,7 @@ public:
 
     LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const;
 
-    LLNDAPI static std::unique_ptr<Tag> parseSnbt(std::string_view);
+    LLNDAPI static std::unique_ptr<Tag> parseSnbt(std::string_view str);
 
 public:
     // NOLINTBEGIN

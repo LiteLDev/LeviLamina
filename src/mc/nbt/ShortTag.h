@@ -16,7 +16,11 @@ public:
 
     [[nodiscard]] constexpr operator short() const { return data; } // NOLINT
 
-    [[nodiscard]] constexpr explicit ShortTag(short value = 0) : data(value) {}
+    template <std::integral T>
+        requires(sizeof(T) == 2)
+    [[nodiscard]] constexpr explicit ShortTag(T value = 0) : data((short)value) {}
+
+    ShortTag operator-() const { return ShortTag{(short)-data}; }
 
 public:
     // NOLINTBEGIN

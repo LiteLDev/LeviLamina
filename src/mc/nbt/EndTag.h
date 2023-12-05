@@ -7,6 +7,8 @@
 
 class EndTag : public ::Tag {
 public:
+    constexpr EndTag() = default;
+
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1EndTag@@UEAA@XZ
     virtual ~EndTag() = default;

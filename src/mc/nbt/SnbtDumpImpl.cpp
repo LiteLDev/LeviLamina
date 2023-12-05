@@ -6,7 +6,9 @@
 #include "mc/nbt/CompoundTag.h"
 #include "nlohmann/json.hpp"
 
+namespace ll::nbt::detail {
 extern bool isTrivialNbtStringChar(char c);
+}
 
 namespace {
 
@@ -46,7 +48,7 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
     bool isTrivial = true;
     if (!static_cast<bool>(format & SnbtFormat::Jsonify)) {
         for (auto c : str) {
-            if (!isTrivialNbtStringChar(c)) {
+            if (!ll::nbt::detail::isTrivialNbtStringChar(c)) {
                 isTrivial = false;
                 break;
             }
@@ -99,6 +101,7 @@ std::string toDumpNumber(std::string str, SnbtFormat format) {
 }
 } // namespace
 
+namespace ll::nbt::detail {
 std::string TypedToSnbt(EndTag&, uchar, SnbtFormat format) {
     std::string res = "null";
 
@@ -389,3 +392,4 @@ std::string TypedToSnbt(IntArrayTag& self, uchar indent, SnbtFormat format) {
 
     return res;
 }
+} // namespace ll::nbt::detail

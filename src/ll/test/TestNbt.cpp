@@ -15,23 +15,18 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
 
     auto nbt = CompoundTag{
         {
+         {"anull", nullptr},
          {"string?", R"(streee _ _o-ix 我超, utf8 "\asfa%"*)##q)$\\"\Q34\\""'':)"_tag},
-         {"num", 1_i},
-         {"nums", 3_s},
-         {"byte", 127_b},
-         {"list",
-             ListTag{
-                 5_b,
-                 ByteTag{true},
-                 ByteTag{false},
-                 ByteTag{-2},
-             }},
+         {"num", 1},
+         {"nums", 3i16},
+         {"byte", 127i8},
+         {"list", ListTag{5_b, ByteTag{true}, ByteTag{false}, -2_b}},
          {"compound",
              CompoundTag{{
-                 {"float", 0.1_f},
-                 {"long", 10000_l},
-                 {"double", 0.3_d},
-                 {"sdouble", 1.0_d},
+                 {"float", 0.1f},
+                 {"long", 10000ui64},
+                 {"double", 0.3},
+                 {"sdouble", 1.0},
              }}},
          {"bytearray", ByteArrayTag{{1, 2, 3, 4, 5, -2, -3, -6}}},
          {"intarray", IntArrayTag{{1, 2, 3, 4, 5, -2, -3, -6}}},
@@ -45,6 +40,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
     auto nbt2 = *CompoundTag::fromSnbt(R"(
 
 {
+    anull = null,
     byte = 127b,
     bytearray = [B;1b, 2b, 3b, 4b, 5b, -2b, -3b, -6b],
     compound = {

@@ -22,6 +22,8 @@ public:
 
     [[nodiscard]] constexpr std::span<int> view() const { return std::span<int>((int*)data.mBuffer.get(), data.mSize); }
 
+    [[nodiscard]] constexpr int& operator[](size_t index) const { return view()[index]; }
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1IntArrayTag@@UEAA@XZ

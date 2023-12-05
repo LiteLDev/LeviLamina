@@ -16,7 +16,11 @@ public:
 
     [[nodiscard]] constexpr operator int() const { return data; } // NOLINT
 
-    [[nodiscard]] constexpr explicit IntTag(int value = 0) : data(value) {}
+    template <std::integral T>
+        requires(sizeof(T) == 4)
+    [[nodiscard]] constexpr explicit IntTag(T value = 0) : data((int)value) {}
+
+    IntTag operator-() const { return IntTag{(int)-data}; }
 
 public:
     // NOLINTBEGIN
