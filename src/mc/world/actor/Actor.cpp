@@ -30,8 +30,6 @@ class EntityContext const& Actor::getEntityContext() const { return ll::memory::
 
 void Actor::refresh() { _sendDirtyActorData(); }
 
-bool Actor::isInstanceOf(ActorType type) const { return ActorClassTree::isInstanceOf(*this, type); }
-
 std::string const& Actor::getTypeName() const { return getActorIdentifier().getCanonicalName(); }
 
 class Vec3 Actor::getFeetPos() const { return CommandUtils::getFeetPos(this); }
@@ -41,18 +39,8 @@ class Vec3 Actor::getHeadPos() const { return getAttachPos(ActorLocation::Head);
 class BlockPos Actor::getFeetBlockPos() const { return {CommandUtils::getFeetPos(this)}; }
 
 bool Actor::isSimulatedPlayer() const {
-    // return getEntityContext().contains<FlagComponent<SimulatedPlayerFlag>>();
-    return *(void**)this == LL_RESOLVE_SYMBOL("??_7SimulatedPlayer@@6B@");
+    return getEntityContext().hasComponent<FlagComponent<SimulatedPlayerFlag>>();
 }
-
-bool Actor::isPlayer(bool allowSimulatedPlayer) const {
-    if (allowSimulatedPlayer) {
-        return hasCategory(ActorCategory::Player);
-    }
-    return hasCategory(ActorCategory::Player) && !isSimulatedPlayer();
-}
-bool Actor::isItemActor() const { return hasCategory(ActorCategory::Item); }
-
 bool Actor::isOnGround() const { return ActorCollision::isOnGround(getEntityContext()); }
 
 void Actor::setOnFire(int num, bool isEffect) {
