@@ -9,12 +9,14 @@ class FloatTag : public ::Tag {
 public:
     float data;
 
-    FloatTag& operator=(float value) {
+    constexpr FloatTag& operator=(float value) {
         data = value;
         return *this;
     }
 
-    operator float() const { return data; }
+    constexpr operator float() const { return data; }// NOLINT
+
+    [[nodiscard]] constexpr explicit FloatTag(float value = 0) : data(value) {}
 
 public:
     // NOLINTBEGIN
@@ -41,12 +43,6 @@ public:
 
     // vIndex: 10, symbol: ?hash@FloatTag@@UEBA_KXZ
     virtual uint64 hash() const;
-
-    // symbol: ??0FloatTag@@QEAA@XZ
-    MCAPI FloatTag();
-
-    // symbol: ??0FloatTag@@QEAA@M@Z
-    MCAPI explicit FloatTag(float);
 
     // NOLINTEND
 };

@@ -9,12 +9,14 @@ class Int64Tag : public ::Tag {
 public:
     int64 data;
 
-    Int64Tag& operator=(int64 value) {
+    constexpr Int64Tag& operator=(int64 value) {
         data = value;
         return *this;
     }
 
-    operator int64() const { return data; }
+    constexpr operator int64() const { return data; } // NOLINT
+
+    [[nodiscard]] constexpr explicit Int64Tag(int64 value = 0) : data(value) {}
 
 public:
     // NOLINTBEGIN
@@ -41,9 +43,6 @@ public:
 
     // vIndex: 10, symbol: ?hash@Int64Tag@@UEBA_KXZ
     virtual uint64 hash() const;
-
-    // symbol: ??0Int64Tag@@QEAA@_J@Z
-    MCAPI explicit Int64Tag(int64);
 
     // NOLINTEND
 };

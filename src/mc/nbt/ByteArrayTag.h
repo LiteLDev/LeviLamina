@@ -10,16 +10,13 @@ class ByteArrayTag : public ::Tag {
 public:
     TagMemoryChunk data{};
 
-    ByteArrayTag& operator=(TagMemoryChunk const& value) {
-        data = value;
-        return *this;
-    }
-
     operator TagMemoryChunk() const { return data; }
 
     ByteArrayTag() = default;
 
-    ByteArrayTag(std::vector<schar> const& arr) : data(std::span{arr}) {}
+    [[nodiscard]] constexpr ByteArrayTag(TagMemoryChunk mem) : data(std::move(mem)) {} // NOLINT
+
+    [[nodiscard]] constexpr ByteArrayTag(std::vector<schar> const& arr) : data(std::span{arr}) {} // NOLINT
 
     std::span<schar> view() const { return std::span<schar>((schar*)data.mBuffer.get(), data.mSize); }
 

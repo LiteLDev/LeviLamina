@@ -9,14 +9,14 @@ class ShortTag : public ::Tag {
 public:
     short data;
 
-    ShortTag& operator=(short value) {
+    constexpr ShortTag& operator=(short value) {
         data = value;
         return *this;
     }
 
-    operator short() const { return data; }
+    [[nodiscard]] constexpr operator short() const { return data; } // NOLINT
 
-    explicit ShortTag(short value) : data(value) {}
+    [[nodiscard]] constexpr explicit ShortTag(short value = 0) : data(value) {}
 
 public:
     // NOLINTBEGIN

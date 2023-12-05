@@ -79,6 +79,11 @@ public:
     Closure* get() const { return (Closure*)closure.get(); }
 
     ~NativeClosure() { detail::releaseNativeClosure(this, closureSize); }
+
+    NativeClosure(NativeClosure const&)                     = delete;
+    NativeClosure(NativeClosure&&) noexcept                 = delete;
+    NativeClosure& operator=(NativeClosure const&) noexcept = delete;
+    NativeClosure& operator=(NativeClosure&&) noexcept      = delete;
 };
 template <class Ret, class... Args>
 class FunctionalClosure : public NativeClosure<Ret, Args...> {

@@ -10,18 +10,17 @@ class IntArrayTag : public ::Tag {
 public:
     TagMemoryChunk data{};
 
-    IntArrayTag& operator=(TagMemoryChunk const& value) {
-        data = value;
-        return *this;
+    [[nodiscard]] constexpr operator TagMemoryChunk() const { return data; } // NOLINT
+
+    [[nodiscard]] constexpr IntArrayTag() = default;
+
+    [[nodiscard]] constexpr IntArrayTag(TagMemoryChunk mem) : data(std::move(mem)) {} // NOLINT
+
+    [[nodiscard]] constexpr IntArrayTag(std::vector<int> const& arr) : data(std::span{arr}) { // NOLINT
+        data.mSize = arr.size();
     }
 
-    operator TagMemoryChunk() const { return data; }
-
-    IntArrayTag() = default;
-
-    IntArrayTag(std::vector<int> const& arr) : data(std::span{arr}) { data.mSize = arr.size(); }
-
-    std::span<int> view() const { return std::span<int>((int*)data.mBuffer.get(), data.mSize); }
+    [[nodiscard]] constexpr std::span<int> view() const { return std::span<int>((int*)data.mBuffer.get(), data.mSize); }
 
 public:
     // NOLINTBEGIN

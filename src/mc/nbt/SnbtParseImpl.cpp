@@ -503,6 +503,52 @@ std::optional<IntArrayTag> parseIntArray(std::string_view& s) {
     return std::nullopt;
 }
 
+std::optional<ByteArrayTag> parseLongArray(std::string_view& s) {
+    if (!skipWhitespace(s)) {
+        return std::nullopt;
+    }
+
+    if (s.front() == ']') {
+        return ByteArrayTag{};
+    }
+
+    auto res = std::vector<int64>{};
+    res.clear();
+
+    while (!s.empty()) {
+
+        if (!skipWhitespace(s)) {
+            return std::nullopt;
+        }
+        if (s.front() == ']') {
+            s.remove_prefix(1);
+            return TagMemoryChunk{std::span{res}};
+        }
+        auto value = parseNumber(s);
+        if (!skipWhitespace(s)) {
+            return std::nullopt;
+        }
+
+        if (!value || !value.value().hold<Int64Tag>()) {
+            return std::nullopt;
+        }
+
+        res.emplace_back(value.value().get<Int64Tag>());
+
+        switch (s.front()) {
+        case ']':
+            s.remove_prefix(1);
+            return TagMemoryChunk{std::span{res}};
+        case ',':
+            s.remove_prefix(1);
+        default:
+            break;
+        }
+    }
+
+    return std::nullopt;
+}
+
 std::optional<CompoundTagVariant> parseList(std::string_view& s) {
     if (s.starts_with("[B;")) {
         s.remove_prefix(3);

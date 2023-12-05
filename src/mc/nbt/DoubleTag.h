@@ -9,14 +9,14 @@ class DoubleTag : public ::Tag {
 public:
     double data;
 
-    DoubleTag& operator=(double value) {
+    constexpr DoubleTag& operator=(double value) {
         data = value;
         return *this;
     }
 
-    operator double() const { return data; }
+    constexpr operator double() const { return data; } // NOLINT
 
-    explicit DoubleTag(double value) : data(value) {}
+    [[nodiscard]] constexpr explicit DoubleTag(double value = 0) : data(value) {}
 
 public:
     // NOLINTBEGIN

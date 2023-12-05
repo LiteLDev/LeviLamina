@@ -9,30 +9,44 @@ public:
     size_t                   mCapacity{0}; // one byte
     std::unique_ptr<uchar[]> mBuffer;
 
-    TagMemoryChunk() = default;
+    [[nodiscard]] constexpr TagMemoryChunk() = default;
 
     template <class T, size_t N>
-    [[nodiscard]] inline TagMemoryChunk(std::span<T, N> v) : mSize(v.size()),
-                                                             mCapacity(mSize * sizeof(T)) {
+    [[nodiscard]] constexpr TagMemoryChunk(std::span<T, N> v) : mSize(v.size()),
+                                                                mCapacity(mSize * sizeof(T)) {
         this->mBuffer = std::make_unique_for_overwrite<uchar[]>(mCapacity);
-        memcpy(this->mBuffer.get(), v.data(), mCapacity);
+        std::copy_n((uchar*)v.data(), mCapacity, this->mBuffer.get());
     }
-    LLNDAPI TagMemoryChunk(TagMemoryChunk const&);
-    LLNDAPI TagMemoryChunk(TagMemoryChunk&&) noexcept;
 
-    LLAPI TagMemoryChunk& operator=(TagMemoryChunk const&);
-    LLAPI TagMemoryChunk& operator=(TagMemoryChunk&&) noexcept;
+    [[nodiscard]] constexpr TagMemoryChunk(TagMemoryChunk const& other)
+    : mSize(other.mSize),
+      mCapacity(other.mCapacity) {
+        this->mBuffer = std::make_unique_for_overwrite<uchar[]>(mCapacity);
+        std::copy_n(other.mBuffer.get(), mCapacity, this->mBuffer.get());
+    }
 
-public:
-    // NOLINTBEGIN
-    // symbol: ?copy@TagMemoryChunk@@QEBA?AU1@XZ
-    MCAPI struct TagMemoryChunk copy() const;
+    [[nodiscard]] constexpr TagMemoryChunk(TagMemoryChunk&& other) noexcept
+    : mSize(other.mSize),
+      mCapacity(other.mCapacity),
+      mBuffer(std::move(other.mBuffer)) {}
 
-    // symbol: ??9TagMemoryChunk@@QEBA_NAEBU0@@Z
-    MCAPI bool operator!=(struct TagMemoryChunk const&) const;
+    constexpr TagMemoryChunk& operator=(TagMemoryChunk const& other) {
+        if (&other == this) {
+            return *this;
+        }
+        *this = TagMemoryChunk{other};
+        return *this;
+    }
 
-    // symbol: ??1TagMemoryChunk@@QEAA@XZ
-    MCAPI ~TagMemoryChunk();
+    constexpr TagMemoryChunk& operator=(TagMemoryChunk&& other) noexcept {
+        if (&other == this) {
+            return *this;
+        }
+        mSize     = other.mSize;
+        mCapacity = other.mCapacity;
+        mBuffer   = std::move(other.mBuffer);
+        return *this;
+    }
 
-    // NOLINTEND
+    constexpr std::span<uchar> view() const { return std::span<uchar>(mBuffer.get(), mCapacity); }
 };

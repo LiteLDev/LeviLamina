@@ -9,12 +9,11 @@ class StringTag : public ::Tag {
 public:
     std::string data;
 
-    StringTag& operator=(std::string const& value) {
-        data = value;
-        return *this;
-    }
+    [[nodiscard]] constexpr StringTag() = default;
 
-    operator std::string() const { return data; }
+    [[nodiscard]] constexpr StringTag(std::string str) : data(std::move(str)) {} // NOLINT
+
+    [[nodiscard]] constexpr operator std::string() const { return data; } // NOLINT
 
 public:
     // NOLINTBEGIN
@@ -41,12 +40,6 @@ public:
 
     // vIndex: 10, symbol: ?hash@StringTag@@UEBA_KXZ
     virtual uint64 hash() const;
-
-    // symbol: ??0StringTag@@QEAA@XZ
-    MCAPI StringTag();
-
-    // symbol: ??0StringTag@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit StringTag(std::string);
 
     // NOLINTEND
 };

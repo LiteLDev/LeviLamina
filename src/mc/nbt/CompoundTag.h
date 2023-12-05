@@ -10,13 +10,18 @@ class CompoundTagVariant;
 
 class CompoundTag : public ::Tag {
 public:
-    using TagMap = std::map<std::string, class CompoundTagVariant, std::less<void>>;
+    using TagMap = std::map<std::string, CompoundTagVariant, std::less<void>>;
 
     TagMap mTags;
 
+    CompoundTag() = default;
+
     CompoundTag(TagMap tags) : mTags(std::move(tags)) {} // NOLINT
+
     CompoundTag(CompoundTag const&)            = default;
     CompoundTag& operator=(CompoundTag const&) = default;
+    CompoundTag(CompoundTag&&)                 = default;
+    CompoundTag& operator=(CompoundTag&&)      = default;
 
     [[nodiscard]] CompoundTagVariant&       operator[](std::string const& index) { return mTags[index]; }
     [[nodiscard]] CompoundTagVariant const& operator[](std::string const& index) const { return mTags.at(index); }
@@ -59,12 +64,6 @@ public:
 
     // vIndex: 10, symbol: ?hash@CompoundTag@@UEBA_KXZ
     virtual uint64 hash() const;
-
-    // symbol: ??0CompoundTag@@QEAA@XZ
-    MCAPI CompoundTag();
-
-    // symbol: ??0CompoundTag@@QEAA@$$QEAV0@@Z
-    MCAPI CompoundTag(class CompoundTag&&);
 
     // symbol: ?append@CompoundTag@@QEAAXAEBV1@@Z
     MCAPI void append(class CompoundTag const&);
@@ -158,9 +157,6 @@ public:
 
     // symbol: ?isEmpty@CompoundTag@@QEBA_NXZ
     MCAPI bool isEmpty() const;
-
-    // symbol: ??4CompoundTag@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class CompoundTag& operator=(class CompoundTag&&);
 
     // symbol: ?put@CompoundTag@@QEAAAEAVTag@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV2@@Z
     MCAPI class Tag& put(std::string, class Tag&&);

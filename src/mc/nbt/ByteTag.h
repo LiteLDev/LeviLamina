@@ -9,16 +9,16 @@ class ByteTag : public ::Tag {
 public:
     schar data;
 
-    ByteTag& operator=(schar value) {
+    constexpr ByteTag& operator=(schar value) {
         data = value;
         return *this;
     }
 
-    operator schar() const { return data; }
+    constexpr operator schar() const { return data; } // NOLINT
 
-    operator bool() const { return data != 0; }
+    [[nodiscard]] constexpr explicit ByteTag(int value = 0) : data((schar)value) {}
 
-    explicit ByteTag(int value) : data((schar)value) {}
+    constexpr operator bool() const { return data != 0; } // NOLINT
 
 public:
     // NOLINTBEGIN
@@ -45,12 +45,6 @@ public:
 
     // vIndex: 10, symbol: ?hash@ByteTag@@UEBA_KXZ
     virtual uint64 hash() const;
-
-    // symbol: ??0ByteTag@@QEAA@XZ
-    MCAPI ByteTag();
-
-    // symbol: ??0ByteTag@@QEAA@E@Z
-    MCAPI explicit ByteTag(uchar);
 
     // NOLINTEND
 };

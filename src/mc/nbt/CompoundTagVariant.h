@@ -22,18 +22,18 @@ class CompoundTag;
 class CompoundTagVariant {
 public:
     using Variant = std::variant<
-        class EndTag,
-        class ByteTag,
-        class ShortTag,
-        class IntTag,
-        class Int64Tag,
-        class FloatTag,
-        class DoubleTag,
-        class ByteArrayTag,
-        class StringTag,
-        class ListTag,
-        class CompoundTag,
-        class IntArrayTag>;
+        EndTag,
+        ByteTag,
+        ShortTag,
+        IntTag,
+        Int64Tag,
+        FloatTag,
+        DoubleTag,
+        ByteArrayTag,
+        StringTag,
+        ListTag,
+        CompoundTag,
+        IntArrayTag>;
 
     Variant mTagStorage;
 
@@ -70,7 +70,9 @@ public:
 
     std::unique_ptr<Tag> toUnique() const {
         return std::visit(
-            [](auto&& val) -> std::unique_ptr<Tag> { return std::make_unique<std::decay_t<decltype(val)>>(val); },
+            [](auto&& val) -> std::unique_ptr<Tag> {
+                return std::make_unique<std::decay_t<decltype(val)>>(std::forward<decltype(val)>(val));
+            },
             mTagStorage
         );
     }

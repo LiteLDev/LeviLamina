@@ -50,8 +50,8 @@ public:
     template <std::derived_from<Tag> T>
     [[nodiscard]] constexpr ListTag(std::initializer_list<T> tags) : ListTag(std::vector<T>{std::move(tags)}) {}
 
-    [[nodiscard]] Tag&       operator[](size_t index) { return *mList[index]; }
-    [[nodiscard]] Tag const& operator[](size_t index) const { return *mList[index]; }
+    [[nodiscard]] constexpr Tag&       operator[](size_t index) { return *mList[index]; }
+    [[nodiscard]] constexpr Tag const& operator[](size_t index) const { return *mList[index]; }
 
 public:
     // NOLINTBEGIN
