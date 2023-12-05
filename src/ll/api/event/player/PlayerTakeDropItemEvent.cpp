@@ -17,7 +17,7 @@ LL_TYPED_INSTANCE_HOOK(
     int    i0,
     int    i1
 ) {
-    if (itemActor.isItemActor()) {
+    if (itemActor.isType(ActorType::ItemEntity)) {
         auto ev = PlayerTakeDropItemEvent(*this, *(ItemActor*)(&itemActor));
         EventBus::getInstance().publish(ev);
         if (ev.isCancelled()) {
