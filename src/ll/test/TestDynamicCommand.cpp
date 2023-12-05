@@ -297,6 +297,7 @@ static void setupEchoCommand() {
     });
     DynamicCommand::setup(std::move(command));
 }
+
 static void setupCrashCommand() {
     auto command = DynamicCommand::createCommand("crash", "crash", CommandPermissionLevel::GameDirectors);
     command->addOverload();
@@ -390,6 +391,99 @@ static void setupTimingCommand() {
     DynamicCommand::setup(std::move(command));
 }
 
+
+#include "mc/network/ServerNetworkHandler.h"
+#include "mc/server/SimulatedPlayer.h"
+#include "mc/world/actor/Actor.h"
+
+static void setupCreateSimulatePlayerCommand() {
+    auto command =
+        DynamicCommand::createCommand("createplayer", "createSimulatePlayer", CommandPermissionLevel::GameDirectors);
+
+    auto name = command->mandatory("name", ParamType::String);
+    auto num  = command->optional("number", ParamType::Int);
+
+    command->setAlias("csp");
+    command->addOverload({name, num});
+    command->setCallback([](DynamicCommand const&,
+                            CommandOrigin const&                                     ori,
+                            CommandOutput&                                           output,
+                            std::unordered_map<std::string, DynamicCommand::Result>& results) {
+        auto name = results["name"].getRaw<std::string>();
+        auto num  = results["number"];
+
+        auto createAndInitializePlayer = [&](const std::string& playerName) {
+            std::random_device                      rd;
+            std::mt19937_64                         eng(rd());
+            std::uniform_int_distribution<uint64_t> distr;
+            uint64_t                                random_number = distr(eng);
+            OwnerPtrT<EntityRefTraits>              ownerPtr = ll::Global<ServerNetworkHandler>->createSimulatedPlayer(
+                playerName,
+                '-' + std::to_string(HashedString::computeHash(playerName) ^ random_number)
+            );
+            auto player = ownerPtr.tryUnwrap<SimulatedPlayer>();
+            if (!player) return false;
+
+            player->postLoad(true);
+            Level& level = player->getLevel();
+            level.addUser(std::move(ownerPtr));
+            player->setRespawnReady(Vec3(0, 32768, 0));
+            player->setLocalPlayerAsInitialized();
+            player->doInitialSpawn();
+
+            Vec3 pos = {0, 0, 0};
+            if (ori.getEntity()) {
+                pos = ori.getEntity()->getFeetPos();
+                player->teleport(pos, ori.getEntity()->getDimensionId());
+            }
+            return true;
+        };
+
+        if (num.isSet) {
+            auto number       = num.getRaw<int>();
+            auto successCount = 0;
+
+            for (int i = 0; i < number; i++) {
+                if (createAndInitializePlayer(name)) successCount++;
+            }
+
+            if (successCount == 0) {
+                output.error("createSimulatePlayer {} failed", name);
+                return;
+            }
+            output.success("createSimulatePlayer {} * {}", name, successCount);
+            return;
+        }
+        if (!createAndInitializePlayer(name)) {
+            output.error("createSimulatePlayer {} failed", name);
+            return;
+        }
+        output.success("createSimulatePlayer {}", name);
+    });
+    DynamicCommand::setup(std::move(command));
+}
+
+static void kickAllSimulatePlayerCommand() {
+    auto command =
+        DynamicCommand::createCommand("kickallsimulateplayer", "kickAllSimulatePlayer", CommandPermissionLevel::Any);
+    command->setAlias("kasp");
+    command->addOverload();
+    command->setCallback([](DynamicCommand const&,
+                            CommandOrigin const&,
+                            CommandOutput& output,
+                            std::unordered_map<std::string, DynamicCommand::Result>&) {
+        ll::Global<Level>->forEachPlayer([&](Player& player) {
+            if (*(void**)&player == LL_RESOLVE_SYMBOL("??_7SimulatedPlayer@@6B@")) {
+                player.remove();
+                player.disconnect("");
+            }
+            return true;
+        });
+        output.success("kickAllSimulatePlayer");
+    });
+    DynamicCommand::setup(std::move(command));
+}
+
 static bool reg = [] {
     using namespace ll::event;
     EventBus::getInstance().emplaceListener<command::SetupCommandEvent>([](command::SetupCommandEvent&) {
@@ -401,6 +495,8 @@ static bool reg = [] {
         setupEchoCommand();
         setupCrashCommand();
         setupTimingCommand();
+        setupCreateSimulatePlayerCommand();
+        kickAllSimulatePlayerCommand();
     });
     return true;
 }();
