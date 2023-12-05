@@ -31,7 +31,7 @@ BlockSource::getEntities(class AABB const& range, float extendDistance, ActorTyp
             for (auto& weakEntityRef : chunk->getChunkEntities()) {
                 auto* actor = weakEntityRef.tryUnwrap<Actor>();
                 if (actor != nullptr
-                    && (actorType == ActorType::TypeMask || actor->isInstanceOf(actorType) != ignoreType)
+                    && (actorType == ActorType::TypeMask || actor->isType(actorType) != ignoreType)
                     && range.intersects(actor->getAABB())) {
                     entities.emplace_back(actor);
                 }
