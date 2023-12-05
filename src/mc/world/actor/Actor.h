@@ -55,8 +55,6 @@ public:
 
     LLAPI void refresh();
 
-    LLNDAPI bool isInstanceOf(::ActorType type) const;
-
     LLNDAPI std::string const& getTypeName() const;
 
     LLNDAPI class Vec3 getFeetPos() const;
@@ -66,8 +64,7 @@ public:
     LLNDAPI class BlockPos getFeetBlockPos() const;
 
     LLNDAPI bool isSimulatedPlayer() const;
-    LLNDAPI bool isPlayer(bool allowSimulatedPlayer = true) const;
-    LLNDAPI bool isItemActor() const;
+
     LLNDAPI bool isOnGround() const;
 
     LLAPI void setOnFire(int time, bool isEffect = true);
