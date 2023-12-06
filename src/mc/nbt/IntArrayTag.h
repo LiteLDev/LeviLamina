@@ -14,7 +14,10 @@ public:
 
     [[nodiscard]] constexpr IntArrayTag() = default;
 
-    [[nodiscard]] constexpr IntArrayTag(TagMemoryChunk mem) : data(std::move(mem)) {} // NOLINT
+    template <class T>
+    [[nodiscard]] constexpr IntArrayTag(std::in_place_type_t<T>, TagMemoryChunk mem) : data(std::move(mem)) {
+        data.mSize = (data.mSize * sizeof(T)) / sizeof(int);
+    }
 
     [[nodiscard]] constexpr IntArrayTag(std::vector<int> const& arr) : data(std::span{arr}) { // NOLINT
         data.mSize = arr.size();
@@ -23,6 +26,8 @@ public:
     [[nodiscard]] constexpr std::span<int> view() const { return std::span<int>((int*)data.mBuffer.get(), data.mSize); }
 
     [[nodiscard]] constexpr int& operator[](size_t index) const { return view()[index]; }
+
+    [[nodiscard]] constexpr size_t size() const { return data.mSize; }
 
 public:
     // NOLINTBEGIN

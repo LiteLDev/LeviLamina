@@ -9,15 +9,18 @@ class IntTag : public ::Tag {
 public:
     int data;
 
+    template <std::integral T>
     constexpr IntTag& operator=(int value) {
-        data = value;
+        data = (int)value;
         return *this;
     }
 
-    [[nodiscard]] constexpr operator int() const { return data; } // NOLINT
+    template <std::integral T>
+    constexpr operator T() const {
+        return (T)data;
+    }
 
     template <std::integral T>
-        requires(sizeof(T) == 4)
     [[nodiscard]] constexpr explicit IntTag(T value = 0) : data((int)value) {}
 
     IntTag operator-() const { return IntTag{(int)-data}; }

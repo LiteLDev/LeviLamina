@@ -524,7 +524,7 @@ std::optional<ByteArrayTag> parseLongArray(std::string_view& s) {
         }
         if (s.front() == ']') {
             s.remove_prefix(1);
-            return TagMemoryChunk{std::span{res}};
+            return ByteArrayTag{std::in_place_type<int64>, std::span{res}};
         }
         auto value = parseNumber(s);
         if (!skipWhitespace(s)) {
@@ -540,7 +540,7 @@ std::optional<ByteArrayTag> parseLongArray(std::string_view& s) {
         switch (s.front()) {
         case ']':
             s.remove_prefix(1);
-            return TagMemoryChunk{std::span{res}};
+            return ByteArrayTag{std::in_place_type<int64>, std::span{res}};
         case ',':
             s.remove_prefix(1);
         default:

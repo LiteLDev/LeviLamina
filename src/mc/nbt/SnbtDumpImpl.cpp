@@ -44,28 +44,39 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
     std::string res;
 
     bool base64 = false;
-
-    bool isTrivial = true;
-    if (!static_cast<bool>(format & SnbtFormat::Jsonify)) {
-        for (auto c : str) {
-            if (!ll::nbt::detail::isTrivialNbtStringChar(c)) {
+    if (str.empty()) {
+        res = "\"\"";
+    } else {
+        bool isTrivial = true;
+        if (!static_cast<bool>(format & SnbtFormat::Jsonify)) {
+            if (str[0] == '-' || isdigit(str[0])) {
                 isTrivial = false;
-                break;
+            } else {
+                for (auto c : str) {
+                    if (!ll::nbt::detail::isTrivialNbtStringChar(c)) {
+                        isTrivial = false;
+                        break;
+                    }
+                }
             }
+        } else {
+            isTrivial = false;
         }
-    } else {
-        isTrivial = false;
-    }
-    if (isTrivial) {
-        res = str;
-    } else {
-        try {
-            res = nlohmann::json{str}
-                      .dump(-1, ' ', (bool)(format & SnbtFormat::ForceAscii), nlohmann::json::error_handler_t::strict);
-            res = res.substr(1, res.size() - 2);
-        } catch (...) {
-            base64 = true;
-            res    = "\"" + ll::base64::encode(str) + "\"";
+        if (isTrivial) {
+            res = str;
+        } else {
+            try {
+                res = nlohmann::json{str}.dump(
+                    -1,
+                    ' ',
+                    (bool)(format & SnbtFormat::ForceAscii),
+                    nlohmann::json::error_handler_t::strict
+                );
+                res = res.substr(1, res.size() - 2);
+            } catch (...) {
+                base64 = true;
+                res    = "\"" + ll::base64::encode(str) + "\"";
+            }
         }
     }
 

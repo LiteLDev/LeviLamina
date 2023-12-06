@@ -20,6 +20,8 @@
 #include "ll/api/utils/WinUtils.h"
 #include "mc/server/commands/standard/FillCommand.h"
 
+#include "mc/nbt/CompoundTag.h"
+
 template <class T>
 
 class TestClass {
@@ -73,6 +75,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     auto helloReflection = TestClass<int>{};
 
     // ll::config::saveConfig(helloReflection, "plugins/Test/config/testconfig.json");
+
+    ll::logger.debug("reflection NBT: {}", ll::reflection::serialize<CompoundTagVariant>(helloReflection).dump(SnbtFormat::PrettyConsolePrint));
 
     ll::logger.debug("0x{:X}", (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute));
     ll::logger.debug("0x{:X}", (uintptr_t)ll::win_utils::getImageRange().data());

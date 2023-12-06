@@ -71,8 +71,9 @@ public:
         case Tag::Type::IntArray:
             mTagStorage = std::move((IntArrayTag&)*tag);
         case Tag::Type::End:
-        default:
             mTagStorage = std::move((EndTag&)*tag);
+        default:
+            std::unreachable();
         }
     }
     [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag> const& tag) : CompoundTagVariant(std::move(tag->copy())) {}
@@ -97,10 +98,58 @@ public:
 
     [[nodiscard]] inline CompoundTagVariant(std::string s) : mTagStorage(StringTag{std::move(s)}) {} // NOLINT
 
-    [[nodiscard]] Tag::Type index() const { return (Tag::Type)mTagStorage.index(); }
+    [[nodiscard]] inline CompoundTagVariant(std::string_view s) : mTagStorage(StringTag{std::string(s)}) {} // NOLINT
+
+    [[nodiscard]] Tag::Type index() const noexcept { return (Tag::Type)mTagStorage.index(); }
     template <std::derived_from<Tag> T>
-    [[nodiscard]] bool hold() const {
+    [[nodiscard]] bool hold() const noexcept {
         return std::holds_alternative<T>(mTagStorage);
+    }
+
+    [[nodiscard]] bool is_array() const noexcept { return hold<ListTag>(); }
+    [[nodiscard]] bool is_binary() const noexcept { return hold<ByteArrayTag>() || hold<IntArrayTag>(); }
+    [[nodiscard]] bool is_boolean() const noexcept { return hold<ByteTag>(); }
+    [[nodiscard]] bool is_null() const noexcept { return hold<EndTag>(); }
+    [[nodiscard]] bool is_number_float() const noexcept { return hold<FloatTag>() || hold<DoubleTag>(); }
+    [[nodiscard]] bool is_number_integer() const noexcept {
+        return hold<ByteTag>() || hold<ShortTag>() || hold<IntTag>() || hold<Int64Tag>();
+    }
+    [[nodiscard]] bool is_number() const noexcept { return is_number_float() || is_number_integer(); }
+    [[nodiscard]] bool is_object() const noexcept { return hold<CompoundTag>(); }
+    [[nodiscard]] bool is_string() const noexcept { return hold<StringTag>(); }
+    [[nodiscard]] bool is_primitive() const noexcept { return is_null() || is_string() || is_number() || is_binary(); }
+    [[nodiscard]] bool is_structured() const noexcept { return is_array() || is_object(); }
+
+    [[nodiscard]] bool contains(std::string_view key) const noexcept {
+        if (is_object()) {
+            return get<CompoundTag>().contains(key);
+        }
+        return false;
+    }
+
+    [[nodiscard]] size_t size() const noexcept {
+        switch (index()) {
+        case Tag::Type::Byte:
+        case Tag::Type::Short:
+        case Tag::Type::Int:
+        case Tag::Type::Int64:
+        case Tag::Type::Float:
+        case Tag::Type::Double:
+        case Tag::Type::String:
+            return 1;
+        case Tag::Type::List:
+            return get<ListTag>().size();
+        case Tag::Type::Compound:
+            return get<CompoundTag>().size();
+        case Tag::Type::IntArray:
+            return get<IntArrayTag>().size();
+        case Tag::Type::ByteArray:
+            return get<ByteArrayTag>().size();
+        case Tag::Type::End:
+            return 0;
+        default:
+            std::unreachable();
+        }
     }
 
     template <std::derived_from<Tag> T>
@@ -129,24 +178,48 @@ public:
         } else if (hold<ByteArrayTag>()) {
             return get<ByteArrayTag>()[index];
         } else {
-            throw std::range_error("tag not hold a integer index range");
+            throw std::range_error("tag not hold an array");
         }
     }
 
     [[nodiscard]] CompoundTagVariant& operator[](std::string const& index) {
-        if (!hold<CompoundTag>()) {
+        if (hold<EndTag>()) {
             mTagStorage = CompoundTag{};
+        }
+        if (!hold<CompoundTag>()) {
+            throw std::range_error("tag not hold an object");
         }
         return get<CompoundTag>()[index];
     }
 
-    std::unique_ptr<Tag> toUnique() const {
+    std::unique_ptr<Tag> toUnique() const& {
+        return std::visit(
+            [](auto& val) -> std::unique_ptr<Tag> { return std::make_unique<std::decay_t<decltype(val)>>(val); },
+            mTagStorage
+        );
+    }
+
+    std::unique_ptr<Tag> toUnique() && {
         return std::visit(
             [](auto&& val) -> std::unique_ptr<Tag> {
-                return std::make_unique<std::decay_t<decltype(val)>>(std::forward<decltype(val)>(val));
+                return std::make_unique<std::decay_t<decltype(val)>>(std::move(val));
             },
             mTagStorage
         );
+    }
+
+    std::string dump(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const {
+        return toUnique()->toSnbt(snbtFormat, indent);
+    }
+
+    void push_back(CompoundTagVariant val) {
+        if (hold<EndTag>()) {
+            mTagStorage = ListTag{};
+        }
+        if (!hold<ListTag>()) {
+            throw std::range_error("tag not hold an array");
+        }
+        get<ListTag>().add(std::move(val).toUnique());
     }
 };
 

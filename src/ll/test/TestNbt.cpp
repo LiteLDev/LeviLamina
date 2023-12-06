@@ -63,6 +63,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
     some = {
         new = {              ; hi
             compound = {
+                anull = null,
                 "byte" = 127b
                 "bytearray" = [B;1b, 2b, 3b, 4b, 5b, -2b, -3b, -6b],  // orld   /**/ /*     34t */
                 "compound" = {
@@ -125,5 +126,5 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
     using namespace ll::string_utils;
 
     ll::logger.debug("\n{}", replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console)));
-    ll::logger.debug("\n{}", (nbt.toSnbt(SnbtFormat::Colored)));
+    ll::logger.debug("\n{}", (nbt2.toSnbt(SnbtFormat::Colored)));
 }

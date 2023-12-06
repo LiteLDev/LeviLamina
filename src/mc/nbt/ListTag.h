@@ -53,6 +53,8 @@ public:
     [[nodiscard]] constexpr std::unique_ptr<Tag>&       operator[](size_t index) { return mList[index]; }
     [[nodiscard]] constexpr std::unique_ptr<Tag> const& operator[](size_t index) const { return mList[index]; }
 
+    [[nodiscard]] constexpr size_t size() const { return mList.size(); }
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1ListTag@@UEAA@XZ
@@ -124,9 +126,6 @@ public:
 
     // symbol: ?popBack@ListTag@@QEAAXXZ
     MCAPI void popBack();
-
-    // symbol: ?size@ListTag@@QEBAHXZ
-    MCAPI int size() const;
 
     // NOLINTEND
 };

@@ -9,15 +9,18 @@ class Int64Tag : public ::Tag {
 public:
     int64 data;
 
+    template <std::integral T>
     constexpr Int64Tag& operator=(int64 value) {
-        data = value;
+        data = (int64)value;
         return *this;
     }
 
-    constexpr operator int64() const { return data; } // NOLINT
+    template <std::integral T>
+    constexpr operator T() const {
+        return (T)data;
+    }
 
     template <std::integral T>
-        requires(sizeof(T) == 8)
     [[nodiscard]] constexpr explicit Int64Tag(T value = 0) : data((int64)value) {}
 
     Int64Tag operator-() const { return Int64Tag{(int64)-data}; }

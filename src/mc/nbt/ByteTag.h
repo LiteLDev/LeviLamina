@@ -9,18 +9,19 @@ class ByteTag : public ::Tag {
 public:
     schar data;
 
-    constexpr ByteTag& operator=(schar value) {
-        data = value;
+    template <std::integral T>
+    constexpr ByteTag& operator=(T value) {
+        data = (schar)value;
         return *this;
     }
 
-    constexpr operator schar() const { return data; } // NOLINT
+    template <std::integral T>
+    constexpr operator T() const {
+        return (T)data;
+    }
 
     template <std::integral T>
-        requires(sizeof(T) == 1)
     [[nodiscard]] constexpr explicit ByteTag(T value = 0) : data((schar)value) {}
-
-    constexpr explicit operator bool() const { return data != 0; }
 
     ByteTag operator-() const { return ByteTag{(schar)-data}; }
 

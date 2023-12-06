@@ -9,15 +9,18 @@ class ShortTag : public ::Tag {
 public:
     short data;
 
-    constexpr ShortTag& operator=(short value) {
-        data = value;
+    template <std::integral T>
+    constexpr ShortTag& operator=(T value) {
+        data = (short)value;
         return *this;
     }
 
-    [[nodiscard]] constexpr operator short() const { return data; } // NOLINT
+    template <std::integral T>
+    constexpr operator T() const {
+        return (T)data;
+    }
 
     template <std::integral T>
-        requires(sizeof(T) == 2)
     [[nodiscard]] constexpr explicit ShortTag(T value = 0) : data((short)value) {}
 
     ShortTag operator-() const { return ShortTag{(short)-data}; }

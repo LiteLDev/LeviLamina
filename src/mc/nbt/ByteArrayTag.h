@@ -14,13 +14,18 @@ public:
 
     ByteArrayTag() = default;
 
-    [[nodiscard]] constexpr ByteArrayTag(TagMemoryChunk mem) : data(std::move(mem)) {} // NOLINT
+    template <class T>
+    [[nodiscard]] constexpr ByteArrayTag(std::in_place_type_t<T>, TagMemoryChunk mem) : data(std::move(mem)) {
+        data.mSize = data.mSize * sizeof(T);
+    }
 
     [[nodiscard]] constexpr ByteArrayTag(std::vector<schar> const& arr) : data(std::span{arr}) {} // NOLINT
 
     std::span<schar> view() const { return std::span<schar>((schar*)data.mBuffer.get(), data.mSize); }
 
     [[nodiscard]] constexpr schar& operator[](size_t index) const { return view()[index]; }
+
+    [[nodiscard]] constexpr size_t size() const { return data.mSize; }
 
 public:
     // NOLINTBEGIN
