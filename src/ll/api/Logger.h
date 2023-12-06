@@ -1,3 +1,4 @@
+#pragma once
 /**
  *
  * @brief Logger System - Log text to console, file and player easily
@@ -12,8 +13,6 @@
  * logger.error("Error! Code:{}", -1);             // fmt Format
  * @endcode
  */
-
-#pragma once
 
 #include "ll/api/base/Concepts.h"
 #include "ll/api/i18n/I18nAPI.h"

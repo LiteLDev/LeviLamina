@@ -14,6 +14,8 @@ def format_file(file):
     with open(file, "w") as f:
         if not content.endswith("\n"):
             content += "\n"
+        if file.endswith(".h") and not content.startswith("#pragma once"):
+            content = "#pragma once\n" + content
         f.write(content)
         f.close()
 
