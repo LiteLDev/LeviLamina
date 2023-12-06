@@ -1,46 +1,23 @@
 
 #include "MoreDimensionManager.h"
 
+#include "ll/api/dimension/FakeDimensionID.h"
 #include "ll/api/dimension/MoreDimension.h"
+#include "ll/api/dimension/MoreDimensionConfig.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/GlobalService.h"
 #include "mc/math/Vec3.h"
+#include "mc/world/level/Level.h"
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/level/dimension/VanillaDimensionFactory.h"
 #include "mc/world/level/dimension/VanillaDimensions.h"
+#include "mc/world/level/storage/LevelData.h"
 
-void MoreDimensionManager::init() {}
-
-bool MoreDimensionManager::AddDimension(
-    std::string_view            dimensionName,
-    uint                        seed,
-    AutomaticID<Dimension, int> dimensionId
-) {
-    if (MoreDimensionMap.find(dimensionId.id) != MoreDimensionMap.end()) {
-        loggerMoreDimMag.error("The Dimension Id Already exists. Id: {}", dimensionId.id);
-        return false;
-    }
-    if (dimensionId == VanillaDimensions::Overworld || dimensionId == VanillaDimensions::Nether
-        || dimensionId == VanillaDimensions::TheEnd) {
-        loggerMoreDimMag.error("Cannot use vanilla dimension id, Id: {}", dimensionId.id);
-        return false;
-    }
-    MoreDimensionMap.emplace(dimensionId.id, DimensionInfo(dimensionName, dimensionId, seed));
-    ll::memory::modify(VanillaDimensions::$DimensionMap(), [&](auto& dimMap) {
-        loggerMoreDimMag.debug("Add new dimension");
-        dimMap.mRight.insert(std::make_pair(dimensionName, dimensionId));
-        dimMap.mLeft.insert(std::make_pair(dimensionId, dimensionName));
-    });
-    ll::memory::modify(VanillaDimensions::Undefined, [&](auto& dimId) {
-        dimId.id += 1;
-        loggerMoreDimMag.debug("Set VanillaDimensions::Undefined to {}", dimId.id);
-    });
-    return true;
-}
-
-LL_AUTO_STATIC_HOOK(
+namespace moredimension::hooklist {
+LL_TYPED_STATIC_HOOK(
     VanillaDimensionsConverHook,
     HookPriority::Normal,
+    VanillaDimensions,
     VanillaDimensions::convertPointBetweenDimensions,
     bool,
     Vec3 const&                    oldPos,
@@ -57,9 +34,10 @@ LL_AUTO_STATIC_HOOK(
 using BedResult_Dim = Bedrock::Result<DimensionType>;
 using BedResult_int = Bedrock::Result<int>&;
 
-LL_AUTO_STATIC_HOOK(
+LL_TYPED_STATIC_HOOK(
     VanillaDimensionsFromSerializedIntHook,
     HookPriority::Normal,
+    VanillaDimensions,
     "?fromSerializedInt@VanillaDimensions@@SA?AV?$Result@V?$AutomaticID@VDimension@@H@@Verror_code@std@@@Bedrock@@$$"
     "QEAV?$Result@HVerror_code@std@@@3@@Z",
     BedResult_Dim,
@@ -69,9 +47,10 @@ LL_AUTO_STATIC_HOOK(
     return Bedrock::Result<DimensionType>(dim.value());
 };
 
-LL_AUTO_STATIC_HOOK(
+LL_TYPED_STATIC_HOOK(
     VanillaDimensionsFromSerializedIntHookI,
     HookPriority::Normal,
+    VanillaDimensions,
     "?fromSerializedInt@VanillaDimensions@@SA?AV?$AutomaticID@VDimension@@H@@H@Z",
     DimensionType,
     int dimId
@@ -80,9 +59,10 @@ LL_AUTO_STATIC_HOOK(
     return {dimId};
 }
 
-LL_AUTO_STATIC_HOOK(
+LL_TYPED_STATIC_HOOK(
     VanillaDimensionsToSerializedIntHook,
     HookPriority::Normal,
+    VanillaDimensions,
     VanillaDimensions::toSerializedInt,
     int,
     DimensionType const& dim
@@ -91,9 +71,10 @@ LL_AUTO_STATIC_HOOK(
     return dim.id;
 }
 
-LL_AUTO_STATIC_HOOK(
+LL_TYPED_STATIC_HOOK(
     VanillaDimensionsToStringHook,
     HookPriority::Normal,
+    VanillaDimensions,
     VanillaDimensions::toString,
     std::string const,
     DimensionType const& dim
@@ -104,7 +85,7 @@ LL_AUTO_STATIC_HOOK(
 
 // Registry New Dimension Hook
 using fact = OwnerPtrFactory<Dimension, ILevel&, Scheduler&>;
-LL_AUTO_STATIC_HOOK(
+LL_STATIC_HOOK(
     RegistryDimensionSercive,
     HookPriority::Normal,
     VanillaDimensionFactory::registerDimensionTypes,
@@ -126,8 +107,83 @@ LL_AUTO_STATIC_HOOK(
 }
 
 // registry dimensoin when in ll, must reload Dimension::getWeakRef
-LL_AUTO_TYPED_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimension, &Dimension::getWeakRef, WeakRefT<SharePtrRefTraits<Dimension>>) {
+LL_TYPED_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimension, &Dimension::getWeakRef, WeakRefT<SharePtrRefTraits<Dimension>>) {
     if (this->getDimensionId() > 2 && this->getDimensionId() != VanillaDimensions::Undefined.id)
         return weak_from_this();
     return origin();
 };
+
+void hookAll() {
+    VanillaDimensionsConverHook::hook();
+    VanillaDimensionsFromSerializedIntHook::hook();
+    VanillaDimensionsFromSerializedIntHookI::hook();
+    VanillaDimensionsToSerializedIntHook::hook();
+    VanillaDimensionsToStringHook::hook();
+    RegistryDimensionSercive::hook();
+    DimensionGetWeakRefHook::hook();
+}
+void unhookAll() {
+    VanillaDimensionsConverHook::unhook();
+    VanillaDimensionsFromSerializedIntHook::unhook();
+    VanillaDimensionsFromSerializedIntHookI::unhook();
+    VanillaDimensionsToSerializedIntHook::unhook();
+    VanillaDimensionsToStringHook::unhook();
+    RegistryDimensionSercive::unhook();
+    DimensionGetWeakRefHook::unhook();
+}
+} // namespace moredimension::hooklist
+
+MoreDimensionManager::MoreDimensionManager() {
+    MoreDimensionConfig::loadConfigFile();
+    if (!MoreDimensionConfig::dimConfig.dimensionList.empty()) {
+        for (auto& dim : MoreDimensionConfig::dimConfig.dimensionList) {
+            this->MoreDimensionMap.emplace(dim.second.id, DimensionInfo(dim.first, dim.second.id, dim.second.seed));
+        }
+        moredimension::hooklist::hookAll();
+    }
+};
+
+MoreDimensionManager& MoreDimensionManager::getInstance() {
+    static MoreDimensionManager instance{};
+    return instance;
+}
+
+bool MoreDimensionManager::AddDimension(DimensionInfo& dimInfo) {
+    if (MoreDimensionMap.find(dimInfo.id) != MoreDimensionMap.end()) {
+        loggerMoreDimMag.error("The Dimension Id Already exists. Id: {}", dimInfo.id.id);
+        return false;
+    }
+    if (dimInfo.id == VanillaDimensions::Overworld || dimInfo.id == VanillaDimensions::Nether
+        || dimInfo.id == VanillaDimensions::TheEnd) {
+        loggerMoreDimMag.error("Cannot use vanilla dimension id, Id: {}", dimInfo.id.id);
+        return false;
+    }
+    MoreDimensionMap.emplace(dimInfo.id.id, dimInfo);
+    MoreDimensionConfig::dimConfig.dimensionList.emplace(
+        dimInfo.name,
+        MoreDimensionConfig::Config::dimensionInfo{dimInfo.id.id, dimInfo.seed, dimInfo.generatorType}
+    );
+
+    // registry create dimension function
+    ll::Global<Level>->getDimensionFactory().registerFactory(
+        dimInfo.name,
+        [&](ILevel& ilevel, Scheduler& scheduler) -> OwnerPtrT<SharePtrRefTraits<Dimension>> {
+            loggerMoreDimMag.debug("Create dimension, name: {}, id: {}", dimInfo.name, dimInfo.id.id);
+            return std::make_shared<MoreDimension>(ilevel, scheduler, dimInfo);
+        }
+    );
+
+    // modify default dimension map
+    ll::memory::modify(VanillaDimensions::$DimensionMap(), [&](auto& dimMap) {
+        loggerMoreDimMag.debug("Add new dimension to DimensionMap");
+        dimMap.mRight.insert(std::make_pair(dimInfo.name, dimInfo.id));
+        dimMap.mLeft.insert(std::make_pair(dimInfo.id, dimInfo.name));
+    });
+    // modify default Undefined dimension id
+    ll::memory::modify(VanillaDimensions::Undefined, [&](auto& dimId) {
+        dimId.id += 1;
+        loggerMoreDimMag.debug("Set VanillaDimensions::Undefined to {}", dimId.id);
+    });
+
+    return true;
+}
