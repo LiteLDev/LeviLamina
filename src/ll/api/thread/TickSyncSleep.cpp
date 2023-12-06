@@ -2,13 +2,13 @@
 #include "ll/api/memory/Hook.h"
 #include "mc/server/ServerLevel.h"
 
-namespace ll::chrono::detail {
+namespace ll::thread::detail {
 std::mutex         listMutex;
 std::atomic_size_t tickListSize{};
 std::atomic_bool   hooked{};
 std::vector<std::variant<
-    std::reference_wrapper<TickSyncSleep<ServerClock>>,
-    std::reference_wrapper<TickSyncSleep<GameTimeClock>>>>
+    std::reference_wrapper<TickSyncSleep<chrono::ServerClock>>,
+    std::reference_wrapper<TickSyncSleep<chrono::GameTimeClock>>>>
     tickList;
 LL_AUTO_TYPED_INSTANCE_HOOK(
     TickSyncSleepInterrruptHook,
