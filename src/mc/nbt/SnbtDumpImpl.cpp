@@ -107,7 +107,7 @@ std::string TypedToSnbt(EndTag&, uchar, SnbtFormat format) {
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
-            res = applyTextStyle(fmt::fg(fmt::color::dodger_blue), res);
+            res = applyTextStyle(fmt::fg(fmt::color::royal_blue), res);
         } else {
             res = WrapColorCode(res, cf::BLUE);
         }

@@ -25,18 +25,18 @@
 #include "psapi.h"
 #include "tlhelp32.h"
 
-using namespace ll::hash;
-using namespace ll::hash_literals;
-using namespace ll::i18n_literals;
-using namespace ll;
+namespace ll {
+
+using namespace hash;
+using namespace hash_literals;
+using namespace i18n_literals;
 
 namespace fs = std::filesystem;
 
-ll::Logger                            ll::logger("LeviLamina");
-std::chrono::steady_clock::time_point ll::severStartBeginTime;
-std::chrono::steady_clock::time_point ll::severStartEndTime;
+Logger                                logger("LeviLamina");
+std::chrono::steady_clock::time_point severStartBeginTime;
+std::chrono::steady_clock::time_point severStartEndTime;
 
-namespace {
 void fixCurrentDirectory() {
     std::wstring path(32767, '\0');
     GetModuleFileName(nullptr, path.data(), 32767);
@@ -105,7 +105,7 @@ void checkOtherBdsInstance() {
 }
 
 void printWelcomeMsg() {
-    auto lock = ll::Logger::lock();
+    auto lock = Logger::lock();
     logger.info(R"(                                                                      )");
     logger.info(R"(         _               _ _                    _                     )");
     logger.info(R"(        | |    _____   _(_) |    __ _ _ __ ___ (_)_ __   __ _         )");
@@ -125,13 +125,12 @@ void printWelcomeMsg() {
 }
 
 void checkProtocolVersion() {
-    auto currentProtocol = ll::getServerProtocolVersion();
+    auto currentProtocol = getServerProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
         logger.warn("ll.main.warning.protocolVersionNotMatch.1"_tr, TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
         logger.warn("ll.main.warning.protocolVersionNotMatch.2"_tr);
     }
 }
-} // namespace
 
 BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
     switch (CEvent) {
@@ -165,26 +164,24 @@ void unixSignalHandler(int signum) {
 }
 
 // extern
-namespace ll {
 extern void registerLeviCommands();
 extern void setupSimpleServerLogger();
-} // namespace ll
 
 namespace bstats {
 extern void registerBStats();
 }
 
-namespace ll::i18n {
+namespace i18n {
 extern std::string globalDefaultLocaleName;
 }
 
 // bugfix
-namespace ll::bugfix {
+namespace bugfix {
 extern void enableArrayTagBugFix();
-} // namespace ll::bugfix
+} // namespace bugfix
 void setupBugFixes() {
-    auto& bugfixSettings = ll::globalConfig.modules.tweak.bugfixes;
-    using namespace ll::bugfix;
+    auto& bugfixSettings = globalConfig.modules.tweak.bugfixes;
+    using namespace bugfix;
     if (bugfixSettings.fixArrayTagCompareBug) {
         enableArrayTagBugFix();
     }
@@ -192,9 +189,9 @@ void setupBugFixes() {
 
 void startCrashLogger() {
 #if !LL_BUILTIN_CRASHLOGGER
-    ll::CrashLogger::initCrashLogger(ll::globalConfig.modules.crashLogger.enabled);
+    CrashLogger::initCrashLogger(globalConfig.modules.crashLogger.enabled);
 #else
-    static ll::CrashLoggerNew crashLogger{};
+    static CrashLoggerNew crashLogger{};
 #endif
 }
 
@@ -211,13 +208,13 @@ void leviLaminaMain() {
     std::error_code ec;
     fs::create_directories("plugins", ec);
 
-    ll::i18n::load("plugins/LeviLamina/LangPack");
+    i18n::load("plugins/LeviLamina/LangPack");
 
-    ll::loadLeviConfig();
+    loadLeviConfig();
 
     // Update default language
-    if (ll::globalConfig.language != "system") {
-        i18n::globalDefaultLocaleName = ll::globalConfig.language;
+    if (globalConfig.language != "system") {
+        i18n::globalDefaultLocaleName = globalConfig.language;
     }
 
     checkProtocolVersion();
@@ -226,9 +223,9 @@ void leviLaminaMain() {
     setupBugFixes();
     fixCurrentDirectory();
 
-    if (ll::globalConfig.modules.checkRunningBDS) checkOtherBdsInstance();
+    if (globalConfig.modules.checkRunningBDS) checkOtherBdsInstance();
 
-    if (ll::globalConfig.modules.crashLogger.enabled) {
+    if (globalConfig.modules.crashLogger.enabled) {
         startCrashLogger();
     }
 
@@ -243,9 +240,9 @@ void leviLaminaMain() {
     logger.warn("ll.main.warning.inDebugMode"_tr);
 #endif
 
-    // if (ll::globalConfig.enableAddonsHelper) InitAddonsHelper();
+    // if (globalConfig.enableAddonsHelper) InitAddonsHelper();
 
-    ll::plugin::PluginManager::getInstance().loadAllPlugins();
+    plugin::PluginManager::getInstance().loadAllPlugins();
 
     registerLeviCommands();
 
@@ -263,14 +260,14 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Normal, "main", int, int a
     for (int i = 0; i < argc; ++i) {
         switch (do_hash(argv[i])) {
         case "--noColor"_h:
-            ll::globalConfig.logger.colorLog = false;
+            globalConfig.logger.colorLog = false;
             break;
         case "-v"_h:
         case "--version"_h:
-            fmt::print("{}", ll::getBdsVersion().to_string());
+            fmt::print("{}", getBdsVersion().to_string());
             return 0;
         case "--protocolversion"_h:
-            fmt::print("{}", ll::getServerProtocolVersion());
+            fmt::print("{}", getServerProtocolVersion());
             return 0;
         default:
             break;
@@ -282,5 +279,6 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Normal, "main", int, int a
     getServerStatus() = ServerStatus::Default;
     return res;
 }
+} // namespace ll
 
 [[maybe_unused]] BOOL WINAPI DllMain(HMODULE, DWORD, LPVOID) { return true; }

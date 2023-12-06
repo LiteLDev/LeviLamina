@@ -73,23 +73,17 @@ void ModalFormHandler::handle(Player& player, std::string const& data) const {
 std::unordered_map<uint, std::unique_ptr<FormHandler>> formHandlers = {};
 uint                                                   currentId    = 0;
 
-uint addFormHandler(std::unique_ptr<FormHandler>&& data) {
-    formHandlers.emplace(++currentId, std::move(data));
-    return currentId;
-}
-
-void handleFormPacket(Player& player, uint formId, std::string const& data) {
+bool handleFormPacket(Player& player, uint formId, std::string const& data) {
     auto it = formHandlers.find(formId);
     if (it == formHandlers.end()) {
-        ll::logger.error("Failed to find form handler for form id {}", formId);
-        return;
+        return false;
     }
     it->second->handle(player, data);
     formHandlers.erase(it);
+    return true;
 }
-} // namespace ll::form::handler
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_TYPED_INSTANCE_HOOK(
     FormResponseHandler,
     HookPriority::Highest,
     PacketHandlerDispatcherInstance<ModalFormResponsePacket>,
@@ -99,25 +93,33 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     NetEventCallback&        callback,
     std::shared_ptr<Packet>& packet
 ) {
-    auto player = ((ServerNetworkHandler&)callback).getServerPlayer(source, SubClientId::PrimaryClient);
-    if (!player.has_value()) {
-        ll::logger.error("Failed to get player by NetworkIdentifier for FormResponseHandler");
-        return;
-    }
+    if (auto player = ((ServerNetworkHandler&)callback).getServerPlayer(source, SubClientId::PrimaryClient); player) {
+        auto& modalPacket = (ModalFormResponsePacket&)*packet;
 
-    auto& modalPacket = (ModalFormResponsePacket&)*packet;
+        auto data = std::string{"null"};
 
-    auto data = std::string{"null"};
-
-    if (!modalPacket.mFormCancelReason && modalPacket.mJSONResponse) {
-        data = modalPacket.mJSONResponse.value().toStyledString();
-        if (data.ends_with('\n')) {
-            data.pop_back();
-            if (data.ends_with('\r')) {
+        if (!modalPacket.mFormCancelReason && modalPacket.mJSONResponse) {
+            data = modalPacket.mJSONResponse.value().toStyledString();
+            if (data.ends_with('\n')) {
                 data.pop_back();
+                if (data.ends_with('\r')) {
+                    data.pop_back();
+                }
             }
         }
-    }
 
-    ll::form::handler::handleFormPacket(player, modalPacket.mFormId, data);
+        if (ll::form::handler::handleFormPacket(player, modalPacket.mFormId, data)) {
+            return;
+        }
+    }
+    origin(source, callback, packet);
 }
+
+uint addFormHandler(std::unique_ptr<FormHandler>&& data) {
+    static ll::memory::HookAutoRegister<FormResponseHandler> hook;
+
+    formHandlers.emplace(++currentId, std::move(data));
+    return currentId;
+}
+
+} // namespace ll::form::handler

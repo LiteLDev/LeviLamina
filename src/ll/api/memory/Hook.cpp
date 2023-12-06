@@ -10,21 +10,19 @@
 namespace ll::memory {
 
 int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority) {
+    std::unique_ptr<thread::GlobalThreadPauser> pauser;
     if (getServerStatus() != ServerStatus::Default) {
-        auto pause = ll::thread::GlobalThreadPauser{};
-        return pl::hook::pl_hook(target, detour, originalFunc, static_cast<pl::hook::Priority>(priority));
-    } else {
-        return pl::hook::pl_hook(target, detour, originalFunc, static_cast<pl::hook::Priority>(priority));
+        pauser = std::make_unique<thread::GlobalThreadPauser>();
     }
+    return pl::hook::pl_hook(target, detour, originalFunc, static_cast<pl::hook::Priority>(priority));
 }
 
 bool unhook(FuncPtr target, FuncPtr detour) {
+    std::unique_ptr<thread::GlobalThreadPauser> pauser;
     if (getServerStatus() != ServerStatus::Default) {
-        auto pause = ll::thread::GlobalThreadPauser{};
-        return pl::hook::pl_unhook(target, detour);
-    } else {
-        return pl::hook::pl_unhook(target, detour);
+        pauser = std::make_unique<thread::GlobalThreadPauser>();
     }
+    return pl::hook::pl_unhook(target, detour);
 }
 
 FuncPtr resolveIdentifier(std::string_view identifier, bool disableErrorOutput) {

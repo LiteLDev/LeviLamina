@@ -4,7 +4,7 @@
 
 namespace ll::event::inline server {
 
-LL_AUTO_INSTANCE_HOOK(ServerStoppedEventHook, HookPriority::Normal, "??1DedicatedServer@@UEAA@XZ", void) {
+LL_INSTANCE_HOOK(ServerStoppedEventHook, HookPriority::Normal, "??1DedicatedServer@@UEAA@XZ", void) {
     EventBus::getInstance().publish(ServerStoppedEvent());
     origin();
 }

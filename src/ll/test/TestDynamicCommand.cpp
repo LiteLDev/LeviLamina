@@ -487,3 +487,7 @@ static bool reg = [] {
     });
     return true;
 }();
+
+// #include "ll/api/memory/Hook.h"
+
+// LL_AUTO_TYPED_INSTANCE_HOOK(banHook, HookPriority::Normal, SimulatedPlayer, &SimulatedPlayer::postAiStep,void) {}

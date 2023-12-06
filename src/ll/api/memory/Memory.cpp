@@ -6,6 +6,8 @@
 
 #include "pl/SymbolProvider.h"
 
+#include "ll/api/ServerInfo.h"
+#include "ll/api/thread/GlobalThreadPauser.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"
 
@@ -79,6 +81,10 @@ std::vector<std::string> lookupSymbol(FuncPtr func) {
 }
 
 void modify(void* ptr, size_t len, const std::function<void()>& callback) {
+    std::unique_ptr<thread::GlobalThreadPauser> pauser;
+    if (getServerStatus() != ServerStatus::Default) {
+        pauser = std::make_unique<thread::GlobalThreadPauser>();
+    }
     DWORD oldProtect;
     VirtualProtect(ptr, len, PAGE_EXECUTE_READWRITE, &oldProtect);
     callback();

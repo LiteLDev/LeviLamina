@@ -34,9 +34,9 @@ void ll::GlobalService<T>::init(T* ptr) {
 #endif
 }
 
-namespace {
+namespace ll {
 
-using namespace ll::memory;
+using namespace memory;
 
 // AllowListFile
 
@@ -208,4 +208,4 @@ LL_AUTO_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, "??1Command
     ll::Global<CommandRegistry>.init(nullptr);
     origin();
 }
-} // namespace
+} // namespace ll

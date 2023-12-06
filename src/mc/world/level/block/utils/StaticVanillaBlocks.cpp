@@ -820,7 +820,7 @@ class Block const* mYellowTerracotta;
 class Block const* mYellowWool;
 
 
-#define INIT_BLOCK(x) (m##x = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::x, true))
+#define INIT_BLOCK(x) (m##x = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::x))
 
 void assignBlocks() {
 
@@ -1641,10 +1641,9 @@ void assignBlocks() {
     INIT_BLOCK(YellowWool);
 }
 
-}; // namespace StaticVanillaBlocks
-
-
 LL_AUTO_STATIC_HOOK(StaticVanillaBlockAssign, HookPriority::Normal, BedrockBlocks::assignBlocks, void) {
     origin();
     StaticVanillaBlocks::assignBlocks();
 }
+
+}; // namespace StaticVanillaBlocks

@@ -8,8 +8,9 @@
 #include "mc/world/Minecraft.h"
 #include <filesystem>
 
+#include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/utils/FileUtils.h"
+#include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/Version.h"
 
@@ -61,26 +62,6 @@ inline void forEachPacket(std::function<void(Packet const& packet, std::string c
     }
 }
 
-inline bool replaceString(
-    std::string&       content,
-    std::string const& start,
-    std::string const& end,
-    std::string const& str,
-    size_t             offset  = 0,
-    bool               exclude = true
-) {
-    auto startOffset = content.find(start, offset);
-    if (startOffset == std::string::npos) return false;
-    if (exclude) startOffset += start.size();
-    auto endOffset = end.empty() ? std::string::npos : content.find(end, startOffset);
-
-    if (endOffset != std::string::npos && !exclude) {
-        endOffset += end.size();
-    }
-    content.replace(startOffset, endOffset - startOffset, str);
-    return true;
-}
-
 void autoGenerate() {
 
     std::string path = __FILE__;
@@ -89,12 +70,12 @@ void autoGenerate() {
         path = LL_WORKSPACE_FOLDER + path;
     }
 
-    auto file = ll::file_utils::readAllFile(path, false);
+    auto file = ll::file_utils::readFile(path);
     if (!file) {
         ll::logger.error("Couldn't open file {}", path);
         return;
     }
-    auto& content = file.value();
+    auto& content = *file;
 
     std::ostringstream oss;
 
@@ -104,7 +85,7 @@ void autoGenerate() {
         oss << fmt::format("PACKET_SIZE_ASSERT({}, 0x{:X});\n", className, size);
     });
     oss << std::endl;
-    replaceString(content, "#pragma region PacketSizeAssert\n", "#pragma endregion", oss.str());
+    ll::string_utils::replaceContent(content, "#pragma region PacketSizeAssert\n", "#pragma endregion", oss.str());
 
     oss.clear();
     oss.str("");
@@ -115,11 +96,11 @@ void autoGenerate() {
         oss << fmt::format("#include \"mc/network/packet/{}.h\"\n", className);
     });
     oss << std::endl;
-    replaceString(content, "#pragma region PacketInclude\n", "#pragma endregion", oss.str());
+    ll::string_utils::replaceContent(content, "#pragma region PacketInclude\n", "#pragma endregion", oss.str());
     oss.clear();
     oss.str("");
 
-    ll::file_utils::WriteAllFile(path, content, false);
+    ll::file_utils::writeFile(path, content);
 }
 
 LL_AUTO_TYPED_INSTANCE_HOOK(

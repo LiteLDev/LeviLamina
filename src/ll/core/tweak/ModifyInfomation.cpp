@@ -11,6 +11,9 @@
 #include "ll/core/Config.h"
 #include "mc/deps/core/common/bedrock/Interface.h"
 
+MCAPI void BedrockLogOut(uint priority, char const* pszFormat, ...); // NOLINT
+
+namespace ll {
 // disable auto compaction log
 LL_AUTO_STATIC_HOOK(
     DiagnosticsLogHook,
@@ -71,8 +74,6 @@ void tryModifyServerStartInfo(std::string& s) {
     );
 }
 
-MCAPI void BedrockLogOut(uint priority, char const* pszFormat, ...); // NOLINT
-
 LL_AUTO_STATIC_HOOK(
     BedrockLogOutHook,
     HookPriority::Normal,
@@ -106,7 +107,7 @@ LL_AUTO_STATIC_HOOK(
 
     bool knownPriority = loggerMap.contains(priority);
 
-    auto& logger = knownPriority ? loggerMap.at(priority) : serverLogger.warn;
+    auto& slogger = knownPriority ? loggerMap.at(priority) : serverLogger.warn;
 
     while (std::getline(iss, line)) {
         if (line.ends_with('\n')) {
@@ -121,7 +122,7 @@ LL_AUTO_STATIC_HOOK(
         if (!knownPriority) {
             line = fmt::format("<LVL|{}> {}", priority, line);
         }
-        logger(line);
+        slogger(line);
     }
 }
 
@@ -141,3 +142,4 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     int,
     int
 ) {}
+} // namespace ll

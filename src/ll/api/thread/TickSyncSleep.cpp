@@ -10,7 +10,7 @@ std::vector<std::variant<
     std::reference_wrapper<TickSyncSleep<chrono::ServerClock>>,
     std::reference_wrapper<TickSyncSleep<chrono::GameTimeClock>>>>
     tickList;
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_TYPED_INSTANCE_HOOK(
     TickSyncSleepInterrruptHook,
     HookPriority::Normal,
     ServerLevel,

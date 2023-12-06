@@ -23,14 +23,15 @@ public:
         return getRegistry().all_of<T>(mEntity);
     }
 
+    template <class T>
+    inline bool removeComponent() const {
+        return getRegistry().remove<T>(mEntity);
+    }
+
     template <class T, typename... Args>
     [[nodiscard]] inline T& getOrAddComponent(Args&&... args) const {
         return getRegistry().get_or_emplace<T>(mEntity, std::forward<Args>(args)...);
     }
-
-    [[nodiscard]] inline operator bool() const { return isValid(); }
-
-    EntityContextBase() = delete;
 
 public:
     // NOLINTBEGIN

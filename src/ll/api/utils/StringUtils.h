@@ -52,6 +52,16 @@ replaceAll(std::string const& str, std::string_view oldValue, std::string_view n
     return ret;
 }
 
+constexpr bool
+replaceContent(std::string& str, std::string_view before, std::string_view after, std::string_view relplaceWith) {
+    auto startOffset = str.find(before);
+    if (startOffset == std::string::npos) return false;
+    startOffset    += before.size();
+    auto endOffset  = after.empty() ? std::string::npos : str.find(after, startOffset);
+    str.replace(startOffset, endOffset - startOffset, relplaceWith);
+    return true;
+}
+
 /**
  * @brief Integer to hex string.
  *

@@ -5,7 +5,7 @@
 
 namespace ll::event::inline server {
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_TYPED_INSTANCE_HOOK(
     ServerStartedEventHook,
     ll::memory::HookPriority::Normal,
     ServerInstanceEventCoordinator,
