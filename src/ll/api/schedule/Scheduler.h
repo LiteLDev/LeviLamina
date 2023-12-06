@@ -4,9 +4,10 @@
 #include <map>
 #include <ranges>
 
-#include "ll/api/chrono/Chrono.h"
+#include "ll/api/chrono/GameChrono.h"
 #include "ll/api/schedule/Task.h"
 #include "ll/api/thread/InterruptableSleep.h"
+#include "ll/api/thread/TickSyncSleep.h"
 #include "ll/api/thread/ThreadPool.h"
 #include "ll/api/thread/TickSyncTaskPool.h"
 
@@ -19,12 +20,12 @@ struct SleeperType {
 
 template <>
 struct SleeperType<ll::chrono::ServerClock> {
-    using Type = ll::chrono::TickSyncSleep<ll::chrono::ServerClock>;
+    using Type = ll::thread::TickSyncSleep<ll::chrono::ServerClock>;
 };
 
 template <>
 struct SleeperType<ll::chrono::GameTimeClock> {
-    using Type = ll::chrono::TickSyncSleep<ll::chrono::GameTimeClock>;
+    using Type = ll::thread::TickSyncSleep<ll::chrono::GameTimeClock>;
 };
 
 template <class Clock, class Pool = ll::thread::ThreadPool, class Sleeper = SleeperType<Clock>::Type>

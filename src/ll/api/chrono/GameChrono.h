@@ -5,7 +5,7 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 
-namespace ll::chrono::game_chrono {
+namespace ll::chrono {
 
 using ticks   = std::chrono::duration<int64, std::ratio<1, 20>>;
 using days    = std::chrono::duration<int64, std::ratio_multiply<std::ratio<24000>, ticks::period>>;
@@ -35,14 +35,14 @@ struct GameTimeClock {
     LLNDAPI static time_point now() noexcept;
 };
 
-} // namespace ll::chrono::game_chrono
+} // namespace ll::chrono
 
 namespace ll::chrono_literals {
 
 using namespace std::literals::chrono_literals;
 
-constexpr ll::chrono::game_chrono::ticks operator""_tick(uint64 val) noexcept {
-    return ll::chrono::game_chrono::ticks{val};
+constexpr ll::chrono::ticks operator""_tick(uint64 val) noexcept {
+    return ll::chrono::ticks{val};
 }
 
 } // namespace ll::chrono_literals

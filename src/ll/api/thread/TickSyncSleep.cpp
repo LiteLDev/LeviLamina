@@ -1,4 +1,4 @@
-#include "ll/api/chrono/TickSyncSleep.h"
+#include "ll/api/thread/TickSyncSleep.h"
 #include "ll/api/memory/Hook.h"
 #include "mc/server/ServerLevel.h"
 
@@ -7,8 +7,8 @@ std::mutex         listMutex;
 std::atomic_size_t tickListSize{};
 std::atomic_bool   hooked{};
 std::vector<std::variant<
-    std::reference_wrapper<TickSyncSleep<game_chrono::ServerClock>>,
-    std::reference_wrapper<TickSyncSleep<game_chrono::GameTimeClock>>>>
+    std::reference_wrapper<TickSyncSleep<ServerClock>>,
+    std::reference_wrapper<TickSyncSleep<GameTimeClock>>>>
     tickList;
 LL_AUTO_TYPED_INSTANCE_HOOK(
     TickSyncSleepInterrruptHook,

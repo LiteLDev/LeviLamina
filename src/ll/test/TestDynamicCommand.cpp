@@ -339,8 +339,8 @@ static void setupTimingCommand() {
             }
 
             std::unordered_map<uint, DefaultEntitySystemsCollection::ECSTiming> timings{};
-            using namespace ll::chrono;
-            TickSyncSleep<GameTimeClock> sleeper;
+            using namespace ll::chrono;  
+            ll::thread::TickSyncSleep<GameTimeClock> sleeper;
             auto                         begin = std::chrono::steady_clock::now();
             for (size_t i = 0; i < counttick; i++) {
                 sleeper.sleepFor(1_tick);
