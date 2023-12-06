@@ -146,7 +146,7 @@ public:
         LL_HOOK_DEBUG_OUTPUT(IDENTIFIER);                                                                              \
                                                                                                                        \
         template <class... Args>                                                                                       \
-        [[nodiscard]] STATIC RET_TYPE origin(Args&&... params) {                                                                     \
+        STATIC RET_TYPE origin(Args&&... params) {                                                                     \
             return CALL(std::forward<Args>(params)...);                                                                \
         }                                                                                                              \
                                                                                                                        \
