@@ -6,6 +6,8 @@
 // auto generated inclusion list
 #include "mc/nbt/Tag.h"
 
+class CompoundTagVariant;
+
 class ListTag : public ::Tag {
 public:
     using List = std::vector<std::unique_ptr<Tag>>;
@@ -50,8 +52,14 @@ public:
     template <std::derived_from<Tag> T>
     [[nodiscard]] constexpr ListTag(std::initializer_list<T> tags) : ListTag(std::vector<T>{std::move(tags)}) {}
 
+    [[nodiscard]] inline ListTag(std::initializer_list<CompoundTagVariant> tags);
+    [[nodiscard]] inline ListTag(std::vector<CompoundTagVariant> const& tags);
+
     [[nodiscard]] constexpr std::unique_ptr<Tag>&       operator[](size_t index) { return mList[index]; }
     [[nodiscard]] constexpr std::unique_ptr<Tag> const& operator[](size_t index) const { return mList[index]; }
+
+    [[nodiscard]] constexpr std::unique_ptr<Tag>&       at(size_t index) { return mList[index]; }
+    [[nodiscard]] constexpr std::unique_ptr<Tag> const& at(size_t index) const { return mList[index]; }
 
     [[nodiscard]] constexpr size_t size() const { return mList.size(); }
 

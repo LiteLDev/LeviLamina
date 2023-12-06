@@ -69,6 +69,8 @@ public:
         return *static_cast<T*>(this);
     }
 
+    [[nodiscard]] operator std::unique_ptr<Tag>() const { return copy(); }// NOLINT
+
     LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const;
 
     LLNDAPI static std::unique_ptr<Tag> parseSnbt(std::string_view str);

@@ -439,11 +439,11 @@ std::optional<ByteArrayTag> parseByteArray(std::string_view& s) {
             return std::nullopt;
         }
 
-        if (!value || !value.value().hold<ByteTag>()) {
+        if (!value || !(*value).hold<ByteTag>()) {
             return std::nullopt;
         }
 
-        res.emplace_back(value.value().get<ByteTag>());
+        res.emplace_back((*value).get<ByteTag>());
 
         switch (s.front()) {
         case ']':
@@ -485,11 +485,11 @@ std::optional<IntArrayTag> parseIntArray(std::string_view& s) {
             return std::nullopt;
         }
 
-        if (!value || !value.value().hold<IntTag>()) {
+        if (!value || !(*value).hold<IntTag>()) {
             return std::nullopt;
         }
 
-        res.emplace_back(value.value().get<IntTag>());
+        res.emplace_back((*value).get<IntTag>());
 
         switch (s.front()) {
         case ']':
@@ -531,11 +531,11 @@ std::optional<ByteArrayTag> parseLongArray(std::string_view& s) {
             return std::nullopt;
         }
 
-        if (!value || !value.value().hold<Int64Tag>()) {
+        if (!value || !(*value).hold<Int64Tag>()) {
             return std::nullopt;
         }
 
-        res.emplace_back(value.value().get<Int64Tag>());
+        res.emplace_back((*value).get<Int64Tag>());
 
         switch (s.front()) {
         case ']':
@@ -555,25 +555,25 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
     if (s.starts_with("[B;")) {
         s.remove_prefix(3);
         if (auto array = parseByteArray(s); array) {
-            return array.value();
+            return *array;
         }
         return std::nullopt;
     } else if (s.starts_with("[I;")) {
         s.remove_prefix(3);
         if (auto array = parseIntArray(s); array) {
-            return array.value();
+            return *array;
         }
         return std::nullopt;
     } else if (s.starts_with("[ /*B;*/")) {
         s.remove_prefix(8);
         if (auto array = parseByteArray(s); array) {
-            return array.value();
+            return *array;
         }
         return std::nullopt;
     } else if (s.starts_with("[ /*I;*/")) {
         s.remove_prefix(8);
         if (auto array = parseIntArray(s); array) {
-            return array.value();
+            return *array;
         }
         return std::nullopt;
     }
@@ -586,11 +586,10 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
         return ListTag{};
     }
 
-    auto res  = ListTag{};
-    res.mType = Tag::Type::End;
+    auto res = ListTag{};
     res.mList.clear();
 
-    auto& type = res.mType;
+    bool settedType = false;
 
     while (!s.empty()) {
 
@@ -599,13 +598,12 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
         if (!value) {
             return res;
         }
-
-        if (type == Tag::Type::End) {
-            type = value.value().index();
-        } else if (value.value().index() != type) {
-            return std::nullopt;
+        if (!settedType) {
+            res.mType  = (*value).index();
+            settedType = true;
         }
-        res.mList.emplace_back(value.value().toUnique());
+
+        res.mList.emplace_back((*value).toUnique());
 
 
         switch (s.front()) {
@@ -662,7 +660,7 @@ std::optional<CompoundTag> parseCompound(std::string_view& s) {
             return res;
         }
 
-        res[key.value()] = value.value();
+        res[*key] = *value;
 
         switch (s.front()) {
         case '}':
@@ -709,14 +707,14 @@ std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s) {
         break;
     case '[':
         if (auto list = parseList(s); list) {
-            res = list.value();
+            res = *list;
             break;
         } else {
             return std::nullopt;
         }
     case '{':
         if (auto compound = parseCompound(s); compound) {
-            res = compound.value();
+            res = *compound;
             break;
         } else {
             return std::nullopt;
@@ -736,7 +734,7 @@ std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s) {
             s.remove_prefix(4);
             res = EndTag{};
         } else if (auto str = parseString(s); str) {
-            res = StringTag{str.value()};
+            res = StringTag{*str};
         }
     }
 

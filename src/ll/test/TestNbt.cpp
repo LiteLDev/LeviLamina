@@ -90,11 +90,19 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
 
     )");
 
+    CompoundTagVariant nbt3;
+
+    nbt3["hello"]["world"] = ListTag{1.0, 2.0, 3.0};
+
+    nbt3["hello"]["world"][1] = 7.0_d;
+
     auto lock = ll::Logger::lock();
 
     ll::logger.debug("\n{}", nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console | SnbtFormat::Jsonify));
 
     ll::logger.debug("\n{}", nbt2.toSnbt(SnbtFormat::PrettyConsolePrint));
+
+    ll::logger.debug("\n{}", nbt3.dump(SnbtFormat::PrettyConsolePrint));
 
     ll::logger.debug(
         "\n{}",
