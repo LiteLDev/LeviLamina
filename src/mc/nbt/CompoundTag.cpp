@@ -6,7 +6,7 @@
 
 std::unique_ptr<CompoundTag> CompoundTag::fromSnbt(std::string_view snbt) {
     auto res = parseSnbt(snbt);
-    if (res && res->getId()==Tag::Type::Compound) {
+    if (res && res->getId() == Tag::Type::Compound) {
         return std::unique_ptr<CompoundTag>((CompoundTag*)res.release());
     }
     return nullptr;

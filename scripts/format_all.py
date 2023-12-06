@@ -7,13 +7,16 @@ import re
 
 
 def format_file(file):
-    # with open(file, "rb") as f:
-    # content = f.read()
-    # content = re.sub(
-    #     rb"(?<![0-9]|[a-z]|[A-Z]|-|_|:)uint8_t(?![0-9]|[a-z]|[A-Z]|-|_|::)", b"uchar", content)
-    # with open(file, "wb") as f:
-    #     f.write(content)
     print("formatting {0}".format(file))
+
+    with open(file, "r") as f:
+        content = f.read()
+    with open(file, "w") as f:
+        if not content.endswith("\n"):
+            content += "\n"
+        f.write(content)
+        f.close()
+
     subprocess.run(["clang-format", "-i", file])
 
 

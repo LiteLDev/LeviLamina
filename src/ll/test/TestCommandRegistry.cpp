@@ -1,8 +1,8 @@
 
+#include "ll/api/event/EventBus.h"
+#include "ll/api/event/command/SetupCommandEvent.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/core/LeviLamina.h"
-#include "ll/api/event/command/SetupCommandEvent.h"
-#include "ll/api/event/EventBus.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOutput.h"
 #include "mc/server/commands/CommandParameterData.h"
@@ -171,4 +171,3 @@ static bool reg = [] {
     });
     return true;
 }();
-

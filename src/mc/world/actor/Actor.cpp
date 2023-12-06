@@ -38,9 +38,8 @@ class Vec3 Actor::getHeadPos() const { return getAttachPos(ActorLocation::Head);
 
 class BlockPos Actor::getFeetBlockPos() const { return {CommandUtils::getFeetPos(this)}; }
 
-bool Actor::isSimulatedPlayer() const {
-    return getEntityContext().hasComponent<FlagComponent<SimulatedPlayerFlag>>();
-}
+bool Actor::isSimulatedPlayer() const { return getEntityContext().hasComponent<FlagComponent<SimulatedPlayerFlag>>(); }
+
 bool Actor::isOnGround() const { return ActorCollision::isOnGround(getEntityContext()); }
 
 void Actor::setOnFire(int num, bool isEffect) {

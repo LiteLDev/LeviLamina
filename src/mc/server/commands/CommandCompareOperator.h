@@ -12,5 +12,4 @@ enum CommandCompareOperator : char {
     GreaterThanEquals = 0x5,
 };
 
-MCTAPI class Bedrock::typeid_t<CommandRegistry>
-Bedrock::type_id<class CommandRegistry, enum CommandCompareOperator>();
+MCTAPI class Bedrock::typeid_t<CommandRegistry> Bedrock::type_id<class CommandRegistry, enum CommandCompareOperator>();

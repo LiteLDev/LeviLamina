@@ -339,14 +339,14 @@ static void setupTimingCommand() {
             }
 
             std::unordered_map<uint, DefaultEntitySystemsCollection::ECSTiming> timings{};
-            using namespace ll::chrono;  
+            using namespace ll::chrono;
             ll::thread::TickSyncSleep<GameTimeClock> sleeper;
-            auto                         begin = std::chrono::steady_clock::now();
+            auto                                     begin = std::chrono::steady_clock::now();
             for (size_t i = 0; i < counttick; i++) {
                 sleeper.sleepFor(1_tick);
                 {
                     std::lock_guard lock(collection.mTimingMutex);
-                     for (auto& collectCategory : collection.mTickingSystemCategories) {
+                    for (auto& collectCategory : collection.mTickingSystemCategories) {
                         auto& tickTimings = collectCategory.mTimings;
                         for (size_t j = 0; j < tickTimings.size(); j++) {
                             auto& timing    = timings[collectCategory.mSystems.at(j)];
@@ -385,7 +385,7 @@ static void setupTimingCommand() {
                 ll::logger.warn(
                     "  | {:.5f}ms {} for {:0>3} {}",
                     data.avg,
-                    data.count/counttick,
+                    data.count / counttick,
                     data.id,
                     collection.mAllSystemsInfo[data.id].mName
                 );

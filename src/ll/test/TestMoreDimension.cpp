@@ -240,8 +240,7 @@ LL_AUTO_STATIC_HOOK(
 }
 
 // registry dimensoin when in ll, must reload Dimension::getWeakRef
-LL_AUTO_TYPED_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimension, &Dimension::getWeakRef, WeakRefT<SharePtrRefTraits<Dimension>>) {
-    if (this->getDimensionId() == 3) return weak_from_this();
-    return origin();
+LL_AUTO_TYPED_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimension, &Dimension::getWeakRef,
+WeakRefT<SharePtrRefTraits<Dimension>>) { if (this->getDimensionId() == 3) return weak_from_this(); return origin();
 };
 */

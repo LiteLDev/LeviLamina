@@ -14,7 +14,7 @@ public:
         return *this;
     }
 
-    constexpr operator float() const { return data; }// NOLINT
+    constexpr operator float() const { return data; } // NOLINT
 
     [[nodiscard]] constexpr explicit FloatTag(float value = 0) : data(value) {}
 
