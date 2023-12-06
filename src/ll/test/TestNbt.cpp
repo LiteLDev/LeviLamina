@@ -90,7 +90,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
 
     )");
 
-    CompoundTagVariant nbt3;
+    CompoundTag nbt3;
 
     nbt3["hello"]["world"] = ListTag{1.0, 2.0, 3.0};
 
@@ -102,7 +102,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
 
     ll::logger.debug("\n{}", nbt2.toSnbt(SnbtFormat::PrettyConsolePrint));
 
-    ll::logger.debug("\n{}", nbt3.dump(SnbtFormat::PrettyConsolePrint));
+    ll::logger.debug("\n{}", nbt3.toSnbt(SnbtFormat::PrettyConsolePrint));
 
     ll::logger.debug(
         "\n{}",
