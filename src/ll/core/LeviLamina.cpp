@@ -254,7 +254,7 @@ void leviLaminaMain() {
 }
 
 
-LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::Normal, "main", int, int argc, char* argv[]) {
+LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int argc, char* argv[]) {
     getServerStatus()   = ServerStatus::Default;
     severStartBeginTime = std::chrono::steady_clock::now();
     for (int i = 0; i < argc; ++i) {

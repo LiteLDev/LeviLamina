@@ -3,9 +3,127 @@
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/block/utils/VanillaBlockTypeIds.h"
 
+// #define GENERATE_STATIC_VANILLA_BLOCKS
+
+#ifdef GENERATE_STATIC_VANILLA_BLOCKS
+
+#include "ll/api/io/FileUtils.h"
+#include "ll/api/utils/StringUtils.h"
+#include "ll/core/LeviLamina.h"
+#include "ll/core/Version.h"
+
+void gen() {
+    auto idFile =
+        ll::file_utils::readFile(LL_WORKSPACE_FOLDER R"(src\mc\world\level\block\utils\VanillaBlockTypeIds.h)").value();
+
+    std::vector<std::string_view> blocks;
+
+    for (auto line : ll::string_utils::splitByPattern(idFile, "\n")) {
+        if (line.ends_with('\n')) {
+            line.remove_suffix(1);
+        }
+        if (line.ends_with('\r')) {
+            line.remove_suffix(1);
+        }
+        if (!line.starts_with("MCAPI extern class HashedString const ")) {
+            continue;
+        }
+        line.remove_prefix(sizeof("MCAPI extern class HashedString const"));
+        if (line.ends_with(';')) {
+            line.remove_suffix(1);
+        }
+        blocks.emplace_back(line);
+    }
+
+    std::string path = __FILE__;
+
+    if (!path.starts_with(LL_WORKSPACE_FOLDER)) {
+        path = LL_WORKSPACE_FOLDER + path;
+    }
+
+    auto file = ll::file_utils::readFile(path);
+    if (!file) {
+        ll::logger.error("Couldn't open file {}", path);
+        return;
+    }
+    auto& content = *file;
+
+    std::ostringstream oss;
+
+    oss << std::endl;
+    oss << std::endl;
+    for (auto block : blocks) {
+        oss << fmt::format("class Block const* m{};\n", block);
+    }
+    oss << std::endl;
+    ll::string_utils::replaceContent(
+        content,
+        "\n#pragma region StaticVanillaBlocksDefinition",
+        "#pragma endregion",
+        oss.str()
+    );
+
+    oss.clear();
+    oss.str("");
+
+    oss << std::endl;
+    oss << std::endl;
+    for (auto block : blocks) {
+        oss << fmt::format("    INIT_BLOCK({});\n", block);
+    }
+    oss << std::endl;
+    ll::string_utils::replaceContent(
+        content,
+        "\n#pragma region StaticVanillaBlocksInit",
+        "#pragma endregion",
+        oss.str()
+    );
+
+    if (!ll::file_utils::writeFile(path, content)) {
+        ll::logger.error("Couldn't write file {}", path);
+    }
+
+    path = path.substr(0, path.size() - 3) + "h";
+
+    file = ll::file_utils::readFile(path);
+    if (!file) {
+        ll::logger.error("Couldn't open file {}", path);
+        return;
+    }
+
+    oss.clear();
+    oss.str("");
+
+    oss << std::endl;
+    oss << std::endl;
+    for (auto block : blocks) {
+        oss << fmt::format("LLETAPI class Block const* m{};\n", block);
+    }
+    oss << std::endl;
+    ll::string_utils::replaceContent(
+        content,
+        "\n#pragma region StaticVanillaBlocksDeclarations",
+        "#pragma endregion",
+        oss.str()
+    );
+
+    if (!ll::file_utils::writeFile(path, content)) {
+        ll::logger.error("Couldn't write file {}", path);
+    }
+}
+
+LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char* c) {
+    gen();
+    return origin(a, c);
+}
+
+#endif // GENERATE_STATIC_VANILLA_BLOCK
+
 namespace StaticVanillaBlocks {
 
 std::array<class Block const*, 119> mElements{};
+
+#pragma region StaticVanillaBlocksDefinition
 
 class Block const* mAcaciaButton;
 class Block const* mAcaciaDoor;
@@ -819,6 +937,7 @@ class Block const* mYellowStainedGlassPane;
 class Block const* mYellowTerracotta;
 class Block const* mYellowWool;
 
+#pragma endregion
 
 #define INIT_BLOCK(x) (m##x = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::x))
 
@@ -827,6 +946,8 @@ void assignBlocks() {
     for (int i = 0; i < 119; ++i) {
         INIT_BLOCK(Elements[i]);
     }
+
+#pragma region StaticVanillaBlocksInit
 
     INIT_BLOCK(AcaciaButton);
     INIT_BLOCK(AcaciaDoor);
@@ -1639,6 +1760,8 @@ void assignBlocks() {
     INIT_BLOCK(YellowStainedGlassPane);
     INIT_BLOCK(YellowTerracotta);
     INIT_BLOCK(YellowWool);
+
+#pragma endregion
 }
 
 LL_AUTO_STATIC_HOOK(StaticVanillaBlockAssign, HookPriority::Normal, BedrockBlocks::assignBlocks, void) {

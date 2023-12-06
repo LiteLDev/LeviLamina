@@ -4,8 +4,6 @@
 
 #include "mc/network/MinecraftPackets.h"
 #include "mc/network/packet/Packet.h"
-#include "mc/server/ServerInstance.h"
-#include "mc/world/Minecraft.h"
 #include <filesystem>
 
 #include "ll/api/io/FileUtils.h"
@@ -81,39 +79,35 @@ void autoGenerate() {
 
     // add static assert
     oss << std::endl;
+    oss << std::endl;
     forEachPacket([&](Packet const&, std::string className, size_t size) {
         oss << fmt::format("PACKET_SIZE_ASSERT({}, 0x{:X});\n", className, size);
     });
     oss << std::endl;
-    ll::string_utils::replaceContent(content, "#pragma region PacketSizeAssert\n", "#pragma endregion", oss.str());
+    ll::string_utils::replaceContent(content, "\n#pragma region PacketSizeAssert", "#pragma endregion", oss.str());
 
     oss.clear();
     oss.str("");
 
     // add include
     oss << std::endl;
+    oss << std::endl;
     forEachPacket([&](Packet const&, std::string className, size_t) {
         oss << fmt::format("#include \"mc/network/packet/{}.h\"\n", className);
     });
     oss << std::endl;
-    ll::string_utils::replaceContent(content, "#pragma region PacketInclude\n", "#pragma endregion", oss.str());
+    ll::string_utils::replaceContent(content, "\n#pragma region PacketInclude", "#pragma endregion", oss.str());
     oss.clear();
     oss.str("");
 
-    ll::file_utils::writeFile(path, content);
+    if (!ll::file_utils::writeFile(path, content)) {
+        ll::logger.error("Couldn't write file {}", path);
+    }
 }
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    PacketTestInit,
-    HookPriority::Normal,
-    ServerInstance,
-    &ServerInstance::startServerThread,
-    void
-) {
-    origin();
+LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a, char* c) {
     autoGenerate();
-
-    // forEachPacket([&](Packet const&, std::string, size_t) {});
+    return origin(a, c);
 }
 
 #endif // GENERATE_PACKET
