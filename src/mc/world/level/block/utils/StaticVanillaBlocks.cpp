@@ -1,9 +1,10 @@
 #include "mc/world/level/block/utils/StaticVanillaBlocks.h"
 #include "ll/api/memory/Hook.h"
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
+#include "mc/world/level/block/utils/BedrockBlockNames.h"
 #include "mc/world/level/block/utils/VanillaBlockTypeIds.h"
 
-// #define GENERATE_STATIC_VANILLA_BLOCKS
+#define GENERATE_STATIC_VANILLA_BLOCKS
 
 #ifdef GENERATE_STATIC_VANILLA_BLOCKS
 
@@ -52,32 +53,12 @@ void gen() {
 
     oss << std::endl;
     oss << std::endl;
+    oss << "#define GENERATE_FUNC(FUNC)\\\n";
     for (auto block : blocks) {
-        oss << fmt::format("Block const* m{};\n", block);
+        oss << fmt::format("    FUNC({});\\\n", block);
     }
     oss << std::endl;
-    ll::string_utils::replaceContent(
-        content,
-        "\n#pragma region StaticVanillaBlocksDefinition",
-        "#pragma endregion",
-        oss.str()
-    );
-
-    oss.clear();
-    oss.str("");
-
-    oss << std::endl;
-    oss << std::endl;
-    for (auto block : blocks) {
-        oss << fmt::format("    INIT_BLOCK({});\n", block);
-    }
-    oss << std::endl;
-    ll::string_utils::replaceContent(
-        content,
-        "\n#pragma region StaticVanillaBlocksInit",
-        "#pragma endregion",
-        oss.str()
-    );
+    ll::string_utils::replaceContent(content, "\n#pragma region StaticVanillaBlocksFn", "#pragma endregion", oss.str());
 
     if (!ll::file_utils::writeFile(path, content)) {
         ll::logger.error("Couldn't write file {}", path);
@@ -119,1654 +100,862 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
 
 #endif // GENERATE_STATIC_VANILLA_BLOCK
 
+#pragma region StaticVanillaBlocksFn
+
+#define GENERATE_FUNC(FUNC)                                                                                            \
+    FUNC(AcaciaButton);                                                                                                \
+    FUNC(AcaciaDoor);                                                                                                  \
+    FUNC(AcaciaFence);                                                                                                 \
+    FUNC(AcaciaFenceGate);                                                                                             \
+    FUNC(AcaciaHangingSign);                                                                                           \
+    FUNC(AcaciaLog);                                                                                                   \
+    FUNC(AcaciaPressurePlate);                                                                                         \
+    FUNC(AcaciaStairs);                                                                                                \
+    FUNC(AcaciaStandingSign);                                                                                          \
+    FUNC(AcaciaTrapdoor);                                                                                              \
+    FUNC(AcaciaWallSign);                                                                                              \
+    FUNC(ActivatorRail);                                                                                               \
+    FUNC(Allow);                                                                                                       \
+    FUNC(AmethystBlock);                                                                                               \
+    FUNC(AmethystCluster);                                                                                             \
+    FUNC(AncientDebris);                                                                                               \
+    FUNC(AndesiteStairs);                                                                                              \
+    FUNC(Anvil);                                                                                                       \
+    FUNC(Azalea);                                                                                                      \
+    FUNC(AzaleaLeaves);                                                                                                \
+    FUNC(AzaleaLeavesFlowered);                                                                                        \
+    FUNC(Bamboo);                                                                                                      \
+    FUNC(BambooBlock);                                                                                                 \
+    FUNC(BambooButton);                                                                                                \
+    FUNC(BambooDoor);                                                                                                  \
+    FUNC(BambooDoubleSlab);                                                                                            \
+    FUNC(BambooFence);                                                                                                 \
+    FUNC(BambooFenceGate);                                                                                             \
+    FUNC(BambooHangingSign);                                                                                           \
+    FUNC(BambooMosaic);                                                                                                \
+    FUNC(BambooMosaicDoubleSlab);                                                                                      \
+    FUNC(BambooMosaicSlab);                                                                                            \
+    FUNC(BambooMosaicStairs);                                                                                          \
+    FUNC(BambooPlanks);                                                                                                \
+    FUNC(BambooPressurePlate);                                                                                         \
+    FUNC(BambooSapling);                                                                                               \
+    FUNC(BambooSlab);                                                                                                  \
+    FUNC(BambooStairs);                                                                                                \
+    FUNC(BambooStandingSign);                                                                                          \
+    FUNC(BambooTrapdoor);                                                                                              \
+    FUNC(BambooWallSign);                                                                                              \
+    FUNC(Barrel);                                                                                                      \
+    FUNC(Barrier);                                                                                                     \
+    FUNC(Basalt);                                                                                                      \
+    FUNC(Beacon);                                                                                                      \
+    FUNC(Bed);                                                                                                         \
+    FUNC(Bedrock);                                                                                                     \
+    FUNC(BeeNest);                                                                                                     \
+    FUNC(Beehive);                                                                                                     \
+    FUNC(Beetroot);                                                                                                    \
+    FUNC(Bell);                                                                                                        \
+    FUNC(BigDripleaf);                                                                                                 \
+    FUNC(BirchButton);                                                                                                 \
+    FUNC(BirchDoor);                                                                                                   \
+    FUNC(BirchFence);                                                                                                  \
+    FUNC(BirchFenceGate);                                                                                              \
+    FUNC(BirchHangingSign);                                                                                            \
+    FUNC(BirchLog);                                                                                                    \
+    FUNC(BirchPressurePlate);                                                                                          \
+    FUNC(BirchStairs);                                                                                                 \
+    FUNC(BirchStandingSign);                                                                                           \
+    FUNC(BirchTrapdoor);                                                                                               \
+    FUNC(BirchWallSign);                                                                                               \
+    FUNC(BlackCandle);                                                                                                 \
+    FUNC(BlackCandleCake);                                                                                             \
+    FUNC(BlackCarpet);                                                                                                 \
+    FUNC(BlackConcrete);                                                                                               \
+    FUNC(BlackConcretePowder);                                                                                         \
+    FUNC(BlackGlazedTerracotta);                                                                                       \
+    FUNC(BlackShulkerBox);                                                                                             \
+    FUNC(BlackStainedGlass);                                                                                           \
+    FUNC(BlackStainedGlassPane);                                                                                       \
+    FUNC(BlackTerracotta);                                                                                             \
+    FUNC(BlackWool);                                                                                                   \
+    FUNC(Blackstone);                                                                                                  \
+    FUNC(BlackstoneDoubleSlab);                                                                                        \
+    FUNC(BlackstoneSlab);                                                                                              \
+    FUNC(BlackstoneStairs);                                                                                            \
+    FUNC(BlackstoneWall);                                                                                              \
+    FUNC(BlastFurnace);                                                                                                \
+    FUNC(BlueCandle);                                                                                                  \
+    FUNC(BlueCandleCake);                                                                                              \
+    FUNC(BlueCarpet);                                                                                                  \
+    FUNC(BlueConcrete);                                                                                                \
+    FUNC(BlueConcretePowder);                                                                                          \
+    FUNC(BlueGlazedTerracotta);                                                                                        \
+    FUNC(BlueIce);                                                                                                     \
+    FUNC(BlueShulkerBox);                                                                                              \
+    FUNC(BlueStainedGlass);                                                                                            \
+    FUNC(BlueStainedGlassPane);                                                                                        \
+    FUNC(BlueTerracotta);                                                                                              \
+    FUNC(BlueWool);                                                                                                    \
+    FUNC(BoneBlock);                                                                                                   \
+    FUNC(Bookshelf);                                                                                                   \
+    FUNC(BorderBlock);                                                                                                 \
+    FUNC(BrainCoral);                                                                                                  \
+    FUNC(BrewingStand);                                                                                                \
+    FUNC(BrickBlock);                                                                                                  \
+    FUNC(BrickStairs);                                                                                                 \
+    FUNC(BrownCandle);                                                                                                 \
+    FUNC(BrownCandleCake);                                                                                             \
+    FUNC(BrownCarpet);                                                                                                 \
+    FUNC(BrownConcrete);                                                                                               \
+    FUNC(BrownConcretePowder);                                                                                         \
+    FUNC(BrownGlazedTerracotta);                                                                                       \
+    FUNC(BrownMushroom);                                                                                               \
+    FUNC(BrownMushroomBlock);                                                                                          \
+    FUNC(BrownShulkerBox);                                                                                             \
+    FUNC(BrownStainedGlass);                                                                                           \
+    FUNC(BrownStainedGlassPane);                                                                                       \
+    FUNC(BrownTerracotta);                                                                                             \
+    FUNC(BrownWool);                                                                                                   \
+    FUNC(BubbleColumn);                                                                                                \
+    FUNC(BubbleCoral);                                                                                                 \
+    FUNC(BuddingAmethyst);                                                                                             \
+    FUNC(Cactus);                                                                                                      \
+    FUNC(Cake);                                                                                                        \
+    FUNC(Calcite);                                                                                                     \
+    FUNC(CalibratedSculkSensor);                                                                                       \
+    FUNC(Camera);                                                                                                      \
+    FUNC(CampFire);                                                                                                    \
+    FUNC(Candle);                                                                                                      \
+    FUNC(CandleCake);                                                                                                  \
+    FUNC(Carrots);                                                                                                     \
+    FUNC(CartographyTable);                                                                                            \
+    FUNC(CarvedPumpkin);                                                                                               \
+    FUNC(Cauldron);                                                                                                    \
+    FUNC(CaveVines);                                                                                                   \
+    FUNC(CaveVinesBodyWithBerries);                                                                                    \
+    FUNC(CaveVinesHeadWithBerries);                                                                                    \
+    FUNC(Chain);                                                                                                       \
+    FUNC(ChainCommandBlock);                                                                                           \
+    FUNC(Chalkboard);                                                                                                  \
+    FUNC(ChemicalHeat);                                                                                                \
+    FUNC(ChemistryTable);                                                                                              \
+    FUNC(CherryButton);                                                                                                \
+    FUNC(CherryDoor);                                                                                                  \
+    FUNC(CherryDoubleSlab);                                                                                            \
+    FUNC(CherryFence);                                                                                                 \
+    FUNC(CherryFenceGate);                                                                                             \
+    FUNC(CherryHangingSign);                                                                                           \
+    FUNC(CherryLeaves);                                                                                                \
+    FUNC(CherryLog);                                                                                                   \
+    FUNC(CherryPlanks);                                                                                                \
+    FUNC(CherryPressurePlate);                                                                                         \
+    FUNC(CherrySapling);                                                                                               \
+    FUNC(CherrySlab);                                                                                                  \
+    FUNC(CherryStairs);                                                                                                \
+    FUNC(CherryStandingSign);                                                                                          \
+    FUNC(CherryTrapdoor);                                                                                              \
+    FUNC(CherryWallSign);                                                                                              \
+    FUNC(CherryWood);                                                                                                  \
+    FUNC(Chest);                                                                                                       \
+    FUNC(ChiseledBookshelf);                                                                                           \
+    FUNC(ChiseledDeepslate);                                                                                           \
+    FUNC(ChiseledNetherBricks);                                                                                        \
+    FUNC(ChiseledPolishedBlackstone);                                                                                  \
+    FUNC(ChorusFlower);                                                                                                \
+    FUNC(ChorusPlant);                                                                                                 \
+    FUNC(Clay);                                                                                                        \
+    FUNC(ClientRequestPlaceholderBlock);                                                                               \
+    FUNC(CoalBlock);                                                                                                   \
+    FUNC(CoalOre);                                                                                                     \
+    FUNC(CobbledDeepslate);                                                                                            \
+    FUNC(CobbledDeepslateDoubleSlab);                                                                                  \
+    FUNC(CobbledDeepslateSlab);                                                                                        \
+    FUNC(CobbledDeepslateStairs);                                                                                      \
+    FUNC(CobbledDeepslateWall);                                                                                        \
+    FUNC(Cobblestone);                                                                                                 \
+    FUNC(CobblestoneWall);                                                                                             \
+    FUNC(Cocoa);                                                                                                       \
+    FUNC(ColoredTorchBp);                                                                                              \
+    FUNC(ColoredTorchRg);                                                                                              \
+    FUNC(CommandBlock);                                                                                                \
+    FUNC(Composter);                                                                                                   \
+    FUNC(Conduit);                                                                                                     \
+    FUNC(CopperBlock);                                                                                                 \
+    FUNC(CopperOre);                                                                                                   \
+    FUNC(CoralBlock);                                                                                                  \
+    FUNC(CoralFan);                                                                                                    \
+    FUNC(CoralFanDead);                                                                                                \
+    FUNC(CoralFanHang);                                                                                                \
+    FUNC(CoralFanHang2);                                                                                               \
+    FUNC(CoralFanHang3);                                                                                               \
+    FUNC(CrackedDeepslateBricks);                                                                                      \
+    FUNC(CrackedDeepslateTiles);                                                                                       \
+    FUNC(CrackedNetherBricks);                                                                                         \
+    FUNC(CrackedPolishedBlackstoneBricks);                                                                             \
+    FUNC(CraftingTable);                                                                                               \
+    FUNC(CrimsonButton);                                                                                               \
+    FUNC(CrimsonDoor);                                                                                                 \
+    FUNC(CrimsonDoubleSlab);                                                                                           \
+    FUNC(CrimsonFence);                                                                                                \
+    FUNC(CrimsonFenceGate);                                                                                            \
+    FUNC(CrimsonFungus);                                                                                               \
+    FUNC(CrimsonHangingSign);                                                                                          \
+    FUNC(CrimsonHyphae);                                                                                               \
+    FUNC(CrimsonNylium);                                                                                               \
+    FUNC(CrimsonPlanks);                                                                                               \
+    FUNC(CrimsonPressurePlate);                                                                                        \
+    FUNC(CrimsonRoots);                                                                                                \
+    FUNC(CrimsonSlab);                                                                                                 \
+    FUNC(CrimsonStairs);                                                                                               \
+    FUNC(CrimsonStandingSign);                                                                                         \
+    FUNC(CrimsonStem);                                                                                                 \
+    FUNC(CrimsonTrapdoor);                                                                                             \
+    FUNC(CrimsonWallSign);                                                                                             \
+    FUNC(CryingObsidian);                                                                                              \
+    FUNC(CutCopper);                                                                                                   \
+    FUNC(CutCopperSlab);                                                                                               \
+    FUNC(CutCopperStairs);                                                                                             \
+    FUNC(CyanCandle);                                                                                                  \
+    FUNC(CyanCandleCake);                                                                                              \
+    FUNC(CyanCarpet);                                                                                                  \
+    FUNC(CyanConcrete);                                                                                                \
+    FUNC(CyanConcretePowder);                                                                                          \
+    FUNC(CyanGlazedTerracotta);                                                                                        \
+    FUNC(CyanShulkerBox);                                                                                              \
+    FUNC(CyanStainedGlass);                                                                                            \
+    FUNC(CyanStainedGlassPane);                                                                                        \
+    FUNC(CyanTerracotta);                                                                                              \
+    FUNC(CyanWool);                                                                                                    \
+    FUNC(DarkOakButton);                                                                                               \
+    FUNC(DarkOakDoor);                                                                                                 \
+    FUNC(DarkOakFence);                                                                                                \
+    FUNC(DarkOakFenceGate);                                                                                            \
+    FUNC(DarkOakLog);                                                                                                  \
+    FUNC(DarkOakPressurePlate);                                                                                        \
+    FUNC(DarkOakStairs);                                                                                               \
+    FUNC(DarkOakTrapdoor);                                                                                             \
+    FUNC(DarkPrismarineStairs);                                                                                        \
+    FUNC(DarkoakHangingSign);                                                                                          \
+    FUNC(DarkoakStandingSign);                                                                                         \
+    FUNC(DarkoakWallSign);                                                                                             \
+    FUNC(DaylightDetector);                                                                                            \
+    FUNC(DaylightDetectorInverted);                                                                                    \
+    FUNC(DeadBrainCoral);                                                                                              \
+    FUNC(DeadBubbleCoral);                                                                                             \
+    FUNC(DeadFireCoral);                                                                                               \
+    FUNC(DeadHornCoral);                                                                                               \
+    FUNC(DeadTubeCoral);                                                                                               \
+    FUNC(Deadbush);                                                                                                    \
+    FUNC(DecoratedPot);                                                                                                \
+    FUNC(Deepslate);                                                                                                   \
+    FUNC(DeepslateBrickDoubleSlab);                                                                                    \
+    FUNC(DeepslateBrickSlab);                                                                                          \
+    FUNC(DeepslateBrickStairs);                                                                                        \
+    FUNC(DeepslateBrickWall);                                                                                          \
+    FUNC(DeepslateBricks);                                                                                             \
+    FUNC(DeepslateCoalOre);                                                                                            \
+    FUNC(DeepslateCopperOre);                                                                                          \
+    FUNC(DeepslateDiamondOre);                                                                                         \
+    FUNC(DeepslateEmeraldOre);                                                                                         \
+    FUNC(DeepslateGoldOre);                                                                                            \
+    FUNC(DeepslateIronOre);                                                                                            \
+    FUNC(DeepslateLapisOre);                                                                                           \
+    FUNC(DeepslateRedstoneOre);                                                                                        \
+    FUNC(DeepslateTileDoubleSlab);                                                                                     \
+    FUNC(DeepslateTileSlab);                                                                                           \
+    FUNC(DeepslateTileStairs);                                                                                         \
+    FUNC(DeepslateTileWall);                                                                                           \
+    FUNC(DeepslateTiles);                                                                                              \
+    FUNC(Deny);                                                                                                        \
+    FUNC(DetectorRail);                                                                                                \
+    FUNC(DiamondBlock);                                                                                                \
+    FUNC(DiamondOre);                                                                                                  \
+    FUNC(DioriteStairs);                                                                                               \
+    FUNC(Dirt);                                                                                                        \
+    FUNC(DirtWithRoots);                                                                                               \
+    FUNC(Dispenser);                                                                                                   \
+    FUNC(DoubleCutCopperSlab);                                                                                         \
+    FUNC(DoublePlant);                                                                                                 \
+    FUNC(DoubleStoneSlab);                                                                                             \
+    FUNC(DoubleStoneSlab2);                                                                                            \
+    FUNC(DoubleStoneSlab3);                                                                                            \
+    FUNC(DoubleStoneSlab4);                                                                                            \
+    FUNC(DoubleWoodenSlab);                                                                                            \
+    FUNC(DragonEgg);                                                                                                   \
+    FUNC(DriedKelpBlock);                                                                                              \
+    FUNC(Dripstone);                                                                                                   \
+    FUNC(Dropper);                                                                                                     \
+    FUNC(EmeraldBlock);                                                                                                \
+    FUNC(EmeraldOre);                                                                                                  \
+    FUNC(EnchantingTable);                                                                                             \
+    FUNC(EndBrickStairs);                                                                                              \
+    FUNC(EndBricks);                                                                                                   \
+    FUNC(EndGateway);                                                                                                  \
+    FUNC(EndPortal);                                                                                                   \
+    FUNC(EndPortalFrame);                                                                                              \
+    FUNC(EndRod);                                                                                                      \
+    FUNC(EndStone);                                                                                                    \
+    FUNC(EnderChest);                                                                                                  \
+    FUNC(ExposedCopper);                                                                                               \
+    FUNC(ExposedCutCopper);                                                                                            \
+    FUNC(ExposedCutCopperSlab);                                                                                        \
+    FUNC(ExposedCutCopperStairs);                                                                                      \
+    FUNC(ExposedDoubleCutCopperSlab);                                                                                  \
+    FUNC(FarmlandBlock);                                                                                               \
+    FUNC(FenceGate);                                                                                                   \
+    FUNC(Fire);                                                                                                        \
+    FUNC(FireCoral);                                                                                                   \
+    FUNC(FletchingTable);                                                                                              \
+    FUNC(FlowerPot);                                                                                                   \
+    FUNC(FloweringAzalea);                                                                                             \
+    FUNC(FlowingLava);                                                                                                 \
+    FUNC(FlowingWater);                                                                                                \
+    FUNC(FrogSpawn);                                                                                                   \
+    FUNC(FrostedIce);                                                                                                  \
+    FUNC(Furnace);                                                                                                     \
+    FUNC(GildedBlackstone);                                                                                            \
+    FUNC(Glass);                                                                                                       \
+    FUNC(GlassPane);                                                                                                   \
+    FUNC(GlowItemFrame);                                                                                               \
+    FUNC(GlowLichen);                                                                                                  \
+    FUNC(GlowingObsidian);                                                                                             \
+    FUNC(Glowstone);                                                                                                   \
+    FUNC(GoldBlock);                                                                                                   \
+    FUNC(GoldOre);                                                                                                     \
+    FUNC(GoldenRail);                                                                                                  \
+    FUNC(GraniteStairs);                                                                                               \
+    FUNC(Grass);                                                                                                       \
+    FUNC(GrassPath);                                                                                                   \
+    FUNC(Gravel);                                                                                                      \
+    FUNC(GrayCandle);                                                                                                  \
+    FUNC(GrayCandleCake);                                                                                              \
+    FUNC(GrayCarpet);                                                                                                  \
+    FUNC(GrayConcrete);                                                                                                \
+    FUNC(GrayConcretePowder);                                                                                          \
+    FUNC(GrayGlazedTerracotta);                                                                                        \
+    FUNC(GrayShulkerBox);                                                                                              \
+    FUNC(GrayStainedGlass);                                                                                            \
+    FUNC(GrayStainedGlassPane);                                                                                        \
+    FUNC(GrayTerracotta);                                                                                              \
+    FUNC(GrayWool);                                                                                                    \
+    FUNC(GreenCandle);                                                                                                 \
+    FUNC(GreenCandleCake);                                                                                             \
+    FUNC(GreenCarpet);                                                                                                 \
+    FUNC(GreenConcrete);                                                                                               \
+    FUNC(GreenConcretePowder);                                                                                         \
+    FUNC(GreenGlazedTerracotta);                                                                                       \
+    FUNC(GreenShulkerBox);                                                                                             \
+    FUNC(GreenStainedGlass);                                                                                           \
+    FUNC(GreenStainedGlassPane);                                                                                       \
+    FUNC(GreenTerracotta);                                                                                             \
+    FUNC(GreenWool);                                                                                                   \
+    FUNC(Grindstone);                                                                                                  \
+    FUNC(HangingRoots);                                                                                                \
+    FUNC(HardGlass);                                                                                                   \
+    FUNC(HardGlassPane);                                                                                               \
+    FUNC(HardStainedGlass);                                                                                            \
+    FUNC(HardStainedGlassPane);                                                                                        \
+    FUNC(HardenedClay);                                                                                                \
+    FUNC(HayBlock);                                                                                                    \
+    FUNC(HeavyWeightedPressurePlate);                                                                                  \
+    FUNC(HoneyBlock);                                                                                                  \
+    FUNC(HoneycombBlock);                                                                                              \
+    FUNC(Hopper);                                                                                                      \
+    FUNC(HornCoral);                                                                                                   \
+    FUNC(Ice);                                                                                                         \
+    FUNC(InfestedDeepslate);                                                                                           \
+    FUNC(InfoUpdate);                                                                                                  \
+    FUNC(InfoUpdate2);                                                                                                 \
+    FUNC(InvisibleBedrock);                                                                                            \
+    FUNC(IronBars);                                                                                                    \
+    FUNC(IronBlock);                                                                                                   \
+    FUNC(IronDoor);                                                                                                    \
+    FUNC(IronOre);                                                                                                     \
+    FUNC(IronTrapdoor);                                                                                                \
+    FUNC(ItemFrame);                                                                                                   \
+    FUNC(Jigsaw);                                                                                                      \
+    FUNC(Jukebox);                                                                                                     \
+    FUNC(JungleButton);                                                                                                \
+    FUNC(JungleDoor);                                                                                                  \
+    FUNC(JungleFence);                                                                                                 \
+    FUNC(JungleFenceGate);                                                                                             \
+    FUNC(JungleHangingSign);                                                                                           \
+    FUNC(JungleLog);                                                                                                   \
+    FUNC(JunglePressurePlate);                                                                                         \
+    FUNC(JungleStairs);                                                                                                \
+    FUNC(JungleStandingSign);                                                                                          \
+    FUNC(JungleTrapdoor);                                                                                              \
+    FUNC(JungleWallSign);                                                                                              \
+    FUNC(Kelp);                                                                                                        \
+    FUNC(Ladder);                                                                                                      \
+    FUNC(Lantern);                                                                                                     \
+    FUNC(LapisBlock);                                                                                                  \
+    FUNC(LapisOre);                                                                                                    \
+    FUNC(LargeAmethystBud);                                                                                            \
+    FUNC(Lava);                                                                                                        \
+    FUNC(Leaves);                                                                                                      \
+    FUNC(Leaves2);                                                                                                     \
+    FUNC(Lectern);                                                                                                     \
+    FUNC(Lever);                                                                                                       \
+    FUNC(LightBlock);                                                                                                  \
+    FUNC(LightBlueCandle);                                                                                             \
+    FUNC(LightBlueCandleCake);                                                                                         \
+    FUNC(LightBlueCarpet);                                                                                             \
+    FUNC(LightBlueConcrete);                                                                                           \
+    FUNC(LightBlueConcretePowder);                                                                                     \
+    FUNC(LightBlueGlazedTerracotta);                                                                                   \
+    FUNC(LightBlueShulkerBox);                                                                                         \
+    FUNC(LightBlueStainedGlass);                                                                                       \
+    FUNC(LightBlueStainedGlassPane);                                                                                   \
+    FUNC(LightBlueTerracotta);                                                                                         \
+    FUNC(LightBlueWool);                                                                                               \
+    FUNC(LightGrayCandle);                                                                                             \
+    FUNC(LightGrayCandleCake);                                                                                         \
+    FUNC(LightGrayCarpet);                                                                                             \
+    FUNC(LightGrayConcrete);                                                                                           \
+    FUNC(LightGrayConcretePowder);                                                                                     \
+    FUNC(LightGrayShulkerBox);                                                                                         \
+    FUNC(LightGrayStainedGlass);                                                                                       \
+    FUNC(LightGrayStainedGlassPane);                                                                                   \
+    FUNC(LightGrayTerracotta);                                                                                         \
+    FUNC(LightGrayWool);                                                                                               \
+    FUNC(LightWeightedPressurePlate);                                                                                  \
+    FUNC(LightningRod);                                                                                                \
+    FUNC(LimeCandle);                                                                                                  \
+    FUNC(LimeCandleCake);                                                                                              \
+    FUNC(LimeCarpet);                                                                                                  \
+    FUNC(LimeConcrete);                                                                                                \
+    FUNC(LimeConcretePowder);                                                                                          \
+    FUNC(LimeGlazedTerracotta);                                                                                        \
+    FUNC(LimeShulkerBox);                                                                                              \
+    FUNC(LimeStainedGlass);                                                                                            \
+    FUNC(LimeStainedGlassPane);                                                                                        \
+    FUNC(LimeTerracotta);                                                                                              \
+    FUNC(LimeWool);                                                                                                    \
+    FUNC(LitBlastFurnace);                                                                                             \
+    FUNC(LitDeepslateRedstoneOre);                                                                                     \
+    FUNC(LitFurnace);                                                                                                  \
+    FUNC(LitPumpkin);                                                                                                  \
+    FUNC(LitRedstoneLamp);                                                                                             \
+    FUNC(LitRedstoneOre);                                                                                              \
+    FUNC(LitSmoker);                                                                                                   \
+    FUNC(Lodestone);                                                                                                   \
+    FUNC(Loom);                                                                                                        \
+    FUNC(MagentaCandle);                                                                                               \
+    FUNC(MagentaCandleCake);                                                                                           \
+    FUNC(MagentaCarpet);                                                                                               \
+    FUNC(MagentaConcrete);                                                                                             \
+    FUNC(MagentaConcretePowder);                                                                                       \
+    FUNC(MagentaGlazedTerracotta);                                                                                     \
+    FUNC(MagentaShulkerBox);                                                                                           \
+    FUNC(MagentaStainedGlass);                                                                                         \
+    FUNC(MagentaStainedGlassPane);                                                                                     \
+    FUNC(MagentaTerracotta);                                                                                           \
+    FUNC(MagentaWool);                                                                                                 \
+    FUNC(Magma);                                                                                                       \
+    FUNC(MangroveButton);                                                                                              \
+    FUNC(MangroveDoor);                                                                                                \
+    FUNC(MangroveDoubleSlab);                                                                                          \
+    FUNC(MangroveFence);                                                                                               \
+    FUNC(MangroveFenceGate);                                                                                           \
+    FUNC(MangroveHangingSign);                                                                                         \
+    FUNC(MangroveLeaves);                                                                                              \
+    FUNC(MangroveLog);                                                                                                 \
+    FUNC(MangrovePlanks);                                                                                              \
+    FUNC(MangrovePressurePlate);                                                                                       \
+    FUNC(MangrovePropagule);                                                                                           \
+    FUNC(MangroveRoots);                                                                                               \
+    FUNC(MangroveSlab);                                                                                                \
+    FUNC(MangroveStairs);                                                                                              \
+    FUNC(MangroveStandingSign);                                                                                        \
+    FUNC(MangroveTrapdoor);                                                                                            \
+    FUNC(MangroveWallSign);                                                                                            \
+    FUNC(MangroveWood);                                                                                                \
+    FUNC(MediumAmethystBud);                                                                                           \
+    FUNC(MelonBlock);                                                                                                  \
+    FUNC(MelonStem);                                                                                                   \
+    FUNC(MobSpawner);                                                                                                  \
+    FUNC(MonsterEgg);                                                                                                  \
+    FUNC(MossBlock);                                                                                                   \
+    FUNC(MossCarpet);                                                                                                  \
+    FUNC(MossyCobblestone);                                                                                            \
+    FUNC(MossyCobblestoneStairs);                                                                                      \
+    FUNC(MossyStoneBrickStairs);                                                                                       \
+    FUNC(MovingBlock);                                                                                                 \
+    FUNC(Mud);                                                                                                         \
+    FUNC(MudBrickDoubleSlab);                                                                                          \
+    FUNC(MudBrickSlab);                                                                                                \
+    FUNC(MudBrickStairs);                                                                                              \
+    FUNC(MudBrickWall);                                                                                                \
+    FUNC(MudBricks);                                                                                                   \
+    FUNC(MuddyMangroveRoots);                                                                                          \
+    FUNC(Mycelium);                                                                                                    \
+    FUNC(MysteriousFrame);                                                                                             \
+    FUNC(MysteriousFrameSlot);                                                                                         \
+    FUNC(NetherBrickBlockName);                                                                                        \
+    FUNC(NetherBrickFence);                                                                                            \
+    FUNC(NetherBrickStairs);                                                                                           \
+    FUNC(NetherGoldOre);                                                                                               \
+    FUNC(NetherSprouts);                                                                                               \
+    FUNC(NetherWart);                                                                                                  \
+    FUNC(NetherWartBlock);                                                                                             \
+    FUNC(NetheriteBlock);                                                                                              \
+    FUNC(Netherrack);                                                                                                  \
+    FUNC(Netherreactor);                                                                                               \
+    FUNC(NormalStoneStairs);                                                                                           \
+    FUNC(Noteblock);                                                                                                   \
+    FUNC(OakFence);                                                                                                    \
+    FUNC(OakHangingSign);                                                                                              \
+    FUNC(OakLog);                                                                                                      \
+    FUNC(OakStairs);                                                                                                   \
+    FUNC(Observer);                                                                                                    \
+    FUNC(Obsidian);                                                                                                    \
+    FUNC(OchreFroglight);                                                                                              \
+    FUNC(OrangeCandle);                                                                                                \
+    FUNC(OrangeCandleCake);                                                                                            \
+    FUNC(OrangeCarpet);                                                                                                \
+    FUNC(OrangeConcrete);                                                                                              \
+    FUNC(OrangeConcretePowder);                                                                                        \
+    FUNC(OrangeGlazedTerracotta);                                                                                      \
+    FUNC(OrangeShulkerBox);                                                                                            \
+    FUNC(OrangeStainedGlass);                                                                                          \
+    FUNC(OrangeStainedGlassPane);                                                                                      \
+    FUNC(OrangeTerracotta);                                                                                            \
+    FUNC(OrangeWool);                                                                                                  \
+    FUNC(OxidizedCopper);                                                                                              \
+    FUNC(OxidizedCutCopper);                                                                                           \
+    FUNC(OxidizedCutCopperSlab);                                                                                       \
+    FUNC(OxidizedCutCopperStairs);                                                                                     \
+    FUNC(OxidizedDoubleCutCopperSlab);                                                                                 \
+    FUNC(PackedIce);                                                                                                   \
+    FUNC(PackedMud);                                                                                                   \
+    FUNC(PearlescentFroglight);                                                                                        \
+    FUNC(PinkCandle);                                                                                                  \
+    FUNC(PinkCandleCake);                                                                                              \
+    FUNC(PinkCarpet);                                                                                                  \
+    FUNC(PinkConcrete);                                                                                                \
+    FUNC(PinkConcretePowder);                                                                                          \
+    FUNC(PinkGlazedTerracotta);                                                                                        \
+    FUNC(PinkPetals);                                                                                                  \
+    FUNC(PinkShulkerBox);                                                                                              \
+    FUNC(PinkStainedGlass);                                                                                            \
+    FUNC(PinkStainedGlassPane);                                                                                        \
+    FUNC(PinkTerracotta);                                                                                              \
+    FUNC(PinkWool);                                                                                                    \
+    FUNC(Piston);                                                                                                      \
+    FUNC(PistonArmCollision);                                                                                          \
+    FUNC(PitcherCrop);                                                                                                 \
+    FUNC(PitcherPlant);                                                                                                \
+    FUNC(Planks);                                                                                                      \
+    FUNC(Podzol);                                                                                                      \
+    FUNC(PointedDripstone);                                                                                            \
+    FUNC(PolishedAndesiteStairs);                                                                                      \
+    FUNC(PolishedBasalt);                                                                                              \
+    FUNC(PolishedBlackstone);                                                                                          \
+    FUNC(PolishedBlackstoneBrickDoubleSlab);                                                                           \
+    FUNC(PolishedBlackstoneBrickSlab);                                                                                 \
+    FUNC(PolishedBlackstoneBrickStairs);                                                                               \
+    FUNC(PolishedBlackstoneBrickWall);                                                                                 \
+    FUNC(PolishedBlackstoneBricks);                                                                                    \
+    FUNC(PolishedBlackstoneButton);                                                                                    \
+    FUNC(PolishedBlackstoneDoubleSlab);                                                                                \
+    FUNC(PolishedBlackstonePressurePlate);                                                                             \
+    FUNC(PolishedBlackstoneSlab);                                                                                      \
+    FUNC(PolishedBlackstoneStairs);                                                                                    \
+    FUNC(PolishedBlackstoneWall);                                                                                      \
+    FUNC(PolishedDeepslate);                                                                                           \
+    FUNC(PolishedDeepslateDoubleSlab);                                                                                 \
+    FUNC(PolishedDeepslateSlab);                                                                                       \
+    FUNC(PolishedDeepslateStairs);                                                                                     \
+    FUNC(PolishedDeepslateWall);                                                                                       \
+    FUNC(PolishedDioriteStairs);                                                                                       \
+    FUNC(PolishedGraniteStairs);                                                                                       \
+    FUNC(Portal);                                                                                                      \
+    FUNC(Potatoes);                                                                                                    \
+    FUNC(PowderSnow);                                                                                                  \
+    FUNC(PoweredComparator);                                                                                           \
+    FUNC(PoweredRepeater);                                                                                             \
+    FUNC(Prismarine);                                                                                                  \
+    FUNC(PrismarineBricksStairs);                                                                                      \
+    FUNC(PrismarineStairs);                                                                                            \
+    FUNC(Pumpkin);                                                                                                     \
+    FUNC(PumpkinStem);                                                                                                 \
+    FUNC(PurpleCandle);                                                                                                \
+    FUNC(PurpleCandleCake);                                                                                            \
+    FUNC(PurpleCarpet);                                                                                                \
+    FUNC(PurpleConcrete);                                                                                              \
+    FUNC(PurpleConcretePowder);                                                                                        \
+    FUNC(PurpleGlazedTerracotta);                                                                                      \
+    FUNC(PurpleShulkerBox);                                                                                            \
+    FUNC(PurpleStainedGlass);                                                                                          \
+    FUNC(PurpleStainedGlassPane);                                                                                      \
+    FUNC(PurpleTerracotta);                                                                                            \
+    FUNC(PurpleWool);                                                                                                  \
+    FUNC(PurpurBlock);                                                                                                 \
+    FUNC(PurpurStairs);                                                                                                \
+    FUNC(QuartzBlock);                                                                                                 \
+    FUNC(QuartzBricks);                                                                                                \
+    FUNC(QuartzOre);                                                                                                   \
+    FUNC(QuartzStairs);                                                                                                \
+    FUNC(Rail);                                                                                                        \
+    FUNC(RawCopperBlock);                                                                                              \
+    FUNC(RawGoldBlock);                                                                                                \
+    FUNC(RawIronBlock);                                                                                                \
+    FUNC(RedCandle);                                                                                                   \
+    FUNC(RedCandleCake);                                                                                               \
+    FUNC(RedCarpet);                                                                                                   \
+    FUNC(RedConcrete);                                                                                                 \
+    FUNC(RedConcretePowder);                                                                                           \
+    FUNC(RedFlower);                                                                                                   \
+    FUNC(RedGlazedTerracotta);                                                                                         \
+    FUNC(RedMushroom);                                                                                                 \
+    FUNC(RedMushroomBlock);                                                                                            \
+    FUNC(RedNetherBrick);                                                                                              \
+    FUNC(RedNetherBrickStairs);                                                                                        \
+    FUNC(RedSandstone);                                                                                                \
+    FUNC(RedSandstoneStairs);                                                                                          \
+    FUNC(RedShulkerBox);                                                                                               \
+    FUNC(RedStainedGlass);                                                                                             \
+    FUNC(RedStainedGlassPane);                                                                                         \
+    FUNC(RedTerracotta);                                                                                               \
+    FUNC(RedWool);                                                                                                     \
+    FUNC(RedstoneBlock);                                                                                               \
+    FUNC(RedstoneLamp);                                                                                                \
+    FUNC(RedstoneOre);                                                                                                 \
+    FUNC(RedstoneTorch);                                                                                               \
+    FUNC(RedstoneWire);                                                                                                \
+    FUNC(Reeds);                                                                                                       \
+    FUNC(ReinforcedDeepslate);                                                                                         \
+    FUNC(RepeatingCommandBlock);                                                                                       \
+    FUNC(Reserved6);                                                                                                   \
+    FUNC(RespawnAnchor);                                                                                               \
+    FUNC(Sand);                                                                                                        \
+    FUNC(Sandstone);                                                                                                   \
+    FUNC(SandstoneStairs);                                                                                             \
+    FUNC(Sapling);                                                                                                     \
+    FUNC(Scaffolding);                                                                                                 \
+    FUNC(Sculk);                                                                                                       \
+    FUNC(SculkCatalyst);                                                                                               \
+    FUNC(SculkSensor);                                                                                                 \
+    FUNC(SculkShrieker);                                                                                               \
+    FUNC(SculkVein);                                                                                                   \
+    FUNC(SeaLantern);                                                                                                  \
+    FUNC(SeaPickle);                                                                                                   \
+    FUNC(Seagrass);                                                                                                    \
+    FUNC(Shroomlight);                                                                                                 \
+    FUNC(SilverGlazedTerracotta);                                                                                      \
+    FUNC(Skull);                                                                                                       \
+    FUNC(SlimeBlock);                                                                                                  \
+    FUNC(SmallAmethystBud);                                                                                            \
+    FUNC(SmallDripleaf);                                                                                               \
+    FUNC(SmithingTable);                                                                                               \
+    FUNC(Smoker);                                                                                                      \
+    FUNC(SmoothBasalt);                                                                                                \
+    FUNC(SmoothQuartzStairs);                                                                                          \
+    FUNC(SmoothRedSandstoneStairs);                                                                                    \
+    FUNC(SmoothSandstoneStairs);                                                                                       \
+    FUNC(SmoothStone);                                                                                                 \
+    FUNC(SnifferEgg);                                                                                                  \
+    FUNC(Snow);                                                                                                        \
+    FUNC(SnowLayer);                                                                                                   \
+    FUNC(SoulCampfire);                                                                                                \
+    FUNC(SoulFire);                                                                                                    \
+    FUNC(SoulLantern);                                                                                                 \
+    FUNC(SoulSand);                                                                                                    \
+    FUNC(SoulSoil);                                                                                                    \
+    FUNC(SoulTorch);                                                                                                   \
+    FUNC(Sponge);                                                                                                      \
+    FUNC(SporeBlossom);                                                                                                \
+    FUNC(SpruceButton);                                                                                                \
+    FUNC(SpruceDoor);                                                                                                  \
+    FUNC(SpruceFence);                                                                                                 \
+    FUNC(SpruceFenceGate);                                                                                             \
+    FUNC(SpruceHangingSign);                                                                                           \
+    FUNC(SpruceLog);                                                                                                   \
+    FUNC(SprucePressurePlate);                                                                                         \
+    FUNC(SpruceStairs);                                                                                                \
+    FUNC(SpruceStandingSign);                                                                                          \
+    FUNC(SpruceTrapdoor);                                                                                              \
+    FUNC(SpruceWallSign);                                                                                              \
+    FUNC(StandingBanner);                                                                                              \
+    FUNC(StandingSign);                                                                                                \
+    FUNC(StickyPiston);                                                                                                \
+    FUNC(StickyPistonArmCollision);                                                                                    \
+    FUNC(Stone);                                                                                                       \
+    FUNC(StoneBrickStairs);                                                                                            \
+    FUNC(StoneBricks);                                                                                                 \
+    FUNC(StoneButton);                                                                                                 \
+    FUNC(StonePressurePlate);                                                                                          \
+    FUNC(StoneSlab);                                                                                                   \
+    FUNC(StoneSlab2);                                                                                                  \
+    FUNC(StoneSlab3);                                                                                                  \
+    FUNC(StoneSlab4);                                                                                                  \
+    FUNC(StoneStairs);                                                                                                 \
+    FUNC(Stonecutter);                                                                                                 \
+    FUNC(StonecutterBlock);                                                                                            \
+    FUNC(StrippedAcaciaLog);                                                                                           \
+    FUNC(StrippedBambooBlock);                                                                                         \
+    FUNC(StrippedBirchLog);                                                                                            \
+    FUNC(StrippedCherryLog);                                                                                           \
+    FUNC(StrippedCherryWood);                                                                                          \
+    FUNC(StrippedCrimsonHyphae);                                                                                       \
+    FUNC(StrippedCrimsonStem);                                                                                         \
+    FUNC(StrippedDarkOakLog);                                                                                          \
+    FUNC(StrippedJungleLog);                                                                                           \
+    FUNC(StrippedMangroveLog);                                                                                         \
+    FUNC(StrippedMangroveWood);                                                                                        \
+    FUNC(StrippedOakLog);                                                                                              \
+    FUNC(StrippedSpruceLog);                                                                                           \
+    FUNC(StrippedWarpedHyphae);                                                                                        \
+    FUNC(StrippedWarpedStem);                                                                                          \
+    FUNC(StructureBlock);                                                                                              \
+    FUNC(StructureVoid);                                                                                               \
+    FUNC(SuspiciousGravel);                                                                                            \
+    FUNC(SuspiciousSand);                                                                                              \
+    FUNC(SweetBerryBush);                                                                                              \
+    FUNC(TallGrass);                                                                                                   \
+    FUNC(Target);                                                                                                      \
+    FUNC(TintedGlass);                                                                                                 \
+    FUNC(Tnt);                                                                                                         \
+    FUNC(Torch);                                                                                                       \
+    FUNC(Torchflower);                                                                                                 \
+    FUNC(TorchflowerCrop);                                                                                             \
+    FUNC(Trapdoor);                                                                                                    \
+    FUNC(TrappedChest);                                                                                                \
+    FUNC(TripWire);                                                                                                    \
+    FUNC(TripWireHook);                                                                                                \
+    FUNC(TubeCoral);                                                                                                   \
+    FUNC(Tuff);                                                                                                        \
+    FUNC(TurtleEgg);                                                                                                   \
+    FUNC(TwistingVines);                                                                                               \
+    FUNC(UnderwaterTorch);                                                                                             \
+    FUNC(UndyedShulkerBox);                                                                                            \
+    FUNC(UnlitRedstoneTorch);                                                                                          \
+    FUNC(UnpoweredComparator);                                                                                         \
+    FUNC(UnpoweredRepeater);                                                                                           \
+    FUNC(VerdantFroglight);                                                                                            \
+    FUNC(Vine);                                                                                                        \
+    FUNC(WallBanner);                                                                                                  \
+    FUNC(WallSign);                                                                                                    \
+    FUNC(WarpedButton);                                                                                                \
+    FUNC(WarpedDoor);                                                                                                  \
+    FUNC(WarpedDoubleSlab);                                                                                            \
+    FUNC(WarpedFence);                                                                                                 \
+    FUNC(WarpedFenceGate);                                                                                             \
+    FUNC(WarpedFungus);                                                                                                \
+    FUNC(WarpedHangingSign);                                                                                           \
+    FUNC(WarpedHyphae);                                                                                                \
+    FUNC(WarpedNylium);                                                                                                \
+    FUNC(WarpedPlanks);                                                                                                \
+    FUNC(WarpedPressurePlate);                                                                                         \
+    FUNC(WarpedRoots);                                                                                                 \
+    FUNC(WarpedSlab);                                                                                                  \
+    FUNC(WarpedStairs);                                                                                                \
+    FUNC(WarpedStandingSign);                                                                                          \
+    FUNC(WarpedStem);                                                                                                  \
+    FUNC(WarpedTrapdoor);                                                                                              \
+    FUNC(WarpedWallSign);                                                                                              \
+    FUNC(WarpedWartBlock);                                                                                             \
+    FUNC(Water);                                                                                                       \
+    FUNC(WaterLily);                                                                                                   \
+    FUNC(WaxedCopper);                                                                                                 \
+    FUNC(WaxedCutCopper);                                                                                              \
+    FUNC(WaxedCutCopperSlab);                                                                                          \
+    FUNC(WaxedCutCopperStairs);                                                                                        \
+    FUNC(WaxedDoubleCutCopperSlab);                                                                                    \
+    FUNC(WaxedExposedCopper);                                                                                          \
+    FUNC(WaxedExposedCutCopper);                                                                                       \
+    FUNC(WaxedExposedCutCopperSlab);                                                                                   \
+    FUNC(WaxedExposedCutCopperStairs);                                                                                 \
+    FUNC(WaxedExposedDoubleCutCopperSlab);                                                                             \
+    FUNC(WaxedOxidizedCopper);                                                                                         \
+    FUNC(WaxedOxidizedCutCopper);                                                                                      \
+    FUNC(WaxedOxidizedCutCopperSlab);                                                                                  \
+    FUNC(WaxedOxidizedCutCopperStairs);                                                                                \
+    FUNC(WaxedOxidizedDoubleCutCopperSlab);                                                                            \
+    FUNC(WaxedWeatheredCopper);                                                                                        \
+    FUNC(WaxedWeatheredCutCopper);                                                                                     \
+    FUNC(WaxedWeatheredCutCopperSlab);                                                                                 \
+    FUNC(WaxedWeatheredCutCopperStairs);                                                                               \
+    FUNC(WaxedWeatheredDoubleCutCopperSlab);                                                                           \
+    FUNC(WeatheredCopper);                                                                                             \
+    FUNC(WeatheredCutCopper);                                                                                          \
+    FUNC(WeatheredCutCopperSlab);                                                                                      \
+    FUNC(WeatheredCutCopperStairs);                                                                                    \
+    FUNC(WeatheredDoubleCutCopperSlab);                                                                                \
+    FUNC(Web);                                                                                                         \
+    FUNC(WeepingVines);                                                                                                \
+    FUNC(Wheat);                                                                                                       \
+    FUNC(WhiteCandle);                                                                                                 \
+    FUNC(WhiteCandleCake);                                                                                             \
+    FUNC(WhiteCarpet);                                                                                                 \
+    FUNC(WhiteConcrete);                                                                                               \
+    FUNC(WhiteConcretePowder);                                                                                         \
+    FUNC(WhiteGlazedTerracotta);                                                                                       \
+    FUNC(WhiteShulkerBox);                                                                                             \
+    FUNC(WhiteStainedGlass);                                                                                           \
+    FUNC(WhiteStainedGlassPane);                                                                                       \
+    FUNC(WhiteTerracotta);                                                                                             \
+    FUNC(WhiteWool);                                                                                                   \
+    FUNC(WitherRose);                                                                                                  \
+    FUNC(Wood);                                                                                                        \
+    FUNC(WoodenButton);                                                                                                \
+    FUNC(WoodenDoor);                                                                                                  \
+    FUNC(WoodenPressurePlate);                                                                                         \
+    FUNC(WoodenSlab);                                                                                                  \
+    FUNC(YellowCandle);                                                                                                \
+    FUNC(YellowCandleCake);                                                                                            \
+    FUNC(YellowCarpet);                                                                                                \
+    FUNC(YellowConcrete);                                                                                              \
+    FUNC(YellowConcretePowder);                                                                                        \
+    FUNC(YellowFlower);                                                                                                \
+    FUNC(YellowGlazedTerracotta);                                                                                      \
+    FUNC(YellowShulkerBox);                                                                                            \
+    FUNC(YellowStainedGlass);                                                                                          \
+    FUNC(YellowStainedGlassPane);                                                                                      \
+    FUNC(YellowTerracotta);                                                                                            \
+    FUNC(YellowWool);
+
+#pragma endregion
+
 namespace StaticVanillaBlocks {
 
 std::array<Block const*, 119> mElements{};
 
-#pragma region StaticVanillaBlocksDefinition
+Block const* mAir;
 
-Block const* mAcaciaButton;
-Block const* mAcaciaDoor;
-Block const* mAcaciaFence;
-Block const* mAcaciaFenceGate;
-Block const* mAcaciaHangingSign;
-Block const* mAcaciaLog;
-Block const* mAcaciaPressurePlate;
-Block const* mAcaciaStairs;
-Block const* mAcaciaStandingSign;
-Block const* mAcaciaTrapdoor;
-Block const* mAcaciaWallSign;
-Block const* mActivatorRail;
-Block const* mAllow;
-Block const* mAmethystBlock;
-Block const* mAmethystCluster;
-Block const* mAncientDebris;
-Block const* mAndesiteStairs;
-Block const* mAnvil;
-Block const* mAzalea;
-Block const* mAzaleaLeaves;
-Block const* mAzaleaLeavesFlowered;
-Block const* mBamboo;
-Block const* mBambooBlock;
-Block const* mBambooButton;
-Block const* mBambooDoor;
-Block const* mBambooDoubleSlab;
-Block const* mBambooFence;
-Block const* mBambooFenceGate;
-Block const* mBambooHangingSign;
-Block const* mBambooMosaic;
-Block const* mBambooMosaicDoubleSlab;
-Block const* mBambooMosaicSlab;
-Block const* mBambooMosaicStairs;
-Block const* mBambooPlanks;
-Block const* mBambooPressurePlate;
-Block const* mBambooSapling;
-Block const* mBambooSlab;
-Block const* mBambooStairs;
-Block const* mBambooStandingSign;
-Block const* mBambooTrapdoor;
-Block const* mBambooWallSign;
-Block const* mBarrel;
-Block const* mBarrier;
-Block const* mBasalt;
-Block const* mBeacon;
-Block const* mBed;
-Block const* mBedrock;
-Block const* mBeeNest;
-Block const* mBeehive;
-Block const* mBeetroot;
-Block const* mBell;
-Block const* mBigDripleaf;
-Block const* mBirchButton;
-Block const* mBirchDoor;
-Block const* mBirchFence;
-Block const* mBirchFenceGate;
-Block const* mBirchHangingSign;
-Block const* mBirchLog;
-Block const* mBirchPressurePlate;
-Block const* mBirchStairs;
-Block const* mBirchStandingSign;
-Block const* mBirchTrapdoor;
-Block const* mBirchWallSign;
-Block const* mBlackCandle;
-Block const* mBlackCandleCake;
-Block const* mBlackCarpet;
-Block const* mBlackConcrete;
-Block const* mBlackConcretePowder;
-Block const* mBlackGlazedTerracotta;
-Block const* mBlackShulkerBox;
-Block const* mBlackStainedGlass;
-Block const* mBlackStainedGlassPane;
-Block const* mBlackTerracotta;
-Block const* mBlackWool;
-Block const* mBlackstone;
-Block const* mBlackstoneDoubleSlab;
-Block const* mBlackstoneSlab;
-Block const* mBlackstoneStairs;
-Block const* mBlackstoneWall;
-Block const* mBlastFurnace;
-Block const* mBlueCandle;
-Block const* mBlueCandleCake;
-Block const* mBlueCarpet;
-Block const* mBlueConcrete;
-Block const* mBlueConcretePowder;
-Block const* mBlueGlazedTerracotta;
-Block const* mBlueIce;
-Block const* mBlueShulkerBox;
-Block const* mBlueStainedGlass;
-Block const* mBlueStainedGlassPane;
-Block const* mBlueTerracotta;
-Block const* mBlueWool;
-Block const* mBoneBlock;
-Block const* mBookshelf;
-Block const* mBorderBlock;
-Block const* mBrainCoral;
-Block const* mBrewingStand;
-Block const* mBrickBlock;
-Block const* mBrickStairs;
-Block const* mBrownCandle;
-Block const* mBrownCandleCake;
-Block const* mBrownCarpet;
-Block const* mBrownConcrete;
-Block const* mBrownConcretePowder;
-Block const* mBrownGlazedTerracotta;
-Block const* mBrownMushroom;
-Block const* mBrownMushroomBlock;
-Block const* mBrownShulkerBox;
-Block const* mBrownStainedGlass;
-Block const* mBrownStainedGlassPane;
-Block const* mBrownTerracotta;
-Block const* mBrownWool;
-Block const* mBubbleColumn;
-Block const* mBubbleCoral;
-Block const* mBuddingAmethyst;
-Block const* mCactus;
-Block const* mCake;
-Block const* mCalcite;
-Block const* mCalibratedSculkSensor;
-Block const* mCamera;
-Block const* mCampFire;
-Block const* mCandle;
-Block const* mCandleCake;
-Block const* mCarrots;
-Block const* mCartographyTable;
-Block const* mCarvedPumpkin;
-Block const* mCauldron;
-Block const* mCaveVines;
-Block const* mCaveVinesBodyWithBerries;
-Block const* mCaveVinesHeadWithBerries;
-Block const* mChain;
-Block const* mChainCommandBlock;
-Block const* mChalkboard;
-Block const* mChemicalHeat;
-Block const* mChemistryTable;
-Block const* mCherryButton;
-Block const* mCherryDoor;
-Block const* mCherryDoubleSlab;
-Block const* mCherryFence;
-Block const* mCherryFenceGate;
-Block const* mCherryHangingSign;
-Block const* mCherryLeaves;
-Block const* mCherryLog;
-Block const* mCherryPlanks;
-Block const* mCherryPressurePlate;
-Block const* mCherrySapling;
-Block const* mCherrySlab;
-Block const* mCherryStairs;
-Block const* mCherryStandingSign;
-Block const* mCherryTrapdoor;
-Block const* mCherryWallSign;
-Block const* mCherryWood;
-Block const* mChest;
-Block const* mChiseledBookshelf;
-Block const* mChiseledDeepslate;
-Block const* mChiseledNetherBricks;
-Block const* mChiseledPolishedBlackstone;
-Block const* mChorusFlower;
-Block const* mChorusPlant;
-Block const* mClay;
-Block const* mClientRequestPlaceholderBlock;
-Block const* mCoalBlock;
-Block const* mCoalOre;
-Block const* mCobbledDeepslate;
-Block const* mCobbledDeepslateDoubleSlab;
-Block const* mCobbledDeepslateSlab;
-Block const* mCobbledDeepslateStairs;
-Block const* mCobbledDeepslateWall;
-Block const* mCobblestone;
-Block const* mCobblestoneWall;
-Block const* mCocoa;
-Block const* mColoredTorchBp;
-Block const* mColoredTorchRg;
-Block const* mCommandBlock;
-Block const* mComposter;
-Block const* mConduit;
-Block const* mCopperBlock;
-Block const* mCopperOre;
-Block const* mCoralBlock;
-Block const* mCoralFan;
-Block const* mCoralFanDead;
-Block const* mCoralFanHang;
-Block const* mCoralFanHang2;
-Block const* mCoralFanHang3;
-Block const* mCrackedDeepslateBricks;
-Block const* mCrackedDeepslateTiles;
-Block const* mCrackedNetherBricks;
-Block const* mCrackedPolishedBlackstoneBricks;
-Block const* mCraftingTable;
-Block const* mCrimsonButton;
-Block const* mCrimsonDoor;
-Block const* mCrimsonDoubleSlab;
-Block const* mCrimsonFence;
-Block const* mCrimsonFenceGate;
-Block const* mCrimsonFungus;
-Block const* mCrimsonHangingSign;
-Block const* mCrimsonHyphae;
-Block const* mCrimsonNylium;
-Block const* mCrimsonPlanks;
-Block const* mCrimsonPressurePlate;
-Block const* mCrimsonRoots;
-Block const* mCrimsonSlab;
-Block const* mCrimsonStairs;
-Block const* mCrimsonStandingSign;
-Block const* mCrimsonStem;
-Block const* mCrimsonTrapdoor;
-Block const* mCrimsonWallSign;
-Block const* mCryingObsidian;
-Block const* mCutCopper;
-Block const* mCutCopperSlab;
-Block const* mCutCopperStairs;
-Block const* mCyanCandle;
-Block const* mCyanCandleCake;
-Block const* mCyanCarpet;
-Block const* mCyanConcrete;
-Block const* mCyanConcretePowder;
-Block const* mCyanGlazedTerracotta;
-Block const* mCyanShulkerBox;
-Block const* mCyanStainedGlass;
-Block const* mCyanStainedGlassPane;
-Block const* mCyanTerracotta;
-Block const* mCyanWool;
-Block const* mDarkOakButton;
-Block const* mDarkOakDoor;
-Block const* mDarkOakFence;
-Block const* mDarkOakFenceGate;
-Block const* mDarkOakLog;
-Block const* mDarkOakPressurePlate;
-Block const* mDarkOakStairs;
-Block const* mDarkOakTrapdoor;
-Block const* mDarkPrismarineStairs;
-Block const* mDarkoakHangingSign;
-Block const* mDarkoakStandingSign;
-Block const* mDarkoakWallSign;
-Block const* mDaylightDetector;
-Block const* mDaylightDetectorInverted;
-Block const* mDeadBrainCoral;
-Block const* mDeadBubbleCoral;
-Block const* mDeadFireCoral;
-Block const* mDeadHornCoral;
-Block const* mDeadTubeCoral;
-Block const* mDeadbush;
-Block const* mDecoratedPot;
-Block const* mDeepslate;
-Block const* mDeepslateBrickDoubleSlab;
-Block const* mDeepslateBrickSlab;
-Block const* mDeepslateBrickStairs;
-Block const* mDeepslateBrickWall;
-Block const* mDeepslateBricks;
-Block const* mDeepslateCoalOre;
-Block const* mDeepslateCopperOre;
-Block const* mDeepslateDiamondOre;
-Block const* mDeepslateEmeraldOre;
-Block const* mDeepslateGoldOre;
-Block const* mDeepslateIronOre;
-Block const* mDeepslateLapisOre;
-Block const* mDeepslateRedstoneOre;
-Block const* mDeepslateTileDoubleSlab;
-Block const* mDeepslateTileSlab;
-Block const* mDeepslateTileStairs;
-Block const* mDeepslateTileWall;
-Block const* mDeepslateTiles;
-Block const* mDeny;
-Block const* mDetectorRail;
-Block const* mDiamondBlock;
-Block const* mDiamondOre;
-Block const* mDioriteStairs;
-Block const* mDirt;
-Block const* mDirtWithRoots;
-Block const* mDispenser;
-Block const* mDoubleCutCopperSlab;
-Block const* mDoublePlant;
-Block const* mDoubleStoneSlab;
-Block const* mDoubleStoneSlab2;
-Block const* mDoubleStoneSlab3;
-Block const* mDoubleStoneSlab4;
-Block const* mDoubleWoodenSlab;
-Block const* mDragonEgg;
-Block const* mDriedKelpBlock;
-Block const* mDripstone;
-Block const* mDropper;
-Block const* mEmeraldBlock;
-Block const* mEmeraldOre;
-Block const* mEnchantingTable;
-Block const* mEndBrickStairs;
-Block const* mEndBricks;
-Block const* mEndGateway;
-Block const* mEndPortal;
-Block const* mEndPortalFrame;
-Block const* mEndRod;
-Block const* mEndStone;
-Block const* mEnderChest;
-Block const* mExposedCopper;
-Block const* mExposedCutCopper;
-Block const* mExposedCutCopperSlab;
-Block const* mExposedCutCopperStairs;
-Block const* mExposedDoubleCutCopperSlab;
-Block const* mFarmlandBlock;
-Block const* mFenceGate;
-Block const* mFire;
-Block const* mFireCoral;
-Block const* mFletchingTable;
-Block const* mFlowerPot;
-Block const* mFloweringAzalea;
-Block const* mFlowingLava;
-Block const* mFlowingWater;
-Block const* mFrogSpawn;
-Block const* mFrostedIce;
-Block const* mFurnace;
-Block const* mGildedBlackstone;
-Block const* mGlass;
-Block const* mGlassPane;
-Block const* mGlowItemFrame;
-Block const* mGlowLichen;
-Block const* mGlowingObsidian;
-Block const* mGlowstone;
-Block const* mGoldBlock;
-Block const* mGoldOre;
-Block const* mGoldenRail;
-Block const* mGraniteStairs;
-Block const* mGrass;
-Block const* mGrassPath;
-Block const* mGravel;
-Block const* mGrayCandle;
-Block const* mGrayCandleCake;
-Block const* mGrayCarpet;
-Block const* mGrayConcrete;
-Block const* mGrayConcretePowder;
-Block const* mGrayGlazedTerracotta;
-Block const* mGrayShulkerBox;
-Block const* mGrayStainedGlass;
-Block const* mGrayStainedGlassPane;
-Block const* mGrayTerracotta;
-Block const* mGrayWool;
-Block const* mGreenCandle;
-Block const* mGreenCandleCake;
-Block const* mGreenCarpet;
-Block const* mGreenConcrete;
-Block const* mGreenConcretePowder;
-Block const* mGreenGlazedTerracotta;
-Block const* mGreenShulkerBox;
-Block const* mGreenStainedGlass;
-Block const* mGreenStainedGlassPane;
-Block const* mGreenTerracotta;
-Block const* mGreenWool;
-Block const* mGrindstone;
-Block const* mHangingRoots;
-Block const* mHardGlass;
-Block const* mHardGlassPane;
-Block const* mHardStainedGlass;
-Block const* mHardStainedGlassPane;
-Block const* mHardenedClay;
-Block const* mHayBlock;
-Block const* mHeavyWeightedPressurePlate;
-Block const* mHoneyBlock;
-Block const* mHoneycombBlock;
-Block const* mHopper;
-Block const* mHornCoral;
-Block const* mIce;
-Block const* mInfestedDeepslate;
-Block const* mInfoUpdate;
-Block const* mInfoUpdate2;
-Block const* mInvisibleBedrock;
-Block const* mIronBars;
-Block const* mIronBlock;
-Block const* mIronDoor;
-Block const* mIronOre;
-Block const* mIronTrapdoor;
-Block const* mItemFrame;
-Block const* mJigsaw;
-Block const* mJukebox;
-Block const* mJungleButton;
-Block const* mJungleDoor;
-Block const* mJungleFence;
-Block const* mJungleFenceGate;
-Block const* mJungleHangingSign;
-Block const* mJungleLog;
-Block const* mJunglePressurePlate;
-Block const* mJungleStairs;
-Block const* mJungleStandingSign;
-Block const* mJungleTrapdoor;
-Block const* mJungleWallSign;
-Block const* mKelp;
-Block const* mLadder;
-Block const* mLantern;
-Block const* mLapisBlock;
-Block const* mLapisOre;
-Block const* mLargeAmethystBud;
-Block const* mLava;
-Block const* mLeaves;
-Block const* mLeaves2;
-Block const* mLectern;
-Block const* mLever;
-Block const* mLightBlock;
-Block const* mLightBlueCandle;
-Block const* mLightBlueCandleCake;
-Block const* mLightBlueCarpet;
-Block const* mLightBlueConcrete;
-Block const* mLightBlueConcretePowder;
-Block const* mLightBlueGlazedTerracotta;
-Block const* mLightBlueShulkerBox;
-Block const* mLightBlueStainedGlass;
-Block const* mLightBlueStainedGlassPane;
-Block const* mLightBlueTerracotta;
-Block const* mLightBlueWool;
-Block const* mLightGrayCandle;
-Block const* mLightGrayCandleCake;
-Block const* mLightGrayCarpet;
-Block const* mLightGrayConcrete;
-Block const* mLightGrayConcretePowder;
-Block const* mLightGrayShulkerBox;
-Block const* mLightGrayStainedGlass;
-Block const* mLightGrayStainedGlassPane;
-Block const* mLightGrayTerracotta;
-Block const* mLightGrayWool;
-Block const* mLightWeightedPressurePlate;
-Block const* mLightningRod;
-Block const* mLimeCandle;
-Block const* mLimeCandleCake;
-Block const* mLimeCarpet;
-Block const* mLimeConcrete;
-Block const* mLimeConcretePowder;
-Block const* mLimeGlazedTerracotta;
-Block const* mLimeShulkerBox;
-Block const* mLimeStainedGlass;
-Block const* mLimeStainedGlassPane;
-Block const* mLimeTerracotta;
-Block const* mLimeWool;
-Block const* mLitBlastFurnace;
-Block const* mLitDeepslateRedstoneOre;
-Block const* mLitFurnace;
-Block const* mLitPumpkin;
-Block const* mLitRedstoneLamp;
-Block const* mLitRedstoneOre;
-Block const* mLitSmoker;
-Block const* mLodestone;
-Block const* mLoom;
-Block const* mMagentaCandle;
-Block const* mMagentaCandleCake;
-Block const* mMagentaCarpet;
-Block const* mMagentaConcrete;
-Block const* mMagentaConcretePowder;
-Block const* mMagentaGlazedTerracotta;
-Block const* mMagentaShulkerBox;
-Block const* mMagentaStainedGlass;
-Block const* mMagentaStainedGlassPane;
-Block const* mMagentaTerracotta;
-Block const* mMagentaWool;
-Block const* mMagma;
-Block const* mMangroveButton;
-Block const* mMangroveDoor;
-Block const* mMangroveDoubleSlab;
-Block const* mMangroveFence;
-Block const* mMangroveFenceGate;
-Block const* mMangroveHangingSign;
-Block const* mMangroveLeaves;
-Block const* mMangroveLog;
-Block const* mMangrovePlanks;
-Block const* mMangrovePressurePlate;
-Block const* mMangrovePropagule;
-Block const* mMangroveRoots;
-Block const* mMangroveSlab;
-Block const* mMangroveStairs;
-Block const* mMangroveStandingSign;
-Block const* mMangroveTrapdoor;
-Block const* mMangroveWallSign;
-Block const* mMangroveWood;
-Block const* mMediumAmethystBud;
-Block const* mMelonBlock;
-Block const* mMelonStem;
-Block const* mMobSpawner;
-Block const* mMonsterEgg;
-Block const* mMossBlock;
-Block const* mMossCarpet;
-Block const* mMossyCobblestone;
-Block const* mMossyCobblestoneStairs;
-Block const* mMossyStoneBrickStairs;
-Block const* mMovingBlock;
-Block const* mMud;
-Block const* mMudBrickDoubleSlab;
-Block const* mMudBrickSlab;
-Block const* mMudBrickStairs;
-Block const* mMudBrickWall;
-Block const* mMudBricks;
-Block const* mMuddyMangroveRoots;
-Block const* mMycelium;
-Block const* mMysteriousFrame;
-Block const* mMysteriousFrameSlot;
-Block const* mNetherBrickBlockName;
-Block const* mNetherBrickFence;
-Block const* mNetherBrickStairs;
-Block const* mNetherGoldOre;
-Block const* mNetherSprouts;
-Block const* mNetherWart;
-Block const* mNetherWartBlock;
-Block const* mNetheriteBlock;
-Block const* mNetherrack;
-Block const* mNetherreactor;
-Block const* mNormalStoneStairs;
-Block const* mNoteblock;
-Block const* mOakFence;
-Block const* mOakHangingSign;
-Block const* mOakLog;
-Block const* mOakStairs;
-Block const* mObserver;
-Block const* mObsidian;
-Block const* mOchreFroglight;
-Block const* mOrangeCandle;
-Block const* mOrangeCandleCake;
-Block const* mOrangeCarpet;
-Block const* mOrangeConcrete;
-Block const* mOrangeConcretePowder;
-Block const* mOrangeGlazedTerracotta;
-Block const* mOrangeShulkerBox;
-Block const* mOrangeStainedGlass;
-Block const* mOrangeStainedGlassPane;
-Block const* mOrangeTerracotta;
-Block const* mOrangeWool;
-Block const* mOxidizedCopper;
-Block const* mOxidizedCutCopper;
-Block const* mOxidizedCutCopperSlab;
-Block const* mOxidizedCutCopperStairs;
-Block const* mOxidizedDoubleCutCopperSlab;
-Block const* mPackedIce;
-Block const* mPackedMud;
-Block const* mPearlescentFroglight;
-Block const* mPinkCandle;
-Block const* mPinkCandleCake;
-Block const* mPinkCarpet;
-Block const* mPinkConcrete;
-Block const* mPinkConcretePowder;
-Block const* mPinkGlazedTerracotta;
-Block const* mPinkPetals;
-Block const* mPinkShulkerBox;
-Block const* mPinkStainedGlass;
-Block const* mPinkStainedGlassPane;
-Block const* mPinkTerracotta;
-Block const* mPinkWool;
-Block const* mPiston;
-Block const* mPistonArmCollision;
-Block const* mPitcherCrop;
-Block const* mPitcherPlant;
-Block const* mPlanks;
-Block const* mPodzol;
-Block const* mPointedDripstone;
-Block const* mPolishedAndesiteStairs;
-Block const* mPolishedBasalt;
-Block const* mPolishedBlackstone;
-Block const* mPolishedBlackstoneBrickDoubleSlab;
-Block const* mPolishedBlackstoneBrickSlab;
-Block const* mPolishedBlackstoneBrickStairs;
-Block const* mPolishedBlackstoneBrickWall;
-Block const* mPolishedBlackstoneBricks;
-Block const* mPolishedBlackstoneButton;
-Block const* mPolishedBlackstoneDoubleSlab;
-Block const* mPolishedBlackstonePressurePlate;
-Block const* mPolishedBlackstoneSlab;
-Block const* mPolishedBlackstoneStairs;
-Block const* mPolishedBlackstoneWall;
-Block const* mPolishedDeepslate;
-Block const* mPolishedDeepslateDoubleSlab;
-Block const* mPolishedDeepslateSlab;
-Block const* mPolishedDeepslateStairs;
-Block const* mPolishedDeepslateWall;
-Block const* mPolishedDioriteStairs;
-Block const* mPolishedGraniteStairs;
-Block const* mPortal;
-Block const* mPotatoes;
-Block const* mPowderSnow;
-Block const* mPoweredComparator;
-Block const* mPoweredRepeater;
-Block const* mPrismarine;
-Block const* mPrismarineBricksStairs;
-Block const* mPrismarineStairs;
-Block const* mPumpkin;
-Block const* mPumpkinStem;
-Block const* mPurpleCandle;
-Block const* mPurpleCandleCake;
-Block const* mPurpleCarpet;
-Block const* mPurpleConcrete;
-Block const* mPurpleConcretePowder;
-Block const* mPurpleGlazedTerracotta;
-Block const* mPurpleShulkerBox;
-Block const* mPurpleStainedGlass;
-Block const* mPurpleStainedGlassPane;
-Block const* mPurpleTerracotta;
-Block const* mPurpleWool;
-Block const* mPurpurBlock;
-Block const* mPurpurStairs;
-Block const* mQuartzBlock;
-Block const* mQuartzBricks;
-Block const* mQuartzOre;
-Block const* mQuartzStairs;
-Block const* mRail;
-Block const* mRawCopperBlock;
-Block const* mRawGoldBlock;
-Block const* mRawIronBlock;
-Block const* mRedCandle;
-Block const* mRedCandleCake;
-Block const* mRedCarpet;
-Block const* mRedConcrete;
-Block const* mRedConcretePowder;
-Block const* mRedFlower;
-Block const* mRedGlazedTerracotta;
-Block const* mRedMushroom;
-Block const* mRedMushroomBlock;
-Block const* mRedNetherBrick;
-Block const* mRedNetherBrickStairs;
-Block const* mRedSandstone;
-Block const* mRedSandstoneStairs;
-Block const* mRedShulkerBox;
-Block const* mRedStainedGlass;
-Block const* mRedStainedGlassPane;
-Block const* mRedTerracotta;
-Block const* mRedWool;
-Block const* mRedstoneBlock;
-Block const* mRedstoneLamp;
-Block const* mRedstoneOre;
-Block const* mRedstoneTorch;
-Block const* mRedstoneWire;
-Block const* mReeds;
-Block const* mReinforcedDeepslate;
-Block const* mRepeatingCommandBlock;
-Block const* mReserved6;
-Block const* mRespawnAnchor;
-Block const* mSand;
-Block const* mSandstone;
-Block const* mSandstoneStairs;
-Block const* mSapling;
-Block const* mScaffolding;
-Block const* mSculk;
-Block const* mSculkCatalyst;
-Block const* mSculkSensor;
-Block const* mSculkShrieker;
-Block const* mSculkVein;
-Block const* mSeaLantern;
-Block const* mSeaPickle;
-Block const* mSeagrass;
-Block const* mShroomlight;
-Block const* mSilverGlazedTerracotta;
-Block const* mSkull;
-Block const* mSlimeBlock;
-Block const* mSmallAmethystBud;
-Block const* mSmallDripleaf;
-Block const* mSmithingTable;
-Block const* mSmoker;
-Block const* mSmoothBasalt;
-Block const* mSmoothQuartzStairs;
-Block const* mSmoothRedSandstoneStairs;
-Block const* mSmoothSandstoneStairs;
-Block const* mSmoothStone;
-Block const* mSnifferEgg;
-Block const* mSnow;
-Block const* mSnowLayer;
-Block const* mSoulCampfire;
-Block const* mSoulFire;
-Block const* mSoulLantern;
-Block const* mSoulSand;
-Block const* mSoulSoil;
-Block const* mSoulTorch;
-Block const* mSponge;
-Block const* mSporeBlossom;
-Block const* mSpruceButton;
-Block const* mSpruceDoor;
-Block const* mSpruceFence;
-Block const* mSpruceFenceGate;
-Block const* mSpruceHangingSign;
-Block const* mSpruceLog;
-Block const* mSprucePressurePlate;
-Block const* mSpruceStairs;
-Block const* mSpruceStandingSign;
-Block const* mSpruceTrapdoor;
-Block const* mSpruceWallSign;
-Block const* mStandingBanner;
-Block const* mStandingSign;
-Block const* mStickyPiston;
-Block const* mStickyPistonArmCollision;
-Block const* mStone;
-Block const* mStoneBrickStairs;
-Block const* mStoneBricks;
-Block const* mStoneButton;
-Block const* mStonePressurePlate;
-Block const* mStoneSlab;
-Block const* mStoneSlab2;
-Block const* mStoneSlab3;
-Block const* mStoneSlab4;
-Block const* mStoneStairs;
-Block const* mStonecutter;
-Block const* mStonecutterBlock;
-Block const* mStrippedAcaciaLog;
-Block const* mStrippedBambooBlock;
-Block const* mStrippedBirchLog;
-Block const* mStrippedCherryLog;
-Block const* mStrippedCherryWood;
-Block const* mStrippedCrimsonHyphae;
-Block const* mStrippedCrimsonStem;
-Block const* mStrippedDarkOakLog;
-Block const* mStrippedJungleLog;
-Block const* mStrippedMangroveLog;
-Block const* mStrippedMangroveWood;
-Block const* mStrippedOakLog;
-Block const* mStrippedSpruceLog;
-Block const* mStrippedWarpedHyphae;
-Block const* mStrippedWarpedStem;
-Block const* mStructureBlock;
-Block const* mStructureVoid;
-Block const* mSuspiciousGravel;
-Block const* mSuspiciousSand;
-Block const* mSweetBerryBush;
-Block const* mTallGrass;
-Block const* mTarget;
-Block const* mTintedGlass;
-Block const* mTnt;
-Block const* mTorch;
-Block const* mTorchflower;
-Block const* mTorchflowerCrop;
-Block const* mTrapdoor;
-Block const* mTrappedChest;
-Block const* mTripWire;
-Block const* mTripWireHook;
-Block const* mTubeCoral;
-Block const* mTuff;
-Block const* mTurtleEgg;
-Block const* mTwistingVines;
-Block const* mUnderwaterTorch;
-Block const* mUndyedShulkerBox;
-Block const* mUnlitRedstoneTorch;
-Block const* mUnpoweredComparator;
-Block const* mUnpoweredRepeater;
-Block const* mVerdantFroglight;
-Block const* mVine;
-Block const* mWallBanner;
-Block const* mWallSign;
-Block const* mWarpedButton;
-Block const* mWarpedDoor;
-Block const* mWarpedDoubleSlab;
-Block const* mWarpedFence;
-Block const* mWarpedFenceGate;
-Block const* mWarpedFungus;
-Block const* mWarpedHangingSign;
-Block const* mWarpedHyphae;
-Block const* mWarpedNylium;
-Block const* mWarpedPlanks;
-Block const* mWarpedPressurePlate;
-Block const* mWarpedRoots;
-Block const* mWarpedSlab;
-Block const* mWarpedStairs;
-Block const* mWarpedStandingSign;
-Block const* mWarpedStem;
-Block const* mWarpedTrapdoor;
-Block const* mWarpedWallSign;
-Block const* mWarpedWartBlock;
-Block const* mWater;
-Block const* mWaterLily;
-Block const* mWaxedCopper;
-Block const* mWaxedCutCopper;
-Block const* mWaxedCutCopperSlab;
-Block const* mWaxedCutCopperStairs;
-Block const* mWaxedDoubleCutCopperSlab;
-Block const* mWaxedExposedCopper;
-Block const* mWaxedExposedCutCopper;
-Block const* mWaxedExposedCutCopperSlab;
-Block const* mWaxedExposedCutCopperStairs;
-Block const* mWaxedExposedDoubleCutCopperSlab;
-Block const* mWaxedOxidizedCopper;
-Block const* mWaxedOxidizedCutCopper;
-Block const* mWaxedOxidizedCutCopperSlab;
-Block const* mWaxedOxidizedCutCopperStairs;
-Block const* mWaxedOxidizedDoubleCutCopperSlab;
-Block const* mWaxedWeatheredCopper;
-Block const* mWaxedWeatheredCutCopper;
-Block const* mWaxedWeatheredCutCopperSlab;
-Block const* mWaxedWeatheredCutCopperStairs;
-Block const* mWaxedWeatheredDoubleCutCopperSlab;
-Block const* mWeatheredCopper;
-Block const* mWeatheredCutCopper;
-Block const* mWeatheredCutCopperSlab;
-Block const* mWeatheredCutCopperStairs;
-Block const* mWeatheredDoubleCutCopperSlab;
-Block const* mWeb;
-Block const* mWeepingVines;
-Block const* mWheat;
-Block const* mWhiteCandle;
-Block const* mWhiteCandleCake;
-Block const* mWhiteCarpet;
-Block const* mWhiteConcrete;
-Block const* mWhiteConcretePowder;
-Block const* mWhiteGlazedTerracotta;
-Block const* mWhiteShulkerBox;
-Block const* mWhiteStainedGlass;
-Block const* mWhiteStainedGlassPane;
-Block const* mWhiteTerracotta;
-Block const* mWhiteWool;
-Block const* mWitherRose;
-Block const* mWood;
-Block const* mWoodenButton;
-Block const* mWoodenDoor;
-Block const* mWoodenPressurePlate;
-Block const* mWoodenSlab;
-Block const* mYellowCandle;
-Block const* mYellowCandleCake;
-Block const* mYellowCarpet;
-Block const* mYellowConcrete;
-Block const* mYellowConcretePowder;
-Block const* mYellowFlower;
-Block const* mYellowGlazedTerracotta;
-Block const* mYellowShulkerBox;
-Block const* mYellowStainedGlass;
-Block const* mYellowStainedGlassPane;
-Block const* mYellowTerracotta;
-Block const* mYellowWool;
+Block const* mUnknown;
 
-#pragma endregion
+#define BUILD_DEF(x) Block const* m##x // NOLINT
 
-#define INIT_BLOCK(x) (m##x = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::x))
+GENERATE_FUNC(BUILD_DEF) // NOLINT
 
-void assignBlocks() {
+#define INIT_BLOCK(x) m##x = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::x) // NOLINT
+
+LL_AUTO_STATIC_HOOK(StaticVanillaBlockAssign, HookPriority::Normal, BedrockBlocks::assignBlocks, void) {
+    origin();
 
     for (int i = 0; i < 119; ++i) {
         INIT_BLOCK(Elements[i]);
     }
+    mAir     = BedrockBlocks::mAir;
+    mUnknown = &BlockTypeRegistry::getDefaultBlockState(BedrockBlockNames::Unknown);
 
-#pragma region StaticVanillaBlocksInit
-
-    INIT_BLOCK(AcaciaButton);
-    INIT_BLOCK(AcaciaDoor);
-    INIT_BLOCK(AcaciaFence);
-    INIT_BLOCK(AcaciaFenceGate);
-    INIT_BLOCK(AcaciaHangingSign);
-    INIT_BLOCK(AcaciaLog);
-    INIT_BLOCK(AcaciaPressurePlate);
-    INIT_BLOCK(AcaciaStairs);
-    INIT_BLOCK(AcaciaStandingSign);
-    INIT_BLOCK(AcaciaTrapdoor);
-    INIT_BLOCK(AcaciaWallSign);
-    INIT_BLOCK(ActivatorRail);
-    INIT_BLOCK(Allow);
-    INIT_BLOCK(AmethystBlock);
-    INIT_BLOCK(AmethystCluster);
-    INIT_BLOCK(AncientDebris);
-    INIT_BLOCK(AndesiteStairs);
-    INIT_BLOCK(Anvil);
-    INIT_BLOCK(Azalea);
-    INIT_BLOCK(AzaleaLeaves);
-    INIT_BLOCK(AzaleaLeavesFlowered);
-    INIT_BLOCK(Bamboo);
-    INIT_BLOCK(BambooBlock);
-    INIT_BLOCK(BambooButton);
-    INIT_BLOCK(BambooDoor);
-    INIT_BLOCK(BambooDoubleSlab);
-    INIT_BLOCK(BambooFence);
-    INIT_BLOCK(BambooFenceGate);
-    INIT_BLOCK(BambooHangingSign);
-    INIT_BLOCK(BambooMosaic);
-    INIT_BLOCK(BambooMosaicDoubleSlab);
-    INIT_BLOCK(BambooMosaicSlab);
-    INIT_BLOCK(BambooMosaicStairs);
-    INIT_BLOCK(BambooPlanks);
-    INIT_BLOCK(BambooPressurePlate);
-    INIT_BLOCK(BambooSapling);
-    INIT_BLOCK(BambooSlab);
-    INIT_BLOCK(BambooStairs);
-    INIT_BLOCK(BambooStandingSign);
-    INIT_BLOCK(BambooTrapdoor);
-    INIT_BLOCK(BambooWallSign);
-    INIT_BLOCK(Barrel);
-    INIT_BLOCK(Barrier);
-    INIT_BLOCK(Basalt);
-    INIT_BLOCK(Beacon);
-    INIT_BLOCK(Bed);
-    INIT_BLOCK(Bedrock);
-    INIT_BLOCK(BeeNest);
-    INIT_BLOCK(Beehive);
-    INIT_BLOCK(Beetroot);
-    INIT_BLOCK(Bell);
-    INIT_BLOCK(BigDripleaf);
-    INIT_BLOCK(BirchButton);
-    INIT_BLOCK(BirchDoor);
-    INIT_BLOCK(BirchFence);
-    INIT_BLOCK(BirchFenceGate);
-    INIT_BLOCK(BirchHangingSign);
-    INIT_BLOCK(BirchLog);
-    INIT_BLOCK(BirchPressurePlate);
-    INIT_BLOCK(BirchStairs);
-    INIT_BLOCK(BirchStandingSign);
-    INIT_BLOCK(BirchTrapdoor);
-    INIT_BLOCK(BirchWallSign);
-    INIT_BLOCK(BlackCandle);
-    INIT_BLOCK(BlackCandleCake);
-    INIT_BLOCK(BlackCarpet);
-    INIT_BLOCK(BlackConcrete);
-    INIT_BLOCK(BlackConcretePowder);
-    INIT_BLOCK(BlackGlazedTerracotta);
-    INIT_BLOCK(BlackShulkerBox);
-    INIT_BLOCK(BlackStainedGlass);
-    INIT_BLOCK(BlackStainedGlassPane);
-    INIT_BLOCK(BlackTerracotta);
-    INIT_BLOCK(BlackWool);
-    INIT_BLOCK(Blackstone);
-    INIT_BLOCK(BlackstoneDoubleSlab);
-    INIT_BLOCK(BlackstoneSlab);
-    INIT_BLOCK(BlackstoneStairs);
-    INIT_BLOCK(BlackstoneWall);
-    INIT_BLOCK(BlastFurnace);
-    INIT_BLOCK(BlueCandle);
-    INIT_BLOCK(BlueCandleCake);
-    INIT_BLOCK(BlueCarpet);
-    INIT_BLOCK(BlueConcrete);
-    INIT_BLOCK(BlueConcretePowder);
-    INIT_BLOCK(BlueGlazedTerracotta);
-    INIT_BLOCK(BlueIce);
-    INIT_BLOCK(BlueShulkerBox);
-    INIT_BLOCK(BlueStainedGlass);
-    INIT_BLOCK(BlueStainedGlassPane);
-    INIT_BLOCK(BlueTerracotta);
-    INIT_BLOCK(BlueWool);
-    INIT_BLOCK(BoneBlock);
-    INIT_BLOCK(Bookshelf);
-    INIT_BLOCK(BorderBlock);
-    INIT_BLOCK(BrainCoral);
-    INIT_BLOCK(BrewingStand);
-    INIT_BLOCK(BrickBlock);
-    INIT_BLOCK(BrickStairs);
-    INIT_BLOCK(BrownCandle);
-    INIT_BLOCK(BrownCandleCake);
-    INIT_BLOCK(BrownCarpet);
-    INIT_BLOCK(BrownConcrete);
-    INIT_BLOCK(BrownConcretePowder);
-    INIT_BLOCK(BrownGlazedTerracotta);
-    INIT_BLOCK(BrownMushroom);
-    INIT_BLOCK(BrownMushroomBlock);
-    INIT_BLOCK(BrownShulkerBox);
-    INIT_BLOCK(BrownStainedGlass);
-    INIT_BLOCK(BrownStainedGlassPane);
-    INIT_BLOCK(BrownTerracotta);
-    INIT_BLOCK(BrownWool);
-    INIT_BLOCK(BubbleColumn);
-    INIT_BLOCK(BubbleCoral);
-    INIT_BLOCK(BuddingAmethyst);
-    INIT_BLOCK(Cactus);
-    INIT_BLOCK(Cake);
-    INIT_BLOCK(Calcite);
-    INIT_BLOCK(CalibratedSculkSensor);
-    INIT_BLOCK(Camera);
-    INIT_BLOCK(CampFire);
-    INIT_BLOCK(Candle);
-    INIT_BLOCK(CandleCake);
-    INIT_BLOCK(Carrots);
-    INIT_BLOCK(CartographyTable);
-    INIT_BLOCK(CarvedPumpkin);
-    INIT_BLOCK(Cauldron);
-    INIT_BLOCK(CaveVines);
-    INIT_BLOCK(CaveVinesBodyWithBerries);
-    INIT_BLOCK(CaveVinesHeadWithBerries);
-    INIT_BLOCK(Chain);
-    INIT_BLOCK(ChainCommandBlock);
-    INIT_BLOCK(Chalkboard);
-    INIT_BLOCK(ChemicalHeat);
-    INIT_BLOCK(ChemistryTable);
-    INIT_BLOCK(CherryButton);
-    INIT_BLOCK(CherryDoor);
-    INIT_BLOCK(CherryDoubleSlab);
-    INIT_BLOCK(CherryFence);
-    INIT_BLOCK(CherryFenceGate);
-    INIT_BLOCK(CherryHangingSign);
-    INIT_BLOCK(CherryLeaves);
-    INIT_BLOCK(CherryLog);
-    INIT_BLOCK(CherryPlanks);
-    INIT_BLOCK(CherryPressurePlate);
-    INIT_BLOCK(CherrySapling);
-    INIT_BLOCK(CherrySlab);
-    INIT_BLOCK(CherryStairs);
-    INIT_BLOCK(CherryStandingSign);
-    INIT_BLOCK(CherryTrapdoor);
-    INIT_BLOCK(CherryWallSign);
-    INIT_BLOCK(CherryWood);
-    INIT_BLOCK(Chest);
-    INIT_BLOCK(ChiseledBookshelf);
-    INIT_BLOCK(ChiseledDeepslate);
-    INIT_BLOCK(ChiseledNetherBricks);
-    INIT_BLOCK(ChiseledPolishedBlackstone);
-    INIT_BLOCK(ChorusFlower);
-    INIT_BLOCK(ChorusPlant);
-    INIT_BLOCK(Clay);
-    INIT_BLOCK(ClientRequestPlaceholderBlock);
-    INIT_BLOCK(CoalBlock);
-    INIT_BLOCK(CoalOre);
-    INIT_BLOCK(CobbledDeepslate);
-    INIT_BLOCK(CobbledDeepslateDoubleSlab);
-    INIT_BLOCK(CobbledDeepslateSlab);
-    INIT_BLOCK(CobbledDeepslateStairs);
-    INIT_BLOCK(CobbledDeepslateWall);
-    INIT_BLOCK(Cobblestone);
-    INIT_BLOCK(CobblestoneWall);
-    INIT_BLOCK(Cocoa);
-    INIT_BLOCK(ColoredTorchBp);
-    INIT_BLOCK(ColoredTorchRg);
-    INIT_BLOCK(CommandBlock);
-    INIT_BLOCK(Composter);
-    INIT_BLOCK(Conduit);
-    INIT_BLOCK(CopperBlock);
-    INIT_BLOCK(CopperOre);
-    INIT_BLOCK(CoralBlock);
-    INIT_BLOCK(CoralFan);
-    INIT_BLOCK(CoralFanDead);
-    INIT_BLOCK(CoralFanHang);
-    INIT_BLOCK(CoralFanHang2);
-    INIT_BLOCK(CoralFanHang3);
-    INIT_BLOCK(CrackedDeepslateBricks);
-    INIT_BLOCK(CrackedDeepslateTiles);
-    INIT_BLOCK(CrackedNetherBricks);
-    INIT_BLOCK(CrackedPolishedBlackstoneBricks);
-    INIT_BLOCK(CraftingTable);
-    INIT_BLOCK(CrimsonButton);
-    INIT_BLOCK(CrimsonDoor);
-    INIT_BLOCK(CrimsonDoubleSlab);
-    INIT_BLOCK(CrimsonFence);
-    INIT_BLOCK(CrimsonFenceGate);
-    INIT_BLOCK(CrimsonFungus);
-    INIT_BLOCK(CrimsonHangingSign);
-    INIT_BLOCK(CrimsonHyphae);
-    INIT_BLOCK(CrimsonNylium);
-    INIT_BLOCK(CrimsonPlanks);
-    INIT_BLOCK(CrimsonPressurePlate);
-    INIT_BLOCK(CrimsonRoots);
-    INIT_BLOCK(CrimsonSlab);
-    INIT_BLOCK(CrimsonStairs);
-    INIT_BLOCK(CrimsonStandingSign);
-    INIT_BLOCK(CrimsonStem);
-    INIT_BLOCK(CrimsonTrapdoor);
-    INIT_BLOCK(CrimsonWallSign);
-    INIT_BLOCK(CryingObsidian);
-    INIT_BLOCK(CutCopper);
-    INIT_BLOCK(CutCopperSlab);
-    INIT_BLOCK(CutCopperStairs);
-    INIT_BLOCK(CyanCandle);
-    INIT_BLOCK(CyanCandleCake);
-    INIT_BLOCK(CyanCarpet);
-    INIT_BLOCK(CyanConcrete);
-    INIT_BLOCK(CyanConcretePowder);
-    INIT_BLOCK(CyanGlazedTerracotta);
-    INIT_BLOCK(CyanShulkerBox);
-    INIT_BLOCK(CyanStainedGlass);
-    INIT_BLOCK(CyanStainedGlassPane);
-    INIT_BLOCK(CyanTerracotta);
-    INIT_BLOCK(CyanWool);
-    INIT_BLOCK(DarkOakButton);
-    INIT_BLOCK(DarkOakDoor);
-    INIT_BLOCK(DarkOakFence);
-    INIT_BLOCK(DarkOakFenceGate);
-    INIT_BLOCK(DarkOakLog);
-    INIT_BLOCK(DarkOakPressurePlate);
-    INIT_BLOCK(DarkOakStairs);
-    INIT_BLOCK(DarkOakTrapdoor);
-    INIT_BLOCK(DarkPrismarineStairs);
-    INIT_BLOCK(DarkoakHangingSign);
-    INIT_BLOCK(DarkoakStandingSign);
-    INIT_BLOCK(DarkoakWallSign);
-    INIT_BLOCK(DaylightDetector);
-    INIT_BLOCK(DaylightDetectorInverted);
-    INIT_BLOCK(DeadBrainCoral);
-    INIT_BLOCK(DeadBubbleCoral);
-    INIT_BLOCK(DeadFireCoral);
-    INIT_BLOCK(DeadHornCoral);
-    INIT_BLOCK(DeadTubeCoral);
-    INIT_BLOCK(Deadbush);
-    INIT_BLOCK(DecoratedPot);
-    INIT_BLOCK(Deepslate);
-    INIT_BLOCK(DeepslateBrickDoubleSlab);
-    INIT_BLOCK(DeepslateBrickSlab);
-    INIT_BLOCK(DeepslateBrickStairs);
-    INIT_BLOCK(DeepslateBrickWall);
-    INIT_BLOCK(DeepslateBricks);
-    INIT_BLOCK(DeepslateCoalOre);
-    INIT_BLOCK(DeepslateCopperOre);
-    INIT_BLOCK(DeepslateDiamondOre);
-    INIT_BLOCK(DeepslateEmeraldOre);
-    INIT_BLOCK(DeepslateGoldOre);
-    INIT_BLOCK(DeepslateIronOre);
-    INIT_BLOCK(DeepslateLapisOre);
-    INIT_BLOCK(DeepslateRedstoneOre);
-    INIT_BLOCK(DeepslateTileDoubleSlab);
-    INIT_BLOCK(DeepslateTileSlab);
-    INIT_BLOCK(DeepslateTileStairs);
-    INIT_BLOCK(DeepslateTileWall);
-    INIT_BLOCK(DeepslateTiles);
-    INIT_BLOCK(Deny);
-    INIT_BLOCK(DetectorRail);
-    INIT_BLOCK(DiamondBlock);
-    INIT_BLOCK(DiamondOre);
-    INIT_BLOCK(DioriteStairs);
-    INIT_BLOCK(Dirt);
-    INIT_BLOCK(DirtWithRoots);
-    INIT_BLOCK(Dispenser);
-    INIT_BLOCK(DoubleCutCopperSlab);
-    INIT_BLOCK(DoublePlant);
-    INIT_BLOCK(DoubleStoneSlab);
-    INIT_BLOCK(DoubleStoneSlab2);
-    INIT_BLOCK(DoubleStoneSlab3);
-    INIT_BLOCK(DoubleStoneSlab4);
-    INIT_BLOCK(DoubleWoodenSlab);
-    INIT_BLOCK(DragonEgg);
-    INIT_BLOCK(DriedKelpBlock);
-    INIT_BLOCK(Dripstone);
-    INIT_BLOCK(Dropper);
-    INIT_BLOCK(EmeraldBlock);
-    INIT_BLOCK(EmeraldOre);
-    INIT_BLOCK(EnchantingTable);
-    INIT_BLOCK(EndBrickStairs);
-    INIT_BLOCK(EndBricks);
-    INIT_BLOCK(EndGateway);
-    INIT_BLOCK(EndPortal);
-    INIT_BLOCK(EndPortalFrame);
-    INIT_BLOCK(EndRod);
-    INIT_BLOCK(EndStone);
-    INIT_BLOCK(EnderChest);
-    INIT_BLOCK(ExposedCopper);
-    INIT_BLOCK(ExposedCutCopper);
-    INIT_BLOCK(ExposedCutCopperSlab);
-    INIT_BLOCK(ExposedCutCopperStairs);
-    INIT_BLOCK(ExposedDoubleCutCopperSlab);
-    INIT_BLOCK(FarmlandBlock);
-    INIT_BLOCK(FenceGate);
-    INIT_BLOCK(Fire);
-    INIT_BLOCK(FireCoral);
-    INIT_BLOCK(FletchingTable);
-    INIT_BLOCK(FlowerPot);
-    INIT_BLOCK(FloweringAzalea);
-    INIT_BLOCK(FlowingLava);
-    INIT_BLOCK(FlowingWater);
-    INIT_BLOCK(FrogSpawn);
-    INIT_BLOCK(FrostedIce);
-    INIT_BLOCK(Furnace);
-    INIT_BLOCK(GildedBlackstone);
-    INIT_BLOCK(Glass);
-    INIT_BLOCK(GlassPane);
-    INIT_BLOCK(GlowItemFrame);
-    INIT_BLOCK(GlowLichen);
-    INIT_BLOCK(GlowingObsidian);
-    INIT_BLOCK(Glowstone);
-    INIT_BLOCK(GoldBlock);
-    INIT_BLOCK(GoldOre);
-    INIT_BLOCK(GoldenRail);
-    INIT_BLOCK(GraniteStairs);
-    INIT_BLOCK(Grass);
-    INIT_BLOCK(GrassPath);
-    INIT_BLOCK(Gravel);
-    INIT_BLOCK(GrayCandle);
-    INIT_BLOCK(GrayCandleCake);
-    INIT_BLOCK(GrayCarpet);
-    INIT_BLOCK(GrayConcrete);
-    INIT_BLOCK(GrayConcretePowder);
-    INIT_BLOCK(GrayGlazedTerracotta);
-    INIT_BLOCK(GrayShulkerBox);
-    INIT_BLOCK(GrayStainedGlass);
-    INIT_BLOCK(GrayStainedGlassPane);
-    INIT_BLOCK(GrayTerracotta);
-    INIT_BLOCK(GrayWool);
-    INIT_BLOCK(GreenCandle);
-    INIT_BLOCK(GreenCandleCake);
-    INIT_BLOCK(GreenCarpet);
-    INIT_BLOCK(GreenConcrete);
-    INIT_BLOCK(GreenConcretePowder);
-    INIT_BLOCK(GreenGlazedTerracotta);
-    INIT_BLOCK(GreenShulkerBox);
-    INIT_BLOCK(GreenStainedGlass);
-    INIT_BLOCK(GreenStainedGlassPane);
-    INIT_BLOCK(GreenTerracotta);
-    INIT_BLOCK(GreenWool);
-    INIT_BLOCK(Grindstone);
-    INIT_BLOCK(HangingRoots);
-    INIT_BLOCK(HardGlass);
-    INIT_BLOCK(HardGlassPane);
-    INIT_BLOCK(HardStainedGlass);
-    INIT_BLOCK(HardStainedGlassPane);
-    INIT_BLOCK(HardenedClay);
-    INIT_BLOCK(HayBlock);
-    INIT_BLOCK(HeavyWeightedPressurePlate);
-    INIT_BLOCK(HoneyBlock);
-    INIT_BLOCK(HoneycombBlock);
-    INIT_BLOCK(Hopper);
-    INIT_BLOCK(HornCoral);
-    INIT_BLOCK(Ice);
-    INIT_BLOCK(InfestedDeepslate);
-    INIT_BLOCK(InfoUpdate);
-    INIT_BLOCK(InfoUpdate2);
-    INIT_BLOCK(InvisibleBedrock);
-    INIT_BLOCK(IronBars);
-    INIT_BLOCK(IronBlock);
-    INIT_BLOCK(IronDoor);
-    INIT_BLOCK(IronOre);
-    INIT_BLOCK(IronTrapdoor);
-    INIT_BLOCK(ItemFrame);
-    INIT_BLOCK(Jigsaw);
-    INIT_BLOCK(Jukebox);
-    INIT_BLOCK(JungleButton);
-    INIT_BLOCK(JungleDoor);
-    INIT_BLOCK(JungleFence);
-    INIT_BLOCK(JungleFenceGate);
-    INIT_BLOCK(JungleHangingSign);
-    INIT_BLOCK(JungleLog);
-    INIT_BLOCK(JunglePressurePlate);
-    INIT_BLOCK(JungleStairs);
-    INIT_BLOCK(JungleStandingSign);
-    INIT_BLOCK(JungleTrapdoor);
-    INIT_BLOCK(JungleWallSign);
-    INIT_BLOCK(Kelp);
-    INIT_BLOCK(Ladder);
-    INIT_BLOCK(Lantern);
-    INIT_BLOCK(LapisBlock);
-    INIT_BLOCK(LapisOre);
-    INIT_BLOCK(LargeAmethystBud);
-    INIT_BLOCK(Lava);
-    INIT_BLOCK(Leaves);
-    INIT_BLOCK(Leaves2);
-    INIT_BLOCK(Lectern);
-    INIT_BLOCK(Lever);
-    INIT_BLOCK(LightBlock);
-    INIT_BLOCK(LightBlueCandle);
-    INIT_BLOCK(LightBlueCandleCake);
-    INIT_BLOCK(LightBlueCarpet);
-    INIT_BLOCK(LightBlueConcrete);
-    INIT_BLOCK(LightBlueConcretePowder);
-    INIT_BLOCK(LightBlueGlazedTerracotta);
-    INIT_BLOCK(LightBlueShulkerBox);
-    INIT_BLOCK(LightBlueStainedGlass);
-    INIT_BLOCK(LightBlueStainedGlassPane);
-    INIT_BLOCK(LightBlueTerracotta);
-    INIT_BLOCK(LightBlueWool);
-    INIT_BLOCK(LightGrayCandle);
-    INIT_BLOCK(LightGrayCandleCake);
-    INIT_BLOCK(LightGrayCarpet);
-    INIT_BLOCK(LightGrayConcrete);
-    INIT_BLOCK(LightGrayConcretePowder);
-    INIT_BLOCK(LightGrayShulkerBox);
-    INIT_BLOCK(LightGrayStainedGlass);
-    INIT_BLOCK(LightGrayStainedGlassPane);
-    INIT_BLOCK(LightGrayTerracotta);
-    INIT_BLOCK(LightGrayWool);
-    INIT_BLOCK(LightWeightedPressurePlate);
-    INIT_BLOCK(LightningRod);
-    INIT_BLOCK(LimeCandle);
-    INIT_BLOCK(LimeCandleCake);
-    INIT_BLOCK(LimeCarpet);
-    INIT_BLOCK(LimeConcrete);
-    INIT_BLOCK(LimeConcretePowder);
-    INIT_BLOCK(LimeGlazedTerracotta);
-    INIT_BLOCK(LimeShulkerBox);
-    INIT_BLOCK(LimeStainedGlass);
-    INIT_BLOCK(LimeStainedGlassPane);
-    INIT_BLOCK(LimeTerracotta);
-    INIT_BLOCK(LimeWool);
-    INIT_BLOCK(LitBlastFurnace);
-    INIT_BLOCK(LitDeepslateRedstoneOre);
-    INIT_BLOCK(LitFurnace);
-    INIT_BLOCK(LitPumpkin);
-    INIT_BLOCK(LitRedstoneLamp);
-    INIT_BLOCK(LitRedstoneOre);
-    INIT_BLOCK(LitSmoker);
-    INIT_BLOCK(Lodestone);
-    INIT_BLOCK(Loom);
-    INIT_BLOCK(MagentaCandle);
-    INIT_BLOCK(MagentaCandleCake);
-    INIT_BLOCK(MagentaCarpet);
-    INIT_BLOCK(MagentaConcrete);
-    INIT_BLOCK(MagentaConcretePowder);
-    INIT_BLOCK(MagentaGlazedTerracotta);
-    INIT_BLOCK(MagentaShulkerBox);
-    INIT_BLOCK(MagentaStainedGlass);
-    INIT_BLOCK(MagentaStainedGlassPane);
-    INIT_BLOCK(MagentaTerracotta);
-    INIT_BLOCK(MagentaWool);
-    INIT_BLOCK(Magma);
-    INIT_BLOCK(MangroveButton);
-    INIT_BLOCK(MangroveDoor);
-    INIT_BLOCK(MangroveDoubleSlab);
-    INIT_BLOCK(MangroveFence);
-    INIT_BLOCK(MangroveFenceGate);
-    INIT_BLOCK(MangroveHangingSign);
-    INIT_BLOCK(MangroveLeaves);
-    INIT_BLOCK(MangroveLog);
-    INIT_BLOCK(MangrovePlanks);
-    INIT_BLOCK(MangrovePressurePlate);
-    INIT_BLOCK(MangrovePropagule);
-    INIT_BLOCK(MangroveRoots);
-    INIT_BLOCK(MangroveSlab);
-    INIT_BLOCK(MangroveStairs);
-    INIT_BLOCK(MangroveStandingSign);
-    INIT_BLOCK(MangroveTrapdoor);
-    INIT_BLOCK(MangroveWallSign);
-    INIT_BLOCK(MangroveWood);
-    INIT_BLOCK(MediumAmethystBud);
-    INIT_BLOCK(MelonBlock);
-    INIT_BLOCK(MelonStem);
-    INIT_BLOCK(MobSpawner);
-    INIT_BLOCK(MonsterEgg);
-    INIT_BLOCK(MossBlock);
-    INIT_BLOCK(MossCarpet);
-    INIT_BLOCK(MossyCobblestone);
-    INIT_BLOCK(MossyCobblestoneStairs);
-    INIT_BLOCK(MossyStoneBrickStairs);
-    INIT_BLOCK(MovingBlock);
-    INIT_BLOCK(Mud);
-    INIT_BLOCK(MudBrickDoubleSlab);
-    INIT_BLOCK(MudBrickSlab);
-    INIT_BLOCK(MudBrickStairs);
-    INIT_BLOCK(MudBrickWall);
-    INIT_BLOCK(MudBricks);
-    INIT_BLOCK(MuddyMangroveRoots);
-    INIT_BLOCK(Mycelium);
-    INIT_BLOCK(MysteriousFrame);
-    INIT_BLOCK(MysteriousFrameSlot);
-    INIT_BLOCK(NetherBrickBlockName);
-    INIT_BLOCK(NetherBrickFence);
-    INIT_BLOCK(NetherBrickStairs);
-    INIT_BLOCK(NetherGoldOre);
-    INIT_BLOCK(NetherSprouts);
-    INIT_BLOCK(NetherWart);
-    INIT_BLOCK(NetherWartBlock);
-    INIT_BLOCK(NetheriteBlock);
-    INIT_BLOCK(Netherrack);
-    INIT_BLOCK(Netherreactor);
-    INIT_BLOCK(NormalStoneStairs);
-    INIT_BLOCK(Noteblock);
-    INIT_BLOCK(OakFence);
-    INIT_BLOCK(OakHangingSign);
-    INIT_BLOCK(OakLog);
-    INIT_BLOCK(OakStairs);
-    INIT_BLOCK(Observer);
-    INIT_BLOCK(Obsidian);
-    INIT_BLOCK(OchreFroglight);
-    INIT_BLOCK(OrangeCandle);
-    INIT_BLOCK(OrangeCandleCake);
-    INIT_BLOCK(OrangeCarpet);
-    INIT_BLOCK(OrangeConcrete);
-    INIT_BLOCK(OrangeConcretePowder);
-    INIT_BLOCK(OrangeGlazedTerracotta);
-    INIT_BLOCK(OrangeShulkerBox);
-    INIT_BLOCK(OrangeStainedGlass);
-    INIT_BLOCK(OrangeStainedGlassPane);
-    INIT_BLOCK(OrangeTerracotta);
-    INIT_BLOCK(OrangeWool);
-    INIT_BLOCK(OxidizedCopper);
-    INIT_BLOCK(OxidizedCutCopper);
-    INIT_BLOCK(OxidizedCutCopperSlab);
-    INIT_BLOCK(OxidizedCutCopperStairs);
-    INIT_BLOCK(OxidizedDoubleCutCopperSlab);
-    INIT_BLOCK(PackedIce);
-    INIT_BLOCK(PackedMud);
-    INIT_BLOCK(PearlescentFroglight);
-    INIT_BLOCK(PinkCandle);
-    INIT_BLOCK(PinkCandleCake);
-    INIT_BLOCK(PinkCarpet);
-    INIT_BLOCK(PinkConcrete);
-    INIT_BLOCK(PinkConcretePowder);
-    INIT_BLOCK(PinkGlazedTerracotta);
-    INIT_BLOCK(PinkPetals);
-    INIT_BLOCK(PinkShulkerBox);
-    INIT_BLOCK(PinkStainedGlass);
-    INIT_BLOCK(PinkStainedGlassPane);
-    INIT_BLOCK(PinkTerracotta);
-    INIT_BLOCK(PinkWool);
-    INIT_BLOCK(Piston);
-    INIT_BLOCK(PistonArmCollision);
-    INIT_BLOCK(PitcherCrop);
-    INIT_BLOCK(PitcherPlant);
-    INIT_BLOCK(Planks);
-    INIT_BLOCK(Podzol);
-    INIT_BLOCK(PointedDripstone);
-    INIT_BLOCK(PolishedAndesiteStairs);
-    INIT_BLOCK(PolishedBasalt);
-    INIT_BLOCK(PolishedBlackstone);
-    INIT_BLOCK(PolishedBlackstoneBrickDoubleSlab);
-    INIT_BLOCK(PolishedBlackstoneBrickSlab);
-    INIT_BLOCK(PolishedBlackstoneBrickStairs);
-    INIT_BLOCK(PolishedBlackstoneBrickWall);
-    INIT_BLOCK(PolishedBlackstoneBricks);
-    INIT_BLOCK(PolishedBlackstoneButton);
-    INIT_BLOCK(PolishedBlackstoneDoubleSlab);
-    INIT_BLOCK(PolishedBlackstonePressurePlate);
-    INIT_BLOCK(PolishedBlackstoneSlab);
-    INIT_BLOCK(PolishedBlackstoneStairs);
-    INIT_BLOCK(PolishedBlackstoneWall);
-    INIT_BLOCK(PolishedDeepslate);
-    INIT_BLOCK(PolishedDeepslateDoubleSlab);
-    INIT_BLOCK(PolishedDeepslateSlab);
-    INIT_BLOCK(PolishedDeepslateStairs);
-    INIT_BLOCK(PolishedDeepslateWall);
-    INIT_BLOCK(PolishedDioriteStairs);
-    INIT_BLOCK(PolishedGraniteStairs);
-    INIT_BLOCK(Portal);
-    INIT_BLOCK(Potatoes);
-    INIT_BLOCK(PowderSnow);
-    INIT_BLOCK(PoweredComparator);
-    INIT_BLOCK(PoweredRepeater);
-    INIT_BLOCK(Prismarine);
-    INIT_BLOCK(PrismarineBricksStairs);
-    INIT_BLOCK(PrismarineStairs);
-    INIT_BLOCK(Pumpkin);
-    INIT_BLOCK(PumpkinStem);
-    INIT_BLOCK(PurpleCandle);
-    INIT_BLOCK(PurpleCandleCake);
-    INIT_BLOCK(PurpleCarpet);
-    INIT_BLOCK(PurpleConcrete);
-    INIT_BLOCK(PurpleConcretePowder);
-    INIT_BLOCK(PurpleGlazedTerracotta);
-    INIT_BLOCK(PurpleShulkerBox);
-    INIT_BLOCK(PurpleStainedGlass);
-    INIT_BLOCK(PurpleStainedGlassPane);
-    INIT_BLOCK(PurpleTerracotta);
-    INIT_BLOCK(PurpleWool);
-    INIT_BLOCK(PurpurBlock);
-    INIT_BLOCK(PurpurStairs);
-    INIT_BLOCK(QuartzBlock);
-    INIT_BLOCK(QuartzBricks);
-    INIT_BLOCK(QuartzOre);
-    INIT_BLOCK(QuartzStairs);
-    INIT_BLOCK(Rail);
-    INIT_BLOCK(RawCopperBlock);
-    INIT_BLOCK(RawGoldBlock);
-    INIT_BLOCK(RawIronBlock);
-    INIT_BLOCK(RedCandle);
-    INIT_BLOCK(RedCandleCake);
-    INIT_BLOCK(RedCarpet);
-    INIT_BLOCK(RedConcrete);
-    INIT_BLOCK(RedConcretePowder);
-    INIT_BLOCK(RedFlower);
-    INIT_BLOCK(RedGlazedTerracotta);
-    INIT_BLOCK(RedMushroom);
-    INIT_BLOCK(RedMushroomBlock);
-    INIT_BLOCK(RedNetherBrick);
-    INIT_BLOCK(RedNetherBrickStairs);
-    INIT_BLOCK(RedSandstone);
-    INIT_BLOCK(RedSandstoneStairs);
-    INIT_BLOCK(RedShulkerBox);
-    INIT_BLOCK(RedStainedGlass);
-    INIT_BLOCK(RedStainedGlassPane);
-    INIT_BLOCK(RedTerracotta);
-    INIT_BLOCK(RedWool);
-    INIT_BLOCK(RedstoneBlock);
-    INIT_BLOCK(RedstoneLamp);
-    INIT_BLOCK(RedstoneOre);
-    INIT_BLOCK(RedstoneTorch);
-    INIT_BLOCK(RedstoneWire);
-    INIT_BLOCK(Reeds);
-    INIT_BLOCK(ReinforcedDeepslate);
-    INIT_BLOCK(RepeatingCommandBlock);
-    INIT_BLOCK(Reserved6);
-    INIT_BLOCK(RespawnAnchor);
-    INIT_BLOCK(Sand);
-    INIT_BLOCK(Sandstone);
-    INIT_BLOCK(SandstoneStairs);
-    INIT_BLOCK(Sapling);
-    INIT_BLOCK(Scaffolding);
-    INIT_BLOCK(Sculk);
-    INIT_BLOCK(SculkCatalyst);
-    INIT_BLOCK(SculkSensor);
-    INIT_BLOCK(SculkShrieker);
-    INIT_BLOCK(SculkVein);
-    INIT_BLOCK(SeaLantern);
-    INIT_BLOCK(SeaPickle);
-    INIT_BLOCK(Seagrass);
-    INIT_BLOCK(Shroomlight);
-    INIT_BLOCK(SilverGlazedTerracotta);
-    INIT_BLOCK(Skull);
-    INIT_BLOCK(SlimeBlock);
-    INIT_BLOCK(SmallAmethystBud);
-    INIT_BLOCK(SmallDripleaf);
-    INIT_BLOCK(SmithingTable);
-    INIT_BLOCK(Smoker);
-    INIT_BLOCK(SmoothBasalt);
-    INIT_BLOCK(SmoothQuartzStairs);
-    INIT_BLOCK(SmoothRedSandstoneStairs);
-    INIT_BLOCK(SmoothSandstoneStairs);
-    INIT_BLOCK(SmoothStone);
-    INIT_BLOCK(SnifferEgg);
-    INIT_BLOCK(Snow);
-    INIT_BLOCK(SnowLayer);
-    INIT_BLOCK(SoulCampfire);
-    INIT_BLOCK(SoulFire);
-    INIT_BLOCK(SoulLantern);
-    INIT_BLOCK(SoulSand);
-    INIT_BLOCK(SoulSoil);
-    INIT_BLOCK(SoulTorch);
-    INIT_BLOCK(Sponge);
-    INIT_BLOCK(SporeBlossom);
-    INIT_BLOCK(SpruceButton);
-    INIT_BLOCK(SpruceDoor);
-    INIT_BLOCK(SpruceFence);
-    INIT_BLOCK(SpruceFenceGate);
-    INIT_BLOCK(SpruceHangingSign);
-    INIT_BLOCK(SpruceLog);
-    INIT_BLOCK(SprucePressurePlate);
-    INIT_BLOCK(SpruceStairs);
-    INIT_BLOCK(SpruceStandingSign);
-    INIT_BLOCK(SpruceTrapdoor);
-    INIT_BLOCK(SpruceWallSign);
-    INIT_BLOCK(StandingBanner);
-    INIT_BLOCK(StandingSign);
-    INIT_BLOCK(StickyPiston);
-    INIT_BLOCK(StickyPistonArmCollision);
-    INIT_BLOCK(Stone);
-    INIT_BLOCK(StoneBrickStairs);
-    INIT_BLOCK(StoneBricks);
-    INIT_BLOCK(StoneButton);
-    INIT_BLOCK(StonePressurePlate);
-    INIT_BLOCK(StoneSlab);
-    INIT_BLOCK(StoneSlab2);
-    INIT_BLOCK(StoneSlab3);
-    INIT_BLOCK(StoneSlab4);
-    INIT_BLOCK(StoneStairs);
-    INIT_BLOCK(Stonecutter);
-    INIT_BLOCK(StonecutterBlock);
-    INIT_BLOCK(StrippedAcaciaLog);
-    INIT_BLOCK(StrippedBambooBlock);
-    INIT_BLOCK(StrippedBirchLog);
-    INIT_BLOCK(StrippedCherryLog);
-    INIT_BLOCK(StrippedCherryWood);
-    INIT_BLOCK(StrippedCrimsonHyphae);
-    INIT_BLOCK(StrippedCrimsonStem);
-    INIT_BLOCK(StrippedDarkOakLog);
-    INIT_BLOCK(StrippedJungleLog);
-    INIT_BLOCK(StrippedMangroveLog);
-    INIT_BLOCK(StrippedMangroveWood);
-    INIT_BLOCK(StrippedOakLog);
-    INIT_BLOCK(StrippedSpruceLog);
-    INIT_BLOCK(StrippedWarpedHyphae);
-    INIT_BLOCK(StrippedWarpedStem);
-    INIT_BLOCK(StructureBlock);
-    INIT_BLOCK(StructureVoid);
-    INIT_BLOCK(SuspiciousGravel);
-    INIT_BLOCK(SuspiciousSand);
-    INIT_BLOCK(SweetBerryBush);
-    INIT_BLOCK(TallGrass);
-    INIT_BLOCK(Target);
-    INIT_BLOCK(TintedGlass);
-    INIT_BLOCK(Tnt);
-    INIT_BLOCK(Torch);
-    INIT_BLOCK(Torchflower);
-    INIT_BLOCK(TorchflowerCrop);
-    INIT_BLOCK(Trapdoor);
-    INIT_BLOCK(TrappedChest);
-    INIT_BLOCK(TripWire);
-    INIT_BLOCK(TripWireHook);
-    INIT_BLOCK(TubeCoral);
-    INIT_BLOCK(Tuff);
-    INIT_BLOCK(TurtleEgg);
-    INIT_BLOCK(TwistingVines);
-    INIT_BLOCK(UnderwaterTorch);
-    INIT_BLOCK(UndyedShulkerBox);
-    INIT_BLOCK(UnlitRedstoneTorch);
-    INIT_BLOCK(UnpoweredComparator);
-    INIT_BLOCK(UnpoweredRepeater);
-    INIT_BLOCK(VerdantFroglight);
-    INIT_BLOCK(Vine);
-    INIT_BLOCK(WallBanner);
-    INIT_BLOCK(WallSign);
-    INIT_BLOCK(WarpedButton);
-    INIT_BLOCK(WarpedDoor);
-    INIT_BLOCK(WarpedDoubleSlab);
-    INIT_BLOCK(WarpedFence);
-    INIT_BLOCK(WarpedFenceGate);
-    INIT_BLOCK(WarpedFungus);
-    INIT_BLOCK(WarpedHangingSign);
-    INIT_BLOCK(WarpedHyphae);
-    INIT_BLOCK(WarpedNylium);
-    INIT_BLOCK(WarpedPlanks);
-    INIT_BLOCK(WarpedPressurePlate);
-    INIT_BLOCK(WarpedRoots);
-    INIT_BLOCK(WarpedSlab);
-    INIT_BLOCK(WarpedStairs);
-    INIT_BLOCK(WarpedStandingSign);
-    INIT_BLOCK(WarpedStem);
-    INIT_BLOCK(WarpedTrapdoor);
-    INIT_BLOCK(WarpedWallSign);
-    INIT_BLOCK(WarpedWartBlock);
-    INIT_BLOCK(Water);
-    INIT_BLOCK(WaterLily);
-    INIT_BLOCK(WaxedCopper);
-    INIT_BLOCK(WaxedCutCopper);
-    INIT_BLOCK(WaxedCutCopperSlab);
-    INIT_BLOCK(WaxedCutCopperStairs);
-    INIT_BLOCK(WaxedDoubleCutCopperSlab);
-    INIT_BLOCK(WaxedExposedCopper);
-    INIT_BLOCK(WaxedExposedCutCopper);
-    INIT_BLOCK(WaxedExposedCutCopperSlab);
-    INIT_BLOCK(WaxedExposedCutCopperStairs);
-    INIT_BLOCK(WaxedExposedDoubleCutCopperSlab);
-    INIT_BLOCK(WaxedOxidizedCopper);
-    INIT_BLOCK(WaxedOxidizedCutCopper);
-    INIT_BLOCK(WaxedOxidizedCutCopperSlab);
-    INIT_BLOCK(WaxedOxidizedCutCopperStairs);
-    INIT_BLOCK(WaxedOxidizedDoubleCutCopperSlab);
-    INIT_BLOCK(WaxedWeatheredCopper);
-    INIT_BLOCK(WaxedWeatheredCutCopper);
-    INIT_BLOCK(WaxedWeatheredCutCopperSlab);
-    INIT_BLOCK(WaxedWeatheredCutCopperStairs);
-    INIT_BLOCK(WaxedWeatheredDoubleCutCopperSlab);
-    INIT_BLOCK(WeatheredCopper);
-    INIT_BLOCK(WeatheredCutCopper);
-    INIT_BLOCK(WeatheredCutCopperSlab);
-    INIT_BLOCK(WeatheredCutCopperStairs);
-    INIT_BLOCK(WeatheredDoubleCutCopperSlab);
-    INIT_BLOCK(Web);
-    INIT_BLOCK(WeepingVines);
-    INIT_BLOCK(Wheat);
-    INIT_BLOCK(WhiteCandle);
-    INIT_BLOCK(WhiteCandleCake);
-    INIT_BLOCK(WhiteCarpet);
-    INIT_BLOCK(WhiteConcrete);
-    INIT_BLOCK(WhiteConcretePowder);
-    INIT_BLOCK(WhiteGlazedTerracotta);
-    INIT_BLOCK(WhiteShulkerBox);
-    INIT_BLOCK(WhiteStainedGlass);
-    INIT_BLOCK(WhiteStainedGlassPane);
-    INIT_BLOCK(WhiteTerracotta);
-    INIT_BLOCK(WhiteWool);
-    INIT_BLOCK(WitherRose);
-    INIT_BLOCK(Wood);
-    INIT_BLOCK(WoodenButton);
-    INIT_BLOCK(WoodenDoor);
-    INIT_BLOCK(WoodenPressurePlate);
-    INIT_BLOCK(WoodenSlab);
-    INIT_BLOCK(YellowCandle);
-    INIT_BLOCK(YellowCandleCake);
-    INIT_BLOCK(YellowCarpet);
-    INIT_BLOCK(YellowConcrete);
-    INIT_BLOCK(YellowConcretePowder);
-    INIT_BLOCK(YellowFlower);
-    INIT_BLOCK(YellowGlazedTerracotta);
-    INIT_BLOCK(YellowShulkerBox);
-    INIT_BLOCK(YellowStainedGlass);
-    INIT_BLOCK(YellowStainedGlassPane);
-    INIT_BLOCK(YellowTerracotta);
-    INIT_BLOCK(YellowWool);
-
-#pragma endregion
+    GENERATE_FUNC(INIT_BLOCK) // NOLINT
 }
 
-LL_AUTO_STATIC_HOOK(StaticVanillaBlockAssign, HookPriority::Normal, BedrockBlocks::assignBlocks, void) {
+#define RELEASE_BLOCK(x) m##x = nullptr // NOLINT
+
+LL_AUTO_STATIC_HOOK(StaticVanillaBlockUnassign, HookPriority::Normal, BedrockBlocks::unassignBlocks, void) {
+
+    for (int i = 0; i < 119; ++i) {
+        RELEASE_BLOCK(Elements[i]);
+    }
+    mAir     = nullptr;
+    mUnknown = nullptr;
+
+    GENERATE_FUNC(RELEASE_BLOCK) // NOLINT
+
     origin();
-    StaticVanillaBlocks::assignBlocks();
 }
 
 }; // namespace StaticVanillaBlocks

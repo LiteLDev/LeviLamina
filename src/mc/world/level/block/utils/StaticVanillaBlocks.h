@@ -8,6 +8,10 @@ namespace StaticVanillaBlocks {
 
 LLETAPI std::array<Block const*, 119> mElements;
 
+LLETAPI Block const* mAir;
+
+LLETAPI Block const* mUnknown;
+
 #pragma region StaticVanillaBlocksDeclarations
 
 LLETAPI Block const* mAcaciaButton;
