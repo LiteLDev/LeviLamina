@@ -1,6 +1,5 @@
 #pragma once
 
-#include "ll/api/base/Concepts.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
@@ -16,18 +15,8 @@ public:
     Tag::Type mType;
 
 public:
-    constexpr ListTag& operator=(ListTag const& other) {
-        if (this != &other) {
-            mType = other.mType;
-            mList.clear();
-            mList.reserve(other.mList.size());
-            for (auto& tag : other.mList) {
-                mList.emplace_back(tag->copy());
-            }
-        }
-        return *this;
-    }
-
+    [[nodiscard]] constexpr ListTag(ListTag&&)   = default;
+    LL_CLANG_CEXPR ListTag& operator=(ListTag&&) = default;
     [[nodiscard]] constexpr ListTag(ListTag const& other) : mType(other.mType) {
         mList.clear();
         mList.reserve(other.mList.size());
@@ -35,23 +24,21 @@ public:
             mList.emplace_back(tag->copy());
         }
     }
+    constexpr ListTag& operator=(ListTag const& other) {
+        if (this != &other) {
+            *this = ListTag{other};
+        }
+        return *this;
+    }
 
-    template <std::derived_from<Tag> T>
-    [[nodiscard]] constexpr ListTag(std::vector<T> const& tags) {
+    [[nodiscard]] constexpr ListTag(List tags) {
         if (tags.empty()) {
             mType = Tag::Type::End;
         } else {
-            mType = tags[0].getId();
-            mList.reserve(tags.size());
-            for (auto& tag : tags) {
-                mList.emplace_back(std::make_unique<T>(tag));
-            }
+            mType = tags[0]->getId();
+            mList = std::move(tags);
         }
     }
-
-    template <std::derived_from<Tag> T>
-    [[nodiscard]] constexpr ListTag(std::initializer_list<T> tags) : ListTag(std::vector<T>{std::move(tags)}) {}
-
     [[nodiscard]] inline ListTag(std::initializer_list<CompoundTagVariant> tags);
     [[nodiscard]] inline ListTag(std::vector<CompoundTagVariant> const& tags);
 

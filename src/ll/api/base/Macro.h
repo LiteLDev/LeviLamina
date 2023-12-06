@@ -26,3 +26,11 @@
 #ifndef LL_EBO
 #define LL_EBO __declspec(empty_bases)
 #endif
+
+#ifndef LL_CLANG_CEXPR
+#ifdef __clang__
+#define LL_CLANG_CEXPR inline
+#else
+#define LL_CLANG_CEXPR constexpr
+#endif
+#endif

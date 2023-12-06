@@ -34,7 +34,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
     };
 
     nbt["some"]["new"]["compound"]          = nbt;
-    nbt["hello"]["789\xDB\xFE"]["\u123456"] = StringTag{std::string{R"(\n\t\r\b\u1234\uffffffff)"} + "\xDB\xFE"};
+    nbt["hello"]["789\xDB\xFE"]["\u123456"] = std::string{R"(\n\t\r\b\u1234\uffffffff)"} + "\xDB\xFE";
 
 
     auto nbt2 = *CompoundTag::fromSnbt(R"(
