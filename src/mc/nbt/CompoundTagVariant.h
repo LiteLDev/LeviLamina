@@ -105,7 +105,7 @@ public:
     [[nodiscard]] bool hold() const noexcept {
         return std::holds_alternative<T>(mTagStorage);
     }
-
+    // consistency with json
     [[nodiscard]] bool is_array() const noexcept { return hold<ListTag>(); }
     [[nodiscard]] bool is_binary() const noexcept { return hold<ByteArrayTag>() || hold<IntArrayTag>(); }
     [[nodiscard]] bool is_boolean() const noexcept { return hold<ByteTag>(); }
@@ -114,9 +114,9 @@ public:
     [[nodiscard]] bool is_number_integer() const noexcept {
         return hold<ByteTag>() || hold<ShortTag>() || hold<IntTag>() || hold<Int64Tag>();
     }
-    [[nodiscard]] bool is_number() const noexcept { return is_number_float() || is_number_integer(); }
     [[nodiscard]] bool is_object() const noexcept { return hold<CompoundTag>(); }
     [[nodiscard]] bool is_string() const noexcept { return hold<StringTag>(); }
+    [[nodiscard]] bool is_number() const noexcept { return is_number_float() || is_number_integer(); }
     [[nodiscard]] bool is_primitive() const noexcept { return is_null() || is_string() || is_number() || is_binary(); }
     [[nodiscard]] bool is_structured() const noexcept { return is_array() || is_object(); }
 
@@ -183,7 +183,7 @@ public:
     }
 
     [[nodiscard]] CompoundTagVariant& operator[](std::string const& index) {
-        if (hold<EndTag>()) {
+        if (is_null()) {
             mTagStorage = CompoundTag{};
         }
         if (!hold<CompoundTag>()) {
@@ -213,7 +213,7 @@ public:
     }
 
     void push_back(CompoundTagVariant val) {
-        if (hold<EndTag>()) {
+        if (is_null()) {
             mTagStorage = ListTag{};
         }
         if (!hold<ListTag>()) {
