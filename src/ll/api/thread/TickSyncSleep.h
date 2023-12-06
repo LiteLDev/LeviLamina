@@ -7,7 +7,7 @@
 
 #include "ll/api/chrono/GameChrono.h"
 
-namespace ll::chrono {
+namespace ll::thread {
 
 template <class Clock>
 class TickSyncSleep;
@@ -15,8 +15,8 @@ namespace detail {
 LLETAPI std::mutex listMutex;
 LLETAPI std::atomic_size_t tickListSize;
 LLETAPI                    std::vector<std::variant<
-    std::reference_wrapper<TickSyncSleep<ServerClock>>,
-    std::reference_wrapper<TickSyncSleep<GameTimeClock>>>>
+    std::reference_wrapper<TickSyncSleep<chrono::ServerClock>>,
+    std::reference_wrapper<TickSyncSleep<chrono::GameTimeClock>>>>
                            tickList;
 LLAPI void                 notify();
 }; // namespace detail
