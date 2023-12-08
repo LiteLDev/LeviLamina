@@ -20,10 +20,9 @@ public:
     // CallStack inner types define
     struct Context {
     public:
-        // prevent constructor by default
-        Context& operator=(Context const&);
-        Context(Context const&);
-        Context();
+        std::string                        mMessage;
+        std::optional<::Bedrock::LogLevel> mLogLevel;
+        std::optional<::LogAreaID>         mLogAreaID;
 
     public:
         // NOLINTBEGIN
@@ -39,15 +38,13 @@ public:
 
     struct Frame {
     public:
-        // prevent constructor by default
-        Frame& operator=(Frame const&);
-        Frame(Frame const&);
-        Frame();
+        void* address[3];
     };
 
     struct FrameWithContext {
     public:
-        uchar filler[80];
+        Frame                  mFrame;
+        std::optional<Context> mContext;
 
         // prevent constructor by default
         FrameWithContext& operator=(FrameWithContext const&);

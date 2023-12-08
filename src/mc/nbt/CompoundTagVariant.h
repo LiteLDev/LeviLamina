@@ -238,7 +238,7 @@ public:
     }
 };
 
-[[nodiscard]] inline ListTag::ListTag(std::vector<CompoundTagVariant> const& tags) {
+[[nodiscard]] constexpr ListTag::ListTag(std::vector<CompoundTagVariant> const& tags) {
     if (tags.empty()) {
         mType = Tag::Type::End;
     } else {
@@ -249,7 +249,7 @@ public:
         }
     }
 }
-[[nodiscard]] inline ListTag::ListTag(std::initializer_list<CompoundTagVariant> tags)
+[[nodiscard]] constexpr ListTag::ListTag(std::initializer_list<CompoundTagVariant> tags)
 : ListTag(std::vector<CompoundTagVariant>{std::move(tags)}) {}
 
 #endif // COMPOUND_TAG_VARIANT_HEADER

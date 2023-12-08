@@ -6,17 +6,19 @@ class IDataOutput;
 class IDataInput;
 class PrintStream;
 
-enum class SnbtFormat {
+enum class SnbtFormat : uint {
     Minimize           = 0,
-    CompoundNewLine    = 1 << 0,
-    ListNewLine        = 1 << 1,
+    CompoundLineFeed   = 1 << 0,
+    ArrayLineFeed      = 1 << 1,
     Colored            = 1 << 2,
     Console            = 1 << 3,
     ForceAscii         = 1 << 4,
-    Jsonify            = 1 << 5,
-    PartialNewLine     = CompoundNewLine,
-    AlwaysNewLine      = CompoundNewLine | ListNewLine,
-    PrettyFilePrint    = CompoundNewLine,
+    ForceQuote         = 1 << 5,
+    CommentMarks       = 1 << 6,
+    Jsonify            = ForceQuote | CommentMarks,
+    PartialLineFeed    = CompoundLineFeed,
+    AlwaysLineFeed     = CompoundLineFeed | ArrayLineFeed,
+    PrettyFilePrint    = PartialLineFeed,
     PrettyChatPrint    = PrettyFilePrint | Colored,
     PrettyConsolePrint = PrettyFilePrint | Colored | Console,
 };
@@ -69,7 +71,7 @@ public:
         return *static_cast<T*>(this);
     }
 
-    [[nodiscard]] operator std::unique_ptr<Tag>() const { return copy(); }// NOLINT
+    [[nodiscard]] operator std::unique_ptr<Tag>() const { return copy(); } // NOLINT
 
     LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const;
 

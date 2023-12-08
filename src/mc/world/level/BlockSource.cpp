@@ -62,7 +62,7 @@ BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<Dime
     Dimension* dim = &getDimension();
 
     if (dimId.has_value()) {
-        dim = level.getDimension(dimId.value()).get();
+        dim = level.getDimension(*dimId).get();
     }
 
     if (!dim) {

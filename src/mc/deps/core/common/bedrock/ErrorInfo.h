@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/CallStack.h"
 
 namespace Bedrock {
 
@@ -9,11 +10,9 @@ struct ErrorInfo {
 public:
     ErrorInfo() = default;
 
-    E& getError() { return error; }
-
-private:
-    E     error;
-    uchar filler[0x30]{};
+    E                      mError;
+    CallStack              mCallStack;
+    std::vector<ErrorInfo> mStackErrors;
 };
 
 }; // namespace Bedrock

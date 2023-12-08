@@ -33,7 +33,8 @@ std::string getString(T value) {
 
 bool isMinimize(SnbtFormat format) {
     return !(
-        static_cast<bool>(format & SnbtFormat::CompoundNewLine) || static_cast<bool>(format & SnbtFormat::ListNewLine)
+        static_cast<bool>(format & SnbtFormat::CompoundLineFeed)
+        || static_cast<bool>(format & SnbtFormat::ArrayLineFeed)
     );
 }
 
@@ -48,7 +49,7 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
         res = "\"\"";
     } else {
         bool isTrivial = true;
-        if (!static_cast<bool>(format & SnbtFormat::Jsonify)) {
+        if (!static_cast<bool>(format & SnbtFormat::ForceQuote)) {
             if (str[0] == '-' || isdigit(str[0])) {
                 isTrivial = false;
             } else {
@@ -127,13 +128,13 @@ std::string TypedToSnbt(EndTag&, uchar, SnbtFormat format) {
 }
 std::string TypedToSnbt(ByteTag& self, uchar, SnbtFormat format) {
     return toDumpNumber(
-        getString(self.data) + (static_cast<bool>(format & SnbtFormat::Jsonify) ? " /*b*/" : "b"),
+        getString(self.data) + (static_cast<bool>(format & SnbtFormat::CommentMarks) ? " /*b*/" : "b"),
         format
     );
 }
 std::string TypedToSnbt(ShortTag& self, uchar, SnbtFormat format) {
     return toDumpNumber(
-        getString(self.data) + (static_cast<bool>(format & SnbtFormat::Jsonify) ? " /*s*/" : "s"),
+        getString(self.data) + (static_cast<bool>(format & SnbtFormat::CommentMarks) ? " /*s*/" : "s"),
         format
     );
 }
@@ -141,13 +142,13 @@ std::string TypedToSnbt(IntTag& self, uchar, SnbtFormat format) { return toDumpN
 
 std::string TypedToSnbt(Int64Tag& self, uchar, SnbtFormat format) {
     return toDumpNumber(
-        getString(self.data) + (static_cast<bool>(format & SnbtFormat::Jsonify) ? " /*l*/" : "l"),
+        getString(self.data) + (static_cast<bool>(format & SnbtFormat::CommentMarks) ? " /*l*/" : "l"),
         format
     );
 }
 std::string TypedToSnbt(FloatTag& self, uchar, SnbtFormat format) {
     return toDumpNumber(
-        getString(self.data) + (static_cast<bool>(format & SnbtFormat::Jsonify) ? " /*f*/" : "f"),
+        getString(self.data) + (static_cast<bool>(format & SnbtFormat::CommentMarks) ? " /*f*/" : "f"),
         format
     );
 }
@@ -183,7 +184,7 @@ std::string TypedToSnbt(ListTag& self, uchar indent, SnbtFormat format) {
     std::string indentSpace(indent, ' ');
 
     bool isMinimized = isMinimize(format);
-    bool isNewLine   = (int)format & (int)SnbtFormat::ListNewLine;
+    bool isNewLine   = (int)format & (int)SnbtFormat::ArrayLineFeed;
 
     if (isNewLine) {
         res += '\n';
@@ -242,7 +243,7 @@ std::string TypedToSnbt(CompoundTag& self, uchar indent, SnbtFormat format) {
     std::string indentSpace(indent, ' ');
 
     bool isMinimized = isMinimize(format);
-    bool isNewLine   = (int)format & (int)SnbtFormat::CompoundNewLine;
+    bool isNewLine   = (int)format & (int)SnbtFormat::CompoundLineFeed;
 
     if (isNewLine) {
         res += '\n';
@@ -293,7 +294,7 @@ std::string TypedToSnbt(ByteArrayTag& self, uchar indent, SnbtFormat format) {
     std::string res;
 
     std::string lbracket{"[B;"}, rbracket{"]"};
-    if (static_cast<bool>(format & SnbtFormat::Jsonify)) {
+    if (static_cast<bool>(format & SnbtFormat::CommentMarks)) {
         lbracket = "[ /*B;*/";
     }
 
@@ -313,14 +314,14 @@ std::string TypedToSnbt(ByteArrayTag& self, uchar indent, SnbtFormat format) {
     std::string indentSpace(indent, ' ');
 
     bool isMinimized = isMinimize(format);
-    bool isNewLine   = (int)format & (int)SnbtFormat::ListNewLine;
+    bool isNewLine   = (int)format & (int)SnbtFormat::ArrayLineFeed;
 
     if (isNewLine) {
         res += '\n';
     }
 
     std::string back{"b"};
-    if (static_cast<bool>(format & SnbtFormat::Jsonify)) {
+    if (static_cast<bool>(format & SnbtFormat::CommentMarks)) {
         back = " /*b*/";
     }
 
@@ -354,7 +355,7 @@ std::string TypedToSnbt(IntArrayTag& self, uchar indent, SnbtFormat format) {
     std::string res;
 
     std::string lbracket{"[I;"}, rbracket{"]"};
-    if (static_cast<bool>(format & SnbtFormat::Jsonify)) {
+    if (static_cast<bool>(format & SnbtFormat::CommentMarks)) {
         lbracket = "[ /*I;*/";
     }
 
@@ -374,7 +375,7 @@ std::string TypedToSnbt(IntArrayTag& self, uchar indent, SnbtFormat format) {
     std::string indentSpace(indent, ' ');
 
     bool isMinimized = isMinimize(format);
-    bool isNewLine   = (int)format & (int)SnbtFormat::ListNewLine;
+    bool isNewLine   = (int)format & (int)SnbtFormat::ArrayLineFeed;
 
     if (isNewLine) {
         res += '\n';

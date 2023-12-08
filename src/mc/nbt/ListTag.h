@@ -18,7 +18,6 @@ public:
     [[nodiscard]] constexpr ListTag(ListTag&&)   = default;
     LL_CLANG_CEXPR ListTag& operator=(ListTag&&) = default;
     [[nodiscard]] constexpr ListTag(ListTag const& other) : mType(other.mType) {
-        mList.clear();
         mList.reserve(other.mList.size());
         for (auto& tag : other.mList) {
             mList.emplace_back(tag->copy());
@@ -39,8 +38,8 @@ public:
             mList = std::move(tags);
         }
     }
-    [[nodiscard]] inline ListTag(std::initializer_list<CompoundTagVariant> tags);
-    [[nodiscard]] inline ListTag(std::vector<CompoundTagVariant> const& tags);
+    [[nodiscard]] constexpr ListTag(std::initializer_list<CompoundTagVariant> tags);
+    [[nodiscard]] constexpr ListTag(std::vector<CompoundTagVariant> const& tags);
 
     [[nodiscard]] constexpr std::unique_ptr<Tag>&       operator[](size_t index) { return mList[index]; }
     [[nodiscard]] constexpr std::unique_ptr<Tag> const& operator[](size_t index) const { return mList[index]; }

@@ -8,7 +8,6 @@ namespace Bedrock {
 template <typename T, typename Err>
 class Result {
 
-public:
     union {
         T              mValue;
         ErrorInfo<Err> mError;
@@ -16,9 +15,10 @@ public:
     bool mHasValue;
 
 public:
-    explicit Result(T&& value) : mValue(std::move(value)), mHasValue(true) {}
+    [[nodiscard]] explicit Result(T value) : mValue(std::move(value)), mHasValue(true) {}
+    [[nodiscard]] explicit Result(ErrorInfo<Err> err) : mError(std::move(err)), mHasValue(false) {}
 
-    Result(Result&& other) noexcept {
+    [[nodiscard]] Result(Result&& other) noexcept {
         mHasValue = other.mHasValue;
         if (mHasValue) {
             mValue = std::move(other.mValue);
@@ -29,30 +29,39 @@ public:
 
     [[nodiscard]] bool has_value() const { return mHasValue; }
 
-    T& value() {
+    [[nodiscard]] explicit operator bool() const { return mHasValue; }
+
+    [[nodiscard]] Err& error() {
+        if (mHasValue) throw std::logic_error("Bad error result access.");
+        return mError;
+    }
+
+    [[nodiscard]] T& value() {
         if (!mHasValue) {
-            std::rethrow_exception(std::make_exception_ptr(mError.getError()));
+            throw std::system_error(error());
         }
         return mValue;
     }
-
-    Err& error() {
-        if (mHasValue) throw std::logic_error("Bad error result access.");
-        return mError;
+    ~Result() {
+        if (mHasValue) {
+            mValue.~T();
+        } else {
+            mError.~ErrorInfo<Err>();
+        }
     }
 };
 
 template <typename Err>
 class Result<void, Err> {
 
-public:
     ErrorInfo<Err> mError;
     bool           mHasValue;
 
 public:
-    Result() : mHasValue(true) {}
+    [[nodiscard]] Result() : mHasValue(true) {}
+    [[nodiscard]] explicit Result(ErrorInfo<Err> err) : mError(std::move(err)), mHasValue(false) {}
 
-    Result(Result&& other) noexcept {
+    [[nodiscard]] Result(Result&& other) noexcept {
         mHasValue = other.mHasValue;
         if (!mHasValue) {
             mError = std::move(other.mError);
@@ -61,14 +70,16 @@ public:
 
     [[nodiscard]] bool has_value() const { return mHasValue; }
 
+    [[nodiscard]] explicit operator bool() const { return mHasValue; }
+
     void value() {
         if (!mHasValue) {
-            std::rethrow_exception(std::make_exception_ptr(mError.getError()));
+            throw std::system_error(error());
         }
         // No value to return as T is void
     }
 
-    Err& error() {
+    [[nodiscard]] Err& error() {
         if (mHasValue) throw std::logic_error("Bad error result access.");
         return mError;
     }

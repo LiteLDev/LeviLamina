@@ -156,7 +156,7 @@ Logger::Logger(std::string_view title)
 
 void Logger::resetFile() {
     if (ofs) {
-        auto& value = ofs.value();
+        auto& value = *ofs;
         if (value.is_open()) value.close();
         ofs = std::nullopt;
     }
@@ -171,7 +171,7 @@ bool Logger::setFile(std::string const& logFile, bool appendMode) {
     std::error_code ec;
     std::filesystem::create_directories(file_utils::u8path(logFile).remove_filename(), ec);
     ofs = std::ofstream(logFile, appendMode ? std::ios::app : std::ios::out);
-    return ofs.value().is_open();
+    return (*ofs).is_open();
 }
 
 bool Logger::setDefaultFile(std::string const& logFile, bool appendMode) {
