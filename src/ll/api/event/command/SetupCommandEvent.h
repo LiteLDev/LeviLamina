@@ -6,10 +6,13 @@
 #include "mc/server/commands/CommandRegistry.h"
 
 namespace ll::event::inline command {
-class SetupCommandEvent : public Event {
-public:
-    CommandRegistry& commandRegistry;
 
-    constexpr explicit SetupCommandEvent(CommandRegistry& reg) : commandRegistry(reg) {}
+class SetupCommandEvent : public Event {
+    CommandRegistry& mRegistry;
+
+public:
+    constexpr explicit SetupCommandEvent(CommandRegistry& reg) : mRegistry(reg) {}
+
+    LLNDAPI CommandRegistry& registry() const;
 };
 } // namespace ll::event::inline command

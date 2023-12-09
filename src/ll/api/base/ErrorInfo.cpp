@@ -142,7 +142,7 @@ extern "C" PCONTEXT*          __current_exception_context(); // NOLINT
 _EXCEPTION_RECORD& current_exception() noexcept { return **__current_exception(); }
 _CONTEXT&          current_exception_context() noexcept { return **__current_exception_context(); }
 
-LLNDAPI std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const& rec) noexcept {
+std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const& rec) noexcept {
     auto               realType = std::make_shared<_EXCEPTION_RECORD>(rec);
     std::exception_ptr res;
     __ExceptionPtrAssign(&res, &realType);

@@ -535,12 +535,13 @@ namespace ll {
 void registerLeviCommands() {
     using namespace event;
     EventBus::getInstance().emplaceListener<command::SetupCommandEvent>([](command::SetupCommandEvent& ev) {
+        auto& registry = ev.registry();
         if (globalConfig.modules.tweak.tpdimCommand) {
-            TeleportDimensionCommand::setup(ev.commandRegistry);
+            TeleportDimensionCommand::setup(registry);
         }
         if (globalConfig.modules.tweak.settingsCommand) {
-            VersionCommand::setup(ev.commandRegistry);
-            LLCommand::setup(ev.commandRegistry);
+            VersionCommand::setup(registry);
+            LLCommand::setup(registry);
         }
     });
 }

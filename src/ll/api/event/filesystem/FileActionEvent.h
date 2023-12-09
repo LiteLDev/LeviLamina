@@ -3,7 +3,6 @@
 #include <filesystem>
 #include <utility>
 
-#include "ll/api/event/Emitter.h"
 #include "ll/api/event/Event.h"
 #include "ll/api/event/Listener.h"
 
@@ -18,11 +17,14 @@ enum class FileActionType {
 };
 
 class FileActionEvent : public Event {
-public:
-    std::filesystem::path const path;
-    FileActionType const        type;
+    std::filesystem::path const& mPath;
+    FileActionType const&        mType;
 
-    FileActionEvent(std::filesystem::path p, FileActionType e) : path(std::move(p)), type(e) {}
+public:
+    constexpr FileActionEvent(std::filesystem::path const& p, FileActionType const& e) : mPath(p), mType(e) {}
+
+   LLNDAPI std::filesystem::path const& path() const;
+   LLNDAPI FileActionType const&        type() const;
 };
 } // namespace fs
 

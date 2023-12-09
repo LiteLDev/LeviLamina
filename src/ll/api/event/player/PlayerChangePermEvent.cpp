@@ -4,6 +4,8 @@
 
 namespace ll::event::inline player {
 
+CommandPermissionLevel& PlayerChangePermEvent::newPerm() const { return mMewPerm; }
+
 LL_TYPED_INSTANCE_HOOK(
     PlayerChangePermEventHook,
     HookPriority::Normal,
@@ -28,4 +30,5 @@ class PlayerChangePermEventEmitter : public Emitter<PlayerChangePermEvent, emitt
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerChangePermEventEmitter>();
 }
+
 } // namespace ll::event::inline player

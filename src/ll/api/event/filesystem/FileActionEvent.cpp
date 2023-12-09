@@ -16,12 +16,17 @@
 #include <vector>
 
 #include "ll/api/base/ErrorInfo.h"
+#include "ll/api/event/Emitter.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/io/FileUtils.h"
 
 #include "windows.h"
 
 namespace ll::event::inline fs {
+
+LLNDAPI std::filesystem::path const& FileActionEvent::path() const { return mPath; }
+LLNDAPI FileActionType const&        FileActionEvent::type() const { return mType; }
+
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase& l);
 // modified from Thomas Monkman's
 class FileWatcher : public Emitter<FileActionEvent, emitterFactory> {

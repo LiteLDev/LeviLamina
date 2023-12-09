@@ -1,23 +1,20 @@
 #pragma once
 
-#include "ll/api/base/Macro.h"
 #include "ll/api/event/Cancellable.h"
-#include "ll/api/event/Event.h"
-#include "mc/world/actor/player/Player.h"
+#include "ll/api/event/player/PlayerEvent.h"
 
+#include "mc/world/actor/ActorDamageSource.h"
 
 namespace ll::event::inline player {
-/**
- * @brief Player die event.
- */
-class PlayerDieEvent : public Event {
+
+class PlayerDieEvent : public PlayerEvent {
+    ActorDamageSource const& mSource;
+
 public:
-    Player&                  player;
-    ActorDamageSource const& source;
-
     constexpr explicit PlayerDieEvent(Player& player, ActorDamageSource const& source)
-    : player(player),
-      source(source) {}
-};
+    : PlayerEvent(player),
+      mSource(source) {}
 
+    LLNDAPI ActorDamageSource const& source() const;
+};
 } // namespace ll::event::inline player

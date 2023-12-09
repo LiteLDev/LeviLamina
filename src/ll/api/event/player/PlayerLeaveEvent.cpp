@@ -2,8 +2,6 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/server/ServerPlayer.h"
-
 namespace ll::event::inline player {
 
 LL_TYPED_INSTANCE_HOOK(PlayerLeaveEventHook, HookPriority::Normal, ServerPlayer, &ServerPlayer::disconnect, void) {
@@ -19,4 +17,5 @@ class PlayerLeaveEventEmitter : public Emitter<PlayerLeaveEvent, emitterFactory>
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerLeaveEventEmitter>();
 }
+
 } // namespace ll::event::inline player

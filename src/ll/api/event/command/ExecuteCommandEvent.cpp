@@ -7,6 +7,13 @@
 
 namespace ll::event::inline command {
 
+MinecraftCommands&    ExecuteCommandEvent::minecraftCommands() const { return mMinecraftCommands; }
+CommandContext const& ExecuteCommandEvent::commandContext() const { return mCommandContext; }
+bool const&           ExecuteCommandEvent::suppressOutput() const { return mSuppressOutput; }
+CommandContext&       ExecutingCommandEvent::commandContext() const { return mCommandContext; }
+bool&                 ExecutingCommandEvent::suppressOutput() const { return mSuppressOutput; }
+MCRESULT&             ExecutedCommandEvent::result() const { return mResult; }
+
 LL_TYPED_INSTANCE_HOOK(
     ExecutingCommandEventHook,
     HookPriority::Normal,
@@ -24,16 +31,6 @@ LL_TYPED_INSTANCE_HOOK(
     return origin(context, suppressOutput);
 }
 
-static std::unique_ptr<EmitterBase> executingEmitterFactory(ListenerBase&);
-class ExecutingCommandEventEmitter : public Emitter<ExecutingCommandEvent, executingEmitterFactory> {
-    memory::HookAutoRegister<ExecutingCommandEventHook> hook;
-};
-
-static std::unique_ptr<EmitterBase> executingEmitterFactory(ListenerBase&) {
-    return std::make_unique<ExecutingCommandEventEmitter>();
-}
-
-
 LL_TYPED_INSTANCE_HOOK(
     ExecutedCommandEventHook,
     HookPriority::Low,
@@ -50,6 +47,16 @@ LL_TYPED_INSTANCE_HOOK(
     return res;
 }
 
+
+static std::unique_ptr<EmitterBase> executingEmitterFactory(ListenerBase&);
+class ExecutingCommandEventEmitter : public Emitter<ExecutingCommandEvent, executingEmitterFactory> {
+    memory::HookAutoRegister<ExecutingCommandEventHook> hook;
+};
+
+static std::unique_ptr<EmitterBase> executingEmitterFactory(ListenerBase&) {
+    return std::make_unique<ExecutingCommandEventEmitter>();
+}
+
 static std::unique_ptr<EmitterBase> executedEmitterFactory(ListenerBase&);
 class ExecutedCommandEventEmitter : public Emitter<ExecutedCommandEvent, executedEmitterFactory> {
     memory::HookAutoRegister<ExecutedCommandEventHook> hook;
@@ -58,4 +65,5 @@ class ExecutedCommandEventEmitter : public Emitter<ExecutedCommandEvent, execute
 static std::unique_ptr<EmitterBase> executedEmitterFactory(ListenerBase&) {
     return std::make_unique<ExecutedCommandEventEmitter>();
 }
+
 } // namespace ll::event::inline command

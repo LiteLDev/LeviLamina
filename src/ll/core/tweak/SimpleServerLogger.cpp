@@ -13,31 +13,29 @@ void setupSimpleServerLogger() {
     using namespace event;
     if (globalConfig.modules.simpleServerLogger.playerCommand)
         EventBus::getInstance().emplaceListener<ExecutingCommandEvent>([](ExecutingCommandEvent& ev) {
-            if (ev.commandContext.getCommandOrigin().getOriginType() != CommandOriginType::Player) {
+            auto& context = ev.commandContext();
+            if (context.getCommandOrigin().getOriginType() != CommandOriginType::Player) {
                 return;
             }
             static Logger logger("PlayerCmd");
-            logger.info(
-                "<{}> {}",
-                ((Player*)(ev.commandContext.getCommandOrigin().getEntity()))->getRealName(),
-                ev.commandContext.mCommand
-            );
+            logger
+                .info("<{}> {}", ((Player*)(context.getCommandOrigin().getEntity()))->getRealName(), context.mCommand);
         });
     if (globalConfig.modules.simpleServerLogger.playerChat)
         EventBus::getInstance().emplaceListener<PlayerSendMessageEvent>([](PlayerSendMessageEvent& ev) {
             static Logger logger("PlayerChat");
-            logger.info("<{}> {}", ev.player.getRealName(), ev.message);
+            logger.info("<{}> {}", ev.player().getRealName(), ev.message());
         });
     if (globalConfig.modules.simpleServerLogger.playerPermission)
         EventBus::getInstance().emplaceListener<PlayerChangePermEvent>([](PlayerChangePermEvent& ev) {
             static Logger logger("PlayerPerm");
             logger.info(
                 "<{}> {}({}) -> {}({})",
-                ev.player.getRealName(),
-                magic_enum::enum_name(ev.player.getCommandPermissionLevel()),
-                fmt::underlying(ev.player.getCommandPermissionLevel()),
-                magic_enum::enum_name(ev.newPerm),
-                fmt::underlying(ev.newPerm)
+                ev.player().getRealName(),
+                magic_enum::enum_name(ev.player().getCommandPermissionLevel()),
+                fmt::underlying(ev.player().getCommandPermissionLevel()),
+                magic_enum::enum_name(ev.newPerm()),
+                fmt::underlying(ev.newPerm())
             );
         });
 }

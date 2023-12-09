@@ -9,6 +9,8 @@
 
 namespace ll::event::inline player {
 
+std::string& PlayerSendMessageEvent::message() const { return mMessage; }
+
 LL_TYPED_INSTANCE_HOOK(
     PlayerSendMessageEventHook,
     HookPriority::Normal,
@@ -36,4 +38,5 @@ class PlayerSendMessageEventEmitter : public Emitter<PlayerSendMessageEvent, emi
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerSendMessageEventEmitter>();
 }
+
 } // namespace ll::event::inline player

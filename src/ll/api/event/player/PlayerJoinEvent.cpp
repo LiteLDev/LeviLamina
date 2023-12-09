@@ -2,8 +2,6 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/server/ServerPlayer.h"
-
 namespace ll::event::inline player {
 
 LL_TYPED_INSTANCE_HOOK(
@@ -27,4 +25,5 @@ class PlayerJoinEventEmitter : public Emitter<PlayerJoinEvent, emitterFactory> {
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return std::make_unique<PlayerJoinEventEmitter>(); }
+
 } // namespace ll::event::inline player

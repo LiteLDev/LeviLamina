@@ -140,8 +140,8 @@ public:
         using OriginFuncType =                                                                                         \
             ::ll::memory::AddConstAtMemberFunIfOriginIs<RET_TYPE FUNC_PTR(__VA_ARGS__), decltype(IDENTIFIER)>;         \
                                                                                                                        \
-        inline static FuncPtr        target{};                                                                         \
-        inline static OriginFuncType originFunc{};                                                                     \
+        inline static FuncPtr        target__{};                                                                       \
+        inline static OriginFuncType originFunc__{};                                                                   \
                                                                                                                        \
         LL_HOOK_DEBUG_OUTPUT(IDENTIFIER);                                                                              \
                                                                                                                        \
@@ -153,19 +153,19 @@ public:
         STATIC RET_TYPE detour(__VA_ARGS__);                                                                           \
                                                                                                                        \
         static int hook() {                                                                                            \
-            target = ll::memory::resolveIdentifier<OriginFuncType>(IDENTIFIER);                                        \
-            if (target == nullptr) {                                                                                   \
+            target__ = ll::memory::resolveIdentifier<OriginFuncType>(IDENTIFIER);                                      \
+            if (target__ == nullptr) {                                                                                 \
                 return -1;                                                                                             \
             }                                                                                                          \
             return ll::memory::hook(                                                                                   \
-                target,                                                                                                \
+                target__,                                                                                              \
                 ll::memory::toFuncPtr(&DEF_TYPE::detour),                                                              \
-                reinterpret_cast<FuncPtr*>(&originFunc),                                                               \
+                reinterpret_cast<FuncPtr*>(&originFunc__),                                                               \
                 PRIORITY                                                                                               \
             );                                                                                                         \
         }                                                                                                              \
                                                                                                                        \
-        static bool unhook() { return ll::memory::unhook(target, ll::memory::toFuncPtr(&DEF_TYPE::detour)); }          \
+        static bool unhook() { return ll::memory::unhook(target__, ll::memory::toFuncPtr(&DEF_TYPE::detour)); }        \
     };                                                                                                                 \
     REGISTER;                                                                                                          \
     RET_TYPE DEF_TYPE::detour(__VA_ARGS__)
@@ -182,15 +182,15 @@ public:
 
 #define LL_MANUAL_REG_HOOK_IMPL(...) LL_VA_EXPAND(LL_HOOK_IMPL(, __VA_ARGS__))
 
-#define LL_STATIC_HOOK_IMPL(...) LL_VA_EXPAND(LL_MANUAL_REG_HOOK_IMPL((*), static, originFunc, __VA_ARGS__))
+#define LL_STATIC_HOOK_IMPL(...) LL_VA_EXPAND(LL_MANUAL_REG_HOOK_IMPL((*), static, originFunc__, __VA_ARGS__))
 
-#define LL_AUTO_STATIC_HOOK_IMPL(...) LL_VA_EXPAND(LL_AUTO_REG_HOOK_IMPL((*), static, originFunc, __VA_ARGS__))
+#define LL_AUTO_STATIC_HOOK_IMPL(...) LL_VA_EXPAND(LL_AUTO_REG_HOOK_IMPL((*), static, originFunc__, __VA_ARGS__))
 
 #define LL_INSTANCE_HOOK_IMPL(DEF_TYPE, ...)                                                                           \
-    LL_VA_EXPAND(LL_MANUAL_REG_HOOK_IMPL((DEF_TYPE::*), , (this->*originFunc), DEF_TYPE, __VA_ARGS__))
+    LL_VA_EXPAND(LL_MANUAL_REG_HOOK_IMPL((DEF_TYPE::*), , (this->*originFunc__), DEF_TYPE, __VA_ARGS__))
 
 #define LL_AUTO_INSTANCE_HOOK_IMPL(DEF_TYPE, ...)                                                                      \
-    LL_VA_EXPAND(LL_AUTO_REG_HOOK_IMPL((DEF_TYPE::*), , (this->*originFunc), DEF_TYPE, __VA_ARGS__))
+    LL_VA_EXPAND(LL_AUTO_REG_HOOK_IMPL((DEF_TYPE::*), , (this->*originFunc__), DEF_TYPE, __VA_ARGS__))
 
 /**
  * @brief Register a hook for a typed static function.

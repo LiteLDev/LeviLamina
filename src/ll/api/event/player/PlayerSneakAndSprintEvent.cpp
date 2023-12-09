@@ -1,11 +1,11 @@
-#include "ll/api/event/player/PlayerActionEvent.h"
+#include "ll/api/event/player/PlayerSneakEvent.h"
+#include "ll/api/event/player/PlayerSprintEvent.h"
+
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
-#include "ll/core/LeviLamina.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/packet/PlayerActionPacket.h"
-
 
 namespace ll::event::inline player {
 LL_TYPED_INSTANCE_HOOK(
@@ -20,17 +20,17 @@ LL_TYPED_INSTANCE_HOOK(
     switch (packet.mAction) {
     case PlayerActionType::StartSprinting:
         if (auto player = this->getServerPlayer(id, packet.mClientSubId); player) {
-            EventBus::getInstance().publish(PlayerStartSprintEvent(player));
+            EventBus::getInstance().publish(PlayerSprintingEvent(player));
             break;
         }
     case PlayerActionType::StopSprinting:
         if (auto player = this->getServerPlayer(id, packet.mClientSubId); player) {
-            EventBus::getInstance().publish(PlayerStopSprintEvent(player));
+            EventBus::getInstance().publish(PlayerSprintedEvent(player));
             break;
         }
     case PlayerActionType::StartSneaking:
         if (auto player = this->getServerPlayer(id, packet.mClientSubId); player) {
-            auto ev = PlayerStartSneakEvent(player);
+            auto ev = PlayerSneakingEvent(player);
             EventBus::getInstance().publish(ev);
             if (ev.isCancelled()) {
                 return;
@@ -39,7 +39,7 @@ LL_TYPED_INSTANCE_HOOK(
         }
     case PlayerActionType::StopSneaking:
         if (auto player = this->getServerPlayer(id, packet.mClientSubId); player) {
-            auto ev = PlayerStopSneakEvent(player);
+            auto ev = PlayerSneakedEvent(player);
             EventBus::getInstance().publish(ev);
             if (ev.isCancelled()) {
                 return;
@@ -53,12 +53,12 @@ LL_TYPED_INSTANCE_HOOK(
 }
 
 static std::unique_ptr<EmitterBase> startSprintEmitterFactory(ListenerBase&);
-class PlayerStartSprintEventEmitter : public Emitter<PlayerStartSprintEvent, startSprintEmitterFactory> {
+class PlayerStartSprintEventEmitter : public Emitter<PlayerSprintingEvent, startSprintEmitterFactory> {
     ll::memory::MultiHookRegister<PlayerActionEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> stopSprintEmitterFactory(ListenerBase&);
-class PlayerStopSprintEventEmitter : public Emitter<PlayerStopSprintEvent, stopSprintEmitterFactory> {
+class PlayerStopSprintEventEmitter : public Emitter<PlayerSprintedEvent, stopSprintEmitterFactory> {
     ll::memory::MultiHookRegister<PlayerActionEventHook> hook;
 };
 
@@ -71,12 +71,12 @@ std::unique_ptr<EmitterBase> stopSprintEmitterFactory(ListenerBase&) {
 }
 
 static std::unique_ptr<EmitterBase> startSneakEmitterFactory(ListenerBase&);
-class PlayerStartSneakEventEmitter : public Emitter<PlayerStartSneakEvent, startSneakEmitterFactory> {
+class PlayerStartSneakEventEmitter : public Emitter<PlayerSneakingEvent, startSneakEmitterFactory> {
     ll::memory::MultiHookRegister<PlayerActionEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> stopSneakEmitterFactory(ListenerBase&);
-class PlayerStopSneakEventEmitter : public Emitter<PlayerStopSneakEvent, stopSneakEmitterFactory> {
+class PlayerStopSneakEventEmitter : public Emitter<PlayerSneakedEvent, stopSneakEmitterFactory> {
     ll::memory::MultiHookRegister<PlayerActionEventHook> hook;
 };
 

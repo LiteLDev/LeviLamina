@@ -1,21 +1,15 @@
 #pragma once
 
-#include "ll/api/base/Macro.h"
 #include "ll/api/event/Cancellable.h"
-#include "ll/api/event/Event.h"
-#include "mc/world/actor/player/Player.h"
-
+#include "ll/api/event/player/PlayerEvent.h"
 
 namespace ll::event::inline player {
-/**
- * @brief Player add experience event.
- */
-class PlayerAddExperienceEvent : public Cancellable<Event> {
+
+class PlayerAddExperienceEvent : public Cancellable<PlayerEvent> {
+    int& mExperience;
+
 public:
-    Player& player;
-    int&    exp;
-
-    constexpr explicit PlayerAddExperienceEvent(Player& player, int& exp) : player(player), exp(exp) {}
+    constexpr PlayerAddExperienceEvent(Player& player, int& exp) : Cancellable(player), mExperience(exp) {}
+    LLNDAPI int& experience() const;
 };
-
 } // namespace ll::event::inline player

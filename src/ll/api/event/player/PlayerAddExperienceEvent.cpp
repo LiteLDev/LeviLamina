@@ -3,9 +3,9 @@
 #include "ll/api/memory/Hook.h"
 
 
-#include "mc/world/actor/player/Player.h"
-
 namespace ll::event::inline player {
+
+int& PlayerAddExperienceEvent::experience() const { return mExperience; }
 
 LL_TYPED_INSTANCE_HOOK(
     PlayerAddExperienceEventHook,

@@ -1,20 +1,12 @@
 #pragma once
 
-#include "ll/api/base/Macro.h"
 #include "ll/api/event/Cancellable.h"
-#include "ll/api/event/Event.h"
-#include "mc/world/actor/player/Player.h"
-
+#include "ll/api/event/player/PlayerEvent.h"
 
 namespace ll::event::inline player {
-/**
- * @brief Player swing event.
- */
-class PlayerSwingEvent : public Event {
+
+class PlayerSwingEvent : public PlayerEvent {
 public:
-    Player& player;
-
-    constexpr explicit PlayerSwingEvent(Player& player) : player(player) {}
+    constexpr explicit PlayerSwingEvent(Player& player) : PlayerEvent(player) {}
 };
-
 } // namespace ll::event::inline player

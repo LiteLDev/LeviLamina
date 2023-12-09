@@ -9,10 +9,10 @@
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/api/event/command/ExecuteCommandEvent.h"
-#include "ll/api/event/player/PlayerActionEvent.h"
+#include "ll/api/event/player/PlayerSprintEvent.h"
+#include "ll/api/event/player/PlayerSneakEvent.h"
 #include "ll/api/event/player/PlayerAddExperienceEvent.h"
 #include "ll/api/event/player/PlayerAttackEvent.h"
-#include "ll/api/event/player/PlayerAttackedEvent.h"
 #include "ll/api/event/player/PlayerConnectEvent.h"
 #include "ll/api/event/player/PlayerDieEvent.h"
 #include "ll/api/event/player/PlayerJoinEvent.h"
@@ -20,7 +20,7 @@
 #include "ll/api/event/player/PlayerLeaveEvent.h"
 #include "ll/api/event/player/PlayerRespawnEvent.h"
 #include "ll/api/event/player/PlayerSwingEvent.h"
-#include "ll/api/event/player/PlayerTakeDropItemEvent.h"
+#include "ll/api/event/player/PlayerPickUpItemEvent.h"
 #include "mc/codebuilder/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/world/actor/ActorDamageSource.h"
@@ -127,81 +127,81 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     // ll::logger.debug("{}", str.buf);
 
     auto listener4 = Listener<FileActionEvent>::create("./", [](FileActionEvent& ev) {
-        ll::logger.debug("dyn receive: {}, {} {}", typeid(ev).name(), ev.path, magic_enum::enum_name(ev.type));
+        ll::logger.debug("dyn receive: {}, {} {}", typeid(ev).name(), ev.path(), magic_enum::enum_name(ev.type()));
     });
     bus.addListener(listener4);
 
     remover.add<DelayTask>(2min, [=, &bus] { bus.removeListener(listener4); });
 
     bus.emplaceListener<ExecutingCommandEvent>([](ExecutingCommandEvent& ev) {
-        ll::logger.debug("ExecutingCommandEvent: {}", ev.commandContext.mCommand);
-        ll::logger.debug("origin: {}", ev.commandContext.mOrigin->serialize().toSnbt());
+        ll::logger.debug("ExecutingCommandEvent: {}", ev.commandContext().mCommand);
+        ll::logger.debug("origin: {}", ev.commandContext().mOrigin->serialize().toSnbt());
     });
     bus.emplaceListener<ExecutedCommandEvent>([](ExecutedCommandEvent& ev) {
-        ll::logger.debug("ExecutedCommandEvent: {}", ev.commandContext.mCommand);
-        ll::logger.debug("result: {}", ev.result.getFullCode());
+        ll::logger.debug("ExecutedCommandEvent: {}", ev.commandContext().mCommand);
+        ll::logger.debug("result: {}", ev.result().getFullCode());
     });
     bus.emplaceListener<PlayerConnectEvent>([](PlayerConnectEvent& ev) {
-        ll::logger.debug("Player connect: {} {}", ev.player.getRealName(), ev.player.getIPAndPort());
+        ll::logger.debug("Player connect: {} {}", ev.player().getRealName(), ev.player().getIPAndPort());
     });
     bus.emplaceListener<PlayerJoinEvent>([](PlayerJoinEvent& ev) {
-        ll::logger.debug("Player join: {}", ev.player.getRealName());
+        ll::logger.debug("Player join: {}", ev.player().getRealName());
     });
     bus.emplaceListener<PlayerLeaveEvent>([](PlayerLeaveEvent& ev) {
-        ll::logger.debug("Player leave: {}", ev.player.getRealName());
+        ll::logger.debug("Player leave: {}", ev.player().getRealName());
     });
-    bus.emplaceListener<PlayerAttackEvent>([](PlayerAttackEvent& ev) {
+    bus.emplaceListener<PlayerAttackingEvent>([](PlayerAttackingEvent& ev) {
         ll::logger.debug(
             "Player {} attack {} cause {}",
-            ev.source.getRealName(),
-            ev.target.getTypeName(),
-            magic_enum::enum_name(ev.cause)
+            ev.player().getRealName(),
+            ev.target().getTypeName(),
+            magic_enum::enum_name(ev.cause())
         );
     });
     bus.emplaceListener<PlayerAttackedEvent>([](PlayerAttackedEvent& ev) {
         ll::logger
-            .debug("Player {} attacked {} damage {}", ev.source.getRealName(), ev.target.getTypeName(), ev.damage);
+            .debug("Player {} attacked {} damage {}", ev.player().getRealName(), ev.target().getTypeName(), ev.damage());
     });
     bus.emplaceListener<PlayerDieEvent>([](PlayerDieEvent& ev) {
         ll::logger
-            .debug("Player {} died source {}", ev.player.getRealName(), magic_enum::enum_name(ev.source.getCause()));
+            .debug("Player {} died source {}", ev.player().getRealName(), magic_enum::enum_name(ev.source().getCause()));
     });
     bus.emplaceListener<PlayerRespawnEvent>([](PlayerRespawnEvent& ev) {
-        ll::logger.debug("Player {} respawned", ev.player.getRealName());
+        ll::logger.debug("Player {} respawned", ev.player().getRealName());
     });
     bus.emplaceListener<PlayerJumpEvent>([](PlayerJumpEvent& ev) {
-        ll::logger.debug("Player {} jumped", ev.player.getRealName());
+        ll::logger.debug("Player {} jumped", ev.player().getRealName());
     });
     bus.emplaceListener<PlayerAddExperienceEvent>([](PlayerAddExperienceEvent& ev) {
-        ll::logger.debug("Player {} add experience {}", ev.player.getRealName(), ev.exp);
-        if (ev.exp == 114514) {
+        ll::logger.debug("Player {} add experience {}", ev.player().getRealName(), ev.experience());
+        if (ev.experience() == 114514) {
             ev.cancel();
         }
     });
-    bus.emplaceListener<PlayerTakeDropItemEvent>([](PlayerTakeDropItemEvent& ev) {
-        ll::logger.debug("Player {} take {}", ev.player.getRealName(), ev.itemActor.mItem.getTypeName());
+    bus.emplaceListener<PlayerPickUpItemEvent>([](PlayerPickUpItemEvent& ev) {
+        ll::logger.debug("Player {} take {}", ev.player().getRealName(), ev.itemActor().mItem.getTypeName());
     });
     bus.emplaceListener<PlayerSwingEvent>([](PlayerSwingEvent& ev) {
-        ll::logger.debug("Player {} left click", ev.player.getRealName());
+        ll::logger.debug("Player {} left click", ev.player().getRealName());
     });
     auto listenersp = Listener<PlayerSprintEvent>::create([](PlayerSprintEvent& ev) {
         switch (do_hash(typeid(ev).name())) {
-        case do_hash(ll::reflection::type_raw_name_v<PlayerStartSprintEvent>): {
-            ll::logger.debug("Player {} start sprint", ev.player.getRealName());
+        case do_hash(ll::reflection::type_raw_name_v<PlayerSprintingEvent>): {
+            ll::logger.debug("Player {} start sprint", ev.player().getRealName());
         } break;
-        case do_hash(ll::reflection::type_raw_name_v<PlayerStopSprintEvent>): {
-            ll::logger.debug("Player {} stop sprint", ev.player.getRealName());
+        case do_hash(ll::reflection::type_raw_name_v<PlayerSprintedEvent>): {
+            ll::logger.debug("Player {} stop sprint", ev.player().getRealName());
         } break;
         default:
             break;
         }
     });
-    bus.addListener<PlayerStartSprintEvent>(listenersp);
-    bus.addListener<PlayerStopSprintEvent>(listenersp);
-    bus.emplaceListener<PlayerStartSneakEvent>([](PlayerStartSneakEvent& ev) {
-        ll::logger.debug("Player {} start sneak", ev.player.getRealName());
+    bus.addListener<PlayerSprintingEvent>(listenersp);
+    bus.addListener<PlayerSprintedEvent>(listenersp);
+    bus.emplaceListener<PlayerSneakingEvent>([](PlayerSneakingEvent& ev) {
+        ll::logger.debug("Player {} start sneak", ev.player().getRealName());
     });
-    bus.emplaceListener<PlayerStopSneakEvent>([](PlayerStopSneakEvent& ev) {
-        ll::logger.debug("Player {} stop sneak", ev.player.getRealName());
+    bus.emplaceListener<PlayerSneakedEvent>([](PlayerSneakedEvent& ev) {
+        ll::logger.debug("Player {} stop sneak", ev.player().getRealName());
     });
 }

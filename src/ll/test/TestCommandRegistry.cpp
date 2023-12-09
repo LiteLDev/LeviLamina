@@ -167,7 +167,7 @@ public:
 static bool reg = [] {
     using namespace ll::event;
     EventBus::getInstance().emplaceListener<SetupCommandEvent>([](SetupCommandEvent& ev) {
-        TestCommand::setup(ev.commandRegistry);
+        TestCommand::setup(ev.registry());
     });
     return true;
 }();

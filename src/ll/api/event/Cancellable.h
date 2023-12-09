@@ -6,6 +6,9 @@
 namespace ll::event {
 template <std::derived_from<Event> T>
 class Cancellable : public T {
+protected:
+    using T::T;
+
 public:
     [[nodiscard]] constexpr bool isCancelled() { return Event::mCancelled; }
 

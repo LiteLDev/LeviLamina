@@ -7,8 +7,10 @@
 
 #include "mc/network/ServerNetworkHandler.h"
 
-
 namespace ll::event::inline player {
+
+NetworkIdentifier const& PlayerConnectEvent::networkIdentifier() const { return mNetworkIdentifier; }
+ConnectionRequest const& PlayerConnectEvent::connectionRequest() const { return mConnectionRequest; }
 
 LL_TYPED_INSTANCE_HOOK(
     PlayerConnectEventHook,
@@ -36,4 +38,5 @@ class PlayerConnectEventEmitter : public Emitter<PlayerConnectEvent, emitterFact
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<PlayerConnectEventEmitter>();
 }
+
 } // namespace ll::event::inline player

@@ -6,6 +6,8 @@
 
 namespace ll::event::inline command {
 
+CommandRegistry& SetupCommandEvent::registry() const { return mRegistry; }
+
 LL_TYPED_STATIC_HOOK(
     SetupCommandEventHook,
     HookPriority::Normal,
@@ -26,4 +28,5 @@ class SetupCommandEventEmitter : public Emitter<SetupCommandEvent, emitterFactor
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<SetupCommandEventEmitter>();
 }
+
 } // namespace ll::event::inline command

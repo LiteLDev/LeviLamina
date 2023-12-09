@@ -12,14 +12,12 @@
 
 using ll::Global;
 
-void BlockActor::refresh(optional_ref<class BlockSource> blockSourceRef) {
+void BlockActor::refresh(optional_ref<class BlockSource> blockSource) {
     setChanged();
-    if (!blockSourceRef.has_value()) {
+    if (!blockSource) {
         return;
     }
-    auto& blockSource{blockSourceRef.get()};
-
-    auto& dimension = blockSource.getDimension();
+    auto& dimension = blockSource->getDimension();
 
     auto mainPacket{getServerUpdatePacket(blockSource)};
 
@@ -36,7 +34,7 @@ void BlockActor::refresh(optional_ref<class BlockSource> blockSourceRef) {
     if (!chest->isLargeChest()) {
         return;
     }
-    auto pairChest = blockSource.getBlockEntity(chest->getPairedChestPosition());
+    auto pairChest = blockSource->getBlockEntity(chest->getPairedChestPosition());
 
     if (pairChest == nullptr) {
         return;

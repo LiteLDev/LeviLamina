@@ -2,9 +2,6 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
-
-#include "mc/world/actor/player/Player.h"
-
 namespace ll::event::inline player {
 
 LL_TYPED_INSTANCE_HOOK(PlayerRespawnEventHook, HookPriority::Normal, Player, "?respawn@Player@@UEAAXXZ", void) {

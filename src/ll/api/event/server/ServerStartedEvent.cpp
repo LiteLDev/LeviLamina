@@ -2,8 +2,11 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
+#include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 namespace ll::event::inline server {
+
+ServerInstance& ServerStartedEvent::instance() const { return mInstance; }
 
 LL_TYPED_INSTANCE_HOOK(
     ServerStartedEventHook,

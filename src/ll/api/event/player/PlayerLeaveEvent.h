@@ -1,16 +1,12 @@
 #pragma once
 
-#include "ll/api/base/Macro.h"
 #include "ll/api/event/Cancellable.h"
-#include "ll/api/event/Event.h"
-
-#include "mc/server/ServerPlayer.h"
+#include "ll/api/event/player/PlayerEvent.h"
 
 namespace ll::event::inline player {
-class PlayerLeaveEvent : public Event {
-public:
-    ServerPlayer& player;
 
-    constexpr explicit PlayerLeaveEvent(ServerPlayer& player) : player(player) {}
+class PlayerLeaveEvent : public PlayerEvent {
+public:
+    constexpr explicit PlayerLeaveEvent(Player& player) : PlayerEvent(player) {}
 };
 } // namespace ll::event::inline player

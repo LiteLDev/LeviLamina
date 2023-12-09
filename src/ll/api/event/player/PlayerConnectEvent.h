@@ -1,28 +1,28 @@
 #pragma once
 
-#include "ll/api/base/Macro.h"
 #include "ll/api/event/Cancellable.h"
-#include "ll/api/event/Event.h"
-
-#include "mc/server/ServerPlayer.h"
+#include "ll/api/event/player/PlayerEvent.h"
 
 class ConnectionRequest;
 class NetworkIdentifier;
 
 namespace ll::event::inline player {
-class PlayerConnectEvent : public Cancellable<Event> {
-public:
-    NetworkIdentifier const& networkIdentifier;
-    ConnectionRequest const& connectionRequest;
-    ServerPlayer&            player;
 
-    constexpr explicit PlayerConnectEvent(
+class PlayerConnectEvent : public Cancellable<PlayerEvent> {
+    NetworkIdentifier const& mNetworkIdentifier;
+    ConnectionRequest const& mConnectionRequest;
+
+public:
+    constexpr PlayerConnectEvent(
         NetworkIdentifier const& networkIdentifier,
         ConnectionRequest const& connectionRequest,
         ServerPlayer&            player
     )
-    : networkIdentifier(networkIdentifier),
-      connectionRequest(connectionRequest),
-      player(player) {}
+    : Cancellable(player),
+      mNetworkIdentifier(networkIdentifier),
+      mConnectionRequest(connectionRequest) {}
+
+    LLNDAPI NetworkIdentifier const& networkIdentifier() const;
+    LLNDAPI ConnectionRequest const& connectionRequest() const;
 };
 } // namespace ll::event::inline player

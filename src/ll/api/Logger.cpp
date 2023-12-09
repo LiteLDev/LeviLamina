@@ -69,8 +69,9 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
     } catch (...) {
         try {
             fmt::print(
-                "\x1b[31mERROR IN LOGGER API:\n{}\x1b[0m\n",
-                error_info::makeExceptionString(std::current_exception())
+                "\x1b[31mERROR IN LOGGER API:\n{}\x1b[91m\n{}\x1b[0m\n",
+                error_info::makeExceptionString(std::current_exception()),
+                tou8str(s)
             );
         } catch (...) {
             try {

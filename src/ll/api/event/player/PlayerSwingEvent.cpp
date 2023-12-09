@@ -17,7 +17,7 @@ LL_TYPED_INSTANCE_HOOK(
     AnimatePacket const&     packet
 ) {
     if (packet.mAction == AnimatePacket::Action::Swing) {
-        if (auto player = this->getServerPlayer(id, packet.mClientSubId)) {
+        if (auto player = this->getServerPlayer(id, packet.mClientSubId); player) {
             EventBus::getInstance().publish(PlayerSwingEvent(player));
         }
     }

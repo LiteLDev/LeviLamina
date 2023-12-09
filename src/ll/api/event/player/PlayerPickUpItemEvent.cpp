@@ -1,14 +1,13 @@
-#include "ll/api/event/player/PlayerTakeDropItemEvent.h"
+#include "ll/api/event/player/PlayerPickUpItemEvent.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
-
-#include "mc/world/actor/player/Player.h"
-
 namespace ll::event::inline player {
 
+ItemActor& PlayerPickUpItemEvent::itemActor() const { return mItemActor; }
+
 LL_TYPED_INSTANCE_HOOK(
-    PlayerTakeDropItemEventHook,
+    PlayerPickUpItemEventHook,
     HookPriority::Normal,
     Player,
     &Player::take,
@@ -18,7 +17,7 @@ LL_TYPED_INSTANCE_HOOK(
     int    i1
 ) {
     if (itemActor.isType(ActorType::ItemEntity)) {
-        auto ev = PlayerTakeDropItemEvent(*this, *(ItemActor*)(&itemActor));
+        auto ev = PlayerPickUpItemEvent(*this, *(ItemActor*)(&itemActor));
         EventBus::getInstance().publish(ev);
         if (ev.isCancelled()) {
             return false;
@@ -28,12 +27,12 @@ LL_TYPED_INSTANCE_HOOK(
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
-class PlayerTakeDropItemEventEmitter : public Emitter<PlayerTakeDropItemEvent, emitterFactory> {
-    memory::HookAutoRegister<PlayerTakeDropItemEventHook> hook;
+class PlayerPickUpItemEventEmitter : public Emitter<PlayerPickUpItemEvent, emitterFactory> {
+    memory::HookAutoRegister<PlayerPickUpItemEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
-    return std::make_unique<PlayerTakeDropItemEventEmitter>();
+    return std::make_unique<PlayerPickUpItemEventEmitter>();
 }
 
 } // namespace ll::event::inline player
