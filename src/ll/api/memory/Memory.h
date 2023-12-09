@@ -83,8 +83,6 @@ LLNDAPI std::vector<std::string> lookupSymbol(FuncPtr func);
  */
 LLAPI void modify(void* ptr, size_t len, const std::function<void()>& callback);
 
-LLAPI Handle getModuleHandle(void* addr);
-
 inline Handle getCurrentModuleHandle() { return &__ImageBase; }
 
 template <class T>

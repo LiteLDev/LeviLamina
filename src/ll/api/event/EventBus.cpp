@@ -9,9 +9,9 @@
 #include "ll/api/base/ErrorInfo.h"
 #include "ll/api/event/EmitterBase.h"
 #include "ll/api/thread/SharedRecursiveMutex.h"
+#include "ll/core/LeviLamina.h"
 
 namespace ll::event {
-static Logger eventBusLogger("EventBus");
 
 class CallbackStream {
     struct ListenerComparator {
@@ -33,14 +33,14 @@ public:
                 auto lock = ll::Logger::lock();
                 try {
                     auto& weak = l->pluginPtr;
-                    eventBusLogger.error(
+                    logger.error(
                         "Error in [{}:{}] of <{}>:",
                         ll::reflection::removeTypePrefix(typeid(*l).name()),
                         l->getId(),
                         weak.expired() ? "unknown plugin" : weak.lock()->getManifest().name
                     );
                 } catch (...) {}
-                error_info::printCurrentException(eventBusLogger);
+                error_info::printCurrentException();
             }
         }
     }

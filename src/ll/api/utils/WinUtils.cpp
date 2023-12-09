@@ -51,15 +51,29 @@ std::span<uchar> getImageRange(std::string_view name) {
     }
     return {};
 }
-std::string getCallerModuleFileName(ulong framesToSkip) {
-    void* frames[1];
-    int   frameCount = CaptureStackBackTrace(framesToSkip + 2, 1, frames, nullptr);
 
-    if (0 < frameCount) {
-        std::wstring path(32767, '\0');
-        GetModuleFileName((HMODULE)memory::getModuleHandle(frames[0]), path.data(), 32767);
-        return u8str2str(std::filesystem::path(path).filename().u8string());
+void* getModuleHandle(void* addr) {
+    HMODULE hModule = nullptr;
+    GetModuleHandleEx(
+        GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+        reinterpret_cast<LPCTSTR>(addr),
+        &hModule
+    );
+    return hModule;
+}
+
+std::optional<std::filesystem::path> getModulePath(void* handle) {
+    std::wstring path(32767, '\0');
+    if (auto res = GetModuleFileName((HMODULE)handle, path.data(), 32767); res != 0 && res != 32767) {
+        path.resize(res);
+        return std::filesystem::path(path);
+    } else {
+        return std::nullopt;
     }
-    return "unknown";
+}
+
+std::string getModuleFileName(void* handle) {
+    return getModulePath(handle).transform([](auto&& path) { return u8str2str(path.filename().u8string()); }
+    ).value_or("");
 }
 } // namespace ll::inline utils::win_utils

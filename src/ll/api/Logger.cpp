@@ -28,7 +28,7 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
         auto        time = std::chrono::floor<std::chrono::seconds>(now);
         auto        ms   = (std::chrono::floor<std::chrono::milliseconds>(now) - time).count();
 
-        if (checkLogLevel(logger->consoleLevel, level)) {
+        if (logger->ignoreConfig || checkLogLevel(logger->consoleLevel, level)) {
             std::string str = fmt::format(
                 fmt::runtime(consoleFormat[0]),
                 applyTextStyle(style[0], fmt::format(fmt::runtime(consoleFormat[1]), time, ms)),
@@ -36,11 +36,12 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
                 applyTextStyle(style[2], fmt::format(fmt::runtime(consoleFormat[3]), logger->title)),
                 applyTextStyle(style[3], fmt::format(fmt::runtime(consoleFormat[4]), replaceMcToAnsiCode(s)))
             );
-            if (!ll::globalConfig.logger.colorLog) {
+            if (!logger->ignoreConfig && !ll::globalConfig.logger.colorLog) {
                 str = removeEscapeCode(str);
             }
             fmt::print("{}\n", str);
         }
+        if (logger->ignoreConfig) return;
         if (logger->getFile().is_open() && checkLogLevel(logger->fileLevel, level)) {
             logger->getFile() << removeEscapeCode(fmt::format(
                 fmt::runtime(fileFormat[0]),

@@ -4,7 +4,7 @@
 #include "ll/api/thread/GlobalThreadPauser.h"
 #include "ll/api/utils/StacktraceUtils.h"
 #include "ll/api/utils/WinUtils.h"
-#include "ll/core/LeviLamina.h"
+#include "ll/api/Logger.h"
 #include "pl/Hook.h"
 
 namespace ll::memory {
@@ -26,6 +26,11 @@ bool unhook(FuncPtr target, FuncPtr detour) {
 }
 
 FuncPtr resolveIdentifier(std::string_view identifier, bool disableErrorOutput) {
+    static Logger hookLogger = [] {
+        auto res         = Logger("LeviLamina");
+        res.ignoreConfig = true;
+        return std::move(res);
+    }();
     if (auto pl = resolveSymbol(identifier.data(), true); pl) {
         return pl;
     } else if (auto sig = resolveSignature(identifier); sig) {
@@ -34,8 +39,8 @@ FuncPtr resolveIdentifier(std::string_view identifier, bool disableErrorOutput) 
         return dbgeng;
     }
     if (!disableErrorOutput) {
-        logger.fatal("Could not find symbol/signature in memory: {}", identifier);
-        logger.fatal("In module: {}", win_utils::getCallerModuleFileName());
+        hookLogger.fatal("Could not find symbol/signature in memory: {}", identifier);
+        hookLogger.fatal("In module: {}", win_utils::getCallerModuleFileName());
     }
     return nullptr;
 }
