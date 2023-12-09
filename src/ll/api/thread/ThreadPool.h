@@ -22,7 +22,7 @@ private:
     bool                              stop{false};
 
 public:
-    explicit ThreadPool(size_t nThreads) {
+    explicit ThreadPool(size_t nThreads = 1) {
         for (size_t i = 0; i < nThreads; ++i) {
             workers.emplace_back([this] {
                 ll::error_info::setSehTranslator();

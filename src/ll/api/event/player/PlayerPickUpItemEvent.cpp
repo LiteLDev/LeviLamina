@@ -13,8 +13,8 @@ LL_TYPED_INSTANCE_HOOK(
     &Player::take,
     bool,
     Actor& itemActor,
-    int    i0,
-    int    i1
+    int    orgCount,
+    int    favoredSlot
 ) {
     if (itemActor.isType(ActorType::ItemEntity)) {
         auto ev = PlayerPickUpItemEvent(*this, *(ItemActor*)(&itemActor));
@@ -23,7 +23,7 @@ LL_TYPED_INSTANCE_HOOK(
             return false;
         }
     }
-    return origin(itemActor, i0, i1);
+    return origin(itemActor, orgCount, favoredSlot);
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);

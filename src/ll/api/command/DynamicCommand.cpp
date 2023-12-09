@@ -221,7 +221,7 @@ DynamicCommand::Result::Result(
 
 DynamicCommand::Result::Result()
 : type((ParameterType)-1),
-  offset(UINT64_MAX),
+  offset(~0ui64),
   command(nullptr),
   origin(nullptr),
   instance(nullptr),
@@ -704,7 +704,7 @@ std::string const& DynamicCommandInstance::getEnumValue(int index) const {
 
 ParameterIndex DynamicCommandInstance::newParameter(DynamicCommand::ParameterData&& data) {
     auto   iter   = parameterPtrs.find(data.name);
-    size_t offset = UINT64_MAX;
+    size_t offset = ~0ui64;
     if (iter == parameterPtrs.end()) {
         offset = commandSize;
         parameterPtrs.emplace(data.name, DynamicCommand::ParameterPtr(data.type, offset));
@@ -749,7 +749,7 @@ ParameterIndex DynamicCommandInstance::findParameterIndex(std::string const& ind
             break;
         ++index;
     }
-    if (index == parameterDatas.size()) index = UINT64_MAX;
+    if (index == parameterDatas.size()) index = ~0ui64;
     return {this, index};
 }
 

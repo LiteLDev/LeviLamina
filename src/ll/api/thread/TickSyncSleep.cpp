@@ -3,15 +3,17 @@
 #include "mc/server/ServerLevel.h"
 
 namespace ll::thread::detail {
+
+std::atomic_bool hooked{};
+
 std::mutex         listMutex;
 std::atomic_size_t tickListSize{};
-std::atomic_bool   hooked{};
 std::vector<std::variant<
     std::reference_wrapper<TickSyncSleep<chrono::ServerClock>>,
     std::reference_wrapper<TickSyncSleep<chrono::GameTimeClock>>>>
     tickList;
+
 LL_TYPED_INSTANCE_HOOK(TickSyncSleepInterrruptHook, HookPriority::Normal, ServerLevel, &ServerLevel::_subTick, void) {
-    using namespace detail;
     if (tickListSize > 0) {
         std::lock_guard lock(listMutex);
         for (auto& e : tickList) {

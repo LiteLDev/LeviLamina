@@ -337,7 +337,7 @@ public:
         ParameterType type;
 
     private:
-        size_t offset = UINT64_MAX;
+        size_t offset = ~0ui64;
 
         friend struct Result;
 
@@ -356,7 +356,7 @@ public:
     struct ParameterData {
     protected:
         DynamicCommand::ParameterType type;
-        size_t                        offset = UINT64_MAX;
+        size_t                        offset = ~0ui64;
         std::string                   name;
         std::string                   description;
         std::string                   identifier;

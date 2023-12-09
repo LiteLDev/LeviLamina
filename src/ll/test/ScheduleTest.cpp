@@ -35,7 +35,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     ll::Logger::setDefaultPlayerOutputFunc([](std::string_view sv) { TextPacket::createRawMessage(sv).sendToClients(); }
     );
-    /*
+   
         s.add<RepeatTask>(100_tick, [&] {
             schedulelogger.info(
                 "hi, 100_tick life {} ramdom {}",
@@ -80,7 +80,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
         //     schedulelogger.info("hello I resumed all threads");
         // });
-    */
+    
 
     return origin(ins);
 }

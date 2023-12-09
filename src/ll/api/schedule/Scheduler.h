@@ -121,7 +121,9 @@ public:
     Scheduler& operator=(Scheduler const&)     = delete;
     Scheduler& operator=(Scheduler&&) noexcept = delete;
 
-    explicit Scheduler(int maxThreads = 1) : done(false), workers(std::max<int>(1, maxThreads)) {
+    template <class... Args>
+    explicit Scheduler(Args&&... args) : done(false),
+                                         workers(std::forward<Args>(args)...) {
         manager = std::thread([this] {
             while (!done) {
                 if (tasks.empty()) {
