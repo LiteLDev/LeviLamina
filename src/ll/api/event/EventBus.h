@@ -4,6 +4,7 @@
 #include <memory>
 #include <unordered_set>
 
+#include "ll/api/base/Concepts.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/event/Event.h"
 #include "ll/api/event/EventId.h"
@@ -66,21 +67,21 @@ public:
         return getListenerCount(getEventId<T>);
     }
 
-    template <class T, template <class> class L, class LT>
-        requires(std::derived_from<T, LT> && std::derived_from<L<LT>, ListenerBase>)
-    bool addListener(std::shared_ptr<L<LT>> const& listener) {
-        if constexpr (requires(L<LT> a) {
+    template <class T, template <class...> class L, class... LT>
+        requires((std::derived_from<T, LT> || ...) && std::derived_from<L<LT...>, ListenerBase>)
+    bool addListener(std::shared_ptr<L<LT...>> const& listener) {
+        if constexpr (requires(L<LT...> a) {
                           { a.getEventId() } -> std::same_as<EventId>;
-                      } && std::is_same_v<T, LT>) {
+                      } && concepts::is_all_same_v<T, LT...>) {
             return addListener(listener, listener->getEventId());
         } else {
             return addListener(listener, getEventId<T>);
         }
     }
-    template <class T = void, template <class> class L, class LT>
-        requires(std::same_as<T, void> && std::derived_from<L<LT>, ListenerBase>)
-    bool addListener(std::shared_ptr<L<LT>> const& listener) {
-        return addListener<LT>(listener);
+    template <class T = void, template <class...> class L, class... LT>
+        requires(std::same_as<T, void> && std::derived_from<L<LT...>, ListenerBase>)
+    bool addListener(std::shared_ptr<L<LT...>> const& listener) {
+        return (addListener<LT>(listener) && ...);
     }
     template <std::derived_from<Event> T, std::derived_from<ListenerBase> L = Listener<T>, class... Args>
     inline auto emplaceListener(Args&&... args) {

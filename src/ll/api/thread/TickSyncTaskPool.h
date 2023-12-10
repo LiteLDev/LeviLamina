@@ -26,7 +26,7 @@ class TickSyncTaskPool {
     friend detail::TickSyncTaskPoolWorker;
 
 private:
-    std::deque<std::function<void()>>  tasks;
+    std::queue<std::function<void()>>  tasks;
     std::mutex                         mutex;
     size_t                             tasksPerTick;
     size_t                             id;
@@ -58,7 +58,7 @@ public:
         auto res = task->get_future();
         {
             std::lock_guard lock{mutex};
-            tasks.emplace_back([task] { (*task)(); });
+            tasks.emplace([task] { (*task)(); });
         }
         return res;
     }

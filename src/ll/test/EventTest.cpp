@@ -8,9 +8,8 @@
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
+#include "ll/api/event/MultiListener.h"
 #include "ll/api/event/command/ExecuteCommandEvent.h"
-#include "ll/api/event/player/PlayerSprintEvent.h"
-#include "ll/api/event/player/PlayerSneakEvent.h"
 #include "ll/api/event/player/PlayerAddExperienceEvent.h"
 #include "ll/api/event/player/PlayerAttackEvent.h"
 #include "ll/api/event/player/PlayerConnectEvent.h"
@@ -18,9 +17,11 @@
 #include "ll/api/event/player/PlayerJoinEvent.h"
 #include "ll/api/event/player/PlayerJumpEvent.h"
 #include "ll/api/event/player/PlayerLeaveEvent.h"
-#include "ll/api/event/player/PlayerRespawnEvent.h"
-#include "ll/api/event/player/PlayerSwingEvent.h"
 #include "ll/api/event/player/PlayerPickUpItemEvent.h"
+#include "ll/api/event/player/PlayerRespawnEvent.h"
+#include "ll/api/event/player/PlayerSneakEvent.h"
+#include "ll/api/event/player/PlayerSprintEvent.h"
+#include "ll/api/event/player/PlayerSwingEvent.h"
 #include "mc/codebuilder/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/world/actor/ActorDamageSource.h"
@@ -159,12 +160,19 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         );
     });
     bus.emplaceListener<PlayerAttackedEvent>([](PlayerAttackedEvent& ev) {
-        ll::logger
-            .debug("Player {} attacked {} damage {}", ev.player().getRealName(), ev.target().getTypeName(), ev.damage());
+        ll::logger.debug(
+            "Player {} attacked {} damage {}",
+            ev.player().getRealName(),
+            ev.target().getTypeName(),
+            ev.damage()
+        );
     });
     bus.emplaceListener<PlayerDieEvent>([](PlayerDieEvent& ev) {
-        ll::logger
-            .debug("Player {} died source {}", ev.player().getRealName(), magic_enum::enum_name(ev.source().getCause()));
+        ll::logger.debug(
+            "Player {} died source {}",
+            ev.player().getRealName(),
+            magic_enum::enum_name(ev.source().getCause())
+        );
     });
     bus.emplaceListener<PlayerRespawnEvent>([](PlayerRespawnEvent& ev) {
         ll::logger.debug("Player {} respawned", ev.player().getRealName());
@@ -201,7 +209,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     bus.emplaceListener<PlayerSneakingEvent>([](PlayerSneakingEvent& ev) {
         ll::logger.debug("Player {} start sneak", ev.player().getRealName());
     });
-    bus.emplaceListener<PlayerSneakedEvent>([](PlayerSneakedEvent& ev) {
-        ll::logger.debug("Player {} stop sneak", ev.player().getRealName());
+    auto mul = MultiListener<PlayerSprintingEvent, PlayerSneakingEvent>::create([](auto&& ev) {
+        ll::logger
+            .debug("Player {} MultiListener of {}", ev.player().getRealName(), ll::reflection::type_raw_name_v<decltype(ev)>);
     });
+    bus.addListener(mul);
 }

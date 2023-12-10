@@ -21,7 +21,7 @@ LL_TYPED_INSTANCE_HOOK(TickSyncTaskPoolWorker, HookPriority::Low, ServerLevel, &
             auto            num = std::min(pool.tasksPerTick, pool.tasks.size());
             for (size_t i = 0; i < num; i++) {
                 pool.tasks.front()();
-                pool.tasks.pop_front();
+                pool.tasks.pop();
             }
         }
     } else {

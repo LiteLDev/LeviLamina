@@ -1,11 +1,11 @@
 #pragma once
 
 #include "ll/api/event/Cancellable.h"
-#include "ll/api/event/player/PlayerEvent.h"
+#include "ll/api/event/player/PlayerClickEvent.h"
 
 namespace ll::event::inline player {
 
-class PlayerAttackEvent : public Cancellable<PlayerEvent> {
+class PlayerAttackEvent : public Cancellable<PlayerLeftClickEvent> {
     Actor& mTarget;
 
 protected:
