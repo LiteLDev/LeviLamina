@@ -6,34 +6,16 @@
 namespace ll::event::inline player {
 
 class PlayerAttackEvent : public Cancellable<PlayerLeftClickEvent> {
-    Actor& mTarget;
-
-protected:
-    constexpr PlayerAttackEvent(Player& source, Actor& target) : Cancellable(source), mTarget(target) {}
-
-public:
-    LLNDAPI Actor& target() const;
-};
-
-class PlayerAttackingEvent : public PlayerAttackEvent {
+    Actor&                  mTarget;
     ActorDamageCause const& mCause;
 
 public:
-    constexpr PlayerAttackingEvent(Player& source, Actor& target, ActorDamageCause const& cause)
-    : PlayerAttackEvent(source, target),
+    constexpr PlayerAttackEvent(Player& source, Actor& target, ActorDamageCause const& cause)
+    : Cancellable(source),
+      mTarget(target),
       mCause(cause) {}
 
+    LLNDAPI Actor&                  target() const;
     LLNDAPI ActorDamageCause const& cause() const;
-};
-
-class PlayerAttackedEvent : public PlayerAttackEvent {
-    float& mDamage;
-
-public:
-    constexpr PlayerAttackedEvent(Player& source, Actor& target, float& damage)
-    : PlayerAttackEvent(source, target),
-      mDamage(damage) {}
-
-    LLNDAPI float& damage() const;
 };
 } // namespace ll::event::inline player

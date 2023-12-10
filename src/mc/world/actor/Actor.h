@@ -1277,7 +1277,7 @@ public:
     MCAPI void healEffects(int);
 
     // symbol: ?hurt@Actor@@QEAA_NAEBVActorDamageSource@@M_N1@Z
-    MCAPI bool hurt(class ActorDamageSource const&, float, bool, bool);
+    MCAPI bool hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // symbol: ?inDownwardFlowingLiquid@Actor@@QEBA_NXZ
     MCAPI bool inDownwardFlowingLiquid() const;

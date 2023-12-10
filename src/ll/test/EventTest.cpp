@@ -151,20 +151,12 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     bus.emplaceListener<PlayerLeaveEvent>([](PlayerLeaveEvent& ev) {
         ll::logger.debug("Player leave: {}", ev.player().getRealName());
     });
-    bus.emplaceListener<PlayerAttackingEvent>([](PlayerAttackingEvent& ev) {
+    bus.emplaceListener<PlayerAttackEvent>([](PlayerAttackEvent& ev) {
         ll::logger.debug(
             "Player {} attack {} cause {}",
             ev.player().getRealName(),
             ev.target().getTypeName(),
             magic_enum::enum_name(ev.cause())
-        );
-    });
-    bus.emplaceListener<PlayerAttackedEvent>([](PlayerAttackedEvent& ev) {
-        ll::logger.debug(
-            "Player {} attacked {} damage {}",
-            ev.player().getRealName(),
-            ev.target().getTypeName(),
-            ev.damage()
         );
     });
     bus.emplaceListener<PlayerDieEvent>([](PlayerDieEvent& ev) {
