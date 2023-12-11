@@ -89,7 +89,7 @@ struct is_specialization_of : std::bool_constant<is_specialization_of_v<T, Z>> {
 template <class T, template <class...> class Z>
 concept Specializes = is_specialization_of_v<T, Z>;
 
-template <class>
+template <class...>
 inline constexpr bool always_false = false;
 
 template <class T>

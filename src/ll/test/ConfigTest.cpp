@@ -19,6 +19,7 @@
 
 #include "ll/api/utils/WinUtils.h"
 #include "mc/server/commands/standard/FillCommand.h"
+#include "mc/server/ServerLevel.h"
 
 #include "mc/nbt/CompoundTag.h"
 
@@ -62,6 +63,8 @@ public:
         Benum,
     } hi;
 };
+// LL_AUTO_TYPED_INSTANCE_HOOK(Virtual, HookPriority::Normal, FillCommand, &FillCommand::execute, void, CommandOrigin const&, CommandOutput&) {
+// }
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ConfigTest,
@@ -89,6 +92,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     );
 
     ll::logger.debug("{}", ll::reflection::getRawName<&FillCommand::execute>());
+    ll::logger.debug("{}", ll::reflection::getRawName<&ServerLevel::_subTick>());
+    ll::logger.debug("{}", ll::reflection::getRawName<&ServerLevel::_checkBlockPermutationCap>());
 
     try {
         ll::reflection::deserialize(

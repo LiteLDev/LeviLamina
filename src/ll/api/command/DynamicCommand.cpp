@@ -411,7 +411,9 @@ DynamicCommandInstance* DynamicCommand::preSetup(std::unique_ptr<class DynamicCo
 #if defined(LL_DEBUG)
     logger.debug("Setting up command \"{}\"", name);
 #endif
-
+    if (!ll::Global<CommandRegistry>) {
+        return nullptr;
+    }
     // Check if there is another command with the same name
     auto signature = ll::Global<CommandRegistry>->findCommand(name);
     if (signature) {
@@ -603,6 +605,9 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
 }
 
 bool DynamicCommand::unregisterCommand(std::string const& name) {
+    if (!ll::Global<CommandRegistry>) {
+        return false;
+    }
     if (ll::Global<CommandRegistry>->unregisterCommand(name)) {
         dynamicCommandInstances.erase(name);
         updateAvailableCommands();
@@ -612,7 +617,6 @@ bool DynamicCommand::unregisterCommand(std::string const& name) {
 }
 
 bool DynamicCommand::updateAvailableCommands() {
-
     if (!ll::Global<CommandRegistry> || !ll::Global<Level>) return false;
     auto packet = ll::Global<CommandRegistry>->serializeAvailableCommands();
     auto sender = (LoopbackPacketSender*)ll::Global<Level>->getPacketSender();
@@ -674,9 +678,12 @@ std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(
     CommandPermissionLevel permission,
     CommandFlag            flag
 ) {
+    if (!ll::Global<CommandRegistry>) {
+        return nullptr;
+    }
     if (ll::Global<CommandRegistry>->findCommand(name)) {
         logger.error("Command \"{}\" already exists", name);
-        return {};
+        return nullptr;
     }
     return std::unique_ptr<DynamicCommandInstance>(new DynamicCommandInstance(name, description, permission, flag));
 }
@@ -908,10 +915,16 @@ bool DynamicCommandInstance::removeSoftEnumValues(std::string const& name, std::
 }
 
 std::vector<std::string> DynamicCommandInstance::getSoftEnumValues(std::string const& name) {
+    if (!ll::Global<CommandRegistry>) {
+        return {};
+    }
     return ll::Global<CommandRegistry>->getSoftEnumValues(name);
 }
 
 std::vector<std::string> DynamicCommandInstance::getSoftEnumNames() {
+    if (!ll::Global<CommandRegistry>) {
+        return {};
+    }
     return ll::Global<CommandRegistry>->getSoftEnumNames();
 }
 

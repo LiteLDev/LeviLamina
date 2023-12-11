@@ -6,8 +6,10 @@
 #include <memory>
 #include <type_traits>
 
+#include "ll/api/base/Concepts.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/memory/Memory.h"
+#include "ll/api/reflection/TypeName.h"
 
 #ifdef LL_HOOK_DEBUG
 #include "ll/api/Logger.h"
@@ -112,6 +114,15 @@ constexpr FuncPtr resolveIdentifier(uintptr_t address) {
     return resolveIdentifier(address);
 }
 
+template <FixedString>
+consteval bool virtualDetector() noexcept {
+    return false;
+}
+template <auto f>
+consteval bool virtualDetector() noexcept {
+    return reflection::getRawName<f>().contains("::`vcall'{");
+}
+
 template <class T>
 struct HookAutoRegister {
     HookAutoRegister() { T::hook(); }
@@ -145,6 +156,16 @@ public:
                                                                                                                        \
         LL_HOOK_DEBUG_OUTPUT(IDENTIFIER);                                                                              \
                                                                                                                        \
+        template <class Arg>                                                                                           \
+        static consteval void detector() {                                                                             \
+            if constexpr (::ll::memory::virtualDetector<IDENTIFIER>()) {                                               \
+                static_assert(                                                                                         \
+                    ::ll::concepts::always_false<Arg>,                                                                \
+                    #IDENTIFIER " is a virtual function, for now you can't use function pointer to hook it."           \
+                );                                                                                                     \
+            }                                                                                                          \
+        }                                                                                                              \
+                                                                                                                       \
         template <class... Args>                                                                                       \
         STATIC RET_TYPE origin(Args&&... params) {                                                                     \
             return CALL(std::forward<Args>(params)...);                                                                \
@@ -153,6 +174,7 @@ public:
         STATIC RET_TYPE detour(__VA_ARGS__);                                                                           \
                                                                                                                        \
         static int hook() {                                                                                            \
+            detector<DEF_TYPE>();                                                                                      \
             target__ = ll::memory::resolveIdentifier<OriginFuncType>(IDENTIFIER);                                      \
             if (target__ == nullptr) {                                                                                 \
                 return -1;                                                                                             \
@@ -160,7 +182,7 @@ public:
             return ll::memory::hook(                                                                                   \
                 target__,                                                                                              \
                 ll::memory::toFuncPtr(&DEF_TYPE::detour),                                                              \
-                reinterpret_cast<FuncPtr*>(&originFunc__),                                                               \
+                reinterpret_cast<FuncPtr*>(&originFunc__),                                                             \
                 PRIORITY                                                                                               \
             );                                                                                                         \
         }                                                                                                              \

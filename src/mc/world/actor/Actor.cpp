@@ -161,7 +161,7 @@ std::unique_ptr<CompoundTag> Actor::saveToNBT() const {
 }
 
 bool Actor::loadFromNBT(class CompoundTag const& nbt) {
-    bool res = load(nbt, DefaultDataLoadHelper::globalHelper);
+    bool res = load(nbt, DefaultDataLoadHelper::instance);
     refresh();
     return res;
 }

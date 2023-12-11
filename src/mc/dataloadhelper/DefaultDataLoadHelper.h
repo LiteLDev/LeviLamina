@@ -12,7 +12,7 @@
 
 class DefaultDataLoadHelper : public ::DataLoadHelper {
 public:
-    LLAPI static DefaultDataLoadHelper globalHelper;
+    LLAPI static DefaultDataLoadHelper instance;
 
 public:
     // NOLINTBEGIN

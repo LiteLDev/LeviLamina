@@ -24,11 +24,9 @@ void BlockActor::refresh(optional_ref<class BlockSource> blockSource) {
     if (mainPacket != nullptr) {
         dimension.sendPacketForPosition(getPosition(), *mainPacket, nullptr);
     }
-
     if (getType() != BlockActorType::Chest) {
         return;
     }
-
     auto chest = (ChestBlockActor*)(this);
 
     if (!chest->isLargeChest()) {
@@ -61,7 +59,7 @@ void BlockActor::loadFromNBT(class CompoundTag const& nbt, optional_ref<class Bl
     if (!Global<Level>) {
         return;
     }
-    load(*Global<Level>, nbt, DefaultDataLoadHelper::globalHelper);
+    load(*Global<Level>, nbt, DefaultDataLoadHelper::instance);
     refresh(blockSource);
 }
 
@@ -69,7 +67,7 @@ std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt) {
     if (!Global<Level>) {
         return nullptr;
     }
-    return loadStatic(*Global<Level>, nbt, DefaultDataLoadHelper::globalHelper);
+    return loadStatic(*Global<Level>, nbt, DefaultDataLoadHelper::instance);
 }
 
 std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt, class BlockPos const& pos) {
