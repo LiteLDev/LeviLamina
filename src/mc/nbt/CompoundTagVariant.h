@@ -193,10 +193,25 @@ public:
         }
     }
 
+    [[nodiscard]] std::unique_ptr<Tag> const& operator[](size_t index) const {
+        if (hold<ListTag>()) {
+            return get<ListTag>()[index];
+        } else {
+            throw std::range_error("tag not hold an array");
+        }
+    }
+
     [[nodiscard]] CompoundTagVariant& operator[](std::string const& index) {
         if (is_null()) {
             mTagStorage = CompoundTag{};
         }
+        if (!hold<CompoundTag>()) {
+            throw std::range_error("tag not hold an object");
+        }
+        return get<CompoundTag>()[index];
+    }
+
+    [[nodiscard]] CompoundTagVariant const& operator[](std::string const& index) const {
         if (!hold<CompoundTag>()) {
             throw std::range_error("tag not hold an object");
         }
