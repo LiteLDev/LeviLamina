@@ -41,6 +41,10 @@ public:
 
     [[nodiscard]] constexpr CompoundTagVariant(std::nullptr_t) {}
 
+    [[nodiscard]] inline bool operator==(CompoundTagVariant const& other) const {
+        return mTagStorage == other.mTagStorage;
+    }
+
     [[nodiscard]] inline CompoundTagVariant(Variant tag) : mTagStorage(std::move(tag)) {}
 
     [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag>&& tag) {
@@ -96,9 +100,15 @@ public:
 
     [[nodiscard]] inline CompoundTagVariant(double d) : mTagStorage(DoubleTag{d}) {} // NOLINT
 
-    [[nodiscard]] inline CompoundTagVariant(std::string s) : mTagStorage(StringTag{std::move(s)}) {} // NOLINT
+    [[nodiscard]] inline CompoundTagVariant(std::string s)
+    : mTagStorage(std::in_place_type<StringTag>, std::move(s)) {} // NOLINT
 
-    [[nodiscard]] inline CompoundTagVariant(std::string_view s) : mTagStorage(StringTag{std::string(s)}) {} // NOLINT
+    [[nodiscard]] inline CompoundTagVariant(std::string_view s)
+    : mTagStorage(std::in_place_type<StringTag>, s) {} // NOLINT
+
+    template <size_t N>
+    [[nodiscard]] inline CompoundTagVariant(char const (&str)[N])
+    : CompoundTagVariant(std::string_view{str, N - 1}) {} // NOLINT
 
     [[nodiscard]] Tag::Type index() const noexcept { return (Tag::Type)mTagStorage.index(); }
     [[nodiscard]] Tag::Type getId() const noexcept { return index(); }

@@ -96,7 +96,11 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
 
     nbt3["hello"]["world"][1] = 7.0_d;
 
+    nbt3["hello"][", "] = "world";
+
     auto lock = ll::Logger::lock();
+
+    ll::logger.debug("\n{}", nbt3["hello"][", "] == "world");
 
     ll::logger.debug("\n{}", nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console | SnbtFormat::Jsonify));
 

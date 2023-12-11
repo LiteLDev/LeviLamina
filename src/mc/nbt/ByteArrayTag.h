@@ -10,7 +10,8 @@ class ByteArrayTag : public ::Tag {
 public:
     TagMemoryChunk data{};
 
-    operator TagMemoryChunk() const { return data; }
+    [[nodiscard]] constexpr operator TagMemoryChunk const&() const { return data; } // NOLINT
+    [[nodiscard]] constexpr operator TagMemoryChunk&() { return data; }             // NOLINT
 
     ByteArrayTag() = default;
 

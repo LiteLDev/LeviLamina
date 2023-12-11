@@ -17,6 +17,7 @@ public:
 public:
     [[nodiscard]] constexpr ListTag(ListTag&&)   = default;
     LL_CLANG_CEXPR ListTag& operator=(ListTag&&) = default;
+
     [[nodiscard]] constexpr ListTag(ListTag const& other) : mType(other.mType) {
         mList.reserve(other.mList.size());
         for (auto& tag : other.mList) {

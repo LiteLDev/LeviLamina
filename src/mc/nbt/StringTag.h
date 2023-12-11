@@ -12,8 +12,13 @@ public:
     [[nodiscard]] constexpr StringTag() = default;
 
     [[nodiscard]] constexpr StringTag(std::string str) : data(std::move(str)) {} // NOLINT
+    [[nodiscard]] constexpr StringTag(std::string_view str) : data(str) {}       // NOLINT
+    template <size_t N>
+    [[nodiscard]] constexpr StringTag(char const (&str)[N]) : StringTag(std::string_view{str, N - 1}) {} // NOLINT
 
-    [[nodiscard]] constexpr operator std::string() const { return data; } // NOLINT
+    [[nodiscard]] constexpr operator std::string const&() const { return data; } // NOLINT
+
+    [[nodiscard]] constexpr operator std::string&() { return data; } // NOLINT
 
 public:
     // NOLINTBEGIN

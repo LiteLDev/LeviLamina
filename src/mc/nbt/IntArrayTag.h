@@ -10,7 +10,8 @@ class IntArrayTag : public ::Tag {
 public:
     TagMemoryChunk data{};
 
-    [[nodiscard]] constexpr operator TagMemoryChunk() const { return data; } // NOLINT
+    [[nodiscard]] constexpr operator TagMemoryChunk const&() const { return data; } // NOLINT
+    [[nodiscard]] constexpr operator TagMemoryChunk&() { return data; }             // NOLINT
 
     [[nodiscard]] constexpr IntArrayTag() = default;
 
