@@ -31,14 +31,14 @@ public:
     // vIndex: 3, symbol: ?loadBlockPositionOffset@StructureDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
     virtual class BlockPos loadBlockPositionOffset(class BlockPos const&);
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol: ?loadRotationDegreesX@StructureDataLoadHelper@@UEAAMM@Z
+    virtual float loadRotationDegreesX(float);
 
     // vIndex: 5, symbol: ?loadRotationDegreesY@StructureDataLoadHelper@@UEAAMM@Z
     virtual float loadRotationDegreesY(float);
 
-    // vIndex: 6, symbol: __unk_vfn_6
-    virtual void __unk_vfn_6();
+    // vIndex: 6, symbol: ?loadRotationRadiansX@StructureDataLoadHelper@@UEAAMM@Z
+    virtual float loadRotationRadiansX(float);
 
     // vIndex: 7, symbol: ?loadRotationRadiansY@StructureDataLoadHelper@@UEAAMM@Z
     virtual float loadRotationRadiansY(float);
@@ -77,12 +77,6 @@ public:
 
     // vIndex: 18, symbol: ?_generateNewID@StructureDataLoadHelper@@MEAA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID _generateNewID();
-
-    // symbol: ?loadRotationDegreesX@StructureDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationDegreesX(float);
-
-    // symbol: ?loadRotationRadiansX@StructureDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationRadiansX(float);
 
     // symbol:
     // ??0StructureDataLoadHelper@@QEAA@AEBVBlockPos@@0AEBVVec3@@UActorUniqueID@@W4Rotation@@W4Mirror@@AEAVLevel@@@Z
