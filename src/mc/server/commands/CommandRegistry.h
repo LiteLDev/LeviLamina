@@ -421,16 +421,16 @@ public:
 
     // following is the command parameter overloading
 
-    template <typename T>
+    template <std::default_initializable T>
     [[nodiscard]] inline static std::unique_ptr<Command> allocateCommand() {
         return std::make_unique<T>();
     };
 
     LLAPI void registerOverload(std::string const& name, FactoryFn factory, std::vector<CommandParameterData>&& args);
 
-    template <typename T, typename... Params>
+    template <std::default_initializable T, typename... Params>
     inline void registerOverload(std::string const& name, Params... params) {
-        registerOverload(name, &allocateCommand<T>, {params...});
+        registerOverload(name, &allocateCommand<T>, {std::move(params)...});
     };
 
     // following sections add sections for directive parameter enumeration
@@ -558,8 +558,8 @@ public:
         std::string const& name,
         char const*        description,
         ::CommandPermissionLevel,
-        struct CommandFlag = {CommandFlagValue::None},
-        struct CommandFlag = {CommandFlagValue::None} // useless, idiot
+        struct CommandFlag = CommandFlagValue::None,
+        struct CommandFlag = CommandFlagValue::None // useless, idiot
     );
 
     // symbol:
@@ -908,7 +908,6 @@ public:
 
     // NOLINTEND
 };
-
 
 // following are the functions required by CommandParameterData's ParseFunction
 MCTAPI bool CommandRegistry::parse<

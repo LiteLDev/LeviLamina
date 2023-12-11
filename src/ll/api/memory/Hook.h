@@ -124,20 +124,20 @@ consteval bool virtualDetector() noexcept {
 }
 
 template <class T>
-struct HookAutoRegister {
-    HookAutoRegister() { T::hook(); }
-    ~HookAutoRegister() { T::unhook(); }
+struct HookRegistrar {
+    HookRegistrar() { T::hook(); }
+    ~HookRegistrar() { T::unhook(); }
 };
 
 template <class T>
-class MultiHookRegister {
+class HookMultiRegistrar {
 public:
     static inline std::atomic_uint count{};
 
-    MultiHookRegister() {
+    HookMultiRegistrar() {
         if (++count == 1) T::hook();
     }
-    ~MultiHookRegister() {
+    ~HookMultiRegistrar() {
         if (--count == 0) T::unhook();
     }
 };
@@ -160,7 +160,7 @@ public:
         static consteval void detector() {                                                                             \
             if constexpr (::ll::memory::virtualDetector<IDENTIFIER>()) {                                               \
                 static_assert(                                                                                         \
-                    ::ll::concepts::always_false<Arg>,                                                                \
+                    ::ll::concepts::always_false<Arg>,                                                                 \
                     #IDENTIFIER " is a virtual function, for now you can't use function pointer to hook it."           \
                 );                                                                                                     \
             }                                                                                                          \
@@ -194,7 +194,7 @@ public:
 
 #define LL_AUTO_REG_HOOK_IMPL(FUNC_PTR, STATIC, CALL, DEF_TYPE, ...)                                                   \
     LL_VA_EXPAND(LL_HOOK_IMPL(                                                                                         \
-        inline ll::memory::HookAutoRegister<DEF_TYPE> DEF_TYPE##AutoRegister,                                          \
+        inline ll::memory::HookRegistrar<DEF_TYPE> DEF_TYPE##AutoRegister,                                             \
         FUNC_PTR,                                                                                                      \
         STATIC,                                                                                                        \
         CALL,                                                                                                          \

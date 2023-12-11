@@ -116,7 +116,7 @@ LL_TYPED_INSTANCE_HOOK(
 }
 
 uint addFormHandler(std::unique_ptr<FormHandler>&& data) {
-    static ll::memory::HookAutoRegister<FormResponseHandler> hook;
+    static ll::memory::HookRegistrar<FormResponseHandler> hook;
 
     formHandlers.emplace(++currentId, std::move(data));
     return currentId;

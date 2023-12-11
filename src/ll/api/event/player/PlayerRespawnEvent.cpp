@@ -14,7 +14,7 @@ LL_TYPED_INSTANCE_HOOK(PlayerRespawnEventHook, HookPriority::Normal, Player, "?r
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 class PlayerRespawnEventEmitter : public Emitter<PlayerRespawnEvent, emitterFactory> {
-    memory::HookAutoRegister<PlayerRespawnEventHook> hook;
+    memory::HookRegistrar<PlayerRespawnEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {

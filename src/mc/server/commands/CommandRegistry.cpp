@@ -6,10 +6,9 @@
 #include "mc/server/commands/CommandVersion.h"
 
 CommandRegistry::Overload::Overload(CommandVersion version, FactoryFn factory, std::vector<CommandParameterData> args)
-: version(version),
-  alloc(factory),
-  params(std::move(args)),
-  versionOffset(0xff) {}
+: Overload(version, factory) {
+    params = std::move(args);
+}
 
 CommandRegistry::Signature::Signature(
     std::string_view       name,

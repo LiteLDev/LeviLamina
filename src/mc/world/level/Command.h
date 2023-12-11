@@ -16,6 +16,7 @@ public:
     int                          mCommandSymbol;   // this+0x18
     ::CommandPermissionLevel     mPermissionLevel; // this+0x1C
     struct CommandFlag           mFlags;           // this+0x1E
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1Command@@UEAA@XZ

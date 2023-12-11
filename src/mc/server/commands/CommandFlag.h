@@ -44,7 +44,7 @@ struct CommandFlag {
 public:
     enum class CommandFlagValue value;
 
-    CommandFlag(CommandFlagValue const& value) : value(value) {}
+    CommandFlag(CommandFlagValue const& value) : value(value) {} // NOLINT
 
     [[nodiscard]] constexpr bool operator==(CommandFlag const& rhs) const noexcept { return value == rhs.value; }
     [[nodiscard]] constexpr bool operator!=(CommandFlag const& rhs) const noexcept { return value != rhs.value; }

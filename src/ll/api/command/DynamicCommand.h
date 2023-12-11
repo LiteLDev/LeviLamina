@@ -401,8 +401,6 @@ public:
         static constexpr CommandParameterDataType getCommandParameterDataType() {
             if constexpr (type == ParameterType::Enum) return CommandParameterDataType::Enum;
             else if constexpr (type == ParameterType::SoftEnum) return CommandParameterDataType::SoftEnum;
-            // else if constexpr (type == ParameterType::Postfix)
-            //     return CommandParameterDataType::POSIFIX;
             else return CommandParameterDataType::Basic;
         }
         template <ParameterType type, class T>

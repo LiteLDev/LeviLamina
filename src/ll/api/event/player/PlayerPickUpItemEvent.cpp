@@ -28,7 +28,7 @@ LL_TYPED_INSTANCE_HOOK(
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 class PlayerPickUpItemEventEmitter : public Emitter<PlayerPickUpItemEvent, emitterFactory> {
-    memory::HookAutoRegister<PlayerPickUpItemEventHook> hook;
+    memory::HookRegistrar<PlayerPickUpItemEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {

@@ -33,7 +33,7 @@ LL_TYPED_INSTANCE_HOOK(
     return memcmp(data.mBuffer.get(), ((IntArrayTag&)other).data.mBuffer.get(), data.mSize * sizeof(int)) == 0;
 }
 void enableArrayTagBugFix() {
-    static ll::memory::HookAutoRegister<ByteArrayTagEqualsHook> r1;
-    static ll::memory::HookAutoRegister<IntArrayTagEqualsHook>  r2;
+    static ll::memory::HookRegistrar<ByteArrayTagEqualsHook> r1;
+    static ll::memory::HookRegistrar<IntArrayTagEqualsHook>  r2;
 }
 } // namespace ll::bugfix

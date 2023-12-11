@@ -20,7 +20,7 @@ LL_TYPED_INSTANCE_HOOK(
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 class PlayerDieEventEmitter : public Emitter<PlayerDieEvent, emitterFactory> {
-    memory::HookAutoRegister<PlayerDieEventHook> hook;
+    memory::HookRegistrar<PlayerDieEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return std::make_unique<PlayerDieEventEmitter>(); }

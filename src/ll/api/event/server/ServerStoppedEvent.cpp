@@ -11,7 +11,7 @@ LL_INSTANCE_HOOK(ServerStoppedEventHook, HookPriority::Normal, "??1DedicatedServ
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 class ServerStoppedEventEmitter : public Emitter<ServerStoppedEvent, emitterFactory> {
-    memory::HookAutoRegister<ServerStoppedEventHook> hook;
+    memory::HookRegistrar<ServerStoppedEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {

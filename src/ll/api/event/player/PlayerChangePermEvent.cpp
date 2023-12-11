@@ -24,7 +24,7 @@ LL_TYPED_INSTANCE_HOOK(
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
 class PlayerChangePermEventEmitter : public Emitter<PlayerChangePermEvent, emitterFactory> {
-    memory::HookAutoRegister<PlayerChangePermEventHook> hook;
+    memory::HookRegistrar<PlayerChangePermEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {

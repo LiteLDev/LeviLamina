@@ -30,7 +30,7 @@ public:
     CommandParameterData(
         const Bedrock::typeid_t<CommandRegistry>& typeIndex,
         ParseFn                                   parser,
-        std::string_view                          name,
+        std::string                               name,
         ::CommandParameterDataType                type,
         char const*                               enumName,
         int                                       offset,
@@ -39,7 +39,7 @@ public:
     )
     : mTypeIndex(typeIndex),
       mParse(parser),
-      mName(name),
+      mName(std::move(name)),
       mEnumName(enumName),
       mEnumSymbol(-1),
       mPostfix(nullptr),
@@ -52,12 +52,12 @@ public:
 
     template <typename Command, typename Type>
     [[nodiscard]] inline static CommandParameterData
-    makeMandatory(Type Command::*field, std::string const& name, bool Command::*isSet = nullptr) {
+    makeMandatory(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
 
         return {
             Bedrock::type_id<CommandRegistry, Type>(),
             &CommandRegistry::parse<Type>,
-            name.c_str(),
+            std::move(name),
             CommandParameterDataType::Basic,
             nullptr,
             getOffset(field),
@@ -66,17 +66,13 @@ public:
         };
     }
     template <CommandParameterDataType DataType, typename Command, typename Type>
-    [[nodiscard]] inline static CommandParameterData makeMandatory(
-        Type Command::*    field,
-        std::string const& name,
-        char const*        desc = nullptr,
-        bool Command::*isSet    = nullptr
-    ) {
+    [[nodiscard]] inline static CommandParameterData
+    makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
 
         return {
             Bedrock::type_id<CommandRegistry, Type>(),
             &CommandRegistry::parse<Type>,
-            name.c_str(),
+            std::move(name),
             DataType,
             desc,
             getOffset(field),
@@ -86,12 +82,12 @@ public:
     }
     template <typename Command, typename Type>
     [[nodiscard]] inline static CommandParameterData
-    makeOptional(Type Command::*field, std::string const& name, bool Command::*isSet = nullptr) {
+    makeOptional(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
 
         return {
             Bedrock::type_id<CommandRegistry, Type>(),
             &CommandRegistry::parse<Type>,
-            name.c_str(),
+            std::move(name),
             CommandParameterDataType::Basic,
             nullptr,
             getOffset(field),
@@ -100,17 +96,13 @@ public:
         };
     }
     template <CommandParameterDataType DataType, typename Command, typename Type>
-    [[nodiscard]] inline static CommandParameterData makeOptional(
-        Type Command::*    field,
-        std::string const& name,
-        char const*        desc = nullptr,
-        bool Command::*isSet    = nullptr
-    ) {
+    [[nodiscard]] inline static CommandParameterData
+    makeOptional(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
 
         return {
             Bedrock::type_id<CommandRegistry, Type>(),
             &CommandRegistry::parse<Type>,
-            name.c_str(),
+            std::move(name),
             DataType,
             desc,
             getOffset(field),
