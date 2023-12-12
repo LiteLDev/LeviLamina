@@ -15,6 +15,9 @@ class BaseGameVersion;
 class Experiments;
 
 class MoreDimension : public Dimension {
+    uint          seed;
+    GeneratorType generatorType;
+
 public:
     MoreDimension(ILevel& ilevel, Scheduler& scheduler, MoreDimensionManager::DimensionInfo& dimensionInfo);
     void                            init() override;
@@ -31,7 +34,6 @@ public:
     short      getCloudHeight() const override { return 192; };
     bool       hasPrecipitationFog() const override { return true; };
     std::unique_ptr<StructureFeatureRegistry> makeStructureFeatures(
-        uint                   seed,
         bool                   isLegacy,
         BaseGameVersion const& baseGameVersion,
         Experiments const&     experiments

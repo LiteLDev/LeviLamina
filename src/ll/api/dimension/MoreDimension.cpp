@@ -21,8 +21,9 @@
 MoreDimension::MoreDimension(ILevel& ilevel, Scheduler& scheduler, MoreDimensionManager::DimensionInfo& dimensionInfo)
 : Dimension(ilevel, dimensionInfo.id, {-64, 320}, scheduler, dimensionInfo.name) {
     loggerMoreDim.debug("MoreDimension::MoreDimension dimension name:{}", dimensionInfo.name);
-    mDefaultBrightness.sky = Brightness::MAX;
-    auto generatorType     = dimensionInfo.generatorType;
+    this->mDefaultBrightness.sky = Brightness::MAX;
+    this->generatorType          = dimensionInfo.generatorType;
+    this->seed                   = dimensionInfo.seed;
     switch (generatorType) {
     case GeneratorType::TheEnd: {
         mSeaLevel                = 63;
@@ -53,34 +54,32 @@ std::unique_ptr<WorldGenerator> MoreDimension::createGenerator() {
     auto& level         = getLevel();
     auto& levelData     = level.getLevelData();
     auto  biome         = level.getBiomeRegistry().lookupByName(levelData.getBiomeOverride());
-    auto  generatorType = ll::Global<MoreDimensionManager>->MoreDimensionMap.at(this->mId).generatorType;
-    auto  seed          = ll::Global<MoreDimensionManager>->MoreDimensionMap.at(this->mId.id).seed;
 
-    switch (generatorType) {
+    switch (this->generatorType) {
     case GeneratorType::Overworld:
         return std::make_unique<OverworldGenerator2d>(
             *this,
             seed,
             false,
             biome,
-            makeStructureFeatures(seed, false, levelData.getBaseGameVersion(), levelData.getExperiments())
+            makeStructureFeatures(false, levelData.getBaseGameVersion(), levelData.getExperiments())
         );
     case GeneratorType::Nether:
         return std::make_unique<NetherGenerator>(
             *this,
             seed,
             biome,
-            makeStructureFeatures(seed, false, levelData.getBaseGameVersion(), levelData.getExperiments())
+            makeStructureFeatures(false, levelData.getBaseGameVersion(), levelData.getExperiments())
         );
     case GeneratorType::TheEnd:
         return std::make_unique<TheEndGenerator>(
             *this,
             seed,
             biome,
-            makeStructureFeatures(seed, false, levelData.getBaseGameVersion(), levelData.getExperiments())
+            makeStructureFeatures(false, levelData.getBaseGameVersion(), levelData.getExperiments())
         );
     case GeneratorType::Flat:
-        return std::make_unique<FlatWorldGenerator>(*this, seed, levelData.getFlatWorldGeneratorOptions());
+        return std::make_unique<FlatWorldGenerator>(*this, this->seed, levelData.getFlatWorldGeneratorOptions());
     default:
         return std::make_unique<VoidGenerator>(*this);
     }
@@ -88,14 +87,14 @@ std::unique_ptr<WorldGenerator> MoreDimension::createGenerator() {
 
 void MoreDimension::upgradeLevelChunk(ChunkSource& cs, LevelChunk& lc, LevelChunk& generatedChunk) {
     loggerMoreDim.debug("MoreDimension::upgradeLevelChunk");
-    BlockSource blockSource = BlockSource(getLevel(), *this, cs, false, true, false);
+    BlockSource blockSource = BlockSource(this->getLevel(), *this, cs, false, true, false);
     VanillaLevelChunkUpgrade::_upgradeLevelChunkViaMetaData(lc, generatedChunk, blockSource);
     VanillaLevelChunkUpgrade::_upgradeLevelChunkLegacy(lc, blockSource);
 }
 
 void MoreDimension::fixWallChunk(ChunkSource& cs, LevelChunk& lc) {
     loggerMoreDim.debug("MoreDimension::fixWallChunk");
-    BlockSource blockSource = BlockSource(getLevel(), *this, cs, false, true, false);
+    BlockSource blockSource = BlockSource(this->getLevel(), *this, cs, false, true, false);
     VanillaLevelChunkUpgrade::fixWallChunk(lc, blockSource);
 }
 
@@ -111,7 +110,7 @@ void MoreDimension::_upgradeOldLimboEntity(CompoundTag& tag, ::LimboEntitiesVers
 
 Vec3 MoreDimension::translatePosAcrossDimension(Vec3 const& fromPos, DimensionType fromId) const {
     loggerMoreDim.debug("MoreDimension::translatePosAcrossDimension");
-    auto data  = getLevel().getDimensionConversionData();
+    auto data  = this->getLevel().getDimensionConversionData();
     auto topos = Vec3();
     VanillaDimensions::convertPointBetweenDimensions(fromPos, topos, fromId, this->mId, data);
     if (topos.x >= 31999872) topos.x = 31999872;
@@ -139,19 +138,17 @@ mce::Color MoreDimension::getBrightnessDependentFogColor(mce::Color const& color
 };
 
 std::unique_ptr<StructureFeatureRegistry> MoreDimension::makeStructureFeatures(
-    uint                   seed,
     bool                   isLegacy,
     BaseGameVersion const& baseGameVersion,
     Experiments const&     experiments
 ) {
     loggerMoreDim.debug("MoreDimension::makeStructureFeatures");
-    auto generatorType = ll::Global<MoreDimensionManager>->MoreDimensionMap.at(this->mId).generatorType;
-    switch (generatorType) {
+    switch (this->generatorType) {
     case GeneratorType::Nether:
-        return NetherDimension::makeStructureFeatures(seed, baseGameVersion);
+        return NetherDimension::makeStructureFeatures(this->seed, baseGameVersion);
     case GeneratorType::TheEnd:
-        return TheEndDimension::makeStructureFeatures(*this, seed);
+        return TheEndDimension::makeStructureFeatures(*this, this->seed);
     default:
-        return OverworldDimension::makeStructureFeatures(seed, isLegacy, baseGameVersion, experiments);
+        return OverworldDimension::makeStructureFeatures(this->seed, isLegacy, baseGameVersion, experiments);
     }
 };
