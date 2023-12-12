@@ -44,31 +44,31 @@ bool writeFile(const fs::path& filePath, std::string_view content, bool isBinary
 }
 
 static bool
-getFileVersion(const wchar_t* filePath, ushort* ver1, ushort* ver2, ushort* ver3, ushort* ver4, uint* flag) {
+getFileVersion(std::wstring_view filePath, ushort& ver1, ushort& ver2, ushort& ver3, ushort& ver4, uint& flag) {
 
     DWORD dwHandle = 0;
-    DWORD dwLen    = GetFileVersionInfoSizeW(filePath, &dwHandle);
+    DWORD dwLen    = GetFileVersionInfoSizeW(filePath.data(), &dwHandle);
     if (0 >= dwLen) {
         return false;
     }
 
-    std::wstring path(dwLen, '\0');
+    std::wstring data(dwLen, '\0');
 
-    if (!GetFileVersionInfoW(filePath, dwHandle, dwLen, path.data())) {
+    if (!GetFileVersionInfoW(filePath.data(), dwHandle, dwLen, data.data())) {
         return false;
     }
 
     VS_FIXEDFILEINFO* lpBuffer;
     uint              uLen = 0;
-    if (!VerQueryValueW(path.c_str(), L"\\", (void**)&lpBuffer, &uLen)) {
+    if (!VerQueryValueW(data.c_str(), L"\\", (void**)&lpBuffer, &uLen)) {
         return false;
     }
 
-    if (ver1) *ver1 = (lpBuffer->dwFileVersionMS >> 16) & 0x0000FFFF;
-    if (ver2) *ver2 = lpBuffer->dwFileVersionMS & 0x0000FFFF;
-    if (ver3) *ver3 = (lpBuffer->dwFileVersionLS >> 16) & 0x0000FFFF;
-    if (ver4) *ver4 = lpBuffer->dwFileVersionLS & 0x0000FFFF;
-    if (flag) *flag = lpBuffer->dwFileFlags;
+    ver1 = (lpBuffer->dwFileVersionMS >> 16) & 0x0000FFFF;
+    ver2 = lpBuffer->dwFileVersionMS & 0x0000FFFF;
+    ver3 = (lpBuffer->dwFileVersionLS >> 16) & 0x0000FFFF;
+    ver4 = lpBuffer->dwFileVersionLS & 0x0000FFFF;
+    flag = lpBuffer->dwFileFlags;
 
     return true;
 }
@@ -77,7 +77,7 @@ Version getVersion(std::filesystem::path const& filePath) {
     ll::Version version;
     ushort      build_ver{};
     uint        flag{};
-    if (!getFileVersion(filePath.c_str(), &version.major, &version.minor, &version.patch, &build_ver, &flag)) {
+    if (!getFileVersion(filePath.native(), version.major, version.minor, version.patch, build_ver, flag)) {
         return Version{};
     } else {
         version.preRelease = PreRelease{};

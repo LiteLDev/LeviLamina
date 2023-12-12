@@ -7,6 +7,10 @@
 
 class CommandOutputMessage {
 public:
+    CommandOutputMessageType mType;
+    std::string              mMessageId;
+    std::vector<std::string> mParams;
+
     // prevent constructor by default
     CommandOutputMessage& operator=(CommandOutputMessage const&);
     CommandOutputMessage();

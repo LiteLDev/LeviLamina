@@ -2,7 +2,9 @@
 
 #include "ll/api/i18n/I18nAPI.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandOutputMessage.h"
 #include "mc/server/commands/CommandOutputParameter.h"
+#include "mc/server/commands/CommandPropertyBag.h"
 
 // auto generated inclusion list
 #include "mc/server/commands/CommandOutputMessageType.h"
@@ -10,11 +12,11 @@
 
 class CommandOutput {
 public:
-    CommandOutputType                         mType;
-    std::unique_ptr<class CommandPropertyBag> mBag;
-    std::vector<class CommandOutputMessage>   mMessages;
-    int                                       mSuccessCount;
-    bool                                      mHasPlayerText;
+    CommandOutputType                   mType;
+    std::unique_ptr<CommandPropertyBag> mBag;
+    std::vector<CommandOutputMessage>   mMessages;
+    int                                 mSuccessCount;
+    bool                                mHasPlayerText;
 
     // prevent constructor by default
     CommandOutput& operator=(CommandOutput const&);

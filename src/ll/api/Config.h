@@ -30,7 +30,7 @@ bool defaultConfigUpdater(T& config, J& data) {
 template <IsConfig T, class J = nlohmann::ordered_json>
 inline bool
 loadConfig(T& config, std::string_view path, std::function<bool(T&, J&)> updater = defaultConfigUpdater<T, J>) {
-    bool res = true;
+    bool noNeedRewrite = true;
 
     auto content = file_utils::readFile(path);
     if (content && !content.value().empty()) {
@@ -38,17 +38,17 @@ loadConfig(T& config, std::string_view path, std::function<bool(T&, J&)> updater
         auto data{J::parse(content.value(), nullptr, false, true)};
 
         if (!data.contains("version")) {
-            res = false;
+            noNeedRewrite = false;
         } else if (!(int64)data["version"] == config.version) {
-            res = false;
+            noNeedRewrite = false;
         }
-        if (res || updater(config, data)) {
+        if (noNeedRewrite || updater(config, data)) {
             ll::reflection::deserialize<J, T>(config, data);
         }
     } else {
-        res = false;
+        noNeedRewrite = false;
     }
-    return res;
+    return noNeedRewrite;
 }
 
 } // namespace ll::config
