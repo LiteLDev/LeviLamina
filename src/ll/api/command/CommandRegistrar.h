@@ -2,6 +2,4 @@
 
 #include "mc/server/commands/CommandRegistry.h"
 
-namespace ll::command{
-    
-}
+namespace ll::command {}

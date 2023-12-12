@@ -47,6 +47,9 @@ public:
     LLNDAPI std::string getTypeName() const;
     LLNDAPI std::string getDescriptionName() const;
 
+    // we recommend using isValid instead of using isNull directly.
+    [[nodiscard]] inline bool isValid() const { return mValid && mItem && !isNull() && mCount > 0; }
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1ItemStackBase@@UEAA@XZ
@@ -74,7 +77,7 @@ public:
     virtual std::string toDebugString() const;
 
     // symbol: ?add@ItemStackBase@@QEAAXH@Z
-    MCAPI void add(int);
+    MCAPI void add(int inCount); // same as set(mCount + inCount)
 
     // symbol:
     // ?addComponents@ItemStackBase@@QEAA_NAEBVValue@Json@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -342,7 +345,7 @@ public:
     MCAPI bool isStackable() const;
 
     // symbol: ?isStackable@ItemStackBase@@QEBA_NAEBV1@@Z
-    MCAPI bool isStackable(class ItemStackBase const&) const;
+    MCAPI bool isStackable(class ItemStackBase const& with) const;
 
     // symbol: ?isStackedByData@ItemStackBase@@QEBA_NXZ
     MCAPI bool isStackedByData() const;
@@ -381,7 +384,7 @@ public:
     MCAPI void refreshedInContainer(class Level&) const;
 
     // symbol: ?remove@ItemStackBase@@QEAAXH@Z
-    MCAPI void remove(int);
+    MCAPI void remove(int inCount); // same as set(mCount - inCount)
 
     // symbol: ?removeDamageValue@ItemStackBase@@QEAAXXZ
     MCAPI void removeDamageValue();
@@ -415,7 +418,7 @@ public:
     MCAPI void serializeComponents(class IDataOutput&) const;
 
     // symbol: ?set@ItemStackBase@@QEAAXH@Z
-    MCAPI void set(int);
+    MCAPI void set(int inCount);
 
     // symbol: ?setAuxValue@ItemStackBase@@QEAAXF@Z
     MCAPI void setAuxValue(short);

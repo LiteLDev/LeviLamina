@@ -30,14 +30,15 @@ public:
     bool                                                mCustomName;              // this+0xD8
     ContainerRuntimeId                                  mContainerRuntimeId;      // this+0xDC
 
-    [[nodiscard]] inline ItemStack& getItem(int index) { return const_cast<ItemStack&>(getItem(index)); }
+    [[nodiscard]] inline ItemStack& getItemNonConst(int index) { return const_cast<ItemStack&>(getItem(index)); }
 
-    [[nodiscard]] inline std::vector<std::reference_wrapper<ItemStack>> getSlots() { // same with virtual getSlots
+    [[nodiscard]] inline std::vector<std::reference_wrapper<ItemStack>>
+    getSlotsNonConst() { // same with virtual getSlots
         std::vector<std::reference_wrapper<ItemStack>> res;
         int                                            size = getContainerSize();
         res.reserve(size);
         for (int i = 0; i < size; ++i) {
-            res.emplace_back(getItem(i));
+            res.emplace_back(getItemNonConst(i));
         }
         return res;
     }
@@ -127,7 +128,7 @@ public:
     virtual void __unk_vfn_26();
 
     // vIndex: 27, symbol: ?setContainerChanged@Container@@UEAAXH@Z
-    virtual void setContainerChanged(int);
+    virtual void setContainerChanged(int slot);
 
     // vIndex: 28, symbol: ?setContainerMoved@Container@@UEAAXXZ
     virtual void setContainerMoved();
@@ -156,10 +157,10 @@ public:
     virtual bool isEmpty() const;
 
     // symbol: ?canPullOutItem@Container@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPullOutItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPullOutItem(int slot, int face, class ItemStack const& item) const;
 
     // symbol: ?canPushInItem@Container@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPushInItem(int slot, int face, class ItemStack const& item) const;
 
     // symbol: ?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z
     MCVAPI void initializeContainerContents(class BlockSource&);

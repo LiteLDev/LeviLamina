@@ -26,10 +26,10 @@ class TickSyncTaskPool {
     friend detail::TickSyncTaskPoolWorker;
 
 private:
-    std::queue<std::function<void()>>  tasks;
-    std::mutex                         mutex;
-    size_t                             tasksPerTick;
-    size_t                             id;
+    std::queue<std::function<void()>> tasks;
+    std::mutex                        mutex;
+    size_t                            tasksPerTick;
+    size_t                            id;
 
 public:
     explicit TickSyncTaskPool(size_t tasksPerTick = ~0ui64) : tasksPerTick(tasksPerTick) {

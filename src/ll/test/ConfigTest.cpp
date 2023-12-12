@@ -18,10 +18,10 @@
 // GameTickScheduler s;
 
 #include "ll/api/utils/WinUtils.h"
-#include "mc/server/commands/standard/FillCommand.h"
-#include "mc/server/ServerLevel.h"
 
 #include "mc/nbt/CompoundTag.h"
+#include "mc/server/ServerLevel.h"
+#include "mc/server/commands/standard/FillCommand.h"
 
 template <class T>
 
@@ -63,7 +63,8 @@ public:
         Benum,
     } hi;
 };
-// LL_AUTO_TYPED_INSTANCE_HOOK(Virtual, HookPriority::Normal, FillCommand, &FillCommand::execute, void, CommandOrigin const&, CommandOutput&) {
+// LL_AUTO_TYPED_INSTANCE_HOOK(Virtual, HookPriority::Normal, FillCommand, &FillCommand::execute, void, CommandOrigin
+// const&, CommandOutput&) {
 // }
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
@@ -79,7 +80,10 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     // ll::config::saveConfig(helloReflection, "plugins/Test/config/testconfig.json");
 
-    ll::logger.debug("reflection NBT: {}", ll::reflection::serialize<CompoundTagVariant>(helloReflection).dump(SnbtFormat::PrettyConsolePrint));
+    ll::logger.debug(
+        "reflection NBT: {}",
+        ll::reflection::serialize<CompoundTagVariant>(helloReflection).dump(SnbtFormat::PrettyConsolePrint)
+    );
 
     ll::logger.debug("0x{:X}", (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute));
     ll::logger.debug("0x{:X}", (uintptr_t)ll::win_utils::getImageRange().data());

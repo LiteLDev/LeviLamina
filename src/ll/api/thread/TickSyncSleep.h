@@ -64,7 +64,7 @@ public:
     }
 
     void sleepFor(Clock::duration duration) {
-        std::unique_lock<std::mutex> lock{mutex};
+        std::unique_lock lock{mutex};
         this->timepoint = Clock::now() + duration;
         state           = State::SleepFor;
         cv.wait(lock, [this] { return interrupted; });
@@ -72,7 +72,7 @@ public:
     }
 
     void sleepUntil(Clock::time_point time) {
-        std::unique_lock<std::mutex> lock{mutex};
+        std::unique_lock lock{mutex};
         this->timepoint = time;
         state           = State::SleepUntil;
         cv.wait(lock, [this] { return interrupted; });
@@ -80,14 +80,14 @@ public:
     }
 
     void sleep() {
-        std::unique_lock<std::mutex> lock{mutex};
+        std::unique_lock lock{mutex};
         state = State::Sleep;
         cv.wait(lock, [this] { return interrupted; });
         interrupted = false;
     }
 
     void interrupt() {
-        std::lock_guard<std::mutex> lg(mutex);
+        std::lock_guard lock(mutex);
         state       = State::None;
         interrupted = true;
         cv.notify_one();

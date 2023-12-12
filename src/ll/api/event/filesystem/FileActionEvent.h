@@ -23,8 +23,8 @@ class FileActionEvent : public Event {
 public:
     constexpr FileActionEvent(std::filesystem::path const& p, FileActionType const& e) : mPath(p), mType(e) {}
 
-   LLNDAPI std::filesystem::path const& path() const;
-   LLNDAPI FileActionType const&        type() const;
+    LLNDAPI std::filesystem::path const& path() const;
+    LLNDAPI FileActionType const&        type() const;
 };
 } // namespace fs
 

@@ -24,10 +24,10 @@ GlobalThreadPauser::GlobalThreadPauser() {
                 if (te.th32OwnerProcessID == processId && te.th32ThreadID != threadId) {
                     HANDLE thread = OpenThread(THREAD_SUSPEND_RESUME, false, te.th32ThreadID);
                     if (thread != nullptr) {
-                        if(SuspendThread(thread) != -1) {
+                        if (SuspendThread(thread) != -1) {
                             pausedIds.emplace_back(te.th32ThreadID);
                         }
-                    CloseHandle(thread);
+                        CloseHandle(thread);
                     }
                 }
             }
