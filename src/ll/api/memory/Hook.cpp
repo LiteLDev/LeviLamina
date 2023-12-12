@@ -26,18 +26,15 @@ bool unhook(FuncPtr target, FuncPtr detour) {
 }
 
 FuncPtr resolveIdentifier(std::string_view identifier, bool disableErrorOutput) {
-    static Logger hookLogger = [] {
-        auto res         = Logger("LeviLamina");
-        res.ignoreConfig = true;
-        return std::move(res);
-    }();
-    if (auto pl = resolveSymbol(identifier.data(), true); pl) {
+    static Logger hookLogger("LeviLamina", true);
+    if (auto pl = resolveSymbol(identifier, true); pl) {
         return pl;
     } else if (auto sig = resolveSignature(identifier); sig) {
         return sig;
-    } else if (auto dbgeng = (FuncPtr)stacktrace_utils::tryGetSymbolAddress(identifier); dbgeng) {
-        return dbgeng;
     }
+    // else if (auto dbgeng = (FuncPtr)stacktrace_utils::tryGetSymbolAddress(identifier); dbgeng) {
+    //     return dbgeng;
+    // }
     if (!disableErrorOutput) {
         hookLogger.fatal("Could not find symbol/signature in memory: {}", identifier);
         hookLogger.fatal("In module: {}", win_utils::getCallerModuleFileName());

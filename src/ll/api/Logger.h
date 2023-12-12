@@ -110,7 +110,7 @@ public:
     }
     Logger& operator=(Logger&&) = default;
 
-    LLNDAPI explicit Logger(std::string_view title = __builtin_FUNCTION());
+    LLNDAPI explicit Logger(std::string_view title = __builtin_FUNCTION(), bool ignoreConfig = false);
 
     ~Logger() { resetFile(); }
 

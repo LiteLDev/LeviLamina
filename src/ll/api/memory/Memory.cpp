@@ -6,6 +6,7 @@
 
 #include "pl/SymbolProvider.h"
 
+#include "ll/api/Logger.h"
 #include "ll/api/ServerInfo.h"
 #include "ll/api/thread/GlobalThreadPauser.h"
 #include "ll/api/utils/StringUtils.h"
@@ -16,11 +17,22 @@
 
 namespace ll::memory {
 
-FuncPtr resolveSymbol(char const* symbol) { return pl::symbol_provider::pl_resolve_symbol(symbol); }
+FuncPtr resolveSymbol(char const* symbol) {
+    static Logger sLogger("LeviLamina", true);
+    auto          res = pl::symbol_provider::pl_resolve_symbol(symbol);
+    if (res == nullptr) {
+        sLogger.fatal("Could not find symbol in memory: {}", symbol);
+        sLogger.fatal("In module: {}", win_utils::getCallerModuleFileName());
+    }
+    return res;
+}
 
-FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) // TODO: add support in preloader
-{
-    return pl::symbol_provider::pl_resolve_symbol(symbol.data());
+FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
+    if (disableErrorOutput) {
+        return pl::symbol_provider::pl_resolve_symbol(symbol.data());
+    } else {
+        return resolveSymbol(symbol.data());
+    }
 }
 
 FuncPtr resolveSignature(std::string_view signature) {

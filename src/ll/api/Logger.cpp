@@ -98,8 +98,9 @@ Logger::OutputStream::OutputStream(
   playerFormat(playerFormat),
   playerOutputCallback(nullptr) {}
 
-Logger::Logger(std::string_view title)
+Logger::Logger(std::string_view title, bool ignoreConfig)
 : title(title),
+  ignoreConfig(ignoreConfig),
   debug(OutputStream{
       *this,
       "DEBUG",
