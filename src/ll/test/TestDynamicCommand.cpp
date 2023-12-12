@@ -385,7 +385,7 @@ static void setupTimingCommand() {
                 ll::logger.warn(
                     "  | {:.5f}ms {} for {:0>3} {}",
                     data.avg,
-                    data.count / counttick,
+                    double(data.count) / counttick,
                     data.id,
                     collection.mAllSystemsInfo[data.id].mName
                 );

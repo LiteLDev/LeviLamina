@@ -1,5 +1,6 @@
 #include "ll/core/Config.h"
 #include "ll/api/Config.h"
+#include "ll/api/base/ErrorInfo.h"
 #include "ll/core/LeviLamina.h"
 
 namespace ll {
@@ -10,19 +11,33 @@ static constexpr std::string_view leviConfigPath = R"(plugins\LeviLamina\config\
 struct LeviConfig globalConfig;
 
 bool loadLeviConfig() {
-    if (!ll::config::loadConfig(globalConfig, leviConfigPath, false)) {
-        if (ll::config::saveConfig(globalConfig, leviConfigPath)) {
-            logger.warn("ll.config.rewrite.success"_tr);
-        } else {
-            logger.warn("ll.config.rewrite.fail"_tr);
+    try {
+        if (!ll::config::loadConfig(globalConfig, leviConfigPath)) {
+            if (ll::config::saveConfig(globalConfig, leviConfigPath)) {
+                logger.warn("ll.config.rewrite.success"_tr);
+            } else {
+                logger.error("ll.config.rewrite.fail"_tr);
+                return false;
+            }
         }
+        return true;
+    } catch (...) {
+        logger.error("ll.config.load.fail"_tr);
+        ll::error_info::printCurrentException();
         return false;
     }
-    return true;
 }
 
 bool saveLeviConfig() {
-    if (!ll::config::saveConfig(globalConfig, leviConfigPath)) {
+    bool res{};
+    try {
+        res = ll::config::saveConfig(globalConfig, leviConfigPath);
+    } catch (...) {
+        logger.error("ll.config.save.fail"_tr);
+        ll::error_info::printCurrentException();
+        return false;
+    }
+    if (!res) {
         logger.error("ll.config.save.fail"_tr);
         return false;
     }

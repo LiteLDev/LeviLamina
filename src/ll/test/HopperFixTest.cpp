@@ -48,7 +48,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
             item.set(originalCount - itemCount);
         }
         if (container.getContainerType() == ContainerType::Hopper) {
-            ((HopperBlockActor*)((char*)&container - 200))
+            ((HopperBlockActor*)((char*)&container - 200)) // dynamic_cast<HopperBlockActor*>
                 ->updateCooldownAfterMove(blockSource.getLevel().getCurrentTick(), mMoveItemSpeed);
         }
         container.setContainerChanged(slot);

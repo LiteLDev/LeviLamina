@@ -248,7 +248,7 @@ public:
     std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const {
         return get().toSnbt(snbtFormat, indent);
     }
-    std::string dump(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const {
+    std::string dump(uchar indent = 4, SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint) const {
         return toSnbt(snbtFormat, indent);
     }
 

@@ -82,7 +82,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     ll::logger.debug(
         "reflection NBT: {}",
-        ll::reflection::serialize<CompoundTagVariant>(helloReflection).dump(SnbtFormat::PrettyConsolePrint)
+        ll::reflection::serialize<CompoundTagVariant>(helloReflection).toSnbt(SnbtFormat::PrettyConsolePrint)
     );
 
     ll::logger.debug("0x{:X}", (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute));
