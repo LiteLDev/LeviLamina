@@ -108,7 +108,24 @@ public:
         error.logger = this;
         fatal.logger = this;
     }
-    Logger& operator=(Logger&&) = default;
+    Logger& operator=(Logger&& other) {
+        title        = std::move(other.title);
+        ofs          = std::move(other.ofs);
+        consoleLevel = other.consoleLevel;
+        fileLevel    = other.fileLevel;
+        playerLevel  = other.playerLevel;
+        ignoreConfig = other.ignoreConfig;
+        debug        = std::move(other.debug);
+        info         = std::move(other.info);
+        warn         = std::move(other.warn);
+        error        = std::move(other.error);
+        fatal        = std::move(other.fatal);
+        debug.logger = this;
+        info.logger  = this;
+        warn.logger  = this;
+        error.logger = this;
+        fatal.logger = this;
+    }
 
     LLNDAPI explicit Logger(std::string_view title = __builtin_FUNCTION(), bool ignoreConfig = false);
 
