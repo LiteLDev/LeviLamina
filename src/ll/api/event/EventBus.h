@@ -86,7 +86,10 @@ public:
     template <std::derived_from<Event> T, std::derived_from<ListenerBase> L = Listener<T>, class... Args>
     inline auto emplaceListener(Args&&... args) {
         auto res = L::create(std::forward<Args>(args)...);
-        return addListener<T>(res);
+        if (!addListener<T>(res)) {
+            res = nullptr;
+        }
+        return res;
     }
 
     bool removeListener(ListenerPtr const& listener) { return removeListener(listener, EmptyEventId); }

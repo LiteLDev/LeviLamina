@@ -7,15 +7,17 @@ namespace Bedrock {
 
 template <typename T, typename Err>
 class Result {
-
+    using value_type = std::conditional_t<std::is_void_v<T>, char, T>;
     union {
-        T              mValue;
+        value_type     mValue;
         ErrorInfo<Err> mError;
     };
     bool mHasValue;
 
 public:
-    [[nodiscard]] explicit Result(T value) : mValue(std::move(value)), mHasValue(true) {}
+    template <class... Args>
+    [[nodiscard]] explicit Result(Args&&... args) : mValue(std::forward<Args>(args)...),
+                                                    mHasValue(true) {}
     [[nodiscard]] explicit Result(ErrorInfo<Err> err) : mError(std::move(err)), mHasValue(false) {}
 
     [[nodiscard]] Result(Result&& other) noexcept {
@@ -26,6 +28,37 @@ public:
             mError = std::move(other.mError);
         }
     }
+    Result& operator=(Result&& other) noexcept {
+        if (this == &other) {
+            return *this;
+        }
+        mHasValue = other.mHasValue;
+        if (mHasValue) {
+            mValue = std::move(other.mValue);
+        } else {
+            mError = std::move(other.mError);
+        }
+        return *this;
+    }
+    [[nodiscard]] Result(Result const& other) noexcept {
+        mHasValue = other.mHasValue;
+        if (mHasValue) {
+            mValue = other.mValue;
+        } else {
+            mError = other.mError;
+        }
+    }
+    Result& operator=(Result const& other) noexcept {
+        if (this == &other) {
+            return *this;
+        }
+        mHasValue = other.mHasValue;
+        if (mHasValue) {
+            mValue = other.mValue;
+        } else {
+            mError = other.mError;
+        }
+    }
 
     [[nodiscard]] bool has_value() const { return mHasValue; }
 
@@ -36,7 +69,9 @@ public:
         return mError;
     }
 
-    [[nodiscard]] T& value() {
+    [[nodiscard]] value_type& value()
+        requires(!std::is_void_v<T>)
+    {
         if (!mHasValue) {
             throw std::system_error(error());
         }
@@ -44,45 +79,10 @@ public:
     }
     ~Result() {
         if (mHasValue) {
-            mValue.~T();
+            mValue.~value_type();
         } else {
             mError.~ErrorInfo<Err>();
         }
     }
 };
-
-template <typename Err>
-class Result<void, Err> {
-
-    ErrorInfo<Err> mError;
-    bool           mHasValue;
-
-public:
-    [[nodiscard]] Result() : mHasValue(true) {}
-    [[nodiscard]] explicit Result(ErrorInfo<Err> err) : mError(std::move(err)), mHasValue(false) {}
-
-    [[nodiscard]] Result(Result&& other) noexcept {
-        mHasValue = other.mHasValue;
-        if (!mHasValue) {
-            mError = std::move(other.mError);
-        }
-    }
-
-    [[nodiscard]] bool has_value() const { return mHasValue; }
-
-    [[nodiscard]] explicit operator bool() const { return mHasValue; }
-
-    void value() {
-        if (!mHasValue) {
-            throw std::system_error(error());
-        }
-        // No value to return as T is void
-    }
-
-    [[nodiscard]] Err& error() {
-        if (mHasValue) throw std::logic_error("Bad error result access.");
-        return mError;
-    }
-};
-
 }; // namespace Bedrock

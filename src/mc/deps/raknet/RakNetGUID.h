@@ -9,8 +9,6 @@ public:
     uint64 g;
     ushort systemIndex;
 
-    // bool operator!=(RakNetGUID const& a1) const { return !(*this == a1); }
-
 public:
     // NOLINTBEGIN
     // symbol: ?FromString@RakNetGUID@RakNet@@QEAA_NPEBD@Z

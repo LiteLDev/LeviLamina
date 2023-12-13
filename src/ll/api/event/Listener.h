@@ -17,7 +17,7 @@ public:
 
     ~Listener() override = default;
 
-    void call(Event& event) override { callback(dynamic_cast<EventType&>(event)); }
+    void call(Event& event) override { callback(static_cast<EventType&>(event)); }
 
     static std::shared_ptr<Listener> create(Callback const& fn, EventPriority priority = EventPriority::Normal) {
         return std::make_shared<Listener>(fn, priority);

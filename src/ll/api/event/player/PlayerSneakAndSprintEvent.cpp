@@ -54,12 +54,22 @@ LL_TYPED_INSTANCE_HOOK(
 
 static std::unique_ptr<EmitterBase> startSprintEmitterFactory(ListenerBase&);
 class PlayerStartSprintEventEmitter : public Emitter<PlayerSprintingEvent, startSprintEmitterFactory> {
-    ll::memory::HookMultiRegistrar<PlayerActionEventHook> hook;
+    ll::memory::HookSharedRegistrar<PlayerActionEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> stopSprintEmitterFactory(ListenerBase&);
 class PlayerStopSprintEventEmitter : public Emitter<PlayerSprintedEvent, stopSprintEmitterFactory> {
-    ll::memory::HookMultiRegistrar<PlayerActionEventHook> hook;
+    ll::memory::HookSharedRegistrar<PlayerActionEventHook> hook;
+};
+
+static std::unique_ptr<EmitterBase> startSneakEmitterFactory(ListenerBase&);
+class PlayerStartSneakEventEmitter : public Emitter<PlayerSneakingEvent, startSneakEmitterFactory> {
+    ll::memory::HookSharedRegistrar<PlayerActionEventHook> hook;
+};
+
+static std::unique_ptr<EmitterBase> stopSneakEmitterFactory(ListenerBase&);
+class PlayerStopSneakEventEmitter : public Emitter<PlayerSneakedEvent, stopSneakEmitterFactory> {
+    ll::memory::HookSharedRegistrar<PlayerActionEventHook> hook;
 };
 
 std::unique_ptr<EmitterBase> startSprintEmitterFactory(ListenerBase&) {
@@ -69,16 +79,6 @@ std::unique_ptr<EmitterBase> startSprintEmitterFactory(ListenerBase&) {
 std::unique_ptr<EmitterBase> stopSprintEmitterFactory(ListenerBase&) {
     return std::make_unique<PlayerStopSprintEventEmitter>();
 }
-
-static std::unique_ptr<EmitterBase> startSneakEmitterFactory(ListenerBase&);
-class PlayerStartSneakEventEmitter : public Emitter<PlayerSneakingEvent, startSneakEmitterFactory> {
-    ll::memory::HookMultiRegistrar<PlayerActionEventHook> hook;
-};
-
-static std::unique_ptr<EmitterBase> stopSneakEmitterFactory(ListenerBase&);
-class PlayerStopSneakEventEmitter : public Emitter<PlayerSneakedEvent, stopSneakEmitterFactory> {
-    ll::memory::HookMultiRegistrar<PlayerActionEventHook> hook;
-};
 
 std::unique_ptr<EmitterBase> startSneakEmitterFactory(ListenerBase&) {
     return std::make_unique<PlayerStartSneakEventEmitter>();

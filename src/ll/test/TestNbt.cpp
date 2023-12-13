@@ -118,13 +118,19 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
 
     ll::logger.debug("\n{}", nbt.toSnbt() == nbt2.toSnbt());
 
+    ll::logger.debug(
+        "\n{}",
+        *CompoundTag::fromBinaryNBT(nbt.toBinaryNBT()) == *CompoundTag::fromBinaryNBT(nbt2.toBinaryNBT())
+    );
     ll::logger.debug("\n{}", nbt.toBinaryNBT() == nbt2.toBinaryNBT());
+
+    ll::logger.debug(
+        "\n{}",
+        *CompoundTag::fromNetworkNBT(nbt.toNetworkNBT()) == *CompoundTag::fromNetworkNBT(nbt2.toNetworkNBT())
+    );
 
     ll::logger.debug("\n{}", nbt.toNetworkNBT() == nbt2.toNetworkNBT());
 
-    ll::logger.debug("\n{}", nbt.toNetworkNBT() == nbt.toNetworkNBT());
-
-    ll::logger.debug("\n{}", nbt.toBinaryNBT() == nbt.toBinaryNBT());
 
     ll::logger.debug(ColorFormat::AQUA);
     ll::logger.debug(ColorFormat::MINECOIN_GOLD);

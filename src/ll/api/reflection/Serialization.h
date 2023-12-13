@@ -98,6 +98,12 @@ inline J serialize(T const&);
 template <class J, ll::concepts::IsOptional T>
 inline void deserialize(T&, J const&);
 
+template <class J, ll::concepts::IsDispatcher T>
+inline J serialize(T const&);
+
+template <class J, ll::concepts::IsDispatcher T>
+inline void deserialize(T&, J const&);
+
 
 template <class J, Reflectable T>
 inline J serialize(T const& obj)
@@ -292,6 +298,17 @@ inline void deserialize(T& opt, J const& j) {
     } else {
         deserialize<J>(*opt, j);
     }
+}
+
+template <class J, ll::concepts::IsDispatcher T>
+inline J serialize(T const& d) {
+    return serialize<J>(d.storage);
+}
+
+template <class J, ll::concepts::IsDispatcher T>
+inline void deserialize(T& d, J const& j) {
+    deserialize<J>(d.storage, j);
+    d.call();
 }
 
 } // namespace ll::reflection

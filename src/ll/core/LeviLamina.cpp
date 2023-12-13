@@ -165,26 +165,9 @@ void unixSignalHandler(int signum) {
 
 // extern
 extern void registerLeviCommands();
-extern void setupSimpleServerLogger();
-
-namespace bstats {
-extern void registerBStats();
-}
 
 namespace i18n {
 extern std::string globalDefaultLocaleName;
-}
-
-// bugfix
-namespace bugfix {
-extern void enableArrayTagBugFix();
-} // namespace bugfix
-void setupBugFixes() {
-    auto& bugfixSettings = globalConfig.modules.tweak.bugfixes;
-    using namespace bugfix;
-    if (bugfixSettings.fixArrayTagCompareBug) {
-        enableArrayTagBugFix();
-    }
 }
 
 void startCrashLogger() {
@@ -220,7 +203,6 @@ void leviLaminaMain() {
     checkProtocolVersion();
 
     // Fix problems
-    setupBugFixes();
     fixCurrentDirectory();
 
     if (globalConfig.modules.checkRunningBDS) checkOtherBdsInstance();
@@ -245,12 +227,6 @@ void leviLaminaMain() {
     plugin::PluginManager::getInstance().loadAllPlugins();
 
     registerLeviCommands();
-
-    if (globalConfig.modules.simpleServerLogger.enabled) {
-        setupSimpleServerLogger();
-    }
-
-    // bstats::registerBStats();
 }
 
 

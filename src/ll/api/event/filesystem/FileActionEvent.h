@@ -51,7 +51,7 @@ public:
 
     ~Listener() override = default;
 
-    void call(Event& event) override { callback(dynamic_cast<EventType&>(event)); }
+    void call(Event& event) override { callback(static_cast<EventType&>(event)); }
 
     EventId factoryId(EventId) const override { return event::getEventId<EventType>; }
 

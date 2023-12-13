@@ -123,23 +123,38 @@ consteval bool virtualDetector() noexcept {
     return reflection::getRawName<f>().contains("::`vcall'{");
 }
 
-template <class T>
+template <class... Ts>
 struct HookRegistrar {
-    HookRegistrar() { T::hook(); }
-    ~HookRegistrar() { T::unhook(); }
+    HookRegistrar() { (Ts::hook(), ...); }
+    ~HookRegistrar() { (Ts::unhook(), ...); }
+
+    HookRegistrar(HookRegistrar const&)            = delete;
+    HookRegistrar& operator=(HookRegistrar const&) = delete;
+    HookRegistrar(HookRegistrar&&)                 = delete;
+    HookRegistrar& operator=(HookRegistrar&&)      = delete;
 };
 
-template <class T>
-class HookMultiRegistrar {
+template <class... Ts>
+class HookSharedRegistrar {
 public:
     static inline std::atomic_uint count{};
 
-    HookMultiRegistrar() {
-        if (++count == 1) T::hook();
+    HookSharedRegistrar() {
+        if (++count == 1) (Ts::hook(), ...);
     }
-    ~HookMultiRegistrar() {
-        if (--count == 0) T::unhook();
+    ~HookSharedRegistrar() {
+        if (--count == 0) (Ts::unhook(), ...);
     }
+    HookSharedRegistrar(HookSharedRegistrar const&) { ++count; }
+    HookSharedRegistrar& operator=(HookSharedRegistrar const& other) {
+        if (this != std::addressof(other)) {
+            ++count;
+        }
+        return *this;
+    }
+
+    HookSharedRegistrar(HookSharedRegistrar&&)            = default;
+    HookSharedRegistrar& operator=(HookSharedRegistrar&&) = default;
 };
 
 } // namespace ll::memory

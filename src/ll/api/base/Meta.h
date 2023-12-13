@@ -7,6 +7,11 @@
 
 namespace ll::meta {
 
+template <class... Ts>
+struct Overloaded : Ts... {
+    using Ts::operator()...;
+};
+
 template <class... Components, class F>
 constexpr void unrollWithArgs(F&& func) {
     size_t i = 0;

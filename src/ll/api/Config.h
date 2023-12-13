@@ -35,11 +35,11 @@ loadConfig(T& config, std::string_view path, std::function<bool(T&, J&)> updater
     auto content = file_utils::readFile(path);
     if (content && !content.value().empty()) {
 
-        auto data{J::parse(content.value(), nullptr, false, true)};
+        auto data{J::parse(content.value(), nullptr, true, true)};
 
         if (!data.contains("version")) {
             noNeedRewrite = false;
-        } else if (!(int64)data["version"] == config.version) {
+        } else if ((int64)(data["version"]) != config.version) {
             noNeedRewrite = false;
         }
         if (noNeedRewrite || updater(config, data)) {

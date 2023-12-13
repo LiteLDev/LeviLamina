@@ -6,26 +6,23 @@
 #include <vector>
 
 #include "ll/api/base/Macro.h"
+#include "ll/api/reflection/Dispatcher.h"
+#include "ll/core/tweak/SimpleServerLogger.h"
+#include "ll/core/tweak/bugfix/ArrayTagBugFix.h"
 
 /////////////////////// LL Configs ///////////////////////
 
 namespace ll {
 
 struct LeviConfig {
-    int version = 5;
+
+    int version = 6;
 
     std::string language = "system";
     struct {
         bool colorLog = true;
         int  logLevel = 4;
     } logger{};
-
-    struct ExtraMainPluginSettings {
-        bool enabled      = true;
-        bool alwaysLaunch = false;
-    };
-    ExtraMainPluginSettings scriptEngine{};
-    ExtraMainPluginSettings economyCore{};
 
     struct {
         struct {
@@ -45,7 +42,7 @@ struct LeviConfig {
 
         struct {
             struct {
-                bool fixArrayTagCompareBug = true;
+                reflection::Dispatcher<bool, ArrayTagBugFix> fixArrayTagCompareBug = true;
             } bugfixes{};
 
             bool tpdimCommand             = true;
@@ -55,12 +52,7 @@ struct LeviConfig {
 
         bool checkRunningBDS = true;
 
-        struct {
-            bool enabled          = false;
-            bool playerCommand    = true;
-            bool playerPermission = true;
-            bool playerChat       = true;
-        } simpleServerLogger{};
+        reflection::Dispatcher<SimpleServerLoggerConfig, SimpleServerLogger> simpleServerLogger{};
 
         std::unordered_map<std::string, std::string> resourcePackEncryptionMap = {
             {"<UUID>", "<KEY>"}

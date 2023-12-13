@@ -1,9 +1,9 @@
+#include "ll/core/tweak/bugfix/ArrayTagBugFix.h"
+#include "ll/api/memory/Hook.h"
 #include "mc/nbt/ByteArrayTag.h"
 #include "mc/nbt/IntArrayTag.h"
 
-#include "ll/api/memory/Hook.h"
-
-namespace ll::bugfix {
+namespace ll::inline bugfix {
 LL_TYPED_INSTANCE_HOOK(
     ByteArrayTagEqualsHook,
     HookPriority::Normal,
@@ -32,8 +32,16 @@ LL_TYPED_INSTANCE_HOOK(
     }
     return memcmp(data.mBuffer.get(), ((IntArrayTag&)other).data.mBuffer.get(), data.mSize * sizeof(int)) == 0;
 }
-void enableArrayTagBugFix() {
-    static ll::memory::HookRegistrar<ByteArrayTagEqualsHook> r1;
-    static ll::memory::HookRegistrar<IntArrayTagEqualsHook>  r2;
+struct ArrayTagBugFix::Impl {
+    memory::HookRegistrar<ByteArrayTagEqualsHook, IntArrayTagEqualsHook> r;
+};
+void ArrayTagBugFix::call(bool enable) {
+    if (enable) {
+        if (!impl) impl = std::make_unique<Impl>();
+    } else {
+        impl = nullptr;
+    }
 }
-} // namespace ll::bugfix
+ArrayTagBugFix::ArrayTagBugFix()  = default;
+ArrayTagBugFix::~ArrayTagBugFix() = default;
+} // namespace ll::inline bugfix
