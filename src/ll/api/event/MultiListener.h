@@ -3,7 +3,7 @@
 #include <typeindex>
 #include <unordered_map>
 
-#include "ll/api/event/MultiListener.h"
+#include "ll/api/event/Listener.h"
 
 namespace ll::event {
 template <class... Ts>
