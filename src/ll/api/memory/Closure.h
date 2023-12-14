@@ -80,10 +80,10 @@ public:
 
     ~NativeClosure() { detail::releaseNativeClosure(this, closureSize); }
 
-    NativeClosure(NativeClosure const&)                     = delete;
-    NativeClosure(NativeClosure&&) noexcept                 = delete;
-    NativeClosure& operator=(NativeClosure const&) noexcept = delete;
-    NativeClosure& operator=(NativeClosure&&) noexcept      = delete;
+    NativeClosure(NativeClosure&&)                 = delete;
+    NativeClosure(NativeClosure const&)            = delete;
+    NativeClosure& operator=(NativeClosure&&)      = delete;
+    NativeClosure& operator=(NativeClosure const&) = delete;
 };
 template <class Ret, class... Args>
 class FunctionalClosure : public NativeClosure<Ret, Args...> {
