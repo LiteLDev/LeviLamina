@@ -4,7 +4,7 @@
 #include <type_traits>
 
 namespace ll::reflection {
-template <class Storage, std::default_initializable Listener>
+template <class Storage, std::default_initializable Listener, bool CallInit = false>
 class Dispatcher {
 public:
     using storage_type  = Storage;
@@ -18,7 +18,9 @@ public:
     template <class... Args>
     Dispatcher(Args&&... args) : storage(std::forward<Args>(args)...),
                                  listener() {
-        call();
+        if constexpr (CallInit) {
+            call();
+        }
     }
     Dispatcher& operator=(Storage const& other) {
         storage = other;
