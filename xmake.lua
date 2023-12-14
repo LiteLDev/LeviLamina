@@ -64,7 +64,8 @@ target("LeviLamina")
         "_ENABLE_CONSTEXPR_MUTEX_CONSTRUCTOR",
         "NOMINMAX",
         "UNICODE",
-        "WIN32_LEAN_AND_MEAN"
+        "WIN32_LEAN_AND_MEAN",
+        "_HAS_CXX23"
     )
     add_defines("LL_EXPORT")
     add_files(
@@ -106,7 +107,7 @@ target("LeviLamina")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     set_exceptions("none")
     set_kind("shared")
-    set_languages("c++23")
+    set_languages("c++20")
     set_pcxxheader("src/mc/_HeaderOutputPredefine.h")
     set_symbols("debug")
     set_strip("all")
@@ -120,11 +121,6 @@ target("LeviLamina")
     if is_mode("debug") then
         add_defines("LL_DEBUG")
     end
-
-    -- if is_toolchain("clang-cl") then
-        -- set_languages("c++20")
-        -- add_defines("_HAS_CXX23")
-    -- end
 
     if has_config("localbdslibrary") then
         add_packages("localbdslibrary")
