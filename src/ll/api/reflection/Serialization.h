@@ -296,6 +296,9 @@ inline void deserialize(T& opt, J const& j) {
     if (j.is_null()) {
         opt = std::nullopt;
     } else {
+        if (!opt.has_value()) {
+            opt = typename T::value_type{};
+        }
         deserialize<J>(*opt, j);
     }
 }
