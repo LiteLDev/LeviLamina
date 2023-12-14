@@ -10,6 +10,10 @@
 
 namespace ll::inline utils::win_utils {
 
+extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
+
+inline void* getCurrentModuleHandle() { return &__ImageBase; }
+
 LLNDAPI std::string getSystemLocaleName();
 
 LLNDAPI bool isWine();

@@ -8,7 +8,7 @@
 #include "ll/api/Logger.h"
 #include "ll/api/base/UnorderedStringMap.h"
 #include "ll/api/base/Version.h"
-#include "ll/api/memory/Memory.h"
+#include "ll/api/utils/WinUtils.h"
 #include "ll/api/plugin/Manifest.h"
 #include "ll/api/plugin/PluginManager.h"
 
@@ -23,7 +23,7 @@ enum class PluginState : char {
 
 class Plugin : public std::enable_shared_from_this<Plugin> {
 private:
-    using Handle              = memory::Handle;
+    using Handle              = void*;
     using Callback            = std::function<bool(Plugin&)>;
     using SharedData          = UnorderedStringMap<std::any>;
     using ll_plugin_load_t    = bool (*)(Plugin&);
@@ -118,7 +118,7 @@ public:
     // throw exception if not found
     [[maybe_unused]] static Plugin& current() {
         static auto& plugin = []() -> Plugin& {
-            if (auto p = PluginManager::getInstance().findPlugin(memory::getCurrentModuleHandle()).lock()) {
+            if (auto p = PluginManager::getInstance().findPlugin(win_utils::getCurrentModuleHandle()).lock()) {
                 return const_cast<Plugin&>(*p);
             } else {
                 throw std::runtime_error(

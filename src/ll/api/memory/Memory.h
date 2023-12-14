@@ -12,9 +12,6 @@
 namespace ll::memory {
 
 using FuncPtr = void*;
-using Handle  = void*;
-
-extern "C" struct _IMAGE_DOS_HEADER __ImageBase; // NOLINT(bugprone-reserved-identifier)
 
 template <class T>
     requires(sizeof(T) == sizeof(FuncPtr))
@@ -82,8 +79,6 @@ LLNDAPI std::vector<std::string> lookupSymbol(FuncPtr func);
  * @param callback Callback
  */
 LLAPI void modify(void* ptr, size_t len, const std::function<void()>& callback);
-
-inline Handle getCurrentModuleHandle() { return &__ImageBase; }
 
 template <class T>
 inline void modify(T& ref, std::function<void(std::remove_cvref_t<T>&)> const& f) {

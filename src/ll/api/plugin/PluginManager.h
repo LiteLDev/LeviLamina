@@ -13,7 +13,7 @@ class Plugin;
 
 class PluginManager {
 private:
-    using Handle = memory::Handle;
+    using Handle = void*;
 
     struct Impl;
     std::unique_ptr<Impl> mImpl;

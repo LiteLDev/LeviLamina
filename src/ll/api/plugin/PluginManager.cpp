@@ -20,7 +20,7 @@ fs::path pluginDir = u8"plugins";
 
 namespace ll::plugin {
 
-auto ll = Plugin::create(Manifest{"LeviLamina.dll", "LeviLamina"}, memory::getCurrentModuleHandle());
+auto ll = Plugin::create(Manifest{"LeviLamina.dll", "LeviLamina"}, win_utils::getCurrentModuleHandle());
 
 struct PluginManager::Impl {
     std::recursive_mutex                              mutex;
