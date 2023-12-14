@@ -1,11 +1,5 @@
 on:
   push:
-    paths:
-      - .github/workflows/build_docs.yml
-      - docs/**
-      - src/**/*.h
-      - mkdocs.yml
-      - requirements.txt
   workflow_dispatch:
 
 jobs:
