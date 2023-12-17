@@ -21,7 +21,7 @@
 namespace ll::reflection {
 template <class T>
 inline constexpr bool is_reflectable_v =
-    std::is_aggregate_v<std::remove_cvref_t<T>> && !requires { typename T::size_type; };
+    std::is_aggregate_v<std::remove_cvref_t<T>> && !requires { typename std::remove_cvref_t<T>::size_type; };
 
 template <class T>
 concept Reflectable = is_reflectable_v<T>;
@@ -30,8 +30,8 @@ template <Reflectable T, class F>
 constexpr void forEachMember(T&& value, F&& func) {
     using Type                            = std::remove_cvref_t<T>;
     static constexpr auto const namearray = boost::pfr::names_as_array<Type>();
-    boost::pfr::for_each_field(std::forward<T>(value), [&](auto&& field, std::size_t idx) {
-        std::forward<F>(func)(namearray[idx], std::forward<decltype(field)>(field));
+    boost::pfr::for_each_field(std::forward<T>(value), [func = std::forward<F>(func)](auto&& field, std::size_t idx) {
+        func(namearray[idx], std::forward<decltype(field)>(field));
     });
 }
 } // namespace ll::reflection

@@ -1,4 +1,5 @@
 #include "ll/api/plugin/PluginManager.h"
+#include "ll/api/Config.h"
 
 #include <mutex>
 

@@ -4,7 +4,6 @@
 #include <string>
 #include <unordered_map>
 
-#include "ll/api/Config.h"
 #include "ll/api/plugin/Manifest.h"
 
 namespace ll::plugin {

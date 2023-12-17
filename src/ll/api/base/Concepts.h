@@ -40,12 +40,12 @@ concept Formattable =
 
 template <class T>
 concept IsExpected = requires(T e) {
-    typename T::value_type;
-    typename T::error_type;
-    typename T::unexpected_type;
+    typename std::remove_cvref_t<T>::value_type;
+    typename std::remove_cvref_t<T>::error_type;
+    typename std::remove_cvref_t<T>::unexpected_type;
     e.has_value();
     e.error();
-    requires std::is_same_v<void, typename T::value_type> || requires(T e) { e.value(); };
+    requires std::is_same_v<void, typename std::remove_cvref_t<T>::value_type> || requires(T e) { e.value(); };
 };
 
 template <class T>
@@ -53,25 +53,25 @@ concept IsOptional = !IsExpected<T> && requires(T o) {
     o.value();
     o.has_value();
     o.operator*();
-    typename T::value_type;
+    typename std::remove_cvref_t<T>::value_type;
 };
 
 template <class T>
 concept Rangeable = requires(T t) {
-    { t.begin() } -> std::same_as<typename T::iterator>;
-    { t.end() } -> std::same_as<typename T::iterator>;
+    { t.begin() } -> std::same_as<typename std::remove_cvref_t<T>::iterator>;
+    { t.end() } -> std::same_as<typename std::remove_cvref_t<T>::iterator>;
 };
 
 template <class T>
 concept Associative = Rangeable<T> && requires {
-    typename T::key_type;
-    typename T::mapped_type;
+    typename std::remove_cvref_t<T>::key_type;
+    typename std::remove_cvref_t<T>::mapped_type;
 };
 
 template <class T>
 concept IsDispatcher = requires(T t) {
-    typename T::storage_type;
-    typename T::listener_type;
+    typename std::remove_cvref_t<T>::storage_type;
+    typename std::remove_cvref_t<T>::listener_type;
     t.storage;
     t.call();
 };
@@ -83,7 +83,7 @@ concept TupleLike = !Rangeable<T> && requires(T t) {
 };
 
 template <class T>
-concept ArrayLike = Rangeable<T> && !requires { typename T::mapped_type; };
+concept ArrayLike = Rangeable<T> && !requires { typename std::remove_cvref_t<T>::mapped_type; };
 
 template <class T, template <class...> class Z>
 inline constexpr bool is_specialization_of_v = false;

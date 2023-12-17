@@ -80,6 +80,14 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     // ll::config::saveConfig(helloReflection, "plugins/Test/config/testconfig.json");
 
+    auto list = ll::string_utils::splitByPattern("structure.trs", ".");
+
+    ll::reflection::visit(std::span{list}, helloReflection, [](auto&& a) {
+        if constexpr (std::floating_point<std::remove_cvref_t<decltype(a)>>) {
+            ll::logger.debug("ll::reflection::visit {} {}", typeid(decltype(a)).name(), a);
+        }
+    });
+
     ll::logger.debug(
         "reflection NBT: {}",
         ll::reflection::serialize<CompoundTagVariant>(helloReflection).toSnbt(SnbtFormat::PrettyConsolePrint)
