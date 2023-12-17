@@ -8,9 +8,9 @@
 #include "ll/api/Logger.h"
 #include "ll/api/base/UnorderedStringMap.h"
 #include "ll/api/base/Version.h"
-#include "ll/api/utils/WinUtils.h"
 #include "ll/api/plugin/Manifest.h"
 #include "ll/api/plugin/PluginManager.h"
+#include "ll/api/utils/WinUtils.h"
 
 #include "mc/common/wrapper/optional_ref.h"
 

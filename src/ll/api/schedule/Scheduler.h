@@ -116,10 +116,10 @@ private:
     }
 
 public:
-    Scheduler(Scheduler const&)                = delete;
-    Scheduler(Scheduler&&) noexcept            = delete;
-    Scheduler& operator=(Scheduler const&)     = delete;
-    Scheduler& operator=(Scheduler&&) noexcept = delete;
+    Scheduler(Scheduler&&)                 = delete;
+    Scheduler(Scheduler const&)            = delete;
+    Scheduler& operator=(Scheduler&&)      = delete;
+    Scheduler& operator=(Scheduler const&) = delete;
 
     template <class... Args>
     explicit Scheduler(Args&&... args) : done(false),

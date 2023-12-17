@@ -128,33 +128,33 @@ struct HookRegistrar {
     HookRegistrar() { (Ts::hook(), ...); }
     ~HookRegistrar() { (Ts::unhook(), ...); }
 
-    HookRegistrar(HookRegistrar const&)            = delete;
-    HookRegistrar& operator=(HookRegistrar const&) = delete;
-    HookRegistrar(HookRegistrar&&)                 = delete;
-    HookRegistrar& operator=(HookRegistrar&&)      = delete;
+    HookRegistrar(HookRegistrar const&)                = delete;
+    HookRegistrar& operator=(HookRegistrar const&)     = delete;
+    HookRegistrar(HookRegistrar&&) noexcept            = default;
+    HookRegistrar& operator=(HookRegistrar&&) noexcept = default;
 };
 
 template <class... Ts>
-class HookSharedRegistrar {
+class SharedHookRegistrar {
 public:
     static inline std::atomic_uint count{};
 
-    HookSharedRegistrar() {
+    SharedHookRegistrar() {
         if (++count == 1) (Ts::hook(), ...);
     }
-    ~HookSharedRegistrar() {
+    ~SharedHookRegistrar() {
         if (--count == 0) (Ts::unhook(), ...);
     }
-    HookSharedRegistrar(HookSharedRegistrar const&) { ++count; }
-    HookSharedRegistrar& operator=(HookSharedRegistrar const& other) {
+    SharedHookRegistrar(SharedHookRegistrar const&) { ++count; }
+    SharedHookRegistrar& operator=(SharedHookRegistrar const& other) {
         if (this != std::addressof(other)) {
             ++count;
         }
         return *this;
     }
 
-    HookSharedRegistrar(HookSharedRegistrar&&)            = default;
-    HookSharedRegistrar& operator=(HookSharedRegistrar&&) = default;
+    SharedHookRegistrar(SharedHookRegistrar&&) noexcept            = default;
+    SharedHookRegistrar& operator=(SharedHookRegistrar&&) noexcept = default;
 };
 
 } // namespace ll::memory

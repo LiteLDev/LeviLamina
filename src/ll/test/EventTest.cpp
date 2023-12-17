@@ -31,6 +31,8 @@
 
 #include "ll/api/base/Hash.h"
 
+class myTypeList2;
+
 using namespace ll::hash;
 using namespace ll::hash_literals;
 
@@ -206,4 +208,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
             .debug("Player {} MultiListener of {}", ev.player().getRealName(), ll::reflection::type_raw_name_v<decltype(ev)>);
     });
     bus.addListener(mul);
+
+    ll::meta::DynamicTypeList::push_back<myTypeList2, float>();
+    ll::logger.debug("{}", typeid(ll::meta::DynamicTypeList::value<myTypeList2>()).name());
 }

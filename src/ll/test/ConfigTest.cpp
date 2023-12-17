@@ -67,6 +67,9 @@ public:
 // const&, CommandOutput&) {
 // }
 
+class myTypeList1;
+class myTypeList2;
+
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ConfigTest,
     HookPriority::Normal,
@@ -75,6 +78,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void
 ) {
     origin();
+
+    auto lock = ll::Logger::lock();
 
     auto helloReflection = TestClass<int>{};
 
@@ -116,9 +121,28 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         ll::error_info::printCurrentException();
     }
 
-    // ll::logger.debug("{} for load config", ll::config::loadConfig(helloReflection, "plugins/Test/testconfig.json"));
-    // ll::logger.debug("\n{}", ll::reflection::serialize<nlohmann::ordered_json>(helloReflection).dump(4));
+    ll::logger.debug("789\xDB\xFE");
+    ll::logger.debug("789\xDB\xFE");
 
-    ll::logger.debug("789\xDB\xFE");
-    ll::logger.debug("789\xDB\xFE");
+    ll::meta::DynamicTypeList::push_back<myTypeList1, int>();
+    ll::meta::DynamicTypeList::push_back<myTypeList1, float>();
+    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(ll::meta::DynamicTypeList::value<myTypeList1>())>);
+    ll::meta::DynamicTypeList::push_back<myTypeList2, bool>();
+    ll::meta::DynamicTypeList::push_back<myTypeList2, long>();
+    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(ll::meta::DynamicTypeList::value<myTypeList2>())>);
+
+    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(ll::meta::DynamicTypeList::value<myTypeList2>())>);
+    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(ll::meta::DynamicTypeList::value<myTypeList1>())>);
+
+    ll::meta::DynamicTypeList::assign<myTypeList1, ll::meta::TypeList<int, bool, long, myTypeList2>>();
+    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(ll::meta::DynamicTypeList::value<myTypeList1>())>);
+
+    ll::meta::DynamicTypeList::wrap<myTypeList1, std::optional>();
+    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(ll::meta::DynamicTypeList::value<myTypeList1>())>);
+
+    ll::meta::DynamicTypeList::assign<myTypeList1, ll::meta::TypeList<int, bool, long>>();
+    ll::meta::DynamicTypeList::wrap<myTypeList1, std::add_const_t>();
+    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(ll::meta::DynamicTypeList::value<myTypeList1>())>);
+    ll::meta::DynamicTypeList::map<myTypeList1, std::add_lvalue_reference>();
+    ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(ll::meta::DynamicTypeList::value<myTypeList1>())>);
 }

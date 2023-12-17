@@ -54,10 +54,10 @@ public:
     constexpr explicit operator bool() { return value != nullptr; }
     constexpr bool     has_value() { return value != nullptr; }
 
-    GlobalService(GlobalService const&)                     = delete;
-    GlobalService(GlobalService&&) noexcept                 = delete;
-    GlobalService& operator=(GlobalService const&) noexcept = delete;
-    GlobalService& operator=(GlobalService&&) noexcept      = delete;
+    GlobalService(GlobalService&&)                 = delete;
+    GlobalService(GlobalService const&)            = delete;
+    GlobalService& operator=(GlobalService&&)      = delete;
+    GlobalService& operator=(GlobalService const&) = delete;
 };
 #ifdef __clang__
 template <IsGlobalService T>

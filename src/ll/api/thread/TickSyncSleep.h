@@ -29,10 +29,10 @@ class TickSyncSleep {
     size_t                  id;
 
 public:
-    TickSyncSleep(TickSyncSleep const&)                     = delete;
-    TickSyncSleep(TickSyncSleep&&) noexcept                 = delete;
-    TickSyncSleep& operator=(TickSyncSleep const&) noexcept = delete;
-    TickSyncSleep& operator=(TickSyncSleep&&) noexcept      = delete;
+    TickSyncSleep(TickSyncSleep&&)                 = delete;
+    TickSyncSleep(TickSyncSleep const&)            = delete;
+    TickSyncSleep& operator=(TickSyncSleep&&)      = delete;
+    TickSyncSleep& operator=(TickSyncSleep const&) = delete;
 
     using ClockType = Clock;
 

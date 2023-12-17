@@ -23,13 +23,13 @@ public:
     CommandOutput();
 
     template <ll::concepts::IsString S, class First, typename... Args>
-        requires(!std::is_same_v<std::decay_t<First>, std::vector<class CommandOutputParameter>>)
+        requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
     inline void success(S const& fmt, First&& arg, Args&&... args) {
         success(fmt::format(fmt::runtime(fmt), std::forward<First>(arg), std::forward<Args>(args)...));
     }
 
     template <ll::concepts::IsString S, class First, typename... Args>
-        requires(!std::is_same_v<std::decay_t<First>, std::vector<class CommandOutputParameter>>)
+        requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
     inline void error(S const& fmt, First&& arg, Args&&... args) {
         error(fmt::format(fmt::runtime(fmt), std::forward<First>(arg), std::forward<Args>(args)...));
     }

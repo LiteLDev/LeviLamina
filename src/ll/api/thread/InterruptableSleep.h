@@ -11,10 +11,10 @@ private:
     std::condition_variable cv;
 
 public:
-    InterruptableSleep(InterruptableSleep const&)                     = delete;
-    InterruptableSleep(InterruptableSleep&&) noexcept                 = delete;
-    InterruptableSleep& operator=(InterruptableSleep const&) noexcept = delete;
-    InterruptableSleep& operator=(InterruptableSleep&&) noexcept      = delete;
+    InterruptableSleep(InterruptableSleep&&)                 = delete;
+    InterruptableSleep(InterruptableSleep const&)            = delete;
+    InterruptableSleep& operator=(InterruptableSleep&&)      = delete;
+    InterruptableSleep& operator=(InterruptableSleep const&) = delete;
 
     InterruptableSleep() = default;
 
