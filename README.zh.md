@@ -1,14 +1,11 @@
 # LeviLamina
 
-> [!IMPORTANT]
-> Looking for LiteLoaderBDS, the predecessor of LeviLamina? Go to <https://github.com/LiteLDev/LiteLoaderBDSv2>.
-
 ![LeviLamina](https://socialify.git.ci/LiteLDev/LeviLamina/image?description=1&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLeviLamina%2FHEAD%2Fdocs%2Fimg%2Flogo.svg&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
 [![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)](README.md)
 ![中文](https://img.shields.io/badge/简体中文-informational?style=for-the-badge)
 
-轻量级、模块化和多功能的Minecraft Bedrock Server BDS插件加载器，曾被称为LiteLoaderBDS
+轻量级、模块化和多功能的Minecraft Bedrock Server BDS插件加载器。
 
 LeviLamina是一个非官方的插件加载器，旨在为Minecraft Bedrock Server BDS提供必不可少的API支持。它拥有全面的API，一系列的实用接口，一个强大的事件系统，以及对基本接口的全面支持。LeviLamina提供了一个广泛的API，一个强大的事件系统，以及丰富的封装开发基础设施接口，为增强Bedrock Edition BDS的附加游戏功能和功能提供了坚实的基础。通过利用插件，扩展BDS功能的过程变得轻而易举，具有用户友好的开发过程和灵活的方法。
 
