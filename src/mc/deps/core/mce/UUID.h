@@ -9,11 +9,9 @@ class UUID {
 public:
     uint64 a, b;
 
-    UUID(uint64 a, uint64 b) : a(a), b(b) {}
+    [[nodiscard]] constexpr UUID(uint64 a = 0, uint64 b = 0) : a(a), b(b) {}
 
-    UUID() : UUID(EMPTY) {}
-
-    UUID(std::string const& str) : UUID(fromString(str)) {} // NOLINT
+    [[nodiscard]] inline UUID(std::string const& str) : UUID(fromString(str)) {} // NOLINT
 
     LLNDAPI static mce::UUID random();
 
@@ -21,9 +19,9 @@ public:
 
     [[nodiscard]] inline explicit operator std::string() const { return asString(); }
 
-    bool operator==(UUID const& other) const { return (a == other.a) && (b == other.b); }
+    [[nodiscard]] constexpr bool operator==(UUID const& other) const { return (a == other.a) && (b == other.b); }
 
-    std::strong_ordering operator<=>(UUID const& other) const {
+    [[nodiscard]] constexpr std::strong_ordering operator<=>(UUID const& other) const {
         if (a != other.a) {
             return a <=> other.a;
         }
@@ -54,7 +52,6 @@ public:
 };
 
 }; // namespace mce
-
 
 namespace std {
 template <>
