@@ -19,7 +19,7 @@ inline J serialize(T const&)
 
 template <class J, concepts::Associative T>
 inline J serialize(T const&)
-    requires(std::is_convertible_v<typename T::key_type, std::string_view> && !std::convertible_to<T, J>);
+    requires(concepts::IsString<typename T::key_type> && !std::convertible_to<T, J>);
 
 
 template <class J, concepts::TupleLike T>
@@ -78,7 +78,7 @@ inline J serialize(T const& obj)
 
 template <class J, concepts::Associative T>
 inline J serialize(T const& map)
-    requires(std::is_convertible_v<typename T::key_type, std::string_view> && !std::convertible_to<T, J>)
+    requires(concepts::IsString<typename T::key_type> && !std::convertible_to<T, J>)
 {
     J res;
     for (auto& [k, v] : map) {

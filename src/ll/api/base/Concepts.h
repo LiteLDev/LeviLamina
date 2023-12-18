@@ -25,8 +25,8 @@ struct is_all_same : std::bool_constant<is_all_same_v<T, Ts...>> {};
 template <class T, class... Ts>
 concept IsAllSame = is_all_same_v<T, Ts...>;
 
-template <class T, class... Ts>
-static constexpr bool is_string_v = std::convertible_to<T, std::string_view>;
+template <class T>
+static constexpr bool is_string_v = std::is_constructible_v<std::string, T>;
 
 template <class T>
 concept IsString = is_string_v<T>;
@@ -111,7 +111,7 @@ inline constexpr bool always_false = false;
 
 template <class T>
 concept Stringable = requires(T t) {
-    { t.toString() } -> std::convertible_to<std::string>;
+    { t.toString() } -> IsString;
 };
 
 } // namespace ll::concepts

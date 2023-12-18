@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ll/api/base/Hash.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace mce {
@@ -8,11 +9,26 @@ class UUID {
 public:
     uint64 a, b;
 
-    UUID(uint64 a = 0, uint64 b = 0) : a(a), b(b) {}
+    UUID(uint64 a, uint64 b) : a(a), b(b) {}
+
+    UUID() : UUID(EMPTY) {}
+
+    UUID(std::string const& str) : UUID(fromString(str)) {} // NOLINT
 
     LLNDAPI static mce::UUID random();
 
     [[nodiscard]] inline explicit operator bool() const { return !isEmpty(); }
+
+    [[nodiscard]] inline explicit operator std::string() const { return asString(); }
+
+    bool operator==(UUID const& other) const { return (a == other.a) && (b == other.b); }
+
+    std::strong_ordering operator<=>(UUID const& other) const {
+        if (a != other.a) {
+            return a <=> other.a;
+        }
+        return b <=> other.b;
+    }
 
 public:
     // NOLINTBEGIN
@@ -38,3 +54,15 @@ public:
 };
 
 }; // namespace mce
+
+
+namespace std {
+template <>
+struct hash<mce::UUID> {
+    size_t operator()(mce::UUID id) const noexcept {
+        size_t hash = id.a;
+        ll::hash::hashCombine(id.b, hash);
+        return hash;
+    }
+};
+} // namespace std

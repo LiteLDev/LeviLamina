@@ -23,6 +23,8 @@
 #include "mc/server/ServerLevel.h"
 #include "mc/server/commands/standard/FillCommand.h"
 
+#include "mc/deps/core/mce/UUID.h"
+
 template <class T>
 
 class TestClass {
@@ -51,6 +53,11 @@ public:
         {"key1", {}                 },
         {"key2", {"a new thing", 42}},
         {"key3", {}                 },
+    };
+    std::map<mce::UUID, int> bmap = {
+        {{0, 1}, 4454556},
+        {{2, 3}, 4366},
+        {{4, 5}, -63556654},
     };
     std::tuple<int, bool, float>                       tuple;
     std::pair<std::string_view, MyPair>                pair;

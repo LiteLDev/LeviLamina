@@ -14,21 +14,18 @@ inline void deserialize(T&, J const&)
 
 template <class J, class T>
 inline void deserialize(T&, J const&)
-    requires(
-        !std::is_enum_v<T>
-        && (std::is_convertible_v<T, std::string_view> || std::is_floating_point_v<T> || std::is_integral_v<T>)
-    );
+    requires(!std::is_enum_v<T> && (concepts::IsString<T> || std::is_floating_point_v<T> || std::is_integral_v<T>));
 
 template <class J, concepts::Associative T>
 inline void deserialize(T&, J const&)
-    requires(std::is_convertible_v<typename T::key_type, std::string_view>);
+    requires(concepts::IsString<typename T::key_type>);
 
 template <class J, concepts::TupleLike T>
 inline void deserialize(T&, J const&);
 
 template <class J, concepts::ArrayLike T>
 inline void deserialize(T&, J const&)
-    requires(!std::is_convertible_v<T, std::string_view>);
+    requires(!concepts::IsString<T>);
 
 template <class J, concepts::IsOptional T>
 inline void deserialize(T&, J const&);
@@ -79,12 +76,9 @@ inline void deserialize(T& e, J const& j)
 
 template <class J, class T>
 inline void deserialize(T& obj, J const& j) // TODO: improve this
-    requires(
-        !std::is_enum_v<T>
-        && (std::is_convertible_v<T, std::string_view> || std::is_floating_point_v<T> || std::is_integral_v<T>)
-    )
+    requires(!std::is_enum_v<T> && (concepts::IsString<T> || std::is_floating_point_v<T> || std::is_integral_v<T>))
 {
-    if constexpr (std::is_convertible_v<T, std::string_view>) {
+    if constexpr (concepts::IsString<T>) {
         if (!j.is_string()) throw std::runtime_error("field must be a string");
     } else {
         if (!j.is_number() && !j.is_boolean()) throw std::runtime_error("field must be a number");
@@ -94,7 +88,7 @@ inline void deserialize(T& obj, J const& j) // TODO: improve this
 
 template <class J, concepts::Associative T>
 inline void deserialize(T& map, J const& j)
-    requires(std::is_convertible_v<typename T::key_type, std::string_view>)
+    requires(concepts::IsString<typename T::key_type>)
 {
     if (!j.is_object()) throw std::runtime_error("field must be an object");
     map.clear();
@@ -112,7 +106,7 @@ inline void deserialize(T& tuple, J const& j) {
 
 template <class J, concepts::ArrayLike T>
 inline void deserialize(T& arr, J const& j)
-    requires(!std::is_convertible_v<T, std::string_view>)
+    requires(!concepts::IsString<T>)
 {
     if (!j.is_array()) throw std::runtime_error("field must be an array");
 
