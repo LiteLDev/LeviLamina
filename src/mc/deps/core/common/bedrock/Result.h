@@ -16,9 +16,9 @@ class Result {
 
 public:
     template <class... Args>
-    [[nodiscard]] explicit Result(Args&&... args) : mValue(std::forward<Args>(args)...),
-                                                    mHasValue(true) {}
-    [[nodiscard]] explicit Result(ErrorInfo<Err> err) : mError(std::move(err)), mHasValue(false) {}
+    [[nodiscard]] Result(Args&&... args) : mValue(std::forward<Args>(args)...),
+                                           mHasValue(true) {}
+    [[nodiscard]] Result(ErrorInfo<Err> err) : mError(std::move(err)), mHasValue(false) {}
 
     [[nodiscard]] Result(Result&& other) noexcept {
         mHasValue = other.mHasValue;

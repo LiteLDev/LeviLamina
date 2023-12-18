@@ -1,6 +1,8 @@
 #pragma once
 
+#ifdef __clang__
 #pragma clang diagnostic ignored "-Wignored-qualifiers"
+#endif
 
 #pragma warning(disable : 4099) // for MOJANG : type name first seen using 'class' now seen using 'struct'
 #pragma warning(disable : 4201) // for MOJANG : nonstandard extension used : nameless struct/union

@@ -125,6 +125,7 @@ public:
         warn.logger  = this;
         error.logger = this;
         fatal.logger = this;
+        return *this;
     }
 
     LLNDAPI explicit Logger(std::string_view title = __builtin_FUNCTION(), bool ignoreConfig = false);
@@ -132,9 +133,9 @@ public:
     ~Logger() { resetFile(); }
 
     LLAPI void resetFile();
-    LLAPI bool setFile(std::string const& logFile, bool appendMode = true);
+    LLAPI bool setFile(std::filesystem::path logFile, bool appendMode = true);
 
-    LLAPI static bool setDefaultFile(std::string const& logFile, bool appendMode);
+    LLAPI static bool setDefaultFile(std::filesystem::path logFile, bool appendMode);
 
     void setPlayerOutputFunc(PlayerOutputFunc const& func) {
         debug.setPlayerOutputFunc(func);

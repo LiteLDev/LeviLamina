@@ -1,5 +1,3 @@
-#pragma once
-
 #include "ll/api/event/filesystem/FileActionEvent.h"
 
 #include <array>
@@ -87,7 +85,7 @@ private:
             try {
                 std::vector<BYTE> buffer(1024 * 256);
                 DWORD             bytes_returned = 0;
-                OVERLAPPED        overlapped_buffer{0};
+                OVERLAPPED        overlapped_buffer{};
 
                 overlapped_buffer.hEvent = CreateEventW(nullptr, TRUE, FALSE, nullptr);
                 if (!overlapped_buffer.hEvent) {

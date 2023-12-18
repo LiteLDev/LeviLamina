@@ -55,9 +55,9 @@ public:
 class SingleFileI18N : public I18N {
 
 public:
-    std::string mFilePath;
+    std::filesystem::path mFilePath;
 
-    LLAPI void load(std::string const& fileName);
+    LLAPI void load(std::filesystem::path const& filePath);
     LLAPI void save();
 
     SingleFileI18N() = default;
@@ -69,11 +69,10 @@ public:
      * @param defaultLangData  The default translation data
      */
     explicit SingleFileI18N(
-        std::string const& filePath,
-        std::string const& defaultLocaleName = "",
-        LangData const&    defaultLangData   = {}
-    )
-    : mFilePath(filePath) {
+        std::filesystem::path const& filePath,
+        std::string const&           defaultLocaleName = "",
+        LangData const&              defaultLangData   = {}
+    ) {
         this->mDefaultLangData   = defaultLangData;
         this->mDefaultLocaleName = defaultLocaleName;
         load(filePath);
@@ -88,9 +87,9 @@ public:
 class MultiFileI18N : public I18N {
 
 public:
-    std::string mDirPath;
+    std::filesystem::path mDirPath;
 
-    LLAPI void load(std::string const& dirPath);
+    LLAPI void load(std::filesystem::path const& dirPath);
     LLAPI void save(bool nested = false);
 
     MultiFileI18N() = default;
@@ -102,11 +101,10 @@ public:
      * @param defaultLangData  The default translation data
      */
     explicit MultiFileI18N(
-        std::string const& dirPath,
-        std::string const& defaultLocaleName = "",
-        LangData const&    defaultLangData   = {}
-    )
-    : mDirPath(dirPath) {
+        std::filesystem::path const& dirPath,
+        std::string const&           defaultLocaleName = "",
+        LangData const&              defaultLangData   = {}
+    ) {
         this->mDefaultLangData   = defaultLangData;
         this->mDefaultLocaleName = defaultLocaleName;
         load(dirPath);
@@ -123,7 +121,7 @@ public:
     return instance;
 }
 
-inline void load(std::string const& path) {
+inline void load(std::filesystem::path const& path) {
     try {
         if (std::filesystem::is_directory(path)) {
             getInstance() = std::make_unique<MultiFileI18N>(path);

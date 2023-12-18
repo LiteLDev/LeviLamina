@@ -96,7 +96,7 @@ static void dumpSystemInfo() {
     crashInfo.logger.info("System Info:");
     crashInfo.logger.info("  |OS Version: {}", []() -> std::string {
         RTL_OSVERSIONINFOW osVersionInfoW = [] {
-            RTL_OSVERSIONINFOW osVersionInfoW = {0};
+            RTL_OSVERSIONINFOW osVersionInfoW{};
             typedef uint(WINAPI * RtlGetVersionPtr)(PRTL_OSVERSIONINFOW);
             HMODULE hMod = ::GetModuleHandleW(L"ntdll.dll");
             if (hMod) {

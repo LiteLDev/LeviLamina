@@ -2,7 +2,7 @@
 #include "ll/api/Logger.h"
 #include "ll/api/base/Hash.h"
 #include "ll/api/command/DynamicCommand.h"
-#include "ll/core/Levilamina.h"
+#include "ll/core/LeviLamina.h"
 #include "mc/server/commands/ServerCommands.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/level/storage/LevelData.h"

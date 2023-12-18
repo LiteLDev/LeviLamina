@@ -15,7 +15,7 @@
 namespace ll::thread {
 class TickSyncTaskPool;
 namespace detail {
-class TickSyncTaskPoolWorker;
+struct TickSyncTaskPoolWorker;
 LLETAPI std::mutex poolListMutex;
 LLETAPI std::atomic_size_t poolListSize;
 LLETAPI std::vector<std::reference_wrapper<TickSyncTaskPool>> poolList;

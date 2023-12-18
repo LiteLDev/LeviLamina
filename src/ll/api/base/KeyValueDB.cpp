@@ -18,13 +18,11 @@ public:
     leveldb::ReadOptions         readOptions;
     leveldb::WriteOptions        writeOptions;
     leveldb::Options             options;
-    std::string                  dbPath;
 
     KeyValueDBImpl(std::string const& path, bool createIfMiss, bool bloomFilterBit) {
         readOptions               = leveldb::ReadOptions();
         writeOptions              = leveldb::WriteOptions();
         options                   = leveldb::Options();
-        dbPath                    = path;
         options.create_if_missing = createIfMiss;
         if (bloomFilterBit) {
             options.filter_policy = leveldb::NewBloomFilterPolicy(bloomFilterBit);
@@ -80,10 +78,10 @@ private:
     KeyValueDBImpl() = default;
 };
 
-KeyValueDB::KeyValueDB(std::string const& path, bool createIfMiss, int bloomFilterBit) {
+KeyValueDB::KeyValueDB(std::filesystem::path const& path, bool createIfMiss, int bloomFilterBit) {
     std::error_code ec;
-    std::filesystem::create_directories(file_utils::u8path(path), ec);
-    impl = std::make_unique<KeyValueDBImpl>(path, createIfMiss, bloomFilterBit);
+    std::filesystem::create_directories(path, ec);
+    impl = std::make_unique<KeyValueDBImpl>(string_utils::wstr2str(path.native()), createIfMiss, bloomFilterBit);
 }
 
 KeyValueDB::~KeyValueDB() = default;

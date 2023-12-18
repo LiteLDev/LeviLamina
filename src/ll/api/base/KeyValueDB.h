@@ -5,6 +5,7 @@
 #include <optional>
 #include <string_view>
 #include <unordered_map>
+#include <filesystem>
 
 #include "ll/api/base/Macro.h"
 
@@ -16,7 +17,7 @@ private:
     std::unique_ptr<KeyValueDBImpl> impl;
 
 public:
-    LLNDAPI KeyValueDB(std::string const& path, bool createIfMiss = true, int bloomFilterBit = 0);
+    LLNDAPI KeyValueDB(std::filesystem::path const& path, bool createIfMiss = true, int bloomFilterBit = 0);
 
     LLAPI ~KeyValueDB();
 

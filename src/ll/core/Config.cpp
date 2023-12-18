@@ -6,7 +6,7 @@
 namespace ll {
 using namespace i18n_literals;
 
-static constexpr std::string_view leviConfigPath = R"(plugins\LeviLamina\config\config.json)";
+static constexpr std::u8string_view leviConfigPath = u8R"(plugins\LeviLamina\config\config.json)";
 
 struct LeviConfig globalConfig;
 

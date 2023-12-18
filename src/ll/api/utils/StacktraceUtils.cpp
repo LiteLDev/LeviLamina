@@ -171,8 +171,8 @@ SymbolLoader::SymbolLoader() : handle(GetCurrentProcess()) {
     options       |= SYMOPT_LOAD_LINES | SYMOPT_EXACT_SYMBOLS;
     SymSetOptions(options);
 }
-SymbolLoader::SymbolLoader(std::string const& path) : handle(GetCurrentProcess()) {
-    if (!SymInitializeW(handle, string_utils::str2wstr(path).c_str(), true)) {
+SymbolLoader::SymbolLoader(std::string const& extra) : handle(GetCurrentProcess()) {
+    if (!SymInitializeW(handle, string_utils::str2wstr(extra).c_str(), true)) {
         throw error_info::getWinLastError();
     }
     DWORD options  = SymGetOptions();

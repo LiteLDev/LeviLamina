@@ -4,6 +4,11 @@
 
 namespace ll::reflection {
 
+template <class T>
+inline std::string_view getDynamicRawName(T const& value) noexcept {
+    return typeid(value).name();
+}
+
 template <auto f>
 consteval std::string_view getRawName() noexcept {
     constexpr std::string_view n{__FUNCSIG__};

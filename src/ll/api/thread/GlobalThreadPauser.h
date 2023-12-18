@@ -10,6 +10,6 @@ class GlobalThreadPauser {
 
 public:
     LLNDAPI GlobalThreadPauser();
-    LLNDAPI ~GlobalThreadPauser();
+    LLAPI ~GlobalThreadPauser();
 };
 } // namespace ll::thread

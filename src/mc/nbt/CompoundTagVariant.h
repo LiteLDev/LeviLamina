@@ -80,7 +80,7 @@ public:
             std::unreachable();
         }
     }
-    [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag> const& tag) : CompoundTagVariant(std::move(tag->copy())) {}
+    [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag> const& tag) : CompoundTagVariant(tag->copy()) {}
     template <std::derived_from<Tag> T>
     [[nodiscard]] constexpr CompoundTagVariant(T tag) : mTagStorage(std::move(tag)) {}
     template <std::integral T>

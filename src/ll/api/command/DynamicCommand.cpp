@@ -4,7 +4,7 @@
 #include "ll/api/base/ErrorInfo.h"
 #include "ll/api/memory/Closure.h"
 #include "ll/core/Config.h"
-#include "ll/core/Levilamina.h"
+#include "ll/core/LeviLamina.h"
 
 #include "mc/network/packet/AvailableCommandsPacket.h"
 #include "mc/server/LoopbackPacketSender.h"
@@ -133,10 +133,10 @@ DynamicCommand::ParameterData::ParameterData(
     std::string const&     identifier,
     CommandParameterOption parameterOption
 )
-: name(name),
-  type(type),
-  optional(optional),
+: type(type),
+  name(name),
   description(enumOptions),
+  optional(optional),
   option(parameterOption) {
     if (identifier.empty()) this->identifier = description.empty() ? name : description;
     else this->identifier = identifier;
@@ -214,18 +214,18 @@ DynamicCommand::Result::Result(
 )
 : type(ptr->type),
   offset(ptr->offset),
+  isSet(ptr->isValueSet(command)),
   command(command),
-  origin(origin),
   instance(instance ? instance : command->getInstance()),
-  isSet(ptr->isValueSet(command)) {}
+  origin(origin) {}
 
 DynamicCommand::Result::Result()
 : type((ParameterType)-1),
   offset(~0ui64),
+  isSet(false),
   command(nullptr),
-  origin(nullptr),
   instance(nullptr),
-  isSet(false) {}
+  origin(nullptr) {}
 
 std::string const& DynamicCommand::Result::getEnumValue() const {
     if (getType() == ParameterType::Enum) {
@@ -478,7 +478,12 @@ DynamicCommandInstance* DynamicCommand::preSetup(std::unique_ptr<class DynamicCo
                 values.emplace_back(*iter, index);
                 ++index;
             }
-            ll::Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, Bedrock::typeid_t<CommandRegistry>::_getCounter().fetch_add(1), &CommandRegistry::parseEnumStringAndInt).mValue;
+            ll::Global<CommandRegistry>->_addEnumValuesInternal(
+                fixedView.data(),
+                values,
+                ++Bedrock::typeid_t<CommandRegistry>::_getCounter(),
+                &CommandRegistry::parseEnumStringAndInt
+            );
         }
         commandInstance->enumRanges.swap(convertedEnumRanges);
 
@@ -704,10 +709,7 @@ DynamicCommandInstance::setEnum(std::string const& description, std::vector<std:
     return *desc;
 }
 
-std::string const& DynamicCommandInstance::getEnumValue(int index) const {
-    if (index < 0 || index >= enumValues.size()) throw std::runtime_error("Enum index out of range");
-    return enumValues.at(index);
-}
+std::string const& DynamicCommandInstance::getEnumValue(size_t index) const { return enumValues.at(index); }
 
 ParameterIndex DynamicCommandInstance::newParameter(DynamicCommand::ParameterData&& data) {
     auto   iter   = parameterPtrs.find(data.name);

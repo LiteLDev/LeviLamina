@@ -564,6 +564,12 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
             return *array;
         }
         return std::nullopt;
+    } else if (s.starts_with("[L;")) {
+        s.remove_prefix(3);
+        if (auto array = parseLongArray(s); array) {
+            return *array;
+        }
+        return std::nullopt;
     } else if (s.starts_with("[ /*B;*/")) {
         s.remove_prefix(8);
         if (auto array = parseByteArray(s); array) {
@@ -573,6 +579,12 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
     } else if (s.starts_with("[ /*I;*/")) {
         s.remove_prefix(8);
         if (auto array = parseIntArray(s); array) {
+            return *array;
+        }
+        return std::nullopt;
+    } else if (s.starts_with("[ /*L;*/")) {
+        s.remove_prefix(8);
+        if (auto array = parseLongArray(s); array) {
             return *array;
         }
         return std::nullopt;

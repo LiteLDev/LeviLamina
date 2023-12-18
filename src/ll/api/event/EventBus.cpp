@@ -35,7 +35,7 @@ public:
                     auto& weak = l->pluginPtr;
                     logger.error(
                         "Error in [{}:{}] of <{}>:",
-                        ll::reflection::removeTypePrefix(typeid(*l).name()),
+                        ll::reflection::removeTypePrefix(ll::reflection::getDynamicRawName(*l)),
                         l->getId(),
                         weak.expired() ? "unknown plugin" : weak.lock()->getManifest().name
                     );

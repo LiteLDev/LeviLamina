@@ -19,9 +19,6 @@ extern std::optional<CompoundTagVariant> parseSnbtValue(std::string_view&);
 using namespace ll::nbt::detail;
 
 std::string Tag::toSnbt(SnbtFormat snbtFormat, uchar indent) const {
-    if (!this) {
-        return "null";
-    }
     switch (getId()) {
     case Type::Byte:
         return TypedToSnbt(*(ByteTag*)this, indent, snbtFormat);

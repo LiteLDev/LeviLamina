@@ -58,6 +58,12 @@ target("LeviLamina")
         "/w44738",
         "/w45204"
     )
+    add_cxxflags(
+    "-Wno-c++2b-extensions",
+    "-Wno-microsoft-cast",
+    "-Wno-pragma-system-header-outside-header",
+    {tools = {"clang_cl"}}
+    )
     add_defines(
         "_AMD64_",
         "_CRT_SECURE_NO_WARNINGS",

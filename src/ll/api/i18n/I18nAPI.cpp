@@ -88,18 +88,18 @@ std::string I18N::get(std::string_view key, std::string localeName) {
 
 #pragma region SingleFileI18N
 
-void SingleFileI18N::load(std::string const& fileName) {
-    this->mFilePath = fileName;
-    if (!fs::exists(fileName)) {
-        fs::create_directories(u8path(fileName).parent_path());
-        std::fstream   file(fileName, std::ios::out | std::ios::app);
+void SingleFileI18N::load(std::filesystem::path const& filePath) {
+    this->mFilePath = filePath;
+    if (!fs::exists(filePath)) {
+        fs::create_directories(filePath.parent_path());
+        std::fstream   file(filePath, std::ios::out | std::ios::app);
         nlohmann::json j = mDefaultLangData;
         file << std::setw(4) << j; // Dump default language data
         file.close();
         mLangData = mDefaultLangData;
         return; // Skip parsing
     }
-    std::fstream   file(fileName, std::ios::in);
+    std::fstream   file(filePath, std::ios::in);
     nlohmann::json j;
     file >> j;
     mLangData = j.get<LangData>();
@@ -150,7 +150,7 @@ I18N::SubLangData parseNestedData(nlohmann::json const& j, std::string const& pr
     return data;
 }
 
-void MultiFileI18N::load(std::string const& dirPath) {
+void MultiFileI18N::load(std::filesystem::path const& dirPath) {
     this->mDirPath = dirPath;
     if (!fs::exists(dirPath) || fs::is_empty(dirPath)) {
         if (this->mDefaultLangData.empty()) {
@@ -177,7 +177,7 @@ void MultiFileI18N::save(bool nested) {
     if (!fs::exists(mDirPath)) {
         fs::create_directories(mDirPath);
         for (auto& [lc, lv] : this->mDefaultLangData) {
-            auto         fileName = u8path(mDirPath).append(lc + ".json").wstring();
+            auto         fileName = mDirPath.append(lc + ".json").wstring();
             std::fstream file;
             if (fs::exists(fileName)) {
                 file.open(fileName, std::ios::out | std::ios::ate);

@@ -406,7 +406,7 @@ public:
         template <ParameterType type, class T>
         CommandParameterData makeParameterData() const {
             CommandParameterData param{
-                type == ParameterType::Enum ? Bedrock::typeid_t<CommandRegistry>::_getCounter().fetch_add(1)
+                type == ParameterType::Enum ? ++Bedrock::typeid_t<CommandRegistry>::_getCounter()
                                             : Bedrock::type_id<CommandRegistry, T>(),
                 &CommandRegistry::parse<T>,
                 name,
@@ -505,7 +505,7 @@ public:
         std::string const&     name,
         std::string const&     description,
         CommandPermissionLevel permission = CommandPermissionLevel::GameDirectors,
-        CommandFlag            flag      = CommandFlagValue::NotCheat
+        CommandFlag            flag       = CommandFlagValue::NotCheat
     );
     LLAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(
         std::string const&                                          name,
@@ -515,7 +515,7 @@ public:
         std::vector<std::vector<std::string>>&&                     overloads,
         CallBackFn                                                  callback,
         CommandPermissionLevel                                      permission = CommandPermissionLevel::GameDirectors,
-        CommandFlag                                                 flag      = CommandFlagValue::NotCheat
+        CommandFlag                                                 flag       = CommandFlagValue::NotCheat
     );
 
     LLAPI static DynamicCommandInstance const* setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
@@ -542,7 +542,7 @@ public:
         std::vector<std::vector<std::string>>&&                     overloads,
         CallBackFn                                                  callback,
         CommandPermissionLevel                                      permission = CommandPermissionLevel::GameDirectors,
-        CommandFlag                                                 flag      = CommandFlagValue::NotCheat
+        CommandFlag                                                 flag       = CommandFlagValue::NotCheat
     );
 
     // Experiment
@@ -622,7 +622,7 @@ public:
         CommandFlag            flag
     );
     LLAPI std::string const& setEnum(std::string const& description, std::vector<std::string> const& values);
-    LLAPI std::string const& getEnumValue(int index) const;
+    LLAPI std::string const& getEnumValue(size_t index) const;
     LLAPI ParameterIndex     newParameter(DynamicCommand::ParameterData&& data);
     LLAPI ParameterIndex     newParameter(
             std::string const&            name,

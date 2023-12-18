@@ -1,5 +1,9 @@
 #pragma once
 
+#ifdef __clang__
+#pragma clang diagnostic ignored "-Wundefined-var-template"
+#endif
+
 #include <type_traits>
 
 #include "ll/api/base/Concepts.h"

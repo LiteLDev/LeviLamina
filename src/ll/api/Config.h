@@ -14,11 +14,11 @@ concept IsConfig =
     ll::reflection::Reflectable<T> && std::integral<std::remove_cvref_t<decltype(std::declval<T>().version)>>;
 
 template <IsConfig T, class J = nlohmann::ordered_json>
-inline bool saveConfig(T const& config, std::string_view path) {
+inline bool saveConfig(T const& config, std::filesystem::path path) {
     namespace fs = std::filesystem;
     std::error_code ec;
-    fs::create_directories(file_utils::u8path(path).remove_filename(), ec);
-    std::ofstream{file_utils::u8path(path)} << ll::reflection::serialize<J, T>(config).dump(4);
+    fs::create_directories(path.remove_filename(), ec);
+    std::ofstream{path} << ll::reflection::serialize<J, T>(config).dump(4);
     return true;
 }
 template <class T, class J>
@@ -31,7 +31,7 @@ bool defaultConfigUpdater(T& config, J& data) {
 }
 template <IsConfig T, class J = nlohmann::ordered_json>
 inline bool
-loadConfig(T& config, std::string_view path, std::function<bool(T&, J&)> updater = defaultConfigUpdater<T, J>) {
+loadConfig(T& config, std::filesystem::path const& path, std::function<bool(T&, J&)> updater = defaultConfigUpdater<T, J>) {
     bool noNeedRewrite = true;
 
     auto content = file_utils::readFile(path);

@@ -194,11 +194,11 @@ consteval auto wrap() {
     Setter<Group, id, next> setter{};
     return next{};
 }
-template <class Group, template <class> class W, class UniqueTag = decltype([] {})>
+template <class Group, template <class> class M, class UniqueTag = decltype([] {})>
 consteval auto map() {
     using now         = decltype(value<Group, 0, UniqueTag>());
     constexpr auto id = uniqueId<Group, UniqueTag>();
-    using next        = typename now::template map<W>;
+    using next        = typename now::template map<M>;
     Setter<Group, id, next> setter{};
     return next{};
 }

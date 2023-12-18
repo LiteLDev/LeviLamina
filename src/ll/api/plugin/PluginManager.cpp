@@ -21,7 +21,16 @@ fs::path pluginDir = u8"plugins";
 
 namespace ll::plugin {
 
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wmissing-field-initializers"
+#endif
+
 auto ll = Plugin::create(Manifest{"LeviLamina.dll", "LeviLamina"}, win_utils::getCurrentModuleHandle());
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
 
 struct PluginManager::Impl {
     std::recursive_mutex                              mutex;

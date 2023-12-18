@@ -185,13 +185,13 @@ void leviLaminaMain() {
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
 
     // Init LL Logger
-    Logger::setDefaultFile("logs/LeviLamina-latest.log", false);
+    Logger::setDefaultFile(u8"logs/LeviLamina-latest.log", false);
 
     // Create Plugin Directory
     std::error_code ec;
-    fs::create_directories("plugins", ec);
+    fs::create_directories(u8"plugins", ec);
 
-    i18n::load("plugins/LeviLamina/LangPack");
+    i18n::load(u8"plugins/LeviLamina/LangPack");
 
     loadLeviConfig();
 

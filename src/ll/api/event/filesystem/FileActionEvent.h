@@ -40,8 +40,8 @@ public:
 
     explicit Listener(std::string const& path, Callback fn, EventPriority priority = EventPriority::Normal)
     : ListenerBase(priority),
-      callback(std::move(fn)),
-      path(path) {
+      path(path),
+      callback(std::move(fn)) {
         nativeId.assign(event::getEventId<EventType>.name);
         nativeId += "|";
         nativeId += path;
@@ -53,7 +53,7 @@ public:
 
     void call(Event& event) override { callback(static_cast<EventType&>(event)); }
 
-    EventId factoryId(EventId) const override { return event::getEventId<EventType>; }
+    [[nodiscard]] EventId factoryId(EventId) const override { return event::getEventId<EventType>; }
 
     static std::shared_ptr<Listener>
     create(std::string const& path, Callback const& fn, EventPriority priority = EventPriority::Normal) {
