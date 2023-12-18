@@ -27,7 +27,7 @@
 #include "mc/world/actor/player/PlayerPermissionLevel.h"
 #include "mc/world/level/levelgen/GeneratorType.h"
 
-class PackInstanceId;
+struct PackInstanceId;
 
 class LevelSettings {
 public:

@@ -380,7 +380,7 @@ static void setupTimingCommand() {
             ll::logger.warn("TPS: {:.5f}", double(counttick) / std::chrono::duration<double>(end - begin).count());
             ll::logger.warn("ECS cost {:.5f}ms per tick", allTime);
 
-            for (int i = 0; i < orderdTiming.size() && i < 20; i++) {
+            for (size_t i = 0; i < orderdTiming.size() && i < 20; i++) {
                 auto& data = orderdTiming[i];
                 ll::logger.warn(
                     "  | {:.5f}ms {} for {:0>3} {}",
