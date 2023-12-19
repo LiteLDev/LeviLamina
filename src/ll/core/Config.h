@@ -10,8 +10,6 @@
 #include "ll/core/tweak/SimpleServerLogger.h"
 #include "ll/core/tweak/bugfix/ArrayTagBugFix.h"
 
-/////////////////////// LL Configs ///////////////////////
-
 namespace ll {
 
 struct LeviConfig {
