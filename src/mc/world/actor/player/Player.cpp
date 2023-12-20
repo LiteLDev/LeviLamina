@@ -23,7 +23,7 @@
 using ll::Global;
 
 UserEntityIdentifierComponent& Player::getUserEntityIdentifier() const {
-    return *(const_cast<Player*>(this)->tryGetComponent<UserEntityIdentifierComponent>());
+    return *(getEntityContext().tryGetComponent<UserEntityIdentifierComponent>());
 }
 
 std::string Player::getDeviceId() const {
