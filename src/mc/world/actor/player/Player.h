@@ -86,19 +86,19 @@ public:
 
     LLNDAPI UserEntityIdentifierComponent& getUserEntityIdentifier();
 
-    [[nodiscard]] NetworkIdentifier& getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
+    [[nodiscard]] NetworkIdentifier const& getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
 
-    [[nodiscard]] optional_ref<Certificate> getCertificate() const {
+    [[nodiscard]] optional_ref<Certificate const> getCertificate() const {
         return getUserEntityIdentifier().mCertificate.get();
     }
 
-    [[nodiscard]] SubClientId& getClientSubId() const { return getUserEntityIdentifier().mClientSubId; }
+    [[nodiscard]] SubClientId const& getClientSubId() const { return getUserEntityIdentifier().mClientSubId; }
 
     /**
      * @brief Get the player's uuid
      * @return Player's uuid
      */
-    [[nodiscard]] mce::UUID& getUuid() const { return getUserEntityIdentifier().mClientUUID; }
+    [[nodiscard]] mce::UUID const& getUuid() const { return getUserEntityIdentifier().mClientUUID; }
 
     /**
      * @brief Get the player's IP and port
