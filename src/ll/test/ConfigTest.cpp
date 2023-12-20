@@ -55,8 +55,8 @@ public:
         {"key3", {}                 },
     };
     std::map<mce::UUID, int> bmap = {
-        {{}, 4454556},
-        {{2, 3}, 4366},
+        {{},     4454556  },
+        {{2, 3}, 4366     },
         {{4, 5}, -63556654},
     };
     std::tuple<int, bool, float>                       tuple;

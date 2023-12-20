@@ -11,9 +11,13 @@ public:
 
     [[nodiscard]] constexpr UUID(uint64 a = 0, uint64 b = 0) : a(a), b(b) {}
 
-    [[nodiscard]] inline UUID(std::string const& str) : UUID(fromString(str)) {} // NOLINT
+    [[nodiscard]] inline UUID(std::string const& uuidStr) : UUID(fromString(uuidStr)) {} // NOLINT
 
     LLNDAPI static mce::UUID random();
+
+    [[nodiscard]] inline mce::UUID fromStringHash(std::string_view sv) {
+        return {ll::hash::do_hash(sv), ll::hash::do_hash2(sv)};
+    }
 
     [[nodiscard]] inline explicit operator bool() const { return !isEmpty(); }
 

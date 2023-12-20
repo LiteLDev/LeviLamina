@@ -48,7 +48,7 @@ public:
     MCAPI explicit ReadOnlyBinaryStream(std::string&&);
 
     // symbol: ??0ReadOnlyBinaryStream@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI ReadOnlyBinaryStream(std::string const&, bool);
+    MCAPI ReadOnlyBinaryStream(std::string const& buffer, bool copyBuffer);
 
     // symbol: ?canReadBool@ReadOnlyBinaryStream@@QEBA_NXZ
     MCAPI bool canReadBool() const;

@@ -110,7 +110,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
 
     ll::logger.debug(
         "\n{}",
-        ((StringTag*)(Tag::parseSnbt(StringTag{nbt2.toNetworkNBT()}.toSnbt()).get()))
+        ((StringTag*)(Tag::parseSnbt(StringTag{nbt2.toNetworkNbt()}.toSnbt()).get()))
             ->toSnbt(SnbtFormat::PrettyConsolePrint | SnbtFormat::ForceAscii)
     );
 
@@ -120,16 +120,16 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
 
     ll::logger.debug(
         "\n{}",
-        *CompoundTag::fromBinaryNBT(nbt.toBinaryNBT()) == *CompoundTag::fromBinaryNBT(nbt2.toBinaryNBT())
+        *CompoundTag::fromBinaryNbt(nbt.toBinaryNbt()) == *CompoundTag::fromBinaryNbt(nbt2.toBinaryNbt())
     );
-    ll::logger.debug("\n{}", nbt.toBinaryNBT() == nbt2.toBinaryNBT());
+    ll::logger.debug("\n{}", nbt.toBinaryNbt() == nbt2.toBinaryNbt());
 
     ll::logger.debug(
         "\n{}",
-        *CompoundTag::fromNetworkNBT(nbt.toNetworkNBT()) == *CompoundTag::fromNetworkNBT(nbt2.toNetworkNBT())
+        *CompoundTag::fromNetworkNbt(nbt.toNetworkNbt()) == *CompoundTag::fromNetworkNbt(nbt2.toNetworkNbt())
     );
 
-    ll::logger.debug("\n{}", nbt.toNetworkNBT() == nbt2.toNetworkNBT());
+    ll::logger.debug("\n{}", nbt.toNetworkNbt() == nbt2.toNetworkNbt());
 
 
     ll::logger.debug(ColorFormat::AQUA);

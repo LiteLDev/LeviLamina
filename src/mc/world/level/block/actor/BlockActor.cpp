@@ -44,7 +44,7 @@ void BlockActor::refresh(optional_ref<class BlockSource> blockSource) {
     }
 }
 
-std::unique_ptr<class CompoundTag> BlockActor::saveToNBT() const {
+std::unique_ptr<class CompoundTag> BlockActor::saveToNbt() const {
     auto res = std::make_unique<CompoundTag>();
 
     bool success = save(*res);
@@ -55,7 +55,7 @@ std::unique_ptr<class CompoundTag> BlockActor::saveToNBT() const {
     return nullptr;
 }
 
-void BlockActor::loadFromNBT(class CompoundTag const& nbt, optional_ref<class BlockSource> blockSource) {
+void BlockActor::loadFromNbt(class CompoundTag const& nbt, optional_ref<class BlockSource> blockSource) {
     if (!Global<Level>) {
         return;
     }

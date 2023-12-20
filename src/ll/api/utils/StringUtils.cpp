@@ -4,6 +4,7 @@
 #include "magic_enum.hpp"
 
 #include "mc/deps/core/mce/Color.h"
+#include "mc/deps/core/utility/Util.h"
 #include "mc/deps/snappy/snappy.h"
 
 #include "stringapiset.h"
@@ -280,6 +281,11 @@ std::string tou8str(std::string_view str) {
         auto res = str2str(str);
         return isu8str(res) ? res : "unknown codepage";
     }
+}
+bool strtobool(std::string const& str) {
+    bool res = false;
+    Util::toBool(str, res);
+    return res;
 }
 
 } // namespace ll::inline utils::string_utils

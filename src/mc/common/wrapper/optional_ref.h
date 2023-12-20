@@ -78,12 +78,20 @@ public:
 
     [[nodiscard]] constexpr T& operator*() const { return get(); }
 
-    template <class T2>
-    [[nodiscard]] constexpr T& value_or(T2&& right) const {
+    template <class U>
+    [[nodiscard]] constexpr T& value_or(U& right) const& {
         if (has_value()) {
             return *mPtr;
         }
-        return std::forward<T2>(right);
+        return static_cast<T&>(right);
+    }
+
+    template <class U>
+    [[nodiscard]] constexpr std::remove_cv_t<T> value_or(U&& right) const {
+        if (has_value()) {
+            return *mPtr;
+        }
+        return std::forward<U>(right);
     }
 
     [[nodiscard]] constexpr operator T&() const {
@@ -92,6 +100,7 @@ public:
         }
         return *mPtr;
     }
+    [[nodiscard]] constexpr operator T*() const { return mPtr; }
 
     template <typename U = std::decay_t<T>>
         requires(std::is_constructible_v<U, T>)

@@ -263,4 +263,6 @@ template <class T, auto f>
 [[nodiscard]] inline ldouble svtold(std::string_view str, size_t* idx = nullptr) {
     return svtonum<ldouble, strtof>(str, idx);
 }
+LLNDAPI bool strtobool(std::string const&);
+
 } // namespace ll::inline utils::string_utils

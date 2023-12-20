@@ -13,9 +13,9 @@ class BlockActor {
 public:
     LLAPI void refresh(optional_ref<class BlockSource> blockSource = std::nullopt);
 
-    LLNDAPI std::unique_ptr<class CompoundTag> saveToNBT() const;
+    LLNDAPI std::unique_ptr<class CompoundTag> saveToNbt() const;
 
-    LLAPI void loadFromNBT(class CompoundTag const& nbt, optional_ref<class BlockSource> blockSource = std::nullopt);
+    LLAPI void loadFromNbt(class CompoundTag const& nbt, optional_ref<class BlockSource> blockSource = std::nullopt);
 
     LLNDAPI static std::shared_ptr<BlockActor> create(class CompoundTag const& nbt);
 

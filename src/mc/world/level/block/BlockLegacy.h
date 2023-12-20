@@ -160,7 +160,7 @@ public:
 public:
     LLNDAPI std::string const& getTypeName() const;
 
-    LLNDAPI static optional_ref<BlockLegacy> tryGetFromRegistry(std::string const& name);
+    LLNDAPI static optional_ref<BlockLegacy> tryGetFromRegistry(std::string_view name);
     LLNDAPI static optional_ref<BlockLegacy> tryGetFromRegistry(uint legacyBlockID);
 
     // prevent constructor by default

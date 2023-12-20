@@ -23,14 +23,14 @@ optional_ref<Block const> Block::tryGetFromRegistry(uint runtimeID) {
     }
     return res;
 }
-optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name) {
+optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name) {
     auto blockLegacyPtr = BlockLegacy::tryGetFromRegistry(name);
     if (!blockLegacyPtr) {
         return nullptr;
     }
     return blockLegacyPtr->getDefaultState();
 }
-optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name, ushort legacyData) {
+optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, ushort legacyData) {
     auto blockLegacyPtr = BlockLegacy::tryGetFromRegistry(name);
     if (!blockLegacyPtr) {
         return nullptr;
@@ -44,7 +44,7 @@ optional_ref<Block const> Block::tryGetFromRegistry(uint legacyBlockID, ushort l
     }
     return blockLegacyPtr->tryGetStateFromLegacyData(legacyData);
 }
-optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name, Block::BlockStatesType const& states) {
+optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, Block::BlockStatesType const& states) {
     auto blockLegacyPtr = BlockLegacy::tryGetFromRegistry(name);
     if (!blockLegacyPtr) {
         return nullptr;
@@ -60,25 +60,10 @@ optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name, Blo
         if (stateBase == nullptr) {
             continue;
         }
-        int         value = 0;
-        CompoundTag stateNBT{};
-        switch (v.index()) {
-        case 0:
-            stateNBT.putInt(k, std::get<int>(v));
-            break;
-        case 1:
-            stateNBT.putFloat(k, std::get<float>(v));
-            break;
-        case 2:
-            stateNBT.putBoolean(k, std::get<bool>(v));
-            break;
-        case 3:
-            stateNBT.putString(k, std::get<std::string>(v));
-            break;
-        default:
-            break;
-        }
-        if (!stateBase->fromNBT(stateNBT, value)) {
+        int         value{};
+        CompoundTag state{};
+        std::visit([&](auto& val) { state[k] = val; }, v);
+        if (!stateBase->fromNBT(state, value)) {
             continue;
         }
         stateList.emplace_back(stateNameHash, value);

@@ -47,7 +47,7 @@ optional_ref<Container> BlockSource::tryGetContainer(class BlockPos const& pos) 
 optional_ref<Actor>
 BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<DimensionType> dimId) const {
 
-    auto nbt = origin.saveToNBT();
+    auto nbt = origin.saveToNbt();
 
     if (!nbt) {
         return nullptr;
@@ -89,7 +89,7 @@ BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<Dime
 
     level.addEntity(*const_cast<BlockSource*>(this), std::move(actorOwnerPtr));
 
-    actor->loadFromNBT(*nbt);
+    actor->loadFromNbt(*nbt);
 
     return actor;
 }

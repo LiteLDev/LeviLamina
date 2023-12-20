@@ -17,17 +17,19 @@
 namespace mce { class Color; }
 // clang-format on
 
+class CompoundTag;
+
 class Block {
 public:
     using BlockStateValueType = std::variant<int, float, bool, std::string>;
     using BlockStatesType     = std::unordered_map<std::string, BlockStateValueType>;
 
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(uint runtimeID);
-    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string const& name);
-    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string const& name, ushort legacyData);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, ushort legacyData);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(uint legacyBlockID, ushort legacyData);
-    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string const& name, BlockStatesType const& states);
-    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(class CompoundTag const& nbt);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, BlockStatesType const& states);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(CompoundTag const& nbt);
 
     [[nodiscard]] inline std::string const& getTypeName() const { return getName().getString(); }
 

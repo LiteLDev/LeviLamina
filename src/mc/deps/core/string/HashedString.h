@@ -22,15 +22,17 @@ public:
 
     [[nodiscard]] constexpr HashedString(uint64 h, char const* str) noexcept : hash(h), str(str), lastMatch(nullptr) {}
 
-    [[nodiscard]] constexpr HashedString(char const* str) noexcept
+    [[nodiscard]] constexpr HashedString(std::string_view str) noexcept
     : hash(computeHash(str)),
       str(str),
       lastMatch(nullptr) {} // NOLINT
 
-    [[nodiscard]] constexpr HashedString(std::string const& str) noexcept // NOLINT
-    : hash(computeHash(str)),
-      str(str),
-      lastMatch(nullptr) {}
+    [[nodiscard]] constexpr HashedString(std::string&& str) noexcept // NOLINT
+    : str(std::move(str)),
+      lastMatch(nullptr) {
+        hash = computeHash(str);
+    }
+    [[nodiscard]] constexpr HashedString(char const* str) noexcept : HashedString(std::string{str}) {} // NOLINT
 
     [[nodiscard]] constexpr HashedString(HashedString const& other) noexcept
     : hash(other.hash),
@@ -119,7 +121,7 @@ public:
     }
 
     // Convertors
-    [[nodiscard]] constexpr explicit operator std::string() const { return str; }
+    [[nodiscard]] constexpr explicit operator std::string const&() const { return str; }
 
     [[nodiscard]] constexpr explicit operator std::string_view() const { return std::string_view(str); }
 

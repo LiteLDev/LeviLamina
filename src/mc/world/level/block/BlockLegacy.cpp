@@ -5,7 +5,7 @@
 std::string const& BlockLegacy::getTypeName() const {
     return reinterpret_cast<BlockLegacy::NameInfo const*>(&(this->getRawNameHash()))->mFullName.getString();
 }
-optional_ref<BlockLegacy> BlockLegacy::tryGetFromRegistry(std::string const& name) {
+optional_ref<BlockLegacy> BlockLegacy::tryGetFromRegistry(std::string_view name) {
     auto blockLegacyPtr = BlockTypeRegistry::lookupByName(HashedString{name});
     return blockLegacyPtr.get();
 }

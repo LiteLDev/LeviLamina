@@ -32,11 +32,11 @@ public:
 
     LLNDAPI static std::unique_ptr<CompoundTag> fromSnbt(std::string_view snbt);
 
-    LLNDAPI std::string                         toBinaryNBT(bool isLittleEndian = true) const;
-    LLNDAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(std::string_view dataView, bool isLittleEndian = true);
+    LLNDAPI std::string                         toBinaryNbt(bool isLittleEndian = true) const;
+    LLNDAPI static std::unique_ptr<CompoundTag> fromBinaryNbt(std::string_view dataView, bool isLittleEndian = true);
 
-    LLNDAPI std::string                         toNetworkNBT() const;
-    LLNDAPI static std::unique_ptr<CompoundTag> fromNetworkNBT(std::string const& data);
+    LLNDAPI std::string                         toNetworkNbt() const;
+    LLNDAPI static std::unique_ptr<CompoundTag> fromNetworkNbt(std::string const& data);
 
 public:
     // NOLINTBEGIN

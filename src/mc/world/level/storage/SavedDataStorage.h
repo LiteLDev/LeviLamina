@@ -2,12 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class SavedData;
+class LevelStorage;
+
 class SavedDataStorage {
 public:
     // prevent constructor by default
     SavedDataStorage& operator=(SavedDataStorage const&);
     SavedDataStorage(SavedDataStorage const&);
     SavedDataStorage();
+
+    LevelStorage*                               levelStorage; // this+0x8
+    std::unordered_map<std::string, SavedData*> savedDatas;   // this+0x10
+
+    [[nodiscard]] optional_ref<SavedData> get(std::string const& id) {
+        if (savedDatas.contains(id)) {
+            return savedDatas.at(id);
+        }
+        return nullptr;
+    }
 
 public:
     // NOLINTBEGIN

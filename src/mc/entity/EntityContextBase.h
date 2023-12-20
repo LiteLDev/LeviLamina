@@ -20,7 +20,7 @@ public:
 
     template <class T>
     [[nodiscard]] inline optional_ref<T> tryGetComponent() {
-        return getRegistry().try_get<T>(mEntity);
+        return const_cast<T*>(std::as_const(getRegistry()).try_get<T>(mEntity));
     }
 
     template <class T>

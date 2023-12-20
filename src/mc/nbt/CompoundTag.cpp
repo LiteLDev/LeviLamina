@@ -12,7 +12,7 @@ std::unique_ptr<CompoundTag> CompoundTag::fromSnbt(std::string_view snbt) {
     return nullptr;
 }
 
-std::string CompoundTag::toBinaryNBT(bool isLittleEndian) const {
+std::string CompoundTag::toBinaryNbt(bool isLittleEndian) const {
     std::string result;
     if (isLittleEndian) {
         auto io = StringByteOutput{result};
@@ -23,7 +23,7 @@ std::string CompoundTag::toBinaryNBT(bool isLittleEndian) const {
     }
     return result;
 }
-std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string_view dataView, bool isLittleEndian) {
+std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNbt(std::string_view dataView, bool isLittleEndian) {
     if (isLittleEndian) {
         auto io = StringByteInput{dataView};
         return NbtIo::read(io);
@@ -32,12 +32,12 @@ std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string_view dataVie
         return NbtIo::read(io);
     }
 }
-std::string CompoundTag::toNetworkNBT() const {
+std::string CompoundTag::toNetworkNbt() const {
     BinaryStream stream;
     stream.writeType(*this);
     return stream.getAndReleaseData();
 }
-std::unique_ptr<CompoundTag> CompoundTag::fromNetworkNBT(std::string const& data) {
+std::unique_ptr<CompoundTag> CompoundTag::fromNetworkNbt(std::string const& data) {
     auto stream = ReadOnlyBinaryStream{data, false};
     auto res    = std::make_unique<CompoundTag>();
     stream.readType(*res);
