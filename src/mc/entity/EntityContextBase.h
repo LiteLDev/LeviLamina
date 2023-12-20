@@ -14,14 +14,10 @@ public:
     [[nodiscard]] inline entt::basic_registry<EntityId> const& getRegistry() const { return mRegistry.mRegistry; }
 
     template <class T>
-    [[nodiscard]] inline T* tryGetComponent() const {
-        return getRegistry().try_get<T>(mEntity);
-    }
-
-    template <class T>
     [[nodiscard]] inline optional_ref<T const> tryGetComponent() const {
         return getRegistry().try_get<T>(mEntity);
     }
+
     template <class T>
     [[nodiscard]] inline optional_ref<T> tryGetComponent() {
         return getRegistry().try_get<T>(mEntity);
