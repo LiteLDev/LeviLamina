@@ -82,7 +82,9 @@ public:
     };
 
 public:
-    LLNDAPI UserEntityIdentifierComponent& getUserEntityIdentifier() const;
+    LLNDAPI UserEntityIdentifierComponent const& getUserEntityIdentifier() const;
+
+    LLNDAPI UserEntityIdentifierComponent& getUserEntityIdentifier();
 
     [[nodiscard]] NetworkIdentifier& getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
 
