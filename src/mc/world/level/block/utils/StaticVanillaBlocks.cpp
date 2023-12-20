@@ -109,6 +109,7 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(AcaciaFenceGate);                                                                                             \
     FUNC(AcaciaHangingSign);                                                                                           \
     FUNC(AcaciaLog);                                                                                                   \
+    FUNC(AcaciaPlanks);                                                                                                \
     FUNC(AcaciaPressurePlate);                                                                                         \
     FUNC(AcaciaStairs);                                                                                                \
     FUNC(AcaciaStandingSign);                                                                                          \
@@ -119,6 +120,7 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(AmethystBlock);                                                                                               \
     FUNC(AmethystCluster);                                                                                             \
     FUNC(AncientDebris);                                                                                               \
+    FUNC(Andesite);                                                                                                    \
     FUNC(AndesiteStairs);                                                                                              \
     FUNC(Anvil);                                                                                                       \
     FUNC(Azalea);                                                                                                      \
@@ -161,6 +163,7 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(BirchFenceGate);                                                                                              \
     FUNC(BirchHangingSign);                                                                                            \
     FUNC(BirchLog);                                                                                                    \
+    FUNC(BirchPlanks);                                                                                                 \
     FUNC(BirchPressurePlate);                                                                                          \
     FUNC(BirchStairs);                                                                                                 \
     FUNC(BirchStandingSign);                                                                                           \
@@ -257,9 +260,12 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(CherryWood);                                                                                                  \
     FUNC(Chest);                                                                                                       \
     FUNC(ChiseledBookshelf);                                                                                           \
+    FUNC(ChiseledCopper);                                                                                              \
     FUNC(ChiseledDeepslate);                                                                                           \
     FUNC(ChiseledNetherBricks);                                                                                        \
     FUNC(ChiseledPolishedBlackstone);                                                                                  \
+    FUNC(ChiseledTuff);                                                                                                \
+    FUNC(ChiseledTuffBricks);                                                                                          \
     FUNC(ChorusFlower);                                                                                                \
     FUNC(ChorusPlant);                                                                                                 \
     FUNC(Clay);                                                                                                        \
@@ -280,7 +286,11 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(Composter);                                                                                                   \
     FUNC(Conduit);                                                                                                     \
     FUNC(CopperBlock);                                                                                                 \
+    FUNC(CopperBulb);                                                                                                  \
+    FUNC(CopperDoor);                                                                                                  \
+    FUNC(CopperGrate);                                                                                                 \
     FUNC(CopperOre);                                                                                                   \
+    FUNC(CopperTrapdoor);                                                                                              \
     FUNC(CoralBlock);                                                                                                  \
     FUNC(CoralFan);                                                                                                    \
     FUNC(CoralFanDead);                                                                                                \
@@ -291,6 +301,7 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(CrackedDeepslateTiles);                                                                                       \
     FUNC(CrackedNetherBricks);                                                                                         \
     FUNC(CrackedPolishedBlackstoneBricks);                                                                             \
+    FUNC(Crafter);                                                                                                     \
     FUNC(CraftingTable);                                                                                               \
     FUNC(CrimsonButton);                                                                                               \
     FUNC(CrimsonDoor);                                                                                                 \
@@ -330,6 +341,7 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(DarkOakFence);                                                                                                \
     FUNC(DarkOakFenceGate);                                                                                            \
     FUNC(DarkOakLog);                                                                                                  \
+    FUNC(DarkOakPlanks);                                                                                               \
     FUNC(DarkOakPressurePlate);                                                                                        \
     FUNC(DarkOakStairs);                                                                                               \
     FUNC(DarkOakTrapdoor);                                                                                             \
@@ -369,6 +381,7 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(DetectorRail);                                                                                                \
     FUNC(DiamondBlock);                                                                                                \
     FUNC(DiamondOre);                                                                                                  \
+    FUNC(Diorite);                                                                                                     \
     FUNC(DioriteStairs);                                                                                               \
     FUNC(Dirt);                                                                                                        \
     FUNC(DirtWithRoots);                                                                                               \
@@ -395,7 +408,12 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(EndRod);                                                                                                      \
     FUNC(EndStone);                                                                                                    \
     FUNC(EnderChest);                                                                                                  \
+    FUNC(ExposedChiseledCopper);                                                                                       \
     FUNC(ExposedCopper);                                                                                               \
+    FUNC(ExposedCopperBulb);                                                                                           \
+    FUNC(ExposedCopperDoor);                                                                                           \
+    FUNC(ExposedCopperGrate);                                                                                          \
+    FUNC(ExposedCopperTrapdoor);                                                                                       \
     FUNC(ExposedCutCopper);                                                                                            \
     FUNC(ExposedCutCopperSlab);                                                                                        \
     FUNC(ExposedCutCopperStairs);                                                                                      \
@@ -422,6 +440,7 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(GoldBlock);                                                                                                   \
     FUNC(GoldOre);                                                                                                     \
     FUNC(GoldenRail);                                                                                                  \
+    FUNC(Granite);                                                                                                     \
     FUNC(GraniteStairs);                                                                                               \
     FUNC(Grass);                                                                                                       \
     FUNC(GrassPath);                                                                                                   \
@@ -480,6 +499,7 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(JungleFenceGate);                                                                                             \
     FUNC(JungleHangingSign);                                                                                           \
     FUNC(JungleLog);                                                                                                   \
+    FUNC(JunglePlanks);                                                                                                \
     FUNC(JunglePressurePlate);                                                                                         \
     FUNC(JungleStairs);                                                                                                \
     FUNC(JungleStandingSign);                                                                                          \
@@ -606,6 +626,7 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(OakFence);                                                                                                    \
     FUNC(OakHangingSign);                                                                                              \
     FUNC(OakLog);                                                                                                      \
+    FUNC(OakPlanks);                                                                                                   \
     FUNC(OakStairs);                                                                                                   \
     FUNC(Observer);                                                                                                    \
     FUNC(Obsidian);                                                                                                    \
@@ -621,7 +642,12 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(OrangeStainedGlassPane);                                                                                      \
     FUNC(OrangeTerracotta);                                                                                            \
     FUNC(OrangeWool);                                                                                                  \
+    FUNC(OxidizedChiseledCopper);                                                                                      \
     FUNC(OxidizedCopper);                                                                                              \
+    FUNC(OxidizedCopperBulb);                                                                                          \
+    FUNC(OxidizedCopperDoor);                                                                                          \
+    FUNC(OxidizedCopperGrate);                                                                                         \
+    FUNC(OxidizedCopperTrapdoor);                                                                                      \
     FUNC(OxidizedCutCopper);                                                                                           \
     FUNC(OxidizedCutCopperSlab);                                                                                       \
     FUNC(OxidizedCutCopperStairs);                                                                                     \
@@ -645,9 +671,9 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(PistonArmCollision);                                                                                          \
     FUNC(PitcherCrop);                                                                                                 \
     FUNC(PitcherPlant);                                                                                                \
-    FUNC(Planks);                                                                                                      \
     FUNC(Podzol);                                                                                                      \
     FUNC(PointedDripstone);                                                                                            \
+    FUNC(PolishedAndesite);                                                                                            \
     FUNC(PolishedAndesiteStairs);                                                                                      \
     FUNC(PolishedBasalt);                                                                                              \
     FUNC(PolishedBlackstone);                                                                                          \
@@ -667,8 +693,15 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(PolishedDeepslateSlab);                                                                                       \
     FUNC(PolishedDeepslateStairs);                                                                                     \
     FUNC(PolishedDeepslateWall);                                                                                       \
+    FUNC(PolishedDiorite);                                                                                             \
     FUNC(PolishedDioriteStairs);                                                                                       \
+    FUNC(PolishedGranite);                                                                                             \
     FUNC(PolishedGraniteStairs);                                                                                       \
+    FUNC(PolishedTuff);                                                                                                \
+    FUNC(PolishedTuffDoubleSlab);                                                                                      \
+    FUNC(PolishedTuffSlab);                                                                                            \
+    FUNC(PolishedTuffStairs);                                                                                          \
+    FUNC(PolishedTuffWall);                                                                                            \
     FUNC(Portal);                                                                                                      \
     FUNC(Potatoes);                                                                                                    \
     FUNC(PowderSnow);                                                                                                  \
@@ -771,6 +804,7 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(SpruceFenceGate);                                                                                             \
     FUNC(SpruceHangingSign);                                                                                           \
     FUNC(SpruceLog);                                                                                                   \
+    FUNC(SprucePlanks);                                                                                                \
     FUNC(SprucePressurePlate);                                                                                         \
     FUNC(SpruceStairs);                                                                                                \
     FUNC(SpruceStandingSign);                                                                                          \
@@ -825,6 +859,15 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(TripWireHook);                                                                                                \
     FUNC(TubeCoral);                                                                                                   \
     FUNC(Tuff);                                                                                                        \
+    FUNC(TuffBrickDoubleSlab);                                                                                         \
+    FUNC(TuffBrickSlab);                                                                                               \
+    FUNC(TuffBrickStairs);                                                                                             \
+    FUNC(TuffBrickWall);                                                                                               \
+    FUNC(TuffBricks);                                                                                                  \
+    FUNC(TuffDoubleSlab);                                                                                              \
+    FUNC(TuffSlab);                                                                                                    \
+    FUNC(TuffStairs);                                                                                                  \
+    FUNC(TuffWall);                                                                                                    \
     FUNC(TurtleEgg);                                                                                                   \
     FUNC(TwistingVines);                                                                                               \
     FUNC(UnderwaterTorch);                                                                                             \
@@ -857,27 +900,52 @@ LL_AUTO_STATIC_HOOK(GenerateHook, HookPriority::Normal, "main", int, int a, char
     FUNC(WarpedWartBlock);                                                                                             \
     FUNC(Water);                                                                                                       \
     FUNC(WaterLily);                                                                                                   \
+    FUNC(WaxedChiseledCopper);                                                                                         \
     FUNC(WaxedCopper);                                                                                                 \
+    FUNC(WaxedCopperBulb);                                                                                             \
+    FUNC(WaxedCopperDoor);                                                                                             \
+    FUNC(WaxedCopperGrate);                                                                                            \
+    FUNC(WaxedCopperTrapdoor);                                                                                         \
     FUNC(WaxedCutCopper);                                                                                              \
     FUNC(WaxedCutCopperSlab);                                                                                          \
     FUNC(WaxedCutCopperStairs);                                                                                        \
     FUNC(WaxedDoubleCutCopperSlab);                                                                                    \
+    FUNC(WaxedExposedChiseledCopper);                                                                                  \
     FUNC(WaxedExposedCopper);                                                                                          \
+    FUNC(WaxedExposedCopperBulb);                                                                                      \
+    FUNC(WaxedExposedCopperDoor);                                                                                      \
+    FUNC(WaxedExposedCopperGrate);                                                                                     \
+    FUNC(WaxedExposedCopperTrapdoor);                                                                                  \
     FUNC(WaxedExposedCutCopper);                                                                                       \
     FUNC(WaxedExposedCutCopperSlab);                                                                                   \
     FUNC(WaxedExposedCutCopperStairs);                                                                                 \
     FUNC(WaxedExposedDoubleCutCopperSlab);                                                                             \
+    FUNC(WaxedOxidizedChiseledCopper);                                                                                 \
     FUNC(WaxedOxidizedCopper);                                                                                         \
+    FUNC(WaxedOxidizedCopperBulb);                                                                                     \
+    FUNC(WaxedOxidizedCopperDoor);                                                                                     \
+    FUNC(WaxedOxidizedCopperGrate);                                                                                    \
+    FUNC(WaxedOxidizedCopperTrapdoor);                                                                                 \
     FUNC(WaxedOxidizedCutCopper);                                                                                      \
     FUNC(WaxedOxidizedCutCopperSlab);                                                                                  \
     FUNC(WaxedOxidizedCutCopperStairs);                                                                                \
     FUNC(WaxedOxidizedDoubleCutCopperSlab);                                                                            \
+    FUNC(WaxedWeatheredChiseledCopper);                                                                                \
     FUNC(WaxedWeatheredCopper);                                                                                        \
+    FUNC(WaxedWeatheredCopperBulb);                                                                                    \
+    FUNC(WaxedWeatheredCopperDoor);                                                                                    \
+    FUNC(WaxedWeatheredCopperGrate);                                                                                   \
+    FUNC(WaxedWeatheredCopperTrapdoor);                                                                                \
     FUNC(WaxedWeatheredCutCopper);                                                                                     \
     FUNC(WaxedWeatheredCutCopperSlab);                                                                                 \
     FUNC(WaxedWeatheredCutCopperStairs);                                                                               \
     FUNC(WaxedWeatheredDoubleCutCopperSlab);                                                                           \
+    FUNC(WeatheredChiseledCopper);                                                                                     \
     FUNC(WeatheredCopper);                                                                                             \
+    FUNC(WeatheredCopperBulb);                                                                                         \
+    FUNC(WeatheredCopperDoor);                                                                                         \
+    FUNC(WeatheredCopperGrate);                                                                                        \
+    FUNC(WeatheredCopperTrapdoor);                                                                                     \
     FUNC(WeatheredCutCopper);                                                                                          \
     FUNC(WeatheredCutCopperSlab);                                                                                      \
     FUNC(WeatheredCutCopperStairs);                                                                                    \

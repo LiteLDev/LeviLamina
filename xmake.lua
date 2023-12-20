@@ -25,7 +25,7 @@ end
 if has_config("localbdslibrary") then
     add_requires("localbdslibrary")
 else
-    add_requires("bdslibrary 1.20.41.02")
+    add_requires("bdslibrary 1.20.50.03")
 end
 
 if not has_config("vs_runtime") then

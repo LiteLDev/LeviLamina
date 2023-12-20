@@ -135,11 +135,6 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
     ll::logger.debug(ColorFormat::AQUA);
     ll::logger.debug(ColorFormat::MINECOIN_GOLD);
     ll::logger.debug(ColorFormat::LIGHT_PURPLE);
-    ll::logger.debug(ColorFormat::ColorFromColorCode(ColorFormat::AQUA)->toString());
-    ll::logger.debug(ColorFormat::ColorFromColorCode(ColorFormat::MINECOIN_GOLD)->toString());
-    ll::logger.debug(ColorFormat::ColorFromColorCode(ColorFormat::LIGHT_PURPLE)->toString());
-    ll::logger.debug(ColorFormat::ColorFromColorCode(ColorFormat::LIGHT_PURPLE)->toString());
-    ll::logger.debug("{}", ColorFormat::FormatCodeFromName("Bold"));
 
     using namespace ll::string_utils;
 

@@ -1,19 +1,20 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/gamerefs_entity/EntityRegistryBase.h"
+#include "mc/entity/EntityId.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakRefT.h"
 
-class EntityRegistry : public EntityRegistryBase, public std::enable_shared_from_this<EntityRegistry> {
+class EntityRegistry : public std::enable_shared_from_this<EntityRegistry> {
 public:
     // prevent constructor by default
     EntityRegistry& operator=(EntityRegistry const&);
     EntityRegistry(EntityRegistry const&);
 
-    std::string                    mName;
-    entt::basic_registry<EntityId> mOwnedRegistry;
+    std::string                    mName;          // this+0x10
+    entt::basic_registry<EntityId> mOwnedRegistry; // this+0x30
+    uint                           mId;            // this+0x150
 
 public:
     // NOLINTBEGIN

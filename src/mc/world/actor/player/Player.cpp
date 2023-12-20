@@ -10,11 +10,11 @@
 #include "mc/network/MinecraftPackets.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/network/NetworkPeer.h"
+#include "mc/network/NetworkSystem.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/world/Minecraft.h"
-#include "mc/world/systems/NetworkSystem.h"
 
 #include "ll/api/service/GlobalService.h"
 #include "mc/network/packet/TextPacket.h"

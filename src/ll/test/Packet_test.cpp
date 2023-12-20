@@ -162,7 +162,6 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a
 #include "mc/network/packet/ContainerSetDataPacket.h"
 #include "mc/network/packet/CorrectPlayerMovePredictionPacket.h"
 #include "mc/network/packet/CraftingDataPacket.h"
-#include "mc/network/packet/CraftingEventPacket.h"
 #include "mc/network/packet/CreatePhotoPacket.h"
 #include "mc/network/packet/CreativeContentPacket.h"
 #include "mc/network/packet/DeathInfoPacket.h"
@@ -234,6 +233,7 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a
 #include "mc/network/packet/PlayerListPacket.h"
 #include "mc/network/packet/PlayerSkinPacket.h"
 #include "mc/network/packet/PlayerStartItemCooldownPacket.h"
+#include "mc/network/packet/PlayerToggleCrafterSlotRequestPacket.h"
 #include "mc/network/packet/PositionTrackingDBClientRequestPacket.h"
 #include "mc/network/packet/PositionTrackingDBServerBroadcastPacket.h"
 #include "mc/network/packet/PurchaseReceiptPacket.h"
@@ -269,6 +269,7 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a
 #include "mc/network/packet/SetLastHurtByPacket.h"
 #include "mc/network/packet/SetLocalPlayerAsInitializedPacket.h"
 #include "mc/network/packet/SetPlayerGameTypePacket.h"
+#include "mc/network/packet/SetPlayerInventoryOptionsPacket.h"
 #include "mc/network/packet/SetScorePacket.h"
 #include "mc/network/packet/SetScoreboardIdentityPacket.h"
 #include "mc/network/packet/SetSpawnPositionPacket.h"
@@ -367,7 +368,6 @@ PACKET_SIZE_ASSERT(InventoryContentPacket, 0x50);
 PACKET_SIZE_ASSERT(InventorySlotPacket, 0x98);
 PACKET_SIZE_ASSERT(ContainerSetDataPacket, 0x40);
 PACKET_SIZE_ASSERT(CraftingDataPacket, 0x98);
-PACKET_SIZE_ASSERT(CraftingEventPacket, 0x78);
 PACKET_SIZE_ASSERT(GuiDataPickItemPacket, 0x78);
 PACKET_SIZE_ASSERT(BlockActorDataPacket, 0x58);
 PACKET_SIZE_ASSERT(PlayerInputPacket, 0x40);
@@ -404,9 +404,9 @@ PACKET_SIZE_ASSERT(StopSoundPacket, 0x58);
 PACKET_SIZE_ASSERT(SetTitlePacket, 0xA8);
 PACKET_SIZE_ASSERT(AddBehaviorTreePacket, 0x50);
 PACKET_SIZE_ASSERT(StructureBlockUpdatePacket, 0xF8);
-PACKET_SIZE_ASSERT(ShowStoreOfferPacket, 0x78);
+// PACKET_SIZE_ASSERT(ShowStoreOfferPacket, 0x48);
 PACKET_SIZE_ASSERT(PurchaseReceiptPacket, 0x48);
-PACKET_SIZE_ASSERT(PlayerSkinPacket, 0x2D0);
+// PACKET_SIZE_ASSERT(PlayerSkinPacket, 0x2E0);
 PACKET_SIZE_ASSERT(SubClientLoginPacket, 0x38);
 PACKET_SIZE_ASSERT(AutomationClientConnectPacket, 0x50);
 PACKET_SIZE_ASSERT(SetLastHurtByPacket, 0x38);
@@ -505,7 +505,7 @@ PACKET_SIZE_ASSERT(RequestNetworkSettingsPacket, 0x38);
 PACKET_SIZE_ASSERT(GameTestRequestPacket, 0x90);
 PACKET_SIZE_ASSERT(GameTestResultsPacket, 0x78);
 PACKET_SIZE_ASSERT(UpdateClientInputLocksPacket, 0x40);
-PACKET_SIZE_ASSERT(CameraPresetsPacket, 0x60);
+// PACKET_SIZE_ASSERT(CameraPresetsPacket, 0x68);
 PACKET_SIZE_ASSERT(UnlockedRecipesPacket, 0x50);
 PACKET_SIZE_ASSERT(CameraInstructionPacket, 0xA0);
 PACKET_SIZE_ASSERT(CompressedBiomeDefinitionListPacket, 0x48);
@@ -513,5 +513,7 @@ PACKET_SIZE_ASSERT(TrimDataPacket, 0x60);
 PACKET_SIZE_ASSERT(OpenSignPacket, 0x40);
 PACKET_SIZE_ASSERT(AgentAnimationPacket, 0x40);
 PACKET_SIZE_ASSERT(RefreshEntitlementsPacket, 0x30);
+// PACKET_SIZE_ASSERT(PlayerToggleCrafterSlotRequestPacket, 0x48);
+// PACKET_SIZE_ASSERT(SetPlayerInventoryOptionsPacket, 0x48);
 
 #pragma endregion

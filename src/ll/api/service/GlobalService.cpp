@@ -4,6 +4,8 @@
 
 #include "mc/deps/raknet/RakPeer.h"
 #include "mc/deps/raknet/RakPeerInterface.h"
+#include "mc/entity/systems/common/EntitySystemsCollection.h"
+#include "mc/network/NetworkSystem.h"
 #include "mc/network/RakNetConnector.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/resources/ResourcePackRepository.h"
@@ -14,8 +16,6 @@
 #include "mc/server/common/commands/AllowListCommand.h"
 #include "mc/world/Minecraft.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
-#include "mc/world/systems/EntitySystemsCollection.h"
-#include "mc/world/systems/NetworkSystem.h"
 
 #include "ll/api/base/Hash.h"
 #include "ll/api/memory/Hook.h"

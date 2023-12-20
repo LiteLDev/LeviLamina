@@ -826,7 +826,7 @@ public:
     MCAPI class Vec3 getAttachPos(::ActorLocation) const;
 
     // symbol: ?getAttachPos@Actor@@QEBA?AVVec3@@W4ActorLocation@@M@Z
-    MCAPI class Vec3 getAttachPos(::ActorLocation, float lerpFactor = 0.0f) const;
+    MCAPI class Vec3 getAttachPos(::ActorLocation, float lerpFactor) const;
 
     // symbol: ?getAttribute@Actor@@QEBAAEBVAttributeInstance@@AEBVAttribute@@@Z
     MCAPI class AttributeInstance const& getAttribute(class Attribute const&) const;

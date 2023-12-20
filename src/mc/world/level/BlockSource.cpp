@@ -85,7 +85,7 @@ BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<Dime
 
     actor->setDimension(dim->getWeakRef());
 
-    UpdateBoundingBoxSystem::updateBoundingBoxFromDefinition(*actor);
+    // UpdateBoundingBoxSystem::updateBoundingBoxFromDefinition(*actor);
 
     level.addEntity(*const_cast<BlockSource*>(this), std::move(actorOwnerPtr));
 

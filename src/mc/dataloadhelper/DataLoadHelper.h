@@ -5,6 +5,7 @@
 #include "mc/enums/Mirror.h"
 #include "mc/enums/Rotation.h"
 #include "mc/world/Direction.h"
+#include "mc/world/actor/InternalComponentRegistry.h"
 
 class DataLoadHelper {
 public:
