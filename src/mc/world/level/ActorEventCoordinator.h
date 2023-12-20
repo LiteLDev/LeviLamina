@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/CoordinatorResult.h"
-#include "mc/enums/InitializationMethod.h"
+#include "mc/entity/utilities/ActorInitializationMethod.h"
 #include "mc/enums/MovePredictionType.h"
 #include "mc/events/ActorGameplayEvent.h"
 #include "mc/events/MutableActorGameplayEvent.h"
@@ -29,8 +29,8 @@ public:
     // ?registerActorGameplayHandler@ActorEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VActorGameplayHandler@@U?$default_delete@VActorGameplayHandler@@@std@@@std@@@Z
     MCAPI void registerActorGameplayHandler(std::unique_ptr<class ActorGameplayHandler>&&);
 
-    // symbol: ?sendActorCreated@ActorEventCoordinator@@QEAAXAEAVActor@@W4InitializationMethod@@@Z
-    MCAPI void sendActorCreated(class Actor&, ::InitializationMethod);
+    // symbol: ?sendActorCreated@ActorEventCoordinator@@QEAAXAEAVActor@@W4ActorInitializationMethod@@@Z
+    MCAPI void sendActorCreated(class Actor&, ::ActorInitializationMethod);
 
     // symbol:
     // ?sendActorCreationAttemptFailed@ActorEventCoordinator@@QEAAXAEAVActor@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z

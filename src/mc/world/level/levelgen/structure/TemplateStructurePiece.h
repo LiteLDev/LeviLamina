@@ -25,7 +25,7 @@ public:
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
 
     // vIndex: 13, symbol:
-    // ?_handleDataMarker@EndCityPiece@EndCityPieces@@MEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+    // ?_handleDataMarker@WoodlandMansionPiece@WoodlandMansionPieces@@MEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
     virtual void
     _handleDataMarker(std::string const&, class BlockPos const&, class BlockSource&, class Random&, class BoundingBox const&) = 0;
 

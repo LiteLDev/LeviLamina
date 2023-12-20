@@ -29,9 +29,9 @@ public:
     _emitWaterSplashEffect(class ActorOwnerComponent&, struct WaterSplashEffectRequestComponent const&);
 
     // symbol:
-    // ?_tickLiquidSplash@LiquidSplashSystem@@CAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUWaterSplashEffectRequestComponent@@VActorOwnerComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UPostSplashGameEventRequestFlag@@@@@@VActorOwnerComponent@@@@@Z
+    // ?_tickLiquidSplash@LiquidSplashSystem@@CAXV?$ViewT@VStrictEntityContext@@$$CBUWaterSplashEffectRequestComponent@@VActorOwnerComponent@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPostSplashGameEventRequestFlag@@@@@@VActorOwnerComponent@@@@@Z
     MCAPI static void
-        _tickLiquidSplash(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct WaterSplashEffectRequestComponent const, class ActorOwnerComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PostSplashGameEventRequestFlag>>, class ActorOwnerComponent>);
+        _tickLiquidSplash(class ViewT<class StrictEntityContext, struct WaterSplashEffectRequestComponent const, class ActorOwnerComponent>, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PostSplashGameEventRequestFlag>>, class ActorOwnerComponent>);
 
     // NOLINTEND
 };

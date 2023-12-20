@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/puv/EquipmentSlot.h"
 #include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/entity/utilities/ActorFlags.h"
+#include "mc/entity/utilities/ActorInitializationMethod.h"
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
 #include "mc/enums/ArmorTextureType.h"
-#include "mc/enums/EquipmentSlot.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -18,9 +19,13 @@
 #include "mc/events/LevelSoundEvent.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/AutomaticID.h"
-#include "mc/world/actor/Actor.h"
 #include "mc/world/actor/animal/Animal.h"
 #include "mc/world/item/components/ItemUseMethod.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace mce { class Color; }
+// clang-format on
 
 class Cat : public ::Animal {
 public:
@@ -40,17 +45,14 @@ public:
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
 
-    // vIndex: 41, symbol: __unk_vfn_41
-    virtual void __unk_vfn_41();
-
-    // vIndex: 44, symbol: __unk_vfn_44
-    virtual void __unk_vfn_44();
+    // vIndex: 42, symbol: __unk_vfn_42
+    virtual void __unk_vfn_42();
 
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
 
-    // vIndex: 52, symbol: __unk_vfn_52
-    virtual void __unk_vfn_52();
+    // vIndex: 60, symbol: __unk_vfn_60
+    virtual void __unk_vfn_60();
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -58,38 +60,32 @@ public:
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 63, symbol: __unk_vfn_63
-    virtual void __unk_vfn_63();
-
-    // vIndex: 71, symbol: ?onTame@Cat@@UEAAXXZ
+    // vIndex: 70, symbol: ?onTame@Cat@@UEAAXXZ
     virtual void onTame();
 
-    // vIndex: 78, symbol: ?getAmbientSound@Cat@@UEBA?AW4LevelSoundEvent@@XZ
-    virtual ::LevelSoundEvent getAmbientSound() const;
+    // vIndex: 77, symbol: ?getAmbientSound@Cat@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
-    // vIndex: 109, symbol: __unk_vfn_109
-    virtual void __unk_vfn_109();
+    // vIndex: 107, symbol: __unk_vfn_107
+    virtual void __unk_vfn_107();
 
-    // vIndex: 147, symbol: __unk_vfn_147
-    virtual void __unk_vfn_147();
+    // vIndex: 144, symbol: __unk_vfn_144
+    virtual void __unk_vfn_144();
 
-    // vIndex: 163, symbol: ?updateEntitySpecificMolangVariables@Cat@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Cat@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
 
-    // vIndex: 165, symbol: __unk_vfn_165
-    virtual void __unk_vfn_165();
+    // vIndex: 162, symbol: __unk_vfn_162
+    virtual void __unk_vfn_162();
 
-    // vIndex: 170, symbol: __unk_vfn_170
-    virtual void __unk_vfn_170();
+    // vIndex: 167, symbol: __unk_vfn_167
+    virtual void __unk_vfn_167();
 
-    // vIndex: 172, symbol: __unk_vfn_172
-    virtual void __unk_vfn_172();
+    // vIndex: 168, symbol: __unk_vfn_168
+    virtual void __unk_vfn_168();
 
-    // vIndex: 181, symbol: ?aiStep@Cat@@UEAAXXZ
+    // vIndex: 177, symbol: ?aiStep@Cat@@UEAAXXZ
     virtual void aiStep();
-
-    // vIndex: 212, symbol: ?_serverAiMobStep@Cat@@UEAAXXZ
-    virtual void _serverAiMobStep();
 
     // symbol: ??0Cat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Cat(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
@@ -99,13 +95,6 @@ public:
 
     // symbol: ?SPRINT_SPEED_MOD@Cat@@2MB
     MCAPI static float const SPRINT_SPEED_MOD;
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?getLieOnPlayer@Cat@@AEAAMXZ
-    MCAPI float getLieOnPlayer();
 
     // NOLINTEND
 };

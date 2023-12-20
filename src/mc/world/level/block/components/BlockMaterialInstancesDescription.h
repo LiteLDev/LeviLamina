@@ -17,7 +17,6 @@ struct BlockMaterialInstancesDescription : public ::BlockComponentDescription {
 public:
     // prevent constructor by default
     BlockMaterialInstancesDescription& operator=(BlockMaterialInstancesDescription const&);
-    BlockMaterialInstancesDescription(BlockMaterialInstancesDescription const&);
     BlockMaterialInstancesDescription();
 
 public:
@@ -29,8 +28,11 @@ public:
     // ?getName@BlockMaterialInstancesDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
 
-    // vIndex: 3, symbol: ?initializeComponent@BlockMaterialInstancesDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 2, symbol: ?initializeComponent@BlockMaterialInstancesDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponent(class BlockComponentStorage&) const;
+
+    // vIndex: 3, symbol: __unk_vfn_3
+    virtual void __unk_vfn_3();
 
     // vIndex: 4, symbol:
     // ?initializeComponentFromCode@BlockMaterialInstancesDescription@@UEBAXAEAVBlockComponentStorage@@@Z
@@ -50,9 +52,15 @@ public:
     // ?initializeFromNetwork@BlockMaterialInstancesDescription@@UEAAXAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
     virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
+    // symbol: ??0BlockMaterialInstancesDescription@@QEAA@AEBU0@@Z
+    MCAPI BlockMaterialInstancesDescription(struct BlockMaterialInstancesDescription const&);
+
     // symbol:
     // ??0BlockMaterialInstancesDescription@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockRenderLayer@@_N2@Z
     MCAPI BlockMaterialInstancesDescription(std::string const&, ::BlockRenderLayer, bool, bool);
+
+    // symbol: ??4BlockMaterialInstancesDescription@@QEAAAEAU0@$$QEAU0@@Z
+    MCAPI struct BlockMaterialInstancesDescription& operator=(struct BlockMaterialInstancesDescription&&);
 
     // symbol: ?bindType@BlockMaterialInstancesDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

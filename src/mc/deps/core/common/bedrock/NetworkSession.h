@@ -23,6 +23,9 @@ public:
     // vIndex: 0, symbol: __gen_??1NetworkSession@@UEAA@XZ
     virtual ~NetworkSession() = default;
 
+    // symbol: ??0NetworkSession@@QEAA@W4TransportLayer@@@Z
+    MCAPI explicit NetworkSession(::TransportLayer);
+
     // symbol: ?getTransportLayer@NetworkSession@@QEBA?AW4TransportLayer@@XZ
     MCAPI ::TransportLayer getTransportLayer() const;
 

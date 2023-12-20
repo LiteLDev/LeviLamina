@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/EntityId.h"
 
 class EntityRegistryBase {
 public:
@@ -10,13 +9,10 @@ public:
     EntityRegistryBase(EntityRegistryBase const&);
     EntityRegistryBase();
 
-    entt::basic_registry<EntityId>& mRegistry;
-    uint                            mId;
-
 public:
     // NOLINTBEGIN
     // symbol: ??0EntityRegistryBase@@QEAA@AEAV?$basic_registry@VEntityId@@V?$allocator@VEntityId@@@std@@@entt@@@Z
-    MCAPI explicit EntityRegistryBase(entt::basic_registry<EntityId>&);
+    MCAPI explicit EntityRegistryBase(entt::basic_registry<class EntityId>&);
 
     // symbol: ?isValidEntity@EntityRegistryBase@@QEBA_NAEBVEntityContextBase@@@Z
     MCAPI bool isValidEntity(class EntityContextBase const&) const;

@@ -20,10 +20,9 @@ public:
     MCAPI static struct TickingSystemWithInfo create();
 
     // symbol:
-    // ?tickSystem@ActorUpdatePreviousPositionSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@VActorOwnerComponent@@@@@Z
+    // ?tickSystem@ActorUpdatePreviousPositionSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@VActorOwnerComponent@@@@@Z
     MCAPI static void tickSystem(class ViewT<
                                  class StrictEntityContext,
-                                 class EntityRegistryBase,
                                  struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
                                  class ActorOwnerComponent>);
 

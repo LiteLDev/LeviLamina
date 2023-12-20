@@ -108,6 +108,12 @@ public:
     // symbol: ?setStructureTemplateData@StructureTemplate@@QEAAXAEBVStructureTemplateData@@@Z
     MCAPI void setStructureTemplateData(class StructureTemplateData const&);
 
+    // symbol:
+    // ?structureTemplateDataIsValid@StructureTemplate@@QEBA_NAEBVBlockSource@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@AEBVStructureSettings@@@Z
+    MCAPI bool
+    structureTemplateDataIsValid(class BlockSource const&, std::string const&, class BlockPos const&, class StructureSettings const&)
+        const;
+
     // symbol: ?INVALID_POSITION@StructureTemplate@@2VBlockPos@@B
     MCAPI static class BlockPos const INVALID_POSITION;
 

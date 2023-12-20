@@ -9,6 +9,7 @@
 // clang-format off
 namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
+namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 class SemVersionConstraint : public ::cereal::Constraint {
@@ -24,6 +25,9 @@ public:
 
     // vIndex: 1, symbol: ??1SemVersionConstraint@@UEAA@XZ
     virtual ~SemVersionConstraint();
+
+    // vIndex: 2, symbol: ?description@SemVersionConstraint@@UEBA?AUConstraintDescription@internal@cereal@@XZ
+    virtual struct cereal::internal::ConstraintDescription description() const;
 
     // symbol: ??0SemVersionConstraint@@QEAA@XZ
     MCAPI SemVersionConstraint();

@@ -14,6 +14,9 @@ public:
     // symbol: ?createApplyAutoJumpingToInputSystem@PlayerMoveSystems@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createApplyAutoJumpingToInputSystem();
 
+    // symbol: ?createLocalPlayerFilterAutoJumpSystem@PlayerMoveSystems@@SA?AUTickingSystemWithInfo@@XZ
+    MCAPI static struct TickingSystemWithInfo createLocalPlayerFilterAutoJumpSystem();
+
     // symbol: ?createPlayerPostMoveSystem@PlayerMoveSystems@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createPlayerPostMoveSystem();
 

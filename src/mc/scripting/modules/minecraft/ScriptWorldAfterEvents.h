@@ -95,11 +95,14 @@ public:
         // vIndex: 4, symbol: __unk_vfn_4
         virtual void __unk_vfn_4();
 
-        // vIndex: 5, symbol:
+        // vIndex: 5, symbol: __unk_vfn_5
+        virtual void __unk_vfn_5();
+
+        // vIndex: 6, symbol:
         // ?onPreFlushAfterEvents@?$IScriptScriptDeferredEventListener@VScriptWorldAfterEvents@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEAAXXZ
         virtual void onPreFlushAfterEvents();
 
-        // vIndex: 6, symbol:
+        // vIndex: 7, symbol:
         // ?onPostFlushAfterEvents@?$IScriptScriptDeferredEventListener@VScriptWorldAfterEvents@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEAAXXZ
         virtual void onPostFlushAfterEvents();
 

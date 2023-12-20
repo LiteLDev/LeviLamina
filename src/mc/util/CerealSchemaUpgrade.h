@@ -20,7 +20,8 @@ public:
     // vIndex: 0, symbol: ??1CerealSchemaUpgrade@@UEAA@XZ
     virtual ~CerealSchemaUpgrade();
 
-    // vIndex: 1, symbol: ?previousSchema@UpgradeTo12020@ArmorItemComponentVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z
+    // vIndex: 1, symbol:
+    // ?previousSchema@UpgradeTo118@DurabilityItemComponentVersioning@@UEBAXAEAVSchemaFactory@cereal@@@Z
     virtual void previousSchema(class cereal::SchemaFactory&) const = 0;
 
     // vIndex: 2, symbol:

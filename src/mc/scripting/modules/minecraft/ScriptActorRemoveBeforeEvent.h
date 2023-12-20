@@ -23,8 +23,8 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ??0ScriptActorRemoveBeforeEvent@ScriptModuleMinecraft@@QEAA@PEBVActor@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI ScriptActorRemoveBeforeEvent(class Actor const*, class Scripting::WeakLifetimeScope const&);
+    // ??0ScriptActorRemoveBeforeEvent@ScriptModuleMinecraft@@QEAA@AEBVActor@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI ScriptActorRemoveBeforeEvent(class Actor const&, class Scripting::WeakLifetimeScope const&);
 
     // symbol:
     // ?bind@ScriptActorRemoveBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptActorRemoveBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ

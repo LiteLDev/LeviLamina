@@ -13,6 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??1ReflectionCtx@cereal@@QEAA@XZ
+    MCAPI ~ReflectionCtx();
+
     // symbol: ?global@ReflectionCtx@cereal@@SAAEAU12@XZ
     MCAPI static struct cereal::ReflectionCtx& global();
 

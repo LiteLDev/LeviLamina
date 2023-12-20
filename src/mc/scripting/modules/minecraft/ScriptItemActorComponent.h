@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActorComponent; }
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 // clang-format on
 
@@ -35,8 +36,9 @@ public:
     getItemStack() const;
 
     // symbol:
-    // ?bind@ScriptItemActorComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemActorComponent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemActorComponent> bind();
+    // ?bind@ScriptItemActorComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemActorComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemActorComponent>
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol: ?ComponentId@ScriptItemActorComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;

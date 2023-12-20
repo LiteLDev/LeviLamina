@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorComponentDescription.h"
 
-class ContainerDescription : public ::ActorComponentDescription {
+struct ContainerDescription : public ::ActorComponentDescription {
 public:
     // prevent constructor by default
     ContainerDescription& operator=(ContainerDescription const&);

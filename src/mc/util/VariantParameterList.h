@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/FilterSubject.h"
+#include "mc/deps/puv/FilterSubject.h"
 
 class VariantParameterList {
 public:
@@ -16,8 +16,8 @@ public:
     // symbol: ??0VariantParameterList@@QEAA@XZ
     MCAPI VariantParameterList();
 
-    // symbol: ?hasParameter@VariantParameterList@@QEBA_NW4FilterSubject@@@Z
-    MCAPI bool hasParameter(::FilterSubject) const;
+    // symbol: ?hasParameter@VariantParameterList@@QEBA_NW4FilterSubject@Legacy@Puv@@@Z
+    MCAPI bool hasParameter(::Puv::Legacy::FilterSubject) const;
 
     // NOLINTEND
 };

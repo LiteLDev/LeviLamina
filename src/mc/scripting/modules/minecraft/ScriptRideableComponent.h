@@ -11,6 +11,7 @@
 // clang-format off
 class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
 struct SeatDescription;
 // clang-format on
@@ -85,8 +86,9 @@ public:
     MCAPI class Scripting::Result<std::vector<struct SeatDescription>> getSeats() const;
 
     // symbol:
-    // ?bind@ScriptRideableComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptRideableComponent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptRideableComponent> bind();
+    // ?bind@ScriptRideableComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptRideableComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptRideableComponent>
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol: ?ComponentId@ScriptRideableComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;

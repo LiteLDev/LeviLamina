@@ -9,9 +9,6 @@ namespace MovementDataExtractionUtility { struct Extractors; }
 
 namespace MovementDataExtractionUtility {
 // NOLINTBEGIN
-// symbol: ?_buildSnapshotExtractors@MovementDataExtractionUtility@@YA?AUExtractors@1@XZ
-MCAPI struct MovementDataExtractionUtility::Extractors _buildSnapshotExtractors();
-
 // symbol:
 // ?extractExternalData@MovementDataExtractionUtility@@YAXAEAUExternalDataSnapshotComponent@@AEAVEntityRegistry@@@Z
 MCAPI void extractExternalData(struct ExternalDataSnapshotComponent&, class EntityRegistry&);

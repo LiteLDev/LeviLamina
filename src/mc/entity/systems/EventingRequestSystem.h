@@ -27,10 +27,9 @@ public:
     _eventingRequestSystem(class StrictEntityContext const&, struct EventingRequestQueueComponent&, class LevelComponent&);
 
     // symbol:
-    // ?_tickEventingRequestSystem@EventingRequestSystem@@CAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@UEventingRequestQueueComponent@@VLevelComponent@@@@@Z
+    // ?_tickEventingRequestSystem@EventingRequestSystem@@CAXV?$ViewT@VStrictEntityContext@@UEventingRequestQueueComponent@@VLevelComponent@@@@@Z
     MCAPI static void _tickEventingRequestSystem(class ViewT<
                                                  class StrictEntityContext,
-                                                 class EntityRegistryBase,
                                                  struct EventingRequestQueueComponent,
                                                  class LevelComponent>);
 

@@ -32,6 +32,9 @@ MCAPI extern struct Scripting::Version const V150;
 
 // symbol: ?V160@Releases@ScriptModuleMinecraft@@3UVersion@Scripting@@B
 MCAPI extern struct Scripting::Version const V160;
+
+// symbol: ?V170@Releases@ScriptModuleMinecraft@@3UVersion@Scripting@@B
+MCAPI extern struct Scripting::Version const V170;
 // NOLINTEND
 
 }; // namespace ScriptModuleMinecraft::Releases

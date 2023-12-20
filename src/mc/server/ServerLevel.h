@@ -9,11 +9,11 @@
 #include "mc/common/wrapper/SharePtrRefTraits.h"
 #include "mc/common/wrapper/WeakRefT.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/entity/systems/common/CommandOriginSystem.h"
+#include "mc/entity/utilities/ActorInitializationMethod.h"
 #include "mc/enums/CurrentCmdVersion.h"
-#include "mc/enums/InitializationMethod.h"
 #include "mc/enums/SubClientId.h"
 #include "mc/world/level/Level.h"
-#include "mc/world/systems/CommandOriginSystem.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -186,8 +186,8 @@ public:
     // symbol: ?_onWakeUpAllPlayers@ServerLevel@@AEAAXXZ
     MCAPI void _onWakeUpAllPlayers();
 
-    // symbol: ?_postReloadActorAdded@ServerLevel@@AEAAXAEAVActor@@W4InitializationMethod@@@Z
-    MCAPI void _postReloadActorAdded(class Actor&, ::InitializationMethod);
+    // symbol: ?_postReloadActorAdded@ServerLevel@@AEAAXAEAVActor@@W4ActorInitializationMethod@@@Z
+    MCAPI void _postReloadActorAdded(class Actor&, ::ActorInitializationMethod);
 
     // NOLINTEND
 };

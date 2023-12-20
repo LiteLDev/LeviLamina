@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+namespace Puv::Legacy {
+
 enum class LevelSoundEvent : int {
     ItemUseOn                         = 0x0,
     Hit                               = 0x1,
@@ -434,4 +436,6 @@ enum class LevelSoundEvent : int {
     ShatterDecoratedPot               = 0x1D0,
     BreakDecoratedPot                 = 0x1D1,
     Undefined                         = 0x1D2,
+};
+
 };

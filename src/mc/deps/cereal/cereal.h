@@ -30,13 +30,18 @@ namespace cereal { struct SerializerTraits; }
 namespace cereal::internal { class BasicCompositeSchema; }
 namespace cereal::internal { class BasicSchema; }
 namespace cereal::internal { class UndefinedSchema; }
+namespace cereal::internal { struct ConstraintDescription; }
 namespace cereal::internal { struct ExtendedSchemaInfo; }
 namespace cereal::internal { struct ReflectionContext; }
+namespace cereal::internal { struct SchemaId; }
 namespace cereal::internal { struct SchemaInfo; }
 // clang-format on
 
 namespace cereal {
 // NOLINTBEGIN
+// symbol: ?enttHash@cereal@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+MCAPI uint enttHash(std::string const&);
+
 // symbol: ?fillOptional@cereal@@YA?AVmeta_any@entt@@AEAV23@@Z
 MCAPI entt::meta_any fillOptional(entt::meta_any&);
 

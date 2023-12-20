@@ -9,6 +9,7 @@
 // clang-format off
 namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
+namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace cereal {
@@ -28,14 +29,17 @@ public:
     // vIndex: 1, symbol: __gen_??1NumericConstraint@cereal@@UEAA@XZ
     virtual ~NumericConstraint() = default;
 
+    // vIndex: 2, symbol: ?description@NumericConstraint@cereal@@UEBA?AUConstraintDescription@internal@2@XZ
+    virtual struct cereal::internal::ConstraintDescription description() const;
+
     // symbol: ?max@NumericConstraint@cereal@@QEAAAEAV12@N@Z
     MCAPI class cereal::NumericConstraint& max(double);
 
     // symbol: ?min@NumericConstraint@cereal@@QEAAAEAV12@N@Z
     MCAPI class cereal::NumericConstraint& min(double);
 
-    // symbol: ?range@NumericConstraint@cereal@@QEAAAEAV12@NN@Z
-    MCAPI class cereal::NumericConstraint& range(double, double);
+    // symbol: ?range@NumericConstraint@cereal@@QEAAAEAV12@NN_N@Z
+    MCAPI class cereal::NumericConstraint& range(double, double, bool);
 
     // NOLINTEND
 };

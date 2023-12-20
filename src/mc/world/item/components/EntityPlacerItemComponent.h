@@ -42,8 +42,8 @@ public:
     // vIndex: 8, symbol: ?_useOn@EntityPlacerItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
     virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
 
-    // vIndex: 9, symbol: ?_initializeComponent@EntityPlacerItemComponent@@UEBAXXZ
-    virtual void _initializeComponent() const;
+    // vIndex: 9, symbol: ?_initializeComponent@EntityPlacerItemComponent@@UEAAXXZ
+    virtual void _initializeComponent();
 
     // symbol: ??0EntityPlacerItemComponent@@QEAA@XZ
     MCAPI EntityPlacerItemComponent();

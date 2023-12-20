@@ -5,9 +5,7 @@
 #include "mc/resources/BaseGameVersion.h"
 
 // auto generated inclusion list
-#include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/common/wrapper/SharedPtr.h"
-#include "mc/common/wrapper/StackRefResultT.h"
 #include "mc/common/wrapper/WeakPtr.h"
 
 class BlockTypeRegistry {
@@ -114,14 +112,8 @@ public:
     // symbol: ?getDefaultBlockState@BlockTypeRegistry@@SAAEBVBlock@@AEBVHashedString@@_N@Z
     MCAPI static class Block const& getDefaultBlockState(class HashedString const&, bool logNotFound = false);
 
-    // symbol: ?getEntityRegistry@BlockTypeRegistry@@SA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ
-    MCAPI static class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
-
-    // symbol: ?initBlockEntities@BlockTypeRegistry@@SAXAEBVExperiments@@@Z
-    MCAPI static void initBlockEntities(class Experiments const&);
-
-    // symbol: ?initEntityRegistry@BlockTypeRegistry@@SAXXZ
-    MCAPI static void initEntityRegistry();
+    // symbol: ?initHardCodedBlockComponents@BlockTypeRegistry@@SAXAEBVExperiments@@@Z
+    MCAPI static void initHardCodedBlockComponents(class Experiments const&);
 
     // symbol: ?isComplexAliasBlock@BlockTypeRegistry@@SA_NAEBVHashedString@@@Z
     MCAPI static bool isComplexAliasBlock(class HashedString const&);
@@ -185,25 +177,26 @@ private:
     MCAPI static std::unordered_map<class HashedString, class HashedString> mBlockAliasLookupMap;
 
     // symbol:
-    // ?mBlockComplexAliasLookupMap@BlockTypeRegistry@@0V?$unordered_map@VHashedString@@VBlockComplexAliasContent@BlockTypeRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@VBlockComplexAliasContent@BlockTypeRegistry@@@std@@@5@@std@@A
-    MCAPI static std::unordered_map<class HashedString, class BlockTypeRegistry::BlockComplexAliasContent>
+    // ?mBlockComplexAliasLookupMap@BlockTypeRegistry@@0V?$dense_map@VHashedString@@VBlockComplexAliasContent@BlockTypeRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@VBlockComplexAliasContent@BlockTypeRegistry@@@std@@@5@@entt@@A
+    MCAPI static entt::dense_map<class HashedString, class BlockTypeRegistry::BlockComplexAliasContent>
         mBlockComplexAliasLookupMap;
 
     // symbol:
-    // ?mBlockComplexAliasPostSplitBlockNamesLookupMap@BlockTypeRegistry@@0V?$map@VHashedString@@V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@U?$less@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@@std@@@3@@std@@A
-    MCAPI static std::map<class HashedString, std::vector<std::reference_wrapper<class HashedString const>>>
-        mBlockComplexAliasPostSplitBlockNamesLookupMap;
+    // ?mBlockComplexAliasPostSplitBlockNamesList@BlockTypeRegistry@@0V?$vector@V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@V?$allocator@V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@@2@@std@@A
+    MCAPI static std::vector<std::vector<std::reference_wrapper<class HashedString const>>>
+        mBlockComplexAliasPostSplitBlockNamesList;
+
+    // symbol:
+    // ?mBlockComplexAliasPostSplitBlockNamesLookupMap@BlockTypeRegistry@@0V?$dense_map@_K_KU?$hash@_K@std@@U?$equal_to@_K@2@V?$allocator@U?$pair@$$CB_K_K@std@@@2@@entt@@A
+    MCAPI static entt::dense_map<uint64, uint64> mBlockComplexAliasPostSplitBlockNamesLookupMap;
 
     // symbol:
     // ?mBlockLookupMap@BlockTypeRegistry@@0V?$map@VHashedString@@V?$SharedPtr@VBlockLegacy@@@@U?$less@VHashedString@@@std@@V?$allocator@U?$pair@$$CBVHashedString@@V?$SharedPtr@VBlockLegacy@@@@@std@@@4@@std@@A
     MCAPI static std::map<class HashedString, class SharedPtr<class BlockLegacy>> mBlockLookupMap;
 
     // symbol:
-    // ?mBlockNameHashToStringMap@BlockTypeRegistry@@0V?$unordered_map@_KVHashedString@@U?$hash@_K@std@@U?$equal_to@_K@3@V?$allocator@U?$pair@$$CB_KVHashedString@@@std@@@3@@std@@A
-    MCAPI static std::unordered_map<uint64, class HashedString> mBlockNameHashToStringMap;
-
-    // symbol: ?mEntities@BlockTypeRegistry@@0V?$OwnerPtrT@UEntityRegistryRefTraits@@@@A
-    MCAPI static class OwnerPtrT<struct EntityRegistryRefTraits> mEntities;
+    // ?mBlockNameHashToStringMap@BlockTypeRegistry@@0V?$dense_map@_KVHashedString@@U?$hash@_K@std@@U?$equal_to@_K@3@V?$allocator@U?$pair@$$CB_KVHashedString@@@std@@@3@@entt@@A
+    MCAPI static entt::dense_map<uint64, class HashedString> mBlockNameHashToStringMap;
 
     // symbol:
     // ?mKnownNamespaces@BlockTypeRegistry@@0V?$set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@A
@@ -221,6 +214,8 @@ public:
 
     static auto& $mBlockComplexAliasLookupMap() { return mBlockComplexAliasLookupMap; }
 
+    static auto& $mBlockComplexAliasPostSplitBlockNamesList() { return mBlockComplexAliasPostSplitBlockNamesList; }
+
     static auto& $mBlockComplexAliasPostSplitBlockNamesLookupMap() {
         return mBlockComplexAliasPostSplitBlockNamesLookupMap;
     }
@@ -228,8 +223,6 @@ public:
     static auto& $mBlockLookupMap() { return mBlockLookupMap; }
 
     static auto& $mBlockNameHashToStringMap() { return mBlockNameHashToStringMap; }
-
-    static auto& $mEntities() { return mEntities; }
 
     static auto& $mKnownNamespaces() { return mKnownNamespaces; }
 

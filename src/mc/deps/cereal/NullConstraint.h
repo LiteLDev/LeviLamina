@@ -9,6 +9,7 @@
 // clang-format off
 namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
+namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace cereal {
@@ -27,6 +28,9 @@ public:
 
     // vIndex: 1, symbol: ??1NullConstraint@cereal@@UEAA@XZ
     virtual ~NullConstraint();
+
+    // vIndex: 2, symbol: ?description@NullConstraint@cereal@@UEBA?AUConstraintDescription@internal@2@XZ
+    virtual struct cereal::internal::ConstraintDescription description() const;
 
     // NOLINTEND
 };

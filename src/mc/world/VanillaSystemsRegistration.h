@@ -70,6 +70,11 @@ registerPostMovementSystems(class EntitySystems&, struct VanillaSystemsRegistrat
 MCAPI void
 registerPreMoveTravelVelocitySystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
 
+// symbol:
+// ?registerResetMovementValuesSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEBURegistrationOptions@1@@Z
+MCAPI void
+registerResetMovementValuesSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
+
 // symbol: ?registerSharedVanillaPlayerInteractionSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@@Z
 MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems&);
 

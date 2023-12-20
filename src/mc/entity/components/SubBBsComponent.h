@@ -8,11 +8,4 @@ public:
     SubBBsComponent& operator=(SubBBsComponent const&);
     SubBBsComponent(SubBBsComponent const&);
     SubBBsComponent();
-
-public:
-    // NOLINTBEGIN
-    // symbol: ??1SubBBsComponent@@QEAA@XZ
-    MCAPI ~SubBBsComponent();
-
-    // NOLINTEND
 };

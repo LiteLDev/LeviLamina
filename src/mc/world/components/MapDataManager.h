@@ -33,10 +33,19 @@ public:
     // vIndex: 3, symbol: ?createMapSavedData@MapDataManager@@UEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@@Z
     virtual class MapItemSavedData& createMapSavedData(struct ActorUniqueID const&);
 
+    // vIndex: 4, symbol: ?requestMapInfo@MapDataManager@@UEAAXUActorUniqueID@@_N@Z
+    virtual void requestMapInfo(struct ActorUniqueID, bool);
+
+    // vIndex: 5, symbol: ?_copyAndLockMap@MapDataManager@@MEAAXUActorUniqueID@@0@Z
+    virtual void _copyAndLockMap(struct ActorUniqueID, struct ActorUniqueID);
+
     // symbol:
     // ??0MapDataManager@@QEAA@AEAVDimensionManager@@PEAVLevelStorage@@V?$unique_ptr@VIMapDataManagerOptions@@U?$default_delete@VIMapDataManagerOptions@@@std@@@std@@V?$function@$$A6A?AUActorUniqueID@@XZ@4@@Z
     MCAPI
     MapDataManager(class DimensionManager&, class LevelStorage*, std::unique_ptr<class IMapDataManagerOptions>, std::function<struct ActorUniqueID(void)>);
+
+    // symbol: ?copyAndLockMap@MapDataManager@@QEAA_NUActorUniqueID@@0@Z
+    MCAPI bool copyAndLockMap(struct ActorUniqueID, struct ActorUniqueID);
 
     // symbol:
     // ?createMapSavedData@MapDataManager@@QEAAAEAVMapItemSavedData@@AEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@H@Z
@@ -48,15 +57,23 @@ public:
     MCAPI class MapItemSavedData&
     createMapSavedData(struct ActorUniqueID const&, class BlockPos const&, DimensionType, int);
 
-    // symbol:
-    // ?getAllMapData@MapDataManager@@QEAAAEAV?$unordered_map@UActorUniqueID@@V?$unique_ptr@VMapItemSavedData@@U?$default_delete@VMapItemSavedData@@@std@@@std@@U?$hash@UActorUniqueID@@@3@U?$equal_to@UActorUniqueID@@@3@V?$allocator@U?$pair@$$CBUActorUniqueID@@V?$unique_ptr@VMapItemSavedData@@U?$default_delete@VMapItemSavedData@@@std@@@std@@@std@@@3@@std@@XZ
-    MCAPI std::unordered_map<struct ActorUniqueID, std::unique_ptr<class MapItemSavedData>>& getAllMapData();
+    // symbol: ?expandMapByID@MapDataManager@@QEAA?AUActorUniqueID@@U2@_N@Z
+    MCAPI struct ActorUniqueID expandMapByID(struct ActorUniqueID, bool);
 
     // symbol: ?getMapSavedData@MapDataManager@@QEAAPEAVMapItemSavedData@@UActorUniqueID@@@Z
     MCAPI class MapItemSavedData* getMapSavedData(struct ActorUniqueID);
 
+    // symbol: ?onStartLeaveGame@MapDataManager@@QEAAXXZ
+    MCAPI void onStartLeaveGame();
+
     // symbol: ?registerOnSaveLevelDataSubscription@MapDataManager@@QEAAXAEAVLevelStorageManager@@@Z
     MCAPI void registerOnSaveLevelDataSubscription(class LevelStorageManager&);
+
+    // symbol: ?setPacketSender@MapDataManager@@QEAAXAEAVPacketSender@@@Z
+    MCAPI void setPacketSender(class PacketSender&);
+
+    // symbol: ?tick@MapDataManager@@QEAAXXZ
+    MCAPI void tick();
 
     // NOLINTEND
 

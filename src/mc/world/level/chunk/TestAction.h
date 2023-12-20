@@ -19,8 +19,8 @@ public:
     // vIndex: 1, symbol: ?execute@TestAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
     virtual void execute(class ServerLevel&, class Dimension&);
 
-    // vIndex: 3, symbol: ??8TestAction@@UEBA_NAEAVIRequestAction@@@Z
-    virtual bool operator==(class IRequestAction&) const;
+    // vIndex: 3, symbol: ??8TestAction@@UEBA_NAEBVIRequestAction@@@Z
+    virtual bool operator==(class IRequestAction const&) const;
 
     // symbol: ??0TestAction@@QEAA@XZ
     MCAPI TestAction();

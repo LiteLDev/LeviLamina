@@ -328,11 +328,11 @@ public:
     // symbol: ?fetchEntity@Dimension@@QEBAPEAVActor@@UActorUniqueID@@_N@Z
     MCAPI class Actor* fetchEntity(struct ActorUniqueID, bool) const;
 
-    // symbol: ?fetchNearestAttackablePlayer@Dimension@@QEAAPEAVPlayer@@AEAVActor@@M@Z
-    MCAPI class Player* fetchNearestAttackablePlayer(class Actor&, float);
+    // symbol: ?fetchNearestAttackablePlayer@Dimension@@QEBAPEAVPlayer@@AEAVActor@@M@Z
+    MCAPI class Player* fetchNearestAttackablePlayer(class Actor&, float) const;
 
-    // symbol: ?fetchNearestAttackablePlayer@Dimension@@QEAAPEAVPlayer@@VBlockPos@@MPEAVActor@@@Z
-    MCAPI class Player* fetchNearestAttackablePlayer(class BlockPos, float, class Actor*);
+    // symbol: ?fetchNearestAttackablePlayer@Dimension@@QEBAPEAVPlayer@@VBlockPos@@MPEAVActor@@@Z
+    MCAPI class Player* fetchNearestAttackablePlayer(class BlockPos, float, class Actor*) const;
 
     // symbol: ?fetchNearestInteractablePlayer@Dimension@@QEBAPEAVPlayer@@AEAVActor@@M@Z
     MCAPI class Player* fetchNearestInteractablePlayer(class Actor&, float) const;

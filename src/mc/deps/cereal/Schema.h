@@ -22,11 +22,15 @@ public:
     // symbol: ??0Schema@cereal@@QEAA@XZ
     MCAPI Schema();
 
+    // symbol: ??0Schema@cereal@@QEAA@AEBVBasicSchema@internal@1@@Z
+    MCAPI explicit Schema(class cereal::internal::BasicSchema const&);
+
     // symbol: ??0Schema@cereal@@QEAA@AEBU01@@Z
     MCAPI Schema(struct cereal::Schema const&);
 
-    // symbol: ??0Schema@cereal@@QEAA@AEBUReflectionCtx@1@PEBVBasicSchema@internal@1@@Z
-    MCAPI Schema(struct cereal::ReflectionCtx const&, class cereal::internal::BasicSchema const*);
+    // symbol:
+    // ??0Schema@cereal@@QEAA@AEBUReflectionCtx@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
+    MCAPI Schema(struct cereal::ReflectionCtx const&, std::string const&, std::string const&);
 
     // symbol:
     // ?getErrors@Schema@cereal@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
@@ -39,12 +43,11 @@ public:
     // symbol: ?getStatus@Schema@cereal@@QEBA?AW4ResultCode@internal@2@XZ
     MCAPI ::cereal::internal::ResultCode getStatus() const;
 
+    // symbol: ??4Schema@cereal@@QEAAAEAU01@$$QEAU01@@Z
+    MCAPI struct cereal::Schema& operator=(struct cereal::Schema&&);
+
     // symbol: ??4Schema@cereal@@QEAAAEAU01@AEBU01@@Z
     MCAPI struct cereal::Schema& operator=(struct cereal::Schema const&);
-
-    // symbol:
-    // ?rebind@Schema@cereal@@QEAAXAEBUReflectionCtx@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-    MCAPI void rebind(struct cereal::ReflectionCtx const&, std::string const&, std::string const&);
 
     // symbol: ?save@Schema@cereal@@QEAA_NAEAUSchemaWriter@2@Umeta_handle@entt@@@Z
     MCAPI bool save(struct cereal::SchemaWriter&, entt::meta_handle);

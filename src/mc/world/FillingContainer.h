@@ -50,19 +50,19 @@ public:
     // vIndex: 34, symbol: __unk_vfn_34
     virtual void __unk_vfn_34();
 
-    // vIndex: 36, symbol: ?add@FillingContainer@@UEAA_NAEAVItemStack@@@Z
+    // vIndex: 37, symbol: ?add@FillingContainer@@UEAA_NAEAVItemStack@@@Z
     virtual bool add(class ItemStack&);
 
-    // vIndex: 37, symbol: ?canAdd@FillingContainer@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 38, symbol: ?canAdd@FillingContainer@@UEBA_NAEBVItemStack@@@Z
     virtual bool canAdd(class ItemStack const&) const;
 
-    // vIndex: 38, symbol: ?clearSlot@FillingContainer@@UEAAXH@Z
+    // vIndex: 39, symbol: ?clearSlot@FillingContainer@@UEAAXH@Z
     virtual void clearSlot(int);
 
-    // vIndex: 39, symbol: ?clearInventory@FillingContainer@@UEAAHH@Z
+    // vIndex: 40, symbol: ?clearInventory@FillingContainer@@UEAAHH@Z
     virtual int clearInventory(int);
 
-    // vIndex: 40, symbol: ?load@FillingContainer@@UEAAXAEBVListTag@@AEBVSemVersion@@AEAVLevel@@@Z
+    // vIndex: 41, symbol: ?load@FillingContainer@@UEAAXAEBVListTag@@AEBVSemVersion@@AEAVLevel@@@Z
     virtual void load(class ListTag const&, class SemVersion const&, class Level&);
 
     // symbol: ??0FillingContainer@@QEAA@PEAVPlayer@@HW4ContainerType@@@Z

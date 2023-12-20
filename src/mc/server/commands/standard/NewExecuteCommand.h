@@ -184,12 +184,6 @@ public:
     _getScoreboardIdForSelector(class Scoreboard const&, class CommandSelector<class Actor> const&, class CommandOrigin const&, class CommandOutput&)
         const;
 
-    // symbol:
-    // ?_handleScoreNotFound@NewExecuteCommand@@AEBAXAEBVCommandOrigin@@AEBV?$CommandSelector@VActor@@@@AEBVObjective@@AEAVCommandOutput@@@Z
-    MCAPI void
-    _handleScoreNotFound(class CommandOrigin const&, class CommandSelector<class Actor> const&, class Objective const&, class CommandOutput&)
-        const;
-
     // NOLINTEND
 };
 

@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class MovementScriptActorComponent; }
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -27,9 +28,9 @@ public:
     virtual ~ScriptMovementGenericComponent();
 
     // symbol:
-    // ?bind@ScriptMovementGenericComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementGenericComponent@ScriptModuleMinecraft@@@Scripting@@XZ
+    // ?bind@ScriptMovementGenericComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementGenericComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementGenericComponent>
-    bind();
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol: ?ComponentId@ScriptMovementGenericComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;

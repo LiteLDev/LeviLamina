@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/puv/EquipmentSlot.h"
 #include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/entity/utilities/ActorFlags.h"
+#include "mc/entity/utilities/ActorInitializationMethod.h"
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
 #include "mc/enums/ArmorTextureType.h"
-#include "mc/enums/EquipmentSlot.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -20,6 +21,11 @@
 #include "mc/world/AutomaticID.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/item/components/ItemUseMethod.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace mce { class Color; }
+// clang-format on
 
 class EvocationFang : public ::Actor {
 public:
@@ -42,20 +48,17 @@ public:
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
 
-    // vIndex: 41, symbol: __unk_vfn_41
-    virtual void __unk_vfn_41();
+    // vIndex: 42, symbol: __unk_vfn_42
+    virtual void __unk_vfn_42();
 
-    // vIndex: 42, symbol: ?getShadowRadius@EvocationFang@@UEBAMXZ
+    // vIndex: 43, symbol: ?getShadowRadius@EvocationFang@@UEBAMXZ
     virtual float getShadowRadius() const;
-
-    // vIndex: 44, symbol: __unk_vfn_44
-    virtual void __unk_vfn_44();
 
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
 
-    // vIndex: 52, symbol: __unk_vfn_52
-    virtual void __unk_vfn_52();
+    // vIndex: 60, symbol: __unk_vfn_60
+    virtual void __unk_vfn_60();
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -63,26 +66,20 @@ public:
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 63, symbol: __unk_vfn_63
-    virtual void __unk_vfn_63();
-
-    // vIndex: 84, symbol: ?handleEntityEvent@EvocationFang@@UEAAXW4ActorEvent@@H@Z
+    // vIndex: 83, symbol: ?handleEntityEvent@EvocationFang@@UEAAXW4ActorEvent@@H@Z
     virtual void handleEntityEvent(::ActorEvent, int);
 
-    // vIndex: 102, symbol: ?getSourceUniqueID@EvocationFang@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 100, symbol: ?getSourceUniqueID@EvocationFang@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
 
-    // vIndex: 109, symbol: __unk_vfn_109
-    virtual void __unk_vfn_109();
+    // vIndex: 107, symbol: __unk_vfn_107
+    virtual void __unk_vfn_107();
 
-    // vIndex: 147, symbol: __unk_vfn_147
-    virtual void __unk_vfn_147();
+    // vIndex: 144, symbol: __unk_vfn_144
+    virtual void __unk_vfn_144();
 
-    // vIndex: 165, symbol: __unk_vfn_165
-    virtual void __unk_vfn_165();
-
-    // vIndex: 170, symbol: __unk_vfn_170
-    virtual void __unk_vfn_170();
+    // vIndex: 162, symbol: __unk_vfn_162
+    virtual void __unk_vfn_162();
 
     // symbol: ??0EvocationFang@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI EvocationFang(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);

@@ -16,8 +16,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0CerealComponentItemDataLoader@@QEAA@PEAVComponentItem@@VSemVersion@@AEAUReflectionCtx@cereal@@@Z
-    MCAPI CerealComponentItemDataLoader(class ComponentItem*, class SemVersion, struct cereal::ReflectionCtx&);
+    // symbol: ??0CerealComponentItemDataLoader@@QEAA@VSemVersion@@AEAUReflectionCtx@cereal@@@Z
+    MCAPI CerealComponentItemDataLoader(class SemVersion, struct cereal::ReflectionCtx&);
+
+    // symbol: ??1CerealComponentItemDataLoader@@QEAA@XZ
+    MCAPI ~CerealComponentItemDataLoader();
 
     // NOLINTEND
 };

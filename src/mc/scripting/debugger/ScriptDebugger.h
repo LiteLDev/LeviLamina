@@ -2,15 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/server/commands/standard/IScriptDebugger.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class IDebuggerController; }
 // clang-format on
 
-class ScriptDebugger : public ::IScriptDebugger {
+class ScriptDebugger {
 public:
     // prevent constructor by default
     ScriptDebugger& operator=(ScriptDebugger const&);
@@ -19,28 +16,38 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ?listen@ScriptDebugger@@UEAA_NG@Z
-    virtual bool listen(ushort);
+    // symbol: ?close@ScriptDebugger@@UEAAXXZ
+    MCVAPI void close();
 
-    // vIndex: 1, symbol:
-    // ?connect@ScriptDebugger@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-    virtual bool connect(std::string const&, ushort);
+    // symbol: ?connect@ScriptDebugger@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
+    MCVAPI bool connect(std::string const&, ushort);
 
-    // vIndex: 2, symbol: ?close@ScriptDebugger@@UEAAXXZ
-    virtual void close();
+    // symbol: ?getResourceStats@ScriptDebugger@@UEBA?AUScriptResourceStats@@XZ
+    MCVAPI struct ScriptResourceStats getResourceStats() const;
 
-    // vIndex: 3, symbol: ?startProfiler@ScriptDebugger@@UEAAXXZ
-    virtual void startProfiler();
+    // symbol: ?isStatPublisherEnabled@ScriptDebugger@@UEBA_NXZ
+    MCVAPI bool isStatPublisherEnabled() const;
 
-    // vIndex: 4, symbol:
-    // ?stopProfiler@ScriptDebugger@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void stopProfiler(std::string const&);
+    // symbol: ?listen@ScriptDebugger@@UEAA_NGV?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@@Z
+    MCVAPI bool listen(ushort, std::chrono::seconds);
 
-    // vIndex: 5, symbol: ?getResourceStats@ScriptDebugger@@UEBA?AUScriptResourceStats@@XZ
-    virtual struct ScriptResourceStats getResourceStats() const;
+    // symbol: ?publishStats@ScriptDebugger@@UEAAXAEBV?$vector@UScriptStat@@V?$allocator@UScriptStat@@@std@@@std@@@Z
+    MCVAPI void publishStats(std::vector<struct ScriptStat> const&);
 
-    // vIndex: 6, symbol: __gen_??1ScriptDebugger@@UEAA@XZ
-    virtual ~ScriptDebugger() = default;
+    // symbol: ?startProfiler@ScriptDebugger@@UEAAXXZ
+    MCVAPI void startProfiler();
+
+    // symbol: ?stopProfiler@ScriptDebugger@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCVAPI void stopProfiler(std::string const&);
+
+    // symbol: ?checkConnections@ScriptDebugger@@QEAA_NXZ
+    MCAPI bool checkConnections();
+
+    // symbol: ?isConnected@ScriptDebugger@@QEBA_NXZ
+    MCAPI bool isConnected() const;
+
+    // symbol: ?waitAutoAttach@ScriptDebugger@@QEAAXV?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@0@Z
+    MCAPI void waitAutoAttach(std::chrono::seconds, std::chrono::seconds);
 
     // NOLINTEND
 

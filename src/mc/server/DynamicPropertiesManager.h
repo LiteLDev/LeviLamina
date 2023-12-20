@@ -12,11 +12,12 @@ public:
     // prevent constructor by default
     DynamicPropertiesManager& operator=(DynamicPropertiesManager const&);
     DynamicPropertiesManager(DynamicPropertiesManager const&);
+    DynamicPropertiesManager();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0DynamicPropertiesManager@@QEAA@XZ
-    MCAPI DynamicPropertiesManager();
+    // symbol: ??0DynamicPropertiesManager@@QEAA@AEAUReflectionCtx@cereal@@@Z
+    MCAPI explicit DynamicPropertiesManager(struct cereal::ReflectionCtx&);
 
     // symbol: ?addBytesSaved@DynamicPropertiesManager@@QEAAXAEBVDynamicProperties@@@Z
     MCAPI void addBytesSaved(class DynamicProperties const&);
@@ -24,18 +25,20 @@ public:
     // symbol: ?getOrAddLevelDynamicProperties@DynamicPropertiesManager@@QEAAAEAVDynamicProperties@@XZ
     MCAPI class DynamicProperties& getOrAddLevelDynamicProperties();
 
-    // symbol: ?readFromLevelStorage@DynamicPropertiesManager@@QEAAXAEAVLevelStorage@@AEBUReflectionCtx@cereal@@@Z
-    MCAPI void readFromLevelStorage(class LevelStorage&, struct cereal::ReflectionCtx const&);
+    // symbol: ?getTotalBytesSaved@DynamicPropertiesManager@@QEBA_KXZ
+    MCAPI uint64 getTotalBytesSaved() const;
 
-    // symbol:
-    // ?registerLevelStorageManagerListener@DynamicPropertiesManager@@QEAAXAEAVLevelStorageManager@@AEBUReflectionCtx@cereal@@@Z
-    MCAPI void registerLevelStorageManagerListener(class LevelStorageManager&, struct cereal::ReflectionCtx const&);
+    // symbol: ?readFromLevelStorage@DynamicPropertiesManager@@QEAAXAEAVLevelStorage@@@Z
+    MCAPI void readFromLevelStorage(class LevelStorage&);
+
+    // symbol: ?registerLevelStorageManagerListener@DynamicPropertiesManager@@QEAAXAEAVLevelStorageManager@@@Z
+    MCAPI void registerLevelStorageManagerListener(class LevelStorageManager&);
 
     // symbol: ?tick@DynamicPropertiesManager@@QEAAXXZ
     MCAPI void tick();
 
-    // symbol: ?writeToLevelStorage@DynamicPropertiesManager@@QEAAXAEAVLevelStorage@@AEBUReflectionCtx@cereal@@@Z
-    MCAPI void writeToLevelStorage(class LevelStorage&, struct cereal::ReflectionCtx const&);
+    // symbol: ?writeToLevelStorage@DynamicPropertiesManager@@QEAAXAEAVLevelStorage@@@Z
+    MCAPI void writeToLevelStorage(class LevelStorage&);
 
     // NOLINTEND
 };

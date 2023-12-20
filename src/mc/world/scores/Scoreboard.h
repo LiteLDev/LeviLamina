@@ -124,6 +124,9 @@ public:
     // ?getCriteriaNames@Scoreboard@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     MCAPI std::vector<std::string> getCriteriaNames() const;
 
+    // symbol: ?getDefaultCriteria@Scoreboard@@QEBAAEBVObjectiveCriteria@@XZ
+    MCAPI class ObjectiveCriteria const& getDefaultCriteria() const;
+
     // symbol:
     // ?getDisplayInfoFiltered@Scoreboard@@QEBA?AV?$vector@UPlayerScore@@V?$allocator@UPlayerScore@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCAPI std::vector<struct PlayerScore> getDisplayInfoFiltered(std::string const& displaySlotName) const;

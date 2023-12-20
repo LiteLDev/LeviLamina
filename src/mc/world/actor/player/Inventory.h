@@ -38,16 +38,16 @@ public:
     // vIndex: 34, symbol: __unk_vfn_34
     virtual void __unk_vfn_34();
 
-    // vIndex: 36, symbol: ?add@Inventory@@UEAA_NAEAVItemStack@@@Z
+    // vIndex: 37, symbol: ?add@Inventory@@UEAA_NAEAVItemStack@@@Z
     virtual bool add(class ItemStack&);
 
-    // vIndex: 37, symbol: ?canAdd@Inventory@@UEBA_NAEBVItemStack@@@Z
+    // vIndex: 38, symbol: ?canAdd@Inventory@@UEBA_NAEBVItemStack@@@Z
     virtual bool canAdd(class ItemStack const&) const;
 
-    // vIndex: 41, symbol: ?getFirstEmptySlot@Inventory@@UEBAHXZ
+    // vIndex: 42, symbol: ?getFirstEmptySlot@Inventory@@UEBAHXZ
     virtual int getFirstEmptySlot() const;
 
-    // vIndex: 42, symbol: ?setContainerSize@Inventory@@UEAAXH@Z
+    // vIndex: 43, symbol: ?setContainerSize@Inventory@@UEAAXH@Z
     virtual void setContainerSize(int);
 
     // symbol: ??0Inventory@@QEAA@PEAVPlayer@@@Z

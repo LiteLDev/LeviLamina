@@ -47,14 +47,16 @@ public:
     // symbol: ?getVec3@SynchedActorData@@QEBA?AVVec3@@G@Z
     MCAPI class Vec3 getVec3(ushort) const;
 
-    // symbol: ?hasData@SynchedActorData@@QEBA_NG@Z
-    MCAPI bool hasData(ushort) const;
-
-    // symbol: ?markDirty@SynchedActorData@@QEAAXG@Z
-    MCAPI void markDirty(ushort);
-
     // symbol: ??4SynchedActorData@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class SynchedActorData& operator=(class SynchedActorData&&);
+
+    // symbol:
+    // ?packAll@SynchedActorData@@QEBA?AV?$vector@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@V?$allocator@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@@2@@std@@AEBVEntityContext@@@Z
+    MCAPI std::vector<std::unique_ptr<class DataItem>> packAll(class EntityContext const&) const;
+
+    // symbol:
+    // ?packDirty@SynchedActorData@@QEAA?AV?$vector@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@V?$allocator@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@@2@@std@@AEAVEntityContext@@@Z
+    MCAPI std::vector<std::unique_ptr<class DataItem>> packDirty(class EntityContext&);
 
     // symbol: ?setStatusFlag@SynchedActorData@@QEAAXW4ActorFlags@@_N@Z
     MCAPI void setStatusFlag(::ActorFlags, bool);
@@ -83,6 +85,9 @@ public:
 
     // symbol: ?_resizeToContain@SynchedActorData@@AEAAXG@Z
     MCAPI void _resizeToContain(ushort);
+
+    // symbol: ?_setDirty@SynchedActorData@@AEAAXG@Z
+    MCAPI void _setDirty(ushort);
 
     // NOLINTEND
 };

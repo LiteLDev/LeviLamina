@@ -29,6 +29,10 @@ MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const OldLogBlockIds;
 
 // symbol:
+// ?PlanksBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const PlanksBlockIds;
+
+// symbol:
 // ?RemovedBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const RemovedBlockIds;
 
@@ -43,6 +47,10 @@ MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const
 // symbol:
 // ?StainedGlassPaneIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
 MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const StainedGlassPaneIds;
+
+// symbol:
+// ?StoneBlockIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B
+MCAPI extern std::vector<std::reference_wrapper<class HashedString const>> const StoneBlockIds;
 
 // symbol:
 // ?TerracottaIds@VanillaBlockTypeGroups@@3V?$vector@V?$reference_wrapper@$$CBVHashedString@@@std@@V?$allocator@V?$reference_wrapper@$$CBVHashedString@@@std@@@2@@std@@B

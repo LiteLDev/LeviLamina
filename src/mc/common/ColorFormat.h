@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { class Color; }
-// clang-format on
-
 namespace ColorFormat {
 // NOLINTBEGIN
 // symbol: ?AQUA@ColorFormat@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
@@ -20,14 +15,6 @@ MCAPI extern std::string const BLUE;
 
 // symbol: ?BOLD@ColorFormat@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
 MCAPI extern std::string const BOLD;
-
-// symbol:
-// ?ColorCodeFromColor@ColorFormat@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@@Z
-MCAPI std::string ColorCodeFromColor(class mce::Color const&);
-
-// symbol:
-// ?ColorFromColorCode@ColorFormat@@YAPEBVColor@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI class mce::Color const* ColorFromColorCode(std::string const&);
 
 // symbol: ?DARK_AQUA@ColorFormat@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
 MCAPI extern std::string const DARK_AQUA;

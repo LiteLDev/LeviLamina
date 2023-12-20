@@ -49,11 +49,11 @@ public:
     // vIndex: 8, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
     virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
 
-    // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEBAXXZ
-    virtual void _initializeComponent() const;
+    // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
+    virtual void _initializeComponent();
 
-    // symbol: ??0RecordItemComponent@@QEAA@W4LevelSoundEvent@@MH@Z
-    MCAPI RecordItemComponent(::LevelSoundEvent, float, int);
+    // symbol: ??0RecordItemComponent@@QEAA@W4LevelSoundEvent@Legacy@Puv@@MH@Z
+    MCAPI RecordItemComponent(::Puv::Legacy::LevelSoundEvent, float, int);
 
     // symbol:
     // ?appendFormattedHovertext@RecordItemComponent@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -69,8 +69,8 @@ public:
     // ?getRecordDescription@RecordItemComponent@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getRecordDescription() const;
 
-    // symbol: ?getSound@RecordItemComponent@@QEBA?AW4LevelSoundEvent@@XZ
-    MCAPI ::LevelSoundEvent getSound() const;
+    // symbol: ?getSound@RecordItemComponent@@QEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    MCAPI ::Puv::Legacy::LevelSoundEvent getSound() const;
 
     // symbol:
     // ?bindType@RecordItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z
@@ -81,8 +81,8 @@ public:
     MCAPI static class HashedString const& getIdentifier();
 
     // symbol:
-    // ?getRecordNameNoPrefix@RecordItemComponent@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LevelSoundEvent@@@Z
-    MCAPI static std::string getRecordNameNoPrefix(::LevelSoundEvent);
+    // ?getRecordNameNoPrefix@RecordItemComponent@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LevelSoundEvent@Legacy@Puv@@@Z
+    MCAPI static std::string getRecordNameNoPrefix(::Puv::Legacy::LevelSoundEvent);
 
     // NOLINTEND
 };

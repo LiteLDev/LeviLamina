@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Level;
+namespace ScriptModuleMinecraft { struct ScriptActorAddEffectBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorRemoveBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerBeforeEvent; }
@@ -73,36 +74,41 @@ public:
                                      struct ScriptModuleMinecraft::ScriptActorRemoveBeforeEvent>);
 
     // vIndex: 7, symbol:
+    // ?onBeforeEffectAddedEventSend@ScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptActorAddEffectBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    virtual void onBeforeEffectAddedEventSend(class Scripting::StrongTypedObjectHandle<
+                                              struct ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>);
+
+    // vIndex: 8, symbol:
     // ?onBeforeActivatePiston@ScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptPistonActionBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onBeforeActivatePiston(class Scripting::StrongTypedObjectHandle<
                                         struct ScriptModuleMinecraft::ScriptPistonActionBeforeEvent>);
 
-    // vIndex: 8, symbol:
+    // vIndex: 9, symbol:
     // ?onBeforeExplosion@ScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptExplosionStartedBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onBeforeExplosion(class Scripting::StrongTypedObjectHandle<
                                    struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>);
 
-    // vIndex: 9, symbol:
+    // vIndex: 10, symbol:
     // ?onBeforePlayerBreakBlock@ScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptPlayerBreakBlockBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onBeforePlayerBreakBlock(class Scripting::StrongTypedObjectHandle<
                                           struct ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent>);
 
-    // vIndex: 10, symbol:
+    // vIndex: 11, symbol:
     // ?onBeforePlayerPlaceBlock@ScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptPlayerPlaceBlockBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onBeforePlayerPlaceBlock(class Scripting::StrongTypedObjectHandle<
                                           struct ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent>);
 
-    // vIndex: 11, symbol:
+    // vIndex: 12, symbol:
     // ?onBeforeItemDefinitionEventTriggered@ScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptItemDefinitionBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onBeforeItemDefinitionEventTriggered(class Scripting::StrongTypedObjectHandle<
                                                       struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent>);
 
-    // vIndex: 12, symbol:
+    // vIndex: 13, symbol:
     // ?onBeforeItemUse@ScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptItemUseBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onBeforeItemUse(class Scripting::StrongTypedObjectHandle<
                                  struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent>);
 
-    // vIndex: 13, symbol:
+    // vIndex: 14, symbol:
     // ?onBeforeItemUseOn@ScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     virtual void onBeforeItemUseOn(class Scripting::StrongTypedObjectHandle<
                                    struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>);

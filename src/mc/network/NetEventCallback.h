@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/enums/MinecraftPacketIds.h"
+#include "mc/enums/ShowStoreOfferRedirectType.h"
+#include "mc/enums/SubClientId.h"
 #include "mc/enums/connection/DisconnectFailReason.h"
 #include "mc/resources/PacketViolationResponse.h"
 
@@ -51,9 +53,18 @@ public:
     virtual void onWebsocketRequest(std::string const&, std::string const&, std::function<void(void)>);
 
     // vIndex: 9, symbol:
-    // ?sendPacketViolationDetectedTelemetryData@NetEventCallback@@UEAAX_KV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@@Z
-    virtual void
-    sendPacketViolationDetectedTelemetryData(uint64, std::string, ::PacketViolationResponse, ::MinecraftPacketIds, class NetworkIdentifier const&);
+    // ?sendPacketViolationDetectedTelemetryData@NetEventCallback@@UEAAX_KV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@IW4SubClientId@@5I@Z
+    virtual void sendPacketViolationDetectedTelemetryData(
+        uint64,
+        std::string,
+        ::PacketViolationResponse,
+        ::MinecraftPacketIds,
+        class NetworkIdentifier const&,
+        uint,
+        ::SubClientId,
+        ::SubClientId,
+        uint
+    );
 
     // vIndex: 10, symbol: __unk_vfn_10
     virtual void __unk_vfn_10();
@@ -326,6 +337,9 @@ public:
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSpawnParticleEffectPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class SpawnParticleEffectPacket const&);
 
+    // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetPlayerInventoryOptionsPacket@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, class SetPlayerInventoryOptionsPacket const&);
+
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerSkinPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class PlayerSkinPacket const&);
 
@@ -356,6 +370,9 @@ public:
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetDefaultGameTypePacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class SetDefaultGameTypePacket const&);
 
+    // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerToggleCrafterSlotRequestPacket@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, class PlayerToggleCrafterSlotRequestPacket const&);
+
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddVolumeEntityPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class AddVolumeEntityPacket const&);
 
@@ -376,9 +393,6 @@ public:
 
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMultiplayerSettingsPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class MultiplayerSettingsPacket const&);
-
-    // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSubClientLoginPacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class SubClientLoginPacket const&);
 
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVActorPickRequestPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class ActorPickRequestPacket const&);
@@ -455,6 +469,9 @@ public:
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVNetworkStackLatencyPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class NetworkStackLatencyPacket const&);
 
+    // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSubClientLoginPacket@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, class SubClientLoginPacket const&);
+
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerInputPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class PlayerInputPacket const&);
 
@@ -499,6 +516,9 @@ public:
 
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBiomeDefinitionListPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class BiomeDefinitionListPacket const&);
+
+    // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVServerPlayerPostMovePositionPacket@@@Z
+    MCVAPI void handle(class NetworkIdentifier const&, class ServerPlayerPostMovePositionPacket const&);
 
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLoginPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class LoginPacket const&);
@@ -632,9 +652,6 @@ public:
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackChunkDataPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class ResourcePackChunkDataPacket const&);
 
-    // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCraftingEventPacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class CraftingEventPacket const&);
-
     // symbol: ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVModalFormRequestPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const&, class ModalFormRequestPacket const&);
 
@@ -683,8 +700,8 @@ public:
     MCVAPI void onPlayerReady(class Player&);
 
     // symbol:
-    // ?onStoreOfferReceive@NetEventCallback@@UEAAX_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void onStoreOfferReceive(bool, std::string const&);
+    // ?onStoreOfferReceive@NetEventCallback@@UEAAXW4ShowStoreOfferRedirectType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCVAPI void onStoreOfferReceive(::ShowStoreOfferRedirectType, std::string const&);
 
     // symbol: ?onTick@NetEventCallback@@UEAAXXZ
     MCVAPI void onTick();

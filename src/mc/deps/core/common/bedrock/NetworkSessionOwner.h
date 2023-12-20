@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/enums/TransportLayer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,6 +24,15 @@ public:
 
     // symbol: ??0NetworkSessionOwner@@QEAA@XZ
     MCAPI NetworkSessionOwner();
+
+    // symbol: ?createNetworkSession@NetworkSessionOwner@@QEAAXW4TransportLayer@@@Z
+    MCAPI void createNetworkSession(::TransportLayer);
+
+    // symbol: ?destroyNetworkSession@NetworkSessionOwner@@QEAAXXZ
+    MCAPI void destroyNetworkSession();
+
+    // symbol: ?hasNetworkSession@NetworkSessionOwner@@QEBA_NXZ
+    MCAPI bool hasNetworkSession() const;
 
     // NOLINTEND
 };

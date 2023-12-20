@@ -24,9 +24,6 @@ public:
     MCAPI struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
     operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption const&);
 
-    // symbol: ??1ScriptScoreTargetSelectorOption@ScriptModuleMinecraft@@QEAA@XZ
-    MCAPI ~ScriptScoreTargetSelectorOption();
-
     // symbol:
     // ?bindV010@ScriptScoreTargetSelectorOption@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptScoreTargetSelectorOption@ScriptModuleMinecraft@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption>

@@ -32,8 +32,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_compileCommands@CommandResponseBase@@AEBAXAEAVLevel@@@Z
-    MCAPI void _compileCommands(class Level&) const;
+    // symbol: ?_compileCommands@CommandResponseBase@@AEBAXAEAVILevel@@@Z
+    MCAPI void _compileCommands(class ILevel&) const;
 
     // NOLINTEND
 };

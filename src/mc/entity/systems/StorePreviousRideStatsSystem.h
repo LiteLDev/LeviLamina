@@ -22,10 +22,9 @@ public:
     _storePreviousRideStats(class StrictEntityContext const&, struct StateVectorComponent const&, struct VanillaClientGameplayComponent&);
 
     // symbol:
-    // ?_tickStorePreviousRideStatsSystem@StorePreviousRideStatsSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@UPassengerComponent@@@@$$CBUStateVectorComponent@@UVanillaClientGameplayComponent@@@@@Z
+    // ?_tickStorePreviousRideStatsSystem@StorePreviousRideStatsSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@UPassengerComponent@@@@$$CBUStateVectorComponent@@UVanillaClientGameplayComponent@@@@@Z
     MCAPI static void _tickStorePreviousRideStatsSystem(class ViewT<
                                                         class StrictEntityContext,
-                                                        class EntityRegistryBase,
                                                         struct Include<
                                                             class FlagComponent<struct ActorMovementTickNeededFlag>,
                                                             class FlagComponent<struct LocalPlayerComponentFlag>,

@@ -245,12 +245,12 @@ public:
     // symbol: ?GetSplitMessageProgressInterval@RakPeer@RakNet@@UEBAHXZ
     MCVAPI int GetSplitMessageProgressInterval() const;
 
-    // symbol: ?GetStatistics@RakPeer@RakNet@@UEAA_NIPEAURakNetStatistics@2@@Z
-    MCVAPI bool GetStatistics(uint, struct RakNet::RakNetStatistics*);
-
     // symbol: ?GetStatistics@RakPeer@RakNet@@UEAAPEAURakNetStatistics@2@USystemAddress@2@PEAU32@@Z
     MCVAPI struct RakNet::RakNetStatistics*
     GetStatistics(struct RakNet::SystemAddress, struct RakNet::RakNetStatistics*);
+
+    // symbol: ?GetStatistics@RakPeer@RakNet@@UEAA_NIPEAURakNetStatistics@2@@Z
+    MCVAPI bool GetStatistics(uint, struct RakNet::RakNetStatistics*);
 
     // symbol:
     // ?GetStatisticsList@RakPeer@RakNet@@UEAAXAEAV?$List@USystemAddress@RakNet@@@DataStructures@@AEAV?$List@URakNetGUID@RakNet@@@4@AEAV?$List@URakNetStatistics@RakNet@@@4@@Z

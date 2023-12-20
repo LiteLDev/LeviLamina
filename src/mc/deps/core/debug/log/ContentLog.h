@@ -71,9 +71,6 @@ public:
     // symbol: ??0ContentLog@@QEAA@XZ
     MCAPI ContentLog();
 
-    // symbol: ?getScope@ContentLog@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    MCAPI std::string getScope();
-
     // symbol: ?isEnabled@ContentLog@@QEBA_NXZ
     MCAPI bool isEnabled() const;
 

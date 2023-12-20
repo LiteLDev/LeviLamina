@@ -22,8 +22,8 @@ public:
     // symbol: ?canGetAngry@AngryComponent@@QEBA_NAEAVMob@@PEAV2@PEAVActor@@_N3@Z
     MCAPI bool canGetAngry(class Mob&, class Mob*, class Actor*, bool, bool) const;
 
-    // symbol: ?getAngrySound@AngryComponent@@QEBA?BW4LevelSoundEvent@@AEBVMob@@@Z
-    MCAPI ::LevelSoundEvent const getAngrySound(class Mob const&) const;
+    // symbol: ?getAngrySound@AngryComponent@@QEBA?BW4LevelSoundEvent@Legacy@Puv@@AEBVMob@@@Z
+    MCAPI ::Puv::Legacy::LevelSoundEvent const getAngrySound(class Mob const&) const;
 
     // symbol: ?getBroadcastAnger@AngryComponent@@QEBA_NXZ
     MCAPI bool getBroadcastAnger() const;

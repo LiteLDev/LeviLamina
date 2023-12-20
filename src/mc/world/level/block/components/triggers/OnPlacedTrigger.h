@@ -11,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1OnPlacedTrigger@@UEAA@XZ
-    virtual ~OnPlacedTrigger();
-
-    // symbol: ??0OnPlacedTrigger@@QEAA@$$QEAV0@@Z
-    MCAPI OnPlacedTrigger(class OnPlacedTrigger&&);
+    // vIndex: 0, symbol: __gen_??1OnPlacedTrigger@@UEAA@XZ
+    virtual ~OnPlacedTrigger() = default;
 
     // NOLINTEND
 };

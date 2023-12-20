@@ -2,10 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/components/BlockAABBComponentData.h"
-
-struct BlockCollisionBoxComponent : public ::BlockAABBComponentData {
+struct BlockCollisionBoxComponent {
 public:
     // prevent constructor by default
     BlockCollisionBoxComponent& operator=(BlockCollisionBoxComponent const&);

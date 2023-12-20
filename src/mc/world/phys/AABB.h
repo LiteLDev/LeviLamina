@@ -144,6 +144,9 @@ public:
     // symbol: ?translateCenterTo@AABB@@QEAAAEAV1@AEBVVec3@@@Z
     MCAPI class AABB& translateCenterTo(class Vec3 const&);
 
+    // symbol: ?clipCollide@AABB@@SA?AUClipCollideResult@@AEBV1@0AEBVVec3@@@Z
+    MCAPI static struct ClipCollideResult clipCollide(class AABB const&, class AABB const&, class Vec3 const&);
+
     // symbol: ?fromPoints@AABB@@SA?AV1@AEBVVec3@@0@Z
     MCAPI static class AABB fromPoints(class Vec3 const&, class Vec3 const&);
 

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/puv/FilterSubject.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -15,6 +18,10 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol:
+    // ??0DefinitionTrigger@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4FilterSubject@Legacy@Puv@@VExpressionNode@@@Z
+    MCAPI DefinitionTrigger(std::string, ::Puv::Legacy::FilterSubject, class ExpressionNode);
+
     // symbol: ?canTrigger@DefinitionTrigger@@QEBA_NAEAVRenderParams@@@Z
     MCAPI bool canTrigger(class RenderParams&) const;
 

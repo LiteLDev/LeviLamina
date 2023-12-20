@@ -36,10 +36,6 @@ public:
     // ?getModifiers@ScriptDataDrivenActorTriggerAfterEvent@ScriptModuleMinecraft@@QEBA?AV?$vector@UActorDefinitionModifier@@V?$allocator@UActorDefinitionModifier@@@std@@@std@@XZ
     MCAPI std::vector<struct ActorDefinitionModifier> getModifiers() const;
 
-    // symbol: ??4ScriptDataDrivenActorTriggerAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent&&);
-
     // symbol: ??1ScriptDataDrivenActorTriggerAfterEvent@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptDataDrivenActorTriggerAfterEvent();
 

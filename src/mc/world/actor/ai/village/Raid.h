@@ -25,6 +25,9 @@ public:
     // symbol: ?addPlayerToHeroList@Raid@@QEAAXAEBVActor@@@Z
     MCAPI void addPlayerToHeroList(class Actor const&);
 
+    // symbol: ?addRaider@Raid@@QEAAXAEBUActorUniqueID@@M@Z
+    MCAPI void addRaider(struct ActorUniqueID const&, float);
+
     // symbol: ?appendDebugInfo@Raid@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void appendDebugInfo(std::string&) const;
 
@@ -33,6 +36,9 @@ public:
 
     // symbol: ?getRemainingRaiders@Raid@@QEBA_KXZ
     MCAPI uint64 getRemainingRaiders() const;
+
+    // symbol: ?isRaider@Raid@@QEBA_NUActorUniqueID@@@Z
+    MCAPI bool isRaider(struct ActorUniqueID) const;
 
     // symbol: ?readAdditionalSaveData@Raid@@QEAAXAEBVCompoundTag@@@Z
     MCAPI void readAdditionalSaveData(class CompoundTag const&);

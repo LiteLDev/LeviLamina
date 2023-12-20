@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/EquipmentSlot.h"
+#include "mc/deps/puv/EquipmentSlot.h"
 #include "mc/world/item/components/ItemLockMode.h"
 
 class ItemContext {
@@ -15,8 +15,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ItemContext@@QEAA@AEBVWeakEntityRef@@W4EquipmentSlot@@@Z
-    MCAPI ItemContext(class WeakEntityRef const&, ::EquipmentSlot);
+    // symbol: ??0ItemContext@@QEAA@AEBVWeakEntityRef@@W4EquipmentSlot@Legacy@Puv@@@Z
+    MCAPI ItemContext(class WeakEntityRef const&, ::Puv::Legacy::EquipmentSlot);
 
     // symbol: ??0ItemContext@@QEAA@AEBVWeakEntityRef@@H@Z
     MCAPI ItemContext(class WeakEntityRef const&, int);
@@ -97,8 +97,8 @@ public:
     // symbol: ??1ItemContext@@QEAA@XZ
     MCAPI ~ItemContext();
 
-    // symbol: ?setEquipment@ItemContext@@SA_NAEBVItemStack@@W4EquipmentSlot@@AEAVMob@@@Z
-    MCAPI static bool setEquipment(class ItemStack const&, ::EquipmentSlot, class Mob&);
+    // symbol: ?setEquipment@ItemContext@@SA_NAEBVItemStack@@W4EquipmentSlot@Legacy@Puv@@AEAVMob@@@Z
+    MCAPI static bool setEquipment(class ItemStack const&, ::Puv::Legacy::EquipmentSlot, class Mob&);
 
     // NOLINTEND
 

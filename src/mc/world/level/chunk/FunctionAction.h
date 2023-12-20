@@ -23,8 +23,8 @@ public:
     // vIndex: 2, symbol: ?serialize@FunctionAction@@UEAAXAEAVCompoundTag@@@Z
     virtual void serialize(class CompoundTag&);
 
-    // vIndex: 3, symbol: ??8FunctionAction@@UEBA_NAEAVIRequestAction@@@Z
-    virtual bool operator==(class IRequestAction&) const;
+    // vIndex: 3, symbol: ??8FunctionAction@@UEBA_NAEBVIRequestAction@@@Z
+    virtual bool operator==(class IRequestAction const&) const;
 
     // symbol:
     // ??0FunctionAction@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@2@@Z

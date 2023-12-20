@@ -47,8 +47,8 @@ public:
     MCAPI LevelSoundEventPacket();
 
     // symbol:
-    // ??0LevelSoundEventPacket@@QEAA@W4LevelSoundEvent@@AEBVVec3@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N3@Z
-    MCAPI LevelSoundEventPacket(::LevelSoundEvent, class Vec3 const&, int, std::string const&, bool, bool);
+    // ??0LevelSoundEventPacket@@QEAA@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N3@Z
+    MCAPI LevelSoundEventPacket(::Puv::Legacy::LevelSoundEvent, class Vec3 const&, int, std::string const&, bool, bool);
 
     // NOLINTEND
 };

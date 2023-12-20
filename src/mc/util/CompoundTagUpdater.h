@@ -4,6 +4,28 @@
 
 class CompoundTagUpdater {
 public:
+    // CompoundTagUpdater inner types declare
+    // clang-format off
+    struct Node;
+    // clang-format on
+
+    // CompoundTagUpdater inner types define
+    struct Node {
+    public:
+        // prevent constructor by default
+        Node& operator=(Node const&);
+        Node(Node const&);
+        Node();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??1Node@CompoundTagUpdater@@QEAA@XZ
+        MCAPI ~Node();
+
+        // NOLINTEND
+    };
+
+public:
     // prevent constructor by default
     CompoundTagUpdater& operator=(CompoundTagUpdater const&);
     CompoundTagUpdater(CompoundTagUpdater const&);
@@ -11,11 +33,15 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?update@CompoundTagUpdater@@QEBA_NAEAVCompoundTag@@@Z
-    MCAPI bool update(class CompoundTag&) const;
+    // symbol: ?getVersion@CompoundTagUpdater@@QEBAIXZ
+    MCAPI uint getVersion() const;
 
-    // symbol: ??1CompoundTagUpdater@@QEAA@XZ
-    MCAPI ~CompoundTagUpdater();
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_update@CompoundTagUpdater@@AEBA_NAEBUNode@1@AEAVCompoundTag@@@Z
+    MCAPI bool _update(struct CompoundTagUpdater::Node const&, class CompoundTag&) const;
 
     // NOLINTEND
 };

@@ -28,8 +28,11 @@ public:
     // ?getName@BlockCraftingTableDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
 
-    // vIndex: 3, symbol: ?initializeComponent@BlockCraftingTableDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 2, symbol: ?initializeComponent@BlockCraftingTableDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponent(class BlockComponentStorage&) const;
+
+    // vIndex: 3, symbol: __unk_vfn_3
+    virtual void __unk_vfn_3();
 
     // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5();

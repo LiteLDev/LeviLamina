@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptActorAddEffectBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorRemoveBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerBeforeEvent; }
@@ -73,6 +74,11 @@ public:
     MCVAPI void
         onBeforeDataDrivenActorEventSend(class Scripting::StrongTypedObjectHandle<
                                          struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerBeforeEvent>);
+
+    // symbol:
+    // ?onBeforeEffectAddedEventSend@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptActorAddEffectBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
+    MCVAPI void onBeforeEffectAddedEventSend(class Scripting::StrongTypedObjectHandle<
+                                             struct ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>);
 
     // symbol:
     // ?onBeforeExplosion@IScriptWorldBeforeEvents@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptExplosionStartedBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z

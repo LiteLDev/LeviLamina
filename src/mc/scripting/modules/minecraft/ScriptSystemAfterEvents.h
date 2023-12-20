@@ -53,11 +53,14 @@ public:
         // ?onFlushSystemAfterEvents@ScriptSystemAfterEventsDeferredEventListener@ScriptSystemAfterEvents@ScriptModuleMinecraft@@UEAA_NXZ
         virtual bool onFlushSystemAfterEvents();
 
-        // vIndex: 5, symbol:
+        // vIndex: 5, symbol: __unk_vfn_5
+        virtual void __unk_vfn_5();
+
+        // vIndex: 6, symbol:
         // ?onPreFlushAfterEvents@?$IScriptScriptDeferredEventListener@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEAAXXZ
         virtual void onPreFlushAfterEvents();
 
-        // vIndex: 6, symbol:
+        // vIndex: 7, symbol:
         // ?onPostFlushAfterEvents@?$IScriptScriptDeferredEventListener@VScriptSystemAfterEvents@ScriptModuleMinecraft@@@ScriptModuleMinecraft@@UEAAXXZ
         virtual void onPostFlushAfterEvents();
 

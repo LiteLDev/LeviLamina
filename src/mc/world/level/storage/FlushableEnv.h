@@ -14,7 +14,7 @@ public:
     // vIndex: 0, symbol: ??1FlushableEnv@@UEAA@XZ
     virtual ~FlushableEnv();
 
-    // vIndex: 20, symbol: ?flushToPermanentStorage@FlushableStorageAreaEnv@@UEAAXXZ
+    // vIndex: 20, symbol: ?flushToPermanentStorage@InMemoryEnv@@UEAAXXZ
     virtual void flushToPermanentStorage() = 0;
 
     // symbol: ??0FlushableEnv@@QEAA@PEAVEnv@leveldb@@@Z

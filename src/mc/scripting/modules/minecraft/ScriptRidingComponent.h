@@ -12,6 +12,7 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptActorComponent; }
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -34,8 +35,9 @@ public:
     getEntityRidingOn() const;
 
     // symbol:
-    // ?bind@ScriptRidingComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptRidingComponent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptRidingComponent> bind();
+    // ?bind@ScriptRidingComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptRidingComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptRidingComponent>
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol: ?ComponentId@ScriptRidingComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;

@@ -13,6 +13,7 @@
 class BlockPos;
 class BlockSource;
 namespace ScriptModuleMinecraft { class BaseScriptBlockLiquidContainerComponent; }
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -49,9 +50,9 @@ public:
     MCAPI class Scripting::Result<void> setCustomColor(class ScriptModuleMinecraft::ScriptRGBA const&);
 
     // symbol:
-    // ?bind@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@@Scripting@@XZ
+    // ?bind@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockWaterContainerComponent>
-    bind();
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol:
     // ?tryCreate@ScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptBlockWaterContainerComponent@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z

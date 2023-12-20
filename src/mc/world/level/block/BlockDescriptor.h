@@ -3,11 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/puv/v1_20_50/BlockDescriptor.h"
 #include "mc/util/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv::v1_20_50::BlockDescriptor { struct Compound; }
+namespace Puv::v1_20_50 { struct BlockDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -68,6 +69,9 @@ public:
 
     // symbol: ??0BlockDescriptor@@QEAA@AEBVHashedString@@@Z
     MCAPI explicit BlockDescriptor(class HashedString const&);
+
+    // symbol: ??0BlockDescriptor@@QEAA@U0v1_20_50@Puv@@@Z
+    MCAPI explicit BlockDescriptor(struct Puv::v1_20_50::BlockDescriptor);
 
     // symbol:
     // ??0BlockDescriptor@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$vector@UState@BlockDescriptor@@V?$allocator@UState@BlockDescriptor@@@std@@@2@@Z

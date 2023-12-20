@@ -11,15 +11,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_checkForAddingBakedMaterialDataComponent@BlockComponentStorageFinalizer@@AEAAXAEAVBlock@@@Z
-    MCAPI void _checkForAddingBakedMaterialDataComponent(class Block&);
-
-    // symbol: ?_checkForCollisionComponentBoxDuplication@BlockComponentStorageFinalizer@@AEAAXAEAVBlock@@@Z
-    MCAPI void _checkForCollisionComponentBoxDuplication(class Block&);
-
-    // symbol: ?_checkForSelectionBoxComponentDuplication@BlockComponentStorageFinalizer@@AEAAXAEAVBlock@@@Z
-    MCAPI void _checkForSelectionBoxComponentDuplication(class Block&);
-
     // symbol: ?_finalizeCollisionBoxComponent@BlockComponentStorageFinalizer@@AEAAXAEAVBlock@@@Z
     MCAPI void _finalizeCollisionBoxComponent(class Block&);
 

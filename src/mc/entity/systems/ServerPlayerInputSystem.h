@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/EntityModifierT.h"
+#include "mc/entity/EntityModifier.h"
 
 namespace ServerPlayerInputSystem {
 // NOLINTBEGIN
 // symbol:
-// ?_tickPlayerMovement@ServerPlayerInputSystem@@YAXAEAVStrictEntityContext@@AEBUPlayerCurrentTickComponent@@AEAUServerPlayerMovementComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UServerPlayerCurrentMovementComponent@@UServerPlayerMoveAbsoluteComponent@@UServerPlayerInventoryTransactionComponent@@@@@Z
+// ?_tickPlayerMovement@ServerPlayerInputSystem@@YAXAEAVStrictEntityContext@@AEBUPlayerCurrentTickComponent@@AEAUServerPlayerMovementComponent@@V?$EntityModifier@UServerPlayerCurrentMovementComponent@@UServerPlayerMoveAbsoluteComponent@@UServerPlayerInventoryTransactionComponent@@@@@Z
 MCAPI void
-_tickPlayerMovement(class StrictEntityContext&, struct PlayerCurrentTickComponent const&, struct ServerPlayerMovementComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ServerPlayerCurrentMovementComponent, struct ServerPlayerMoveAbsoluteComponent, struct ServerPlayerInventoryTransactionComponent>);
+_tickPlayerMovement(class StrictEntityContext&, struct PlayerCurrentTickComponent const&, struct ServerPlayerMovementComponent&, class EntityModifier<struct ServerPlayerCurrentMovementComponent, struct ServerPlayerMoveAbsoluteComponent, struct ServerPlayerInventoryTransactionComponent>);
 
 // symbol: ?create@ServerPlayerInputSystem@@YA?AUTickingSystemWithInfo@@XZ
 MCAPI struct TickingSystemWithInfo create();

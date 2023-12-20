@@ -90,11 +90,6 @@ public:
     _loadItemDefinition(class Json::Value&, bool, std::function<void(class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&, bool, class Experiments const&)>, class Experiments const&, ::ItemVersion, ::PackType, class SemVersion const&, struct cereal::ReflectionCtx&);
 
     // symbol:
-    // ?_parseItemDefinition@ItemRegistry@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z@3@AEBVExperiments@@W4ItemVersion@@W4PackType@@AEBVPath@Core@@@Z
-    MCAPI std::string
-    _parseItemDefinition(std::string const&, bool, std::function<void(class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&, bool, class Experiments const&)>, class Experiments const&, ::ItemVersion, ::PackType, class Core::Path const&);
-
-    // symbol:
     // ?_parseItemDefinition@ItemRegistry@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@_NAEBVExperiments@@@Z@3@AEBVExperiments@@W4ItemVersion@@W4PackType@@AEBVPath@Core@@AEAUReflectionCtx@cereal@@@Z
     MCAPI std::string
     _parseItemDefinition(std::string const&, bool, std::function<void(class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&, bool, class Experiments const&)>, class Experiments const&, ::ItemVersion, ::PackType, class Core::Path const&, struct cereal::ReflectionCtx&);

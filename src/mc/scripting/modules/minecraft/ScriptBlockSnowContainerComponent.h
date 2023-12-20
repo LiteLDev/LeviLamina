@@ -13,6 +13,7 @@
 class BlockPos;
 class BlockSource;
 namespace ScriptModuleMinecraft { class BaseScriptBlockLiquidContainerComponent; }
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -35,9 +36,9 @@ public:
     operator=(class ScriptModuleMinecraft::ScriptBlockSnowContainerComponent&&);
 
     // symbol:
-    // ?bind@ScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@@Scripting@@XZ
+    // ?bind@ScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockSnowContainerComponent>
-    bind();
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol:
     // ?tryCreate@ScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptBlockSnowContainerComponent@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z

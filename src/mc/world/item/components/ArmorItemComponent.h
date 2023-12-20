@@ -48,8 +48,8 @@ public:
     // vIndex: 8, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
     virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
 
-    // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEBAXXZ
-    virtual void _initializeComponent() const;
+    // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
+    virtual void _initializeComponent();
 
     // symbol:
     // ?bindType@ArmorItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

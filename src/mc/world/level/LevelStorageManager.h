@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/common/wrapper/SharePtrRefTraits.h"
+#include "mc/common/wrapper/StackRefResultT.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,6 +28,10 @@ public:
 
     // symbol: ?getLevelStorage@LevelStorageManager@@QEAAAEAVLevelStorage@@XZ
     MCAPI class LevelStorage& getLevelStorage();
+
+    // symbol:
+    // ?getLevelStorageStackRef@LevelStorageManager@@QEAA?AV?$StackRefResultT@U?$SharePtrRefTraits@VLevelStorage@@@@@@XZ
+    MCAPI class StackRefResultT<struct SharePtrRefTraits<class LevelStorage>> getLevelStorageStackRef();
 
     // symbol: ?getSavedDataStorage@LevelStorageManager@@QEAAAEAVSavedDataStorage@@XZ
     MCAPI class SavedDataStorage& getSavedDataStorage();
@@ -105,9 +110,6 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_getGameDataSaveTimer@LevelStorageManager@@AEAAAEAVGameDataSaveTimer@@XZ
-    MCAPI class GameDataSaveTimer& _getGameDataSaveTimer();
-
     // symbol: ?_onNewDimensionCreated@LevelStorageManager@@AEAAXAEAVDimension@@@Z
     MCAPI void _onNewDimensionCreated(class Dimension&);
 

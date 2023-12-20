@@ -30,14 +30,26 @@ public:
     // vIndex: 0, symbol: __gen_??1PodzolBlock@@UEAA@XZ
     virtual ~PodzolBlock() = default;
 
-    // vIndex: 22, symbol: __unk_vfn_22
-    virtual void __unk_vfn_22();
+    // vIndex: 20, symbol: __unk_vfn_20
+    virtual void __unk_vfn_20();
+
+    // vIndex: 27, symbol: __unk_vfn_27
+    virtual void __unk_vfn_27();
+
+    // vIndex: 28, symbol: __unk_vfn_28
+    virtual void __unk_vfn_28();
+
+    // vIndex: 29, symbol: __unk_vfn_29
+    virtual void __unk_vfn_29();
+
+    // vIndex: 30, symbol: __unk_vfn_30
+    virtual void __unk_vfn_30();
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
 
-    // vIndex: 32, symbol: __unk_vfn_32
-    virtual void __unk_vfn_32();
+    // vIndex: 33, symbol: __unk_vfn_33
+    virtual void __unk_vfn_33();
 
     // vIndex: 34, symbol: __unk_vfn_34
     virtual void __unk_vfn_34();
@@ -48,11 +60,11 @@ public:
     // vIndex: 36, symbol: __unk_vfn_36
     virtual void __unk_vfn_36();
 
+    // vIndex: 37, symbol: __unk_vfn_37
+    virtual void __unk_vfn_37();
+
     // vIndex: 38, symbol: __unk_vfn_38
     virtual void __unk_vfn_38();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
 
     // vIndex: 40, symbol: __unk_vfn_40
     virtual void __unk_vfn_40();
@@ -69,82 +81,52 @@ public:
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44();
 
-    // vIndex: 46, symbol: __unk_vfn_46
-    virtual void __unk_vfn_46();
-
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
+    // vIndex: 45, symbol: __unk_vfn_45
+    virtual void __unk_vfn_45();
 
     // vIndex: 48, symbol: __unk_vfn_48
     virtual void __unk_vfn_48();
 
-    // vIndex: 49, symbol: __unk_vfn_49
-    virtual void __unk_vfn_49();
-
-    // vIndex: 50, symbol: __unk_vfn_50
-    virtual void __unk_vfn_50();
-
-    // vIndex: 51, symbol: __unk_vfn_51
-    virtual void __unk_vfn_51();
+    // vIndex: 54, symbol: __unk_vfn_54
+    virtual void __unk_vfn_54();
 
     // vIndex: 55, symbol: __unk_vfn_55
     virtual void __unk_vfn_55();
 
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
+    // vIndex: 67, symbol: __unk_vfn_67
+    virtual void __unk_vfn_67();
 
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
+    // vIndex: 74, symbol: __unk_vfn_74
+    virtual void __unk_vfn_74();
 
-    // vIndex: 76, symbol: __unk_vfn_76
-    virtual void __unk_vfn_76();
+    // vIndex: 109, symbol: __unk_vfn_109
+    virtual void __unk_vfn_109();
 
-    // vIndex: 83, symbol: __unk_vfn_83
-    virtual void __unk_vfn_83();
+    // vIndex: 110, symbol: __unk_vfn_110
+    virtual void __unk_vfn_110();
 
-    // vIndex: 106, symbol: __unk_vfn_106
-    virtual void __unk_vfn_106();
+    // vIndex: 111, symbol: __unk_vfn_111
+    virtual void __unk_vfn_111();
 
-    // vIndex: 122, symbol: __unk_vfn_122
-    virtual void __unk_vfn_122();
+    // vIndex: 114, symbol: __unk_vfn_114
+    virtual void __unk_vfn_114();
 
-    // vIndex: 123, symbol: __unk_vfn_123
-    virtual void __unk_vfn_123();
+    // vIndex: 117, symbol: __unk_vfn_117
+    virtual void __unk_vfn_117();
 
-    // vIndex: 124, symbol: __unk_vfn_124
-    virtual void __unk_vfn_124();
+    // vIndex: 138, symbol: __unk_vfn_138
+    virtual void __unk_vfn_138();
 
-    // vIndex: 127, symbol: __unk_vfn_127
-    virtual void __unk_vfn_127();
+    // vIndex: 149, symbol: __unk_vfn_149
+    virtual void __unk_vfn_149();
 
-    // vIndex: 130, symbol: __unk_vfn_130
-    virtual void __unk_vfn_130();
+    // vIndex: 152, symbol: __unk_vfn_152
+    virtual void __unk_vfn_152();
 
-    // vIndex: 153, symbol: __unk_vfn_153
-    virtual void __unk_vfn_153();
+    // vIndex: 155, symbol: __unk_vfn_155
+    virtual void __unk_vfn_155();
 
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 163, symbol: __unk_vfn_163
-    virtual void __unk_vfn_163();
-
-    // vIndex: 164, symbol: __unk_vfn_164
-    virtual void __unk_vfn_164();
-
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 171, symbol: __unk_vfn_171
-    virtual void __unk_vfn_171();
-
-    // vIndex: 174, symbol: __unk_vfn_174
-    virtual void __unk_vfn_174();
-
-    // vIndex: 183, symbol: __unk_vfn_183
-    virtual void __unk_vfn_183();
-
-    // vIndex: 185, symbol: ?getResourceItem@PodzolBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
+    // vIndex: 164, symbol: ?getResourceItem@PodzolBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // symbol: ??0PodzolBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

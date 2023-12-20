@@ -14,8 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getCelebrateSound@CelebrateHuntComponent@@QEBA?BW4LevelSoundEvent@@AEBVMob@@@Z
-    MCAPI ::LevelSoundEvent const getCelebrateSound(class Mob const&) const;
+    // symbol: ?getCelebrateSound@CelebrateHuntComponent@@QEBA?BW4LevelSoundEvent@Legacy@Puv@@AEBVMob@@@Z
+    MCAPI ::Puv::Legacy::LevelSoundEvent const getCelebrateSound(class Mob const&) const;
 
     // symbol: ?getCelebrateUntil@CelebrateHuntComponent@@QEBA?BUTick@@XZ
     MCAPI struct Tick const getCelebrateUntil() const;

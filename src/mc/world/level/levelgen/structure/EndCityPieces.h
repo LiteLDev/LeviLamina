@@ -77,7 +77,7 @@ public:
     public:
         // NOLINTBEGIN
         // vIndex: 0, symbol:
-        // ?generate@FatTowerGenerator@EndCityPieces@@UEAA_NV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$vector@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@V?$allocator@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@@2@@std@@HPEAVEndCityPiece@2@AEBVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@6@AEAVRandom@@@Z
+        // ?generate@TowerBridgeGenerator@EndCityPieces@@UEAA_NV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$vector@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@V?$allocator@V?$unique_ptr@VSectionGenerator@EndCityPieces@@U?$default_delete@VSectionGenerator@EndCityPieces@@@std@@@std@@@2@@std@@HPEAVEndCityPiece@2@AEBVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@6@AEAVRandom@@@Z
         virtual bool
         generate(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&) = 0;
 

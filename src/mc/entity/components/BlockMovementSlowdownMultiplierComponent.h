@@ -8,4 +8,11 @@ public:
     BlockMovementSlowdownMultiplierComponent& operator=(BlockMovementSlowdownMultiplierComponent const&);
     BlockMovementSlowdownMultiplierComponent(BlockMovementSlowdownMultiplierComponent const&);
     BlockMovementSlowdownMultiplierComponent();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ?setMultiplier@BlockMovementSlowdownMultiplierComponent@@QEAAXAEBVVec3@@@Z
+    MCAPI void setMultiplier(class Vec3 const&);
+
+    // NOLINTEND
 };

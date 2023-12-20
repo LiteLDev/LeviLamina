@@ -7,10 +7,6 @@
 
 class MobSpawnRules {
 public:
-    // prevent constructor by default
-    MobSpawnRules& operator=(MobSpawnRules const&);
-
-public:
     // NOLINTBEGIN
     // symbol: ??0MobSpawnRules@@QEAA@XZ
     MCAPI MobSpawnRules();
@@ -57,6 +53,12 @@ public:
     // symbol:
     // ?getSpawnOnBlockPreventedListMutable@MobSpawnRules@@QEAAAEAV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@XZ
     MCAPI std::unordered_set<class BlockLegacy const*>& getSpawnOnBlockPreventedListMutable();
+
+    // symbol: ??4MobSpawnRules@@QEAAAEAV0@$$QEAV0@@Z
+    MCAPI class MobSpawnRules& operator=(class MobSpawnRules&&);
+
+    // symbol: ??4MobSpawnRules@@QEAAAEAV0@AEBV0@@Z
+    MCAPI class MobSpawnRules& operator=(class MobSpawnRules const&);
 
     // symbol: ?selectRandomHerd@MobSpawnRules@@QEBAAEBUMobSpawnHerdInfo@@AEAVRandom@@@Z
     MCAPI struct MobSpawnHerdInfo const& selectRandomHerd(class Random&) const;

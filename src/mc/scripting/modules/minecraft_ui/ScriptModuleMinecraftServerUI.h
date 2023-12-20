@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/CurrentCmdVersion.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/EnumBindingBuilder.h"
 #include "mc/external/scripting/ErrorBindingBuilder.h"
@@ -28,7 +29,7 @@ namespace ScriptModuleMinecraftServerUI { class ScriptModalFormData; }
 namespace ScriptModuleMinecraftServerUI { class ScriptModalFormResponse; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
-namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct Version; }
 // clang-format on
 
@@ -38,6 +39,11 @@ namespace ScriptModuleMinecraftServerUI {
 // ?bindScriptFormRejectReason@ScriptModuleMinecraftServerUI@@YA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptFormRejectReason@ScriptModuleMinecraftServerUI@@@Scripting@@XZ
 MCAPI class Scripting::EnumBindingBuilder<std::string, ::ScriptModuleMinecraftServerUI::ScriptFormRejectReason>
 bindScriptFormRejectReason();
+
+// symbol:
+// ?resolveRawMessageAsJson@ScriptModuleMinecraftServerUI@@YA?AV?$Result@VValue@Json@@$$V@Scripting@@AEAVPlayer@@W4CurrentCmdVersion@@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@Z
+MCAPI class Scripting::Result<class Json::Value>
+resolveRawMessageAsJson(class Player&, ::CurrentCmdVersion, std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> const&);
 // NOLINTEND
 
 }; // namespace ScriptModuleMinecraftServerUI

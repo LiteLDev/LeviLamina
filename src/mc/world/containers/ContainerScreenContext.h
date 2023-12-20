@@ -34,5 +34,8 @@ public:
     // symbol: ?tryGetBlockActor@ContainerScreenContext@@QEBAPEAVBlockActor@@XZ
     MCAPI class BlockActor* tryGetBlockActor() const;
 
+    // symbol: ?tryGetBlockActorPos@ContainerScreenContext@@QEBAPEBVBlockPos@@XZ
+    MCAPI class BlockPos const* tryGetBlockActorPos() const;
+
     // NOLINTEND
 };

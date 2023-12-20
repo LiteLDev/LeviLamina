@@ -9,6 +9,7 @@
 #include "mc/deps/core/StackString.h"
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/entity/systems/common/ResourceFileSystem.h"
 #include "mc/enums/ARVRPlatform.h"
 #include "mc/enums/AppFocusState.h"
 #include "mc/enums/AssertDialogResponse.h"
@@ -22,7 +23,6 @@
 #include "mc/enums/UIScalingRules.h"
 #include "mc/enums/VRControllerType.h"
 #include "mc/network/NetworkConnectionType.h"
-#include "mc/world/systems/ResourceFileSystem.h"
 
 // auto generated forward declare list
 // clang-format off

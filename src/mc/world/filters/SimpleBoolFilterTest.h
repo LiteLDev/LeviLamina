@@ -15,12 +15,20 @@ public:
     // prevent constructor by default
     SimpleBoolFilterTest& operator=(SimpleBoolFilterTest const&);
     SimpleBoolFilterTest(SimpleBoolFilterTest const&);
-    SimpleBoolFilterTest();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1SimpleBoolFilterTest@@UEAA@XZ
     virtual ~SimpleBoolFilterTest() = default;
+
+    // vIndex: 1, symbol: ?setup@SimpleBoolFilterTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
+    virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
+
+    // vIndex: 6, symbol: ?_serializeValue@SimpleBoolFilterTest@@MEBA?AVValue@Json@@XZ
+    virtual class Json::Value _serializeValue() const;
+
+    // symbol: ??0SimpleBoolFilterTest@@QEAA@XZ
+    MCAPI SimpleBoolFilterTest();
 
     // NOLINTEND
 };

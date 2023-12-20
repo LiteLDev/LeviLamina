@@ -33,8 +33,8 @@ public:
     // ?initializeFromNetwork@InteractButtonItemComponent@@UEAA_NAEBVCompoundTag@@AEBUReflectionCtx@cereal@@@Z
     virtual bool initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
-    // vIndex: 9, symbol: ?_initializeComponent@InteractButtonItemComponent@@UEBAXXZ
-    virtual void _initializeComponent() const;
+    // vIndex: 9, symbol: ?_initializeComponent@InteractButtonItemComponent@@UEAAXXZ
+    virtual void _initializeComponent();
 
     // symbol:
     // ?getInteractText@InteractButtonItemComponent@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

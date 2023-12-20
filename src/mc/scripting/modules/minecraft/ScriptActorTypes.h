@@ -25,9 +25,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?get@ScriptActorTypes@ScriptModuleMinecraft@@QEAA?AV?$StrongTypedObjectHandle@VScriptActorType@ScriptModuleMinecraft@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorType>
-    get(std::string const&);
+    // ?get@ScriptActorTypes@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@VScriptActorType@ScriptModuleMinecraft@@@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
+    MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorType>>
+          get(std::string const&);
 
     // symbol:
     // ?bind@ScriptActorTypes@ScriptModuleMinecraft@@SAXAEAVModuleBindingBuilder@Scripting@@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VActorDefinition@@U?$default_delete@VActorDefinition@@@std@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VActorDefinition@@U?$default_delete@VActorDefinition@@@std@@@2@@std@@@2@@std@@@Z

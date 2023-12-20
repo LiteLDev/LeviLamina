@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptActorComponent; }
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 namespace ScriptModuleMinecraft { class ScriptInventoryComponentContainer; }
 // clang-format on
@@ -22,13 +23,15 @@ class ScriptInventoryComponent : public ::ScriptModuleMinecraft::ScriptActorComp
 public:
     // prevent constructor by default
     ScriptInventoryComponent& operator=(ScriptInventoryComponent const&);
-    ScriptInventoryComponent(ScriptInventoryComponent const&);
     ScriptInventoryComponent();
 
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1ScriptInventoryComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptInventoryComponent();
+
+    // symbol: ??0ScriptInventoryComponent@ScriptModuleMinecraft@@QEAA@AEBV01@@Z
+    MCAPI ScriptInventoryComponent(class ScriptModuleMinecraft::ScriptInventoryComponent const&);
 
     // symbol:
     // ?getAdditionalSlotsPerStrength@ScriptInventoryComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
@@ -45,9 +48,9 @@ public:
     MCAPI class Scripting::Result<int> getInventorySize() const;
 
     // symbol:
-    // ?getOrCreateContainer@ScriptInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptContainerWrapper@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@XZ
+    // ?getOrCreateContainer@ScriptInventoryComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptContainerWrapper@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@XZ
     MCAPI class Scripting::Result<
-        class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerWrapper>>
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerWrapper>>>
     getOrCreateContainer();
 
     // symbol:
@@ -67,8 +70,9 @@ public:
     operator=(class ScriptModuleMinecraft::ScriptInventoryComponent&&);
 
     // symbol:
-    // ?bind@ScriptInventoryComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptInventoryComponent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptInventoryComponent> bind();
+    // ?bind@ScriptInventoryComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptInventoryComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptInventoryComponent>
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol: ?ComponentId@ScriptInventoryComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;

@@ -30,12 +30,12 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_parseCereal@ComponentItemDataLoader@@AEBA?AV?$LoadResult@UComponentItemData_v1_20_40@@@Puv@@AEBVValue@Json@@@Z
-    MCAPI class Puv::LoadResult<struct ComponentItemData_v1_20_40> _parseCereal(class Json::Value const&) const;
+    // ?_parseCereal@ComponentItemDataLoader@@AEBA?AV?$LoadResult@UComponentItemData_v1_20_50@@@Puv@@AEBVValue@Json@@@Z
+    MCAPI class Puv::LoadResult<struct ComponentItemData_v1_20_50> _parseCereal(class Json::Value const&) const;
 
     // symbol:
-    // ?_parseEvents@ComponentItemDataLoader@@AEBA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VDefinitionEvent@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VDefinitionEvent@@@std@@@2@@std@@AEBVValue@Json@@@Z
-    MCAPI std::vector<std::pair<std::string, class DefinitionEvent>> _parseEvents(class Json::Value const&) const;
+    // ?_parseEvents@ComponentItemDataLoader@@AEBA?AV?$optional@ULegacyEventItemComponentData@@@std@@AEBVValue@Json@@@Z
+    MCAPI std::optional<struct LegacyEventItemComponentData> _parseEvents(class Json::Value const&) const;
 
     // symbol:
     // ?_parseLegacyComponents@ComponentItemDataLoader@@AEBA?AU?$pair@UComponentItemData_Legacy@@_N@std@@VValue@Json@@@Z

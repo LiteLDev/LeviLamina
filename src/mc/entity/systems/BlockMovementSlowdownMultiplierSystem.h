@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/EntityModifierT.h"
+#include "mc/entity/EntityModifier.h"
 
 namespace BlockMovementSlowdownMultiplierSystem {
 // NOLINTBEGIN
@@ -35,14 +35,14 @@ MCAPI void
 tickApplySlowdownOnMove(struct BlockMovementSlowdownMultiplierComponent&, struct MoveRequestComponent&, struct StateVectorComponent&);
 
 // symbol:
-// ?tickImmunePlayer@BlockMovementSlowdownMultiplierSystem@@YAXAEBVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@AEBUAbilitiesComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UBlockMovementSlowdownAppliedComponent@@@@@Z
+// ?tickImmunePlayer@BlockMovementSlowdownMultiplierSystem@@YAXAEBVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@AEBUAbilitiesComponent@@V?$EntityModifier@UBlockMovementSlowdownAppliedComponent@@@@@Z
 MCAPI void
-tickImmunePlayer(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, struct AbilitiesComponent const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct BlockMovementSlowdownAppliedComponent>);
+tickImmunePlayer(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, struct AbilitiesComponent const&, class EntityModifier<struct BlockMovementSlowdownAppliedComponent>);
 
 // symbol:
-// ?tickImmuneSlowdown@BlockMovementSlowdownMultiplierSystem@@YAXAEBVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UBlockMovementSlowdownAppliedComponent@@@@@Z
+// ?tickImmuneSlowdown@BlockMovementSlowdownMultiplierSystem@@YAXAEBVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@V?$EntityModifier@UBlockMovementSlowdownAppliedComponent@@@@@Z
 MCAPI void
-tickImmuneSlowdown(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct BlockMovementSlowdownAppliedComponent>);
+tickImmuneSlowdown(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, class EntityModifier<struct BlockMovementSlowdownAppliedComponent>);
 // NOLINTEND
 
 }; // namespace BlockMovementSlowdownMultiplierSystem

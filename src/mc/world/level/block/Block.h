@@ -245,9 +245,6 @@ public:
     // symbol: ?getDirectSignal@Block@@QEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
     MCAPI int getDirectSignal(class BlockSource&, class BlockPos const&, int) const;
 
-    // symbol: ?getEntityForModification@Block@@QEBAAEAVEntityContext@@XZ
-    MCAPI class EntityContext& getEntityForModification() const;
-
     // symbol: ?getExplosionResistance@Block@@QEBAMXZ
     MCAPI float getExplosionResistance() const;
 
@@ -333,9 +330,6 @@ public:
 
     // symbol: ?ignoreEntitiesOnPistonMove@Block@@QEBA_NXZ
     MCAPI bool ignoreEntitiesOnPistonMove() const;
-
-    // symbol: ?initEntity@Block@@QEAAXAEAVEntityRegistry@@@Z
-    MCAPI void initEntity(class EntityRegistry&);
 
     // symbol: ?initParams@Block@@QEBAXAEAVRenderParams@@AEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
     MCAPI void initParams(class RenderParams&, class BlockSource&, class BlockPos const&, class Actor*) const;
@@ -511,8 +505,8 @@ public:
     // symbol: ?playerDestroy@Block@@QEBAXAEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI void playerDestroy(class Player&, class BlockPos const&) const;
 
-    // symbol: ?playerWillDestroy@Block@@QEBA_NAEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI bool playerWillDestroy(class Player&, class BlockPos const&) const;
+    // symbol: ?playerWillDestroy@Block@@QEBAPEBV1@AEAVPlayer@@AEBVBlockPos@@@Z
+    MCAPI class Block const* playerWillDestroy(class Player&, class BlockPos const&) const;
 
     // symbol: ?popResource@Block@@QEBAPEAVItemActor@@AEAVBlockSource@@AEBVBlockPos@@AEBVItemInstance@@@Z
     MCAPI class ItemActor* popResource(class BlockSource&, class BlockPos const&, class ItemInstance const&) const;
@@ -613,20 +607,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_isSolid@Block@@AEBA_NXZ
-    MCAPI bool _isSolid() const;
-
-    // symbol: ?_lockRegistryForRead@Block@@AEBA?AVBlockTypeRegistryReadLock@@XZ
-    MCAPI class BlockTypeRegistryReadLock _lockRegistryForRead() const;
-
-    // symbol: ?_tryInitEntityIfNotInitialized@Block@@AEAAXXZ
-    MCAPI void _tryInitEntityIfNotInitialized();
-
     // symbol: ?entityInside@Block@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
     MCAPI void entityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
-
-    // symbol: ?getEntity@Block@@AEBAAEBVEntityContext@@XZ
-    MCAPI class EntityContext const& getEntity() const;
 
     // NOLINTEND
 };

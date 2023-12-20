@@ -99,7 +99,10 @@ public:
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
 
-    // vIndex: 28, symbol: ?onEvent@NetheriteArmorEquippedListener@@UEAA?AW4EventResult@@AEBUActorEquippedArmorEvent@@@Z
+    // vIndex: 28, symbol: __unk_vfn_28
+    virtual void __unk_vfn_28();
+
+    // vIndex: 29, symbol: ?onEvent@NetheriteArmorEquippedListener@@UEAA?AW4EventResult@@AEBUActorEquippedArmorEvent@@@Z
     virtual ::EventResult onEvent(struct ActorEquippedArmorEvent const&);
 
     // NOLINTEND

@@ -80,6 +80,9 @@ public:
     // symbol: ?initFromDefinition@ContainerComponent@@QEAAXAEAVActor@@@Z
     MCAPI void initFromDefinition(class Actor&);
 
+    // symbol: ?initFromDefinition@ContainerComponent@@QEAAXAEAVActor@@AEBUContainerDescription@@@Z
+    MCAPI void initFromDefinition(class Actor&, struct ContainerDescription const&);
+
     // symbol: ?isEmpty@ContainerComponent@@QEBA_NXZ
     MCAPI bool isEmpty() const;
 

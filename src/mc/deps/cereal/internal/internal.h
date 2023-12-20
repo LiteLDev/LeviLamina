@@ -19,8 +19,10 @@ namespace cereal { struct SerializerTraits; }
 namespace cereal::internal { class BasicCompositeSchema; }
 namespace cereal::internal { class BasicSchema; }
 namespace cereal::internal { class UndefinedSchema; }
+namespace cereal::internal { struct ConstraintDescription; }
 namespace cereal::internal { struct ExtendedSchemaInfo; }
 namespace cereal::internal { struct ReflectionContext; }
+namespace cereal::internal { struct SchemaId; }
 namespace cereal::internal { struct SchemaInfo; }
 // clang-format on
 
@@ -69,6 +71,10 @@ getMapperAndSave(entt::meta_any const&, entt::meta_type const&, class cereal::Se
 // ?getNameAndVersion@internal@cereal@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@AEBUReflectionCtx@2@AEBUtype_info@entt@@@Z
 MCAPI std::pair<std::string, std::string>
       getNameAndVersion(struct cereal::ReflectionCtx const&, entt::type_info const&);
+
+// symbol: ?getReflectedSchema@internal@cereal@@YAPEBVBasicSchema@12@AEBUReflectionCtx@2@AEBVmeta_type@entt@@@Z
+MCAPI class cereal::internal::BasicSchema const*
+getReflectedSchema(struct cereal::ReflectionCtx const&, entt::meta_type const&);
 
 // symbol: ?getReflectedType@internal@cereal@@YA?AW4ReflectedType@12@AEBVmeta_type@entt@@@Z
 MCAPI ::cereal::internal::ReflectedType getReflectedType(entt::meta_type const&);

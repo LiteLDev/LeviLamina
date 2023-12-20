@@ -47,8 +47,8 @@ public:
     // vIndex: 8, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
     virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
 
-    // vIndex: 9, symbol: ?_initializeComponent@EnchantableItemComponent@@UEBAXXZ
-    virtual void _initializeComponent() const;
+    // vIndex: 9, symbol: ?_initializeComponent@EnchantableItemComponent@@UEAAXXZ
+    virtual void _initializeComponent();
 
     // symbol: ??4EnchantableItemComponent@@QEAAAEAV0@AEBV0@@Z
     MCAPI class EnchantableItemComponent& operator=(class EnchantableItemComponent const&);

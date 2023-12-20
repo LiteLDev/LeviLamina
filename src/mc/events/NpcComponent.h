@@ -54,6 +54,9 @@ public:
     // symbol: ?getCommandCounts@NpcComponent@@QEBA?AV?$vector@HV?$allocator@H@std@@@std@@XZ
     MCAPI std::vector<int> getCommandCounts() const;
 
+    // symbol: ?getDefaultSceneId@NpcComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    MCAPI std::string const& getDefaultSceneId() const;
+
     // symbol: ?getInteraction@NpcComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
     MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
 
@@ -67,6 +70,13 @@ public:
     // symbol:
     // ?getNameRawText@NpcComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@@Z
     MCAPI std::string const& getNameRawText(class Actor const&) const;
+
+    // symbol:
+    // ?getSceneStateForPlayer@NpcComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUActorUniqueID@@@Z
+    MCAPI std::string const& getSceneStateForPlayer(struct ActorUniqueID const&) const;
+
+    // symbol: ?getSkinCount@NpcComponent@@QEBA_KXZ
+    MCAPI uint64 getSkinCount() const;
 
     // symbol: ?getSkinIndex@NpcComponent@@QEBAHXZ
     MCAPI int getSkinIndex() const;
@@ -102,6 +112,9 @@ public:
     // ?setActions@NpcComponent@@QEAAXAEAVActor@@$$QEAV?$vector@V?$variant@UCommandAction@npc@@UUrlAction@2@@std@@V?$allocator@V?$variant@UCommandAction@npc@@UUrlAction@2@@std@@@2@@std@@@Z
     MCAPI void setActions(class Actor&, std::vector<std::variant<struct npc::CommandAction, struct npc::UrlAction>>&&);
 
+    // symbol: ?setDefaultSceneId@NpcComponent@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void setDefaultSceneId(std::string);
+
     // symbol:
     // ?setDialogueScene@NpcComponent@@QEAA_NAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool setDialogueScene(class Actor&, std::string const&);
@@ -118,8 +131,32 @@ public:
     // ?setSceneStateForPlayer@NpcComponent@@QEAAXAEAVActor@@AEBUActorUniqueID@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setSceneStateForPlayer(class Actor&, struct ActorUniqueID const&, std::string const&);
 
-    // symbol: ?setSkinIndex@NpcComponent@@QEAAXAEAVActor@@H_N@Z
-    MCAPI void setSkinIndex(class Actor&, int, bool);
+    // symbol: ?setSkin@NpcComponent@@QEAA_NAEAVActor@@@Z
+    MCAPI bool setSkin(class Actor&);
+
+    // symbol: ?setSkinIndex@NpcComponent@@QEAA_NAEAVActor@@H_N@Z
+    MCAPI bool setSkinIndex(class Actor&, int, bool);
+
+    // symbol: ?ACTIONS_TAG@NpcComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+    MCAPI static std::string const ACTIONS_TAG;
+
+    // symbol: ?INTERACTIVE_TAG@NpcComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+    MCAPI static std::string const INTERACTIVE_TAG;
+
+    // symbol: ?NAME_RAW_TEXT_TAG@NpcComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+    MCAPI static std::string const NAME_RAW_TEXT_TAG;
+
+    // symbol: ?PLAYER_ID_TAG@NpcComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+    MCAPI static std::string const PLAYER_ID_TAG;
+
+    // symbol: ?PLAYER_SCENE_MAPPING_TAG@NpcComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+    MCAPI static std::string const PLAYER_SCENE_MAPPING_TAG;
+
+    // symbol: ?SCENE_NAME_TAG@NpcComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+    MCAPI static std::string const SCENE_NAME_TAG;
+
+    // symbol: ?URL_TAG@NpcComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+    MCAPI static std::string const URL_TAG;
 
     // NOLINTEND
 
@@ -130,50 +167,6 @@ public:
 
     // symbol: ?_deserializeData@NpcComponent@@AEAAXAEBVValue@Json@@@Z
     MCAPI void _deserializeData(class Json::Value const&);
-
-    // NOLINTEND
-
-private:
-    // NOLINTBEGIN
-    // symbol: ?ACTIONS_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-    MCAPI static std::string const ACTIONS_TAG;
-
-    // symbol: ?INTERACTIVE_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-    MCAPI static std::string const INTERACTIVE_TAG;
-
-    // symbol: ?NAME_RAW_TEXT_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-    MCAPI static std::string const NAME_RAW_TEXT_TAG;
-
-    // symbol: ?PLAYER_ID_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-    MCAPI static std::string const PLAYER_ID_TAG;
-
-    // symbol: ?PLAYER_SCENE_MAPPING_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-    MCAPI static std::string const PLAYER_SCENE_MAPPING_TAG;
-
-    // symbol: ?SCENE_NAME_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-    MCAPI static std::string const SCENE_NAME_TAG;
-
-    // symbol: ?URL_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
-    MCAPI static std::string const URL_TAG;
-
-    // NOLINTEND
-
-    // member accessor
-public:
-    // NOLINTBEGIN
-    static auto& $ACTIONS_TAG() { return ACTIONS_TAG; }
-
-    static auto& $INTERACTIVE_TAG() { return INTERACTIVE_TAG; }
-
-    static auto& $NAME_RAW_TEXT_TAG() { return NAME_RAW_TEXT_TAG; }
-
-    static auto& $PLAYER_ID_TAG() { return PLAYER_ID_TAG; }
-
-    static auto& $PLAYER_SCENE_MAPPING_TAG() { return PLAYER_SCENE_MAPPING_TAG; }
-
-    static auto& $SCENE_NAME_TAG() { return SCENE_NAME_TAG; }
-
-    static auto& $URL_TAG() { return URL_TAG; }
 
     // NOLINTEND
 };

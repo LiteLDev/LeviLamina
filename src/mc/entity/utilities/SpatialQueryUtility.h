@@ -22,13 +22,19 @@ public:
     forEachBlockInAABB(class IConstBlockSource const&, class AABB const&, float, std::function<void(class Block const&, class BlockPos const&)> const&);
 
     // symbol:
-    // ?testForCollidableMobs@SpatialQueryUtility@@SAXAEBVStrictEntityContext@@AEAVLocalSpatialEntityFetcher@@AEBVAABB@@2V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UCollidableMobFlag@@@@@@$$CBUAABBShapeComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UFallingBlockFlag@@@@@@@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-    MCAPI static void testForCollidableMobs(class StrictEntityContext const&, class LocalSpatialEntityFetcher&, class AABB const&, class AABB const&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct CollidableMobFlag>>, struct AABBShapeComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct FallingBlockFlag>>>, std::vector<class AABB>&);
+    // ?testForCollidableMobs@SpatialQueryUtility@@SAXAEBVStrictEntityContext@@AEAVLocalSpatialEntityFetcher@@AEBVAABB@@2V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UCollidableMobFlag@@@@@@$$CBUAABBShapeComponent@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UFallingBlockFlag@@@@@@@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
+    MCAPI static void
+    testForCollidableMobs(class StrictEntityContext const&, class LocalSpatialEntityFetcher&, class AABB const&, class AABB const&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct CollidableMobFlag>>, struct AABBShapeComponent const>, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct FallingBlockFlag>>>, std::vector<class AABB>&);
 
     // symbol:
-    // ?testForEntityStacking@SpatialQueryUtility@@SAXAEBVStrictEntityContext@@AEAVLocalSpatialEntityFetcher@@AEBVAABB@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUAABBShapeComponent@@$$CBUSynchedActorDataComponent@@@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
+    // ?testForEntityStacking@SpatialQueryUtility@@SAXAEBVStrictEntityContext@@AEAVLocalSpatialEntityFetcher@@AEBVAABB@@V?$ViewT@VStrictEntityContext@@$$CBUAABBShapeComponent@@$$CBUSynchedActorDataComponent@@@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
     MCAPI static void
-    testForEntityStacking(class StrictEntityContext const&, class LocalSpatialEntityFetcher&, class AABB const&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct AABBShapeComponent const, struct SynchedActorDataComponent const>, std::vector<class AABB>&);
+    testForEntityStacking(class StrictEntityContext const&, class LocalSpatialEntityFetcher&, class AABB const&, class ViewT<class StrictEntityContext, struct AABBShapeComponent const, struct SynchedActorDataComponent const>, std::vector<class AABB>&);
+
+    // symbol:
+    // ?tryFetchEntity@SpatialQueryUtility@@SA?AVStrictEntityContext@@AEAVLocalSpatialEntityFetcher@@AEBUActorUniqueID@@@Z
+    MCAPI static class StrictEntityContext
+    tryFetchEntity(class LocalSpatialEntityFetcher&, struct ActorUniqueID const&);
 
     // NOLINTEND
 };

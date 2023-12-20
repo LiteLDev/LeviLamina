@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/Optional.h"
-#include "mc/entity/EntityModifierT.h"
+#include "mc/entity/EntityModifier.h"
 #include "mc/world/components/FlagComponent.h"
 
 class DolphinBoostSystem {
@@ -17,9 +17,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?_tickScan@DolphinBoostSystem@@SAXAEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@AEAUScanForDolphinTimerComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UScanForDolphin@@@@@@@Z
+    // ?_tickScan@DolphinBoostSystem@@SAXAEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@AEAUScanForDolphinTimerComponent@@V?$EntityModifier@V?$FlagComponent@UScanForDolphin@@@@@@@Z
     MCAPI static void
-    _tickScan(class StrictEntityContext const&, struct SynchedActorDataComponent const&, struct ScanForDolphinTimerComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ScanForDolphin>>);
+    _tickScan(class StrictEntityContext const&, struct SynchedActorDataComponent const&, struct ScanForDolphinTimerComponent&, class EntityModifier<class FlagComponent<struct ScanForDolphin>>);
 
     // symbol:
     // ?_tickSwimSpeedModifier@DolphinBoostSystem@@SAXAEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@AEAUSwimSpeedMultiplierComponent@@V?$Optional@V?$FlagComponent@UScanForDolphin@@@@@@V?$Optional@V?$FlagComponent@UIsNearDolphinsFlag@@@@@@@Z

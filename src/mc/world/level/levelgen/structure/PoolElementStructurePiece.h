@@ -31,7 +31,7 @@ public:
     virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
 
     // vIndex: 13, symbol:
-    // ?generateHeightAtPosition@AncientCityPiece@@UEBAHAEBVBlockPos@@AEAVDimension@@AEAVBlockVolume@@AEAV?$unordered_map@VChunkPos@@V?$unique_ptr@V?$vector@FV?$allocator@F@std@@@std@@U?$default_delete@V?$vector@FV?$allocator@F@std@@@std@@@2@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$unique_ptr@V?$vector@FV?$allocator@F@std@@@std@@U?$default_delete@V?$vector@FV?$allocator@F@std@@@std@@@2@@std@@@std@@@3@@std@@@Z
+    // ?generateHeightAtPosition@TrailRuinsPiece@@UEBAHAEBVBlockPos@@AEAVDimension@@AEAVBlockVolume@@AEAV?$unordered_map@VChunkPos@@V?$unique_ptr@V?$vector@FV?$allocator@F@std@@@std@@U?$default_delete@V?$vector@FV?$allocator@F@std@@@std@@@2@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$unique_ptr@V?$vector@FV?$allocator@F@std@@@std@@U?$default_delete@V?$vector@FV?$allocator@F@std@@@std@@@2@@std@@@std@@@3@@std@@@Z
     virtual int
     generateHeightAtPosition(class BlockPos const&, class Dimension&, class BlockVolume&, std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>>&)
         const = 0;
@@ -39,10 +39,10 @@ public:
     // vIndex: 14, symbol: ?getSupportBlock@VillagePiece@@UEBAPEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@@Z
     virtual class Block const* getSupportBlock(class BlockSource&, class BlockPos const&, class Block const&) const = 0;
 
-    // vIndex: 15, symbol: ?getBeardStabilizeBlock@AncientCityPiece@@UEBAAEBVBlock@@AEBV2@@Z
+    // vIndex: 15, symbol: ?getBeardStabilizeBlock@TrailRuinsPiece@@UEBAAEBVBlock@@AEBV2@@Z
     virtual class Block const& getBeardStabilizeBlock(class Block const&) const = 0;
 
-    // vIndex: 16, symbol: ?getTerrainAdjustmentEffect@AncientCityPiece@@UEBA?AW4AdjustmentEffect@@XZ
+    // vIndex: 16, symbol: ?getTerrainAdjustmentEffect@TrailRuinsPiece@@UEBA?AW4AdjustmentEffect@@XZ
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
 
     // vIndex: 17, symbol: ?_needsPostProcessing@PoolElementStructurePiece@@MEAA_NAEAVBlockSource@@@Z

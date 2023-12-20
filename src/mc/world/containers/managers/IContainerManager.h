@@ -34,19 +34,19 @@ public:
     virtual void serverInitItemStackIds() = 0;
 
     // vIndex: 6, symbol:
-    // ?getItemCopies@AnvilContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+    // ?getItemCopies@FurnaceContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
     virtual std::vector<class ItemStack> getItemCopies() const = 0;
 
-    // vIndex: 7, symbol: ?setSlot@AnvilContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+    // vIndex: 7, symbol: ?setSlot@FurnaceContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
     virtual void setSlot(int, class ItemStack const&, bool) = 0;
 
-    // vIndex: 8, symbol: ?getSlot@AnvilContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 8, symbol: ?getSlot@FurnaceContainerManagerModel@@UEBAAEBVItemStack@@H@Z
     virtual class ItemStack const& getSlot(int) const = 0;
 
     // vIndex: 9, symbol: ?setData@FurnaceContainerManagerModel@@UEAAXHH@Z
     virtual void setData(int, int) = 0;
 
-    // vIndex: 10, symbol: ?broadcastChanges@LevelContainerManagerModel@@UEAAXXZ
+    // vIndex: 10, symbol: ?broadcastChanges@FurnaceContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges() = 0;
 
     // NOLINTEND

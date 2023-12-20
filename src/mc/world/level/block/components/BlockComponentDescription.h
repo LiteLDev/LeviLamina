@@ -27,11 +27,11 @@ public:
     // ?getName@BlockComponentDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
 
-    // vIndex: 2, symbol: ?initializeComponent@BlockComponentDescription@@UEBAXAEAVEntityContext@@@Z
-    virtual void initializeComponent(class EntityContext&) const;
-
-    // vIndex: 3, symbol: ?initializeComponent@BlockComponentDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 2, symbol: ?initializeComponent@BlockComponentDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponent(class BlockComponentStorage&) const;
+
+    // vIndex: 3, symbol: __unk_vfn_3
+    virtual void __unk_vfn_3();
 
     // vIndex: 4, symbol: ?initializeComponentFromCode@BlockComponentDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponentFromCode(class BlockComponentStorage&) const;
@@ -58,6 +58,9 @@ public:
 
     // vIndex: 10, symbol: ?handleVersionBasedInitialization@BlockComponentDescription@@UEAAXAEBVSemVersion@@@Z
     virtual void handleVersionBasedInitialization(class SemVersion const&);
+
+    // symbol: ?initializeComponent@BlockComponentDescription@@UEBAXAEAVEntityContext@@@Z
+    MCVAPI void initializeComponent(class EntityContext&) const;
 
     // symbol: ?initializeComponentFromCode@BlockComponentDescription@@UEBAXAEAVEntityContext@@@Z
     MCVAPI void initializeComponentFromCode(class EntityContext&) const;

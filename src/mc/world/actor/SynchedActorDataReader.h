@@ -14,9 +14,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?getInt@SynchedActorDataReader@@QEBAHG@Z
-    MCAPI int getInt(ushort) const;
-
     // symbol: ?getPosition@SynchedActorDataReader@@QEBA?AVBlockPos@@G@Z
     MCAPI class BlockPos getPosition(ushort) const;
 

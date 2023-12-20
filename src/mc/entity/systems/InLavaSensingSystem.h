@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/ViewT.h"
-#include "mc/entity/EntityModifierT.h"
+#include "mc/entity/EntityModifier.h"
 #include "mc/world/components/FlagComponent.h"
 
 class InLavaSensingSystem {
@@ -20,14 +20,14 @@ public:
     MCAPI static struct TickingSystemWithInfo createSystem();
 
     // symbol:
-    // ?doInLavaSensing@InLavaSensingSystem@@SAXAEBVStrictEntityContext@@AEBUUpdateWaterStateRequestComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UInLavaFlag@@@@@@@Z
+    // ?doInLavaSensing@InLavaSensingSystem@@SAXAEBVStrictEntityContext@@AEBUUpdateWaterStateRequestComponent@@V?$EntityModifier@V?$FlagComponent@UInLavaFlag@@@@@@@Z
     MCAPI static void
-    doInLavaSensing(class StrictEntityContext const&, struct UpdateWaterStateRequestComponent const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct InLavaFlag>>);
+    doInLavaSensing(class StrictEntityContext const&, struct UpdateWaterStateRequestComponent const&, class EntityModifier<class FlagComponent<struct InLavaFlag>>);
 
     // symbol:
-    // ?tickSystem@InLavaSensingSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUUpdateWaterStateRequestComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UInLavaFlag@@@@@@@Z
+    // ?tickSystem@InLavaSensingSystem@@SAXV?$ViewT@VStrictEntityContext@@$$CBUUpdateWaterStateRequestComponent@@@@V?$EntityModifier@V?$FlagComponent@UInLavaFlag@@@@@@@Z
     MCAPI static void
-        tickSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct UpdateWaterStateRequestComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct InLavaFlag>>);
+        tickSystem(class ViewT<class StrictEntityContext, struct UpdateWaterStateRequestComponent const>, class EntityModifier<class FlagComponent<struct InLavaFlag>>);
 
     // NOLINTEND
 };

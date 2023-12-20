@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/utilities/ActorInitializationMethod.h"
 #include "mc/external/scripting/EnumBindingBuilder.h"
-#include "mc/world/actor/Actor.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -18,8 +18,8 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?bind@ScriptActorInitializationCause@ScriptModuleMinecraft@@SA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4InitializationMethod@Actor@@@Scripting@@XZ
-    MCAPI static class Scripting::EnumBindingBuilder<std::string, ::Actor::InitializationMethod> bind();
+    // ?bind@ScriptActorInitializationCause@ScriptModuleMinecraft@@SA?AV?$EnumBindingBuilder@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorInitializationMethod@@@Scripting@@XZ
+    MCAPI static class Scripting::EnumBindingBuilder<std::string, ::ActorInitializationMethod> bind();
 
     // NOLINTEND
 };

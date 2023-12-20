@@ -11,9 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0ComponentItemData_v1_19_83@@QEAA@$$QEAU0@@Z
-    MCAPI ComponentItemData_v1_19_83(struct ComponentItemData_v1_19_83&&);
-
     // symbol: ??1ComponentItemData_v1_19_83@@QEAA@XZ
     MCAPI ~ComponentItemData_v1_19_83();
 

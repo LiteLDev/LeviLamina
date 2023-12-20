@@ -48,9 +48,6 @@ public:
     // symbol: ?hasDirtyProperties@PropertyComponent@@QEBA_NXZ
     MCAPI bool hasDirtyProperties() const;
 
-    // symbol: ??4PropertyComponent@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class PropertyComponent& operator=(class PropertyComponent&&);
-
     // symbol: ?packAllSyncData@PropertyComponent@@QEBA?AUPropertySyncData@@XZ
     MCAPI struct PropertySyncData packAllSyncData() const;
 

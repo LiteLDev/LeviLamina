@@ -37,6 +37,9 @@ public:
     // symbol: ??0NearestAttackableTargetGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit NearestAttackableTargetGoal(class Mob&);
 
+    // symbol: ?isTargetVisible@NearestAttackableTargetGoal@@QEBA_NAEBVMob@@MM@Z
+    MCAPI bool isTargetVisible(class Mob const&, float, float) const;
+
     // NOLINTEND
 
     // protected:
@@ -46,9 +49,6 @@ public:
 
     // symbol: ?_isTargetInCooldown@NearestAttackableTargetGoal@@IEBA_NAEBUMobDescriptor@@@Z
     MCAPI bool _isTargetInCooldown(struct MobDescriptor const&) const;
-
-    // symbol: ?_isTargetVisible@NearestAttackableTargetGoal@@IEBA_NAEBVMob@@MM@Z
-    MCAPI bool _isTargetVisible(class Mob const&, float, float) const;
 
     // NOLINTEND
 

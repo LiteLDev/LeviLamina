@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
+#include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptItemEvent.h"
 
 // auto generated forward declare list
@@ -12,6 +13,7 @@
 class BlockPos;
 class Player;
 namespace ScriptModuleMinecraft { class ScriptItemEvent; }
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
 struct ItemUseOnEvent;
 // clang-format on
@@ -35,9 +37,9 @@ public:
     MCAPI ScriptItemUseOnAfterEvent(struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent const&);
 
     // symbol:
-    // ??0ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUItemUseOnEvent@@PEAVPlayer@@AEBVWeakLifetimeScope@Scripting@@@Z
+    // ??0ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUItemUseOnEvent@@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@PEAVPlayer@@AEBVWeakLifetimeScope@4@@Z
     MCAPI
-    ScriptItemUseOnAfterEvent(struct ItemUseOnEvent const&, class Player*, class Scripting::WeakLifetimeScope const&);
+    ScriptItemUseOnAfterEvent(struct ItemUseOnEvent const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, class Player*, class Scripting::WeakLifetimeScope const&);
 
     // symbol:
     // ?getBlockLocation_V010@ScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@QEBA?AV?$Result@VBlockPos@@$$V@Scripting@@XZ

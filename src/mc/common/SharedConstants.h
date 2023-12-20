@@ -63,6 +63,9 @@ MCAPI extern bool const IsPreviewApp;
 // symbol: ?IsWin32Platform@SharedConstants@@3_NB
 MCAPI extern bool const IsWin32Platform;
 
+// symbol: ?IsXboxPlatform@SharedConstants@@3_NB
+MCAPI extern bool const IsXboxPlatform;
+
 // symbol: ?LevelDBCompressorID@SharedConstants@@3HB
 MCAPI extern int const LevelDBCompressorID;
 

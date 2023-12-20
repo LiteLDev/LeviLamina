@@ -38,11 +38,11 @@ public:
     doLoad(struct cereal::SchemaReader&, entt::meta_any&, struct cereal::SerializerTraits const&, entt::meta_any const&, class cereal::SerializerContext&)
         const;
 
-    // vIndex: 4, symbol: __gen_??1DeprecatedSchema@internal@cereal@@UEAA@XZ
-    virtual ~DeprecatedSchema() = default;
+    // vIndex: 4, symbol: ?makeDescription@DeprecatedSchema@internal@cereal@@EEBA?AUSchemaDescription@3@XZ
+    virtual struct cereal::SchemaDescription makeDescription() const;
 
-    // vIndex: 6, symbol: ?description@DeprecatedSchema@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
-    virtual struct cereal::SchemaDescription description() const;
+    // vIndex: 5, symbol: __gen_??1DeprecatedSchema@internal@cereal@@UEAA@XZ
+    virtual ~DeprecatedSchema() = default;
 
     // NOLINTEND
 };

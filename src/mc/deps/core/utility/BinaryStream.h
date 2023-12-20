@@ -45,56 +45,56 @@ public:
     // symbol: ?reset@BinaryStream@@QEAAXXZ
     MCAPI void reset();
 
-    // symbol: ?writeBool@BinaryStream@@QEAAX_N@Z
-    MCAPI void writeBool(bool);
+    // symbol: ?writeBool@BinaryStream@@QEAAX_NPEBD1@Z
+    MCAPI void writeBool(bool, char const*, char const*);
 
-    // symbol: ?writeByte@BinaryStream@@QEAAXE@Z
-    MCAPI void writeByte(uchar);
+    // symbol: ?writeByte@BinaryStream@@QEAAXEPEBD0@Z
+    MCAPI void writeByte(uchar, char const*, char const*);
 
-    // symbol: ?writeDouble@BinaryStream@@QEAAXN@Z
-    MCAPI void writeDouble(double);
+    // symbol: ?writeDouble@BinaryStream@@QEAAXNPEBD0@Z
+    MCAPI void writeDouble(double, char const*, char const*);
 
-    // symbol: ?writeFloat@BinaryStream@@QEAAXM@Z
-    MCAPI void writeFloat(float);
+    // symbol: ?writeFloat@BinaryStream@@QEAAXMPEBD0@Z
+    MCAPI void writeFloat(float, char const*, char const*);
 
-    // symbol: ?writeSignedBigEndianInt@BinaryStream@@QEAAXH@Z
-    MCAPI void writeSignedBigEndianInt(int);
+    // symbol: ?writeSignedBigEndianInt@BinaryStream@@QEAAXHPEBD0@Z
+    MCAPI void writeSignedBigEndianInt(int, char const*, char const*);
 
-    // symbol: ?writeSignedInt@BinaryStream@@QEAAXH@Z
-    MCAPI void writeSignedInt(int);
+    // symbol: ?writeSignedInt@BinaryStream@@QEAAXHPEBD0@Z
+    MCAPI void writeSignedInt(int, char const*, char const*);
 
-    // symbol: ?writeSignedInt64@BinaryStream@@QEAAX_J@Z
-    MCAPI void writeSignedInt64(int64);
+    // symbol: ?writeSignedInt64@BinaryStream@@QEAAX_JPEBD1@Z
+    MCAPI void writeSignedInt64(int64, char const*, char const*);
 
-    // symbol: ?writeSignedShort@BinaryStream@@QEAAXF@Z
-    MCAPI void writeSignedShort(short);
+    // symbol: ?writeSignedShort@BinaryStream@@QEAAXFPEBD0@Z
+    MCAPI void writeSignedShort(short, char const*, char const*);
 
-    // symbol: ?writeString@BinaryStream@@QEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI void writeString(std::string_view);
+    // symbol: ?writeString@BinaryStream@@QEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@PEBD1@Z
+    MCAPI void writeString(std::string_view, char const*, char const*);
 
-    // symbol: ?writeUnsignedChar@BinaryStream@@QEAAXE@Z
-    MCAPI void writeUnsignedChar(uchar);
+    // symbol: ?writeUnsignedChar@BinaryStream@@QEAAXEPEBD0@Z
+    MCAPI void writeUnsignedChar(uchar, char const*, char const*);
 
-    // symbol: ?writeUnsignedInt@BinaryStream@@QEAAXI@Z
-    MCAPI void writeUnsignedInt(uint);
+    // symbol: ?writeUnsignedInt@BinaryStream@@QEAAXIPEBD0@Z
+    MCAPI void writeUnsignedInt(uint, char const*, char const*);
 
-    // symbol: ?writeUnsignedInt64@BinaryStream@@QEAAX_K@Z
-    MCAPI void writeUnsignedInt64(uint64);
+    // symbol: ?writeUnsignedInt64@BinaryStream@@QEAAX_KPEBD1@Z
+    MCAPI void writeUnsignedInt64(uint64, char const*, char const*);
 
-    // symbol: ?writeUnsignedShort@BinaryStream@@QEAAXG@Z
-    MCAPI void writeUnsignedShort(ushort);
+    // symbol: ?writeUnsignedShort@BinaryStream@@QEAAXGPEBD0@Z
+    MCAPI void writeUnsignedShort(ushort, char const*, char const*);
 
-    // symbol: ?writeUnsignedVarInt@BinaryStream@@QEAAXI@Z
-    MCAPI void writeUnsignedVarInt(uint);
+    // symbol: ?writeUnsignedVarInt@BinaryStream@@QEAAXIPEBD0@Z
+    MCAPI void writeUnsignedVarInt(uint, char const*, char const*);
 
-    // symbol: ?writeUnsignedVarInt64@BinaryStream@@QEAAX_K@Z
-    MCAPI void writeUnsignedVarInt64(uint64);
+    // symbol: ?writeUnsignedVarInt64@BinaryStream@@QEAAX_KPEBD1@Z
+    MCAPI void writeUnsignedVarInt64(uint64, char const*, char const*);
 
-    // symbol: ?writeVarInt@BinaryStream@@QEAAXH@Z
-    MCAPI void writeVarInt(int);
+    // symbol: ?writeVarInt@BinaryStream@@QEAAXHPEBD0@Z
+    MCAPI void writeVarInt(int, char const*, char const*);
 
-    // symbol: ?writeVarInt64@BinaryStream@@QEAAX_J@Z
-    MCAPI void writeVarInt64(int64);
+    // symbol: ?writeVarInt64@BinaryStream@@QEAAX_JPEBD1@Z
+    MCAPI void writeVarInt64(int64, char const*, char const*);
 
     // NOLINTEND
 

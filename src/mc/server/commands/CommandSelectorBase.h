@@ -11,7 +11,7 @@
 
 // auto generated inclusion list
 #include "mc/common/InvertableFilter.h"
-#include "mc/enums/EquipmentSlot.h"
+#include "mc/deps/puv/EquipmentSlot.h"
 #include "mc/enums/GameType.h"
 #include "mc/server/commands/CommandSelectionOrder.h"
 #include "mc/server/commands/CommandSelectionType.h"
@@ -55,9 +55,9 @@ public:
     MCAPI void addGameModeFilter(struct InvertableFilter<::GameType> const&);
 
     // symbol:
-    // ?addHasItemFilter@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@H@3@AEBVCommandIntegerRange@@W4EquipmentSlot@@2@Z
+    // ?addHasItemFilter@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@H@3@AEBVCommandIntegerRange@@W4EquipmentSlot@Legacy@Puv@@2@Z
     MCAPI void
-    addHasItemFilter(std::string const&, std::optional<int>, class CommandIntegerRange const&, ::EquipmentSlot, class CommandIntegerRange const&);
+    addHasItemFilter(std::string const&, std::optional<int>, class CommandIntegerRange const&, ::Puv::Legacy::EquipmentSlot, class CommandIntegerRange const&);
 
     // symbol:
     // ?addHasPermissionFilters@CommandSelectorBase@@QEAAXAEBV?$vector@UHasPermissionFilter@@V?$allocator@UHasPermissionFilter@@@std@@@std@@@Z

@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
+#include "mc/world/actor/ai/goal/MeleeAttackBaseDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class MeleeAttackDefinition : public ::BaseGoalDefinition {
+class MeleeAttackDefinition : public ::MeleeAttackBaseDefinition {
 public:
     // prevent constructor by default
     MeleeAttackDefinition& operator=(MeleeAttackDefinition const&);

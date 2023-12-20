@@ -6,6 +6,7 @@
 #include "mc/enums/GameType.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
+#include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/ScriptPlayer.h"
 
@@ -185,8 +186,11 @@ public:
     // symbol: ?stopSwimming@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> stopSwimming() const;
 
-    // symbol: ?stopUsingItem@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<void> stopUsingItem() const;
+    // symbol:
+    // ?stopUsingItem@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptItemStack@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>>
+    stopUsingItem() const;
 
     // symbol: ?swim@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@XZ
     MCAPI class Scripting::Result<void> swim() const;

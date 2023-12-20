@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/puv/EquipmentSlot.h"
 #include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/entity/utilities/ActorFlags.h"
+#include "mc/entity/utilities/ActorInitializationMethod.h"
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
 #include "mc/enums/ArmorTextureType.h"
-#include "mc/enums/EquipmentSlot.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -20,6 +21,11 @@
 #include "mc/world/AutomaticID.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/item/components/ItemUseMethod.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace mce { class Color; }
+// clang-format on
 
 class ExperienceOrb : public ::Actor {
 public:
@@ -34,9 +40,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol:
-    // ?reloadHardcoded@ExperienceOrb@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::Actor::InitializationMethod, class VariantParameterList const&);
+    // vIndex: 4, symbol: ?reloadHardcoded@ExperienceOrb@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
 
     // vIndex: 10, symbol: __gen_??1ExperienceOrb@@UEAA@XZ
     virtual ~ExperienceOrb() = default;
@@ -47,14 +52,11 @@ public:
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
 
-    // vIndex: 41, symbol: __unk_vfn_41
-    virtual void __unk_vfn_41();
+    // vIndex: 42, symbol: __unk_vfn_42
+    virtual void __unk_vfn_42();
 
-    // vIndex: 42, symbol: ?getShadowRadius@ExperienceOrb@@UEBAMXZ
+    // vIndex: 43, symbol: ?getShadowRadius@ExperienceOrb@@UEBAMXZ
     virtual float getShadowRadius() const;
-
-    // vIndex: 44, symbol: __unk_vfn_44
-    virtual void __unk_vfn_44();
 
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
@@ -62,8 +64,8 @@ public:
     // vIndex: 48, symbol: ?playerTouch@ExperienceOrb@@UEAAXAEAVPlayer@@@Z
     virtual void playerTouch(class Player&);
 
-    // vIndex: 52, symbol: __unk_vfn_52
-    virtual void __unk_vfn_52();
+    // vIndex: 60, symbol: __unk_vfn_60
+    virtual void __unk_vfn_60();
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -71,38 +73,32 @@ public:
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 63, symbol: __unk_vfn_63
-    virtual void __unk_vfn_63();
-
-    // vIndex: 79, symbol: ?isInvulnerableTo@ExperienceOrb@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 78, symbol: ?isInvulnerableTo@ExperienceOrb@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
 
-    // vIndex: 109, symbol: __unk_vfn_109
-    virtual void __unk_vfn_109();
+    // vIndex: 107, symbol: __unk_vfn_107
+    virtual void __unk_vfn_107();
 
-    // vIndex: 147, symbol: __unk_vfn_147
-    virtual void __unk_vfn_147();
+    // vIndex: 144, symbol: __unk_vfn_144
+    virtual void __unk_vfn_144();
 
-    // vIndex: 160, symbol: ?doWaterSplashEffect@ExperienceOrb@@MEAAXXZ
+    // vIndex: 157, symbol: ?doWaterSplashEffect@ExperienceOrb@@MEAAXXZ
     virtual void doWaterSplashEffect();
 
-    // vIndex: 165, symbol: __unk_vfn_165
-    virtual void __unk_vfn_165();
+    // vIndex: 162, symbol: __unk_vfn_162
+    virtual void __unk_vfn_162();
 
-    // vIndex: 166, symbol: ?_hurt@ExperienceOrb@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 163, symbol: ?_hurt@ExperienceOrb@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
 
-    // vIndex: 167, symbol: ?readAdditionalSaveData@ExperienceOrb@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 164, symbol: ?readAdditionalSaveData@ExperienceOrb@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
 
-    // vIndex: 168, symbol: ?addAdditionalSaveData@ExperienceOrb@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 165, symbol: ?addAdditionalSaveData@ExperienceOrb@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag&) const;
 
-    // vIndex: 169, symbol: ?_playStepSound@ExperienceOrb@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 166, symbol: ?_playStepSound@ExperienceOrb@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const&, class Block const&);
-
-    // vIndex: 170, symbol: __unk_vfn_170
-    virtual void __unk_vfn_170();
 
     // symbol: ??0ExperienceOrb@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI ExperienceOrb(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
@@ -112,6 +108,9 @@ public:
 
     // symbol: ?postNormalTick@ExperienceOrb@@QEAAXXZ
     MCAPI void postNormalTick();
+
+    // symbol: ?setValue@ExperienceOrb@@QEAAXH@Z
+    MCAPI void setValue(int);
 
     // symbol: ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HW4DropType@1@PEAVPlayer@@@Z
     MCAPI static void spawnOrbs(class BlockSource&, class Vec3 const&, int, ::ExperienceOrb::DropType, class Player*);
@@ -126,6 +125,9 @@ public:
     // NOLINTBEGIN
     // symbol: ?_handleMending@ExperienceOrb@@AEAAXAEAVPlayer@@@Z
     MCAPI void _handleMending(class Player&);
+
+    // symbol: ?_tryMergeExistingOrbs@ExperienceOrb@@AEAAXXZ
+    MCAPI void _tryMergeExistingOrbs();
 
     // symbol: ?_spawnOrb@ExperienceOrb@@CAXAEAVBlockSource@@AEAVLevel@@AEBVVec3@@H@Z
     MCAPI static void _spawnOrb(class BlockSource&, class Level&, class Vec3 const&, int);

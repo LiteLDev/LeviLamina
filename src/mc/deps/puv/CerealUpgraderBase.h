@@ -62,6 +62,10 @@ public:
     // ?ignore@CerealUpgraderBase@internal@Puv@@QEAAXV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     MCAPI void ignore(std::vector<std::string>);
 
+    // symbol:
+    // ?move@CerealUpgraderBase@internal@Puv@@QEAAXV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@0@Z
+    MCAPI void move(std::vector<std::string>, std::vector<std::string>);
+
     // symbol: ?performUpgrade@CerealUpgraderBase@internal@Puv@@QEBAXAEAVmeta_any@entt@@V45@AEAULogger@3@@Z
     MCAPI void performUpgrade(entt::meta_any&, entt::meta_any, struct Puv::Logger&) const;
 

@@ -26,20 +26,20 @@ public:
     virtual ~CommandOrigin() = default;
 
     // vIndex: 1, symbol:
-    // ?getRequestId@ActorCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // ?getRequestId@PrecompiledCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getRequestId() const = 0;
 
     // vIndex: 2, symbol:
-    // ?getName@ActorCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // ?getName@PrecompiledCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const = 0;
 
-    // vIndex: 3, symbol: ?getBlockPosition@ActorCommandOrigin@@UEBA?AVBlockPos@@XZ
+    // vIndex: 3, symbol: ?getBlockPosition@PrecompiledCommandOrigin@@UEBA?AVBlockPos@@XZ
     virtual class BlockPos getBlockPosition() const = 0;
 
-    // vIndex: 4, symbol: ?getWorldPosition@ActorCommandOrigin@@UEBA?AVVec3@@XZ
+    // vIndex: 4, symbol: ?getWorldPosition@PrecompiledCommandOrigin@@UEBA?AVVec3@@XZ
     virtual class Vec3 getWorldPosition() const = 0;
 
-    // vIndex: 5, symbol: ?getRotation@ActorCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+    // vIndex: 5, symbol: ?getRotation@PrecompiledCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
     virtual std::optional<class Vec2> getRotation() const = 0;
 
     // vIndex: 6, symbol: ?getLevel@ActorCommandOrigin@@UEBAPEAVLevel@@XZ
@@ -55,7 +55,7 @@ public:
     virtual ::CommandPermissionLevel getPermissionsLevel() const = 0;
 
     // vIndex: 10, symbol:
-    // ?clone@ActorCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+    // ?clone@PrecompiledCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
     virtual std::unique_ptr<class CommandOrigin> clone() const = 0;
 
     // vIndex: 11, symbol: ?getCursorHitBlockPos@CommandOrigin@@UEBA?AV?$optional@VBlockPos@@@std@@XZ
@@ -94,7 +94,7 @@ public:
     // vIndex: 22, symbol: ?getIdentity@CommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ
     virtual struct CommandOriginIdentity getIdentity() const;
 
-    // vIndex: 23, symbol: ?getOriginType@ActorCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+    // vIndex: 23, symbol: ?getOriginType@PrecompiledCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
     virtual ::CommandOriginType getOriginType() const = 0;
 
     // vIndex: 24, symbol: ?toCommandOriginData@CommandOrigin@@UEBA?AUCommandOriginData@@XZ

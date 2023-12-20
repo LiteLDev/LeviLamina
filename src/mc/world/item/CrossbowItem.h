@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/entity/utilities/ActorLocation.h"
 #include "mc/enums/InHandUpdateType.h"
-#include "mc/enums/UseAnimation.h"
 #include "mc/events/LevelSoundEvent.h"
 #include "mc/world/item/RangedWeaponItem.h"
 #include "mc/world/item/components/ItemColor.h"
@@ -30,88 +29,85 @@ public:
     // vIndex: 0, symbol: __gen_??1CrossbowItem@@UEAA@XZ
     virtual ~CrossbowItem() = default;
 
-    // vIndex: 6, symbol: ?getMaxUseDuration@CrossbowItem@@UEBAHPEBVItemStack@@@Z
+    // vIndex: 5, symbol: ?getMaxUseDuration@CrossbowItem@@UEBAHPEBVItemStack@@@Z
     virtual int getMaxUseDuration(class ItemStack const*) const;
+
+    // vIndex: 8, symbol: __unk_vfn_8
+    virtual void __unk_vfn_8();
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
 
-    // vIndex: 14, symbol: __unk_vfn_14
-    virtual void __unk_vfn_14();
+    // vIndex: 12, symbol: __unk_vfn_12
+    virtual void __unk_vfn_12();
 
-    // vIndex: 16, symbol: __unk_vfn_16
-    virtual void __unk_vfn_16();
+    // vIndex: 17, symbol: __unk_vfn_17
+    virtual void __unk_vfn_17();
 
-    // vIndex: 21, symbol: __unk_vfn_21
-    virtual void __unk_vfn_21();
+    // vIndex: 37, symbol: __unk_vfn_37
+    virtual void __unk_vfn_37();
 
-    // vIndex: 51, symbol: __unk_vfn_51
-    virtual void __unk_vfn_51();
+    // vIndex: 39, symbol: __unk_vfn_39
+    virtual void __unk_vfn_39();
 
-    // vIndex: 53, symbol: __unk_vfn_53
-    virtual void __unk_vfn_53();
-
-    // vIndex: 62, symbol: ?getEnchantSlot@CrossbowItem@@UEBAHXZ
+    // vIndex: 48, symbol: ?getEnchantSlot@CrossbowItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
+
+    // vIndex: 52, symbol: __unk_vfn_52
+    virtual void __unk_vfn_52();
+
+    // vIndex: 56, symbol: __unk_vfn_56
+    virtual void __unk_vfn_56();
+
+    // vIndex: 57, symbol: __unk_vfn_57
+    virtual void __unk_vfn_57();
+
+    // vIndex: 58, symbol: __unk_vfn_58
+    virtual void __unk_vfn_58();
+
+    // vIndex: 61, symbol: __unk_vfn_61
+    virtual void __unk_vfn_61();
+
+    // vIndex: 65, symbol: __unk_vfn_65
+    virtual void __unk_vfn_65();
 
     // vIndex: 66, symbol: __unk_vfn_66
     virtual void __unk_vfn_66();
 
-    // vIndex: 70, symbol: __unk_vfn_70
-    virtual void __unk_vfn_70();
-
-    // vIndex: 71, symbol: __unk_vfn_71
-    virtual void __unk_vfn_71();
-
-    // vIndex: 72, symbol: __unk_vfn_72
-    virtual void __unk_vfn_72();
-
-    // vIndex: 75, symbol: __unk_vfn_75
-    virtual void __unk_vfn_75();
-
-    // vIndex: 79, symbol: __unk_vfn_79
-    virtual void __unk_vfn_79();
-
-    // vIndex: 80, symbol: __unk_vfn_80
-    virtual void __unk_vfn_80();
-
-    // vIndex: 84, symbol: ?use@CrossbowItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+    // vIndex: 70, symbol: ?use@CrossbowItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack&, class Player&) const;
 
-    // vIndex: 86, symbol:
+    // vIndex: 72, symbol:
     // ?useTimeDepleted@CrossbowItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
     virtual ::ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
 
-    // vIndex: 87, symbol: ?releaseUsing@CrossbowItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
+    // vIndex: 73, symbol: ?releaseUsing@CrossbowItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
     virtual void releaseUsing(class ItemStack&, class Player*, int) const;
 
-    // vIndex: 112, symbol: ?enchantProjectile@CrossbowItem@@UEBAXAEBVItemStackBase@@AEAVActor@@@Z
+    // vIndex: 95, symbol: ?enchantProjectile@CrossbowItem@@UEBAXAEBVItemStackBase@@AEAVActor@@@Z
     virtual void enchantProjectile(class ItemStackBase const&, class Actor&) const;
 
-    // vIndex: 115, symbol: __unk_vfn_115
-    virtual void __unk_vfn_115();
+    // vIndex: 98, symbol: __unk_vfn_98
+    virtual void __unk_vfn_98();
 
-    // vIndex: 116, symbol: __unk_vfn_116
-    virtual void __unk_vfn_116();
+    // vIndex: 99, symbol: __unk_vfn_99
+    virtual void __unk_vfn_99();
 
-    // vIndex: 119, symbol:
+    // vIndex: 102, symbol:
     // ?setIconInfo@CrossbowItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual class Item& setIconInfo(std::string const&, int);
 
-    // vIndex: 120, symbol: ?getIconInfo@CrossbowItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
+    // vIndex: 103, symbol: ?getIconInfo@CrossbowItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
 
-    // vIndex: 122, symbol: ?getAnimationFrameFor@CrossbowItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
+    // vIndex: 105, symbol: ?getAnimationFrameFor@CrossbowItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
     virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
 
-    // vIndex: 126, symbol: ?canBeCharged@CrossbowItem@@UEBA_NXZ
+    // vIndex: 109, symbol: ?canBeCharged@CrossbowItem@@UEBA_NXZ
     virtual bool canBeCharged() const;
 
-    // vIndex: 127, symbol: ?playSoundIncrementally@CrossbowItem@@UEBAXAEBVItemStack@@AEAVMob@@@Z
+    // vIndex: 110, symbol: ?playSoundIncrementally@CrossbowItem@@UEBAXAEBVItemStack@@AEAVMob@@@Z
     virtual void playSoundIncrementally(class ItemStack const&, class Mob&) const;
-
-    // vIndex: 128, symbol: __unk_vfn_128
-    virtual void __unk_vfn_128();
 
     // symbol: ??0CrossbowItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI CrossbowItem(std::string const&, int);

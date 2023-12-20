@@ -54,8 +54,8 @@ public:
     // symbol: ?getOffset@ProjectileComponent@@QEAA?AVVec3@@XZ
     MCAPI class Vec3 getOffset();
 
-    // symbol: ?getShootSound@ProjectileComponent@@QEAA?AW4LevelSoundEvent@@XZ
-    MCAPI ::LevelSoundEvent getShootSound();
+    // symbol: ?getShootSound@ProjectileComponent@@QEAA?AW4LevelSoundEvent@Legacy@Puv@@XZ
+    MCAPI ::Puv::Legacy::LevelSoundEvent getShootSound();
 
     // symbol: ?getShootTarget@ProjectileComponent@@QEAA_NXZ
     MCAPI bool getShootTarget();
