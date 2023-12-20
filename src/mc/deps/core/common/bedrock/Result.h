@@ -66,7 +66,7 @@ public:
 
     [[nodiscard]] Err& error() {
         if (mHasValue) throw std::logic_error("Bad error result access.");
-        return mError;
+        return mError.code();
     }
 
     [[nodiscard]] value_type& value()
