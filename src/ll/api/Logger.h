@@ -133,9 +133,9 @@ public:
     ~Logger() { resetFile(); }
 
     LLAPI void resetFile();
-    LLAPI bool setFile(std::filesystem::path logFile, bool appendMode = true);
+    LLAPI bool setFile(std::filesystem::path const& logFile, bool appendMode = true);
 
-    LLAPI static bool setDefaultFile(std::filesystem::path logFile, bool appendMode);
+    LLAPI static bool setDefaultFile(std::filesystem::path const& logFile, bool appendMode);
 
     void setPlayerOutputFunc(PlayerOutputFunc const& func) {
         debug.setPlayerOutputFunc(func);

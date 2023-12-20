@@ -14,7 +14,7 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 6;
+    int version = 7;
 
     std::string language = "system";
     struct {
@@ -30,13 +30,6 @@ struct LeviConfig {
             std::string dumpPrefix = "minidump_";
             std::string logPrefix  = "trace_";
         } crashLogger{};
-
-        struct {
-            bool                     enabled         = true;
-            std::vector<std::string> autoInstallPath = {R"(.\plugins\AddonsHelper\)"};
-            std::string              tempPath        = {R"(.\plugins\AddonsHelper\Temp\)"};
-            std::set<std::string>    extension       = {".mcpack", ".mcaddon", ".zip"};
-        } addonsHelper{};
 
         struct {
             struct {

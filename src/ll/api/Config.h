@@ -14,10 +14,10 @@ concept IsConfig =
     ll::reflection::Reflectable<T> && std::integral<std::remove_cvref_t<decltype(std::declval<T>().version)>>;
 
 template <IsConfig T, class J = nlohmann::ordered_json>
-inline bool saveConfig(T const& config, std::filesystem::path path) {
+inline bool saveConfig(T const& config, std::filesystem::path const& path) {
     namespace fs = std::filesystem;
     std::error_code ec;
-    fs::create_directories(path.remove_filename(), ec);
+    fs::create_directories(path.parent_path(), ec);
     std::ofstream{path} << ll::reflection::serialize<J, T>(config).dump(4);
     return true;
 }

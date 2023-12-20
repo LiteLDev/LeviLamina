@@ -165,19 +165,19 @@ void Logger::resetFile() {
     }
 }
 
-bool Logger::setFile(std::filesystem::path logFile, bool appendMode) {
+bool Logger::setFile(std::filesystem::path const& logFile, bool appendMode) {
     resetFile();
     if (logFile.empty()) {
         return true;
     }
 
     std::error_code ec;
-    std::filesystem::create_directories(logFile.remove_filename(), ec);
+    std::filesystem::create_directories(logFile.parent_path(), ec);
     ofs = std::ofstream(logFile, appendMode ? std::ios::app : std::ios::out);
     return (*ofs).is_open();
 }
 
-bool Logger::setDefaultFile(std::filesystem::path logFile, bool appendMode) {
+bool Logger::setDefaultFile(std::filesystem::path const& logFile, bool appendMode) {
     if (logFile.empty()) {
         if (defaultFile.is_open()) {
             defaultFile.close();
@@ -186,7 +186,7 @@ bool Logger::setDefaultFile(std::filesystem::path logFile, bool appendMode) {
     }
 
     std::error_code ec;
-    std::filesystem::create_directories(logFile.remove_filename(), ec);
+    std::filesystem::create_directories(logFile.parent_path(), ec);
     defaultFile.open(logFile, appendMode ? std::ios::app : std::ios::out);
     return defaultFile.is_open();
 }
