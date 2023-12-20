@@ -19,6 +19,15 @@ public:
     }
 
     template <class T>
+    [[nodiscard]] inline optional_ref<T const> tryGetComponent() const {
+        return getRegistry().try_get<T>(mEntity);
+    }
+    template <class T>
+    [[nodiscard]] inline optional_ref<T> tryGetComponent() {
+        return getRegistry().try_get<T>(mEntity);
+    }
+
+    template <class T>
     [[nodiscard]] inline bool hasComponent() const {
         return getRegistry().all_of<T>(mEntity);
     }
@@ -29,7 +38,7 @@ public:
     }
 
     template <class T, typename... Args>
-    [[nodiscard]] inline T& getOrAddComponent(Args&&... args) const {
+    [[nodiscard]] inline T& getOrAddComponent(Args&&... args) {
         return getRegistry().get_or_emplace<T>(mEntity, std::forward<Args>(args)...);
     }
 
