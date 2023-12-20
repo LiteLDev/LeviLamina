@@ -11,7 +11,6 @@
 #include "mc/resources/ResourcePackRepository.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/server/commands/MinecraftCommands.h"
-#include "mc/server/common/AllowListFile.h"
 #include "mc/server/common/PropertiesSettings.h"
 #include "mc/server/common/commands/AllowListCommand.h"
 #include "mc/world/Minecraft.h"
@@ -37,24 +36,6 @@ void ll::GlobalService<T>::init(T* ptr) {
 namespace ll {
 
 using namespace memory;
-
-// AllowListFile
-
-LL_AUTO_INSTANCE_HOOK(
-    AllowListFileConstructor,
-    HookPriority::High,
-    "??0AllowListFile@@QEAA@AEBVPath@Core@@@Z",
-    AllowListFile*,
-    class Core::Path const& path
-) {
-    auto self = origin(path);
-    ll::Global<AllowListFile>.init(self);
-    return self;
-}
-LL_AUTO_INSTANCE_HOOK(AllowListFileDestructor, HookPriority::High, "??1AllowListFile@@QEAA@XZ", void) {
-    if ((void*)this == (void*)ll::Global<AllowListFile>.get()) ll::Global<AllowListFile>.init(nullptr);
-    origin();
-}
 
 // StructureManager
 

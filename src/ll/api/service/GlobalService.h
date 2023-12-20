@@ -12,7 +12,6 @@
 namespace RakNet {
 class RakPeer;
 }
-class AllowListFile;
 class Minecraft;
 class PropertiesSettings;
 class ServerLevel;
@@ -28,7 +27,6 @@ namespace ll {
 template <class T>
 concept IsGlobalService = concepts::IsOneOf<
     T,
-    AllowListFile,
     Minecraft,
     PropertiesSettings,
     Level,
