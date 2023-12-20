@@ -25,11 +25,15 @@ struct MolangMemberArray {
 public:
     // prevent constructor by default
     MolangMemberArray& operator=(MolangMemberArray const&);
-    MolangMemberArray(MolangMemberArray const&);
-    MolangMemberArray();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0MolangMemberArray@@QEAA@XZ
+    MCAPI MolangMemberArray();
+
+    // symbol: ??0MolangMemberArray@@QEAA@AEBU0@@Z
+    MCAPI MolangMemberArray(struct MolangMemberArray const&);
+
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_RGB@@AEBVColor@mce@@@Z
     MCAPI MolangMemberArray(::MolangStruct_RGB, class mce::Color const&);
 
@@ -66,9 +70,6 @@ public:
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_TRS@@$$QEAU0@11@Z
     MCAPI
     MolangMemberArray(::MolangStruct_TRS, struct MolangMemberArray&&, struct MolangMemberArray&&, struct MolangMemberArray&&);
-
-    // symbol: ?add@MolangMemberArray@@QEAAXAEBVHashedString@@AEBUMolangScriptArg@@@Z
-    MCAPI void add(class HashedString const&, struct MolangScriptArg const&);
 
     // symbol: ?get@MolangMemberArray@@QEBAPEBUMolangScriptArg@@AEBVHashedString@@@Z
     MCAPI struct MolangScriptArg const* get(class HashedString const&) const;

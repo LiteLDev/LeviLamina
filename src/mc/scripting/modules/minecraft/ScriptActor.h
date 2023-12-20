@@ -264,9 +264,15 @@ public:
     MCAPI class Scripting::Result<std::vector<std::string>> getTags(class Actor const&) const;
 
     // symbol:
-    // ?getTarget@ScriptActor@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBVActor@@@Z
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
+    // ?getTarget@ScriptActor@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@AEBVActor@@@Z
+    MCAPI class Scripting::Result<
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>>
     getTarget(class Actor const&) const;
+
+    // symbol:
+    // ?getTarget_010@ScriptActor@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBVActor@@@Z
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
+    getTarget_010(class Actor const&) const;
 
     // symbol:
     // ?getTypeId@ScriptActor@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -458,18 +464,18 @@ public:
     bind(std::unordered_map<std::string, std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>>&);
 
     // symbol:
-    // ?getHandle@ScriptActor@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@PEBVActor@@AEBVWeakLifetimeScope@4@@Z
+    // ?getHandle@ScriptActor@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@AEBVActor@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    getHandle(class Actor const*, class Scripting::WeakLifetimeScope const&);
+    getHandle(class Actor const&, class Scripting::WeakLifetimeScope const&);
 
     // symbol:
-    // ?getHandle@ScriptActor@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@V?$StackRefResultT@UEntityRefTraits@@@@AEBVWeakLifetimeScope@4@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
+    // ?getHandle@ScriptActor@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@V?$StackRefResultT@UEntityRefTraits@@@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI static std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
     getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const&);
 
     // symbol:
-    // ?getHandle@ScriptActor@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@4@@Z
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
+    // ?getHandle@ScriptActor@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@VWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@@Z
+    MCAPI static std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
     getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const&);
 
     // symbol:

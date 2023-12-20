@@ -21,8 +21,8 @@ public:
     // vIndex: 1, symbol: ?isReplayNeeded@ClientReplayStatePolicy@@UEBA_NW4AdvanceFrameResult@@@Z
     virtual bool isReplayNeeded(::AdvanceFrameResult) const;
 
-    // vIndex: 2, symbol: ?canRewindToFrame@ClientReplayStatePolicy@@UEAA_NAEAVEntityContext@@_K1@Z
-    virtual bool canRewindToFrame(class EntityContext&, uint64, uint64);
+    // vIndex: 2, symbol: ?canRewindToFrame@ClientReplayStatePolicy@@UEAA_NAEBVEntityContext@@_K1@Z
+    virtual bool canRewindToFrame(class EntityContext const&, uint64, uint64);
 
     // vIndex: 3, symbol:
     // ?shouldCorrectMovement@ClientReplayStatePolicy@@UEAA?AUMovementCorrection@@AEAVEntityContext@@AEBVIConstBlockSource@@AEBVPlayerAuthInputPacket@@_K@Z

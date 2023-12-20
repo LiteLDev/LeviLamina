@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/Include.h"
 #include "mc/common/wrapper/ViewT.h"
-#include "mc/entity/EntityModifierT.h"
+#include "mc/entity/EntityModifier.h"
 #include "mc/world/components/FlagComponent.h"
 
 class EditorTickFilterSystem {
@@ -18,14 +18,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?_addPauseTickNeeded@EditorTickFilterSystem@@SAXAEAVStrictEntityContext@@AEAVActorTickNeededComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UEditorActorPauseTickNeededFlag@@@@@@@Z
+    // ?_addPauseTickNeeded@EditorTickFilterSystem@@SAXAEAVStrictEntityContext@@AEAVActorTickNeededComponent@@AEAV?$EntityModifier@V?$FlagComponent@UEditorActorPauseTickNeededFlag@@@@@@@Z
     MCAPI static void
-    _addPauseTickNeeded(class StrictEntityContext&, class ActorTickNeededComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct EditorActorPauseTickNeededFlag>>&);
+    _addPauseTickNeeded(class StrictEntityContext&, class ActorTickNeededComponent&, class EntityModifier<class FlagComponent<struct EditorActorPauseTickNeededFlag>>&);
 
     // symbol:
-    // ?_tickAddPauseTickNeeded@EditorTickFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UEditorActorPausedFlag@@@@@@VActorTickNeededComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UEditorActorPauseTickNeededFlag@@@@@@@Z
+    // ?_tickAddPauseTickNeeded@EditorTickFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UEditorActorPausedFlag@@@@@@VActorTickNeededComponent@@@@V?$EntityModifier@V?$FlagComponent@UEditorActorPauseTickNeededFlag@@@@@@@Z
     MCAPI static void
-        _tickAddPauseTickNeeded(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct EditorActorPausedFlag>>, class ActorTickNeededComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct EditorActorPauseTickNeededFlag>>);
+        _tickAddPauseTickNeeded(class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct EditorActorPausedFlag>>, class ActorTickNeededComponent>, class EntityModifier<class FlagComponent<struct EditorActorPauseTickNeededFlag>>);
 
     // symbol: ?createAddPauseTickNeeded@EditorTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createAddPauseTickNeeded();

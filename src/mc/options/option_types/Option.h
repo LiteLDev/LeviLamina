@@ -82,10 +82,10 @@ public:
 
     // NOLINTEND
 
-    // private:
+    // protected:
     // NOLINTBEGIN
     // symbol:
-    // ?_updatePropertyVector@Option@@AEAAXAEAV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+    // ?_updatePropertyVector@Option@@IEAAXAEAV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCAPI void _updatePropertyVector(std::vector<std::pair<std::string, std::string>>&, std::string const&);
 
     // NOLINTEND

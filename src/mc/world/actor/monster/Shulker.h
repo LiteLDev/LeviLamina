@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/puv/EquipmentSlot.h"
 #include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/entity/utilities/ActorFlags.h"
+#include "mc/entity/utilities/ActorInitializationMethod.h"
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
 #include "mc/enums/ArmorTextureType.h"
-#include "mc/enums/EquipmentSlot.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/InputMode.h"
 #include "mc/enums/MaterialType.h"
@@ -18,12 +19,12 @@
 #include "mc/events/LevelSoundEvent.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/AutomaticID.h"
-#include "mc/world/actor/Actor.h"
 #include "mc/world/actor/Mob.h"
 #include "mc/world/item/components/ItemUseMethod.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace mce { class Color; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -36,8 +37,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@Shulker@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::Actor::InitializationMethod, class VariantParameterList const&);
+    // vIndex: 4, symbol: ?reloadHardcoded@Shulker@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
 
     // vIndex: 9, symbol: ?_doInitialMove@Shulker@@UEAAXXZ
     virtual void _doInitialMove();
@@ -54,20 +55,17 @@ public:
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
 
-    // vIndex: 41, symbol: __unk_vfn_41
-    virtual void __unk_vfn_41();
+    // vIndex: 42, symbol: __unk_vfn_42
+    virtual void __unk_vfn_42();
 
-    // vIndex: 42, symbol: ?getShadowRadius@Shulker@@UEBAMXZ
+    // vIndex: 43, symbol: ?getShadowRadius@Shulker@@UEBAMXZ
     virtual float getShadowRadius() const;
-
-    // vIndex: 44, symbol: __unk_vfn_44
-    virtual void __unk_vfn_44();
 
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
 
-    // vIndex: 52, symbol: __unk_vfn_52
-    virtual void __unk_vfn_52();
+    // vIndex: 60, symbol: __unk_vfn_60
+    virtual void __unk_vfn_60();
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -75,61 +73,55 @@ public:
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 63, symbol: __unk_vfn_63
-    virtual void __unk_vfn_63();
-
-    // vIndex: 64, symbol: ?canAttack@Shulker@@UEBA_NPEAVActor@@_N@Z
+    // vIndex: 63, symbol: ?canAttack@Shulker@@UEBA_NPEAVActor@@_N@Z
     virtual bool canAttack(class Actor*, bool) const;
 
-    // vIndex: 76, symbol: ?shouldRender@Shulker@@UEBA_NXZ
+    // vIndex: 75, symbol: ?shouldRender@Shulker@@UEBA_NXZ
     virtual bool shouldRender() const;
 
-    // vIndex: 79, symbol: ?isInvulnerableTo@Shulker@@UEBA_NAEBVActorDamageSource@@@Z
+    // vIndex: 78, symbol: ?isInvulnerableTo@Shulker@@UEBA_NAEBVActorDamageSource@@@Z
     virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
 
-    // vIndex: 85, symbol: ?getPickRadius@Shulker@@UEAAMXZ
+    // vIndex: 84, symbol: ?getPickRadius@Shulker@@UEAAMXZ
     virtual float getPickRadius();
 
-    // vIndex: 109, symbol: __unk_vfn_109
-    virtual void __unk_vfn_109();
+    // vIndex: 107, symbol: __unk_vfn_107
+    virtual void __unk_vfn_107();
 
-    // vIndex: 147, symbol: __unk_vfn_147
-    virtual void __unk_vfn_147();
+    // vIndex: 144, symbol: __unk_vfn_144
+    virtual void __unk_vfn_144();
 
-    // vIndex: 163, symbol: ?updateEntitySpecificMolangVariables@Shulker@@MEAAXAEAVRenderParams@@@Z
+    // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Shulker@@MEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
 
-    // vIndex: 165, symbol: __unk_vfn_165
-    virtual void __unk_vfn_165();
+    // vIndex: 162, symbol: __unk_vfn_162
+    virtual void __unk_vfn_162();
 
-    // vIndex: 166, symbol: ?_hurt@Shulker@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 163, symbol: ?_hurt@Shulker@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
 
-    // vIndex: 167, symbol: ?readAdditionalSaveData@Shulker@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    // vIndex: 164, symbol: ?readAdditionalSaveData@Shulker@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
 
-    // vIndex: 168, symbol: ?addAdditionalSaveData@Shulker@@UEBAXAEAVCompoundTag@@@Z
+    // vIndex: 165, symbol: ?addAdditionalSaveData@Shulker@@UEBAXAEAVCompoundTag@@@Z
     virtual void addAdditionalSaveData(class CompoundTag&) const;
 
-    // vIndex: 170, symbol: __unk_vfn_170
-    virtual void __unk_vfn_170();
+    // vIndex: 167, symbol: __unk_vfn_167
+    virtual void __unk_vfn_167();
 
-    // vIndex: 171, symbol: ?_onSizeUpdated@Shulker@@EEAAXXZ
-    virtual void _onSizeUpdated();
+    // vIndex: 168, symbol: __unk_vfn_168
+    virtual void __unk_vfn_168();
 
-    // vIndex: 172, symbol: __unk_vfn_172
-    virtual void __unk_vfn_172();
-
-    // vIndex: 183, symbol: ?checkSpawnRules@Shulker@@UEAA_N_N@Z
+    // vIndex: 179, symbol: ?checkSpawnRules@Shulker@@UEAA_N_N@Z
     virtual bool checkSpawnRules(bool);
 
-    // vIndex: 188, symbol: ?getMaxHeadXRot@Shulker@@UEAAMXZ
+    // vIndex: 184, symbol: ?getMaxHeadXRot@Shulker@@UEAAMXZ
     virtual float getMaxHeadXRot();
 
-    // vIndex: 191, symbol: ?getArmorValue@Shulker@@UEBAHXZ
+    // vIndex: 187, symbol: ?getArmorValue@Shulker@@UEBAHXZ
     virtual int getArmorValue() const;
 
-    // vIndex: 210, symbol:
+    // vIndex: 206, symbol:
     // ?initBodyControl@Shulker@@UEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
     virtual std::unique_ptr<class BodyControl> initBodyControl();
 
@@ -179,6 +171,9 @@ public:
 
     // symbol: ?_peekAmountTick@Shulker@@AEAAXXZ
     MCAPI void _peekAmountTick();
+
+    // symbol: ?_setAttachFace@Shulker@@AEAAXE@Z
+    MCAPI void _setAttachFace(uchar);
 
     // symbol: ?_tryAttachingToNeighbouringFaces@Shulker@@AEAA_NVBlockPos@@@Z
     MCAPI bool _tryAttachingToNeighbouringFaces(class BlockPos);

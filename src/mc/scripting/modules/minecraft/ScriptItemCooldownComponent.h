@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 // clang-format on
@@ -44,8 +45,9 @@ public:
     MCAPI class Scripting::Result<void> startCooldown(class ScriptModuleMinecraft::ScriptPlayer&);
 
     // symbol:
-    // ?bind@ScriptItemCooldownComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemCooldownComponent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemCooldownComponent> bind();
+    // ?bind@ScriptItemCooldownComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemCooldownComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemCooldownComponent>
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // NOLINTEND
 };

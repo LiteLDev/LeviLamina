@@ -13,9 +13,6 @@ namespace ExpressionNodeSerializer {
 // symbol: ?fromFloat@ExpressionNodeSerializer@@YAXAEAVExpressionNode@@M@Z
 MCAPI void fromFloat(class ExpressionNode&, float);
 
-// symbol: ?fromInt@ExpressionNodeSerializer@@YAXAEAVExpressionNode@@H@Z
-MCAPI void fromInt(class ExpressionNode&, int);
-
 // symbol: ?fromProxy@ExpressionNodeSerializer@@YAXAEAVExpressionNode@@UExpressionNodeProxy@1@@Z
 MCAPI void fromProxy(class ExpressionNode&, struct ExpressionNodeSerializer::ExpressionNodeProxy);
 

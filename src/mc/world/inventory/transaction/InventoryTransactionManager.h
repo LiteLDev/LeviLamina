@@ -11,6 +11,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0InventoryTransactionManager@@QEAA@AEAVPlayer@@@Z
+    MCAPI explicit InventoryTransactionManager(class Player&);
+
     // symbol: ?_createServerSideAction@InventoryTransactionManager@@QEAAXAEBVItemStack@@0@Z
     MCAPI void _createServerSideAction(class ItemStack const&, class ItemStack const&);
 
@@ -25,6 +28,16 @@ public:
 
     // symbol: ?forceBalanceTransaction@InventoryTransactionManager@@QEAAXXZ
     MCAPI void forceBalanceTransaction();
+
+    // symbol:
+    // ?getCurrentTransaction@InventoryTransactionManager@@QEBAAEBV?$unique_ptr@VInventoryTransaction@@U?$default_delete@VInventoryTransaction@@@std@@@std@@XZ
+    MCAPI std::unique_ptr<class InventoryTransaction> const& getCurrentTransaction() const;
+
+    // symbol: ?reset@InventoryTransactionManager@@QEAAXXZ
+    MCAPI void reset();
+
+    // symbol: ?resetExpectedActions@InventoryTransactionManager@@QEAAXXZ
+    MCAPI void resetExpectedActions();
 
     // symbol: ??1InventoryTransactionManager@@QEAA@XZ
     MCAPI ~InventoryTransactionManager();

@@ -14,11 +14,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockCraftingTableComponent@@UEAA@XZ
-    virtual ~BlockCraftingTableComponent();
-
-    // symbol: ??4BlockCraftingTableComponent@@QEAAAEAU0@$$QEAU0@@Z
-    MCAPI struct BlockCraftingTableComponent& operator=(struct BlockCraftingTableComponent&&);
+    // vIndex: 0, symbol: __gen_??1BlockCraftingTableComponent@@UEAA@XZ
+    virtual ~BlockCraftingTableComponent() = default;
 
     // symbol: ?usesNewComponentStorage@BlockCraftingTableComponent@@SA_NXZ
     MCAPI static bool usesNewComponentStorage();

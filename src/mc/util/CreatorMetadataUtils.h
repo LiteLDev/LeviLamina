@@ -19,11 +19,18 @@ namespace Scripting { struct Version; }
 
 namespace CreatorMetadataUtils {
 // NOLINTBEGIN
+// symbol: ?_addCommonEngineMetadata@CreatorMetadataUtils@@YAXAEAVValue@Json@@PEBD@Z
+MCAPI void _addCommonEngineMetadata(class Json::Value&, char const*);
+
 // symbol: ?_addCommonVanillaMetadata@CreatorMetadataUtils@@YAXAEAVValue@Json@@PEBD@Z
 MCAPI void _addCommonVanillaMetadata(class Json::Value&, char const*);
 
 // symbol: ?_addOptionalPrivilegeName@CreatorMetadataUtils@@YAXAEAVValue@Json@@W4Privilege@Scripting@@@Z
 MCAPI void _addOptionalPrivilegeName(class Json::Value&, ::Scripting::Privilege);
+
+// symbol:
+// ?_generateAfterEventsOrderingDocumentation@CreatorMetadataUtils@@YAXAEBVScriptEngine@Scripting@@AEBVPath@Core@@@Z
+MCAPI void _generateAfterEventsOrderingDocumentation(class Scripting::ScriptEngine const&, class Core::Path const&);
 
 // symbol: ?_generateBlocksMetadataJson@CreatorMetadataUtils@@YA?AVValue@Json@@XZ
 MCAPI class Json::Value _generateBlocksMetadataJson();
@@ -67,6 +74,11 @@ MCAPI void generateCameraPresetDocumentation(class Core::Path const&, class Came
 // symbol: ?generateCommandsDocumentation@CreatorMetadataUtils@@YAXAEAVCommandRegistry@@AEBVPath@Core@@@Z
 MCAPI void generateCommandsDocumentation(class CommandRegistry&, class Core::Path const&);
 
+// symbol:
+// ?generateCreatorScriptingMetadata@CreatorMetadataUtils@@YAXAEAVScriptEngine@Scripting@@AEBVPath@Core@@11VItemRegistryRef@@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VActorDefinition@@U?$default_delete@VActorDefinition@@@std@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VActorDefinition@@U?$default_delete@VActorDefinition@@@std@@@2@@std@@@2@@std@@AEBVCameraPresets@@@Z
+MCAPI void
+generateCreatorScriptingMetadata(class Scripting::ScriptEngine&, class Core::Path const&, class Core::Path const&, class Core::Path const&, class ItemRegistryRef, std::unordered_map<std::string, std::unique_ptr<class ActorDefinition>> const&, class CameraPresets const&);
+
 // symbol: ?generateDimensionsDocumentation@CreatorMetadataUtils@@YAXAEBVPath@Core@@@Z
 MCAPI void generateDimensionsDocumentation(class Core::Path const&);
 
@@ -86,11 +98,6 @@ MCAPI void generateItemsDocumentation(class Core::Path const&, class ItemRegistr
 
 // symbol: ?generateScriptingDocumentation@CreatorMetadataUtils@@YAXAEAVScriptEngine@Scripting@@AEBVPath@Core@@@Z
 MCAPI void generateScriptingDocumentation(class Scripting::ScriptEngine&, class Core::Path const&);
-
-// symbol:
-// ?generateVanillaDataDocumentation@CreatorMetadataUtils@@YAXAEBVPath@Core@@VItemRegistryRef@@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VActorDefinition@@U?$default_delete@VActorDefinition@@@std@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VActorDefinition@@U?$default_delete@VActorDefinition@@@std@@@2@@std@@@2@@std@@AEBVCameraPresets@@@Z
-MCAPI void
-generateVanillaDataDocumentation(class Core::Path const&, class ItemRegistryRef, std::unordered_map<std::string, std::unique_ptr<class ActorDefinition>> const&, class CameraPresets const&);
 
 // symbol:
 // ?getGameSemVersionAsString@CreatorMetadataUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

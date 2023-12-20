@@ -12,6 +12,7 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
 namespace ScriptModuleMinecraft { class ScriptBlockInventoryComponentContainer; }
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 // clang-format on
 
@@ -48,9 +49,9 @@ public:
     operator=(class ScriptModuleMinecraft::ScriptBlockInventoryComponent&&);
 
     // symbol:
-    // ?bind@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockInventoryComponent@ScriptModuleMinecraft@@@Scripting@@XZ
+    // ?bind@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockInventoryComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockInventoryComponent>
-    bind();
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol: ?ComponentId@ScriptBlockInventoryComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;

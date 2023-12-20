@@ -13,10 +13,13 @@ public:
     // Logger inner types declare
     // clang-format off
     struct UpgradeLogEntry;
+    struct ValidationLogEntry;
     // clang-format on
 
     // Logger inner types define
     enum class UpgradeResultCode {};
+
+    enum class ValidationResultCode {};
 
     struct UpgradeLogEntry {
     public:
@@ -33,16 +36,41 @@ public:
         // NOLINTEND
     };
 
+    struct ValidationLogEntry {
+    public:
+        // prevent constructor by default
+        ValidationLogEntry& operator=(ValidationLogEntry const&);
+        ValidationLogEntry(ValidationLogEntry const&);
+        ValidationLogEntry();
+
+    public:
+        // NOLINTBEGIN
+        // symbol: ??1ValidationLogEntry@Logger@Puv@@QEAA@XZ
+        MCAPI ~ValidationLogEntry();
+
+        // NOLINTEND
+    };
+
 public:
     // prevent constructor by default
     Logger& operator=(Logger const&);
-    Logger(Logger const&);
     Logger();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??0Logger@Puv@@QEAA@AEBU01@@Z
+    MCAPI Logger(struct Puv::Logger const&);
+
+    // symbol:
+    // ?getErrors@Logger@Puv@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+    MCAPI std::vector<std::string> getErrors() const;
+
     // symbol: ?hasErrors@Logger@Puv@@QEBA_NXZ
     MCAPI bool hasErrors() const;
+
+    // symbol:
+    // ?log@Logger@Puv@@QEAAXW4ValidationResultCode@12@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCAPI void log(::Puv::Logger::ValidationResultCode, std::string);
 
     // symbol:
     // ?log@Logger@Puv@@QEAAXW4ResultCode@internal@cereal@@V?$vector@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@V?$allocator@U?$pair@W4ContextType@SerializerContext@cereal@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@7@@Z

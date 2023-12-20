@@ -23,7 +23,7 @@ public:
     // vIndex: 0, symbol: ??1ScriptComponent@ScriptModuleMinecraft@@UEAA@XZ
     virtual ~ScriptComponent();
 
-    // vIndex: 1, symbol: ?_isValid@AttributeScriptActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
+    // vIndex: 1, symbol: ?_isValid@ScriptActorComponent@ScriptModuleMinecraft@@MEBA_NXZ
     virtual bool _isValid() const = 0;
 
     // symbol:

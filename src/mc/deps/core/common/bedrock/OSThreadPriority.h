@@ -13,6 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ??BOSThreadPriority@Threading@Bedrock@@QEBAHXZ
+    MCAPI explicit operator int() const;
+
     // symbol: ?Elevated@OSThreadPriority@Threading@Bedrock@@2V123@B
     MCAPI static class Bedrock::Threading::OSThreadPriority const Elevated;
 

@@ -190,6 +190,9 @@ public:
         // symbol: ??8SetInstruction@CameraInstruction@@QEBA_NAEBU01@@Z
         MCAPI bool operator==(struct CameraInstruction::SetInstruction const&) const;
 
+        // symbol: ?write@SetInstruction@CameraInstruction@@QEBAXAEAVBinaryStream@@@Z
+        MCAPI void write(class BinaryStream&) const;
+
         // symbol: ?bindType@SetInstruction@CameraInstruction@@SAXAEAUReflectionCtx@cereal@@@Z
         MCAPI static void bindType(struct cereal::ReflectionCtx&);
 

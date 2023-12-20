@@ -25,7 +25,7 @@ public:
     virtual ~IGetPlacementBlockCallback() = default;
 
     // vIndex: 1, symbol:
-    // ?getPlacementBlock@UpdateCardinalGetPlacementBlockCallback@PlacementDirection@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+    // ?getPlacementBlock@UpdateVerticalHalfGetPlacementBlockCallback@PlacementPosition@BlockTrait@@UEBA?AV?$not_null@PEBVBlock@@@gsl@@V45@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual gsl::not_null<class Block const*> getPlacementBlock(
         gsl::not_null<class Block const*>,
         class Actor const&,

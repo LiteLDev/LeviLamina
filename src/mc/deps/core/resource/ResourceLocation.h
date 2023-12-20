@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
-#include "mc/world/systems/ResourceFileSystem.h"
+#include "mc/entity/systems/common/ResourceFileSystem.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,9 +36,6 @@ public:
     // symbol:
     // ?getRelativePath@ResourceLocation@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
     MCAPI class Core::PathBuffer<std::string> const& getRelativePath() const;
-
-    // symbol: ??8ResourceLocation@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class ResourceLocation const&) const;
 
     // symbol: ?serialize@ResourceLocation@@QEBAXAEAVValue@Json@@@Z
     MCAPI void serialize(class Json::Value&) const;

@@ -43,7 +43,7 @@ namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct JSON; }
-struct FloatRange;
+namespace Scripting { struct NumberRange; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -101,8 +101,9 @@ public:
         const;
 
     // symbol:
-    // ?getBlockFromRay_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@VWeakLifetimeScope@4@AEBVVec3@@AEBVScriptVector@2@AEBV?$optional@UScriptBlockRaycastOptions@ScriptModuleMinecraft@@@std@@@Z
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>
+    // ?getBlockFromRay_V010@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@VWeakLifetimeScope@4@AEBVVec3@@AEBVScriptVector@2@AEBV?$optional@UScriptBlockRaycastOptions@ScriptModuleMinecraft@@@std@@@Z
+    MCAPI class Scripting::Result<
+        std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>>
     getBlockFromRay_V010(class Scripting::WeakLifetimeScope, class Vec3 const&, class ScriptModuleMinecraft::ScriptVector const&, std::optional<struct ScriptModuleMinecraft::ScriptBlockRaycastOptions> const&)
         const;
 
@@ -149,8 +150,9 @@ public:
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorIterator>>
         getEntities_V010(std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions>) const;
 
-    // symbol: ?getHeightRange@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@UFloatRange@@$$V@Scripting@@XZ
-    MCAPI class Scripting::Result<struct FloatRange> getHeightRange() const;
+    // symbol:
+    // ?getHeightRange@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$Result@UNumberRange@Scripting@@$$V@Scripting@@XZ
+    MCAPI class Scripting::Result<struct Scripting::NumberRange> getHeightRange() const;
 
     // symbol:
     // ?getId@ScriptDimension@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

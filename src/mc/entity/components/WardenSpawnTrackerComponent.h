@@ -35,8 +35,9 @@ public:
     // symbol: ?tryIncreaseThreatLevel@WardenSpawnTrackerComponent@@QEAAHXZ
     MCAPI int tryIncreaseThreatLevel();
 
-    // symbol: ?getSoundEventForThreatLevel@WardenSpawnTrackerComponent@@SA?AV?$optional@W4LevelSoundEvent@@@std@@H@Z
-    MCAPI static std::optional<::LevelSoundEvent> getSoundEventForThreatLevel(int);
+    // symbol:
+    // ?getSoundEventForThreatLevel@WardenSpawnTrackerComponent@@SA?AV?$optional@W4LevelSoundEvent@Legacy@Puv@@@std@@H@Z
+    MCAPI static std::optional<::Puv::Legacy::LevelSoundEvent> getSoundEventForThreatLevel(int);
 
     // symbol: ?hasNearbyWarden@WardenSpawnTrackerComponent@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool hasNearbyWarden(class BlockSource&, class BlockPos const&);

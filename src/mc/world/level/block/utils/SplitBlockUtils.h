@@ -38,6 +38,9 @@ MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyLog2Info;
 // symbol: ?LegacyLogInfo@SplitBlockUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyLogInfo;
 
+// symbol: ?LegacyPlanksInfo@SplitBlockUtils@@3ULegacyBlockInfo@1@B
+MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyPlanksInfo;
+
 // symbol: ?LegacyShulkerBoxInfo@SplitBlockUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyShulkerBoxInfo;
 
@@ -46,6 +49,9 @@ MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyStainedGlassInf
 
 // symbol: ?LegacyStainedGlassPaneInfo@SplitBlockUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyStainedGlassPaneInfo;
+
+// symbol: ?LegacyStoneInfo@SplitBlockUtils@@3ULegacyBlockInfo@1@B
+MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyStoneInfo;
 
 // symbol: ?LegacyTerracottaInfo@SplitBlockUtils@@3ULegacyBlockInfo@1@B
 MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyTerracottaInfo;

@@ -11,9 +11,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Vec3@@QEAA@MMM@Z
-    MCAPI Vec3(float, float, float);
-
     // symbol: ?abs@Vec3@@QEBA?AV1@XZ
     MCAPI class Vec3 abs() const;
 
@@ -34,9 +31,6 @@ public:
 
     // symbol: ?length@Vec3@@QEBAMXZ
     MCAPI float length() const;
-
-    // symbol: ?lengthSquared@Vec3@@QEBAMXZ
-    MCAPI float lengthSquared() const;
 
     // symbol: ?maxComponent@Vec3@@QEBAMXZ
     MCAPI float maxComponent() const;

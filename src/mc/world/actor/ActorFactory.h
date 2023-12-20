@@ -16,8 +16,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ActorFactory@@UEAA@XZ
-    virtual ~ActorFactory();
+    // vIndex: 0, symbol: __gen_??1ActorFactory@@UEAA@XZ
+    virtual ~ActorFactory() = default;
 
     // symbol: ??0ActorFactory@@QEAA@V?$not_null@V?$NonOwnerPointer@VLevel@@@Bedrock@@@gsl@@@Z
     MCAPI explicit ActorFactory(Bedrock::NotNullNonOwnerPtr<class Level>);

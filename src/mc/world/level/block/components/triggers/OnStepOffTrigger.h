@@ -11,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1OnStepOffTrigger@@UEAA@XZ
-    virtual ~OnStepOffTrigger();
-
-    // symbol: ??0OnStepOffTrigger@@QEAA@$$QEAV0@@Z
-    MCAPI OnStepOffTrigger(class OnStepOffTrigger&&);
+    // vIndex: 0, symbol: __gen_??1OnStepOffTrigger@@UEAA@XZ
+    virtual ~OnStepOffTrigger() = default;
 
     // NOLINTEND
 };

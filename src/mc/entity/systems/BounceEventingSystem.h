@@ -22,9 +22,9 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_doBounceEventingSystem@BounceEventingSystem@@CAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@AEBUActorUniqueIDComponent@@AEBUEventingDispatcherComponent@@AEAUBounceComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@UEventingRequestQueueComponent@@@@@Z
+    // ?_doBounceEventingSystem@BounceEventingSystem@@CAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@AEBUActorUniqueIDComponent@@AEBUEventingDispatcherComponent@@AEAUBounceComponent@@V?$ViewT@VStrictEntityContext@@UEventingRequestQueueComponent@@@@@Z
     MCAPI static void
-    _doBounceEventingSystem(class StrictEntityContext const&, struct StateVectorComponent const&, struct ActorUniqueIDComponent const&, struct EventingDispatcherComponent const&, struct BounceComponent&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct EventingRequestQueueComponent>);
+    _doBounceEventingSystem(class StrictEntityContext const&, struct StateVectorComponent const&, struct ActorUniqueIDComponent const&, struct EventingDispatcherComponent const&, struct BounceComponent&, class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent>);
 
     // NOLINTEND
 };

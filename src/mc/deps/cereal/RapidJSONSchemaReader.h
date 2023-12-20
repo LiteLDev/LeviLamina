@@ -95,8 +95,8 @@ public:
     virtual bool pushMember(std::string const&, struct cereal::SerializerTraits const&);
 
     // vIndex: 19, symbol:
-    // ?pushMember@RapidJSONSchemaReader@cereal@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_KAEBUSerializerTraits@2@@Z
-    virtual std::string pushMember(uint64, struct cereal::SerializerTraits const&);
+    // ?pushNextMember@RapidJSONSchemaReader@cereal@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUSerializerTraits@2@@Z
+    virtual std::string pushNextMember(struct cereal::SerializerTraits const&);
 
     // vIndex: 20, symbol: ?pushElement@RapidJSONSchemaReader@cereal@@UEAAX_KAEBUSerializerTraits@2@@Z
     virtual void pushElement(uint64, struct cereal::SerializerTraits const&);

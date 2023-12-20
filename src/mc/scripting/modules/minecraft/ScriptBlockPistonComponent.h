@@ -14,6 +14,7 @@ class BlockPos;
 class BlockSource;
 class Vec3;
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -55,8 +56,9 @@ public:
     MCAPI class Scripting::Result<bool> isRetracting();
 
     // symbol:
-    // ?bind@ScriptBlockPistonComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockPistonComponent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockPistonComponent> bind();
+    // ?bind@ScriptBlockPistonComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockPistonComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockPistonComponent>
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol:
     // ?tryCreate@ScriptBlockPistonComponent@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptBlockPistonComponent@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z

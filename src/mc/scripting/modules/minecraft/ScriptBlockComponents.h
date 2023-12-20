@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class ModuleBindingBuilder; }
 // clang-format on
 
@@ -18,8 +19,10 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol: ?bind@ScriptBlockComponents@ScriptModuleMinecraft@@SAXAEAVModuleBindingBuilder@Scripting@@@Z
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
+    // symbol:
+    // ?bind@ScriptBlockComponents@ScriptModuleMinecraft@@SAXAEAVModuleBindingBuilder@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
+    MCAPI static void
+    bind(class Scripting::ModuleBindingBuilder&, class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // NOLINTEND
 };

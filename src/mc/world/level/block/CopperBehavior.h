@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/CopperType.h"
+
 class CopperBehavior {
 public:
     // prevent constructor by default
@@ -11,6 +14,16 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol:
+    // ??0CopperBehavior@@QEAA@W4CopperType@@AEBVHashedString@@AEBV?$function@$$A6AAEBVBlock@@AEBVHashedString@@AEBV1@@Z@std@@@Z
+    MCAPI
+    CopperBehavior(::CopperType, class HashedString const&, std::function<class Block const&(class HashedString const&, class Block const&)> const&);
+
+    // symbol:
+    // ??0CopperBehavior@@QEAA@W4CopperType@@AEBVHashedString@@11AEBV?$function@$$A6AAEBVBlock@@AEBVHashedString@@AEBV1@@Z@std@@@Z
+    MCAPI
+    CopperBehavior(::CopperType, class HashedString const&, class HashedString const&, class HashedString const&, std::function<class Block const&(class HashedString const&, class Block const&)> const&);
+
     // symbol: ?getCorrespondingWaxedBlock@CopperBehavior@@QEBAAEBVBlock@@AEBV2@@Z
     MCAPI class Block const& getCorrespondingWaxedBlock(class Block const&) const;
 
@@ -31,13 +44,6 @@ public:
 
     // symbol: ??1CopperBehavior@@QEAA@XZ
     MCAPI ~CopperBehavior();
-
-    // NOLINTEND
-
-    // private:
-    // NOLINTBEGIN
-    // symbol: ?_incrementAge@CopperBehavior@@AEBAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@M@Z
-    MCAPI void _incrementAge(class BlockSource&, class Block const&, class BlockPos const&, float) const;
 
     // NOLINTEND
 };

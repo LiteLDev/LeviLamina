@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/entity/EntityModifierT.h"
+#include "mc/entity/EntityModifier.h"
 
 class MinecartCanSnapOnRailSystem {
 public:
@@ -15,9 +15,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?_checkCanSnapOnRail@MinecartCanSnapOnRailSystem@@SAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@USnapOnRailComponent@@@@AEBVIConstBlockSource@@@Z
+    // ?_checkCanSnapOnRail@MinecartCanSnapOnRailSystem@@SAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@V?$EntityModifier@USnapOnRailComponent@@@@AEBVIConstBlockSource@@@Z
     MCAPI static void
-    _checkCanSnapOnRail(class StrictEntityContext const&, struct StateVectorComponent const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SnapOnRailComponent>, class IConstBlockSource const&);
+    _checkCanSnapOnRail(class StrictEntityContext const&, struct StateVectorComponent const&, class EntityModifier<struct SnapOnRailComponent>, class IConstBlockSource const&);
 
     // symbol: ?createSystem@MinecartCanSnapOnRailSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();

@@ -49,13 +49,13 @@ public:
     // vIndex: 19, symbol: __unk_vfn_19
     virtual void __unk_vfn_19();
 
-    // vIndex: 20, symbol: ?_getContainer@InventoryContainerModel@@EEBAPEAVContainer@@XZ
+    // vIndex: 21, symbol: ?_getContainer@InventoryContainerModel@@EEBAPEAVContainer@@XZ
     virtual class Container* _getContainer() const;
 
-    // vIndex: 21, symbol: ?_getContainerOffset@InventoryContainerModel@@MEBAHXZ
+    // vIndex: 22, symbol: ?_getContainerOffset@InventoryContainerModel@@MEBAHXZ
     virtual int _getContainerOffset() const;
 
-    // vIndex: 22, symbol: ?_onItemChanged@InventoryContainerModel@@EEAAXHAEBVItemStack@@0@Z
+    // vIndex: 24, symbol: ?_onItemChanged@InventoryContainerModel@@EEAAXHAEBVItemStack@@0@Z
     virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
 
     // symbol: ??0InventoryContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@@Z

@@ -47,17 +47,17 @@ public:
     doSave(struct cereal::SchemaWriter&, entt::meta_any const&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
 
-    // vIndex: 4, symbol: ??1DefaultCompositeSchema@internal@cereal@@UEAA@XZ
+    // vIndex: 4, symbol: ?makeDescription@DefaultCompositeSchema@internal@cereal@@EEBA?AUSchemaDescription@3@XZ
+    virtual struct cereal::SchemaDescription makeDescription() const;
+
+    // vIndex: 5, symbol: ??1DefaultCompositeSchema@internal@cereal@@UEAA@XZ
     virtual ~DefaultCompositeSchema();
 
-    // vIndex: 5, symbol:
+    // vIndex: 6, symbol:
     // ?unpack@DefaultCompositeSchema@internal@cereal@@UEBAXAEAV?$vector@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@V?$allocator@V?$reference_wrapper@$$CBVBasicSchema@internal@cereal@@@std@@@2@@std@@AEAV?$dense_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$reference_wrapper@$$CBUMemberDescriptor@BasicSchema@internal@cereal@@@2@@std@@@2@@entt@@@Z
     virtual void
     unpack(std::vector<std::reference_wrapper<class cereal::internal::BasicSchema const>>&, entt::dense_map<std::string, std::reference_wrapper<struct cereal::internal::BasicSchema::MemberDescriptor const>>&)
         const;
-
-    // vIndex: 6, symbol: ?description@DefaultCompositeSchema@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
-    virtual struct cereal::SchemaDescription description() const;
 
     // vIndex: 7, symbol:
     // ?addParent@DefaultCompositeSchema@internal@cereal@@UEAAXV?$unique_ptr@VBasicSchema@internal@cereal@@U?$default_delete@VBasicSchema@internal@cereal@@@std@@@std@@@Z
@@ -86,8 +86,8 @@ public:
     // ?customError@DefaultCompositeSchema@internal@cereal@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     virtual void customError(std::string const&, std::string const&);
 
-    // symbol: ??0DefaultCompositeSchema@internal@cereal@@QEAA@USerializerTraits@2@AEBUReflectionCtx@2@@Z
-    MCAPI DefaultCompositeSchema(struct cereal::SerializerTraits, struct cereal::ReflectionCtx const&);
+    // symbol: ??0DefaultCompositeSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@@Z
+    MCAPI explicit DefaultCompositeSchema(struct cereal::ReflectionCtx const&);
 
     // NOLINTEND
 };

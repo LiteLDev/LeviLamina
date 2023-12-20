@@ -6,7 +6,7 @@
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/enums/InitializationMethod.h"
+#include "mc/entity/utilities/ActorInitializationMethod.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,8 +22,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1ActorManager@@UEAA@XZ
-    virtual ~ActorManager();
+    // vIndex: 0, symbol: __gen_??1ActorManager@@UEAA@XZ
+    virtual ~ActorManager() = default;
 
     // symbol: ??0ActorManager@@QEAA@XZ
     MCAPI ActorManager();
@@ -75,9 +75,9 @@ public:
     MCAPI class Bedrock::PubSub::Subscription registerOnRemoveActorEntityReferences(std::function<void(class Actor&)>);
 
     // symbol:
-    // ?registerPostReloadActor@ActorManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVActor@@W4InitializationMethod@@@Z@std@@@Z
+    // ?registerPostReloadActor@ActorManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVActor@@W4ActorInitializationMethod@@@Z@std@@@Z
     MCAPI class Bedrock::PubSub::Subscription
-        registerPostReloadActor(std::function<void(class Actor&, ::InitializationMethod)>);
+        registerPostReloadActor(std::function<void(class Actor&, ::ActorInitializationMethod)>);
 
     // symbol: ?removeActorEntityAndTakeEntity@ActorManager@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@VWeakEntityRef@@@Z
     MCAPI class OwnerPtrT<struct EntityRefTraits> removeActorEntityAndTakeEntity(class WeakEntityRef);

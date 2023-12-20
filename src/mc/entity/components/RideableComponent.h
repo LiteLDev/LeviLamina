@@ -6,6 +6,7 @@ class RideableComponent {
 public:
     // prevent constructor by default
     RideableComponent& operator=(RideableComponent const&);
+    RideableComponent(RideableComponent const&);
 
 public:
     // NOLINTBEGIN
@@ -15,14 +16,14 @@ public:
     // symbol: ??0RideableComponent@@QEAA@$$QEAV0@@Z
     MCAPI RideableComponent(class RideableComponent&&);
 
-    // symbol: ??0RideableComponent@@QEAA@AEBV0@@Z
-    MCAPI RideableComponent(class RideableComponent const&);
-
     // symbol: ?areSeatsFull@RideableComponent@@QEBA_NAEBVActor@@@Z
     MCAPI bool areSeatsFull(class Actor const&) const;
 
     // symbol: ?canAddPassenger@RideableComponent@@QEBA_NAEBVActor@@AEAV2@@Z
     MCAPI bool canAddPassenger(class Actor const&, class Actor&) const;
+
+    // symbol: ?fitsInVehicle@RideableComponent@@QEBA_NAEBVAABB@@@Z
+    MCAPI bool fitsInVehicle(class AABB const&) const;
 
     // symbol: ?getFirstAvailableSeatPosition@RideableComponent@@QEBA_NAEBVActor@@AEAV2@AEAVVec3@@@Z
     MCAPI bool getFirstAvailableSeatPosition(class Actor const&, class Actor&, class Vec3&) const;
@@ -43,8 +44,12 @@ public:
     // symbol: ?pullInEntity@RideableComponent@@QEBA_NAEAVActor@@0@Z
     MCAPI bool pullInEntity(class Actor&, class Actor&) const;
 
-    // symbol: ??1RideableComponent@@QEAA@XZ
-    MCAPI ~RideableComponent();
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_setCanPlayerRide@RideableComponent@@AEBAXAEAVPlayer@@_N@Z
+    MCAPI void _setCanPlayerRide(class Player&, bool) const;
 
     // NOLINTEND
 };

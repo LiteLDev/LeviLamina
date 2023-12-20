@@ -67,7 +67,7 @@ public:
     virtual void update() = 0;
 
     // vIndex: 12, symbol:
-    // ?getPingTimeForGUID@RakNetServerLocator@@UEAAMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // ?getPingTimeForGUID@StubServerLocator@@UEAAMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual float getPingTimeForGUID(std::string const&) = 0;
 
     // vIndex: 13, symbol:

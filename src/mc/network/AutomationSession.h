@@ -12,7 +12,6 @@
 class CommandOrigin;
 class RakWebSocketDataFrame;
 namespace Automation { class AutomationClient; }
-namespace CodeBuilder { class GameContext; }
 namespace CodeBuilder { struct ChatMessage; }
 namespace CodeBuilder { struct ChatSubscription; }
 namespace CodeBuilder { struct CommandRequest; }
@@ -104,9 +103,6 @@ public:
 
     // symbol: ?disconnect@AutomationSession@Automation@@QEAAXXZ
     MCAPI void disconnect();
-
-    // symbol: ?getGameContext@AutomationSession@Automation@@QEBA?AV?$shared_ptr@VGameContext@CodeBuilder@@@std@@XZ
-    MCAPI std::shared_ptr<class CodeBuilder::GameContext> getGameContext() const;
 
     // symbol: ?isConnecting@AutomationSession@Automation@@QEAA_NXZ
     MCAPI bool isConnecting();

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
 
-class DecoratedPotBlockActor : public ::BlockActor {
+class DecoratedPotBlockActor : public ::RandomizableBlockActorContainer {
 public:
     // prevent constructor by default
     DecoratedPotBlockActor& operator=(DecoratedPotBlockActor const&);
@@ -14,51 +14,36 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: __gen_??1DecoratedPotBlockActor@@UEAA@XZ
-    virtual ~DecoratedPotBlockActor() = default;
+    // symbol:
+    // ?_getUpdatePacket@DecoratedPotBlockActor@@EEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
-    // vIndex: 1, symbol: ?load@DecoratedPotBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    // symbol: ?_onUpdatePacket@DecoratedPotBlockActor@@EEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+    MCVAPI void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
-    // vIndex: 2, symbol: ?save@DecoratedPotBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    // symbol: ?getContainerSize@DecoratedPotBlockActor@@UEBAHXZ
+    MCVAPI int getContainerSize() const;
 
-    // vIndex: 12, symbol: __unk_vfn_12
-    virtual void __unk_vfn_12();
+    // symbol: ?getItem@DecoratedPotBlockActor@@UEBAAEBVItemStack@@H@Z
+    MCVAPI class ItemStack const& getItem(int) const;
 
-    // vIndex: 18, symbol: __unk_vfn_18
-    virtual void __unk_vfn_18();
+    // symbol: ?getMaxStackSize@DecoratedPotBlockActor@@UEBAHXZ
+    MCVAPI int getMaxStackSize() const;
 
-    // vIndex: 30, symbol: __unk_vfn_30
-    virtual void __unk_vfn_30();
+    // symbol: ?load@DecoratedPotBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+    MCVAPI void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
 
-    // vIndex: 31, symbol: __unk_vfn_31
-    virtual void __unk_vfn_31();
+    // symbol: ?save@DecoratedPotBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+    MCVAPI bool save(class CompoundTag&) const;
 
-    // vIndex: 32, symbol: __unk_vfn_32
-    virtual void __unk_vfn_32();
+    // symbol: ?serverInitItemStackIds@DecoratedPotBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
 
-    // vIndex: 33, symbol: __unk_vfn_33
-    virtual void __unk_vfn_33();
+    // symbol: ?setItem@DecoratedPotBlockActor@@UEAAXHAEBVItemStack@@@Z
+    MCVAPI void setItem(int, class ItemStack const&);
 
-    // vIndex: 34, symbol: __unk_vfn_34
-    virtual void __unk_vfn_34();
-
-    // vIndex: 35, symbol: __unk_vfn_35
-    virtual void __unk_vfn_35();
-
-    // vIndex: 36, symbol: __unk_vfn_36
-    virtual void __unk_vfn_36();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
-
-    // vIndex: 40, symbol:
-    // ?_getUpdatePacket@DecoratedPotBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
-
-    // vIndex: 41, symbol: ?_onUpdatePacket@DecoratedPotBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    // symbol: ?tick@DecoratedPotBlockActor@@UEAAXAEAVBlockSource@@@Z
+    MCVAPI void tick(class BlockSource&);
 
     // symbol: ??0DecoratedPotBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit DecoratedPotBlockActor(class BlockPos const&);
@@ -67,9 +52,15 @@ public:
     // ?getSherdNames@DecoratedPotBlockActor@@QEBAAEBV?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$03@std@@XZ
     MCAPI std::array<std::string, 4> const& getSherdNames() const;
 
+    // symbol: ?tryAddItem@DecoratedPotBlockActor@@QEAAXAEAVPlayer@@@Z
+    MCAPI void tryAddItem(class Player&);
+
+    // symbol: ?removeDefaultSherdsFromUserData@DecoratedPotBlockActor@@SAXAEAVItemStackBase@@@Z
+    MCAPI static void removeDefaultSherdsFromUserData(class ItemStackBase&);
+
     // symbol:
-    // ?saveSherdsToTag@DecoratedPotBlockActor@@SAXAEAVCompoundTag@@AEBV?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$03@std@@@Z
-    MCAPI static void saveSherdsToTag(class CompoundTag&, std::array<std::string, 4> const&);
+    // ?saveSherdsToTag@DecoratedPotBlockActor@@SAXAEAVCompoundTag@@AEBV?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$03@std@@_N@Z
+    MCAPI static void saveSherdsToTag(class CompoundTag&, std::array<std::string, 4> const&, bool);
 
     // symbol: ?tryGet@DecoratedPotBlockActor@@SAPEAV1@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static class DecoratedPotBlockActor* tryGet(class BlockSource&, class BlockPos const&);
@@ -84,10 +75,24 @@ public:
 
     // NOLINTEND
 
-    // protected:
+    // private:
     // NOLINTBEGIN
-    // symbol: ?_resetSherdItemNames@DecoratedPotBlockActor@@IEAAXXZ
+    // symbol: ?_onInsertFeedback@DecoratedPotBlockActor@@AEAAXAEAVBlockSource@@AEBVItemStack@@AEAVPlayer@@@Z
+    MCAPI void _onInsertFeedback(class BlockSource&, class ItemStack const&, class Player&);
+
+    // symbol: ?_resetSherdItemNames@DecoratedPotBlockActor@@AEAAXXZ
     MCAPI void _resetSherdItemNames();
+
+    // symbol: ?_setContainedItem@DecoratedPotBlockActor@@AEAAXAEBVItemStack@@@Z
+    MCAPI void _setContainedItem(class ItemStack const&);
+
+    // symbol:
+    // ?_areDefaultSherds@DecoratedPotBlockActor@@CA_NAEBV?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$03@std@@@Z
+    MCAPI static bool _areDefaultSherds(std::array<std::string, 4> const&);
+
+    // symbol:
+    // ?_tryGetSherdsFromItem@DecoratedPotBlockActor@@CA?AV?$optional@V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$03@std@@@std@@AEBVItemStackBase@@@Z
+    MCAPI static std::optional<std::array<std::string, 4>> _tryGetSherdsFromItem(class ItemStackBase const&);
 
     // NOLINTEND
 };

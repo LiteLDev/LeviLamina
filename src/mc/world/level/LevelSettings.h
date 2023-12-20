@@ -189,9 +189,6 @@ public:
     // symbol: ??4LevelSettings@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class LevelSettings& operator=(class LevelSettings&&);
 
-    // symbol: ?overrideSavedSettings@LevelSettings@@QEBAXAEAVLevelData@@@Z
-    MCAPI void overrideSavedSettings(class LevelData&) const;
-
     // symbol: ?setAdventureModeOverridesEnabled@LevelSettings@@QEAAAEAV1@_N@Z
     MCAPI class LevelSettings& setAdventureModeOverridesEnabled(bool);
 

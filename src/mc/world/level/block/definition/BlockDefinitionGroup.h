@@ -66,12 +66,11 @@ public:
     // ?getBlockDefinitions@BlockDefinitionGroup@@QEBA?AV?$vector@PEBUBlockDefinition@@V?$allocator@PEBUBlockDefinition@@@std@@@std@@XZ
     MCAPI std::vector<struct BlockDefinition const*> getBlockDefinitions() const;
 
-    // symbol:
-    // ?initializeBlockFromDefinition@BlockDefinitionGroup@@QEAAXAEBUBlockDefinition@@AEAVEntityRegistry@@AEAVLevel@@@Z
-    MCAPI void initializeBlockFromDefinition(struct BlockDefinition const&, class EntityRegistry&, class Level&);
+    // symbol: ?initializeBlockFromDefinition@BlockDefinitionGroup@@QEAAXAEBUBlockDefinition@@AEAVLevel@@@Z
+    MCAPI void initializeBlockFromDefinition(struct BlockDefinition const&, class Level&);
 
-    // symbol: ?initializeBlocks@BlockDefinitionGroup@@QEAAXAEAVEntityRegistry@@AEAVLevel@@@Z
-    MCAPI void initializeBlocks(class EntityRegistry&, class Level&);
+    // symbol: ?initializeBlocks@BlockDefinitionGroup@@QEAAXAEAVLevel@@@Z
+    MCAPI void initializeBlocks(class Level&);
 
     // symbol:
     // ?loadResource@BlockDefinitionGroup@@QEAA?AV?$unique_ptr@UBlockDefinition@@U?$default_delete@UBlockDefinition@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBV43@AEBVSemVersion@@AEBVExperiments@@@Z

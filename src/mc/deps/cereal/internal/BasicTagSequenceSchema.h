@@ -27,11 +27,11 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ??1BasicTagSequenceSchema@internal@cereal@@UEAA@XZ
-    virtual ~BasicTagSequenceSchema();
+    // vIndex: 4, symbol: ?makeDescription@BasicTagSequenceSchema@internal@cereal@@EEBA?AUSchemaDescription@3@XZ
+    virtual struct cereal::SchemaDescription makeDescription() const;
 
-    // vIndex: 6, symbol: ?description@BasicTagSequenceSchema@internal@cereal@@UEBA?AUSchemaDescription@3@XZ
-    virtual struct cereal::SchemaDescription description() const;
+    // vIndex: 5, symbol: ??1BasicTagSequenceSchema@internal@cereal@@UEAA@XZ
+    virtual ~BasicTagSequenceSchema();
 
     // symbol:
     // ??0BasicTagSequenceSchema@internal@cereal@@QEAA@AEBUReflectionCtx@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z

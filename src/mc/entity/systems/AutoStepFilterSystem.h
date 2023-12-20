@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/Optional.h"
 #include "mc/common/wrapper/ViewT.h"
-#include "mc/entity/EntityModifierT.h"
+#include "mc/entity/EntityModifier.h"
 #include "mc/world/components/FlagComponent.h"
 
 class AutoStepFilterSystem {
@@ -21,9 +21,9 @@ public:
     MCAPI static struct TickingSystemWithInfo createAutoStepFilterSystem();
 
     // symbol:
-    // ?tickAutoStepFilterSystem@AutoStepFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUMoveRequestComponent@@$$CBUMaxAutoStepComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$Optional@$$CBUAbilitiesComponent@@@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UAutoStepRequestFlag@@@@@@@Z
+    // ?tickAutoStepFilterSystem@AutoStepFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@$$CBUMoveRequestComponent@@$$CBUMaxAutoStepComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$Optional@$$CBUAbilitiesComponent@@@@@@V?$EntityModifier@V?$FlagComponent@UAutoStepRequestFlag@@@@@@@Z
     MCAPI static void
-        tickAutoStepFilterSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct MoveRequestComponent const, struct MaxAutoStepComponent const, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct AbilitiesComponent const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct AutoStepRequestFlag>>);
+        tickAutoStepFilterSystem(class ViewT<class StrictEntityContext, struct MoveRequestComponent const, struct MaxAutoStepComponent const, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct AbilitiesComponent const>>, class EntityModifier<class FlagComponent<struct AutoStepRequestFlag>>);
 
     // NOLINTEND
 };

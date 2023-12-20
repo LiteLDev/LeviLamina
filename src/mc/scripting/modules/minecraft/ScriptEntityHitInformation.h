@@ -10,12 +10,19 @@ namespace ScriptModuleMinecraft {
 struct ScriptEntityHitInformation {
 public:
     // prevent constructor by default
-    ScriptEntityHitInformation& operator=(ScriptEntityHitInformation const&);
     ScriptEntityHitInformation(ScriptEntityHitInformation const&);
     ScriptEntityHitInformation();
 
 public:
     // NOLINTBEGIN
+    // symbol: ??4ScriptEntityHitInformation@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptEntityHitInformation&
+    operator=(struct ScriptModuleMinecraft::ScriptEntityHitInformation&&);
+
+    // symbol: ??4ScriptEntityHitInformation@ScriptModuleMinecraft@@QEAAAEAU01@AEBU01@@Z
+    MCAPI struct ScriptModuleMinecraft::ScriptEntityHitInformation&
+    operator=(struct ScriptModuleMinecraft::ScriptEntityHitInformation const&);
+
     // symbol: ??1ScriptEntityHitInformation@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptEntityHitInformation();
 

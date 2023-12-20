@@ -30,30 +30,45 @@ public:
     // vIndex: 0, symbol: __gen_??1PortalBlock@@UEAA@XZ
     virtual ~PortalBlock() = default;
 
-    // vIndex: 6, symbol:
+    // vIndex: 5, symbol:
     // ?getCollisionShape@PortalBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 10, symbol:
+    // vIndex: 9, symbol:
     // ?getOutline@PortalBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 11, symbol:
+    // vIndex: 10, symbol:
     // ?getVisualShapeInWorld@PortalBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
     virtual class AABB const&
     getVisualShapeInWorld(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 22, symbol: __unk_vfn_22
-    virtual void __unk_vfn_22();
+    // vIndex: 20, symbol: __unk_vfn_20
+    virtual void __unk_vfn_20();
+
+    // vIndex: 27, symbol: __unk_vfn_27
+    virtual void __unk_vfn_27();
+
+    // vIndex: 28, symbol: __unk_vfn_28
+    virtual void __unk_vfn_28();
+
+    // vIndex: 29, symbol: __unk_vfn_29
+    virtual void __unk_vfn_29();
+
+    // vIndex: 30, symbol: __unk_vfn_30
+    virtual void __unk_vfn_30();
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
 
-    // vIndex: 32, symbol: __unk_vfn_32
-    virtual void __unk_vfn_32();
+    // vIndex: 32, symbol: ?isWaterBlocking@PortalBlock@@UEBA_NXZ
+    virtual bool isWaterBlocking() const;
+
+    // vIndex: 33, symbol: __unk_vfn_33
+    virtual void __unk_vfn_33();
 
     // vIndex: 34, symbol: __unk_vfn_34
     virtual void __unk_vfn_34();
@@ -64,14 +79,11 @@ public:
     // vIndex: 36, symbol: __unk_vfn_36
     virtual void __unk_vfn_36();
 
-    // vIndex: 37, symbol: ?isWaterBlocking@PortalBlock@@UEBA_NXZ
-    virtual bool isWaterBlocking() const;
+    // vIndex: 37, symbol: __unk_vfn_37
+    virtual void __unk_vfn_37();
 
     // vIndex: 38, symbol: __unk_vfn_38
     virtual void __unk_vfn_38();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
 
     // vIndex: 40, symbol: __unk_vfn_40
     virtual void __unk_vfn_40();
@@ -88,106 +100,76 @@ public:
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44();
 
-    // vIndex: 46, symbol: __unk_vfn_46
-    virtual void __unk_vfn_46();
-
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
+    // vIndex: 45, symbol: __unk_vfn_45
+    virtual void __unk_vfn_45();
 
     // vIndex: 48, symbol: __unk_vfn_48
     virtual void __unk_vfn_48();
 
-    // vIndex: 49, symbol: __unk_vfn_49
-    virtual void __unk_vfn_49();
-
-    // vIndex: 50, symbol: __unk_vfn_50
-    virtual void __unk_vfn_50();
-
-    // vIndex: 51, symbol: __unk_vfn_51
-    virtual void __unk_vfn_51();
+    // vIndex: 54, symbol: __unk_vfn_54
+    virtual void __unk_vfn_54();
 
     // vIndex: 55, symbol: __unk_vfn_55
     virtual void __unk_vfn_55();
 
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 63, symbol: ?canContainLiquid@PortalBlock@@UEBA_NXZ
+    // vIndex: 56, symbol: ?canContainLiquid@PortalBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 76, symbol: __unk_vfn_76
-    virtual void __unk_vfn_76();
+    // vIndex: 67, symbol: __unk_vfn_67
+    virtual void __unk_vfn_67();
 
-    // vIndex: 83, symbol: __unk_vfn_83
-    virtual void __unk_vfn_83();
+    // vIndex: 74, symbol: __unk_vfn_74
+    virtual void __unk_vfn_74();
 
-    // vIndex: 91, symbol: ?mayPick@PortalBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
+    // vIndex: 83, symbol: ?mayPick@PortalBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
     virtual bool mayPick(class BlockSource const&, class Block const&, bool) const;
 
-    // vIndex: 100, symbol: ?neighborChanged@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+    // vIndex: 92, symbol: ?neighborChanged@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 104, symbol: ?asItemInstance@PortalBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96, symbol: ?asItemInstance@PortalBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 106, symbol: __unk_vfn_106
-    virtual void __unk_vfn_106();
+    // vIndex: 109, symbol: __unk_vfn_109
+    virtual void __unk_vfn_109();
 
-    // vIndex: 122, symbol: __unk_vfn_122
-    virtual void __unk_vfn_122();
+    // vIndex: 110, symbol: __unk_vfn_110
+    virtual void __unk_vfn_110();
 
-    // vIndex: 123, symbol: __unk_vfn_123
-    virtual void __unk_vfn_123();
+    // vIndex: 111, symbol: __unk_vfn_111
+    virtual void __unk_vfn_111();
 
-    // vIndex: 124, symbol: __unk_vfn_124
-    virtual void __unk_vfn_124();
+    // vIndex: 114, symbol: __unk_vfn_114
+    virtual void __unk_vfn_114();
 
-    // vIndex: 127, symbol: __unk_vfn_127
-    virtual void __unk_vfn_127();
+    // vIndex: 117, symbol: __unk_vfn_117
+    virtual void __unk_vfn_117();
 
-    // vIndex: 130, symbol: __unk_vfn_130
-    virtual void __unk_vfn_130();
-
-    // vIndex: 147, symbol: ?animateTickBedrockLegacy@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 134, symbol: ?animateTickBedrockLegacy@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 153, symbol: __unk_vfn_153
-    virtual void __unk_vfn_153();
+    // vIndex: 138, symbol: __unk_vfn_138
+    virtual void __unk_vfn_138();
 
-    // vIndex: 159, symbol: ?onRemove@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 144, symbol: ?onRemove@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onRemove(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
-
-    // vIndex: 163, symbol: __unk_vfn_163
-    virtual void __unk_vfn_163();
-
-    // vIndex: 164, symbol: __unk_vfn_164
-    virtual void __unk_vfn_164();
-
-    // vIndex: 165, symbol: ?onPlace@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 147, symbol: ?onPlace@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
+    // vIndex: 149, symbol: __unk_vfn_149
+    virtual void __unk_vfn_149();
 
-    // vIndex: 168, symbol: ?tick@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 150, symbol: ?tick@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 171, symbol: __unk_vfn_171
-    virtual void __unk_vfn_171();
+    // vIndex: 152, symbol: __unk_vfn_152
+    virtual void __unk_vfn_152();
 
-    // vIndex: 174, symbol: __unk_vfn_174
-    virtual void __unk_vfn_174();
+    // vIndex: 155, symbol: __unk_vfn_155
+    virtual void __unk_vfn_155();
 
-    // vIndex: 183, symbol: __unk_vfn_183
-    virtual void __unk_vfn_183();
-
-    // vIndex: 188, symbol: ?entityInside@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+    // vIndex: 167, symbol: ?entityInside@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
     virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
 
     // symbol: ?waterSpreadCausesSpawn@PortalBlock@@UEBA_NXZ

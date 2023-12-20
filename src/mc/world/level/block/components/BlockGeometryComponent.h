@@ -10,20 +10,12 @@ public:
     // prevent constructor by default
     BlockGeometryComponent& operator=(BlockGeometryComponent const&);
     BlockGeometryComponent(BlockGeometryComponent const&);
+    BlockGeometryComponent();
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1BlockGeometryComponent@@UEAA@XZ
-    virtual ~BlockGeometryComponent();
-
-    // symbol: ??0BlockGeometryComponent@@QEAA@XZ
-    MCAPI BlockGeometryComponent();
-
-    // symbol: ??0BlockGeometryComponent@@QEAA@$$QEAU0@@Z
-    MCAPI BlockGeometryComponent(struct BlockGeometryComponent&&);
-
-    // symbol: ??4BlockGeometryComponent@@QEAAAEAU0@$$QEAU0@@Z
-    MCAPI struct BlockGeometryComponent& operator=(struct BlockGeometryComponent&&);
+    // vIndex: 0, symbol: __gen_??1BlockGeometryComponent@@UEAA@XZ
+    virtual ~BlockGeometryComponent() = default;
 
     // NOLINTEND
 };

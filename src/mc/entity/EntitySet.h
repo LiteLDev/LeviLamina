@@ -28,9 +28,6 @@ public:
         erase(std::_List_const_iterator<
               std::_List_val<std::_List_simple_types<std::pair<uint64 const, class WeakEntityRef>>>>);
 
-    // symbol: ?find@EntitySet@@QEBA?AVWeakEntityRef@@AEBVEntityContext@@@Z
-    MCAPI class WeakEntityRef find(class EntityContext const&) const;
-
     // symbol: ??4EntitySet@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class EntitySet& operator=(class EntitySet&&);
 

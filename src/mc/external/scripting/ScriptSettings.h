@@ -6,7 +6,6 @@ struct ScriptSettings {
 public:
     // prevent constructor by default
     ScriptSettings& operator=(ScriptSettings const&);
-    ScriptSettings(ScriptSettings const&);
 
 public:
     // NOLINTBEGIN
@@ -15,6 +14,9 @@ public:
 
     // symbol: ??0ScriptSettings@@QEAA@$$QEAU0@@Z
     MCAPI ScriptSettings(struct ScriptSettings&&);
+
+    // symbol: ??0ScriptSettings@@QEAA@AEBU0@@Z
+    MCAPI ScriptSettings(struct ScriptSettings const&);
 
     // symbol: ??1ScriptSettings@@QEAA@XZ
     MCAPI ~ScriptSettings();

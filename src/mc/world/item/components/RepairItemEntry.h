@@ -16,8 +16,5 @@ public:
     // symbol: ??4RepairItemEntry@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct RepairItemEntry& operator=(struct RepairItemEntry const&);
 
-    // symbol: ??1RepairItemEntry@@QEAA@XZ
-    MCAPI ~RepairItemEntry();
-
     // NOLINTEND
 };

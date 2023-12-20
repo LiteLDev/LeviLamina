@@ -9,6 +9,7 @@
 // clang-format off
 namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
+namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 class ExpressionNodeCerealConstraint : public ::cereal::Constraint {
@@ -26,6 +27,9 @@ public:
 
     // vIndex: 1, symbol: ??1ExpressionNodeCerealConstraint@@UEAA@XZ
     virtual ~ExpressionNodeCerealConstraint();
+
+    // vIndex: 2, symbol: ?description@ExpressionNodeCerealConstraint@@UEBA?AUConstraintDescription@internal@cereal@@XZ
+    virtual struct cereal::internal::ConstraintDescription description() const;
 
     // symbol: ?disallowSideEffects@ExpressionNodeCerealConstraint@@QEAAAEAV1@_N@Z
     MCAPI class ExpressionNodeCerealConstraint& disallowSideEffects(bool);

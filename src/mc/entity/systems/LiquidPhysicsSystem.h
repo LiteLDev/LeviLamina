@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/Optional.h"
-#include "mc/common/wrapper/OptionalGlobalT.h"
+#include "mc/common/wrapper/OptionalGlobal.h"
 #include "mc/common/wrapper/ViewT.h"
 #include "mc/world/components/FlagComponent.h"
 
@@ -20,8 +20,9 @@ MCAPI void
 _markForLiquidFlow(struct UpdateWaterStateRequestComponent&, class Optional<struct AbilitiesComponent const> const&);
 
 // symbol:
-// ?_tickLiquidBlocksFetch@LiquidPhysicsSystem@@YAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@UStateVectorComponent@@UUpdateWaterStateRequestComponent@@$$CBUAABBShapeComponent@@$$CBUSubBBsComponent@@V?$Optional@$$CBV?$FlagComponent@UItemActorFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUDimensionTypeComponent@@@@V?$OptionalGlobalT@$$CBULocalConstBlockSourceFactoryComponent@@VEntityRegistryBase@@@@@Z
-MCAPI void _tickLiquidBlocksFetch(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct StateVectorComponent, struct UpdateWaterStateRequestComponent, struct AABBShapeComponent const, struct SubBBsComponent const, class Optional<class FlagComponent<struct ItemActorFlag> const>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct DimensionTypeComponent const>, class OptionalGlobalT<struct LocalConstBlockSourceFactoryComponent const, class EntityRegistryBase>);
+// ?_tickLiquidBlocksFetch@LiquidPhysicsSystem@@YAXV?$ViewT@VStrictEntityContext@@UStateVectorComponent@@UUpdateWaterStateRequestComponent@@$$CBUAABBShapeComponent@@$$CBUSubBBsComponent@@V?$Optional@$$CBV?$FlagComponent@UItemActorFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@$$CBUDimensionTypeComponent@@@@V?$OptionalGlobal@$$CBULocalConstBlockSourceFactoryComponent@@@@@Z
+MCAPI void
+    _tickLiquidBlocksFetch(class ViewT<class StrictEntityContext, struct StateVectorComponent, struct UpdateWaterStateRequestComponent, struct AABBShapeComponent const, struct SubBBsComponent const, class Optional<class FlagComponent<struct ItemActorFlag> const>>, class ViewT<class StrictEntityContext, struct DimensionTypeComponent const>, class OptionalGlobal<struct LocalConstBlockSourceFactoryComponent const>);
 
 // symbol: ?createFilterSystem@LiquidPhysicsSystem@@YA?AUTickingSystemWithInfo@@_N@Z
 MCAPI struct TickingSystemWithInfo createFilterSystem(bool);

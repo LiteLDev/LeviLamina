@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/common/WeightedChoices.h"
+#include "mc/deps/puv/FilterSubject.h"
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/Difficulty.h"
-#include "mc/enums/FilterSubject.h"
 #include "mc/enums/ParticleType.h"
 #include "mc/events/LevelSoundEvent.h"
 
@@ -46,9 +46,9 @@ public:
     // symbol: ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAVDefinitionTrigger@@_N@Z
     MCAPI static bool parse(class Json::Value const&, class SemVersion const&, class DefinitionTrigger&, bool);
 
-    // symbol: ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAW4FilterSubject@@PEBD3@Z
+    // symbol: ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAW4FilterSubject@Legacy@Puv@@PEBD3@Z
     MCAPI static bool
-    parse(class Json::Value const&, class SemVersion const&, ::FilterSubject&, char const*, char const*);
+    parse(class Json::Value const&, class SemVersion const&, ::Puv::Legacy::FilterSubject&, char const*, char const*);
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAVBlockDescriptor@@@Z
     MCAPI static void parse(class Json::Value const&, class SemVersion const&, class BlockDescriptor&);
@@ -102,9 +102,9 @@ public:
     MCAPI static void parse(class Json::Value const&, class SemVersion const&, std::string&, char const*, char const*);
 
     // symbol:
-    // ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAV?$vector@W4LevelSoundEvent@@V?$allocator@W4LevelSoundEvent@@@std@@@std@@PEBD3@Z
+    // ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAV?$vector@W4LevelSoundEvent@Legacy@Puv@@V?$allocator@W4LevelSoundEvent@Legacy@Puv@@@std@@@std@@PEBD3@Z
     MCAPI static void
-    parse(class Json::Value const&, class SemVersion const&, std::vector<::LevelSoundEvent>&, char const*, char const*);
+    parse(class Json::Value const&, class SemVersion const&, std::vector<::Puv::Legacy::LevelSoundEvent>&, char const*, char const*);
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAW4ActorType@@PEBD3@Z
     MCAPI static void parse(class Json::Value const&, class SemVersion const&, ::ActorType&, char const*, char const*);
@@ -143,11 +143,11 @@ public:
     // symbol: ?serialize@Parser@@SAXAEBW4ActorType@@AEAVValue@Json@@PEBD@Z
     MCAPI static void serialize(::ActorType const&, class Json::Value&, char const*);
 
-    // symbol: ?serialize@Parser@@SAXAEBW4FilterSubject@@AEAVValue@Json@@PEBD@Z
-    MCAPI static void serialize(::FilterSubject const&, class Json::Value&, char const*);
-
     // symbol: ?serialize@Parser@@SAXAEBW4ParticleType@@AEAVValue@Json@@PEBD@Z
     MCAPI static void serialize(::ParticleType const&, class Json::Value&, char const*);
+
+    // symbol: ?serialize@Parser@@SAXAEBW4FilterSubject@Legacy@Puv@@AEAVValue@Json@@PEBD@Z
+    MCAPI static void serialize(::Puv::Legacy::FilterSubject const&, class Json::Value&, char const*);
 
     // symbol: ?serialize@Parser@@SAXAEBUActorDefinitionIdentifier@@AEAVValue@Json@@PEBD@Z
     MCAPI static void serialize(struct ActorDefinitionIdentifier const&, class Json::Value&, char const*);

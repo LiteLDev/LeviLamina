@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/FilterSubject.h"
+#include "mc/deps/puv/FilterSubject.h"
 
 class RenderParams {
 public:
@@ -15,14 +15,11 @@ public:
     // symbol: ??0RenderParams@@QEAA@XZ
     MCAPI RenderParams();
 
-    // symbol: ??0RenderParams@@QEAA@$$QEAV0@@Z
-    MCAPI RenderParams(class RenderParams&&);
-
     // symbol: ??0RenderParams@@QEAA@AEBV0@@Z
     MCAPI RenderParams(class RenderParams const&);
 
-    // symbol: ?getActorTarget@RenderParams@@QEBAPEAVActor@@W4FilterSubject@@@Z
-    MCAPI class Actor* getActorTarget(::FilterSubject) const;
+    // symbol: ?getActorTarget@RenderParams@@QEBAPEAVActor@@W4FilterSubject@Legacy@Puv@@@Z
+    MCAPI class Actor* getActorTarget(::Puv::Legacy::FilterSubject) const;
 
     // symbol:
     // ?init@RenderParams@@QEAAAEAV1@PEAVBaseActorRenderContext@@PEAVActor@@PEAVAnimationComponent@@PEAVMolangVariableMap@@V?$shared_ptr@VDataDrivenModel@@@std@@MM@Z

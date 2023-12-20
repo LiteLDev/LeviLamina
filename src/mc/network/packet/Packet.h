@@ -19,14 +19,14 @@ public:
     // vIndex: 0, symbol: ??1Packet@@UEAA@XZ
     virtual ~Packet();
 
-    // vIndex: 1, symbol: ?getId@ActorEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+    // vIndex: 1, symbol: ?getId@GameTestResultsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
     virtual ::MinecraftPacketIds getId() const = 0;
 
     // vIndex: 2, symbol:
-    // ?getName@ActorEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+    // ?getName@GameTestResultsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string getName() const = 0;
 
-    // vIndex: 3, symbol: ?write@ActorEventPacket@@UEBAXAEAVBinaryStream@@@Z
+    // vIndex: 3, symbol: ?write@GameTestResultsPacket@@UEBAXAEAVBinaryStream@@@Z
     virtual void write(class BinaryStream&) const = 0;
 
     // vIndex: 4, symbol: ?read@Packet@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -39,7 +39,7 @@ public:
     virtual bool isValid() const;
 
     // vIndex: 7, symbol:
-    // ?_read@ActorEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // ?_read@GameTestResultsPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&) = 0;
 
     // symbol: ?handle@Packet@@QEAAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z

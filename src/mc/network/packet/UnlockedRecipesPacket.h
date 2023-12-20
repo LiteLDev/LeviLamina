@@ -33,7 +33,7 @@ public:
     virtual void write(class BinaryStream&) const;
 
     // vIndex: 7, symbol:
-    // ?_read@UnlockedRecipesPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // ?_read@UnlockedRecipesPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ??0UnlockedRecipesPacket@@QEAA@XZ

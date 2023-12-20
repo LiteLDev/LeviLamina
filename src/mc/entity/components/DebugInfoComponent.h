@@ -133,7 +133,10 @@ public:
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
 
-    // vIndex: 32, symbol: ?onEvent@DebugInfoComponent@@UEAA?AW4EventResult@@AEBUActorDefinitionTriggeredEvent@@@Z
+    // vIndex: 32, symbol: __unk_vfn_32
+    virtual void __unk_vfn_32();
+
+    // vIndex: 33, symbol: ?onEvent@DebugInfoComponent@@UEAA?AW4EventResult@@AEBUActorDefinitionTriggeredEvent@@@Z
     virtual ::EventResult onEvent(struct ActorDefinitionTriggeredEvent const&);
 
     // symbol: ??0DebugInfoComponent@@QEAA@$$QEAV0@@Z

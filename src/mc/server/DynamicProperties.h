@@ -89,6 +89,10 @@ public:
     MCAPI void
     setDynamicProperty(std::string const&, std::variant<double, float, bool, std::string, class Vec3> const&, std::string const&);
 
+    // symbol:
+    // ?updateCollectionName@DynamicProperties@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+    MCAPI void updateCollectionName(std::string const&, std::string const&);
+
     // symbol: ??1DynamicProperties@@QEAA@XZ
     MCAPI ~DynamicProperties();
 

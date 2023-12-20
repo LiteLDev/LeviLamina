@@ -19,7 +19,7 @@ public:
     // vIndex: 1, symbol: ?execute@Command@AgentCommands@@UEAAXXZ
     virtual void execute();
 
-    // vIndex: 2, symbol: ?isDone@AttackCommand@AgentCommands@@UEAA_NXZ
+    // vIndex: 2, symbol: ?isDone@GetItemDetailsCommand@AgentCommands@@UEAA_NXZ
     virtual bool isDone() = 0;
 
     // vIndex: 3, symbol: ?tick@Command@AgentCommands@@UEAAXXZ

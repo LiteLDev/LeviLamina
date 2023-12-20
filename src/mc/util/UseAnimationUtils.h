@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/enums/UseAnimation.h"
+#include "mc/deps/puv/UseAnimation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,8 +23,8 @@ public:
     MCAPI static void bindType(struct cereal::ReflectionCtx&);
 
     // symbol:
-    // ?getStringMapping@UseAnimationUtils@@SAAEBV?$initializer_list@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4UseAnimation@@@std@@@std@@XZ
-    MCAPI static std::initializer_list<std::pair<std::string, ::UseAnimation>> const& getStringMapping();
+    // ?getStringMapping@UseAnimationUtils@@SAAEBV?$initializer_list@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4UseAnimation@Legacy@Puv@@@std@@@std@@XZ
+    MCAPI static std::initializer_list<std::pair<std::string, ::Puv::Legacy::UseAnimation>> const& getStringMapping();
 
     // NOLINTEND
 };

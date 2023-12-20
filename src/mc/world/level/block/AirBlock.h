@@ -30,47 +30,59 @@ public:
     // vIndex: 0, symbol: __gen_??1AirBlock@@UEAA@XZ
     virtual ~AirBlock() = default;
 
-    // vIndex: 6, symbol:
+    // vIndex: 5, symbol:
     // ?getCollisionShape@AirBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual class AABB
     getCollisionShape(class Block const&, class IConstBlockSource const&, class BlockPos const&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 8, symbol:
+    // vIndex: 7, symbol:
     // ?addCollisionShapes@AirBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual bool
     addCollisionShapes(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
-    // vIndex: 9, symbol:
+    // vIndex: 8, symbol:
     // ?addAABBs@AirBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
     virtual void
     addAABBs(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&)
         const;
 
-    // vIndex: 10, symbol: ?getOutline@AirBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
+    // vIndex: 9, symbol: ?getOutline@AirBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 11, symbol:
+    // vIndex: 10, symbol:
     // ?getVisualShapeInWorld@AirBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
     virtual class AABB const&
     getVisualShapeInWorld(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 12, symbol: ?getVisualShape@AirBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
+    // vIndex: 11, symbol: ?getVisualShape@AirBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 15, symbol: ?isObstructingChests@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 14, symbol: ?isObstructingChests@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool isObstructingChests(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 22, symbol: __unk_vfn_22
-    virtual void __unk_vfn_22();
+    // vIndex: 20, symbol: __unk_vfn_20
+    virtual void __unk_vfn_20();
+
+    // vIndex: 27, symbol: __unk_vfn_27
+    virtual void __unk_vfn_27();
+
+    // vIndex: 28, symbol: __unk_vfn_28
+    virtual void __unk_vfn_28();
+
+    // vIndex: 29, symbol: __unk_vfn_29
+    virtual void __unk_vfn_29();
+
+    // vIndex: 30, symbol: __unk_vfn_30
+    virtual void __unk_vfn_30();
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
 
-    // vIndex: 32, symbol: __unk_vfn_32
-    virtual void __unk_vfn_32();
+    // vIndex: 33, symbol: __unk_vfn_33
+    virtual void __unk_vfn_33();
 
     // vIndex: 34, symbol: __unk_vfn_34
     virtual void __unk_vfn_34();
@@ -81,11 +93,11 @@ public:
     // vIndex: 36, symbol: __unk_vfn_36
     virtual void __unk_vfn_36();
 
+    // vIndex: 37, symbol: __unk_vfn_37
+    virtual void __unk_vfn_37();
+
     // vIndex: 38, symbol: __unk_vfn_38
     virtual void __unk_vfn_38();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
 
     // vIndex: 40, symbol: __unk_vfn_40
     virtual void __unk_vfn_40();
@@ -102,119 +114,89 @@ public:
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44();
 
-    // vIndex: 46, symbol: __unk_vfn_46
-    virtual void __unk_vfn_46();
-
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
+    // vIndex: 45, symbol: __unk_vfn_45
+    virtual void __unk_vfn_45();
 
     // vIndex: 48, symbol: __unk_vfn_48
     virtual void __unk_vfn_48();
 
-    // vIndex: 49, symbol: __unk_vfn_49
-    virtual void __unk_vfn_49();
-
-    // vIndex: 50, symbol: __unk_vfn_50
-    virtual void __unk_vfn_50();
-
-    // vIndex: 51, symbol: __unk_vfn_51
-    virtual void __unk_vfn_51();
+    // vIndex: 54, symbol: __unk_vfn_54
+    virtual void __unk_vfn_54();
 
     // vIndex: 55, symbol: __unk_vfn_55
     virtual void __unk_vfn_55();
 
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 70, symbol: ?checkIsPathable@AirBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 61, symbol: ?checkIsPathable@AirBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 76, symbol: __unk_vfn_76
-    virtual void __unk_vfn_76();
+    // vIndex: 67, symbol: __unk_vfn_67
+    virtual void __unk_vfn_67();
 
-    // vIndex: 83, symbol: __unk_vfn_83
-    virtual void __unk_vfn_83();
+    // vIndex: 74, symbol: __unk_vfn_74
+    virtual void __unk_vfn_74();
 
-    // vIndex: 90, symbol: ?mayPick@AirBlock@@UEBA_NXZ
+    // vIndex: 82, symbol: ?mayPick@AirBlock@@UEBA_NXZ
     virtual bool mayPick() const;
 
-    // vIndex: 91, symbol: ?mayPick@AirBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
+    // vIndex: 83, symbol: ?mayPick@AirBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
     virtual bool mayPick(class BlockSource const&, class Block const&, bool) const;
 
-    // vIndex: 92, symbol: ?mayPlace@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 84, symbol: ?mayPlace@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
     virtual bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
 
-    // vIndex: 93, symbol: ?mayPlace@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 85, symbol: ?mayPlace@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 95, symbol:
+    // vIndex: 87, symbol:
     // ?tryToPlace@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEBUActorBlockSyncMessage@@@Z
     virtual bool
     tryToPlace(class BlockSource&, class BlockPos const&, class Block const&, struct ActorBlockSyncMessage const*)
         const;
 
-    // vIndex: 98, symbol: ?destroy@AirBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z
+    // vIndex: 90, symbol: ?destroy@AirBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z
     virtual void destroy(class BlockSource&, class BlockPos const&, class Block const&, class Actor*) const;
 
-    // vIndex: 102, symbol: ?playerWillDestroy@AirBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
+    // vIndex: 94, symbol: ?playerWillDestroy@AirBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
+    virtual class Block const* playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 103, symbol:
+    // vIndex: 95, symbol:
     // ?spawnResources@AirBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
     spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
         const;
 
-    // vIndex: 106, symbol: __unk_vfn_106
-    virtual void __unk_vfn_106();
+    // vIndex: 109, symbol: __unk_vfn_109
+    virtual void __unk_vfn_109();
 
-    // vIndex: 122, symbol: __unk_vfn_122
-    virtual void __unk_vfn_122();
+    // vIndex: 110, symbol: __unk_vfn_110
+    virtual void __unk_vfn_110();
 
-    // vIndex: 123, symbol: __unk_vfn_123
-    virtual void __unk_vfn_123();
+    // vIndex: 111, symbol: __unk_vfn_111
+    virtual void __unk_vfn_111();
 
-    // vIndex: 124, symbol: __unk_vfn_124
-    virtual void __unk_vfn_124();
+    // vIndex: 114, symbol: __unk_vfn_114
+    virtual void __unk_vfn_114();
 
-    // vIndex: 127, symbol: __unk_vfn_127
-    virtual void __unk_vfn_127();
+    // vIndex: 117, symbol: __unk_vfn_117
+    virtual void __unk_vfn_117();
 
-    // vIndex: 130, symbol: __unk_vfn_130
-    virtual void __unk_vfn_130();
-
-    // vIndex: 148, symbol: ?animateTick@AirBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 135, symbol: ?animateTick@AirBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 153, symbol: __unk_vfn_153
-    virtual void __unk_vfn_153();
+    // vIndex: 138, symbol: __unk_vfn_138
+    virtual void __unk_vfn_138();
 
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
+    // vIndex: 149, symbol: __unk_vfn_149
+    virtual void __unk_vfn_149();
 
-    // vIndex: 163, symbol: __unk_vfn_163
-    virtual void __unk_vfn_163();
-
-    // vIndex: 164, symbol: __unk_vfn_164
-    virtual void __unk_vfn_164();
-
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
-
-    // vIndex: 168, symbol: ?tick@AirBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+    // vIndex: 150, symbol: ?tick@AirBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
 
-    // vIndex: 171, symbol: __unk_vfn_171
-    virtual void __unk_vfn_171();
+    // vIndex: 152, symbol: __unk_vfn_152
+    virtual void __unk_vfn_152();
 
-    // vIndex: 174, symbol: __unk_vfn_174
-    virtual void __unk_vfn_174();
-
-    // vIndex: 183, symbol: __unk_vfn_183
-    virtual void __unk_vfn_183();
+    // vIndex: 155, symbol: __unk_vfn_155
+    virtual void __unk_vfn_155();
 
     // symbol: ?canBeSilkTouched@AirBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;

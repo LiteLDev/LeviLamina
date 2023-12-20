@@ -30,19 +30,19 @@ public:
     MCAPI LevelSoundManager(Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> const&, bool, bool);
 
     // symbol:
-    // ?broadcastSoundEvent@LevelSoundManager@@QEAAXAEAVIDimension@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4PEAVPlayer@@@Z
+    // ?broadcastSoundEvent@LevelSoundManager@@QEAAXAEAVIDimension@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4PEAVPlayer@@@Z
     MCAPI void
-    broadcastSoundEvent(class IDimension&, ::LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool, class Player*);
+    broadcastSoundEvent(class IDimension&, ::Puv::Legacy::LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool, class Player*);
 
     // symbol:
     // ?getSoundPlayer@LevelSoundManager@@QEBA?AV?$not_null@V?$NonOwnerPointer@VSoundPlayerInterface@@@Bedrock@@@gsl@@XZ
     MCAPI Bedrock::NotNullNonOwnerPtr<class SoundPlayerInterface> getSoundPlayer() const;
 
     // symbol:
-    // ?playPredictiveSynchronizedSound@LevelSoundManager@@QEAAXAEAVIDimension@@W4LevelSoundEvent@@AEBVVec3@@PEAVPlayer@@HAEBUActorDefinitionIdentifier@@_N5@Z
+    // ?playPredictiveSynchronizedSound@LevelSoundManager@@QEAAXAEAVIDimension@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@PEAVPlayer@@HAEBUActorDefinitionIdentifier@@_N5@Z
     MCAPI void playPredictiveSynchronizedSound(
         class IDimension&,
-        ::LevelSoundEvent,
+        ::Puv::Legacy::LevelSoundEvent,
         class Vec3 const&,
         class Player*,
         int,
@@ -55,23 +55,30 @@ public:
     // ?playSound@LevelSoundManager@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
     MCAPI void playSound(std::string const&, class Vec3 const&, float, float);
 
-    // symbol: ?playSound@LevelSoundManager@@QEAAXW4LevelSoundEvent@@AEBVVec3@@MM@Z
-    MCAPI void playSound(::LevelSoundEvent, class Vec3 const&, float, float);
-
-    // symbol: ?playSound@LevelSoundManager@@QEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
-    MCAPI void
-    playSound(::LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
+    // symbol: ?playSound@LevelSoundManager@@QEAAXW4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@MM@Z
+    MCAPI void playSound(::Puv::Legacy::LevelSoundEvent, class Vec3 const&, float, float);
 
     // symbol:
-    // ?playSoundForPlayerInDimension@LevelSoundManager@@QEAAXV?$AutomaticID@VDimension@@H@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4PEAVPlayer@@@Z
-    MCAPI void
-    playSoundForPlayerInDimension(DimensionType, ::LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool, class Player*);
+    // ?playSound@LevelSoundManager@@QEAAXW4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
+    MCAPI void playSound(
+        ::Puv::Legacy::LevelSoundEvent,
+        class Vec3 const&,
+        int,
+        struct ActorDefinitionIdentifier const&,
+        bool,
+        bool
+    );
 
     // symbol:
-    // ?playSynchronizedSound_DEPRECATED@LevelSoundManager@@QEAAXAEAVIDimension@@W4LevelSoundEvent@@AEBVVec3@@PEAVPlayer@@HAEBUActorDefinitionIdentifier@@_N5@Z
+    // ?playSoundForPlayerInDimension@LevelSoundManager@@QEAAXV?$AutomaticID@VDimension@@H@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4PEAVPlayer@@@Z
+    MCAPI void
+    playSoundForPlayerInDimension(DimensionType, ::Puv::Legacy::LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool, class Player*);
+
+    // symbol:
+    // ?playSynchronizedSound_DEPRECATED@LevelSoundManager@@QEAAXAEAVIDimension@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@PEAVPlayer@@HAEBUActorDefinitionIdentifier@@_N5@Z
     MCAPI void playSynchronizedSound_DEPRECATED(
         class IDimension&,
-        ::LevelSoundEvent,
+        ::Puv::Legacy::LevelSoundEvent,
         class Vec3 const&,
         class Player*,
         int,
@@ -81,10 +88,10 @@ public:
     );
 
     // symbol:
-    // ?registerOnLevelSoundEventCallback@LevelSoundManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z@std@@@Z
+    // ?registerOnLevelSoundEventCallback@LevelSoundManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXW4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z@std@@@Z
     MCAPI class Bedrock::PubSub::Subscription
         registerOnLevelSoundEventCallback(std::function<void(
-                                              ::LevelSoundEvent,
+                                              ::Puv::Legacy::LevelSoundEvent,
                                               class Vec3 const&,
                                               int,
                                               struct ActorDefinitionIdentifier const&,

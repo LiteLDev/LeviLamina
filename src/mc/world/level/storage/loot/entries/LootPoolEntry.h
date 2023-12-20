@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol:
-    // ?_createItem@EmptyLootItem@@MEAA_NAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // ?_createItem@LootTableReference@@MEAA_NAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&) = 0;
 
     // vIndex: 1, symbol: ??1LootPoolEntry@@UEAA@XZ

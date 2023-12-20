@@ -6,6 +6,11 @@
 #include "mc/enums/AdjustmentEffect.h"
 #include "mc/enums/Rotation.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace PoolAliasBinding { class PoolAliasLookup; }
+// clang-format on
+
 class JigsawPlacement {
 public:
     // prevent constructor by default
@@ -21,8 +26,9 @@ public:
     JigsawPlacement(uint64, uint64, std::vector<std::unique_ptr<class StructurePiece>>&, std::function<std::unique_ptr<class PoolElementStructurePiece>(class StructurePoolElement const&, class BlockPos const&, ::Rotation const&, int, struct JigsawJunction&, class BoundingBox const&, class BlockPos const&)>, class Random&, class JigsawStructureRegistry const&, class Dimension&);
 
     // symbol:
-    // ?addPieces@JigsawPlacement@@QEAAXAEBVStructurePoolElement@@AEBVBlockPos@@AEBW4Rotation@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI void addPieces(class StructurePoolElement const&, class BlockPos const&, ::Rotation const&, std::string_view);
+    // ?addPieces@JigsawPlacement@@QEAAXAEBVStructurePoolElement@@AEBVBlockPos@@AEBW4Rotation@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVPoolAliasLookup@PoolAliasBinding@@@Z
+    MCAPI void
+    addPieces(class StructurePoolElement const&, class BlockPos const&, ::Rotation const&, std::string_view, class PoolAliasBinding::PoolAliasLookup const&);
 
     // symbol: ??1JigsawPlacement@@QEAA@XZ
     MCAPI ~JigsawPlacement();
@@ -31,14 +37,10 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_addPiece@JigsawPlacement@@AEAAXAEBVPoolElementStructurePiece@@AEBVBlockPos@@AEBW4Rotation@@1_K@Z
-    MCAPI void _addPiece(
-        class PoolElementStructurePiece const&,
-        class BlockPos const&,
-        ::Rotation const&,
-        class BlockPos const&,
-        uint64
-    );
+    // symbol:
+    // ?_addPiece@JigsawPlacement@@AEAAXAEBVPoolElementStructurePiece@@AEBVBlockPos@@AEBW4Rotation@@1_KAEBVPoolAliasLookup@PoolAliasBinding@@@Z
+    MCAPI void
+    _addPiece(class PoolElementStructurePiece const&, class BlockPos const&, ::Rotation const&, class BlockPos const&, uint64, class PoolAliasBinding::PoolAliasLookup const&);
 
     // symbol:
     // ?_findLocalAnchorOffset@JigsawPlacement@@AEBA?AVBlockPos@@AEBVStructurePoolElement@@AEBV2@AEBW4Rotation@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
@@ -55,16 +57,9 @@ public:
           _setTerrainAdjustment(::AdjustmentEffect, class BoundingBox const&, struct JigsawJunction const&) const;
 
     // symbol:
-    // ?_tryPlacingPiece@JigsawPlacement@@AEAA_NAEBVPoolElementStructurePiece@@AEBVBoundingBox@@AEBVJigsawBlockInfo@@AEBVBlockPos@@PEBVStructureTemplatePool@@3_K@Z
-    MCAPI bool _tryPlacingPiece(
-        class PoolElementStructurePiece const&,
-        class BoundingBox const&,
-        class JigsawBlockInfo const&,
-        class BlockPos const&,
-        class StructureTemplatePool const*,
-        class BlockPos const&,
-        uint64
-    );
+    // ?_tryPlacingPiece@JigsawPlacement@@AEAA_NAEBVPoolElementStructurePiece@@AEBVBoundingBox@@AEBVJigsawBlockInfo@@AEBVBlockPos@@PEBVStructureTemplatePool@@3_KAEBVPoolAliasLookup@PoolAliasBinding@@@Z
+    MCAPI bool
+    _tryPlacingPiece(class PoolElementStructurePiece const&, class BoundingBox const&, class JigsawBlockInfo const&, class BlockPos const&, class StructureTemplatePool const*, class BlockPos const&, uint64, class PoolAliasBinding::PoolAliasLookup const&);
 
     // NOLINTEND
 };

@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/puv/EquipmentSlot.h"
 #include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/entity/utilities/ActorFlags.h"
+#include "mc/entity/utilities/ActorInitializationMethod.h"
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/enums/ArmorMaterialType.h"
 #include "mc/enums/ArmorSlot.h"
 #include "mc/enums/ArmorTextureType.h"
-#include "mc/enums/EquipmentSlot.h"
 #include "mc/enums/HandSlot.h"
 #include "mc/enums/HorseFlags.h"
 #include "mc/enums/InputMode.h"
@@ -19,9 +20,13 @@
 #include "mc/events/LevelSoundEvent.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/AutomaticID.h"
-#include "mc/world/actor/Actor.h"
 #include "mc/world/actor/animal/Animal.h"
 #include "mc/world/item/components/ItemUseMethod.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace mce { class Color; }
+// clang-format on
 
 class Horse : public ::Animal {
 public:
@@ -32,8 +37,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: ?reloadHardcoded@Horse@@EEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::Actor::InitializationMethod, class VariantParameterList const&);
+    // vIndex: 4, symbol: ?reloadHardcoded@Horse@@EEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
+    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
 
     // vIndex: 10, symbol: __gen_??1Horse@@UEAA@XZ
     virtual ~Horse() = default;
@@ -47,14 +52,11 @@ public:
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
 
-    // vIndex: 41, symbol: __unk_vfn_41
-    virtual void __unk_vfn_41();
+    // vIndex: 42, symbol: __unk_vfn_42
+    virtual void __unk_vfn_42();
 
-    // vIndex: 42, symbol: ?getShadowRadius@Horse@@UEBAMXZ
+    // vIndex: 43, symbol: ?getShadowRadius@Horse@@UEBAMXZ
     virtual float getShadowRadius() const;
-
-    // vIndex: 44, symbol: __unk_vfn_44
-    virtual void __unk_vfn_44();
 
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
@@ -62,8 +64,8 @@ public:
     // vIndex: 49, symbol: ?isImmobile@Horse@@UEBA_NXZ
     virtual bool isImmobile() const;
 
-    // vIndex: 52, symbol: __unk_vfn_52
-    virtual void __unk_vfn_52();
+    // vIndex: 60, symbol: __unk_vfn_60
+    virtual void __unk_vfn_60();
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -71,88 +73,85 @@ public:
     // vIndex: 62, symbol: __unk_vfn_62
     virtual void __unk_vfn_62();
 
-    // vIndex: 63, symbol: __unk_vfn_63
-    virtual void __unk_vfn_63();
-
-    // vIndex: 72, symbol: ?onFailedTame@Horse@@UEAAXXZ
+    // vIndex: 71, symbol: ?onFailedTame@Horse@@UEAAXXZ
     virtual void onFailedTame();
 
-    // vIndex: 73, symbol: ?setStanding@Horse@@UEAAX_N@Z
+    // vIndex: 72, symbol: ?setStanding@Horse@@UEAAX_N@Z
     virtual void setStanding(bool);
 
-    // vIndex: 83, symbol: ?feed@Horse@@UEAAXH@Z
+    // vIndex: 82, symbol: ?feed@Horse@@UEAAXH@Z
     virtual void feed(int);
 
-    // vIndex: 103, symbol: ?canFreeze@Horse@@UEBA_NXZ
+    // vIndex: 101, symbol: ?canFreeze@Horse@@UEBA_NXZ
     virtual bool canFreeze() const;
 
-    // vIndex: 109, symbol: __unk_vfn_109
-    virtual void __unk_vfn_109();
+    // vIndex: 107, symbol: __unk_vfn_107
+    virtual void __unk_vfn_107();
 
-    // vIndex: 111, symbol: ?getControllingPlayer@Horse@@UEBA?AUActorUniqueID@@XZ
+    // vIndex: 109, symbol: ?getControllingPlayer@Horse@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getControllingPlayer() const;
 
-    // vIndex: 113, symbol: ?causeFallDamageToActor@Horse@@MEAAMMMVActorDamageSource@@@Z
+    // vIndex: 111, symbol: ?causeFallDamageToActor@Horse@@MEAAMMMVActorDamageSource@@@Z
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
-    // vIndex: 114, symbol: ?onSynchedDataUpdate@Horse@@UEAAXH@Z
+    // vIndex: 112, symbol: ?onSynchedDataUpdate@Horse@@UEAAXH@Z
     virtual void onSynchedDataUpdate(int);
 
-    // vIndex: 133, symbol: ?openContainerComponent@Horse@@UEAAXAEAVPlayer@@@Z
+    // vIndex: 131, symbol: ?openContainerComponent@Horse@@UEAAXAEAVPlayer@@@Z
     virtual void openContainerComponent(class Player&);
 
-    // vIndex: 147, symbol: __unk_vfn_147
-    virtual void __unk_vfn_147();
+    // vIndex: 144, symbol: __unk_vfn_144
+    virtual void __unk_vfn_144();
 
-    // vIndex: 150, symbol: ?die@Horse@@UEAAXAEBVActorDamageSource@@@Z
+    // vIndex: 147, symbol: ?die@Horse@@UEAAXAEBVActorDamageSource@@@Z
     virtual void die(class ActorDamageSource const&);
 
-    // vIndex: 163, symbol: ?updateEntitySpecificMolangVariables@Horse@@UEAAXAEAVRenderParams@@@Z
+    // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Horse@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
 
-    // vIndex: 165, symbol: __unk_vfn_165
-    virtual void __unk_vfn_165();
+    // vIndex: 162, symbol: __unk_vfn_162
+    virtual void __unk_vfn_162();
 
-    // vIndex: 166, symbol: ?_hurt@Horse@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+    // vIndex: 163, symbol: ?_hurt@Horse@@MEAA_NAEBVActorDamageSource@@M_N1@Z
     virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
 
-    // vIndex: 169, symbol: ?_playStepSound@Horse@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 166, symbol: ?_playStepSound@Horse@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
     virtual void _playStepSound(class BlockPos const&, class Block const&);
 
-    // vIndex: 170, symbol: __unk_vfn_170
-    virtual void __unk_vfn_170();
+    // vIndex: 167, symbol: __unk_vfn_167
+    virtual void __unk_vfn_167();
 
-    // vIndex: 172, symbol: __unk_vfn_172
-    virtual void __unk_vfn_172();
+    // vIndex: 168, symbol: __unk_vfn_168
+    virtual void __unk_vfn_168();
 
-    // vIndex: 191, symbol: ?getArmorValue@Horse@@UEBAHXZ
+    // vIndex: 187, symbol: ?getArmorValue@Horse@@UEBAHXZ
     virtual int getArmorValue() const;
 
-    // vIndex: 216, symbol: ?setType@Horse@@UEAAXH@Z
+    // vIndex: 210, symbol: ?setType@Horse@@UEAAXH@Z
     virtual void setType(int);
 
-    // vIndex: 217, symbol: ?getType@Horse@@UEBAHXZ
+    // vIndex: 211, symbol: ?getType@Horse@@UEBAHXZ
     virtual int getType() const;
 
-    // vIndex: 218, symbol: ?setHorseEating@Horse@@UEAAX_N@Z
+    // vIndex: 212, symbol: ?setHorseEating@Horse@@UEAAX_N@Z
     virtual void setHorseEating(bool);
 
-    // vIndex: 219, symbol: ?getStandAnim@Horse@@UEBAMM@Z
+    // vIndex: 213, symbol: ?getStandAnim@Horse@@UEBAMM@Z
     virtual float getStandAnim(float) const;
 
-    // vIndex: 220, symbol: ?isAdult@Horse@@UEBA_NXZ
+    // vIndex: 214, symbol: ?isAdult@Horse@@UEBA_NXZ
     virtual bool isAdult() const;
 
-    // vIndex: 221, symbol: ?isHorseEating@Horse@@UEBA_NXZ
+    // vIndex: 215, symbol: ?isHorseEating@Horse@@UEBA_NXZ
     virtual bool isHorseEating() const;
 
-    // vIndex: 222, symbol: ?isMouthOpen@Horse@@UEBA_NXZ
+    // vIndex: 216, symbol: ?isMouthOpen@Horse@@UEBA_NXZ
     virtual bool isMouthOpen() const;
 
-    // vIndex: 223, symbol: ?makeMad@Horse@@UEAAXXZ
+    // vIndex: 217, symbol: ?makeMad@Horse@@UEAAXXZ
     virtual void makeMad();
 
-    // vIndex: 224, symbol: ?tameToPlayer@Horse@@UEAA_NAEAVPlayer@@_N@Z
+    // vIndex: 218, symbol: ?tameToPlayer@Horse@@UEAA_NAEAVPlayer@@_N@Z
     virtual bool tameToPlayer(class Player&, bool);
 
     // symbol: ??0Horse@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -182,8 +181,10 @@ public:
         float
     );
 
-    // symbol: ?setHorseFlag@Horse@@SAXVSynchedActorDataWriter@@W4HorseFlags@@_N@Z
-    MCAPI static void setHorseFlag(class SynchedActorDataWriter, ::HorseFlags, bool);
+    // symbol:
+    // ?setHorseFlag@Horse@@SAXAEAUActorDataHorseFlagComponent@@AEAUActorDataDirtyFlagsComponent@@W4HorseFlags@@_N@Z
+    MCAPI static void
+    setHorseFlag(struct ActorDataHorseFlagComponent&, struct ActorDataDirtyFlagsComponent&, ::HorseFlags, bool);
 
     // NOLINTEND
 

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/Optional.h"
-#include "mc/entity/EntityModifierT.h"
+#include "mc/entity/EntityModifier.h"
 #include "mc/world/components/FlagComponent.h"
 
 class MinecartComeOffRailSystem {
@@ -17,9 +17,9 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?_minecartComeOffRailSystem@MinecartComeOffRailSystem@@SAXAEAVStrictEntityContext@@AEBVRailMovementComponent@@AEAUStateVectorComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UMoveRequestComponent@@@@@Z
+    // ?_minecartComeOffRailSystem@MinecartComeOffRailSystem@@SAXAEAVStrictEntityContext@@AEBVRailMovementComponent@@AEAUStateVectorComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$EntityModifier@UMoveRequestComponent@@@@@Z
     MCAPI static void
-    _minecartComeOffRailSystem(class StrictEntityContext&, class RailMovementComponent const&, struct StateVectorComponent&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>);
+    _minecartComeOffRailSystem(class StrictEntityContext&, class RailMovementComponent const&, struct StateVectorComponent&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class EntityModifier<struct MoveRequestComponent>);
 
     // symbol: ?createSystem@MinecartComeOffRailSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();

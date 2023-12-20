@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 // clang-format on
 
@@ -45,8 +46,9 @@ public:
     operator=(class ScriptModuleMinecraft::ScriptFoodComponent const&);
 
     // symbol:
-    // ?bind@ScriptFoodComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptFoodComponent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptFoodComponent> bind();
+    // ?bind@ScriptFoodComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptFoodComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptFoodComponent>
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // NOLINTEND
 };

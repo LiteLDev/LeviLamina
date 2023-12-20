@@ -5,14 +5,14 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/StackRefResultT.h"
 #include "mc/common/wrapper/WeakRefT.h"
+#include "mc/deps/puv/EquipmentSlot.h"
 #include "mc/entity/utilities/ActorDamageCause.h"
+#include "mc/entity/utilities/ActorInitializationMethod.h"
 #include "mc/entity/utilities/ActorSelectorType.h"
 #include "mc/enums/CauldronLiquidType.h"
 #include "mc/enums/CurrentCmdVersion.h"
 #include "mc/enums/DynamicPropertyDefinePropertyError.h"
 #include "mc/enums/EasingType.h"
-#include "mc/enums/EquipmentSlot.h"
-#include "mc/enums/InitializationMethod.h"
 #include "mc/enums/SignTextSide.h"
 #include "mc/enums/WatchdogTerminateReason.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
@@ -26,6 +26,7 @@
 #include "mc/external/scripting/TypedObjectHandle.h"
 #include "mc/external/scripting/WeakTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptActorLifetimeState.h"
+#include "mc/scripting/modules/minecraft/ScriptComponentType.h"
 #include "mc/scripting/modules/minecraft/ScriptDimension.h"
 #include "mc/scripting/modules/minecraft/ScriptDisplayObjectiveSlotId.h"
 #include "mc/scripting/modules/minecraft/ScriptEventSource.h"
@@ -38,7 +39,6 @@
 #include "mc/scripting/modules/minecraft/ScriptWorldAfterEvents.h"
 #include "mc/server/commands/CommandSelectorResults.h"
 #include "mc/world/AutomaticID.h"
-#include "mc/world/actor/Actor.h"
 #include "mc/world/actor/FeedItem.h"
 #include "mc/world/actor/player/PlayerScoreSetFunction.h"
 #include "mc/world/events/EventResult.h"
@@ -92,6 +92,7 @@ namespace ScriptModuleMinecraft { class ScriptBoundingBoxUtils; }
 namespace ScriptModuleMinecraft { class ScriptBreathableComponent; }
 namespace ScriptModuleMinecraft { class ScriptColor; }
 namespace ScriptModuleMinecraft { class ScriptComponent; }
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
 namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolumeItem; }
 namespace ScriptModuleMinecraft { class ScriptContainer; }
@@ -142,6 +143,7 @@ namespace ScriptModuleMinecraft { class ScriptNavigationFlyComponent; }
 namespace ScriptModuleMinecraft { class ScriptNavigationGenericComponent; }
 namespace ScriptModuleMinecraft { class ScriptNavigationHoverComponent; }
 namespace ScriptModuleMinecraft { class ScriptNavigationWalkComponent; }
+namespace ScriptModuleMinecraft { class ScriptNpcComponent; }
 namespace ScriptModuleMinecraft { class ScriptOnFireComponent; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { class ScriptPlayerInventoryComponentContainer; }
@@ -171,6 +173,7 @@ namespace ScriptModuleMinecraft { class ScriptWorld; }
 namespace ScriptModuleMinecraft { class ScriptWorldAfterEvents; }
 namespace ScriptModuleMinecraft { class ScriptWorldBeforeEvents; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptActorAddEffectBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorApplyDamageByProjectileOptions; }
 namespace ScriptModuleMinecraft { struct ScriptActorApplyDamageOptions; }
 namespace ScriptModuleMinecraft { struct ScriptActorCreateEvent; }
@@ -287,11 +290,14 @@ namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ArgumentOutOfBoundsError; }
+namespace Scripting { struct ConstantFactory; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct JSON; }
 namespace Scripting { struct ModuleDescriptor; }
+namespace Scripting { struct NumberRange; }
 namespace Scripting { struct Version; }
 namespace mce { class Color; }
 // clang-format on
@@ -351,11 +357,6 @@ MCAPI std::string
                                        class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
                                    class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
                                    std::string> const&);
-
-// symbol:
-// ?rawMessageOrStringToJson@ScriptModuleMinecraft@@YA?AVValue@Json@@AEBV?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@Z
-MCAPI class Json::Value
-rawMessageOrStringToJson(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> const&);
 // NOLINTEND
 
 }; // namespace ScriptModuleMinecraft

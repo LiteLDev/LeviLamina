@@ -97,8 +97,9 @@ public:
     // symbol: ?_createOrModifyAngerLevel@AngerLevelComponent@@AEAAXAEBVActor@@AEBV?$function@$$A6AHH@Z@std@@@Z
     MCAPI void _createOrModifyAngerLevel(class Actor const&, std::function<int(int)> const&);
 
-    // symbol: ?_getListeningSoundEvent@AngerLevelComponent@@AEBA?AV?$optional@W4LevelSoundEvent@@@std@@AEAVActor@@@Z
-    MCAPI std::optional<::LevelSoundEvent> _getListeningSoundEvent(class Actor&) const;
+    // symbol:
+    // ?_getListeningSoundEvent@AngerLevelComponent@@AEBA?AV?$optional@W4LevelSoundEvent@Legacy@Puv@@@std@@AEAVActor@@@Z
+    MCAPI std::optional<::Puv::Legacy::LevelSoundEvent> _getListeningSoundEvent(class Actor&) const;
 
     // NOLINTEND
 };

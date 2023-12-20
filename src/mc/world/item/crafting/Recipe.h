@@ -23,26 +23,26 @@ public:
     virtual ~Recipe();
 
     // vIndex: 1, symbol:
-    // ?assemble@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
+    // ?assemble@SmithingTrimRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
     virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const = 0;
 
-    // vIndex: 2, symbol: ?getCraftingSize@BannerAddPatternRecipe@@UEBAHXZ
+    // vIndex: 2, symbol: ?getCraftingSize@ShapelessRecipe@@UEBAHXZ
     virtual int getCraftingSize() const = 0;
 
-    // vIndex: 3, symbol: ?getIngredient@BannerAddPatternRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+    // vIndex: 3, symbol: ?getIngredient@MapLockingRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
     virtual class RecipeIngredient const& getIngredient(int, int) const = 0;
 
     // vIndex: 4, symbol:
-    // ?getResultItem@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+    // ?getResultItem@MapLockingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
     virtual std::vector<class ItemInstance> const& getResultItem() const = 0;
 
     // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5() = 0;
 
-    // vIndex: 6, symbol: ?matches@BannerAddPatternRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 6, symbol: ?matches@SmithingTrimRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const = 0;
 
-    // vIndex: 7, symbol: ?size@BannerAddPatternRecipe@@UEBAHXZ
+    // vIndex: 7, symbol: ?size@ShapelessRecipe@@UEBAHXZ
     virtual int size() const = 0;
 
     // vIndex: 8, symbol: ?getId@Recipe@@UEBAAEBVUUID@mce@@XZ

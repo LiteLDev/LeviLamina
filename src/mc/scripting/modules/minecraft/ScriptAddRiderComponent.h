@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class WeakEntityRef;
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -44,8 +45,9 @@ public:
     MCAPI class Scripting::Result<std::string> getSpawnEvent() const;
 
     // symbol:
-    // ?bind@ScriptAddRiderComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptAddRiderComponent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptAddRiderComponent> bind();
+    // ?bind@ScriptAddRiderComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptAddRiderComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptAddRiderComponent>
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol: ?ComponentId@ScriptAddRiderComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;

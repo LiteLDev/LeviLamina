@@ -15,6 +15,7 @@
 #include "mc/enums/DripstoneThickness.h"
 #include "mc/enums/EggCount.h"
 #include "mc/enums/FlowerType.h"
+#include "mc/enums/FrontAndTop.h"
 #include "mc/enums/HatchLevel.h"
 #include "mc/enums/LeafSize.h"
 #include "mc/enums/LeverDirection.h"
@@ -158,6 +159,9 @@ MCAPI extern class BlockStateVariant<bool> const CoveredBit;
 // symbol: ?CrackedState@VanillaStates@@3V?$BlockStateVariant@W4HatchLevel@@@@B
 MCAPI extern class BlockStateVariant<::HatchLevel> const CrackedState;
 
+// symbol: ?Crafting@VanillaStates@@3V?$BlockStateVariant@_N@@B
+MCAPI extern class BlockStateVariant<bool> const Crafting;
+
 // symbol: ?DEPRECATED@VanillaStates@@3V?$BlockStateVariant@H@@B
 MCAPI extern class BlockStateVariant<int> const DEPRECATED;
 
@@ -277,6 +281,9 @@ MCAPI extern class BlockStateVariant<::OldLogType> const OldLogType;
 
 // symbol: ?OpenBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
 MCAPI extern class BlockStateVariant<bool> const OpenBit;
+
+// symbol: ?Orientation@VanillaStates@@3V?$BlockStateVariant@W4FrontAndTop@@@@B
+MCAPI extern class BlockStateVariant<::FrontAndTop> const Orientation;
 
 // symbol: ?OutputLitBit@VanillaStates@@3V?$BlockStateVariant@_N@@B
 MCAPI extern class BlockStateVariant<bool> const OutputLitBit;

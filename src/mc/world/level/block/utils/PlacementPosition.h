@@ -121,6 +121,9 @@ public:
     // vIndex: 3, symbol: ?initializeFromNetwork@PlacementPosition@BlockTrait@@UEAAXAEBVCompoundTag@@@Z
     virtual void initializeFromNetwork(class CompoundTag const&);
 
+    // symbol: ??0PlacementPosition@BlockTrait@@QEAA@_N0@Z
+    MCAPI PlacementPosition(bool, bool);
+
     // symbol: ?BlockFace@PlacementPosition@BlockTrait@@SA?AV12@XZ
     MCAPI static class BlockTrait::PlacementPosition BlockFace();
 

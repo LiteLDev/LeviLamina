@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class WeakEntityRef;
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
@@ -46,8 +47,9 @@ public:
     MCAPI class Scripting::Result<bool> tame() const;
 
     // symbol:
-    // ?bind@ScriptTameableComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptTameableComponent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptTameableComponent> bind();
+    // ?bind@ScriptTameableComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptTameableComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptTameableComponent>
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol: ?ComponentId@ScriptTameableComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;

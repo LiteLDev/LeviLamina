@@ -10,6 +10,7 @@
 // clang-format off
 class ActorFilterGroup;
 class WeakEntityRef;
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
 struct FeedItem;
 // clang-format on
@@ -49,8 +50,9 @@ public:
     MCAPI class Scripting::Result<std::vector<struct FeedItem>> getItems() const;
 
     // symbol:
-    // ?bind@ScriptHealableComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptHealableComponent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptHealableComponent> bind();
+    // ?bind@ScriptHealableComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptHealableComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptHealableComponent>
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol: ?ComponentId@ScriptHealableComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;

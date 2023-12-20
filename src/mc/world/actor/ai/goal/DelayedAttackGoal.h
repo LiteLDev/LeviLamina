@@ -37,17 +37,11 @@ public:
     // ?appendDebugInfo@DelayedAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
 
-    // vIndex: 10, symbol: ?_attemptMoveToTarget@DelayedAttackGoal@@EEAAXAEAVActor@@@Z
-    virtual void _attemptMoveToTarget(class Actor&);
-
     // symbol: ??0DelayedAttackGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit DelayedAttackGoal(class Mob&);
 
-    // symbol: ?isTargetInLineOfSightLegacy@DelayedAttackGoal@@SA_NAEBVMob@@AEBVActor@@@Z
-    MCAPI static bool isTargetInLineOfSightLegacy(class Mob const&, class Actor const&);
-
-    // symbol: ?mMinLineOfSightFixVersion@DelayedAttackGoal@@2VBaseGameVersion@@B
-    MCAPI static class BaseGameVersion const mMinLineOfSightFixVersion;
+    // symbol: ?_isTargetInLineOfSightLegacy@DelayedAttackGoal@@SA_NAEBVMob@@AEBVActor@@@Z
+    MCAPI static bool _isTargetInLineOfSightLegacy(class Mob const&, class Actor const&);
 
     // NOLINTEND
 
@@ -58,6 +52,20 @@ public:
 
     // symbol: ?_manageAttackTime@DelayedAttackGoal@@AEAAXXZ
     MCAPI void _manageAttackTime();
+
+    // NOLINTEND
+
+private:
+    // NOLINTBEGIN
+    // symbol: ?mMinLineOfSightFixVersion@DelayedAttackGoal@@0VBaseGameVersion@@B
+    MCAPI static class BaseGameVersion const mMinLineOfSightFixVersion;
+
+    // NOLINTEND
+
+    // member accessor
+public:
+    // NOLINTBEGIN
+    static auto& $mMinLineOfSightFixVersion() { return mMinLineOfSightFixVersion; }
 
     // NOLINTEND
 };

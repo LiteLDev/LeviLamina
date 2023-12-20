@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/Result.h"
 #include "mc/network/HCWebSocketCloseStatus.h"
 #include "mc/network/XAsyncOp.h"
 #include "mc/network/http_stl_allocator.h"
@@ -10,7 +11,9 @@
 // auto generated forward declare list
 // clang-format off
 namespace xbox::httpclient { struct HeaderCompare; }
+struct HC_PERFORM_ENV;
 struct HC_WEBSOCKET_OBSERVER;
+struct WebSocketPerformInfo;
 struct XAsyncBlock;
 struct XAsyncProviderData;
 // clang-format on
@@ -49,6 +52,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // vIndex: 0, symbol: __gen_??1WebSocket@httpclient@xbox@@UEAA@XZ
+    virtual ~WebSocket() = default;
+
     // symbol:
     // ?ConnectAsync@WebSocket@httpclient@xbox@@QEAAJ$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$http_stl_allocator@D@@@std@@0PEAUXAsyncBlock@@@Z
     MCAPI long ConnectAsync(http_string&&, http_string&&, struct XAsyncBlock*);
@@ -83,6 +89,10 @@ public:
     // symbol: ?SendAsync@WebSocket@httpclient@xbox@@QEAAJPEBDPEAUXAsyncBlock@@@Z
     MCAPI long SendAsync(char const*, struct XAsyncBlock*);
 
+    // symbol:
+    // ?SetHeader@WebSocket@httpclient@xbox@@QEAAJ$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$http_stl_allocator@D@@@std@@0@Z
+    MCAPI long SetHeader(http_string&&, http_string&&);
+
     // symbol: ?BinaryMessageFragmentFunc@WebSocket@httpclient@xbox@@SAXPEAUHC_WEBSOCKET_OBSERVER@@PEBEI_NPEAX@Z
     MCAPI static void BinaryMessageFragmentFunc(struct HC_WEBSOCKET_OBSERVER*, uchar const*, uint, bool, void*);
 
@@ -92,6 +102,9 @@ public:
     // symbol: ?CloseFunc@WebSocket@httpclient@xbox@@SAXPEAUHC_WEBSOCKET_OBSERVER@@W4HCWebSocketCloseStatus@@PEAX@Z
     MCAPI static void CloseFunc(struct HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*);
 
+    // symbol: ?Initialize@WebSocket@httpclient@xbox@@SA?AV?$Result@V?$shared_ptr@VWebSocket@httpclient@xbox@@@std@@@@XZ
+    MCAPI static class Result<std::shared_ptr<class xbox::httpclient::WebSocket>> Initialize();
+
     // symbol: ?MessageFunc@WebSocket@httpclient@xbox@@SAXPEAUHC_WEBSOCKET_OBSERVER@@PEBDPEAX@Z
     MCAPI static void MessageFunc(struct HC_WEBSOCKET_OBSERVER*, char const*, void*);
 
@@ -99,6 +112,9 @@ public:
 
     // private:
     // NOLINTBEGIN
+    // symbol: ??0WebSocket@httpclient@xbox@@AEAA@_KUWebSocketPerformInfo@@PEAUHC_PERFORM_ENV@@@Z
+    MCAPI WebSocket(uint64, struct WebSocketPerformInfo, struct HC_PERFORM_ENV*);
+
     // symbol: ?ConnectAsyncProvider@WebSocket@httpclient@xbox@@CAJW4XAsyncOp@@PEBUXAsyncProviderData@@@Z
     MCAPI static long ConnectAsyncProvider(::XAsyncOp, struct XAsyncProviderData const*);
 

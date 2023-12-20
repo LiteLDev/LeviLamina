@@ -20,10 +20,9 @@ public:
     MCAPI static void _spinAttack(class StrictEntityContext&, class ActorOwnerComponent&);
 
     // symbol:
-    // ?_tickSpinAttackSystem@SpinAttackSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@VActorOwnerComponent@@@@@Z
+    // ?_tickSpinAttackSystem@SpinAttackSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@VActorOwnerComponent@@@@@Z
     MCAPI static void _tickSpinAttackSystem(class ViewT<
                                             class StrictEntityContext,
-                                            class EntityRegistryBase,
                                             struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
                                             class ActorOwnerComponent>);
 

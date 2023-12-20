@@ -148,22 +148,28 @@ public:
     // vIndex: 35, symbol: ?getILevel@BlockSource@@UEBAAEAVILevel@@XZ
     virtual class ILevel& getILevel() const;
 
-    // vIndex: 36, symbol: ?getChunkSource@BlockSource@@UEAAAEAVChunkSource@@XZ
+    // vIndex: 36, symbol:
+    // ?clip@BlockSource@@UEBA?AVHitResult@@AEBVVec3@@0_NW4ShapeType@@H11PEAVActor@@AEBV?$function@$$A6A_NAEBVBlockSource@@AEBVBlock@@_N@Z@std@@@Z
+    virtual class HitResult
+    clip(class Vec3 const&, class Vec3 const&, bool, ::ShapeType, int, bool, bool, class Actor*, std::function<bool(class BlockSource const&, class Block const&, bool)> const&)
+        const;
+
+    // vIndex: 37, symbol: ?getChunkSource@BlockSource@@UEAAAEAVChunkSource@@XZ
     virtual class ChunkSource& getChunkSource();
 
-    // vIndex: 37, symbol: ?isSolidBlockingBlock@BlockSource@@UEBA_NAEBVBlockPos@@@Z
+    // vIndex: 38, symbol: ?isSolidBlockingBlock@BlockSource@@UEBA_NAEBVBlockPos@@@Z
     virtual bool isSolidBlockingBlock(class BlockPos const&) const;
 
-    // vIndex: 38, symbol: ?isSolidBlockingBlock@BlockSource@@UEBA_NHHH@Z
+    // vIndex: 39, symbol: ?isSolidBlockingBlock@BlockSource@@UEBA_NHHH@Z
     virtual bool isSolidBlockingBlock(int, int, int) const;
 
-    // vIndex: 39, symbol: ?areChunksFullyLoaded@BlockSource@@UEBA_NAEBVBlockPos@@H@Z
+    // vIndex: 40, symbol: ?areChunksFullyLoaded@BlockSource@@UEBA_NAEBVBlockPos@@H@Z
     virtual bool areChunksFullyLoaded(class BlockPos const&, int) const;
 
-    // vIndex: 40, symbol: ?canDoBlockDrops@BlockSource@@UEBA_NXZ
+    // vIndex: 41, symbol: ?canDoBlockDrops@BlockSource@@UEBA_NXZ
     virtual bool canDoBlockDrops() const;
 
-    // vIndex: 41, symbol: ?canDoContainedItemDrops@BlockSource@@UEBA_NXZ
+    // vIndex: 42, symbol: ?canDoContainedItemDrops@BlockSource@@UEBA_NXZ
     virtual bool canDoContainedItemDrops() const;
 
     // symbol: ?getDimension@BlockSource@@UEAAAEAVDimension@@XZ
@@ -225,12 +231,6 @@ public:
 
     // symbol: ?clip@BlockSource@@QEBA?AVHitResult@@AEBUClipParameters@@@Z
     MCAPI class HitResult clip(struct ClipParameters const&) const;
-
-    // symbol:
-    // ?clip@BlockSource@@QEBA?AVHitResult@@AEBVVec3@@0_NW4ShapeType@@H11PEAVActor@@AEBV?$function@$$A6A_NAEBVBlockSource@@AEBVBlock@@_N@Z@std@@@Z
-    MCAPI class HitResult
-    clip(class Vec3 const&, class Vec3 const&, bool, ::ShapeType, int, bool, bool, class Actor*, std::function<bool(class BlockSource const&, class Block const&, bool)> const&)
-        const;
 
     // symbol: ?containsAnyBlockInBox@BlockSource@@QEAA_NAEBVBoundingBox@@V?$function@$$A6A_NAEBVBlock@@@Z@std@@@Z
     MCAPI bool containsAnyBlockInBox(class BoundingBox const&, std::function<bool(class Block const&)>);
@@ -379,11 +379,11 @@ public:
     // symbol: ?getHeightmapPos@BlockSource@@QEBA?AVBlockPos@@AEBV2@@Z
     MCAPI class BlockPos getHeightmapPos(class BlockPos const&) const;
 
-    // symbol: ?getLevel@BlockSource@@QEBAAEAVLevel@@XZ
-    MCAPI class Level& getLevel() const;
-
     // symbol: ?getLevel@BlockSource@@QEAAAEAVLevel@@XZ
     MCAPI class Level& getLevel();
+
+    // symbol: ?getLevel@BlockSource@@QEBAAEAVLevel@@XZ
+    MCAPI class Level& getLevel() const;
 
     // symbol: ?getLevelConst@BlockSource@@QEBAAEBVLevel@@XZ
     MCAPI class Level const& getLevelConst() const;

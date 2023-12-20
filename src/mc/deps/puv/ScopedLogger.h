@@ -13,6 +13,9 @@ public:
 
 public:
     // NOLINTBEGIN
+    // symbol: ?commit@ScopedLogger@internal@Puv@@QEAAXXZ
+    MCAPI void commit();
+
     // symbol: ??1ScopedLogger@internal@Puv@@QEAA@XZ
     MCAPI ~ScopedLogger();
 

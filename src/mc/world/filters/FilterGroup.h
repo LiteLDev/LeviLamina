@@ -26,7 +26,7 @@ public:
     virtual ~FilterGroup() = default;
 
     // vIndex: 1, symbol:
-    // ?_createSubgroup@ActorFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z
+    // ?_createSubgroup@BiomeFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z
     virtual std::shared_ptr<class FilterGroup> _createSubgroup(::FilterGroup::CollectionType) const = 0;
 
     // vIndex: 2, symbol: ?_setupContext@FilterGroup@@MEBA_NAEBVFilterTest@@AEAUFilterContext@@@Z

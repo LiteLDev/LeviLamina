@@ -7,17 +7,12 @@ public:
     // prevent constructor by default
     OnFallOnTrigger& operator=(OnFallOnTrigger const&);
     OnFallOnTrigger(OnFallOnTrigger const&);
+    OnFallOnTrigger();
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1OnFallOnTrigger@@UEAA@XZ
-    virtual ~OnFallOnTrigger();
-
-    // symbol: ??0OnFallOnTrigger@@QEAA@XZ
-    MCAPI OnFallOnTrigger();
-
-    // symbol: ??0OnFallOnTrigger@@QEAA@$$QEAV0@@Z
-    MCAPI OnFallOnTrigger(class OnFallOnTrigger&&);
+    // vIndex: 0, symbol: __gen_??1OnFallOnTrigger@@UEAA@XZ
+    virtual ~OnFallOnTrigger() = default;
 
     // NOLINTEND
 };

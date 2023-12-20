@@ -77,9 +77,6 @@ public:
     // symbol: ?hasTemporalBuffs@AttributeInstance@@QEBA_NXZ
     MCAPI bool hasTemporalBuffs() const;
 
-    // symbol: ?inheritFrom@AttributeInstance@@QEAAXAEBV1@PEAVBaseAttributeMap@@@Z
-    MCAPI void inheritFrom(class AttributeInstance const&, class BaseAttributeMap*);
-
     // symbol: ?isValid@AttributeInstance@@QEBA_NXZ
     MCAPI bool isValid() const;
 

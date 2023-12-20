@@ -7,18 +7,20 @@ public:
     // prevent constructor by default
     StrictEntityContext& operator=(StrictEntityContext const&);
     StrictEntityContext(StrictEntityContext const&);
-    StrictEntityContext();
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0StrictEntityContext@@QEAA@AEBVEntityContextBase@@@Z
-    MCAPI explicit StrictEntityContext(class EntityContextBase const&);
+    // symbol: ??0StrictEntityContext@@QEAA@XZ
+    MCAPI StrictEntityContext();
+
+    // symbol: ??0StrictEntityContext@@QEAA@AEBVEntityContext@@@Z
+    MCAPI explicit StrictEntityContext(class EntityContext const&);
 
     // symbol: ??0StrictEntityContext@@QEAA@$$QEAV0@@Z
     MCAPI StrictEntityContext(class StrictEntityContext&&);
 
-    // symbol: ??0StrictEntityContext@@QEAA@AEAVEntityRegistryBase@@VEntityId@@@Z
-    MCAPI StrictEntityContext(class EntityRegistryBase&, class EntityId);
+    // symbol: ??0StrictEntityContext@@QEAA@AEAVEntityRegistry@@VEntityId@@@Z
+    MCAPI StrictEntityContext(class EntityRegistry&, class EntityId);
 
     // symbol: ?isNull@StrictEntityContext@@QEBA_NXZ
     MCAPI bool isNull() const;

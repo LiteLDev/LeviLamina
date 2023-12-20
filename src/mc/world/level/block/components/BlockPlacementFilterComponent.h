@@ -23,8 +23,5 @@ public:
     // symbol: ?mayPlace@BlockPlacementFilterComponent@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
     MCAPI bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
 
-    // symbol: ??4BlockPlacementFilterComponent@@QEAAAEAU0@$$QEAU0@@Z
-    MCAPI struct BlockPlacementFilterComponent& operator=(struct BlockPlacementFilterComponent&&);
-
     // NOLINTEND
 };

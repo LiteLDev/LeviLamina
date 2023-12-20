@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/puv/EquipmentSlot.h"
 #include "mc/enums/AllExperiments.h"
-#include "mc/enums/EquipmentSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -49,17 +49,17 @@ public:
     // vIndex: 8, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
     virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
 
-    // vIndex: 9, symbol: ?_initializeComponent@WearableItemComponent@@UEBAXXZ
-    virtual void _initializeComponent() const;
+    // vIndex: 9, symbol: ?_initializeComponent@WearableItemComponent@@UEAAXXZ
+    virtual void _initializeComponent();
 
-    // symbol: ??0WearableItemComponent@@QEAA@W4EquipmentSlot@@H@Z
-    MCAPI WearableItemComponent(::EquipmentSlot, int);
+    // symbol: ??0WearableItemComponent@@QEAA@W4EquipmentSlot@Legacy@Puv@@H@Z
+    MCAPI WearableItemComponent(::Puv::Legacy::EquipmentSlot, int);
 
     // symbol: ?dispense@WearableItemComponent@@QEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     MCAPI bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
 
-    // symbol: ?getSlot@WearableItemComponent@@QEBA?AW4EquipmentSlot@@XZ
-    MCAPI ::EquipmentSlot getSlot() const;
+    // symbol: ?getSlot@WearableItemComponent@@QEBA?AW4EquipmentSlot@Legacy@Puv@@XZ
+    MCAPI ::Puv::Legacy::EquipmentSlot getSlot() const;
 
     // symbol:
     // ?bindType@WearableItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

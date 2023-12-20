@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/dataloadhelper/DataLoadHelper.h"
 #include "mc/enums/DataLoadHelperType.h"
 #include "mc/enums/Mirror.h"
 #include "mc/enums/Rotation.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/InternalComponentRegistry.h"
-#include "mc/world/level/levelgen/structure/DataLoadHelper.h"
 
 class NewUniqueIdsDataLoadHelper : public ::DataLoadHelper {
 public:
@@ -81,11 +81,11 @@ public:
     // symbol: ?loadBlockPositionOffset@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
     MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const&);
 
-    // symbol: ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
-    MCVAPI ::Direction::Type loadDirection(::Direction::Type);
-
     // symbol: ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
     MCVAPI class Vec3 loadDirection(class Vec3 const&);
+
+    // symbol: ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
+    MCVAPI ::Direction::Type loadDirection(::Direction::Type);
 
     // symbol: ?loadFacingID@NewUniqueIdsDataLoadHelper@@UEAAEE@Z
     MCVAPI uchar loadFacingID(uchar);

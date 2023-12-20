@@ -5,9 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
 #include "mc/deps/core/utility/NumberConversionResult.h"
+#include "mc/deps/puv/EquipmentSlot.h"
 #include "mc/entity/components/agent/Direction.h"
 #include "mc/enums/BoneTransformType.h"
-#include "mc/enums/EquipmentSlot.h"
 #include "mc/enums/LogArea.h"
 #include "mc/world/AutomaticID.h"
 
@@ -91,6 +91,10 @@ MCAPI void crashOnPurpose();
 // symbol: ?decompressRaw@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@@Z
 MCAPI bool decompressRaw(std::string const&, std::string&);
 
+// symbol:
+// ?decompressRaw@Util@@YA_NAEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+MCAPI bool decompressRaw(std::string_view const&, std::string&);
+
 // symbol: ?endsWith@Util@@YA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@0@Z
 MCAPI bool endsWith(std::string_view, std::string_view);
 
@@ -132,9 +136,6 @@ MCAPI std::string getNameWithoutNamespace(std::string const&);
 
 // symbol: ?getNamespace@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 MCAPI std::string getNamespace(std::string const&);
-
-// symbol: ?hashCode@Util@@YAIV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-MCAPI uint hashCode(std::string_view);
 
 // symbol: ?hashCodeAsUtf16@Util@@YAIV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
 MCAPI uint hashCodeAsUtf16(std::string_view);

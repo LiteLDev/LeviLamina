@@ -3,11 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/CurrentCmdVersion.h"
+#include "mc/external/scripting/Result.h"
 #include "mc/scripting/modules/minecraft_ui/IControl.h"
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 namespace Json { class Value; }
+namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraftServerUI { class IControl; }
 // clang-format on
 
@@ -25,12 +29,14 @@ public:
     // vIndex: 0, symbol: __gen_??1TextInputControl@ScriptModuleMinecraftServerUI@@UEAA@XZ
     virtual ~TextInputControl() = default;
 
-    // vIndex: 1, symbol: ?getJson@TextInputControl@ScriptModuleMinecraftServerUI@@UEBA?AVValue@Json@@XZ
-    virtual class Json::Value getJson() const;
+    // vIndex: 1, symbol:
+    // ?buildJson@TextInputControl@ScriptModuleMinecraftServerUI@@UEBA?AV?$Result@VValue@Json@@$$V@Scripting@@AEAVPlayer@@W4CurrentCmdVersion@@@Z
+    virtual class Scripting::Result<class Json::Value> buildJson(class Player&, ::CurrentCmdVersion) const;
 
     // symbol:
-    // ??0TextInputControl@ScriptModuleMinecraftServerUI@@QEAA@VValue@Json@@0V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
-    MCAPI TextInputControl(class Json::Value, class Json::Value, std::optional<std::string>);
+    // ??0TextInputControl@ScriptModuleMinecraftServerUI@@QEAA@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@0V?$optional@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@3@@Z
+    MCAPI
+    TextInputControl(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>, std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>, std::optional<std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>>);
 
     // NOLINTEND
 };

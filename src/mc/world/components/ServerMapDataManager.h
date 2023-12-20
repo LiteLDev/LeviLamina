@@ -34,6 +34,12 @@ public:
     // vIndex: 3, symbol: ?createMapSavedData@ServerMapDataManager@@UEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@@Z
     virtual class MapItemSavedData& createMapSavedData(struct ActorUniqueID const&);
 
+    // vIndex: 4, symbol: ?requestMapInfo@ServerMapDataManager@@UEAAXUActorUniqueID@@_N@Z
+    virtual void requestMapInfo(struct ActorUniqueID, bool);
+
+    // vIndex: 5, symbol: ?_copyAndLockMap@ServerMapDataManager@@EEAAXUActorUniqueID@@0@Z
+    virtual void _copyAndLockMap(struct ActorUniqueID, struct ActorUniqueID);
+
     // symbol:
     // ??0ServerMapDataManager@@QEAA@AEAVDimensionManager@@PEAVLevelStorage@@V?$unique_ptr@VIMapDataManagerOptions@@U?$default_delete@VIMapDataManagerOptions@@@std@@@std@@V?$function@$$A6A?AUActorUniqueID@@XZ@4@@Z
     MCAPI

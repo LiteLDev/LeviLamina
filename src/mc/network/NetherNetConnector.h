@@ -5,8 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/UniqueLock.h"
 #include "mc/network/Connector.h"
-#include "mc/network/ESendType.h"
-#include "mc/network/ESessionError.h"
+#include "mc/network/nethernet/ESendType.h"
+#include "mc/network/nethernet/ESessionError.h"
+#include "mc/network/nethernet/ESignalingEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -77,6 +78,9 @@ public:
 
     // symbol: ?OnSessionRequested@NetherNetConnector@@EEAAXUNetworkID@NetherNet@@@Z
     MCVAPI void OnSessionRequested(struct NetherNet::NetworkID);
+
+    // symbol: ?OnSignalingEvent@NetherNetConnector@@EEAAXUNetworkID@NetherNet@@W4ESignalingEvent@3@Verror_code@std@@@Z
+    MCVAPI void OnSignalingEvent(struct NetherNet::NetworkID, ::NetherNet::ESignalingEvent, std::error_code);
 
     // symbol: ?OnSpopViolation@NetherNetConnector@@EEAAXXZ
     MCVAPI void OnSpopViolation();

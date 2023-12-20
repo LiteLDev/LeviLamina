@@ -25,12 +25,9 @@ public:
     _tick(class StrictEntityContext const&, class LevelComponent&, struct SoundEventRequestQueueComponent&);
 
     // symbol:
-    // ?_view@SoundEventSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@VLevelComponent@@USoundEventRequestQueueComponent@@@@@Z
-    MCAPI static void _view(class ViewT<
-                            class StrictEntityContext,
-                            class EntityRegistryBase,
-                            class LevelComponent,
-                            struct SoundEventRequestQueueComponent>);
+    // ?_view@SoundEventSystem@@SAXV?$ViewT@VStrictEntityContext@@VLevelComponent@@USoundEventRequestQueueComponent@@@@@Z
+    MCAPI static void
+        _view(class ViewT<class StrictEntityContext, class LevelComponent, struct SoundEventRequestQueueComponent>);
 
     // symbol: ?create@SoundEventSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo create();

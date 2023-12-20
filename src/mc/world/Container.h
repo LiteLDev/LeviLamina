@@ -21,7 +21,7 @@ public:
     // vIndex: 1, symbol: ?init@Container@@UEAAXXZ
     virtual void init();
 
-    // vIndex: 2, symbol: ?serverInitItemStackIds@CraftingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+    // vIndex: 2, symbol: ?serverInitItemStackIds@SimpleContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     virtual void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>) = 0;
 
     // vIndex: 3, symbol: ?addContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z
@@ -30,7 +30,7 @@ public:
     // vIndex: 4, symbol: ?removeContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z
     virtual void removeContentChangeListener(class ContainerContentChangeListener*);
 
-    // vIndex: 5, symbol: ?getItem@CraftingContainer@@UEBAAEBVItemStack@@H@Z
+    // vIndex: 5, symbol: ?getItem@FillingContainer@@UEBAAEBVItemStack@@H@Z
     virtual class ItemStack const& getItem(int) const = 0;
 
     // vIndex: 6, symbol: ?hasRoomForItem@Container@@UEAA_NAEBVItemStack@@@Z
@@ -45,7 +45,7 @@ public:
     // vIndex: 9, symbol: ?addItemToFirstEmptySlot@Container@@UEAA_NAEBVItemStack@@@Z
     virtual bool addItemToFirstEmptySlot(class ItemStack const&);
 
-    // vIndex: 10, symbol: ?setItem@CraftingContainer@@UEAAXHAEBVItemStack@@@Z
+    // vIndex: 10, symbol: ?setItem@SimpleContainer@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int, class ItemStack const&) = 0;
 
     // vIndex: 11, symbol: ?setItemWithForceBalance@Container@@UEAAXHAEBVItemStack@@_N@Z
@@ -63,10 +63,10 @@ public:
     // vIndex: 15, symbol: ?dropContents@Container@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
     virtual void dropContents(class BlockSource&, class Vec3 const&, bool);
 
-    // vIndex: 16, symbol: ?getContainerSize@CraftingContainer@@UEBAHXZ
+    // vIndex: 16, symbol: ?getContainerSize@SimpleContainer@@UEBAHXZ
     virtual int getContainerSize() const = 0;
 
-    // vIndex: 17, symbol: ?getMaxStackSize@CraftingContainer@@UEBAHXZ
+    // vIndex: 17, symbol: ?getMaxStackSize@SimpleContainer@@UEBAHXZ
     virtual int getMaxStackSize() const = 0;
 
     // vIndex: 18, symbol: ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
@@ -126,6 +126,9 @@ public:
 
     // vIndex: 35, symbol: ?isEmpty@Container@@UEBA_NXZ
     virtual bool isEmpty() const;
+
+    // vIndex: 36, symbol: ?isSlotDisabled@Container@@UEBA_NH@Z
+    virtual bool isSlotDisabled(int) const;
 
     // symbol: ?canPullOutItem@Container@@UEBA_NHHAEBVItemStack@@@Z
     MCVAPI bool canPullOutItem(int, int, class ItemStack const&) const;

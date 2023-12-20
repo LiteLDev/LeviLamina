@@ -126,6 +126,9 @@ public:
     // ?extractRecipeObjInfo@Recipes@@QEAA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VValue@Json@@@std@@AEBVValue@Json@@@Z
     MCAPI std::pair<std::string, class Json::Value> extractRecipeObjInfo(class Json::Value const&);
 
+    // symbol: ?forEachRecipeFor@Recipes@@QEBAXAEBVHashedString@@AEBV?$function@$$A6AXAEBVRecipe@@@Z@std@@@Z
+    MCAPI void forEachRecipeFor(class HashedString const&, std::function<void(class Recipe const&)> const&) const;
+
     // symbol: ?forEachUnlockableRecipe@Recipes@@QEBAXAEBV?$function@$$A6AXAEBVRecipe@@@Z@std@@@Z
     MCAPI void forEachUnlockableRecipe(std::function<void(class Recipe const&)> const&) const;
 
@@ -176,6 +179,10 @@ public:
     // ?_loadDataDrivenRecipes@Recipes@@IEAAXAEBV?$vector@VPackInstance@@V?$allocator@VPackInstance@@@std@@@std@@@Z
     MCAPI void _loadDataDrivenRecipes(std::vector<class PackInstance> const&);
 
+    // symbol: ?_loadIngredientFromJson@Recipes@@IEBA?BVRecipeIngredient@@AEBVValue@Json@@AEBVSemVersion@@_N2@Z
+    MCAPI class RecipeIngredient const
+    _loadIngredientFromJson(class Json::Value const&, class SemVersion const&, bool, bool) const;
+
     // symbol:
     // ?_loadUnlockingRequirementFromJson@Recipes@@IEBA?AV?$optional@VRecipeUnlockingRequirement@@@std@@AEBVValue@Json@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCAPI std::optional<class RecipeUnlockingRequirement>
@@ -207,10 +214,6 @@ public:
 
     // symbol: ?_loadHardcodedRecipes@Recipes@@AEAAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
     MCAPI void _loadHardcodedRecipes(class BaseGameVersion const&, class Experiments const&);
-
-    // symbol: ?_loadIngredientFromJson@Recipes@@AEBA?BVRecipeIngredient@@AEBVValue@Json@@AEBVSemVersion@@_N2@Z
-    MCAPI class RecipeIngredient const
-    _loadIngredientFromJson(class Json::Value const&, class SemVersion const&, bool, bool) const;
 
     // symbol: ?_loadInputIngredientFromJson@Recipes@@AEBA?BVRecipeIngredient@@AEBVValue@Json@@AEBVSemVersion@@@Z
     MCAPI class RecipeIngredient const

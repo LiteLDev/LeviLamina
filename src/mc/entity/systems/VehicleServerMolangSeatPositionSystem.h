@@ -15,19 +15,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol:
-    // ?_tickActor@VehicleServerMolangSeatPositionSystem@@SAXAEAVStrictEntityContext@@AEBUPassengerComponent@@AEAVActorOwnerComponent@@AEAUPositionPassengerRequestComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBVRideableComponent@@$$CBUVehicleComponent@@@@@Z
+    // ?_tickActor@VehicleServerMolangSeatPositionSystem@@SAXAEAVStrictEntityContext@@AEBUPassengerComponent@@AEAVActorOwnerComponent@@AEAUPositionPassengerRequestComponent@@V?$ViewT@VStrictEntityContext@@$$CBVRideableComponent@@$$CBUVehicleComponent@@@@@Z
     MCAPI static void
-    _tickActor(class StrictEntityContext&, struct PassengerComponent const&, class ActorOwnerComponent&, struct PositionPassengerRequestComponent&, class ViewT<class StrictEntityContext, class EntityRegistryBase, class RideableComponent const, struct VehicleComponent const>);
+    _tickActor(class StrictEntityContext&, struct PassengerComponent const&, class ActorOwnerComponent&, struct PositionPassengerRequestComponent&, class ViewT<class StrictEntityContext, class RideableComponent const, struct VehicleComponent const>);
 
     // symbol:
-    // ?_tickVehicleServerMolangSeatPositionSystem@VehicleServerMolangSeatPositionSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUPassengerComponent@@VActorOwnerComponent@@UPositionPassengerRequestComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBVRideableComponent@@$$CBUVehicleComponent@@@@@Z
+    // ?_tickVehicleServerMolangSeatPositionSystem@VehicleServerMolangSeatPositionSystem@@SAXV?$ViewT@VStrictEntityContext@@$$CBUPassengerComponent@@VActorOwnerComponent@@UPositionPassengerRequestComponent@@@@V?$ViewT@VStrictEntityContext@@$$CBVRideableComponent@@$$CBUVehicleComponent@@@@@Z
     MCAPI static void
-        _tickVehicleServerMolangSeatPositionSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct PassengerComponent const, class ActorOwnerComponent, struct PositionPassengerRequestComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, class RideableComponent const, struct VehicleComponent const>);
-
-    // symbol:
-    // ?_tickVehicleServerMolangSeatPositionSystemSingleEntity@VehicleServerMolangSeatPositionSystem@@SAXAEBVStrictEntityContext@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUPassengerComponent@@VActorOwnerComponent@@UPositionPassengerRequestComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBVRideableComponent@@$$CBUVehicleComponent@@@@@Z
-    MCAPI static void
-    _tickVehicleServerMolangSeatPositionSystemSingleEntity(class StrictEntityContext const&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct PassengerComponent const, class ActorOwnerComponent, struct PositionPassengerRequestComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, class RideableComponent const, struct VehicleComponent const>);
+        _tickVehicleServerMolangSeatPositionSystem(class ViewT<class StrictEntityContext, struct PassengerComponent const, class ActorOwnerComponent, struct PositionPassengerRequestComponent>, class ViewT<class StrictEntityContext, class RideableComponent const, struct VehicleComponent const>);
 
     // symbol: ?createSystem@VehicleServerMolangSeatPositionSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();

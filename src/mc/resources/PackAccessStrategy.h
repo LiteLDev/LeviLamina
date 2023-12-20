@@ -39,17 +39,17 @@ public:
     // vIndex: 5, symbol: ?setIsTrusted@DirectoryPackWithEncryptionAccessStrategy@@UEAAX_N@Z
     virtual void setIsTrusted(bool) = 0;
 
-    // vIndex: 6, symbol: ?isTrusted@DirectoryPackAccessStrategy@@UEBA_NXZ
+    // vIndex: 6, symbol: ?isTrusted@EncryptedFileAccessStrategy@@UEBA_NXZ
     virtual bool isTrusted() const = 0;
 
-    // vIndex: 7, symbol: ?hasAsset@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@_N1@Z
+    // vIndex: 7, symbol: ?hasAsset@EncryptedFileAccessStrategy@@UEBA_NAEBVPath@Core@@_N1@Z
     virtual bool hasAsset(class Core::Path const&, bool, bool) const = 0;
 
     // vIndex: 8, symbol: ?hasFolder@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@@Z
     virtual bool hasFolder(class Core::Path const&) const = 0;
 
     // vIndex: 9, symbol:
-    // ?getAsset@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    // ?getAsset@EncryptedFileAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     virtual bool getAsset(class Core::Path const&, std::string&, bool) const = 0;
 
     // vIndex: 10, symbol: ?deleteAsset@DirectoryPackAccessStrategy@@UEAA_NAEBVPath@Core@@@Z
@@ -75,7 +75,7 @@ public:
     virtual class Core::PathBuffer<std::string> const& getSubPath() const;
 
     // vIndex: 16, symbol:
-    // ?createSubPack@DirectoryPackAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z
+    // ?createSubPack@EncryptedFileAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z
     virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const = 0;
 
     // vIndex: 17, symbol: ?generateAssetSet@PackAccessStrategy@@UEAA?AW4PackAccessAssetGenerationResult@@XZ

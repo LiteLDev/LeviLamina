@@ -11,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1OnStepOnTrigger@@UEAA@XZ
-    virtual ~OnStepOnTrigger();
-
-    // symbol: ??0OnStepOnTrigger@@QEAA@$$QEAV0@@Z
-    MCAPI OnStepOnTrigger(class OnStepOnTrigger&&);
+    // vIndex: 0, symbol: __gen_??1OnStepOnTrigger@@UEAA@XZ
+    virtual ~OnStepOnTrigger() = default;
 
     // NOLINTEND
 };

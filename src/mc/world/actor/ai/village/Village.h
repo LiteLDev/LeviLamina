@@ -243,11 +243,6 @@ public:
     // symbol: ?_findPlayerCentricSpawnPointForRaid@Village@@AEBA_NAEAVVec3@@_N@Z
     MCAPI bool _findPlayerCentricSpawnPointForRaid(class Vec3&, bool) const;
 
-    // symbol:
-    // ?_findPreferredPOI@Village@@AEAAXAEAV?$vector@V?$weak_ptr@VPOIInstance@@@std@@V?$allocator@V?$weak_ptr@VPOIInstance@@@std@@@2@@std@@AEBVHashedString@@UActorUniqueID@@@Z
-    MCAPI void
-    _findPreferredPOI(std::vector<std::weak_ptr<class POIInstance>>&, class HashedString const&, struct ActorUniqueID);
-
     // symbol: ?_findSpawnPointForRaid@Village@@AEBA_NAEAVVec3@@MM_N1@Z
     MCAPI bool _findSpawnPointForRaid(class Vec3&, float, float, bool, bool) const;
 
@@ -270,8 +265,8 @@ public:
     // symbol: ?_loadVillagePOIs@Village@@AEAAXAEBVCompoundTag@@@Z
     MCAPI void _loadVillagePOIs(class CompoundTag const&);
 
-    // symbol: ?_playSoundFrom@Village@@AEAAXAEBVVec3@@W4LevelSoundEvent@@@Z
-    MCAPI void _playSoundFrom(class Vec3 const&, ::LevelSoundEvent);
+    // symbol: ?_playSoundFrom@Village@@AEAAXAEBVVec3@@W4LevelSoundEvent@Legacy@Puv@@@Z
+    MCAPI void _playSoundFrom(class Vec3 const&, ::Puv::Legacy::LevelSoundEvent);
 
     // symbol:
     // ?_readyRaidGroup@Village@@AEAAXAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z

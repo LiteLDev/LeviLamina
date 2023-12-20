@@ -29,7 +29,7 @@ public:
     createContext(class gametest::BaseGameTestHelper&) const = 0;
 
     // vIndex: 2, symbol:
-    // ?run@ScriptAsyncGameTestFunction@ScriptModuleGameTest@@UEBA?AV?$unique_ptr@VIGameTestFunctionRunResult@gametest@@U?$default_delete@VIGameTestFunctionRunResult@gametest@@@std@@@std@@AEAVBaseGameTestHelper@gametest@@AEAVIGameTestFunctionContext@6@@Z
+    // ?run@SyncScriptGameTestFunction@ScriptModuleGameTest@@UEBA?AV?$unique_ptr@VIGameTestFunctionRunResult@gametest@@U?$default_delete@VIGameTestFunctionRunResult@gametest@@@std@@@std@@AEAVBaseGameTestHelper@gametest@@AEAVIGameTestFunctionContext@6@@Z
     virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult>
     run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const = 0;
 

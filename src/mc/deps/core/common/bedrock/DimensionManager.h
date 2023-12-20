@@ -25,8 +25,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1DimensionManager@@UEAA@XZ
-    virtual ~DimensionManager();
+    // vIndex: 0, symbol: __gen_??1DimensionManager@@UEAA@XZ
+    virtual ~DimensionManager() = default;
 
     // symbol:
     // ??0DimensionManager@@QEAA@V?$not_null@V?$NonOwnerPointer@VIDimensionFactory@@@Bedrock@@@gsl@@V?$optional@VDimensionDefinitionGroup@@@std@@@Z

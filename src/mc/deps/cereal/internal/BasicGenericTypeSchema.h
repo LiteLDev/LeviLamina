@@ -26,7 +26,7 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 4, symbol: __gen_??1BasicGenericTypeSchema@internal@cereal@@UEAA@XZ
+    // vIndex: 5, symbol: __gen_??1BasicGenericTypeSchema@internal@cereal@@UEAA@XZ
     virtual ~BasicGenericTypeSchema() = default;
 
     // NOLINTEND

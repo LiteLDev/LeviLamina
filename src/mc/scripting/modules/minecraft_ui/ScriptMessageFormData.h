@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/CurrentCmdVersion.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Promise.h"
 #include "mc/external/scripting/Result.h"
@@ -10,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
@@ -17,7 +19,7 @@ namespace ScriptModuleMinecraftServerUI { class ScriptFormRejectError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptMessageFormResponse; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
-namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ContextConfig; }
 // clang-format on
 
 namespace ScriptModuleMinecraftServerUI {
@@ -32,6 +34,9 @@ public:
     // symbol: ??0ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA@XZ
     MCAPI ScriptMessageFormData();
 
+    // symbol: ??0ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA@$$QEAV01@@Z
+    MCAPI ScriptMessageFormData(class ScriptModuleMinecraftServerUI::ScriptMessageFormData&&);
+
     // symbol: ??0ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA@AEBV01@@Z
     MCAPI ScriptMessageFormData(class ScriptModuleMinecraftServerUI::ScriptMessageFormData const&);
 
@@ -44,9 +49,6 @@ public:
     // ?bodyV010@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
     bodyV010(std::string const&);
-
-    // symbol: ?buildJson@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEBA?AVValue@Json@@XZ
-    MCAPI class Json::Value buildJson() const;
 
     // symbol:
     // ?button1@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@Z
@@ -73,12 +75,12 @@ public:
     operator=(class ScriptModuleMinecraftServerUI::ScriptMessageFormData&&);
 
     // symbol:
-    // ?show@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$Result@V?$Promise@V?$StrongTypedObjectHandle@VScriptMessageFormResponse@ScriptModuleMinecraftServerUI@@@Scripting@@VScriptFormRejectError@ScriptModuleMinecraftServerUI@@X@Scripting@@$$V@Scripting@@AEBVWeakLifetimeScope@4@AEAVScriptObjectFactory@4@AEAVDependencyLocator@4@AEAVScriptPlayer@ScriptModuleMinecraft@@@Z
+    // ?show@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$Result@V?$Promise@V?$StrongTypedObjectHandle@VScriptMessageFormResponse@ScriptModuleMinecraftServerUI@@@Scripting@@VScriptFormRejectError@ScriptModuleMinecraftServerUI@@X@Scripting@@$$V@Scripting@@AEBUContextConfig@4@AEAVScriptObjectFactory@4@AEAVDependencyLocator@4@AEAVScriptPlayer@ScriptModuleMinecraft@@@Z
     MCAPI class Scripting::Result<class Scripting::Promise<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormResponse>,
         class ScriptModuleMinecraftServerUI::ScriptFormRejectError,
         void>>
-    show(class Scripting::WeakLifetimeScope const&, class Scripting::ScriptObjectFactory&, class Scripting::DependencyLocator&, class ScriptModuleMinecraft::ScriptPlayer&);
+    show(struct Scripting::ContextConfig const&, class Scripting::ScriptObjectFactory&, class Scripting::DependencyLocator&, class ScriptModuleMinecraft::ScriptPlayer&);
 
     // symbol:
     // ?title@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@Z
@@ -90,10 +92,21 @@ public:
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
     titleV010(std::string const&);
 
+    // symbol: ??1ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA@XZ
+    MCAPI ~ScriptMessageFormData();
+
     // symbol:
     // ?bind@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@SA?AV?$ClassBindingBuilder@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@XZ
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
     bind();
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol:
+    // ?_buildJson@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@AEBA?AV?$Result@VValue@Json@@$$V@Scripting@@AEAVPlayer@@W4CurrentCmdVersion@@@Z
+    MCAPI class Scripting::Result<class Json::Value> _buildJson(class Player&, ::CurrentCmdVersion) const;
 
     // NOLINTEND
 };

@@ -30,17 +30,32 @@ public:
     // vIndex: 0, symbol: __gen_??1DecoratedPotBlock@@UEAA@XZ
     virtual ~DecoratedPotBlock() = default;
 
-    // vIndex: 22, symbol: __unk_vfn_22
-    virtual void __unk_vfn_22();
+    // vIndex: 17, symbol: ?onProjectileHit@DecoratedPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
+    virtual void onProjectileHit(class BlockSource&, class BlockPos const&, class Actor const&) const;
 
-    // vIndex: 25, symbol: ?canProvideSupport@DecoratedPotBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+    // vIndex: 20, symbol: __unk_vfn_20
+    virtual void __unk_vfn_20();
+
+    // vIndex: 23, symbol: ?canProvideSupport@DecoratedPotBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
     virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+
+    // vIndex: 27, symbol: __unk_vfn_27
+    virtual void __unk_vfn_27();
+
+    // vIndex: 28, symbol: __unk_vfn_28
+    virtual void __unk_vfn_28();
+
+    // vIndex: 29, symbol: __unk_vfn_29
+    virtual void __unk_vfn_29();
+
+    // vIndex: 30, symbol: __unk_vfn_30
+    virtual void __unk_vfn_30();
 
     // vIndex: 31, symbol: __unk_vfn_31
     virtual void __unk_vfn_31();
 
-    // vIndex: 32, symbol: __unk_vfn_32
-    virtual void __unk_vfn_32();
+    // vIndex: 33, symbol: __unk_vfn_33
+    virtual void __unk_vfn_33();
 
     // vIndex: 34, symbol: __unk_vfn_34
     virtual void __unk_vfn_34();
@@ -51,11 +66,11 @@ public:
     // vIndex: 36, symbol: __unk_vfn_36
     virtual void __unk_vfn_36();
 
+    // vIndex: 37, symbol: __unk_vfn_37
+    virtual void __unk_vfn_37();
+
     // vIndex: 38, symbol: __unk_vfn_38
     virtual void __unk_vfn_38();
-
-    // vIndex: 39, symbol: __unk_vfn_39
-    virtual void __unk_vfn_39();
 
     // vIndex: 40, symbol: __unk_vfn_40
     virtual void __unk_vfn_40();
@@ -72,108 +87,93 @@ public:
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44();
 
-    // vIndex: 46, symbol: __unk_vfn_46
-    virtual void __unk_vfn_46();
-
-    // vIndex: 47, symbol: __unk_vfn_47
-    virtual void __unk_vfn_47();
+    // vIndex: 45, symbol: __unk_vfn_45
+    virtual void __unk_vfn_45();
 
     // vIndex: 48, symbol: __unk_vfn_48
     virtual void __unk_vfn_48();
 
-    // vIndex: 49, symbol: __unk_vfn_49
-    virtual void __unk_vfn_49();
-
-    // vIndex: 50, symbol: __unk_vfn_50
-    virtual void __unk_vfn_50();
-
-    // vIndex: 51, symbol: __unk_vfn_51
-    virtual void __unk_vfn_51();
+    // vIndex: 54, symbol: __unk_vfn_54
+    virtual void __unk_vfn_54();
 
     // vIndex: 55, symbol: __unk_vfn_55
     virtual void __unk_vfn_55();
 
-    // vIndex: 61, symbol: __unk_vfn_61
-    virtual void __unk_vfn_61();
-
-    // vIndex: 62, symbol: __unk_vfn_62
-    virtual void __unk_vfn_62();
-
-    // vIndex: 63, symbol: ?canContainLiquid@DecoratedPotBlock@@UEBA_NXZ
+    // vIndex: 56, symbol: ?canContainLiquid@DecoratedPotBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 70, symbol: ?checkIsPathable@DecoratedPotBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+    // vIndex: 61, symbol: ?checkIsPathable@DecoratedPotBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 76, symbol: __unk_vfn_76
-    virtual void __unk_vfn_76();
+    // vIndex: 67, symbol: __unk_vfn_67
+    virtual void __unk_vfn_67();
 
-    // vIndex: 83, symbol: __unk_vfn_83
-    virtual void __unk_vfn_83();
+    // vIndex: 74, symbol: __unk_vfn_74
+    virtual void __unk_vfn_74();
 
-    // vIndex: 102, symbol: ?playerWillDestroy@DecoratedPotBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
+    // vIndex: 94, symbol: ?playerWillDestroy@DecoratedPotBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
+    virtual class Block const* playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 103, symbol:
+    // vIndex: 95, symbol:
     // ?spawnResources@DecoratedPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
     spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
         const;
 
-    // vIndex: 104, symbol: ?asItemInstance@DecoratedPotBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
+    // vIndex: 96, symbol: ?asItemInstance@DecoratedPotBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 105, symbol:
+    // vIndex: 97, symbol:
     // ?trySpawnResourcesOnExplosion@DecoratedPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@M@Z
     virtual void
     trySpawnResourcesOnExplosion(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, float)
         const;
 
-    // vIndex: 106, symbol: __unk_vfn_106
-    virtual void __unk_vfn_106();
+    // vIndex: 109, symbol: __unk_vfn_109
+    virtual void __unk_vfn_109();
 
-    // vIndex: 122, symbol: __unk_vfn_122
-    virtual void __unk_vfn_122();
+    // vIndex: 110, symbol: __unk_vfn_110
+    virtual void __unk_vfn_110();
 
-    // vIndex: 123, symbol: __unk_vfn_123
-    virtual void __unk_vfn_123();
+    // vIndex: 111, symbol: __unk_vfn_111
+    virtual void __unk_vfn_111();
 
-    // vIndex: 124, symbol: __unk_vfn_124
-    virtual void __unk_vfn_124();
+    // vIndex: 112, symbol: ?getComparatorSignal@DecoratedPotBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uchar) const;
 
-    // vIndex: 127, symbol: __unk_vfn_127
-    virtual void __unk_vfn_127();
+    // vIndex: 114, symbol: __unk_vfn_114
+    virtual void __unk_vfn_114();
 
-    // vIndex: 130, symbol: __unk_vfn_130
-    virtual void __unk_vfn_130();
+    // vIndex: 117, symbol: __unk_vfn_117
+    virtual void __unk_vfn_117();
 
-    // vIndex: 153, symbol: __unk_vfn_153
-    virtual void __unk_vfn_153();
+    // vIndex: 138, symbol: __unk_vfn_138
+    virtual void __unk_vfn_138();
 
-    // vIndex: 162, symbol: __unk_vfn_162
-    virtual void __unk_vfn_162();
+    // vIndex: 144, symbol: ?onRemove@DecoratedPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 163, symbol: __unk_vfn_163
-    virtual void __unk_vfn_163();
+    // vIndex: 149, symbol: __unk_vfn_149
+    virtual void __unk_vfn_149();
 
-    // vIndex: 164, symbol: __unk_vfn_164
-    virtual void __unk_vfn_164();
+    // vIndex: 152, symbol: __unk_vfn_152
+    virtual void __unk_vfn_152();
 
-    // vIndex: 167, symbol: __unk_vfn_167
-    virtual void __unk_vfn_167();
+    // vIndex: 154, symbol: ?use@DecoratedPotBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    virtual bool use(class Player&, class BlockPos const&, uchar) const;
 
-    // vIndex: 171, symbol: __unk_vfn_171
-    virtual void __unk_vfn_171();
+    // vIndex: 155, symbol: __unk_vfn_155
+    virtual void __unk_vfn_155();
 
-    // vIndex: 174, symbol: __unk_vfn_174
-    virtual void __unk_vfn_174();
-
-    // vIndex: 183, symbol: __unk_vfn_183
-    virtual void __unk_vfn_183();
-
-    // vIndex: 192, symbol:
+    // vIndex: 168, symbol:
     // ?getEntityResourceItem@DecoratedPotBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
     virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
+
+    // symbol: ?hasComparatorSignal@DecoratedPotBlock@@UEBA_NXZ
+    MCVAPI bool hasComparatorSignal() const;
+
+    // symbol: ?isInteractiveBlock@DecoratedPotBlock@@UEBA_NXZ
+    MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0DecoratedPotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI DecoratedPotBlock(std::string const&, int);
@@ -183,9 +183,14 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol:
-    // ?_addUserDataToItemInstance@DecoratedPotBlock@@AEBAXV?$not_null@PEBVDecoratedPotBlockActor@@@gsl@@AEAVItemInstance@@@Z
+    // ?_shatter@DecoratedPotBlock@@AEBAXAEAVLevel@@AEAVBlockSource@@AEBVBlockPos@@AEBVDecoratedPotBlockActor@@@Z
     MCAPI void
-    _addUserDataToItemInstance(gsl::not_null<class DecoratedPotBlockActor const*>, class ItemInstance&) const;
+    _shatter(class Level&, class BlockSource&, class BlockPos const&, class DecoratedPotBlockActor const&) const;
+
+    // symbol:
+    // ?_addUserDataToItemInstance@DecoratedPotBlock@@CAXV?$not_null@PEBVDecoratedPotBlockActor@@@gsl@@AEAVItemInstance@@@Z
+    MCAPI static void
+    _addUserDataToItemInstance(gsl::not_null<class DecoratedPotBlockActor const*>, class ItemInstance&);
 
     // NOLINTEND
 };

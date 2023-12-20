@@ -71,6 +71,10 @@ namespace Social::Events { class EventManager; }
 namespace Social::Events { class IEventListener; }
 namespace Social::Events { class PlayerTelemetry; }
 namespace Social::Events { class Property; }
+namespace Social::Events { class RealtimeRoute; }
+namespace Social::Events { class ScreenFlow; }
+namespace Social::eventData { class PersonaOfferClickedData; }
+namespace Social::eventData { class StoreOfferClickedData; }
 namespace Webview { struct TelemetryCommonProperties; }
 namespace librarySearch { struct TelemetryData; }
 namespace mce { class UUID; }
@@ -387,6 +391,10 @@ public:
     // ?fireEventEmptyLibraryCategoryError@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireEventEmptyLibraryCategoryError(std::string const&) const;
 
+    // symbol:
+    // ?fireEventEncyclopediaTopicChanged@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4InputMode@@@Z
+    MCVAPI void fireEventEncyclopediaTopicChanged(std::string const&, ::InputMode);
+
     // symbol: ?fireEventEntitlementCacheLoadTimeout@MinecraftEventing@@UEAAXXZ
     MCVAPI void fireEventEntitlementCacheLoadTimeout();
 
@@ -402,16 +410,16 @@ public:
     MCVAPI void fireEventFeedbackSubmitted(std::string const&, bool, bool);
 
     // symbol:
+    // ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAX_N0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    MCVAPI void fireEventGameRulesUpdated(bool, bool, std::string const&);
+
+    // symbol:
     // ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXMMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireEventGameRulesUpdated(float, float, std::string const&);
 
     // symbol:
     // ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireEventGameRulesUpdated(int, int, std::string const&);
-
-    // symbol:
-    // ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAX_N0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireEventGameRulesUpdated(bool, bool, std::string const&);
 
     // symbol: ?fireEventGoogleAccountHoldWarning@MinecraftEventing@@UEAAX_N@Z
     MCVAPI void fireEventGoogleAccountHoldWarning(bool);
@@ -570,9 +578,18 @@ public:
     MCVAPI void fireEventPackUpgradeAttempt(class PackManifest const&, class PackReport const&);
 
     // symbol:
-    // ?fireEventPacketViolationDetected@MinecraftEventing@@UEAAX_KV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@@Z
-    MCVAPI void
-    fireEventPacketViolationDetected(uint64, std::string, ::PacketViolationResponse, ::MinecraftPacketIds, class NetworkIdentifier const&);
+    // ?fireEventPacketViolationDetected@MinecraftEventing@@UEAAX_KV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@IW4SubClientId@@5I@Z
+    MCVAPI void fireEventPacketViolationDetected(
+        uint64,
+        std::string,
+        ::PacketViolationResponse,
+        ::MinecraftPacketIds,
+        class NetworkIdentifier const&,
+        uint,
+        ::SubClientId,
+        ::SubClientId,
+        uint
+    );
 
     // symbol: ?fireEventPerformanceContext@MinecraftEventing@@UEAAXAEBVPerfContextTrackerReport@@@Z
     MCVAPI void fireEventPerformanceContext(class PerfContextTrackerReport const&);
@@ -627,6 +644,9 @@ public:
 
     // symbol: ?fireEventPersonaLoadingPieces@MinecraftEventing@@UEAAXIN@Z
     MCVAPI void fireEventPersonaLoadingPieces(uint, double);
+
+    // symbol: ?fireEventPersonaOfferClicked@MinecraftEventing@@UEAAXAEBVPersonaOfferClickedData@eventData@Social@@@Z
+    MCVAPI void fireEventPersonaOfferClicked(class Social::eventData::PersonaOfferClickedData const&);
 
     // symbol:
     // ?fireEventPersonaSkinChanged@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
@@ -972,10 +992,12 @@ public:
     // symbol: ?fireEventStoreLocalizationBinaryFetchResponse@MinecraftEventing@@UEAAXHI@Z
     MCVAPI void fireEventStoreLocalizationBinaryFetchResponse(int, uint);
 
+    // symbol: ?fireEventStoreOfferClicked@MinecraftEventing@@UEAAXAEBVStoreOfferClickedData@eventData@Social@@@Z
+    MCVAPI void fireEventStoreOfferClicked(class Social::eventData::StoreOfferClickedData const&);
+
     // symbol:
-    // ?fireEventStoreOfferClicked@MinecraftEventing@@UEAAXHHHHHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NH0@Z
-    MCVAPI void
-    fireEventStoreOfferClicked(int, int, int, int, int, int, std::string const&, std::string const&, bool, int, std::string const&);
+    // ?fireEventStoreOfferClicked@MinecraftEventing@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+    MCVAPI void fireEventStoreOfferClicked(std::string, std::string const&);
 
     // symbol: ?fireEventStorePlayFabRequestResponse@MinecraftEventing@@UEAAXG@Z
     MCVAPI void fireEventStorePlayFabRequestResponse(ushort);
@@ -1038,9 +1060,22 @@ public:
     MCVAPI void fireEventTrialDeviceIdCorrelation(int64, std::string const&, int64, std::string const&);
 
     // symbol:
-    // ?fireEventUgcAcquisitionStateChanged@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_KN_NH2H00@Z
-    MCVAPI void
-    fireEventUgcAcquisitionStateChanged(std::string const&, uint64, double, bool, int, bool, int, std::string const&, std::string const&);
+    // ?fireEventUgcAcquisitionStateChanged@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_KN_NH2H00H@Z
+    MCVAPI void fireEventUgcAcquisitionStateChanged(
+        std::string const&,
+        uint64,
+        double,
+        bool,
+        int,
+        bool,
+        int,
+        std::string const&,
+        std::string const&,
+        int
+    );
+
+    // symbol: ?fireEventUnfulfilledPurchaseFound@MinecraftEventing@@UEAAXAEAUPlatformOfferPurchaseDetails@@@Z
+    MCVAPI void fireEventUnfulfilledPurchaseFound(struct PlatformOfferPurchaseDetails&);
 
     // symbol: ?fireEventUnknownBlockReceived@MinecraftEventing@@UEAAXAEBUNewBlockID@@G@Z
     MCVAPI void fireEventUnknownBlockReceived(struct NewBlockID const&, ushort);
@@ -1234,17 +1269,18 @@ public:
     MCVAPI void fireServerConnectionAttemptEvent(std::string const&, bool, std::string const&);
 
     // symbol:
-    // ?fireServerConnectionEvent@MinecraftEventing@@UEAAXW4ServerConnectionOutcome@IConnectionEventing@@INAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // ?fireServerConnectionEvent@MinecraftEventing@@UEAAXW4ServerConnectionOutcome@IConnectionEventing@@INAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
     MCVAPI void
-    fireServerConnectionEvent(::IConnectionEventing::ServerConnectionOutcome, uint, double, std::string const&);
+    fireServerConnectionEvent(::IConnectionEventing::ServerConnectionOutcome, uint, double, std::string const&, std::string const&);
 
     // symbol:
     // ?fireServerShutdown@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void fireServerShutdown(std::string const&);
 
     // symbol:
-    // ?fireServerStarted@MinecraftEventing@@UEAAXW4ServerType@IMinecraftEventing@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void fireServerStarted(::IMinecraftEventing::ServerType, std::string const&);
+    // ?fireServerStarted@MinecraftEventing@@UEAAXW4ServerType@IMinecraftEventing@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@5@@Z
+    MCVAPI void
+    fireServerStarted(::IMinecraftEventing::ServerType, std::string const&, std::unordered_map<std::string, std::string> const&);
 
     // symbol:
     // ?fireShareButtonPressed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4EduShareUriType@@W4EduShareMethodType@@_N@Z
@@ -1509,6 +1545,12 @@ private:
     // ?mPlayerTelemetry@MinecraftEventing@@0V?$unordered_map@IVPlayerTelemetry@Events@Social@@U?$hash@I@std@@U?$equal_to@I@5@V?$allocator@U?$pair@$$CBIVPlayerTelemetry@Events@Social@@@std@@@5@@std@@A
     MCAPI static std::unordered_map<uint, class Social::Events::PlayerTelemetry> mPlayerTelemetry;
 
+    // symbol: ?mRealtimeRoute@MinecraftEventing@@0VRealtimeRoute@Events@Social@@A
+    MCAPI static class Social::Events::RealtimeRoute mRealtimeRoute;
+
+    // symbol: ?mScreenFlow@MinecraftEventing@@0VScreenFlow@Events@Social@@A
+    MCAPI static class Social::Events::ScreenFlow mScreenFlow;
+
     // symbol:
     // ?mUseMethodMap@MinecraftEventing@@0V?$unordered_map@W4ItemUseMethod@@W4UseMethod@MinecraftEventing@@U?$hash@W4ItemUseMethod@@@std@@U?$equal_to@W4ItemUseMethod@@@5@V?$allocator@U?$pair@$$CBW4ItemUseMethod@@W4UseMethod@MinecraftEventing@@@std@@@5@@std@@B
     MCAPI static std::unordered_map<::ItemUseMethod, ::MinecraftEventing::UseMethod> const mUseMethodMap;
@@ -1532,6 +1574,10 @@ public:
     static auto& $mAcquisitionMethodMap() { return mAcquisitionMethodMap; }
 
     static auto& $mPlayerTelemetry() { return mPlayerTelemetry; }
+
+    static auto& $mRealtimeRoute() { return mRealtimeRoute; }
+
+    static auto& $mScreenFlow() { return mScreenFlow; }
 
     static auto& $mUseMethodMap() { return mUseMethodMap; }
 

@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class MovementScriptActorComponent; }
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -34,8 +35,9 @@ public:
     MCAPI class Scripting::Result<float> getStartSpeed() const;
 
     // symbol:
-    // ?bind@ScriptMovementGlideComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementGlideComponent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementGlideComponent> bind();
+    // ?bind@ScriptMovementGlideComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptMovementGlideComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementGlideComponent>
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol: ?ComponentId@ScriptMovementGlideComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;

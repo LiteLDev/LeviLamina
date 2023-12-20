@@ -7,21 +7,6 @@
 
 class PlayerInventory {
 public:
-    // PlayerInventory inner types declare
-    // clang-format off
-    struct SlotData;
-    // clang-format on
-
-    // PlayerInventory inner types define
-    struct SlotData {
-    public:
-        // prevent constructor by default
-        SlotData& operator=(SlotData const&);
-        SlotData(SlotData const&);
-        SlotData();
-    };
-
-public:
     // prevent constructor by default
     PlayerInventory& operator=(PlayerInventory const&);
     PlayerInventory(PlayerInventory const&);
@@ -99,8 +84,8 @@ public:
     // symbol: ?getSelectedItem@PlayerInventory@@QEAAAEBVItemStack@@XZ
     MCAPI class ItemStack const& getSelectedItem();
 
-    // symbol: ?getSelectedSlot@PlayerInventory@@QEBA?AUSlotData@1@XZ
-    MCAPI struct PlayerInventory::SlotData getSelectedSlot() const;
+    // symbol: ?getSelectedSlot@PlayerInventory@@QEBA?AUPlayerInventorySlotData@@XZ
+    MCAPI struct PlayerInventorySlotData getSelectedSlot() const;
 
     // symbol: ?getSlotWithItem@PlayerInventory@@QEBAHAEBVItemStack@@_N1@Z
     MCAPI int getSlotWithItem(class ItemStack const&, bool, bool) const;

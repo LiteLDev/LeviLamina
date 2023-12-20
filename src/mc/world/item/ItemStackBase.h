@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakPtr.h"
+#include "mc/deps/puv/UseAnimation.h"
 #include "mc/enums/ArmorSlot.h"
-#include "mc/enums/UseAnimation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -205,8 +205,8 @@ public:
     // symbol: ?getRequiredBaseGameVersion@ItemStackBase@@QEBAAEBVBaseGameVersion@@XZ
     MCAPI class BaseGameVersion const& getRequiredBaseGameVersion() const;
 
-    // symbol: ?getUseAnimation@ItemStackBase@@QEBA?AW4UseAnimation@@XZ
-    MCAPI ::UseAnimation getUseAnimation() const;
+    // symbol: ?getUseAnimation@ItemStackBase@@QEBA?AW4UseAnimation@Legacy@Puv@@XZ
+    MCAPI ::Puv::Legacy::UseAnimation getUseAnimation() const;
 
     // symbol: ?getUserData@ItemStackBase@@QEAAPEAVCompoundTag@@XZ
     MCAPI class CompoundTag* getUserData();
@@ -514,9 +514,6 @@ public:
     // ?_getHoverFormattingPrefix@ItemStackBase@@IEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string _getHoverFormattingPrefix() const;
 
-    // symbol: ?_setItem@ItemStackBase@@IEAA_NH_N@Z
-    MCAPI bool _setItem(int, bool);
-
     // symbol: ?init@ItemStackBase@@IEAAXAEBVBlockLegacy@@H@Z
     MCAPI void init(class BlockLegacy const&, int);
 
@@ -552,6 +549,9 @@ public:
 
     // symbol: ?_setChargedItem@ItemStackBase@@AEAAXAEBVItemInstance@@@Z
     MCAPI void _setChargedItem(class ItemInstance const&);
+
+    // symbol: ?_setItem@ItemStackBase@@AEAA_NH_N@Z
+    MCAPI bool _setItem(int, bool);
 
     // symbol: ?_updateCompareHashes@ItemStackBase@@AEAAXXZ
     MCAPI void _updateCompareHashes();

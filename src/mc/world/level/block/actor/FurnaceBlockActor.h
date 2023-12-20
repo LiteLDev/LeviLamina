@@ -154,9 +154,9 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol:
-    // ??0FurnaceBlockActor@@IEAA@W4BlockActorType@@AEBVBlockPos@@AEBVHashedString@@W4LevelSoundEvent@@W4ContainerType@@HAEBVBlock@@5@Z
+    // ??0FurnaceBlockActor@@IEAA@W4BlockActorType@@AEBVBlockPos@@AEBVHashedString@@W4LevelSoundEvent@Legacy@Puv@@W4ContainerType@@HAEBVBlock@@5@Z
     MCAPI
-    FurnaceBlockActor(::BlockActorType, class BlockPos const&, class HashedString const&, ::LevelSoundEvent, ::ContainerType, int, class Block const&, class Block const&);
+    FurnaceBlockActor(::BlockActorType, class BlockPos const&, class HashedString const&, ::Puv::Legacy::LevelSoundEvent, ::ContainerType, int, class Block const&, class Block const&);
 
     // NOLINTEND
 

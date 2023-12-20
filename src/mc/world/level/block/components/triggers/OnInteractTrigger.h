@@ -11,11 +11,8 @@ public:
 
 public:
     // NOLINTBEGIN
-    // vIndex: 0, symbol: ??1OnInteractTrigger@@UEAA@XZ
-    virtual ~OnInteractTrigger();
-
-    // symbol: ??0OnInteractTrigger@@QEAA@$$QEAV0@@Z
-    MCAPI OnInteractTrigger(class OnInteractTrigger&&);
+    // vIndex: 0, symbol: __gen_??1OnInteractTrigger@@UEAA@XZ
+    virtual ~OnInteractTrigger() = default;
 
     // NOLINTEND
 };

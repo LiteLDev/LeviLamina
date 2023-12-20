@@ -19,9 +19,6 @@ public:
     // symbol: ??0StructureEditorData@@QEAA@XZ
     MCAPI StructureEditorData();
 
-    // symbol: ??0StructureEditorData@@QEAA@$$QEAV0@@Z
-    MCAPI StructureEditorData(class StructureEditorData&&);
-
     // symbol: ??0StructureEditorData@@QEAA@AEBV0@@Z
     MCAPI StructureEditorData(class StructureEditorData const&);
 

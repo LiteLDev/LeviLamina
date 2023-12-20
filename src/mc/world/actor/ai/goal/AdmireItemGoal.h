@@ -38,9 +38,10 @@ public:
     // ?appendDebugInfo@AdmireItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const;
 
-    // symbol: ??0AdmireItemGoal@@QEAA@AEAVMob@@W4LevelSoundEvent@@UFloatRange@@AEBVActorDefinitionTrigger@@3@Z
+    // symbol:
+    // ??0AdmireItemGoal@@QEAA@AEAVMob@@W4LevelSoundEvent@Legacy@Puv@@UFloatRange@@AEBVActorDefinitionTrigger@@3@Z
     MCAPI
-    AdmireItemGoal(class Mob&, ::LevelSoundEvent, struct FloatRange, class ActorDefinitionTrigger const&, class ActorDefinitionTrigger const&);
+    AdmireItemGoal(class Mob&, ::Puv::Legacy::LevelSoundEvent, struct FloatRange, class ActorDefinitionTrigger const&, class ActorDefinitionTrigger const&);
 
     // NOLINTEND
 

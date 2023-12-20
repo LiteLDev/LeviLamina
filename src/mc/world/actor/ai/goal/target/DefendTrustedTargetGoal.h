@@ -30,9 +30,9 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol:
-    // ??0DefendTrustedTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MH_NHW4LevelSoundEvent@@AEBVActorDefinitionTrigger@@@Z
+    // ??0DefendTrustedTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MH_NHW4LevelSoundEvent@Legacy@Puv@@AEBVActorDefinitionTrigger@@@Z
     MCAPI
-    DefendTrustedTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, float, int, bool, int, ::LevelSoundEvent, class ActorDefinitionTrigger const&);
+    DefendTrustedTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, float, int, bool, int, ::Puv::Legacy::LevelSoundEvent, class ActorDefinitionTrigger const&);
 
     // NOLINTEND
 

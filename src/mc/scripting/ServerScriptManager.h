@@ -34,8 +34,9 @@ public:
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
 
-    // vIndex: 4, symbol: __unk_vfn_4
-    virtual void __unk_vfn_4();
+    // vIndex: 4, symbol:
+    // ?onServerLevelInitialized@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@AEAVLevel@@@Z
+    virtual ::EventResult onServerLevelInitialized(class ServerInstance&, class Level&);
 
     // vIndex: 5, symbol: ?onServerUpdateStart@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
     virtual ::EventResult onServerUpdateStart(class ServerInstance&);
@@ -66,9 +67,6 @@ public:
     // ?onEvent@?$EventListenerDispatcher@VServerInstanceEventListener@@@@MEAA?AW4EventResult@@AEBUServerInstanceNotificationEvent@@@Z
     virtual ::EventResult onEvent(struct ServerInstanceNotificationEvent const&);
 
-    // symbol: ?onServerLevelInitialized@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@AEAVLevel@@@Z
-    MCVAPI ::EventResult onServerLevelInitialized(class ServerInstance&, class Level&);
-
     // symbol:
     // ??0ServerScriptManager@@QEAA@UScriptSettings@@V?$NonOwnerPointer@VScheduler@@@Bedrock@@AEAVIMinecraftEventing@@_N@Z
     MCAPI ServerScriptManager(
@@ -97,8 +95,8 @@ public:
 
     // private:
     // NOLINTBEGIN
-    // symbol: ?_loadAndRunAllPlugins@ServerScriptManager@@AEAA_NAEAVServerInstance@@AEAVServerLevel@@@Z
-    MCAPI bool _loadAndRunAllPlugins(class ServerInstance&, class ServerLevel&);
+    // symbol: ?_loadAndRunAllPlugins@ServerScriptManager@@AEAA_NAEAVServerInstance@@AEAVServerLevel@@_N@Z
+    MCAPI bool _loadAndRunAllPlugins(class ServerInstance&, class ServerLevel&, bool);
 
     // symbol: ?_registerEventHandlers@ServerScriptManager@@AEBAXAEAVLevel@@@Z
     MCAPI void _registerEventHandlers(class Level&) const;

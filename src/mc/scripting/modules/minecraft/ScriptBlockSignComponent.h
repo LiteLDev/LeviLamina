@@ -15,6 +15,7 @@
 class BlockPos;
 class BlockSource;
 namespace ScriptModuleMinecraft { class BaseScriptBlockComponent; }
+namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptRawTextInterface; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -68,8 +69,9 @@ public:
     MCAPI class Scripting::Result<void> setWaxed();
 
     // symbol:
-    // ?bind@ScriptBlockSignComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockSignComponent@ScriptModuleMinecraft@@@Scripting@@XZ
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockSignComponent> bind();
+    // ?bind@ScriptBlockSignComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockSignComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockSignComponent>
+    bind(class ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&);
 
     // symbol:
     // ?tryCreate@ScriptBlockSignComponent@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptBlockSignComponent@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z

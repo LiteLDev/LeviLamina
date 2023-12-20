@@ -25,8 +25,23 @@ public:
     // ?readLongString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string readLongString();
 
+    // vIndex: 3, symbol: ?readFloat@BytesDataInput@@UEAAMXZ
+    virtual float readFloat();
+
+    // vIndex: 4, symbol: ?readDouble@BytesDataInput@@UEAANXZ
+    virtual double readDouble();
+
     // vIndex: 5, symbol: ?readByte@BytesDataInput@@UEAADXZ
     virtual char readByte();
+
+    // vIndex: 6, symbol: ?readShort@BytesDataInput@@UEAAFXZ
+    virtual short readShort();
+
+    // vIndex: 7, symbol: ?readInt@BytesDataInput@@UEAAHXZ
+    virtual int readInt();
+
+    // vIndex: 8, symbol: ?readLongLong@BytesDataInput@@UEAA_JXZ
+    virtual int64 readLongLong();
 
     // NOLINTEND
 };

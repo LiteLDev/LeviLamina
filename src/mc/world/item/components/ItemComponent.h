@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/IItemComponentLegacyFactoryData.h"
+#include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,14 +46,11 @@ public:
     // vIndex: 8, symbol: ?_useOn@ItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
     virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
 
-    // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEBAXXZ
-    virtual void _initializeComponent() const;
+    // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
+    virtual void _initializeComponent();
 
     // symbol: ??0ItemComponent@@QEAA@XZ
     MCAPI ItemComponent();
-
-    // symbol: ?bindItemComponentType@ItemComponent@@SAXAEAUReflectionCtx@cereal@@@Z
-    MCAPI static void bindItemComponentType(struct cereal::ReflectionCtx&);
 
     // NOLINTEND
 };

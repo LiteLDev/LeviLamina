@@ -120,6 +120,10 @@ public:
     MCAPI class LevelChunk::Neighbors _getChunkNeighbors(class ChunkPos, DimensionType);
 
     // symbol:
+    // ?_getEntityDigestKey@DBChunkStorage@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
+    MCAPI std::string _getEntityDigestKey(std::string_view) const;
+
+    // symbol:
     // ?_getLevelChunkFormat@DBChunkStorage@@AEAA?AV?$optional@W4LevelChunkFormat@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCAPI std::optional<::LevelChunkFormat> _getLevelChunkFormat(std::string_view, std::string&);
 

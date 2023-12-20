@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/Optional.h"
 #include "mc/common/wrapper/ViewT.h"
-#include "mc/entity/EntityModifierT.h"
+#include "mc/entity/EntityModifier.h"
 #include "mc/world/components/FlagComponent.h"
 
 class FinalizeMoveSystem {
@@ -21,8 +21,9 @@ public:
     MCAPI static struct TickingSystemWithInfo create();
 
     // symbol:
-    // ?tick@FinalizeMoveSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUAABBShapeComponent@@$$CBUMoveRequestComponent@@$$CBUOffsetsComponent@@UStateVectorComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$Optional@$$CBUAbilitiesComponent@@@@V?$Optional@USlideOffsetComponent@@@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UOnGroundFlag@@@@V?$FlagComponent@UCollisionFlag@@@@V?$FlagComponent@UHorizontalCollisionFlag@@@@V?$FlagComponent@UVerticalCollisionFlag@@@@V?$FlagComponent@UCollidableMobNearFlag@@@@@@@Z
-    MCAPI static void tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct AABBShapeComponent const, struct MoveRequestComponent const, struct OffsetsComponent const, struct StateVectorComponent, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct AbilitiesComponent const>, class Optional<struct SlideOffsetComponent>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct OnGroundFlag>, class FlagComponent<struct CollisionFlag>, class FlagComponent<struct HorizontalCollisionFlag>, class FlagComponent<struct VerticalCollisionFlag>, class FlagComponent<struct CollidableMobNearFlag>>);
+    // ?tick@FinalizeMoveSystem@@SAXV?$ViewT@VStrictEntityContext@@$$CBUAABBShapeComponent@@$$CBUMoveRequestComponent@@$$CBUOffsetsComponent@@UStateVectorComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$Optional@$$CBUAbilitiesComponent@@@@V?$Optional@USlideOffsetComponent@@@@@@V?$EntityModifier@V?$FlagComponent@UOnGroundFlag@@@@V?$FlagComponent@UCollisionFlag@@@@V?$FlagComponent@UHorizontalCollisionFlag@@@@V?$FlagComponent@UVerticalCollisionFlag@@@@V?$FlagComponent@UCollidableMobNearFlag@@@@@@@Z
+    MCAPI static void
+        tick(class ViewT<class StrictEntityContext, struct AABBShapeComponent const, struct MoveRequestComponent const, struct OffsetsComponent const, struct StateVectorComponent, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct AbilitiesComponent const>, class Optional<struct SlideOffsetComponent>>, class EntityModifier<class FlagComponent<struct OnGroundFlag>, class FlagComponent<struct CollisionFlag>, class FlagComponent<struct HorizontalCollisionFlag>, class FlagComponent<struct VerticalCollisionFlag>, class FlagComponent<struct CollidableMobNearFlag>>);
 
     // NOLINTEND
 };

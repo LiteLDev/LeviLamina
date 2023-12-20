@@ -24,8 +24,8 @@ public:
     // vIndex: 2, symbol: ?serialize@StructureAnimationAction@@UEAAXAEAVCompoundTag@@@Z
     virtual void serialize(class CompoundTag&);
 
-    // vIndex: 3, symbol: ??8StructureAnimationAction@@UEBA_NAEAVIRequestAction@@@Z
-    virtual bool operator==(class IRequestAction&) const;
+    // vIndex: 3, symbol: ??8StructureAnimationAction@@UEBA_NAEBVIRequestAction@@@Z
+    virtual bool operator==(class IRequestAction const&) const;
 
     // symbol:
     // ??0StructureAnimationAction@@QEAA@V?$unique_ptr@VStructureAnimationData@@U?$default_delete@VStructureAnimationData@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z

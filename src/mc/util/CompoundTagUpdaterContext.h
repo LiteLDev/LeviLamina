@@ -16,8 +16,8 @@ public:
     // symbol: ??0CompoundTagUpdaterContext@@QEAA@XZ
     MCAPI CompoundTagUpdaterContext();
 
-    // symbol: ?addUpdater@CompoundTagUpdaterContext@@QEAA?AVCompoundTagUpdaterBuilder@@EEE@Z
-    MCAPI class CompoundTagUpdaterBuilder addUpdater(uchar, uchar, uchar);
+    // symbol: ?addUpdater@CompoundTagUpdaterContext@@QEAA?AVCompoundTagUpdaterNodeBuilder@@EEE@Z
+    MCAPI class CompoundTagUpdaterNodeBuilder addUpdater(uchar, uchar, uchar);
 
     // symbol: ?sortUpdaters@CompoundTagUpdaterContext@@QEAAXXZ
     MCAPI void sortUpdaters();

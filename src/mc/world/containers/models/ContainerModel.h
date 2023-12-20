@@ -78,13 +78,19 @@ public:
     // vIndex: 19, symbol: __unk_vfn_19
     virtual void __unk_vfn_19();
 
-    // vIndex: 20, symbol: ?_getContainer@ContainerModel@@MEBAPEAVContainer@@XZ
+    // vIndex: 20, symbol: ?isSlotDisabled@ContainerModel@@UEBA_NH@Z
+    virtual bool isSlotDisabled(int) const;
+
+    // vIndex: 21, symbol: ?_getContainer@ContainerModel@@MEBAPEAVContainer@@XZ
     virtual class Container* _getContainer() const;
 
-    // vIndex: 21, symbol: ?_getContainerOffset@ContainerModel@@MEBAHXZ
+    // vIndex: 22, symbol: ?_getContainerOffset@ContainerModel@@MEBAHXZ
     virtual int _getContainerOffset() const;
 
-    // vIndex: 22, symbol: ?_onItemChanged@ContainerModel@@MEAAXHAEBVItemStack@@0@Z
+    // vIndex: 23, symbol: ?_init@ContainerModel@@MEAAXXZ
+    virtual void _init();
+
+    // vIndex: 24, symbol: ?_onItemChanged@ContainerModel@@MEAAXHAEBVItemStack@@0@Z
     virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
 
     // symbol: ?isExpanableItemFiltered@ContainerModel@@UEBA_NH@Z
@@ -134,13 +140,6 @@ public:
 
     // symbol: ?setClientUIContainer@ContainerModel@@QEAAXPEAVSparseContainerClient@@@Z
     MCAPI void setClientUIContainer(class SparseContainerClient*);
-
-    // NOLINTEND
-
-    // protected:
-    // NOLINTBEGIN
-    // symbol: ?_init@ContainerModel@@IEAAXXZ
-    MCAPI void _init();
 
     // NOLINTEND
 

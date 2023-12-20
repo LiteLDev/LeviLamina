@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace RakNet { struct RakNetGUID; }
+// clang-format on
+
 class NetworkIdentifier {
 public:
     // prevent constructor by default
@@ -13,11 +18,17 @@ public:
     // symbol: ??0NetworkIdentifier@@QEAA@XZ
     MCAPI NetworkIdentifier();
 
+    // symbol: ??0NetworkIdentifier@@QEAA@AEBURakNetGUID@RakNet@@@Z
+    MCAPI explicit NetworkIdentifier(struct RakNet::RakNetGUID const&);
+
     // symbol: ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in@@@Z
     MCAPI explicit NetworkIdentifier(struct sockaddr_in const&);
 
     // symbol: ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in6@@@Z
     MCAPI explicit NetworkIdentifier(struct sockaddr_in6 const&);
+
+    // symbol: ??0NetworkIdentifier@@QEAA@_K@Z
+    MCAPI explicit NetworkIdentifier(uint64);
 
     // symbol: ?getAddress@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getAddress() const;
@@ -37,6 +48,14 @@ public:
 
     // symbol: ?toString@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString() const;
+
+    // symbol:
+    // ?calculateCorrelationId@NetworkIdentifier@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBURakNetGUID@RakNet@@@Z
+    MCAPI static std::string calculateCorrelationId(struct RakNet::RakNetGUID const&);
+
+    // symbol:
+    // ?calculateCorrelationId@NetworkIdentifier@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z
+    MCAPI static std::string calculateCorrelationId(uint64);
 
     // symbol: ?hyphenateId@NetworkIdentifier@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z
     MCAPI static std::string hyphenateId(uint64);

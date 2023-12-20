@@ -40,9 +40,9 @@ public:
     virtual void appendDebugInfo(std::string&) const;
 
     // symbol:
-    // ??0PanicGoal@@QEAA@AEAVMob@@M_NW4LevelSoundEvent@@UFloatRange@@11V?$vector@W4ActorDamageCause@@V?$allocator@W4ActorDamageCause@@@std@@@std@@@Z
+    // ??0PanicGoal@@QEAA@AEAVMob@@M_NW4LevelSoundEvent@Legacy@Puv@@UFloatRange@@11V?$vector@W4ActorDamageCause@@V?$allocator@W4ActorDamageCause@@@std@@@std@@@Z
     MCAPI
-    PanicGoal(class Mob&, float, bool, ::LevelSoundEvent, struct FloatRange, bool, bool, std::vector<::ActorDamageCause>);
+    PanicGoal(class Mob&, float, bool, ::Puv::Legacy::LevelSoundEvent, struct FloatRange, bool, bool, std::vector<::ActorDamageCause>);
 
     // NOLINTEND
 

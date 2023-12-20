@@ -7,16 +7,36 @@
 #include "mc/deps/cereal/internal/ResultCode.h"
 #include "mc/deps/puv/CerealUpgraderBase.h"
 #include "mc/deps/puv/Logger.h"
+#include "mc/deps/puv/v1_20_50/BlockDescriptor.h"
+#include "mc/deps/puv/v1_20_50/RepairableItemComponent.h"
+#include "mc/deps/puv/v1_20_50/ShooterItemComponent.h"
+#include "mc/events/LevelSoundEvent.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Puv { class IntRangeConstraint; }
 namespace Puv { class LoadResultAny; }
 namespace Puv { class ParserBase; }
 namespace Puv { class Upgrader; }
 namespace Puv { struct Logger; }
 namespace Puv::internal { struct PathElement; }
-namespace Puv::v1_20_50::BlockDescriptor { struct Compound; }
+namespace Puv::v1_20_50 { struct BlockDescriptor; }
+namespace Puv::v1_20_50 { struct ComponentItemComponentData; }
+namespace Puv::v1_20_50 { struct CooldownItemComponent; }
+namespace Puv::v1_20_50 { struct DiggerItemComponent; }
+namespace Puv::v1_20_50 { struct EnchantableItemComponent; }
+namespace Puv::v1_20_50 { struct EntityPlacerItemComponent; }
+namespace Puv::v1_20_50 { struct FoodItemComponent; }
+namespace Puv::v1_20_50 { struct InteractButtonItemComponent; }
+namespace Puv::v1_20_50 { struct PlanterItemComponent; }
+namespace Puv::v1_20_50 { struct ProjectileItemComponent; }
+namespace Puv::v1_20_50 { struct ShooterItemComponent; }
+namespace Puv::v1_20_50::BlockDescriptorSerializer { struct BlockDescriptorProxy; }
+namespace cereal { class Constraint; }
+namespace cereal { class NumericConstraint; }
+namespace cereal { class SerializerContext; }
 namespace cereal { struct ReflectionCtx; }
+namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace Puv {

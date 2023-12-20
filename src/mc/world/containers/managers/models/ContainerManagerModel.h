@@ -53,7 +53,7 @@ public:
     // vIndex: 16, symbol: ?isValid@ContainerManagerModel@@UEAA_NM@Z
     virtual bool isValid(float);
 
-    // vIndex: 17, symbol: ?_postInit@AnvilContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+    // vIndex: 17, symbol: ?_postInit@FurnaceContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
     virtual class ContainerScreenContext _postInit() = 0;
 
     // symbol: ??0ContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z

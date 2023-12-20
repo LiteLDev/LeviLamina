@@ -50,8 +50,5 @@ public:
     // symbol: ?setBlendTransitionTime@ActorAnimationControllerState@@QEAAXM@Z
     MCAPI void setBlendTransitionTime(float);
 
-    // symbol: ?setVariables@ActorAnimationControllerState@@QEBAXAEAVRenderParams@@@Z
-    MCAPI void setVariables(class RenderParams&) const;
-
     // NOLINTEND
 };

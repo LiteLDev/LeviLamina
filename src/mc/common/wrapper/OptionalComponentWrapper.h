@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <typename T0, typename T1>
+template <typename T0>
 class OptionalComponentWrapper {
 public:
     // prevent constructor by default

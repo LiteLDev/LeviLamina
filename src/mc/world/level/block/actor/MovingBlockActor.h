@@ -81,14 +81,18 @@ public:
     // symbol: ??0MovingBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit MovingBlockActor(class BlockPos const&);
 
-    // symbol: ?_validPistonPos@MovingBlockActor@@QEBA_NAEBVIConstBlockSource@@@Z
-    MCAPI bool _validPistonPos(class IConstBlockSource const&) const;
-
     // symbol: ?getDrawPos@MovingBlockActor@@QEBA?AVVec3@@AEBVIConstBlockSource@@M@Z
     MCAPI class Vec3 getDrawPos(class IConstBlockSource const&, float) const;
 
     // symbol: ?moveCollidedEntities@MovingBlockActor@@QEAAXAEAVPistonBlockActor@@AEAVBlockSource@@@Z
     MCAPI void moveCollidedEntities(class PistonBlockActor&, class BlockSource&);
+
+    // NOLINTEND
+
+    // private:
+    // NOLINTBEGIN
+    // symbol: ?_validPistonPos@MovingBlockActor@@AEBA_NAEBVIConstBlockSource@@@Z
+    MCAPI bool _validPistonPos(class IConstBlockSource const&) const;
 
     // NOLINTEND
 };

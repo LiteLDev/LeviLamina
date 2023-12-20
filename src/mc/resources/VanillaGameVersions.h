@@ -37,6 +37,9 @@ MCAPI extern class BaseGameVersion const RecipeUnlockingVersion;
 // symbol: ?SneakingHeightChangeVersion@VanillaGameVersions@@3VBaseGameVersion@@B
 MCAPI extern class BaseGameVersion const SneakingHeightChangeVersion;
 
+// symbol: ?Summer24UpdateVersion@VanillaGameVersions@@3VBaseGameVersion@@B
+MCAPI extern class BaseGameVersion const Summer24UpdateVersion;
+
 // symbol: ?TrailsAndTalesVersion@VanillaGameVersions@@3VBaseGameVersion@@B
 MCAPI extern class BaseGameVersion const TrailsAndTalesVersion;
 

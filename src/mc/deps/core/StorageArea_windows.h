@@ -104,8 +104,8 @@ public:
     // vIndex: 25, symbol: __unk_vfn_25
     virtual void __unk_vfn_25();
 
-    // vIndex: 26, symbol: ?setSaveDataIcon@FileStorageArea@Core@@UEAA?AVResult@2@AEBVPath@2@@Z
-    virtual class Core::Result setSaveDataIcon(class Core::Path const&);
+    // vIndex: 26, symbol: __unk_vfn_26
+    virtual void __unk_vfn_26();
 
     // vIndex: 27, symbol: ?shouldAllowCommit@FileStorageArea@Core@@UEBA_NXZ
     virtual bool shouldAllowCommit() const;
