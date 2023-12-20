@@ -2,6 +2,7 @@
 
 #include <utility>
 
+#include "ll/api/base/Meta.h"
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/entity/utilities/ActorDataIDs.h"
 #include "mc/enums/DataItemType.h"
@@ -12,24 +13,35 @@
 
 class DataItem {
 public:
+    using TypeList = ll::meta::TypeList<schar, short, int, float, std::string, CompoundTag, BlockPos, int64, Vec3>;
+
     ::DataItemType mType;
-    ushort         mId;
+    ::ActorDataIDs mId;
     bool           mDirty = true;
 
     template <typename T>
-    [[nodiscard]] inline optional_ref<T const> getData() const;
+        requires(DataItem::TypeList::contains<T>)
+    [[nodiscard]] constexpr optional_ref<T const> getData() const;
     template <typename T>
-    [[nodiscard]] inline optional_ref<T> getData();
+        requires(DataItem::TypeList::contains<T>)
+    [[nodiscard]] constexpr optional_ref<T> getData();
     template <typename T>
-    inline bool setData(T const& value);
+        requires(DataItem::TypeList::contains<std::remove_cvref_t<T>>)
+    constexpr bool setData(T&& value);
 
-    DataItem(DataItemType type, ushort id) : mType(type), mId(id) {}
+    DataItem() = delete;
 
     template <typename T>
-    [[nodiscard]] inline static std::unique_ptr<DataItem> create(ushort key, T const& value);
-
+        requires(DataItem::TypeList::contains<std::remove_cvref_t<T>>)
+    [[nodiscard]] constexpr static std::unique_ptr<DataItem> create(ushort key, T&& value);
     template <typename T>
-    [[nodiscard]] inline static std::unique_ptr<DataItem> create(::ActorDataIDs key, T const& value);
+        requires(DataItem::TypeList::contains<std::remove_cvref_t<T>>)
+    [[nodiscard]] constexpr static std::unique_ptr<DataItem> create(::ActorDataIDs key, T&& value) {
+        return create(std::to_underlying(key), std::forward<T>(value));
+    }
+
+protected:
+    constexpr DataItem(::DataItemType type, ::ActorDataIDs id) : mType(type), mId(id) {}
 
 public:
     // NOLINTBEGIN
@@ -47,115 +59,61 @@ public:
 };
 
 template <typename T>
+    requires(DataItem::TypeList::contains<T>)
 class DataItem2 : public DataItem {
+public:
     T mValue;
 
-    friend class DataItem;
-
-public:
     [[nodiscard]] std::unique_ptr<DataItem> clone() const override;
 
-    [[nodiscard]] T const& getData() const { return mValue; };
+    [[nodiscard]] constexpr T const& value() const { return mValue; };
 
-    inline void setData(T const& value) {
+    [[nodiscard]] constexpr T& value() { return mValue; };
+
+    [[nodiscard]] constexpr operator T const&() const { return mValue; };
+
+    [[nodiscard]] constexpr operator T&() { return mValue; };
+
+    template <class T2>
+    constexpr void setData(T2&& value) {
         mDirty = true;
         mValue = value;
     }
-    inline DataItem2<T>& operator=(T const& value) {
+    template <class T2>
+    constexpr DataItem2<T>& operator=(T2&& value) {
         setData(value);
         return *this;
     }
-    inline DataItem2(ushort key, T const& value) = delete;
-    inline static std::unique_ptr<DataItem> create(ushort key, T const& value) {
-        return std::make_unique<DataItem>(key, value);
-    }
-    static DataItemType const DATA_ITEM_TYPE;
+    template <class... Args>
+    constexpr DataItem2(ushort key, Args&&... args)
+    : DataItem((::DataItemType)DataItem::TypeList::index<T>, (::ActorDataIDs)key),
+      mValue(std::forward<Args>(args)...) {}
 };
 
 template <typename T>
-DataItemType const DataItem2<T>::DATA_ITEM_TYPE = static_cast<DataItemType>(-1);
-
-template <>
-DataItemType const DataItem2<schar>::DATA_ITEM_TYPE = DataItemType::Byte;
-template <>
-DataItemType const DataItem2<short>::DATA_ITEM_TYPE = DataItemType::Short;
-template <>
-DataItemType const DataItem2<int>::DATA_ITEM_TYPE = DataItemType::Int;
-template <>
-DataItemType const DataItem2<float>::DATA_ITEM_TYPE = DataItemType::Float;
-template <>
-DataItemType const DataItem2<std::string>::DATA_ITEM_TYPE = DataItemType::String;
-template <>
-DataItemType const DataItem2<CompoundTag>::DATA_ITEM_TYPE = DataItemType::CompoundTag;
-template <>
-DataItemType const DataItem2<BlockPos>::DATA_ITEM_TYPE = DataItemType::BlockPos;
-template <>
-DataItemType const DataItem2<int64>::DATA_ITEM_TYPE = DataItemType::Int64;
-template <>
-DataItemType const DataItem2<Vec3>::DATA_ITEM_TYPE = DataItemType::Vec3;
-
-template <>
-inline void DataItem2<CompoundTag>::setData(CompoundTag const& value) {
-    mValue.deepCopy(value);
-}
-
-template <>
-inline DataItem2<schar>::DataItem2(ushort key, schar const& value) : DataItem(DATA_ITEM_TYPE, key),
-                                                                     mValue(value) {}
-template <>
-inline DataItem2<short>::DataItem2(ushort key, short const& value) : DataItem(DATA_ITEM_TYPE, key),
-                                                                     mValue(value) {}
-template <>
-inline DataItem2<int>::DataItem2(ushort key, int const& value) : DataItem(DATA_ITEM_TYPE, key),
-                                                                 mValue(value) {}
-template <>
-inline DataItem2<float>::DataItem2(ushort key, float const& value) : DataItem(DATA_ITEM_TYPE, key),
-                                                                     mValue(value) {}
-template <>
-inline DataItem2<std::string>::DataItem2(ushort key, std::string const& value) // NOLINT
-: DataItem(DATA_ITEM_TYPE, key),
-  mValue(value) {}
-template <>
-inline DataItem2<class CompoundTag>::DataItem2(ushort key, class CompoundTag const& value)
-: DataItem(DATA_ITEM_TYPE, key) {
-    mValue.deepCopy(value);
-}
-template <>
-inline DataItem2<BlockPos>::DataItem2(ushort key, BlockPos const& value)
-: DataItem(DATA_ITEM_TYPE, key),
-  mValue(value) {}
-template <>
-inline DataItem2<int64>::DataItem2(ushort key, int64 const& value) : DataItem(DATA_ITEM_TYPE, key),
-                                                                     mValue(value) {}
-template <>
-inline DataItem2<Vec3>::DataItem2(ushort key, Vec3 const& value) : DataItem(DATA_ITEM_TYPE, key),
-                                                                   mValue(value) {}
-
-template <typename T>
-inline optional_ref<T const> DataItem::getData() const {
-    if (this->mType == DataItem2<T>::DATA_ITEM_TYPE) return ((DataItem2<T>*)this)->mValue;
+    requires(DataItem::TypeList::contains<T>)
+constexpr optional_ref<T const> DataItem::getData() const {
+    if (this->mType == (::DataItemType)TypeList::index<T>) return ((DataItem2<T>*)this)->mValue;
     return nullptr;
 }
 
 template <typename T>
-inline optional_ref<T> DataItem::getData() {
-    if (this->mType == DataItem2<T>::DATA_ITEM_TYPE) return ((DataItem2<T>*)this)->mValue;
+    requires(DataItem::TypeList::contains<T>)
+constexpr optional_ref<T> DataItem::getData() {
+    if (this->mType == (::DataItemType)TypeList::index<T>) return ((DataItem2<T>*)this)->mValue;
     return nullptr;
 }
 
 template <typename T>
-inline bool DataItem::setData(T const& value) {
-    if (this->mType != DataItem2<T>::DATA_ITEM_TYPE) return false;
-    ((DataItem2<T>*)this)->setData(value);
+    requires(DataItem::TypeList::contains<std::remove_cvref_t<T>>)
+constexpr bool DataItem::setData(T&& value) {
+    if (this->mType == (::DataItemType)TypeList::index<T>) return false;
+    ((DataItem2<T>*)this)->setData(std::forward<T>(value));
     return true;
 }
 
 template <typename T>
-inline std::unique_ptr<DataItem> DataItem::create(ushort key, T const& value) {
-    return std::unique_ptr<DataItem2<T>>(key, value);
-}
-
-template <typename T>
-inline std::unique_ptr<DataItem> DataItem::create(ActorDataIDs key, T const& value) {
-    return std::unique_ptr<DataItem2<T>>((ushort)key, value);
+    requires(DataItem::TypeList::contains<std::remove_cvref_t<T>>)
+constexpr std::unique_ptr<DataItem> DataItem::create(ushort key, T&& value) {
+    return std::make_unique<DataItem2<std::remove_cvref_t<T>>>(key, std::forward<T>(value));
 }

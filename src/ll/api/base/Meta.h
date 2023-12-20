@@ -90,6 +90,19 @@ public:
     static void constexpr forEachIndexed(Func&& func) {
         unrollWithArgs<TL...>(func);
     }
+
+    template <class T>
+    static constexpr size_t index = [] {
+        size_t res = ~0ui64;
+        forEachIndexed([&]<class Ts>(size_t i) {
+            if constexpr (std::is_same_v<T, Ts>) {
+                if (res == ~0ui64) {
+                    res = i;
+                }
+            }
+        });
+        return res;
+    }();
 };
 
 template <class Group, auto Id>

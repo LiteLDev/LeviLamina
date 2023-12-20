@@ -25,6 +25,8 @@
 
 #include "mc/deps/core/mce/UUID.h"
 
+#include "mc/world/actor/DataItem.h"
+
 template <class T>
 
 class TestClass {
@@ -87,6 +89,13 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     origin();
 
     auto lock = ll::Logger::lock();
+
+    int s = 1;
+
+    auto sbbbbbb = DataItem::create(1, s);
+
+    ll::logger.debug("DataItem {} {}", typeid(*sbbbbbb).name(), sbbbbbb->getData<int>().value());
+
 
     auto helloReflection = TestClass<int>{};
 

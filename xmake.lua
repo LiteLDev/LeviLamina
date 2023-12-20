@@ -71,7 +71,7 @@ target("LeviLamina")
         "NOMINMAX",
         "UNICODE",
         "WIN32_LEAN_AND_MEAN",
-        "_HAS_CXX23"
+        "_HAS_CXX23=1"
     )
     add_defines("LL_EXPORT")
     add_files(
