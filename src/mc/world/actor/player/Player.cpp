@@ -22,7 +22,11 @@
 
 using ll::Global;
 
-UserEntityIdentifierComponent& Player::getUserEntityIdentifier() const {
+UserEntityIdentifierComponent const& Player::getUserEntityIdentifier() const {
+    return *(getEntityContext().tryGetComponent<UserEntityIdentifierComponent>());
+}
+
+UserEntityIdentifierComponent& Player::getUserEntityIdentifier() {
     return *(getEntityContext().tryGetComponent<UserEntityIdentifierComponent>());
 }
 
