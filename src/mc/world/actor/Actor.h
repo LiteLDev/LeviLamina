@@ -97,9 +97,6 @@ public:
 
     LLAPI bool loadFromNBT(class CompoundTag const& nbt);
 
-    template <typename T>
-    MCAPI T* tryGetComponent();
-
     // prevent constructor by default
     Actor& operator=(Actor const&);
     Actor(Actor const&);
