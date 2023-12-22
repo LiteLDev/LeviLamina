@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/UUID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,9 +10,13 @@
 
 class ShowStoreOfferPacket : public ::Packet {
 public:
-    std::string mOfferId;     // this+0x30
-    std::string mContentType; // this+0x50
-    bool        mShowAll;     // this+0x70
+    enum class RedirectType : uchar {
+        Marketplace,
+        DressingRoom,
+        ThirdPartyServerPage,
+    };
+    mce::UUID    mOfferId;      // this+0x30
+    RedirectType mRedirectType; // this+0x40
 
     // prevent constructor by default
     ShowStoreOfferPacket& operator=(ShowStoreOfferPacket const&);
