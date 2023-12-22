@@ -51,7 +51,7 @@ std::string Tag::toSnbt(SnbtFormat snbtFormat, uchar indent) const {
 std::unique_ptr<Tag> Tag::parseSnbt(std::string_view s) {
     auto tag = parseSnbtValue(s);
     if (tag) {
-        return tag.value().toUnique();
+        return tag->toUnique();
     }
     return nullptr;
 }

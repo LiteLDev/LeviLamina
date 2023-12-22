@@ -143,7 +143,7 @@ auto PluginManager::loadPlugin(std::string_view pluginName) -> std::shared_ptr<P
     if (!content) {
         return {};
     }
-    auto json = nlohmann::json::parse(content.value(), nullptr, false, true);
+    auto json = nlohmann::json::parse(*content, nullptr, false, true);
     if (json.is_discarded()) {
         return {};
     }

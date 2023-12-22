@@ -77,6 +77,19 @@ public:
         }
         return mValue;
     }
+
+    [[nodiscard]] value_type* operator->()
+        requires(!std::is_void_v<T>)
+    {
+        return &value();
+    }
+
+    [[nodiscard]] value_type& operator*()
+        requires(!std::is_void_v<T>)
+    {
+        return value();
+    }
+
     ~Result() {
         if (mHasValue) {
             mValue.~value_type();

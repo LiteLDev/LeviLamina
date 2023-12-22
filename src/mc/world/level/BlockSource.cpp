@@ -1,4 +1,5 @@
 #include "mc/world/level/BlockSource.h"
+#include "mc/dataloadhelper/DefaultDataLoadHelper.h"
 #include "mc/entity/systems/UpdateBoundingBoxSystem.h"
 #include "mc/entity/utilities/ActorType.h"
 #include "mc/nbt/CompoundTag.h"
@@ -39,80 +40,63 @@ BlockSource::getEntities(class AABB const& range, float extendDistance, ActorTyp
     return entities;
 }
 
-optional_ref<Container> BlockSource::tryGetContainer(class BlockPos const& pos) const {
+optional_ref<Container> BlockSource::tryGetContainer(class BlockPos const& pos) {
     // This function didn't use 'this' pointer
-    return DropperBlockActor::getContainerAt(*const_cast<BlockSource*>(this), pos.center());
+    return DropperBlockActor::getContainerAt(*this, pos.center());
 }
 
-optional_ref<Actor>
-BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<DimensionType> dimId) const {
-
-    auto nbt = origin.saveToNbt();
-
-    if (!nbt) {
-        return nullptr;
-    }
-
-    if (auto& nbtPos = nbt->at("Pos"); nbtPos.hold<ListTag>()) {
-        nbtPos = ListTag{pos.x, pos.y, pos.z};
-    }
-
+LLAPI optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
     auto& level = getLevel();
-
-    Dimension* dim = &getDimension();
-
-    if (dimId.has_value()) {
-        dim = level.getDimension(*dimId).get();
-    }
-
-    if (!dim) {
-        return nullptr;
-    }
-
-    auto actorOwnerPtr = level.getActorFactory().createSpawnedActor(origin.getActorIdentifier(), nullptr, pos);
-
+    auto  actorOwnerPtr =
+        level.getActorFactory().loadActor(const_cast<CompoundTag*>(&nbt), DefaultDataLoadHelper::instance);
     if (!actorOwnerPtr) {
         return nullptr;
     }
-
     auto* actor = actorOwnerPtr.tryUnwrap<Actor>();
-
     if (!actor) {
         return nullptr;
     }
-
     actor->_setLevelPtr(&level);
-
-    actor->setDimension(dim->getWeakRef());
-
-    // UpdateBoundingBoxSystem::updateBoundingBoxFromDefinition(*actor);
-
-    level.addEntity(*const_cast<BlockSource*>(this), std::move(actorOwnerPtr));
-
-    actor->loadFromNbt(*nbt);
-
+    actor->setDimension(getDimension().getWeakRef());
+    level.addEntity(*this, std::move(actorOwnerPtr));
+    actor->refresh();
     return actor;
 }
 
-bool BlockSource::destroyBlock(BlockPos const& pos, optional_ref<ItemStack> tool, optional_ref<Mob> toolOwner) {
+optional_ref<Actor> BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<DimensionType> dimId) {
+    auto nbt = origin.saveToNbt();
+    if (!nbt || !nbt->contains("Pos")) {
+        return nullptr;
+    }
+    if (auto& nbtPos = nbt->at("Pos"); nbtPos.hold<ListTag>()) {
+        nbtPos = ListTag{pos.x, pos.y, pos.z};
+    }
+    Dimension* dim{};
+    if (dimId) {
+        dim = getLevel().getDimension(*dimId).get();
+    } else {
+        dim = &getDimension();
+    }
+    if (!dim) {
+        return nullptr;
+    }
+    return dim->getBlockSourceFromMainChunkSource().spawnActor(*nbt);
+}
 
+bool BlockSource::destroyBlock(BlockPos const& pos, optional_ref<ItemStack> tool, optional_ref<Mob> toolOwner) {
     if (tool && toolOwner && toolOwner->isCreative()) {
         auto* item = tool->getItem();
         if (item && !item->canDestroyInCreative()) {
             return false;
         }
     }
-
     auto& block = getBlock(pos);
     if (block.isUnbreakable()) {
         return false;
     }
     auto& material = block.getMaterial();
-
     bool shouldDrop = material.isAlwaysDestroyable() || tool->canDestroySpecial(block);
-
     bool res = getLevel().destroyBlock(*this, pos, shouldDrop);
-
     if (!tool) {
         return res;
     }

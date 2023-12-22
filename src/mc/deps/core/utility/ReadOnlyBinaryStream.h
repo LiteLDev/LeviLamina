@@ -16,7 +16,7 @@ public:
     template <typename T>
     inline Bedrock::Result<void> readType(T& x) {
         auto res = ::serialize<T>::read(*this);
-        if (res.has_value()) {
+        if (res) {
             x = res.value();
             return {};
         }

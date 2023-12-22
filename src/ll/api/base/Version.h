@@ -108,7 +108,7 @@ struct PreRelease {
         for (auto const& token : tokens) {
             std::optional<std::uint16_t> value;
             if (detail::from_chars(token.data(), token.data() + token.length(), value); value) {
-                values.emplace_back(value.value());
+                values.emplace_back(*value);
             } else {
                 values.emplace_back(std::string{token});
             }
@@ -262,12 +262,12 @@ struct Version {
         if (patch != other.patch) {
             return patch <=> other.patch;
         }
-        if (preRelease.has_value()) {
-            if (other.preRelease.has_value()) {
-                return preRelease.value() <=> other.preRelease.value();
+        if (preRelease) {
+            if (other.preRelease) {
+                return *preRelease <=> *other.preRelease;
             }
             return std::strong_ordering::less;
-        } else if (other.preRelease.has_value()) {
+        } else if (other.preRelease) {
             return std::strong_ordering::greater;
         }
         return std::strong_ordering::equal;

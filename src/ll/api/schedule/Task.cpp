@@ -20,7 +20,7 @@ std::optional<time_t> tryParseTime(std::string const& expression, std::string_vi
 std::chrono::system_clock::time_point parseTime(std::string const& expression) {
 
     if (auto res = tryParseTime(expression, "%H:%M:%S"); res) {
-        auto time = std::chrono::system_clock::from_time_t(res.value());
+        auto time = std::chrono::system_clock::from_time_t(*res);
         if (std::chrono::system_clock::now() > time) {
             time += std::chrono::hours(24);
         }

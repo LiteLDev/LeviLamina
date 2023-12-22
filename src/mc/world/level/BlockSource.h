@@ -24,6 +24,7 @@ class BlockPos;
 class Vec3;
 class ItemStack;
 class Mob;
+class CompoundTag;
 
 class BlockSource : public IBlockSource, public std::enable_shared_from_this<BlockSource> {
 public:
@@ -34,10 +35,12 @@ public:
         bool              ignoreType     = false
     ) const;
 
-    LLNDAPI optional_ref<Container> tryGetContainer(BlockPos const& pos) const;
+    LLNDAPI optional_ref<Container> tryGetContainer(BlockPos const& pos);
+
+    LLAPI optional_ref<Actor> spawnActor(class CompoundTag const&);
 
     LLAPI optional_ref<Actor>
-          cloneActor(Actor const& origin, Vec3 const& pos, std::optional<DimensionType> dimId = std::nullopt) const;
+          cloneActor(Actor const& origin, Vec3 const& pos, std::optional<DimensionType> dimId = std::nullopt);
 
     LLAPI bool destroyBlock(
         BlockPos const&         pos,

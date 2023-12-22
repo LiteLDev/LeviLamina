@@ -18,8 +18,8 @@ Version getBdsVersion() {
         auto info    = Common::getBuildInfo();
         auto v       = Version{info.mBuildId};
         v.preRelease = PreRelease{};
-        v.preRelease.value().values.emplace_back((uint16_t)SharedConstants::RevisionVersion);
-        v.preRelease.value().values.emplace_back((uint16_t)SharedConstants::NetworkProtocolVersion);
+        v.preRelease->values.emplace_back((uint16_t)SharedConstants::RevisionVersion);
+        v.preRelease->values.emplace_back((uint16_t)SharedConstants::NetworkProtocolVersion);
         v.build = info.mCommitId.substr(0, 9);
         return v;
     }();

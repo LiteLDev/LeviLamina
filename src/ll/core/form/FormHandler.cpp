@@ -99,7 +99,7 @@ LL_TYPED_INSTANCE_HOOK(
         auto data = std::string{"null"};
 
         if (!modalPacket.mFormCancelReason && modalPacket.mJSONResponse) {
-            data = modalPacket.mJSONResponse.value().toStyledString();
+            data = modalPacket.mJSONResponse->toStyledString();
             if (data.ends_with('\n')) {
                 data.pop_back();
                 if (data.ends_with('\r')) {

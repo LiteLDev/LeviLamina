@@ -81,7 +81,7 @@ Version getVersion(std::filesystem::path const& filePath) {
         return Version{};
     } else {
         version.preRelease = PreRelease{};
-        auto& vec          = version.preRelease.value().values;
+        auto& vec          = version.preRelease->values;
         vec.emplace_back(build_ver);
         if (flag & VS_FF_DEBUG) vec.emplace_back("debug");
         if (flag & VS_FF_PRERELEASE) vec.emplace_back("preRelease");
