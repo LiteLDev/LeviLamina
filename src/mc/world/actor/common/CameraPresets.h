@@ -42,7 +42,9 @@ public:
     };
 
 public:
-    std::vector<CameraPreset> mList;
+    std::vector<CameraPreset>              mPresets;
+    std::vector<CameraPresets::CameraList> mLists;
+    cereal::ReflectionCtx&                 mReflectionCtx;
 
     // prevent constructor by default
     CameraPresets& operator=(CameraPresets const&);

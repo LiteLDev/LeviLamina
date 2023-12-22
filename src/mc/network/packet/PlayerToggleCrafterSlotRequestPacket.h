@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/NetworkBlockPosition.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,10 @@
 
 class PlayerToggleCrafterSlotRequestPacket : public ::Packet {
 public:
+    NetworkBlockPosition mPosition;
+    int                  mSlot;
+    bool                 mDisabled;
+
     // prevent constructor by default
     PlayerToggleCrafterSlotRequestPacket& operator=(PlayerToggleCrafterSlotRequestPacket const&);
     PlayerToggleCrafterSlotRequestPacket(PlayerToggleCrafterSlotRequestPacket const&);

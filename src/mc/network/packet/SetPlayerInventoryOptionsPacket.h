@@ -9,6 +9,36 @@
 
 class SetPlayerInventoryOptionsPacket : public ::Packet {
 public:
+    enum class InventoryLeftTab : int {
+        None         = 0,
+        Construction = 1,
+        Equipment    = 2,
+        Items        = 3,
+        Nature       = 4,
+        Search       = 5,
+        Survival     = 6,
+    };
+
+    enum class InventoryRightTab : int {
+        None       = 0,
+        FullScreen = 1,
+        Crafting   = 2,
+        Armor      = 3,
+    };
+
+    enum class InventoryLayout : int {
+        None       = 0,
+        Survival   = 1,
+        RecipeBook = 2,
+        Creative   = 3,
+    };
+
+    InventoryLeftTab  mLeftTab;
+    InventoryRightTab mRightTab;
+    bool              mFiltering;
+    InventoryLayout   mInventoryLayout;
+    InventoryLayout   mCraftingLayout;
+
     // prevent constructor by default
     SetPlayerInventoryOptionsPacket& operator=(SetPlayerInventoryOptionsPacket const&);
     SetPlayerInventoryOptionsPacket(SetPlayerInventoryOptionsPacket const&);
