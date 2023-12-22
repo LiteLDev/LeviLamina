@@ -59,10 +59,18 @@ target("LeviLamina")
         "/w45204"
     )
     add_cxxflags(
-    "-Wno-c++2b-extensions",
-    "-Wno-microsoft-cast",
-    "-Wno-pragma-system-header-outside-header",
-    {tools = {"clang_cl"}}
+        "-Wno-c++2b-extensions",
+        "-Wno-microsoft-cast",
+        "-Wno-pragma-system-header-outside-header",
+        {tools = {"clang_cl"}}
+    )
+    add_undefines(
+        "_DEBUG",
+        { public = true }
+    )
+    add_defines(
+        "ENTT_PACKED_PAGE=128",
+        { public = true }
     )
     add_defines(
         "_AMD64_",
@@ -71,9 +79,9 @@ target("LeviLamina")
         "NOMINMAX",
         "UNICODE",
         "WIN32_LEAN_AND_MEAN",
-        "_HAS_CXX23=1"
+        "_HAS_CXX23=1",
+        "LL_EXPORT"
     )
-    add_defines("LL_EXPORT")
     add_files(
         "src/ll/api/**.cpp",
         "src/ll/core/**.cpp",
@@ -101,14 +109,16 @@ target("LeviLamina")
         "pfr",
         "preloader",
         "symbolprovider",
-
         { public = true }
     )
     add_rules(
         "mode.debug",
         "mode.release"
     )
-    add_shflags("/DELAYLOAD:bedrock_server.dll")
+    add_shflags(
+        "/DELAYLOAD:bedrock_server.dll",
+        { public = true }
+    )
     set_configdir("$(buildir)/config")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     set_exceptions("none")
