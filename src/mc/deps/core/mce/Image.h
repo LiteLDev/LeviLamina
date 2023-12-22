@@ -15,7 +15,7 @@ public:
     uint        mWidth{}, mHeight{}; // 0x4, 0x8
     uint        mUnknown{};          // 0xC RENAME ME
     ImageUsage  mUsage{};            // 0x10
-    Blob        mImageBytes;         // 0x14
+    Blob        mImageBytes;         // 0x18
 
     [[nodiscard]] inline explicit Image(Blob&& data) : mImageBytes(std::move(data)) {}
 
