@@ -19,7 +19,7 @@ namespace ll::memory {
 
 FuncPtr resolveSymbol(char const* symbol) {
     static Logger sLogger("LeviLamina", true);
-    auto          res = pl::symbol_provider::pl_resolve_symbol(symbol);
+    auto          res = pl::symbol_provider::pl_resolve_symbol_silent(symbol);
     if (res == nullptr) {
         sLogger.fatal("Could not find symbol in memory: {}", symbol);
         sLogger.fatal("In module: {}", win_utils::getCallerModuleFileName());
@@ -29,7 +29,7 @@ FuncPtr resolveSymbol(char const* symbol) {
 
 FuncPtr resolveSymbol(std::string_view symbol, bool disableErrorOutput) {
     if (disableErrorOutput) {
-        return pl::symbol_provider::pl_resolve_symbol(symbol.data());
+        return pl::symbol_provider::pl_resolve_symbol_silent(symbol.data());
     } else {
         return resolveSymbol(symbol.data());
     }
