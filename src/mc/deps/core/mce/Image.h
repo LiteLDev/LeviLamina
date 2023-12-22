@@ -13,8 +13,9 @@ struct Image {
 public:
     ImageFormat imageFormat{};       // 0x0
     uint        mWidth{}, mHeight{}; // 0x4, 0x8
-    ImageUsage  mUsage{};            // 0xC
-    Blob        mImageBytes;         // 0x10
+    uint        unknown{};           // 0xC RENAME ME
+    ImageUsage  mUsage{};            // 0x10
+    Blob        mImageBytes;         // 0x14
 
     [[nodiscard]] inline explicit Image(Blob&& data) : mImageBytes(std::move(data)) {}
 
