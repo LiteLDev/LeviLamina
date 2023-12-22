@@ -13,7 +13,7 @@ struct Image {
 public:
     ImageFormat imageFormat{};       // 0x0
     uint        mWidth{}, mHeight{}; // 0x4, 0x8
-    uint        unknown{};           // 0xC RENAME ME
+    uint        mUnknown{};          // 0xC RENAME ME
     ImageUsage  mUsage{};            // 0x10
     Blob        mImageBytes;         // 0x14
 
