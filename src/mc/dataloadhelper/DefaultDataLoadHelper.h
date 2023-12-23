@@ -12,9 +12,6 @@
 
 class DefaultDataLoadHelper : public ::DataLoadHelper {
 public:
-    LLAPI static DefaultDataLoadHelper instance;
-
-public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1DefaultDataLoadHelper@@UEAA@XZ
     virtual ~DefaultDataLoadHelper() = default;
@@ -73,3 +70,5 @@ public:
     virtual bool shouldResetTime();
     // NOLINTEND
 };
+
+static inline DefaultDataLoadHelper defaultDataLoadHelper;

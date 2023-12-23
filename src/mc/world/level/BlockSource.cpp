@@ -48,7 +48,7 @@ optional_ref<Container> BlockSource::tryGetContainer(class BlockPos const& pos) 
 LLAPI optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
     auto& level = getLevel();
     auto  actorOwnerPtr =
-        level.getActorFactory().loadActor(const_cast<CompoundTag*>(&nbt), DefaultDataLoadHelper::instance);
+        level.getActorFactory().loadActor(const_cast<CompoundTag*>(&nbt), defaultDataLoadHelper);
     if (!actorOwnerPtr) {
         return nullptr;
     }

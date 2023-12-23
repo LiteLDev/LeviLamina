@@ -17,7 +17,6 @@ class PropertiesSettings;
 class ServerLevel;
 class Level;
 class ServerNetworkHandler;
-class StructureManager;
 class ResourcePackRepository;
 class CommandRegistry;
 class NetworkSystem;
@@ -31,7 +30,6 @@ concept IsGlobalService = concepts::IsOneOf<
     PropertiesSettings,
     Level,
     ServerNetworkHandler,
-    StructureManager,
     RakNet::RakPeer,
     NetworkSystem,
     ResourcePackRepository,

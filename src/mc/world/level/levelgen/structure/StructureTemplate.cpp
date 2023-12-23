@@ -2,6 +2,7 @@
 
 #include "mc/server/ServerLevel.h"
 #include "mc/world/level/BlockPalette.h"
+#include "mc/world/level/BlockSource.h"
 #include "mc/world/level/levelgen/structure/StructureManager.h"
 #include "mc/world/level/levelgen/structure/StructureSettings.h"
 
@@ -17,21 +18,18 @@ void StructureTemplate::placeInWorld(
     bool            ignoreBlocks,
     bool            ignoreEntities
 ) const {
-    if (!Global<Level>) {
-        return;
-    }
     auto setting    = StructureSettings(getSize(), ignoreBlocks, ignoreEntities);
     setting.mMirror = mirror;
     setting.setRotation(rotation);
-    placeInWorld(blockSource, Global<Level>->getBlockPalette(), minCorner, setting);
+    placeInWorld(blockSource, blockSource.getLevel().getBlockPalette(), minCorner, setting);
 }
 
 
 std::unique_ptr<StructureTemplate> StructureTemplate::create(const std::string& name, CompoundTag const& tag) {
-    if (!Global<StructureManager>) {
+    if (!Global<Level>) {
         return nullptr;
     }
-    auto& unknownBlockRegistry = Global<StructureManager>->mUnknownBlockRegistry;
+    auto& unknownBlockRegistry = Global<Level>->getStructureManager()->mUnknownBlockRegistry;
     auto  res                  = std::make_unique<StructureTemplate>(name, unknownBlockRegistry);
     bool  success{res->load(tag)};
     if (!success) {
@@ -47,10 +45,7 @@ std::unique_ptr<StructureTemplate> StructureTemplate::create(
     bool               ignoreBlocks,
     bool               ignoreEntities
 ) {
-    if (!Global<StructureManager>) {
-        return nullptr;
-    }
-    auto& unknownBlockRegistry = Global<StructureManager>->mUnknownBlockRegistry;
+    auto& unknownBlockRegistry = blockSource.getLevel().getStructureManager()->mUnknownBlockRegistry;
     auto  res                  = std::make_unique<StructureTemplate>(name, unknownBlockRegistry);
     auto  setting              = StructureSettings(boundingBox.getSideLength(), ignoreBlocks, ignoreEntities);
     res->fillFromWorld(blockSource, boundingBox.min, setting);

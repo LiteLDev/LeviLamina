@@ -37,20 +37,6 @@ namespace ll {
 
 using namespace memory;
 
-// StructureManager
-
-LL_AUTO_INSTANCE_HOOK(
-    StructureManagerConstructor,
-    HookPriority::High,
-    "??0StructureManager@@QEAA@AEAVResourcePackManager@@@Z",
-    StructureManager*,
-    class ResourcePackManager& resourcePackManager
-) {
-    auto self = origin(resourcePackManager);
-    ll::Global<StructureManager>.init(self);
-    return self;
-}
-
 // Minecraft
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
@@ -64,7 +50,6 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     origin();
 }
 LL_AUTO_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UEAA@XZ", void) {
-    ll::Global<StructureManager>.init(nullptr); // ~StructureManager is inlined
     ll::Global<Minecraft>.init(nullptr);
     origin();
 }

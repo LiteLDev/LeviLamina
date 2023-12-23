@@ -59,7 +59,7 @@ void BlockActor::loadFromNbt(class CompoundTag const& nbt, optional_ref<class Bl
     if (!Global<Level>) {
         return;
     }
-    load(*Global<Level>, nbt, DefaultDataLoadHelper::instance);
+    load(*Global<Level>, nbt, defaultDataLoadHelper);
     refresh(blockSource);
 }
 
@@ -67,7 +67,7 @@ std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt) {
     if (!Global<Level>) {
         return nullptr;
     }
-    return loadStatic(*Global<Level>, nbt, DefaultDataLoadHelper::instance);
+    return loadStatic(*Global<Level>, nbt, defaultDataLoadHelper);
 }
 
 std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt, class BlockPos const& pos) {

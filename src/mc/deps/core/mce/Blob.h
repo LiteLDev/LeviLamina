@@ -17,37 +17,45 @@ public:
 
     struct Deleter {
     public:
-        delete_function m_func;
-        Deleter() { m_func = Blob::defaultDeleter; }
+        delete_function m_func = Blob::defaultDeleter;
+
+        [[nodiscard]] constexpr Deleter() = default;
+
         void operator()(pointer x) const { m_func(x); }
     };
 
     using pointer_type = std::unique_ptr<value_type[], Deleter>;
 
-    pointer_type mBlob; // this+0x0
-    size_type    mSize; // this+0x10
+    pointer_type mBlob{}; // this+0x0
+    size_type    mSize{}; // this+0x10
 
-    [[nodiscard]] inline uchar const* data() const { return mBlob.get(); }
+    [[nodiscard]] constexpr Blob() = default;
 
-    [[nodiscard]] inline size_type size() const { return mSize; }
+    [[nodiscard]] constexpr Blob(std::span<uchar> s, Deleter deleter = {}) : mSize(s.size()) { // NOLINT
+        mBlob = pointer_type(new value_type[mSize], deleter);
+        std::copy(s.begin(), s.end(), mBlob.get());
+    }
 
-    [[nodiscard]] inline auto getSpan() const { return gsl::make_span(data(), size()); }
+    [[nodiscard]] constexpr pointer data() const { return mBlob.get(); }
 
-    [[nodiscard]] inline Blob clone() const { return {data(), size()}; }
+    [[nodiscard]] constexpr size_type size() const { return mSize; }
 
-    [[nodiscard]] inline Blob(uchar const* srcData, size_type dataSize) : mSize(dataSize) {
-        mBlob = pointer_type(new value_type[dataSize], Deleter());
-        std::copy(srcData, srcData + dataSize, mBlob.get());
+    [[nodiscard]] constexpr std::span<uchar> view() const { return {data(), size()}; }
+
+    constexpr Blob& operator=(Blob&&) noexcept    = default;
+    [[nodiscard]] constexpr Blob(Blob&&) noexcept = default;
+
+    [[nodiscard]] constexpr Blob(Blob const& other) : Blob(other.view(), other.mBlob.get_deleter()) {}
+
+    constexpr Blob& operator=(Blob const& other) {
+        if (this != &other) {
+            *this = Blob{other};
+        }
+        return *this;
     }
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Blob@mce@@QEAA@XZ
-    MCAPI Blob();
-
-    // symbol: ??0Blob@mce@@QEAA@$$QEAV01@@Z
-    MCAPI Blob(class mce::Blob&&);
-
     // symbol: ??0Blob@mce@@QEAA@_K@Z
     MCAPI explicit Blob(uint64);
 
@@ -59,9 +67,6 @@ public:
 
     // symbol: ?empty@Blob@mce@@QEBA_NXZ
     MCAPI bool empty() const;
-
-    // symbol: ??4Blob@mce@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class mce::Blob& operator=(class mce::Blob&&);
 
     // symbol: ??1Blob@mce@@QEAA@XZ
     MCAPI ~Blob();

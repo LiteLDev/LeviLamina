@@ -11,10 +11,10 @@ std::optional<time_t> tryParseTime(std::string const& expression, std::string_vi
     auto              time_now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     std::tm           tm{};
     localtime_s(&tm, &time_now);
-    if ((ss >> std::get_time(&tm, format.data())).fail()) {
-        return std::nullopt;
+    if (ss >> std::get_time(&tm, format.data())) {
+        return std::mktime(&tm);
     }
-    return std::mktime(&tm);
+    return std::nullopt;
 }
 
 std::chrono::system_clock::time_point parseTime(std::string const& expression) {
