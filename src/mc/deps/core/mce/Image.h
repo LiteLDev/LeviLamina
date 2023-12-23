@@ -14,7 +14,7 @@ public:
     ImageFormat imageFormat{}; // this+0x0
     uint        mWidth{};      // this+0x4
     uint        mHeight{};     // this+0x8
-    uint        mFrames{};     // this+0xC
+    uint        mDepth{};      // this+0xC
     ImageUsage  mUsage{};      // this+0x10
     Blob        mImageBytes;   // this+0x18
 
