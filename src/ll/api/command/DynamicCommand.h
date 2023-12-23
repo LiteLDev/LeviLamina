@@ -439,7 +439,7 @@ public:
         : ParameterData(name, type, (std::string const&)enumOptions, identifer, parameterOption){};
     };
 
-    using CallBackFn = std::function<void(
+    using callback_fn = std::function<void(
         DynamicCommand const&                    cmd,
         CommandOrigin const&                     origin,
         CommandOutput&                           output,
@@ -513,7 +513,7 @@ public:
         std::unordered_map<std::string, std::vector<std::string>>&& enums,
         std::vector<ParameterData>&&                                params,
         std::vector<std::vector<std::string>>&&                     overloads,
-        CallBackFn                                                  callback,
+        callback_fn                                                 callback,
         CommandPermissionLevel                                      permission = CommandPermissionLevel::GameDirectors,
         CommandFlag                                                 flag       = CommandFlagValue::NotCheat
     );
@@ -540,7 +540,7 @@ public:
         std::unordered_map<std::string, std::vector<std::string>>&& enums,
         std::vector<ParameterData>&&                                params,
         std::vector<std::vector<std::string>>&&                     overloads,
-        CallBackFn                                                  callback,
+        callback_fn                                                 callback,
         CommandPermissionLevel                                      permission = CommandPermissionLevel::GameDirectors,
         CommandFlag                                                 flag       = CommandFlagValue::NotCheat
     );
@@ -600,7 +600,7 @@ public:
 private:
     std::vector<std::vector<ParameterIndex>> overloads = {}; // indices of parameter instance
 
-    mutable DynamicCommand::CallBackFn callback_ = nullptr;
+    mutable DynamicCommand::callback_fn callback_ = nullptr;
 
     friend class DynamicCommand;
 
@@ -676,7 +676,7 @@ public:
     LLAPI bool addOverload(std::vector<char const*>&& params);
     LLAPI bool addOverload(std::vector<DynamicCommand::ParameterData>&& params);
     LLAPI bool setAlias(std::string const& alias);
-    LLAPI void setCallback(DynamicCommand::CallBackFn&& callback) const;
+    LLAPI void setCallback(DynamicCommand::callback_fn&& callback) const;
     LLAPI void removeCallback() const;
     LLAPI std::string setSoftEnum(std::string const& name, std::vector<std::string> const& values) const;
     LLAPI bool        addSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
@@ -720,7 +720,7 @@ inline DynamicCommandInstance const* DynamicCommand::setup(
     std::unordered_map<std::string, std::vector<std::string>>&& enums,
     std::vector<ParameterData>&&                                params,
     std::vector<std::vector<std::string>>&&                     overloads,
-    CallBackFn                                                  callback,
+    callback_fn                                                 callback,
     CommandPermissionLevel                                      permission,
     CommandFlag                                                 flag
 ) {

@@ -36,7 +36,7 @@
 namespace ll {
 class Logger {
 public:
-    using PlayerOutputFunc = std::function<void(std::string_view)>;
+    using player_output_fn = std::function<void(std::string_view)>;
 
     class OutputStream {
         friend class Logger;
@@ -52,7 +52,7 @@ public:
         std::array<std::string, 5>     consoleFormat;
         std::array<std::string, 5>     fileFormat;
         std::array<std::string, 5>     playerFormat;
-        PlayerOutputFunc               playerOutputCallback;
+        player_output_fn               playerOutputCallback;
 
         LLAPI explicit OutputStream(
             Logger&                               logger,
@@ -73,7 +73,7 @@ public:
             }
         }
 
-        void setPlayerOutputFunc(PlayerOutputFunc const& func) { playerOutputCallback = func; }
+        void setPlayerOutputFunc(player_output_fn const& func) { playerOutputCallback = func; }
     };
 
 public:
@@ -137,7 +137,7 @@ public:
 
     LLAPI static bool setDefaultFile(std::filesystem::path const& logFile, bool appendMode);
 
-    void setPlayerOutputFunc(PlayerOutputFunc const& func) {
+    void setPlayerOutputFunc(player_output_fn const& func) {
         debug.setPlayerOutputFunc(func);
         info.setPlayerOutputFunc(func);
         warn.setPlayerOutputFunc(func);
@@ -145,7 +145,7 @@ public:
         fatal.setPlayerOutputFunc(func);
     }
 
-    LLAPI static void setDefaultPlayerOutputFunc(PlayerOutputFunc const& func) { defaultPlayerOutputCallback = func; }
+    LLAPI static void setDefaultPlayerOutputFunc(player_output_fn const& func) { defaultPlayerOutputCallback = func; }
 
     std::ofstream& getFile() {
         if (ofs) {
@@ -158,6 +158,6 @@ public:
 
 private:
     LLAPI static std::ofstream    defaultFile;
-    LLAPI static PlayerOutputFunc defaultPlayerOutputCallback;
+    LLAPI static player_output_fn defaultPlayerOutputCallback;
 };
 } // namespace ll

@@ -4,7 +4,7 @@
 
 namespace ll::schedule {
 inline namespace task {
-std::atomic_ullong TaskId{0};
+std::atomic_ullong taskId{0};
 
 std::optional<time_t> tryParseTime(std::string const& expression, std::string_view format) {
     std::stringstream ss(expression);

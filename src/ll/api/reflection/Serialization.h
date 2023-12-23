@@ -43,8 +43,8 @@ inline J serialize(T const& obj)
 {
     J res;
     forEachMember(obj, [&](std::string_view name, auto& member) {
-        using MemberType = std::remove_cvref_t<decltype(member)>;
-        if constexpr (requires(MemberType& m) { serialize<J>(m); }) {
+        using member_type = std::remove_cvref_t<decltype(member)>;
+        if constexpr (requires(member_type& m) { serialize<J>(m); }) {
             try {
                 auto j = serialize<J>(member);
                 if (!j.is_null()) res[std::string{name}] = j;
@@ -56,7 +56,7 @@ inline J serialize(T const& obj)
                 throw SerializationError{name};
             }
         } else {
-            static_assert(concepts::always_false<MemberType>, "this type can't serialize");
+            static_assert(concepts::always_false<member_type>, "this type can't serialize");
         }
     });
     return res;

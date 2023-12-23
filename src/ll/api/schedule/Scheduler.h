@@ -15,20 +15,20 @@ namespace ll::schedule {
 
 template <class Clock>
 struct SleeperType {
-    using Type = ll::thread::InterruptableSleep;
+    using type = ll::thread::InterruptableSleep;
 };
 
 template <>
 struct SleeperType<ll::chrono::ServerClock> {
-    using Type = ll::thread::TickSyncSleep<ll::chrono::ServerClock>;
+    using type = ll::thread::TickSyncSleep<ll::chrono::ServerClock>;
 };
 
 template <>
 struct SleeperType<ll::chrono::GameTimeClock> {
-    using Type = ll::thread::TickSyncSleep<ll::chrono::GameTimeClock>;
+    using type = ll::thread::TickSyncSleep<ll::chrono::GameTimeClock>;
 };
 
-template <class Clock, class Pool = ll::thread::ThreadPool, class Sleeper = SleeperType<Clock>::Type>
+template <class Clock, class Pool = ll::thread::ThreadPool, class Sleeper = SleeperType<Clock>::type>
 class Scheduler;
 
 using GameTickAsyncScheduler = Scheduler<ll::chrono::ServerClock>;
@@ -41,34 +41,33 @@ using GameTimeScheduler = Scheduler<ll::chrono::GameTimeClock, ll::thread::TickS
 template <class Clock, class Pool, class Sleeper>
 class Scheduler {
 private:
-    using TimePoint = typename Clock::time_point;
-    using Duration  = typename Clock::duration;
-    using TaskPtr   = std::shared_ptr<Task<Clock>>;
-    using TaskType  = std::multimap<TimePoint, TaskPtr>;
+    using time_point = typename Clock::time_point;
+    using duration   = typename Clock::duration;
+    using task_ptr   = std::shared_ptr<Task<Clock>>;
+    using tasks_type = std::multimap<time_point, task_ptr>;
 
-    TaskType          tasks;
+    tasks_type        tasks;
     std::atomic<bool> done;
     std::mutex        mutex;
     Sleeper           sleeper;
     Pool              workers;
     std::thread       manager;
 
-    std::weak_ptr<Task<Clock>> addTask(TaskPtr t) {
-        std::weak_ptr<Task<Clock>> res = t;
+    task_ptr addTask(task_ptr t) {
         if (t->cancelled) {
-            return res;
+            return t;
         }
 
-        auto time = t->getNextTime();
-        if (time >= TimePoint::max()) {
-            return res;
+        auto time = t->getFirstTime();
+        if (!time) {
+            return t;
         }
-
-        std::lock_guard l{mutex};
-
-        tasks.emplace(time, std::move(t));
-        sleeper.interrupt();
-        return res;
+        {
+            std::lock_guard l{mutex};
+            tasks.emplace(*time, t);
+            sleeper.interrupt();
+        }
+        return t;
     }
 
     void manageTasks() {
@@ -77,7 +76,7 @@ private:
         if (end == tasks.begin()) {
             return;
         }
-        TaskType temp;
+        tasks_type temp;
 
         for (auto i = tasks.begin(); i != end; ++i) {
             auto& task = i->second;
@@ -105,8 +104,8 @@ private:
                     continue;
                 }
                 auto time = task->getNextTime();
-                if (time < TimePoint::max()) {
-                    temp.emplace(time, std::move(task));
+                if (time) {
+                    temp.emplace(*time, std::move(task));
                 }
             }
         }
@@ -143,19 +142,18 @@ public:
     }
 
     template <template <class> class T, class... Args>
-    std::weak_ptr<Task<Clock>> add(Args&&... args) {
+    task_ptr add(Args&&... args) {
         return addTask(std::make_shared<T<Clock>>(std::forward<Args>(args)...));
+    }
+
+    bool remove(task_ptr const& task) {
+        std::lock_guard l{mutex};
+        return std::erase_if(tasks, [&](auto& t) { return t == task; });
     }
 
     bool remove(uint64 id) {
         std::lock_guard l{mutex};
-        for (auto i = tasks.begin(), end = tasks.end(); i != end; i++) {
-            if (i->second->id == id) {
-                tasks.erase(i);
-                return true;
-            }
-        }
-        return false;
+        return std::erase_if(tasks, [&](auto& t) { return t.id == id; });
     }
 };
 } // namespace ll::schedule

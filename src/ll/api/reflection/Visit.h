@@ -30,8 +30,8 @@ inline auto visit(std::span<std::string_view> seq, T&& obj, F&& func) -> std::in
     std::string_view front = seq.front();
     seq                    = seq.subspan(1);
     bool contains          = false;
-    using Ret              = std::invoke_result_t<F, std::nullptr_t>;
-    if constexpr (std::is_void_v<Ret>) {
+    using return_t         = std::invoke_result_t<F, std::nullptr_t>;
+    if constexpr (std::is_void_v<return_t>) {
         forEachMember(std::forward<T>(obj), [&, func = std::forward<F>(func)](std::string_view name, auto&& member) {
             if (front == name) {
                 contains = true;
@@ -39,7 +39,7 @@ inline auto visit(std::span<std::string_view> seq, T&& obj, F&& func) -> std::in
             }
         });
     } else {
-        std::optional<Ret> res;
+        std::optional<return_t> res;
         forEachMember(std::forward<T>(obj), [&, func = std::forward<F>(func)](std::string_view name, auto&& member) {
             if (front == name) {
                 contains = true;

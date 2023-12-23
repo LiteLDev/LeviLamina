@@ -586,7 +586,7 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(
     std::unordered_map<std::string, std::vector<std::string>>&& enums,
     std::vector<ParameterData>&&                                params,
     std::vector<std::vector<std::string>>&&                     overloads,
-    CallBackFn                                                  callback,
+    callback_fn                                                  callback,
     CommandPermissionLevel                                      permission,
     CommandFlag                                                 flag
 ) {
@@ -930,7 +930,7 @@ std::vector<std::string> DynamicCommandInstance::getSoftEnumNames() {
     return ll::Global<CommandRegistry>->getSoftEnumNames();
 }
 
-void DynamicCommandInstance::setCallback(DynamicCommand::CallBackFn&& callback) const { this->callback_ = callback; }
+void DynamicCommandInstance::setCallback(DynamicCommand::callback_fn&& callback) const { this->callback_ = callback; }
 
 void DynamicCommandInstance::removeCallback() const { callback_ = nullptr; }
 

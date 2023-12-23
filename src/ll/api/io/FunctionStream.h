@@ -20,7 +20,7 @@ using wfunctionbuf = basic_functionbuf<wchar_t>;
 template <class Char, class Traits>
 struct basic_functionbuf : public std::basic_streambuf<Char, Traits> {
 
-    using Base     = std::basic_streambuf<Char, Traits>;
+    using base     = std::basic_streambuf<Char, Traits>;
     using view     = std::basic_string_view<Char>;
     using int_type = typename Traits::int_type;
 

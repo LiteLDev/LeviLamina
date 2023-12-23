@@ -34,7 +34,7 @@ public:
     TickSyncSleep& operator=(TickSyncSleep&&)      = delete;
     TickSyncSleep& operator=(TickSyncSleep const&) = delete;
 
-    using ClockType = Clock;
+    using clock_type = Clock;
 
     Clock::time_point timepoint;
 

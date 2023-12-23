@@ -195,5 +195,5 @@ std::lock_guard<std::recursive_mutex> Logger::lock() {
     return std::lock_guard(mutex);
 }
 std::ofstream            Logger::defaultFile{};
-Logger::PlayerOutputFunc Logger::defaultPlayerOutputCallback;
+Logger::player_output_fn Logger::defaultPlayerOutputCallback;
 } // namespace ll

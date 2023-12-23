@@ -70,6 +70,7 @@ target("LeviLamina")
     )
     add_defines(
         "ENTT_PACKED_PAGE=128",
+        "_HAS_CXX23=1",
         { public = true }
     )
     add_defines(
@@ -79,7 +80,6 @@ target("LeviLamina")
         "NOMINMAX",
         "UNICODE",
         "WIN32_LEAN_AND_MEAN",
-        "_HAS_CXX23=1",
         "LL_EXPORT"
     )
     add_files(

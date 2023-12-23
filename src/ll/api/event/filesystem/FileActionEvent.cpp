@@ -28,20 +28,17 @@ LLNDAPI FileActionType const&        FileActionEvent::type() const { return mTyp
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase& l);
 // modified from Thomas Monkman's
 class FileWatcher : public Emitter<FileActionEvent, emitterFactory> {
-public:
-    using Path = std::filesystem::path;
-
 private:
-    std::function<void(Path const& file, FileActionType eventType)> callback;
+    std::function<void(std::filesystem::path const& file, FileActionType eventType)> callback;
 
     std::wstring filename; // not empty for single file
 
     std::thread watchThread;
 
-    std::condition_variable                      cv;
-    std::mutex                                   callbackMutex;
-    std::vector<std::pair<Path, FileActionType>> callbackInfo;
-    std::thread                                  callbackThread;
+    std::condition_variable                                       cv;
+    std::mutex                                                    callbackMutex;
+    std::vector<std::pair<std::filesystem::path, FileActionType>> callbackInfo;
+    std::thread                                                   callbackThread;
 
     std::promise<void> running;
     std::atomic<bool>  destory{false};
@@ -97,7 +94,7 @@ private:
                 bool async_pending;
                 running.set_value();
                 do {
-                    std::vector<std::pair<Path, FileActionType>> parsed_information;
+                    std::vector<std::pair<std::filesystem::path, FileActionType>> parsed_information;
                     ReadDirectoryChangesW(
                         directoryHandle,
                         buffer.data(),
@@ -132,7 +129,7 @@ private:
                             };
                             if (passFilter(changed_file)) {
                                 parsed_information.emplace_back(
-                                    Path{changed_file},
+                                    std::filesystem::path{changed_file},
                                     (FileActionType)file_information->Action
                                 );
                             }
@@ -190,19 +187,19 @@ private:
     bool passFilter(std::wstring const& filePath) {
         if (!filename.empty()) {
             // if we are watching a single file, only that file should trigger action
-            return Path(filePath).filename() == filename;
+            return std::filesystem::path(filePath).filename() == filename;
         }
         return true;
     }
 
-    void* getDirectory(Path const& path) {
-        Path watch_path = [this, &path]() {
+    void* getDirectory(std::filesystem::path const& path) {
+        std::filesystem::path watch_path = [this, &path]() {
             if (std::filesystem::is_directory(path)) {
                 return path;
             } else {
                 filename = path.filename();
                 if (!path.has_parent_path()) {
-                    return Path{u8"./"};
+                    return std::filesystem::path{u8"./"};
                 }
                 return path.parent_path();
             }
@@ -225,7 +222,10 @@ private:
     }
 
 public:
-    FileWatcher(Path const& path, std::function<void(Path const&, FileActionType)> callback)
+    FileWatcher(
+        std::filesystem::path const&                                      path,
+        std::function<void(std::filesystem::path const&, FileActionType)> callback
+    )
     : callback(std::move(callback)),
       directoryHandle(getDirectory(path)) {
         init();
@@ -240,7 +240,7 @@ static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase& l) {
         file_utils::u8path(path),
         [id =
              (std::string{getEventId<FileActionEvent>.name} + "|" + path
-             )](FileWatcher::Path const& p, FileActionType e) {
+             )](std::filesystem::path const& p, FileActionType e) {
             FileActionEvent ev{p, e};
             ll::event::EventBus::getInstance().publish(ev, EventId{id});
         }

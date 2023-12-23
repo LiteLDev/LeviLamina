@@ -28,8 +28,7 @@ concept Reflectable = is_reflectable_v<T>;
 
 template <Reflectable T, class F>
 constexpr void forEachMember(T&& value, F&& func) {
-    using Type                            = std::remove_cvref_t<T>;
-    static constexpr auto const namearray = boost::pfr::names_as_array<Type>();
+    static constexpr auto const namearray = boost::pfr::names_as_array<std::remove_cvref_t<T>>();
     boost::pfr::for_each_field(std::forward<T>(value), [func = std::forward<F>(func)](auto&& field, std::size_t idx) {
         func(namearray[idx], std::forward<decltype(field)>(field));
     });

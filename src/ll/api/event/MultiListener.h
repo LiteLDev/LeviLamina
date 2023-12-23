@@ -10,13 +10,13 @@ template <class... Ts>
     requires(sizeof...(Ts) > 1 && (std::derived_from<Ts, Event> && ...))
 class MultiListener : public ListenerBase {
 public:
-    using EventTypes = meta::TypeList<Ts...>;
-    using Callback   = std::function<void(Event&)>;
+    using event_list  = meta::TypeList<Ts...>;
+    using callback_fn = std::function<void(Event&)>;
 
     template <class Callable>
     constexpr explicit MultiListener(Callable&& fn, EventPriority priority = EventPriority::Normal)
     : ListenerBase(priority) {
-        EventTypes::forEach([fn = std::forward<Callable>(fn), this]<class E>() {
+        event_list::forEach([fn = std::forward<Callable>(fn), this]<class E>() {
             callback.emplace(typeid(E), [fn](Event& ev) { static_cast<void>(fn(static_cast<E&>(ev))); });
         });
     }
@@ -31,6 +31,6 @@ public:
     }
 
 private:
-    std::unordered_map<std::type_index, Callback> callback;
+    std::unordered_map<std::type_index, callback_fn> callback;
 };
 } // namespace ll::event

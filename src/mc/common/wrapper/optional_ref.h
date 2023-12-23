@@ -61,22 +61,18 @@ public:
 
     [[nodiscard]] constexpr T* as_ptr() const noexcept { return mPtr; }
 
-    [[nodiscard]] constexpr T* operator->() const {
-        if (!has_value()) {
-            throw std::runtime_error{"bas optional_ref access"};
-        }
-        return mPtr;
-    }
     [[nodiscard]] constexpr T& get() const {
         if (!has_value()) {
-            throw std::runtime_error{"bas optional_ref access"};
+            throw std::runtime_error{"bad optional_ref access"};
         }
         return *mPtr;
     }
 
     [[nodiscard]] constexpr T& value() const { return get(); }
-
     [[nodiscard]] constexpr T& operator*() const { return get(); }
+    [[nodiscard]] constexpr T* operator->() const { return &get(); }
+    [[nodiscard]] constexpr    operator T&() const { return get(); }
+    [[nodiscard]] constexpr    operator T*() const { return &get(); }
 
     template <class U>
     [[nodiscard]] constexpr T& value_or(U& right) const& {
@@ -87,20 +83,12 @@ public:
     }
 
     template <class U>
-    [[nodiscard]] constexpr std::remove_cv_t<T> value_or(U&& right) const {
+    [[nodiscard]] constexpr T value_or(U&& right) const {
         if (has_value()) {
             return *mPtr;
         }
         return std::forward<U>(right);
     }
-
-    [[nodiscard]] constexpr operator T&() const {
-        if (!has_value()) {
-            throw std::runtime_error{"bas optional_ref access"};
-        }
-        return *mPtr;
-    }
-    [[nodiscard]] constexpr operator T*() const { return mPtr; }
 
     template <typename U = std::decay_t<T>>
         requires(std::is_constructible_v<U, T>)

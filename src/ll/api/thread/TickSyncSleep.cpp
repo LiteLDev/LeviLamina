@@ -21,18 +21,18 @@ LL_TYPED_INSTANCE_HOOK(TickSyncSleepInterrruptHook, HookPriority::Normal, Server
                 [&](auto& ptr) -> void {
                     auto& sleeper = ptr.get();
 
-                    using Sleeper = std::decay_t<decltype(sleeper)>;
-                    using Clock   = typename Sleeper::ClockType;
-                    using State   = typename Sleeper::State;
+                    using sleeper_t = std::decay_t<decltype(sleeper)>;
+                    using clock     = typename sleeper_t::clock_type;
+                    using state     = typename sleeper_t::State;
 
                     switch (sleeper.state) {
-                    case State::SleepFor:
-                    case State::SleepUntil:
-                        if (Clock::now() >= sleeper.timepoint || sleeper.timepoint >= Clock::time_point::max()) {
+                    case state::SleepFor:
+                    case state::SleepUntil:
+                        if (clock::now() >= sleeper.timepoint || sleeper.timepoint >= clock::time_point::max()) {
                             sleeper.interrupt();
                         }
-                    case State::None:
-                    case State::Sleep:
+                    case state::None:
+                    case state::Sleep:
                     default:
                         return;
                     }

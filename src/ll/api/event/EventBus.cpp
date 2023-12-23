@@ -13,6 +13,8 @@
 
 namespace ll::event {
 
+std::atomic_ullong ListenerBase::listenerId{0};
+
 class CallbackStream {
     struct ListenerComparator {
         bool operator()(ListenerPtr const& lhs, ListenerPtr const& rhs) const { return *lhs < *rhs; }
@@ -52,8 +54,6 @@ public:
 };
 
 class EventBus::EventBusImpl {
-    std::atomic<ListenerId> lid{};
-
 public:
     std::unordered_map<EventId, std::function<std::unique_ptr<EmitterBase>(ListenerBase&)>> emitterFactory;
 
@@ -67,8 +67,6 @@ public:
     };
 
     std::unordered_map<ListenerId, ListenerInfo> listeners;
-
-    ListenerId getNewListenerId() { return ++lid; }
 
     bool addListener(ListenerPtr const& listener, EventId eventId) {
         if (auto i = streams.find(eventId); i != streams.end()) {
@@ -127,9 +125,6 @@ bool EventBus::addListener(ListenerPtr const& listener, EventId eventId, Cannell
         return false;
     }
     std::lock_guard lock(impl->mutex);
-    if (listener->getId() == 0) {
-        listener->setId(impl->getNewListenerId());
-    }
     if (impl->addListener(listener, eventId)) {
         auto& info    = impl->listeners[listener->getId()];
         info.listener = listener;
@@ -165,9 +160,6 @@ bool EventBus::removeListener(ListenerPtr const& listener, EventId eventId, Cann
     return res;
 }
 ListenerPtr EventBus::getListener(ListenerId id) const {
-    if (id == 0) {
-        return nullptr;
-    }
     std::shared_lock lock(impl->mutex);
     if (!impl->listeners.contains(id)) {
         return nullptr;
@@ -175,9 +167,6 @@ ListenerPtr EventBus::getListener(ListenerId id) const {
     return impl->listeners[id].listener.lock();
 }
 bool EventBus::hasListener(ListenerId id, EventId eventId) const {
-    if (id == 0) {
-        return false;
-    }
     std::shared_lock lock(impl->mutex);
     if (!impl->listeners.contains(id)) {
         return false;

@@ -35,14 +35,14 @@ class Listener<fs::FileActionEvent> : public ListenerBase {
 public:
     std::string path;
 
-    using EventType = fs::FileActionEvent;
-    using Callback  = std::function<void(EventType&)>;
+    using event_type  = fs::FileActionEvent;
+    using callback_fn = std::function<void(event_type&)>;
 
-    explicit Listener(std::string const& path, Callback fn, EventPriority priority = EventPriority::Normal)
+    explicit Listener(std::string const& path, callback_fn fn, EventPriority priority = EventPriority::Normal)
     : ListenerBase(priority),
       path(path),
       callback(std::move(fn)) {
-        nativeId.assign(event::getEventId<EventType>.name);
+        nativeId.assign(event::getEventId<event_type>.name);
         nativeId += "|";
         nativeId += path;
     }
@@ -51,17 +51,17 @@ public:
 
     ~Listener() override = default;
 
-    void call(Event& event) override { callback(static_cast<EventType&>(event)); }
+    void call(Event& event) override { callback(static_cast<event_type&>(event)); }
 
-    [[nodiscard]] EventId factoryId(EventId) const override { return event::getEventId<EventType>; }
+    [[nodiscard]] EventId factoryId(EventId) const override { return event::getEventId<event_type>; }
 
     static std::shared_ptr<Listener>
-    create(std::string const& path, Callback const& fn, EventPriority priority = EventPriority::Normal) {
+    create(std::string const& path, callback_fn const& fn, EventPriority priority = EventPriority::Normal) {
         return std::make_shared<Listener>(path, fn, priority);
     }
 
 private:
-    Callback    callback;
+    callback_fn callback;
     std::string nativeId;
 };
 } // namespace ll::event

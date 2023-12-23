@@ -62,21 +62,21 @@ class NativeClosure {
     static inline size_t closureSize = implOffset + sizeof(detail::NativeClosurePrologue);
 
 public:
-    using Origin  = Ret(uintptr_t, Args...);
-    using Closure = Ret(Args...);
+    using origin_fn  = Ret(uintptr_t, Args...);
+    using closure_fn = Ret(Args...);
 
     struct PackedData {
-        Origin*   func;
-        uintptr_t data;
+        origin_fn* func;
+        uintptr_t  data;
     } stored;
     ulong                    oldProtectFlags{};
     std::unique_ptr<uchar[]> closure;
 
-    NativeClosure(Origin* func, uintptr_t data) : stored({func, data}) {
+    NativeClosure(origin_fn* func, uintptr_t data) : stored({func, data}) {
         detail::initNativeClosure(this, closureImpl, implOffset, closureSize);
     }
 
-    Closure* get() const { return (Closure*)closure.get(); }
+    closure_fn* get() const { return (closure_fn*)closure.get(); }
 
     ~NativeClosure() { detail::releaseNativeClosure(this, closureSize); }
 
@@ -92,10 +92,10 @@ class FunctionalClosure : public NativeClosure<Ret, Args...> {
     }
 
 public:
-    using Closure = Ret(Args...);
-    std::function<Closure> func;
+    using closure = Ret(Args...);
+    std::function<closure> func;
 
-    FunctionalClosure(std::function<Closure> const& func)
+    FunctionalClosure(std::function<closure> const& func)
     : NativeClosure<Ret, Args...>(closureImpl, (uintptr_t)this),
       func(func) {}
 };

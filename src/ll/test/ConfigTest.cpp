@@ -57,9 +57,10 @@ public:
         {"key3", {}                 },
     };
     std::map<mce::UUID, int> bmap = {
-        {{},     4454556  },
-        {{2, 3}, 4366     },
-        {{4, 5}, -63556654},
+        {{},                  4454556  },
+        {{2, 3},              4366     },
+        {{4, 5},              -63556654},
+        {mce::UUID::random(), -5674236 },
     };
     std::tuple<int, bool, float>                       tuple;
     std::pair<std::string_view, MyPair>                pair;
