@@ -15,6 +15,15 @@ protected:
     );
 
 public:
+    void serialize(CompoundTag& nbt) const override {
+        T::serialize(nbt);
+        Event::serializeWithCancell(nbt);
+    }
+    void deserialize(CompoundTag const& nbt)  override {
+        T::deserialize(nbt);
+        Event::deserializeWithCancell(nbt);
+    }
+
     [[nodiscard]] constexpr bool isCancelled() { return Event::mCancelled; }
 
     constexpr void setCancelled(bool cancelled) { Event::mCancelled = cancelled; }

@@ -20,10 +20,18 @@
 
 #include "windows.h"
 
+#include "mc/nbt/CompoundTag.h"
+
 namespace ll::event::inline fs {
 
-LLNDAPI std::filesystem::path const& FileActionEvent::path() const { return mPath; }
-LLNDAPI FileActionType const&        FileActionEvent::type() const { return mType; }
+void FileActionEvent::serialize(CompoundTag& nbt) const {
+    Event::serialize(nbt);
+    nbt["path"] = string_utils::u8str2str(path().u8string());
+    nbt["type"] = magic_enum::enum_name(type());
+}
+
+std::filesystem::path const& FileActionEvent::path() const { return mPath; }
+FileActionType const&        FileActionEvent::type() const { return mType; }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase& l);
 // modified from Thomas Monkman's

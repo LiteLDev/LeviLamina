@@ -13,6 +13,8 @@ class SetupCommandEvent : public Event {
 public:
     constexpr explicit SetupCommandEvent(CommandRegistry& reg) : mRegistry(reg) {}
 
+    void serialize(CompoundTag&) const override;
+
     LLNDAPI CommandRegistry& registry() const;
 };
 } // namespace ll::event::inline command

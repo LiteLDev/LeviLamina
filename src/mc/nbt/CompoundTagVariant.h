@@ -17,6 +17,8 @@
 #include "mc/nbt/ShortTag.h"
 #include "mc/nbt/StringTag.h"
 
+#include "ll/api/base/Concepts.h"
+
 class CompoundTag;
 
 class CompoundTagVariant {
@@ -54,33 +56,46 @@ public:
         switch (tag->getId()) {
         case Tag::Type::Byte:
             mTagStorage = std::move((ByteTag&)*tag);
+            break;
         case Tag::Type::Short:
             mTagStorage = std::move((ShortTag&)*tag);
+            break;
         case Tag::Type::Int:
             mTagStorage = std::move((IntTag&)*tag);
+            break;
         case Tag::Type::Int64:
             mTagStorage = std::move((Int64Tag&)*tag);
+            break;
         case Tag::Type::Float:
             mTagStorage = std::move((FloatTag&)*tag);
+            break;
         case Tag::Type::Double:
             mTagStorage = std::move((DoubleTag&)*tag);
+            break;
         case Tag::Type::ByteArray:
             mTagStorage = std::move((ByteArrayTag&)*tag);
+            break;
         case Tag::Type::String:
             mTagStorage = std::move((StringTag&)*tag);
+            break;
         case Tag::Type::List:
             mTagStorage = std::move((ListTag&)*tag);
+            break;
         case Tag::Type::Compound:
             mTagStorage = std::move((CompoundTag&)*tag);
+            break;
         case Tag::Type::IntArray:
             mTagStorage = std::move((IntArrayTag&)*tag);
+            break;
         case Tag::Type::End:
             mTagStorage = std::move((EndTag&)*tag);
+            break;
         default:
             std::unreachable();
         }
     }
-    [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag> const& tag) : CompoundTagVariant(tag->copy()) {}
+    [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag> const& tag)
+    : CompoundTagVariant(tag ? tag->copy() : std::unique_ptr<Tag>{}) {}
     template <std::derived_from<Tag> T>
     [[nodiscard]] constexpr CompoundTagVariant(T tag) : mTagStorage(std::move(tag)) {}
     template <std::integral T>
@@ -131,6 +146,9 @@ public:
     [[nodiscard]] bool is_number() const noexcept { return is_number_float() || is_number_integer(); }
     [[nodiscard]] bool is_primitive() const noexcept { return is_null() || is_string() || is_number() || is_binary(); }
     [[nodiscard]] bool is_structured() const noexcept { return is_array() || is_object(); }
+
+    [[nodiscard]] CompoundTag::TagMap const& items() const { return get<CompoundTag>().mTags; }
+    [[nodiscard]] CompoundTag::TagMap&       items() { return get<CompoundTag>().mTags; }
 
     [[nodiscard]] bool contains(std::string_view key) const noexcept {
         if (is_object()) {
@@ -199,7 +217,7 @@ public:
         if (hold<ListTag>()) {
             return get<ListTag>()[index];
         } else {
-            throw std::range_error("tag not hold an array");
+            throw std::runtime_error("tag not hold an array");
         }
     }
 
@@ -207,8 +225,25 @@ public:
         if (hold<ListTag>()) {
             return get<ListTag>()[index];
         } else {
-            throw std::range_error("tag not hold an array");
+            throw std::runtime_error("tag not hold an array");
         }
+    }
+
+    [[nodiscard]] CompoundTagVariant& operator[](char const* index) {
+        if (is_null()) {
+            mTagStorage = CompoundTag{};
+        }
+        if (!hold<CompoundTag>()) {
+            throw std::runtime_error("tag not hold an object");
+        }
+        return get<CompoundTag>()[index];
+    }
+
+    [[nodiscard]] CompoundTagVariant const& operator[](char const* index) const {
+        if (!hold<CompoundTag>()) {
+            throw std::runtime_error("tag not hold an object");
+        }
+        return get<CompoundTag>()[index];
     }
 
     [[nodiscard]] CompoundTagVariant& operator[](std::string const& index) {
@@ -216,14 +251,14 @@ public:
             mTagStorage = CompoundTag{};
         }
         if (!hold<CompoundTag>()) {
-            throw std::range_error("tag not hold an object");
+            throw std::runtime_error("tag not hold an object");
         }
         return get<CompoundTag>()[index];
     }
 
     [[nodiscard]] CompoundTagVariant const& operator[](std::string const& index) const {
         if (!hold<CompoundTag>()) {
-            throw std::range_error("tag not hold an object");
+            throw std::runtime_error("tag not hold an object");
         }
         return get<CompoundTag>()[index];
     }
@@ -257,9 +292,53 @@ public:
             mTagStorage = ListTag{};
         }
         if (!hold<ListTag>()) {
-            throw std::range_error("tag not hold an array");
+            throw std::runtime_error("tag not hold an array");
         }
         get<ListTag>().add(std::move(val).toUnique());
+    }
+
+    template <ll::concepts::IsNonCharIntegral T>
+    [[nodiscard]] constexpr operator T() const {
+        if (is_number()) {
+            return std::visit(
+                [](auto& val) -> T {
+                    if constexpr (std::is_convertible_v<std::decay_t<decltype(val)>, T>) {
+                        return (T)val;
+                    } else {
+                        return {};
+                    }
+                },
+                mTagStorage
+            );
+        } else {
+            throw std::runtime_error("tag not hold an number");
+        }
+    }
+    template <std::floating_point T>
+    [[nodiscard]] constexpr operator T() const {
+        if (is_number()) {
+            return std::visit(
+                [](auto& val) -> T {
+                    if constexpr (std::is_convertible_v<std::decay_t<decltype(val)>, T>) {
+                        return (T)val;
+                    } else {
+                        return {};
+                    }
+                },
+                mTagStorage
+            );
+        } else {
+            throw std::runtime_error("tag not hold a number");
+        }
+    }
+    [[nodiscard]] constexpr operator std::string const&() const { // NOLINT
+        return get<StringTag>();
+    }
+    [[nodiscard]] constexpr operator std::string&() { // NOLINT
+        return get<StringTag>();
+    }
+    [[nodiscard]] constexpr operator std::string_view() const { // NOLINT
+        return get<StringTag>();
     }
 };
 

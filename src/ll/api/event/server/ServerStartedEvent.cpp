@@ -4,7 +4,14 @@
 
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
+#include "mc/nbt/CompoundTag.h"
+
 namespace ll::event::inline server {
+
+void ServerStartedEvent::serialize(CompoundTag& nbt) const {
+    Event::serialize(nbt);
+    nbt["instance"] = (uintptr_t)&instance();
+}
 
 ServerInstance& ServerStartedEvent::instance() const { return mInstance; }
 

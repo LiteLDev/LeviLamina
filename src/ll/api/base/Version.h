@@ -289,7 +289,7 @@ inline J serialize(Version const& ver) {
 template <class J>
 inline void deserialize(Version& ver, J const& j) {
     if (j.is_string()) {
-        ver.from_string(j.template get<std::string>());
+        ver.from_string(j);
     }
 }
 

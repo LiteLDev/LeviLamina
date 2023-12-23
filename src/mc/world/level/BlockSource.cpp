@@ -45,10 +45,9 @@ optional_ref<Container> BlockSource::tryGetContainer(class BlockPos const& pos) 
     return DropperBlockActor::getContainerAt(*this, pos.center());
 }
 
-LLAPI optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
-    auto& level = getLevel();
-    auto  actorOwnerPtr =
-        level.getActorFactory().loadActor(const_cast<CompoundTag*>(&nbt), defaultDataLoadHelper);
+optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
+    auto& level         = getLevel();
+    auto  actorOwnerPtr = level.getActorFactory().loadActor(const_cast<CompoundTag*>(&nbt), defaultDataLoadHelper);
     if (!actorOwnerPtr) {
         return nullptr;
     }
@@ -94,9 +93,9 @@ bool BlockSource::destroyBlock(BlockPos const& pos, optional_ref<ItemStack> tool
     if (block.isUnbreakable()) {
         return false;
     }
-    auto& material = block.getMaterial();
-    bool shouldDrop = material.isAlwaysDestroyable() || tool->canDestroySpecial(block);
-    bool res = getLevel().destroyBlock(*this, pos, shouldDrop);
+    auto& material   = block.getMaterial();
+    bool  shouldDrop = material.isAlwaysDestroyable() || tool->canDestroySpecial(block);
+    bool  res        = getLevel().destroyBlock(*this, pos, shouldDrop);
     if (!tool) {
         return res;
     }

@@ -25,7 +25,7 @@ class ListenerBase {
     LLAPI static std::atomic_ullong listenerId;
 
     friend CallbackStream;
-    ListenerId                    id{listenerId++};
+    ListenerId                    id;
     EventPriority                 priority;
     std::weak_ptr<plugin::Plugin> pluginPtr;
 
@@ -34,7 +34,8 @@ protected:
         EventPriority                        priority,
         std::weak_ptr<plugin::Plugin> const& plugin = plugin::Plugin::current().weak_from_this()
     )
-    : priority(priority),
+    : id(listenerId++),
+      priority(priority),
       pluginPtr(plugin) {}
 
 public:

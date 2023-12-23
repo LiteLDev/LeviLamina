@@ -18,6 +18,8 @@ public:
 
     [[nodiscard]] constexpr operator std::string const&() const { return data; } // NOLINT
 
+    [[nodiscard]] constexpr operator std::string_view() const { return data; } // NOLINT
+
     [[nodiscard]] constexpr operator std::string&() { return data; } // NOLINT
 
 public:

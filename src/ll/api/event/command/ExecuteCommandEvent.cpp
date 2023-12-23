@@ -5,7 +5,24 @@
 #include "mc/codebuilder/MCRESULT.h"
 #include "mc/server/commands/MinecraftCommands.h"
 
+#include "mc/nbt/CompoundTag.h"
+
 namespace ll::event::inline command {
+
+void ExecuteCommandEvent::serialize(CompoundTag& nbt) const {
+    Event::serialize(nbt);
+    nbt["minecraftCommands"] = (uintptr_t)&minecraftCommands();
+    nbt["commandContext"]    = (uintptr_t)&commandContext();
+    nbt["suppressOutput"]    = suppressOutput();
+}
+void ExecutingCommandEvent::deserialize(CompoundTag const& nbt) {
+    Cancellable::deserialize(nbt);
+    suppressOutput() = nbt["suppressOutput"];
+}
+void ExecutedCommandEvent::serialize(CompoundTag& nbt) const {
+    ExecuteCommandEvent::serialize(nbt);
+    nbt["result"] = (uintptr_t)&result();
+}
 
 MinecraftCommands&    ExecuteCommandEvent::minecraftCommands() const { return mMinecraftCommands; }
 CommandContext const& ExecuteCommandEvent::commandContext() const { return mCommandContext; }

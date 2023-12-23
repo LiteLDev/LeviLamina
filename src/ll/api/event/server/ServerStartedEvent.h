@@ -13,6 +13,8 @@ class ServerStartedEvent : public Cancellable<Event> {
 public:
     constexpr explicit ServerStartedEvent(ServerInstance& instance) : mInstance(instance) {}
 
+    void serialize(CompoundTag&) const override;
+
     LLNDAPI ServerInstance& instance() const;
 };
 } // namespace ll::event::inline server

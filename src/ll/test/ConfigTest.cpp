@@ -115,6 +115,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         ll::reflection::serialize<CompoundTagVariant>(helloReflection).toSnbt(SnbtFormat::PrettyConsolePrint)
     );
 
+    ll::reflection::deserialize(helloReflection, ll::reflection::serialize<CompoundTagVariant>(helloReflection));
+
     ll::logger.debug("0x{:X}", (uintptr_t)ll::memory::resolveIdentifier(&FillCommand::execute));
     ll::logger.debug("0x{:X}", (uintptr_t)ll::win_utils::getImageRange().data());
 

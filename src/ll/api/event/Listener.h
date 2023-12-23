@@ -11,15 +11,15 @@ public:
     using event_type  = T;
     using callback_fn = std::function<void(event_type&)>;
 
-    constexpr explicit Listener(callback_fn const& fn, EventPriority priority = EventPriority::Normal)
+    constexpr explicit Listener(callback_fn fn, EventPriority priority = EventPriority::Normal)
     : ListenerBase(priority),
-      callback(fn) {}
+      callback(std::move(fn)) {}
 
     ~Listener() override = default;
 
     void call(Event& event) override { callback(static_cast<event_type&>(event)); }
 
-    static std::shared_ptr<Listener> create(callback_fn const& fn, EventPriority priority = EventPriority::Normal) {
+    static std::shared_ptr<Listener> create(callback_fn fn, EventPriority priority = EventPriority::Normal) {
         return std::make_shared<Listener>(fn, priority);
     }
 

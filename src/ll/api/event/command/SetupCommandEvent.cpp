@@ -4,7 +4,14 @@
 
 #include "mc/server/common/commands/SaveCommand.h"
 
+#include "mc/nbt/CompoundTag.h"
+
 namespace ll::event::inline command {
+
+void SetupCommandEvent::serialize(CompoundTag& nbt) const {
+    Event::serialize(nbt);
+    nbt["registry"] = (uintptr_t)&registry();
+}
 
 CommandRegistry& SetupCommandEvent::registry() const { return mRegistry; }
 
