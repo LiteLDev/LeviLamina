@@ -10,6 +10,10 @@ class PlayerAddExperienceEvent : public Cancellable<PlayerEvent> {
 
 public:
     constexpr PlayerAddExperienceEvent(Player& player, int& exp) : Cancellable(player), mExperience(exp) {}
+
+    void serialize(CompoundTag&) const override;
+    void deserialize(CompoundTag const&) override;
+
     LLNDAPI int& experience() const;
 };
 } // namespace ll::event::inline player

@@ -19,7 +19,7 @@ public:
         T::serialize(nbt);
         Event::serializeWithCancell(nbt);
     }
-    void deserialize(CompoundTag const& nbt)  override {
+    void deserialize(CompoundTag const& nbt) override {
         T::deserialize(nbt);
         Event::deserializeWithCancell(nbt);
     }

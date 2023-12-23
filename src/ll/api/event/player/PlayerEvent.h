@@ -14,6 +14,8 @@ protected:
     constexpr explicit PlayerEvent(Player& player) : mPlayer((ServerPlayer&)player) {}
 
 public:
+    void serialize(CompoundTag&) const override;
+
     LLNDAPI ServerPlayer& player() const;
 };
 } // namespace ll::event::inline player

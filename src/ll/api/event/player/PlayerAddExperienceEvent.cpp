@@ -2,8 +2,19 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
+#include "mc/nbt/CompoundTag.h"
 
 namespace ll::event::inline player {
+
+void PlayerAddExperienceEvent::serialize(CompoundTag& nbt) const {
+    Cancellable::serialize(nbt);
+    nbt["experience"] = experience();
+}
+
+void PlayerAddExperienceEvent::deserialize(CompoundTag const& nbt) {
+    Cancellable::deserialize(nbt);
+    experience() = nbt["experience"];
+}
 
 int& PlayerAddExperienceEvent::experience() const { return mExperience; }
 
