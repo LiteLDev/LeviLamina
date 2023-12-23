@@ -15,6 +15,8 @@ public:
     : Cancellable(player),
       mItemActor(itemActor) {}
 
+    void serialize(CompoundTag&) const override;
+
     LLNDAPI ItemActor& itemActor() const;
 };
 

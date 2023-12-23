@@ -2,12 +2,22 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
+#include "mc/nbt/CompoundTag.h"
 #include "mc/network/NetworkIdentifier.h"
+#include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/packet/TextPacket.h"
 
-#include "mc/network/ServerNetworkHandler.h"
-
 namespace ll::event::inline player {
+
+void PlayerSendMessageEvent::serialize(CompoundTag& nbt) const {
+    Cancellable::serialize(nbt);
+    nbt["message"] = message();
+}
+
+void PlayerSendMessageEvent::deserialize(CompoundTag const& nbt) {
+    Cancellable::deserialize(nbt);
+    message() = nbt["message"];
+}
 
 std::string& PlayerSendMessageEvent::message() const { return mMessage; }
 

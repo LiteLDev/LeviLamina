@@ -15,6 +15,8 @@ public:
     : PlayerEvent(player),
       mSource(source) {}
 
+    void serialize(CompoundTag&) const override;
+
     LLNDAPI ActorDamageSource const& source() const;
 };
 } // namespace ll::event::inline player

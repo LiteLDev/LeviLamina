@@ -2,7 +2,15 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
+#include "mc/nbt/CompoundTag.h"
+
 namespace ll::event::inline player {
+
+void PlayerAttackEvent::serialize(CompoundTag& nbt) const {
+    Cancellable::serialize(nbt);
+    nbt["target"] = (uintptr_t)&target();
+    nbt["cause"]  = (int)cause();
+}
 
 Actor&                  PlayerAttackEvent::target() const { return mTarget; }
 ActorDamageCause const& PlayerAttackEvent::cause() const { return mCause; }

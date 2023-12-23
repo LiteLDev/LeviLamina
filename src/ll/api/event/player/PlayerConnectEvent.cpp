@@ -7,7 +7,15 @@
 
 #include "mc/network/ServerNetworkHandler.h"
 
+#include "mc/nbt/CompoundTag.h"
+
 namespace ll::event::inline player {
+
+void PlayerConnectEvent::serialize(CompoundTag& nbt) const {
+    Cancellable::serialize(nbt);
+    nbt["networkIdentifier"] = (uintptr_t)&networkIdentifier();
+    nbt["connectionRequest"] = (uintptr_t)&connectionRequest();
+}
 
 NetworkIdentifier const& PlayerConnectEvent::networkIdentifier() const { return mNetworkIdentifier; }
 ConnectionRequest const& PlayerConnectEvent::connectionRequest() const { return mConnectionRequest; }

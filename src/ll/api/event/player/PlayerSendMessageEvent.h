@@ -13,6 +13,9 @@ public:
     : Cancellable(player),
       mMessage(message) {}
 
+    void serialize(CompoundTag&) const override;
+    void deserialize(CompoundTag const&) override;
+
     LLNDAPI std::string& message() const;
 };
 } // namespace ll::event::inline player

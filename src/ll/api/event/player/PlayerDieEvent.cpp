@@ -2,7 +2,14 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
+#include "mc/nbt/CompoundTag.h"
+
 namespace ll::event::inline player {
+
+void PlayerDieEvent::serialize(CompoundTag& nbt) const {
+    PlayerEvent::serialize(nbt);
+    nbt["source"] = (uintptr_t)&source();
+}
 
 ActorDamageSource const& PlayerDieEvent::source() const { return mSource; }
 

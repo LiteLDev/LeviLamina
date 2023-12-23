@@ -15,6 +15,8 @@ public:
       mTarget(target),
       mCause(cause) {}
 
+    void serialize(CompoundTag&) const override;
+
     LLNDAPI Actor&                  target() const;
     LLNDAPI ActorDamageCause const& cause() const;
 };

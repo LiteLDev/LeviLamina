@@ -13,6 +13,9 @@ public:
     : Cancellable(player),
       mMewPerm(newPerm) {}
 
+    void serialize(CompoundTag&) const override;
+    void deserialize(CompoundTag const&) override;
+
     LLNDAPI CommandPermissionLevel& newPerm() const;
 };
 } // namespace ll::event::inline player
