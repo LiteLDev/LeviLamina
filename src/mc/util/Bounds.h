@@ -17,8 +17,6 @@ public:
     int       volume;
     int       side;
 
-    Bounds() = delete;
-
 public:
     // NOLINTBEGIN
     // symbol: ??0Bounds@@QEAA@AEBVChunkPos@@0@Z

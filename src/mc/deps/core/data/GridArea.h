@@ -19,6 +19,4 @@ public:
     short                                                       mMinHeight; // this+0x122
     short                                                       mMaxHeight; // this+0x124
     std::mutex                                                  mMoveMutex; // this+0x128
-
-    GridArea() = delete;
 };
