@@ -3,7 +3,7 @@
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/actor/ActorEvent.h"
 
-class ActorDamageSource;
+#include "mc/world/actor/ActorDamageSource.h"
 
 namespace ll::event::inline actor {
 

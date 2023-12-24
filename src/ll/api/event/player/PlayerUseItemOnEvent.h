@@ -5,8 +5,7 @@
 
 #include "mc/math/Vec3.h"
 #include "mc/world/level/BlockPos.h"
-
-class Block;
+#include "mc/world/level/block/Block.h"
 
 namespace ll::event::inline player {
 

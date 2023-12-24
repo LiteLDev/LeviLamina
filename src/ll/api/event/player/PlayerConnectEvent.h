@@ -3,8 +3,8 @@
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/player/PlayerEvent.h"
 
-class ConnectionRequest;
-class NetworkIdentifier;
+#include "mc/network/ConnectionRequest.h"
+#include "mc/network/NetworkIdentifier.h"
 
 namespace ll::event::inline player {
 

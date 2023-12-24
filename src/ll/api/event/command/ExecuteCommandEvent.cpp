@@ -2,9 +2,6 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/codebuilder/MCRESULT.h"
-#include "mc/server/commands/MinecraftCommands.h"
-
 #include "mc/nbt/CompoundTag.h"
 
 namespace ll::event::inline command {

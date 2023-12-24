@@ -3,8 +3,7 @@
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/player/PlayerClickEvent.h"
 
-class GameMode;
-class ItemStack;
+#include "mc/world/item/registry/ItemStack.h"
 
 namespace ll::event::inline player {
 

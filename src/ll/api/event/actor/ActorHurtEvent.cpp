@@ -2,8 +2,6 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/world/actor/ActorDamageSource.h"
-
 #include "mc/nbt/CompoundTag.h"
 
 namespace ll::event::inline actor {
