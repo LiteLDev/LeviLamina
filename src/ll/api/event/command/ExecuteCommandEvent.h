@@ -33,7 +33,6 @@ public:
     LLNDAPI CommandContext const& commandContext() const;
     LLNDAPI bool const&           suppressOutput() const;
 };
-
 class ExecutingCommandEvent : public Cancellable<ExecuteCommandEvent> {
 public:
     constexpr explicit ExecutingCommandEvent(
