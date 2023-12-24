@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ll/api/event/mob/MobEvent.h"
+#include "ll/api/event/entity/MobEvent.h"
 
 #include "mc/server/ServerPlayer.h"
 

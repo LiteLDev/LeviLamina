@@ -1,10 +1,10 @@
 #pragma once
 
-#include "ll/api/event/mob/MobEvent.h"
+#include "ll/api/event/entity/MobEvent.h"
 
 #include "mc/world/actor/ActorDamageSource.h"
 
-namespace ll::event::inline mob {
+namespace ll::event::inline entity {
 
 class MobDieEvent : public MobEvent {
     ActorDamageSource const& mSource;
@@ -16,4 +16,4 @@ public:
 
     LLNDAPI ActorDamageSource const& source() const;
 };
-} // namespace ll::event::inline mob
+} // namespace ll::event::inline entity

@@ -1,10 +1,10 @@
-#include "ll/api/event/mob/MobDieEvent.h"
+#include "ll/api/event/entity/MobDieEvent.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"
 
-namespace ll::event::inline mob {
+namespace ll::event::inline entity {
 
 void MobDieEvent::serialize(CompoundTag& nbt) const {
     MobEvent::serialize(nbt);
@@ -34,4 +34,4 @@ class MobDieEventEmitter : public Emitter<MobDieEvent, emitterFactory> {
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return std::make_unique<MobDieEventEmitter>(); }
 
-} // namespace ll::event::inline mob
+} // namespace ll::event::inline entity

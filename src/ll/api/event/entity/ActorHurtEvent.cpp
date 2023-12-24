@@ -1,10 +1,10 @@
-#include "ll/api/event/actor/ActorHurtEvent.h"
+#include "ll/api/event/entity/ActorHurtEvent.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"
 
-namespace ll::event::inline actor {
+namespace ll::event::inline entity {
 
 void ActorHurtEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
@@ -52,4 +52,4 @@ class ActorHurtEventEmitter : public Emitter<ActorHurtEvent, emitterFactory> {
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return std::make_unique<ActorHurtEventEmitter>(); }
 
-} // namespace ll::event::inline actor
+} // namespace ll::event::inline entity

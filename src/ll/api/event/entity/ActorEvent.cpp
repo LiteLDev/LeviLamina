@@ -1,8 +1,8 @@
-#include "ll/api/event/actor/ActorEvent.h"
+#include "ll/api/event/entity/ActorEvent.h"
 
 #include "mc/nbt/CompoundTag.h"
 
-namespace ll::event::inline actor {
+namespace ll::event::inline entity {
 
 void ActorEvent::serialize(CompoundTag& nbt) const {
     Event::serialize(nbt);
@@ -11,4 +11,4 @@ void ActorEvent::serialize(CompoundTag& nbt) const {
 
 Actor& ActorEvent::self() const { return mSelf; }
 
-} // namespace ll::event::inline actor
+} // namespace ll::event::inline entity

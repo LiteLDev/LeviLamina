@@ -1,11 +1,11 @@
 #pragma once
 
 #include "ll/api/event/Cancellable.h"
-#include "ll/api/event/actor/ActorEvent.h"
+#include "ll/api/event/entity/ActorEvent.h"
 
 #include "mc/world/actor/ActorDamageSource.h"
 
-namespace ll::event::inline actor {
+namespace ll::event::inline entity {
 
 class ActorHurtEvent : public Cancellable<ActorEvent> {
     ActorDamageSource const& mSource;
@@ -35,4 +35,4 @@ public:
     LLNDAPI bool&                    knock() const;
     LLNDAPI bool&                    ignite() const;
 };
-} // namespace ll::event::inline actor
+} // namespace ll::event::inline entity

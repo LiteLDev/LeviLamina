@@ -5,7 +5,7 @@
 
 #include "mc/world/actor/Actor.h"
 
-namespace ll::event::inline actor {
+namespace ll::event::inline entity {
 
 class ActorEvent : public Event {
     Actor& mSelf;
@@ -18,4 +18,4 @@ public:
 
     LLNDAPI Actor& self() const;
 };
-} // namespace ll::event::inline actor
+} // namespace ll::event::inline entity
