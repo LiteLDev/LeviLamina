@@ -2,42 +2,44 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
+#include "mc/common/wrapper/InteractionResult.h"
+#include "mc/world/gamemode/GameMode.h"
+
 #include "mc/nbt/CompoundTag.h"
 
 namespace ll::event::inline player {
 
 void PlayerUseItemOnEvent::serialize(CompoundTag& nbt) const {
-    Cancellable::serialize(nbt);
-    nbt["item"]        = (uintptr_t)&item();
-    nbt["blocksource"] = (uintptr_t)&blocksource();
-    nbt["face"]        = face();
-    nbt["clickPos"]    = clickPos().toString();
+    PlayerUseItemEvent::serialize(nbt);
+    nbt["blockPos"] = ListTag{blockPos().x, blockPos().y, blockPos().z};
+    nbt["face"]     = face();
+    nbt["clickPos"] = ListTag{clickPos().x, clickPos().y, clickPos().z};
+    nbt["block"]    = (uintptr_t)&block();
 }
 
-ItemStack&         PlayerUseItemOnEvent::item() const { return mItemStack; }
-BlockSource const& PlayerUseItemOnEvent::blocksource() const { return mBlockSource; }
-unsigned char      PlayerUseItemOnEvent::face() const { return mFace; }
-Vec3               PlayerUseItemOnEvent::clickPos() const { return mClickPos; }
+BlockPos const& PlayerUseItemOnEvent::blockPos() const { return mBlockPos; }
+uchar const&    PlayerUseItemOnEvent::face() const { return mFace; }
+Vec3 const&     PlayerUseItemOnEvent::clickPos() const { return mClickPos; }
+Block const&    PlayerUseItemOnEvent::block() const { return mBlock; }
 
 LL_TYPED_INSTANCE_HOOK(
     PlayerUseItemOnEventHook,
     HookPriority::Normal,
     GameMode,
     "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
-    bool,
-    ItemStack& it,
-    BlockPos   bp,
-    uchar      side,
-    Vec3*      clickPos,
-    void*      a6_block
+    InteractionResult,
+    ItemStack&      item,
+    BlockPos const& blockPos,
+    uchar           face,
+    Vec3 const&     clickPos,
+    Block const*    block
 ) {
-    auto ev =
-        PlayerUseItemOnEvent(this->getPlayer(), it, this->getPlayer().getDimensionBlockSourceConst(), side, *clickPos);
+    auto ev = PlayerUseItemOnEvent(this->getPlayer(), item, blockPos, face, clickPos, *block);
     EventBus::getInstance().publish(ev);
     if (ev.isCancelled()) {
-        return false;
+        return {InteractionResult::Result::Fail};
     }
-    return origin(it, bp, side, clickPos, a6_block);
+    return origin(item, blockPos, face, clickPos, block);
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);

@@ -38,6 +38,8 @@
 namespace mce { class Color; }
 // clang-format on
 
+class ActorDamageSource;
+
 class Actor : public ::ActorStatusProvider {
 public:
     // Actor inner types define
@@ -78,7 +80,7 @@ public:
 
     LLNDAPI float getPosDeltaPerSecLength() const;
 
-    LLAPI bool hurt(
+    LLAPI bool hurtByCause(
         float               damage,
         ActorDamageCause    cause    = ActorDamageCause::Override,
         optional_ref<Actor> attacker = std::nullopt

@@ -1,19 +1,16 @@
 #pragma once
 
-#include "ll/api/base/Macro.h"
-#include "ll/api/event/Event.h"
+#include "ll/api/event/actor/ActorEvent.h"
 
 #include "mc/world/actor/Mob.h"
 
 namespace ll::event::inline mob {
 
-class MobEvent : public Event {
-    Mob& mMob;
-
+class MobEvent : public ActorEvent {
 protected:
-    constexpr explicit MobEvent(Mob& mob) : mMob(mob) {}
+    constexpr explicit MobEvent(Mob& mob) : ActorEvent(mob) {}
 
 public:
-    LLNDAPI Mob& mob() const;
+    LLNDAPI Mob& self() const;
 };
 } // namespace ll::event::inline mob

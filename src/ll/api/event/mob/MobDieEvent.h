@@ -1,15 +1,18 @@
 #pragma once
 
-#include "ll/api/event/Cancellable.h"
 #include "ll/api/event/mob/MobEvent.h"
+
+#include "mc/world/actor/ActorDamageSource.h"
 
 namespace ll::event::inline mob {
 
-class MobDieEvent : public Cancellable<MobEvent> {
-    ActorDamageSource const& mDamageSource;
+class MobDieEvent : public MobEvent {
+    ActorDamageSource const& mSource;
 
 public:
-    constexpr MobDieEvent(Mob& mob, ActorDamageSource const& source) : Cancellable(mob), mDamageSource(source) {}
+    constexpr explicit MobDieEvent(Mob& mob, ActorDamageSource const& source) : MobEvent(mob), mSource(source) {}
+
+    void serialize(CompoundTag&) const override;
 
     LLNDAPI ActorDamageSource const& source() const;
 };

@@ -2,9 +2,16 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
+#include "mc/nbt/CompoundTag.h"
+
 namespace ll::event::inline mob {
 
-ActorDamageSource const& MobDieEvent::source() const { return mDamageSource; }
+void MobDieEvent::serialize(CompoundTag& nbt) const {
+    MobEvent::serialize(nbt);
+    nbt["source"] = (uintptr_t)&source();
+}
+
+ActorDamageSource const& MobDieEvent::source() const { return mSource; }
 
 
 LL_TYPED_INSTANCE_HOOK(
@@ -12,15 +19,12 @@ LL_TYPED_INSTANCE_HOOK(
     HookPriority::Normal,
     Mob,
     "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z",
-    bool,
-    ActorDamageSource* ads
+    void,
+    ActorDamageSource const& source
 ) {
-    auto ev = MobDieEvent(*this, *ads);
+    auto ev = MobDieEvent(*this, source);
     EventBus::getInstance().publish(ev);
-    if (ev.isCancelled()) {
-        return false;
-    }
-    return origin(ads);
+    return origin(source);
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);

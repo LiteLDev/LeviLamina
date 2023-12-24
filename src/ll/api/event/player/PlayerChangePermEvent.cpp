@@ -8,12 +8,16 @@ namespace ll::event::inline player {
 
 void PlayerChangePermEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
-    nbt["permission"] = (int)newPerm();
+    nbt["permission"] = magic_enum::enum_name(newPerm());
 }
 
 void PlayerChangePermEvent::deserialize(CompoundTag const& nbt) {
     Cancellable::deserialize(nbt);
-    newPerm() = (CommandPermissionLevel)(int)nbt["permission"];
+    magic_enum::enum_cast<CommandPermissionLevel>((std::string_view)nbt["permission"])
+        .transform([this](CommandPermissionLevel val) {
+            newPerm() = val;
+            return true;
+        });
 }
 
 CommandPermissionLevel& PlayerChangePermEvent::newPerm() const { return mMewPerm; }

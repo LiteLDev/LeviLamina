@@ -2,9 +2,17 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
+#include "mc/server/common/DedicatedServer.h"
+
 namespace ll::event::inline server {
 
-LL_INSTANCE_HOOK(ServerStoppedEventHook, HookPriority::Normal, "??1DedicatedServer@@UEAA@XZ", void) {
+LL_TYPED_INSTANCE_HOOK(
+    ServerStoppedEventHook,
+    HookPriority::Normal,
+    DedicatedServer,
+    "??1DedicatedServer@@UEAA@XZ",
+    void
+) {
     EventBus::getInstance().publish(ServerStoppedEvent());
     origin();
 }

@@ -5,8 +5,10 @@
 class InteractionResult {
 public:
     enum class Result : int {
+        Fail    = 0x0,
         Success = 0x1,
-        Fail    = 0x2,
+        Swing   = 0x2,
     };
-    std::underlying_type_t<Result> mResult;
+
+    Result mResult;
 };

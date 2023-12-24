@@ -1,6 +1,5 @@
 #pragma once
 
-#include "ll/api/event/Cancellable.h"
 #include "ll/api/event/player/PlayerEvent.h"
 
 #include "mc/world/actor/ActorDamageSource.h"

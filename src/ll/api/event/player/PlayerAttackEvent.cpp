@@ -9,7 +9,7 @@ namespace ll::event::inline player {
 void PlayerAttackEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
     nbt["target"] = (uintptr_t)&target();
-    nbt["cause"]  = (int)cause();
+    nbt["cause"]  = magic_enum::enum_name(cause());
 }
 
 Actor&                  PlayerAttackEvent::target() const { return mTarget; }

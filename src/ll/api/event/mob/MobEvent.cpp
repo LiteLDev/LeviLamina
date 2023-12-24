@@ -2,6 +2,6 @@
 
 namespace ll::event::inline mob {
 
-Mob& MobEvent::mob() const { return mMob; }
+Mob& MobEvent::self() const { return static_cast<Mob&>(ActorEvent::self()); }
 
 } // namespace ll::event::inline mob

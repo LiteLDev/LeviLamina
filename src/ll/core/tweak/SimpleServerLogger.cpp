@@ -30,7 +30,7 @@ void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
         if (config.playerChat && !impl->playerChat) {
             impl->playerChat = bus.emplaceListener<PlayerSendMessageEvent>([](PlayerSendMessageEvent& ev) {
                 static Logger logger("PlayerChat");
-                logger.info("<{}> {}", ev.player().getRealName(), ev.message());
+                logger.info("<{}> {}", ev.self().getRealName(), ev.message());
             });
         }
         if (config.playerCommand && !impl->playerCommand) {
@@ -52,9 +52,9 @@ void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
                 static Logger logger("PlayerPerm");
                 logger.info(
                     "<{}> {}({}) -> {}({})",
-                    ev.player().getRealName(),
-                    magic_enum::enum_name(ev.player().getCommandPermissionLevel()),
-                    fmt::underlying(ev.player().getCommandPermissionLevel()),
+                    ev.self().getRealName(),
+                    magic_enum::enum_name(ev.self().getCommandPermissionLevel()),
+                    fmt::underlying(ev.self().getCommandPermissionLevel()),
                     magic_enum::enum_name(ev.newPerm()),
                     fmt::underlying(ev.newPerm())
                 );

@@ -1,21 +1,16 @@
 #pragma once
 
-#include "ll/api/base/Macro.h"
-#include "ll/api/event/Event.h"
+#include "ll/api/event/mob/MobEvent.h"
 
 #include "mc/server/ServerPlayer.h"
 
 namespace ll::event::inline player {
 
-class PlayerEvent : public Event {
-    ServerPlayer& mPlayer;
-
+class PlayerEvent : public MobEvent {
 protected:
-    constexpr explicit PlayerEvent(Player& player) : mPlayer((ServerPlayer&)player) {}
+    constexpr explicit PlayerEvent(Player& player) : MobEvent(player) {}
 
 public:
-    void serialize(CompoundTag&) const override;
-
-    LLNDAPI ServerPlayer& player() const;
+    LLNDAPI ServerPlayer& self() const;
 };
 } // namespace ll::event::inline player

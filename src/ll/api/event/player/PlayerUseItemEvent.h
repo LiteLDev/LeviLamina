@@ -3,15 +3,18 @@
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/player/PlayerClickEvent.h"
 
-#include "mc/world/gamemode/GameMode.h"
+class GameMode;
+class ItemStack;
 
 namespace ll::event::inline player {
 
 class PlayerUseItemEvent : public Cancellable<PlayerRightClickEvent> {
-    ItemStack& mItemStack;
+    ItemStack& mItem;
 
 public:
-    constexpr PlayerUseItemEvent(Player& player, ItemStack& item) : Cancellable(player), mItemStack(item) {}
+    constexpr PlayerUseItemEvent(Player& player, ItemStack& item)
+    : Cancellable(player),
+      mItem(item) {}
 
     void serialize(CompoundTag&) const override;
 

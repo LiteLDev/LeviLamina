@@ -173,11 +173,16 @@ public:
                                                                                                                        \
         template <class Arg>                                                                                           \
         static consteval void detector() {                                                                             \
-            if constexpr (::ll::memory::virtualDetector<IDENTIFIER>()) {                                               \
-                static_assert(                                                                                         \
-                    ::ll::concepts::always_false<Arg>,                                                                 \
-                    #IDENTIFIER " is a virtual function, for now you can't use function pointer to hook it."           \
-                );                                                                                                     \
+            if constexpr (requires {                                                                                   \
+                              ::ll::memory::virtualDetector<IDENTIFIER>();                                             \
+                              ll::memory::resolveIdentifier<OriginFuncType>(IDENTIFIER);                               \
+                          }) {                                                                                         \
+                if constexpr (::ll::memory::virtualDetector<IDENTIFIER>()) {                                           \
+                    static_assert(                                                                                     \
+                        ::ll::concepts::always_false<Arg>,                                                             \
+                        #IDENTIFIER " is a virtual function, for now you can't use function pointer to hook it."       \
+                    );                                                                                                 \
+                }                                                                                                      \
             }                                                                                                          \
         }                                                                                                              \
                                                                                                                        \

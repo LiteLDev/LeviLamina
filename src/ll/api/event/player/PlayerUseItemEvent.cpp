@@ -2,6 +2,8 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
+#include "mc/world/gamemode/GameMode.h"
+
 #include "mc/nbt/CompoundTag.h"
 
 namespace ll::event::inline player {
@@ -11,7 +13,7 @@ void PlayerUseItemEvent::serialize(CompoundTag& nbt) const {
     nbt["item"] = (uintptr_t)&item();
 }
 
-ItemStack& PlayerUseItemEvent::item() const { return mItemStack; }
+ItemStack& PlayerUseItemEvent::item() const { return mItem; }
 
 LL_TYPED_INSTANCE_HOOK(
     PlayerUseItemEventHook,

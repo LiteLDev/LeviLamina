@@ -11,7 +11,7 @@ class GameMode {
 public:
     // Player&                               mPlayer;                       // this+0x8
     // BlockPos                              mDestroyBlockPos;              // this+0x10
-    // uchar                         mDestroyBlockFace;             // this+0x1C
+    // uchar                                 mDestroyBlockFace;             // this+0x1C
     // float                                 mOldDestroyProgress;           // this+0x20
     // float                                 mDestroyProgress;              // this+0x24
     // double                                mLastDestroyTime;              // this+0x28
@@ -30,7 +30,7 @@ public:
     // std::chrono::milliseconds             destroySoundDelay;             // this+0x80
     // bool                                  mHasBuildDirection;            // this+0x88
     // bool                                  mHasLastBuiltPosition;         // this+0x89
-    // uchar                         mContinueFacing;               // this+0x8A
+    // uchar                                 mContinueFacing;               // this+0x8A
     // BlockPos                              mBuildDirection;               // this+0x8C
     // BlockPos                              mNextBuildPos;                 // this+0x98
     // std::unique_ptr<IGameModeTimer>       mTimer;                        // this+0xA8

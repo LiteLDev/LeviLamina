@@ -9,15 +9,22 @@ namespace ll::event::inline player {
 
 class PlayerPickUpItemEvent : public Cancellable<PlayerEvent> {
     ItemActor& mItemActor;
+    int&       mOrgCount;
+    int&       mFavoredSlot;
 
 public:
-    constexpr PlayerPickUpItemEvent(Player& player, ItemActor& itemActor)
+    constexpr PlayerPickUpItemEvent(Player& player, ItemActor& itemActor, int& orgCount, int& favoredSlot)
     : Cancellable(player),
-      mItemActor(itemActor) {}
+      mItemActor(itemActor),
+      mOrgCount(orgCount),
+      mFavoredSlot(favoredSlot) {}
 
     void serialize(CompoundTag&) const override;
+    void deserialize(CompoundTag const&) override;
 
     LLNDAPI ItemActor& itemActor() const;
+    LLNDAPI int&       orgCount() const;
+    LLNDAPI int&       favoredSlot() const;
 };
 
 } // namespace ll::event::inline player

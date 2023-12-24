@@ -8,10 +8,20 @@ namespace ll::event::inline player {
 
 void PlayerPickUpItemEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
-    nbt["item"] = (uintptr_t)&itemActor();
+    nbt["item"]        = (uintptr_t)&itemActor();
+    nbt["orgCount"]    = orgCount();
+    nbt["favoredSlot"] = favoredSlot();
+}
+
+void PlayerPickUpItemEvent::deserialize(CompoundTag const& nbt) {
+    Cancellable::deserialize(nbt);
+    orgCount()    = nbt["orgCount"];
+    favoredSlot() = nbt["favoredSlot"];
 }
 
 ItemActor& PlayerPickUpItemEvent::itemActor() const { return mItemActor; }
+int&       PlayerPickUpItemEvent::orgCount() const { return mOrgCount; }
+int&       PlayerPickUpItemEvent::favoredSlot() const { return mFavoredSlot; }
 
 LL_TYPED_INSTANCE_HOOK(
     PlayerPickUpItemEventHook,
@@ -24,7 +34,7 @@ LL_TYPED_INSTANCE_HOOK(
     int    favoredSlot
 ) {
     if (itemActor.isType(ActorType::ItemEntity)) {
-        auto ev = PlayerPickUpItemEvent(*this, *(ItemActor*)(&itemActor));
+        auto ev = PlayerPickUpItemEvent(*this, static_cast<ItemActor&>(itemActor), orgCount, favoredSlot);
         EventBus::getInstance().publish(ev);
         if (ev.isCancelled()) {
             return false;
