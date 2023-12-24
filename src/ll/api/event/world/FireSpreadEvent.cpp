@@ -9,7 +9,7 @@
 namespace ll::event::inline world {
 void FireSpreadEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
-    nbt["pos"] = pos().toString();
+    nbt["pos"] = ListTag{pos().x, pos().y, pos().z};;
 }
 
 BlockPos const& FireSpreadEvent::pos() const { return mPos; }
@@ -20,7 +20,7 @@ LL_TYPED_INSTANCE_HOOK(
     FireSpreadEventHook1,
     HookPriority::Normal,
     FireBlock,
-    &FireBlock::onPlace,
+    "?onPlace@FireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
     void,
     BlockSource&    blockSource,
     BlockPos const& blockPos
@@ -34,7 +34,7 @@ LL_TYPED_INSTANCE_HOOK(
     FireSpreadEventHook2,
     HookPriority::Normal,
     FireBlock,
-    &FireBlock::mayPlace,
+    "?mayPlace@FireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z",
     bool,
     BlockSource&    blockSource,
     BlockPos const& blockPos

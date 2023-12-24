@@ -8,7 +8,7 @@
 namespace ll::event::inline player {
 void PlayerInteractBlockEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
-    nbt["pos"] = pos().toString();
+    nbt["pos"] = ListTag{pos().x, pos().y, pos().z};
 }
 
 BlockPos const& PlayerInteractBlockEvent::pos() const { return mPos; }

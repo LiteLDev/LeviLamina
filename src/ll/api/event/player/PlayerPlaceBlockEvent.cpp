@@ -10,7 +10,7 @@
 namespace ll::event::inline player {
 void PlayerPlaceBlockEvent::serialize(CompoundTag& nbt) const {
     PlayerEvent::serialize(nbt);
-    nbt["pos"] = pos().toString();
+    nbt["pos"] = ListTag{pos().x, pos().y, pos().z};
 }
 
 BlockPos const& PlayerPlaceBlockEvent::pos() const { return mPos; }

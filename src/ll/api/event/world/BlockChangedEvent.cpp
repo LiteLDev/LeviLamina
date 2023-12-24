@@ -11,7 +11,7 @@ void BlockChangedEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
     nbt["previousBlock"] = (uintptr_t)&previousBlock();
     nbt["newBlock"]      = (uintptr_t)&newBlock();
-    nbt["pos"]           = blockPos().toString();
+    nbt["pos"]           = ListTag{blockPos().x, blockPos().y, blockPos().z};
 }
 
 Block const&    BlockChangedEvent::previousBlock() const { return mPreviousBlock; }

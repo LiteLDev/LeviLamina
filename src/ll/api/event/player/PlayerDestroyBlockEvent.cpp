@@ -9,7 +9,7 @@ namespace ll::event::inline player {
 
 void PlayerDestroyBlockEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
-    nbt["pos"] = pos().toString();
+    nbt["pos"] = ListTag{pos().x, pos().y, pos().z};
 }
 
 BlockPos const& PlayerDestroyBlockEvent::pos() const { return mPos; }
@@ -18,7 +18,7 @@ LL_TYPED_INSTANCE_HOOK(
     PlayerDestroyBlockEventHook,
     HookPriority::Normal,
     GameMode,
-    &GameMode::destroyBlock,
+    "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
     bool,
     BlockPos const& blockpos,
     uchar           a4
