@@ -14,19 +14,19 @@ void PlayerUseItemOnEvent::serialize(CompoundTag& nbt) const {
     nbt["blockPos"] = ListTag{blockPos().x, blockPos().y, blockPos().z};
     nbt["face"]     = face();
     nbt["clickPos"] = ListTag{clickPos().x, clickPos().y, clickPos().z};
-    nbt["block"]    = (uintptr_t)&block();
+    nbt["block"]    = (uintptr_t)(block().as_ptr());
 }
 
-BlockPos const& PlayerUseItemOnEvent::blockPos() const { return mBlockPos; }
-uchar const&    PlayerUseItemOnEvent::face() const { return mFace; }
-Vec3 const&     PlayerUseItemOnEvent::clickPos() const { return mClickPos; }
-Block const&    PlayerUseItemOnEvent::block() const { return mBlock; }
+BlockPos const&           PlayerUseItemOnEvent::blockPos() const { return mBlockPos; }
+uchar const&              PlayerUseItemOnEvent::face() const { return mFace; }
+Vec3 const&               PlayerUseItemOnEvent::clickPos() const { return mClickPos; }
+optional_ref<Block const> PlayerUseItemOnEvent::block() const { return mBlock; }
 
 LL_TYPED_INSTANCE_HOOK(
     PlayerUseItemOnEventHook,
     HookPriority::Normal,
     GameMode,
-    "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
+    "?useItemOn@GameMode@@UEAA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
     InteractionResult,
     ItemStack&      item,
     BlockPos const& blockPos,
@@ -34,7 +34,7 @@ LL_TYPED_INSTANCE_HOOK(
     Vec3 const&     clickPos,
     Block const*    block
 ) {
-    auto ev = PlayerUseItemOnEvent(this->getPlayer(), item, blockPos, face, clickPos, *block);
+    auto ev = PlayerUseItemOnEvent(this->getPlayer(), item, blockPos, face, clickPos, block);
     EventBus::getInstance().publish(ev);
     if (ev.isCancelled()) {
         return {InteractionResult::Result::Fail};

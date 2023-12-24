@@ -3,7 +3,7 @@
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"
-#include "mc/world/gamemode/GameMode.h"
+#include "mc/world/level/block/Block.h"
 
 namespace ll::event::inline player {
 
@@ -17,18 +17,18 @@ BlockPos const& PlayerDestroyBlockEvent::pos() const { return mPos; }
 LL_TYPED_INSTANCE_HOOK(
     PlayerDestroyBlockEventHook,
     HookPriority::Normal,
-    GameMode,
-    "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
-    bool,
-    BlockPos const& blockpos,
-    uchar           a4
+    Block,
+    &Block::playerWillDestroy,
+    Block const*,
+    Player&         player,
+    BlockPos const& pos
 ) {
-    auto event = PlayerDestroyBlockEvent{this->getPlayer(), blockpos};
+    auto event = PlayerDestroyBlockEvent{player, pos};
     EventBus::getInstance().publish(event);
     if (event.isCancelled()) {
-        return false;
+        return nullptr;
     }
-    return origin(blockpos, a4);
+    return origin(player, pos);
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);

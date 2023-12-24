@@ -17,11 +17,11 @@ public:
 
     struct Deleter {
     public:
-        delete_function m_func = Blob::defaultDeleter;
+        delete_function mFn;
 
-        [[nodiscard]] constexpr Deleter() = default;
+        [[nodiscard]] constexpr Deleter() : mFn(Blob::defaultDeleter) {}
 
-        void operator()(pointer x) const { m_func(x); }
+        void operator()(pointer x) const { mFn(x); }
     };
 
     using pointer_type = std::unique_ptr<value_type[], Deleter>;
@@ -42,8 +42,8 @@ public:
 
     [[nodiscard]] constexpr std::span<uchar> view() const { return {data(), size()}; }
 
-    constexpr Blob& operator=(Blob&&) noexcept    = default;
-    [[nodiscard]] constexpr Blob(Blob&&) noexcept = default;
+    LL_CLANG_CEXPR Blob& operator=(Blob&&) noexcept = default;
+    [[nodiscard]] constexpr Blob(Blob&&) noexcept   = default;
 
     [[nodiscard]] constexpr Blob(Blob const& other) : Blob(other.view(), other.mBlob.get_deleter()) {}
 

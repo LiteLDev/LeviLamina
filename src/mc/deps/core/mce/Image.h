@@ -18,11 +18,11 @@ public:
     ImageUsage  mUsage{};      // this+0x10
     Blob        mImageBytes;   // this+0x18
 
-    [[nodiscard]] constexpr Image()                      = default;
-    constexpr Image& operator=(Image&&) noexcept         = default;
-    [[nodiscard]] constexpr Image(Image&&) noexcept      = default;
-    constexpr Image& operator=(Image const&) noexcept    = default;
-    [[nodiscard]] constexpr Image(Image const&) noexcept = default;
+    [[nodiscard]] constexpr Image()                        = default;
+    LL_CLANG_CEXPR Image& operator=(Image&&) noexcept      = default;
+    [[nodiscard]] constexpr Image(Image&&) noexcept        = default;
+    LL_CLANG_CEXPR Image& operator=(Image const&) noexcept = default;
+    [[nodiscard]] constexpr Image(Image const&) noexcept   = default;
 
 public:
     // NOLINTBEGIN

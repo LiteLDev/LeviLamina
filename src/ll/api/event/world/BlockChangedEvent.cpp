@@ -8,15 +8,17 @@
 
 namespace ll::event::inline world {
 void BlockChangedEvent::serialize(CompoundTag& nbt) const {
-    Cancellable::serialize(nbt);
+    WorldEvent::serialize(nbt);
+    nbt["layer"]         = layer();
     nbt["previousBlock"] = (uintptr_t)&previousBlock();
     nbt["newBlock"]      = (uintptr_t)&newBlock();
-    nbt["pos"]           = ListTag{blockPos().x, blockPos().y, blockPos().z};
+    nbt["pos"]           = ListTag{pos().x, pos().y, pos().z};
 }
 
+uint const&     BlockChangedEvent::layer() const { return mLayer; }
 Block const&    BlockChangedEvent::previousBlock() const { return mPreviousBlock; }
 Block const&    BlockChangedEvent::newBlock() const { return mNewBlock; }
-BlockPos const& BlockChangedEvent::blockPos() const { return mBlockPos; }
+BlockPos const& BlockChangedEvent::pos() const { return mPos; }
 
 LL_TYPED_INSTANCE_HOOK(
     BlockChangedEventHook,
@@ -24,20 +26,17 @@ LL_TYPED_INSTANCE_HOOK(
     BlockSource,
     &BlockSource::_blockChanged,
     void,
-    BlockPos const&              blockPos,
-    uint                         a3,
-    Block const&                 afterBlock,
-    Block const&                 beforeBlock,
-    int                          a6,
-    ActorBlockSyncMessage const* a7,
-    Actor*                       actor
+    BlockPos const&              pos,
+    uint                         layer,
+    Block const&                 block,
+    Block const&                 previousBlock,
+    int                          updateFlags,
+    ActorBlockSyncMessage const* syncMsg,
+    Actor*                       blockChangeSource
 ) {
-    auto event = BlockChangedEvent{actor->getDimensionBlockSource(), beforeBlock, afterBlock, blockPos};
+    auto event = BlockChangedEvent{*this, layer, previousBlock, block, pos};
     EventBus::getInstance().publish(event);
-    if (event.isCancelled()) {
-        return;
-    }
-    return origin(blockPos, a3, afterBlock, beforeBlock, a6, a7, actor);
+    return origin(pos, layer, block, previousBlock, updateFlags, syncMsg, blockChangeSource);
 }
 
 static std::unique_ptr<EmitterBase> spawnedEmitterFactory(ListenerBase&);

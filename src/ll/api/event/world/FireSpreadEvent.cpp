@@ -9,12 +9,12 @@
 namespace ll::event::inline world {
 void FireSpreadEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
-    nbt["pos"] = ListTag{pos().x, pos().y, pos().z};;
+    nbt["pos"] = ListTag{pos().x, pos().y, pos().z};
 }
 
 BlockPos const& FireSpreadEvent::pos() const { return mPos; }
 
-bool onFireSpread_OnPlace = false;
+thread_local bool onFireSpreadWhenOnPlace = false;
 
 LL_TYPED_INSTANCE_HOOK(
     FireSpreadEventHook1,
@@ -25,9 +25,9 @@ LL_TYPED_INSTANCE_HOOK(
     BlockSource&    blockSource,
     BlockPos const& blockPos
 ) {
-    onFireSpread_OnPlace = true;
+    onFireSpreadWhenOnPlace = true;
     origin(blockSource, blockPos);
-    onFireSpread_OnPlace = false;
+    onFireSpreadWhenOnPlace = false;
 }
 
 LL_TYPED_INSTANCE_HOOK(
@@ -40,7 +40,7 @@ LL_TYPED_INSTANCE_HOOK(
     BlockPos const& blockPos
 ) {
     auto res = origin(blockSource, blockPos);
-    if (!onFireSpread_OnPlace || !res) return res;
+    if (!onFireSpreadWhenOnPlace || !res) return res;
 
     auto event = FireSpreadEvent{blockSource, blockPos};
     EventBus::getInstance().publish(event);

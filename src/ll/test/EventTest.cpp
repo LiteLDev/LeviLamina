@@ -8,20 +8,27 @@
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
+#include "ll/api/event/DynamicListener.h"
 #include "ll/api/event/MultiListener.h"
 #include "ll/api/event/command/ExecuteCommandEvent.h"
+#include "ll/api/event/entity/ActorHurtEvent.h"
 #include "ll/api/event/player/PlayerAddExperienceEvent.h"
 #include "ll/api/event/player/PlayerAttackEvent.h"
 #include "ll/api/event/player/PlayerConnectEvent.h"
+#include "ll/api/event/player/PlayerDestroyBlockEvent.h"
 #include "ll/api/event/player/PlayerDieEvent.h"
 #include "ll/api/event/player/PlayerJoinEvent.h"
 #include "ll/api/event/player/PlayerJumpEvent.h"
 #include "ll/api/event/player/PlayerLeaveEvent.h"
 #include "ll/api/event/player/PlayerPickUpItemEvent.h"
+#include "ll/api/event/player/PlayerPlaceBlockEvent.h"
 #include "ll/api/event/player/PlayerRespawnEvent.h"
 #include "ll/api/event/player/PlayerSneakEvent.h"
 #include "ll/api/event/player/PlayerSprintEvent.h"
 #include "ll/api/event/player/PlayerSwingEvent.h"
+#include "ll/api/event/player/PlayerUseItemEvent.h"
+#include "ll/api/event/player/PlayerUseItemOnEvent.h"
+#include "ll/api/event/world/SpawnMobEvent.h"
 #include "mc/codebuilder/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/world/actor/ActorDamageSource.h"
@@ -162,11 +169,8 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         );
     });
     bus.emplaceListener<PlayerDieEvent>([](PlayerDieEvent& ev) {
-        ll::logger.debug(
-            "Player {} died source {}",
-            ev.self().getRealName(),
-            magic_enum::enum_name(ev.source().getCause())
-        );
+        ll::logger
+            .debug("Player {} died source {}", ev.self().getRealName(), magic_enum::enum_name(ev.source().getCause()));
     });
     bus.emplaceListener<PlayerRespawnEvent>([](PlayerRespawnEvent& ev) {
         ll::logger.debug("Player {} respawned", ev.self().getRealName());
@@ -211,4 +215,17 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     ll::meta::DynamicTypeList::push_back<myTypeList2, float>();
     ll::logger.debug("{}", typeid(ll::meta::DynamicTypeList::value<myTypeList2>()).name());
+
+    auto dl = DynamicListener::create([](CompoundTag& nbt) {
+        // nbt["cancelled"] = true;
+        ll::logger.debug("{}", nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
+    });
+
+
+    bus.addListener(dl, getEventId<PlayerUseItemEvent>);
+    bus.addListener(dl, getEventId<PlayerUseItemOnEvent>);
+    bus.addListener(dl, getEventId<ActorHurtEvent>);
+    bus.addListener(dl, getEventId<PlayerDestroyBlockEvent>);
+    bus.addListener(dl, getEventId<PlayerPlacingBlockEvent>);
+    // bus.addListener(dl, getEventId<SpawnedMobEvent>);
 }

@@ -643,12 +643,6 @@ public:
     // symbol: ?interactPreventDefault@Actor@@UEAA_NXZ
     MCVAPI bool interactPreventDefault();
 
-    // symbol: ?isLocalPlayer@Actor@@UEBA_NXZ
-    MCVAPI bool isLocalPlayer() const;
-
-    // symbol: ?isPlayer@Actor@@UEBA_NXZ
-    MCVAPI bool isPlayer() const;
-
     // symbol: ?isTargetable@Actor@@UEBA_NXZ
     MCVAPI bool isTargetable() const;
 

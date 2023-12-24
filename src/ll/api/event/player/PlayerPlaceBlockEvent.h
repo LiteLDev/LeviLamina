@@ -1,18 +1,19 @@
 #pragma once
 
 #include "ll/api/event/Cancellable.h"
-#include "ll/api/event/player/PlayerEvent.h"
+#include "ll/api/event/player/PlayerClickEvent.h"
 
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/level/block/Block.h"
 
 namespace ll::event::inline player {
 
-class PlayerPlaceBlockEvent : public PlayerEvent {
-protected:
+class PlayerPlaceBlockEvent : public PlayerRightClickEvent {
     BlockPos const& mPos;
 
-    constexpr explicit PlayerPlaceBlockEvent(Player& player, BlockPos const& pos) : PlayerEvent(player), mPos(pos) {}
+protected:
+    constexpr explicit PlayerPlaceBlockEvent(Player& player, BlockPos const& pos) : PlayerRightClickEvent(player), mPos(pos) {}
 
 public:
     void serialize(CompoundTag&) const override;
@@ -21,17 +22,28 @@ public:
 };
 
 class PlayerPlacingBlockEvent : public Cancellable<PlayerPlaceBlockEvent> {
-public:
-    constexpr explicit PlayerPlacingBlockEvent(Player& player, BlockPos const& pos) : Cancellable(player, pos) {}
+    uchar const& mFace;
 
 public:
+    constexpr explicit PlayerPlacingBlockEvent(Player& player, BlockPos const& pos, uchar const& face)
+    : Cancellable(player, pos),
+      mFace(face) {}
+
+    void serialize(CompoundTag&) const override;
+
+    LLNDAPI uchar const& face() const;
 };
 
 class PlayerPlacedBlockEvent : public PlayerPlaceBlockEvent {
-public:
-    constexpr explicit PlayerPlacedBlockEvent(Player& player, BlockPos const& pos)
-    : PlayerPlaceBlockEvent(player, pos) {}
+    Block const& mPlacedBlock;
 
 public:
+    constexpr explicit PlayerPlacedBlockEvent(Player& player, BlockPos const& pos, Block const& placedBlock)
+    : PlayerPlaceBlockEvent(player, pos),
+      mPlacedBlock(placedBlock) {}
+
+    void serialize(CompoundTag&) const override;
+
+    LLNDAPI Block const& placedBlock() const;
 };
 } // namespace ll::event::inline player

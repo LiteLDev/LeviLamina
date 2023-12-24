@@ -1,14 +1,14 @@
 #pragma once
 
 #include "ll/api/event/Cancellable.h"
-#include "ll/api/event/player/PlayerEvent.h"
+#include "ll/api/event/player/PlayerClickEvent.h"
 
 #include "mc/world/actor/player/Player.h"
 #include "mc/world/level/BlockPos.h"
 
 namespace ll::event::inline player {
 
-class PlayerDestroyBlockEvent : public Cancellable<PlayerEvent> {
+class PlayerDestroyBlockEvent : public Cancellable<PlayerLeftClickEvent> {
     BlockPos const& mPos;
 
 public:

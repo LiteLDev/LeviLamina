@@ -19,12 +19,12 @@ public:
     void call(Event& event) override {
         CompoundTag data{};
         event.serialize(data);
+        data["eventId"] = reflection::getDynamicRawName(event);
         callback(data);
         event.deserialize(data);
     }
 
-    static std::shared_ptr<DynamicListener>
-    create(callback_fn fn, EventPriority priority = EventPriority::Normal) {
+    static std::shared_ptr<DynamicListener> create(callback_fn fn, EventPriority priority = EventPriority::Normal) {
         return std::make_shared<DynamicListener>(std::move(fn), priority);
     }
 

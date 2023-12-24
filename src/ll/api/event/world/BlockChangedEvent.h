@@ -1,6 +1,5 @@
 #pragma once
 
-#include "ll/api/event/Cancellable.h"
 #include "ll/api/event/world/WorldEvent.h"
 
 #include "mc/world/level/BlockPos.h"
@@ -8,27 +7,31 @@
 
 namespace ll::event::inline world {
 
-class BlockChangedEvent : public Cancellable<WorldEvent> {
+class BlockChangedEvent : public WorldEvent {
+    uint const&     mLayer;
     Block const&    mPreviousBlock;
     Block const&    mNewBlock;
-    BlockPos const& mBlockPos;
+    BlockPos const& mPos;
 
 public:
     constexpr BlockChangedEvent(
         BlockSource&    blockSource,
+        uint const&     layer,
         Block const&    previousBlock,
         Block const&    newBlock,
-        BlockPos const& blockPos
+        BlockPos const& pos
     )
-    : Cancellable(blockSource),
+    : WorldEvent(blockSource),
+      mLayer(layer),
       mPreviousBlock(previousBlock),
       mNewBlock(newBlock),
-      mBlockPos(blockPos) {}
+      mPos(pos) {}
 
     void serialize(CompoundTag&) const override;
 
+    LLNDAPI uint const&     layer() const;
     LLNDAPI Block const&    previousBlock() const;
     LLNDAPI Block const&    newBlock() const;
-    LLNDAPI BlockPos const& blockPos() const;
+    LLNDAPI BlockPos const& pos() const;
 };
 } // namespace ll::event::inline world
