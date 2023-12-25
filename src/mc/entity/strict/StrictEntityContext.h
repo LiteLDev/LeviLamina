@@ -1,13 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/EntityContextBase.h"
+#include "mc/entity/EntityContext.h"
 
 class StrictEntityContext {
 public:
     EntityId            mEntity;     // this+0x0
-    unsigned int        mRegistryId; // this+0x4
-    EntityRegistryBase* mRegistry;   // this+0x8
+    uint                mRegistryId; // this+0x4
 
     // prevent constructor by default
     StrictEntityContext& operator=(StrictEntityContext const&);

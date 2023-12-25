@@ -5,6 +5,8 @@
 #include <tuple>
 #include <type_traits>
 
+#include "ll/api/base/StdInt.h"
+
 namespace ll::concepts {
 
 template <class T, class... Ts>
@@ -29,19 +31,8 @@ template <class T>
 static constexpr bool is_string_v = std::is_constructible_v<std::string, T>;
 
 template <class T>
-constexpr bool is_non_char_integral_v = is_one_of_v<
-    std::remove_cv_t<T>,
-    bool,
-    signed char,
-    unsigned char,
-    short,
-    unsigned short,
-    int,
-    unsigned int,
-    long,
-    unsigned long,
-    long long,
-    unsigned long long>;
+constexpr bool is_non_char_integral_v =
+    is_one_of_v<std::remove_cv_t<T>, bool, schar, uchar, short, ushort, int, uint, long, ulong, int64, uint64>;
 
 template <class T>
 concept IsNonCharIntegral = is_non_char_integral_v<T>;

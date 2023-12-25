@@ -33,6 +33,6 @@ public:
 
 private:
     std::atomic<std::thread::id> owner;
-    uint                         count;
+    std::atomic_uint             count;
 };
 } // namespace ll::thread

@@ -75,8 +75,8 @@ public:
             if (streams[eventId].addListener(listener)) {
                 if (auto fac = emitterFactory.find(listener->factoryId(eventId)); fac != emitterFactory.end()) {
                     streams[eventId].emitter = fac->second(*listener);
+                    return true;
                 }
-                return true;
             }
             return false;
         }

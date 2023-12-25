@@ -5,6 +5,8 @@
 using ushort = uint16_t;
 using uint   = uint32_t;
 using ulong  = unsigned long;
+using llong  = int64_t;
+using ullong = uint64_t;
 
 using uchar = uint8_t;
 using schar = int8_t;
