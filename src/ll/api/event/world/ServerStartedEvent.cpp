@@ -1,4 +1,4 @@
-#include "ll/api/event/server/ServerStartedEvent.h"
+#include "ll/api/event/world/ServerStartedEvent.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
@@ -6,7 +6,7 @@
 
 #include "mc/nbt/CompoundTag.h"
 
-namespace ll::event::inline server {
+namespace ll::event::inline world {
 
 void ServerStartedEvent::serialize(CompoundTag& nbt) const {
     Event::serialize(nbt);
@@ -35,4 +35,4 @@ class ServerStartedEventEmitter : public Emitter<ServerStartedEvent, emitterFact
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<ServerStartedEventEmitter>();
 }
-} // namespace ll::event::inline server
+} // namespace ll::event::inline world

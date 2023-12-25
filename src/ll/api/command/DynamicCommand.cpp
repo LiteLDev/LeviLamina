@@ -663,11 +663,11 @@ DynamicCommandInstance::DynamicCommandInstance(
     CommandPermissionLevel permission,
     CommandFlag            flag
 )
-: registry(registry),
-  name_(name),
+: name_(name),
   description_(std::make_unique<std::string>(description)),
   permission_(permission),
   flag_(flag),
+  registry(registry),
   builder(std::make_unique<ll::memory::NativeClosure<std::unique_ptr<Command>>>(commandBuilder, (uintptr_t)this)) {}
 
 DynamicCommandInstance::~DynamicCommandInstance() = default;

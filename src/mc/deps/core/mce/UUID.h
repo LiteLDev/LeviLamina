@@ -13,6 +13,8 @@ public:
 
     [[nodiscard]] inline UUID(std::string const& uuidStr) : UUID(fromString(uuidStr)) {} // NOLINT
 
+    [[nodiscard]] inline UUID(std::string_view uuidStr) : UUID(fromString(std::string{uuidStr})) {} // NOLINT
+
     LLNDAPI static mce::UUID random();
 
     [[nodiscard]] inline mce::UUID fromStringHash(std::string_view sv) {

@@ -11,7 +11,7 @@ public:
     using event_type  = T;
     using callback_fn = std::function<void(event_type&)>;
 
-    constexpr explicit Listener(callback_fn fn, EventPriority priority = EventPriority::Normal)
+    explicit Listener(callback_fn fn, EventPriority priority = EventPriority::Normal)
     : ListenerBase(priority),
       callback(std::move(fn)) {}
 

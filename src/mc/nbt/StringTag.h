@@ -22,6 +22,8 @@ public:
 
     [[nodiscard]] constexpr operator std::string&() { return data; } // NOLINT
 
+    [[nodiscard]] constexpr operator std::string&&() && { return std::move(data); } // NOLINT
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1StringTag@@UEAA@XZ

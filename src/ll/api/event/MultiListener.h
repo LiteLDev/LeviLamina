@@ -14,8 +14,7 @@ public:
     using callback_fn = std::function<void(Event&)>;
 
     template <class Callable>
-    constexpr explicit MultiListener(Callable&& fn, EventPriority priority = EventPriority::Normal)
-    : ListenerBase(priority) {
+    explicit MultiListener(Callable&& fn, EventPriority priority = EventPriority::Normal) : ListenerBase(priority) {
         event_list::forEach([fn = std::forward<Callable>(fn), this]<class E>() {
             callback.emplace(typeid(E), [fn](Event& ev) { static_cast<void>(fn(static_cast<E&>(ev))); });
         });

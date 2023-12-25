@@ -80,10 +80,12 @@ public:
         bool&                            surface,
         bool&                            fromSpawner
     )
-    : mMob(mob),
-      SpawnMobEvent(blockSource, identifier, spawner, pos, naturalSpawn, surface, fromSpawner) {}
+    : SpawnMobEvent(blockSource, identifier, spawner, pos, naturalSpawn, surface, fromSpawner),
+      mMob(mob) {}
 
 public:
+    void serialize(CompoundTag&) const override;
+
     LLNDAPI optional_ref<Mob> mob() const;
 };
 } // namespace ll::event::inline world

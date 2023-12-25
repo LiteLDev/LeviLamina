@@ -14,7 +14,9 @@ void PlayerUseItemOnEvent::serialize(CompoundTag& nbt) const {
     nbt["blockPos"] = ListTag{blockPos().x, blockPos().y, blockPos().z};
     nbt["face"]     = face();
     nbt["clickPos"] = ListTag{clickPos().x, clickPos().y, clickPos().z};
-    nbt["block"]    = (uintptr_t)(block().as_ptr());
+    if (block()) {
+        nbt["block"] = (uintptr_t)(block().as_ptr());
+    }
 }
 
 BlockPos const&           PlayerUseItemOnEvent::blockPos() const { return mBlockPos; }

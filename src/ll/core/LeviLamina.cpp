@@ -12,11 +12,10 @@
 #include "ll/api/service/GlobalService.h"
 #include "ll/api/utils/StringUtils.h"
 
+#include "ll/api/service/PlayerInfo.h"
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
 #include "ll/core/Version.h"
-// #include "ll/core/AddonsHelper.h"
-// #include "ll/core/SimpleServerLogger.h"
 
 #include "mc/world/Minecraft.h"
 
@@ -206,6 +205,8 @@ void leviLaminaMain() {
     fixCurrentDirectory();
 
     if (globalConfig.modules.checkRunningBDS) checkOtherBdsInstance();
+
+    if (globalConfig.modules.playerInfo.alwaysLaunch)ll::PlayerInfo::getInstance();
 
     if (globalConfig.modules.crashLogger.enabled) {
         startCrashLogger();

@@ -14,7 +14,7 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 7;
+    int version = 8;
 
     std::string language = "system";
     struct {
@@ -42,6 +42,10 @@ struct LeviConfig {
         } tweak{};
 
         bool checkRunningBDS = true;
+
+        struct {
+            bool alwaysLaunch = false;
+        } playerInfo{};
 
         reflection::Dispatcher<SimpleServerLoggerConfig, SimpleServerLogger> simpleServerLogger{};
 

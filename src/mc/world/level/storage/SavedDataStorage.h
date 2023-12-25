@@ -15,13 +15,6 @@ public:
     LevelStorage*                               levelStorage; // this+0x8
     std::unordered_map<std::string, SavedData*> savedDatas;   // this+0x10
 
-    [[nodiscard]] optional_ref<SavedData> get(std::string const& id) {
-        if (savedDatas.contains(id)) {
-            return savedDatas.at(id);
-        }
-        return nullptr;
-    }
-
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1SavedDataStorage@@UEAA@XZ

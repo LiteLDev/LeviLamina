@@ -337,6 +337,9 @@ public:
     [[nodiscard]] constexpr operator std::string&() { // NOLINT
         return get<StringTag>();
     }
+    [[nodiscard]] constexpr operator std::string&&() && { // NOLINT
+        return std::move(get<StringTag>());
+    }
     [[nodiscard]] constexpr operator std::string_view() const { // NOLINT
         return get<StringTag>();
     }
