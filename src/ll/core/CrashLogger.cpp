@@ -252,6 +252,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.logger.setFile(
             u8str2str((crashInfo.path / (crashInfo.settings.logPrefix + crashInfo.date + ".log")).u8string())
         );
+        crashInfo.logger.ofs.value() << std::unitbuf;
 
         crashInfo.logger.info.fileFormat = {"{0} [{1}] {3}", "{:%F %T}.{:0>3}", "{}", "", "{}"};
         crashInfo.logger.error           = crashInfo.logger.info;
