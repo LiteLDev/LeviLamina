@@ -9,6 +9,9 @@ class CommandSoftEnumRegistry {
 public:
     class CommandRegistry* registry;
 
+    [[nodiscard]] inline explicit CommandSoftEnumRegistry(class CommandRegistry& registry)
+    : CommandSoftEnumRegistry(&registry) {}
+
 public:
     // NOLINTBEGIN
     // symbol: ??0CommandSoftEnumRegistry@@QEAA@PEAVCommandRegistry@@@Z

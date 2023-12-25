@@ -1,6 +1,8 @@
 #include "mc/server/ServerLevel.h"
 #include "mc/world/actor/player/Player.h"
 
+ServerLevel& Level::asServer() { return static_cast<ServerLevel&>(*this); }
+
 optional_ref<Player> Level::getPlayerByNameOrXUID(std::string const& info) const {
     std::string target{info};
 

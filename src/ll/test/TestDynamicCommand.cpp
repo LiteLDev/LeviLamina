@@ -23,7 +23,7 @@ using namespace ll::i18n_literals;
 
 ll::schedule::GameTimeScheduler scheduler;
 
-static void setupTestParamCommand() {
+static void setupTestParamCommand(CommandRegistry& registry) {
     using Param     = DynamicCommand::ParameterData;
     using ParamType = DynamicCommand::ParameterType;
     Param boolParam("testBool", ParamType::Bool, true);
@@ -47,6 +47,7 @@ static void setupTestParamCommand() {
     //    param true 123 3.14 string @e @a 1 2 3 ~1 ~2 ~3 msg {"a":123} stick bedrock ["persistent_bit"=true] npc poison
     //    help param rawtext
     DynamicCommand::setup(
+        registry,
         "param",
         "dynamic command",
         {
@@ -99,10 +100,11 @@ static void setupTestParamCommand() {
     );
 }
 
-static void setupTestEnumCommand() {
+static void setupTestEnumCommand(CommandRegistry& registry) {
     using ParamType = DynamicCommand::ParameterType;
     using Param     = DynamicCommand::ParameterData;
     DynamicCommand::setup(
+        registry,
         "testenum",        // command name
         "dynamic command", // command description
         {
@@ -129,7 +131,7 @@ static void setupTestEnumCommand() {
            CommandOutput&                                           output,
            std::unordered_map<std::string, DynamicCommand::Result>& results) {
             auto& action = results["testEnum"].getRaw<std::string>();
-            switch (do_hash(action.c_str())) {
+            switch (do_hash(action)) {
             case "add"_h:
                 if (results["testInt"].isSet) output.success(fmt::format("add {}", results["testInt"].getRaw<int>()));
                 else output.success("add nothing");
@@ -150,10 +152,11 @@ static void setupTestEnumCommand() {
     );
 }
 
-static void setupExampleCommand() {
+static void setupExampleCommand(CommandRegistry& registry) {
     using ParamType = DynamicCommand::ParameterType;
     // create a dynamic command
-    auto command = DynamicCommand::createCommand("testcmd", "dynamic command", CommandPermissionLevel::GameDirectors);
+    auto command =
+        DynamicCommand::createCommand(registry, "testcmd", "dynamic command", CommandPermissionLevel::GameDirectors);
 
     auto& optionsAdd  = command->setEnum("TestOperation1", {"add", "remove"});
     auto& optionsList = command->setEnum("TestOperation2", {"list"});
@@ -184,56 +187,56 @@ static void setupExampleCommand() {
         }
     });
     // do not forget to setup the command instance
-    DynamicCommand::setup(std::move(command));
+    DynamicCommand::setup(registry, std::move(command));
 }
 
 // "remove command" command
-static void setupRemoveCommand() {
-    auto command = DynamicCommand::createCommand("unregister", "unregister command", CommandPermissionLevel::Any);
+static void setupRemoveCommand(CommandRegistry& registry) {
+    auto command =
+        DynamicCommand::createCommand(registry, "unregister", "unregister command", CommandPermissionLevel::Any);
     command->setAlias("remove");
     auto name = command->mandatory("name", ParamType::SoftEnum, command->setSoftEnum("CommandNames", {}));
     command->addOverload(name);
-    command->setCallback([](DynamicCommand const& cmd,
-                            CommandOrigin const&,
-                            CommandOutput&                                           output,
-                            std::unordered_map<std::string, DynamicCommand::Result>& results) {
+    command->setCallback([&registry](
+                             DynamicCommand const& cmd,
+                             CommandOrigin const&,
+                             CommandOutput&                                           output,
+                             std::unordered_map<std::string, DynamicCommand::Result>& results
+                         ) {
         auto& name     = results["name"].getRaw<std::string>();
-        auto  fullName = ll::Global<CommandRegistry>->getCommandFullName(name);
+        auto  fullName = registry.getCommandFullName(name);
         if (fullName == cmd.getCommandName()) {
             output.success("Request unregister itself");
 
-            scheduler.add<ll::schedule::DelayTask>(1s, [fullName] {
-                auto res = ll::Global<CommandRegistry>->unregisterCommand(fullName);
-                if (res) {
-                    DynamicCommand::unregisterCommand(fullName);
+            scheduler.add<ll::schedule::DelayTask>(1s, [&registry, fullName] {
+                if (DynamicCommand::unregisterCommand(registry, fullName)) {
                     ll::logger.debug("unregister command " + fullName);
                     ((DynamicCommandInstance*)nullptr)
-                        ->setSoftEnum("CommandNames", ll::Global<CommandRegistry>->getEnumValues("CommandName"));
+                        ->setSoftEnum("CommandNames", registry.getEnumValues("CommandName"));
                 } else ll::logger.error("error in unregister command " + fullName);
             });
 
             return;
         }
-        auto res = ll::Global<CommandRegistry>->unregisterCommand(fullName);
-        if (res) {
-            DynamicCommand::unregisterCommand(fullName);
+        if (DynamicCommand::unregisterCommand(registry, fullName)) {
             output.success("unregister command " + fullName);
-            cmd.getInstance()->setSoftEnum("CommandNames", ll::Global<CommandRegistry>->getEnumValues("CommandName"));
+            cmd.getInstance()->setSoftEnum("CommandNames", registry.getEnumValues("CommandName"));
         } else output.error("error in unregister command " + fullName);
     });
-    command->setSoftEnum("CommandNames", ll::Global<CommandRegistry>->getEnumValues("CommandName"));
-    DynamicCommand::setup(std::move(command));
+    command->setSoftEnum("CommandNames", registry.getEnumValues("CommandName"));
+    DynamicCommand::setup(registry, std::move(command));
 }
 
 // enum command
 void onEnumExecute(
+    CommandRegistry&      registry,
     DynamicCommand const& cmd,
     CommandOrigin const&,
     CommandOutput&                                           output,
     std::unordered_map<std::string, DynamicCommand::Result>& results
 ) {
-    auto enumNames     = ll::Global<CommandRegistry>->getEnumNames();
-    auto softEnumNames = ll::Global<CommandRegistry>->getSoftEnumNames();
+    auto enumNames     = registry.getEnumNames();
+    auto softEnumNames = registry.getSoftEnumNames();
     cmd.getInstance()->setSoftEnum("EnumNameList", enumNames);
     cmd.getInstance()->addSoftEnumValues("EnumNameList", softEnumNames);
     if (results["name"].isSet) {
@@ -242,7 +245,7 @@ void onEnumExecute(
         if (std::find(enumNames.begin(), enumNames.end(), enumName) != enumNames.end()) {
             found = true;
             output.success("§eEnum §l{}§r§e Values:"_tr, enumName);
-            for (auto& val : ll::Global<CommandRegistry>->getEnumValues(enumName)) {
+            for (auto& val : registry.getEnumValues(enumName)) {
                 output.success(val);
                 // output.addToResultList("enums", val);
             }
@@ -251,42 +254,51 @@ void onEnumExecute(
         if (std::find(softEnumNames.begin(), softEnumNames.end(), enumName) != softEnumNames.end()) {
             found = true;
             output.success("§eSoft Enum §l{}§r§e Values:"_tr, enumName);
-            for (auto& val : ll::Global<CommandRegistry>->getSoftEnumValues(enumName)) {
+            for (auto& val : registry.getSoftEnumValues(enumName)) {
                 output.success(val);
             }
         }
         if (!found) output.error(R"(Enum or Soft Enum "{}" not found)", enumName);
     } else {
         output.success("§eEnum Names:");
-        for (auto& val : ll::Global<CommandRegistry>->getEnumNames()) {
+        for (auto& val : registry.getEnumNames()) {
             output.success(val);
         }
         output.success("§eSoft Enum Names:");
-        for (auto& val : ll::Global<CommandRegistry>->getSoftEnumNames()) {
+        for (auto& val : registry.getSoftEnumNames()) {
             output.success(val);
         }
     }
 }
 
-static void setupEnumCommand() {
-    auto command =
-        DynamicCommand::createCommand("enum", "get command enum names or values", CommandPermissionLevel::Any);
+static void setupEnumCommand(CommandRegistry& registry) {
+    auto command = DynamicCommand::createCommand(
+        registry,
+        "enum",
+        "get command enum names or values",
+        CommandPermissionLevel::Any
+    );
     command->setAlias("enums");
     auto name = command->mandatory("name", ParamType::SoftEnum, command->setSoftEnum("EnumNameList", {}));
     command->addOverload(name);
     command->addOverload();
-    command->setCallback(onEnumExecute);
-    auto cmd = DynamicCommand::setup(std::move(command));
-    scheduler.add<ll::schedule::DelayTask>(1s, [cmd] {
-        auto packet = ll::Global<CommandRegistry>->serializeAvailableCommands();
+    command->setCallback([&registry](
+                             DynamicCommand const&                                    cmd,
+                             CommandOrigin const&                                     origin,
+                             CommandOutput&                                           output,
+                             std::unordered_map<std::string, DynamicCommand::Result>& results
+                         ) { onEnumExecute(registry, cmd, origin, output, results); });
+    auto cmd = DynamicCommand::setup(registry, std::move(command));
+    scheduler.add<ll::schedule::DelayTask>(1s, [&registry, cmd] {
+        auto packet = registry.serializeAvailableCommands();
         cmd->setSoftEnum("EnumNameList", packet.getEnumNames());
         cmd->addSoftEnumValues("EnumNameList", packet.getSoftEnumNames());
     });
 }
 
 // echo command
-static void setupEchoCommand() {
-    auto command = DynamicCommand::createCommand("echo", "show message", CommandPermissionLevel::Any);
+static void setupEchoCommand(CommandRegistry& registry) {
+    auto command = DynamicCommand::createCommand(registry, "echo", "show message", CommandPermissionLevel::Any);
     command->addOverload(command->mandatory("text", ParamType::RawText));
     command->setCallback([](DynamicCommand const&,
                             CommandOrigin const&,
@@ -295,11 +307,11 @@ static void setupEchoCommand() {
         auto text = results["text"].getRaw<std::string>();
         output.success(text);
     });
-    DynamicCommand::setup(std::move(command));
+    DynamicCommand::setup(registry, std::move(command));
 }
 
-static void setupCrashCommand() {
-    auto command = DynamicCommand::createCommand("crash", "crash", CommandPermissionLevel::GameDirectors);
+static void setupCrashCommand(CommandRegistry& registry) {
+    auto command = DynamicCommand::createCommand(registry, "crash", "crash", CommandPermissionLevel::GameDirectors);
     command->addOverload();
     command->setCallback([](DynamicCommand const&,
                             CommandOrigin const&,
@@ -311,7 +323,7 @@ static void setupCrashCommand() {
         });
         crash.detach();
     });
-    DynamicCommand::setup(std::move(command));
+    DynamicCommand::setup(registry, std::move(command));
 }
 
 #include "ll/api/service/GlobalService.h"
@@ -319,10 +331,10 @@ static void setupCrashCommand() {
 #include "mc/world/level/Level.h"
 #include <ranges>
 
-static void setupTimingCommand() {
+static void setupTimingCommand(CommandRegistry& registry) {
     constexpr static size_t counttick = 100;
 
-    auto command = DynamicCommand::createCommand("timing", "timing", CommandPermissionLevel::GameDirectors);
+    auto command = DynamicCommand::createCommand(registry, "timing", "timing", CommandPermissionLevel::GameDirectors);
     command->addOverload();
     command->setCallback([](DynamicCommand const&,
                             CommandOrigin const&,
@@ -394,16 +406,20 @@ static void setupTimingCommand() {
         thread.detach();
     });
 
-    DynamicCommand::setup(std::move(command));
+    DynamicCommand::setup(registry, std::move(command));
 }
 
 
 #include "mc/server/SimulatedPlayer.h"
 #include "mc/world/actor/Actor.h"
 
-static void setupCreateSimulatePlayerCommand() {
-    auto command =
-        DynamicCommand::createCommand("createplayer", "createSimulatePlayer", CommandPermissionLevel::GameDirectors);
+static void setupCreateSimulatePlayerCommand(CommandRegistry& registry) {
+    auto command = DynamicCommand::createCommand(
+        registry,
+        "createplayer",
+        "createSimulatePlayer",
+        CommandPermissionLevel::GameDirectors
+    );
 
     auto name = command->mandatory("name", ParamType::String);
     auto num  = command->optional("number", ParamType::Int);
@@ -448,12 +464,16 @@ static void setupCreateSimulatePlayerCommand() {
         }
         output.success("createSimulatePlayer {}", name);
     });
-    DynamicCommand::setup(std::move(command));
+    DynamicCommand::setup(registry, std::move(command));
 }
 
-static void kickAllSimulatePlayerCommand() {
-    auto command =
-        DynamicCommand::createCommand("kickallsimulateplayer", "kickAllSimulatePlayer", CommandPermissionLevel::Any);
+static void kickAllSimulatePlayerCommand(CommandRegistry& registry) {
+    auto command = DynamicCommand::createCommand(
+        registry,
+        "kickallsimulateplayer",
+        "kickAllSimulatePlayer",
+        CommandPermissionLevel::Any
+    );
     command->setAlias("kasp");
     command->addOverload();
     command->setCallback([](DynamicCommand const&,
@@ -468,22 +488,22 @@ static void kickAllSimulatePlayerCommand() {
         });
         output.success("kickAllSimulatePlayer");
     });
-    DynamicCommand::setup(std::move(command));
+    DynamicCommand::setup(registry, std::move(command));
 }
 
 static bool reg = [] {
     using namespace ll::event;
-    EventBus::getInstance().emplaceListener<command::SetupCommandEvent>([](command::SetupCommandEvent&) {
-        setupRemoveCommand();
-        setupTestEnumCommand();
-        setupTestParamCommand();
-        setupExampleCommand();
-        setupEnumCommand();
-        setupEchoCommand();
-        setupCrashCommand();
-        setupTimingCommand();
-        setupCreateSimulatePlayerCommand();
-        kickAllSimulatePlayerCommand();
+    EventBus::getInstance().emplaceListener<command::SetupCommandEvent>([](command::SetupCommandEvent& ev) {
+        setupRemoveCommand(ev.registry());
+        setupTestEnumCommand(ev.registry());
+        setupTestParamCommand(ev.registry());
+        setupExampleCommand(ev.registry());
+        setupEnumCommand(ev.registry());
+        setupEchoCommand(ev.registry());
+        setupCrashCommand(ev.registry());
+        setupTimingCommand(ev.registry());
+        setupCreateSimulatePlayerCommand(ev.registry());
+        kickAllSimulatePlayerCommand(ev.registry());
     });
     return true;
 }();

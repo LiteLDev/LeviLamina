@@ -13,12 +13,10 @@ namespace RakNet {
 class RakPeer;
 }
 class Minecraft;
-class PropertiesSettings;
 class ServerLevel;
 class Level;
 class ServerNetworkHandler;
 class ResourcePackRepository;
-class CommandRegistry;
 class NetworkSystem;
 
 namespace ll {
@@ -27,13 +25,11 @@ template <class T>
 concept IsGlobalService = concepts::IsOneOf<
     T,
     Minecraft,
-    PropertiesSettings,
     Level,
     ServerNetworkHandler,
     RakNet::RakPeer,
     NetworkSystem,
-    ResourcePackRepository,
-    CommandRegistry>;
+    ResourcePackRepository>;
 
 template <IsGlobalService T>
 class GlobalService {

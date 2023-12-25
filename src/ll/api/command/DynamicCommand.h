@@ -492,7 +492,8 @@ private:
         }
     }
 
-    LLAPI static DynamicCommandInstance* preSetup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
+    static DynamicCommandInstance*
+    preSetup(CommandRegistry& registry, std::unique_ptr<class DynamicCommandInstance> commandInstance);
 
 public:
     friend class DynamicCommandInstance;
@@ -502,12 +503,14 @@ public:
     /*1*/ virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     LLAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(
+        CommandRegistry&       registry,
         std::string const&     name,
         std::string const&     description,
         CommandPermissionLevel permission = CommandPermissionLevel::GameDirectors,
         CommandFlag            flag       = CommandFlagValue::NotCheat
     );
     LLAPI static std::unique_ptr<class DynamicCommandInstance> createCommand(
+        CommandRegistry&                                            registry,
         std::string const&                                          name,
         std::string const&                                          description,
         std::unordered_map<std::string, std::vector<std::string>>&& enums,
@@ -518,7 +521,8 @@ public:
         CommandFlag                                                 flag       = CommandFlagValue::NotCheat
     );
 
-    LLAPI static DynamicCommandInstance const* setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
+    LLAPI static DynamicCommandInstance const*
+    setup(CommandRegistry& registry, std::unique_ptr<class DynamicCommandInstance> commandInstance);
 
     /**
      * @brief Setup a command.
@@ -535,6 +539,7 @@ public:
      * @note The command name only consists of lowercase letters and `_` .
      */
     static DynamicCommandInstance const* setup(
+        CommandRegistry&                                            registry,
         std::string const&                                          name,
         std::string const&                                          description,
         std::unordered_map<std::string, std::vector<std::string>>&& enums,
@@ -546,9 +551,9 @@ public:
     );
 
     // Experiment
-    LLAPI static bool unregisterCommand(std::string const& name);
+    LLAPI static bool unregisterCommand(CommandRegistry& registry, std::string const& name);
 
-    LLAPI static bool updateAvailableCommands();
+    LLAPI static bool updateAvailableCommands(CommandRegistry& registry);
 
     LLAPI DynamicCommandInstance const* getInstance() const;
 
@@ -579,6 +584,7 @@ private:
     std::unique_ptr<std::string> description_;
     CommandPermissionLevel       permission_;
     CommandFlag                  flag_;
+    CommandRegistry&             registry;
 
 public:
     std::unique_ptr<ll::memory::NativeClosure<std::unique_ptr<Command>>> builder;
@@ -604,22 +610,24 @@ private:
 
     friend class DynamicCommand;
 
-    LLAPI DynamicCommandInstance(
+    DynamicCommandInstance(
+        CommandRegistry&       registry,
         std::string const&     name,
         std::string const&     description,
-        CommandPermissionLevel permission = CommandPermissionLevel::GameDirectors,
-        CommandFlag            flag       = CommandFlagValue::NotCheat
+        CommandPermissionLevel permission,
+        CommandFlag            flag
     );
-    LLAPI std::vector<CommandParameterData> buildOverload(std::vector<ParameterIndex> const& overload);
+    std::vector<CommandParameterData> buildOverload(std::vector<ParameterIndex> const& overload);
 
 public:
     virtual ~DynamicCommandInstance();
 
     LLAPI static std::unique_ptr<DynamicCommandInstance> create(
+        CommandRegistry&       registry,
         std::string const&     name,
         std::string const&     description,
-        CommandPermissionLevel permission,
-        CommandFlag            flag
+        CommandPermissionLevel permission = CommandPermissionLevel::GameDirectors,
+        CommandFlag            flag       = CommandFlagValue::NotCheat
     );
     LLAPI std::string const& setEnum(std::string const& description, std::vector<std::string> const& values);
     LLAPI std::string const& getEnumValue(size_t index) const;
@@ -681,8 +689,6 @@ public:
     LLAPI std::string setSoftEnum(std::string const& name, std::vector<std::string> const& values) const;
     LLAPI bool        addSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
     LLAPI bool        removeSoftEnumValues(std::string const& name, std::vector<std::string> const& values) const;
-    LLAPI static std::vector<std::string> getSoftEnumValues(std::string const& name);
-    LLAPI static std::vector<std::string> getSoftEnumNames();
 
     template <ll::concepts::IsString T>
     ParameterIndex toIndex(T const& arg) {
@@ -715,6 +721,7 @@ public:
 };
 
 inline DynamicCommandInstance const* DynamicCommand::setup(
+    CommandRegistry&                                            registry,
     std::string const&                                          name,
     std::string const&                                          description,
     std::unordered_map<std::string, std::vector<std::string>>&& enums,
@@ -724,14 +731,18 @@ inline DynamicCommandInstance const* DynamicCommand::setup(
     CommandPermissionLevel                                      permission,
     CommandFlag                                                 flag
 ) {
-    return setup(createCommand(
-        name,
-        description,
-        std::move(enums),
-        std::move(params),
-        std::move(overloads),
-        std::move(callback),
-        permission,
-        flag
-    ));
+    return setup(
+        registry,
+        createCommand(
+            registry,
+            name,
+            description,
+            std::move(enums),
+            std::move(params),
+            std::move(overloads),
+            std::move(callback),
+            permission,
+            flag
+        )
+    );
 };

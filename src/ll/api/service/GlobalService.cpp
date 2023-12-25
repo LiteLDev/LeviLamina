@@ -54,24 +54,6 @@ LL_AUTO_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UE
     origin();
 }
 
-// PropertiesSettings
-
-LL_AUTO_INSTANCE_HOOK(
-    PropertiesSettingsConstructor,
-    HookPriority::High,
-    "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-    PropertiesSettings*,
-    std::string const& path
-) {
-    auto self = origin(path);
-    ll::Global<PropertiesSettings>.init(self);
-    return self;
-}
-LL_AUTO_INSTANCE_HOOK(PropertiesSettingsDestructor, HookPriority::High, "??1PropertiesSettings@@QEAA@XZ", void) {
-    ll::Global<PropertiesSettings>.init(nullptr);
-    origin();
-}
-
 // ServerNetworkHandler
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
@@ -160,18 +142,6 @@ LL_AUTO_INSTANCE_HOOK(
     void
 ) {
     ll::Global<ResourcePackRepository>.init(nullptr);
-    origin();
-}
-
-// CommandRegistry
-
-LL_AUTO_INSTANCE_HOOK(CommandRegistryConstructor, HookPriority::High, "??0CommandRegistry@@QEAA@XZ", CommandRegistry*) {
-    auto self = origin();
-    ll::Global<CommandRegistry>.init((CommandRegistry*)this);
-    return self;
-}
-LL_AUTO_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, "??1CommandRegistry@@QEAA@XZ", void) {
-    ll::Global<CommandRegistry>.init(nullptr);
     origin();
 }
 } // namespace ll
