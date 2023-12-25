@@ -63,19 +63,7 @@ fs::path Plugin::getConfigDir() const {
 
 bool Plugin::onLoad() { return !mImpl->onLoad || mImpl->onLoad(*this); }
 
-bool Plugin::onUnload() { return !mImpl->onUnload || mImpl->onUnload(*this); }
-
-bool Plugin::onEnable() { return !mImpl->onEnable || mImpl->onEnable(*this); }
-
-bool Plugin::onDisable() { return !mImpl->onDisable || mImpl->onDisable(*this); }
-
 void Plugin::onLoad(Callback func) { mImpl->onLoad = std::move(func); }
-
-void Plugin::onUnload(Callback func) { mImpl->onUnload = std::move(func); }
-
-void Plugin::onEnable(Callback func) { mImpl->onEnable = std::move(func); }
-
-void Plugin::onDisable(Callback func) { mImpl->onDisable = std::move(func); }
 
 void Plugin::setState(PluginState state) const { mImpl->state = state; }
 
