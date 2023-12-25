@@ -26,6 +26,9 @@ private:
     using Handle              = void*;
     using Callback            = std::function<bool(Plugin&)>;
     using SharedData          = UnorderedStringMap<std::any>;
+    using ll_plugin_load_t    = bool (*)(Plugin&);
+    using ll_plugin_enable_t  = bool (*)(Plugin&);
+    using ll_plugin_disable_t = bool (*)(Plugin&);
 
     friend class PluginManager;
 
@@ -37,6 +40,10 @@ private:
     void setState(PluginState state) const;
 
     bool onLoad();
+
+    bool onEnable();
+
+    bool onDisable();
 
 public:
     LLAPI ~Plugin();
@@ -62,6 +69,10 @@ public:
     LLNDAPI Logger& getLogger() const;
 
     LLAPI void onLoad(Callback func);
+
+    LLAPI void onEnable(Callback func);
+
+    LLAPI void onDisable(Callback func);
 
     bool hasSharedData(std::string_view key) const { return getSharedData().contains(key); }
 
