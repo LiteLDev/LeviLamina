@@ -6,7 +6,7 @@
 
 namespace ll {
 template <class T>
-class Dependency {
+class DependencyGraph {
 public:
     std::unordered_map<T, std::unordered_set<T>> data;
     std::unordered_map<T, size_t>                sizes;
@@ -20,11 +20,12 @@ public:
 
     [[nodiscard]] bool contains(T const& node) const { return data.contains(node); }
 
-    [[nodiscard]] bool emplace(T node) {
+    bool emplace(T const& node) {
         if (contains(node)) {
             return false;
         }
-        data.emplace(std::move(node), {});
+        data[node]  = {};
+        sizes[node] = {};
         return true;
     }
     [[nodiscard]] bool contains(T const& node, T const& dependency) const {
@@ -34,20 +35,20 @@ public:
         return data.at(dependency).contains(node);
     }
 
-    [[nodiscard]] bool emplace(T const& node, T const& dependency) {
+    bool emplaceDependency(T const& node, T const& dependency) {
         if (dependency != node) {
             auto& dependents = data[dependency];
-            if (dependents.find(node) == dependents.end()) {
-                dependents.insert(node);
-                sizes[node]++;
+            if (!dependents.contains(node)) {
+                dependents.emplace(node);
+                ++sizes[node];
                 return true;
             }
         }
         return false;
     }
-    [[nodiscard]] bool emplace(T const& node, std::unordered_set<T> const& dependencies) {
+    bool emplaceDependencies(T const& node, std::unordered_set<T> const& dependencies) {
         for (auto& dependency : dependencies) {
-            if (!emplace(node, dependency)) {
+            if (!emplaceDependency(node, dependency)) {
                 return false;
             }
         }
@@ -60,8 +61,7 @@ public:
         std::vector<T>                unsorted;
         std::unordered_map<T, size_t> csize(sizes);
         for (auto& [node, dependents] : data) {
-            csize[node] = dependents.size();
-            if (dependents.size() == 0) {
+            if (csize[node] == 0) {
                 sorted.push_back(node);
             }
         }

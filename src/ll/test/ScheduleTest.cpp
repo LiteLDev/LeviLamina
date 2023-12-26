@@ -21,6 +21,8 @@ GameTimeScheduler      s3;
 
 #include "mc/network/packet/TextPacket.h"
 
+#include "ll/api/base/DependencyGraph.h"
+
 #pragma warning(push)
 #pragma warning(disable : 4723)
 
@@ -81,6 +83,29 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
          //     schedulelogger.info("hello I resumed all threads");
          // });
      */
+
+    ll::DependencyGraph<std::string> dep;
+    dep.emplace("a");
+    dep.emplace("b");
+    dep.emplace("c");
+    dep.emplace("d");
+    dep.emplace("e");
+    dep.emplaceDependencies("a", {"b", "c", "e"});
+    dep.emplaceDependencies("b", {"c"});
+    dep.emplaceDependencies("c", {"d"});
+    dep.emplaceDependencies("e", {"a"});
+    const auto& result = dep.sort();
+
+    // print the sorted list
+    for (const auto& value : result.sorted) {
+        std::cout << value << ' ';
+    }
+    std::cout << "unsorted" << std::endl;
+    // print nodes that could not be sorted due to cycles
+    for (const auto& value : result.unsorted) {
+        std::cout << value << ' ';
+    }
+    std::cout << std::endl;
 
     return origin(ins);
 }

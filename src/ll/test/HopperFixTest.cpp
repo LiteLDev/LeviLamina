@@ -41,6 +41,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
                 item.remove(maxSize - containerItem.mCount);
                 containerItem.set(maxSize);
             }
+            container.setItem(slot, containerItem); // for update
         } else {
             auto originalCount = item.mCount;
             item.set(itemCount);
