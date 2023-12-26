@@ -83,7 +83,7 @@ class DynamicCommandInstance;
  *     std::unordered_map<std::string, DynamicCommand::Result>& results
  *   ) {
  *     auto& action = results["testEnum"].get<std::string>();
- *     switch (do_hash(action.c_str()))
+ *     switch (do_hash(action))
  *     {
  *       case "add"_h:
  *         if (results["testInt"].isSet)
@@ -592,7 +592,7 @@ public:
     size_t                                                        commandSize   = sizeof(DynamicCommand);
     std::unordered_map<std::string, DynamicCommand::ParameterPtr> parameterPtrs = {};
 
-    // Use unique_ptr to keep the address of enumName.c_str() immutable
+    // Use unique_ptr to keep the address of enumName immutable
     std::vector<std::unique_ptr<std::string>>                       enumNames  = {};
     std::vector<std::string>                                        enumValues = {};
     std::unordered_map<std::string_view, std::pair<size_t, size_t>> enumRanges = {};

@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/codebuilder/MCRESULT.h"
+#include "mc/server/commands/CommandContext.h"
 
 // auto generated inclusion list
 #include "mc/enums/CurrentCmdVersion.h"
@@ -23,8 +25,12 @@ public:
 
     // symbol:
     // ?compileCommand@MinecraftCommands@@QEAAPEAVCommand@@AEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z
-    MCAPI class Command*
-    compileCommand(class HashedString const&, class CommandOrigin&, ::CurrentCmdVersion, std::function<void(std::string const&)>);
+    MCAPI class Command* compileCommand(
+        class HashedString const&               commandStr,
+        class CommandOrigin&                    origin,
+        ::CurrentCmdVersion                     commandVersion,
+        std::function<void(std::string const&)> onParserError
+    );
 
     // symbol:
     // ?enqueueDeferredCommand@MinecraftCommands@@QEAAXV?$unique_ptr@VCommandContext@@U?$default_delete@VCommandContext@@@std@@@std@@_N1V?$function@$$A6AXUMCRESULT@@@Z@3@@Z
@@ -39,7 +45,7 @@ public:
     MCAPI bool enqueueDeferredScriptCommand(std::unique_ptr<class DeferredScriptCommand>);
 
     // symbol: ?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@AEAVCommandContext@@_N@Z
-    MCAPI struct MCRESULT executeCommand(class CommandContext& context, bool suppressOutput) const;
+    MCAPI struct MCRESULT executeCommand(class CommandContext& context, bool suppressOutput = false) const;
 
     // symbol: ?getRegistry@MinecraftCommands@@QEAAAEAVCommandRegistry@@XZ
     MCAPI class CommandRegistry& getRegistry();

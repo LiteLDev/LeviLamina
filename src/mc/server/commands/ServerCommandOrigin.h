@@ -16,12 +16,14 @@ namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
 
+class ServerLevel;
+
 class ServerCommandOrigin : public ::CommandOrigin {
 public:
-    // prevent constructor by default
-    ServerCommandOrigin& operator=(ServerCommandOrigin const&);
-    ServerCommandOrigin(ServerCommandOrigin const&);
-    ServerCommandOrigin();
+    ServerLevel*           mServerLevel;
+    std::string            mRequestId;
+    CommandPermissionLevel mCommandPermissionLevel;
+    DimensionType          mDimensionType;
 
 public:
     // NOLINTBEGIN

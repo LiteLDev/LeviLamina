@@ -172,7 +172,7 @@ static void setupExampleCommand(CommandRegistry& registry) {
                             CommandOrigin const&,
                             CommandOutput&                                           output,
                             std::unordered_map<std::string, DynamicCommand::Result>& results) {
-        switch (do_hash(results["testEnum"].getRaw<std::string>().c_str())) {
+        switch (do_hash(results["testEnum"].getRaw<std::string>())) {
         case "add"_h:
             output.success(fmt::format("Add - {}", results["testString"].getRaw<std::string>()));
             break;

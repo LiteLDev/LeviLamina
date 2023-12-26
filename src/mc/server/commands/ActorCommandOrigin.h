@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/enums/AbilitiesIndex.h"
@@ -15,12 +16,12 @@ namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
 
+class Level;
+
 class ActorCommandOrigin : public ::CommandOrigin {
 public:
-    // prevent constructor by default
-    ActorCommandOrigin& operator=(ActorCommandOrigin const&);
-    ActorCommandOrigin(ActorCommandOrigin const&);
-    ActorCommandOrigin();
+    ActorUniqueID mEntityId;
+    Level*        mLevel;
 
 public:
     // NOLINTBEGIN

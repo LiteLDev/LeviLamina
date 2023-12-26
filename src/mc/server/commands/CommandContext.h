@@ -10,6 +10,12 @@ public:
     std::unique_ptr<CommandOrigin> mOrigin;
     int                            mVersion;
 
+    template <std::derived_from<CommandOrigin> T, class... Args>
+    [[nodiscard]] explicit CommandContext(std::string command, Args&&... args)
+    : mCommand(std::move(command)),
+      mOrigin(std::make_unique<T>(std::forward<Args>(args)...)),
+      mVersion(CommandVersion::CurrentVersion) {}
+
 public:
     // NOLINTBEGIN
     // symbol:
