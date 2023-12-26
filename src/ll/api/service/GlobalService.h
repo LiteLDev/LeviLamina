@@ -13,6 +13,7 @@ namespace RakNet {
 class RakPeer;
 }
 class Minecraft;
+class PropertiesSettings;
 class ServerLevel;
 class Level;
 class ServerNetworkHandler;
@@ -27,6 +28,7 @@ concept IsGlobalService = concepts::IsOneOf<
     Minecraft,
     Level,
     ServerNetworkHandler,
+    PropertiesSettings,
     RakNet::RakPeer,
     NetworkSystem,
     ResourcePackRepository>;

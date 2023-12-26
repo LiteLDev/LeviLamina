@@ -54,6 +54,24 @@ LL_AUTO_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UE
     origin();
 }
 
+// PropertiesSettings
+
+LL_AUTO_INSTANCE_HOOK(
+    PropertiesSettingsConstructor,
+    HookPriority::High,
+    "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+    PropertiesSettings*,
+    std::string const& path
+) {
+    auto self = origin(path);
+    ll::Global<PropertiesSettings>.init(self);
+    return self;
+}
+LL_AUTO_INSTANCE_HOOK(PropertiesSettingsDestructor, HookPriority::High, "??1PropertiesSettings@@QEAA@XZ", void) {
+    ll::Global<PropertiesSettings>.init(nullptr);
+    origin();
+}
+
 // ServerNetworkHandler
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
