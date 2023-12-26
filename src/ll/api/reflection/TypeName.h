@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string_view>
+#include <typeinfo>
 
 namespace ll::reflection {
 

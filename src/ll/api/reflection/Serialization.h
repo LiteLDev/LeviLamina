@@ -43,6 +43,9 @@ inline J serialize(T const& obj)
 {
     J res;
     forEachMember(obj, [&](std::string_view name, auto& member) {
+        if (name.starts_with('$')) {
+            return;
+        }
         using member_type = std::remove_cvref_t<decltype(member)>;
         if constexpr (requires(member_type& m) { serialize<J>(m); }) {
             try {

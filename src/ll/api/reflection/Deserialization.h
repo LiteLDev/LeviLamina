@@ -36,6 +36,9 @@ inline void deserialize(T&, J const&);
 template <class J, Reflectable T>
 inline void deserialize(T& obj, J const& j) {
     forEachMember(obj, [&](std::string_view name, auto& member) {
+        if (name.starts_with('$')) {
+            return;
+        }
         using member_type = std::remove_cvref_t<decltype(member)>;
         auto sname        = std::string{name};
         if (j.contains(sname)) {
