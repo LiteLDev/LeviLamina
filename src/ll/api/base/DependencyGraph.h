@@ -17,9 +17,15 @@ public:
 
         [[nodiscard]] constexpr bool hasCycles() const { return !unsorted.empty(); }
     };
+    void clear() { data.clear(); }
 
     [[nodiscard]] bool contains(T const& node) const { return data.contains(node); }
-
+    [[nodiscard]] bool contains(T const& node, T const& dependency) const {
+        if (!contains(dependency)) {
+            return false;
+        }
+        return data.at(dependency).contains(node);
+    }
     bool emplace(T const& node) {
         if (contains(node)) {
             return false;
@@ -28,13 +34,6 @@ public:
         sizes[node] = {};
         return true;
     }
-    [[nodiscard]] bool contains(T const& node, T const& dependency) const {
-        if (!contains(dependency)) {
-            return false;
-        }
-        return data.at(dependency).contains(node);
-    }
-
     bool emplaceDependency(T const& node, T const& dependency) {
         if (dependency != node) {
             auto& dependents = data[dependency];
@@ -46,7 +45,7 @@ public:
         }
         return false;
     }
-    bool emplaceDependencies(T const& node, std::unordered_set<T> const& dependencies) {
+    bool emplaceDependencies(T const& node, std::vector<T> const& dependencies) {
         for (auto& dependency : dependencies) {
             if (!emplaceDependency(node, dependency)) {
                 return false;
@@ -54,8 +53,6 @@ public:
         }
         return true;
     }
-    void clear() { data.clear(); }
-
     [[nodiscard]] SortResult sort() const {
         std::vector<T>                sorted;
         std::vector<T>                unsorted;

@@ -85,27 +85,13 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
      */
 
     ll::DependencyGraph<std::string> dep;
-    dep.emplace("a");
-    dep.emplace("b");
-    dep.emplace("c");
-    dep.emplace("d");
-    dep.emplace("e");
     dep.emplaceDependencies("a", {"b", "c", "e"});
     dep.emplaceDependencies("b", {"c"});
     dep.emplaceDependencies("c", {"d"});
     dep.emplaceDependencies("e", {"a"});
     const auto& result = dep.sort();
-
-    // print the sorted list
-    for (const auto& value : result.sorted) {
-        std::cout << value << ' ';
-    }
-    std::cout << "unsorted" << std::endl;
-    // print nodes that could not be sorted due to cycles
-    for (const auto& value : result.unsorted) {
-        std::cout << value << ' ';
-    }
-    std::cout << std::endl;
+    schedulelogger.info("sorted: {}", result.sorted);
+    schedulelogger.info("unsorted: {}", result.unsorted);
 
     return origin(ins);
 }

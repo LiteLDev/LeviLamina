@@ -11,8 +11,8 @@ namespace ll::plugin {
 
 struct Manifest {
     struct Dependency {
-        std::string name;
-        Version     version;
+        std::string                name;
+        std::optional<std::string> version; // TODO: add version range
     };
     std::string                                       entry;
     std::string                                       name;
