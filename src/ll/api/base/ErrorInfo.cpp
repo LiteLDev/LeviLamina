@@ -126,13 +126,11 @@ std::error_category const& ntstatus_category() noexcept {
     return category;
 }
 
-seh_exception::seh_exception(uint ntStatus, void* expPtr)
+seh_exception::seh_exception(uint ntStatus, _EXCEPTION_POINTERS* expPtr)
 : std::system_error(std::error_code{(int)ntStatus, ntstatus_category()}),
   expPtr(expPtr) {}
 
 void setSehTranslator() { _set_se_translator(error_info::translateSEHtoCE); }
-
-void* seh_exception::getExceptionPointer() const noexcept { return expPtr; }
 
 std::system_error getWinLastError() noexcept { return std::error_code{(int)GetLastError(), u8system_category()}; }
 
@@ -253,6 +251,18 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
             std::exception_ptr yeptr;
             std::swap(ePtr, yeptr);
             std::rethrow_exception(yeptr);
+        } catch (const seh_exception& e) {
+            res += fmt::format(
+                "[0x{:0>8X}:{}] {}",
+                (uint)e.code().value(),
+                e.code().category().name(),
+                string_utils::tou8str(e.what())
+            );
+            ePtr = getNested(e);
+            auto& unkExc = *(e.getExceptionPointer()->ExceptionRecord);
+            for (size_t i = 0; i < unkExc.NumberParameters; i++) {
+                res += fmt::format("\nParameter {}: {}", i, (void*)unkExc.ExceptionInformation[i]);
+            }
         } catch (const std::system_error& e) {
             res += fmt::format(
                 "[0x{:0>8X}:{}] {}",
@@ -269,7 +279,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
         } catch (char const* e) {
             res += string_utils::tou8str(e);
         } catch (...) {
-            auto unkExc  = current_exception();
+            auto& unkExc  = current_exception();
             res         += fmt::format(
                 "[0x{:0>8X}:{}] {}",
                 (uint)unkExc.ExceptionCode,

@@ -20,17 +20,18 @@ class Logger;
 
 struct _EXCEPTION_RECORD; // NOLINT(bugprone-reserved-identifier)
 struct _CONTEXT;          // NOLINT(bugprone-reserved-identifier)
+struct _EXCEPTION_POINTERS;// NOLINT(bugprone-reserved-identifier)
 
 namespace ll::error_info {
 
 class seh_exception : public std::system_error {
 private:
-    void* expPtr;
+    _EXCEPTION_POINTERS* expPtr;
 
 public:
-    LLNDAPI seh_exception(uint ntStatus, void* expPtr);
+    LLNDAPI seh_exception(uint ntStatus, _EXCEPTION_POINTERS* expPtr);
 
-    LLNDAPI void* getExceptionPointer() const noexcept;
+    _EXCEPTION_POINTERS* getExceptionPointer() const noexcept { return expPtr; }
 };
 
 struct UntypedException {
