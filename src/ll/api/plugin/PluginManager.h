@@ -10,7 +10,10 @@
 #include "ll/api/plugin/Plugin.h"
 
 namespace ll::plugin {
+class PluginRegistry;
 class PluginManager {
+    friend PluginRegistry;
+
 protected:
     std::recursive_mutex                        mutex;
     std::string const                           type;
@@ -18,7 +21,6 @@ protected:
 
     PluginManager(std::string type) : type(std::move(type)) {}
 
-public:
     virtual ~PluginManager() = default;
 
     virtual std::shared_ptr<Plugin> load(Manifest) = 0;
