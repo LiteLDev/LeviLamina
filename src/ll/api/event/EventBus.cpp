@@ -34,12 +34,10 @@ public:
             } catch (...) {
                 auto lock = ll::Logger::lock();
                 try {
-                    auto& weak = l->pluginPtr;
                     logger.error(
-                        "Error in [{}:{}] of <{}>:",
+                        "Error in [{}:{}]:",
                         ll::reflection::removeTypePrefix(ll::reflection::getDynamicRawName(*l)),
-                        l->getId(),
-                        weak.expired() ? "unknown plugin" : weak.lock()->getManifest().name
+                        l->getId()
                     );
                 } catch (...) {}
                 error_info::printCurrentException();

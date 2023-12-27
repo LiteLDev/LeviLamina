@@ -18,9 +18,9 @@ namespace ll {
 class Logger;
 }
 
-struct _EXCEPTION_RECORD; // NOLINT(bugprone-reserved-identifier)
-struct _CONTEXT;          // NOLINT(bugprone-reserved-identifier)
-struct _EXCEPTION_POINTERS;// NOLINT(bugprone-reserved-identifier)
+struct _EXCEPTION_RECORD;   // NOLINT(bugprone-reserved-identifier)
+struct _CONTEXT;            // NOLINT(bugprone-reserved-identifier)
+struct _EXCEPTION_POINTERS; // NOLINT(bugprone-reserved-identifier)
 
 namespace ll::error_info {
 

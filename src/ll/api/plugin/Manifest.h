@@ -16,9 +16,10 @@ struct Manifest {
     };
     std::string                                       entry;
     std::string                                       name;
-    std::optional<std::string>                        description;
-    std::optional<std::string>                        author;
+    std::string                                       type;
     std::optional<Version>                            version;
+    std::optional<std::string>                        author;
+    std::optional<std::string>                        description;
     std::optional<std::vector<Dependency>>            dependencies;
     std::optional<std::vector<Dependency>>            optionalDependencies;
     std::optional<std::vector<Dependency>>            conflicts;

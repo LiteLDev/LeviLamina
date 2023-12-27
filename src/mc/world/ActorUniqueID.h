@@ -28,3 +28,11 @@ public:
 
     // NOLINTEND
 };
+
+namespace std {
+template <>
+class hash<ActorUniqueID> {
+public:
+    size_t operator()(ActorUniqueID const& id) const { return std::hash<int64>()(id.id); }
+};
+} // namespace std

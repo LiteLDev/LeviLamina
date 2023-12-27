@@ -8,7 +8,6 @@
 #include "ll/api/ServerInfo.h"
 #include "ll/api/base/ErrorInfo.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/plugin/Plugin.h"
 #include "ll/api/service/GlobalService.h"
 #include "ll/api/utils/StringUtils.h"
 
@@ -204,10 +203,12 @@ void leviLaminaMain() {
     // Fix problems
     fixCurrentDirectory();
 
-    if (globalConfig.modules.checkRunningBDS) checkOtherBdsInstance();
-
-    if (globalConfig.modules.playerInfo.alwaysLaunch)ll::PlayerInfo::getInstance();
-
+    if (globalConfig.modules.checkRunningBDS) {
+        checkOtherBdsInstance();
+    }
+    if (globalConfig.modules.playerInfo.alwaysLaunch) {
+        ll::PlayerInfo::getInstance();
+    }
     if (globalConfig.modules.crashLogger.enabled) {
         startCrashLogger();
     }
@@ -225,7 +226,7 @@ void leviLaminaMain() {
 
     // if (globalConfig.enableAddonsHelper) InitAddonsHelper();
 
-    plugin::PluginManager::getInstance().loadAllPlugins();
+    // plugin::PluginManager::getInstance().loadAllPlugins();
 
     registerLeviCommands();
 }

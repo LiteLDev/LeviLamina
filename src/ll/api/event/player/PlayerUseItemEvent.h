@@ -11,9 +11,7 @@ class PlayerUseItemEvent : public Cancellable<PlayerRightClickEvent> {
     ItemStack& mItem;
 
 public:
-    constexpr PlayerUseItemEvent(Player& player, ItemStack& item)
-    : Cancellable(player),
-      mItem(item) {}
+    constexpr PlayerUseItemEvent(Player& player, ItemStack& item) : Cancellable(player), mItem(item) {}
 
     void serialize(CompoundTag&) const override;
 

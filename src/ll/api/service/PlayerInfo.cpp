@@ -20,9 +20,9 @@ public:
 
     void addPlayer(mce::UUID uuid, std::string xuid, std::string name) {
         auto entry = std::make_shared<PlayerInfoEntry>(uuid, std::move(xuid), std::move(name));
-        uuids.emplace(entry->uuid, entry);
-        xuids.emplace(entry->xuid, entry);
-        names.emplace(entry->name, entry);
+        uuids.insert_or_assign(entry->uuid, entry);
+        xuids.insert_or_assign(entry->xuid, entry);
+        names.insert_or_assign(entry->name, entry);
     }
     void removePlayer(mce::UUID uuid) {
         if (!uuids.contains(uuid)) {

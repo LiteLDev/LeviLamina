@@ -1,7 +1,6 @@
 ﻿#include "ll/api/ServerInfo.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/command/SetupCommandEvent.h"
-#include "ll/api/plugin/Plugin.h"
 #include "ll/core/Config.h"
 
 #include "mc/network/packet/Packet.h"
@@ -20,7 +19,7 @@ using namespace ll;
 using namespace ll::string_utils;
 using namespace ll::i18n_literals;
 
-using ll::plugin::PluginManager;
+// using ll::plugin::PluginManager;
 
 namespace {
 class TeleportDimensionCommand : public Command {
@@ -146,7 +145,7 @@ public:
         registry.registerOverload<TeleportDimensionCommand>("tpdim", dimensionIdParam, positionParam);
     }
 };
-
+/*
 void LLListPluginsCommand(CommandOutput& output) {
     auto plugins = PluginManager::getInstance().getAllPlugins();
     output.success("ll.cmd.listPlugin.overview"_tr, plugins.size());
@@ -205,7 +204,7 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
         output.error("ll.cmd.pluginInfo.error.pluginNotFound"_tr, pluginName);
     }
 }
-
+*/
 void LLVersionCommand(CommandOutput& output) {
     output.success(
         "ll.cmd.version.msg"_tr,
@@ -343,8 +342,8 @@ public:
             LLVersionCommand(output);
             break;
         case Operation::List:
-            if (!hasPluginNameSet) LLListPluginsCommand(output);
-            else LLPluginInfoCommand(output, pluginName);
+            // if (!hasPluginNameSet) LLListPluginsCommand(output);
+            // else LLPluginInfoCommand(output, pluginName);
             break;
         // case Operation::Load:
         //     if (hasPluginNameSet) LLLoadPluginCommand(output, pluginName);
@@ -382,11 +381,11 @@ public:
         registry.registerCommand("ll", "LeviLamina plugin operations", CommandPermissionLevel::Host);
 
         // Register softenum
-        std::vector<std::string> pluginList;
-        for (auto& p : PluginManager::getInstance().getAllPlugins()) {
-            if (auto plugin = p.lock()) pluginList.push_back(plugin->getManifest().name);
-        }
-        registry.addSoftEnum("PluginName", pluginList);
+        // std::vector<std::string> pluginList;
+        // for (auto& p : PluginManager::getInstance().getAllPlugins()) {
+        //     if (auto plugin = p.lock()) pluginList.push_back(plugin->getManifest().name);
+        // }
+        // registry.addSoftEnum("PluginName", pluginList);
 
         // ll version & help
         registry.addEnum<Operation>(

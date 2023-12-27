@@ -13,7 +13,9 @@ class PlayerPlaceBlockEvent : public PlayerRightClickEvent {
     BlockPos const& mPos;
 
 protected:
-    constexpr explicit PlayerPlaceBlockEvent(Player& player, BlockPos const& pos) : PlayerRightClickEvent(player), mPos(pos) {}
+    constexpr explicit PlayerPlaceBlockEvent(Player& player, BlockPos const& pos)
+    : PlayerRightClickEvent(player),
+      mPos(pos) {}
 
 public:
     void serialize(CompoundTag&) const override;

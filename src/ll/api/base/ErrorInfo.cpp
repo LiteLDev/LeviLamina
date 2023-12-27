@@ -1,6 +1,5 @@
 #include "ll/api/base/ErrorInfo.h"
 #include "ll/api/memory/Memory.h"
-#include "ll/api/plugin/Plugin.h"
 #include "ll/api/reflection/Reflection.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
@@ -224,15 +223,14 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
             try {
                 UntypedException exc{*rt};
                 std::string      handleName("unknown module");
-                if (auto p = plugin::PluginManager::getInstance().findPlugin(exc.handle).lock(); p) {
-                    handleName = p->getManifest().name;
-                } else {
-                    wchar_t buffer[MAX_PATH];
-                    auto    size = GetModuleFileNameW((HMODULE)exc.handle, buffer, MAX_PATH);
-                    if (size) {
-                        handleName = string_utils::u8str2str(std::filesystem::path({buffer, size}).stem().u8string());
-                    }
+
+                std::wstring buffer(32767, '\0');
+                auto         size = GetModuleFileNameW((HMODULE)exc.handle, buffer.data(), 32767);
+                if (size) {
+                    buffer.resize(size);
+                    handleName = string_utils::u8str2str(std::filesystem::path(buffer).stem().u8string());
                 }
+
                 auto expTypeName = exc.getNumCatchableTypes() > 0 ? exc.getTypeInfo(0)->name() : "unknown exception";
                 if (expTypeName == typeid(seh_exception).name()) {
                     res += fmt::format("Seh Exception, from <{}>:\n", handleName);
@@ -258,7 +256,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
                 e.code().category().name(),
                 string_utils::tou8str(e.what())
             );
-            ePtr = getNested(e);
+            ePtr         = getNested(e);
             auto& unkExc = *(e.getExceptionPointer()->ExceptionRecord);
             for (size_t i = 0; i < unkExc.NumberParameters; i++) {
                 res += fmt::format("\nParameter {}: {}", i, (void*)unkExc.ExceptionInformation[i]);
@@ -280,7 +278,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
             res += string_utils::tou8str(e);
         } catch (...) {
             auto& unkExc  = current_exception();
-            res         += fmt::format(
+            res          += fmt::format(
                 "[0x{:0>8X}:{}] {}",
                 (uint)unkExc.ExceptionCode,
                 ntstatus_category().name(),

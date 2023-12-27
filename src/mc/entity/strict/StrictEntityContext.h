@@ -5,8 +5,8 @@
 
 class StrictEntityContext {
 public:
-    EntityId            mEntity;     // this+0x0
-    uint                mRegistryId; // this+0x4
+    EntityId mEntity;     // this+0x0
+    uint     mRegistryId; // this+0x4
 
     // prevent constructor by default
     StrictEntityContext& operator=(StrictEntityContext const&);
