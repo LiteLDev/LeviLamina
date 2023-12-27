@@ -1,4 +1,5 @@
-﻿#include "ll/api/ServerInfo.h"
+﻿#include "ll/api/Logger.h"
+#include "ll/api/ServerInfo.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/command/SetupCommandEvent.h"
 #include "ll/core/Config.h"

@@ -8,8 +8,8 @@ namespace ll {
 template <class T>
 class DependencyGraph {
 public:
-    std::unordered_map<T, std::unordered_set<T>> data;
-    std::unordered_map<T, size_t>                sizes;
+    std::unordered_map<T, std::unordered_set<T>> data;  // inv deps
+    std::unordered_map<T, size_t>                sizes; // deps count
 
     struct SortResult {
         std::vector<T> sorted;

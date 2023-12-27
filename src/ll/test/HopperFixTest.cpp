@@ -28,20 +28,21 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         if (!ll::memory::virtualCall<bool, int, int, ItemStack&>(&container, 25 /*canPushInItem*/, slot, face, item)) {
             continue;
         }
-        auto& containerItem = container.getItemNonConst(slot);
+        auto& containerItem = container.getItem(slot);
         if (containerItem.isValid()) {
             auto maxSize = containerItem.getMaxStackSize();
             if (containerItem.mCount == maxSize || !containerItem.isStackable(item)) {
                 continue;
             }
-            if (itemCount + containerItem.mCount <= maxSize) {
+            auto sb{containerItem};
+            if (itemCount + sb.mCount <= maxSize) {
                 item.remove(itemCount);
-                containerItem.add(itemCount);
+                sb.add(itemCount);
             } else {
-                item.remove(maxSize - containerItem.mCount);
-                containerItem.set(maxSize);
+                item.remove(maxSize - sb.mCount);
+                sb.set(maxSize);
             }
-            container.setItem(slot, containerItem); // for update
+            container.setItem(slot, sb); // for update
         } else {
             auto originalCount = item.mCount;
             item.set(itemCount);

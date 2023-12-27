@@ -1,17 +1,20 @@
 #pragma once
 
+#include "ll/api/base/DependencyGraph.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/plugin/PluginManager.h"
 
 namespace ll::plugin {
-class PluginManagerRegistry {
+class PluginRegistry {
     std::recursive_mutex                               mutex;
     UnorderedStringMap<std::shared_ptr<PluginManager>> managers;
-    PluginManagerRegistry()  = default;
-    ~PluginManagerRegistry() = default;
+    DependencyGraph<std::string>                       deps;
+
+    PluginRegistry()  = default;
+    ~PluginRegistry() = default;
 
 public:
-    LLNDAPI static PluginManagerRegistry& getInstance();
+    LLNDAPI static PluginRegistry& getInstance();
 
     [[nodiscard]] bool addManager(std::string_view type, std::shared_ptr<PluginManager> const& manager) {
         std::lock_guard lock(mutex);

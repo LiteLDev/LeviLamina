@@ -16,6 +16,8 @@ protected:
     std::string const                           type;
     UnorderedStringMap<std::shared_ptr<Plugin>> plugins;
 
+    PluginManager(std::string type) : type(std::move(type)) {}
+
 public:
     virtual ~PluginManager() = default;
 
