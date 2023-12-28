@@ -1,5 +1,7 @@
 #include "ll/api/plugin/PluginRegistry.h"
 
+#include "ll/core/LeviLamina.h"
+
 namespace ll::plugin {
 PluginRegistry& PluginRegistry::getInstance() {
     static PluginRegistry instance;
@@ -78,8 +80,9 @@ void some() {
             for (auto& dependency : *manifest.dependencies) {
                 deps.emplaceDependency(name, dependency.name);
             }
+        } else {
+            deps.emplace(name);
         }
-        deps.emplace(name);
         if (manifest.optionalDependencies) {
             for (auto& dependency : *manifest.optionalDependencies) {
                 if (needLoad.contains(dependency.name)) {

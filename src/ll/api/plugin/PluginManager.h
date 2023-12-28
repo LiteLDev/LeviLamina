@@ -31,31 +31,6 @@ protected:
 
     virtual bool disable(std::string_view) = 0;
 
-    virtual size_t unloadAll() {
-        std::lock_guard lock(mutex);
-        size_t          count{};
-        for (auto& name : getPluginNames()) {
-            count += unload(name);
-        }
-        return count;
-    }
-    virtual size_t enableAll() {
-        std::lock_guard lock(mutex);
-        size_t          count{};
-        for (auto& name : getPluginNames()) {
-            count += enable(name);
-        }
-        return count;
-    }
-    virtual size_t disableAll() {
-        std::lock_guard lock(mutex);
-        size_t          count{};
-        for (auto& name : getPluginNames()) {
-            count += disable(name);
-        }
-        return count;
-    }
-
     [[nodiscard]] std::string const& getType() const { return type; }
 
     [[nodiscard]] bool hasPlugin(std::string_view name) { return plugins.contains(name); }
