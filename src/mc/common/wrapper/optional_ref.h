@@ -51,9 +51,13 @@ public:
         requires(std::is_const_v<U>)
     : mPtr(rhs.as_ptr()) {}
 
+    [[nodiscard]] constexpr optional_ref(optional_ref&&) = default;
+
+    LL_CLANG_CEXPR optional_ref& operator=(optional_ref&&) = default;
+
     [[nodiscard]] constexpr optional_ref(optional_ref const&) = default;
 
-    optional_ref& operator=(optional_ref const& other) = delete;
+    LL_CLANG_CEXPR optional_ref& operator=(optional_ref const&) = default;
 
     [[nodiscard]] constexpr explicit operator bool() const noexcept { return mPtr != nullptr; }
 
