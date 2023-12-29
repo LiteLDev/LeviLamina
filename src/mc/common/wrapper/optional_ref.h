@@ -1,5 +1,6 @@
 #pragma once
 
+#include <concepts>
 #include <optional>
 #include <stdexcept>
 
@@ -7,11 +8,7 @@ template <typename T>
     requires(!std::is_reference_v<T>)
 class optional_ref {
 private:
-    T* const mPtr = nullptr;
-
-    template <typename U>
-    static constexpr bool IsCompatibleV =
-        std::is_same_v<std::decay_t<T>, std::decay_t<U>> && std::is_convertible_v<U*, T*>;
+    T* mPtr = nullptr;
     // NOLINTBEGIN
 public:
     [[nodiscard]] constexpr optional_ref() noexcept = default;
@@ -20,31 +17,20 @@ public:
 
     [[nodiscard]] constexpr optional_ref(std::nullptr_t) noexcept {}
 
-    template <typename U>
-    [[nodiscard]] constexpr optional_ref(std::optional<U>& o)
-        requires(IsCompatibleV<U>)
-    : mPtr(o ? &*o : nullptr) {}
+    template <std::derived_from<T> U>
+    [[nodiscard]] constexpr optional_ref(std::optional<U>& o) : mPtr(o ? &*o : nullptr) {}
 
-    template <typename U>
-    [[nodiscard]] constexpr optional_ref(U* p)
-        requires(IsCompatibleV<U>)
-    : mPtr(p) {}
+    template <std::derived_from<T> U>
+    [[nodiscard]] constexpr optional_ref(U* p) : mPtr(p) {}
 
-    template <typename U>
-    [[nodiscard]] constexpr optional_ref(U& r)
-        requires(IsCompatibleV<U>)
-    : mPtr(std::addressof(r)) {}
+    template <std::derived_from<T> U>
+    [[nodiscard]] constexpr optional_ref(U& r) : mPtr(std::addressof(r)) {}
 
-    template <typename U>
-    [[nodiscard]] constexpr optional_ref(U const& r)
-        requires(IsCompatibleV<U>)
-    : mPtr(std::addressof(r)) {}
+    template <std::derived_from<T> U>
+    [[nodiscard]] constexpr optional_ref(U const& r) : mPtr(std::addressof(r)) {}
 
-    template <typename U>
-    [[nodiscard]] constexpr optional_ref(const std::optional<U>& o)
-        requires(std::is_const_v<T> && IsCompatibleV<U>)
-    : mPtr(o ? &*o : nullptr) {}
-
+    template <std::derived_from<T> U>
+    [[nodiscard]] constexpr optional_ref(const std::optional<U>& o) : mPtr(o ? &*o : nullptr) {}
 
     template <typename U = T>
     [[nodiscard]] constexpr optional_ref(optional_ref<std::remove_const_t<U>> rhs)
