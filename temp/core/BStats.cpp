@@ -1,8 +1,8 @@
 ﻿#include "ll/core/LeviLamina.h"
 
-#include "ll/api/base/Global.h"
 #include "ll/api/ScheduleAPI.h"
 #include "ll/api/ServerInfo.h"
+#include "ll/api/base/Global.h"
 #include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/utils/NetworkHelper.h"
 #include "ll/api/utils/StringUtils.h"
@@ -42,12 +42,10 @@ bool create(string const& UUID) {
         &hKey,
         &dwDisposition
     );
-    if (lRet != ERROR_SUCCESS)
-        return false;
+    if (lRet != ERROR_SUCCESS) return false;
     auto uuid = str2wstr(UUID);
     lRet      = ::RegSetValueEx(hKey, uuid.c_str(), 0, REG_SZ, nullptr, 0);
-    if (lRet == ERROR_SUCCESS) {
-    }
+    if (lRet == ERROR_SUCCESS) {}
     ::RegCloseKey(hKey);
     return true;
 }
@@ -68,8 +66,7 @@ unordered_set<string> getAllValue() {
         &hKey,
         &dwDisposition
     );
-    if (lRet != ERROR_SUCCESS)
-        return result;
+    if (lRet != ERROR_SUCCESS) return result;
 
     // enum value from registry
     DWORD dwIndex         = 0;
@@ -77,9 +74,8 @@ unordered_set<string> getAllValue() {
     DWORD dwValueSize     = MAX_PATH;
     auto* lpValueName     = new wchar_t[dwValueNameSize];
     auto* lpValue         = new wchar_t[dwValueSize];
-    while (::RegEnumValue(
-               hKey, dwIndex, lpValueName, &dwValueNameSize, nullptr, nullptr, (LPBYTE)lpValue, &dwValueSize
-           ) == ERROR_SUCCESS) {
+    while (::RegEnumValue(hKey, dwIndex, lpValueName, &dwValueNameSize, nullptr, nullptr, (LPBYTE)lpValue, &dwValueSize)
+           == ERROR_SUCCESS) {
         result.insert(wstr2str(lpValueName));
         dwValueNameSize = MAX_PATH;
         dwValueSize     = MAX_PATH;
@@ -272,7 +268,7 @@ string createJson() {
 
 
 void submitTask() {
-    playerAmount = Global<ServerNetworkHandler>->_getActiveAndInProgressPlayerCount(mce::UUID::EMPTY);
+    playerAmount = service::getServerNetworkHandler()->_getActiveAndInProgressPlayerCount(mce::UUID::EMPTY);
     playerPlatList.clear();
     for (auto sp : Level::getAllPlayers()) {
         auto OS = sp->getDeviceName();
@@ -293,17 +289,14 @@ void submitTask() {
             {"Content-Type",    "application/json"         },
             {"User-Agent",      "Metrics-Service/1"        }
         };
-        HttpPost(
-            "https://bstats.org/api/v2/data/bukkit", headers, json, "", [](int a1, string const& a2) {}, 10
-        );
+        HttpPost("https://bstats.org/api/v2/data/bukkit", headers, json, "", [](int a1, string const& a2) {}, 10);
     });
 
     a.detach();
 }
 
 void createJsonConfig() {
-    if (!std::filesystem::exists("plugins/bStats"))
-        std::filesystem::create_directories("plugins/bStats");
+    if (!std::filesystem::exists("plugins/bStats")) std::filesystem::create_directories("plugins/bStats");
     if (std::filesystem::exists("plugins/bStats/config.json")) {
         try {
             bstatsSettings::loadConfigFromJson("plugins/bStats/config.json");
@@ -362,7 +355,7 @@ void registerBStats() {
         bstatsLogger.info(tr("ll.main.bstats.enabled"));
         using ll::event::server::ServerStartedEvent;
         ServerStartedEvent::subscribe([](ServerStartedEvent const& ev) {
-            isOnlineAuth = Global<PropertiesSettings>->useOnlineAuthentication();
+            isOnlineAuth = service::getPropertiesSettings()->useOnlineAuthentication();
             scheduleThread();
         });
     }

@@ -8,9 +8,7 @@
 #include "mc/world/level/block/actor/ChestBlockActor.h"
 #include "mc/world/level/dimension/Dimension.h"
 
-#include "ll/api/service/GlobalService.h"
-
-using ll::Global;
+#include "ll/api/service/Bedrock.h"
 
 void BlockActor::refresh(optional_ref<class BlockSource> blockSource) {
     setChanged();
@@ -56,18 +54,18 @@ std::unique_ptr<class CompoundTag> BlockActor::saveToNbt() const {
 }
 
 void BlockActor::loadFromNbt(class CompoundTag const& nbt, optional_ref<class BlockSource> blockSource) {
-    if (!Global<Level>) {
+    if (!ll::service::getLevel()) {
         return;
     }
-    load(*Global<Level>, nbt, defaultDataLoadHelper);
+    load(*ll::service::getLevel(), nbt, defaultDataLoadHelper);
     refresh(blockSource);
 }
 
 std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt) {
-    if (!Global<Level>) {
+    if (!ll::service::getLevel()) {
         return nullptr;
     }
-    return loadStatic(*Global<Level>, nbt, defaultDataLoadHelper);
+    return loadStatic(*ll::service::getLevel(), nbt, defaultDataLoadHelper);
 }
 
 std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt, class BlockPos const& pos) {

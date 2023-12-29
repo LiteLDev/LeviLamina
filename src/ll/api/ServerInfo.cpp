@@ -1,5 +1,5 @@
 #include "ll/api/ServerInfo.h"
-#include "ll/api/service/GlobalService.h"
+#include "ll/api/service/Bedrock.h"
 #include "ll/core/Version.h"
 #include "mc/common/BuildInfo.h"
 #include "mc/common/Common.h"
@@ -45,8 +45,8 @@ Version getLoaderVersion() {
 int getServerProtocolVersion() { return SharedConstants::NetworkProtocolVersion; }
 
 bool setServerMotd(std::string const& motd) {
-    if (!Global<ServerNetworkHandler>) return false;
-    Global<ServerNetworkHandler>->allowIncomingConnections(motd, true);
+    if (!service::getServerNetworkHandler()) return false;
+    service::getServerNetworkHandler()->allowIncomingConnections(motd, true);
     return true;
 }
 } // namespace ll

@@ -1,6 +1,6 @@
 #define LL_GLOBAL_SERVICE_IMPL
 
-#include "ll/api/service/GlobalService.h"
+#include "ll/api/service/Bedrock.h"
 
 #include "mc/deps/raknet/RakPeer.h"
 #include "mc/deps/raknet/RakPeerInterface.h"
@@ -21,23 +21,12 @@
 #include "ll/api/reflection/Reflection.h"
 #include "ll/core/LeviLamina.h"
 
-template <ll::IsGlobalService T>
-ll::GlobalService<T>::GlobalService() = default;
+namespace {
 
-template <ll::IsGlobalService T>
-void ll::GlobalService<T>::init(T* ptr) {
-    value = ptr;
-#if defined(LL_DEBUG)
-    ll::logger
-        .debug("Initializing GlobalService<{}> to 0x{:X}", ll::reflection::type_unprefix_name_v<T>, (size_t)value);
-#endif
-}
-
-namespace ll {
-
-using namespace memory;
+using namespace ll::memory;
 
 // Minecraft
+optional_ref<Minecraft> minecraft;
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     MinecraftServiceHook,
@@ -46,15 +35,16 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     &Minecraft::initAsDedicatedServer,
     void
 ) {
-    ll::Global<Minecraft>.init(this);
+    minecraft = this;
     origin();
 }
 LL_AUTO_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UEAA@XZ", void) {
-    ll::Global<Minecraft>.init(nullptr);
+    minecraft = nullptr;
     origin();
 }
 
 // PropertiesSettings
+optional_ref<PropertiesSettings> propertiesSettings;
 
 LL_AUTO_INSTANCE_HOOK(
     PropertiesSettingsConstructor,
@@ -63,16 +53,15 @@ LL_AUTO_INSTANCE_HOOK(
     PropertiesSettings*,
     std::string const& path
 ) {
-    auto self = origin(path);
-    ll::Global<PropertiesSettings>.init(self);
-    return self;
+    return propertiesSettings = origin(path);
 }
 LL_AUTO_INSTANCE_HOOK(PropertiesSettingsDestructor, HookPriority::High, "??1PropertiesSettings@@QEAA@XZ", void) {
-    ll::Global<PropertiesSettings>.init(nullptr);
+    propertiesSettings = nullptr;
     origin();
 }
 
 // ServerNetworkHandler
+optional_ref<ServerNetworkHandler> serverNetworkHandler;
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ServerNetworkHandlerServiceHook,
@@ -83,16 +72,17 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     std::string const& a1,
     bool               a2
 ) {
-    ll::Global<ServerNetworkHandler>.init(this);
+    serverNetworkHandler = this;
     unhook();
     origin(a1, a2);
 }
 LL_AUTO_INSTANCE_HOOK(ServerNetworkHandlerDestructor, HookPriority::High, "??1ServerNetworkHandler@@UEAA@XZ", void) {
-    ll::Global<ServerNetworkHandler>.init(nullptr);
+    serverNetworkHandler = nullptr;
     origin();
 }
 
 // NetworkSystem
+optional_ref<NetworkSystem> networkSystem;
 
 LL_AUTO_INSTANCE_HOOK(
     NetworkSystemConstructor,
@@ -101,16 +91,15 @@ LL_AUTO_INSTANCE_HOOK(
     NetworkSystem*,
     struct NetworkSystem::Dependencies&& dependencies
 ) {
-    auto self = origin(std::move(dependencies));
-    ll::Global<NetworkSystem>.init(self);
-    return self;
+    return networkSystem = origin(std::move(dependencies));
 }
 LL_AUTO_INSTANCE_HOOK(NetworkSystemDestructor, HookPriority::High, "??1NetworkSystem@@MEAA@XZ", void) {
-    ll::Global<NetworkSystem>.init(nullptr);
+    networkSystem = nullptr;
     origin();
 }
 
 // Level
+optional_ref<Level> level;
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ServerLevelServiceHook,
@@ -120,28 +109,29 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     void,
     ::ServerInstance& ins
 ) {
-    ll::Global<Level>.init(ll::Global<Minecraft>->getLevel());
+    level = ll::service::getMinecraft()->getLevel();
     origin(ins);
 }
 LL_AUTO_INSTANCE_HOOK(LevelDestructor, HookPriority::High, "??1Level@@UEAA@XZ", void) {
-    ll::Global<Level>.init(nullptr);
+    level = nullptr;
     origin();
 }
 
 // RakNet::RakPeer
+optional_ref<RakNet::RakPeer> rakPeer;
 
 LL_AUTO_INSTANCE_HOOK(RakNetRakPeerConstructor, HookPriority::High, "??0RakPeer@RakNet@@QEAA@XZ", RakNet::RakPeer*) {
-    auto self = origin();
-    ll::Global<RakNet::RakPeer>.init(self);
     unhook();
-    return self;
+    return rakPeer = origin();
 }
+
 LL_AUTO_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::High, "??1RakPeer@RakNet@@UEAA@XZ", void) {
-    if ((void*)this == (void*)ll::Global<RakNet::RakPeer>.get()) ll::Global<RakNet::RakPeer>.init(nullptr);
+    if ((void*)this == (void*)ll::service::getRakPeer()) rakPeer = nullptr;
     origin();
 }
 
 // ResourcePackRepository
+optional_ref<ResourcePackRepository> resourcePackRepository;
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
     ResourcePackRepositoryServiceHook,
@@ -150,7 +140,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     &ResourcePackRepository::_initialize,
     void
 ) {
-    ll::Global<ResourcePackRepository>.init(this);
+    resourcePackRepository = this;
     origin();
 }
 LL_AUTO_INSTANCE_HOOK(
@@ -159,7 +149,25 @@ LL_AUTO_INSTANCE_HOOK(
     "??1ResourcePackRepository@@QEAA@XZ",
     void
 ) {
-    ll::Global<ResourcePackRepository>.init(nullptr);
+    resourcePackRepository = nullptr;
     origin();
 }
-} // namespace ll
+} // namespace
+
+namespace ll::service::inline bedrock {
+
+optional_ref<Minecraft> getMinecraft() { return minecraft; }
+
+optional_ref<Level> getLevel() { return level; }
+
+optional_ref<ServerNetworkHandler> getServerNetworkHandler() { return serverNetworkHandler; }
+
+optional_ref<PropertiesSettings> getPropertiesSettings() { return propertiesSettings; }
+
+optional_ref<RakNet::RakPeer> getRakPeer() { return rakPeer; }
+
+optional_ref<NetworkSystem> getNetworkSystem() { return networkSystem; }
+
+optional_ref<ResourcePackRepository> getResourcePackRepository() { return resourcePackRepository; }
+
+} // namespace ll::service::inline bedrock

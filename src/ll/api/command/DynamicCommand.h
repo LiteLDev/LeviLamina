@@ -4,7 +4,7 @@
 #include "magic_enum.hpp"
 
 #include "ll/api/base/Concepts.h"
-#include "ll/api/service/GlobalService.h"
+#include "ll/api/service/Bedrock.h"
 
 #include "mc/deps/json/Value.h"
 #include "mc/server/commands/CommandBlockName.h"

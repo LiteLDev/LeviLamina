@@ -6,9 +6,7 @@
 #include "mc/world/level/levelgen/structure/StructureManager.h"
 #include "mc/world/level/levelgen/structure/StructureSettings.h"
 
-#include "ll/api/service/GlobalService.h"
-
-using ll::Global;
+#include "ll/api/service/Bedrock.h"
 
 void StructureTemplate::placeInWorld(
     BlockSource&    blockSource,
@@ -26,10 +24,10 @@ void StructureTemplate::placeInWorld(
 
 
 std::unique_ptr<StructureTemplate> StructureTemplate::create(const std::string& name, CompoundTag const& tag) {
-    if (!Global<Level>) {
+    if (!ll::service::getLevel()) {
         return nullptr;
     }
-    auto& unknownBlockRegistry = Global<Level>->getStructureManager()->mUnknownBlockRegistry;
+    auto& unknownBlockRegistry = ll::service::getLevel()->getStructureManager()->mUnknownBlockRegistry;
     auto  res                  = std::make_unique<StructureTemplate>(name, unknownBlockRegistry);
     bool  success{res->load(tag)};
     if (!success) {

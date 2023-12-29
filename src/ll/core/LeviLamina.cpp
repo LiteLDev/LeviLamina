@@ -8,7 +8,7 @@
 #include "ll/api/ServerInfo.h"
 #include "ll/api/base/ErrorInfo.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/service/GlobalService.h"
+#include "ll/api/service/Bedrock.h"
 #include "ll/api/utils/StringUtils.h"
 
 #include "ll/api/service/PlayerInfo.h"
@@ -135,8 +135,8 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
     case CTRL_C_EVENT:
     case CTRL_CLOSE_EVENT:
     case CTRL_SHUTDOWN_EVENT: {
-        if (Global<Minecraft>) {
-            Global<Minecraft>->requestServerShutdown("");
+        if (service::getMinecraft()) {
+            service::getMinecraft()->requestServerShutdown("");
         } else {
             std::terminate();
         }
@@ -152,7 +152,7 @@ void unixSignalHandler(int signum) {
     switch (signum) {
     case SIGINT:
     case SIGTERM: {
-        if (Global<Minecraft>) Global<Minecraft>->requestServerShutdown("");
+        if (service::getMinecraft()) service::getMinecraft()->requestServerShutdown("");
         else std::terminate();
         break;
     }

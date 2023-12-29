@@ -9,15 +9,13 @@
 #include "mc/world/level/block/utils/BlockSerializationUtils.h"
 #include "mc/world/level/block/utils/VanillaBlockConversion.h"
 
-#include "ll/api/service/GlobalService.h"
-
-using ll::Global;
+#include "ll/api/service/Bedrock.h"
 
 optional_ref<Block const> Block::tryGetFromRegistry(uint runtimeID) {
-    if (!Global<Level>) {
+    if (!ll::service::getLevel()) {
         return nullptr;
     }
-    auto& res = Global<Level>->getBlockPalette().getBlock(runtimeID);
+    auto& res = ll::service::getLevel()->getBlockPalette().getBlock(runtimeID);
     if (res.getRuntimeId() != runtimeID) {
         return nullptr;
     }

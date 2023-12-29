@@ -16,11 +16,9 @@
 #include "mc/server/ServerLevel.h"
 #include "mc/world/Minecraft.h"
 
-#include "ll/api/service/GlobalService.h"
+#include "ll/api/service/Bedrock.h"
 #include "mc/network/packet/TextPacket.h"
 #include <memory>
-
-using ll::Global;
 
 UserEntityIdentifierComponent const& Player::getUserEntityIdentifier() const {
     return *(getEntityContext().tryGetComponent<UserEntityIdentifierComponent>());
@@ -31,17 +29,17 @@ UserEntityIdentifierComponent& Player::getUserEntityIdentifier() {
 }
 
 std::string Player::getDeviceId() const {
-    if (!Global<ServerNetworkHandler>) {
+    if (!ll::service::getServerNetworkHandler()) {
         return "";
     }
-    return Global<ServerNetworkHandler>->fetchConnectionRequest(getNetworkIdentifier()).getDeviceId();
+    return ll::service::getServerNetworkHandler()->fetchConnectionRequest(getNetworkIdentifier()).getDeviceId();
 }
 
 std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
-    if (!Global<NetworkSystem>) {
+    if (!ll::service::getNetworkSystem()) {
         return std::nullopt;
     }
-    auto peer = Global<NetworkSystem>->getPeerForUser(getNetworkIdentifier());
+    auto peer = ll::service::getNetworkSystem()->getPeerForUser(getNetworkIdentifier());
     if (!peer) {
         return std::nullopt;
     }
@@ -59,10 +57,10 @@ std::string Player::getRealName() const {
 }
 
 void Player::disconnect(std::string_view reason) const {
-    if (!Global<ServerNetworkHandler>) {
+    if (!ll::service::getServerNetworkHandler()) {
         return;
     }
-    Global<ServerNetworkHandler>->disconnectClient(
+    ll::service::getServerNetworkHandler()->disconnectClient(
         getNetworkIdentifier(),
         Connection::DisconnectFailReason::Unknown,
         std::string{reason},

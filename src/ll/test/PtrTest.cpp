@@ -16,14 +16,14 @@
 
 struct SystemCategory;
 
-#include "ll/api/service/GlobalService.h"
+#include "ll/api/service/Bedrock.h"
 #include "mc/entity/systems/EntitySystems.h"
 #include "mc/world/level/Level.h"
 
 
 auto test() {
     // ll::logger.warn("mAllSystemsInfo");
-    // auto& systems = ll::Global<Level>->getEntitySystems().getDefaultCollection();
+    // auto& systems = ll::service::getLevel()->getEntitySystems().getDefaultCollection();
 
     // for (auto& info : systems.mAllSystemsInfo) {
     //     ll::logger.warn("info {}", info.mName);

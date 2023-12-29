@@ -1,6 +1,6 @@
 #include "mc/world/item/crafting/Recipes.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/service/GlobalService.h"
+#include "ll/api/service/Bedrock.h"
 #include "ll/api/utils/StringUtils.h"
 #include "magic_enum.hpp"
 #include "mc/deps/json/Value.h"
@@ -30,7 +30,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     nlohmann::json json;
 
-    for (auto& [type, rmap] : ll::Global<Level>->getRecipes().getRecipesAllTags()) {
+    for (auto& [type, rmap] : ll::service::getLevel()->getRecipes().getRecipesAllTags()) {
         auto& mapjson = json[type.getString()];
         for (auto& [k, v] : rmap) {
             auto& rjson           = mapjson[k];

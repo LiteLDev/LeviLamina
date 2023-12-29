@@ -6,7 +6,7 @@
 #include "ll/api/event/server/RegisterCommandEvent.h"
 #include "ll/api/i18n/I18nAPI.h"
 #include "ll/api/io/FileUtils.h"
-#include "ll/api/service/GlobalService.h"
+#include "ll/api/service/Bedrock.h"
 #include "ll/api/utils/WinUtils.h"
 #include "ll/api/utils/fifo_json.h"
 #include "ll/core/Config.h"
@@ -626,7 +626,9 @@ void FindAddons(string jsonPath, string packsDir) {
                 std::string pktid = addon["pack_id"];
                 validPackIDs.insert(pktid);
             }
-        } catch (std::exception const&) { addonLogger.error(tr("ll.addonsHelper.error.parsingEnabledAddonsList")); }
+        } catch (std::exception const&) {
+            addonLogger.error(tr("ll.addonsHelper.error.parsingEnabledAddonsList"));
+        }
 
         filesystem::directory_iterator ent(str2wstr(packsDir));
         for (auto& dir : ent) {
@@ -636,7 +638,9 @@ void FindAddons(string jsonPath, string packsDir) {
             if (validPackIDs.find(addon->uuid) != validPackIDs.end()) addon->enable = true;
             addons.emplace_back(std::move(*addon));
         }
-    } catch (...) { return; }
+    } catch (...) {
+        return;
+    }
 }
 
 void BuildAddonsList() {

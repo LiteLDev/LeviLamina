@@ -326,7 +326,7 @@ static void setupCrashCommand(CommandRegistry& registry) {
     DynamicCommand::setup(registry, std::move(command));
 }
 
-#include "ll/api/service/GlobalService.h"
+#include "ll/api/service/Bedrock.h"
 #include "mc/entity/systems/EntitySystems.h"
 #include "mc/world/level/Level.h"
 #include <ranges>
@@ -341,7 +341,7 @@ static void setupTimingCommand(CommandRegistry& registry) {
                             CommandOutput&,
                             std::unordered_map<std::string, DynamicCommand::Result>&) {
         auto thread = std::thread([] {
-            auto& system = ll::Global<Level>->getEntitySystems();
+            auto& system = ll::service::getLevel()->getEntitySystems();
 
             auto& collection = system.getDefaultCollection();
             {
@@ -480,7 +480,7 @@ static void kickAllSimulatePlayerCommand(CommandRegistry& registry) {
                             CommandOrigin const&,
                             CommandOutput& output,
                             std::unordered_map<std::string, DynamicCommand::Result>&) {
-        ll::Global<Level>->forEachPlayer([&](Player& player) {
+        ll::service::getLevel()->forEachPlayer([&](Player& player) {
             if (player.isSimulatedPlayer()) {
                 ((SimulatedPlayer&)player).simulateDisconnect();
             }

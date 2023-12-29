@@ -616,8 +616,8 @@ bool DynamicCommand::unregisterCommand(CommandRegistry& registry, std::string co
 
 bool DynamicCommand::updateAvailableCommands(CommandRegistry& registry) {
     auto packet = registry.serializeAvailableCommands();
-    if (!ll::Global<Level>) return false;
-    auto sender = (LoopbackPacketSender*)ll::Global<Level>->getPacketSender();
+    if (!ll::service::getLevel()) return false;
+    auto sender = (LoopbackPacketSender*)ll::service::getLevel()->getPacketSender();
     if (!sender) return false;
     sender->sendBroadcast(packet);
     return true;

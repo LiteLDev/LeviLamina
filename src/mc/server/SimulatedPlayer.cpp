@@ -1,6 +1,6 @@
 #include "mc/server/SimulatedPlayer.h"
 #include "ll/api/base/Random.h"
-#include "ll/api/service/GlobalService.h"
+#include "ll/api/service/Bedrock.h"
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/network/ServerNetworkHandler.h"
@@ -14,10 +14,10 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     DimensionType      dimId,
     class Vec2 const&  rotation
 ) {
-    if (!ll::Global<ServerNetworkHandler>) {
+    if (!ll::service::getServerNetworkHandler()) {
         return nullptr;
     }
-    OwnerPtrT<EntityRefTraits> ownerPtr = ll::Global<ServerNetworkHandler>->createSimulatedPlayer(
+    OwnerPtrT<EntityRefTraits> ownerPtr = ll::service::getServerNetworkHandler()->createSimulatedPlayer(
         name,
         std::to_string(random::rand<int64>(INT64_MIN, -1))
     );
