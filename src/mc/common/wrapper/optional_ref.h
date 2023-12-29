@@ -1,8 +1,8 @@
 #pragma once
 
-#include <concepts>
 #include <optional>
 #include <stdexcept>
+#include <type_traits>
 
 template <typename T>
     requires(!std::is_reference_v<T>)
@@ -17,19 +17,28 @@ public:
 
     [[nodiscard]] constexpr optional_ref(std::nullptr_t) noexcept {}
 
-    template <std::derived_from<T> U>
+    template <class U>
+        requires(std::is_convertible_v<U*, T*>)
     [[nodiscard]] constexpr optional_ref(std::optional<U>& o) : mPtr(o ? &*o : nullptr) {}
 
-    template <std::derived_from<T> U>
+
+    template <class U>
+        requires(std::is_convertible_v<U*, T*>)
     [[nodiscard]] constexpr optional_ref(U* p) : mPtr(p) {}
 
-    template <std::derived_from<T> U>
+
+    template <class U>
+        requires(std::is_convertible_v<U*, T*>)
     [[nodiscard]] constexpr optional_ref(U& r) : mPtr(std::addressof(r)) {}
 
-    template <std::derived_from<T> U>
+
+    template <class U>
+        requires(std::is_convertible_v<U*, T*>)
     [[nodiscard]] constexpr optional_ref(U const& r) : mPtr(std::addressof(r)) {}
 
-    template <std::derived_from<T> U>
+
+    template <class U>
+        requires(std::is_convertible_v<U*, T*>)
     [[nodiscard]] constexpr optional_ref(const std::optional<U>& o) : mPtr(o ? &*o : nullptr) {}
 
     template <typename U = T>
