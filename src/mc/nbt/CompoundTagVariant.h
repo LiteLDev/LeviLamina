@@ -41,6 +41,21 @@ public:
 
     [[nodiscard]] constexpr CompoundTagVariant() = default;
 
+    [[nodiscard]] constexpr CompoundTagVariant(CompoundTagVariant&&) = default;
+
+    LL_CLANG_CEXPR CompoundTagVariant& operator=(CompoundTagVariant&&) = default;
+
+    [[nodiscard]] constexpr CompoundTagVariant(CompoundTagVariant const&) = default;
+
+    LL_CLANG_CEXPR CompoundTagVariant& operator=(CompoundTagVariant const&) = default;
+
+    template <class T>
+        requires(requires(T o) { mTagStorage = std::move(o); })
+    constexpr CompoundTagVariant& operator=(T other) {
+        mTagStorage = std::move(other);
+        return *this;
+    }
+
     [[nodiscard]] constexpr CompoundTagVariant(std::nullptr_t) {}
 
     [[nodiscard]] inline bool operator==(CompoundTagVariant const& other) const {

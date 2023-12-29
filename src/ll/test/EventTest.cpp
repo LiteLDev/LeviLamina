@@ -185,7 +185,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         }
     });
     bus.emplaceListener<PlayerPickUpItemEvent>([](PlayerPickUpItemEvent& ev) {
-        ll::logger.debug("Player {} take {}", ev.self().getRealName(), ev.itemActor().mItem.getTypeName());
+        ll::logger.debug("Player {} take {}", ev.self().getRealName(), ev.itemActor().item().getTypeName());
     });
     bus.emplaceListener<PlayerSwingEvent>([](PlayerSwingEvent& ev) {
         ll::logger.debug("Player {} left click", ev.self().getRealName());

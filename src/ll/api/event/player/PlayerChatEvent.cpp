@@ -1,5 +1,5 @@
-#include "ll/api/event/Emitter.h"
 #include "ll/api/event/player/PlayerChatEvent.h"
+#include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"

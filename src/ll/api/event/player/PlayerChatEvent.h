@@ -9,9 +9,7 @@ class PlayerChatEvent : public Cancellable<PlayerEvent> {
     std::string& mMessage;
 
 public:
-    constexpr explicit PlayerChatEvent(Player& player, std::string& message)
-    : Cancellable(player),
-      mMessage(message) {}
+    constexpr explicit PlayerChatEvent(Player& player, std::string& message) : Cancellable(player), mMessage(message) {}
 
     void serialize(CompoundTag&) const override;
     void deserialize(CompoundTag const&) override;

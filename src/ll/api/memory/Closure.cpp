@@ -4,17 +4,23 @@
 
 #include "windows.h"
 
+#include "ll/api/memory/Memory.h"
+#include "ll/api/utils/StringUtils.h"
+
 namespace ll::memory::detail {
-size_t getVolatileOffset(void* fn) {
+size_t getVolatileOffset(void* impl) {
+    impl = unwrapFuncPtrJmp(impl);
     for (size_t offset = 0; offset < 4096; offset++) {
-        if (*(uintptr_t*)((uintptr_t)fn + offset) == (uintptr_t)closureMagicNumber) {
+        if (*(uintptr_t*)((uintptr_t)impl + offset) == (uintptr_t)closureMagicNumber) {
             return offset;
         }
     }
+    std::cout << string_utils::strToHexStr({(char*)impl, 32}) << std::endl;
     throw std::runtime_error("can't parse closure asm offset");
 };
 using T = NativeClosure<void*>;
 void initNativeClosure(void* t, void* impl, size_t offset, size_t size) {
+    impl                       = unwrapFuncPtrJmp(impl);
     auto                  self = (T*)t;
     NativeClosurePrologue asmc = {
         .data     = (uintptr_t)&self->stored,

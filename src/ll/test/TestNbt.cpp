@@ -8,6 +8,8 @@
 #include "mc/nbt/CompoundTag.h"
 #include "mc/server/ServerInstance.h"
 
+#include "nlohmann/json.hpp"
+
 using namespace ll::nbt_literals;
 
 LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &ServerInstance::startServerThread, void) {
@@ -36,6 +38,13 @@ LL_AUTO_TYPED_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serv
     nbt["some"]["new"]["compound"]          = nbt;
     nbt["hello"]["789\xDB\xFE"]["\u123456"] = std::string{R"(\n\t\r\b\u1234\uffffffff)"} + "\xDB\xFE";
 
+
+    nlohmann::json j{
+        {"num",  1    },
+        {"nums", 3i16 },
+        {"byte", 127i8}
+    };
+    j["some"]["new"]["json"] = 2;
 
     auto nbt2 = *CompoundTag::fromSnbt(R"(
 

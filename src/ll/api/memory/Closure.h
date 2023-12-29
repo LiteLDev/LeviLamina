@@ -56,7 +56,7 @@ class NativeClosure {
     static inline Ret closureImpl(Args... args) {
         volatile uintptr_t data   = detail::closureMagicNumber;
         auto               stored = (PackedData*)data;
-        return (*stored->func)(stored->data, std::forward<Args>(args)...);
+        return stored->func(stored->data, std::forward<Args>(args)...);
     }
     static inline size_t implOffset  = detail::getVolatileOffset(closureImpl);
     static inline size_t closureSize = implOffset + sizeof(detail::NativeClosurePrologue);

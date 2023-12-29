@@ -19,9 +19,5 @@ public:
 
     [[nodiscard]] constexpr bool isNull() const { return *this == entt::null; }
 
-    template <std::integral T>
-        requires(!std::is_same_v<std::remove_cvref_t<T>, bool>)
-    [[nodiscard]] constexpr operator T() const {
-        return static_cast<T>(mRawId);
-    }
+    [[nodiscard]] constexpr operator entity_type() const { return mRawId; }
 };

@@ -126,7 +126,6 @@ target("LeviLamina")
     set_languages("c++20")
     set_pcxxheader("src/mc/_HeaderOutputPredefine.h")
     set_symbols("debug")
-    set_strip("all")
 
     if has_config("tests") then
         add_packages("gtest")

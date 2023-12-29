@@ -265,7 +265,7 @@ std::string TypedToSnbt(CompoundTag& self, uchar indent, SnbtFormat format) {
             res += ' ';
         }
 
-        auto key = v.get().toSnbt(format, indent);
+        auto key = v.toSnbt(format, indent);
 
         if (isNewLine) {
             replaceAll(key, "\n", "\n" + indentSpace);

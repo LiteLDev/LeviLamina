@@ -29,7 +29,7 @@ namespace mce { class Color; }
 // clang-format on
 
 class ItemActor : public ::Actor {
-public:
+protected:
     ItemStack mItem;          // this+Actor+0
     int       mAge;           // this+Actor+160
     int       mPickupDelay;   // this+Actor+164
@@ -40,10 +40,30 @@ public:
     bool      mIsInItemFrame; // this+Actor+184
     bool      mIsFromFishing; // this+Actor+185
 
+public:
     // prevent constructor by default
     ItemActor& operator=(ItemActor const&);
     ItemActor(ItemActor const&);
     ItemActor();
+
+    LLNDAPI ItemStack&       item();
+    LLNDAPI ItemStack const& item() const;
+    LLNDAPI int&             age();
+    LLNDAPI int const&       age() const;
+    LLNDAPI int&             pickupDelay();
+    LLNDAPI int const&       pickupDelay() const;
+    LLNDAPI int&             throwTime();
+    LLNDAPI int const&       throwTime() const;
+    LLNDAPI float&           bobOffs();
+    LLNDAPI float const&     bobOffs() const;
+    LLNDAPI int&             health();
+    LLNDAPI int const&       health() const;
+    LLNDAPI int&             lifeTime();
+    LLNDAPI int const&       lifeTime() const;
+    LLNDAPI bool&            isInItemFrame();
+    LLNDAPI bool const&      isInItemFrame() const;
+    LLNDAPI bool&            isFromFishing();
+    LLNDAPI bool const&      isFromFishing() const;
 
 public:
     // NOLINTBEGIN

@@ -30,6 +30,19 @@ public:
     bool                                                mCustomName;              // this+0xD8
     ContainerRuntimeId                                  mContainerRuntimeId;      // this+0xDC
 
+    [[nodiscard]] inline ItemStack& getItemNonConst(int index) { return const_cast<ItemStack&>(getItem(index)); }
+
+    [[nodiscard]] inline std::vector<std::reference_wrapper<ItemStack>>
+    getSlotsNonConst() { // same with virtual getSlots
+        std::vector<std::reference_wrapper<ItemStack>> res;
+        int                                            size = getContainerSize();
+        res.reserve(size);
+        for (int i = 0; i < size; ++i) {
+            res.emplace_back(getItemNonConst(i));
+        }
+        return res;
+    }
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1Container@@UEAA@XZ

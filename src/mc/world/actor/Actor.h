@@ -55,7 +55,7 @@ public:
     };
 
     // vptr 8
-    uchar filler[1176]; // IDA isAffectedByWaterBottle
+    uchar filler[1216]; // IDA Mob::Mob
 
 public:
     LLNDAPI class EntityContext&       getEntityContext();

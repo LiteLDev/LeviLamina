@@ -146,9 +146,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     auto c2 = ll::memory::FunctionalClosure(f);
 
-    (*c1.get())(654367);
+    c1.get()(654367);
     f(6376774);
-    (*c2.get())(4619735);
+    c2.get()(4619735);
 
     // auto& map        = BlockTypeRegistry::$mBlockLookupMap();
     // map["test:test"] = BlockTypeRegistry::lookupByName("minecraft:stone");

@@ -113,6 +113,13 @@ constexpr auto construct(void* ptr, ptrdiff_t off, Types&&... args) {
     );
 }
 
+constexpr void* unwrapFuncPtrJmp(void* ptr) noexcept { // only used for unstriped symbol
+    if (*(char*)ptr == '\xE9') {
+        (uintptr_t&)(ptr) += *(int*)((uintptr_t)ptr + 1);
+    }
+    return ptr;
+}
+
 [[nodiscard]] inline size_t getMemSizeFromPtr(void* ptr) {
     if (!ptr) {
         return 0;
