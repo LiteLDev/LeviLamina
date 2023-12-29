@@ -1,5 +1,5 @@
-#include "ll/api/event/player/PlayerSendMessageEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/player/PlayerChatEvent.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"
@@ -9,17 +9,17 @@
 
 namespace ll::event::inline player {
 
-void PlayerSendMessageEvent::serialize(CompoundTag& nbt) const {
+void PlayerChatEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
     nbt["message"] = message();
 }
 
-void PlayerSendMessageEvent::deserialize(CompoundTag const& nbt) {
+void PlayerChatEvent::deserialize(CompoundTag const& nbt) {
     Cancellable::deserialize(nbt);
     message() = nbt["message"];
 }
 
-std::string& PlayerSendMessageEvent::message() const { return mMessage; }
+std::string& PlayerChatEvent::message() const { return mMessage; }
 
 LL_TYPED_INSTANCE_HOOK(
     PlayerSendMessageEventHook,
@@ -31,7 +31,7 @@ LL_TYPED_INSTANCE_HOOK(
     TextPacket const&        packet
 ) {
     if (auto player = getServerPlayer(identifier, packet.mClientSubId); player) {
-        auto event = PlayerSendMessageEvent{player, const_cast<TextPacket&>(packet).mMessage};
+        auto event = PlayerChatEvent{player, const_cast<TextPacket&>(packet).mMessage};
         EventBus::getInstance().publish(event);
         if (event.isCancelled()) {
             return;
@@ -41,7 +41,7 @@ LL_TYPED_INSTANCE_HOOK(
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
-class PlayerSendMessageEventEmitter : public Emitter<PlayerSendMessageEvent, emitterFactory> {
+class PlayerSendMessageEventEmitter : public Emitter<PlayerChatEvent, emitterFactory> {
     memory::HookRegistrar<PlayerSendMessageEventHook> hook;
 };
 

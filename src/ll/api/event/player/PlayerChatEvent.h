@@ -5,11 +5,11 @@
 
 namespace ll::event::inline player {
 
-class PlayerSendMessageEvent : public Cancellable<PlayerEvent> {
+class PlayerChatEvent : public Cancellable<PlayerEvent> {
     std::string& mMessage;
 
 public:
-    constexpr explicit PlayerSendMessageEvent(Player& player, std::string& message)
+    constexpr explicit PlayerChatEvent(Player& player, std::string& message)
     : Cancellable(player),
       mMessage(message) {}
 

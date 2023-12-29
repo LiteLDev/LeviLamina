@@ -1,7 +1,7 @@
 #include "ll/core/tweak/SimpleServerLogger.h"
 #include "ll/api/event/command/ExecuteCommandEvent.h"
 #include "ll/api/event/player/PlayerChangePermEvent.h"
-#include "ll/api/event/player/PlayerSendMessageEvent.h"
+#include "ll/api/event/player/PlayerChatEvent.h"
 
 #include "ll/api/Logger.h"
 #include "ll/api/event/EventBus.h"
@@ -28,7 +28,7 @@ void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
         if (!impl) impl = std::make_unique<Impl>();
         auto& bus = EventBus::getInstance();
         if (config.playerChat && !impl->playerChat) {
-            impl->playerChat = bus.emplaceListener<PlayerSendMessageEvent>([](PlayerSendMessageEvent& ev) {
+            impl->playerChat = bus.emplaceListener<PlayerChatEvent>([](PlayerChatEvent& ev) {
                 static Logger logger("PlayerChat");
                 logger.info("<{}> {}", ev.self().getRealName(), ev.message());
             });
