@@ -6,7 +6,7 @@
 
 #include "mc/deps/core/mce/UUID.h"
 
-namespace ll {
+namespace ll::service {
 class PlayerInfo {
     class Impl;
     std::unique_ptr<Impl> impl;
@@ -25,4 +25,4 @@ public:
     LLNDAPI optional_ref<PlayerInfoEntry const> fromXuid(std::string_view) const;
     LLNDAPI optional_ref<PlayerInfoEntry const> fromName(std::string_view) const;
 };
-} // namespace ll
+} // namespace ll::service

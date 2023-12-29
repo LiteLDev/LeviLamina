@@ -1,5 +1,3 @@
-#define LL_GLOBAL_SERVICE_IMPL
-
 #include "ll/api/service/Bedrock.h"
 
 #include "mc/deps/raknet/RakPeer.h"
@@ -21,20 +19,14 @@
 #include "ll/api/reflection/Reflection.h"
 #include "ll/core/LeviLamina.h"
 
-namespace {
+namespace ll::service::inline bedrock {
 
 using namespace ll::memory;
 
 // Minecraft
 optional_ref<Minecraft> minecraft;
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    MinecraftServiceHook,
-    HookPriority::High,
-    Minecraft,
-    &Minecraft::initAsDedicatedServer,
-    void
-) {
+LL_AUTO_TYPED_INSTANCE_HOOK(MinecraftInitHook, HookPriority::High, Minecraft, &Minecraft::initAsDedicatedServer, void) {
     minecraft = this;
     origin();
 }
@@ -64,7 +56,7 @@ LL_AUTO_INSTANCE_HOOK(PropertiesSettingsDestructor, HookPriority::High, "??1Prop
 optional_ref<ServerNetworkHandler> serverNetworkHandler;
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    ServerNetworkHandlerServiceHook,
+    ServerNetworkHandlerInitHook,
     HookPriority::High,
     ServerNetworkHandler,
     &ServerNetworkHandler::allowIncomingConnections,
@@ -102,7 +94,7 @@ LL_AUTO_INSTANCE_HOOK(NetworkSystemDestructor, HookPriority::High, "??1NetworkSy
 optional_ref<Level> level;
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    ServerLevelServiceHook,
+    ServerLevelInitHook,
     HookPriority::High,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,
@@ -134,7 +126,7 @@ LL_AUTO_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::High, "??1RakPeer@R
 optional_ref<ResourcePackRepository> resourcePackRepository;
 
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    ResourcePackRepositoryServiceHook,
+    ResourcePackRepositoryInitHook,
     HookPriority::High,
     ResourcePackRepository,
     &ResourcePackRepository::_initialize,
@@ -152,9 +144,6 @@ LL_AUTO_INSTANCE_HOOK(
     resourcePackRepository = nullptr;
     origin();
 }
-} // namespace
-
-namespace ll::service::inline bedrock {
 
 optional_ref<Minecraft> getMinecraft() { return minecraft; }
 

@@ -207,7 +207,7 @@ void leviLaminaMain() {
         checkOtherBdsInstance();
     }
     if (globalConfig.modules.playerInfo.alwaysLaunch) {
-        ll::PlayerInfo::getInstance();
+        ll::service::PlayerInfo::getInstance();
     }
     if (globalConfig.modules.crashLogger.enabled) {
         startCrashLogger();

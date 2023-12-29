@@ -8,7 +8,7 @@
 
 #include "mc/nbt/CompoundTag.h"
 
-namespace ll {
+namespace ll::service {
 class PlayerInfo::Impl {
 public:
     std::mutex                                                             mutex;
@@ -94,4 +94,4 @@ optional_ref<PlayerInfo::PlayerInfoEntry const> PlayerInfo::fromName(std::string
     }
     return nullptr;
 }
-} // namespace ll
+} // namespace ll::service
