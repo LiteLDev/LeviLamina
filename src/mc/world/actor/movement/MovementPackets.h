@@ -4,6 +4,7 @@
 
 struct MovementPackets {
 public:
+    char unk[304];
     // prevent constructor by default
     MovementPackets& operator=(MovementPackets const&);
     MovementPackets(MovementPackets const&);

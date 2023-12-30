@@ -1,7 +1,6 @@
 
 #include "MoreDimensionManager.h"
 
-#include "ll/api/dimension/FakeDimensionID.h"
 #include "ll/api/dimension/MoreDimension.h"
 #include "ll/api/dimension/MoreDimensionConfig.h"
 #include "ll/api/memory/Hook.h"
@@ -80,7 +79,10 @@ LL_TYPED_STATIC_HOOK(
     DimensionType const& dim
 ) {
     if (dim <= 2) return origin(dim);
-    return VanillaDimensions::$DimensionMap().at(dim);
+    for (auto& i: VanillaDimensions::$DimensionMap().mLeft) {
+        loggerMoreDimMag.debug("map: name->{}, id->{}", i.second, i.first.id);
+    }
+    return VanillaDimensions::$DimensionMap().mLeft.at(dim);
 }
 
 // registry dimensoin when in ll, must reload Dimension::getWeakRef
@@ -122,7 +124,12 @@ MoreDimensionManager::MoreDimensionManager() {
     }
 };
 
-MoreDimensionManager::~MoreDimensionManager() { moredimension::hooklist::unhookAll(); }
+MoreDimensionManager::~MoreDimensionManager() {
+    moredimension::hooklist::unhookAll();
+    if (this->fakeDimensionIdInstance) {
+        fakeDimensionIdInstance->~FakeDimensionId();
+    }
+}
 
 MoreDimensionManager& MoreDimensionManager::getInstance() {
     static MoreDimensionManager instance{};
@@ -138,10 +145,10 @@ MoreDimensionManager::AddDimension(std::string_view dimensionName, uint seed, Ge
         loggerMoreDimMag.info("The dimension already registry. use old id, name: {}, id: {}", dimName, dimId.id);
     } else {
         // Assign new id
-        dimId = this->new_dimension_id_.load();
-        this->new_dimension_id_++;
         {
             std::lock_guard lock{map_mutex_};
+            dimId = this->new_dimension_id_.load();
+            this->new_dimension_id_++;
             MoreDimensionMap.emplace(dimName, DimensionInfo{dimName, dimId, seed, generatorType});
             MoreDimensionConfig::dimConfig.dimensionList.emplace(
                 dimName,
@@ -155,7 +162,7 @@ MoreDimensionManager::AddDimension(std::string_view dimensionName, uint seed, Ge
     if (ll::Global<Level>) {
         ll::Global<Level>->getDimensionFactory().registerFactory(
             dimName,
-            [&](ILevel& ilevel, Scheduler& scheduler) -> OwnerPtrT<SharePtrRefTraits<Dimension>> {
+            [dimName, dimId, seed, generatorType](ILevel& ilevel, Scheduler& scheduler) -> OwnerPtrT<SharePtrRefTraits<Dimension>> {
                 loggerMoreDimMag.debug("Create dimension, name: {}, id: {}", dimName, dimId.id);
                 DimensionInfo dimensionInfo{dimName, dimId, seed, generatorType};
                 return std::make_shared<MoreDimension>(ilevel, scheduler, dimensionInfo);
@@ -171,16 +178,21 @@ MoreDimensionManager::AddDimension(std::string_view dimensionName, uint seed, Ge
     }
 
     // modify default dimension map
+    loggerMoreDimMag.debug("Add new dimension to DimensionMap");
     ll::memory::modify(VanillaDimensions::$DimensionMap(), [&](auto& dimMap) {
-        loggerMoreDimMag.debug("Add new dimension to DimensionMap");
+        loggerMoreDimMag.debug("Add new dimension: name->{}, id->{} to DimensionMap", dimName, dimId.id);
         dimMap.mRight.insert(std::make_pair(dimName, dimId));
         dimMap.mLeft.insert(std::make_pair(dimId, dimName));
     });
     // modify default Undefined dimension id
     ll::memory::modify(VanillaDimensions::Undefined, [&](auto& dimId) {
-        dimId.id = MoreDimensionMap.size();
+        dimId.id = this->new_dimension_id_;
         loggerMoreDimMag.debug("Set VanillaDimensions::Undefined to {}", dimId.id);
     });
+    if (!this->fakeDimensionIdInstance) {
+        this->fakeDimensionIdInstance = std::make_unique<FakeDimensionId>();
+    }
+    moredimension::hooklist::hookAll();
 
     return dimId;
 }

@@ -7,6 +7,22 @@
 
 class ChangeDimensionRequest {
 public:
+    enum State
+    {
+        PrepareRegion = 0x0,
+        WaitingForChunks = 0x1,
+        WaitingForRespawn = 0x2,
+    };
+
+    State mState;
+    DimensionType mFromDimensionId;
+    DimensionType mToDimensionId;
+    Vec3 mFormPosition;
+    Vec3 mToPosition;
+    bool mUsePortal;
+    bool mRespawn;
+    std::unique_ptr<CompoundTag> mAgentTag;
+
     // prevent constructor by default
     ChangeDimensionRequest& operator=(ChangeDimensionRequest const&);
     ChangeDimensionRequest(ChangeDimensionRequest const&);
