@@ -36,7 +36,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@SleepGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 16, symbol: ?_getRepathTime@SleepGoal@@EEBA_KXZ
     virtual uint64 _getRepathTime() const;

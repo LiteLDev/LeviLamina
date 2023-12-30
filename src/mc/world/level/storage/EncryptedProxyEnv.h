@@ -19,15 +19,15 @@ public:
 
     // vIndex: 1, symbol:
     // ?NewSequentialFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVSequentialFile@3@@Z
-    virtual leveldb::Status NewSequentialFile(std::string const&, leveldb::SequentialFile**);
+    virtual leveldb::Status NewSequentialFile(std::string const& f, leveldb::SequentialFile** r);
 
     // vIndex: 2, symbol:
     // ?NewRandomAccessFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVRandomAccessFile@3@@Z
-    virtual leveldb::Status NewRandomAccessFile(std::string const&, leveldb::RandomAccessFile**);
+    virtual leveldb::Status NewRandomAccessFile(std::string const& f, leveldb::RandomAccessFile** r);
 
     // vIndex: 3, symbol:
     // ?NewWritableFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
-    virtual leveldb::Status NewWritableFile(std::string const&, leveldb::WritableFile**);
+    virtual leveldb::Status NewWritableFile(std::string const& f, leveldb::WritableFile** r);
 
     // vIndex: 7, symbol:
     // ?DeleteFileA@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -35,7 +35,7 @@ public:
 
     // vIndex: 11, symbol:
     // ?RenameFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    virtual leveldb::Status RenameFile(std::string const&, std::string const&);
+    virtual leveldb::Status RenameFile(std::string const& from, std::string const& to);
 
     // symbol:
     // ??0EncryptedProxyEnv@@QEAA@PEAVEnv@leveldb@@AEBVContentIdentity@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4EncryptedProxyReadMode@@@Z

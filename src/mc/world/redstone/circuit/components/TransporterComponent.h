@@ -21,17 +21,23 @@ public:
 
     // vIndex: 11, symbol:
     // ?addSource@TransporterComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    virtual bool addSource(
+        class CircuitSceneGraph&         graph,
+        class CircuitTrackingInfo const& info,
+        int&                             dampening,
+        bool&                            bDirectlyPowered
+    );
 
     // vIndex: 12, symbol:
     // ?allowConnection@TransporterComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-    virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
+    virtual bool
+    allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     // vIndex: 14, symbol: ?evaluate@TransporterComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-    virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
+    virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
 
     // vIndex: 15, symbol: ?cacheValues@TransporterComponent@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
-    virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
+    virtual void cacheValues(class CircuitSystem& system, class BlockPos const& pos);
 
     // vIndex: 17, symbol: __unk_vfn_17
     virtual void __unk_vfn_17();

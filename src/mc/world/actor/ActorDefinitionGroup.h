@@ -62,15 +62,15 @@ public:
     MCAPI class ActorComponentFactory* getComponentFactory();
 
     // symbol: ?setComponentFactory@ActorDefinitionGroup@@QEAAXPEAVActorComponentFactory@@@Z
-    MCAPI void setComponentFactory(class ActorComponentFactory*);
+    MCAPI void setComponentFactory(class ActorComponentFactory* componentFactory);
 
     // symbol:
     // ?tryGetDefinition@ActorDefinitionGroup@@QEAA?AVActorDefinitionPtr@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class ActorDefinitionPtr tryGetDefinition(std::string const&);
+    MCAPI class ActorDefinitionPtr tryGetDefinition(std::string const& definitionId);
 
     // symbol:
     // ?tryGetDefinitionGroup@ActorDefinitionGroup@@QEAA?AVActorDefinitionPtr@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI class ActorDefinitionPtr tryGetDefinitionGroup(std::string const&, std::string const&);
+    MCAPI class ActorDefinitionPtr tryGetDefinitionGroup(std::string const& base, std::string const& definitionId);
 
     // symbol:
     // ?forEachComponentOf@ActorDefinitionGroup@@SAXAEAVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$function@$$A6AXAEAVValue@Json@@0@Z@5@@Z
@@ -79,32 +79,43 @@ public:
 
     // symbol:
     // ?loadActorDefinitionIdentifier@ActorDefinitionGroup@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static bool loadActorDefinitionIdentifier(class Json::Value const&, class SemVersion const&, std::string&);
+    MCAPI static bool loadActorDefinitionIdentifier(
+        class Json::Value const& root,
+        class SemVersion const&  version,
+        std::string&             identifier
+    );
 
     // symbol:
     // ?loadActorDefinitionRuntimeIdentifier@ActorDefinitionGroup@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static bool
-    loadActorDefinitionRuntimeIdentifier(class Json::Value const&, class SemVersion const&, std::string&);
+    MCAPI static bool loadActorDefinitionRuntimeIdentifier(
+        class Json::Value const& root,
+        class SemVersion const&  version,
+        std::string&             runtimeIdentifier
+    );
 
     // symbol: ?tryReadEntityResourceFile@ActorDefinitionGroup@@SA_NAEAVPackInstance@@AEBVPath@Core@@AEAVValue@Json@@@Z
-    MCAPI static bool tryReadEntityResourceFile(class PackInstance&, class Core::Path const&, class Json::Value&);
+    MCAPI static bool tryReadEntityResourceFile(
+        class PackInstance&     packInstance,
+        class Core::Path const& resource,
+        class Json::Value&      outputRoot
+    );
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_addRef@ActorDefinitionGroup@@IEAAXAEAVActorDefinitionPtr@@@Z
-    MCAPI void _addRef(class ActorDefinitionPtr&);
+    MCAPI void _addRef(class ActorDefinitionPtr& ptr);
 
     // symbol: ?_removeRef@ActorDefinitionGroup@@IEAAXAEAVActorDefinitionPtr@@@Z
-    MCAPI void _removeRef(class ActorDefinitionPtr&);
+    MCAPI void _removeRef(class ActorDefinitionPtr& ptr);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_getResources@ActorDefinitionGroup@@AEAAXAEAVLevel@@@Z
-    MCAPI void _getResources(class Level&);
+    MCAPI void _getResources(class Level& level);
 
     // symbol:
     // ?_loadActorDefinition@ActorDefinitionGroup@@AEAA?AULoadActorResult@1@AEAVLevel@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBW4CurrentCmdVersion@@AEAVValue@Json@@AEAV?$unordered_set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@6@_NW4LogArea@@@Z

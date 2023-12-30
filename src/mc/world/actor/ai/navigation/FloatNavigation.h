@@ -18,7 +18,7 @@ public:
     virtual ~FloatNavigation() = default;
 
     // vIndex: 10, symbol: ?travel@FloatNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z
-    virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
+    virtual bool travel(class NavigationComponent& parent, class Mob& mob, float& xa, float& ya, float& za);
 
     // NOLINTEND
 };

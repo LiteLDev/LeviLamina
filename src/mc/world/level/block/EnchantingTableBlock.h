@@ -97,7 +97,8 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 61, symbol: ?checkIsPathable@EnchantingTableBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    virtual bool
+    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -142,7 +143,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0EnchantingTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI EnchantingTableBlock(std::string const&, int);
+    MCAPI EnchantingTableBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

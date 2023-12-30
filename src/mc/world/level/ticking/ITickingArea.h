@@ -68,19 +68,19 @@ public:
     virtual bool isPreloadDone() const = 0;
 
     // vIndex: 16, symbol: ?tick@TickingArea@@UEAAXAEBUTick@@_N@Z
-    virtual void tick(struct Tick const&, bool) = 0;
+    virtual void tick(struct Tick const& currentTick, bool randomize) = 0;
 
     // vIndex: 17, symbol: ?tickSeasons@TickingArea@@UEAAXAEAVRandom@@@Z
-    virtual void tickSeasons(class Random&) = 0;
+    virtual void tickSeasons(class Random& random) = 0;
 
     // vIndex: 18, symbol: ?updatePosition@TickingArea@@UEAAXAEBVVec3@@@Z
-    virtual void updatePosition(class Vec3 const&) = 0;
+    virtual void updatePosition(class Vec3 const& pos) = 0;
 
     // vIndex: 19, symbol: ?updateAndCenter@TickingArea@@UEAAXAEAVLevelStorage@@UTick@@@Z
     virtual void updateAndCenter(class LevelStorage&, struct Tick) = 0;
 
     // vIndex: 20, symbol: ?findOwner@TickingArea@@UEAAPEAVActor@@AEAE@Z
-    virtual class Actor* findOwner(uchar&) = 0;
+    virtual class Actor* findOwner(uchar& pendingChunks) = 0;
 
     // vIndex: 21, symbol: ?entityHasBeenFound@TickingArea@@UEBA_NXZ
     virtual bool entityHasBeenFound() const = 0;

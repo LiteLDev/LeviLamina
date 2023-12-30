@@ -19,18 +19,23 @@ public:
     virtual ~TemplateStructurePiece();
 
     // vIndex: 1, symbol: ?moveBoundingBox@TemplateStructurePiece@@UEAAXHHH@Z
-    virtual void moveBoundingBox(int, int, int);
+    virtual void moveBoundingBox(int dx, int dy, int dz);
 
     // vIndex: 4, symbol: ?postProcess@TemplateStructurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
 
     // vIndex: 13, symbol:
-    // ?_handleDataMarker@WoodlandMansionPiece@WoodlandMansionPieces@@MEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual void
-    _handleDataMarker(std::string const&, class BlockPos const&, class BlockSource&, class Random&, class BoundingBox const&) = 0;
+    // ?_handleDataMarker@EndCityPiece@EndCityPieces@@MEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+    virtual void _handleDataMarker(
+        std::string const&       markerId,
+        class BlockPos const&    position,
+        class BlockSource&       region,
+        class Random&            random,
+        class BoundingBox const& chunkBB
+    ) = 0;
 
     // symbol: ??0TemplateStructurePiece@@QEAA@H@Z
-    MCAPI explicit TemplateStructurePiece(int);
+    MCAPI explicit TemplateStructurePiece(int depth);
 
     // NOLINTEND
 
@@ -38,7 +43,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_setup@TemplateStructurePiece@@IEAAXAEAVLegacyStructureTemplate@@AEBVLegacyStructureSettings@@AEBVBlockPos@@@Z
-    MCAPI void _setup(class LegacyStructureTemplate&, class LegacyStructureSettings const&, class BlockPos const&);
+    MCAPI void _setup(
+        class LegacyStructureTemplate&       structTemplate,
+        class LegacyStructureSettings const& settings,
+        class BlockPos const&                templatePosition
+    );
 
     // NOLINTEND
 

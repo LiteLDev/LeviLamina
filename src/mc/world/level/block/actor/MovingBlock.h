@@ -115,7 +115,8 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 94, symbol: ?playerWillDestroy@MovingBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
-    virtual class Block const* playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
+    virtual class Block const*
+    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 95, symbol:
     // ?spawnResources@MovingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
@@ -145,7 +146,8 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 148, symbol: ?onFallOn@MovingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-    virtual void onFallOn(class BlockSource&, class BlockPos const&, class Actor&, float) const;
+    virtual void
+    onFallOn(class BlockSource& region, class BlockPos const& pos, class Actor& entity, float fallDistance) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -160,7 +162,7 @@ public:
     MCVAPI bool pushesUpFallingBlocks() const;
 
     // symbol: ??0MovingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MovingBlock(std::string const&, int);
+    MCAPI MovingBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

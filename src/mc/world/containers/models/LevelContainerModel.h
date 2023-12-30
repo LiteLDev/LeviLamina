@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?containerContentChanged@LevelContainerModel@@UEAAXH@Z
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int slot);
 
     // vIndex: 1, symbol: __gen_??1LevelContainerModel@@UEAA@XZ
     virtual ~LevelContainerModel() = default;
@@ -61,20 +61,26 @@ public:
     virtual int _getContainerOffset() const;
 
     // vIndex: 24, symbol: ?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z
-    virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
+    virtual void _onItemChanged(int slot, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // symbol: ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@UActorUniqueID@@W4ContainerCategory@@@Z
-    MCAPI LevelContainerModel(::ContainerEnumName, int, class Player&, struct ActorUniqueID, ::ContainerCategory);
+    MCAPI LevelContainerModel(
+        enum ContainerEnumName containerName,
+        int                    containerSize,
+        class Player&          player,
+        struct ActorUniqueID   entityId,
+        enum ContainerCategory category
+    );
 
     // symbol:
     // ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@W4BlockActorType@@AEBVBlockPos@@W4ContainerCategory@@@Z
     MCAPI LevelContainerModel(
-        ::ContainerEnumName,
-        int,
-        class Player&,
-        ::BlockActorType,
-        class BlockPos const&,
-        ::ContainerCategory
+        enum ContainerEnumName containerName,
+        int                    containerSize,
+        class Player&          player,
+        enum BlockActorType    type,
+        class BlockPos const&  blockPos,
+        enum ContainerCategory category
     );
 
     // symbol: ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@AEBUActorUniqueID@@@Z
@@ -91,7 +97,7 @@ public:
     MCAPI class Actor* _getEntity() const;
 
     // symbol: ?_refreshSlot@LevelContainerModel@@AEAAXH@Z
-    MCAPI void _refreshSlot(int);
+    MCAPI void _refreshSlot(int slot);
 
     // NOLINTEND
 };

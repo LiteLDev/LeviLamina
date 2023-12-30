@@ -94,10 +94,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?onDespawn@DespawnComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void onDespawn(class Actor&);
+    MCAPI void onDespawn(class Actor& actor);
 
     // symbol: ?tick@DespawnComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void tick(class Actor&);
+    MCAPI void tick(class Actor& actor);
 
     // NOLINTEND
 

@@ -90,7 +90,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?addStorageObserver@DBStorage@@UEAAXV?$unique_ptr@VLevelStorageObserver@@U?$default_delete@VLevelStorageObserver@@@std@@@std@@@Z
-    virtual void addStorageObserver(std::unique_ptr<class LevelStorageObserver>);
+    virtual void addStorageObserver(std::unique_ptr<class LevelStorageObserver> observer);
 
     // vIndex: 2, symbol:
     // ?getCompoundTag@DBStorage@@UEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z
@@ -107,14 +107,15 @@ public:
         const;
 
     // vIndex: 5, symbol: ?loadLevelData@DBStorage@@UEAA_NAEAVLevelData@@@Z
-    virtual bool loadLevelData(class LevelData&);
+    virtual bool loadLevelData(class LevelData& data);
 
     // vIndex: 6, symbol:
     // ?createChunkStorage@DBStorage@@UEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
-    virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, ::StorageVersion);
+    virtual std::unique_ptr<class ChunkSource>
+    createChunkStorage(std::unique_ptr<class ChunkSource> generator, enum StorageVersion v);
 
     // vIndex: 7, symbol: ?saveLevelData@DBStorage@@UEAAXAEBVLevelData@@@Z
-    virtual void saveLevelData(class LevelData const&);
+    virtual void saveLevelData(class LevelData const& levelData);
 
     // vIndex: 8, symbol:
     // ?getFullPath@DBStorage@@UEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
@@ -136,7 +137,7 @@ public:
 
     // vIndex: 12, symbol:
     // ?getStatistics@DBStorage@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void getStatistics(std::string&) const;
+    virtual void getStatistics(std::string& stats) const;
 
     // vIndex: 14, symbol: __unk_vfn_14
     virtual void __unk_vfn_14();
@@ -174,7 +175,7 @@ public:
     virtual void resumeStorage();
 
     // vIndex: 25, symbol: ?setFlushAllowed@DBStorage@@UEAAX_N@Z
-    virtual void setFlushAllowed(bool);
+    virtual void setFlushAllowed(bool flushAllowed);
 
     // vIndex: 26, symbol: ?flushToPermanentStorage@DBStorage@@UEAAXXZ
     virtual void flushToPermanentStorage();
@@ -183,10 +184,10 @@ public:
     virtual void freeCaches();
 
     // vIndex: 28, symbol: ?setCompactionCallback@DBStorage@@UEAAXV?$function@$$A6AXW4CompactionStatus@@@Z@std@@@Z
-    virtual void setCompactionCallback(std::function<void(::CompactionStatus)>);
+    virtual void setCompactionCallback(std::function<void(enum CompactionStatus)> callback);
 
     // vIndex: 29, symbol: ?setCriticalSyncSaveCallback@DBStorage@@UEAAXV?$function@$$A6AXXZ@std@@@Z
-    virtual void setCriticalSyncSaveCallback(std::function<void(void)>);
+    virtual void setCriticalSyncSaveCallback(std::function<void(void)> callback);
 
     // symbol: ?getLevelStorageState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ
     MCVAPI struct Core::LevelStorageResult getLevelStorageState() const;
@@ -198,7 +199,7 @@ public:
     MCAPI DBStorage(struct DBStorageConfig, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>);
 
     // symbol: ?tryRepair@DBStorage@@QEBA_NAEBVPath@Core@@@Z
-    MCAPI bool tryRepair(class Core::Path const&) const;
+    MCAPI bool tryRepair(class Core::Path const& path) const;
 
     // NOLINTEND
 
@@ -217,13 +218,13 @@ public:
     MCAPI std::map<std::string, struct DBStorage::PendingWriteResult> _getAllPendingWrites() const;
 
     // symbol: ?_handleErrorStatus@DBStorage@@IEAAXAEBVStatus@leveldb@@@Z
-    MCAPI void _handleErrorStatus(leveldb::Status const&);
+    MCAPI void _handleErrorStatus(leveldb::Status const& status);
 
     // symbol: ?_mergeIntoWriteCache@DBStorage@@IEAAXAEBVLevelStorageWriteBatch@@@Z
     MCAPI void _mergeIntoWriteCache(class LevelStorageWriteBatch const&);
 
     // symbol: ?_queueSaveCallback@DBStorage@@IEAAX_N@Z
-    MCAPI void _queueSaveCallback(bool);
+    MCAPI void _queueSaveCallback(bool invokeImmediately);
 
     // symbol:
     // ?_read@DBStorage@@IEBAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@W4Category@DBHelpers@@AEBV?$function@$$A6AXV?$basic_string_view@DU?$char_traits@D@std@@@std@@0@Z@3@@Z

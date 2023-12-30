@@ -25,13 +25,13 @@ public:
 
     // symbol:
     // ?addBoneAnimation@ActorSkeletalAnimation@@QEAAAEAVBoneAnimation@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class BoneAnimation& addBoneAnimation(std::string const&);
+    MCAPI class BoneAnimation& addBoneAnimation(std::string const& name);
 
     // symbol: ?addParticleEffectEvent@ActorSkeletalAnimation@@QEAAAEAVActorParticleEffectEvent@@M@Z
-    MCAPI class ActorParticleEffectEvent& addParticleEffectEvent(float);
+    MCAPI class ActorParticleEffectEvent& addParticleEffectEvent(float time);
 
     // symbol: ?addSoundEffectEvent@ActorSkeletalAnimation@@QEAAAEAVActorSoundEffectEvent@@M@Z
-    MCAPI class ActorSoundEffectEvent& addSoundEffectEvent(float);
+    MCAPI class ActorSoundEffectEvent& addSoundEffectEvent(float time);
 
     // symbol: ?calculateAnimationLength@ActorSkeletalAnimation@@QEAAXXZ
     MCAPI void calculateAnimationLength();
@@ -47,13 +47,13 @@ public:
     MCAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();
 
     // symbol: ?setAnimTimeUpdate@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
-    MCAPI void setAnimTimeUpdate(class ExpressionNode const&);
+    MCAPI void setAnimTimeUpdate(class ExpressionNode const& expression);
 
     // symbol: ?setAnimationLength@ActorSkeletalAnimation@@QEAAXM@Z
-    MCAPI void setAnimationLength(float);
+    MCAPI void setAnimationLength(float animationLength);
 
     // symbol: ?setBlendWeight@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
-    MCAPI void setBlendWeight(class ExpressionNode const&);
+    MCAPI void setBlendWeight(class ExpressionNode const& expression);
 
     // symbol: ?setLoopDelay@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
     MCAPI void setLoopDelay(class ExpressionNode const&);
@@ -62,7 +62,7 @@ public:
     MCAPI void setLoopMode(::AnimationLoopMode);
 
     // symbol: ?setShouldOverridePreviousAnimation@ActorSkeletalAnimation@@QEAAX_N@Z
-    MCAPI void setShouldOverridePreviousAnimation(bool);
+    MCAPI void setShouldOverridePreviousAnimation(bool overridePreviousAnimation);
 
     // symbol: ?setStartDelay@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
     MCAPI void setStartDelay(class ExpressionNode const&);

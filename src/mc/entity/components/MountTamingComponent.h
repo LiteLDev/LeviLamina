@@ -14,16 +14,16 @@ public:
     MCAPI MountTamingComponent();
 
     // symbol: ?addAdditionalSaveData@MountTamingComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?becomeTame@MountTamingComponent@@QEAAXAEAVActor@@_N@Z
-    MCAPI void becomeTame(class Actor&, bool);
+    MCAPI void becomeTame(class Actor& owner, bool tamingParticles);
 
     // symbol: ?getCounter@MountTamingComponent@@QEAAAEAHXZ
     MCAPI int& getCounter();
 
     // symbol: ?getInteraction@MountTamingComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor& owner, class Player& player, class ActorInteraction& interaction);
 
     // symbol: ?getTemper@MountTamingComponent@@QEAAAEAHXZ
     MCAPI int& getTemper();
@@ -35,10 +35,11 @@ public:
     MCAPI int getWaitCount() const;
 
     // symbol: ?readAdditionalSaveData@MountTamingComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?tameToPlayer@MountTamingComponent@@QEAAXAEAVActor@@AEAVPlayer@@_N@Z
-    MCAPI void tameToPlayer(class Actor&, class Player&, bool);
+    MCAPI void tameToPlayer(class Actor& owner, class Player& player, bool tamingParticles);
 
     // NOLINTEND
 

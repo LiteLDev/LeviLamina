@@ -64,7 +64,7 @@ public:
     MCVAPI void onRequestResourceReload();
 
     // symbol: ?onTick@ServerInstance@@UEAAXHH@Z
-    MCVAPI void onTick(int, int);
+    MCVAPI void onTick(int nTick, int maxTick);
 
     // symbol: ?updateScreens@ServerInstance@@UEAAXXZ
     MCVAPI void updateScreens();
@@ -79,7 +79,7 @@ public:
 
     // symbol:
     // ?disconnectAllClientsWithMessage@ServerInstance@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void disconnectAllClientsWithMessage(std::string);
+    MCAPI void disconnectAllClientsWithMessage(std::string msg);
 
     // symbol: ?enableItemStackNetManager@ServerInstance@@QEBA_NXZ
     MCAPI bool enableItemStackNetManager() const;
@@ -110,13 +110,13 @@ public:
     MCAPI void leaveGameSync();
 
     // symbol: ?queueForServerThread@ServerInstance@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void queueForServerThread(std::function<void(void)>);
+    MCAPI void queueForServerThread(std::function<void(void)> command);
 
     // symbol: ?setLevelCorruptionCallback@ServerInstance@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void setLevelCorruptionCallback(std::function<void(void)>);
+    MCAPI void setLevelCorruptionCallback(std::function<void(void)> levelCorruptCallback);
 
     // symbol: ?setWakeupFrequency@ServerInstance@@QEAAXH@Z
-    MCAPI void setWakeupFrequency(int);
+    MCAPI void setWakeupFrequency(int hertz);
 
     // symbol:
     // ?shutDownWithMessage@ServerInstance@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -137,7 +137,7 @@ public:
     MCAPI void _resetServerScriptManager();
 
     // symbol: ?_threadSafeExecute@ServerInstance@@AEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void _threadSafeExecute(std::function<void(void)>);
+    MCAPI void _threadSafeExecute(std::function<void(void)> command);
 
     // symbol: ?_update@ServerInstance@@AEAAXXZ
     MCAPI void _update();

@@ -21,7 +21,7 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?tick@LookAtSystem@@UEAAXAEAVEntityRegistry@@@Z
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry& registry);
 
     // symbol: ?tickLookAtComponent@LookAtSystem@@SAXAEAVActorOwnerComponent@@AEAVLookAtComponent@@@Z
     MCAPI static void tickLookAtComponent(class ActorOwnerComponent&, class LookAtComponent&);

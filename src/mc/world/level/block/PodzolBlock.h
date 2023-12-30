@@ -127,10 +127,11 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@PodzolBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance
+    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // symbol: ??0PodzolBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PodzolBlock(std::string const&, int);
+    MCAPI PodzolBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

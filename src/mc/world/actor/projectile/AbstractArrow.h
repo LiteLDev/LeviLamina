@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@AbstractArrow@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 6, symbol:
     // ?initializeComponents@AbstractArrow@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
@@ -50,7 +50,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 27, symbol: ?lerpMotion@AbstractArrow@@UEAAXAEBVVec3@@@Z
-    virtual void lerpMotion(class Vec3 const&);
+    virtual void lerpMotion(class Vec3 const& delta);
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
@@ -65,7 +65,7 @@ public:
     virtual void __unk_vfn_47();
 
     // vIndex: 48, symbol: ?playerTouch@AbstractArrow@@UEAAXAEAVPlayer@@@Z
-    virtual void playerTouch(class Player&);
+    virtual void playerTouch(class Player& player);
 
     // vIndex: 60, symbol: __unk_vfn_60
     virtual void __unk_vfn_60();
@@ -92,10 +92,10 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@AbstractArrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@AbstractArrow@@MEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -104,7 +104,7 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 169, symbol: ?shoot@AbstractArrow@@UEAAXAEBVVec3@@MM0@Z
-    virtual void shoot(class Vec3 const&, float, float, class Vec3 const&);
+    virtual void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
 
     // vIndex: 170, symbol: ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
     virtual class ItemStack _getPickupItem() const = 0;
@@ -116,10 +116,10 @@ public:
     MCAPI bool isPlayerOwned() const;
 
     // symbol: ?setFavoredSlot@AbstractArrow@@QEAAXH@Z
-    MCAPI void setFavoredSlot(int);
+    MCAPI void setFavoredSlot(int favoredSlot);
 
     // symbol: ?setIsCreative@AbstractArrow@@QEAAX_N@Z
-    MCAPI void setIsCreative(bool);
+    MCAPI void setIsCreative(bool creativeOnly);
 
     // symbol: ?spawnPlayerProjectile@AbstractArrow@@SAPEAVActor@@AEBUActorDefinitionIdentifier@@AEAVPlayer@@VVec3@@@Z
     MCAPI static class Actor* spawnPlayerProjectile(struct ActorDefinitionIdentifier const&, class Player&, class Vec3);
@@ -129,7 +129,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_canPickup@AbstractArrow@@IEBA_NAEBVPlayer@@@Z
-    MCAPI bool _canPickup(class Player const&) const;
+    MCAPI bool _canPickup(class Player const& player) const;
 
     // NOLINTEND
 };

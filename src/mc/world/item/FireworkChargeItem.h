@@ -56,7 +56,12 @@ public:
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@FireworkChargeItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       advancedToolTips
+    ) const;
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -95,32 +100,33 @@ public:
     virtual bool hasSameRelevantUserData(class ItemStackBase const&, class ItemStackBase const&) const;
 
     // symbol: ??0FireworkChargeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FireworkChargeItem(std::string const&, int);
+    MCAPI FireworkChargeItem(std::string const& nameId, int id);
 
     // symbol:
     // ?getFormattedHoverText@FireworkChargeItem@@SAXAEBVCompoundTag@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z
-    MCAPI static void getFormattedHoverText(class CompoundTag const&, std::string&, std::string const&);
+    MCAPI static void
+    getFormattedHoverText(class CompoundTag const& explosion, std::string& hovertext, std::string const& indent);
 
     // symbol:
     // ?initFireworkChargeItem@FireworkChargeItem@@SAAEBVItemInstance@@AEAV2@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
     MCAPI static class ItemInstance const& initFireworkChargeItem(
-        class ItemInstance&,
-        ::FireworkChargeItem::Shape,
-        std::vector<uchar>,
-        std::vector<uchar>,
-        bool,
-        bool
+        class ItemInstance&            itemInstance,
+        enum FireworkChargeItem::Shape shape,
+        std::vector<uchar>             colors,
+        std::vector<uchar>             fadeColors,
+        bool                           hasTrail,
+        bool                           hasFlicker
     );
 
     // symbol:
     // ?initFireworkChargeItem@FireworkChargeItem@@SAAEBVItemStack@@AEAV2@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
     MCAPI static class ItemStack const& initFireworkChargeItem(
-        class ItemStack&,
-        ::FireworkChargeItem::Shape,
-        std::vector<uchar>,
-        std::vector<uchar>,
-        bool,
-        bool
+        class ItemStack&               itemStack,
+        enum FireworkChargeItem::Shape shape,
+        std::vector<uchar>             colors,
+        std::vector<uchar>             fadeColors,
+        bool                           hasTrail,
+        bool                           hasFlicker
     );
 
     // symbol: ?setColor@FireworkChargeItem@@SAXAEAVItemStackBase@@@Z
@@ -161,7 +167,7 @@ public:
 
     // symbol:
     // ?appendColors@FireworkChargeItem@@CAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@EV?$allocator@E@std@@@3@@Z
-    MCAPI static void appendColors(std::string&, std::vector<uchar>);
+    MCAPI static void appendColors(std::string& hovertext, std::vector<uchar> colorList);
 
     // NOLINTEND
 };

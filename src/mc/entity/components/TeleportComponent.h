@@ -38,19 +38,19 @@ public:
     MCAPI int getTeleportTime();
 
     // symbol: ?initFromDefinition@TeleportComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor& actor);
 
     // symbol: ?randomTeleport@TeleportComponent@@QEAA_NAEAVActor@@@Z
-    MCAPI bool randomTeleport(class Actor&);
+    MCAPI bool randomTeleport(class Actor& owner);
 
     // symbol: ?setTeleportTime@TeleportComponent@@QEAAXH@Z
-    MCAPI void setTeleportTime(int);
+    MCAPI void setTeleportTime(int teleportTime);
 
     // symbol: ?teleport@TeleportComponent@@QEAA_NAEAVActor@@AEBVVec3@@@Z
-    MCAPI bool teleport(class Actor&, class Vec3 const&);
+    MCAPI bool teleport(class Actor& owner, class Vec3 const& pos);
 
     // symbol: ?teleportTowards@TeleportComponent@@QEAA_NAEAVActor@@AEBV2@@Z
-    MCAPI bool teleportTowards(class Actor&, class Actor const&);
+    MCAPI bool teleportTowards(class Actor& owner, class Actor const& target);
 
     // NOLINTEND
 };

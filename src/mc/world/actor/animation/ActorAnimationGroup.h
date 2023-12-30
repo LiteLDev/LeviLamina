@@ -27,11 +27,11 @@ public:
     MCAPI ActorAnimationGroup();
 
     // symbol: ?getActorAnimation@ActorAnimationGroup@@QEAA?AVActorSkeletalAnimationPtr@@AEBVHashedString@@@Z
-    MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const&);
+    MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const& name);
 
     // symbol:
     // ?getActorAnimationInfo@ActorAnimationGroup@@QEAA?AV?$shared_ptr@VActorAnimationInfo@@@std@@AEBVHashedString@@@Z
-    MCAPI std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const&);
+    MCAPI std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const& name);
 
     // symbol:
     // ?loadActorAnimation@ActorAnimationGroup@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@AEAVPackStats@@AEBVSemVersion@@W4CurrentCmdVersion@@_N@Z
@@ -45,7 +45,7 @@ public:
     );
 
     // symbol: ?loadActorAnimationsSync@ActorAnimationGroup@@QEAAXAEAVResourcePackManager@@@Z
-    MCAPI void loadActorAnimationsSync(class ResourcePackManager&);
+    MCAPI void loadActorAnimationsSync(class ResourcePackManager& resourcePackManager);
 
     // NOLINTEND
 };

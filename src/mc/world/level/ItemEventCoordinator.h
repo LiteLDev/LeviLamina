@@ -25,10 +25,10 @@ public:
     MCAPI class ItemGameplayHandler& getItemGameplayHandler();
 
     // symbol: ?onItemModifiedActor@ItemEventCoordinator@@QEAAXAEBVItemStackBase@@AEBVActor@@@Z
-    MCAPI void onItemModifiedActor(class ItemStackBase const&, class Actor const&);
+    MCAPI void onItemModifiedActor(class ItemStackBase const& item, class Actor const& modifiedActor);
 
     // symbol: ?onItemSpawnedActor@ItemEventCoordinator@@QEAAXAEBVItemStackBase@@AEBVActor@@@Z
-    MCAPI void onItemSpawnedActor(class ItemStackBase const&, class Actor const&);
+    MCAPI void onItemSpawnedActor(class ItemStackBase const& item, class Actor const& spawnedActor);
 
     // symbol:
     // ?registerItemGameplayHandler@ItemEventCoordinator@@QEAAXV?$unique_ptr@VItemGameplayHandler@@U?$default_delete@VItemGameplayHandler@@@std@@@std@@@Z

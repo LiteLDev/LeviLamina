@@ -88,7 +88,7 @@ public:
     virtual void __unk_vfn_48();
 
     // vIndex: 49, symbol: ?isValidAuxValue@FaceDirectionalBlock@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int auxValue) const;
 
     // vIndex: 54, symbol: __unk_vfn_54
     virtual void __unk_vfn_54();
@@ -104,8 +104,13 @@ public:
 
     // vIndex: 98, symbol:
     // ?getPlacementBlock@FaceDirectionalBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    virtual class Block const& getPlacementBlock(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -126,10 +131,10 @@ public:
     virtual class Block const& getRenderBlock() const;
 
     // vIndex: 132, symbol: ?getMappedFace@FaceDirectionalBlock@@UEBAEEAEBVBlock@@@Z
-    virtual uchar getMappedFace(uchar, class Block const&) const;
+    virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
     // vIndex: 133, symbol: ?getFaceFlip@FaceDirectionalBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
-    virtual ::Flip getFaceFlip(uchar, class Block const&) const;
+    virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -145,16 +150,22 @@ public:
 
     // symbol:
     // ??0FaceDirectionalBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_NM@Z
-    MCAPI FaceDirectionalBlock(std::string const&, int, class Material const&, bool, float);
+    MCAPI FaceDirectionalBlock(
+        std::string const&    nameId,
+        int                   id,
+        class Material const& material,
+        bool                  horizontalOnly,
+        float                 yRotOffset
+    );
 
     // symbol: ?getFaceFlipStatic@FaceDirectionalBlock@@SA?AW4Flip@@EAEBVBlock@@_N@Z
-    MCAPI static ::Flip getFaceFlipStatic(uchar, class Block const&, bool);
+    MCAPI static ::Flip getFaceFlipStatic(uchar face, class Block const& block, bool horizontalOnly);
 
     // symbol: ?getFacingDirection@FaceDirectionalBlock@@SAEAEBVBlock@@_N@Z
-    MCAPI static uchar getFacingDirection(class Block const&, bool);
+    MCAPI static uchar getFacingDirection(class Block const& block, bool horizontalOnly);
 
     // symbol: ?getMappedFaceStatic@FaceDirectionalBlock@@SAEEAEBVBlock@@_N@Z
-    MCAPI static uchar getMappedFaceStatic(uchar, class Block const&, bool);
+    MCAPI static uchar getMappedFaceStatic(uchar face, class Block const& block, bool horizontalOnly);
 
     // NOLINTEND
 };

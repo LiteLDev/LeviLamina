@@ -38,7 +38,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@Shulker@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 9, symbol: ?_doInitialMove@Shulker@@UEAAXXZ
     virtual void _doInitialMove();
@@ -74,13 +74,13 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 63, symbol: ?canAttack@Shulker@@UEBA_NPEAVActor@@_N@Z
-    virtual bool canAttack(class Actor*, bool) const;
+    virtual bool canAttack(class Actor* entity, bool allowInvulnerable) const;
 
     // vIndex: 75, symbol: ?shouldRender@Shulker@@UEBA_NXZ
     virtual bool shouldRender() const;
 
     // vIndex: 78, symbol: ?isInvulnerableTo@Shulker@@UEBA_NAEBVActorDamageSource@@@Z
-    virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
+    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
     // vIndex: 84, symbol: ?getPickRadius@Shulker@@UEAAMXZ
     virtual float getPickRadius();
@@ -92,19 +92,19 @@ public:
     virtual void __unk_vfn_144();
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Shulker@@MEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@Shulker@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@Shulker@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@Shulker@@UEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();

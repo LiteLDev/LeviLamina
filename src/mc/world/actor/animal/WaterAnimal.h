@@ -76,7 +76,7 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 179, symbol: ?checkSpawnRules@WaterAnimal@@UEAA_N_N@Z
-    virtual bool checkSpawnRules(bool);
+    virtual bool checkSpawnRules(bool fromSpawner);
 
     // vIndex: 210, symbol: ?getFlopVerticalVelocityFactor@WaterAnimal@@UEBAMXZ
     virtual float getFlopVerticalVelocityFactor() const;

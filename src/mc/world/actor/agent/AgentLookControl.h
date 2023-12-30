@@ -18,10 +18,10 @@ public:
     virtual ~AgentLookControl() = default;
 
     // vIndex: 1, symbol: ?initializeInternal@AgentLookControl@@UEAAXAEAVMob@@@Z
-    virtual void initializeInternal(class Mob&);
+    virtual void initializeInternal(class Mob& mob);
 
     // vIndex: 2, symbol: ?tick@AgentLookControl@@UEAAXAEAVMob@@@Z
-    virtual void tick(class Mob&);
+    virtual void tick(class Mob& mob);
 
     // symbol: ?sBaseYMax@AgentLookControl@@2MA
     MCAPI static float sBaseYMax;

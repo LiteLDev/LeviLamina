@@ -10,7 +10,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??RListTagIntAdder@@QEAAAEAV0@H@Z
-    MCAPI class ListTagIntAdder& operator()(int);
+    MCAPI class ListTagIntAdder& operator()(int i);
 
     // symbol: ??1ListTagIntAdder@@QEAA@XZ
     MCAPI ~ListTagIntAdder();

@@ -14,7 +14,7 @@ public:
     MCAPI FileChunkManager();
 
     // symbol: ?getChunkInfo@FileChunkManager@@QEBA?AUFileChunkInfo@@H@Z
-    MCAPI struct FileChunkInfo getChunkInfo(int) const;
+    MCAPI struct FileChunkInfo getChunkInfo(int chunkID) const;
 
     // symbol: ?getChunks@FileChunkManager@@QEBAAEBV?$vector@UFileChunkInfo@@V?$allocator@UFileChunkInfo@@@std@@@std@@XZ
     MCAPI std::vector<struct FileChunkInfo> const& getChunks() const;

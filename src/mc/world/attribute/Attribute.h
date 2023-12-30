@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Attribute@@QEAA@AEBVHashedString@@W4RedefinitionMode@@_N@Z
-    MCAPI Attribute(class HashedString const&, ::RedefinitionMode, bool);
+    MCAPI Attribute(class HashedString const& name, enum RedefinitionMode redefMode, bool isSyncable);
 
     // symbol: ?getName@Attribute@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const& getName() const;
@@ -24,7 +24,7 @@ public:
     MCAPI ::RedefinitionMode getRedefinitionMode() const;
 
     // symbol: ?getByName@Attribute@@SAAEAV1@AEBVHashedString@@@Z
-    MCAPI static class Attribute& getByName(class HashedString const&);
+    MCAPI static class Attribute& getByName(class HashedString const& attribute);
 
     // NOLINTEND
 };

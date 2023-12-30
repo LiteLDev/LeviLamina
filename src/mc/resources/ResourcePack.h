@@ -41,13 +41,18 @@ public:
     virtual ~ResourcePack();
 
     // symbol: ??0ResourcePack@@QEAA@AEAVPack@@@Z
-    MCAPI explicit ResourcePack(class Pack&);
+    MCAPI explicit ResourcePack(class Pack& pack);
 
     // symbol: ?areKnownFilesValid@ResourcePack@@QEAA_NXZ
     MCAPI bool areKnownFilesValid();
 
     // symbol: ?forEachIn@ResourcePack@@QEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@H_N@Z
-    MCAPI void forEachIn(class Core::Path const&, std::function<void(class Core::Path const&)>, int, bool) const;
+    MCAPI void forEachIn(
+        class Core::Path const&                      filePath,
+        std::function<void(class Core::Path const&)> callback,
+        int                                          subpackIndex,
+        bool                                         recurseAnyways
+    ) const;
 
     // symbol: ?generateAssetSet@ResourcePack@@QEAAXXZ
     MCAPI void generateAssetSet();
@@ -66,7 +71,7 @@ public:
 
     // symbol:
     // ?getResource@ResourcePack@@QEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI bool getResource(class Core::Path const&, std::string&, int) const;
+    MCAPI bool getResource(class Core::Path const& resourceName, std::string& resourceStream, int subpackIndex) const;
 
     // symbol: ?getResourceLocation@ResourcePack@@QEBAAEBVResourceLocation@@XZ
     MCAPI class ResourceLocation const& getResourceLocation() const;
@@ -78,10 +83,10 @@ public:
     MCAPI class SemVersion const& getVersion() const;
 
     // symbol: ?hasResource@ResourcePack@@QEBA_NAEBVPath@Core@@H@Z
-    MCAPI bool hasResource(class Core::Path const&, int) const;
+    MCAPI bool hasResource(class Core::Path const& resourceName, int subpackIndex) const;
 
     // symbol: ?isType@ResourcePack@@QEBA_NW4PackType@@@Z
-    MCAPI bool isType(::PackType) const;
+    MCAPI bool isType(enum PackType packType) const;
 
     // symbol: ?isZipped@ResourcePack@@QEBA_NXZ
     MCAPI bool isZipped() const;
@@ -90,10 +95,10 @@ public:
     MCAPI void setAsSlicePack();
 
     // symbol: ?setLocale@ResourcePack@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setLocale(std::string const&);
+    MCAPI void setLocale(std::string const& code);
 
     // symbol: ?unregisterDeleteCallback@ResourcePack@@QEAAXPEAX@Z
-    MCAPI void unregisterDeleteCallback(void*);
+    MCAPI void unregisterDeleteCallback(void* owner);
 
     // symbol:
     // ?RESOURCE_PACK_BUG_ICON_PATH@ResourcePack@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
@@ -112,7 +117,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_createSubpack@ResourcePack@@AEAAXAEBUSubpackInfo@@@Z
-    MCAPI void _createSubpack(struct SubpackInfo const&);
+    MCAPI void _createSubpack(struct SubpackInfo const& subpackInfo);
 
     // symbol: ?_createSubpacks@ResourcePack@@AEAAXXZ
     MCAPI void _createSubpacks();

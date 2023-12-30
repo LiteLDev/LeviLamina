@@ -8,20 +8,20 @@
 namespace RotationUtil {
 // NOLINTBEGIN
 // symbol: ?getRandomRotation@RotationUtil@@YA?AW4Rotation@@AEAVRandom@@@Z
-MCAPI ::Rotation getRandomRotation(class Random&);
+MCAPI ::Rotation getRandomRotation(class Random& random);
 
 // symbol: ?getRotated@RotationUtil@@YA?AW4Rotation@@W42@0@Z
-MCAPI ::Rotation getRotated(::Rotation, ::Rotation);
+MCAPI ::Rotation getRotated(enum Rotation original, enum Rotation rotation);
 
 // symbol:
 // ?getShuffledRotations@RotationUtil@@YA?AV?$vector@W4Rotation@@V?$allocator@W4Rotation@@@std@@@std@@AEAVRandom@@@Z
-MCAPI std::vector<::Rotation> getShuffledRotations(class Random&);
+MCAPI std::vector<::Rotation> getShuffledRotations(class Random& random);
 
 // symbol: ?rotate@RotationUtil@@YA?AVBlockPos@@AEBV2@W4Rotation@@@Z
-MCAPI class BlockPos rotate(class BlockPos const&, ::Rotation);
+MCAPI class BlockPos rotate(class BlockPos const& source, enum Rotation rotation);
 
 // symbol: ?rotate@RotationUtil@@YAEW4Rotation@@E@Z
-MCAPI uchar rotate(::Rotation, uchar);
+MCAPI uchar rotate(enum Rotation source, uchar direction);
 // NOLINTEND
 
 }; // namespace RotationUtil

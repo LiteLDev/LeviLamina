@@ -35,17 +35,17 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@MakeLoveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0MakeLoveGoal@@QEAA@AEAVVillagerBase@@@Z
-    MCAPI explicit MakeLoveGoal(class VillagerBase&);
+    MCAPI explicit MakeLoveGoal(class VillagerBase& villager);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_breed@MakeLoveGoal@@AEBAXAEAVVillagerBase@@@Z
-    MCAPI void _breed(class VillagerBase&) const;
+    MCAPI void _breed(class VillagerBase& partner) const;
 
     // symbol: ?_findMate@MakeLoveGoal@@AEBAPEAVVillagerBase@@XZ
     MCAPI class VillagerBase* _findMate() const;

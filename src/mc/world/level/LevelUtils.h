@@ -17,7 +17,7 @@ MCAPI ::MoonPhases getMoonPhase(class ILevel const&);
 MCAPI int getTimeOfDay(int);
 
 // symbol: ?projectToTimeOfDay@LevelUtils@@YAHHH@Z
-MCAPI int projectToTimeOfDay(int, int);
+MCAPI int projectToTimeOfDay(int currentTime, int targetTime);
 // NOLINTEND
 
 }; // namespace LevelUtils

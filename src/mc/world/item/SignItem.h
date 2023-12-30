@@ -76,7 +76,8 @@ public:
     virtual void __unk_vfn_99();
 
     // vIndex: 115, symbol: ?_calculatePlacePos@SignItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uchar&, class BlockPos&) const;
+    virtual bool
+    _calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
     // vIndex: 117, symbol:
     // ?_useOn@SignItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
@@ -88,7 +89,7 @@ public:
 
     // symbol:
     // ??0SignItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4SignType@SignBlock@@@Z
-    MCAPI SignItem(std::string const&, int, ::SignBlock::SignType);
+    MCAPI SignItem(std::string const& name, int id, enum SignBlock::SignType type);
 
     // NOLINTEND
 };

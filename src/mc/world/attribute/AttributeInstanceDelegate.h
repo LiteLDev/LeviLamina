@@ -24,7 +24,7 @@ public:
     virtual bool willChange(float, float, class AttributeBuff const&);
 
     // vIndex: 4, symbol: ?change@AttributeInstanceDelegate@@UEAAMMMAEBVAttributeBuff@@@Z
-    virtual float change(float, float, class AttributeBuff const&);
+    virtual float change(float oldValue, float newValue, class AttributeBuff const& buffInfo);
 
     // vIndex: 5, symbol: ?getBuffValueWithModifiers@AttributeInstanceDelegate@@UEBAMAEBVAttributeBuff@@@Z
     virtual float getBuffValueWithModifiers(class AttributeBuff const&) const;

@@ -103,7 +103,8 @@ public:
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
 
     // vIndex: 94, symbol: ?playerWillDestroy@FrostedIceBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
-    virtual class Block const* playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
+    virtual class Block const*
+    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 96, symbol: ?asItemInstance@FrostedIceBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
@@ -127,13 +128,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@FrostedIceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@FrostedIceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -142,16 +143,17 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 163, symbol: ?playerDestroy@FrostedIceBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual void playerDestroy(class Player&, class BlockPos const&, class Block const&) const;
+    virtual void playerDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // symbol: ?canBeSilkTouched@FrostedIceBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0FrostedIceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI FrostedIceBlock(std::string const&, int, bool);
+    MCAPI FrostedIceBlock(std::string const& nameId, int id, bool packed);
 
     // symbol: ?_slightlyMelt@FrostedIceBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
-    MCAPI void _slightlyMelt(class BlockSource&, class BlockPos const&, class Random&, bool) const;
+    MCAPI void
+    _slightlyMelt(class BlockSource& region, class BlockPos const& pos, class Random& random, bool propagate) const;
 
     // NOLINTEND
 

@@ -2,13 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/ILifetimeScopeListener.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class ILifetimeScopeListener; }
 namespace Scripting { class LifetimeRegistry; }
 namespace Scripting { struct ObjectHandle; }
 // clang-format on
 
-class ScriptPluginHandleCounter {
+class ScriptPluginHandleCounter : public ::Scripting::ILifetimeScopeListener {
 public:
     // ScriptPluginHandleCounter inner types declare
     // clang-format off
@@ -62,19 +66,19 @@ public:
     virtual void
     onUntrackObject(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&, uint);
 
-    // symbol:
-    // ?onObjectPromotedToMultipleOwners@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@@Z
-    MCVAPI void onObjectPromotedToMultipleOwners(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
-
-    // symbol:
+    // vIndex: 5, symbol:
     // ?onObjectReducedToSingleOwner@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@@Z
-    MCVAPI void onObjectReducedToSingleOwner(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
+    virtual void onObjectReducedToSingleOwner(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
 
-    // symbol: ?onPostLifetimeScopeDestroy@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@@Z
-    MCVAPI void onPostLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
+    // vIndex: 6, symbol:
+    // ?onObjectPromotedToMultipleOwners@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@@Z
+    virtual void onObjectPromotedToMultipleOwners(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
 
-    // symbol: ?onPreLifetimeScopeDestroy@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@@Z
-    MCVAPI void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
+    // vIndex: 7, symbol: ?onPreLifetimeScopeDestroy@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@@Z
+    virtual void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
+
+    // vIndex: 8, symbol: ?onPostLifetimeScopeDestroy@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@@Z
+    virtual void onPostLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
 
     // NOLINTEND
 

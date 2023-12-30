@@ -138,11 +138,11 @@ public:
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
-    // vIndex: 168, symbol: ?getDustColor@TopSnowBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
-    virtual class mce::Color getDustColor(class Block const&) const = 0;
+    // vIndex: 168, symbol: ?getDustColor@AnvilBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
+    virtual class mce::Color getDustColor(class Block const& block) const = 0;
 
     // vIndex: 169, symbol:
-    // ?getDustParticleName@TopSnowBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+    // ?getDustParticleName@AnvilBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string getDustParticleName(class Block const&) const = 0;
 
     // vIndex: 170, symbol: __unk_vfn_170

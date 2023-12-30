@@ -17,10 +17,10 @@ public:
     virtual ~GlideMoveControl() = default;
 
     // vIndex: 1, symbol: ?initializeInternal@GlideMoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
-    virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
+    virtual void initializeInternal(class Mob& mob, struct MoveControlDescription* description);
 
     // vIndex: 2, symbol: ?tick@GlideMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
     // symbol: ??0GlideMoveControl@@QEAA@XZ
     MCAPI GlideMoveControl();

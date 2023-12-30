@@ -19,10 +19,10 @@ public:
     MCAPI explicit Abilities(bool);
 
     // symbol: ??0Abilities@@QEAA@AEBV0@@Z
-    MCAPI Abilities(class Abilities const&);
+    MCAPI Abilities(class Abilities const& rhs);
 
     // symbol: ?addSaveData@Abilities@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addSaveData(class CompoundTag&) const;
+    MCAPI void addSaveData(class CompoundTag& parentTag) const;
 
     // symbol:
     // ?forEachAbility@Abilities@@QEAAXAEBV?$function@$$A6AXAEAVAbility@@W4AbilitiesIndex@@@Z@std@@W4Options@Ability@@@Z
@@ -34,25 +34,25 @@ public:
     forEachAbility(std::function<void(class Ability const&, ::AbilitiesIndex)> const&, ::Ability::Options) const;
 
     // symbol: ?getBool@Abilities@@QEBA_NW4AbilitiesIndex@@@Z
-    MCAPI bool getBool(::AbilitiesIndex) const;
+    MCAPI bool getBool(enum AbilitiesIndex ability) const;
 
     // symbol: ?getFloat@Abilities@@QEBAMW4AbilitiesIndex@@@Z
-    MCAPI float getFloat(::AbilitiesIndex) const;
+    MCAPI float getFloat(enum AbilitiesIndex ability) const;
 
     // symbol: ?isAnyAbilitySet@Abilities@@QEBA_NXZ
     MCAPI bool isAnyAbilitySet() const;
 
     // symbol: ?loadSaveData@Abilities@@QEAA_NAEBVCompoundTag@@@Z
-    MCAPI bool loadSaveData(class CompoundTag const&);
+    MCAPI bool loadSaveData(class CompoundTag const& parentTag);
 
     // symbol: ??4Abilities@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class Abilities& operator=(class Abilities const&);
+    MCAPI class Abilities& operator=(class Abilities const& rhs);
 
     // symbol: ?setAbility@Abilities@@QEAAXW4AbilitiesIndex@@_N@Z
-    MCAPI void setAbility(::AbilitiesIndex, bool);
+    MCAPI void setAbility(enum AbilitiesIndex ability, bool value);
 
     // symbol: ?setAbilityDiff@Abilities@@QEAAXW4AbilitiesIndex@@_NAEA_N@Z
-    MCAPI void setAbilityDiff(::AbilitiesIndex, bool, bool&);
+    MCAPI void setAbilityDiff(enum AbilitiesIndex ability, bool value, bool& diff);
 
     // symbol: ?setDefault@Abilities@@QEAAXXZ
     MCAPI void setDefault();
@@ -67,14 +67,14 @@ public:
     MCAPI void unSet(::AbilitiesIndex);
 
     // symbol: ?getAbilityName@Abilities@@SAPEBDW4AbilitiesIndex@@@Z
-    MCAPI static char const* getAbilityName(::AbilitiesIndex);
+    MCAPI static char const* getAbilityName(enum AbilitiesIndex abilityIndex);
 
     // symbol: ?getDefault@Abilities@@SAAEBVAbility@@W4AbilitiesIndex@@@Z
     MCAPI static class Ability const& getDefault(::AbilitiesIndex);
 
     // symbol:
     // ?nameToAbilityIndex@Abilities@@SA?AW4AbilitiesIndex@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static ::AbilitiesIndex nameToAbilityIndex(std::string const&);
+    MCAPI static ::AbilitiesIndex nameToAbilityIndex(std::string const& name);
 
     // symbol: ?DIFF_ABILITIY_AT@Abilities@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const DIFF_ABILITIY_AT;

@@ -24,7 +24,7 @@ public:
     MCAPI DiskAccessTracker();
 
     // symbol: ?addIgnoredPath@DiskAccessTracker@Core@@QEAAXAEBVPath@2@@Z
-    MCAPI void addIgnoredPath(class Core::Path const&);
+    MCAPI void addIgnoredPath(class Core::Path const& path);
 
     // symbol: ?getDiskAccessTracker@DiskAccessTracker@Core@@SAAEAV12@XZ
     MCAPI static class Core::DiskAccessTracker& getDiskAccessTracker();

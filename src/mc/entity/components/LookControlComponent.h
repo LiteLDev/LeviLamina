@@ -32,35 +32,35 @@ public:
     MCAPI float getYMax() const;
 
     // symbol: ?initialize@LookControlComponent@@QEAAXAEAVMob@@@Z
-    MCAPI void initialize(class Mob&);
+    MCAPI void initialize(class Mob& owner);
 
     // symbol: ??4LookControlComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class LookControlComponent& operator=(class LookControlComponent&&);
 
     // symbol: ?setHasWantedPosition@LookControlComponent@@QEAAX_N@Z
-    MCAPI void setHasWantedPosition(bool);
+    MCAPI void setHasWantedPosition(bool hasWantedPosition);
 
     // symbol: ?setHasWantedRotation@LookControlComponent@@QEAAX_N@Z
-    MCAPI void setHasWantedRotation(bool);
+    MCAPI void setHasWantedRotation(bool hasWantedRotation);
 
     // symbol:
     // ?setInternalType@LookControlComponent@@QEAAXV?$unique_ptr@VLookControl@@U?$default_delete@VLookControl@@@std@@@std@@@Z
-    MCAPI void setInternalType(std::unique_ptr<class LookControl>);
+    MCAPI void setInternalType(std::unique_ptr<class LookControl> type);
 
     // symbol: ?setLookAtPosition@LookControlComponent@@QEAAXPEBVActor@@MM@Z
-    MCAPI void setLookAtPosition(class Actor const*, float, float);
+    MCAPI void setLookAtPosition(class Actor const* target, float yMax, float xMax);
 
     // symbol: ?setLookAtPosition@LookControlComponent@@QEAAXAEBVVec3@@MM@Z
-    MCAPI void setLookAtPosition(class Vec3 const&, float, float);
+    MCAPI void setLookAtPosition(class Vec3 const& position, float yMax, float xMax);
 
     // symbol: ?setLookAtRotation@LookControlComponent@@QEAAXAEBVVec3@@MM@Z
-    MCAPI void setLookAtRotation(class Vec3 const&, float, float);
+    MCAPI void setLookAtRotation(class Vec3 const& rotation, float yMax, float xMax);
 
     // symbol: ?setYMax@LookControlComponent@@QEAAXM@Z
-    MCAPI void setYMax(float);
+    MCAPI void setYMax(float yMax);
 
     // symbol: ?update@LookControlComponent@@QEAAXAEAVMob@@@Z
-    MCAPI void update(class Mob&);
+    MCAPI void update(class Mob& owner);
 
     // NOLINTEND
 };

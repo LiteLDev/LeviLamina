@@ -18,10 +18,17 @@ public:
     virtual ~AttackDamageMobEffect() = default;
 
     // vIndex: 6, symbol: ?getAttributeModifierValue@AttackDamageMobEffect@@UEBAMHAEBVAttributeModifier@@@Z
-    virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
+    virtual float getAttributeModifierValue(int amplifier, class AttributeModifier const& modifier) const;
 
     // symbol: ??0AttackDamageMobEffect@@QEAA@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
-    MCAPI AttackDamageMobEffect(int, std::string const&, std::string const&, bool, int, int);
+    MCAPI AttackDamageMobEffect(
+        int                id,
+        std::string const& resourceName,
+        std::string const& locName,
+        bool               isHarmful,
+        int                color,
+        int                icon
+    );
 
     // symbol: ?getDamageAfterDamageBoost@AttackDamageMobEffect@@SAMMH@Z
     MCAPI static float getDamageAfterDamageBoost(float, int);

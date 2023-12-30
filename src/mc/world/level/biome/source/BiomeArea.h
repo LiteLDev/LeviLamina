@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0BiomeArea@@QEAA@AEBVBoundingBox@@I@Z
-    MCAPI BiomeArea(class BoundingBox const&, uint);
+    MCAPI BiomeArea(class BoundingBox const& area, uint scale);
 
     // symbol: ??1BiomeArea@@QEAA@XZ
     MCAPI ~BiomeArea();

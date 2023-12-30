@@ -99,7 +99,7 @@ public:
     MCAPI static void finalizeBlockComponentStorage();
 
     // symbol: ?forEachBlock@BlockTypeRegistry@@SAXV?$function@$$A6A_NAEBVBlockLegacy@@@Z@std@@@Z
-    MCAPI static void forEachBlock(std::function<bool(class BlockLegacy const&)>);
+    MCAPI static void forEachBlock(std::function<bool(class BlockLegacy const&)> callback);
 
     // symbol: ?getBlockNameFromNameHash@BlockTypeRegistry@@SAAEBVHashedString@@_K@Z
     MCAPI static class HashedString const& getBlockNameFromNameHash(uint64);
@@ -139,7 +139,7 @@ public:
     MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const&, bool logNotFound = false);
 
     // symbol: ?prepareBlocks@BlockTypeRegistry@@SAXI@Z
-    MCAPI static void prepareBlocks(uint);
+    MCAPI static void prepareBlocks(uint latestUpdaterVersion);
 
     // symbol: ?registerAlias@BlockTypeRegistry@@SAXAEBVHashedString@@0@Z
     MCAPI static void registerAlias(class HashedString const&, class HashedString const&);

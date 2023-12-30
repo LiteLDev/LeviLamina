@@ -73,7 +73,7 @@ public:
     virtual void __unk_vfn_144();
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Cat@@UEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();

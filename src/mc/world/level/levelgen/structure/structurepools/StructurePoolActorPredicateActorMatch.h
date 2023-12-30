@@ -19,11 +19,11 @@ public:
 
     // vIndex: 1, symbol:
     // ?test@StructurePoolActorPredicateActorMatch@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual bool test(std::string const&) const;
+    virtual bool test(std::string const& actor) const;
 
     // symbol:
     // ??0StructurePoolActorPredicateActorMatch@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit StructurePoolActorPredicateActorMatch(std::string);
+    MCAPI explicit StructurePoolActorPredicateActorMatch(std::string actor);
 
     // NOLINTEND
 };

@@ -74,7 +74,7 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@DragonFireball@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();

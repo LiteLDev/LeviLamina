@@ -18,13 +18,13 @@ public:
     virtual ~ITickingAreaView();
 
     // vIndex: 1, symbol: ?init@TickingAreaView@@UEAAXAEBUBounds@@_N@Z
-    virtual void init(struct Bounds const&, bool) = 0;
+    virtual void init(struct Bounds const& bounds, bool isCircle) = 0;
 
     // vIndex: 2, symbol: ?tick@TickingAreaView@@UEAAXAEBUTick@@AEAVBlockSource@@_N2@Z
     virtual void tick(struct Tick const&, class BlockSource&, bool, bool) = 0;
 
     // vIndex: 3, symbol: ?tickSeasons@TickingAreaView@@UEAAXAEAVBlockSource@@AEAVRandom@@@Z
-    virtual void tickSeasons(class BlockSource&, class Random&) = 0;
+    virtual void tickSeasons(class BlockSource& region, class Random& random) = 0;
 
     // vIndex: 4, symbol: ?getDimensionId@TickingAreaView@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
     virtual DimensionType getDimensionId() const = 0;
@@ -45,14 +45,14 @@ public:
     virtual bool checkLoadedChunkNeighborsDone(class BlockSource const&, bool) const = 0;
 
     // vIndex: 10, symbol: ?move@TickingAreaView@@UEAAXAEBUBounds@@@Z
-    virtual void move(struct Bounds const&) = 0;
+    virtual void move(struct Bounds const& bounds) = 0;
 
     // vIndex: 11, symbol:
     // ?createChildSource@TickingAreaView@@UEAA?AV?$unique_ptr@VChunkViewSource@@U?$default_delete@VChunkViewSource@@@std@@@std@@XZ
     virtual std::unique_ptr<class ChunkViewSource> createChildSource() = 0;
 
     // vIndex: 12, symbol: ?getAvailableChunk@TickingAreaView@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
-    virtual std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const&) = 0;
+    virtual std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const& cp) = 0;
 
     // NOLINTEND
 };

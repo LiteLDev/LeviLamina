@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 4, symbol:
     // ?reloadHardcoded@EvocationIllager@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1EvocationIllager@@UEAA@XZ
     virtual ~EvocationIllager() = default;
@@ -71,7 +71,7 @@ public:
     virtual void __unk_vfn_144();
 
     // vIndex: 147, symbol: ?die@EvocationIllager@@UEAAXAEBVActorDamageSource@@@Z
-    virtual void die(class ActorDamageSource const&);
+    virtual void die(class ActorDamageSource const& source);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
@@ -86,7 +86,7 @@ public:
     virtual void aiStep();
 
     // vIndex: 185, symbol: ?isAlliedTo@EvocationIllager@@UEAA_NPEAVMob@@@Z
-    virtual bool isAlliedTo(class Mob*);
+    virtual bool isAlliedTo(class Mob* other);
 
     // vIndex: 187, symbol: ?getArmorValue@EvocationIllager@@MEBAHXZ
     virtual int getArmorValue() const;

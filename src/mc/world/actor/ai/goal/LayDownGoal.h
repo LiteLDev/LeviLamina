@@ -35,10 +35,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@LayDownGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0LayDownGoal@@QEAA@AEAVMob@@HH@Z
-    MCAPI LayDownGoal(class Mob&, int, int);
+    MCAPI LayDownGoal(class Mob& mob, int interval, int endInterval);
 
     // NOLINTEND
 };

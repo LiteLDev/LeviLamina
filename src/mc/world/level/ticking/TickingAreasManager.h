@@ -102,7 +102,7 @@ public:
     setPendingAreaLoadModeByPosition(DimensionType, class BlockPos const&, ::TickingAreaLoadMode, class LevelStorage&);
 
     // symbol: ?tick@TickingAreasManager@@QEAAXAEBUTick@@@Z
-    MCAPI void tick(struct Tick const&);
+    MCAPI void tick(struct Tick const& currentTick);
 
     // symbol: ?update@TickingAreasManager@@QEAAXAEAVLevel@@AEAVLevelStorage@@@Z
     MCAPI void update(class Level&, class LevelStorage&);
@@ -137,7 +137,7 @@ public:
     MCAPI bool _hasPendingTickingAreaNamed(std::string const&, std::vector<struct PendingArea> const&) const;
 
     // symbol: ?_processAdds@TickingAreasManager@@AEAAXAEAVLevel@@@Z
-    MCAPI void _processAdds(class Level&);
+    MCAPI void _processAdds(class Level& level);
 
     // symbol:
     // ?_processRemoves@TickingAreasManager@@AEAAXV?$AutomaticID@VDimension@@H@@AEAVTickingAreaList@@AEAVLevel@@AEAVLevelStorage@@@Z
@@ -145,7 +145,11 @@ public:
 
     // symbol:
     // ?_savePendingArea@TickingAreasManager@@AEAAXAEAVLevelStorage@@V?$AutomaticID@VDimension@@H@@AEBUPendingArea@@@Z
-    MCAPI void _savePendingArea(class LevelStorage&, DimensionType, struct PendingArea const&);
+    MCAPI void _savePendingArea(
+        class LevelStorage&       levelStorage,
+        DimensionType             dimensionId,
+        struct PendingArea const& pendingArea
+    );
 
     // NOLINTEND
 };

@@ -15,16 +15,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?onActiveResourcePacksChanged@EducationOptions@@UEAAXAEAVResourcePackManager@@@Z
-    MCVAPI void onActiveResourcePacksChanged(class ResourcePackManager&);
+    MCVAPI void onActiveResourcePacksChanged(class ResourcePackManager& manager);
 
     // symbol: ??1EducationOptions@@UEAA@XZ
     MCVAPI ~EducationOptions();
 
     // symbol: ??0EducationOptions@@QEAA@PEAVResourcePackManager@@@Z
-    MCAPI explicit EducationOptions(class ResourcePackManager*);
+    MCAPI explicit EducationOptions(class ResourcePackManager* packMan);
 
     // symbol: ?init@EducationOptions@@QEAAXAEBVLevelData@@@Z
-    MCAPI void init(class LevelData const&);
+    MCAPI void init(class LevelData const& levelData);
 
     // symbol: ?getPackCapability@EducationOptions@@SA?AVPackCapability@@XZ
     MCAPI static class PackCapability getPackCapability();

@@ -17,14 +17,14 @@ public:
     // vIndex: 0, symbol: ??1AttributeBuff@@UEAA@XZ
     virtual ~AttributeBuff();
 
-    // vIndex: 1, symbol: ?isInstantaneous@TemporalAttributeBuff@@UEBA_NXZ
+    // vIndex: 1, symbol: ?isInstantaneous@InstantaneousAttributeBuff@@UEBA_NXZ
     virtual bool isInstantaneous() const = 0;
 
-    // vIndex: 2, symbol: ?isSerializable@TemporalAttributeBuff@@UEBA_NXZ
+    // vIndex: 2, symbol: ?isSerializable@InstantaneousAttributeBuff@@UEBA_NXZ
     virtual bool isSerializable() const = 0;
 
     // vIndex: 3, symbol: ?setDurationAmplifier@AttributeBuff@@UEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
-    virtual void setDurationAmplifier(std::shared_ptr<class Amplifier>);
+    virtual void setDurationAmplifier(std::shared_ptr<class Amplifier> amplifier);
 
     // symbol: ??0AttributeBuff@@QEAA@AEBV0@@Z
     MCAPI AttributeBuff(class AttributeBuff const&);
@@ -42,32 +42,32 @@ public:
     MCAPI ::AttributeBuffType getType() const;
 
     // symbol: ??8AttributeBuff@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class AttributeBuff const&) const;
+    MCAPI bool operator==(class AttributeBuff const& rhs) const;
 
     // symbol: ?setAmplificationAmount@AttributeBuff@@QEAAXHM@Z
-    MCAPI void setAmplificationAmount(int, float);
+    MCAPI void setAmplificationAmount(int amplification, float scale);
 
     // symbol: ?setId@AttributeBuff@@QEAAX_K@Z
     MCAPI void setId(uint64);
 
     // symbol: ?setOperand@AttributeBuff@@QEAAXH@Z
-    MCAPI void setOperand(int);
+    MCAPI void setOperand(int val);
 
     // symbol: ?setSource@AttributeBuff@@QEAAXPEAVActor@@@Z
-    MCAPI void setSource(class Actor*);
+    MCAPI void setSource(class Actor* source);
 
     // symbol: ?setValueAmplifier@AttributeBuff@@QEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
-    MCAPI void setValueAmplifier(std::shared_ptr<class Amplifier>);
+    MCAPI void setValueAmplifier(std::shared_ptr<class Amplifier> amplifier);
 
     // symbol: ?buffTypeToDamageCause@AttributeBuff@@SA?AW4ActorDamageCause@@W4AttributeBuffType@@@Z
-    MCAPI static ::ActorDamageCause buffTypeToDamageCause(::AttributeBuffType);
+    MCAPI static ::ActorDamageCause buffTypeToDamageCause(enum AttributeBuffType type);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ??0AttributeBuff@@IEAA@MHW4AttributeBuffType@@@Z
-    MCAPI AttributeBuff(float, int, ::AttributeBuffType);
+    MCAPI AttributeBuff(float amount, int operand, enum AttributeBuffType type);
 
     // symbol: ??0AttributeBuff@@IEAA@MHAEBVActorDamageSource@@W4AttributeBuffType@@@Z
     MCAPI AttributeBuff(float, int, class ActorDamageSource const&, ::AttributeBuffType);

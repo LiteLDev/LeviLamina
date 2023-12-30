@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Result@Core@@QEAA@$$QEAV01@@Z
-    MCAPI Result(class Core::Result&&);
+    MCAPI Result(class Core::Result&& rhs);
 
     // symbol: ??0Result@Core@@QEAA@_NV?$function@$$A6AXPEAVResult@Core@@@Z@std@@@Z
     MCAPI Result(bool, std::function<void(class Core::Result*)>);
@@ -41,7 +41,7 @@ public:
     MCAPI explicit operator bool() const;
 
     // symbol: ??4Result@Core@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class Core::Result& operator=(class Core::Result&&);
+    MCAPI class Core::Result& operator=(class Core::Result&& rhs);
 
     // symbol: ?peekFailed@Result@Core@@QEBA_NXZ
     MCAPI bool peekFailed() const;
@@ -59,7 +59,7 @@ public:
     MCAPI ~Result();
 
     // symbol: ?either@Result@Core@@SA?AV12@$$QEAV12@0@Z
-    MCAPI static class Core::Result either(class Core::Result&&, class Core::Result&&);
+    MCAPI static class Core::Result either(class Core::Result&& r1, class Core::Result&& r2);
 
     // symbol: ?makeFailure@Result@Core@@SA?AV12@XZ
     MCAPI static class Core::Result makeFailure();
@@ -71,13 +71,13 @@ public:
     MCAPI static class Core::Result makeFailureNotImplemented();
 
     // symbol: ?makeFailureWithStringLiteral@Result@Core@@SA?AV12@PEBD@Z
-    MCAPI static class Core::Result makeFailureWithStringLiteral(char const*);
+    MCAPI static class Core::Result makeFailureWithStringLiteral(char const* message);
 
     // symbol: ?makeSuccess@Result@Core@@SA?AV12@XZ
     MCAPI static class Core::Result makeSuccess();
 
     // symbol: ?merge@Result@Core@@SA?AV12@$$QEAV12@0@Z
-    MCAPI static class Core::Result merge(class Core::Result&&, class Core::Result&&);
+    MCAPI static class Core::Result merge(class Core::Result&& r1, class Core::Result&& r2);
 
     // NOLINTEND
 };

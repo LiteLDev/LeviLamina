@@ -18,22 +18,22 @@ MCAPI void _upgradeLevelChunkLegacy(class LevelChunk&, class BlockSource&);
 MCAPI void _upgradeLevelChunkViaMetaData(class LevelChunk&, class LevelChunk&, class BlockSource&);
 
 // symbol: ?addBiomeSpecificVillageSkins@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@AEAVBlockSource@@@Z
-MCAPI bool addBiomeSpecificVillageSkins(class CompoundTag&, class BlockSource&);
+MCAPI bool addBiomeSpecificVillageSkins(class CompoundTag& tag, class BlockSource& region);
 
 // symbol: ?convertOcelotTagToCat@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@@Z
-MCAPI bool convertOcelotTagToCat(class CompoundTag&);
+MCAPI bool convertOcelotTagToCat(class CompoundTag& tag);
 
 // symbol: ?convertVillagerV1TagToV2@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@@Z
-MCAPI bool convertVillagerV1TagToV2(class CompoundTag&);
+MCAPI bool convertVillagerV1TagToV2(class CompoundTag& tag);
 
 // symbol: ?convertVillagerV2TagToV1@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@@Z
-MCAPI bool convertVillagerV2TagToV1(class CompoundTag&);
+MCAPI bool convertVillagerV2TagToV1(class CompoundTag& tag);
 
 // symbol: ?convertZombieVillagerV1TagToV2@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@@Z
-MCAPI bool convertZombieVillagerV1TagToV2(class CompoundTag&);
+MCAPI bool convertZombieVillagerV1TagToV2(class CompoundTag& tag);
 
 // symbol: ?convertZombieVillagerV2TagToV1@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@@Z
-MCAPI bool convertZombieVillagerV2TagToV1(class CompoundTag&);
+MCAPI bool convertZombieVillagerV2TagToV1(class CompoundTag& tag);
 
 // symbol: ?fillNegativeSubChunksWithAir@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@AEAVBlockSource@@@Z
 MCAPI void fillNegativeSubChunksWithAir(class LevelChunk&, class BlockSource&);
@@ -58,7 +58,7 @@ MCAPI void fixBlockStatesOnChunkBorderAxis(
 MCAPI void fixStemBlockStates(class BlockSource&, class BlockPos, class Block const&);
 
 // symbol: ?fixUselessDynamicWater@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@AEAVBlockSource@@@Z
-MCAPI void fixUselessDynamicWater(class LevelChunk&, class BlockSource&);
+MCAPI void fixUselessDynamicWater(class LevelChunk& lc, class BlockSource& region);
 
 // symbol: ?fixWallBlockStates@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@VBlockPos@@@Z
 MCAPI void fixWallBlockStates(class BlockSource&, class BlockPos);

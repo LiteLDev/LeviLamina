@@ -24,16 +24,16 @@ public:
 
     // vIndex: 1, symbol:
     // ?fopen@FileSystemFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void* fopen(class Core::Path const&, std::string const&) = 0;
+    virtual void* fopen(class Core::Path const& filePath, std::string const& mode) = 0;
 
     // vIndex: 2, symbol: ?fclose@FileSystemFileAccess@@UEAAHPEAX@Z
-    virtual int fclose(void*) = 0;
+    virtual int fclose(void* file) = 0;
 
     // vIndex: 3, symbol: ?fseek@FileSystemFileAccess@@UEAAHPEAX_JH@Z
     virtual int fseek(void*, int64, int) = 0;
 
     // vIndex: 4, symbol: ?ftell@FileSystemFileAccess@@UEAA_JPEAX@Z
-    virtual int64 ftell(void*) = 0;
+    virtual int64 ftell(void* file) = 0;
 
     // vIndex: 5, symbol: ?getReadInterface@FileSystemFileAccess@@UEBAPEBVIFileReadAccess@@XZ
     virtual class IFileReadAccess const* getReadInterface() const = 0;

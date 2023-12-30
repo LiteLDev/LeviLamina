@@ -23,7 +23,7 @@ public:
     MCAPI bool getTarget() const;
 
     // symbol: ?isLookingAtMe@LookAtComponent@@QEAA_NAEAVActor@@0@Z
-    MCAPI bool isLookingAtMe(class Actor&, class Actor&);
+    MCAPI bool isLookingAtMe(class Actor& owner, class Actor& target);
 
     // NOLINTEND
 };

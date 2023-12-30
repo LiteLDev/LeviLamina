@@ -50,9 +50,13 @@ public:
 
     // vIndex: 8, symbol:
     // ?addAABBs@ThinFenceBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-    virtual void
-    addAABBs(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&)
-        const;
+    virtual void addAABBs(
+        class Block const&       block,
+        class BlockSource const& region,
+        class BlockPos const&    blockPos,
+        class AABB const*        intersectTestBox,
+        std::vector<class AABB>& inoutBoxes
+    ) const;
 
     // vIndex: 9, symbol:
     // ?getOutline@ThinFenceBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
@@ -75,7 +79,7 @@ public:
     virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
 
     // vIndex: 25, symbol: ?canConnect@ThinFenceBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
+    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -177,14 +181,21 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 165, symbol: ?getResourceCount@ThinFenceBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // symbol: ?isThinFenceBlock@ThinFenceBlock@@UEBA_NXZ
     MCVAPI bool isThinFenceBlock() const;
 
     // symbol:
     // ??0ThinFenceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N22@Z
-    MCAPI ThinFenceBlock(std::string const&, int, class Material const&, bool, bool, bool);
+    MCAPI ThinFenceBlock(
+        std::string const&    nameId,
+        int                   id,
+        class Material const& material,
+        bool                  dropsResources,
+        bool                  singleSide,
+        bool                  useableInCommands
+    );
 
     // NOLINTEND
 

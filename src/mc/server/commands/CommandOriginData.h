@@ -15,10 +15,10 @@ public:
     MCAPI CommandOriginData();
 
     // symbol: ??0CommandOriginData@@QEAA@AEBU0@@Z
-    MCAPI CommandOriginData(struct CommandOriginData const&);
+    MCAPI CommandOriginData(struct CommandOriginData const& other);
 
     // symbol: ??4CommandOriginData@@QEAAAEAU0@AEBU0@@Z
-    MCAPI struct CommandOriginData& operator=(struct CommandOriginData const&);
+    MCAPI struct CommandOriginData& operator=(struct CommandOriginData const& rhs);
 
     // symbol: ??1CommandOriginData@@QEAA@XZ
     MCAPI ~CommandOriginData();

@@ -32,7 +32,7 @@ public:
     virtual ~MesaSurfaceBuilder() = default;
 
     // vIndex: 1, symbol: ?init@MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
-    virtual void init(class EntityContext&, uint);
+    virtual void init(class EntityContext& entity, uint levelSeed);
 
     // vIndex: 2, symbol:
     // ?buildSurfaceAt@MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z
@@ -60,7 +60,7 @@ public:
     MCAPI void _init(uint);
 
     // symbol: ?generateBands@MesaSurfaceBuilder@VanillaSurfaceBuilders@@AEAAXAEAVRandom@@@Z
-    MCAPI void generateBands(class Random&);
+    MCAPI void generateBands(class Random& random);
 
     // symbol: ?getBand@MesaSurfaceBuilder@VanillaSurfaceBuilders@@AEBA?AW4BlockColor@@HHH@Z
     MCAPI ::BlockColor getBand(int, int, int) const;

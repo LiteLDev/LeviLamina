@@ -34,7 +34,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 25, symbol: ?canConnect@BarrierBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
+    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -136,7 +136,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0BarrierBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BarrierBlock(std::string const&, int);
+    MCAPI BarrierBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

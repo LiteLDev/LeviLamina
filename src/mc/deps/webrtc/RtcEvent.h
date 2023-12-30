@@ -19,10 +19,10 @@ public:
     // vIndex: 0, symbol: __gen_??1RtcEvent@webrtc@@UEAA@XZ
     virtual ~RtcEvent() = default;
 
-    // vIndex: 1, symbol: ?GetType@RtcEventRtcpPacketOutgoing@webrtc@@UEBA?AW4Type@RtcEvent@2@XZ
+    // vIndex: 1, symbol: ?GetType@RtcEventBweUpdateDelayBased@webrtc@@UEBA?AW4Type@RtcEvent@2@XZ
     virtual ::webrtc::RtcEvent::Type GetType() const = 0;
 
-    // vIndex: 2, symbol: ?IsConfigEvent@RtcEventRtcpPacketOutgoing@webrtc@@UEBA_NXZ
+    // vIndex: 2, symbol: ?IsConfigEvent@RtcEventAlrState@webrtc@@UEBA_NXZ
     virtual bool IsConfigEvent() const = 0;
 
     // vIndex: 3, symbol: ?GetGroupKey@RtcEvent@webrtc@@UEBAIXZ

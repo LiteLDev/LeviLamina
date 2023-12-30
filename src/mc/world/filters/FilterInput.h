@@ -11,7 +11,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0FilterInput@@QEAA@H@Z
-    MCAPI explicit FilterInput(int);
+    MCAPI explicit FilterInput(int i);
 
     // symbol: ??4FilterInput@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class FilterInput& operator=(class FilterInput&&);

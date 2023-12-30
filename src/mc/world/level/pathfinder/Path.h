@@ -41,10 +41,10 @@ public:
     MCAPI class BlockPos const& currentPos() const;
 
     // symbol: ?currentPos@Path@@QEBA?AVVec3@@PEBVActor@@@Z
-    MCAPI class Vec3 currentPos(class Actor const*) const;
+    MCAPI class Vec3 currentPos(class Actor const* e) const;
 
     // symbol: ?endsInXZ@Path@@QEAA_NAEBVVec3@@@Z
-    MCAPI bool endsInXZ(class Vec3 const&);
+    MCAPI bool endsInXZ(class Vec3 const& pos);
 
     // symbol: ?getCompletionType@Path@@QEBA?AW4PathCompletionType@@XZ
     MCAPI ::PathCompletionType getCompletionType() const;
@@ -83,7 +83,7 @@ public:
     MCAPI void next();
 
     // symbol: ?sameAs@Path@@QEBA_NPEAV1@@Z
-    MCAPI bool sameAs(class Path*) const;
+    MCAPI bool sameAs(class Path* path) const;
 
     // symbol: ?setIndex@Path@@QEAAX_K@Z
     MCAPI void setIndex(uint64);
@@ -100,6 +100,6 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?buildFromNodes@Path@@AEAAX$$QEAV?$vector@VNode@Path@@V?$allocator@VNode@Path@@@std@@@std@@W4PathCompletionType@@@Z
-    MCAPI void buildFromNodes(NodeArray&&, ::PathCompletionType);
+    MCAPI void buildFromNodes(NodeArray&& nodeArray, enum PathCompletionType completionType);
     // NOLINTEND
 };

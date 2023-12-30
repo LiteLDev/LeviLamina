@@ -26,7 +26,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ConnectionRequest@@QEAA@AEBV0@@Z
-    MCAPI ConnectionRequest(class ConnectionRequest const&);
+    MCAPI ConnectionRequest(class ConnectionRequest const& other);
 
     // symbol:
     // ?getAnimatedImageData@ConnectionRequest@@QEBA?AV?$vector@VAnimatedImageData@@V?$allocator@VAnimatedImageData@@@std@@@std@@XZ
@@ -155,7 +155,7 @@ public:
 
     // symbol:
     // ?verify@ConnectionRequest@@QEAA_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_J@Z
-    MCAPI bool verify(std::vector<std::string> const&, int64);
+    MCAPI bool verify(std::vector<std::string> const& trustedKeys, int64 currentTime);
 
     // symbol: ?verifySelfSigned@ConnectionRequest@@QEAA_NXZ
     MCAPI bool verifySelfSigned();
@@ -164,7 +164,7 @@ public:
     MCAPI ~ConnectionRequest();
 
     // symbol: ?fromString@ConnectionRequest@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class ConnectionRequest fromString(std::string const&);
+    MCAPI static class ConnectionRequest fromString(std::string const& str);
 
     // NOLINTEND
 
@@ -172,7 +172,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0ConnectionRequest@@AEAA@V?$unique_ptr@VWebToken@@U?$default_delete@VWebToken@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z
-    MCAPI ConnectionRequest(std::unique_ptr<class WebToken>, std::string const&);
+    MCAPI ConnectionRequest(std::unique_ptr<class WebToken> rawToken, std::string const& certificateString);
 
     // symbol:
     // ?validate@ConnectionRequest@@AEBA?AV?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@V23@_J_N@Z

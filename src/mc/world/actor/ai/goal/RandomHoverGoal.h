@@ -32,10 +32,18 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@RandomHoverGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0RandomHoverGoal@@QEAA@AEAVMob@@MHMMMUIntRange@@@Z
-    MCAPI RandomHoverGoal(class Mob&, float, int, float, float, float, struct IntRange);
+    MCAPI RandomHoverGoal(
+        class Mob&      mob,
+        float           speedMultiplier,
+        int             interval,
+        float           xzDist,
+        float           yDist,
+        float           yOffset,
+        struct IntRange hoverHeight
+    );
 
     // NOLINTEND
 

@@ -17,7 +17,7 @@ public:
     virtual ~SlimeMoveControl() = default;
 
     // vIndex: 2, symbol: ?tick@SlimeMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
     // symbol: ??0SlimeMoveControl@@QEAA@XZ
     MCAPI SlimeMoveControl();

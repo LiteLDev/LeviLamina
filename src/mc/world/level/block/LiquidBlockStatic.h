@@ -100,7 +100,8 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 92, symbol: ?neighborChanged@LiquidBlockStatic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -137,14 +138,14 @@ public:
 
     // symbol:
     // ??0LiquidBlockStatic@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LiquidBlockStatic(std::string const&, int, class Material const&);
+    MCAPI LiquidBlockStatic(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_setDynamic@LiquidBlockStatic@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void _setDynamic(class BlockSource&, class BlockPos const&) const;
+    MCAPI void _setDynamic(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

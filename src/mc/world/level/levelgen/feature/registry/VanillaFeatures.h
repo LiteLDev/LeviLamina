@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?registerFeatureTypes@VanillaFeatures@@SAXAEAVFeatureTypeFactory@@@Z
-    MCAPI static void registerFeatureTypes(class FeatureTypeFactory&);
+    MCAPI static void registerFeatureTypes(class FeatureTypeFactory& typeFactories);
 
     // symbol: ?registerFeatures@VanillaFeatures@@SAXAEAVFeatureRegistry@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
     MCAPI static void registerFeatures(class FeatureRegistry&, class BaseGameVersion const&, class Experiments const&);

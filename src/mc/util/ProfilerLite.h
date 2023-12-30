@@ -41,7 +41,7 @@ public:
 
     // symbol:
     // ?calculateAndSetServerTickTimes@ProfilerLite@@QEAAXV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
-    MCAPI void calculateAndSetServerTickTimes(std::chrono::steady_clock::time_point);
+    MCAPI void calculateAndSetServerTickTimes(std::chrono::steady_clock::time_point tp);
 
     // symbol: ?getServerTickTime@ProfilerLite@@QEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@XZ
     MCAPI std::chrono::nanoseconds getServerTickTime() const;

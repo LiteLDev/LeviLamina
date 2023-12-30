@@ -18,19 +18,19 @@ public:
     virtual ~PistonBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@PistonBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2, symbol: ?save@PistonBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 7, symbol: ?tick@PistonBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void tick(class BlockSource&);
+    virtual void tick(class BlockSource& region);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
 
     // vIndex: 13, symbol: ?onRemoved@PistonBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onRemoved(class BlockSource&);
+    virtual void onRemoved(class BlockSource& region);
 
     // vIndex: 18, symbol: __unk_vfn_18
     virtual void __unk_vfn_18();
@@ -64,16 +64,16 @@ public:
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@PistonBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ?getOwningPiston@PistonBlockActor@@UEAAPEAV1@AEAVBlockSource@@@Z
-    MCVAPI class PistonBlockActor* getOwningPiston(class BlockSource&);
+    MCVAPI class PistonBlockActor* getOwningPiston(class BlockSource& region);
 
     // symbol: ?getOwningPiston@PistonBlockActor@@UEBAPEBV1@AEAVBlockSource@@@Z
-    MCVAPI class PistonBlockActor const* getOwningPiston(class BlockSource&) const;
+    MCVAPI class PistonBlockActor const* getOwningPiston(class BlockSource& region) const;
 
     // symbol: ??0PistonBlockActor@@QEAA@AEBVBlockPos@@_N@Z
-    MCAPI PistonBlockActor(class BlockPos const&, bool);
+    MCAPI PistonBlockActor(class BlockPos const& pos, bool isSticky);
 
     // symbol: ?getAttachedBlocks@PistonBlockActor@@QEBAAEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@XZ
     MCAPI std::vector<class BlockPos> const& getAttachedBlocks() const;
@@ -85,7 +85,7 @@ public:
     MCAPI class BlockPos const& getFacingDir(class IConstBlockSource const&) const;
 
     // symbol: ?getProgress@PistonBlockActor@@QEBAMM@Z
-    MCAPI float getProgress(float) const;
+    MCAPI float getProgress(float a) const;
 
     // symbol: ?isExpanded@PistonBlockActor@@QEBA_NXZ
     MCAPI bool isExpanded() const;
@@ -103,49 +103,65 @@ public:
     MCAPI bool isRetracting() const;
 
     // symbol: ?moveEntityLastProgress@PistonBlockActor@@QEAAXAEAVActor@@VVec3@@@Z
-    MCAPI void moveEntityLastProgress(class Actor&, class Vec3);
+    MCAPI void moveEntityLastProgress(class Actor& entity, class Vec3 delta);
 
     // symbol: ?setShouldVerifyArmType@PistonBlockActor@@QEAAX_N@Z
-    MCAPI void setShouldVerifyArmType(bool);
+    MCAPI void setShouldVerifyArmType(bool shouldVerify);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@EE@Z
-    MCAPI bool _attachedBlockWalker(class BlockSource&, class BlockPos const&, uchar, uchar);
+    MCAPI bool _attachedBlockWalker(
+        class BlockSource&    region,
+        class BlockPos const& curPos,
+        uchar                 curBranchFacing,
+        uchar                 pistonMoveFacing
+    );
 
     // symbol: ?_checkAttachedBlocks@PistonBlockActor@@AEAA_NAEAVBlockSource@@@Z
-    MCAPI bool _checkAttachedBlocks(class BlockSource&);
+    MCAPI bool _checkAttachedBlocks(class BlockSource& region);
 
     // symbol: ?_checkInceptionAchievement@PistonBlockActor@@AEAAXAEAVBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void _checkInceptionAchievement(class BlockActor&, class BlockSource&, class BlockPos const&);
+    MCAPI void
+    _checkInceptionAchievement(class BlockActor& be, class BlockSource& region, class BlockPos const& facingDir);
 
     // symbol: ?_handleSlimeConnections@PistonBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@EE@Z
-    MCAPI bool _handleSlimeConnections(class BlockSource&, class BlockPos const&, uchar, uchar);
+    MCAPI bool _handleSlimeConnections(
+        class BlockSource&    region,
+        class BlockPos const& curPos,
+        uchar                 curBranchFacing,
+        uchar                 pistonMoveFacing
+    );
 
     // symbol: ?_hasBlockAttached@PistonBlockActor@@AEAA_NAEBVBlockPos@@@Z
-    MCAPI bool _hasBlockAttached(class BlockPos const&);
+    MCAPI bool _hasBlockAttached(class BlockPos const& blockPos);
 
     // symbol: ?_moveCollidedEntities@PistonBlockActor@@AEAAXAEAVBlockSource@@@Z
-    MCAPI void _moveCollidedEntities(class BlockSource&);
+    MCAPI void _moveCollidedEntities(class BlockSource& region);
 
     // symbol:
     // ?_moveCollidedEntitiesHelper@PistonBlockActor@@AEAAXAEAVBlockSource@@AEBVAABB@@AEBVBlockPos@@PEAVActor@@I@Z
-    MCAPI void
-    _moveCollidedEntitiesHelper(class BlockSource&, class AABB const&, class BlockPos const&, class Actor*, uint);
+    MCAPI void _moveCollidedEntitiesHelper(
+        class BlockSource&    region,
+        class AABB const&     insideBlockAABB,
+        class BlockPos const& facingDir,
+        class Actor*          ignore,
+        uint                  searchHeight
+    );
 
     // symbol: ?_sortAttachedBlocks@PistonBlockActor@@AEAAXAEAVBlockSource@@@Z
-    MCAPI void _sortAttachedBlocks(class BlockSource&);
+    MCAPI void _sortAttachedBlocks(class BlockSource& region);
 
     // symbol: ?_spawnBlocks@PistonBlockActor@@AEAAXAEAVBlockSource@@@Z
-    MCAPI void _spawnBlocks(class BlockSource&);
+    MCAPI void _spawnBlocks(class BlockSource& region);
 
     // symbol: ?_spawnMovingBlock@PistonBlockActor@@AEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _spawnMovingBlock(class BlockSource&, class BlockPos const&);
 
     // symbol: ?_spawnMovingBlocks@PistonBlockActor@@AEAAXAEAVBlockSource@@@Z
-    MCAPI void _spawnMovingBlocks(class BlockSource&);
+    MCAPI void _spawnMovingBlocks(class BlockSource& region);
 
     // symbol:
     // ?_spawnResourcesForBlockAndExtraBlock@PistonBlockActor@@CAXAEAVBlockSource@@AEBVBlockPos@@VRandomize@@AEBUResourceDropsContext@@@Z

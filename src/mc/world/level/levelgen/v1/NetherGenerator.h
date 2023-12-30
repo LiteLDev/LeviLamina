@@ -44,7 +44,7 @@ public:
     MCVAPI class BlockPos findSpawnPosition() const;
 
     // symbol: ?getBiomeArea@NetherGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const&, uint) const;
+    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
     // symbol: ?getBiomeSource@NetherGenerator@@UEBAAEBVBiomeSource@@XZ
     MCVAPI class BiomeSource const& getBiomeSource() const;
@@ -53,24 +53,24 @@ public:
     MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
 
     // symbol: ?loadChunk@NetherGenerator@@UEAAXAEAVLevelChunk@@_N@Z
-    MCVAPI void loadChunk(class LevelChunk&, bool);
+    MCVAPI void loadChunk(class LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
 
     // symbol: ?postProcess@NetherGenerator@@UEAA_NAEAVChunkViewSource@@@Z
-    MCVAPI bool postProcess(class ChunkViewSource&);
+    MCVAPI bool postProcess(class ChunkViewSource& neighborhood);
 
     // symbol:
     // ?prepareAndComputeHeights@NetherGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
     MCVAPI void prepareAndComputeHeights(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int);
 
     // symbol: ?prepareHeights@NetherGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
-    MCVAPI void prepareHeights(class BlockVolume&, class ChunkPos const&, bool);
+    MCVAPI void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
     // symbol:
     // ??0NetherGenerator@@QEAA@AEAVDimension@@IPEBVBiome@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
     MCAPI NetherGenerator(class Dimension&, uint, class Biome const*, std::unique_ptr<class StructureFeatureRegistry>);
 
     // symbol: ?buildSurfaces@NetherGenerator@@QEAAXAEAVBlockVolume@@AEAVLevelChunk@@AEBVChunkPos@@@Z
-    MCAPI void buildSurfaces(class BlockVolume&, class LevelChunk&, class ChunkPos const&);
+    MCAPI void buildSurfaces(class BlockVolume& blocks, class LevelChunk& levelChunk, class ChunkPos const& chunkPos);
 
     // symbol:
     // ?generateDensityCellsForChunk@NetherGenerator@@QEBA?AV?$MultidimensionalArray@M$04$04$0BB@@Util@@AEBVChunkPos@@@Z

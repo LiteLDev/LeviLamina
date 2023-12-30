@@ -68,31 +68,31 @@ public:
     MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);
 
     // symbol: ?setIgnoreBlocks@StructureSettings@@QEAAX_N@Z
-    MCAPI void setIgnoreBlocks(bool);
+    MCAPI void setIgnoreBlocks(bool ignoreBlocks);
 
     // symbol: ?setIgnoreEntities@StructureSettings@@QEAAX_N@Z
-    MCAPI void setIgnoreEntities(bool);
+    MCAPI void setIgnoreEntities(bool ignoreEntities);
 
     // symbol: ?setIgnoreJigsawBlocks@StructureSettings@@QEAAX_N@Z
     MCAPI void setIgnoreJigsawBlocks(bool);
 
     // symbol: ?setIntegritySeed@StructureSettings@@QEAAXI@Z
-    MCAPI void setIntegritySeed(uint);
+    MCAPI void setIntegritySeed(uint integritySeed);
 
     // symbol: ?setPivot@StructureSettings@@QEAAXAEBVVec3@@@Z
-    MCAPI void setPivot(class Vec3 const&);
+    MCAPI void setPivot(class Vec3 const& pivot);
 
     // symbol: ?setReloadActorEquipment@StructureSettings@@QEAAX_N@Z
     MCAPI void setReloadActorEquipment(bool);
 
     // symbol: ?setRotation@StructureSettings@@QEAAXW4Rotation@@@Z
-    MCAPI void setRotation(::Rotation);
+    MCAPI void setRotation(enum Rotation rotation);
 
     // symbol: ?setStructureOffset@StructureSettings@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void setStructureOffset(class BlockPos const&);
+    MCAPI void setStructureOffset(class BlockPos const& offset);
 
     // symbol: ?setStructureSize@StructureSettings@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void setStructureSize(class BlockPos const&);
+    MCAPI void setStructureSize(class BlockPos const& size);
 
     // symbol: ?shouldAllowNonTickingPlayerAndTickingAreaChunks@StructureSettings@@QEBA_NXZ
     MCAPI bool shouldAllowNonTickingPlayerAndTickingAreaChunks() const;

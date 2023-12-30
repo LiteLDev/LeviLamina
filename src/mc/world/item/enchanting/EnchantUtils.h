@@ -20,56 +20,64 @@ public:
     MCAPI static void appendEnchantToFormattedText(::Enchant::Type, std::string_view, std::string&);
 
     // symbol: ?applyEnchant@EnchantUtils@@SA_NAEAVItemStackBase@@AEBVEnchantmentInstance@@_N@Z
-    MCAPI static bool applyEnchant(class ItemStackBase&, class EnchantmentInstance const&, bool);
+    MCAPI static bool
+    applyEnchant(class ItemStackBase& out, class EnchantmentInstance const& enchant, bool allowNonVanilla);
 
     // symbol: ?applyEnchant@EnchantUtils@@SA_NAEAVItemStackBase@@W4Type@Enchant@@H_N@Z
-    MCAPI static bool applyEnchant(class ItemStackBase&, ::Enchant::Type, int, bool);
+    MCAPI static bool applyEnchant(class ItemStackBase& out, enum Enchant::Type type, int level, bool allowNonVanilla);
 
     // symbol: ?applyEnchant@EnchantUtils@@SAHAEAVItemStackBase@@AEBVItemEnchants@@_N@Z
-    MCAPI static int applyEnchant(class ItemStackBase&, class ItemEnchants const&, bool);
+    MCAPI static int applyEnchant(class ItemStackBase& out, class ItemEnchants const& enchants, bool allowNonVanilla);
 
     // symbol: ?canEnchant@EnchantUtils@@SA?AUEnchantResult@@AEBVItemStackBase@@AEBVEnchantmentInstance@@_N@Z
-    MCAPI static struct EnchantResult canEnchant(class ItemStackBase const&, class EnchantmentInstance const&, bool);
+    MCAPI static struct EnchantResult
+    canEnchant(class ItemStackBase const& item, class EnchantmentInstance const& enchant, bool allowNonVanilla);
 
     // symbol: ?canEnchant@EnchantUtils@@SA?AUEnchantResult@@AEBVItemStackBase@@W4Type@Enchant@@H_N@Z
-    MCAPI static struct EnchantResult canEnchant(class ItemStackBase const&, ::Enchant::Type, int, bool);
+    MCAPI static struct EnchantResult
+    canEnchant(class ItemStackBase const& item, enum Enchant::Type type, int level, bool allowNonVanilla);
 
     // symbol: ?combineEnchantedItems@EnchantUtils@@SAHAEBVItemStack@@0AEAV2@_N@Z
-    MCAPI static int combineEnchantedItems(class ItemStack const&, class ItemStack const&, class ItemStack&, bool);
+    MCAPI static int combineEnchantedItems(
+        class ItemStack const& first,
+        class ItemStack const& second,
+        class ItemStack&       out,
+        bool                   bookEnchant
+    );
 
     // symbol: ?determineActivation@EnchantUtils@@SAHW4Type@Enchant@@@Z
-    MCAPI static int determineActivation(::Enchant::Type);
+    MCAPI static int determineActivation(enum Enchant::Type enchantType);
 
     // symbol: ?doPostDamageEffects@EnchantUtils@@SAXAEAVActor@@0@Z
-    MCAPI static void doPostDamageEffects(class Actor&, class Actor&);
+    MCAPI static void doPostDamageEffects(class Actor& victim, class Actor& attacker);
 
     // symbol: ?doPostHurtEffects@EnchantUtils@@SAXAEAVMob@@0@Z
-    MCAPI static void doPostHurtEffects(class Mob&, class Mob&);
+    MCAPI static void doPostHurtEffects(class Mob& victim, class Mob& attacker);
 
     // symbol: ?generateEnchantedBook@EnchantUtils@@SA?AVItemInstance@@AEBVEnchantmentInstance@@@Z
-    MCAPI static class ItemInstance generateEnchantedBook(class EnchantmentInstance const&);
+    MCAPI static class ItemInstance generateEnchantedBook(class EnchantmentInstance const& enchant);
 
     // symbol:
     // ?getAvailableEnchantmentResults@EnchantUtils@@SA?AV?$vector@U?$pair@VEnchantmentInstance@@H@std@@V?$allocator@U?$pair@VEnchantmentInstance@@H@std@@@2@@std@@PEBVItem@@H_N@Z
     MCAPI static std::vector<std::pair<class EnchantmentInstance, int>>
-    getAvailableEnchantmentResults(class Item const*, int, bool);
+    getAvailableEnchantmentResults(class Item const* item, int value, bool treasure);
 
     // symbol:
     // ?getBookCasePositions@EnchantUtils@@SA?AV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@AEAVBlockSource@@AEBVVec3@@@Z
-    MCAPI static std::vector<class Vec3> getBookCasePositions(class BlockSource&, class Vec3 const&);
+    MCAPI static std::vector<class Vec3> getBookCasePositions(class BlockSource& source, class Vec3 const& pos);
 
     // symbol:
     // ?getCurses@EnchantUtils@@SAXAEBVItemStackBase@@AEAV?$vector@VEnchantmentInstance@@V?$allocator@VEnchantmentInstance@@@std@@@std@@@Z
     MCAPI static void getCurses(class ItemStackBase const&, std::vector<class EnchantmentInstance>&);
 
     // symbol: ?getDamageReduction@EnchantUtils@@SAMAEBVActorDamageSource@@AEBVMob@@@Z
-    MCAPI static float getDamageReduction(class ActorDamageSource const&, class Mob const&);
+    MCAPI static float getDamageReduction(class ActorDamageSource const& source, class Mob const& target);
 
     // symbol: ?getEnchantCosts@EnchantUtils@@SA?AV?$vector@HV?$allocator@H@std@@@std@@AEBVItemStackBase@@H@Z
-    MCAPI static std::vector<int> getEnchantCosts(class ItemStackBase const&, int);
+    MCAPI static std::vector<int> getEnchantCosts(class ItemStackBase const& itemInst, int bookcaseCount);
 
     // symbol: ?getEnchantLevel@EnchantUtils@@SAHW4Type@Enchant@@AEBVItemStackBase@@@Z
-    MCAPI static int getEnchantLevel(::Enchant::Type, class ItemStackBase const&);
+    MCAPI static int getEnchantLevel(enum Enchant::Type enchantType, class ItemStackBase const& stack);
 
     // symbol:
     // ?getEnchantNameAndLevel@EnchantUtils@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Type@Enchant@@H@Z
@@ -77,52 +85,54 @@ public:
 
     // symbol:
     // ?getEnchantingTablePositions@EnchantUtils@@SA?AV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@AEAVBlockSource@@AEBVVec3@@@Z
-    MCAPI static std::vector<class Vec3> getEnchantingTablePositions(class BlockSource&, class Vec3 const&);
+    MCAPI static std::vector<class Vec3> getEnchantingTablePositions(class BlockSource& source, class Vec3 const& pos);
 
     // symbol: ?getEnchantmentId@EnchantUtils@@SA?AW4Type@Enchant@@AEBVHashedString@@@Z
     MCAPI static ::Enchant::Type getEnchantmentId(class HashedString const&);
 
     // symbol: ?getLegalEnchants@EnchantUtils@@SA?AV?$vector@HV?$allocator@H@std@@@std@@PEBVItem@@@Z
-    MCAPI static std::vector<int> getLegalEnchants(class Item const*);
+    MCAPI static std::vector<int> getLegalEnchants(class Item const* item);
 
     // symbol: ?getLootableRandomEnchantIndex@EnchantUtils@@SAHAEAVRandom@@@Z
-    MCAPI static int getLootableRandomEnchantIndex(class Random&);
+    MCAPI static int getLootableRandomEnchantIndex(class Random& random);
 
     // symbol: ?getMeleeDamageBonus@EnchantUtils@@SAMAEBVActor@@AEAV2@@Z
-    MCAPI static float getMeleeDamageBonus(class Actor const&, class Actor&);
+    MCAPI static float getMeleeDamageBonus(class Actor const& victim, class Actor& attacker);
 
     // symbol: ?getRandomDamagedItemWithMending@EnchantUtils@@SAAEBVItemStack@@AEBVMob@@@Z
     MCAPI static class ItemStack const& getRandomDamagedItemWithMending(class Mob const&);
 
     // symbol: ?getRandomItemWith@EnchantUtils@@SAAEBVItemStack@@W4Type@Enchant@@AEBVMob@@W4EquipmentFilter@@@Z
-    MCAPI static class ItemStack const& getRandomItemWith(::Enchant::Type, class Mob const&, ::EquipmentFilter);
+    MCAPI static class ItemStack const&
+    getRandomItemWith(enum Enchant::Type type, class Mob const& equipped, enum EquipmentFilter filter);
 
     // symbol: ?getRandomName@EnchantUtils@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI static std::string getRandomName();
 
     // symbol: ?getTotalProtectionLevels@EnchantUtils@@SAHW4Type@Enchant@@AEBVMob@@@Z
-    MCAPI static int getTotalProtectionLevels(::Enchant::Type, class Mob const&);
+    MCAPI static int getTotalProtectionLevels(enum Enchant::Type type, class Mob const& target);
 
     // symbol: ?hasCurse@EnchantUtils@@SA_NAEBVItemStackBase@@@Z
     MCAPI static bool hasCurse(class ItemStackBase const&);
 
     // symbol: ?hasEnchant@EnchantUtils@@SA_NW4Type@Enchant@@AEBVItemStackBase@@@Z
-    MCAPI static bool hasEnchant(::Enchant::Type, class ItemStackBase const&);
+    MCAPI static bool hasEnchant(enum Enchant::Type enchantType, class ItemStackBase const& item);
 
     // symbol: ?isCurse@EnchantUtils@@SA_NW4Type@Enchant@@@Z
     MCAPI static bool isCurse(::Enchant::Type);
 
     // symbol: ?randomlyEnchant@EnchantUtils@@SAXAEAVItemInstance@@HH_N@Z
-    MCAPI static void randomlyEnchant(class ItemInstance&, int, int, bool);
+    MCAPI static void randomlyEnchant(class ItemInstance& out, int cost, int valueBuff, bool treasure);
 
     // symbol: ?randomlyEnchant@EnchantUtils@@SAXAEAVItemStack@@HH_N@Z
-    MCAPI static void randomlyEnchant(class ItemStack&, int, int, bool);
+    MCAPI static void randomlyEnchant(class ItemStack& out, int cost, int valueBuff, bool treasure);
 
     // symbol: ?removeEnchants@EnchantUtils@@SAXAEAVItemStack@@@Z
-    MCAPI static void removeEnchants(class ItemStack&);
+    MCAPI static void removeEnchants(class ItemStack& out);
 
     // symbol: ?selectEnchantments@EnchantUtils@@SA?AVItemEnchants@@PEBVItem@@HH_N@Z
-    MCAPI static class ItemEnchants selectEnchantments(class Item const*, int, int, bool);
+    MCAPI static class ItemEnchants
+    selectEnchantments(class Item const* item, int enchantCost, int valueBuff, bool treasure);
 
     // symbol: ?MAX_EXP_REPAIR_COST@EnchantUtils@@2HB
     MCAPI static int const MAX_EXP_REPAIR_COST;
@@ -138,7 +148,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_convertBookCheck@EnchantUtils@@CAXAEAVItemStackBase@@@Z
-    MCAPI static void _convertBookCheck(class ItemStackBase&);
+    MCAPI static void _convertBookCheck(class ItemStackBase& out);
 
     // NOLINTEND
 

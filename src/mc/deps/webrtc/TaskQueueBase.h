@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/webrtc/detail/AnyInvocable.h"
+#include "mc/deps/webrtc/absl/AnyInvocable.h"
 
 // auto generated forward declare list
 // clang-format off

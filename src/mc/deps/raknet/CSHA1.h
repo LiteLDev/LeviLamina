@@ -23,7 +23,7 @@ public:
     MCAPI void Reset();
 
     // symbol: ?Update@CSHA1@@QEAAXPEBEI@Z
-    MCAPI void Update(uchar const*, uint);
+    MCAPI void Update(uchar const* pbData, uint uLen);
 
     // symbol: ??1CSHA1@@QEAA@XZ
     MCAPI ~CSHA1();
@@ -33,7 +33,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?Transform@CSHA1@@AEAAXPEAIPEBE@Z
-    MCAPI void Transform(uint*, uchar const*);
+    MCAPI void Transform(uint* pState, uchar const* pBuffer);
 
     // NOLINTEND
 };

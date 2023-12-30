@@ -20,7 +20,7 @@ public:
 
     // symbol:
     // ??0PackInstanceId@@QEAA@AEBUPackIdVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI PackInstanceId(struct PackIdVersion const&, std::string const&);
+    MCAPI PackInstanceId(struct PackIdVersion const& packId, std::string const& subpackName);
 
     // symbol: ??1PackInstanceId@@QEAA@XZ
     MCAPI ~PackInstanceId();

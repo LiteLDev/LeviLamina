@@ -22,13 +22,14 @@ public:
     MCAPI BlockBreakSensorDefinition();
 
     // symbol: ?initialize@BlockBreakSensorDefinition@@QEBAXAEAVEntityContext@@AEAVBlockBreakSensorComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class BlockBreakSensorComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class BlockBreakSensorComponent& component) const;
 
     // symbol:
     // ?buildSchema@BlockBreakSensorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBlockBreakSensorDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockBreakSensorDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockBreakSensorDefinition>>& root
+    );
 
     // NOLINTEND
 };

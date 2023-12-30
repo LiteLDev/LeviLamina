@@ -18,10 +18,10 @@ public:
     virtual ~MeleeWeaponEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@MeleeWeaponEnchant@@UEBAHH@Z
-    virtual int getMinCost(int) const;
+    virtual int getMinCost(int level) const;
 
     // vIndex: 3, symbol: ?getMaxCost@MeleeWeaponEnchant@@UEBAHH@Z
-    virtual int getMaxCost(int) const;
+    virtual int getMaxCost(int level) const;
 
     // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4();
@@ -30,10 +30,10 @@ public:
     virtual int getMaxLevel() const;
 
     // vIndex: 7, symbol: ?getDamageBonus@MeleeWeaponEnchant@@UEBAMHAEBVActor@@@Z
-    virtual float getDamageBonus(int, class Actor const&) const;
+    virtual float getDamageBonus(int level, class Actor const& target) const;
 
     // vIndex: 8, symbol: ?doPostAttack@MeleeWeaponEnchant@@UEBAXAEAVActor@@0H@Z
-    virtual void doPostAttack(class Actor&, class Actor&, int) const;
+    virtual void doPostAttack(class Actor& attacker, class Actor& victim, int level) const;
 
     // vIndex: 10, symbol: __unk_vfn_10
     virtual void __unk_vfn_10();

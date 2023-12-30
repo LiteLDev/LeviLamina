@@ -21,7 +21,7 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?tick@ProjectileSystem@@UEAAXAEAVEntityRegistry@@@Z
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry& registry);
 
     // symbol: ?_tickProjectileComponent@ProjectileSystem@@SAXPEAVActor@@AEAVProjectileComponent@@@Z
     MCAPI static void _tickProjectileComponent(class Actor*, class ProjectileComponent&);

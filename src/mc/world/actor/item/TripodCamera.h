@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@TripodCamera@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1TripodCamera@@UEAA@XZ
     virtual ~TripodCamera() = default;
@@ -79,13 +79,13 @@ public:
     virtual void __unk_vfn_144();
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@TripodCamera@@UEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@TripodCamera@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -109,13 +109,13 @@ public:
     MCAPI TripodCamera(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
     // symbol: ?interactWithPlayer@TripodCamera@@QEAA_NAEAVPlayer@@@Z
-    MCAPI bool interactWithPlayer(class Player&);
+    MCAPI bool interactWithPlayer(class Player& player);
 
     // symbol: ?isActivated@TripodCamera@@QEBA_NXZ
     MCAPI bool isActivated() const;
 
     // symbol: ?startTakingPicture@TripodCamera@@QEAAXAEAVPlayer@@@Z
-    MCAPI void startTakingPicture(class Player&);
+    MCAPI void startTakingPicture(class Player& player);
 
     // NOLINTEND
 };

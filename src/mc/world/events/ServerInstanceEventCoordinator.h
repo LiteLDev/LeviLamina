@@ -27,13 +27,13 @@ public:
     MCAPI void sendEvent(class EventRef<struct ServerInstanceGameplayEvent<void>> const&);
 
     // symbol: ?sendServerInitializeEnd@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-    MCAPI void sendServerInitializeEnd(class ServerInstance&);
+    MCAPI void sendServerInitializeEnd(class ServerInstance& instance);
 
     // symbol: ?sendServerInitializeStart@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-    MCAPI void sendServerInitializeStart(class ServerInstance&);
+    MCAPI void sendServerInitializeStart(class ServerInstance& instance);
 
     // symbol: ?sendServerLevelInitialized@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@AEAVLevel@@@Z
-    MCAPI void sendServerLevelInitialized(class ServerInstance&, class Level&);
+    MCAPI void sendServerLevelInitialized(class ServerInstance& instance, class Level& level);
 
     // symbol:
     // ?sendServerMinecraftInitialized@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@@Z
@@ -41,19 +41,19 @@ public:
     sendServerMinecraftInitialized(class ServerInstance&, Bedrock::NotNullNonOwnerPtr<class Minecraft> const&);
 
     // symbol: ?sendServerThreadStarted@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-    MCAPI void sendServerThreadStarted(class ServerInstance&);
+    MCAPI void sendServerThreadStarted(class ServerInstance& instance);
 
     // symbol: ?sendServerThreadStopped@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-    MCAPI void sendServerThreadStopped(class ServerInstance&);
+    MCAPI void sendServerThreadStopped(class ServerInstance& instance);
 
     // symbol: ?sendServerUpdateEnd@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-    MCAPI void sendServerUpdateEnd(class ServerInstance&);
+    MCAPI void sendServerUpdateEnd(class ServerInstance& instance);
 
     // symbol: ?sendServerUpdateStart@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-    MCAPI void sendServerUpdateStart(class ServerInstance&);
+    MCAPI void sendServerUpdateStart(class ServerInstance& instance);
 
     // symbol: ?sendStartLeaveGame@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
-    MCAPI void sendStartLeaveGame(class ServerInstance&);
+    MCAPI void sendStartLeaveGame(class ServerInstance& instance);
 
     // NOLINTEND
 };

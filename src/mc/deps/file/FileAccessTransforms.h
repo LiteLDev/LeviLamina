@@ -15,10 +15,10 @@ public:
     virtual ~FileAccessTransforms() = default;
 
     // vIndex: 1, symbol: ?readTransform@FileAccessTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-    virtual bool readTransform(std::vector<uchar>&) const;
+    virtual bool readTransform(std::vector<uchar>& stream) const;
 
     // vIndex: 2, symbol: ?writeTransform@FileAccessTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-    virtual bool writeTransform(std::vector<uchar>&) const;
+    virtual bool writeTransform(std::vector<uchar>& stream) const;
 
     // NOLINTEND
 };

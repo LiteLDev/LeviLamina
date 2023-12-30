@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?containerContentChanged@ContainerModel@@UEAAXH@Z
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int slot);
 
     // vIndex: 1, symbol: ??1ContainerModel@@UEAA@XZ
     virtual ~ContainerModel();
@@ -69,7 +69,7 @@ public:
     virtual void __unk_vfn_16();
 
     // vIndex: 17, symbol: ?getItemExpandStatus@ContainerModel@@UEBA?AW4ContainerExpandStatus@@H@Z
-    virtual ::ContainerExpandStatus getItemExpandStatus(int) const;
+    virtual ::ContainerExpandStatus getItemExpandStatus(int itemId) const;
 
     // vIndex: 18, symbol:
     // ?getItemGroupName@ContainerModel@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
@@ -91,10 +91,10 @@ public:
     virtual void _init();
 
     // vIndex: 24, symbol: ?_onItemChanged@ContainerModel@@MEAAXHAEBVItemStack@@0@Z
-    virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
+    virtual void _onItemChanged(int slot, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // symbol: ?isExpanableItemFiltered@ContainerModel@@UEBA_NH@Z
-    MCVAPI bool isExpanableItemFiltered(int) const;
+    MCVAPI bool isExpanableItemFiltered(int index) const;
 
     // symbol: ?isItemFiltered@ContainerModel@@UEBA_NAEBVItemStackBase@@@Z
     MCVAPI bool isItemFiltered(class ItemStackBase const&) const;
@@ -103,10 +103,10 @@ public:
     MCVAPI bool isItemInstanceBased() const;
 
     // symbol: ?switchItemExpando@ContainerModel@@UEAAXH@Z
-    MCVAPI void switchItemExpando(int);
+    MCVAPI void switchItemExpando(int itemId);
 
     // symbol: ?tick@ContainerModel@@UEAAXH@Z
-    MCVAPI void tick(int);
+    MCVAPI void tick(int selectedSlot);
 
     // symbol: ??0ContainerModel@@QEAA@W4ContainerEnumName@@HW4ContainerCategory@@_N@Z
     MCAPI ContainerModel(::ContainerEnumName, int, ::ContainerCategory, bool);
@@ -125,15 +125,17 @@ public:
     MCAPI bool isContainerSlotInRange(int) const;
 
     // symbol: ?networkUpdateItem@ContainerModel@@QEAAXHAEBVItemStack@@0@Z
-    MCAPI void networkUpdateItem(int, class ItemStack const&, class ItemStack const&);
+    MCAPI void networkUpdateItem(int index, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // symbol: ?registerOnContainerChangedCallback@ContainerModel@@QEAAXV?$function@$$A6AXHAEBVItemStack@@0@Z@std@@@Z
     MCAPI void
-        registerOnContainerChangedCallback(std::function<void(int, class ItemStack const&, class ItemStack const&)>);
+    registerOnContainerChangedCallback(std::function<void(int, class ItemStack const&, class ItemStack const&)> callback
+    );
 
     // symbol: ?registerPlayerNotificationCallback@ContainerModel@@QEAAXV?$function@$$A6AXHAEBVItemStack@@0@Z@std@@@Z
     MCAPI void
-        registerPlayerNotificationCallback(std::function<void(int, class ItemStack const&, class ItemStack const&)>);
+    registerPlayerNotificationCallback(std::function<void(int, class ItemStack const&, class ItemStack const&)> callback
+    );
 
     // symbol: ?serverInitItemStackIds@ContainerModel@@QEAAXXZ
     MCAPI void serverInitItemStackIds();

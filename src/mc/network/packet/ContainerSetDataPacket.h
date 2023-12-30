@@ -32,7 +32,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@ContainerSetDataPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@ContainerSetDataPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -42,7 +42,7 @@ public:
     MCAPI ContainerSetDataPacket();
 
     // symbol: ??0ContainerSetDataPacket@@QEAA@W4ContainerID@@HH@Z
-    MCAPI ContainerSetDataPacket(::ContainerID, int, int);
+    MCAPI ContainerSetDataPacket(enum ContainerID containerId, int id, int value);
 
     // NOLINTEND
 };

@@ -21,10 +21,10 @@ public:
     // vIndex: 1, symbol:
     // ?_registerCompound@CraftableCompounds@@MEAAXAEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVItemStack@@W4LabTableReactionType@@W4CompoundContainerType@@@Z
     virtual void _registerCompound(
-        std::vector<class ItemStack> const&,
-        class ItemStack const&,
-        ::LabTableReactionType,
-        ::CompoundContainerType
+        std::vector<class ItemStack> const& input,
+        class ItemStack const&              result,
+        enum LabTableReactionType           reaction,
+        enum CompoundContainerType          containerOverride
     );
 
     // symbol: ??0CraftableCompounds@@QEAA@XZ
@@ -32,15 +32,15 @@ public:
 
     // symbol:
     // ?getComponents@CraftableCompounds@@QEBAPEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVItemDescriptor@@@Z
-    MCAPI std::vector<class ItemStack> const* getComponents(class ItemDescriptor const&) const;
+    MCAPI std::vector<class ItemStack> const* getComponents(class ItemDescriptor const& compound) const;
 
     // symbol:
     // ?getCompound@CraftableCompounds@@QEAAAEBVItemStack@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-    MCAPI class ItemStack const& getCompound(std::vector<class ItemStack> const&);
+    MCAPI class ItemStack const& getCompound(std::vector<class ItemStack> const& components);
 
     // symbol:
     // ?getReaction@CraftableCompounds@@QEAA?AW4LabTableReactionType@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-    MCAPI ::LabTableReactionType getReaction(std::vector<class ItemStack> const&);
+    MCAPI ::LabTableReactionType getReaction(std::vector<class ItemStack> const& components);
 
     // symbol: ?registerCompounds@CraftableCompounds@@QEAAXXZ
     MCAPI void registerCompounds();
@@ -56,20 +56,20 @@ public:
     // symbol:
     // ?_registerCompound@CraftableCompounds@@IEAAXAEBV?$vector@UChemistryIngredient@@V?$allocator@UChemistryIngredient@@@std@@@std@@AEBVItemStack@@W4LabTableReactionType@@W4CompoundContainerType@@@Z
     MCAPI void _registerCompound(
-        std::vector<struct ChemistryIngredient> const&,
-        class ItemStack const&,
-        ::LabTableReactionType,
-        ::CompoundContainerType
+        std::vector<struct ChemistryIngredient> const& input,
+        class ItemStack const&                         result,
+        enum LabTableReactionType                      reaction,
+        enum CompoundContainerType                     containerOverride
     );
 
     // symbol:
     // ?_registerCompound@CraftableCompounds@@IEAAXAEBV?$vector@UChemistryIngredient@@V?$allocator@UChemistryIngredient@@@std@@@std@@W4CompoundType@@W4LabTableReactionType@@W4CompoundContainerType@@H@Z
     MCAPI void _registerCompound(
-        std::vector<struct ChemistryIngredient> const&,
-        ::CompoundType,
-        ::LabTableReactionType,
-        ::CompoundContainerType,
-        int
+        std::vector<struct ChemistryIngredient> const& input,
+        enum CompoundType                              result,
+        enum LabTableReactionType                      reaction,
+        enum CompoundContainerType                     containerOverride,
+        int                                            stackCount
     );
 
     // NOLINTEND

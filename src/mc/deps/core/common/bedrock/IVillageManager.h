@@ -24,10 +24,11 @@ public:
     virtual ~IVillageManager();
 
     // vIndex: 1, symbol: ?fetchClosestVillage@VillageManager@@UEBA?AV?$weak_ptr@VVillage@@@std@@AEBVBlockPos@@HI@Z
-    virtual std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int, uint) const = 0;
+    virtual std::weak_ptr<class Village>
+    fetchClosestVillage(class BlockPos const& position, int maxDistFromVillageCenter, uint searchRadius) const = 0;
 
     // vIndex: 2, symbol: ?getVillageByID@VillageManager@@UEBA?AV?$weak_ptr@VVillage@@@std@@AEBVUUID@mce@@@Z
-    virtual std::weak_ptr<class Village> getVillageByID(class mce::UUID const&) const = 0;
+    virtual std::weak_ptr<class Village> getVillageByID(class mce::UUID const& villageID) const = 0;
 
     // NOLINTEND
 };

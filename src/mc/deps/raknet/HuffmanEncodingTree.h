@@ -24,7 +24,7 @@ public:
     MCAPI void FreeMemory();
 
     // symbol: ?GenerateFromFrequencyTable@HuffmanEncodingTree@RakNet@@QEAAXQEAI@Z
-    MCAPI void GenerateFromFrequencyTable(uint* const);
+    MCAPI void GenerateFromFrequencyTable(uint* const frequencyTable);
 
     // symbol: ??0HuffmanEncodingTree@RakNet@@QEAA@XZ
     MCAPI HuffmanEncodingTree();
@@ -38,9 +38,10 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?InsertNodeIntoSortedList@HuffmanEncodingTree@RakNet@@AEBAXPEAUHuffmanEncodingTreeNode@@PEAV?$LinkedList@PEAUHuffmanEncodingTreeNode@@@DataStructures@@@Z
-    MCAPI void
-    InsertNodeIntoSortedList(struct HuffmanEncodingTreeNode*, class DataStructures::LinkedList<struct HuffmanEncodingTreeNode*>*)
-        const;
+    MCAPI void InsertNodeIntoSortedList(
+        struct HuffmanEncodingTreeNode*                                    node,
+        class DataStructures::LinkedList<struct HuffmanEncodingTreeNode*>* huffmanEncodingTreeNodeList
+    ) const;
 
     // NOLINTEND
 };

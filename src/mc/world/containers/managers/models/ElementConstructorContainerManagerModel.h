@@ -24,25 +24,29 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@ElementConstructorContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int, class ItemStack const&, bool);
+    virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
 
     // vIndex: 8, symbol: ?getSlot@ElementConstructorContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const& getSlot(int) const;
+    virtual class ItemStack const& getSlot(int slot) const;
 
     // vIndex: 9, symbol: ?setData@ElementConstructorContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int, int);
+    virtual void setData(int id, int value);
 
     // vIndex: 10, symbol: ?broadcastChanges@ElementConstructorContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();
 
     // vIndex: 16, symbol: ?isValid@ElementConstructorContainerManagerModel@@UEAA_NM@Z
-    virtual bool isValid(float);
+    virtual bool isValid(float pickRange);
 
     // vIndex: 17, symbol: ?_postInit@ElementConstructorContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0ElementConstructorContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI ElementConstructorContainerManagerModel(::ContainerID, class Player&, class BlockPos const&);
+    MCAPI ElementConstructorContainerManagerModel(
+        enum ContainerID      containerId,
+        class Player&         player,
+        class BlockPos const& blockPos
+    );
 
     // NOLINTEND
 };

@@ -15,10 +15,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0WorldTemplateInfo@@QEAA@AEBVWorldTemplatePackManifest@@@Z
-    MCAPI explicit WorldTemplateInfo(class WorldTemplatePackManifest const&);
+    MCAPI explicit WorldTemplateInfo(class WorldTemplatePackManifest const& manifest);
 
     // symbol: ?addWorldTemplatePackSource@WorldTemplateInfo@@QEAAXAEAVWorldTemplatePackSource@@@Z
-    MCAPI void addWorldTemplatePackSource(class WorldTemplatePackSource&);
+    MCAPI void addWorldTemplatePackSource(class WorldTemplatePackSource& source);
 
     // symbol: ?getPackManifest@WorldTemplateInfo@@QEBAAEBVWorldTemplatePackManifest@@XZ
     MCAPI class WorldTemplatePackManifest const& getPackManifest() const;

@@ -21,7 +21,7 @@ public:
 
     // symbol:
     // ?add@TickingAreaListBase@@QEAAXV?$unique_ptr@VITickingArea@@U?$default_delete@VITickingArea@@@std@@@std@@@Z
-    MCAPI void add(std::unique_ptr<class ITickingArea>);
+    MCAPI void add(std::unique_ptr<class ITickingArea> area);
 
     // symbol: ?countEntityTickingAreas@TickingAreaListBase@@QEBAIXZ
     MCAPI uint countEntityTickingAreas() const;
@@ -38,7 +38,7 @@ public:
     MCAPI std::vector<std::shared_ptr<class ITickingArea>> findStandaloneAreasNamed(std::string const&) const;
 
     // symbol: ?getAreaFor@TickingAreaListBase@@QEBA?AV?$shared_ptr@VITickingArea@@@std@@AEBUActorUniqueID@@@Z
-    MCAPI std::shared_ptr<class ITickingArea> getAreaFor(struct ActorUniqueID const&) const;
+    MCAPI std::shared_ptr<class ITickingArea> getAreaFor(struct ActorUniqueID const& entityId) const;
 
     // symbol:
     // ?getAreas@TickingAreaListBase@@QEBAAEBV?$vector@V?$shared_ptr@VITickingArea@@@std@@V?$allocator@V?$shared_ptr@VITickingArea@@@std@@@2@@std@@XZ
@@ -50,7 +50,7 @@ public:
 
     // symbol:
     // ?hasTickingAreaNamed@TickingAreaListBase@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool hasTickingAreaNamed(std::string const&) const;
+    MCAPI bool hasTickingAreaNamed(std::string const& name) const;
 
     // symbol: ?processRemoves@TickingAreaListBase@@QEAAXXZ
     MCAPI void processRemoves();
@@ -65,7 +65,7 @@ public:
           removeAreas(std::vector<std::shared_ptr<class ITickingArea>> const&, class LevelStorage&);
 
     // symbol: ?tickSeasons@TickingAreaListBase@@QEAAXAEAVRandom@@@Z
-    MCAPI void tickSeasons(class Random&);
+    MCAPI void tickSeasons(class Random& random);
 
     // symbol: ?updateBlockSourceCurrentTick@TickingAreaListBase@@QEAAXAEBUTick@@@Z
     MCAPI void updateBlockSourceCurrentTick(struct Tick const&);

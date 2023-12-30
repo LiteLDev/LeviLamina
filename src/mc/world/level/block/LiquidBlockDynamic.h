@@ -118,13 +118,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@LiquidBlockDynamic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@LiquidBlockDynamic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -137,35 +137,52 @@ public:
 
     // symbol:
     // ??0LiquidBlockDynamic@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LiquidBlockDynamic(std::string const&, int, class Material const&);
+    MCAPI LiquidBlockDynamic(std::string const& nameId, int id, class Material const& material);
 
     // symbol: ?getSpread@LiquidBlockDynamic@@QEBA?AV?$array@_N$03@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI std::array<bool, 4> getSpread(class BlockSource&, class BlockPos const&) const;
 
     // symbol: ?shouldBecomeStatic@LiquidBlockDynamic@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    MCAPI bool shouldBecomeStatic(class BlockSource&, class BlockPos const&, class Random&) const;
+    MCAPI bool shouldBecomeStatic(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@1E@Z
-    MCAPI bool _canSpreadTo(class BlockSource&, class BlockPos const&, class BlockPos const&, uchar) const;
+    MCAPI bool _canSpreadTo(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class BlockPos const& flowFromPos,
+        uchar                 flowFromDirection
+    ) const;
 
     // symbol: ?_getSlopeDistance@LiquidBlockDynamic@@AEBAHAEAVBlockSource@@AEBVBlockPos@@HH@Z
-    MCAPI int _getSlopeDistance(class BlockSource&, class BlockPos const&, int, int) const;
+    MCAPI int _getSlopeDistance(class BlockSource& region, class BlockPos const& pos, int pass, int from) const;
 
     // symbol: ?_isWaterBlocking@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@1E@Z
-    MCAPI bool _isWaterBlocking(class BlockSource&, class BlockPos const&, class BlockPos const&, uchar) const;
+    MCAPI bool _isWaterBlocking(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class BlockPos const& flowFromPos,
+        uchar                 flowFromDirection
+    ) const;
 
     // symbol: ?_setStatic@LiquidBlockDynamic@@AEBAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
-    MCAPI void _setStatic(class BlockSource&, class BlockPos const&, bool) const;
+    MCAPI void _setStatic(class BlockSource& region, class BlockPos const& pos, bool usingExtraData) const;
 
     // symbol: ?_tick@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
-    MCAPI bool _tick(class BlockSource&, class BlockPos const&, class Random&, bool) const;
+    MCAPI bool
+    _tick(class BlockSource& region, class BlockPos const& pos, class Random& random, bool onlyDetectStatic) const;
 
     // symbol: ?_trySpreadTo@LiquidBlockDynamic@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H1E@Z
-    MCAPI void _trySpreadTo(class BlockSource&, class BlockPos const&, int, class BlockPos const&, uchar) const;
+    MCAPI void _trySpreadTo(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        int                   neighbor,
+        class BlockPos const& flowFromPos,
+        uchar                 flowFromDirection
+    ) const;
 
     // NOLINTEND
 };

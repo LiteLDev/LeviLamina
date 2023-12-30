@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addKeyFrame@BoneAnimationChannel@@QEAAAEAVKeyFrameTransform@@M@Z
-    MCAPI class KeyFrameTransform& addKeyFrame(float);
+    MCAPI class KeyFrameTransform& addKeyFrame(float time);
 
     // symbol: ?sortKeyFrames@BoneAnimationChannel@@QEAAXXZ
     MCAPI void sortKeyFrames();

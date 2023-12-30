@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0JumpInfo@@QEAA@MMHH@Z
-    MCAPI JumpInfo(float, float, int, int);
+    MCAPI JumpInfo(float distanceScale, float height, int jumpDelay, int animDuration);
 
     // symbol: ?getAnimDuration@JumpInfo@@QEBAHXZ
     MCAPI int getAnimDuration() const;

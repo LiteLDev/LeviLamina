@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addAdditionalSaveData@DamageOverTimeComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?getDamageTime@DamageOverTimeComponent@@QEBAHXZ
     MCAPI int getDamageTime() const;
@@ -24,10 +24,11 @@ public:
     MCAPI int getHurtValue() const;
 
     // symbol: ?readAdditionalSaveData@DamageOverTimeComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?setDamageTime@DamageOverTimeComponent@@QEAAXH@Z
-    MCAPI void setDamageTime(int);
+    MCAPI void setDamageTime(int damageTime);
 
     // NOLINTEND
 };

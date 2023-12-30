@@ -146,17 +146,23 @@ public:
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // vIndex: 164, symbol: ?getResourceItem@HugeMushroomBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance
+    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 165, symbol: ?getResourceCount@HugeMushroomBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@HugeMushroomBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol:
     // ??0HugeMushroomBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@W4Type@0@@Z
-    MCAPI HugeMushroomBlock(std::string const&, int, class Material const&, ::HugeMushroomBlock::Type);
+    MCAPI HugeMushroomBlock(
+        std::string const&           nameId,
+        int                          id,
+        class Material const&        material,
+        enum HugeMushroomBlock::Type type
+    );
 
     // NOLINTEND
 

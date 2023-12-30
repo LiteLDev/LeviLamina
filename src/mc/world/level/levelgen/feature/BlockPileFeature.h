@@ -18,13 +18,13 @@ public:
     virtual ~BlockPileFeature() = default;
 
     // vIndex: 3, symbol: ?place@BlockPileFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 4, symbol: ?getBlockToPlace@BlockPileFeature@@MEBAAEBVBlock@@AEAVRandom@@@Z
-    virtual class Block const& getBlockToPlace(class Random&) const;
+    virtual class Block const& getBlockToPlace(class Random& random) const;
 
     // symbol: ??0BlockPileFeature@@QEAA@AEBVBlock@@@Z
-    MCAPI explicit BlockPileFeature(class Block const&);
+    MCAPI explicit BlockPileFeature(class Block const& block);
 
     // NOLINTEND
 };

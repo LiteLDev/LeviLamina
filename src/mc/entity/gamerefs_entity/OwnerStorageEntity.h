@@ -34,7 +34,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0OwnerStorageEntity@@IEAA@$$QEAV0@@Z
-    MCAPI OwnerStorageEntity(class OwnerStorageEntity&&);
+    MCAPI OwnerStorageEntity(class OwnerStorageEntity&& other);
 
     // symbol: ??0OwnerStorageEntity@@IEAA@W4EmptyInit@0@@Z
     MCAPI explicit OwnerStorageEntity(::OwnerStorageEntity::EmptyInit);
@@ -49,13 +49,13 @@ public:
     MCAPI bool _hasValue() const;
 
     // symbol: ?_remake@OwnerStorageEntity@@IEAAXAEAVEntityRegistry@@@Z
-    MCAPI void _remake(class EntityRegistry&);
+    MCAPI void _remake(class EntityRegistry& registry);
 
     // symbol: ?_reset@OwnerStorageEntity@@IEAAXXZ
     MCAPI void _reset();
 
     // symbol: ??4OwnerStorageEntity@@IEAAAEAV0@$$QEAV0@@Z
-    MCAPI class OwnerStorageEntity& operator=(class OwnerStorageEntity&&);
+    MCAPI class OwnerStorageEntity& operator=(class OwnerStorageEntity&& other);
 
     // symbol: ??1OwnerStorageEntity@@IEAA@XZ
     MCAPI ~OwnerStorageEntity();

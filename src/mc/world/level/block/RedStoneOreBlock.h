@@ -106,7 +106,7 @@ public:
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
     // vIndex: 101, symbol: ?attack@RedStoneOreBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
-    virtual bool attack(class Player*, class BlockPos const&) const;
+    virtual bool attack(class Player* player, class BlockPos const& pos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -149,26 +149,27 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@RedStoneOreBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance
+    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 165, symbol: ?getResourceCount@RedStoneOreBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@RedStoneOreBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // vIndex: 168, symbol: ?_lightUpBlock@RedStoneOreBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void _lightUpBlock(class BlockSource&, class BlockPos const&) const;
 
     // symbol: ??0RedStoneOreBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI RedStoneOreBlock(std::string const&, int, bool);
+    MCAPI RedStoneOreBlock(std::string const& nameId, int id, bool lit);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_poofParticles@RedStoneOreBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void _poofParticles(class BlockSource&, class BlockPos const&) const;
+    MCAPI void _poofParticles(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

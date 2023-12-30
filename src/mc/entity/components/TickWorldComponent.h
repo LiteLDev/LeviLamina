@@ -14,7 +14,7 @@ public:
     MCAPI TickWorldComponent();
 
     // symbol: ??0TickWorldComponent@@QEAA@$$QEAV0@@Z
-    MCAPI TickWorldComponent(class TickWorldComponent&&);
+    MCAPI TickWorldComponent(class TickWorldComponent&& other);
 
     // symbol: ?getChunkRadius@TickWorldComponent@@QEBAIXZ
     MCAPI uint getChunkRadius() const;
@@ -29,22 +29,22 @@ public:
     MCAPI bool hasTickingArea() const;
 
     // symbol: ?initFromDefinition@TickWorldComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor& owner);
 
     // symbol: ?isAlwaysActive@TickWorldComponent@@QEBA_NXZ
     MCAPI bool isAlwaysActive() const;
 
     // symbol: ??4TickWorldComponent@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class TickWorldComponent& operator=(class TickWorldComponent&&);
+    MCAPI class TickWorldComponent& operator=(class TickWorldComponent&& other);
 
     // symbol: ?removeArea@TickWorldComponent@@QEAAXXZ
     MCAPI void removeArea();
 
     // symbol: ?setTickingArea@TickWorldComponent@@QEAAXAEAVActor@@V?$shared_ptr@VITickingArea@@@std@@@Z
-    MCAPI void setTickingArea(class Actor&, std::shared_ptr<class ITickingArea>);
+    MCAPI void setTickingArea(class Actor& owner, std::shared_ptr<class ITickingArea> area);
 
     // symbol: ?updateArea@TickWorldComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void updateArea(class Actor&);
+    MCAPI void updateArea(class Actor& owner);
 
     // symbol: ??1TickWorldComponent@@QEAA@XZ
     MCAPI ~TickWorldComponent();

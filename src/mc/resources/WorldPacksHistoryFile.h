@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initializeFromJson@WorldPacksHistoryFile@@QEAA?AW4ParseResult@1@AEBVValue@Json@@@Z
-    MCAPI ::WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const&);
+    MCAPI ::WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const& value);
 
     // NOLINTEND
 };

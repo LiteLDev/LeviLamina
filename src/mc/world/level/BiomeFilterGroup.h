@@ -24,10 +24,10 @@ public:
 
     // vIndex: 1, symbol:
     // ?_createSubgroup@BiomeFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z
-    virtual std::shared_ptr<class FilterGroup> _createSubgroup(::FilterGroup::CollectionType) const;
+    virtual std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType type) const;
 
     // symbol: ?finalizeParsedValue@BiomeFilterGroup@@QEAAXAEAVIWorldRegistriesProvider@@@Z
-    MCAPI void finalizeParsedValue(class IWorldRegistriesProvider&);
+    MCAPI void finalizeParsedValue(class IWorldRegistriesProvider& registries);
 
     // NOLINTEND
 };

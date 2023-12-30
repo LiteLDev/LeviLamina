@@ -136,7 +136,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0LoomBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LoomBlock(std::string const&, int);
+    MCAPI LoomBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

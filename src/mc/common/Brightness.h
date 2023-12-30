@@ -12,7 +12,7 @@ public:
     MCAPI Brightness(struct Brightness const&);
 
     // symbol: ??0Brightness@@QEAA@AEBE@Z
-    MCAPI explicit Brightness(uchar const&);
+    MCAPI explicit Brightness(uchar const& v);
 
     // symbol: ??4Brightness@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct Brightness& operator=(struct Brightness&&);

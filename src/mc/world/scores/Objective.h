@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0Objective@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVObjectiveCriteria@@@Z
-    MCAPI Objective(std::string const&, class ObjectiveCriteria const&);
+    MCAPI Objective(std::string const& name, class ObjectiveCriteria const& criteria);
 
     // symbol: ?getCriteria@Objective@@QEBAAEBVObjectiveCriteria@@XZ
     MCAPI class ObjectiveCriteria const& getCriteria() const;
@@ -30,10 +30,10 @@ public:
     MCAPI std::string const& getName() const;
 
     // symbol: ?getPlayerScore@Objective@@QEBA?AUScoreInfo@@AEBUScoreboardId@@@Z
-    MCAPI struct ScoreInfo getPlayerScore(struct ScoreboardId const&) const;
+    MCAPI struct ScoreInfo getPlayerScore(struct ScoreboardId const& id) const;
 
     // symbol: ?getPlayerScoreRef@Objective@@QEAA_NAEBUScoreboardId@@AEAUScoreInfoRef@@@Z
-    MCAPI bool getPlayerScoreRef(struct ScoreboardId const&, struct ScoreInfoRef&);
+    MCAPI bool getPlayerScoreRef(struct ScoreboardId const& id, struct ScoreInfoRef& scoreInfo);
 
     // symbol: ?getPlayers@Objective@@QEBA?AV?$vector@UScoreboardId@@V?$allocator@UScoreboardId@@@std@@@std@@XZ
     MCAPI std::vector<struct ScoreboardId> getPlayers() const;
@@ -43,15 +43,16 @@ public:
     MCAPI std::unordered_map<struct ScoreboardId, int> const& getScores() const;
 
     // symbol: ?hasScore@Objective@@QEBA_NAEBUScoreboardId@@@Z
-    MCAPI bool hasScore(struct ScoreboardId const&) const;
+    MCAPI bool hasScore(struct ScoreboardId const& id) const;
 
     // symbol:
     // ?deserialize@Objective@@SA?AV?$unique_ptr@VObjective@@U?$default_delete@VObjective@@@std@@@std@@AEBVCompoundTag@@AEAVScoreboard@@@Z
-    MCAPI static std::unique_ptr<class Objective> deserialize(class CompoundTag const&, class Scoreboard&);
+    MCAPI static std::unique_ptr<class Objective>
+    deserialize(class CompoundTag const& dataTag, class Scoreboard& owner);
 
     // symbol:
     // ?serialize@Objective@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV1@@Z
-    MCAPI static std::unique_ptr<class CompoundTag> serialize(class Objective const&);
+    MCAPI static std::unique_ptr<class CompoundTag> serialize(class Objective const& toSave);
 
     // NOLINTEND
 };

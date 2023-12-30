@@ -104,10 +104,12 @@ public:
 
     // vIndex: 79, symbol:
     // ?onFertilized@GravelBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, enum FertilizerType fType)
+        const;
 
     // vIndex: 80, symbol: ?mayConsumeFertilizer@GravelBlock@@UEBA_NAEAVBlockSource@@@Z
-    virtual bool mayConsumeFertilizer(class BlockSource&) const;
+    virtual bool mayConsumeFertilizer(class BlockSource& region) const;
 
     // vIndex: 81, symbol: ?canBeFertilized@GravelBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
@@ -140,10 +142,11 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@GravelBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance
+    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 168, symbol: ?getDustColor@GravelBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
-    virtual class mce::Color getDustColor(class Block const&) const;
+    virtual class mce::Color getDustColor(class Block const& block) const;
 
     // vIndex: 169, symbol:
     // ?getDustParticleName@GravelBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
@@ -153,7 +156,7 @@ public:
     virtual void __unk_vfn_170();
 
     // symbol: ??0GravelBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI GravelBlock(std::string const&, int);
+    MCAPI GravelBlock(std::string const& nameId, int type);
 
     // NOLINTEND
 };

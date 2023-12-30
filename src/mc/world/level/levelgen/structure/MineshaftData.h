@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0MineshaftData@@QEAA@_N@Z
-    MCAPI explicit MineshaftData(bool);
+    MCAPI explicit MineshaftData(bool surface);
 
     // NOLINTEND
 };

@@ -109,7 +109,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 85, symbol: ?mayPlace@UnderwaterTorchBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -143,7 +143,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0UnderwaterTorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI UnderwaterTorchBlock(std::string const&, int);
+    MCAPI UnderwaterTorchBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

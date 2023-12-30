@@ -12,10 +12,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?breakNearbyBlocks@BreakBlocksComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void breakNearbyBlocks(class Actor&);
+    MCAPI void breakNearbyBlocks(class Actor& actor);
 
     // symbol: ?initFromDefinition@BreakBlocksComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor& actor);
 
     // symbol: ?isBreakable@BreakBlocksComponent@@SA_NPEBUBreakBlocksDescription@@AEBVBlockLegacy@@@Z
     MCAPI static bool isBreakable(struct BreakBlocksDescription const*, class BlockLegacy const&);

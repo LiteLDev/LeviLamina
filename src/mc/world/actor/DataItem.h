@@ -49,10 +49,10 @@ public:
     virtual ~DataItem();
 
     // vIndex: 1, symbol: ?isDataEqual@DataItem@@UEBA_NAEBV1@@Z
-    virtual bool isDataEqual(class DataItem const&) const;
+    virtual bool isDataEqual(class DataItem const& rhs) const;
 
     // vIndex: 2, symbol:
-    // ?clone@?$DataItem2@F@@UEBA?AV?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@XZ
+    // ?clone@?$DataItem2@M@@UEBA?AV?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@XZ
     virtual std::unique_ptr<class DataItem> clone() const = 0;
 
     // NOLINTEND

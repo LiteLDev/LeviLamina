@@ -93,22 +93,28 @@ public:
     virtual ~MobEffect();
 
     // vIndex: 1, symbol: ?applyEffects@MobEffect@@UEBAXPEAVActor@@HH@Z
-    virtual void applyEffects(class Actor*, int, int) const;
+    virtual void applyEffects(class Actor* target, int durationTicks, int amplification) const;
 
     // vIndex: 2, symbol: ?removeEffects@MobEffect@@UEAAXPEAVActor@@@Z
-    virtual void removeEffects(class Actor*);
+    virtual void removeEffects(class Actor* target);
 
     // vIndex: 3, symbol: ?updateEffects@MobEffect@@UEAAXPEAVActor@@HH@Z
     virtual void updateEffects(class Actor*, int, int);
 
     // vIndex: 4, symbol: ?applyInstantaneousEffect@MobEffect@@UEBAXPEAVActor@@00HM@Z
-    virtual void applyInstantaneousEffect(class Actor*, class Actor*, class Actor*, int, float) const;
+    virtual void applyInstantaneousEffect(
+        class Actor* source,
+        class Actor* owner,
+        class Actor* target,
+        int          amplification,
+        float        scale
+    ) const;
 
     // vIndex: 5, symbol: ?isInstantaneous@MobEffect@@UEBA_NXZ
     virtual bool isInstantaneous() const;
 
     // vIndex: 6, symbol: ?getAttributeModifierValue@MobEffect@@UEBAMHAEBVAttributeModifier@@@Z
-    virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
+    virtual float getAttributeModifierValue(int amplifier, class AttributeModifier const& modifier) const;
 
     // symbol:
     // ??0MobEffect@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH01AEBUFactorCalculationData@0@@Z
@@ -116,10 +122,11 @@ public:
     MobEffect(uint, std::string const&, std::string const&, bool, int, int, std::string const&, bool, struct MobEffect::FactorCalculationData const&);
 
     // symbol: ?addAttributeBuff@MobEffect@@QEAAXAEBVAttribute@@V?$shared_ptr@VAttributeBuff@@@std@@@Z
-    MCAPI void addAttributeBuff(class Attribute const&, std::shared_ptr<class AttributeBuff>);
+    MCAPI void addAttributeBuff(class Attribute const& attribute, std::shared_ptr<class AttributeBuff> buff);
 
     // symbol: ?addAttributeModifier@MobEffect@@QEAAXAEBVAttribute@@V?$shared_ptr@VAttributeModifier@@@std@@@Z
-    MCAPI void addAttributeModifier(class Attribute const&, std::shared_ptr<class AttributeModifier>);
+    MCAPI void
+    addAttributeModifier(class Attribute const& attribute, std::shared_ptr<class AttributeModifier> modifier);
 
     // symbol: ?getDescriptionId@MobEffect@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getDescriptionId() const;
@@ -140,10 +147,10 @@ public:
     MCAPI bool isVisible() const;
 
     // symbol: ?setDurationAmplifier@MobEffect@@QEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
-    MCAPI void setDurationAmplifier(std::shared_ptr<class Amplifier>);
+    MCAPI void setDurationAmplifier(std::shared_ptr<class Amplifier> amplifier);
 
     // symbol: ?setValueAmplifier@MobEffect@@QEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
-    MCAPI void setValueAmplifier(std::shared_ptr<class Amplifier>);
+    MCAPI void setValueAmplifier(std::shared_ptr<class Amplifier> amplifier);
 
     // symbol:
     // ?viewAttributeModifiers@MobEffect@@QEBAAEBV?$vector@U?$pair@PEBVAttribute@@V?$shared_ptr@VAttributeModifier@@@std@@@std@@V?$allocator@U?$pair@PEBVAttribute@@V?$shared_ptr@VAttributeModifier@@@std@@@std@@@2@@std@@XZ
@@ -154,7 +161,7 @@ public:
     MCAPI static class MobEffect* getById(uint);
 
     // symbol: ?getByName@MobEffect@@SAPEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class MobEffect* getByName(std::string const&);
+    MCAPI static class MobEffect* getByName(std::string const& name);
 
     // symbol: ?getNameById@MobEffect@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
     MCAPI static std::string getNameById(uint);

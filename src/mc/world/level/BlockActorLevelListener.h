@@ -75,7 +75,7 @@ public:
     virtual void __unk_vfn_21();
 
     // vIndex: 22, symbol: ?onChunkUnloaded@BlockActorLevelListener@@UEAAXAEAVLevelChunk@@@Z
-    virtual void onChunkUnloaded(class LevelChunk&);
+    virtual void onChunkUnloaded(class LevelChunk& lc);
 
     // vIndex: 24, symbol: __unk_vfn_24
     virtual void __unk_vfn_24();

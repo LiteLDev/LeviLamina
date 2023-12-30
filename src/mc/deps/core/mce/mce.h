@@ -26,19 +26,19 @@ namespace mce {
 MCAPI extern std::unordered_map<std::string, ::mce::RenderState> const& featuresMap;
 
 // symbol: ??Dmce@@YA?AUDegree@0@MU10@@Z
-MCAPI struct mce::Degree operator*(float, struct mce::Degree);
+MCAPI struct mce::Degree operator*(float lhs, struct mce::Degree rhs);
 
 // symbol: ??Dmce@@YA?AURadian@0@U10@M@Z
-MCAPI struct mce::Radian operator*(struct mce::Radian, float);
+MCAPI struct mce::Radian operator*(struct mce::Radian lhs, float rhs);
 
 // symbol: ??Hmce@@YA?AUDegree@0@U10@M@Z
-MCAPI struct mce::Degree operator+(struct mce::Degree, float);
+MCAPI struct mce::Degree operator+(struct mce::Degree lhs, float rhs);
 
 // symbol: ??Gmce@@YA?AUDegree@0@U10@M@Z
-MCAPI struct mce::Degree operator-(struct mce::Degree, float);
+MCAPI struct mce::Degree operator-(struct mce::Degree lhs, float rhs);
 
 // symbol: ??Mmce@@YA_NUDegree@0@M@Z
-MCAPI bool operator<(struct mce::Degree, float);
+MCAPI bool operator<(struct mce::Degree lhs, float rhs);
 // NOLINTEND
 
 }; // namespace mce

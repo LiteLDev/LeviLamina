@@ -31,7 +31,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@CommandOutputPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@CommandOutputPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -41,7 +41,7 @@ public:
     MCAPI CommandOutputPacket();
 
     // symbol: ??0CommandOutputPacket@@QEAA@AEBVCommandOrigin@@AEBVCommandOutput@@@Z
-    MCAPI CommandOutputPacket(class CommandOrigin const&, class CommandOutput const&);
+    MCAPI CommandOutputPacket(class CommandOrigin const& origin, class CommandOutput const& output);
 
     // NOLINTEND
 };

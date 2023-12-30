@@ -48,7 +48,7 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0EndPortalBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit EndPortalBlockActor(class BlockPos const&);
+    MCAPI explicit EndPortalBlockActor(class BlockPos const& pos);
 
     // NOLINTEND
 };

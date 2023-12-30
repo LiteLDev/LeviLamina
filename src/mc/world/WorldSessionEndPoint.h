@@ -23,16 +23,16 @@ public:
     MCVAPI bool isEnabled() const;
 
     // symbol: ?log@WorldSessionEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z
-    MCVAPI void log(::LogArea, ::LogLevel, char const*);
+    MCVAPI void log(enum LogArea area, enum LogLevel level, char const* message);
 
     // symbol: ?logOnlyOnce@WorldSessionEndPoint@@UEBA_NXZ
     MCVAPI bool logOnlyOnce() const;
 
     // symbol: ?setEnabled@WorldSessionEndPoint@@UEAAX_N@Z
-    MCVAPI void setEnabled(bool);
+    MCVAPI void setEnabled(bool newState);
 
     // symbol: ??0WorldSessionEndPoint@@QEAA@AEAVIMinecraftEventing@@@Z
-    MCAPI explicit WorldSessionEndPoint(class IMinecraftEventing&);
+    MCAPI explicit WorldSessionEndPoint(class IMinecraftEventing& eventing);
 
     // NOLINTEND
 };

@@ -35,10 +35,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@ScaredGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0ScaredGoal@@QEAA@AEAVMob@@H@Z
-    MCAPI ScaredGoal(class Mob&, int);
+    MCAPI ScaredGoal(class Mob& mob, int interval);
 
     // NOLINTEND
 };

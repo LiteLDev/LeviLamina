@@ -70,10 +70,10 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@Pig@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float dmg, bool knock, bool ignite);
 
     // vIndex: 166, symbol: ?_playStepSound@Pig@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-    virtual void _playStepSound(class BlockPos const&, class Block const&);
+    virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();

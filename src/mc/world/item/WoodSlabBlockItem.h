@@ -42,7 +42,7 @@ public:
     virtual void __unk_vfn_17();
 
     // vIndex: 31, symbol: ?getLevelDataForAuxValue@WoodSlabBlockItem@@UEBAHH@Z
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int getLevelDataForAuxValue(int auxValue) const;
 
     // vIndex: 37, symbol: __unk_vfn_37
     virtual void __unk_vfn_37();

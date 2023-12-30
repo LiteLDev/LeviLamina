@@ -48,7 +48,7 @@ namespace RakNet { struct uint24_t; }
 namespace RakNet {
 // NOLINTBEGIN
 // symbol: ?ConnectionAttemptLoop@RakNet@@YAIPEAX@Z
-MCAPI uint ConnectionAttemptLoop(void*);
+MCAPI uint ConnectionAttemptLoop(void* arguments);
 
 // symbol: ?GetTime@RakNet@@YA_KXZ
 MCAPI uint64 GetTime();
@@ -60,25 +60,32 @@ MCAPI uint GetTimeMS();
 MCAPI uint64 GetTimeUS();
 
 // symbol: ?NonNumericHostString@RakNet@@YA_NPEBD@Z
-MCAPI bool NonNumericHostString(char const*);
+MCAPI bool NonNumericHostString(char const* host);
 
 // symbol: ?ProcessNetworkPacket@RakNet@@YAXUSystemAddress@1@PEBDHPEAVRakPeer@1@PEAVRakNetSocket2@1@_KAEAVBitStream@1@@Z
-MCAPI void
-ProcessNetworkPacket(struct RakNet::SystemAddress, char const*, int, class RakNet::RakPeer*, class RakNet::RakNetSocket2*, uint64, class RakNet::BitStream&);
+MCAPI void ProcessNetworkPacket(
+    struct RakNet::SystemAddress systemAddress,
+    char const*                  data,
+    int                          length,
+    class RakNet::RakPeer*       rakPeer,
+    class RakNet::RakNetSocket2* rakNetSocket,
+    uint64                       timeRead,
+    class RakNet::BitStream&     updateBitStream
+);
 
 // symbol: ?ProcessOfflineNetworkPacket@RakNet@@YA_NUSystemAddress@1@PEBDHPEAVRakPeer@1@PEAVRakNetSocket2@1@PEA_N_K@Z
 MCAPI bool ProcessOfflineNetworkPacket(
-    struct RakNet::SystemAddress,
-    char const*,
-    int,
-    class RakNet::RakPeer*,
-    class RakNet::RakNetSocket2*,
-    bool*,
-    uint64
+    struct RakNet::SystemAddress systemAddress,
+    char const*                  data,
+    int                          length,
+    class RakNet::RakPeer*       rakPeer,
+    class RakNet::RakNetSocket2* rakNetSocket,
+    bool*                        isOfflineMessage,
+    uint64                       timeRead
 );
 
 // symbol: ?SplitPacketChannelComp@RakNet@@YAHAEBGAEBQEAUSplitPacketChannel@1@@Z
-MCAPI int SplitPacketChannelComp(ushort const&, struct RakNet::SplitPacketChannel* const&);
+MCAPI int SplitPacketChannelComp(ushort const& key, struct RakNet::SplitPacketChannel* const& data);
 
 // symbol: ?UNASSIGNED_RAKNET_GUID@RakNet@@3URakNetGUID@1@B
 MCAPI extern struct RakNet::RakNetGUID const UNASSIGNED_RAKNET_GUID;
@@ -87,10 +94,10 @@ MCAPI extern struct RakNet::RakNetGUID const UNASSIGNED_RAKNET_GUID;
 MCAPI extern struct RakNet::SystemAddress const UNASSIGNED_SYSTEM_ADDRESS;
 
 // symbol: ?UpdateNetworkLoop@RakNet@@YAIPEAX@Z
-MCAPI uint UpdateNetworkLoop(void*);
+MCAPI uint UpdateNetworkLoop(void* arguments);
 
 // symbol: ?UpdateTCPInterfaceLoop@RakNet@@YAIPEAX@Z
-MCAPI uint UpdateTCPInterfaceLoop(void*);
+MCAPI uint UpdateTCPInterfaceLoop(void* arguments);
 
 // symbol: ?_DLMallocDirectMMap@RakNet@@YAPEAX_K@Z
 MCAPI void* _DLMallocDirectMMap(uint64);
@@ -102,22 +109,22 @@ MCAPI void* _DLMallocMMap(uint64);
 MCAPI int _DLMallocMUnmap(void*, uint64);
 
 // symbol: ?_RakFree@RakNet@@YAXPEAX@Z
-MCAPI void _RakFree(void*);
+MCAPI void _RakFree(void* p);
 
 // symbol: ?_RakFree_Ex@RakNet@@YAXPEAXPEBDI@Z
-MCAPI void _RakFree_Ex(void*, char const*, uint);
+MCAPI void _RakFree_Ex(void* p, char const* file, uint line);
 
 // symbol: ?_RakMalloc@RakNet@@YAPEAX_K@Z
 MCAPI void* _RakMalloc(uint64);
 
 // symbol: ?_RakMalloc_Ex@RakNet@@YAPEAX_KPEBDI@Z
-MCAPI void* _RakMalloc_Ex(uint64, char const*, uint);
+MCAPI void* _RakMalloc_Ex(uint64 size, char const* file, uint line);
 
 // symbol: ?_RakRealloc@RakNet@@YAPEAXPEAX_K@Z
 MCAPI void* _RakRealloc(void*, uint64);
 
 // symbol: ?_RakRealloc_Ex@RakNet@@YAPEAXPEAX_KPEBDI@Z
-MCAPI void* _RakRealloc_Ex(void*, uint64, char const*, uint);
+MCAPI void* _RakRealloc_Ex(void* p, uint64 size, char const* file, uint line);
 // NOLINTEND
 
 }; // namespace RakNet

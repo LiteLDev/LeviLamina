@@ -30,11 +30,11 @@ public:
 
     // symbol:
     // ?lookupByName@JigsawStructureRegistry@@QEBAPEBVStructureTemplatePool@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class StructureTemplatePool const* lookupByName(std::string) const;
+    MCAPI class StructureTemplatePool const* lookupByName(std::string name) const;
 
     // symbol:
     // ?registerPool@JigsawStructureRegistry@@QEAAX$$QEAV?$unique_ptr@VStructureTemplatePool@@U?$default_delete@VStructureTemplatePool@@@std@@@std@@@Z
-    MCAPI void registerPool(std::unique_ptr<class StructureTemplatePool>&&);
+    MCAPI void registerPool(std::unique_ptr<class StructureTemplatePool>&& pool);
 
     // symbol: ??1JigsawStructureRegistry@@QEAA@XZ
     MCAPI ~JigsawStructureRegistry();

@@ -30,7 +30,7 @@ public:
     virtual int Send(struct RakNet::RNS2_SendParameters*, char const*, uint);
 
     // vIndex: 2, symbol: ?SetMulticastInterface@RNS2_Berkley@RakNet@@UEAAXH@Z
-    virtual void SetMulticastInterface(int);
+    virtual void SetMulticastInterface(int interfaceIndex);
 
     // vIndex: 3, symbol: ?Bind@RNS2_Windows@RakNet@@UEAA?AW4RNS2BindResult@2@PEAURNS2_BerkleyBindParameters@2@PEBDI@Z
     virtual ::RakNet::RNS2BindResult Bind(struct RakNet::RNS2_BerkleyBindParameters*, char const*, uint);

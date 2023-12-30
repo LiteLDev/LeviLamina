@@ -2,7 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ScriptDebuggerTransport {
+// auto generated inclusion list
+#include "mc/external/scripting/IDebuggerTransport.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { class IDebuggerTransport; }
+// clang-format on
+
+class ScriptDebuggerTransport : public ::Scripting::IDebuggerTransport {
 public:
     // prevent constructor by default
     ScriptDebuggerTransport& operator=(ScriptDebuggerTransport const&);

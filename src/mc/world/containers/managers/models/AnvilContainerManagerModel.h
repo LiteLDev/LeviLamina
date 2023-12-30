@@ -24,13 +24,13 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@AnvilContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int, class ItemStack const&, bool);
+    virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
 
     // vIndex: 8, symbol: ?getSlot@AnvilContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const& getSlot(int) const;
+    virtual class ItemStack const& getSlot(int slot) const;
 
     // vIndex: 9, symbol: ?setData@AnvilContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int, int);
+    virtual void setData(int id, int value);
 
     // vIndex: 10, symbol: ?broadcastChanges@AnvilContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();
@@ -42,7 +42,8 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0AnvilContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI AnvilContainerManagerModel(::ContainerID, class Player&, class BlockPos const&);
+    MCAPI
+    AnvilContainerManagerModel(enum ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
     // symbol: ?INPUT_SLOT@AnvilContainerManagerModel@@2HB
     MCAPI static int const INPUT_SLOT;

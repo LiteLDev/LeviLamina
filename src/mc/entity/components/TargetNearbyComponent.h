@@ -21,16 +21,16 @@ public:
     MCAPI bool getWasSeenLastTick() const;
 
     // symbol: ?setPreviousDistance@TargetNearbyComponent@@QEAAXM@Z
-    MCAPI void setPreviousDistance(float);
+    MCAPI void setPreviousDistance(float distance);
 
     // symbol: ?setWasInsideRange@TargetNearbyComponent@@QEAAX_N@Z
-    MCAPI void setWasInsideRange(bool);
+    MCAPI void setWasInsideRange(bool wasInside);
 
     // symbol: ?setWasOutsideRange@TargetNearbyComponent@@QEAAX_N@Z
-    MCAPI void setWasOutsideRange(bool);
+    MCAPI void setWasOutsideRange(bool wasOutside);
 
     // symbol: ?setWasSeenLastTick@TargetNearbyComponent@@QEAAX_N@Z
-    MCAPI void setWasSeenLastTick(bool);
+    MCAPI void setWasSeenLastTick(bool wasSeen);
 
     // NOLINTEND
 };

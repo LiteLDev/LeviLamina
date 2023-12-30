@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/webrtc/DataMessageType.h"
-#include "mc/deps/webrtc/detail/SSLRole.h"
-#include "mc/deps/webrtc/detail/SendDataResult.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
+#include "mc/deps/webrtc/cricket/SendDataResult.h"
+#include "mc/deps/webrtc/rtc/SSLRole.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off

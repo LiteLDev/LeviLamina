@@ -18,7 +18,10 @@ public:
 
     // symbol:
     // ?checkRole@RoleChecker@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4Role@edu@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z@3@@Z
-    MCAPI void checkRole(std::string const&, std::function<void(::edu::Role, std::string const&, std::string const&)>);
+    MCAPI void checkRole(
+        std::string const&                                                          jsonCredentials,
+        std::function<void(enum edu::Role, std::string const&, std::string const&)> callback
+    );
 
     // symbol: ?lookupInProgress@RoleChecker@@QEBA_NXZ
     MCAPI bool lookupInProgress() const;

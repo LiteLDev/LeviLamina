@@ -12,10 +12,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0InventoryTransactionManager@@QEAA@AEAVPlayer@@@Z
-    MCAPI explicit InventoryTransactionManager(class Player&);
+    MCAPI explicit InventoryTransactionManager(class Player& player);
 
     // symbol: ?_createServerSideAction@InventoryTransactionManager@@QEAAXAEBVItemStack@@0@Z
-    MCAPI void _createServerSideAction(class ItemStack const&, class ItemStack const&);
+    MCAPI void _createServerSideAction(class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // symbol: ?_logExpectedActions@InventoryTransactionManager@@QEBAXXZ
     MCAPI void _logExpectedActions() const;
@@ -24,7 +24,7 @@ public:
     MCAPI void addAction(class InventoryAction const&, bool);
 
     // symbol: ?addExpectedAction@InventoryTransactionManager@@QEAAXAEBVInventoryAction@@@Z
-    MCAPI void addExpectedAction(class InventoryAction const&);
+    MCAPI void addExpectedAction(class InventoryAction const& action);
 
     // symbol: ?forceBalanceTransaction@InventoryTransactionManager@@QEAAXXZ
     MCAPI void forceBalanceTransaction();

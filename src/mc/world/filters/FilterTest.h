@@ -42,21 +42,21 @@ public:
     virtual ~FilterTest();
 
     // vIndex: 1, symbol: ?setup@FilterTest@@UEAA_NAEBUDefinition@1@AEBUFilterInputs@@@Z
-    virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
+    virtual bool setup(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
 
-    // vIndex: 2, symbol: ?evaluate@ActorHasPropertyTest@@UEBA_NAEBUFilterContext@@@Z
+    // vIndex: 2, symbol: ?evaluate@ActorBoolPropertyTest@@UEBA_NAEBUFilterContext@@@Z
     virtual bool evaluate(struct FilterContext const&) const = 0;
 
     // vIndex: 3, symbol: ?finalizeParsedValue@FilterTest@@UEAAXAEAVIWorldRegistriesProvider@@@Z
-    virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
+    virtual void finalizeParsedValue(class IWorldRegistriesProvider& registries);
 
-    // vIndex: 4, symbol: ?getName@ActorHasPropertyTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
+    // vIndex: 4, symbol: ?getName@ActorBoolPropertyTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     virtual std::string_view getName() const = 0;
 
     // vIndex: 5, symbol: ?_serializeDomain@FilterTest@@MEBA?AVValue@Json@@XZ
     virtual class Json::Value _serializeDomain() const;
 
-    // vIndex: 6, symbol: ?_serializeValue@ActorHasPropertyTest@@MEBA?AVValue@Json@@XZ
+    // vIndex: 6, symbol: ?_serializeValue@ActorBoolPropertyTest@@MEBA?AVValue@Json@@XZ
     virtual class Json::Value _serializeValue() const = 0;
 
     // symbol: ?serialize@FilterTest@@QEBA?AVValue@Json@@XZ
@@ -67,16 +67,16 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_N_N0@Z
-    MCAPI bool _testValuesWithOperator(bool, bool) const;
+    MCAPI bool _testValuesWithOperator(bool a, bool b) const;
 
     // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_NAEBVHashedString@@0@Z
     MCAPI bool _testValuesWithOperator(class HashedString const&, class HashedString const&) const;
 
     // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_NMM@Z
-    MCAPI bool _testValuesWithOperator(float, float) const;
+    MCAPI bool _testValuesWithOperator(float a, float b) const;
 
     // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_NHH@Z
-    MCAPI bool _testValuesWithOperator(int, int) const;
+    MCAPI bool _testValuesWithOperator(int a, int b) const;
 
     // NOLINTEND
 };

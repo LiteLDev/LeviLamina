@@ -121,7 +121,8 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 61, symbol: ?checkIsPathable@SignBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    virtual bool
+    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -133,7 +134,8 @@ public:
     virtual bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
 
     // vIndex: 92, symbol: ?neighborChanged@SignBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 96, symbol: ?asItemInstance@SignBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
@@ -178,7 +180,8 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 168, symbol: ?getEntityResourceItem@SignBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
+    virtual class ItemInstance
+    getEntityResourceItem(class Randomize& random, class BlockActor const& blockEntity, int bonusLootLevel) const;
 
     // vIndex: 169, symbol: ?getYRotationInDegrees@SignBlock@@UEBAMAEBVBlock@@@Z
     virtual float getYRotationInDegrees(class Block const&) const;
@@ -193,7 +196,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0SignBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NW4SignType@0@@Z
-    MCAPI SignBlock(std::string const&, int, bool, ::SignBlock::SignType);
+    MCAPI SignBlock(std::string const& nameId, int id, bool onGround, enum SignBlock::SignType signType);
 
     // symbol: ?getSignTextColorFromDyeItem@SignBlock@@SA?AVColor@mce@@AEBVItem@@@Z
     MCAPI static class mce::Color getSignTextColorFromDyeItem(class Item const&);

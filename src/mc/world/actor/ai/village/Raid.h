@@ -20,7 +20,7 @@ public:
     Raid(int, int, int, int, ::Difficulty, uchar, std::function<bool(uint64, class Vec3&)>&&, std::function<bool(uint64, class Vec3, uchar, std::unordered_set<struct ActorUniqueID>&)>&&, std::function<bool(struct ActorUniqueID const&)>&&, std::function<bool(void)>&&);
 
     // symbol: ?addAdditionalSaveData@Raid@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?addPlayerToHeroList@Raid@@QEAAXAEBVActor@@@Z
     MCAPI void addPlayerToHeroList(class Actor const&);
@@ -29,7 +29,7 @@ public:
     MCAPI void addRaider(struct ActorUniqueID const&, float);
 
     // symbol: ?appendDebugInfo@Raid@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void appendDebugInfo(std::string&) const;
+    MCAPI void appendDebugInfo(std::string& infoString) const;
 
     // symbol: ?getBossBarFilledFraction@Raid@@QEBAMXZ
     MCAPI float getBossBarFilledFraction() const;
@@ -41,7 +41,7 @@ public:
     MCAPI bool isRaider(struct ActorUniqueID) const;
 
     // symbol: ?readAdditionalSaveData@Raid@@QEAAXAEBVCompoundTag@@@Z
-    MCAPI void readAdditionalSaveData(class CompoundTag const&);
+    MCAPI void readAdditionalSaveData(class CompoundTag const& tag);
 
     // symbol: ?tick@Raid@@QEAAXUTick@@@Z
     MCAPI void tick(struct Tick);

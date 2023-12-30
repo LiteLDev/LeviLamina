@@ -70,7 +70,8 @@ public:
 
     // vIndex: 72, symbol:
     // ?useTimeDepleted@SuspiciousStewItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
-    virtual ::ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
+    virtual ::ItemUseMethod
+    useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -82,7 +83,7 @@ public:
     MCVAPI bool uniqueAuxValues() const;
 
     // symbol: ?applyStewEffect@SuspiciousStewItem@@SAXAEBVItemStack@@AEAVActor@@@Z
-    MCAPI static void applyStewEffect(class ItemStack const&, class Actor&);
+    MCAPI static void applyStewEffect(class ItemStack const& inoutInstance, class Actor& actor);
 
     // NOLINTEND
 

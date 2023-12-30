@@ -38,17 +38,17 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@RollGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0RollGoal@@QEAA@AEAVMob@@M@Z
-    MCAPI RollGoal(class Mob&, float);
+    MCAPI RollGoal(class Mob& mob, float probability);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_handleRoll@RollGoal@@AEBAXHAEAVVec3@@AEAM1@Z
-    MCAPI void _handleRoll(int, class Vec3&, float&, float&) const;
+    MCAPI void _handleRoll(int rollCounter, class Vec3& positionDelta, float& rollX, float& rollZ) const;
 
     // NOLINTEND
 };

@@ -55,7 +55,8 @@ public:
     MCAPI explicit SemVersion(struct SemVersion::any_version_constructor);
 
     // symbol: ??0SemVersion@@QEAA@GGGAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI SemVersion(ushort, ushort, ushort, std::string const&, std::string const&);
+    MCAPI
+    SemVersion(ushort major, ushort minor, ushort patch, std::string const& preRelease, std::string const& buildMeta);
 
     // symbol: ?asString@SemVersion@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& asString() const;
@@ -79,42 +80,43 @@ public:
     MCAPI bool isValid() const;
 
     // symbol: ??9SemVersion@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class SemVersion const&) const;
+    MCAPI bool operator!=(class SemVersion const& rhs) const;
 
     // symbol: ??MSemVersion@@QEBA_NAEBV0@@Z
-    MCAPI bool operator<(class SemVersion const&) const;
+    MCAPI bool operator<(class SemVersion const& rhs) const;
 
     // symbol: ??NSemVersion@@QEBA_NAEBV0@@Z
-    MCAPI bool operator<=(class SemVersion const&) const;
+    MCAPI bool operator<=(class SemVersion const& rhs) const;
 
     // symbol: ??4SemVersion@@QEAAAEAV0@AEBV0@@Z
     MCAPI class SemVersion& operator=(class SemVersion const&);
 
     // symbol: ??8SemVersion@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class SemVersion const&) const;
+    MCAPI bool operator==(class SemVersion const& rhs) const;
 
     // symbol: ??OSemVersion@@QEBA_NAEBV0@@Z
-    MCAPI bool operator>(class SemVersion const&) const;
+    MCAPI bool operator>(class SemVersion const& rhs) const;
 
     // symbol: ??PSemVersion@@QEBA_NAEBV0@@Z
-    MCAPI bool operator>=(class SemVersion const&) const;
+    MCAPI bool operator>=(class SemVersion const& rhs) const;
 
     // symbol: ?satisfies@SemVersion@@QEBA_NAEBV1@@Z
-    MCAPI bool satisfies(class SemVersion const&) const;
+    MCAPI bool satisfies(class SemVersion const& neededVersion) const;
 
     // symbol: ??1SemVersion@@QEAA@XZ
     MCAPI ~SemVersion();
 
     // symbol: ?fromJson@SemVersion@@SA?AW4MatchType@1@AEBVValue@Json@@AEAV1@W4ParseOption@1@@Z
     MCAPI static ::SemVersion::MatchType
-    fromJson(class Json::Value const&, class SemVersion&, ::SemVersion::ParseOption);
+    fromJson(class Json::Value const& json, class SemVersion& output, enum SemVersion::ParseOption parseOption);
 
     // symbol: ?fromJsonArray@SemVersion@@SA?AW4MatchType@1@AEBVValue@Json@@AEAV1@@Z
-    MCAPI static ::SemVersion::MatchType fromJsonArray(class Json::Value const&, class SemVersion&);
+    MCAPI static ::SemVersion::MatchType fromJsonArray(class Json::Value const& jsonArray, class SemVersion& output);
 
     // symbol:
     // ?fromString@SemVersion@@SA?AW4MatchType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV1@W4ParseOption@1@@Z
-    MCAPI static ::SemVersion::MatchType fromString(std::string const&, class SemVersion&, ::SemVersion::ParseOption);
+    MCAPI static ::SemVersion::MatchType
+    fromString(std::string const& src, class SemVersion& output, enum SemVersion::ParseOption parseOption);
 
     // symbol: ?AnyVersionConstructor@SemVersion@@2Uany_version_constructor@1@B
     MCAPI static struct any_version_constructor const AnyVersionConstructor;

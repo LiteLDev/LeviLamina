@@ -17,7 +17,7 @@ public:
     virtual ~HoverMoveControl() = default;
 
     // vIndex: 2, symbol: ?tick@HoverMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
     // symbol: ??0HoverMoveControl@@QEAA@XZ
     MCAPI HoverMoveControl();

@@ -40,31 +40,31 @@ public:
     MCAPI bool getWaveStarted();
 
     // symbol: ?initialize@RaidBossComponent@@QEAAXUActorUniqueID@@@Z
-    MCAPI void initialize(struct ActorUniqueID);
+    MCAPI void initialize(struct ActorUniqueID ownerID);
 
     // symbol: ?isWithinRange@RaidBossComponent@@QEAA_NAEBVMob@@@Z
-    MCAPI bool isWithinRange(class Mob const&);
+    MCAPI bool isWithinRange(class Mob const& player);
 
     // symbol: ??4RaidBossComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class RaidBossComponent& operator=(class RaidBossComponent&&);
 
     // symbol: ?registerPlayer@RaidBossComponent@@QEAAXPEAVPlayer@@@Z
-    MCAPI void registerPlayer(class Player*);
+    MCAPI void registerPlayer(class Player* player);
 
     // symbol: ?removeBossBar@RaidBossComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void removeBossBar(class Actor&);
+    MCAPI void removeBossBar(class Actor& owner);
 
     // symbol: ?resendRaidBossEventData@RaidBossComponent@@QEAAXAEAVPlayer@@@Z
     MCAPI void resendRaidBossEventData(class Player&);
 
     // symbol: ?sendRegistryMessages@RaidBossComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void sendRegistryMessages(class Actor&);
+    MCAPI void sendRegistryMessages(class Actor& owner);
 
     // symbol: ?setVillage@RaidBossComponent@@QEAAXV?$weak_ptr@VVillage@@@std@@@Z
-    MCAPI void setVillage(std::weak_ptr<class Village>);
+    MCAPI void setVillage(std::weak_ptr<class Village> village);
 
     // symbol: ?setWaveStarted@RaidBossComponent@@QEAAX_N@Z
-    MCAPI void setWaveStarted(bool);
+    MCAPI void setWaveStarted(bool val);
 
     // symbol: ?setupBossBarInfo@RaidBossComponent@@QEAAXAEAVActor@@PEAVVillage@@@Z
     MCAPI void setupBossBarInfo(class Actor&, class Village*);
@@ -73,13 +73,13 @@ public:
     MCAPI bool tryRemoveBoss(class Actor&, class Player&);
 
     // symbol: ?unRegisterPlayer@RaidBossComponent@@QEAAXPEAVPlayer@@@Z
-    MCAPI void unRegisterPlayer(class Player*);
+    MCAPI void unRegisterPlayer(class Player* player);
 
     // symbol: ?updateBossBarStats@RaidBossComponent@@QEAAXAEAVActor@@AEBVRaid@@@Z
-    MCAPI void updateBossBarStats(class Actor&, class Raid const&);
+    MCAPI void updateBossBarStats(class Actor& owner, class Raid const& raid);
 
     // symbol: ?updateHealthBarVisible@RaidBossComponent@@QEAAX_NAEAVActor@@@Z
-    MCAPI void updateHealthBarVisible(bool, class Actor&);
+    MCAPI void updateHealthBarVisible(bool visible, class Actor& owner);
 
     // symbol: ??1RaidBossComponent@@QEAA@XZ
     MCAPI ~RaidBossComponent();
@@ -89,10 +89,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_broadcastBossEvent@RaidBossComponent@@AEAAXW4BossEventUpdateType@@AEAVActor@@@Z
-    MCAPI void _broadcastBossEvent(::BossEventUpdateType, class Actor&);
+    MCAPI void _broadcastBossEvent(enum BossEventUpdateType type, class Actor& owner);
 
     // symbol: ?_sendBossEvent@RaidBossComponent@@AEAAXW4BossEventUpdateType@@AEAVPlayer@@@Z
-    MCAPI void _sendBossEvent(::BossEventUpdateType, class Player&);
+    MCAPI void _sendBossEvent(enum BossEventUpdateType type, class Player& player);
 
     // NOLINTEND
 };

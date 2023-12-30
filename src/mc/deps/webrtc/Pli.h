@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/webrtc/Psfb.h"
-#include "mc/deps/webrtc/detail/ArrayView.h"
-#include "mc/deps/webrtc/detail/FunctionView.h"
+#include "mc/deps/webrtc/rtc/ArrayView.h"
+#include "mc/deps/webrtc/rtc/FunctionView.h"
 
 // auto generated forward declare list
 // clang-format off

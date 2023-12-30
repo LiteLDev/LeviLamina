@@ -22,7 +22,7 @@ public:
     virtual ::StructurePieceType getType() const;
 
     // symbol: ??0NBStartPiece@@QEAA@AEAVRandom@@HH@Z
-    MCAPI NBStartPiece(class Random&, int, int);
+    MCAPI NBStartPiece(class Random& random, int west, int north);
 
     // NOLINTEND
 };

@@ -27,10 +27,10 @@ public:
     virtual ~ChunkViewSource();
 
     // vIndex: 3, symbol: ?getExistingChunk@ChunkViewSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
-    virtual std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);
+    virtual std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const& pos);
 
     // vIndex: 4, symbol: ?getRandomChunk@ChunkViewSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEAVRandom@@@Z
-    virtual std::shared_ptr<class LevelChunk> getRandomChunk(class Random&);
+    virtual std::shared_ptr<class LevelChunk> getRandomChunk(class Random& random);
 
     // vIndex: 7, symbol:
     // ?createNewChunk@ChunkViewSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z
@@ -38,10 +38,10 @@ public:
 
     // vIndex: 19, symbol:
     // ?acquireDiscarded@ChunkViewSource@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
-    virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
+    virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
 
     // vIndex: 23, symbol: ?isWithinWorldLimit@ChunkViewSource@@UEBA_NAEBVChunkPos@@@Z
-    virtual bool isWithinWorldLimit(class ChunkPos const&) const;
+    virtual bool isWithinWorldLimit(class ChunkPos const& cp) const;
 
     // vIndex: 30, symbol: ?setLevelChunk@ChunkViewSource@@UEAAXV?$shared_ptr@VLevelChunk@@@std@@@Z
     virtual void setLevelChunk(std::shared_ptr<class LevelChunk>);
@@ -50,12 +50,15 @@ public:
     MCAPI ChunkViewSource(class ChunkViewSource const&);
 
     // symbol: ??0ChunkViewSource@@QEAA@AEAVChunkSource@@W4LoadMode@1@@Z
-    MCAPI ChunkViewSource(class ChunkSource&, ::ChunkSource::LoadMode);
+    MCAPI ChunkViewSource(class ChunkSource& mainSource, enum ChunkSource::LoadMode parentLoadMode);
 
     // symbol:
     // ??0ChunkViewSource@@QEAA@AEAVChunkSource@@AEAV?$LevelChunkGridAreaElement@V?$weak_ptr@VLevelChunk@@@std@@@@AEBUBounds@@@Z
-    MCAPI
-    ChunkViewSource(class ChunkSource&, class LevelChunkGridAreaElement<std::weak_ptr<class LevelChunk>>&, struct Bounds const&);
+    MCAPI ChunkViewSource(
+        class ChunkSource&                                                mainSource,
+        class LevelChunkGridAreaElement<std::weak_ptr<class LevelChunk>>& gridArea,
+        struct Bounds const&                                              bounds
+    );
 
     // symbol: ?clear@ChunkViewSource@@QEAAXXZ
     MCAPI void clear();

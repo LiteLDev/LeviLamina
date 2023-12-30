@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Spawner@@QEAA@AEAVLevel@@@Z
-    MCAPI explicit Spawner(class Level&);
+    MCAPI explicit Spawner(class Level& level);
 
     // symbol: ?getSpawnRules@Spawner@@QEBAPEBVActorSpawnRuleGroup@@XZ
     MCAPI class ActorSpawnRuleGroup const* getSpawnRules() const;
@@ -32,14 +32,14 @@ public:
     MCAPI void initializeServerSide(class ResourcePackManager&, class IWorldRegistriesProvider&);
 
     // symbol: ?postProcessSpawnMobs@Spawner@@QEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
-    MCAPI void postProcessSpawnMobs(class BlockSource&, int, int, class Random&);
+    MCAPI void postProcessSpawnMobs(class BlockSource& region, int xo, int zo, class Random& random);
 
     // symbol: ?setSpawnSettings@Spawner@@QEAAXAEBUSpawnSettings@@@Z
     MCAPI void setSpawnSettings(struct SpawnSettings const&);
 
     // symbol: ?spawnItem@Spawner@@QEAAPEAVItemActor@@AEAVBlockSource@@AEBVItemStack@@PEAVActor@@AEBVVec3@@H@Z
     MCAPI class ItemActor* spawnItem(
-        class BlockSource&     blockSource,
+        class BlockSource&     region,
         class ItemStack const& item,
         class Actor*           spawner,
         class Vec3 const&      pos,
@@ -49,7 +49,7 @@ public:
     // symbol:
     // ?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z
     MCAPI class Mob* spawnMob(
-        class BlockSource&                      blockSource,
+        class BlockSource&                      region,
         struct ActorDefinitionIdentifier const& id,
         class Actor*                            spawner,
         class Vec3 const&                       pos,
@@ -65,11 +65,16 @@ public:
 
     // symbol:
     // ?spawnProjectile@Spawner@@QEAAPEAVActor@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAV2@AEBVVec3@@3@Z
-    MCAPI class Actor*
-    spawnProjectile(class BlockSource&, struct ActorDefinitionIdentifier const&, class Actor*, class Vec3 const&, class Vec3 const&);
+    MCAPI class Actor* spawnProjectile(
+        class BlockSource&                      region,
+        struct ActorDefinitionIdentifier const& id,
+        class Actor*                            spawner,
+        class Vec3 const&                       position,
+        class Vec3 const&                       direction
+    );
 
     // symbol: ?tick@Spawner@@QEAAXAEAVBlockSource@@AEBVLevelChunk@@@Z
-    MCAPI void tick(class BlockSource&, class LevelChunk const&);
+    MCAPI void tick(class BlockSource& region, class LevelChunk const& chunk);
 
     // symbol: ??1Spawner@@QEAA@XZ
     MCAPI ~Spawner();
@@ -106,29 +111,41 @@ public:
     MCAPI void _tickSpawnStructureMobs(class BlockSource&, class LevelChunk const&, class BlockPos, std::function<void(class BlockPos const&, struct LevelChunk::HardcodedSpawningArea const&, class SpawnConditions const&)> const&, std::function<gsl::span<struct LevelChunk::HardcodedSpawningArea const>(class LevelChunk const&)> const&);
 
     // symbol: ?_updateBaseTypeCount@Spawner@@IEAAXAEAVBlockSource@@AEBVChunkPos@@@Z
-    MCAPI void _updateBaseTypeCount(class BlockSource&, class ChunkPos const&);
+    MCAPI void _updateBaseTypeCount(class BlockSource& region, class ChunkPos const& center);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_handlePopulationCap@Spawner@@AEAAHPEBVMobSpawnerData@@AEBVSpawnConditions@@H@Z
-    MCAPI int _handlePopulationCap(class MobSpawnerData const*, class SpawnConditions const&, int);
+    MCAPI int _handlePopulationCap(
+        class MobSpawnerData const*  mobType,
+        class SpawnConditions const& conditions,
+        int                          inSpawnCount
+    );
 
     // symbol: ?_permuteId@Spawner@@AEBAXAEAUActorDefinitionIdentifier@@AEBVMobSpawnRules@@AEAVRandom@@@Z
-    MCAPI void _permuteId(struct ActorDefinitionIdentifier&, class MobSpawnRules const&, class Random&) const;
+    MCAPI void
+    _permuteId(struct ActorDefinitionIdentifier& actualId, class MobSpawnRules const& spawnRules, class Random& random)
+        const;
 
     // symbol:
     // ?_sendHerdEvents@Spawner@@AEBAXAEBUMobSpawnHerdInfo@@AEAV?$vector@PEAVMob@@V?$allocator@PEAVMob@@@std@@@std@@@Z
-    MCAPI void _sendHerdEvents(struct MobSpawnHerdInfo const&, std::vector<class Mob*>&) const;
+    MCAPI void _sendHerdEvents(struct MobSpawnHerdInfo const& herdInfo, std::vector<class Mob*>& spawnGroup) const;
 
     // symbol: ?_spawnMobCluster@Spawner@@AEAAXAEAVBlockSource@@AEBVBlockPos@@AEAVSpawnConditions@@@Z
-    MCAPI void _spawnMobCluster(class BlockSource&, class BlockPos const&, class SpawnConditions&);
+    MCAPI void
+    _spawnMobCluster(class BlockSource& region, class BlockPos const& pos, class SpawnConditions& conditions);
 
     // symbol:
     // ?_spawnMobInCluster@Spawner@@AEAAXAEAVBlockSource@@UActorDefinitionIdentifier@@AEBVBlockPos@@AEBVSpawnConditions@@AEAV?$vector@PEAVMob@@V?$allocator@PEAVMob@@@std@@@std@@@Z
-    MCAPI void
-    _spawnMobInCluster(class BlockSource&, struct ActorDefinitionIdentifier, class BlockPos const&, class SpawnConditions const&, std::vector<class Mob*>&);
+    MCAPI void _spawnMobInCluster(
+        class BlockSource&               region,
+        struct ActorDefinitionIdentifier id,
+        class BlockPos const&            pos,
+        class SpawnConditions const&     conditions,
+        std::vector<class Mob*>&         spawnGroup
+    );
 
     // symbol: ?_updateMobCounts@Spawner@@AEAAXAEBUActorDefinitionIdentifier@@AEBVSpawnConditions@@@Z
     MCAPI void _updateMobCounts(struct ActorDefinitionIdentifier const&, class SpawnConditions const&);

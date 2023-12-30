@@ -28,10 +28,10 @@ public:
     MCVAPI ::EventResult onEvent(struct PlayerNotificationEvent const&);
 
     // symbol: ?onLocalPlayerDeath@PlayerEventListener@@UEAA?AW4EventResult@@AEAVIClientInstance@@AEAVLocalPlayer@@@Z
-    MCVAPI ::EventResult onLocalPlayerDeath(class IClientInstance&, class LocalPlayer&);
+    MCVAPI ::EventResult onLocalPlayerDeath(class IClientInstance& client, class LocalPlayer& player);
 
     // symbol: ?onLocalPlayerRespawn@PlayerEventListener@@UEAA?AW4EventResult@@AEAVIClientInstance@@AEAVLocalPlayer@@@Z
-    MCVAPI ::EventResult onLocalPlayerRespawn(class IClientInstance&, class LocalPlayer&);
+    MCVAPI ::EventResult onLocalPlayerRespawn(class IClientInstance& client, class LocalPlayer& player);
 
     // symbol: ?onPlayerAIStepBegin@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
     MCVAPI ::EventResult onPlayerAIStepBegin(class Player&);
@@ -41,10 +41,11 @@ public:
 
     // symbol:
     // ?onPlayerAction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@W4PlayerActionType@@AEBVBlockPos@@H@Z
-    MCVAPI ::EventResult onPlayerAction(class Player&, ::PlayerActionType, class BlockPos const&, int);
+    MCVAPI ::EventResult
+    onPlayerAction(class Player& player, enum PlayerActionType type, class BlockPos const& pos, int data);
 
     // symbol: ?onPlayerAttackedActor@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVActor@@@Z
-    MCVAPI ::EventResult onPlayerAttackedActor(class Player&, class Actor&);
+    MCVAPI ::EventResult onPlayerAttackedActor(class Player& player, class Actor& target);
 
     // symbol: ?onPlayerAuthInputApplied@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
     MCVAPI ::EventResult onPlayerAuthInputApplied(class Player&);
@@ -54,63 +55,84 @@ public:
 
     // symbol:
     // ?onPlayerAwardAchievement@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@W4AchievementIds@MinecraftEventing@@@Z
-    MCVAPI ::EventResult onPlayerAwardAchievement(class Player&, ::MinecraftEventing::AchievementIds);
+    MCVAPI ::EventResult
+    onPlayerAwardAchievement(class Player& player, enum MinecraftEventing::AchievementIds achievement);
 
     // symbol: ?onPlayerCaravanChanged@PlayerEventListener@@UEAA?AW4EventResult@@AEBVActor@@H@Z
-    MCVAPI ::EventResult onPlayerCaravanChanged(class Actor const&, int);
+    MCVAPI ::EventResult onPlayerCaravanChanged(class Actor const& mob, int caravanCount);
 
     // symbol:
     // ?onPlayerCraftedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@_N22HHH22AEBV?$vector@FV?$allocator@F@std@@@std@@@Z
-    MCVAPI ::EventResult
-    onPlayerCraftedItem(class Player&, class ItemInstance const&, bool, bool, bool, int, int, int, bool, bool, std::vector<short> const&);
+    MCVAPI ::EventResult onPlayerCraftedItem(
+        class Player&             player,
+        class ItemInstance const& craftedItem,
+        bool                      recipeBook,
+        bool                      hadSearchString,
+        bool                      craftedAutomatically,
+        int                       startingTabId,
+        int                       endingTabId,
+        int                       numTabsChanged,
+        bool                      filterOn,
+        bool                      recipeBookShown,
+        std::vector<short> const& ingredientItemIDs
+    );
 
     // symbol:
     // ?onPlayerCreated@PlayerEventListener@@UEAA?AW4EventResult@@AEAVLocalPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1_N@Z
-    MCVAPI ::EventResult onPlayerCreated(class LocalPlayer&, std::string const&, std::string const&, bool);
+    MCVAPI ::EventResult onPlayerCreated(
+        class LocalPlayer& player,
+        std::string const& personaSlot,
+        std::string const& classicSkinId,
+        bool               usingClassicSkin
+    );
 
     // symbol: ?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@@Z
-    MCVAPI ::EventResult onPlayerDestroyedBlock(class Player&, class Block const&);
+    MCVAPI ::EventResult onPlayerDestroyedBlock(class Player& player, class Block const& blockType);
 
     // symbol: ?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@HHH@Z
-    MCVAPI ::EventResult onPlayerDestroyedBlock(class Player&, int, int, int);
+    MCVAPI ::EventResult onPlayerDestroyedBlock(class Player& player, int x, int y, int z);
 
     // symbol:
     // ?onPlayerEnchantedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemStack@@AEBVItemEnchants@@@Z
-    MCVAPI ::EventResult onPlayerEnchantedItem(class Player&, class ItemStack const&, class ItemEnchants const&);
+    MCVAPI ::EventResult
+    onPlayerEnchantedItem(class Player& player, class ItemStack const& item, class ItemEnchants const& enchants);
 
     // symbol: ?onPlayerEquippedArmor@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@@Z
-    MCVAPI ::EventResult onPlayerEquippedArmor(class Player&, class ItemDescriptor const&);
+    MCVAPI ::EventResult onPlayerEquippedArmor(class Player& player, class ItemDescriptor const& item);
 
     // symbol: ?onPlayerInput@PlayerEventListener@@UEAA?AW4EventResult@@AEAVEntityContext@@@Z
     MCVAPI ::EventResult onPlayerInput(class EntityContext&);
 
     // symbol: ?onPlayerItemEquipped@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@H@Z
-    MCVAPI ::EventResult onPlayerItemEquipped(class Player&, class ItemInstance const&, int);
+    MCVAPI ::EventResult
+    onPlayerItemEquipped(class Player& player, class ItemInstance const& equippedItem, int equipmentSlotId);
 
     // symbol: ?onPlayerItemPlaceInteraction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@@Z
-    MCVAPI ::EventResult onPlayerItemPlaceInteraction(class Player&, class ItemInstance const&);
+    MCVAPI ::EventResult onPlayerItemPlaceInteraction(class Player& player, class ItemInstance const& itemBeforeUse);
 
     // symbol: ?onPlayerItemUseInteraction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@@Z
-    MCVAPI ::EventResult onPlayerItemUseInteraction(class Player&, class ItemInstance const&);
+    MCVAPI ::EventResult onPlayerItemUseInteraction(class Player& player, class ItemInstance const& itemBeforeUse);
 
     // symbol: ?onPlayerMove@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
-    MCVAPI ::EventResult onPlayerMove(class Player&);
+    MCVAPI ::EventResult onPlayerMove(class Player& player);
 
     // symbol: ?onPlayerMovementAnomaly@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
-    MCVAPI ::EventResult onPlayerMovementAnomaly(class Player&, class Vec3 const&, float, float);
+    MCVAPI ::EventResult
+    onPlayerMovementAnomaly(class Player& player, class Vec3 const& clientPos, float posDelta, float observedScore);
 
     // symbol: ?onPlayerMovementCorrected@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
-    MCVAPI ::EventResult onPlayerMovementCorrected(class Player&, class Vec3 const&, float, float);
+    MCVAPI ::EventResult
+    onPlayerMovementCorrected(class Player& player, class Vec3 const& clientPos, float posDelta, float observedScore);
 
     // symbol:
     // ?onPlayerMovementRewindCorrected@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@_KW4ReplayCorrectionResult@@@Z
     MCVAPI ::EventResult onPlayerMovementRewindCorrected(class Player&, uint64, ::ReplayCorrectionResult);
 
     // symbol: ?onPlayerNamedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@@Z
-    MCVAPI ::EventResult onPlayerNamedItem(class Player&, class ItemDescriptor const&);
+    MCVAPI ::EventResult onPlayerNamedItem(class Player& player, class ItemDescriptor const& item);
 
     // symbol: ?onPlayerOnGround@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
-    MCVAPI ::EventResult onPlayerOnGround(class Player&);
+    MCVAPI ::EventResult onPlayerOnGround(class Player& player);
 
     // symbol:
     // ?onPlayerPiglinBarter@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
@@ -118,47 +140,49 @@ public:
 
     // symbol:
     // ?onPlayerPortalBuilt@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
-    MCVAPI ::EventResult onPlayerPortalBuilt(class Player&, DimensionType);
+    MCVAPI ::EventResult onPlayerPortalBuilt(class Player& player, DimensionType dimensionBuiltIn);
 
     // symbol:
     // ?onPlayerPortalUsed@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-    MCVAPI ::EventResult onPlayerPortalUsed(class Player&, DimensionType, DimensionType);
+    MCVAPI ::EventResult
+    onPlayerPortalUsed(class Player& player, DimensionType fromDimension, DimensionType toDimension);
 
     // symbol: ?onPlayerSaved@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
-    MCVAPI ::EventResult onPlayerSaved(class Player&);
+    MCVAPI ::EventResult onPlayerSaved(class Player& player);
 
     // symbol: ?onPlayerSlide@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
-    MCVAPI ::EventResult onPlayerSlide(class Player&);
+    MCVAPI ::EventResult onPlayerSlide(class Player& player);
 
     // symbol: ?onPlayerSmithiedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@@Z
     MCVAPI ::EventResult onPlayerSmithiedItem(class Player&, class ItemDescriptor const&);
 
     // symbol: ?onPlayerStartRiding@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVActor@@@Z
-    MCVAPI ::EventResult onPlayerStartRiding(class Player&, class Actor&);
+    MCVAPI ::EventResult onPlayerStartRiding(class Player& player, class Actor& ride);
 
     // symbol: ?onPlayerStopRiding@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@_N11@Z
-    MCVAPI ::EventResult onPlayerStopRiding(class Player&, bool, bool, bool);
+    MCVAPI ::EventResult
+    onPlayerStopRiding(class Player& player, bool exitFromRider, bool entityIsBeingDestroyed, bool switchingRides);
 
     // symbol: ?onPlayerTargetBlockHit@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z
     MCVAPI ::EventResult onPlayerTargetBlockHit(class Player&, int);
 
     // symbol: ?onPlayerTeleported@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
-    MCVAPI ::EventResult onPlayerTeleported(class Player&);
+    MCVAPI ::EventResult onPlayerTeleported(class Player& player);
 
     // symbol: ?onPlayerTeleported@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@M@Z
     MCVAPI ::EventResult onPlayerTeleported(class Player&, float);
 
     // symbol: ?onPlayerTick@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
-    MCVAPI ::EventResult onPlayerTick(class Player&);
+    MCVAPI ::EventResult onPlayerTick(class Player& player);
 
     // symbol: ?onPlayerTurn@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVVec2@@@Z
-    MCVAPI ::EventResult onPlayerTurn(class Player&, class Vec2&);
+    MCVAPI ::EventResult onPlayerTurn(class Player& player, class Vec2& turnDelta);
 
     // symbol: ?onPlayerWaxOnWaxOff@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z
     MCVAPI ::EventResult onPlayerWaxOnWaxOff(class Player&, int);
 
     // symbol: ?onStartDestroyBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@AEAE@Z
-    MCVAPI ::EventResult onStartDestroyBlock(class Player&, class BlockPos const&, uchar&);
+    MCVAPI ::EventResult onStartDestroyBlock(class Player& player, class BlockPos const& pos, uchar& face);
 
     // NOLINTEND
 };

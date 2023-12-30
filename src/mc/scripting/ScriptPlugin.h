@@ -2,13 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/IDependencyLoader.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class IDependencyLoader; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ScriptData; }
 // clang-format on
 
-class ScriptPlugin {
+class ScriptPlugin : public ::Scripting::IDependencyLoader {
 public:
     // prevent constructor by default
     ScriptPlugin& operator=(ScriptPlugin const&);

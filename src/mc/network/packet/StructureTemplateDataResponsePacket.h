@@ -33,7 +33,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@StructureTemplateDataResponsePacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@StructureTemplateDataResponsePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -45,9 +45,9 @@ public:
     // symbol:
     // ??0StructureTemplateDataResponsePacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@2@W4StructureTemplateResponseType@@@Z
     MCAPI StructureTemplateDataResponsePacket(
-        std::string const&,
-        std::unique_ptr<class CompoundTag>,
-        ::StructureTemplateResponseType
+        std::string const&                 structureName,
+        std::unique_ptr<class CompoundTag> structureTag,
+        enum StructureTemplateResponseType type
     );
 
     // symbol: ??4StructureTemplateDataResponsePacket@@QEAAAEAV0@$$QEAV0@@Z

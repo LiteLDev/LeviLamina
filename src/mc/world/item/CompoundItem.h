@@ -94,13 +94,13 @@ public:
     MCAPI CompoundItem(std::string const&, int, class Experiments const&);
 
     // symbol: ?getCompoundType@CompoundItem@@SA?AW4CompoundType@@AEBVItemDescriptor@@@Z
-    MCAPI static ::CompoundType getCompoundType(class ItemDescriptor const&);
+    MCAPI static ::CompoundType getCompoundType(class ItemDescriptor const& itemDescriptor);
 
     // symbol: ?getIngredientForCompound@CompoundItem@@SA?AVRecipeIngredient@@W4CompoundType@@@Z
-    MCAPI static class RecipeIngredient getIngredientForCompound(::CompoundType);
+    MCAPI static class RecipeIngredient getIngredientForCompound(enum CompoundType type);
 
     // symbol: ?getItemForCompound@CompoundItem@@SA?AVItemInstance@@W4CompoundType@@H@Z
-    MCAPI static class ItemInstance getItemForCompound(::CompoundType, int);
+    MCAPI static class ItemInstance getItemForCompound(enum CompoundType type, int stackCount);
 
     // symbol: ?isCompoundItem@CompoundItem@@SA_NAEBVItemStackBase@@@Z
     MCAPI static bool isCompoundItem(class ItemStackBase const&);
@@ -113,7 +113,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_registerSpecialCompound@CompoundItem@@AEAAXAEBVItemInstance@@W4CompoundType@@@Z
-    MCAPI void _registerSpecialCompound(class ItemInstance const&, ::CompoundType);
+    MCAPI void _registerSpecialCompound(class ItemInstance const& item, enum CompoundType type);
 
     // symbol:
     // ?_getName@CompoundItem@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CompoundType@@@Z

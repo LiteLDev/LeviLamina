@@ -19,7 +19,7 @@ public:
     MCVAPI void broadcastChanges();
 
     // symbol: ?containerContentChanged@BaseContainerMenu@@UEAAXH@Z
-    MCVAPI void containerContentChanged(int);
+    MCVAPI void containerContentChanged(int slot);
 
     // symbol: ?getContainerId@BaseContainerMenu@@UEBA?AW4ContainerID@@XZ
     MCVAPI ::ContainerID getContainerId() const;
@@ -28,19 +28,19 @@ public:
     MCVAPI ::ContainerType getContainerType() const;
 
     // symbol: ?isResultSlot@BaseContainerMenu@@UEAA_NH@Z
-    MCVAPI bool isResultSlot(int);
+    MCVAPI bool isResultSlot(int slot);
 
     // symbol: ?isSlotDirty@BaseContainerMenu@@UEAA_NH@Z
-    MCVAPI bool isSlotDirty(int);
+    MCVAPI bool isSlotDirty(int slot);
 
     // symbol: ?setContainerId@BaseContainerMenu@@UEAAXW4ContainerID@@@Z
-    MCVAPI void setContainerId(::ContainerID);
+    MCVAPI void setContainerId(enum ContainerID id);
 
     // symbol: ?setContainerType@BaseContainerMenu@@UEAAXW4ContainerType@@@Z
-    MCVAPI void setContainerType(::ContainerType);
+    MCVAPI void setContainerType(enum ContainerType type);
 
     // symbol: ?setData@BaseContainerMenu@@UEAAXHH@Z
-    MCVAPI void setData(int, int);
+    MCVAPI void setData(int id, int value);
 
     // symbol: ??1BaseContainerMenu@@UEAA@XZ
     MCVAPI ~BaseContainerMenu();
@@ -50,7 +50,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_saveLastSlots@BaseContainerMenu@@IEAAXPEAVContainer@@@Z
-    MCAPI void _saveLastSlots(class Container*);
+    MCAPI void _saveLastSlots(class Container* container);
 
     // NOLINTEND
 };

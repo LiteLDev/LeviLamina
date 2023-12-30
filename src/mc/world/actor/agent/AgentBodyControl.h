@@ -17,7 +17,7 @@ public:
     virtual ~AgentBodyControl() = default;
 
     // vIndex: 1, symbol: ?clientTick@AgentBodyControl@@UEAAXAEAVMob@@@Z
-    virtual void clientTick(class Mob&);
+    virtual void clientTick(class Mob& mob);
 
     // symbol: ??0AgentBodyControl@@QEAA@XZ
     MCAPI AgentBodyControl();

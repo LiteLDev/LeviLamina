@@ -18,10 +18,10 @@ public:
     virtual ~EndPodiumFeature();
 
     // vIndex: 3, symbol: ?place@EndPodiumFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
     // symbol: ??0EndPodiumFeature@@QEAA@_N@Z
-    MCAPI explicit EndPodiumFeature(bool);
+    MCAPI explicit EndPodiumFeature(bool active);
 
     // symbol: ?CORNER_ROUNDING@EndPodiumFeature@@2MB
     MCAPI static float const CORNER_ROUNDING;

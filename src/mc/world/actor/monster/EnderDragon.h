@@ -38,7 +38,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@EnderDragon@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1EnderDragon@@UEAA@XZ
     virtual ~EnderDragon() = default;
@@ -59,7 +59,7 @@ public:
     virtual float getShadowRadius() const;
 
     // vIndex: 44, symbol: ?getHeadLookVector@EnderDragon@@UEBA?AVVec3@@M@Z
-    virtual class Vec3 getHeadLookVector(float) const;
+    virtual class Vec3 getHeadLookVector(float a) const;
 
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
@@ -77,13 +77,13 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 69, symbol: ?setSitting@EnderDragon@@UEAAX_N@Z
-    virtual void setSitting(bool);
+    virtual void setSitting(bool value);
 
     // vIndex: 78, symbol: ?isInvulnerableTo@EnderDragon@@UEBA_NAEBVActorDamageSource@@@Z
-    virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
+    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@EnderDragon@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(enum ActorEvent id, int data);
 
     // vIndex: 106, symbol: ?canChangeDimensionsUsingPortal@EnderDragon@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
@@ -110,7 +110,7 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@EnderDragon@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -134,11 +134,11 @@ public:
     MCAPI int findClosestNode();
 
     // symbol: ?findClosestNode@EnderDragon@@QEAAHAEBVVec3@@@Z
-    MCAPI int findClosestNode(class Vec3 const&);
+    MCAPI int findClosestNode(class Vec3 const& pos);
 
     // symbol:
     // ?findPath@EnderDragon@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@HHPEAVPathfinderNode@@@Z
-    MCAPI std::unique_ptr<class Path> findPath(int, int, class PathfinderNode*);
+    MCAPI std::unique_ptr<class Path> findPath(int startIndex, int endIndex, class PathfinderNode* finalNode);
 
     // symbol: ?getFlameCount@EnderDragon@@QEBAHXZ
     MCAPI int getFlameCount() const;
@@ -150,7 +150,7 @@ public:
     MCAPI class BlockPos getHeadPos() const;
 
     // symbol: ?getLatencyPos@EnderDragon@@QEBA?BV?$vector@MV?$allocator@M@std@@@std@@HM@Z
-    MCAPI std::vector<float> const getLatencyPos(int, float) const;
+    MCAPI std::vector<float> const getLatencyPos(int step, float a) const;
 
     // symbol: ?getNumCrystalsAlive@EnderDragon@@QEAAHXZ
     MCAPI int getNumCrystalsAlive();
@@ -162,7 +162,8 @@ public:
     MCAPI void incrementFlameCount();
 
     // symbol: ?onCrystalDestroyed@EnderDragon@@QEAAXAEBVEnderCrystal@@VBlockPos@@AEBVActorDamageSource@@@Z
-    MCAPI void onCrystalDestroyed(class EnderCrystal const&, class BlockPos, class ActorDamageSource const&);
+    MCAPI void
+    onCrystalDestroyed(class EnderCrystal const& crystal, class BlockPos pos, class ActorDamageSource const& source);
 
     // symbol: ?postAiStep@EnderDragon@@QEAAXXZ
     MCAPI void postAiStep();
@@ -180,17 +181,17 @@ public:
     MCAPI void setNumCrystalsAlive(int);
 
     // symbol: ?setTargetPos@EnderDragon@@QEAAXVVec3@@@Z
-    MCAPI void setTargetPos(class Vec3);
+    MCAPI void setTargetPos(class Vec3 pos);
 
     // symbol: ?setTurnSpeed@EnderDragon@@QEAAXM@Z
-    MCAPI void setTurnSpeed(float);
+    MCAPI void setTurnSpeed(float speed);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_hurt@EnderDragon@@IEAA_NPEAVAABB@@AEBVActorDamageSource@@M@Z
-    MCAPI bool _hurt(class AABB*, class ActorDamageSource const&, float);
+    MCAPI bool _hurt(class AABB* part, class ActorDamageSource const& source, float damage);
 
     // NOLINTEND
 

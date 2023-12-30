@@ -39,9 +39,11 @@ public:
 
     // vIndex: 19, symbol:
     // ?liquidCanFlowIntoFromDirection@SlabBlock@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z
-    virtual bool
-    liquidCanFlowIntoFromDirection(uchar, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
-        const;
+    virtual bool liquidCanFlowIntoFromDirection(
+        uchar                                                           flowIntoFacing,
+        std::function<class Block const&(class BlockPos const&)> const& getBlock,
+        class BlockPos const&                                           pos
+    ) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -110,13 +112,14 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 61, symbol: ?checkIsPathable@SlabBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    virtual bool
+    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
 
     // vIndex: 72, symbol: ?getRedstoneProperty@SlabBlock@@UEBA?AW4BlockProperty@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual ::BlockProperty getRedstoneProperty(class BlockSource&, class BlockPos const&) const;
+    virtual ::BlockProperty getRedstoneProperty(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
@@ -128,7 +131,8 @@ public:
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
     // vIndex: 107, symbol: ?getMobToSpawn@SlabBlock@@UEBAPEBVMobSpawnerData@@AEBVSpawnConditions@@AEAVBlockSource@@@Z
-    virtual class MobSpawnerData const* getMobToSpawn(class SpawnConditions const&, class BlockSource&) const;
+    virtual class MobSpawnerData const*
+    getMobToSpawn(class SpawnConditions const& conditions, class BlockSource& region) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -161,7 +165,7 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@SlabBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // symbol: ?canBeSilkTouched@SlabBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -171,7 +175,13 @@ public:
 
     // symbol:
     // ??0SlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVMaterial@@V?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI SlabBlock(std::string const&, int, bool, class Material const&, class WeakPtr<class BlockLegacy>);
+    MCAPI SlabBlock(
+        std::string const&               nameId,
+        int                              id,
+        bool                             _fullsize,
+        class Material const&            mat,
+        class WeakPtr<class BlockLegacy> baseSlab
+    );
 
     // NOLINTEND
 

@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addSubpackInfo@SubpackInfoCollection@@QEAAX$$QEAUSubpackInfo@@@Z
-    MCAPI void addSubpackInfo(struct SubpackInfo&&);
+    MCAPI void addSubpackInfo(struct SubpackInfo&& subpack);
 
     // NOLINTEND
 };

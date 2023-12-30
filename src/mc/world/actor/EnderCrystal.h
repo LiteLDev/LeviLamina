@@ -70,7 +70,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 78, symbol: ?isInvulnerableTo@EnderCrystal@@UEBA_NAEBVActorDamageSource@@@Z
-    virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
+    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -82,19 +82,19 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@EnderCrystal@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@EnderCrystal@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@EnderCrystal@@UEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0EnderCrystal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI EnderCrystal(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
     // symbol: ?setBeamTarget@EnderCrystal@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void setBeamTarget(class BlockPos const&);
+    MCAPI void setBeamTarget(class BlockPos const& target);
 
     // symbol:
     // ?setCrystalDamagedCallback@EnderCrystal@@QEAAXV?$function@$$A6AXAEAVEnderCrystal@@AEBVActorDamageSource@@@Z@std@@@Z

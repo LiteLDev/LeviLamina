@@ -12,11 +12,11 @@
 #include "mc/deps/webrtc/RtpTransceiverProxyWithInternal.h"
 #include "mc/deps/webrtc/SdpStateProvider.h"
 #include "mc/deps/webrtc/SdpType.h"
-#include "mc/deps/webrtc/detail/ContentSource.h"
-#include "mc/deps/webrtc/detail/MediaType.h"
-#include "mc/deps/webrtc/detail/RefCountReleaseStatus.h"
-#include "mc/deps/webrtc/detail/SSLRole.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
+#include "mc/deps/webrtc/cricket/ContentSource.h"
+#include "mc/deps/webrtc/cricket/MediaType.h"
+#include "mc/deps/webrtc/rtc/RefCountReleaseStatus.h"
+#include "mc/deps/webrtc/rtc/SSLRole.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off

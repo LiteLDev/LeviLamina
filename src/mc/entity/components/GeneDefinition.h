@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addGeneticVariant@GeneDefinition@@QEAAXAEBUGeneticVariant@@@Z
-    MCAPI void addGeneticVariant(struct GeneticVariant const&);
+    MCAPI void addGeneticVariant(struct GeneticVariant const& geneticVariant);
 
     // symbol: ??1GeneDefinition@@QEAA@XZ
     MCAPI ~GeneDefinition();

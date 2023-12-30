@@ -57,7 +57,7 @@ public:
     virtual void __unk_vfn_52();
 
     // vIndex: 53, symbol: ?isValidAuxValue@DyePowderItem@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int auxValue) const;
 
     // vIndex: 56, symbol: __unk_vfn_56
     virtual void __unk_vfn_56();

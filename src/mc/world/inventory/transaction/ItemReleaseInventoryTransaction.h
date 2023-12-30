@@ -25,20 +25,20 @@ public:
 
     // vIndex: 1, symbol:
     // ?read@ItemReleaseInventoryTransaction@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
     // vIndex: 2, symbol: ?write@ItemReleaseInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 3, symbol: ?postLoadItems@ItemReleaseInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
     virtual void postLoadItems(class BlockPalette&, bool);
 
     // vIndex: 4, symbol: ?handle@ItemReleaseInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
-    virtual ::InventoryTransactionError handle(class Player&, bool) const;
+    virtual ::InventoryTransactionError handle(class Player& player, bool isSenderAuthority) const;
 
     // vIndex: 5, symbol:
     // ?onTransactionError@ItemReleaseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
-    virtual void onTransactionError(class Player&, ::InventoryTransactionError) const;
+    virtual void onTransactionError(class Player& player, enum InventoryTransactionError error) const;
 
     // NOLINTEND
 };

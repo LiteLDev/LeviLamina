@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?containerContentChanged@HudContainerModel@@UEAAXH@Z
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int slot);
 
     // vIndex: 1, symbol: __gen_??1HudContainerModel@@UEAA@XZ
     virtual ~HudContainerModel() = default;
@@ -50,7 +50,7 @@ public:
     virtual void _init();
 
     // symbol: ??0HudContainerModel@@QEAA@W4ContainerEnumName@@AEAVPlayer@@@Z
-    MCAPI HudContainerModel(::ContainerEnumName, class Player&);
+    MCAPI HudContainerModel(enum ContainerEnumName containerName, class Player& player);
 
     // NOLINTEND
 

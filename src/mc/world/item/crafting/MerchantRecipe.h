@@ -31,10 +31,11 @@ public:
     MCAPI MerchantRecipe(class MerchantRecipe const&);
 
     // symbol: ??0MerchantRecipe@@QEAA@AEBVItemInstance@@0@Z
-    MCAPI MerchantRecipe(class ItemInstance const&, class ItemInstance const&);
+    MCAPI MerchantRecipe(class ItemInstance const& buy, class ItemInstance const& sell);
 
     // symbol: ??0MerchantRecipe@@QEAA@AEBVItemInstance@@00@Z
-    MCAPI MerchantRecipe(class ItemInstance const&, class ItemInstance const&, class ItemInstance const&);
+    MCAPI
+    MerchantRecipe(class ItemInstance const& buyA, class ItemInstance const& buyB, class ItemInstance const& sell);
 
     // symbol: ?calculateDemandPrices@MerchantRecipe@@QEAAXHHHH_NVBaseGameVersion@@@Z
     MCAPI void calculateDemandPrices(int, int, int, int, bool, class BaseGameVersion);
@@ -80,52 +81,52 @@ public:
     MCAPI bool hasSecondaryBuyItem() const;
 
     // symbol: ?increaseMaxUses@MerchantRecipe@@QEAAXH@Z
-    MCAPI void increaseMaxUses(int);
+    MCAPI void increaseMaxUses(int amount);
 
     // symbol: ?increaseUses@MerchantRecipe@@QEAAXXZ
     MCAPI void increaseUses();
 
     // symbol: ?init@MerchantRecipe@@QEAAXAEBVItemInstance@@00@Z
-    MCAPI void init(class ItemInstance const&, class ItemInstance const&, class ItemInstance const&);
+    MCAPI void init(class ItemInstance const& buyA, class ItemInstance const& buyB, class ItemInstance const& sell);
 
     // symbol: ?isOutOfUses@MerchantRecipe@@QEBA_NXZ
     MCAPI bool isOutOfUses() const;
 
     // symbol: ?isSame@MerchantRecipe@@QEBA_NAEBV1@@Z
-    MCAPI bool isSame(class MerchantRecipe const&) const;
+    MCAPI bool isSame(class MerchantRecipe const& other) const;
 
     // symbol: ?legacyCalculateDemandPrices@MerchantRecipe@@QEAAXHH@Z
     MCAPI void legacyCalculateDemandPrices(int, int);
 
     // symbol: ?load@MerchantRecipe@@QEAAXPEBVCompoundTag@@@Z
-    MCAPI void load(class CompoundTag const*);
+    MCAPI void load(class CompoundTag const* tag);
 
     // symbol: ??4MerchantRecipe@@QEAAAEAV0@AEBV0@@Z
     MCAPI class MerchantRecipe& operator=(class MerchantRecipe const&);
 
     // symbol: ?setDemand@MerchantRecipe@@QEAAXH@Z
-    MCAPI void setDemand(int);
+    MCAPI void setDemand(int demand);
 
     // symbol: ?setMaxUses@MerchantRecipe@@QEAAXH@Z
-    MCAPI void setMaxUses(int);
+    MCAPI void setMaxUses(int maxUses);
 
     // symbol: ?setPriceMultiplierA@MerchantRecipe@@QEAAXM@Z
-    MCAPI void setPriceMultiplierA(float);
+    MCAPI void setPriceMultiplierA(float priceMultiplier);
 
     // symbol: ?setPriceMultiplierB@MerchantRecipe@@QEAAXM@Z
-    MCAPI void setPriceMultiplierB(float);
+    MCAPI void setPriceMultiplierB(float priceMultiplier);
 
     // symbol: ?setRewardExp@MerchantRecipe@@QEAAX_N@Z
-    MCAPI void setRewardExp(bool);
+    MCAPI void setRewardExp(bool rewardExp);
 
     // symbol: ?setTier@MerchantRecipe@@QEAAXH@Z
-    MCAPI void setTier(int);
+    MCAPI void setTier(int tier);
 
     // symbol: ?setTraderExp@MerchantRecipe@@QEAAXI@Z
-    MCAPI void setTraderExp(uint);
+    MCAPI void setTraderExp(uint traderExp);
 
     // symbol: ?setUses@MerchantRecipe@@QEAAXH@Z
-    MCAPI void setUses(int);
+    MCAPI void setUses(int uses);
 
     // symbol: ?shouldRewardExp@MerchantRecipe@@QEBA_NXZ
     MCAPI bool shouldRewardExp() const;

@@ -19,19 +19,19 @@ public:
 
     // vIndex: 1, symbol:
     // ?add@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    virtual bool add(std::string const&, std::string const&);
+    virtual bool add(std::string const& key, std::string const& value);
 
     // vIndex: 2, symbol:
     // ?addOrUpdate@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    virtual bool addOrUpdate(std::string const&, std::string const&);
+    virtual bool addOrUpdate(std::string const& key, std::string const& value);
 
     // vIndex: 3, symbol:
     // ?remove@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual bool remove(std::string const&);
+    virtual bool remove(std::string const& key);
 
     // vIndex: 4, symbol:
     // ?get@NullSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@@Z
-    virtual bool get(std::string const&, std::string&);
+    virtual bool get(std::string const& key, std::string& outValue);
 
     // NOLINTEND
 };

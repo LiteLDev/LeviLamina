@@ -103,10 +103,10 @@ public:
     MCAPI ::ActorType lookupEntityType(struct ActorDefinitionIdentifier const&) const;
 
     // symbol: ?setDefinitionGroup@ActorFactory@@QEAAXPEAVActorDefinitionGroup@@@Z
-    MCAPI void setDefinitionGroup(class ActorDefinitionGroup*);
+    MCAPI void setDefinitionGroup(class ActorDefinitionGroup* group);
 
     // symbol: ?setEntityInitializer@ActorFactory@@QEAAXV?$shared_ptr@VIEntityInitializer@@@std@@@Z
-    MCAPI void setEntityInitializer(std::shared_ptr<class IEntityInitializer>);
+    MCAPI void setEntityInitializer(std::shared_ptr<class IEntityInitializer> entityInitializer);
 
     // symbol: ?clearEntityMappings@ActorFactory@@SAXXZ
     MCAPI static void clearEntityMappings();
@@ -117,7 +117,7 @@ public:
     fillFactoryData(struct ActorDefinitionIdentifier const&, struct ActorDefinitionIdentifier const&, std::unordered_map<std::string, struct ActorFactoryData> const&, struct ActorFactoryData&);
 
     // symbol: ?fixLegacyEntity@ActorFactory@@SAPEAVActor@@AEAVBlockSource@@PEBVCompoundTag@@@Z
-    MCAPI static class Actor* fixLegacyEntity(class BlockSource&, class CompoundTag const*);
+    MCAPI static class Actor* fixLegacyEntity(class BlockSource& region, class CompoundTag const* tag);
 
     // symbol:
     // ?registerEntityMapping@ActorFactory@@SAXAEBW4ActorType@@_NAEBQ6A?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@ZV?$optional@H@4@@Z

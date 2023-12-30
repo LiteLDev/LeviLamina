@@ -120,11 +120,11 @@ public:
     virtual void stopServerDiscovery();
 
     // vIndex: 7, symbol: ?addCustomServer@RakNetServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
-    virtual void addCustomServer(class AsynchronousIPResolver const&, int);
+    virtual void addCustomServer(class AsynchronousIPResolver const& futureIP, int port);
 
     // vIndex: 8, symbol:
     // ?addCustomServer@RakNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual void addCustomServer(std::string const&, int);
+    virtual void addCustomServer(std::string const& address, int port);
 
     // vIndex: 9, symbol:
     // ?getServerList@RakNetServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ
@@ -138,12 +138,15 @@ public:
 
     // vIndex: 12, symbol:
     // ?getPingTimeForGUID@RakNetServerLocator@@UEAAMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual float getPingTimeForGUID(std::string const&);
+    virtual float getPingTimeForGUID(std::string const& guid);
 
     // vIndex: 13, symbol:
     // ?checkCanConnectToCustomServerAsync@RakNetServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AXW4ServerConnectivityTestResult@@@Z@3@@Z
-    virtual void
-    checkCanConnectToCustomServerAsync(std::string, int, std::function<void(::ServerConnectivityTestResult)>);
+    virtual void checkCanConnectToCustomServerAsync(
+        std::string                                            hostIpAddress,
+        int                                                    port,
+        std::function<void(enum ServerConnectivityTestResult)> callback
+    );
 
     // symbol:
     // ??0RakNetServerLocator@@QEAA@AEAVRakNetConnector@@AEAVIPSupportInterface@RakPeerHelper@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_NW4RakNetServerLANVisibility@@W4PermissionLAN@@W4PermissionIPv6@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@V?$function@$$A6A?AV?$unique_ptr@VRakPeerInterface@RakNet@@P6AXPEAV12@@Z@std@@XZ@5@@Z
@@ -162,13 +165,13 @@ public:
     MCAPI void _activate();
 
     // symbol: ?_addCustomServerFromIpResolver@RakNetServerLocator@@AEAAXAEBVAsynchronousIPResolver@@H@Z
-    MCAPI void _addCustomServerFromIpResolver(class AsynchronousIPResolver const&, int);
+    MCAPI void _addCustomServerFromIpResolver(class AsynchronousIPResolver const& futureIP, int port);
 
     // symbol: ?_addCustomServerV4@RakNetServerLocator@@AEAA_NAEBVAsynchronousIPResolver@@H@Z
-    MCAPI bool _addCustomServerV4(class AsynchronousIPResolver const&, int);
+    MCAPI bool _addCustomServerV4(class AsynchronousIPResolver const& futureIP, int port);
 
     // symbol: ?_addCustomServerV6@RakNetServerLocator@@AEAA_NAEBVAsynchronousIPResolver@@H@Z
-    MCAPI bool _addCustomServerV6(class AsynchronousIPResolver const&, int);
+    MCAPI bool _addCustomServerV6(class AsynchronousIPResolver const& futureIP, int port);
 
     // symbol: ?_announceServer@RakNetServerLocator@@AEAAXAEBUAnnounceServerData@1@@Z
     MCAPI void _announceServer(struct RakNetServerLocator::AnnounceServerData const&);
@@ -183,11 +186,11 @@ public:
 
     // symbol:
     // ?_getHostGuid@RakNetServerLocator@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@H@Z
-    MCAPI std::string _getHostGuid(std::string const&, int);
+    MCAPI std::string _getHostGuid(std::string const& address, int port);
 
     // symbol:
     // ?_getServerOriginalAddress@RakNetServerLocator@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-    MCAPI void _getServerOriginalAddress(std::string&, std::string const&);
+    MCAPI void _getServerOriginalAddress(std::string& originalAddressToSet, std::string const& ip);
 
     // symbol:
     // ?_handleUnconnectedPong@RakNetServerLocator@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBUPacket@RakNet@@_N_K@Z
@@ -197,15 +200,16 @@ public:
     MCAPI void _initializeBroadcastAddresses();
 
     // symbol: ?_onPongReceive@RakNetServerLocator@@AEAA_NAEAMAEBURakNetGUID@RakNet@@AEBIH@Z
-    MCAPI bool _onPongReceive(float&, struct RakNet::RakNetGUID const&, uint const&, int);
+    MCAPI bool
+    _onPongReceive(float& latencyToSet, struct RakNet::RakNetGUID const& guid, uint const& receivedTime, int ipVersion);
 
     // symbol:
     // ?_pingServerV4@RakNetServerLocator@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI bool _pingServerV4(std::string const&, int);
+    MCAPI bool _pingServerV4(std::string const& address, int port);
 
     // symbol:
     // ?_pingServerV6@RakNetServerLocator@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI bool _pingServerV6(std::string const&, int);
+    MCAPI bool _pingServerV6(std::string const& address, int port);
 
     // symbol: ?_setPingResponder@RakNetServerLocator@@AEAAXAEBUAnnounceServerData@1@@Z
     MCAPI void _setPingResponder(struct RakNetServerLocator::AnnounceServerData const&);

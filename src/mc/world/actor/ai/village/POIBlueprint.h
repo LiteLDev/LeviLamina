@@ -16,7 +16,17 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0POIBlueprint@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4POIType@@M_N_K3000@Z
-    MCAPI POIBlueprint(std::string, ::POIType, float, bool, uint64, uint64, std::string, std::string, std::string);
+    MCAPI POIBlueprint(
+        std::string  name,
+        enum POIType type,
+        float        radius,
+        bool         useBoundingBox,
+        uint64       capacity,
+        uint64       weight,
+        std::string  soundEvent,
+        std::string  initEvent,
+        std::string  endEvent
+    );
 
     // NOLINTEND
 };

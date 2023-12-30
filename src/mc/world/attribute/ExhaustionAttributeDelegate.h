@@ -21,7 +21,7 @@ public:
     virtual void tick();
 
     // symbol: ??0ExhaustionAttributeDelegate@@QEAA@AEBVAttributeInstance@@@Z
-    MCAPI explicit ExhaustionAttributeDelegate(class AttributeInstance const&);
+    MCAPI explicit ExhaustionAttributeDelegate(class AttributeInstance const& _attribute);
 
     // NOLINTEND
 };

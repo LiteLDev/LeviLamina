@@ -17,7 +17,7 @@ public:
     MCAPI HomeComponent();
 
     // symbol: ?addAdditionalSaveData@HomeComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?getHomeDimension@HomeComponent@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ
     MCAPI DimensionType getHomeDimension() const;
@@ -41,10 +41,11 @@ public:
     MCAPI class HomeComponent& operator=(class HomeComponent&&);
 
     // symbol: ?readAdditionalSaveData@HomeComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?setHome@HomeComponent@@QEAAXAEBVBlockPos@@AEBV?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void setHome(class BlockPos const&, DimensionType const&);
+    MCAPI void setHome(class BlockPos const& pos, DimensionType const& id);
 
     // symbol: ?tick@HomeComponent@@QEAAXAEAVActor@@@Z
     MCAPI void tick(class Actor&);

@@ -97,13 +97,16 @@ public:
 
     // vIndex: 83, symbol:
     // ?readUserData@ShieldItem@@UEBAXAEAVItemStackBase@@AEAVIDataInput@@AEAVReadOnlyBinaryStream@@@Z
-    virtual void readUserData(class ItemStackBase&, class IDataInput&, class ReadOnlyBinaryStream&) const;
+    virtual void
+    readUserData(class ItemStackBase& stack, class IDataInput& input, class ReadOnlyBinaryStream& underlyingStream)
+        const;
 
     // vIndex: 84, symbol: ?writeUserData@ShieldItem@@UEBAXAEBVItemStackBase@@AEAVIDataOutput@@@Z
-    virtual void writeUserData(class ItemStackBase const&, class IDataOutput&) const;
+    virtual void writeUserData(class ItemStackBase const& stack, class IDataOutput& output) const;
 
     // vIndex: 86, symbol: ?inventoryTick@ShieldItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
-    virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
+    virtual bool
+    inventoryTick(class ItemStack& itemStack, class Level& level, class Actor& owner, int slot, bool selected) const;
 
     // vIndex: 88, symbol: ?getCooldownType@ShieldItem@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getCooldownType() const;
@@ -113,12 +116,22 @@ public:
 
     // vIndex: 92, symbol:
     // ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z
-    virtual ::InHandUpdateType
-    getInHandUpdateType(class Player const&, class ItemInstance const&, class ItemInstance const&, bool, bool) const;
+    virtual ::InHandUpdateType getInHandUpdateType(
+        class Player const&       player,
+        class ItemInstance const& oldItem,
+        class ItemInstance const& newItem,
+        bool                      isMainHand,
+        bool                      slotChanged
+    ) const;
 
     // vIndex: 93, symbol: ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
-    virtual ::InHandUpdateType
-    getInHandUpdateType(class Player const&, class ItemStack const&, class ItemStack const&, bool, bool) const;
+    virtual ::InHandUpdateType getInHandUpdateType(
+        class Player const&    player,
+        class ItemStack const& oldItem,
+        class ItemStack const& newItem,
+        bool                   isMainHand,
+        bool                   slotChanged
+    ) const;
 
     // vIndex: 97, symbol: ?getEquipSound@ShieldItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getEquipSound() const;
@@ -130,13 +143,13 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0ShieldItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ShieldItem(std::string const&, int);
+    MCAPI ShieldItem(std::string const& name, int id);
 
     // symbol: ?playBlockSound@ShieldItem@@QEBAXPEAVPlayer@@@Z
-    MCAPI void playBlockSound(class Player*) const;
+    MCAPI void playBlockSound(class Player* player) const;
 
     // symbol: ?playBreakSound@ShieldItem@@QEBAXPEAVPlayer@@@Z
-    MCAPI void playBreakSound(class Player*) const;
+    MCAPI void playBreakSound(class Player* player) const;
 
     // symbol: ?EFFECTIVE_BLOCK_DELAY@ShieldItem@@2HB
     MCAPI static int const EFFECTIVE_BLOCK_DELAY;

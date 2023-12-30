@@ -22,7 +22,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit PropertiesSettings(std::string const&);
+    MCAPI explicit PropertiesSettings(std::string const& filename);
 
     // symbol: ?adventureModeOverridesEnabled@PropertiesSettings@@QEBA_NXZ
     MCAPI bool adventureModeOverridesEnabled() const;
@@ -72,7 +72,7 @@ public:
 
     // symbol:
     // ?getCustomProperty@PropertiesSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-    MCAPI std::string const& getCustomProperty(std::string const&) const;
+    MCAPI std::string const& getCustomProperty(std::string const& propertyName) const;
 
     // symbol: ?getDefaultPlayerPermissionLevel@PropertiesSettings@@QEBA?BW4PlayerPermissionLevel@@XZ
     MCAPI ::PlayerPermissionLevel const getDefaultPlayerPermissionLevel() const;
@@ -201,11 +201,11 @@ public:
 
     // symbol:
     // ?parseBoolValue@PropertiesSettings@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static bool parseBoolValue(std::string const&);
+    MCAPI static bool parseBoolValue(std::string const& value);
 
     // symbol:
     // ?parseGameMode@PropertiesSettings@@SA?AW4GameType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static ::GameType parseGameMode(std::string const&);
+    MCAPI static ::GameType parseGameMode(std::string const& value);
 
     // symbol:
     // ?parseInt32Value@PropertiesSettings@@SAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

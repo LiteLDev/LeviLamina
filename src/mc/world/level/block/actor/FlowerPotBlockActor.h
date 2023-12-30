@@ -18,13 +18,13 @@ public:
     virtual ~FlowerPotBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@FlowerPotBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2, symbol: ?save@FlowerPotBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 8, symbol: ?onChanged@FlowerPotBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onChanged(class BlockSource&);
+    virtual void onChanged(class BlockSource& region);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
@@ -61,16 +61,16 @@ public:
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@FlowerPotBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ??0FlowerPotBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit FlowerPotBlockActor(class BlockPos const&);
+    MCAPI explicit FlowerPotBlockActor(class BlockPos const& pos);
 
     // symbol: ?getPlantItem@FlowerPotBlockActor@@QEBAPEBVBlock@@XZ
     MCAPI class Block const* getPlantItem() const;
 
     // symbol: ?setPlantItem@FlowerPotBlockActor@@QEAAXPEBVBlock@@@Z
-    MCAPI void setPlantItem(class Block const*);
+    MCAPI void setPlantItem(class Block const* plant);
 
     // NOLINTEND
 };

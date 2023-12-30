@@ -17,7 +17,7 @@ public:
     MCAPI EnchantmentInstance();
 
     // symbol: ??0EnchantmentInstance@@QEAA@W4Type@Enchant@@H@Z
-    MCAPI EnchantmentInstance(::Enchant::Type, int);
+    MCAPI EnchantmentInstance(enum Enchant::Type enchantType, int level);
 
     // symbol: ?getEnchantLevel@EnchantmentInstance@@QEBAHXZ
     MCAPI int getEnchantLevel() const;
@@ -26,7 +26,7 @@ public:
     MCAPI ::Enchant::Type getEnchantType() const;
 
     // symbol: ?setEnchantLevel@EnchantmentInstance@@QEAAXH@Z
-    MCAPI void setEnchantLevel(int);
+    MCAPI void setEnchantLevel(int level);
 
     // NOLINTEND
 };

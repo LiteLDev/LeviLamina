@@ -31,14 +31,21 @@ public:
 
     // symbol:
     // ??0PackInstance@@QEAA@V?$not_null@V?$NonOwnerPointer@VResourcePack@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NPEAVPackSettings@@@Z
-    MCAPI PackInstance(Bedrock::NotNullNonOwnerPtr<class ResourcePack>, std::string const&, bool, class PackSettings*);
+    MCAPI PackInstance(
+        Bedrock::NotNullNonOwnerPtr<class ResourcePack> pack,
+        std::string const&                              subpackName,
+        bool                                            isDependent,
+        class PackSettings*                             packSettings
+    );
 
     // symbol:
     // ??0PackInstance@@QEAA@V?$not_null@V?$NonOwnerPointer@VResourcePack@@@Bedrock@@@gsl@@H_NPEAVPackSettings@@@Z
     MCAPI PackInstance(Bedrock::NotNullNonOwnerPtr<class ResourcePack>, int, bool, class PackSettings*);
 
     // symbol: ?forEachIn@PackInstance@@QEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@_N@Z
-    MCAPI void forEachIn(class Core::Path const&, std::function<void(class Core::Path const&)>, bool) const;
+    MCAPI void
+    forEachIn(class Core::Path const& path, std::function<void(class Core::Path const&)> callback, bool recurseAnyways)
+        const;
 
     // symbol: ?getFolderName@PackInstance@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getFolderName() const;
@@ -69,7 +76,7 @@ public:
 
     // symbol:
     // ?getResource@PackInstance@@QEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool getResource(class Core::Path const&, std::string&) const;
+    MCAPI bool getResource(class Core::Path const& resourceName, std::string& resourceStream) const;
 
     // symbol: ?getResourceLocation@PackInstance@@QEBAAEBVResourceLocation@@XZ
     MCAPI class ResourceLocation const& getResourceLocation() const;
@@ -85,7 +92,7 @@ public:
     MCAPI class SemVersion const& getVersion() const;
 
     // symbol: ?hasResource@PackInstance@@QEBA_NAEBVPath@Core@@@Z
-    MCAPI bool hasResource(class Core::Path const&) const;
+    MCAPI bool hasResource(class Core::Path const& resourceName) const;
 
     // symbol: ?isBaseGamePack@PackInstance@@QEBA_NXZ
     MCAPI bool isBaseGamePack() const;
@@ -100,7 +107,7 @@ public:
     MCAPI class PackInstance& operator=(class PackInstance const&);
 
     // symbol: ??8PackInstance@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class PackInstance const&) const;
+    MCAPI bool operator==(class PackInstance const& rhs) const;
 
     // symbol: ??1PackInstance@@QEAA@XZ
     MCAPI ~PackInstance();

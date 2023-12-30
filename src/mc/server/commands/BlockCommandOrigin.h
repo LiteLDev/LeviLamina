@@ -83,7 +83,7 @@ public:
     virtual class CommandBlockActor* _getBlockEntity(class BlockSource&) const;
 
     // symbol: ??0BlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI BlockCommandOrigin(class BlockSource&, class BlockPos const&);
+    MCAPI BlockCommandOrigin(class BlockSource& region, class BlockPos const& pos);
 
     // symbol:
     // ??0BlockCommandOrigin@@QEAA@AEAVLevel@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@@Z

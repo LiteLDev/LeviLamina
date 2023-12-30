@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addAdditionalSaveData@InsomniaComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?getInsomniaTimerTicks@InsomniaComponent@@QEBAHXZ
     MCAPI int getInsomniaTimerTicks() const;
@@ -24,7 +24,8 @@ public:
     MCAPI int incrementTimeSinceRest();
 
     // symbol: ?readAdditionalSaveData@InsomniaComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?restartTimer@InsomniaComponent@@QEAAXXZ
     MCAPI void restartTimer();

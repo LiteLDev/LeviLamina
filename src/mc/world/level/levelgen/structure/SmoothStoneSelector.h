@@ -18,7 +18,7 @@ public:
     virtual ~SmoothStoneSelector();
 
     // vIndex: 1, symbol: ?next@SmoothStoneSelector@@UEBAAEBVBlock@@AEAVRandom@@HHH_N@Z
-    virtual class Block const& next(class Random&, int, int, int, bool) const;
+    virtual class Block const& next(class Random& random, int worldX, int worldY, int worldZ, bool isEdge) const;
 
     // NOLINTEND
 };

@@ -18,7 +18,7 @@ public:
     virtual ~LootItemActorHasMarkVariantCondition() = default;
 
     // vIndex: 1, symbol: ?applies@LootItemActorHasMarkVariantCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
-    virtual bool applies(class Random&, class LootTableContext&);
+    virtual bool applies(class Random& random, class LootTableContext& context);
 
     // NOLINTEND
 };

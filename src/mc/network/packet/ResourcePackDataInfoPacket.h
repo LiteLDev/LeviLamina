@@ -36,7 +36,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@ResourcePackDataInfoPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@ResourcePackDataInfoPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -47,7 +47,15 @@ public:
 
     // symbol:
     // ??0ResourcePackDataInfoPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IH_K0_NW4PackType@@@Z
-    MCAPI ResourcePackDataInfoPacket(std::string const&, uint, int, uint64, std::string const&, bool, ::PackType);
+    MCAPI ResourcePackDataInfoPacket(
+        std::string const& name,
+        uint               chunkSize,
+        int                nbChunk,
+        uint64             fileSize,
+        std::string const& fileHash,
+        bool               isPremium,
+        enum PackType      packType
+    );
 
     // NOLINTEND
 };

@@ -80,7 +80,7 @@ public:
 
     // symbol:
     // ??0ClientAutomationCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit ClientAutomationCommandOrigin(std::string const&);
+    MCAPI explicit ClientAutomationCommandOrigin(std::string const& requestId);
 
     // NOLINTEND
 };

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??4BlockEventDispatcherToken@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken&&);
+    MCAPI class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken&& rhs);
 
     // symbol: ?unregister@BlockEventDispatcherToken@@QEAAXXZ
     MCAPI void unregister();

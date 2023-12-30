@@ -47,7 +47,14 @@ public:
 
     // symbol:
     // ??0AttributeModifier@@QEAA@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MHH_N@Z
-    MCAPI AttributeModifier(class mce::UUID, std::string const&, float, int, int, bool);
+    MCAPI AttributeModifier(
+        class mce::UUID    id,
+        std::string const& name,
+        float              amount,
+        int                operation,
+        int                operand,
+        bool               serializable
+    );
 
     // symbol: ?getAmount@AttributeModifier@@QEBAMXZ
     MCAPI float getAmount() const;
@@ -68,10 +75,10 @@ public:
     MCAPI bool isSerializable() const;
 
     // symbol: ??4AttributeModifier@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class AttributeModifier& operator=(class AttributeModifier const&);
+    MCAPI class AttributeModifier& operator=(class AttributeModifier const& rhs);
 
     // symbol: ??8AttributeModifier@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class AttributeModifier const&) const;
+    MCAPI bool operator==(class AttributeModifier const& rhs) const;
 
     // NOLINTEND
 

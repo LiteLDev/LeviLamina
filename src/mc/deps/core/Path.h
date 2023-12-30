@@ -21,7 +21,7 @@ public:
     MCAPI Path();
 
     // symbol: ??8Path@Core@@QEBA_NAEBV01@@Z
-    MCAPI bool operator==(class Core::Path const&) const;
+    MCAPI bool operator==(class Core::Path const& rhs) const;
 
     // symbol: ??1Path@Core@@QEAA@XZ
     MCAPI ~Path();

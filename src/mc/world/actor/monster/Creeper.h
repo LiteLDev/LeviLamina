@@ -70,7 +70,7 @@ public:
     virtual void __unk_vfn_144();
 
     // vIndex: 147, symbol: ?die@Creeper@@UEAAXAEBVActorDamageSource@@@Z
-    virtual void die(class ActorDamageSource const&);
+    virtual void die(class ActorDamageSource const& source);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
@@ -88,7 +88,7 @@ public:
     MCAPI int getSwellDir();
 
     // symbol: ?getSwelling@Creeper@@QEBAMM@Z
-    MCAPI float getSwelling(float) const;
+    MCAPI float getSwelling(float a) const;
 
     // symbol: ?tryGetFromEntity@Creeper@@SAPEAV1@AEAVEntityContext@@_N@Z
     MCAPI static class Creeper* tryGetFromEntity(class EntityContext&, bool);
@@ -98,7 +98,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_setSwellDir@Creeper@@AEAAXH@Z
-    MCAPI void _setSwellDir(int);
+    MCAPI void _setSwellDir(int dir);
 
     // NOLINTEND
 };

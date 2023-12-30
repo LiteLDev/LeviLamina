@@ -30,10 +30,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@MoveToPOIGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 11, symbol: ?isValidTarget@MoveToPOIGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
 
     // vIndex: 14, symbol: ?_moveToBlock@MoveToPOIGoal@@MEAAXXZ
     virtual void _moveToBlock();
@@ -42,20 +42,20 @@ public:
     virtual class Vec3 _getTargetPosition() const;
 
     // vIndex: 17, symbol: ?_getOwnedPOI@MoveToPOIGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
-    virtual std::weak_ptr<class POIInstance> _getOwnedPOI(::POIType) const;
+    virtual std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType type) const;
 
     // symbol: ??0MoveToPOIGoal@@QEAA@AEAVMob@@MW4POIType@@M@Z
-    MCAPI MoveToPOIGoal(class Mob&, float, ::POIType, float);
+    MCAPI MoveToPOIGoal(class Mob& mob, float speedModifier, enum POIType poiType, float coolddownTimeout);
 
     // symbol: ?getPOI@MoveToPOIGoal@@QEAA_NW4POIType@@@Z
-    MCAPI bool getPOI(::POIType);
+    MCAPI bool getPOI(enum POIType type);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_canReachPOI@MoveToPOIGoal@@IEAA_NAEBVVec3@@M_N@Z
-    MCAPI bool _canReachPOI(class Vec3 const&, float, bool);
+    MCAPI bool _canReachPOI(class Vec3 const& pos, float radiusSqr, bool usingBoundingBox);
 
     // NOLINTEND
 

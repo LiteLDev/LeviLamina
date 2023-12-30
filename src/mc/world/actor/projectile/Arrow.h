@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@Arrow@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1Arrow@@UEAA@XZ
     virtual ~Arrow() = default;
@@ -58,7 +58,7 @@ public:
     virtual void __unk_vfn_47();
 
     // vIndex: 48, symbol: ?playerTouch@Arrow@@UEAAXAEAVPlayer@@@Z
-    virtual void playerTouch(class Player&);
+    virtual void playerTouch(class Player& player);
 
     // vIndex: 60, symbol: __unk_vfn_60
     virtual void __unk_vfn_60();
@@ -73,7 +73,7 @@ public:
     virtual void __unk_vfn_107();
 
     // vIndex: 141, symbol: ?setAuxValue@Arrow@@UEAAXH@Z
-    virtual void setAuxValue(int);
+    virtual void setAuxValue(int aux);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
@@ -82,10 +82,10 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@Arrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@Arrow@@MEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -94,13 +94,13 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 169, symbol: ?shoot@Arrow@@UEAAXAEBVVec3@@MM0@Z
-    virtual void shoot(class Vec3 const&, float, float, class Vec3 const&);
+    virtual void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
 
     // vIndex: 170, symbol: ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
     virtual class ItemStack _getPickupItem() const;
 
     // vIndex: 171, symbol: ?applyParticleColor@Arrow@@MEAAXPEAVParticle@@@Z
-    virtual void applyParticleColor(class Particle*);
+    virtual void applyParticleColor(class Particle* p);
 
     // vIndex: 172, symbol: ?getEffectColor@Arrow@@MEAA?AVColor@mce@@XZ
     virtual class mce::Color getEffectColor();
@@ -112,25 +112,25 @@ public:
     MCAPI Arrow(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
     // symbol: ?addMobEffect@Arrow@@QEAAXVMobEffectInstance@@@Z
-    MCAPI void addMobEffect(class MobEffectInstance);
+    MCAPI void addMobEffect(class MobEffectInstance effect);
 
     // symbol: ?getAuxValue@Arrow@@QEBAHXZ
     MCAPI int getAuxValue() const;
 
     // symbol: ?setCritical@Arrow@@QEAAX_N@Z
-    MCAPI void setCritical(bool);
+    MCAPI void setCritical(bool isCrit);
 
     // symbol: ?setEnchantFlame@Arrow@@QEAAXH@Z
-    MCAPI void setEnchantFlame(int);
+    MCAPI void setEnchantFlame(int level);
 
     // symbol: ?setEnchantInfinity@Arrow@@QEAAXH@Z
-    MCAPI void setEnchantInfinity(int);
+    MCAPI void setEnchantInfinity(int level);
 
     // symbol: ?setEnchantPower@Arrow@@QEAAXH@Z
-    MCAPI void setEnchantPower(int);
+    MCAPI void setEnchantPower(int level);
 
     // symbol: ?setEnchantPunch@Arrow@@QEAAXH@Z
-    MCAPI void setEnchantPunch(int);
+    MCAPI void setEnchantPunch(int level);
 
     // NOLINTEND
 };

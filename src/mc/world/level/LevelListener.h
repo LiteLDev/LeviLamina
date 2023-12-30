@@ -36,12 +36,24 @@ public:
     addParticleEffect(class HashedString const&, class Actor const&, class HashedString const&, class Vec3 const&, class MolangVariableMap const&);
 
     // vIndex: 4, symbol: ?addTerrainParticleEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
-    virtual void
-    addTerrainParticleEffect(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float);
+    virtual void addTerrainParticleEffect(
+        class BlockPos const& pos,
+        class Block const&    block,
+        class Vec3 const&     emitterPosition,
+        float                 intensity,
+        float                 velocityScalar,
+        float                 emitterRadius
+    );
 
     // vIndex: 5, symbol: ?addTerrainSlideEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
-    virtual void
-    addTerrainSlideEffect(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float);
+    virtual void addTerrainSlideEffect(
+        class BlockPos const& pos,
+        class Block const&    block,
+        class Vec3 const&     emitterPosition,
+        float                 intensity,
+        float                 velocityScalar,
+        float                 emitterRadius
+    );
 
     // vIndex: 6, symbol:
     // ?addBreakingItemParticleEffect@LevelListener@@UEAAXAEBVVec3@@W4ParticleType@@AEBUResolvedItemIconInfo@@@Z
@@ -49,11 +61,11 @@ public:
 
     // vIndex: 7, symbol:
     // ?playMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
-    virtual void playMusic(std::string const&, class Vec3 const&, float, float);
+    virtual void playMusic(std::string const& name, class Vec3 const& pos, float songOffset, float volume);
 
     // vIndex: 8, symbol:
     // ?playStreamingMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
-    virtual void playStreamingMusic(std::string const&, int, int, int);
+    virtual void playStreamingMusic(std::string const& name, int x, int y, int z);
 
     // vIndex: 9, symbol: ?onEntityAdded@LevelListener@@UEAAXAEAVActor@@@Z
     virtual void onEntityAdded(class Actor&);
@@ -84,7 +96,12 @@ public:
     virtual void levelEvent(::LevelEvent, class CompoundTag const&);
 
     // vIndex: 18, symbol: ?takePicture@LevelListener@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
-    virtual void takePicture(class cg::ImageBuffer&, class Actor*, class Actor*, struct ScreenshotOptions&);
+    virtual void takePicture(
+        class cg::ImageBuffer&    outImage,
+        class Actor*              camera,
+        class Actor*              target,
+        struct ScreenshotOptions& screenshotOptions
+    );
 
     // vIndex: 19, symbol: ?playerListChanged@LevelListener@@UEAAXXZ
     virtual void playerListChanged();

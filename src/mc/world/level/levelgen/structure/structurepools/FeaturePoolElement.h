@@ -20,12 +20,12 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?getSize@FeaturePoolElement@@UEBA?AVBlockPos@@W4Rotation@@@Z
-    virtual class BlockPos getSize(::Rotation) const;
+    virtual class BlockPos getSize(enum Rotation rotation) const;
 
     // vIndex: 2, symbol:
     // ?getJigsawMarkers@FeaturePoolElement@@UEBA?AV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@VBlockPos@@AEAVLegacyStructureSettings@@PEAVBlockSource@@@Z
     virtual std::vector<class JigsawBlockInfo>
-    getJigsawMarkers(class BlockPos, class LegacyStructureSettings&, class BlockSource*) const;
+    getJigsawMarkers(class BlockPos position, class LegacyStructureSettings& settings, class BlockSource* region) const;
 
     // vIndex: 7, symbol:
     // ?place@FeaturePoolElement@@UEBA_NAEAVBlockSource@@VBlockPos@@W4Rotation@@VBoundingBox@@AEAVRandom@@AEAV?$unordered_map@VBlockPos@@V?$optional@UActorDefinitionIdentifier@@@std@@U?$hash@VBlockPos@@@3@U?$equal_to@VBlockPos@@@3@V?$allocator@U?$pair@$$CBVBlockPos@@V?$optional@UActorDefinitionIdentifier@@@std@@@std@@@3@@std@@1@Z

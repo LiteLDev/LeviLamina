@@ -17,10 +17,10 @@ public:
     virtual ~EnderChestContainer() = default;
 
     // vIndex: 18, symbol: ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
-    virtual void startOpen(class Player&);
+    virtual void startOpen(class Player& player);
 
     // vIndex: 19, symbol: ?stopOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
-    virtual void stopOpen(class Player&);
+    virtual void stopOpen(class Player& player);
 
     // vIndex: 25, symbol: __unk_vfn_25
     virtual void __unk_vfn_25();

@@ -11,7 +11,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?log@ContentLogEndPoint@@UEAAXPEBD@Z
-    MCVAPI void log(char const*);
+    MCVAPI void log(char const* message);
 
     // symbol: ??1ContentLogEndPoint@@UEAA@XZ
     MCVAPI ~ContentLogEndPoint();

@@ -155,7 +155,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 121, symbol: ?getColor@UndyedShulkerBoxBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getColor(class Block const&) const;
+    virtual int getColor(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -173,7 +173,7 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // symbol: ??0UndyedShulkerBoxBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI UndyedShulkerBoxBlock(std::string const&, int);
+    MCAPI UndyedShulkerBoxBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 

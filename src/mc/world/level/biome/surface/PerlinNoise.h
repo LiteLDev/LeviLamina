@@ -14,22 +14,24 @@ public:
     MCAPI PerlinNoise(class PerlinNoise const&);
 
     // symbol: ??0PerlinNoise@@QEAA@AEAVIRandom@@HH@Z
-    MCAPI PerlinNoise(class IRandom&, int, int);
+    MCAPI PerlinNoise(class IRandom& random, int levels, int minLevel);
 
     // symbol: ??0PerlinNoise@@QEAA@IHH@Z
-    MCAPI PerlinNoise(uint, int, int);
+    MCAPI PerlinNoise(uint seed, int levels, int minLevel);
 
     // symbol: ??0PerlinNoise@@QEAA@AEAVIRandom@@UYBlendingBugSettings@@HH@Z
     MCAPI PerlinNoise(class IRandom&, struct YBlendingBugSettings, int, int);
 
     // symbol: ?getRegion@PerlinNoise@@QEBAXPEAMAEBVVec2@@HH1M@Z
-    MCAPI void getRegion(float*, class Vec2 const&, int, int, class Vec2 const&, float) const;
+    MCAPI void
+    getRegion(float* buffer, class Vec2 const& pos, int xSize, int zSize, class Vec2 const& scale, float pow) const;
 
     // symbol: ?getRegion@PerlinNoise@@QEBAXPEAMAEBVVec3@@HHH1@Z
-    MCAPI void getRegion(float*, class Vec3 const&, int, int, int, class Vec3 const&) const;
+    MCAPI void
+    getRegion(float* buffer, class Vec3 const& pos, int xSize, int ySize, int zSize, class Vec3 const& scale) const;
 
     // symbol: ?getValue@PerlinNoise@@QEBAMAEBVVec3@@@Z
-    MCAPI float getValue(class Vec3 const&) const;
+    MCAPI float getValue(class Vec3 const& pos) const;
 
     // symbol: ?getValueNormalized@PerlinNoise@@QEBAMAEBVVec3@@@Z
     MCAPI float getValueNormalized(class Vec3 const&) const;

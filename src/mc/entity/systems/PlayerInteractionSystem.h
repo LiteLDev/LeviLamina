@@ -24,7 +24,7 @@ public:
 
         // vIndex: 1, symbol:
         // ?getInteraction@InteractionMappingBase@PlayerInteractionSystem@@UEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-        virtual bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+        virtual bool getInteraction(class Actor& actor, class Player& player, class ActorInteraction& interaction);
 
         // NOLINTEND
     };
@@ -38,7 +38,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getInteraction@PlayerInteractionSystem@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor& actor, class Player& player, class ActorInteraction& interaction);
 
     // NOLINTEND
 };

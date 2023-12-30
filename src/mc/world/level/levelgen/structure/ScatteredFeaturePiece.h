@@ -23,10 +23,10 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0ScatteredFeaturePiece@@IEAA@HHHHHH@Z
-    MCAPI ScatteredFeaturePiece(int, int, int, int, int, int);
+    MCAPI ScatteredFeaturePiece(int west, int floor, int north, int width, int height, int depth);
 
     // symbol: ?updateAverageGroundHeight@ScatteredFeaturePiece@@IEAA_NAEAVBlockSource@@AEBVBoundingBox@@H@Z
-    MCAPI bool updateAverageGroundHeight(class BlockSource&, class BoundingBox const&, int);
+    MCAPI bool updateAverageGroundHeight(class BlockSource& region, class BoundingBox const& chunkBB, int offset);
 
     // NOLINTEND
 };

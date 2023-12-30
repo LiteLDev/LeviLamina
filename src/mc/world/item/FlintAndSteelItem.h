@@ -48,7 +48,7 @@ public:
     virtual void __unk_vfn_39();
 
     // vIndex: 42, symbol: ?isDestructive@FlintAndSteelItem@@UEBA_NH@Z
-    virtual bool isDestructive(int) const;
+    virtual bool isDestructive(int auxValue) const;
 
     // vIndex: 48, symbol: ?getEnchantSlot@FlintAndSteelItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
@@ -75,7 +75,8 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 71, symbol: ?dispense@FlintAndSteelItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 75, symbol: ?hurtActor@FlintAndSteelItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
@@ -88,7 +89,8 @@ public:
 
     // vIndex: 115, symbol:
     // ?_calculatePlacePos@FlintAndSteelItem@@MEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uchar&, class BlockPos&) const;
+    virtual bool
+    _calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
     // vIndex: 117, symbol:
     // ?_useOn@FlintAndSteelItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
@@ -96,7 +98,7 @@ public:
     _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
 
     // symbol: ??0FlintAndSteelItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FlintAndSteelItem(std::string const&, int);
+    MCAPI FlintAndSteelItem(std::string const& name, int id);
 
     // NOLINTEND
 };

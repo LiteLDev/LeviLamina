@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 4, symbol:
     // ?reloadHardcoded@ZombieVillager@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1ZombieVillager@@UEAA@XZ
     virtual ~ZombieVillager() = default;
@@ -65,7 +65,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 83, symbol: ?handleEntityEvent@ZombieVillager@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(enum ActorEvent id, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -77,10 +77,10 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@ZombieVillager@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@ZombieVillager@@MEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();

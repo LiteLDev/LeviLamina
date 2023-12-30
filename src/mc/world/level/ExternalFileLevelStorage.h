@@ -15,10 +15,11 @@ namespace ExternalFileLevelStorage {
 // NOLINTBEGIN
 // symbol:
 // ?_readLevelDataFromFile@ExternalFileLevelStorage@@YA?AVResult@Core@@AEBVPath@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelData@@@Z
-MCAPI class Core::Result _readLevelDataFromFile(class Core::Path const&, std::string const&, class LevelData&);
+MCAPI class Core::Result
+_readLevelDataFromFile(class Core::Path const& datFilename, std::string const& worldID, class LevelData& levelData);
 
 // symbol: ?_writeLevelDat@ExternalFileLevelStorage@@YA_NAEBVPath@Core@@AEBVLevelData@@@Z
-MCAPI bool _writeLevelDat(class Core::Path const&, class LevelData const&);
+MCAPI bool _writeLevelDat(class Core::Path const& datFilename, class LevelData const& levelData);
 
 // symbol:
 // ?getAccessStrategy@ExternalFileLevelStorage@@YA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
@@ -34,15 +35,15 @@ MCAPI std::vector<std::string> const getImportantFiles();
 MCAPI std::string getLevelIDFromPath(class Core::Path const&, class Core::Path const&);
 
 // symbol: ?isLevelMarkedForSync@ExternalFileLevelStorage@@YA_NAEBVPath@Core@@@Z
-MCAPI bool isLevelMarkedForSync(class Core::Path const&);
+MCAPI bool isLevelMarkedForSync(class Core::Path const& directory);
 
 // symbol:
 // ?makeReadableLevelnameFile@ExternalFileLevelStorage@@YAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI void makeReadableLevelnameFile(class Core::Path const&, std::string const&);
+MCAPI void makeReadableLevelnameFile(class Core::Path const& fullPath, std::string const& name);
 
 // symbol:
 // ?readLevelDataFromData@ExternalFileLevelStorage@@YA?AVResult@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelData@@@Z
-MCAPI class Core::Result readLevelDataFromData(std::string const&, class LevelData&);
+MCAPI class Core::Result readLevelDataFromData(std::string const& dataStr, class LevelData& levelData);
 
 // symbol:
 // ?readLevelDataFromFile@ExternalFileLevelStorage@@YA?AVResult@Core@@AEBVPath@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelData@@@Z
@@ -54,7 +55,13 @@ MCAPI bool readShallowLevelSummaryFromSyncFile(class Core::Path const&, std::str
 
 // symbol:
 // ?readSyncFileData@ExternalFileLevelStorage@@YA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEA_J2AEA_N@Z
-MCAPI bool readSyncFileData(class Core::Path const&, std::string&, int64&, int64&, bool&);
+MCAPI bool readSyncFileData(
+    class Core::Path const& directory,
+    std::string&            levelName,
+    int64&                  levelSize,
+    int64&                  remoteTimestamp,
+    bool&                   isSyncUsable
+);
 
 // symbol:
 // ?saveLevelData@ExternalFileLevelStorage@@YAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVLevelData@@_N@Z
@@ -66,10 +73,14 @@ MCAPI void saveLevelDataToPath(class Core::Path const&, std::string const&, clas
 
 // symbol:
 // ?saveLevelDisplayDataToCache@ExternalFileLevelStorage@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVLevelData@@V?$not_null@PEAVTaskGroup@@@gsl@@@Z
-MCAPI void saveLevelDisplayDataToCache(std::string const&, class LevelData const&, gsl::not_null<class TaskGroup*>);
+MCAPI void saveLevelDisplayDataToCache(
+    std::string const&              levelId,
+    class LevelData const&          levelData,
+    gsl::not_null<class TaskGroup*> taskGroup
+);
 
 // symbol: ?validateLevelDat@ExternalFileLevelStorage@@YA?AVResult@Core@@VPath@3@@Z
-MCAPI class Core::Result validateLevelDat(class Core::Path);
+MCAPI class Core::Result validateLevelDat(class Core::Path filePath);
 // NOLINTEND
 
 }; // namespace ExternalFileLevelStorage

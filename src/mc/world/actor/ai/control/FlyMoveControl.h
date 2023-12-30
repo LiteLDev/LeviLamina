@@ -17,7 +17,7 @@ public:
     virtual ~FlyMoveControl() = default;
 
     // vIndex: 2, symbol: ?tick@FlyMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
     // symbol: ??0FlyMoveControl@@QEAA@XZ
     MCAPI FlyMoveControl();

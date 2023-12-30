@@ -36,16 +36,16 @@ public:
     virtual bool isChunkSaved(class ChunkPos const&);
 
     // vIndex: 9, symbol: ?postProcess@DBChunkStorage@@UEAA_NAEAVChunkViewSource@@@Z
-    virtual bool postProcess(class ChunkViewSource&);
+    virtual bool postProcess(class ChunkViewSource& neighborhood);
 
     // vIndex: 10, symbol: ?checkAndReplaceChunk@DBChunkStorage@@UEAAXAEAVChunkViewSource@@AEAVLevelChunk@@@Z
-    virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
+    virtual void checkAndReplaceChunk(class ChunkViewSource& neighborhood, class LevelChunk& lc);
 
     // vIndex: 11, symbol: ?loadChunk@DBChunkStorage@@UEAAXAEAVLevelChunk@@_N@Z
-    virtual void loadChunk(class LevelChunk&, bool);
+    virtual void loadChunk(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
     // vIndex: 13, symbol: ?saveLiveChunk@DBChunkStorage@@UEAA_NAEAVLevelChunk@@@Z
-    virtual bool saveLiveChunk(class LevelChunk&);
+    virtual bool saveLiveChunk(class LevelChunk& lc);
 
     // vIndex: 14, symbol: ?writeEntityChunkTransfer@DBChunkStorage@@UEAAXAEAVLevelChunk@@@Z
     virtual void writeEntityChunkTransfer(class LevelChunk&);
@@ -66,7 +66,7 @@ public:
 
     // vIndex: 19, symbol:
     // ?acquireDiscarded@DBChunkStorage@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
-    virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
+    virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
 
     // vIndex: 21, symbol: ?flushPendingDiscardedChunkWrites@DBChunkStorage@@UEAAXXZ
     virtual void flushPendingDiscardedChunkWrites();
@@ -128,10 +128,10 @@ public:
     MCAPI std::optional<::LevelChunkFormat> _getLevelChunkFormat(std::string_view, std::string&);
 
     // symbol: ?_hasChunk@DBChunkStorage@@AEAA_NAEBVDBChunkStorageKey@@@Z
-    MCAPI bool _hasChunk(class DBChunkStorageKey const&);
+    MCAPI bool _hasChunk(class DBChunkStorageKey const& key);
 
     // symbol: ?_hasChunkUncached@DBChunkStorage@@AEAA_NAEBVDBChunkStorageKey@@@Z
-    MCAPI bool _hasChunkUncached(class DBChunkStorageKey const&);
+    MCAPI bool _hasChunkUncached(class DBChunkStorageKey const& key);
 
     // symbol:
     // ?_levelChunkCanBeUsedForBlending@DBChunkStorage@@AEAA?AU?$pair@_NV?$unique_ptr@UPersistentBlendData@@U?$default_delete@UPersistentBlendData@@@std@@@std@@@std@@AEBVDBChunkStorageKey@@@Z

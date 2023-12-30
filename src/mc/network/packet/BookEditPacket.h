@@ -34,7 +34,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@BookEditPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@BookEditPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -54,10 +54,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_readPage@BookEditPacket@@AEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void> _readPage(class ReadOnlyBinaryStream&);
+    MCAPI class Bedrock::Result<void> _readPage(class ReadOnlyBinaryStream& stream);
 
     // symbol: ?_writePage@BookEditPacket@@AEBAXAEAVBinaryStream@@@Z
-    MCAPI void _writePage(class BinaryStream&) const;
+    MCAPI void _writePage(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

@@ -29,11 +29,11 @@ public:
     // vIndex: 3, symbol: ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestAction@@UEAAXAEAVBlockPalette@@_N@Z
     virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
 
-    // vIndex: 4, symbol: ?_write@ItemStackRequestActionDrop@@MEBAXAEAVBinaryStream@@@Z
+    // vIndex: 4, symbol: ?_write@ItemStackRequestActionBeaconPayment@@MEBAXAEAVBinaryStream@@@Z
     virtual void _write(class BinaryStream&) const = 0;
 
     // vIndex: 5, symbol:
-    // ?_read@ItemStackRequestActionDrop@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
+    // ?_read@ItemStackRequestActionBeaconPayment@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&) = 0;
 
     // symbol: ??0ItemStackRequestAction@@QEAA@W4ItemStackRequestActionType@@@Z

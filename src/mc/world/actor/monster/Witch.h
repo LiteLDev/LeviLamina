@@ -64,10 +64,10 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 63, symbol: ?canAttack@Witch@@UEBA_NPEAVActor@@_N@Z
-    virtual bool canAttack(class Actor*, bool) const;
+    virtual bool canAttack(class Actor* entity, bool allowInvulnerable) const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@Witch@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(enum ActorEvent id, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -76,7 +76,7 @@ public:
     virtual void __unk_vfn_144();
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Witch@@UEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();

@@ -21,7 +21,7 @@ public:
     virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, ::Rotation const&) const;
 
     // symbol: ??0GroundedConstraint@@QEAA@AEAVStructureTemplate@@@Z
-    MCAPI explicit GroundedConstraint(class StructureTemplate&);
+    MCAPI explicit GroundedConstraint(class StructureTemplate& structure);
 
     // NOLINTEND
 };

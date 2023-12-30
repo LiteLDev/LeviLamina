@@ -63,7 +63,7 @@ public:
     virtual class CommandBlockActor* _getBlockEntity(class BlockSource&) const;
 
     // symbol: ??0MinecartBlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBUActorUniqueID@@@Z
-    MCAPI MinecartBlockCommandOrigin(class BlockSource&, struct ActorUniqueID const&);
+    MCAPI MinecartBlockCommandOrigin(class BlockSource& region, struct ActorUniqueID const& minecartId);
 
     // NOLINTEND
 };

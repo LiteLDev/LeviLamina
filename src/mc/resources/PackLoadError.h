@@ -28,7 +28,7 @@ public:
 
     // symbol:
     // ??0PackLoadError@@QEAA@W4PackParseErrorType@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCAPI PackLoadError(::PackParseErrorType, std::vector<std::string> const&);
+    MCAPI PackLoadError(enum PackParseErrorType errorType, std::vector<std::string> const& errorParam);
 
     // NOLINTEND
 };

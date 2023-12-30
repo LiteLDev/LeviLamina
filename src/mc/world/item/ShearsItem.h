@@ -42,7 +42,7 @@ public:
     virtual void __unk_vfn_17();
 
     // vIndex: 30, symbol: ?canDestroySpecial@ShearsItem@@UEBA_NAEBVBlock@@@Z
-    virtual bool canDestroySpecial(class Block const&) const;
+    virtual bool canDestroySpecial(class Block const& block) const;
 
     // vIndex: 37, symbol: __unk_vfn_37
     virtual void __unk_vfn_37();
@@ -75,16 +75,18 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 71, symbol: ?dispense@ShearsItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 74, symbol: ?getDestroySpeed@ShearsItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
-    virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
+    virtual float getDestroySpeed(class ItemStackBase const& itemStack, class Block const& block) const;
 
     // vIndex: 75, symbol: ?hurtActor@ShearsItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
     // vIndex: 79, symbol: ?mineBlock@ShearsItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool
+    mineBlock(class ItemStack& itemStack, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -98,7 +100,7 @@ public:
     _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
 
     // symbol: ??0ShearsItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ShearsItem(std::string const&, int);
+    MCAPI ShearsItem(std::string const& name, int itemId);
 
     // NOLINTEND
 

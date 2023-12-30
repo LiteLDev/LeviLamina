@@ -42,7 +42,7 @@ public:
     virtual void __unk_vfn_17();
 
     // vIndex: 36, symbol: ?isGlint@EndCrystalItem@@UEBA_NAEBVItemStackBase@@@Z
-    virtual bool isGlint(class ItemStackBase const&) const;
+    virtual bool isGlint(class ItemStackBase const& stack) const;
 
     // vIndex: 37, symbol: __unk_vfn_37
     virtual void __unk_vfn_37();
@@ -86,7 +86,7 @@ public:
     _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
 
     // symbol: ??0EndCrystalItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI EndCrystalItem(std::string const&, int);
+    MCAPI EndCrystalItem(std::string const& nameId, int id);
 
     // NOLINTEND
 };

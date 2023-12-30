@@ -27,7 +27,7 @@ public:
     MCAPI LoadTimeProfiler();
 
     // symbol: ?setEnabled@LoadTimeProfiler@Core@@QEAAX_N@Z
-    MCAPI void setEnabled(bool);
+    MCAPI void setEnabled(bool enabled);
 
     // NOLINTEND
 };

@@ -45,7 +45,7 @@ public:
     );
 
     // symbol: ?queue@BackgroundWorker@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
-    MCAPI void queue(std::shared_ptr<class BackgroundTaskBase>);
+    MCAPI void queue(std::shared_ptr<class BackgroundTaskBase> task);
 
     // symbol: ?start@BackgroundWorker@@QEAAXXZ
     MCAPI void start();

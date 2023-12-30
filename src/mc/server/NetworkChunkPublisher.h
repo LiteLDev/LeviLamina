@@ -47,7 +47,7 @@ public:
     MCAPI void moveRegion(class BlockPos const&, uint, class Vec3 const&, float);
 
     // symbol: ?prepareRegion@NetworkChunkPublisher@@QEAAXAEAVChunkSource@@AEBVChunkPos@@@Z
-    MCAPI void prepareRegion(class ChunkSource&, class ChunkPos const&);
+    MCAPI void prepareRegion(class ChunkSource& mainChunkSource, class ChunkPos const& center);
 
     // symbol: ?resetInitialSpawn@NetworkChunkPublisher@@QEAAXXZ
     MCAPI void resetInitialSpawn();
@@ -64,13 +64,18 @@ public:
 
     // symbol:
     // ?_sendQueuedChunk@NetworkChunkPublisher@@AEAA_NAEBUChunkPositionAndDimension@@PEAVTransferBuilder@Server@ClientBlobCache@@@Z
-    MCAPI bool
-    _sendQueuedChunk(struct ChunkPositionAndDimension const&, class ClientBlobCache::Server::TransferBuilder*);
+    MCAPI bool _sendQueuedChunk(
+        struct ChunkPositionAndDimension const&         queuedChunk,
+        class ClientBlobCache::Server::TransferBuilder* cachedTransfer
+    );
 
     // symbol:
     // ?_serializeAndCache@NetworkChunkPublisher@@AEAAXAEAVLevelChunkPacket@@AEAVTransferBuilder@Server@ClientBlobCache@@$$QEAV?$function@$$A6AXAEAVVarIntDataOutput@@@Z@std@@@Z
-    MCAPI void
-    _serializeAndCache(class LevelChunkPacket&, class ClientBlobCache::Server::TransferBuilder&, std::function<void(class VarIntDataOutput&)>&&);
+    MCAPI void _serializeAndCache(
+        class LevelChunkPacket&                         packet,
+        class ClientBlobCache::Server::TransferBuilder& transfer,
+        std::function<void(class VarIntDataOutput&)>&&  serialize
+    );
 
     // NOLINTEND
 };

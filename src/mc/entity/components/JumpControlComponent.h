@@ -36,29 +36,29 @@ public:
     MCAPI void initMultiTypeJumpComponent(class Mob&, class ActorDefinitionDescriptor&);
 
     // symbol: ?initializeFromDefinition@JumpControlComponent@@QEAAXAEAVMob@@PEAUJumpControlDescription@@@Z
-    MCAPI void initializeFromDefinition(class Mob&, struct JumpControlDescription*);
+    MCAPI void initializeFromDefinition(class Mob& owner, struct JumpControlDescription* description);
 
     // symbol: ??4JumpControlComponent@@QEAAAEAV0@AEBV0@@Z
     MCAPI class JumpControlComponent& operator=(class JumpControlComponent const&);
 
     // symbol: ?resetSpeedModifier@JumpControlComponent@@QEAAXAEAVMob@@@Z
-    MCAPI void resetSpeedModifier(class Mob&);
+    MCAPI void resetSpeedModifier(class Mob& owner);
 
     // symbol:
     // ?setInternalType@JumpControlComponent@@QEAAXV?$unique_ptr@VJumpControl@@U?$default_delete@VJumpControl@@@std@@@std@@@Z
-    MCAPI void setInternalType(std::unique_ptr<class JumpControl>);
+    MCAPI void setInternalType(std::unique_ptr<class JumpControl> type);
 
     // symbol: ?setJumpType@JumpControlComponent@@QEAAXW4JumpType@@@Z
     MCAPI void setJumpType(::JumpType);
 
     // symbol: ?setJumping@JumpControlComponent@@QEAAX_N@Z
-    MCAPI void setJumping(bool);
+    MCAPI void setJumping(bool jumping);
 
     // symbol: ?setSwimming@JumpControlComponent@@QEAAX_N@Z
-    MCAPI void setSwimming(bool);
+    MCAPI void setSwimming(bool swimming);
 
     // symbol: ?update@JumpControlComponent@@QEAAXAEAVMob@@@Z
-    MCAPI void update(class Mob&);
+    MCAPI void update(class Mob& owner);
 
     // symbol: ??1JumpControlComponent@@QEAA@XZ
     MCAPI ~JumpControlComponent();

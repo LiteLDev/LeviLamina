@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0CommandAreaFactory@@QEAA@AEAVDimension@@@Z
-    MCAPI explicit CommandAreaFactory(class Dimension&);
+    MCAPI explicit CommandAreaFactory(class Dimension& dimension);
 
     // symbol:
     // ?findArea@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0_N11@Z

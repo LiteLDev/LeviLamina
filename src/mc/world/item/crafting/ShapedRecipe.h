@@ -30,7 +30,7 @@ public:
     virtual int getCraftingSize() const;
 
     // vIndex: 3, symbol: ?getIngredient@ShapedRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-    virtual class RecipeIngredient const& getIngredient(int, int) const;
+    virtual class RecipeIngredient const& getIngredient(int x, int y) const;
 
     // vIndex: 4, symbol:
     // ?getResultItem@ShapedRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
@@ -64,7 +64,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?matches@ShapedRecipe@@AEBA_NAEBVCraftingContainer@@HH_N@Z
-    MCAPI bool matches(class CraftingContainer const&, int, int, bool) const;
+    MCAPI bool matches(class CraftingContainer const& craftSlots, int xOffs, int yOffs, bool xFlip) const;
 
     // NOLINTEND
 };

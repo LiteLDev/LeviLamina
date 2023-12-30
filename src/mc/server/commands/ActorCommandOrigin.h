@@ -74,7 +74,7 @@ public:
     virtual bool isValid() const;
 
     // symbol: ??0ActorCommandOrigin@@QEAA@AEAVActor@@@Z
-    MCAPI explicit ActorCommandOrigin(class Actor&);
+    MCAPI explicit ActorCommandOrigin(class Actor& origin);
 
     // NOLINTEND
 };

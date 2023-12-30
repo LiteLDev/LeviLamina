@@ -26,7 +26,7 @@ public:
     MCAPI ~TaskResult();
 
     // symbol: ?requeueAfter@TaskResult@@SA?AV1@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
-    MCAPI static class TaskResult requeueAfter(std::chrono::nanoseconds);
+    MCAPI static class TaskResult requeueAfter(std::chrono::nanoseconds requeueDelay);
 
     // symbol: ?Done@TaskResult@@2V1@B
     MCAPI static class TaskResult const Done;

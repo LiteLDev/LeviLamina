@@ -19,7 +19,7 @@ public:
     MCAPI static ::Direction::Type convertFacingDirectionToDirection(uchar);
 
     // symbol: ?getDirection@Direction@@SA?AW4Type@1@MM@Z
-    MCAPI static ::Direction::Type getDirection(float, float);
+    MCAPI static ::Direction::Type getDirection(float xd, float zd);
 
     // symbol: ?DIRECTION_CLOCKWISE@Direction@@2QBW4Type@1@B
     MCAPI static ::Direction::Type const DIRECTION_CLOCKWISE[];

@@ -34,7 +34,7 @@ public:
     MCAPI Ability();
 
     // symbol: ??0Ability@@QEAA@_NW4Options@0@@Z
-    MCAPI Ability(bool, ::Ability::Options);
+    MCAPI Ability(bool value, enum Ability::Options ops);
 
     // symbol: ?getBool@Ability@@QEBA_NXZ
     MCAPI bool getBool() const;
@@ -46,19 +46,19 @@ public:
     MCAPI ::Ability::Type getType() const;
 
     // symbol: ?hasOption@Ability@@QEBA_NW4Options@1@@Z
-    MCAPI bool hasOption(::Ability::Options) const;
+    MCAPI bool hasOption(enum Ability::Options op) const;
 
     // symbol: ?isSet@Ability@@QEBA_NXZ
     MCAPI bool isSet() const;
 
     // symbol: ??9Ability@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class Ability const&) const;
+    MCAPI bool operator!=(class Ability const& rhs) const;
 
     // symbol: ?setBool@Ability@@QEAAX_N@Z
-    MCAPI void setBool(bool);
+    MCAPI void setBool(bool val);
 
     // symbol: ?setFloat@Ability@@QEAAXM@Z
-    MCAPI void setFloat(float);
+    MCAPI void setFloat(float val);
 
     // symbol: ?unSet@Ability@@QEAAXXZ
     MCAPI void unSet();

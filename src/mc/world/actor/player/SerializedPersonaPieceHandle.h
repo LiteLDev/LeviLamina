@@ -26,8 +26,13 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0SerializedPersonaPieceHandle@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PieceType@persona@@VUUID@mce@@_N0@Z
-    MCAPI
-    SerializedPersonaPieceHandle(std::string const&, ::persona::PieceType, class mce::UUID, bool, std::string const&);
+    MCAPI SerializedPersonaPieceHandle(
+        std::string const&      pieceId,
+        enum persona::PieceType pieceType,
+        class mce::UUID         packId,
+        bool                    isDefaultPiece,
+        std::string const&      productId
+    );
 
     // symbol: ??4SerializedPersonaPieceHandle@@QEAAAEAV0@AEBV0@@Z
     MCAPI class SerializedPersonaPieceHandle& operator=(class SerializedPersonaPieceHandle const&);

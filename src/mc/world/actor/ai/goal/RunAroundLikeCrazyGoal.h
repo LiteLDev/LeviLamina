@@ -29,10 +29,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@RunAroundLikeCrazyGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& debugInfo) const;
 
     // symbol: ??0RunAroundLikeCrazyGoal@@QEAA@AEAVMob@@M@Z
-    MCAPI RunAroundLikeCrazyGoal(class Mob&, float);
+    MCAPI RunAroundLikeCrazyGoal(class Mob& mob, float speedModifier);
 
     // NOLINTEND
 };

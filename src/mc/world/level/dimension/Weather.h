@@ -76,46 +76,52 @@ public:
     virtual void __unk_vfn_24();
 
     // vIndex: 25, symbol: ?levelEvent@Weather@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
-    virtual void levelEvent(::LevelEvent, class Vec3 const&, int);
+    virtual void levelEvent(enum LevelEvent type, class Vec3 const& pos, int data);
 
     // symbol: ??0Weather@@QEAA@AEAVDimension@@AEAVIRandom@@@Z
     MCAPI Weather(class Dimension&, class IRandom&);
 
     // symbol: ?calcSnowBlockDepth@Weather@@QEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI int calcSnowBlockDepth(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI int calcSnowBlockDepth(class BlockSource& region, class BlockPos const& pos, int maxLayerDepth) const;
 
     // symbol: ?canPlaceTopSnow@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@_N2PEAH@Z
-    MCAPI bool canPlaceTopSnow(class BlockSource&, class BlockPos const&, bool, bool, int*) const;
+    MCAPI bool canPlaceTopSnow(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        bool                  fromFallingSnow,
+        bool                  checkSnowDepthLevel,
+        int*                  newHeightAfterPlacement
+    ) const;
 
     // symbol: ?getFogLevel@Weather@@QEBAMXZ
     MCAPI float getFogLevel() const;
 
     // symbol: ?getLightningLevel@Weather@@QEBAMM@Z
-    MCAPI float getLightningLevel(float) const;
+    MCAPI float getLightningLevel(float a) const;
 
     // symbol: ?getRainLevel@Weather@@QEBAMM@Z
-    MCAPI float getRainLevel(float) const;
+    MCAPI float getRainLevel(float a) const;
 
     // symbol: ?isLightning@Weather@@QEBA_NXZ
     MCAPI bool isLightning() const;
 
     // symbol: ?isPrecipitatingAt@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool isPrecipitatingAt(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool isPrecipitatingAt(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?isRaining@Weather@@QEBA_NXZ
     MCAPI bool isRaining() const;
 
     // symbol: ?isRainingAt@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool isRainingAt(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool isRainingAt(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?isSnowingAt@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool isSnowingAt(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool isSnowingAt(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?serverTick@Weather@@QEAAXXZ
     MCAPI void serverTick();
 
     // symbol: ?setSkyFlashTime@Weather@@QEAAXH@Z
-    MCAPI void setSkyFlashTime(int);
+    MCAPI void setSkyFlashTime(int flash);
 
     // symbol: ?setTargetLightningLevel@Weather@@QEAAXM@Z
     MCAPI void setTargetLightningLevel(float);
@@ -130,7 +136,12 @@ public:
     MCAPI void tick();
 
     // symbol: ?tryToPlaceTopSnow@Weather@@QEAA_NAEAVBlockSource@@AEBVBlockPos@@_N2@Z
-    MCAPI bool tryToPlaceTopSnow(class BlockSource&, class BlockPos const&, bool, bool);
+    MCAPI bool tryToPlaceTopSnow(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        bool                  fromFallingSnow,
+        bool                  fillLowerNeighborsFirst
+    );
 
     // symbol: ?calcLightningCycleTime@Weather@@SAHAEAVIRandom@@@Z
     MCAPI static int calcLightningCycleTime(class IRandom&);

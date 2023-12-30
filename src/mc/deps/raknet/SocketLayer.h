@@ -20,10 +20,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?GetMyAdapters@SocketLayer@RakNet@@SAXQEAUNetworkAdapter@2@@Z
-    MCAPI static void GetMyAdapters(struct RakNet::NetworkAdapter* const);
+    MCAPI static void GetMyAdapters(struct RakNet::NetworkAdapter* const adapters);
 
     // symbol: ?GetSubNetForSocketAndIp@SocketLayer@RakNet@@SA?AVRakString@2@V32@@Z
-    MCAPI static class RakNet::RakString GetSubNetForSocketAndIp(class RakNet::RakString);
+    MCAPI static class RakNet::RakString GetSubNetForSocketAndIp(class RakNet::RakString inIpString);
 
     // symbol: ?SetSocketOptions@SocketLayer@RakNet@@SAX_K_N1@Z
     MCAPI static void SetSocketOptions(uint64, bool, bool);

@@ -32,14 +32,15 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@SetScoreboardIdentityPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@SetScoreboardIdentityPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
 
     // symbol: ?change@SetScoreboardIdentityPacket@@SA?AV1@AEBUScoreboardId@@AEBUPlayerScoreboardId@@@Z
-    MCAPI static class SetScoreboardIdentityPacket change(struct ScoreboardId const&, struct PlayerScoreboardId const&);
+    MCAPI static class SetScoreboardIdentityPacket
+    change(struct ScoreboardId const& scoreboardId, struct PlayerScoreboardId const& playerId);
 
     // NOLINTEND
 };

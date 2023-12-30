@@ -30,22 +30,22 @@ public:
         MCAPI class LootTableContext create() const;
 
         // symbol: ?withDeathSource@Builder@LootTableContext@@QEAAAEAV12@PEBVActorDamageSource@@@Z
-        MCAPI class LootTableContext::Builder& withDeathSource(class ActorDamageSource const*);
+        MCAPI class LootTableContext::Builder& withDeathSource(class ActorDamageSource const* deathSource);
 
         // symbol: ?withExplosionRadius@Builder@LootTableContext@@QEAAAEAV12@M@Z
-        MCAPI class LootTableContext::Builder& withExplosionRadius(float);
+        MCAPI class LootTableContext::Builder& withExplosionRadius(float explosionRadius);
 
         // symbol: ?withKilledActor@Builder@LootTableContext@@QEAAAEAV12@PEAVActor@@@Z
         MCAPI class LootTableContext::Builder& withKilledActor(class Actor*);
 
         // symbol: ?withKillerPlayer@Builder@LootTableContext@@QEAAAEAV12@PEAVPlayer@@@Z
-        MCAPI class LootTableContext::Builder& withKillerPlayer(class Player*);
+        MCAPI class LootTableContext::Builder& withKillerPlayer(class Player* player);
 
         // symbol: ?withLuck@Builder@LootTableContext@@QEAAAEAV12@M@Z
-        MCAPI class LootTableContext::Builder& withLuck(float);
+        MCAPI class LootTableContext::Builder& withLuck(float luck);
 
         // symbol: ?withThisEntity@Builder@LootTableContext@@QEAAAEAV12@PEAVActor@@@Z
-        MCAPI class LootTableContext::Builder& withThisEntity(class Actor*);
+        MCAPI class LootTableContext::Builder& withThisEntity(class Actor* entity);
 
         // symbol: ?withTool@Builder@LootTableContext@@QEAAAEAV12@PEBVItemStack@@@Z
         MCAPI class LootTableContext::Builder& withTool(class ItemStack const*);
@@ -73,7 +73,7 @@ public:
     MCAPI DimensionType getDimensionId() const;
 
     // symbol: ?getEntity@LootTableContext@@QEBAPEAVActor@@W4ActorTarget@@@Z
-    MCAPI class Actor* getEntity(::ActorTarget) const;
+    MCAPI class Actor* getEntity(enum ActorTarget target) const;
 
     // symbol: ?getKilledEntity@LootTableContext@@QEBAPEAVActor@@XZ
     MCAPI class Actor* getKilledEntity() const;
@@ -101,7 +101,7 @@ public:
     MCAPI class ItemStack const* getTool() const;
 
     // symbol: ?removeVisitedTable@LootTableContext@@QEAAXPEBVLootTable@@@Z
-    MCAPI void removeVisitedTable(class LootTable const*);
+    MCAPI void removeVisitedTable(class LootTable const* table);
 
     // symbol:
     // ?setOriginalItemName@LootTableContext@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

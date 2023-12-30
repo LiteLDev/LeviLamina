@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 6, symbol:
     // ?initializeComponents@Throwable@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void initializeComponents(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: ??1Throwable@@UEAA@XZ
     virtual ~Throwable();
@@ -47,7 +47,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 27, symbol: ?lerpMotion@Throwable@@UEAAXAEBVVec3@@@Z
-    virtual void lerpMotion(class Vec3 const&);
+    virtual void lerpMotion(class Vec3 const& delta);
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
@@ -80,10 +80,10 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@Throwable@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@Throwable@@MEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -107,10 +107,10 @@ public:
     MCAPI Throwable(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
     // symbol: ?shoot@Throwable@@QEAAXAEAVMob@@@Z
-    MCAPI void shoot(class Mob&);
+    MCAPI void shoot(class Mob& shooter);
 
     // symbol: ?shoot@Throwable@@QEAAXAEBVVec3@@MM0@Z
-    MCAPI void shoot(class Vec3 const&, float, float, class Vec3 const&);
+    MCAPI void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
 
     // symbol: ?spawnPlayerProjectile@Throwable@@SAPEAVActor@@AEBUActorDefinitionIdentifier@@AEAVPlayer@@@Z
     MCAPI static class Actor* spawnPlayerProjectile(struct ActorDefinitionIdentifier const&, class Player&);

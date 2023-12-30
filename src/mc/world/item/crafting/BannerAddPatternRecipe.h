@@ -31,7 +31,7 @@ public:
     virtual int getCraftingSize() const;
 
     // vIndex: 3, symbol: ?getIngredient@BannerAddPatternRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-    virtual class RecipeIngredient const& getIngredient(int, int) const;
+    virtual class RecipeIngredient const& getIngredient(int x, int y) const;
 
     // vIndex: 4, symbol:
     // ?getResultItem@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
@@ -55,7 +55,7 @@ public:
     // symbol:
     // ?matchPatterns@BannerAddPatternRecipe@@QEBA?BV?$NonOwnerPointer@$$CBVBannerPattern@@@Bedrock@@AEBVCraftingContainer@@@Z
     MCAPI class Bedrock::NonOwnerPointer<class BannerPattern const> const
-    matchPatterns(class CraftingContainer const&) const;
+    matchPatterns(class CraftingContainer const& craftSlots) const;
 
     // symbol: ?ID@BannerAddPatternRecipe@@2VUUID@mce@@B
     MCAPI static class mce::UUID const ID;

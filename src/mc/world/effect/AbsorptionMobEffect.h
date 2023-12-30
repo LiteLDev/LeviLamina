@@ -18,10 +18,10 @@ public:
     virtual ~AbsorptionMobEffect() = default;
 
     // vIndex: 1, symbol: ?applyEffects@AbsorptionMobEffect@@UEBAXPEAVActor@@HH@Z
-    virtual void applyEffects(class Actor*, int, int) const;
+    virtual void applyEffects(class Actor* target, int durationTicks, int amplification) const;
 
     // vIndex: 2, symbol: ?removeEffects@AbsorptionMobEffect@@UEAAXPEAVActor@@@Z
-    virtual void removeEffects(class Actor*);
+    virtual void removeEffects(class Actor* target);
 
     // NOLINTEND
 };

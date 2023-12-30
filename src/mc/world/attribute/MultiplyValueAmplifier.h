@@ -18,7 +18,7 @@ public:
     virtual ~MultiplyValueAmplifier() = default;
 
     // vIndex: 1, symbol: ?getAmount@MultiplyValueAmplifier@@UEBAMHM@Z
-    virtual float getAmount(int, float) const;
+    virtual float getAmount(int amplification, float scale) const;
 
     // NOLINTEND
 };

@@ -30,17 +30,17 @@ public:
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const = 0;
 
     // symbol: ??0Feature@@QEAA@PEAVActor@@@Z
-    MCAPI explicit Feature(class Actor*);
+    MCAPI explicit Feature(class Actor* placer);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_placeBlock@Feature@@IEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    MCAPI bool _placeBlock(class BlockSource&, class BlockPos const&, class Block const&) const;
+    MCAPI bool _placeBlock(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // symbol: ?_setManuallyPlaced@Feature@@IEAAXPEAVActor@@@Z
-    MCAPI void _setManuallyPlaced(class Actor*);
+    MCAPI void _setManuallyPlaced(class Actor* placer);
 
     // NOLINTEND
 };

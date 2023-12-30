@@ -29,7 +29,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@MoveActorDeltaPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@MoveActorDeltaPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -39,7 +39,7 @@ public:
     MCAPI MoveActorDeltaPacket();
 
     // symbol: ??0MoveActorDeltaPacket@@QEAA@AEBVMoveActorDeltaData@@@Z
-    MCAPI explicit MoveActorDeltaPacket(class MoveActorDeltaData const&);
+    MCAPI explicit MoveActorDeltaPacket(class MoveActorDeltaData const& data);
 
     // NOLINTEND
 };

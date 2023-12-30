@@ -23,7 +23,7 @@ public:
     virtual ~RepeatUntilFailureDefinition() = default;
 
     // vIndex: 1, symbol: ?load@RepeatUntilFailureDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value value, class BehaviorFactory const& factory);
 
     // NOLINTEND
 };

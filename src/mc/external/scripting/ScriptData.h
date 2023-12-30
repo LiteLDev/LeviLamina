@@ -10,6 +10,13 @@ public:
     ScriptData& operator=(ScriptData const&);
     ScriptData(ScriptData const&);
     ScriptData();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??1ScriptData@Scripting@@QEAA@XZ
+    MCAPI ~ScriptData();
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting

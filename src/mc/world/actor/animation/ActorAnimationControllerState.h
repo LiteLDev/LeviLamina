@@ -16,13 +16,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addAnimation@ActorAnimationControllerState@@QEAAXAEBVHashedString@@@Z
-    MCAPI void addAnimation(class HashedString const&);
+    MCAPI void addAnimation(class HashedString const& name);
 
     // symbol: ?addAnimation@ActorAnimationControllerState@@QEAAXAEBVHashedString@@AEBVExpressionNode@@@Z
-    MCAPI void addAnimation(class HashedString const&, class ExpressionNode const&);
+    MCAPI void addAnimation(class HashedString const& name, class ExpressionNode const& blendWeightExpression);
 
     // symbol: ?addBlendTransitionKeyFrame@ActorAnimationControllerState@@QEAAXMM@Z
-    MCAPI void addBlendTransitionKeyFrame(float, float);
+    MCAPI void addBlendTransitionKeyFrame(float time, float blendValue);
 
     // symbol:
     // ?addEntryActorEvent@ActorAnimationControllerState@@QEAAAEAVActorAnimationEvent@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
@@ -45,10 +45,10 @@ public:
 
     // symbol:
     // ?addVariable@ActorAnimationControllerState@@QEAAAEAVStateAnimationVariable@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class StateAnimationVariable& addVariable(std::string const&);
+    MCAPI class StateAnimationVariable& addVariable(std::string const& variableName);
 
     // symbol: ?setBlendTransitionTime@ActorAnimationControllerState@@QEAAXM@Z
-    MCAPI void setBlendTransitionTime(float);
+    MCAPI void setBlendTransitionTime(float time);
 
     // NOLINTEND
 };

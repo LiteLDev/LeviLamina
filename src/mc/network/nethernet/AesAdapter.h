@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/webrtc/detail/AsyncSocketAdapter.h"
+#include "mc/deps/webrtc/rtc/AsyncSocketAdapter.h"
 #include "mc/network/nethernet/ErrorOr.h"
 
 // auto generated forward declare list

@@ -22,10 +22,10 @@ public:
     MCAPI bool isSet() const;
 
     // symbol: ?setOwnedRef@EntityOptionalOwnerRef@@QEAAXV?$OwnerPtrT@UEntityRefTraits@@@@@Z
-    MCAPI void setOwnedRef(class OwnerPtrT<struct EntityRefTraits>);
+    MCAPI void setOwnedRef(class OwnerPtrT<struct EntityRefTraits> owned);
 
     // symbol: ?setWeakRef@EntityOptionalOwnerRef@@QEAAXV?$WeakRefT@UEntityRefTraits@@@@@Z
-    MCAPI void setWeakRef(class WeakRefT<struct EntityRefTraits>);
+    MCAPI void setWeakRef(class WeakRefT<struct EntityRefTraits> weak);
 
     // symbol: ?tryGet@EntityOptionalOwnerRef@@QEBA?AV?$StackRefResultT@UEntityRefTraits@@@@XZ
     MCAPI class StackRefResultT<struct EntityRefTraits> tryGet() const;

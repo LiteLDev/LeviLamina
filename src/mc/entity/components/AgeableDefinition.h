@@ -27,7 +27,7 @@ public:
 
     // symbol:
     // ?addFeedItemByName@AgeableDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void addFeedItemByName(std::string const&);
+    MCAPI void addFeedItemByName(std::string const& name);
 
     // symbol: ?canGrowUp@AgeableDefinition@@QEBA_NXZ
     MCAPI bool canGrowUp() const;
@@ -36,13 +36,13 @@ public:
     MCAPI int getTicksAsBaby() const;
 
     // symbol: ?initialize@AgeableDefinition@@QEBAXAEAVEntityContext@@AEAVAgeableComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class AgeableComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class AgeableComponent& component) const;
 
     // symbol:
     // ?buildSchema@AgeableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAgeableDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition>>& root
+    );
 
     // NOLINTEND
 };

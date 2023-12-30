@@ -19,35 +19,48 @@ public:
     virtual ~OceanMonumentPiece();
 
     // vIndex: 5, symbol: ?postProcessMobsAt@OceanMonumentPiece@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual void postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // vIndex: 7, symbol: ?getWorldX@OceanMonumentPiece@@UEAAHHH@Z
-    virtual int getWorldX(int, int);
+    virtual int getWorldX(int x, int z);
 
     // vIndex: 8, symbol: ?getWorldZ@OceanMonumentPiece@@UEAAHHH@Z
-    virtual int getWorldZ(int, int);
+    virtual int getWorldZ(int x, int z);
 
     // vIndex: 12, symbol: ?addHardcodedSpawnAreas@OceanMonumentPiece@@UEBAXAEAVLevelChunk@@@Z
-    virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
+    virtual void addHardcodedSpawnAreas(class LevelChunk& chunk) const;
 
     // symbol: ??0OceanMonumentPiece@@QEAA@AEAHAEAVBoundingBox@@@Z
-    MCAPI OceanMonumentPiece(int&, class BoundingBox&);
+    MCAPI OceanMonumentPiece(int& orientation, class BoundingBox& boundingBox);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ??0OceanMonumentPiece@@IEAA@HAEAHV?$shared_ptr@VRoomDefinition@@@std@@HHH@Z
-    MCAPI OceanMonumentPiece(int, int&, std::shared_ptr<class RoomDefinition>, int, int, int);
+    MCAPI OceanMonumentPiece(
+        int                                   genDepth,
+        int&                                  orientation,
+        std::shared_ptr<class RoomDefinition> roomDefinition,
+        int                                   roomWidth,
+        int                                   roomHeight,
+        int                                   roomDepth
+    );
 
     // symbol: ?chunkIntersects@OceanMonumentPiece@@IEAA_NAEBVBoundingBox@@HHHH@Z
-    MCAPI bool chunkIntersects(class BoundingBox const&, int, int, int, int);
+    MCAPI bool chunkIntersects(class BoundingBox const& chunkBB, int x0, int z0, int x1, int z1);
 
     // symbol: ?generateDefaultFloor@OceanMonumentPiece@@IEAAXAEAVBlockSource@@AEBVBoundingBox@@HH_N@Z
-    MCAPI void generateDefaultFloor(class BlockSource&, class BoundingBox const&, int, int, bool);
+    MCAPI void generateDefaultFloor(
+        class BlockSource&       level,
+        class BoundingBox const& chunkBB,
+        int                      xOff,
+        int                      zOff,
+        bool                     downOpening
+    );
 
     // symbol: ?spawnElder@OceanMonumentPiece@@IEAAXAEAVBlockSource@@AEBVBoundingBox@@HHH@Z
-    MCAPI void spawnElder(class BlockSource&, class BoundingBox const&, int, int, int);
+    MCAPI void spawnElder(class BlockSource& level, class BoundingBox const& chunkBB, int x, int y, int z);
 
     // NOLINTEND
 

@@ -6,10 +6,10 @@
 #include "mc/deps/webrtc/MediaSourceInterface.h"
 #include "mc/deps/webrtc/RtpReceiverInternal.h"
 #include "mc/deps/webrtc/VideoRtpTrackSource.h"
-#include "mc/deps/webrtc/detail/MediaType.h"
-#include "mc/deps/webrtc/detail/RefCountReleaseStatus.h"
-#include "mc/deps/webrtc/detail/VideoSinkInterface.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
+#include "mc/deps/webrtc/cricket/MediaType.h"
+#include "mc/deps/webrtc/rtc/RefCountReleaseStatus.h"
+#include "mc/deps/webrtc/rtc/VideoSinkInterface.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off

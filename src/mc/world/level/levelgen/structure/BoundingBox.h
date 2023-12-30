@@ -109,7 +109,18 @@ public:
     MCAPI bool isValid() const;
 
     // symbol: ?orientBox@BoundingBox@@SA?AV1@HHHHHHHHHH@Z
-    MCAPI static class BoundingBox orientBox(int, int, int, int, int, int, int, int, int, int);
+    MCAPI static class BoundingBox orientBox(
+        int footX,
+        int footY,
+        int footZ,
+        int offX,
+        int offY,
+        int offZ,
+        int width,
+        int height,
+        int depth,
+        int orientation
+    );
 
     // NOLINTEND
 };

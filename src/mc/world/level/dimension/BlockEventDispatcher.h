@@ -24,7 +24,7 @@ public:
     registerListener(class Vec3 const&, float, std::function<void(class BlockPos const&, uint, class Block const&, class Actor*)>);
 
     // symbol: ?updatePosition@BlockEventDispatcher@@QEAAXHAEBVVec3@@@Z
-    MCAPI void updatePosition(int, class Vec3 const&);
+    MCAPI void updatePosition(int handle, class Vec3 const& newPosition);
 
     // NOLINTEND
 };

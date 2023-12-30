@@ -18,7 +18,7 @@ public:
     virtual ~FossilFeature() = default;
 
     // vIndex: 3, symbol: ?place@FossilFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
     // NOLINTEND
 

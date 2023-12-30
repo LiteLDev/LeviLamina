@@ -32,7 +32,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@PlaySoundPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@PlaySoundPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -42,7 +42,7 @@ public:
     MCAPI PlaySoundPacket();
 
     // symbol: ??0PlaySoundPacket@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
-    MCAPI PlaySoundPacket(std::string, class Vec3 const&, float, float);
+    MCAPI PlaySoundPacket(std::string name, class Vec3 const& pos, float volume, float pitch);
 
     // NOLINTEND
 };

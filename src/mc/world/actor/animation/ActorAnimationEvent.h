@@ -23,7 +23,7 @@ public:
     MCAPI ActorAnimationEvent(float, std::string const&, ::CurrentCmdVersion, ::MolangVersion);
 
     // symbol: ?fire@ActorAnimationEvent@@QEBAXAEAVRenderParams@@PEAVActor@@@Z
-    MCAPI void fire(class RenderParams&, class Actor*) const;
+    MCAPI void fire(class RenderParams& renderParams, class Actor* actor) const;
 
     // symbol: ??1ActorAnimationEvent@@QEAA@XZ
     MCAPI ~ActorAnimationEvent();

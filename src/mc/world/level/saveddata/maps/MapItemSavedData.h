@@ -42,12 +42,16 @@ public:
 
     // symbol:
     // ?addTrackedMapEntity@MapItemSavedData@@QEAA?AV?$shared_ptr@VMapItemTrackedActor@@@std@@AEAVActor@@W4Type@MapDecoration@@@Z
-    MCAPI std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(class Actor&, ::MapDecoration::Type);
+    MCAPI std::shared_ptr<class MapItemTrackedActor>
+          addTrackedMapEntity(class Actor& entity, enum MapDecoration::Type decorationType);
 
     // symbol:
     // ?addTrackedMapEntity@MapItemSavedData@@QEAA?AV?$shared_ptr@VMapItemTrackedActor@@@std@@AEBVBlockPos@@AEAVBlockSource@@W4Type@MapDecoration@@@Z
-    MCAPI std::shared_ptr<class MapItemTrackedActor>
-          addTrackedMapEntity(class BlockPos const&, class BlockSource&, ::MapDecoration::Type);
+    MCAPI std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(
+        class BlockPos const&    position,
+        class BlockSource&       region,
+        enum MapDecoration::Type decorationType
+    );
 
     // symbol: ?areClientPixelsDirty@MapItemSavedData@@QEBA_NXZ
     MCAPI bool areClientPixelsDirty() const;
@@ -56,10 +60,10 @@ public:
     MCAPI void checkNeedsResampling();
 
     // symbol: ?copyMapData@MapItemSavedData@@QEAAXAEBV1@@Z
-    MCAPI void copyMapData(class MapItemSavedData const&);
+    MCAPI void copyMapData(class MapItemSavedData const& map);
 
     // symbol: ?deserialize@MapItemSavedData@@QEAAXAEBVCompoundTag@@@Z
-    MCAPI void deserialize(class CompoundTag const&);
+    MCAPI void deserialize(class CompoundTag const& tag);
 
     // symbol: ?enableUnlimitedTracking@MapItemSavedData@@QEAAXXZ
     MCAPI void enableUnlimitedTracking();
@@ -85,24 +89,25 @@ public:
     MCAPI class buffer_span<uint> getPixels() const;
 
     // symbol: ?getTrackedMapEntity@MapItemSavedData@@QEAA?AV?$shared_ptr@VMapItemTrackedActor@@@std@@AEAVActor@@@Z
-    MCAPI std::shared_ptr<class MapItemTrackedActor> getTrackedMapEntity(class Actor&);
+    MCAPI std::shared_ptr<class MapItemTrackedActor> getTrackedMapEntity(class Actor& entity);
 
     // symbol:
     // ?getUpdatePacket@MapItemSavedData@@QEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEAVLevel@@AEBVBlockPos@@@Z
-    MCAPI std::unique_ptr<class Packet> getUpdatePacket(class Level&, class BlockPos const&) const;
+    MCAPI std::unique_ptr<class Packet> getUpdatePacket(class Level& level, class BlockPos const& pos) const;
 
     // symbol:
     // ?getUpdatePacket@MapItemSavedData@@QEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVItemStack@@AEAVLevel@@AEAVActor@@@Z
-    MCAPI std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const&, class Level&, class Actor&) const;
+    MCAPI std::unique_ptr<class Packet>
+          getUpdatePacket(class ItemStack const& itemInstance, class Level& level, class Actor& entity) const;
 
     // symbol: ?hasParentMap@MapItemSavedData@@QEBA_NXZ
     MCAPI bool hasParentMap() const;
 
     // symbol: ?isAdjacent@MapItemSavedData@@QEBA_NAEBV1@H@Z
-    MCAPI bool isAdjacent(class MapItemSavedData const&, int) const;
+    MCAPI bool isAdjacent(class MapItemSavedData const& other, int dir) const;
 
     // symbol: ?isChunkAllEmpty@MapItemSavedData@@QEBA_NUChunkBounds@1@@Z
-    MCAPI bool isChunkAllEmpty(struct MapItemSavedData::ChunkBounds) const;
+    MCAPI bool isChunkAllEmpty(struct MapItemSavedData::ChunkBounds bb) const;
 
     // symbol: ?isFullyExplored@MapItemSavedData@@QEBA_NXZ
     MCAPI bool isFullyExplored() const;
@@ -114,13 +119,13 @@ public:
     MCAPI bool needsResampling() const;
 
     // symbol: ?removeTrackedMapEntity@MapItemSavedData@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void removeTrackedMapEntity(class BlockPos const&);
+    MCAPI void removeTrackedMapEntity(class BlockPos const& position);
 
     // symbol: ?save@MapItemSavedData@@QEAAXAEAVLevelStorage@@@Z
-    MCAPI void save(class LevelStorage&);
+    MCAPI void save(class LevelStorage& storage);
 
     // symbol: ?serialize@MapItemSavedData@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void serialize(class CompoundTag&) const;
+    MCAPI void serialize(class CompoundTag& tag) const;
 
     // symbol: ?setClientPixelsDirty@MapItemSavedData@@QEAAX_N@Z
     MCAPI void setClientPixelsDirty(bool);
@@ -132,31 +137,38 @@ public:
     MCAPI void setLocked();
 
     // symbol: ?setMapSection@MapItemSavedData@@QEAAXV?$buffer_span@I@@UChunkBounds@1@@Z
-    MCAPI void setMapSection(class buffer_span<uint>, struct MapItemSavedData::ChunkBounds);
+    MCAPI void setMapSection(class buffer_span<uint> src, struct MapItemSavedData::ChunkBounds bb);
 
     // symbol: ?setOrigin@MapItemSavedData@@QEAAXVVec3@@HV?$AutomaticID@VDimension@@H@@_N2AEBVBlockPos@@@Z
-    MCAPI void setOrigin(class Vec3, int, DimensionType, bool, bool, class BlockPos const&);
+    MCAPI void setOrigin(
+        class Vec3            origin,
+        int                   mapScale,
+        DimensionType         dimension,
+        bool                  isLegacyLevel,
+        bool                  isCentered,
+        class BlockPos const& worldCenter
+    );
 
     // symbol: ?setPixel@MapItemSavedData@@QEAA_NIII@Z
-    MCAPI bool setPixel(uint, uint, uint);
+    MCAPI bool setPixel(uint color, uint x, uint y);
 
     // symbol: ?setPixelDirty@MapItemSavedData@@QEAAXII@Z
-    MCAPI void setPixelDirty(uint, uint);
+    MCAPI void setPixelDirty(uint x, uint y);
 
     // symbol: ?setScale@MapItemSavedData@@QEAAXH@Z
-    MCAPI void setScale(int);
+    MCAPI void setScale(int mapScale);
 
     // symbol: ?setScaleAndParentMapId@MapItemSavedData@@QEAAXHUActorUniqueID@@@Z
     MCAPI void setScaleAndParentMapId(int, struct ActorUniqueID);
 
     // symbol: ?tickByBlock@MapItemSavedData@@QEAAXAEBVBlockPos@@AEAVBlockSource@@@Z
-    MCAPI void tickByBlock(class BlockPos const&, class BlockSource&);
+    MCAPI void tickByBlock(class BlockPos const& pos, class BlockSource& region);
 
     // symbol: ?tickCarriedBy@MapItemSavedData@@QEAAXAEAVActor@@PEBVCompoundTag@@@Z
     MCAPI void tickCarriedBy(class Actor&, class CompoundTag const*);
 
     // symbol: ?trySave@MapItemSavedData@@QEAAXAEAVLevelStorage@@@Z
-    MCAPI void trySave(class LevelStorage&);
+    MCAPI void trySave(class LevelStorage& storage);
 
     // symbol: ??1MapItemSavedData@@QEAA@XZ
     MCAPI ~MapItemSavedData();
@@ -171,34 +183,51 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_addDecoration@MapItemSavedData@@AEAAXW4Type@MapDecoration@@AEAVLevel@@AEBUUniqueId@MapItemTrackedActor@@AEBVVec3@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@@Z
-    MCAPI void
-    _addDecoration(::MapDecoration::Type, class Level&, struct MapItemTrackedActor::UniqueId const&, class Vec3 const&, std::string const&, class mce::Color const&);
+    MCAPI void _addDecoration(
+        enum MapDecoration::Type                    type,
+        class Level&                                level,
+        struct MapItemTrackedActor::UniqueId const& key,
+        class Vec3 const&                           position,
+        std::string const&                          label,
+        class mce::Color const&                     color
+    );
 
     // symbol:
     // ?_addTrackedMapEntity@MapItemSavedData@@AEAA?AV?$shared_ptr@VMapItemTrackedActor@@@std@@AEBUUniqueId@MapItemTrackedActor@@AEAVBlockSource@@W4Type@MapDecoration@@@Z
-    MCAPI std::shared_ptr<class MapItemTrackedActor>
-          _addTrackedMapEntity(struct MapItemTrackedActor::UniqueId const&, class BlockSource&, ::MapDecoration::Type);
+    MCAPI std::shared_ptr<class MapItemTrackedActor> _addTrackedMapEntity(
+        struct MapItemTrackedActor::UniqueId const& key,
+        class BlockSource&                          region,
+        enum MapDecoration::Type                    decorationType
+    );
 
     // symbol: ?_deserializeData@MapItemSavedData@@AEAAXAEBVCompoundTag@@@Z
-    MCAPI void _deserializeData(class CompoundTag const&);
+    MCAPI void _deserializeData(class CompoundTag const& tag);
 
     // symbol: ?_removeDecoration@MapItemSavedData@@AEAAXAEBUUniqueId@MapItemTrackedActor@@@Z
-    MCAPI void _removeDecoration(struct MapItemTrackedActor::UniqueId const&);
+    MCAPI void _removeDecoration(struct MapItemTrackedActor::UniqueId const& id);
 
     // symbol: ?_removeTrackedMapEntity@MapItemSavedData@@AEAAXAEBUUniqueId@MapItemTrackedActor@@@Z
-    MCAPI void _removeTrackedMapEntity(struct MapItemTrackedActor::UniqueId const&);
+    MCAPI void _removeTrackedMapEntity(struct MapItemTrackedActor::UniqueId const& key);
 
     // symbol:
     // ?_updateTrackedEntityDecoration@MapItemSavedData@@AEAA_NAEAVBlockSource@@V?$shared_ptr@VMapItemTrackedActor@@@std@@@Z
-    MCAPI bool _updateTrackedEntityDecoration(class BlockSource&, std::shared_ptr<class MapItemTrackedActor>);
+    MCAPI bool
+    _updateTrackedEntityDecoration(class BlockSource& region, std::shared_ptr<class MapItemTrackedActor> trackedEntity);
 
     // symbol: ?_updateTrackedEntityDecorations@MapItemSavedData@@AEAAXAEAVBlockSource@@@Z
-    MCAPI void _updateTrackedEntityDecorations(class BlockSource&);
+    MCAPI void _updateTrackedEntityDecorations(class BlockSource& region);
 
     // symbol:
     // ?_updateTrackedPlayerDecorations@MapItemSavedData@@AEAAXAEAVBlockSource@@AEAVPlayer@@AEAVVec3@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVColor@mce@@V?$AutomaticID@VDimension@@H@@AEAW4Type@MapDecoration@@@Z
-    MCAPI void
-    _updateTrackedPlayerDecorations(class BlockSource&, class Player&, class Vec3&, std::string&, class mce::Color&, DimensionType, ::MapDecoration::Type&);
+    MCAPI void _updateTrackedPlayerDecorations(
+        class BlockSource&        region,
+        class Player&             player,
+        class Vec3&               decorationPos,
+        std::string&              decorationLabel,
+        class mce::Color&         decorationColor,
+        DimensionType             dimensionID,
+        enum MapDecoration::Type& type
+    );
 
     // NOLINTEND
 };

@@ -130,7 +130,8 @@ public:
     virtual void onStandOn(class EntityContext&, class BlockPos const&) const;
 
     // vIndex: 148, symbol: ?onFallOn@HoneyBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-    virtual void onFallOn(class BlockSource&, class BlockPos const&, class Actor&, float) const;
+    virtual void
+    onFallOn(class BlockSource& region, class BlockPos const& pos, class Actor& entity, float fallDistance) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -145,7 +146,7 @@ public:
     virtual int getExtraRenderLayers() const;
 
     // symbol: ??0HoneyBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI HoneyBlock(std::string const&, int, class Material const&);
+    MCAPI HoneyBlock(std::string const& nameId, int id, class Material const& material);
 
     // symbol: ?triggerSlidingDownEffects@HoneyBlock@@SAXAEAVActor@@AEBVBlockPos@@AEBVBlock@@@Z
     MCAPI static void triggerSlidingDownEffects(class Actor&, class BlockPos const&, class Block const&);

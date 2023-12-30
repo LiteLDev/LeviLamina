@@ -103,7 +103,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 84, symbol: ?mayPlace@ConduitBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar facing) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -133,7 +133,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0ConduitBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ConduitBlock(std::string const&, int);
+    MCAPI ConduitBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

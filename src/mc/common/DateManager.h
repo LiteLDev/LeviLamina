@@ -34,15 +34,16 @@ public:
     MCAPI static int64 getRealTime();
 
     // symbol: ?toDateTime@DateManager@@SA?AUtm@@_JW4TimeZoneType@1@@Z
-    MCAPI static struct tm toDateTime(int64, ::DateManager::TimeZoneType);
+    MCAPI static struct tm toDateTime(int64 time, enum DateManager::TimeZoneType returnType);
 
     // symbol:
     // ?toString@DateManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUtm@@AEBV23@@Z
-    MCAPI static std::string toString(struct tm const&, std::string const&);
+    MCAPI static std::string toString(struct tm const& time, std::string const& format);
 
     // symbol:
     // ?toString@DateManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEB_JW4TimeZoneType@1@AEBV23@@Z
-    MCAPI static std::string toString(int64 const&, ::DateManager::TimeZoneType, std::string const&);
+    MCAPI static std::string
+    toString(int64 const& time, enum DateManager::TimeZoneType outputType, std::string const& format);
 
     // symbol:
     // ?toString_DateTime@DateManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEB_JW4TimeZoneType@1@@Z

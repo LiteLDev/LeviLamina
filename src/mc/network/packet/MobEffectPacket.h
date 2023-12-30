@@ -43,7 +43,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@MobEffectPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@MobEffectPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -53,7 +53,14 @@ public:
     MCAPI MobEffectPacket();
 
     // symbol: ??0MobEffectPacket@@QEAA@VActorRuntimeID@@W4Event@0@HHH_N@Z
-    MCAPI MobEffectPacket(class ActorRuntimeID, ::MobEffectPacket::Event, int, int, int, bool);
+    MCAPI MobEffectPacket(
+        class ActorRuntimeID        runtimeId,
+        enum MobEffectPacket::Event event,
+        int                         effectId,
+        int                         duration,
+        int                         amplifier,
+        bool                        showParticles
+    );
 
     // NOLINTEND
 };

@@ -20,7 +20,7 @@ public:
     // vIndex: 2, symbol:
     // ?create@FitDoubleXRoom@@UEAA?AV?$unique_ptr@VOceanMonumentPiece@@U?$default_delete@VOceanMonumentPiece@@@std@@@std@@AEAHV?$shared_ptr@VRoomDefinition@@@3@AEAVRandom@@@Z
     virtual std::unique_ptr<class OceanMonumentPiece>
-    create(int&, std::shared_ptr<class RoomDefinition>, class Random&) = 0;
+    create(int& orientation, std::shared_ptr<class RoomDefinition> definition, class Random& random) = 0;
 
     // NOLINTEND
 };

@@ -24,10 +24,10 @@ public:
     virtual void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
 
     // vIndex: 5, symbol: ?getItem@CraftingContainer@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const& getItem(int) const;
+    virtual class ItemStack const& getItem(int slot) const;
 
     // vIndex: 10, symbol: ?setItem@CraftingContainer@@UEAAXHAEBVItemStack@@@Z
-    virtual void setItem(int, class ItemStack const&);
+    virtual void setItem(int slot, class ItemStack const& item);
 
     // vIndex: 16, symbol: ?getContainerSize@CraftingContainer@@UEBAHXZ
     virtual int getContainerSize() const;
@@ -48,16 +48,16 @@ public:
     virtual void __unk_vfn_26();
 
     // vIndex: 27, symbol: ?setContainerChanged@CraftingContainer@@UEAAXH@Z
-    virtual void setContainerChanged(int);
+    virtual void setContainerChanged(int slot);
 
     // vIndex: 34, symbol: __unk_vfn_34
     virtual void __unk_vfn_34();
 
     // symbol: ??0CraftingContainer@@QEAA@HH@Z
-    MCAPI CraftingContainer(int, int);
+    MCAPI CraftingContainer(int w, int h);
 
     // symbol: ?getItem@CraftingContainer@@QEBAAEBVItemStack@@HH@Z
-    MCAPI class ItemStack const& getItem(int, int) const;
+    MCAPI class ItemStack const& getItem(int x, int y) const;
 
     // NOLINTEND
 };

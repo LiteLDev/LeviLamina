@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/webrtc/RTCErrorOr.h"
-#include "mc/deps/webrtc/detail/RefCountInterface.h"
-#include "mc/deps/webrtc/detail/RefCountReleaseStatus.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
+#include "mc/deps/webrtc/rtc/RefCountInterface.h"
+#include "mc/deps/webrtc/rtc/RefCountReleaseStatus.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -36,7 +36,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@MoveToBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol:
     // ??0MoveToBlockGoal@@QEAA@AEAVMob@@MHHHHMVVec3@@MW4TargetSelectionMethod@@V?$vector@VActorDefinitionTrigger@@V?$allocator@VActorDefinitionTrigger@@@std@@@std@@3V?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@5@AEBVActorFilterGroup@@@Z
@@ -51,13 +51,13 @@ public:
     MCAPI void _checkIfStuck();
 
     // symbol: ?_isValidTarget@MoveToBlockGoal@@AEBA_NAEBVBlock@@@Z
-    MCAPI bool _isValidTarget(class Block const&) const;
+    MCAPI bool _isValidTarget(class Block const& candidateBlock) const;
 
     // symbol: ?_moveToBlock@MoveToBlockGoal@@AEAAXXZ
     MCAPI void _moveToBlock();
 
     // symbol: ?_pathIsValid@MoveToBlockGoal@@AEAA_NPEBVPath@@@Z
-    MCAPI bool _pathIsValid(class Path const*);
+    MCAPI bool _pathIsValid(class Path const* path);
 
     // NOLINTEND
 };

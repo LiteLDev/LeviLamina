@@ -80,13 +80,13 @@ public:
     _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
 
     // symbol: ??0LeadItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LeadItem(std::string const&, int);
+    MCAPI LeadItem(std::string const& name, int id);
 
     // symbol: ?bindPlayerMobs@LeadItem@@SA_NAEAVActor@@HHHPEAVItemInstance@@@Z
-    MCAPI static bool bindPlayerMobs(class Actor&, int, int, int, class ItemInstance*);
+    MCAPI static bool bindPlayerMobs(class Actor& entity, int x, int y, int z, class ItemInstance* itemUsed);
 
     // symbol: ?canBindPlayerMobs@LeadItem@@SA_NAEBVActor@@AEBVBlockPos@@@Z
-    MCAPI static bool canBindPlayerMobs(class Actor const&, class BlockPos const&);
+    MCAPI static bool canBindPlayerMobs(class Actor const& entity, class BlockPos const& blockPos);
 
     // NOLINTEND
 };

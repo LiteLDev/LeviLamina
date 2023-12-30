@@ -29,7 +29,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@SetActorLinkPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@SetActorLinkPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -39,7 +39,7 @@ public:
     MCAPI SetActorLinkPacket();
 
     // symbol: ??0SetActorLinkPacket@@QEAA@AEBUActorLink@@@Z
-    MCAPI explicit SetActorLinkPacket(struct ActorLink const&);
+    MCAPI explicit SetActorLinkPacket(struct ActorLink const& link);
 
     // NOLINTEND
 };

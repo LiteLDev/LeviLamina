@@ -137,11 +137,18 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@StainedGlassPaneBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol:
     // ??0StainedGlassPaneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N22@Z
-    MCAPI StainedGlassPaneBlock(std::string const&, int, class Material const&, bool, bool, bool);
+    MCAPI StainedGlassPaneBlock(
+        std::string const&    nameId,
+        int                   id,
+        class Material const& material,
+        bool                  dropsResources,
+        bool                  singleSide,
+        bool                  useableInCommands
+    );
 
     // NOLINTEND
 };

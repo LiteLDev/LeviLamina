@@ -24,7 +24,7 @@ public:
     MCVAPI void onLanguageSubpacksChanged();
 
     // symbol: ?onResourceManagerDestroyed@ResourcePackListener@@UEAAXAEAVResourcePackManager@@@Z
-    MCVAPI void onResourceManagerDestroyed(class ResourcePackManager&);
+    MCVAPI void onResourceManagerDestroyed(class ResourcePackManager& mgr);
 
     // NOLINTEND
 };

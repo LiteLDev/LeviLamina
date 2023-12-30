@@ -30,25 +30,38 @@ public:
 
         // vIndex: 4, symbol:
         // ?postProcess@PillagerOutpostPiece@PillagerOutpostPieces@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-        virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+        virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
         // vIndex: 5, symbol:
         // ?postProcessMobsAt@PillagerOutpostPiece@PillagerOutpostPieces@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-        virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
+        virtual void
+        postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
         // vIndex: 12, symbol:
         // ?addHardcodedSpawnAreas@PillagerOutpostPiece@PillagerOutpostPieces@@UEBAXAEAVLevelChunk@@@Z
-        virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
+        virtual void addHardcodedSpawnAreas(class LevelChunk& chunk) const;
 
         // vIndex: 13, symbol:
         // ?_handleDataMarker@PillagerOutpostPiece@PillagerOutpostPieces@@MEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-        virtual void
-        _handleDataMarker(std::string const&, class BlockPos const&, class BlockSource&, class Random&, class BoundingBox const&);
+        virtual void _handleDataMarker(
+            std::string const&       markerId,
+            class BlockPos const&    position,
+            class BlockSource&       region,
+            class Random&            random,
+            class BoundingBox const& chunkBB
+        );
 
         // symbol:
         // ??0PillagerOutpostPiece@PillagerOutpostPieces@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4Rotation@@M_NAEAVDimension@@@Z
-        MCAPI
-        PillagerOutpostPiece(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::string, class BlockPos const&, ::Rotation, float, bool, class Dimension&);
+        MCAPI PillagerOutpostPiece(
+            Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
+            std::string                                         templateName,
+            class BlockPos const&                               origin,
+            enum Rotation                                       rotation,
+            float                                               integrity,
+            bool                                                isSatellite,
+            class Dimension&                                    dimension
+        );
 
         // NOLINTEND
 
@@ -56,8 +69,12 @@ public:
         // NOLINTBEGIN
         // symbol:
         // ?_addMobsFromPositions@PillagerOutpostPiece@PillagerOutpostPieces@@AEAAXAEBVBoundingBox@@AEBUActorDefinitionIdentifier@@AEAVBlockSource@@AEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@@Z
-        MCAPI void
-        _addMobsFromPositions(class BoundingBox const&, struct ActorDefinitionIdentifier const&, class BlockSource&, std::vector<class BlockPos> const&);
+        MCAPI void _addMobsFromPositions(
+            class BoundingBox const&                chunkBB,
+            struct ActorDefinitionIdentifier const& definition,
+            class BlockSource&                      region,
+            std::vector<class BlockPos> const&      entityPositions
+        );
 
         // NOLINTEND
     };
@@ -72,13 +89,25 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_addPiece@PillagerOutpostPieces@@CAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBVBlockPos@@AEBW4Rotation@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEAVDimension@@@Z
-    MCAPI static void
-    _addPiece(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class BlockPos const&, ::Rotation const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, class Dimension&);
+    MCAPI static void _addPiece(
+        Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
+        class BlockPos const&                               position,
+        enum Rotation const&                                rotation,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
+        class Random&                                       random,
+        class Dimension&                                    dimension
+    );
 
     // symbol:
     // ?_addScatteredPieces@PillagerOutpostPieces@@CAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEAVRandom@@AEBW4Rotation@@AEBVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVDimension@@@Z
-    MCAPI static void
-    _addScatteredPieces(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class Random&, ::Rotation const&, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Dimension&);
+    MCAPI static void _addScatteredPieces(
+        Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
+        class Random&                                       random,
+        enum Rotation const&                                rotation,
+        class BlockPos const&                               parentPos,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
+        class Dimension&                                    dimension
+    );
 
     // NOLINTEND
 

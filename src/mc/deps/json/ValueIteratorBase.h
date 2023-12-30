@@ -35,7 +35,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ValueIteratorBase@Json@@QEAA@AEBV01@@Z
-    MCAPI ValueIteratorBase(class Json::ValueIteratorBase const&);
+    MCAPI ValueIteratorBase(class Json::ValueIteratorBase const& other);
 
     // symbol: ?memberName@ValueIteratorBase@Json@@QEBAPEBDXZ
     MCAPI char const* memberName() const;
@@ -54,7 +54,7 @@ public:
     MCAPI void increment();
 
     // symbol: ?isEqual@ValueIteratorBase@Json@@IEBA_NAEBV12@@Z
-    MCAPI bool isEqual(class Json::ValueIteratorBase const&) const;
+    MCAPI bool isEqual(class Json::ValueIteratorBase const& other) const;
 
     // NOLINTEND
 };

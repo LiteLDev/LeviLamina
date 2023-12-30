@@ -37,7 +37,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@PlayerActionPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@PlayerActionPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -47,16 +47,26 @@ public:
     MCAPI PlayerActionPacket();
 
     // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@VActorRuntimeID@@@Z
-    MCAPI PlayerActionPacket(::PlayerActionType, class ActorRuntimeID);
+    MCAPI PlayerActionPacket(enum PlayerActionType action, class ActorRuntimeID runtimeId);
 
     // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@VActorRuntimeID@@@Z
-    MCAPI PlayerActionPacket(::PlayerActionType, class BlockPos const&, class ActorRuntimeID);
+    MCAPI PlayerActionPacket(enum PlayerActionType action, class BlockPos const& pos, class ActorRuntimeID runtimeId);
 
     // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@HVActorRuntimeID@@@Z
-    MCAPI PlayerActionPacket(::PlayerActionType, class BlockPos const&, int, class ActorRuntimeID);
+    MCAPI PlayerActionPacket(
+        enum PlayerActionType action,
+        class BlockPos const& pos,
+        int                   data,
+        class ActorRuntimeID  runtimeId
+    );
 
     // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@EVActorRuntimeID@@@Z
-    MCAPI PlayerActionPacket(::PlayerActionType, class BlockPos const&, uchar, class ActorRuntimeID);
+    MCAPI PlayerActionPacket(
+        enum PlayerActionType action,
+        class BlockPos const& pos,
+        uchar                 face,
+        class ActorRuntimeID  runtimeId
+    );
 
     // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@1HVActorRuntimeID@@@Z
     MCAPI

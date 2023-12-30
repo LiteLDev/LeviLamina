@@ -14,10 +14,10 @@ public:
     MCAPI ClockSpriteCalculator();
 
     // symbol: ?update@ClockSpriteCalculator@@QEAAHAEAVActor@@_N@Z
-    MCAPI int update(class Actor&, bool);
+    MCAPI int update(class Actor& entity, bool instant);
 
     // symbol: ?update@ClockSpriteCalculator@@QEAAHAEBVBlockSource@@AEBVVec3@@_N@Z
-    MCAPI int update(class BlockSource const&, class Vec3 const&, bool);
+    MCAPI int update(class BlockSource const& region, class Vec3 const& pos, bool instant);
 
     // NOLINTEND
 };

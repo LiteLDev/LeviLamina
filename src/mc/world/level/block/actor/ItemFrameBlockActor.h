@@ -20,16 +20,16 @@ public:
     virtual ~ItemFrameBlockActor();
 
     // vIndex: 1, symbol: ?load@ItemFrameBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2, symbol: ?save@ItemFrameBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 7, symbol: ?tick@ItemFrameBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void tick(class BlockSource&);
+    virtual void tick(class BlockSource& region);
 
     // vIndex: 8, symbol: ?onChanged@ItemFrameBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onChanged(class BlockSource&);
+    virtual void onChanged(class BlockSource& region);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
@@ -41,7 +41,7 @@ public:
     virtual void __unk_vfn_18();
 
     // vIndex: 19, symbol: ?getShadowRadius@ItemFrameBlockActor@@UEBAMAEAVBlockSource@@@Z
-    virtual float getShadowRadius(class BlockSource&) const;
+    virtual float getShadowRadius(class BlockSource& region) const;
 
     // vIndex: 30, symbol: __unk_vfn_30
     virtual void __unk_vfn_30();
@@ -72,10 +72,10 @@ public:
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@ItemFrameBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ??0ItemFrameBlockActor@@QEAA@VBlockPos@@@Z
-    MCAPI explicit ItemFrameBlockActor(class BlockPos);
+    MCAPI explicit ItemFrameBlockActor(class BlockPos pos);
 
     // symbol:
     // ??0ItemFrameBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -113,7 +113,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_checkMapRemoval@ItemFrameBlockActor@@AEAAXAEAVBlockSource@@AEAVItemInstance@@@Z
-    MCAPI void _checkMapRemoval(class BlockSource&, class ItemInstance&);
+    MCAPI void _checkMapRemoval(class BlockSource& region, class ItemInstance& item);
 
     // symbol: ?_updateBit@ItemFrameBlockActor@@AEAAXAEAVBlockSource@@AEBV?$BlockStateVariant@_N@@AEBVHashedString@@@Z
     MCAPI void _updateBit(class BlockSource&, class BlockStateVariant<bool> const&, class HashedString const&);

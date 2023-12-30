@@ -17,11 +17,11 @@ public:
 
     // symbol:
     // ?addState@ActorAnimationController@@QEAAAEAV?$shared_ptr@VActorAnimationControllerState@@@std@@AEBVHashedString@@@Z
-    MCAPI std::shared_ptr<class ActorAnimationControllerState>& addState(class HashedString const&);
+    MCAPI std::shared_ptr<class ActorAnimationControllerState>& addState(class HashedString const& name);
 
     // symbol:
     // ?findStateIndex@ActorAnimationController@@QEBA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N_K@Z
-    MCAPI uint64 findStateIndex(std::string const&, bool, uint64) const;
+    MCAPI uint64 findStateIndex(std::string const& name, bool missingIsOkay, uint64 defaultState) const;
 
     // symbol: ?resolveTransitionStateIndices@ActorAnimationController@@QEAAXXZ
     MCAPI void resolveTransitionStateIndices();

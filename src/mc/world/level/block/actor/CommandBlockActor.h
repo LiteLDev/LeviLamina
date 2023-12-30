@@ -19,26 +19,27 @@ public:
     virtual ~CommandBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@CommandBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2, symbol: ?save@CommandBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 4, symbol: ?saveBlockData@CommandBlockActor@@UEBAXAEAVCompoundTag@@AEAVBlockSource@@@Z
-    virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
+    virtual void saveBlockData(class CompoundTag& tag, class BlockSource& region) const;
 
     // vIndex: 5, symbol:
     // ?loadBlockData@CommandBlockActor@@UEAAXAEBVCompoundTag@@AEAVBlockSource@@AEAVDataLoadHelper@@@Z
-    virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
+    virtual void
+    loadBlockData(class CompoundTag const& tag, class BlockSource& region, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 6, symbol: ?onCustomTagLoadDone@CommandBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onCustomTagLoadDone(class BlockSource&);
+    virtual void onCustomTagLoadDone(class BlockSource& region);
 
     // vIndex: 8, symbol: ?onChanged@CommandBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onChanged(class BlockSource&);
+    virtual void onChanged(class BlockSource& region);
 
     // vIndex: 11, symbol: ?onPlace@CommandBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onPlace(class BlockSource&);
+    virtual void onPlace(class BlockSource& region);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
@@ -56,7 +57,7 @@ public:
 
     // vIndex: 27, symbol:
     // ?setCustomName@CommandBlockActor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void setCustomName(std::string const&);
+    virtual void setCustomName(std::string const& str);
 
     // vIndex: 30, symbol: __unk_vfn_30
     virtual void __unk_vfn_30();
@@ -87,10 +88,10 @@ public:
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@CommandBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    virtual void _onUpdatePacket(class CompoundTag const& tag, class BlockSource& region);
 
     // vIndex: 42, symbol: ?_playerCanUpdate@CommandBlockActor@@MEBA_NAEBVPlayer@@@Z
-    virtual bool _playerCanUpdate(class Player const&) const;
+    virtual bool _playerCanUpdate(class Player const& player) const;
 
     // symbol: ?getBaseCommandBlock@CommandBlockActor@@QEAAAEAVBaseCommandBlock@@XZ
     MCAPI class BaseCommandBlock& getBaseCommandBlock();
@@ -99,16 +100,16 @@ public:
     MCAPI std::string const& getCommand() const;
 
     // symbol: ?getCommandBlock@CommandBlockActor@@QEBAPEBVCommandBlock@@AEAVBlockSource@@@Z
-    MCAPI class CommandBlock const* getCommandBlock(class BlockSource&) const;
+    MCAPI class CommandBlock const* getCommandBlock(class BlockSource& region) const;
 
     // symbol: ?getConditionalMode@CommandBlockActor@@QEBA_NAEAVBlockSource@@@Z
-    MCAPI bool getConditionalMode(class BlockSource&) const;
+    MCAPI bool getConditionalMode(class BlockSource& region) const;
 
     // symbol: ?getDelayOnActivation@CommandBlockActor@@QEBAHXZ
     MCAPI int getDelayOnActivation() const;
 
     // symbol: ?getMode@CommandBlockActor@@QEBA?AW4CommandBlockMode@@AEAVBlockSource@@@Z
-    MCAPI ::CommandBlockMode getMode(class BlockSource&) const;
+    MCAPI ::CommandBlockMode getMode(class BlockSource& region) const;
 
     // symbol: ?getPowered@CommandBlockActor@@QEBA_NXZ
     MCAPI bool getPowered() const;
@@ -123,35 +124,35 @@ public:
     MCAPI bool isAutomatic() const;
 
     // symbol: ?markConditionMet@CommandBlockActor@@QEAA_NAEAVBlockSource@@@Z
-    MCAPI bool markConditionMet(class BlockSource&);
+    MCAPI bool markConditionMet(class BlockSource& region);
 
     // symbol: ?markForSaving@CommandBlockActor@@QEAAXAEAVBlockSource@@@Z
-    MCAPI void markForSaving(class BlockSource&);
+    MCAPI void markForSaving(class BlockSource& region);
 
     // symbol: ?markForSaving@CommandBlockActor@@QEAAXAEAVBlockSource@@H_N@Z
-    MCAPI void markForSaving(class BlockSource&, int, bool);
+    MCAPI void markForSaving(class BlockSource& region, int oldSuccessCount, bool oldConditionMet);
 
     // symbol: ?performCommand@CommandBlockActor@@QEAA_NAEAVBlockSource@@@Z
-    MCAPI bool performCommand(class BlockSource&);
+    MCAPI bool performCommand(class BlockSource& region);
 
     // symbol: ?setPowered@CommandBlockActor@@QEAAX_N@Z
-    MCAPI void setPowered(bool);
+    MCAPI void setPowered(bool powered);
 
     // symbol: ?setSuccessCount@CommandBlockActor@@QEAAXH@Z
-    MCAPI void setSuccessCount(int);
+    MCAPI void setSuccessCount(int successCount);
 
     // symbol:
     // ?updateBlock@CommandBlockActor@@QEAAXAEAVBlockSource@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1W4CommandBlockMode@@_N33H3@Z
     MCAPI void updateBlock(
-        class BlockSource&,
-        std::string const&,
-        std::string const&,
-        ::CommandBlockMode,
-        bool,
-        bool,
-        bool,
-        int,
-        bool
+        class BlockSource&    region,
+        std::string const&    cmd,
+        std::string const&    name,
+        enum CommandBlockMode newMode,
+        bool                  isConditional,
+        bool                  redstoneMode,
+        bool                  trackOutput,
+        int                   tickDelay,
+        bool                  executeFirstTick
     );
 
     // symbol: ?wasConditionMet@CommandBlockActor@@QEAA_NXZ
@@ -162,7 +163,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_setAutomatic@CommandBlockActor@@AEAAXAEAVBlockSource@@_NW4CommandBlockMode@@@Z
-    MCAPI void _setAutomatic(class BlockSource&, bool, ::CommandBlockMode);
+    MCAPI void _setAutomatic(class BlockSource& region, bool alwaysActive, enum CommandBlockMode currentMode);
 
     // NOLINTEND
 };

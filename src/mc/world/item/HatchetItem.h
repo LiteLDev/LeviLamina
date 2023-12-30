@@ -77,7 +77,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 74, symbol: ?getDestroySpeed@HatchetItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
-    virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
+    virtual float getDestroySpeed(class ItemStackBase const& itemStack, class Block const& block) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -86,7 +86,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0HatchetItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z
-    MCAPI HatchetItem(std::string const&, int, class Item::Tier const&);
+    MCAPI HatchetItem(std::string const& name, int id, class Item::Tier const& tier);
 
     // NOLINTEND
 };

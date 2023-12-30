@@ -51,7 +51,7 @@ public:
     MCAPI explicit BlockDefinitionGroup(struct cereal::ReflectionCtx&);
 
     // symbol: ?buildBlockSchema@BlockDefinitionGroup@@QEAAXAEBVBlockComponentFactory@@@Z
-    MCAPI void buildBlockSchema(class BlockComponentFactory const&);
+    MCAPI void buildBlockSchema(class BlockComponentFactory const& factory);
 
     // symbol:
     // ?generateBlockDefinition@BlockDefinitionGroup@@QEAA?AV?$unique_ptr@UBlockDefinition@@U?$default_delete@UBlockDefinition@@@std@@@std@@AEBUBlockResource@1@AEBVExperiments@@@Z

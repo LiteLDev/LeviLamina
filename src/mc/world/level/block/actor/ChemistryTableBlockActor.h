@@ -24,43 +24,43 @@ public:
     MCVAPI int getContainerSize() const;
 
     // symbol: ?getItem@ChemistryTableBlockActor@@UEBAAEBVItemStack@@H@Z
-    MCVAPI class ItemStack const& getItem(int) const;
+    MCVAPI class ItemStack const& getItem(int slot) const;
 
     // symbol: ?getMaxStackSize@ChemistryTableBlockActor@@UEBAHXZ
     MCVAPI int getMaxStackSize() const;
 
     // symbol: ?load@ChemistryTableBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCVAPI void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    MCVAPI void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?onRemoved@ChemistryTableBlockActor@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void onRemoved(class BlockSource&);
+    MCVAPI void onRemoved(class BlockSource& region);
 
     // symbol: ?save@ChemistryTableBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    MCVAPI bool save(class CompoundTag&) const;
+    MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?serverInitItemStackIds@ChemistryTableBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
 
     // symbol: ?setItem@ChemistryTableBlockActor@@UEAAXHAEBVItemStack@@@Z
-    MCVAPI void setItem(int, class ItemStack const&);
+    MCVAPI void setItem(int slot, class ItemStack const& item);
 
     // symbol: ?startOpen@ChemistryTableBlockActor@@UEAAXAEAVPlayer@@@Z
-    MCVAPI void startOpen(class Player&);
+    MCVAPI void startOpen(class Player& p);
 
     // symbol: ?stopOpen@ChemistryTableBlockActor@@UEAAXAEAVPlayer@@@Z
-    MCVAPI void stopOpen(class Player&);
+    MCVAPI void stopOpen(class Player& p);
 
     // symbol: ?tick@ChemistryTableBlockActor@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void tick(class BlockSource&);
+    MCVAPI void tick(class BlockSource& region);
 
     // symbol: ?isSameType@ChemistryTableBlockActor@@QEBA_NW4ChemistryTableType@@@Z
-    MCAPI bool isSameType(::ChemistryTableType) const;
+    MCAPI bool isSameType(enum ChemistryTableType type) const;
 
     // symbol: ?playerOpenLabTable@ChemistryTableBlockActor@@QEAAXAEAVPlayer@@@Z
-    MCAPI void playerOpenLabTable(class Player&);
+    MCAPI void playerOpenLabTable(class Player& player);
 
     // symbol: ?reset@ChemistryTableBlockActor@@QEAAXAEAVBlockSource@@@Z
-    MCAPI void reset(class BlockSource&);
+    MCAPI void reset(class BlockSource& region);
 
     // symbol:
     // ?serverCombine@ChemistryTableBlockActor@@QEAAXAEAVBlockSource@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
@@ -78,10 +78,10 @@ public:
     MCAPI std::unique_ptr<class LabTableReaction> _createReaction(class Random&, std::vector<class ItemStack> const&);
 
     // symbol: ?_popPendingReactionOutput@ChemistryTableBlockActor@@AEAAXAEAVBlockSource@@@Z
-    MCAPI void _popPendingReactionOutput(class BlockSource&);
+    MCAPI void _popPendingReactionOutput(class BlockSource& region);
 
     // symbol: ?_updateType@ChemistryTableBlockActor@@AEAA?AW4ChemistryTableType@@AEAVBlockSource@@@Z
-    MCAPI ::ChemistryTableType _updateType(class BlockSource&);
+    MCAPI ::ChemistryTableType _updateType(class BlockSource& region);
 
     // NOLINTEND
 };

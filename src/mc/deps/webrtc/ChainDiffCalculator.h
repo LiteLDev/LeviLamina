@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/webrtc/detail/InlinedVector.h"
+#include "mc/deps/webrtc/absl/InlinedVector.h"
 
 namespace webrtc {
 

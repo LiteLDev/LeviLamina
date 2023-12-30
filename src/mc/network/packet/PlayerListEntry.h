@@ -33,25 +33,25 @@ public:
     MCAPI PlayerListEntry();
 
     // symbol: ??0PlayerListEntry@@QEAA@AEBVPlayer@@@Z
-    MCAPI explicit PlayerListEntry(class Player const&);
+    MCAPI explicit PlayerListEntry(class Player const& player);
 
     // symbol: ??0PlayerListEntry@@QEAA@VUUID@mce@@@Z
-    MCAPI explicit PlayerListEntry(class mce::UUID);
+    MCAPI explicit PlayerListEntry(class mce::UUID uuid);
 
     // symbol: ?clone@PlayerListEntry@@QEBA?AV1@XZ
     MCAPI class PlayerListEntry clone() const;
 
     // symbol: ?read@PlayerListEntry@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
+    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ?readRemove@PlayerListEntry@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void> readRemove(class ReadOnlyBinaryStream&);
+    MCAPI class Bedrock::Result<void> readRemove(class ReadOnlyBinaryStream& stream);
 
     // symbol: ?write@PlayerListEntry@@QEBAXAEAVBinaryStream@@@Z
-    MCAPI void write(class BinaryStream&) const;
+    MCAPI void write(class BinaryStream& stream) const;
 
     // symbol: ?writeRemove@PlayerListEntry@@QEBAXAEAVBinaryStream@@@Z
-    MCAPI void writeRemove(class BinaryStream&) const;
+    MCAPI void writeRemove(class BinaryStream& stream) const;
 
     // symbol: ??1PlayerListEntry@@QEAA@XZ
     MCAPI ~PlayerListEntry();

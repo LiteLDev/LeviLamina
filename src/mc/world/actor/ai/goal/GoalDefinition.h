@@ -19,7 +19,7 @@ public:
 
     // symbol:
     // ?_getPOITypeFromString@GoalDefinition@@QEAA?AW4POIType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ::POIType _getPOITypeFromString(std::string);
+    MCAPI ::POIType _getPOITypeFromString(std::string poiStr);
 
     // symbol: ??4GoalDefinition@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct GoalDefinition& operator=(struct GoalDefinition&&);
@@ -35,10 +35,10 @@ public:
 
     // symbol:
     // ?CreateGoal@GoalDefinition@@SA?AV?$unique_ptr@VGoal@@U?$default_delete@VGoal@@@std@@@std@@AEAVMob@@AEBU1@@Z
-    MCAPI static std::unique_ptr<class Goal> CreateGoal(class Mob&, struct GoalDefinition const&);
+    MCAPI static std::unique_ptr<class Goal> CreateGoal(class Mob& mob, struct GoalDefinition const& def);
 
     // symbol: ?GoalExists@GoalDefinition@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static bool GoalExists(std::string const&);
+    MCAPI static bool GoalExists(std::string const& name);
 
     // symbol: ?init@GoalDefinition@@SAXXZ
     MCAPI static void init();

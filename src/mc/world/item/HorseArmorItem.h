@@ -56,7 +56,12 @@ public:
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@HorseArmorItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
     // vIndex: 50, symbol: ?getArmorValue@HorseArmorItem@@UEBAHXZ
     virtual int getArmorValue() const;
@@ -86,7 +91,7 @@ public:
     virtual void clearColor(class CompoundTag*) const;
 
     // vIndex: 64, symbol: ?setColor@HorseArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
-    virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
+    virtual void setColor(class ItemStackBase& instance, class mce::Color const& color) const;
 
     // vIndex: 65, symbol: __unk_vfn_65
     virtual void __unk_vfn_65();
@@ -95,7 +100,8 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 71, symbol: ?dispense@HorseArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -104,7 +110,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0HorseArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHW4Tier@0@@Z
-    MCAPI HorseArmorItem(std::string const&, int, int, ::HorseArmorItem::Tier);
+    MCAPI HorseArmorItem(std::string const& name, int id, int icon, enum HorseArmorItem::Tier tier);
 
     // symbol: ?getTier@HorseArmorItem@@QEBA?AW4Tier@1@XZ
     MCAPI ::HorseArmorItem::Tier getTier() const;

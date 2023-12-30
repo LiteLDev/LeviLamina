@@ -26,7 +26,7 @@ public:
     MCAPI int getFrame() const;
 
     // symbol: ?update@CompassSpriteCalculator@@QEAAHAEAVActor@@_N@Z
-    MCAPI int update(class Actor&, bool);
+    MCAPI int update(class Actor& entity, bool instant);
 
     // symbol: ?updateFromPosition@CompassSpriteCalculator@@QEAAHPEBVBlockSource@@PEAVActor@@MMM_N2@Z
     MCAPI int updateFromPosition(class BlockSource const*, class Actor*, float, float, float, bool, bool);

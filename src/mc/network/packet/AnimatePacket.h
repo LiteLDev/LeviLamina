@@ -37,7 +37,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@AnimatePacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol: ?_read@AnimatePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
@@ -46,13 +46,13 @@ public:
     MCAPI AnimatePacket();
 
     // symbol: ??0AnimatePacket@@QEAA@W4Action@0@AEAVActor@@@Z
-    MCAPI AnimatePacket(::AnimatePacket::Action, class Actor&);
+    MCAPI AnimatePacket(enum AnimatePacket::Action action, class Actor& e);
 
     // symbol: ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@@Z
-    MCAPI AnimatePacket(::AnimatePacket::Action, class ActorRuntimeID);
+    MCAPI AnimatePacket(enum AnimatePacket::Action action, class ActorRuntimeID runtimeId);
 
     // symbol: ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@M@Z
-    MCAPI AnimatePacket(::AnimatePacket::Action, class ActorRuntimeID, float);
+    MCAPI AnimatePacket(enum AnimatePacket::Action action, class ActorRuntimeID runtimeId, float data);
 
     // NOLINTEND
 };

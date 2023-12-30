@@ -16,7 +16,7 @@ public:
     // vIndex: 0, symbol: ??1Goal@@UEAA@XZ
     virtual ~Goal();
 
-    // vIndex: 1, symbol: ?canUse@FollowTargetCaptainGoal@@UEAA_NXZ
+    // vIndex: 1, symbol: ?canUse@AdmireItemGoal@@UEAA_NXZ
     virtual bool canUse() = 0;
 
     // vIndex: 2, symbol: ?canContinueToUse@Goal@@UEAA_NXZ
@@ -35,7 +35,7 @@ public:
     virtual void tick();
 
     // vIndex: 7, symbol:
-    // ?appendDebugInfo@FollowTargetCaptainGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    // ?appendDebugInfo@AdmireItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void appendDebugInfo(std::string&) const = 0;
 
     // vIndex: 8, symbol: ?isTargetGoal@Goal@@UEBA_NXZ
@@ -54,7 +54,7 @@ public:
     MCAPI ushort getTypeId() const;
 
     // symbol: ?setRequiredControlFlags@Goal@@QEAAXH@Z
-    MCAPI void setRequiredControlFlags(int);
+    MCAPI void setRequiredControlFlags(int requiredControlFlags);
 
     // symbol: ?setTypeId@Goal@@QEAAXG@Z
     MCAPI void setTypeId(ushort);

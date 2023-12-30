@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?AddChannel@CategoryLogFile@BedrockLog@@QEAAXW4LogChannel@2@@Z
-    MCAPI void AddChannel(::BedrockLog::LogChannel);
+    MCAPI void AddChannel(enum BedrockLog::LogChannel channel);
 
     // symbol: ??0CategoryLogFile@BedrockLog@@QEAA@XZ
     MCAPI CategoryLogFile();

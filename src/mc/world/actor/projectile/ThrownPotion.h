@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 6, symbol:
     // ?initializeComponents@ThrownPotion@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void initializeComponents(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1ThrownPotion@@UEAA@XZ
     virtual ~ThrownPotion() = default;
@@ -71,7 +71,7 @@ public:
     virtual void __unk_vfn_107();
 
     // vIndex: 141, symbol: ?setAuxValue@ThrownPotion@@UEAAXH@Z
-    virtual void setAuxValue(int);
+    virtual void setAuxValue(int aux);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
@@ -80,10 +80,10 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@ThrownPotion@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@ThrownPotion@@UEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -98,7 +98,7 @@ public:
     MCAPI short getPotionId() const;
 
     // symbol: ?setLinger@ThrownPotion@@QEAAX_N@Z
-    MCAPI void setLinger(bool);
+    MCAPI void setLinger(bool linger);
 
     // symbol: ?SPLASH_RANGE@ThrownPotion@@2MB
     MCAPI static float const SPLASH_RANGE;

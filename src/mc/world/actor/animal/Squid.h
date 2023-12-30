@@ -64,7 +64,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 83, symbol: ?handleEntityEvent@Squid@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(enum ActorEvent id, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -73,13 +73,13 @@ public:
     virtual void __unk_vfn_144();
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Squid@@UEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@Squid@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -88,7 +88,7 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 179, symbol: ?checkSpawnRules@Squid@@UEAA_N_N@Z
-    virtual bool checkSpawnRules(bool);
+    virtual bool checkSpawnRules(bool fromSpawner);
 
     // vIndex: 180, symbol: ?checkSpawnObstruction@Squid@@UEBA_NXZ
     virtual bool checkSpawnObstruction() const;

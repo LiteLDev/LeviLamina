@@ -17,7 +17,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?getId@LevelSoundEventMap@@SA?AW4LevelSoundEvent@Legacy@Puv@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static ::Puv::Legacy::LevelSoundEvent getId(std::string const&);
+    MCAPI static ::Puv::Legacy::LevelSoundEvent getId(std::string const& type);
 
     // symbol:
     // ?getName@LevelSoundEventMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LevelSoundEvent@Legacy@Puv@@@Z

@@ -37,10 +37,10 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@Npc@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 6, symbol: ?initializeComponents@Npc@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void initializeComponents(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1Npc@@UEAA@XZ
     virtual ~Npc() = default;
@@ -80,7 +80,7 @@ public:
 
     // vIndex: 121, symbol:
     // ?buildDebugInfo@Npc@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void buildDebugInfo(std::string&) const;
+    virtual void buildDebugInfo(std::string& out) const;
 
     // vIndex: 124, symbol: ?canBeAffected@Npc@@UEBA_NI@Z
     virtual bool canBeAffected(uint) const;

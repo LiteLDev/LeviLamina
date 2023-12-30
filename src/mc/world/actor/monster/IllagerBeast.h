@@ -43,7 +43,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 24, symbol: ?blockedByShield@IllagerBeast@@UEAAXAEBVActorDamageSource@@AEAVActor@@@Z
-    virtual void blockedByShield(class ActorDamageSource const&, class Actor&);
+    virtual void blockedByShield(class ActorDamageSource const& source, class Actor& blocker);
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();

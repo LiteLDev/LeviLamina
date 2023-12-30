@@ -25,16 +25,22 @@ public:
 
     // vIndex: 3, symbol:
     // ?getServerMissingChunks@IFileChunkUploader@@UEBAXAEBUFileInfo@@V?$function@$$A6AXV?$vector@UFileChunkInfo@@V?$allocator@UFileChunkInfo@@@std@@@std@@@Z@std@@@Z
-    virtual void
-    getServerMissingChunks(struct FileInfo const&, std::function<void(std::vector<struct FileChunkInfo>)>) const;
+    virtual void getServerMissingChunks(
+        struct FileInfo const&                                 file,
+        std::function<void(std::vector<struct FileChunkInfo>)> callback
+    ) const;
 
     // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol:
     // ?uploadChunk@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@AEBV?$vector@EV?$allocator@E@std@@@std@@V?$function@$$A6AX_N@Z@5@@Z
-    virtual void
-    uploadChunk(struct FileInfo const&, struct FileChunkInfo const&, std::vector<uchar> const&, std::function<void(bool)>);
+    virtual void uploadChunk(
+        struct FileInfo const&      file,
+        struct FileChunkInfo const& chunk,
+        std::vector<uchar> const&   data,
+        std::function<void(bool)>   onCompleteCallback
+    );
 
     // vIndex: 6, symbol:
     // ?uploadStream@IFileChunkUploader@@UEAAXAEBUFileInfo@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4UploadStreamResult@IFileChunkUploader@@@Z@4@@Z
@@ -54,10 +60,10 @@ public:
     virtual void __unk_vfn_10() = 0;
 
     // vIndex: 11, symbol: ?getChunkInfo@IFileChunkUploader@@UEBA?AUFileChunkInfo@@AEBUFileInfo@@H@Z
-    virtual struct FileChunkInfo getChunkInfo(struct FileInfo const&, int) const;
+    virtual struct FileChunkInfo getChunkInfo(struct FileInfo const& file, int chunkID) const;
 
     // symbol: ?confirmChunkReceived@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@@Z
-    MCVAPI void confirmChunkReceived(struct FileInfo const&, struct FileChunkInfo const&);
+    MCVAPI void confirmChunkReceived(struct FileInfo const& file, struct FileChunkInfo const& chunk);
 
     // symbol: ?update@IFileChunkUploader@@UEAAXXZ
     MCVAPI void update();

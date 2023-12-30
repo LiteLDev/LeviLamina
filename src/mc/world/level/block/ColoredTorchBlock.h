@@ -107,8 +107,13 @@ public:
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@ColoredTorchBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    virtual class Block const& getPlacementBlock(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -133,7 +138,7 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 129, symbol: ?getVariant@ColoredTorchBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 134, symbol:
     // ?animateTickBedrockLegacy@ColoredTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
@@ -152,14 +157,15 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@ColoredTorchBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance
+    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // symbol:
     // ??0ColoredTorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ColoredTorchColor@@@Z
-    MCAPI ColoredTorchBlock(std::string const&, int, ::ColoredTorchColor);
+    MCAPI ColoredTorchBlock(std::string const& nameId, int id, enum ColoredTorchColor baseColor);
 
     // symbol: ?getItemForColor@ColoredTorchBlock@@SA?AVItemInstance@@W4ColoredTorchColor@@@Z
-    MCAPI static class ItemInstance getItemForColor(::ColoredTorchColor);
+    MCAPI static class ItemInstance getItemForColor(enum ColoredTorchColor color);
 
     // NOLINTEND
 };

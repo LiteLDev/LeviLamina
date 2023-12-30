@@ -68,7 +68,7 @@ public:
     virtual std::optional<class Vec3> getCursorHitPos() const;
 
     // vIndex: 15, symbol: ?canUseAbility@PlayerCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
-    virtual bool canUseAbility(::AbilitiesIndex) const;
+    virtual bool canUseAbility(enum AbilitiesIndex abilityIndex) const;
 
     // vIndex: 18, symbol: ?isSelectorExpansionAllowed@PlayerCommandOrigin@@UEBA_NXZ
     virtual bool isSelectorExpansionAllowed() const;
@@ -92,7 +92,7 @@ public:
     virtual bool isValid() const;
 
     // symbol: ??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z
-    MCAPI explicit PlayerCommandOrigin(class Player&);
+    MCAPI explicit PlayerCommandOrigin(class Player& origin);
 
     // NOLINTEND
 };

@@ -32,10 +32,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@BreedGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0BreedGoal@@QEAA@AEAVMob@@M@Z
-    MCAPI BreedGoal(class Mob&, float);
+    MCAPI BreedGoal(class Mob& animal, float speed);
 
     // NOLINTEND
 
@@ -45,7 +45,7 @@ public:
     MCAPI void _breed();
 
     // symbol: ?_isCloseEnoughToBreed@BreedGoal@@AEBA_NVVec3@@VVec2@@01@Z
-    MCAPI bool _isCloseEnoughToBreed(class Vec3, class Vec2, class Vec3, class Vec2) const;
+    MCAPI bool _isCloseEnoughToBreed(class Vec3 pos1, class Vec2 size1, class Vec3 pos2, class Vec2 size2) const;
 
     // symbol: ?_moveToFreePartner@BreedGoal@@AEBAPEAVMob@@XZ
     MCAPI class Mob* _moveToFreePartner() const;

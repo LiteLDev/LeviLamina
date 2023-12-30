@@ -170,10 +170,10 @@ public:
     // vIndex: 156, symbol: ?canSurvive@MultifaceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
 
-    // vIndex: 168, symbol: ?getMultifaceBlock@SculkVeinBlock@@UEBAAEBVBlock@@XZ
+    // vIndex: 168, symbol: ?getMultifaceBlock@GlowLichenBlock@@UEBAAEBVBlock@@XZ
     virtual class Block const& getMultifaceBlock() const = 0;
 
-    // vIndex: 169, symbol: ?getMultifaceSpreader@SculkVeinBlock@@UEBAAEBVMultifaceSpreader@@XZ
+    // vIndex: 169, symbol: ?getMultifaceSpreader@GlowLichenBlock@@UEBAAEBVMultifaceSpreader@@XZ
     virtual class MultifaceSpreader const& getMultifaceSpreader() const = 0;
 
     // symbol: ?isMultifaceBlock@MultifaceBlock@@UEBA_NXZ

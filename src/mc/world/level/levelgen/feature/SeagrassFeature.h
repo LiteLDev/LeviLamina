@@ -18,14 +18,14 @@ public:
     virtual ~SeagrassFeature() = default;
 
     // vIndex: 3, symbol: ?place@SeagrassFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_isNotIce@SeagrassFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _isNotIce(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool _isNotIce(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

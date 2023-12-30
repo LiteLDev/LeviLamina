@@ -12,15 +12,18 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ResourcePackTransmissionManager@@QEAA@AEAVScheduler@@@Z
-    MCAPI explicit ResourcePackTransmissionManager(class Scheduler&);
+    MCAPI explicit ResourcePackTransmissionManager(class Scheduler& scheduler);
 
     // symbol: ?cleanupResourcePackManager@ResourcePackTransmissionManager@@QEAAXAEBVNetworkIdentifier@@@Z
-    MCAPI void cleanupResourcePackManager(class NetworkIdentifier const&);
+    MCAPI void cleanupResourcePackManager(class NetworkIdentifier const& source);
 
     // symbol:
     // ?getResourcePackUploadManager@ResourcePackTransmissionManager@@QEAAAEAVResourcePackFileUploadManager@@AEAVPacketSender@@AEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class ResourcePackFileUploadManager&
-    getResourcePackUploadManager(class PacketSender&, class NetworkIdentifier const&, std::string const&);
+    MCAPI class ResourcePackFileUploadManager& getResourcePackUploadManager(
+        class PacketSender&            packetSender,
+        class NetworkIdentifier const& source,
+        std::string const&             resourceName
+    );
 
     // symbol: ?update@ResourcePackTransmissionManager@@QEAAXXZ
     MCAPI void update();

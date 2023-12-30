@@ -59,10 +59,10 @@ public:
     virtual void deleteChildren();
 
     // vIndex: 2, symbol: ?write@ListTag@@UEBAXAEAVIDataOutput@@@Z
-    virtual void write(class IDataOutput&) const;
+    virtual void write(class IDataOutput& dos) const;
 
     // vIndex: 3, symbol: ?load@ListTag@@UEAAXAEAVIDataInput@@@Z
-    virtual void load(class IDataInput&);
+    virtual void load(class IDataInput& dis);
 
     // vIndex: 4, symbol: ?toString@ListTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string toString() const;
@@ -71,11 +71,11 @@ public:
     virtual ::Tag::Type getId() const;
 
     // vIndex: 6, symbol: ?equals@ListTag@@UEBA_NAEBVTag@@@Z
-    virtual bool equals(class Tag const&) const;
+    virtual bool equals(class Tag const& rhs) const;
 
     // vIndex: 8, symbol:
     // ?print@ListTag@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPrintStream@@@Z
-    virtual void print(std::string const&, class PrintStream&) const;
+    virtual void print(std::string const& prefix_, class PrintStream& out) const;
 
     // vIndex: 9, symbol: ?copy@ListTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
     virtual std::unique_ptr<class Tag> copy() const;
@@ -87,7 +87,7 @@ public:
     MCAPI ListTag();
 
     // symbol: ?add@ListTag@@QEAAXV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@@Z
-    MCAPI void add(std::unique_ptr<class Tag>);
+    MCAPI void add(std::unique_ptr<class Tag> tag);
 
     // symbol: ?copyList@ListTag@@QEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class ListTag> copyList() const;
@@ -99,7 +99,7 @@ public:
     MCAPI void forEachCompoundTag(std::function<void(class CompoundTag const&)>) const;
 
     // symbol: ?get@ListTag@@QEBAPEAVTag@@H@Z
-    MCAPI class Tag* get(int) const;
+    MCAPI class Tag* get(int index) const;
 
     // symbol: ?getCompound@ListTag@@QEAAPEAVCompoundTag@@_K@Z
     MCAPI class CompoundTag* getCompound(uint64);
@@ -108,13 +108,13 @@ public:
     MCAPI class CompoundTag const* getCompound(uint64) const;
 
     // symbol: ?getDouble@ListTag@@QEBANH@Z
-    MCAPI double getDouble(int) const;
+    MCAPI double getDouble(int index) const;
 
     // symbol: ?getFloat@ListTag@@QEBAMH@Z
-    MCAPI float getFloat(int) const;
+    MCAPI float getFloat(int index) const;
 
     // symbol: ?getInt@ListTag@@QEBAHH@Z
-    MCAPI int getInt(int) const;
+    MCAPI int getInt(int index) const;
 
     // symbol: ?getString@ListTag@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI std::string const& getString(int) const;

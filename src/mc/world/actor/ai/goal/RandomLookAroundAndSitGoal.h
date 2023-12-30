@@ -35,7 +35,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@RandomLookAroundAndSitGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0RandomLookAroundAndSitGoal@@QEAA@AEAVMob@@_N1HHMMHHMH@Z
     MCAPI RandomLookAroundAndSitGoal(class Mob&, bool, bool, int, int, float, float, int, int, float, int);

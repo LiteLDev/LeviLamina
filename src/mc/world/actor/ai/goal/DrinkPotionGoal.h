@@ -40,11 +40,15 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@DrinkPotionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol:
     // ??0DrinkPotionGoal@@QEAA@AEAVMob@@MAEBV?$vector@UDrinkPotionData@@V?$allocator@UDrinkPotionData@@@std@@@std@@@Z
-    MCAPI DrinkPotionGoal(class Mob&, float, std::vector<struct DrinkPotionData> const&);
+    MCAPI DrinkPotionGoal(
+        class Mob&                                 mob,
+        float                                      walkSpeedModifier,
+        std::vector<struct DrinkPotionData> const& drinkPotionData
+    );
 
     // NOLINTEND
 

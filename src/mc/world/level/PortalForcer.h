@@ -19,34 +19,39 @@ public:
     virtual ~PortalForcer() = default;
 
     // vIndex: 1, symbol: ?deserialize@PortalForcer@@UEAAXAEBVCompoundTag@@@Z
-    virtual void deserialize(class CompoundTag const&);
+    virtual void deserialize(class CompoundTag const& tag);
 
     // vIndex: 2, symbol: ?serialize@PortalForcer@@UEBAXAEAVCompoundTag@@@Z
-    virtual void serialize(class CompoundTag&) const;
+    virtual void serialize(class CompoundTag& tag) const;
 
     // symbol: ?addPortalRecord@PortalForcer@@QEAAAEBVPortalRecord@@V?$AutomaticID@VDimension@@H@@V2@@Z
-    MCAPI class PortalRecord const& addPortalRecord(DimensionType, class PortalRecord);
+    MCAPI class PortalRecord const& addPortalRecord(DimensionType dimensionType, class PortalRecord toAdd);
 
     // symbol: ?addPortalRecord@PortalForcer@@QEAAAEBVPortalRecord@@V?$AutomaticID@VDimension@@H@@AEBVPortalShape@@@Z
-    MCAPI class PortalRecord const& addPortalRecord(DimensionType, class PortalShape const&);
+    MCAPI class PortalRecord const& addPortalRecord(DimensionType dimensionType, class PortalShape const& shape);
 
     // symbol: ?createPortal@PortalForcer@@QEAAAEBVPortalRecord@@AEBVActor@@H@Z
-    MCAPI class PortalRecord const& createPortal(class Actor const&, int);
+    MCAPI class PortalRecord const& createPortal(class Actor const& entity, int radius);
 
     // symbol: ?findPortal@PortalForcer@@QEBA_NV?$AutomaticID@VDimension@@H@@AEBVBlockPos@@HAEAV3@@Z
-    MCAPI bool findPortal(DimensionType, class BlockPos const&, int, class BlockPos&) const;
+    MCAPI bool findPortal(
+        DimensionType         dimensionId,
+        class BlockPos const& centerBlockPos,
+        int                   radius,
+        class BlockPos&       targetBlockPos
+    ) const;
 
     // symbol: ?force@PortalForcer@@QEAAXAEAVActor@@AEBUDimensionTransitionComponent@@@Z
     MCAPI void force(class Actor&, struct DimensionTransitionComponent const&);
 
     // symbol: ?portalRecordExists@PortalForcer@@QEBA_NV?$AutomaticID@VDimension@@H@@AEBVPortalRecord@@@Z
-    MCAPI bool portalRecordExists(DimensionType, class PortalRecord const&) const;
+    MCAPI bool portalRecordExists(DimensionType dimensionType, class PortalRecord const& record) const;
 
     // symbol: ?removeMisalignedPortalRecords@PortalForcer@@QEAAXAEAVBlockSource@@AEBVPortalShape@@AEBVPortalRecord@@@Z
     MCAPI void removeMisalignedPortalRecords(class BlockSource&, class PortalShape const&, class PortalRecord const&);
 
     // symbol: ?removePortalRecord@PortalForcer@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void removePortalRecord(class BlockSource&, class BlockPos const&);
+    MCAPI void removePortalRecord(class BlockSource& source, class BlockPos const& pos);
 
     // symbol: ?canPortalReplaceBlock@PortalForcer@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool canPortalReplaceBlock(class BlockSource&, class BlockPos const&);

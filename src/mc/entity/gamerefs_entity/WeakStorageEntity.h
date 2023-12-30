@@ -32,17 +32,17 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??8WeakStorageEntity@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class WeakStorageEntity const&) const;
+    MCAPI bool operator==(class WeakStorageEntity const& w) const;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ??0WeakStorageEntity@@IEAA@AEBVOwnerStorageEntity@@@Z
-    MCAPI explicit WeakStorageEntity(class OwnerStorageEntity const&);
+    MCAPI explicit WeakStorageEntity(class OwnerStorageEntity const& ownerStorage);
 
     // symbol: ??0WeakStorageEntity@@IEAA@AEBVStackResultStorageEntity@@@Z
-    MCAPI explicit WeakStorageEntity(class StackResultStorageEntity const&);
+    MCAPI explicit WeakStorageEntity(class StackResultStorageEntity const& stackResultStorage);
 
     // symbol: ??0WeakStorageEntity@@IEAA@W4EmptyInit@0@@Z
     MCAPI explicit WeakStorageEntity(::WeakStorageEntity::EmptyInit);

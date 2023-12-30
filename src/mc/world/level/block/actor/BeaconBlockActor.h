@@ -16,7 +16,7 @@ public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // symbol: ?_onUpdatePacket@BeaconBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    MCVAPI void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ?getContainer@BeaconBlockActor@@UEAAPEAVContainer@@XZ
     MCVAPI class Container* getContainer();
@@ -28,7 +28,7 @@ public:
     MCVAPI int getContainerSize() const;
 
     // symbol: ?getItem@BeaconBlockActor@@UEBAAEBVItemStack@@H@Z
-    MCVAPI class ItemStack const& getItem(int) const;
+    MCVAPI class ItemStack const& getItem(int slot) const;
 
     // symbol: ?getMaxStackSize@BeaconBlockActor@@UEBAHXZ
     MCVAPI int getMaxStackSize() const;
@@ -40,31 +40,31 @@ public:
     MCVAPI bool hasAlphaLayer() const;
 
     // symbol: ?load@BeaconBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCVAPI void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    MCVAPI void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?removeItem@BeaconBlockActor@@UEAAXHH@Z
-    MCVAPI void removeItem(int, int);
+    MCVAPI void removeItem(int slot, int i);
 
     // symbol: ?save@BeaconBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    MCVAPI bool save(class CompoundTag&) const;
+    MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?serverInitItemStackIds@BeaconBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
 
     // symbol: ?setItem@BeaconBlockActor@@UEAAXHAEBVItemStack@@@Z
-    MCVAPI void setItem(int, class ItemStack const&);
+    MCVAPI void setItem(int slot, class ItemStack const& item);
 
     // symbol: ?startOpen@BeaconBlockActor@@UEAAXAEAVPlayer@@@Z
-    MCVAPI void startOpen(class Player&);
+    MCVAPI void startOpen(class Player& player);
 
     // symbol: ?stopOpen@BeaconBlockActor@@UEAAXAEAVPlayer@@@Z
-    MCVAPI void stopOpen(class Player&);
+    MCVAPI void stopOpen(class Player& player);
 
     // symbol: ?tick@BeaconBlockActor@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void tick(class BlockSource&);
+    MCVAPI void tick(class BlockSource& region);
 
     // symbol: ??0BeaconBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit BeaconBlockActor(class BlockPos const&);
+    MCAPI explicit BeaconBlockActor(class BlockPos const& pos);
 
     // symbol: ?checkShapeAndAchievement@BeaconBlockActor@@QEAAXAEAVBlockSource@@@Z
     MCAPI void checkShapeAndAchievement(class BlockSource&);
@@ -73,38 +73,38 @@ public:
     MCAPI class CompoundTag getBeaconData();
 
     // symbol: ?isEffectAvailable@BeaconBlockActor@@QEBA_NH@Z
-    MCAPI bool isEffectAvailable(int) const;
+    MCAPI bool isEffectAvailable(int effectId) const;
 
     // symbol: ?isSecondaryAvailable@BeaconBlockActor@@QEBA_NXZ
     MCAPI bool isSecondaryAvailable() const;
 
     // symbol: ?setPrimaryEffect@BeaconBlockActor@@QEAA_NH@Z
-    MCAPI bool setPrimaryEffect(int);
+    MCAPI bool setPrimaryEffect(int effectId);
 
     // symbol: ?setSecondaryEffect@BeaconBlockActor@@QEAA_NH@Z
-    MCAPI bool setSecondaryEffect(int);
+    MCAPI bool setSecondaryEffect(int effectId);
 
     // symbol: ?isPaymentItem@BeaconBlockActor@@SA_NAEBVItemDescriptor@@@Z
-    MCAPI static bool isPaymentItem(class ItemDescriptor const&);
+    MCAPI static bool isPaymentItem(class ItemDescriptor const& pItem);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_applyEffects@BeaconBlockActor@@AEAAXAEAVBlockSource@@@Z
-    MCAPI void _applyEffects(class BlockSource&);
+    MCAPI void _applyEffects(class BlockSource& region);
 
     // symbol: ?_getEffectTier@BeaconBlockActor@@AEBAHH@Z
-    MCAPI int _getEffectTier(int) const;
+    MCAPI int _getEffectTier(int effectId) const;
 
     // symbol: ?_isEffectValid@BeaconBlockActor@@AEBA_NH@Z
-    MCAPI bool _isEffectValid(int) const;
+    MCAPI bool _isEffectValid(int effectId) const;
 
     // symbol: ?_isSecondaryEffectValid@BeaconBlockActor@@AEBA_NH@Z
-    MCAPI bool _isSecondaryEffectValid(int) const;
+    MCAPI bool _isSecondaryEffectValid(int effectId) const;
 
     // symbol: ?_saveClientSideState@BeaconBlockActor@@AEBA_NAEAVCompoundTag@@@Z
-    MCAPI bool _saveClientSideState(class CompoundTag&) const;
+    MCAPI bool _saveClientSideState(class CompoundTag& tag) const;
 
     // NOLINTEND
 };

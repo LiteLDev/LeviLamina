@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@FishingHook@@MEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1FishingHook@@UEAA@XZ
     virtual ~FishingHook() = default;
@@ -70,10 +70,10 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 83, symbol: ?handleEntityEvent@FishingHook@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(enum ActorEvent eventId, int data);
 
     // vIndex: 97, symbol: ?save@FishingHook@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& entityTag) const;
 
     // vIndex: 100, symbol: ?getSourceUniqueID@FishingHook@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
@@ -131,7 +131,7 @@ public:
     MCAPI class HitResult _hitCheck();
 
     // symbol: ?_pullCloser@FishingHook@@IEAAXAEAVActor@@M@Z
-    MCAPI void _pullCloser(class Actor&, float);
+    MCAPI void _pullCloser(class Actor& inEntity, float inSpeed);
 
     // symbol: ?_serverHooked@FishingHook@@IEAA_NXZ
     MCAPI bool _serverHooked();

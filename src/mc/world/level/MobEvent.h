@@ -14,7 +14,7 @@ public:
     MCAPI MobEvent(class MobEvent const&);
 
     // symbol: ??0MobEvent@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
-    MCAPI MobEvent(std::string, std::string, bool);
+    MCAPI MobEvent(std::string name, std::string localizableName, bool val);
 
     // symbol: ?getLocalizableName@MobEvent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getLocalizableName() const;

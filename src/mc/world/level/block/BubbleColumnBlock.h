@@ -44,9 +44,13 @@ public:
 
     // vIndex: 8, symbol:
     // ?addAABBs@BubbleColumnBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-    virtual void
-    addAABBs(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&)
-        const;
+    virtual void addAABBs(
+        class Block const&       block,
+        class BlockSource const& region,
+        class BlockPos const&    pos,
+        class AABB const*        intersectTestBox,
+        std::vector<class AABB>& inoutBoxes
+    ) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -118,7 +122,8 @@ public:
     virtual std::optional<class HashedString> getRequiredMedium() const;
 
     // vIndex: 61, symbol: ?checkIsPathable@BubbleColumnBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    virtual bool
+    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -133,7 +138,8 @@ public:
     virtual bool mayPick(class BlockSource const&, class Block const&, bool) const;
 
     // vIndex: 92, symbol: ?neighborChanged@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -161,13 +167,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -176,19 +182,19 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@BubbleColumnBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 165, symbol: ?getResourceCount@BubbleColumnBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // symbol: ?shouldTickOnSetBlock@BubbleColumnBlock@@UEBA_NXZ
     MCVAPI bool shouldTickOnSetBlock() const;
 
     // symbol: ??0BubbleColumnBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BubbleColumnBlock(std::string const&, int);
+    MCAPI BubbleColumnBlock(std::string const& nameId, int id);
 
     // symbol: ?addBubbleColumnSegment@BubbleColumnBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool addBubbleColumnSegment(class BlockSource&, class BlockPos const&);
+    MCAPI static bool addBubbleColumnSegment(class BlockSource& region, class BlockPos const& pos);
 
     // symbol: ?shouldDragDown@BubbleColumnBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool shouldDragDown(class Block const&);

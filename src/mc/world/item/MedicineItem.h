@@ -51,7 +51,7 @@ public:
     virtual void __unk_vfn_52();
 
     // vIndex: 53, symbol: ?isValidAuxValue@MedicineItem@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int auxValue) const;
 
     // vIndex: 56, symbol: __unk_vfn_56
     virtual void __unk_vfn_56();
@@ -72,11 +72,12 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@MedicineItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& itemStack, class Player& player) const;
 
     // vIndex: 72, symbol:
     // ?useTimeDepleted@MedicineItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
-    virtual ::ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
+    virtual ::ItemUseMethod
+    useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
 
     // vIndex: 81, symbol:
     // ?buildDescriptionId@MedicineItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
@@ -96,10 +97,10 @@ public:
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
 
     // symbol: ??0MedicineItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MedicineItem(std::string const&, int);
+    MCAPI MedicineItem(std::string const& name, int id);
 
     // symbol: ?getMobEffect@MedicineItem@@SAPEBVMobEffect@@AEBVItemStack@@@Z
-    MCAPI static class MobEffect const* getMobEffect(class ItemStack const&);
+    MCAPI static class MobEffect const* getMobEffect(class ItemStack const& instance);
 
     // NOLINTEND
 };

@@ -32,32 +32,35 @@ public:
 
     // vIndex: 1, symbol:
     // ?getResourcePacksByPackId@ResourcePackRepository@@UEBAXAEBV?$vector@UPackInstanceId@@V?$allocator@UPackInstanceId@@@std@@@std@@AEAV?$vector@VPackInstance@@V?$allocator@VPackInstance@@@std@@@3@@Z
-    virtual void
-    getResourcePacksByPackId(std::vector<struct PackInstanceId> const&, std::vector<class PackInstance>&) const = 0;
+    virtual void getResourcePacksByPackId(
+        std::vector<struct PackInstanceId> const& packInstanceIds,
+        std::vector<class PackInstance>&          result
+    ) const = 0;
 
     // vIndex: 2, symbol: ?getResourcePackForPackId@ResourcePackRepository@@UEBAPEAVResourcePack@@AEBUPackIdVersion@@@Z
-    virtual class ResourcePack* getResourcePackForPackId(struct PackIdVersion const&) const = 0;
+    virtual class ResourcePack* getResourcePackForPackId(struct PackIdVersion const& idAndVersion) const = 0;
 
     // vIndex: 3, symbol: ?getResourcePackByUUID@ResourcePackRepository@@UEBAPEAVResourcePack@@AEBVUUID@mce@@@Z
-    virtual class ResourcePack* getResourcePackByUUID(class mce::UUID const&) const = 0;
+    virtual class ResourcePack* getResourcePackByUUID(class mce::UUID const& id) const = 0;
 
     // vIndex: 4, symbol:
     // ?getResourcePackForPackIdOwned@ResourcePackRepository@@UEBAPEAVResourcePack@@AEBUPackIdVersion@@@Z
-    virtual class ResourcePack* getResourcePackForPackIdOwned(struct PackIdVersion const&) const = 0;
+    virtual class ResourcePack* getResourcePackForPackIdOwned(struct PackIdVersion const& idAndVersion) const = 0;
 
     // vIndex: 5, symbol:
     // ?getResourcePackSatisfiesPackId@ResourcePackRepository@@UEBAPEAVResourcePack@@AEBUPackIdVersion@@_N@Z
-    virtual class ResourcePack* getResourcePackSatisfiesPackId(struct PackIdVersion const&, bool) const = 0;
+    virtual class ResourcePack*
+    getResourcePackSatisfiesPackId(struct PackIdVersion const& idAndVersion, bool requireOwnership) const = 0;
 
     // vIndex: 6, symbol:
     // ?getResourcePackContainingModule@ResourcePackRepository@@UEBAPEAVResourcePack@@AEBUPackIdVersion@@@Z
-    virtual class ResourcePack* getResourcePackContainingModule(struct PackIdVersion const&) const = 0;
+    virtual class ResourcePack* getResourcePackContainingModule(struct PackIdVersion const& idAndVersion) const = 0;
 
     // vIndex: 7, symbol: ?getResourcePackInPath@ResourcePackRepository@@UEBAPEAVResourcePack@@AEBVPath@Core@@@Z
-    virtual class ResourcePack* getResourcePackInPath(class Core::Path const&) const = 0;
+    virtual class ResourcePack* getResourcePackInPath(class Core::Path const& path) const = 0;
 
     // vIndex: 8, symbol: ?isResourcePackLoaded@ResourcePackRepository@@UEAA_NAEBUPackIdVersion@@AEBW4PackOrigin@@@Z
-    virtual bool isResourcePackLoaded(struct PackIdVersion const&, ::PackOrigin const&) = 0;
+    virtual bool isResourcePackLoaded(struct PackIdVersion const& identity, enum PackOrigin const& location) = 0;
 
     // vIndex: 9, symbol: ?getPackLoadingReport@ResourcePackRepository@@UEBAPEBVPackSourceReport@@XZ
     virtual class PackSourceReport const* getPackLoadingReport() const = 0;
@@ -85,14 +88,18 @@ public:
 
     // vIndex: 16, symbol:
     // ?addCachedResourcePacks@ResourcePackRepository@@UEAAXPEBV?$unordered_map@VContentIdentity@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@VContentIdentity@@@3@U?$equal_to@VContentIdentity@@@3@V?$allocator@U?$pair@$$CBVContentIdentity@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@@Z
-    virtual void addCachedResourcePacks(std::unordered_map<class ContentIdentity, std::string> const*) = 0;
+    virtual void addCachedResourcePacks(std::unordered_map<class ContentIdentity, std::string> const* tempCacheKeys
+    ) = 0;
 
     // vIndex: 17, symbol: ?addWorldResourcePacks@ResourcePackRepository@@UEAAXAEBVPath@Core@@@Z
-    virtual void addWorldResourcePacks(class Core::Path const&) = 0;
+    virtual void addWorldResourcePacks(class Core::Path const& levelPath) = 0;
 
     // vIndex: 18, symbol:
     // ?addPremiumWorldTemplateResourcePacks@ResourcePackRepository@@UEAAXAEBVPath@Core@@AEBVContentIdentity@@@Z
-    virtual void addPremiumWorldTemplateResourcePacks(class Core::Path const&, class ContentIdentity const&) = 0;
+    virtual void addPremiumWorldTemplateResourcePacks(
+        class Core::Path const&      worldTemplatePath,
+        class ContentIdentity const& premiumWorldIdentity
+    ) = 0;
 
     // vIndex: 19, symbol: ?removePacksLoadedFromCache@ResourcePackRepository@@UEAAXXZ
     virtual void removePacksLoadedFromCache() = 0;
@@ -167,48 +174,49 @@ public:
 
     // vIndex: 39, symbol:
     // ?getPacksByResourceLocation@ResourcePackRepository@@UEBA?AV?$vector@PEAVResourcePack@@V?$allocator@PEAVResourcePack@@@std@@@std@@W4PackOrigin@@@Z
-    virtual std::vector<class ResourcePack*> getPacksByResourceLocation(::PackOrigin) const = 0;
+    virtual std::vector<class ResourcePack*> getPacksByResourceLocation(enum PackOrigin type) const = 0;
 
     // vIndex: 40, symbol:
     // ?getPacksByType@ResourcePackRepository@@UEBA?AV?$vector@PEAVResourcePack@@V?$allocator@PEAVResourcePack@@@std@@@std@@W4PackType@@@Z
-    virtual std::vector<class ResourcePack*> getPacksByType(::PackType) const = 0;
+    virtual std::vector<class ResourcePack*> getPacksByType(enum PackType type) const = 0;
 
     // vIndex: 41, symbol:
     // ?getPacksByCategory@ResourcePackRepository@@UEBA?AV?$vector@PEAVResourcePack@@V?$allocator@PEAVResourcePack@@@std@@@std@@W4PackCategory@@@Z
     virtual std::vector<class ResourcePack*> getPacksByCategory(::PackCategory) const = 0;
 
     // vIndex: 42, symbol: ?addKnownPackFromImport@ResourcePackRepository@@UEAAXAEBVPackManifest@@@Z
-    virtual void addKnownPackFromImport(class PackManifest const&) = 0;
+    virtual void addKnownPackFromImport(class PackManifest const& pack) = 0;
 
     // vIndex: 43, symbol: ?addInvalidPack@ResourcePackRepository@@UEAAXAEBVResourceLocation@@W4PackType@@@Z
-    virtual void addInvalidPack(class ResourceLocation const&, ::PackType) = 0;
+    virtual void addInvalidPack(class ResourceLocation const& packLocation, enum PackType type) = 0;
 
     // vIndex: 44, symbol:
     // ?getInvalidPacks@ResourcePackRepository@@UEBAAEBV?$vector@VResourceLocation@@V?$allocator@VResourceLocation@@@std@@@std@@W4PackType@@@Z
-    virtual std::vector<class ResourceLocation> const& getInvalidPacks(::PackType) const = 0;
+    virtual std::vector<class ResourceLocation> const& getInvalidPacks(enum PackType type) const = 0;
 
     // vIndex: 45, symbol:
     // ?getInvalidPacks@ResourcePackRepository@@UEBA?AV?$vector@VResourceLocation@@V?$allocator@VResourceLocation@@@std@@@std@@AEBUInvalidPacksFilterGroup@@@Z
-    virtual std::vector<class ResourceLocation> getInvalidPacks(struct InvalidPacksFilterGroup const&) const = 0;
+    virtual std::vector<class ResourceLocation> getInvalidPacks(struct InvalidPacksFilterGroup const& packTypes
+    ) const = 0;
 
     // vIndex: 46, symbol: ?deletePack@ResourcePackRepository@@UEAAXAEBVResourceLocation@@@Z
-    virtual void deletePack(class ResourceLocation const&) = 0;
+    virtual void deletePack(class ResourceLocation const& packLocation) = 0;
 
     // vIndex: 47, symbol: ?deletePackFiles@ResourcePackRepository@@UEAAXAEBVResourceLocation@@@Z
-    virtual void deletePackFiles(class ResourceLocation const&) = 0;
+    virtual void deletePackFiles(class ResourceLocation const& packLocation) = 0;
 
     // vIndex: 48, symbol: ?postDeletePack@ResourcePackRepository@@UEAAXAEBVResourceLocation@@@Z
-    virtual void postDeletePack(class ResourceLocation const&) = 0;
+    virtual void postDeletePack(class ResourceLocation const& packLocation) = 0;
 
     // vIndex: 49, symbol: ?untrackInvalidPack@ResourcePackRepository@@UEAAXAEBVResourceLocation@@@Z
-    virtual void untrackInvalidPack(class ResourceLocation const&) = 0;
+    virtual void untrackInvalidPack(class ResourceLocation const& packLocation) = 0;
 
     // vIndex: 50, symbol:
     // ?registerResourcePackRemovedCallback@ResourcePackRepository@@UEAAXPEAXV?$function@$$A6AXPEAVResourcePack@@@Z@std@@@Z
-    virtual void registerResourcePackRemovedCallback(void*, std::function<void(class ResourcePack*)>) = 0;
+    virtual void registerResourcePackRemovedCallback(void* ptr, std::function<void(class ResourcePack*)> callback) = 0;
 
     // vIndex: 51, symbol: ?unregisterResourcePackRemovedCallback@ResourcePackRepository@@UEAAXPEAX@Z
-    virtual void unregisterResourcePackRemovedCallback(void*) = 0;
+    virtual void unregisterResourcePackRemovedCallback(void* ptr) = 0;
 
     // vIndex: 52, symbol: ?isInitialized@ResourcePackRepository@@UEAA_NXZ
     virtual bool isInitialized() = 0;

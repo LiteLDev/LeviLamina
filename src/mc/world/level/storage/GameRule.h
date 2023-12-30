@@ -100,23 +100,23 @@ public:
     MCAPI bool requiresCheats() const;
 
     // symbol: ?resetType@GameRule@@QEAAXW4Type@1@@Z
-    MCAPI void resetType(::GameRule::Type);
+    MCAPI void resetType(enum GameRule::Type type);
 
     // symbol: ?setBool@GameRule@@QEAA_N_NPEA_NPEAVValidationError@1@@Z
-    MCAPI bool setBool(bool, bool*, class GameRule::ValidationError*);
+    MCAPI bool setBool(bool value, bool* pValidated, class GameRule::ValidationError* errorOutput);
 
     // symbol: ?setFloat@GameRule@@QEAA_NMPEA_NPEAVValidationError@1@@Z
-    MCAPI bool setFloat(float, bool*, class GameRule::ValidationError*);
+    MCAPI bool setFloat(float value, bool* pValidated, class GameRule::ValidationError* errorOutput);
 
     // symbol: ?setInt@GameRule@@QEAA_NHPEA_NPEAVValidationError@1@@Z
-    MCAPI bool setInt(int, bool*, class GameRule::ValidationError*);
+    MCAPI bool setInt(int value, bool* pValidated, class GameRule::ValidationError* errorOutput);
 
     // symbol: ?setTagDataNotFoundCallback@GameRule@@QEAAAEAV1@V?$function@$$A6AXAEAVGameRule@@@Z@std@@@Z
-    MCAPI class GameRule& setTagDataNotFoundCallback(TagDataNotFoundCallback);
+    MCAPI class GameRule& setTagDataNotFoundCallback(TagDataNotFoundCallback cb);
 
     // symbol:
     // ?setValidateValueCallback@GameRule@@QEAAAEAV1@V?$function@$$A6A_NAEBTValue@GameRule@@PEAVValidationError@2@@Z@std@@@Z
-    MCAPI class GameRule& setValidateValueCallback(ValidateValueCallback);
+    MCAPI class GameRule& setValidateValueCallback(ValidateValueCallback cb);
 
     // symbol: ??1GameRule@@QEAA@XZ
     MCAPI ~GameRule();
@@ -126,17 +126,17 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_setDefaultValue@GameRule@@IEAAAEAV1@_N@Z
-    MCAPI class GameRule& _setDefaultValue(bool);
+    MCAPI class GameRule& _setDefaultValue(bool b);
 
     // symbol: ?_setDefaultValue@GameRule@@IEAAAEAV1@H@Z
-    MCAPI class GameRule& _setDefaultValue(int);
+    MCAPI class GameRule& _setDefaultValue(int i);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_set@GameRule@@AEAA_NAEBTValue@1@PEA_NPEAVValidationError@1@@Z
-    MCAPI bool _set(union GameRule::Value const&, bool*, class GameRule::ValidationError*);
+    MCAPI bool _set(union GameRule::Value const& v, bool* pValidated, class GameRule::ValidationError* errorOutput);
 
     // NOLINTEND
 };

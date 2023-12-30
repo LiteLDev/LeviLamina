@@ -44,9 +44,13 @@ public:
 
     // vIndex: 8, symbol:
     // ?addAABBs@BrewingStandBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-    virtual void
-    addAABBs(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&)
-        const;
+    virtual void addAABBs(
+        class Block const&       block,
+        class BlockSource const& region,
+        class BlockPos const&    pos,
+        class AABB const*        intersectTestBox,
+        std::vector<class AABB>& inoutBoxes
+    ) const;
 
     // vIndex: 9, symbol:
     // ?getOutline@BrewingStandBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
@@ -141,7 +145,9 @@ public:
     virtual void __unk_vfn_111();
 
     // vIndex: 112, symbol: ?getComparatorSignal@BrewingStandBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uchar) const;
+    virtual int
+    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
+        const;
 
     // vIndex: 114, symbol: __unk_vfn_114
     virtual void __unk_vfn_114();
@@ -161,7 +167,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@BrewingStandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -176,7 +182,8 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@BrewingStandBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance
+    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // symbol: ?hasComparatorSignal@BrewingStandBlock@@UEBA_NXZ
     MCVAPI bool hasComparatorSignal() const;
@@ -191,7 +198,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0BrewingStandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BrewingStandBlock(std::string const&, int);
+    MCAPI BrewingStandBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

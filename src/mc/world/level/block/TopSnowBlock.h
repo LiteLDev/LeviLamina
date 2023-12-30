@@ -115,7 +115,8 @@ public:
     virtual bool canContainLiquid() const;
 
     // vIndex: 61, symbol: ?checkIsPathable@TopSnowBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    virtual bool
+    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -127,35 +128,45 @@ public:
     virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const*) const;
 
     // vIndex: 85, symbol: ?mayPlace@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 87, symbol:
     // ?tryToPlace@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEBUActorBlockSyncMessage@@@Z
-    virtual bool
-    tryToPlace(class BlockSource&, class BlockPos const&, class Block const&, struct ActorBlockSyncMessage const*)
-        const;
+    virtual bool tryToPlace(
+        class BlockSource&                  region,
+        class BlockPos const&               pos,
+        class Block const&                  block,
+        struct ActorBlockSyncMessage const* syncMsg
+    ) const;
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@TopSnowBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
 
     // vIndex: 92, symbol: ?neighborChanged@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 94, symbol: ?playerWillDestroy@TopSnowBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
-    virtual class Block const* playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
+    virtual class Block const*
+    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@TopSnowBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    virtual class Block const& getPlacementBlock(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
 
     // vIndex: 103, symbol: ?canBeBuiltOver@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
     virtual bool canBeBuiltOver(class BlockSource&, class BlockPos const&, class BlockItem const&) const;
 
     // vIndex: 104, symbol: ?canBeBuiltOver@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canBeBuiltOver(class BlockSource&, class BlockPos const&) const;
+    virtual bool canBeBuiltOver(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 108, symbol: ?shouldStopFalling@TopSnowBlock@@UEBA_NAEAVActor@@@Z
-    virtual bool shouldStopFalling(class Actor&) const;
+    virtual bool shouldStopFalling(class Actor& entity) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -179,13 +190,13 @@ public:
     virtual void onExploded(class BlockSource&, class BlockPos const&, class Actor*) const;
 
     // vIndex: 147, symbol: ?onPlace@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 151, symbol: ?randomTick@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
@@ -197,13 +208,14 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@TopSnowBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance
+    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 165, symbol: ?getResourceCount@TopSnowBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 168, symbol: ?getDustColor@TopSnowBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
-    virtual class mce::Color getDustColor(class Block const&) const;
+    virtual class mce::Color getDustColor(class Block const& block) const;
 
     // vIndex: 169, symbol:
     // ?getDustParticleName@TopSnowBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
@@ -213,10 +225,12 @@ public:
     virtual void __unk_vfn_170();
 
     // vIndex: 172, symbol: ?isFreeToFall@TopSnowBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool isFreeToFall(class BlockSource&, class BlockPos const&) const;
+    virtual bool isFreeToFall(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 173, symbol: ?startFalling@TopSnowBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@_N@Z
-    virtual void startFalling(class BlockSource&, class BlockPos const&, class Block const&, bool) const;
+    virtual void
+    startFalling(class BlockSource& region, class BlockPos const& pos, class Block const& oldBlock, bool creative)
+        const;
 
     // symbol: ?canBeDestroyedByWaterSpread@TopSnowBlock@@UEBA_NXZ
     MCVAPI bool canBeDestroyedByWaterSpread() const;
@@ -237,16 +251,17 @@ public:
     MCAPI class ItemInstance getResourceItemFromFalling() const;
 
     // symbol: ?melt@TopSnowBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI bool melt(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI bool melt(class BlockSource& region, class BlockPos const& pos, int meltHeight) const;
 
     // symbol: ?startFallingIfLostSupport@TopSnowBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI void startFallingIfLostSupport(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // symbol: ?buildSnowBlock@TopSnowBlock@@SAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    MCAPI static class Block const& buildSnowBlock(class BlockSource&, class BlockPos const&, int, bool);
+    MCAPI static class Block const&
+    buildSnowBlock(class BlockSource& region, class BlockPos const& pos, int height, bool additive);
 
     // symbol: ?getCoveredBlock@TopSnowBlock@@SAAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static class Block const& getCoveredBlock(class BlockSource const&, class BlockPos const&);
+    MCAPI static class Block const& getCoveredBlock(class BlockSource const& region, class BlockPos const& pos);
 
     // symbol: ?getSnowBlockToBuild@TopSnowBlock@@SAAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@H_N@Z
     MCAPI static class Block const& getSnowBlockToBuild(class BlockSource const&, class BlockPos const&, int, bool);

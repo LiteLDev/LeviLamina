@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?generateFlagsForIndices@StructureIntegrityProcessor@@QEBA?AV?$vector@_NV?$allocator@_N@std@@@std@@HH@Z
-    MCAPI std::vector<bool> generateFlagsForIndices(int, int) const;
+    MCAPI std::vector<bool> generateFlagsForIndices(int startIndex, int endIndex) const;
 
     // NOLINTEND
 };

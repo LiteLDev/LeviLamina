@@ -65,7 +65,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 64, symbol: ?setTarget@Skeleton@@UEAAXPEAVActor@@@Z
-    virtual void setTarget(class Actor*);
+    virtual void setTarget(class Actor* entity);
 
     // vIndex: 101, symbol: ?canFreeze@Skeleton@@UEBA_NXZ
     virtual bool canFreeze() const;
@@ -78,13 +78,13 @@ public:
 
     // vIndex: 134, symbol:
     // ?getDebugText@Skeleton@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    virtual void getDebugText(std::vector<std::string>&);
+    virtual void getDebugText(std::vector<std::string>& outputInfo);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
 
     // vIndex: 147, symbol: ?die@Skeleton@@UEAAXAEBVActorDamageSource@@@Z
-    virtual void die(class ActorDamageSource const&);
+    virtual void die(class ActorDamageSource const& source);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
@@ -102,7 +102,7 @@ public:
     MCAPI Skeleton(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
     // symbol: ?setWitherParent@Skeleton@@QEAAXPEAVWitherBoss@@@Z
-    MCAPI void setWitherParent(class WitherBoss*);
+    MCAPI void setWitherParent(class WitherBoss* wither);
 
     // NOLINTEND
 

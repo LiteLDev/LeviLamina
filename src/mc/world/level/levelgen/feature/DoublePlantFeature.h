@@ -19,10 +19,12 @@ public:
     virtual ~DoublePlantFeature() = default;
 
     // vIndex: 3, symbol: ?place@DoublePlantFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ?place@DoublePlantFeature@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@W4DoublePlantType@@@Z
-    MCAPI bool place(class BlockSource&, class BlockPos const&, class Random&, ::DoublePlantType) const;
+    MCAPI bool
+    place(class BlockSource& region, class BlockPos const& pos, class Random& random, enum DoublePlantType plantType)
+        const;
 
     // NOLINTEND
 };

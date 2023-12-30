@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/webrtc/DtlsTransportState.h"
 #include "mc/deps/webrtc/SrtpTransport.h"
-#include "mc/deps/webrtc/detail/BufferT.h"
-#include "mc/deps/webrtc/detail/Socket.h"
+#include "mc/deps/webrtc/rtc/BufferT.h"
+#include "mc/deps/webrtc/rtc/Socket.h"
 
 // auto generated forward declare list
 // clang-format off

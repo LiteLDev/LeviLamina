@@ -18,10 +18,10 @@ public:
     virtual ~ShiftedDurationAmplifier() = default;
 
     // vIndex: 2, symbol: ?shouldBuff@ShiftedDurationAmplifier@@UEBA_NHH@Z
-    virtual bool shouldBuff(int, int) const;
+    virtual bool shouldBuff(int remainingDuration, int amplification) const;
 
     // vIndex: 3, symbol: ?getTickInterval@ShiftedDurationAmplifier@@UEBAHH@Z
-    virtual int getTickInterval(int) const;
+    virtual int getTickInterval(int amplification) const;
 
     // NOLINTEND
 };

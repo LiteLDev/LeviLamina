@@ -18,7 +18,7 @@ public:
     MCAPI static int getAuxValue(::ItemColor);
 
     // symbol: ?getItemColor@DyeColorUtil@@SA?AW4ItemColor@@H@Z
-    MCAPI static ::ItemColor getItemColor(int);
+    MCAPI static ::ItemColor getItemColor(int auxValue);
 
     // symbol: ?getRandomItemColor@DyeColorUtil@@SA?AW4ItemColor@@AEAVRandom@@@Z
     MCAPI static ::ItemColor getRandomItemColor(class Random&);

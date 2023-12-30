@@ -21,10 +21,10 @@ public:
     virtual ~InPackagePackSource() = default;
 
     // vIndex: 1, symbol: ?forEachPackConst@InPackagePackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
-    virtual void forEachPackConst(std::function<void(class Pack const&)>) const;
+    virtual void forEachPackConst(std::function<void(class Pack const&)> callback) const;
 
     // vIndex: 2, symbol: ?forEachPack@InPackagePackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
-    virtual void forEachPack(std::function<void(class Pack&)>);
+    virtual void forEachPack(std::function<void(class Pack&)> callback);
 
     // vIndex: 3, symbol: ?getPackOrigin@InPackagePackSource@@UEBA?AW4PackOrigin@@XZ
     virtual ::PackOrigin getPackOrigin() const;
@@ -38,7 +38,7 @@ public:
     load(class IPackManifestFactory&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&);
 
     // symbol: ??0InPackagePackSource@@QEAA@AEBV?$shared_ptr@VIInPackagePacks@@@std@@W4PackType@@@Z
-    MCAPI InPackagePackSource(std::shared_ptr<class IInPackagePacks> const&, ::PackType);
+    MCAPI InPackagePackSource(std::shared_ptr<class IInPackagePacks> const& packs, enum PackType packType);
 
     // NOLINTEND
 };

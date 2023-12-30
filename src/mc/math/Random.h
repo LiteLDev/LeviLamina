@@ -36,7 +36,7 @@ public:
     virtual int nextInt();
 
     // vIndex: 2, symbol: ?nextInt@Random@Core@@UEAAHH@Z
-    virtual int nextInt(int);
+    virtual int nextInt(int n);
 
     // vIndex: 3, symbol: ?nextLong@Random@Core@@UEAA_JXZ
     virtual int64 nextLong();
@@ -76,7 +76,7 @@ public:
     MCAPI uint _genUniformRandomInt();
 
     // symbol: ?_setSeed@Random@Core@@AEAAXI@Z
-    MCAPI void _setSeed(uint);
+    MCAPI void _setSeed(uint seed);
 
     // NOLINTEND
 

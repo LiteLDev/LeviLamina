@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0PhotoStorage@@QEAA@AEBVPath@Core@@@Z
-    MCAPI explicit PhotoStorage(class Core::Path const&);
+    MCAPI explicit PhotoStorage(class Core::Path const& baseDir);
 
     // symbol: ??1PhotoStorage@@QEAA@XZ
     MCAPI ~PhotoStorage();

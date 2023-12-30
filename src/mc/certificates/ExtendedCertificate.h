@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getIdentity@ExtendedCertificate@@SA?AVUUID@mce@@AEBVCertificate@@@Z
-    MCAPI static class mce::UUID getIdentity(class Certificate const&);
+    MCAPI static class mce::UUID getIdentity(class Certificate const& cert);
 
     // symbol:
     // ?getIdentityName@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z

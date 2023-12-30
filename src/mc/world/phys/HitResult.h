@@ -43,10 +43,14 @@ public:
 
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEBVBlockPos@@E0@Z
     MCAPI
-    HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class BlockPos const&, uchar, class Vec3 const&);
+    HitResult(class Vec3 const& startPos, class Vec3 const& rayDir,
+        class BlockPos const& blockPos,
+        uchar                 facing,
+        class Vec3 const&     pos
+    );
 
     // symbol: ?distanceTo@HitResult@@QEBAMAEBVActor@@@Z
-    MCAPI float distanceTo(class Actor const&) const;
+    MCAPI float distanceTo(class Actor const& otherEntity) const;
 
     // symbol: ?getEntity@HitResult@@QEBAPEAVActor@@XZ
     MCAPI class Actor* getEntity() const;

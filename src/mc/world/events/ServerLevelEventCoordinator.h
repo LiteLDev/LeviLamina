@@ -18,10 +18,10 @@ public:
     virtual ~ServerLevelEventCoordinator() = default;
 
     // symbol: ?sendLevelAddedPlayer@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVPlayer@@@Z
-    MCAPI void sendLevelAddedPlayer(class Level&, class Player&);
+    MCAPI void sendLevelAddedPlayer(class Level& level, class Player& player);
 
     // symbol: ?sendLevelRemovedPlayer@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVPlayer@@@Z
-    MCAPI void sendLevelRemovedPlayer(class Level&, class Player&);
+    MCAPI void sendLevelRemovedPlayer(class Level& level, class Player& player);
 
     // NOLINTEND
 };

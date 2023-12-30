@@ -34,7 +34,7 @@ public:
 
         // symbol:
         // ?read@AttributeData@UpdateAttributesPacket@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-        MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
+        MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
         // symbol: ??1AttributeData@UpdateAttributesPacket@@QEAA@XZ
         MCAPI ~AttributeData();
@@ -64,7 +64,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@UpdateAttributesPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@UpdateAttributesPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -75,7 +75,8 @@ public:
 
     // symbol:
     // ??0UpdateAttributesPacket@@QEAA@AEBVActor@@AEBV?$vector@VAttributeInstanceHandle@@V?$allocator@VAttributeInstanceHandle@@@std@@@std@@@Z
-    MCAPI UpdateAttributesPacket(class Actor const&, std::vector<class AttributeInstanceHandle> const&);
+    MCAPI
+    UpdateAttributesPacket(class Actor const& entity, std::vector<class AttributeInstanceHandle> const& dirtyData);
 
     // NOLINTEND
 };

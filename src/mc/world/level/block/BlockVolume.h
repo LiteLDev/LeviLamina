@@ -27,7 +27,7 @@ public:
 
         // NOLINTBEGIN
         // symbol: ??9BlockVolumeIter@BlockVolume@@QEBA_NAEBU01@@Z
-        MCAPI bool operator!=(struct BlockVolume::BlockVolumeIter const&) const;
+        MCAPI bool operator!=(struct BlockVolume::BlockVolumeIter const& c) const;
 
         // symbol: ??DBlockVolumeIter@BlockVolume@@QEAA?BU?$pair@PEBVBlock@@VPos@@@std@@XZ
         MCAPI std::pair<class Block const*, class Pos> const operator*();
@@ -70,7 +70,9 @@ public:
     MCAPI short findHighestNonAirBlock() const;
 
     // symbol: ?getAboveTopSolidBlock@BlockVolume@@QEBAFAEBVBlockPos@@_N11@Z
-    MCAPI short getAboveTopSolidBlock(class BlockPos const&, bool, bool, bool) const;
+    MCAPI short
+    getAboveTopSolidBlock(class BlockPos const& start, bool dimensionShowsSky, bool includeWater, bool includeLeaves)
+        const;
 
     // symbol: ?getDimensions@BlockVolume@@QEBA?AVPos@@XZ
     MCAPI class Pos getDimensions() const;
@@ -79,10 +81,10 @@ public:
     MCAPI uint getIndexBounds() const;
 
     // symbol: ?index@BlockVolume@@QEBAIAEBVBlockPos@@@Z
-    MCAPI uint index(class BlockPos const&) const;
+    MCAPI uint index(class BlockPos const& pos) const;
 
     // symbol: ?index@BlockVolume@@QEBAIAEBVPos@@@Z
-    MCAPI uint index(class Pos const&) const;
+    MCAPI uint index(class Pos const& pos) const;
 
     // symbol: ?indexNoBoundsCheck@BlockVolume@@QEBAIAEBVBlockPos@@@Z
     MCAPI uint indexNoBoundsCheck(class BlockPos const&) const;
@@ -91,10 +93,10 @@ public:
     MCAPI uint indexNoBoundsCheck(class Pos const&) const;
 
     // symbol: ?isInBounds@BlockVolume@@QEBA_NAEBVBlockPos@@@Z
-    MCAPI bool isInBounds(class BlockPos const&) const;
+    MCAPI bool isInBounds(class BlockPos const& pos) const;
 
     // symbol: ?isInBounds@BlockVolume@@QEBA_NAEBVPos@@@Z
-    MCAPI bool isInBounds(class Pos const&) const;
+    MCAPI bool isInBounds(class Pos const& pos) const;
 
     // NOLINTEND
 };

@@ -10,7 +10,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??RListTagFloatAdder@@QEAAAEAV0@M@Z
-    MCAPI class ListTagFloatAdder& operator()(float);
+    MCAPI class ListTagFloatAdder& operator()(float f);
 
     // symbol: ??1ListTagFloatAdder@@QEAA@XZ
     MCAPI ~ListTagFloatAdder();

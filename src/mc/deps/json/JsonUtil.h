@@ -18,15 +18,21 @@ namespace JsonUtil {
 // NOLINTBEGIN
 // symbol:
 // ?LogMissingChildSchemaOption@JsonUtil@@YAXW4LogArea@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@22@Z
-MCAPI void
-LogMissingChildSchemaOption(::LogArea, class Json::Value const&, std::string const&, std::string const&, std::string const&);
+MCAPI void LogMissingChildSchemaOption(
+    enum LogArea             area,
+    class Json::Value const& node,
+    std::string const&       missingName,
+    std::string const&       foundNodesStr,
+    std::string const&       optionsStr
+);
 
 // symbol:
 // ?LogUnknownChildSchemaOption@JsonUtil@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LogArea@@AEBVValue@Json@@@Z
-MCAPI void LogUnknownChildSchemaOption(std::string const&, ::LogArea, class Json::Value const&);
+MCAPI void
+LogUnknownChildSchemaOption(std::string const& childName, enum LogArea area, class Json::Value const& childValue);
 
 // symbol: ?eraseSchema@JsonUtil@@YAXAEBVHashedString@@AEBVSemVersion@@@Z
-MCAPI void eraseSchema(class HashedString const&, class SemVersion const&);
+MCAPI void eraseSchema(class HashedString const& name, class SemVersion const& version);
 
 // symbol:
 // ?getBlockLegacy@JsonUtil@@YAPEBVBlockLegacy@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -53,16 +59,17 @@ MCAPI bool parseBannerBlockType(::BannerBlockType&, class Json::Value const&);
 
 // symbol:
 // ?parseItem@JsonUtil@@YA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAHV?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
-MCAPI bool parseItem(std::string&, std::string&, int&, std::string_view);
+MCAPI bool
+parseItem(std::string& outItemName, std::string& outItemNamespace, int& inoutItemAux, std::string_view inString);
 
 // symbol: ?parseItemColor@JsonUtil@@YA_NAEAW4ItemColor@@AEBVValue@Json@@@Z
 MCAPI bool parseItemColor(::ItemColor&, class Json::Value const&);
 
 // symbol: ?parseRange@JsonUtil@@YA_NAEBVValue@Json@@AEAH1@Z
-MCAPI bool parseRange(class Json::Value const&, int&, int&);
+MCAPI bool parseRange(class Json::Value const& root, int& outMin, int& outMax);
 
 // symbol: ?parseVec3@JsonUtil@@YA_NAEAVVec3@@AEBVValue@Json@@@Z
-MCAPI bool parseVec3(class Vec3&, class Json::Value const&);
+MCAPI bool parseVec3(class Vec3& outVec, class Json::Value const& root);
 
 // symbol:
 // ?printJsonSchema_childNode@JsonUtil@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBVHashedString@@1_N_K411@Z
@@ -71,7 +78,7 @@ printJsonSchema_childNode(std::string&, std::string const&, class HashedString c
 
 // symbol:
 // ?setDefaultPrettyName@JsonUtil@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVHashedString@@@Z
-MCAPI void setDefaultPrettyName(std::string&, class HashedString const&);
+MCAPI void setDefaultPrettyName(std::string& destPrettyName, class HashedString const& sourceName);
 // NOLINTEND
 
 }; // namespace JsonUtil

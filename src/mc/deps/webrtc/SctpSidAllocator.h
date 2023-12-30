@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/webrtc/detail/SSLRole.h"
+#include "mc/deps/webrtc/rtc/SSLRole.h"
 
 namespace webrtc {
 

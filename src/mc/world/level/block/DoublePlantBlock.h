@@ -98,14 +98,16 @@ public:
     virtual void __unk_vfn_67();
 
     // vIndex: 71, symbol: ?setupRedstoneComponent@DoublePlantBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
+    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
 
     // vIndex: 79, symbol:
     // ?onFertilized@DoublePlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, enum FertilizerType fType)
+        const;
 
     // vIndex: 81, symbol: ?canBeFertilized@DoublePlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
@@ -114,7 +116,7 @@ public:
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
     // vIndex: 104, symbol: ?canBeBuiltOver@DoublePlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canBeBuiltOver(class BlockSource&, class BlockPos const&) const;
+    virtual bool canBeBuiltOver(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -139,13 +141,14 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 122, symbol: ?getColor@DoublePlantBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 124, symbol: ?getColorForParticle@DoublePlantBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColorForParticle(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int
+    getColorForParticle(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 129, symbol: ?getVariant@DoublePlantBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -167,22 +170,29 @@ public:
     virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
 
     // vIndex: 163, symbol: ?playerDestroy@DoublePlantBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual void playerDestroy(class Player&, class BlockPos const&, class Block const&) const;
+    virtual void playerDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 164, symbol: ?getResourceItem@DoublePlantBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance
+    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 170, symbol: ?_keepRelevantStateForDropping@DoublePlantBlock@@MEBAAEBVBlock@@AEBV2@@Z
     virtual class Block const& _keepRelevantStateForDropping(class Block const&) const;
 
     // symbol: ??0DoublePlantBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DoublePlantBlock(std::string const&, int);
+    MCAPI DoublePlantBlock(std::string const& nameId, int id);
 
     // symbol: ?getType@DoublePlantBlock@@QEBAHAEBVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    MCAPI int getType(class BlockSource const&, class BlockPos const&, class Block const&) const;
+    MCAPI int getType(class BlockSource const& region, class BlockPos const& pos, class Block const& block) const;
 
     // symbol: ?placeAt@DoublePlantBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@W4DoublePlantType@@HPEAVActor@@@Z
-    MCAPI bool placeAt(class BlockSource&, class BlockPos const&, ::DoublePlantType, int, class Actor*) const;
+    MCAPI bool placeAt(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        enum DoublePlantType  plantType,
+        int                   updateType,
+        class Actor*          player
+    ) const;
 
     // NOLINTEND
 };

@@ -32,10 +32,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@MoveToVillageGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 11, symbol: ?isValidTarget@MoveToVillageGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
 
     // vIndex: 14, symbol: ?_moveToBlock@MoveToVillageGoal@@UEAAXXZ
     virtual void _moveToBlock();
@@ -44,7 +44,7 @@ public:
     virtual class BlockPos _selectRandomPosInVillage();
 
     // symbol: ??0MoveToVillageGoal@@QEAA@AEAVMob@@MMMH@Z
-    MCAPI MoveToVillageGoal(class Mob&, float, float, float, int);
+    MCAPI MoveToVillageGoal(class Mob& mob, float speedModifier, float goalRadius, float cooldown, int searchRange);
 
     // NOLINTEND
 

@@ -41,7 +41,7 @@ public:
     MCAPI FeedItem(struct FeedItem const&);
 
     // symbol: ?addEffect@FeedItem@@QEAAXAEBUEffect@1@@Z
-    MCAPI void addEffect(struct FeedItem::Effect const&);
+    MCAPI void addEffect(struct FeedItem::Effect const& effect);
 
     // symbol: ??4FeedItem@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct FeedItem& operator=(struct FeedItem&&);

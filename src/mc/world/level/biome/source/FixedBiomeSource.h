@@ -25,7 +25,7 @@ public:
     virtual void fillBiomes(class LevelChunk&, class ChunkLocalNoiseCache const&) const;
 
     // vIndex: 2, symbol: ?getBiomeArea@FixedBiomeSource@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-    virtual class BiomeArea getBiomeArea(class BoundingBox const&, uint) const;
+    virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
     // vIndex: 3, symbol: ?getBiomeArea@FixedBiomeSource@@UEBA?AVBiomeArea@@AEBVBoundingBox@@IAEBUGetBiomeOptions@@@Z
     virtual class BiomeArea getBiomeArea(class BoundingBox const&, uint, struct GetBiomeOptions const&) const;
@@ -43,7 +43,7 @@ public:
     MCVAPI class Biome const* getBiome(int, int, int) const;
 
     // symbol: ??0FixedBiomeSource@@QEAA@AEBVBiome@@@Z
-    MCAPI explicit FixedBiomeSource(class Biome const&);
+    MCAPI explicit FixedBiomeSource(class Biome const& fixedBiome);
 
     // NOLINTEND
 };

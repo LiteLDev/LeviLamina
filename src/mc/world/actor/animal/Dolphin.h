@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 6, symbol: ?initializeComponents@Dolphin@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void initializeComponents(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1Dolphin@@UEAA@XZ
     virtual ~Dolphin() = default;
@@ -88,7 +88,7 @@ public:
     virtual bool createAIGoals();
 
     // vIndex: 204, symbol: ?_getWalkTargetValue@Dolphin@@UEAAMAEBVBlockPos@@@Z
-    virtual float _getWalkTargetValue(class BlockPos const&);
+    virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // symbol: ??0Dolphin@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Dolphin(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);

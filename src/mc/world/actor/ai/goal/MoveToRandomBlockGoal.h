@@ -35,17 +35,17 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@MoveToRandomBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0MoveToRandomBlockGoal@@QEAA@AEAVMob@@MMM@Z
-    MCAPI MoveToRandomBlockGoal(class Mob&, float, float, float);
+    MCAPI MoveToRandomBlockGoal(class Mob& mob, float speedModifier, float within, float blockDistance);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_isValidDestinationBlock@MoveToRandomBlockGoal@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _isValidDestinationBlock(class BlockSource&, class BlockPos const&);
+    MCAPI bool _isValidDestinationBlock(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 };

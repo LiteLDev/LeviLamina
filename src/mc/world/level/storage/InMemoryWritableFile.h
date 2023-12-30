@@ -15,7 +15,7 @@ public:
     virtual ~InMemoryWritableFile() = default;
 
     // vIndex: 1, symbol: ?Append@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
-    virtual leveldb::Status Append(leveldb::Slice const&);
+    virtual leveldb::Status Append(leveldb::Slice const& data);
 
     // vIndex: 2, symbol: ?Close@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ
     virtual leveldb::Status Close();
@@ -27,7 +27,7 @@ public:
     virtual leveldb::Status Sync();
 
     // symbol: ??0InMemoryWritableFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
-    MCAPI explicit InMemoryWritableFile(std::shared_ptr<class InMemoryFile>);
+    MCAPI explicit InMemoryWritableFile(std::shared_ptr<class InMemoryFile> file);
 
     // NOLINTEND
 };

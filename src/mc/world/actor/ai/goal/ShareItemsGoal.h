@@ -35,11 +35,17 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@ShareItemsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol:
     // ??0ShareItemsGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MHM@Z
-    MCAPI ShareItemsGoal(class Mob&, std::vector<struct MobDescriptor> const&, float, int, float);
+    MCAPI ShareItemsGoal(
+        class Mob&                               mob,
+        std::vector<struct MobDescriptor> const& mobFilters,
+        float                                    speedModifier,
+        int                                      searchRange,
+        float                                    goalRadius
+    );
 
     // NOLINTEND
 
@@ -47,7 +53,8 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?selectEntityToShareWith@ShareItemsGoal@@IEAA?AU?$pair@HVItemStack@@@std@@AEBV?$vector@U?$pair@HVItemStack@@@std@@V?$allocator@U?$pair@HVItemStack@@@std@@@2@@3@@Z
-    MCAPI std::pair<int, class ItemStack> selectEntityToShareWith(std::vector<std::pair<int, class ItemStack>> const&);
+    MCAPI std::pair<int, class ItemStack>
+          selectEntityToShareWith(std::vector<std::pair<int, class ItemStack>> const& shareableItems);
 
     // NOLINTEND
 };

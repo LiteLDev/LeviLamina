@@ -18,16 +18,16 @@ public:
     MCVAPI ::EventResult onEvent(struct LevelNotificationEvent const&);
 
     // symbol: ?onLevelAddedPlayer@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
-    MCVAPI ::EventResult onLevelAddedPlayer(class Level&, class Player&);
+    MCVAPI ::EventResult onLevelAddedPlayer(class Level& level, class Player& player);
 
     // symbol: ?onLevelInitialized@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
-    MCVAPI ::EventResult onLevelInitialized(class Level&);
+    MCVAPI ::EventResult onLevelInitialized(class Level& level);
 
     // symbol: ?onLevelRemovedActor@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVActor@@@Z
-    MCVAPI ::EventResult onLevelRemovedActor(class Level&, class Actor&);
+    MCVAPI ::EventResult onLevelRemovedActor(class Level& level, class Actor& actor);
 
     // symbol: ?onLevelRemovedPlayer@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
-    MCVAPI ::EventResult onLevelRemovedPlayer(class Level&, class Player&);
+    MCVAPI ::EventResult onLevelRemovedPlayer(class Level& level, class Player& player);
 
     // symbol: ?onLevelTick@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
     MCVAPI ::EventResult onLevelTick(class Level&);
@@ -37,7 +37,7 @@ public:
 
     // symbol:
     // ?onLevelWeatherChange@LevelEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
-    MCVAPI ::EventResult onLevelWeatherChange(std::string const&, bool, bool);
+    MCVAPI ::EventResult onLevelWeatherChange(std::string const& dimension, bool raining, bool lightning);
 
     // NOLINTEND
 };

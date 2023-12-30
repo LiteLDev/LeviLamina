@@ -33,7 +33,7 @@ public:
     MCAPI struct RakNet::uint24_t GetNextDatagramSequenceNumber();
 
     // symbol: ?GetRTOForRetransmission@CCRakNetSlidingWindow@RakNet@@QEBA_KE@Z
-    MCAPI uint64 GetRTOForRetransmission(uchar) const;
+    MCAPI uint64 GetRTOForRetransmission(uchar timesSent) const;
 
     // symbol: ?GetRetransmissionBandwidth@CCRakNetSlidingWindow@RakNet@@QEAAH_K0I_N@Z
     MCAPI int GetRetransmissionBandwidth(uint64, uint64, uint, bool);
@@ -45,16 +45,31 @@ public:
     MCAPI void Init(uint64, uint);
 
     // symbol: ?OnAck@CCRakNetSlidingWindow@RakNet@@QEAAX_K0_NNNN1Uuint24_t@2@@Z
-    MCAPI void OnAck(uint64, uint64, bool, double, double, double, bool, struct RakNet::uint24_t);
+    MCAPI void OnAck(
+        uint64                  curTime,
+        uint64                  rtt,
+        bool                    hasBAndAS,
+        double                  _B,
+        double                  _AS,
+        double                  totalUserDataBytesAcked,
+        bool                    isContinuousSend,
+        struct RakNet::uint24_t sequenceNumber
+    );
 
     // symbol: ?OnGotPacket@CCRakNetSlidingWindow@RakNet@@QEAA_NUuint24_t@2@_N_KIPEAI@Z
-    MCAPI bool OnGotPacket(struct RakNet::uint24_t, bool, uint64, uint, uint*);
+    MCAPI bool OnGotPacket(
+        struct RakNet::uint24_t datagramSequenceNumber,
+        bool                    isContinuousSend,
+        uint64                  curTime,
+        uint                    sizeInBytes,
+        uint*                   skippedMessageCount
+    );
 
     // symbol: ?OnGotPacketPair@CCRakNetSlidingWindow@RakNet@@QEAAXUuint24_t@2@I_K@Z
-    MCAPI void OnGotPacketPair(struct RakNet::uint24_t, uint, uint64);
+    MCAPI void OnGotPacketPair(struct RakNet::uint24_t datagramSequenceNumber, uint sizeInBytes, uint64 curTime);
 
     // symbol: ?OnNAK@CCRakNetSlidingWindow@RakNet@@QEAAX_KUuint24_t@2@@Z
-    MCAPI void OnNAK(uint64, struct RakNet::uint24_t);
+    MCAPI void OnNAK(uint64 curTime, struct RakNet::uint24_t nakSequenceNumber);
 
     // symbol: ?OnResend@CCRakNetSlidingWindow@RakNet@@QEAAX_K0@Z
     MCAPI void OnResend(uint64, uint64);
@@ -63,7 +78,7 @@ public:
     MCAPI void OnSendAck(uint64, uint);
 
     // symbol: ?OnSendAckGetBAndAS@CCRakNetSlidingWindow@RakNet@@QEAAX_KPEA_NPEAN2@Z
-    MCAPI void OnSendAckGetBAndAS(uint64, bool*, double*, double*);
+    MCAPI void OnSendAckGetBAndAS(uint64 curTime, bool* hasBAndAS, double* _B, double* _AS);
 
     // symbol: ?OnSendBytes@CCRakNetSlidingWindow@RakNet@@QEAAX_KI@Z
     MCAPI void OnSendBytes(uint64, uint);
@@ -78,7 +93,7 @@ public:
     MCAPI ~CCRakNetSlidingWindow();
 
     // symbol: ?LessThan@CCRakNetSlidingWindow@RakNet@@SA_NUuint24_t@2@0@Z
-    MCAPI static bool LessThan(struct RakNet::uint24_t, struct RakNet::uint24_t);
+    MCAPI static bool LessThan(struct RakNet::uint24_t a, struct RakNet::uint24_t b);
 
     // NOLINTEND
 

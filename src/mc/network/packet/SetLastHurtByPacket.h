@@ -30,7 +30,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@SetLastHurtByPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@SetLastHurtByPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -40,7 +40,7 @@ public:
     MCAPI SetLastHurtByPacket();
 
     // symbol: ??0SetLastHurtByPacket@@QEAA@W4ActorType@@@Z
-    MCAPI explicit SetLastHurtByPacket(::ActorType);
+    MCAPI explicit SetLastHurtByPacket(enum ActorType lastHurtBy);
 
     // NOLINTEND
 };

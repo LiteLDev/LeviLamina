@@ -37,7 +37,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@ShowCreditsPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@ShowCreditsPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -47,7 +47,7 @@ public:
     MCAPI ShowCreditsPacket();
 
     // symbol: ??0ShowCreditsPacket@@QEAA@VActorRuntimeID@@W4CreditsState@0@@Z
-    MCAPI ShowCreditsPacket(class ActorRuntimeID, ::ShowCreditsPacket::CreditsState);
+    MCAPI ShowCreditsPacket(class ActorRuntimeID playerID, enum ShowCreditsPacket::CreditsState creditsState);
 
     // NOLINTEND
 };

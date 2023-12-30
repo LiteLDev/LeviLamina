@@ -119,7 +119,7 @@ public:
     virtual std::string buildDescriptionId(class Block const&) const;
 
     // vIndex: 121, symbol: ?getColor@ShulkerBoxBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getColor(class Block const&) const;
+    virtual int getColor(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -134,7 +134,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0ShulkerBoxBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ShulkerBoxBlock(std::string const&, int);
+    MCAPI ShulkerBoxBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

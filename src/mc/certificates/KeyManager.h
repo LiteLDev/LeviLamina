@@ -22,7 +22,7 @@ public:
 
     // symbol:
     // ??0KeyManager@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4System@Asymmetric@Crypto@@@Z
-    MCAPI KeyManager(std::string const&, ::Crypto::Asymmetric::System);
+    MCAPI KeyManager(std::string const& publicKey, enum Crypto::Asymmetric::System system);
 
     // symbol: ?getPublicKey@KeyManager@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getPublicKey() const;

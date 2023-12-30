@@ -21,11 +21,17 @@ public:
     virtual bool canConsumePowerAnyDirection() const;
 
     // vIndex: 11, symbol: ?addSource@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    virtual bool addSource(
+        class CircuitSceneGraph&         graph,
+        class CircuitTrackingInfo const& info,
+        int&                             dampening,
+        bool&                            bDirectlyPowered
+    );
 
     // vIndex: 12, symbol:
     // ?allowConnection@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-    virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
+    virtual bool
+    allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     // vIndex: 17, symbol: __unk_vfn_17
     virtual void __unk_vfn_17();
@@ -40,7 +46,7 @@ public:
     MCAPI PistonConsumer();
 
     // symbol: ?setBlockPowerFace@PistonConsumer@@QEAAXE@Z
-    MCAPI void setBlockPowerFace(uchar);
+    MCAPI void setBlockPowerFace(uchar blockFace);
 
     // NOLINTEND
 };

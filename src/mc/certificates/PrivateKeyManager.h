@@ -22,7 +22,7 @@ public:
     virtual bool isValid() const;
 
     // symbol: ??0PrivateKeyManager@@QEAA@W4System@Asymmetric@Crypto@@@Z
-    MCAPI explicit PrivateKeyManager(::Crypto::Asymmetric::System);
+    MCAPI explicit PrivateKeyManager(enum Crypto::Asymmetric::System system);
 
     // symbol:
     // ?computeSecret@PrivateKeyManager@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVKeyManager@@@Z

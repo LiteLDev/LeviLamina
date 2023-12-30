@@ -43,7 +43,7 @@ public:
     virtual void __unk_vfn_17();
 
     // vIndex: 30, symbol: ?canDestroySpecial@PickaxeItem@@UEBA_NAEBVBlock@@@Z
-    virtual bool canDestroySpecial(class Block const&) const;
+    virtual bool canDestroySpecial(class Block const& block) const;
 
     // vIndex: 37, symbol: __unk_vfn_37
     virtual void __unk_vfn_37();
@@ -76,7 +76,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 74, symbol: ?getDestroySpeed@PickaxeItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
-    virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
+    virtual float getDestroySpeed(class ItemStackBase const& itemStack, class Block const& block) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -85,7 +85,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0PickaxeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z
-    MCAPI PickaxeItem(std::string const&, int, class Item::Tier const&);
+    MCAPI PickaxeItem(std::string const& name, int id, class Item::Tier const& tier);
 
     // NOLINTEND
 

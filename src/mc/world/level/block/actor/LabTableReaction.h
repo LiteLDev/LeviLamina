@@ -19,10 +19,10 @@ public:
 
     // symbol:
     // ?addComponent@LabTableReaction@@QEAAXV?$unique_ptr@VLabTableReactionComponent@@U?$default_delete@VLabTableReactionComponent@@@std@@@std@@@Z
-    MCAPI void addComponent(std::unique_ptr<class LabTableReactionComponent>);
+    MCAPI void addComponent(std::unique_ptr<class LabTableReactionComponent> comp);
 
     // symbol: ?addResultItem@LabTableReaction@@QEAAXAEBVItemStack@@@Z
-    MCAPI void addResultItem(class ItemStack const&);
+    MCAPI void addResultItem(class ItemStack const& resultItem);
 
     // symbol: ?getReactionId@LabTableReaction@@QEAAHXZ
     MCAPI int getReactionId();
@@ -31,12 +31,12 @@ public:
     MCAPI ::LabTableReactionType getType();
 
     // symbol: ?tick@LabTableReaction@@QEAA_NAEAVBlockSource@@@Z
-    MCAPI bool tick(class BlockSource&);
+    MCAPI bool tick(class BlockSource& region);
 
     // symbol:
     // ?createReaction@LabTableReaction@@SA?AV?$unique_ptr@VLabTableReaction@@U?$default_delete@VLabTableReaction@@@std@@@std@@W4LabTableReactionType@@AEBVBlockPos@@_N@Z
     MCAPI static std::unique_ptr<class LabTableReaction>
-    createReaction(::LabTableReactionType, class BlockPos const&, bool);
+    createReaction(enum LabTableReactionType type, class BlockPos const& pos, bool isClientSide);
 
     // NOLINTEND
 };

@@ -33,16 +33,16 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@HideGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 16, symbol: ?_getRepathTime@HideGoal@@MEBA_KXZ
     virtual uint64 _getRepathTime() const;
 
     // vIndex: 17, symbol: ?_getOwnedPOI@HideGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
-    virtual std::weak_ptr<class POIInstance> _getOwnedPOI(::POIType) const;
+    virtual std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType type) const;
 
     // symbol: ??0HideGoal@@QEAA@AEAVMob@@MMMW4POIType@@@Z
-    MCAPI HideGoal(class Mob&, float, float, float, ::POIType);
+    MCAPI HideGoal(class Mob& mob, float speedModifier, float cooldownTimeout, float duration, enum POIType poiType);
 
     // NOLINTEND
 

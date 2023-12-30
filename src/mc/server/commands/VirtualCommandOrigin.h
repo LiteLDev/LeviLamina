@@ -67,7 +67,7 @@ public:
     virtual bool hasTellPerms() const;
 
     // vIndex: 15, symbol: ?canUseAbility@VirtualCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
-    virtual bool canUseAbility(::AbilitiesIndex) const;
+    virtual bool canUseAbility(enum AbilitiesIndex abilityIndex) const;
 
     // vIndex: 17, symbol: ?canUseCommandsWithoutCheatsEnabled@VirtualCommandOrigin@@UEBA_NXZ
     virtual bool canUseCommandsWithoutCheatsEnabled() const;

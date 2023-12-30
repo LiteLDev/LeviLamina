@@ -32,10 +32,10 @@ public:
     MCAPI ExpressionNode(class ExpressionNode const&);
 
     // symbol: ??0ExpressionNode@@QEAA@M@Z
-    MCAPI explicit ExpressionNode(float);
+    MCAPI explicit ExpressionNode(float f);
 
     // symbol: ??0ExpressionNode@@QEAA@AEAUMolangScriptArg@@W4ExpressionOp@@@Z
-    MCAPI ExpressionNode(struct MolangScriptArg&, ::ExpressionOp);
+    MCAPI ExpressionNode(struct MolangScriptArg& value, enum ExpressionOp op);
 
     // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@AEBVSemVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
     MCAPI ExpressionNode(class Json::Value const&, class SemVersion const&, gsl::span<class HashedString const>);
@@ -59,10 +59,10 @@ public:
     MCAPI void clear();
 
     // symbol: ?evalAsFloat@ExpressionNode@@QEBAMAEAVRenderParams@@@Z
-    MCAPI float evalAsFloat(class RenderParams&) const;
+    MCAPI float evalAsFloat(class RenderParams& renderParams) const;
 
     // symbol: ?evalGeneric@ExpressionNode@@QEBAAEBUMolangScriptArg@@AEAVRenderParams@@@Z
-    MCAPI struct MolangScriptArg const& evalGeneric(class RenderParams&) const;
+    MCAPI struct MolangScriptArg const& evalGeneric(class RenderParams& renderParams) const;
 
     // symbol:
     // ?getExpressionString@ExpressionNode@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -111,10 +111,10 @@ public:
     MCAPI class ExpressionNode& operator=(class ExpressionNode const&);
 
     // symbol: ??4ExpressionNode@@QEAAAEAV0@M@Z
-    MCAPI class ExpressionNode& operator=(float);
+    MCAPI class ExpressionNode& operator=(float f);
 
     // symbol: ??8ExpressionNode@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class ExpressionNode const&) const;
+    MCAPI bool operator==(class ExpressionNode const& rhs) const;
 
     // symbol:
     // ?parse@ExpressionNode@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
@@ -130,7 +130,7 @@ public:
     MCAPI static void buildExpressionOpTable();
 
     // symbol: ?fast_atof_positiveOnly@ExpressionNode@@SAMAEAPEBD@Z
-    MCAPI static float fast_atof_positiveOnly(char const*&);
+    MCAPI static float fast_atof_positiveOnly(char const*& ptr);
 
     // symbol: ?getExperiments@ExpressionNode@@SAAEAVExperiments@@XZ
     MCAPI static class Experiments& getExperiments();
@@ -222,7 +222,7 @@ public:
     MCAPI bool processArrays();
 
     // symbol: ?processBinaryExpression@ExpressionNode@@AEAA_NW4ExpressionOp@@@Z
-    MCAPI bool processBinaryExpression(::ExpressionOp);
+    MCAPI bool processBinaryExpression(enum ExpressionOp op);
 
     // symbol: ?processMathFuncs@ExpressionNode@@AEAA_NXZ
     MCAPI bool processMathFuncs();
@@ -243,7 +243,7 @@ public:
     MCAPI bool processSemicolons();
 
     // symbol: ?processUnaryExpression@ExpressionNode@@AEAA_NW4ExpressionOp@@@Z
-    MCAPI bool processUnaryExpression(::ExpressionOp);
+    MCAPI bool processUnaryExpression(enum ExpressionOp op);
 
     // symbol:
     // ?_buildProgram@ExpressionNode@@CA?AW4MolangCompileResult@@AEAUMolangProgramBuildState@@PEBV1@W4MolangVersion@@@Z

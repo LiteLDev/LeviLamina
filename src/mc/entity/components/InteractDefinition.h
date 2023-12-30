@@ -20,16 +20,17 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addInteraction@InteractDefinition@@QEAAXAEBUInteraction@@@Z
-    MCAPI void addInteraction(struct Interaction const&);
+    MCAPI void addInteraction(struct Interaction const& interaction);
 
     // symbol: ?initialize@InteractDefinition@@QEBAXAEAVEntityContext@@AEAVInteractComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class InteractComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class InteractComponent& component) const;
 
     // symbol:
     // ?buildSchema@InteractDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VInteractDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InteractDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InteractDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

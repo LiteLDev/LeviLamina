@@ -16,10 +16,10 @@ public:
     MCAPI RemoteClient();
 
     // symbol: ?SendOrBuffer@RemoteClient@RakNet@@QEAAXPEAPEBDPEBIH@Z
-    MCAPI void SendOrBuffer(char const**, uint const*, int);
+    MCAPI void SendOrBuffer(char const** data, uint const* lengths, int numParameters);
 
     // symbol: ?SetActive@RemoteClient@RakNet@@QEAAX_N@Z
-    MCAPI void SetActive(bool);
+    MCAPI void SetActive(bool a);
 
     // symbol: ??1RemoteClient@RakNet@@QEAA@XZ
     MCAPI ~RemoteClient();

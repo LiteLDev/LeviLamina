@@ -109,7 +109,7 @@ public:
         const;
 
     // vIndex: 101, symbol: ?attack@DragonEggBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
-    virtual bool attack(class Player*, class BlockPos const&) const;
+    virtual bool attack(class Player* player, class BlockPos const& pos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -142,7 +142,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 168, symbol: ?getDustColor@DragonEggBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
-    virtual class mce::Color getDustColor(class Block const&) const;
+    virtual class mce::Color getDustColor(class Block const& block) const;
 
     // vIndex: 169, symbol:
     // ?getDustParticleName@DragonEggBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
@@ -152,7 +152,7 @@ public:
     virtual void __unk_vfn_170();
 
     // symbol: ??0DragonEggBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DragonEggBlock(std::string const&, int);
+    MCAPI DragonEggBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 

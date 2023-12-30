@@ -49,7 +49,7 @@ public:
     virtual void __unk_vfn_39();
 
     // vIndex: 42, symbol: ?isDestructive@MinecartItem@@UEBA_NH@Z
-    virtual bool isDestructive(int) const;
+    virtual bool isDestructive(int auxValue) const;
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -73,7 +73,8 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 71, symbol: ?dispense@MinecartItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -88,7 +89,7 @@ public:
 
     // symbol:
     // ??0MinecartItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4MinecartType@@@Z
-    MCAPI MinecartItem(std::string const&, int, ::MinecartType);
+    MCAPI MinecartItem(std::string const& name, int id, enum MinecartType type);
 
     // NOLINTEND
 };

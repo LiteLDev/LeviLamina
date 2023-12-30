@@ -19,7 +19,7 @@ public:
     MCAPI EducationMetadata();
 
     // symbol: ??0EducationMetadata@@QEAA@AEBU0@@Z
-    MCAPI EducationMetadata(struct EducationMetadata const&);
+    MCAPI EducationMetadata(struct EducationMetadata const& other);
 
     // symbol: ??1EducationMetadata@@QEAA@XZ
     MCAPI ~EducationMetadata();

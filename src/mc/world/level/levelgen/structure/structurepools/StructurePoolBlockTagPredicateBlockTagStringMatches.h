@@ -20,11 +20,12 @@ public:
 
     // vIndex: 1, symbol:
     // ?test@StructurePoolBlockTagPredicateBlockTagStringMatches@@UEBA_NAEBVBlock@@AEBVCompoundTag@@@Z
-    virtual bool test(class Block const&, class CompoundTag const&) const;
+    virtual bool test(class Block const& block, class CompoundTag const& tag) const;
 
     // symbol:
     // ??0StructurePoolBlockTagPredicateBlockTagStringMatches@@QEAA@AEBVBlock@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-    MCAPI StructurePoolBlockTagPredicateBlockTagStringMatches(class Block const&, std::string, std::string);
+    MCAPI
+    StructurePoolBlockTagPredicateBlockTagStringMatches(class Block const& block, std::string tag, std::string value);
 
     // NOLINTEND
 };

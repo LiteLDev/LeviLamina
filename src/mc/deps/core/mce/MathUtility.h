@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?floatEqualsEpsilon@MathUtility@mce@@SA_NMMM@Z
-    MCAPI static bool floatEqualsEpsilon(float, float, float);
+    MCAPI static bool floatEqualsEpsilon(float a, float b, float epsilon);
 
     // symbol:
     // ?generateRotationAroundPivotMat@MathUtility@mce@@SA?AU?$mat@$03$03M$0A@@glm@@AEBU34@AEBU?$vec@$02M$0A@@4@@Z

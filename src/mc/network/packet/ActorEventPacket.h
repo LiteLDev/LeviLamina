@@ -32,7 +32,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@ActorEventPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@ActorEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -42,7 +42,7 @@ public:
     MCAPI ActorEventPacket();
 
     // symbol: ??0ActorEventPacket@@QEAA@VActorRuntimeID@@W4ActorEvent@@H@Z
-    MCAPI ActorEventPacket(class ActorRuntimeID, ::ActorEvent, int);
+    MCAPI ActorEventPacket(class ActorRuntimeID runtimeId, enum ActorEvent eventId, int data);
 
     // NOLINTEND
 };

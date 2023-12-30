@@ -29,7 +29,11 @@ public:
     MCAPI class Core::Result close();
 
     // symbol: ?open@File@Core@@QEAA?AVResult@2@AEBVPath@2@VFileOpenMode@2@W4FileBufferingMode@2@@Z
-    MCAPI class Core::Result open(class Core::Path const&, class Core::FileOpenMode, ::Core::FileBufferingMode);
+    MCAPI class Core::Result open(
+        class Core::Path const&      fileName,
+        class Core::FileOpenMode     openMode,
+        enum Core::FileBufferingMode bufferingMode
+    );
 
     // symbol: ?write@File@Core@@QEAA?AVResult@2@PEBX_K@Z
     MCAPI class Core::Result write(void const*, uint64);
@@ -46,8 +50,12 @@ public:
 
     // symbol:
     // ?writeCreateOrAppendFileData@File@Core@@SA?AVResult@2@AEBVPath@2@_K1AEBV?$vector@EV?$allocator@E@std@@@std@@@Z
-    MCAPI static class Core::Result
-    writeCreateOrAppendFileData(class Core::Path const&, uint64, uint64, std::vector<uchar> const&);
+    MCAPI static class Core::Result writeCreateOrAppendFileData(
+        class Core::Path const&   path,
+        uint64                    offset,
+        uint64                    numBytesToWrite,
+        std::vector<uchar> const& buffer
+    );
 
     // symbol: ?writeCreateOrAppendFileData@File@Core@@SA?AVResult@2@AEBVPath@2@_K1PEBE@Z
     MCAPI static class Core::Result writeCreateOrAppendFileData(class Core::Path const&, uint64, uint64, uchar const*);

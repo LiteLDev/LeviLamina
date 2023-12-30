@@ -15,11 +15,11 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?_serverGetEntityNetId@EntityNetId@@SA?AV1@AEBVEntityContext@@@Z
-    MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const&);
+    MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const& entity);
 
     // symbol:
     // ?deserialize@EntityNetId@@SA?AV?$Result@VEntityNetId@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<class EntityNetId> deserialize(class ReadOnlyBinaryStream&);
+    MCAPI static class Bedrock::Result<class EntityNetId> deserialize(class ReadOnlyBinaryStream& stream);
 
     // NOLINTEND
 };

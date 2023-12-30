@@ -41,7 +41,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@LabTablePacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@LabTablePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -51,10 +51,10 @@ public:
     MCAPI LabTablePacket();
 
     // symbol: ??0LabTablePacket@@QEAA@AEBVBlockPos@@W4LabTableReactionType@@@Z
-    MCAPI LabTablePacket(class BlockPos const&, ::LabTableReactionType);
+    MCAPI LabTablePacket(class BlockPos const& pos, enum LabTableReactionType reaction);
 
     // symbol: ??0LabTablePacket@@QEAA@W4Type@0@AEBVBlockPos@@@Z
-    MCAPI LabTablePacket(::LabTablePacket::Type, class BlockPos const&);
+    MCAPI LabTablePacket(enum LabTablePacket::Type type, class BlockPos const& pos);
 
     // NOLINTEND
 };

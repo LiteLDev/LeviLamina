@@ -126,7 +126,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@BeetrootBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -147,10 +147,10 @@ public:
     virtual class ItemInstance const getBaseCrop() const;
 
     // vIndex: 173, symbol: ?getCropNum@BeetrootBlock@@UEBAHAEAVRandomize@@HH@Z
-    virtual int getCropNum(class Randomize&, int, int) const;
+    virtual int getCropNum(class Randomize& random, int growth, int bonusLootLevel) const;
 
     // symbol: ??0BeetrootBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BeetrootBlock(std::string const&, int);
+    MCAPI BeetrootBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

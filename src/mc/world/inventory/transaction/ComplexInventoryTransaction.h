@@ -35,32 +35,33 @@ public:
 
     // vIndex: 1, symbol:
     // ?read@ComplexInventoryTransaction@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
     // vIndex: 2, symbol: ?write@ComplexInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 3, symbol: ?postLoadItems@ComplexInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
     virtual void postLoadItems(class BlockPalette&, bool);
 
     // vIndex: 4, symbol: ?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
-    virtual ::InventoryTransactionError handle(class Player&, bool) const;
+    virtual ::InventoryTransactionError handle(class Player& player, bool isSenderAuthority) const;
 
     // vIndex: 5, symbol:
     // ?onTransactionError@ComplexInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
-    virtual void onTransactionError(class Player&, ::InventoryTransactionError) const;
+    virtual void onTransactionError(class Player& player, enum InventoryTransactionError error) const;
 
     // symbol: ??0ComplexInventoryTransaction@@QEAA@W4Type@0@@Z
-    MCAPI explicit ComplexInventoryTransaction(::ComplexInventoryTransaction::Type);
+    MCAPI explicit ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type type);
 
     // symbol:
     // ?fromType@ComplexInventoryTransaction@@SA?AV?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@W4Type@1@@Z
-    MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(::ComplexInventoryTransaction::Type);
+    MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type type
+    );
 
     // symbol:
     // ?fromType@ComplexInventoryTransaction@@SA?AV?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@W4Type@1@AEBVInventoryTransaction@@@Z
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction>
-    fromType(::ComplexInventoryTransaction::Type, class InventoryTransaction const&);
+    fromType(enum ComplexInventoryTransaction::Type type, class InventoryTransaction const& transaction);
 
     // symbol:
     // ?getTransactionTypeName@ComplexInventoryTransaction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Type@1@@Z

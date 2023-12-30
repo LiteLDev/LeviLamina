@@ -17,13 +17,13 @@ public:
     MCAPI OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent&&);
 
     // symbol: ?checkPath@OpenDoorAnnotationComponent@@QEAAXAEAVMob@@@Z
-    MCAPI void checkPath(class Mob&);
+    MCAPI void checkPath(class Mob& mob);
 
     // symbol: ?initFromDefinition@OpenDoorAnnotationComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor& owner);
 
     // symbol: ?onComponentRemoved@OpenDoorAnnotationComponent@@QEAAXAEAVEntityContext@@@Z
-    MCAPI void onComponentRemoved(class EntityContext&);
+    MCAPI void onComponentRemoved(class EntityContext& entity);
 
     // NOLINTEND
 

@@ -118,23 +118,31 @@ public:
     virtual bool isFilteredOut(::BlockRenderLayer) const;
 
     // vIndex: 84, symbol: ?mayPlace@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 85, symbol: ?mayPlace@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 87, symbol:
     // ?tryToPlace@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEBUActorBlockSyncMessage@@@Z
-    virtual bool
-    tryToPlace(class BlockSource&, class BlockPos const&, class Block const&, struct ActorBlockSyncMessage const*)
-        const;
+    virtual bool tryToPlace(
+        class BlockSource&                  region,
+        class BlockPos const&               pos,
+        class Block const&                  block,
+        struct ActorBlockSyncMessage const* syncMsg
+    ) const;
 
     // vIndex: 96, symbol: ?asItemInstance@LightBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@LightBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    virtual class Block const& getPlacementBlock(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
 
     // vIndex: 103, symbol: ?canBeBuiltOver@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
     virtual bool canBeBuiltOver(class BlockSource&, class BlockPos const&, class BlockItem const&) const;
@@ -161,7 +169,7 @@ public:
     virtual class BlockLegacy& init();
 
     // vIndex: 137, symbol: ?getLightEmission@LightBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
-    virtual struct Brightness getLightEmission(class Block const&) const;
+    virtual struct Brightness getLightEmission(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -179,7 +187,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0LightBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LightBlock(std::string const&, int, class Material const&);
+    MCAPI LightBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
 };

@@ -18,10 +18,10 @@ public:
     virtual ~NetherReactorBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@NetherReactorBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2, symbol: ?save@NetherReactorBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
@@ -54,7 +54,7 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0NetherReactorBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit NetherReactorBlockActor(class BlockPos const&);
+    MCAPI explicit NetherReactorBlockActor(class BlockPos const& pos);
 
     // NOLINTEND
 };

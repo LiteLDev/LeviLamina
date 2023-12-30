@@ -18,11 +18,11 @@ public:
 
     // symbol:
     // ?getMobSpawnsForType@HardcodedSpawnAreaRegistry@@QEBAAEBV?$vector@VMobSpawnerData@@V?$allocator@VMobSpawnerData@@@std@@@std@@W4HardcodedSpawnAreaType@@@Z
-    MCAPI std::vector<class MobSpawnerData> const& getMobSpawnsForType(::HardcodedSpawnAreaType) const;
+    MCAPI std::vector<class MobSpawnerData> const& getMobSpawnsForType(enum HardcodedSpawnAreaType type) const;
 
     // symbol:
     // ?initMobSpawnsForType@HardcodedSpawnAreaRegistry@@QEAAXW4HardcodedSpawnAreaType@@$$QEAV?$vector@VMobSpawnerData@@V?$allocator@VMobSpawnerData@@@std@@@std@@@Z
-    MCAPI void initMobSpawnsForType(::HardcodedSpawnAreaType, std::vector<class MobSpawnerData>&&);
+    MCAPI void initMobSpawnsForType(enum HardcodedSpawnAreaType type, std::vector<class MobSpawnerData>&& mobList);
 
     // NOLINTEND
 };

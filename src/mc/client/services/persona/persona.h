@@ -75,7 +75,7 @@ MCAPI extern class HashedString const USE_BLINKING_ANIMATION_VARIABLE;
 
 // symbol:
 // ?pieceTypeFromString@persona@@YA?AW4PieceType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI ::persona::PieceType pieceTypeFromString(std::string const&);
+MCAPI ::persona::PieceType pieceTypeFromString(std::string const& assetTypeStr);
 
 // symbol:
 // ?stringFromPieceType@persona@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PieceType@1@_N@Z

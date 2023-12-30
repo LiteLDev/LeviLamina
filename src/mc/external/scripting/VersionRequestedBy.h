@@ -1,0 +1,28 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ModuleDescriptor; }
+namespace Scripting { struct Version; }
+// clang-format on
+
+namespace Scripting {
+
+struct VersionRequestedBy {
+public:
+    // prevent constructor by default
+    VersionRequestedBy& operator=(VersionRequestedBy const&);
+    VersionRequestedBy(VersionRequestedBy const&);
+    VersionRequestedBy();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??0VersionRequestedBy@Scripting@@QEAA@UVersion@1@UModuleDescriptor@1@_N2@Z
+    MCAPI VersionRequestedBy(struct Scripting::Version, struct Scripting::ModuleDescriptor, bool, bool);
+
+    // NOLINTEND
+};
+
+}; // namespace Scripting

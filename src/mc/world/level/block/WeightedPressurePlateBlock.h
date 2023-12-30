@@ -134,17 +134,17 @@ public:
     virtual int getTickDelay() const;
 
     // vIndex: 169, symbol: ?getSignalStrength@WeightedPressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual int getSignalStrength(class BlockSource&, class BlockPos const&) const;
+    virtual int getSignalStrength(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 170, symbol: ?getSignalForData@WeightedPressurePlateBlock@@MEBAHH@Z
-    virtual int getSignalForData(int) const;
+    virtual int getSignalForData(int data) const;
 
     // vIndex: 171, symbol: ?getRedstoneSignal@WeightedPressurePlateBlock@@MEBAHH@Z
-    virtual int getRedstoneSignal(int) const;
+    virtual int getRedstoneSignal(int signal) const;
 
     // symbol:
     // ??0WeightedPressurePlateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@H@Z
-    MCAPI WeightedPressurePlateBlock(std::string const&, int, class Material const&, int);
+    MCAPI WeightedPressurePlateBlock(std::string const& nameId, int id, class Material const& material, int maxWeight);
 
     // symbol: ?MAX_WEIGHT_HEAVY@WeightedPressurePlateBlock@@2HB
     MCAPI static int const MAX_WEIGHT_HEAVY;

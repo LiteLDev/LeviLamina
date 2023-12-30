@@ -22,10 +22,10 @@ public:
     virtual ~LegacyForestFoliageFeature() = default;
 
     // vIndex: 3, symbol: ?place@LegacyForestFoliageFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
     // symbol: ??0LegacyForestFoliageFeature@@QEAA@W4Type@0@AEAVFeatureRegistry@@@Z
-    MCAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type, class FeatureRegistry&);
+    MCAPI LegacyForestFoliageFeature(enum LegacyForestFoliageFeature::Type forestType, class FeatureRegistry& registry);
 
     // NOLINTEND
 };

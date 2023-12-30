@@ -27,7 +27,7 @@ public:
     virtual std::string getName() const;
 
     // symbol: ??0AddEntityPacket@@QEAA@AEBVEntityContext@@@Z
-    MCAPI explicit AddEntityPacket(class EntityContext const&);
+    MCAPI explicit AddEntityPacket(class EntityContext const& entity);
 
     // NOLINTEND
 };

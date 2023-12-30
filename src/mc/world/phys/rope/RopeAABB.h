@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getContactPoint@RopeAABB@@QEBA_NAEBVVec3@@MAEAUAABBContactPoint@@@Z
-    MCAPI bool getContactPoint(class Vec3 const&, float, struct AABBContactPoint&) const;
+    MCAPI bool getContactPoint(class Vec3 const& nodePos, float nodeSize, struct AABBContactPoint& result) const;
 
     // NOLINTEND
 };

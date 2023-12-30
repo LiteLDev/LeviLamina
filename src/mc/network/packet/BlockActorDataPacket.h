@@ -31,7 +31,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@BlockActorDataPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@BlockActorDataPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -41,7 +41,7 @@ public:
     MCAPI BlockActorDataPacket();
 
     // symbol: ??0BlockActorDataPacket@@QEAA@AEBVBlockPos@@VCompoundTag@@@Z
-    MCAPI BlockActorDataPacket(class BlockPos const&, class CompoundTag);
+    MCAPI BlockActorDataPacket(class BlockPos const& pos, class CompoundTag tag);
 
     // NOLINTEND
 };

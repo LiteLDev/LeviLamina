@@ -82,7 +82,7 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 179, symbol: ?checkSpawnRules@Phantom@@UEAA_N_N@Z
-    virtual bool checkSpawnRules(bool);
+    virtual bool checkSpawnRules(bool fromSpawner);
 
     // symbol: ??0Phantom@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Phantom(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);

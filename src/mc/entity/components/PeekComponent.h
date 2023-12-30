@@ -18,7 +18,7 @@ public:
     MCAPI bool getHadTarget() const;
 
     // symbol: ?setHadTarget@PeekComponent@@QEAAX_N@Z
-    MCAPI void setHadTarget(bool);
+    MCAPI void setHadTarget(bool hadTarget);
 
     // NOLINTEND
 };

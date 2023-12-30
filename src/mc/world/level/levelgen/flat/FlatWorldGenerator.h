@@ -80,7 +80,7 @@ public:
     virtual void loadChunk(class LevelChunk&, bool);
 
     // symbol: ??0FlatWorldGenerator@@QEAA@AEAVDimension@@IAEBVValue@Json@@@Z
-    MCAPI FlatWorldGenerator(class Dimension&, uint, class Json::Value const&);
+    MCAPI FlatWorldGenerator(class Dimension& dimension, uint seed, class Json::Value const& generationOptionsJSON);
 
     // NOLINTEND
 

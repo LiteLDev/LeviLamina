@@ -44,9 +44,13 @@ public:
 
     // vIndex: 8, symbol:
     // ?addAABBs@StairBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-    virtual void
-    addAABBs(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&)
-        const;
+    virtual void addAABBs(
+        class Block const&       block,
+        class BlockSource const& region,
+        class BlockPos const&    blockPos,
+        class AABB const*        intersectTestBox,
+        std::vector<class AABB>& inoutBoxes
+    ) const;
 
     // vIndex: 9, symbol: ?getOutline@StairBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
     virtual class AABB const&
@@ -57,9 +61,11 @@ public:
 
     // vIndex: 19, symbol:
     // ?liquidCanFlowIntoFromDirection@StairBlock@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z
-    virtual bool
-    liquidCanFlowIntoFromDirection(uchar, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
-        const;
+    virtual bool liquidCanFlowIntoFromDirection(
+        uchar                                                           flowIntoFacing,
+        std::function<class Block const&(class BlockPos const&)> const& getBlock,
+        class BlockPos const&                                           pos
+    ) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -68,7 +74,7 @@ public:
     virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
 
     // vIndex: 25, symbol: ?canConnect@StairBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
+    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -134,7 +140,7 @@ public:
     virtual void __unk_vfn_67();
 
     // vIndex: 72, symbol: ?getRedstoneProperty@StairBlock@@UEBA?AW4BlockProperty@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual ::BlockProperty getRedstoneProperty(class BlockSource&, class BlockPos const&) const;
+    virtual ::BlockProperty getRedstoneProperty(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
@@ -143,23 +149,30 @@ public:
     virtual bool mayPick() const;
 
     // vIndex: 83, symbol: ?mayPick@StairBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
-    virtual bool mayPick(class BlockSource const&, class Block const&, bool) const;
+    virtual bool mayPick(class BlockSource const& region, class Block const& block, bool liquid) const;
 
     // vIndex: 84, symbol: ?mayPlace@StairBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@StairBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
 
     // vIndex: 90, symbol: ?destroy@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z
-    virtual void destroy(class BlockSource&, class BlockPos const&, class Block const&, class Actor*) const;
+    virtual void
+    destroy(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Actor* entitySource)
+        const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@StairBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    virtual class Block const& getPlacementBlock(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
 
     // vIndex: 101, symbol: ?attack@StairBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
-    virtual bool attack(class Player*, class BlockPos const&) const;
+    virtual bool attack(class Player* player, class BlockPos const& pos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -177,34 +190,34 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@StairBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 134, symbol: ?animateTickBedrockLegacy@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // vIndex: 135, symbol: ?animateTick@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void animateTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 145, symbol: ?onExploded@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-    virtual void onExploded(class BlockSource&, class BlockPos const&, class Actor*) const;
+    virtual void onExploded(class BlockSource& region, class BlockPos const& pos, class Actor* entitySource) const;
 
     // vIndex: 146, symbol: ?onStandOn@StairBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
     virtual void onStandOn(class EntityContext&, class BlockPos const&) const;
 
     // vIndex: 147, symbol: ?onPlace@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@StairBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -225,12 +238,22 @@ public:
     MCAPI StairBlock(std::string const&, int, class BlockLegacy const&);
 
     // symbol: ?setInnerPieceShape@StairBlock@@QEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEAVAABB@@_N@Z
-    MCAPI bool
-    setInnerPieceShape(class Block const&, class BlockSource const&, class BlockPos const&, class AABB&, bool) const;
+    MCAPI bool setInnerPieceShape(
+        class Block const&       block,
+        class BlockSource const& region,
+        class BlockPos const&    pos,
+        class AABB&              shape,
+        bool                     shrink
+    ) const;
 
     // symbol: ?setStepShape@StairBlock@@QEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEAVAABB@@_N@Z
-    MCAPI bool
-    setStepShape(class Block const&, class BlockSource const&, class BlockPos const&, class AABB&, bool) const;
+    MCAPI bool setStepShape(
+        class Block const&       block,
+        class BlockSource const& region,
+        class BlockPos const&    pos,
+        class AABB&              shape,
+        bool                     shrink
+    ) const;
 
     // symbol: ?stairDirectionToFacing@StairBlock@@SAEH@Z
     MCAPI static uchar stairDirectionToFacing(int);
@@ -240,7 +263,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?shapeZFightShrink@StairBlock@@IEBAXAEAVAABB@@@Z
-    MCAPI void shapeZFightShrink(class AABB&) const;
+    MCAPI void shapeZFightShrink(class AABB& shape) const;
 
     // NOLINTEND
 };

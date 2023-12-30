@@ -16,16 +16,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ItemEnchants@@QEAA@H@Z
-    MCAPI explicit ItemEnchants(int);
+    MCAPI explicit ItemEnchants(int slot);
 
     // symbol: ??0ItemEnchants@@QEAA@HAEBVListTag@@@Z
-    MCAPI ItemEnchants(int, class ListTag const&);
+    MCAPI ItemEnchants(int slot, class ListTag const& tag);
 
     // symbol: ?addEnchant@ItemEnchants@@QEAA_NVEnchantmentInstance@@_N@Z
-    MCAPI bool addEnchant(class EnchantmentInstance, bool);
+    MCAPI bool addEnchant(class EnchantmentInstance enchant, bool allowNonVanilla);
 
     // symbol: ?canEnchant@ItemEnchants@@QEAA?AUEnchantResult@@VEnchantmentInstance@@_N@Z
-    MCAPI struct EnchantResult canEnchant(class EnchantmentInstance, bool);
+    MCAPI struct EnchantResult canEnchant(class EnchantmentInstance enchant, bool allowNonVanilla);
 
     // symbol:
     // ?getAllEnchants@ItemEnchants@@QEBA?AV?$vector@VEnchantmentInstance@@V?$allocator@VEnchantmentInstance@@@std@@@std@@XZ
@@ -40,16 +40,16 @@ public:
 
     // symbol:
     // ?getEnchants@ItemEnchants@@QEBAAEBV?$vector@VEnchantmentInstance@@V?$allocator@VEnchantmentInstance@@@std@@@std@@H@Z
-    MCAPI std::vector<class EnchantmentInstance> const& getEnchants(int) const;
+    MCAPI std::vector<class EnchantmentInstance> const& getEnchants(int activationType) const;
 
     // symbol: ?getSlot@ItemEnchants@@QEBAHXZ
     MCAPI int getSlot() const;
 
     // symbol: ?getTotalValue@ItemEnchants@@QEBAH_N@Z
-    MCAPI int getTotalValue(bool) const;
+    MCAPI int getTotalValue(bool bookModifier) const;
 
     // symbol: ?hasEnchant@ItemEnchants@@QEBAHW4Type@Enchant@@@Z
-    MCAPI int hasEnchant(::Enchant::Type) const;
+    MCAPI int hasEnchant(enum Enchant::Type enchantType) const;
 
     // symbol: ?isEmpty@ItemEnchants@@QEBA_NXZ
     MCAPI bool isEmpty() const;

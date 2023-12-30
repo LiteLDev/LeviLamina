@@ -30,7 +30,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@MapCreateLockedCopyPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@MapCreateLockedCopyPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -40,7 +40,7 @@ public:
     MCAPI MapCreateLockedCopyPacket();
 
     // symbol: ??0MapCreateLockedCopyPacket@@QEAA@UActorUniqueID@@0@Z
-    MCAPI MapCreateLockedCopyPacket(struct ActorUniqueID, struct ActorUniqueID);
+    MCAPI MapCreateLockedCopyPacket(struct ActorUniqueID originalMapId, struct ActorUniqueID newMapId);
 
     // symbol: ?getNewMapId@MapCreateLockedCopyPacket@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getNewMapId() const;

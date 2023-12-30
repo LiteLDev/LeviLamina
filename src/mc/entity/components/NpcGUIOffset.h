@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0NpcGUIOffset@@QEAA@AEBVValue@Json@@@Z
-    MCAPI explicit NpcGUIOffset(class Json::Value const&);
+    MCAPI explicit NpcGUIOffset(class Json::Value const& offsetJson);
 
     // NOLINTEND
 };

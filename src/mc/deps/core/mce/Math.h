@@ -20,52 +20,52 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?absMax@Math@mce@@SAMMM@Z
-    MCAPI static float absMax(float, float);
+    MCAPI static float absMax(float a, float b);
 
     // symbol: ?approach@Math@mce@@SAMMMM@Z
-    MCAPI static float approach(float, float, float);
+    MCAPI static float approach(float current, float target, float increment);
 
     // symbol: ?approachDegrees@Math@mce@@SAMMMM@Z
-    MCAPI static float approachDegrees(float, float, float);
+    MCAPI static float approachDegrees(float current, float target, float increment);
 
     // symbol: ?atan@Math@mce@@SA?AURadian@2@M@Z
-    MCAPI static struct mce::Radian atan(float);
+    MCAPI static struct mce::Radian atan(float x);
 
     // symbol: ?atan2@Math@mce@@SA?AURadian@2@MM@Z
-    MCAPI static struct mce::Radian atan2(float, float);
+    MCAPI static struct mce::Radian atan2(float dy, float dx);
 
     // symbol: ?ceil@Math@mce@@SAHM@Z
-    MCAPI static int ceil(float);
+    MCAPI static int ceil(float v);
 
     // symbol: ?clamp@Math@mce@@SAMMMM@Z
-    MCAPI static float clamp(float, float, float);
+    MCAPI static float clamp(float v, float low, float high);
 
     // symbol: ?clamp@Math@mce@@SAHHHH@Z
-    MCAPI static int clamp(int, int, int);
+    MCAPI static int clamp(int v, int low, int high);
 
     // symbol: ?clampRotate@Math@mce@@SAMMMM@Z
-    MCAPI static float clampRotate(float, float, float);
+    MCAPI static float clampRotate(float current, float target, float maxDelta);
 
     // symbol: ?clampedLerp@Math@mce@@SAMMMM@Z
-    MCAPI static float clampedLerp(float, float, float);
+    MCAPI static float clampedLerp(float min, float max, float factor);
 
     // symbol: ?clampedMap@Math@mce@@SAMMMMMM@Z
     MCAPI static float clampedMap(float, float, float, float, float);
 
     // symbol: ?cos@Math@mce@@SAMM@Z
-    MCAPI static float cos(float);
+    MCAPI static float cos(float f);
 
     // symbol: ?cos@Math@mce@@SAMURadian@2@@Z
-    MCAPI static float cos(struct mce::Radian);
+    MCAPI static float cos(struct mce::Radian x);
 
     // symbol: ?degreesDifferenceAbs@Math@mce@@SAMMM@Z
-    MCAPI static float degreesDifferenceAbs(float, float);
+    MCAPI static float degreesDifferenceAbs(float angleA, float angleB);
 
     // symbol: ?doubleEqualsEpsilon@Math@mce@@SA_NNN@Z
-    MCAPI static bool doubleEqualsEpsilon(double, double);
+    MCAPI static bool doubleEqualsEpsilon(double a, double b);
 
     // symbol: ?fastInvSqrt@Math@mce@@SAMM@Z
-    MCAPI static float fastInvSqrt(float);
+    MCAPI static float fastInvSqrt(float x);
 
     // symbol: ?fastRandom@Math@mce@@SAIXZ
     MCAPI static uint fastRandom();
@@ -74,13 +74,13 @@ public:
     MCAPI static bool floatEqualsEpsilon(float, float, float);
 
     // symbol: ?floor@Math@mce@@SAHM@Z
-    MCAPI static int floor(float);
+    MCAPI static int floor(float v);
 
     // symbol: ?hermiteBlend@Math@mce@@SAMM@Z
-    MCAPI static float hermiteBlend(float);
+    MCAPI static float hermiteBlend(float t);
 
     // symbol: ?invSqrt@Math@mce@@SAMM@Z
-    MCAPI static float invSqrt(float);
+    MCAPI static float invSqrt(float x);
 
     // symbol: ?inverseLerp@Math@mce@@SAMMMM@Z
     MCAPI static float inverseLerp(float, float, float);
@@ -89,40 +89,40 @@ public:
     MCAPI static bool isNan(double);
 
     // symbol: ?isNan@Math@mce@@SA_NM@Z
-    MCAPI static bool isNan(float);
+    MCAPI static bool isNan(float f);
 
     // symbol: ?lerpRotate@Math@mce@@SAMMMM@Z
-    MCAPI static float lerpRotate(float, float, float);
+    MCAPI static float lerpRotate(float from, float to, float a);
 
     // symbol: ?map@Math@mce@@SAMMMMMM@Z
     MCAPI static float map(float, float, float, float, float);
 
     // symbol: ?safeIncrement@Math@mce@@SAXAEAH@Z
-    MCAPI static void safeIncrement(int&);
+    MCAPI static void safeIncrement(int& i);
 
     // symbol: ?signum@Math@mce@@SAMM@Z
-    MCAPI static float signum(float);
+    MCAPI static float signum(float a);
 
     // symbol: ?sin@Math@mce@@SAMM@Z
-    MCAPI static float sin(float);
+    MCAPI static float sin(float f);
 
     // symbol: ?sin@Math@mce@@SAMURadian@2@@Z
-    MCAPI static float sin(struct mce::Radian);
+    MCAPI static float sin(struct mce::Radian x);
 
     // symbol: ?snapRotationToCardinal@Math@mce@@SAMM@Z
-    MCAPI static float snapRotationToCardinal(float);
+    MCAPI static float snapRotationToCardinal(float deg);
 
     // symbol: ?sqrt@Math@mce@@SAMM@Z
-    MCAPI static float sqrt(float);
+    MCAPI static float sqrt(float x);
 
     // symbol: ?wrapDegrees@Math@mce@@SAMM@Z
-    MCAPI static float wrapDegrees(float);
+    MCAPI static float wrapDegrees(float input);
 
     // symbol: ?wrapDegrees@Math@mce@@SA?AUDegree@2@U32@@Z
-    MCAPI static struct mce::Degree wrapDegrees(struct mce::Degree);
+    MCAPI static struct mce::Degree wrapDegrees(struct mce::Degree input);
 
     // symbol: ?wrapRadians@Math@mce@@SAMM@Z
-    MCAPI static float wrapRadians(float);
+    MCAPI static float wrapRadians(float angle);
 
     // NOLINTEND
 

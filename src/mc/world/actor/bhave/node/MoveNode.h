@@ -19,10 +19,10 @@ public:
     virtual ~MoveNode() = default;
 
     // vIndex: 1, symbol: ?tick@MoveNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-    virtual ::BehaviorStatus tick(class Actor&);
+    virtual ::BehaviorStatus tick(class Actor& owner);
 
     // vIndex: 2, symbol: ?initializeFromDefinition@MoveNode@@EEAAXAEAVActor@@@Z
-    virtual void initializeFromDefinition(class Actor&);
+    virtual void initializeFromDefinition(class Actor& owner);
 
     // NOLINTEND
 
@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?convertDirectionStringToKeyPress@MoveNode@@AEAAEV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI uchar convertDirectionStringToKeyPress(std::string);
+    MCAPI uchar convertDirectionStringToKeyPress(std::string directionString);
 
     // NOLINTEND
 };

@@ -52,19 +52,19 @@ public:
     virtual class HashedString getDefaultBiome() const;
 
     // symbol: ?getTimeOfDay@NetherDimension@@UEBAMHM@Z
-    virtual float getTimeOfDay(int, float) const;
+    virtual float getTimeOfDay(int time, float a) const;
 
     // symbol: ?init@NetherDimension@@UEAAXXZ
     virtual void init();
 
     // symbol: ?isFoggyAt@NetherDimension@@UEBA_NHH@Z
-    virtual bool isFoggyAt(int, int) const;
+    virtual bool isFoggyAt(int x, int z) const;
 
     // symbol: ?isNaturalDimension@NetherDimension@@UEBA_NXZ
     virtual bool isNaturalDimension() const;
 
     // symbol: ?isValidSpawn@NetherDimension@@UEBA_NHH@Z
-    virtual bool isValidSpawn(int, int) const;
+    virtual bool isValidSpawn(int x, int z) const;
 
     // symbol: ?mayRespawnViaBed@NetherDimension@@UEBA_NXZ
     virtual bool mayRespawnViaBed() const;
@@ -73,7 +73,7 @@ public:
     virtual bool showSky() const;
 
     // symbol: ??0NetherDimension@@QEAA@AEAVILevel@@AEAVScheduler@@@Z
-    MCAPI NetherDimension(class ILevel&, class Scheduler&);
+    MCAPI NetherDimension(class ILevel& level, class Scheduler& callbackContext);
 
     // NOLINTEND
 

@@ -20,7 +20,7 @@ public:
     MCAPI bool isSuccess() const;
 
     // symbol: ??8MCRESULT@@QEBA_NAEBU0@@Z
-    MCAPI bool operator==(struct MCRESULT const&) const;
+    MCAPI bool operator==(struct MCRESULT const& other) const;
 
     // NOLINTEND
 };

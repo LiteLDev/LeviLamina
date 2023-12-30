@@ -24,16 +24,20 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@HorseContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int, class ItemStack const&, bool);
+    virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
 
     // vIndex: 8, symbol: ?getSlot@HorseContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const& getSlot(int) const;
+    virtual class ItemStack const& getSlot(int slot) const;
 
     // vIndex: 17, symbol: ?_postInit@HorseContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0HorseContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
-    MCAPI HorseContainerManagerModel(::ContainerID, class Player&, struct ActorUniqueID const&);
+    MCAPI HorseContainerManagerModel(
+        enum ContainerID            containerId,
+        class Player&               player,
+        struct ActorUniqueID const& uniqueId
+    );
 
     // NOLINTEND
 };

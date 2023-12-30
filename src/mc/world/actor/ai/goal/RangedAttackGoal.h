@@ -35,13 +35,18 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@RangedAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0RangedAttackGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit RangedAttackGoal(class Mob&);
 
     // symbol: ?handleAttackBehavior@RangedAttackGoal@@QEAAXPEAVActor@@AEBVVec3@@M_N@Z
-    MCAPI void handleAttackBehavior(class Actor*, class Vec3 const&, float, bool);
+    MCAPI void handleAttackBehavior(
+        class Actor*      lockedTarget,
+        class Vec3 const& lockedTargetPos,
+        float             targetDistSqr,
+        bool              canSee
+    );
 
     // NOLINTEND
 };

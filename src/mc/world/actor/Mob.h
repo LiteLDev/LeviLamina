@@ -51,13 +51,13 @@ public:
     virtual void outOfWorld();
 
     // vIndex: 4, symbol: ?reloadHardcoded@Mob@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 5, symbol: ?reloadHardcodedClient@Mob@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcodedClient(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcodedClient(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 6, symbol: ?initializeComponents@Mob@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void initializeComponents(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 9, symbol: ?_doInitialMove@Mob@@MEAAXXZ
     virtual void _doInitialMove();
@@ -66,13 +66,13 @@ public:
     virtual ~Mob();
 
     // vIndex: 16, symbol: ?getInterpolatedBodyRot@Mob@@UEBAMM@Z
-    virtual float getInterpolatedBodyRot(float) const;
+    virtual float getInterpolatedBodyRot(float a) const;
 
     // vIndex: 17, symbol: ?getInterpolatedHeadRot@Mob@@UEBAMM@Z
-    virtual float getInterpolatedHeadRot(float) const;
+    virtual float getInterpolatedHeadRot(float a) const;
 
     // vIndex: 18, symbol: ?getInterpolatedBodyYaw@Mob@@UEBAMM@Z
-    virtual float getInterpolatedBodyYaw(float) const;
+    virtual float getInterpolatedBodyYaw(float a) const;
 
     // vIndex: 19, symbol: ?getYawSpeedInDegreesPerSecond@Mob@@UEBAMXZ
     virtual float getYawSpeedInDegreesPerSecond() const;
@@ -84,7 +84,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 24, symbol: ?blockedByShield@Mob@@UEAAXAEBVActorDamageSource@@AEAVActor@@@Z
-    virtual void blockedByShield(class ActorDamageSource const&, class Actor&);
+    virtual void blockedByShield(class ActorDamageSource const& source, class Actor& blocker);
 
     // vIndex: 26, symbol: ?teleportTo@Mob@@UEAAXAEBVVec3@@_NHH1@Z
     virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
@@ -96,7 +96,7 @@ public:
     virtual void baseTick();
 
     // vIndex: 32, symbol: ?startRiding@Mob@@UEAA_NAEAVActor@@@Z
-    virtual bool startRiding(class Actor&);
+    virtual bool startRiding(class Actor& ride);
 
     // vIndex: 33, symbol: ?addPassenger@Mob@@UEAAXAEAVActor@@@Z
     virtual void addPassenger(class Actor&);
@@ -120,7 +120,7 @@ public:
     virtual bool isSleeping() const;
 
     // vIndex: 53, symbol: ?setSleeping@Mob@@UEAAX_N@Z
-    virtual void setSleeping(bool);
+    virtual void setSleeping(bool val);
 
     // vIndex: 55, symbol: ?isBlocking@Mob@@UEBA_NXZ
     virtual bool isBlocking() const;
@@ -141,7 +141,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 64, symbol: ?setTarget@Mob@@UEAAXPEAVActor@@@Z
-    virtual void setTarget(class Actor*);
+    virtual void setTarget(class Actor* target);
 
     // vIndex: 66, symbol: ?attack@Mob@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z
     virtual bool attack(class Actor&, ::ActorDamageCause const&);
@@ -153,19 +153,19 @@ public:
     virtual ::ActorDamageCause getBlockDamageCause(class Block const&) const;
 
     // vIndex: 80, symbol: ?doFireHurt@Mob@@UEAA_NH@Z
-    virtual bool doFireHurt(int);
+    virtual bool doFireHurt(int amount);
 
     // vIndex: 83, symbol: ?handleEntityEvent@Mob@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(enum ActorEvent id, int data);
 
     // vIndex: 88, symbol: ?getArmorMaterialTypeInSlot@Mob@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z
-    virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::ArmorSlot) const;
+    virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot slot) const;
 
     // vIndex: 89, symbol: ?getArmorMaterialTextureTypeInSlot@Mob@@UEBA?AW4ArmorTextureType@@W4ArmorSlot@@@Z
-    virtual ::ArmorTextureType getArmorMaterialTextureTypeInSlot(::ArmorSlot) const;
+    virtual ::ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot slot) const;
 
     // vIndex: 90, symbol: ?getArmorColorInSlot@Mob@@UEBAMW4ArmorSlot@@H@Z
-    virtual float getArmorColorInSlot(::ArmorSlot, int) const;
+    virtual float getArmorColorInSlot(enum ArmorSlot slot, int channelRGBA) const;
 
     // vIndex: 91, symbol: ?setEquippedSlot@Mob@@UEAAXW4EquipmentSlot@Legacy@Puv@@AEBVItemStack@@@Z
     virtual void setEquippedSlot(::Puv::Legacy::EquipmentSlot, class ItemStack const&);
@@ -190,7 +190,7 @@ public:
 
     // vIndex: 121, symbol:
     // ?buildDebugInfo@Mob@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void buildDebugInfo(std::string&) const;
+    virtual void buildDebugInfo(std::string& out) const;
 
     // vIndex: 123, symbol: ?getDeathTime@Mob@@UEBAHXZ
     virtual int getDeathTime() const;
@@ -205,28 +205,28 @@ public:
     virtual void kill();
 
     // vIndex: 147, symbol: ?die@Mob@@UEAAXAEBVActorDamageSource@@@Z
-    virtual void die(class ActorDamageSource const&);
+    virtual void die(class ActorDamageSource const& source);
 
     // vIndex: 148, symbol: ?shouldDropDeathLoot@Mob@@UEBA_NXZ
     virtual bool shouldDropDeathLoot() const;
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Mob@@MEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float dmg, bool knock, bool ignite);
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@Mob@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@Mob@@MEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& entityTag) const;
 
     // vIndex: 166, symbol: ?_playStepSound@Mob@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-    virtual void _playStepSound(class BlockPos const&, class Block const&);
+    virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -235,13 +235,14 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 169, symbol: ?knockback@Mob@@UEAAXPEAVActor@@HMMMMM@Z
-    virtual void knockback(class Actor*, int, float, float, float, float, float);
+    virtual void
+    knockback(class Actor* source, int dmg, float xd, float zd, float power, float height, float heightCap);
 
     // vIndex: 170, symbol: ?spawnAnim@Mob@@UEAAXXZ
     virtual void spawnAnim();
 
     // vIndex: 171, symbol: ?setSprinting@Mob@@UEAAX_N@Z
-    virtual void setSprinting(bool);
+    virtual void setSprinting(bool shouldSprint);
 
     // vIndex: 172, symbol: ?getHurtSound@Mob@@UEAA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getHurtSound();
@@ -253,10 +254,10 @@ public:
     virtual float getSpeed() const;
 
     // vIndex: 175, symbol: ?setSpeed@Mob@@UEAAXM@Z
-    virtual void setSpeed(float);
+    virtual void setSpeed(float speed);
 
     // vIndex: 176, symbol: ?hurtEffects@Mob@@UEAAXAEBVActorDamageSource@@M_N1@Z
-    virtual void hurtEffects(class ActorDamageSource const&, float, bool, bool);
+    virtual void hurtEffects(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 177, symbol: ?aiStep@Mob@@UEAAXXZ
     virtual void aiStep();
@@ -265,7 +266,7 @@ public:
     virtual void pushActors();
 
     // vIndex: 179, symbol: ?checkSpawnRules@Mob@@UEAA_N_N@Z
-    virtual bool checkSpawnRules(bool);
+    virtual bool checkSpawnRules(bool fromSpawner);
 
     // vIndex: 180, symbol: ?checkSpawnObstruction@Mob@@UEBA_NXZ
     virtual bool checkSpawnObstruction() const;
@@ -283,7 +284,7 @@ public:
     virtual float getMaxHeadXRot();
 
     // vIndex: 185, symbol: ?isAlliedTo@Mob@@UEAA_NPEAV1@@Z
-    virtual bool isAlliedTo(class Mob*);
+    virtual bool isAlliedTo(class Mob* other);
 
     // vIndex: 186, symbol: ?doHurtTarget@Mob@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
     virtual bool doHurtTarget(class Actor*, ::ActorDamageCause const&);
@@ -320,28 +321,28 @@ public:
     virtual void clearVanishEnchantedItemsOnDeath();
 
     // vIndex: 197, symbol: ?sendInventory@Mob@@UEAAX_N@Z
-    virtual void sendInventory(bool);
+    virtual void sendInventory(bool shouldSelectSlot);
 
     // vIndex: 198, symbol: ?getDamageAfterEnchantReduction@Mob@@UEBAMAEBVActorDamageSource@@M@Z
-    virtual float getDamageAfterEnchantReduction(class ActorDamageSource const&, float) const;
+    virtual float getDamageAfterEnchantReduction(class ActorDamageSource const& source, float damage) const;
 
     // vIndex: 199, symbol: ?createAIGoals@Mob@@UEAA_NXZ
     virtual bool createAIGoals();
 
     // vIndex: 200, symbol: ?onBorn@Mob@@UEAAXAEAVActor@@0@Z
-    virtual void onBorn(class Actor&, class Actor&);
+    virtual void onBorn(class Actor& parentLeft, class Actor& parentRight);
 
     // vIndex: 201, symbol: ?setItemSlot@Mob@@UEAA_NW4EquipmentSlot@Legacy@Puv@@AEBVItemStack@@@Z
     virtual bool setItemSlot(::Puv::Legacy::EquipmentSlot, class ItemStack const&);
 
     // vIndex: 202, symbol: ?setTransitioningSitting@Mob@@UEAAX_N@Z
-    virtual void setTransitioningSitting(bool);
+    virtual void setTransitioningSitting(bool value);
 
     // vIndex: 203, symbol: ?getAttackTime@Mob@@UEAAHXZ
     virtual int getAttackTime();
 
     // vIndex: 204, symbol: ?_getWalkTargetValue@Mob@@UEAAMAEBVBlockPos@@@Z
-    virtual float _getWalkTargetValue(class BlockPos const&);
+    virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // vIndex: 205, symbol: ?canExistWhenDisallowMob@Mob@@UEBA_NXZ
     virtual bool canExistWhenDisallowMob() const;
@@ -360,7 +361,7 @@ public:
     virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const&, class Vec3 const&) const;
 
     // symbol: ?renderDebugServerState@Mob@@UEAAXAEBVOptions@@@Z
-    MCVAPI void renderDebugServerState(class Options const&);
+    MCVAPI void renderDebugServerState(class Options const& options);
 
     // symbol: ??0Mob@@QEAA@AEAVLevel@@AEAVEntityContext@@@Z
     MCAPI Mob(class Level&, class EntityContext&);
@@ -376,7 +377,7 @@ public:
     MCAPI void ate();
 
     // symbol: ?attackAnimation@Mob@@QEAAXPEAVActor@@M@Z
-    MCAPI void attackAnimation(class Actor*, float);
+    MCAPI void attackAnimation(class Actor* target, float distance);
 
     // symbol: ?calcMoveRelativeSpeed@Mob@@QEAAMW4TravelType@@@Z
     MCAPI float calcMoveRelativeSpeed(::TravelType);
@@ -385,19 +386,19 @@ public:
     MCAPI bool checkForPostHitDamageImmunity(float, class ActorDamageSource const&);
 
     // symbol: ?checkTotemDeathProtection@Mob@@QEAA_NAEBVActorDamageSource@@@Z
-    MCAPI bool checkTotemDeathProtection(class ActorDamageSource const&);
+    MCAPI bool checkTotemDeathProtection(class ActorDamageSource const& killingDamage);
 
     // symbol: ?containerChanged@Mob@@QEAAXH@Z
-    MCAPI void containerChanged(int);
+    MCAPI void containerChanged(int iSlot);
 
     // symbol: ?createAI@Mob@@QEAAXV?$vector@UGoalDefinition@@V?$allocator@UGoalDefinition@@@std@@@std@@@Z
-    MCAPI void createAI(std::vector<struct GoalDefinition>);
+    MCAPI void createAI(std::vector<struct GoalDefinition> goals);
 
     // symbol: ?dropContainer@Mob@@QEAAXXZ
     MCAPI void dropContainer();
 
     // symbol: ?emitJumpPreventedEvent@Mob@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void emitJumpPreventedEvent(class BlockPos const&);
+    MCAPI void emitJumpPreventedEvent(class BlockPos const& pos);
 
     // symbol: ?frostWalk@Mob@@QEAAXXZ
     MCAPI void frostWalk();
@@ -505,7 +506,7 @@ public:
     MCAPI bool isTransitioningSitting() const;
 
     // symbol: ?joinCaravan@Mob@@QEAAXPEAV1@@Z
-    MCAPI void joinCaravan(class Mob*);
+    MCAPI void joinCaravan(class Mob* head);
 
     // symbol: ?knockback@Mob@@QEAAXPEAVActor@@HMM@Z
     MCAPI void knockback(class Actor*, int, float, float);
@@ -517,13 +518,13 @@ public:
     MCAPI void leaveCaravan();
 
     // symbol: ?lookAt@Mob@@QEAAXPEAVActor@@MM@Z
-    MCAPI void lookAt(class Actor*, float, float);
+    MCAPI void lookAt(class Actor* e, float yMax, float xMax);
 
     // symbol: ?onPlayerDimensionChanged@Mob@@QEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
     MCAPI void onPlayerDimensionChanged(class Player*, DimensionType, DimensionType);
 
     // symbol: ?onPlayerJump@Mob@@QEAAXH@Z
-    MCAPI void onPlayerJump(int);
+    MCAPI void onPlayerJump(int jumpAmount);
 
     // symbol: ?removeSpeedModifier@Mob@@QEAAXAEBVUUID@mce@@@Z
     MCAPI void removeSpeedModifier(class mce::UUID const&);
@@ -541,16 +542,16 @@ public:
     MCAPI void sendArmorSlot(::ArmorSlot);
 
     // symbol: ?setEatCounter@Mob@@QEAAXH@Z
-    MCAPI void setEatCounter(int);
+    MCAPI void setEatCounter(int value);
 
     // symbol: ?setEating@Mob@@QEAAX_N@Z
-    MCAPI void setEating(bool);
+    MCAPI void setEating(bool value);
 
     // symbol: ?setIsLayingEgg@Mob@@QEAAX_N@Z
-    MCAPI void setIsLayingEgg(bool);
+    MCAPI void setIsLayingEgg(bool layingEgg);
 
     // symbol: ?setIsPregnant@Mob@@QEAAX_N@Z
-    MCAPI void setIsPregnant(bool);
+    MCAPI void setIsPregnant(bool pregnant);
 
     // symbol: ?setJumpTicks@Mob@@QEAAXH@Z
     MCAPI void setJumpTicks(int);
@@ -559,22 +560,22 @@ public:
     MCAPI void setMovementComponentCurrentSpeed(float);
 
     // symbol: ?setNaturallySpawned@Mob@@QEAAX_N@Z
-    MCAPI void setNaturallySpawned(bool);
+    MCAPI void setNaturallySpawned(bool naturallySpawned);
 
     // symbol: ?setRolling@Mob@@QEAAX_N@Z
-    MCAPI void setRolling(bool);
+    MCAPI void setRolling(bool val);
 
     // symbol: ?setSpawnMethod@Mob@@QEAAXW4MobSpawnMethod@@@Z
-    MCAPI void setSpawnMethod(::MobSpawnMethod);
+    MCAPI void setSpawnMethod(enum MobSpawnMethod method);
 
     // symbol: ?setSpeedModifier@Mob@@QEAAXM@Z
-    MCAPI void setSpeedModifier(float);
+    MCAPI void setSpeedModifier(float speed);
 
     // symbol: ?setSurfaceMob@Mob@@QEAAX_N@Z
-    MCAPI void setSurfaceMob(bool);
+    MCAPI void setSurfaceMob(bool isSurfaceMob);
 
     // symbol: ?setTargetCaptain@Mob@@QEAAXUActorUniqueID@@@Z
-    MCAPI void setTargetCaptain(struct ActorUniqueID);
+    MCAPI void setTargetCaptain(struct ActorUniqueID id);
 
     // symbol: ?setYBodyRotation@Mob@@QEAAXM@Z
     MCAPI void setYBodyRotation(float);
@@ -586,10 +587,10 @@ public:
     MCAPI bool shouldApplyWaterGravity();
 
     // symbol: ?snapToYBodyRot@Mob@@QEAAXM@Z
-    MCAPI void snapToYBodyRot(float);
+    MCAPI void snapToYBodyRot(float yBodyRot);
 
     // symbol: ?snapToYHeadRot@Mob@@QEAAXM@Z
-    MCAPI void snapToYHeadRot(float);
+    MCAPI void snapToYHeadRot(float yHeadRot);
 
     // symbol: ?tryFrostWalk@Mob@@QEAAXXZ
     MCAPI void tryFrostWalk();

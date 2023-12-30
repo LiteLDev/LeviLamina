@@ -33,19 +33,19 @@ public:
     virtual void __unk_vfn_5();
 
     // vIndex: 6, symbol: ?onDownloadBegin@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
-    virtual void onDownloadBegin(struct WebviewDownloadInfo const&);
+    virtual void onDownloadBegin(struct WebviewDownloadInfo const& downloadInfo);
 
     // vIndex: 7, symbol: __unk_vfn_7
     virtual void __unk_vfn_7();
 
     // vIndex: 8, symbol: ?onDownloadComplete@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
-    virtual void onDownloadComplete(struct WebviewDownloadInfo const&);
+    virtual void onDownloadComplete(struct WebviewDownloadInfo const& downloadInfo);
 
     // vIndex: 9, symbol: ?onDownloadCanceled@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
-    virtual void onDownloadCanceled(struct WebviewDownloadInfo const&);
+    virtual void onDownloadCanceled(struct WebviewDownloadInfo const& downloadInfo);
 
     // symbol: ??0IWebviewTelemetry@@QEAA@AEBVIMinecraftEventing@@@Z
-    MCAPI explicit IWebviewTelemetry(class IMinecraftEventing const&);
+    MCAPI explicit IWebviewTelemetry(class IMinecraftEventing const& eventing);
 
     // NOLINTEND
 };

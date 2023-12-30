@@ -138,7 +138,7 @@ public:
     MCAPI PlanksBlock(std::string const&, int, ::WoodType);
 
     // symbol: ?isValidWoodMaterial@PlanksBlock@@SA_NH@Z
-    MCAPI static bool isValidWoodMaterial(int);
+    MCAPI static bool isValidWoodMaterial(int woodType);
 
     // symbol:
     // ?WOOD_NAMES@PlanksBlock@@2V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$08@std@@B

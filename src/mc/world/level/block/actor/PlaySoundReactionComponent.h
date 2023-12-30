@@ -24,7 +24,7 @@ public:
     virtual void __unk_vfn_2();
 
     // vIndex: 3, symbol: ?_onEnd@PlaySoundReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
-    virtual void _onEnd(class LabTableReaction&, class BlockSource&);
+    virtual void _onEnd(class LabTableReaction& owner, class BlockSource& region);
 
     // NOLINTEND
 };

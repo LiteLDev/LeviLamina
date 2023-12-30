@@ -97,10 +97,15 @@ public:
 
     // symbol:
     // ?runCommand@ServerLevel@@UEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CommandOriginSystem@@W4CurrentCmdVersion@@@Z
-    MCVAPI void runCommand(class HashedString const&, class CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion);
+    MCVAPI void runCommand(
+        class HashedString const& commandStr,
+        class CommandOrigin&      origin,
+        enum CommandOriginSystem  originSystem,
+        enum CurrentCmdVersion    commandVersion
+    );
 
     // symbol: ?setCommandsEnabled@ServerLevel@@UEAAX_N@Z
-    MCVAPI void setCommandsEnabled(bool);
+    MCVAPI void setCommandsEnabled(bool commandsEnabled);
 
     // symbol: ?setServerTickOffset@ServerLevel@@UEAAX_J@Z
     MCVAPI void setServerTickOffset(int64);
@@ -138,7 +143,7 @@ public:
     MCAPI class DynamicProperties& getOrAddDynamicProperties();
 
     // symbol: ?setShouldSendSleepMessage@ServerLevel@@QEAAX_N@Z
-    MCAPI void setShouldSendSleepMessage(bool);
+    MCAPI void setShouldSendSleepMessage(bool shouldSend);
 
     // symbol: ?shouldSendSleepMessage@ServerLevel@@QEBA_NXZ
     MCAPI bool shouldSendSleepMessage() const;

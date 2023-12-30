@@ -14,10 +14,10 @@ public:
     MCAPI ExplodeComponent();
 
     // symbol: ?addAdditionalSaveData@ExplodeComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?explode@ExplodeComponent@@QEAAXAEAVActor@@AEBVVec3@@@Z
-    MCAPI void explode(class Actor&, class Vec3 const&);
+    MCAPI void explode(class Actor& actor, class Vec3 const& explosionPosition);
 
     // symbol: ?getFuseLength@ExplodeComponent@@QEBAHXZ
     MCAPI int getFuseLength() const;
@@ -32,16 +32,17 @@ public:
     MCAPI bool isFuseLit() const;
 
     // symbol: ?readAdditionalSaveData@ExplodeComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?requiresTntExplodeGameRuleEnabled@ExplodeComponent@@QEBA_NXZ
     MCAPI bool requiresTntExplodeGameRuleEnabled() const;
 
     // symbol: ?setAllowUnderwater@ExplodeComponent@@QEAAX_N@Z
-    MCAPI void setAllowUnderwater(bool);
+    MCAPI void setAllowUnderwater(bool allow);
 
     // symbol: ?setFuseLength@ExplodeComponent@@QEAAXH@Z
-    MCAPI void setFuseLength(int);
+    MCAPI void setFuseLength(int fuseLength);
 
     // symbol: ?setTntExpodeGameRuleRequired@ExplodeComponent@@QEAAXXZ
     MCAPI void setTntExpodeGameRuleRequired();

@@ -20,13 +20,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initialize@AddRiderDefinition@@QEBAXAEAVEntityContext@@AEAVAddRiderComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class AddRiderComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class AddRiderComponent& component) const;
 
     // symbol:
     // ?buildSchema@AddRiderDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAddRiderDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AddRiderDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AddRiderDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

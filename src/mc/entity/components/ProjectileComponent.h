@@ -28,7 +28,7 @@ public:
     MCAPI ProjectileComponent(class ProjectileComponent const&);
 
     // symbol: ?addAdditionalSaveData@ProjectileComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?getAnchor@ProjectileComponent@@QEAA?AW4ProjectileAnchor@@XZ
     MCAPI ::ProjectileAnchor getAnchor();
@@ -61,13 +61,13 @@ public:
     MCAPI bool getShootTarget();
 
     // symbol: ?getShooterAngle@ProjectileComponent@@QEBA?AVVec3@@AEAVActor@@@Z
-    MCAPI class Vec3 getShooterAngle(class Actor&) const;
+    MCAPI class Vec3 getShooterAngle(class Actor& shooter) const;
 
     // symbol: ?getThrowPower@ProjectileComponent@@QEBAMXZ
     MCAPI float getThrowPower() const;
 
     // symbol: ?getUncertainty@ProjectileComponent@@QEBAMW4Difficulty@@@Z
-    MCAPI float getUncertainty(::Difficulty) const;
+    MCAPI float getUncertainty(enum Difficulty diff) const;
 
     // symbol: ?getUncertaintyBase@ProjectileComponent@@QEBAMXZ
     MCAPI float getUncertaintyBase() const;
@@ -76,13 +76,13 @@ public:
     MCAPI float getUncertaintyMultiplier() const;
 
     // symbol: ?handleMovementGravity@ProjectileComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void handleMovementGravity(class Actor&);
+    MCAPI void handleMovementGravity(class Actor& owner);
 
     // symbol: ?handleMovementHoming@ProjectileComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void handleMovementHoming(class Actor&);
+    MCAPI void handleMovementHoming(class Actor& owner);
 
     // symbol: ?hurt@ProjectileComponent@@QEAAXAEAVActor@@AEBVActorDamageSource@@@Z
-    MCAPI void hurt(class Actor&, class ActorDamageSource const&);
+    MCAPI void hurt(class Actor& owner, class ActorDamageSource const& damageSource);
 
     // symbol: ?incrementFlightTime@ProjectileComponent@@QEAAHXZ
     MCAPI int incrementFlightTime();
@@ -94,49 +94,57 @@ public:
     MCAPI int incrementOnGroundTime();
 
     // symbol: ?initFromDefinition@ProjectileComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor& owner);
 
     // symbol: ?lerpMotion@ProjectileComponent@@QEAAXAEAVActor@@AEBVVec3@@@Z
-    MCAPI void lerpMotion(class Actor&, class Vec3 const&);
+    MCAPI void lerpMotion(class Actor& owner, class Vec3 const& delta);
 
     // symbol: ?onHit@ProjectileComponent@@QEAAXAEAVActor@@AEBVHitResult@@@Z
-    MCAPI void onHit(class Actor&, class HitResult const&);
+    MCAPI void onHit(class Actor& owner, class HitResult const& res);
 
     // symbol: ??4ProjectileComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ProjectileComponent& operator=(class ProjectileComponent&&);
 
     // symbol: ?readAdditionalSaveData@ProjectileComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?setActiveTarget@ProjectileComponent@@QEAAXAEAVActor@@PEAV2@@Z
-    MCAPI void setActiveTarget(class Actor&, class Actor*);
+    MCAPI void setActiveTarget(class Actor& owner, class Actor* target);
 
     // symbol: ?setChanneling@ProjectileComponent@@QEAAXXZ
     MCAPI void setChanneling();
 
     // symbol: ?setEnchantImpaler@ProjectileComponent@@QEAAXAEBH@Z
-    MCAPI void setEnchantImpaler(int const&);
+    MCAPI void setEnchantImpaler(int const& level);
 
     // symbol: ?setKnockbackForce@ProjectileComponent@@QEAAXM@Z
-    MCAPI void setKnockbackForce(float);
+    MCAPI void setKnockbackForce(float force);
 
     // symbol: ?setNoPhysics@ProjectileComponent@@QEAAX_N@Z
-    MCAPI void setNoPhysics(bool);
+    MCAPI void setNoPhysics(bool value);
 
     // symbol: ?setOwnerId@ProjectileComponent@@QEAAXUActorUniqueID@@@Z
-    MCAPI void setOwnerId(struct ActorUniqueID);
+    MCAPI void setOwnerId(struct ActorUniqueID id);
 
     // symbol: ?setPotionEffect@ProjectileComponent@@QEAAXH@Z
-    MCAPI void setPotionEffect(int);
+    MCAPI void setPotionEffect(int potionEffect);
 
     // symbol: ?setSplashRange@ProjectileComponent@@QEAAXM@Z
-    MCAPI void setSplashRange(float);
+    MCAPI void setSplashRange(float range);
 
     // symbol: ?shoot@ProjectileComponent@@QEAAXAEAVActor@@0@Z
-    MCAPI void shoot(class Actor&, class Actor&);
+    MCAPI void shoot(class Actor& owner, class Actor& shooter);
 
     // symbol: ?shoot@ProjectileComponent@@QEAAXAEAVActor@@AEBVVec3@@MM1PEAV2@@Z
-    MCAPI void shoot(class Actor&, class Vec3 const&, float, float, class Vec3 const&, class Actor*);
+    MCAPI void shoot(
+        class Actor&      owner,
+        class Vec3 const& dir,
+        float             pow,
+        float             uncertainty,
+        class Vec3 const& baseSpeed,
+        class Actor*      target
+    );
 
     // symbol: ??1ProjectileComponent@@QEAA@XZ
     MCAPI ~ProjectileComponent();
@@ -152,10 +160,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_handleLightningOnHit@ProjectileComponent@@AEAAXAEAVActor@@@Z
-    MCAPI void _handleLightningOnHit(class Actor&);
+    MCAPI void _handleLightningOnHit(class Actor& owner);
 
     // symbol: ?_selectNextMoveDirection@ProjectileComponent@@AEAAXAEAVActor@@W4EAxis@1@@Z
-    MCAPI void _selectNextMoveDirection(class Actor&, ::ProjectileComponent::EAxis);
+    MCAPI void _selectNextMoveDirection(class Actor& owner, enum ProjectileComponent::EAxis avoidAxis);
 
     // NOLINTEND
 };

@@ -14,7 +14,7 @@ public:
     MCAPI ActionQueue();
 
     // symbol: ?pushBackActionEvent@ActionQueue@@QEAAXVActionEvent@@@Z
-    MCAPI void pushBackActionEvent(class ActionEvent);
+    MCAPI void pushBackActionEvent(class ActionEvent actionEvent);
 
     // NOLINTEND
 };

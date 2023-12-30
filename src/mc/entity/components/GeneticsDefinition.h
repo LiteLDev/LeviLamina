@@ -22,16 +22,17 @@ public:
     MCAPI GeneticsDefinition();
 
     // symbol: ?addGeneDefinition@GeneticsDefinition@@QEAAXAEBUGeneDefinition@@@Z
-    MCAPI void addGeneDefinition(struct GeneDefinition const&);
+    MCAPI void addGeneDefinition(struct GeneDefinition const& geneDefinition);
 
     // symbol: ?initialize@GeneticsDefinition@@QEBAXAEAVEntityContext@@AEAVGeneticsComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class GeneticsComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class GeneticsComponent& component) const;
 
     // symbol:
     // ?buildSchema@GeneticsDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGeneticsDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GeneticsDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GeneticsDefinition>>&
+            root
+    );
 
     // NOLINTEND
 

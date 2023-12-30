@@ -21,11 +21,11 @@ public:
 
     // symbol:
     // ?createPath@NavigationComponent@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVMob@@AEAVActor@@@Z
-    MCAPI std::unique_ptr<class Path> createPath(class Mob&, class Actor&);
+    MCAPI std::unique_ptr<class Path> createPath(class Mob& owner, class Actor& target);
 
     // symbol:
     // ?createPath@NavigationComponent@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVMob@@AEBVVec3@@@Z
-    MCAPI std::unique_ptr<class Path> createPath(class Mob&, class Vec3 const&);
+    MCAPI std::unique_ptr<class Path> createPath(class Mob& owner, class Vec3 const& position);
 
     // symbol: ?getAvoidDamageBlocks@NavigationComponent@@QEBA_NXZ
     MCAPI bool getAvoidDamageBlocks() const;
@@ -89,7 +89,7 @@ public:
     MCAPI class Vec3 getLastStuckCheckPosition() const;
 
     // symbol: ?getMaxDistance@NavigationComponent@@QEBAMAEBVActor@@@Z
-    MCAPI float getMaxDistance(class Actor const&) const;
+    MCAPI float getMaxDistance(class Actor const& owner) const;
 
     // symbol: ?getPath@NavigationComponent@@QEBAPEAVPath@@XZ
     MCAPI class Path* getPath() const;
@@ -113,7 +113,7 @@ public:
     MCAPI void initMultiTypeNavigationComponent(class Mob&, class ActorDefinitionDescriptor&);
 
     // symbol: ?initializeFromDefinition@NavigationComponent@@QEAAXAEAVMob@@PEAUNavigationDescription@@@Z
-    MCAPI void initializeFromDefinition(class Mob&, struct NavigationDescription*);
+    MCAPI void initializeFromDefinition(class Mob& owner, struct NavigationDescription* description);
 
     // symbol: ?isDone@NavigationComponent@@QEBA_NXZ
     MCAPI bool isDone() const;
@@ -123,19 +123,19 @@ public:
     isFree(class Mob&, class BlockPos const&, class BlockPos const&, class BlockPos const&, ::CanJumpIntoNode);
 
     // symbol: ?isStuck@NavigationComponent@@QEBA_NH@Z
-    MCAPI bool isStuck(int) const;
+    MCAPI bool isStuck(int stuckTimeThreshold) const;
 
     // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEAVActor@@M@Z
-    MCAPI bool moveTo(class Mob&, class Actor&, float);
+    MCAPI bool moveTo(class Mob& owner, class Actor& target, float speed);
 
     // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEBVVec3@@M@Z
-    MCAPI bool moveTo(class Mob&, class Vec3 const&, float);
+    MCAPI bool moveTo(class Mob& owner, class Vec3 const& position, float speed);
 
     // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@V?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@M@Z
-    MCAPI bool moveTo(class Mob&, std::unique_ptr<class Path>, float);
+    MCAPI bool moveTo(class Mob& owner, std::unique_ptr<class Path> newPath, float speed);
 
     // symbol: ?moveTo@NavigationComponent@@QEAA_NAEAVMob@@AEBVVec3@@M1@Z
-    MCAPI bool moveTo(class Mob&, class Vec3 const&, float, class Vec3 const&);
+    MCAPI bool moveTo(class Mob& owner, class Vec3 const& position, float speed, class Vec3 const& targetOffset);
 
     // symbol: ??4NavigationComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class NavigationComponent& operator=(class NavigationComponent&&);
@@ -144,74 +144,74 @@ public:
     MCAPI void resetPath();
 
     // symbol: ?setAvoidDamageBlocks@NavigationComponent@@QEAAX_N@Z
-    MCAPI void setAvoidDamageBlocks(bool);
+    MCAPI void setAvoidDamageBlocks(bool avoidDamageBlocks);
 
     // symbol: ?setAvoidPortals@NavigationComponent@@QEAAX_N@Z
-    MCAPI void setAvoidPortals(bool);
+    MCAPI void setAvoidPortals(bool avoidPortals);
 
     // symbol: ?setAvoidSun@NavigationComponent@@QEAAX_N@Z
-    MCAPI void setAvoidSun(bool);
+    MCAPI void setAvoidSun(bool avoidSun);
 
     // symbol: ?setAvoidWater@NavigationComponent@@QEAAX_N@Z
-    MCAPI void setAvoidWater(bool);
+    MCAPI void setAvoidWater(bool avoidWater);
 
     // symbol: ?setCanFloat@NavigationComponent@@QEAAX_N@Z
-    MCAPI void setCanFloat(bool);
+    MCAPI void setCanFloat(bool canFloat);
 
     // symbol: ?setCanJump@NavigationComponent@@QEAAX_N@Z
-    MCAPI void setCanJump(bool);
+    MCAPI void setCanJump(bool canJump);
 
     // symbol: ?setCanOpenDoors@NavigationComponent@@QEAAX_N@Z
-    MCAPI void setCanOpenDoors(bool);
+    MCAPI void setCanOpenDoors(bool canOpenDoors);
 
     // symbol: ?setCanPassDoors@NavigationComponent@@QEAAX_N@Z
-    MCAPI void setCanPassDoors(bool);
+    MCAPI void setCanPassDoors(bool canPass);
 
     // symbol: ?setCanSink@NavigationComponent@@QEAAX_N@Z
-    MCAPI void setCanSink(bool);
+    MCAPI void setCanSink(bool canSink);
 
     // symbol: ?setEndPathRadius@NavigationComponent@@QEAAXM@Z
-    MCAPI void setEndPathRadius(float);
+    MCAPI void setEndPathRadius(float radius);
 
     // symbol: ?setHasDestination@NavigationComponent@@QEAAX_N@Z
-    MCAPI void setHasDestination(bool);
+    MCAPI void setHasDestination(bool hasDestination);
 
     // symbol: ?setHasEndPathRadius@NavigationComponent@@QEAAX_N@Z
-    MCAPI void setHasEndPathRadius(bool);
+    MCAPI void setHasEndPathRadius(bool hasEndPathRadius);
 
     // symbol:
     // ?setInternalType@NavigationComponent@@QEAAXV?$unique_ptr@VPathNavigation@@U?$default_delete@VPathNavigation@@@std@@@std@@@Z
-    MCAPI void setInternalType(std::unique_ptr<class PathNavigation>);
+    MCAPI void setInternalType(std::unique_ptr<class PathNavigation> type);
 
     // symbol: ?setIsFollowingRivers@NavigationComponent@@QEAAX_N@Z
-    MCAPI void setIsFollowingRivers(bool);
+    MCAPI void setIsFollowingRivers(bool isFollowingRivers);
 
     // symbol: ?setPath@NavigationComponent@@QEAAXV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@@Z
-    MCAPI void setPath(std::unique_ptr<class Path>);
+    MCAPI void setPath(std::unique_ptr<class Path> path);
 
     // symbol: ?setSpeed@NavigationComponent@@QEAAXM@Z
-    MCAPI void setSpeed(float);
+    MCAPI void setSpeed(float speed);
 
     // symbol: ?setTargetOffset@NavigationComponent@@QEAAXAEBVVec3@@@Z
-    MCAPI void setTargetOffset(class Vec3 const&);
+    MCAPI void setTargetOffset(class Vec3 const& targetOffset);
 
     // symbol: ?setTerminationThreshold@NavigationComponent@@QEAAXM@Z
-    MCAPI void setTerminationThreshold(float);
+    MCAPI void setTerminationThreshold(float threshold);
 
     // symbol: ?setTickTimeout@NavigationComponent@@QEAAXH@Z
-    MCAPI void setTickTimeout(int);
+    MCAPI void setTickTimeout(int timeout);
 
     // symbol: ?stop@NavigationComponent@@QEAAXAEAVMob@@@Z
-    MCAPI void stop(class Mob&);
+    MCAPI void stop(class Mob& owner);
 
     // symbol: ?travel@NavigationComponent@@QEAA_NAEAVMob@@AEAM11@Z
-    MCAPI bool travel(class Mob&, float&, float&, float&);
+    MCAPI bool travel(class Mob& owner, float& xa, float& ya, float& za);
 
     // symbol: ?update@NavigationComponent@@QEAAXAEAVMob@@@Z
-    MCAPI void update(class Mob&);
+    MCAPI void update(class Mob& owner);
 
     // symbol: ?updateLastStuckCheck@NavigationComponent@@QEAAXAEBVMob@@@Z
-    MCAPI void updateLastStuckCheck(class Mob const&);
+    MCAPI void updateLastStuckCheck(class Mob const& owner);
 
     // symbol: ??1NavigationComponent@@QEAA@XZ
     MCAPI ~NavigationComponent();

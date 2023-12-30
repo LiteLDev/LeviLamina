@@ -14,13 +14,13 @@ public:
     MCAPI RoomDefinition(class RoomDefinition const&);
 
     // symbol: ??0RoomDefinition@@QEAA@H@Z
-    MCAPI explicit RoomDefinition(int);
+    MCAPI explicit RoomDefinition(int roomIndex);
 
     // symbol: ?findSource@RoomDefinition@@QEAA_NH@Z
-    MCAPI bool findSource(int);
+    MCAPI bool findSource(int scanIndex);
 
     // symbol: ?setConnection@RoomDefinition@@QEAAXAEBEV?$shared_ptr@VRoomDefinition@@@std@@@Z
-    MCAPI void setConnection(uchar const&, std::shared_ptr<class RoomDefinition>);
+    MCAPI void setConnection(uchar const& direction, std::shared_ptr<class RoomDefinition> definition);
 
     // symbol: ??1RoomDefinition@@QEAA@XZ
     MCAPI ~RoomDefinition();

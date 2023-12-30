@@ -20,7 +20,11 @@ public:
     virtual ~BlastFurnaceContainerManagerModel() = default;
 
     // symbol: ??0BlastFurnaceContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI BlastFurnaceContainerManagerModel(::ContainerID, class Player&, class BlockPos const&);
+    MCAPI BlastFurnaceContainerManagerModel(
+        enum ContainerID      containerId,
+        class Player&         player,
+        class BlockPos const& blockPos
+    );
 
     // NOLINTEND
 };

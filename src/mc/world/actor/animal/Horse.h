@@ -38,7 +38,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@Horse@@EEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1Horse@@UEAA@XZ
     virtual ~Horse() = default;
@@ -77,10 +77,10 @@ public:
     virtual void onFailedTame();
 
     // vIndex: 72, symbol: ?setStanding@Horse@@UEAAX_N@Z
-    virtual void setStanding(bool);
+    virtual void setStanding(bool value);
 
     // vIndex: 82, symbol: ?feed@Horse@@UEAAXH@Z
-    virtual void feed(int);
+    virtual void feed(int itemId);
 
     // vIndex: 101, symbol: ?canFreeze@Horse@@UEBA_NXZ
     virtual bool canFreeze() const;
@@ -98,13 +98,13 @@ public:
     virtual void onSynchedDataUpdate(int);
 
     // vIndex: 131, symbol: ?openContainerComponent@Horse@@UEAAXAEAVPlayer@@@Z
-    virtual void openContainerComponent(class Player&);
+    virtual void openContainerComponent(class Player& player);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
 
     // vIndex: 147, symbol: ?die@Horse@@UEAAXAEBVActorDamageSource@@@Z
-    virtual void die(class ActorDamageSource const&);
+    virtual void die(class ActorDamageSource const& damagesource);
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Horse@@UEAAXAEAVRenderParams@@@Z
     virtual void updateEntitySpecificMolangVariables(class RenderParams&);
@@ -113,10 +113,10 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@Horse@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float dmg, bool knock, bool ignite);
 
     // vIndex: 166, symbol: ?_playStepSound@Horse@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-    virtual void _playStepSound(class BlockPos const&, class Block const&);
+    virtual void _playStepSound(class BlockPos const& pos, class Block const& _onBlock);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -128,7 +128,7 @@ public:
     virtual int getArmorValue() const;
 
     // vIndex: 210, symbol: ?setType@Horse@@UEAAXH@Z
-    virtual void setType(int);
+    virtual void setType(int i);
 
     // vIndex: 211, symbol: ?getType@Horse@@UEBAHXZ
     virtual int getType() const;
@@ -137,7 +137,7 @@ public:
     virtual void setHorseEating(bool);
 
     // vIndex: 213, symbol: ?getStandAnim@Horse@@UEBAMM@Z
-    virtual float getStandAnim(float) const;
+    virtual float getStandAnim(float a) const;
 
     // vIndex: 214, symbol: ?isAdult@Horse@@UEBA_NXZ
     virtual bool isAdult() const;
@@ -152,7 +152,7 @@ public:
     virtual void makeMad();
 
     // vIndex: 218, symbol: ?tameToPlayer@Horse@@UEAA_NAEAVPlayer@@_N@Z
-    virtual bool tameToPlayer(class Player&, bool);
+    virtual bool tameToPlayer(class Player& player, bool tamingParticles);
 
     // symbol: ??0Horse@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Horse(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);

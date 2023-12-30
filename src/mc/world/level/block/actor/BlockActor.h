@@ -32,43 +32,44 @@ public:
     virtual ~BlockActor();
 
     // vIndex: 1, symbol: ?load@BlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2, symbol: ?save@BlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 3, symbol: ?saveItemInstanceData@BlockActor@@UEAA_NAEAVCompoundTag@@@Z
-    virtual bool saveItemInstanceData(class CompoundTag&);
+    virtual bool saveItemInstanceData(class CompoundTag& tag);
 
     // vIndex: 4, symbol: ?saveBlockData@BlockActor@@UEBAXAEAVCompoundTag@@AEAVBlockSource@@@Z
-    virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
+    virtual void saveBlockData(class CompoundTag& tag, class BlockSource& region) const;
 
     // vIndex: 5, symbol: ?loadBlockData@BlockActor@@UEAAXAEBVCompoundTag@@AEAVBlockSource@@AEAVDataLoadHelper@@@Z
-    virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
+    virtual void
+    loadBlockData(class CompoundTag const& tag, class BlockSource& region, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 6, symbol: ?onCustomTagLoadDone@BlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onCustomTagLoadDone(class BlockSource&);
+    virtual void onCustomTagLoadDone(class BlockSource& region);
 
     // vIndex: 7, symbol: ?tick@BlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void tick(class BlockSource&);
+    virtual void tick(class BlockSource& region);
 
     // vIndex: 8, symbol: ?onChanged@BlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onChanged(class BlockSource&);
+    virtual void onChanged(class BlockSource& region);
 
     // vIndex: 9, symbol: ?isMovable@BlockActor@@UEAA_NAEAVBlockSource@@@Z
-    virtual bool isMovable(class BlockSource&);
+    virtual bool isMovable(class BlockSource& region);
 
     // vIndex: 10, symbol: ?isCustomNameSaved@BlockActor@@UEAA_NXZ
     virtual bool isCustomNameSaved();
 
     // vIndex: 11, symbol: ?onPlace@BlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onPlace(class BlockSource&);
+    virtual void onPlace(class BlockSource& region);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
 
     // vIndex: 13, symbol: ?onRemoved@BlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onRemoved(class BlockSource&);
+    virtual void onRemoved(class BlockSource& region);
 
     // vIndex: 14, symbol: ?isPreserved@BlockActor@@UEBA_NAEAVBlockSource@@@Z
     virtual bool isPreserved(class BlockSource&) const;
@@ -77,7 +78,7 @@ public:
     virtual bool shouldPreserve(class BlockSource&);
 
     // vIndex: 16, symbol: ?triggerEvent@BlockActor@@UEAAXHH@Z
-    virtual void triggerEvent(int, int);
+    virtual void triggerEvent(int b0, int b1);
 
     // vIndex: 17, symbol: ?clearCache@BlockActor@@UEAAXXZ
     virtual void clearCache();
@@ -86,20 +87,20 @@ public:
     virtual void __unk_vfn_18();
 
     // vIndex: 19, symbol: ?getShadowRadius@BlockActor@@UEBAMAEAVBlockSource@@@Z
-    virtual float getShadowRadius(class BlockSource&) const;
+    virtual float getShadowRadius(class BlockSource& region) const;
 
     // vIndex: 20, symbol: ?hasAlphaLayer@BlockActor@@UEBA_NXZ
     virtual bool hasAlphaLayer() const;
 
     // vIndex: 21, symbol: ?getCrackEntity@BlockActor@@UEAAPEAV1@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
+    virtual class BlockActor* getCrackEntity(class BlockSource& region, class BlockPos const& pos);
 
     // vIndex: 22, symbol: ?getCollisionShape@BlockActor@@UEBA?AVAABB@@AEBVIConstBlockSource@@@Z
     virtual class AABB getCollisionShape(class IConstBlockSource const&) const;
 
     // vIndex: 23, symbol:
     // ?getDebugText@BlockActor@@UEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVBlockPos@@@Z
-    virtual void getDebugText(std::vector<std::string>&, class BlockPos const&);
+    virtual void getDebugText(std::vector<std::string>& outputInfo, class BlockPos const& debugPos);
 
     // vIndex: 24, symbol:
     // ?getCustomName@BlockActor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -114,7 +115,7 @@ public:
 
     // vIndex: 27, symbol:
     // ?setCustomName@BlockActor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void setCustomName(std::string const&);
+    virtual void setCustomName(std::string const& name);
 
     // vIndex: 28, symbol:
     // ?getImmersiveReaderText@BlockActor@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@@Z
@@ -160,10 +161,10 @@ public:
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@BlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // vIndex: 42, symbol: ?_playerCanUpdate@BlockActor@@MEBA_NAEBVPlayer@@@Z
-    virtual bool _playerCanUpdate(class Player const&) const;
+    virtual bool _playerCanUpdate(class Player const& fromPlayer) const;
 
     // symbol: ?eraseLootTable@BlockActor@@UEAAXXZ
     MCVAPI void eraseLootTable();
@@ -178,29 +179,29 @@ public:
     MCVAPI class Container const* getContainer() const;
 
     // symbol: ?getOwningPiston@BlockActor@@UEAAPEAVPistonBlockActor@@AEAVBlockSource@@@Z
-    MCVAPI class PistonBlockActor* getOwningPiston(class BlockSource&);
+    MCVAPI class PistonBlockActor* getOwningPiston(class BlockSource& region);
 
     // symbol: ?getOwningPiston@BlockActor@@UEBAPEBVPistonBlockActor@@AEAVBlockSource@@@Z
-    MCVAPI class PistonBlockActor const* getOwningPiston(class BlockSource&) const;
+    MCVAPI class PistonBlockActor const* getOwningPiston(class BlockSource& region) const;
 
     // symbol: ?onChunkLoaded@BlockActor@@UEAAXAEAVLevelChunk@@@Z
-    MCVAPI void onChunkLoaded(class LevelChunk&);
+    MCVAPI void onChunkLoaded(class LevelChunk& lc);
 
     // symbol: ?onChunkUnloaded@BlockActor@@UEAAXAEAVLevelChunk@@@Z
-    MCVAPI void onChunkUnloaded(class LevelChunk&);
+    MCVAPI void onChunkUnloaded(class LevelChunk& lc);
 
     // symbol: ?onMove@BlockActor@@UEAAXXZ
     MCVAPI void onMove();
 
     // symbol: ?onNeighborChanged@BlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCVAPI void onNeighborChanged(class BlockSource&, class BlockPos const&);
+    MCVAPI void onNeighborChanged(class BlockSource& region, class BlockPos const& position);
 
     // symbol:
     // ??0BlockActor@@QEAA@W4BlockActorType@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI BlockActor(::BlockActorType, class BlockPos const&, std::string const&);
+    MCAPI BlockActor(enum BlockActorType type, class BlockPos const& pos, std::string const& id);
 
     // symbol: ?assignBlockIfNotAssigned@BlockActor@@QEAAXAEAVBlockSource@@@Z
-    MCAPI void assignBlockIfNotAssigned(class BlockSource&);
+    MCAPI void assignBlockIfNotAssigned(class BlockSource& region);
 
     // symbol: ?getAABB@BlockActor@@QEBAAEBVAABB@@XZ
     MCAPI class AABB const& getAABB() const;
@@ -222,30 +223,30 @@ public:
     MCAPI bool isChanged() const;
 
     // symbol: ?isType@BlockActor@@QEBA_NW4BlockActorType@@@Z
-    MCAPI bool isType(::BlockActorType) const;
+    MCAPI bool isType(enum BlockActorType type) const;
 
     // symbol: ?moveTo@BlockActor@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void moveTo(class BlockPos const&);
+    MCAPI void moveTo(class BlockPos const& newPos);
 
     // symbol: ?onUpdatePacket@BlockActor@@QEAA_NAEBVCompoundTag@@AEAVBlockSource@@PEBVPlayer@@@Z
-    MCAPI bool onUpdatePacket(class CompoundTag const&, class BlockSource&, class Player const*);
+    MCAPI bool onUpdatePacket(class CompoundTag const& data, class BlockSource& region, class Player const* fromPlayer);
 
     // symbol: ?setChanged@BlockActor@@QEAAXXZ
     MCAPI void setChanged();
 
     // symbol: ?setCustomNameSaved@BlockActor@@QEAAX_N@Z
-    MCAPI void setCustomNameSaved(bool);
+    MCAPI void setCustomNameSaved(bool saveCustomName);
 
     // symbol: ?setMovable@BlockActor@@QEAAX_N@Z
-    MCAPI void setMovable(bool);
+    MCAPI void setMovable(bool canMove);
 
     // symbol: ?isType@BlockActor@@SA_NAEAV1@W4BlockActorType@@@Z
-    MCAPI static bool isType(class BlockActor&, ::BlockActorType);
+    MCAPI static bool isType(class BlockActor& te, enum BlockActorType type);
 
     // symbol:
     // ?loadStatic@BlockActor@@SA?AV?$shared_ptr@VBlockActor@@@std@@AEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCAPI static std::shared_ptr<class BlockActor>
-    loadStatic(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    loadStatic(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // NOLINTEND
 

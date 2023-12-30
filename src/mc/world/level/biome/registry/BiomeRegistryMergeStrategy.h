@@ -19,7 +19,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?mergeFiles@BiomeRegistryMergeStrategy@@UEAAXAEBV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@@Z
-    virtual void mergeFiles(std::vector<class LoadedResourceData> const&);
+    virtual void mergeFiles(std::vector<class LoadedResourceData> const& fileStack);
 
     // NOLINTEND
 };

@@ -25,13 +25,13 @@ public:
     virtual ~AcknowledgedBitrateEstimatorInterface();
 
     // vIndex: 1, symbol:
-    // ?IncomingPacketFeedbackVector@RobustThroughputEstimator@webrtc@@UEAAXAEBV?$vector@UPacketResult@webrtc@@V?$allocator@UPacketResult@webrtc@@@std@@@std@@@Z
+    // ?IncomingPacketFeedbackVector@AcknowledgedBitrateEstimator@webrtc@@UEAAXAEBV?$vector@UPacketResult@webrtc@@V?$allocator@UPacketResult@webrtc@@@std@@@std@@@Z
     virtual void IncomingPacketFeedbackVector(std::vector<struct webrtc::PacketResult> const&) = 0;
 
-    // vIndex: 2, symbol: ?bitrate@RobustThroughputEstimator@webrtc@@UEBA?AV?$optional@VDataRate@webrtc@@@std@@XZ
+    // vIndex: 2, symbol: ?bitrate@AcknowledgedBitrateEstimator@webrtc@@UEBA?AV?$optional@VDataRate@webrtc@@@std@@XZ
     virtual std::optional<class webrtc::DataRate> bitrate() const = 0;
 
-    // vIndex: 3, symbol: ?PeekRate@RobustThroughputEstimator@webrtc@@UEBA?AV?$optional@VDataRate@webrtc@@@std@@XZ
+    // vIndex: 3, symbol: ?PeekRate@AcknowledgedBitrateEstimator@webrtc@@UEBA?AV?$optional@VDataRate@webrtc@@@std@@XZ
     virtual std::optional<class webrtc::DataRate> PeekRate() const = 0;
 
     // vIndex: 4, symbol: ?SetAlr@AcknowledgedBitrateEstimator@webrtc@@UEAAX_N@Z

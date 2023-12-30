@@ -28,13 +28,13 @@ public:
     MCVAPI bool isEnabled() const;
 
     // symbol: ?log@ContentLogFileEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z
-    MCVAPI void log(::LogArea, ::LogLevel, char const*);
+    MCVAPI void log(enum LogArea area, enum LogLevel level, char const* message);
 
     // symbol: ?logOnlyOnce@ContentLogFileEndPoint@@UEBA_NXZ
     MCVAPI bool logOnlyOnce() const;
 
     // symbol: ?setEnabled@ContentLogFileEndPoint@@UEAAX_N@Z
-    MCVAPI void setEnabled(bool);
+    MCVAPI void setEnabled(bool newState);
 
     // symbol: ??0ContentLogFileEndPoint@@QEAA@VPath@Core@@0V?$optional@W4LogLevel@@@std@@@Z
     MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path, std::optional<::LogLevel>);

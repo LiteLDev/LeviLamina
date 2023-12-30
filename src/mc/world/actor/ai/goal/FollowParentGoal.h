@@ -35,10 +35,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@FollowParentGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0FollowParentGoal@@QEAA@AEAVMob@@M@Z
-    MCAPI FollowParentGoal(class Mob&, float);
+    MCAPI FollowParentGoal(class Mob& mob, float speed);
 
     // NOLINTEND
 };

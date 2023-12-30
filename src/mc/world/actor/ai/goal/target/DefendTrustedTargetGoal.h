@@ -27,19 +27,27 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@DefendTrustedTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol:
     // ??0DefendTrustedTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MH_NHW4LevelSoundEvent@Legacy@Puv@@AEBVActorDefinitionTrigger@@@Z
-    MCAPI
-    DefendTrustedTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, float, int, bool, int, ::Puv::Legacy::LevelSoundEvent, class ActorDefinitionTrigger const&);
+    MCAPI DefendTrustedTargetGoal(
+        class Mob&                               mob,
+        std::vector<struct MobDescriptor> const& targetTypes,
+        float                                    within,
+        int                                      randomInterval,
+        bool                                     mustSee,
+        int                                      mustSeeForgetTicks,
+        enum Puv::Legacy::LevelSoundEvent        sound,
+        class ActorDefinitionTrigger const&      onStartEvent
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_findTrustedTarget@DefendTrustedTargetGoal@@AEAA?AUActorUniqueID@@AEBVTrustComponent@@@Z
-    MCAPI struct ActorUniqueID _findTrustedTarget(class TrustComponent const&);
+    MCAPI struct ActorUniqueID _findTrustedTarget(class TrustComponent const& trust);
 
     // NOLINTEND
 };

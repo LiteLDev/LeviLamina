@@ -26,14 +26,14 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@HurtByTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 11, symbol: ?alertOther@HurtByTargetGoal@@MEAAXPEAVMob@@0@Z
-    virtual void alertOther(class Mob*, class Mob*);
+    virtual void alertOther(class Mob* other, class Mob* hurtByMob);
 
     // symbol:
     // ??0HurtByTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@_N@Z
-    MCAPI HurtByTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, bool);
+    MCAPI HurtByTargetGoal(class Mob& mob, std::vector<struct MobDescriptor> const& targetTypes, bool hurtOwner);
 
     // NOLINTEND
 };

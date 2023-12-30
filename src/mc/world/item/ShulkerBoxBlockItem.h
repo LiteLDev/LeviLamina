@@ -42,7 +42,7 @@ public:
     virtual void __unk_vfn_17();
 
     // vIndex: 31, symbol: ?getLevelDataForAuxValue@ShulkerBoxBlockItem@@UEBAHH@Z
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int getLevelDataForAuxValue(int auxValue) const;
 
     // vIndex: 37, symbol: __unk_vfn_37
     virtual void __unk_vfn_37();
@@ -52,7 +52,12 @@ public:
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@ShulkerBoxBlockItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -87,7 +92,7 @@ public:
 
     // symbol:
     // ??0ShulkerBoxBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HPEBVBlock@@@Z
-    MCAPI ShulkerBoxBlockItem(std::string const&, int, class Block const*);
+    MCAPI ShulkerBoxBlockItem(std::string const& name, int id, class Block const* parentBlock);
 
     // NOLINTEND
 

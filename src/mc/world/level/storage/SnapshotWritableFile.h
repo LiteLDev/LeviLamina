@@ -15,7 +15,7 @@ public:
     virtual ~SnapshotWritableFile() = default;
 
     // vIndex: 1, symbol: ?Append@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
-    virtual leveldb::Status Append(leveldb::Slice const&);
+    virtual leveldb::Status Append(leveldb::Slice const& data);
 
     // vIndex: 2, symbol: ?Close@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
     virtual leveldb::Status Close();

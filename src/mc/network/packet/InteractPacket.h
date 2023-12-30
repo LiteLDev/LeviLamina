@@ -42,7 +42,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@InteractPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@InteractPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -52,7 +52,7 @@ public:
     MCAPI InteractPacket();
 
     // symbol: ??0InteractPacket@@QEAA@W4Action@0@VActorRuntimeID@@AEBVVec3@@@Z
-    MCAPI InteractPacket(::InteractPacket::Action, class ActorRuntimeID, class Vec3 const&);
+    MCAPI InteractPacket(enum InteractPacket::Action action, class ActorRuntimeID targetId, class Vec3 const& pos);
 
     // NOLINTEND
 };

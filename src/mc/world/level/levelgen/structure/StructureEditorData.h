@@ -89,10 +89,10 @@ public:
     MCAPI class BlockPos const& getStructureSize() const;
 
     // symbol: ?load@StructureEditorData@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void load(class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void load(class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?save@StructureEditorData@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void save(class CompoundTag&) const;
+    MCAPI void save(class CompoundTag& tag) const;
 
     // symbol: ?setAllowNonTickingPlayerAndTickingAreaChunks@StructureEditorData@@QEAAX_N@Z
     MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);
@@ -107,49 +107,49 @@ public:
     MCAPI void setAnimationTicks(uint);
 
     // symbol: ?setIgnoreBlocks@StructureEditorData@@QEAAX_N@Z
-    MCAPI void setIgnoreBlocks(bool);
+    MCAPI void setIgnoreBlocks(bool ignoreBlocks);
 
     // symbol: ?setIgnoreEntities@StructureEditorData@@QEAAX_N@Z
-    MCAPI void setIgnoreEntities(bool);
+    MCAPI void setIgnoreEntities(bool ignoreEntities);
 
     // symbol: ?setIntegritySeed@StructureEditorData@@QEAAXI@Z
-    MCAPI void setIntegritySeed(uint);
+    MCAPI void setIntegritySeed(uint integritySeed);
 
     // symbol: ?setIntegrityValue@StructureEditorData@@QEAAXM@Z
-    MCAPI void setIntegrityValue(float);
+    MCAPI void setIntegrityValue(float integrityValue);
 
     // symbol: ?setIsWaterLogged@StructureEditorData@@QEAAX_N@Z
     MCAPI void setIsWaterLogged(bool);
 
     // symbol: ?setLastTouchedByPlayerID@StructureEditorData@@QEAAXUActorUniqueID@@@Z
-    MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID);
+    MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID lastTouchedByPlayerID);
 
     // symbol: ?setMirror@StructureEditorData@@QEAAXW4Mirror@@@Z
-    MCAPI void setMirror(::Mirror);
+    MCAPI void setMirror(enum Mirror mirror);
 
     // symbol: ?setRotation@StructureEditorData@@QEAAXW4Rotation@@@Z
-    MCAPI void setRotation(::Rotation);
+    MCAPI void setRotation(enum Rotation rotation);
 
     // symbol: ?setShowBoundingBox@StructureEditorData@@QEAAX_N@Z
-    MCAPI void setShowBoundingBox(bool);
+    MCAPI void setShowBoundingBox(bool showBoundingBox);
 
     // symbol: ?setStructureBlockType@StructureEditorData@@QEAAXW4StructureBlockType@@@Z
-    MCAPI void setStructureBlockType(::StructureBlockType);
+    MCAPI void setStructureBlockType(enum StructureBlockType structureBlockType);
 
     // symbol: ?setStructureName@StructureEditorData@@QEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI void setStructureName(std::string_view);
 
     // symbol: ?setStructureOffset@StructureEditorData@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void setStructureOffset(class BlockPos const&);
+    MCAPI void setStructureOffset(class BlockPos const& offset);
 
     // symbol: ?setStructureSize@StructureEditorData@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void setStructureSize(class BlockPos const&);
+    MCAPI void setStructureSize(class BlockPos const& size);
 
     // symbol: ??1StructureEditorData@@QEAA@XZ
     MCAPI ~StructureEditorData();
 
     // symbol: ?getOrientedBounds@StructureEditorData@@SA?AVBlockPos@@AEBV2@W4Rotation@@@Z
-    MCAPI static class BlockPos getOrientedBounds(class BlockPos const&, ::Rotation);
+    MCAPI static class BlockPos getOrientedBounds(class BlockPos const& size, enum Rotation rotation);
 
     // symbol:
     // ?DEFAULT_EXPORT_NAME@StructureEditorData@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B

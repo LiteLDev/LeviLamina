@@ -32,9 +32,12 @@ public:
 
     // symbol:
     // ?calculateConnectedPosition@LegacyStructureTemplate@@QEBA?AVBlockPos@@AEBVLegacyStructureSettings@@AEBV2@01@Z
-    MCAPI class BlockPos
-    calculateConnectedPosition(class LegacyStructureSettings const&, class BlockPos const&, class LegacyStructureSettings const&, class BlockPos const&)
-        const;
+    MCAPI class BlockPos calculateConnectedPosition(
+        class LegacyStructureSettings const& settings1,
+        class BlockPos const&                connection1,
+        class LegacyStructureSettings const& settings2,
+        class BlockPos const&                connection2
+    ) const;
 
     // symbol:
     // ?finalizeBlockRules@LegacyStructureTemplate@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVLegacyStructureSettings@@AEAVRandom@@@Z
@@ -46,10 +49,10 @@ public:
     MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;
 
     // symbol: ?getSize@LegacyStructureTemplate@@QEBA?AVBlockPos@@W4Rotation@@@Z
-    MCAPI class BlockPos getSize(::Rotation) const;
+    MCAPI class BlockPos getSize(enum Rotation rotation) const;
 
     // symbol: ?load@LegacyStructureTemplate@@QEAAXAEBVCompoundTag@@@Z
-    MCAPI void load(class CompoundTag const&);
+    MCAPI void load(class CompoundTag const& tag);
 
     // symbol:
     // ?placeInWorldChunk@LegacyStructureTemplate@@QEAAXAEAVBlockSource@@AEBVBlockPos@@AEAVLegacyStructureSettings@@AEAVRandom@@@Z
@@ -58,24 +61,32 @@ public:
 
     // symbol:
     // ?_mapPropertyToExtraBlock@LegacyStructureTemplate@@SAPEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI static class Block const* _mapPropertyToExtraBlock(std::string const&, std::string const&);
+    MCAPI static class Block const*
+    _mapPropertyToExtraBlock(std::string const& propertyString, std::string const& valueString);
 
     // symbol:
     // ?_mapToBlock@LegacyStructureTemplate@@SAPEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class Block const* _mapToBlock(std::string const&);
+    MCAPI static class Block const* _mapToBlock(std::string const& blockName);
 
     // symbol: ?_mapToData@LegacyStructureTemplate@@SAAEBVBlock@@AEBV2@AEBVLegacyStructureSettings@@@Z
-    MCAPI static class Block const& _mapToData(class Block const&, class LegacyStructureSettings const&);
+    MCAPI static class Block const& _mapToData(class Block const& curr, class LegacyStructureSettings const& settings);
 
     // symbol:
     // ?_mapToProperty@LegacyStructureTemplate@@SAPEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBV2@@Z
-    MCAPI static class Block const* _mapToProperty(std::string const&, std::string const&, class Block const&);
+    MCAPI static class Block const*
+    _mapToProperty(std::string const& propertyString, std::string const& valueString, class Block const& block);
 
     // symbol: ?getZeroPositionWithTransform@LegacyStructureTemplate@@SA?AVBlockPos@@AEBV2@W4Mirror@@W4Rotation@@HH@Z
-    MCAPI static class BlockPos getZeroPositionWithTransform(class BlockPos const&, ::Mirror, ::Rotation, int, int);
+    MCAPI static class BlockPos getZeroPositionWithTransform(
+        class BlockPos const& zeroPos,
+        enum Mirror           mirror,
+        enum Rotation         rotation,
+        int                   sizeX,
+        int                   sizeZ
+    );
 
     // symbol: ?transform@LegacyStructureTemplate@@SA?AVBlockPos@@V2@W4Mirror@@W4Rotation@@@Z
-    MCAPI static class BlockPos transform(class BlockPos, ::Mirror, ::Rotation);
+    MCAPI static class BlockPos transform(class BlockPos pos, enum Mirror mirror, enum Rotation rotation);
 
     // symbol: ?AUTHOR_TAG@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const AUTHOR_TAG;

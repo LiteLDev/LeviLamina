@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/webrtc/PeerConnectionInterface.h"
 #include "mc/deps/webrtc/PeerConnectionObserver.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
 #include "mc/network/nethernet/ESendType.h"
 #include "mc/network/nethernet/ESessionError.h"
 

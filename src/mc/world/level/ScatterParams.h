@@ -86,13 +86,14 @@ public:
 
     // symbol: ?scatter@ScatterParams@@QEBA?AVScatteredPositions@1@AEAVRenderParams@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI class ScatterParams::ScatteredPositions
-    scatter(class RenderParams&, class BlockPos const&, class Random&) const;
+    scatter(class RenderParams& molangParams, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ??1ScatterParams@@QEAA@XZ
     MCAPI ~ScatterParams();
 
     // symbol: ?initMolangParams@ScatterParams@@SAXAEAVRenderParams@@AEBVBlockPos@@AEAVRandom@@@Z
-    MCAPI static void initMolangParams(class RenderParams&, class BlockPos const&, class Random&);
+    MCAPI static void
+    initMolangParams(class RenderParams& molangParams, class BlockPos const& pos, class Random& random);
 
     // symbol: ?initScatterParamIndices@ScatterParams@@SAXXZ
     MCAPI static void initScatterParamIndices();
@@ -102,7 +103,8 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_getPos@ScatterParams@@AEBA?AVBlockPos@@IAEBV2@AEAVRandom@@AEAVRenderParams@@@Z
-    MCAPI class BlockPos _getPos(uint, class BlockPos const&, class Random&, class RenderParams&) const;
+    MCAPI class BlockPos
+    _getPos(uint stepIndex, class BlockPos const& origin, class Random& random, class RenderParams& molangParams) const;
 
     // symbol:
     // ?_parseExpressionNodeFloat@ScatterParams@@AEAAXAEBVCompoundTag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEAVExpressionNode@@M@Z

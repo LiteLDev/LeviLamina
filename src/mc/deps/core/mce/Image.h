@@ -27,7 +27,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Image@mce@@QEAA@IIW4ImageFormat@1@W4ImageUsage@1@@Z
-    MCAPI Image(uint, uint, ::mce::ImageFormat, ::mce::ImageUsage);
+    MCAPI Image(uint w, uint h, enum mce::ImageFormat format, enum mce::ImageUsage usage);
 
     // symbol: ?clone@Image@mce@@QEBA?AU12@XZ
     MCAPI struct mce::Image clone() const;

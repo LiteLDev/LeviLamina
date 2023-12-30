@@ -25,7 +25,7 @@ public:
     virtual ::EventResult onEvent(struct ActorNotificationEvent const&);
 
     // symbol: ?onActorAttackedActor@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
-    MCVAPI ::EventResult onActorAttackedActor(class Actor&, class Actor&);
+    MCVAPI ::EventResult onActorAttackedActor(class Actor& actor, class Actor& target);
 
     // symbol: ?onActorCreated@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4ActorInitializationMethod@@@Z
     MCVAPI ::EventResult onActorCreated(class Actor&, ::ActorInitializationMethod);
@@ -41,29 +41,34 @@ public:
 
     // symbol:
     // ?onActorMobInteraction@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4InteractionType@MinecraftEventing@@W4ActorType@@@Z
-    MCVAPI ::EventResult onActorMobInteraction(class Actor&, ::MinecraftEventing::InteractionType, ::ActorType);
+    MCVAPI ::EventResult onActorMobInteraction(
+        class Actor&                            actor,
+        enum MinecraftEventing::InteractionType interactionType,
+        enum ActorType                          interactedActorType
+    );
 
     // symbol:
     // ?onActorPredictedMove@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4MovePredictionType@@AEBVVec3@@@Z
     MCVAPI ::EventResult onActorPredictedMove(class Actor&, ::MovePredictionType, class Vec3 const&);
 
     // symbol: ?onActorSneakChanged@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@_N@Z
-    MCVAPI ::EventResult onActorSneakChanged(class Actor&, bool);
+    MCVAPI ::EventResult onActorSneakChanged(class Actor& actor, bool isSneaking);
 
     // symbol: ?onActorStartRiding@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
-    MCVAPI ::EventResult onActorStartRiding(class Actor&, class Actor&);
+    MCVAPI ::EventResult onActorStartRiding(class Actor& actor, class Actor& ride);
 
     // symbol: ?onActorStopRiding@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@_N11@Z
-    MCVAPI ::EventResult onActorStopRiding(class Actor&, bool, bool, bool);
+    MCVAPI ::EventResult
+    onActorStopRiding(class Actor& actor, bool exitFromRider, bool actorIsBeingDestroyed, bool switchingRides);
 
     // symbol: ?onActorTargetAcquired@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
     MCVAPI ::EventResult onActorTargetAcquired(class Actor&, class Actor&);
 
     // symbol: ?onActorTeleported@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
-    MCVAPI ::EventResult onActorTeleported(class Actor&);
+    MCVAPI ::EventResult onActorTeleported(class Actor& actor);
 
     // symbol: ?onActorTick@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
-    MCVAPI ::EventResult onActorTick(class Actor&);
+    MCVAPI ::EventResult onActorTick(class Actor& actor);
 
     // NOLINTEND
 };

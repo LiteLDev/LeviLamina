@@ -17,7 +17,7 @@ public:
     virtual char const* what() const;
 
     // symbol: ??0DebugAssertException@@QEAA@AEBV0@@Z
-    MCAPI DebugAssertException(class DebugAssertException const&);
+    MCAPI DebugAssertException(class DebugAssertException const& e);
 
     // symbol: ??0DebugAssertException@@QEAA@PEBD0H00@Z
     MCAPI DebugAssertException(char const*, char const*, int, char const*, char const*);

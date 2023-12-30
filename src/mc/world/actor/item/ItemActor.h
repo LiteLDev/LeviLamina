@@ -68,7 +68,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@ItemActor@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1ItemActor@@UEAA@XZ
     virtual ~ItemActor() = default;
@@ -96,7 +96,7 @@ public:
     virtual void __unk_vfn_47();
 
     // vIndex: 48, symbol: ?playerTouch@ItemActor@@UEAAXAEAVPlayer@@@Z
-    virtual void playerTouch(class Player&);
+    virtual void playerTouch(class Player& player);
 
     // vIndex: 60, symbol: __unk_vfn_60
     virtual void __unk_vfn_60();
@@ -108,10 +108,10 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 78, symbol: ?isInvulnerableTo@ItemActor@@UEBA_NAEBVActorDamageSource@@@Z
-    virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
+    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@ItemActor@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(enum ActorEvent eventId, int data);
 
     // vIndex: 100, symbol: ?getSourceUniqueID@ItemActor@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
@@ -129,13 +129,13 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@ItemActor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@ItemActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@ItemActor@@MEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& entityTag) const;
 
     // symbol: ?canMakeStepSound@ItemActor@@UEBA_NXZ
     MCVAPI bool canMakeStepSound() const;
@@ -147,7 +147,7 @@ public:
     MCAPI void postNormalTick();
 
     // symbol: ?setSourceEntity@ItemActor@@QEAAXPEBVActor@@@Z
-    MCAPI void setSourceEntity(class Actor const*);
+    MCAPI void setSourceEntity(class Actor const* owner);
 
     // symbol: ?getLiquidAABB@ItemActor@@SA?AVAABB@@AEBUAABBShapeComponent@@@Z
     MCAPI static class AABB getLiquidAABB(struct AABBShapeComponent const&);
@@ -166,7 +166,7 @@ public:
     MCAPI void _dropContents();
 
     // symbol: ?_merge@ItemActor@@AEAA_NPEAV1@@Z
-    MCAPI bool _merge(class ItemActor*);
+    MCAPI bool _merge(class ItemActor* target);
 
     // symbol: ?_validateItem@ItemActor@@AEAAXXZ
     MCAPI void _validateItem();

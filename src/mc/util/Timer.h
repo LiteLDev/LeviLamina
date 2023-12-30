@@ -24,10 +24,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Timer@@QEAA@MV?$function@$$A6A_JXZ@std@@@Z
-    MCAPI Timer(float, std::function<int64(void)>);
+    MCAPI Timer(float ticksPerSecond, std::function<int64(void)> getTimeMSCallback);
 
     // symbol: ?advanceTime@Timer@@QEAAXM@Z
-    MCAPI void advanceTime(float);
+    MCAPI void advanceTime(float preferredFrameStep);
 
     // symbol: ?getTicks@Timer@@QEBA_KXZ
     MCAPI uint64 getTicks() const;
@@ -39,10 +39,10 @@ public:
     MCAPI void resetTimePassed();
 
     // symbol: ?setTimeScale@Timer@@QEAAXM@Z
-    MCAPI void setTimeScale(float);
+    MCAPI void setTimeScale(float timeScale);
 
     // symbol: ?stepTick@Timer@@QEAAXH@Z
-    MCAPI void stepTick(int);
+    MCAPI void stepTick(int numSteps);
 
     // symbol: ?stepping@Timer@@QEBA_NXZ
     MCAPI bool stepping() const;

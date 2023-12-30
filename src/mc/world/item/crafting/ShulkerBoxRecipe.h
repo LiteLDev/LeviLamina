@@ -30,7 +30,7 @@ public:
     virtual void __unk_vfn_5();
 
     // vIndex: 12, symbol: ?itemsMatch@ShulkerBoxRecipe@@UEBA_NAEBVItemDescriptor@@0@Z
-    virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&) const;
+    virtual bool itemsMatch(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs) const;
 
     // symbol:
     // ??0ShulkerBoxRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@HPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z

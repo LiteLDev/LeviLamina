@@ -34,7 +34,8 @@ public:
 
     // vIndex: 10, symbol:
     // ?getDeathMessage@ActorDamageByActorSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z
-    virtual std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor*) const;
+    virtual std::pair<std::string, std::vector<std::string>>
+    getDeathMessage(std::string deadName, class Actor* dead) const;
 
     // vIndex: 11, symbol: ?getIsCreative@ActorDamageByActorSource@@UEBA_NXZ
     virtual bool getIsCreative() const;
@@ -62,7 +63,7 @@ public:
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
 
     // symbol: ??0ActorDamageByActorSource@@QEAA@AEBVActor@@W4ActorDamageCause@@@Z
-    MCAPI ActorDamageByActorSource(class Actor const&, ::ActorDamageCause);
+    MCAPI ActorDamageByActorSource(class Actor const& actor, enum ActorDamageCause cause);
 
     // NOLINTEND
 };

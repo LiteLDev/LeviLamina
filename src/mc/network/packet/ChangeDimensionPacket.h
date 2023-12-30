@@ -33,7 +33,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@ChangeDimensionPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@ChangeDimensionPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -43,7 +43,7 @@ public:
     MCAPI ChangeDimensionPacket();
 
     // symbol: ??0ChangeDimensionPacket@@QEAA@V?$AutomaticID@VDimension@@H@@VVec3@@_N@Z
-    MCAPI ChangeDimensionPacket(DimensionType, class Vec3, bool);
+    MCAPI ChangeDimensionPacket(DimensionType dimensionId, class Vec3 pos, bool respawn);
 
     // NOLINTEND
 };

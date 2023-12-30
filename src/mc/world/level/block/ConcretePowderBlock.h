@@ -100,13 +100,14 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 92, symbol: ?neighborChanged@ConcretePowderBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 96, symbol: ?asItemInstance@ConcretePowderBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
     // vIndex: 108, symbol: ?shouldStopFalling@ConcretePowderBlock@@UEBA_NAEAVActor@@@Z
-    virtual bool shouldStopFalling(class Actor&) const;
+    virtual bool shouldStopFalling(class Actor& entity) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -127,7 +128,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@ConcretePowderBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -139,7 +140,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 168, symbol: ?getDustColor@ConcretePowderBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
-    virtual class mce::Color getDustColor(class Block const&) const;
+    virtual class mce::Color getDustColor(class Block const& block) const;
 
     // vIndex: 169, symbol:
     // ?getDustParticleName@ConcretePowderBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
@@ -149,7 +150,7 @@ public:
     virtual void __unk_vfn_170();
 
     // symbol: ??0ConcretePowderBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ConcretePowderBlock(std::string const&, int);
+    MCAPI ConcretePowderBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 

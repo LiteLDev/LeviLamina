@@ -18,10 +18,10 @@ public:
     MCAPI BreathableComponent();
 
     // symbol: ?addAdditionalSaveData@BreathableComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?canBreathe@BreathableComponent@@QEBA_NAEBVActor@@@Z
-    MCAPI bool canBreathe(class Actor const&) const;
+    MCAPI bool canBreathe(class Actor const& owner) const;
 
     // symbol: ?generatesBubbles@BreathableComponent@@QEBA_NXZ
     MCAPI bool generatesBubbles() const;
@@ -48,13 +48,14 @@ public:
     MCAPI class BreathableComponent& operator=(class BreathableComponent&&);
 
     // symbol: ?readAdditionalSaveData@BreathableComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?setAirSupply@BreathableComponent@@QEAAXF@Z
-    MCAPI void setAirSupply(short);
+    MCAPI void setAirSupply(short supply);
 
     // symbol: ?updateBreathableState@BreathableComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void updateBreathableState(class Actor&);
+    MCAPI void updateBreathableState(class Actor& owner);
 
     // symbol: ??1BreathableComponent@@QEAA@XZ
     MCAPI ~BreathableComponent();

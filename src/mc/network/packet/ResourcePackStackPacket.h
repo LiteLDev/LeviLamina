@@ -35,7 +35,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@ResourcePackStackPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@ResourcePackStackPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -46,8 +46,13 @@ public:
 
     // symbol:
     // ??0ResourcePackStackPacket@@QEAA@V?$vector@UPackInstanceId@@V?$allocator@UPackInstanceId@@@std@@@std@@0AEBVBaseGameVersion@@_NAEBVExperiments@@@Z
-    MCAPI
-    ResourcePackStackPacket(std::vector<struct PackInstanceId>, std::vector<struct PackInstanceId>, class BaseGameVersion const&, bool, class Experiments const&);
+    MCAPI ResourcePackStackPacket(
+        std::vector<struct PackInstanceId> addOnIdsAndVersions,
+        std::vector<struct PackInstanceId> texturePackIdsAndVersions,
+        class BaseGameVersion const&       baseGameVersion,
+        bool                               texturePackRequired,
+        class Experiments const&           isExperimentalGameplay
+    );
 
     // NOLINTEND
 };

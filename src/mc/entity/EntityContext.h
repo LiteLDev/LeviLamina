@@ -67,7 +67,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0EntityContext@@QEAA@AEAVEntityRegistry@@VEntityId@@@Z
-    MCAPI EntityContext(class EntityRegistry&, class EntityId);
+    MCAPI EntityContext(class EntityRegistry& registry, class EntityId entity);
 
     // symbol: ?_registry@EntityContext@@QEBAAEAVEntityRegistry@@XZ
     MCAPI class EntityRegistry& _registry() const;
@@ -79,7 +79,7 @@ public:
     MCAPI bool isValid() const;
 
     // symbol: ??8EntityContext@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class EntityContext const&) const;
+    MCAPI bool operator==(class EntityContext const& other) const;
 
     // NOLINTEND
 

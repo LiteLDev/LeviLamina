@@ -44,10 +44,10 @@ public:
     virtual ~CompoundTag();
 
     // vIndex: 2, symbol: ?write@CompoundTag@@UEBAXAEAVIDataOutput@@@Z
-    virtual void write(class IDataOutput&) const;
+    virtual void write(class IDataOutput& dos) const;
 
     // vIndex: 3, symbol: ?load@CompoundTag@@UEAAXAEAVIDataInput@@@Z
-    virtual void load(class IDataInput&);
+    virtual void load(class IDataInput& dis);
 
     // vIndex: 4, symbol: ?toString@CompoundTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string toString() const;
@@ -56,11 +56,11 @@ public:
     virtual ::Tag::Type getId() const;
 
     // vIndex: 6, symbol: ?equals@CompoundTag@@UEBA_NAEBVTag@@@Z
-    virtual bool equals(class Tag const&) const;
+    virtual bool equals(class Tag const& obj) const;
 
     // vIndex: 8, symbol:
     // ?print@CompoundTag@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPrintStream@@@Z
-    virtual void print(std::string const&, class PrintStream&) const;
+    virtual void print(std::string const& prefix_, class PrintStream& out) const;
 
     // vIndex: 9, symbol: ?copy@CompoundTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
     virtual std::unique_ptr<class Tag> copy() const;
@@ -69,7 +69,7 @@ public:
     virtual uint64 hash() const;
 
     // symbol: ?append@CompoundTag@@QEAAXAEBV1@@Z
-    MCAPI void append(class CompoundTag const&);
+    MCAPI void append(class CompoundTag const& tag);
 
     // symbol:
     // ?begin@CompoundTag@@QEBA?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTagVariant@@@std@@@std@@@std@@@std@@XZ
@@ -88,7 +88,7 @@ public:
     MCAPI bool contains(std::string_view, ::Tag::Type) const;
 
     // symbol: ?deepCopy@CompoundTag@@QEAAXAEBV1@@Z
-    MCAPI void deepCopy(class CompoundTag const&);
+    MCAPI void deepCopy(class CompoundTag const& other);
 
     // symbol:
     // ?end@CompoundTag@@QEBA?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTagVariant@@@std@@@std@@@std@@@std@@XZ
@@ -162,43 +162,43 @@ public:
     MCAPI bool isEmpty() const;
 
     // symbol: ?put@CompoundTag@@QEAAAEAVTag@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV2@@Z
-    MCAPI class Tag& put(std::string, class Tag&&);
+    MCAPI class Tag& put(std::string name, class Tag&& tag);
 
     // symbol:
     // ?put@CompoundTag@@QEAAPEAVTag@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@4@@Z
-    MCAPI class Tag* put(std::string, std::unique_ptr<class Tag>);
+    MCAPI class Tag* put(std::string name, std::unique_ptr<class Tag> tag);
 
     // symbol: ?putBoolean@CompoundTag@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI void putBoolean(std::string, bool);
+    MCAPI void putBoolean(std::string name, bool val);
 
     // symbol: ?putByte@CompoundTag@@QEAAAEAEV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@E@Z
-    MCAPI uchar& putByte(std::string, uchar);
+    MCAPI uchar& putByte(std::string name, uchar value);
 
     // symbol:
     // ?putByteArray@CompoundTag@@QEAAAEAUTagMemoryChunk@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U2@@Z
-    MCAPI struct TagMemoryChunk& putByteArray(std::string, struct TagMemoryChunk);
+    MCAPI struct TagMemoryChunk& putByteArray(std::string name, struct TagMemoryChunk mem);
 
     // symbol: ?putCompound@CompoundTag@@QEAAAEAV1@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V1@@Z
-    MCAPI class CompoundTag& putCompound(std::string, class CompoundTag);
+    MCAPI class CompoundTag& putCompound(std::string name, class CompoundTag value);
 
     // symbol:
     // ?putCompound@CompoundTag@@QEAAPEAV1@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@3@@Z
-    MCAPI class CompoundTag* putCompound(std::string, std::unique_ptr<class CompoundTag>);
+    MCAPI class CompoundTag* putCompound(std::string name, std::unique_ptr<class CompoundTag> value);
 
     // symbol: ?putFloat@CompoundTag@@QEAAAEAMV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z
-    MCAPI float& putFloat(std::string, float);
+    MCAPI float& putFloat(std::string name, float value);
 
     // symbol: ?putInt@CompoundTag@@QEAAAEAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI int& putInt(std::string, int);
+    MCAPI int& putInt(std::string name, int value);
 
     // symbol: ?putInt64@CompoundTag@@QEAAAEA_JV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_J@Z
-    MCAPI int64& putInt64(std::string, int64);
+    MCAPI int64& putInt64(std::string name, int64 value);
 
     // symbol: ?putShort@CompoundTag@@QEAAAEAFV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-    MCAPI short& putShort(std::string, short);
+    MCAPI short& putShort(std::string name, short value);
 
     // symbol: ?putString@CompoundTag@@QEAAAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@0@Z
-    MCAPI std::string& putString(std::string, std::string);
+    MCAPI std::string& putString(std::string name, std::string value);
 
     // symbol:
     // ?rawView@CompoundTag@@QEBAAEBV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTagVariant@@U?$less@X@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTagVariant@@@std@@@2@@std@@XZ
@@ -209,7 +209,7 @@ public:
 
     // symbol:
     // ?rename@CompoundTag@@QEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCAPI void rename(std::string_view, std::string);
+    MCAPI void rename(std::string_view name, std::string newName);
 
     // symbol: ?size@CompoundTag@@QEBA_KXZ
     MCAPI uint64 size() const;

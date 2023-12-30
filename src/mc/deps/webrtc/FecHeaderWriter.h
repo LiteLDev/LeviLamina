@@ -19,14 +19,14 @@ public:
     // vIndex: 0, symbol: ??1FecHeaderWriter@webrtc@@UEAA@XZ
     virtual ~FecHeaderWriter();
 
-    // vIndex: 1, symbol: ?MinPacketMaskSize@UlpfecHeaderWriter@webrtc@@UEBA_KPEBE_K@Z
+    // vIndex: 1, symbol: ?MinPacketMaskSize@FlexfecHeaderWriter@webrtc@@UEBA_KPEBE_K@Z
     virtual uint64 MinPacketMaskSize(uchar const*, uint64) const = 0;
 
-    // vIndex: 2, symbol: ?FecHeaderSize@UlpfecHeaderWriter@webrtc@@UEBA_K_K@Z
+    // vIndex: 2, symbol: ?FecHeaderSize@FlexfecHeaderWriter@webrtc@@UEBA_K_K@Z
     virtual uint64 FecHeaderSize(uint64) const = 0;
 
     // vIndex: 3, symbol:
-    // ?FinalizeFecHeader@UlpfecHeaderWriter@webrtc@@UEBAXIGPEBE_KPEAVPacket@ForwardErrorCorrection@2@@Z
+    // ?FinalizeFecHeader@FlexfecHeaderWriter@webrtc@@UEBAXIGPEBE_KPEAVPacket@ForwardErrorCorrection@2@@Z
     virtual void
     FinalizeFecHeader(uint, ushort, uchar const*, uint64, class webrtc::ForwardErrorCorrection::Packet*) const = 0;
 

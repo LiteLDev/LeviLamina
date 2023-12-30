@@ -20,7 +20,12 @@ public:
 
     // vIndex: 1, symbol:
     // ?onBlockPlacedByPlayer@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z
-    virtual ::EventResult onBlockPlacedByPlayer(class Player&, class Block const&, class BlockPos const&, bool);
+    virtual ::EventResult onBlockPlacedByPlayer(
+        class Player&         player,
+        class Block const&    placedBlock,
+        class BlockPos const& pos,
+        bool                  isUnderwater
+    );
 
     // vIndex: 2, symbol:
     // ?onBlockDestroyedByPlayer@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@AEBVItemStackBase@@3@Z
@@ -57,23 +62,24 @@ public:
     virtual ::EventResult onEvent(struct BlockNotificationEvent const&);
 
     // symbol: ?onBlockDestructionStopped@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@H@Z
-    MCVAPI ::EventResult onBlockDestructionStopped(class Player&, class BlockPos const&, int);
+    MCVAPI ::EventResult onBlockDestructionStopped(class Player& player, class BlockPos const& blockPos, int progress);
 
     // symbol:
     // ?onBlockInPosWillBeDestroyedByPlayer@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCVAPI ::EventResult onBlockInPosWillBeDestroyedByPlayer(class Player&, class BlockPos const&);
 
     // symbol: ?onBlockInteractedWith@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCVAPI ::EventResult onBlockInteractedWith(class Player&, class BlockPos const&);
+    MCVAPI ::EventResult onBlockInteractedWith(class Player& player, class BlockPos const& blockPos);
 
     // symbol: ?onBlockModified@BlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@AEBVBlock@@1@Z
-    MCVAPI ::EventResult onBlockModified(class BlockPos const&, class Block const&, class Block const&);
+    MCVAPI ::EventResult
+    onBlockModified(class BlockPos const& pos, class Block const& oldBlock, class Block const& newBlock);
 
     // symbol: ?onBlockMovedByPiston@BlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@0W4PistonState@@@Z
     MCVAPI ::EventResult onBlockMovedByPiston(class BlockPos const&, class BlockPos const&, ::PistonState);
 
     // symbol: ?onUnknownBlockReceived@BlockEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEBUNewBlockID@@G@Z
-    MCVAPI ::EventResult onUnknownBlockReceived(class Level&, struct NewBlockID const&, ushort);
+    MCVAPI ::EventResult onUnknownBlockReceived(class Level& level, struct NewBlockID const& blockId, ushort data);
 
     // NOLINTEND
 };

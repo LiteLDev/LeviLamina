@@ -24,10 +24,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0StorageAreaState@Core@@QEAA@VPath@1@@Z
-    MCAPI explicit StorageAreaState(class Core::Path);
+    MCAPI explicit StorageAreaState(class Core::Path storageAreaRootPath);
 
     // symbol: ?addListener@StorageAreaState@Core@@QEAAXPEAVStorageAreaStateListener@2@@Z
-    MCAPI void addListener(class Core::StorageAreaStateListener*);
+    MCAPI void addListener(class Core::StorageAreaStateListener* l);
 
     // symbol: ?checkUserStorage@StorageAreaState@Core@@QEAAXAEAV?$weak_ptr@VFileStorageArea@Core@@@std@@_K11@Z
     MCAPI void checkUserStorage(std::weak_ptr<class Core::FileStorageArea>&, uint64, uint64, uint64);
@@ -39,10 +39,10 @@ public:
     MCAPI bool isOutOfDiskSpaceError() const;
 
     // symbol: ?notifyCriticalDiskError@StorageAreaState@Core@@QEAAXAEBW4LevelStorageState@2@@Z
-    MCAPI void notifyCriticalDiskError(::Core::LevelStorageState const&);
+    MCAPI void notifyCriticalDiskError(enum Core::LevelStorageState const& errorCode);
 
     // symbol: ?removeListener@StorageAreaState@Core@@QEAAXPEAVStorageAreaStateListener@2@@Z
-    MCAPI void removeListener(class Core::StorageAreaStateListener*);
+    MCAPI void removeListener(class Core::StorageAreaStateListener* l);
 
     // symbol: ??1StorageAreaState@Core@@QEAA@XZ
     MCAPI ~StorageAreaState();

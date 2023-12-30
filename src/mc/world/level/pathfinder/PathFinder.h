@@ -23,13 +23,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0PathFinder@@QEAA@AEAVBlockSource@@AEBVNavigationComponent@@@Z
-    MCAPI PathFinder(class BlockSource&, class NavigationComponent const&);
+    MCAPI PathFinder(class BlockSource& level, class NavigationComponent const& navigation);
 
     // symbol: ?findPath@PathFinder@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVActor@@0M@Z
-    MCAPI std::unique_ptr<class Path> findPath(class Actor&, class Actor&, float);
+    MCAPI std::unique_ptr<class Path> findPath(class Actor& from, class Actor& to, float maxDist);
 
     // symbol: ?findPath@PathFinder@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVActor@@HHHM@Z
-    MCAPI std::unique_ptr<class Path> findPath(class Actor&, int, int, int, float);
+    MCAPI std::unique_ptr<class Path> findPath(class Actor& from, int x, int y, int z, float maxDist);
 
     // symbol:
     // ?isFree@PathFinder@@QEAA?AW4NodeType@@AEAVActor@@AEBVBlockPos@@11W4CanJumpIntoNode@@W4CanClimbIntoNode@@@Z
@@ -72,13 +72,25 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_checkBlockAndNeighborsProperty@PathFinder@@AEAA_NAEBUActorPathingData@@AEBVBlockPos@@AEBVBlock@@W4BlockProperty@@HPEBVBreakBlocksComponent@@V?$function@$$A6A_NAEBVBlock@@AEBVBlockPos@@@Z@std@@@Z
-    MCAPI bool
-    _checkBlockAndNeighborsProperty(struct ActorPathingData const&, class BlockPos const&, class Block const&, ::BlockProperty, int, class BreakBlocksComponent const*, std::function<bool(class Block const&, class BlockPos const&)>);
+    MCAPI bool _checkBlockAndNeighborsProperty(
+        struct ActorPathingData const&                                 actor,
+        class BlockPos const&                                          pos,
+        class Block const&                                             block,
+        enum BlockProperty                                             testProperty,
+        int                                                            radius,
+        class BreakBlocksComponent const*                              breakBlocksComponent,
+        std::function<bool(class Block const&, class BlockPos const&)> extraCondition
+    );
 
     // symbol:
     // ?_checkForDamagingBlock@PathFinder@@AEAA_NAEBUActorPathingData@@AEBVBlockPos@@AEBVBlock@@HPEBVBreakBlocksComponent@@@Z
-    MCAPI bool
-    _checkForDamagingBlock(struct ActorPathingData const&, class BlockPos const&, class Block const&, int, class BreakBlocksComponent const*);
+    MCAPI bool _checkForDamagingBlock(
+        struct ActorPathingData const&    actor,
+        class BlockPos const&             pos,
+        class Block const&                block,
+        int                               radius,
+        class BreakBlocksComponent const* breakBlocksComponent
+    );
 
     // symbol: ?_classifyDoorNode@PathFinder@@AEAA?AW4NodeType@@AEBUActorPathingData@@AEBVBlock@@AEBVBlockPos@@2@Z
     MCAPI ::NodeType
@@ -177,7 +189,7 @@ public:
     // symbol:
     // ?_reconstructPath@PathFinder@@AEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@PEAVPathfinderNode@@W4PathCompletionType@@UActorUniqueID@@@Z
     MCAPI std::unique_ptr<class Path>
-          _reconstructPath(class PathfinderNode*, ::PathCompletionType, struct ActorUniqueID);
+    _reconstructPath(class PathfinderNode* to, enum PathCompletionType completionType, struct ActorUniqueID actorId);
 
     // NOLINTEND
 };

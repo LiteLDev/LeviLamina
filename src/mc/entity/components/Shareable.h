@@ -12,10 +12,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?setCraftInto@Shareable@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setCraftInto(std::string const&);
+    MCAPI void setCraftInto(std::string const& name);
 
     // symbol: ?setItem@Shareable@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setItem(std::string const&);
+    MCAPI void setItem(std::string const& name);
 
     // NOLINTEND
 };

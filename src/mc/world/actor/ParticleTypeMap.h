@@ -21,7 +21,7 @@ public:
 
     // symbol:
     // ?getParticleTypeId@ParticleTypeMap@@SA?AW4ParticleType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static ::ParticleType getParticleTypeId(std::string const&);
+    MCAPI static ::ParticleType getParticleTypeId(std::string const& str);
 
     // NOLINTEND
 

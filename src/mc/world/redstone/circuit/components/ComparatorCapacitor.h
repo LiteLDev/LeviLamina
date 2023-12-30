@@ -32,16 +32,21 @@ public:
 
     // vIndex: 11, symbol:
     // ?addSource@ComparatorCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    virtual bool addSource(
+        class CircuitSceneGraph&         graph,
+        class CircuitTrackingInfo const& info,
+        int&                             dampening,
+        bool&                            bDirectlyPowered
+    );
 
     // vIndex: 14, symbol: ?evaluate@ComparatorCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-    virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
+    virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
 
     // vIndex: 15, symbol: ?cacheValues@ComparatorCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
-    virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
+    virtual void cacheValues(class CircuitSystem& system, class BlockPos const& pos);
 
     // vIndex: 16, symbol: ?updateDependencies@ComparatorCapacitor@@UEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z
-    virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
+    virtual void updateDependencies(class CircuitSceneGraph& system, class BlockPos const& pos);
 
     // vIndex: 17, symbol: __unk_vfn_17
     virtual void __unk_vfn_17();
@@ -56,7 +61,7 @@ public:
     MCAPI ComparatorCapacitor();
 
     // symbol: ?clearAnalogStrength@ComparatorCapacitor@@QEAAXE@Z
-    MCAPI void clearAnalogStrength(uchar);
+    MCAPI void clearAnalogStrength(uchar dir);
 
     // symbol: ?getOldStrength@ComparatorCapacitor@@QEAAHXZ
     MCAPI int getOldStrength();
@@ -65,10 +70,10 @@ public:
     MCAPI bool isSubtractMode();
 
     // symbol: ?setAnalogStrength@ComparatorCapacitor@@QEAAXHE@Z
-    MCAPI void setAnalogStrength(int, uchar);
+    MCAPI void setAnalogStrength(int strength, uchar dir);
 
     // symbol: ?setMode@ComparatorCapacitor@@QEAAXW4Mode@1@@Z
-    MCAPI void setMode(::ComparatorCapacitor::Mode);
+    MCAPI void setMode(enum ComparatorCapacitor::Mode mode);
 
     // NOLINTEND
 };

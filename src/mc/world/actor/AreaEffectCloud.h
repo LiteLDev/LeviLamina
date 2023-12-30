@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 4, symbol:
     // ?reloadHardcoded@AreaEffectCloud@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1AreaEffectCloud@@UEAA@XZ
     virtual ~AreaEffectCloud() = default;
@@ -72,7 +72,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 68, symbol: ?setOwner@AreaEffectCloud@@UEAAXUActorUniqueID@@@Z
-    virtual void setOwner(struct ActorUniqueID);
+    virtual void setOwner(struct ActorUniqueID ownerID);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -84,10 +84,10 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@AreaEffectCloud@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@AreaEffectCloud@@MEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0AreaEffectCloud@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI AreaEffectCloud(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
@@ -108,34 +108,34 @@ public:
     MCAPI void notifyPickup();
 
     // symbol: ?setAffectOwner@AreaEffectCloud@@QEAAX_N@Z
-    MCAPI void setAffectOwner(bool);
+    MCAPI void setAffectOwner(bool shouldAffect);
 
     // symbol: ?setDuration@AreaEffectCloud@@QEAAXH@Z
-    MCAPI void setDuration(int);
+    MCAPI void setDuration(int duration);
 
     // symbol: ?setInitialRadius@AreaEffectCloud@@QEAAXM@Z
-    MCAPI void setInitialRadius(float);
+    MCAPI void setInitialRadius(float radius);
 
     // symbol: ?setParticle@AreaEffectCloud@@QEAAXW4ParticleType@@@Z
-    MCAPI void setParticle(::ParticleType);
+    MCAPI void setParticle(enum ParticleType type);
 
     // symbol: ?setParticleColor@AreaEffectCloud@@QEAAXAEAVColor@mce@@@Z
     MCAPI void setParticleColor(class mce::Color&);
 
     // symbol: ?setPotion@AreaEffectCloud@@QEAAXF@Z
-    MCAPI void setPotion(short);
+    MCAPI void setPotion(short potionAUX);
 
     // symbol: ?setRadiusChangeOnPickup@AreaEffectCloud@@QEAAXM@Z
-    MCAPI void setRadiusChangeOnPickup(float);
+    MCAPI void setRadiusChangeOnPickup(float changeAmount);
 
     // symbol: ?setRadiusOnUse@AreaEffectCloud@@QEAAXM@Z
-    MCAPI void setRadiusOnUse(float);
+    MCAPI void setRadiusOnUse(float radiusOnUse);
 
     // symbol: ?setRadiusPerTick@AreaEffectCloud@@QEAAXM@Z
-    MCAPI void setRadiusPerTick(float);
+    MCAPI void setRadiusPerTick(float radiusPerTick);
 
     // symbol: ?setReapplicationDelay@AreaEffectCloud@@QEAAXH@Z
-    MCAPI void setReapplicationDelay(int);
+    MCAPI void setReapplicationDelay(int delay);
 
     // NOLINTEND
 
@@ -148,7 +148,7 @@ public:
     MCAPI void _setSpawnTick(int64);
 
     // symbol: ?_spawnParticles@AreaEffectCloud@@AEAAXAEAVRandom@@IM@Z
-    MCAPI void _spawnParticles(class Random&, uint, float);
+    MCAPI void _spawnParticles(class Random& random, uint numParticles, float radius);
 
     // NOLINTEND
 };

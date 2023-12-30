@@ -20,7 +20,7 @@ public:
     virtual double stopContinue();
 
     // vIndex: 3, symbol: ?print@Stopwatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void print(std::string const&);
+    virtual void print(std::string const& prepend);
 
     // symbol: ??0Stopwatch@@QEAA@XZ
     MCAPI Stopwatch();

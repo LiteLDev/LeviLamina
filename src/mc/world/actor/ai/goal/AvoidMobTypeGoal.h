@@ -35,7 +35,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@AvoidMobTypeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0AvoidMobTypeGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit AvoidMobTypeGoal(class Mob&);
@@ -44,7 +44,7 @@ public:
     MCAPI bool canFindAvoidPath(class Actor*);
 
     // symbol: ?findNearestEntityToAvoid@AvoidMobTypeGoal@@QEAAPEAVActor@@M@Z
-    MCAPI class Actor* findNearestEntityToAvoid(float);
+    MCAPI class Actor* findNearestEntityToAvoid(float dist);
 
     // NOLINTEND
 };

@@ -31,7 +31,7 @@ public:
     virtual void __unk_vfn_5();
 
     // vIndex: 6, symbol: ?canAccess@ServerContentKeyProvider@@UEBA_NAEBVContentIdentity@@@Z
-    virtual bool canAccess(class ContentIdentity const&) const;
+    virtual bool canAccess(class ContentIdentity const& contentIdentity) const;
 
     // symbol: ?clearTempContentKeys@ServerContentKeyProvider@@UEAAXXZ
     MCVAPI void clearTempContentKeys();

@@ -104,43 +104,47 @@ public:
 
     // symbol:
     // ?getItem@NullSoundPlayer@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@AEAVSoundItem@@@Z
-    MCVAPI bool getItem(std::string const&, class Core::Path const&, class SoundItem&) const;
+    MCVAPI bool
+    getItem(std::string const& eventName, class Core::Path const& soundName, class SoundItem& soundItem) const;
 
     // symbol: ?isLoadingMusic@NullSoundPlayer@@UEBA_NXZ
     MCVAPI bool isLoadingMusic() const;
 
     // symbol: ?isPlayingMusic@NullSoundPlayer@@UEBA_NAEBVPath@Core@@@Z
-    MCVAPI bool isPlayingMusic(class Core::Path const&) const;
+    MCVAPI bool isPlayingMusic(class Core::Path const& soundName) const;
 
     // symbol:
     // ?isPlayingMusicEvent@NullSoundPlayer@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI bool isPlayingMusicEvent(std::string const&) const;
+    MCVAPI bool isPlayingMusicEvent(std::string const& name) const;
 
     // symbol: ?isPlayingSound@NullSoundPlayer@@UEBA_N_K@Z
     MCVAPI bool isPlayingSound(uint64) const;
 
     // symbol:
     // ?play@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
-    MCVAPI uint64 play(std::string const&, class Vec3 const&, float, float);
+    MCVAPI uint64 play(std::string const& name, class Vec3 const& pos, float volume, float pitch);
 
     // symbol:
     // ?playAttached@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$function@$$A6AXAEAUSoundInstanceProperties@@@Z@3@@Z
-    MCVAPI uint64 playAttached(std::string const&, std::function<void(struct SoundInstanceProperties&)>&&);
+    MCVAPI uint64 playAttached(
+        std::string const&                                     eventName,
+        std::function<void(struct SoundInstanceProperties&)>&& getSoundProperties
+    );
 
     // symbol: ?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z
-    MCVAPI void playMusic(std::string const&, float);
+    MCVAPI void playMusic(std::string const& name, float volume);
 
     // symbol: ?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MAEAI@Z
-    MCVAPI void playMusic(std::string const&, float, uint&);
+    MCVAPI void playMusic(std::string const& name, float volume, uint& index);
 
     // symbol: ?playUI@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MM@Z
-    MCVAPI uint64 playUI(std::string const&, float, float);
+    MCVAPI uint64 playUI(std::string const& name, float volume, float pitch);
 
     // symbol: ?setMusicVolumeMultiplier@NullSoundPlayer@@UEAAXM@Z
     MCVAPI void setMusicVolumeMultiplier(float);
 
     // symbol: ?stop@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void stop(std::string const&);
+    MCVAPI void stop(std::string const& name);
 
     // symbol: ?stop@NullSoundPlayer@@UEAAX_K@Z
     MCVAPI void stop(uint64);

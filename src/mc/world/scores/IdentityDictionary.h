@@ -16,10 +16,11 @@ public:
     MCAPI IdentityDictionary();
 
     // symbol: ?clearIdentity@IdentityDictionary@@QEAA_NAEBUScoreboardId@@@Z
-    MCAPI bool clearIdentity(struct ScoreboardId const&);
+    MCAPI bool clearIdentity(struct ScoreboardId const& scoreboardId);
 
     // symbol: ?convertFakeToReal@IdentityDictionary@@QEAAAEBUScoreboardId@@AEBU2@AEBUPlayerScoreboardId@@@Z
-    MCAPI struct ScoreboardId const& convertFakeToReal(struct ScoreboardId const&, struct PlayerScoreboardId const&);
+    MCAPI struct ScoreboardId const&
+    convertFakeToReal(struct ScoreboardId const& scoreboardId, struct PlayerScoreboardId const& playerId);
 
     // symbol: ??1IdentityDictionary@@QEAA@XZ
     MCAPI ~IdentityDictionary();

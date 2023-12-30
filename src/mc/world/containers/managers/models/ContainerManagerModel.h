@@ -24,13 +24,13 @@ public:
     virtual ::ContainerID getContainerId() const;
 
     // vIndex: 2, symbol: ?setContainerId@ContainerManagerModel@@UEAAXW4ContainerID@@@Z
-    virtual void setContainerId(::ContainerID);
+    virtual void setContainerId(enum ContainerID id);
 
     // vIndex: 3, symbol: ?getContainerType@ContainerManagerModel@@UEBA?AW4ContainerType@@XZ
     virtual ::ContainerType getContainerType() const;
 
     // vIndex: 4, symbol: ?setContainerType@ContainerManagerModel@@UEAAXW4ContainerType@@@Z
-    virtual void setContainerType(::ContainerType);
+    virtual void setContainerType(enum ContainerType type);
 
     // vIndex: 5, symbol: ?serverInitItemStackIds@ContainerManagerModel@@UEAAXXZ
     virtual void serverInitItemStackIds();
@@ -51,13 +51,13 @@ public:
     virtual bool isServerAuthoritative() const;
 
     // vIndex: 16, symbol: ?isValid@ContainerManagerModel@@UEAA_NM@Z
-    virtual bool isValid(float);
+    virtual bool isValid(float pickRange);
 
-    // vIndex: 17, symbol: ?_postInit@FurnaceContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+    // vIndex: 17, symbol: ?_postInit@AnvilContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
     virtual class ContainerScreenContext _postInit() = 0;
 
     // symbol: ??0ContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z
-    MCAPI ContainerManagerModel(::ContainerID, class Player&);
+    MCAPI ContainerManagerModel(enum ContainerID containerId, class Player& player);
 
     // symbol: ?getPlayer@ContainerManagerModel@@QEBAAEAVPlayer@@XZ
     MCAPI class Player& getPlayer() const;
@@ -70,7 +70,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_addContainer@ContainerManagerModel@@IEAAXV?$shared_ptr@VContainerModel@@@std@@@Z
-    MCAPI void _addContainer(std::shared_ptr<class ContainerModel>);
+    MCAPI void _addContainer(std::shared_ptr<class ContainerModel> containerModel);
 
     // symbol: ?_containerScreenContext@ContainerManagerModel@@IEAA?AVContainerScreenContext@@AEBVBlockPos@@@Z
     MCAPI class ContainerScreenContext _containerScreenContext(class BlockPos const&);

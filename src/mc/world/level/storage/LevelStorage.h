@@ -23,7 +23,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?addStorageObserver@DBStorage@@UEAAXV?$unique_ptr@VLevelStorageObserver@@U?$default_delete@VLevelStorageObserver@@@std@@@std@@@Z
-    virtual void addStorageObserver(std::unique_ptr<class LevelStorageObserver>) = 0;
+    virtual void addStorageObserver(std::unique_ptr<class LevelStorageObserver> observer) = 0;
 
     // vIndex: 2, symbol:
     // ?getCompoundTag@DBStorage@@UEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z
@@ -40,15 +40,15 @@ public:
         const = 0;
 
     // vIndex: 5, symbol: ?loadLevelData@DBStorage@@UEAA_NAEAVLevelData@@@Z
-    virtual bool loadLevelData(class LevelData&) = 0;
+    virtual bool loadLevelData(class LevelData& data) = 0;
 
     // vIndex: 6, symbol:
     // ?createChunkStorage@DBStorage@@UEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
     virtual std::unique_ptr<class ChunkSource>
-        createChunkStorage(std::unique_ptr<class ChunkSource>, ::StorageVersion) = 0;
+    createChunkStorage(std::unique_ptr<class ChunkSource> generator, enum StorageVersion v) = 0;
 
     // vIndex: 7, symbol: ?saveLevelData@DBStorage@@UEAAXAEBVLevelData@@@Z
-    virtual void saveLevelData(class LevelData const&) = 0;
+    virtual void saveLevelData(class LevelData const& levelData) = 0;
 
     // vIndex: 8, symbol:
     // ?getFullPath@DBStorage@@UEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
@@ -71,7 +71,7 @@ public:
 
     // vIndex: 12, symbol:
     // ?getStatistics@DBStorage@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void getStatistics(std::string&) const = 0;
+    virtual void getStatistics(std::string& stats) const = 0;
 
     // vIndex: 13, symbol: ?clonePlayerData@LevelStorage@@UEAA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@0@Z
     virtual bool clonePlayerData(std::string_view, std::string_view);
@@ -112,7 +112,7 @@ public:
     virtual void resumeStorage() = 0;
 
     // vIndex: 25, symbol: ?setFlushAllowed@DBStorage@@UEAAX_N@Z
-    virtual void setFlushAllowed(bool) = 0;
+    virtual void setFlushAllowed(bool flushAllowed) = 0;
 
     // vIndex: 26, symbol: ?flushToPermanentStorage@DBStorage@@UEAAXXZ
     virtual void flushToPermanentStorage() = 0;
@@ -121,10 +121,10 @@ public:
     virtual void freeCaches();
 
     // vIndex: 28, symbol: ?setCompactionCallback@DBStorage@@UEAAXV?$function@$$A6AXW4CompactionStatus@@@Z@std@@@Z
-    virtual void setCompactionCallback(std::function<void(::CompactionStatus)>) = 0;
+    virtual void setCompactionCallback(std::function<void(enum CompactionStatus)> callback) = 0;
 
     // vIndex: 29, symbol: ?setCriticalSyncSaveCallback@DBStorage@@UEAAXV?$function@$$A6AXXZ@std@@@Z
-    virtual void setCriticalSyncSaveCallback(std::function<void(void)>) = 0;
+    virtual void setCriticalSyncSaveCallback(std::function<void(void)> callback) = 0;
 
     // vIndex: 30, symbol: ?corruptLevel@LevelStorage@@UEAAXXZ
     virtual void corruptLevel();
@@ -147,10 +147,10 @@ public:
 
     // symbol:
     // ?loadServerPlayerData@LevelStorage@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBVPlayer@@_N@Z
-    MCAPI std::unique_ptr<class CompoundTag> loadServerPlayerData(class Player const&, bool);
+    MCAPI std::unique_ptr<class CompoundTag> loadServerPlayerData(class Player const& client, bool isXboxLive);
 
     // symbol: ?save@LevelStorage@@QEAAXAEAVActor@@@Z
-    MCAPI void save(class Actor&);
+    MCAPI void save(class Actor& entity);
 
     // symbol:
     // ?saveData@LevelStorage@@QEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVCompoundTag@@W4Category@DBHelpers@@@Z

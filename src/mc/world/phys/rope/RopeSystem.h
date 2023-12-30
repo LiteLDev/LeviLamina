@@ -14,13 +14,13 @@ public:
     MCAPI RopeSystem();
 
     // symbol: ?_initializePins@RopeSystem@@QEAAXAEBVVec3@@0@Z
-    MCAPI void _initializePins(class Vec3 const&, class Vec3 const&);
+    MCAPI void _initializePins(class Vec3 const& startPin, class Vec3 const& endPin);
 
     // symbol: ?cutAtPercent@RopeSystem@@QEAAXM@Z
-    MCAPI void cutAtPercent(float);
+    MCAPI void cutAtPercent(float percent);
 
     // symbol: ?initialize@RopeSystem@@QEAAXAEBURopeParams@@@Z
-    MCAPI void initialize(struct RopeParams const&);
+    MCAPI void initialize(struct RopeParams const& params);
 
     // symbol: ?isCut@RopeSystem@@QEBA_NXZ
     MCAPI bool isCut() const;
@@ -29,7 +29,7 @@ public:
     MCAPI bool isDestroyed() const;
 
     // symbol: ?queueTick@RopeSystem@@QEAAXAEAVBlockSource@@AEAV?$shared_ptr@VRopeSystem@@@std@@@Z
-    MCAPI void queueTick(class BlockSource&, std::shared_ptr<class RopeSystem>&);
+    MCAPI void queueTick(class BlockSource& region, std::shared_ptr<class RopeSystem>& self);
 
     // symbol: ??1RopeSystem@@QEAA@XZ
     MCAPI ~RopeSystem();
@@ -48,10 +48,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_cacheColliders@RopeSystem@@AEAA_NAEAVBlockSource@@@Z
-    MCAPI bool _cacheColliders(class BlockSource&);
+    MCAPI bool _cacheColliders(class BlockSource& region);
 
     // symbol: ?_finalizeBucket@RopeSystem@@AEAAXAEAUAABBBucket@@@Z
-    MCAPI void _finalizeBucket(struct AABBBucket&);
+    MCAPI void _finalizeBucket(struct AABBBucket& bucket);
 
     // symbol: ?_initializePins@RopeSystem@@AEAAXXZ
     MCAPI void _initializePins();
@@ -63,7 +63,7 @@ public:
     MCAPI void _prepareAABBBuckets();
 
     // symbol: ?_propagateDistanceConstraint@RopeSystem@@AEAAMAEBVVec3@@AEAV2@M@Z
-    MCAPI float _propagateDistanceConstraint(class Vec3 const&, class Vec3&, float);
+    MCAPI float _propagateDistanceConstraint(class Vec3 const& a, class Vec3& b, float targetDist);
 
     // symbol: ?_pruneDenyList@RopeSystem@@AEAAXXZ
     MCAPI void _pruneDenyList();
@@ -75,13 +75,14 @@ public:
     MCAPI void _resizeRope();
 
     // symbol: ?_solveCollisions@RopeSystem@@AEAAM_N@Z
-    MCAPI float _solveCollisions(bool);
+    MCAPI float _solveCollisions(bool checkBlacklist);
 
     // symbol: ?_solveDistanceConstraint@RopeSystem@@AEAAMAEAVVec3@@0M@Z
-    MCAPI float _solveDistanceConstraint(class Vec3&, class Vec3&, float);
+    MCAPI float _solveDistanceConstraint(class Vec3& a, class Vec3& b, float targetDist);
 
     // symbol: ?_solveDistanceConstraintBlock@RopeSystem@@AEAAMAEAVVec3@@000M@Z
-    MCAPI float _solveDistanceConstraintBlock(class Vec3&, class Vec3&, class Vec3&, class Vec3&, float);
+    MCAPI float
+    _solveDistanceConstraintBlock(class Vec3& a, class Vec3& b, class Vec3& c, class Vec3& d, float targetDist);
 
     // symbol: ?_solveDistanceConstraints3@RopeSystem@@AEAAMXZ
     MCAPI float _solveDistanceConstraints3();

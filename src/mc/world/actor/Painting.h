@@ -83,10 +83,10 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@Painting@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@Painting@@MEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -104,7 +104,7 @@ public:
     virtual void dropItem();
 
     // vIndex: 172, symbol: ?placeHangingEntity@Painting@@UEAA_NAEAVBlockSource@@H@Z
-    virtual bool placeHangingEntity(class BlockSource&, int);
+    virtual bool placeHangingEntity(class BlockSource& region, int direction);
 
     // symbol: ??0Painting@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Painting(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);

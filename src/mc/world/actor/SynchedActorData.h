@@ -24,31 +24,31 @@ public:
     MCAPI SynchedActorData();
 
     // symbol: ??0SynchedActorData@@QEAA@$$QEAV0@@Z
-    MCAPI SynchedActorData(class SynchedActorData&&);
+    MCAPI SynchedActorData(class SynchedActorData&& rhs);
 
     // symbol: ?_clone@SynchedActorData@@QEBA?AV1@XZ
     MCAPI class SynchedActorData _clone() const;
 
     // symbol: ?getFloat@SynchedActorData@@QEBAMG@Z
-    MCAPI float getFloat(ushort) const;
+    MCAPI float getFloat(ushort id) const;
 
     // symbol: ?getInt@SynchedActorData@@QEBAHG@Z
-    MCAPI int getInt(ushort) const;
+    MCAPI int getInt(ushort id) const;
 
     // symbol: ?getInt64@SynchedActorData@@QEBA_JG@Z
-    MCAPI int64 getInt64(ushort) const;
+    MCAPI int64 getInt64(ushort id) const;
 
     // symbol: ?getInt8@SynchedActorData@@QEBACG@Z
-    MCAPI schar getInt8(ushort) const;
+    MCAPI schar getInt8(ushort id) const;
 
     // symbol: ?getStatusFlag@SynchedActorData@@QEBA_NW4ActorFlags@@@Z
     MCAPI bool getStatusFlag(::ActorFlags) const;
 
     // symbol: ?getVec3@SynchedActorData@@QEBA?AVVec3@@G@Z
-    MCAPI class Vec3 getVec3(ushort) const;
+    MCAPI class Vec3 getVec3(ushort id) const;
 
     // symbol: ??4SynchedActorData@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class SynchedActorData& operator=(class SynchedActorData&&);
+    MCAPI class SynchedActorData& operator=(class SynchedActorData&& rhs);
 
     // symbol:
     // ?packAll@SynchedActorData@@QEBA?AV?$vector@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@V?$allocator@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@@2@@std@@AEBVEntityContext@@@Z
@@ -78,16 +78,16 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_find@SynchedActorData@@AEBAPEAVDataItem@@G@Z
-    MCAPI class DataItem* _find(ushort) const;
+    MCAPI class DataItem* _find(ushort id) const;
 
     // symbol: ?_get@SynchedActorData@@AEAAAEAVDataItem@@G@Z
-    MCAPI class DataItem& _get(ushort);
+    MCAPI class DataItem& _get(ushort id);
 
     // symbol: ?_resizeToContain@SynchedActorData@@AEAAXG@Z
-    MCAPI void _resizeToContain(ushort);
+    MCAPI void _resizeToContain(ushort id);
 
     // symbol: ?_setDirty@SynchedActorData@@AEAAXG@Z
-    MCAPI void _setDirty(ushort);
+    MCAPI void _setDirty(ushort id);
 
     // NOLINTEND
 };

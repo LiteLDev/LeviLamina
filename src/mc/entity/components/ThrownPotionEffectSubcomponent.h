@@ -23,10 +23,10 @@ public:
     virtual ~ThrownPotionEffectSubcomponent() = default;
 
     // vIndex: 2, symbol: ?writetoJSON@ThrownPotionEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
-    virtual void writetoJSON(class Json::Value&) const;
+    virtual void writetoJSON(class Json::Value& component) const;
 
     // vIndex: 3, symbol: ?doOnHitEffect@ThrownPotionEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    virtual void doOnHitEffect(class Actor& owner, class ProjectileComponent& component);
 
     // vIndex: 4, symbol: ?getName@ThrownPotionEffectSubcomponent@@UEAAPEBDXZ
     virtual char const* getName();

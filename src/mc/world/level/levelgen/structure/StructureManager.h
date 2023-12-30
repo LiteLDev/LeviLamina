@@ -65,15 +65,15 @@ public:
 
     // symbol:
     // ?getOrCreate@StructureManager@@QEAAAEAVStructureTemplate@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class StructureTemplate& getOrCreate(std::string const&);
+    MCAPI class StructureTemplate& getOrCreate(std::string const& structureName);
 
     // symbol:
     // ?getOrCreateLegacy@StructureManager@@QEAAAEAVLegacyStructureTemplate@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class LegacyStructureTemplate& getOrCreateLegacy(std::string const&);
+    MCAPI class LegacyStructureTemplate& getOrCreateLegacy(std::string const& structurePath);
 
     // symbol:
     // ?getStructure@StructureManager@@QEBAPEAVStructureTemplate@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class StructureTemplate* getStructure(std::string const&) const;
+    MCAPI class StructureTemplate* getStructure(std::string const& structureName) const;
 
     // symbol:
     // ?importStructureFromTemplate@StructureManager@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVStructureTemplate@@@Z
@@ -151,7 +151,7 @@ public:
 
     // symbol:
     // ?_readLegacyStructure@StructureManager@@AEAAPEAVLegacyStructureTemplate@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class LegacyStructureTemplate* _readLegacyStructure(std::string const&);
+    MCAPI class LegacyStructureTemplate* _readLegacyStructure(std::string const& name);
 
     // symbol:
     // ?_removePlacementQueueItem@StructureManager@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVStructureAnimationData@@@Z

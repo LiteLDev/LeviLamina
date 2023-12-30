@@ -147,10 +147,10 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 129, symbol: ?getVariant@AnvilBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 135, symbol: ?animateTick@AnvilBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void animateTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -168,7 +168,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 168, symbol: ?getDustColor@AnvilBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
-    virtual class mce::Color getDustColor(class Block const&) const;
+    virtual class mce::Color getDustColor(class Block const& block) const;
 
     // vIndex: 169, symbol:
     // ?getDustParticleName@AnvilBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
@@ -178,7 +178,7 @@ public:
     virtual void __unk_vfn_170();
 
     // vIndex: 171, symbol: ?onLand@AnvilBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onLand(class BlockSource&, class BlockPos const&) const;
+    virtual void onLand(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?canBeSilkTouched@AnvilBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -193,7 +193,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0AnvilBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI AnvilBlock(std::string const&, int);
+    MCAPI AnvilBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 

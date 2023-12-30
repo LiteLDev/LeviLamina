@@ -43,7 +43,7 @@ MCAPI void _buildSurface(
 MCAPI void buildSurface(struct ISurfaceBuilder::BuildParameters const&);
 
 // symbol: ?ensureValidSurfaceMaterials@Utils@VanillaSurfaceBuilders@@YAXAEAUSurfaceMaterialAttributes@@@Z
-MCAPI void ensureValidSurfaceMaterials(struct SurfaceMaterialAttributes&);
+MCAPI void ensureValidSurfaceMaterials(struct SurfaceMaterialAttributes& surfaceMaterials);
 
 // symbol: ?findGroundHeight@Utils@VanillaSurfaceBuilders@@YAFAEBVBlockVolume@@VPos@@AEBVHeightmapWrapper@@@Z
 MCAPI short findGroundHeight(class BlockVolume const&, class Pos, class HeightmapWrapper const&);

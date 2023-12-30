@@ -20,7 +20,7 @@ public:
     virtual ~RakPeerInterface();
 
     // symbol: ?DestroyInstance@RakPeerInterface@RakNet@@SAXPEAV12@@Z
-    MCAPI static void DestroyInstance(class RakNet::RakPeerInterface*);
+    MCAPI static void DestroyInstance(class RakNet::RakPeerInterface* i);
 
     // symbol: ?GetInstance@RakPeerInterface@RakNet@@SAPEAV12@XZ
     MCAPI static class RakNet::RakPeerInterface* GetInstance();

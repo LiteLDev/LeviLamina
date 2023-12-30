@@ -28,7 +28,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0InitProxy@GameRuleCommand@@QEAA@AEAVLevel@@@Z
-        MCAPI explicit InitProxy(class Level&);
+        MCAPI explicit InitProxy(class Level& level);
 
         // NOLINTEND
     };
@@ -45,24 +45,29 @@ public:
     virtual ~GameRuleCommand() = default;
 
     // vIndex: 2, symbol: ?execute@GameRuleCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?setup@GameRuleCommand@@SAXAEAVCommandRegistry@@$$QEAUInitProxy@1@@Z
-    MCAPI static void setup(class CommandRegistry&, struct GameRuleCommand::InitProxy&&);
+    MCAPI static void setup(class CommandRegistry& registry, struct GameRuleCommand::InitProxy&& dependencies);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?getGameRule@GameRuleCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    MCAPI void getGameRule(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void getGameRule(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?setGameRule@GameRuleCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    MCAPI void setGameRule(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void setGameRule(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol:
     // ?createJsonIndex@GameRuleCommand@@CAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVGameRule@@AEAVValue@Json@@PEAV23@@Z
-    MCAPI static void createJsonIndex(std::string const&, class GameRule const&, class Json::Value&, std::string*);
+    MCAPI static void createJsonIndex(
+        std::string const&    ruleName,
+        class GameRule const& rule,
+        class Json::Value&    json,
+        std::string*          value
+    );
 
     // NOLINTEND
 };

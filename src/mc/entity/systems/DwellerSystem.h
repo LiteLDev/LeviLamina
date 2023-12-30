@@ -21,7 +21,7 @@ public:
     virtual void registerEvents(entt::dispatcher&);
 
     // vIndex: 2, symbol: ?tick@DwellerSystem@@UEAAXAEAVEntityRegistry@@@Z
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry& registry);
 
     // NOLINTEND
 };

@@ -24,7 +24,7 @@ public:
     virtual void writeDouble(double);
 
     // vIndex: 5, symbol: ?writeByte@BytesDataOutput@@UEAAXD@Z
-    virtual void writeByte(char);
+    virtual void writeByte(char v);
 
     // vIndex: 6, symbol: ?writeShort@BytesDataOutput@@UEAAXF@Z
     virtual void writeShort(short);

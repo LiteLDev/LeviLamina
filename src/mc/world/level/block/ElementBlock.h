@@ -126,7 +126,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 139, symbol: ?tryLegacyUpgrade@ElementBlock@@UEBAPEBVBlock@@G@Z
-    virtual class Block const* tryLegacyUpgrade(ushort) const;
+    virtual class Block const* tryLegacyUpgrade(ushort extraData) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -141,28 +141,28 @@ public:
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // symbol: ??0ElementBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ElementType@@@Z
-    MCAPI ElementBlock(std::string const&, int, ::ElementType);
+    MCAPI ElementBlock(std::string const& nameId, int id, enum ElementType type);
 
     // symbol: ?getElementInfo@ElementBlock@@SA?AUElementInfo@@W4ElementType@@@Z
-    MCAPI static struct ElementInfo getElementInfo(::ElementType);
+    MCAPI static struct ElementInfo getElementInfo(enum ElementType e);
 
     // symbol: ?getIngredientForElement@ElementBlock@@SA?AVRecipeIngredient@@W4ElementType@@H@Z
-    MCAPI static class RecipeIngredient getIngredientForElement(::ElementType, int);
+    MCAPI static class RecipeIngredient getIngredientForElement(enum ElementType e, int stackCount);
 
     // symbol: ?getItemForElement@ElementBlock@@SA?AVItemInstance@@W4ElementType@@H@Z
-    MCAPI static class ItemInstance getItemForElement(::ElementType, int);
+    MCAPI static class ItemInstance getItemForElement(enum ElementType e, int stackCount);
 
     // symbol: ?initElements@ElementBlock@@SAXXZ
     MCAPI static void initElements();
 
     // symbol: ?isElement@ElementBlock@@SA_NAEBVItemStackBase@@@Z
-    MCAPI static bool isElement(class ItemStackBase const&);
+    MCAPI static bool isElement(class ItemStackBase const& item);
 
     // symbol: ?shutdownElements@ElementBlock@@SAXXZ
     MCAPI static void shutdownElements();
 
     // symbol: ?tryGetBlockLegacyForElement@ElementBlock@@SAPEBVBlockLegacy@@W4ElementType@@@Z
-    MCAPI static class BlockLegacy const* tryGetBlockLegacyForElement(::ElementType);
+    MCAPI static class BlockLegacy const* tryGetBlockLegacyForElement(enum ElementType e);
 
     // NOLINTEND
 

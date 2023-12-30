@@ -24,13 +24,13 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@HudContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int, class ItemStack const&, bool);
+    virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
 
     // vIndex: 8, symbol: ?getSlot@HudContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const& getSlot(int) const;
+    virtual class ItemStack const& getSlot(int slot) const;
 
     // vIndex: 9, symbol: ?setData@HudContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int, int);
+    virtual void setData(int id, int value);
 
     // vIndex: 10, symbol: ?broadcastChanges@HudContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();
@@ -39,7 +39,7 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0HudContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z
-    MCAPI HudContainerManagerModel(::ContainerID, class Player&);
+    MCAPI HudContainerManagerModel(enum ContainerID containerId, class Player& player);
 
     // NOLINTEND
 };

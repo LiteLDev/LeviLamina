@@ -42,7 +42,7 @@ public:
     virtual void __unk_vfn_17();
 
     // vIndex: 30, symbol: ?canDestroySpecial@WeaponItem@@UEBA_NAEBVBlock@@@Z
-    virtual bool canDestroySpecial(class Block const&) const;
+    virtual bool canDestroySpecial(class Block const& block) const;
 
     // vIndex: 34, symbol: ?getAttackDamage@WeaponItem@@UEBAHXZ
     virtual int getAttackDamage() const;
@@ -61,7 +61,12 @@ public:
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@WeaponItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
     // vIndex: 47, symbol: ?isValidRepairItem@WeaponItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
     virtual bool
@@ -95,10 +100,10 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@WeaponItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
     // vIndex: 74, symbol: ?getDestroySpeed@WeaponItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
-    virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
+    virtual float getDestroySpeed(class ItemStackBase const& itemStack, class Block const& block) const;
 
     // vIndex: 75, symbol: ?hurtActor@WeaponItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;

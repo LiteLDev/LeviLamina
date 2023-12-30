@@ -72,10 +72,11 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@IceBombItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& itemStack, class Player& player) const;
 
     // vIndex: 71, symbol: ?dispense@IceBombItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 88, symbol: ?getCooldownType@IceBombItem@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getCooldownType() const;
@@ -90,7 +91,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0IceBombItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI IceBombItem(std::string const&, int);
+    MCAPI IceBombItem(std::string const& nameId, int id);
 
     // symbol: ?ICE_BOMB_COOLDOWN@IceBombItem@@2VHashedString@@B
     MCAPI static class HashedString const ICE_BOMB_COOLDOWN;

@@ -64,13 +64,13 @@ public:
     virtual void __unk_vfn_107();
 
     // vIndex: 112, symbol: ?onSynchedDataUpdate@Rabbit@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int dataId);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Rabbit@@MEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();

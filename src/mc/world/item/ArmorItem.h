@@ -71,7 +71,12 @@ public:
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@ArmorItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
     // vIndex: 47, symbol: ?isValidRepairItem@ArmorItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
     virtual bool
@@ -93,7 +98,7 @@ public:
     virtual void __unk_vfn_52();
 
     // vIndex: 54, symbol: ?getDamageChance@ArmorItem@@UEBAHH@Z
-    virtual int getDamageChance(int) const;
+    virtual int getDamageChance(int unbreaking) const;
 
     // vIndex: 56, symbol: __unk_vfn_56
     virtual void __unk_vfn_56();
@@ -114,10 +119,10 @@ public:
     virtual void __unk_vfn_61();
 
     // vIndex: 62, symbol: ?clearColor@ArmorItem@@UEBAXAEAVItemStackBase@@@Z
-    virtual void clearColor(class ItemStackBase&) const;
+    virtual void clearColor(class ItemStackBase& instance) const;
 
     // vIndex: 64, symbol: ?setColor@ArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
-    virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
+    virtual void setColor(class ItemStackBase& instance, class mce::Color const& color) const;
 
     // vIndex: 65, symbol: __unk_vfn_65
     virtual void __unk_vfn_65();
@@ -129,16 +134,18 @@ public:
     virtual int buildIdAux(short, class CompoundTag const*) const;
 
     // vIndex: 70, symbol: ?use@ArmorItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
 
     // vIndex: 71, symbol: ?dispense@ArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 75, symbol: ?hurtActor@ArmorItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
     // vIndex: 79, symbol: ?mineBlock@ArmorItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool
+    mineBlock(class ItemStack& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
     // vIndex: 96, symbol: ?getEquipLocation@ArmorItem@@UEBA?AW4ActorLocation@@XZ
     virtual ::ActorLocation getEquipLocation() const;
@@ -166,13 +173,20 @@ public:
     MCAPI bool isTrimAllowed() const;
 
     // symbol: ?dispenseArmor@ArmorItem@@SA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@EW4ArmorSlot@@@Z
-    MCAPI static bool dispenseArmor(class BlockSource&, class Container&, int, class Vec3 const&, uchar, ::ArmorSlot);
+    MCAPI static bool dispenseArmor(
+        class BlockSource& region,
+        class Container&   container,
+        int                slot,
+        class Vec3 const&  pos,
+        uchar              face,
+        enum ArmorSlot     armorSlot
+    );
 
     // symbol: ?getSlotForItem@ArmorItem@@SA?AW4ArmorSlot@@AEBVItemStackBase@@@Z
-    MCAPI static ::ArmorSlot getSlotForItem(class ItemStackBase const&);
+    MCAPI static ::ArmorSlot getSlotForItem(class ItemStackBase const& itemStack);
 
     // symbol: ?isDamageable@ArmorItem@@SA_NAEBVItemDescriptor@@@Z
-    MCAPI static bool isDamageable(class ItemDescriptor const&);
+    MCAPI static bool isDamageable(class ItemDescriptor const& item);
 
     // symbol: ?CHAIN@ArmorItem@@2VArmorMaterial@1@B
     MCAPI static class ArmorItem::ArmorMaterial const CHAIN;

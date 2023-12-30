@@ -26,17 +26,25 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@FloatWanderGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0FloatWanderGoal@@QEAA@AEAVMob@@MMM_N1UFloatRange@@@Z
-    MCAPI FloatWanderGoal(class Mob&, float, float, float, bool, bool, struct FloatRange);
+    MCAPI FloatWanderGoal(
+        class Mob&        mob,
+        float             xzDist,
+        float             yDist,
+        float             yOffset,
+        bool              mustReach,
+        bool              randomReselect,
+        struct FloatRange floatDuration
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_canReach@FloatWanderGoal@@AEAA_NAEBVVec3@@M@Z
-    MCAPI bool _canReach(class Vec3 const&, float);
+    MCAPI bool _canReach(class Vec3 const& targetPos, float dist);
 
     // NOLINTEND
 };

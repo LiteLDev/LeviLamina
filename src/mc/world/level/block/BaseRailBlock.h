@@ -36,10 +36,10 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0Rail@BaseRailBlock@@QEAA@AEAVBlockSource@@AEBVBlockPos@@@Z
-        MCAPI Rail(class BlockSource&, class BlockPos const&);
+        MCAPI Rail(class BlockSource& region, class BlockPos const& pos);
 
         // symbol: ?place@Rail@BaseRailBlock@@QEAAXH_N@Z
-        MCAPI void place(int, bool);
+        MCAPI void place(int signalStrength, bool first);
 
         // symbol: ??1Rail@BaseRailBlock@@QEAA@XZ
         MCAPI ~Rail();
@@ -49,22 +49,22 @@ public:
         // protected:
         // NOLINTBEGIN
         // symbol: ?connectTo@Rail@BaseRailBlock@@IEAAXAEAV12@@Z
-        MCAPI void connectTo(class BaseRailBlock::Rail&);
+        MCAPI void connectTo(class BaseRailBlock::Rail& rail);
 
         // symbol: ?connectsTo@Rail@BaseRailBlock@@IEAA_NAEAV12@@Z
-        MCAPI bool connectsTo(class BaseRailBlock::Rail&);
+        MCAPI bool connectsTo(class BaseRailBlock::Rail& rail);
 
         // symbol: ?getRail@Rail@BaseRailBlock@@IEAA?AV?$shared_ptr@VRail@BaseRailBlock@@@std@@AEBVBlockPos@@@Z
-        MCAPI std::shared_ptr<class BaseRailBlock::Rail> getRail(class BlockPos const&);
+        MCAPI std::shared_ptr<class BaseRailBlock::Rail> getRail(class BlockPos const& p);
 
         // symbol: ?hasNeighborRail@Rail@BaseRailBlock@@IEAA_NAEBVBlockPos@@@Z
-        MCAPI bool hasNeighborRail(class BlockPos const&);
+        MCAPI bool hasNeighborRail(class BlockPos const& pos);
 
         // symbol: ?removeSoftConnections@Rail@BaseRailBlock@@IEAAXXZ
         MCAPI void removeSoftConnections();
 
         // symbol: ?updateConnections@Rail@BaseRailBlock@@IEAAXH@Z
-        MCAPI void updateConnections(int);
+        MCAPI void updateConnections(int direction);
 
         // NOLINTEND
     };
@@ -159,22 +159,24 @@ public:
     virtual bool canContainLiquid() const;
 
     // vIndex: 65, symbol: ?onRedstoneUpdate@BaseRailBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void
+    onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool isFirstTime) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
 
     // vIndex: 71, symbol: ?setupRedstoneComponent@BaseRailBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
+    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
 
     // vIndex: 85, symbol: ?mayPlace@BaseRailBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@BaseRailBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -201,13 +203,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@BaseRailBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@BaseRailBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -220,7 +222,8 @@ public:
 
     // vIndex: 158, symbol:
     // ?getRenderLayer@BaseRailBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
+    virtual ::BlockRenderLayer
+    getRenderLayer(class Block const& block, class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?isRailBlock@BaseRailBlock@@UEBA_NXZ
     MCVAPI bool isRailBlock() const;
@@ -229,7 +232,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0BaseRailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI BaseRailBlock(std::string const&, int, bool);
+    MCAPI BaseRailBlock(std::string const& nameId, int id, bool usesDataBit);
 
     // symbol: ?isCorner@BaseRailBlock@@SA_NAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isCorner(class BlockSource const&, class BlockPos const&);
@@ -238,10 +241,10 @@ public:
     MCAPI static bool isFacingWestEast(class BlockSource const&, class BlockPos const&);
 
     // symbol: ?isRail@BaseRailBlock@@SA_NAEBVBlock@@@Z
-    MCAPI static bool isRail(class Block const&);
+    MCAPI static bool isRail(class Block const& block);
 
     // symbol: ?isRail@BaseRailBlock@@SA_NAEBVIConstBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool isRail(class IConstBlockSource const&, class BlockPos const&);
+    MCAPI static bool isRail(class IConstBlockSource const& region, class BlockPos const& pos);
 
     // symbol: ?isSlope@BaseRailBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isSlope(class Block const&);
@@ -254,10 +257,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_updatePlacement@BaseRailBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void _updatePlacement(class BlockSource&, class BlockPos const&) const;
+    MCAPI void _updatePlacement(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?_createCircuitComponent@BaseRailBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static void _createCircuitComponent(class BlockSource&, class BlockPos const&);
+    MCAPI static void _createCircuitComponent(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 };

@@ -45,15 +45,19 @@ public:
 
     // vIndex: 8, symbol:
     // ?addAABBs@ComposterBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-    virtual void
-    addAABBs(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&) // NOLINT
-        const;
+    virtual void addAABBs(
+        class Block const&       block,
+        class BlockSource const& region,
+        class BlockPos const&    pos,
+        class AABB const*        intersectTestBox,
+        std::vector<class AABB>& inoutBoxes
+    ) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@ComposterBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, enum BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -119,7 +123,7 @@ public:
     virtual bool canContainLiquid() const;
 
     // vIndex: 66, symbol: ?onMove@ComposterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void onMove(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void onMove(class BlockSource& region, class BlockPos const& from, class BlockPos const& to) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -140,7 +144,9 @@ public:
     virtual void __unk_vfn_111();
 
     // vIndex: 112, symbol: ?getComparatorSignal@ComposterBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uchar) const;
+    virtual int
+    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
+        const;
 
     // vIndex: 114, symbol: __unk_vfn_114
     virtual void __unk_vfn_114();
@@ -149,22 +155,22 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@ComposterBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@ComposterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 147, symbol: ?onPlace@ComposterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@ComposterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -179,11 +185,17 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 
     // symbol: ??0ComposterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ComposterBlock(std::string const&, int);
+    MCAPI ComposterBlock(std::string const& nameId, int id);
 
     // symbol: ?addItem@ComposterBlock@@SA_NAEAVContainer@@HAEAVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-    MCAPI static bool
-    addItem(class Container&, int, class ItemStack&, class BlockSource&, class Block const&, class BlockPos const&);
+    MCAPI static bool addItem(
+        class Container&      fromContainer,
+        int                   slot,
+        class ItemStack&      item,
+        class BlockSource&    region,
+        class Block const&    block,
+        class BlockPos const& pos
+    );
 
     // symbol:
     // ?addItems@ComposterBlock@@SA_NAEAVContainer@@HAEAVItemStack@@HAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
@@ -195,25 +207,29 @@ public:
     addItems(class ItemStack const&, int, class BlockSource&, class Block const&, class BlockPos const&);
 
     // symbol: ?empty@ComposterBlock@@SAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-    MCAPI static void empty(class BlockSource&, class Block const&, class BlockPos const&);
+    MCAPI static void empty(class BlockSource& region, class Block const& composter, class BlockPos const& pos);
 
     // symbol: ?extractItem@ComposterBlock@@SA?AVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-    MCAPI static class ItemStack extractItem(class BlockSource&, class Block const&, class BlockPos const&);
+    MCAPI static class ItemStack
+    extractItem(class BlockSource& region, class Block const& composter, class BlockPos const& pos);
 
     // symbol: ?getComposterAt@ComposterBlock@@SAPEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static class Block const* getComposterAt(class BlockSource&, class BlockPos const&);
+    MCAPI static class Block const* getComposterAt(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_emitBoneMeal@ComposterBlock@@AEBAXAEAVLevel@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void _emitBoneMeal(class Level&, class BlockSource&, class BlockPos const&) const;
+    MCAPI void _emitBoneMeal(class Level& level, class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol:
     // ?_notifyClientComposterUsed@ComposterBlock@@AEBAXAEBVPlayer@@FW4POIBlockInteractionType@MinecraftEventing@@@Z
-    MCAPI void
-    _notifyClientComposterUsed(class Player const&, short, ::MinecraftEventing::POIBlockInteractionType) const;
+    MCAPI void _notifyClientComposterUsed(
+        class Player const&                             player,
+        short                                           itemId,
+        enum MinecraftEventing::POIBlockInteractionType interactionType
+    ) const;
 
     // symbol:
     // ?_getCompostableItems@ComposterBlock@@CAAEBV?$unordered_map@_KCU?$hash@_K@std@@U?$equal_to@_K@2@V?$allocator@U?$pair@$$CB_KC@std@@@2@@std@@XZ

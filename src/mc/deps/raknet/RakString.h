@@ -31,13 +31,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?Deserialize@RakString@RakNet@@QEAA_NPEAVBitStream@2@@Z
-    MCAPI bool Deserialize(class RakNet::BitStream*);
+    MCAPI bool Deserialize(class RakNet::BitStream* bs);
 
     // symbol: ?GetLength@RakString@RakNet@@QEBA_KXZ
     MCAPI uint64 GetLength() const;
 
     // symbol: ?IPAddressMatch@RakString@RakNet@@QEAA_NPEBD@Z
-    MCAPI bool IPAddressMatch(char const*);
+    MCAPI bool IPAddressMatch(char const* IP);
 
     // symbol: ?IsEmpty@RakString@RakNet@@QEBA_NXZ
     MCAPI bool IsEmpty() const;
@@ -46,22 +46,22 @@ public:
     MCAPI RakString();
 
     // symbol: ??0RakString@RakNet@@QEAA@AEBV01@@Z
-    MCAPI RakString(class RakNet::RakString const&);
+    MCAPI RakString(class RakNet::RakString const& rhs);
 
     // symbol: ??0RakString@RakNet@@QEAA@PEBDZZ
     MCAPI RakString(char const*, ...);
 
     // symbol: ??4RakString@RakNet@@QEAAAEAV01@PEAD@Z
-    MCAPI class RakNet::RakString& operator=(char*);
+    MCAPI class RakNet::RakString& operator=(char* str);
 
     // symbol: ??4RakString@RakNet@@QEAAAEAV01@PEBD@Z
-    MCAPI class RakNet::RakString& operator=(char const*);
+    MCAPI class RakNet::RakString& operator=(char const* str);
 
     // symbol: ??4RakString@RakNet@@QEAAAEAV01@AEBV01@@Z
-    MCAPI class RakNet::RakString& operator=(class RakNet::RakString const&);
+    MCAPI class RakNet::RakString& operator=(class RakNet::RakString const& rhs);
 
     // symbol: ??8RakString@RakNet@@QEBA_NAEBV01@@Z
-    MCAPI bool operator==(class RakNet::RakString const&) const;
+    MCAPI bool operator==(class RakNet::RakString const& rhs) const;
 
     // symbol: ??1RakString@RakNet@@QEAA@XZ
     MCAPI ~RakString();
@@ -83,7 +83,7 @@ public:
     MCAPI void Allocate(uint64);
 
     // symbol: ?Assign@RakString@RakNet@@IEAAXPEBD@Z
-    MCAPI void Assign(char const*);
+    MCAPI void Assign(char const* str);
 
     // symbol: ?Assign@RakString@RakNet@@IEAAXPEBDPEAD@Z
     MCAPI void Assign(char const*, char*);

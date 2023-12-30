@@ -33,7 +33,7 @@ public:
     virtual class Json::Value resolve(struct ResolveData const&) const;
 
     // symbol: ??0TextObjectLocalizedText@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit TextObjectLocalizedText(std::string);
+    MCAPI explicit TextObjectLocalizedText(std::string text);
 
     // NOLINTEND
 };

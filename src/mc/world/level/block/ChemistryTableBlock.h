@@ -92,10 +92,10 @@ public:
     virtual void __unk_vfn_48();
 
     // vIndex: 49, symbol: ?isValidAuxValue@ChemistryTableBlock@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int value) const;
 
     // vIndex: 52, symbol: ?onFillBlock@ChemistryTableBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual void onFillBlock(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual void onFillBlock(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 54, symbol: __unk_vfn_54
     virtual void __unk_vfn_54();
@@ -117,8 +117,13 @@ public:
 
     // vIndex: 98, symbol:
     // ?getPlacementBlock@ChemistryTableBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    virtual class Block const& getPlacementBlock(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -143,16 +148,16 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 129, symbol: ?getVariant@ChemistryTableBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 132, symbol: ?getMappedFace@ChemistryTableBlock@@UEBAEEAEBVBlock@@@Z
-    virtual uchar getMappedFace(uchar, class Block const&) const;
+    virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@ChemistryTableBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -168,7 +173,8 @@ public:
 
     // vIndex: 168, symbol:
     // ?getEntityResourceItem@ChemistryTableBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
+    virtual class ItemInstance
+    getEntityResourceItem(class Randomize& random, class BlockActor const& blockEntity, int bonusLootLevel) const;
 
     // symbol: ?isCraftingBlock@ChemistryTableBlock@@UEBA_NXZ
     MCVAPI bool isCraftingBlock() const;
@@ -177,13 +183,18 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0ChemistryTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ChemistryTableBlock(std::string const&, int);
+    MCAPI ChemistryTableBlock(std::string const& nameId, int id);
 
     // symbol: ?getItemForType@ChemistryTableBlock@@SA?AVItemInstance@@W4ChemistryTableType@@H@Z
-    MCAPI static class ItemInstance getItemForType(::ChemistryTableType, int);
+    MCAPI static class ItemInstance getItemForType(enum ChemistryTableType type, int stackCount);
 
     // symbol: ?isUIValidForPlayer@ChemistryTableBlock@@SA_NAEBVBlockPos@@AEAVPlayer@@MW4ChemistryTableType@@@Z
-    MCAPI static bool isUIValidForPlayer(class BlockPos const&, class Player&, float, ::ChemistryTableType);
+    MCAPI static bool isUIValidForPlayer(
+        class BlockPos const&   pos,
+        class Player&           player,
+        float                   pickRange,
+        enum ChemistryTableType expectedType
+    );
 
     // NOLINTEND
 };

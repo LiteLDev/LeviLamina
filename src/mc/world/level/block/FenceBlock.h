@@ -64,10 +64,10 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@FenceBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, enum BlockSupportType type) const;
 
     // vIndex: 25, symbol: ?canConnect@FenceBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
+    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -139,7 +139,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 85, symbol: ?mayPlace@FenceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@FenceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
@@ -188,13 +188,16 @@ public:
     MCVAPI bool isFenceBlock() const;
 
     // symbol: ??0FenceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI FenceBlock(std::string const&, int, class Material const&);
+    MCAPI FenceBlock(std::string const& nameId, int id, class Material const& material);
 
     // symbol:
     // ?fetchPathableNeighbors@FenceBlock@@QEBAXAEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAVBlockSource@@AEBVBlockPos@@AEBVVec3@@@Z
-    MCAPI void
-    fetchPathableNeighbors(std::vector<class BlockPos>&, class BlockSource&, class BlockPos const&, class Vec3 const&)
-        const;
+    MCAPI void fetchPathableNeighbors(
+        std::vector<class BlockPos>& outNeighbors,
+        class BlockSource&           region,
+        class BlockPos const&        pos,
+        class Vec3 const&            entityPos
+    ) const;
 
     // NOLINTEND
 

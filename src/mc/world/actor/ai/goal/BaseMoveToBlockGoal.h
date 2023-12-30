@@ -31,7 +31,15 @@ public:
     virtual bool findTargetBlock();
 
     // symbol: ??0BaseMoveToBlockGoal@@QEAA@AEAVMob@@MHHHMM@Z
-    MCAPI BaseMoveToBlockGoal(class Mob&, float, int, int, int, float, float);
+    MCAPI BaseMoveToBlockGoal(
+        class Mob& mob,
+        float      speedModifier,
+        int        searchRange,
+        int        searchHeight,
+        int        searchCount,
+        float      goalRadius,
+        float      cooldownTime
+    );
 
     // NOLINTEND
 };

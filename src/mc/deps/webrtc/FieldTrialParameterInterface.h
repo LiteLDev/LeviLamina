@@ -17,7 +17,7 @@ public:
     virtual ~FieldTrialParameterInterface();
 
     // vIndex: 1, symbol:
-    // ?Parse@?$FieldTrialList@N@webrtc@@MEAA_NV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
+    // ?Parse@?$FieldTrialConstrained@H@webrtc@@MEAA_NV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
     virtual bool Parse(std::optional<std::string>) = 0;
 
     // vIndex: 2, symbol: ?ParseDone@FieldTrialParameterInterface@webrtc@@MEAAXXZ

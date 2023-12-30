@@ -23,13 +23,20 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@StrollTowardsVillageGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 17, symbol: ?_selectRandomPosInVillage@StrollTowardsVillageGoal@@MEAA?AVBlockPos@@XZ
     virtual class BlockPos _selectRandomPosInVillage();
 
     // symbol: ??0StrollTowardsVillageGoal@@QEAA@AEAVMob@@MMMHM@Z
-    MCAPI StrollTowardsVillageGoal(class Mob&, float, float, float, int, float);
+    MCAPI StrollTowardsVillageGoal(
+        class Mob& mob,
+        float      speedModifier,
+        float      goalRadius,
+        float      cooldown,
+        int        searchRange,
+        float      startChance
+    );
 
     // NOLINTEND
 };

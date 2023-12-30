@@ -28,7 +28,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@RemoveObjectivePacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@RemoveObjectivePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -38,7 +38,7 @@ public:
     MCAPI RemoveObjectivePacket();
 
     // symbol: ??0RemoveObjectivePacket@@QEAA@AEBVObjective@@@Z
-    MCAPI explicit RemoveObjectivePacket(class Objective const&);
+    MCAPI explicit RemoveObjectivePacket(class Objective const& objective);
 
     // NOLINTEND
 };

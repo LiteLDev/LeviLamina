@@ -31,13 +31,13 @@ public:
     MCAPI NetworkIdentifier();
 
     // symbol: ??0NetworkIdentifier@@QEAA@AEBURakNetGUID@RakNet@@@Z
-    MCAPI explicit NetworkIdentifier(struct RakNet::RakNetGUID const&);
+    MCAPI explicit NetworkIdentifier(struct RakNet::RakNetGUID const& guid);
 
     // symbol: ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in@@@Z
-    MCAPI explicit NetworkIdentifier(struct sockaddr_in const&);
+    MCAPI explicit NetworkIdentifier(struct sockaddr_in const& address);
 
     // symbol: ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in6@@@Z
-    MCAPI explicit NetworkIdentifier(struct sockaddr_in6 const&);
+    MCAPI explicit NetworkIdentifier(struct sockaddr_in6 const& address);
 
     // symbol: ??0NetworkIdentifier@@QEAA@_K@Z
     MCAPI explicit NetworkIdentifier(uint64);
@@ -56,7 +56,7 @@ public:
     MCAPI bool isUnassigned() const;
 
     // symbol: ??8NetworkIdentifier@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class NetworkIdentifier const&) const;
+    MCAPI bool operator==(class NetworkIdentifier const& other) const;
 
     // symbol: ?toString@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString() const;
@@ -80,7 +80,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?equalsTypeData@NetworkIdentifier@@AEBA_NAEBV1@@Z
-    MCAPI bool equalsTypeData(class NetworkIdentifier const&) const;
+    MCAPI bool equalsTypeData(class NetworkIdentifier const& other) const;
 
     // NOLINTEND
 };

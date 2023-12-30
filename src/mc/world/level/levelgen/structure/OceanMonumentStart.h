@@ -18,10 +18,10 @@ public:
     virtual ~OceanMonumentStart() = default;
 
     // vIndex: 1, symbol: ?postProcess@OceanMonumentStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
 
     // symbol: ?createMonument@OceanMonumentStart@@QEAAXAEAVDimension@@AEAVRandom@@HH@Z
-    MCAPI void createMonument(class Dimension&, class Random&, int, int);
+    MCAPI void createMonument(class Dimension& dim, class Random& random, int x, int z);
 
     // NOLINTEND
 };

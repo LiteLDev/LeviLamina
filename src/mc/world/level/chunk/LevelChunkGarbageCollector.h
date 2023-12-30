@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0LevelChunkGarbageCollector@@QEAA@AEAVDimension@@@Z
-    MCAPI explicit LevelChunkGarbageCollector(class Dimension&);
+    MCAPI explicit LevelChunkGarbageCollector(class Dimension& dim);
 
     // symbol: ?getPendingDeletesCount@LevelChunkGarbageCollector@@QEBA_KXZ
     MCAPI uint64 getPendingDeletesCount() const;
