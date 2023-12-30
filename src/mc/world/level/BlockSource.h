@@ -182,9 +182,17 @@ public:
 
     // vIndex: 36, symbol:
     // ?clip@BlockSource@@UEBA?AVHitResult@@AEBVVec3@@0_NW4ShapeType@@H11PEAVActor@@AEBV?$function@$$A6A_NAEBVBlockSource@@AEBVBlock@@_N@Z@std@@@Z
-    virtual class HitResult
-    clip(class Vec3 const&, class Vec3 const&, bool, ::ShapeType, int, bool, bool, class Actor*, std::function<bool(class BlockSource const&, class Block const&, bool)> const&)
-        const;
+    virtual class HitResult clip(
+        class Vec3 const&                                                              startPos,
+        class Vec3 const&                                                              endPos,
+        bool                                                                           checkAgainstLiquid,
+        ::ShapeType                                                                    shapeType,
+        int                                                                            maxManhattanDis,
+        bool                                                                           ignoreBorderBlock,
+        bool                                                                           fullOnly,
+        class Actor*                                                                   actor,
+        std::function<bool(class BlockSource const&, class Block const&, bool)> const& shouldCheckBlock
+    ) const;
 
     // vIndex: 37, symbol: ?getChunkSource@BlockSource@@UEAAAEAVChunkSource@@XZ
     virtual class ChunkSource& getChunkSource();
