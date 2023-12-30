@@ -8,10 +8,11 @@
 #include "mc/world/Minecraft.h"
 
 namespace ll {
-std::atomic<ServerStatus>& getServerStatus() {
+std::atomic<ServerStatus>& getServerStatusNonConst() {
     static std::atomic<ServerStatus> status;
     return status;
 }
+ServerStatus getServerStatus() { return getServerStatusNonConst().load(); }
 
 Version getBdsVersion() {
     static auto ver = [] {

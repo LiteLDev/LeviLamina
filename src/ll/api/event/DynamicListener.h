@@ -10,8 +10,12 @@ class DynamicListener : public ListenerBase {
 public:
     using callback_fn = std::function<void(CompoundTag&)>;
 
-    explicit DynamicListener(callback_fn fn, EventPriority priority = EventPriority::Normal)
-    : ListenerBase(priority),
+    explicit DynamicListener(
+        callback_fn                          fn,
+        EventPriority                        priority = EventPriority::Normal,
+        std::weak_ptr<plugin::Plugin> const& plugin   = plugin::NativePlugin::current()
+    )
+    : ListenerBase(priority, plugin),
       callback(std::move(fn)) {}
 
     explicit DynamicListener(

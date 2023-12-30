@@ -139,7 +139,7 @@ public:
 
     // symbol:
     // ?loadAllPlayerIDs@LevelStorage@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_N@Z
-    MCAPI std::vector<std::string> loadAllPlayerIDs(bool) const;
+    MCAPI std::vector<std::string> loadAllPlayerIDs(bool includeLocalPlayer = true) const;
 
     // symbol:
     // ?loadPlayerDataFromTag@LevelStorage@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z

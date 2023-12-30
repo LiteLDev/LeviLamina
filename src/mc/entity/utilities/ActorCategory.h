@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ActorCategory {
+enum class ActorCategory : uint {
     None          = 0,
     Player        = 1 << 0,
     Mob           = 1 << 1,

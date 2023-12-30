@@ -4,6 +4,7 @@
 
 #include "ll/api/base/StdInt.h"
 #include "ll/api/event/EventId.h"
+#include "ll/api/plugin/NativePlugin.h"
 
 namespace ll::event {
 class EventBus;
@@ -24,11 +25,18 @@ class ListenerBase {
     LLAPI static std::atomic_ullong listenerId;
 
     friend CallbackStream;
-    ListenerId    id;
-    EventPriority priority;
+    ListenerId                    id;
+    EventPriority                 priority;
+    std::weak_ptr<plugin::Plugin> pluginPtr;
 
 protected:
-    explicit ListenerBase(EventPriority priority) : id(listenerId++), priority(priority) {}
+    explicit ListenerBase(
+        EventPriority                        priority,
+        std::weak_ptr<plugin::Plugin> const& plugin = plugin::NativePlugin::current()
+    )
+    : id(listenerId++),
+      priority(priority),
+      pluginPtr(plugin) {}
 
 public:
     ListenerBase(ListenerBase&&)                 = delete;

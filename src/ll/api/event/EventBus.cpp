@@ -35,9 +35,32 @@ public:
                 auto lock = ll::Logger::lock();
                 try {
                     logger.error(
-                        "Error in [{}:{}]:",
+                        "Error in [{}:{}] of <{}>:",
                         ll::reflection::removeTypePrefix(ll::reflection::getDynamicRawName(*l)),
-                        l->getId()
+                        l->getId(),
+                        l->pluginPtr.expired() ? "unknown plugin" : l->pluginPtr.lock()->getManifest().name
+                    );
+                } catch (...) {}
+                error_info::printCurrentException();
+            }
+        }
+    }
+    void publish(std::string_view pluginName, Event& event) {
+        for (auto& l : listeners) {
+            auto ptr = l->pluginPtr.lock();
+            if (!ptr || ptr->getManifest().name != pluginName) {
+                continue;
+            }
+            try {
+                l->call(event);
+            } catch (...) {
+                auto lock = ll::Logger::lock();
+                try {
+                    logger.error(
+                        "Error in [{}:{}] of <{}>:",
+                        ll::reflection::removeTypePrefix(ll::reflection::getDynamicRawName(*l)),
+                        l->getId(),
+                        pluginName
                     );
                 } catch (...) {}
                 error_info::printCurrentException();
@@ -109,6 +132,13 @@ void EventBus::publish(Event& event, EventId eventId) {
 
     if (auto i = impl->streams.find(eventId); i != impl->streams.end()) {
         i->second.publish(event);
+    }
+}
+void EventBus::publish(std::string_view pluginName, Event& event, EventId eventId) {
+    std::shared_lock lock(impl->mutex);
+
+    if (auto i = impl->streams.find(eventId); i != impl->streams.end()) {
+        i->second.publish(pluginName, event);
     }
 }
 size_t EventBus::getListenerCount(EventId eventId) {

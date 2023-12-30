@@ -15,6 +15,7 @@
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
 #include "ll/core/Version.h"
+#include "ll/core/plugin/RegisterPlugin.h"
 
 #include "mc/world/Minecraft.h"
 
@@ -187,7 +188,7 @@ void leviLaminaMain() {
 
     // Create Plugin Directory
     std::error_code ec;
-    fs::create_directories(u8"plugins", ec);
+    fs::create_directories(plugin::pluginsPath, ec);
 
     i18n::load(u8"plugins/LeviLamina/LangPack");
 
@@ -226,15 +227,15 @@ void leviLaminaMain() {
 
     // if (globalConfig.enableAddonsHelper) InitAddonsHelper();
 
-    // plugin::PluginManager::getInstance().loadAllPlugins();
+    plugin::registerPlugins();
 
     registerLeviCommands();
 }
 
 
 LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int argc, char* argv[]) {
-    getServerStatus()   = ServerStatus::Default;
-    severStartBeginTime = std::chrono::steady_clock::now();
+    getServerStatusNonConst() = ServerStatus::Default;
+    severStartBeginTime       = std::chrono::steady_clock::now();
     for (int i = 0; i < argc; ++i) {
         switch (do_hash(argv[i])) {
         case "--noColor"_h:
@@ -251,10 +252,14 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
             break;
         }
     }
-    leviLaminaMain();
-    getServerStatus() = ServerStatus::Running;
-    auto res          = origin(argc, argv);
-    getServerStatus() = ServerStatus::Default;
+    getServerStatusNonConst() = ServerStatus::Starting;
+    try {
+        leviLaminaMain();
+    } catch (...) {
+        ll::error_info::printCurrentException();
+    }
+    auto res                  = origin(argc, argv);
+    getServerStatusNonConst() = ServerStatus::Default;
     return res;
 }
 } // namespace ll

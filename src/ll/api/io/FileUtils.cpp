@@ -18,6 +18,9 @@ namespace fs = std::filesystem;
 std::filesystem::path u8path(std::string_view src) { return std::filesystem::path{sv2u8sv(src)}; }
 
 std::optional<std::string> readFile(const fs::path& filePath, bool isBinary) {
+    if (!fs::exists(filePath)) {
+        return std::nullopt;
+    }
     std::ifstream           fRead;
     std::ios_base::openmode mode = std::ios_base::in;
     if (isBinary) mode |= std::ios_base::binary;

@@ -1,6 +1,7 @@
 #include "ll/api/event/world/RequestShutdownEvent.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/api/ServerInfo.h"
 
 #include "mc/nbt/CompoundTag.h"
 
@@ -23,6 +24,7 @@ LL_TYPED_INSTANCE_HOOK(
     void,
     std::string const& message
 ) {
+    getServerStatusNonConst() = ServerStatus::Stopping;
     EventBus::getInstance().publish(RequestShutdownEvent(*this, message));
     origin(message);
 }

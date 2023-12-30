@@ -7,7 +7,9 @@
 #include "mc/network/RakNetConnector.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/resources/ResourcePackRepository.h"
+#include "mc/server/ServerInstance.h"
 #include "mc/server/ServerLevel.h"
+#include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/MinecraftCommands.h"
 #include "mc/server/common/PropertiesSettings.h"
 #include "mc/server/common/commands/AllowListCommand.h"
@@ -99,7 +101,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,
     void,
-    ::ServerInstance& ins
+    ServerInstance& ins
 ) {
     level = ll::service::getMinecraft()->getLevel();
     origin(ins);
@@ -145,6 +147,28 @@ LL_AUTO_INSTANCE_HOOK(
     origin();
 }
 
+// CommandRegistry
+optional_ref<CommandRegistry> commandRegistry;
+
+LL_AUTO_TYPED_INSTANCE_HOOK(CommandRegistryConstructor, HookPriority::High, CommandRegistry, "??0CommandRegistry@@QEAA@XZ", CommandRegistry*) {
+    return commandRegistry = origin();
+}
+LL_AUTO_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, "??1CommandRegistry@@QEAA@XZ", void) {
+    commandRegistry = nullptr;
+    origin();
+}
+
+// ServerInstance
+optional_ref<ServerInstance> serverInstance;
+
+LL_AUTO_TYPED_INSTANCE_HOOK(ServerInstanceConstructor, HookPriority::High, ServerInstance, "??0ServerInstance@@QEAA@AEAVIMinecraftApp@@AEBV?$not_null@V?$NonOwnerPointer@VServerInstanceEventCoordinator@@@Bedrock@@@gsl@@@Z", ServerInstance*) {
+    return serverInstance = origin();
+}
+LL_AUTO_INSTANCE_HOOK(ServerInstanceDestructor, HookPriority::High, "??1ServerInstance@@UEAA@XZ", void) {
+    serverInstance = nullptr;
+    origin();
+}
+
 optional_ref<Minecraft> getMinecraft() { return minecraft; }
 
 optional_ref<Level> getLevel() { return level; }
@@ -158,5 +182,9 @@ optional_ref<RakNet::RakPeer> getRakPeer() { return rakPeer; }
 optional_ref<NetworkSystem> getNetworkSystem() { return networkSystem; }
 
 optional_ref<ResourcePackRepository> getResourcePackRepository() { return resourcePackRepository; }
+
+optional_ref<CommandRegistry> getCommandRegistry() { return commandRegistry; }
+
+optional_ref<ServerInstance> getServerInstance() { return serverInstance; }
 
 } // namespace ll::service::inline bedrock

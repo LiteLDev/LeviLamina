@@ -62,10 +62,6 @@ public:
 namespace std {
 template <>
 struct hash<mce::UUID> {
-    size_t operator()(mce::UUID id) const noexcept {
-        size_t hash = id.a;
-        ll::hash::hashCombine(id.b, hash);
-        return hash;
-    }
+    size_t operator()(mce::UUID const& id) const noexcept { return id.a ^ (522133279 * id.b); }
 };
 } // namespace std

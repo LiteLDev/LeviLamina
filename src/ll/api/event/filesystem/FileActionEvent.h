@@ -40,8 +40,13 @@ public:
     using event_type  = fs::FileActionEvent;
     using callback_fn = std::function<void(event_type&)>;
 
-    explicit Listener(std::string const& path, callback_fn fn, EventPriority priority = EventPriority::Normal)
-    : ListenerBase(priority),
+    explicit Listener(
+        std::string const&                   path,
+        callback_fn                          fn,
+        EventPriority                        priority = EventPriority::Normal,
+        std::weak_ptr<plugin::Plugin> const& plugin   = plugin::NativePlugin::current()
+    )
+    : ListenerBase(priority, plugin),
       path(path),
       callback(std::move(fn)) {
         nativeId.assign(event::getEventId<event_type>.name);

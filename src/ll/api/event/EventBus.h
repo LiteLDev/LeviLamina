@@ -42,6 +42,8 @@ public:
 
     LLAPI void publish(Event&, EventId);
 
+    LLAPI void publish(std::string_view pluginName, Event&, EventId);
+
     LLAPI void setEventEmitter(std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn, EventId eventId);
 
     template <std::derived_from<Event> T>
@@ -53,6 +55,12 @@ public:
         requires(std::derived_from<std::remove_cvref_t<T>, Event>)
     void publish(T&& event) {
         publish(event, getEventId<T>);
+    }
+
+    template <class T>
+        requires(std::derived_from<std::remove_cvref_t<T>, Event>)
+    void publish(std::string_view pluginName, T&& event) {
+        publish(pluginName, event, getEventId<T>);
     }
 
     LLNDAPI size_t getListenerCount(EventId);

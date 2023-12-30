@@ -1,4 +1,5 @@
 #include "ll/api/event/world/ServerStartedEvent.h"
+#include "ll/api/ServerInfo.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
@@ -24,6 +25,7 @@ LL_TYPED_INSTANCE_HOOK(
     ::ServerInstance& ins
 ) {
     origin(ins);
+    getServerStatusNonConst() = ServerStatus::Running;
     EventBus::getInstance().publish(ServerStartedEvent(ins));
 }
 

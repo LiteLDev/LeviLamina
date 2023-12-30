@@ -103,7 +103,7 @@ auto PluginManager::loadAllPlugins() -> void {
     for (auto& file : ent) {
         if (!file.is_directory()) {
             continue;
-        }
+        } 
         if (loadPlugin(u8sv2sv(file.path().filename().u8string()))) {
             pluginCount++;
         }
