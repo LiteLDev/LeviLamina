@@ -37,8 +37,10 @@ Create a `tooth.json` file in the exported plugin directory with the following c
         "name": "MyPlugin",
         "description": "MyPlugin is a great plugin!",
         "author": "My Name",
+        "source": "github.com/my-github-username/my-source-code",
         "tags": [
-            "plugin"
+            "plugin",
+            "ll"
         ]
     },
     "dependencies": {

@@ -36,9 +36,11 @@
     "info": {
         "name": "MyPlugin",
         "description": "MyPlugin is a great plugin!",
+        "source": "github.com/my-github-username/my-source-code",
         "author": "My Name",
         "tags": [
-            "plugin"
+            "plugin",
+            "ll"
         ]
     },
     "dependencies": {

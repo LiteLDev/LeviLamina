@@ -1,4 +1,4 @@
-# Understanding Functions in BDS
+# Find Function Guide
 
 This article will introduce how to understand the functions in BDS and how to find the functions you want in BDS.
 

@@ -23,6 +23,7 @@ nav:
   - Guides:
     - guides/event_guide.md
     - guides/export_interface_guide.md
+    - guides/find_function_guide.md
     - guides/form_guide.md
     - guides/hook_guide.md
     - guides/i18n_guide.md
