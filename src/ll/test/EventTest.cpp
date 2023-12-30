@@ -155,7 +155,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         ll::logger.debug("Player connect: {} {}", ev.self().getRealName(), ev.self().getIPAndPort());
     });
     bus.emplaceListener<PlayerJoinEvent>([](PlayerJoinEvent& ev) {
-        ll::logger.debug("Player join: {}", ev.self().getRealName());
+        ll::logger.debug("Player join: {} {}", ev.self().getRealName(), ev.self().getIPAndPort());
     });
     bus.emplaceListener<PlayerLeaveEvent>([](PlayerLeaveEvent& ev) {
         ll::logger.debug("Player leave: {}", ev.self().getRealName());

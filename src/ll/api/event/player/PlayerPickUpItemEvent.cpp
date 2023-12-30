@@ -33,7 +33,7 @@ LL_TYPED_INSTANCE_HOOK(
     int    orgCount,
     int    favoredSlot
 ) {
-    if (itemActor.isType(ActorType::ItemEntity)) {
+    if (itemActor.hasCategory(ActorCategory::Item)) {
         auto ev = PlayerPickUpItemEvent(*this, static_cast<ItemActor&>(itemActor), orgCount, favoredSlot);
         EventBus::getInstance().publish(ev);
         if (ev.isCancelled()) {

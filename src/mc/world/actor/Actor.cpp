@@ -71,7 +71,8 @@ class HitResult Actor::traceRay(
     HitResult result{};
 
     if (includeActor) {
-        auto player = isType(ActorType::Player) ? static_cast<Player*>(const_cast<Actor*>(this)) : nullptr; // NOLINT
+        auto player =
+            hasCategory(ActorCategory::Player) ? static_cast<Player*>(const_cast<Actor*>(this)) : nullptr; // NOLINT
 
         float  resDistance = -1.0f;
         Actor* resActor    = nullptr;

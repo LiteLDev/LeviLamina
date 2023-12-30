@@ -12,6 +12,8 @@ public:
     ushort debugPort;   // this+0x80
     ushort systemIndex; // this+0x82
 
+    [[nodiscard]] operator std::string() const { return ToString(); } // NOLINT
+
 public:
     // NOLINTBEGIN
     // symbol: ?CopyPort@SystemAddress@RakNet@@QEAAXAEBU12@@Z
@@ -66,7 +68,7 @@ public:
     MCAPI SystemAddress(char const*, ushort);
 
     // symbol: ?ToString@SystemAddress@RakNet@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@D@Z
-    MCAPI std::string ToString(char) const;
+    MCAPI std::string ToString(char = ':') const;
 
     // symbol: ?ToString@SystemAddress@RakNet@@QEBAX_NPEADD@Z
     MCAPI void ToString(bool, char*, char) const;
