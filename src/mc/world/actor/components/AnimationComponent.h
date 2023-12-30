@@ -16,10 +16,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0AnimationComponent@@QEAA@W4AnimationComponentGroupType@@AEBVAnimationComponentID@@@Z
-    MCAPI AnimationComponent(::AnimationComponentGroupType, class AnimationComponentID const&);
+    MCAPI AnimationComponent(
+        enum AnimationComponentGroupType  animationComponentGroup,
+        class AnimationComponentID const& ownerUUID
+    );
 
     // symbol: ?applyAnimations@AnimationComponent@@QEAAX_N@Z
-    MCAPI void applyAnimations(bool);
+    MCAPI void applyAnimations(bool setDefaultPose);
 
     // symbol:
     // ?createAnimationPlayer@AnimationComponent@@QEAA?AV?$shared_ptr@VActorAnimationPlayer@@@std@@AEBVHashedString@@AEBVExpressionNode@@AEAV?$set@VHashedString@@U?$hash@VHashedString@@@std@@V?$allocator@VHashedString@@@3@@3@@Z
@@ -36,7 +39,8 @@ public:
 
     // symbol:
     // ?getBoneOrientations@AnimationComponent@@QEAAPEAV?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@W4SkeletalHierarchyIndex@@_N@Z
-    MCAPI std::vector<class BoneOrientation>* getBoneOrientations(::SkeletalHierarchyIndex, bool);
+    MCAPI std::vector<class BoneOrientation>*
+          getBoneOrientations(enum SkeletalHierarchyIndex skeletalHierarchyIndex, bool missingIsOkay);
 
     // symbol:
     // ?getCurrentAnimationControllerStatePlayer@AnimationComponent@@QEBA?BV?$shared_ptr@VActorAnimationControllerStatePlayer@@@std@@XZ
@@ -61,7 +65,7 @@ public:
     MCAPI bool isInitialized();
 
     // symbol: ?serverUpdate@AnimationComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void serverUpdate(class Actor&);
+    MCAPI void serverUpdate(class Actor& actor);
 
     // symbol:
     // ?setCurrentAnimationControllerStatePlayer@AnimationComponent@@QEAAXV?$shared_ptr@VActorAnimationControllerStatePlayer@@@std@@@Z

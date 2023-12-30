@@ -14,13 +14,13 @@ namespace mce { class Color; }
 namespace ItemColorUtil {
 // NOLINTBEGIN
 // symbol: ?fromBlockColor@ItemColorUtil@@YA?AW4ItemColor@@W4BlockColor@@@Z
-MCAPI ::ItemColor fromBlockColor(::BlockColor);
+MCAPI ::ItemColor fromBlockColor(enum BlockColor color);
 
 // symbol: ?fromColor@ItemColorUtil@@YA?AW4ItemColor@@AEBVColor@mce@@@Z
 MCAPI ::ItemColor fromColor(class mce::Color const&);
 
 // symbol: ?fromInt@ItemColorUtil@@YA?AW4ItemColor@@H@Z
-MCAPI ::ItemColor fromInt(int);
+MCAPI ::ItemColor fromInt(int auxValue);
 
 // symbol: ?getColor@ItemColorUtil@@YA?AVColor@mce@@W4ItemColor@@@Z
 MCAPI class mce::Color getColor(::ItemColor);
@@ -33,7 +33,7 @@ MCAPI std::string const& getName(::ItemColor);
 MCAPI std::string const& getNameMixedCase(::ItemColor);
 
 // symbol: ?getRGBColor@ItemColorUtil@@YAHW4ItemColor@@@Z
-MCAPI int getRGBColor(::ItemColor);
+MCAPI int getRGBColor(enum ItemColor color);
 // NOLINTEND
 
 }; // namespace ItemColorUtil

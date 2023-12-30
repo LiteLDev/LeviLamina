@@ -32,7 +32,7 @@ public:
 
     // symbol:
     // ?addListener@EventManager@Events@Social@@QEAAXV?$unique_ptr@VIEventListener@Events@Social@@U?$default_delete@VIEventListener@Events@Social@@@std@@@std@@@Z
-    MCAPI void addListener(std::unique_ptr<class Social::Events::IEventListener>);
+    MCAPI void addListener(std::unique_ptr<class Social::Events::IEventListener> listener);
 
     // symbol:
     // ?buildCommonProperties@EventManager@Events@Social@@QEBA?AV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@@std@@@2@@std@@IAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
@@ -53,15 +53,15 @@ public:
 
     // symbol:
     // ?getCommonProperty@EventManager@Events@Social@@QEBA?AV?$optional@VProperty@Events@Social@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
-    MCAPI std::optional<class Social::Events::Property> getCommonProperty(std::string const&) const;
+    MCAPI std::optional<class Social::Events::Property> getCommonProperty(std::string const& name) const;
 
     // symbol:
     // ?getGlobalProperty@EventManager@Events@Social@@QEBA?AVProperty@23@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Social::Events::Property getGlobalProperty(std::string const&) const;
+    MCAPI class Social::Events::Property getGlobalProperty(std::string const& name) const;
 
     // symbol:
     // ?getPlayerGlobalProperty@EventManager@Events@Social@@QEBA?AVProperty@23@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Social::Events::Property getPlayerGlobalProperty(uint, std::string const&) const;
+    MCAPI class Social::Events::Property getPlayerGlobalProperty(uint userId, std::string const& name) const;
 
     // symbol: ?isEventRecordingEnabled@EventManager@Events@Social@@QEAA_NXZ
     MCAPI bool isEventRecordingEnabled();
@@ -71,32 +71,32 @@ public:
     MCAPI void recordDelayedEventAction(std::string const&);
 
     // symbol: ?recordEvent@EventManager@Events@Social@@QEAAXAEAVEvent@23@@Z
-    MCAPI void recordEvent(class Social::Events::Event&);
+    MCAPI void recordEvent(class Social::Events::Event& event);
 
     // symbol:
     // ?removeCommonProperty@EventManager@Events@Social@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void removeCommonProperty(std::string const&);
+    MCAPI void removeCommonProperty(std::string const& name);
 
     // symbol:
     // ?removeGlobalProperty@EventManager@Events@Social@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void removeGlobalProperty(std::string const&);
+    MCAPI void removeGlobalProperty(std::string const& name);
 
     // symbol:
     // ?removePlayerCommonProperty@EventManager@Events@Social@@QEAAXIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void removePlayerCommonProperty(uint, std::string const&);
+    MCAPI void removePlayerCommonProperty(uint userId, std::string const& name);
 
     // symbol:
     // ?removePlayerCommonPropertyForAllPlayers@EventManager@Events@Social@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void removePlayerCommonPropertyForAllPlayers(std::string const&);
+    MCAPI void removePlayerCommonPropertyForAllPlayers(std::string const& name);
 
     // symbol: ?requestEventDeferment@EventManager@Events@Social@@QEAA?AV?$shared_ptr@PEAX@std@@XZ
     MCAPI std::shared_ptr<void*> requestEventDeferment();
 
     // symbol: ?sendEvents@EventManager@Events@Social@@QEAAX_N@Z
-    MCAPI void sendEvents(bool);
+    MCAPI void sendEvents(bool forceSend);
 
     // symbol: ?setAcceptNewEvents@EventManager@Events@Social@@QEAAX_N@Z
-    MCAPI void setAcceptNewEvents(bool);
+    MCAPI void setAcceptNewEvents(bool acceptNewEvents);
 
     // symbol: ?shutdown@EventManager@Events@Social@@QEAAXXZ
     MCAPI void shutdown();

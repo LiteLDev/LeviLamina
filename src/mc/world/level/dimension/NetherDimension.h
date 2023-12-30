@@ -39,19 +39,19 @@ public:
     MCVAPI class HashedString getDefaultBiome() const;
 
     // symbol: ?getTimeOfDay@NetherDimension@@UEBAMHM@Z
-    MCVAPI float getTimeOfDay(int, float) const;
+    MCVAPI float getTimeOfDay(int time, float a) const;
 
     // symbol: ?init@NetherDimension@@UEAAXXZ
     MCVAPI void init();
 
     // symbol: ?isFoggyAt@NetherDimension@@UEBA_NHH@Z
-    MCVAPI bool isFoggyAt(int, int) const;
+    MCVAPI bool isFoggyAt(int x, int z) const;
 
     // symbol: ?isNaturalDimension@NetherDimension@@UEBA_NXZ
     MCVAPI bool isNaturalDimension() const;
 
     // symbol: ?isValidSpawn@NetherDimension@@UEBA_NHH@Z
-    MCVAPI bool isValidSpawn(int, int) const;
+    MCVAPI bool isValidSpawn(int x, int z) const;
 
     // symbol: ?levelChunkNeedsUpgrade@NetherDimension@@UEBA_NAEBVLevelChunk@@@Z
     MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
@@ -63,13 +63,13 @@ public:
     MCVAPI bool showSky() const;
 
     // symbol: ?translatePosAcrossDimension@NetherDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
-    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
+    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const& originalPos, DimensionType fromId) const;
 
     // symbol: ?upgradeLevelChunk@NetherDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
     MCVAPI void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
 
     // symbol: ??0NetherDimension@@QEAA@AEAVILevel@@AEAVScheduler@@@Z
-    MCAPI NetherDimension(class ILevel&, class Scheduler&);
+    MCAPI NetherDimension(class ILevel& level, class Scheduler& callbackContext);
 
     // NOLINTEND
 

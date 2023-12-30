@@ -36,10 +36,10 @@ public:
     queueSync(struct TaskStartInfoEx<void> const&, std::function<class TaskResult(void)>&&);
 
     // vIndex: 3, symbol: ?taskRegister@TaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
-    virtual void taskRegister(std::shared_ptr<class BackgroundTaskBase>);
+    virtual void taskRegister(std::shared_ptr<class BackgroundTaskBase> task);
 
     // vIndex: 4, symbol: ?requeueTask@TaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z
-    virtual void requeueTask(std::shared_ptr<class BackgroundTaskBase>, bool);
+    virtual void requeueTask(std::shared_ptr<class BackgroundTaskBase> task, bool queueImmediate);
 
     // vIndex: 5, symbol: ?getState@TaskGroup@@UEBA?AW4TaskGroupState@@XZ
     virtual ::TaskGroupState getState() const;
@@ -48,17 +48,17 @@ public:
     virtual void processCoroutines();
 
     // vIndex: 7, symbol: ?taskComplete@TaskGroup@@UEAAXV?$not_null@PEAVBackgroundTaskBase@@@gsl@@@Z
-    virtual void taskComplete(gsl::not_null<class BackgroundTaskBase*>);
+    virtual void taskComplete(gsl::not_null<class BackgroundTaskBase*> task);
 
     // symbol:
     // ??0TaskGroup@@QEAA@AEAVWorkerPool@@AEAVScheduler@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI TaskGroup(class WorkerPool&, class Scheduler&, std::string);
+    MCAPI TaskGroup(class WorkerPool& workers, class Scheduler& context, std::string name);
 
     // symbol: ?disableOwnerThreadChecks@TaskGroup@@QEAAXXZ
     MCAPI void disableOwnerThreadChecks();
 
     // symbol: ?flush@TaskGroup@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void flush(std::function<void(void)>);
+    MCAPI void flush(std::function<void(void)> waitFn);
 
     // symbol: ?getName@TaskGroup@@QEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     MCAPI std::string_view getName() const;
@@ -83,7 +83,7 @@ public:
           queueSync(std::string_view, std::function<class TaskResult(void)>&&);
 
     // symbol: ?sync_DEPRECATED_ASK_TOMMO@TaskGroup@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void sync_DEPRECATED_ASK_TOMMO(std::function<void(void)>);
+    MCAPI void sync_DEPRECATED_ASK_TOMMO(std::function<void(void)> waitFn);
 
     // symbol:
     // ?queueChildSync_DEPRECATED@TaskGroup@@SA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
@@ -108,7 +108,7 @@ public:
     MCAPI bool _isEmptyInternal() const;
 
     // symbol: ?_queueInternal@TaskGroup@@AEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
-    MCAPI void _queueInternal(std::shared_ptr<class BackgroundTaskBase>);
+    MCAPI void _queueInternal(std::shared_ptr<class BackgroundTaskBase> bgtask);
 
     // symbol: ?getCurrentTaskGroup@TaskGroup@@CAPEAVIBackgroundTaskOwner@@XZ
     MCAPI static class IBackgroundTaskOwner* getCurrentTaskGroup();

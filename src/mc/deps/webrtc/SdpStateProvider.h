@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/webrtc/PeerConnectionInterface.h"
-#include "mc/deps/webrtc/detail/SSLRole.h"
+#include "mc/deps/webrtc/rtc/SSLRole.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -14,10 +14,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0IdentityDefinition@@QEAA@$$QEAV0@@Z
-    MCAPI IdentityDefinition(class IdentityDefinition&&);
+    MCAPI IdentityDefinition(class IdentityDefinition&& o);
 
     // symbol: ??0IdentityDefinition@@QEAA@AEBV0@@Z
-    MCAPI IdentityDefinition(class IdentityDefinition const&);
+    MCAPI IdentityDefinition(class IdentityDefinition const& o);
 
     // symbol: ?getEntityId@IdentityDefinition@@QEBAAEBUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID const& getEntityId() const;
@@ -49,10 +49,10 @@ public:
     MCAPI bool isValid() const;
 
     // symbol: ??4IdentityDefinition@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class IdentityDefinition& operator=(class IdentityDefinition&&);
+    MCAPI class IdentityDefinition& operator=(class IdentityDefinition&& o);
 
     // symbol: ??4IdentityDefinition@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class IdentityDefinition& operator=(class IdentityDefinition const&);
+    MCAPI class IdentityDefinition& operator=(class IdentityDefinition const& o);
 
     // symbol: ??1IdentityDefinition@@QEAA@XZ
     MCAPI ~IdentityDefinition();

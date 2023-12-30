@@ -106,13 +106,15 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 79, symbol: ?onFertilized@StemBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, enum FertilizerType fType)
+        const;
 
     // vIndex: 81, symbol: ?canBeFertilized@StemBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // vIndex: 86, symbol: ?mayPlaceOn@StemBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlaceOn(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@StemBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
@@ -136,13 +138,13 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 121, symbol: ?getColor@StemBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getColor(class Block const&) const;
+    virtual int getColor(class Block const& block) const;
 
     // vIndex: 122, symbol: ?getColor@StemBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 123, symbol: ?getColorAtPos@StemBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual int getColorAtPos(class BlockSource&, class BlockPos const&) const;
+    virtual int getColorAtPos(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -160,10 +162,11 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@StemBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance
+    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 165, symbol: ?getResourceCount@StemBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // symbol: ?canBeSilkTouched@StemBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -172,7 +175,7 @@ public:
     MCVAPI bool isStemBlock() const;
 
     // symbol: ??0StemBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@@Z
-    MCAPI StemBlock(std::string const&, int, class BlockLegacy const&);
+    MCAPI StemBlock(std::string const& nameId, int id, class BlockLegacy const& fruit);
 
     // symbol: ?getFruitBlock@StemBlock@@QEBAAEBVBlockLegacy@@XZ
     MCAPI class BlockLegacy const& getFruitBlock() const;
@@ -182,7 +185,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?getGrowthSpeed@StemBlock@@AEBAMAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI float getGrowthSpeed(class BlockSource&, class BlockPos const&) const;
+    MCAPI float getGrowthSpeed(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/webrtc/SetLocalDescriptionObserverInterface.h"
-#include "mc/deps/webrtc/detail/RefCountReleaseStatus.h"
+#include "mc/deps/webrtc/rtc/RefCountReleaseStatus.h"
 
 // auto generated forward declare list
 // clang-format off

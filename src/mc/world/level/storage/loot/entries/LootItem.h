@@ -21,15 +21,20 @@ public:
     // NOLINTBEGIN
     // vIndex: 0, symbol:
     // ?_createItem@LootItem@@MEAA_NAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
+    virtual bool
+    _createItem(std::vector<class ItemStack>& output, class Random& random, class LootTableContext& context);
 
     // vIndex: 1, symbol: __gen_??1LootItem@@UEAA@XZ
     virtual ~LootItem() = default;
 
     // symbol:
     // ?deserialize@LootItem@@SA?AV?$unique_ptr@VLootPoolEntry@@U?$default_delete@VLootPoolEntry@@@std@@@std@@AEBVValue@Json@@HHAEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
-    MCAPI static std::unique_ptr<class LootPoolEntry>
-    deserialize(class Json::Value const&, int, int, std::vector<std::unique_ptr<class LootItemCondition>>&);
+    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(
+        class Json::Value const&                               entry,
+        int                                                    weight,
+        int                                                    quality,
+        std::vector<std::unique_ptr<class LootItemCondition>>& conditions
+    );
 
     // NOLINTEND
 };

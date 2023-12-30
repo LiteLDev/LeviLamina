@@ -56,19 +56,19 @@ _recordProfanityLocationInWord(std::string const&, std::vector<std::pair<int, in
 MCAPI struct Util::FormattedString allocateVFormat(char const*, char*);
 
 // symbol: ?base64_decode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-MCAPI std::string base64_decode(std::string const&);
+MCAPI std::string base64_decode(std::string const& encoded_string);
 
 // symbol: ?base64_encode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_N@Z
-MCAPI std::string base64_encode(std::string const&, bool);
+MCAPI std::string base64_encode(std::string const& str, bool pad);
 
 // symbol: ?base64_encode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBE_K_N@Z
 MCAPI std::string base64_encode(uchar const*, uint64, bool);
 
 // symbol: ?base64url_decode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@@Z
-MCAPI std::string base64url_decode(std::string);
+MCAPI std::string base64url_decode(std::string encoded);
 
 // symbol: ?base64url_encode@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@@Z
-MCAPI std::string base64url_encode(std::string);
+MCAPI std::string base64url_encode(std::string str);
 
 // symbol: ?boolToString@Util@@YAPEBD_N@Z
 MCAPI char const* boolToString(bool);
@@ -80,10 +80,10 @@ MCAPI std::string& clearAndReturn(std::string&);
 MCAPI bool compareNoCase(std::string_view, std::string_view);
 
 // symbol: ?cp1252ToUTF8@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-MCAPI std::string cp1252ToUTF8(std::string const&);
+MCAPI std::string cp1252ToUTF8(std::string const& content);
 
 // symbol: ?cp437ToUTF8@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-MCAPI std::string cp437ToUTF8(std::string const&);
+MCAPI std::string cp437ToUTF8(std::string const& content);
 
 // symbol: ?crashOnPurpose@Util@@YAXXZ
 MCAPI void crashOnPurpose();
@@ -99,15 +99,18 @@ MCAPI bool decompressRaw(std::string_view const&, std::string&);
 MCAPI bool endsWith(std::string_view, std::string_view);
 
 // symbol: ?endsWithCaseInsensitive@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-MCAPI bool endsWithCaseInsensitive(std::string const&, std::string const&);
+MCAPI bool endsWithCaseInsensitive(std::string const& s, std::string const& ends);
 
 // symbol: ?ensureNamespace@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 MCAPI std::string ensureNamespace(std::string const&);
 
 // symbol:
 // ?filterProfanityFromString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HU?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@std@@@2@@3@AEBV?$unordered_set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-MCAPI std::string
-filterProfanityFromString(std::string const&, std::unordered_map<std::string, int> const&, std::unordered_set<std::string> const&);
+MCAPI std::string filterProfanityFromString(
+    std::string const&                          inputStr,
+    std::unordered_map<std::string, int> const& exactMap,
+    std::unordered_set<std::string> const&      containsSet
+);
 
 // symbol:
 // ?findProfanityInString@Util@@YA?AV?$set@U?$pair@HH@std@@U?$less@U?$pair@HH@std@@@2@V?$allocator@U?$pair@HH@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HU?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@std@@@2@@3@AEBV?$unordered_set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
@@ -118,7 +121,7 @@ findProfanityInString(std::string const&, std::unordered_map<std::string, int> c
 MCAPI std::string format(char const*, ...);
 
 // symbol: ?freeStringMemory@Util@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI void freeStringMemory(std::string&);
+MCAPI void freeStringMemory(std::string& toFree);
 
 // symbol:
 // ?fromHex@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
@@ -129,7 +132,7 @@ MCAPI class BidirectionalUnorderedMap<int, uint64> generateHashMapFromListTag(cl
 
 // symbol:
 // ?getDataInheritance@Util@@YA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-MCAPI std::pair<std::string, std::string> getDataInheritance(std::string const&);
+MCAPI std::pair<std::string, std::string> getDataInheritance(std::string const& fullName);
 
 // symbol: ?getNameWithoutNamespace@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 MCAPI std::string getNameWithoutNamespace(std::string const&);
@@ -141,49 +144,49 @@ MCAPI std::string getNamespace(std::string const&);
 MCAPI uint hashCodeAsUtf16(std::string_view);
 
 // symbol: ?isAlphaNumeric@Util@@YA_ND@Z
-MCAPI bool isAlphaNumeric(char);
+MCAPI bool isAlphaNumeric(char c);
 
 // symbol: ?isAlphabeticChar@Util@@YA_ND@Z
-MCAPI bool isAlphabeticChar(char);
+MCAPI bool isAlphabeticChar(char c);
 
 // symbol: ?isDigit@Util@@YA_ND@Z
-MCAPI bool isDigit(char);
+MCAPI bool isDigit(char c);
 
 // symbol: ?isIdentifierChar@Util@@YA_ND@Z
-MCAPI bool isIdentifierChar(char);
+MCAPI bool isIdentifierChar(char c);
 
 // symbol: ?isIntegral@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
 MCAPI bool isIntegral(std::string const&, bool);
 
 // symbol: ?isNumber@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI bool isNumber(std::string const&);
+MCAPI bool isNumber(std::string const& str);
 
 // symbol: ?isStartIdentifierChar@Util@@YA_ND@Z
-MCAPI bool isStartIdentifierChar(char);
+MCAPI bool isStartIdentifierChar(char c);
 
 // symbol: ?isUpperCaseAlphabetic@Util@@YA_ND@Z
-MCAPI bool isUpperCaseAlphabetic(char);
+MCAPI bool isUpperCaseAlphabetic(char c);
 
 // symbol: ?isValidNamespaceFormat@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI bool isValidNamespaceFormat(std::string const&);
 
 // symbol: ?isValidUTF8@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI bool isValidUTF8(std::string const&);
+MCAPI bool isValidUTF8(std::string const& content);
 
 // symbol: ?isVanillaNamespace@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI bool isVanillaNamespace(std::string const&);
 
 // symbol: ?isWhiteSpace@Util@@YA_ND@Z
-MCAPI bool isWhiteSpace(char);
+MCAPI bool isWhiteSpace(char c);
 
 // symbol: ?loadGameVersion@Util@@YAXAEAVSemVersion@@AEBVValue@Json@@@Z
-MCAPI void loadGameVersion(class SemVersion&, class Json::Value const&);
+MCAPI void loadGameVersion(class SemVersion& version, class Json::Value const& versionNode);
 
 // symbol: ?removeChars@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@AEBV23@@Z
-MCAPI std::string removeChars(std::string, std::string const&);
+MCAPI std::string removeChars(std::string str, std::string const& characters);
 
 // symbol: ?removeIllegalChars@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@@Z
-MCAPI std::string removeIllegalChars(std::string);
+MCAPI std::string removeIllegalChars(std::string str);
 
 // symbol: ?removeTrailingSpaces@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 MCAPI std::string removeTrailingSpaces(std::string const&);
@@ -212,7 +215,7 @@ MCAPI std::vector<std::string> splitLines(
 
 // symbol:
 // ?splitString@Util@@YAAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@DAEAV23@@Z
-MCAPI std::vector<std::string>& splitString(std::string_view, char, std::vector<std::string>&);
+MCAPI std::vector<std::string>& splitString(std::string_view s, char delim, std::vector<std::string>& elems);
 
 // symbol:
 // ?splitStringAsViews@Util@@YAAEAV?$vector@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$allocator@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@2@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@DAEAV23@@Z
@@ -222,25 +225,25 @@ MCAPI std::vector<std::string_view>& splitStringAsViews(std::string_view, char, 
 MCAPI bool startsWith(std::string_view, std::string_view);
 
 // symbol: ?stringContains@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@D@Z
-MCAPI bool stringContains(std::string const&, char);
+MCAPI bool stringContains(std::string const& s, char character);
 
 // symbol: ?stringReplace@Util@@YAAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@AEBV23@1H@Z
-MCAPI std::string& stringReplace(std::string&, std::string const&, std::string const&, int);
+MCAPI std::string& stringReplace(std::string& s, std::string const& src, std::string const& dst, int maxCount);
 
 // symbol: ?stringTrim@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-MCAPI std::string stringTrim(std::string const&);
+MCAPI std::string stringTrim(std::string const& s);
 
 // symbol: ?stringTrim@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@0@Z
-MCAPI std::string stringTrim(std::string const&, std::string const&);
+MCAPI std::string stringTrim(std::string const& s, std::string const& chars);
 
 // symbol: ?stripBOM@Util@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI void stripBOM(std::string&);
+MCAPI void stripBOM(std::string& contents);
 
 // symbol: ?timeoutForDuration@Util@@YAXV?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@@Z
 MCAPI void timeoutForDuration(std::chrono::seconds);
 
 // symbol: ?toBool@Util@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEA_N@Z
-MCAPI bool toBool(std::string const&, bool&);
+MCAPI bool toBool(std::string const& input, bool& destination);
 
 // symbol: ?toCamelCase@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@D@Z
 MCAPI std::string toCamelCase(std::string const&, char);
@@ -261,20 +264,20 @@ MCAPI std::string toLower(char const*);
 MCAPI std::string toLower(std::string_view const&);
 
 // symbol: ?toLowerInPlace@Util@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI void toLowerInPlace(std::string&);
+MCAPI void toLowerInPlace(std::string& str);
 
 // symbol: ?toPascalCase@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@D@Z
 MCAPI std::string toPascalCase(std::string const&, char);
 
 // symbol: ?toString@Util@@YAPEBDW4BoneTransformType@@@Z
-MCAPI char const* toString(::BoneTransformType);
+MCAPI char const* toString(enum BoneTransformType boneTransformType);
 
 // symbol: ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-MCAPI std::string toString(std::string const&);
+MCAPI std::string toString(std::string const& inputStr);
 
 // symbol:
 // ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@3@@Z
-MCAPI std::string toString(std::wstring const&);
+MCAPI std::string toString(std::wstring const& inputStr);
 
 // symbol: ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MH@Z
 MCAPI std::string toString(float, int);
@@ -288,13 +291,13 @@ MCAPI std::string toUpper(std::string_view const&);
 
 // symbol:
 // ?toWideString@Util@@YA?AV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-MCAPI std::wstring toWideString(std::string const&);
+MCAPI std::wstring toWideString(std::string const& inputStr);
 
 // symbol: ?utf8len@Util@@YAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI int utf8len(std::string const&);
+MCAPI int utf8len(std::string const& str);
 
 // symbol: ?utf8substring@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@HH@Z
-MCAPI std::string utf8substring(std::string const&, int, int);
+MCAPI std::string utf8substring(std::string const& str, int startIndex, int endIndex);
 
 // symbol: ?vFormat@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDPEAD@Z
 MCAPI std::string vFormat(char const*, char*);

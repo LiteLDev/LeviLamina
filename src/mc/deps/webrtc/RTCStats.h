@@ -22,10 +22,10 @@ public:
     virtual ~RTCStats();
 
     // vIndex: 1, symbol:
-    // ?copy@RTCRTPStreamStats@webrtc@@UEBA?AV?$unique_ptr@VRTCStats@webrtc@@U?$default_delete@VRTCStats@webrtc@@@std@@@std@@XZ
+    // ?copy@DEPRECATED_RTCMediaStreamStats@webrtc@@UEBA?AV?$unique_ptr@VRTCStats@webrtc@@U?$default_delete@VRTCStats@webrtc@@@std@@@std@@XZ
     virtual std::unique_ptr<class webrtc::RTCStats> copy() const = 0;
 
-    // vIndex: 2, symbol: ?type@RTCRTPStreamStats@webrtc@@UEBAPEBDXZ
+    // vIndex: 2, symbol: ?type@DEPRECATED_RTCMediaStreamStats@webrtc@@UEBAPEBDXZ
     virtual char const* type() const = 0;
 
     // vIndex: 3, symbol:

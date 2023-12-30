@@ -36,37 +36,38 @@ public:
 
     // symbol:
     // ?sendPlayerAwardAchievement@PlayerEventCoordinator@@QEAAXAEAVPlayer@@W4AchievementIds@MinecraftEventing@@@Z
-    MCAPI void sendPlayerAwardAchievement(class Player&, ::MinecraftEventing::AchievementIds);
+    MCAPI void sendPlayerAwardAchievement(class Player& player, enum MinecraftEventing::AchievementIds achievement);
 
     // symbol: ?sendPlayerCaravanChanged@PlayerEventCoordinator@@QEAAXAEBVActor@@H@Z
-    MCAPI void sendPlayerCaravanChanged(class Actor const&, int);
+    MCAPI void sendPlayerCaravanChanged(class Actor const& mob, int caravanCount);
 
     // symbol: ?sendPlayerDestroyedBlock@PlayerEventCoordinator@@QEAAXAEAVPlayer@@HHH@Z
-    MCAPI void sendPlayerDestroyedBlock(class Player&, int, int, int);
+    MCAPI void sendPlayerDestroyedBlock(class Player& player, int x, int y, int z);
 
     // symbol: ?sendPlayerItemEquipped@PlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVItemInstance@@H@Z
-    MCAPI void sendPlayerItemEquipped(class Player&, class ItemInstance const&, int);
+    MCAPI void
+    sendPlayerItemEquipped(class Player& player, class ItemInstance const& equippedItem, int equipmentSlotId);
 
     // symbol: ?sendPlayerItemPlaceInteraction@PlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVItemInstance@@@Z
-    MCAPI void sendPlayerItemPlaceInteraction(class Player&, class ItemInstance const&);
+    MCAPI void sendPlayerItemPlaceInteraction(class Player& player, class ItemInstance const& itemBeforeUse);
 
     // symbol: ?sendPlayerItemUseInteraction@PlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVItemInstance@@@Z
-    MCAPI void sendPlayerItemUseInteraction(class Player&, class ItemInstance const&);
+    MCAPI void sendPlayerItemUseInteraction(class Player& player, class ItemInstance const& itemBeforeUse);
 
     // symbol: ?sendPlayerMove@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-    MCAPI void sendPlayerMove(class Player&);
+    MCAPI void sendPlayerMove(class Player& player);
 
     // symbol: ?sendPlayerSlide@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-    MCAPI void sendPlayerSlide(class Player&);
+    MCAPI void sendPlayerSlide(class Player& player);
 
     // symbol: ?sendPlayerTeleported@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-    MCAPI void sendPlayerTeleported(class Player&);
+    MCAPI void sendPlayerTeleported(class Player& player);
 
     // symbol: ?sendPlayerTeleported@PlayerEventCoordinator@@QEAAXAEAVPlayer@@M@Z
     MCAPI void sendPlayerTeleported(class Player&, float);
 
     // symbol: ?sendPlayerTick@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-    MCAPI void sendPlayerTick(class Player&);
+    MCAPI void sendPlayerTick(class Player& player);
 
     // NOLINTEND
 };

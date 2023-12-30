@@ -87,16 +87,16 @@ public:
 
     // vIndex: 1, symbol:
     // ?fopen@MemoryMappedFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void* fopen(class Core::Path const&, std::string const&);
+    virtual void* fopen(class Core::Path const& filePath, std::string const& mode);
 
     // vIndex: 2, symbol: ?fclose@MemoryMappedFileAccess@@UEAAHPEAX@Z
-    virtual int fclose(void*);
+    virtual int fclose(void* file);
 
     // vIndex: 3, symbol: ?fseek@MemoryMappedFileAccess@@UEAAHPEAX_JH@Z
     virtual int fseek(void*, int64, int);
 
     // vIndex: 4, symbol: ?ftell@MemoryMappedFileAccess@@UEAA_JPEAX@Z
-    virtual int64 ftell(void*);
+    virtual int64 ftell(void* file);
 
     // vIndex: 5, symbol: ?getReadInterface@MemoryMappedFileAccess@@UEBAPEBVIFileReadAccess@@XZ
     virtual class IFileReadAccess const* getReadInterface() const;

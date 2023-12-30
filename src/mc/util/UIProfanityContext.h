@@ -16,7 +16,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?filterProfanityFromString@UIProfanityContext@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ProfanityFilterContext@@AEBV23@_N@Z
-    MCAPI std::string filterProfanityFromString(::ProfanityFilterContext, std::string const&, bool) const;
+    MCAPI std::string filterProfanityFromString(
+        enum ProfanityFilterContext stringContext,
+        std::string const&          str,
+        bool                        allowFilterOverride
+    ) const;
 
     // NOLINTEND
 };

@@ -18,7 +18,7 @@ public:
     virtual ~LakeFeature();
 
     // vIndex: 3, symbol: ?place@LakeFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ??0LakeFeature@@QEAA@AEBVBlock@@V?$optional@VXoroshiroPositionalRandomFactory@@@std@@@Z
     MCAPI LakeFeature(class Block const&, std::optional<class XoroshiroPositionalRandomFactory>);

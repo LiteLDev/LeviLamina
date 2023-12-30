@@ -14,7 +14,7 @@ public:
     MCAPI ConsoleInputReader();
 
     // symbol: ?getLine@ConsoleInputReader@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool getLine(std::string&);
+    MCAPI bool getLine(std::string& outLine);
 
     // symbol: ?unblockReading@ConsoleInputReader@@QEAAXXZ
     MCAPI void unblockReading();

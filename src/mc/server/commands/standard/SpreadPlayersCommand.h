@@ -19,18 +19,18 @@ public:
     virtual ~SpreadPlayersCommand() = default;
 
     // vIndex: 2, symbol: ?execute@SpreadPlayersCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol:
     // ?createInitialPositions@SpreadPlayersCommand@@SA?AV?$vector@VVec2@@V?$allocator@VVec2@@@std@@@std@@AEAVRandom@@HAEBVVec2@@1@Z
     MCAPI static std::vector<class Vec2>
-    createInitialPositions(class Random&, int, class Vec2 const&, class Vec2 const&);
+    createInitialPositions(class Random& random, int count, class Vec2 const& minPos, class Vec2 const& maxPos);
 
     // symbol: ?isDangerousSpawn@SpreadPlayersCommand@@SA_NAEAVBlockSource@@AEBVBlockPos@@FH@Z
     MCAPI static bool isDangerousSpawn(class BlockSource&, class BlockPos const&, short, int);
 
     // symbol: ?setup@SpreadPlayersCommand@@SAXAEAVCommandRegistry@@@Z
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry& registry);
 
     // symbol:
     // ?spreadPositions@SpreadPlayersCommand@@SA_NAEAVCommandOutput@@AEAVRandom@@AEBVCommandOrigin@@AEBVVec2@@M33AEAV?$vector@VVec2@@V?$allocator@VVec2@@@std@@@std@@AEAV?$map@VChunkPos@@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@U?$less@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@@std@@@3@@7@H@Z

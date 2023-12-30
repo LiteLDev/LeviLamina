@@ -17,10 +17,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?Deserialize@DatagramHeaderFormat@@QEAAXPEAVBitStream@RakNet@@@Z
-    MCAPI void Deserialize(class RakNet::BitStream*);
+    MCAPI void Deserialize(class RakNet::BitStream* b);
 
     // symbol: ?Serialize@DatagramHeaderFormat@@QEAAXPEAVBitStream@RakNet@@@Z
-    MCAPI void Serialize(class RakNet::BitStream*);
+    MCAPI void Serialize(class RakNet::BitStream* b);
 
     // NOLINTEND
 };

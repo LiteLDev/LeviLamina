@@ -60,7 +60,8 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?textObjectFromJson@TextObjectParser@@SA_NAEBVValue@Json@@AEAVTextObjectRoot@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static bool textObjectFromJson(class Json::Value const&, class TextObjectRoot&, std::string&);
+    MCAPI static bool
+    textObjectFromJson(class Json::Value const& root, class TextObjectRoot& parsedObject, std::string& errorMsg);
 
     // symbol:
     // ?textObjectFromJsonServer@TextObjectParser@@SA_NAEBVValue@Json@@AEAVTextObjectRoot@@UServerData@1@AEAUErrorLocalization@1@@Z
@@ -69,7 +70,11 @@ public:
 
     // symbol:
     // ?textObjectFromJsonString@TextObjectParser@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVTextObjectRoot@@AEAV23@@Z
-    MCAPI static bool textObjectFromJsonString(std::string const&, class TextObjectRoot&, std::string&);
+    MCAPI static bool textObjectFromJsonString(
+        std::string const&    jsonAsString,
+        class TextObjectRoot& parsedObject,
+        std::string&          errorMsg
+    );
 
     // symbol:
     // ?RAW_TEXT_ERROR_NOT_ARRAY@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B

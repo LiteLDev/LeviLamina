@@ -35,20 +35,21 @@ public:
     readResourceFiles(class ResourcePackManager&, class MobSpawnRules const&, std::unordered_map<std::string, struct ActorSpawnRuleData>&);
 
     // symbol: ??0ActorSpawnRuleGroup@@QEAA@AEAVResourcePackManager@@AEAVIWorldRegistriesProvider@@@Z
-    MCAPI ActorSpawnRuleGroup(class ResourcePackManager&, class IWorldRegistriesProvider&);
+    MCAPI
+    ActorSpawnRuleGroup(class ResourcePackManager& resourcePackManager, class IWorldRegistriesProvider& registries);
 
     // symbol: ?getActorSpawnPool@ActorSpawnRuleGroup@@QEBAHAEBUActorDefinitionIdentifier@@@Z
-    MCAPI int getActorSpawnPool(struct ActorDefinitionIdentifier const&) const;
+    MCAPI int getActorSpawnPool(struct ActorDefinitionIdentifier const& id) const;
 
     // symbol:
     // ?getDelayEnd@ActorSpawnRuleGroup@@QEBAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI int getDelayEnd(std::string const&) const;
+    MCAPI int getDelayEnd(std::string const& id) const;
 
     // symbol: ?offSetDelayByCurrentTick@ActorSpawnRuleGroup@@QEAAXAEBUTick@@@Z
-    MCAPI void offSetDelayByCurrentTick(struct Tick const&);
+    MCAPI void offSetDelayByCurrentTick(struct Tick const& currentTick);
 
     // symbol: ?resetDelayEnd@ActorSpawnRuleGroup@@QEAAXVMobSpawnRules@@_KAEAVRandom@@@Z
-    MCAPI void resetDelayEnd(class MobSpawnRules, uint64, class Random&);
+    MCAPI void resetDelayEnd(class MobSpawnRules spawnRules, uint64 age, class Random& random);
 
     // NOLINTEND
 };

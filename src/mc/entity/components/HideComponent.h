@@ -14,10 +14,10 @@ public:
     MCAPI HideComponent();
 
     // symbol: ?addAdditionalSaveData@HideComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?initFromDefinition@HideComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor& owner);
 
     // symbol: ?isInRaid@HideComponent@@QEAA_NXZ
     MCAPI bool isInRaid();
@@ -26,7 +26,7 @@ public:
     MCAPI bool isReactingToBell();
 
     // symbol: ?readAdditionalSaveData@HideComponent@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?setInRaid@HideComponent@@QEAAXXZ
     MCAPI void setInRaid();

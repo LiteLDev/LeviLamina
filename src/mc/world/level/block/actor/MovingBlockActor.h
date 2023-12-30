@@ -18,13 +18,13 @@ public:
     virtual ~MovingBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@MovingBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2, symbol: ?save@MovingBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 7, symbol: ?tick@MovingBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void tick(class BlockSource&);
+    virtual void tick(class BlockSource& region);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
@@ -70,22 +70,22 @@ public:
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@MovingBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ?getOwningPiston@MovingBlockActor@@UEAAPEAVPistonBlockActor@@AEAVBlockSource@@@Z
-    MCVAPI class PistonBlockActor* getOwningPiston(class BlockSource&);
+    MCVAPI class PistonBlockActor* getOwningPiston(class BlockSource& region);
 
     // symbol: ?getOwningPiston@MovingBlockActor@@UEBAPEBVPistonBlockActor@@AEAVBlockSource@@@Z
-    MCVAPI class PistonBlockActor const* getOwningPiston(class BlockSource&) const;
+    MCVAPI class PistonBlockActor const* getOwningPiston(class BlockSource& region) const;
 
     // symbol: ??0MovingBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit MovingBlockActor(class BlockPos const&);
+    MCAPI explicit MovingBlockActor(class BlockPos const& pos);
 
     // symbol: ?getDrawPos@MovingBlockActor@@QEBA?AVVec3@@AEBVIConstBlockSource@@M@Z
     MCAPI class Vec3 getDrawPos(class IConstBlockSource const&, float) const;
 
     // symbol: ?moveCollidedEntities@MovingBlockActor@@QEAAXAEAVPistonBlockActor@@AEAVBlockSource@@@Z
-    MCAPI void moveCollidedEntities(class PistonBlockActor&, class BlockSource&);
+    MCAPI void moveCollidedEntities(class PistonBlockActor& pistonBlock, class BlockSource& region);
 
     // NOLINTEND
 

@@ -18,7 +18,7 @@ public:
     virtual leveldb::Status Read(uint64, uint64, leveldb::Slice*, char*) const;
 
     // symbol: ??0InMemoryRandomAccessFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
-    MCAPI explicit InMemoryRandomAccessFile(std::shared_ptr<class InMemoryFile>);
+    MCAPI explicit InMemoryRandomAccessFile(std::shared_ptr<class InMemoryFile> file);
 
     // NOLINTEND
 };

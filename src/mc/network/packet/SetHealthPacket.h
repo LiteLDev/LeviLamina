@@ -26,7 +26,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@SetHealthPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@SetHealthPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -36,7 +36,7 @@ public:
     MCAPI SetHealthPacket();
 
     // symbol: ??0SetHealthPacket@@QEAA@H@Z
-    MCAPI explicit SetHealthPacket(int);
+    MCAPI explicit SetHealthPacket(int health);
 
     // NOLINTEND
 };

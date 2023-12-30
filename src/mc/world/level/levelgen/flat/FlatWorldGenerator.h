@@ -43,10 +43,10 @@ public:
     MCVAPI ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const&);
 
     // symbol: ?garbageCollectBlueprints@FlatWorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z
-    MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>);
+    MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos> activeChunks);
 
     // symbol: ?getBiomeArea@FlatWorldGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const&, uint) const;
+    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
     // symbol: ?getBiomeSource@FlatWorldGenerator@@UEBAAEBVBiomeSource@@XZ
     MCVAPI class BiomeSource const& getBiomeSource() const;
@@ -58,20 +58,20 @@ public:
     MCVAPI bool isStructureFeatureTypeAt(class BlockPos const&, ::StructureFeatureType) const;
 
     // symbol: ?loadChunk@FlatWorldGenerator@@UEAAXAEAVLevelChunk@@_N@Z
-    MCVAPI void loadChunk(class LevelChunk&, bool);
+    MCVAPI void loadChunk(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
     // symbol: ?postProcess@FlatWorldGenerator@@UEAA_NAEAVChunkViewSource@@@Z
-    MCVAPI bool postProcess(class ChunkViewSource&);
+    MCVAPI bool postProcess(class ChunkViewSource& neighborhood);
 
     // symbol:
     // ?prepareAndComputeHeights@FlatWorldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
     MCVAPI void prepareAndComputeHeights(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int);
 
     // symbol: ?prepareHeights@FlatWorldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
-    MCVAPI void prepareHeights(class BlockVolume&, class ChunkPos const&, bool);
+    MCVAPI void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
     // symbol: ??0FlatWorldGenerator@@QEAA@AEAVDimension@@IAEBVValue@Json@@@Z
-    MCAPI FlatWorldGenerator(class Dimension&, uint, class Json::Value const&);
+    MCAPI FlatWorldGenerator(class Dimension& dimension, uint seed, class Json::Value const& generationOptionsJSON);
 
     // NOLINTEND
 

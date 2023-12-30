@@ -22,14 +22,14 @@ public:
     virtual ::StructurePieceType getType() const;
 
     // vIndex: 4, symbol: ?postProcess@BuriedTreasurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_isCovered@BuriedTreasurePiece@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _isCovered(class BlockSource const&, class BlockPos const&) const;
+    MCAPI bool _isCovered(class BlockSource const& region, class BlockPos const& blockPos) const;
 
     // NOLINTEND
 };

@@ -15,19 +15,25 @@ public:
     MCAPI HitResult(class HitResult const&);
 
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEAVActor@@@Z
-    MCAPI HitResult(class Vec3 const&, class Vec3 const&, class Actor&);
+    MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& entity);
 
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@00@Z
-    MCAPI HitResult(class Vec3 const&, class Vec3 const&, class Vec3 const&);
+    MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Vec3 const& rayEnd);
 
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEAVActor@@0@Z
-    MCAPI HitResult(class Vec3 const&, class Vec3 const&, class Actor&, class Vec3 const&);
+    MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& entity, class Vec3 const& pos);
 
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEBVBlockPos@@E0@Z
-    MCAPI HitResult(class Vec3 const&, class Vec3 const&, class BlockPos const&, uchar, class Vec3 const&);
+    MCAPI HitResult(
+        class Vec3 const&     startPos,
+        class Vec3 const&     rayDir,
+        class BlockPos const& blockPos,
+        uchar                 facing,
+        class Vec3 const&     pos
+    );
 
     // symbol: ?distanceTo@HitResult@@QEBAMAEBVActor@@@Z
-    MCAPI float distanceTo(class Actor const&) const;
+    MCAPI float distanceTo(class Actor const& otherEntity) const;
 
     // symbol: ?getEntity@HitResult@@QEBAPEAVActor@@XZ
     MCAPI class Actor* getEntity() const;

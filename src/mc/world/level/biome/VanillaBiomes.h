@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initBiomeComponents@VanillaBiomes@@SAXAEAVBiomeComponentFactory@@@Z
-    MCAPI static void initBiomeComponents(class BiomeComponentFactory&);
+    MCAPI static void initBiomeComponents(class BiomeComponentFactory& factory);
 
     // symbol: ?initBiomeDimensionComponent@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
     MCAPI static void initBiomeDimensionComponent(class BiomeRegistry&);
@@ -31,16 +31,16 @@ public:
     initBiomes(class BiomeRegistry&, struct SpawnSettings const&, class BaseGameVersion const&, class Experiments const&);
 
     // symbol: ?initClientOnlyComponents@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
-    MCAPI static void initClientOnlyComponents(class BiomeRegistry&);
+    MCAPI static void initClientOnlyComponents(class BiomeRegistry& registry);
 
     // symbol: ?initDefaultWorldGenComponents@VanillaBiomes@@SAXAEAVIWorldRegistriesProvider@@@Z
-    MCAPI static void initDefaultWorldGenComponents(class IWorldRegistriesProvider&);
+    MCAPI static void initDefaultWorldGenComponents(class IWorldRegistriesProvider& registries);
 
     // symbol: ?initSurfaceBuilders@VanillaBiomes@@SAXAEAVSurfaceBuilderRegistry@@AEBVBaseGameVersion@@@Z
     MCAPI static void initSurfaceBuilders(class SurfaceBuilderRegistry&, class BaseGameVersion const&);
 
     // symbol: ?initVanillaBiomeTypeComponent@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
-    MCAPI static void initVanillaBiomeTypeComponent(class BiomeRegistry&);
+    MCAPI static void initVanillaBiomeTypeComponent(class BiomeRegistry& registry);
 
     // symbol: ?shutdownBiomes@VanillaBiomes@@SAXXZ
     MCAPI static void shutdownBiomes();

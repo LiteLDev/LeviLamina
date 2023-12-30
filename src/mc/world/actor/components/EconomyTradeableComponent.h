@@ -15,16 +15,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0EconomyTradeableComponent@@QEAA@AEAVActor@@@Z
-    MCAPI explicit EconomyTradeableComponent(class Actor&);
+    MCAPI explicit EconomyTradeableComponent(class Actor& owner);
 
     // symbol: ?addAdditionalSaveData@EconomyTradeableComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?createDataPacket@EconomyTradeableComponent@@QEAA?AVUpdateTradePacket@@W4ContainerID@@@Z
-    MCAPI class UpdateTradePacket createDataPacket(::ContainerID);
+    MCAPI class UpdateTradePacket createDataPacket(enum ContainerID containerID);
 
     // symbol: ?fixVillagerTierToMatchTradeList@EconomyTradeableComponent@@QEAAXPEAVMerchantRecipeList@@@Z
-    MCAPI void fixVillagerTierToMatchTradeList(class MerchantRecipeList*);
+    MCAPI void fixVillagerTierToMatchTradeList(class MerchantRecipeList* oldOffers);
 
     // symbol: ?getCurrentCuredDiscount@EconomyTradeableComponent@@QEBA?AUIntRange@@XZ
     MCAPI struct IntRange getCurrentCuredDiscount() const;
@@ -40,7 +40,7 @@ public:
     MCAPI std::string const& getDisplayName() const;
 
     // symbol: ?getInteraction@EconomyTradeableComponent@@QEAA_NAEAVPlayer@@AEAVActorInteraction@@@Z
-    MCAPI bool getInteraction(class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Player& player, class ActorInteraction& interaction);
 
     // symbol: ?getOffers@EconomyTradeableComponent@@QEAAPEAVMerchantRecipeList@@XZ
     MCAPI class MerchantRecipeList* getOffers();
@@ -62,7 +62,7 @@ public:
     MCAPI std::string const& loadDisplayName();
 
     // symbol: ?loadOffersFromTag@EconomyTradeableComponent@@QEAAXPEBVCompoundTag@@@Z
-    MCAPI void loadOffersFromTag(class CompoundTag const*);
+    MCAPI void loadOffersFromTag(class CompoundTag const* tag);
 
     // symbol: ?matchExpAndTier@EconomyTradeableComponent@@QEAAXXZ
     MCAPI void matchExpAndTier();
@@ -71,10 +71,10 @@ public:
     MCAPI void newServerAiStep();
 
     // symbol: ?notifyTrade@EconomyTradeableComponent@@QEAAXH@Z
-    MCAPI void notifyTrade(int);
+    MCAPI void notifyTrade(int recipeIndex);
 
     // symbol: ?readAdditionalSaveData@EconomyTradeableComponent@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?reloadComponent@EconomyTradeableComponent@@QEAAXXZ
     MCAPI void reloadComponent();
@@ -86,10 +86,10 @@ public:
     MCAPI void setNearbyCuredDiscount(int);
 
     // symbol: ?setOffers@EconomyTradeableComponent@@QEAAXAEAVMerchantRecipeList@@@Z
-    MCAPI void setOffers(class MerchantRecipeList&);
+    MCAPI void setOffers(class MerchantRecipeList& offers);
 
     // symbol: ?setRiches@EconomyTradeableComponent@@QEAAXH@Z
-    MCAPI void setRiches(int);
+    MCAPI void setRiches(int riches);
 
     // symbol: ?shouldConvertTrades@EconomyTradeableComponent@@QEBA_NXZ
     MCAPI bool shouldConvertTrades() const;
@@ -110,7 +110,7 @@ public:
     MCAPI void tryIncrementNearbyCuredDiscount();
 
     // symbol: ?tryToTransferOldOffers@EconomyTradeableComponent@@QEAAXPEAVMerchantRecipeList@@@Z
-    MCAPI void tryToTransferOldOffers(class MerchantRecipeList*);
+    MCAPI void tryToTransferOldOffers(class MerchantRecipeList* oldOffers);
 
     // symbol: ?isUseNewTradeScreen@EconomyTradeableComponent@@SA_NAEBVActor@@@Z
     MCAPI static bool isUseNewTradeScreen(class Actor const&);
@@ -130,13 +130,13 @@ public:
 
     // symbol:
     // ?_rearrangeTradeList@EconomyTradeableComponent@@AEAAXAEAV?$vector@UTrade@@V?$allocator@UTrade@@@std@@@std@@_K@Z
-    MCAPI void _rearrangeTradeList(std::vector<struct Trade>&, uint64);
+    MCAPI void _rearrangeTradeList(std::vector<struct Trade>& tradeList, uint64 sampleCount);
 
     // symbol: ?_setMaxTradeTier@EconomyTradeableComponent@@AEAAXH@Z
-    MCAPI void _setMaxTradeTier(int);
+    MCAPI void _setMaxTradeTier(int tradeTier);
 
     // symbol: ?_setTradeTier@EconomyTradeableComponent@@AEAAXH@Z
-    MCAPI void _setTradeTier(int);
+    MCAPI void _setTradeTier(int tradeTier);
 
     // NOLINTEND
 };

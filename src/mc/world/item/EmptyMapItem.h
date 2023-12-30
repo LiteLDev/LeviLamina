@@ -72,7 +72,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@EmptyMapItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& itemStack, class Player& player) const;
 
     // vIndex: 81, symbol:
     // ?buildDescriptionId@EmptyMapItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
@@ -89,13 +89,13 @@ public:
     virtual std::string getInteractText(class Player const&) const;
 
     // symbol: ??0EmptyMapItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-    MCAPI EmptyMapItem(std::string const&, short);
+    MCAPI EmptyMapItem(std::string const& itemName, short itemId);
 
     // symbol: ?addPlayerMarker@EmptyMapItem@@SAXAEAVItemStackBase@@@Z
-    MCAPI static void addPlayerMarker(class ItemStackBase&);
+    MCAPI static void addPlayerMarker(class ItemStackBase& map);
 
     // symbol: ?isLocatorMap@EmptyMapItem@@SA_NAEBVItemStack@@@Z
-    MCAPI static bool isLocatorMap(class ItemStack const&);
+    MCAPI static bool isLocatorMap(class ItemStack const& map);
 
     // NOLINTEND
 };

@@ -11,7 +11,8 @@ namespace ResourceHelper {
 // NOLINTBEGIN
 // symbol:
 // ?deserializePackStackEntry@ResourceHelper@@YA_NAEBVValue@Json@@AEAUPackInstanceId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI bool deserializePackStackEntry(class Json::Value const&, struct PackInstanceId&, std::string const&);
+MCAPI bool
+deserializePackStackEntry(class Json::Value const& entry, struct PackInstanceId& output, std::string const& packIdSalt);
 
 // symbol:
 // ?stringifyResourceMetadataGeneratedWith@ResourceHelper@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVResourceMetadata@@@Z

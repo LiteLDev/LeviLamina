@@ -12,13 +12,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0DistanceConstraint@@QEAA@MMM@Z
-    MCAPI DistanceConstraint(float, float, float);
+    MCAPI DistanceConstraint(float massA, float massB, float desiredDistance);
 
     // symbol: ?setup@DistanceConstraint@@QEAAMAEBVVec3@@0MM@Z
-    MCAPI float setup(class Vec3 const&, class Vec3 const&, float, float);
+    MCAPI float setup(class Vec3 const& posA, class Vec3 const& posB, float baumgarteTerm, float slop);
 
     // symbol: ?solve@DistanceConstraint@@QEAAXAEAVVec3@@0@Z
-    MCAPI void solve(class Vec3&, class Vec3&);
+    MCAPI void solve(class Vec3& velA, class Vec3& velB);
 
     // NOLINTEND
 };

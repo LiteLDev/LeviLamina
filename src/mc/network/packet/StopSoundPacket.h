@@ -26,7 +26,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@StopSoundPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@StopSoundPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -36,7 +36,7 @@ public:
     MCAPI StopSoundPacket();
 
     // symbol: ??0StopSoundPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI StopSoundPacket(std::string const&, bool);
+    MCAPI StopSoundPacket(std::string const& name, bool stopAll);
 
     // NOLINTEND
 };

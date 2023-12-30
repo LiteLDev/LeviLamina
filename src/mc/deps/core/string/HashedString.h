@@ -10,16 +10,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0HashedString@@QEAA@PEBD@Z
-    MCAPI explicit HashedString(char const*);
+    MCAPI explicit HashedString(char const* str);
 
     // symbol: ??0HashedString@@QEAA@$$QEAV0@@Z
-    MCAPI HashedString(class HashedString&&);
+    MCAPI HashedString(class HashedString&& rhs);
 
     // symbol: ??0HashedString@@QEAA@AEBV0@@Z
-    MCAPI HashedString(class HashedString const&);
+    MCAPI HashedString(class HashedString const& rhs);
 
     // symbol: ??0HashedString@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit HashedString(std::string const&);
+    MCAPI explicit HashedString(std::string const& str);
 
     // symbol: ??0HashedString@@QEAA@$$T@Z
     MCAPI explicit HashedString(std::nullptr_t);
@@ -49,28 +49,28 @@ public:
     MCAPI explicit operator std::string_view() const;
 
     // symbol: ??9HashedString@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class HashedString const&) const;
+    MCAPI bool operator!=(class HashedString const& rhs) const;
 
     // symbol: ??MHashedString@@QEBA_NAEBV0@@Z
-    MCAPI bool operator<(class HashedString const&) const;
+    MCAPI bool operator<(class HashedString const& rhs) const;
 
     // symbol: ??4HashedString@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class HashedString& operator=(class HashedString&&);
 
     // symbol: ??4HashedString@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class HashedString& operator=(class HashedString const&);
+    MCAPI class HashedString& operator=(class HashedString const& rhs);
 
     // symbol: ??8HashedString@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class HashedString const&) const;
+    MCAPI bool operator==(class HashedString const& rhs) const;
 
     // symbol: ??1HashedString@@QEAA@XZ
     MCAPI ~HashedString();
 
     // symbol: ?computeHash@HashedString@@SA_KPEBD@Z
-    MCAPI static uint64 computeHash(char const*);
+    MCAPI static uint64 computeHash(char const* str);
 
     // symbol: ?computeHash@HashedString@@SA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static uint64 computeHash(std::string const&);
+    MCAPI static uint64 computeHash(std::string const& str);
 
     // symbol: ?getEmptyString@HashedString@@SAAEBV1@XZ
     MCAPI static class HashedString const& getEmptyString();

@@ -18,16 +18,16 @@ public:
     virtual ~CampfireBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@CampfireBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2, symbol: ?save@CampfireBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 7, symbol: ?tick@CampfireBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void tick(class BlockSource&);
+    virtual void tick(class BlockSource& region);
 
     // vIndex: 8, symbol: ?onChanged@CampfireBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onChanged(class BlockSource&);
+    virtual void onChanged(class BlockSource& region);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
@@ -36,7 +36,7 @@ public:
     virtual void __unk_vfn_18();
 
     // vIndex: 19, symbol: ?getShadowRadius@CampfireBlockActor@@UEBAMAEAVBlockSource@@@Z
-    virtual float getShadowRadius(class BlockSource&) const;
+    virtual float getShadowRadius(class BlockSource& region) const;
 
     // vIndex: 30, symbol: __unk_vfn_30
     virtual void __unk_vfn_30();
@@ -67,19 +67,19 @@ public:
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@CampfireBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ?dropAllItems@CampfireBlockActor@@QEAAXAEAVBlockSource@@@Z
-    MCAPI void dropAllItems(class BlockSource&);
+    MCAPI void dropAllItems(class BlockSource& region);
 
     // symbol: ?getCampfireTag@CampfireBlockActor@@QEBAAEBVHashedString@@AEBVBlockSource@@@Z
     MCAPI class HashedString const& getCampfireTag(class BlockSource const&) const;
 
     // symbol: ?getCookingItem@CampfireBlockActor@@QEAAAEBVItemInstance@@H@Z
-    MCAPI class ItemInstance const& getCookingItem(int);
+    MCAPI class ItemInstance const& getCookingItem(int slot);
 
     // symbol: ?setItem@CampfireBlockActor@@QEAA_NAEAVBlockSource@@AEBVItemInstance@@@Z
-    MCAPI bool setItem(class BlockSource&, class ItemInstance const&);
+    MCAPI bool setItem(class BlockSource& region, class ItemInstance const& item);
 
     // symbol: ?MAX_SMOKE_THRESHOLD_COUNTER@CampfireBlockActor@@2HB
     MCAPI static int const MAX_SMOKE_THRESHOLD_COUNTER;
@@ -92,7 +92,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_finishCooking@CampfireBlockActor@@AEAAXAEAVBlockSource@@H@Z
-    MCAPI void _finishCooking(class BlockSource&, int);
+    MCAPI void _finishCooking(class BlockSource& region, int slot);
 
     // NOLINTEND
 };

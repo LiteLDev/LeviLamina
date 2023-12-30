@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0SocketDescriptor@RakNet@@QEAA@GPEBD@Z
-    MCAPI SocketDescriptor(ushort, char const*);
+    MCAPI SocketDescriptor(ushort _port, char const* _hostAddress);
 
     // NOLINTEND
 };

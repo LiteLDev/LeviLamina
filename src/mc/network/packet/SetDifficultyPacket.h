@@ -27,7 +27,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@SetDifficultyPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@SetDifficultyPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -37,7 +37,7 @@ public:
     MCAPI SetDifficultyPacket();
 
     // symbol: ??0SetDifficultyPacket@@QEAA@W4Difficulty@@@Z
-    MCAPI explicit SetDifficultyPacket(::Difficulty);
+    MCAPI explicit SetDifficultyPacket(enum Difficulty difficulty);
 
     // symbol: ?getDifficulty@SetDifficultyPacket@@QEBA?AW4Difficulty@@XZ
     MCAPI ::Difficulty getDifficulty() const;

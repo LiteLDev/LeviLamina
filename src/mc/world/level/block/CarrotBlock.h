@@ -120,7 +120,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@CarrotBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -142,7 +142,7 @@ public:
     virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
 
     // vIndex: 165, symbol: ?getResourceCount@CarrotBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 170, symbol: ?getBaseSeed@CarrotBlock@@UEBA?BVItemInstance@@XZ
     virtual class ItemInstance const getBaseSeed() const;
@@ -151,10 +151,10 @@ public:
     virtual class ItemInstance const getBaseCrop() const;
 
     // vIndex: 173, symbol: ?getCropNum@CarrotBlock@@UEBAHAEAVRandomize@@HH@Z
-    virtual int getCropNum(class Randomize&, int, int) const;
+    virtual int getCropNum(class Randomize& random, int growth, int bonusLootLevel) const;
 
     // symbol: ??0CarrotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CarrotBlock(std::string const&, int);
+    MCAPI CarrotBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

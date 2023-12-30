@@ -17,20 +17,21 @@ public:
     virtual ~MerchantRecipeList() = default;
 
     // vIndex: 1, symbol: ?getRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBVItemInstance@@0H@Z
-    virtual class MerchantRecipe* getRecipeFor(class ItemInstance const&, class ItemInstance const&, int);
+    virtual class MerchantRecipe*
+    getRecipeFor(class ItemInstance const& buyA, class ItemInstance const& buyB, int selectionHint);
 
     // vIndex: 2, symbol: ?addIfNewOrBetter@MerchantRecipeList@@UEAAXPEAVMerchantRecipe@@@Z
-    virtual void addIfNewOrBetter(class MerchantRecipe*);
+    virtual void addIfNewOrBetter(class MerchantRecipe* toMatch);
 
     // vIndex: 3, symbol: ?getMatchingRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBVItemInstance@@00@Z
     virtual class MerchantRecipe*
-    getMatchingRecipeFor(class ItemInstance const&, class ItemInstance const&, class ItemInstance const&);
+    getMatchingRecipeFor(class ItemInstance const& buy, class ItemInstance const& buyB, class ItemInstance const& sell);
 
     // vIndex: 4, symbol: ?getMatchingRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBV2@@Z
     virtual class MerchantRecipe* getMatchingRecipeFor(class MerchantRecipe const&);
 
     // vIndex: 5, symbol: ?load@MerchantRecipeList@@UEAAXAEBVCompoundTag@@@Z
-    virtual void load(class CompoundTag const&);
+    virtual void load(class CompoundTag const& tag);
 
     // vIndex: 6, symbol:
     // ?createTag@MerchantRecipeList@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@_N@Z
@@ -51,7 +52,7 @@ public:
     MCAPI std::optional<uint64> getRecipeIndexByNetId(RecipeNetId const&) const;
 
     // symbol: ?isRequiredItem@MerchantRecipeList@@QEAA_NAEBVItemInstance@@0@Z
-    MCAPI bool isRequiredItem(class ItemInstance const&, class ItemInstance const&);
+    MCAPI bool isRequiredItem(class ItemInstance const& offer, class ItemInstance const& requiredItem);
 
     // NOLINTEND
 };

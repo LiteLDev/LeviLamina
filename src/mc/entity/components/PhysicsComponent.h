@@ -18,7 +18,7 @@ public:
     MCAPI void setAffectedByGravity(struct SynchedActorDataComponent&, bool) const;
 
     // symbol: ?setHasCollision@PhysicsComponent@@QEAAXAEAVActor@@_N@Z
-    MCAPI void setHasCollision(class Actor&, bool);
+    MCAPI void setHasCollision(class Actor& owner, bool hasCollision);
 
     // NOLINTEND
 };

@@ -99,13 +99,17 @@ public:
     virtual void attemptExtendSize(int64 const&, std::function<void(void)>);
 
     // vIndex: 17, symbol: ?preemptiveExtendSize@FileStorageArea@Core@@UEAAX_KV?$function@$$A6AXXZ@std@@1@Z
-    virtual void preemptiveExtendSize(uint64, std::function<void(void)>, std::function<void(void)>);
+    virtual void preemptiveExtendSize(
+        uint64                    expectedContentSize,
+        std::function<void(void)> successCallback,
+        std::function<void(void)> failureCallback
+    );
 
     // vIndex: 18, symbol: ?getAvailableUserStorageSize@FileStorageArea@Core@@UEAA_KXZ
     virtual uint64 getAvailableUserStorageSize();
 
     // vIndex: 19, symbol: ?unloadFlatFileManifests@FileStorageArea@Core@@UEAAX_N@Z
-    virtual void unloadFlatFileManifests(bool);
+    virtual void unloadFlatFileManifests(bool shouldClearManifests);
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -126,7 +130,7 @@ public:
     virtual uint64 getTransactionWriteSizeLimit() const;
 
     // vIndex: 26, symbol: ?setSaveDataIcon@FileStorageArea@Core@@UEAA?AVResult@2@AEBVPath@2@@Z
-    virtual class Core::Result setSaveDataIcon(class Core::Path const&);
+    virtual class Core::Result setSaveDataIcon(class Core::Path const& iconPath);
 
     // vIndex: 27, symbol: ?shouldAllowCommit@FileStorageArea@Core@@UEBA_NXZ
     virtual bool shouldAllowCommit() const;
@@ -150,13 +154,13 @@ public:
     MCVAPI void _onTeardown();
 
     // symbol: ?_onTransactionsEmpty@FileStorageArea@Core@@MEAA?AVResult@2@_N@Z
-    MCVAPI class Core::Result _onTransactionsEmpty(bool);
+    MCVAPI class Core::Result _onTransactionsEmpty(bool fromChild);
 
     // symbol: ?canExtendSize@FileStorageArea@Core@@UEBA_NXZ
     MCVAPI bool canExtendSize() const;
 
     // symbol: ?checkCorrupt@FileStorageArea@Core@@UEAA_N_N@Z
-    MCVAPI bool checkCorrupt(bool);
+    MCVAPI bool checkCorrupt(bool handleCorruption);
 
     // symbol: ?clearUsedSizeOverride@FileStorageArea@Core@@UEAAXXZ
     MCVAPI void clearUsedSizeOverride();
@@ -198,7 +202,7 @@ public:
     // symbol:
     // ?getStorageAreaForPath@FileStorageArea@Core@@SA?AVResult@2@AEAV?$shared_ptr@VFileStorageArea@Core@@@std@@AEBVPath@2@@Z
     MCAPI static class Core::Result
-    getStorageAreaForPath(std::shared_ptr<class Core::FileStorageArea>&, class Core::Path const&);
+    getStorageAreaForPath(std::shared_ptr<class Core::FileStorageArea>& fileStorageArea, class Core::Path const& path);
 
     // symbol: ?teardown@FileStorageArea@Core@@SAXXZ
     MCAPI static void teardown();
@@ -209,8 +213,13 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0FileStorageArea@Core@@IEAA@W4FileAccessType@1@AEBVPath@1@_N2V?$shared_ptr@VFileStorageArea@Core@@@std@@@Z
-    MCAPI
-    FileStorageArea(::Core::FileAccessType, class Core::Path const&, bool, bool, std::shared_ptr<class Core::FileStorageArea>);
+    MCAPI FileStorageArea(
+        enum Core::FileAccessType                    type,
+        class Core::Path const&                      rootPath,
+        bool                                         usesFlatFiles,
+        bool                                         isAccessedDirectly,
+        std::shared_ptr<class Core::FileStorageArea> parent
+    );
 
     // NOLINTEND
 
@@ -226,10 +235,10 @@ public:
     MCAPI void _addWriteOperation(bool, uint64);
 
     // symbol: ?_beginTransaction@FileStorageArea@Core@@AEAAXPEAVFileSystemImpl@2@_N@Z
-    MCAPI void _beginTransaction(class Core::FileSystemImpl*, bool);
+    MCAPI void _beginTransaction(class Core::FileSystemImpl* pTransaction, bool fromChild);
 
     // symbol: ?_endTransaction@FileStorageArea@Core@@AEAA?AVResult@2@PEAVFileSystemImpl@2@_N@Z
-    MCAPI class Core::Result _endTransaction(class Core::FileSystemImpl*, bool);
+    MCAPI class Core::Result _endTransaction(class Core::FileSystemImpl* pTransaction, bool fromChild);
 
     // symbol: ?_onDeleteFile@FileStorageArea@Core@@AEAAXAEBVPath@2@@Z
     MCAPI void _onDeleteFile(class Core::Path const&);
@@ -239,8 +248,10 @@ public:
 
     // symbol:
     // ?_getStorageAreaForPathImpl@FileStorageArea@Core@@CA?AVResult@2@AEAV?$shared_ptr@VFileStorageArea@Core@@@std@@AEBVPath@2@@Z
-    MCAPI static class Core::Result
-    _getStorageAreaForPathImpl(std::shared_ptr<class Core::FileStorageArea>&, class Core::Path const&);
+    MCAPI static class Core::Result _getStorageAreaForPathImpl(
+        std::shared_ptr<class Core::FileStorageArea>& fileStorageArea,
+        class Core::Path const&                       path
+    );
 
     // NOLINTEND
 

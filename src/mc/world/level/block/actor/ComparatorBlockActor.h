@@ -18,13 +18,13 @@ public:
     virtual ~ComparatorBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@ComparatorBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2, symbol: ?save@ComparatorBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 7, symbol: ?tick@ComparatorBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void tick(class BlockSource&);
+    virtual void tick(class BlockSource& region);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
@@ -60,10 +60,10 @@ public:
     virtual int getOutputSignal();
 
     // vIndex: 44, symbol: ?setOutputSignal@ComparatorBlockActor@@UEAAXH@Z
-    virtual void setOutputSignal(int);
+    virtual void setOutputSignal(int value);
 
     // symbol: ??0ComparatorBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit ComparatorBlockActor(class BlockPos const&);
+    MCAPI explicit ComparatorBlockActor(class BlockPos const& pos);
 
     // NOLINTEND
 };

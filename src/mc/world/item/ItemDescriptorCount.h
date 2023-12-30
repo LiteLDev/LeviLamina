@@ -33,19 +33,19 @@ public:
     MCAPI explicit ItemDescriptorCount(class ReadOnlyBinaryStream&);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBVBlock@@G@Z
-    MCAPI ItemDescriptorCount(class Block const&, ushort);
+    MCAPI ItemDescriptorCount(class Block const& block, ushort stackSize);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBVBlockLegacy@@G@Z
-    MCAPI ItemDescriptorCount(class BlockLegacy const&, ushort);
+    MCAPI ItemDescriptorCount(class BlockLegacy const& block, ushort stackSize);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBVItemDescriptor@@G@Z
-    MCAPI ItemDescriptorCount(class ItemDescriptor const&, ushort);
+    MCAPI ItemDescriptorCount(class ItemDescriptor const& descriptor, ushort stackSize);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBUItemTag@@G@Z
     MCAPI ItemDescriptorCount(struct ItemTag const&, ushort);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBVItem@@HG@Z
-    MCAPI ItemDescriptorCount(class Item const&, int, ushort);
+    MCAPI ItemDescriptorCount(class Item const& item, int auxValue, ushort stackSize);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HG@Z
     MCAPI ItemDescriptorCount(std::string_view, int, ushort);
@@ -54,7 +54,7 @@ public:
     MCAPI short getStackSize() const;
 
     // symbol: ?setStackSize@ItemDescriptorCount@@QEAAXF@Z
-    MCAPI void setStackSize(short);
+    MCAPI void setStackSize(short size);
 
     // NOLINTEND
 };

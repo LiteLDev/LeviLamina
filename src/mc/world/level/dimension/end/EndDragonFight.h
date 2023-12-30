@@ -39,22 +39,22 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0EndDragonFight@@QEAA@AEAVBlockSource@@@Z
-    MCAPI explicit EndDragonFight(class BlockSource&);
+    MCAPI explicit EndDragonFight(class BlockSource& level);
 
     // symbol: ?loadData@EndDragonFight@@QEAAXAEBVCompoundTag@@@Z
-    MCAPI void loadData(class CompoundTag const&);
+    MCAPI void loadData(class CompoundTag const& tag);
 
     // symbol: ?onCrystalDestroyed@EndDragonFight@@QEAAXAEBVEnderCrystal@@AEBVActorDamageSource@@@Z
-    MCAPI void onCrystalDestroyed(class EnderCrystal const&, class ActorDamageSource const&);
+    MCAPI void onCrystalDestroyed(class EnderCrystal const& crystal, class ActorDamageSource const& source);
 
     // symbol: ?resetSpikeCrystals@EndDragonFight@@QEAAXXZ
     MCAPI void resetSpikeCrystals();
 
     // symbol: ?saveData@EndDragonFight@@QEAAXAEAVCompoundTag@@@Z
-    MCAPI void saveData(class CompoundTag&);
+    MCAPI void saveData(class CompoundTag& tag);
 
     // symbol: ?spawnNewGatewayChunks@EndDragonFight@@QEAAXAEBVBlockPos@@_N1@Z
-    MCAPI void spawnNewGatewayChunks(class BlockPos const&, bool, bool);
+    MCAPI void spawnNewGatewayChunks(class BlockPos const& pos, bool placeEntryBlocks, bool placeExitBlocks);
 
     // symbol: ?tick@EndDragonFight@@QEAAXXZ
     MCAPI void tick();
@@ -67,7 +67,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_canSpawnNewGateway@EndDragonFight@@AEBA_NPEAVChunkViewSource@@AEBVBlockPos@@@Z
-    MCAPI bool _canSpawnNewGateway(class ChunkViewSource*, class BlockPos const&) const;
+    MCAPI bool _canSpawnNewGateway(class ChunkViewSource* source, class BlockPos const& pos) const;
 
     // symbol: ?_createNewDragon@EndDragonFight@@AEAAXXZ
     MCAPI void _createNewDragon();
@@ -79,42 +79,42 @@ public:
     MCAPI void _initializeDragon(class EnderDragon&);
 
     // symbol: ?_makeEndIslandFeature@EndDragonFight@@AEAAXAEAVBlockSource@@VBlockPos@@@Z
-    MCAPI void _makeEndIslandFeature(class BlockSource&, class BlockPos);
+    MCAPI void _makeEndIslandFeature(class BlockSource& region, class BlockPos position);
 
     // symbol: ?_placeAndLinkNewGatewayPair@EndDragonFight@@AEAAXXZ
     MCAPI void _placeAndLinkNewGatewayPair();
 
     // symbol: ?_setEndGatewayBlockActorExitPosition@EndDragonFight@@AEAA_NAEAVBlockSource@@0AEBVBlockPos@@1_N@Z
     MCAPI bool _setEndGatewayBlockActorExitPosition(
-        class BlockSource&,
-        class BlockSource&,
-        class BlockPos const&,
-        class BlockPos const&,
-        bool
+        class BlockSource&    entrySource,
+        class BlockSource&    exitSource,
+        class BlockPos const& endGatewayActorPos,
+        class BlockPos const& destinationPos,
+        bool                  lookForGateway
     );
 
     // symbol: ?_setEndGatewayExitPositions@EndDragonFight@@AEAAXXZ
     MCAPI void _setEndGatewayExitPositions();
 
     // symbol: ?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAnimation@@@Z
-    MCAPI void _setRespawnStage(::RespawnAnimation);
+    MCAPI void _setRespawnStage(enum RespawnAnimation stage);
 
     // symbol: ?_spawnExitPortal@EndDragonFight@@AEAAX_N@Z
-    MCAPI void _spawnExitPortal(bool);
+    MCAPI void _spawnExitPortal(bool activated);
 
     // symbol:
     // ?_spawnNewGatewayChunksTask@EndDragonFight@@AEAAXAEAV?$tuple@W4GatewayTask@EndDragonFight@@UGateWayGenerator@2@U32@@std@@@Z
     MCAPI void _spawnNewGatewayChunksTask(std::tuple<
-                                          ::EndDragonFight::GatewayTask,
+                                          enum EndDragonFight::GatewayTask,
                                           struct EndDragonFight::GateWayGenerator,
-                                          struct EndDragonFight::GateWayGenerator>&);
+                                          struct EndDragonFight::GateWayGenerator>& task);
 
     // symbol: ?_spawnNewGatewayPair@EndDragonFight@@AEAAXXZ
     MCAPI void _spawnNewGatewayPair();
 
     // symbol:
     // ?_tickRespawnAnimation@EndDragonFight@@AEAAXAEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@H@Z
-    MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const&, int);
+    MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const& crystals, int time);
 
     // symbol: ?_updateCrystalCount@EndDragonFight@@AEAAXXZ
     MCAPI void _updateCrystalCount();
@@ -122,9 +122,9 @@ public:
     // symbol:
     // ?_verifyExitPositionsTask@EndDragonFight@@AEAAXAEAV?$tuple@W4GatewayTask@EndDragonFight@@UGateWayGenerator@2@U32@@std@@@Z
     MCAPI void _verifyExitPositionsTask(std::tuple<
-                                        ::EndDragonFight::GatewayTask,
+                                        enum EndDragonFight::GatewayTask,
                                         struct EndDragonFight::GateWayGenerator,
-                                        struct EndDragonFight::GateWayGenerator>&);
+                                        struct EndDragonFight::GateWayGenerator>& task);
 
     // NOLINTEND
 

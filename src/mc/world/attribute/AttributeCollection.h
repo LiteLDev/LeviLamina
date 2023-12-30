@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?hasAttribute@AttributeCollection@@SA_NAEBVHashedString@@@Z
-    MCAPI static bool hasAttribute(class HashedString const&);
+    MCAPI static bool hasAttribute(class HashedString const& name);
 
     // NOLINTEND
 

@@ -6,8 +6,8 @@
 #include "mc/deps/webrtc/MediaStreamTrackInterface.h"
 #include "mc/deps/webrtc/VideoTrackInterface.h"
 #include "mc/deps/webrtc/VideoTrackSourceProxyWithInternal.h"
-#include "mc/deps/webrtc/detail/VideoSinkInterface.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
+#include "mc/deps/webrtc/rtc/VideoSinkInterface.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off

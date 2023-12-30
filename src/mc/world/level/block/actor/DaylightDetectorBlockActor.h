@@ -18,7 +18,7 @@ public:
     virtual ~DaylightDetectorBlockActor() = default;
 
     // vIndex: 7, symbol: ?tick@DaylightDetectorBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void tick(class BlockSource&);
+    virtual void tick(class BlockSource& region);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();

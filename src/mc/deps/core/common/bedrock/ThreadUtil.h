@@ -25,10 +25,11 @@ public:
     MCAPI static void setCurrentThreadCoreAffinity(int, uint64);
 
     // symbol: ?setCurrentThreadPriority@ThreadUtil@Threading@Bedrock@@SAXAEBVOSThreadPriority@23@@Z
-    MCAPI static void setCurrentThreadPriority(class Bedrock::Threading::OSThreadPriority const&);
+    MCAPI static void setCurrentThreadPriority(class Bedrock::Threading::OSThreadPriority const& pri);
 
     // symbol: ?setThreadPriority@ThreadUtil@Threading@Bedrock@@SAXAEBQEAXAEBVOSThreadPriority@23@@Z
-    MCAPI static void setThreadPriority(void* const&, class Bedrock::Threading::OSThreadPriority const&);
+    MCAPI static void
+    setThreadPriority(void* const& nativeHandle, class Bedrock::Threading::OSThreadPriority const& pri);
 
     // NOLINTEND
 };

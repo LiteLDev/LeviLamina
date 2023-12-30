@@ -21,46 +21,49 @@ public:
 
     // vIndex: 1, symbol:
     // ?setDisplayObjective@Scoreboard@@UEAAPEBVDisplayObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVObjective@@W4ObjectiveSortOrder@@@Z
-    virtual class DisplayObjective const*
-    setDisplayObjective(std::string const&, class Objective const&, ::ObjectiveSortOrder);
+    virtual class DisplayObjective const* setDisplayObjective(
+        std::string const&      displaySlotName,
+        class Objective const&  objective,
+        enum ObjectiveSortOrder order
+    );
 
     // vIndex: 2, symbol:
     // ?clearDisplayObjective@Scoreboard@@UEAAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual class Objective* clearDisplayObjective(std::string const&);
+    virtual class Objective* clearDisplayObjective(std::string const& displaySlotName);
 
     // vIndex: 3, symbol: ?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z
-    virtual struct ScoreboardId const& createScoreboardId(class Player const&);
+    virtual struct ScoreboardId const& createScoreboardId(class Player const& player);
 
     // vIndex: 4, symbol: ?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBVActor@@@Z
-    virtual struct ScoreboardId const& createScoreboardId(class Actor const&);
+    virtual struct ScoreboardId const& createScoreboardId(class Actor const& entity);
 
     // vIndex: 5, symbol:
     // ?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual struct ScoreboardId const& createScoreboardId(std::string const&);
+    virtual struct ScoreboardId const& createScoreboardId(std::string const& fakePlayer);
 
     // vIndex: 6, symbol: ?onObjectiveAdded@Scoreboard@@UEAAXAEBVObjective@@@Z
-    virtual void onObjectiveAdded(class Objective const&);
+    virtual void onObjectiveAdded(class Objective const& objective);
 
     // vIndex: 7, symbol: ?onObjectiveRemoved@Scoreboard@@UEAAXAEAVObjective@@@Z
-    virtual void onObjectiveRemoved(class Objective&);
+    virtual void onObjectiveRemoved(class Objective& objective);
 
     // vIndex: 8, symbol: ?onScoreChanged@Scoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z
-    virtual void onScoreChanged(struct ScoreboardId const&, class Objective const&);
+    virtual void onScoreChanged(struct ScoreboardId const& id, class Objective const& obj);
 
     // vIndex: 9, symbol: ?onPlayerScoreRemoved@Scoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z
-    virtual void onPlayerScoreRemoved(struct ScoreboardId const&, class Objective const&);
+    virtual void onPlayerScoreRemoved(struct ScoreboardId const& id, class Objective const& objective);
 
     // vIndex: 10, symbol: ?onPlayerJoined@Scoreboard@@UEAAXAEBVPlayer@@@Z
-    virtual void onPlayerJoined(class Player const&);
+    virtual void onPlayerJoined(class Player const& player);
 
     // vIndex: 11, symbol: ?onPlayerIdentityUpdated@Scoreboard@@UEAAXAEBUPlayerScoreboardId@@@Z
-    virtual void onPlayerIdentityUpdated(struct PlayerScoreboardId const&);
+    virtual void onPlayerIdentityUpdated(struct PlayerScoreboardId const& playerId);
 
     // vIndex: 12, symbol: ?tick@Scoreboard@@UEAAXXZ
     virtual void tick();
 
     // vIndex: 13, symbol: ?setPacketSender@Scoreboard@@UEAAXPEAVPacketSender@@@Z
-    virtual void setPacketSender(class PacketSender*);
+    virtual void setPacketSender(class PacketSender* sender);
 
     // vIndex: 14, symbol: ?writeToLevelStorage@Scoreboard@@UEAAXXZ
     virtual void writeToLevelStorage();
@@ -69,11 +72,12 @@ public:
     virtual bool isClientSide() const;
 
     // symbol: ??0Scoreboard@@QEAA@VCommandSoftEnumRegistry@@@Z
-    MCAPI explicit Scoreboard(class CommandSoftEnumRegistry);
+    MCAPI explicit Scoreboard(class CommandSoftEnumRegistry registry);
 
     // symbol:
     // ?addObjective@Scoreboard@@QEAAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBVObjectiveCriteria@@@Z
-    MCAPI class Objective* addObjective(std::string const&, std::string const&, class ObjectiveCriteria const&);
+    MCAPI class Objective*
+    addObjective(std::string const& name, std::string const& displayName, class ObjectiveCriteria const& criteria);
 
     // symbol:
     // ?addScoreListener@Scoreboard@@QEAAXAEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -82,13 +86,13 @@ public:
     // symbol:
     // ?applyPlayerOperation@Scoreboard@@QEAAHAEA_NAEAV?$vector@UScoreboardId@@V?$allocator@UScoreboardId@@@std@@@std@@AEBUScoreboardId@@AEAVObjective@@13W4CommandOperator@@@Z
     MCAPI int applyPlayerOperation(
-        bool&,
-        std::vector<struct ScoreboardId>&,
-        struct ScoreboardId const&,
-        class Objective&,
-        std::vector<struct ScoreboardId>&,
-        class Objective&,
-        ::CommandOperator
+        bool&                             success,
+        std::vector<struct ScoreboardId>& sourceErrorIds,
+        struct ScoreboardId const&        target,
+        class Objective&                  targetObjective,
+        std::vector<struct ScoreboardId>& selector,
+        class Objective&                  objective,
+        enum CommandOperator              opCode
     );
 
     // symbol: ?forEachIdentityRef@Scoreboard@@QEAAXV?$function@$$A6AXAEAVScoreboardIdentityRef@@@Z@std@@@Z
@@ -99,7 +103,7 @@ public:
 
     // symbol:
     // ?getCriteria@Scoreboard@@QEBAPEAVObjectiveCriteria@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class ObjectiveCriteria* getCriteria(std::string const&) const;
+    MCAPI class ObjectiveCriteria* getCriteria(std::string const& criteriaName) const;
 
     // symbol:
     // ?getCriteriaNames@Scoreboard@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
@@ -110,11 +114,11 @@ public:
 
     // symbol:
     // ?getDisplayInfoFiltered@Scoreboard@@QEBA?AV?$vector@UPlayerScore@@V?$allocator@UPlayerScore@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCAPI std::vector<struct PlayerScore> getDisplayInfoFiltered(std::string const&) const;
+    MCAPI std::vector<struct PlayerScore> getDisplayInfoFiltered(std::string const& displaySlot) const;
 
     // symbol:
     // ?getDisplayObjective@Scoreboard@@QEBAPEBVDisplayObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class DisplayObjective const* getDisplayObjective(std::string const&) const;
+    MCAPI class DisplayObjective const* getDisplayObjective(std::string const& displaySlotName) const;
 
     // symbol:
     // ?getDisplayObjectiveSlotNames@Scoreboard@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
@@ -122,11 +126,11 @@ public:
 
     // symbol:
     // ?getIdScores@Scoreboard@@QEBA?AV?$vector@UScoreInfo@@V?$allocator@UScoreInfo@@@std@@@std@@AEBUScoreboardId@@@Z
-    MCAPI std::vector<struct ScoreInfo> getIdScores(struct ScoreboardId const&) const;
+    MCAPI std::vector<struct ScoreInfo> getIdScores(struct ScoreboardId const& id) const;
 
     // symbol:
     // ?getObjective@Scoreboard@@QEBAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Objective* getObjective(std::string const&) const;
+    MCAPI class Objective* getObjective(std::string const& name) const;
 
     // symbol:
     // ?getObjectiveNames@Scoreboard@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
@@ -139,23 +143,23 @@ public:
     MCAPI class ScoreboardEventCoordinator& getScoreboardEventCoordinator();
 
     // symbol: ?getScoreboardId@Scoreboard@@QEBAAEBUScoreboardId@@AEBVActor@@@Z
-    MCAPI struct ScoreboardId const& getScoreboardId(class Actor const&) const;
+    MCAPI struct ScoreboardId const& getScoreboardId(class Actor const& entity) const;
 
     // symbol: ?getScoreboardId@Scoreboard@@QEBAAEBUScoreboardId@@AEBVPlayer@@@Z
-    MCAPI struct ScoreboardId const& getScoreboardId(class Player const&) const;
+    MCAPI struct ScoreboardId const& getScoreboardId(class Player const& player) const;
 
     // symbol:
     // ?getScoreboardId@Scoreboard@@QEBAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI struct ScoreboardId const& getScoreboardId(std::string const&) const;
+    MCAPI struct ScoreboardId const& getScoreboardId(std::string const& name) const;
 
     // symbol: ?getScoreboardId@Scoreboard@@QEBAAEBUScoreboardId@@AEBUActorUniqueID@@@Z
-    MCAPI struct ScoreboardId const& getScoreboardId(struct ActorUniqueID const&) const;
+    MCAPI struct ScoreboardId const& getScoreboardId(struct ActorUniqueID const& entityId) const;
 
     // symbol: ?getScoreboardId@Scoreboard@@QEBAAEBUScoreboardId@@AEBUPlayerScoreboardId@@@Z
-    MCAPI struct ScoreboardId const& getScoreboardId(struct PlayerScoreboardId const&) const;
+    MCAPI struct ScoreboardId const& getScoreboardId(struct PlayerScoreboardId const& playerId) const;
 
     // symbol: ?getScoreboardIdentityRef@Scoreboard@@QEAAPEAVScoreboardIdentityRef@@AEBUScoreboardId@@@Z
-    MCAPI class ScoreboardIdentityRef* getScoreboardIdentityRef(struct ScoreboardId const&);
+    MCAPI class ScoreboardIdentityRef* getScoreboardIdentityRef(struct ScoreboardId const& scoreboardId);
 
     // symbol:
     // ?getScoreboardIdentityRefs@Scoreboard@@QEBA?AV?$vector@VScoreboardIdentityRef@@V?$allocator@VScoreboardIdentityRef@@@std@@@std@@XZ
@@ -165,31 +169,44 @@ public:
     MCAPI std::vector<struct ScoreboardId> getTrackedIds() const;
 
     // symbol: ?hasIdentityFor@Scoreboard@@QEBA_NAEBUScoreboardId@@@Z
-    MCAPI bool hasIdentityFor(struct ScoreboardId const&) const;
+    MCAPI bool hasIdentityFor(struct ScoreboardId const& scoreboardId) const;
 
     // symbol:
     // ?modifyPlayerScore@Scoreboard@@QEAAHAEA_NPEAVScoreboardIdentityRef@@AEAVObjective@@HW4PlayerScoreSetFunction@@@Z
-    MCAPI int modifyPlayerScore(bool&, class ScoreboardIdentityRef*, class Objective&, int, ::PlayerScoreSetFunction);
+    MCAPI int modifyPlayerScore(
+        bool&                        success,
+        class ScoreboardIdentityRef* id,
+        class Objective&             objective,
+        int                          scoreValue,
+        enum PlayerScoreSetFunction  action
+    );
 
     // symbol: ?modifyPlayerScore@Scoreboard@@QEAAHAEA_NAEBUScoreboardId@@AEAVObjective@@HW4PlayerScoreSetFunction@@@Z
-    MCAPI int modifyPlayerScore(bool&, struct ScoreboardId const&, class Objective&, int, ::PlayerScoreSetFunction);
+    MCAPI int modifyPlayerScore(
+        bool&                       success,
+        struct ScoreboardId const&  id,
+        class Objective&            objective,
+        int                         scoreValue,
+        enum PlayerScoreSetFunction action
+    );
 
     // symbol:
     // ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class ScoreboardIdentityRef const& registerScoreboardIdentity(struct ScoreboardId const&, std::string const&);
+    MCAPI class ScoreboardIdentityRef const&
+    registerScoreboardIdentity(struct ScoreboardId const& scoreboardId, std::string const& name);
 
     // symbol:
     // ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBUActorUniqueID@@@Z
     MCAPI class ScoreboardIdentityRef const&
-    registerScoreboardIdentity(struct ScoreboardId const&, struct ActorUniqueID const&);
+    registerScoreboardIdentity(struct ScoreboardId const& scoreboardId, struct ActorUniqueID const& entityId);
 
     // symbol:
     // ?registerScoreboardIdentity@Scoreboard@@QEAAAEBVScoreboardIdentityRef@@AEBUScoreboardId@@AEBUPlayerScoreboardId@@@Z
     MCAPI class ScoreboardIdentityRef const&
-    registerScoreboardIdentity(struct ScoreboardId const&, struct PlayerScoreboardId const&);
+    registerScoreboardIdentity(struct ScoreboardId const& scoreboardId, struct PlayerScoreboardId const& playerId);
 
     // symbol: ?removeObjective@Scoreboard@@QEAA_NPEAVObjective@@@Z
-    MCAPI bool removeObjective(class Objective*);
+    MCAPI bool removeObjective(class Objective* objective);
 
     // symbol: ?removeScoreListener@Scoreboard@@QEAAXAEBVPlayer@@@Z
     MCAPI void removeScoreListener(class Player const&);
@@ -199,13 +216,13 @@ public:
     MCAPI void removeScoreListener(class Player const&, std::string const&);
 
     // symbol: ?resetPlayerScore@Scoreboard@@QEAA_NAEBUScoreboardId@@AEAVObjective@@@Z
-    MCAPI bool resetPlayerScore(struct ScoreboardId const&, class Objective&);
+    MCAPI bool resetPlayerScore(struct ScoreboardId const& id, class Objective& objective);
 
     // symbol: ?resetPlayerScore@Scoreboard@@QEAAXAEBUScoreboardId@@@Z
-    MCAPI void resetPlayerScore(struct ScoreboardId const&);
+    MCAPI void resetPlayerScore(struct ScoreboardId const& id);
 
     // symbol: ?shouldClearScoresOnDeath@Scoreboard@@SA_NAEBVActor@@@Z
-    MCAPI static bool shouldClearScoresOnDeath(class Actor const&);
+    MCAPI static bool shouldClearScoresOnDeath(class Actor const& actor);
 
     // symbol: ?DEFAULT_CRITERIA@Scoreboard@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const DEFAULT_CRITERIA;

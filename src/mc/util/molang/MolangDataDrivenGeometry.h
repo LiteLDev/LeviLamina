@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??8MolangDataDrivenGeometry@@QEBA_NAEBU0@@Z
-    MCAPI bool operator==(struct MolangDataDrivenGeometry const&) const;
+    MCAPI bool operator==(struct MolangDataDrivenGeometry const& rhs) const;
 
     // NOLINTEND
 };

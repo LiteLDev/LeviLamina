@@ -5,9 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/webrtc/PeerConnectionInterface.h"
 #include "mc/deps/webrtc/StatsReport.h"
-#include "mc/deps/webrtc/detail/LoggingSeverity.h"
-#include "mc/deps/webrtc/detail/RefCountReleaseStatus.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
+#include "mc/deps/webrtc/rtc/LoggingSeverity.h"
+#include "mc/deps/webrtc/rtc/RefCountReleaseStatus.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
 #include "mc/network/nethernet/ERelayServerConfigurationResult.h"
 #include "mc/network/nethernet/ESendType.h"
 #include "mc/network/nethernet/ESessionError.h"

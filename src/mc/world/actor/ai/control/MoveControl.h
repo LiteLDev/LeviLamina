@@ -17,13 +17,14 @@ public:
     virtual ~MoveControl() = default;
 
     // vIndex: 1, symbol: ?initializeInternal@MoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
-    virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
+    virtual void initializeInternal(class Mob& mob, struct MoveControlDescription* description);
 
     // vIndex: 2, symbol: ?tick@MoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
     // vIndex: 3, symbol: ?setWantedPosition@MoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@AEBVVec3@@M@Z
-    virtual void setWantedPosition(class MoveControlComponent&, class Mob&, class Vec3 const&, float);
+    virtual void
+    setWantedPosition(class MoveControlComponent& parent, class Mob& mob, class Vec3 const& position, float speed);
 
     // symbol: ??0MoveControl@@QEAA@XZ
     MCAPI MoveControl();

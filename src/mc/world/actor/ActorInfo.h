@@ -13,7 +13,7 @@ public:
     MCAPI ActorInfo(struct ActorInfo const&);
 
     // symbol: ?load@ActorInfo@@QEAAXPEBVCompoundTag@@@Z
-    MCAPI void load(class CompoundTag const*);
+    MCAPI void load(class CompoundTag const* tag);
 
     // symbol: ??4ActorInfo@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct ActorInfo& operator=(struct ActorInfo const&);

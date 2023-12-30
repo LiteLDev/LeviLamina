@@ -27,10 +27,10 @@ public:
     MCAPI BossComponent(class BossComponent&&);
 
     // symbol: ?addPlayerToParty@BossComponent@@QEAAXVUUID@mce@@H@Z
-    MCAPI void addPlayerToParty(class mce::UUID, int);
+    MCAPI void addPlayerToParty(class mce::UUID id, int damage);
 
     // symbol: ?broadcastBossEvent@BossComponent@@QEAAXAEAVActor@@W4BossEventUpdateType@@@Z
-    MCAPI void broadcastBossEvent(class Actor&, ::BossEventUpdateType);
+    MCAPI void broadcastBossEvent(class Actor& owner, enum BossEventUpdateType type);
 
     // symbol: ?getColor@BossComponent@@QEBA?AW4BossBarColor@@XZ
     MCAPI ::BossBarColor getColor() const;
@@ -62,7 +62,7 @@ public:
     MCAPI bool getShouldDarkenSky() const;
 
     // symbol: ?handleRegisterPlayers@BossComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void handleRegisterPlayers(class Actor&);
+    MCAPI void handleRegisterPlayers(class Actor& owner);
 
     // symbol: ??4BossComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class BossComponent& operator=(class BossComponent&&);
@@ -71,39 +71,39 @@ public:
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
 
     // symbol: ?registerPlayer@BossComponent@@QEAAXAEAVActor@@PEAVPlayer@@@Z
-    MCAPI void registerPlayer(class Actor&, class Player*);
+    MCAPI void registerPlayer(class Actor& owner, class Player* player);
 
     // symbol: ?resendBossEventData@BossComponent@@QEAAXAEAVActor@@PEAVPlayer@@@Z
     MCAPI void resendBossEventData(class Actor&, class Player*);
 
     // symbol: ?sendDeathTelemetry@BossComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void sendDeathTelemetry(class Actor&);
+    MCAPI void sendDeathTelemetry(class Actor& owner);
 
     // symbol: ?setColor@BossComponent@@QEAAXAEAVActor@@W4BossBarColor@@@Z
-    MCAPI void setColor(class Actor&, ::BossBarColor);
+    MCAPI void setColor(class Actor& owner, enum BossBarColor color);
 
     // symbol: ?setHealthBarVisible@BossComponent@@QEAAXAEAVActor@@_N@Z
-    MCAPI void setHealthBarVisible(class Actor&, bool);
+    MCAPI void setHealthBarVisible(class Actor& owner, bool visible);
 
     // symbol: ?setHealthPercent@BossComponent@@QEAAXAEAVActor@@M@Z
-    MCAPI void setHealthPercent(class Actor&, float);
+    MCAPI void setHealthPercent(class Actor& owner, float percent);
 
     // symbol: ?setLastHealth@BossComponent@@QEAAXH@Z
-    MCAPI void setLastHealth(int);
+    MCAPI void setLastHealth(int lastHealth);
 
     // symbol:
     // ?setLastPlayerUpdate@BossComponent@@QEAAXV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
-    MCAPI void setLastPlayerUpdate(std::chrono::steady_clock::time_point);
+    MCAPI void setLastPlayerUpdate(std::chrono::steady_clock::time_point lastUpdate);
 
     // symbol:
     // ?setName@BossComponent@@QEAAXAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setName(class Actor&, std::string const&);
 
     // symbol: ?tryRemoveBoss@BossComponent@@QEAA_NAEAVActor@@AEAVPlayer@@@Z
-    MCAPI bool tryRemoveBoss(class Actor&, class Player&);
+    MCAPI bool tryRemoveBoss(class Actor& owner, class Player& player);
 
     // symbol: ?unRegisterPlayer@BossComponent@@QEAAXAEAVActor@@PEAVPlayer@@@Z
-    MCAPI void unRegisterPlayer(class Actor&, class Player*);
+    MCAPI void unRegisterPlayer(class Actor& owner, class Player* player);
 
     // symbol: ??1BossComponent@@QEAA@XZ
     MCAPI ~BossComponent();
@@ -113,7 +113,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_sendBossEvent@BossComponent@@AEAAXAEAVActor@@W4BossEventUpdateType@@PEAVPlayer@@@Z
-    MCAPI void _sendBossEvent(class Actor&, ::BossEventUpdateType, class Player*);
+    MCAPI void _sendBossEvent(class Actor& owner, enum BossEventUpdateType type, class Player* player);
 
     // NOLINTEND
 };

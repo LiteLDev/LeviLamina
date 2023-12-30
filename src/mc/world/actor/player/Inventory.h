@@ -39,19 +39,19 @@ public:
     virtual void __unk_vfn_34();
 
     // vIndex: 37, symbol: ?add@Inventory@@UEAA_NAEAVItemStack@@@Z
-    virtual bool add(class ItemStack&);
+    virtual bool add(class ItemStack& item);
 
     // vIndex: 38, symbol: ?canAdd@Inventory@@UEBA_NAEBVItemStack@@@Z
-    virtual bool canAdd(class ItemStack const&) const;
+    virtual bool canAdd(class ItemStack const& item) const;
 
     // vIndex: 42, symbol: ?getFirstEmptySlot@Inventory@@UEBAHXZ
     virtual int getFirstEmptySlot() const;
 
     // vIndex: 43, symbol: ?setContainerSize@Inventory@@UEAAXH@Z
-    virtual void setContainerSize(int);
+    virtual void setContainerSize(int size);
 
     // symbol: ??0Inventory@@QEAA@PEAVPlayer@@@Z
-    MCAPI explicit Inventory(class Player*);
+    MCAPI explicit Inventory(class Player* player);
 
     // symbol: ?dropSlot@Inventory@@QEAAXH_N00@Z
     MCAPI void dropSlot(int, bool, bool, bool);
@@ -60,7 +60,7 @@ public:
     MCAPI void setupDefault();
 
     // symbol: ?tick@Inventory@@QEAAXH@Z
-    MCAPI void tick(int);
+    MCAPI void tick(int selectedSlot);
 
     // NOLINTEND
 };

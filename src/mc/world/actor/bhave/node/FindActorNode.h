@@ -19,10 +19,10 @@ public:
     virtual ~FindActorNode() = default;
 
     // vIndex: 1, symbol: ?tick@FindActorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-    virtual ::BehaviorStatus tick(class Actor&);
+    virtual ::BehaviorStatus tick(class Actor& owner);
 
     // vIndex: 2, symbol: ?initializeFromDefinition@FindActorNode@@EEAAXAEAVActor@@@Z
-    virtual void initializeFromDefinition(class Actor&);
+    virtual void initializeFromDefinition(class Actor& owner);
 
     // NOLINTEND
 };

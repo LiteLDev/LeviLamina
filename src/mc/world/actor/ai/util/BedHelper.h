@@ -12,10 +12,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getBedRotation@BedHelper@@QEBAMH@Z
-    MCAPI float getBedRotation(int) const;
+    MCAPI float getBedRotation(int direction) const;
 
     // symbol: ?setBedPositionOffsets@BedHelper@@QEAAXHAEAM0AEAVVec3@@@Z
-    MCAPI void setBedPositionOffsets(int, float&, float&, class Vec3&);
+    MCAPI void setBedPositionOffsets(int direction, float& mobOffsetX, float& mobOffsetZ, class Vec3& bedOffset);
 
     // NOLINTEND
 };

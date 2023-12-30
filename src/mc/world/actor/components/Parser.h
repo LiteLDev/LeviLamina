@@ -130,30 +130,34 @@ public:
     MCAPI static void parse(class Json::Value const&, class SemVersion const&, uint&, char const*, uint);
 
     // symbol: ?serialize@Parser@@SAXAEBVActorDefinitionTrigger@@AEAVValue@Json@@PEBD@Z
-    MCAPI static void serialize(class ActorDefinitionTrigger const&, class Json::Value&, char const*);
+    MCAPI static void
+    serialize(class ActorDefinitionTrigger const& trigger, class Json::Value& val, char const* jsonName);
 
     // symbol:
     // ?serialize@Parser@@SAXAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEAVValue@Json@@PEBD@Z
-    MCAPI static void serialize(std::vector<class BlockDescriptor> const&, class Json::Value&, char const*);
+    MCAPI static void
+    serialize(std::vector<class BlockDescriptor> const& variable, class Json::Value& val, char const* jsonName);
 
     // symbol:
     // ?serialize@Parser@@SAXAEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@AEAVValue@Json@@PEBD@Z
-    MCAPI static void serialize(std::vector<class MobEffectInstance> const&, class Json::Value&, char const*);
+    MCAPI static void
+    serialize(std::vector<class MobEffectInstance> const& variable, class Json::Value& val, char const* jsonName);
 
     // symbol: ?serialize@Parser@@SAXAEBW4ActorType@@AEAVValue@Json@@PEBD@Z
-    MCAPI static void serialize(::ActorType const&, class Json::Value&, char const*);
+    MCAPI static void serialize(enum ActorType const& variable, class Json::Value& val, char const* jsonName);
 
     // symbol: ?serialize@Parser@@SAXAEBW4ParticleType@@AEAVValue@Json@@PEBD@Z
-    MCAPI static void serialize(::ParticleType const&, class Json::Value&, char const*);
+    MCAPI static void serialize(enum ParticleType const& variable, class Json::Value& val, char const* jsonName);
 
     // symbol: ?serialize@Parser@@SAXAEBW4FilterSubject@Legacy@Puv@@AEAVValue@Json@@PEBD@Z
     MCAPI static void serialize(::Puv::Legacy::FilterSubject const&, class Json::Value&, char const*);
 
     // symbol: ?serialize@Parser@@SAXAEBUActorDefinitionIdentifier@@AEAVValue@Json@@PEBD@Z
-    MCAPI static void serialize(struct ActorDefinitionIdentifier const&, class Json::Value&, char const*);
+    MCAPI static void
+    serialize(struct ActorDefinitionIdentifier const& variable, class Json::Value& val, char const* jsonName);
 
     // symbol: ?serialize@Parser@@SAXAEBUFloatRange@@AEAVValue@Json@@PEBD@Z
-    MCAPI static void serialize(struct FloatRange const&, class Json::Value&, char const*);
+    MCAPI static void serialize(struct FloatRange const& variable, class Json::Value& val, char const* jsonName);
 
     // NOLINTEND
 };

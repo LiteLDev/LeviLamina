@@ -18,17 +18,22 @@ public:
     virtual ~FlowerFeature();
 
     // vIndex: 3, symbol: ?place@FlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ??0FlowerFeature@@QEAA@AEBVBlock@@@Z
-    MCAPI explicit FlowerFeature(class Block const&);
+    MCAPI explicit FlowerFeature(class Block const& block);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_placeMushroom@FlowerFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandom@@@Z
-    MCAPI bool _placeMushroom(class BlockSource&, class BlockPos const&, class Block const&, class Random&) const;
+    MCAPI bool _placeMushroom(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class Block const&    mushroom,
+        class Random&         random
+    ) const;
 
     // NOLINTEND
 };

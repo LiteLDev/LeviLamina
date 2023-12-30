@@ -21,10 +21,10 @@ public:
     virtual ~RealmsUnknownPackSource() = default;
 
     // vIndex: 1, symbol: ?forEachPackConst@RealmsUnknownPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
-    virtual void forEachPackConst(std::function<void(class Pack const&)>) const;
+    virtual void forEachPackConst(std::function<void(class Pack const&)> callback) const;
 
     // vIndex: 2, symbol: ?forEachPack@RealmsUnknownPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
-    virtual void forEachPack(std::function<void(class Pack&)>);
+    virtual void forEachPack(std::function<void(class Pack&)> callback);
 
     // vIndex: 3, symbol: ?getPackOrigin@RealmsUnknownPackSource@@UEBA?AW4PackOrigin@@XZ
     virtual ::PackOrigin getPackOrigin() const;

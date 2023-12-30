@@ -24,7 +24,7 @@ public:
     // vIndex: 0, symbol: ??1RTCStatsMemberInterface@webrtc@@UEAA@XZ
     virtual ~RTCStatsMemberInterface();
 
-    // vIndex: 1, symbol: ?type@?$RTCStatsMember@I@webrtc@@UEBA?AW4Type@RTCStatsMemberInterface@2@XZ
+    // vIndex: 1, symbol: ?type@?$RTCStatsMember@_N@webrtc@@UEBA?AW4Type@RTCStatsMemberInterface@2@XZ
     virtual ::webrtc::RTCStatsMemberInterface::Type type() const = 0;
 
     // vIndex: 2, symbol: __unk_vfn_2
@@ -33,7 +33,7 @@ public:
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3() = 0;
 
-    // vIndex: 4, symbol: ?is_defined@?$RTCStatsMember@I@webrtc@@UEBA_NXZ
+    // vIndex: 4, symbol: ?is_defined@?$RTCStatsMember@_N@webrtc@@UEBA_NXZ
     virtual bool is_defined() const = 0;
 
     // vIndex: 5, symbol:
@@ -51,7 +51,7 @@ public:
     // ?ValueToJson@?$RTCStatsMember@N@webrtc@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string ValueToJson() const = 0;
 
-    // vIndex: 9, symbol: ?IsEqual@?$RTCStatsMember@I@webrtc@@MEBA_NAEBVRTCStatsMemberInterface@2@@Z
+    // vIndex: 9, symbol: ?IsEqual@?$RTCStatsMember@_N@webrtc@@MEBA_NAEBVRTCStatsMemberInterface@2@@Z
     virtual bool IsEqual(class webrtc::RTCStatsMemberInterface const&) const = 0;
 
     // NOLINTEND

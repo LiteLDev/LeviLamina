@@ -55,7 +55,12 @@ public:
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@DiggerItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
     // vIndex: 47, symbol: ?isValidRepairItem@DiggerItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
     virtual bool
@@ -86,10 +91,11 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 74, symbol: ?getDestroySpeed@DiggerItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
-    virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
+    virtual float getDestroySpeed(class ItemStackBase const& itemStack, class Block const& block) const;
 
     // vIndex: 79, symbol: ?mineBlock@DiggerItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool
+    mineBlock(class ItemStack& itemInstance, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -98,7 +104,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ?setBlocks@DiggerItem@@QEAAXAEBV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@std@@@Z
-    MCAPI void setBlocks(std::vector<class Block const*> const&);
+    MCAPI void setBlocks(std::vector<class Block const*> const& blocks);
 
     // NOLINTEND
 
@@ -106,7 +112,13 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0DiggerItem@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHAEBVTier@Item@@AEBV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@2@@Z
-    MCAPI DiggerItem(std::string const&, int, int, class Item::Tier const&, std::vector<class Block const*> const&);
+    MCAPI DiggerItem(
+        std::string const&                     name,
+        int                                    id,
+        int                                    attackDamage,
+        class Item::Tier const&                tier,
+        std::vector<class Block const*> const& blocks
+    );
 
     // NOLINTEND
 };

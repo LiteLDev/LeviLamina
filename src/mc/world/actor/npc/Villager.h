@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@Villager@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1Villager@@UEAA@XZ
     virtual ~Villager() = default;
@@ -68,7 +68,7 @@ public:
 
     // vIndex: 121, symbol:
     // ?buildDebugInfo@Villager@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void buildDebugInfo(std::string&) const;
+    virtual void buildDebugInfo(std::string& out) const;
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();

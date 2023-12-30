@@ -18,10 +18,10 @@ public:
     MCAPI class Vec3 ceil() const;
 
     // symbol: ?distanceToLineSquared@Vec3@@QEBAMAEBV1@0@Z
-    MCAPI float distanceToLineSquared(class Vec3 const&, class Vec3 const&) const;
+    MCAPI float distanceToLineSquared(class Vec3 const& p0, class Vec3 const& p1) const;
 
     // symbol: ?floor@Vec3@@QEBA?AV1@M@Z
-    MCAPI class Vec3 floor(float) const;
+    MCAPI class Vec3 floor(float offset) const;
 
     // symbol: ?isNan@Vec3@@QEBA_NXZ
     MCAPI bool isNan() const;
@@ -39,25 +39,25 @@ public:
     MCAPI class Vec3 normalized() const;
 
     // symbol: ??9Vec3@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class Vec3 const&) const;
+    MCAPI bool operator!=(class Vec3 const& rhs) const;
 
     // symbol: ??DVec3@@QEBA?AV0@M@Z
-    MCAPI class Vec3 operator*(float) const;
+    MCAPI class Vec3 operator*(float k) const;
 
     // symbol: ??XVec3@@QEAAAEAV0@M@Z
-    MCAPI class Vec3& operator*=(float);
+    MCAPI class Vec3& operator*=(float k);
 
     // symbol: ??HVec3@@QEBA?AV0@AEBV0@@Z
-    MCAPI class Vec3 operator+(class Vec3 const&) const;
+    MCAPI class Vec3 operator+(class Vec3 const& rhs) const;
 
     // symbol: ??YVec3@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class Vec3& operator+=(class Vec3 const&);
+    MCAPI class Vec3& operator+=(class Vec3 const& rhs);
 
     // symbol: ??GVec3@@QEBA?AV0@XZ
     MCAPI class Vec3 operator-() const;
 
     // symbol: ??8Vec3@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class Vec3 const&) const;
+    MCAPI bool operator==(class Vec3 const& rhs) const;
 
     // symbol: ?toString@Vec3@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString() const;
@@ -66,19 +66,19 @@ public:
     MCAPI class Vec3 xz() const;
 
     // symbol: ?clamp@Vec3@@SA?AV1@AEBV1@00@Z
-    MCAPI static class Vec3 clamp(class Vec3 const&, class Vec3 const&, class Vec3 const&);
+    MCAPI static class Vec3 clamp(class Vec3 const& v, class Vec3 const& clipMin, class Vec3 const& clipMax);
 
     // symbol: ?directionFromRotation@Vec3@@SA?AV1@AEBVVec2@@@Z
-    MCAPI static class Vec3 directionFromRotation(class Vec2 const&);
+    MCAPI static class Vec3 directionFromRotation(class Vec2 const& rot);
 
     // symbol: ?directionFromRotation@Vec3@@SA?AV1@MM@Z
-    MCAPI static class Vec3 directionFromRotation(float, float);
+    MCAPI static class Vec3 directionFromRotation(float rotX, float rotY);
 
     // symbol: ?fromXZ@Vec3@@SA?AV1@AEBVVec2@@M@Z
     MCAPI static class Vec3 fromXZ(class Vec2 const&, float);
 
     // symbol: ?rotationFromDirection@Vec3@@SA?AVVec2@@AEBV1@@Z
-    MCAPI static class Vec2 rotationFromDirection(class Vec3 const&);
+    MCAPI static class Vec2 rotationFromDirection(class Vec3 const& dir);
 
     // symbol: ?HALF@Vec3@@2V1@B
     MCAPI static class Vec3 const HALF;

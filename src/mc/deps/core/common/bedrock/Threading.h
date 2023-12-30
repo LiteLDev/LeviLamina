@@ -27,7 +27,7 @@ namespace Bedrock::Threading {
 MCAPI bool IS_RUNNING_STATICS();
 
 // symbol: ?MakeErrorCode@Threading@Bedrock@@YA?AVerror_code@std@@W4AsyncErrc@12@@Z
-MCAPI std::error_code MakeErrorCode(::Bedrock::Threading::AsyncErrc);
+MCAPI std::error_code MakeErrorCode(enum Bedrock::Threading::AsyncErrc id);
 
 // symbol: ?getDefaultWorkerPool@Threading@Bedrock@@YA?AV?$not_null@PEAVWorkerPool@@@gsl@@XZ
 MCAPI gsl::not_null<class WorkerPool*> getDefaultWorkerPool();

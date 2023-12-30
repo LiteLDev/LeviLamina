@@ -17,10 +17,10 @@ public:
     MCAPI void flush();
 
     // symbol: ?queue@BackgroundTaskQueue@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z
-    MCAPI void queue(std::shared_ptr<class BackgroundTaskBase>, bool);
+    MCAPI void queue(std::shared_ptr<class BackgroundTaskBase> task, bool queueImmediate);
 
     // symbol: ?tryPop@BackgroundTaskQueue@@QEAA?AV?$shared_ptr@VBackgroundTaskBase@@@std@@H@Z
-    MCAPI std::shared_ptr<class BackgroundTaskBase> tryPop(int);
+    MCAPI std::shared_ptr<class BackgroundTaskBase> tryPop(int minPriority);
 
     // symbol: ??1BackgroundTaskQueue@@QEAA@XZ
     MCAPI ~BackgroundTaskQueue();

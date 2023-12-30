@@ -82,13 +82,13 @@ public:
 
     // symbol:
     // ??0DoorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4DoorType@DoorBlock@@@Z
-    MCAPI DoorItem(std::string const&, int, ::DoorBlock::DoorType);
+    MCAPI DoorItem(std::string const& name, int id, enum DoorBlock::DoorType type);
 
     // symbol: ?getDoorBlock@DoorItem@@QEBAPEBVBlock@@XZ
     MCAPI class Block const* getDoorBlock() const;
 
     // symbol: ?place@DoorItem@@SA_NPEAVBlockSource@@HHHHPEBVBlock@@@Z
-    MCAPI static bool place(class BlockSource*, int, int, int, int, class Block const*);
+    MCAPI static bool place(class BlockSource* source, int x, int y, int z, int dir, class Block const* block);
 
     // NOLINTEND
 };

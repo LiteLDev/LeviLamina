@@ -26,10 +26,10 @@ public:
     virtual void readfromJSON(class Json::Value&, class SemVersion const&);
 
     // vIndex: 2, symbol: ?writetoJSON@FreezeOnHitSubcomponent@@UEBAXAEAVValue@Json@@@Z
-    virtual void writetoJSON(class Json::Value&) const;
+    virtual void writetoJSON(class Json::Value& component) const;
 
     // vIndex: 3, symbol: ?doOnHitEffect@FreezeOnHitSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    virtual void doOnHitEffect(class Actor& owner, class ProjectileComponent& component);
 
     // vIndex: 4, symbol: ?getName@FreezeOnHitSubcomponent@@UEAAPEBDXZ
     virtual char const* getName();

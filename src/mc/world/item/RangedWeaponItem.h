@@ -72,16 +72,17 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@RangedWeaponItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
     // vIndex: 73, symbol: ?releaseUsing@RangedWeaponItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-    virtual void releaseUsing(class ItemStack&, class Player*, int) const;
+    virtual void releaseUsing(class ItemStack& itemStack, class Player* player, int durationLeft) const;
 
     // vIndex: 75, symbol: ?hurtActor@RangedWeaponItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
     // vIndex: 79, symbol: ?mineBlock@RangedWeaponItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool
+    mineBlock(class ItemStack& itemStack, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -90,13 +91,14 @@ public:
     virtual void __unk_vfn_99();
 
     // vIndex: 105, symbol: ?getAnimationFrameFor@RangedWeaponItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-    virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
+    virtual int
+    getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
 
     // symbol: ??0RangedWeaponItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI RangedWeaponItem(std::string const&, int);
+    MCAPI RangedWeaponItem(std::string const& name, int id);
 
     // symbol: ?getLaunchPower@RangedWeaponItem@@QEBAMHHH@Z
-    MCAPI float getLaunchPower(int, int, int) const;
+    MCAPI float getLaunchPower(int durationLeft, int maxDrawDuration, int maxUseDuration) const;
 
     // NOLINTEND
 };

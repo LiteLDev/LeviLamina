@@ -85,13 +85,13 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 78, symbol: ?isInvulnerableTo@ArmorStand@@UEBA_NAEBVActorDamageSource@@@Z
-    virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
+    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
 
     // vIndex: 139, symbol: ?getInteraction@ArmorStand@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
-    virtual bool getInteraction(class Player&, class ActorInteraction&, class Vec3 const&);
+    virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
@@ -103,19 +103,19 @@ public:
     virtual void die(class ActorDamageSource const&);
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@ArmorStand@@UEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@ArmorStand@@UEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@ArmorStand@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@ArmorStand@@UEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -137,7 +137,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_causeDamage@ArmorStand@@AEAAXM@Z
-    MCAPI void _causeDamage(float);
+    MCAPI void _causeDamage(float dmg);
 
     // symbol: ?_destroyWithEffects@ArmorStand@@AEAAXPEAVActor@@@Z
     MCAPI void _destroyWithEffects(class Actor*);
@@ -149,7 +149,7 @@ public:
     MCAPI void _dropHeldItemsAndResource();
 
     // symbol: ?_dropItem@ArmorStand@@AEAAXAEBVItemStack@@@Z
-    MCAPI void _dropItem(class ItemStack const&);
+    MCAPI void _dropItem(class ItemStack const& item);
 
     // symbol: ?_trySwapItem@ArmorStand@@AEAA_NAEAVPlayer@@W4EquipmentSlot@Legacy@Puv@@@Z
     MCAPI bool _trySwapItem(class Player&, ::Puv::Legacy::EquipmentSlot);

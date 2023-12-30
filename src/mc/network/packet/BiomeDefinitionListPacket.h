@@ -26,11 +26,11 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@BiomeDefinitionListPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 4, symbol:
     // ?read@BiomeDefinitionListPacket@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
     // vIndex: 7, symbol:
     // ?_read@BiomeDefinitionListPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -40,7 +40,7 @@ public:
     MCAPI BiomeDefinitionListPacket();
 
     // symbol: ??0BiomeDefinitionListPacket@@QEAA@VCompoundTag@@@Z
-    MCAPI explicit BiomeDefinitionListPacket(class CompoundTag);
+    MCAPI explicit BiomeDefinitionListPacket(class CompoundTag biomeData);
 
     // NOLINTEND
 };

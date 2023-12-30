@@ -17,10 +17,10 @@ public:
     MCAPI PermissionsHandler();
 
     // symbol: ??0PermissionsHandler@@QEAA@AEBV0@@Z
-    MCAPI PermissionsHandler(class PermissionsHandler const&);
+    MCAPI PermissionsHandler(class PermissionsHandler const& rhs);
 
     // symbol: ?addSaveData@PermissionsHandler@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addSaveData(class CompoundTag&) const;
+    MCAPI void addSaveData(class CompoundTag& tag) const;
 
     // symbol: ?getCommandPermissions@PermissionsHandler@@QEBA?AW4CommandPermissionLevel@@XZ
     MCAPI ::CommandPermissionLevel getCommandPermissions() const;
@@ -29,17 +29,17 @@ public:
     MCAPI ::PlayerPermissionLevel getPlayerPermissions() const;
 
     // symbol: ?loadSaveData@PermissionsHandler@@QEAA_NAEBVCompoundTag@@@Z
-    MCAPI bool loadSaveData(class CompoundTag const&);
+    MCAPI bool loadSaveData(class CompoundTag const& tag);
 
     // symbol: ?setCommandPermissions@PermissionsHandler@@QEAAXW4CommandPermissionLevel@@@Z
-    MCAPI void setCommandPermissions(::CommandPermissionLevel);
+    MCAPI void setCommandPermissions(enum CommandPermissionLevel permissions);
 
     // symbol: ?setPlayerPermissions@PermissionsHandler@@QEAAXW4PlayerPermissionLevel@@@Z
-    MCAPI void setPlayerPermissions(::PlayerPermissionLevel);
+    MCAPI void setPlayerPermissions(enum PlayerPermissionLevel permissions);
 
     // symbol:
     // ?playerPermissionLevelFromString@PermissionsHandler@@SA?AW4PlayerPermissionLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static ::PlayerPermissionLevel playerPermissionLevelFromString(std::string const&);
+    MCAPI static ::PlayerPermissionLevel playerPermissionLevelFromString(std::string const& s);
 
     // symbol:
     // ?playerPermissionLevelToString@PermissionsHandler@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBW4PlayerPermissionLevel@@@Z

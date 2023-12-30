@@ -29,7 +29,7 @@ public:
     getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool, std::optional<class HashedString> const&);
 
     // vIndex: 4, symbol: ?initMobSpawnTypes@RandomScatteredLargeFeature@@UEAAXAEAVHardcodedSpawnAreaRegistry@@@Z
-    virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
+    virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry& spawnAreas);
 
     // vIndex: 5, symbol:
     // ?isFeatureChunk@RandomScatteredLargeFeature@@MEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
@@ -42,7 +42,7 @@ public:
     createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 
     // symbol: ??0RandomScatteredLargeFeature@@QEAA@I@Z
-    MCAPI explicit RandomScatteredLargeFeature(uint);
+    MCAPI explicit RandomScatteredLargeFeature(uint seed);
 
     // NOLINTEND
 };

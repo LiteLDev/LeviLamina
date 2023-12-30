@@ -27,7 +27,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@SetDefaultGameTypePacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@SetDefaultGameTypePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -37,7 +37,7 @@ public:
     MCAPI SetDefaultGameTypePacket();
 
     // symbol: ??0SetDefaultGameTypePacket@@QEAA@W4GameType@@@Z
-    MCAPI explicit SetDefaultGameTypePacket(::GameType);
+    MCAPI explicit SetDefaultGameTypePacket(enum GameType defaultGameType);
 
     // NOLINTEND
 };

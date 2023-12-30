@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?isBlockedDamageCause@ShieldItemUtils@@SA_NAEBVActorDamageSource@@@Z
-    MCAPI static bool isBlockedDamageCause(class ActorDamageSource const&);
+    MCAPI static bool isBlockedDamageCause(class ActorDamageSource const& source);
 
     // NOLINTEND
 

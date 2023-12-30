@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?createPacket@MinecraftPackets@@SA?AV?$shared_ptr@VPacket@@@std@@W4MinecraftPacketIds@@@Z
-    MCAPI static std::shared_ptr<class Packet> createPacket(::MinecraftPacketIds);
+    MCAPI static std::shared_ptr<class Packet> createPacket(enum MinecraftPacketIds id);
 
     // NOLINTEND
 };

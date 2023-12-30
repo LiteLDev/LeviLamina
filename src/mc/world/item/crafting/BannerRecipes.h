@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addRecipes@BannerRecipes@@SAXAEAVRecipes@@@Z
-    MCAPI static void addRecipes(class Recipes&);
+    MCAPI static void addRecipes(class Recipes& r);
 
     // NOLINTEND
 };

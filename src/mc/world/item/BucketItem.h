@@ -50,7 +50,7 @@ public:
     virtual void __unk_vfn_39();
 
     // vIndex: 42, symbol: ?isDestructive@BucketItem@@UEBA_NH@Z
-    virtual bool isDestructive(int) const;
+    virtual bool isDestructive(int auxValue) const;
 
     // vIndex: 43, symbol: ?isLiquidClipItem@BucketItem@@UEBA_NXZ
     virtual bool isLiquidClipItem() const;
@@ -59,7 +59,7 @@ public:
     virtual void __unk_vfn_52();
 
     // vIndex: 53, symbol: ?isValidAuxValue@BucketItem@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int auxValue) const;
 
     // vIndex: 56, symbol: __unk_vfn_56
     virtual void __unk_vfn_56();
@@ -83,26 +83,28 @@ public:
     virtual bool canUseOnSimTick() const;
 
     // vIndex: 70, symbol: ?use@BucketItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& itemStack, class Player& player) const;
 
     // vIndex: 71, symbol: ?dispense@BucketItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 72, symbol: ?useTimeDepleted@BucketItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
-    virtual ::ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
+    virtual ::ItemUseMethod
+    useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
 
     // vIndex: 73, symbol: ?releaseUsing@BucketItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-    virtual void releaseUsing(class ItemStack&, class Player*, int) const;
+    virtual void releaseUsing(class ItemStack& inoutInstance, class Player* player, int durationLeft) const;
 
     // vIndex: 81, symbol:
     // ?buildDescriptionId@BucketItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
     // vIndex: 85, symbol: ?getMaxStackSize@BucketItem@@UEBAEAEBVItemDescriptor@@@Z
-    virtual uchar getMaxStackSize(class ItemDescriptor const&) const;
+    virtual uchar getMaxStackSize(class ItemDescriptor const& item) const;
 
     // vIndex: 94, symbol: ?validFishInteraction@BucketItem@@UEBA_NH@Z
-    virtual bool validFishInteraction(int) const;
+    virtual bool validFishInteraction(int auxValue) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -144,7 +146,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?addBucketEntitySaveData@BucketItem@@IEBAXAEAVActor@@AEAVItemStack@@@Z
-    MCAPI void addBucketEntitySaveData(class Actor&, class ItemStack&) const;
+    MCAPI void addBucketEntitySaveData(class Actor& entity, class ItemStack& instance) const;
 
     // symbol: ?readBucketEntitySaveData@BucketItem@@IEBA_NAEAVBlockSource@@PEAVActor@@VBlockPos@@AEBVItemInstance@@@Z
     MCAPI bool
@@ -160,25 +162,25 @@ public:
 
     // symbol: ?_emptyBucket@BucketItem@@AEBA_NAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@PEAVActor@@AEBVItemStack@@E@Z
     MCAPI bool _emptyBucket(
-        class BlockSource&,
-        class Block const&,
-        class BlockPos const&,
-        class Actor*,
-        class ItemStack const&,
-        uchar
+        class BlockSource&     region,
+        class Block const&     contents,
+        class BlockPos const&  pos,
+        class Actor*           placer,
+        class ItemStack const& instance,
+        uchar                  face
     ) const;
 
     // symbol: ?_removeBubbleColumn@BucketItem@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _removeBubbleColumn(class BlockSource&, class BlockPos const&) const;
 
     // symbol: ?_takeLiquid@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z
-    MCAPI bool _takeLiquid(class ItemStack&, class Actor&, class BlockPos const&) const;
+    MCAPI bool _takeLiquid(class ItemStack& itemStack, class Actor& entity, class BlockPos const& pos) const;
 
     // symbol: ?_takePowderSnow@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z
     MCAPI bool _takePowderSnow(class ItemStack&, class Actor&, class BlockPos const&) const;
 
     // symbol: ?_tryGetBlock@BucketItem@@AEBAPEBVBlockLegacy@@W4BucketFillType@@@Z
-    MCAPI class BlockLegacy const* _tryGetBlock(::BucketFillType) const;
+    MCAPI class BlockLegacy const* _tryGetBlock(enum BucketFillType contents) const;
 
     // NOLINTEND
 

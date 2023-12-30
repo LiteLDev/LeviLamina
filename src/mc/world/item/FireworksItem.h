@@ -52,7 +52,12 @@ public:
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@FireworksItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       advancedToolTips
+    ) const;
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -76,10 +81,11 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@FireworksItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
     // vIndex: 71, symbol: ?dispense@FireworksItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -93,17 +99,20 @@ public:
     _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
 
     // symbol: ??0FireworksItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FireworksItem(std::string const&, int);
+    MCAPI FireworksItem(std::string const& nameId, int id);
 
     // symbol:
     // ?initFireworksRocketItem@FireworksItem@@SAAEBVItemInstance@@AEAV2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@H@Z
-    MCAPI static class ItemInstance const&
-    initFireworksRocketItem(class ItemInstance&, std::vector<class ItemInstance> const&, int);
+    MCAPI static class ItemInstance const& initFireworksRocketItem(
+        class ItemInstance&                    itemInstance,
+        std::vector<class ItemInstance> const& charges,
+        int                                    sulphurCount
+    );
 
     // symbol:
     // ?initFireworksRocketItem@FireworksItem@@SAAEBVItemStack@@AEAV2@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@H@Z
     MCAPI static class ItemStack const&
-    initFireworksRocketItem(class ItemStack&, std::vector<class ItemStack> const&, int);
+    initFireworksRocketItem(class ItemStack& itemStack, std::vector<class ItemStack> const& charges, int sulphurCount);
 
     // symbol: ?TAG_EXPLOSIONS@FireworksItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const TAG_EXPLOSIONS;

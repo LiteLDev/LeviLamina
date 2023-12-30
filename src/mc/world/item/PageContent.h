@@ -20,10 +20,10 @@ public:
     MCAPI ~PageContent();
 
     // symbol: ?read@PageContent@@SA?AU1@AEBVCompoundTag@@@Z
-    MCAPI static struct PageContent read(class CompoundTag const&);
+    MCAPI static struct PageContent read(class CompoundTag const& tag);
 
     // symbol: ?write@PageContent@@SAXAEBU1@AEAVCompoundTag@@@Z
-    MCAPI static void write(struct PageContent const&, class CompoundTag&);
+    MCAPI static void write(struct PageContent const& page, class CompoundTag& tag);
 
     // symbol: ?BLANK_PAGE@PageContent@@2U1@B
     MCAPI static struct PageContent const BLANK_PAGE;

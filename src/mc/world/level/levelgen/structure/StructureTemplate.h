@@ -33,7 +33,11 @@ public:
     MCAPI StructureTemplate(std::string_view, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>);
 
     // symbol: ?fillFromWorld@StructureTemplate@@QEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVStructureSettings@@@Z
-    MCAPI void fillFromWorld(class BlockSource&, class BlockPos const&, class StructureSettings const&);
+    MCAPI void fillFromWorld(
+        class BlockSource&             region,
+        class BlockPos const&          capturePosition,
+        class StructureSettings const& structureSettings
+    );
 
     // symbol: ?getBlockAtPos@StructureTemplate@@QEBAAEBVBlock@@AEBVBlockPos@@@Z
     MCAPI class Block const& getBlockAtPos(class BlockPos const&) const;
@@ -88,10 +92,16 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_fillBlockInfo@StructureTemplate@@AEAAXAEAVBlockSource@@AEBVBlockPos@@11@Z
-    MCAPI void _fillBlockInfo(class BlockSource&, class BlockPos const&, class BlockPos const&, class BlockPos const&);
+    MCAPI void _fillBlockInfo(
+        class BlockSource&    region,
+        class BlockPos const& minCorner,
+        class BlockPos const& maxCorner,
+        class BlockPos const& size
+    );
 
     // symbol: ?_fillEntityList@StructureTemplate@@AEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    MCAPI void _fillEntityList(class BlockSource&, class BlockPos const&, class BlockPos const&);
+    MCAPI void
+    _fillEntityList(class BlockSource& region, class BlockPos const& minCorner, class BlockPos const& maxCorner);
 
     // symbol: ?_placeEntitiesInWorld@StructureTemplate@@AEBAXAEAVBlockSource@@AEAVDataLoadHelper@@_N@Z
     MCAPI void _placeEntitiesInWorld(class BlockSource&, class DataLoadHelper&, bool) const;

@@ -25,7 +25,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@CameraPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol: ?_read@CameraPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
@@ -34,7 +34,7 @@ public:
     MCAPI CameraPacket();
 
     // symbol: ??0CameraPacket@@QEAA@UActorUniqueID@@0@Z
-    MCAPI CameraPacket(struct ActorUniqueID, struct ActorUniqueID);
+    MCAPI CameraPacket(struct ActorUniqueID cameraId, struct ActorUniqueID targetPlayerId);
 
     // NOLINTEND
 };

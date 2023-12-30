@@ -25,10 +25,10 @@ public:
     virtual ~NetworkStatistics();
 
     // vIndex: 1, symbol: ?packetSentTo@NetworkStatistics@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
-    virtual void packetSentTo(class NetworkIdentifier const&, class Packet const&, uint);
+    virtual void packetSentTo(class NetworkIdentifier const& target, class Packet const& packet, uint size);
 
     // vIndex: 2, symbol: ?packetReceivedFrom@NetworkStatistics@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
-    virtual void packetReceivedFrom(class NetworkIdentifier const&, class Packet const&, uint);
+    virtual void packetReceivedFrom(class NetworkIdentifier const& source, class Packet const& packet, uint size);
 
     // vIndex: 3, symbol:
     // ?dataSentTo@NetworkStatistics@@UEAAXAEBVNetworkIdentifier@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
@@ -36,7 +36,7 @@ public:
 
     // vIndex: 4, symbol:
     // ?dataReceivedFrom@NetworkStatistics@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void dataReceivedFrom(class NetworkIdentifier const&, std::string const&);
+    virtual void dataReceivedFrom(class NetworkIdentifier const& source, std::string const& data);
 
     // vIndex: 5, symbol: ?reset@NetworkStatistics@@UEAAXXZ
     virtual void reset();

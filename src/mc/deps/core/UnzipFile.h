@@ -28,7 +28,11 @@ public:
 
     // symbol:
     // ?appendCurrentFileContents@UnzipFile@Core@@QEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_KV?$function@$$A6AXHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@4@@Z
-    MCAPI void appendCurrentFileContents(std::string&, uint64, std::function<void(int, std::string const&)>);
+    MCAPI void appendCurrentFileContents(
+        std::string&                                 str,
+        uint64                                       bufferSize,
+        std::function<void(int, std::string const&)> onReadCallback
+    );
 
     // symbol:
     // ?getCurrentFileName@UnzipFile@Core@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -44,7 +48,7 @@ public:
     MCAPI bool isGood() const;
 
     // symbol: ?locateFile@UnzipFile@Core@@QEAA?AW4UnzipResult@ZipUtils@2@PEBDH@Z
-    MCAPI ::Core::ZipUtils::UnzipResult locateFile(char const*, int);
+    MCAPI ::Core::ZipUtils::UnzipResult locateFile(char const* fileName, int caseSensitivity);
 
     // symbol: ?openCurrentFileForReading@UnzipFile@Core@@QEAA?AW4UnzipResult@ZipUtils@2@XZ
     MCAPI ::Core::ZipUtils::UnzipResult openCurrentFileForReading();

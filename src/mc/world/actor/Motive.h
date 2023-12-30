@@ -18,7 +18,7 @@ public:
     MCAPI static std::vector<class Motive const*> getAllMotivesAsList();
 
     // symbol: ?getMotiveByName@Motive@@SAAEBV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class Motive const& getMotiveByName(std::string const&);
+    MCAPI static class Motive const& getMotiveByName(std::string const& name);
 
     // symbol: ?mAlban@Motive@@2V1@B
     MCAPI static class Motive const mAlban;

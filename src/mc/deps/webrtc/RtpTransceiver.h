@@ -7,9 +7,9 @@
 #include "mc/deps/webrtc/RtpSenderProxyWithInternal.h"
 #include "mc/deps/webrtc/RtpTransceiverDirection.h"
 #include "mc/deps/webrtc/SdpType.h"
-#include "mc/deps/webrtc/detail/ArrayView.h"
-#include "mc/deps/webrtc/detail/MediaType.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
+#include "mc/deps/webrtc/cricket/MediaType.h"
+#include "mc/deps/webrtc/rtc/ArrayView.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off

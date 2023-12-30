@@ -17,16 +17,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0SkinData@@QEAA@AEBVActor@@@Z
-    MCAPI explicit SkinData(class Actor const&);
+    MCAPI explicit SkinData(class Actor const& actor);
 
     // symbol: ??0SkinData@@QEAA@AEBVValue@Json@@@Z
-    MCAPI explicit SkinData(class Json::Value const&);
+    MCAPI explicit SkinData(class Json::Value const& skinDataJson);
 
     // symbol: ?applyToActor@SkinData@@QEBAXAEAVActor@@@Z
-    MCAPI void applyToActor(class Actor&) const;
+    MCAPI void applyToActor(class Actor& actor) const;
 
     // symbol: ?softMatch@SkinData@@QEBA_NAEBU1@AEA_N@Z
-    MCAPI bool softMatch(struct SkinData const&, bool&) const;
+    MCAPI bool softMatch(struct SkinData const& skinRef, bool& perfectMatch) const;
 
     // NOLINTEND
 };

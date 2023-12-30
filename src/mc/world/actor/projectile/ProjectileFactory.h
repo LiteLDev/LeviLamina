@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ProjectileFactory@@QEAA@AEAVLevel@@@Z
-    MCAPI explicit ProjectileFactory(class Level&);
+    MCAPI explicit ProjectileFactory(class Level& level);
 
     // symbol:
     // ?shootProjectileFromDefinition@ProjectileFactory@@QEAAPEAVActor@@AEBUActorDefinitionIdentifier@@PEAVMob@@VVec3@@HM@Z

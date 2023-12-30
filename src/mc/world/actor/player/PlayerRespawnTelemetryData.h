@@ -19,25 +19,25 @@ public:
     MCAPI PlayerRespawnTelemetryData();
 
     // symbol: ?WriteEventData@PlayerRespawnTelemetryData@@QEBAXAEAVEvent@Events@Social@@@Z
-    MCAPI void WriteEventData(class Social::Events::Event&) const;
+    MCAPI void WriteEventData(class Social::Events::Event& event) const;
 
     // symbol: ?setChangedDimension@PlayerRespawnTelemetryData@@QEAAX_N@Z
-    MCAPI void setChangedDimension(bool);
+    MCAPI void setChangedDimension(bool changed);
 
     // symbol: ?setJumpDistance@PlayerRespawnTelemetryData@@QEAAXN@Z
-    MCAPI void setJumpDistance(double);
+    MCAPI void setJumpDistance(double blockDistance);
 
     // symbol: ?setLongJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
-    MCAPI void setLongJumpCount(uint);
+    MCAPI void setLongJumpCount(uint jumps);
 
     // symbol: ?setPositionSourceType@PlayerRespawnTelemetryData@@QEAAXI@Z
-    MCAPI void setPositionSourceType(uint);
+    MCAPI void setPositionSourceType(uint spawnPositionSource);
 
     // symbol: ?setSearchTime@PlayerRespawnTelemetryData@@QEAAXN@Z
-    MCAPI void setSearchTime(double);
+    MCAPI void setSearchTime(double seconds);
 
     // symbol: ?setShortJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
-    MCAPI void setShortJumpCount(uint);
+    MCAPI void setShortJumpCount(uint jumps);
 
     // NOLINTEND
 

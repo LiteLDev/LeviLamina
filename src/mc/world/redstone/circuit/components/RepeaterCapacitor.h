@@ -21,23 +21,28 @@ public:
     virtual int getStrength() const;
 
     // vIndex: 3, symbol: ?setStrength@RepeaterCapacitor@@UEAAXH@Z
-    virtual void setStrength(int);
+    virtual void setStrength(int strength);
 
     // vIndex: 11, symbol:
     // ?addSource@RepeaterCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-    virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    virtual bool addSource(
+        class CircuitSceneGraph&         graph,
+        class CircuitTrackingInfo const& info,
+        int&                             dampening,
+        bool&                            bDirectlyPowered
+    );
 
     // vIndex: 13, symbol: ?checkLock@RepeaterCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
-    virtual void checkLock(class CircuitSystem&, class BlockPos const&);
+    virtual void checkLock(class CircuitSystem& system, class BlockPos const& pos);
 
     // vIndex: 14, symbol: ?evaluate@RepeaterCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-    virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
+    virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
 
     // vIndex: 15, symbol: ?cacheValues@RepeaterCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
-    virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
+    virtual void cacheValues(class CircuitSystem& system, class BlockPos const& pos);
 
     // vIndex: 16, symbol: ?updateDependencies@RepeaterCapacitor@@UEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z
-    virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
+    virtual void updateDependencies(class CircuitSceneGraph& system, class BlockPos const& pos);
 
     // vIndex: 17, symbol: __unk_vfn_17
     virtual void __unk_vfn_17();
@@ -52,7 +57,7 @@ public:
     MCAPI RepeaterCapacitor();
 
     // symbol: ?setDelay@RepeaterCapacitor@@QEAAXH@Z
-    MCAPI void setDelay(int);
+    MCAPI void setDelay(int delay);
 
     // NOLINTEND
 };

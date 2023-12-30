@@ -48,15 +48,19 @@ public:
 
     // vIndex: 8, symbol:
     // ?addAABBs@CauldronBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
-    virtual void
-    addAABBs(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&)
-        const;
+    virtual void addAABBs(
+        class Block const&       block,
+        class BlockSource const& region,
+        class BlockPos const&    pos,
+        class AABB const*        intersectTestBox,
+        std::vector<class AABB>& inoutBoxes
+    ) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@CauldronBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, enum BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -134,7 +138,8 @@ public:
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
 
     // vIndex: 92, symbol: ?neighborChanged@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 96, symbol: ?asItemInstance@CauldronBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
@@ -149,7 +154,9 @@ public:
     virtual void __unk_vfn_111();
 
     // vIndex: 112, symbol: ?getComparatorSignal@CauldronBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uchar) const;
+    virtual int
+    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
+        const;
 
     // vIndex: 114, symbol: __unk_vfn_114
     virtual void __unk_vfn_114();
@@ -167,7 +174,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -191,10 +198,11 @@ public:
     virtual struct Brightness getLight(class Block const&) const;
 
     // vIndex: 164, symbol: ?getResourceItem@CauldronBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance
+    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@CauldronBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol: ?hasComparatorSignal@CauldronBlock@@UEBA_NXZ
     MCVAPI bool hasComparatorSignal() const;
@@ -203,10 +211,12 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0CauldronBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CauldronBlock(std::string const&, int);
+    MCAPI CauldronBlock(std::string const& nameId, int id);
 
     // symbol: ?setLiquidLevel@CauldronBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@HW4CauldronLiquidType@@@Z
-    MCAPI void setLiquidLevel(class BlockSource&, class BlockPos const&, int, ::CauldronLiquidType) const;
+    MCAPI void
+    setLiquidLevel(class BlockSource& region, class BlockPos const& pos, int waterLevel, enum CauldronLiquidType type)
+        const;
 
     // symbol: ?canReceiveStalactiteDrip@CauldronBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@W4MaterialType@@@Z
     MCAPI static bool canReceiveStalactiteDrip(class BlockSource&, class BlockPos const&, ::MaterialType);
@@ -215,7 +225,8 @@ public:
     MCAPI static int clampLiquidLevel(int);
 
     // symbol: ?spawnPotionParticles@CauldronBlock@@SAXAEAVLevel@@AEBVVec3@@AEAVRandom@@HH@Z
-    MCAPI static void spawnPotionParticles(class Level&, class Vec3 const&, class Random&, int, int);
+    MCAPI static void
+    spawnPotionParticles(class Level& level, class Vec3 const& pos, class Random& random, int color, int count);
 
     // symbol: ?FILL_LEVEL_PER_DRIP@CauldronBlock@@2HB
     MCAPI static int const FILL_LEVEL_PER_DRIP;
@@ -228,18 +239,22 @@ public:
     MCAPI void _checkForStalactiteDrip(class BlockSource&, class BlockPos const&) const;
 
     // symbol: ?_explodeCauldronContents@CauldronBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@G@Z
-    MCAPI void _explodeCauldronContents(class BlockSource&, class BlockPos const&, ushort) const;
+    MCAPI void _explodeCauldronContents(class BlockSource& region, class BlockPos const& pos, ushort data) const;
 
     // symbol: ?_mayUpdateLiquidLevel@CauldronBlock@@AEBA?B_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool const _mayUpdateLiquidLevel(class BlockSource&, class BlockPos const&) const;
 
     // symbol:
     // ?_sendCauldronUsedEventToClient@CauldronBlock@@AEBAXAEBVPlayer@@FW4POIBlockInteractionType@MinecraftEventing@@@Z
-    MCAPI void
-    _sendCauldronUsedEventToClient(class Player const&, short, ::MinecraftEventing::POIBlockInteractionType) const;
+    MCAPI void _sendCauldronUsedEventToClient(
+        class Player const&                             player,
+        short                                           itemId,
+        enum MinecraftEventing::POIBlockInteractionType interactionType
+    ) const;
 
     // symbol: ?_spawnCauldronEvent@CauldronBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@W4LevelEvent@@@Z
-    MCAPI void _spawnCauldronEvent(class BlockSource&, class BlockPos const&, ::LevelEvent) const;
+    MCAPI void
+    _spawnCauldronEvent(class BlockSource& region, class BlockPos const& pos, enum LevelEvent levelEvent) const;
 
     // symbol:
     // ?_useDyeableComponent@CauldronBlock@@AEBA_NAEAVItemStack@@AEAVPlayer@@AEBVBlockPos@@AEAVCauldronBlockActor@@AEAVBlockSource@@H_N55@Z
@@ -256,7 +271,8 @@ public:
     ) const;
 
     // symbol: ?_useInventory@CauldronBlock@@AEBAXAEAVPlayer@@AEAVItemStack@@1H@Z
-    MCAPI void _useInventory(class Player&, class ItemStack&, class ItemStack&, int) const;
+    MCAPI void
+    _useInventory(class Player& player, class ItemStack& current, class ItemStack& replaceWith, int useCount) const;
 
     // NOLINTEND
 

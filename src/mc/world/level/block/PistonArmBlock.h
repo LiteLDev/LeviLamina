@@ -53,7 +53,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@PistonArmBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, enum BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -128,13 +128,15 @@ public:
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
 
     // vIndex: 92, symbol: ?neighborChanged@PistonArmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 93, symbol: ?getSecondPart@PistonArmBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-    virtual bool getSecondPart(class BlockSource const&, class BlockPos const&, class BlockPos&) const;
+    virtual bool getSecondPart(class BlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
 
     // vIndex: 94, symbol: ?playerWillDestroy@PistonArmBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
-    virtual class Block const* playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
+    virtual class Block const*
+    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 95, symbol:
     // ?spawnResources@PistonArmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
@@ -179,21 +181,23 @@ public:
     virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
 
     // vIndex: 164, symbol: ?getResourceItem@PistonArmBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance
+    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // symbol: ?canBeSilkTouched@PistonArmBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol:
     // ??0PistonArmBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@PistonBlock@@@Z
-    MCAPI PistonArmBlock(std::string const&, int, ::PistonBlock::Type);
+    MCAPI PistonArmBlock(std::string const& nameId, int id, enum PistonBlock::Type type);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_getCollisions@PistonArmBlock@@AEBAXAEAVAABB@@00E@Z
-    MCAPI void _getCollisions(class AABB&, class AABB&, class AABB&, uchar) const;
+    MCAPI void
+    _getCollisions(class AABB& armBaseAABB, class AABB& armAABB, class AABB& frontAABB, uchar facingDir) const;
 
     // symbol: ?_getResourceItem@PistonArmBlock@@AEBA?AVItemInstance@@XZ
     MCAPI class ItemInstance _getResourceItem() const;

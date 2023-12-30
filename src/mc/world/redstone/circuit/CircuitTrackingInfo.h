@@ -12,7 +12,8 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0CircuitTrackingInfo@@QEAA@V?$not_null@PEAVBaseCircuitComponent@@@gsl@@AEBVBlockPos@@H@Z
-    MCAPI CircuitTrackingInfo(gsl::not_null<class BaseCircuitComponent*>, class BlockPos const&, int);
+    MCAPI
+    CircuitTrackingInfo(gsl::not_null<class BaseCircuitComponent*> component, class BlockPos const& pos, int dampening);
 
     // NOLINTEND
 };

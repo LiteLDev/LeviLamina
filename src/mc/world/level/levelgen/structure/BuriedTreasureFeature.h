@@ -33,7 +33,7 @@ public:
     createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 
     // symbol: ??0BuriedTreasureFeature@@QEAA@I@Z
-    MCAPI explicit BuriedTreasureFeature(uint);
+    MCAPI explicit BuriedTreasureFeature(uint seed);
 
     // NOLINTEND
 };

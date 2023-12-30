@@ -36,14 +36,14 @@ public:
 
     // symbol:
     // ??0PackError@@QEAA@W4PackErrorType@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCAPI PackError(::PackErrorType, std::vector<std::string> const&);
+    MCAPI PackError(enum PackErrorType packErrorType, std::vector<std::string> const& errorParam);
 
     // symbol:
     // ?getErrorParameters@PackError@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
     MCAPI std::vector<std::string> const& getErrorParameters() const;
 
     // symbol: ?serialize@PackError@@QEAAXAEAVValue@Json@@@Z
-    MCAPI void serialize(class Json::Value&);
+    MCAPI void serialize(class Json::Value& out);
 
     // NOLINTEND
 };

@@ -128,7 +128,7 @@ public:
     virtual uchar getMappedFace(uchar, class Block const&) const;
 
     // vIndex: 133, symbol: ?getFaceFlip@JigsawBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
-    virtual ::Flip getFaceFlip(uchar, class Block const&) const;
+    virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -146,16 +146,16 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 165, symbol: ?getResourceCount@JigsawBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // symbol: ?isInteractiveBlock@JigsawBlock@@UEBA_NXZ
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0JigsawBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI JigsawBlock(std::string const&, int);
+    MCAPI JigsawBlock(std::string const& nameId, int id);
 
     // symbol: ?canAttach@JigsawBlock@@SA_NAEBVJigsawBlockInfo@@0@Z
-    MCAPI static bool canAttach(class JigsawBlockInfo const&, class JigsawBlockInfo const&);
+    MCAPI static bool canAttach(class JigsawBlockInfo const& block1, class JigsawBlockInfo const& block2);
 
     // NOLINTEND
 };

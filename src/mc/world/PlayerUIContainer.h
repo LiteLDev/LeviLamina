@@ -27,10 +27,10 @@ public:
     virtual void __unk_vfn_34();
 
     // symbol: ??0PlayerUIContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NH@Z
-    MCAPI PlayerUIContainer(std::string const&, bool, int);
+    MCAPI PlayerUIContainer(std::string const& name, bool customName, int size);
 
     // symbol: ?load@PlayerUIContainer@@QEAAXAEBVListTag@@AEBVSemVersion@@@Z
-    MCAPI void load(class ListTag const&, class SemVersion const&);
+    MCAPI void load(class ListTag const& inventoryList, class SemVersion const& version);
 
     // symbol: ?save@PlayerUIContainer@@QEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class ListTag> save() const;

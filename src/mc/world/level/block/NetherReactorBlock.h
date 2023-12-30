@@ -133,11 +133,11 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 165, symbol: ?getResourceCount@NetherReactorBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // symbol:
     // ??0NetherReactorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI NetherReactorBlock(std::string const&, int, class Material const&);
+    MCAPI NetherReactorBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
 };

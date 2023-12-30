@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addKeyFrame@StateAnimationVariable@@QEAAXMM@Z
-    MCAPI void addKeyFrame(float, float);
+    MCAPI void addKeyFrame(float parameterValue, float blendValue);
 
     // NOLINTEND
 };

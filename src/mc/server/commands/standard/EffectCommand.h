@@ -18,17 +18,17 @@ public:
     virtual ~EffectCommand() = default;
 
     // vIndex: 2, symbol: ?execute@EffectCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?setup@EffectCommand@@SAXAEAVCommandRegistry@@@Z
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?clear@EffectCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    MCAPI void clear(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void clear(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

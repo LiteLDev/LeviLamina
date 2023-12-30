@@ -103,7 +103,8 @@ public:
     virtual bool canContainLiquid() const;
 
     // vIndex: 61, symbol: ?checkIsPathable@LiquidBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    virtual bool
+    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -112,10 +113,11 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 83, symbol: ?mayPick@LiquidBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
-    virtual bool mayPick(class BlockSource const&, class Block const&, bool) const;
+    virtual bool mayPick(class BlockSource const& region, class Block const& block, bool liquid) const;
 
     // vIndex: 92, symbol: ?neighborChanged@LiquidBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -133,10 +135,10 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 121, symbol: ?getColor@LiquidBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getColor(class Block const&) const;
+    virtual int getColor(class Block const& block) const;
 
     // vIndex: 123, symbol: ?getColorAtPos@LiquidBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual int getColorAtPos(class BlockSource&, class BlockPos const&) const;
+    virtual int getColorAtPos(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 126, symbol: ?onGraphicsModeChanged@LiquidBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const&);
@@ -148,7 +150,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@LiquidBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -163,19 +165,19 @@ public:
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // vIndex: 165, symbol: ?getResourceCount@LiquidBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // symbol: ?canBeSilkTouched@LiquidBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0LiquidBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LiquidBlock(std::string const&, int, class Material const&);
+    MCAPI LiquidBlock(std::string const& nameId, int id, class Material const& material);
 
     // symbol: ?getTickDelay@LiquidBlock@@QEBAHAEAVBlockSource@@@Z
-    MCAPI int getTickDelay(class BlockSource&) const;
+    MCAPI int getTickDelay(class BlockSource& region) const;
 
     // symbol: ?getHeightFromDepth@LiquidBlock@@SAMH@Z
-    MCAPI static float getHeightFromDepth(int);
+    MCAPI static float getHeightFromDepth(int depth);
 
     // symbol: ?handleEntityInside@LiquidBlock@@SAXAEBVIConstBlockSource@@AEBVBlockPos@@AEAVVec3@@AEBVMaterial@@@Z
     MCAPI static void
@@ -186,13 +188,14 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?emitFizzParticle@LiquidBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void emitFizzParticle(class BlockSource&, class BlockPos const&) const;
+    MCAPI void emitFizzParticle(class BlockSource& region, class BlockPos const& p) const;
 
     // symbol: ?solidify@LiquidBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    MCAPI void solidify(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    MCAPI void
+    solidify(class BlockSource& region, class BlockPos const& pos, class BlockPos const& changedNeighbor) const;
 
     // symbol: ?trySpreadFire@LiquidBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    MCAPI void trySpreadFire(class BlockSource&, class BlockPos const&, class Random&) const;
+    MCAPI void trySpreadFire(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ?getDepth@LiquidBlock@@KAHAEBVIConstBlockSource@@AEBVBlockPos@@AEBVMaterial@@@Z
     MCAPI static int getDepth(class IConstBlockSource const&, class BlockPos const&, class Material const&);

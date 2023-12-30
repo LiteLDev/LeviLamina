@@ -15,14 +15,18 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?allowIncomingPacketId@ClassroomModeNetworkHandler@@UEAA_NAEBVNetworkIdentifier@@W4MinecraftPacketIds@@@Z
-    MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const&, ::MinecraftPacketIds);
+    MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const& id, enum MinecraftPacketIds packetId);
 
     // symbol:
     // ?onWebsocketRequest@ClassroomModeNetworkHandler@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z
-    MCVAPI void onWebsocketRequest(std::string const&, std::string const&, std::function<void(void)>);
+    MCVAPI void onWebsocketRequest(
+        std::string const&        serverAddress,
+        std::string const&        payload,
+        std::function<void(void)> errorCallback
+    );
 
     // symbol: ??0ClassroomModeNetworkHandler@@QEAA@_N@Z
-    MCAPI explicit ClassroomModeNetworkHandler(bool);
+    MCAPI explicit ClassroomModeNetworkHandler(bool isDedicatedServer);
 
     // NOLINTEND
 
@@ -30,7 +34,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_connect@ClassroomModeNetworkHandler@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void _connect(std::string const&);
+    MCAPI void _connect(std::string const& address);
 
     // NOLINTEND
 };

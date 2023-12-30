@@ -22,7 +22,7 @@ public:
     virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, ::Rotation const&) const;
 
     // symbol: ??0BlockIntersectionConstraint@@QEAA@AEAVStructureTemplate@@@Z
-    MCAPI explicit BlockIntersectionConstraint(class StructureTemplate&);
+    MCAPI explicit BlockIntersectionConstraint(class StructureTemplate& structure);
 
     // NOLINTEND
 };

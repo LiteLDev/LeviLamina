@@ -46,7 +46,7 @@ public:
     virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
 
     // symbol: ?addConnectionStateListener@LocalConnector@@UEAAXPEAVConnectionStateListener@Connector@@@Z
-    MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener*);
+    MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener* listener);
 
     // symbol: ?getIPv4Port@LocalConnector@@UEBAGXZ
     MCVAPI ushort getIPv4Port() const;
@@ -72,10 +72,10 @@ public:
     MCVAPI bool isIPv6Supported() const;
 
     // symbol: ?removeConnectionStateListener@LocalConnector@@UEAAXPEAVConnectionStateListener@Connector@@@Z
-    MCVAPI void removeConnectionStateListener(class Connector::ConnectionStateListener*);
+    MCVAPI void removeConnectionStateListener(class Connector::ConnectionStateListener* listener);
 
     // symbol: ?setupNatPunch@LocalConnector@@UEAAX_N@Z
-    MCVAPI void setupNatPunch(bool);
+    MCVAPI void setupNatPunch(bool connectToClient);
 
     // symbol:
     // ?startNatPunchingClient@LocalConnector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z

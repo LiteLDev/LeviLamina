@@ -78,7 +78,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ?validate@ChemistryItem@@SAXAEAVItemStackBase@@@Z
-    MCAPI static void validate(class ItemStackBase&);
+    MCAPI static void validate(class ItemStackBase& stack);
 
     // NOLINTEND
 };

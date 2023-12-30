@@ -83,7 +83,7 @@ public:
     _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
 
     // symbol: ??0SlabBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SlabBlockItem(std::string const&, int);
+    MCAPI SlabBlockItem(std::string const& name, int id);
 
     // NOLINTEND
 

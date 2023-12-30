@@ -21,7 +21,7 @@ public:
     MCVAPI bool canAlwaysEat() const;
 
     // symbol: ?eatItem@FoodItemComponent@@UEAAPEBVItem@@AEAVItemStack@@AEAVActor@@AEAVLevel@@@Z
-    MCVAPI class Item const* eatItem(class ItemStack&, class Actor&, class Level&);
+    MCVAPI class Item const* eatItem(class ItemStack& instance, class Actor& actor, class Level& level);
 
     // symbol: ?getNutrition@FoodItemComponent@@UEBAHXZ
     MCVAPI int getNutrition() const;
@@ -30,10 +30,10 @@ public:
     MCVAPI float getSaturationModifier() const;
 
     // symbol: ?use@FoodItemComponent@@UEAA_NAEAVItemStack@@AEAVPlayer@@@Z
-    MCVAPI bool use(class ItemStack&, class Player&);
+    MCVAPI bool use(class ItemStack& instance, class Player& player);
 
     // symbol: ?useTimeDepleted@FoodItemComponent@@UEAAPEBVItem@@AEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z
-    MCVAPI class Item const* useTimeDepleted(class ItemStack&, class Player&, class Level&);
+    MCVAPI class Item const* useTimeDepleted(class ItemStack& instance, class Player& player, class Level& level);
 
     // symbol: ??0FoodItemComponent@@QEAA@XZ
     MCAPI FoodItemComponent();

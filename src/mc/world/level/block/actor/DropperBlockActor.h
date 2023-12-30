@@ -19,16 +19,16 @@ public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // symbol: ?_onUpdatePacket@DropperBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    MCVAPI void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ?getName@DropperBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getName() const;
 
     // symbol: ??0DropperBlockActor@@QEAA@VBlockPos@@@Z
-    MCAPI explicit DropperBlockActor(class BlockPos);
+    MCAPI explicit DropperBlockActor(class BlockPos pos);
 
     // symbol: ?pushOutItems@DropperBlockActor@@QEAA_NAEAVBlockSource@@@Z
-    MCAPI bool pushOutItems(class BlockSource&);
+    MCAPI bool pushOutItems(class BlockSource& region);
 
     // symbol: ?addItemsToContainerAndDepleteStack@DropperBlockActor@@SA_NAEAVContainer@@AEAVItemStack@@HH@Z
     MCAPI static bool addItemsToContainerAndDepleteStack(class Container&, class ItemStack&, int, int);

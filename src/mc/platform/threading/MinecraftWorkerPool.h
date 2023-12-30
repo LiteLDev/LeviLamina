@@ -30,7 +30,7 @@ public:
     MCAPI static void initializeDefaults();
 
     // symbol: ?loadWorkerConfigurations@MinecraftWorkerPool@@SAXII@Z
-    MCAPI static void loadWorkerConfigurations(uint, uint);
+    MCAPI static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
 
     // symbol: ?ASYNC@MinecraftWorkerPool@@2V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@A
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> ASYNC;

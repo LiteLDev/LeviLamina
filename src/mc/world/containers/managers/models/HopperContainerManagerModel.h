@@ -23,10 +23,15 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0HopperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI HopperContainerManagerModel(::ContainerID, class Player&, class BlockPos const&);
+    MCAPI
+    HopperContainerManagerModel(enum ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
     // symbol: ??0HopperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
-    MCAPI HopperContainerManagerModel(::ContainerID, class Player&, struct ActorUniqueID const&);
+    MCAPI HopperContainerManagerModel(
+        enum ContainerID            containerId,
+        class Player&               player,
+        struct ActorUniqueID const& uniqueID
+    );
 
     // NOLINTEND
 };

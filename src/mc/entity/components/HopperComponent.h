@@ -17,7 +17,7 @@ public:
     MCAPI class BlockPos getLastPosition() const;
 
     // symbol: ?pullInItems@HopperComponent@@QEAA_NAEAVActor@@@Z
-    MCAPI bool pullInItems(class Actor&);
+    MCAPI bool pullInItems(class Actor& owner);
 
     // NOLINTEND
 };

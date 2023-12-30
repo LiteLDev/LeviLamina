@@ -43,11 +43,11 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@WitherBoss@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 5, symbol:
     // ?reloadHardcodedClient@WitherBoss@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcodedClient(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcodedClient(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1WitherBoss@@UEAA@XZ
     virtual ~WitherBoss() = default;
@@ -62,7 +62,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 32, symbol: ?startRiding@WitherBoss@@UEAA_NAEAVActor@@@Z
-    virtual bool startRiding(class Actor&);
+    virtual bool startRiding(class Actor& ride);
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
@@ -83,10 +83,10 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 78, symbol: ?isInvulnerableTo@WitherBoss@@UEBA_NAEBVActorDamageSource@@@Z
-    virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
+    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@WitherBoss@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(enum ActorEvent id, int data);
 
     // vIndex: 101, symbol: ?canFreeze@WitherBoss@@UEBA_NXZ
     virtual bool canFreeze() const;
@@ -101,25 +101,25 @@ public:
     virtual bool canBeAffected(uint) const;
 
     // vIndex: 125, symbol: ?canBeAffectedByArrow@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z
-    virtual bool canBeAffectedByArrow(class MobEffectInstance const&) const;
+    virtual bool canBeAffectedByArrow(class MobEffectInstance const& effect) const;
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
 
     // vIndex: 147, symbol: ?die@WitherBoss@@UEAAXAEBVActorDamageSource@@@Z
-    virtual void die(class ActorDamageSource const&);
+    virtual void die(class ActorDamageSource const& source);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@WitherBoss@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@WitherBoss@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@WitherBoss@@UEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -128,7 +128,7 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 176, symbol: ?hurtEffects@WitherBoss@@UEAAXAEBVActorDamageSource@@M_N1@Z
-    virtual void hurtEffects(class ActorDamageSource const&, float, bool, bool);
+    virtual void hurtEffects(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 177, symbol: ?aiStep@WitherBoss@@UEAAXXZ
     virtual void aiStep();
@@ -146,10 +146,10 @@ public:
     MCAPI void awardSpawnWitherAchievement() const;
 
     // symbol: ?getHeadPos@WitherBoss@@QEBA?AVVec3@@H@Z
-    MCAPI class Vec3 getHeadPos(int) const;
+    MCAPI class Vec3 getHeadPos(int headID) const;
 
     // symbol: ?getHeadRot@WitherBoss@@QEAA?AVVec2@@H@Z
-    MCAPI class Vec2 getHeadRot(int);
+    MCAPI class Vec2 getHeadRot(int headID);
 
     // symbol: ?getInvulnerableTicks@WitherBoss@@QEBAHXZ
     MCAPI int getInvulnerableTicks() const;
@@ -158,7 +158,7 @@ public:
     MCAPI float getOverlayAlpha();
 
     // symbol: ?getSwellAmount@WitherBoss@@QEBAMM@Z
-    MCAPI float getSwellAmount(float) const;
+    MCAPI float getSwellAmount(float a) const;
 
     // symbol: ?hasAerialAttack@WitherBoss@@QEBA_NXZ
     MCAPI bool hasAerialAttack() const;
@@ -173,22 +173,22 @@ public:
     MCAPI void removeSkeleton();
 
     // symbol: ?setAerialAttack@WitherBoss@@QEAAX_N@Z
-    MCAPI void setAerialAttack(bool);
+    MCAPI void setAerialAttack(bool aerialAttack);
 
     // symbol: ?setAlternativeTarget@WitherBoss@@QEAAXHUActorUniqueID@@@Z
-    MCAPI void setAlternativeTarget(int, struct ActorUniqueID);
+    MCAPI void setAlternativeTarget(int headIndex, struct ActorUniqueID entityId);
 
     // symbol: ?setInvulnerableTicks@WitherBoss@@QEAAXH@Z
-    MCAPI void setInvulnerableTicks(int);
+    MCAPI void setInvulnerableTicks(int invulnerableTicks);
 
     // symbol: ?setIsPathing@WitherBoss@@QEAAX_N@Z
-    MCAPI void setIsPathing(bool);
+    MCAPI void setIsPathing(bool isPathing);
 
     // symbol: ?setShotDelay@WitherBoss@@QEAAXH@Z
-    MCAPI void setShotDelay(int);
+    MCAPI void setShotDelay(int delay);
 
     // symbol: ?setWantsToMove@WitherBoss@@QEAAX_N@Z
-    MCAPI void setWantsToMove(bool);
+    MCAPI void setWantsToMove(bool shouldMove);
 
     // symbol: ?wantsToMove@WitherBoss@@QEAA_NXZ
     MCAPI bool wantsToMove();
@@ -207,10 +207,10 @@ public:
     MCAPI void _destroyBlocks(class Level&, class AABB const&, class BlockSource&, int, ::WitherBoss::WitherAttackType);
 
     // symbol: ?_performRangedAttack@WitherBoss@@AEAAXHAEAVActor@@@Z
-    MCAPI void _performRangedAttack(int, class Actor&);
+    MCAPI void _performRangedAttack(int headID, class Actor& target);
 
     // symbol: ?_performRangedAttack@WitherBoss@@AEAAXHAEBVVec3@@_N@Z
-    MCAPI void _performRangedAttack(int, class Vec3 const&, bool);
+    MCAPI void _performRangedAttack(int headID, class Vec3 const& targetPos, bool dangerous);
 
     // symbol: ?canShoot@WitherBoss@@AEAA_NXZ
     MCAPI bool canShoot();

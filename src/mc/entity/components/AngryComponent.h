@@ -50,13 +50,13 @@ public:
     MCAPI class AngryComponent& operator=(class AngryComponent&&);
 
     // symbol: ?restartTimer@AngryComponent@@QEAAXAEAVMob@@@Z
-    MCAPI void restartTimer(class Mob&);
+    MCAPI void restartTimer(class Mob& owner);
 
     // symbol: ?setAngry@AngryComponent@@QEAAXAEAVMob@@_N@Z
-    MCAPI void setAngry(class Mob&, bool);
+    MCAPI void setAngry(class Mob& owner, bool value);
 
     // symbol: ?setHasTicked@AngryComponent@@QEAAX_N@Z
-    MCAPI void setHasTicked(bool);
+    MCAPI void setHasTicked(bool hasTicked);
 
     // symbol: ?setNextSoundEventTick@AngryComponent@@QEAAXAEBVMob@@@Z
     MCAPI void setNextSoundEventTick(class Mob const&);

@@ -33,7 +33,7 @@ public:
     MCVAPI void onLevelDestruction(std::string const&);
 
     // symbol: ?onUri@AutomationClient@Automation@@UEAAXAEBVActivationUri@@@Z
-    MCVAPI void onUri(class ActivationUri const&);
+    MCVAPI void onUri(class ActivationUri const& uri);
 
     // symbol: ?playerListChanged@AutomationClient@Automation@@UEAAXXZ
     MCVAPI void playerListChanged();
@@ -57,7 +57,7 @@ public:
     MCVAPI void tick();
 
     // symbol: ??0AutomationClient@Automation@@QEAA@AEAVIMinecraftApp@@@Z
-    MCAPI explicit AutomationClient(class IMinecraftApp&);
+    MCAPI explicit AutomationClient(class IMinecraftApp& minecraft);
 
     // symbol:
     // ?getDefaultSession@AutomationClient@Automation@@QEAA?AV?$shared_ptr@VAutomationSession@Automation@@@std@@XZ
@@ -74,10 +74,10 @@ public:
     MCAPI bool isReadyForInGameCommands();
 
     // symbol: ?setRequireEncryption@AutomationClient@Automation@@QEAAX_N@Z
-    MCAPI void setRequireEncryption(bool);
+    MCAPI void setRequireEncryption(bool isEncryptionRequired);
 
     // symbol: ?setServerRetryTime@AutomationClient@Automation@@QEAAXM@Z
-    MCAPI void setServerRetryTime(float);
+    MCAPI void setServerRetryTime(float retryTime);
 
     // NOLINTEND
 

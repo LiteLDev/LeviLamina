@@ -23,26 +23,26 @@ public:
     virtual ~Recipe();
 
     // vIndex: 1, symbol:
-    // ?assemble@SmithingTrimRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
+    // ?assemble@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
     virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const = 0;
 
-    // vIndex: 2, symbol: ?getCraftingSize@ShapelessRecipe@@UEBAHXZ
+    // vIndex: 2, symbol: ?getCraftingSize@BannerAddPatternRecipe@@UEBAHXZ
     virtual int getCraftingSize() const = 0;
 
-    // vIndex: 3, symbol: ?getIngredient@MapLockingRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-    virtual class RecipeIngredient const& getIngredient(int, int) const = 0;
+    // vIndex: 3, symbol: ?getIngredient@BannerAddPatternRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+    virtual class RecipeIngredient const& getIngredient(int x, int y) const = 0;
 
     // vIndex: 4, symbol:
-    // ?getResultItem@MapLockingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+    // ?getResultItem@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
     virtual std::vector<class ItemInstance> const& getResultItem() const = 0;
 
     // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5() = 0;
 
-    // vIndex: 6, symbol: ?matches@SmithingTrimRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
+    // vIndex: 6, symbol: ?matches@BannerAddPatternRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
     virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const = 0;
 
-    // vIndex: 7, symbol: ?size@ShapelessRecipe@@UEBAHXZ
+    // vIndex: 7, symbol: ?size@BannerAddPatternRecipe@@UEBAHXZ
     virtual int size() const = 0;
 
     // vIndex: 8, symbol: ?getId@Recipe@@UEBAAEBVUUID@mce@@XZ
@@ -58,10 +58,11 @@ public:
     virtual bool itemValidForRecipe(class ItemDescriptor const&, class ItemStack const&) const;
 
     // vIndex: 12, symbol: ?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@0@Z
-    virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&) const;
+    virtual bool itemsMatch(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs) const;
 
     // vIndex: 13, symbol: ?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@0PEBVCompoundTag@@@Z
-    virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&, class CompoundTag const*) const;
+    virtual bool
+    itemsMatch(class ItemDescriptor const& lhs, class ItemDescriptor const& rhs, class CompoundTag const* rhsTag) const;
 
     // vIndex: 14, symbol: ?getIngredientsHash@Recipe@@UEBA_KXZ
     virtual uint64 getIngredientsHash() const;
@@ -70,7 +71,7 @@ public:
     virtual void loadResultList(class BlockPalette const&) const;
 
     // symbol: ?countQuantityOfIngredient@Recipe@@QEBAHAEBVItemInstance@@@Z
-    MCAPI int countQuantityOfIngredient(class ItemInstance const&) const;
+    MCAPI int countQuantityOfIngredient(class ItemInstance const& ingredient) const;
 
     // symbol: ?getHeight@Recipe@@QEBAHXZ
     MCAPI int getHeight() const;
@@ -101,7 +102,7 @@ public:
     MCAPI void setNetId(RecipeNetId const&);
 
     // symbol: ?isAnyAuxValue@Recipe@@SA_NAEBVItemDescriptor@@@Z
-    MCAPI static bool isAnyAuxValue(class ItemDescriptor const&);
+    MCAPI static bool isAnyAuxValue(class ItemDescriptor const& ii);
 
     // NOLINTEND
 

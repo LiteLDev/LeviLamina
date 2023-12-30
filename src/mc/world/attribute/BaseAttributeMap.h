@@ -43,19 +43,19 @@ public:
     MCAPI std::vector<class AttributeInstanceHandle> const& getDirtyAttributes() const;
 
     // symbol: ?getInstance@BaseAttributeMap@@QEBAAEBVAttributeInstance@@AEBVAttribute@@@Z
-    MCAPI class AttributeInstance const& getInstance(class Attribute const&) const;
+    MCAPI class AttributeInstance const& getInstance(class Attribute const& attribute) const;
 
     // symbol: ?getInstance@BaseAttributeMap@@QEBAAEBVAttributeInstance@@I@Z
-    MCAPI class AttributeInstance const& getInstance(uint) const;
+    MCAPI class AttributeInstance const& getInstance(uint idValue) const;
 
     // symbol: ?getMutableInstance@BaseAttributeMap@@QEAAPEAVAttributeInstance@@AEBVAttribute@@@Z
-    MCAPI class AttributeInstance* getMutableInstance(class Attribute const&);
+    MCAPI class AttributeInstance* getMutableInstance(class Attribute const& attribute);
 
     // symbol: ?getMutableInstance@BaseAttributeMap@@QEAAPEAVAttributeInstance@@AEBVHashedString@@@Z
-    MCAPI class AttributeInstance* getMutableInstance(class HashedString const&);
+    MCAPI class AttributeInstance* getMutableInstance(class HashedString const& name);
 
     // symbol: ?getMutableInstance@BaseAttributeMap@@QEAAPEAVAttributeInstance@@I@Z
-    MCAPI class AttributeInstance* getMutableInstance(uint);
+    MCAPI class AttributeInstance* getMutableInstance(uint idValue);
 
     // symbol:
     // ?getSyncableAttributes@BaseAttributeMap@@QEBA?AV?$vector@VAttributeInstanceHandle@@V?$allocator@VAttributeInstanceHandle@@@std@@@std@@XZ
@@ -65,7 +65,7 @@ public:
     MCAPI void inheritFrom(class BaseAttributeMap const&);
 
     // symbol: ?registerAttribute@BaseAttributeMap@@QEAAAEAVAttributeInstance@@AEBVAttribute@@@Z
-    MCAPI class AttributeInstance& registerAttribute(class Attribute const&);
+    MCAPI class AttributeInstance& registerAttribute(class Attribute const& baseAttribute);
 
     // symbol: ?size@BaseAttributeMap@@QEBA_KXZ
     MCAPI uint64 size() const;

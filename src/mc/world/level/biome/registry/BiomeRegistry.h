@@ -57,7 +57,7 @@ public:
     MCAPI BiomeRegistry();
 
     // symbol: ?forEachBiome@BiomeRegistry@@QEBAXV?$function@$$A6AXAEAVBiome@@@Z@std@@@Z
-    MCAPI void forEachBiome(std::function<void(class Biome&)>) const;
+    MCAPI void forEachBiome(std::function<void(class Biome&)> callback) const;
 
     // symbol:
     // ?getTagRegistry@BiomeRegistry@@QEAAAEAV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@XZ
@@ -79,15 +79,15 @@ public:
     MCAPI class Biome* lookupByHash(class HashedString const&) const;
 
     // symbol: ?lookupById@BiomeRegistry@@QEBAPEAVBiome@@H@Z
-    MCAPI class Biome* lookupById(int) const;
+    MCAPI class Biome* lookupById(int id) const;
 
     // symbol:
     // ?lookupByName@BiomeRegistry@@QEBAPEAVBiome@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Biome* lookupByName(std::string const&) const;
+    MCAPI class Biome* lookupByName(std::string const& name) const;
 
     // symbol:
     // ?registerBiome@BiomeRegistry@@QEAAAEAVBiome@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Biome& registerBiome(std::string const&);
+    MCAPI class Biome& registerBiome(std::string const& name);
 
     // NOLINTEND
 
@@ -100,15 +100,19 @@ public:
 
     // symbol:
     // ?_buildInheritanceTree@BiomeRegistry@@AEAA?AV?$InheritanceTree@UBiomeParent@BiomeRegistry@@@@AEAVResourcePackManager@@@Z
-    MCAPI class InheritanceTree<struct BiomeRegistry::BiomeParent> _buildInheritanceTree(class ResourcePackManager&);
+    MCAPI class InheritanceTree<struct BiomeRegistry::BiomeParent>
+    _buildInheritanceTree(class ResourcePackManager& loader);
 
     // symbol: ?_initTagRegistry@BiomeRegistry@@AEAAXXZ
     MCAPI void _initTagRegistry();
 
     // symbol:
     // ?_loadSingleBiome@BiomeRegistry@@AEAA_NAEAVResourcePackManager@@AEAV?$InheritanceTree@UBiomeParent@BiomeRegistry@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool
-    _loadSingleBiome(class ResourcePackManager&, class InheritanceTree<struct BiomeRegistry::BiomeParent>&, std::string const&);
+    MCAPI bool _loadSingleBiome(
+        class ResourcePackManager&                                loader,
+        class InheritanceTree<struct BiomeRegistry::BiomeParent>& inheritance,
+        std::string const&                                        biomeName
+    );
 
     // symbol:
     // ?_mergeDataInheritance@BiomeRegistry@@AEAAXAEAVValue@Json@@AEAVSemVersion@@AEAV?$InheritanceTree@UBiomeParent@BiomeRegistry@@@@AEBUBiomeParent@1@@Z

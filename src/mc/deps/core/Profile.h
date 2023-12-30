@@ -18,23 +18,27 @@ MCAPI void counterSet(class Core::Profile::CounterTokenMarker, int64);
 
 // symbol:
 // ?generateCounterTokenWithConfig@Profile@Core@@YA?AVCounterTokenMarker@12@PEBDW4CounterFormat@12@_JW4CounterFlags@12@@Z
-MCAPI class Core::Profile::CounterTokenMarker
-generateCounterTokenWithConfig(char const*, ::Core::Profile::CounterFormat, int64, ::Core::Profile::CounterFlags);
+MCAPI class Core::Profile::CounterTokenMarker generateCounterTokenWithConfig(
+    char const*                       label,
+    enum Core::Profile::CounterFormat format,
+    int64                             limit,
+    enum Core::Profile::CounterFlags  flags
+);
 
 // symbol: ?initializeProfile@Profile@Core@@YAXXZ
 MCAPI void initializeProfile();
 
 // symbol: ?onFileOpenFailed@Profile@Core@@YAX_N@Z
-MCAPI void onFileOpenFailed(bool);
+MCAPI void onFileOpenFailed(bool isReadOnly);
 
 // symbol: ?onFileOpenRequest@Profile@Core@@YAX_N@Z
-MCAPI void onFileOpenRequest(bool);
+MCAPI void onFileOpenRequest(bool isReadOnly);
 
 // symbol: ?onFileOpenRetry@Profile@Core@@YAX_N@Z
-MCAPI void onFileOpenRetry(bool);
+MCAPI void onFileOpenRetry(bool isReadOnly);
 
 // symbol: ?onFileOpenRetrySuccess@Profile@Core@@YAX_N@Z
-MCAPI void onFileOpenRetrySuccess(bool);
+MCAPI void onFileOpenRetrySuccess(bool isReadOnly);
 
 // symbol: ?onMainThreadCreate@Profile@Core@@YAXXZ
 MCAPI void onMainThreadCreate();

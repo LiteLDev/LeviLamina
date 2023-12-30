@@ -23,7 +23,7 @@ public:
     virtual char const* getJsonName() const;
 
     // symbol: ?parse@RuntimeIdentifierDescription@@QEAAXAEBVValue@Json@@@Z
-    MCAPI void parse(class Json::Value const&);
+    MCAPI void parse(class Json::Value const& root);
 
     // NOLINTEND
 };

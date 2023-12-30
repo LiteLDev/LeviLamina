@@ -18,10 +18,10 @@ public:
     virtual ~LegacyIceFeature() = default;
 
     // vIndex: 3, symbol: ?place@LegacyIceFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
     // symbol: ??0LegacyIceFeature@@QEAA@AEBVFeatureRegistry@@@Z
-    MCAPI explicit LegacyIceFeature(class FeatureRegistry const&);
+    MCAPI explicit LegacyIceFeature(class FeatureRegistry const& registry);
 
     // NOLINTEND
 };

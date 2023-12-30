@@ -119,10 +119,11 @@ public:
     virtual bool mayPick() const;
 
     // vIndex: 85, symbol: ?mayPlace@FireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@FireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -146,13 +147,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@FireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@FireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -170,10 +171,11 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0FireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FireBlock(std::string const&, int);
+    MCAPI FireBlock(std::string const& nameId, int id);
 
     // symbol: ?checkBurn@FireBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@HAEAVRandomize@@H@Z
-    MCAPI void checkBurn(class BlockSource&, class BlockPos const&, int, class Randomize&, int) const;
+    MCAPI void
+    checkBurn(class BlockSource& region, class BlockPos const& pos, int chance, class Randomize& random, int age) const;
 
     // symbol: ?isSolidToppedBlock@FireBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isSolidToppedBlock(class BlockSource&, class BlockPos const&);
@@ -189,10 +191,10 @@ public:
     MCAPI bool _trySpawnSoulFire(class BlockSource&, class BlockPos const&) const;
 
     // symbol: ?getFireOdds@FireBlock@@AEBAMAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI float getFireOdds(class BlockSource&, class BlockPos const&) const;
+    MCAPI float getFireOdds(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?isValidFireLocation@FireBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool isValidFireLocation(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool isValidFireLocation(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

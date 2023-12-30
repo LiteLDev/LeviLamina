@@ -36,7 +36,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?writeValue@FastWriter@Json@@AEAAXAEBVValue@2@@Z
-    MCAPI void writeValue(class Json::Value const&);
+    MCAPI void writeValue(class Json::Value const& value);
 
     // NOLINTEND
 };

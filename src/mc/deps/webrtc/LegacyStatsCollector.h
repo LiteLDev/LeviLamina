@@ -7,7 +7,7 @@
 #include "mc/deps/webrtc/PeerConnectionInterface.h"
 #include "mc/deps/webrtc/RtpTransceiverProxyWithInternal.h"
 #include "mc/deps/webrtc/StatsReport.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off

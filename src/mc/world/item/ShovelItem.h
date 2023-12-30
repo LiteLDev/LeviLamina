@@ -47,7 +47,7 @@ public:
     virtual void __unk_vfn_17();
 
     // vIndex: 30, symbol: ?canDestroySpecial@ShovelItem@@UEBA_NAEBVBlock@@@Z
-    virtual bool canDestroySpecial(class Block const&) const;
+    virtual bool canDestroySpecial(class Block const& block) const;
 
     // vIndex: 37, symbol: __unk_vfn_37
     virtual void __unk_vfn_37();
@@ -91,7 +91,7 @@ public:
     _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
 
     // symbol: ??0ShovelItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z
-    MCAPI ShovelItem(std::string const&, int, class Item::Tier const&);
+    MCAPI ShovelItem(std::string const& name, int id, class Item::Tier const& tier);
 
     // NOLINTEND
 };

@@ -24,7 +24,12 @@ public:
 
     // symbol:
     // ?onBlockPlacedByPlayer@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z
-    MCVAPI ::EventResult onBlockPlacedByPlayer(class Player&, class Block const&, class BlockPos const&, bool);
+    MCVAPI ::EventResult onBlockPlacedByPlayer(
+        class Player&         player,
+        class Block const&    placedBlock,
+        class BlockPos const& pos,
+        bool                  isUnderwater
+    );
 
     // symbol: ?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerDamageEvent@@@Z
     MCVAPI ::EventResult onEvent(struct PlayerDamageEvent const&);
@@ -37,11 +42,13 @@ public:
 
     // symbol:
     // ?onPlayerMovementAnomaly@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
-    MCVAPI ::EventResult onPlayerMovementAnomaly(class Player&, class Vec3 const&, float, float);
+    MCVAPI ::EventResult
+    onPlayerMovementAnomaly(class Player& player, class Vec3 const& clientPos, float posDelta, float observedScore);
 
     // symbol:
     // ?onPlayerMovementCorrected@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
-    MCVAPI ::EventResult onPlayerMovementCorrected(class Player&, class Vec3 const&, float, float);
+    MCVAPI ::EventResult
+    onPlayerMovementCorrected(class Player& player, class Vec3 const& clientPos, float posDelta, float observedScore);
 
     // NOLINTEND
 };

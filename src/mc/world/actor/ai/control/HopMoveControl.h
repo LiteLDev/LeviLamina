@@ -17,10 +17,11 @@ public:
     virtual ~HopMoveControl() = default;
 
     // vIndex: 2, symbol: ?tick@HopMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
     // vIndex: 3, symbol: ?setWantedPosition@HopMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@AEBVVec3@@M@Z
-    virtual void setWantedPosition(class MoveControlComponent&, class Mob&, class Vec3 const&, float);
+    virtual void
+    setWantedPosition(class MoveControlComponent& parent, class Mob& mob, class Vec3 const& pos, float speed);
 
     // symbol: ??0HopMoveControl@@QEAA@XZ
     MCAPI HopMoveControl();

@@ -18,13 +18,13 @@ public:
     virtual ~StructurePoolBlockPredicateBlockMatch() = default;
 
     // vIndex: 1, symbol: ?test@StructurePoolBlockPredicateBlockMatch@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
-    virtual bool test(class Block const&, class Randomize&) const;
+    virtual bool test(class Block const& block, class Randomize& random) const;
 
     // vIndex: 2, symbol: ?test@StructurePoolBlockPredicateBlockMatch@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
     virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
 
     // symbol: ??0StructurePoolBlockPredicateBlockMatch@@QEAA@AEBVBlock@@@Z
-    MCAPI explicit StructurePoolBlockPredicateBlockMatch(class Block const&);
+    MCAPI explicit StructurePoolBlockPredicateBlockMatch(class Block const& block);
 
     // symbol:
     // ??0StructurePoolBlockPredicateBlockMatch@@QEAA@V?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@std@@@Z

@@ -18,14 +18,14 @@ public:
     virtual ~IceSpikeFeature() = default;
 
     // vIndex: 3, symbol: ?place@IceSpikeFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_isValidPlaceBlock@IceSpikeFeature@@AEBA_NAEBVBlock@@@Z
-    MCAPI bool _isValidPlaceBlock(class Block const&) const;
+    MCAPI bool _isValidPlaceBlock(class Block const& block) const;
 
     // NOLINTEND
 };

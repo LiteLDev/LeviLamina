@@ -17,18 +17,23 @@ public:
     MCAPI int getDelayTicks() const;
 
     // symbol: ?initFromDefinition@TransformationComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor& actor);
 
     // symbol:
     // ?maintainOldData@TransformationComponent@@QEAAXAEAVActor@@0AEBUTransformationDescription@@AEBUActorUniqueID@@AEBVLevel@@@Z
-    MCAPI void
-    maintainOldData(class Actor&, class Actor&, struct TransformationDescription const&, struct ActorUniqueID const&, class Level const&);
+    MCAPI void maintainOldData(
+        class Actor&                            originalActor,
+        class Actor&                            transformed,
+        struct TransformationDescription const& transformation,
+        struct ActorUniqueID const&             ownerID,
+        class Level const&                      level
+    );
 
     // symbol: ?reloadComponent@TransformationComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void reloadComponent(class Actor&);
+    MCAPI void reloadComponent(class Actor& actor);
 
     // symbol: ?setDelayTicks@TransformationComponent@@QEAAXH@Z
-    MCAPI void setDelayTicks(int);
+    MCAPI void setDelayTicks(int delayTicks);
 
     // symbol: ?transformIfAble@TransformationComponent@@QEAAXAEAVActor@@_N@Z
     MCAPI void transformIfAble(class Actor&, bool);

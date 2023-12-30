@@ -31,13 +31,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_areKnownFilesValid@ResourceSignature@@AEAA_NAEBVPackAccessStrategy@@_N@Z
-    MCAPI bool _areKnownFilesValid(class PackAccessStrategy const&, bool);
+    MCAPI bool _areKnownFilesValid(class PackAccessStrategy const& accessStrategy, bool requiresSignaturesFile);
 
     // symbol: ?_checkSignedFiles@ResourceSignature@@AEBA_NAEBVPackAccessStrategy@@@Z
-    MCAPI bool _checkSignedFiles(class PackAccessStrategy const&) const;
+    MCAPI bool _checkSignedFiles(class PackAccessStrategy const& accessStrategy) const;
 
     // symbol: ?_loadSignaturesFile@ResourceSignature@@AEAAXAEBVPath@Core@@AEBVPackAccessStrategy@@@Z
-    MCAPI void _loadSignaturesFile(class Core::Path const&, class PackAccessStrategy const&);
+    MCAPI void _loadSignaturesFile(class Core::Path const& filePath, class PackAccessStrategy const& accessStrategy);
 
     // NOLINTEND
 };

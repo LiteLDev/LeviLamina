@@ -41,7 +41,7 @@ public:
     virtual void __unk_vfn_6() = 0;
 
     // vIndex: 7, symbol: ?setupCommands@VanillaGameModuleServer@@UEAAXAEAVCommandRegistry@@@Z
-    virtual void setupCommands(class CommandRegistry&) = 0;
+    virtual void setupCommands(class CommandRegistry& commandRegistry) = 0;
 
     // vIndex: 8, symbol:
     // ?configureServerNetworkHandler@VanillaGameModuleServer@@UEAAXAEAVServerInstance@@V?$not_null@V?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@@gsl@@@Z

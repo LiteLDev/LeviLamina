@@ -27,7 +27,7 @@ public:
     virtual ~IControl();
 
     // vIndex: 1, symbol:
-    // ?buildJson@TextInputControl@ScriptModuleMinecraftServerUI@@UEBA?AV?$Result@VValue@Json@@$$V@Scripting@@AEAVPlayer@@W4CurrentCmdVersion@@@Z
+    // ?buildJson@DropdownControl@ScriptModuleMinecraftServerUI@@UEBA?AV?$Result@VValue@Json@@$$V@Scripting@@AEAVPlayer@@W4CurrentCmdVersion@@@Z
     virtual class Scripting::Result<class Json::Value> buildJson(class Player&, ::CurrentCmdVersion) const = 0;
 
     // NOLINTEND

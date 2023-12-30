@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/webrtc/SdpType.h"
-#include "mc/deps/webrtc/detail/IceRole.h"
-#include "mc/deps/webrtc/detail/SSLHandshakeError.h"
-#include "mc/deps/webrtc/detail/SSLRole.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
+#include "mc/deps/webrtc/cricket/IceRole.h"
+#include "mc/deps/webrtc/rtc/SSLHandshakeError.h"
+#include "mc/deps/webrtc/rtc/SSLRole.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off

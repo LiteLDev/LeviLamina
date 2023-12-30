@@ -22,19 +22,20 @@ public:
     MCAPI SchedulerDefinition();
 
     // symbol: ?initialize@SchedulerDefinition@@QEBAXAEAVEntityContext@@AEAVSchedulerComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class SchedulerComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class SchedulerComponent& component) const;
 
     // symbol: ?setMaxDelayTicks@SchedulerDefinition@@QEAAXAEBM@Z
-    MCAPI void setMaxDelayTicks(float const&);
+    MCAPI void setMaxDelayTicks(float const& seconds);
 
     // symbol: ?setMinDelayTicks@SchedulerDefinition@@QEAAXAEBM@Z
-    MCAPI void setMinDelayTicks(float const&);
+    MCAPI void setMinDelayTicks(float const& seconds);
 
     // symbol:
     // ?buildSchema@SchedulerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSchedulerDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SchedulerDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SchedulerDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

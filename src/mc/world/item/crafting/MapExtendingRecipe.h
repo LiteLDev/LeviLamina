@@ -30,7 +30,7 @@ public:
     virtual int getCraftingSize() const;
 
     // vIndex: 3, symbol: ?getIngredient@MapExtendingRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-    virtual class RecipeIngredient const& getIngredient(int, int) const;
+    virtual class RecipeIngredient const& getIngredient(int x, int y) const;
 
     // vIndex: 4, symbol:
     // ?getResultItem@MapExtendingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ

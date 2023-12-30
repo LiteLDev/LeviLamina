@@ -42,7 +42,7 @@ public:
     virtual void __unk_vfn_17();
 
     // vIndex: 23, symbol: ?setMaxDamage@ChemistryStickItem@@UEAAAEAVItem@@H@Z
-    virtual class Item& setMaxDamage(int);
+    virtual class Item& setMaxDamage(int maxDamage);
 
     // vIndex: 37, symbol: __unk_vfn_37
     virtual void __unk_vfn_37();
@@ -76,20 +76,23 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@ChemistryStickItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& itemStack, class Player& player) const;
 
     // vIndex: 72, symbol:
     // ?useTimeDepleted@ChemistryStickItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
-    virtual ::ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
+    virtual ::ItemUseMethod
+    useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
 
     // vIndex: 75, symbol: ?hurtActor@ChemistryStickItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
     // vIndex: 79, symbol: ?mineBlock@ChemistryStickItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool
+    mineBlock(class ItemStack& itemStack, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
     // vIndex: 86, symbol: ?inventoryTick@ChemistryStickItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
-    virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
+    virtual bool
+    inventoryTick(class ItemStack& itemStack, class Level& level, class Actor& owner, int slot, bool selected) const;
 
     // vIndex: 90, symbol: ?fixupCommon@ChemistryStickItem@@UEBAXAEAVItemStackBase@@@Z
     virtual void fixupCommon(class ItemStackBase&) const;
@@ -107,13 +110,13 @@ public:
     MCVAPI bool uniqueAuxValues() const;
 
     // symbol: ??0ChemistryStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ChemistryStickItem(std::string const&, int);
+    MCAPI ChemistryStickItem(std::string const& name, int id_);
 
     // symbol: ?getColorType@ChemistryStickItem@@SA?AW4ItemColor@@H@Z
-    MCAPI static ::ItemColor getColorType(int);
+    MCAPI static ::ItemColor getColorType(int data);
 
     // symbol: ?isActive@ChemistryStickItem@@SA_NH@Z
-    MCAPI static bool isActive(int);
+    MCAPI static bool isActive(int data);
 
     // symbol: ?isChemistryStick@ChemistryStickItem@@SA_NAEBVItemStackBase@@@Z
     MCAPI static bool isChemistryStick(class ItemStackBase const&);

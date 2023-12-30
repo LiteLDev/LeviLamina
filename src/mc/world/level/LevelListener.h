@@ -82,67 +82,90 @@ public:
     virtual void __unk_vfn_21();
 
     // vIndex: 22, symbol: ?onChunkUnloaded@LevelListener@@UEAAXAEAVLevelChunk@@@Z
-    virtual void onChunkUnloaded(class LevelChunk&);
+    virtual void onChunkUnloaded(class LevelChunk& lc);
 
     // vIndex: 23, symbol:
     // ?onLevelDestruction@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void onLevelDestruction(std::string const&);
+    virtual void onLevelDestruction(std::string const& levelId);
 
     // vIndex: 24, symbol: __unk_vfn_24
     virtual void __unk_vfn_24();
 
     // vIndex: 25, symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
-    virtual void levelEvent(::LevelEvent, class Vec3 const&, int);
+    virtual void levelEvent(enum LevelEvent type, class Vec3 const& pos, int data);
 
     // symbol: ?addBreakingItemParticleEffect@LevelListener@@UEAAXAEBVVec3@@W4ParticleType@@AEBUResolvedItemIconInfo@@@Z
     MCVAPI void addBreakingItemParticleEffect(class Vec3 const&, ::ParticleType, struct ResolvedItemIconInfo const&);
 
     // symbol: ?addParticleEffect@LevelListener@@UEAAXAEBVHashedString@@AEBVActor@@0AEBVVec3@@AEBVMolangVariableMap@@@Z
-    MCVAPI void
-    addParticleEffect(class HashedString const&, class Actor const&, class HashedString const&, class Vec3 const&, class MolangVariableMap const&);
+    MCVAPI void addParticleEffect(
+        class HashedString const&      effect,
+        class Actor const&             actor,
+        class HashedString const&      locator,
+        class Vec3 const&              emitterOffset,
+        class MolangVariableMap const& molangVariables
+    );
 
     // symbol: ?addTerrainParticleEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
-    MCVAPI void
-    addTerrainParticleEffect(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float);
+    MCVAPI void addTerrainParticleEffect(
+        class BlockPos const& pos,
+        class Block const&    block,
+        class Vec3 const&     emitterPosition,
+        float                 intensity,
+        float                 velocityScalar,
+        float                 emitterRadius
+    );
 
     // symbol: ?addTerrainSlideEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
-    MCVAPI void
-    addTerrainSlideEffect(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float);
+    MCVAPI void addTerrainSlideEffect(
+        class BlockPos const& pos,
+        class Block const&    block,
+        class Vec3 const&     emitterPosition,
+        float                 intensity,
+        float                 velocityScalar,
+        float                 emitterRadius
+    );
 
     // symbol: ?allChanged@LevelListener@@UEAAXXZ
     MCVAPI void allChanged();
 
     // symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
-    MCVAPI void levelEvent(::LevelEvent, class CompoundTag const&);
+    MCVAPI void levelEvent(enum LevelEvent type, class CompoundTag const& data);
 
     // symbol: ?onChunkReloaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
     MCVAPI void onChunkReloaded(class ChunkSource&, class LevelChunk&);
 
     // symbol: ?onEntityAdded@LevelListener@@UEAAXAEAVActor@@@Z
-    MCVAPI void onEntityAdded(class Actor&);
+    MCVAPI void onEntityAdded(class Actor& entity);
 
     // symbol: ?onEntityRemoved@LevelListener@@UEAAXAEAVActor@@@Z
-    MCVAPI void onEntityRemoved(class Actor&);
+    MCVAPI void onEntityRemoved(class Actor& entity);
 
     // symbol: ?onSubChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@F_N@Z
     MCVAPI void onSubChunkLoaded(class ChunkSource&, class LevelChunk&, short, bool);
 
     // symbol:
     // ?playMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
-    MCVAPI void playMusic(std::string const&, class Vec3 const&, float, float);
+    MCVAPI void playMusic(std::string const& name, class Vec3 const& pos, float songOffset, float volume);
 
     // symbol:
     // ?playStreamingMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
-    MCVAPI void playStreamingMusic(std::string const&, int, int, int);
+    MCVAPI void playStreamingMusic(std::string const& name, int x, int y, int z);
 
     // symbol: ?playerListChanged@LevelListener@@UEAAXXZ
     MCVAPI void playerListChanged();
 
     // symbol: ?sendServerLegacyParticle@LevelListener@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
-    MCVAPI void sendServerLegacyParticle(::ParticleType, class Vec3 const&, class Vec3 const&, int);
+    MCVAPI void
+    sendServerLegacyParticle(enum ParticleType name, class Vec3 const& pos, class Vec3 const& dir, int data);
 
     // symbol: ?takePicture@LevelListener@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
-    MCVAPI void takePicture(class cg::ImageBuffer&, class Actor*, class Actor*, struct ScreenshotOptions&);
+    MCVAPI void takePicture(
+        class cg::ImageBuffer&    outImage,
+        class Actor*              camera,
+        class Actor*              target,
+        struct ScreenshotOptions& screenshotOptions
+    );
 
     // NOLINTEND
 };

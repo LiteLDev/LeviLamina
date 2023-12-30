@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ActorDefinition@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit ActorDefinition(std::string const&);
+    MCAPI explicit ActorDefinition(std::string const& id);
 
     // symbol:
     // ?parse@ActorDefinition@@QEAA?AW4ActorDefinitionParseStatus@@UDeserializeDataParams@@AEAVActorDefinitionDescriptor@@AEAVActorFactory@@W4LogArea@@@Z

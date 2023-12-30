@@ -65,7 +65,7 @@ public:
     virtual void onLightningHit();
 
     // vIndex: 83, symbol: ?handleEntityEvent@VillagerBase@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(enum ActorEvent event, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -77,10 +77,10 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@VillagerBase@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@VillagerBase@@UEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -104,13 +104,13 @@ public:
     MCAPI bool isChasing() const;
 
     // symbol: ?isWillingToBreed@VillagerBase@@QEAA_N_N@Z
-    MCAPI bool isWillingToBreed(bool);
+    MCAPI bool isWillingToBreed(bool consumeFoodIfNecessary);
 
     // symbol: ?setChasing@VillagerBase@@QEAAX_N@Z
-    MCAPI void setChasing(bool);
+    MCAPI void setChasing(bool chasing);
 
     // symbol: ?setWillingToBreed@VillagerBase@@QEAAX_N@Z
-    MCAPI void setWillingToBreed(bool);
+    MCAPI void setWillingToBreed(bool willingToBreed);
 
     // symbol: ?stopGoals@VillagerBase@@QEAAXXZ
     MCAPI void stopGoals();
@@ -120,7 +120,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_addParticlesAroundSelf@VillagerBase@@AEAAXW4ParticleType@@@Z
-    MCAPI void _addParticlesAroundSelf(::ParticleType);
+    MCAPI void _addParticlesAroundSelf(enum ParticleType particleType);
 
     // NOLINTEND
 };

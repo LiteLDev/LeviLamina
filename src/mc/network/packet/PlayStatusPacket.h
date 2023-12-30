@@ -27,7 +27,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@PlayStatusPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@PlayStatusPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -37,7 +37,7 @@ public:
     MCAPI PlayStatusPacket();
 
     // symbol: ??0PlayStatusPacket@@QEAA@W4PlayStatus@@@Z
-    MCAPI explicit PlayStatusPacket(::PlayStatus);
+    MCAPI explicit PlayStatusPacket(enum PlayStatus status);
 
     // NOLINTEND
 };

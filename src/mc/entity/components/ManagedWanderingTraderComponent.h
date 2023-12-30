@@ -12,10 +12,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initFromDefinition@ManagedWanderingTraderComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor& actor);
 
     // symbol: ?reloadComponent@ManagedWanderingTraderComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void reloadComponent(class Actor&);
+    MCAPI void reloadComponent(class Actor& actor);
 
     // NOLINTEND
 };

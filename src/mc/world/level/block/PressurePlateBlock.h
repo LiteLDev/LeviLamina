@@ -131,17 +131,22 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 169, symbol: ?getSignalStrength@PressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual int getSignalStrength(class BlockSource&, class BlockPos const&) const;
+    virtual int getSignalStrength(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 170, symbol: ?getSignalForData@PressurePlateBlock@@MEBAHH@Z
-    virtual int getSignalForData(int) const;
+    virtual int getSignalForData(int data) const;
 
     // vIndex: 171, symbol: ?getRedstoneSignal@PressurePlateBlock@@MEBAHH@Z
-    virtual int getRedstoneSignal(int) const;
+    virtual int getRedstoneSignal(int signal) const;
 
     // symbol:
     // ??0PressurePlateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@W4Sensitivity@0@@Z
-    MCAPI PressurePlateBlock(std::string const&, int, class Material const&, ::PressurePlateBlock::Sensitivity);
+    MCAPI PressurePlateBlock(
+        std::string const&                   nameId,
+        int                                  id,
+        class Material const&                material,
+        enum PressurePlateBlock::Sensitivity sensitivity
+    );
 
     // NOLINTEND
 };

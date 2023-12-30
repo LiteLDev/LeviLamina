@@ -15,10 +15,10 @@ public:
     virtual ~SavedData();
 
     // vIndex: 1, symbol: ?deserialize@PortalForcer@@UEAAXAEBVCompoundTag@@@Z
-    virtual void deserialize(class CompoundTag const&) = 0;
+    virtual void deserialize(class CompoundTag const& tag) = 0;
 
     // vIndex: 2, symbol: ?serialize@PortalForcer@@UEBAXAEAVCompoundTag@@@Z
-    virtual void serialize(class CompoundTag&) const = 0;
+    virtual void serialize(class CompoundTag& tag) const = 0;
 
     // NOLINTEND
 };

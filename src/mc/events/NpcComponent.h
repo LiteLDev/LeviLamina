@@ -58,7 +58,7 @@ public:
     MCAPI std::string const& getDefaultSceneId() const;
 
     // symbol: ?getInteraction@NpcComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor& owner, class Player& player, class ActorInteraction& interaction);
 
     // symbol:
     // ?getInteractiveText@NpcComponent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVActor@@@Z
@@ -88,25 +88,26 @@ public:
     MCAPI void initClientOnlyData(class Actor&);
 
     // symbol: ?initFromDefinition@NpcComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor& owner);
 
     // symbol: ?loadActions@NpcComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void loadActions(class Actor&);
+    MCAPI void loadActions(class Actor& owner);
 
     // symbol: ?loadInteractiveRawText@NpcComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void loadInteractiveRawText(class Actor&);
+    MCAPI void loadInteractiveRawText(class Actor& owner);
 
     // symbol: ?loadNPCData@NpcComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void loadNPCData(class Actor&);
+    MCAPI void loadNPCData(class Actor& owner);
 
     // symbol: ?loadNameRawText@NpcComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void loadNameRawText(class Actor&);
+    MCAPI void loadNameRawText(class Actor& owner);
 
     // symbol: ??4NpcComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class NpcComponent& operator=(class NpcComponent&&);
 
     // symbol: ?readAdditionalSaveData@NpcComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol:
     // ?setActions@NpcComponent@@QEAAXAEAVActor@@$$QEAV?$vector@V?$variant@UCommandAction@npc@@UUrlAction@2@@std@@V?$allocator@V?$variant@UCommandAction@npc@@UUrlAction@2@@std@@@2@@std@@@Z
@@ -121,21 +122,21 @@ public:
 
     // symbol:
     // ?setInteractiveText@NpcComponent@@QEAAXAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI void setInteractiveText(class Actor&, std::string const&, bool);
+    MCAPI void setInteractiveText(class Actor& owner, std::string const& text, bool setLocal);
 
     // symbol:
     // ?setName@NpcComponent@@QEAAXAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI void setName(class Actor&, std::string const&, bool);
+    MCAPI void setName(class Actor& owner, std::string const& name, bool setLocal);
 
     // symbol:
     // ?setSceneStateForPlayer@NpcComponent@@QEAAXAEAVActor@@AEBUActorUniqueID@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setSceneStateForPlayer(class Actor&, struct ActorUniqueID const&, std::string const&);
 
     // symbol: ?setSkin@NpcComponent@@QEAA_NAEAVActor@@@Z
-    MCAPI bool setSkin(class Actor&);
+    MCAPI bool setSkin(class Actor& owner);
 
     // symbol: ?setSkinIndex@NpcComponent@@QEAA_NAEAVActor@@H_N@Z
-    MCAPI bool setSkinIndex(class Actor&, int, bool);
+    MCAPI bool setSkinIndex(class Actor& owner, int skinIndex, bool setLocal);
 
     // symbol: ?ACTIONS_TAG@NpcComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const ACTIONS_TAG;
@@ -163,7 +164,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_defineEntityDataString@NpcComponent@@AEAAXAEAVActor@@W4ActorDataIDs@@@Z
-    MCAPI void _defineEntityDataString(class Actor&, ::ActorDataIDs);
+    MCAPI void _defineEntityDataString(class Actor& owner, enum ActorDataIDs id);
 
     // symbol: ?_deserializeData@NpcComponent@@AEAAXAEBVValue@Json@@@Z
     MCAPI void _deserializeData(class Json::Value const&);

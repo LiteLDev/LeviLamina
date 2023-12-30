@@ -18,10 +18,10 @@ public:
     virtual ~BlockBlobFeature() = default;
 
     // vIndex: 3, symbol: ?place@BlockBlobFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ??0BlockBlobFeature@@QEAA@AEBVBlock@@H@Z
-    MCAPI BlockBlobFeature(class Block const&, int);
+    MCAPI BlockBlobFeature(class Block const& block, int radius);
 
     // NOLINTEND
 };

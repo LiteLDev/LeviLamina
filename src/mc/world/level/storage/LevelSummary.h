@@ -63,7 +63,7 @@ public:
     MCAPI struct LevelSummary& operator=(struct LevelSummary const&);
 
     // symbol: ?setName@LevelSummary@@QEAAAEAU1@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI struct LevelSummary& setName(std::string);
+    MCAPI struct LevelSummary& setName(std::string Name);
 
     // symbol: ??1LevelSummary@@QEAA@XZ
     MCAPI ~LevelSummary();
@@ -96,7 +96,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_initializeWorldIconPath@LevelSummary@@AEAAXAEBVPath@Core@@@Z
-    MCAPI void _initializeWorldIconPath(class Core::Path const&);
+    MCAPI void _initializeWorldIconPath(class Core::Path const& directory);
 
     // NOLINTEND
 };

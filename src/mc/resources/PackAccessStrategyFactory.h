@@ -25,7 +25,8 @@ public:
 
     // symbol:
     // ?createForDirectory@PackAccessStrategyFactory@@SA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVResourceLocation@@_N@Z
-    MCAPI static std::unique_ptr<class PackAccessStrategy> createForDirectory(class ResourceLocation const&, bool);
+    MCAPI static std::unique_ptr<class PackAccessStrategy>
+    createForDirectory(class ResourceLocation const& location, bool canRecurse);
 
     // symbol:
     // ?createForEncrypted@PackAccessStrategyFactory@@SA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVResourceLocation@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@_N@Z
@@ -43,7 +44,8 @@ public:
 
     // symbol:
     // ?createForZip@PackAccessStrategyFactory@@SA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVResourceLocation@@_N@Z
-    MCAPI static std::unique_ptr<class PackAccessStrategy> createForZip(class ResourceLocation const&, bool);
+    MCAPI static std::unique_ptr<class PackAccessStrategy>
+    createForZip(class ResourceLocation const& location, bool optimizeForSpeedOverMemory);
 
     // NOLINTEND
 };

@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@EyeOfEnder@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1EyeOfEnder@@UEAA@XZ
     virtual ~EyeOfEnder() = default;
@@ -46,7 +46,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 27, symbol: ?lerpMotion@EyeOfEnder@@UEAAXAEBVVec3@@@Z
-    virtual void lerpMotion(class Vec3 const&);
+    virtual void lerpMotion(class Vec3 const& delta);
 
     // vIndex: 29, symbol: ?normalTick@EyeOfEnder@@UEAAXXZ
     virtual void normalTick();
@@ -88,7 +88,7 @@ public:
     MCAPI void preNormalTick();
 
     // symbol: ?signalTo@EyeOfEnder@@QEAAXAEBVPlayer@@AEAVBlockPos@@@Z
-    MCAPI void signalTo(class Player const&, class BlockPos&);
+    MCAPI void signalTo(class Player const& player, class BlockPos& target);
 
     // NOLINTEND
 };

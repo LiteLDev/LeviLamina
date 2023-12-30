@@ -29,7 +29,7 @@ public:
     virtual void __unk_vfn_1() = 0;
 
     // vIndex: 2, symbol: ?SetMulticastInterface@RakNetSocket2@RakNet@@UEAAXH@Z
-    virtual void SetMulticastInterface(int);
+    virtual void SetMulticastInterface(int interfaceIndex);
 
     // symbol: ?GetBoundAddress@RakNetSocket2@RakNet@@QEBA?AUSystemAddress@2@XZ
     MCAPI struct RakNet::SystemAddress GetBoundAddress() const;
@@ -44,13 +44,13 @@ public:
     MCAPI bool IsBerkleySocket() const;
 
     // symbol: ?SetUserConnectionSocketIndex@RakNetSocket2@RakNet@@QEAAXI@Z
-    MCAPI void SetUserConnectionSocketIndex(uint);
+    MCAPI void SetUserConnectionSocketIndex(uint i);
 
     // symbol: ?GetMyAdapters@RakNetSocket2@RakNet@@SAXQEAUNetworkAdapter@2@@Z
-    MCAPI static void GetMyAdapters(struct RakNet::NetworkAdapter* const);
+    MCAPI static void GetMyAdapters(struct RakNet::NetworkAdapter* const adapters);
 
     // symbol: ?GetMyIP@RakNetSocket2@RakNet@@SAXQEAUSystemAddress@2@@Z
-    MCAPI static void GetMyIP(struct RakNet::SystemAddress* const);
+    MCAPI static void GetMyIP(struct RakNet::SystemAddress* const addresses);
 
     // NOLINTEND
 };

@@ -24,7 +24,7 @@ public:
     virtual ~BlockIsNameTest() = default;
 
     // vIndex: 2, symbol: ?evaluate@BlockIsNameTest@@UEBA_NAEBUFilterContext@@@Z
-    virtual bool evaluate(struct FilterContext const&) const;
+    virtual bool evaluate(struct FilterContext const& context) const;
 
     // vIndex: 4, symbol: ?getName@BlockIsNameTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     virtual std::string_view getName() const;

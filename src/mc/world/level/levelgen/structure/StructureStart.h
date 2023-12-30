@@ -15,7 +15,7 @@ public:
     virtual ~StructureStart();
 
     // vIndex: 1, symbol: ?postProcess@StructureStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
 
     // vIndex: 2, symbol: ?isValid@StructureStart@@UEBA_NXZ
     virtual bool isValid() const;

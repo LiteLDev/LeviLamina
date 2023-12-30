@@ -23,11 +23,11 @@ public:
     virtual ~LootItemKilledByActorCondition() = default;
 
     // vIndex: 1, symbol: ?applies@LootItemKilledByActorCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
-    virtual bool applies(class Random&, class LootTableContext&);
+    virtual bool applies(class Random& random, class LootTableContext& context);
 
     // symbol:
     // ?deserialize@LootItemKilledByActorCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
-    MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
+    MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value object);
 
     // NOLINTEND
 };

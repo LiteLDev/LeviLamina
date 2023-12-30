@@ -14,7 +14,8 @@ public:
     MCAPI CommandItem();
 
     // symbol: ?createInstance@CommandItem@@QEBA?AV?$optional@VItemInstance@@@std@@HHAEAVCommandOutput@@_N@Z
-    MCAPI std::optional<class ItemInstance> createInstance(int, int, class CommandOutput&, bool) const;
+    MCAPI std::optional<class ItemInstance>
+          createInstance(int count, int aux, class CommandOutput& output, bool requireExactAux) const;
 
     // symbol: ?getId@CommandItem@@QEBAHXZ
     MCAPI int getId() const;

@@ -25,10 +25,10 @@ public:
     virtual void readfromJSON(class Json::Value&, class SemVersion const&);
 
     // vIndex: 2, symbol: ?writetoJSON@MobEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
-    virtual void writetoJSON(class Json::Value&) const;
+    virtual void writetoJSON(class Json::Value& component) const;
 
     // vIndex: 3, symbol: ?doOnHitEffect@MobEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    virtual void doOnHitEffect(class Actor& owner, class ProjectileComponent& component);
 
     // vIndex: 4, symbol: ?getName@MobEffectSubcomponent@@UEAAPEBDXZ
     virtual char const* getName();
@@ -41,7 +41,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_addEffectFromJSON@MobEffectSubcomponent@@AEAAXAEAVValue@Json@@@Z
-    MCAPI void _addEffectFromJSON(class Json::Value&);
+    MCAPI void _addEffectFromJSON(class Json::Value& component);
 
     // NOLINTEND
 };

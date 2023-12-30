@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/webrtc/detail/ArrayView.h"
-#include "mc/deps/webrtc/detail/InlinedVector.h"
+#include "mc/deps/webrtc/absl/InlinedVector.h"
+#include "mc/deps/webrtc/rtc/ArrayView.h"
 
 // auto generated forward declare list
 // clang-format off

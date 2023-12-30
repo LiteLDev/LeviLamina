@@ -34,10 +34,10 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 21, symbol: ?isStrippable@WoodBlock@@UEBA_NAEBVBlock@@@Z
-    virtual bool isStrippable(class Block const&) const;
+    virtual bool isStrippable(class Block const& srcBlock) const;
 
     // vIndex: 22, symbol: ?getStrippedBlock@WoodBlock@@UEBAAEBVBlock@@AEBV2@@Z
-    virtual class Block const& getStrippedBlock(class Block const&) const;
+    virtual class Block const& getStrippedBlock(class Block const& srcBlock) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -131,7 +131,7 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 129, symbol: ?getVariant@WoodBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -152,7 +152,7 @@ public:
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // symbol: ??0WoodBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI WoodBlock(std::string const&, int);
+    MCAPI WoodBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

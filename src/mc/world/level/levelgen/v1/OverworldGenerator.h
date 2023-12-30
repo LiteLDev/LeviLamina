@@ -42,23 +42,23 @@ public:
         const;
 
     // symbol: ?getBiomeArea@OverworldGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const&, uint) const;
+    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
     // symbol: ?getBlockVolumeDimensions@OverworldGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
     MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
 
     // symbol: ?loadChunk@OverworldGenerator@@UEAAXAEAVLevelChunk@@_N@Z
-    MCVAPI void loadChunk(class LevelChunk&, bool);
+    MCVAPI void loadChunk(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
     // symbol: ?postProcess@OverworldGenerator@@UEAA_NAEAVChunkViewSource@@@Z
-    MCVAPI bool postProcess(class ChunkViewSource&);
+    MCVAPI bool postProcess(class ChunkViewSource& neighborhood);
 
     // symbol:
     // ?prepareAndComputeHeights@OverworldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
     MCVAPI void prepareAndComputeHeights(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int);
 
     // symbol: ?prepareHeights@OverworldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
-    MCVAPI void prepareHeights(class BlockVolume&, class ChunkPos const&, bool);
+    MCVAPI void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
     // symbol:
     // ?tryMakeAquifer@OverworldGenerator@@MEBA?AV?$unique_ptr@VAquifer@@U?$default_delete@VAquifer@@@std@@@std@@AEBVChunkPos@@AEBVSurfaceLevelCache@@FFF@Z

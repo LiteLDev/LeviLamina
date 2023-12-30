@@ -20,7 +20,7 @@ public:
     MCAPI ContentIdentity(class ContentIdentity const&);
 
     // symbol: ??0ContentIdentity@@QEAA@AEBVUUID@mce@@@Z
-    MCAPI explicit ContentIdentity(class mce::UUID const&);
+    MCAPI explicit ContentIdentity(class mce::UUID const& uuid);
 
     // symbol: ?asString@ContentIdentity@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string asString() const;
@@ -32,19 +32,19 @@ public:
     MCAPI bool isValid() const;
 
     // symbol: ??9ContentIdentity@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class ContentIdentity const&) const;
+    MCAPI bool operator!=(class ContentIdentity const& rhs) const;
 
     // symbol: ??4ContentIdentity@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class ContentIdentity& operator=(class ContentIdentity&&);
+    MCAPI class ContentIdentity& operator=(class ContentIdentity&& rhs);
 
     // symbol: ??4ContentIdentity@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class ContentIdentity& operator=(class ContentIdentity const&);
+    MCAPI class ContentIdentity& operator=(class ContentIdentity const& rhs);
 
     // symbol: ??8ContentIdentity@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class ContentIdentity const&) const;
+    MCAPI bool operator==(class ContentIdentity const& rhs) const;
 
     // symbol: ?fromString@ContentIdentity@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class ContentIdentity fromString(std::string const&);
+    MCAPI static class ContentIdentity fromString(std::string const& uuidString);
 
     // symbol: ?EMPTY@ContentIdentity@@2V1@A
     MCAPI static class ContentIdentity EMPTY;

@@ -133,10 +133,10 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0ObsidianBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI ObsidianBlock(std::string const&, int, bool);
+    MCAPI ObsidianBlock(std::string const& nameId, int id, bool isGlowing);
 
     // symbol: ?poofParticles@ObsidianBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void poofParticles(class BlockSource&, class BlockPos const&) const;
+    MCAPI void poofParticles(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

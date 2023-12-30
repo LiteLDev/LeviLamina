@@ -30,7 +30,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@PlayerAuthInputPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 6, symbol: ?isValid@PlayerAuthInputPacket@@UEBA_NXZ
     virtual bool isValid() const;
@@ -46,7 +46,7 @@ public:
     MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket&&);
 
     // symbol: ?getInput@PlayerAuthInputPacket@@QEBA_NW4InputData@1@@Z
-    MCAPI bool getInput(::PlayerAuthInputPacket::InputData) const;
+    MCAPI bool getInput(enum PlayerAuthInputPacket::InputData point) const;
 
     // symbol: ??4PlayerAuthInputPacket@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class PlayerAuthInputPacket& operator=(class PlayerAuthInputPacket&&);

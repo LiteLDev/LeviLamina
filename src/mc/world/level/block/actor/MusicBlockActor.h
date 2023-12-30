@@ -18,10 +18,10 @@ public:
     virtual ~MusicBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@MusicBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2, symbol: ?save@MusicBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
@@ -54,10 +54,10 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0MusicBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit MusicBlockActor(class BlockPos const&);
+    MCAPI explicit MusicBlockActor(class BlockPos const& pos);
 
     // symbol: ?playNote@MusicBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void playNote(class BlockSource&, class BlockPos const&);
+    MCAPI void playNote(class BlockSource& region, class BlockPos const& pos);
 
     // symbol: ?tune@MusicBlockActor@@QEAAXXZ
     MCAPI void tune();

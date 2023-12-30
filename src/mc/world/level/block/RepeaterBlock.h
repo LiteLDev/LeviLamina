@@ -101,7 +101,7 @@ public:
     virtual void __unk_vfn_67();
 
     // vIndex: 71, symbol: ?setupRedstoneComponent@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
+    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
@@ -110,10 +110,11 @@ public:
     virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const*) const;
 
     // vIndex: 85, symbol: ?mayPlace@RepeaterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 96, symbol: ?asItemInstance@RepeaterBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
@@ -140,16 +141,16 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 147, symbol: ?onPlace@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -161,22 +162,22 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@RepeaterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 169, symbol: ?isLocked@RepeaterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool isLocked(class BlockSource&, class BlockPos const&) const;
+    virtual bool isLocked(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 175, symbol: ?isAlternateInput@RepeaterBlock@@MEBA_NAEBVBlock@@@Z
-    virtual bool isAlternateInput(class Block const&) const;
+    virtual bool isAlternateInput(class Block const& block) const;
 
     // vIndex: 179, symbol: ?getTurnOnDelay@RepeaterBlock@@MEBAHAEBVBlock@@@Z
-    virtual int getTurnOnDelay(class Block const&) const;
+    virtual int getTurnOnDelay(class Block const& block) const;
 
     // vIndex: 180, symbol: ?getOnBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
-    virtual class Block const* getOnBlock(class Block const*) const;
+    virtual class Block const* getOnBlock(class Block const* block) const;
 
     // vIndex: 181, symbol: ?getOffBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
-    virtual class Block const* getOffBlock(class Block const*) const;
+    virtual class Block const* getOffBlock(class Block const* block) const;
 
     // symbol: ?canBeSilkTouched@RepeaterBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -185,10 +186,10 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0RepeaterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI RepeaterBlock(std::string const&, int, bool);
+    MCAPI RepeaterBlock(std::string const& nameId, int id, bool on);
 
     // symbol: ?updateDelay@RepeaterBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
-    MCAPI void updateDelay(class BlockSource&, class BlockPos const&, bool) const;
+    MCAPI void updateDelay(class BlockSource& region, class BlockPos const& pos, bool doIncrement) const;
 
     // symbol: ?DELAY_RENDER_OFFSETS@RepeaterBlock@@2QBMB
     MCAPI static float const DELAY_RENDER_OFFSETS[];

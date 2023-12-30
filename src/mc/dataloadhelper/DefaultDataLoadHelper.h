@@ -76,46 +76,46 @@ public:
     virtual bool shouldResetTime();
 
     // symbol: ?loadActorUniqueID@DefaultDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
-    MCVAPI struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
+    MCVAPI struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID id);
 
     // symbol: ?loadBlockPosition@DefaultDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-    MCVAPI class BlockPos loadBlockPosition(class BlockPos const&);
+    MCVAPI class BlockPos loadBlockPosition(class BlockPos const& blockPos);
 
     // symbol: ?loadBlockPositionOffset@DefaultDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-    MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const&);
+    MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const& blockPosOffset);
 
     // symbol: ?loadDirection@DefaultDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-    MCVAPI class Vec3 loadDirection(class Vec3 const&);
+    MCVAPI class Vec3 loadDirection(class Vec3 const& direction);
 
     // symbol: ?loadDirection@DefaultDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
-    MCVAPI ::Direction::Type loadDirection(::Direction::Type);
+    MCVAPI ::Direction::Type loadDirection(enum Direction::Type direction);
 
     // symbol: ?loadFacingID@DefaultDataLoadHelper@@UEAAEE@Z
-    MCVAPI uchar loadFacingID(uchar);
+    MCVAPI uchar loadFacingID(uchar facing);
 
     // symbol: ?loadMirror@DefaultDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
-    MCVAPI ::Mirror loadMirror(::Mirror);
+    MCVAPI ::Mirror loadMirror(enum Mirror mirror);
 
     // symbol: ?loadOwnerID@DefaultDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
-    MCVAPI struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
+    MCVAPI struct ActorUniqueID loadOwnerID(struct ActorUniqueID id);
 
     // symbol: ?loadPosition@DefaultDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-    MCVAPI class Vec3 loadPosition(class Vec3 const&);
+    MCVAPI class Vec3 loadPosition(class Vec3 const& position);
 
     // symbol: ?loadRotation@DefaultDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
-    MCVAPI ::Rotation loadRotation(::Rotation);
+    MCVAPI ::Rotation loadRotation(enum Rotation rotation);
 
     // symbol: ?loadRotationDegreesX@DefaultDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationDegreesX(float);
+    MCVAPI float loadRotationDegreesX(float x);
 
     // symbol: ?loadRotationDegreesY@DefaultDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationDegreesY(float);
+    MCVAPI float loadRotationDegreesY(float y);
 
     // symbol: ?loadRotationRadiansX@DefaultDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationRadiansX(float);
+    MCVAPI float loadRotationRadiansX(float x);
 
     // symbol: ?loadRotationRadiansY@DefaultDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationRadiansY(float);
+    MCVAPI float loadRotationRadiansY(float y);
 
     // NOLINTEND
 };

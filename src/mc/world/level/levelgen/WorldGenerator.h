@@ -32,7 +32,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addHardcodedSpawnAreas@WorldGenerator@@UEAAXAEAVLevelChunk@@@Z
-    MCVAPI void addHardcodedSpawnAreas(class LevelChunk&);
+    MCVAPI void addHardcodedSpawnAreas(class LevelChunk& lc);
 
     // symbol: ?debugRender@WorldGenerator@@UEAAXXZ
     MCVAPI void debugRender();

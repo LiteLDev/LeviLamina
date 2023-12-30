@@ -22,7 +22,14 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0MapDecoration@@QEAA@W4Type@0@CCCAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@@Z
-    MCAPI MapDecoration(::MapDecoration::Type, schar, schar, schar, std::string const&, class mce::Color const&);
+    MCAPI MapDecoration(
+        enum MapDecoration::Type img,
+        schar                    x,
+        schar                    y,
+        schar                    rot,
+        std::string const&       label,
+        class mce::Color const&  color
+    );
 
     // symbol: ?getColor@MapDecoration@@QEBAAEBVColor@mce@@XZ
     MCAPI class mce::Color const& getColor() const;

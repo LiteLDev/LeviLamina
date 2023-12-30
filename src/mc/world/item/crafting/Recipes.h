@@ -83,8 +83,11 @@ public:
 
     // symbol:
     // ?addFurnaceRecipeAuxData@Recipes@@QEAAXAEBVItemInstance@@0AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@std@@@Z
-    MCAPI void
-    addFurnaceRecipeAuxData(class ItemInstance const&, class ItemInstance const&, std::vector<class HashedString> const&);
+    MCAPI void addFurnaceRecipeAuxData(
+        class ItemInstance const&              input,
+        class ItemInstance const&              result,
+        std::vector<class HashedString> const& tags
+    );
 
     // symbol:
     // ?addShapedRecipe@Recipes@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemInstance@@AEBV23@AEBV?$vector@VType@Recipes@@V?$allocator@VType@Recipes@@@std@@@3@AEBV?$vector@VHashedString@@V?$allocator@VHashedString@@@std@@@3@HV?$function@$$A6A?AV?$unique_ptr@VShapedRecipe@@U?$default_delete@VShapedRecipe@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@HHAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@2@VHashedString@@HPEBVUUID@mce@@V?$optional@VRecipeUnlockingRequirement@@@2@AEBVSemVersion@@@Z@3@V?$optional@VRecipeUnlockingRequirement@@@3@AEBVSemVersion@@@Z
@@ -142,7 +145,7 @@ public:
     MCAPI class Recipe const* getRecipeByNetId(RecipeNetId const&) const;
 
     // symbol: ?getRecipeFor@Recipes@@QEBAPEAVRecipe@@AEBVItemInstance@@AEBVHashedString@@@Z
-    MCAPI class Recipe* getRecipeFor(class ItemInstance const&, class HashedString const&) const;
+    MCAPI class Recipe* getRecipeFor(class ItemInstance const& result, class HashedString const& tag) const;
 
     // symbol:
     // ?getRecipesAllTags@Recipes@@QEBAAEBV?$map@VHashedString@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@VRecipe@@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@VRecipe@@@2@@std@@@2@@std@@U?$less@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@VRecipe@@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@VRecipe@@@2@@std@@@2@@std@@@std@@@3@@std@@XZ
@@ -201,7 +204,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_addItemRecipe@Recipes@@AEAAXV?$unique_ptr@VRecipe@@U?$default_delete@VRecipe@@@std@@@std@@@Z
-    MCAPI void _addItemRecipe(std::unique_ptr<class Recipe>);
+    MCAPI void _addItemRecipe(std::unique_ptr<class Recipe> recipe);
 
     // symbol: ?_addMapRecipes@Recipes@@AEAAXXZ
     MCAPI void _addMapRecipes();

@@ -65,7 +65,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 83, symbol: ?handleEntityEvent@MinecartTNT@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(enum ActorEvent eventId, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -80,7 +80,7 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@MinecartTNT@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -89,7 +89,7 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 169, symbol: ?destroy@MinecartTNT@@UEAAXAEBVActorDamageSource@@_N@Z
-    virtual void destroy(class ActorDamageSource const&, bool);
+    virtual void destroy(class ActorDamageSource const& source, bool dropMinecartComponents);
 
     // vIndex: 170, symbol: ?getType@MinecartTNT@@UEAA?AW4MinecartType@@XZ
     virtual ::MinecartType getType();
@@ -101,7 +101,7 @@ public:
     MCAPI MinecartTNT(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
     // symbol: ?primeFuse@MinecartTNT@@QEAAXW4ActorDamageCause@@@Z
-    MCAPI void primeFuse(::ActorDamageCause);
+    MCAPI void primeFuse(enum ActorDamageCause cause);
 
     // NOLINTEND
 

@@ -15,7 +15,7 @@ public:
     virtual ~LevelDbSequentialFile() = default;
 
     // vIndex: 1, symbol: ?Read@LevelDbSequentialFile@@UEAA?AVStatus@leveldb@@_KPEAVSlice@3@PEAD@Z
-    virtual leveldb::Status Read(uint64, leveldb::Slice*, char*);
+    virtual leveldb::Status Read(uint64 n, leveldb::Slice* result, char* scratch);
 
     // vIndex: 2, symbol: ?Skip@LevelDbSequentialFile@@UEAA?AVStatus@leveldb@@_K@Z
     virtual leveldb::Status Skip(uint64);

@@ -112,13 +112,13 @@ public:
     virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
 
     // vIndex: 66, symbol: ?onMove@ChestBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void onMove(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void onMove(class BlockSource& region, class BlockPos const& from, class BlockPos const& to) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
 
     // vIndex: 71, symbol: ?setupRedstoneComponent@ChestBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
+    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
@@ -127,7 +127,7 @@ public:
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
 
     // vIndex: 93, symbol: ?getSecondPart@ChestBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-    virtual bool getSecondPart(class BlockSource const&, class BlockPos const&, class BlockPos&) const;
+    virtual bool getSecondPart(class BlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -139,7 +139,9 @@ public:
     virtual void __unk_vfn_111();
 
     // vIndex: 112, symbol: ?getComparatorSignal@ChestBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uchar) const;
+    virtual int
+    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
+        const;
 
     // vIndex: 114, symbol: __unk_vfn_114
     virtual void __unk_vfn_114();
@@ -148,7 +150,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 132, symbol: ?getMappedFace@ChestBlock@@UEBAEEAEBVBlock@@@Z
-    virtual uchar getMappedFace(uchar, class Block const&) const;
+    virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
     // vIndex: 136, symbol: ?init@ChestBlock@@UEAAAEAVBlockLegacy@@XZ
     virtual class BlockLegacy& init();
@@ -157,10 +159,10 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@ChestBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 147, symbol: ?onPlace@ChestBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -175,7 +177,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ?detachesOnPistonMove@ChestBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCVAPI bool detachesOnPistonMove(class BlockSource&, class BlockPos const&) const;
+    MCVAPI bool detachesOnPistonMove(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?hasComparatorSignal@ChestBlock@@UEBA_NXZ
     MCVAPI bool hasComparatorSignal() const;
@@ -188,10 +190,11 @@ public:
 
     // symbol:
     // ??0ChestBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ChestType@0@W4MaterialType@@@Z
-    MCAPI ChestBlock(std::string const&, int, ::ChestBlock::ChestType, ::MaterialType);
+    MCAPI
+    ChestBlock(std::string const& nameId, int id, enum ChestBlock::ChestType type, enum MaterialType materialType);
 
     // symbol: ?updateSignalStrength@ChestBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI void updateSignalStrength(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void updateSignalStrength(class BlockSource& region, class BlockPos const& pos, int strength) const;
 
     // NOLINTEND
 };

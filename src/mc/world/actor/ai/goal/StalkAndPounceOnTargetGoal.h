@@ -38,7 +38,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@StalkAndPounceOnTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0StalkAndPounceOnTargetGoal@@QEAA@AEAVMob@@AEBVActorFilterGroup@@MMMMMMMM_N@Z
     MCAPI StalkAndPounceOnTargetGoal(
@@ -60,10 +60,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_isStuckBlock@StalkAndPounceOnTargetGoal@@AEBA_NVBlockPos@@@Z
-    MCAPI bool _isStuckBlock(class BlockPos) const;
+    MCAPI bool _isStuckBlock(class BlockPos blockPos) const;
 
     // symbol: ?_preparePounce@StalkAndPounceOnTargetGoal@@AEAAXAEBVVec3@@0@Z
-    MCAPI void _preparePounce(class Vec3 const&, class Vec3 const&);
+    MCAPI void _preparePounce(class Vec3 const& mobPos, class Vec3 const& targetPos);
 
     // NOLINTEND
 };

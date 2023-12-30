@@ -69,7 +69,7 @@ public:
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
 
     // symbol: ??0JigsawBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit JigsawBlockActor(class BlockPos const&);
+    MCAPI explicit JigsawBlockActor(class BlockPos const& pos);
 
     // NOLINTEND
 };

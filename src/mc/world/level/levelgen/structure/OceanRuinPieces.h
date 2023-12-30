@@ -34,23 +34,28 @@ public:
 
         // vIndex: 4, symbol:
         // ?postProcess@OceanRuinPiece@OceanRuinPieces@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-        virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+        virtual bool postProcess(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
 
         // vIndex: 13, symbol:
         // ?_handleDataMarker@OceanRuinPiece@OceanRuinPieces@@MEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-        virtual void
-        _handleDataMarker(std::string const&, class BlockPos const&, class BlockSource&, class Random&, class BoundingBox const&);
+        virtual void _handleDataMarker(
+            std::string const&       markerId,
+            class BlockPos const&    position,
+            class BlockSource&       region,
+            class Random&            random,
+            class BoundingBox const& chunkBB
+        );
 
         // symbol:
         // ??0OceanRuinPiece@OceanRuinPieces@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4Rotation@@M_NW4OceanTempCategory@@@Z
         MCAPI OceanRuinPiece(
-            Bedrock::NotNullNonOwnerPtr<class StructureManager>,
-            std::string,
-            class BlockPos const&,
-            ::Rotation,
-            float,
-            bool,
-            ::OceanTempCategory
+            Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
+            std::string                                         templateName,
+            class BlockPos const&                               origin,
+            enum Rotation                                       rotation,
+            float                                               integrity,
+            bool                                                isLarge,
+            enum OceanTempCategory                              type
         );
 
         // NOLINTEND
@@ -66,8 +71,14 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?addPieces@OceanRuinPieces@@SAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBVBlockPos@@AEBW4Rotation@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEBUOceanRuinConfiguration@@@Z
-    MCAPI static void
-    addPieces(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class BlockPos const&, ::Rotation const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, struct OceanRuinConfiguration const&);
+    MCAPI static void addPieces(
+        Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
+        class BlockPos const&                               position,
+        enum Rotation const&                                rotation,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
+        class Random&                                       random,
+        struct OceanRuinConfiguration const&                configuration
+    );
 
     // NOLINTEND
 
@@ -75,25 +86,31 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_addClusterRuins@OceanRuinPieces@@CAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEAVRandom@@AEBW4Rotation@@AEBVBlockPos@@AEBUOceanRuinConfiguration@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@@Z
-    MCAPI static void
-    _addClusterRuins(Bedrock::NotNullNonOwnerPtr<class StructureManager>, class Random&, ::Rotation const&, class BlockPos const&, struct OceanRuinConfiguration const&, std::vector<std::unique_ptr<class StructurePiece>>&);
+    MCAPI static void _addClusterRuins(
+        Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
+        class Random&                                       random,
+        enum Rotation const&                                rotation,
+        class BlockPos const&                               parentPos,
+        struct OceanRuinConfiguration const&                configuration,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieces
+    );
 
     // symbol:
     // ?_addPiece@OceanRuinPieces@@CAXV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBVBlockPos@@AEBW4Rotation@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEBUOceanRuinConfiguration@@_NM@Z
     MCAPI static void _addPiece(
-        Bedrock::NotNullNonOwnerPtr<class StructureManager>,
-        class BlockPos const&,
-        ::Rotation const&,
-        std::vector<std::unique_ptr<class StructurePiece>>&,
-        class Random&,
-        struct OceanRuinConfiguration const&,
-        bool,
-        float
+        Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
+        class BlockPos const&                               position,
+        enum Rotation const&                                rotation,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
+        class Random&                                       random,
+        struct OceanRuinConfiguration const&                configuration,
+        bool                                                isLarge,
+        float                                               baseIntegrity
     );
 
     // symbol:
     // ?_allPositions@OceanRuinPieces@@CA?AV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAVRandom@@HHH@Z
-    MCAPI static std::vector<class BlockPos> _allPositions(class Random&, int, int, int);
+    MCAPI static std::vector<class BlockPos> _allPositions(class Random& random, int cornerX, int cornerY, int cornerZ);
 
     // NOLINTEND
 

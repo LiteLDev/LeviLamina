@@ -21,10 +21,21 @@ public:
     MCAPI bool isValid() const;
 
     // symbol: ??8BoundingBox@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class BoundingBox const&) const;
+    MCAPI bool operator==(class BoundingBox const& rhs) const;
 
     // symbol: ?orientBox@BoundingBox@@SA?AV1@HHHHHHHHHH@Z
-    MCAPI static class BoundingBox orientBox(int, int, int, int, int, int, int, int, int, int);
+    MCAPI static class BoundingBox orientBox(
+        int footX,
+        int footY,
+        int footZ,
+        int offX,
+        int offY,
+        int offZ,
+        int width,
+        int height,
+        int depth,
+        int orientation
+    );
 
     // NOLINTEND
 };

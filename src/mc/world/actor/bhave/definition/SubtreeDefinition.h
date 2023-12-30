@@ -23,7 +23,7 @@ public:
     virtual ~SubtreeDefinition() = default;
 
     // vIndex: 1, symbol: ?load@SubtreeDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value node, class BehaviorFactory const& factory);
 
     // NOLINTEND
 };

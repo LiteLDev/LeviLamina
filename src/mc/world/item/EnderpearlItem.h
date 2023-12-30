@@ -72,7 +72,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@EnderpearlItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& itemStack, class Player& player) const;
 
     // vIndex: 88, symbol: ?getCooldownType@EnderpearlItem@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getCooldownType() const;
@@ -87,7 +87,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0EnderpearlItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI EnderpearlItem(std::string const&, int);
+    MCAPI EnderpearlItem(std::string const& nameId, int id);
 
     // symbol: ?ENDER_PEARL_COOLDOWN@EnderpearlItem@@2VHashedString@@B
     MCAPI static class HashedString const ENDER_PEARL_COOLDOWN;

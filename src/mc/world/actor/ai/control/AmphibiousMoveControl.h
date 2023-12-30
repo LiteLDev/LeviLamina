@@ -17,7 +17,7 @@ public:
     virtual ~AmphibiousMoveControl() = default;
 
     // vIndex: 2, symbol: ?tick@AmphibiousMoveControl@@UEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    virtual void tick(class MoveControlComponent& parent, class Mob& mob);
 
     // symbol: ??0AmphibiousMoveControl@@QEAA@XZ
     MCAPI AmphibiousMoveControl();

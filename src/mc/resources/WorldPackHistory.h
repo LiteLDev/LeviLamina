@@ -24,7 +24,7 @@ public:
     MCAPI WorldPackHistory(class WorldPackHistory const&);
 
     // symbol: ?initializeFromJson@WorldPackHistory@@QEAA_NAEBVValue@Json@@@Z
-    MCAPI bool initializeFromJson(class Json::Value const&);
+    MCAPI bool initializeFromJson(class Json::Value const& value);
 
     // symbol: ??1WorldPackHistory@@QEAA@XZ
     MCAPI ~WorldPackHistory();

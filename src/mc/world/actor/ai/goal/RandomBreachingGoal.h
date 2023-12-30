@@ -35,13 +35,13 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@RandomBreachingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 10, symbol: ?_setWantedPosition@RandomBreachingGoal@@MEAA_NXZ
     virtual bool _setWantedPosition();
 
     // symbol: ??0RandomBreachingGoal@@QEAA@AEAVMob@@MHHHM@Z
-    MCAPI RandomBreachingGoal(class Mob&, float, int, int, int, float);
+    MCAPI RandomBreachingGoal(class Mob& mob, float speed, int xzDist, int yDist, int interval, float cooldown);
 
     // NOLINTEND
 };

@@ -28,7 +28,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@UpdateTradePacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& bitStream) const;
 
     // vIndex: 7, symbol:
     // ?_read@UpdateTradePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -40,16 +40,16 @@ public:
     // symbol:
     // ??0UpdateTradePacket@@QEAA@W4ContainerID@@W4ContainerType@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVCompoundTag@@AEBUActorUniqueID@@4H_N5@Z
     MCAPI UpdateTradePacket(
-        ::ContainerID,
-        ::ContainerType,
-        int,
-        std::string const&,
-        class CompoundTag&&,
-        struct ActorUniqueID const&,
-        struct ActorUniqueID const&,
-        int,
-        bool,
-        bool
+        enum ContainerID            containerID,
+        enum ContainerType          type,
+        int                         size,
+        std::string const&          displayName,
+        class CompoundTag&&         tag,
+        struct ActorUniqueID const& entityID,
+        struct ActorUniqueID const& playerID,
+        int                         traderTier,
+        bool                        useNewTradeScreen,
+        bool                        usingEconomyTrade
     );
 
     // NOLINTEND

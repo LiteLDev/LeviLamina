@@ -17,7 +17,7 @@ public:
     virtual ~CommandDispatcher() = default;
 
     // vIndex: 1, symbol: ?performCommand@CommandDispatcher@@UEAAHAEBVCommandOrigin@@AEAVCommand@@@Z
-    virtual int performCommand(class CommandOrigin const&, class Command&);
+    virtual int performCommand(class CommandOrigin const& origin, class Command& command);
 
     // symbol: ??0CommandDispatcher@@QEAA@XZ
     MCAPI CommandDispatcher();

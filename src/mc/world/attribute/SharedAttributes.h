@@ -13,17 +13,17 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?checkIsDeprecated@SharedAttributes@@SA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static bool checkIsDeprecated(std::string&);
+    MCAPI static bool checkIsDeprecated(std::string& name);
 
     // symbol: ?loadAttributeModifier@SharedAttributes@@SA?AV?$shared_ptr@VAttributeModifier@@@std@@AEBVCompoundTag@@@Z
-    MCAPI static std::shared_ptr<class AttributeModifier> loadAttributeModifier(class CompoundTag const&);
+    MCAPI static std::shared_ptr<class AttributeModifier> loadAttributeModifier(class CompoundTag const& tag);
 
     // symbol: ?loadAttributes@SharedAttributes@@SAXPEAVBaseAttributeMap@@PEBVListTag@@@Z
-    MCAPI static void loadAttributes(class BaseAttributeMap*, class ListTag const*);
+    MCAPI static void loadAttributes(class BaseAttributeMap* attributes, class ListTag const* list);
 
     // symbol:
     // ?saveAttributes@SharedAttributes@@SA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@PEBVBaseAttributeMap@@@Z
-    MCAPI static std::unique_ptr<class ListTag> saveAttributes(class BaseAttributeMap const*);
+    MCAPI static std::unique_ptr<class ListTag> saveAttributes(class BaseAttributeMap const* attributes);
 
     // symbol: ?ABSORPTION@SharedAttributes@@2VAttribute@@B
     MCAPI static class Attribute const ABSORPTION;
@@ -61,26 +61,27 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_legacyGetInstance@SharedAttributes@@CAPEAVAttributeInstance@@AEAVBaseAttributeMap@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class AttributeInstance* _legacyGetInstance(class BaseAttributeMap&, std::string const&);
+    MCAPI static class AttributeInstance*
+    _legacyGetInstance(class BaseAttributeMap& attributes, std::string const& attributeName);
 
     // symbol:
     // ?_legacyGetName@SharedAttributes@@CAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-    MCAPI static std::string const& _legacyGetName(std::string const&);
+    MCAPI static std::string const& _legacyGetName(std::string const& attributeName);
 
     // symbol: ?_loadAttribute@SharedAttributes@@CAXAEAVAttributeInstance@@PEBVCompoundTag@@@Z
-    MCAPI static void _loadAttribute(class AttributeInstance&, class CompoundTag const*);
+    MCAPI static void _loadAttribute(class AttributeInstance& instance, class CompoundTag const* tag);
 
     // symbol:
     // ?_saveAttribute@SharedAttributes@@CA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBVAttributeInstance@@@Z
-    MCAPI static std::unique_ptr<class CompoundTag> _saveAttribute(class AttributeInstance const&);
+    MCAPI static std::unique_ptr<class CompoundTag> _saveAttribute(class AttributeInstance const& instance);
 
     // symbol:
     // ?_saveAttributeBuff@SharedAttributes@@CA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBVTemporalAttributeBuff@@@Z
-    MCAPI static std::unique_ptr<class CompoundTag> _saveAttributeBuff(class TemporalAttributeBuff const&);
+    MCAPI static std::unique_ptr<class CompoundTag> _saveAttributeBuff(class TemporalAttributeBuff const& buff);
 
     // symbol:
     // ?_saveAttributeModifier@SharedAttributes@@CA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBVAttributeModifier@@@Z
-    MCAPI static std::unique_ptr<class CompoundTag> _saveAttributeModifier(class AttributeModifier const&);
+    MCAPI static std::unique_ptr<class CompoundTag> _saveAttributeModifier(class AttributeModifier const& modifier);
 
     // NOLINTEND
 };

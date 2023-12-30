@@ -45,7 +45,7 @@ public:
     MCAPI class CommandRegistry& getRegistry();
 
     // symbol: ?handleOutput@MinecraftCommands@@QEBAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z
-    MCAPI void handleOutput(class CommandOrigin const&, class CommandOutput const&) const;
+    MCAPI void handleOutput(class CommandOrigin const& origin, class CommandOutput const& output) const;
 
     // symbol:
     // ?initCoreEnums@MinecraftCommands@@QEAAXVItemRegistryRef@@AEBVIWorldRegistriesProvider@@AEBVActorFactory@@AEBVExperiments@@AEBVBaseGameVersion@@@Z
@@ -62,7 +62,11 @@ public:
     MCAPI void runCommand(class Command&, class CommandOrigin&);
 
     // symbol: ?runCommand@MinecraftCommands@@QEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
-    MCAPI void runCommand(class HashedString const&, class CommandOrigin&, ::CurrentCmdVersion);
+    MCAPI void runCommand(
+        class HashedString const& commandStr,
+        class CommandOrigin&      origin,
+        enum CurrentCmdVersion    commandVersion
+    );
 
     // symbol: ?runOrDeferCommand@MinecraftCommands@@QEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
     MCAPI void runOrDeferCommand(class HashedString const&, class CommandOrigin&, ::CurrentCmdVersion);
@@ -72,7 +76,7 @@ public:
     MCAPI void runOrDeferCommand(gsl::not_null<class Command*>, class CommandOrigin&, ::CurrentCmdVersion);
 
     // symbol: ?setRegistryNetworkUpdateCallback@MinecraftCommands@@QEBAXV?$function@$$A6AXAEBVPacket@@@Z@std@@@Z
-    MCAPI void setRegistryNetworkUpdateCallback(std::function<void(class Packet const&)>) const;
+    MCAPI void setRegistryNetworkUpdateCallback(std::function<void(class Packet const&)> callback) const;
 
     // symbol: ?shouldDeferCommand@MinecraftCommands@@QEBA_NW4CurrentCmdVersion@@@Z
     MCAPI bool shouldDeferCommand(::CurrentCmdVersion) const;
@@ -81,7 +85,7 @@ public:
     MCAPI void tick();
 
     // symbol: ?getOutputType@MinecraftCommands@@SA?AW4CommandOutputType@@AEBVCommandOrigin@@@Z
-    MCAPI static ::CommandOutputType getOutputType(class CommandOrigin const&);
+    MCAPI static ::CommandOutputType getOutputType(class CommandOrigin const& origin);
 
     // symbol: ?initBlockEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@AEBVBaseGameVersion@@@Z
     MCAPI static void initBlockEnum(class CommandRegistry&, class BaseGameVersion const&);

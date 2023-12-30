@@ -26,7 +26,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@SetCommandsEnabledPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@SetCommandsEnabledPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -36,7 +36,7 @@ public:
     MCAPI SetCommandsEnabledPacket();
 
     // symbol: ??0SetCommandsEnabledPacket@@QEAA@_N@Z
-    MCAPI explicit SetCommandsEnabledPacket(bool);
+    MCAPI explicit SetCommandsEnabledPacket(bool commandsEnabled);
 
     // NOLINTEND
 };

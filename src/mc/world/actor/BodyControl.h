@@ -17,7 +17,7 @@ public:
     virtual ~BodyControl();
 
     // vIndex: 1, symbol: ?clientTick@BodyControl@@UEAAXAEAVMob@@@Z
-    virtual void clientTick(class Mob&);
+    virtual void clientTick(class Mob& mob);
 
     // symbol: ??0BodyControl@@QEAA@XZ
     MCAPI BodyControl();
@@ -27,7 +27,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_allowUpdateBodyRotation@BodyControl@@AEBA_NAEBVMob@@@Z
-    MCAPI bool _allowUpdateBodyRotation(class Mob const&) const;
+    MCAPI bool _allowUpdateBodyRotation(class Mob const& mob) const;
 
     // NOLINTEND
 

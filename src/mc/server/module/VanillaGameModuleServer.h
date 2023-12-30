@@ -47,7 +47,7 @@ public:
     virtual void __unk_vfn_6();
 
     // vIndex: 7, symbol: ?setupCommands@VanillaGameModuleServer@@UEAAXAEAVCommandRegistry@@@Z
-    virtual void setupCommands(class CommandRegistry&);
+    virtual void setupCommands(class CommandRegistry& commandRegistry);
 
     // vIndex: 8, symbol:
     // ?configureServerNetworkHandler@VanillaGameModuleServer@@UEAAXAEAVServerInstance@@V?$not_null@V?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@@gsl@@@Z
@@ -55,7 +55,7 @@ public:
     configureServerNetworkHandler(class ServerInstance&, Bedrock::NotNullNonOwnerPtr<class ServerNetworkHandler>);
 
     // symbol: ?configureNewPlayer@VanillaGameModuleServer@@UEAAXAEAVPlayer@@@Z
-    MCVAPI void configureNewPlayer(class Player&);
+    MCVAPI void configureNewPlayer(class Player& player);
 
     // symbol: ?tick@VanillaGameModuleServer@@UEAAXXZ
     MCVAPI void tick();

@@ -21,7 +21,7 @@ public:
     virtual int getStrength() const;
 
     // vIndex: 3, symbol: ?setStrength@PulseCapacitor@@UEAAXH@Z
-    virtual void setStrength(int);
+    virtual void setStrength(int strength);
 
     // vIndex: 6, symbol: ?canConsumePowerAnyDirection@PulseCapacitor@@UEBA_NXZ
     virtual bool canConsumePowerAnyDirection() const;
@@ -31,10 +31,11 @@ public:
 
     // vIndex: 12, symbol:
     // ?allowConnection@PulseCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-    virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
+    virtual bool
+    allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
     // vIndex: 14, symbol: ?evaluate@PulseCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-    virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
+    virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
 
     // vIndex: 17, symbol: __unk_vfn_17
     virtual void __unk_vfn_17();

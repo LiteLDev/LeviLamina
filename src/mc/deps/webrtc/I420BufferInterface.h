@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/webrtc/VideoFrameBuffer.h"
-#include "mc/deps/webrtc/detail/RefCountReleaseStatus.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
+#include "mc/deps/webrtc/rtc/RefCountReleaseStatus.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,7 +33,7 @@ public:
     virtual ~I420BufferInterface();
 
     // vIndex: 3, symbol:
-    // ?OnSuccess@ImplicitCreateSessionDescriptionObserver@SdpOfferAnswerHandler@webrtc@@UEAAXPEAVSessionDescriptionInterface@3@@Z
+    // ?OnSuccess@MyCreateSessionDescriptionObserver@NetherNet@@UEAAXPEAVSessionDescriptionInterface@webrtc@@@Z
     virtual void OnSuccess(class webrtc::SessionDescriptionInterface*);
 
     // symbol: ?ChromaHeight@I420BufferInterface@webrtc@@UEBAHXZ

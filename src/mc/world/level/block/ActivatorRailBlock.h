@@ -94,7 +94,8 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 65, symbol: ?onRedstoneUpdate@ActivatorRailBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void
+    onRedstoneUpdate(class BlockSource& source, class BlockPos const& pos, int strength, bool isFirstTime) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -118,7 +119,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@ActivatorRailBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -133,7 +134,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0ActivatorRailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ActivatorRailBlock(std::string const&, int);
+    MCAPI ActivatorRailBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

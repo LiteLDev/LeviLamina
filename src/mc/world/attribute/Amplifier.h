@@ -15,13 +15,13 @@ public:
     virtual ~Amplifier() = default;
 
     // vIndex: 1, symbol: ?getAmount@Amplifier@@UEBAMHM@Z
-    virtual float getAmount(int, float) const;
+    virtual float getAmount(int amplification, float scale) const;
 
     // vIndex: 2, symbol: ?shouldBuff@Amplifier@@UEBA_NHH@Z
-    virtual bool shouldBuff(int, int) const;
+    virtual bool shouldBuff(int remainingDuration, int amplification) const;
 
     // vIndex: 3, symbol: ?getTickInterval@Amplifier@@UEBAHH@Z
-    virtual int getTickInterval(int) const;
+    virtual int getTickInterval(int amplification) const;
 
     // NOLINTEND
 };

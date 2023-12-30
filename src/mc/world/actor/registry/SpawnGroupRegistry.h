@@ -35,11 +35,11 @@ public:
     readResourceFiles(class ResourcePackManager&, class MobSpawnRules const&, std::unordered_map<std::string, struct ActorSpawnRuleData>&);
 
     // symbol: ??0SpawnGroupRegistry@@QEAA@AEAVResourcePackManager@@@Z
-    MCAPI explicit SpawnGroupRegistry(class ResourcePackManager&);
+    MCAPI explicit SpawnGroupRegistry(class ResourcePackManager& resourcePackManager);
 
     // symbol:
     // ?getSpawnGroup@SpawnGroupRegistry@@QEBAPEBVSpawnGroupData@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class SpawnGroupData const* getSpawnGroup(std::string const&) const;
+    MCAPI class SpawnGroupData const* getSpawnGroup(std::string const& identifier) const;
 
     // NOLINTEND
 };

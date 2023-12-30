@@ -27,7 +27,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@InventoryContentPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@InventoryContentPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -38,10 +38,10 @@ public:
 
     // symbol:
     // ??0InventoryContentPacket@@QEAA@W4ContainerID@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-    MCAPI InventoryContentPacket(::ContainerID, std::vector<class ItemStack> const&);
+    MCAPI InventoryContentPacket(enum ContainerID id, std::vector<class ItemStack> const& items);
 
     // symbol: ?fromPlayerInventoryId@InventoryContentPacket@@SA?AV1@W4ContainerID@@AEAVPlayer@@@Z
-    MCAPI static class InventoryContentPacket fromPlayerInventoryId(::ContainerID, class Player&);
+    MCAPI static class InventoryContentPacket fromPlayerInventoryId(enum ContainerID id, class Player& player);
 
     // NOLINTEND
 };

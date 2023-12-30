@@ -48,7 +48,7 @@ public:
     createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 
     // symbol: ??0StrongholdFeature@@QEAA@PEAVVillageFeature@@I@Z
-    MCAPI StrongholdFeature(class VillageFeature*, uint);
+    MCAPI StrongholdFeature(class VillageFeature* villages, uint seed);
 
     // symbol: ?START_OFFSET@StrongholdFeature@@2VBlockPos@@B
     MCAPI static class BlockPos const START_OFFSET;
@@ -67,7 +67,8 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_generateStronghold@StrongholdFeature@@AEAA?BUStrongholdResult@1@IAEBVChunkPos@@@Z
-    MCAPI struct StrongholdFeature::StrongholdResult const _generateStronghold(uint, class ChunkPos const&);
+    MCAPI struct StrongholdFeature::StrongholdResult const
+    _generateStronghold(uint levelSeed, class ChunkPos const& cp);
 
     // symbol: ?_getNearestStronghold@StrongholdFeature@@AEAA_NAEBVDimension@@IAEBVBlockPos@@AEAV3@_N@Z
     MCAPI bool _getNearestStronghold(class Dimension const&, uint, class BlockPos const&, class BlockPos&, bool);

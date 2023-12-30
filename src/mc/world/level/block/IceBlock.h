@@ -103,7 +103,8 @@ public:
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
 
     // vIndex: 94, symbol: ?playerWillDestroy@IceBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
-    virtual class Block const* playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
+    virtual class Block const*
+    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -139,13 +140,13 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 165, symbol: ?getResourceCount@IceBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
 
     // symbol: ??0IceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI IceBlock(std::string const&, int, bool);
+    MCAPI IceBlock(std::string const& nameId, int id, bool packed);
 
     // symbol: ?melt@IceBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static void melt(class BlockSource&, class BlockPos const&);
+    MCAPI static void melt(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 

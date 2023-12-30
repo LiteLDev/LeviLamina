@@ -30,7 +30,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@TextPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol: ?_read@TextPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
@@ -48,12 +48,20 @@ public:
 
     // symbol:
     // ?createAnnouncement@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
-    MCAPI static class TextPacket
-    createAnnouncement(std::string const&, std::string const&, std::string const&, std::string const&);
+    MCAPI static class TextPacket createAnnouncement(
+        std::string const& author,
+        std::string const& message,
+        std::string const& xuid,
+        std::string const& platformId
+    );
 
     // symbol: ?createChat@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
-    MCAPI static class TextPacket
-    createChat(std::string const&, std::string const&, std::string const&, std::string const&);
+    MCAPI static class TextPacket createChat(
+        std::string const& author,
+        std::string const& message,
+        std::string const& xuid,
+        std::string const& platformId
+    );
 
     // symbol:
     // ?createJukeboxPopup@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
@@ -65,11 +73,12 @@ public:
 
     // symbol:
     // ?createSystemMessage@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class TextPacket createSystemMessage(std::string const&);
+    MCAPI static class TextPacket createSystemMessage(std::string const& message);
 
     // symbol:
     // ?createTextObjectMessage@TextPacket@@SA?AV1@AEBVResolvedTextObject@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-    MCAPI static class TextPacket createTextObjectMessage(class ResolvedTextObject const&, std::string, std::string);
+    MCAPI static class TextPacket
+    createTextObjectMessage(class ResolvedTextObject const& textObject, std::string xuid, std::string platformId);
 
     // symbol:
     // ?createTextObjectWhisperMessage@TextPacket@@SA?AV1@AEBVResolvedTextObject@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
@@ -83,16 +92,24 @@ public:
 
     // symbol:
     // ?createTranslated@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-    MCAPI static class TextPacket createTranslated(std::string const&, std::vector<std::string> const&);
+    MCAPI static class TextPacket createTranslated(std::string const& message, std::vector<std::string> const& params);
 
     // symbol:
     // ?createTranslatedAnnouncement@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
-    MCAPI static class TextPacket
-    createTranslatedAnnouncement(std::string const&, std::string const&, std::string const&, std::string const&);
+    MCAPI static class TextPacket createTranslatedAnnouncement(
+        std::string const& author,
+        std::string const& message,
+        std::string const& xuid,
+        std::string const& platformId
+    );
 
     // symbol: ?createWhisper@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
-    MCAPI static class TextPacket
-    createWhisper(std::string const&, std::string const&, std::string const&, std::string const&);
+    MCAPI static class TextPacket createWhisper(
+        std::string const& author,
+        std::string const& message,
+        std::string const& xuid,
+        std::string const& platformId
+    );
 
     // NOLINTEND
 };

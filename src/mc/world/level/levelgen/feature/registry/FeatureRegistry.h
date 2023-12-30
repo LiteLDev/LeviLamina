@@ -56,11 +56,15 @@ public:
     MCAPI bool isFeaturePassDefined(std::string const&) const;
 
     // symbol: ?loadFromDefinitions@FeatureRegistry@@QEAAXAEAVIWorldRegistriesProvider@@AEBVResourcePackManager@@_N@Z
-    MCAPI void loadFromDefinitions(class IWorldRegistriesProvider&, class ResourcePackManager const&, bool);
+    MCAPI void loadFromDefinitions(
+        class IWorldRegistriesProvider&  worldRegistries,
+        class ResourcePackManager const& rpm,
+        bool                             isExperimentalEnabled
+    );
 
     // symbol:
     // ?lookupByName@FeatureRegistry@@QEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits> lookupByName(std::string const&) const;
+    MCAPI class WeakRefT<struct FeatureRefTraits> lookupByName(std::string const& name) const;
 
     // symbol:
     // ?lookupOrReserveFeature@FeatureRegistry@@QEAA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -68,7 +72,7 @@ public:
 
     // symbol:
     // ?reserveFeature@FeatureRegistry@@QEAA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits> reserveFeature(std::string const&);
+    MCAPI class WeakRefT<struct FeatureRefTraits> reserveFeature(std::string const& name);
 
     // symbol:
     // ?reverseLookupString@FeatureRegistry@@QEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVIFeature@@@Z

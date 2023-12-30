@@ -75,16 +75,16 @@ public:
     virtual ~ChalkboardBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@ChalkboardBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2, symbol: ?save@ChalkboardBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 7, symbol: ?tick@ChalkboardBlockActor@@UEAAXAEAVBlockSource@@@Z
     virtual void tick(class BlockSource&);
 
     // vIndex: 8, symbol: ?onChanged@ChalkboardBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onChanged(class BlockSource&);
+    virtual void onChanged(class BlockSource& region);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
@@ -133,10 +133,10 @@ public:
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@ChalkboardBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ??0ChalkboardBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit ChalkboardBlockActor(class BlockPos const&);
+    MCAPI explicit ChalkboardBlockActor(class BlockPos const& pos);
 
     // symbol: ?getChalkboardSize@ChalkboardBlockActor@@QEBA?BW4ChalkboardSize@@XZ
     MCAPI ::ChalkboardSize const getChalkboardSize() const;
@@ -145,7 +145,7 @@ public:
     MCAPI bool getLocked() const;
 
     // symbol: ?getRotation@ChalkboardBlockActor@@QEBAHAEAVBlockSource@@@Z
-    MCAPI int getRotation(class BlockSource&) const;
+    MCAPI int getRotation(class BlockSource& region) const;
 
     // symbol: ?getText@ChalkboardBlockActor@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getText() const;
@@ -154,14 +154,15 @@ public:
     MCAPI int getTextCharCount() const;
 
     // symbol: ?setText@ChalkboardBlockActor@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setText(std::string const&);
+    MCAPI void setText(std::string const& text);
 
     // symbol: ?validate@ChalkboardBlockActor@@QEAAXAEAVBlockSource@@@Z
     MCAPI void validate(class BlockSource&);
 
     // symbol:
     // ?calculateAllBlocks@ChalkboardBlockActor@@SA?AV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVBlockPos@@W4ChalkboardSize@@H@Z
-    MCAPI static std::vector<class BlockPos> calculateAllBlocks(class BlockPos const&, ::ChalkboardSize, int);
+    MCAPI static std::vector<class BlockPos>
+    calculateAllBlocks(class BlockPos const& basePos, enum ChalkboardSize boardSize, int dir);
 
     // symbol:
     // ?canCreateChalkboard@ChalkboardBlockActor@@SA_NPEAVActor@@AEAVBlockSource@@AEBVBlockPos@@W4ChalkboardSize@@EHAEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVItemStack@@_N@Z
@@ -178,7 +179,7 @@ public:
     );
 
     // symbol: ?convertFromEntity@ChalkboardBlockActor@@SAPEAV1@AEAVBlockSource@@AEBVCompoundTag@@@Z
-    MCAPI static class ChalkboardBlockActor* convertFromEntity(class BlockSource&, class CompoundTag const&);
+    MCAPI static class ChalkboardBlockActor* convertFromEntity(class BlockSource& region, class CompoundTag const& tag);
 
     // symbol:
     // ?createChalkboard@ChalkboardBlockActor@@SAPEAV1@PEAVActor@@AEAVBlockSource@@AEBVBlockPos@@W4ChalkboardSize@@EH_NAEBVItemStack@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

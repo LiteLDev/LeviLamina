@@ -23,10 +23,10 @@ public:
     virtual ~ActorHasEquipmentTest();
 
     // vIndex: 1, symbol: ?setup@ActorHasEquipmentTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-    virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
+    virtual bool setup(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
 
     // vIndex: 2, symbol: ?evaluate@ActorHasEquipmentTest@@UEBA_NAEBUFilterContext@@@Z
-    virtual bool evaluate(struct FilterContext const&) const;
+    virtual bool evaluate(struct FilterContext const& context) const;
 
     // vIndex: 4, symbol: ?getName@ActorHasEquipmentTest@@UEBA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@XZ
     virtual std::string_view getName() const;

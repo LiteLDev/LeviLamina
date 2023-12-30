@@ -38,7 +38,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@Slime@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: ??1Slime@@UEAA@XZ
     virtual ~Slime();
@@ -74,7 +74,7 @@ public:
     virtual void __unk_vfn_107();
 
     // vIndex: 112, symbol: ?onSynchedDataUpdate@Slime@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int dataId);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
@@ -83,10 +83,10 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@Slime@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@Slime@@MEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -98,10 +98,10 @@ public:
     virtual void aiStep();
 
     // vIndex: 179, symbol: ?checkSpawnRules@Slime@@UEAA_N_N@Z
-    virtual bool checkSpawnRules(bool);
+    virtual bool checkSpawnRules(bool fromSpawner);
 
     // vIndex: 204, symbol: ?_getWalkTargetValue@Slime@@MEAAMAEBVBlockPos@@@Z
-    virtual float _getWalkTargetValue(class BlockPos const&);
+    virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // vIndex: 211, symbol: ?doPlayLandSound@Slime@@MEAA_NXZ
     virtual bool doPlayLandSound();
@@ -113,7 +113,7 @@ public:
     virtual void decreaseSquish();
 
     // vIndex: 214, symbol: ?createChild@Slime@@MEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@H@Z
-    virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
+    virtual class OwnerPtrT<struct EntityRefTraits> createChild(int i);
 
     // symbol: ??0Slime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Slime(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
@@ -144,7 +144,7 @@ public:
     MCAPI void justLanded();
 
     // symbol: ?setSlimeSize@Slime@@IEAAXH@Z
-    MCAPI void setSlimeSize(int);
+    MCAPI void setSlimeSize(int size);
 
     // NOLINTEND
 };

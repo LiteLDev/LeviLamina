@@ -80,7 +80,7 @@ public:
     _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
 
     // symbol: ??0CompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CompassItem(std::string const&, int);
+    MCAPI CompassItem(std::string const& name, int id);
 
     // NOLINTEND
 };

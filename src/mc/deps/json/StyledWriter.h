@@ -39,20 +39,20 @@ public:
     MCAPI void indent();
 
     // symbol: ?pushValue@StyledWriter@Json@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void pushValue(std::string const&);
+    MCAPI void pushValue(std::string const& value);
 
     // symbol: ?unindent@StyledWriter@Json@@AEAAXXZ
     MCAPI void unindent();
 
     // symbol: ?writeArrayValue@StyledWriter@Json@@AEAAXAEBVValue@2@@Z
-    MCAPI void writeArrayValue(class Json::Value const&);
+    MCAPI void writeArrayValue(class Json::Value const& value);
 
     // symbol: ?writeValue@StyledWriter@Json@@AEAAXAEBVValue@2@@Z
-    MCAPI void writeValue(class Json::Value const&);
+    MCAPI void writeValue(class Json::Value const& value);
 
     // symbol:
     // ?writeWithIndent@StyledWriter@Json@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void writeWithIndent(std::string const&);
+    MCAPI void writeWithIndent(std::string const& value);
 
     // NOLINTEND
 };

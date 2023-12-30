@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/GenericModuleBindingFactory.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class GenericModuleBindingFactory; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
@@ -13,7 +17,7 @@ namespace Scripting { struct Version; }
 namespace mce { class UUID; }
 // clang-format on
 
-class ScriptMinecraftServerUIModuleFactory {
+class ScriptMinecraftServerUIModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
     // prevent constructor by default
     ScriptMinecraftServerUIModuleFactory& operator=(ScriptMinecraftServerUIModuleFactory const&);
@@ -23,30 +27,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1ScriptMinecraftServerUIModuleFactory@@UEAA@XZ
     virtual ~ScriptMinecraftServerUIModuleFactory() = default;
-
-    // vIndex: 1, symbol:
-    // ?getName@GenericModuleBindingFactory@Scripting@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-    virtual std::string getName() const;
-
-    // vIndex: 2, symbol: ?getUUID@GenericModuleBindingFactory@Scripting@@UEBA?AUUUID@2@XZ
-    virtual struct Scripting::UUID getUUID() const;
-
-    // vIndex: 3, symbol:
-    // ?hasAlias@GenericModuleBindingFactory@Scripting@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual bool hasAlias(std::string const&) const;
-
-    // vIndex: 4, symbol:
-    // ?getSupportedVersions@GenericModuleBindingFactory@Scripting@@UEBA?AV?$vector@UVersion@Scripting@@V?$allocator@UVersion@Scripting@@@std@@@std@@XZ
-    virtual std::vector<struct Scripting::Version> getSupportedVersions() const;
-
-    // vIndex: 5, symbol:
-    // ?getDependencies@GenericModuleBindingFactory@Scripting@@UEBA?AV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@std@@UVersion@2@@Z
-    virtual std::vector<struct Scripting::ModuleDescriptor> getDependencies(struct Scripting::Version) const;
-
-    // vIndex: 6, symbol:
-    // ?createModuleBinding@GenericModuleBindingFactory@Scripting@@UEAA?AV?$optional@UModuleBinding@Scripting@@@std@@UVersion@2@AEBV?$optional@UContextConfig@Scripting@@@4@@Z
-    virtual std::optional<struct Scripting::ModuleBinding>
-    createModuleBinding(struct Scripting::Version, std::optional<struct Scripting::ContextConfig> const&);
 
     // symbol: ??0ScriptMinecraftServerUIModuleFactory@@QEAA@XZ
     MCAPI ScriptMinecraftServerUIModuleFactory();

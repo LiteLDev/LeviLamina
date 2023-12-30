@@ -18,10 +18,10 @@ public:
     virtual ~ClientPlayerEventCoordinator() = default;
 
     // symbol: ?sendPlayerDestroyedBlock@ClientPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlock@@@Z
-    MCAPI void sendPlayerDestroyedBlock(class Player&, class Block const&);
+    MCAPI void sendPlayerDestroyedBlock(class Player& player, class Block const& blockType);
 
     // symbol: ?sendStartDestroyBlock@ClientPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@AEAE@Z
-    MCAPI void sendStartDestroyBlock(class Player&, class BlockPos const&, uchar&);
+    MCAPI void sendStartDestroyBlock(class Player& player, class BlockPos const& pos, uchar& face);
 
     // NOLINTEND
 };

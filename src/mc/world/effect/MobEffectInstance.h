@@ -24,22 +24,33 @@ public:
     MCAPI MobEffectInstance(class MobEffectInstance const&);
 
     // symbol: ??0MobEffectInstance@@QEAA@I@Z
-    MCAPI explicit MobEffectInstance(uint);
+    MCAPI explicit MobEffectInstance(uint id);
 
     // symbol: ??0MobEffectInstance@@QEAA@IH@Z
-    MCAPI MobEffectInstance(uint, int);
+    MCAPI MobEffectInstance(uint id, int duration);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHH@Z
-    MCAPI MobEffectInstance(uint, int, int);
+    MCAPI MobEffectInstance(uint id, int duration, int amplifier);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHH_N00@Z
-    MCAPI MobEffectInstance(uint, int, int, bool, bool, bool);
+    MCAPI
+    MobEffectInstance(uint id, int duration, int amplifier, bool ambient, bool effectVisible, bool displayAnimation);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHHHHH_N00@Z
-    MCAPI MobEffectInstance(uint, int, int, int, int, int, bool, bool, bool);
+    MCAPI MobEffectInstance(
+        uint id,
+        int  duration,
+        int  durationEasy,
+        int  durationNormal,
+        int  durationHard,
+        int  amplifier,
+        bool ambient,
+        bool effectVisible,
+        bool displayAnimation
+    );
 
     // symbol: ?applyEffects@MobEffectInstance@@QEAAXPEAVActor@@@Z
-    MCAPI void applyEffects(class Actor*);
+    MCAPI void applyEffects(class Actor* mob);
 
     // symbol: ?displaysOnScreenTextureAnimation@MobEffectInstance@@QEBA_NXZ
     MCAPI bool displaysOnScreenTextureAnimation() const;
@@ -55,7 +66,7 @@ public:
     MCAPI std::string getDescriptionId() const;
 
     // symbol: ?getDifficulityDuration@MobEffectInstance@@QEBAHW4Difficulty@@@Z
-    MCAPI int getDifficulityDuration(::Difficulty) const;
+    MCAPI int getDifficulityDuration(enum Difficulty difficulty) const;
 
     // symbol: ?getDisplayName@MobEffectInstance@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getDisplayName() const;
@@ -82,7 +93,7 @@ public:
     MCAPI bool isEffectVisible() const;
 
     // symbol: ??9MobEffectInstance@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class MobEffectInstance const&) const;
+    MCAPI bool operator!=(class MobEffectInstance const& obj) const;
 
     // symbol: ??4MobEffectInstance@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class MobEffectInstance& operator=(class MobEffectInstance&&);
@@ -91,28 +102,28 @@ public:
     MCAPI class MobEffectInstance& operator=(class MobEffectInstance const&);
 
     // symbol: ??8MobEffectInstance@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class MobEffectInstance const&) const;
+    MCAPI bool operator==(class MobEffectInstance const& obj) const;
 
     // symbol: ?removeEffects@MobEffectInstance@@QEBAXPEAVActor@@@Z
-    MCAPI void removeEffects(class Actor*) const;
+    MCAPI void removeEffects(class Actor* mob) const;
 
     // symbol: ?save@MobEffectInstance@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> save() const;
 
     // symbol: ?setDifficulityDuration@MobEffectInstance@@QEAAXW4Difficulty@@H@Z
-    MCAPI void setDifficulityDuration(::Difficulty, int);
+    MCAPI void setDifficulityDuration(enum Difficulty difficulty, int duration);
 
     // symbol: ?setDuration@MobEffectInstance@@QEAAXH@Z
-    MCAPI void setDuration(int);
+    MCAPI void setDuration(int dur);
 
     // symbol: ?tick@MobEffectInstance@@QEAA_NPEAVActor@@@Z
-    MCAPI bool tick(class Actor*);
+    MCAPI bool tick(class Actor* target);
 
     // symbol: ?tryInitializeMobEffectData@MobEffectInstance@@QEAAXXZ
     MCAPI void tryInitializeMobEffectData();
 
     // symbol: ?update@MobEffectInstance@@QEAAXAEBV1@@Z
-    MCAPI void update(class MobEffectInstance const&);
+    MCAPI void update(class MobEffectInstance const& takeOver);
 
     // symbol: ?updateEffects@MobEffectInstance@@QEBAXPEAVActor@@@Z
     MCAPI void updateEffects(class Actor*) const;
@@ -126,7 +137,7 @@ public:
 
     // symbol:
     // ?getColorValue@MobEffectInstance@@SA?AVColor@mce@@AEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@@Z
-    MCAPI static class mce::Color getColorValue(std::vector<class MobEffectInstance> const&);
+    MCAPI static class mce::Color getColorValue(std::vector<class MobEffectInstance> const& effects);
 
     // symbol: ?load@MobEffectInstance@@SA?AV1@AEBVCompoundTag@@@Z
     MCAPI static class MobEffectInstance load(class CompoundTag const&);

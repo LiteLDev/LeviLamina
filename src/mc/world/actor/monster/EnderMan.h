@@ -74,7 +74,7 @@ public:
     virtual void __unk_vfn_107();
 
     // vIndex: 125, symbol: ?canBeAffectedByArrow@EnderMan@@UEBA_NAEBVMobEffectInstance@@@Z
-    virtual bool canBeAffectedByArrow(class MobEffectInstance const&) const;
+    virtual bool canBeAffectedByArrow(class MobEffectInstance const& effect) const;
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
@@ -83,13 +83,13 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@EnderMan@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@EnderMan@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@EnderMan@@MEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -98,7 +98,7 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 176, symbol: ?hurtEffects@EnderMan@@UEAAXAEBVActorDamageSource@@M_N1@Z
-    virtual void hurtEffects(class ActorDamageSource const&, float, bool, bool);
+    virtual void hurtEffects(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 207, symbol: ?newServerAiStep@EnderMan@@UEAAXXZ
     virtual void newServerAiStep();
@@ -110,7 +110,7 @@ public:
     MCAPI class Block const& getCarryingBlock() const;
 
     // symbol: ?setCarryingBlock@EnderMan@@QEAAXAEBVBlock@@@Z
-    MCAPI void setCarryingBlock(class Block const&);
+    MCAPI void setCarryingBlock(class Block const& block);
 
     // symbol: ?shutdown@EnderMan@@SAXXZ
     MCAPI static void shutdown();

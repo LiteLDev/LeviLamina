@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?emplace@CompoundTagVariant@@QEAAAEAVTag@@$$QEAV2@@Z
-    MCAPI class Tag& emplace(class Tag&&);
+    MCAPI class Tag& emplace(class Tag&& tag);
 
     // symbol: ?get@CompoundTagVariant@@QEAAPEAVTag@@XZ
     MCAPI class Tag* get();

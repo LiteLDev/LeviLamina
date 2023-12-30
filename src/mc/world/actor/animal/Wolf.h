@@ -64,22 +64,22 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 69, symbol: ?setSitting@Wolf@@UEAAX_N@Z
-    virtual void setSitting(bool);
+    virtual void setSitting(bool value);
 
     // vIndex: 77, symbol: ?getAmbientSound@Wolf@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@Wolf@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(enum ActorEvent id, int data);
 
     // vIndex: 98, symbol: ?load@Wolf@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual bool load(class CompoundTag const&, class DataLoadHelper&);
+    virtual bool load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
 
     // vIndex: 112, symbol: ?onSynchedDataUpdate@Wolf@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int dataId);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
@@ -88,7 +88,7 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@Wolf@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -97,10 +97,10 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 185, symbol: ?isAlliedTo@Wolf@@UEAA_NPEAVMob@@@Z
-    virtual bool isAlliedTo(class Mob*);
+    virtual bool isAlliedTo(class Mob* other);
 
     // vIndex: 200, symbol: ?onBorn@Wolf@@UEAAXAEAVActor@@0@Z
-    virtual void onBorn(class Actor&, class Actor&);
+    virtual void onBorn(class Actor& parentLeft, class Actor& parentRight);
 
     // vIndex: 207, symbol: ?newServerAiStep@Wolf@@UEAAXXZ
     virtual void newServerAiStep();
@@ -109,7 +109,7 @@ public:
     MCAPI Wolf(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
     // symbol: ?getHeadRollAngle@Wolf@@QEAAMM@Z
-    MCAPI float getHeadRollAngle(float);
+    MCAPI float getHeadRollAngle(float a);
 
     // symbol: ?getShakeAnim@Wolf@@QEBAMXZ
     MCAPI float getShakeAnim() const;

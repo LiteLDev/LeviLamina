@@ -21,16 +21,16 @@ public:
     MCAPI class MingleComponent& clearPreviousPartnerId();
 
     // symbol: ?fetchCurrentPartner@MingleComponent@@QEBAPEAVActor@@AEBV2@@Z
-    MCAPI class Actor* fetchCurrentPartner(class Actor const&) const;
+    MCAPI class Actor* fetchCurrentPartner(class Actor const& actorInLevel) const;
 
     // symbol: ?resetState@MingleComponent@@QEAAXXZ
     MCAPI void resetState();
 
     // symbol: ?setMingleState@MingleComponent@@QEAAAEAV1@W4MingleState@1@@Z
-    MCAPI class MingleComponent& setMingleState(::MingleComponent::MingleState);
+    MCAPI class MingleComponent& setMingleState(enum MingleComponent::MingleState val);
 
     // symbol: ?setPartnerId@MingleComponent@@QEAAAEAV1@UActorUniqueID@@@Z
-    MCAPI class MingleComponent& setPartnerId(struct ActorUniqueID);
+    MCAPI class MingleComponent& setPartnerId(struct ActorUniqueID val);
 
     // NOLINTEND
 };

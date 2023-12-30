@@ -24,8 +24,12 @@ public:
 
     // vIndex: 1, symbol:
     // ?create@PackManifestFactory@@UEAA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@AEAVPackAccessStrategy@@AEBVResourceLocation@@AEAVPackReport@@PEAVSubpackInfoCollection@@@Z
-    virtual std::unique_ptr<class PackManifest>
-    create(class PackAccessStrategy&, class ResourceLocation const&, class PackReport&, class SubpackInfoCollection*);
+    virtual std::unique_ptr<class PackManifest> create(
+        class PackAccessStrategy&     accessStrategy,
+        class ResourceLocation const& location,
+        class PackReport&             report,
+        class SubpackInfoCollection*  subpackInfoStack
+    );
 
     // symbol: ??0PackManifestFactory@@QEAA@AEBVPackCapabilityRegistry@@AEAVIPackTelemetry@@@Z
     MCAPI PackManifestFactory(class PackCapabilityRegistry const&, class IPackTelemetry&);
@@ -37,7 +41,7 @@ public:
 
     // symbol:
     // ?contentKeyLookup@PackManifestFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-    MCAPI static std::string contentKeyLookup(std::string const&);
+    MCAPI static std::string contentKeyLookup(std::string const& packIdentity);
 
     // symbol: ?MANIFEST_LOG_PATH@PackManifestFactory@@2VPath@Core@@B
     MCAPI static class Core::Path const MANIFEST_LOG_PATH;

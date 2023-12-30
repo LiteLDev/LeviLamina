@@ -14,13 +14,13 @@ public:
     MCAPI BinaryHeap();
 
     // symbol: ?changeCost@BinaryHeap@@QEAAXPEAVPathfinderNode@@M@Z
-    MCAPI void changeCost(class PathfinderNode*, float);
+    MCAPI void changeCost(class PathfinderNode* node, float newCost);
 
     // symbol: ?clear@BinaryHeap@@QEAAXXZ
     MCAPI void clear();
 
     // symbol: ?insert@BinaryHeap@@QEAAPEAVPathfinderNode@@PEAV2@@Z
-    MCAPI class PathfinderNode* insert(class PathfinderNode*);
+    MCAPI class PathfinderNode* insert(class PathfinderNode* node);
 
     // symbol: ?isEmpty@BinaryHeap@@QEAA_NXZ
     MCAPI bool isEmpty();
@@ -36,7 +36,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?downHeap@BinaryHeap@@AEAAXH@Z
-    MCAPI void downHeap(int);
+    MCAPI void downHeap(int idx);
 
     // NOLINTEND
 };

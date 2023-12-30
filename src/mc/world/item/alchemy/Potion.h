@@ -56,8 +56,12 @@ public:
 
     // symbol:
     // ?getPotentencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@MV?$basic_string_view@DU?$char_traits@D@std@@@3@AEBVMobEffectInstance@@@Z
-    MCAPI std::string
-          getPotentencyDescription(::Potion::PotionType, float, std::string_view, class MobEffectInstance const&) const;
+    MCAPI std::string getPotentencyDescription(
+        enum Potion::PotionType        potionType,
+        float                          timeMod,
+        std::string_view               descID,
+        class MobEffectInstance const& effect
+    ) const;
 
     // symbol: ?getPotionId@Potion@@QEBAHXZ
     MCAPI int getPotionId() const;
@@ -79,7 +83,7 @@ public:
     MCAPI static std::shared_ptr<class Potion const> getPotion(std::string_view);
 
     // symbol: ?getPotion@Potion@@SA?AV?$shared_ptr@$$CBVPotion@@@std@@H@Z
-    MCAPI static std::shared_ptr<class Potion const> getPotion(int);
+    MCAPI static std::shared_ptr<class Potion const> getPotion(int potionId);
 
     // symbol: ?getPotionCount@Potion@@SAHXZ
     MCAPI static int getPotionCount();
@@ -230,10 +234,10 @@ public:
     // symbol:
     // ??0Potion@@AEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@V?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@2@W4PotionVariant@0@@Z
     MCAPI Potion(
-        std::string_view,
-        std::vector<std::string>,
-        std::vector<class MobEffectInstance>,
-        ::Potion::PotionVariant
+        std::string_view                     nameId,
+        std::vector<std::string>             descriptionIDs,
+        std::vector<class MobEffectInstance> mobEffects,
+        enum Potion::PotionVariant           var
     );
 
     // symbol:
@@ -245,7 +249,7 @@ public:
     MCAPI std::string _getDescriptionIdSingleString(::Potion::PotionType) const;
 
     // symbol: ?addPotion@Potion@@CAXV?$shared_ptr@$$CBVPotion@@@std@@@Z
-    MCAPI static void addPotion(std::shared_ptr<class Potion const>);
+    MCAPI static void addPotion(std::shared_ptr<class Potion const> potion);
 
     // NOLINTEND
 

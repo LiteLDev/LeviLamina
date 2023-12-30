@@ -18,19 +18,19 @@ public:
     MCVAPI std::string getName() const;
 
     // symbol: ?onPlace@BarrelBlockActor@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void onPlace(class BlockSource&);
+    MCVAPI void onPlace(class BlockSource& region);
 
     // symbol: ?playCloseSound@BarrelBlockActor@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void playCloseSound(class BlockSource&);
+    MCVAPI void playCloseSound(class BlockSource& region);
 
     // symbol: ?playOpenSound@BarrelBlockActor@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void playOpenSound(class BlockSource&);
+    MCVAPI void playOpenSound(class BlockSource& region);
 
     // symbol: ?startOpen@BarrelBlockActor@@UEAAXAEAVPlayer@@@Z
-    MCVAPI void startOpen(class Player&);
+    MCVAPI void startOpen(class Player& player);
 
     // symbol: ?stopOpen@BarrelBlockActor@@UEAAXAEAVPlayer@@@Z
-    MCVAPI void stopOpen(class Player&);
+    MCVAPI void stopOpen(class Player& player);
 
     // NOLINTEND
 };

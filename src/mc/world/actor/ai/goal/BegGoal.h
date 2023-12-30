@@ -35,17 +35,23 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@BegGoal@@EEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0BegGoal@@QEAA@AEAVMob@@AEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@MHH@Z
-    MCAPI BegGoal(class Mob&, std::vector<class ItemDescriptor> const&, float, int, int);
+    MCAPI BegGoal(
+        class Mob&                               tamableAnimal,
+        std::vector<class ItemDescriptor> const& itemList,
+        float                                    lookDistance,
+        int                                      minLookTime,
+        int                                      maxLookTime
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_playerHoldingInteresting@BegGoal@@AEAA_NPEAVPlayer@@@Z
-    MCAPI bool _playerHoldingInteresting(class Player*);
+    MCAPI bool _playerHoldingInteresting(class Player* player);
 
     // NOLINTEND
 };

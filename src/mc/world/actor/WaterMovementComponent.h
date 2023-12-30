@@ -17,7 +17,7 @@ public:
     MCAPI float getDragFactor() const;
 
     // symbol: ?initFromDefinition@WaterMovementComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor& owner);
 
     // NOLINTEND
 };

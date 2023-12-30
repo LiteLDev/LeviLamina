@@ -22,7 +22,7 @@ public:
     virtual ~SimpleBoolFilterTest() = default;
 
     // vIndex: 1, symbol: ?setup@SimpleBoolFilterTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-    virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
+    virtual bool setup(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
 
     // vIndex: 6, symbol: ?_serializeValue@SimpleBoolFilterTest@@MEBA?AVValue@Json@@XZ
     virtual class Json::Value _serializeValue() const;

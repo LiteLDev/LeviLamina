@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/webrtc/MediaSourceInterface.h"
 #include "mc/deps/webrtc/VideoTrackSourceInterface.h"
-#include "mc/deps/webrtc/detail/VideoSinkInterface.h"
+#include "mc/deps/webrtc/rtc/VideoSinkInterface.h"
 
 // auto generated forward declare list
 // clang-format off

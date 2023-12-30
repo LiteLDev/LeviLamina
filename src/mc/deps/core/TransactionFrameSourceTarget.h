@@ -24,8 +24,12 @@ public:
 
     // symbol:
     // ?exec@TransactionFrameSourceTarget@Core@@SA?AVResult@2@AEBVPath@2@0V?$function@$$A6A?AVResult@Core@@AEAVTransactionFrameSourceTarget@2@@Z@std@@1@Z
-    MCAPI static class Core::Result
-    exec(class Core::Path const&, class Core::Path const&, std::function<class Core::Result(class Core::TransactionFrameSourceTarget&)>, std::function<class Core::Result(class Core::TransactionFrameSourceTarget&)>);
+    MCAPI static class Core::Result exec(
+        class Core::Path const&                                                      source,
+        class Core::Path const&                                                      target,
+        std::function<class Core::Result(class Core::TransactionFrameSourceTarget&)> sameStorageAreaFunction,
+        std::function<class Core::Result(class Core::TransactionFrameSourceTarget&)> differentStorageAreaFunction
+    );
 
     // NOLINTEND
 

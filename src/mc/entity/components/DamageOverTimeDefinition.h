@@ -20,13 +20,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initialize@DamageOverTimeDefinition@@QEBAXAEAVEntityContext@@AEAVDamageOverTimeComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class DamageOverTimeComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class DamageOverTimeComponent& component) const;
 
     // symbol:
     // ?buildSchema@DamageOverTimeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDamageOverTimeDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageOverTimeDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageOverTimeDefinition>>& root
+    );
 
     // NOLINTEND
 };

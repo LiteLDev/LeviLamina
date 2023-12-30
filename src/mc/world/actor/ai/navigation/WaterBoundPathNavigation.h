@@ -18,22 +18,22 @@ public:
     virtual ~WaterBoundPathNavigation() = default;
 
     // vIndex: 1, symbol: ?initializeInternal@WaterBoundPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
-    virtual void initializeInternal(class Mob&, struct NavigationDescription*);
+    virtual void initializeInternal(class Mob& mob, struct NavigationDescription* description);
 
     // vIndex: 2, symbol: ?tick@WaterBoundPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-    virtual void tick(class NavigationComponent&, class Mob&);
+    virtual void tick(class NavigationComponent& parent, class Mob& mob);
 
     // vIndex: 3, symbol: ?getTempMobPos@WaterBoundPathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z
-    virtual class Vec3 getTempMobPos(class Mob const&) const;
+    virtual class Vec3 getTempMobPos(class Mob const& mob) const;
 
     // vIndex: 10, symbol: ?travel@WaterBoundPathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z
-    virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
+    virtual bool travel(class NavigationComponent& parent, class Mob& mob, float& xa, float& ya, float& za);
 
     // vIndex: 11, symbol: ?canUpdatePath@WaterBoundPathNavigation@@MEBA_NAEBVMob@@@Z
-    virtual bool canUpdatePath(class Mob const&) const;
+    virtual bool canUpdatePath(class Mob const& mob) const;
 
     // vIndex: 12, symbol: ?updatePath@WaterBoundPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-    virtual void updatePath(class NavigationComponent&, class Mob&);
+    virtual void updatePath(class NavigationComponent& parent, class Mob& mob);
 
     // NOLINTEND
 };

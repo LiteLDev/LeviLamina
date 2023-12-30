@@ -26,13 +26,13 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@EndermanTakeBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 10, symbol: ?getRandomNearbyBlockPos@EndermanTakeBlockGoal@@MEBA?AVBlockPos@@AEBVVec3@@@Z
     virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const&) const;
 
     // symbol: ??0EndermanTakeBlockGoal@@QEAA@AEAVEnderMan@@@Z
-    MCAPI explicit EndermanTakeBlockGoal(class EnderMan&);
+    MCAPI explicit EndermanTakeBlockGoal(class EnderMan& enderman);
 
     // NOLINTEND
 };

@@ -27,7 +27,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@UpdateSoftEnumPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@UpdateSoftEnumPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -38,7 +38,11 @@ public:
 
     // symbol:
     // ??0UpdateSoftEnumPacket@@QEAA@W4SoftEnumUpdateType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-    MCAPI UpdateSoftEnumPacket(::SoftEnumUpdateType, std::string const&, std::vector<std::string> const&);
+    MCAPI UpdateSoftEnumPacket(
+        enum SoftEnumUpdateType         type,
+        std::string const&              enumName,
+        std::vector<std::string> const& values
+    );
 
     // NOLINTEND
 };

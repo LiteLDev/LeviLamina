@@ -74,7 +74,7 @@ public:
     virtual class Core::Result _setInitialFileSize(uint64);
 
     // symbol: ??0FileImpl@Core@@QEAA@PEAVFileSystemImpl@1@VFileOpenMode@1@@Z
-    MCAPI FileImpl(class Core::FileSystemImpl*, class Core::FileOpenMode);
+    MCAPI FileImpl(class Core::FileSystemImpl* pTransaction, class Core::FileOpenMode openMode);
 
     // symbol: ?close@FileImpl@Core@@QEAA?AVResult@2@XZ
     MCAPI class Core::Result close();
@@ -117,7 +117,7 @@ public:
     MCAPI class Core::Result readExactly(void*, uint64);
 
     // symbol: ?setLoggingEnabled@FileImpl@Core@@QEAAX_N@Z
-    MCAPI void setLoggingEnabled(bool);
+    MCAPI void setLoggingEnabled(bool loggingEnabled);
 
     // symbol: ?setPosition@FileImpl@Core@@QEAA?AVResult@2@_K@Z
     MCAPI class Core::Result setPosition(uint64);

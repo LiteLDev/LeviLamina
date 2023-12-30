@@ -81,13 +81,14 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@FishingRodItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& itemStack, class Player& player) const;
 
     // vIndex: 75, symbol: ?hurtActor@FishingRodItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
     // vIndex: 79, symbol: ?mineBlock@FishingRodItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool
+    mineBlock(class ItemStack& itemStack, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
     // vIndex: 81, symbol:
     // ?buildDescriptionId@FishingRodItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
@@ -111,7 +112,8 @@ public:
     virtual std::string getInteractText(class Player const&) const;
 
     // vIndex: 105, symbol: ?getAnimationFrameFor@FishingRodItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-    virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
+    virtual int
+    getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
 
     // symbol: ?shouldSendInteractionGameEvents@FishingRodItem@@UEBA_NXZ
     MCVAPI bool shouldSendInteractionGameEvents() const;
@@ -120,7 +122,7 @@ public:
     MCVAPI bool shouldUseJsonForRenderMatrix() const;
 
     // symbol: ??0FishingRodItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FishingRodItem(std::string const&, int);
+    MCAPI FishingRodItem(std::string const& name, int id);
 
     // NOLINTEND
 };

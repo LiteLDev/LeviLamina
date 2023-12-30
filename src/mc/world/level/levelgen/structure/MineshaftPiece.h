@@ -27,27 +27,27 @@ public:
     // symbol:
     // ?createRandomShaftPiece@MineshaftPiece@@QEAA?AV?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@AEAUMineshaftData@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@3@AEAVRandom@@HHHHH@Z
     MCAPI std::unique_ptr<class StructurePiece> createRandomShaftPiece(
-        struct MineshaftData&,
-        std::vector<std::unique_ptr<class StructurePiece>>&,
-        class Random&,
-        int,
-        int,
-        int,
-        int,
-        int
+        struct MineshaftData&                               metadata,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
+        class Random&                                       random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction,
+        int                                                 genDepth
     );
 
     // symbol:
     // ?generateAndAddPiece@MineshaftPiece@@QEAAPEAVStructurePiece@@AEAV2@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@HHHHH@Z
     MCAPI class StructurePiece* generateAndAddPiece(
-        class StructurePiece&,
-        std::vector<std::unique_ptr<class StructurePiece>>&,
-        class Random&,
-        int,
-        int,
-        int,
-        int,
-        int
+        class StructurePiece&                               startPiece,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
+        class Random&                                       random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction,
+        int                                                 depth
     );
 
     // symbol: ?setPlanksBlock@MineshaftPiece@@QEAAXAEAVBlockSource@@AEBVBlock@@HHH@Z

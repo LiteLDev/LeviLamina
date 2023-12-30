@@ -23,20 +23,20 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@RandomFlyingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 10, symbol: ?_setWantedPosition@RandomFlyingGoal@@MEAA_NXZ
     virtual bool _setWantedPosition();
 
     // symbol: ??0RandomFlyingGoal@@QEAA@AEAVMob@@MHH_N@Z
-    MCAPI RandomFlyingGoal(class Mob&, float, int, int, bool);
+    MCAPI RandomFlyingGoal(class Mob& mob, float speed, int xzDist, int yDist, bool canLandOnTrees);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_getTreePos@RandomFlyingGoal@@AEBA_NAEAVVec3@@@Z
-    MCAPI bool _getTreePos(class Vec3&) const;
+    MCAPI bool _getTreePos(class Vec3& result) const;
 
     // NOLINTEND
 };

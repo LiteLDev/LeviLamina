@@ -32,20 +32,20 @@ public:
     getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool, std::optional<class HashedString> const&);
 
     // vIndex: 4, symbol: ?initMobSpawnTypes@StructureFeature@@UEAAXAEAVHardcodedSpawnAreaRegistry@@@Z
-    virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
+    virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry& spawnAreas);
 
     // vIndex: 5, symbol:
-    // ?isFeatureChunk@StrongholdFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
+    // ?isFeatureChunk@AncientCityFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
     virtual bool
     isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, uint, class IPreliminarySurfaceProvider const&, class Dimension const&) = 0;
 
     // vIndex: 6, symbol:
-    // ?createStructureStart@StrongholdFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
+    // ?createStructureStart@AncientCityFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
     virtual std::unique_ptr<class StructureStart>
     createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&) = 0;
 
     // vIndex: 7, symbol: ?getStructureAt@StructureFeature@@MEAAPEAVStructureStart@@HHH@Z
-    virtual class StructureStart* getStructureAt(int, int, int);
+    virtual class StructureStart* getStructureAt(int cellX, int cellY, int cellZ);
 
     // symbol: ??0StructureFeature@@QEAA@IW4StructureFeatureType@@@Z
     MCAPI StructureFeature(uint, ::StructureFeatureType);
@@ -67,23 +67,26 @@ public:
 
     // symbol:
     // ?findFarAwayStructures@StructureFeature@@QEAA?AV?$vector@VChunkPos@@V?$allocator@VChunkPos@@@std@@@std@@V?$buffer_span@VChunkPos@@@@I@Z
-    MCAPI std::vector<class ChunkPos> findFarAwayStructures(class buffer_span<class ChunkPos>, uint);
+    MCAPI std::vector<class ChunkPos>
+          findFarAwayStructures(class buffer_span<class ChunkPos> activeChunks, uint safetyBorder);
 
     // symbol:
     // ?foreachIntersectingStructureStart@StructureFeature@@QEAAXAEBVBoundingBox@@V?$function@$$A6AXAEAVStructureStart@@@Z@std@@@Z
-    MCAPI void foreachIntersectingStructureStart(class BoundingBox const&, std::function<void(class StructureStart&)>);
+    MCAPI void
+    foreachIntersectingStructureStart(class BoundingBox const& bb, std::function<void(class StructureStart&)> fn);
 
     // symbol: ?garbageCollectBlueprints@StructureFeature@@QEAAXV?$buffer_span@VChunkPos@@@@I@Z
-    MCAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>, uint);
+    MCAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos> activeChunks, uint safetyBorder);
 
     // symbol: ?isInsideBoundingFeature@StructureFeature@@QEAA_NHHH@Z
-    MCAPI bool isInsideBoundingFeature(int, int, int);
+    MCAPI bool isInsideBoundingFeature(int cellX, int cellY, int cellZ);
 
     // symbol: ?postProcess@StructureFeature@@QEAA_NAEAVBlockSource@@AEAVRandom@@HH@Z
-    MCAPI bool postProcess(class BlockSource&, class Random&, int, int);
+    MCAPI bool postProcess(class BlockSource& level, class Random& random, int chunkX, int chunkZ);
 
     // symbol: ?postProcessMobsAt@StructureFeature@@QEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
-    MCAPI void postProcessMobsAt(class BlockSource&, int, int, class Random&);
+    MCAPI void
+    postProcessMobsAt(class BlockSource& blockSource, int chunkWestBlock, int chunkNorthBlock, class Random& random);
 
     // symbol: ?waitForFeatureBlueprints@StructureFeature@@QEAAXXZ
     MCAPI void waitForFeatureBlueprints();
@@ -115,7 +118,7 @@ public:
     MCAPI static class ChunkPos getChunkPosInSpace(class ChunkPos const&, class Random&, uint, int, int, int, bool);
 
     // symbol: ?setRandomSeedFor@StructureFeature@@SAXAEAVRandom@@HHHI@Z
-    MCAPI static void setRandomSeedFor(class Random&, int, int, int, uint);
+    MCAPI static void setRandomSeedFor(class Random& result, int x, int z, int salt, uint levelSeed);
 
     // NOLINTEND
 

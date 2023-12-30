@@ -38,7 +38,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@LavaSlime@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1LavaSlime@@UEAA@XZ
     virtual ~LavaSlime() = default;
@@ -86,7 +86,7 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 179, symbol: ?checkSpawnRules@LavaSlime@@UEAA_N_N@Z
-    virtual bool checkSpawnRules(bool);
+    virtual bool checkSpawnRules(bool fromSpawner);
 
     // vIndex: 187, symbol: ?getArmorValue@LavaSlime@@UEBAHXZ
     virtual int getArmorValue() const;
@@ -101,7 +101,7 @@ public:
     virtual void decreaseSquish();
 
     // vIndex: 214, symbol: ?createChild@LavaSlime@@MEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@H@Z
-    virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
+    virtual class OwnerPtrT<struct EntityRefTraits> createChild(int i);
 
     // symbol: ??0LavaSlime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI LavaSlime(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);

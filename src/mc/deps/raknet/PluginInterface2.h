@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?SetRakPeerInterface@PluginInterface2@RakNet@@QEAAXPEAVRakPeerInterface@2@@Z
-    MCAPI void SetRakPeerInterface(class RakNet::RakPeerInterface*);
+    MCAPI void SetRakPeerInterface(class RakNet::RakPeerInterface* ptr);
 
     // NOLINTEND
 };

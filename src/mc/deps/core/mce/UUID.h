@@ -23,7 +23,7 @@ public:
     MCAPI static bool canParse(std::string const&);
 
     // symbol: ?fromString@UUID@mce@@SA?AV12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class mce::UUID fromString(std::string const&);
+    MCAPI static class mce::UUID fromString(std::string const& in);
 
     // symbol: ?EMPTY@UUID@mce@@2V12@A
     MCAPI static class mce::UUID EMPTY;

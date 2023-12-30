@@ -75,7 +75,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@OfferFlowerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0OfferFlowerGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit OfferFlowerGoal(class Mob&);

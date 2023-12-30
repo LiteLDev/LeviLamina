@@ -21,22 +21,22 @@ public:
     MCVAPI std::vector<class ItemStack> getItemCopies() const;
 
     // symbol: ?getSlot@InventoryMenu@@UEBAAEBVItemStack@@H@Z
-    MCVAPI class ItemStack const& getSlot(int) const;
+    MCVAPI class ItemStack const& getSlot(int slot) const;
 
     // symbol: ?removeSlot@InventoryMenu@@UEAAXHH@Z
-    MCVAPI void removeSlot(int, int);
+    MCVAPI void removeSlot(int slot, int count);
 
     // symbol: ?serverInitItemStackIds@InventoryMenu@@UEAAXXZ
     MCVAPI void serverInitItemStackIds();
 
     // symbol: ?setSlot@InventoryMenu@@UEAAXHAEBVItemStack@@_N@Z
-    MCVAPI void setSlot(int, class ItemStack const&, bool);
+    MCVAPI void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
 
     // symbol: ??1InventoryMenu@@UEAA@XZ
     MCVAPI ~InventoryMenu();
 
     // symbol: ??0InventoryMenu@@QEAA@AEAVPlayer@@PEAVContainer@@@Z
-    MCAPI InventoryMenu(class Player&, class Container*);
+    MCAPI InventoryMenu(class Player& player, class Container* container);
 
     // NOLINTEND
 };

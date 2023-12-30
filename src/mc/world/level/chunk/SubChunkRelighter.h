@@ -15,34 +15,40 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0SubChunkRelighter@@QEAA@AEAVBlockSource@@_KAEBVChunkPos@@_N3@Z
-    MCAPI SubChunkRelighter(class BlockSource&, uint64, class ChunkPos const&, bool, bool);
+    MCAPI SubChunkRelighter(
+        class BlockSource&    source,
+        uint64                centerSubChunkIndex,
+        class ChunkPos const& centerChunkPos,
+        bool                  originalLighting,
+        bool                  useFullyDarkSubchunk
+    );
 
     // symbol: ?_getAbsorption@SubChunkRelighter@@QEBAPEAUSubChunk@@USubChunkLightIndex@@AEAE@Z
-    MCAPI struct SubChunk* _getAbsorption(struct SubChunkLightIndex, uchar&) const;
+    MCAPI struct SubChunk* _getAbsorption(struct SubChunkLightIndex coordIndex, uchar& absorption) const;
 
     // symbol: ?_propagateBlockLight@SubChunkRelighter@@QEAAXXZ
     MCAPI void _propagateBlockLight();
 
     // symbol: ?_propagateBlockLight@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
-    MCAPI void _propagateBlockLight(struct SubChunkLightIndex, uchar);
+    MCAPI void _propagateBlockLight(struct SubChunkLightIndex coordIndex, uchar brightness);
 
     // symbol: ?_propagateSkyLight@SubChunkRelighter@@QEAAXXZ
     MCAPI void _propagateSkyLight();
 
     // symbol: ?_propagateSkyLight@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
-    MCAPI void _propagateSkyLight(struct SubChunkLightIndex, uchar);
+    MCAPI void _propagateSkyLight(struct SubChunkLightIndex coordIndex, uchar brightness);
 
     // symbol: ?_propagateSubtractiveBlockLight@SubChunkRelighter@@QEAAXXZ
     MCAPI void _propagateSubtractiveBlockLight();
 
     // symbol: ?_propagateSubtractiveBlockLight@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
-    MCAPI void _propagateSubtractiveBlockLight(struct SubChunkLightIndex, uchar);
+    MCAPI void _propagateSubtractiveBlockLight(struct SubChunkLightIndex coordIndex, uchar effectiveBrightness);
 
     // symbol: ?_propagateSubtractiveSkyLight@SubChunkRelighter@@QEAAXXZ
     MCAPI void _propagateSubtractiveSkyLight();
 
     // symbol: ?_propagateSubtractiveSkyLight@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
-    MCAPI void _propagateSubtractiveSkyLight(struct SubChunkLightIndex, uchar);
+    MCAPI void _propagateSubtractiveSkyLight(struct SubChunkLightIndex coordIndex, uchar effectiveBrightness);
 
     // symbol: ?_setLightHelper@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@UBrightness@@111II@Z
     MCAPI void _setLightHelper(
@@ -56,28 +62,28 @@ public:
     );
 
     // symbol: ?_setPropagatedBlockLightValue@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
-    MCAPI void _setPropagatedBlockLightValue(struct SubChunkLightIndex, uchar);
+    MCAPI void _setPropagatedBlockLightValue(struct SubChunkLightIndex coordIndex, uchar brightness);
 
     // symbol: ?_setPropagatedSkyLightValue@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
-    MCAPI void _setPropagatedSkyLightValue(struct SubChunkLightIndex, uchar);
+    MCAPI void _setPropagatedSkyLightValue(struct SubChunkLightIndex coordIndex, uchar brightness);
 
     // symbol: ?_setSkyLight@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@UBrightness@@111@Z
     MCAPI void _setSkyLight(
-        struct SubChunkLightIndex,
-        struct Brightness,
-        struct Brightness,
-        struct Brightness,
-        struct Brightness
+        struct SubChunkLightIndex coordIndex,
+        struct Brightness         oldBrightness,
+        struct Brightness         newBrightness,
+        struct Brightness         oldAbsorption,
+        struct Brightness         newAbsorption
     );
 
     // symbol: ?getBlock@SubChunkRelighter@@QEAAXAEBVPos@@AEAPEBVBlock@@1@Z
-    MCAPI void getBlock(class Pos const&, class Block const*&, class Block const*&);
+    MCAPI void getBlock(class Pos const& pos, class Block const*& block, class Block const*& extraBlock);
 
     // symbol: ?getCentralSubchunkOrigin@SubChunkRelighter@@QEAA?AVPos@@XZ
     MCAPI class Pos getCentralSubchunkOrigin();
 
     // symbol: ?getLightPair@SubChunkRelighter@@QEBA?AULightPair@SubChunkBrightnessStorage@@AEBVPos@@@Z
-    MCAPI struct SubChunkBrightnessStorage::LightPair getLightPair(class Pos const&) const;
+    MCAPI struct SubChunkBrightnessStorage::LightPair getLightPair(class Pos const& coord) const;
 
     // symbol:
     // ?getLightPairWithPlaceholderCheck@SubChunkRelighter@@QEBA?AULightPair@SubChunkBrightnessStorage@@AEBVPos@@AEBU23@@Z
@@ -85,15 +91,25 @@ public:
     getLightPairWithPlaceholderCheck(class Pos const&, struct SubChunkBrightnessStorage::LightPair const&) const;
 
     // symbol: ?getTouchedSubChunks@SubChunkRelighter@@QEAAXAEAV?$vector@VPos@@V?$allocator@VPos@@@std@@@std@@@Z
-    MCAPI void getTouchedSubChunks(std::vector<class Pos>&);
+    MCAPI void getTouchedSubChunks(std::vector<class Pos>& subChunkPosList);
 
     // symbol: ?setBlockLight@SubChunkRelighter@@QEAAXAEBVPos@@UBrightness@@111@Z
-    MCAPI void
-    setBlockLight(class Pos const&, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
+    MCAPI void setBlockLight(
+        class Pos const&  pos,
+        struct Brightness oldBrightness,
+        struct Brightness newBrightness,
+        struct Brightness oldAbsorption,
+        struct Brightness newAbsorption
+    );
 
     // symbol: ?setSkyLight@SubChunkRelighter@@QEAAXAEBVPos@@UBrightness@@111@Z
-    MCAPI void
-    setSkyLight(class Pos const&, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
+    MCAPI void setSkyLight(
+        class Pos const&  pos,
+        struct Brightness oldBrightness,
+        struct Brightness newBrightness,
+        struct Brightness oldAbsorption,
+        struct Brightness newAbsorption
+    );
 
     // symbol: ?update@SubChunkRelighter@@QEAAXAEBVBlockPos@@_K@Z
     MCAPI void update(class BlockPos const&, uint64);
@@ -119,16 +135,17 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_dirtySubChunk@SubChunkRelighter@@AEAAPEAUSubChunk@@USubChunkLightIndex@@AEAI@Z
-    MCAPI struct SubChunk* _dirtySubChunk(struct SubChunkLightIndex, uint&);
+    MCAPI struct SubChunk* _dirtySubChunk(struct SubChunkLightIndex coordIndex, uint& subChunkIndex);
 
     // symbol: ?_getBlock@SubChunkRelighter@@AEBAPEAUSubChunk@@USubChunkLightIndex@@AEAPEBVBlock@@1@Z
-    MCAPI struct SubChunk* _getBlock(struct SubChunkLightIndex, class Block const*&, class Block const*&) const;
+    MCAPI struct SubChunk*
+    _getBlock(struct SubChunkLightIndex coordIndex, class Block const*& block, class Block const*& extraBlock) const;
 
     // symbol: ?_getLight@SubChunkRelighter@@AEAAEUSubChunkLightIndex@@@Z
-    MCAPI uchar _getLight(struct SubChunkLightIndex);
+    MCAPI uchar _getLight(struct SubChunkLightIndex index);
 
     // symbol: ?_getLightPair@SubChunkRelighter@@AEBA?AULightPair@SubChunkBrightnessStorage@@USubChunkLightIndex@@@Z
-    MCAPI struct SubChunkBrightnessStorage::LightPair _getLightPair(struct SubChunkLightIndex) const;
+    MCAPI struct SubChunkBrightnessStorage::LightPair _getLightPair(struct SubChunkLightIndex coordIndex) const;
 
     // NOLINTEND
 

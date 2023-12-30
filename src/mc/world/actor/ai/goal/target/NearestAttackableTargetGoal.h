@@ -29,10 +29,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@NearestAttackableTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 11, symbol: ?_findTarget@NearestAttackableTargetGoal@@MEAA?AUActorUniqueID@@PEAPEBUMobDescriptor@@@Z
-    virtual struct ActorUniqueID _findTarget(struct MobDescriptor const**);
+    virtual struct ActorUniqueID _findTarget(struct MobDescriptor const** outMobDescriptor);
 
     // symbol: ??0NearestAttackableTargetGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit NearestAttackableTargetGoal(class Mob&);

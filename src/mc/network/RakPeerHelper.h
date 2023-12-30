@@ -45,7 +45,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0RakPeerHelper@@QEAA@AEAVIPSupportInterface@0@@Z
-    MCAPI explicit RakPeerHelper(class RakPeerHelper::IPSupportInterface&);
+    MCAPI explicit RakPeerHelper(class RakPeerHelper::IPSupportInterface& ipInterface);
 
     // symbol: ?getIPv4ConnectionIndex@RakPeerHelper@@QEBAHXZ
     MCAPI int getIPv4ConnectionIndex() const;
@@ -80,11 +80,11 @@ public:
     // symbol:
     // ?_startupInternal@RakPeerHelper@@AEAA?AW4StartupResult@RakNet@@V?$not_null@PEAVRakPeerInterface@RakNet@@@gsl@@AEBUConnectionDefinition@@PEAUSocketDescriptor@3@AEAHH@Z
     MCAPI ::RakNet::StartupResult _startupInternal(
-        gsl::not_null<class RakNet::RakPeerInterface*>,
-        struct ConnectionDefinition const&,
-        struct RakNet::SocketDescriptor*,
-        int&,
-        int
+        gsl::not_null<class RakNet::RakPeerInterface*> peer,
+        struct ConnectionDefinition const&             definition,
+        struct RakNet::SocketDescriptor*               sockets,
+        int&                                           socketCount,
+        int                                            ipv6Index
     );
 
     // NOLINTEND

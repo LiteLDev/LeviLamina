@@ -12,13 +12,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?canSee@SensingComponent@@QEAA_NAEAVMob@@AEBVActor@@@Z
-    MCAPI bool canSee(class Mob&, class Actor const&);
+    MCAPI bool canSee(class Mob& owner, class Actor const& target);
 
     // symbol: ?reset@SensingComponent@@QEAAXXZ
     MCAPI void reset();
 
     // symbol: ?withinFOV@SensingComponent@@QEAA_NAEAVMob@@AEBVVec3@@M@Z
-    MCAPI bool withinFOV(class Mob&, class Vec3 const&, float);
+    MCAPI bool withinFOV(class Mob& owner, class Vec3 const& targetPosition, float fov);
 
     // NOLINTEND
 };

@@ -65,7 +65,7 @@ public:
 
     // vIndex: 134, symbol:
     // ?getDebugText@CaveSpider@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    virtual void getDebugText(std::vector<std::string>&);
+    virtual void getDebugText(std::vector<std::string>& outputInfo);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();

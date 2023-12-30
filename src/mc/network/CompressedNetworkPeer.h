@@ -31,7 +31,7 @@ public:
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
 
     // symbol: ??0CompressedNetworkPeer@@QEAA@V?$shared_ptr@VNetworkPeer@@@std@@@Z
-    MCAPI explicit CompressedNetworkPeer(std::shared_ptr<class NetworkPeer>);
+    MCAPI explicit CompressedNetworkPeer(std::shared_ptr<class NetworkPeer> peer);
 
     // symbol: ?setCompressionEnabled@CompressedNetworkPeer@@QEAAX_NUNetworkSettingOptions@@@Z
     MCAPI void setCompressionEnabled(bool, struct NetworkSettingOptions);

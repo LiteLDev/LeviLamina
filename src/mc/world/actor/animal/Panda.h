@@ -73,7 +73,7 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@Panda@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -82,16 +82,16 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 202, symbol: ?setTransitioningSitting@Panda@@UEAAX_N@Z
-    virtual void setTransitioningSitting(bool);
+    virtual void setTransitioningSitting(bool value);
 
     // symbol: ??0Panda@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
     MCAPI Panda(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
     // symbol: ?getLieOnBackAmount@Panda@@QEBAMM@Z
-    MCAPI float getLieOnBackAmount(float) const;
+    MCAPI float getLieOnBackAmount(float a) const;
 
     // symbol: ?getSitAmount@Panda@@QEBAMM@Z
-    MCAPI float getSitAmount(float) const;
+    MCAPI float getSitAmount(float a) const;
 
     // symbol: ?getSneezeCounter@Panda@@QEBAHXZ
     MCAPI int getSneezeCounter() const;

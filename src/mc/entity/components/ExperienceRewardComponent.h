@@ -18,10 +18,10 @@ public:
     MCAPI bool getIsExperienceDropEnabled() const;
 
     // symbol: ?getOnBredExperience@ExperienceRewardComponent@@QEBAHAEAVActor@@@Z
-    MCAPI int getOnBredExperience(class Actor&) const;
+    MCAPI int getOnBredExperience(class Actor& owner) const;
 
     // symbol: ?getOnDeathExperience@ExperienceRewardComponent@@QEBAHAEAVActor@@@Z
-    MCAPI int getOnDeathExperience(class Actor&) const;
+    MCAPI int getOnDeathExperience(class Actor& owner) const;
 
     // symbol: ??4ExperienceRewardComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ExperienceRewardComponent& operator=(class ExperienceRewardComponent&&);

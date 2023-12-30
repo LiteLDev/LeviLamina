@@ -84,7 +84,7 @@ public:
     virtual uint64 getAvailableUserStorageSize();
 
     // vIndex: 19, symbol: ?unloadFlatFileManifests@FileStorageArea@Core@@UEAAX_N@Z
-    virtual void unloadFlatFileManifests(bool);
+    virtual void unloadFlatFileManifests(bool shouldClearManifests);
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();

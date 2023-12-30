@@ -17,16 +17,16 @@ public:
     // symbol:
     // ??0POIInstance@@QEAA@AEBVBlockPos@@_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4POIType@@M_K4222@Z
     MCAPI POIInstance(
-        class BlockPos const&,
-        bool,
-        std::string,
-        ::POIType,
-        float,
-        uint64,
-        uint64,
-        std::string,
-        std::string,
-        std::string
+        class BlockPos const& pos,
+        bool                  useBoundingBox,
+        std::string           name,
+        enum POIType          type,
+        float                 radius,
+        uint64                maxCapacity,
+        uint64                weight,
+        std::string           soundEvent,
+        std::string           initEvent,
+        std::string           endEvent
     );
 
     // symbol: ?getPosition@POIInstance@@QEBAAEBVBlockPos@@XZ
@@ -36,7 +36,7 @@ public:
     MCAPI float getRadius() const;
 
     // symbol: ?getSecondBlockFullAABB@POIInstance@@QEAA?AVAABB@@AEAVBlockSource@@@Z
-    MCAPI class AABB getSecondBlockFullAABB(class BlockSource&);
+    MCAPI class AABB getSecondBlockFullAABB(class BlockSource& region);
 
     // symbol: ?getSoundEvent@POIInstance@@QEBAAEBVHashedString@@XZ
     MCAPI class HashedString const& getSoundEvent() const;
@@ -48,7 +48,7 @@ public:
     MCAPI void resetArrivalFailureCount();
 
     // symbol: ?trySpawnParticles@POIInstance@@QEBAXAEAVBlockSource@@AEAVRandom@@H@Z
-    MCAPI void trySpawnParticles(class BlockSource&, class Random&, int) const;
+    MCAPI void trySpawnParticles(class BlockSource& region, class Random& random, int particleType) const;
 
     // symbol: ?useBoundingBox@POIInstance@@QEBA_NXZ
     MCAPI bool useBoundingBox() const;

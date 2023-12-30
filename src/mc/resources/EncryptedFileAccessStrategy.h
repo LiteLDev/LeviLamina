@@ -37,18 +37,18 @@ public:
 
     // vIndex: 9, symbol:
     // ?getAsset@EncryptedFileAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
+    virtual bool getAsset(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const;
 
     // vIndex: 10, symbol: ?deleteAsset@EncryptedFileAccessStrategy@@UEAA_NAEBVPath@Core@@@Z
     virtual bool deleteAsset(class Core::Path const&);
 
     // vIndex: 11, symbol:
     // ?writeAsset@EncryptedFileAccessStrategy@@UEAA_NAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual bool writeAsset(class Core::Path const&, std::string const&);
+    virtual bool writeAsset(class Core::Path const& packRelativePath, std::string const& fileContent);
 
     // vIndex: 16, symbol:
     // ?createSubPack@EncryptedFileAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z
-    virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
+    virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const& subPath) const;
 
     // vIndex: 17, symbol: ?generateAssetSet@EncryptedFileAccessStrategy@@UEAA?AW4PackAccessAssetGenerationResult@@XZ
     virtual ::PackAccessAssetGenerationResult generateAssetSet();
@@ -62,7 +62,7 @@ public:
     EncryptedFileAccessStrategy(class ResourceLocation const&, class ContentIdentity const&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&, bool, std::optional<std::unordered_map<class Core::PathBuffer<std::string>, std::string>>);
 
     // symbol: ?isValidEncryptedPack@EncryptedFileAccessStrategy@@SA_NAEBVPath@Core@@AEAVContentIdentity@@@Z
-    MCAPI static bool isValidEncryptedPack(class Core::Path const&, class ContentIdentity&);
+    MCAPI static bool isValidEncryptedPack(class Core::Path const& pathToPack, class ContentIdentity& contentIdentity);
 
     // NOLINTEND
 
@@ -78,11 +78,12 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_getContentIdentityFromEncryptedStream@EncryptedFileAccessStrategy@@CA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVContentIdentity@@@Z
-    MCAPI static bool _getContentIdentityFromEncryptedStream(std::string&, class ContentIdentity&);
+    MCAPI static bool
+    _getContentIdentityFromEncryptedStream(std::string& stream, class ContentIdentity& contentIdentity);
 
     // symbol:
     // ?_transformStream@EncryptedFileAccessStrategy@@CAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_K@Z
-    MCAPI static void _transformStream(std::string&, std::string const&, uint64);
+    MCAPI static void _transformStream(std::string& stream, std::string const& key, uint64 offset);
 
     // NOLINTEND
 };

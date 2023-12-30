@@ -26,7 +26,7 @@ public:
     // vIndex: 1, symbol:
     // ?findInstalledWorldTemplateByUUID@WorldTemplateManager@@UEBAPEBUWorldTemplateInfo@@AEBV?$vector@VUUID@mce@@V?$allocator@VUUID@mce@@@std@@@std@@@Z
     virtual struct WorldTemplateInfo const*
-    findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const&) const = 0;
+    findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const& packUUIDs) const = 0;
 
     // NOLINTEND
 };

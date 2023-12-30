@@ -15,10 +15,10 @@ public:
     MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor const&);
 
     // symbol: ?combine@ActorDefinitionDescriptor@@QEAAAEAV1@AEBV1@@Z
-    MCAPI class ActorDefinitionDescriptor& combine(class ActorDefinitionDescriptor const&);
+    MCAPI class ActorDefinitionDescriptor& combine(class ActorDefinitionDescriptor const& rhs);
 
     // symbol: ?contains@ActorDefinitionDescriptor@@QEBA_NAEBV1@@Z
-    MCAPI bool contains(class ActorDefinitionDescriptor const&) const;
+    MCAPI bool contains(class ActorDefinitionDescriptor const& rhs) const;
 
     // symbol:
     // ?findAttributeByName@ActorDefinitionDescriptor@@QEBA?AV?$optional@UActorDefinitionAttribute@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
@@ -43,10 +43,10 @@ public:
     MCAPI class ActorDefinitionDescriptor& operator=(class ActorDefinitionDescriptor const&);
 
     // symbol: ?overlaps@ActorDefinitionDescriptor@@QEBA_NAEBV1@@Z
-    MCAPI bool overlaps(class ActorDefinitionDescriptor const&) const;
+    MCAPI bool overlaps(class ActorDefinitionDescriptor const& rhs) const;
 
     // symbol: ?subtract@ActorDefinitionDescriptor@@QEAAAEAV1@AEBV1@@Z
-    MCAPI class ActorDefinitionDescriptor& subtract(class ActorDefinitionDescriptor const&);
+    MCAPI class ActorDefinitionDescriptor& subtract(class ActorDefinitionDescriptor const& rhs);
 
     // symbol: ??1ActorDefinitionDescriptor@@QEAA@XZ
     MCAPI ~ActorDefinitionDescriptor();

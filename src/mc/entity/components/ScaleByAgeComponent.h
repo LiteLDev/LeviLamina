@@ -14,7 +14,7 @@ public:
     MCAPI ScaleByAgeComponent();
 
     // symbol: ?_initializeScale@ScaleByAgeComponent@@QEAAXAEAVEntityContext@@@Z
-    MCAPI void _initializeScale(class EntityContext&);
+    MCAPI void _initializeScale(class EntityContext& entity);
 
     // NOLINTEND
 };

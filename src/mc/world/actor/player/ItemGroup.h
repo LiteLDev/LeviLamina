@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ItemGroup@@QEAA@AEBVItemInstance@@@Z
-    MCAPI explicit ItemGroup(class ItemInstance const&);
+    MCAPI explicit ItemGroup(class ItemInstance const& itemInstance);
 
     // symbol: ?isEmpty@ItemGroup@@QEBA_NXZ
     MCAPI bool isEmpty() const;

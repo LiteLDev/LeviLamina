@@ -74,7 +74,8 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 71, symbol: ?dispense@FertilizerItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -92,7 +93,7 @@ public:
 
     // symbol:
     // ??0FertilizerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4FertilizerType@@@Z
-    MCAPI FertilizerItem(std::string const&, int, ::FertilizerType);
+    MCAPI FertilizerItem(std::string const& name, int id, enum FertilizerType type);
 
     // symbol: ?getFertilizerType@FertilizerItem@@QEBA?AW4FertilizerType@@XZ
     MCAPI ::FertilizerType getFertilizerType() const;

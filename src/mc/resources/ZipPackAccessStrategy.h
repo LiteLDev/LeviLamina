@@ -40,7 +40,7 @@ public:
     virtual bool isWritable() const;
 
     // vIndex: 5, symbol: ?setIsTrusted@ZipPackAccessStrategy@@UEAAX_N@Z
-    virtual void setIsTrusted(bool);
+    virtual void setIsTrusted(bool newValue);
 
     // vIndex: 6, symbol: ?isTrusted@ZipPackAccessStrategy@@UEBA_NXZ
     virtual bool isTrusted() const;
@@ -49,22 +49,26 @@ public:
     virtual bool hasAsset(class Core::Path const&, bool, bool) const;
 
     // vIndex: 8, symbol: ?hasFolder@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@@Z
-    virtual bool hasFolder(class Core::Path const&) const;
+    virtual bool hasFolder(class Core::Path const& packRelativePath) const;
 
     // vIndex: 9, symbol:
     // ?getAsset@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
+    virtual bool getAsset(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const;
 
     // vIndex: 10, symbol: ?deleteAsset@ZipPackAccessStrategy@@UEAA_NAEBVPath@Core@@@Z
     virtual bool deleteAsset(class Core::Path const&);
 
     // vIndex: 11, symbol:
     // ?writeAsset@ZipPackAccessStrategy@@UEAA_NAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual bool writeAsset(class Core::Path const&, std::string const&);
+    virtual bool writeAsset(class Core::Path const& packRelativePath, std::string const& fileContent);
 
     // vIndex: 12, symbol:
     // ?forEachIn@ZipPackAccessStrategy@@UEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@_N@Z
-    virtual void forEachIn(class Core::Path const&, std::function<void(class Core::Path const&)>, bool) const;
+    virtual void forEachIn(
+        class Core::Path const&                      packRelativePath,
+        std::function<void(class Core::Path const&)> callback,
+        bool                                         recurseAnyways
+    ) const;
 
     // vIndex: 14, symbol: ?getStrategyType@ZipPackAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ
     virtual ::PackAccessStrategyType getStrategyType() const;
@@ -75,7 +79,7 @@ public:
 
     // vIndex: 16, symbol:
     // ?createSubPack@ZipPackAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z
-    virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
+    virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const& subPath) const;
 
     // vIndex: 19, symbol: ?unload@ZipPackAccessStrategy@@UEAAXXZ
     virtual void unload();
@@ -94,7 +98,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_tryReadFromPendingQueue@ZipPackAccessStrategy@@AEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool _tryReadFromPendingQueue(class Core::Path const&, std::string&) const;
+    MCAPI bool _tryReadFromPendingQueue(class Core::Path const& packRelativePath, std::string& result) const;
 
     // NOLINTEND
 };

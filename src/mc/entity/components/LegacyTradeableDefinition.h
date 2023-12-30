@@ -22,13 +22,14 @@ public:
     MCAPI LegacyTradeableDefinition();
 
     // symbol: ?initialize@LegacyTradeableDefinition@@QEBAXAEAVEntityContext@@AEAVLegacyTradeableComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class LegacyTradeableComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class LegacyTradeableComponent& component) const;
 
     // symbol:
     // ?buildSchema@LegacyTradeableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VLegacyTradeableDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LegacyTradeableDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LegacyTradeableDefinition>>& root
+    );
 
     // NOLINTEND
 };

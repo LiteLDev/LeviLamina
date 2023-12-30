@@ -18,13 +18,13 @@ public:
     virtual ~CrossbowEnchant() = default;
 
     // vIndex: 1, symbol: ?isCompatibleWith@CrossbowEnchant@@UEBA_NW4Type@Enchant@@@Z
-    virtual bool isCompatibleWith(::Enchant::Type) const;
+    virtual bool isCompatibleWith(enum Enchant::Type type) const;
 
     // vIndex: 2, symbol: ?getMinCost@CrossbowEnchant@@UEBAHH@Z
-    virtual int getMinCost(int) const;
+    virtual int getMinCost(int level) const;
 
     // vIndex: 3, symbol: ?getMaxCost@CrossbowEnchant@@UEBAHH@Z
-    virtual int getMaxCost(int) const;
+    virtual int getMaxCost(int level) const;
 
     // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4();

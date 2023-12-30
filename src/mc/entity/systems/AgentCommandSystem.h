@@ -26,7 +26,7 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?tick@AgentCommandSystem@@UEAAXAEAVEntityRegistry@@@Z
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry& registry);
 
     // symbol: ?cleanUp@AgentCommandSystem@@SAXAEAVEntityContext@@M@Z
     MCAPI static void cleanUp(class EntityContext&, float);

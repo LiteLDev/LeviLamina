@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/webrtc/detail/LogSink.h"
-#include "mc/deps/webrtc/detail/LoggingSeverity.h"
+#include "mc/deps/webrtc/rtc/LogSink.h"
+#include "mc/deps/webrtc/rtc/LoggingSeverity.h"
 
 // auto generated forward declare list
 // clang-format off

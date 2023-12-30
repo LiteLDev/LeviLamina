@@ -71,7 +71,7 @@ public:
     // vIndex: 3, symbol: ?doVerifyInitialization@BasicSchema@internal@cereal@@EEBA_NAEBVmeta_any@entt@@@Z
     virtual bool doVerifyInitialization(entt::meta_any const&) const;
 
-    // vIndex: 4, symbol: ?makeDescription@DefaultCompositeSchema@internal@cereal@@EEBA?AUSchemaDescription@3@XZ
+    // vIndex: 4, symbol: ?makeDescription@AliasSchema@internal@cereal@@EEBA?AUSchemaDescription@3@XZ
     virtual struct cereal::SchemaDescription makeDescription() const = 0;
 
     // vIndex: 5, symbol: ??1BasicSchema@internal@cereal@@UEAA@XZ

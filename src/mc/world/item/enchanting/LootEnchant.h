@@ -18,10 +18,10 @@ public:
     virtual ~LootEnchant() = default;
 
     // vIndex: 2, symbol: ?getMinCost@LootEnchant@@UEBAHH@Z
-    virtual int getMinCost(int) const;
+    virtual int getMinCost(int level) const;
 
     // vIndex: 3, symbol: ?getMaxCost@LootEnchant@@UEBAHH@Z
-    virtual int getMaxCost(int) const;
+    virtual int getMaxCost(int level) const;
 
     // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4();

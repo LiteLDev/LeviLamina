@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0ExcludedPath@Core@@QEAA@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@1@_N@Z
-    MCAPI ExcludedPath(class Core::PathBuffer<std::string>, bool);
+    MCAPI ExcludedPath(class Core::PathBuffer<std::string> path, bool copyLooseFile);
 
     // NOLINTEND
 };

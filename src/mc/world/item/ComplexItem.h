@@ -76,13 +76,14 @@ public:
 
     // vIndex: 118, symbol:
     // ?getUpdatePacket@ComplexItem@@UEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVItemStack@@AEAVLevel@@AEAVActor@@@Z
-    virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const&, class Level&, class Actor&) const;
+    virtual std::unique_ptr<class Packet>
+    getUpdatePacket(class ItemStack const& itemStack, class Level& level, class Actor& player) const;
 
     // symbol: ?isComplex@ComplexItem@@UEBA_NXZ
     MCVAPI bool isComplex() const;
 
     // symbol: ??0ComplexItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ComplexItem(std::string const&, int);
+    MCAPI ComplexItem(std::string const& nameId, int id);
 
     // NOLINTEND
 };

@@ -18,10 +18,10 @@ public:
     virtual ~SmeltItemFunction() = default;
 
     // vIndex: 1, symbol: ?apply@SmeltItemFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
+    virtual void apply(class ItemStack& itemStack, class Random& random, class LootTableContext& context);
 
     // vIndex: 3, symbol: ?apply@SmeltItemFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
+    virtual void apply(class ItemInstance& itemInstance, class Random& random, class LootTableContext& context);
 
     // NOLINTEND
 };

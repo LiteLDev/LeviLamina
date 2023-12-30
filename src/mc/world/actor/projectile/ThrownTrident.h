@@ -40,7 +40,7 @@ public:
     virtual void outOfWorld();
 
     // vIndex: 4, symbol: ?reloadHardcoded@ThrownTrident@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1ThrownTrident@@UEAA@XZ
     virtual ~ThrownTrident() = default;
@@ -58,7 +58,7 @@ public:
     virtual void __unk_vfn_47();
 
     // vIndex: 48, symbol: ?playerTouch@ThrownTrident@@UEAAXAEAVPlayer@@@Z
-    virtual void playerTouch(class Player&);
+    virtual void playerTouch(class Player& player);
 
     // vIndex: 60, symbol: __unk_vfn_60
     virtual void __unk_vfn_60();
@@ -85,13 +85,13 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@ThrownTrident@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@ThrownTrident@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@ThrownTrident@@MEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -100,7 +100,7 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 169, symbol: ?shoot@ThrownTrident@@UEAAXAEBVVec3@@MM0@Z
-    virtual void shoot(class Vec3 const&, float, float, class Vec3 const&);
+    virtual void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
 
     // vIndex: 170, symbol: ?_getPickupItem@ThrownTrident@@MEBA?AVItemStack@@XZ
     virtual class ItemStack _getPickupItem() const;
@@ -115,10 +115,10 @@ public:
     MCAPI class ItemStack getPickupItem() const;
 
     // symbol: ?returnWithLoyalty@ThrownTrident@@QEAAXH@Z
-    MCAPI void returnWithLoyalty(int);
+    MCAPI void returnWithLoyalty(int enchantLevel);
 
     // symbol: ?setTridentItem@ThrownTrident@@QEAAXAEBVItemStack@@@Z
-    MCAPI void setTridentItem(class ItemStack const&);
+    MCAPI void setTridentItem(class ItemStack const& item);
 
     // NOLINTEND
 };

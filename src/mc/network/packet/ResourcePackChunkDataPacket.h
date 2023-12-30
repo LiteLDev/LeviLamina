@@ -26,7 +26,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@ResourcePackChunkDataPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@ResourcePackChunkDataPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -37,7 +37,12 @@ public:
 
     // symbol:
     // ??0ResourcePackChunkDataPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_KAEBV?$vector@EV?$allocator@E@std@@@2@@Z
-    MCAPI ResourcePackChunkDataPacket(std::string const&, int, uint64, std::vector<uchar> const&);
+    MCAPI ResourcePackChunkDataPacket(
+        std::string const&        name,
+        int                       chunkID,
+        uint64                    byteOffset,
+        std::vector<uchar> const& data
+    );
 
     // NOLINTEND
 };

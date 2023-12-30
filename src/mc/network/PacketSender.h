@@ -24,10 +24,10 @@ public:
     virtual ~PacketSender() = default;
 
     // vIndex: 1, symbol: ?send@LoopbackPacketSender@@UEAAXAEAVPacket@@@Z
-    virtual void send(class Packet&) = 0;
+    virtual void send(class Packet& packet) = 0;
 
     // vIndex: 2, symbol: ?sendToServer@LoopbackPacketSender@@UEAAXAEAVPacket@@@Z
-    virtual void sendToServer(class Packet&) = 0;
+    virtual void sendToServer(class Packet& packet) = 0;
 
     // vIndex: 3, symbol: ?sendToClient@LoopbackPacketSender@@UEAAXPEBVUserEntityIdentifierComponent@@AEBVPacket@@@Z
     virtual void sendToClient(class UserEntityIdentifierComponent const*, class Packet const&) = 0;
@@ -37,16 +37,17 @@ public:
 
     // vIndex: 5, symbol:
     // ?sendToClients@LoopbackPacketSender@@UEAAXAEBV?$vector@UNetworkIdentifierWithSubId@@V?$allocator@UNetworkIdentifierWithSubId@@@std@@@std@@AEBVPacket@@@Z
-    virtual void sendToClients(std::vector<struct NetworkIdentifierWithSubId> const&, class Packet const&) = 0;
+    virtual void
+    sendToClients(std::vector<struct NetworkIdentifierWithSubId> const& ids, class Packet const& packet) = 0;
 
     // vIndex: 6, symbol: ?sendBroadcast@LoopbackPacketSender@@UEAAXAEBVPacket@@@Z
-    virtual void sendBroadcast(class Packet const&) = 0;
+    virtual void sendBroadcast(class Packet const& packet) = 0;
 
     // vIndex: 7, symbol: ?sendBroadcast@LoopbackPacketSender@@UEAAXAEBVNetworkIdentifier@@W4SubClientId@@AEBVPacket@@@Z
     virtual void sendBroadcast(class NetworkIdentifier const&, ::SubClientId, class Packet const&) = 0;
 
     // vIndex: 8, symbol: ?flush@LoopbackPacketSender@@UEAAXAEBVNetworkIdentifier@@$$QEAV?$function@$$A6AXXZ@std@@@Z
-    virtual void flush(class NetworkIdentifier const&, std::function<void(void)>&&) = 0;
+    virtual void flush(class NetworkIdentifier const& id, std::function<void(void)>&& callback) = 0;
 
     // NOLINTEND
 };

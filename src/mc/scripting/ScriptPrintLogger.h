@@ -2,12 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/IPrinter.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace Scripting { class IPrinter; }
 namespace Scripting { struct ContextId; }
 // clang-format on
 
-class ScriptPrintLogger {
+class ScriptPrintLogger : public ::Scripting::IPrinter {
 public:
     // prevent constructor by default
     ScriptPrintLogger& operator=(ScriptPrintLogger const&);

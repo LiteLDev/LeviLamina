@@ -16,8 +16,12 @@ public:
 
     // vIndex: 1, symbol:
     // ?create@PackManifestFactory@@UEAA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@AEAVPackAccessStrategy@@AEBVResourceLocation@@AEAVPackReport@@PEAVSubpackInfoCollection@@@Z
-    virtual std::unique_ptr<class PackManifest>
-    create(class PackAccessStrategy&, class ResourceLocation const&, class PackReport&, class SubpackInfoCollection*) = 0;
+    virtual std::unique_ptr<class PackManifest> create(
+        class PackAccessStrategy&     accessStrategy,
+        class ResourceLocation const& location,
+        class PackReport&             report,
+        class SubpackInfoCollection*  subpackInfoStack
+    ) = 0;
 
     // NOLINTEND
 };

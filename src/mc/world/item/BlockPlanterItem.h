@@ -91,7 +91,7 @@ public:
 
     // symbol:
     // ??0BlockPlanterItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlock@@_N@Z
-    MCAPI BlockPlanterItem(std::string const&, int, class Block const&, bool);
+    MCAPI BlockPlanterItem(std::string const& name, int id, class Block const& block, bool useBlockDescription);
 
     // NOLINTEND
 };

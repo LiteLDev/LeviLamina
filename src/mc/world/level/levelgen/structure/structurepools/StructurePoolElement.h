@@ -27,8 +27,11 @@ public:
         // NOLINTBEGIN
         // symbol:
         // ??0LazyTemplate@StructurePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBV?$vector@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@@2@@5@@Z
-        MCAPI
-        LazyTemplate(Bedrock::NotNullNonOwnerPtr<class StructureManager>, std::string const&, std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const*);
+        MCAPI LazyTemplate(
+            Bedrock::NotNullNonOwnerPtr<class StructureManager>                  manager,
+            std::string const&                                                   location,
+            std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const* blockTagRules
+        );
 
         // NOLINTEND
 
@@ -36,8 +39,10 @@ public:
         // NOLINTBEGIN
         // symbol:
         // ?_findJigsawBlocks@LazyTemplate@StructurePoolElement@@KA?AV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@AEAV?$vector@VJigsawStructureBlockInfo@@V?$allocator@VJigsawStructureBlockInfo@@@std@@@4@PEBV?$vector@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@@2@@4@@Z
-        MCAPI static std::vector<class JigsawBlockInfo>
-        _findJigsawBlocks(std::vector<class JigsawStructureBlockInfo>&, std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const*);
+        MCAPI static std::vector<class JigsawBlockInfo> _findJigsawBlocks(
+            std::vector<class JigsawStructureBlockInfo>&                         structure,
+            std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const* blockTagRules
+        );
 
         // NOLINTEND
     };
@@ -51,22 +56,22 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?getSize@StructurePoolElement@@UEBA?AVBlockPos@@W4Rotation@@@Z
-    virtual class BlockPos getSize(::Rotation) const;
+    virtual class BlockPos getSize(enum Rotation rotation) const;
 
     // vIndex: 1, symbol:
     // ?getJigsawMarkers@StructurePoolElement@@UEBA?AV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@VBlockPos@@W4Rotation@@@Z
-    virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, ::Rotation) const;
+    virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos position, enum Rotation rotation) const;
 
     // vIndex: 2, symbol:
     // ?getJigsawMarkers@StructurePoolElement@@UEBA?AV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@VBlockPos@@AEAVLegacyStructureSettings@@PEAVBlockSource@@@Z
     virtual std::vector<class JigsawBlockInfo>
-    getJigsawMarkers(class BlockPos, class LegacyStructureSettings&, class BlockSource*) const;
+    getJigsawMarkers(class BlockPos position, class LegacyStructureSettings& settings, class BlockSource* region) const;
 
     // vIndex: 3, symbol: ?getBoundingBox@StructurePoolElement@@UEBA?AVBoundingBox@@VBlockPos@@W4Rotation@@@Z
-    virtual class BoundingBox getBoundingBox(class BlockPos, ::Rotation) const;
+    virtual class BoundingBox getBoundingBox(class BlockPos position, enum Rotation rotation) const;
 
     // vIndex: 4, symbol: ?setProjection@StructurePoolElement@@UEAAXW4Projection@@@Z
-    virtual void setProjection(::Projection);
+    virtual void setProjection(enum Projection projection);
 
     // vIndex: 5, symbol: ?getProjection@StructurePoolElement@@UEBA?AW4Projection@@XZ
     virtual ::Projection getProjection() const;
@@ -91,13 +96,20 @@ public:
 
     // vIndex: 9, symbol:
     // ?handleJigsawBlock@StructurePoolElement@@UEBAXAEAVBlockSource@@AEAVJigsawBlockInfo@@AEAVLegacyStructureSettings@@@Z
-    virtual void handleJigsawBlock(class BlockSource&, class JigsawBlockInfo&, class LegacyStructureSettings&) const;
+    virtual void handleJigsawBlock(
+        class BlockSource&             region,
+        class JigsawBlockInfo&         jigsawBlock,
+        class LegacyStructureSettings& settings
+    ) const;
 
     // vIndex: 10, symbol:
     // ?handleDataMarker@StructurePoolElement@@UEBAXAEAVBlockSource@@VBlockPos@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$unordered_map@VBlockPos@@V?$optional@UActorDefinitionIdentifier@@@std@@U?$hash@VBlockPos@@@3@U?$equal_to@VBlockPos@@@3@V?$allocator@U?$pair@$$CBVBlockPos@@V?$optional@UActorDefinitionIdentifier@@@std@@@std@@@3@@5@@Z
-    virtual void
-    handleDataMarker(class BlockSource&, class BlockPos, std::string, std::unordered_map<class BlockPos, std::optional<struct ActorDefinitionIdentifier>>&)
-        const;
+    virtual void handleDataMarker(
+        class BlockSource&                                                                   region,
+        class BlockPos                                                                       markerPos,
+        std::string                                                                          markerData,
+        std::unordered_map<class BlockPos, std::optional<struct ActorDefinitionIdentifier>>& entitiesToPlace
+    ) const;
 
     // vIndex: 11, symbol: ?isValid@StructurePoolElement@@UEBA_NXZ
     virtual bool isValid() const;

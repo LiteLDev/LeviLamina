@@ -26,10 +26,18 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@LookAtTradingPlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0LookAtTradingPlayerGoal@@QEAA@AEAVMob@@MMHHHH@Z
-    MCAPI LookAtTradingPlayerGoal(class Mob&, float, float, int, int, int, int);
+    MCAPI LookAtTradingPlayerGoal(
+        class Mob& mob,
+        float      lookDistance,
+        float      probability,
+        int        minLookTime,
+        int        maxLookTime,
+        int        angleOfViewX,
+        int        angleOfViewY
+    );
 
     // NOLINTEND
 };

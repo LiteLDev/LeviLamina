@@ -39,33 +39,41 @@ public:
     // vIndex: 5, symbol: ?setIsTrusted@DirectoryPackWithEncryptionAccessStrategy@@UEAAX_N@Z
     virtual void setIsTrusted(bool) = 0;
 
-    // vIndex: 6, symbol: ?isTrusted@EncryptedFileAccessStrategy@@UEBA_NXZ
+    // vIndex: 6, symbol: ?isTrusted@DirectoryPackAccessStrategy@@UEBA_NXZ
     virtual bool isTrusted() const = 0;
 
-    // vIndex: 7, symbol: ?hasAsset@EncryptedFileAccessStrategy@@UEBA_NAEBVPath@Core@@_N1@Z
+    // vIndex: 7, symbol: ?hasAsset@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@_N1@Z
     virtual bool hasAsset(class Core::Path const&, bool, bool) const = 0;
 
     // vIndex: 8, symbol: ?hasFolder@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@@Z
-    virtual bool hasFolder(class Core::Path const&) const = 0;
+    virtual bool hasFolder(class Core::Path const& packRelativePath) const = 0;
 
     // vIndex: 9, symbol:
-    // ?getAsset@EncryptedFileAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual bool getAsset(class Core::Path const&, std::string&, bool) const = 0;
+    // ?getAsset@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+    virtual bool
+    getAsset(class Core::Path const& packRelativePath, std::string& result, bool trustedContentOnly) const = 0;
 
     // vIndex: 10, symbol: ?deleteAsset@DirectoryPackAccessStrategy@@UEAA_NAEBVPath@Core@@@Z
     virtual bool deleteAsset(class Core::Path const&) = 0;
 
     // vIndex: 11, symbol:
     // ?writeAsset@DirectoryPackAccessStrategy@@UEAA_NAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual bool writeAsset(class Core::Path const&, std::string const&) = 0;
+    virtual bool writeAsset(class Core::Path const& packRelativePath, std::string const& fileContent) = 0;
 
     // vIndex: 12, symbol:
     // ?forEachIn@DirectoryPackAccessStrategy@@UEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@_N@Z
-    virtual void forEachIn(class Core::Path const&, std::function<void(class Core::Path const&)>, bool) const = 0;
+    virtual void forEachIn(
+        class Core::Path const&                      packRelativePath,
+        std::function<void(class Core::Path const&)> callback,
+        bool                                         recurseAnyways
+    ) const = 0;
 
     // vIndex: 13, symbol:
     // ?forEachInAssetSet@PackAccessStrategy@@UEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@@Z
-    virtual void forEachInAssetSet(class Core::Path const&, std::function<void(class Core::Path const&)>) const;
+    virtual void forEachInAssetSet(
+        class Core::Path const&                      packRelativePath,
+        std::function<void(class Core::Path const&)> callback
+    ) const;
 
     // vIndex: 14, symbol: ?getStrategyType@DirectoryPackAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ
     virtual ::PackAccessStrategyType getStrategyType() const = 0;
@@ -75,8 +83,8 @@ public:
     virtual class Core::PathBuffer<std::string> const& getSubPath() const;
 
     // vIndex: 16, symbol:
-    // ?createSubPack@EncryptedFileAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z
-    virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const = 0;
+    // ?createSubPack@DirectoryPackAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z
+    virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const& subPath) const = 0;
 
     // vIndex: 17, symbol: ?generateAssetSet@PackAccessStrategy@@UEAA?AW4PackAccessAssetGenerationResult@@XZ
     virtual ::PackAccessAssetGenerationResult generateAssetSet();
@@ -108,13 +116,13 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_addToAssetSet@PackAccessStrategy@@IEAAXAEBVPath@Core@@@Z
-    MCAPI void _addToAssetSet(class Core::Path const&);
+    MCAPI void _addToAssetSet(class Core::Path const& path);
 
     // symbol: ?_deleteFromAssetSet@PackAccessStrategy@@IEAAXAEBVPath@Core@@@Z
     MCAPI void _deleteFromAssetSet(class Core::Path const&);
 
     // symbol: ?_isInAssetSet@PackAccessStrategy@@IEBA_NAEBVPath@Core@@@Z
-    MCAPI bool _isInAssetSet(class Core::Path const&) const;
+    MCAPI bool _isInAssetSet(class Core::Path const& path) const;
 
     // symbol: ?_isInAssetSetCaseInsensative@PackAccessStrategy@@IEBA_NAEBVPath@Core@@@Z
     MCAPI bool _isInAssetSetCaseInsensative(class Core::Path const&) const;

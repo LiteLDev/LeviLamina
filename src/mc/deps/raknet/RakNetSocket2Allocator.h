@@ -26,7 +26,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?DeallocRNS2@RakNetSocket2Allocator@RakNet@@CAXPEAVRakNetSocket2@2@@Z
-    MCAPI static void DeallocRNS2(class RakNet::RakNetSocket2*);
+    MCAPI static void DeallocRNS2(class RakNet::RakNetSocket2* s);
 
     // NOLINTEND
 };

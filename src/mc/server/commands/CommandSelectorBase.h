@@ -23,7 +23,7 @@ public:
     MCAPI void addFamilyFilter(struct InvertableFilter<std::string> const&);
 
     // symbol: ?addFilter@CommandSelectorBase@@QEAAXV?$function@$$A6A_NAEBVCommandOrigin@@AEBVActor@@@Z@std@@@Z
-    MCAPI void addFilter(std::function<bool(class CommandOrigin const&, class Actor const&)>);
+    MCAPI void addFilter(std::function<bool(class CommandOrigin const&, class Actor const&)> filter);
 
     // symbol: ?addGameModeFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@W4GameType@@@@@Z
     MCAPI void addGameModeFilter(struct InvertableFilter<::GameType> const&);
@@ -42,7 +42,7 @@ public:
 
     // symbol:
     // ?addNameFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z
-    MCAPI void addNameFilter(struct InvertableFilter<std::string> const&);
+    MCAPI void addNameFilter(struct InvertableFilter<std::string> const& filter);
 
     // symbol:
     // ?addScoreFilter@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCommandIntegerRange@@V?$function@$$A6AHAEA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@@Z@3@@Z
@@ -51,11 +51,11 @@ public:
 
     // symbol:
     // ?addTagFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z
-    MCAPI void addTagFilter(struct InvertableFilter<std::string> const&);
+    MCAPI void addTagFilter(struct InvertableFilter<std::string> const& filter);
 
     // symbol:
     // ?addTypeFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z
-    MCAPI void addTypeFilter(struct InvertableFilter<std::string> const&);
+    MCAPI void addTypeFilter(struct InvertableFilter<std::string> const& filter);
 
     // symbol: ?addXRotationFilter@CommandSelectorBase@@QEAAXAEBU?$pair@MM@std@@@Z
     MCAPI void addXRotationFilter(std::pair<float, float> const&);
@@ -65,7 +65,7 @@ public:
 
     // symbol:
     // ?compile@CommandSelectorBase@@QEAA_NAEBVCommandOrigin@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool compile(class CommandOrigin const&, std::string&);
+    MCAPI bool compile(class CommandOrigin const& origin, std::string& error);
 
     // symbol: ?getName@CommandSelectorBase@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getName() const;
@@ -90,31 +90,31 @@ public:
 
     // symbol:
     // ?setExplicitIdSelector@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setExplicitIdSelector(std::string const&);
+    MCAPI void setExplicitIdSelector(std::string const& playerName);
 
     // symbol: ?setIncludeDeadPlayers@CommandSelectorBase@@QEAAX_N@Z
-    MCAPI void setIncludeDeadPlayers(bool);
+    MCAPI void setIncludeDeadPlayers(bool includeDead);
 
     // symbol: ?setOrder@CommandSelectorBase@@QEAAXW4CommandSelectionOrder@@@Z
-    MCAPI void setOrder(::CommandSelectionOrder);
+    MCAPI void setOrder(enum CommandSelectionOrder order);
 
     // symbol: ?setPosition@CommandSelectorBase@@QEAAXAEBVCommandPosition@@@Z
-    MCAPI void setPosition(class CommandPosition const&);
+    MCAPI void setPosition(class CommandPosition const& position);
 
     // symbol: ?setRadiusMax@CommandSelectorBase@@QEAAXM@Z
-    MCAPI void setRadiusMax(float);
+    MCAPI void setRadiusMax(float r);
 
     // symbol: ?setRadiusMin@CommandSelectorBase@@QEAAXM@Z
-    MCAPI void setRadiusMin(float);
+    MCAPI void setRadiusMin(float rm);
 
     // symbol: ?setResultCount@CommandSelectorBase@@QEAAX_K_N@Z
     MCAPI void setResultCount(uint64, bool);
 
     // symbol: ?setType@CommandSelectorBase@@QEAAXW4CommandSelectionType@@@Z
-    MCAPI void setType(::CommandSelectionType);
+    MCAPI void setType(enum CommandSelectionType type);
 
     // symbol: ?setVersion@CommandSelectorBase@@QEAAXH@Z
-    MCAPI void setVersion(int);
+    MCAPI void setVersion(int version);
 
     // symbol: ??1CommandSelectorBase@@QEAA@XZ
     MCAPI ~CommandSelectorBase();
@@ -124,11 +124,11 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0CommandSelectorBase@@IEAA@_N@Z
-    MCAPI explicit CommandSelectorBase(bool);
+    MCAPI explicit CommandSelectorBase(bool forcePlayer);
 
     // symbol:
     // ?newResults@CommandSelectorBase@@IEBA?AV?$shared_ptr@V?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@@std@@AEBVCommandOrigin@@@Z
-    MCAPI std::shared_ptr<std::vector<class Actor*>> newResults(class CommandOrigin const&) const;
+    MCAPI std::shared_ptr<std::vector<class Actor*>> newResults(class CommandOrigin const& origin) const;
 
     // NOLINTEND
 
@@ -142,22 +142,22 @@ public:
     MCAPI bool filter(class CommandOrigin const&, class Actor&) const;
 
     // symbol: ?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEBVCommandOrigin@@@Z
-    MCAPI bool isExpansionAllowed(class CommandOrigin const&) const;
+    MCAPI bool isExpansionAllowed(class CommandOrigin const& origin) const;
 
     // symbol: ?isInDimension@CommandSelectorBase@@AEBA_NAEBVCommandOrigin@@AEAVActor@@@Z
-    MCAPI bool isInDimension(class CommandOrigin const&, class Actor&) const;
+    MCAPI bool isInDimension(class CommandOrigin const& origin, class Actor& entity) const;
 
     // symbol: ?matchFamily@CommandSelectorBase@@AEBA_NAEBVActor@@@Z
     MCAPI bool matchFamily(class Actor const&) const;
 
     // symbol: ?matchName@CommandSelectorBase@@AEBA_NAEBVActor@@@Z
-    MCAPI bool matchName(class Actor const&) const;
+    MCAPI bool matchName(class Actor const& entity) const;
 
     // symbol: ?matchTag@CommandSelectorBase@@AEBA_NAEBVActor@@@Z
-    MCAPI bool matchTag(class Actor const&) const;
+    MCAPI bool matchTag(class Actor const& entity) const;
 
     // symbol: ?matchType@CommandSelectorBase@@AEBA_NAEBVActor@@@Z
-    MCAPI bool matchType(class Actor const&) const;
+    MCAPI bool matchType(class Actor const& entity) const;
 
     // NOLINTEND
 };

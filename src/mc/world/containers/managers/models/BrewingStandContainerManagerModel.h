@@ -24,13 +24,13 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@BrewingStandContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int, class ItemStack const&, bool);
+    virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
 
     // vIndex: 8, symbol: ?getSlot@BrewingStandContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const& getSlot(int) const;
+    virtual class ItemStack const& getSlot(int slot) const;
 
     // vIndex: 9, symbol: ?setData@BrewingStandContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int, int);
+    virtual void setData(int id, int value);
 
     // vIndex: 10, symbol: ?broadcastChanges@BrewingStandContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();
@@ -42,7 +42,11 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0BrewingStandContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI BrewingStandContainerManagerModel(::ContainerID, class Player&, class BlockPos const&);
+    MCAPI BrewingStandContainerManagerModel(
+        enum ContainerID      containerId,
+        class Player&         player,
+        class BlockPos const& blockPos
+    );
 
     // NOLINTEND
 };

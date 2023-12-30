@@ -27,7 +27,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@SetDisplayObjectivePacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@SetDisplayObjectivePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -39,11 +39,11 @@ public:
     // symbol:
     // ??0SetDisplayObjectivePacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000W4ObjectiveSortOrder@@@Z
     MCAPI SetDisplayObjectivePacket(
-        std::string const&,
-        std::string const&,
-        std::string const&,
-        std::string const&,
-        ::ObjectiveSortOrder
+        std::string const&      displaySlotName,
+        std::string const&      objectiveName,
+        std::string const&      dispalyName,
+        std::string const&      criteriaName,
+        enum ObjectiveSortOrder order
     );
 
     // NOLINTEND

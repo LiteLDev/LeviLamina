@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/webrtc/StrongAlias.h"
 #include "mc/deps/webrtc/TaskQueueBase.h"
-#include "mc/deps/webrtc/detail/ArrayView.h"
-#include "mc/deps/webrtc/detail/ErrorKind.h"
-#include "mc/deps/webrtc/detail/SendDataResult.h"
-#include "mc/deps/webrtc/detail/SendPacketStatus.h"
+#include "mc/deps/webrtc/cricket/SendDataResult.h"
+#include "mc/deps/webrtc/dcsctp/ErrorKind.h"
+#include "mc/deps/webrtc/dcsctp/SendPacketStatus.h"
+#include "mc/deps/webrtc/rtc/ArrayView.h"
 
 // auto generated forward declare list
 // clang-format off

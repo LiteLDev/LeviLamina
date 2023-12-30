@@ -21,7 +21,7 @@ public:
     MCAPI BinaryStream();
 
     // symbol: ??0BinaryStream@@QEAA@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI BinaryStream(std::string&, bool);
+    MCAPI BinaryStream(std::string& buffer, bool copyBuffer);
 
     // symbol: ?getAndReleaseData@BinaryStream@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getAndReleaseData();

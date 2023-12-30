@@ -26,7 +26,7 @@ public:
 
     // symbol:
     // ??0OwnerHurtTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
-    MCAPI OwnerHurtTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&);
+    MCAPI OwnerHurtTargetGoal(class Mob& mob, std::vector<struct MobDescriptor> const& targetTypes);
 
     // NOLINTEND
 };

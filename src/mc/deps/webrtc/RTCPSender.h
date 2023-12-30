@@ -6,8 +6,8 @@
 #include "mc/deps/webrtc/RTCPPacketType.h"
 #include "mc/deps/webrtc/RtcpMode.h"
 #include "mc/deps/webrtc/RtpRtcpInterface.h"
-#include "mc/deps/webrtc/detail/ArrayView.h"
-#include "mc/deps/webrtc/detail/FunctionView.h"
+#include "mc/deps/webrtc/rtc/ArrayView.h"
+#include "mc/deps/webrtc/rtc/FunctionView.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -22,13 +22,13 @@ public:
     MCAPI PhysicsDefinition();
 
     // symbol: ?initialize@PhysicsDefinition@@QEBAXAEAVEntityContext@@AEAVPhysicsComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class PhysicsComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class PhysicsComponent& component) const;
 
     // symbol:
     // ?buildSchema@PhysicsDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VPhysicsDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PhysicsDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PhysicsDefinition>>& root
+    );
 
     // NOLINTEND
 };

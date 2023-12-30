@@ -14,7 +14,7 @@ public:
     MCAPI TrailComponent();
 
     // symbol: ?initFromDefinition@TrailComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor& actor);
 
     // NOLINTEND
 };

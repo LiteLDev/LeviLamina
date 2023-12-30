@@ -43,7 +43,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 27, symbol: ?lerpMotion@FireworksRocketActor@@UEAAXAEBVVec3@@@Z
-    virtual void lerpMotion(class Vec3 const&);
+    virtual void lerpMotion(class Vec3 const& delta);
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
@@ -67,13 +67,13 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 83, symbol: ?handleEntityEvent@FireworksRocketActor@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(enum ActorEvent eventId, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
 
     // vIndex: 112, symbol: ?onSynchedDataUpdate@FireworksRocketActor@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int dataId);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
@@ -82,10 +82,10 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@FireworksRocketActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@FireworksRocketActor@@MEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol:
     // ??0FireworksRocketActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
@@ -93,8 +93,14 @@ public:
     FireworksRocketActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
     // symbol: ?init@FireworksRocketActor@@QEAAXAEAVLevel@@AEBVVec3@@AEBVCompoundTag@@1UActorUniqueID@@_N@Z
-    MCAPI void
-    init(class Level&, class Vec3 const&, class CompoundTag const&, class Vec3 const&, struct ActorUniqueID, bool);
+    MCAPI void init(
+        class Level&             level,
+        class Vec3 const&        pos,
+        class CompoundTag const& rocketUserData,
+        class Vec3 const&        dir,
+        struct ActorUniqueID     attachedEntity,
+        bool                     isProjectile
+    );
 
     // symbol: ?isAttachedToEntity@FireworksRocketActor@@QEBA_NXZ
     MCAPI bool isAttachedToEntity() const;
@@ -103,7 +109,7 @@ public:
     MCAPI void postNormalTick();
 
     // symbol: ?setDispensed@FireworksRocketActor@@QEAAX_N@Z
-    MCAPI void setDispensed(bool);
+    MCAPI void setDispensed(bool dispensed);
 
     // symbol:
     // ?initData@FireworksRocketActor@@SAXAEAVSynchedActorDataEntityWrapper@@AEBVCompoundTag@@AEBVVec3@@UActorUniqueID@@@Z
@@ -121,7 +127,7 @@ public:
     MCAPI void dealExplosionDamage();
 
     // symbol: ?initTagData@FireworksRocketActor@@AEAAXAEAVRandom@@@Z
-    MCAPI void initTagData(class Random&);
+    MCAPI void initTagData(class Random& random);
 
     // NOLINTEND
 };

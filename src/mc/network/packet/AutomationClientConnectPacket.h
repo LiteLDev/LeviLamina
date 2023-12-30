@@ -26,7 +26,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@AutomationClientConnectPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@AutomationClientConnectPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -36,7 +36,7 @@ public:
     MCAPI AutomationClientConnectPacket();
 
     // symbol: ??0AutomationClientConnectPacket@@QEAA@UWebSocketPacketData@@@Z
-    MCAPI explicit AutomationClientConnectPacket(struct WebSocketPacketData);
+    MCAPI explicit AutomationClientConnectPacket(struct WebSocketPacketData wsPacketData);
 
     // NOLINTEND
 };

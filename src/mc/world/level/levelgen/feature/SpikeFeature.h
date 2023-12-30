@@ -23,7 +23,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0EndSpike@SpikeFeature@@QEAA@HHHH_N@Z
-        MCAPI EndSpike(int, int, int, int, bool);
+        MCAPI EndSpike(int centerX, int centerZ, int radius, int height, bool guarded);
 
         // symbol: ?getCenterX@EndSpike@SpikeFeature@@QEBAHXZ
         MCAPI int getCenterX() const;
@@ -38,7 +38,7 @@ public:
         MCAPI class AABB getTopBoundingBox() const;
 
         // symbol: ?startsInChunk@EndSpike@SpikeFeature@@QEBA_NAEBVBlockPos@@@Z
-        MCAPI bool startsInChunk(class BlockPos const&) const;
+        MCAPI bool startsInChunk(class BlockPos const& chunkOrigin) const;
 
         // NOLINTEND
     };
@@ -55,22 +55,23 @@ public:
     virtual ~SpikeFeature();
 
     // vIndex: 3, symbol: ?place@SpikeFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ??0SpikeFeature@@QEAA@AEBVEndSpike@0@@Z
-    MCAPI explicit SpikeFeature(class SpikeFeature::EndSpike const&);
+    MCAPI explicit SpikeFeature(class SpikeFeature::EndSpike const& spike);
 
     // symbol: ?placeManually@SpikeFeature@@QEAA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@PEAVActor@@@Z
-    MCAPI bool placeManually(class BlockSource&, class BlockPos const&, class Random&, class Actor*);
+    MCAPI bool
+    placeManually(class BlockSource& region, class BlockPos const& pos, class Random& random, class Actor* placer);
 
     // symbol: ?postProcessMobsAt@SpikeFeature@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    MCAPI void postProcessMobsAt(class BlockSource&, class BlockPos const&, class Random&) const;
+    MCAPI void postProcessMobsAt(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ?setCrystalBeamTarget@SpikeFeature@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void setCrystalBeamTarget(class BlockPos const&);
+    MCAPI void setCrystalBeamTarget(class BlockPos const& target);
 
     // symbol: ?setCrystalInvulnerable@SpikeFeature@@QEAAX_N@Z
-    MCAPI void setCrystalInvulnerable(bool);
+    MCAPI void setCrystalInvulnerable(bool invulnerable);
 
     // NOLINTEND
 };

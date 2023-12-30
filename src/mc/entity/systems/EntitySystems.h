@@ -63,7 +63,7 @@ public:
     MCAPI void registerTickingSystem(struct TickingSystemWithInfo&&);
 
     // symbol: ?tick@EntitySystems@@QEAAXAEAVEntityRegistry@@@Z
-    MCAPI void tick(class EntityRegistry&);
+    MCAPI void tick(class EntityRegistry& registry);
 
     // symbol: ?tickEditor@EntitySystems@@QEAAXAEAVEntityRegistry@@@Z
     MCAPI void tickEditor(class EntityRegistry&);

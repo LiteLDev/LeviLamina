@@ -20,22 +20,22 @@ public:
     MCAPI void deserialize(class Json::Value const&);
 
     // symbol: ?fill@LootTable@@QEAAXAEAVContainer@@AEAVRandom@@AEAVLootTableContext@@@Z
-    MCAPI void fill(class Container&, class Random&, class LootTableContext&);
+    MCAPI void fill(class Container& container, class Random& random, class LootTableContext& context);
 
     // symbol:
     // ?getRandomItems@LootTable@@QEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
-    MCAPI std::vector<class ItemStack> getRandomItems(class Random&, class LootTableContext&) const;
+    MCAPI std::vector<class ItemStack> getRandomItems(class Random& random, class LootTableContext& context) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?getAvailableSlots@LootTable@@AEAA?AV?$vector@HV?$allocator@H@std@@@std@@AEAVContainer@@AEAVRandom@@@Z
-    MCAPI std::vector<int> getAvailableSlots(class Container&, class Random&);
+    MCAPI std::vector<int> getAvailableSlots(class Container& container, class Random& random);
 
     // symbol:
     // ?shuffleAndSplitItems@LootTable@@AEAAXAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@HAEAVRandom@@@Z
-    MCAPI void shuffleAndSplitItems(std::vector<class ItemStack>&, int, class Random&);
+    MCAPI void shuffleAndSplitItems(std::vector<class ItemStack>& result, int availableSlots, class Random& random);
 
     // NOLINTEND
 };

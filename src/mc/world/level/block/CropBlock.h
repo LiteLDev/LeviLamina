@@ -32,7 +32,9 @@ public:
 
     // vIndex: 3, symbol:
     // ?hasTag@CropBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual bool hasTag(class BlockSource&, class BlockPos const&, class Block const&, std::string const&) const;
+    virtual bool
+    hasTag(class BlockSource& region, class BlockPos const& pos, class Block const& block, std::string const& tagName)
+        const;
 
     // vIndex: 5, symbol:
     // ?getCollisionShape@CropBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -117,16 +119,19 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 79, symbol: ?onFertilized@CropBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, enum FertilizerType fType)
+        const;
 
     // vIndex: 81, symbol: ?canBeFertilized@CropBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // vIndex: 86, symbol: ?mayPlaceOn@CropBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlaceOn(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@CropBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 95, symbol:
     // ?spawnResources@CropBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
@@ -139,8 +144,13 @@ public:
 
     // vIndex: 106, symbol:
     // ?executeEvent@CropBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVActor@@@Z
-    virtual void
-    executeEvent(class BlockSource&, class BlockPos const&, class Block const&, std::string const&, class Actor&) const;
+    virtual void executeEvent(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class Block const&    block,
+        std::string const&    eventName,
+        class Actor&          sourceEntity
+    ) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -158,7 +168,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@CropBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -176,7 +186,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@CropBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 170, symbol: ?getBaseSeed@CropBlock@@MEBA?BVItemInstance@@XZ
     virtual class ItemInstance const getBaseSeed() const;
@@ -185,16 +195,16 @@ public:
     virtual class ItemInstance const getBaseCrop() const;
 
     // vIndex: 172, symbol: ?getSeedNum@CropBlock@@MEBAHAEAVRandomize@@HH@Z
-    virtual int getSeedNum(class Randomize&, int, int) const;
+    virtual int getSeedNum(class Randomize& random, int growth, int bonusLootLevel) const;
 
     // vIndex: 173, symbol: ?getCropNum@CropBlock@@MEBAHAEAVRandomize@@HH@Z
-    virtual int getCropNum(class Randomize&, int, int) const;
+    virtual int getCropNum(class Randomize& random, int growth, int bonusLootLevel) const;
 
     // symbol: ?canBeSilkTouched@CropBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0CropBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CropBlock(std::string const&, int);
+    MCAPI CropBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

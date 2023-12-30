@@ -37,22 +37,22 @@ public:
     virtual ~NetworkPeer();
 
     // vIndex: 1, symbol:
-    // ?sendPacket@WebRTCNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@W4Compressibility@@@Z
+    // ?sendPacket@BatchedNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@W4Compressibility@@@Z
     virtual void sendPacket(std::string const&, ::NetworkPeer::Reliability, ::Compressibility) = 0;
 
     // vIndex: 2, symbol:
-    // ?receivePacket@WebRTCNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
+    // ?receivePacket@BatchedNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
     virtual ::NetworkPeer::DataStatus
     receivePacket(std::string&, std::shared_ptr<std::chrono::steady_clock::time_point> const&) = 0;
 
-    // vIndex: 3, symbol: ?getNetworkStatus@WebRTCNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
+    // vIndex: 3, symbol: ?getNetworkStatus@BatchedNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
 
     // vIndex: 4, symbol: ?update@NetworkPeer@@UEAAXXZ
     virtual void update();
 
     // vIndex: 5, symbol: ?flush@NetworkPeer@@UEAAX$$QEAV?$function@$$A6AXXZ@std@@@Z
-    virtual void flush(std::function<void(void)>&&);
+    virtual void flush(std::function<void(void)>&& callback);
 
     // vIndex: 6, symbol: ?isLocal@NetworkPeer@@UEBA_NXZ
     virtual bool isLocal() const;

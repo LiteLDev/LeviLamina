@@ -16,7 +16,7 @@ public:
     MCAPI Blob();
 
     // symbol: ??0Blob@mce@@QEAA@$$QEAV01@@Z
-    MCAPI Blob(class mce::Blob&&);
+    MCAPI Blob(class mce::Blob&& rhs);
 
     // symbol: ??0Blob@mce@@QEAA@_K@Z
     MCAPI explicit Blob(uint64);
@@ -31,7 +31,7 @@ public:
     MCAPI bool empty() const;
 
     // symbol: ??4Blob@mce@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class mce::Blob& operator=(class mce::Blob&&);
+    MCAPI class mce::Blob& operator=(class mce::Blob&& rhs);
 
     // symbol: ??1Blob@mce@@QEAA@XZ
     MCAPI ~Blob();

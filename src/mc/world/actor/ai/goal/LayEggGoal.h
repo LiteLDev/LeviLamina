@@ -33,10 +33,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@LayEggGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 11, symbol: ?isValidTarget@LayEggGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
 
     // vIndex: 14, symbol: ?_moveToBlock@LayEggGoal@@MEAAXXZ
     virtual void _moveToBlock();
@@ -57,7 +57,7 @@ public:
     MCAPI bool _isTargetBlock(class BlockLegacy const&) const;
 
     // symbol: ?_layEgg@LayEggGoal@@IEAAXAEBVBlockPos@@@Z
-    MCAPI void _layEgg(class BlockPos const&);
+    MCAPI void _layEgg(class BlockPos const& pos);
 
     // NOLINTEND
 };

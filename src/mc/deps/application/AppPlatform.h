@@ -84,7 +84,7 @@ public:
     MCVAPI bool _tryEnableCPUBoost();
 
     // symbol: ?addListener@AppPlatform@@UEAAXPEAVAppPlatformListener@@M@Z
-    MCVAPI void addListener(class AppPlatformListener*, float);
+    MCVAPI void addListener(class AppPlatformListener* l, float priority);
 
     // symbol: ?allowBetaXblSignIn@AppPlatform@@UEBA_NXZ
     MCVAPI bool allowBetaXblSignIn() const;
@@ -108,7 +108,7 @@ public:
     MCVAPI void calculateIfLowMemoryDevice();
 
     // symbol: ?canLaunchUri@AppPlatform@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI bool canLaunchUri(std::string const&);
+    MCVAPI bool canLaunchUri(std::string const& uri);
 
     // symbol: ?canManageLegacyData@AppPlatform@@UEBA_NXZ
     MCVAPI bool canManageLegacyData() const;
@@ -124,7 +124,7 @@ public:
 
     // symbol:
     // ?compareAppReceiptToLocalReceipt@AppPlatform@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI bool compareAppReceiptToLocalReceipt(std::string const&);
+    MCVAPI bool compareAppReceiptToLocalReceipt(std::string const& otherReceipt);
 
     // symbol: ?copyAssetFile@AppPlatform@@UEAA_NAEBVPath@Core@@0@Z
     MCVAPI bool copyAssetFile(class Core::Path const&, class Core::Path const&);
@@ -136,13 +136,13 @@ public:
     // symbol:
     // ?createLoggingStorageArea@AppPlatform@@UEAA?AV?$shared_ptr@VFileStorageArea@Core@@@std@@W4FileAccessType@Core@@AEBVPath@5@@Z
     MCVAPI std::shared_ptr<class Core::FileStorageArea>
-           createLoggingStorageArea(::Core::FileAccessType, class Core::Path const&);
+           createLoggingStorageArea(enum Core::FileAccessType fileAccessType, class Core::Path const& loggingPath);
 
     // symbol: ?createUserInput@AppPlatform@@UEAAXXZ
     MCVAPI void createUserInput();
 
     // symbol: ?createUserInput@AppPlatform@@UEAAXH@Z
-    MCVAPI void createUserInput(int);
+    MCVAPI void createUserInput(int dialogId);
 
     // symbol:
     // ?createWebview@AppPlatform@@UEBA?AV?$shared_ptr@VWebviewInterface@@@std@@$$QEAVPlatformArguments@Webview@@@Z
@@ -176,7 +176,8 @@ public:
 
     // symbol:
     // ?getBroadcastingMultiplayerServiceIds@AppPlatform@@UEBA?AV?$vector@W4MultiplayerServiceIdentifier@Social@@V?$allocator@W4MultiplayerServiceIdentifier@Social@@@std@@@std@@_N0@Z
-    MCVAPI std::vector<::Social::MultiplayerServiceIdentifier> getBroadcastingMultiplayerServiceIds(bool, bool) const;
+    MCVAPI std::vector<::Social::MultiplayerServiceIdentifier>
+           getBroadcastingMultiplayerServiceIds(bool xblBroadcast, bool platformBroadcast) const;
 
     // symbol: ?getBuildPlatform@AppPlatform@@UEBA?AW4BuildPlatform@@XZ
     MCVAPI ::BuildPlatform getBuildPlatform() const;
@@ -230,7 +231,7 @@ public:
 
     // symbol:
     // ?getExtraLevelSaveDataIconParams@AppPlatform@@UEBA?AV?$optional@UScreenshotOptions@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCVAPI std::optional<struct ScreenshotOptions> getExtraLevelSaveDataIconParams(std::string const&) const;
+    MCVAPI std::optional<struct ScreenshotOptions> getExtraLevelSaveDataIconParams(std::string const& levelId) const;
 
     // symbol: ?getFeedbackBugsLink@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCVAPI std::string getFeedbackBugsLink() const;
@@ -240,7 +241,7 @@ public:
 
     // symbol:
     // ?getFileAccess@AppPlatform@@UEAA?AV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@W4ResourceFileSystem@@@Z
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class IFileAccess> getFileAccess(::ResourceFileSystem);
+    MCVAPI Bedrock::NotNullNonOwnerPtr<class IFileAccess> getFileAccess(enum ResourceFileSystem fileSystem);
 
     // symbol: ?getFocusState@AppPlatform@@UEAA?AW4AppFocusState@@XZ
     MCVAPI ::AppFocusState getFocusState();
@@ -369,7 +370,7 @@ public:
 
     // symbol:
     // ?getSecureStorageKey@AppPlatform@@UEAA?AVSecureStorageKey@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI class SecureStorageKey getSecureStorageKey(std::string const&);
+    MCVAPI class SecureStorageKey getSecureStorageKey(std::string const& key);
 
     // symbol:
     // ?getSettingsPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
@@ -512,7 +513,7 @@ public:
     MCVAPI bool isNetworkAvailable() const;
 
     // symbol: ?isNetworkEnabled@AppPlatform@@UEBA_N_N@Z
-    MCVAPI bool isNetworkEnabled(bool) const;
+    MCVAPI bool isNetworkEnabled(bool onlyWifiAllowed) const;
 
     // symbol: ?isNetworkThrottled@AppPlatform@@UEBA_NXZ
     MCVAPI bool isNetworkThrottled() const;
@@ -545,12 +546,12 @@ public:
     MCVAPI void launchSettings();
 
     // symbol: ?launchUri@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void launchUri(std::string const&);
+    MCVAPI void launchUri(std::string const& uri);
 
     // symbol:
     // ?listAssetFilesIn@AppPlatform@@UEBA?AV?$set@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@U?$less@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@4@@std@@AEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCVAPI std::set<class Core::PathBuffer<std::string>>
-           listAssetFilesIn(class Core::Path const&, std::string const&) const;
+           listAssetFilesIn(class Core::Path const& path, std::string const& extension) const;
 
     // symbol: ?maxFileDataRequestConcurrency@AppPlatform@@UEBAIXZ
     MCVAPI uint maxFileDataRequestConcurrency() const;
@@ -588,7 +589,7 @@ public:
     MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const&) const;
 
     // symbol: ?registerFileForCollectionWithCrashDump@AppPlatform@@UEAAXAEBVPath@Core@@@Z
-    MCVAPI void registerFileForCollectionWithCrashDump(class Core::Path const&);
+    MCVAPI void registerFileForCollectionWithCrashDump(class Core::Path const& fileName);
 
     // symbol: ?releaseMulticastReceivePermission@AppPlatform@@UEBAXXZ
     MCVAPI void releaseMulticastReceivePermission() const;
@@ -597,7 +598,7 @@ public:
     MCVAPI bool reloadRenderResourcesOnResume() const;
 
     // symbol: ?removeListener@AppPlatform@@UEAAXPEAVAppPlatformListener@@@Z
-    MCVAPI void removeListener(class AppPlatformListener*);
+    MCVAPI void removeListener(class AppPlatformListener* l);
 
     // symbol:
     // ?requestIntegrityToken@AppPlatform@@UEAA?AV?$shared_ptr@V?$IAsyncResult@UIntegrityTokenResult@@@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
@@ -620,19 +621,19 @@ public:
     MCVAPI bool requiresXboxLiveSigninToPlay() const;
 
     // symbol: ?restartApp@AppPlatform@@UEAAX_N@Z
-    MCVAPI void restartApp(bool);
+    MCVAPI void restartApp(bool restart);
 
     // symbol: ?restartRequested@AppPlatform@@UEAA_NXZ
     MCVAPI bool restartRequested();
 
     // symbol: ?setARVRPlatform@AppPlatform@@UEAAXW4ARVRPlatform@@@Z
-    MCVAPI void setARVRPlatform(::ARVRPlatform);
+    MCVAPI void setARVRPlatform(enum ARVRPlatform platform);
 
     // symbol: ?setDpi@AppPlatform@@UEAAXH@Z
-    MCVAPI void setDpi(int);
+    MCVAPI void setDpi(int dpi);
 
     // symbol: ?setFullscreenMode@AppPlatform@@UEAAXW4FullscreenMode@@@Z
-    MCVAPI void setFullscreenMode(::FullscreenMode);
+    MCVAPI void setFullscreenMode(enum FullscreenMode fullscreenMode);
 
     // symbol: ?setIntegrityToken@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void setIntegrityToken(std::string const&);
@@ -645,35 +646,35 @@ public:
     MCVAPI void setKeepScreenOnFlag(bool);
 
     // symbol: ?setNetworkAllowed@AppPlatform@@UEAAX_N@Z
-    MCVAPI void setNetworkAllowed(bool);
+    MCVAPI void setNetworkAllowed(bool allowed);
 
     // symbol: ?setNetworkConnectionType@AppPlatform@@UEAAXW4NetworkConnectionType@@@Z
     MCVAPI void setNetworkConnectionType(::NetworkConnectionType);
 
     // symbol: ?setScreenSize@AppPlatform@@UEAAXHH@Z
-    MCVAPI void setScreenSize(int, int);
+    MCVAPI void setScreenSize(int width, int height);
 
     // symbol:
     // ?setSecureStorageKey@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSecureStorageKey@@@Z
-    MCVAPI void setSecureStorageKey(std::string const&, class SecureStorageKey const&);
+    MCVAPI void setSecureStorageKey(std::string const& key, class SecureStorageKey const& value);
 
     // symbol: ?setSleepEnabled@AppPlatform@@UEAAX_N@Z
-    MCVAPI void setSleepEnabled(bool);
+    MCVAPI void setSleepEnabled(bool enabled);
 
     // symbol: ?setThreadsFrozen@AppPlatform@@UEAAX_N@Z
-    MCVAPI void setThreadsFrozen(bool);
+    MCVAPI void setThreadsFrozen(bool frozen);
 
     // symbol: ?setUIScalingRules@AppPlatform@@UEAAXW4UIScalingRules@@@Z
-    MCVAPI void setUIScalingRules(::UIScalingRules);
+    MCVAPI void setUIScalingRules(enum UIScalingRules UIScalingRules);
 
     // symbol: ?setVRControllerType@AppPlatform@@UEAAXW4VRControllerType@@@Z
-    MCVAPI void setVRControllerType(::VRControllerType);
+    MCVAPI void setVRControllerType(enum VRControllerType controllerType);
 
     // symbol: ?setWindowSize@AppPlatform@@UEAAXHH@Z
-    MCVAPI void setWindowSize(int, int);
+    MCVAPI void setWindowSize(int width, int height);
 
     // symbol: ?setWindowText@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void setWindowText(std::string const&);
+    MCVAPI void setWindowText(std::string const& title);
 
     // symbol: ?shouldPauseDownloadsWhenEnterGame@AppPlatform@@UEBA_NXZ
     MCVAPI bool shouldPauseDownloadsWhenEnterGame() const;
@@ -685,13 +686,13 @@ public:
     MCVAPI bool shouldRemoveGraphicsDeviceOnAppTermination() const;
 
     // symbol: ?showDialog@AppPlatform@@UEAAXH@Z
-    MCVAPI void showDialog(int);
+    MCVAPI void showDialog(int dialogId);
 
     // symbol: ?showPlatformEmptyStoreDialog@AppPlatform@@UEAAX$$QEAV?$function@$$A6AX_N@Z@std@@@Z
     MCVAPI void showPlatformEmptyStoreDialog(std::function<void(bool)>&&);
 
     // symbol: ?showPlatformStoreIcon@AppPlatform@@UEAAX_N@Z
-    MCVAPI void showPlatformStoreIcon(bool);
+    MCVAPI void showPlatformStoreIcon(bool shouldShow);
 
     // symbol: ?supportsAutoSaveOnDBCompaction@AppPlatform@@UEBA_NXZ
     MCVAPI bool supportsAutoSaveOnDBCompaction() const;
@@ -731,14 +732,22 @@ public:
 
     // symbol:
     // ?trackPurchaseEvent@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0000000@Z
-    MCVAPI void
-    trackPurchaseEvent(std::string const&, std::string const&, std::string const&, std::string const&, std::string const&, std::string const&, std::string const&, std::string const&);
+    MCVAPI void trackPurchaseEvent(
+        std::string const& contentId,
+        std::string const& contentType,
+        std::string const& revenue,
+        std::string const& clientId,
+        std::string const& userId,
+        std::string const& playerSessionId,
+        std::string const& currencyCode,
+        std::string const& eventName
+    );
 
     // symbol: ?tryEnterVRMode@AppPlatform@@UEAAX_NV?$function@$$A6AX_N@Z@std@@@Z
     MCVAPI void tryEnterVRMode(bool, std::function<void(bool)>);
 
     // symbol: ?updateLocalization@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void updateLocalization(std::string const&);
+    MCVAPI void updateLocalization(std::string const& loc);
 
     // symbol: ?useAppPlatformForTelemetryIPAddress@AppPlatform@@UEAA_NXZ
     MCVAPI bool useAppPlatformForTelemetryIPAddress();
@@ -759,7 +768,7 @@ public:
     MCVAPI bool usesHDRBrightness() const;
 
     // symbol: ?vibrate@AppPlatform@@UEAAXH@Z
-    MCVAPI void vibrate(int);
+    MCVAPI void vibrate(int milliSeconds);
 
     // symbol: ??1AppPlatform@@UEAA@XZ
     MCVAPI ~AppPlatform();

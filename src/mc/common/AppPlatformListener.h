@@ -77,13 +77,13 @@ public:
     MCVAPI void onLowMemory();
 
     // symbol: ?onOperationModeChanged@AppPlatformListener@@UEAAXW4OperationMode@@@Z
-    MCVAPI void onOperationModeChanged(::OperationMode);
+    MCVAPI void onOperationModeChanged(enum OperationMode operationMode);
 
     // symbol: ?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z
-    MCVAPI void onPerformanceModeChanged(bool);
+    MCVAPI void onPerformanceModeChanged(bool boost);
 
     // symbol: ?onPushNotificationReceived@AppPlatformListener@@UEAAXAEBVPushNotificationMessage@@@Z
-    MCVAPI void onPushNotificationReceived(class PushNotificationMessage const&);
+    MCVAPI void onPushNotificationReceived(class PushNotificationMessage const& msg);
 
     // symbol: ?onResizeBegin@AppPlatformListener@@UEAAXXZ
     MCVAPI void onResizeBegin();
@@ -95,7 +95,7 @@ public:
     MCAPI explicit AppPlatformListener(bool);
 
     // symbol: ?initListener@AppPlatformListener@@QEAAXM@Z
-    MCAPI void initListener(float);
+    MCAPI void initListener(float priority);
 
     // symbol: ?terminate@AppPlatformListener@@QEAAXXZ
     MCAPI void terminate();

@@ -20,19 +20,19 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@StompEggGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 18, symbol: ?_createBreakProgressParticles@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
-    virtual void _createBreakProgressParticles(class Level&, class BlockSource&, class BlockPos);
+    virtual void _createBreakProgressParticles(class Level& level, class BlockSource& region, class BlockPos pos);
 
     // vIndex: 19, symbol: ?_createDestroyParticles@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
-    virtual void _createDestroyParticles(class Level&, class BlockSource&, class BlockPos);
+    virtual void _createDestroyParticles(class Level& level, class BlockSource& region, class BlockPos pos);
 
     // vIndex: 20, symbol: ?_playBreakProgressSound@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
-    virtual void _playBreakProgressSound(class Level&, class BlockSource&, class BlockPos);
+    virtual void _playBreakProgressSound(class Level& level, class BlockSource& region, class BlockPos pos);
 
     // vIndex: 21, symbol: ?_playDestroySound@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
-    virtual void _playDestroySound(class Level&, class BlockSource&, class BlockPos);
+    virtual void _playDestroySound(class Level& level, class BlockSource& region, class BlockPos pos);
 
     // symbol: ??0StompEggGoal@@QEAA@AEAVMob@@MHHMH@Z
     MCAPI StompEggGoal(class Mob&, float, int, int, float, int);

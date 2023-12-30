@@ -23,7 +23,7 @@ public:
     virtual void _Unlock();
 
     // vIndex: 3, symbol: ?overflow@FileStdStreamBuf@Core@@UEAAHH@Z
-    virtual int overflow(int);
+    virtual int overflow(int c);
 
     // vIndex: 4, symbol: ?pbackfail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MEAAHH@Z
     virtual int pbackfail(int);

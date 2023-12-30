@@ -26,7 +26,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@OnScreenTextureAnimationPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@OnScreenTextureAnimationPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -36,7 +36,7 @@ public:
     MCAPI OnScreenTextureAnimationPacket();
 
     // symbol: ??0OnScreenTextureAnimationPacket@@QEAA@I@Z
-    MCAPI explicit OnScreenTextureAnimationPacket(uint);
+    MCAPI explicit OnScreenTextureAnimationPacket(uint effectID);
 
     // NOLINTEND
 };

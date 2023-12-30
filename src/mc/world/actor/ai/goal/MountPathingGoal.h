@@ -35,13 +35,13 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@MountPathingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 10, symbol: ?_getAttackReachSqr@MountPathingGoal@@MEAAMXZ
     virtual float _getAttackReachSqr();
 
     // symbol: ??0MountPathingGoal@@QEAA@AEAVMob@@MM_N@Z
-    MCAPI MountPathingGoal(class Mob&, float, float, bool);
+    MCAPI MountPathingGoal(class Mob& mob, float speed, float targetDist, bool trackTarget);
 
     // NOLINTEND
 };

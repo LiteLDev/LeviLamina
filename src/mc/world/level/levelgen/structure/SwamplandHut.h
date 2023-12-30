@@ -22,20 +22,27 @@ public:
     virtual ::StructurePieceType getType() const;
 
     // vIndex: 4, symbol: ?postProcess@SwamplandHut@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // vIndex: 5, symbol: ?postProcessMobsAt@SwamplandHut@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual void postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // vIndex: 12, symbol: ?addHardcodedSpawnAreas@SwamplandHut@@UEBAXAEAVLevelChunk@@@Z
-    virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
+    virtual void addHardcodedSpawnAreas(class LevelChunk& chunk) const;
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?placeCauldron@SwamplandHut@@IEAAXAEAVBlockSource@@AEAVRandom@@HHHAEBVBoundingBox@@@Z
-    MCAPI void placeCauldron(class BlockSource&, class Random&, int, int, int, class BoundingBox const&);
+    MCAPI void placeCauldron(
+        class BlockSource&       region,
+        class Random&            random,
+        int                      x,
+        int                      y,
+        int                      z,
+        class BoundingBox const& chunkBB
+    );
 
     // NOLINTEND
 };

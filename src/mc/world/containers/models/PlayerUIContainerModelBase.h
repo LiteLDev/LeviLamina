@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?containerContentChanged@PlayerUIContainerModelBase@@UEAAXH@Z
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int slot);
 
     // vIndex: 1, symbol: __gen_??1PlayerUIContainerModelBase@@UEAA@XZ
     virtual ~PlayerUIContainerModelBase() = default;
@@ -57,10 +57,15 @@ public:
     virtual int _getContainerOffset() const;
 
     // vIndex: 24, symbol: ?_onItemChanged@PlayerUIContainerModelBase@@MEAAXHAEBVItemStack@@0@Z
-    virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
+    virtual void _onItemChanged(int slot, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // symbol: ??0PlayerUIContainerModelBase@@QEAA@W4ContainerEnumName@@AEAVPlayer@@HW4ContainerCategory@@@Z
-    MCAPI PlayerUIContainerModelBase(::ContainerEnumName, class Player&, int, ::ContainerCategory);
+    MCAPI PlayerUIContainerModelBase(
+        enum ContainerEnumName containerName,
+        class Player&          player,
+        int                    containerSize,
+        enum ContainerCategory category
+    );
 
     // NOLINTEND
 

@@ -48,21 +48,21 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?_clientHandleAddOwnedEntity@Level@@UEAA?AV?$StackRefResultT@UEntityRefTraits@@@@VEntityNetId@@@Z
-    MCVAPI class StackRefResultT<struct EntityRefTraits> _clientHandleAddOwnedEntity(class EntityNetId);
+    MCVAPI class StackRefResultT<struct EntityRefTraits> _clientHandleAddOwnedEntity(class EntityNetId entityNetId);
 
     // symbol:
     // ?_clientHandleAddWeakRefEntity@Level@@UEAA?AV?$StackRefResultT@UEntityRefTraits@@@@VEntityNetId@@V?$WeakRefT@UEntityRefTraits@@@@@Z
     MCVAPI class StackRefResultT<struct EntityRefTraits>
-        _clientHandleAddWeakRefEntity(class EntityNetId, class WeakRefT<struct EntityRefTraits>);
+    _clientHandleAddWeakRefEntity(class EntityNetId entityNetId, class WeakRefT<struct EntityRefTraits> entityId);
 
     // symbol: ?_clientHandleRemoveOwnedEntity@Level@@UEAAXVEntityNetId@@@Z
-    MCVAPI void _clientHandleRemoveOwnedEntity(class EntityNetId);
+    MCVAPI void _clientHandleRemoveOwnedEntity(class EntityNetId entityNetId);
 
     // symbol: ?_clientHandleRemoveWeakRefEntity@Level@@UEAAXVEntityNetId@@@Z
-    MCVAPI void _clientHandleRemoveWeakRefEntity(class EntityNetId);
+    MCVAPI void _clientHandleRemoveWeakRefEntity(class EntityNetId entityNetId);
 
     // symbol: ?_destroyEffect@Level@@UEAAXAEBVBlockPos@@AEBVBlock@@H@Z
-    MCVAPI void _destroyEffect(class BlockPos const&, class Block const&, int);
+    MCVAPI void _destroyEffect(class BlockPos const& pos, class Block const& block, int intensityFactor);
 
     // symbol: ?_getPlayerDeathManager@Level@@MEAAPEAVPlayerDeathManager@@XZ
     MCVAPI class PlayerDeathManager* _getPlayerDeathManager();
@@ -101,22 +101,44 @@ public:
     MCVAPI class Actor* addGlobalEntity(class BlockSource&, class OwnerPtrT<struct EntityRefTraits>);
 
     // symbol: ?addListener@Level@@UEAAXAEAVLevelListener@@@Z
-    MCVAPI void addListener(class LevelListener&);
+    MCVAPI void addListener(class LevelListener& listener);
 
     // symbol: ?addParticle@Level@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
-    MCVAPI class Particle*
-    addParticle(::ParticleType, class Vec3 const&, class Vec3 const&, int, class CompoundTag const*, bool);
+    MCVAPI class Particle* addParticle(
+        enum ParticleType        id,
+        class Vec3 const&        pos,
+        class Vec3 const&        dir,
+        int                      data,
+        class CompoundTag const* tag,
+        bool                     isGlobal
+    );
 
     // symbol: ?addParticleEffect@Level@@UEAAXAEBVHashedString@@AEBVVec3@@AEBVMolangVariableMap@@@Z
-    MCVAPI void addParticleEffect(class HashedString const&, class Vec3 const&, class MolangVariableMap const&);
+    MCVAPI void addParticleEffect(
+        class HashedString const&      effect,
+        class Vec3 const&              emitterPosition,
+        class MolangVariableMap const& molangVariables
+    );
 
     // symbol: ?addTerrainParticleEffect@Level@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
-    MCVAPI void
-    addTerrainParticleEffect(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float);
+    MCVAPI void addTerrainParticleEffect(
+        class BlockPos const& pos,
+        class Block const&    block,
+        class Vec3 const&     emitterPosition,
+        float                 intensity,
+        float                 velocityScalar,
+        float                 emitterRadius
+    );
 
     // symbol: ?addTerrainSlideEffect@Level@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
-    MCVAPI void
-    addTerrainSlideEffect(class BlockPos const&, class Block const&, class Vec3 const&, float, float, float);
+    MCVAPI void addTerrainSlideEffect(
+        class BlockPos const& pos,
+        class Block const&    block,
+        class Vec3 const&     emitterPosition,
+        float                 intensity,
+        float                 velocityScalar,
+        float                 emitterRadius
+    );
 
     // symbol: ?addTickingAreaList@Level@@UEAAXV?$AutomaticID@VDimension@@H@@AEBV?$shared_ptr@VTickingAreaList@@@std@@@Z
     MCVAPI void addTickingAreaList(DimensionType, std::shared_ptr<class TickingAreaList> const&);
@@ -148,25 +170,25 @@ public:
     // symbol:
     // ?broadcastSoundEvent@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
     MCVAPI void broadcastSoundEvent(
-        class BlockSource&,
-        ::Puv::Legacy::LevelSoundEvent,
-        class Vec3 const&,
-        int,
-        struct ActorDefinitionIdentifier const&,
-        bool,
-        bool
+        class BlockSource&                      region,
+        enum Puv::Legacy::LevelSoundEvent       type,
+        class Vec3 const&                       pos,
+        int                                     data,
+        struct ActorDefinitionIdentifier const& entityType,
+        bool                                    isBabyMob,
+        bool                                    isGlobal
     );
 
     // symbol:
     // ?broadcastSoundEvent@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@AEBVBlock@@AEBUActorDefinitionIdentifier@@_N5@Z
     MCVAPI void broadcastSoundEvent(
-        class BlockSource&,
-        ::Puv::Legacy::LevelSoundEvent,
-        class Vec3 const&,
-        class Block const&,
-        struct ActorDefinitionIdentifier const&,
-        bool,
-        bool
+        class BlockSource&                      region,
+        enum Puv::Legacy::LevelSoundEvent       type,
+        class Vec3 const&                       pos,
+        class Block const&                      block,
+        struct ActorDefinitionIdentifier const& entityType,
+        bool                                    isBabyMob,
+        bool                                    isGlobal
     );
 
     // symbol:
@@ -187,20 +209,28 @@ public:
         const;
 
     // symbol: ?copyAndLockMap@Level@@UEAA_NUActorUniqueID@@0@Z
-    MCVAPI bool copyAndLockMap(struct ActorUniqueID, struct ActorUniqueID);
+    MCVAPI bool copyAndLockMap(struct ActorUniqueID originalMapUuid, struct ActorUniqueID newMapUuid);
 
     // symbol: ?countUsersWithMatchingNetworkId@Level@@UEBAHAEBVNetworkIdentifier@@@Z
     MCVAPI int countUsersWithMatchingNetworkId(class NetworkIdentifier const&) const;
 
     // symbol:
     // ?createMapSavedData@Level@@UEAAAEAVMapItemSavedData@@AEBUActorUniqueID@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@H@Z
-    MCVAPI class MapItemSavedData&
-    createMapSavedData(struct ActorUniqueID const&, class BlockPos const&, DimensionType, int);
+    MCVAPI class MapItemSavedData& createMapSavedData(
+        struct ActorUniqueID const& uuid,
+        class BlockPos const&       origin,
+        DimensionType               dimension,
+        int                         returnScaleLevel
+    );
 
     // symbol:
     // ?createMapSavedData@Level@@UEAAAEAVMapItemSavedData@@AEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@H@Z
-    MCVAPI class MapItemSavedData&
-    createMapSavedData(std::vector<struct ActorUniqueID> const&, class BlockPos const&, DimensionType, int);
+    MCVAPI class MapItemSavedData& createMapSavedData(
+        std::vector<struct ActorUniqueID> const& mapIds,
+        class BlockPos const&                    origin,
+        DimensionType                            dimension,
+        int                                      returnScaleLevel
+    );
 
     // symbol: ?createPhotoStorage@Level@@UEAAXXZ
     MCVAPI void createPhotoStorage();
@@ -214,63 +244,74 @@ public:
     MCVAPI void denyEffect(class BlockSource&, class Vec3 const&);
 
     // symbol: ?destroyBlock@Level@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z
-    MCVAPI bool destroyBlock(class BlockSource&, class BlockPos const&, bool);
+    MCVAPI bool destroyBlock(class BlockSource& region, class BlockPos const& pos, bool dropResources);
 
     // symbol: ?digestServerItemComponents@Level@@UEAAXAEBVItemComponentPacket@@@Z
     MCVAPI void digestServerItemComponents(class ItemComponentPacket const&);
 
     // symbol: ?directTickEntities@Level@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void directTickEntities(class BlockSource&);
+    MCVAPI void directTickEntities(class BlockSource& blockSource);
 
     // symbol: ?entityChangeDimension@Level@@UEAAXAEAVActor@@V?$AutomaticID@VDimension@@H@@V?$optional@VVec3@@@std@@@Z
     MCVAPI void entityChangeDimension(class Actor&, DimensionType, std::optional<class Vec3>);
 
     // symbol: ?expandMapByID@Level@@UEAA?AUActorUniqueID@@U2@_N@Z
-    MCVAPI struct ActorUniqueID expandMapByID(struct ActorUniqueID, bool);
+    MCVAPI struct ActorUniqueID expandMapByID(struct ActorUniqueID uuid, bool wasInit);
 
     // symbol: ?explode@Level@@UEAAXAEAVExplosion@@@Z
     MCVAPI void explode(class Explosion&);
 
     // symbol: ?explode@Level@@UEAAXAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z
-    MCVAPI void explode(class BlockSource&, class Actor*, class Vec3 const&, float, bool, bool, float, bool);
+    MCVAPI void explode(
+        class BlockSource& region,
+        class Actor*       source,
+        class Vec3 const&  pos,
+        float              explosionRadius,
+        bool               fire,
+        bool               breaksBlocks,
+        float              maxResistance,
+        bool               allowUnderwater
+    );
 
     // symbol: ?extinguishFire@Level@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@EPEAVActor@@@Z
     MCVAPI bool extinguishFire(class BlockSource&, class BlockPos const&, uchar, class Actor*);
 
     // symbol: ?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z
-    MCVAPI class Actor* fetchEntity(struct ActorUniqueID, bool) const;
+    MCVAPI class Actor* fetchEntity(struct ActorUniqueID actorId, bool getRemoved) const;
 
     // symbol: ?fetchStrictEntity@Level@@UEBA?AVStrictEntityContext@@UActorUniqueID@@_N@Z
     MCVAPI class StrictEntityContext fetchStrictEntity(struct ActorUniqueID, bool) const;
 
     // symbol:
     // ?findPath@Level@@UEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVActor@@0AEAVNavigationComponent@@@Z
-    MCVAPI std::unique_ptr<class Path> findPath(class Actor&, class Actor&, class NavigationComponent&);
+    MCVAPI std::unique_ptr<class Path>
+           findPath(class Actor& from, class Actor& to, class NavigationComponent& navigation);
 
     // symbol:
     // ?findPath@Level@@UEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVActor@@HHHAEAVNavigationComponent@@@Z
-    MCVAPI std::unique_ptr<class Path> findPath(class Actor&, int, int, int, class NavigationComponent&);
+    MCVAPI std::unique_ptr<class Path>
+           findPath(class Actor& from, int xBest, int yBest, int zBest, class NavigationComponent& navigation);
 
     // symbol: ?findPlayer@Level@@UEBAPEAVPlayer@@V?$function@$$A6A_NAEBVWeakEntityRef@@@Z@std@@@Z
     MCVAPI class Player* findPlayer(std::function<bool(class WeakEntityRef const&)>) const;
 
     // symbol: ?findPlayer@Level@@UEBAPEAVPlayer@@V?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z
-    MCVAPI class Player* findPlayer(std::function<bool(class Player const&)>) const;
+    MCVAPI class Player* findPlayer(std::function<bool(class Player const&)> pred) const;
 
     // symbol: ?flushRunTimeLighting@Level@@UEAAXXZ
     MCVAPI void flushRunTimeLighting();
 
     // symbol: ?forEachDimension@Level@@UEAAXV?$function@$$A6A_NAEAVDimension@@@Z@std@@@Z
-    MCVAPI void forEachDimension(std::function<bool(class Dimension&)>);
+    MCVAPI void forEachDimension(std::function<bool(class Dimension&)> callback);
 
     // symbol: ?forEachDimension@Level@@UEBAXV?$function@$$A6A_NAEBVDimension@@@Z@std@@@Z
-    MCVAPI void forEachDimension(std::function<bool(class Dimension const&)>) const;
+    MCVAPI void forEachDimension(std::function<bool(class Dimension const&)> callback) const;
 
     // symbol: ?forEachPlayer@Level@@UEAAXV?$function@$$A6A_NAEAVPlayer@@@Z@std@@@Z
-    MCVAPI void forEachPlayer(std::function<bool(class Player&)>);
+    MCVAPI void forEachPlayer(std::function<bool(class Player&)> callback);
 
     // symbol: ?forEachPlayer@Level@@UEBAXV?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z
-    MCVAPI void forEachPlayer(std::function<bool(class Player const&)>) const;
+    MCVAPI void forEachPlayer(std::function<bool(class Player const&)> callback) const;
 
     // symbol: ?forEachUser@Level@@UEAAXV?$function@$$A6A_NAEAVEntityContext@@@Z@std@@@Z
     MCVAPI void forEachUser(std::function<bool(class EntityContext&)>);
@@ -282,7 +323,7 @@ public:
     MCVAPI void forceFlushRemovedPlayers();
 
     // symbol: ?forceRemoveEntity@Level@@UEAAXAEAVActor@@@Z
-    MCVAPI void forceRemoveEntity(class Actor&);
+    MCVAPI void forceRemoveEntity(class Actor& e);
 
     // symbol: ?forceRemoveEntityfromWorld@Level@@UEAAXAEAVActor@@@Z
     MCVAPI void forceRemoveEntityfromWorld(class Actor&);
@@ -430,7 +471,7 @@ public:
 
     // symbol:
     // ?getDimension@Level@@UEBA?AV?$WeakRefT@U?$SharePtrRefTraits@VDimension@@@@@@V?$AutomaticID@VDimension@@H@@@Z
-    MCVAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getDimension(DimensionType) const;
+    MCVAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getDimension(DimensionType id) const;
 
     // symbol: ?getDimensionConversionData@Level@@UEBA?AVDimensionConversionData@@XZ
     MCVAPI class DimensionConversionData getDimensionConversionData() const;
@@ -567,7 +608,7 @@ public:
     MCVAPI class LootTables& getLootTables();
 
     // symbol: ?getMapSavedData@Level@@UEAAPEAVMapItemSavedData@@UActorUniqueID@@@Z
-    MCVAPI class MapItemSavedData* getMapSavedData(struct ActorUniqueID);
+    MCVAPI class MapItemSavedData* getMapSavedData(struct ActorUniqueID uuid);
 
     // symbol: ?getMapSavedData@Level@@UEAAPEAVMapItemSavedData@@AEBVCompoundTag@@@Z
     MCVAPI class MapItemSavedData* getMapSavedData(class CompoundTag const&);
@@ -576,7 +617,7 @@ public:
     MCVAPI class MapItemSavedData* getMapSavedData(class CompoundTag const*);
 
     // symbol: ?getMob@Level@@UEBAPEAVMob@@UActorUniqueID@@@Z
-    MCVAPI class Mob* getMob(struct ActorUniqueID) const;
+    MCVAPI class Mob* getMob(struct ActorUniqueID entityId) const;
 
     // symbol: ?getMultiplayerGameIntent@Level@@UEBA_NXZ
     MCVAPI bool getMultiplayerGameIntent() const;
@@ -620,30 +661,30 @@ public:
 
     // symbol:
     // ?getPlatformPlayer@Level@@UEBAPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI class Player* getPlatformPlayer(std::string const&) const;
+    MCVAPI class Player* getPlatformPlayer(std::string const& platformOnlineId) const;
 
     // symbol: ?getPlayer@Level@@UEBAPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI class Player* getPlayer(std::string const&) const;
+    MCVAPI class Player* getPlayer(std::string const& name) const;
 
     // symbol: ?getPlayer@Level@@UEBAPEAVPlayer@@AEBVUUID@mce@@@Z
-    MCVAPI class Player* getPlayer(class mce::UUID const&) const;
+    MCVAPI class Player* getPlayer(class mce::UUID const& uuid) const;
 
     // symbol: ?getPlayer@Level@@UEBAPEAVPlayer@@UActorUniqueID@@@Z
-    MCVAPI class Player* getPlayer(struct ActorUniqueID) const;
+    MCVAPI class Player* getPlayer(struct ActorUniqueID entityID) const;
 
     // symbol: ?getPlayerAbilities@Level@@UEAAPEAVLayeredAbilities@@AEBUActorUniqueID@@@Z
-    MCVAPI class LayeredAbilities* getPlayerAbilities(struct ActorUniqueID const&);
+    MCVAPI class LayeredAbilities* getPlayerAbilities(struct ActorUniqueID const& playerId);
 
     // symbol:
     // ?getPlayerByXuid@Level@@UEBAPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI class Player* getPlayerByXuid(std::string const&) const;
+    MCVAPI class Player* getPlayerByXuid(std::string const& xuid) const;
 
     // symbol: ?getPlayerColor@Level@@UEBA?AVColor@mce@@AEBVPlayer@@@Z
-    MCVAPI class mce::Color getPlayerColor(class Player const&) const;
+    MCVAPI class mce::Color getPlayerColor(class Player const& player) const;
 
     // symbol:
     // ?getPlayerFromServerId@Level@@UEBAPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI class Player* getPlayerFromServerId(std::string const&) const;
+    MCVAPI class Player* getPlayerFromServerId(std::string const& serverId) const;
 
     // symbol:
     // ?getPlayerList@Level@@UEBAAEBV?$unordered_map@VUUID@mce@@VPlayerListEntry@@U?$hash@VUUID@mce@@@std@@U?$equal_to@VUUID@mce@@@5@V?$allocator@U?$pair@$$CBVUUID@mce@@VPlayerListEntry@@@std@@@5@@std@@XZ
@@ -695,10 +736,10 @@ public:
     MCVAPI std::vector<class Actor*> getRuntimeActorList() const;
 
     // symbol: ?getRuntimeEntity@Level@@UEBAPEAVActor@@VActorRuntimeID@@_N@Z
-    MCVAPI class Actor* getRuntimeEntity(class ActorRuntimeID, bool) const;
+    MCVAPI class Actor* getRuntimeEntity(class ActorRuntimeID actorId, bool getRemoved) const;
 
     // symbol: ?getRuntimePlayer@Level@@UEBAPEAVPlayer@@VActorRuntimeID@@@Z
-    MCVAPI class Player* getRuntimePlayer(class ActorRuntimeID) const;
+    MCVAPI class Player* getRuntimePlayer(class ActorRuntimeID runtimeId) const;
 
     // symbol: ?getSavedData@Level@@UEAAAEAVSavedDataStorage@@XZ
     MCVAPI class SavedDataStorage& getSavedData();
@@ -750,7 +791,7 @@ public:
     MCVAPI class Spawner& getSpawner() const;
 
     // symbol: ?getSpecialMultiplier@Level@@UEBAMV?$AutomaticID@VDimension@@H@@@Z
-    MCVAPI float getSpecialMultiplier(DimensionType) const;
+    MCVAPI float getSpecialMultiplier(DimensionType dimension) const;
 
     // symbol: ?getStructureManager@Level@@UEBA?BV?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@XZ
     MCVAPI Bedrock::NotNullNonOwnerPtr<class StructureManager> const getStructureManager() const;
@@ -782,7 +823,7 @@ public:
     MCVAPI class Random& getThreadRandom() const;
 
     // symbol: ?getTickingArea@Level@@UEBAPEAVITickingArea@@AEBVUUID@mce@@@Z
-    MCVAPI class ITickingArea* getTickingArea(class mce::UUID const&) const;
+    MCVAPI class ITickingArea* getTickingArea(class mce::UUID const& UUID) const;
 
     // symbol: ?getTickingAreasMgr@Level@@UEAAAEAVTickingAreasManager@@XZ
     MCVAPI class TickingAreasManager& getTickingAreasMgr();
@@ -831,16 +872,16 @@ public:
     MCVAPI ::Social::GamePublishSetting getXBLBroadcastMode() const;
 
     // symbol: ?handleLevelEvent@Level@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
-    MCVAPI void handleLevelEvent(::LevelEvent, class CompoundTag const&);
+    MCVAPI void handleLevelEvent(enum LevelEvent type, class CompoundTag const& data);
 
     // symbol: ?handleLevelEvent@Level@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
-    MCVAPI void handleLevelEvent(::LevelEvent, class Vec3 const&, int);
+    MCVAPI void handleLevelEvent(enum LevelEvent type, class Vec3 const& pos, int data);
 
     // symbol: ?handleStopAllSounds@Level@@UEAAXXZ
     MCVAPI void handleStopAllSounds();
 
     // symbol: ?handleStopSoundEvent@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void handleStopSoundEvent(std::string const&);
+    MCVAPI void handleStopSoundEvent(std::string const& name);
 
     // symbol: ?hasCommandsEnabled@Level@@UEBA_NXZ
     MCVAPI bool hasCommandsEnabled() const;
@@ -901,7 +942,7 @@ public:
     MCVAPI bool isMultiplayerGame() const;
 
     // symbol: ?isPlayerSuspended@Level@@UEBA_NAEAVPlayer@@@Z
-    MCVAPI bool isPlayerSuspended(class Player&) const;
+    MCVAPI bool isPlayerSuspended(class Player& player) const;
 
     // symbol: ?levelCleanupQueueEntityRemoval@Level@@UEAAXV?$OwnerPtrT@UEntityRefTraits@@@@@Z
     MCVAPI void levelCleanupQueueEntityRemoval(class OwnerPtrT<struct EntityRefTraits>);
@@ -916,7 +957,7 @@ public:
     MCVAPI void notifySubChunkRequestManager(class SubChunkPacket const&);
 
     // symbol: ?onChunkDiscarded@Level@@UEAAXAEAVLevelChunk@@@Z
-    MCVAPI void onChunkDiscarded(class LevelChunk&);
+    MCVAPI void onChunkDiscarded(class LevelChunk& lc);
 
     // symbol: ?onChunkLoaded@Level@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
     MCVAPI void onChunkLoaded(class ChunkSource&, class LevelChunk&);
@@ -928,13 +969,13 @@ public:
     MCVAPI void onChunkReloaded(class ChunkSource&, class LevelChunk&);
 
     // symbol: ?onPlayerDeath@Level@@UEAAXAEAVPlayer@@AEBVActorDamageSource@@@Z
-    MCVAPI void onPlayerDeath(class Player&, class ActorDamageSource const&);
+    MCVAPI void onPlayerDeath(class Player& player, class ActorDamageSource const& source);
 
     // symbol: ?onSourceCreated@Level@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void onSourceCreated(class BlockSource&);
+    MCVAPI void onSourceCreated(class BlockSource& source);
 
     // symbol: ?onSourceDestroyed@Level@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void onSourceDestroyed(class BlockSource&);
+    MCVAPI void onSourceDestroyed(class BlockSource& source);
 
     // symbol: ?onSubChunkLoaded@Level@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@F_N@Z
     MCVAPI void onSubChunkLoaded(class ChunkSource&, class LevelChunk&, short, bool);
@@ -950,12 +991,12 @@ public:
 
     // symbol: ?playSound@Level@@UEAAXW4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
     MCVAPI void playSound(
-        ::Puv::Legacy::LevelSoundEvent,
-        class Vec3 const&,
-        int,
-        struct ActorDefinitionIdentifier const&,
-        bool,
-        bool
+        enum Puv::Legacy::LevelSoundEvent       type,
+        class Vec3 const&                       pos,
+        int                                     data,
+        struct ActorDefinitionIdentifier const& entityType,
+        bool                                    isBabyMob,
+        bool                                    isGlobal
     );
 
     // symbol:
@@ -973,17 +1014,17 @@ public:
     // symbol:
     // ?playSound@Level@@UEAAXAEBVIConstBlockSource@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
     MCVAPI void playSound(
-        class IConstBlockSource const&,
-        ::Puv::Legacy::LevelSoundEvent,
-        class Vec3 const&,
-        int,
-        struct ActorDefinitionIdentifier const&,
-        bool,
-        bool
+        class IConstBlockSource const&          region,
+        enum Puv::Legacy::LevelSoundEvent       type,
+        class Vec3 const&                       pos,
+        int                                     data,
+        struct ActorDefinitionIdentifier const& entityType,
+        bool                                    isBabyMob,
+        bool                                    isGlobal
     );
 
     // symbol: ?potionSplash@Level@@UEAAXAEBVVec3@@AEBVColor@mce@@_N@Z
-    MCVAPI void potionSplash(class Vec3 const&, class mce::Color const&, bool);
+    MCVAPI void potionSplash(class Vec3 const& pos, class mce::Color const& color, bool instantaneousEffect);
 
     // symbol: ?queueEntityDestruction@Level@@UEAAXV?$OwnerPtrT@UEntityRefTraits@@@@@Z
     MCVAPI void queueEntityDestruction(class OwnerPtrT<struct EntityRefTraits>);
@@ -992,7 +1033,7 @@ public:
     MCVAPI void registerEventCoordinators();
 
     // symbol: ?registerTemporaryPointer@Level@@UEAAXAEAV_TickPtr@@@Z
-    MCVAPI void registerTemporaryPointer(class _TickPtr&);
+    MCVAPI void registerTemporaryPointer(class _TickPtr& ptr);
 
     // symbol: ?removeActorAndTakeEntity@Level@@UEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@VWeakEntityRef@@@Z
     MCVAPI class OwnerPtrT<struct EntityRefTraits> removeActorAndTakeEntity(class WeakEntityRef);
@@ -1013,27 +1054,33 @@ public:
     MCVAPI class OwnerPtrT<struct EntityRefTraits> removeEntity(class WeakEntityRef);
 
     // symbol: ?removeListener@Level@@UEAAXAEAVLevelListener@@@Z
-    MCVAPI void removeListener(class LevelListener&);
+    MCVAPI void removeListener(class LevelListener& listener);
 
     // symbol: ?requestMapInfo@Level@@UEAAXUActorUniqueID@@_N@Z
     MCVAPI void requestMapInfo(struct ActorUniqueID, bool);
 
     // symbol:
     // ?requestPlayerChangeDimension@Level@@UEAAXAEAVPlayer@@V?$unique_ptr@VChangeDimensionRequest@@U?$default_delete@VChangeDimensionRequest@@@std@@@std@@@Z
-    MCVAPI void requestPlayerChangeDimension(class Player&, std::unique_ptr<class ChangeDimensionRequest>);
+    MCVAPI void
+    requestPlayerChangeDimension(class Player& player, std::unique_ptr<class ChangeDimensionRequest> changeRequest);
 
     // symbol: ?requestTimedStorageDeferment@Level@@UEAA?AV?$shared_ptr@PEAX@std@@XZ
     MCVAPI std::shared_ptr<void*> requestTimedStorageDeferment();
 
     // symbol: ?resumePlayer@Level@@UEAAXAEAVPlayer@@@Z
-    MCVAPI void resumePlayer(class Player&);
+    MCVAPI void resumePlayer(class Player& player);
 
     // symbol: ?runCommand@Level@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z
     MCVAPI void runCommand(class Command&, class CommandOrigin&, ::CommandOriginSystem);
 
     // symbol:
     // ?runCommand@Level@@UEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CommandOriginSystem@@W4CurrentCmdVersion@@@Z
-    MCVAPI void runCommand(class HashedString const&, class CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion);
+    MCVAPI void runCommand(
+        class HashedString const& commandStr,
+        class CommandOrigin&      origin,
+        enum CommandOriginSystem  originSystem,
+        enum CurrentCmdVersion    commandVersion
+    );
 
     // symbol: ?save@Level@@UEAAXXZ
     MCVAPI void save();
@@ -1045,89 +1092,89 @@ public:
     MCVAPI void saveLevelData();
 
     // symbol: ?sendAllPlayerAbilities@Level@@UEAAXAEBVPlayer@@@Z
-    MCVAPI void sendAllPlayerAbilities(class Player const&);
+    MCVAPI void sendAllPlayerAbilities(class Player const& playerReference);
 
     // symbol: ?sendServerLegacyParticle@Level@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
-    MCVAPI void sendServerLegacyParticle(::ParticleType, class Vec3 const&, class Vec3 const&, int);
+    MCVAPI void sendServerLegacyParticle(enum ParticleType id, class Vec3 const& pos, class Vec3 const& dir, int data);
 
     // symbol:
     // ?setActorEventCoordinator@Level@@UEAAX$$QEAV?$unique_ptr@VActorEventCoordinator@@U?$default_delete@VActorEventCoordinator@@@std@@@std@@@Z
-    MCVAPI void setActorEventCoordinator(std::unique_ptr<class ActorEventCoordinator>&&);
+    MCVAPI void setActorEventCoordinator(std::unique_ptr<class ActorEventCoordinator>&& coordinator);
 
     // symbol:
     // ?setBlockEventCoordinator@Level@@UEAAX$$QEAV?$unique_ptr@VBlockEventCoordinator@@U?$default_delete@VBlockEventCoordinator@@@std@@@std@@@Z
-    MCVAPI void setBlockEventCoordinator(std::unique_ptr<class BlockEventCoordinator>&&);
+    MCVAPI void setBlockEventCoordinator(std::unique_ptr<class BlockEventCoordinator>&& coordinator);
 
     // symbol:
     // ?setClientPlayerEventCoordinator@Level@@UEAAX$$QEAV?$unique_ptr@VClientPlayerEventCoordinator@@U?$default_delete@VClientPlayerEventCoordinator@@@std@@@std@@@Z
-    MCVAPI void setClientPlayerEventCoordinator(std::unique_ptr<class ClientPlayerEventCoordinator>&&);
+    MCVAPI void setClientPlayerEventCoordinator(std::unique_ptr<class ClientPlayerEventCoordinator>&& coordinator);
 
     // symbol: ?setCommandsEnabled@Level@@UEAAX_N@Z
-    MCVAPI void setCommandsEnabled(bool);
+    MCVAPI void setCommandsEnabled(bool commandsEnabled);
 
     // symbol: ?setDefaultGameType@Level@@UEAAXW4GameType@@@Z
-    MCVAPI void setDefaultGameType(::GameType);
+    MCVAPI void setDefaultGameType(enum GameType gameType);
 
     // symbol: ?setDefaultSpawn@Level@@UEAAXAEBVBlockPos@@@Z
-    MCVAPI void setDefaultSpawn(class BlockPos const&);
+    MCVAPI void setDefaultSpawn(class BlockPos const& spawnPos);
 
     // symbol: ?setDifficulty@Level@@UEAAXW4Difficulty@@@Z
-    MCVAPI void setDifficulty(::Difficulty);
+    MCVAPI void setDifficulty(enum Difficulty difficulty);
 
     // symbol: ?setDisablePlayerInteractions@Level@@UEAAX_N@Z
     MCVAPI void setDisablePlayerInteractions(bool);
 
     // symbol: ?setEducationLevelSettings@Level@@UEAAXUEducationLevelSettings@@@Z
-    MCVAPI void setEducationLevelSettings(struct EducationLevelSettings);
+    MCVAPI void setEducationLevelSettings(struct EducationLevelSettings settings);
 
     // symbol: ?setFinishedInitializing@Level@@UEAAXXZ
     MCVAPI void setFinishedInitializing();
 
     // symbol: ?setHasLockedBehaviorPack@Level@@UEAAX_N@Z
-    MCVAPI void setHasLockedBehaviorPack(bool);
+    MCVAPI void setHasLockedBehaviorPack(bool hasLocked);
 
     // symbol: ?setHasLockedResourcePack@Level@@UEAAX_N@Z
-    MCVAPI void setHasLockedResourcePack(bool);
+    MCVAPI void setHasLockedResourcePack(bool hasLocked);
 
     // symbol: ?setImmersiveReaderString@Level@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void setImmersiveReaderString(std::string);
 
     // symbol: ?setIsExporting@Level@@UEAAX_N@Z
-    MCVAPI void setIsExporting(bool);
+    MCVAPI void setIsExporting(bool IsExporting);
 
     // symbol:
     // ?setItemEventCoordinator@Level@@UEAAX$$QEAV?$unique_ptr@VItemEventCoordinator@@U?$default_delete@VItemEventCoordinator@@@std@@@std@@@Z
-    MCVAPI void setItemEventCoordinator(std::unique_ptr<class ItemEventCoordinator>&&);
+    MCVAPI void setItemEventCoordinator(std::unique_ptr<class ItemEventCoordinator>&& coordinator);
 
     // symbol: ?setLANBroadcast@Level@@UEAAX_N@Z
-    MCVAPI void setLANBroadcast(bool);
+    MCVAPI void setLANBroadcast(bool broadcast);
 
     // symbol: ?setLANBroadcastIntent@Level@@UEAAX_N@Z
-    MCVAPI void setLANBroadcastIntent(bool);
+    MCVAPI void setLANBroadcastIntent(bool broadcast);
 
     // symbol: ?setLevelId@Level@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void setLevelId(std::string);
+    MCVAPI void setLevelId(std::string LevelId);
 
     // symbol: ?setMsaGamertagsOnly@Level@@UEAAX_N@Z
-    MCVAPI void setMsaGamertagsOnly(bool);
+    MCVAPI void setMsaGamertagsOnly(bool msaGamertagsOnly);
 
     // symbol: ?setMultiplayerGame@Level@@UEAAX_N@Z
-    MCVAPI void setMultiplayerGame(bool);
+    MCVAPI void setMultiplayerGame(bool multiplayerGame);
 
     // symbol: ?setMultiplayerGameIntent@Level@@UEAAX_N@Z
-    MCVAPI void setMultiplayerGameIntent(bool);
+    MCVAPI void setMultiplayerGameIntent(bool multiplayerGame);
 
     // symbol: ?setNetEventCallback@Level@@UEAAXV?$NonOwnerPointer@VNetEventCallback@@@Bedrock@@@Z
     MCVAPI void setNetEventCallback(class Bedrock::NonOwnerPointer<class NetEventCallback>);
 
     // symbol: ?setPacketSender@Level@@UEAAXPEAVPacketSender@@@Z
-    MCVAPI void setPacketSender(class PacketSender*);
+    MCVAPI void setPacketSender(class PacketSender* val);
 
     // symbol: ?setPlatformBroadcastIntent@Level@@UEAAXW4GamePublishSetting@Social@@@Z
-    MCVAPI void setPlatformBroadcastIntent(::Social::GamePublishSetting);
+    MCVAPI void setPlatformBroadcastIntent(enum Social::GamePublishSetting broadcastMode);
 
     // symbol: ?setPlatformBroadcastMode@Level@@UEAAXW4GamePublishSetting@Social@@@Z
-    MCVAPI void setPlatformBroadcastMode(::Social::GamePublishSetting);
+    MCVAPI void setPlatformBroadcastMode(enum Social::GamePublishSetting broadcastMode);
 
     // symbol: ?setPlayerAbilities@Level@@UEAAXAEBUActorUniqueID@@AEBVLayeredAbilities@@@Z
     MCVAPI void setPlayerAbilities(struct ActorUniqueID const&, class LayeredAbilities const&);
@@ -1137,7 +1184,7 @@ public:
 
     // symbol:
     // ?setRemotePlayerEventCoordinator@Level@@UEAAX$$QEAV?$unique_ptr@VPlayerEventCoordinator@@U?$default_delete@VPlayerEventCoordinator@@@std@@@std@@@Z
-    MCVAPI void setRemotePlayerEventCoordinator(std::unique_ptr<class PlayerEventCoordinator>&&);
+    MCVAPI void setRemotePlayerEventCoordinator(std::unique_ptr<class PlayerEventCoordinator>&& coordinator);
 
     // symbol:
     // ?setScriptDeferredEventCoordinator@Level@@UEAAX$$QEAV?$unique_ptr@VScriptDeferredEventCoordinator@@U?$default_delete@VScriptDeferredEventCoordinator@@@std@@@std@@@Z
@@ -1153,29 +1200,30 @@ public:
 
     // symbol:
     // ?setServerPlayerEventCoordinator@Level@@UEAAX$$QEAV?$unique_ptr@VServerPlayerEventCoordinator@@U?$default_delete@VServerPlayerEventCoordinator@@@std@@@std@@@Z
-    MCVAPI void setServerPlayerEventCoordinator(std::unique_ptr<class ServerPlayerEventCoordinator>&&);
+    MCVAPI void setServerPlayerEventCoordinator(std::unique_ptr<class ServerPlayerEventCoordinator>&& coordinator);
 
     // symbol: ?setSimPaused@Level@@UEAAX_N@Z
-    MCVAPI void setSimPaused(bool);
+    MCVAPI void setSimPaused(bool value);
 
     // symbol: ?setSleepStatus@Level@@UEAAXAEBUPlayerSleepStatus@@@Z
     MCVAPI void setSleepStatus(struct PlayerSleepStatus const&);
 
     // symbol: ?setTime@Level@@UEAAXH@Z
-    MCVAPI void setTime(int);
+    MCVAPI void setTime(int time);
 
     // symbol: ?setWorldTemplateOptionsUnlocked@Level@@UEAAXXZ
     MCVAPI void setWorldTemplateOptionsUnlocked();
 
     // symbol: ?setXBLBroadcastIntent@Level@@UEAAXW4GamePublishSetting@Social@@@Z
-    MCVAPI void setXBLBroadcastIntent(::Social::GamePublishSetting);
+    MCVAPI void setXBLBroadcastIntent(enum Social::GamePublishSetting broadcastMode);
 
     // symbol: ?setXBLBroadcastMode@Level@@UEAAXW4GamePublishSetting@Social@@@Z
-    MCVAPI void setXBLBroadcastMode(::Social::GamePublishSetting);
+    MCVAPI void setXBLBroadcastMode(enum Social::GamePublishSetting broadcastMode);
 
     // symbol:
     // ?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z
-    MCVAPI void spawnParticleEffect(std::string const&, class Vec3 const&, class Dimension*);
+    MCVAPI void
+    spawnParticleEffect(std::string const& effectName, class Vec3 const& spawnLocation, class Dimension* dimension);
 
     // symbol: ?startLeaveGame@Level@@UEAAXXZ
     MCVAPI void startLeaveGame();
@@ -1184,13 +1232,18 @@ public:
     MCVAPI void suspendAndSave();
 
     // symbol: ?suspendPlayer@Level@@UEAAXAEAVPlayer@@@Z
-    MCVAPI void suspendPlayer(class Player&);
+    MCVAPI void suspendPlayer(class Player& player);
 
     // symbol: ?takeEntity@Level@@UEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@VWeakEntityRef@@AEAVLevelChunk@@@Z
     MCVAPI class OwnerPtrT<struct EntityRefTraits> takeEntity(class WeakEntityRef, class LevelChunk&);
 
     // symbol: ?takePicture@Level@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
-    MCVAPI void takePicture(class cg::ImageBuffer&, class Actor*, class Actor*, struct ScreenshotOptions&);
+    MCVAPI void takePicture(
+        class cg::ImageBuffer&    outImage,
+        class Actor*              camera,
+        class Actor*              target,
+        struct ScreenshotOptions& screenshotOptions
+    );
 
     // symbol: ?tick@Level@@UEAAXXZ
     MCVAPI void tick();
@@ -1205,16 +1258,16 @@ public:
     MCVAPI class Scoreboard* tryGetScoreboard();
 
     // symbol: ?unregisterTemporaryPointer@Level@@UEAAXAEAV_TickPtr@@@Z
-    MCVAPI void unregisterTemporaryPointer(class _TickPtr&);
+    MCVAPI void unregisterTemporaryPointer(class _TickPtr& ptr);
 
     // symbol: ?updateSleepingPlayerList@Level@@UEAAXXZ
     MCVAPI void updateSleepingPlayerList();
 
     // symbol: ?updateWeather@Level@@UEAAXMHMH@Z
-    MCVAPI void updateWeather(float, int, float, int);
+    MCVAPI void updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
 
     // symbol: ?upgradeStorageVersion@Level@@UEAAXW4StorageVersion@@@Z
-    MCVAPI void upgradeStorageVersion(::StorageVersion);
+    MCVAPI void upgradeStorageVersion(enum StorageVersion v);
 
     // symbol: ?use3DBiomeMaps@Level@@UEBA_NXZ
     MCVAPI bool use3DBiomeMaps() const;
@@ -1366,7 +1419,7 @@ public:
     MCAPI void _onSaveLevelData(class LevelStorage&);
 
     // symbol: ?_playerChangeDimension@Level@@AEAA_NAEAVPlayer@@AEAVChangeDimensionRequest@@@Z
-    MCAPI bool _playerChangeDimension(class Player&, class ChangeDimensionRequest&);
+    MCAPI bool _playerChangeDimension(class Player& player, class ChangeDimensionRequest& changeRequest);
 
     // symbol: ?_playerChangeDimensionPrepareRegion@Level@@AEAAXAEAVPlayer@@AEAVChangeDimensionRequest@@@Z
     MCAPI void _playerChangeDimensionPrepareRegion(class Player&, class ChangeDimensionRequest&);
@@ -1384,7 +1437,7 @@ public:
     MCAPI bool _shouldStartGameSaveTimer() const;
 
     // symbol: ?_syncTime@Level@@AEAAXH@Z
-    MCAPI void _syncTime(int);
+    MCAPI void _syncTime(int time);
 
     // symbol: ?processOwnedEntityLimboForPlayer@Level@@AEAAXAEBVPlayer@@@Z
     MCAPI void processOwnedEntityLimboForPlayer(class Player const&);

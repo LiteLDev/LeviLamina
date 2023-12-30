@@ -13,13 +13,13 @@ public:
     MCAPI BehaviorTreeDefinitionPtr();
 
     // symbol: ??0BehaviorTreeDefinitionPtr@@QEAA@$$QEAV0@@Z
-    MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr&&);
+    MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr&& moved);
 
     // symbol: ??4BehaviorTreeDefinitionPtr@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class BehaviorTreeDefinitionPtr& operator=(class BehaviorTreeDefinitionPtr&&);
+    MCAPI class BehaviorTreeDefinitionPtr& operator=(class BehaviorTreeDefinitionPtr&& moved);
 
     // symbol: ??4BehaviorTreeDefinitionPtr@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class BehaviorTreeDefinitionPtr& operator=(class BehaviorTreeDefinitionPtr const&);
+    MCAPI class BehaviorTreeDefinitionPtr& operator=(class BehaviorTreeDefinitionPtr const& rhs);
 
     // symbol: ??1BehaviorTreeDefinitionPtr@@QEAA@XZ
     MCAPI ~BehaviorTreeDefinitionPtr();
@@ -32,7 +32,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_move@BehaviorTreeDefinitionPtr@@IEAAAEAV1@$$QEAV1@@Z
-    MCAPI class BehaviorTreeDefinitionPtr& _move(class BehaviorTreeDefinitionPtr&&);
+    MCAPI class BehaviorTreeDefinitionPtr& _move(class BehaviorTreeDefinitionPtr&& moved);
 
     // NOLINTEND
 };

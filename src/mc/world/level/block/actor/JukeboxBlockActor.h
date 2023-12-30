@@ -19,7 +19,7 @@ public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // symbol: ?_onUpdatePacket@JukeboxBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    MCVAPI void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ?canPullOutItem@JukeboxBlockActor@@UEBA_NHHAEBVItemStack@@@Z
     MCVAPI bool canPullOutItem(int, int, class ItemStack const&) const;
@@ -37,37 +37,37 @@ public:
     MCVAPI int getContainerSize() const;
 
     // symbol: ?getItem@JukeboxBlockActor@@UEBAAEBVItemStack@@H@Z
-    MCVAPI class ItemStack const& getItem(int) const;
+    MCVAPI class ItemStack const& getItem(int slot) const;
 
     // symbol: ?getMaxStackSize@JukeboxBlockActor@@UEBAHXZ
     MCVAPI int getMaxStackSize() const;
 
     // symbol: ?load@JukeboxBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCVAPI void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    MCVAPI void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?onChanged@JukeboxBlockActor@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void onChanged(class BlockSource&);
+    MCVAPI void onChanged(class BlockSource& region);
 
     // symbol: ?save@JukeboxBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    MCVAPI bool save(class CompoundTag&) const;
+    MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?serverInitItemStackIds@JukeboxBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
 
     // symbol: ?setItem@JukeboxBlockActor@@UEAAXHAEBVItemStack@@@Z
-    MCVAPI void setItem(int, class ItemStack const&);
+    MCVAPI void setItem(int slot, class ItemStack const& item);
 
     // symbol: ?startOpen@JukeboxBlockActor@@UEAAXAEAVPlayer@@@Z
-    MCVAPI void startOpen(class Player&);
+    MCVAPI void startOpen(class Player& player);
 
     // symbol: ?stopOpen@JukeboxBlockActor@@UEAAXAEAVPlayer@@@Z
     MCVAPI void stopOpen(class Player&);
 
     // symbol: ?tick@JukeboxBlockActor@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void tick(class BlockSource&);
+    MCVAPI void tick(class BlockSource& region);
 
     // symbol: ??0JukeboxBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit JukeboxBlockActor(class BlockPos const&);
+    MCAPI explicit JukeboxBlockActor(class BlockPos const& pos);
 
     // symbol: ?getRecord@JukeboxBlockActor@@QEBAAEBVItemStack@@XZ
     MCAPI class ItemStack const& getRecord() const;
@@ -76,10 +76,10 @@ public:
     MCAPI bool isRecordPlaying() const;
 
     // symbol: ?setRecord@JukeboxBlockActor@@QEAAXAEBVItemStack@@@Z
-    MCAPI void setRecord(class ItemStack const&);
+    MCAPI void setRecord(class ItemStack const& record);
 
     // symbol: ?stopPlayingRecord@JukeboxBlockActor@@QEBAXAEAVBlockSource@@@Z
-    MCAPI void stopPlayingRecord(class BlockSource&) const;
+    MCAPI void stopPlayingRecord(class BlockSource& region) const;
 
     // NOLINTEND
 

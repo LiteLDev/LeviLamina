@@ -6,8 +6,8 @@
 #include "mc/deps/webrtc/EncodedImageCallback.h"
 #include "mc/deps/webrtc/RtpSequenceNumberMap.h"
 #include "mc/deps/webrtc/StreamFeedbackObserver.h"
-#include "mc/deps/webrtc/detail/ArrayView.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
+#include "mc/deps/webrtc/rtc/ArrayView.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off

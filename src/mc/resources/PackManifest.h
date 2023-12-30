@@ -35,10 +35,10 @@ public:
     MCAPI PackManifest(class PackManifest const&);
 
     // symbol: ??0PackManifest@@QEAA@W4ManifestType@@@Z
-    MCAPI explicit PackManifest(::ManifestType);
+    MCAPI explicit PackManifest(enum ManifestType type);
 
     // symbol: ?addPackDependency@PackManifest@@QEAAXAEBUPackIdVersion@@@Z
-    MCAPI void addPackDependency(struct PackIdVersion const&);
+    MCAPI void addPackDependency(struct PackIdVersion const& packId);
 
     // symbol: ?clearLegacyModuleDependencies@PackManifest@@QEAAXXZ
     MCAPI void clearLegacyModuleDependencies();
@@ -114,7 +114,7 @@ public:
     MCAPI bool hasLegacyModuleDependencies() const;
 
     // symbol: ?hasModule@PackManifest@@QEBA_NAEBUPackIdVersion@@@Z
-    MCAPI bool hasModule(struct PackIdVersion const&) const;
+    MCAPI bool hasModule(struct PackIdVersion const& moduleIdentity) const;
 
     // symbol: ?hasPackCapability@PackManifest@@QEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI bool hasPackCapability(std::string_view) const;
@@ -135,47 +135,47 @@ public:
     MCAPI bool isRestrictedPack() const;
 
     // symbol: ?serialize@PackManifest@@QEBAXW4PackManifestFormat@@AEAVValue@Json@@@Z
-    MCAPI void serialize(::PackManifestFormat, class Json::Value&) const;
+    MCAPI void serialize(enum PackManifestFormat formatVersion, class Json::Value& destination) const;
 
     // symbol: ?setCanBeRedownloaded@PackManifest@@QEAAX_N@Z
-    MCAPI void setCanBeRedownloaded(bool);
+    MCAPI void setCanBeRedownloaded(bool redownloadable);
 
     // symbol: ?setDescription@PackManifest@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setDescription(std::string const&);
+    MCAPI void setDescription(std::string const& description);
 
     // symbol: ?setHidden@PackManifest@@QEAAX_N@Z
-    MCAPI void setHidden(bool);
+    MCAPI void setHidden(bool isHidden);
 
     // symbol: ?setIdentity@PackManifest@@QEAAXAEBUPackIdVersion@@@Z
-    MCAPI void setIdentity(struct PackIdVersion const&);
+    MCAPI void setIdentity(struct PackIdVersion const& identity);
 
     // symbol: ?setLastModifiedDate@PackManifest@@QEAAX_J@Z
     MCAPI void setLastModifiedDate(int64);
 
     // symbol:
     // ?setLocalizedNameKeywords@PackManifest@@QEAAXAEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z
-    MCAPI void setLocalizedNameKeywords(std::unordered_map<std::string, std::string> const&);
+    MCAPI void setLocalizedNameKeywords(std::unordered_map<std::string, std::string> const& localizationNameMap);
 
     // symbol: ?setManifestOrigin@PackManifest@@QEAAXAEBW4ManifestOrigin@@@Z
-    MCAPI void setManifestOrigin(::ManifestOrigin const&);
+    MCAPI void setManifestOrigin(enum ManifestOrigin const& origin);
 
     // symbol: ?setName@PackManifest@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setName(std::string const&);
+    MCAPI void setName(std::string const& name);
 
     // symbol: ?setPackCapabilitiesTrusted@PackManifest@@QEAAXXZ
     MCAPI void setPackCapabilitiesTrusted();
 
     // symbol: ?setPackCategory@PackManifest@@QEAAXW4PackCategory@@@Z
-    MCAPI void setPackCategory(::PackCategory);
+    MCAPI void setPackCategory(enum PackCategory packCategory);
 
     // symbol: ?setPackOrigin@PackManifest@@QEAAXW4PackOrigin@@@Z
-    MCAPI void setPackOrigin(::PackOrigin);
+    MCAPI void setPackOrigin(enum PackOrigin packOrigin);
 
     // symbol: ?setPackType@PackManifest@@QEAAXW4PackType@@@Z
-    MCAPI void setPackType(::PackType);
+    MCAPI void setPackType(enum PackType packType);
 
     // symbol: ?setSourceIdentity@PackManifest@@QEAAXAEBVContentIdentity@@@Z
-    MCAPI void setSourceIdentity(class ContentIdentity const&);
+    MCAPI void setSourceIdentity(class ContentIdentity const& contentIdentity);
 
     // symbol: ?MarioPackId@PackManifest@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const MarioPackId;
@@ -185,16 +185,16 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_serializeDependencies@PackManifest@@AEBAXAEAVValue@Json@@@Z
-    MCAPI void _serializeDependencies(class Json::Value&) const;
+    MCAPI void _serializeDependencies(class Json::Value& destination) const;
 
     // symbol: ?_serializeHeader@PackManifest@@AEBAXAEAVValue@Json@@@Z
-    MCAPI void _serializeHeader(class Json::Value&) const;
+    MCAPI void _serializeHeader(class Json::Value& destination) const;
 
     // symbol: ?_serializeModules@PackManifest@@AEBAXAEAVValue@Json@@@Z
-    MCAPI void _serializeModules(class Json::Value&) const;
+    MCAPI void _serializeModules(class Json::Value& destination) const;
 
     // symbol: ?_serializeVersion@PackManifest@@AEBAXAEAVValue@Json@@AEBVSemVersion@@@Z
-    MCAPI void _serializeVersion(class Json::Value&, class SemVersion const&) const;
+    MCAPI void _serializeVersion(class Json::Value& destination, class SemVersion const& version) const;
 
     // NOLINTEND
 

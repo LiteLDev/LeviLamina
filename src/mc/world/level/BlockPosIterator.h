@@ -80,7 +80,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0BlockPosIterator@@QEAA@AEBVBlockPos@@0@Z
-    MCAPI BlockPosIterator(class BlockPos const&, class BlockPos const&);
+    MCAPI BlockPosIterator(class BlockPos const& a, class BlockPos const& b);
 
     // symbol: ?begin@BlockPosIterator@@QEBA?AV1@XZ
     MCAPI class BlockPosIterator begin() const;
@@ -89,7 +89,7 @@ public:
     MCAPI class BlockPosIterator end() const;
 
     // symbol: ??9BlockPosIterator@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class BlockPosIterator const&) const;
+    MCAPI bool operator!=(class BlockPosIterator const& other) const;
 
     // symbol: ??DBlockPosIterator@@QEAAAEBVBlockPos@@XZ
     MCAPI class BlockPos const& operator*();

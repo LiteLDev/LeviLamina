@@ -85,7 +85,7 @@ public:
     MCAPI PolarBear(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
     // symbol: ?getStandingAnimationScale@PolarBear@@QEAAMM@Z
-    MCAPI float getStandingAnimationScale(float);
+    MCAPI float getStandingAnimationScale(float a);
 
     // NOLINTEND
 

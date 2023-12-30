@@ -81,12 +81,12 @@ public:
     // symbol:
     // ??0FlatFile@Core@@QEAA@PEAVFileSystemImpl@1@VFileOpenMode@1@V?$unique_ptr@VFileImpl@Core@@U?$default_delete@VFileImpl@Core@@@std@@@std@@AEBVPath@1@_K4@Z
     MCAPI FlatFile(
-        class Core::FileSystemImpl*,
-        class Core::FileOpenMode,
-        std::unique_ptr<class Core::FileImpl>,
-        class Core::Path const&,
-        uint64,
-        uint64
+        class Core::FileSystemImpl*           pTransaction,
+        class Core::FileOpenMode              fileOpenMode,
+        std::unique_ptr<class Core::FileImpl> baseFile,
+        class Core::Path const&               path,
+        uint64                                seekPos,
+        uint64                                fileSize
     );
 
     // NOLINTEND

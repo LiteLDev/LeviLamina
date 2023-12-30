@@ -40,22 +40,23 @@ public:
     MCAPI void sendActorPredictedMove(class Actor&, ::MovePredictionType, class Vec3 const&);
 
     // symbol: ?sendActorSneakChanged@ActorEventCoordinator@@QEAAXAEAVActor@@_N@Z
-    MCAPI void sendActorSneakChanged(class Actor&, bool);
+    MCAPI void sendActorSneakChanged(class Actor& actor, bool isSneaking);
 
     // symbol: ?sendActorStartRiding@ActorEventCoordinator@@QEAAXAEAVActor@@0@Z
-    MCAPI void sendActorStartRiding(class Actor&, class Actor&);
+    MCAPI void sendActorStartRiding(class Actor& actor, class Actor& ride);
 
     // symbol: ?sendActorStopRiding@ActorEventCoordinator@@QEAAXAEAVActor@@_N11@Z
-    MCAPI void sendActorStopRiding(class Actor&, bool, bool, bool);
+    MCAPI void
+    sendActorStopRiding(class Actor& actor, bool exitFromRider, bool actorIsBeingDestroyed, bool switchingRides);
 
     // symbol: ?sendActorTargetAcquired@ActorEventCoordinator@@QEAAXAEAVActor@@0@Z
     MCAPI void sendActorTargetAcquired(class Actor&, class Actor&);
 
     // symbol: ?sendActorTeleported@ActorEventCoordinator@@QEAAXAEAVActor@@@Z
-    MCAPI void sendActorTeleported(class Actor&);
+    MCAPI void sendActorTeleported(class Actor& actor);
 
     // symbol: ?sendActorTick@ActorEventCoordinator@@QEAAXAEAVActor@@@Z
-    MCAPI void sendActorTick(class Actor&);
+    MCAPI void sendActorTick(class Actor& actor);
 
     // symbol:
     // ?sendEvent@ActorEventCoordinator@@QEAA?AW4CoordinatorResult@@AEBV?$EventRef@U?$ActorGameplayEvent@W4CoordinatorResult@@@@@@@Z

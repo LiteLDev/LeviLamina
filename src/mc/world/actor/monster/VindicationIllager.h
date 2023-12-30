@@ -76,7 +76,7 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 204, symbol: ?_getWalkTargetValue@VindicationIllager@@UEAAMAEBVBlockPos@@@Z
-    virtual float _getWalkTargetValue(class BlockPos const&);
+    virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // symbol: ?canExistInPeaceful@VindicationIllager@@UEBA_NXZ
     MCVAPI bool canExistInPeaceful() const;

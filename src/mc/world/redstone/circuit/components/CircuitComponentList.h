@@ -27,7 +27,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?removeSource@CircuitComponentList@@QEAA_NAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
-    MCAPI bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
+    MCAPI bool removeSource(class BlockPos const& posSource, class BaseCircuitComponent const* pComponent);
 
     // symbol: ??1CircuitComponentList@@QEAA@XZ
     MCAPI ~CircuitComponentList();

@@ -35,10 +35,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@RiverFollowingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0RiverFollowingGoal@@QEAA@AEAVMob@@MM@Z
-    MCAPI RiverFollowingGoal(class Mob&, float, float);
+    MCAPI RiverFollowingGoal(class Mob& mob, float lookAhead, float speed);
 
     // NOLINTEND
 

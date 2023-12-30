@@ -39,22 +39,22 @@ public:
     MCAPI bool isSuperHot() const;
 
     // symbol: ?isTopSolid@Material@@QEBA_N_N0@Z
-    MCAPI bool isTopSolid(bool, bool) const;
+    MCAPI bool isTopSolid(bool includeWater, bool includeLeaves) const;
 
     // symbol: ?isType@Material@@QEBA_NW4MaterialType@@@Z
-    MCAPI bool isType(::MaterialType) const;
+    MCAPI bool isType(enum MaterialType surface) const;
 
     // symbol: ??9Material@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class Material const&) const;
+    MCAPI bool operator!=(class Material const& rhs) const;
 
     // symbol: ??8Material@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class Material const&) const;
+    MCAPI bool operator==(class Material const& rhs) const;
 
     // symbol: ?addMaterial@Material@@SAXV?$unique_ptr@VMaterial@@U?$default_delete@VMaterial@@@std@@@std@@@Z
-    MCAPI static void addMaterial(std::unique_ptr<class Material>);
+    MCAPI static void addMaterial(std::unique_ptr<class Material> mat);
 
     // symbol: ?getMaterial@Material@@SAAEBV1@W4MaterialType@@@Z
-    MCAPI static class Material const& getMaterial(::MaterialType);
+    MCAPI static class Material const& getMaterial(enum MaterialType surface);
 
     // symbol: ?initMaterials@Material@@SAXXZ
     MCAPI static void initMaterials();

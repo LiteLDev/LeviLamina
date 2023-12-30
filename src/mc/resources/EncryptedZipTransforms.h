@@ -19,10 +19,10 @@ public:
     virtual ~EncryptedZipTransforms() = default;
 
     // vIndex: 1, symbol: ?readTransform@EncryptedZipTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-    virtual bool readTransform(std::vector<uchar>&) const;
+    virtual bool readTransform(std::vector<uchar>& stream) const;
 
     // vIndex: 2, symbol: ?writeTransform@EncryptedZipTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-    virtual bool writeTransform(std::vector<uchar>&) const;
+    virtual bool writeTransform(std::vector<uchar>& stream) const;
 
     // symbol:
     // ??0EncryptedZipTransforms@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z

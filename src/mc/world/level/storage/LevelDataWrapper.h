@@ -26,7 +26,7 @@ public:
     MCAPI class LevelData const* operator->() const;
 
     // symbol: ?setLevelData@LevelDataWrapper@@QEAAXAEAVLevelData@@@Z
-    MCAPI void setLevelData(class LevelData&);
+    MCAPI void setLevelData(class LevelData& levelData);
 
     // symbol: ??1LevelDataWrapper@@QEAA@XZ
     MCAPI ~LevelDataWrapper();

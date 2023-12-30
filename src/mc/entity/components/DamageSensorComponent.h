@@ -36,7 +36,14 @@ public:
 
     // symbol:
     // ?recordDamage@DamageSensorComponent@@QEAA_NAEAVActor@@PEAV2@W4ActorDamageCause@@H_NVVariantParameterList@@@Z
-    MCAPI bool recordDamage(class Actor&, class Actor*, ::ActorDamageCause, int, bool, class VariantParameterList);
+    MCAPI bool recordDamage(
+        class Actor&               owner,
+        class Actor*               sender,
+        enum ActorDamageCause      cause,
+        int                        amount,
+        bool                       fatal,
+        class VariantParameterList parameters
+    );
 
     // symbol:
     // ?recordDamage@DamageSensorComponent@@QEAA_NAEAVActor@@AEBVActorDamageSource@@H_NVVariantParameterList@@2@Z

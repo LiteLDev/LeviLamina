@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/webrtc/PeerConnectionInterface.h"
-#include "mc/deps/webrtc/detail/AnyInvocable.h"
-#include "mc/deps/webrtc/detail/SecurePolicy.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
+#include "mc/deps/webrtc/absl/AnyInvocable.h"
+#include "mc/deps/webrtc/cricket/SecurePolicy.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off

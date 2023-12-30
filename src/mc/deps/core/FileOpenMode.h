@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0FileOpenMode@Core@@QEAA@PEBD@Z
-    MCAPI explicit FileOpenMode(char const*);
+    MCAPI explicit FileOpenMode(char const* p);
 
     // symbol: ?cModeWide@FileOpenMode@Core@@QEAAPEB_WXZ
     MCAPI wchar_t const* cModeWide();

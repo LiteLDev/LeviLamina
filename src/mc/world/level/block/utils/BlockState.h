@@ -42,10 +42,10 @@ public:
     // vIndex: 0, symbol: ??1BlockState@@UEAA@XZ
     virtual ~BlockState();
 
-    // vIndex: 1, symbol: ?toNBT@?$BlockStateVariant@E@@UEBAXAEAVCompoundTag@@H@Z
+    // vIndex: 1, symbol: ?toNBT@?$BlockStateVariant@_N@@UEBAXAEAVCompoundTag@@H@Z
     virtual void toNBT(class CompoundTag&, int) const = 0;
 
-    // vIndex: 2, symbol: ?fromNBT@?$BlockStateVariant@E@@UEBA_NAEBVCompoundTag@@AEAH@Z
+    // vIndex: 2, symbol: ?fromNBT@?$BlockStateVariant@_N@@UEBA_NAEBVCompoundTag@@AEAH@Z
     virtual bool fromNBT(class CompoundTag const&, int&) const = 0;
 
     // symbol: ?forEachState@BlockState@@SAXV?$function@$$A6A_NAEBVBlockState@@@Z@std@@@Z

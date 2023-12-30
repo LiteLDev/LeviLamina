@@ -28,32 +28,42 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?copyFlatFile@FlatFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01AEBV?$vector@UExcludedPath@Core@@V?$allocator@UExcludedPath@Core@@@std@@@std@@2@Z
-    MCAPI static class Core::Result
-    copyFlatFile(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&, std::vector<struct Core::ExcludedPath> const&, std::vector<struct Core::ExcludedPath> const&);
+    MCAPI static class Core::Result copyFlatFile(
+        class Core::FileSystemImpl*                   sourceTransaction,
+        class Core::Path const&                       sourceDirectoryPath,
+        class Core::FileSystemImpl*                   targetTransaction,
+        class Core::Path const&                       targetDirectoryPath,
+        std::vector<struct Core::ExcludedPath> const& exclusionDirectories,
+        std::vector<struct Core::ExcludedPath> const& excludedFiles
+    );
 
     // symbol:
     // ?createFlatFile@FlatFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01AEBV?$vector@UExcludedPath@Core@@V?$allocator@UExcludedPath@Core@@@std@@@std@@_N@Z
     MCAPI static class Core::Result createFlatFile(
-        class Core::FileSystemImpl*,
-        class Core::Path const&,
-        class Core::FileSystemImpl*,
-        class Core::Path const&,
-        std::vector<struct Core::ExcludedPath> const&,
-        bool
+        class Core::FileSystemImpl*                   sourceTransaction,
+        class Core::Path const&                       sourceDirectoryPath,
+        class Core::FileSystemImpl*                   targetTransaction,
+        class Core::Path const&                       targetDirectoryPath,
+        std::vector<struct Core::ExcludedPath> const& exclusionPaths,
+        bool                                          deleteSourceDirectory
     );
 
     // symbol:
     // ?replaceFlatFileManifest@FlatFileOperations@Core@@SA?AVResult@2@AEAVFileSystemImpl@2@AEBVPath@2@AEBV?$vector@VFlatFileManifestInfo@Core@@V?$allocator@VFlatFileManifestInfo@Core@@@std@@@std@@_N@Z
     MCAPI static class Core::Result replaceFlatFileManifest(
-        class Core::FileSystemImpl&,
-        class Core::Path const&,
-        std::vector<class Core::FlatFileManifestInfo> const&,
-        bool
+        class Core::FileSystemImpl&                          transaction,
+        class Core::Path const&                              flatFileManifestPath,
+        std::vector<class Core::FlatFileManifestInfo> const& manifestInfoVector,
+        bool                                                 keepCached
     );
 
     // symbol: ?transferFlatFileDirectory@FlatFileOperations@Core@@SA?AVResult@2@PEAVFileSystemImpl@2@AEBVPath@2@01@Z
-    MCAPI static class Core::Result
-    transferFlatFileDirectory(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&);
+    MCAPI static class Core::Result transferFlatFileDirectory(
+        class Core::FileSystemImpl* sourceTransaction,
+        class Core::Path const&     sourceDirectoryPath,
+        class Core::FileSystemImpl* targetTransaction,
+        class Core::Path const&     targetDirectoryPath
+    );
 
     // symbol: ?FLAT_FILE_CURRENT_VERSION@FlatFileOperations@Core@@2_KB
     MCAPI static uint64 const FLAT_FILE_CURRENT_VERSION;

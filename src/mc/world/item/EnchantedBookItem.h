@@ -42,7 +42,7 @@ public:
     virtual void __unk_vfn_17();
 
     // vIndex: 36, symbol: ?isGlint@EnchantedBookItem@@UEBA_NAEBVItemStackBase@@@Z
-    virtual bool isGlint(class ItemStackBase const&) const;
+    virtual bool isGlint(class ItemStackBase const& stack) const;
 
     // vIndex: 37, symbol: __unk_vfn_37
     virtual void __unk_vfn_37();
@@ -84,7 +84,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0EnchantedBookItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI EnchantedBookItem(std::string const&, int, bool);
+    MCAPI EnchantedBookItem(std::string const& name, int id, bool isGlint);
 
     // NOLINTEND
 };

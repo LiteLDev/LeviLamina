@@ -30,10 +30,10 @@ public:
     virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol: ?onBrightnessChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onBrightnessChanged(class BlockSource&, class BlockPos const&);
+    virtual void onBrightnessChanged(class BlockSource& source, class BlockPos const& pos);
 
     // symbol: ?onAreaChanged@ClassroomModeListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    MCVAPI void onAreaChanged(class BlockSource&, class BlockPos const&, class BlockPos const&);
+    MCVAPI void onAreaChanged(class BlockSource& source, class BlockPos const& min, class BlockPos const& max);
 
     // symbol:
     // ?onBlockChanged@ClassroomModeListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z
@@ -44,16 +44,16 @@ public:
     MCVAPI void onChunkLoaded(class ChunkSource&, class LevelChunk&);
 
     // symbol: ?onChunkUnloaded@ClassroomModeListener@@UEAAXAEAVLevelChunk@@@Z
-    MCVAPI void onChunkUnloaded(class LevelChunk&);
+    MCVAPI void onChunkUnloaded(class LevelChunk& lc);
 
     // symbol: ?onEntityAdded@ClassroomModeListener@@UEAAXAEAVActor@@@Z
-    MCVAPI void onEntityAdded(class Actor&);
+    MCVAPI void onEntityAdded(class Actor& entity);
 
     // symbol: ?onEntityRemoved@ClassroomModeListener@@UEAAXAEAVActor@@@Z
-    MCVAPI void onEntityRemoved(class Actor&);
+    MCVAPI void onEntityRemoved(class Actor& entity);
 
     // symbol: ??0ClassroomModeListener@@QEAA@AEAVIMinecraftEventing@@@Z
-    MCAPI explicit ClassroomModeListener(class IMinecraftEventing&);
+    MCAPI explicit ClassroomModeListener(class IMinecraftEventing& eventing);
 
     // NOLINTEND
 };

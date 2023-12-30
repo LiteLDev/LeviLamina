@@ -24,7 +24,13 @@ public:
 
     // symbol:
     // ??0BannerPattern@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0VItemStack@@F_N@Z
-    MCAPI BannerPattern(std::string const&, std::string const&, class ItemStack, short, bool);
+    MCAPI BannerPattern(
+        std::string const& name,
+        std::string const& nameID,
+        class ItemStack    item,
+        short              patternItemType,
+        bool               ignoreAux
+    );
 
     // symbol: ?getIgnoreAux@BannerPattern@@QEBA_NXZ
     MCAPI bool getIgnoreAux() const;
@@ -64,7 +70,7 @@ public:
 
     // symbol:
     // ?getPatternIndexFromNameID@BannerPattern@@SAEAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static uchar getPatternIndexFromNameID(std::string const&);
+    MCAPI static uchar getPatternIndexFromNameID(std::string const& nameID);
 
     // symbol: ?initPatterns@BannerPattern@@SAXXZ
     MCAPI static void initPatterns();

@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?setLevel@DanceComponentListener@@QEAAXAEAVLevel@@@Z
-    MCAPI void setLevel(class Level&);
+    MCAPI void setLevel(class Level& level);
 
     // symbol: ??1DanceComponentListener@@QEAA@XZ
     MCAPI ~DanceComponentListener();

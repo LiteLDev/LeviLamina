@@ -26,16 +26,23 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@MoveToLandGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 11, symbol: ?isValidTarget@MoveToLandGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
 
     // vIndex: 14, symbol: ?_moveToBlock@MoveToLandGoal@@MEAAXXZ
     virtual void _moveToBlock();
 
     // symbol: ??0MoveToLandGoal@@QEAA@AEAVMob@@MHHHM@Z
-    MCAPI MoveToLandGoal(class Mob&, float, int, int, int, float);
+    MCAPI MoveToLandGoal(
+        class Mob& mob,
+        float      speedModifier,
+        int        searchRange,
+        int        searchHeight,
+        int        searchCount,
+        float      goalRadius
+    );
 
     // NOLINTEND
 };

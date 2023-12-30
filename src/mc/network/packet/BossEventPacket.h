@@ -27,7 +27,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@BossEventPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@BossEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -37,10 +37,10 @@ public:
     MCAPI BossEventPacket();
 
     // symbol: ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@AEAVRaidBossComponent@@@Z
-    MCAPI BossEventPacket(::BossEventUpdateType, class RaidBossComponent&);
+    MCAPI BossEventPacket(enum BossEventUpdateType type, class RaidBossComponent& component);
 
     // symbol: ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@UActorUniqueID@@AEAVBossComponent@@@Z
-    MCAPI BossEventPacket(::BossEventUpdateType, struct ActorUniqueID, class BossComponent&);
+    MCAPI BossEventPacket(enum BossEventUpdateType type, struct ActorUniqueID bossID, class BossComponent& component);
 
     // NOLINTEND
 };

@@ -35,7 +35,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@PickupItemsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol:
     // ??0PickupItemsGoal@@QEAA@AEAVMob@@M_NHHM11H11AEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@@Z
@@ -47,7 +47,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_dropItem@PickupItemsGoal@@AEBAXAEBVItemStack@@@Z
-    MCAPI void _dropItem(class ItemStack const&) const;
+    MCAPI void _dropItem(class ItemStack const& item) const;
 
     // symbol:
     // ?_filterValidTargets@PickupItemsGoal@@AEBA?AV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@AEBV?$vector@UDistanceSortedActor@@V?$allocator@UDistanceSortedActor@@@std@@@3@@Z

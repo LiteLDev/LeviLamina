@@ -37,34 +37,34 @@ public:
     MCAPI void cacheClientComponentData();
 
     // symbol: ?canHaveSnowfall@Biome@@QEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool canHaveSnowfall(class BlockSource const&, class BlockPos const&) const;
+    MCAPI bool canHaveSnowfall(class BlockSource const& region, class BlockPos const& pos) const;
 
     // symbol: ?getBiomeType@Biome@@QEBA?AW4VanillaBiomeTypes@@XZ
     MCAPI ::VanillaBiomeTypes getBiomeType() const;
 
     // symbol: ?getBirchFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
-    MCAPI int getBirchFoliageColor(class BlockPos const&) const;
+    MCAPI int getBirchFoliageColor(class BlockPos const& pos) const;
 
     // symbol: ?getDownfall@Biome@@QEBAMXZ
     MCAPI float getDownfall() const;
 
     // symbol: ?getEvergreenFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
-    MCAPI int getEvergreenFoliageColor(class BlockPos const&) const;
+    MCAPI int getEvergreenFoliageColor(class BlockPos const& pos) const;
 
     // symbol: ?getFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
-    MCAPI int getFoliageColor(class BlockPos const&) const;
+    MCAPI int getFoliageColor(class BlockPos const& pos) const;
 
     // symbol: ?getMapBirchFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
-    MCAPI int getMapBirchFoliageColor(class BlockPos const&) const;
+    MCAPI int getMapBirchFoliageColor(class BlockPos const& pos) const;
 
     // symbol: ?getMapEvergreenFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
-    MCAPI int getMapEvergreenFoliageColor(class BlockPos const&) const;
+    MCAPI int getMapEvergreenFoliageColor(class BlockPos const& pos) const;
 
     // symbol: ?getMapFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
-    MCAPI int getMapFoliageColor(class BlockPos const&) const;
+    MCAPI int getMapFoliageColor(class BlockPos const& pos) const;
 
     // symbol: ?getMapGrassColor@Biome@@QEBAHAEBVBlockPos@@@Z
-    MCAPI int getMapGrassColor(class BlockPos const&) const;
+    MCAPI int getMapGrassColor(class BlockPos const& pos) const;
 
     // symbol: ?getMobs@Biome@@QEBAAEBV?$vector@VMobSpawnerData@@V?$allocator@VMobSpawnerData@@@std@@@std@@XZ
     MCAPI std::vector<class MobSpawnerData> const& getMobs() const;
@@ -76,7 +76,7 @@ public:
     MCAPI int getSnowAccumulationLayers() const;
 
     // symbol: ?getTemperature@Biome@@QEBAMAEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI float getTemperature(class BlockSource const&, class BlockPos const&) const;
+    MCAPI float getTemperature(class BlockSource const& region, class BlockPos const& pos) const;
 
     // symbol: ?getTemperatureCategory@Biome@@QEBA?AW4BiomeTempCategory@1@XZ
     MCAPI ::Biome::BiomeTempCategory getTemperatureCategory() const;
@@ -85,7 +85,7 @@ public:
     MCAPI float getTemperatureWorldGen(class BlockPos const&, short) const;
 
     // symbol: ?hasTag@Biome@@QEBA_NAEBVWellKnownTagID@@@Z
-    MCAPI bool hasTag(class WellKnownTagID const&) const;
+    MCAPI bool hasTag(class WellKnownTagID const& tagID) const;
 
     // symbol:
     // ?hasTag@Biome@@QEBA_NAEBU?$IDType@UBiomeTagIDType@@@@AEBV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@@Z
@@ -106,22 +106,22 @@ public:
     MCAPI bool isSnowCovered() const;
 
     // symbol: ?setColor@Biome@@QEAAAEAV1@H@Z
-    MCAPI class Biome& setColor(int);
+    MCAPI class Biome& setColor(int color);
 
     // symbol: ?setColor@Biome@@QEAAAEAV1@H_N@Z
-    MCAPI class Biome& setColor(int, bool);
+    MCAPI class Biome& setColor(int color, bool oddColor);
 
     // symbol: ?setMapWaterColor@Biome@@QEAAAEAV1@H@Z
-    MCAPI class Biome& setMapWaterColor(int);
+    MCAPI class Biome& setMapWaterColor(int color);
 
     // symbol: ?setNoRain@Biome@@QEAAAEAV1@XZ
     MCAPI class Biome& setNoRain();
 
     // symbol: ?setOceanRuinConfig@Biome@@QEAAAEAV1@AEBUOceanRuinConfiguration@@@Z
-    MCAPI class Biome& setOceanRuinConfig(struct OceanRuinConfiguration const&);
+    MCAPI class Biome& setOceanRuinConfig(struct OceanRuinConfiguration const& config);
 
     // symbol: ?setOddColor@Biome@@QEAAAEAV1@H@Z
-    MCAPI class Biome& setOddColor(int);
+    MCAPI class Biome& setOddColor(int color);
 
     // symbol:
     // ?writePacketData@Biome@@QEAAXAEAVCompoundTag@@AEAV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@@Z
@@ -129,7 +129,7 @@ public:
     writePacketData(class CompoundTag&, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>&);
 
     // symbol: ?buildCachedTemperatureNoise@Biome@@SAXAEAVLevelChunk@@@Z
-    MCAPI static void buildCachedTemperatureNoise(class LevelChunk&);
+    MCAPI static void buildCachedTemperatureNoise(class LevelChunk& chunk);
 
     // symbol: ?BACKCOMPAT_FOG_NAME@Biome@@2V?$basic_string_view@DU?$char_traits@D@std@@@std@@B
     MCAPI static std::string_view const BACKCOMPAT_FOG_NAME;

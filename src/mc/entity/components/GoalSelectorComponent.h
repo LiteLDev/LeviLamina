@@ -15,11 +15,11 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addGoal@GoalSelectorComponent@@QEAAXHV?$unique_ptr@VGoal@@U?$default_delete@VGoal@@@std@@@std@@@Z
-    MCAPI void addGoal(int, std::unique_ptr<class Goal>);
+    MCAPI void addGoal(int priority, std::unique_ptr<class Goal> goal);
 
     // symbol:
     // ?buildDebugInfo@GoalSelectorComponent@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void buildDebugInfo(std::string&) const;
+    MCAPI void buildDebugInfo(std::string& out) const;
 
     // symbol: ?clearAllGoals@GoalSelectorComponent@@QEAAXXZ
     MCAPI void clearAllGoals();

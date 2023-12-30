@@ -18,10 +18,10 @@ public:
     virtual ~MainChunkSource() = default;
 
     // vIndex: 3, symbol: ?getExistingChunk@MainChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
-    virtual std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);
+    virtual std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const& cp);
 
     // vIndex: 4, symbol: ?getRandomChunk@MainChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEAVRandom@@@Z
-    virtual std::shared_ptr<class LevelChunk> getRandomChunk(class Random&);
+    virtual std::shared_ptr<class LevelChunk> getRandomChunk(class Random& random);
 
     // vIndex: 5, symbol: ?isChunkKnown@MainChunkSource@@UEAA_NAEBVChunkPos@@@Z
     virtual bool isChunkKnown(class ChunkPos const&);
@@ -32,7 +32,7 @@ public:
 
     // vIndex: 19, symbol:
     // ?acquireDiscarded@MainChunkSource@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
-    virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
+    virtual void acquireDiscarded(std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> ptr);
 
     // vIndex: 24, symbol:
     // ?getChunkMap@MainChunkSource@@UEAAPEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ
@@ -52,7 +52,7 @@ public:
     virtual void setLevelChunk(std::shared_ptr<class LevelChunk>);
 
     // symbol: ??0MainChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@@Z
-    MCAPI explicit MainChunkSource(std::unique_ptr<class ChunkSource>);
+    MCAPI explicit MainChunkSource(std::unique_ptr<class ChunkSource> storage);
 
     // NOLINTEND
 };

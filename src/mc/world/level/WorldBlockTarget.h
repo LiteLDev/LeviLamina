@@ -28,7 +28,7 @@ public:
     virtual class Block const* tryGetLiquidBlock(class BlockPos const&) const;
 
     // vIndex: 4, symbol: ?getBlock@WorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
-    virtual class Block const& getBlock(class BlockPos const&) const;
+    virtual class Block const& getBlock(class BlockPos const& pos) const;
 
     // vIndex: 5, symbol: ?getBlockNoBoundsCheck@WorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
     virtual class Block const& getBlockNoBoundsCheck(class BlockPos const&) const;
@@ -45,7 +45,7 @@ public:
     virtual bool hasBiomeTag(uint64, class BlockPos const&) const;
 
     // vIndex: 9, symbol: ?setBlock@WorldBlockTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@H@Z
-    virtual bool setBlock(class BlockPos const&, class Block const&, int);
+    virtual bool setBlock(class BlockPos const& pos, class Block const& newBlock, int updateFlags);
 
     // vIndex: 10, symbol: ?setBlockSimple@WorldBlockTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@@Z
     virtual bool setBlockSimple(class BlockPos const&, class Block const&);
@@ -58,10 +58,10 @@ public:
     virtual bool placeStructure(class BlockPos const&, class StructureTemplate&, class StructureSettings&);
 
     // vIndex: 13, symbol: ?mayPlace@WorldBlockTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool mayPlace(class BlockPos const&, class Block const&) const;
+    virtual bool mayPlace(class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 14, symbol: ?canSurvive@WorldBlockTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canSurvive(class BlockPos const&, class Block const&) const;
+    virtual bool canSurvive(class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 15, symbol: ?canBeBuiltOver@WorldBlockTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z
     virtual bool canBeBuiltOver(class BlockPos const&, class Block const&) const;
@@ -73,7 +73,8 @@ public:
     virtual short getMinHeight() const;
 
     // vIndex: 18, symbol: ?shimPlaceForOldFeatures@WorldBlockTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool shimPlaceForOldFeatures(class Feature const&, class BlockPos const&, class Random&) const;
+    virtual bool
+    shimPlaceForOldFeatures(class Feature const& feature, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 19, symbol: ?getHeightmap@WorldBlockTarget@@UEAAFHH@Z
     virtual short getHeightmap(int, int);

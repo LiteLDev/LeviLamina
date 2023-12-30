@@ -37,7 +37,7 @@ public:
     MCAPI void sendBlockDestructionStarted(class Player&, class BlockPos const&, uchar);
 
     // symbol: ?sendBlockDestructionStopped@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@H@Z
-    MCAPI void sendBlockDestructionStopped(class Player&, class BlockPos const&, int);
+    MCAPI void sendBlockDestructionStopped(class Player& player, class BlockPos const& blockPos, int progress);
 
     // symbol: ?sendBlockExploded@BlockEventCoordinator@@QEAAXAEAVDimension@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z
     MCAPI void sendBlockExploded(class Dimension&, class BlockPos const&, class Block const&, class Actor*);
@@ -46,13 +46,18 @@ public:
     MCAPI void sendBlockInPosWillBeDestroyedByPlayer(class Player&, class BlockPos const&);
 
     // symbol: ?sendBlockInteractedWith@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI void sendBlockInteractedWith(class Player&, class BlockPos const&);
+    MCAPI void sendBlockInteractedWith(class Player& player, class BlockPos const& blockPos);
 
     // symbol: ?sendBlockMovedByPiston@BlockEventCoordinator@@QEAAXAEBVBlockPos@@0W4PistonState@@@Z
     MCAPI void sendBlockMovedByPiston(class BlockPos const&, class BlockPos const&, ::PistonState);
 
     // symbol: ?sendBlockPlacedByPlayer@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z
-    MCAPI void sendBlockPlacedByPlayer(class Player&, class Block const&, class BlockPos const&, bool);
+    MCAPI void sendBlockPlacedByPlayer(
+        class Player&         player,
+        class Block const&    placedBlock,
+        class BlockPos const& pos,
+        bool                  isUnderwater
+    );
 
     // symbol:
     // ?sendEvent@BlockEventCoordinator@@QEAA?AW4CoordinatorResult@@AEBV?$EventRef@U?$BlockGameplayEvent@W4CoordinatorResult@@@@@@@Z
@@ -66,7 +71,7 @@ public:
     MCAPI void sendEvent(class EventRef<struct BlockGameplayEvent<void>> const&);
 
     // symbol: ?sendUnknownBlockReceived@BlockEventCoordinator@@QEAAXAEAVLevel@@AEBUNewBlockID@@G@Z
-    MCAPI void sendUnknownBlockReceived(class Level&, struct NewBlockID const&, ushort);
+    MCAPI void sendUnknownBlockReceived(class Level& level, struct NewBlockID const& blockId, ushort data);
 
     // NOLINTEND
 };

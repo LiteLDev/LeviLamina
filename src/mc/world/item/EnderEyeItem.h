@@ -72,7 +72,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@EnderEyeItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& itemStack, class Player& player) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -81,7 +81,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0EnderEyeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI EnderEyeItem(std::string const&, int);
+    MCAPI EnderEyeItem(std::string const& nameId, int id);
 
     // NOLINTEND
 

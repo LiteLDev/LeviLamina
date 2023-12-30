@@ -20,10 +20,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?fromByte@Palette@@SA?AW4PaletteColor@@E@Z
-    MCAPI static ::PaletteColor fromByte(uchar);
+    MCAPI static ::PaletteColor fromByte(uchar ID);
 
     // symbol: ?getColor@Palette@@SAAEBVColor@mce@@W4PaletteColor@@@Z
-    MCAPI static class mce::Color const& getColor(::PaletteColor);
+    MCAPI static class mce::Color const& getColor(enum PaletteColor id);
 
     // symbol: ?BLACK@Palette@@2VColor@mce@@B
     MCAPI static class mce::Color const BLACK;

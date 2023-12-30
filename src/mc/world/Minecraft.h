@@ -36,10 +36,10 @@ public:
     virtual void __unk_vfn_2();
 
     // vIndex: 3, symbol: ?setSimTimePause@Minecraft@@UEAAX_N@Z
-    virtual void setSimTimePause(bool);
+    virtual void setSimTimePause(bool pause);
 
     // vIndex: 4, symbol: ?setSimTimeScale@Minecraft@@UEAAXM@Z
-    virtual void setSimTimeScale(float);
+    virtual void setSimTimeScale(float scale);
 
     // vIndex: 5, symbol: ?getSimPaused@Minecraft@@UEBA_NXZ
     virtual bool getSimPaused() const;
@@ -129,7 +129,7 @@ public:
     MCAPI void requestServerShutdown(std::string const&);
 
     // symbol: ?startLeaveGame@Minecraft@@QEAAX_N@Z
-    MCAPI void startLeaveGame(bool);
+    MCAPI void startLeaveGame(bool stopNetwork);
 
     // symbol: ?update@Minecraft@@QEAA_NXZ
     MCAPI bool update();

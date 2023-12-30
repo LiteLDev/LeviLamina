@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 6, symbol:
     // ?initializeComponents@WitherSkull@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void initializeComponents(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1WitherSkull@@UEAA@XZ
     virtual ~WitherSkull() = default;
@@ -75,7 +75,7 @@ public:
     virtual void __unk_vfn_107();
 
     // vIndex: 140, symbol: ?canDestroyBlock@WitherSkull@@UEBA_NAEBVBlock@@@Z
-    virtual bool canDestroyBlock(class Block const&) const;
+    virtual bool canDestroyBlock(class Block const& block) const;
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
@@ -84,7 +84,7 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@WitherSkull@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();

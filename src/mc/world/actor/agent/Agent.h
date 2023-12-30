@@ -40,7 +40,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 6, symbol: ?initializeComponents@Agent@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void initializeComponents(enum ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1Agent@@UEAA@XZ
     virtual ~Agent() = default;
@@ -88,10 +88,10 @@ public:
     virtual void setOwner(struct ActorUniqueID);
 
     // vIndex: 83, symbol: ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(enum ActorEvent id, int data);
 
     // vIndex: 92, symbol: ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
-    virtual void setCarriedItem(class ItemStack const&);
+    virtual void setCarriedItem(class ItemStack const& item);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -109,13 +109,13 @@ public:
     virtual void kill();
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Agent@@UEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@Agent@@EEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -176,7 +176,7 @@ public:
     MCAPI bool isEmoting() const;
 
     // symbol: ?isValidSlotNum@Agent@@QEAA_NH@Z
-    MCAPI bool isValidSlotNum(int);
+    MCAPI bool isValidSlotNum(int slotNum);
 
     // symbol: ?setGameType@Agent@@QEAAXW4GameType@@@Z
     MCAPI void setGameType(::GameType);
@@ -188,7 +188,7 @@ public:
     MCAPI void setMoveTarget(float);
 
     // symbol: ?setNameTagFromOwner@Agent@@QEAAXAEBVPlayer@@@Z
-    MCAPI void setNameTagFromOwner(class Player const&);
+    MCAPI void setNameTagFromOwner(class Player const& player);
 
     // symbol: ?shrug@Agent@@QEAAXXZ
     MCAPI void shrug();
@@ -203,10 +203,10 @@ public:
     MCAPI void swingArm();
 
     // symbol: ?tryFireCreateEvent@Agent@@QEAAXAEAVPlayer@@@Z
-    MCAPI void tryFireCreateEvent(class Player&);
+    MCAPI void tryFireCreateEvent(class Player& player);
 
     // symbol: ?roundTeleportPos@Agent@@SA?AVVec3@@AEBV2@@Z
-    MCAPI static class Vec3 roundTeleportPos(class Vec3 const&);
+    MCAPI static class Vec3 roundTeleportPos(class Vec3 const& pos);
 
     // symbol: ?tryGetFromEntity@Agent@@SAPEAV1@AEAVEntityContext@@_N@Z
     MCAPI static class Agent* tryGetFromEntity(class EntityContext&, bool);

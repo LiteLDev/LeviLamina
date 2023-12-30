@@ -24,38 +24,38 @@ public:
 
     // vIndex: 1, symbol:
     // ?read@ItemUseInventoryTransaction@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
     // vIndex: 2, symbol: ?write@ItemUseInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 3, symbol: ?postLoadItems@ItemUseInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
     virtual void postLoadItems(class BlockPalette&, bool);
 
     // vIndex: 4, symbol: ?handle@ItemUseInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
-    virtual ::InventoryTransactionError handle(class Player&, bool) const;
+    virtual ::InventoryTransactionError handle(class Player& player, bool isSenderAuthority) const;
 
     // vIndex: 5, symbol:
     // ?onTransactionError@ItemUseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
-    virtual void onTransactionError(class Player&, ::InventoryTransactionError) const;
+    virtual void onTransactionError(class Player& player, enum InventoryTransactionError error) const;
 
     // symbol: ??0ItemUseInventoryTransaction@@QEAA@AEBV0@@Z
-    MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const&);
+    MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const& transaction);
 
     // symbol: ??4ItemUseInventoryTransaction@@QEAAAEAV0@AEBV0@@Z
     MCAPI class ItemUseInventoryTransaction& operator=(class ItemUseInventoryTransaction const&);
 
     // symbol: ?resendBlocksAroundArea@ItemUseInventoryTransaction@@QEBAXAEAVPlayer@@AEBVBlockPos@@E@Z
-    MCAPI void resendBlocksAroundArea(class Player&, class BlockPos const&, uchar) const;
+    MCAPI void resendBlocksAroundArea(class Player& player, class BlockPos const& pos, uchar facing) const;
 
     // symbol: ?resendPlayerState@ItemUseInventoryTransaction@@QEBAXAEAVPlayer@@@Z
     MCAPI void resendPlayerState(class Player&) const;
 
     // symbol: ?setSelectedItem@ItemUseInventoryTransaction@@QEAAAEAV1@AEBVItemStack@@@Z
-    MCAPI class ItemUseInventoryTransaction& setSelectedItem(class ItemStack const&);
+    MCAPI class ItemUseInventoryTransaction& setSelectedItem(class ItemStack const& item);
 
     // symbol: ?setTargetBlock@ItemUseInventoryTransaction@@QEAAAEAV1@AEBVBlock@@@Z
-    MCAPI class ItemUseInventoryTransaction& setTargetBlock(class Block const&);
+    MCAPI class ItemUseInventoryTransaction& setTargetBlock(class Block const& targetBlock);
 
     // NOLINTEND
 

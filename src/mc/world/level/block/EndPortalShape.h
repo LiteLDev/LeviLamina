@@ -12,10 +12,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0EndPortalShape@@QEAA@AEAVBlockSource@@VBlockPos@@@Z
-    MCAPI EndPortalShape(class BlockSource&, class BlockPos);
+    MCAPI EndPortalShape(class BlockSource& region, class BlockPos pos);
 
     // symbol: ?isValid@EndPortalShape@@QEAA_NAEAVBlockSource@@@Z
-    MCAPI bool isValid(class BlockSource&);
+    MCAPI bool isValid(class BlockSource& region);
 
     // symbol: ??1EndPortalShape@@QEAA@XZ
     MCAPI ~EndPortalShape();

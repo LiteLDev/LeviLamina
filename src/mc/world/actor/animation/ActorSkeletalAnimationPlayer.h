@@ -22,16 +22,16 @@ public:
     // vIndex: 1, symbol:
     // ?applyToPose@ActorSkeletalAnimationPlayer@@UEAAXAEAVRenderParams@@AEAV?$unordered_map@W4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@U?$hash@W4SkeletalHierarchyIndex@@@3@U?$equal_to@W4SkeletalHierarchyIndex@@@3@V?$allocator@U?$pair@$$CBW4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@@std@@@3@@std@@M@Z
     virtual void applyToPose(
-        class RenderParams&,
-        std::unordered_map<::SkeletalHierarchyIndex, std::vector<class BoneOrientation>>&,
-        float
+        class RenderParams&                                                                  renderParams,
+        std::unordered_map<enum SkeletalHierarchyIndex, std::vector<class BoneOrientation>>& destBoneOrientationMap,
+        float                                                                                blendWeight
     );
 
     // vIndex: 2, symbol: ?resetAnimation@ActorSkeletalAnimationPlayer@@UEAAXXZ
     virtual void resetAnimation();
 
     // vIndex: 3, symbol: ?buildBoneToPartMapping@ActorSkeletalAnimationPlayer@@UEAAXAEAVAnimationComponent@@@Z
-    virtual void buildBoneToPartMapping(class AnimationComponent&);
+    virtual void buildBoneToPartMapping(class AnimationComponent& animationComponent);
 
     // vIndex: 4, symbol:
     // ?bindParticleEffects@ActorSkeletalAnimationPlayer@@UEAAXAEBV?$unordered_map@VHashedString@@V1@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V1@@std@@@3@@std@@@Z
@@ -39,7 +39,7 @@ public:
 
     // vIndex: 5, symbol:
     // ?bindSoundEffects@ActorSkeletalAnimationPlayer@@UEAAXAEBV?$unordered_map@VHashedString@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@@Z
-    virtual void bindSoundEffects(std::unordered_map<class HashedString, std::string> const&);
+    virtual void bindSoundEffects(std::unordered_map<class HashedString, std::string> const& actorSoundEffectMap);
 
     // vIndex: 6, symbol: ?hasAnimationFinished@ActorSkeletalAnimationPlayer@@UEBA_NXZ
     virtual bool hasAnimationFinished() const;
@@ -56,8 +56,12 @@ public:
 
     // symbol:
     // ??0ActorSkeletalAnimationPlayer@@QEAA@AEBVHashedString@@VActorSkeletalAnimationPtr@@AEAVAnimationComponent@@AEBVExpressionNode@@@Z
-    MCAPI
-    ActorSkeletalAnimationPlayer(class HashedString const&, class ActorSkeletalAnimationPtr, class AnimationComponent&, class ExpressionNode const&);
+    MCAPI ActorSkeletalAnimationPlayer(
+        class HashedString const&       friendlyName,
+        class ActorSkeletalAnimationPtr animationData,
+        class AnimationComponent&       animationComponent,
+        class ExpressionNode const&     blendExpression
+    );
 
     // NOLINTEND
 };

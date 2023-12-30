@@ -10,13 +10,13 @@
 #include "mc/deps/webrtc/RTCErrorOr.h"
 #include "mc/deps/webrtc/RtpTransceiverProxyWithInternal.h"
 #include "mc/deps/webrtc/UsageEvent.h"
-#include "mc/deps/webrtc/detail/IceConnectionState.h"
-#include "mc/deps/webrtc/detail/IceGatheringState.h"
-#include "mc/deps/webrtc/detail/MediaType.h"
-#include "mc/deps/webrtc/detail/SSLHandshakeError.h"
-#include "mc/deps/webrtc/detail/SSLRole.h"
-#include "mc/deps/webrtc/detail/scoped_refptr.h"
-#include "mc/deps/webrtc/detail/signal_with_thread_policy.h"
+#include "mc/deps/webrtc/cricket/IceConnectionState.h"
+#include "mc/deps/webrtc/cricket/IceGatheringState.h"
+#include "mc/deps/webrtc/cricket/MediaType.h"
+#include "mc/deps/webrtc/rtc/SSLHandshakeError.h"
+#include "mc/deps/webrtc/rtc/SSLRole.h"
+#include "mc/deps/webrtc/rtc/scoped_refptr.h"
+#include "mc/deps/webrtc/sigslot/signal_with_thread_policy.h"
 
 // auto generated forward declare list
 // clang-format off

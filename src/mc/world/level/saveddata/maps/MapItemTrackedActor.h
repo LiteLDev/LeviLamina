@@ -29,14 +29,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0MapItemTrackedActor@@QEAA@AEBUUniqueId@0@AEAVBlockSource@@@Z
-    MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const&, class BlockSource&);
+    MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const& id, class BlockSource& region);
 
     // symbol: ?getDecorationRotation@MapItemTrackedActor@@QEAAMAEAVBlockSource@@@Z
-    MCAPI float getDecorationRotation(class BlockSource&);
+    MCAPI float getDecorationRotation(class BlockSource& region);
 
     // symbol:
     // ?nextUpdatePacket@MapItemTrackedActor@@QEAA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVMapItemSavedData@@@Z
-    MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const&);
+    MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const& savedData);
 
     // symbol: ?setNeedsResend@MapItemTrackedActor@@QEAAXXZ
     MCAPI void setNeedsResend();

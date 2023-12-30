@@ -73,7 +73,7 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 166, symbol: ?_playStepSound@Chicken@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-    virtual void _playStepSound(class BlockPos const&, class Block const&);
+    virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();

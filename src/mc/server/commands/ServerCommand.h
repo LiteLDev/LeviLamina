@@ -20,7 +20,7 @@ public:
     virtual ~ServerCommand();
 
     // symbol: ?setup@ServerCommand@@SAXAEAVMinecraft@@@Z
-    MCAPI static void setup(class Minecraft&);
+    MCAPI static void setup(class Minecraft& game);
 
     // NOLINTEND
 

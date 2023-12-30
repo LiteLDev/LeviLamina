@@ -26,10 +26,10 @@ public:
     virtual ~DirectoryPackSource();
 
     // vIndex: 1, symbol: ?forEachPackConst@DirectoryPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
-    virtual void forEachPackConst(std::function<void(class Pack const&)>) const;
+    virtual void forEachPackConst(std::function<void(class Pack const&)> callback) const;
 
     // vIndex: 2, symbol: ?forEachPack@DirectoryPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
-    virtual void forEachPack(std::function<void(class Pack&)>);
+    virtual void forEachPack(std::function<void(class Pack&)> callback);
 
     // vIndex: 3, symbol: ?getPackOrigin@DirectoryPackSource@@UEBA?AW4PackOrigin@@XZ
     virtual ::PackOrigin getPackOrigin() const;
@@ -43,10 +43,15 @@ public:
     load(class IPackManifestFactory&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&);
 
     // symbol: ??0DirectoryPackSource@@QEAA@AEBVPath@Core@@W4PackType@@W4PackOrigin@@_N@Z
-    MCAPI DirectoryPackSource(class Core::Path const&, ::PackType, ::PackOrigin, bool);
+    MCAPI DirectoryPackSource(
+        class Core::Path const& path,
+        enum PackType           packType,
+        enum PackOrigin         packOrigin,
+        bool                    isDeveloperDirectory
+    );
 
     // symbol: ?checkAndRemoveIncompletePacks@DirectoryPackSource@@SAXAEBVPath@Core@@@Z
-    MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const&);
+    MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const& path);
 
     // NOLINTEND
 };

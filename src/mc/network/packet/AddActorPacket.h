@@ -26,7 +26,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@AddActorPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@AddActorPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -36,7 +36,7 @@ public:
     MCAPI AddActorPacket();
 
     // symbol: ??0AddActorPacket@@QEAA@AEAVActor@@@Z
-    MCAPI explicit AddActorPacket(class Actor&);
+    MCAPI explicit AddActorPacket(class Actor& e);
 
     // NOLINTEND
 };

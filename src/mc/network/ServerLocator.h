@@ -50,11 +50,11 @@ public:
     virtual void stopServerDiscovery() = 0;
 
     // vIndex: 7, symbol: ?addCustomServer@RakNetServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
-    virtual void addCustomServer(class AsynchronousIPResolver const&, int) = 0;
+    virtual void addCustomServer(class AsynchronousIPResolver const& futureIP, int port) = 0;
 
     // vIndex: 8, symbol:
     // ?addCustomServer@RakNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual void addCustomServer(std::string const&, int) = 0;
+    virtual void addCustomServer(std::string const& address, int port) = 0;
 
     // vIndex: 9, symbol:
     // ?getServerList@NetherNetServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ
@@ -67,8 +67,8 @@ public:
     virtual void update() = 0;
 
     // vIndex: 12, symbol:
-    // ?getPingTimeForGUID@StubServerLocator@@UEAAMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual float getPingTimeForGUID(std::string const&) = 0;
+    // ?getPingTimeForGUID@RakNetServerLocator@@UEAAMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual float getPingTimeForGUID(std::string const& guid) = 0;
 
     // vIndex: 13, symbol:
     // ?checkCanConnectToCustomServerAsync@StubServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AXW4ServerConnectivityTestResult@@@Z@3@@Z

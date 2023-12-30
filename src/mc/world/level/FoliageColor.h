@@ -21,42 +21,48 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getBirchColor@FoliageColor@@SAHMM@Z
-    MCAPI static int getBirchColor(float, float);
+    MCAPI static int getBirchColor(float temp, float rain);
 
     // symbol: ?getDefaultColor@FoliageColor@@SAHXZ
     MCAPI static int getDefaultColor();
 
     // symbol: ?getEvergreenColor@FoliageColor@@SAHMM@Z
-    MCAPI static int getEvergreenColor(float, float);
+    MCAPI static int getEvergreenColor(float temp, float rain);
 
     // symbol: ?getFoliageColor@FoliageColor@@SAHMM@Z
-    MCAPI static int getFoliageColor(float, float);
+    MCAPI static int getFoliageColor(float temp, float rain);
 
     // symbol: ?getFoliageColor@FoliageColor@@SAHW4PaletteName@1@MM@Z
     MCAPI static int getFoliageColor(::FoliageColor::PaletteName, float, float);
 
     // symbol: ?getMapBirchColor@FoliageColor@@SAHMM@Z
-    MCAPI static int getMapBirchColor(float, float);
+    MCAPI static int getMapBirchColor(float temp, float rain);
 
     // symbol: ?getMapEvergreenColor@FoliageColor@@SAHMM@Z
-    MCAPI static int getMapEvergreenColor(float, float);
+    MCAPI static int getMapEvergreenColor(float temp, float rain);
 
     // symbol: ?getMapFoliageColor@FoliageColor@@SAHMM@Z
-    MCAPI static int getMapFoliageColor(float, float);
+    MCAPI static int getMapFoliageColor(float temp, float rain);
 
     // symbol: ?getMapGrassColor@FoliageColor@@SAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static int getMapGrassColor(class BlockSource&, class BlockPos const&);
+    MCAPI static int getMapGrassColor(class BlockSource& source, class BlockPos const& pos);
 
     // symbol: ?getMapGrassColor@FoliageColor@@SAHMM@Z
-    MCAPI static int getMapGrassColor(float, float);
+    MCAPI static int getMapGrassColor(float temp, float rain);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?calculateMapGrassColorHelper@FoliageColor@@CAXAEAVBlockSource@@AEBVBlockPos@@1AEAH22@Z
-    MCAPI static void
-    calculateMapGrassColorHelper(class BlockSource&, class BlockPos const&, class BlockPos const&, int&, int&, int&);
+    MCAPI static void calculateMapGrassColorHelper(
+        class BlockSource&    source,
+        class BlockPos const& pos,
+        class BlockPos const& offset,
+        int&                  totalRed,
+        int&                  totalGreen,
+        int&                  totalBlue
+    );
 
     // NOLINTEND
 

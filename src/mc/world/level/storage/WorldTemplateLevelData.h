@@ -24,10 +24,10 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_getTagData@WorldTemplateLevelData@@IEAAXAEBVCompoundTag@@@Z
-    MCAPI void _getTagData(class CompoundTag const&);
+    MCAPI void _getTagData(class CompoundTag const& tag);
 
     // symbol: ?_setTagData@WorldTemplateLevelData@@IEBAXAEAVCompoundTag@@@Z
-    MCAPI void _setTagData(class CompoundTag&) const;
+    MCAPI void _setTagData(class CompoundTag& tag) const;
 
     // NOLINTEND
 };

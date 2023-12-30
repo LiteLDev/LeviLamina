@@ -42,7 +42,7 @@ public:
     virtual void __unk_vfn_17();
 
     // vIndex: 31, symbol: ?getLevelDataForAuxValue@StoneSlabBlockItem@@UEBAHH@Z
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int getLevelDataForAuxValue(int auxValue) const;
 
     // vIndex: 37, symbol: __unk_vfn_37
     virtual void __unk_vfn_37();
@@ -78,7 +78,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0StoneSlabBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI StoneSlabBlockItem(std::string const&, int);
+    MCAPI StoneSlabBlockItem(std::string const& name, int id);
 
     // NOLINTEND
 };

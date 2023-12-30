@@ -13,8 +13,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0StructurePoolBlockRule@@QEAA@$$QEAV?$unique_ptr@VIStructurePoolBlockPredicate@@U?$default_delete@VIStructurePoolBlockPredicate@@@std@@@std@@0PEBVBlock@@@Z
-    MCAPI
-    StructurePoolBlockRule(std::unique_ptr<class IStructurePoolBlockPredicate>&&, std::unique_ptr<class IStructurePoolBlockPredicate>&&, class Block const*);
+    MCAPI StructurePoolBlockRule(
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& sourceBlockPredicate,
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& targetBlockPredicate,
+        class Block const*                                    resultBlock
+    );
 
     // symbol:
     // ??0StructurePoolBlockRule@@QEAA@$$QEAV?$unique_ptr@VIStructurePoolBlockPredicate@@U?$default_delete@VIStructurePoolBlockPredicate@@@std@@@std@@00PEBVBlock@@@Z

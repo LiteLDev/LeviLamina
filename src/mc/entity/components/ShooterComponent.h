@@ -18,7 +18,7 @@ public:
     MCAPI bool hasMagicAttacks() const;
 
     // symbol: ?onShoot@ShooterComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void onShoot(class Actor&);
+    MCAPI void onShoot(class Actor& owner);
 
     // symbol: ??4ShooterComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ShooterComponent& operator=(class ShooterComponent&&);

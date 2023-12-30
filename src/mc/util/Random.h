@@ -35,7 +35,7 @@ public:
     MCVAPI int nextInt();
 
     // symbol: ?nextInt@Random@@UEAAHH@Z
-    MCVAPI int nextInt(int);
+    MCVAPI int nextInt(int n);
 
     // symbol: ?nextLong@Random@@UEAA_JXZ
     MCVAPI int64 nextLong();
@@ -50,19 +50,19 @@ public:
     MCAPI Random(uint, bool);
 
     // symbol: ?nextFloat@Random@@QEAAMMM@Z
-    MCAPI float nextFloat(float, float);
+    MCAPI float nextFloat(float min, float max);
 
     // symbol: ?nextGaussianFloat@Random@@QEAAMXZ
     MCAPI float nextGaussianFloat();
 
     // symbol: ?nextGaussianInt@Random@@QEAAHH@Z
-    MCAPI int nextGaussianInt(int);
+    MCAPI int nextGaussianInt(int n);
 
     // symbol: ?nextInt@Random@@QEAAHHH@Z
-    MCAPI int nextInt(int, int);
+    MCAPI int nextInt(int min, int max);
 
     // symbol: ?nextIntInclusive@Random@@QEAAHHH@Z
-    MCAPI int nextIntInclusive(int, int);
+    MCAPI int nextIntInclusive(int min, int max);
 
     // symbol: ?getThreadLocal@Random@@SAAEAV1@XZ
     MCAPI static class Random& getThreadLocal();

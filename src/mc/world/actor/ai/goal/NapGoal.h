@@ -32,17 +32,25 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@NapGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0NapGoal@@QEAA@AEAVMob@@MMMMAEBVActorFilterGroup@@1@Z
-    MCAPI NapGoal(class Mob&, float, float, float, float, class ActorFilterGroup const&, class ActorFilterGroup const&);
+    MCAPI NapGoal(
+        class Mob&                    mob,
+        float                         cooldownTimeMin,
+        float                         cooldownTimeMax,
+        float                         detectMobDistXZ,
+        float                         detectMobDistY,
+        class ActorFilterGroup const& canNapFilters,
+        class ActorFilterGroup const& wakeMobExceptions
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_canSleep@NapGoal@@AEBA_NAEBUTick@@@Z
-    MCAPI bool _canSleep(struct Tick const&) const;
+    MCAPI bool _canSleep(struct Tick const& currentTick) const;
 
     // symbol: ?_detectsMobs@NapGoal@@AEBA_NXZ
     MCAPI bool _detectsMobs() const;

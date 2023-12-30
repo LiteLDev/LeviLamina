@@ -24,13 +24,13 @@ public:
     virtual bool willChange(float, float, class AttributeBuff const&);
 
     // vIndex: 4, symbol: ?change@HealthAttributeDelegate@@UEAAMMMAEBVAttributeBuff@@@Z
-    virtual float change(float, float, class AttributeBuff const&);
+    virtual float change(float oldValue, float newValue, class AttributeBuff const& buffInfo);
 
     // vIndex: 5, symbol: ?getBuffValueWithModifiers@HealthAttributeDelegate@@UEBAMAEBVAttributeBuff@@@Z
     virtual float getBuffValueWithModifiers(class AttributeBuff const&) const;
 
     // symbol: ??0HealthAttributeDelegate@@QEAA@AEBVAttributeInstance@@PEAVMob@@@Z
-    MCAPI HealthAttributeDelegate(class AttributeInstance const&, class Mob*);
+    MCAPI HealthAttributeDelegate(class AttributeInstance const& attribute, class Mob* mob);
 
     // NOLINTEND
 };

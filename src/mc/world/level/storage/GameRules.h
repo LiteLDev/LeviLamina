@@ -23,50 +23,68 @@ public:
     MCAPI std::unique_ptr<class GameRulesChangedPacket> createAllGameRulesPacket() const;
 
     // symbol: ?deserializeRules@GameRules@@QEAAXAEBVGameRulesChangedPacketData@@@Z
-    MCAPI void deserializeRules(class GameRulesChangedPacketData const&);
+    MCAPI void deserializeRules(class GameRulesChangedPacketData const& ruleData);
 
     // symbol: ?getBool@GameRules@@QEBA_NUGameRuleId@@_N@Z
     MCAPI bool getBool(struct GameRuleId, bool) const;
 
     // symbol: ?getInt@GameRules@@QEBAHUGameRuleId@@@Z
-    MCAPI int getInt(struct GameRuleId) const;
+    MCAPI int getInt(struct GameRuleId ruleType) const;
 
     // symbol: ?getRule@GameRules@@QEBAPEBVGameRule@@UGameRuleId@@@Z
-    MCAPI class GameRule const* getRule(struct GameRuleId) const;
+    MCAPI class GameRule const* getRule(struct GameRuleId rule) const;
 
     // symbol: ?getRules@GameRules@@QEBAAEBV?$vector@VGameRule@@V?$allocator@VGameRule@@@std@@@std@@XZ
     MCAPI std::vector<class GameRule> const& getRules() const;
 
     // symbol: ?getTagData@GameRules@@QEAAXAEBVCompoundTag@@@Z
-    MCAPI void getTagData(class CompoundTag const&);
+    MCAPI void getTagData(class CompoundTag const& tag);
 
     // symbol: ?hasRule@GameRules@@QEBA_NUGameRuleId@@@Z
-    MCAPI bool hasRule(struct GameRuleId) const;
+    MCAPI bool hasRule(struct GameRuleId ruleType) const;
 
     // symbol:
     // ?nameToGameRuleIndex@GameRules@@QEBA?AUGameRuleId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI struct GameRuleId nameToGameRuleIndex(std::string const&) const;
+    MCAPI struct GameRuleId nameToGameRuleIndex(std::string const& name) const;
 
     // symbol: ?setMarketplaceOverrides@GameRules@@QEAAXXZ
     MCAPI void setMarketplaceOverrides();
 
     // symbol:
     // ?setRule@GameRules@@QEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@_N1PEA_N2PEAVValidationError@GameRule@@@Z
-    MCAPI std::unique_ptr<class GameRulesChangedPacket>
-          setRule(struct GameRuleId, bool, bool, bool*, bool*, class GameRule::ValidationError*);
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(
+        struct GameRuleId                rule,
+        bool                             value,
+        bool                             returnPacket,
+        bool*                            pValueValidated,
+        bool*                            pValueChanged,
+        class GameRule::ValidationError* errorOutput
+    );
 
     // symbol:
     // ?setRule@GameRules@@QEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@M_NPEA_N2PEAVValidationError@GameRule@@@Z
-    MCAPI std::unique_ptr<class GameRulesChangedPacket>
-          setRule(struct GameRuleId, float, bool, bool*, bool*, class GameRule::ValidationError*);
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(
+        struct GameRuleId                rule,
+        float                            value,
+        bool                             returnPacket,
+        bool*                            pValueValidated,
+        bool*                            pValueChanged,
+        class GameRule::ValidationError* errorOutput
+    );
 
     // symbol:
     // ?setRule@GameRules@@QEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@H_NPEA_N2PEAVValidationError@GameRule@@@Z
-    MCAPI std::unique_ptr<class GameRulesChangedPacket>
-          setRule(struct GameRuleId, int, bool, bool*, bool*, class GameRule::ValidationError*);
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(
+        struct GameRuleId                rule,
+        int                              value,
+        bool                             returnPacket,
+        bool*                            pValueValidated,
+        bool*                            pValueChanged,
+        class GameRule::ValidationError* errorOutput
+    );
 
     // symbol: ?setTagData@GameRules@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void setTagData(class CompoundTag&) const;
+    MCAPI void setTagData(class CompoundTag& tag) const;
 
     // symbol: ??1GameRules@@QEAA@XZ
     MCAPI ~GameRules();
@@ -98,7 +116,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_registerRule@GameRules@@AEAAAEAVGameRule@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UGameRuleId@@@Z
-    MCAPI class GameRule& _registerRule(std::string const&, struct GameRuleId);
+    MCAPI class GameRule& _registerRule(std::string const& name, struct GameRuleId rule);
 
     // symbol: ?_registerRules@GameRules@@AEAAXXZ
     MCAPI void _registerRules();
@@ -110,8 +128,15 @@ public:
 
     // symbol:
     // ?_setRule@GameRules@@AEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@TValue@GameRule@@W4Type@6@_NPEA_N4PEAVValidationError@6@@Z
-    MCAPI std::unique_ptr<class GameRulesChangedPacket>
-    _setRule(struct GameRuleId, union GameRule::Value, ::GameRule::Type, bool, bool*, bool*, class GameRule::ValidationError*);
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> _setRule(
+        struct GameRuleId                ruleType,
+        union GameRule::Value            value,
+        enum GameRule::Type              type,
+        bool                             returnPacket,
+        bool*                            pValueValidated,
+        bool*                            pValueChanged,
+        class GameRule::ValidationError* errorOutput
+    );
 
     // symbol:
     // ?_getMarketplaceGameRulesDefaultMap@GameRules@@CAAEBV?$map@UGameRuleId@@VGameRule@@U?$less@UGameRuleId@@@std@@V?$allocator@U?$pair@$$CBUGameRuleId@@VGameRule@@@std@@@4@@std@@XZ

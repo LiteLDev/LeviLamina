@@ -77,7 +77,7 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 169, symbol: ?destroy@MinecartHopper@@UEAAXAEBVActorDamageSource@@_N@Z
-    virtual void destroy(class ActorDamageSource const&, bool);
+    virtual void destroy(class ActorDamageSource const& source, bool dropMinecartComponents);
 
     // vIndex: 170, symbol: ?getType@MinecartHopper@@UEAA?AW4MinecartType@@XZ
     virtual ::MinecartType getType();

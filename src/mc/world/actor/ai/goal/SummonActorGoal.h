@@ -35,21 +35,29 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@SummonActorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol:
     // ??0SummonActorGoal@@QEAA@AEAVMob@@AEBV?$vector@USummonSpellData@@V?$allocator@USummonSpellData@@@std@@@std@@@Z
-    MCAPI SummonActorGoal(class Mob&, std::vector<struct SummonSpellData> const&);
+    MCAPI SummonActorGoal(class Mob& caster, std::vector<struct SummonSpellData> const& spellTypes);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_createSpellEntity@SummonActorGoal@@AEBAXMMMMMHUActorDefinitionIdentifier@@@Z
-    MCAPI void _createSpellEntity(float, float, float, float, float, int, struct ActorDefinitionIdentifier) const;
+    MCAPI void _createSpellEntity(
+        float                            x,
+        float                            z,
+        float                            minY,
+        float                            maxY,
+        float                            angle,
+        int                              lifespan,
+        struct ActorDefinitionIdentifier summonType
+    ) const;
 
     // symbol: ?_selectBestSpell@SummonActorGoal@@AEBAHAEAVActor@@@Z
-    MCAPI int _selectBestSpell(class Actor&) const;
+    MCAPI int _selectBestSpell(class Actor& target) const;
 
     // NOLINTEND
 };

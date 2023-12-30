@@ -21,10 +21,10 @@ public:
     virtual class Bedrock::Result<void> read(void*, uint64);
 
     // symbol: ??0ReadOnlyBinaryStream@@QEAA@$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit ReadOnlyBinaryStream(std::string&&);
+    MCAPI explicit ReadOnlyBinaryStream(std::string&& buffer);
 
     // symbol: ??0ReadOnlyBinaryStream@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI ReadOnlyBinaryStream(std::string const&, bool);
+    MCAPI ReadOnlyBinaryStream(std::string const& buffer, bool copyBuffer);
 
     // symbol: ?canReadBool@ReadOnlyBinaryStream@@QEBA_NXZ
     MCAPI bool canReadBool() const;
@@ -62,7 +62,7 @@ public:
 
     // symbol:
     // ?getString@ReadOnlyBinaryStream@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Bedrock::Result<void> getString(std::string&);
+    MCAPI class Bedrock::Result<void> getString(std::string& outString);
 
     // symbol: ?getUnsignedChar@ReadOnlyBinaryStream@@QEAA?AV?$Result@EVerror_code@std@@@Bedrock@@XZ
     MCAPI class Bedrock::Result<uchar> getUnsignedChar();
@@ -93,7 +93,7 @@ public:
 
     // symbol:
     // ?readVectorList@ReadOnlyBinaryStream@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAV?$vector@IV?$allocator@I@std@@@std@@@Z
-    MCAPI class Bedrock::Result<void> readVectorList(std::vector<uint>&);
+    MCAPI class Bedrock::Result<void> readVectorList(std::vector<uint>& list);
 
     // NOLINTEND
 };

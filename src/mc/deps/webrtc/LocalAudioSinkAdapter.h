@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/webrtc/detail/AudioSource.h"
+#include "mc/deps/webrtc/cricket/AudioSource.h"
 
 namespace webrtc {
 

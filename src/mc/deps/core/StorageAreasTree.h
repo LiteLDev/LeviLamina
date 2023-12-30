@@ -45,13 +45,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getStorageArea@StorageAreasTree@Core@@QEBAPEAVFileStorageArea@2@AEBVPath@2@@Z
-    MCAPI class Core::FileStorageArea* getStorageArea(class Core::Path const&) const;
+    MCAPI class Core::FileStorageArea* getStorageArea(class Core::Path const& path) const;
 
     // symbol: ?insertStorageArea@StorageAreasTree@Core@@QEAAXAEAVFileStorageArea@2@@Z
-    MCAPI void insertStorageArea(class Core::FileStorageArea&);
+    MCAPI void insertStorageArea(class Core::FileStorageArea& storageArea);
 
     // symbol: ?removeStorageArea@StorageAreasTree@Core@@QEAAXAEAVFileStorageArea@2@@Z
-    MCAPI void removeStorageArea(class Core::FileStorageArea&);
+    MCAPI void removeStorageArea(class Core::FileStorageArea& storageArea);
 
     // symbol: ?teardown@StorageAreasTree@Core@@QEAAX$$QEAV?$function@$$A6AXAEAVFileStorageArea@Core@@@Z@std@@@Z
     MCAPI void teardown(std::function<void(class Core::FileStorageArea&)>&&);

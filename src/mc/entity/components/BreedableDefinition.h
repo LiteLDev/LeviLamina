@@ -25,17 +25,17 @@ public:
     MCAPI void addBreedItem(class ItemDescriptor const&);
 
     // symbol: ?addBreedableType@BreedableDefinition@@QEAAXAEBUBreedableType@@@Z
-    MCAPI void addBreedableType(struct BreedableType const&);
+    MCAPI void addBreedableType(struct BreedableType const& breedType);
 
     // symbol: ?addEnvironmentRequirement@BreedableDefinition@@QEAAXAEBUEnvironmentRequirement@@@Z
-    MCAPI void addEnvironmentRequirement(struct EnvironmentRequirement const&);
+    MCAPI void addEnvironmentRequirement(struct EnvironmentRequirement const& envReq);
 
     // symbol:
     // ?addParentCentricAttributeBlending@BreedableDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void addParentCentricAttributeBlending(std::string const&);
 
     // symbol: ?initialize@BreedableDefinition@@QEBAXAEAVEntityContext@@AEAVBreedableComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class BreedableComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class BreedableComponent& component) const;
 
     // symbol:
     // ?setMutationStrategy@BreedableDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -46,9 +46,10 @@ public:
 
     // symbol:
     // ?buildSchema@BreedableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBreedableDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreedableDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreedableDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

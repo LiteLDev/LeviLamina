@@ -12,7 +12,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0StackResultStorageFeature@@IEAA@AEBVWeakStorageFeature@@@Z
-    MCAPI explicit StackResultStorageFeature(class WeakStorageFeature const&);
+    MCAPI explicit StackResultStorageFeature(class WeakStorageFeature const& weakStorage);
 
     // symbol: ?_getStackRef@StackResultStorageFeature@@IEBAAEAVIFeature@@XZ
     MCAPI class IFeature& _getStackRef() const;

@@ -30,7 +30,7 @@ public:
     MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
 
     // symbol: ?deserialize@TheEndDimension@@UEAAXAEBVCompoundTag@@@Z
-    MCVAPI void deserialize(class CompoundTag const&);
+    MCVAPI void deserialize(class CompoundTag const& tag);
 
     // symbol: ?fixWallChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
     MCVAPI void fixWallChunk(class ChunkSource&, class LevelChunk&);
@@ -48,10 +48,10 @@ public:
     MCVAPI int getSpawnYPosition() const;
 
     // symbol: ?getSunIntensity@TheEndDimension@@UEBAMMAEBVVec3@@M@Z
-    MCVAPI float getSunIntensity(float, class Vec3 const&, float) const;
+    MCVAPI float getSunIntensity(float a, class Vec3 const& viewVector, float minInfluenceAngle) const;
 
     // symbol: ?getTimeOfDay@TheEndDimension@@UEBAMHM@Z
-    MCVAPI float getTimeOfDay(int, float) const;
+    MCVAPI float getTimeOfDay(int time, float a) const;
 
     // symbol: ?hasGround@TheEndDimension@@UEBA_NXZ
     MCVAPI bool hasGround() const;
@@ -63,13 +63,13 @@ public:
     MCVAPI bool isDay() const;
 
     // symbol: ?isFoggyAt@TheEndDimension@@UEBA_NHH@Z
-    MCVAPI bool isFoggyAt(int, int) const;
+    MCVAPI bool isFoggyAt(int x, int z) const;
 
     // symbol: ?isNaturalDimension@TheEndDimension@@UEBA_NXZ
     MCVAPI bool isNaturalDimension() const;
 
     // symbol: ?isValidSpawn@TheEndDimension@@UEBA_NHH@Z
-    MCVAPI bool isValidSpawn(int, int) const;
+    MCVAPI bool isValidSpawn(int x, int z) const;
 
     // symbol: ?levelChunkNeedsUpgrade@TheEndDimension@@UEBA_NAEBVLevelChunk@@@Z
     MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
@@ -78,7 +78,7 @@ public:
     MCVAPI bool mayRespawnViaBed() const;
 
     // symbol: ?serialize@TheEndDimension@@UEBAXAEAVCompoundTag@@@Z
-    MCVAPI void serialize(class CompoundTag&) const;
+    MCVAPI void serialize(class CompoundTag& tag) const;
 
     // symbol: ?startLeaveGame@TheEndDimension@@UEAAXXZ
     MCVAPI void startLeaveGame();
@@ -87,7 +87,7 @@ public:
     MCVAPI void tick();
 
     // symbol: ?translatePosAcrossDimension@TheEndDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
-    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, DimensionType) const;
+    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const& originalPos, DimensionType fromId) const;
 
     // symbol: ?upgradeLevelChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
     MCVAPI void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);

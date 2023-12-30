@@ -32,39 +32,39 @@ public:
     MCAPI void initMultiTypeMovementComponent(class Mob&, class ActorDefinitionDescriptor&);
 
     // symbol: ?initializeFromDefinition@MoveControlComponent@@QEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
-    MCAPI void initializeFromDefinition(class Mob&, struct MoveControlDescription*);
+    MCAPI void initializeFromDefinition(class Mob& owner, struct MoveControlDescription* description);
 
     // symbol: ??4MoveControlComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class MoveControlComponent& operator=(class MoveControlComponent&&);
 
     // symbol: ?setHasWantedPosition@MoveControlComponent@@QEAAX_N@Z
-    MCAPI void setHasWantedPosition(bool);
+    MCAPI void setHasWantedPosition(bool value);
 
     // symbol:
     // ?setInternalType@MoveControlComponent@@QEAAXV?$unique_ptr@VMoveControl@@U?$default_delete@VMoveControl@@@std@@@std@@@Z
-    MCAPI void setInternalType(std::unique_ptr<class MoveControl>);
+    MCAPI void setInternalType(std::unique_ptr<class MoveControl> type);
 
     // symbol: ?setMaxTurn@MoveControlComponent@@QEAAXM@Z
-    MCAPI void setMaxTurn(float);
+    MCAPI void setMaxTurn(float angle);
 
     // symbol: ?setShouldBreach@MoveControlComponent@@QEAAX_N@Z
-    MCAPI void setShouldBreach(bool);
+    MCAPI void setShouldBreach(bool breach);
 
     // symbol: ?setSpeedModifier@MoveControlComponent@@QEAAXM@Z
-    MCAPI void setSpeedModifier(float);
+    MCAPI void setSpeedModifier(float s);
 
     // symbol: ?setWantedPosition@MoveControlComponent@@QEAAXAEAVMob@@AEBVVec3@@M@Z
-    MCAPI void setWantedPosition(class Mob&, class Vec3 const&, float);
+    MCAPI void setWantedPosition(class Mob& owner, class Vec3 const& position, float speed);
 
     // symbol: ?update@MoveControlComponent@@QEAAXAEAVMob@@@Z
-    MCAPI void update(class Mob&);
+    MCAPI void update(class Mob& owner);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_setWantedPosition@MoveControlComponent@@AEAAXAEBVVec3@@@Z
-    MCAPI void _setWantedPosition(class Vec3 const&);
+    MCAPI void _setWantedPosition(class Vec3 const& position);
 
     // NOLINTEND
 };

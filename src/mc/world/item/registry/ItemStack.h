@@ -15,10 +15,10 @@ public:
     virtual ~ItemStack();
 
     // vIndex: 1, symbol: ?reinit@ItemStack@@UEAAXAEBVItem@@HH@Z
-    virtual void reinit(class Item const&, int, int);
+    virtual void reinit(class Item const& item, int count, int auxValue);
 
     // vIndex: 2, symbol: ?reinit@ItemStack@@UEAAXAEBVBlockLegacy@@H@Z
-    virtual void reinit(class BlockLegacy const&, int);
+    virtual void reinit(class BlockLegacy const& block, int count);
 
     // vIndex: 3, symbol: ?reinit@ItemStack@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@Z
     virtual void reinit(std::string_view, int, int);
@@ -38,22 +38,22 @@ public:
     MCAPI ItemStack();
 
     // symbol: ??0ItemStack@@QEAA@AEBVItemInstance@@@Z
-    MCAPI explicit ItemStack(class ItemInstance const&);
+    MCAPI explicit ItemStack(class ItemInstance const& rhs);
 
     // symbol: ??0ItemStack@@QEAA@AEBV0@@Z
-    MCAPI ItemStack(class ItemStack const&);
+    MCAPI ItemStack(class ItemStack const& rhs);
 
     // symbol: ??0ItemStack@@QEAA@AEBVRecipeIngredient@@@Z
-    MCAPI explicit ItemStack(class RecipeIngredient const&);
+    MCAPI explicit ItemStack(class RecipeIngredient const& ingredient);
 
     // symbol: ??0ItemStack@@QEAA@AEBVBlockLegacy@@H@Z
-    MCAPI ItemStack(class BlockLegacy const&, int);
+    MCAPI ItemStack(class BlockLegacy const& block, int count);
 
     // symbol: ??0ItemStack@@QEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
-    MCAPI ItemStack(class Block const&, int, class CompoundTag const*);
+    MCAPI ItemStack(class Block const& block, int count, class CompoundTag const* _userData);
 
     // symbol: ??0ItemStack@@QEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
-    MCAPI ItemStack(class Item const&, int, int, class CompoundTag const*);
+    MCAPI ItemStack(class Item const& item, int count, int auxValue, class CompoundTag const* _userData);
 
     // symbol: ??0ItemStack@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHPEBVCompoundTag@@@Z
     MCAPI ItemStack(std::string_view, int, int, class CompoundTag const*);
@@ -68,7 +68,7 @@ public:
     MCAPI class ItemStack clone() const;
 
     // symbol: ?getDestroySpeed@ItemStack@@QEBAMAEBVBlock@@@Z
-    MCAPI float getDestroySpeed(class Block const&) const;
+    MCAPI float getDestroySpeed(class Block const& block) const;
 
     // symbol: ?getItemStackNetIdVariant@ItemStack@@QEBAAEBUItemStackNetIdVariant@@XZ
     MCAPI struct ItemStackNetIdVariant const& getItemStackNetIdVariant() const;
@@ -83,7 +83,7 @@ public:
     MCAPI bool hasItemStackNetId() const;
 
     // symbol: ?inventoryTick@ItemStack@@QEAA_NAEAVLevel@@AEAVActor@@H_N@Z
-    MCAPI bool inventoryTick(class Level&, class Actor&, int, bool);
+    MCAPI bool inventoryTick(class Level& level, class Actor& owner, int slot, bool selected);
 
     // symbol: ?matchesAndNetIdVariantMatches@ItemStack@@QEBA_NAEBV1@@Z
     MCAPI bool matchesAndNetIdVariantMatches(class ItemStack const&) const;
@@ -92,19 +92,19 @@ public:
     MCAPI bool matchesNetIdVariant(class ItemStack const&) const;
 
     // symbol: ?mineBlock@ItemStack@@QEAAXAEBVBlock@@HHHPEAVMob@@@Z
-    MCAPI void mineBlock(class Block const&, int, int, int, class Mob*);
+    MCAPI void mineBlock(class Block const& block, int x, int y, int z, class Mob* owner);
 
     // symbol: ??4ItemStack@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class ItemStack& operator=(class ItemStack const&);
+    MCAPI class ItemStack& operator=(class ItemStack const& rhs);
 
     // symbol: ?playSoundIncrementally@ItemStack@@QEBAXAEAVMob@@@Z
-    MCAPI void playSoundIncrementally(class Mob&) const;
+    MCAPI void playSoundIncrementally(class Mob& mob) const;
 
     // symbol: ?releaseUsing@ItemStack@@QEAAXPEAVPlayer@@H@Z
-    MCAPI void releaseUsing(class Player*, int);
+    MCAPI void releaseUsing(class Player* player, int durationLeft);
 
     // symbol: ?sameItemAndAuxAndBlockData@ItemStack@@QEBA_NAEBV1@@Z
-    MCAPI bool sameItemAndAuxAndBlockData(class ItemStack const&) const;
+    MCAPI bool sameItemAndAuxAndBlockData(class ItemStack const& otherItemStack) const;
 
     // symbol: ?serverInitNetId@ItemStack@@QEAAXXZ
     MCAPI void serverInitNetId();
@@ -113,7 +113,7 @@ public:
     MCAPI ItemStackNetId const* tryGetItemStackNetId() const;
 
     // symbol: ?use@ItemStack@@QEAAAEAV1@AEAVPlayer@@@Z
-    MCAPI class ItemStack& use(class Player&);
+    MCAPI class ItemStack& use(class Player& player);
 
     // symbol: ?useAsFuel@ItemStack@@QEAAXXZ
     MCAPI void useAsFuel();
@@ -122,16 +122,16 @@ public:
     MCAPI class InteractionResult useOn(class Actor&, int, int, int, uchar, class Vec3 const&);
 
     // symbol: ?useTimeDepleted@ItemStack@@QEAA?AW4ItemUseMethod@@PEAVLevel@@PEAVPlayer@@@Z
-    MCAPI ::ItemUseMethod useTimeDepleted(class Level*, class Player*);
+    MCAPI ::ItemUseMethod useTimeDepleted(class Level* level, class Player* player);
 
     // symbol: ?fromDescriptor@ItemStack@@SA?AV1@AEBVNetworkItemStackDescriptor@@AEAVBlockPalette@@_N@Z
     MCAPI static class ItemStack fromDescriptor(class NetworkItemStackDescriptor const&, class BlockPalette&, bool);
 
     // symbol: ?fromTag@ItemStack@@SA?AV1@AEBVCompoundTag@@@Z
-    MCAPI static class ItemStack fromTag(class CompoundTag const&);
+    MCAPI static class ItemStack fromTag(class CompoundTag const& tag);
 
     // symbol: ?fromTag@ItemStack@@SA?AV1@AEBVCompoundTag@@AEAVLevel@@@Z
-    MCAPI static class ItemStack fromTag(class CompoundTag const&, class Level&);
+    MCAPI static class ItemStack fromTag(class CompoundTag const& tag, class Level& level);
 
     // symbol: ?EMPTY_ITEM@ItemStack@@2V1@B
     MCAPI static class ItemStack const EMPTY_ITEM;

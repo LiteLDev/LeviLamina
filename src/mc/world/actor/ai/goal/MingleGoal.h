@@ -36,26 +36,33 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@MingleGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0MingleGoal@@QEAA@AEAVMob@@MMMUActorDefinitionIdentifier@@M@Z
-    MCAPI MingleGoal(class Mob&, float, float, float, struct ActorDefinitionIdentifier, float);
+    MCAPI MingleGoal(
+        class Mob&                       actor,
+        float                            speedModifier,
+        float                            mingleDurationSecs,
+        float                            cooldownDurationSecs,
+        struct ActorDefinitionIdentifier desiredPartnerType,
+        float                            mingleDistance
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_findNewPartner@MingleGoal@@AEAAXUActorUniqueID@@@Z
-    MCAPI void _findNewPartner(struct ActorUniqueID);
+    MCAPI void _findNewPartner(struct ActorUniqueID previousPartnerId);
 
     // symbol: ?_getMingleComponent@MingleGoal@@AEBAAEAVMingleComponent@@XZ
     MCAPI class MingleComponent& _getMingleComponent() const;
 
     // symbol: ?_isWithinInteractRange@MingleGoal@@AEBA_NAEAVActor@@@Z
-    MCAPI bool _isWithinInteractRange(class Actor&) const;
+    MCAPI bool _isWithinInteractRange(class Actor& partner) const;
 
     // symbol: ?_tryGetMingleComponent@MingleGoal@@CAPEAVMingleComponent@@AEAVActor@@@Z
-    MCAPI static class MingleComponent* _tryGetMingleComponent(class Actor&);
+    MCAPI static class MingleComponent* _tryGetMingleComponent(class Actor& actor);
 
     // NOLINTEND
 

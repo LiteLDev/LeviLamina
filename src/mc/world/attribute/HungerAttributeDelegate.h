@@ -24,7 +24,7 @@ public:
     virtual void notify(int64);
 
     // symbol: ??0HungerAttributeDelegate@@QEAA@AEBVAttributeInstance@@PEAVPlayer@@@Z
-    MCAPI HungerAttributeDelegate(class AttributeInstance const&, class Player*);
+    MCAPI HungerAttributeDelegate(class AttributeInstance const& attribute, class Player* player);
 
     // NOLINTEND
 };

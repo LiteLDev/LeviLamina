@@ -25,13 +25,13 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@FurnaceContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int, class ItemStack const&, bool);
+    virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
 
     // vIndex: 8, symbol: ?getSlot@FurnaceContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-    virtual class ItemStack const& getSlot(int) const;
+    virtual class ItemStack const& getSlot(int slot) const;
 
     // vIndex: 9, symbol: ?setData@FurnaceContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int, int);
+    virtual void setData(int id, int value);
 
     // vIndex: 10, symbol: ?broadcastChanges@FurnaceContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();
@@ -43,7 +43,8 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0FurnaceContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI FurnaceContainerManagerModel(::ContainerID, class Player&, class BlockPos const&);
+    MCAPI
+    FurnaceContainerManagerModel(enum ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
     // NOLINTEND
 
@@ -51,8 +52,14 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0FurnaceContainerManagerModel@@IEAA@AEBVHashedString@@W4ContainerType@@W4BlockActorType@@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI
-    FurnaceContainerManagerModel(class HashedString const&, ::ContainerType, ::BlockActorType, ::ContainerID, class Player&, class BlockPos const&);
+    MCAPI FurnaceContainerManagerModel(
+        class HashedString const& recipeTag,
+        enum ContainerType        containerType,
+        enum BlockActorType       blockActorType,
+        enum ContainerID          containerId,
+        class Player&             player,
+        class BlockPos const&     blockPos
+    );
 
     // NOLINTEND
 

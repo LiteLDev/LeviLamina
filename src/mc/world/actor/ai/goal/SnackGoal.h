@@ -35,13 +35,19 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@SnackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 10, symbol: ?getRandomEatingEnd@SnackGoal@@MEBAHXZ
     virtual int getRandomEatingEnd() const;
 
     // symbol: ??0SnackGoal@@QEAA@AEAVMob@@AEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@MMM@Z
-    MCAPI SnackGoal(class Mob&, std::vector<class ItemDescriptor> const&, float, float, float);
+    MCAPI SnackGoal(
+        class Mob&                               mob,
+        std::vector<class ItemDescriptor> const& itemList,
+        float                                    cooldown,
+        float                                    min,
+        float                                    stopChance
+    );
 
     // NOLINTEND
 
@@ -51,10 +57,10 @@ public:
     MCAPI bool _hasSnackableItems();
 
     // symbol: ?_isSnackableItem@SnackGoal@@AEBA_NAEBVItemStack@@@Z
-    MCAPI bool _isSnackableItem(class ItemStack const&) const;
+    MCAPI bool _isSnackableItem(class ItemStack const& item) const;
 
     // symbol: ?_updateHand@SnackGoal@@AEAAXAEBVItemStack@@@Z
-    MCAPI void _updateHand(class ItemStack const&);
+    MCAPI void _updateHand(class ItemStack const& item);
 
     // NOLINTEND
 

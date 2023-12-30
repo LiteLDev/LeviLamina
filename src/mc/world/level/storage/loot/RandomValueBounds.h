@@ -20,10 +20,10 @@ public:
     MCAPI void deserialize(class Json::Value const&);
 
     // symbol: ?getFloat@RandomValueBounds@@QEBAMAEAVRandom@@@Z
-    MCAPI float getFloat(class Random&) const;
+    MCAPI float getFloat(class Random& random) const;
 
     // symbol: ?getInt@RandomValueBounds@@QEBAHAEAVRandom@@@Z
-    MCAPI int getInt(class Random&) const;
+    MCAPI int getInt(class Random& random) const;
 
     // symbol: ?getMax@RandomValueBounds@@QEBAMXZ
     MCAPI float getMax() const;

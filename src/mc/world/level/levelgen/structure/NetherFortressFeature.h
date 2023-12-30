@@ -21,7 +21,7 @@ public:
     virtual bool shouldAddHardcodedSpawnAreas() const;
 
     // vIndex: 4, symbol: ?initMobSpawnTypes@NetherFortressFeature@@UEAAXAEAVHardcodedSpawnAreaRegistry@@@Z
-    virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
+    virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry& spawnAreas);
 
     // vIndex: 5, symbol:
     // ?isFeatureChunk@NetherFortressFeature@@MEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z

@@ -12,14 +12,15 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addAdditionalSaveData@SpawnActorComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol:
     // ?getSpawnEntries@SpawnActorComponent@@QEAAAEAV?$vector@USpawnActorEntry@@V?$allocator@USpawnActorEntry@@@std@@@std@@XZ
     MCAPI std::vector<struct SpawnActorEntry>& getSpawnEntries();
 
     // symbol: ?readAdditionalSaveData@SpawnActorComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // NOLINTEND
 };

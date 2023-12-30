@@ -15,7 +15,7 @@ public:
     MCAPI struct TagMemoryChunk copy() const;
 
     // symbol: ??9TagMemoryChunk@@QEBA_NAEBU0@@Z
-    MCAPI bool operator!=(struct TagMemoryChunk const&) const;
+    MCAPI bool operator!=(struct TagMemoryChunk const& rhs) const;
 
     // symbol: ??1TagMemoryChunk@@QEAA@XZ
     MCAPI ~TagMemoryChunk();

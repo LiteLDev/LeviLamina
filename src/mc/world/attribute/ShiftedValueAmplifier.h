@@ -18,7 +18,7 @@ public:
     virtual ~ShiftedValueAmplifier() = default;
 
     // vIndex: 1, symbol: ?getAmount@ShiftedValueAmplifier@@UEBAMHM@Z
-    virtual float getAmount(int, float) const;
+    virtual float getAmount(int amplification, float scale) const;
 
     // NOLINTEND
 };

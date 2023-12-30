@@ -18,7 +18,7 @@ public:
     virtual ~ChunkBuildOrderPolicy() = default;
 
     // vIndex: 1, symbol: ?getChunkRebuildPriority@ChunkBuildOrderPolicy@@UEBAHAEBVChunkPos@@@Z
-    virtual int getChunkRebuildPriority(class ChunkPos const&) const;
+    virtual int getChunkRebuildPriority(class ChunkPos const& cp) const;
 
     // vIndex: 2, symbol: ?registerForUpdates@ChunkBuildOrderPolicy@@UEAAIXZ
     virtual uint registerForUpdates();

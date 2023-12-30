@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0CommandParameterData@@QEAA@AEBV0@@Z
-    MCAPI CommandParameterData(class CommandParameterData const&);
+    MCAPI CommandParameterData(class CommandParameterData const& p);
 
     // symbol:
     // ??0CommandParameterData@@QEAA@V?$typeid_t@VCommandRegistry@@@Bedrock@@P8CommandRegistry@@EBA_NPEAXAEBUParseToken@3@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@7@@ZPEBDW4CommandParameterDataType@@77H_NH@Z
@@ -35,7 +35,7 @@ public:
     );
 
     // symbol: ?addOptions@CommandParameterData@@QEAAAEAV1@W4CommandParameterOption@@@Z
-    MCAPI class CommandParameterData& addOptions(::CommandParameterOption);
+    MCAPI class CommandParameterData& addOptions(enum CommandParameterOption options);
 
     // symbol: ??1CommandParameterData@@QEAA@XZ
     MCAPI ~CommandParameterData();

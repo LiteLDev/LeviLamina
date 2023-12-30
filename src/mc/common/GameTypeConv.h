@@ -16,14 +16,14 @@ MCAPI std::string gameTypeToNonLocString(::GameType);
 MCAPI std::string gameTypeToString(::GameType);
 
 // symbol: ?intToGameType@GameTypeConv@@YA?AW4GameType@@H@Z
-MCAPI ::GameType intToGameType(int);
+MCAPI ::GameType intToGameType(int id);
 
 // symbol: ?intToGameTypeForCommands@GameTypeConv@@YA?AW4GameType@@H@Z
 MCAPI ::GameType intToGameTypeForCommands(int);
 
 // symbol:
 // ?stringToGameType@GameTypeConv@@YA?AW4GameType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI ::GameType stringToGameType(std::string const&);
+MCAPI ::GameType stringToGameType(std::string const& str);
 // NOLINTEND
 
 }; // namespace GameTypeConv

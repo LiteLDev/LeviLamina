@@ -10,6 +10,13 @@ public:
     SupportedBindingModule& operator=(SupportedBindingModule const&);
     SupportedBindingModule(SupportedBindingModule const&);
     SupportedBindingModule();
+
+public:
+    // NOLINTBEGIN
+    // symbol: ??1SupportedBindingModule@Scripting@@QEAA@XZ
+    MCAPI ~SupportedBindingModule();
+
+    // NOLINTEND
 };
 
 }; // namespace Scripting

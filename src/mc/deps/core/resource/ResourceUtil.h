@@ -20,7 +20,7 @@ public:
 
     // symbol:
     // ?stringFromPath@ResourceUtil@@SA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@W4ResourceFileSystem@@@Z
-    MCAPI static std::string_view stringFromPath(::ResourceFileSystem);
+    MCAPI static std::string_view stringFromPath(enum ResourceFileSystem fileSystem);
 
     // NOLINTEND
 };

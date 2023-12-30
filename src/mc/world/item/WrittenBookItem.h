@@ -42,7 +42,7 @@ public:
     virtual void __unk_vfn_17();
 
     // vIndex: 36, symbol: ?isGlint@WrittenBookItem@@MEBA_NAEBVItemStackBase@@@Z
-    virtual bool isGlint(class ItemStackBase const&) const;
+    virtual bool isGlint(class ItemStackBase const& stack) const;
 
     // vIndex: 37, symbol: __unk_vfn_37
     virtual void __unk_vfn_37();
@@ -55,7 +55,12 @@ public:
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@WrittenBookItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -79,7 +84,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@WrittenBookItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
     // vIndex: 81, symbol:
     // ?buildDescriptionId@WrittenBookItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
@@ -102,11 +107,11 @@ public:
     MCAPI static int getGeneration(class CompoundTag const*);
 
     // symbol: ?getPageCount@WrittenBookItem@@SAHAEBVItemStack@@@Z
-    MCAPI static int getPageCount(class ItemStack const&);
+    MCAPI static int getPageCount(class ItemStack const& book);
 
     // symbol:
     // ?getPages@WrittenBookItem@@SA?AV?$vector@UPageContent@@V?$allocator@UPageContent@@@std@@@std@@AEBVItemStack@@@Z
-    MCAPI static std::vector<struct PageContent> getPages(class ItemStack const&);
+    MCAPI static std::vector<struct PageContent> getPages(class ItemStack const& book);
 
     // symbol: ?MAX_GENERATION@WrittenBookItem@@2HB
     MCAPI static int const MAX_GENERATION;

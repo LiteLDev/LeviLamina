@@ -28,8 +28,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_decoratorLoadChildBehavior@DecoratorDefinition@@KA?AV?$unique_ptr@VBehaviorDefinition@@U?$default_delete@VBehaviorDefinition@@@std@@@std@@VValue@Json@@AEBVBehaviorFactory@@VBehaviorTreeDefinitionPtr@@@Z
-    MCAPI static std::unique_ptr<class BehaviorDefinition>
-    _decoratorLoadChildBehavior(class Json::Value, class BehaviorFactory const&, class BehaviorTreeDefinitionPtr);
+    MCAPI static std::unique_ptr<class BehaviorDefinition> _decoratorLoadChildBehavior(
+        class Json::Value               value,
+        class BehaviorFactory const&    factory,
+        class BehaviorTreeDefinitionPtr ptr
+    );
 
     // NOLINTEND
 };

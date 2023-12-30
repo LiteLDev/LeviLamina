@@ -14,7 +14,7 @@ public:
     MCAPI TameableComponent();
 
     // symbol: ?getInteraction@TameableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor& owner, class Player& player, class ActorInteraction& interaction);
 
     // symbol: ?tame@TameableComponent@@QEAAXAEAVActor@@AEAVPlayer@@@Z
     MCAPI void tame(class Actor&, class Player&);

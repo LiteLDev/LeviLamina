@@ -19,7 +19,7 @@ public:
     MCAPI PropertyBag();
 
     // symbol: ??0PropertyBag@@QEAA@AEBVValue@Json@@@Z
-    MCAPI explicit PropertyBag(class Json::Value const&);
+    MCAPI explicit PropertyBag(class Json::Value const& jsonValue);
 
     // symbol: ?toJsonValue@PropertyBag@@QEBAAEBVValue@Json@@XZ
     MCAPI class Json::Value const& toJsonValue() const;

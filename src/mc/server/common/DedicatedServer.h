@@ -44,7 +44,7 @@ public:
     MCVAPI bool isEduMode() const;
 
     // symbol: ?onNetworkMaxPlayersChanged@DedicatedServer@@EEAAXI@Z
-    MCVAPI void onNetworkMaxPlayersChanged(uint);
+    MCVAPI void onNetworkMaxPlayersChanged(uint newMaxPlayerCount);
 
     // symbol:
     // ?requestServerShutdown@DedicatedServer@@EEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

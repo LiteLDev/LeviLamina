@@ -35,7 +35,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@DragonStrafePlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0DragonStrafePlayerGoal@@QEAA@AEAVMob@@@Z
     MCAPI explicit DragonStrafePlayerGoal(class Mob&);
@@ -51,7 +51,7 @@ public:
     MCAPI void navigateToNextPathNode();
 
     // symbol: ?setTarget@DragonStrafePlayerGoal@@AEAAXPEAVActor@@@Z
-    MCAPI void setTarget(class Actor*);
+    MCAPI void setTarget(class Actor* target);
 
     // NOLINTEND
 };

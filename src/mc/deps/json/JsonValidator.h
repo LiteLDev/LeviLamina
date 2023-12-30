@@ -31,18 +31,18 @@ public:
         MCAPI Property(class JsonValidator::Property const&);
 
         // symbol: ?addChildProperty@Property@JsonValidator@@QEAAAEAV12@AEBV12@@Z
-        MCAPI class JsonValidator::Property& addChildProperty(class JsonValidator::Property const&);
+        MCAPI class JsonValidator::Property& addChildProperty(class JsonValidator::Property const& prop);
 
         // symbol: ?addConditionalProperty@Property@JsonValidator@@QEAAAEAV12@AEBVValue@Json@@AEBV12@@Z
         MCAPI class JsonValidator::Property&
-        addConditionalProperty(class Json::Value const&, class JsonValidator::Property const&);
+        addConditionalProperty(class Json::Value const& value, class JsonValidator::Property const& prop);
 
         // symbol: ?addType@Property@JsonValidator@@QEAAAEAV12@W4ValueType@Json@@@Z
-        MCAPI class JsonValidator::Property& addType(::Json::ValueType);
+        MCAPI class JsonValidator::Property& addType(enum Json::ValueType type);
 
         // symbol:
         // ?description@Property@JsonValidator@@QEAAAEAV12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-        MCAPI class JsonValidator::Property& description(std::string const&);
+        MCAPI class JsonValidator::Property& description(std::string const& description);
 
         // symbol: ??4Property@JsonValidator@@QEAAAEAV01@$$QEAV01@@Z
         MCAPI class JsonValidator::Property& operator=(class JsonValidator::Property&&);
@@ -52,7 +52,7 @@ public:
 
         // symbol:
         // ??AProperty@JsonValidator@@QEAAAEAV01@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-        MCAPI class JsonValidator::Property& operator[](std::string const&);
+        MCAPI class JsonValidator::Property& operator[](std::string const& propName);
 
         // symbol: ?requireConditionalProperty@Property@JsonValidator@@QEAAAEAV12@XZ
         MCAPI class JsonValidator::Property& requireConditionalProperty();
@@ -76,8 +76,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?validate@JsonValidator@@SA_NAEBVProperty@1@AEBVValue@Json@@PEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCAPI static bool
-    validate(class JsonValidator::Property const&, class Json::Value const&, std::vector<std::string>*);
+    MCAPI static bool validate(
+        class JsonValidator::Property const& rootProp,
+        class Json::Value const&             rootData,
+        std::vector<std::string>*            errors
+    );
 
     // NOLINTEND
 };

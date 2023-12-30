@@ -17,11 +17,11 @@ public:
     // vIndex: 0, symbol: ??1BehaviorNode@@UEAA@XZ
     virtual ~BehaviorNode();
 
-    // vIndex: 1, symbol: ?tick@RepeatUntilFailureNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-    virtual ::BehaviorStatus tick(class Actor&) = 0;
+    // vIndex: 1, symbol: ?tick@ActivateToolNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+    virtual ::BehaviorStatus tick(class Actor& owner) = 0;
 
     // vIndex: 2, symbol: ?initializeFromDefinition@BehaviorNode@@MEAAXAEAVActor@@@Z
-    virtual void initializeFromDefinition(class Actor&);
+    virtual void initializeFromDefinition(class Actor& owner);
 
     // NOLINTEND
 };

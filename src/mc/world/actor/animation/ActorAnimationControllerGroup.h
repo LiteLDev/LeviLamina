@@ -31,15 +31,15 @@ public:
 
     // symbol:
     // ?getActorAnimationController@ActorAnimationControllerGroup@@QEAA?AVActorAnimationControllerPtr@@AEBVHashedString@@@Z
-    MCAPI class ActorAnimationControllerPtr getActorAnimationController(class HashedString const&);
+    MCAPI class ActorAnimationControllerPtr getActorAnimationController(class HashedString const& name);
 
     // symbol:
     // ?getActorAnimationControllerInfo@ActorAnimationControllerGroup@@QEAA?AV?$shared_ptr@VActorAnimationControllerInfo@@@std@@AEBVHashedString@@@Z
     MCAPI std::shared_ptr<class ActorAnimationControllerInfo>
-          getActorAnimationControllerInfo(class HashedString const&);
+          getActorAnimationControllerInfo(class HashedString const& name);
 
     // symbol: ?loadActorAnimationControllersSync@ActorAnimationControllerGroup@@QEAAXAEAVResourcePackManager@@@Z
-    MCAPI void loadActorAnimationControllersSync(class ResourcePackManager&);
+    MCAPI void loadActorAnimationControllersSync(class ResourcePackManager& resourcePackManager);
 
     // symbol: ?loadFormatVersion@ActorAnimationControllerGroup@@SA_NAEBVValue@Json@@AEAVSemVersion@@@Z
     MCAPI static bool loadFormatVersion(class Json::Value const&, class SemVersion&);

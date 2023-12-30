@@ -12,19 +12,20 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addAdditionalSaveData@AgeableComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?getAge@AgeableComponent@@QEBAHXZ
     MCAPI int getAge() const;
 
     // symbol: ?getInteraction@AgeableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor& actor, class Player& player, class ActorInteraction& interaction);
 
     // symbol: ?readAdditionalSaveData@AgeableComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& actor, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?setAge@AgeableComponent@@QEAAXH@Z
-    MCAPI void setAge(int);
+    MCAPI void setAge(int age);
 
     // NOLINTEND
 };

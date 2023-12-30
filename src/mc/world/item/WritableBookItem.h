@@ -72,7 +72,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@WritableBookItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -85,20 +85,20 @@ public:
     virtual std::string getInteractText(class Player const&) const;
 
     // symbol: ?addPageAt@WritableBookItem@@SAXAEAVItemStack@@HAEBUPageContent@@@Z
-    MCAPI static void addPageAt(class ItemStack&, int, struct PageContent const&);
+    MCAPI static void addPageAt(class ItemStack& book, int index, struct PageContent const& page);
 
     // symbol: ?deletePage@WritableBookItem@@SA?AUPageContent@@AEAVItemStack@@H@Z
-    MCAPI static struct PageContent deletePage(class ItemStack&, int);
+    MCAPI static struct PageContent deletePage(class ItemStack& book, int index);
 
     // symbol: ?replacePage@WritableBookItem@@SAXAEAVItemStack@@HAEBUPageContent@@@Z
-    MCAPI static void replacePage(class ItemStack&, int, struct PageContent const&);
+    MCAPI static void replacePage(class ItemStack& book, int index, struct PageContent const& page);
 
     // symbol:
     // ?signBook@WritableBookItem@@SAXAEAVItemStack@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@11@Z
-    MCAPI static void signBook(class ItemStack&, std::string, std::string, std::string);
+    MCAPI static void signBook(class ItemStack& book, std::string title, std::string author, std::string xuid);
 
     // symbol: ?swapPages@WritableBookItem@@SAXAEAVItemStack@@HH@Z
-    MCAPI static void swapPages(class ItemStack&, int, int);
+    MCAPI static void swapPages(class ItemStack& book, int page1, int page2);
 
     // NOLINTEND
 };

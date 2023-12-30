@@ -26,7 +26,7 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@ChunkRadiusUpdatedPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@ChunkRadiusUpdatedPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
@@ -36,7 +36,7 @@ public:
     MCAPI ChunkRadiusUpdatedPacket();
 
     // symbol: ??0ChunkRadiusUpdatedPacket@@QEAA@H@Z
-    MCAPI explicit ChunkRadiusUpdatedPacket(int);
+    MCAPI explicit ChunkRadiusUpdatedPacket(int chunkRadius);
 
     // NOLINTEND
 };
