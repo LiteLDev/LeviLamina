@@ -1,4 +1,5 @@
 Diagnostics:
   Suppress: ["-Wmicrosoft-enum-forward-reference", "-Wc++11-narrowing", "-Wc++2b-extensions", "-Wmicrosoft-cast"]
 CompileFlags:
-  Add: ["-ferror-limit=0", "-D__FUNCTION__=\"dummy\"", "-D_CRT_USE_BUILTIN_OFFSETOF", "-std:c++20"]
+  Add: ["-ferror-limit=0", "-D__FUNCTION__=\"dummy\"", "-D_CRT_USE_BUILTIN_OFFSETOF", "-std:c++latest"]
+  Remove: ["/Yu_HeaderOutputPredefine.h", "/FI_HeaderOutputPredefine.h"]

@@ -1,8 +1,8 @@
 #include "ll/api/memory/Closure.h"
-#include <exception>
+
 #include <stdexcept>
 
-#include "windows.h"
+#include "memoryapi.h"
 
 #include "ll/api/memory/Memory.h"
 #include "ll/api/utils/StringUtils.h"

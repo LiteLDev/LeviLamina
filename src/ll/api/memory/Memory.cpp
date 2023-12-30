@@ -1,7 +1,6 @@
 #include "ll/api/memory/Memory.h"
 
 #include <optional>
-#include <ranges>
 #include <vector>
 
 #include "pl/SymbolProvider.h"
@@ -12,8 +11,7 @@
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"
 
-#include "windows.h"
-
+#include "memoryapi.h"
 
 namespace ll::memory {
 

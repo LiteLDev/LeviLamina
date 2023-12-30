@@ -1,9 +1,13 @@
+#include <string>
+#include <string_view>
+
 #include "ll/api/Logger.h"
 #include "ll/api/base/Base64.h"
 #include "ll/api/utils/StringUtils.h"
 #include "mc/common/ColorFormat.h"
 #include "mc/deps/core/mce/Color.h"
 #include "mc/nbt/CompoundTag.h"
+
 #include "nlohmann/json.hpp"
 
 namespace ll::nbt::detail {
@@ -16,7 +20,7 @@ using namespace ll::string_utils;
 
 namespace cf = ColorFormat;
 
-constexpr auto base64Id = std::string{" /*BASE64*/"};
+const std::string base64Id = " /*BASE64*/";
 
 template <std::integral T>
 std::string getString(T value) {

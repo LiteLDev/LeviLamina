@@ -1,9 +1,10 @@
 #pragma once
 
-#include "ll/api/base/Macro.h"
-#include "ll/api/base/StdInt.h"
 #include <functional>
 #include <memory>
+
+#include "ll/api/base/Macro.h"
+#include "ll/api/base/StdInt.h"
 
 namespace ll::memory {
 namespace detail {

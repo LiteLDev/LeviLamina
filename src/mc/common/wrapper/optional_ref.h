@@ -4,6 +4,8 @@
 #include <stdexcept>
 #include <type_traits>
 
+#include "ll/api/base/Macro.h"
+
 template <typename T>
     requires(!std::is_reference_v<T>)
 class optional_ref {

@@ -1,3 +1,5 @@
+add_rules("mode.debug", "mode.release")
+
 includes("scripts/localbdslibrary.lua")
 
 add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
@@ -64,15 +66,6 @@ target("LeviLamina")
         "-Wno-pragma-system-header-outside-header",
         {tools = {"clang_cl"}}
     )
-    add_undefines(
-        "_DEBUG",
-        { public = true }
-    )
-    add_defines(
-        "ENTT_PACKED_PAGE=128",
-        "_HAS_CXX23=1",
-        { public = true }
-    )
     add_defines(
         "_AMD64_",
         "_CRT_SECURE_NO_WARNINGS",
@@ -80,6 +73,10 @@ target("LeviLamina")
         "NOMINMAX",
         "UNICODE",
         "WIN32_LEAN_AND_MEAN",
+        "ENTT_PACKED_PAGE=128",
+        { public = true }
+    )
+    add_defines(
         "LL_EXPORT"
     )
     add_files(
@@ -111,10 +108,6 @@ target("LeviLamina")
         "symbolprovider",
         { public = true }
     )
-    add_rules(
-        "mode.debug",
-        "mode.release"
-    )
     add_shflags(
         "/DELAYLOAD:bedrock_server.dll",
         { public = true }
@@ -123,7 +116,7 @@ target("LeviLamina")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     set_exceptions("none")
     set_kind("shared")
-    set_languages("c++20")
+    set_languages("c++23")
     set_pcxxheader("src/mc/_HeaderOutputPredefine.h")
     set_symbols("debug")
 
@@ -142,6 +135,13 @@ target("LeviLamina")
     else
         add_packages("bdslibrary")
     end
+
+    on_config(function (target)
+        -- vs_runtime can not be set to MDd or MTd.
+        if has_config("vs_runtime") and (get_config("vs_runtime"):endswith("d")) then
+            raise("LeviLamina: vs_runtime can not be set to MDd or MTd")
+        end
+    end)
 
     on_load(function (target)
         local tag = os.iorun("git describe --tags --abbrev=0 --always")
@@ -163,50 +163,4 @@ target("LeviLamina")
         target:set("configvar", "LL_VERSION_MINOR", minor)
         target:set("configvar", "LL_VERSION_PATCH", patch)
     end)
-
-task("bds-lib")
-    on_run(function ()
-        import("core.base.option")
-        local actions = {"remote", "local", "clean", "tool"}
-        -- error if multiple actions are specified or no action is specified
-        local action = nil
-        for _, a in ipairs(actions) do
-            if option.get(a) then
-                if action then
-                    raise("only one action can be specified")
-                end
-                action = a
-            end
-        end
-        if not action then
-            raise("no action specified")
-        end
-        if action == "remote" then
-            print("[localbdslibrary] Using remote BDS library.")
-            os.exec("xmake config --localbdslibrary=n")
-        elseif action == "local" then
-            print("[localbdslibrary] Using local BDS library.")
-            os.exec("xmake config --localbdslibrary=y")
-        elseif action == "clean" then
-            import("core.project.config")
-            local lib_dir = path.join(config.buildir(), "bds")
-            os.rm(lib_dir)
-            print("[localbdslibrary] Local bdslibrary has been cleared.")
-        elseif action == "tool" then
-            import("core.project.config")
-            local tool_dir = path.join(config.buildir(), "tools")
-            os.rm(tool_dir)
-            print("[localbdslibrary] Toolchain has been cleared.")
-        end
-    end)
-
-    set_menu {
-        usage = "xmake bds-lib",
-        description = "Manage local BDS library",
-        options = {
-            {'r', "remote", "k", nil, "Use remote BDS library"},
-            {'l', "local", "k", nil, "Use local BDS library"},
-            {'c', "clean", "k", nil, "Clean local BDS library"},
-            {'t', "tool", "k", nil, "Remove toolchain"}
-        }
-    }
+target_end()
