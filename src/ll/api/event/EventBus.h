@@ -22,13 +22,14 @@ private:
 public:
     class Canneller {
         friend EventBus;
+        bool                           released{false};
         std::unordered_set<ListenerId> listeners{};
 
     public:
         Canneller() = default;
         ~Canneller() {
-            auto list = listeners;
-            for (auto id : list) {
+            released = true;
+            for (auto id : listeners) {
                 EventBus::getInstance().removeListener(id);
             }
         }

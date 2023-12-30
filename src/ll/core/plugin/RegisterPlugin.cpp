@@ -7,8 +7,8 @@
 #include "ll/core/plugin/NativePluginManager.h"
 
 #include "ll/api/event/EventBus.h"
-#include "ll/api/event/world/RequestShutdownEvent.h"
 #include "ll/api/event/world/ServerStartedEvent.h"
+#include "ll/api/event/world/ServerStoppingEvent.h"
 
 namespace ll::plugin {
 using namespace i18n_literals;
@@ -200,8 +200,8 @@ void registerPlugins() {
             },
             EventPriority::Highest
         );
-        EventBus::getInstance().emplaceListener<RequestShutdownEvent>(
-            [plugins = sort.sorted](RequestShutdownEvent&) {
+        EventBus::getInstance().emplaceListener<ServerStoppingEvent>(
+            [plugins = sort.sorted](ServerStoppingEvent&) {
                 for (auto i = plugins.rbegin(); i != plugins.rend(); i++) {
                     PluginManagerRegistry::getInstance().forEachManager([&](std::string_view, PluginManager& manager) {
                         return !manager.disable(*i);

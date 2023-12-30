@@ -157,7 +157,7 @@ bool EventBus::addListener(ListenerPtr const& listener, EventId eventId, Cannell
         auto& info    = impl->listeners[listener->getId()];
         info.listener = listener;
         info.watches.emplace(eventId);
-        canneller.listeners.emplace(listener->getId());
+        if (!canneller.released) canneller.listeners.emplace(listener->getId());
         return true;
     }
     return false;
@@ -174,14 +174,14 @@ bool EventBus::removeListener(ListenerPtr const& listener, EventId eventId, Cann
             res |= impl->removeListener(listener, eid);
         }
         impl->listeners.erase(listener->getId());
-        canneller.listeners.erase(listener->getId());
+        if (!canneller.released) canneller.listeners.erase(listener->getId());
     } else {
         res = impl->removeListener(listener, eventId);
         if (res) {
             watches.erase(eventId);
             if (watches.empty()) {
                 impl->listeners.erase(listener->getId());
-                canneller.listeners.erase(listener->getId());
+                if (!canneller.released) canneller.listeners.erase(listener->getId());
             }
         }
     }

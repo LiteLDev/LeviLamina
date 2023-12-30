@@ -11,10 +11,10 @@ namespace ll::event::inline world {
 
 void ServerStartedEvent::serialize(CompoundTag& nbt) const {
     Event::serialize(nbt);
-    nbt["instance"] = (uintptr_t)&instance();
+    nbt["server"] = (uintptr_t)&server();
 }
 
-ServerInstance& ServerStartedEvent::instance() const { return mInstance; }
+ServerInstance& ServerStartedEvent::server() const { return mInstance; }
 
 LL_TYPED_INSTANCE_HOOK(
     ServerStartedEventHook,

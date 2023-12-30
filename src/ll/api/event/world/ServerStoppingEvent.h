@@ -5,11 +5,12 @@
 #include "mc/server/ServerInstance.h"
 
 namespace ll::event::inline world {
-class ServerStartedEvent : public Event {
-    ServerInstance& mInstance;
+class ServerStoppingEvent : public Event {
+    ServerInstance&    mServer;
 
 public:
-    constexpr explicit ServerStartedEvent(ServerInstance& server) : mInstance(server) {}
+    constexpr explicit ServerStoppingEvent(ServerInstance& server)
+    : mServer(server) {}
 
     void serialize(CompoundTag&) const override;
 
