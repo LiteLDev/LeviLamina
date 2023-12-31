@@ -15,6 +15,10 @@
 #include "comdef.h"
 #pragma warning(pop)
 
+#ifdef LL_DEBUG
+#include "ll/api/utils/StacktraceUtils.h"
+#endif
+
 namespace ll::error_info {
 
 UntypedException::UntypedException(const EXCEPTION_RECORD& er)
@@ -302,7 +306,12 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
 void printCurrentException(optional_ref<ll::Logger> l, std::exception_ptr const& e) noexcept {
     auto& rlogger = l.value_or(logger);
     try {
+#ifdef LL_DEBUG
+        auto res = stacktrace_utils::toString(stacktraceFromCurrExc());
+        res      = makeExceptionString(e) + "\ndebug stacktrace:\n" + res;
+#else
         auto res = makeExceptionString(e);
+#endif
         for (auto& sv : string_utils::splitByPattern(res, "\n")) {
             rlogger.error(sv);
         }

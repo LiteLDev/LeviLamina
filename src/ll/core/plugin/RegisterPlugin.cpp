@@ -6,9 +6,11 @@
 #include "ll/core/LeviLamina.h"
 #include "ll/core/plugin/NativePluginManager.h"
 
-#include "ll/api/event/EventBus.h"
-#include "ll/api/event/world/ServerStartedEvent.h"
-#include "ll/api/event/world/ServerStoppingEvent.h"
+#include "ll/api/event/Emitter.h"
+#include "ll/api/memory/Hook.h"
+#include "mc/server/ServerInstance.h"
+#include "mc/world/events/ServerInstanceEventCoordinator.h"
+
 
 namespace ll::plugin {
 using namespace i18n_literals;
@@ -186,31 +188,41 @@ void registerPlugins() {
     }
     size_t loadedCount = sort.sorted.size() - loadErrored.size();
 
-    if (loadedCount > 0) {
-        using namespace event;
-
-        EventBus::getInstance().emplaceListener<ServerStartedEvent>(
-            [plugins = sort.sorted](ServerStartedEvent&) {
-                for (auto& plugin : plugins) {
-                    PluginManagerRegistry::getInstance().forEachManager([&](std::string_view, PluginManager& manager) {
-                        return !manager.enable(plugin);
-                    });
-                }
-            },
-            EventPriority::Highest
-        );
-        EventBus::getInstance().emplaceListener<ServerStoppingEvent>(
-            [plugins = sort.sorted](ServerStoppingEvent&) {
-                for (auto i = plugins.rbegin(); i != plugins.rend(); i++) {
-                    PluginManagerRegistry::getInstance().forEachManager([&](std::string_view, PluginManager& manager) {
-                        return !manager.disable(*i);
-                    });
-                }
-            },
-            EventPriority::Lowest
-        );
-    }
-
     ll::logger.info("ll.loader.loadMain.done"_tr, loadedCount);
+}
+LL_AUTO_TYPED_INSTANCE_HOOK(
+    ServerStartedEventHook,
+    ll::memory::HookPriority::High,
+    ServerInstanceEventCoordinator,
+    &ServerInstanceEventCoordinator::sendServerThreadStarted,
+    void,
+    ::ServerInstance& ins
+) {
+    origin(ins);
+    try {
+        PluginManagerRegistry::getInstance().forEachManager([&](std::string_view, PluginManager& manager) {
+            manager.enableAll();
+            return true;
+        });
+    } catch (...) {
+        error_info::printCurrentException();
+    }
+}
+LL_AUTO_TYPED_INSTANCE_HOOK(
+    ServerStoppingEventHook,
+    HookPriority::Low,
+    ServerInstance,
+    &ServerInstance::leaveGameSync,
+    void
+) {
+    try {
+        PluginManagerRegistry::getInstance().forEachManager([&](std::string_view, PluginManager& manager) {
+            manager.disableAll();
+            return true;
+        });
+    } catch (...) {
+        error_info::printCurrentException();
+    }
+    origin();
 }
 } // namespace ll::plugin

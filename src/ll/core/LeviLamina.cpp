@@ -17,6 +17,8 @@
 #include "ll/core/Version.h"
 #include "ll/core/plugin/RegisterPlugin.h"
 
+#include "ll/api/utils/StacktraceUtils.h"
+
 #include "mc/world/Minecraft.h"
 
 #include "windows.h"
@@ -221,7 +223,7 @@ void leviLaminaMain() {
 
     printWelcomeMsg();
 
-#if defined(LL_DEBUG)
+#ifdef LL_DEBUG
     logger.warn("ll.main.warning.inDebugMode"_tr);
 #endif
 
@@ -234,6 +236,11 @@ void leviLaminaMain() {
 
 
 LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int argc, char* argv[]) {
+
+#ifdef LL_DEBUG
+    static ll::stacktrace_utils::SymbolLoader symbols{};
+#endif
+
     getServerStatusNonConst() = ServerStatus::Default;
     severStartBeginTime       = std::chrono::steady_clock::now();
     for (int i = 0; i < argc; ++i) {
