@@ -21,7 +21,7 @@ public:
     MCAPI class KeyFrameLerpMode& operator=(class KeyFrameLerpMode const&);
 
     // symbol: ?setLerpStyle@KeyFrameLerpMode@@QEAAXW4KeyFrameLerpStyle@@@Z
-    MCAPI void setLerpStyle(enum KeyFrameLerpStyle lerpStyle);
+    MCAPI void setLerpStyle(::KeyFrameLerpStyle lerpStyle);
 
     // NOLINTEND
 };

@@ -43,7 +43,7 @@ public:
 
     // symbol: ??0EnchantingContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI
-    EnchantingContainerManagerModel(enum ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+    EnchantingContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
     // symbol:
     // ?getEnchantOptions@EnchantingContainerManagerModel@@QEBAAEBV?$vector@VItemEnchantOption@@V?$allocator@VItemEnchantOption@@@std@@@std@@XZ

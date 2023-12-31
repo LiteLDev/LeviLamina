@@ -60,13 +60,13 @@ public:
     MCAPI SetTitlePacket(class SetTitlePacket const&);
 
     // symbol: ??0SetTitlePacket@@QEAA@W4TitleType@0@@Z
-    MCAPI explicit SetTitlePacket(enum SetTitlePacket::TitleType type);
+    MCAPI explicit SetTitlePacket(::SetTitlePacket::TitleType type);
 
     // symbol: ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBVResolvedTextObject@@@Z
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType type, class ResolvedTextObject const& textObject);
+    MCAPI SetTitlePacket(::SetTitlePacket::TitleType type, class ResolvedTextObject const& textObject);
 
     // symbol: ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType type, std::string const& titleText);
+    MCAPI SetTitlePacket(::SetTitlePacket::TitleType type, std::string const& titleText);
 
     // symbol: ??0SetTitlePacket@@QEAA@HHH@Z
     MCAPI SetTitlePacket(int fadeInTime, int stayTime, int fadeOutTime);

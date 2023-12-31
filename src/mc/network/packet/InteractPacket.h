@@ -52,7 +52,7 @@ public:
     MCAPI InteractPacket();
 
     // symbol: ??0InteractPacket@@QEAA@W4Action@0@VActorRuntimeID@@AEBVVec3@@@Z
-    MCAPI InteractPacket(enum InteractPacket::Action action, class ActorRuntimeID targetId, class Vec3 const& pos);
+    MCAPI InteractPacket(::InteractPacket::Action action, class ActorRuntimeID targetId, class Vec3 const& pos);
 
     // NOLINTEND
 };

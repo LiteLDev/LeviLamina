@@ -172,7 +172,7 @@ public:
     MCAPI Container(class Container const&);
 
     // symbol: ??0Container@@QEAA@W4ContainerType@@@Z
-    MCAPI explicit Container(enum ContainerType type);
+    MCAPI explicit Container(::ContainerType type);
 
     // symbol: ?addCloseListener@Container@@QEAAXPEAVContainerCloseListener@@@Z
     MCAPI void addCloseListener(class ContainerCloseListener*);

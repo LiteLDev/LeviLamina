@@ -98,7 +98,7 @@ public:
     );
 
     // symbol: ?clearStack@ResourcePackManager@@QEAAXW4ResourcePackStackType@@_N@Z
-    MCAPI void clearStack(enum ResourcePackStackType stackType, bool composeStack);
+    MCAPI void clearStack(::ResourcePackStackType stackType, bool composeStack);
 
     // symbol: ?composeFullStack@ResourcePackManager@@QEBAHAEAVResourcePackStack@@AEBV2@11@Z
     MCAPI int composeFullStack(
@@ -124,7 +124,7 @@ public:
           getResourcesOfGroup(class PackInstance const& packInstance, std::string const& group) const;
 
     // symbol: ?getStack@ResourcePackManager@@QEBAAEBVResourcePackStack@@W4ResourcePackStackType@@@Z
-    MCAPI class ResourcePackStack const& getStack(enum ResourcePackStackType stackType) const;
+    MCAPI class ResourcePackStack const& getStack(::ResourcePackStackType stackType) const;
 
     // symbol: ?handlePendingStackChanges@ResourcePackManager@@QEAAXXZ
     MCAPI void handlePendingStackChanges();
@@ -156,7 +156,7 @@ public:
     // symbol:
     // ?setStack@ResourcePackManager@@QEAA_NV?$unique_ptr@VResourcePackStack@@U?$default_delete@VResourcePackStack@@@std@@@std@@W4ResourcePackStackType@@_N@Z
     MCAPI bool
-    setStack(std::unique_ptr<class ResourcePackStack> stack, enum ResourcePackStackType stackType, bool composeStack);
+    setStack(std::unique_ptr<class ResourcePackStack> stack, ::ResourcePackStackType stackType, bool composeStack);
 
     // symbol: ?unRegisterResourcePackListener@ResourcePackManager@@QEAAXAEAVResourcePackListener@@@Z
     MCAPI void unRegisterResourcePackListener(class ResourcePackListener& listener);

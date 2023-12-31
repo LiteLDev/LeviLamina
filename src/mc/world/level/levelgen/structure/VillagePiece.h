@@ -45,7 +45,7 @@ public:
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
         class Random&                                       random,
         class JigsawStructureRegistry&                      pools,
-        enum VanillaBiomeTypes                              biomeType,
+        ::VanillaBiomeTypes                                 biomeType,
         class Dimension&                                    dimension
     );
 

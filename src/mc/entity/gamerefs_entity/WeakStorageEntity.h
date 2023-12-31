@@ -48,7 +48,7 @@ public:
     MCAPI explicit WeakStorageEntity(::WeakStorageEntity::EmptyInit);
 
     // symbol: ??0WeakStorageEntity@@IEAA@W4VariadicInit@0@AEBVEntityContext@@@Z
-    MCAPI WeakStorageEntity(::WeakStorageEntity::VariadicInit, class EntityContext const&);
+    MCAPI WeakStorageEntity(::WeakStorageEntity::VariadicInit, class EntityContext const& stackRef);
 
     // symbol: ?_isSet@WeakStorageEntity@@IEBA_NXZ
     MCAPI bool _isSet() const;

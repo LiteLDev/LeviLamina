@@ -24,14 +24,14 @@ public:
     MCAPI leveldb::Status append(leveldb::Slice const& data);
 
     // symbol: ?close@InMemoryFile@@QEAA?AVStatus@leveldb@@W4InMemoryAccessMode@@@Z
-    MCAPI leveldb::Status close(enum InMemoryAccessMode mode);
+    MCAPI leveldb::Status close(::InMemoryAccessMode mode);
 
     // symbol:
     // ?getFilename@InMemoryFile@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
     MCAPI class Core::PathBuffer<std::string> getFilename() const;
 
     // symbol: ?open@InMemoryFile@@QEAA?AVStatus@leveldb@@W4InMemoryAccessMode@@@Z
-    MCAPI leveldb::Status open(enum InMemoryAccessMode mode);
+    MCAPI leveldb::Status open(::InMemoryAccessMode mode);
 
     // symbol: ?read@InMemoryFile@@QEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEADAEA_K@Z
     MCAPI leveldb::Status read(uint64, uint64, leveldb::Slice*, char*, uint64&) const;

@@ -28,7 +28,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0MetaData@IInPackagePacks@@QEAA@AEBVPath@Core@@_NW4PackCategory@@@Z
-        MCAPI MetaData(class Core::Path const& path, bool isHidden, enum PackCategory packCategory);
+        MCAPI MetaData(class Core::Path const& path, bool isHidden, ::PackCategory packCategory);
 
         // NOLINTEND
     };

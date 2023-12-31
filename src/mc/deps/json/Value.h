@@ -174,7 +174,7 @@ public:
     MCAPI explicit Value(double value);
 
     // symbol: ??0Value@Json@@QEAA@W4ValueType@1@@Z
-    MCAPI explicit Value(enum Json::ValueType type);
+    MCAPI explicit Value(::Json::ValueType type);
 
     // symbol: ??0Value@Json@@QEAA@H@Z
     MCAPI explicit Value(int value);
@@ -262,7 +262,7 @@ public:
     MCAPI bool isBool() const;
 
     // symbol: ?isConvertibleTo@Value@Json@@QEBA_NW4ValueType@2@@Z
-    MCAPI bool isConvertibleTo(enum Json::ValueType other) const;
+    MCAPI bool isConvertibleTo(::Json::ValueType other) const;
 
     // symbol: ?isDouble@Value@Json@@QEBA_NXZ
     MCAPI bool isDouble() const;

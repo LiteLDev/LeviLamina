@@ -27,7 +27,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?_createSubgroup@ActorFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z
-    virtual std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType type) const = 0;
+    virtual std::shared_ptr<class FilterGroup> _createSubgroup(::FilterGroup::CollectionType type) const = 0;
 
     // vIndex: 2, symbol: ?_setupContext@FilterGroup@@MEBA_NAEBVFilterTest@@AEAUFilterContext@@@Z
     virtual bool _setupContext(class FilterTest const& test, struct FilterContext& context) const;

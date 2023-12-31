@@ -63,7 +63,7 @@ public:
     MCAPI explicit SerializedSkin(class SubClientConnectionRequest const& request);
 
     // symbol: ?getAnimationFrames@SerializedSkin@@QEBAMW4AnimatedTextureType@persona@@@Z
-    MCAPI float getAnimationFrames(enum persona::AnimatedTextureType animationType) const;
+    MCAPI float getAnimationFrames(::persona::AnimatedTextureType animationType) const;
 
     // symbol: ?getName@SerializedSkin@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getName() const;

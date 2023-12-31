@@ -76,7 +76,7 @@ public:
     virtual void tick();
 
     // vIndex: 10, symbol: ?getPickRange@GameMode@@UEAAMAEBW4InputMode@@_N@Z
-    virtual float getPickRange(enum InputMode const& currentInputMode, bool isVR);
+    virtual float getPickRange(::InputMode const& currentInputMode, bool isVR);
 
     // vIndex: 11, symbol: ?useItem@GameMode@@UEAA_NAEAVItemStack@@@Z
     virtual bool useItem(class ItemStack& item);

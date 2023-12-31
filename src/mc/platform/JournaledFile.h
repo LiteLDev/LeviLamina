@@ -27,7 +27,7 @@ public:
 
     // symbol: ?open@JournaledFile@@QEAA?AVResult@Core@@VPath@3@VFileOpenMode@3@W4FileBufferingMode@3@@Z
     MCAPI class Core::Result
-    open(class Core::Path filePath, class Core::FileOpenMode fileOpenMode, enum Core::FileBufferingMode bufferingMode);
+    open(class Core::Path filePath, class Core::FileOpenMode fileOpenMode, ::Core::FileBufferingMode bufferingMode);
 
     // symbol: ?write@JournaledFile@@QEAA?AVResult@Core@@PEBX_K@Z
     MCAPI class Core::Result write(void const*, uint64);

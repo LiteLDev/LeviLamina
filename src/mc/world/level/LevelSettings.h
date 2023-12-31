@@ -293,7 +293,7 @@ public:
     MCAPI class LevelSettings& setEduSharedUriResource(struct EduSharedUriResource const&);
 
     // symbol: ?setEducationEditionOffer@LevelSettings@@QEAAAEAV1@W4EducationEditionOffer@@@Z
-    MCAPI class LevelSettings& setEducationEditionOffer(enum EducationEditionOffer offer);
+    MCAPI class LevelSettings& setEducationEditionOffer(::EducationEditionOffer offer);
 
     // symbol: ?setEducationFeaturesEnabled@LevelSettings@@QEAAAEAV1@_N@Z
     MCAPI class LevelSettings& setEducationFeaturesEnabled(bool enabled);

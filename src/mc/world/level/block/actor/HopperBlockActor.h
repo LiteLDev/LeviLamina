@@ -98,10 +98,10 @@ public:
     MCAPI void _tick(class BlockSource& region, int maxRecursion);
 
     // symbol: ?isAttachedToContainerType@HopperBlockActor@@AEAA_NAEAVBlockSource@@W4ContainerType@@@Z
-    MCAPI bool isAttachedToContainerType(class BlockSource& region, enum ContainerType containerType);
+    MCAPI bool isAttachedToContainerType(class BlockSource& region, ::ContainerType containerType);
 
     // symbol: ?isSourceOfContainerType@HopperBlockActor@@AEAA_NAEAVBlockSource@@W4ContainerType@@@Z
-    MCAPI bool isSourceOfContainerType(class BlockSource& region, enum ContainerType containerType);
+    MCAPI bool isSourceOfContainerType(class BlockSource& region, ::ContainerType containerType);
 
     // NOLINTEND
 };

@@ -84,7 +84,7 @@ public:
     MCAPI class MobSpawnRules& setDelaySpawnChance(int chance);
 
     // symbol: ?setDifficultyRange@MobSpawnRules@@QEAAAEAV1@W4Difficulty@@0@Z
-    MCAPI class MobSpawnRules& setDifficultyRange(enum Difficulty minDifficulty, enum Difficulty maxDifficulty);
+    MCAPI class MobSpawnRules& setDifficultyRange(::Difficulty minDifficulty, ::Difficulty maxDifficulty);
 
     // symbol: ?setExperimentalGameplay@MobSpawnRules@@QEAAAEAV1@XZ
     MCAPI class MobSpawnRules& setExperimentalGameplay();

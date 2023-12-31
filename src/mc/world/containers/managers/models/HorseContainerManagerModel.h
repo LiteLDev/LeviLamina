@@ -33,11 +33,8 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0HorseContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
-    MCAPI HorseContainerManagerModel(
-        enum ContainerID            containerId,
-        class Player&               player,
-        struct ActorUniqueID const& uniqueId
-    );
+    MCAPI
+    HorseContainerManagerModel(::ContainerID containerId, class Player& player, struct ActorUniqueID const& uniqueId);
 
     // NOLINTEND
 };

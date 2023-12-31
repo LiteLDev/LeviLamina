@@ -50,13 +50,13 @@ public:
     virtual class Vec3 loadDirection(class Vec3 const& direction);
 
     // vIndex: 10, symbol: ?loadDirection@StructureDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
-    virtual ::Direction::Type loadDirection(enum Direction::Type direction);
+    virtual ::Direction::Type loadDirection(::Direction::Type direction);
 
     // vIndex: 11, symbol: ?loadRotation@StructureDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
-    virtual ::Rotation loadRotation(enum Rotation rotation);
+    virtual ::Rotation loadRotation(::Rotation rotation);
 
     // vIndex: 12, symbol: ?loadMirror@StructureDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
-    virtual ::Mirror loadMirror(enum Mirror mirror);
+    virtual ::Mirror loadMirror(::Mirror mirror);
 
     // vIndex: 13, symbol: ?loadActorUniqueID@StructureDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
     virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID id);
@@ -85,8 +85,8 @@ public:
         class BlockPos const& structureWorldOrigin,
         class Vec3 const&     rotationPivot,
         struct ActorUniqueID  ownerID,
-        enum Rotation         rotation,
-        enum Mirror           mirror,
+        ::Rotation            rotation,
+        ::Mirror              mirror,
         class Level&          level
     );
 

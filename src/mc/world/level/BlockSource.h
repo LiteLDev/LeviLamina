@@ -85,7 +85,7 @@ public:
     virtual bool containsAnyLiquid(class AABB const& box) const;
 
     // vIndex: 9, symbol: ?containsMaterial@BlockSource@@UEBA_NAEBVAABB@@W4MaterialType@@@Z
-    virtual bool containsMaterial(class AABB const& box, enum MaterialType material) const;
+    virtual bool containsMaterial(class AABB const& box, ::MaterialType material) const;
 
     // vIndex: 10, symbol: ?isUnderWater@BlockSource@@UEBA_NAEBVVec3@@AEBVBlock@@@Z
     virtual bool isUnderWater(class Vec3 const& pos, class Block const& block) const;
@@ -240,7 +240,7 @@ public:
     MCAPI void blockEvent(class BlockPos const& pos, int b0, int b1);
 
     // symbol: ?canProvideSupport@BlockSource@@QEBA_NAEBVBlockPos@@EW4BlockSupportType@@@Z
-    MCAPI bool canProvideSupport(class BlockPos const& pos, uchar face, enum BlockSupportType type) const;
+    MCAPI bool canProvideSupport(class BlockPos const& pos, uchar face, ::BlockSupportType type) const;
 
     // symbol: ?canSeeSky@BlockSource@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool canSeeSky(class BlockPos const& pos) const;
@@ -352,11 +352,11 @@ public:
     // symbol:
     // ?fetchEntities2@BlockSource@@QEAAAEBV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@W4ActorType@@AEBVAABB@@_N@Z
     MCAPI std::vector<class Actor*> const&
-          fetchEntities2(enum ActorType type, class AABB const& aabb, bool ignoreTargetType);
+          fetchEntities2(::ActorType type, class AABB const& aabb, bool ignoreTargetType);
 
     // symbol: ?fetchNearestEntityOfType@BlockSource@@QEAAPEAVActor@@PEBV2@AEBVAABB@@W4ActorType@@@Z
     MCAPI class Actor*
-    fetchNearestEntityOfType(class Actor const* except, class AABB const& bb, enum ActorType entityTypeId);
+    fetchNearestEntityOfType(class Actor const* except, class AABB const& bb, ::ActorType entityTypeId);
 
     // symbol: ?findNextTopSolidBlockAbove@BlockSource@@QEAA_NAEAVBlockPos@@@Z
     MCAPI bool findNextTopSolidBlockAbove(class BlockPos& pos);
@@ -443,7 +443,7 @@ public:
 
     // symbol: ?getNextTickUpdateForPos@BlockSource@@QEBA_NAEBVBlockPos@@W4TickingQueueType@@AEAUTick@@@Z
     MCAPI bool
-    getNextTickUpdateForPos(class BlockPos const& pos, enum TickingQueueType queueType, struct Tick& tick) const;
+    getNextTickUpdateForPos(class BlockPos const& pos, ::TickingQueueType queueType, struct Tick& tick) const;
 
     // symbol: ?getPublicSource@BlockSource@@QEBA_NXZ
     MCAPI bool getPublicSource() const;
@@ -481,7 +481,7 @@ public:
     MCAPI bool hasTickInCurrentTick(class BlockPos const& pos) const;
 
     // symbol: ?hasTickInCurrentTick@BlockSource@@QEBA_NAEBVBlockPos@@W4TickingQueueType@@@Z
-    MCAPI bool hasTickInCurrentTick(class BlockPos const& pos, enum TickingQueueType queueType) const;
+    MCAPI bool hasTickInCurrentTick(class BlockPos const& pos, ::TickingQueueType queueType) const;
 
     // symbol: ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool hasTickInPendingTicks(class BlockPos const& pos) const;
@@ -493,7 +493,7 @@ public:
     MCAPI bool hasTickInPendingTicks(class BlockPos const&, class BlockLegacy const&) const;
 
     // symbol: ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@W4TickingQueueType@@@Z
-    MCAPI bool hasTickInPendingTicks(class BlockPos const& pos, enum TickingQueueType queueType) const;
+    MCAPI bool hasTickInPendingTicks(class BlockPos const& pos, ::TickingQueueType queueType) const;
 
     // symbol: ?hasTickInPendingTicks@BlockSource@@QEBA_NAEBVBlockPos@@AEBVBlock@@W4TickingQueueType@@@Z
     MCAPI bool hasTickInPendingTicks(class BlockPos const&, class Block const&, ::TickingQueueType) const;
@@ -529,7 +529,7 @@ public:
     MCAPI bool isNearUnloadedChunks(class ChunkPos const& pos) const;
 
     // symbol: ?isTouchingMaterial@BlockSource@@QEBA_NAEBVBlockPos@@W4MaterialType@@@Z
-    MCAPI bool isTouchingMaterial(class BlockPos const& pos, enum MaterialType type) const;
+    MCAPI bool isTouchingMaterial(class BlockPos const& pos, ::MaterialType type) const;
 
     // symbol: ?isUnobstructedByEntities@BlockSource@@QEAA_NAEBVAABB@@PEBVActor@@@Z
     MCAPI bool isUnobstructedByEntities(class AABB const& aabb, class Actor const* ignoreEntity);
@@ -609,7 +609,7 @@ public:
     MCAPI bool shouldFireEvents(class LevelChunk& c) const;
 
     // symbol: ?ticksFromNow@BlockSource@@QEBAHAEBVBlockPos@@W4TickingQueueType@@H@Z
-    MCAPI int ticksFromNow(class BlockPos const& pos, enum TickingQueueType queueType, int offset) const;
+    MCAPI int ticksFromNow(class BlockPos const& pos, ::TickingQueueType queueType, int offset) const;
 
     // symbol: ?tryGetBiome@BlockSource@@QEBAPEAVBiome@@AEBVBlockPos@@@Z
     MCAPI class Biome* tryGetBiome(class BlockPos const& pos) const;
@@ -694,7 +694,7 @@ public:
 
     // symbol: ?_removeFromTickingQueue@BlockSource@@AEAAXAEBVBlockPos@@AEBVBlock@@W4TickingQueueType@@@Z
     MCAPI void
-    _removeFromTickingQueue(class BlockPos const& pos, class Block const& block, enum TickingQueueType queueType);
+    _removeFromTickingQueue(class BlockPos const& pos, class Block const& block, ::TickingQueueType queueType);
 
     // NOLINTEND
 };

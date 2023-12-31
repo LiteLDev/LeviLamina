@@ -56,10 +56,10 @@ public:
     MCAPI explicit FeatureToggles(class AppPlatform&);
 
     // symbol: ?get@FeatureToggles@@QEAAPEAVOption@@W4FeatureOptionID@@@Z
-    MCAPI class Option* get(enum FeatureOptionID featureID);
+    MCAPI class Option* get(::FeatureOptionID featureID);
 
     // symbol: ?isEnabled@FeatureToggles@@QEBA_NW4FeatureOptionID@@@Z
-    MCAPI bool isEnabled(enum FeatureOptionID featureID) const;
+    MCAPI bool isEnabled(::FeatureOptionID featureID) const;
 
     // NOLINTEND
 

@@ -42,7 +42,7 @@ public:
     virtual class DisplayObjective const*
     setDisplayObjective(std::string const& displaySlotName,
         class Objective const&  objective,
-        enum ObjectiveSortOrder order
+        ::ObjectiveSortOrder   order
     );
 
     // vIndex: 2, symbol:
@@ -110,7 +110,7 @@ public:
         class Objective&                  targetObjective,
         std::vector<struct ScoreboardId>& selector,
         class Objective&                  objective,
-        enum CommandOperator              opCode
+        ::CommandOperator                 opCode
     );
 
     // symbol: ?forEachIdentityRef@Scoreboard@@QEAAXV?$function@$$A6AXAEAVScoreboardIdentityRef@@@Z@std@@@Z
@@ -196,16 +196,16 @@ public:
         class ScoreboardIdentityRef* id,
         class Objective&             objective,
         int                          scoreValue,
-        enum PlayerScoreSetFunction  action
+        ::PlayerScoreSetFunction     action
     );
 
     // symbol: ?modifyPlayerScore@Scoreboard@@QEAAHAEA_NAEBUScoreboardId@@AEAVObjective@@HW4PlayerScoreSetFunction@@@Z
     MCAPI int modifyPlayerScore(
-        bool&                       success,
-        struct ScoreboardId const&  id,
-        class Objective&            objective,
-        int                         scoreValue,
-        enum PlayerScoreSetFunction action
+        bool&                      success,
+        struct ScoreboardId const& id,
+        class Objective&           objective,
+        int                        scoreValue,
+        ::PlayerScoreSetFunction   action
     );
 
     // symbol:

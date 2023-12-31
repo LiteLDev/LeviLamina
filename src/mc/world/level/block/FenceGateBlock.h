@@ -187,7 +187,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0FenceGateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4WoodType@@@Z
-    MCAPI FenceGateBlock(std::string const& nameId, int id, enum WoodType woodType);
+    MCAPI FenceGateBlock(std::string const& nameId, int id, ::WoodType woodType);
 
     // symbol: ?resolveIsInWall@FenceGateBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void resolveIsInWall(class BlockSource&, class BlockPos const&) const;

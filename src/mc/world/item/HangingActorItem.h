@@ -82,7 +82,7 @@ public:
 
     // symbol:
     // ??0HangingActorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ActorType@@@Z
-    MCAPI HangingActorItem(std::string const& name, int id, enum ActorType type);
+    MCAPI HangingActorItem(std::string const& name, int id, ::ActorType type);
 
     // NOLINTEND
 };

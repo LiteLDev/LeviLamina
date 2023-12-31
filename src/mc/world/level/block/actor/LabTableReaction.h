@@ -36,7 +36,7 @@ public:
     // symbol:
     // ?createReaction@LabTableReaction@@SA?AV?$unique_ptr@VLabTableReaction@@U?$default_delete@VLabTableReaction@@@std@@@std@@W4LabTableReactionType@@AEBVBlockPos@@_N@Z
     MCAPI static std::unique_ptr<class LabTableReaction>
-    createReaction(enum LabTableReactionType type, class BlockPos const& pos, bool isClientSide);
+    createReaction(::LabTableReactionType type, class BlockPos const& pos, bool isClientSide);
 
     // NOLINTEND
 };

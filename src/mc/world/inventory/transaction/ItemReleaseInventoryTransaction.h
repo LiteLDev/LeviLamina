@@ -38,7 +38,7 @@ public:
 
     // vIndex: 5, symbol:
     // ?onTransactionError@ItemReleaseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
-    virtual void onTransactionError(class Player& player, enum InventoryTransactionError error) const;
+    virtual void onTransactionError(class Player& player, ::InventoryTransactionError error) const;
 
     // NOLINTEND
 };

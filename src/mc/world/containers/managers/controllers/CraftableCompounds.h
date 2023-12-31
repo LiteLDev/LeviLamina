@@ -23,8 +23,8 @@ public:
     virtual void _registerCompound(
         std::vector<class ItemStack> const& input,
         class ItemStack const&              result,
-        enum LabTableReactionType           reaction,
-        enum CompoundContainerType          containerOverride
+        ::LabTableReactionType              reaction,
+        ::CompoundContainerType             containerOverride
     );
 
     // symbol: ??0CraftableCompounds@@QEAA@XZ
@@ -58,17 +58,17 @@ public:
     MCAPI void _registerCompound(
         std::vector<struct ChemistryIngredient> const& input,
         class ItemStack const&                         result,
-        enum LabTableReactionType                      reaction,
-        enum CompoundContainerType                     containerOverride
+        ::LabTableReactionType                         reaction,
+        ::CompoundContainerType                        containerOverride
     );
 
     // symbol:
     // ?_registerCompound@CraftableCompounds@@IEAAXAEBV?$vector@UChemistryIngredient@@V?$allocator@UChemistryIngredient@@@std@@@std@@W4CompoundType@@W4LabTableReactionType@@W4CompoundContainerType@@H@Z
     MCAPI void _registerCompound(
         std::vector<struct ChemistryIngredient> const& input,
-        enum CompoundType                              result,
-        enum LabTableReactionType                      reaction,
-        enum CompoundContainerType                     containerOverride,
+        ::CompoundType                                 result,
+        ::LabTableReactionType                         reaction,
+        ::CompoundContainerType                        containerOverride,
         int                                            stackCount
     );
 

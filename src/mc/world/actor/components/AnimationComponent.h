@@ -17,7 +17,7 @@ public:
     // NOLINTBEGIN
     // symbol: ??0AnimationComponent@@QEAA@W4AnimationComponentGroupType@@AEBVAnimationComponentID@@@Z
     MCAPI AnimationComponent(
-        enum AnimationComponentGroupType  animationComponentGroup,
+        ::AnimationComponentGroupType     animationComponentGroup,
         class AnimationComponentID const& ownerUUID
     );
 
@@ -40,7 +40,7 @@ public:
     // symbol:
     // ?getBoneOrientations@AnimationComponent@@QEAAPEAV?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@W4SkeletalHierarchyIndex@@_N@Z
     MCAPI std::vector<class BoneOrientation>*
-          getBoneOrientations(enum SkeletalHierarchyIndex skeletalHierarchyIndex, bool missingIsOkay);
+          getBoneOrientations(::SkeletalHierarchyIndex skeletalHierarchyIndex, bool missingIsOkay);
 
     // symbol:
     // ?getCurrentAnimationControllerStatePlayer@AnimationComponent@@QEBA?BV?$shared_ptr@VActorAnimationControllerStatePlayer@@@std@@XZ

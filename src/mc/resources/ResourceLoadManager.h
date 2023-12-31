@@ -24,7 +24,7 @@ public:
     virtual ~ResourceLoadManager() = default;
 
     // symbol: ?cancel@ResourceLoadManager@@QEAAXW4ResourceLoadType@@@Z
-    MCAPI void cancel(enum ResourceLoadType resourceLoadType);
+    MCAPI void cancel(::ResourceLoadType resourceLoadType);
 
     // NOLINTEND
 };

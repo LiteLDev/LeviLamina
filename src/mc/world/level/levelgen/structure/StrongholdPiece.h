@@ -64,13 +64,13 @@ public:
     // symbol:
     // ?generateSmallDoor@StrongholdPiece@@QEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@W4SmallDoorType@1@HHH@Z
     MCAPI void generateSmallDoor(
-        class BlockSource&                  level,
-        class Random&                       random,
-        class BoundingBox const&            chunkBB,
-        enum StrongholdPiece::SmallDoorType doorType,
-        int                                 footX,
-        int                                 footY,
-        int                                 footZ
+        class BlockSource&               level,
+        class Random&                    random,
+        class BoundingBox const&         chunkBB,
+        ::StrongholdPiece::SmallDoorType doorType,
+        int                              footX,
+        int                              footY,
+        int                              footZ
     );
 
     // symbol:

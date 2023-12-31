@@ -180,7 +180,7 @@ public:
     MCAPI bool _takePowderSnow(class ItemStack&, class Actor&, class BlockPos const&) const;
 
     // symbol: ?_tryGetBlock@BucketItem@@AEBAPEBVBlockLegacy@@W4BucketFillType@@@Z
-    MCAPI class BlockLegacy const* _tryGetBlock(enum BucketFillType contents) const;
+    MCAPI class BlockLegacy const* _tryGetBlock(::BucketFillType contents) const;
 
     // NOLINTEND
 

@@ -66,7 +66,7 @@ public:
     virtual void load(class ListTag const& inventoryList, class SemVersion const& version, class Level& level);
 
     // symbol: ??0FillingContainer@@QEAA@PEAVPlayer@@HW4ContainerType@@@Z
-    MCAPI FillingContainer(class Player* player, int numTotalSlots, enum ContainerType containerType);
+    MCAPI FillingContainer(class Player* player, int numTotalSlots, ::ContainerType containerType);
 
     // symbol: ?getHotbarSize@FillingContainer@@QEBAHXZ
     MCAPI int getHotbarSize() const;

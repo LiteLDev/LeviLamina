@@ -113,10 +113,10 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?getStatusFlag@Actor@@UEBA_NW4ActorFlags@@@Z
-    virtual bool getStatusFlag(enum ActorFlags flag) const;
+    virtual bool getStatusFlag(::ActorFlags flag) const;
 
     // vIndex: 1, symbol: ?setStatusFlag@Actor@@UEAAXW4ActorFlags@@_N@Z
-    virtual void setStatusFlag(enum ActorFlags flag, bool value);
+    virtual void setStatusFlag(::ActorFlags flag, bool value);
 
     // vIndex: 2, symbol: ?hasComponent@Actor@@UEBA_NAEBVHashedString@@@Z
     virtual bool hasComponent(class HashedString const&) const;
@@ -125,16 +125,16 @@ public:
     virtual void outOfWorld();
 
     // vIndex: 4, symbol: ?reloadHardcoded@Actor@@MEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 5, symbol: ?reloadHardcodedClient@Actor@@MEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcodedClient(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 6, symbol: ?initializeComponents@Actor@@MEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 7, symbol: ?reloadComponents@Actor@@MEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadComponents(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 8, symbol: ?_serverInitItemStackIds@Actor@@MEAAXXZ
     virtual void _serverInitItemStackIds();
@@ -366,7 +366,7 @@ public:
     virtual void feed(int itemId);
 
     // vIndex: 83, symbol: ?handleEntityEvent@Actor@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(enum ActorEvent eventId, int data);
+    virtual void handleEntityEvent(::ActorEvent eventId, int data);
 
     // vIndex: 84, symbol: ?getPickRadius@Actor@@UEAAMXZ
     virtual float getPickRadius();
@@ -378,7 +378,7 @@ public:
     virtual void despawn();
 
     // vIndex: 87, symbol: ?setArmor@Actor@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
-    virtual void setArmor(enum ArmorSlot slot, class ItemStack const& item);
+    virtual void setArmor(::ArmorSlot slot, class ItemStack const& item);
 
     // vIndex: 88, symbol: ?getArmorMaterialTypeInSlot@Actor@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z
     virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::ArmorSlot) const;
@@ -517,7 +517,7 @@ public:
     virtual void swing();
 
     // vIndex: 133, symbol: ?useItem@Actor@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z
-    virtual void useItem(class ItemStackBase& itemStack, enum ItemUseMethod itemUseMethod, bool consumeItem);
+    virtual void useItem(class ItemStackBase& itemStack, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
     // vIndex: 134, symbol:
     // ?getDebugText@Actor@@UEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
@@ -659,7 +659,7 @@ public:
     MCAPI void _sendDirtyActorData();
 
     // symbol: ?_setActorTypeId@Actor@@QEAAXW4ActorType@@@Z
-    MCAPI void _setActorTypeId(enum ActorType type);
+    MCAPI void _setActorTypeId(::ActorType type);
 
     // symbol: ?_setLevelPtr@Actor@@QEAAXPEAVILevel@@@Z
     MCAPI void _setLevelPtr(class ILevel* level);
@@ -789,7 +789,7 @@ public:
     // symbol:
     // ?fetchNearbyActorsSorted@Actor@@QEAA?AV?$vector@UDistanceSortedActor@@V?$allocator@UDistanceSortedActor@@@std@@@std@@AEBVVec3@@W4ActorType@@@Z
     MCAPI std::vector<struct DistanceSortedActor>
-          fetchNearbyActorsSorted(class Vec3 const& distance, enum ActorType actorTypeId);
+          fetchNearbyActorsSorted(class Vec3 const& distance, ::ActorType actorTypeId);
 
     // symbol: ?forEachLeashedActor@Actor@@QEAAXV?$function@$$A6AXV?$not_null@PEAVActor@@@gsl@@@Z@std@@@Z
     MCAPI void forEachLeashedActor(std::function<void(gsl::not_null<class Actor*>)>);
@@ -811,7 +811,7 @@ public:
     MCAPI std::vector<class MobEffectInstance> const& getAllEffects() const;
 
     // symbol: ?getArmor@Actor@@QEBAAEBVItemStack@@W4ArmorSlot@@@Z
-    MCAPI class ItemStack const& getArmor(enum ArmorSlot slot) const;
+    MCAPI class ItemStack const& getArmor(::ArmorSlot slot) const;
 
     // symbol: ?getArmorContainer@Actor@@QEAAAEAVSimpleContainer@@XZ
     MCAPI class SimpleContainer& getArmorContainer();
@@ -1200,7 +1200,7 @@ public:
     MCAPI bool hasBeenHurtByMobInLastTicks(int) const;
 
     // symbol: ?hasCategory@Actor@@QEBA_NW4ActorCategory@@@Z
-    MCAPI bool hasCategory(enum ActorCategory categories) const;
+    MCAPI bool hasCategory(::ActorCategory categories) const;
 
     // symbol: ?hasDefinitionGroup@Actor@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI bool hasDefinitionGroup(std::string const& name) const;
@@ -1251,7 +1251,7 @@ public:
     MCAPI bool hasTotemEquipped() const;
 
     // symbol: ?hasType@Actor@@QEBA_NW4ActorType@@@Z
-    MCAPI bool hasType(enum ActorType types) const;
+    MCAPI bool hasType(::ActorType types) const;
 
     // symbol: ?hasUniqueID@Actor@@QEBA_NXZ
     MCAPI bool hasUniqueID() const;
@@ -1497,7 +1497,7 @@ public:
     MCAPI bool isType(::ActorType) const;
 
     // symbol: ?isUnderLiquid@Actor@@QEBA_NW4MaterialType@@@Z
-    MCAPI bool isUnderLiquid(enum MaterialType type) const;
+    MCAPI bool isUnderLiquid(::MaterialType type) const;
 
     // symbol: ?isUseNewTradeScreen@Actor@@QEBA_NXZ
     MCAPI bool isUseNewTradeScreen() const;
@@ -1571,22 +1571,22 @@ public:
     MCAPI void playMovementSound();
 
     // symbol: ?playSound@Actor@@QEAAXW4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@AEBVBlock@@@Z
-    MCAPI void playSound(enum Puv::Legacy::LevelSoundEvent type, class Vec3 const& pos, class Block const& block);
+    MCAPI void playSound(::Puv::Legacy::LevelSoundEvent type, class Vec3 const& pos, class Block const& block);
 
     // symbol: ?playSound@Actor@@QEAAXW4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@H@Z
     MCAPI void playSound(::Puv::Legacy::LevelSoundEvent, class Vec3 const&, int);
 
     // symbol: ?playSynchronizedSound@Actor@@QEAAXW4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@AEBVBlock@@_N@Z
     MCAPI void playSynchronizedSound(
-        enum Puv::Legacy::LevelSoundEvent type,
-        class Vec3 const&                 pos,
-        class Block const&                block,
-        bool                              isGlobal
+        ::Puv::Legacy::LevelSoundEvent type,
+        class Vec3 const&              pos,
+        class Block const&             block,
+        bool                           isGlobal
     );
 
     // symbol: ?playSynchronizedSound@Actor@@QEAAXW4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@H_N@Z
     MCAPI void
-    playSynchronizedSound(enum Puv::Legacy::LevelSoundEvent type, class Vec3 const& pos, int data, bool isGlobal);
+    playSynchronizedSound(::Puv::Legacy::LevelSoundEvent type, class Vec3 const& pos, int data, bool isGlobal);
 
     // symbol: ?positionAllPassengers@Actor@@QEAAXXZ
     MCAPI void positionAllPassengers();
@@ -1708,10 +1708,10 @@ public:
     MCAPI void setClimbing(bool value);
 
     // symbol: ?setColor@Actor@@QEAAXW4PaletteColor@@@Z
-    MCAPI void setColor(enum PaletteColor color);
+    MCAPI void setColor(::PaletteColor color);
 
     // symbol: ?setColor2@Actor@@QEAAXW4PaletteColor@@@Z
-    MCAPI void setColor2(enum PaletteColor color);
+    MCAPI void setColor2(::PaletteColor color);
 
     // symbol: ?setControllingSeat@Actor@@QEAAXH@Z
     MCAPI void setControllingSeat(int index);

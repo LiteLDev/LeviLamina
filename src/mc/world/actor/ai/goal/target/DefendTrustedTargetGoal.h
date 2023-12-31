@@ -38,7 +38,7 @@ public:
         int                                      randomInterval,
         bool                                     mustSee,
         int                                      mustSeeForgetTicks,
-        enum Puv::Legacy::LevelSoundEvent        sound,
+        ::Puv::Legacy::LevelSoundEvent           sound,
         class ActorDefinitionTrigger const&      onStartEvent
     );
 

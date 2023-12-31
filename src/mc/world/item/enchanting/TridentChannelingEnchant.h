@@ -18,7 +18,7 @@ public:
     virtual ~TridentChannelingEnchant() = default;
 
     // vIndex: 1, symbol: ?isCompatibleWith@TridentChannelingEnchant@@UEBA_NW4Type@Enchant@@@Z
-    virtual bool isCompatibleWith(enum Enchant::Type type) const;
+    virtual bool isCompatibleWith(::Enchant::Type type) const;
 
     // vIndex: 2, symbol: ?getMinCost@TridentChannelingEnchant@@UEBAHH@Z
     virtual int getMinCost(int level) const;

@@ -29,7 +29,7 @@ public:
     MCAPI explicit ResourceLocation(class Core::Path const& path);
 
     // symbol: ??0ResourceLocation@@QEAA@AEBVPath@Core@@W4ResourceFileSystem@@@Z
-    MCAPI ResourceLocation(class Core::Path const& path, enum ResourceFileSystem fileSystem);
+    MCAPI ResourceLocation(class Core::Path const& path, ::ResourceFileSystem fileSystem);
 
     // symbol:
     // ?getFullPath@ResourceLocation@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ

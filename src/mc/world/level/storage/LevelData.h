@@ -41,10 +41,10 @@ public:
     MCAPI LevelData(
         class LevelSettings const& settings,
         std::string const&         levelName,
-        enum GeneratorType         generatorVersion,
+        ::GeneratorType            generatorVersion,
         class BlockPos const&      defaultSpawn,
         bool                       achievementsDisabled,
-        enum EducationEditionOffer eduOffer,
+        ::EducationEditionOffer    eduOffer,
         float                      rainLevel,
         float                      lightningLevel
     );
@@ -341,7 +341,7 @@ public:
     MCAPI void setEduSharedUriResource(struct EduSharedUriResource const&);
 
     // symbol: ?setEducationEditionOffer@LevelData@@QEAAXW4EducationEditionOffer@@@Z
-    MCAPI void setEducationEditionOffer(enum EducationEditionOffer offer);
+    MCAPI void setEducationEditionOffer(::EducationEditionOffer offer);
 
     // symbol: ?setEducationFeaturesEnabled@LevelData@@QEAAX_N@Z
     MCAPI void setEducationFeaturesEnabled(bool educationEnabled);
@@ -356,13 +356,13 @@ public:
     MCAPI void setForceGameType(bool value);
 
     // symbol: ?setGameDifficulty@LevelData@@QEAAXW4Difficulty@@@Z
-    MCAPI void setGameDifficulty(enum Difficulty difficulty);
+    MCAPI void setGameDifficulty(::Difficulty difficulty);
 
     // symbol: ?setGameType@LevelData@@QEAAXW4GameType@@@Z
-    MCAPI void setGameType(enum GameType type);
+    MCAPI void setGameType(::GameType type);
 
     // symbol: ?setGenerator@LevelData@@QEAAXW4GeneratorType@@@Z
-    MCAPI void setGenerator(enum GeneratorType version);
+    MCAPI void setGenerator(::GeneratorType version);
 
     // symbol: ?setHasLockedBehaviorPack@LevelData@@QEAAX_N@Z
     MCAPI void setHasLockedBehaviorPack(bool hasLockedPack);
@@ -398,10 +398,10 @@ public:
     MCAPI void setPersonaDisabled(bool);
 
     // symbol: ?setPlatformBroadcastIntent@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
-    MCAPI void setPlatformBroadcastIntent(enum Social::GamePublishSetting broadcastMode);
+    MCAPI void setPlatformBroadcastIntent(::Social::GamePublishSetting broadcastMode);
 
     // symbol: ?setPlatformBroadcastMode@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
-    MCAPI void setPlatformBroadcastMode(enum Social::GamePublishSetting broadcastMode);
+    MCAPI void setPlatformBroadcastMode(::Social::GamePublishSetting broadcastMode);
 
     // symbol: ?setPremiumTemplateContentIdentity@LevelData@@QEAAXAEBVContentIdentity@@@Z
     MCAPI void setPremiumTemplateContentIdentity(class ContentIdentity const& templateContentIdentity);
@@ -422,7 +422,7 @@ public:
     MCAPI void setSpawnPos(class BlockPos const& spawn);
 
     // symbol: ?setStorageVersion@LevelData@@QEAAXW4StorageVersion@@@Z
-    MCAPI void setStorageVersion(enum StorageVersion version);
+    MCAPI void setStorageVersion(::StorageVersion version);
 
     // symbol: ?setTagData@LevelData@@QEBAXAEAVCompoundTag@@@Z
     MCAPI void setTagData(class CompoundTag& tag) const;
@@ -446,10 +446,10 @@ public:
     MCAPI void setWorldVersion(::WorldVersion);
 
     // symbol: ?setXBLBroadcastIntent@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
-    MCAPI void setXBLBroadcastIntent(enum Social::GamePublishSetting broadcastMode);
+    MCAPI void setXBLBroadcastIntent(::Social::GamePublishSetting broadcastMode);
 
     // symbol: ?setXBLBroadcastMode@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
-    MCAPI void setXBLBroadcastMode(enum Social::GamePublishSetting broadcastMode);
+    MCAPI void setXBLBroadcastMode(::Social::GamePublishSetting broadcastMode);
 
     // symbol: ?touchLastLoadedWithVersion@LevelData@@QEAAXXZ
     MCAPI void touchLastLoadedWithVersion();
@@ -458,7 +458,7 @@ public:
     MCAPI void updateLastTimePlayed() const;
 
     // symbol: ?v1_read@LevelData@@QEAAXAEAVBitStream@RakNet@@W4StorageVersion@@@Z
-    MCAPI void v1_read(class RakNet::BitStream& bitStream, enum StorageVersion storageVersion);
+    MCAPI void v1_read(class RakNet::BitStream& bitStream, ::StorageVersion storageVersion);
 
     // symbol: ??1LevelData@@QEAA@XZ
     MCAPI ~LevelData();

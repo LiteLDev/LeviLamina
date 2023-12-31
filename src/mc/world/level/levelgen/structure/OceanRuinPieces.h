@@ -52,10 +52,10 @@ public:
             Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
             std::string                                         templateName,
             class BlockPos const&                               origin,
-            enum Rotation                                       rotation,
+            ::Rotation                                          rotation,
             float                                               integrity,
             bool                                                isLarge,
-            enum OceanTempCategory                              type
+            ::OceanTempCategory                                 type
         );
 
         // NOLINTEND
@@ -74,7 +74,7 @@ public:
     MCAPI static void addPieces(
         Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
         class BlockPos const&                               position,
-        enum Rotation const&                                rotation,
+        ::Rotation const&                                   rotation,
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
         class Random&                                       random,
         struct OceanRuinConfiguration const&                configuration
@@ -89,7 +89,7 @@ public:
     MCAPI static void _addClusterRuins(
         Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
         class Random&                                       random,
-        enum Rotation const&                                rotation,
+        ::Rotation const&                                   rotation,
         class BlockPos const&                               parentPos,
         struct OceanRuinConfiguration const&                configuration,
         std::vector<std::unique_ptr<class StructurePiece>>& pieces
@@ -100,7 +100,7 @@ public:
     MCAPI static void _addPiece(
         Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
         class BlockPos const&                               position,
-        enum Rotation const&                                rotation,
+        ::Rotation const&                                   rotation,
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
         class Random&                                       random,
         struct OceanRuinConfiguration const&                configuration,

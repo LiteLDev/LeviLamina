@@ -69,7 +69,7 @@ public:
     MCAPI static uchar convertDirectionToFacingDirection(::Direction::Type);
 
     // symbol: ?convertWeirdoDirectionToFacingDirection@Facing@@SAEW4WeirdoDirection@@@Z
-    MCAPI static uchar convertWeirdoDirectionToFacingDirection(enum WeirdoDirection weirdoDirection);
+    MCAPI static uchar convertWeirdoDirectionToFacingDirection(::WeirdoDirection weirdoDirection);
 
     // symbol: ?convertYRotationToFacingDirection@Facing@@SAEM@Z
     MCAPI static uchar convertYRotationToFacingDirection(float yRotation);
@@ -141,7 +141,7 @@ public:
     MCAPI static std::array<uchar, 6> makeDirectionArray(uchar, uchar, uchar);
 
     // symbol: ?rotateFace@Facing@@SAEEW4Rotation@1@@Z
-    MCAPI static uchar rotateFace(uchar face, enum Facing::Rotation rot);
+    MCAPI static uchar rotateFace(uchar face, ::Facing::Rotation rot);
 
     // symbol: ?rotateFaceAroundGivenFace@Facing@@SAEEEW4Rotation@1@@Z
     MCAPI static uchar rotateFaceAroundGivenFace(uchar, uchar, ::Facing::Rotation);

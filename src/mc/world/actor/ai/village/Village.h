@@ -71,7 +71,7 @@ public:
     MCAPI Village(class Dimension& dimension, class mce::UUID id, class BlockPos const& origin);
 
     // symbol: ?addActorToVillage@Village@@QEAAXW4DwellerRole@@AEBUActorUniqueID@@@Z
-    MCAPI void addActorToVillage(enum DwellerRole role, struct ActorUniqueID const& actor);
+    MCAPI void addActorToVillage(::DwellerRole role, struct ActorUniqueID const& actor);
 
     // symbol: ?addAggressor@Village@@QEAAXAEBVMob@@@Z
     MCAPI void addAggressor(class Mob const& mob);
@@ -89,7 +89,7 @@ public:
     MCAPI void debugDraw();
 
     // symbol: ?fetchOwnedPOI@Village@@QEAA?AV?$weak_ptr@VPOIInstance@@@std@@AEBUActorUniqueID@@W4POIType@@@Z
-    MCAPI std::weak_ptr<class POIInstance> fetchOwnedPOI(struct ActorUniqueID const& id, enum POIType type);
+    MCAPI std::weak_ptr<class POIInstance> fetchOwnedPOI(struct ActorUniqueID const& id, ::POIType type);
 
     // symbol: ?fireSoundTheAlarm@Village@@QEAAXXZ
     MCAPI void fireSoundTheAlarm();
@@ -113,7 +113,7 @@ public:
     MCAPI class Player* getClosestBadStandingPlayer(class Actor&);
 
     // symbol: ?getClosestPOI@Village@@QEAA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@AEBVBlockPos@@@Z
-    MCAPI std::weak_ptr<class POIInstance> getClosestPOI(enum POIType type, class BlockPos const& position);
+    MCAPI std::weak_ptr<class POIInstance> getClosestPOI(::POIType type, class BlockPos const& position);
 
     // symbol: ?getRaid@Village@@QEBAPEBVRaid@@XZ
     MCAPI class Raid const* getRaid() const;
@@ -131,13 +131,13 @@ public:
     MCAPI class mce::UUID getUniqueID() const;
 
     // symbol: ?hasInvalidRole@Village@@QEAA_NAEBUActorUniqueID@@AEBW4DwellerRole@@@Z
-    MCAPI bool hasInvalidRole(struct ActorUniqueID const& actorId, enum DwellerRole const& role);
+    MCAPI bool hasInvalidRole(struct ActorUniqueID const& actorId, ::DwellerRole const& role);
 
     // symbol: ?hasRaid@Village@@QEBA_NXZ
     MCAPI bool hasRaid() const;
 
     // symbol: ?hasSpecificDweller@Village@@QEBA_NW4DwellerRole@@AEBUActorUniqueID@@@Z
-    MCAPI bool hasSpecificDweller(enum DwellerRole role, struct ActorUniqueID const& id) const;
+    MCAPI bool hasSpecificDweller(::DwellerRole role, struct ActorUniqueID const& id) const;
 
     // symbol:
     // ?loadDataByKey@Village@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z
@@ -150,7 +150,7 @@ public:
     // ?removeActorFromVillage@Village@@QEAA?AV?$_List_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBUActorUniqueID@@UDwellerData@Village@@@std@@@std@@@std@@@std@@W4DwellerRole@@AEBUActorUniqueID@@@Z
     MCAPI std::_List_iterator<
         std::_List_val<std::_List_simple_types<std::pair<struct ActorUniqueID const, struct Village::DwellerData>>>>
-    removeActorFromVillage(enum DwellerRole role, struct ActorUniqueID const& actor);
+    removeActorFromVillage(::DwellerRole role, struct ActorUniqueID const& actor);
 
     // symbol: ?removeAllInstancesofActorFromVillage@Village@@QEAAXAEBUActorUniqueID@@@Z
     MCAPI void removeAllInstancesofActorFromVillage(struct ActorUniqueID const& actor);
@@ -159,7 +159,7 @@ public:
     MCAPI void removeVillageSavedData();
 
     // symbol: ?resetDwellerTimer@Village@@QEAAXW4DwellerRole@@AEBUActorUniqueID@@@Z
-    MCAPI void resetDwellerTimer(enum DwellerRole role, struct ActorUniqueID const& id);
+    MCAPI void resetDwellerTimer(::DwellerRole role, struct ActorUniqueID const& id);
 
     // symbol: ?resetNoBreedTimer@Village@@QEAAXXZ
     MCAPI void resetNoBreedTimer();

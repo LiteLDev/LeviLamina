@@ -58,7 +58,7 @@ public:
         class ItemStack const& item,
         int                    slot,
         int                    selectedSlot,
-        enum ContainerID       containerId
+        ::ContainerID          containerId
     );
 
     // symbol: ??0MobEquipmentPacket@@QEAA@VActorRuntimeID@@AEBVNetworkItemStackDescriptor@@HHW4ContainerID@@@Z
@@ -67,7 +67,7 @@ public:
         class NetworkItemStackDescriptor const& item,
         int                                     slot,
         int                                     selectedSlot,
-        enum ContainerID                        containerId
+        ::ContainerID                           containerId
     );
 
     // NOLINTEND

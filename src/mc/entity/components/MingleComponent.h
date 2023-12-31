@@ -27,7 +27,7 @@ public:
     MCAPI void resetState();
 
     // symbol: ?setMingleState@MingleComponent@@QEAAAEAV1@W4MingleState@1@@Z
-    MCAPI class MingleComponent& setMingleState(enum MingleComponent::MingleState val);
+    MCAPI class MingleComponent& setMingleState(::MingleComponent::MingleState val);
 
     // symbol: ?setPartnerId@MingleComponent@@QEAAAEAV1@UActorUniqueID@@@Z
     MCAPI class MingleComponent& setPartnerId(struct ActorUniqueID val);

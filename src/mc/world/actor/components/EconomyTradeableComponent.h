@@ -21,7 +21,7 @@ public:
     MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?createDataPacket@EconomyTradeableComponent@@QEAA?AVUpdateTradePacket@@W4ContainerID@@@Z
-    MCAPI class UpdateTradePacket createDataPacket(enum ContainerID containerID);
+    MCAPI class UpdateTradePacket createDataPacket(::ContainerID containerID);
 
     // symbol: ?fixVillagerTierToMatchTradeList@EconomyTradeableComponent@@QEAAXPEAVMerchantRecipeList@@@Z
     MCAPI void fixVillagerTierToMatchTradeList(class MerchantRecipeList* oldOffers);

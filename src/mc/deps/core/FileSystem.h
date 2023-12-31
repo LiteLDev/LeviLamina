@@ -104,16 +104,16 @@ public:
     // ?iterateOverDirectory@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@W4DirectoryIterationFlags@2@V?$function@$$A6A?AVResult@Core@@AEBUDirectoryIterationItem@2@@Z@std@@@Z
     MCAPI static class Core::Result iterateOverDirectory(
         class Core::Path const&                                                       dirName,
-        enum Core::DirectoryIterationFlags                                            flags,
+        ::Core::DirectoryIterationFlags                                               flags,
         std::function<class Core::Result(struct Core::DirectoryIterationItem const&)> callbackFunction
     );
 
     // symbol: ?openFile@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@AEAVFile@2@VFileOpenMode@2@W4FileBufferingMode@2@@Z
     MCAPI static class Core::Result openFile(
-        class Core::Path const&      filePath,
-        class Core::File&            fileOut,
-        class Core::FileOpenMode     openMode,
-        enum Core::FileBufferingMode bufferingMode
+        class Core::Path const&   filePath,
+        class Core::File&         fileOut,
+        class Core::FileOpenMode  openMode,
+        ::Core::FileBufferingMode bufferingMode
     );
 
     // symbol: ?readFileData@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@AEAV?$vector@EV?$allocator@E@std@@@std@@@Z

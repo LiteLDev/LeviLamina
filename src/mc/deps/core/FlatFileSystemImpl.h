@@ -47,7 +47,7 @@ public:
     MCAPI class Core::Result iterateOverDirectory(
         class Core::Path const&                                                       directoryPath,
         class Core::Path const&                                                       manifestPath,
-        enum Core::DirectoryIterationFlags                                            flags,
+        ::Core::DirectoryIterationFlags                                               flags,
         std::function<class Core::Result(struct Core::DirectoryIterationItem const&)> callbackFunction
     );
 
@@ -58,7 +58,7 @@ public:
         class Core::Path const&                filePath,
         class Core::Path const&                manifestPath,
         class Core::FileOpenMode               openMode,
-        enum Core::FileBufferingMode           fileBufferingMode
+        ::Core::FileBufferingMode              fileBufferingMode
     );
 
     // symbol:

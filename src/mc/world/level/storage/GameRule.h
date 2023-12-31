@@ -100,7 +100,7 @@ public:
     MCAPI bool requiresCheats() const;
 
     // symbol: ?resetType@GameRule@@QEAAXW4Type@1@@Z
-    MCAPI void resetType(enum GameRule::Type type);
+    MCAPI void resetType(::GameRule::Type type);
 
     // symbol: ?setBool@GameRule@@QEAA_N_NPEA_NPEAVValidationError@1@@Z
     MCAPI bool setBool(bool value, bool* pValidated, class GameRule::ValidationError* errorOutput);

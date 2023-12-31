@@ -22,13 +22,13 @@ public:
     virtual ::ContainerID getContainerId() const = 0;
 
     // vIndex: 2, symbol: ?setContainerId@ContainerManagerModel@@UEAAXW4ContainerID@@@Z
-    virtual void setContainerId(enum ContainerID id) = 0;
+    virtual void setContainerId(::ContainerID id) = 0;
 
     // vIndex: 3, symbol: ?getContainerType@ContainerManagerModel@@UEBA?AW4ContainerType@@XZ
     virtual ::ContainerType getContainerType() const = 0;
 
     // vIndex: 4, symbol: ?setContainerType@ContainerManagerModel@@UEAAXW4ContainerType@@@Z
-    virtual void setContainerType(enum ContainerType type) = 0;
+    virtual void setContainerType(::ContainerType type) = 0;
 
     // vIndex: 5, symbol: ?serverInitItemStackIds@ContainerManagerModel@@UEAAXXZ
     virtual void serverInitItemStackIds() = 0;

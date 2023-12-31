@@ -60,7 +60,7 @@ public:
     virtual class ResourcePack* getResourcePackInPath(class Core::Path const& path) const = 0;
 
     // vIndex: 8, symbol: ?isResourcePackLoaded@ResourcePackRepository@@UEAA_NAEBUPackIdVersion@@AEBW4PackOrigin@@@Z
-    virtual bool isResourcePackLoaded(struct PackIdVersion const& identity, enum PackOrigin const& location) = 0;
+    virtual bool isResourcePackLoaded(struct PackIdVersion const& identity, ::PackOrigin const& location) = 0;
 
     // vIndex: 9, symbol: ?getPackLoadingReport@ResourcePackRepository@@UEBAPEBVPackSourceReport@@XZ
     virtual class PackSourceReport const* getPackLoadingReport() const = 0;
@@ -174,11 +174,11 @@ public:
 
     // vIndex: 39, symbol:
     // ?getPacksByResourceLocation@ResourcePackRepository@@UEBA?AV?$vector@PEAVResourcePack@@V?$allocator@PEAVResourcePack@@@std@@@std@@W4PackOrigin@@@Z
-    virtual std::vector<class ResourcePack*> getPacksByResourceLocation(enum PackOrigin type) const = 0;
+    virtual std::vector<class ResourcePack*> getPacksByResourceLocation(::PackOrigin type) const = 0;
 
     // vIndex: 40, symbol:
     // ?getPacksByType@ResourcePackRepository@@UEBA?AV?$vector@PEAVResourcePack@@V?$allocator@PEAVResourcePack@@@std@@@std@@W4PackType@@@Z
-    virtual std::vector<class ResourcePack*> getPacksByType(enum PackType type) const = 0;
+    virtual std::vector<class ResourcePack*> getPacksByType(::PackType type) const = 0;
 
     // vIndex: 41, symbol:
     // ?getPacksByCategory@ResourcePackRepository@@UEBA?AV?$vector@PEAVResourcePack@@V?$allocator@PEAVResourcePack@@@std@@@std@@W4PackCategory@@@Z
@@ -188,11 +188,11 @@ public:
     virtual void addKnownPackFromImport(class PackManifest const& pack) = 0;
 
     // vIndex: 43, symbol: ?addInvalidPack@ResourcePackRepository@@UEAAXAEBVResourceLocation@@W4PackType@@@Z
-    virtual void addInvalidPack(class ResourceLocation const& packLocation, enum PackType type) = 0;
+    virtual void addInvalidPack(class ResourceLocation const& packLocation, ::PackType type) = 0;
 
     // vIndex: 44, symbol:
     // ?getInvalidPacks@ResourcePackRepository@@UEBAAEBV?$vector@VResourceLocation@@V?$allocator@VResourceLocation@@@std@@@std@@W4PackType@@@Z
-    virtual std::vector<class ResourceLocation> const& getInvalidPacks(enum PackType type) const = 0;
+    virtual std::vector<class ResourceLocation> const& getInvalidPacks(::PackType type) const = 0;
 
     // vIndex: 45, symbol:
     // ?getInvalidPacks@ResourcePackRepository@@UEBA?AV?$vector@VResourceLocation@@V?$allocator@VResourceLocation@@@std@@@std@@AEBUInvalidPacksFilterGroup@@@Z

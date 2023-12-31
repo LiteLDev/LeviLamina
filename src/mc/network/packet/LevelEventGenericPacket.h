@@ -41,7 +41,7 @@ public:
     MCAPI LevelEventGenericPacket();
 
     // symbol: ??0LevelEventGenericPacket@@QEAA@W4LevelEvent@@AEBVCompoundTag@@@Z
-    MCAPI LevelEventGenericPacket(enum LevelEvent eventId, class CompoundTag const& data);
+    MCAPI LevelEventGenericPacket(::LevelEvent eventId, class CompoundTag const& data);
 
     // NOLINTEND
 };

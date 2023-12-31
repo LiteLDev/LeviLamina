@@ -162,10 +162,10 @@ public:
 
     // symbol:
     // ??0ColoredTorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ColoredTorchColor@@@Z
-    MCAPI ColoredTorchBlock(std::string const& nameId, int id, enum ColoredTorchColor baseColor);
+    MCAPI ColoredTorchBlock(std::string const& nameId, int id, ::ColoredTorchColor baseColor);
 
     // symbol: ?getItemForColor@ColoredTorchBlock@@SA?AVItemInstance@@W4ColoredTorchColor@@@Z
-    MCAPI static class ItemInstance getItemForColor(enum ColoredTorchColor color);
+    MCAPI static class ItemInstance getItemForColor(::ColoredTorchColor color);
 
     // NOLINTEND
 };

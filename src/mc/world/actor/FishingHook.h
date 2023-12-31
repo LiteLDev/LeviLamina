@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@FishingHook@@MEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1FishingHook@@UEAA@XZ
     virtual ~FishingHook() = default;
@@ -70,7 +70,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 83, symbol: ?handleEntityEvent@FishingHook@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(enum ActorEvent eventId, int data);
+    virtual void handleEntityEvent(::ActorEvent eventId, int data);
 
     // vIndex: 97, symbol: ?save@FishingHook@@UEBA_NAEAVCompoundTag@@@Z
     virtual bool save(class CompoundTag& entityTag) const;

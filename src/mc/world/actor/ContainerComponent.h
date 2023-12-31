@@ -101,12 +101,12 @@ public:
 
     // symbol: ?rebuildContainer@ContainerComponent@@QEAAXAEAVActor@@W4ContainerType@@H_NH2@Z
     MCAPI void rebuildContainer(
-        class Actor&       owner,
-        enum ContainerType type,
-        int                size,
-        bool               canBesiphonedFrom,
-        int                slotsPerStrength,
-        bool               isPrivate
+        class Actor&    owner,
+        ::ContainerType type,
+        int             size,
+        bool            canBesiphonedFrom,
+        int             slotsPerStrength,
+        bool            isPrivate
     );
 
     // symbol: ?removeItem@ContainerComponent@@QEAAXHH@Z

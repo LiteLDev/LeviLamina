@@ -33,7 +33,7 @@ public:
     MCAPI LegacyChunkStorage(
         std::unique_ptr<class ChunkSource> parent,
         class LevelStorage&                levelStorage,
-        enum StorageVersion                v,
+        ::StorageVersion                   v,
         class Biome&                       defaultBiome
     );
 

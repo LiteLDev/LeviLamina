@@ -49,12 +49,12 @@ public:
     // symbol:
     // ??0LevelSoundEventPacket@@QEAA@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N3@Z
     MCAPI LevelSoundEventPacket(
-        enum Puv::Legacy::LevelSoundEvent id,
-        class Vec3 const&                 pos,
-        int                               data,
-        std::string const&                entityType,
-        bool                              isBabyMob,
-        bool                              isGlobal
+        ::Puv::Legacy::LevelSoundEvent id,
+        class Vec3 const&              pos,
+        int                            data,
+        std::string const&             entityType,
+        bool                           isBabyMob,
+        bool                           isGlobal
     );
 
     // NOLINTEND

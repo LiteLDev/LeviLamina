@@ -38,10 +38,10 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@Boat@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 5, symbol: ?reloadHardcodedClient@Boat@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcodedClient(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1Boat@@UEAA@XZ
     virtual ~Boat() = default;
@@ -126,7 +126,7 @@ public:
     MCAPI void postNormalTick();
 
     // symbol: ?setRowingTime@Boat@@QEAAXW4Side@@M@Z
-    MCAPI void setRowingTime(enum Side side, float time);
+    MCAPI void setRowingTime(::Side side, float time);
 
     // NOLINTEND
 
@@ -136,7 +136,7 @@ public:
     MCAPI void _control();
 
     // symbol: ?_paddleControl@Boat@@AEAAXW4Side@@AEAVVec3@@1@Z
-    MCAPI void _paddleControl(enum Side side, class Vec3& force, class Vec3& torque);
+    MCAPI void _paddleControl(::Side side, class Vec3& force, class Vec3& torque);
 
     // NOLINTEND
 };

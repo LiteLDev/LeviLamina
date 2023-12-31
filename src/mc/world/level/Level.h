@@ -131,7 +131,7 @@ public:
 
     // symbol: ?addParticle@Level@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
     MCVAPI class Particle* addParticle(
-        enum ParticleType        id,
+        ::ParticleType           id,
         class Vec3 const&        pos,
         class Vec3 const&        dir,
         int                      data,
@@ -197,7 +197,7 @@ public:
     // ?broadcastSoundEvent@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
     MCVAPI void broadcastSoundEvent(
         class BlockSource&                      region,
-        enum Puv::Legacy::LevelSoundEvent       type,
+        ::Puv::Legacy::LevelSoundEvent          type,
         class Vec3 const&                       pos,
         int                                     data,
         struct ActorDefinitionIdentifier const& entityType,
@@ -209,7 +209,7 @@ public:
     // ?broadcastSoundEvent@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@AEBVBlock@@AEBUActorDefinitionIdentifier@@_N5@Z
     MCVAPI void broadcastSoundEvent(
         class BlockSource&                      region,
-        enum Puv::Legacy::LevelSoundEvent       type,
+        ::Puv::Legacy::LevelSoundEvent          type,
         class Vec3 const&                       pos,
         class Block const&                      block,
         struct ActorDefinitionIdentifier const& entityType,
@@ -898,10 +898,10 @@ public:
     MCVAPI ::Social::GamePublishSetting getXBLBroadcastMode() const;
 
     // symbol: ?handleLevelEvent@Level@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
-    MCVAPI void handleLevelEvent(enum LevelEvent type, class CompoundTag const& data);
+    MCVAPI void handleLevelEvent(::LevelEvent type, class CompoundTag const& data);
 
     // symbol: ?handleLevelEvent@Level@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
-    MCVAPI void handleLevelEvent(enum LevelEvent type, class Vec3 const& pos, int data);
+    MCVAPI void handleLevelEvent(::LevelEvent type, class Vec3 const& pos, int data);
 
     // symbol: ?handleStopAllSounds@Level@@UEAAXXZ
     MCVAPI void handleStopAllSounds();
@@ -1017,7 +1017,7 @@ public:
 
     // symbol: ?playSound@Level@@UEAAXW4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
     MCVAPI void playSound(
-        enum Puv::Legacy::LevelSoundEvent       type,
+        ::Puv::Legacy::LevelSoundEvent          type,
         class Vec3 const&                       pos,
         int                                     data,
         struct ActorDefinitionIdentifier const& entityType,
@@ -1041,7 +1041,7 @@ public:
     // ?playSound@Level@@UEAAXAEBVIConstBlockSource@@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
     MCVAPI void playSound(
         class IConstBlockSource const&          region,
-        enum Puv::Legacy::LevelSoundEvent       type,
+        ::Puv::Legacy::LevelSoundEvent          type,
         class Vec3 const&                       pos,
         int                                     data,
         struct ActorDefinitionIdentifier const& entityType,
@@ -1104,8 +1104,8 @@ public:
     MCVAPI void runCommand(
         class HashedString const& commandStr,
         class CommandOrigin&      origin,
-        enum CommandOriginSystem  originSystem,
-        enum CurrentCmdVersion    commandVersion
+        ::CommandOriginSystem     originSystem,
+        ::CurrentCmdVersion       commandVersion
     );
 
     // symbol: ?save@Level@@UEAAXXZ
@@ -1121,7 +1121,7 @@ public:
     MCVAPI void sendAllPlayerAbilities(class Player const& playerReference);
 
     // symbol: ?sendServerLegacyParticle@Level@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
-    MCVAPI void sendServerLegacyParticle(enum ParticleType id, class Vec3 const& pos, class Vec3 const& dir, int data);
+    MCVAPI void sendServerLegacyParticle(::ParticleType id, class Vec3 const& pos, class Vec3 const& dir, int data);
 
     // symbol:
     // ?setActorEventCoordinator@Level@@UEAAX$$QEAV?$unique_ptr@VActorEventCoordinator@@U?$default_delete@VActorEventCoordinator@@@std@@@std@@@Z
@@ -1139,13 +1139,13 @@ public:
     MCVAPI void setCommandsEnabled(bool commandsEnabled);
 
     // symbol: ?setDefaultGameType@Level@@UEAAXW4GameType@@@Z
-    MCVAPI void setDefaultGameType(enum GameType gameType);
+    MCVAPI void setDefaultGameType(::GameType gameType);
 
     // symbol: ?setDefaultSpawn@Level@@UEAAXAEBVBlockPos@@@Z
     MCVAPI void setDefaultSpawn(class BlockPos const& spawnPos);
 
     // symbol: ?setDifficulty@Level@@UEAAXW4Difficulty@@@Z
-    MCVAPI void setDifficulty(enum Difficulty difficulty);
+    MCVAPI void setDifficulty(::Difficulty difficulty);
 
     // symbol: ?setDisablePlayerInteractions@Level@@UEAAX_N@Z
     MCVAPI void setDisablePlayerInteractions(bool);
@@ -1197,10 +1197,10 @@ public:
     MCVAPI void setPacketSender(class PacketSender* val);
 
     // symbol: ?setPlatformBroadcastIntent@Level@@UEAAXW4GamePublishSetting@Social@@@Z
-    MCVAPI void setPlatformBroadcastIntent(enum Social::GamePublishSetting broadcastMode);
+    MCVAPI void setPlatformBroadcastIntent(::Social::GamePublishSetting broadcastMode);
 
     // symbol: ?setPlatformBroadcastMode@Level@@UEAAXW4GamePublishSetting@Social@@@Z
-    MCVAPI void setPlatformBroadcastMode(enum Social::GamePublishSetting broadcastMode);
+    MCVAPI void setPlatformBroadcastMode(::Social::GamePublishSetting broadcastMode);
 
     // symbol: ?setPlayerAbilities@Level@@UEAAXAEBUActorUniqueID@@AEBVLayeredAbilities@@@Z
     MCVAPI void setPlayerAbilities(struct ActorUniqueID const&, class LayeredAbilities const&);
@@ -1241,10 +1241,10 @@ public:
     MCVAPI void setWorldTemplateOptionsUnlocked();
 
     // symbol: ?setXBLBroadcastIntent@Level@@UEAAXW4GamePublishSetting@Social@@@Z
-    MCVAPI void setXBLBroadcastIntent(enum Social::GamePublishSetting broadcastMode);
+    MCVAPI void setXBLBroadcastIntent(::Social::GamePublishSetting broadcastMode);
 
     // symbol: ?setXBLBroadcastMode@Level@@UEAAXW4GamePublishSetting@Social@@@Z
-    MCVAPI void setXBLBroadcastMode(enum Social::GamePublishSetting broadcastMode);
+    MCVAPI void setXBLBroadcastMode(::Social::GamePublishSetting broadcastMode);
 
     // symbol:
     // ?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z
@@ -1293,7 +1293,7 @@ public:
     MCVAPI void updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
 
     // symbol: ?upgradeStorageVersion@Level@@UEAAXW4StorageVersion@@@Z
-    MCVAPI void upgradeStorageVersion(enum StorageVersion v);
+    MCVAPI void upgradeStorageVersion(::StorageVersion v);
 
     // symbol: ?use3DBiomeMaps@Level@@UEBA_NXZ
     MCVAPI bool use3DBiomeMaps() const;

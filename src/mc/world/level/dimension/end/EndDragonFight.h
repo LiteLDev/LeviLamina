@@ -97,7 +97,7 @@ public:
     MCAPI void _setEndGatewayExitPositions();
 
     // symbol: ?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAnimation@@@Z
-    MCAPI void _setRespawnStage(enum RespawnAnimation stage);
+    MCAPI void _setRespawnStage(::RespawnAnimation stage);
 
     // symbol: ?_spawnExitPortal@EndDragonFight@@AEAAX_N@Z
     MCAPI void _spawnExitPortal(bool activated);
@@ -105,7 +105,7 @@ public:
     // symbol:
     // ?_spawnNewGatewayChunksTask@EndDragonFight@@AEAAXAEAV?$tuple@W4GatewayTask@EndDragonFight@@UGateWayGenerator@2@U32@@std@@@Z
     MCAPI void _spawnNewGatewayChunksTask(std::tuple<
-                                          enum EndDragonFight::GatewayTask,
+                                          ::EndDragonFight::GatewayTask,
                                           struct EndDragonFight::GateWayGenerator,
                                           struct EndDragonFight::GateWayGenerator>& task);
 
@@ -122,7 +122,7 @@ public:
     // symbol:
     // ?_verifyExitPositionsTask@EndDragonFight@@AEAAXAEAV?$tuple@W4GatewayTask@EndDragonFight@@UGateWayGenerator@2@U32@@std@@@Z
     MCAPI void _verifyExitPositionsTask(std::tuple<
-                                        enum EndDragonFight::GatewayTask,
+                                        ::EndDragonFight::GatewayTask,
                                         struct EndDragonFight::GateWayGenerator,
                                         struct EndDragonFight::GateWayGenerator>& task);
 

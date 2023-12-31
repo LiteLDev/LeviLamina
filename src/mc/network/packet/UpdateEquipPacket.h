@@ -49,8 +49,8 @@ public:
 
     // symbol: ??0UpdateEquipPacket@@QEAA@W4ContainerID@@W4ContainerType@@H$$QEAVCompoundTag@@AEBUActorUniqueID@@@Z
     MCAPI UpdateEquipPacket(
-        enum ContainerID            containerID,
-        enum ContainerType          type,
+        ::ContainerID               containerID,
+        ::ContainerType             type,
         int                         size,
         class CompoundTag&&         tag,
         struct ActorUniqueID const& entityID

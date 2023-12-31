@@ -16,10 +16,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addAnimationChannel@BoneAnimation@@QEAAAEAVBoneAnimationChannel@@W4BoneTransformType@@@Z
-    MCAPI class BoneAnimationChannel& addAnimationChannel(enum BoneTransformType boneTransformType);
+    MCAPI class BoneAnimationChannel& addAnimationChannel(::BoneTransformType boneTransformType);
 
     // symbol: ?setRotationRelativeMode@BoneAnimation@@QEAAXW4BoneAnimationRelativeMode@@@Z
-    MCAPI void setRotationRelativeMode(enum BoneAnimationRelativeMode rotationRelativeMode);
+    MCAPI void setRotationRelativeMode(::BoneAnimationRelativeMode rotationRelativeMode);
 
     // NOLINTEND
 };

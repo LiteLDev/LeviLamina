@@ -42,7 +42,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@Zombie@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: ??1Zombie@@UEAA@XZ
     virtual ~Zombie();
@@ -96,7 +96,7 @@ public:
     MCAPI Zombie(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
     // symbol: ?setZombieType@Zombie@@QEAAXW4ZombieType@1@@Z
-    MCAPI void setZombieType(enum Zombie::ZombieType type);
+    MCAPI void setZombieType(::Zombie::ZombieType type);
 
     // NOLINTEND
 

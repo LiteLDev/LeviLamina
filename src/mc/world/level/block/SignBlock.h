@@ -196,7 +196,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0SignBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NW4SignType@0@@Z
-    MCAPI SignBlock(std::string const& nameId, int id, bool onGround, enum SignBlock::SignType signType);
+    MCAPI SignBlock(std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
 
     // symbol: ?getSignTextColorFromDyeItem@SignBlock@@SA?AVColor@mce@@AEBVItem@@@Z
     MCAPI static class mce::Color getSignTextColorFromDyeItem(class Item const&);

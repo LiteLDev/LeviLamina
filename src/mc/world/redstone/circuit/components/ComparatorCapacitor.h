@@ -73,7 +73,7 @@ public:
     MCAPI void setAnalogStrength(int strength, uchar dir);
 
     // symbol: ?setMode@ComparatorCapacitor@@QEAAXW4Mode@1@@Z
-    MCAPI void setMode(enum ComparatorCapacitor::Mode mode);
+    MCAPI void setMode(::ComparatorCapacitor::Mode mode);
 
     // NOLINTEND
 };

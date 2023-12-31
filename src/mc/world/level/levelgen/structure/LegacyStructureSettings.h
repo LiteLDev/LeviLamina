@@ -22,8 +22,8 @@ public:
 
     // symbol: ??0LegacyStructureSettings@@QEAA@W4Mirror@@W4Rotation@@PEBVBlock@@AEBVBoundingBox@@@Z
     MCAPI LegacyStructureSettings(
-        enum Mirror              mirror,
-        enum Rotation            rotation,
+        ::Mirror                 mirror,
+        ::Rotation               rotation,
         class Block const*       ignoreBlock,
         class BoundingBox const& boundingBox
     );
@@ -67,16 +67,16 @@ public:
     MCAPI void setIntegrity(float integrity);
 
     // symbol: ?setMirror@LegacyStructureSettings@@QEAAXW4Mirror@@@Z
-    MCAPI void setMirror(enum Mirror mirror);
+    MCAPI void setMirror(::Mirror mirror);
 
     // symbol: ?setProjection@LegacyStructureSettings@@QEAAXW4Projection@@@Z
-    MCAPI void setProjection(enum Projection projection);
+    MCAPI void setProjection(::Projection projection);
 
     // symbol: ?setRefPos@LegacyStructureSettings@@QEAAXAEBVBlockPos@@@Z
     MCAPI void setRefPos(class BlockPos const&);
 
     // symbol: ?setRotation@LegacyStructureSettings@@QEAAXW4Rotation@@@Z
-    MCAPI void setRotation(enum Rotation rotation);
+    MCAPI void setRotation(::Rotation rotation);
 
     // symbol: ?setSeed@LegacyStructureSettings@@QEAAXI@Z
     MCAPI void setSeed(uint seed);

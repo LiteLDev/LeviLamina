@@ -113,7 +113,7 @@ public:
 
     // vIndex: 23, symbol: ?_deleteRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@W4FileType@2@@Z
     virtual class Core::Result
-    _deleteRecursively(class Core::Path const& directoryPath, enum Core::FileType deleteFileType);
+    _deleteRecursively(class Core::Path const& directoryPath, ::Core::FileType deleteFileType);
 
     // vIndex: 24, symbol: ?_renameDirectory@FileSystem_windows@Core@@MEAA?AVResult@2@AEBVPath@2@0@Z
     virtual class Core::Result _renameDirectory(class Core::Path const&, class Core::Path const&);
@@ -179,7 +179,7 @@ public:
     virtual class Core::Result _flatFileIterateOverDirectory(
         class Core::Path const&                                                       directoryPath,
         class Core::Path const&                                                       manifestPath,
-        enum Core::DirectoryIterationFlags                                            flags,
+        ::Core::DirectoryIterationFlags                                               flags,
         std::function<class Core::Result(struct Core::DirectoryIterationItem const&)> callbackFunction
     );
 

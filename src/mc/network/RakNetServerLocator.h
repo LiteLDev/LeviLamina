@@ -143,9 +143,9 @@ public:
     // vIndex: 13, symbol:
     // ?checkCanConnectToCustomServerAsync@RakNetServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AXW4ServerConnectivityTestResult@@@Z@3@@Z
     virtual void checkCanConnectToCustomServerAsync(
-        std::string                                            hostIpAddress,
-        int                                                    port,
-        std::function<void(enum ServerConnectivityTestResult)> callback
+        std::string                                         hostIpAddress,
+        int                                                 port,
+        std::function<void(::ServerConnectivityTestResult)> callback
     );
 
     // symbol:

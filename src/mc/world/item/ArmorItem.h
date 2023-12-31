@@ -179,7 +179,7 @@ public:
         int                slot,
         class Vec3 const&  pos,
         uchar              face,
-        enum ArmorSlot     armorSlot
+        ::ArmorSlot        armorSlot
     );
 
     // symbol: ?getSlotForItem@ArmorItem@@SA?AW4ArmorSlot@@AEBVItemStackBase@@@Z

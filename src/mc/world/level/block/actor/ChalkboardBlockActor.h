@@ -162,7 +162,7 @@ public:
     // symbol:
     // ?calculateAllBlocks@ChalkboardBlockActor@@SA?AV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVBlockPos@@W4ChalkboardSize@@H@Z
     MCAPI static std::vector<class BlockPos>
-    calculateAllBlocks(class BlockPos const& basePos, enum ChalkboardSize boardSize, int dir);
+    calculateAllBlocks(class BlockPos const& basePos, ::ChalkboardSize boardSize, int dir);
 
     // symbol:
     // ?canCreateChalkboard@ChalkboardBlockActor@@SA_NPEAVActor@@AEAVBlockSource@@AEBVBlockPos@@W4ChalkboardSize@@EHAEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVItemStack@@_N@Z

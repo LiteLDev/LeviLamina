@@ -65,7 +65,7 @@ public:
     virtual void onLightningHit();
 
     // vIndex: 83, symbol: ?handleEntityEvent@VillagerBase@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(enum ActorEvent event, int data);
+    virtual void handleEntityEvent(::ActorEvent event, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -120,7 +120,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_addParticlesAroundSelf@VillagerBase@@AEAAXW4ParticleType@@@Z
-    MCAPI void _addParticlesAroundSelf(enum ParticleType particleType);
+    MCAPI void _addParticlesAroundSelf(::ParticleType particleType);
 
     // NOLINTEND
 };

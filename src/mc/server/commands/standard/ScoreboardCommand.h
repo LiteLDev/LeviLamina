@@ -160,11 +160,11 @@ public:
     // symbol:
     // ?setDisplayObjective@ScoreboardCommand@@AEBAXAEAVScoreboard@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1W4ObjectiveSortOrder@@AEAVCommandOutput@@@Z
     MCAPI void setDisplayObjective(
-        class Scoreboard&       scoreboard,
-        std::string const&      displaySlotName,
-        std::string const&      objectiveName,
-        enum ObjectiveSortOrder order,
-        class CommandOutput&    output
+        class Scoreboard&    scoreboard,
+        std::string const&   displaySlotName,
+        std::string const&   objectiveName,
+        ::ObjectiveSortOrder order,
+        class CommandOutput& output
     ) const;
 
     // symbol:

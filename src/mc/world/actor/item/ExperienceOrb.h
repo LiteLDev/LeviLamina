@@ -41,7 +41,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@ExperienceOrb@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1ExperienceOrb@@UEAA@XZ
     virtual ~ExperienceOrb() = default;
@@ -114,21 +114,21 @@ public:
 
     // symbol: ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HW4DropType@1@PEAVPlayer@@@Z
     MCAPI static void spawnOrbs(
-        class BlockSource&           region,
-        class Vec3 const&            pos,
-        int                          xpValue,
-        enum ExperienceOrb::DropType dropType,
-        class Player*                owner
+        class BlockSource&        region,
+        class Vec3 const&         pos,
+        int                       xpValue,
+        ::ExperienceOrb::DropType dropType,
+        class Player*             owner
     );
 
     // symbol: ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HHW4DropType@1@PEAVPlayer@@@Z
     MCAPI static void spawnOrbs(
-        class BlockSource&           region,
-        class Vec3 const&            pos,
-        int                          randValueMin,
-        int                          randValueMax,
-        enum ExperienceOrb::DropType dropType,
-        class Player*                owner
+        class BlockSource&        region,
+        class Vec3 const&         pos,
+        int                       randValueMin,
+        int                       randValueMax,
+        ::ExperienceOrb::DropType dropType,
+        class Player*             owner
     );
 
     // NOLINTEND

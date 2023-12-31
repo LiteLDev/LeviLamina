@@ -93,7 +93,7 @@ public:
 
     // symbol:
     // ??0FertilizerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4FertilizerType@@@Z
-    MCAPI FertilizerItem(std::string const& name, int id, enum FertilizerType type);
+    MCAPI FertilizerItem(std::string const& name, int id, ::FertilizerType type);
 
     // symbol: ?getFertilizerType@FertilizerItem@@QEBA?AW4FertilizerType@@XZ
     MCAPI ::FertilizerType getFertilizerType() const;

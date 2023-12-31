@@ -39,7 +39,7 @@ public:
     MCAPI bool isOutOfDiskSpaceError() const;
 
     // symbol: ?notifyCriticalDiskError@StorageAreaState@Core@@QEAAXAEBW4LevelStorageState@2@@Z
-    MCAPI void notifyCriticalDiskError(enum Core::LevelStorageState const& errorCode);
+    MCAPI void notifyCriticalDiskError(::Core::LevelStorageState const& errorCode);
 
     // symbol: ?removeListener@StorageAreaState@Core@@QEAAXPEAVStorageAreaStateListener@2@@Z
     MCAPI void removeListener(class Core::StorageAreaStateListener* l);

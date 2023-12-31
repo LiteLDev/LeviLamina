@@ -33,8 +33,7 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0BeaconContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI
-    BeaconContainerManagerModel(enum ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+    MCAPI BeaconContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
     // symbol: ?PAYMENT_SLOT@BeaconContainerManagerModel@@2HB
     MCAPI static int const PAYMENT_SLOT;

@@ -85,10 +85,10 @@ public:
     // symbol:
     // ??0NpcRequestPacket@@AEAA@VActorRuntimeID@@W4RequestType@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@E@Z
     MCAPI NpcRequestPacket(
-        class ActorRuntimeID               id,
-        enum NpcRequestPacket::RequestType type,
-        std::string                        actions,
-        uchar                              actionIndex
+        class ActorRuntimeID            id,
+        ::NpcRequestPacket::RequestType type,
+        std::string                     actions,
+        uchar                           actionIndex
     );
 
     // NOLINTEND

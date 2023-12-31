@@ -40,7 +40,7 @@ public:
 
     // symbol:
     // ?isPermissionsSet@PermissionsFile@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PlayerPermissionLevel@@@Z
-    MCAPI bool isPermissionsSet(std::string const& xuid, enum PlayerPermissionLevel permission) const;
+    MCAPI bool isPermissionsSet(std::string const& xuid, ::PlayerPermissionLevel permission) const;
 
     // symbol:
     // ?persistPlayerPermissionsToDisk@PermissionsFile@@QEAAXAEBVUserEntityIdentifierComponent@@W4PlayerPermissionLevel@@@Z
@@ -48,7 +48,7 @@ public:
 
     // symbol:
     // ?persistPlayerPermissionsToDisk@PermissionsFile@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PlayerPermissionLevel@@@Z
-    MCAPI void persistPlayerPermissionsToDisk(std::string const& xuid, enum PlayerPermissionLevel permission);
+    MCAPI void persistPlayerPermissionsToDisk(std::string const& xuid, ::PlayerPermissionLevel permission);
 
     // symbol: ?reload@PermissionsFile@@QEAA?AW4FileReadResult@@XZ
     MCAPI ::FileReadResult reload();
@@ -64,7 +64,7 @@ public:
     MCAPI std::tuple<::FileReadResult, class Json::Value> readPermissionFile();
 
     // symbol: ?setDefaultPlayerPermission@PermissionsFile@@AEAAXAEAVPlayer@@W4CommandPermissionLevel@@@Z
-    MCAPI void setDefaultPlayerPermission(class Player& player, enum CommandPermissionLevel opCommandPermissionLevel);
+    MCAPI void setDefaultPlayerPermission(class Player& player, ::CommandPermissionLevel opCommandPermissionLevel);
 
     // NOLINTEND
 };

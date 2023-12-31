@@ -54,7 +54,7 @@ public:
     MCVAPI void tick(class BlockSource& region);
 
     // symbol: ?isSameType@ChemistryTableBlockActor@@QEBA_NW4ChemistryTableType@@@Z
-    MCAPI bool isSameType(enum ChemistryTableType type) const;
+    MCAPI bool isSameType(::ChemistryTableType type) const;
 
     // symbol: ?playerOpenLabTable@ChemistryTableBlockActor@@QEAAXAEAVPlayer@@@Z
     MCAPI void playerOpenLabTable(class Player& player);

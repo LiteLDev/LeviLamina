@@ -43,7 +43,7 @@ public:
     virtual class DisplayObjective const*
     setDisplayObjective(std::string const& displaySlotName,
         class Objective const&  objective,
-        enum ObjectiveSortOrder order
+        ::ObjectiveSortOrder   order
     );
 
     // vIndex: 2, symbol:

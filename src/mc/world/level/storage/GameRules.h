@@ -175,7 +175,7 @@ public:
     MCAPI std::unique_ptr<class GameRulesChangedPacket> _setRule(
         struct GameRuleId                ruleType,
         union GameRule::Value            value,
-        enum GameRule::Type              type,
+        ::GameRule::Type                 type,
         bool                             returnPacket,
         bool*                            pValueValidated,
         bool*                            pValueChanged,

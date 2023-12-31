@@ -37,11 +37,11 @@ public:
     // symbol:
     // ??0TemporalAttributeBuff@@QEAA@MHW4AttributeBuffType@@_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI TemporalAttributeBuff(
-        float                  amount,
-        int                    duration,
-        enum AttributeBuffType type,
-        bool                   serialize,
-        std::string const&     name
+        float               amount,
+        int                 duration,
+        ::AttributeBuffType type,
+        bool                serialize,
+        std::string const&  name
     );
 
     // symbol: ?getBaseAmount@TemporalAttributeBuff@@QEBAMXZ

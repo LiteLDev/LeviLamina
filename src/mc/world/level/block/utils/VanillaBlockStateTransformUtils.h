@@ -35,16 +35,16 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_mirror@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@W4Mirror@@@Z
-    MCAPI static ::CommonDirection _mirror(enum CommonDirection direction, enum Mirror mirror);
+    MCAPI static ::CommonDirection _mirror(::CommonDirection direction, ::Mirror mirror);
 
     // symbol: ?_mirrorFrontBack@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@@Z
-    MCAPI static ::CommonDirection _mirrorFrontBack(enum CommonDirection direction);
+    MCAPI static ::CommonDirection _mirrorFrontBack(::CommonDirection direction);
 
     // symbol: ?_mirrorLeftRight@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@@Z
-    MCAPI static ::CommonDirection _mirrorLeftRight(enum CommonDirection direction);
+    MCAPI static ::CommonDirection _mirrorLeftRight(::CommonDirection direction);
 
     // symbol: ?_rotate@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@W4Rotation@@@Z
-    MCAPI static ::CommonDirection _rotate(enum CommonDirection direction, enum Rotation rotation);
+    MCAPI static ::CommonDirection _rotate(::CommonDirection direction, ::Rotation rotation);
 
     // NOLINTEND
 };

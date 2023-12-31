@@ -20,7 +20,7 @@ public:
         class BlockPos const& pos,
         bool                  useBoundingBox,
         std::string           name,
-        enum POIType          type,
+        ::POIType             type,
         float                 radius,
         uint64                maxCapacity,
         uint64                weight,

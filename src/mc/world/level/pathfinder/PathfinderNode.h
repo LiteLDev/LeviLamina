@@ -17,7 +17,7 @@ public:
     MCAPI PathfinderNode(class PathfinderNode const& node);
 
     // symbol: ??0PathfinderNode@@QEAA@AEBVBlockPos@@W4NodeType@@@Z
-    MCAPI PathfinderNode(class BlockPos const& pos, enum NodeType type);
+    MCAPI PathfinderNode(class BlockPos const& pos, ::NodeType type);
 
     // symbol: ?distanceTo@PathfinderNode@@QEBAMPEAV1@@Z
     MCAPI float distanceTo(class PathfinderNode* to) const;

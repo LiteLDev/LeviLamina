@@ -48,8 +48,8 @@ public:
         class BlockPos const& bpos,
         class Mob const&      mob,
         class Path*           path,
-        enum Direction::Type& dirIn,
-        enum Direction::Type& dirOut
+        ::Direction::Type&    dirIn,
+        ::Direction::Type&    dirOut
     );
 
     // NOLINTEND

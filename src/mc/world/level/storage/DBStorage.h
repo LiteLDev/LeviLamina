@@ -112,7 +112,7 @@ public:
     // vIndex: 6, symbol:
     // ?createChunkStorage@DBStorage@@UEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
     virtual std::unique_ptr<class ChunkSource>
-    createChunkStorage(std::unique_ptr<class ChunkSource> generator, enum StorageVersion v);
+    createChunkStorage(std::unique_ptr<class ChunkSource> generator, ::StorageVersion v);
 
     // vIndex: 7, symbol: ?saveLevelData@DBStorage@@UEAAXAEBVLevelData@@@Z
     virtual void saveLevelData(class LevelData const& levelData);
@@ -184,7 +184,7 @@ public:
     virtual void freeCaches();
 
     // vIndex: 28, symbol: ?setCompactionCallback@DBStorage@@UEAAXV?$function@$$A6AXW4CompactionStatus@@@Z@std@@@Z
-    virtual void setCompactionCallback(std::function<void(enum CompactionStatus)> callback);
+    virtual void setCompactionCallback(std::function<void(::CompactionStatus)> callback);
 
     // vIndex: 29, symbol: ?setCriticalSyncSaveCallback@DBStorage@@UEAAXV?$function@$$A6AXXZ@std@@@Z
     virtual void setCriticalSyncSaveCallback(std::function<void(void)> callback);

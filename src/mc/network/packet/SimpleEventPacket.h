@@ -47,7 +47,7 @@ public:
     MCAPI SimpleEventPacket();
 
     // symbol: ??0SimpleEventPacket@@QEAA@AEBW4Subtype@0@@Z
-    MCAPI explicit SimpleEventPacket(enum SimpleEventPacket::Subtype const& st);
+    MCAPI explicit SimpleEventPacket(::SimpleEventPacket::Subtype const& st);
 
     // symbol: ?getSubtype@SimpleEventPacket@@QEBAAEBW4Subtype@1@XZ
     MCAPI ::SimpleEventPacket::Subtype const& getSubtype() const;

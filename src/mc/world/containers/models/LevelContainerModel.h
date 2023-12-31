@@ -65,22 +65,22 @@ public:
 
     // symbol: ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@UActorUniqueID@@W4ContainerCategory@@@Z
     MCAPI LevelContainerModel(
-        enum ContainerEnumName containerName,
-        int                    containerSize,
-        class Player&          player,
-        struct ActorUniqueID   entityId,
-        enum ContainerCategory category
+        ::ContainerEnumName  containerName,
+        int                  containerSize,
+        class Player&        player,
+        struct ActorUniqueID entityId,
+        ::ContainerCategory  category
     );
 
     // symbol:
     // ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@W4BlockActorType@@AEBVBlockPos@@W4ContainerCategory@@@Z
     MCAPI LevelContainerModel(
-        enum ContainerEnumName containerName,
-        int                    containerSize,
-        class Player&          player,
-        enum BlockActorType    type,
-        class BlockPos const&  blockPos,
-        enum ContainerCategory category
+        ::ContainerEnumName   containerName,
+        int                   containerSize,
+        class Player&         player,
+        ::BlockActorType      type,
+        class BlockPos const& blockPos,
+        ::ContainerCategory   category
     );
 
     // symbol: ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@AEBUActorUniqueID@@@Z

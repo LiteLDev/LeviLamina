@@ -76,7 +76,7 @@ public:
     virtual void __unk_vfn_24();
 
     // vIndex: 25, symbol: ?levelEvent@Weather@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
-    virtual void levelEvent(enum LevelEvent type, class Vec3 const& pos, int data);
+    virtual void levelEvent(::LevelEvent type, class Vec3 const& pos, int data);
 
     // symbol: ??0Weather@@QEAA@AEAVDimension@@AEAVIRandom@@@Z
     MCAPI Weather(class Dimension&, class IRandom&);

@@ -49,7 +49,7 @@ public:
     MCAPI int getTotalValue(bool bookModifier) const;
 
     // symbol: ?hasEnchant@ItemEnchants@@QEBAHW4Type@Enchant@@@Z
-    MCAPI int hasEnchant(enum Enchant::Type enchantType) const;
+    MCAPI int hasEnchant(::Enchant::Type enchantType) const;
 
     // symbol: ?isEmpty@ItemEnchants@@QEBA_NXZ
     MCAPI bool isEmpty() const;

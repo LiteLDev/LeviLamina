@@ -100,8 +100,8 @@ public:
     MCVAPI void runCommand(
         class HashedString const& commandStr,
         class CommandOrigin&      origin,
-        enum CommandOriginSystem  originSystem,
-        enum CurrentCmdVersion    commandVersion
+        ::CommandOriginSystem     originSystem,
+        ::CurrentCmdVersion       commandVersion
     );
 
     // symbol: ?setCommandsEnabled@ServerLevel@@UEAAX_N@Z

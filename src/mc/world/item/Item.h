@@ -393,12 +393,22 @@ public:
     virtual void fixupCommon(class ItemStackBase&, class Level&) const;
 
     // vIndex: 92, symbol: ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z
-    virtual ::InHandUpdateType
-    getInHandUpdateType(class Player const&, class ItemInstance const&, class ItemInstance const&, bool, bool) const;
+    virtual ::InHandUpdateType getInHandUpdateType(
+        class Player const&       player,
+        class ItemInstance const& oldItem,
+        class ItemInstance const& newItem,
+        bool,
+        bool
+    ) const;
 
     // vIndex: 93, symbol: ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
-    virtual ::InHandUpdateType
-    getInHandUpdateType(class Player const&, class ItemStack const&, class ItemStack const&, bool, bool) const;
+    virtual ::InHandUpdateType getInHandUpdateType(
+        class Player const&    player,
+        class ItemStack const& oldItem,
+        class ItemStack const& newItem,
+        bool,
+        bool
+    ) const;
 
     // vIndex: 94, symbol: ?validFishInteraction@Item@@UEBA_NH@Z
     virtual bool validFishInteraction(int) const;
@@ -653,7 +663,7 @@ public:
     MCAPI class Item& setAllowOffhand(bool offhand);
 
     // symbol: ?setCategory@Item@@QEAAAEAV1@W4CreativeItemCategory@@@Z
-    MCAPI class Item& setCategory(enum CreativeItemCategory creativeCategory);
+    MCAPI class Item& setCategory(::CreativeItemCategory creativeCategory);
 
     // symbol: ?setCreativeGroup@Item@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Item& setCreativeGroup(std::string const&);
@@ -771,10 +781,10 @@ public:
     // NOLINTBEGIN
     // symbol: ?_helpChangeInventoryItemInPlace@Item@@IEBAXAEAVActor@@AEAVItemStack@@1W4ItemAcquisitionMethod@@@Z
     MCAPI void _helpChangeInventoryItemInPlace(
-        class Actor&               actor,
-        class ItemStack&           startingItem,
-        class ItemStack&           replacementItem,
-        enum ItemAcquisitionMethod acquisitionMethod
+        class Actor&            actor,
+        class ItemStack&        startingItem,
+        class ItemStack&        replacementItem,
+        ::ItemAcquisitionMethod acquisitionMethod
     ) const;
 
     // NOLINTEND

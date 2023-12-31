@@ -40,7 +40,7 @@ public:
     MCAPI SetLastHurtByPacket();
 
     // symbol: ??0SetLastHurtByPacket@@QEAA@W4ActorType@@@Z
-    MCAPI explicit SetLastHurtByPacket(enum ActorType lastHurtBy);
+    MCAPI explicit SetLastHurtByPacket(::ActorType lastHurtBy);
 
     // NOLINTEND
 };

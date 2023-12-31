@@ -144,15 +144,15 @@ public:
     // symbol:
     // ?updateBlock@CommandBlockActor@@QEAAXAEAVBlockSource@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1W4CommandBlockMode@@_N33H3@Z
     MCAPI void updateBlock(
-        class BlockSource&    region,
-        std::string const&    cmd,
-        std::string const&    name,
-        enum CommandBlockMode newMode,
-        bool                  isConditional,
-        bool                  redstoneMode,
-        bool                  trackOutput,
-        int                   tickDelay,
-        bool                  executeFirstTick
+        class BlockSource& region,
+        std::string const& cmd,
+        std::string const& name,
+        ::CommandBlockMode newMode,
+        bool               isConditional,
+        bool               redstoneMode,
+        bool               trackOutput,
+        int                tickDelay,
+        bool               executeFirstTick
     );
 
     // symbol: ?wasConditionMet@CommandBlockActor@@QEAA_NXZ
@@ -163,7 +163,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_setAutomatic@CommandBlockActor@@AEAAXAEAVBlockSource@@_NW4CommandBlockMode@@@Z
-    MCAPI void _setAutomatic(class BlockSource& region, bool alwaysActive, enum CommandBlockMode currentMode);
+    MCAPI void _setAutomatic(class BlockSource& region, bool alwaysActive, ::CommandBlockMode currentMode);
 
     // NOLINTEND
 };

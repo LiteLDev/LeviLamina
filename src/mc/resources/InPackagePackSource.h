@@ -38,7 +38,7 @@ public:
     load(class IPackManifestFactory&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&);
 
     // symbol: ??0InPackagePackSource@@QEAA@AEBV?$shared_ptr@VIInPackagePacks@@@std@@W4PackType@@@Z
-    MCAPI InPackagePackSource(std::shared_ptr<class IInPackagePacks> const& packs, enum PackType packType);
+    MCAPI InPackagePackSource(std::shared_ptr<class IInPackagePacks> const& packs, ::PackType packType);
 
     // NOLINTEND
 };

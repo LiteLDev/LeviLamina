@@ -181,7 +181,7 @@ public:
 
     // symbol:
     // ??0CommandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CommandBlockMode@@@Z
-    MCAPI CommandBlock(std::string const& nameId, int id, enum CommandBlockMode mode);
+    MCAPI CommandBlock(std::string const& nameId, int id, ::CommandBlockMode mode);
 
     // symbol: ?execute@CommandBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void execute(class BlockSource&, class BlockPos const&) const;
@@ -191,7 +191,7 @@ public:
 
     // symbol: ?updateBlock@CommandBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@W4CommandBlockMode@@_N@Z
     MCAPI void
-    updateBlock(class BlockSource& region, class BlockPos const& pos, enum CommandBlockMode newMode, bool conditional)
+    updateBlock(class BlockSource& region, class BlockPos const& pos, ::CommandBlockMode newMode, bool conditional)
         const;
 
     // symbol: ?_getCommandBlockActor@CommandBlock@@SAPEAVCommandBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z

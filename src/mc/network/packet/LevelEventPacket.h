@@ -42,10 +42,10 @@ public:
     MCAPI LevelEventPacket();
 
     // symbol: ??0LevelEventPacket@@QEAA@W4LevelEvent@@AEBVVec3@@H@Z
-    MCAPI LevelEventPacket(enum LevelEvent eventId, class Vec3 const& pos, int data);
+    MCAPI LevelEventPacket(::LevelEvent eventId, class Vec3 const& pos, int data);
 
     // symbol: ??0LevelEventPacket@@QEAA@W4LevelEvent@@MMMH@Z
-    MCAPI LevelEventPacket(enum LevelEvent eventId, float x, float y, float z, int data);
+    MCAPI LevelEventPacket(::LevelEvent eventId, float x, float y, float z, int data);
 
     // NOLINTEND
 };

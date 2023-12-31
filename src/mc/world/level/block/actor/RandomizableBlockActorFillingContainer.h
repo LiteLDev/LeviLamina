@@ -33,11 +33,11 @@ public:
     // symbol:
     // ??0RandomizableBlockActorFillingContainer@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@HW4ContainerType@@@Z
     MCAPI RandomizableBlockActorFillingContainer(
-        enum BlockActorType   blockEntityType,
+        ::BlockActorType      blockEntityType,
         std::string const&    id,
         class BlockPos const& pos,
         int                   numTotalSlots,
-        enum ContainerType    containerType
+        ::ContainerType       containerType
     );
 
     // NOLINTEND

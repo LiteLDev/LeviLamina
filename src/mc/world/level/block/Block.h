@@ -144,7 +144,7 @@ public:
     MCAPI bool canProvideMultifaceSupport(uchar) const;
 
     // symbol: ?canProvideSupport@Block@@QEBA_NEW4BlockSupportType@@@Z
-    MCAPI bool canProvideSupport(uchar face, enum BlockSupportType type) const;
+    MCAPI bool canProvideSupport(uchar face, ::BlockSupportType type) const;
 
     // symbol: ?canReactToNeighborsDuringInstatick@Block@@QEBA_NXZ
     MCAPI bool canReactToNeighborsDuringInstatick() const;
@@ -329,7 +329,7 @@ public:
     MCAPI bool hasComparatorSignal() const;
 
     // symbol: ?hasProperty@Block@@QEBA_NW4BlockProperty@@@Z
-    MCAPI bool hasProperty(enum BlockProperty type) const;
+    MCAPI bool hasProperty(::BlockProperty type) const;
 
     // symbol: ?hasState@Block@@QEBA_NAEBVBlockState@@@Z
     MCAPI bool hasState(class BlockState const&) const;
@@ -485,7 +485,7 @@ public:
 
     // symbol: ?onFertilized@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
     MCAPI bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, enum FertilizerType fType)
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
     // symbol: ?onLightningHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z

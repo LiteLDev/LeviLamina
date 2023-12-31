@@ -43,7 +43,7 @@ public:
 
     // symbol: ??0MaterialReducerContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI MaterialReducerContainerManagerModel(
-        enum ContainerID      containerId,
+        ::ContainerID         containerId,
         class Player&         player,
         class BlockPos const& blockPos
     );

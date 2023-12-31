@@ -19,10 +19,10 @@ MCAPI void counterSet(class Core::Profile::CounterTokenMarker, int64);
 // symbol:
 // ?generateCounterTokenWithConfig@Profile@Core@@YA?AVCounterTokenMarker@12@PEBDW4CounterFormat@12@_JW4CounterFlags@12@@Z
 MCAPI class Core::Profile::CounterTokenMarker generateCounterTokenWithConfig(
-    char const*                       label,
-    enum Core::Profile::CounterFormat format,
-    int64                             limit,
-    enum Core::Profile::CounterFlags  flags
+    char const*                    label,
+    ::Core::Profile::CounterFormat format,
+    int64                          limit,
+    ::Core::Profile::CounterFlags  flags
 );
 
 // symbol: ?initializeProfile@Profile@Core@@YAXXZ

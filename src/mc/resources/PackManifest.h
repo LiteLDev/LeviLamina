@@ -35,7 +35,7 @@ public:
     MCAPI PackManifest(class PackManifest const&);
 
     // symbol: ??0PackManifest@@QEAA@W4ManifestType@@@Z
-    MCAPI explicit PackManifest(enum ManifestType type);
+    MCAPI explicit PackManifest(::ManifestType type);
 
     // symbol: ?addPackDependency@PackManifest@@QEAAXAEBUPackIdVersion@@@Z
     MCAPI void addPackDependency(struct PackIdVersion const& packId);
@@ -135,7 +135,7 @@ public:
     MCAPI bool isRestrictedPack() const;
 
     // symbol: ?serialize@PackManifest@@QEBAXW4PackManifestFormat@@AEAVValue@Json@@@Z
-    MCAPI void serialize(enum PackManifestFormat formatVersion, class Json::Value& destination) const;
+    MCAPI void serialize(::PackManifestFormat formatVersion, class Json::Value& destination) const;
 
     // symbol: ?setCanBeRedownloaded@PackManifest@@QEAAX_N@Z
     MCAPI void setCanBeRedownloaded(bool redownloadable);
@@ -157,7 +157,7 @@ public:
     MCAPI void setLocalizedNameKeywords(std::unordered_map<std::string, std::string> const& localizationNameMap);
 
     // symbol: ?setManifestOrigin@PackManifest@@QEAAXAEBW4ManifestOrigin@@@Z
-    MCAPI void setManifestOrigin(enum ManifestOrigin const& origin);
+    MCAPI void setManifestOrigin(::ManifestOrigin const& origin);
 
     // symbol: ?setName@PackManifest@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setName(std::string const& name);
@@ -166,13 +166,13 @@ public:
     MCAPI void setPackCapabilitiesTrusted();
 
     // symbol: ?setPackCategory@PackManifest@@QEAAXW4PackCategory@@@Z
-    MCAPI void setPackCategory(enum PackCategory packCategory);
+    MCAPI void setPackCategory(::PackCategory packCategory);
 
     // symbol: ?setPackOrigin@PackManifest@@QEAAXW4PackOrigin@@@Z
-    MCAPI void setPackOrigin(enum PackOrigin packOrigin);
+    MCAPI void setPackOrigin(::PackOrigin packOrigin);
 
     // symbol: ?setPackType@PackManifest@@QEAAXW4PackType@@@Z
-    MCAPI void setPackType(enum PackType packType);
+    MCAPI void setPackType(::PackType packType);
 
     // symbol: ?setSourceIdentity@PackManifest@@QEAAXAEBVContentIdentity@@@Z
     MCAPI void setSourceIdentity(class ContentIdentity const& contentIdentity);

@@ -68,11 +68,8 @@ public:
     MCAPI void runCommand(class Command&, class CommandOrigin&);
 
     // symbol: ?runCommand@MinecraftCommands@@QEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
-    MCAPI void runCommand(
-        class HashedString const& commandStr,
-        class CommandOrigin&      origin,
-        enum CurrentCmdVersion    commandVersion
-    );
+    MCAPI void
+    runCommand(class HashedString const& commandStr, class CommandOrigin& origin, ::CurrentCmdVersion commandVersion);
 
     // symbol: ?runOrDeferCommand@MinecraftCommands@@QEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
     MCAPI void runOrDeferCommand(class HashedString const&, class CommandOrigin&, ::CurrentCmdVersion);

@@ -174,7 +174,7 @@ public:
         bool                  lit,
         class BlockSource&    region,
         class BlockPos const& pos,
-        enum BlockActorType   blockActorType,
+        ::BlockActorType      blockActorType,
         class Block const&    unlitFurnace,
         class Block const&    litFurnace
     );

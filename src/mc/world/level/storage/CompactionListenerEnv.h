@@ -21,7 +21,7 @@ public:
     virtual void Schedule(void (*function)(void*), void* arg);
 
     // symbol: ?setCompactionCallback@CompactionListenerEnv@@QEAAXV?$function@$$A6AXW4CompactionStatus@@@Z@std@@@Z
-    MCAPI void setCompactionCallback(std::function<void(enum CompactionStatus)> callback);
+    MCAPI void setCompactionCallback(std::function<void(::CompactionStatus)> callback);
 
     // NOLINTEND
 };

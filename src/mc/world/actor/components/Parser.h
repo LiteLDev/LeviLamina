@@ -144,10 +144,10 @@ public:
     serialize(std::vector<class MobEffectInstance> const& variable, class Json::Value& val, char const* jsonName);
 
     // symbol: ?serialize@Parser@@SAXAEBW4ActorType@@AEAVValue@Json@@PEBD@Z
-    MCAPI static void serialize(enum ActorType const& variable, class Json::Value& val, char const* jsonName);
+    MCAPI static void serialize(::ActorType const& variable, class Json::Value& val, char const* jsonName);
 
     // symbol: ?serialize@Parser@@SAXAEBW4ParticleType@@AEAVValue@Json@@PEBD@Z
-    MCAPI static void serialize(enum ParticleType const& variable, class Json::Value& val, char const* jsonName);
+    MCAPI static void serialize(::ParticleType const& variable, class Json::Value& val, char const* jsonName);
 
     // symbol: ?serialize@Parser@@SAXAEBW4FilterSubject@Legacy@Puv@@AEAVValue@Json@@PEBD@Z
     MCAPI static void serialize(::Puv::Legacy::FilterSubject const&, class Json::Value&, char const*);

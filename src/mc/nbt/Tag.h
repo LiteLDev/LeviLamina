@@ -119,7 +119,7 @@ public:
     MCAPI static std::string getTagName(::Tag::Type);
 
     // symbol: ?newTag@Tag@@SA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@W4Type@1@@Z
-    MCAPI static std::unique_ptr<class Tag> newTag(enum Tag::Type type);
+    MCAPI static std::unique_ptr<class Tag> newTag(::Tag::Type type);
 
     // symbol:
     // ?readNamedTag@Tag@@SA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@AEAVIDataInput@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z

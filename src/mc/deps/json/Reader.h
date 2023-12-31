@@ -153,7 +153,7 @@ public:
     MCAPI class Json::Value readValue(bool&);
 
     // symbol: ?recoverFromError@Reader@Json@@AEAA_NW4TokenType@12@@Z
-    MCAPI bool recoverFromError(enum Json::Reader::TokenType skipUntilToken);
+    MCAPI bool recoverFromError(::Json::Reader::TokenType skipUntilToken);
 
     // NOLINTEND
 };

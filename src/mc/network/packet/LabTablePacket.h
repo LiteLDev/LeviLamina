@@ -51,10 +51,10 @@ public:
     MCAPI LabTablePacket();
 
     // symbol: ??0LabTablePacket@@QEAA@AEBVBlockPos@@W4LabTableReactionType@@@Z
-    MCAPI LabTablePacket(class BlockPos const& pos, enum LabTableReactionType reaction);
+    MCAPI LabTablePacket(class BlockPos const& pos, ::LabTableReactionType reaction);
 
     // symbol: ??0LabTablePacket@@QEAA@W4Type@0@AEBVBlockPos@@@Z
-    MCAPI LabTablePacket(enum LabTablePacket::Type type, class BlockPos const& pos);
+    MCAPI LabTablePacket(::LabTablePacket::Type type, class BlockPos const& pos);
 
     // NOLINTEND
 };

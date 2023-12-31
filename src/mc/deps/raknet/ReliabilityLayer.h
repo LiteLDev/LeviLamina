@@ -97,15 +97,15 @@ public:
 
     // symbol: ?Send@ReliabilityLayer@RakNet@@QEAA_NPEADIW4PacketPriority@@W4PacketReliability@@E_NH_KI@Z
     MCAPI bool Send(
-        char*                  data,
-        uint                   numberOfBitsToSend,
-        enum PacketPriority    priority,
-        enum PacketReliability reliability,
-        uchar                  orderingChannel,
-        bool                   makeDataCopy,
-        int                    MTUSize,
-        uint64                 currentTime,
-        uint                   receipt
+        char*               data,
+        uint                numberOfBitsToSend,
+        ::PacketPriority    priority,
+        ::PacketReliability reliability,
+        uchar               orderingChannel,
+        bool                makeDataCopy,
+        int                 MTUSize,
+        uint64              currentTime,
+        uint                receipt
     );
 
     // symbol: ?SetSplitMessageProgressInterval@ReliabilityLayer@RakNet@@QEAAXH@Z

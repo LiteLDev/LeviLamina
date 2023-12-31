@@ -43,7 +43,7 @@ public:
     MCAPI void addPlayerToParty(class mce::UUID id, int damage);
 
     // symbol: ?broadcastBossEvent@BossComponent@@QEAAXAEAVActor@@W4BossEventUpdateType@@@Z
-    MCAPI void broadcastBossEvent(class Actor& owner, enum BossEventUpdateType type);
+    MCAPI void broadcastBossEvent(class Actor& owner, ::BossEventUpdateType type);
 
     // symbol: ?getColor@BossComponent@@QEBA?AW4BossBarColor@@XZ
     MCAPI ::BossBarColor getColor() const;
@@ -93,7 +93,7 @@ public:
     MCAPI void sendDeathTelemetry(class Actor& owner);
 
     // symbol: ?setColor@BossComponent@@QEAAXAEAVActor@@W4BossBarColor@@@Z
-    MCAPI void setColor(class Actor& owner, enum BossBarColor color);
+    MCAPI void setColor(class Actor& owner, ::BossBarColor color);
 
     // symbol: ?setHealthBarVisible@BossComponent@@QEAAXAEAVActor@@_N@Z
     MCAPI void setHealthBarVisible(class Actor& owner, bool visible);
@@ -126,7 +126,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_sendBossEvent@BossComponent@@AEAAXAEAVActor@@W4BossEventUpdateType@@PEAVPlayer@@@Z
-    MCAPI void _sendBossEvent(class Actor& owner, enum BossEventUpdateType type, class Player* player);
+    MCAPI void _sendBossEvent(class Actor& owner, ::BossEventUpdateType type, class Player* player);
 
     // NOLINTEND
 };

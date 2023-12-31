@@ -38,7 +38,7 @@ public:
     virtual int _getContainerOffset() const;
 
     // symbol: ??0PlayerUIContainerModel@@QEAA@W4ContainerEnumName@@AEAVPlayer@@@Z
-    MCAPI PlayerUIContainerModel(enum ContainerEnumName containerName, class Player& player);
+    MCAPI PlayerUIContainerModel(::ContainerEnumName containerName, class Player& player);
 
     // NOLINTEND
 };

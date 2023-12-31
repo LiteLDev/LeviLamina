@@ -67,7 +67,7 @@ public:
     virtual bool canAttack(class Actor* entity, bool allowInvulnerable) const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@Witch@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(enum ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent id, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();

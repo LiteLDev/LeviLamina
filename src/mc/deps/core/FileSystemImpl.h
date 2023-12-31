@@ -111,7 +111,7 @@ public:
 
     // vIndex: 23, symbol: ?_deleteRecursively@FileSystemImpl@Core@@MEAA?AVResult@2@AEBVPath@2@W4FileType@2@@Z
     virtual class Core::Result
-    _deleteRecursively(class Core::Path const& directoryPath, enum Core::FileType deleteFileType);
+    _deleteRecursively(class Core::Path const& directoryPath, ::Core::FileType deleteFileType);
 
     // vIndex: 24, symbol: __unk_vfn_24
     virtual void __unk_vfn_24() = 0;
@@ -175,7 +175,7 @@ public:
     virtual class Core::Result _flatFileIterateOverDirectory(
         class Core::Path const&                                                       directoryPath,
         class Core::Path const&                                                       manifestPath,
-        enum Core::DirectoryIterationFlags                                            flags,
+        ::Core::DirectoryIterationFlags                                               flags,
         std::function<class Core::Result(struct Core::DirectoryIterationItem const&)> callbackFunction
     );
 
@@ -312,7 +312,7 @@ public:
     // ?iterateOverDirectory@FileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@W4DirectoryIterationFlags@2@V?$function@$$A6A?AVResult@Core@@AEBUDirectoryIterationItem@2@@Z@std@@@Z
     MCAPI class Core::Result iterateOverDirectory(
         class Core::Path const&                                                       directoryPath,
-        enum Core::DirectoryIterationFlags                                            flags,
+        ::Core::DirectoryIterationFlags                                               flags,
         std::function<class Core::Result(struct Core::DirectoryIterationItem const&)> callbackFunction
     );
 
@@ -322,7 +322,7 @@ public:
         std::unique_ptr<class Core::FileImpl>& fileOut,
         class Core::Path const&                filePath,
         class Core::FileOpenMode               openMode,
-        enum Core::FileBufferingMode           fileBufferingMode
+        ::Core::FileBufferingMode              fileBufferingMode
     );
 
     // symbol: ?readFileData@FileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
@@ -355,7 +355,7 @@ public:
         class Core::Path const&                filePath,
         class Core::Path const&                manifestPath,
         class Core::FileOpenMode               openMode,
-        enum Core::FileBufferingMode           fileBufferingMode
+        ::Core::FileBufferingMode              fileBufferingMode
     );
 
     // symbol: ?_initialize@FileSystemImpl@Core@@AEAAXXZ

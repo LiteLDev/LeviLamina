@@ -136,7 +136,7 @@ public:
     // symbol:
     // ?createLoggingStorageArea@AppPlatform@@UEAA?AV?$shared_ptr@VFileStorageArea@Core@@@std@@W4FileAccessType@Core@@AEBVPath@5@@Z
     MCVAPI std::shared_ptr<class Core::FileStorageArea>
-           createLoggingStorageArea(enum Core::FileAccessType fileAccessType, class Core::Path const& loggingPath);
+           createLoggingStorageArea(::Core::FileAccessType fileAccessType, class Core::Path const& loggingPath);
 
     // symbol: ?createUserInput@AppPlatform@@UEAAXXZ
     MCVAPI void createUserInput();
@@ -241,7 +241,7 @@ public:
 
     // symbol:
     // ?getFileAccess@AppPlatform@@UEAA?AV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@W4ResourceFileSystem@@@Z
-    MCVAPI Bedrock::NotNullNonOwnerPtr<class IFileAccess> getFileAccess(enum ResourceFileSystem fileSystem);
+    MCVAPI Bedrock::NotNullNonOwnerPtr<class IFileAccess> getFileAccess(::ResourceFileSystem fileSystem);
 
     // symbol: ?getFocusState@AppPlatform@@UEAA?AW4AppFocusState@@XZ
     MCVAPI ::AppFocusState getFocusState();
@@ -627,13 +627,13 @@ public:
     MCVAPI bool restartRequested();
 
     // symbol: ?setARVRPlatform@AppPlatform@@UEAAXW4ARVRPlatform@@@Z
-    MCVAPI void setARVRPlatform(enum ARVRPlatform platform);
+    MCVAPI void setARVRPlatform(::ARVRPlatform platform);
 
     // symbol: ?setDpi@AppPlatform@@UEAAXH@Z
     MCVAPI void setDpi(int dpi);
 
     // symbol: ?setFullscreenMode@AppPlatform@@UEAAXW4FullscreenMode@@@Z
-    MCVAPI void setFullscreenMode(enum FullscreenMode fullscreenMode);
+    MCVAPI void setFullscreenMode(::FullscreenMode fullscreenMode);
 
     // symbol: ?setIntegrityToken@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void setIntegrityToken(std::string const&);
@@ -665,10 +665,10 @@ public:
     MCVAPI void setThreadsFrozen(bool frozen);
 
     // symbol: ?setUIScalingRules@AppPlatform@@UEAAXW4UIScalingRules@@@Z
-    MCVAPI void setUIScalingRules(enum UIScalingRules UIScalingRules);
+    MCVAPI void setUIScalingRules(::UIScalingRules UIScalingRules);
 
     // symbol: ?setVRControllerType@AppPlatform@@UEAAXW4VRControllerType@@@Z
-    MCVAPI void setVRControllerType(enum VRControllerType controllerType);
+    MCVAPI void setVRControllerType(::VRControllerType controllerType);
 
     // symbol: ?setWindowSize@AppPlatform@@UEAAXHH@Z
     MCVAPI void setWindowSize(int width, int height);

@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?toggleFilter@LogAreaFilter@BedrockLog@@QEAAXW4LogAreaID@@@Z
-    MCAPI void toggleFilter(enum LogAreaID _filter);
+    MCAPI void toggleFilter(::LogAreaID _filter);
 
     // NOLINTEND
 };

@@ -84,7 +84,7 @@ public:
         std::string const&              functionName,
         std::vector<std::string> const& lines,
         std::vector<std::string>&       errorList,
-        enum CurrentCmdVersion          commandVersion,
+        ::CurrentCmdVersion             commandVersion,
         class CommandRegistry const&    registry
     );
 

@@ -48,8 +48,8 @@ public:
 
     // symbol: ??0ContainerOpenPacket@@QEAA@W4ContainerID@@W4ContainerType@@AEBVBlockPos@@AEBUActorUniqueID@@@Z
     MCAPI ContainerOpenPacket(
-        enum ContainerID            containerId,
-        enum ContainerType          type,
+        ::ContainerID               containerId,
+        ::ContainerType             type,
         class BlockPos const&       pos,
         struct ActorUniqueID const& id
     );

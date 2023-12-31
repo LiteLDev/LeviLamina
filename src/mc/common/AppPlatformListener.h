@@ -77,7 +77,7 @@ public:
     MCVAPI void onLowMemory();
 
     // symbol: ?onOperationModeChanged@AppPlatformListener@@UEAAXW4OperationMode@@@Z
-    MCVAPI void onOperationModeChanged(enum OperationMode operationMode);
+    MCVAPI void onOperationModeChanged(::OperationMode operationMode);
 
     // symbol: ?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z
     MCVAPI void onPerformanceModeChanged(bool boost);

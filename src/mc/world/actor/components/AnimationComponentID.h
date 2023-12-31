@@ -18,7 +18,7 @@ public:
     MCAPI AnimationComponentID(
         struct ActorUniqueID const& actorUniqueId,
         ushort                      attachableDepth,
-        enum AttachableSlotIndex    attachableIndex
+        ::AttachableSlotIndex       attachableIndex
     );
 
     // symbol: ?getHash@AnimationComponentID@@QEBA_KXZ

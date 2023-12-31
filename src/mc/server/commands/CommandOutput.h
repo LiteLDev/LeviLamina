@@ -40,7 +40,7 @@ public:
     MCAPI CommandOutput(class CommandOutput const& rhs);
 
     // symbol: ??0CommandOutput@@QEAA@W4CommandOutputType@@@Z
-    MCAPI explicit CommandOutput(enum CommandOutputType type);
+    MCAPI explicit CommandOutput(::CommandOutputType type);
 
     // symbol:
     // ?addToResultList@CommandOutput@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@@Z
@@ -76,7 +76,7 @@ public:
     // symbol:
     // ?load@CommandOutput@@QEAAXW4CommandOutputType@@H$$QEAV?$vector@VCommandOutputMessage@@V?$allocator@VCommandOutputMessage@@@std@@@std@@$$QEAV?$unique_ptr@VCommandPropertyBag@@U?$default_delete@VCommandPropertyBag@@@std@@@4@@Z
     MCAPI void load(
-        enum CommandOutputType                      type,
+        ::CommandOutputType                         type,
         int                                         successCount,
         std::vector<class CommandOutputMessage>&&   messages,
         std::unique_ptr<class CommandPropertyBag>&& data
@@ -107,7 +107,7 @@ public:
     MCAPI void addMessage(
         std::string const&                               msgId,
         std::vector<class CommandOutputParameter> const& params,
-        enum CommandOutputMessageType                    type
+        ::CommandOutputMessageType                       type
     );
 
     // NOLINTEND

@@ -100,6 +100,6 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?buildFromNodes@Path@@AEAAX$$QEAV?$vector@VNode@Path@@V?$allocator@VNode@Path@@@std@@@std@@W4PathCompletionType@@@Z
-    MCAPI void buildFromNodes(NodeArray&& nodeArray, enum PathCompletionType completionType);
+    MCAPI void buildFromNodes(NodeArray&& nodeArray, ::PathCompletionType completionType);
     // NOLINTEND
 };

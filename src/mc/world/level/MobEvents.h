@@ -24,7 +24,7 @@ public:
     MCAPI bool areEventsEnabled() const;
 
     // symbol: ?getEvent@MobEvents@@QEBAAEBVMobEvent@@W4MobEventsIndex@@@Z
-    MCAPI class MobEvent const& getEvent(enum MobEventsIndex eventIndex) const;
+    MCAPI class MobEvent const& getEvent(::MobEventsIndex eventIndex) const;
 
     // symbol:
     // ?getIndexFromName@MobEvents@@QEBA?AW4MobEventsIndex@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -34,7 +34,7 @@ public:
     MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
 
     // symbol: ?isEnabled@MobEvents@@QEBA_NW4MobEventsIndex@@@Z
-    MCAPI bool isEnabled(enum MobEventsIndex eventIndex) const;
+    MCAPI bool isEnabled(::MobEventsIndex eventIndex) const;
 
     // symbol: ?readFromLevelStorage@MobEvents@@QEAAXXZ
     MCAPI void readFromLevelStorage();
@@ -43,7 +43,7 @@ public:
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;
 
     // symbol: ?setEnabled@MobEvents@@QEAAXW4MobEventsIndex@@_N@Z
-    MCAPI void setEnabled(enum MobEventsIndex eventIndex, bool newVal);
+    MCAPI void setEnabled(::MobEventsIndex eventIndex, bool newVal);
 
     // symbol: ?setEventsEnabled@MobEvents@@QEAAX_N@Z
     MCAPI void setEventsEnabled(bool newVal);

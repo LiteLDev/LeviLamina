@@ -59,7 +59,7 @@ public:
     virtual void _onItemChanged(int slot, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // symbol: ??0InventoryContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@@Z
-    MCAPI InventoryContainerModel(enum ContainerEnumName containerName, int size, class Player& player);
+    MCAPI InventoryContainerModel(::ContainerEnumName containerName, int size, class Player& player);
 
     // NOLINTEND
 

@@ -274,7 +274,7 @@ public:
     virtual class Block const& getStrippedBlock(class Block const& srcBlock) const;
 
     // vIndex: 23, symbol: ?canProvideSupport@BlockLegacy@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const& block, uchar face, enum BlockSupportType type) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 24, symbol: ?canProvideMultifaceSupport@BlockLegacy@@UEBA_NAEBVBlock@@E@Z
     virtual bool canProvideMultifaceSupport(class Block const&, uchar) const;
@@ -452,7 +452,7 @@ public:
     // vIndex: 79, symbol:
     // ?onFertilized@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
     virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, enum FertilizerType fType)
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
     // vIndex: 80, symbol: ?mayConsumeFertilizer@BlockLegacy@@UEBA_NAEAVBlockSource@@@Z
@@ -727,7 +727,8 @@ public:
 
     // vIndex: 158, symbol:
     // ?getRenderLayer@BlockLegacy@@MEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
+    virtual ::BlockRenderLayer
+    getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
 
     // vIndex: 159, symbol: ?getExtraRenderLayers@BlockLegacy@@MEBAHXZ
     virtual int getExtraRenderLayers() const;
@@ -997,7 +998,7 @@ public:
     MCAPI bool hasNonLegacyState(uint64 const&) const;
 
     // symbol: ?hasProperty@BlockLegacy@@QEBA_NW4BlockProperty@@@Z
-    MCAPI bool hasProperty(enum BlockProperty type) const;
+    MCAPI bool hasProperty(::BlockProperty type) const;
 
     // symbol: ?hasState@BlockLegacy@@QEBA_NAEBVBlockState@@@Z
     MCAPI bool hasState(class BlockState const&) const;
@@ -1060,7 +1061,7 @@ public:
     MCAPI class BlockLegacy& setCanBeOriginalSurface(bool);
 
     // symbol: ?setCategory@BlockLegacy@@QEAAAEAV1@W4CreativeItemCategory@@@Z
-    MCAPI class BlockLegacy& setCategory(enum CreativeItemCategory creativeCategory);
+    MCAPI class BlockLegacy& setCategory(::CreativeItemCategory creativeCategory);
 
     // symbol: ?setCreativeEnumState@BlockLegacy@@QEAAAEAV1@AEBVBlockState@@@Z
     MCAPI class BlockLegacy& setCreativeEnumState(class BlockState const&);

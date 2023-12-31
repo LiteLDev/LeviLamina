@@ -42,7 +42,7 @@ public:
     MCAPI ActorEventPacket();
 
     // symbol: ??0ActorEventPacket@@QEAA@VActorRuntimeID@@W4ActorEvent@@H@Z
-    MCAPI ActorEventPacket(class ActorRuntimeID runtimeId, enum ActorEvent eventId, int data);
+    MCAPI ActorEventPacket(class ActorRuntimeID runtimeId, ::ActorEvent eventId, int data);
 
     // NOLINTEND
 };

@@ -38,37 +38,36 @@ public:
     // vIndex: 2, symbol:
     // ?getWorldTemplatePackSource@PackSourceFactory@@UEBAPEAVWorldTemplatePackSource@@AEBVUUID@mce@@W4PackType@@@Z
     virtual class WorldTemplatePackSource*
-    getWorldTemplatePackSource(class mce::UUID const& worldTemplateId, enum PackType packType) const;
+    getWorldTemplatePackSource(class mce::UUID const& worldTemplateId, ::PackType packType) const;
 
     // vIndex: 3, symbol:
     // ?createDirectoryPackSource@PackSourceFactory@@UEAAAEAVDirectoryPackSource@@AEBVPath@Core@@W4PackType@@W4PackOrigin@@_N@Z
     virtual class DirectoryPackSource& createDirectoryPackSource(
         class Core::Path const& path,
-        enum PackType           packType,
-        enum PackOrigin         packOrigin,
+        ::PackType              packType,
+        ::PackOrigin            packOrigin,
         bool                    isDevDirectory = false
     );
 
     // vIndex: 4, symbol:
     // ?getDirectoryPackSource@PackSourceFactory@@UEBAPEAVDirectoryPackSource@@AEBVPath@Core@@W4PackType@@@Z
-    virtual class DirectoryPackSource*
-    getDirectoryPackSource(class Core::Path const& path, enum PackType packType) const;
+    virtual class DirectoryPackSource* getDirectoryPackSource(class Core::Path const& path, ::PackType packType) const;
 
     // vIndex: 5, symbol: ?createInPackagePackSource@PackSourceFactory@@UEAAAEAVInPackagePackSource@@W4PackType@@@Z
-    virtual class InPackagePackSource& createInPackagePackSource(enum PackType packType);
+    virtual class InPackagePackSource& createInPackagePackSource(::PackType packType);
 
     // vIndex: 6, symbol: ?getInPackagePackSource@PackSourceFactory@@UEAAPEAVInPackagePackSource@@W4PackType@@@Z
-    virtual class InPackagePackSource* getInPackagePackSource(enum PackType packType);
+    virtual class InPackagePackSource* getInPackagePackSource(::PackType packType);
 
     // vIndex: 7, symbol:
     // ?createWorldHistoryPackSource@PackSourceFactory@@UEAAAEAVWorldHistoryPackSource@@AEBVPath@Core@@W4PackType@@@Z
     virtual class WorldHistoryPackSource&
-    createWorldHistoryPackSource(class Core::Path const& pathToWorld, enum PackType packType);
+    createWorldHistoryPackSource(class Core::Path const& pathToWorld, ::PackType packType);
 
     // vIndex: 8, symbol:
     // ?getWorldHistoryPackSource@PackSourceFactory@@UEBAPEAVWorldHistoryPackSource@@AEBVPath@Core@@W4PackType@@@Z
     virtual class WorldHistoryPackSource*
-    getWorldHistoryPackSource(class Core::Path const& pathToWorld, enum PackType packType) const;
+    getWorldHistoryPackSource(class Core::Path const& pathToWorld, ::PackType packType) const;
 
     // vIndex: 9, symbol:
     // ?getDirectoryPackSourceContaining@PackSourceFactory@@UEBAPEAVDirectoryPackSource@@AEBUPackIdVersion@@@Z

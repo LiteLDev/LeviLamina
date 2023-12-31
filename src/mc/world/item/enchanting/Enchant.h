@@ -115,7 +115,7 @@ public:
     virtual ~Enchant();
 
     // vIndex: 1, symbol: ?isCompatibleWith@Enchant@@UEBA_NW4Type@1@@Z
-    virtual bool isCompatibleWith(enum Enchant::Type type) const;
+    virtual bool isCompatibleWith(::Enchant::Type type) const;
 
     // vIndex: 2, symbol: ?getMinCost@Enchant@@UEBAHH@Z
     virtual int getMinCost(int level) const;

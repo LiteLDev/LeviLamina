@@ -68,13 +68,13 @@ public:
 
     // symbol: ?_log_va@LogDetails@BedrockLog@@AEAAXW4LogAreaID@@IPEBDHH1PEAD@Z
     MCAPI void _log_va(
-        enum LogAreaID _area,
-        uint           _priority,
-        char const*    _function,
-        int            line,
-        int            _messageId,
-        char const*    pszFormat,
-        char*          argptr
+        ::LogAreaID _area,
+        uint        _priority,
+        char const* _function,
+        int         line,
+        int         _messageId,
+        char const* pszFormat,
+        char*       argptr
     );
 
     // symbol:

@@ -125,16 +125,16 @@ public:
     MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID lastTouchedByPlayerID);
 
     // symbol: ?setMirror@StructureEditorData@@QEAAXW4Mirror@@@Z
-    MCAPI void setMirror(enum Mirror mirror);
+    MCAPI void setMirror(::Mirror mirror);
 
     // symbol: ?setRotation@StructureEditorData@@QEAAXW4Rotation@@@Z
-    MCAPI void setRotation(enum Rotation rotation);
+    MCAPI void setRotation(::Rotation rotation);
 
     // symbol: ?setShowBoundingBox@StructureEditorData@@QEAAX_N@Z
     MCAPI void setShowBoundingBox(bool showBoundingBox);
 
     // symbol: ?setStructureBlockType@StructureEditorData@@QEAAXW4StructureBlockType@@@Z
-    MCAPI void setStructureBlockType(enum StructureBlockType structureBlockType);
+    MCAPI void setStructureBlockType(::StructureBlockType structureBlockType);
 
     // symbol: ?setStructureName@StructureEditorData@@QEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
     MCAPI void setStructureName(std::string_view);
@@ -149,7 +149,7 @@ public:
     MCAPI ~StructureEditorData();
 
     // symbol: ?getOrientedBounds@StructureEditorData@@SA?AVBlockPos@@AEBV2@W4Rotation@@@Z
-    MCAPI static class BlockPos getOrientedBounds(class BlockPos const& size, enum Rotation rotation);
+    MCAPI static class BlockPos getOrientedBounds(class BlockPos const& size, ::Rotation rotation);
 
     // symbol:
     // ?DEFAULT_EXPORT_NAME@StructureEditorData@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B

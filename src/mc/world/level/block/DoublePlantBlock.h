@@ -106,7 +106,7 @@ public:
     // vIndex: 79, symbol:
     // ?onFertilized@DoublePlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
     virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, enum FertilizerType fType)
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
     // vIndex: 81, symbol: ?canBeFertilized@DoublePlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
@@ -167,7 +167,8 @@ public:
 
     // vIndex: 158, symbol:
     // ?getRenderLayer@DoublePlantBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
+    virtual ::BlockRenderLayer
+    getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
 
     // vIndex: 163, symbol: ?playerDestroy@DoublePlantBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual void playerDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
@@ -189,7 +190,7 @@ public:
     MCAPI bool placeAt(
         class BlockSource&    region,
         class BlockPos const& pos,
-        enum DoublePlantType  plantType,
+        ::DoublePlantType     plantType,
         int                   updateType,
         class Actor*          player
     ) const;

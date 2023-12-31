@@ -57,7 +57,7 @@ public:
     // symbol:
     // ?getPotentencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@MV?$basic_string_view@DU?$char_traits@D@std@@@3@AEBVMobEffectInstance@@@Z
     MCAPI std::string getPotentencyDescription(
-        enum Potion::PotionType        potionType,
+        ::Potion::PotionType           potionType,
         float                          timeMod,
         std::string_view               descID,
         class MobEffectInstance const& effect
@@ -237,7 +237,7 @@ public:
         std::string_view                     nameId,
         std::vector<std::string>             descriptionIDs,
         std::vector<class MobEffectInstance> mobEffects,
-        enum Potion::PotionVariant           var
+        ::Potion::PotionVariant              var
     );
 
     // symbol:

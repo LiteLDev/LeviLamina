@@ -115,7 +115,7 @@ public:
     MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket&&);
 
     // symbol: ?getInput@PlayerAuthInputPacket@@QEBA_NW4InputData@1@@Z
-    MCAPI bool getInput(enum PlayerAuthInputPacket::InputData point) const;
+    MCAPI bool getInput(::PlayerAuthInputPacket::InputData point) const;
 
     // symbol: ??4PlayerAuthInputPacket@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class PlayerAuthInputPacket& operator=(class PlayerAuthInputPacket&&);

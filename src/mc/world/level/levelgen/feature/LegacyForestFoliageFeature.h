@@ -25,7 +25,7 @@ public:
     virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
     // symbol: ??0LegacyForestFoliageFeature@@QEAA@W4Type@0@AEAVFeatureRegistry@@@Z
-    MCAPI LegacyForestFoliageFeature(enum LegacyForestFoliageFeature::Type forestType, class FeatureRegistry& registry);
+    MCAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type forestType, class FeatureRegistry& registry);
 
     // NOLINTEND
 };

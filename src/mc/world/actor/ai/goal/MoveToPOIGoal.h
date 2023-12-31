@@ -42,13 +42,13 @@ public:
     virtual class Vec3 _getTargetPosition() const;
 
     // vIndex: 17, symbol: ?_getOwnedPOI@MoveToPOIGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
-    virtual std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType type) const;
+    virtual std::weak_ptr<class POIInstance> _getOwnedPOI(::POIType type) const;
 
     // symbol: ??0MoveToPOIGoal@@QEAA@AEAVMob@@MW4POIType@@M@Z
-    MCAPI MoveToPOIGoal(class Mob& mob, float speedModifier, enum POIType poiType, float coolddownTimeout);
+    MCAPI MoveToPOIGoal(class Mob& mob, float speedModifier, ::POIType poiType, float coolddownTimeout);
 
     // symbol: ?getPOI@MoveToPOIGoal@@QEAA_NW4POIType@@@Z
-    MCAPI bool getPOI(enum POIType type);
+    MCAPI bool getPOI(::POIType type);
 
     // NOLINTEND
 

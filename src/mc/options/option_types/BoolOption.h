@@ -35,12 +35,12 @@ public:
     // symbol:
     // ??0BoolOption@@QEAA@W4OptionID@@W4OptionOwnerType@@W4OptionResetFlags@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3_N@Z
     MCAPI BoolOption(
-        enum OptionID         id,
-        enum OptionOwnerType  ownerType,
-        enum OptionResetFlags resetFlags,
-        std::string const&    captionId,
-        std::string const&    saveTag,
-        bool                  value
+        ::OptionID         id,
+        ::OptionOwnerType  ownerType,
+        ::OptionResetFlags resetFlags,
+        std::string const& captionId,
+        std::string const& saveTag,
+        bool               value
     );
 
     // symbol: ?set@BoolOption@@QEAAX_N0@Z

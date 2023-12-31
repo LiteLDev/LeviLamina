@@ -54,12 +54,12 @@ public:
 
     // symbol: ??0MobEffectPacket@@QEAA@VActorRuntimeID@@W4Event@0@HHH_N@Z
     MCAPI MobEffectPacket(
-        class ActorRuntimeID        runtimeId,
-        enum MobEffectPacket::Event event,
-        int                         effectId,
-        int                         duration,
-        int                         amplifier,
-        bool                        showParticles
+        class ActorRuntimeID     runtimeId,
+        ::MobEffectPacket::Event event,
+        int                      effectId,
+        int                      duration,
+        int                      amplifier,
+        bool                     showParticles
     );
 
     // NOLINTEND

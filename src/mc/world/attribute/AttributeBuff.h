@@ -60,14 +60,14 @@ public:
     MCAPI void setValueAmplifier(std::shared_ptr<class Amplifier> amplifier);
 
     // symbol: ?buffTypeToDamageCause@AttributeBuff@@SA?AW4ActorDamageCause@@W4AttributeBuffType@@@Z
-    MCAPI static ::ActorDamageCause buffTypeToDamageCause(enum AttributeBuffType type);
+    MCAPI static ::ActorDamageCause buffTypeToDamageCause(::AttributeBuffType type);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ??0AttributeBuff@@IEAA@MHW4AttributeBuffType@@@Z
-    MCAPI AttributeBuff(float amount, int operand, enum AttributeBuffType type);
+    MCAPI AttributeBuff(float amount, int operand, ::AttributeBuffType type);
 
     // symbol: ??0AttributeBuff@@IEAA@MHAEBVActorDamageSource@@W4AttributeBuffType@@@Z
     MCAPI AttributeBuff(float, int, class ActorDamageSource const&, ::AttributeBuffType);

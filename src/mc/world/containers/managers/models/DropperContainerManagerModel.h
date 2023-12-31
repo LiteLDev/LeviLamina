@@ -23,8 +23,7 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0DropperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI
-    DropperContainerManagerModel(enum ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+    MCAPI DropperContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
     // NOLINTEND
 };

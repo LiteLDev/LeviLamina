@@ -40,10 +40,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_createHorse@SkeletonHorseTrapGoal@@AEAAPEAVHorse@@AEBW4Difficulty@@@Z
-    MCAPI class Horse* _createHorse(enum Difficulty const& difficulty);
+    MCAPI class Horse* _createHorse(::Difficulty const& difficulty);
 
     // symbol: ?_createSkeleton@SkeletonHorseTrapGoal@@AEAAPEAVSkeleton@@AEBW4Difficulty@@AEBVHorse@@@Z
-    MCAPI class Skeleton* _createSkeleton(enum Difficulty const& difficulty, class Horse const& otherHorse);
+    MCAPI class Skeleton* _createSkeleton(::Difficulty const& difficulty, class Horse const& otherHorse);
 
     // NOLINTEND
 };

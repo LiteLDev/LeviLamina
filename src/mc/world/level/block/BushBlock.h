@@ -159,7 +159,7 @@ public:
     MCAPI BushBlock(std::string const& nameId, int id, class Material const& material);
 
     // symbol: ?growCrops@BushBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@W4FertilizerType@@@Z
-    MCAPI bool growCrops(class BlockSource& region, class BlockPos const& pos, enum FertilizerType fType) const;
+    MCAPI bool growCrops(class BlockSource& region, class BlockPos const& pos, ::FertilizerType fType) const;
 
     // symbol: ?BUSH_VISUAL_SHAPE_MAX@BushBlock@@2VVec3@@B
     MCAPI static class Vec3 const BUSH_VISUAL_SHAPE_MAX;

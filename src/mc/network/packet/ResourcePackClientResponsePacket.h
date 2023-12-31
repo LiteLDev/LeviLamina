@@ -45,7 +45,7 @@ public:
     MCAPI std::set<std::string> const& getDownloadingPacks() const;
 
     // symbol: ?isResponse@ResourcePackClientResponsePacket@@QEBA_NW4ResourcePackResponse@@@Z
-    MCAPI bool isResponse(enum ResourcePackResponse haveThis) const;
+    MCAPI bool isResponse(::ResourcePackResponse haveThis) const;
 
     // NOLINTEND
 };

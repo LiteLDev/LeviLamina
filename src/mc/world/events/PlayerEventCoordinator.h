@@ -36,7 +36,7 @@ public:
 
     // symbol:
     // ?sendPlayerAwardAchievement@PlayerEventCoordinator@@QEAAXAEAVPlayer@@W4AchievementIds@MinecraftEventing@@@Z
-    MCAPI void sendPlayerAwardAchievement(class Player& player, enum MinecraftEventing::AchievementIds achievement);
+    MCAPI void sendPlayerAwardAchievement(class Player& player, ::MinecraftEventing::AchievementIds achievement);
 
     // symbol: ?sendPlayerCaravanChanged@PlayerEventCoordinator@@QEAAXAEBVActor@@H@Z
     MCAPI void sendPlayerCaravanChanged(class Actor const& mob, int caravanCount);

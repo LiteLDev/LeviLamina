@@ -43,7 +43,7 @@ public:
 
     // symbol: ??0LabTableContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI
-    LabTableContainerManagerModel(enum ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+    LabTableContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
     // symbol: ?INPUT_SLOTS@LabTableContainerManagerModel@@2HB
     MCAPI static int const INPUT_SLOTS;

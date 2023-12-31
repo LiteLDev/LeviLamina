@@ -39,7 +39,7 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0HudContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z
-    MCAPI HudContainerManagerModel(enum ContainerID containerId, class Player& player);
+    MCAPI HudContainerManagerModel(::ContainerID containerId, class Player& player);
 
     // NOLINTEND
 };

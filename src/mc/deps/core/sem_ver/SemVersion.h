@@ -108,7 +108,7 @@ public:
 
     // symbol: ?fromJson@SemVersion@@SA?AW4MatchType@1@AEBVValue@Json@@AEAV1@W4ParseOption@1@@Z
     MCAPI static ::SemVersion::MatchType
-    fromJson(class Json::Value const& json, class SemVersion& output, enum SemVersion::ParseOption parseOption);
+    fromJson(class Json::Value const& json, class SemVersion& output, ::SemVersion::ParseOption parseOption);
 
     // symbol: ?fromJsonArray@SemVersion@@SA?AW4MatchType@1@AEBVValue@Json@@AEAV1@@Z
     MCAPI static ::SemVersion::MatchType fromJsonArray(class Json::Value const& jsonArray, class SemVersion& output);
@@ -116,7 +116,7 @@ public:
     // symbol:
     // ?fromString@SemVersion@@SA?AW4MatchType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV1@W4ParseOption@1@@Z
     MCAPI static ::SemVersion::MatchType
-    fromString(std::string const& src, class SemVersion& output, enum SemVersion::ParseOption parseOption);
+    fromString(std::string const& src, class SemVersion& output, ::SemVersion::ParseOption parseOption);
 
     // symbol: ?AnyVersionConstructor@SemVersion@@2Uany_version_constructor@1@B
     MCAPI static struct any_version_constructor const AnyVersionConstructor;
