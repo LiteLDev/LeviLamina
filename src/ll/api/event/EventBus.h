@@ -20,25 +20,6 @@ private:
     EventBus();
 
 public:
-    class Canneller {
-        friend EventBus;
-        bool                           released{false};
-        std::unordered_set<ListenerId> listeners{};
-
-    public:
-        Canneller() = default;
-        ~Canneller() {
-            released = true;
-            for (auto id : listeners) {
-                EventBus::getInstance().removeListener(id);
-            }
-        }
-        static Canneller& getInstance() {
-            static Canneller ins{};
-            return ins;
-        }
-    };
-
     LLNDAPI static EventBus& getInstance();
 
     LLAPI void publish(Event&, EventId);
@@ -71,7 +52,7 @@ public:
         return getListenerCount(getEventId<T>);
     }
 
-    LLAPI bool addListener(ListenerPtr const&, EventId, Canneller& = Canneller::getInstance());
+    LLAPI bool addListener(ListenerPtr const&, EventId);
 
     template <class T, template <class...> class L, class... LT>
         requires((std::derived_from<T, LT> || ...) && std::derived_from<L<LT...>, ListenerBase>)
@@ -98,7 +79,7 @@ public:
         return res;
     }
 
-    LLAPI bool removeListener(ListenerPtr const&, EventId, Canneller& = Canneller::getInstance());
+    LLAPI bool removeListener(ListenerPtr const&, EventId);
 
     bool removeListener(ListenerPtr const& listener) { return removeListener(listener, EmptyEventId); }
     template <std::derived_from<Event> T>
