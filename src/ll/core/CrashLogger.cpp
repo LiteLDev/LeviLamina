@@ -46,7 +46,7 @@ bool CrashLogger::startCrashLoggerProcess() {
 
     std::wstring cmd = string_utils::str2wstr(fmt::format(
         "{} {} \"{}\"",
-        globalConfig.modules.crashLogger.path,
+        R"(.\plugins\LeviLamina\data\CrashLogger.exe)",
         GetCurrentProcessId(),
         ll::getBdsVersion().to_string()
     ));

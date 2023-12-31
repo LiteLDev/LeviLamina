@@ -190,7 +190,7 @@ void leviLaminaMain() {
     std::error_code ec;
     fs::create_directories(plugin::pluginsPath, ec);
 
-    i18n::load(u8"plugins/LeviLamina/LangPack");
+    i18n::load(u8"plugins/LeviLamina/lang");
 
     loadLeviConfig();
 
