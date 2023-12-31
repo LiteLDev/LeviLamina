@@ -65,26 +65,11 @@
 首先，你需要修改`xmake.lua`中LeviLamina版本号和插件名字信息。修改LeviLamina版本号是为了指定你的插件适用的LeviLamina版本，你可以在[这里](https://github.com/LiteLDev/LeviLamina/releases)找到LeviLamina的版本号。修改插件名字是为了指定你的插件的名字，这个名字将会在LeviLamina中显示。名字允许英文大小写、数字、中划线，不允许包括空格和其他特殊字符，建议采用`example-plugin`或`ExamplePlugin`这两种形式。
 
 ```lua
-add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
-add_requires("levilamina 0.2.1") -- Change this to your expected version.
+-- ...
 
-if not has_config("vs_runtime") then
-    set_runtimes("MD")
-end
+add_requires("levilamina") -- or add_requires("levilamina x.x.x") to specify target LeviLamina version
 
-target("levilamina-plugin-template") -- Change this to your plugin name.
-    add_cxflags(
-        "/utf-8",
-        "/permissive-",
-        "/EHa",
-        "/W4",
-        "/w44265",
-        "/w44289",
-        "/w44296",
-        "/w45263",
-        "/w44738",
-        "/w45204"
-    )
+target("plugin") -- Change this to your plugin name.
 
 -- ...
 ```
@@ -95,10 +80,10 @@ target("levilamina-plugin-template") -- Change this to your plugin name.
 
 ## 理解插件结构
 
-打开`src/plugins/`目录，你会看到以下的文件结构：
+打开`src/`目录，你会看到以下的文件结构：
 
 ```text
-src/plugins/
+src/
 ├── DllMain.cpp
 ├── Plugin.cpp
 └── Plugin.h
@@ -159,17 +144,14 @@ bool Plugin::enable() {
     // Subscribe to events.
     auto& eventBus = ll::event::EventBus::getInstance();
 
-    mSetupCommandEventListener =
-        eventBus.emplaceListener<ll::event::command::SetupCommandEvent>([&logger](ll::event::command::SetupCommandEvent&) {
-            auto command = DynamicCommand::createCommand(
-                "suicide",
-                "Commits suicide.",
-                CommandPermissionLevel::Any);
-            command->addOverload();
-            command->setCallback([&logger](DynamicCommand const&,
-                                    CommandOrigin const& origin,
-                                    CommandOutput&       output,
-                                    std::unordered_map<std::string, DynamicCommand::Result>&) {
+    mSetupCommandEventListener = eventBus.emplaceListener<
+        ll::event::command::SetupCommandEvent>([&logger](ll::event::command::SetupCommandEvent& event) {
+        // Setup suicide command.
+        auto command =
+            DynamicCommand::createCommand(event.registry(), "suicide", "Commits suicide.", CommandPermissionLevel::Any);
+        command->addOverload();
+        command->setCallback(
+            [&logger](DynamicCommand const&, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, DynamicCommand::Result>&) {
                 auto* entity = origin.getEntity();
                 if (entity == nullptr || !entity->isType(ActorType::Player)) {
                     output.error("Only players can commit suicide");
@@ -180,9 +162,10 @@ bool Plugin::enable() {
                 player->kill();
 
                 logger.info("{} killed themselves", player->getRealName());
-            });
-            DynamicCommand::setup(std::move(command));
-        });
+            }
+        );
+        DynamicCommand::setup(event.registry(), std::move(command));
+    });
 
     return true;
 }
@@ -208,21 +191,22 @@ auto& logger = mSelf.getLogger();
 auto& eventBus = ll::event::EventBus::getInstance();
 
 mSetupCommandEventListener =
-    eventBus.emplaceListener<ll::event::command::SetupCommandEvent>([&logger](ll::event::command::SetupCommandEvent&) {
+    eventBus.emplaceListener<ll::event::command::SetupCommandEvent>([&logger](ll::event::command::SetupCommandEvent& event) {
         // ...
     });
 ```
 
-回调函数捕获了logger，同时有一个传入参数，即`SetupCommandEvent`实例。但在我们所采用的动态指令注册中，这个事件实例并不会被用上。动态指令系统支持使用`DynamicCommand::createCommand()`函数直接注册指令。
+回调函数捕获了logger，同时有一个传入参数，即`SetupCommandEvent`实例。动态指令系统支持使用`DynamicCommand::createCommand()`函数直接注册指令。
 
 ```cpp
 auto command = DynamicCommand::createCommand(
+    event.registry(),
     "suicide",
     "Commits suicide.",
     CommandPermissionLevel::Any);
 ```
 
-其中，第一个参数是指令本身，即在控制台或聊天栏内输入的字符。虽然尚未测试各种特殊字符能否生效，但我们仍然建议只包含小写英文字母。第二个参数是指令简介，在聊天栏输入指令的一部分时，会在上方以半透明灰色的形式显示候选指令及其简介。第三个参数是指令的权限等级，其定义如下。其中，如果我们希望生存模式下的普通玩家也能执行，应当选择`Any`。而`GameDirectors`对应至少为创造模式的玩家的权限，`Admin`对应至少为OP的权限，`Host`对应控制台的权限。
+其中，第二个参数是指令本身，即在控制台或聊天栏内输入的字符。虽然尚未测试各种特殊字符能否生效，但我们仍然建议只包含小写英文字母。第三个参数是指令简介，在聊天栏输入指令的一部分时，会在上方以半透明灰色的形式显示候选指令及其简介。第四个参数是指令的权限等级，其定义如下。其中，如果我们希望生存模式下的普通玩家也能执行，应当选择`Any`。而`GameDirectors`对应至少为创造模式的玩家的权限，`Admin`对应至少为OP的权限，`Host`对应控制台的权限。
 
 ```cpp
 enum class CommandPermissionLevel : schar {
@@ -293,7 +277,7 @@ logger.info("{} killed themselves", player->getRealName());
 到这一步，指令对象已经配置完毕，我们调用`DynamicCommand::setup()`，将指令对象加载到游戏中。注意这里需要使用`std::move()`，因为其接收一个右值引用。
 
 ```cpp
-DynamicCommand::setup(std::move(command));
+DynamicCommand::setup(event.registry(), std::move(command));
 ```
 
 在`enable()`函数的末尾，返回一个`true`，代表插件启用成功。如果在`enable()`函数中返回了`false`，则LeviLamina会认为插件启用失败，并在控制台上提示错误信息。

@@ -65,26 +65,11 @@ Clone the plugin repository to your local machine using Git, then open it with V
 First, you need to modify the LeviLamina version number and plugin name information in `xmake.lua`. Modifying the LeviLamina version number is to specify the LeviLamina version your plugin is compatible with, and you can find LeviLamina version numbers [here](https://github.com/LiteLDev/LeviLamina/releases). Modifying the plugin name is to specify the name of your plugin, which will be displayed in LeviLamina. The name allows English uppercase and lowercase letters, numbers, and hyphens, and should not include spaces or other special characters. We recommend using either `example-plugin` or `ExamplePlugin`.
 
 ```lua
-add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
-add_requires("levilamina 0.2.1") -- Change this to your expected version.
+-- ...
 
-if not has_config("vs_runtime") then
-    set_runtimes("MD")
-end
+add_requires("levilamina") -- or add_requires("levilamina x.x.x") to specify target LeviLamina version
 
-target("levilamina-plugin-template") -- Change this to your plugin name.
-    add_cxflags(
-        "/utf-8",
-        "/permissive-",
-        "/EHa",
-        "/W4",
-        "/w44265",
-        "/w44289",
-        "/w44296",
-        "/w45263",
-        "/w44738",
-        "/w45204"
-    )
+target("plugin") -- Change this to your plugin name.
 
 -- ...
 ```
@@ -95,10 +80,10 @@ Then, you need to modify the content in the `README.md` file. This file will be 
 
 ## Understand the Plugin Structure
 
-Open the `src/plugins/` directory, and you will see the following file structure:
+Open the `src/` directory, and you will see the following file structure:
 
 ```text
-src/plugins/
+src/
 ├── DllMain.cpp
 ├── Plugin.cpp
 └── Plugin.h
@@ -159,17 +144,14 @@ bool Plugin::enable() {
     // Subscribe to events.
     auto& eventBus = ll::event::EventBus::getInstance();
 
-    mSetupCommandEventListener =
-        eventBus.emplaceListener<ll::event::command::SetupCommandEvent>([&logger](ll::event::command::SetupCommandEvent&) {
-            auto command = DynamicCommand::createCommand(
-                "suicide",
-                "Commits suicide.",
-                CommandPermissionLevel::Any);
-            command->addOverload();
-            command->setCallback([&logger](DynamicCommand const&,
-                                    CommandOrigin const& origin,
-                                    CommandOutput&       output,
-                                    std::unordered_map<std::string, DynamicCommand::Result>&) {
+    mSetupCommandEventListener = eventBus.emplaceListener<
+        ll::event::command::SetupCommandEvent>([&logger](ll::event::command::SetupCommandEvent& event) {
+        // Setup suicide command.
+        auto command =
+            DynamicCommand::createCommand(event.registry(), "suicide", "Commits suicide.", CommandPermissionLevel::Any);
+        command->addOverload();
+        command->setCallback(
+            [&logger](DynamicCommand const&, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, DynamicCommand::Result>&) {
                 auto* entity = origin.getEntity();
                 if (entity == nullptr || !entity->isType(ActorType::Player)) {
                     output.error("Only players can commit suicide");
@@ -180,9 +162,10 @@ bool Plugin::enable() {
                 player->kill();
 
                 logger.info("{} killed themselves", player->getRealName());
-            });
-            DynamicCommand::setup(std::move(command));
-        });
+            }
+        );
+        DynamicCommand::setup(event.registry(), std::move(command));
+    });
 
     return true;
 }
@@ -208,21 +191,22 @@ Next, we obtain the instance of the event bus and subscribe to the event. In Lev
 auto& eventBus = ll::event::EventBus::getInstance();
 
 mSetupCommandEventListener =
-    eventBus.emplaceListener<ll::event::command::SetupCommandEvent>([&logger](ll::event::command::SetupCommandEvent&) {
+    eventBus.emplaceListener<ll::event::command::SetupCommandEvent>([&logger](ll::event::command::SetupCommandEvent& event) {
         // ...
     });
 ```
 
-The callback function captures the logger and takes an incoming parameter, the `SetupCommandEvent` instance. However, in the dynamic command registration we are using, this event instance is not utilized. The dynamic command system supports registering commands directly using the `DynamicCommand::createCommand()` function.
+The callback function captures the logger and takes an incoming parameter, the `SetupCommandEvent` instance. The dynamic command system supports registering commands directly using the `DynamicCommand::createCommand()` function.
 
 ```cpp
 auto command = DynamicCommand::createCommand(
+    event.registry(),
     "suicide",
     "Commits suicide.",
     CommandPermissionLevel::Any);
 ```
 
-Here, the first parameter is the command itself, i.e., the characters entered in the console or chat. Although various special characters have not been tested for their effectiveness, we still recommend using only lowercase English letters. The second parameter is the command description, which is displayed above the chat when part of the command is entered, showing candidate commands and their descriptions in semi-transparent gray. The third parameter is the permission level of the command, defined as follows. If we want ordinary players in survival mode to be able to execute it, we should choose `Any`. `GameDirectors` corresponds to players with at least creative mode, `Admin` corresponds to players with at least OP permissions, and `Host` corresponds to console permissions.
+Here, the second parameter is the command itself, i.e., the characters entered in the console or chat. Although various special characters have not been tested for their effectiveness, we still recommend using only lowercase English letters. The third parameter is the command description, which is displayed above the chat when part of the command is entered, showing candidate commands and their descriptions in semi-transparent gray. The fourth parameter is the permission level of the command, defined as follows. If we want ordinary players in survival mode to be able to execute it, we should choose `Any`. `GameDirectors` corresponds to players with at least creative mode, `Admin` corresponds to players with at least OP permissions, and `Host` corresponds to console permissions.
 
 ```cpp
 enum class CommandPermissionLevel : schar {
@@ -295,7 +279,7 @@ logger.info("{} killed themselves", player->getRealName());
 At this point, the command object is configured, and we call `DynamicCommand::setup()` to load the command object into the game. Note that `std::move()` is needed here because it takes a right-value reference.
 
 ```cpp
-DynamicCommand::setup(std::move(command));
+DynamicCommand::setup(event.registry(), std::move(command));
 ```
 
 At the end of the `enable()` function, return `true`, indicating that the plugin was enabled successfully. If `false` is returned in the `enable()` function, LeviLamina will consider the plugin to have failed to enable and display an error message on the console.
