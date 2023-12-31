@@ -296,7 +296,7 @@ public:
     MCAPI void addEnumValueConstraints(
         std::string const&              enumName,
         std::vector<std::string> const& values,
-        enum SemanticConstraint         constraints
+        ::SemanticConstraint            constraints
     );
 
     // symbol:
@@ -351,7 +351,7 @@ public:
 
     // symbol:
     // ?isCommandOfType@CommandRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CommandTypeFlag@@@Z
-    MCAPI bool isCommandOfType(std::string const& nameIn, enum CommandTypeFlag commandType) const;
+    MCAPI bool isCommandOfType(std::string const& nameIn, ::CommandTypeFlag commandType) const;
 
     // symbol:
     // ?isValidCommand@CommandRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -363,11 +363,11 @@ public:
     // symbol:
     // ?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z
     MCAPI void registerCommand(
-        std::string const&          name,
-        char const*                 description,
-        enum CommandPermissionLevel requirement,
-        struct CommandFlag          f1,
-        struct CommandFlag          f2
+        std::string const&       name,
+        char const*              description,
+        ::CommandPermissionLevel requirement,
+        struct CommandFlag       f1,
+        struct CommandFlag       f2
     );
 
     // symbol:
@@ -492,7 +492,7 @@ public:
         class CommandRegistry::Symbol const& commandParamSymbol,
         class CommandOrigin const&           origin,
         class CommandRegistry::Symbol const& value,
-        enum SemanticConstraint              requiredConstraints
+        ::SemanticConstraint                 requiredConstraints
     ) const;
 
     // symbol:
@@ -519,7 +519,7 @@ public:
     );
 
     // symbol: ?addSemanticConstraint@CommandRegistry@@AEAAXW4SemanticConstraint@@@Z
-    MCAPI void addSemanticConstraint(enum SemanticConstraint constraintType);
+    MCAPI void addSemanticConstraint(::SemanticConstraint constraintType);
 
     // symbol:
     // ?addSoftTerminal@CommandRegistry@@AEAA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -572,9 +572,9 @@ public:
     // symbol:
     // ?checkOriginCommandFlags@CommandRegistry@@AEBA_NAEBVCommandOrigin@@UCommandFlag@@W4CommandPermissionLevel@@@Z
     MCAPI bool checkOriginCommandFlags(
-        class CommandOrigin const&  origin,
-        struct CommandFlag          flags,
-        enum CommandPermissionLevel permissionLevel
+        class CommandOrigin const& origin,
+        struct CommandFlag         flags,
+        ::CommandPermissionLevel   permissionLevel
     ) const;
 
     // symbol:

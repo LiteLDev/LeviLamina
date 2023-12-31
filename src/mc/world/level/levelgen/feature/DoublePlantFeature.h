@@ -23,7 +23,7 @@ public:
 
     // symbol: ?place@DoublePlantFeature@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@W4DoublePlantType@@@Z
     MCAPI bool
-    place(class BlockSource& region, class BlockPos const& pos, class Random& random, enum DoublePlantType plantType)
+    place(class BlockSource& region, class BlockPos const& pos, class Random& random, ::DoublePlantType plantType)
         const;
 
     // NOLINTEND

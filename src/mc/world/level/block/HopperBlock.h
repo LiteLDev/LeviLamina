@@ -56,7 +56,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@HopperBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const& block, uchar face, enum BlockSupportType type) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();

@@ -214,7 +214,7 @@ public:
     // symbol:
     // ??0FileStorageArea@Core@@IEAA@W4FileAccessType@1@AEBVPath@1@_N2V?$shared_ptr@VFileStorageArea@Core@@@std@@@Z
     MCAPI FileStorageArea(
-        enum Core::FileAccessType                    type,
+        ::Core::FileAccessType                       type,
         class Core::Path const&                      rootPath,
         bool                                         usesFlatFiles,
         bool                                         isAccessedDirectly,

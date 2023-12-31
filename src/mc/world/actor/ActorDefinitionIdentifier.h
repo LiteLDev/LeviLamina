@@ -18,7 +18,7 @@ public:
     MCAPI explicit ActorDefinitionIdentifier(std::string const& fullName);
 
     // symbol: ??0ActorDefinitionIdentifier@@QEAA@W4ActorType@@@Z
-    MCAPI explicit ActorDefinitionIdentifier(enum ActorType type);
+    MCAPI explicit ActorDefinitionIdentifier(::ActorType type);
 
     // symbol: ??0ActorDefinitionIdentifier@@QEAA@$$QEAU0@@Z
     MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier&& other);

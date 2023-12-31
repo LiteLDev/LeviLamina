@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@VillagerV2@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1VillagerV2@@UEAA@XZ
     virtual ~VillagerV2() = default;

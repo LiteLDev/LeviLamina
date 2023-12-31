@@ -156,14 +156,14 @@ public:
     // symbol:
     // ??0FurnaceBlockActor@@IEAA@W4BlockActorType@@AEBVBlockPos@@AEBVHashedString@@W4LevelSoundEvent@Legacy@Puv@@W4ContainerType@@HAEBVBlock@@5@Z
     MCAPI FurnaceBlockActor(
-        enum BlockActorType               blockActorType,
-        class BlockPos const&             pos,
-        class HashedString const&         recipeTag,
-        enum Puv::Legacy::LevelSoundEvent smeltSound,
-        enum ContainerType                containerType,
-        int                               burnInterval,
-        class Block const&                unlitFurnace,
-        class Block const&                litFurnace
+        ::BlockActorType               blockActorType,
+        class BlockPos const&          pos,
+        class HashedString const&      recipeTag,
+        ::Puv::Legacy::LevelSoundEvent smeltSound,
+        ::ContainerType                containerType,
+        int                            burnInterval,
+        class Block const&             unlitFurnace,
+        class Block const&             litFurnace
     );
 
     // NOLINTEND

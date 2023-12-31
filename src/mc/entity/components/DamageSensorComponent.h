@@ -39,7 +39,7 @@ public:
     MCAPI bool recordDamage(
         class Actor&               owner,
         class Actor*               sender,
-        enum ActorDamageCause      cause,
+        ::ActorDamageCause         cause,
         int                        amount,
         bool                       fatal,
         class VariantParameterList parameters

@@ -67,7 +67,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 83, symbol: ?handleEntityEvent@FireworksRocketActor@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(enum ActorEvent eventId, int data);
+    virtual void handleEntityEvent(::ActorEvent eventId, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();

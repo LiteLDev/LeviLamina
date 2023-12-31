@@ -52,7 +52,7 @@ public:
 
     // symbol: ??0ActorDamageByChildActorSource@@QEAA@AEBVActor@@0W4ActorDamageCause@@@Z
     MCAPI
-    ActorDamageByChildActorSource(class Actor const& childActor, class Actor const& actor, enum ActorDamageCause cause);
+    ActorDamageByChildActorSource(class Actor const& childActor, class Actor const& actor, ::ActorDamageCause cause);
 
     // NOLINTEND
 };

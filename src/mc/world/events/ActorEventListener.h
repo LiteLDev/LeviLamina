@@ -42,9 +42,9 @@ public:
     // symbol:
     // ?onActorMobInteraction@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4InteractionType@MinecraftEventing@@W4ActorType@@@Z
     MCVAPI ::EventResult onActorMobInteraction(
-        class Actor&                            actor,
-        enum MinecraftEventing::InteractionType interactionType,
-        enum ActorType                          interactedActorType
+        class Actor&                         actor,
+        ::MinecraftEventing::InteractionType interactionType,
+        ::ActorType                          interactedActorType
     );
 
     // symbol:

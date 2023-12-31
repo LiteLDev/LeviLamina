@@ -38,20 +38,19 @@ public:
 
     // vIndex: 5, symbol:
     // ?onTransactionError@ComplexInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
-    virtual void onTransactionError(class Player& player, enum InventoryTransactionError error) const;
+    virtual void onTransactionError(class Player& player, ::InventoryTransactionError error) const;
 
     // symbol: ??0ComplexInventoryTransaction@@QEAA@W4Type@0@@Z
-    MCAPI explicit ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type type);
+    MCAPI explicit ComplexInventoryTransaction(::ComplexInventoryTransaction::Type type);
 
     // symbol:
     // ?fromType@ComplexInventoryTransaction@@SA?AV?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@W4Type@1@@Z
-    MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type type
-    );
+    MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(::ComplexInventoryTransaction::Type type);
 
     // symbol:
     // ?fromType@ComplexInventoryTransaction@@SA?AV?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@W4Type@1@AEBVInventoryTransaction@@@Z
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction>
-    fromType(enum ComplexInventoryTransaction::Type type, class InventoryTransaction const& transaction);
+    fromType(::ComplexInventoryTransaction::Type type, class InventoryTransaction const& transaction);
 
     // symbol:
     // ?getTransactionTypeName@ComplexInventoryTransaction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Type@1@@Z

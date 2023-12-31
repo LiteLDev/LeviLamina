@@ -37,7 +37,7 @@ public:
     MCAPI SetDifficultyPacket();
 
     // symbol: ??0SetDifficultyPacket@@QEAA@W4Difficulty@@@Z
-    MCAPI explicit SetDifficultyPacket(enum Difficulty difficulty);
+    MCAPI explicit SetDifficultyPacket(::Difficulty difficulty);
 
     // symbol: ?getDifficulty@SetDifficultyPacket@@QEBA?AW4Difficulty@@XZ
     MCAPI ::Difficulty getDifficulty() const;

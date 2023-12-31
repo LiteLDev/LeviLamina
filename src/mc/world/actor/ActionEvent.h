@@ -19,12 +19,8 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ActionEvent@@QEAA@HW4ActionState@0@_NW4FocusImpact@@@Z
-    MCAPI ActionEvent(
-        int                           actionId,
-        enum ActionEvent::ActionState actionState,
-        bool                          isExclusive,
-        enum FocusImpact              focusImpact
-    );
+    MCAPI
+    ActionEvent(int actionId, ::ActionEvent::ActionState actionState, bool isExclusive, ::FocusImpact focusImpact);
 
     // NOLINTEND
 };

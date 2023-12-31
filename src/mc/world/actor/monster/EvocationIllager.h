@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 4, symbol:
     // ?reloadHardcoded@EvocationIllager@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1EvocationIllager@@UEAA@XZ
     virtual ~EvocationIllager() = default;

@@ -37,10 +37,10 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@Vex@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 6, symbol: ?initializeComponents@Vex@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1Vex@@UEAA@XZ
     virtual ~Vex() = default;

@@ -35,7 +35,7 @@ public:
     MCAPI RespawnPacket();
 
     // symbol: ??0RespawnPacket@@QEAA@AEBVVec3@@AEBW4PlayerRespawnState@@@Z
-    MCAPI RespawnPacket(class Vec3 const& pos, enum PlayerRespawnState const& state);
+    MCAPI RespawnPacket(class Vec3 const& pos, ::PlayerRespawnState const& state);
 
     // NOLINTEND
 };

@@ -37,7 +37,7 @@ public:
     MCAPI SetDefaultGameTypePacket();
 
     // symbol: ??0SetDefaultGameTypePacket@@QEAA@W4GameType@@@Z
-    MCAPI explicit SetDefaultGameTypePacket(enum GameType defaultGameType);
+    MCAPI explicit SetDefaultGameTypePacket(::GameType defaultGameType);
 
     // NOLINTEND
 };

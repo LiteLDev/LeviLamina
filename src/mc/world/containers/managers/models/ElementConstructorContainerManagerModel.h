@@ -43,7 +43,7 @@ public:
 
     // symbol: ??0ElementConstructorContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI ElementConstructorContainerManagerModel(
-        enum ContainerID      containerId,
+        ::ContainerID         containerId,
         class Player&         player,
         class BlockPos const& blockPos
     );

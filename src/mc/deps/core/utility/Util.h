@@ -270,7 +270,7 @@ MCAPI void toLowerInPlace(std::string& str);
 MCAPI std::string toPascalCase(std::string const&, char);
 
 // symbol: ?toString@Util@@YAPEBDW4BoneTransformType@@@Z
-MCAPI char const* toString(enum BoneTransformType boneTransformType);
+MCAPI char const* toString(::BoneTransformType boneTransformType);
 
 // symbol: ?toString@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
 MCAPI std::string toString(std::string const& inputStr);

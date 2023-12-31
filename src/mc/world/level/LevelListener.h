@@ -92,7 +92,7 @@ public:
     virtual void __unk_vfn_24();
 
     // vIndex: 25, symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
-    virtual void levelEvent(enum LevelEvent type, class Vec3 const& pos, int data);
+    virtual void levelEvent(::LevelEvent type, class Vec3 const& pos, int data);
 
     // symbol: ?addBreakingItemParticleEffect@LevelListener@@UEAAXAEBVVec3@@W4ParticleType@@AEBUResolvedItemIconInfo@@@Z
     MCVAPI void addBreakingItemParticleEffect(class Vec3 const&, ::ParticleType, struct ResolvedItemIconInfo const&);
@@ -130,7 +130,7 @@ public:
     MCVAPI void allChanged();
 
     // symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
-    MCVAPI void levelEvent(enum LevelEvent type, class CompoundTag const& data);
+    MCVAPI void levelEvent(::LevelEvent type, class CompoundTag const& data);
 
     // symbol: ?onChunkReloaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
     MCVAPI void onChunkReloaded(class ChunkSource&, class LevelChunk&);
@@ -156,8 +156,7 @@ public:
     MCVAPI void playerListChanged();
 
     // symbol: ?sendServerLegacyParticle@LevelListener@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
-    MCVAPI void
-    sendServerLegacyParticle(enum ParticleType name, class Vec3 const& pos, class Vec3 const& dir, int data);
+    MCVAPI void sendServerLegacyParticle(::ParticleType name, class Vec3 const& pos, class Vec3 const& dir, int data);
 
     // symbol: ?takePicture@LevelListener@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
     MCVAPI void takePicture(

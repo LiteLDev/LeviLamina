@@ -43,7 +43,7 @@ public:
 
     // symbol: ??0GrindstoneContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI
-    GrindstoneContainerManagerModel(enum ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+    GrindstoneContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
     // symbol: ?ADDITIONAL_SLOT@GrindstoneContainerManagerModel@@2HB
     MCAPI static int const ADDITIONAL_SLOT;

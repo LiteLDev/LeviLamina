@@ -37,7 +37,7 @@ public:
     MCAPI PlayStatusPacket();
 
     // symbol: ??0PlayStatusPacket@@QEAA@W4PlayStatus@@@Z
-    MCAPI explicit PlayStatusPacket(enum PlayStatus status);
+    MCAPI explicit PlayStatusPacket(::PlayStatus status);
 
     // NOLINTEND
 };

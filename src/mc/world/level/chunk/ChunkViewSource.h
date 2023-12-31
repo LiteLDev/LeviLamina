@@ -45,7 +45,7 @@ public:
     MCAPI ChunkViewSource(class ChunkViewSource const&);
 
     // symbol: ??0ChunkViewSource@@QEAA@AEAVChunkSource@@W4LoadMode@1@@Z
-    MCAPI ChunkViewSource(class ChunkSource& mainSource, enum ChunkSource::LoadMode parentLoadMode);
+    MCAPI ChunkViewSource(class ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
 
     // symbol:
     // ??0ChunkViewSource@@QEAA@AEAVChunkSource@@AEAV?$LevelChunkGridAreaElement@V?$weak_ptr@VLevelChunk@@@std@@@@AEBUBounds@@@Z

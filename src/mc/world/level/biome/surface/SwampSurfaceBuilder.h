@@ -26,7 +26,7 @@ public:
     virtual ~SwampSurfaceBuilder() = default;
 
     // vIndex: 1, symbol: ?init@SwampSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
-    virtual void init(class EntityContext&, uint);
+    virtual void init(class EntityContext& entity, uint);
 
     // vIndex: 2, symbol:
     // ?buildSurfaceAt@SwampSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z

@@ -57,7 +57,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@ComposterBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const& block, uchar face, enum BlockSupportType type) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -226,9 +226,9 @@ public:
     // symbol:
     // ?_notifyClientComposterUsed@ComposterBlock@@AEBAXAEBVPlayer@@FW4POIBlockInteractionType@MinecraftEventing@@@Z
     MCAPI void _notifyClientComposterUsed(
-        class Player const&                             player,
-        short                                           itemId,
-        enum MinecraftEventing::POIBlockInteractionType interactionType
+        class Player const&                          player,
+        short                                        itemId,
+        ::MinecraftEventing::POIBlockInteractionType interactionType
     ) const;
 
     // symbol:

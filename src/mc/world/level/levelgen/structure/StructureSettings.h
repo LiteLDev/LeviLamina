@@ -51,7 +51,7 @@ public:
     MCAPI void setReloadActorEquipment(bool);
 
     // symbol: ?setRotation@StructureSettings@@QEAAXW4Rotation@@@Z
-    MCAPI void setRotation(enum Rotation rotation);
+    MCAPI void setRotation(::Rotation rotation);
 
     // symbol: ?setStructureOffset@StructureSettings@@QEAAXAEBVBlockPos@@@Z
     MCAPI void setStructureOffset(class BlockPos const& offset);

@@ -61,10 +61,10 @@ public:
 
     // symbol: ??0PlayerUIContainerModelBase@@QEAA@W4ContainerEnumName@@AEAVPlayer@@HW4ContainerCategory@@@Z
     MCAPI PlayerUIContainerModelBase(
-        enum ContainerEnumName containerName,
-        class Player&          player,
-        int                    containerSize,
-        enum ContainerCategory category
+        ::ContainerEnumName containerName,
+        class Player&       player,
+        int                 containerSize,
+        ::ContainerCategory category
     );
 
     // NOLINTEND

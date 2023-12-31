@@ -79,7 +79,7 @@ public:
     // symbol:
     // ?createPackMetadata@Pack@@SA?AV?$unique_ptr@VPackMetadata@@U?$default_delete@VPackMetadata@@@std@@@std@@W4PackType@@AEAVPackManifest@@AEBVPackAccessStrategy@@AEAVPackReport@@@Z
     MCAPI static std::unique_ptr<class PackMetadata> createPackMetadata(
-        enum PackType                   type,
+        ::PackType                      type,
         class PackManifest&             manifest,
         class PackAccessStrategy const& accessStrategy,
         class PackReport&               report

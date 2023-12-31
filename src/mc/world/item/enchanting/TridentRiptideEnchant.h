@@ -18,7 +18,7 @@ public:
     virtual ~TridentRiptideEnchant() = default;
 
     // vIndex: 1, symbol: ?isCompatibleWith@TridentRiptideEnchant@@UEBA_NW4Type@Enchant@@@Z
-    virtual bool isCompatibleWith(enum Enchant::Type type) const;
+    virtual bool isCompatibleWith(::Enchant::Type type) const;
 
     // vIndex: 2, symbol: ?getMinCost@TridentRiptideEnchant@@UEBAHH@Z
     virtual int getMinCost(int level) const;

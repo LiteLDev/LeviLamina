@@ -42,8 +42,7 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0AnvilContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI
-    AnvilContainerManagerModel(enum ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+    MCAPI AnvilContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
     // symbol: ?INPUT_SLOT@AnvilContainerManagerModel@@2HB
     MCAPI static int const INPUT_SLOT;

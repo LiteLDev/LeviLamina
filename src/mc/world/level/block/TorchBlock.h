@@ -176,7 +176,8 @@ public:
 
     // vIndex: 158, symbol:
     // ?getRenderLayer@TorchBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
+    virtual ::BlockRenderLayer
+    getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
 
     // symbol: ?canBeSilkTouched@TorchBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -185,14 +186,14 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0TorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4MaterialType@@@Z
-    MCAPI TorchBlock(std::string const& nameId, int id, enum MaterialType mat);
+    MCAPI TorchBlock(std::string const& nameId, int id, ::MaterialType mat);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_flameParticlePos@TorchBlock@@IEBA?AVVec3@@AEBVBlockPos@@W4TorchFacing@@@Z
-    MCAPI class Vec3 _flameParticlePos(class BlockPos const& pos, enum TorchFacing dir) const;
+    MCAPI class Vec3 _flameParticlePos(class BlockPos const& pos, ::TorchFacing dir) const;
 
     // symbol: ?canBePlacedOn@TorchBlock@@IEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
     MCAPI bool canBePlacedOn(class BlockSource& region, class BlockPos const& pos, uchar facing) const;

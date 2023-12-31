@@ -18,7 +18,7 @@ public:
     MCAPI EquippableComponent(class EquippableComponent&& other);
 
     // symbol: ?createDataPacket@EquippableComponent@@QEBA?AVUpdateEquipPacket@@AEAVActor@@W4ContainerID@@@Z
-    MCAPI class UpdateEquipPacket createDataPacket(class Actor& owner, enum ContainerID containerID) const;
+    MCAPI class UpdateEquipPacket createDataPacket(class Actor& owner, ::ContainerID containerID) const;
 
     // symbol:
     // ?createTag@EquippableComponent@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAVActor@@@Z

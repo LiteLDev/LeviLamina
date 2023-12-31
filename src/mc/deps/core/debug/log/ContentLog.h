@@ -81,10 +81,10 @@ public:
     MCAPI void updateEnabledStatus();
 
     // symbol: ?getBedrockLogAreaFromContentLogArea@ContentLog@@SA?BW4LogAreaID@@W4LogArea@@@Z
-    MCAPI static ::LogAreaID const getBedrockLogAreaFromContentLogArea(enum LogArea contentLogArea);
+    MCAPI static ::LogAreaID const getBedrockLogAreaFromContentLogArea(::LogArea contentLogArea);
 
     // symbol: ?getLogAreaName@ContentLog@@SAPEBDW4LogArea@@@Z
-    MCAPI static char const* getLogAreaName(enum LogArea area);
+    MCAPI static char const* getLogAreaName(::LogArea area);
 
     // NOLINTEND
 

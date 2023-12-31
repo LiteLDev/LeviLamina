@@ -186,14 +186,14 @@ public:
     MCAPI ChemistryTableBlock(std::string const& nameId, int id);
 
     // symbol: ?getItemForType@ChemistryTableBlock@@SA?AVItemInstance@@W4ChemistryTableType@@H@Z
-    MCAPI static class ItemInstance getItemForType(enum ChemistryTableType type, int stackCount);
+    MCAPI static class ItemInstance getItemForType(::ChemistryTableType type, int stackCount);
 
     // symbol: ?isUIValidForPlayer@ChemistryTableBlock@@SA_NAEBVBlockPos@@AEAVPlayer@@MW4ChemistryTableType@@@Z
     MCAPI static bool isUIValidForPlayer(
-        class BlockPos const&   pos,
-        class Player&           player,
-        float                   pickRange,
-        enum ChemistryTableType expectedType
+        class BlockPos const& pos,
+        class Player&         player,
+        float                 pickRange,
+        ::ChemistryTableType  expectedType
     );
 
     // NOLINTEND

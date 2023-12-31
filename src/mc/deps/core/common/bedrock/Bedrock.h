@@ -101,7 +101,7 @@ MCAPI int strtoint32(char const*, char**, int);
 MCAPI uint strtouint32(char const*, char**, int);
 
 // symbol: ?throw_system_error@Bedrock@@YAXW4errc@std@@@Z
-MCAPI void throw_system_error(enum std::errc errc);
+MCAPI void throw_system_error(std::errc errc);
 // NOLINTEND
 
 }; // namespace Bedrock

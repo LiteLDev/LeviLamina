@@ -57,7 +57,7 @@ public:
             Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
             std::string                                         templateName,
             class BlockPos const&                               origin,
-            enum Rotation                                       rotation,
+            ::Rotation                                          rotation,
             float                                               integrity,
             bool                                                isSatellite,
             class Dimension&                                    dimension
@@ -92,7 +92,7 @@ public:
     MCAPI static void _addPiece(
         Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
         class BlockPos const&                               position,
-        enum Rotation const&                                rotation,
+        ::Rotation const&                                   rotation,
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
         class Random&                                       random,
         class Dimension&                                    dimension
@@ -103,7 +103,7 @@ public:
     MCAPI static void _addScatteredPieces(
         Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
         class Random&                                       random,
-        enum Rotation const&                                rotation,
+        ::Rotation const&                                   rotation,
         class BlockPos const&                               parentPos,
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
         class Dimension&                                    dimension

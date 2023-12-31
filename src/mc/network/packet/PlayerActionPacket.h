@@ -37,22 +37,18 @@ public:
     MCAPI PlayerActionPacket();
 
     // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@VActorRuntimeID@@@Z
-    MCAPI PlayerActionPacket(enum PlayerActionType action, class ActorRuntimeID runtimeId);
+    MCAPI PlayerActionPacket(::PlayerActionType action, class ActorRuntimeID runtimeId);
 
     // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@VActorRuntimeID@@@Z
-    MCAPI PlayerActionPacket(enum PlayerActionType action, class BlockPos const& pos, class ActorRuntimeID runtimeId);
+    MCAPI PlayerActionPacket(::PlayerActionType action, class BlockPos const& pos, class ActorRuntimeID runtimeId);
 
     // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@HVActorRuntimeID@@@Z
-    MCAPI PlayerActionPacket(
-        enum PlayerActionType action,
-        class BlockPos const& pos,
-        int                   data,
-        class ActorRuntimeID  runtimeId
-    );
+    MCAPI
+    PlayerActionPacket(::PlayerActionType action, class BlockPos const& pos, int data, class ActorRuntimeID runtimeId);
 
     // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@EVActorRuntimeID@@@Z
     MCAPI PlayerActionPacket(
-        enum PlayerActionType action,
+        ::PlayerActionType    action,
         class BlockPos const& pos,
         uchar                 face,
         class ActorRuntimeID  runtimeId

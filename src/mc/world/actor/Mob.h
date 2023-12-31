@@ -46,13 +46,13 @@ public:
     virtual void outOfWorld();
 
     // vIndex: 4, symbol: ?reloadHardcoded@Mob@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 5, symbol: ?reloadHardcodedClient@Mob@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcodedClient(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 6, symbol: ?initializeComponents@Mob@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 9, symbol: ?_doInitialMove@Mob@@MEAAXXZ
     virtual void _doInitialMove();
@@ -151,16 +151,16 @@ public:
     virtual bool doFireHurt(int amount);
 
     // vIndex: 83, symbol: ?handleEntityEvent@Mob@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(enum ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent id, int data);
 
     // vIndex: 88, symbol: ?getArmorMaterialTypeInSlot@Mob@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z
-    virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot slot) const;
+    virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::ArmorSlot slot) const;
 
     // vIndex: 89, symbol: ?getArmorMaterialTextureTypeInSlot@Mob@@UEBA?AW4ArmorTextureType@@W4ArmorSlot@@@Z
-    virtual ::ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot slot) const;
+    virtual ::ArmorTextureType getArmorMaterialTextureTypeInSlot(::ArmorSlot slot) const;
 
     // vIndex: 90, symbol: ?getArmorColorInSlot@Mob@@UEBAMW4ArmorSlot@@H@Z
-    virtual float getArmorColorInSlot(enum ArmorSlot slot, int channelRGBA) const;
+    virtual float getArmorColorInSlot(::ArmorSlot slot, int channelRGBA) const;
 
     // vIndex: 91, symbol: ?setEquippedSlot@Mob@@UEAAXW4EquipmentSlot@Legacy@Puv@@AEBVItemStack@@@Z
     virtual void setEquippedSlot(::Puv::Legacy::EquipmentSlot, class ItemStack const&);
@@ -561,7 +561,7 @@ public:
     MCAPI void setRolling(bool val);
 
     // symbol: ?setSpawnMethod@Mob@@QEAAXW4MobSpawnMethod@@@Z
-    MCAPI void setSpawnMethod(enum MobSpawnMethod method);
+    MCAPI void setSpawnMethod(::MobSpawnMethod method);
 
     // symbol: ?setSpeedModifier@Mob@@QEAAXM@Z
     MCAPI void setSpeedModifier(float speed);

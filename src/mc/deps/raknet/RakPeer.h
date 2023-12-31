@@ -131,7 +131,7 @@ public:
         struct RakNet::AddressOrGUID target,
         bool                         sendDisconnectionNotification,
         uchar                        orderingChannel,
-        enum PacketPriority          disconnectionNotificationPriority
+        ::PacketPriority             disconnectionNotificationPriority
     );
 
     // symbol: ?Connect@RakPeer@RakNet@@UEAA?AW4ConnectionAttemptResult@2@PEBDG0HPEAUPublicKey@2@IIII@Z
@@ -343,8 +343,8 @@ public:
     // symbol: ?Send@RakPeer@RakNet@@UEAAIPEBVBitStream@2@W4PacketPriority@@W4PacketReliability@@DUAddressOrGUID@2@_NI@Z
     MCVAPI uint Send(
         class RakNet::BitStream const* bitStream,
-        enum PacketPriority            priority,
-        enum PacketReliability         reliability,
+        ::PacketPriority               priority,
+        ::PacketReliability            reliability,
         char                           orderingChannel,
         struct RakNet::AddressOrGUID   systemIdentifier,
         bool                           broadcast,
@@ -355,8 +355,8 @@ public:
     MCVAPI uint Send(
         char const*                  data,
         int                          length,
-        enum PacketPriority          priority,
-        enum PacketReliability       reliability,
+        ::PacketPriority             priority,
+        ::PacketReliability          reliability,
         char                         orderingChannel,
         struct RakNet::AddressOrGUID systemIdentifier,
         bool                         broadcast,
@@ -368,8 +368,8 @@ public:
         char const**                 data,
         int const*                   lengths,
         int                          numParameters,
-        enum PacketPriority          priority,
-        enum PacketReliability       reliability,
+        ::PacketPriority             priority,
+        ::PacketReliability          reliability,
         char                         orderingChannel,
         struct RakNet::AddressOrGUID systemIdentifier,
         bool                         broadcast,
@@ -429,8 +429,7 @@ public:
     );
 
     // symbol: ?Shutdown@RakPeer@RakNet@@UEAAXIEW4PacketPriority@@@Z
-    MCVAPI void
-    Shutdown(uint blockDuration, uchar orderingChannel, enum PacketPriority disconnectionNotificationPriority);
+    MCVAPI void Shutdown(uint blockDuration, uchar orderingChannel, ::PacketPriority disconnectionNotificationPriority);
 
     // symbol: ?Startup@RakPeer@RakNet@@UEAA?AW4StartupResult@2@IPEAUSocketDescriptor@2@IH@Z
     MCVAPI ::RakNet::StartupResult Startup(
@@ -471,14 +470,14 @@ public:
     // symbol:
     // ?AssignSystemAddressToRemoteSystemList@RakPeer@RakNet@@IEAAPEAURemoteSystemStruct@12@USystemAddress@2@W4ConnectMode@312@PEAVRakNetSocket2@2@PEA_NU42@HURakNetGUID@2@_N@Z
     MCAPI struct RakNet::RakPeer::RemoteSystemStruct* AssignSystemAddressToRemoteSystemList(
-        struct RakNet::SystemAddress                          systemAddress,
-        enum RakNet::RakPeer::RemoteSystemStruct::ConnectMode connectionMode,
-        class RakNet::RakNetSocket2*                          incomingRakNetSocket,
-        bool*                                                 thisIPConnectedRecently,
-        struct RakNet::SystemAddress                          bindingAddress,
-        int                                                   incomingMTU,
-        struct RakNet::RakNetGUID                             guid,
-        bool                                                  useSecurity
+        struct RakNet::SystemAddress                       systemAddress,
+        ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode connectionMode,
+        class RakNet::RakNetSocket2*                       incomingRakNetSocket,
+        bool*                                              thisIPConnectedRecently,
+        struct RakNet::SystemAddress                       bindingAddress,
+        int                                                incomingMTU,
+        struct RakNet::RakNetGUID                          guid,
+        bool                                               useSecurity
     );
 
     // symbol:
@@ -506,7 +505,7 @@ public:
         bool                                sendDisconnectionNotification,
         bool                                performImmediate,
         uchar                               orderingChannel,
-        enum PacketPriority                 disconnectionNotificationPriority
+        ::PacketPriority                    disconnectionNotificationPriority
     );
 
     // symbol: ?DerefAllSockets@RakPeer@RakNet@@IEAAXXZ
@@ -550,7 +549,7 @@ public:
         struct RakNet::SystemAddress systemAddress,
         bool                         performImmediate,
         uchar                        orderingChannel,
-        enum PacketPriority          disconnectionNotificationPriority
+        ::PacketPriority             disconnectionNotificationPriority
     );
 
     // symbol: ?OnConnectedPong@RakPeer@RakNet@@IEAAX_K0PEAURemoteSystemStruct@12@@Z
@@ -570,7 +569,7 @@ public:
 
     // symbol: ?PingInternal@RakPeer@RakNet@@IEAAXUSystemAddress@2@_NW4PacketReliability@@@Z
     MCAPI void
-    PingInternal(struct RakNet::SystemAddress target, bool performImmediate, enum PacketReliability reliability);
+    PingInternal(struct RakNet::SystemAddress target, bool performImmediate, ::PacketReliability reliability);
 
     // symbol: ?ReferenceRemoteSystem@RakPeer@RakNet@@IEAAXAEBUSystemAddress@2@I@Z
     MCAPI void ReferenceRemoteSystem(struct RakNet::SystemAddress const& sa, uint remoteSystemListIndex);
@@ -578,30 +577,30 @@ public:
     // symbol:
     // ?SendBuffered@RakPeer@RakNet@@IEAAXPEBDIW4PacketPriority@@W4PacketReliability@@DUAddressOrGUID@2@_NW4ConnectMode@RemoteSystemStruct@12@I@Z
     MCAPI void SendBuffered(
-        char const*                                           data,
-        uint                                                  numberOfBitsToSend,
-        enum PacketPriority                                   priority,
-        enum PacketReliability                                reliability,
-        char                                                  orderingChannel,
-        struct RakNet::AddressOrGUID                          systemIdentifier,
-        bool                                                  broadcast,
-        enum RakNet::RakPeer::RemoteSystemStruct::ConnectMode connectionMode,
-        uint                                                  receipt
+        char const*                                        data,
+        uint                                               numberOfBitsToSend,
+        ::PacketPriority                                   priority,
+        ::PacketReliability                                reliability,
+        char                                               orderingChannel,
+        struct RakNet::AddressOrGUID                       systemIdentifier,
+        bool                                               broadcast,
+        ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode connectionMode,
+        uint                                               receipt
     );
 
     // symbol:
     // ?SendBufferedList@RakPeer@RakNet@@IEAAXPEAPEBDPEBHHW4PacketPriority@@W4PacketReliability@@DUAddressOrGUID@2@_NW4ConnectMode@RemoteSystemStruct@12@I@Z
     MCAPI void SendBufferedList(
-        char const**                                          data,
-        int const*                                            lengths,
-        int                                                   numParameters,
-        enum PacketPriority                                   priority,
-        enum PacketReliability                                reliability,
-        char                                                  orderingChannel,
-        struct RakNet::AddressOrGUID                          systemIdentifier,
-        bool                                                  broadcast,
-        enum RakNet::RakPeer::RemoteSystemStruct::ConnectMode connectionMode,
-        uint                                                  receipt
+        char const**                                       data,
+        int const*                                         lengths,
+        int                                                numParameters,
+        ::PacketPriority                                   priority,
+        ::PacketReliability                                reliability,
+        char                                               orderingChannel,
+        struct RakNet::AddressOrGUID                       systemIdentifier,
+        bool                                               broadcast,
+        ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode connectionMode,
+        uint                                               receipt
     );
 
     // symbol: ?SendConnectionRequest@RakPeer@RakNet@@IEAA?AW4ConnectionAttemptResult@2@PEBDG0HPEAUPublicKey@2@IIIII@Z
@@ -639,8 +638,8 @@ public:
     MCAPI bool SendImmediate(
         char*                        data,
         uint                         numberOfBitsToSend,
-        enum PacketPriority          priority,
-        enum PacketReliability       reliability,
+        ::PacketPriority             priority,
+        ::PacketReliability          reliability,
         char                         orderingChannel,
         struct RakNet::AddressOrGUID systemIdentifier,
         bool                         broadcast,

@@ -45,7 +45,7 @@ public:
         uint64             fileSize,
         std::string const& fileHash,
         bool               isPremium,
-        enum PackType      packType
+        ::PackType         packType
     );
 
     // NOLINTEND

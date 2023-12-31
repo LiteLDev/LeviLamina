@@ -39,7 +39,7 @@ public:
 
     // vIndex: 5, symbol:
     // ?onTransactionError@ItemUseOnActorInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
-    virtual void onTransactionError(class Player& player, enum InventoryTransactionError error) const;
+    virtual void onTransactionError(class Player& player, ::InventoryTransactionError error) const;
 
     // symbol: ?setSelectedItem@ItemUseOnActorInventoryTransaction@@QEAAAEAV1@AEBVItemStack@@@Z
     MCAPI class ItemUseOnActorInventoryTransaction& setSelectedItem(class ItemStack const& item);

@@ -37,7 +37,7 @@ public:
     MCAPI ContainerSetDataPacket();
 
     // symbol: ??0ContainerSetDataPacket@@QEAA@W4ContainerID@@HH@Z
-    MCAPI ContainerSetDataPacket(enum ContainerID containerId, int id, int value);
+    MCAPI ContainerSetDataPacket(::ContainerID containerId, int id, int value);
 
     // NOLINTEND
 };

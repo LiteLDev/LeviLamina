@@ -32,9 +32,9 @@ public:
     // symbol:
     // ?sendToAdmins@CommandOutputSender@@QEAAXAEBVCommandOrigin@@AEBVCommandOutput@@W4CommandPermissionLevel@@@Z
     MCAPI void sendToAdmins(
-        class CommandOrigin const&  origin,
-        class CommandOutput const&  output,
-        enum CommandPermissionLevel opPermLevel
+        class CommandOrigin const& origin,
+        class CommandOutput const& output,
+        ::CommandPermissionLevel   opPermLevel
     );
 
     // symbol:

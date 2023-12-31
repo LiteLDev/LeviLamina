@@ -35,7 +35,7 @@ public:
     );
 
     // symbol: ?addOptions@CommandParameterData@@QEAAAEAV1@W4CommandParameterOption@@@Z
-    MCAPI class CommandParameterData& addOptions(enum CommandParameterOption options);
+    MCAPI class CommandParameterData& addOptions(::CommandParameterOption options);
 
     // symbol: ??1CommandParameterData@@QEAA@XZ
     MCAPI ~CommandParameterData();

@@ -34,10 +34,10 @@ public:
     MCVAPI bool isSlotDirty(int slot);
 
     // symbol: ?setContainerId@BaseContainerMenu@@UEAAXW4ContainerID@@@Z
-    MCVAPI void setContainerId(enum ContainerID id);
+    MCVAPI void setContainerId(::ContainerID id);
 
     // symbol: ?setContainerType@BaseContainerMenu@@UEAAXW4ContainerType@@@Z
-    MCVAPI void setContainerType(enum ContainerType type);
+    MCVAPI void setContainerType(::ContainerType type);
 
     // symbol: ?setData@BaseContainerMenu@@UEAAXHH@Z
     MCVAPI void setData(int id, int value);

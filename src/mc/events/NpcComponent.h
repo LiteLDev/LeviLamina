@@ -164,7 +164,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_defineEntityDataString@NpcComponent@@AEAAXAEAVActor@@W4ActorDataIDs@@@Z
-    MCAPI void _defineEntityDataString(class Actor& owner, enum ActorDataIDs id);
+    MCAPI void _defineEntityDataString(class Actor& owner, ::ActorDataIDs id);
 
     // symbol: ?_deserializeData@NpcComponent@@AEAAXAEBVValue@Json@@@Z
     MCAPI void _deserializeData(class Json::Value const&);

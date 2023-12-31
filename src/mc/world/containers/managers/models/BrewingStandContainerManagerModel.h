@@ -42,11 +42,8 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0BrewingStandContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI BrewingStandContainerManagerModel(
-        enum ContainerID      containerId,
-        class Player&         player,
-        class BlockPos const& blockPos
-    );
+    MCAPI
+    BrewingStandContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
     // NOLINTEND
 };

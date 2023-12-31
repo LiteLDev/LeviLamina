@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0PortalShape@@QEAA@AEBVBlockSource@@AEBVBlockPos@@W4PortalAxis@@@Z
-    MCAPI PortalShape(class BlockSource const& source, class BlockPos const& pos, enum PortalAxis axis);
+    MCAPI PortalShape(class BlockSource const& source, class BlockPos const& pos, ::PortalAxis axis);
 
     // symbol: ?createPortalBlocks@PortalShape@@QEBAXAEAVWorldChangeTransaction@@@Z
     MCAPI void createPortalBlocks(class WorldChangeTransaction& transaction) const;
@@ -40,7 +40,7 @@ public:
     MCAPI void removePortalBlocks(class WorldChangeTransaction&, class BlockPos const&) const;
 
     // symbol: ?setAxis@PortalShape@@QEAAXW4PortalAxis@@@Z
-    MCAPI void setAxis(enum PortalAxis axis);
+    MCAPI void setAxis(::PortalAxis axis);
 
     // symbol: ?updateNeighboringBlocks@PortalShape@@QEBAXAEAVBlockSource@@AEBVVec3@@@Z
     MCAPI void updateNeighboringBlocks(class BlockSource& source, class Vec3 const& perpendicularAxis) const;
@@ -54,8 +54,7 @@ public:
 
     // symbol: ?_getDistanceUntilEdge@PortalShape@@AEBAHAEBVBlockPos@@W4Name@Facing@@AEBVBlockSource@@@Z
     MCAPI int
-    _getDistanceUntilEdge(class BlockPos const& pos, enum Facing::Name direction, class BlockSource const& source)
-        const;
+    _getDistanceUntilEdge(class BlockPos const& pos, ::Facing::Name direction, class BlockSource const& source) const;
 
     // NOLINTEND
 };

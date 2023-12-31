@@ -40,7 +40,7 @@ public:
     virtual void outOfWorld();
 
     // vIndex: 4, symbol: ?reloadHardcoded@ThrownTrident@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1ThrownTrident@@UEAA@XZ
     virtual ~ThrownTrident() = default;

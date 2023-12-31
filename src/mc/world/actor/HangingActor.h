@@ -37,11 +37,11 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@HangingActor@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 5, symbol:
     // ?reloadHardcodedClient@HangingActor@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcodedClient(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: ??1HangingActor@@UEAA@XZ
     virtual ~HangingActor();

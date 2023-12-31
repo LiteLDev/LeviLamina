@@ -65,7 +65,7 @@ public:
     MCAPI explicit DispenserBlockActor(class BlockPos pos);
 
     // symbol: ??0DispenserBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@@Z
-    MCAPI DispenserBlockActor(class BlockPos pos, enum BlockActorType type);
+    MCAPI DispenserBlockActor(class BlockPos pos, ::BlockActorType type);
 
     // symbol: ?getRandomSlot@DispenserBlockActor@@QEAAHAEAVRandom@@@Z
     MCAPI int getRandomSlot(class Random&);

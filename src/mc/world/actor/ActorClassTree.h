@@ -16,28 +16,28 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getEntityTypeIdLegacy@ActorClassTree@@SA?AW4ActorType@@W42@@Z
-    MCAPI static ::ActorType getEntityTypeIdLegacy(enum ActorType entityId);
+    MCAPI static ::ActorType getEntityTypeIdLegacy(::ActorType entityId);
 
     // symbol: ?hasCategory@ActorClassTree@@SA_NAEBW4ActorCategory@@W42@@Z
-    MCAPI static bool hasCategory(enum ActorCategory const& category, enum ActorCategory testFor);
+    MCAPI static bool hasCategory(::ActorCategory const& category, ::ActorCategory testFor);
 
     // symbol: ?isHangingEntity@ActorClassTree@@SA_NAEBVActor@@@Z
     MCAPI static bool isHangingEntity(class Actor const& inEntity);
 
     // symbol: ?isInstanceOf@ActorClassTree@@SA_NAEBVActor@@W4ActorType@@@Z
-    MCAPI static bool isInstanceOf(class Actor const& inEntity, enum ActorType type);
+    MCAPI static bool isInstanceOf(class Actor const& inEntity, ::ActorType type);
 
     // symbol: ?isMob@ActorClassTree@@SA_NW4ActorType@@@Z
-    MCAPI static bool isMob(enum ActorType type);
+    MCAPI static bool isMob(::ActorType type);
 
     // symbol: ?isMobLegacy@ActorClassTree@@SA_NW4ActorType@@@Z
-    MCAPI static bool isMobLegacy(enum ActorType type);
+    MCAPI static bool isMobLegacy(::ActorType type);
 
     // symbol: ?isOfType@ActorClassTree@@SA_NW4ActorType@@0@Z
-    MCAPI static bool isOfType(enum ActorType type, enum ActorType contains);
+    MCAPI static bool isOfType(::ActorType type, ::ActorType contains);
 
     // symbol: ?isTypeInstanceOf@ActorClassTree@@SA_NW4ActorType@@0@Z
-    MCAPI static bool isTypeInstanceOf(enum ActorType type, enum ActorType testFor);
+    MCAPI static bool isTypeInstanceOf(::ActorType type, ::ActorType testFor);
 
     // NOLINTEND
 };

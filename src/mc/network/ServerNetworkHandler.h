@@ -64,7 +64,7 @@ public:
     MCVAPI class ServerPlayer* _getServerPlayer(class NetworkIdentifier const&, ::SubClientId);
 
     // symbol: ?allowIncomingPacketId@ServerNetworkHandler@@UEAA_NAEBVNetworkIdentifier@@W4MinecraftPacketIds@@@Z
-    MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const& id, enum MinecraftPacketIds packetId);
+    MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const& id, ::MinecraftPacketIds packetId);
 
     // symbol: ?getGameSpecificNetEventCallback@ServerNetworkHandler@@UEAAPEAVGameSpecificNetEventCallback@@XZ
     MCVAPI class GameSpecificNetEventCallback* getGameSpecificNetEventCallback();
@@ -341,8 +341,7 @@ public:
     MCVAPI void onXboxUserUnblocked(std::string const& xuid);
 
     // symbol: ?sendServerLegacyParticle@ServerNetworkHandler@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
-    MCVAPI void
-    sendServerLegacyParticle(enum ParticleType name, class Vec3 const& pos, class Vec3 const& dir, int data);
+    MCVAPI void sendServerLegacyParticle(::ParticleType name, class Vec3 const& pos, class Vec3 const& dir, int data);
 
     // symbol: ??1ServerNetworkHandler@@UEAA@XZ
     MCVAPI ~ServerNetworkHandler();
@@ -438,7 +437,7 @@ public:
     MCAPI void sendSubClientLoginMessageLocal(
         class NetworkIdentifier const&          source,
         class SubClientConnectionRequest const& connectionRequest,
-        enum SubClientId                        subid
+        ::SubClientId                           subid
     );
 
     // symbol:
@@ -477,7 +476,7 @@ public:
     MCAPI class ServerPlayer& _createNewPlayer(
         class NetworkIdentifier const&          source,
         class SubClientConnectionRequest const& connectionRequest,
-        enum SubClientId                        subid
+        ::SubClientId                           subid
     );
 
     // symbol: ?_displayGameMessage@ServerNetworkHandler@@AEAAXAEBVPlayer@@AEAUChatEvent@@@Z

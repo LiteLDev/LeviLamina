@@ -60,7 +60,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@CauldronBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const& block, uchar face, enum BlockSupportType type) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -215,7 +215,7 @@ public:
 
     // symbol: ?setLiquidLevel@CauldronBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@HW4CauldronLiquidType@@@Z
     MCAPI void
-    setLiquidLevel(class BlockSource& region, class BlockPos const& pos, int waterLevel, enum CauldronLiquidType type)
+    setLiquidLevel(class BlockSource& region, class BlockPos const& pos, int waterLevel, ::CauldronLiquidType type)
         const;
 
     // symbol: ?canReceiveStalactiteDrip@CauldronBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@W4MaterialType@@@Z
@@ -247,14 +247,13 @@ public:
     // symbol:
     // ?_sendCauldronUsedEventToClient@CauldronBlock@@AEBAXAEBVPlayer@@FW4POIBlockInteractionType@MinecraftEventing@@@Z
     MCAPI void _sendCauldronUsedEventToClient(
-        class Player const&                             player,
-        short                                           itemId,
-        enum MinecraftEventing::POIBlockInteractionType interactionType
+        class Player const&                          player,
+        short                                        itemId,
+        ::MinecraftEventing::POIBlockInteractionType interactionType
     ) const;
 
     // symbol: ?_spawnCauldronEvent@CauldronBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@W4LevelEvent@@@Z
-    MCAPI void
-    _spawnCauldronEvent(class BlockSource& region, class BlockPos const& pos, enum LevelEvent levelEvent) const;
+    MCAPI void _spawnCauldronEvent(class BlockSource& region, class BlockPos const& pos, ::LevelEvent levelEvent) const;
 
     // symbol:
     // ?_useDyeableComponent@CauldronBlock@@AEBA_NAEAVItemStack@@AEAVPlayer@@AEBVBlockPos@@AEAVCauldronBlockActor@@AEAVBlockSource@@H_N55@Z

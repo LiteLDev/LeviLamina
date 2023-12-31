@@ -91,7 +91,7 @@ public:
 
     // symbol:
     // ??0RecordItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4LevelSoundEvent@Legacy@Puv@@@Z
-    MCAPI RecordItem(std::string const& name, int id, enum Puv::Legacy::LevelSoundEvent soundEvent);
+    MCAPI RecordItem(std::string const& name, int id, ::Puv::Legacy::LevelSoundEvent soundEvent);
 
     // NOLINTEND
 };

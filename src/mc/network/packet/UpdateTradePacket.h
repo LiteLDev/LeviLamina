@@ -40,8 +40,8 @@ public:
     // symbol:
     // ??0UpdateTradePacket@@QEAA@W4ContainerID@@W4ContainerType@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVCompoundTag@@AEBUActorUniqueID@@4H_N5@Z
     MCAPI UpdateTradePacket(
-        enum ContainerID            containerID,
-        enum ContainerType          type,
+        ::ContainerID               containerID,
+        ::ContainerType             type,
         int                         size,
         std::string const&          displayName,
         class CompoundTag&&         tag,

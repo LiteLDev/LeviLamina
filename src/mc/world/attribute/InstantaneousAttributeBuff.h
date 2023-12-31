@@ -28,7 +28,7 @@ public:
     MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const&);
 
     // symbol: ??0InstantaneousAttributeBuff@@QEAA@MW4AttributeBuffType@@@Z
-    MCAPI InstantaneousAttributeBuff(float amount, enum AttributeBuffType type);
+    MCAPI InstantaneousAttributeBuff(float amount, ::AttributeBuffType type);
 
     // NOLINTEND
 };

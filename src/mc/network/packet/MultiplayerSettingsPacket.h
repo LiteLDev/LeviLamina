@@ -37,7 +37,7 @@ public:
     MCAPI MultiplayerSettingsPacket();
 
     // symbol: ??0MultiplayerSettingsPacket@@QEAA@W4MultiplayerSettingsPacketType@@@Z
-    MCAPI explicit MultiplayerSettingsPacket(enum MultiplayerSettingsPacketType packetType);
+    MCAPI explicit MultiplayerSettingsPacket(::MultiplayerSettingsPacketType packetType);
 
     // NOLINTEND
 };

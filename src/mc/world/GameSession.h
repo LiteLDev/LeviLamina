@@ -24,7 +24,7 @@ public:
         class LoopbackPacketSender&                                                      loopbackPacketSender,
         std::unique_ptr<class NetEventCallback>                                          clientNetworkHandler,
         std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>> level,
-        enum SubClientId                                                                 subid
+        ::SubClientId                                                                    subid
     );
 
     // symbol: ?earlyShutdownMainthread@GameSession@@QEAAXXZ

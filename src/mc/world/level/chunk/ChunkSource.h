@@ -209,7 +209,7 @@ public:
     _checkLevelChunkForPostProcessing(class LevelChunk const&, class LevelChunkGridAreaElement<std::weak_ptr<class LevelChunk>>&);
 
     // symbol: ?_chunkAtStage@ChunkSource@@IEAA_NV?$weak_ptr@VLevelChunk@@@std@@W4ChunkState@@@Z
-    MCAPI bool _chunkAtStage(std::weak_ptr<class LevelChunk> lcwp, enum ChunkState stateToCheck);
+    MCAPI bool _chunkAtStage(std::weak_ptr<class LevelChunk> lcwp, ::ChunkState stateToCheck);
 
     // symbol: ?_createOrReplaceGridAreaMap@ChunkSource@@IEAAXV?$shared_ptr@VLevelChunk@@@std@@_N@Z
     MCAPI void _createOrReplaceGridAreaMap(std::shared_ptr<class LevelChunk>, bool);

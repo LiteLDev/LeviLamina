@@ -76,7 +76,7 @@ public:
         struct ActorPathingData const&                                 actor,
         class BlockPos const&                                          pos,
         class Block const&                                             block,
-        enum BlockProperty                                             testProperty,
+        ::BlockProperty                                                testProperty,
         int                                                            radius,
         class BreakBlocksComponent const*                              breakBlocksComponent,
         std::function<bool(class Block const&, class BlockPos const&)> extraCondition
@@ -189,7 +189,7 @@ public:
     // symbol:
     // ?_reconstructPath@PathFinder@@AEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@PEAVPathfinderNode@@W4PathCompletionType@@UActorUniqueID@@@Z
     MCAPI std::unique_ptr<class Path>
-    _reconstructPath(class PathfinderNode* to, enum PathCompletionType completionType, struct ActorUniqueID actorId);
+          _reconstructPath(class PathfinderNode* to, ::PathCompletionType completionType, struct ActorUniqueID actorId);
 
     // NOLINTEND
 };

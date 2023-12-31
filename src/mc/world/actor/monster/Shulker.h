@@ -38,7 +38,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@Shulker@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 9, symbol: ?_doInitialMove@Shulker@@UEAAXXZ
     virtual void _doInitialMove();

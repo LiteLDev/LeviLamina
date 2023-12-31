@@ -37,7 +37,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?hasDataOfType@BehaviorData@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DataType@1@@Z
-    MCAPI bool hasDataOfType(std::string const& strId, enum BehaviorData::DataType type) const;
+    MCAPI bool hasDataOfType(std::string const& strId, ::BehaviorData::DataType type) const;
 
     // NOLINTEND
 };

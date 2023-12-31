@@ -141,16 +141,16 @@ public:
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // symbol: ??0ElementBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ElementType@@@Z
-    MCAPI ElementBlock(std::string const& nameId, int id, enum ElementType type);
+    MCAPI ElementBlock(std::string const& nameId, int id, ::ElementType type);
 
     // symbol: ?getElementInfo@ElementBlock@@SA?AUElementInfo@@W4ElementType@@@Z
-    MCAPI static struct ElementInfo getElementInfo(enum ElementType e);
+    MCAPI static struct ElementInfo getElementInfo(::ElementType e);
 
     // symbol: ?getIngredientForElement@ElementBlock@@SA?AVRecipeIngredient@@W4ElementType@@H@Z
-    MCAPI static class RecipeIngredient getIngredientForElement(enum ElementType e, int stackCount);
+    MCAPI static class RecipeIngredient getIngredientForElement(::ElementType e, int stackCount);
 
     // symbol: ?getItemForElement@ElementBlock@@SA?AVItemInstance@@W4ElementType@@H@Z
-    MCAPI static class ItemInstance getItemForElement(enum ElementType e, int stackCount);
+    MCAPI static class ItemInstance getItemForElement(::ElementType e, int stackCount);
 
     // symbol: ?initElements@ElementBlock@@SAXXZ
     MCAPI static void initElements();
@@ -162,7 +162,7 @@ public:
     MCAPI static void shutdownElements();
 
     // symbol: ?tryGetBlockLegacyForElement@ElementBlock@@SAPEBVBlockLegacy@@W4ElementType@@@Z
-    MCAPI static class BlockLegacy const* tryGetBlockLegacyForElement(enum ElementType e);
+    MCAPI static class BlockLegacy const* tryGetBlockLegacyForElement(::ElementType e);
 
     // NOLINTEND
 

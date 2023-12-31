@@ -40,7 +40,7 @@ public:
     MCAPI ShowCreditsPacket();
 
     // symbol: ??0ShowCreditsPacket@@QEAA@VActorRuntimeID@@W4CreditsState@0@@Z
-    MCAPI ShowCreditsPacket(class ActorRuntimeID playerID, enum ShowCreditsPacket::CreditsState creditsState);
+    MCAPI ShowCreditsPacket(class ActorRuntimeID playerID, ::ShowCreditsPacket::CreditsState creditsState);
 
     // NOLINTEND
 };

@@ -38,13 +38,13 @@ public:
     MCAPI AnimatePacket();
 
     // symbol: ??0AnimatePacket@@QEAA@W4Action@0@AEAVActor@@@Z
-    MCAPI AnimatePacket(enum AnimatePacket::Action action, class Actor& e);
+    MCAPI AnimatePacket(::AnimatePacket::Action action, class Actor& e);
 
     // symbol: ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@@Z
-    MCAPI AnimatePacket(enum AnimatePacket::Action action, class ActorRuntimeID runtimeId);
+    MCAPI AnimatePacket(::AnimatePacket::Action action, class ActorRuntimeID runtimeId);
 
     // symbol: ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@M@Z
-    MCAPI AnimatePacket(enum AnimatePacket::Action action, class ActorRuntimeID runtimeId, float data);
+    MCAPI AnimatePacket(::AnimatePacket::Action action, class ActorRuntimeID runtimeId, float data);
 
     // NOLINTEND
 };

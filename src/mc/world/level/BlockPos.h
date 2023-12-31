@@ -66,7 +66,7 @@ public:
     MCAPI std::string toString() const;
 
     // symbol: ?transform@BlockPos@@QEBA?AV1@W4Rotation@@W4Mirror@@AEBVVec3@@@Z
-    MCAPI class BlockPos transform(enum Rotation rotation, enum Mirror mirror, class Vec3 const& pivot) const;
+    MCAPI class BlockPos transform(::Rotation rotation, ::Mirror mirror, class Vec3 const& pivot) const;
 
     // symbol: ?bindType@BlockPos@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

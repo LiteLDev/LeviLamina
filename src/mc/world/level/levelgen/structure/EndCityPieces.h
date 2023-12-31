@@ -59,7 +59,7 @@ public:
             Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
             std::string                                         templateName,
             class BlockPos const&                               origin,
-            enum Rotation                                       rotation,
+            ::Rotation                                          rotation,
             bool                                                overwrite
         );
 
@@ -221,7 +221,7 @@ public:
     MCAPI static void startHouseTower(
         Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
         class BlockPos const&                               origin,
-        enum Rotation                                       rotation,
+        ::Rotation                                          rotation,
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
         class Random&                                       random
     );
@@ -244,7 +244,7 @@ public:
         class EndCityPieces::EndCityPiece*                  parent,
         class BlockPos const&                               offset,
         std::string const&                                  templateName,
-        enum Rotation                                       rotation,
+        ::Rotation                                          rotation,
         bool                                                overwrite
     );
 
@@ -253,7 +253,7 @@ public:
     MCAPI static bool _recursiveChildren(
         Bedrock::NotNullNonOwnerPtr<class StructureManager>                        structureManager,
         std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const& generators,
-        enum EndCityPieces::SectionType                                            type,
+        ::EndCityPieces::SectionType                                               type,
         int                                                                        newGenDepth,
         class EndCityPieces::EndCityPiece*                                         parent,
         class BlockPos const&                                                      offset,

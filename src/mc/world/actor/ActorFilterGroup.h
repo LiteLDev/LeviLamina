@@ -38,7 +38,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?_createSubgroup@ActorFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z
-    virtual std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType type) const;
+    virtual std::shared_ptr<class FilterGroup> _createSubgroup(::FilterGroup::CollectionType type) const;
 
     // vIndex: 3, symbol:
     // ?_handleUnknownMember@ActorFilterGroup@@MEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z

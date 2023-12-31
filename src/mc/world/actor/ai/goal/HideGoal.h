@@ -39,10 +39,10 @@ public:
     virtual uint64 _getRepathTime() const;
 
     // vIndex: 17, symbol: ?_getOwnedPOI@HideGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
-    virtual std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType type) const;
+    virtual std::weak_ptr<class POIInstance> _getOwnedPOI(::POIType type) const;
 
     // symbol: ??0HideGoal@@QEAA@AEAVMob@@MMMW4POIType@@@Z
-    MCAPI HideGoal(class Mob& mob, float speedModifier, float cooldownTimeout, float duration, enum POIType poiType);
+    MCAPI HideGoal(class Mob& mob, float speedModifier, float cooldownTimeout, float duration, ::POIType poiType);
 
     // NOLINTEND
 

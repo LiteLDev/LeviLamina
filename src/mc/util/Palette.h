@@ -23,7 +23,7 @@ public:
     MCAPI static ::PaletteColor fromByte(uchar ID);
 
     // symbol: ?getColor@Palette@@SAAEBVColor@mce@@W4PaletteColor@@@Z
-    MCAPI static class mce::Color const& getColor(enum PaletteColor id);
+    MCAPI static class mce::Color const& getColor(::PaletteColor id);
 
     // symbol: ?BLACK@Palette@@2VColor@mce@@B
     MCAPI static class mce::Color const BLACK;

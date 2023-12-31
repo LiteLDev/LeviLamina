@@ -33,10 +33,10 @@ public:
     forEachAbility(std::function<void(class Ability const&, ::AbilitiesIndex)> const&, ::Ability::Options) const;
 
     // symbol: ?getBool@Abilities@@QEBA_NW4AbilitiesIndex@@@Z
-    MCAPI bool getBool(enum AbilitiesIndex ability) const;
+    MCAPI bool getBool(::AbilitiesIndex ability) const;
 
     // symbol: ?getFloat@Abilities@@QEBAMW4AbilitiesIndex@@@Z
-    MCAPI float getFloat(enum AbilitiesIndex ability) const;
+    MCAPI float getFloat(::AbilitiesIndex ability) const;
 
     // symbol: ?isAnyAbilitySet@Abilities@@QEBA_NXZ
     MCAPI bool isAnyAbilitySet() const;
@@ -48,10 +48,10 @@ public:
     MCAPI class Abilities& operator=(class Abilities const& rhs);
 
     // symbol: ?setAbility@Abilities@@QEAAXW4AbilitiesIndex@@_N@Z
-    MCAPI void setAbility(enum AbilitiesIndex ability, bool value);
+    MCAPI void setAbility(::AbilitiesIndex ability, bool value);
 
     // symbol: ?setAbilityDiff@Abilities@@QEAAXW4AbilitiesIndex@@_NAEA_N@Z
-    MCAPI void setAbilityDiff(enum AbilitiesIndex ability, bool value, bool& diff);
+    MCAPI void setAbilityDiff(::AbilitiesIndex ability, bool value, bool& diff);
 
     // symbol: ?setDefault@Abilities@@QEAAXXZ
     MCAPI void setDefault();
@@ -66,7 +66,7 @@ public:
     MCAPI void unSet(::AbilitiesIndex);
 
     // symbol: ?getAbilityName@Abilities@@SAPEBDW4AbilitiesIndex@@@Z
-    MCAPI static char const* getAbilityName(enum AbilitiesIndex abilityIndex);
+    MCAPI static char const* getAbilityName(::AbilitiesIndex abilityIndex);
 
     // symbol: ?getDefault@Abilities@@SAAEBVAbility@@W4AbilitiesIndex@@@Z
     MCAPI static class Ability const& getDefault(::AbilitiesIndex);

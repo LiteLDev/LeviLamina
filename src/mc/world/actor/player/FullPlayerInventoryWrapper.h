@@ -39,7 +39,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_clearSimpleContainerItem@FullPlayerInventoryWrapper@@AEAAHAEAVSimpleContainer@@W4ContainerID@@H@Z
-    MCAPI int _clearSimpleContainerItem(class SimpleContainer& container, enum ContainerID containerId, int slot);
+    MCAPI int _clearSimpleContainerItem(class SimpleContainer& container, ::ContainerID containerId, int slot);
 
     // symbol:
     // ?_getSimpleContainerItemCount@FullPlayerInventoryWrapper@@AEAAHAEAVSimpleContainer@@HV?$function@$$A6A_NAEBVItemStack@@@Z@std@@@Z
@@ -52,7 +52,7 @@ public:
     // ?_removeSimpleContainerItem@FullPlayerInventoryWrapper@@AEAAHAEAVSimpleContainer@@W4ContainerID@@HAEBVItemStack@@_NH@Z
     MCAPI int _removeSimpleContainerItem(
         class SimpleContainer& container,
-        enum ContainerID       containerId,
+        ::ContainerID          containerId,
         int                    slot,
         class ItemStack const& sourceItem,
         bool                   requireExactAux,

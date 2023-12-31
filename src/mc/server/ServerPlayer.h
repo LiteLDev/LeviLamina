@@ -49,7 +49,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 6, symbol:
     // ?initializeComponents@ServerPlayer@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 8, symbol: ?_serverInitItemStackIds@ServerPlayer@@EEAAXXZ
     virtual void _serverInitItemStackIds();
@@ -85,10 +85,10 @@ public:
     virtual bool isValidTarget(class Actor* attacker) const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@ServerPlayer@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(enum ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent id, int data);
 
     // vIndex: 87, symbol: ?setArmor@ServerPlayer@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
-    virtual void setArmor(enum ArmorSlot slot, class ItemStack const& item);
+    virtual void setArmor(::ArmorSlot slot, class ItemStack const& item);
 
     // vIndex: 94, symbol: ?setOffhandSlot@ServerPlayer@@UEAAXAEBVItemStack@@@Z
     virtual void setOffhandSlot(class ItemStack const&);
@@ -271,7 +271,7 @@ public:
     virtual void __unk_vfn_246();
 
     // vIndex: 247, symbol: ?setPlayerGameType@ServerPlayer@@UEAAXW4GameType@@@Z
-    virtual void setPlayerGameType(enum GameType gameType);
+    virtual void setPlayerGameType(::GameType gameType);
 
     // vIndex: 254, symbol: ?setContainerData@ServerPlayer@@UEAAXAEAVIContainerManager@@HH@Z
     virtual void setContainerData(class IContainerManager& menu, int id, int value);
@@ -309,7 +309,7 @@ public:
     virtual class PlayerEventCoordinator& getPlayerEventCoordinator();
 
     // vIndex: 266, symbol: ?reportMovementTelemetry@ServerPlayer@@UEAAXW4MovementEventType@@@Z
-    virtual void reportMovementTelemetry(enum MovementEventType eventType);
+    virtual void reportMovementTelemetry(::MovementEventType eventType);
 
     // vIndex: 267, symbol: __unk_vfn_267
     virtual void __unk_vfn_267();

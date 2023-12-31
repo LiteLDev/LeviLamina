@@ -123,7 +123,7 @@ public:
     // vIndex: 79, symbol:
     // ?onFertilized@FlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
     virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, enum FertilizerType fType)
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
     // vIndex: 81, symbol: ?canBeFertilized@FlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
@@ -180,7 +180,8 @@ public:
 
     // vIndex: 158, symbol:
     // ?getRenderLayer@FlowerBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
+    virtual ::BlockRenderLayer
+    getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
 
     // vIndex: 162, symbol: ?getMapColor@FlowerBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;

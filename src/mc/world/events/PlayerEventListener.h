@@ -42,7 +42,7 @@ public:
     // symbol:
     // ?onPlayerAction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@W4PlayerActionType@@AEBVBlockPos@@H@Z
     MCVAPI ::EventResult
-    onPlayerAction(class Player& player, enum PlayerActionType type, class BlockPos const& pos, int data);
+    onPlayerAction(class Player& player, ::PlayerActionType type, class BlockPos const& pos, int data);
 
     // symbol: ?onPlayerAttackedActor@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVActor@@@Z
     MCVAPI ::EventResult onPlayerAttackedActor(class Player& player, class Actor& target);
@@ -56,7 +56,7 @@ public:
     // symbol:
     // ?onPlayerAwardAchievement@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@W4AchievementIds@MinecraftEventing@@@Z
     MCVAPI ::EventResult
-    onPlayerAwardAchievement(class Player& player, enum MinecraftEventing::AchievementIds achievement);
+    onPlayerAwardAchievement(class Player& player, ::MinecraftEventing::AchievementIds achievement);
 
     // symbol: ?onPlayerCaravanChanged@PlayerEventListener@@UEAA?AW4EventResult@@AEBVActor@@H@Z
     MCVAPI ::EventResult onPlayerCaravanChanged(class Actor const& mob, int caravanCount);

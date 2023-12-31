@@ -38,7 +38,7 @@ public:
         addConditionalProperty(class Json::Value const& value, class JsonValidator::Property const& prop);
 
         // symbol: ?addType@Property@JsonValidator@@QEAAAEAV12@W4ValueType@Json@@@Z
-        MCAPI class JsonValidator::Property& addType(enum Json::ValueType type);
+        MCAPI class JsonValidator::Property& addType(::Json::ValueType type);
 
         // symbol:
         // ?description@Property@JsonValidator@@QEAAAEAV12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

@@ -42,7 +42,7 @@ public:
     MCAPI bool isTopSolid(bool includeWater, bool includeLeaves) const;
 
     // symbol: ?isType@Material@@QEBA_NW4MaterialType@@@Z
-    MCAPI bool isType(enum MaterialType surface) const;
+    MCAPI bool isType(::MaterialType surface) const;
 
     // symbol: ??9Material@@QEBA_NAEBV0@@Z
     MCAPI bool operator!=(class Material const& rhs) const;
@@ -54,7 +54,7 @@ public:
     MCAPI static void addMaterial(std::unique_ptr<class Material> mat);
 
     // symbol: ?getMaterial@Material@@SAAEBV1@W4MaterialType@@@Z
-    MCAPI static class Material const& getMaterial(enum MaterialType surface);
+    MCAPI static class Material const& getMaterial(::MaterialType surface);
 
     // symbol: ?initMaterials@Material@@SAXXZ
     MCAPI static void initMaterials();

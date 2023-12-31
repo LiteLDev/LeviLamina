@@ -41,7 +41,7 @@ public:
     MCAPI StructureTemplateDataResponsePacket(
         std::string const&                 structureName,
         std::unique_ptr<class CompoundTag> structureTag,
-        enum StructureTemplateResponseType type
+        ::StructureTemplateResponseType    type
     );
 
     // symbol: ??4StructureTemplateDataResponsePacket@@QEAAAEAV0@$$QEAV0@@Z

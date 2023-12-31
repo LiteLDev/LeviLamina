@@ -45,8 +45,8 @@ public:
     // symbol: ??0DirectoryPackSource@@QEAA@AEBVPath@Core@@W4PackType@@W4PackOrigin@@_N@Z
     MCAPI DirectoryPackSource(
         class Core::Path const& path,
-        enum PackType           packType,
-        enum PackOrigin         packOrigin,
+        ::PackType              packType,
+        ::PackOrigin            packOrigin,
         bool                    isDeveloperDirectory
     );
 

@@ -105,7 +105,7 @@ public:
     // vIndex: 79, symbol:
     // ?onFertilized@CocoaBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
     virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, enum FertilizerType fType)
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
         const;
 
     // vIndex: 81, symbol: ?canBeFertilized@CocoaBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z

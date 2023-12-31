@@ -31,7 +31,7 @@ public:
     MCAPI explicit ExpressionNode(float f);
 
     // symbol: ??0ExpressionNode@@QEAA@AEAUMolangScriptArg@@W4ExpressionOp@@@Z
-    MCAPI ExpressionNode(struct MolangScriptArg& value, enum ExpressionOp op);
+    MCAPI ExpressionNode(struct MolangScriptArg& value, ::ExpressionOp op);
 
     // symbol: ??0ExpressionNode@@QEAA@AEBVValue@Json@@AEBVSemVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
     MCAPI ExpressionNode(class Json::Value const&, class SemVersion const&, gsl::span<class HashedString const>);
@@ -214,7 +214,7 @@ public:
     MCAPI bool processArrays();
 
     // symbol: ?processBinaryExpression@ExpressionNode@@AEAA_NW4ExpressionOp@@@Z
-    MCAPI bool processBinaryExpression(enum ExpressionOp op);
+    MCAPI bool processBinaryExpression(::ExpressionOp op);
 
     // symbol: ?processMathFuncs@ExpressionNode@@AEAA_NXZ
     MCAPI bool processMathFuncs();
@@ -235,7 +235,7 @@ public:
     MCAPI bool processSemicolons();
 
     // symbol: ?processUnaryExpression@ExpressionNode@@AEAA_NW4ExpressionOp@@@Z
-    MCAPI bool processUnaryExpression(enum ExpressionOp op);
+    MCAPI bool processUnaryExpression(::ExpressionOp op);
 
     // symbol:
     // ?_buildProgram@ExpressionNode@@CA?AW4MolangCompileResult@@AEAUMolangProgramBuildState@@PEBV1@W4MolangVersion@@@Z

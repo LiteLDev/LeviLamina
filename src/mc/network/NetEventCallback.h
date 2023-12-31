@@ -706,7 +706,7 @@ public:
 
     // symbol:
     // ?onStoreOfferReceive@NetEventCallback@@UEAAXW4ShowStoreOfferRedirectType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void onStoreOfferReceive(enum ShowStoreOfferRedirectType showAllOffers, std::string const& offerID);
+    MCVAPI void onStoreOfferReceive(::ShowStoreOfferRedirectType showAllOffers, std::string const& offerID);
 
     // symbol: ?onTick@NetEventCallback@@UEAAXXZ
     MCVAPI void onTick();

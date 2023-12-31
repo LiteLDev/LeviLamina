@@ -19,7 +19,7 @@ namespace JsonUtil {
 // symbol:
 // ?LogMissingChildSchemaOption@JsonUtil@@YAXW4LogArea@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@22@Z
 MCAPI void LogMissingChildSchemaOption(
-    enum LogArea             area,
+    ::LogArea                area,
     class Json::Value const& node,
     std::string const&       missingName,
     std::string const&       foundNodesStr,
@@ -29,7 +29,7 @@ MCAPI void LogMissingChildSchemaOption(
 // symbol:
 // ?LogUnknownChildSchemaOption@JsonUtil@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LogArea@@AEBVValue@Json@@@Z
 MCAPI void
-LogUnknownChildSchemaOption(std::string const& childName, enum LogArea area, class Json::Value const& childValue);
+LogUnknownChildSchemaOption(std::string const& childName, ::LogArea area, class Json::Value const& childValue);
 
 // symbol: ?eraseSchema@JsonUtil@@YAXAEBVHashedString@@AEBVSemVersion@@@Z
 MCAPI void eraseSchema(class HashedString const& name, class SemVersion const& version);

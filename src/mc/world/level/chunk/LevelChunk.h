@@ -81,7 +81,7 @@ public:
     MCAPI LevelChunk(class Dimension&, class ChunkPos const&, bool, ::SubChunkInitMode, bool);
 
     // symbol: ?_changeTerrainDataState@LevelChunk@@QEAAXW4ChunkTerrainDataState@@0@Z
-    MCAPI void _changeTerrainDataState(enum ChunkTerrainDataState from, enum ChunkTerrainDataState to);
+    MCAPI void _changeTerrainDataState(::ChunkTerrainDataState from, ::ChunkTerrainDataState to);
 
     // symbol: ?_getTerrainDataState@LevelChunk@@QEBA?AW4ChunkTerrainDataState@@XZ
     MCAPI ::ChunkTerrainDataState _getTerrainDataState() const;
@@ -105,7 +105,7 @@ public:
     MCAPI void addEntity(class WeakEntityRef);
 
     // symbol: ?addHardcodedSpawningArea@LevelChunk@@QEAAXAEBVBoundingBox@@W4HardcodedSpawnAreaType@@@Z
-    MCAPI void addHardcodedSpawningArea(class BoundingBox const& spawnerAABB, enum HardcodedSpawnAreaType type);
+    MCAPI void addHardcodedSpawningArea(class BoundingBox const& spawnerAABB, ::HardcodedSpawnAreaType type);
 
     // symbol:
     // ?addSubChunkBlockEntitiesToLevelChunk@LevelChunk@@QEAAXAEAV?$unordered_map@VChunkBlockPos@@V?$shared_ptr@VBlockActor@@@std@@U?$hash@VChunkBlockPos@@@3@U?$equal_to@VChunkBlockPos@@@3@V?$allocator@U?$pair@$$CBVChunkBlockPos@@V?$shared_ptr@VBlockActor@@@std@@@std@@@3@@std@@@Z
@@ -116,7 +116,7 @@ public:
     MCAPI bool applySeasonsPostProcess(class BlockSource& region);
 
     // symbol: ?changeState@LevelChunk@@QEAAXW4ChunkState@@0@Z
-    MCAPI void changeState(enum ChunkState from, enum ChunkState to);
+    MCAPI void changeState(::ChunkState from, ::ChunkState to);
 
     // symbol: ?checkSeasonsPostProcessDirty@LevelChunk@@QEAA_NXZ
     MCAPI bool checkSeasonsPostProcessDirty();
@@ -243,7 +243,7 @@ public:
     // symbol:
     // ?getEntities@LevelChunk@@QEBAXW4ActorType@@AEBVAABB@@AEAV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@_N@Z
     MCAPI void
-    getEntities(enum ActorType type, class AABB const& bb, std::vector<class Actor*>& es, bool ignoreTargetType) const;
+    getEntities(::ActorType type, class AABB const& bb, std::vector<class Actor*>& es, bool ignoreTargetType) const;
 
     // symbol: ?getEntity@LevelChunk@@QEBAPEAVActor@@AEBUActorUniqueID@@@Z
     MCAPI class Actor* getEntity(struct ActorUniqueID const& entityId) const;
@@ -459,7 +459,7 @@ public:
     MCAPI bool removeEntityFromWorld(class WeakEntityRef);
 
     // symbol: ?removeHardcodedSpawningArea@LevelChunk@@QEAAXW4HardcodedSpawnAreaType@@@Z
-    MCAPI void removeHardcodedSpawningArea(enum HardcodedSpawnAreaType type);
+    MCAPI void removeHardcodedSpawningArea(::HardcodedSpawnAreaType type);
 
     // symbol:
     // ?runtimeRelightSubchunk@LevelChunk@@QEAAXAEAVBlockSource@@_KAEBV?$vector@USubChunkLightUpdate@@V?$allocator@USubChunkLightUpdate@@@std@@@std@@AEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@4@@Z
@@ -558,7 +558,7 @@ public:
     MCAPI void setExtraBlockSimple(class ChunkBlockPos const&, class Block const&);
 
     // symbol: ?setFinalized@LevelChunk@@QEAAXW4Finalization@1@@Z
-    MCAPI void setFinalized(enum LevelChunk::Finalization state);
+    MCAPI void setFinalized(::LevelChunk::Finalization state);
 
     // symbol: ?setHadSerializedEntities@LevelChunk@@QEAAXXZ
     MCAPI void setHadSerializedEntities();

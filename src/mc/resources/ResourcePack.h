@@ -74,7 +74,7 @@ public:
     MCAPI bool hasResource(class Core::Path const& resourceName, int subpackIndex) const;
 
     // symbol: ?isType@ResourcePack@@QEBA_NW4PackType@@@Z
-    MCAPI bool isType(enum PackType packType) const;
+    MCAPI bool isType(::PackType packType) const;
 
     // symbol: ?isZipped@ResourcePack@@QEBA_NXZ
     MCAPI bool isZipped() const;

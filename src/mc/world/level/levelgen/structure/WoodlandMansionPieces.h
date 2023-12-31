@@ -240,7 +240,7 @@ public:
         // ?createMansion@MansionPiecePlacer@WoodlandMansionPieces@@QEAAXAEBVBlockPos@@W4Rotation@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVMansionGrid@2@@Z
         MCAPI void createMansion(
             class BlockPos const&                               origin,
-            enum Rotation                                       rotation,
+            ::Rotation                                          rotation,
             std::vector<std::unique_ptr<class StructurePiece>>& pieces,
             class WoodlandMansionPieces::MansionGrid&           mansion
         );
@@ -254,7 +254,7 @@ public:
         MCAPI void _addRoom1x1(
             std::vector<std::unique_ptr<class StructurePiece>>& pieces,
             class BlockPos const&                               roomPos,
-            enum Rotation                                       rotation,
+            ::Rotation                                          rotation,
             uchar                                               doorDir,
             class WoodlandMansionPieces::FloorRoomCollection&   rooms
         );
@@ -264,7 +264,7 @@ public:
         MCAPI void _addRoom1x2(
             std::vector<std::unique_ptr<class StructurePiece>>& pieces,
             class BlockPos const&                               roomPos,
-            enum Rotation                                       rotation,
+            ::Rotation                                          rotation,
             uchar                                               roomDir,
             uchar                                               doorDir,
             class WoodlandMansionPieces::FloorRoomCollection&   rooms,
@@ -276,7 +276,7 @@ public:
         MCAPI void _addRoom2x2(
             std::vector<std::unique_ptr<class StructurePiece>>& pieces,
             class BlockPos const&                               roomPos,
-            enum Rotation                                       rotation,
+            ::Rotation                                          rotation,
             uchar                                               roomDir,
             uchar                                               doorDir,
             class WoodlandMansionPieces::FloorRoomCollection&   rooms
@@ -287,7 +287,7 @@ public:
         MCAPI void _addRoom2x2Secret(
             std::vector<std::unique_ptr<class StructurePiece>>& pieces,
             class BlockPos const&                               roomPos,
-            enum Rotation                                       rotation,
+            ::Rotation                                          rotation,
             class WoodlandMansionPieces::FloorRoomCollection&   rooms
         );
 
@@ -296,7 +296,7 @@ public:
         MCAPI void _createRoof(
             std::vector<std::unique_ptr<class StructurePiece>>& pieces,
             class BlockPos const&                               roofOrigin,
-            enum Rotation                                       rotation,
+            ::Rotation                                          rotation,
             class WoodlandMansionPieces::SimpleGrid&            grid,
             class WoodlandMansionPieces::SimpleGrid*            aboveGrid
         );
@@ -375,7 +375,7 @@ public:
             Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
             std::string const&                                  templateName,
             class BlockPos const&                               origin,
-            enum Rotation                                       rotation
+            ::Rotation                                          rotation
         );
 
         // symbol:
@@ -384,8 +384,8 @@ public:
             Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
             std::string const&                                  templateName,
             class BlockPos const&                               origin,
-            enum Rotation                                       rotation,
-            enum Mirror                                         mirror
+            ::Rotation                                          rotation,
+            ::Mirror                                            mirror
         );
 
         // NOLINTEND
@@ -421,7 +421,7 @@ public:
     MCAPI static void generateMansion(
         Bedrock::NotNullNonOwnerPtr<class StructureManager> structureManager,
         class BlockPos const&                               origin,
-        enum Rotation                                       rotation,
+        ::Rotation                                          rotation,
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
         class Random&                                       random
     );

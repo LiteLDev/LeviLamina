@@ -24,7 +24,7 @@ public:
 
     // symbol: ??0DispenserContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI
-    DispenserContainerManagerModel(enum ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+    DispenserContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
     // NOLINTEND
 };

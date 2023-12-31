@@ -48,7 +48,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ??0SetScorePacket@@AEAA@W4ScorePacketType@@AEBUScoreboardId@@AEBVObjective@@@Z
-    MCAPI SetScorePacket(enum ScorePacketType type, struct ScoreboardId const& id, class Objective const& objective);
+    MCAPI SetScorePacket(::ScorePacketType type, struct ScoreboardId const& id, class Objective const& objective);
 
     // NOLINTEND
 };

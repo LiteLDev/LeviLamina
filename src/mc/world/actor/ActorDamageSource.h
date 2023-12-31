@@ -94,13 +94,13 @@ public:
     MCVAPI bool isChildEntitySource() const;
 
     // symbol: ??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z
-    MCAPI explicit ActorDamageSource(enum ActorDamageCause cause);
+    MCAPI explicit ActorDamageSource(::ActorDamageCause cause);
 
     // symbol: ?getCause@ActorDamageSource@@QEBA?AW4ActorDamageCause@@XZ
     MCAPI ::ActorDamageCause getCause() const;
 
     // symbol: ?setCause@ActorDamageSource@@QEAAXW4ActorDamageCause@@@Z
-    MCAPI void setCause(enum ActorDamageCause cause);
+    MCAPI void setCause(::ActorDamageCause cause);
 
     // symbol:
     // ?generateDamageCauseCommandEnum@ActorDamageSource@@SA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@@2@@std@@V?$optional@UVersion@Scripting@@@3@@Z

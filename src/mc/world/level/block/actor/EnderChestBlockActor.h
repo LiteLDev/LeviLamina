@@ -34,10 +34,10 @@ public:
     // symbol:
     // ??0EnderChestBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@@Z
     MCAPI EnderChestBlockActor(
-        enum BlockActorType       type,
-        std::string const&        id,
-        enum BlockActorRendererId renderId,
-        class BlockPos const&     pos
+        ::BlockActorType       type,
+        std::string const&     id,
+        ::BlockActorRendererId renderId,
+        class BlockPos const&  pos
     );
 
     // NOLINTEND

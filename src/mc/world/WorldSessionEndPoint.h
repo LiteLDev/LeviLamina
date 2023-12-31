@@ -23,7 +23,7 @@ public:
     MCVAPI bool isEnabled() const;
 
     // symbol: ?log@WorldSessionEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z
-    MCVAPI void log(enum LogArea area, enum LogLevel level, char const* message);
+    MCVAPI void log(::LogArea area, ::LogLevel level, char const* message);
 
     // symbol: ?logOnlyOnce@WorldSessionEndPoint@@UEBA_NXZ
     MCVAPI bool logOnlyOnce() const;

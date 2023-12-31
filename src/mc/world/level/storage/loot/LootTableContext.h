@@ -73,7 +73,7 @@ public:
     MCAPI DimensionType getDimensionId() const;
 
     // symbol: ?getEntity@LootTableContext@@QEBAPEAVActor@@W4ActorTarget@@@Z
-    MCAPI class Actor* getEntity(enum ActorTarget target) const;
+    MCAPI class Actor* getEntity(::ActorTarget target) const;
 
     // symbol: ?getKilledEntity@LootTableContext@@QEBAPEAVActor@@XZ
     MCAPI class Actor* getKilledEntity() const;

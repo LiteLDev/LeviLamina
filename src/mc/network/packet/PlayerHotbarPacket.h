@@ -37,7 +37,7 @@ public:
     MCAPI PlayerHotbarPacket();
 
     // symbol: ??0PlayerHotbarPacket@@QEAA@IW4ContainerID@@_N@Z
-    MCAPI PlayerHotbarPacket(uint selectedSlot, enum ContainerID containerID, bool shouldSelectSlot);
+    MCAPI PlayerHotbarPacket(uint selectedSlot, ::ContainerID containerID, bool shouldSelectSlot);
 
     // NOLINTEND
 };

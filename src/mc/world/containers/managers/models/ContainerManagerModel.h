@@ -24,13 +24,13 @@ public:
     virtual ::ContainerID getContainerId() const;
 
     // vIndex: 2, symbol: ?setContainerId@ContainerManagerModel@@UEAAXW4ContainerID@@@Z
-    virtual void setContainerId(enum ContainerID id);
+    virtual void setContainerId(::ContainerID id);
 
     // vIndex: 3, symbol: ?getContainerType@ContainerManagerModel@@UEBA?AW4ContainerType@@XZ
     virtual ::ContainerType getContainerType() const;
 
     // vIndex: 4, symbol: ?setContainerType@ContainerManagerModel@@UEAAXW4ContainerType@@@Z
-    virtual void setContainerType(enum ContainerType type);
+    virtual void setContainerType(::ContainerType type);
 
     // vIndex: 5, symbol: ?serverInitItemStackIds@ContainerManagerModel@@UEAAXXZ
     virtual void serverInitItemStackIds();
@@ -57,7 +57,7 @@ public:
     virtual class ContainerScreenContext _postInit() = 0;
 
     // symbol: ??0ContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z
-    MCAPI ContainerManagerModel(enum ContainerID containerId, class Player& player);
+    MCAPI ContainerManagerModel(::ContainerID containerId, class Player& player);
 
     // symbol: ?getPlayer@ContainerManagerModel@@QEBAAEAVPlayer@@XZ
     MCAPI class Player& getPlayer() const;

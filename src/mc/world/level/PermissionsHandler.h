@@ -32,10 +32,10 @@ public:
     MCAPI bool loadSaveData(class CompoundTag const& tag);
 
     // symbol: ?setCommandPermissions@PermissionsHandler@@QEAAXW4CommandPermissionLevel@@@Z
-    MCAPI void setCommandPermissions(enum CommandPermissionLevel permissions);
+    MCAPI void setCommandPermissions(::CommandPermissionLevel permissions);
 
     // symbol: ?setPlayerPermissions@PermissionsHandler@@QEAAXW4PlayerPermissionLevel@@@Z
-    MCAPI void setPlayerPermissions(enum PlayerPermissionLevel permissions);
+    MCAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
 
     // symbol:
     // ?playerPermissionLevelFromString@PermissionsHandler@@SA?AW4PlayerPermissionLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

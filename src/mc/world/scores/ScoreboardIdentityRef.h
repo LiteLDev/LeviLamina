@@ -32,8 +32,7 @@ public:
     MCAPI struct ScoreboardId const& getScoreboardId() const;
 
     // symbol: ?modifyScoreInObjective@ScoreboardIdentityRef@@QEAA_NAEAHAEAVObjective@@HW4PlayerScoreSetFunction@@@Z
-    MCAPI bool
-    modifyScoreInObjective(int& result, class Objective& objective, int score, enum PlayerScoreSetFunction fn);
+    MCAPI bool modifyScoreInObjective(int& result, class Objective& objective, int score, ::PlayerScoreSetFunction fn);
 
     // symbol: ?removeFromObjective@ScoreboardIdentityRef@@QEAA_NAEAVScoreboard@@AEAVObjective@@@Z
     MCAPI bool removeFromObjective(class Scoreboard& scoreboard, class Objective& objective);

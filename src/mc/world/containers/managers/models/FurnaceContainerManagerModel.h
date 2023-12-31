@@ -43,8 +43,7 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0FurnaceContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI
-    FurnaceContainerManagerModel(enum ContainerID containerId, class Player& player, class BlockPos const& blockPos);
+    MCAPI FurnaceContainerManagerModel(::ContainerID containerId, class Player& player, class BlockPos const& blockPos);
 
     // NOLINTEND
 
@@ -54,9 +53,9 @@ public:
     // ??0FurnaceContainerManagerModel@@IEAA@AEBVHashedString@@W4ContainerType@@W4BlockActorType@@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI FurnaceContainerManagerModel(
         class HashedString const& recipeTag,
-        enum ContainerType        containerType,
-        enum BlockActorType       blockActorType,
-        enum ContainerID          containerId,
+        ::ContainerType           containerType,
+        ::BlockActorType          blockActorType,
+        ::ContainerID             containerId,
         class Player&             player,
         class BlockPos const&     blockPos
     );

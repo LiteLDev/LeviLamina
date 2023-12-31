@@ -31,7 +31,7 @@ public:
     virtual bool isValidPlacement(std::string const&);
 
     // symbol: ??0LegacyTreeFeature@@QEAA@W4Type@0@AEAVFeatureRegistry@@@Z
-    MCAPI LegacyTreeFeature(enum LegacyTreeFeature::Type placementType, class FeatureRegistry& registry);
+    MCAPI LegacyTreeFeature(::LegacyTreeFeature::Type placementType, class FeatureRegistry& registry);
 
     // NOLINTEND
 };

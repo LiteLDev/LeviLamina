@@ -49,7 +49,7 @@ public:
     MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;
 
     // symbol: ?getSize@LegacyStructureTemplate@@QEBA?AVBlockPos@@W4Rotation@@@Z
-    MCAPI class BlockPos getSize(enum Rotation rotation) const;
+    MCAPI class BlockPos getSize(::Rotation rotation) const;
 
     // symbol: ?load@LegacyStructureTemplate@@QEAAXAEBVCompoundTag@@@Z
     MCAPI void load(class CompoundTag const& tag);
@@ -79,14 +79,14 @@ public:
     // symbol: ?getZeroPositionWithTransform@LegacyStructureTemplate@@SA?AVBlockPos@@AEBV2@W4Mirror@@W4Rotation@@HH@Z
     MCAPI static class BlockPos getZeroPositionWithTransform(
         class BlockPos const& zeroPos,
-        enum Mirror           mirror,
-        enum Rotation         rotation,
+        ::Mirror              mirror,
+        ::Rotation            rotation,
         int                   sizeX,
         int                   sizeZ
     );
 
     // symbol: ?transform@LegacyStructureTemplate@@SA?AVBlockPos@@V2@W4Mirror@@W4Rotation@@@Z
-    MCAPI static class BlockPos transform(class BlockPos pos, enum Mirror mirror, enum Rotation rotation);
+    MCAPI static class BlockPos transform(class BlockPos pos, ::Mirror mirror, ::Rotation rotation);
 
     // symbol: ?AUTHOR_TAG@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const AUTHOR_TAG;

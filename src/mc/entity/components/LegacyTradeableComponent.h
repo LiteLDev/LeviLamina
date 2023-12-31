@@ -26,7 +26,7 @@ public:
     MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?createDataPacket@LegacyTradeableComponent@@QEAA?AVUpdateTradePacket@@AEAVActor@@W4ContainerID@@@Z
-    MCAPI class UpdateTradePacket createDataPacket(class Actor& owner, enum ContainerID containerID);
+    MCAPI class UpdateTradePacket createDataPacket(class Actor& owner, ::ContainerID containerID);
 
     // symbol: ?getAddRecipeOnUpdate@LegacyTradeableComponent@@QEBA_NXZ
     MCAPI bool getAddRecipeOnUpdate() const;

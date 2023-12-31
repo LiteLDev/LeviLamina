@@ -110,23 +110,23 @@ public:
     // symbol:
     // ?initFireworkChargeItem@FireworkChargeItem@@SAAEBVItemInstance@@AEAV2@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
     MCAPI static class ItemInstance const& initFireworkChargeItem(
-        class ItemInstance&            itemInstance,
-        enum FireworkChargeItem::Shape shape,
-        std::vector<uchar>             colors,
-        std::vector<uchar>             fadeColors,
-        bool                           hasTrail,
-        bool                           hasFlicker
+        class ItemInstance&         itemInstance,
+        ::FireworkChargeItem::Shape shape,
+        std::vector<uchar>          colors,
+        std::vector<uchar>          fadeColors,
+        bool                        hasTrail,
+        bool                        hasFlicker
     );
 
     // symbol:
     // ?initFireworkChargeItem@FireworkChargeItem@@SAAEBVItemStack@@AEAV2@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
     MCAPI static class ItemStack const& initFireworkChargeItem(
-        class ItemStack&               itemStack,
-        enum FireworkChargeItem::Shape shape,
-        std::vector<uchar>             colors,
-        std::vector<uchar>             fadeColors,
-        bool                           hasTrail,
-        bool                           hasFlicker
+        class ItemStack&            itemStack,
+        ::FireworkChargeItem::Shape shape,
+        std::vector<uchar>          colors,
+        std::vector<uchar>          fadeColors,
+        bool                        hasTrail,
+        bool                        hasFlicker
     );
 
     // symbol: ?setColor@FireworkChargeItem@@SAXAEAVItemStackBase@@@Z

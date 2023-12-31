@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 4, symbol:
     // ?reloadHardcoded@AreaEffectCloud@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1AreaEffectCloud@@UEAA@XZ
     virtual ~AreaEffectCloud() = default;
@@ -117,7 +117,7 @@ public:
     MCAPI void setInitialRadius(float radius);
 
     // symbol: ?setParticle@AreaEffectCloud@@QEAAXW4ParticleType@@@Z
-    MCAPI void setParticle(enum ParticleType type);
+    MCAPI void setParticle(::ParticleType type);
 
     // symbol: ?setParticleColor@AreaEffectCloud@@QEAAXAEAVColor@mce@@@Z
     MCAPI void setParticleColor(class mce::Color&);

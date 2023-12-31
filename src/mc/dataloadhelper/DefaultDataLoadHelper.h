@@ -88,13 +88,13 @@ public:
     MCVAPI class Vec3 loadDirection(class Vec3 const& direction);
 
     // symbol: ?loadDirection@DefaultDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
-    MCVAPI ::Direction::Type loadDirection(enum Direction::Type direction);
+    MCVAPI ::Direction::Type loadDirection(::Direction::Type direction);
 
     // symbol: ?loadFacingID@DefaultDataLoadHelper@@UEAAEE@Z
     MCVAPI uchar loadFacingID(uchar facing);
 
     // symbol: ?loadMirror@DefaultDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
-    MCVAPI ::Mirror loadMirror(enum Mirror mirror);
+    MCVAPI ::Mirror loadMirror(::Mirror mirror);
 
     // symbol: ?loadOwnerID@DefaultDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
     MCVAPI struct ActorUniqueID loadOwnerID(struct ActorUniqueID id);
@@ -103,7 +103,7 @@ public:
     MCVAPI class Vec3 loadPosition(class Vec3 const& position);
 
     // symbol: ?loadRotation@DefaultDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
-    MCVAPI ::Rotation loadRotation(enum Rotation rotation);
+    MCVAPI ::Rotation loadRotation(::Rotation rotation);
 
     // symbol: ?loadRotationDegreesX@DefaultDataLoadHelper@@UEAAMM@Z
     MCVAPI float loadRotationDegreesX(float x);

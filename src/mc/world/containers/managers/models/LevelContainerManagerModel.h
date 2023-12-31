@@ -43,14 +43,14 @@ public:
     virtual class ContainerScreenContext _postInit();
 
     // symbol: ??0LevelContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@UActorUniqueID@@@Z
-    MCAPI LevelContainerManagerModel(enum ContainerID containerId, class Player& player, struct ActorUniqueID uniqueID);
+    MCAPI LevelContainerManagerModel(::ContainerID containerId, class Player& player, struct ActorUniqueID uniqueID);
 
     // symbol: ??0LevelContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@W4BlockActorType@@@Z
     MCAPI LevelContainerManagerModel(
-        enum ContainerID      containerId,
+        ::ContainerID         containerId,
         class Player&         player,
         class BlockPos const& pos,
-        enum BlockActorType   blockEntityType
+        ::BlockActorType      blockEntityType
     );
 
     // symbol: ?getBlockPos@LevelContainerManagerModel@@QEBAAEBVBlockPos@@XZ

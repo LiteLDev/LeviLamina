@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 5, symbol: ?reloadHardcodedClient@Parrot@@MEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcodedClient(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1Parrot@@UEAA@XZ
     virtual ~Parrot() = default;

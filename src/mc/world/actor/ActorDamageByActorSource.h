@@ -57,7 +57,7 @@ public:
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
 
     // symbol: ??0ActorDamageByActorSource@@QEAA@AEBVActor@@W4ActorDamageCause@@@Z
-    MCAPI ActorDamageByActorSource(class Actor const& actor, enum ActorDamageCause cause);
+    MCAPI ActorDamageByActorSource(class Actor const& actor, ::ActorDamageCause cause);
 
     // NOLINTEND
 };

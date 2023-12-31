@@ -37,7 +37,7 @@ public:
     MCAPI InventorySlotPacket();
 
     // symbol: ??0InventorySlotPacket@@QEAA@W4ContainerID@@IAEBVItemStack@@@Z
-    MCAPI InventorySlotPacket(enum ContainerID id, uint slot, class ItemStack const& item);
+    MCAPI InventorySlotPacket(::ContainerID id, uint slot, class ItemStack const& item);
 
     // NOLINTEND
 };

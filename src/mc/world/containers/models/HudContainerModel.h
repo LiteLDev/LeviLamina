@@ -50,7 +50,7 @@ public:
     virtual void _init();
 
     // symbol: ??0HudContainerModel@@QEAA@W4ContainerEnumName@@AEAVPlayer@@@Z
-    MCAPI HudContainerModel(enum ContainerEnumName containerName, class Player& player);
+    MCAPI HudContainerModel(::ContainerEnumName containerName, class Player& player);
 
     // NOLINTEND
 

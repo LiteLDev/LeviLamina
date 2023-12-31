@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     // symbol: ?getPos@RandomPos@@SA_NAEAVVec3@@AEAVMob@@HHHW4SolidityCheckType@@@Z
     MCAPI static bool
-    getPos(class Vec3& outPos, class Mob& mob, int xzDist, int yDist, int tries, enum SolidityCheckType blockTest);
+    getPos(class Vec3& outPos, class Mob& mob, int xzDist, int yDist, int tries, ::SolidityCheckType blockTest);
 
     // symbol: ?getPosAvoid@RandomPos@@SA_NAEAVVec3@@AEAVMob@@HHAEBV2@W4SolidityCheckType@@H@Z
     MCAPI static bool getPosAvoid(class Vec3&, class Mob&, int, int, class Vec3 const&, ::SolidityCheckType, int);
@@ -33,7 +33,7 @@ public:
         class Vec3*            direction,
         struct IntRange const& hoverHeight,
         int                    tries,
-        enum SolidityCheckType blockTest
+        ::SolidityCheckType    blockTest
     );
 
     // symbol: ?getPosTowards@RandomPos@@SA_NAEAVVec3@@AEAVMob@@HHAEBV2@@Z
@@ -59,15 +59,15 @@ public:
     // NOLINTBEGIN
     // symbol: ?generateRandomPos@RandomPos@@CA_NAEAVVec3@@AEAVMob@@HHPEBV2@_N3HW4SolidityCheckType@@@Z
     MCAPI static bool generateRandomPos(
-        class Vec3&            outPos,
-        class Mob&             mob,
-        int                    xzDist,
-        int                    yDist,
-        class Vec3 const*      dir,
-        bool                   canFly,
-        bool                   canSwim,
-        int                    tries,
-        enum SolidityCheckType blockTest
+        class Vec3&         outPos,
+        class Mob&          mob,
+        int                 xzDist,
+        int                 yDist,
+        class Vec3 const*   dir,
+        bool                canFly,
+        bool                canSwim,
+        int                 tries,
+        ::SolidityCheckType blockTest
     );
 
     // symbol:
@@ -97,7 +97,7 @@ public:
         class Mob&             mob,
         int                    yDist,
         struct IntRange const& hoverHeight,
-        enum SolidityCheckType blockTest
+        ::SolidityCheckType    blockTest
     );
 
     // symbol: ?snapToGround@RandomPos@@CA_NAEAVBlockPos@@HHHV?$function@$$A6A_NAEAVBlockPos@@@Z@std@@@Z

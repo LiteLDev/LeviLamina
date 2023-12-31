@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@ItemActor@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1ItemActor@@UEAA@XZ
     virtual ~ItemActor() = default;
@@ -80,7 +80,7 @@ public:
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@ItemActor@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(enum ActorEvent eventId, int data);
+    virtual void handleEntityEvent(::ActorEvent eventId, int data);
 
     // vIndex: 100, symbol: ?getSourceUniqueID@ItemActor@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;

@@ -72,11 +72,10 @@ MCAPI extern char const* RESULT_NOT_IMPLEMENTED_MESSAGE;
 MCAPI extern char const* RESULT_SUCCEEDED_MESSAGE;
 
 // symbol: ??ICore@@YA_KW4DirectoryIterationFlags@0@0@Z
-MCAPI uint64 operator&(enum Core::DirectoryIterationFlags a, enum Core::DirectoryIterationFlags b);
+MCAPI uint64 operator&(::Core::DirectoryIterationFlags a, ::Core::DirectoryIterationFlags b);
 
 // symbol: ??UCore@@YA?AW4DirectoryIterationFlags@0@W410@0@Z
-MCAPI ::Core::DirectoryIterationFlags
-operator|(enum Core::DirectoryIterationFlags a, enum Core::DirectoryIterationFlags b);
+MCAPI ::Core::DirectoryIterationFlags operator|(::Core::DirectoryIterationFlags a, ::Core::DirectoryIterationFlags b);
 
 // symbol: ?sLockBlobName@Core@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
 MCAPI extern std::string const sLockBlobName;

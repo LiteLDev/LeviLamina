@@ -86,10 +86,10 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@Player@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 6, symbol: ?initializeComponents@Player@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(enum ActorInitializationMethod method, class VariantParameterList const& params);
+    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 8, symbol: ?_serverInitItemStackIds@Player@@MEAAXXZ
     virtual void _serverInitItemStackIds();
@@ -180,13 +180,13 @@ public:
     virtual void feed(int itemId);
 
     // vIndex: 83, symbol: ?handleEntityEvent@Player@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(enum ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent id, int data);
 
     // vIndex: 85, symbol: ?getActorRendererId@Player@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getActorRendererId() const;
 
     // vIndex: 87, symbol: ?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
-    virtual void setArmor(enum ArmorSlot slot, class ItemStack const& item);
+    virtual void setArmor(::ArmorSlot slot, class ItemStack const& item);
 
     // vIndex: 92, symbol: ?setCarriedItem@Player@@UEAAXAEBVItemStack@@@Z
     virtual void setCarriedItem(class ItemStack const& item);
@@ -249,7 +249,7 @@ public:
     virtual class AnimationComponent& getAnimationComponent();
 
     // vIndex: 133, symbol: ?useItem@Player@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z
-    virtual void useItem(class ItemStackBase& instance, enum ItemUseMethod itemUseMethod, bool consumeItem);
+    virtual void useItem(class ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
     // vIndex: 135, symbol: ?getMapDecorationRotation@Player@@UEBAMXZ
     virtual float getMapDecorationRotation() const;
@@ -486,7 +486,7 @@ public:
     virtual void __unk_vfn_246();
 
     // vIndex: 247, symbol: ?setPlayerGameType@Player@@UEAAXW4GameType@@@Z
-    virtual void setPlayerGameType(enum GameType gameType);
+    virtual void setPlayerGameType(::GameType gameType);
 
     // vIndex: 248, symbol: ?initHUDContainerManager@Player@@UEAAXXZ
     virtual void initHUDContainerManager();
@@ -552,7 +552,7 @@ public:
     virtual class PlayerEventCoordinator& getPlayerEventCoordinator() = 0;
 
     // vIndex: 266, symbol: ?reportMovementTelemetry@Player@@UEAAXW4MovementEventType@@@Z
-    virtual void reportMovementTelemetry(enum MovementEventType eventType);
+    virtual void reportMovementTelemetry(::MovementEventType eventType);
 
     // vIndex: 267, symbol: __unk_vfn_267
     virtual void __unk_vfn_267();
@@ -650,7 +650,7 @@ public:
     MCAPI bool canStackInOffhand(class ItemStack const&) const;
 
     // symbol: ?canUseAbility@Player@@QEBA_NW4AbilitiesIndex@@@Z
-    MCAPI bool canUseAbility(enum AbilitiesIndex abilityIndex) const;
+    MCAPI bool canUseAbility(::AbilitiesIndex abilityIndex) const;
 
     // symbol: ?canUseOperatorBlocks@Player@@QEBA_NXZ
     MCAPI bool canUseOperatorBlocks() const;
@@ -810,7 +810,7 @@ public:
     MCAPI std::string const& getPlayerSessionId() const;
 
     // symbol: ?getPlayerUIItem@Player@@QEAAAEBVItemStack@@W4PlayerUISlot@@@Z
-    MCAPI class ItemStack const& getPlayerUIItem(enum PlayerUISlot slot);
+    MCAPI class ItemStack const& getPlayerUIItem(::PlayerUISlot slot);
 
     // symbol: ?getRespawnAnchorPosition@Player@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const& getRespawnAnchorPosition() const;
@@ -1028,7 +1028,7 @@ public:
     MCAPI void setLastDeathPos(class BlockPos);
 
     // symbol: ?setLastHurtBy@Player@@QEAAXW4ActorType@@@Z
-    MCAPI void setLastHurtBy(enum ActorType lastHurtBy);
+    MCAPI void setLastHurtBy(::ActorType lastHurtBy);
 
     // symbol: ?setMapIndex@Player@@QEAAXH@Z
     MCAPI void setMapIndex(int mapIndex);
@@ -1037,7 +1037,7 @@ public:
     MCAPI void setName(std::string const& newName);
 
     // symbol: ?setPermissions@Player@@QEAAXW4CommandPermissionLevel@@@Z
-    MCAPI void setPermissions(enum CommandPermissionLevel permissions);
+    MCAPI void setPermissions(::CommandPermissionLevel permissions);
 
     // symbol: ?setPlatformOnlineId@Player@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setPlatformOnlineId(std::string const& platformOnlineId);
@@ -1046,7 +1046,7 @@ public:
     MCAPI void setPlayerIndex(int index);
 
     // symbol: ?setPlayerUIItem@Player@@QEAAXW4PlayerUISlot@@AEBVItemStack@@@Z
-    MCAPI void setPlayerUIItem(enum PlayerUISlot slot, class ItemStack const& item);
+    MCAPI void setPlayerUIItem(::PlayerUISlot slot, class ItemStack const& item);
 
     // symbol: ?setRespawnPosition@Player@@QEAAXAEBVBlockPos@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI void setRespawnPosition(class BlockPos const&, DimensionType);
@@ -1323,7 +1323,7 @@ public:
         class ShieldItem const& shieldItem,
         class ItemStack const&  before,
         class ItemStack const&  after,
-        enum ContainerID        container,
+        ::ContainerID           container,
         int                     slot
     );
 

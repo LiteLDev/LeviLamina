@@ -96,7 +96,7 @@ public:
     MCAPI void setIncludeDeadPlayers(bool includeDead);
 
     // symbol: ?setOrder@CommandSelectorBase@@QEAAXW4CommandSelectionOrder@@@Z
-    MCAPI void setOrder(enum CommandSelectionOrder order);
+    MCAPI void setOrder(::CommandSelectionOrder order);
 
     // symbol: ?setPosition@CommandSelectorBase@@QEAAXAEBVCommandPosition@@@Z
     MCAPI void setPosition(class CommandPosition const& position);
@@ -111,7 +111,7 @@ public:
     MCAPI void setResultCount(uint64, bool);
 
     // symbol: ?setType@CommandSelectorBase@@QEAAXW4CommandSelectionType@@@Z
-    MCAPI void setType(enum CommandSelectionType type);
+    MCAPI void setType(::CommandSelectionType type);
 
     // symbol: ?setVersion@CommandSelectorBase@@QEAAXH@Z
     MCAPI void setVersion(int version);

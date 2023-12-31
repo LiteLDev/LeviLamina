@@ -37,10 +37,10 @@ public:
     MCAPI BossEventPacket();
 
     // symbol: ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@AEAVRaidBossComponent@@@Z
-    MCAPI BossEventPacket(enum BossEventUpdateType type, class RaidBossComponent& component);
+    MCAPI BossEventPacket(::BossEventUpdateType type, class RaidBossComponent& component);
 
     // symbol: ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@UActorUniqueID@@AEAVBossComponent@@@Z
-    MCAPI BossEventPacket(enum BossEventUpdateType type, struct ActorUniqueID bossID, class BossComponent& component);
+    MCAPI BossEventPacket(::BossEventUpdateType type, struct ActorUniqueID bossID, class BossComponent& component);
 
     // NOLINTEND
 };

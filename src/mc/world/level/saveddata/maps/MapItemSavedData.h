@@ -43,14 +43,14 @@ public:
     // symbol:
     // ?addTrackedMapEntity@MapItemSavedData@@QEAA?AV?$shared_ptr@VMapItemTrackedActor@@@std@@AEAVActor@@W4Type@MapDecoration@@@Z
     MCAPI std::shared_ptr<class MapItemTrackedActor>
-          addTrackedMapEntity(class Actor& entity, enum MapDecoration::Type decorationType);
+          addTrackedMapEntity(class Actor& entity, ::MapDecoration::Type decorationType);
 
     // symbol:
     // ?addTrackedMapEntity@MapItemSavedData@@QEAA?AV?$shared_ptr@VMapItemTrackedActor@@@std@@AEBVBlockPos@@AEAVBlockSource@@W4Type@MapDecoration@@@Z
     MCAPI std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(
-        class BlockPos const&    position,
-        class BlockSource&       region,
-        enum MapDecoration::Type decorationType
+        class BlockPos const& position,
+        class BlockSource&    region,
+        ::MapDecoration::Type decorationType
     );
 
     // symbol: ?areClientPixelsDirty@MapItemSavedData@@QEBA_NXZ
@@ -184,7 +184,7 @@ public:
     // symbol:
     // ?_addDecoration@MapItemSavedData@@AEAAXW4Type@MapDecoration@@AEAVLevel@@AEBUUniqueId@MapItemTrackedActor@@AEBVVec3@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@@Z
     MCAPI void _addDecoration(
-        enum MapDecoration::Type                    type,
+        ::MapDecoration::Type                       type,
         class Level&                                level,
         struct MapItemTrackedActor::UniqueId const& key,
         class Vec3 const&                           position,
@@ -197,7 +197,7 @@ public:
     MCAPI std::shared_ptr<class MapItemTrackedActor> _addTrackedMapEntity(
         struct MapItemTrackedActor::UniqueId const& key,
         class BlockSource&                          region,
-        enum MapDecoration::Type                    decorationType
+        ::MapDecoration::Type                       decorationType
     );
 
     // symbol: ?_deserializeData@MapItemSavedData@@AEAAXAEBVCompoundTag@@@Z
@@ -220,13 +220,13 @@ public:
     // symbol:
     // ?_updateTrackedPlayerDecorations@MapItemSavedData@@AEAAXAEAVBlockSource@@AEAVPlayer@@AEAVVec3@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVColor@mce@@V?$AutomaticID@VDimension@@H@@AEAW4Type@MapDecoration@@@Z
     MCAPI void _updateTrackedPlayerDecorations(
-        class BlockSource&        region,
-        class Player&             player,
-        class Vec3&               decorationPos,
-        std::string&              decorationLabel,
-        class mce::Color&         decorationColor,
-        DimensionType             dimensionID,
-        enum MapDecoration::Type& type
+        class BlockSource&     region,
+        class Player&          player,
+        class Vec3&            decorationPos,
+        std::string&           decorationLabel,
+        class mce::Color&      decorationColor,
+        DimensionType          dimensionID,
+        ::MapDecoration::Type& type
     );
 
     // NOLINTEND

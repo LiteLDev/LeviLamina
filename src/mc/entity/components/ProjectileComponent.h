@@ -67,7 +67,7 @@ public:
     MCAPI float getThrowPower() const;
 
     // symbol: ?getUncertainty@ProjectileComponent@@QEBAMW4Difficulty@@@Z
-    MCAPI float getUncertainty(enum Difficulty diff) const;
+    MCAPI float getUncertainty(::Difficulty diff) const;
 
     // symbol: ?getUncertaintyBase@ProjectileComponent@@QEBAMXZ
     MCAPI float getUncertaintyBase() const;
@@ -163,7 +163,7 @@ public:
     MCAPI void _handleLightningOnHit(class Actor& owner);
 
     // symbol: ?_selectNextMoveDirection@ProjectileComponent@@AEAAXAEAVActor@@W4EAxis@1@@Z
-    MCAPI void _selectNextMoveDirection(class Actor& owner, enum ProjectileComponent::EAxis avoidAxis);
+    MCAPI void _selectNextMoveDirection(class Actor& owner, ::ProjectileComponent::EAxis avoidAxis);
 
     // NOLINTEND
 };

@@ -53,7 +53,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@PistonArmBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const& block, uchar face, enum BlockSupportType type) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -189,7 +189,7 @@ public:
 
     // symbol:
     // ??0PistonArmBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@PistonBlock@@@Z
-    MCAPI PistonArmBlock(std::string const& nameId, int id, enum PistonBlock::Type type);
+    MCAPI PistonArmBlock(std::string const& nameId, int id, ::PistonBlock::Type type);
 
     // NOLINTEND
 

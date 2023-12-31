@@ -92,7 +92,7 @@ public:
     virtual void unload();
 
     // symbol: ??0FileSystemFileAccess@@QEAA@W4FileSystemMode@@@Z
-    MCAPI explicit FileSystemFileAccess(enum FileSystemMode mode);
+    MCAPI explicit FileSystemFileAccess(::FileSystemMode mode);
 
     // NOLINTEND
 };

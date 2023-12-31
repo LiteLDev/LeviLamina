@@ -89,10 +89,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_broadcastBossEvent@RaidBossComponent@@AEAAXW4BossEventUpdateType@@AEAVActor@@@Z
-    MCAPI void _broadcastBossEvent(enum BossEventUpdateType type, class Actor& owner);
+    MCAPI void _broadcastBossEvent(::BossEventUpdateType type, class Actor& owner);
 
     // symbol: ?_sendBossEvent@RaidBossComponent@@AEAAXW4BossEventUpdateType@@AEAVPlayer@@@Z
-    MCAPI void _sendBossEvent(enum BossEventUpdateType type, class Player& player);
+    MCAPI void _sendBossEvent(::BossEventUpdateType type, class Player& player);
 
     // NOLINTEND
 };

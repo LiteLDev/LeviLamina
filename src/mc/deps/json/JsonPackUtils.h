@@ -38,7 +38,7 @@ MCAPI int readIntAndReport(
 // symbol:
 // ?readRequiredValue@JsonPackUtils@@YA?AU?$pair@$$CBVValue@Json@@W4PackParseErrorType@@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4ValueType@5@@Z
 MCAPI std::pair<class Json::Value const, ::PackParseErrorType>
-      readRequiredValue(class Json::Value const& value, std::string const& propertyName, enum Json::ValueType type);
+      readRequiredValue(class Json::Value const& value, std::string const& propertyName, ::Json::ValueType type);
 
 // symbol:
 // ?readStringAndReport@JsonPackUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@AEBV23@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEAVPackReport@@_N@Z
@@ -70,7 +70,7 @@ MCAPI std::pair<class Json::Value const*, ::PackParseErrorType>
 MCAPI std::pair<class Json::Value const, ::PackParseErrorType> readValueAndReportErrors(
     class Json::Value const&  parent,
     std::string const&        element,
-    enum Json::ValueType      type,
+    ::Json::ValueType         type,
     std::vector<std::string>& errorPath,
     class PackReport&         report,
     bool                      optional
