@@ -1,5 +1,6 @@
 #pragma once
 #include "ll/api/base/Macro.h"
+#include <atomic>
 #include <string>
 #if _HAS_CXX23
 #include <stacktrace>
@@ -8,7 +9,8 @@ struct _CONTEXT; // NOLINT(bugprone-reserved-identifier)
 
 namespace ll::inline utils::stacktrace_utils {
 class SymbolLoader {
-    void* handle;
+    void*                     handle;
+    static std::atomic_ullong count;
 
 public:
     SymbolLoader(SymbolLoader const&)            = delete;

@@ -153,6 +153,9 @@ std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const& rec) noexcept {
 #if _HAS_CXX23
 
 std::stacktrace stacktraceFromCurrExc(_CONTEXT const& context) {
+    if (std::addressof(context) == nullptr) {
+        return {};
+    }
     STACKFRAME64 sf{};
     sf.AddrPC.Offset    = context.Rip;
     sf.AddrStack.Offset = context.Rsp;
@@ -307,8 +310,9 @@ void printCurrentException(optional_ref<ll::Logger> l, std::exception_ptr const&
     auto& rlogger = l.value_or(logger);
     try {
 #ifdef LL_DEBUG
-        auto res = stacktrace_utils::toString(stacktraceFromCurrExc());
-        res      = makeExceptionString(e) + "\ndebug stacktrace:\n" + res;
+        std::string res;
+        res = stacktrace_utils::toString(stacktraceFromCurrExc());
+        res = makeExceptionString(e) + (res.empty() ? "" : ("\ndebug stacktrace:\n" + res));
 #else
         auto res = makeExceptionString(e);
 #endif

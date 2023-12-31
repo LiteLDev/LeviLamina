@@ -113,7 +113,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
         ll::error_info::printCurrentException();
     }
 #if _HAS_CXX23
-    // static ll::stacktrace_utils::SymbolLoader sl{};
+    static ll::stacktrace_utils::SymbolLoader sl{};
 #endif
     try {
         try {

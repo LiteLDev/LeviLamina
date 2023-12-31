@@ -163,23 +163,38 @@ void lockRelease() noexcept {
 } // namespace detail
 using namespace detail;
 
+
+std::atomic_ullong SymbolLoader::count{};
+
 SymbolLoader::SymbolLoader() : handle(GetCurrentProcess()) {
+    if (count > 0) {
+        return;
+    }
     if (!SymInitializeW(handle, nullptr, true)) {
         throw error_info::getWinLastError();
     }
+    count++;
     DWORD options  = SymGetOptions();
     options       |= SYMOPT_LOAD_LINES | SYMOPT_EXACT_SYMBOLS;
     SymSetOptions(options);
 }
 SymbolLoader::SymbolLoader(std::string const& extra) : handle(GetCurrentProcess()) {
+    if (count > 0) {
+        return;
+    }
     if (!SymInitializeW(handle, string_utils::str2wstr(extra).c_str(), true)) {
         throw error_info::getWinLastError();
     }
+    count++;
     DWORD options  = SymGetOptions();
     options       |= SYMOPT_LOAD_LINES | SYMOPT_EXACT_SYMBOLS;
     SymSetOptions(options);
 }
-SymbolLoader::~SymbolLoader() { SymCleanup(handle); }
+SymbolLoader::~SymbolLoader() {
+    if (--count == 0) {
+        SymCleanup(handle);
+    }
+}
 
 uintptr_t tryGetSymbolAddress(std::string_view symbol) {
     DbgEngData data;
