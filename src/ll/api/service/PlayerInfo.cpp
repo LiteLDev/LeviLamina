@@ -75,21 +75,21 @@ PlayerInfo& PlayerInfo::getInstance() {
 }
 optional_ref<PlayerInfo::PlayerInfoEntry const> PlayerInfo::fromUuid(mce::UUID key) const {
     std::lock_guard lock(impl->mutex);
-    if (auto i = impl->uuids.find(key); i == impl->uuids.end()) {
+    if (auto i = impl->uuids.find(key); i != impl->uuids.end()) {
         return i->second.get();
     }
     return nullptr;
 }
 optional_ref<PlayerInfo::PlayerInfoEntry const> PlayerInfo::fromXuid(std::string_view key) const {
     std::lock_guard lock(impl->mutex);
-    if (auto i = impl->xuids.find(key); i == impl->xuids.end()) {
+    if (auto i = impl->xuids.find(key); i != impl->xuids.end()) {
         return i->second.get();
     }
     return nullptr;
 }
 optional_ref<PlayerInfo::PlayerInfoEntry const> PlayerInfo::fromName(std::string_view key) const {
     std::lock_guard lock(impl->mutex);
-    if (auto i = impl->names.find(key); i == impl->names.end()) {
+    if (auto i = impl->names.find(key); i != impl->names.end()) {
         return i->second.get();
     }
     return nullptr;
