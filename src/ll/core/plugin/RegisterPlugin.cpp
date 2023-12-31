@@ -34,12 +34,11 @@ bool loadManifest(Manifest& manifest, std::filesystem::path const& file) {
     try {
         reflection::deserialize<nlohmann::json, Manifest>(manifest, json);
     } catch (...) {
-        logger.error("ll.plugin.error.manifesterror"_tr, dirName);
         error_info::printCurrentException();
         return false;
     }
     if (manifest.name != dirName) {
-        logger.error("ll.plugin.error.nameunmatch", manifest.name, dirName);
+        logger.error("ll.plugin.error.nameUnmatch"_tr, manifest.name, dirName);
         return false;
     }
     return true;
@@ -53,7 +52,7 @@ void registerPlugins() {
     auto& registry = PluginManagerRegistry::getInstance();
 
     if (!registry.addManager("native", std::make_shared<NativePluginManager>())) {
-        logger.error("ll.plugin.error.failcreatemanager"_tr);
+        logger.error("ll.plugin.error.failCreateManager"_tr);
         return;
     }
 
@@ -79,7 +78,7 @@ void registerPlugins() {
                 if (!manifests.contains(dependency.name) || !checkVersion(manifests.at(dependency.name), dependency)) {
                     error = true;
                     logger.error(
-                        "ll.plugin.error.lackofdependence"_tr,
+                        "ll.plugin.error.lackDependence"_tr,
                         dependency.version.transform([&](auto& ver) { return dependency.name + " " + ver; }
                         ).value_or(dependency.name)
                     );
@@ -159,7 +158,7 @@ void registerPlugins() {
     }
     auto sort = deps.sort();
     for (auto& name : sort.unsorted) {
-        logger.error("ll.plugin.error.cycle"_tr, name);
+        logger.error("ll.plugin.error.cycleDeps"_tr, name);
     }
 
     std::unordered_set<std::string> loadErrored;
@@ -170,7 +169,7 @@ void registerPlugins() {
             for (auto& dependency : *manifest.dependencies) {
                 if (loadErrored.contains(dependency.name)) {
                     deniedByDepError = true;
-                    logger.error("ll.plugin.error.depsnotloaded"_tr, name, dependency.name);
+                    logger.error("ll.plugin.error.depsNotLoaded"_tr, name, dependency.name);
                 }
             }
             if (deniedByDepError) {
@@ -182,7 +181,7 @@ void registerPlugins() {
             logger.info("ll.plugin.info.loaded"_tr, name);
         } else {
             loadErrored.emplace(name);
-            logger.error("ll.plugin.error.failtoload"_tr, name);
+            logger.error("ll.plugin.error.failToLoad"_tr, name);
         }
     }
     size_t loadedCount = sort.sorted.size() - loadErrored.size();
