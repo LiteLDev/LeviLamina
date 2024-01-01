@@ -61,7 +61,7 @@ class TeleportDimensionCommand : public Command {
         auto dim = VanillaDimensions::toString((int)DimensionId);
         auto pos = getTargetPos(ori, actor);
         actor->teleport(pos, (int)DimensionId);
-        output.success("ll.cmd.tpdim.success"_tr, actor->getNameTag(), dim, pos.x, pos.y, pos.z);
+        output.success("ll.cmd.tpdim.success"_tr(actor->getNameTag(), dim, pos.x, pos.y, pos.z));
         return true;
     }
 
@@ -94,7 +94,7 @@ class TeleportDimensionCommand : public Command {
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
         if ((int)DimensionId < 0 || (int)DimensionId > 2) {
-            output.error("ll.cmd.tpdim.invalidDimid"_tr, (int)DimensionId);
+            output.error("ll.cmd.tpdim.invalidDimid"_tr((int)DimensionId));
             return;
         }
         if (Victim_isSet) {
@@ -150,7 +150,7 @@ public:
 /*
 void LLListPluginsCommand(CommandOutput& output) {
     auto plugins = PluginManager::getInstance().getAllPlugins();
-    output.success("ll.cmd.listPlugin.overview"_tr, plugins.size());
+    output.success("ll.cmd.listPlugin.overview"_tr(plugins.size()));
 
     std::ostringstream oss;
     for (auto& ptr : plugins) {
@@ -181,7 +181,7 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
         std::map<std::string, std::string> outs;
         std::ostringstream                 oss;
 
-        output.success("ll.cmd.pluginInfo.title"_tr, pluginName);
+        output.success("ll.cmd.pluginInfo.title"_tr(pluginName));
 
         outs.emplace("Name", fmt::format("{}", plugin->getManifest().name));
         outs.emplace("Description", plugin->getManifest().description.value_or(""));
@@ -203,17 +203,16 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
         }
         output.success(text, {});
     } else {
-        output.error("ll.cmd.pluginInfo.error.pluginNotFound"_tr, pluginName);
+        output.error("ll.cmd.pluginInfo.error.pluginNotFound"_tr(pluginName));
     }
 }
 */
 void LLVersionCommand(CommandOutput& output) {
-    output.success(
-        "ll.cmd.version.msg"_tr,
+    output.success("ll.cmd.version.msg"_tr(
         ll::getBdsVersion().to_string(),
         ll::getLoaderVersion().to_string(),
         ll::getServerProtocolVersion()
-    );
+    ));
 }
 
 void LLHelpCommand(CommandOutput& output) { output.success("ll.cmd.help.msg"_tr); }
@@ -221,32 +220,32 @@ void LLHelpCommand(CommandOutput& output) { output.success("ll.cmd.help.msg"_tr)
 // void LLLoadPluginCommand(CommandOutput& output, std::string const& path) {
 
 // if (manager::loadPlugin(path, true)) {
-//     output.success("ll.cmd.loadPlugin.success"_tr, path);
+//     output.success("ll.cmd.loadPlugin.success"_tr(path));
 // } else {
-//     output.error("ll.cmd.loadPlugin.fail"_tr, path);
+//     output.error("ll.cmd.loadPlugin.fail"_tr(path));
 // }
 // }
 
 // void LLUnloadPluginCommand(CommandOutput& output, std::string const& pluginName) {
 
 // if (manager::unloadPlugin(pluginName, true)) {
-//     output.success("ll.cmd.unloadPlugin.success"_tr, pluginName);
+//     output.success("ll.cmd.unloadPlugin.success"_tr(pluginName));
 // } else {
-//     output.error("ll.cmd.unloadPlugin.fail"_tr, pluginName);
+//     output.error("ll.cmd.unloadPlugin.fail"_tr(pluginName));
 // }
 // }
 
 // void LLReloadPluginCommand(CommandOutput& output, std::string const& pluginName, bool reloadAll) {
 //     if (!reloadAll) {
 // if (manager::reloadPlugin(pluginName, true)) {
-//     output.success("ll.cmd.reloadPlugin.success"_tr, pluginName);
+//     output.success("ll.cmd.reloadPlugin.success"_tr(pluginName));
 // } else {
-//     output.error("ll.cmd.reloadPlugin.fail"_tr, pluginName);
+//     output.error("ll.cmd.reloadPlugin.fail"_tr(pluginName));
 // }
 // } else {
 // int cnt = manager::reloadAllPlugins(true);
 // if (cnt > 0) {
-//     output.success("ll.cmd.reloadAllPlugins.success"_tr, cnt);
+//     output.success("ll.cmd.reloadAllPlugins.success"_tr(cnt));
 // } else {
 //     output.error("ll.cmd.reloadAllPlugins.fail"_tr);
 // }
@@ -268,7 +267,7 @@ void LLSettingsCommand(
             ll::to_json(j, ll::globalConfig);
             auto path = nlohmann::json::json_pointer(key);
             auto val  = j[path];
-            output.success("ll.cmd.settings.get.success"_tr, key);
+            output.success("ll.cmd.settings.get.success"_tr(key));
             output.success(val.dump(4));
             break;
         }
@@ -278,7 +277,7 @@ void LLSettingsCommand(
             auto path = nlohmann::json::json_pointer(key);
             j[path]   = nlohmann::json::parse(value);
             ll::from_json(j, ll::globalConfig);
-            output.success("ll.cmd.settings.set.success"_tr, key, j[path].dump());
+            output.success("ll.cmd.settings.set.success"_tr(key, j[path].dump()));
             break;
         }
         case LLSettingsOperation::Delete: {
@@ -291,7 +290,7 @@ void LLSettingsCommand(
             auto path = nlohmann::json::json_pointer(key);
             j.erase(path.to_string());
             ll::from_json(j, ll::globalConfig);
-            output.success("ll.cmd.settings.delete.success"_tr, key);
+            output.success("ll.cmd.settings.delete.success"_tr(key));
             break;
         }
         case LLSettingsOperation::List: {

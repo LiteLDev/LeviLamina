@@ -245,7 +245,7 @@ void onEnumExecute(
         bool  found    = false;
         if (std::find(enumNames.begin(), enumNames.end(), enumName) != enumNames.end()) {
             found = true;
-            output.success("§eEnum §l{}§r§e Values:"_tr, enumName);
+            output.success("§eEnum §l{}§r§e Values:"_tr(enumName));
             for (auto& val : registry.getEnumValues(enumName)) {
                 output.success(val);
                 // output.addToResultList("enums", val);
@@ -254,7 +254,7 @@ void onEnumExecute(
         }
         if (std::find(softEnumNames.begin(), softEnumNames.end(), enumName) != softEnumNames.end()) {
             found = true;
-            output.success("§eSoft Enum §l{}§r§e Values:"_tr, enumName);
+            output.success("§eSoft Enum §l{}§r§e Values:"_tr(enumName));
             for (auto& val : registry.getSoftEnumValues(enumName)) {
                 output.success(val);
             }

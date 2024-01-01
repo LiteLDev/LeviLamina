@@ -24,14 +24,14 @@ public:
 
     template <ll::concepts::IsString S, class First, typename... Args>
         requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
-    inline void success(S const& fmt, First&& arg, Args&&... args) {
-        success(fmt::format(fmt::runtime(fmt), std::forward<First>(arg), std::forward<Args>(args)...));
+    inline void success(S const& fmt, First&& _args, Args&&... args) {
+        success(fmt::format(fmt::runtime(fmt), std::forward<First>(_args), std::forward<Args>(args)...));
     }
 
     template <ll::concepts::IsString S, class First, typename... Args>
         requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
-    inline void error(S const& fmt, First&& arg, Args&&... args) {
-        error(fmt::format(fmt::runtime(fmt), std::forward<First>(arg), std::forward<Args>(args)...));
+    inline void error(S const& fmt, First&& _args, Args&&... args) {
+        error(fmt::format(fmt::runtime(fmt), std::forward<First>(_args), std::forward<Args>(args)...));
     }
 
     inline void success(char const* str) { success(std::string{str}); }
@@ -39,7 +39,6 @@ public:
 
     inline void success(std::string_view str) { success(std::string{str}); }
     inline void error(std::string_view str) { error(std::string{str}); }
-
 
 public:
     // NOLINTBEGIN

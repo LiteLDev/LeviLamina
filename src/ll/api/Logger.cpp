@@ -2,8 +2,6 @@
 
 #include "ll/api/Logger.h"
 
-#include "fmt/color.h"
-
 #include "ll/api/base/ErrorInfo.h"
 #include "ll/api/base/Hash.h"
 #include "ll/api/io/FileUtils.h"

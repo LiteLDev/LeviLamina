@@ -83,7 +83,7 @@ void checkOtherBdsInstance() {
                 logger.error("ll.main.checkOtherBdsInstance.detected"_tr);
                 logger.error("ll.main.checkOtherBdsInstance.tip"_tr);
                 while (true) {
-                    logger.error("ll.main.checkOtherBdsInstance.ask"_tr, pid);
+                    logger.error("ll.main.checkOtherBdsInstance.ask"_tr(pid));
                     char input;
                     rewind(stdin);
                     input = static_cast<char>(getchar());
@@ -118,9 +118,9 @@ void printWelcomeMsg() {
     logger.info(R"(                                                                      )");
     logger.info(R"(                                                                      )");
 
-    logger.info("ll.notice.license"_tr, "LGPLv3");
-    logger.info("ll.notice.newForum"_tr, "https://forum.litebds.com");
-    logger.info("ll.notice.translateText"_tr, "https://crowdin.com/project/liteloaderbds");
+    logger.info("ll.notice.license"_tr("LGPLv3"));
+    logger.info("ll.notice.newForum"_tr("https://forum.litebds.com"));
+    logger.info("ll.notice.translateText"_tr("https://crowdin.com/project/liteloaderbds"));
     logger.info("ll.notice.sponsor.thanks"_tr);
     logger.info("");
 }
@@ -128,7 +128,7 @@ void printWelcomeMsg() {
 void checkProtocolVersion() {
     auto currentProtocol = getServerProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-        logger.warn("ll.main.warning.protocolVersionNotMatch.1"_tr, TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
+        logger.warn("ll.main.warning.protocolVersionNotMatch.1"_tr(TARGET_BDS_PROTOCOL_VERSION, currentProtocol));
         logger.warn("ll.main.warning.protocolVersionNotMatch.2"_tr);
     }
 }

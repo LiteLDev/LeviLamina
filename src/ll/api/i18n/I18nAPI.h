@@ -7,11 +7,19 @@
 
 #include <string>
 
-#include "fmt/core.h"
+#include "fmt/chrono.h"
+#include "fmt/color.h"
+#include "fmt/compile.h"
+#include "fmt/format.h"
 #include "fmt/os.h"
+#include "fmt/ranges.h"
+#include "fmt/std.h"
+
 #include "nlohmann/json.hpp"
 
 // #define LL_I18N_COLLECT_STRINGS
+
+class Player;
 
 namespace ll::i18n {
 
@@ -151,6 +159,7 @@ template <ll::concepts::IsString S, class... Args>
     }
     return res;
 }
+LLNDAPI std::string getPlayerLocale(Player const&);
 } // namespace detail
 
 struct TranslateFunctor {
@@ -163,6 +172,22 @@ struct TranslateFunctor {
     template <class... Args>
     [[nodiscard]] inline std::string operator()(Args&&... args) {
         return fmt::format(fmt::runtime(detail::tr(view)), std::forward<Args>(args)...);
+    }
+};
+
+struct TranslateFunctorWithLocale : TranslateFunctor {
+    using TranslateFunctor::TranslateFunctor;
+
+    template <class... Args>
+    [[nodiscard]] inline std::string operator()(std::string_view locale, Args&&... args) {
+        return fmt::format(fmt::runtime(detail::trl(locale, view)), std::forward<Args>(args)...);
+    }
+    template <class... Args>
+    [[nodiscard]] inline std::string operator()(Player const& player, Args&&... args) {
+        return fmt::format(
+            fmt::runtime(detail::trl(detail::getPlayerLocale(player), view)),
+            std::forward<Args>(args)...
+        );
     }
 };
 
@@ -185,10 +210,18 @@ template <FixedString str>
     static detail::TrString<str> e{};
     return (std::string_view)str;
 }
+template <FixedString str>
+[[nodiscard]] inline i18n::TranslateFunctorWithLocale operator""_trl() {
+    static detail::TrString<str> e{};
+    return (std::string_view)str;
+}
 } // namespace ll::i18n_literals
 #else
 namespace ll::i18n_literals {
 [[nodiscard]] inline i18n::TranslateFunctor operator""_tr(char const* x, size_t len) {
+    return std::string_view{x, len};
+}
+[[nodiscard]] inline i18n::TranslateFunctorWithLocale operator""_trl(char const* x, size_t len) {
     return std::string_view{x, len};
 }
 } // namespace ll::i18n_literals
