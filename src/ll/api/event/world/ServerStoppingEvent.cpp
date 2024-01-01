@@ -21,7 +21,7 @@ LL_TYPED_INSTANCE_HOOK(
     &ServerInstance::leaveGameSync,
     void
 ) {
-    getServerStatusNonConst() = ServerStatus::Stopping;
+    setServerStatus(ServerStatus::Stopping);
     EventBus::getInstance().publish(ServerStoppingEvent(*this));
     origin();
 }

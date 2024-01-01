@@ -240,9 +240,8 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
 #if defined(LL_DEBUG) && _HAS_CXX23
     static ll::stacktrace_utils::SymbolLoader symbols{};
 #endif
-
-    getServerStatusNonConst() = ServerStatus::Default;
-    severStartBeginTime       = std::chrono::steady_clock::now();
+    setServerStatus(ServerStatus::Default);
+    severStartBeginTime = std::chrono::steady_clock::now();
     for (int i = 0; i < argc; ++i) {
         switch (do_hash(argv[i])) {
         case "--noColor"_h:
@@ -259,14 +258,14 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
             break;
         }
     }
-    getServerStatusNonConst() = ServerStatus::Starting;
+    setServerStatus(ServerStatus::Starting);
     try {
         leviLaminaMain();
     } catch (...) {
         ll::error_info::printCurrentException();
     }
-    auto res                  = origin(argc, argv);
-    getServerStatusNonConst() = ServerStatus::Default;
+    auto res = origin(argc, argv);
+    setServerStatus(ServerStatus::Default);
     return res;
 }
 } // namespace ll

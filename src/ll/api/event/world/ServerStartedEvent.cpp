@@ -25,7 +25,7 @@ LL_TYPED_INSTANCE_HOOK(
     ::ServerInstance& ins
 ) {
     origin(ins);
-    getServerStatusNonConst() = ServerStatus::Running;
+    setServerStatus(ServerStatus::Running);
     EventBus::getInstance().publish(ServerStartedEvent(ins));
 }
 
