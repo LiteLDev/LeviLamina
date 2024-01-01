@@ -9,28 +9,28 @@ public:
     size_t                   mCapacity{0}; // one byte
     std::unique_ptr<uchar[]> mBuffer;
 
-    [[nodiscard]] constexpr TagMemoryChunk() = default;
+    [[nodiscard]] _CONSTEXPR23 TagMemoryChunk() = default;
 
     template <class T, size_t N>
-    [[nodiscard]] constexpr TagMemoryChunk(std::span<T, N> v) : mSize(v.size()),
-                                                                mCapacity(mSize * sizeof(T)) {
+    [[nodiscard]] _CONSTEXPR23 TagMemoryChunk(std::span<T, N> v) : mSize(v.size()),
+                                                                   mCapacity(mSize * sizeof(T)) {
         this->mBuffer = std::make_unique_for_overwrite<uchar[]>(mCapacity);
         std::copy_n((uchar*)v.data(), mCapacity, this->mBuffer.get());
     }
 
-    [[nodiscard]] constexpr TagMemoryChunk(TagMemoryChunk const& other)
+    [[nodiscard]] _CONSTEXPR23 TagMemoryChunk(TagMemoryChunk const& other)
     : mSize(other.mSize),
       mCapacity(other.mCapacity) {
         this->mBuffer = std::make_unique_for_overwrite<uchar[]>(mCapacity);
         std::copy_n(other.mBuffer.get(), mCapacity, this->mBuffer.get());
     }
 
-    [[nodiscard]] constexpr TagMemoryChunk(TagMemoryChunk&& other) noexcept
+    [[nodiscard]] _CONSTEXPR23 TagMemoryChunk(TagMemoryChunk&& other) noexcept
     : mSize(other.mSize),
       mCapacity(other.mCapacity),
       mBuffer(std::move(other.mBuffer)) {}
 
-    constexpr TagMemoryChunk& operator=(TagMemoryChunk const& other) {
+    _CONSTEXPR23 TagMemoryChunk& operator=(TagMemoryChunk const& other) {
         if (&other == this) {
             return *this;
         }
@@ -38,7 +38,7 @@ public:
         return *this;
     }
 
-    constexpr TagMemoryChunk& operator=(TagMemoryChunk&& other) noexcept {
+    _CONSTEXPR23 TagMemoryChunk& operator=(TagMemoryChunk&& other) noexcept {
         if (&other == this) {
             return *this;
         }
@@ -48,5 +48,5 @@ public:
         return *this;
     }
 
-    constexpr std::span<uchar> view() const { return std::span<uchar>(mBuffer.get(), mCapacity); }
+    _CONSTEXPR23 std::span<uchar> view() const { return std::span<uchar>(mBuffer.get(), mCapacity); }
 };

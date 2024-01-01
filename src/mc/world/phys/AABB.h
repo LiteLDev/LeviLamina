@@ -45,7 +45,9 @@ public:
 
     [[nodiscard]] constexpr bool contains(Vec3 const& a) const noexcept { return a.ge(min).all() && a.le(max).all(); }
 
-    [[nodiscard]] constexpr bool contains(AABB const& a) const noexcept { return a.min.ge(min).all() && a.max.le(max).all(); }
+    [[nodiscard]] constexpr bool contains(AABB const& a) const noexcept {
+        return a.min.ge(min).all() && a.max.le(max).all();
+    }
 
     LLAPI explicit operator class BoundingBox() const;
 

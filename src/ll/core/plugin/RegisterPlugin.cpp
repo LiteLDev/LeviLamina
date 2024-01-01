@@ -79,11 +79,13 @@ void registerPlugins() {
             for (auto& dependency : *manifest.dependencies) {
                 if (!manifests.contains(dependency.name) || !checkVersion(manifests.at(dependency.name), dependency)) {
                     error = true;
+#if _HAS_CXX23
                     logger.error(
                         "ll.plugin.error.lackDependence"_tr,
                         dependency.version.transform([&](auto& ver) { return dependency.name + " " + ver; }
                         ).value_or(dependency.name)
                     );
+#endif
                 }
             }
             if (error) {
@@ -111,12 +113,14 @@ void registerPlugins() {
         for (auto& conflict : *manifest.conflicts) {
             if (manifests.contains(conflict.name) && checkVersion(manifests.at(conflict.name), conflict)) {
                 conflicts.emplace_back(name);
+#if _HAS_CXX23
                 logger.error(
                     "ll.plugin.error.conflict"_tr,
                     name,
                     conflict.version.transform([&](auto& ver) { return conflict.name + " " + ver; }
                     ).value_or(conflict.name)
                 );
+#endif
             }
         }
     }

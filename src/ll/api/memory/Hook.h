@@ -120,7 +120,7 @@ consteval bool virtualDetector() noexcept {
 }
 template <auto f>
 consteval bool virtualDetector() noexcept {
-    return reflection::getRawName<f>().contains("::`vcall'{");
+    return reflection::getRawName<f>().find("::`vcall'{") != std::string::npos;
 }
 
 template <class... Ts>

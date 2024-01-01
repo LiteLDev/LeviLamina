@@ -106,7 +106,7 @@ public:
             mTagStorage = std::move((EndTag&)*tag);
             break;
         default:
-            std::unreachable();
+            _STL_UNREACHABLE;
         }
     }
     [[nodiscard]] CompoundTagVariant(std::unique_ptr<Tag> const& tag)
@@ -206,7 +206,7 @@ public:
         case Tag::Type::End:
             return 0;
         default:
-            std::unreachable();
+            _STL_UNREACHABLE;
         }
     }
 

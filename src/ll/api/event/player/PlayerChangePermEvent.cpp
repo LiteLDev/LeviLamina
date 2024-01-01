@@ -13,11 +13,13 @@ void PlayerChangePermEvent::serialize(CompoundTag& nbt) const {
 
 void PlayerChangePermEvent::deserialize(CompoundTag const& nbt) {
     Cancellable::deserialize(nbt);
+#if _HAS_CXX23
     magic_enum::enum_cast<CommandPermissionLevel>((std::string_view)nbt["permission"])
         .transform([this](CommandPermissionLevel val) {
             newPerm() = val;
             return true;
         });
+#endif
 }
 
 CommandPermissionLevel& PlayerChangePermEvent::newPerm() const { return mMewPerm; }

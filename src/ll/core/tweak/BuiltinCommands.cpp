@@ -1,7 +1,8 @@
 ﻿#include "ll/api/Logger.h"
 #include "ll/api/ServerInfo.h"
 #include "ll/api/event/EventBus.h"
-#include "ll/api/event/command/SetupCommandEvent.h"
+#include "ll/api/event/world/ServerStartedEvent.h"
+#include "ll/api/service/Bedrock.h"
 #include "ll/core/Config.h"
 
 #include "mc/network/packet/Packet.h"
@@ -518,12 +519,7 @@ public:
 class VersionCommand : public Command {
 
 public:
-    void execute([[maybe_unused]] CommandOrigin const& ori, CommandOutput& output) const override {
-#ifdef LL_DEBUG
-        Logger("VersionCommand").warn(ori.serialize().toSnbt());
-#endif // LL_DEBUG
-        LLVersionCommand(output);
-    }
+    void execute(CommandOrigin const&, CommandOutput& output) const override { LLVersionCommand(output); }
 
     static void setup(CommandRegistry& registry) {
         registry.registerCommand("version", "Get the version of this server", CommandPermissionLevel::GameDirectors);
@@ -534,8 +530,8 @@ public:
 namespace ll {
 void registerLeviCommands() {
     using namespace event;
-    EventBus::getInstance().emplaceListener<command::SetupCommandEvent>([](command::SetupCommandEvent& ev) {
-        auto& registry = ev.registry();
+    EventBus::getInstance().emplaceListener<ServerStartedEvent>([](ServerStartedEvent&) {
+        auto registry = service::getCommandRegistry();
         if (globalConfig.modules.tweak.tpdimCommand) {
             TeleportDimensionCommand::setup(registry);
         }

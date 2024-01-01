@@ -237,7 +237,7 @@ void leviLaminaMain() {
 
 LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int argc, char* argv[]) {
 
-#ifdef LL_DEBUG
+#if defined(LL_DEBUG) && _HAS_CXX23
     static ll::stacktrace_utils::SymbolLoader symbols{};
 #endif
 

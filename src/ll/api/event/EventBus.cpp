@@ -31,7 +31,7 @@ public:
     [[nodiscard]] size_t count() const { return listeners.size(); }
 
     void publish(Event& event) {
-        std::shared_lock                      lock(mutex);
+        std::shared_lock lock(mutex);
         // static stacktrace_utils::SymbolLoader a{};
         for (auto& l : listeners) {
             try {
@@ -96,8 +96,9 @@ public:
     std::recursive_mutex mutex;
 
     struct ListenerInfo {
-        std::weak_ptr<ListenerBase> listener;
-        std::unordered_set<EventId> watches;
+        std::weak_ptr<ll::plugin::Plugin> plugin;
+        std::weak_ptr<ListenerBase>       listener;
+        std::unordered_set<EventId>       watches;
     };
 
     std::unordered_map<ListenerId, ListenerInfo> listeners;
@@ -177,6 +178,7 @@ bool EventBus::addListener(ListenerPtr const& listener, EventId eventId) {
     std::lock_guard lock(impl->mutex);
     if (impl->addListener(listener, eventId)) {
         auto& info    = impl->listeners[listener->getId()];
+        info.plugin   = listener->pluginPtr;
         info.listener = listener;
         info.watches.emplace(eventId);
         return true;
@@ -224,5 +226,18 @@ bool EventBus::hasListener(ListenerId id, EventId eventId) const {
     } else {
         return impl->listeners[id].watches.contains(eventId);
     }
+}
+size_t EventBus::removePluginListeners(std::string_view pluginName) {
+    std::lock_guard lock(impl->mutex);
+    size_t          count{};
+    for (auto& [id, listener] : impl->listeners) {
+        if (auto plugin = listener.plugin.lock()) {
+            if (plugin->getManifest().name != pluginName) {
+                continue;
+            }
+        }
+        count += removeListener(id);
+    }
+    return count;
 }
 } // namespace ll::event

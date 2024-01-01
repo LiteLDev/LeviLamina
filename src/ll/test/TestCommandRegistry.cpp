@@ -1,7 +1,8 @@
 
 #include "ll/api/event/EventBus.h"
-#include "ll/api/event/command/SetupCommandEvent.h"
+#include "ll/api/event/world/ServerStartedEvent.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/api/service/Bedrock.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOutput.h"
@@ -166,8 +167,8 @@ public:
 
 static bool reg = [] {
     using namespace ll::event;
-    EventBus::getInstance().emplaceListener<SetupCommandEvent>([](SetupCommandEvent& ev) {
-        TestCommand::setup(ev.registry());
+    EventBus::getInstance().emplaceListener<ServerStartedEvent>([](ServerStartedEvent&) {
+        TestCommand::setup(ll::service::getCommandRegistry());
     });
     return true;
 }();

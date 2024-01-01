@@ -50,6 +50,7 @@ namespace mce { class UUID; }
 class NetworkIdentifier;
 class Certificate;
 class UserEntityIdentifierComponent;
+class ConnectionRequest;
 class Packet;
 
 class Player : public ::Mob {
@@ -96,6 +97,8 @@ public:
 
     LLNDAPI UserEntityIdentifierComponent& getUserEntityIdentifier();
 
+    LLNDAPI optional_ref<ConnectionRequest const> getConnectionRequest() const;
+
     [[nodiscard]] NetworkIdentifier const& getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
 
     [[nodiscard]] optional_ref<Certificate const> getCertificate() const {
@@ -129,7 +132,8 @@ public:
      */
     LLNDAPI std::string getRealName() const;
 
-    LLNDAPI std::string getDeviceId() const;
+    LLNDAPI std::string getLocaleName() const;
+
     LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
     /**
      * @brief Disconnect player's client

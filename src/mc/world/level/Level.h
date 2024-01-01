@@ -1021,8 +1021,8 @@ public:
         class Vec3 const&                       pos,
         int                                     data,
         struct ActorDefinitionIdentifier const& entityType,
-        bool isBabyMob,
-        bool isGlobal
+        bool                                    isBabyMob,
+        bool                                    isGlobal
     );
 
     // symbol:
@@ -1045,8 +1045,8 @@ public:
         class Vec3 const&                       pos,
         int                                     data,
         struct ActorDefinitionIdentifier const& entityType,
-        bool isBabyMob,
-        bool isGlobal
+        bool                                    isBabyMob,
+        bool                                    isGlobal
     );
 
     // symbol: ?potionSplash@Level@@UEAAXAEBVVec3@@AEBVColor@mce@@_N@Z

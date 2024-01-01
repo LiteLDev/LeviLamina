@@ -1,7 +1,7 @@
 #include "ll/api/plugin/PluginManager.h"
 
 namespace ll::plugin {
- bool PluginManager::enable(std::string_view name) {
+bool PluginManager::enable(std::string_view name) {
     std::lock_guard lock(mutex);
     if (!hasPlugin(name)) {
         return false;
@@ -12,7 +12,7 @@ namespace ll::plugin {
     return true;
 }
 
- bool PluginManager::disable(std::string_view name) {
+bool PluginManager::disable(std::string_view name) {
     std::lock_guard lock(mutex);
     if (!hasPlugin(name)) {
         return false;
@@ -22,4 +22,4 @@ namespace ll::plugin {
     }
     return true;
 }
-}
+} // namespace ll::plugin

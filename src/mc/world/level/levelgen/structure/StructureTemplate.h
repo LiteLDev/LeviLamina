@@ -127,7 +127,7 @@ public:
     // NOLINTBEGIN
     // symbol: ?_fillBlockInfo@StructureTemplate@@AEAAXAEAVBlockSource@@AEBVBlockPos@@11@Z
     MCAPI void _fillBlockInfo(
-        class BlockSource&region,
+        class BlockSource&    region,
         class BlockPos const& minCorner,
         class BlockPos const& maxCorner,
         class BlockPos const& size

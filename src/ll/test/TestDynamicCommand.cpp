@@ -2,6 +2,7 @@
 #include "ll/api/Logger.h"
 #include "ll/api/base/Hash.h"
 #include "ll/api/command/DynamicCommand.h"
+#include "ll/api/service/Bedrock.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/server/commands/ServerCommands.h"
 #include "mc/world/actor/Actor.h"
@@ -10,7 +11,7 @@
 #include "ll/api/schedule/Scheduler.h"
 
 #include "ll/api/event/EventBus.h"
-#include "ll/api/event/command/SetupCommandEvent.h"
+#include "ll/api/event/world/ServerStartedEvent.h"
 
 using Param      = DynamicCommand::ParameterData;
 using ParamType  = DynamicCommand::ParameterType;
@@ -493,17 +494,18 @@ static void kickAllSimulatePlayerCommand(CommandRegistry& registry) {
 
 static bool reg = [] {
     using namespace ll::event;
-    EventBus::getInstance().emplaceListener<command::SetupCommandEvent>([](command::SetupCommandEvent& ev) {
-        setupRemoveCommand(ev.registry());
-        setupTestEnumCommand(ev.registry());
-        setupTestParamCommand(ev.registry());
-        setupExampleCommand(ev.registry());
-        setupEnumCommand(ev.registry());
-        setupEchoCommand(ev.registry());
-        setupCrashCommand(ev.registry());
-        setupTimingCommand(ev.registry());
-        setupCreateSimulatePlayerCommand(ev.registry());
-        kickAllSimulatePlayerCommand(ev.registry());
+    EventBus::getInstance().emplaceListener<ServerStartedEvent>([](ServerStartedEvent&) {
+        auto registry = ll::service::getCommandRegistry();
+        setupRemoveCommand(registry);
+        setupTestEnumCommand(registry);
+        setupTestParamCommand(registry);
+        setupExampleCommand(registry);
+        setupEnumCommand(registry);
+        setupEchoCommand(registry);
+        setupCrashCommand(registry);
+        setupTimingCommand(registry);
+        setupCreateSimulatePlayerCommand(registry);
+        kickAllSimulatePlayerCommand(registry);
     });
     return true;
 }();

@@ -25,6 +25,7 @@ class ListenerBase {
     LLAPI static std::atomic_ullong listenerId;
 
     friend CallbackStream;
+    friend EventBus;
     ListenerId                    id;
     EventPriority                 priority;
     std::weak_ptr<plugin::Plugin> pluginPtr;
@@ -44,13 +45,13 @@ public:
     ListenerBase& operator=(ListenerBase&&)      = delete;
     ListenerBase& operator=(ListenerBase const&) = delete;
 
-    [[nodiscard]] ListenerId    getId() const { return id; }
-    [[nodiscard]] EventPriority getPriority() const { return priority; }
+    [[nodiscard]] constexpr ListenerId    getId() const { return id; }
+    [[nodiscard]] constexpr EventPriority getPriority() const { return priority; }
 
-    [[nodiscard]] bool operator==(ListenerBase const& other) const noexcept { return id == other.id; }
-    [[nodiscard]] bool operator!=(ListenerBase const& other) const noexcept { return id != other.id; }
+    [[nodiscard]] constexpr bool operator==(ListenerBase const& other) const noexcept { return id == other.id; }
+    [[nodiscard]] constexpr bool operator!=(ListenerBase const& other) const noexcept { return id != other.id; }
 
-    [[nodiscard]] std::strong_ordering operator<=>(ListenerBase const& other) const noexcept {
+    [[nodiscard]] constexpr std::strong_ordering operator<=>(ListenerBase const& other) const noexcept {
         if (priority != other.priority) {
             return priority <=> other.priority;
         }

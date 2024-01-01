@@ -93,7 +93,7 @@ public:
         MCAPI CZString();
 
         // symbol: ??0CZString@Value@Json@@QEAA@PEBD@Z
-        MCAPI explicit CZString(char const*);
+        MCAPI CZString(char const*);
 
         // symbol: ??0CZString@Value@Json@@QEAA@$$QEAV012@@Z
         MCAPI CZString(class Json::Value::CZString&& other);
@@ -150,13 +150,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Value@Json@@QEAA@_J@Z
-    MCAPI explicit Value(int64);
+    MCAPI Value(int64);
 
     // symbol: ??0Value@Json@@QEAA@_N@Z
-    MCAPI explicit Value(bool value);
+    MCAPI Value(bool value);
 
     // symbol: ??0Value@Json@@QEAA@PEBD@Z
-    MCAPI explicit Value(char const* value);
+    MCAPI Value(char const* value);
 
     // symbol: ??0Value@Json@@QEAA@$$QEAV01@@Z
     MCAPI Value(class Json::Value&&);
@@ -165,25 +165,25 @@ public:
     MCAPI Value(class Json::Value const& other);
 
     // symbol: ??0Value@Json@@QEAA@PEAVCZString@01@@Z
-    MCAPI explicit Value(class Json::Value::CZString*);
+    MCAPI Value(class Json::Value::CZString*);
 
     // symbol: ??0Value@Json@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit Value(std::string const& value);
+    MCAPI Value(std::string const& value);
 
     // symbol: ??0Value@Json@@QEAA@N@Z
-    MCAPI explicit Value(double value);
+    MCAPI Value(double value);
 
     // symbol: ??0Value@Json@@QEAA@W4ValueType@1@@Z
-    MCAPI explicit Value(::Json::ValueType type);
+    MCAPI Value(::Json::ValueType type);
 
     // symbol: ??0Value@Json@@QEAA@H@Z
-    MCAPI explicit Value(int value);
+    MCAPI Value(int value);
 
     // symbol: ??0Value@Json@@QEAA@_K@Z
-    MCAPI explicit Value(uint64 value);
+    MCAPI Value(uint64 value);
 
     // symbol: ??0Value@Json@@QEAA@I@Z
-    MCAPI explicit Value(uint value);
+    MCAPI Value(uint value);
 
     // symbol: ?append@Value@Json@@QEAAAEAV12@$$QEAV12@@Z
     MCAPI class Json::Value& append(class Json::Value&&);

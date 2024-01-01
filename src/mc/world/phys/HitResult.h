@@ -43,7 +43,9 @@ public:
 
     // symbol: ??0HitResult@@QEAA@AEBVVec3@@0AEBVBlockPos@@E0@Z
     MCAPI
-    HitResult(class Vec3 const& startPos, class Vec3 const& rayDir,
+    HitResult(
+        class Vec3 const&     startPos,
+        class Vec3 const&     rayDir,
         class BlockPos const& blockPos,
         uchar                 facing,
         class Vec3 const&     pos

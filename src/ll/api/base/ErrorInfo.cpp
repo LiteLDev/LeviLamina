@@ -309,7 +309,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
 void printCurrentException(optional_ref<ll::Logger> l, std::exception_ptr const& e) noexcept {
     auto& rlogger = l.value_or(logger);
     try {
-#ifdef LL_DEBUG
+#if defined(LL_DEBUG) && _HAS_CXX23
         std::string res;
         res = stacktrace_utils::toString(stacktraceFromCurrExc());
         res = makeExceptionString(e) + (res.empty() ? "" : ("\ndebug stacktrace:\n" + res));

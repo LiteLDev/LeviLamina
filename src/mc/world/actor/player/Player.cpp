@@ -28,11 +28,18 @@ UserEntityIdentifierComponent& Player::getUserEntityIdentifier() {
     return *(getEntityContext().tryGetComponent<UserEntityIdentifierComponent>());
 }
 
-std::string Player::getDeviceId() const {
-    if (!ll::service::getServerNetworkHandler()) {
-        return "";
+optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
+    if (isSimulatedPlayer()) {
+        return std::nullopt;
     }
-    return ll::service::getServerNetworkHandler()->fetchConnectionRequest(getNetworkIdentifier()).getDeviceId();
+    return ll::service::getServerNetworkHandler()->fetchConnectionRequest(getNetworkIdentifier());
+}
+
+std::string Player::getLocaleName() const {
+    if (auto request = getConnectionRequest()) {
+        return request->mRawToken->mDataInfo.get("LanguageCode", "").asString("");
+    }
+    return "";
 }
 
 std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {

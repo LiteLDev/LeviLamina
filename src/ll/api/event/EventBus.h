@@ -119,6 +119,8 @@ public:
     [[nodiscard]] bool hasListener(ListenerId id) const {
         return hasListener(id, getEventId<T>);
     }
+
+    LLAPI size_t removePluginListeners(std::string_view pluginName);
 };
 
 } // namespace ll::event

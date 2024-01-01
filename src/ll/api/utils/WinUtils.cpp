@@ -73,7 +73,11 @@ std::optional<std::filesystem::path> getModulePath(void* handle) {
 }
 
 std::string getModuleFileName(void* handle) {
+#if _HAS_CXX23
     return getModulePath(handle).transform([](auto&& path) { return u8str2str(path.filename().u8string()); }
     ).value_or("");
+#else
+    return {};
+#endif
 }
 } // namespace ll::inline utils::win_utils

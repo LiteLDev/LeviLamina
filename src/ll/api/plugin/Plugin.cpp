@@ -2,7 +2,6 @@
 
 #include "ll/api/ServerInfo.h"
 #include "ll/api/event/EventBus.h"
-#include "ll/api/event/command/SetupCommandEvent.h"
 #include "ll/api/event/world/ServerStartedEvent.h"
 #include "ll/api/service/Bedrock.h"
 
@@ -65,12 +64,6 @@ bool Plugin::hasOnDisable() { return mImpl->onDisable != nullptr; }
 bool Plugin::onLoad() {
     if (!mImpl->onLoad || mImpl->onLoad(*this)) {
         if (getServerStatus() == ServerStatus::Running) {
-            if (service::getCommandRegistry()) {
-                event::EventBus::getInstance().publish(
-                    mImpl->manifest.name,
-                    event::SetupCommandEvent{service::getCommandRegistry()}
-                );
-            }
             onEnable();
             if (service::getServerInstance()) {
                 event::EventBus::getInstance().publish(

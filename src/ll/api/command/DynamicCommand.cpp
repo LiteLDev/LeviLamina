@@ -198,7 +198,7 @@ CommandParameterData DynamicCommand::ParameterData::makeParameterData() const {
     case ParameterType::Command:
         return makeParameterData<ParameterType::Command, ParameterDataType::Command>();
     default:
-        std::unreachable();
+        _STL_UNREACHABLE;
     }
 }
 

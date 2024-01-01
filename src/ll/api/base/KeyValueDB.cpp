@@ -27,10 +27,12 @@ public:
         if (bloomFilterBit) {
             options.filter_policy = leveldb::NewBloomFilterPolicy(bloomFilterBit);
         }
+#if _HAS_CXX23
         auto status = leveldb::DB::Open(options, path, std::out_ptr(db));
         if (!status.ok()) {
             throw std::runtime_error(status.ToString());
         }
+#endif
     }
 
     ~KeyValueDBImpl() { delete options.filter_policy; }

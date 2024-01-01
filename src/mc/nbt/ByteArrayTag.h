@@ -10,23 +10,23 @@ class ByteArrayTag : public ::Tag {
 public:
     TagMemoryChunk data{};
 
-    [[nodiscard]] constexpr operator TagMemoryChunk const&() const { return data; } // NOLINT
-    [[nodiscard]] constexpr operator TagMemoryChunk&() { return data; }             // NOLINT
+    [[nodiscard]] _CONSTEXPR23 operator TagMemoryChunk const&() const { return data; } // NOLINT
+    [[nodiscard]] _CONSTEXPR23 operator TagMemoryChunk&() { return data; }             // NOLINT
 
     ByteArrayTag() = default;
 
     template <class T>
-    [[nodiscard]] constexpr ByteArrayTag(std::in_place_type_t<T>, TagMemoryChunk mem) : data(std::move(mem)) {
+    [[nodiscard]] _CONSTEXPR23 ByteArrayTag(std::in_place_type_t<T>, TagMemoryChunk mem) : data(std::move(mem)) {
         data.mSize = data.mSize * sizeof(T);
     }
 
-    [[nodiscard]] constexpr ByteArrayTag(std::vector<schar> const& arr) : data(std::span{arr}) {} // NOLINT
+    [[nodiscard]] _CONSTEXPR23 ByteArrayTag(std::vector<schar> const& arr) : data(std::span{arr}) {} // NOLINT
 
     std::span<schar> view() const { return std::span<schar>((schar*)data.mBuffer.get(), data.mSize); }
 
-    [[nodiscard]] constexpr schar& operator[](size_t index) const { return view()[index]; }
+    [[nodiscard]] _CONSTEXPR23 schar& operator[](size_t index) const { return view()[index]; }
 
-    [[nodiscard]] constexpr size_t size() const { return data.mSize; }
+    [[nodiscard]] _CONSTEXPR23 size_t size() const { return data.mSize; }
 
 public:
     // NOLINTBEGIN

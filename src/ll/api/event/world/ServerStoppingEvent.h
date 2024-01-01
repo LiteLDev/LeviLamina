@@ -6,11 +6,10 @@
 
 namespace ll::event::inline world {
 class ServerStoppingEvent : public Event {
-    ServerInstance&    mServer;
+    ServerInstance& mServer;
 
 public:
-    constexpr explicit ServerStoppingEvent(ServerInstance& server)
-    : mServer(server) {}
+    constexpr explicit ServerStoppingEvent(ServerInstance& server) : mServer(server) {}
 
     void serialize(CompoundTag&) const override;
 

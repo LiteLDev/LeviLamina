@@ -1,9 +1,11 @@
 #pragma once
-#include "ll/api/base/Macro.h"
-#include <atomic>
-#include <string>
+
 #if _HAS_CXX23
+#include <atomic>
 #include <stacktrace>
+#include <string>
+
+#include "ll/api/base/Macro.h"
 
 struct _CONTEXT; // NOLINT(bugprone-reserved-identifier)
 

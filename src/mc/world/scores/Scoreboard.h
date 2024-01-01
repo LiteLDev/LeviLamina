@@ -39,9 +39,9 @@ public:
 
     // vIndex: 1, symbol:
     // ?setDisplayObjective@Scoreboard@@UEAAPEBVDisplayObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVObjective@@W4ObjectiveSortOrder@@@Z
-    virtual class DisplayObjective const*
-    setDisplayObjective(std::string const& displaySlotName,
-        class Objective const&  objective,
+    virtual class DisplayObjective const* setDisplayObjective(
+        std::string const&     displaySlotName,
+        class Objective const& objective,
         ::ObjectiveSortOrder   order
     );
 
