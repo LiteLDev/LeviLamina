@@ -22,7 +22,7 @@ bool findTranslation(
     std::string_view      key,
     std::string_view      localeName,
     std::string_view      localeType,
-    std::string&          dest
+    std::string_view&     dest
 ) {
     if (auto lang = langData.find(localeName); lang != langData.end()) { // If there is a translation for the language
         auto& translations = lang->second;
@@ -46,7 +46,7 @@ bool findTranslation(
     return false;
 }
 
-std::string I18N::get(std::string_view key, std::string localeName) {
+std::string_view I18N::get(std::string_view key, std::string_view localeName) {
     if (localeName.empty()) {
         if (mDefaultLocaleName.empty()) {
             localeName = globalDefaultLocaleName;
@@ -54,8 +54,8 @@ std::string I18N::get(std::string_view key, std::string localeName) {
             localeName = mDefaultLocaleName;
         }
     }
-    auto        localeType = localeName.substr(0, 2);
-    std::string result;
+    auto             localeType = localeName.substr(0, 2);
+    std::string_view result;
     // Try finding the translation in loaded language data
     if (findTranslation(mLangData, key, localeName, localeType, result)) {
         return result;
@@ -81,7 +81,7 @@ std::string I18N::get(std::string_view key, std::string localeName) {
         }
     }
     // Finally, still not found, return the key
-    return std::string{key};
+    return key;
 }
 
 #pragma endregion
@@ -126,7 +126,7 @@ void SingleFileI18N::save() {
     file.close();
 }
 
-I18N::Type SingleFileI18N::getType() { return Type::SingleFile; }
+I18N::Type SingleFileI18N::getType() const { return Type::SingleFile; }
 
 #pragma endregion
 
@@ -205,7 +205,7 @@ void MultiFileI18N::save(bool nested) {
     }
 }
 
-I18N::Type MultiFileI18N::getType() { return Type::MultiFile; }
+I18N::Type MultiFileI18N::getType() const { return Type::MultiFile; }
 
 #pragma endregion
 

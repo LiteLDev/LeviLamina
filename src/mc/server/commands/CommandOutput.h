@@ -34,6 +34,13 @@ public:
         error(fmt::format(fmt::runtime(fmt), std::forward<First>(arg), std::forward<Args>(args)...));
     }
 
+    inline void success(char const* str) { success(std::string{str}); }
+    inline void error(char const* str) { error(std::string{str}); }
+
+    inline void success(std::string_view str) { success(std::string{str}); }
+    inline void error(std::string_view str) { error(std::string{str}); }
+
+
 public:
     // NOLINTBEGIN
     // symbol: ??0CommandOutput@@QEAA@AEBV0@@Z

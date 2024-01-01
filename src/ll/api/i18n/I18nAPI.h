@@ -42,14 +42,14 @@ public:
      * @return std::string  The translation
      * @see    I18N::mDefaultLocaleName
      */
-    LLNDAPI std::string get(std::string_view key, std::string localeName = "");
+    LLNDAPI std::string_view get(std::string_view key, std::string_view localeName = "");
 
     /**
      * @brief Get the type of the i18n object.
      *
      * @return  The type of the i18n object
      */
-    LLNDAPI virtual Type getType() = 0;
+    LLNDAPI virtual Type getType() const = 0;
 };
 
 class SingleFileI18N : public I18N {
@@ -70,18 +70,18 @@ public:
      */
     explicit SingleFileI18N(
         std::filesystem::path const& filePath,
-        std::string const&           defaultLocaleName = "",
-        LangData const&              defaultLangData   = {}
+        std::string                  defaultLocaleName = "",
+        LangData                     defaultLangData   = {}
     ) {
-        this->mDefaultLangData   = defaultLangData;
-        this->mDefaultLocaleName = defaultLocaleName;
+        this->mDefaultLangData   = std::move(defaultLangData);
+        this->mDefaultLocaleName = std::move(defaultLocaleName);
         load(filePath);
     }
     /// Copy constructor
     SingleFileI18N(SingleFileI18N const& other) = default;
     ~SingleFileI18N() override                  = default;
 
-    LLNDAPI Type getType() override;
+    LLNDAPI Type getType() const override;
 };
 
 class MultiFileI18N : public I18N {
@@ -102,18 +102,18 @@ public:
      */
     explicit MultiFileI18N(
         std::filesystem::path const& dirPath,
-        std::string const&           defaultLocaleName = "",
-        LangData const&              defaultLangData   = {}
+        std::string                  defaultLocaleName = "",
+        LangData                     defaultLangData   = {}
     ) {
-        this->mDefaultLangData   = defaultLangData;
-        this->mDefaultLocaleName = defaultLocaleName;
+        this->mDefaultLangData   = std::move(defaultLangData);
+        this->mDefaultLocaleName = std::move(defaultLocaleName);
         load(dirPath);
     }
     /// Copy constructor
     MultiFileI18N(MultiFileI18N const& other) = default;
     ~MultiFileI18N() override                 = default;
 
-    LLNDAPI Type getType() override;
+    LLNDAPI Type getType() const override;
 };
 
 [[nodiscard]] inline std::unique_ptr<I18N>& getInstance() {
@@ -132,55 +132,39 @@ inline void load(std::filesystem::path const& path) {
     } catch (...) {}
     getInstance() = nullptr;
 }
-
-/**
- * @brief Translate a str.
- *
- * @tparam S            The string type
- * @tparam Args         ...
- * @param  formatStr    The str to translate and format
- * @param  args         The format arguments
- * @return std::string  The translated str
- * @see    fmt::format
- * @see    https://fmt.dev/latest/index.html
- * @par Example
- * @code
- * tr(std::string("There are {0} days before {1} to come back"), 3, "alex");
- * @endcode
- */
+namespace detail {
 template <ll::concepts::IsString S, class... Args>
-inline std::string tr(S const& formatStr, Args&&... args) {
-    auto res = getInstance()->get(formatStr);
+inline auto tr(S const& fmt, Args&&... args)
+    -> std::conditional_t<sizeof...(args) == 0, std::string_view, std::string> {
+    auto res = getInstance()->get(fmt);
     if constexpr (sizeof...(args) != 0) {
-        return fmt::format(fmt::runtime(res), args...);
+        return fmt::format(fmt::runtime(res), std::forward<Args>(args)...);
     }
     return res;
 }
-
-/**
- * @brief Translate a str to the specified language.
- *
- * @tparam S            The string type
- * @tparam Args         ...
- * @param  localeName   The language code like en_US
- * @param  formatStr    The str to translate and format
- * @param  args         The format arguments
- * @return std::string  The translated str
- * @see    fmt::format
- * @see    https://fmt.dev/latest/index.html
- * @par Example
- * @code
- * trl("zh_CN", "There are {0} days before {1} to come back", 3, "alex");
- * @endcode
- */
 template <ll::concepts::IsString S, class... Args>
-[[nodiscard]] inline std::string trl(std::string const& localeName, S const& formatStr, Args&&... args) {
-    auto res = getInstance()->get(formatStr, localeName);
+[[nodiscard]] inline auto trl(std::string_view localeName, S const& fmt, Args&&... args)
+    -> std::conditional_t<sizeof...(args) == 0, std::string_view, std::string> {
+    auto res = getInstance()->get(fmt, localeName);
     if constexpr (sizeof...(args) != 0) {
-        return fmt::format(fmt::runtime(res), args...);
+        return fmt::format(fmt::runtime(res), std::forward<Args>(args)...);
     }
     return res;
 }
+} // namespace detail
+
+struct TranslateFunctor {
+    std::string_view view;
+    [[nodiscard]] constexpr TranslateFunctor(std::string_view view) : view(view) {}       // NOLINT
+    [[nodiscard]] inline   operator std::string_view() const { return detail::tr(view); } // NOLINT
+    [[nodiscard]] inline   operator fmt::string_view() const { return detail::tr(view); } // NOLINT
+    [[nodiscard]] explicit operator std::string() const { return std::string{detail::tr(view)}; }
+
+    template <class... Args>
+    [[nodiscard]] inline std::string operator()(Args&&... args) {
+        return fmt::format(fmt::runtime(detail::tr(view)), std::forward<Args>(args)...);
+    }
+};
 
 } // namespace ll::i18n
 
@@ -197,13 +181,15 @@ struct TrString {
 };
 } // namespace detail
 template <FixedString str>
-[[nodiscard]] inline std::string operator""_tr() {
+[[nodiscard]] inline i18n::TranslateFunctor operator""_tr() {
     static detail::TrString<str> e{};
-    return ll::i18n::tr((std::string_view)str);
+    return (std::string_view)str;
 }
 } // namespace ll::i18n_literals
 #else
 namespace ll::i18n_literals {
-[[nodiscard]] inline std::string operator""_tr(char const* x, size_t len) { return ll::i18n::tr(std::string{x, len}); }
+[[nodiscard]] inline i18n::TranslateFunctor operator""_tr(char const* x, size_t len) {
+    return std::string_view{x, len};
+}
 } // namespace ll::i18n_literals
 #endif
