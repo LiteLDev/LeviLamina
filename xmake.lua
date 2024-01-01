@@ -77,7 +77,8 @@ target("LeviLamina")
         { public = true }
     )
     add_defines(
-        "LL_EXPORT"
+        "LL_EXPORT",
+        "_HAS_CXX23=1" -- work around
     )
     add_files(
         "src/ll/api/**.cpp",
@@ -116,7 +117,7 @@ target("LeviLamina")
     set_configvar("LL_WORKSPACE_FOLDER", "$(projectdir)")
     set_exceptions("none")
     set_kind("shared")
-    set_languages("c++23")
+    set_languages("c++20")
     set_pcxxheader("src/mc/_HeaderOutputPredefine.h")
     set_symbols("debug")
 
