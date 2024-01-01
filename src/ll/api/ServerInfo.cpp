@@ -43,9 +43,9 @@ Version getLoaderVersion() {
 
 int getServerProtocolVersion() { return SharedConstants::NetworkProtocolVersion; }
 
-bool setServerMotd(std::string const& motd) {
+bool setServerMotd(std::string const& serverName, bool shouldAnnounce) {
     if (!service::getServerNetworkHandler()) return false;
-    service::getServerNetworkHandler()->allowIncomingConnections(motd, true);
+    service::getServerNetworkHandler()->allowIncomingConnections(serverName, shouldAnnounce);
     return true;
 }
 } // namespace ll

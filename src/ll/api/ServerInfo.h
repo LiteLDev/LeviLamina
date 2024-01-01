@@ -17,5 +17,5 @@ LLNDAPI ServerStatus getServerStatus();
 LLNDAPI Version      getBdsVersion();
 LLNDAPI Version      getLoaderVersion();
 LLNDAPI int          getServerProtocolVersion();
-LLNDAPI bool         setServerMotd(std::string const& motd);
+LLNDAPI bool         setServerMotd(std::string const& serverName, bool shouldAnnounce = true);
 } // namespace ll
