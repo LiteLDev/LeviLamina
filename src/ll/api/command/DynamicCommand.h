@@ -553,7 +553,7 @@ public:
     // Experiment
     LLAPI static bool unregisterCommand(CommandRegistry& registry, std::string const& name);
 
-    LLAPI static bool updateAvailableCommands(CommandRegistry& registry);
+    LLAPI static void updateAvailableCommands(CommandRegistry& registry);
 
     LLAPI DynamicCommandInstance const* getInstance() const;
 

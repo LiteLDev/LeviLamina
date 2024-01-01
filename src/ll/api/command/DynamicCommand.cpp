@@ -614,13 +614,8 @@ bool DynamicCommand::unregisterCommand(CommandRegistry& registry, std::string co
     return false;
 }
 
-bool DynamicCommand::updateAvailableCommands(CommandRegistry& registry) {
-    auto packet = registry.serializeAvailableCommands();
-    if (!ll::service::getLevel()) return false;
-    auto sender = (LoopbackPacketSender*)ll::service::getLevel()->getPacketSender();
-    if (!sender) return false;
-    sender->sendBroadcast(packet);
-    return true;
+void DynamicCommand::updateAvailableCommands(CommandRegistry& registry) {
+    registry.serializeAvailableCommands().sendToClients();
 }
 
 DynamicCommandInstance const* DynamicCommand::getInstance() const { return getInstance(getCommandName()); }
