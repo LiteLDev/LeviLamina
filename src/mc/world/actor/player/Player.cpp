@@ -37,7 +37,7 @@ optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
 
 std::string Player::getLocaleName() const {
     if (auto request = getConnectionRequest()) {
-        return request->mRawToken->mDataInfo.get("LanguageCode", "").asString("");
+        return request->mRawToken->mDataInfo["LanguageCode"].asString("");
     }
     return "";
 }
