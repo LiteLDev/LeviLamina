@@ -9,103 +9,48 @@
 #include "ll/api/base/UnorderedStringMap.h"
 #include "ll/api/plugin/Plugin.h"
 
-namespace ll::plugin { // TODO : pimpl
+namespace ll::plugin {
 class PluginManagerRegistry;
 class PluginManager {
     friend PluginManagerRegistry;
 
 protected:
-    std::recursive_mutex                        mutex;
-    std::string                                 type;
-    UnorderedStringMap<std::shared_ptr<Plugin>> plugins;
+    struct Impl;
+    std::unique_ptr<Impl> impl;
 
-    PluginManager(std::string type) : type(std::move(type)) {}
+    LLNDAPI std::lock_guard<std::recursive_mutex> lock();
 
-    bool addPlugin(std::string_view name, std::shared_ptr<Plugin> const& plugin) {
-        std::lock_guard lock(mutex);
-        if (!plugin) {
-            return false;
-        }
-        return plugins.emplace(std::string{name}, plugin).second;
-    }
+    LLNDAPI PluginManager(std::string type);
 
-    bool erasePlugin(std::string_view name) {
-        std::lock_guard lock(mutex);
-        if (auto i = plugins.find(name); i != plugins.end()) {
-            plugins.erase(i);
-            return true;
-        }
-        return false;
-    }
+    LLAPI bool addPlugin(std::string_view name, std::shared_ptr<Plugin> const& plugin);
 
-    virtual ~PluginManager() = default;
+    LLAPI bool erasePlugin(std::string_view name);
+
+    virtual ~PluginManager();
 
     virtual bool load(Manifest manifest) = 0;
 
     virtual bool unload(std::string_view name) = 0;
 
-public:
     virtual bool enable(std::string_view name);
 
     virtual bool disable(std::string_view name);
 
-    [[nodiscard]] std::string const& getType() const { return type; }
+public:
+    LLNDAPI std::string const& getType() const;
 
-    [[nodiscard]] bool hasPlugin(std::string_view name) { return plugins.contains(name); }
+    LLNDAPI bool hasPlugin(std::string_view name);
 
-    [[nodiscard]] std::weak_ptr<Plugin> getPlugin(std::string_view name) {
-        std::lock_guard lock(mutex);
-        if (auto i = plugins.find(name); i != plugins.end()) {
-            return i->second;
-        }
-        return {};
-    }
+    LLNDAPI std::weak_ptr<Plugin> getPlugin(std::string_view name);
 
-    [[nodiscard]] size_t getPluginCount() {
-        std::lock_guard lock(mutex);
-        return plugins.size();
-    }
+    LLNDAPI size_t getPluginCount();
 
-    [[nodiscard]] std::vector<std::string> getPluginNames() {
-        std::lock_guard          lock(mutex);
-        std::vector<std::string> result;
-        result.reserve(plugins.size());
-        for (auto& [name, plugin] : plugins) {
-            result.emplace_back(name);
-        }
-        return result;
-    }
-    void forEachPlugin(std::function<bool(std::string_view name, Plugin&)> const& fn) {
-        std::lock_guard lock(mutex);
-        for (auto& [name, plugin] : plugins) {
-            if (!fn(name, *plugin)) {
-                return;
-            }
-        }
-    }
-    size_t unloadAll() {
-        std::lock_guard lock(mutex);
-        size_t          count{};
-        for (auto& [name, plugin] : plugins) {
-            count += unload(name);
-        }
-        return count;
-    }
-    size_t enableAll() {
-        std::lock_guard lock(mutex);
-        size_t          count{};
-        for (auto& [name, plugin] : plugins) {
-            count += enable(name);
-        }
-        return count;
-    }
-    size_t disableAll() {
-        std::lock_guard lock(mutex);
-        size_t          count{};
-        for (auto& [name, plugin] : plugins) {
-            count += disable(name);
-        }
-        return count;
-    }
+    LLNDAPI std::vector<std::string> getPluginNames();
+
+    LLAPI void forEachPlugin(std::function<bool(std::string_view name, Plugin&)> const& fn);
+
+    LLAPI size_t unloadAll();
+    LLAPI size_t enableAll();
+    LLAPI size_t disableAll();
 };
 } // namespace ll::plugin

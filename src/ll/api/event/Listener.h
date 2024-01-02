@@ -12,11 +12,11 @@ public:
     using callback_fn = std::function<void(event_type&)>;
 
     explicit Listener(
-        callback_fn                          fn,
-        EventPriority                        priority = EventPriority::Normal,
-        std::weak_ptr<plugin::Plugin> const& plugin   = plugin::NativePlugin::current()
+        callback_fn                   fn,
+        EventPriority                 priority = EventPriority::Normal,
+        std::weak_ptr<plugin::Plugin> plugin   = plugin::NativePlugin::current()
     )
-    : ListenerBase(priority, plugin),
+    : ListenerBase(priority, std::move(plugin)),
       callback(std::move(fn)) {}
 
     ~Listener() override = default;

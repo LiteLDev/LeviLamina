@@ -8,7 +8,7 @@ class NativePluginManager final : public PluginManager {
 public:
     using Handle = void*;
 
-    NativePluginManager() : PluginManager("native") {}
+    NativePluginManager();
 
     std::unordered_map<Handle, std::weak_ptr<NativePlugin>> handleMap;
 

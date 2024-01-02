@@ -46,15 +46,15 @@ private:
     using task_ptr   = std::shared_ptr<Task<Clock>>;
     using tasks_type = std::multimap<time_point, task_ptr>;
 
+    std::mutex        mutex;
     tasks_type        tasks;
     std::atomic<bool> done;
-    std::mutex        mutex;
     Sleeper           sleeper;
     Pool              workers;
     std::thread       manager;
 
     task_ptr addTask(task_ptr t) {
-        if (t->cancelled) {
+        if (t->isCancelled()) {
             return t;
         }
 
@@ -80,13 +80,13 @@ private:
 
         for (auto i = tasks.begin(); i != end; ++i) {
             auto& task = i->second;
-            if (task->cancelled) {
+            if (task->isCancelled()) {
                 continue;
             }
-            if (task->interval) {
+            if (task->interval()) {
                 workers.addTask([this, task] {
                     try {
-                        task->f();
+                        task->call();
                     } catch (...) {
                         detail::printScheduleError();
                     }
@@ -95,12 +95,12 @@ private:
             } else {
                 workers.addTask([task] {
                     try {
-                        task->f();
+                        task->call();
                     } catch (...) {
                         detail::printScheduleError();
                     }
                 });
-                if (task->cancelled) {
+                if (task->isCancelled()) {
                     continue;
                 }
                 auto time = task->getNextTime();
@@ -142,6 +142,7 @@ public:
     }
 
     template <template <class> class T, class... Args>
+        requires(std::derived_from<T<Clock>, Task<Clock>>)
     task_ptr add(Args&&... args) {
         return addTask(std::make_shared<T<Clock>>(std::forward<Args>(args)...));
     }
@@ -153,7 +154,12 @@ public:
 
     bool remove(uint64 id) {
         std::lock_guard l{mutex};
-        return std::erase_if(tasks, [&](auto& t) { return t.id == id; });
+        return std::erase_if(tasks, [&](auto& t) { return t.getId() == id; });
+    }
+
+    void clear() {
+        std::lock_guard l{mutex};
+        tasks.clear();
     }
 };
 } // namespace ll::schedule

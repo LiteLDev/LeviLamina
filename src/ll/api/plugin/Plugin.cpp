@@ -96,6 +96,7 @@ bool Plugin::onDisable() {
     }
     if (!mImpl->onDisable || mImpl->onDisable(*this)) {
         setState(State::Disabled);
+        event::EventBus::getInstance().removePluginListeners(mImpl->manifest.name);
         return true;
     }
     return false;

@@ -26,20 +26,21 @@ class ListenerBase {
 
     friend CallbackStream;
     friend EventBus;
-    ListenerId                    id;
-    EventPriority                 priority;
-    std::weak_ptr<plugin::Plugin> pluginPtr;
+    ListenerId    id;
+    EventPriority priority;
 
 protected:
     explicit ListenerBase(
-        EventPriority                        priority,
-        std::weak_ptr<plugin::Plugin> const& plugin = plugin::NativePlugin::current()
+        EventPriority                 priority,
+        std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
     )
     : id(listenerId++),
       priority(priority),
-      pluginPtr(plugin) {}
+      pluginPtr(std::move(plugin)) {}
 
 public:
+    std::weak_ptr<plugin::Plugin> pluginPtr;
+
     ListenerBase(ListenerBase&&)                 = delete;
     ListenerBase(ListenerBase const&)            = delete;
     ListenerBase& operator=(ListenerBase&&)      = delete;

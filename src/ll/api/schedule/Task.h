@@ -1,11 +1,13 @@
 #pragma once
 
-#include "ll/api/base/Macro.h"
-#include "ll/api/base/StdInt.h"
 #include <chrono>
 #include <functional>
 #include <optional>
 #include <string_view>
+
+#include "ll/api/base/Macro.h"
+#include "ll/api/base/StdInt.h"
+#include "ll/api/plugin/NativePlugin.h"
 
 namespace ll::schedule {
 inline namespace task {
@@ -13,18 +15,38 @@ LLETAPI std::atomic_ullong taskId;
 
 template <class Clock>
 class Task {
+    uint64                id;
+    std::function<void()> fn;
+    bool                  mInterval;
+    bool                  mCancelled{false};
+
 public:
+    std::weak_ptr<plugin::Plugin> pluginPtr;
+
     using time_point = typename Clock::time_point;
     using duration   = typename Clock::duration;
 
-    std::function<void()> const f;
-    bool const                  interval;
-    bool                        cancelled{false};
-    uint64                      id;
+    Task(
+        std::function<void()>         fn,
+        bool                          interval,
+        std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
+    )
+    : id(taskId++),
+      fn(std::move(fn)),
+      mInterval(interval),
+      pluginPtr(std::move(plugin)) {}
 
-    Task(std::function<void()> const& f, bool interval = false) : f(f), interval(interval), id(taskId++) {}
+    constexpr void call() { fn(); }
 
-    inline void cancel() { cancelled = true; }
+    [[nodiscard]] constexpr bool interval() { return mInterval; }
+
+    [[nodiscard]] constexpr bool isCancelled() { return mCancelled; }
+
+    constexpr void setCancelled(bool cancelled) { mCancelled = cancelled; }
+
+    constexpr void cancel() { setCancelled(true); }
+
+    [[nodiscard]] constexpr uint64 getId() const { return id; }
 
     virtual std::optional<time_point> getFirstTime() { return getNextTime(); }
 
@@ -45,8 +67,13 @@ private:
 
 public:
     template <class R, class P>
-    RepeatTask(std::chrono::duration<R, P> dur, std::function<void()> const& f, size_t count = 0)
-    : Task<Clock>(f),
+    RepeatTask(
+        std::chrono::duration<R, P>   dur,
+        std::function<void()>         fn,
+        size_t                        count  = 0,
+        std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
+    )
+    : Task<Clock>(std::move(fn), false, std::move(plugin)),
       time(Clock::now()),
       dur(std::chrono::duration_cast<duration>(dur)),
       count(count),
@@ -78,8 +105,13 @@ private:
 
 public:
     template <class R, class P>
-    IntervalTask(std::chrono::duration<R, P> dur, std::function<void()> const& f, size_t count = 0)
-    : Task<Clock>(f, true),
+    IntervalTask(
+        std::chrono::duration<R, P>   dur,
+        std::function<void()>         fn,
+        size_t                        count  = 0,
+        std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
+    )
+    : Task<Clock>(std::move(fn), true, std::move(plugin)),
       first(true),
       dur(std::chrono::duration_cast<duration>(dur)),
       count(count),
@@ -111,15 +143,29 @@ private:
     time_point const time;
 
 public:
-    DelayTask(time_point time, std::function<void()> const& f) : Task<Clock>(f), time(time) {}
+    DelayTask(
+        time_point                    time,
+        std::function<void()>         fn,
+        std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
+    )
+    : Task<Clock>(std::move(fn), false, std::move(plugin)),
+      time(time) {}
 
     template <class R, class P>
-    DelayTask(std::chrono::duration<R, P> dur, std::function<void()> const& f)
-    : DelayTask<Clock>(Clock::now() + std::chrono::duration_cast<duration>(dur), f) {}
+    DelayTask(
+        std::chrono::duration<R, P>   dur,
+        std::function<void()>         fn,
+        std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
+    )
+    : DelayTask<Clock>(Clock::now() + std::chrono::duration_cast<duration>(dur), std::move(fn)) {}
 
-    DelayTask(std::string const& timestr, std::function<void()> const& f)
+    DelayTask(
+        std::string const&            timestr,
+        std::function<void()>         fn,
+        std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
+    )
         requires(std::is_same_v<Clock, std::chrono::system_clock>)
-    : DelayTask<Clock>(parseTime(timestr), f) {}
+    : DelayTask<Clock>(parseTime(timestr), std::move(fn)) {}
 
     std::optional<time_point> getFirstTime() override { return time; }
 

@@ -5,6 +5,7 @@
 
 #include "ll/api/event/Event.h"
 #include "ll/api/event/Listener.h"
+#include "ll/api/utils/StringUtils.h"
 
 namespace ll::event {
 inline namespace fs {
@@ -41,17 +42,17 @@ public:
     using callback_fn = std::function<void(event_type&)>;
 
     explicit Listener(
-        std::string const&                   path,
-        callback_fn                          fn,
-        EventPriority                        priority = EventPriority::Normal,
-        std::weak_ptr<plugin::Plugin> const& plugin   = plugin::NativePlugin::current()
+        std::filesystem::path const&  path,
+        callback_fn                   fn,
+        EventPriority                 priority = EventPriority::Normal,
+        std::weak_ptr<plugin::Plugin> plugin   = plugin::NativePlugin::current()
     )
-    : ListenerBase(priority, plugin),
-      path(path),
+    : ListenerBase(priority, std::move(plugin)),
+      path(string_utils::u8str2str(path.u8string())),
       callback(std::move(fn)) {
         nativeId.assign(event::getEventId<event_type>.name);
         nativeId += "|";
-        nativeId += path;
+        nativeId += this->path;
     }
 
     [[nodiscard]] EventId getEventId() const { return EventId{nativeId}; }

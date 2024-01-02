@@ -78,7 +78,7 @@ inline void deserialize(T& e, J const& j)
 }
 
 template <class J, class T>
-inline void deserialize(T& obj, J const& j) // TODO: improve this
+inline void deserialize(T& obj, J const& j)
     requires(!std::is_enum_v<T> && (concepts::IsString<T> || std::is_floating_point_v<T> || std::is_integral_v<T>))
 {
     if constexpr (concepts::IsString<T>) {

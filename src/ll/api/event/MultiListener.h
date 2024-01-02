@@ -15,11 +15,11 @@ public:
 
     template <class Callable>
     explicit MultiListener(
-        Callable&&                           fn,
-        EventPriority                        priority = EventPriority::Normal,
-        std::weak_ptr<plugin::Plugin> const& plugin   = plugin::NativePlugin::current()
+        Callable&&                    fn,
+        EventPriority                 priority = EventPriority::Normal,
+        std::weak_ptr<plugin::Plugin> plugin   = plugin::NativePlugin::current()
     )
-    : ListenerBase(priority, plugin) {
+    : ListenerBase(priority, std::move(plugin)) {
         event_list::forEach([fn = std::forward<Callable>(fn), this]<class E>() {
             callback.emplace(typeid(E), [fn](Event& ev) { static_cast<void>(fn(static_cast<E&>(ev))); });
         });

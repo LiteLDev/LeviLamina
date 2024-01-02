@@ -5,28 +5,23 @@
 #include "ll/api/plugin/PluginManager.h"
 
 namespace ll::plugin { // TODO : pimpl
+class PluginRegistrar;
 class PluginManagerRegistry {
-
+    friend PluginRegistrar;
     std::recursive_mutex                               mutex;
     UnorderedStringMap<std::shared_ptr<PluginManager>> managers;
 
     PluginManagerRegistry()  = default;
     ~PluginManagerRegistry() = default;
 
-    [[nodiscard]] std::shared_ptr<PluginManager> get(std::string_view type) {
-        std::lock_guard lock(mutex);
-        if (auto i = managers.find(type); i != managers.end()) {
-            return i->second;
-        }
-        return {};
+    [[nodiscard]] std::shared_ptr<PluginManager> const& getSharedManager(std::string_view type) {
+        return managers.find(type)->second;
     }
 
-    // private:
-public:
     [[nodiscard]] bool loadPlugin(Manifest manifest) {
         std::lock_guard lock(mutex);
         if (hasManager(manifest.type)) {
-            return get(manifest.type)->load(std::move(manifest));
+            return getSharedManager(manifest.type)->load(std::move(manifest));
         }
         return false;
     }
@@ -34,7 +29,7 @@ public:
     [[nodiscard]] bool unloadPlugin(std::string_view type, std::string_view name) {
         std::lock_guard lock(mutex);
         if (hasManager(type)) {
-            return get(type)->unload(name);
+            return getSharedManager(type)->unload(name);
         }
         return false;
     }
@@ -42,7 +37,7 @@ public:
     [[nodiscard]] bool enablePlugin(std::string_view type, std::string_view name) {
         std::lock_guard lock(mutex);
         if (hasManager(type)) {
-            return get(type)->enable(name);
+            return getSharedManager(type)->enable(name);
         }
         return false;
     }
@@ -50,7 +45,7 @@ public:
     [[nodiscard]] bool disablePlugin(std::string_view type, std::string_view name) {
         std::lock_guard lock(mutex);
         if (hasManager(type)) {
-            return get(type)->disable(name);
+            return getSharedManager(type)->disable(name);
         }
         return false;
     }
@@ -66,9 +61,18 @@ public:
         return managers.emplace(std::string{type}, manager).second;
     }
 
-    [[nodiscard]] bool hasManager(std::string_view type) { return managers.contains(type); }
+    [[nodiscard]] bool hasManager(std::string_view type) {
+        std::lock_guard lock(mutex);
+        return managers.contains(type);
+    }
 
-    [[nodiscard]] std::weak_ptr<PluginManager> getManager(std::string_view type) { return get(type); }
+    [[nodiscard]] std::weak_ptr<PluginManager> getManager(std::string_view type) {
+        std::lock_guard lock(mutex);
+        if (hasManager(type)) {
+            return getSharedManager(type);
+        }
+        return {};
+    }
 
     [[nodiscard]] bool eraseManager(std::string_view type) {
         std::lock_guard lock(mutex);
@@ -100,6 +104,46 @@ public:
             });
             return !interrupted;
         });
+    }
+
+    bool hasPlugin(std::string_view name, std::string_view type = "") {
+        std::lock_guard lock(mutex);
+        if (type.empty()) {
+            bool res = false;
+            forEachManager([&](std::string_view, PluginManager& manager) {
+                if (manager.hasPlugin(name)) {
+                    res = true;
+                }
+                return !res;
+            });
+            return res;
+        } else {
+            if (!hasManager(type)) {
+                return false;
+            }
+            return getSharedManager(type)->hasPlugin(name);
+        }
+    }
+
+    std::weak_ptr<Plugin> getPlugin(std::string_view name, std::string_view type = "") {
+        std::lock_guard lock(mutex);
+        if (type.empty()) {
+            bool                  has = false;
+            std::weak_ptr<Plugin> res;
+            forEachManager([&](std::string_view, PluginManager& manager) {
+                if (manager.hasPlugin(name)) {
+                    has = true;
+                    res = manager.getPlugin(name);
+                }
+                return !has;
+            });
+            return res;
+        } else {
+            if (!hasManager(type)) {
+                return {};
+            }
+            return getSharedManager(type)->getPlugin(name);
+        }
     }
 };
 } // namespace ll::plugin

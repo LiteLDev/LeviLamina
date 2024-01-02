@@ -5,8 +5,12 @@
 
 namespace ll::plugin {
 
+NativePluginManager::NativePluginManager() : PluginManager("native") {
+    
+}
+
 bool NativePluginManager::load(Manifest manifest) {
-    std::lock_guard lock(mutex);
+    auto l(lock());
     if (hasPlugin(manifest.name)) {
         return false;
     }
@@ -32,7 +36,7 @@ bool NativePluginManager::load(Manifest manifest) {
 }
 
 bool NativePluginManager::unload(std::string_view name) {
-    std::lock_guard lock(mutex);
+    auto l(lock());
     if (!hasPlugin(name)) {
         return false;
     }

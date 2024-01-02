@@ -1,4 +1,4 @@
-#include "ll/core/plugin/RegisterPlugin.h"
+#include "ll/core/plugin/PluginRegistrar.h"
 
 #include "ll/api/base/ErrorInfo.h"
 #include "ll/api/io/FileUtils.h"
@@ -15,38 +15,52 @@
 namespace ll::plugin {
 using namespace i18n_literals;
 
-bool checkVersion(Manifest const& real, Dependency const& need) {
+struct PluginRegistrarEnableAll;
+struct PluginRegistrarDisableAll;
+
+static bool checkVersion(Manifest const& real, Dependency const& need) {
     if (!real.version || !need.version) {
         return true;
     }
-    // check version range
+    // TODO: check version range
     return true;
 }
 
-bool loadManifest(Manifest& manifest, std::filesystem::path const& file) {
+enum class DirState {
+    Empty,
+    Error,
+    Success,
+};
+
+static DirState loadManifest(Manifest& manifest, std::filesystem::path const& file) {
     auto content = file_utils::readFile(file / u8"manifest.json");
     if (!content || content->empty()) {
-        return false;
+        return DirState::Empty;
     }
     auto json = nlohmann::json::parse(*content, nullptr, false, true);
     if (json.is_discarded()) {
-        return false;
+        return DirState::Error;
     }
     std::string dirName = string_utils::u8str2str(file.stem().u8string());
     try {
         reflection::deserialize<nlohmann::json, Manifest>(manifest, json);
     } catch (...) {
         error_info::printCurrentException();
-        return false;
+        return DirState::Error;
     }
     if (manifest.name != dirName) {
         logger.error("ll.plugin.error.nameUnmatch"_tr(manifest.name, dirName));
-        return false;
+        return DirState::Error;
     }
-    return true;
+    return DirState::Success;
 }
 
-void registerPlugins() {
+PluginRegistrar& PluginRegistrar::getInstance() {
+    static PluginRegistrar instance;
+    return instance;
+}
+
+void PluginRegistrar::registerPlugins() {
     std::unordered_map<std::string, Manifest> manifests;
 
     ll::logger.info("ll.loader.loadMain.start"_tr);
@@ -63,7 +77,11 @@ void registerPlugins() {
             continue;
         }
         Manifest manifest;
-        if (!loadManifest(manifest, file.path())) {
+        auto     res = loadManifest(manifest, file.path());
+        if (res != DirState::Success) {
+            if (res == DirState::Error) {
+                logger.error("ll.plugin.error.failToLoad"_tr(string_utils::u8str2str(file.path().stem().u8string())));
+            }
             continue;
         }
         manifests.emplace(std::string{manifest.name}, std::move(manifest));
@@ -190,10 +208,13 @@ void registerPlugins() {
     }
     size_t loadedCount = sort.sorted.size() - loadErrored.size();
 
+    ll::memory::HookRegistrar<PluginRegistrarEnableAll>  r1;
+    ll::memory::HookRegistrar<PluginRegistrarDisableAll> r2;
+
     ll::logger.info("ll.loader.loadMain.done"_tr(loadedCount));
 }
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    ServerStartedEventHook,
+    PluginRegistrarEnableAll,
     ll::memory::HookPriority::High,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,
@@ -211,7 +232,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     }
 }
 LL_AUTO_TYPED_INSTANCE_HOOK(
-    ServerStoppingEventHook,
+    PluginRegistrarDisableAll,
     HookPriority::Low,
     ServerInstance,
     &ServerInstance::leaveGameSync,

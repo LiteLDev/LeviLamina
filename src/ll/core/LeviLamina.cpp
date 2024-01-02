@@ -15,7 +15,7 @@
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
 #include "ll/core/Version.h"
-#include "ll/core/plugin/RegisterPlugin.h"
+#include "ll/core/plugin/PluginRegistrar.h"
 
 #include "ll/api/utils/StacktraceUtils.h"
 
@@ -227,9 +227,7 @@ void leviLaminaMain() {
     logger.warn("ll.main.warning.inDebugMode"_tr);
 #endif
 
-    // if (globalConfig.enableAddonsHelper) InitAddonsHelper();
-
-    plugin::registerPlugins();
+    plugin::PluginRegistrar::getInstance().registerPlugins();
 
     registerLeviCommands();
 }
