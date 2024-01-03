@@ -14,7 +14,7 @@ public:
     std::optional<std::reference_wrapper<FeatureRegistry>> mRegistry; // this+0x0
     uint64                                                 mIndex;    // this+0x10
 
-    template <class T>
+    template <class T = IFeature>
     [[nodiscard]] optional_ref<T> tryUnwrap() const {
         return StackResultStorageFeature{*this}.tryUnwrap<T>();
     }

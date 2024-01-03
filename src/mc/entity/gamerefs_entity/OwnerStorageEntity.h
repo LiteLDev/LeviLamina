@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/entity/EntityContext.h"
 
+class Actor;
+
 class OwnerStorageEntity {
 public:
     // OwnerStorageEntity inner types define
@@ -16,7 +18,7 @@ public:
 
     std::optional<EntityContext> mContext;
 
-    template <class Entity, bool IncludeRemoved = false>
+    template <class Entity = Actor, bool IncludeRemoved = false>
     [[nodiscard]] optional_ref<Entity> tryUnwrap() const {
         if (_hasValue()) {
             return Entity::tryGetFromEntity(_getStackRef(), IncludeRemoved);
