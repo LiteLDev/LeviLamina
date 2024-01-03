@@ -8,10 +8,6 @@ namespace Bedrock::PubSub {
 class SubscriptionBase {
 public:
     std::weak_ptr<Detail::SubscriptionBodyBase> mBody; // this+0x0
-    // prevent constructor by default
-    SubscriptionBase& operator=(SubscriptionBase const&);
-    SubscriptionBase(SubscriptionBase const&);
-    SubscriptionBase();
 
 public:
     // NOLINTBEGIN

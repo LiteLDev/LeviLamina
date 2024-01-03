@@ -5,9 +5,7 @@
 
 namespace ll::plugin {
 
-NativePluginManager::NativePluginManager() : PluginManager("native") {
-    
-}
+NativePluginManager::NativePluginManager() : PluginManager("native") {}
 
 bool NativePluginManager::load(Manifest manifest) {
     auto l(lock());
