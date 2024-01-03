@@ -27,7 +27,7 @@ class PluginManagerRegistry {
 public:
     LLNDAPI static PluginManagerRegistry& getInstance();
 
-    LLNDAPI bool addManager(std::string_view type, std::shared_ptr<PluginManager> const& manager);
+    LLNDAPI bool addManager(std::shared_ptr<PluginManager> const& manager);
 
     LLNDAPI bool hasManager(std::string_view type);
 

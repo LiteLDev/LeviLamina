@@ -67,7 +67,7 @@ void PluginRegistrar::registerPlugins() {
 
     auto& registry = PluginManagerRegistry::getInstance();
 
-    if (!registry.addManager("native", std::make_shared<NativePluginManager>())) {
+    if (!registry.addManager(std::make_shared<NativePluginManager>())) {
         logger.error("ll.plugin.error.failCreateManager"_tr);
         return;
     }

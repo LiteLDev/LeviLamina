@@ -46,12 +46,12 @@ bool PluginManagerRegistry::disablePlugin(std::string_view type, std::string_vie
     }
     return false;
 }
-bool PluginManagerRegistry::addManager(std::string_view type, std::shared_ptr<PluginManager> const& manager) {
+bool PluginManagerRegistry::addManager(std::shared_ptr<PluginManager> const& manager) {
     std::lock_guard lock(impl->mutex);
     if (!manager) {
         return false;
     }
-    return impl->managers.emplace(std::string{type}, manager).second;
+    return impl->managers.emplace(manager->getType(), manager).second;
 }
 bool PluginManagerRegistry::hasManager(std::string_view type) {
     std::lock_guard lock(impl->mutex);
