@@ -14,15 +14,15 @@ class PluginManagerRegistry {
     PluginManagerRegistry();
     ~PluginManagerRegistry();
 
-    LLNDAPI std::shared_ptr<PluginManager> const& getSharedManager(std::string_view type);
+    std::shared_ptr<PluginManager> const& getSharedManager(std::string_view type);
 
-    LLNDAPI bool loadPlugin(Manifest manifest);
+    bool loadPlugin(Manifest manifest);
 
-    LLNDAPI bool unloadPlugin(std::string_view type, std::string_view name);
+    bool unloadPlugin(std::string_view type, std::string_view name);
 
-    LLNDAPI bool enablePlugin(std::string_view type, std::string_view name);
+    bool enablePlugin(std::string_view type, std::string_view name);
 
-    LLNDAPI bool disablePlugin(std::string_view type, std::string_view name);
+    bool disablePlugin(std::string_view type, std::string_view name);
 
 public:
     LLNDAPI static PluginManagerRegistry& getInstance();
