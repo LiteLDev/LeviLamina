@@ -1,13 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/wrapper/FeatureRefTraits.h"
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakRefT.h"
+
+class FeatureRefTraits;
 
 class FeatureRegistry {
 public:

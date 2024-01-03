@@ -8,6 +8,15 @@ public:
     std::optional<std::reference_wrapper<FeatureRegistry>> mRegistry; // this+0x0
     uint64                                                 mIndex;    // this+0x10
 
+    template <class T>
+    [[nodiscard]] optional_ref<T> tryUnwrap() const {
+        if (_hasValue()) {
+            return *(T*)(&_getStackRef());
+        }
+        return nullptr;
+    }
+
+    [[nodiscard]] inline operator bool() const { return _hasValue(); } // NOLINT
 public:
     // prevent constructor by default
     StackResultStorageFeature& operator=(StackResultStorageFeature const&);
