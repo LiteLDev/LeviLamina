@@ -15,7 +15,9 @@ public:
     MCVAPI bool isValidPlacement(std::string const&);
 
     // symbol: ?setBlockSafe@IFeature@@QEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@H@Z
-    MCAPI bool setBlockSafe(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int) const;
+    MCAPI bool
+    setBlockSafe(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Block const& block, int updateFlags)
+        const;
 
     // NOLINTEND
 };

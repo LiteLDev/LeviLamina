@@ -1,11 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/levelgen/feature/IFeature.h"
+#include "mc/world/level/levelgen/feature/gamerefs_feature/OwnerStorageFeature.h"
+#include "mc/world/level/levelgen/feature/gamerefs_feature/StackResultStorageFeature.h"
+#include "mc/world/level/levelgen/feature/gamerefs_feature/WeakStorageFeature.h"
 
 struct FeatureRefTraits {
 public:
-    // prevent constructor by default
-    FeatureRefTraits& operator=(FeatureRefTraits const&);
-    FeatureRefTraits(FeatureRefTraits const&);
-    FeatureRefTraits();
+    using StackRef           = IFeature;
+    using OwnerStackRef      = StackRef;
+    using WeakStorage        = WeakStorageFeature;
+    using OwnerStorage       = OwnerStorageFeature;
+    using StackResultStorage = StackResultStorageFeature;
 };

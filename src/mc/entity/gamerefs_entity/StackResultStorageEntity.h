@@ -8,7 +8,7 @@ public:
     std::optional<EntityContext> mContext;
 
     template <class Entity, bool IncludeRemoved = false>
-    [[nodiscard]] inline Entity* tryUnwrap() {
+    [[nodiscard]] optional_ref<Entity> tryUnwrap() const {
         if (_hasValue()) {
             return Entity::tryGetFromEntity(_getStackRef(), IncludeRemoved);
         }
