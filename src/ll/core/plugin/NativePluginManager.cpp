@@ -46,11 +46,11 @@ bool NativePluginManager::unload(std::string_view name) {
     if (!ptr->onUnload()) {
         return false;
     }
-    erasePlugin(name);
     if (!FreeLibrary((HMODULE)ptr->getHandle())) {
         error_info::printException(error_info::getWinLastError());
         return false;
     }
+    erasePlugin(name);
     handleMap.erase(ptr->getHandle());
     return true;
 }
