@@ -88,6 +88,10 @@ KeyValueDB::KeyValueDB(std::filesystem::path const& path, bool createIfMiss, int
     impl = std::make_unique<KeyValueDBImpl>(string_utils::wstr2str(path.native()), createIfMiss, bloomFilterBit);
 }
 
+KeyValueDB::KeyValueDB(KeyValueDB&&) noexcept = default;
+
+KeyValueDB& KeyValueDB::operator=(KeyValueDB&&) noexcept = default;
+
 KeyValueDB::~KeyValueDB() = default;
 
 std::optional<std::string> KeyValueDB::get(std::string_view key) const { return impl->get(key); }

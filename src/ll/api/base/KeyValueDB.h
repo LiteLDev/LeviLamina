@@ -19,6 +19,14 @@ private:
 public:
     LLNDAPI KeyValueDB(std::filesystem::path const& dir, bool createIfMiss = true, int bloomFilterBit = 0);
 
+    KeyValueDB(KeyValueDB const&) noexcept = delete;
+
+    KeyValueDB& operator=(KeyValueDB const&) noexcept = delete;
+
+    LLNDAPI KeyValueDB(KeyValueDB&&) noexcept;
+
+    LLAPI KeyValueDB& operator=(KeyValueDB&&) noexcept;
+
     LLAPI ~KeyValueDB();
 
     LLNDAPI std::optional<std::string> get(std::string_view key) const;
