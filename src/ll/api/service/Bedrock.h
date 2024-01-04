@@ -2,6 +2,8 @@
 
 #include "ll/api/base/Macro.h"
 
+#include "mc/common/wrapper/optional_ref.h"
+
 namespace RakNet {
 class RakPeer;
 }
