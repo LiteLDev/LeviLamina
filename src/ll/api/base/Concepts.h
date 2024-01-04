@@ -107,8 +107,11 @@ struct is_specialization_of : std::bool_constant<is_specialization_of_v<T, Z>> {
 template <class T, template <class...> class Z>
 concept Specializes = is_specialization_of_v<T, Z>;
 
+template <template <class...> class T, class... Ts>
+void DerivedFromSpecializationImpl(const T<Ts...>&);
+
 template <class T, template <class...> class Z>
-concept DerivedFromSpecializes = requires(T const& t) { std::_Derived_from_specialization_impl<Z>(t); };
+concept DerivedFromSpecializes = requires(T const& t) { DerivedFromSpecializationImpl<Z>(t); };
 
 template <class T, template <class...> class Z>
 inline constexpr bool is_derived_from_specialization_of_v = DerivedFromSpecializes<T, Z>;
