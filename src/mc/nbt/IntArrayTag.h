@@ -16,8 +16,9 @@ public:
     [[nodiscard]] _CONSTEXPR23 IntArrayTag() = default;
 
     template <class T>
+        requires(std::is_trivially_destructible_v<T>)
     [[nodiscard]] _CONSTEXPR23 IntArrayTag(std::in_place_type_t<T>, TagMemoryChunk mem) : data(std::move(mem)) {
-        data.mSize = (data.mSize * sizeof(T)) / sizeof(int);
+        data.mSize = data.mCapacity / sizeof(int);
     }
 
     [[nodiscard]] _CONSTEXPR23 IntArrayTag(std::vector<int> const& arr) : data(std::span{arr}) { // NOLINT

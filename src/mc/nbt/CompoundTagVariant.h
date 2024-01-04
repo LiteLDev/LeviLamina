@@ -126,6 +126,8 @@ public:
             mTagStorage = Int64Tag{integer};
         }
     }
+    [[nodiscard]] inline CompoundTagVariant(std::byte b) : mTagStorage(ByteTag{b}) {} // NOLINT
+
     [[nodiscard]] inline CompoundTagVariant(float f) : mTagStorage(FloatTag{f}) {} // NOLINT
 
     [[nodiscard]] inline CompoundTagVariant(double d) : mTagStorage(DoubleTag{d}) {} // NOLINT

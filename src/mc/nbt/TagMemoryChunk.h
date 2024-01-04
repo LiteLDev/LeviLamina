@@ -12,8 +12,9 @@ public:
     [[nodiscard]] _CONSTEXPR23 TagMemoryChunk() = default;
 
     template <class T, size_t N>
+        requires(std::is_trivially_destructible_v<T>)
     [[nodiscard]] _CONSTEXPR23 TagMemoryChunk(std::span<T, N> v) : mSize(v.size()),
-                                                                   mCapacity(mSize * sizeof(T)) {
+                                                                   mCapacity(v.size_bytes()) {
         this->mBuffer = std::make_unique_for_overwrite<uchar[]>(mCapacity);
         std::copy_n((uchar*)v.data(), mCapacity, this->mBuffer.get());
     }

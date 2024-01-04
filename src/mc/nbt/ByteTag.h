@@ -16,14 +16,18 @@ public:
     }
 
     template <std::integral T>
-    constexpr operator T() const {
+    [[nodiscard]] constexpr operator T() const {
         return (T)data;
     }
+
+    [[nodiscard]] constexpr operator std::byte() const { return (std::byte)data; } // NOLINT
 
     template <std::integral T>
     [[nodiscard]] constexpr explicit ByteTag(T value = 0) : data((schar)value) {}
 
-    ByteTag operator-() const { return ByteTag{(schar)-data}; }
+    [[nodiscard]] constexpr explicit ByteTag(std::byte b) : data(std::to_integer<schar>(b)) {}
+
+    [[nodiscard]] ByteTag operator-() const { return ByteTag{(schar)-data}; }
 
 public:
     // NOLINTBEGIN

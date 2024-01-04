@@ -14,7 +14,7 @@ public:
         return *this;
     }
 
-    constexpr operator double() const { return data; } // NOLINT
+    [[nodiscard]] constexpr operator double() const { return data; } // NOLINT
 
     [[nodiscard]] constexpr explicit DoubleTag(double value = 0) : data(value) {}
 
