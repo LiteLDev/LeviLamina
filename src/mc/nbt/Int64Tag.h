@@ -16,14 +16,14 @@ public:
     }
 
     template <std::integral T>
-    constexpr operator T() const {
+    [[nodiscard]] constexpr operator T() const {
         return (T)data;
     }
 
     template <std::integral T>
     [[nodiscard]] constexpr explicit Int64Tag(T value = 0) : data((int64)value) {}
 
-    Int64Tag operator-() const { return Int64Tag{(int64)-data}; }
+    [[nodiscard]] Int64Tag operator-() const { return Int64Tag{(int64)-data}; }
 
 public:
     // NOLINTBEGIN

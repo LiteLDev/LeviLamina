@@ -66,8 +66,16 @@ jobs:
           zip -r ../levilamina-windows-x64.zip *
           cd ..
 
+      - id: calculate-sha256
+        run: |
+          echo ::set-output name=sha256::$(sha256sum levilamina-windows-x64.zip | awk '{print $1}')
+
       - uses: softprops/action-gh-release@v1
         with:
           append_body: true
+          body: |
+            | File | SHA256 |
+            | ---- | ------ |
+            | levilamina-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |
           files: |
             levilamina-windows-x64.zip

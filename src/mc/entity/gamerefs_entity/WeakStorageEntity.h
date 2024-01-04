@@ -5,6 +5,8 @@
 #include "mc/entity/EntityRegistryRefTraits.h"
 #include "mc/entity/gamerefs_entity/StackResultStorageEntity.h"
 
+class Actor;
+
 class WeakStorageEntity {
 public:
     // WeakStorageEntity inner types define
@@ -19,8 +21,8 @@ public:
     WeakRefT<EntityRegistryRefTraits> mRegistry;
     class EntityId                    mEntity;
 
-    template <class Entity, bool IncludeRemoved = false>
-    [[nodiscard]] constexpr Entity* tryUnwrap() {
+    template <class Entity = Actor, bool IncludeRemoved = false>
+    [[nodiscard]] optional_ref<Entity> tryUnwrap() const {
         return StackResultStorageEntity(*this).tryUnwrap<Entity, IncludeRemoved>();
     }
 

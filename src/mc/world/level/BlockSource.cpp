@@ -30,8 +30,8 @@ BlockSource::getEntities(class AABB const& range, float extendDistance, ActorTyp
                 continue;
             }
             for (auto& weakEntityRef : chunk->getChunkEntities()) {
-                auto* actor = weakEntityRef.tryUnwrap<Actor>();
-                if (actor != nullptr && (actorType == ActorType::TypeMask || actor->isType(actorType) != ignoreType)
+                auto actor = weakEntityRef.tryUnwrap();
+                if (actor && (actorType == ActorType::TypeMask || actor->isType(actorType) != ignoreType)
                     && range.intersects(actor->getAABB())) {
                     entities.emplace_back(actor);
                 }
@@ -51,7 +51,7 @@ optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
     if (!actorOwnerPtr) {
         return nullptr;
     }
-    auto* actor = actorOwnerPtr.tryUnwrap<Actor>();
+    auto actor = actorOwnerPtr.tryUnwrap();
     if (!actor) {
         return nullptr;
     }

@@ -16,14 +16,14 @@ public:
     }
 
     template <std::integral T>
-    constexpr operator T() const {
+    [[nodiscard]] constexpr operator T() const {
         return (T)data;
     }
 
     template <std::integral T>
     [[nodiscard]] constexpr explicit ShortTag(T value = 0) : data((short)value) {}
 
-    ShortTag operator-() const { return ShortTag{(short)-data}; }
+    [[nodiscard]] ShortTag operator-() const { return ShortTag{(short)-data}; }
 
 public:
     // NOLINTBEGIN
