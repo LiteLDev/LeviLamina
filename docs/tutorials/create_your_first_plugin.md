@@ -521,6 +521,9 @@ auto& uuid   = player.getUuid();
 !!! note
     The type of UUID obtained here is `mce::UUID` rather than `std::string`. We recommend converting UUID to `std::string` only when necessary, as the implementation of `mce::UUID` is more efficient.
 
+!!! danger
+    Please do not use XUID as the unique identifier for players. While in the LiteLoaderBDS era, many plugins used XUID as the unique identifier for players, this is incorrect. XUID is the identifier for Xbox Live, not for players. If the server is not in online mode or has NPCs (Non-Player Characters), the behavior of XUID will be unpredictable. Therefore, we strongly recommend using UUID as the unique identifier for players.
+
 Then, we use the player's UUID as the key to check if the player has joined before in the database.
 
 ```cpp
