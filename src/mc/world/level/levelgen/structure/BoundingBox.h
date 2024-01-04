@@ -8,7 +8,7 @@
 
 class AABB;
 
-class BoundingBox : public CommutativeGroup<BoundingBox, BlockPos, BlockPos> {
+class BoundingBox : public ll::math::CommutativeGroup<BoundingBox, BlockPos, BlockPos> {
 public:
     union {
         BlockPos min, x, r, s;
@@ -17,7 +17,7 @@ public:
         BlockPos max, y, g, t, z, b, p;
     };
 
-    [[nodiscard]] constexpr BoundingBox() noexcept : min(BlockPos::MIN), max(BlockPos::MIN){};
+    [[nodiscard]] constexpr BoundingBox() noexcept : min(0), max(0){};
     [[nodiscard]] constexpr BoundingBox(class BoundingBox const& k) noexcept = default;
     constexpr BoundingBox& operator=(class BoundingBox const& k) noexcept    = default;
     [[nodiscard]] constexpr BoundingBox(BlockPos const& min, BlockPos const& max) noexcept : min(min), max(max){};
@@ -65,12 +65,12 @@ public:
     }
 
     constexpr BoundingBox& merge(BoundingBox const& a) noexcept {
-        *this = BoundingBox{::min(a.min, min), ::max(a.max, max)};
+        *this = BoundingBox{ll::math::min(a.min, min), ll::math::max(a.max, max)};
         return *this;
     }
 
     constexpr BoundingBox& merge(BlockPos const& a) noexcept {
-        *this = BoundingBox{::min(a, min), ::max(a, max)};
+        *this = BoundingBox{ll::math::min(a, min), ll::math::max(a, max)};
         return *this;
     }
 
@@ -85,9 +85,9 @@ public:
     template <typename T>
     [[nodiscard]] constexpr T const& get(size_t index) const noexcept {
         if (index == 1) {
-            return (T)z;
+            return (T const&)z;
         }
-        return (T)x;
+        return (T const&)x;
     }
 
     [[nodiscard]] bool contains(BlockPos const& a) const noexcept { return a.ge(min).all() && a.le(max).all(); }

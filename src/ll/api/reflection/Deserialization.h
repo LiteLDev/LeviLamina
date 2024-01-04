@@ -33,6 +33,9 @@ inline void deserialize(T&, J const&);
 template <class J, concepts::IsDispatcher T>
 inline void deserialize(T&, J const&);
 
+template <class J, concepts::IsVectorBase T>
+inline void deserialize(T&, J const&);
+
 template <class J, Reflectable T>
 inline void deserialize(T& obj, J const& j) {
     forEachMember(obj, [&](std::string_view name, auto& member) {
@@ -157,6 +160,13 @@ template <class J, concepts::IsDispatcher T>
 inline void deserialize(T& d, J const& j) {
     deserialize<J>(d.storage, j);
     d.call();
+}
+
+template <class J, concepts::IsVectorBase T>
+inline void deserialize(T& vec, J const& j) {
+    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
+        deserialize<J>(vec.template get<axis_type>(iter), j[iter]);
+    });
 }
 
 } // namespace ll::reflection

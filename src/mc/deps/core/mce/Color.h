@@ -8,8 +8,10 @@ namespace mce {
 
 class Color;
 
-class Color : public floatN4<Color> {
+class Color : public ll::math::floatN4<Color> {
 public:
+    [[nodiscard]] constexpr Color() noexcept = default;
+
     [[nodiscard]] constexpr Color(uint hex) noexcept : Color((hex >> 16) & 0xFF, (hex >> 8) & 0xFF, hex & 0xFF) {}
 
     template <std::integral T0, std::integral T1, std::integral T2, std::integral T3 = uint>
@@ -24,7 +26,7 @@ public:
     [[nodiscard]] constexpr Color(T0 const& r, T1 const& g, T2 const& b, T3 const& a = 1) noexcept
     : floatN4(r, g, b, a) {}
 
-    template <IsFloatN V, std::floating_point A = double>
+    template <ll::math::IsFloatN V, std::floating_point A = double>
     [[nodiscard]] constexpr Color(V const& v, A const& a = 1) noexcept // NOLINT
         requires(V::size() == 3)
     : floatN4(v.r, v.g, v.b, a) {}
@@ -58,12 +60,12 @@ public:
 
     [[nodiscard]] constexpr class mce::Color sRGBToLinear() const noexcept {
         auto color{toVec3()};
-        return {select(color.gt(0.04045f), ::pow(color / 1.055f + 0.055f, {2.4f}), color / 12.92f), a};
+        return {select(color.gt(0.04045f), pow(color / 1.055f + 0.055f, {2.4f}), color / 12.92f), a};
     }
 
     [[nodiscard]] constexpr class mce::Color LinearTosRGB() const noexcept {
         auto color{toVec3()};
-        return {select(color.gt(0.0031308f), ::pow(color, {1.0f / 2.4f}) * 1.055f - 0.055f, color * 12.92f), a};
+        return {select(color.gt(0.0031308f), pow(color, {1.0f / 2.4f}) * 1.055f - 0.055f, color * 12.92f), a};
     }
 
     [[nodiscard]] constexpr class mce::Color LinearToXYZ() const noexcept {
@@ -93,7 +95,7 @@ public:
         constexpr float delta2 = delta * delta;
         constexpr float delta3 = delta2 * delta;
 
-        color = select(color.gt(delta3), ::pow(color, {1.0f / 3.0f}), color / (3.0f * delta2) + 4.0f / 29.0f);
+        color = select(color.gt(delta3), pow(color, {1.0f / 3.0f}), color / (3.0f * delta2) + 4.0f / 29.0f);
         return {116.0f * color.y - 16.0f, 500.0f * (color.x - color.y), 200.0f * (color.y - color.z), a};
     }
 
@@ -104,7 +106,7 @@ public:
         constexpr float delta  = 6.0f / 29.0f;
         constexpr float delta2 = delta * delta;
 
-        color = select(color.gt(delta), ::pow(color, {3.0f}), (color - 4.0f / 29.0f) * (3.0f * delta2));
+        color = select(color.gt(delta), pow(color, {3.0f}), (color - 4.0f / 29.0f) * (3.0f * delta2));
         return {
             color * Vec3{0.950489f, 1.0f, 1.08884f},
             a

@@ -13,6 +13,11 @@ struct Overloaded : Ts... {
     using Ts::operator()...;
 };
 
+template <unsigned N>
+struct PriorityTag : PriorityTag<N - 1> {};
+template <>
+struct PriorityTag<0> {};
+
 template <class... Components, class F>
 constexpr void unrollWithArgs(F&& func) {
     size_t i = 0;

@@ -23,18 +23,24 @@
 #include "mc/server/ServerLevel.h"
 #include "mc/server/commands/standard/FillCommand.h"
 
+#include "mc/deps/core/mce/Color.h"
 #include "mc/deps/core/mce/UUID.h"
+
+#include "mc/math/Vec2.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 
 #include "mc/world/actor/DataItem.h"
 
 template <class T>
-
 class TestClass {
 public:
     struct {
         int   hello = 233;
         float trs   = 0.2f;
     } structure;
+
     class MyPair {
     public:
         std::string typo          = "hellotype";
@@ -62,6 +68,12 @@ public:
         {{4, 5},              -63556654},
         {mce::UUID::random(), -5674236 },
     };
+
+    Vec2        vec2{};
+    Vec3        vec3{};
+    BlockPos    pos{};
+    BoundingBox box{};
+
     std::tuple<int, bool, float>                       tuple;
     std::pair<std::string_view, MyPair>                pair;
     std::array<int, 5>                                 array{};
@@ -104,11 +116,11 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     auto list = ll::string_utils::splitByPattern("structure.trs", ".");
 
-    ll::reflection::visit(std::span{list}, helloReflection, [](auto&& a) {
-        if constexpr (std::floating_point<std::remove_cvref_t<decltype(a)>>) {
-            ll::logger.debug("ll::reflection::visit {} {}", typeid(decltype(a)).name(), a);
-        }
-    });
+    // ll::reflection::visit(std::span{list}, helloReflection, [](auto&& a) {
+    //     if constexpr (std::floating_point<std::remove_cvref_t<decltype(a)>>) {
+    //         ll::logger.debug("ll::reflection::visit {} {}", typeid(decltype(a)).name(), a);
+    //     }
+    // });
 
     ll::logger.debug(
         "reflection NBT: {}",

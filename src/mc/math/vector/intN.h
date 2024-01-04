@@ -1,7 +1,9 @@
 #pragma once
+
 #include "mc/math/vector/component/IntN.h"
 #include "mc/math/vector/component/base/vecN.h"
 
+namespace ll::math {
 // template <size_t N>
 // class intN {
 // public:
@@ -10,12 +12,13 @@
 //     intN operator=(intN const&) = delete;
 // };
 template <typename BaseType>
-VEC2_IMPL_(intN2, BaseType, int, IntN);
+LL_VEC2_IMPL(intN2, BaseType, int, IntN);
 template <typename BaseType>
-VEC3_IMPL_(intN3, BaseType, int, IntN);
+LL_VEC3_IMPL(intN3, BaseType, int, IntN);
 template <typename BaseType>
-VEC4_IMPL_(intN4, BaseType, int, IntN);
+LL_VEC4_IMPL(intN4, BaseType, int, IntN);
 
 // using int2 = intN2<int2>;
 // using int3 = intN3<int3>;
 // using int4 = intN4<int4>;
+} // namespace ll::math

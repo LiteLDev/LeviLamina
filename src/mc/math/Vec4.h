@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class Vec4 : public floatN4<Vec4> {
+class Vec4 : public ll::math::floatN4<Vec4> {
 public:
     using floatN4::floatN4;
 

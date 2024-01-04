@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/dimension/VanillaDimensions.h"
 
 // auto generated inclusion list
 #include "mc/enums/LimboEntitiesVersion.h"
@@ -13,34 +12,18 @@
 // clang-format off
 namespace mce { class Color; }
 // clang-format on
-namespace unity_5c986e6b9d6571cc96912b0bfa0329e2 {
-MCAPI DimensionHeightRange computeOverworldHeightRange(ILevel&);
-}
-using namespace unity_5c986e6b9d6571cc96912b0bfa0329e2;
 
 class OverworldDimension : public ::Dimension {
 public:
-    OverworldDimension(ILevel& ilevel, Scheduler& scheduler)
-    : Dimension(ilevel, VanillaDimensions::Overworld, computeOverworldHeightRange(ilevel), scheduler, "Overworld") {
-        mHasWeather            = true;
-        mDefaultBrightness.sky = Brightness::MAX;
-        mSeaLevel              = 63;
-        if (getLevel().getLevelData().getGenerator() == GeneratorType::Flat) {
-            mSeaLevel = 5;
-        }
-        mDimensionBrightnessRamp = std::make_unique<OverworldBrightnessRamp>();
-        mDimensionBrightnessRamp->buildBrightnessRamp();
-    };
-
     // prevent constructor by default
     OverworldDimension& operator=(OverworldDimension const&);
     OverworldDimension(OverworldDimension const&);
     OverworldDimension();
 
+    LLNDAPI OverworldDimension(ILevel& ilevel, Scheduler& scheduler);
+
 public:
     // NOLINTBEGIN
-    // virtual ~OverworldDimension();
-
     // symbol:
     // ?createGenerator@OverworldDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
     virtual std::unique_ptr<class WorldGenerator> createGenerator();

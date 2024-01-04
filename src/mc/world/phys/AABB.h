@@ -5,7 +5,7 @@
 
 class BoundingBox;
 
-class AABB : public CommutativeGroup<AABB, Vec3, Vec3> {
+class AABB : public ll::math::CommutativeGroup<AABB, Vec3, Vec3> {
 public:
     union {
         Vec3 min, x, r, s;
@@ -14,17 +14,17 @@ public:
         Vec3 max, y, g, t, z, b, p;
     };
 
-    [[nodiscard]] constexpr AABB() noexcept : min(Vec3::MIN), max(Vec3::MIN){};
+    [[nodiscard]] constexpr AABB() noexcept : min(0), max(0){};
     [[nodiscard]] constexpr AABB(class AABB const& k) noexcept : min(k.min), max(k.max){};
     [[nodiscard]] constexpr AABB(class Vec3 const& min, class Vec3 const& max) noexcept : min(min), max(max){};
 
     inline AABB& merge(AABB const& a) noexcept {
-        *this = AABB{::min(a.min, min), ::max(a.max, max)};
+        *this = AABB{ll::math::min(a.min, min), ll::math::max(a.max, max)};
         return *this;
     }
 
     inline AABB& merge(Vec3 const& a) noexcept {
-        *this = AABB{::min(a, min), ::max(a, max)};
+        *this = AABB{ll::math::min(a, min), ll::math::max(a, max)};
         return *this;
     }
 
@@ -38,9 +38,9 @@ public:
     template <typename T>
     [[nodiscard]] constexpr T const& get(size_t index) const noexcept {
         if (index == 1) {
-            return (T)z;
+            return (T const&)z;
         }
-        return (T)x;
+        return (T const&)x;
     }
 
     [[nodiscard]] constexpr bool contains(Vec3 const& a) const noexcept { return a.ge(min).all() && a.le(max).all(); }

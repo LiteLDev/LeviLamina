@@ -15,23 +15,20 @@ class AABB;
 class BoundingBox;
 class Vec3;
 
-class BlockPos : public intN3<BlockPos> {
+class BlockPos : public ll::math::intN3<BlockPos> {
 public:
     using intN3::intN3;
 
-    LLNDAPI operator class AABB() const;
-    LLNDAPI operator class BoundingBox() const;
+    LLNDAPI operator AABB() const;
+    LLNDAPI operator BoundingBox() const;
 
-    LLNDAPI class Vec3 bottomCenter() const;
-    LLNDAPI class Vec3 center() const;
+    LLNDAPI Vec3 bottomCenter() const;
+    LLNDAPI Vec3 center() const;
 
 public:
     // NOLINTBEGIN
     // symbol: ??0BlockPos@@QEAA@AEBVSubChunkPos@@@Z
     MCAPI BlockPos(class SubChunkPos const&);
-
-    // symbol: ??0BlockPos@@QEAA@AEBVVec3@@@Z
-    MCAPI BlockPos(class Vec3 const& v);
 
     // symbol: ??0BlockPos@@QEAA@AEBVChunkPos@@H@Z
     MCAPI BlockPos(class ChunkPos const& cp, int y);

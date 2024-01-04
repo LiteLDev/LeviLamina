@@ -15,7 +15,6 @@ size_t getVolatileOffset(void* impl) {
             return offset;
         }
     }
-    std::cout << string_utils::strToHexStr({(char*)impl, 32}) << std::endl;
     throw std::runtime_error("can't parse closure asm offset");
 };
 using T = NativeClosure<void*>;

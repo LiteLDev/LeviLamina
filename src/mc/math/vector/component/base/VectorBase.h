@@ -11,6 +11,7 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/Meta.h"
 
+namespace ll::math {
 template <typename T, typename = void>
 struct has_toString : std::false_type {};
 
@@ -22,11 +23,6 @@ struct has_hash : std::false_type {};
 
 template <typename T>
 struct has_hash<T, std::void_t<decltype(std::declval<T>().hash())>> : std::true_type {};
-
-struct LL_EBO VectorBaseTag {};
-
-template <typename T>
-concept IsVectorBase = std::is_base_of_v<VectorBaseTag, T>;
 
 struct LL_EBO BoolNTag {};
 
@@ -47,9 +43,10 @@ template <size_t N>
 class boolN;
 
 template <typename T, typename... Components>
-class LL_EBO VectorBase : VectorBaseTag {
-public:
+struct LL_EBO VectorBase : concepts::VectorBaseTag {
     using first_type = typename ll::meta::max_type<Components...>::type;
+
+    using size_type = size_t;
 
     [[nodiscard]] consteval static size_t size() noexcept { return sizeof...(Components); }
 
@@ -60,7 +57,7 @@ public:
 
     [[nodiscard]] constexpr std::string toString() const noexcept {
         std::string res("(");
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             res  = std::move(std::format("{}{}", res, static_cast<T const*>(this)->template get<axis_type>(iter)));
             res += ((iter < size() - 1) ? ", " : ")");
         });
@@ -69,7 +66,7 @@ public:
 
     [[nodiscard]] constexpr bool operator==(T const& b) const noexcept {
         bool res = true;
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             res =
                 res && (b.template get<axis_type>(iter) == static_cast<T const*>(this)->template get<axis_type>(iter));
         });
@@ -94,7 +91,7 @@ public:
 
     [[nodiscard]] constexpr size_t hash() const noexcept {
         size_t res = 0;
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             if constexpr (std::is_integral_v<axis_type>) {
                 hashCombine(static_cast<T const*>(this)->template get<axis_type>(iter), res);
             } else if constexpr (has_hash<axis_type>::value) {
@@ -106,7 +103,7 @@ public:
         return res;
     }
 
-    template <IsVectorBase V>
+    template <ll::concepts::IsVectorBase V>
     [[nodiscard]] constexpr V as() const noexcept
         requires(V::size() == size() && std::convertible_to<T, V>)
     {
@@ -116,7 +113,7 @@ public:
     [[nodiscard]] constexpr class boolN<sizeof...(Components)> eq(T const& b) const noexcept
         requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
         boolN<sizeof...(Components)> res = true;
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             res[iter] = (b.template get<axis_type>(iter) == static_cast<T const*>(this)->template get<axis_type>(iter));
         });
         return res;
@@ -125,24 +122,19 @@ public:
     [[nodiscard]] constexpr class boolN<sizeof...(Components)>
     ne(T const& b) const noexcept requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
         boolN<sizeof...(Components)> res = true;
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             res[iter] = (b.template get<axis_type>(iter) != static_cast<T const*>(this)->template get<axis_type>(iter));
         });
         return res;
     }
 };
-
-template <IsVectorBase T>
-std::ostream& operator<<(std::ostream& os, T const& obj) noexcept {
-    os << obj.toString();
-    return os;
-}
+} // namespace ll::math
 
 // NOLINTBEGIN
 
 namespace std {
 
-template <IsVectorBase T, typename CharT>
+template <ll::concepts::IsVectorBase T, typename CharT>
 struct formatter<T, CharT> : public std::formatter<string_view, CharT> {
     template <typename FormatContext>
     auto format(T const& t, FormatContext& ctx) const noexcept {
@@ -150,12 +142,7 @@ struct formatter<T, CharT> : public std::formatter<string_view, CharT> {
     }
 };
 
-// template <IsVectorBase T>
-// string to_string(T const& _Val) noexcept {
-//     return _Val.toString();
-// }
-
-template <IsVectorBase T>
+template <ll::concepts::IsVectorBase T>
 struct hash<T> {
     size_t operator()(T const& vec) const noexcept { return vec.hash(); }
 };

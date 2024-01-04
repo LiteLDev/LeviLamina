@@ -6,6 +6,7 @@
 #include <type_traits>
 #include <xutility>
 
+#include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 
 namespace ll::concepts {
@@ -85,6 +86,11 @@ concept IsDispatcher = requires(T t) {
     t.storage;
     t.call();
 };
+
+struct LL_EBO VectorBaseTag {};
+
+template <typename T>
+concept IsVectorBase = std::is_base_of_v<VectorBaseTag, T>;
 
 template <class T>
 concept TupleLike = !Rangeable<T> && requires(T t) {

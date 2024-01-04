@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class Vec3 : public floatN3<Vec3> {
+class Vec3 : public ll::math::floatN3<Vec3> {
 public:
     using floatN3::floatN3;
     // NOLINTBEGIN

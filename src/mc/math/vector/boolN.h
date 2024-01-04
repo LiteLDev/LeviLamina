@@ -1,7 +1,9 @@
 #pragma once
+
 #include "mc/math/vector/component/BoolN.h"
 #include "mc/math/vector/component/base/vecN.h"
 
+namespace ll::math {
 template <size_t N>
 class boolN {
 public:
@@ -10,12 +12,13 @@ public:
     boolN operator=(boolN const&) = delete;
 };
 template <>
-VEC2_IMPL_(boolN<2>, boolN<2>, bool, BoolN);
+LL_VEC2_IMPL(boolN<2>, boolN<2>, bool, BoolN);
 template <>
-VEC3_IMPL_(boolN<3>, boolN<3>, bool, BoolN);
+LL_VEC3_IMPL(boolN<3>, boolN<3>, bool, BoolN);
 template <>
-VEC4_IMPL_(boolN<4>, boolN<4>, bool, BoolN);
+LL_VEC4_IMPL(boolN<4>, boolN<4>, bool, BoolN);
 
 using bool2 = boolN<2>;
 using bool3 = boolN<3>;
 using bool4 = boolN<4>;
+} // namespace ll::math

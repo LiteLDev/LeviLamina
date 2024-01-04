@@ -1,12 +1,12 @@
 #pragma once
 #include "mc/math/vector/component/base/Field.h"
 
+namespace ll::math {
 template <size_t N>
 class doubleN;
 
 template <typename T, typename... Components>
-// requires ll::concepts::IsAllSame<Components...>
-class LL_EBO IntN : public Field<T, Components...>, IntNTag {
+class LL_EBO IntN : public Field<T, Components...>, public IntNTag {
 public:
     using first_type = Field<T, Components...>::first_type;
 
@@ -31,7 +31,7 @@ public:
     {                                                                                                                  \
         doubleN<T::size()> tmp;                                                                                        \
         T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {                                           \
-            tmp.template get<double>(iter) = static_cast<double>(NAME(x.template get<axis_type>(iter)));               \
+            tmp.template get<double>(iter) = static_cast<double>(std::NAME(x.template get<axis_type>(iter)));          \
         });                                                                                                            \
         return tmp;                                                                                                    \
     }
@@ -62,3 +62,4 @@ GEN_VEC_BASIC_MATH_FUNC_INT(tanh)
 // GEN_VEC_BASIC_MATH_FUNC_INT(modf)
 // GEN_VEC_BASIC_MATH_FUNC_INT(fmod)
 // GEN_VEC_BASIC_MATH_FUNC_INT(pow)
+} // namespace ll::math

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SubChunkPos : public intN3<SubChunkPos> {
+class SubChunkPos : public ll::math::intN3<SubChunkPos> {
 public:
     using intN3::intN3;
 

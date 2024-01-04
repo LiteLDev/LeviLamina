@@ -36,6 +36,9 @@ inline J serialize(T const&);
 template <class J, concepts::IsDispatcher T>
 inline J serialize(T const&);
 
+template <class J, concepts::IsVectorBase T>
+inline J serialize(T const&);
+
 
 template <class J, Reflectable T>
 inline J serialize(T const& obj)
@@ -121,6 +124,15 @@ inline J serialize(T const& opt) {
 template <class J, concepts::IsDispatcher T>
 inline J serialize(T const& d) {
     return serialize<J>(d.storage);
+}
+
+template <class J, concepts::IsVectorBase T>
+inline J serialize(T const& vec) {
+    J res;
+    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
+        res.push_back(serialize<J>(vec.template get<axis_type>(iter)));
+    });
+    return res;
 }
 
 } // namespace ll::reflection

@@ -1,22 +1,24 @@
 #pragma once
-#include "mc/math/vector/component/base/CommutativeGroup.h"
+
 #include <array>
 #include <cmath>
 
+#include "mc/math/vector/component/base/CommutativeGroup.h"
+namespace ll::math {
 struct FieldTag {};
 
 template <typename T>
 concept IsField = std::is_base_of_v<FieldTag, T>;
 
 template <typename T, typename... Components>
-class LL_EBO Field : public CommutativeGroup<T, Components...>, FieldTag {
+struct LL_EBO Field : CommutativeGroup<T, Components...>, FieldTag {
 public:
     using first_type = typename CommutativeGroup<T, Components...>::first_type;
 
     [[nodiscard]] constexpr std::array<T, Field::size() * 2> getNeighbors() const noexcept {
         std::array<T, Field::size() * 2> res;
         size_t                           i = 0;
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t axis) constexpr {
+        Field::forEachComponent([&]<typename axis_type>(size_t axis) constexpr {
             ll::meta::unroll<2>([&](size_t iter) {
                 T tmp                              = *(static_cast<T const*>(this));
                 tmp.template get<axis_type>(axis) += static_cast<axis_type>(iter * 2 - 1);
@@ -28,14 +30,14 @@ public:
     }
 
     constexpr T& operator*=(T const& b) noexcept {
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->template get<axis_type>(iter) *= b.template get<axis_type>(iter);
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
 
     constexpr T& operator/=(T const& b) noexcept {
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->template get<axis_type>(iter) /= b.template get<axis_type>(iter);
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
@@ -55,7 +57,7 @@ public:
 
     template <std::convertible_to<first_type> V>
     constexpr T& operator*=(V const& b) noexcept {
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->template get<first_type>(iter) *= static_cast<first_type>(b);
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
@@ -63,7 +65,7 @@ public:
 
     template <std::convertible_to<first_type> V>
     constexpr T& operator/=(V const& b) noexcept {
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->template get<first_type>(iter) /= static_cast<first_type>(b);
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
@@ -99,7 +101,7 @@ public:
 
     [[nodiscard]] constexpr double dot(T const& b) const noexcept {
         double res = 0.0;
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             res +=
                 (double)(static_cast<T const*>(this)->template get<axis_type>(iter)) * b.template get<axis_type>(iter);
         });
@@ -109,7 +111,7 @@ public:
     template <std::convertible_to<first_type> V>
     [[nodiscard]] constexpr double dot(V const& b) const noexcept {
         double res = 0.0;
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             res += (double)(static_cast<T const*>(this)->template get<axis_type>(iter)) * static_cast<first_type>(b);
         });
         return res;
@@ -138,7 +140,7 @@ public:
     [[nodiscard]] constexpr class boolN<sizeof...(Components)> lt(T const& b) const noexcept
         requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
         boolN<sizeof...(Components)> res = true;
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             res[iter] = (b.template get<axis_type>(iter) < static_cast<T const*>(this)->template get<axis_type>(iter));
         });
         return res;
@@ -147,7 +149,7 @@ public:
     [[nodiscard]] constexpr class boolN<sizeof...(Components)>
     le(T const& b) const noexcept requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
         boolN<sizeof...(Components)> res = true;
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             res[iter] = (b.template get<axis_type>(iter) <= static_cast<T const*>(this)->template get<axis_type>(iter));
         });
         return res;
@@ -156,7 +158,7 @@ public:
     [[nodiscard]] constexpr class boolN<sizeof...(Components)>
     gt(T const& b) const noexcept requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
         boolN<sizeof...(Components)> res = true;
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             res[iter] = (b.template get<axis_type>(iter) > static_cast<T const*>(this)->template get<axis_type>(iter));
         });
         return res;
@@ -165,7 +167,7 @@ public:
     [[nodiscard]] constexpr class boolN<sizeof...(Components)>
     ge(T const& b) const noexcept requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4) {
         boolN<sizeof...(Components)> res = true;
-        ll::meta::unrollWithArgs<Components...>([&]<typename axis_type>(size_t iter) constexpr {
+        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             res[iter] = (b.template get<axis_type>(iter) >= static_cast<T const*>(this)->template get<axis_type>(iter));
         });
         return res;
@@ -177,9 +179,9 @@ public:
     [[nodiscard]] constexpr T NAME(T const& x) noexcept {                                                              \
         T tmp;                                                                                                         \
         T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {                                           \
-            tmp.template get<axis_type>(iter) = static_cast<axis_type>(NAME(x.template get<axis_type>(iter)));         \
+            tmp.template get<axis_type>(iter) = static_cast<axis_type>(std::NAME(x.template get<axis_type>(iter)));    \
         });                                                                                                            \
         return tmp;                                                                                                    \
     }
-
 GEN_VEC_BASIC_MATH_FUNC1(IsField, abs)
+} // namespace ll::math

@@ -1,9 +1,10 @@
 #pragma once
+
 #include "mc/math/vector/component/base/Field.h"
 
+namespace ll::math {
 template <typename T, typename... Components>
-// requires ll::concepts::IsAllSame<Components...>
-class LL_EBO FloatN : public Field<T, Components...>, FloatNTag {
+class LL_EBO FloatN : public Field<T, Components...>, public FloatNTag {
 public:
     using first_type = Field<T, Components...>::first_type;
 
@@ -72,7 +73,8 @@ template <IsFloatN T>
 [[nodiscard]] constexpr T atan2(T const& a, T const& b) noexcept {
     T tmp;
     T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-        tmp.template get<axis_type>(iter) = atan2(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+        tmp.template get<axis_type>(iter) =
+            std::atan2(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
     });
     return tmp;
 }
@@ -81,7 +83,7 @@ template <IsFloatN T>
 [[nodiscard]] constexpr T fmod(T const& a, T const& b) noexcept {
     T tmp;
     T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-        tmp.template get<axis_type>(iter) = fmod(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+        tmp.template get<axis_type>(iter) = std::fmod(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
     });
     return tmp;
 }
@@ -90,7 +92,7 @@ template <IsFloatN T>
 [[nodiscard]] constexpr T modf(T const& a, T const& b) noexcept {
     T tmp;
     T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-        tmp.template get<axis_type>(iter) = modf(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+        tmp.template get<axis_type>(iter) = std::modf(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
     });
     return tmp;
 }
@@ -99,7 +101,8 @@ template <IsFloatN T>
 [[nodiscard]] constexpr T pow(T const& a, T const& b) noexcept {
     T tmp;
     T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-        tmp.template get<axis_type>(iter) = pow(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+        tmp.template get<axis_type>(iter) = std::pow(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
     });
     return tmp;
 }
+} // namespace ll::math
