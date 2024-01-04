@@ -22,7 +22,11 @@
 - 调用Minecraft函数
 
 !!! info
-    本教程的所有源码可以在[futrime/better-suicide](https://github.com/futrime/better-suicide)找到。如果你已经安装了[lip](https://docs.lippkg.com)，你还可以直接运行`lip install github.com/tooth-hub/better-suicide`在LeviLamina实例环境中安装本教程中实现的插件。我们建议你一边看源码一边看教程。
+    本教程的所有源码可以在[futrime/better-suicide](https://github.com/futrime/better-suicide)找到。我们建议你一边看源码一边看教程。如果你已经安装了[lip](https://docs.lippkg.com)，你还可以直接运行以下代码在LeviLamina实例环境中安装本教程中实现的插件。
+
+    ```shell
+    lip install github.com/tooth-hub/better-suicide
+    ```
 
 ## 学习C++
 
@@ -43,7 +47,7 @@
 - [Visual Studio 2022](https://visualstudio.microsoft.com/) （安装Visual Studio 2022时，请确保勾选了C++桌面应用开发这一项）
 
 !!! warning
-    如果你安装的不是最新版本的Visual Studio 2022、MSVC和Windows SDK，则后续在构建、加载、运行插件中有可能遇到问题。如果你遇到了很长时间都无法排除的问题，请考虑这个可能性。
+    如果你安装的不是最新版本的Visual Studio 2022、MSVC和Windows SDK，则后续在构建、加载、运行插件中有可能遇到问题。如果你遇到了类似`xxx is not a member of std`这样的问题，请考虑这个可能性。本教程测试构建的环境是Visual Studio Community 2022 17.8.1、MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8)、Windows 11 SDK (10.0.22000.0)
 
 !!! tip
     由于LeviLamina项目极大，如果你使用Visual Studio Code，其自带的Intellisense系统可能不堪重负。我们建议你安装clangd插件并使用clangd进行代码检查等。安装clangd和对应的插件后，你需要运行以下命令生成`compile_commands.json`，然后重启VSCode以使clangd生效。
@@ -52,7 +56,7 @@
     xmake project -k compile_commands
     ```
 
-然后，你需要在某处安装LeviLamina。本教程针对的是LeviLamina 0.2.1，对于其它版本，可能需要做一些修改。
+然后，你需要在某处安装LeviLamina。本教程针对的是LeviLamina 0.3.0，对于其它版本，可能需要做一些修改。
 
 ## 创建插件仓库
 
@@ -78,6 +82,36 @@ target("plugin") -- Change this to your plugin name.
 
 接下来，你需要修改`README.md`文件中的内容。这个文件将会在你的插件仓库主页显示，你可以在这里介绍你的插件的功能、使用方法、配置文件、指令等等。
 
+## 构建你的插件
+
+在一切开始之前，先让我们尝试构建一下空的插件。
+
+先更新一下仓库：
+
+```shell
+xmake repo -u
+```
+
+配置构建：
+
+```shell
+xmake f -m debug
+```
+
+!!! tip
+    如果你想以其它模式构建，也可以使用`-m release`或`-m releasedbg`。这两个模式会开启`fastest`优化等级。其中，`-m release`会关闭调试信息，而`-m releasedbg`会开启调试信息，就像`-m debug`一样。对于它们的具体区别，请参考[自定义规则 - xmake](https://xmake.io/#/zh-cn/manual/custom_rule)。
+    
+
+然后构建：
+
+```shell
+xmake
+```
+
+!!! failure
+    构建失败了？尝试升级一下Visual Studio 2022、MSVC和Windows SDK吧。记住，一定要升级到最新版本。
+
+
 ## 理解插件结构
 
 打开`src/`目录，你会看到以下的文件结构：
@@ -95,27 +129,7 @@ src/
 
 ## 注册指令`/suicide`
 
-在BDS中，指令并不是一开始就能够注册的，而是需要在特定的程序执行之后才能注册。在LeviLamina中，为了解决这个问题，我们定义了事件`SetupCommandEvent`。插件可以订阅这个事件，当这个事件被触发时，插件可以注册指令。
-
-在`Plugin.h`中，我们增加一个事件监听器指针：
-
-```cpp
-// ...
-
-#include <ll/api/event/ListenerBase.h>
-
-class Plugin {
-
-// ...
-
-private:
-    ll::plugin::Plugin& mSelf;
-
-    ll::event::ListenerPtr mSetupCommandEventListener;
-};
-```
-
-在`Plugin.cpp`中，我们在`enable()`函数中注册这个事件监听器，并在`disable()`函数中取消注册。这样，当插件被启用时，我们就可以订阅这个事件，当插件被禁用时，我们就可以取消订阅这个事件。避免了在插件禁用后仍然订阅事件的情况。
+在BDS中，指令并不是一开始就能够注册的，而是需要在特定的程序执行之后才能注册。因此，你不能在插件加载时注册插件，而只能在插件启用时注册指令。一般来说，还应当在插件禁用时解注册指令，以防止出现未定义行为。
 
 !!! warning
     插件在加载时，会调用其构造函数。但请不要将事件订阅、指令注册等任何与游戏相关的操作放在构造函数中，因为这些操作需要在游戏加载完成后才能进行。如果你在构造函数中进行了这些操作，那么你的插件将很有可能会在加载时崩溃。
@@ -129,9 +143,7 @@ private:
 #include <utility>
 
 #include <ll/api/command/DynamicCommand.h>
-#include <ll/api/event/EventBus.h>
-#include <ll/api/event/ListenerBase.h>
-#include <ll/api/event/command/SetupCommandEvent.h>
+#include <ll/api/service/Bedrock.h>
 #include <mc/entity/utilities/ActorType.h>
 #include <mc/server/commands/CommandOrigin.h>
 #include <mc/server/commands/CommandOutput.h>
@@ -141,39 +153,51 @@ private:
 bool Plugin::enable() {
     auto& logger = mSelf.getLogger();
 
-    // Subscribe to events.
-    auto& eventBus = ll::event::EventBus::getInstance();
+    // ...
 
-    mSetupCommandEventListener = eventBus.emplaceListener<
-        ll::event::command::SetupCommandEvent>([&logger](ll::event::command::SetupCommandEvent& event) {
-        // Setup suicide command.
-        auto command =
-            DynamicCommand::createCommand(event.registry(), "suicide", "Commits suicide.", CommandPermissionLevel::Any);
-        command->addOverload();
-        command->setCallback(
-            [&logger](DynamicCommand const&, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, DynamicCommand::Result>&) {
-                auto* entity = origin.getEntity();
-                if (entity == nullptr || !entity->isType(ActorType::Player)) {
-                    output.error("Only players can commit suicide");
-                    return;
-                }
+    // Register commands.
+    auto commandRegistry = ll::service::getCommandRegistry();
+    if (!commandRegistry) {
+        throw std::runtime_error("failed to get command registry");
+    }
 
-                auto* player = static_cast<Player*>(entity);
-                player->kill();
-
-                logger.info("{} killed themselves", player->getRealName());
+    auto command =
+        DynamicCommand::createCommand(commandRegistry, "suicide", "Commits suicide.", CommandPermissionLevel::Any);
+    command->addOverload();
+    command->setCallback(
+        [&logger](DynamicCommand const&, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, DynamicCommand::Result>&) {
+            auto* entity = origin.getEntity();
+            if (entity == nullptr || !entity->isType(ActorType::Player)) {
+                output.error("Only players can commit suicide");
+                return;
             }
-        );
-        DynamicCommand::setup(event.registry(), std::move(command));
-    });
+
+            auto* player = static_cast<Player*>(entity);
+            player->kill();
+
+            logger.info("{} killed themselves", player->getRealName());
+        }
+    );
+    DynamicCommand::setup(commandRegistry, std::move(command));
+
+    // ...
 
     return true;
 }
 
 bool Plugin::disable() {
-    auto& eventBus = ll::event::EventBus::getInstance();
 
-    eventBus.removeListener(mSetupCommandEventListener);
+    // ...
+
+    // Unregister commands.
+    auto commandRegistry = ll::service::getCommandRegistry();
+    if (!commandRegistry) {
+        throw std::runtime_error("failed to get command registry");
+    }
+
+    commandRegistry->unregisterCommand("suicide");
+
+    // ...
 
     return true;
 }
@@ -185,18 +209,16 @@ bool Plugin::disable() {
 auto& logger = mSelf.getLogger();
 ```
 
-接下来，我们获取事件总线的实例并订阅事件。在LeviLamina中，所有事件都在一个事件总线上进行处理的。当新的事件实例被发布后，将会进入总线，依次经过各个订阅该事件的事件监听器，并触发相应的回调。
+接下来，我们获取指令注册表。指令注册表只有在特定时机之后才会生效，因此其类型为`optional_ref<T>`。我们需要判定获取到的指令注册表是否有效。
 
 ```cpp
-auto& eventBus = ll::event::EventBus::getInstance();
-
-mSetupCommandEventListener =
-    eventBus.emplaceListener<ll::event::command::SetupCommandEvent>([&logger](ll::event::command::SetupCommandEvent& event) {
-        // ...
-    });
+auto commandRegistry = ll::service::getCommandRegistry();
+if (!commandRegistry) {
+    throw std::runtime_error("failed to get command registry");
+}
 ```
 
-回调函数捕获了logger，同时有一个传入参数，即`SetupCommandEvent`实例。动态指令系统支持使用`DynamicCommand::createCommand()`函数直接注册指令。
+动态指令系统支持使用`DynamicCommand::createCommand()`函数直接注册指令。
 
 ```cpp
 auto command = DynamicCommand::createCommand(
@@ -282,14 +304,17 @@ DynamicCommand::setup(event.registry(), std::move(command));
 
 在`enable()`函数的末尾，返回一个`true`，代表插件启用成功。如果在`enable()`函数中返回了`false`，则LeviLamina会认为插件启用失败，并在控制台上提示错误信息。
 
-在`disable()`函数中，我们需要在事件总线上移除事件监听器以取消对事件的订阅。
+在`disable()`函数中，我们需要解注册指令：
 
 ```cpp
-eventBus.removeListener(mSetupCommandEventListener);
-```
+// Unregister commands.
+auto commandRegistry = ll::service::getCommandRegistry();
+if (!commandRegistry) {
+    throw std::runtime_error("failed to get command registry");
+}
 
-!!! note
-    你可能有这样的疑问：如果插件多次启用和禁用，那么指令是否会被注册多次呢？我们显然考虑到了这个问题，因此同一个指令在第二次注册时并不会生效。
+commandRegistry->unregisterCommand("suicide");
+```
 
 ## 读取配置文件
 
@@ -413,6 +438,10 @@ Plugin::Plugin(ll::plugin::Plugin& self) : mSelf(self) {
 在`Plugin.h`中，我们增加一个事件监听器指针：
 
 ```cpp
+// ...
+
+#include <ll/api/event/ListenerBase.h>
+
 // ...
 
 class Plugin {
@@ -570,10 +599,10 @@ bool Plugin::enable() {
                     ll::form::ModalForm form(
                         "Warning",
                         "Are you sure you want to kill yourself?",
-                        "No",
                         "Yes",
-                        [&logger](Player& player, bool isCanceled) {
-                            if (!isCanceled) {
+                        "No",
+                        [&logger](Player& player, bool yes) {
+                            if (yes) {
                                 player.kill();
 
                                 logger.info("{} killed themselves", player.getRealName());
@@ -647,25 +676,6 @@ ll::form::ModalForm form(
 
 ```cpp
 form.sendTo(player);
-```
-
-## 构建你的插件
-
-首先需要配置构建：
-
-```shell
-xmake f -m debug
-```
-
-如果你想以其它模式构建，也可以使用`-m release`或`-m releasedbg`。
-
-!!! note
-    对于它们的区别，请参考[自定义规则 - xmake](https://xmake.io/#/zh-cn/manual/custom_rule)。
-
-然后构建：
-
-```shell
-xmake
 ```
 
 ## 运行你的插件

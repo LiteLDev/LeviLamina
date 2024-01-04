@@ -22,7 +22,11 @@ This tutorial covers the following key points:
 - Invoking Minecraft functions
 
 !!! info
-    All source code for this tutorial can be found at [futrime/better-suicide](https://github.com/futrime/better-suicide). If you have [lip](https://docs.lippkg.com) installed, you can also directly run `lip install github.com/tooth-hub/better-suicide` to install the plugin implemented in this tutorial in the LeviLamina instance environment. We recommend reviewing the source code while going through the tutorial.
+    All source code for this tutorial can be found at [futrime/better-suicide](https://github.com/futrime/better-suicide). We recommend that you review the source code while following the tutorial. If you have already installed [lip](https://docs.lippkg.com), you can also directly run the following code to install the plugins implemented in this tutorial in the LeviLamina instance environment.
+
+    ```shell
+    lip install github.com/tooth-hub/better-suicide
+    ```
 
 ## Learn C++
 
@@ -43,7 +47,7 @@ Before developing plugins (or learning C++), you need to set up a development en
 - [Visual Studio 2022](https://visualstudio.microsoft.com/) (When installing Visual Studio 2022, make sure to select C++ Desktop Development)
 
 !!! warning
-    If you have not installed the latest version of Visual Studio 2022, MSVC, and Windows SDK, you may encounter problems in building, loading, and running plugins later on. If you encounter persistent issues that are difficult to resolve, consider this possibility.
+    If you are not using the latest versions of Visual Studio 2022, MSVC, and Windows SDK, you may encounter issues in the subsequent build, load, and run plugin steps. If you encounter problems like `xxx is not a member of std`, please consider this possibility. The tutorial was tested in an environment with Visual Studio Community 2022 version 17.8.1, MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8), and Windows 11 SDK (10.0.22000.0).
 
 !!! tip
     Due to the size of the LeviLamina project, if you are using Visual Studio Code, its built-in Intellisense system may struggle. We recommend installing the clangd plugin and using clangd for code checking, etc. After installing clangd and the corresponding plugin, you need to run the following command to generate `compile_commands.json` and then restart VSCode to make clangd effective.
@@ -52,7 +56,7 @@ Before developing plugins (or learning C++), you need to set up a development en
     xmake project -k compile_commands
     ```
 
-Next, you need to install LeviLamina somewhere. This tutorial is targeted at LeviLamina 0.2.1, and for other versions, some modifications may be required.
+Next, you need to install LeviLamina somewhere. This tutorial is targeted at LeviLamina 0.3.0, and for other versions, some modifications may be required.
 
 ## Create a Plugin Repository
 
@@ -78,6 +82,34 @@ Next, you need to modify the copyright information in the `LICENSE` file. You ca
 
 Then, you need to modify the content in the `README.md` file. This file will be displayed on your plugin repository's homepage, and you can introduce your plugin's features, usage, configuration files, commands, and more.
 
+## Build Your Plugin
+
+Before we begin, let's try building an empty plugin.
+
+First, update the repository:
+
+```shell
+xmake repo -u
+```
+
+Configure the build:
+
+```shell
+xmake f -m debug
+```
+
+!!! tip
+    If you want to build in other modes, you can also use `-m release` or `-m releasedbg`. These two modes will enable the `fastest` optimization level. Among them, `-m release` will disable debugging information, while `-m releasedbg` will enable debugging information, just like `-m debug`. For their specific differences, please refer to [Custom Rules - xmake](https://xmake.io/#/en/manual/custom_rule).
+
+Then build:
+
+```shell
+xmake
+```
+
+!!! failure
+    Build failed? Try upgrading Visual Studio 2022, MSVC, and Windows SDK. Remember to upgrade to the latest versions.
+
 ## Understand the Plugin Structure
 
 Open the `src/` directory, and you will see the following file structure:
@@ -95,27 +127,7 @@ src/
 
 ## Register the `/suicide` Command
 
-In BDS, commands cannot be registered right from the start; they need to be registered after specific program executions. In LeviLamina, to address this issue, we have defined the `SetupCommandEvent`. Plugins can subscribe to this event, and when it is triggered, the plugin can register commands.
-
-In `Plugin.h`, we add an event listener pointer:
-
-```cpp
-// ...
-
-#include <ll/api/event/ListenerBase.h>
-
-class Plugin {
-
-// ...
-
-private:
-    ll::plugin::Plugin& mSelf;
-
-    ll::event::ListenerPtr mSetupCommandEventListener;
-};
-```
-
-In `Plugin.cpp`, we register this event listener in the `enable()` function and unregister it in the `disable()` function. This way, when the plugin is enabled, we can subscribe to this event, and when the plugin is disabled, we can unsubscribe from this event, avoiding the situation where the plugin continues to subscribe to events after being disabled.
+In BDS, commands cannot be registered right from the beginning; instead, they need to be registered after specific program execution. Therefore, you cannot register commands when the plugin is loaded, but only when the plugin is enabled. Generally, it is advisable to unregister commands when the plugin is disabled to prevent undefined behavior.
 
 !!! warning
     Plugins call their constructor when loaded. However, please do not place any game-related operations such as event subscription, command registration, etc., in the constructor, as these operations need to be performed after the game is fully loaded. If you perform these operations in the constructor, your plugin is likely to crash during loading.
@@ -129,9 +141,7 @@ In `Plugin.cpp`, we register this event listener in the `enable()` function and 
 #include <utility>
 
 #include <ll/api/command/DynamicCommand.h>
-#include <ll/api/event/EventBus.h>
-#include <ll/api/event/ListenerBase.h>
-#include <ll/api/event/command/SetupCommandEvent.h>
+#include <ll/api/service/Bedrock.h>
 #include <mc/entity/utilities/ActorType.h>
 #include <mc/server/commands/CommandOrigin.h>
 #include <mc/server/commands/CommandOutput.h>
@@ -141,39 +151,51 @@ In `Plugin.cpp`, we register this event listener in the `enable()` function and 
 bool Plugin::enable() {
     auto& logger = mSelf.getLogger();
 
-    // Subscribe to events.
-    auto& eventBus = ll::event::EventBus::getInstance();
+    // ...
 
-    mSetupCommandEventListener = eventBus.emplaceListener<
-        ll::event::command::SetupCommandEvent>([&logger](ll::event::command::SetupCommandEvent& event) {
-        // Setup suicide command.
-        auto command =
-            DynamicCommand::createCommand(event.registry(), "suicide", "Commits suicide.", CommandPermissionLevel::Any);
-        command->addOverload();
-        command->setCallback(
-            [&logger](DynamicCommand const&, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, DynamicCommand::Result>&) {
-                auto* entity = origin.getEntity();
-                if (entity == nullptr || !entity->isType(ActorType::Player)) {
-                    output.error("Only players can commit suicide");
-                    return;
-                }
+    // Register commands.
+    auto commandRegistry = ll::service::getCommandRegistry();
+    if (!commandRegistry) {
+        throw std::runtime_error("failed to get command registry");
+    }
 
-                auto* player = static_cast<Player*>(entity);
-                player->kill();
-
-                logger.info("{} killed themselves", player->getRealName());
+    auto command =
+        DynamicCommand::createCommand(commandRegistry, "suicide", "Commits suicide.", CommandPermissionLevel::Any);
+    command->addOverload();
+    command->setCallback(
+        [&logger](DynamicCommand const&, CommandOrigin const& origin, CommandOutput& output, std::unordered_map<std::string, DynamicCommand::Result>&) {
+            auto* entity = origin.getEntity();
+            if (entity == nullptr || !entity->isType(ActorType::Player)) {
+                output.error("Only players can commit suicide");
+                return;
             }
-        );
-        DynamicCommand::setup(event.registry(), std::move(command));
-    });
+
+            auto* player = static_cast<Player*>(entity);
+            player->kill();
+
+            logger.info("{} killed themselves", player->getRealName());
+        }
+    );
+    DynamicCommand::setup(commandRegistry, std::move(command));
+
+    // ...
 
     return true;
 }
 
 bool Plugin::disable() {
-    auto& eventBus = ll::event::EventBus::getInstance();
 
-    eventBus.removeListener(mSetupCommandEventListener);
+    // ...
+
+    // Unregister commands.
+    auto commandRegistry = ll::service::getCommandRegistry();
+    if (!commandRegistry) {
+        throw std::runtime_error("failed to get command registry");
+    }
+
+    commandRegistry->unregisterCommand("suicide");
+
+    // ...
 
     return true;
 }
@@ -185,18 +207,16 @@ Let's break down this code. The following statement retrieves a logger from the 
 auto& logger = mSelf.getLogger();
 ```
 
-Next, we obtain the instance of the event bus and subscribe to the event. In LeviLamina, all events are processed on a single event bus. When a new event instance is published, it enters the bus, passes through all event listeners subscribed to that event, and triggers the corresponding callbacks.
+Next, we obtain the command registry. The command registry only takes effect after a specific event, so its type is `optional_ref<T>`. We need to determine whether the obtained command registry is valid.
 
 ```cpp
-auto& eventBus = ll::event::EventBus::getInstance();
-
-mSetupCommandEventListener =
-    eventBus.emplaceListener<ll::event::command::SetupCommandEvent>([&logger](ll::event::command::SetupCommandEvent& event) {
-        // ...
-    });
+auto commandRegistry = ll::service::getCommandRegistry();
+if (!commandRegistry) {
+    throw std::runtime_error("failed to get command registry");
+}
 ```
 
-The callback function captures the logger and takes an incoming parameter, the `SetupCommandEvent` instance. The dynamic command system supports registering commands directly using the `DynamicCommand::createCommand()` function.
+The dynamic command system supports registering commands directly using the `DynamicCommand::createCommand()` function.
 
 ```cpp
 auto command = DynamicCommand::createCommand(
@@ -284,14 +304,17 @@ DynamicCommand::setup(event.registry(), std::move(command));
 
 At the end of the `enable()` function, return `true`, indicating that the plugin was enabled successfully. If `false` is returned in the `enable()` function, LeviLamina will consider the plugin to have failed to enable and display an error message on the console.
 
-In the `disable()` function, we need to remove the event listener from the event bus to unsubscribe from the event.
+In the `disable()` function, we need to unregister the command.
 
 ```cpp
-eventBus.removeListener(mSetupCommandEventListener);
-```
+// Unregister commands.
+auto commandRegistry = ll::service::getCommandRegistry();
+if (!commandRegistry) {
+    throw std::runtime_error("failed to get command registry");
+}
 
-!!! note
-    You may have the following question: If a plugin is enabled and disabled multiple times, will the command be registered multiple times? We have considered this issue, and the same command will not be effective on the second registration.
+commandRegistry->unregisterCommand("suicide");
+```
 
 ## Reading Configuration File
 
@@ -574,10 +597,10 @@ bool Plugin::enable() {
                     ll::form::ModalForm form(
                         "Warning",
                         "Are you sure you want to kill yourself?",
-                        "No",
                         "Yes",
-                        [&logger](Player& player, bool isCanceled) {
-                            if (!isCanceled) {
+                        "No",
+                        [&logger](Player& player, bool yes) {
+                            if (yes) {
                                 player.kill();
 
                                 logger.info("{} killed themselves", player.getRealName());
@@ -658,25 +681,6 @@ Finally, we send the form to the player.
 
 ```cpp
 form.sendTo(player);
-```
-
-## Build Your Plugin
-
-First, you need to configure the build:
-
-```shell
-xmake f -m debug
-```
-
-If you want to build in other modes, you can also use `-m release` or `-m releasedbg`.
-
-!!! note
-    For the differences between them, refer to [Custom Rules - xmake](https://xmake.io/#/manual/custom_rule).
-
-Then build:
-
-```shell
-xmake
 ```
 
 ## Run Your Plugin
