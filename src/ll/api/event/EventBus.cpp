@@ -11,8 +11,6 @@
 #include "ll/api/thread/SharedRecursiveMutex.h"
 #include "ll/core/LeviLamina.h"
 
-// #include "ll/api/utils/StacktraceUtils.h"
-
 namespace ll::event {
 
 std::atomic_ullong ListenerBase::listenerId{0};
@@ -32,7 +30,6 @@ public:
 
     void publish(Event& event) {
         std::shared_lock lock(mutex);
-        // static stacktrace_utils::SymbolLoader a{};
         for (auto& l : listeners) {
             try {
                 l->call(event);
@@ -47,7 +44,6 @@ public:
                     );
                 } catch (...) {}
                 error_info::printCurrentException();
-                // logger.error("\n{}", stacktrace_utils::toString(error_info::stacktraceFromCurrExc()));
             }
         }
     }
