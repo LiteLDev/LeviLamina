@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include <mc/world/ActorUniqueID.h>
+#include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/IFeature.h"
