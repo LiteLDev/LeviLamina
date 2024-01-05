@@ -19,7 +19,7 @@ public:
     SymbolLoader& operator=(SymbolLoader const&) = delete;
 
     LLAPI SymbolLoader();
-    LLAPI SymbolLoader(std::string const&);
+    LLAPI SymbolLoader(std::string_view);
     LLAPI ~SymbolLoader();
 };
 

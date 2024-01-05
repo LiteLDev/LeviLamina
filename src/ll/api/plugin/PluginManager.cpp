@@ -41,7 +41,7 @@ bool PluginManager::disable(std::string_view name) {
 }
 
 
-[[nodiscard]] std::string const& PluginManager::getType() const { return impl->type; }
+[[nodiscard]] std::string_view PluginManager::getType() const { return impl->type; }
 
 [[nodiscard]] bool PluginManager::hasPlugin(std::string_view name) {
     auto l(lock());

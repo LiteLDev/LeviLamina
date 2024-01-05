@@ -133,7 +133,7 @@ public:
     }
 };
 
-LLNDAPI std::chrono::system_clock::time_point parseTime(std::string const&);
+LLNDAPI std::chrono::system_clock::time_point parseTime(std::string_view);
 
 template <class Clock>
 class DelayTask : public Task<Clock> {
@@ -160,7 +160,7 @@ public:
     : DelayTask<Clock>(Clock::now() + std::chrono::duration_cast<duration>(dur), std::move(fn)) {}
 
     DelayTask(
-        std::string const&            timestr,
+        std::string_view              timestr,
         std::function<void()>         fn,
         std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
     )

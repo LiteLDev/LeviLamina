@@ -178,7 +178,7 @@ SymbolLoader::SymbolLoader() : handle(GetCurrentProcess()) {
     options       |= SYMOPT_LOAD_LINES | SYMOPT_EXACT_SYMBOLS;
     SymSetOptions(options);
 }
-SymbolLoader::SymbolLoader(std::string const& extra) : handle(GetCurrentProcess()) {
+SymbolLoader::SymbolLoader(std::string_view extra) : handle(GetCurrentProcess()) {
     if (count > 0) {
         return;
     }

@@ -37,7 +37,7 @@ protected:
     virtual bool disable(std::string_view name);
 
 public:
-    LLNDAPI std::string const& getType() const;
+    LLNDAPI std::string_view getType() const;
 
     LLNDAPI bool hasPlugin(std::string_view name);
 

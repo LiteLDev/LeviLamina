@@ -64,7 +64,7 @@ public:
     [[nodiscard]] EventId factoryId(EventId) const override { return event::getEventId<event_type>; }
 
     static std::shared_ptr<Listener>
-    create(std::string const& path, callback_fn const& fn, EventPriority priority = EventPriority::Normal) {
+    create(std::filesystem::path const& path, callback_fn const& fn, EventPriority priority = EventPriority::Normal) {
         return std::make_shared<Listener>(path, fn, priority);
     }
 

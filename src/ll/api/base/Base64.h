@@ -1,6 +1,6 @@
 #pragma once
 
-#include <string>
+#include <string_view>
 
 #include "ll/api/base/StdInt.h"
 
@@ -23,9 +23,9 @@ constexpr uchar decodeLookup(uchar c) {
 
 constexpr size_t getEncodeLength(size_t len) { return (len + 2 - ((len + 2) % 3)) / 3 * 4; }
 
-constexpr size_t getEncodeLength(std::string const& str) { return getEncodeLength(str.length()); }
+constexpr size_t getEncodeLength(std::string_view str) { return getEncodeLength(str.length()); }
 
-constexpr size_t getDecodeLength(std::string const& in) {
+constexpr size_t getDecodeLength(std::string_view in) {
     uchar  count      = 0;
     size_t input_size = in.size();
     for (auto it = in.rbegin(); *it == '='; ++it) {
@@ -40,14 +40,14 @@ constexpr size_t getDecodeLength(std::string const& in) {
     return ((6 * input_size) / 8) - count;
 }
 
-constexpr std::string encode(std::string const& text_input) {
+constexpr std::string encode(std::string_view str) {
     std::string result;
-    result.reserve(getEncodeLength(text_input));
+    result.reserve(getEncodeLength(str));
 
     int32_t i = 0;
     int32_t j = -6;
 
-    for (auto& c : text_input) {
+    for (auto& c : str) {
         i  = (i << 8) + static_cast<uint8_t>(c);
         j += 8;
         while (j >= 0) {
@@ -68,16 +68,16 @@ constexpr std::string encode(std::string const& text_input) {
     return result;
 }
 
-constexpr std::string decode(std::string const& base64_input) {
-    size_t      input_size  = base64_input.size();
-    size_t      output_size = getDecodeLength(base64_input);
+constexpr std::string decode(std::string_view str) {
+    size_t      input_size  = str.size();
+    size_t      output_size = getDecodeLength(str);
     std::string out;
     out.resize(output_size);
     for (size_t i = 0, j = 0; i < input_size;) {
-        uint32_t c1 = (i > input_size || base64_input[i] == '=') ? 0 & i++ : detail::decodeLookup(base64_input[i++]);
-        uint32_t c2 = (i > input_size || base64_input[i] == '=') ? 0 & i++ : detail::decodeLookup(base64_input[i++]);
-        uint32_t c3 = (i > input_size || base64_input[i] == '=') ? 0 & i++ : detail::decodeLookup(base64_input[i++]);
-        uint32_t c4 = (i > input_size || base64_input[i] == '=') ? 0 & i++ : detail::decodeLookup(base64_input[i++]);
+        uint32_t c1 = (i > input_size || str[i] == '=') ? 0 & i++ : detail::decodeLookup(str[i++]);
+        uint32_t c2 = (i > input_size || str[i] == '=') ? 0 & i++ : detail::decodeLookup(str[i++]);
+        uint32_t c3 = (i > input_size || str[i] == '=') ? 0 & i++ : detail::decodeLookup(str[i++]);
+        uint32_t c4 = (i > input_size || str[i] == '=') ? 0 & i++ : detail::decodeLookup(str[i++]);
 
         uint32_t data = (c1 << 3 * 6) + (c2 << 2 * 6) + (c3 << 1 * 6) + (c4 << 0 * 6);
 

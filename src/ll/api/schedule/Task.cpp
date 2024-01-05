@@ -1,4 +1,7 @@
 #include "ll/api/schedule/Task.h"
+
+#include <spanstream>
+
 #include "ll/api/Logger.h"
 #include "ll/api/base/ErrorInfo.h"
 
@@ -6,18 +9,17 @@ namespace ll::schedule {
 inline namespace task {
 std::atomic_ullong taskId{0};
 
-std::optional<time_t> tryParseTime(std::string const& expression, std::string_view format) {
-    std::stringstream ss(expression);
-    auto              time_now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-    std::tm           tm{};
+std::optional<time_t> tryParseTime(std::string_view expression, std::string_view format) {
+    std::tm tm{};
+    auto    time_now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     localtime_s(&tm, &time_now);
-    if (ss >> std::get_time(&tm, format.data())) {
+    if (std::ispanstream{expression} >> std::get_time(&tm, format.data())) {
         return std::mktime(&tm);
     }
     return std::nullopt;
 }
 
-std::chrono::system_clock::time_point parseTime(std::string const& expression) {
+std::chrono::system_clock::time_point parseTime(std::string_view expression) {
 
     if (auto res = tryParseTime(expression, "%H:%M:%S"); res) {
         auto time = std::chrono::system_clock::from_time_t(*res);
