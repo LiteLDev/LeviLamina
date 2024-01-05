@@ -40,7 +40,7 @@ constexpr uint64 do_hash3(std::string_view x) {
 
 template <class T>
 constexpr uint64 hashType(T const& v) {
-    return do_hash2({static_cast<char const*>(std::addressof(v)), sizeof(T)});
+    return do_hash2({reinterpret_cast<char const*>(std::addressof(v)), sizeof(T)});
 }
 } // namespace ll::hash
 
