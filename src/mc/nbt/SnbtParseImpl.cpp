@@ -256,19 +256,16 @@ std::optional<std::string> parseString(std::string_view& s) {
         // closing quote
         case '\"': {
             if (starts == '\"') {
-                auto ans = std::string{res.begin(), res.end()};
-
                 if (s.starts_with(" /*BASE64*/")) {
-                    return ll::base64::decode(ans);
+                    return ll::base64::decode(res);
                 }
-
-                return ans;
+                return res;
             }
             res.push_back('\"');
         } break;
         case '\'': {
             if (starts == '\'') {
-                return std::string{res.begin(), res.end()};
+                return res;
             }
             res.push_back('\'');
         } break;
