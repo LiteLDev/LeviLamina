@@ -22,6 +22,10 @@ public:
     Vec3          mLiquidPos;    // this+0x60
     bool          mIndirectHit;  // this+0x6C
 
+    [[nodiscard]] constexpr explicit operator bool() const {
+        return mType == HitResultType::Tile || mType == HitResultType::Entity;
+    }
+
     // NOLINTBEGIN
     // symbol: ??0HitResult@@QEAA@XZ
     MCAPI HitResult();

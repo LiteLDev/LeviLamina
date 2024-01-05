@@ -11,16 +11,16 @@ namespace HitDetection {
 // NOLINTBEGIN
 // symbol: ?searchActors@HitDetection@@YAXAEBVVec3@@M0AEBVAABB@@PEAVActor@@PEAVPlayer@@AEAMAEAPEAV4@AEAV2@_N@Z
 MCAPI void searchActors(
-    class Vec3 const&,
-    float,
-    class Vec3 const&,
-    class AABB const&,
-    class Actor*,
-    class Player*,
-    float&,
-    class Actor*&,
-    class Vec3&,
-    bool
+    Vec3 const& rayDir,
+    float       tMax,
+    Vec3 const& origin,
+    AABB const& srcAabb,
+    Actor*      cameraActor,
+    Player*     player,
+    float&      resultDist,
+    Actor*&     resultActor,
+    Vec3&       hitPoint,
+    bool        isVR = false
 );
 // NOLINTEND
 

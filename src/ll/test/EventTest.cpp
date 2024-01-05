@@ -204,10 +204,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     });
     bus.addListener<PlayerSprintingEvent>(listenersp);
     bus.addListener<PlayerSprintedEvent>(listenersp);
-    bus.emplaceListener<PlayerSneakingEvent>([](PlayerSneakingEvent& ev) {
-        ll::logger.debug("Player {} start sneak", ev.self().getRealName());
-    });
-    auto mul = MultiListener<PlayerSprintingEvent, PlayerSneakingEvent>::create([](auto&& ev) {
+    auto mul = MultiListener<PlayerSneakingEvent, PlayerSneakedEvent>::create([](auto&& ev) {
         ll::logger
             .debug("Player {} MultiListener of {}", ev.self().getRealName(), ll::reflection::type_raw_name_v<decltype(ev)>);
     });

@@ -69,11 +69,23 @@ class HitResult Actor::traceRay(
     Vec3      origin{getHeadPos()};
     Vec3      rayDir{getViewVector()};
     HitResult result{};
-
+    if (includeBlock) {
+        result = getDimensionBlockSource().clip(
+            origin,
+            origin + rayDir * tMax,
+            true,
+            ShapeType::All,
+            ((static_cast<int>(tMax) + 1) * 2),
+            false,
+            false,
+            nullptr,
+            blockCheckFunction
+        );
+        if (result) {
+            tMax = static_cast<float>((origin - result.mPos).length());
+        }
+    }
     if (includeActor) {
-        auto player =
-            hasCategory(ActorCategory::Player) ? static_cast<Player*>(const_cast<Actor*>(this)) : nullptr; // NOLINT
-
         float  resDistance = -1.0f;
         Actor* resActor    = nullptr;
         Vec3   resPos{};
@@ -84,34 +96,13 @@ class HitResult Actor::traceRay(
             origin,
             getAABB(),
             const_cast<Actor*>(this),
-            player,
+            hasCategory(ActorCategory::Player) ? (Player*)(this) : nullptr,
             resDistance,
             resActor,
-            resPos,
-            player != nullptr
+            resPos
         );
-        if (resActor != nullptr) {
+        if (resActor != nullptr && resDistance >= 0 && resDistance <= tMax) {
             result = HitResult{origin, rayDir, *resActor, resPos};
-        }
-    }
-
-    if (includeBlock) {
-        HitResult blockRes{getDimensionBlockSource().clip(
-            origin,
-            origin + rayDir * tMax,
-            true,
-            ShapeType::All,
-            ((static_cast<int>(tMax) + 1) * 2),
-            false,
-            false,
-            nullptr,
-            blockCheckFunction
-        )};
-
-        if (result.mType != HitResultType::Entity
-            || (blockRes.mType == HitResultType::Tile
-                && origin.distanceTo(blockRes.mPos) < origin.distanceTo(result.mPos))) {
-            result = std::move(blockRes);
         }
     }
     return result;
