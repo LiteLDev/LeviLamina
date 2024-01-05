@@ -67,7 +67,11 @@ void checkOtherBdsInstance() {
 
     // Get current process path
     std::wstring currentPath(32767, '\0');
-    GetModuleFileName(nullptr, currentPath.data(), 32767);
+    if (auto res = GetModuleFileName(nullptr, currentPath.data(), 32767); res != 0 && res != 32767) {
+        currentPath.resize(res);
+    } else {
+        return;
+    }
 
     // Get the BDS process paths
     for (auto& pid : pids) {
@@ -75,9 +79,12 @@ void checkOtherBdsInstance() {
         auto handle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ | PROCESS_TERMINATE, false, pid);
         if (handle) {
             // Get the full path of the process
-            std::wstring path;
-            GetModuleFileNameEx(handle, nullptr, path.data(), 32767);
-
+            std::wstring path(32767, '\0');
+            if (auto res = GetModuleFileNameEx(handle, nullptr, path.data(), 32767); res != 0 && res != 32767) {
+                path.resize(res);
+            } else {
+                continue;
+            }
             // Compare the path
             if (path == currentPath) {
                 logger.error("ll.main.checkOtherBdsInstance.detected"_tr);
