@@ -4,7 +4,7 @@
 
 namespace ll::event {
 void Event::serialize(CompoundTag&) const {}
-void Event::serializeWithCancell(CompoundTag& nbt) const { nbt["cancelled"] = mCancelled; }
+void Event::serializeWithCancel(CompoundTag& nbt) const { nbt["cancelled"] = mCancelled; }
 void Event::deserialize(CompoundTag const&) {}
-void Event::deserializeWithCancell(CompoundTag const& nbt) { mCancelled = nbt["cancelled"]; }
+void Event::deserializeWithCancel(CompoundTag const& nbt) { mCancelled = nbt["cancelled"]; }
 } // namespace ll::event

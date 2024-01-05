@@ -21,8 +21,8 @@ private:
 
     bool mCancelled{false};
 
-    LLAPI void serializeWithCancell(CompoundTag&) const;
-    LLAPI void deserializeWithCancell(CompoundTag const&);
+    LLAPI void serializeWithCancel(CompoundTag&) const;
+    LLAPI void deserializeWithCancel(CompoundTag const&);
 
 protected:
     constexpr Event() = default;

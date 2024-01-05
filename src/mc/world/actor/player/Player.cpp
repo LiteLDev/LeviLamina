@@ -105,7 +105,7 @@ LLAPI void Player::setAbility(::AbilitiesIndex index, bool value) {
     UpdateAdventureSettingsPacket{}.sendTo(*this);
 }
 
-bool Player::addAndFresh(class ItemStack& item) {
+bool Player::addAndRefresh(class ItemStack& item) {
     auto rtn = add(item);
     refreshInventory();
     return rtn;

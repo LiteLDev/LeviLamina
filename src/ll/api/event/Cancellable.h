@@ -17,11 +17,11 @@ protected:
 public:
     void serialize(CompoundTag& nbt) const override {
         T::serialize(nbt);
-        Event::serializeWithCancell(nbt);
+        Event::serializeWithCancel(nbt);
     }
     void deserialize(CompoundTag const& nbt) override {
         T::deserialize(nbt);
-        Event::deserializeWithCancell(nbt);
+        Event::deserializeWithCancel(nbt);
     }
 
     [[nodiscard]] constexpr bool isCancelled() { return Event::mCancelled; }
