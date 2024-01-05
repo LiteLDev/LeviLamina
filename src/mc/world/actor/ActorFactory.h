@@ -18,6 +18,9 @@ public:
     ActorFactory(ActorFactory const&);
     ActorFactory();
 
+    using EntityMappingFactory = std::unique_ptr<
+        class Actor>(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1ActorFactory@@UEAA@XZ
@@ -130,7 +133,7 @@ public:
     // symbol:
     // ?registerEntityMapping@ActorFactory@@SAXAEBW4ActorType@@_NAEBQ6A?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@ZV?$optional@H@4@@Z
     MCAPI static void
-    registerEntityMapping(::ActorType const&, bool allowSummon, std::unique_ptr<class Actor> (*const&)(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&) factory, std::optional<int>);
+    registerEntityMapping(::ActorType const&, bool allowSummon, EntityMappingFactory* const& factory, std::optional<int>);
 
     // NOLINTEND
 
