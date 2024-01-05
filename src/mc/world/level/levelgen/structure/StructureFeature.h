@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/threading/SpinLock.h"
+#include "mc/world/level/ChunkPos.h"
+#include "mc/world/level/levelgen/structure/StructureStart.h"
 
 // auto generated inclusion list
 #include "mc/common/TagRegistry.h"
@@ -9,6 +12,19 @@
 #include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
 class StructureFeature {
+public:
+    StructureFeatureType                                          mStructureFeatureType;       // this+8
+    std::unordered_map<ChunkPos, std::unique_ptr<StructureStart>> mCachedStructures;           // this+16
+    std::shared_mutex                                             mCacheMutex;                 // this+80
+    std::unordered_set<ChunkPos>                                  mVisitedPositions;           // this+88
+    SpinLock                                                      mVisitedPositionsMutex;      // this+152
+    unsigned int                                                  mRadius;                     // this+184
+    int                                                           mXScale;                     // this+188
+    int                                                           mZScale;                     // this+192
+    std::mutex                                                    mCreateBlueprintsMutex;      // this+200
+    std::condition_variable                                       mBlueprintWaitVar;           // this+280
+    std::atomic<int>                                              mActiveBlueprintCreateCount; // this+352
+    std::atomic<bool>                                             mBlueprintsFinished;         // this+356
 public:
     // prevent constructor by default
     StructureFeature& operator=(StructureFeature const&);
