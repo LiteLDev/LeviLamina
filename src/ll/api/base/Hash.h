@@ -20,6 +20,17 @@ constexpr uint64 do_hash(std::string_view x) {
 }
 
 constexpr uint64 do_hash2(std::string_view x) {
+    // hash_64_fnv1a
+    uint64           hash  = 0xcbf29ce484222325;
+    constexpr uint64 prime = 0x100000001b3;
+    for (char c : x) {
+        hash  = hash ^ c;
+        hash *= prime;
+    }
+    return hash;
+}
+
+constexpr uint64 do_hash3(std::string_view x) {
     uint64 rval = 5381;
     for (char c : x) {
         rval = ((rval << 5) + rval) + c;
@@ -27,6 +38,10 @@ constexpr uint64 do_hash2(std::string_view x) {
     return rval;
 }
 
+template <class T>
+constexpr uint64 hashType(T const& v) {
+    return do_hash2({static_cast<char const*>(std::addressof(v)), sizeof(T)});
+}
 } // namespace ll::hash
 
 namespace ll::hash_literals {

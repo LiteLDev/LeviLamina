@@ -93,11 +93,14 @@ struct LL_EBO VectorBase : concepts::VectorBaseTag {
         size_t res = 0;
         forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             if constexpr (std::is_integral_v<axis_type>) {
-                hashCombine(static_cast<T const*>(this)->template get<axis_type>(iter), res);
+                hash::hashCombine(hash::hashType(static_cast<T const*>(this)->template get<axis_type>(iter)), res);
             } else if constexpr (has_hash<axis_type>::value) {
-                hashCombine(static_cast<T const*>(this)->template get<axis_type>(iter).hash(), res);
+                hash::hashCombine(static_cast<T const*>(this)->template get<axis_type>(iter).hash(), res);
             } else {
-                hashCombine(std::hash<axis_type>()(static_cast<T const*>(this)->template get<axis_type>(iter)), res);
+                hash::hashCombine(
+                    std::hash<axis_type>()(static_cast<T const*>(this)->template get<axis_type>(iter)),
+                    res
+                );
             }
         });
         return res;
