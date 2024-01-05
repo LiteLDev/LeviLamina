@@ -23,19 +23,19 @@ public:
     virtual ~StorageItemComponent() = default;
 
     // symbol: ?calculateAddableCount@StorageItemComponent@@QEBAIAEBVItemStack@@AEBVItemStackBase@@@Z
-    MCAPI uint calculateAddableCount(class ItemStack const&, class ItemStackBase const&) const;
+    MCAPI uint calculateAddableCount(class ItemStack const& itemStack, class ItemStackBase const&) const;
 
     // symbol: ?tryAddItemStack@StorageItemComponent@@QEBA_NAEAVItemStack@@0@Z
-    MCAPI bool tryAddItemStack(class ItemStack&, class ItemStack&) const;
+    MCAPI bool tryAddItemStack(class ItemStack& itemStack, class ItemStack&) const;
 
     // symbol: ?tryGenerateUserData@StorageItemComponent@@QEBAXAEAVItemStack@@@Z
-    MCAPI void tryGenerateUserData(class ItemStack&) const;
+    MCAPI void tryGenerateUserData(class ItemStack& itemStack) const;
 
     // symbol: ?tryRemoveItemStack@StorageItemComponent@@QEBA?AVItemStack@@AEAV2@@Z
-    MCAPI class ItemStack tryRemoveItemStack(class ItemStack&) const;
+    MCAPI class ItemStack tryRemoveItemStack(class ItemStack& itemStack) const;
 
     // symbol: ?tryRemoveOneFromItemStack@StorageItemComponent@@QEBA?AVItemStack@@AEAV2@@Z
-    MCAPI class ItemStack tryRemoveOneFromItemStack(class ItemStack&) const;
+    MCAPI class ItemStack tryRemoveOneFromItemStack(class ItemStack& itemStack) const;
 
     // symbol: ?getIdentifier@StorageItemComponent@@SAAEBVHashedString@@XZ
     MCAPI static class HashedString const& getIdentifier();
@@ -48,19 +48,20 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_calculateAddableCountForBasicStorage@StorageItemComponent@@AEBAIAEBVItemStack@@AEBVItemStackBase@@@Z
-    MCAPI uint _calculateAddableCountForBasicStorage(class ItemStack const&, class ItemStackBase const&) const;
+    MCAPI uint
+    _calculateAddableCountForBasicStorage(class ItemStack const& itemStack, class ItemStackBase const&) const;
 
     // symbol: ?_getItemListSize@StorageItemComponent@@AEBAIAEAVItemStack@@@Z
-    MCAPI uint _getItemListSize(class ItemStack&) const;
+    MCAPI uint _getItemListSize(class ItemStack& itemStack) const;
 
     // symbol: ?_getPerItemCost@StorageItemComponent@@AEBAIAEBVItemStack@@AEBVItemStackBase@@@Z
     MCAPI uint _getPerItemCost(class ItemStack const&, class ItemStackBase const&) const;
 
     // symbol: ?_storeItemInNewOrExistingSlot@StorageItemComponent@@AEBAXAEAVItemStack@@0I@Z
-    MCAPI void _storeItemInNewOrExistingSlot(class ItemStack&, class ItemStack&, uint) const;
+    MCAPI void _storeItemInNewOrExistingSlot(class ItemStack& itemStack, class ItemStack&, uint) const;
 
     // symbol: ?_updateRemainingWeight@StorageItemComponent@@AEBAXAEAVItemStack@@AEBV2@H@Z
-    MCAPI void _updateRemainingWeight(class ItemStack&, class ItemStack const&, int) const;
+    MCAPI void _updateRemainingWeight(class ItemStack& itemStack, class ItemStack const&, int count) const;
 
     // NOLINTEND
 };

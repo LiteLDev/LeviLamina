@@ -63,7 +63,7 @@ public:
     virtual void __unk_vfn_58();
 
     // vIndex: 59, symbol: ?getColor@BalloonItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
-    virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
+    virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const& instance) const;
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -87,10 +87,10 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@BalloonItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor&, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;
 
     // symbol: ??0BalloonItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BalloonItem(std::string const& name, int id);
+    MCAPI BalloonItem(std::string const& name, int);
 
     // NOLINTEND
 };

@@ -33,13 +33,16 @@ public:
 
     // symbol:
     // ?serializeComponentDefinitions@EntityComponentFactoryCereal@@QEBAXAEAVDefinitionInstanceGroup@@AEBV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@AEBVSemVersion@@@Z
-    MCAPI void
-    serializeComponentDefinitions(class DefinitionInstanceGroup&, rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&, class SemVersion const&)
-        const;
+    MCAPI void serializeComponentDefinitions(
+        class DefinitionInstanceGroup& outputDefinitions,
+        rapidjson::GenericValue<rapidjson::UTF8<char>, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>> const&
+                                input,
+        class SemVersion const& engineVersion
+    ) const;
 
     // symbol:
     // ?tryGetDefinitionSerializer@EntityComponentFactoryCereal@@QEBAPEAVICerealDefinitionSerializer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class ICerealDefinitionSerializer* tryGetDefinitionSerializer(std::string const&) const;
+    MCAPI class ICerealDefinitionSerializer* tryGetDefinitionSerializer(std::string const& name) const;
 
     // NOLINTEND
 };

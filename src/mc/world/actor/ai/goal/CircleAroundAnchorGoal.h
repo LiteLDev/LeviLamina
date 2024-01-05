@@ -35,7 +35,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0CircleAroundAnchorGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit CircleAroundAnchorGoal(class Mob&);
+    MCAPI explicit CircleAroundAnchorGoal(class Mob& mob);
 
     // NOLINTEND
 

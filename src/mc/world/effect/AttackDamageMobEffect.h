@@ -22,7 +22,7 @@ public:
 
     // symbol: ??0AttackDamageMobEffect@@QEAA@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
     MCAPI AttackDamageMobEffect(
-        int                id,
+        int,
         std::string const& resourceName,
         std::string const& locName,
         bool               isHarmful,
@@ -31,10 +31,10 @@ public:
     );
 
     // symbol: ?getDamageAfterDamageBoost@AttackDamageMobEffect@@SAMMH@Z
-    MCAPI static float getDamageAfterDamageBoost(float, int);
+    MCAPI static float getDamageAfterDamageBoost(float, int count);
 
     // symbol: ?getDamageAfterWeakness@AttackDamageMobEffect@@SAMMH@Z
-    MCAPI static float getDamageAfterWeakness(float, int);
+    MCAPI static float getDamageAfterWeakness(float, int count);
 
     // NOLINTEND
 };

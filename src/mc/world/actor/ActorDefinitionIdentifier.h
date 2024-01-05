@@ -105,7 +105,7 @@ public:
 
     // symbol:
     // ?_extractIdentifier@ActorDefinitionIdentifier@@CAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAU1@@Z
-    MCAPI static void _extractIdentifier(std::string const& name, struct ActorDefinitionIdentifier& id);
+    MCAPI static void _extractIdentifier(std::string const& name, struct ActorDefinitionIdentifier&);
 
     // NOLINTEND
 };

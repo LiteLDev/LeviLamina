@@ -133,14 +133,14 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 167, symbol: ?entityInside@LiquidBlockDynamic@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-    virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
+    virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor& entity) const;
 
     // symbol:
     // ??0LiquidBlockDynamic@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LiquidBlockDynamic(std::string const& nameId, int id, class Material const& material);
+    MCAPI LiquidBlockDynamic(std::string const& nameId, int, class Material const& material);
 
     // symbol: ?getSpread@LiquidBlockDynamic@@QEBA?AV?$array@_N$03@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI std::array<bool, 4> getSpread(class BlockSource&, class BlockPos const&) const;
+    MCAPI std::array<bool, 4> getSpread(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?shouldBecomeStatic@LiquidBlockDynamic@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     MCAPI bool shouldBecomeStatic(class BlockSource& region, class BlockPos const& pos, class Random& random) const;

@@ -34,7 +34,7 @@ public:
 
     // symbol:
     // ?copyTo@ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEBAXAEAUChatEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI void copyTo(struct ChatEvent&, class Scripting::WeakLifetimeScope const&) const;
+    MCAPI void copyTo(struct ChatEvent&, class Scripting::WeakLifetimeScope const& scope) const;
 
     // symbol: ??4ScriptChatSendAfterEvent@ScriptModuleMinecraft@@QEAAAEAU01@$$QEAU01@@Z
     MCAPI struct ScriptModuleMinecraft::ScriptChatSendAfterEvent&

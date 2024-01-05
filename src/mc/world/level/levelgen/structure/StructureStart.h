@@ -15,7 +15,7 @@ public:
     virtual ~StructureStart();
 
     // vIndex: 1, symbol: ?postProcess@StructureStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual bool postProcess(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // vIndex: 2, symbol: ?isValid@StructureStart@@UEBA_NXZ
     virtual bool isValid() const;
@@ -28,13 +28,13 @@ public:
     MCAPI void calculateBoundingBox();
 
     // symbol: ?moveBoundingBoxes@StructureStart@@IEAAXH@Z
-    MCAPI void moveBoundingBoxes(int);
+    MCAPI void moveBoundingBoxes(int yOffset);
 
     // symbol: ?moveInsideHeights@StructureStart@@IEAAXAEAVRandom@@FF@Z
-    MCAPI void moveInsideHeights(class Random&, short, short);
+    MCAPI void moveInsideHeights(class Random& random, short lowestAllowed, short highestAllowed);
 
     // symbol: ?moveToBelowSeaLevel@StructureStart@@IEAAXFFAEAVRandom@@H@Z
-    MCAPI void moveToBelowSeaLevel(short, short, class Random&, int);
+    MCAPI void moveToBelowSeaLevel(short seaLevel, short, class Random& random, int offset);
 
     // NOLINTEND
 };

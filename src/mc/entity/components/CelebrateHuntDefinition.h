@@ -23,7 +23,7 @@ public:
     // ?buildSchema@CelebrateHuntDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VCelebrateHuntDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CelebrateHuntDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CelebrateHuntDefinition>>& root);
 
     // NOLINTEND
 };

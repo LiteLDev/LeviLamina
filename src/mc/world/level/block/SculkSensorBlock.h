@@ -34,14 +34,14 @@ public:
     // vIndex: 19, symbol:
     // ?liquidCanFlowIntoFromDirection@SculkSensorBlock@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z
     virtual bool
-    liquidCanFlowIntoFromDirection(uchar, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
+    liquidCanFlowIntoFromDirection(uchar flowIntoFacing, std::function<class Block const&(class BlockPos const&)> const&, class BlockPos const&)
         const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@SculkSensorBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -114,7 +114,7 @@ public:
     virtual void __unk_vfn_67();
 
     // vIndex: 71, symbol: ?setupRedstoneComponent@SculkSensorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
+    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
@@ -129,7 +129,8 @@ public:
     virtual void __unk_vfn_111();
 
     // vIndex: 112, symbol: ?getComparatorSignal@SculkSensorBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uchar) const;
+    virtual int
+    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar) const;
 
     // vIndex: 114, symbol: __unk_vfn_114
     virtual void __unk_vfn_114();
@@ -142,22 +143,22 @@ public:
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // vIndex: 137, symbol: ?getLightEmission@SculkSensorBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
-    virtual struct Brightness getLightEmission(class Block const&) const;
+    virtual struct Brightness getLightEmission(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
 
     // vIndex: 146, symbol: ?onStandOn@SculkSensorBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
-    virtual void onStandOn(class EntityContext&, class BlockPos const&) const;
+    virtual void onStandOn(class EntityContext& entityContext, class BlockPos const& pos) const;
 
     // vIndex: 147, symbol: ?onPlace@SculkSensorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@SculkSensorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -166,7 +167,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 161, symbol: ?getEmissiveBrightness@SculkSensorBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
-    virtual struct Brightness getEmissiveBrightness(class Block const&) const;
+    virtual struct Brightness getEmissiveBrightness(class Block const& block) const;
 
     // vIndex: 164, symbol: ?getResourceItem@SculkSensorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
@@ -184,17 +185,17 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 
     // symbol: ??0SculkSensorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SculkSensorBlock(std::string const&, int);
+    MCAPI SculkSensorBlock(std::string const& nameId, int);
 
     // symbol:
     // ??0SculkSensorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4BlockActorType@@H@Z
-    MCAPI SculkSensorBlock(std::string const&, int, ::BlockActorType, int);
+    MCAPI SculkSensorBlock(std::string const& nameId, int, ::BlockActorType type, int);
 
     // symbol: ?isActive@SculkSensorBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool isActive(class BlockSource&, class BlockPos const&);
+    MCAPI static bool isActive(class BlockSource& region, class BlockPos const& pos);
 
     // symbol: ?isOnCooldown@SculkSensorBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool isOnCooldown(class BlockSource&, class BlockPos const&);
+    MCAPI static bool isOnCooldown(class BlockSource& region, class BlockPos const& pos);
 
     // symbol: ?setActivePhase@SculkSensorBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@HH@Z
     MCAPI static void setActivePhase(class BlockSource&, class BlockPos const&, class Actor*, int, int);

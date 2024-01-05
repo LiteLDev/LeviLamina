@@ -141,17 +141,16 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@MobSpawnerBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@MobSpawnerBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol: ?isInteractiveBlock@MobSpawnerBlock@@UEBA_NXZ
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0MobSpawnerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MobSpawnerBlock(std::string const& nameId, int id);
+    MCAPI MobSpawnerBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

@@ -31,7 +31,7 @@ public:
 
     // symbol:
     // ?getVolumeInstances@VolumeEntityManager@@QEBAAEBV?$vector@V?$OwnerPtrT@UEntityRefTraits@@@@V?$allocator@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const& getVolumeInstances(DimensionType) const;
+    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const& getVolumeInstances(DimensionType dimension) const;
 
     // symbol:
     // ?registerComponentNetRelevancy@VolumeEntityManager@@SAXAEAVComponentNetRelevancyRegistry@@AEBUReflectionCtx@cereal@@@Z
@@ -50,7 +50,8 @@ public:
 
     // symbol:
     // ?_createVolumeEntity@VolumeEntityManager@@IEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBVDefinitionInstanceGroup@@@Z
-    MCAPI class OwnerPtrT<struct EntityRefTraits> _createVolumeEntity(class DefinitionInstanceGroup const&);
+    MCAPI class OwnerPtrT<struct EntityRefTraits>
+    _createVolumeEntity(class DefinitionInstanceGroup const& definitionGroup);
 
     // NOLINTEND
 };

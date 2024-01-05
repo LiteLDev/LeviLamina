@@ -11,7 +11,7 @@ MCAPI extern uchar const LowTierRadiusThreshold;
 MCAPI extern std::optional<float> ServerBuildRatioOverride;
 
 // symbol: ?getMaxChunkBuildRadius@ClientSideChunkGeneration@@YAEAEBVPlayer@@@Z
-MCAPI uchar getMaxChunkBuildRadius(class Player const&);
+MCAPI uchar getMaxChunkBuildRadius(class Player const& player);
 
 // symbol: ?getOptimalServerChunkBuildRadiusRatio@ClientSideChunkGeneration@@YAMEE@Z
 MCAPI float getOptimalServerChunkBuildRadiusRatio(uchar, uchar);

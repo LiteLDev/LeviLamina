@@ -61,7 +61,7 @@ public:
     virtual int _getContainerOffset() const;
 
     // vIndex: 24, symbol: ?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z
-    virtual void _onItemChanged(int slot, class ItemStack const& oldItem, class ItemStack const& newItem);
+    virtual void _onItemChanged(int, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // symbol: ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@UActorUniqueID@@W4ContainerCategory@@@Z
     MCAPI LevelContainerModel(
@@ -84,10 +84,11 @@ public:
     );
 
     // symbol: ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@AEBUActorUniqueID@@@Z
-    MCAPI static class Container* getContainerHelper(class Player&, struct ActorUniqueID const&);
+    MCAPI static class Container* getContainerHelper(class Player& player, struct ActorUniqueID const& actorUniqueId);
 
     // symbol: ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@W4BlockActorType@@AEBVBlockPos@@@Z
-    MCAPI static class Container* getContainerHelper(class Player&, ::BlockActorType, class BlockPos const&);
+    MCAPI static class Container*
+    getContainerHelper(class Player& player, ::BlockActorType blockActorType, class BlockPos const& blockPos);
 
     // NOLINTEND
 
@@ -97,7 +98,7 @@ public:
     MCAPI class Actor* _getEntity() const;
 
     // symbol: ?_refreshSlot@LevelContainerModel@@AEAAXH@Z
-    MCAPI void _refreshSlot(int slot);
+    MCAPI void _refreshSlot(int);
 
     // NOLINTEND
 };

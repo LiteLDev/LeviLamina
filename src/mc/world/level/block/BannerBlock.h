@@ -121,7 +121,7 @@ public:
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 96, symbol: ?asItemInstance@BannerBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const* blockActor) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -151,7 +151,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@BannerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -164,10 +164,10 @@ public:
 
     // vIndex: 168, symbol: ?getEntityResourceItem@BannerBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
     virtual class ItemInstance
-    getEntityResourceItem(class Randomize& random, class BlockActor const& blockEntity, int bonusLootLevel) const;
+    getEntityResourceItem(class Randomize& randomize, class BlockActor const& blockEntity, int bonusLootLevel) const;
 
     // symbol: ??0BannerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI BannerBlock(std::string const& nameId, int id, bool onGround);
+    MCAPI BannerBlock(std::string const& nameId, int, bool onGround);
 
     // symbol: ?EAST_AABB@BannerBlock@@2VAABB@@A
     MCAPI static class AABB EAST_AABB;
@@ -190,7 +190,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_itemInstanceFromBlockEntity@BannerBlock@@AEBA?AVItemInstance@@V?$not_null@PEBVBannerBlockActor@@@gsl@@@Z
-    MCAPI class ItemInstance _itemInstanceFromBlockEntity(gsl::not_null<class BannerBlockActor const*>) const;
+    MCAPI class ItemInstance _itemInstanceFromBlockEntity(gsl::not_null<class BannerBlockActor const*> banner) const;
 
     // NOLINTEND
 };

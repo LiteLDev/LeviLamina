@@ -27,10 +27,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addCursorsWithOffset@ScriptSculkSpreader@ScriptModuleGameTest@@QEAAXAEBVVec3@@H@Z
-    MCAPI void addCursorsWithOffset(class Vec3 const&, int);
+    MCAPI void addCursorsWithOffset(class Vec3 const& offset, int charge);
 
     // symbol: ?getCursorPosition@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@VVec3@@$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<class Vec3> getCursorPosition(int) const;
+    MCAPI class Scripting::Result<class Vec3> getCursorPosition(int index) const;
 
     // symbol: ?getMaxCharge@ScriptSculkSpreader@ScriptModuleGameTest@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getMaxCharge() const;
@@ -52,7 +52,7 @@ public:
     // ?getHandle@ScriptSculkSpreader@ScriptModuleGameTest@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptSculkSpreader@ScriptModuleGameTest@@@Scripting@@@std@@AEAVBlockSource@@AEBVBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI static std::optional<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptSculkSpreader>>
-    getHandle(class BlockSource&, class BlockPos const&, class Scripting::WeakLifetimeScope const&);
+    getHandle(class BlockSource& region, class BlockPos const& pos, class Scripting::WeakLifetimeScope const& scope);
 
     // NOLINTEND
 };

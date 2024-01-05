@@ -82,7 +82,11 @@ public:
     virtual void __unk_vfn_168();
 
     // symbol: ??0PolarBear@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI PolarBear(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI PolarBear(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getStandingAnimationScale@PolarBear@@QEAAMM@Z
     MCAPI float getStandingAnimationScale(float a);

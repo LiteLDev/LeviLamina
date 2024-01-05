@@ -33,7 +33,7 @@ public:
     );
 
     // vIndex: 4, symbol: ?postProcess@MineshaftRoom@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual bool postProcess(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(class BlockSource& region, class Random&, class BoundingBox const& chunkBB);
 
     // symbol: ??0MineshaftRoom@@QEAA@AEAUMineshaftData@@HAEAVRandom@@HH@Z
     MCAPI MineshaftRoom(struct MineshaftData& metadata, int genDepth, class Random& random, int west, int north);

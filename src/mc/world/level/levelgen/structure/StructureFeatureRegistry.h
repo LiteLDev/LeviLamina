@@ -22,13 +22,13 @@ public:
     findNearestStructureFeature(class Dimension&, class IPreliminarySurfaceProvider&, ::StructureFeatureType, class BlockPos const&, class BlockPos&, class BiomeSource const&, bool, std::optional<class HashedString>);
 
     // symbol: ?findStructureFeatureTypeAt@StructureFeatureRegistry@@QEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
-    MCAPI ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const&);
+    MCAPI ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const& pos);
 
     // symbol: ?getStructureFeatureOfType@StructureFeatureRegistry@@QEBAPEAVStructureFeature@@W4StructureFeatureType@@@Z
-    MCAPI class StructureFeature* getStructureFeatureOfType(::StructureFeatureType) const;
+    MCAPI class StructureFeature* getStructureFeatureOfType(::StructureFeatureType type) const;
 
     // symbol: ?isStructureFeatureTypeAt@StructureFeatureRegistry@@QEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
-    MCAPI bool isStructureFeatureTypeAt(class BlockPos const&, ::StructureFeatureType) const;
+    MCAPI bool isStructureFeatureTypeAt(class BlockPos const& pos, ::StructureFeatureType type) const;
 
     // symbol: ??1StructureFeatureRegistry@@QEAA@XZ
     MCAPI ~StructureFeatureRegistry();

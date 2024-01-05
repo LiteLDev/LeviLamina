@@ -19,7 +19,7 @@ public:
 
     // symbol: ??0RuinedPortalStart@@QEAA@AEAVBiomeRegistry@@AEBVBiomeSource@@HHAEBVIPreliminarySurfaceProvider@@@Z
     MCAPI
-    RuinedPortalStart(class BiomeRegistry&, class BiomeSource const&, int, int, class IPreliminarySurfaceProvider const&);
+    RuinedPortalStart(class BiomeRegistry& registry, class BiomeSource const& source, int chunkX, int chunkZ, class IPreliminarySurfaceProvider const&);
 
     // NOLINTEND
 };

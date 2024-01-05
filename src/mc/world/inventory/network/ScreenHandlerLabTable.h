@@ -27,7 +27,7 @@ public:
     virtual ::ItemStackNetResult endRequest();
 
     // vIndex: 4, symbol: ?postRequest@ScreenHandlerLabTable@@MEAAX_N@Z
-    virtual void postRequest(bool);
+    virtual void postRequest(bool wasSuccess);
 
     // symbol: ??0ScreenHandlerLabTable@@QEAA@AEBVContainerScreenContext@@AEAVItemStackRequestActionHandler@@@Z
     MCAPI ScreenHandlerLabTable(class ContainerScreenContext const&, class ItemStackRequestActionHandler&);

@@ -21,7 +21,7 @@ public:
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?setup@ExecuteCommand@@SAXAEAVCommandRegistry@@_NH@Z
-    MCAPI static void setup(class CommandRegistry&, bool, int);
+    MCAPI static void setup(class CommandRegistry& registry, bool, int);
 
     // NOLINTEND
 };

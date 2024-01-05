@@ -40,13 +40,16 @@ public:
 
     // symbol:
     // ?queue@InternalTaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
-    MCVAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-    queue(struct TaskStartInfoEx<void> const&, std::function<class TaskResult(void)>&&, std::function<void(void)>&&);
+    MCVAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(
+        struct TaskStartInfoEx<void> const&     startInfo,
+        std::function<class TaskResult(void)>&& task,
+        std::function<void(void)>&&             callback
+    );
 
     // symbol:
     // ?queueSync@InternalTaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
     MCVAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-           queueSync(struct TaskStartInfoEx<void> const&, std::function<class TaskResult(void)>&&);
+           queueSync(struct TaskStartInfoEx<void> const& startInfo, std::function<class TaskResult(void)>&& task);
 
     // symbol: ?requeueTask@InternalTaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z
     MCVAPI void requeueTask(std::shared_ptr<class BackgroundTaskBase>, bool);

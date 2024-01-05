@@ -6,7 +6,7 @@ namespace VanillaBlockDrops {
 // NOLINTBEGIN
 // symbol:
 // ?add@VanillaBlockDrops@@YAXAEBVHashedString@@V?$unique_ptr@VIResourceDropsStrategy@@U?$default_delete@VIResourceDropsStrategy@@@std@@@std@@@Z
-MCAPI void add(class HashedString const&, std::unique_ptr<class IResourceDropsStrategy>);
+MCAPI void add(class HashedString const& blockId, std::unique_ptr<class IResourceDropsStrategy> strategy);
 
 // symbol: ?configureBlockDrops@VanillaBlockDrops@@YAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
 MCAPI void configureBlockDrops(class BaseGameVersion const&, class Experiments const&);

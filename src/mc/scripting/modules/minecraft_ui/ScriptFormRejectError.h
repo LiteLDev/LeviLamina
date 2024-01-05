@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptFormRejectError@ScriptModuleMinecraftServerUI@@QEAA@W4ScriptFormRejectReason@1@@Z
-    MCAPI explicit ScriptFormRejectError(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason);
+    MCAPI explicit ScriptFormRejectError(::ScriptModuleMinecraftServerUI::ScriptFormRejectReason reason);
 
     // symbol: ??1ScriptFormRejectError@ScriptModuleMinecraftServerUI@@QEAA@XZ
     MCAPI ~ScriptFormRejectError();

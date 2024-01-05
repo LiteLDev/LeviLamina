@@ -38,10 +38,10 @@ public:
     MCAPI static int ceil(float v);
 
     // symbol: ?clamp@Math@mce@@SAMMMM@Z
-    MCAPI static float clamp(float v, float low, float high);
+    MCAPI static float clamp(float, float, float);
 
     // symbol: ?clamp@Math@mce@@SAHHHH@Z
-    MCAPI static int clamp(int v, int low, int high);
+    MCAPI static int clamp(int, int, int);
 
     // symbol: ?clampRotate@Math@mce@@SAMMMM@Z
     MCAPI static float clampRotate(float current, float target, float maxDelta);
@@ -50,7 +50,7 @@ public:
     MCAPI static float clampedLerp(float min, float max, float factor);
 
     // symbol: ?clampedMap@Math@mce@@SAMMMMMM@Z
-    MCAPI static float clampedMap(float, float, float, float, float);
+    MCAPI static float clampedMap(float value, float, float, float, float);
 
     // symbol: ?cos@Math@mce@@SAMM@Z
     MCAPI static float cos(float f);
@@ -71,7 +71,7 @@ public:
     MCAPI static uint fastRandom();
 
     // symbol: ?floatEqualsEpsilon@Math@mce@@SA_NMMM@Z
-    MCAPI static bool floatEqualsEpsilon(float, float, float);
+    MCAPI static bool floatEqualsEpsilon(float a, float b, float limit);
 
     // symbol: ?floor@Math@mce@@SAHM@Z
     MCAPI static int floor(float v);
@@ -83,10 +83,10 @@ public:
     MCAPI static float invSqrt(float x);
 
     // symbol: ?inverseLerp@Math@mce@@SAMMMM@Z
-    MCAPI static float inverseLerp(float, float, float);
+    MCAPI static float inverseLerp(float min, float max, float value);
 
     // symbol: ?isNan@Math@mce@@SA_NN@Z
-    MCAPI static bool isNan(double);
+    MCAPI static bool isNan(double d);
 
     // symbol: ?isNan@Math@mce@@SA_NM@Z
     MCAPI static bool isNan(float f);
@@ -95,7 +95,7 @@ public:
     MCAPI static float lerpRotate(float from, float to, float a);
 
     // symbol: ?map@Math@mce@@SAMMMMMM@Z
-    MCAPI static float map(float, float, float, float, float);
+    MCAPI static float map(float value, float, float, float, float);
 
     // symbol: ?safeIncrement@Math@mce@@SAXAEAH@Z
     MCAPI static void safeIncrement(int& i);

@@ -82,7 +82,10 @@ public:
     virtual void __unk_vfn_168();
 
     // symbol: ??0Pig@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Pig(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI
+    Pig(class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext);
 
     // NOLINTEND
 };

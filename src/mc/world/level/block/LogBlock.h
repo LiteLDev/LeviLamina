@@ -128,17 +128,23 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@LogBlock@@MEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 162, symbol: ?getMapColor@LogBlock@@MEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color
+    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // symbol:
     // ??0LogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@V?$optional@ULogBlockMapColors@@@2@@Z
-    MCAPI LogBlock(std::string const&, int, class WeakPtr<class BlockLegacy>, std::optional<struct LogBlockMapColors>);
+    MCAPI LogBlock(
+        std::string const& nameId,
+        int,
+        class WeakPtr<class BlockLegacy>,
+        std::optional<struct LogBlockMapColors> mapColors
+    );
 
     // NOLINTEND
 };

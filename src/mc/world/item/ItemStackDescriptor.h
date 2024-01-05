@@ -25,10 +25,11 @@ public:
     MCAPI ItemStackDescriptor();
 
     // symbol: ??0ItemStackDescriptor@@QEAA@AEBVItem@@HGPEBVCompoundTag@@@Z
-    MCAPI ItemStackDescriptor(class Item const&, int, ushort, class CompoundTag const*);
+    MCAPI
+    ItemStackDescriptor(class Item const& item, int auxValue, ushort stackSize, class CompoundTag const* userData);
 
     // symbol: ??4ItemStackDescriptor@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class ItemStackDescriptor& operator=(class ItemStackDescriptor&&);
+    MCAPI class ItemStackDescriptor& operator=(class ItemStackDescriptor&& other);
 
     // NOLINTEND
 };

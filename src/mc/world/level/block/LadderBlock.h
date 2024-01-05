@@ -154,7 +154,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@LadderBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -163,7 +163,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@LadderBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?canBeSilkTouched@LadderBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -172,7 +172,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0LadderBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LadderBlock(std::string const& nameId, int id);
+    MCAPI LadderBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

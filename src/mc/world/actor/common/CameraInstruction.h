@@ -77,7 +77,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??8FadeInstruction@CameraInstruction@@QEBA_NAEBU01@@Z
-        MCAPI bool operator==(struct CameraInstruction::FadeInstruction const&) const;
+        MCAPI bool operator==(struct CameraInstruction::FadeInstruction const& other) const;
 
         // symbol: ?bindType@FadeInstruction@CameraInstruction@@SAXAEAUReflectionCtx@cereal@@@Z
         MCAPI static void bindType(struct cereal::ReflectionCtx&);
@@ -188,7 +188,7 @@ public:
         MCAPI struct CameraInstruction::SetInstruction& operator=(struct CameraInstruction::SetInstruction const&);
 
         // symbol: ??8SetInstruction@CameraInstruction@@QEBA_NAEBU01@@Z
-        MCAPI bool operator==(struct CameraInstruction::SetInstruction const&) const;
+        MCAPI bool operator==(struct CameraInstruction::SetInstruction const& other) const;
 
         // symbol: ?write@SetInstruction@CameraInstruction@@QEBAXAEAVBinaryStream@@@Z
         MCAPI void write(class BinaryStream&) const;

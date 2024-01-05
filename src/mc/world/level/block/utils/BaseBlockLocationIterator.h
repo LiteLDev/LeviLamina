@@ -41,10 +41,10 @@ public:
     MCAPI BaseBlockLocationIterator();
 
     // symbol: ??0BaseBlockLocationIterator@@IEAA@AEBVBlockPos@@0_N@Z
-    MCAPI BaseBlockLocationIterator(class BlockPos const&, class BlockPos const&, bool);
+    MCAPI BaseBlockLocationIterator(class BlockPos const& min, class BlockPos const& max, bool begin);
 
     // symbol: ??4BaseBlockLocationIterator@@IEAAAEAV0@AEBV0@@Z
-    MCAPI class BaseBlockLocationIterator& operator=(class BaseBlockLocationIterator const&);
+    MCAPI class BaseBlockLocationIterator& operator=(class BaseBlockLocationIterator const& other);
 
     // NOLINTEND
 };

@@ -40,7 +40,9 @@ public:
     virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
 
     // vIndex: 8, symbol: ?_useOn@EntityPlacerItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+    virtual bool
+    _useOn(class ItemStack& instance, class Actor&, class BlockPos const& pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // vIndex: 9, symbol: ?_initializeComponent@EntityPlacerItemComponent@@UEAAXXZ
     virtual void _initializeComponent();
@@ -52,7 +54,8 @@ public:
     MCAPI EntityPlacerItemComponent(class EntityPlacerItemComponent const&);
 
     // symbol: ?dispense@EntityPlacerItemComponent@@QEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    MCAPI bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    MCAPI bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // symbol: ??4EntityPlacerItemComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class EntityPlacerItemComponent& operator=(class EntityPlacerItemComponent&&);
@@ -73,7 +76,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_setActorCustomName@EntityPlacerItemComponent@@AEBAXAEAVActor@@AEBVItemStack@@@Z
-    MCAPI void _setActorCustomName(class Actor&, class ItemStack const&) const;
+    MCAPI void _setActorCustomName(class Actor& actor, class ItemStack const& item) const;
 
     // symbol:
     // ?_validateBlocks@EntityPlacerItemComponent@@AEBAXAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z

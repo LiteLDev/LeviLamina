@@ -50,7 +50,7 @@ public:
 
     // symbol:
     // ?setUnresolvedUrl@GameConnectionInfo@Social@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setUnresolvedUrl(std::string const& url);
+    MCAPI void setUnresolvedUrl(std::string const&);
 
     // symbol: ??1GameConnectionInfo@Social@@QEAA@XZ
     MCAPI ~GameConnectionInfo();

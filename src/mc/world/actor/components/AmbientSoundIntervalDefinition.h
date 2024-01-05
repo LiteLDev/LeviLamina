@@ -20,16 +20,18 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addDynamic@AmbientSoundIntervalDefinition@@QEAAXAEBUDynamicAmbientSound@@@Z
-    MCAPI void addDynamic(struct DynamicAmbientSound const&);
+    MCAPI void addDynamic(struct DynamicAmbientSound const& definition);
 
     // symbol: ?initialize@AmbientSoundIntervalDefinition@@QEBAXAEAVEntityContext@@AEAVAmbientSoundServerComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class AmbientSoundServerComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class AmbientSoundServerComponent& component) const;
 
     // symbol:
     // ?buildSchema@AmbientSoundIntervalDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UAmbientSoundIntervalDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      struct AmbientSoundIntervalDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct AmbientSoundIntervalDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

@@ -40,10 +40,10 @@ public:
     virtual ~PacketObserver();
 
     // vIndex: 1, symbol: ?packetSentTo@PacketObserver@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
-    virtual void packetSentTo(class NetworkIdentifier const&, class Packet const&, uint);
+    virtual void packetSentTo(class NetworkIdentifier const&, class Packet const&, uint size);
 
     // vIndex: 2, symbol: ?packetReceivedFrom@PacketObserver@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
-    virtual void packetReceivedFrom(class NetworkIdentifier const&, class Packet const&, uint);
+    virtual void packetReceivedFrom(class NetworkIdentifier const&, class Packet const&, uint size);
 
     // vIndex: 3, symbol:
     // ?dataSentTo@PacketObserver@@UEAAXAEBVNetworkIdentifier@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z

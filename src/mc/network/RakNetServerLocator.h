@@ -151,11 +151,11 @@ public:
     // symbol:
     // ??0RakNetServerLocator@@QEAA@AEAVRakNetConnector@@AEAVIPSupportInterface@RakPeerHelper@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_NW4RakNetServerLANVisibility@@W4PermissionLAN@@W4PermissionIPv6@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@V?$function@$$A6A?AV?$unique_ptr@VRakPeerInterface@RakNet@@P6AXPEAV12@@Z@std@@XZ@5@@Z
     MCAPI
-    RakNetServerLocator(class RakNetConnector&, class RakPeerHelper::IPSupportInterface&, std::vector<std::string>, bool, ::RakNetServerLANVisibility, ::PermissionLAN, ::PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const&, std::function<std::unique_ptr<class RakNet::RakPeerInterface, void (*)(class RakNet::RakPeerInterface*)>(void)>);
+    RakNetServerLocator(class RakNetConnector&, class RakPeerHelper::IPSupportInterface& ipInterface, std::vector<std::string>, bool isServer, ::RakNetServerLANVisibility, ::PermissionLAN, ::PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const&, std::function<std::unique_ptr<class RakNet::RakPeerInterface, void (*)(class RakNet::RakPeerInterface*)>(void)>);
 
     // symbol:
     // ?parseUnconnectedPongPacketData@RakNetServerLocator@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-    MCAPI static bool parseUnconnectedPongPacketData(std::string const&, std::vector<std::string>&);
+    MCAPI static bool parseUnconnectedPongPacketData(std::string const& data, std::vector<std::string>& extraData);
 
     // NOLINTEND
 
@@ -179,7 +179,7 @@ public:
     // symbol:
     // ?_enqueueStateChangeRequest@RakNetServerLocator@@AEAAXW4LocatorStateChangeRequest@@UAnnounceServerData@1@UPortPair@@@Z
     MCAPI void _enqueueStateChangeRequest(
-        ::LocatorStateChangeRequest,
+        ::LocatorStateChangeRequest newState,
         struct RakNetServerLocator::AnnounceServerData,
         struct PortPair
     );
@@ -194,7 +194,12 @@ public:
 
     // symbol:
     // ?_handleUnconnectedPong@RakNetServerLocator@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBUPacket@RakNet@@_N_K@Z
-    MCAPI bool _handleUnconnectedPong(std::string const&, struct RakNet::Packet const*, bool, uint64);
+    MCAPI bool _handleUnconnectedPong(
+        std::string const&           data,
+        struct RakNet::Packet const* p,
+        bool                         insertAtBeginning,
+        uint64                       readTime
+    );
 
     // symbol: ?_initializeBroadcastAddresses@RakNetServerLocator@@AEAAXXZ
     MCAPI void _initializeBroadcastAddresses();

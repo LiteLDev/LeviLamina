@@ -31,7 +31,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@BossEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0BossEventPacket@@QEAA@XZ
     MCAPI BossEventPacket();

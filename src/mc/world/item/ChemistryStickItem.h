@@ -51,8 +51,11 @@ public:
     virtual void __unk_vfn_39();
 
     // vIndex: 47, symbol: ?isValidRepairItem@ChemistryStickItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
-    virtual bool
-    isValidRepairItem(class ItemStackBase const&, class ItemStackBase const&, class BaseGameVersion const&) const;
+    virtual bool isValidRepairItem(
+        class ItemStackBase const&   source,
+        class ItemStackBase const&   repairItem,
+        class BaseGameVersion const& baseGameVersion
+    ) const;
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -84,7 +87,7 @@ public:
     useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
 
     // vIndex: 75, symbol: ?hurtActor@ChemistryStickItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
+    virtual void hurtActor(class ItemStack& instance, class Actor& actor, class Mob& attacker) const;
 
     // vIndex: 79, symbol: ?mineBlock@ChemistryStickItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
@@ -95,7 +98,7 @@ public:
     inventoryTick(class ItemStack& itemStack, class Level& level, class Actor& owner, int slot, bool selected) const;
 
     // vIndex: 90, symbol: ?fixupCommon@ChemistryStickItem@@UEBAXAEAVItemStackBase@@@Z
-    virtual void fixupCommon(class ItemStackBase&) const;
+    virtual void fixupCommon(class ItemStackBase& stack) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -110,7 +113,7 @@ public:
     MCVAPI bool uniqueAuxValues() const;
 
     // symbol: ??0ChemistryStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ChemistryStickItem(std::string const& name, int id_);
+    MCAPI ChemistryStickItem(std::string const& name, int id);
 
     // symbol: ?getColorType@ChemistryStickItem@@SA?AW4ItemColor@@H@Z
     MCAPI static ::ItemColor getColorType(int data);
@@ -119,7 +122,7 @@ public:
     MCAPI static bool isActive(int data);
 
     // symbol: ?isChemistryStick@ChemistryStickItem@@SA_NAEBVItemStackBase@@@Z
-    MCAPI static bool isChemistryStick(class ItemStackBase const&);
+    MCAPI static bool isChemistryStick(class ItemStackBase const& item);
 
     // NOLINTEND
 

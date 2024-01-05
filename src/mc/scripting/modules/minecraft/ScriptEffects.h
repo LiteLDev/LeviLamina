@@ -31,7 +31,7 @@ public:
     // symbol:
     // ?get@ScriptEffects@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@VScriptEffectType@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
     MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>>
-          get(class Scripting::WeakLifetimeScope&, std::string const&);
+          get(class Scripting::WeakLifetimeScope& scope, std::string const& effectName);
 
     // symbol: ?bind@ScriptEffects@ScriptModuleMinecraft@@SAXAEAVModuleBindingBuilder@Scripting@@@Z
     MCAPI static void bind(class Scripting::ModuleBindingBuilder&);

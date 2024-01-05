@@ -22,7 +22,7 @@ public:
     MCAPI RailMovementDefinition();
 
     // symbol: ?initialize@RailMovementDefinition@@QEBAXAEAVEntityContext@@AEAVRailMovementComponent@@@Z
-    MCAPI void initialize(class EntityContext& entity, class RailMovementComponent& component) const;
+    MCAPI void initialize(class EntityContext&, class RailMovementComponent& component) const;
 
     // symbol:
     // ?buildSchema@RailMovementDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VRailMovementDefinition@@@JsonUtil@@@std@@@Z

@@ -21,7 +21,7 @@ public:
     virtual void init(struct Bounds const& bounds, bool isCircle) = 0;
 
     // vIndex: 2, symbol: ?tick@TickingAreaView@@UEAAXAEBUTick@@AEAVBlockSource@@_N2@Z
-    virtual void tick(struct Tick const&, class BlockSource&, bool, bool) = 0;
+    virtual void tick(struct Tick const& currentTick, class BlockSource& region, bool, bool randomize) = 0;
 
     // vIndex: 3, symbol: ?tickSeasons@TickingAreaView@@UEAAXAEAVBlockSource@@AEAVRandom@@@Z
     virtual void tickSeasons(class BlockSource& region, class Random& random) = 0;
@@ -42,7 +42,7 @@ public:
     virtual bool checkInitialLoadDone(struct Tick) = 0;
 
     // vIndex: 9, symbol: ?checkLoadedChunkNeighborsDone@TickingAreaView@@UEBA_NAEBVBlockSource@@_N@Z
-    virtual bool checkLoadedChunkNeighborsDone(class BlockSource const&, bool) const = 0;
+    virtual bool checkLoadedChunkNeighborsDone(class BlockSource const& region, bool) const = 0;
 
     // vIndex: 10, symbol: ?move@TickingAreaView@@UEAAXAEBUBounds@@@Z
     virtual void move(struct Bounds const& bounds) = 0;

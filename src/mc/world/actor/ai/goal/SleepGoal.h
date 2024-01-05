@@ -42,7 +42,16 @@ public:
     virtual uint64 _getRepathTime() const;
 
     // symbol: ??0SleepGoal@@QEAA@AEAVMob@@MMM_NMHM@Z
-    MCAPI SleepGoal(class Mob&, float, float, float, bool, float, int, float);
+    MCAPI SleepGoal(
+        class Mob& mob,
+        float      walkSpeed,
+        float      sleepColliderHeight,
+        float      sleepColliderWidth,
+        bool,
+        float sleepYOffset,
+        int   cooldown,
+        float cooldownTimeout
+    );
 
     // NOLINTEND
 

@@ -19,8 +19,12 @@ public:
 
     // vIndex: 1, symbol:
     // ?place@DripstoneClusterFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-    virtual std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    virtual std::optional<class BlockPos> place(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    pos,
+        class Random&            random,
+        class RenderParams&      renderParams
+    ) const;
 
     // vIndex: 2, symbol:
     // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -31,14 +35,28 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_getDripstoneHeight@DripstoneClusterFeature@@CAHAEAVRandom@@HHMH@Z
-    MCAPI static int _getDripstoneHeight(class Random&, int, int, float, int);
+    MCAPI static int _getDripstoneHeight(class Random& random, int dx, int dz, float, int maxHeight);
 
     // symbol: ?_placeColumn@DripstoneClusterFeature@@CA_NAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@HHMNHM@Z
-    MCAPI static bool
-    _placeColumn(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int, int, float, double, int, float);
+    MCAPI static bool _placeColumn(
+        class IBlockWorldGenAPI& target,
+        class Random&            random,
+        class BlockPos const&    pos,
+        int                      dx,
+        int                      dz,
+        float,
+        double,
+        int,
+        float
+    );
 
     // symbol: ?_replaceBlocksWithDripstoneBlocks@DripstoneClusterFeature@@CAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@HE@Z
-    MCAPI static void _replaceBlocksWithDripstoneBlocks(class IBlockWorldGenAPI&, class BlockPos const&, int, uchar);
+    MCAPI static void _replaceBlocksWithDripstoneBlocks(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&,
+        int   maxCount,
+        uchar direction
+    );
 
     // NOLINTEND
 };

@@ -27,14 +27,14 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@RemoveVolumeEntityPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@RemoveVolumeEntityPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0RemoveVolumeEntityPacket@@QEAA@AEAVEntityContext@@@Z
-    MCAPI explicit RemoveVolumeEntityPacket(class EntityContext&);
+    MCAPI explicit RemoveVolumeEntityPacket(class EntityContext& entity);
 
     // NOLINTEND
 };

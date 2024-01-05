@@ -107,7 +107,11 @@ public:
     virtual bool placeHangingEntity(class BlockSource& region, int direction);
 
     // symbol: ??0Painting@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Painting(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Painting(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getCurrentMotive@Painting@@QEBAAEBVMotive@@XZ
     MCAPI class Motive const& getCurrentMotive() const;

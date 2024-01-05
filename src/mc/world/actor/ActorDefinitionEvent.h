@@ -27,9 +27,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_evaluateGroups@ActorDefinitionEvent@@AEBAXAEAVActor@@AEAV?$vector@UActorDefinitionModifier@@V?$allocator@UActorDefinitionModifier@@@std@@@std@@AEBVVariantParameterList@@@Z
-    MCAPI void
-    _evaluateGroups(class Actor&, std::vector<struct ActorDefinitionModifier>&, class VariantParameterList const&)
-        const;
+    MCAPI void _evaluateGroups(
+        class Actor&                                 entity,
+        std::vector<struct ActorDefinitionModifier>& modifications,
+        class VariantParameterList const&            list
+    ) const;
 
     // NOLINTEND
 };

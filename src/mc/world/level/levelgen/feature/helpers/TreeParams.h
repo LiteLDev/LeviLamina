@@ -20,7 +20,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_placeBaseBlockCircle@TreeParams@TreeHelper@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-    MCAPI void _placeBaseBlockCircle(class IBlockWorldGenAPI&, class BlockPos const&) const;
+    MCAPI void _placeBaseBlockCircle(class IBlockWorldGenAPI& target, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

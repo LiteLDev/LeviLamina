@@ -54,7 +54,12 @@ MCAPI bool closeToDone(class Mob const& mob, float dist);
 MCAPI bool flyCondition(class Mob const& mob, class BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
 
 // symbol: ?getHeightDifference@NavigationUtility@@YAMAEAVBlockSource@@AEBVVec3@@AEBVBlock@@AEBVBlockPos@@@Z
-MCAPI float getHeightDifference(class BlockSource&, class Vec3 const&, class Block const&, class BlockPos const&);
+MCAPI float getHeightDifference(
+    class BlockSource&    region,
+    class Vec3 const&     currentPos,
+    class Block const&    block,
+    class BlockPos const& blockPos
+);
 
 // symbol: ?getMobScale@NavigationUtility@@YA?BVBlockPos@@AEBVMob@@@Z
 MCAPI class BlockPos const getMobScale(class Mob const& mob);
@@ -87,13 +92,13 @@ MCAPI bool isLastNode(uint64, class Path const&);
 MCAPI bool isStableDestination(class Mob const& mob, class BlockPos& pos);
 
 // symbol: ?isStairBlockFacingMob@NavigationUtility@@YA_NAEBVMob@@AEBVBlockPos@@@Z
-MCAPI bool isStairBlockFacingMob(class Mob const&, class BlockPos const&);
+MCAPI bool isStairBlockFacingMob(class Mob const& mob, class BlockPos const& blockPos);
 
 // symbol: ?moveCondition@NavigationUtility@@YA_NAEBVMob@@AEBVBlock@@@Z
 MCAPI bool moveCondition(class Mob const& mob, class Block const& block);
 
 // symbol: ?swimCondition@NavigationUtility@@YA_NAEBVMob@@AEAVBlockSource@@HHH@Z
-MCAPI bool swimCondition(class Mob const& mob, class BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
+MCAPI bool swimCondition(class Mob const&, class BlockSource& region, int gridPosX, int gridPosY, int gridPosZ);
 
 // symbol: ?trimPathFromSun@NavigationUtility@@YAXAEBVMob@@@Z
 MCAPI void trimPathFromSun(class Mob const& mob);

@@ -24,26 +24,26 @@ public:
         virtual ~IWorldAccessor();
 
         // vIndex: 1, symbol: ?fetchAnyInteractablePlayer@WorldAccessor@DespawnComponent@@UEBAPEAVPlayer@@AEBVVec3@@M@Z
-        virtual class Player* fetchAnyInteractablePlayer(class Vec3 const&, float) const = 0;
+        virtual class Player* fetchAnyInteractablePlayer(class Vec3 const&, float maxDist) const = 0;
 
         // vIndex: 2, symbol: ?getChunkTickRange@WorldAccessor@DespawnComponent@@UEBAIXZ
         virtual uint getChunkTickRange() const = 0;
 
         // vIndex: 3, symbol: ?areChunksFullyLoaded@WorldAccessor@DespawnComponent@@UEBA_NAEBVBlockPos@@H@Z
-        virtual bool areChunksFullyLoaded(class BlockPos const&, int) const = 0;
+        virtual bool areChunksFullyLoaded(class BlockPos const& min, int r) const = 0;
 
         // vIndex: 4, symbol: ?hasUntickedNeighborChunk@WorldAccessor@DespawnComponent@@UEBA_NAEBVChunkPos@@H@Z
-        virtual bool hasUntickedNeighborChunk(class ChunkPos const&, int) const = 0;
+        virtual bool hasUntickedNeighborChunk(class ChunkPos const& pos, int chunkRadius) const = 0;
 
         // vIndex: 5, symbol: ?getChanceRandomize@WorldAccessor@DespawnComponent@@UEAAAEAVRandomize@@XZ
         virtual class Randomize& getChanceRandomize() = 0;
 
         // vIndex: 6, symbol:
         // ?getActorNoActionTime@WorldAccessor@DespawnComponent@@UEBA?AV?$optional@H@std@@AEBVActor@@@Z
-        virtual std::optional<int> getActorNoActionTime(class Actor const&) const = 0;
+        virtual std::optional<int> getActorNoActionTime(class Actor const& actor) const = 0;
 
         // vIndex: 7, symbol: ?resetActorNoActionTime@WorldAccessor@DespawnComponent@@UEAAXAEAVActor@@@Z
-        virtual void resetActorNoActionTime(class Actor&) = 0;
+        virtual void resetActorNoActionTime(class Actor& actor) = 0;
 
         // NOLINTEND
     };
@@ -61,26 +61,26 @@ public:
         virtual ~WorldAccessor();
 
         // vIndex: 1, symbol: ?fetchAnyInteractablePlayer@WorldAccessor@DespawnComponent@@UEBAPEAVPlayer@@AEBVVec3@@M@Z
-        virtual class Player* fetchAnyInteractablePlayer(class Vec3 const&, float) const;
+        virtual class Player* fetchAnyInteractablePlayer(class Vec3 const&, float maxDist) const;
 
         // vIndex: 2, symbol: ?getChunkTickRange@WorldAccessor@DespawnComponent@@UEBAIXZ
         virtual uint getChunkTickRange() const;
 
         // vIndex: 3, symbol: ?areChunksFullyLoaded@WorldAccessor@DespawnComponent@@UEBA_NAEBVBlockPos@@H@Z
-        virtual bool areChunksFullyLoaded(class BlockPos const&, int) const;
+        virtual bool areChunksFullyLoaded(class BlockPos const& min, int r) const;
 
         // vIndex: 4, symbol: ?hasUntickedNeighborChunk@WorldAccessor@DespawnComponent@@UEBA_NAEBVChunkPos@@H@Z
-        virtual bool hasUntickedNeighborChunk(class ChunkPos const&, int) const;
+        virtual bool hasUntickedNeighborChunk(class ChunkPos const& pos, int chunkRadius) const;
 
         // vIndex: 5, symbol: ?getChanceRandomize@WorldAccessor@DespawnComponent@@UEAAAEAVRandomize@@XZ
         virtual class Randomize& getChanceRandomize();
 
         // vIndex: 6, symbol:
         // ?getActorNoActionTime@WorldAccessor@DespawnComponent@@UEBA?AV?$optional@H@std@@AEBVActor@@@Z
-        virtual std::optional<int> getActorNoActionTime(class Actor const&) const;
+        virtual std::optional<int> getActorNoActionTime(class Actor const& actor) const;
 
         // vIndex: 7, symbol: ?resetActorNoActionTime@WorldAccessor@DespawnComponent@@UEAAXAEAVActor@@@Z
-        virtual void resetActorNoActionTime(class Actor&);
+        virtual void resetActorNoActionTime(class Actor& actor);
 
         // NOLINTEND
     };
@@ -106,11 +106,11 @@ public:
     // symbol:
     // ?_tryStandardDespawnRules@DespawnComponent@@AEBA_NAEAVActor@@AEBVDespawnDefinition@@AEAVIWorldAccessor@1@@Z
     MCAPI bool
-    _tryStandardDespawnRules(class Actor&, class DespawnDefinition const&, class DespawnComponent::IWorldAccessor&)
+    _tryStandardDespawnRules(class Actor& actor, class DespawnDefinition const& definition, class DespawnComponent::IWorldAccessor&)
         const;
 
     // symbol: ?getDefinition@DespawnComponent@@AEBAAEBVDespawnDefinition@@AEAVActor@@@Z
-    MCAPI class DespawnDefinition const& getDefinition(class Actor&) const;
+    MCAPI class DespawnDefinition const& getDefinition(class Actor& actor) const;
 
     // NOLINTEND
 };

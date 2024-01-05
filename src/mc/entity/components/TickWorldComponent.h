@@ -41,7 +41,7 @@ public:
     MCAPI void removeArea();
 
     // symbol: ?setTickingArea@TickWorldComponent@@QEAAXAEAVActor@@V?$shared_ptr@VITickingArea@@@std@@@Z
-    MCAPI void setTickingArea(class Actor& owner, std::shared_ptr<class ITickingArea> area);
+    MCAPI void setTickingArea(class Actor& owner, std::shared_ptr<class ITickingArea> tickingArea);
 
     // symbol: ?updateArea@TickWorldComponent@@QEAAXAEAVActor@@@Z
     MCAPI void updateArea(class Actor& owner);

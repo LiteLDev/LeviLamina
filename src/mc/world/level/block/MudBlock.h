@@ -136,13 +136,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@MudBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 151, symbol: ?randomTick@MudBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -151,7 +151,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0MudBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MudBlock(std::string const&, int);
+    MCAPI MudBlock(std::string const& nameId, int);
 
     // symbol: ?BLOCK_AABB@MudBlock@@2VAABB@@A
     MCAPI static class AABB BLOCK_AABB;

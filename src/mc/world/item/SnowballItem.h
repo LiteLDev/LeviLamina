@@ -94,7 +94,7 @@ public:
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
 
     // symbol: ??0SnowballItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SnowballItem(std::string const& name, int id);
+    MCAPI SnowballItem(std::string const&, int);
 
     // NOLINTEND
 };

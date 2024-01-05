@@ -104,7 +104,7 @@ public:
                       struct AddRemove<>,
                       struct GlobalRead<struct LocalConstBlockSourceFactoryComponent, struct ExternalDataComponent>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&);
+                      struct EntityFactoryT<>>& context);
 
     // NOLINTEND
 };

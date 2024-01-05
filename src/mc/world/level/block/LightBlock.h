@@ -38,15 +38,20 @@ public:
 
     // vIndex: 7, symbol:
     // ?addCollisionShapes@LightBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-    virtual bool
-    addCollisionShapes(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual bool addCollisionShapes(
+        class Block const&                                         block,
+        class BlockSource const&                                   region,
+        class BlockPos const&                                      pos,
+        class AABB const*                                          intersectTestBox,
+        std::vector<class AABB>&                                   inoutBoxes,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@LightBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -133,19 +138,15 @@ public:
     ) const;
 
     // vIndex: 96, symbol: ?asItemInstance@LightBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@LightBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const& getPlacementBlock(
-        class Actor const&    by,
-        class BlockPos const& pos,
-        uchar                 face,
-        class Vec3 const&     clickPos,
-        int                   itemValue
-    ) const;
+    virtual class Block const&
+    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int itemValue) const;
 
     // vIndex: 103, symbol: ?canBeBuiltOver@LightBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
-    virtual bool canBeBuiltOver(class BlockSource&, class BlockPos const&, class BlockItem const&) const;
+    virtual bool
+    canBeBuiltOver(class BlockSource& region, class BlockPos const& pos, class BlockItem const& item) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -181,13 +182,13 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@LightBlock@@MEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // symbol: ??0LightBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LightBlock(std::string const& nameId, int id, class Material const& material);
+    MCAPI LightBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

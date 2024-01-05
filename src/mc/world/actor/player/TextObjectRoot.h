@@ -48,7 +48,7 @@ public:
     MCAPI bool isEmpty() const;
 
     // symbol: ?resolveRoot@TextObjectRoot@@QEBA?AVResolvedTextObject@@AEBVActor@@AEBVScoreboard@@@Z
-    MCAPI class ResolvedTextObject resolveRoot(class Actor const&, class Scoreboard const&) const;
+    MCAPI class ResolvedTextObject resolveRoot(class Actor const& actor, class Scoreboard const& scoreboard) const;
 
     // NOLINTEND
 };

@@ -20,34 +20,52 @@ public:
 
     // symbol:
     // ?addChunkLoadedRequest@ChunkLoadActionList@@QEAAXVChunkLoadedRequest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ChunksLoadedStatus@@AEAVLevelStorage@@@Z
-    MCAPI void
-    addChunkLoadedRequest(class ChunkLoadedRequest, std::string const&, ::ChunksLoadedStatus, class LevelStorage&);
+    MCAPI void addChunkLoadedRequest(
+        class ChunkLoadedRequest,
+        std::string const&,
+        ::ChunksLoadedStatus,
+        class LevelStorage& levelStorage
+    );
 
     // symbol:
     // ?loadRequest@ChunkLoadActionList@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@AEAVICommandOriginLoader@@0@Z
     MCAPI void
-    loadRequest(std::string const&, class CompoundTag const&, class ICommandOriginLoader&, std::string const&);
+    loadRequest(std::string const& key, class CompoundTag const& tag, class ICommandOriginLoader& loader, std::string const&);
 
     // symbol:
     // ?loadRequests@ChunkLoadActionList@@QEAAXAEAVLevelStorage@@AEAVICommandOriginLoader@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void loadRequests(class LevelStorage&, class ICommandOriginLoader&, std::string const&);
+    MCAPI void loadRequests(class LevelStorage& storage, class ICommandOriginLoader& loader, std::string const&);
 
     // symbol:
     // ?onChunkLoaded@ChunkLoadActionList@@QEAAXAEAVLevelStorage@@AEAVChunkSource@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelChunk@@UTick@@@Z
-    MCAPI void
-    onChunkLoaded(class LevelStorage&, class ChunkSource&, std::string const&, class LevelChunk&, struct Tick);
+    MCAPI void onChunkLoaded(
+        class LevelStorage& levelStorage,
+        class ChunkSource&  source,
+        std::string const&,
+        class LevelChunk& lc,
+        struct Tick       currentTick
+    );
 
     // symbol:
     // ?onStaticTickingAreaAdded@ChunkLoadActionList@@QEAAXAEAVLevelStorage@@AEAVDimension@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UTick@@@Z
-    MCAPI void onStaticTickingAreaAdded(class LevelStorage&, class Dimension&, std::string const&, struct Tick);
+    MCAPI void onStaticTickingAreaAdded(
+        class LevelStorage& levelStorage,
+        class Dimension&    dimension,
+        std::string const&  name,
+        struct Tick         currentTick
+    );
 
     // symbol:
     // ?queueRequestOrExecuteAction@ChunkLoadActionList@@QEAA?AW4QueueRequestResult@@VChunkLoadedRequest@@AEAVServerLevel@@AEAVLevelStorage@@AEAVDimension@@@Z
-    MCAPI ::QueueRequestResult
-    queueRequestOrExecuteAction(class ChunkLoadedRequest, class ServerLevel&, class LevelStorage&, class Dimension&);
+    MCAPI ::QueueRequestResult queueRequestOrExecuteAction(
+        class ChunkLoadedRequest,
+        class ServerLevel&,
+        class LevelStorage& levelStorage,
+        class Dimension&    dimension
+    );
 
     // symbol: ?tickRequests@ChunkLoadActionList@@QEAAXAEAVServerLevel@@AEAVDimension@@@Z
-    MCAPI void tickRequests(class ServerLevel&, class Dimension&);
+    MCAPI void tickRequests(class ServerLevel&, class Dimension& dimension);
 
     // symbol: ??1ChunkLoadActionList@@QEAA@XZ
     MCAPI ~ChunkLoadActionList();
@@ -58,22 +76,31 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_addChunkLoadedRequest@ChunkLoadActionList@@AEAAXVChunkLoadedRequest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ChunksLoadedStatus@@AEAVLevelStorage@@@Z
-    MCAPI void
-    _addChunkLoadedRequest(class ChunkLoadedRequest, std::string const&, ::ChunksLoadedStatus, class LevelStorage&);
+    MCAPI void _addChunkLoadedRequest(
+        class ChunkLoadedRequest,
+        std::string const&,
+        ::ChunksLoadedStatus,
+        class LevelStorage& levelStorage
+    );
 
     // symbol:
     // ?_saveRequest@ChunkLoadActionList@@AEAAXAEAVChunkLoadedRequest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ChunkRequestListType@@AEAVLevelStorage@@@Z
-    MCAPI void _saveRequest(class ChunkLoadedRequest&, std::string const&, ::ChunkRequestListType, class LevelStorage&);
+    MCAPI void _saveRequest(
+        class ChunkLoadedRequest& request,
+        std::string const&,
+        ::ChunkRequestListType,
+        class LevelStorage& levelStorage
+    );
 
     // symbol:
     // ?_updateAsyncList@ChunkLoadActionList@@AEAAXAEAVLevelStorage@@AEAVDimension@@V?$function@$$A6A?AW4ChunksLoadedStatus@@AEAVChunkLoadedRequest@@@Z@std@@@Z
     MCAPI void
-    _updateAsyncList(class LevelStorage&, class Dimension&, std::function<::ChunksLoadedStatus(class ChunkLoadedRequest&)>);
+    _updateAsyncList(class LevelStorage& levelStorage, class Dimension& dimension, std::function<::ChunksLoadedStatus(class ChunkLoadedRequest&)>);
 
     // symbol:
     // ?_updateTickingList@ChunkLoadActionList@@AEAAXAEAVServerLevel@@AEAVDimension@@V?$function@$$A6A?AW4ChunksLoadedStatus@@AEAVChunkLoadedRequest@@@Z@std@@@Z
     MCAPI void
-    _updateTickingList(class ServerLevel&, class Dimension&, std::function<::ChunksLoadedStatus(class ChunkLoadedRequest&)>);
+    _updateTickingList(class ServerLevel&, class Dimension& dimension, std::function<::ChunksLoadedStatus(class ChunkLoadedRequest&)>);
 
     // NOLINTEND
 };

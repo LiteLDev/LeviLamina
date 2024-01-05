@@ -30,7 +30,7 @@ public:
     virtual bool equivalent(int, std::error_condition const&) const;
 
     // vIndex: 5, symbol: ?equivalent@HttpErrorCategory@Http@Bedrock@@UEBA_NAEBVerror_code@std@@H@Z
-    virtual bool equivalent(std::error_code const&, int) const;
+    virtual bool equivalent(std::error_code const& code, int condition) const;
 
     // vIndex: 6, symbol: __unk_vfn_6
     virtual void __unk_vfn_6();
@@ -39,7 +39,7 @@ public:
     virtual std::error_code start(std::optional<uint64>);
 
     // vIndex: 8, symbol: ?write@BufferedResponseBody@Http@Bedrock@@MEAA?AVerror_code@std@@V?$span@$$CBE$0?0@gsl@@@Z
-    virtual std::error_code write(gsl::span<uchar const>);
+    virtual std::error_code write(gsl::span<uchar const> source);
 
     // vIndex: 9, symbol: ?complete@BufferedResponseBody@Http@Bedrock@@MEAAXXZ
     virtual void complete();

@@ -104,7 +104,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@WoodSlabBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -144,18 +144,17 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 162, symbol: ?getMapColor@WoodSlabBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
     // vIndex: 164, symbol: ?getResourceItem@WoodSlabBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@WoodSlabBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol:
     // ??0WoodSlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI WoodSlabBlock(std::string const& nameId, int id, bool fullSize, class WeakPtr<class BlockLegacy> baseSlab);
+    MCAPI WoodSlabBlock(std::string const& nameId, int, bool fullSize, class WeakPtr<class BlockLegacy> baseSlab);
 
     // NOLINTEND
 };

@@ -42,7 +42,7 @@ public:
     virtual void __unk_vfn_13();
 
     // vIndex: 14, symbol: ?_isValidEnchantmentTypeForCategory@BowEnchant@@EEBA_NW4Type@Enchant@@@Z
-    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type) const;
+    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
 
     // NOLINTEND
 

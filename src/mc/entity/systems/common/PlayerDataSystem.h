@@ -44,7 +44,7 @@ MCAPI std::unique_ptr<class CompoundTag>
 
 // symbol:
 // ?loadPlayerDataFromTag@PlayerDataSystem@@YA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAVLevelStorage@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
-MCAPI std::unique_ptr<class CompoundTag> loadPlayerDataFromTag(class LevelStorage&, std::string_view);
+MCAPI std::unique_ptr<class CompoundTag> loadPlayerDataFromTag(class LevelStorage& storage, std::string_view saveTag);
 
 // symbol:
 // ?playerKey@PlayerDataSystem@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z

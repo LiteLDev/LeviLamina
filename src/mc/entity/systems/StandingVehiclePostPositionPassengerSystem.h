@@ -22,7 +22,7 @@ public:
 
     // symbol:
     // ?_tick@StandingVehiclePostPositionPassengerSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@UPositionPassengerRequestComponent@@@@$$CBUPassengerComponent@@UActorSetPositionRequestComponent@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UHorseFlag@@@@@@$$CBUStandAnimationComponent@@$$CBURenderRotationComponent@@U?$Include@UVehicleComponent@@@@$$CBURenderPositionComponent@@@@@Z
-    MCAPI static void _tick(class ViewT<class StrictEntityContext, struct Include<struct PositionPassengerRequestComponent>, struct PassengerComponent const, struct ActorSetPositionRequestComponent>, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct HorseFlag>>, struct StandAnimationComponent const, struct RenderRotationComponent const, struct Include<struct VehicleComponent>, struct RenderPositionComponent const>);
+    MCAPI static void _tick(class ViewT<class StrictEntityContext, struct Include<struct PositionPassengerRequestComponent>, struct PassengerComponent const, struct ActorSetPositionRequestComponent> view, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct HorseFlag>>, struct StandAnimationComponent const, struct RenderRotationComponent const, struct Include<struct VehicleComponent>, struct RenderPositionComponent const>);
 
     // symbol: ?createSystem@StandingVehiclePostPositionPassengerSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();

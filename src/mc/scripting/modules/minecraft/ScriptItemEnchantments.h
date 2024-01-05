@@ -31,11 +31,11 @@ public:
 
     // symbol:
     // ?addEnchantment@ScriptItemEnchantments@ScriptModuleMinecraft@@QEAA_NAEBUScriptItemEnchantmentInstance@2@@Z
-    MCAPI bool addEnchantment(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const&);
+    MCAPI bool addEnchantment(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const& inst);
 
     // symbol:
     // ?canAddEnchantment@ScriptItemEnchantments@ScriptModuleMinecraft@@QEAA_NAEBUScriptItemEnchantmentInstance@2@@Z
-    MCAPI bool canAddEnchantment(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const&);
+    MCAPI bool canAddEnchantment(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const& inst);
 
     // symbol:
     // ?getAllEnchantments@ScriptItemEnchantments@ScriptModuleMinecraft@@QEBA?AV?$vector@V?$StrongTypedObjectHandle@UScriptItemEnchantmentInstance@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@UScriptItemEnchantmentInstance@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@XZ

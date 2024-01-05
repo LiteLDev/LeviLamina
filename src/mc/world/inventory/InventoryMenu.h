@@ -30,7 +30,7 @@ public:
     MCVAPI void serverInitItemStackIds();
 
     // symbol: ?setSlot@InventoryMenu@@UEAAXHAEBVItemStack@@_N@Z
-    MCVAPI void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
+    MCVAPI void setSlot(int slot, class ItemStack const& item, bool);
 
     // symbol: ??1InventoryMenu@@UEAA@XZ
     MCVAPI ~InventoryMenu();

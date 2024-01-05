@@ -18,13 +18,13 @@ public:
     virtual ~AddActorEntityProxy() = default;
 
     // vIndex: 1, symbol: ?initializeActor@AddActorEntityProxy@@UEAAXAEAVActor@@@Z
-    virtual void initializeActor(class Actor&);
+    virtual void initializeActor(class Actor& actor);
 
     // vIndex: 2, symbol: ?reloadActor@AddActorEntityProxy@@UEAAXAEAVActor@@@Z
-    virtual void reloadActor(class Actor&);
+    virtual void reloadActor(class Actor& actor);
 
     // symbol: ??0AddActorEntityProxy@@QEAA@AEAVDimension@@@Z
-    MCAPI explicit AddActorEntityProxy(class Dimension&);
+    MCAPI explicit AddActorEntityProxy(class Dimension& dimension);
 
     // NOLINTEND
 };

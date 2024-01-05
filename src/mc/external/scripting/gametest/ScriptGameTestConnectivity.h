@@ -13,10 +13,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptGameTestConnectivity@ScriptModuleGameTest@@QEAA@AEBV01@@Z
-    MCAPI ScriptGameTestConnectivity(class ScriptModuleGameTest::ScriptGameTestConnectivity const&);
+    MCAPI ScriptGameTestConnectivity(class ScriptModuleGameTest::ScriptGameTestConnectivity const& other);
 
     // symbol: ??0ScriptGameTestConnectivity@ScriptModuleGameTest@@QEAA@_N000@Z
-    MCAPI ScriptGameTestConnectivity(bool, bool, bool, bool);
+    MCAPI ScriptGameTestConnectivity(bool north, bool east, bool south, bool west);
 
     // NOLINTEND
 };

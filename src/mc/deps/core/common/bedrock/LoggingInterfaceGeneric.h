@@ -29,7 +29,7 @@ public:
     virtual uint64 threadId();
 
     // vIndex: 2, symbol: ?writeToDebugger@LoggingInterfaceGeneric@Http@Bedrock@@UEAAXPEBDW4HCTraceLevel@@0@Z
-    virtual void writeToDebugger(char const*, ::HCTraceLevel, char const*);
+    virtual void writeToDebugger(char const* area, ::HCTraceLevel level, char const* message);
 
     // NOLINTEND
 };

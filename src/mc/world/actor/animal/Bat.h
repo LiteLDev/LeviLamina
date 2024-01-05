@@ -94,13 +94,16 @@ public:
     virtual void newServerAiStep();
 
     // symbol: ??0Bat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Bat(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI
+    Bat(class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext);
 
     // symbol: ?postNormalTick@Bat@@QEAAXXZ
     MCAPI void postNormalTick();
 
     // symbol: ?hasRestingBlockAbove@Bat@@SA_NAEBVVec3@@AEBVBlockSource@@@Z
-    MCAPI static bool hasRestingBlockAbove(class Vec3 const&, class BlockSource const&);
+    MCAPI static bool hasRestingBlockAbove(class Vec3 const&, class BlockSource const& region);
 
     // NOLINTEND
 };

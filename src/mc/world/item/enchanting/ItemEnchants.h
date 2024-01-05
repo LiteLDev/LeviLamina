@@ -36,7 +36,7 @@ public:
     MCAPI std::vector<std::string> getEnchantNames() const;
 
     // symbol: ?getEnchantment@ItemEnchants@@QEAA?AVEnchantmentInstance@@W4Type@Enchant@@@Z
-    MCAPI class EnchantmentInstance getEnchantment(::Enchant::Type);
+    MCAPI class EnchantmentInstance getEnchantment(::Enchant::Type enchantType);
 
     // symbol:
     // ?getEnchants@ItemEnchants@@QEBAAEBV?$vector@VEnchantmentInstance@@V?$allocator@VEnchantmentInstance@@@std@@@std@@H@Z
@@ -55,10 +55,10 @@ public:
     MCAPI bool isEmpty() const;
 
     // symbol: ?read@ItemEnchants@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
+    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ?removeEnchantment@ItemEnchants@@QEAAXW4Type@Enchant@@@Z
-    MCAPI void removeEnchantment(::Enchant::Type);
+    MCAPI void removeEnchantment(::Enchant::Type enchantType);
 
     // symbol: ??1ItemEnchants@@QEAA@XZ
     MCAPI ~ItemEnchants();

@@ -26,11 +26,11 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@TickingAreasLoadStatusPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@TickingAreasLoadStatusPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0TickingAreasLoadStatusPacket@@QEAA@XZ
     MCAPI TickingAreasLoadStatusPacket();

@@ -35,7 +35,7 @@ public:
     // symbol:
     // ??0ScriptLeashableComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI
-    ScriptLeashableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
+    ScriptLeashableComponent(class WeakEntityRef const& entity, class Scripting::WeakLifetimeScope const& scope, std::string const&);
 
     // symbol: ?getSoftDistance@ScriptLeashableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@M$$V@Scripting@@XZ
     MCAPI class Scripting::Result<float> getSoftDistance() const;

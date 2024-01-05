@@ -48,23 +48,39 @@ public:
 
     // vIndex: 1, symbol:
     // ?onMakeObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
-    virtual void
-    onMakeObject(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&, uint);
+    virtual void onMakeObject(
+        class Scripting::LifetimeRegistry&,
+        struct Scripting::ObjectHandle,
+        entt::meta_type const& type,
+        uint                   size
+    );
 
     // vIndex: 2, symbol:
     // ?onDestroyObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
-    virtual void
-    onDestroyObject(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&, uint);
+    virtual void onDestroyObject(
+        class Scripting::LifetimeRegistry&,
+        struct Scripting::ObjectHandle,
+        entt::meta_type const& type,
+        uint                   size
+    );
 
     // vIndex: 3, symbol:
     // ?onTrackObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
-    virtual void
-    onTrackObject(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&, uint);
+    virtual void onTrackObject(
+        class Scripting::LifetimeRegistry&,
+        struct Scripting::ObjectHandle,
+        entt::meta_type const& type,
+        uint                   size
+    );
 
     // vIndex: 4, symbol:
     // ?onUntrackObject@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
-    virtual void
-    onUntrackObject(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&, uint);
+    virtual void onUntrackObject(
+        class Scripting::LifetimeRegistry&,
+        struct Scripting::ObjectHandle,
+        entt::meta_type const& type,
+        uint                   size
+    );
 
     // vIndex: 5, symbol:
     // ?onObjectReducedToSingleOwner@ScriptPluginHandleCounter@@UEAAXAEAVLifetimeRegistry@Scripting@@UObjectHandle@3@@Z
@@ -85,7 +101,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_getOrMakeStats@ScriptPluginHandleCounter@@AEAAPEAUTypeStats@1@AEBVmeta_type@entt@@@Z
-    MCAPI struct ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(entt::meta_type const&);
+    MCAPI struct ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(entt::meta_type const& type);
 
     // NOLINTEND
 };

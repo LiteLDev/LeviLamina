@@ -90,7 +90,7 @@ public:
     virtual void refreshedInContainer(class ItemStackBase const& stack, class Level& level) const;
 
     // vIndex: 91, symbol: ?fixupCommon@MapItem@@UEBAXAEAVItemStackBase@@AEAVLevel@@@Z
-    virtual void fixupCommon(class ItemStackBase&, class Level&) const;
+    virtual void fixupCommon(class ItemStackBase& stack, class Level& level) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -99,14 +99,14 @@ public:
     virtual void __unk_vfn_99();
 
     // vIndex: 100, symbol: ?hasSameRelevantUserData@MapItem@@UEBA_NAEBVItemStackBase@@0@Z
-    virtual bool hasSameRelevantUserData(class ItemStackBase const&, class ItemStackBase const&) const;
+    virtual bool hasSameRelevantUserData(class ItemStackBase const& stack, class ItemStackBase const& other) const;
 
     // vIndex: 102, symbol:
     // ?setIconInfo@MapItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const& name, int);
 
     // vIndex: 103, symbol: ?getIconInfo@MapItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& itemStack, int, bool) const;
 
     // vIndex: 118, symbol:
     // ?getUpdatePacket@MapItem@@UEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVItemStack@@AEAVLevel@@AEAVActor@@@Z
@@ -126,7 +126,7 @@ public:
     MCAPI static bool doesDisplayPlayerMarkers(class ItemStack const& item);
 
     // symbol: ?getMapId@MapItem@@SA?AUActorUniqueID@@PEBVCompoundTag@@@Z
-    MCAPI static struct ActorUniqueID getMapId(class CompoundTag const*);
+    MCAPI static struct ActorUniqueID getMapId(class CompoundTag const* tag);
 
     // symbol: ?markForRegeneration@MapItem@@SAXAEAVItemStackBase@@@Z
     MCAPI static void markForRegeneration(class ItemStackBase&);
@@ -137,7 +137,7 @@ public:
     // symbol:
     // ?sampleMapData@MapItem@@SA_NAEAVBlockSource@@HAEBVBlockPos@@1HHPEAV?$vector@UMapSample@@V?$allocator@UMapSample@@@std@@@std@@PEAVMapItemSavedData@@PEAV?$vector@UClientTerrainPixel@@V?$allocator@UClientTerrainPixel@@@std@@@5@@Z
     MCAPI static bool
-    sampleMapData(class BlockSource&, int, class BlockPos const&, class BlockPos const&, int, int, std::vector<struct MapSample>*, class MapItemSavedData*, std::vector<struct ClientTerrainPixel>*);
+    sampleMapData(class BlockSource& region, int blocksPerTexel, class BlockPos const& worldOrigin, class BlockPos const& updateOrigin, int imageWidth, int imageHeight, std::vector<struct MapSample>* output, class MapItemSavedData* mapData, std::vector<struct ClientTerrainPixel>*);
 
     // symbol:
     // ?serializeMapData@MapItem@@SAXAEBV?$vector@UMapSample@@V?$allocator@UMapSample@@@std@@@std@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z

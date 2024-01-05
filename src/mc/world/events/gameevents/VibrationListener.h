@@ -28,7 +28,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?handleGameEvent@VibrationListener@@UEAAXAEBVGameEvent@@AEBUGameEventContext@@AEAVBlockSource@@@Z
-    virtual void handleGameEvent(class GameEvent const&, struct GameEventContext const&, class BlockSource&);
+    virtual void handleGameEvent(class GameEvent const&, struct GameEventContext const&, class BlockSource& region);
 
     // vIndex: 2, symbol: ?getPositionSource@VibrationListener@@UEBAAEBVPositionSource@GameEvents@@XZ
     virtual class GameEvents::PositionSource const& getPositionSource() const;
@@ -42,30 +42,30 @@ public:
     // symbol:
     // ??0VibrationListener@@QEAA@$$QEAV?$unique_ptr@VVibrationListenerConfig@@U?$default_delete@VVibrationListenerConfig@@@std@@@std@@VPositionSource@GameEvents@@IW4OwnerType@0@@Z
     MCAPI VibrationListener(
-        std::unique_ptr<class VibrationListenerConfig>&&,
+        std::unique_ptr<class VibrationListenerConfig>&& config,
         class GameEvents::PositionSource,
-        uint,
-        ::VibrationListener::OwnerType
+        uint                           range,
+        ::VibrationListener::OwnerType ownerType
     );
 
     // symbol: ?getLatestReceivedVibration@VibrationListener@@QEBAAEBVGameEvent@@XZ
     MCAPI class GameEvent const& getLatestReceivedVibration() const;
 
     // symbol: ?load@VibrationListener@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void load(class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?save@VibrationListener@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void save(class CompoundTag&) const;
+    MCAPI void save(class CompoundTag& tag) const;
 
     // symbol: ?tick@VibrationListener@@QEAAXAEAVBlockSource@@@Z
-    MCAPI void tick(class BlockSource&);
+    MCAPI void tick(class BlockSource& region);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_requestVibrationParticle@VibrationListener@@AEAAXAEAVBlockSource@@AEBVBlockPos@@M@Z
-    MCAPI void _requestVibrationParticle(class BlockSource&, class BlockPos const&, float);
+    MCAPI void _requestVibrationParticle(class BlockSource& region, class BlockPos const&, float);
 
     // symbol: ?_tryAdvanceInFlightVibration@VibrationListener@@AEAA_NAEAVBlockSource@@@Z
     MCAPI bool _tryAdvanceInFlightVibration(class BlockSource&);
@@ -73,14 +73,14 @@ public:
     // symbol:
     // ?_trySendSneakCloseToSculkSensorEventPacket@VibrationListener@@AEAAXAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@AEBVVec3@@@Z
     MCAPI void
-    _trySendSneakCloseToSculkSensorEventPacket(class BlockSource&, class GameEvent const&, struct GameEventContext const&, class Vec3 const&);
+    _trySendSneakCloseToSculkSensorEventPacket(class BlockSource& region, class GameEvent const&, struct GameEventContext const&, class Vec3 const&);
 
     // symbol: ?_isVibrationOccluded@VibrationListener@@CA_NAEAVBlockSource@@AEBVVec3@@1@Z
-    MCAPI static bool _isVibrationOccluded(class BlockSource&, class Vec3 const&, class Vec3 const&);
+    MCAPI static bool _isVibrationOccluded(class BlockSource& region, class Vec3 const&, class Vec3 const& targetPos);
 
     // symbol: ?_shouldIgnoreVibration@VibrationListener@@CA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
     MCAPI static bool
-    _shouldIgnoreVibration(class BlockSource&, class GameEvent const&, struct GameEventContext const&);
+    _shouldIgnoreVibration(class BlockSource& region, class GameEvent const&, struct GameEventContext const&);
 
     // NOLINTEND
 };

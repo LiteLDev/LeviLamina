@@ -42,16 +42,16 @@ public:
 
     // symbol: ??0StalkAndPounceOnTargetGoal@@QEAA@AEAVMob@@AEBVActorFilterGroup@@MMMMMMMM_N@Z
     MCAPI StalkAndPounceOnTargetGoal(
-        class Mob&,
-        class ActorFilterGroup const&,
-        float,
-        float,
-        float,
-        float,
-        float,
-        float,
-        float,
-        float,
+        class Mob&                    mob,
+        class ActorFilterGroup const& stuckBlocks,
+        float                         stalkSpeed,
+        float                         stalkGiveUpDist,
+        float                         leapHeight,
+        float                         leapDist,
+        float                         maxPounceDist,
+        float                         strikeDistance,
+        float                         interestedTime,
+        float                         stuckTime,
         bool
     );
 

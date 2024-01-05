@@ -90,10 +90,10 @@ public:
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
 
     // vIndex: 111, symbol: ?getFurnaceXPmultiplier@CoalItem@@UEBAMAEBVItemStackBase@@@Z
-    virtual float getFurnaceXPmultiplier(class ItemStackBase const&) const;
+    virtual float getFurnaceXPmultiplier(class ItemStackBase const& instance) const;
 
     // symbol: ??0CoalItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@@Z
-    MCAPI CoalItem(std::string const&, int, ::CoalItem::Type);
+    MCAPI CoalItem(std::string const& name, int, ::CoalItem::Type type);
 
     // NOLINTEND
 };

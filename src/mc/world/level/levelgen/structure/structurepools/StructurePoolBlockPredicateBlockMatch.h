@@ -18,7 +18,7 @@ public:
     virtual ~StructurePoolBlockPredicateBlockMatch() = default;
 
     // vIndex: 1, symbol: ?test@StructurePoolBlockPredicateBlockMatch@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
-    virtual bool test(class Block const& block, class Randomize& random) const;
+    virtual bool test(class Block const& block, class Randomize&) const;
 
     // vIndex: 2, symbol: ?test@StructurePoolBlockPredicateBlockMatch@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
     virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;

@@ -118,7 +118,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 142, symbol: ?tryGetUninfested@InfestedDeepslateBlock@@UEBAPEBVBlock@@AEBV2@@Z
-    virtual class Block const* tryGetUninfested(class Block const&) const;
+    virtual class Block const* tryGetUninfested(class Block const& block) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -131,7 +131,7 @@ public:
 
     // symbol:
     // ??0InfestedDeepslateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI InfestedDeepslateBlock(std::string const&, int, class Material const&);
+    MCAPI InfestedDeepslateBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

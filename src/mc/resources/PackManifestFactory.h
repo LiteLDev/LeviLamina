@@ -32,12 +32,17 @@ public:
     );
 
     // symbol: ??0PackManifestFactory@@QEAA@AEBVPackCapabilityRegistry@@AEAVIPackTelemetry@@@Z
-    MCAPI PackManifestFactory(class PackCapabilityRegistry const&, class IPackTelemetry&);
+    MCAPI PackManifestFactory(class PackCapabilityRegistry const&, class IPackTelemetry& eventing);
 
     // symbol:
     // ?create@PackManifestFactory@@QEAA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@AEAVPackAccessStrategy@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAVPackReport@@V23@PEAVSubpackInfoCollection@@@Z
-    MCAPI std::unique_ptr<class PackManifest>
-    create(class PackAccessStrategy&, std::string const&, class PackReport&, std::unique_ptr<class PackManifest>, class SubpackInfoCollection*);
+    MCAPI std::unique_ptr<class PackManifest> create(
+        class PackAccessStrategy& accessStrategy,
+        std::string const&        manifestContent,
+        class PackReport&         report,
+        std::unique_ptr<class PackManifest>,
+        class SubpackInfoCollection* subpackInfoStack
+    );
 
     // symbol:
     // ?contentKeyLookup@PackManifestFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z

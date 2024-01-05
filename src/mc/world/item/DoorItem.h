@@ -78,11 +78,12 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@DoorItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol:
     // ??0DoorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4DoorType@DoorBlock@@@Z
-    MCAPI DoorItem(std::string const& name, int id, ::DoorBlock::DoorType type);
+    MCAPI DoorItem(std::string const& name, int, ::DoorBlock::DoorType type);
 
     // symbol: ?getDoorBlock@DoorItem@@QEBAPEBVBlock@@XZ
     MCAPI class Block const* getDoorBlock() const;

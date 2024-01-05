@@ -22,12 +22,12 @@ public:
     // symbol:
     // ?tickFlyTravelSystem@FlyTravelSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@UMobTravelComponent@@@@$$CBUAbilitiesComponent@@$$CBUSynchedActorDataComponent@@UFlySpeedComponent@@@@@Z
     MCAPI static void
-        tickFlyTravelSystem(class ViewT<
-                            class StrictEntityContext,
-                            struct Include<class FlagComponent<struct PlayerComponentFlag>, struct MobTravelComponent>,
-                            struct AbilitiesComponent const,
-                            struct SynchedActorDataComponent const,
-                            struct FlySpeedComponent>);
+    tickFlyTravelSystem(class ViewT<
+                        class StrictEntityContext,
+                        struct Include<class FlagComponent<struct PlayerComponentFlag>, struct MobTravelComponent>,
+                        struct AbilitiesComponent const,
+                        struct SynchedActorDataComponent const,
+                        struct FlySpeedComponent> view);
 
     // NOLINTEND
 };

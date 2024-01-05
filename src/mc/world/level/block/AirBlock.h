@@ -38,9 +38,14 @@ public:
 
     // vIndex: 7, symbol:
     // ?addCollisionShapes@AirBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-    virtual bool
-    addCollisionShapes(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual bool addCollisionShapes(
+        class Block const&                                         block,
+        class BlockSource const&                                   region,
+        class BlockPos const&                                      pos,
+        class AABB const*                                          intersectTestBox,
+        std::vector<class AABB>&                                   inoutBoxes,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
 
     // vIndex: 8, symbol:
     // ?addAABBs@AirBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
@@ -65,7 +70,8 @@ public:
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
     // vIndex: 14, symbol: ?isObstructingChests@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool isObstructingChests(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool
+    isObstructingChests(class BlockSource& region, class BlockPos const& pos, class Block const& thisBlock) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -213,7 +219,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0AirBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI AirBlock(std::string const& nameId, int id, class Material const& material);
+    MCAPI AirBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

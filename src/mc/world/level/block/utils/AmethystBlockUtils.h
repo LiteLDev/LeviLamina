@@ -5,7 +5,7 @@
 namespace AmethystBlockUtils {
 // NOLINTBEGIN
 // symbol: ?resonateVibration@AmethystBlockUtils@@YAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@H@Z
-MCAPI void resonateVibration(class BlockSource&, class BlockPos const&, class Actor*, int);
+MCAPI void resonateVibration(class BlockSource& region, class BlockPos const& pos, class Actor* source, int);
 // NOLINTEND
 
 }; // namespace AmethystBlockUtils

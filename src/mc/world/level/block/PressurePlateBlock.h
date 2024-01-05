@@ -142,8 +142,8 @@ public:
     // symbol:
     // ??0PressurePlateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@W4Sensitivity@0@@Z
     MCAPI PressurePlateBlock(
-        std::string const&                nameId,
-        int                               id,
+        std::string const& nameId,
+        int,
         class Material const&             material,
         ::PressurePlateBlock::Sensitivity sensitivity
     );

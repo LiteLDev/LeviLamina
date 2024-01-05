@@ -54,37 +54,37 @@ public:
     virtual bool canAlwaysEat() const;
 
     // vIndex: 4, symbol: ?eatItem@FoodItemComponentLegacy@@UEAAPEBVItem@@AEAVItemStack@@AEAVActor@@AEAVLevel@@@Z
-    virtual class Item const* eatItem(class ItemStack&, class Actor&, class Level&);
+    virtual class Item const* eatItem(class ItemStack& instance, class Actor& actor, class Level& level);
 
     // vIndex: 5, symbol: ?use@FoodItemComponentLegacy@@UEAA_NAEAVItemStack@@AEAVPlayer@@@Z
-    virtual bool use(class ItemStack&, class Player&);
+    virtual bool use(class ItemStack& instance, class Player& player);
 
     // vIndex: 6, symbol:
     // ?useTimeDepleted@FoodItemComponentLegacy@@UEAAPEBVItem@@AEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z
-    virtual class Item const* useTimeDepleted(class ItemStack&, class Player&, class Level&);
+    virtual class Item const* useTimeDepleted(class ItemStack& instance, class Player& player, class Level& level);
 
     // symbol:
     // ?buildNetworkTag@FoodItemComponentLegacy@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 
     // symbol: ?init@FoodItemComponentLegacy@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
-    MCAPI bool init(class Json::Value&, class SemVersion const&);
+    MCAPI bool init(class Json::Value& data, class SemVersion const& engineVersion);
 
     // symbol: ?initializeFromNetwork@FoodItemComponentLegacy@@SA?AVValue@Json@@AEBVCompoundTag@@@Z
-    MCAPI static class Json::Value initializeFromNetwork(class CompoundTag const&);
+    MCAPI static class Json::Value initializeFromNetwork(class CompoundTag const& tag);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_applyEatEffects@FoodItemComponentLegacy@@AEAAXAEBVItemStack@@AEAVActor@@AEAVLevel@@@Z
-    MCAPI void _applyEatEffects(class ItemStack const&, class Actor&, class Level&);
+    MCAPI void _applyEatEffects(class ItemStack const& instance, class Actor& actor, class Level& level);
 
     // symbol: ?_loadEffects@FoodItemComponentLegacy@@AEAAXAEAVValue@Json@@@Z
-    MCAPI void _loadEffects(class Json::Value&);
+    MCAPI void _loadEffects(class Json::Value& effectsData);
 
     // symbol: ?_loadRemoveEffects@FoodItemComponentLegacy@@AEAAXAEAVValue@Json@@@Z
-    MCAPI void _loadRemoveEffects(class Json::Value&);
+    MCAPI void _loadRemoveEffects(class Json::Value& removeEffectsData);
 
     // NOLINTEND
 };

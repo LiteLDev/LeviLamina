@@ -140,7 +140,7 @@ public:
     ) const;
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@TopSnowBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // vIndex: 92, symbol: ?neighborChanged@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void
@@ -148,7 +148,7 @@ public:
 
     // vIndex: 94, symbol: ?playerWillDestroy@TopSnowBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
     virtual class Block const*
-    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
+    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@TopSnowBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const& getPlacementBlock(
@@ -160,7 +160,8 @@ public:
     ) const;
 
     // vIndex: 103, symbol: ?canBeBuiltOver@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlockItem@@@Z
-    virtual bool canBeBuiltOver(class BlockSource&, class BlockPos const&, class BlockItem const&) const;
+    virtual bool
+    canBeBuiltOver(class BlockSource& region, class BlockPos const& pos, class BlockItem const& item) const;
 
     // vIndex: 104, symbol: ?canBeBuiltOver@TopSnowBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canBeBuiltOver(class BlockSource& region, class BlockPos const& pos) const;
@@ -187,7 +188,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 145, symbol: ?onExploded@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-    virtual void onExploded(class BlockSource&, class BlockPos const&, class Actor*) const;
+    virtual void onExploded(class BlockSource& region, class BlockPos const& pos, class Actor* entitySource) const;
 
     // vIndex: 147, symbol: ?onPlace@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
@@ -199,7 +200,7 @@ public:
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 151, symbol: ?randomTick@TopSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -208,11 +209,10 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@TopSnowBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@TopSnowBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 168, symbol: ?getDustColor@TopSnowBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
     virtual class mce::Color getDustColor(class Block const& block) const;
@@ -254,7 +254,8 @@ public:
     MCAPI bool melt(class BlockSource& region, class BlockPos const& pos, int meltHeight) const;
 
     // symbol: ?startFallingIfLostSupport@TopSnowBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    MCAPI void startFallingIfLostSupport(class BlockSource&, class BlockPos const&, class Random&) const;
+    MCAPI void
+    startFallingIfLostSupport(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ?buildSnowBlock@TopSnowBlock@@SAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@H_N@Z
     MCAPI static class Block const&
@@ -264,7 +265,8 @@ public:
     MCAPI static class Block const& getCoveredBlock(class BlockSource const& region, class BlockPos const& pos);
 
     // symbol: ?getSnowBlockToBuild@TopSnowBlock@@SAAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@H_N@Z
-    MCAPI static class Block const& getSnowBlockToBuild(class BlockSource const&, class BlockPos const&, int, bool);
+    MCAPI static class Block const&
+    getSnowBlockToBuild(class BlockSource const& region, class BlockPos const& pos, int height, bool additive);
 
     // symbol: ?HALF_HEIGHT@TopSnowBlock@@2HB
     MCAPI static int const HALF_HEIGHT;
@@ -286,10 +288,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_canBeBuiltOver@TopSnowBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@PEBVBlockItem@@@Z
-    MCAPI bool _canBeBuiltOver(class BlockSource&, class BlockPos const&, class BlockItem const*) const;
+    MCAPI bool _canBeBuiltOver(class BlockSource& region, class BlockPos const& pos, class BlockItem const* item) const;
 
     // symbol: ?_canSurvive@TopSnowBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _canSurvive(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool _canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

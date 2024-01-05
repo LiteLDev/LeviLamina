@@ -22,17 +22,17 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?tick@EntityEnterVolumeSystem@@UEAAXAEAVEntityRegistry@@@Z
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry& registry);
 
     // symbol: ??0EntityEnterVolumeSystem@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@@Z
-    MCAPI explicit EntityEnterVolumeSystem(Bedrock::NotNullNonOwnerPtr<class ILevel const>);
+    MCAPI explicit EntityEnterVolumeSystem(Bedrock::NotNullNonOwnerPtr<class ILevel const> level);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_tick@EntityEnterVolumeSystem@@AEBAXAEAVEntityContext@@AEAVVolumeBoundsComponent@@@Z
-    MCAPI void _tick(class EntityContext&, class VolumeBoundsComponent&) const;
+    MCAPI void _tick(class EntityContext& entity, class VolumeBoundsComponent& bounds) const;
 
     // NOLINTEND
 };

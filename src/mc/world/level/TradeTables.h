@@ -31,7 +31,11 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_parseAndStoreTradeTable@TradeTables@@AEAAXVItemRegistryRef@@PEAVResourcePackManager@@AEBVPath@Core@@@Z
-    MCAPI void _parseAndStoreTradeTable(class ItemRegistryRef, class ResourcePackManager*, class Core::Path const&);
+    MCAPI void _parseAndStoreTradeTable(
+        class ItemRegistryRef,
+        class ResourcePackManager* resourceLoader,
+        class Core::Path const&    tradeTablePath
+    );
 
     // NOLINTEND
 };

@@ -18,7 +18,7 @@ public:
     MCAPI class BlockPos getPosition(ushort) const;
 
     // symbol: ?getStatusFlag@SynchedActorDataReader@@QEBA_NW4ActorFlags@@@Z
-    MCAPI bool getStatusFlag(::ActorFlags) const;
+    MCAPI bool getStatusFlag(::ActorFlags flag) const;
 
     // symbol: ?getVec3@SynchedActorDataReader@@QEBA?AVVec3@@G@Z
     MCAPI class Vec3 getVec3(ushort) const;

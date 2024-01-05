@@ -13,7 +13,8 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?fromStringVector@BlockPlacementDirectionalFilter@@SAXAEAU1@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCAPI static void fromStringVector(struct BlockPlacementDirectionalFilter&, std::vector<std::string>);
+    MCAPI static void
+    fromStringVector(struct BlockPlacementDirectionalFilter& instance, std::vector<std::string> faces);
 
     // NOLINTEND
 };

@@ -66,8 +66,10 @@ public:
 
     // vIndex: 15, symbol:
     // ?loadActorInternalComponentInfo@DefaultDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
-    virtual struct InternalComponentRegistry::ComponentInfo const*
-    loadActorInternalComponentInfo(std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo> const&, std::string const&);
+    virtual struct InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(
+        std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo> const& registry,
+        std::string const&                                                                             componentName
+    );
 
     // vIndex: 16, symbol: ?getType@DefaultDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ
     virtual ::DataLoadHelperType getType() const;

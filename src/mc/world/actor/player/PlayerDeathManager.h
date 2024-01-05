@@ -21,14 +21,15 @@ public:
     MCAPI explicit PlayerDeathManager(std::unique_ptr<class IPlayerDeathManagerProxy>);
 
     // symbol: ?playerDied@PlayerDeathManager@@QEAAXAEAVPlayer@@AEBVActorDamageSource@@@Z
-    MCAPI void playerDied(class Player&, class ActorDamageSource const&);
+    MCAPI void playerDied(class Player& player, class ActorDamageSource const& source);
 
     // symbol:
     // ?registerOnPlayerDeathCallback@PlayerDeathManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVPlayer@@@Z@std@@@Z
-    MCAPI class Bedrock::PubSub::Subscription registerOnPlayerDeathCallback(std::function<void(class Player&)>);
+    MCAPI class Bedrock::PubSub::Subscription registerOnPlayerDeathCallback(std::function<void(class Player&)> callback
+    );
 
     // symbol: ?setPacketSender@PlayerDeathManager@@QEAAXAEAVPacketSender@@@Z
-    MCAPI void setPacketSender(class PacketSender&);
+    MCAPI void setPacketSender(class PacketSender& packetSender);
 
     // symbol: ??1PlayerDeathManager@@QEAA@XZ
     MCAPI ~PlayerDeathManager();

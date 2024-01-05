@@ -11,8 +11,12 @@ namespace GameLightingChecker {
 // NOLINTBEGIN
 // symbol:
 // ?checkAreaForLighting@GameLightingChecker@@YAXAEAVBlockSource@@AEBVBlockPos@@1AEAUCheckAreaForLightingResults@1@@Z
-MCAPI void
-checkAreaForLighting(class BlockSource&, class BlockPos const&, class BlockPos const&, struct GameLightingChecker::CheckAreaForLightingResults&);
+MCAPI void checkAreaForLighting(
+    class BlockSource&                                       region,
+    class BlockPos const&                                    min,
+    class BlockPos const&                                    max,
+    struct GameLightingChecker::CheckAreaForLightingResults& results
+);
 // NOLINTEND
 
 }; // namespace GameLightingChecker

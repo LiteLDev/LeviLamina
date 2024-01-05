@@ -34,7 +34,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 25, symbol: ?canConnect@PumpkinBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
+    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -152,7 +152,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0PumpkinBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N1@Z
-    MCAPI PumpkinBlock(std::string const& nameId, int id, bool lit, bool carved);
+    MCAPI PumpkinBlock(std::string const& nameId, int, bool lit, bool carved);
 
     // NOLINTEND
 

@@ -109,35 +109,37 @@ public:
     virtual void __unk_vfn_111();
 
     // vIndex: 112, symbol: ?getComparatorSignal@RespawnAnchorBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uchar) const;
+    virtual int
+    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
+        const;
 
     // vIndex: 114, symbol: __unk_vfn_114
     virtual void __unk_vfn_114();
 
     // vIndex: 115, symbol: ?canSpawnAt@RespawnAnchorBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSpawnAt(class BlockSource const&, class BlockPos const&) const;
+    virtual bool canSpawnAt(class BlockSource const& region, class BlockPos const& pos) const;
 
     // vIndex: 116, symbol: ?notifySpawnedAt@RespawnAnchorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void notifySpawnedAt(class BlockSource&, class BlockPos const&) const;
+    virtual void notifySpawnedAt(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 117, symbol: __unk_vfn_117
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@RespawnAnchorBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 134, symbol:
     // ?animateTickBedrockLegacy@RespawnAnchorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // vIndex: 137, symbol: ?getLightEmission@RespawnAnchorBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
-    virtual struct Brightness getLightEmission(class Block const&) const;
+    virtual struct Brightness getLightEmission(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@RespawnAnchorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -146,7 +148,7 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@RespawnAnchorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const&, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -158,12 +160,18 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0RespawnAnchorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI RespawnAnchorBlock(std::string const&, int);
+    MCAPI RespawnAnchorBlock(std::string const& nameId, int);
 
     // symbol:
     // ?addItem@RespawnAnchorBlock@@SA_NAEAVContainer@@HAEAVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-    MCAPI static bool
-    addItem(class Container&, int, class ItemStack&, class BlockSource&, class Block const&, class BlockPos const&);
+    MCAPI static bool addItem(
+        class Container&      fromContainer,
+        int                   slot,
+        class ItemStack&      item,
+        class BlockSource&    region,
+        class Block const&    block,
+        class BlockPos const& pos
+    );
 
     // NOLINTEND
 

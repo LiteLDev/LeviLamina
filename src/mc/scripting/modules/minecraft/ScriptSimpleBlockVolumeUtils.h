@@ -36,10 +36,10 @@ public:
 
     // symbol:
     // ?doesLocationTouchFaces@ScriptSimpleBlockVolumeUtils@ScriptModuleMinecraft@@SA_NAEBVSimpleBlockVolume@@AEBVVec3@@@Z
-    MCAPI static bool doesLocationTouchFaces(class SimpleBlockVolume const&, class Vec3 const&);
+    MCAPI static bool doesLocationTouchFaces(class SimpleBlockVolume const&, class Vec3 const& pos);
 
     // symbol: ?doesVolumeTouchFaces@ScriptSimpleBlockVolumeUtils@ScriptModuleMinecraft@@SA_NAEBVSimpleBlockVolume@@0@Z
-    MCAPI static bool doesVolumeTouchFaces(class SimpleBlockVolume const&, class SimpleBlockVolume const&);
+    MCAPI static bool doesVolumeTouchFaces(class SimpleBlockVolume const&, class SimpleBlockVolume const& other);
 
     // symbol: ?getMax@ScriptSimpleBlockVolumeUtils@ScriptModuleMinecraft@@SA?AVVec3@@AEBVSimpleBlockVolume@@@Z
     MCAPI static class Vec3 getMax(class SimpleBlockVolume const&);
@@ -53,13 +53,13 @@ public:
     // symbol:
     // ?intersects@ScriptSimpleBlockVolumeUtils@ScriptModuleMinecraft@@SA?AW4IntersectionResult@SimpleBlockVolume@@AEBV4@0@Z
     MCAPI static ::SimpleBlockVolume::IntersectionResult
-    intersects(class SimpleBlockVolume const&, class SimpleBlockVolume const&);
+    intersects(class SimpleBlockVolume const&, class SimpleBlockVolume const& other);
 
     // symbol: ?isInside@ScriptSimpleBlockVolumeUtils@ScriptModuleMinecraft@@SA_NAEBVSimpleBlockVolume@@AEBVVec3@@@Z
-    MCAPI static bool isInside(class SimpleBlockVolume const&, class Vec3 const&);
+    MCAPI static bool isInside(class SimpleBlockVolume const&, class Vec3 const& pos);
 
     // symbol: ?translate@ScriptSimpleBlockVolumeUtils@ScriptModuleMinecraft@@SA?AVSimpleBlockVolume@@AEBV3@AEBVVec3@@@Z
-    MCAPI static class SimpleBlockVolume translate(class SimpleBlockVolume const&, class Vec3 const&);
+    MCAPI static class SimpleBlockVolume translate(class SimpleBlockVolume const&, class Vec3 const& delta);
 
     // NOLINTEND
 };

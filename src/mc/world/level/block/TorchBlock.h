@@ -163,7 +163,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@TorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -186,7 +186,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0TorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4MaterialType@@@Z
-    MCAPI TorchBlock(std::string const& nameId, int id, ::MaterialType mat);
+    MCAPI TorchBlock(std::string const& nameId, int, ::MaterialType mat);
 
     // NOLINTEND
 

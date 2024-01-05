@@ -57,7 +57,7 @@ public:
 
     // symbol:
     // ??0BlockMaterialInstancesDescription@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockRenderLayer@@_N2@Z
-    MCAPI BlockMaterialInstancesDescription(std::string const&, ::BlockRenderLayer, bool, bool);
+    MCAPI BlockMaterialInstancesDescription(std::string const& textureName, ::BlockRenderLayer, bool, bool);
 
     // symbol: ??4BlockMaterialInstancesDescription@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct BlockMaterialInstancesDescription& operator=(struct BlockMaterialInstancesDescription&&);

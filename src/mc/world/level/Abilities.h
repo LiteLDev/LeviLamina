@@ -25,12 +25,17 @@ public:
 
     // symbol:
     // ?forEachAbility@Abilities@@QEAAXAEBV?$function@$$A6AXAEAVAbility@@W4AbilitiesIndex@@@Z@std@@W4Options@Ability@@@Z
-    MCAPI void forEachAbility(std::function<void(class Ability&, ::AbilitiesIndex)> const&, ::Ability::Options);
+    MCAPI void forEachAbility(
+        std::function<void(class Ability&, ::AbilitiesIndex)> const& callback,
+        ::Ability::Options                                           requiredOptions
+    );
 
     // symbol:
     // ?forEachAbility@Abilities@@QEBAXAEBV?$function@$$A6AXAEBVAbility@@W4AbilitiesIndex@@@Z@std@@W4Options@Ability@@@Z
-    MCAPI void
-    forEachAbility(std::function<void(class Ability const&, ::AbilitiesIndex)> const&, ::Ability::Options) const;
+    MCAPI void forEachAbility(
+        std::function<void(class Ability const&, ::AbilitiesIndex)> const& callback,
+        ::Ability::Options                                                 requiredOptions
+    ) const;
 
     // symbol: ?getBool@Abilities@@QEBA_NW4AbilitiesIndex@@@Z
     MCAPI bool getBool(::AbilitiesIndex ability) const;
@@ -57,19 +62,19 @@ public:
     MCAPI void setDefault();
 
     // symbol: ?setFromPermissions@Abilities@@QEAAXW4PlayerPermissionLevel@@@Z
-    MCAPI void setFromPermissions(::PlayerPermissionLevel);
+    MCAPI void setFromPermissions(::PlayerPermissionLevel permissions);
 
     // symbol: ?unSet@Abilities@@QEAAXXZ
     MCAPI void unSet();
 
     // symbol: ?unSet@Abilities@@QEAAXW4AbilitiesIndex@@@Z
-    MCAPI void unSet(::AbilitiesIndex);
+    MCAPI void unSet(::AbilitiesIndex val);
 
     // symbol: ?getAbilityName@Abilities@@SAPEBDW4AbilitiesIndex@@@Z
     MCAPI static char const* getAbilityName(::AbilitiesIndex abilityIndex);
 
     // symbol: ?getDefault@Abilities@@SAAEBVAbility@@W4AbilitiesIndex@@@Z
-    MCAPI static class Ability const& getDefault(::AbilitiesIndex);
+    MCAPI static class Ability const& getDefault(::AbilitiesIndex abilityIndex);
 
     // symbol:
     // ?nameToAbilityIndex@Abilities@@SA?AW4AbilitiesIndex@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

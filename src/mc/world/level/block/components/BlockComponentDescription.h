@@ -41,9 +41,12 @@ public:
 
     // vIndex: 6, symbol:
     // ?buildSchema@BlockComponentDescription@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z
-    virtual void
-    buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&)
-        const;
+    virtual void buildSchema(
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&
+                                           componentSchema,
+        class BlockComponentFactory const& factory
+    ) const;
 
     // vIndex: 7, symbol: ?isNetworkComponent@BlockComponentDescription@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
@@ -60,7 +63,7 @@ public:
     virtual void handleVersionBasedInitialization(class SemVersion const&);
 
     // symbol: ?initializeComponent@BlockComponentDescription@@UEBAXAEAVEntityContext@@@Z
-    MCVAPI void initializeComponent(class EntityContext&) const;
+    MCVAPI void initializeComponent(class EntityContext& entity) const;
 
     // symbol: ?initializeComponentFromCode@BlockComponentDescription@@UEBAXAEAVEntityContext@@@Z
     MCVAPI void initializeComponentFromCode(class EntityContext&) const;

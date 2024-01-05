@@ -111,9 +111,9 @@ public:
     virtual void executeEvent(
         class BlockSource&    region,
         class BlockPos const& pos,
-        class Block const&    block,
-        std::string const&    eventName,
-        class Actor&          sourceEntity
+        class Block const&,
+        std::string const& eventName,
+        class Actor&       sourceEntity
     ) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
@@ -155,14 +155,13 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@BeehiveBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@BeehiveBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // symbol: ?canBeSilkTouched@BeehiveBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -171,7 +170,7 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 
     // symbol: ??0BeehiveBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BeehiveBlock(std::string const& nameId, int id);
+    MCAPI BeehiveBlock(std::string const& nameId, int);
 
     // symbol: ?emitHoneyComb@BeehiveBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void emitHoneyComb(class BlockSource& region, class BlockPos const& pos) const;
@@ -180,7 +179,7 @@ public:
     MCAPI void evictAll(class BlockSource& region, class BlockPos const& pos, bool angry) const;
 
     // symbol: ?onPlayerPlace@BeehiveBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void onPlayerPlace(class BlockSource&, class BlockPos const&) const;
+    MCAPI void onPlayerPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?deliverNectar@BeehiveBlock@@SAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
     MCAPI static void deliverNectar(class BlockSource& region, class Block const& block, class BlockPos const& pos);

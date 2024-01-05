@@ -101,7 +101,7 @@ public:
     MCAPI bool showTradeScreen();
 
     // symbol: ?tickDiscountDegradationTimer@EconomyTradeableComponent@@QEAAXUTick@@@Z
-    MCAPI void tickDiscountDegradationTimer(struct Tick);
+    MCAPI void tickDiscountDegradationTimer(struct Tick currentTick);
 
     // symbol: ?tryIncrementCuredDiscount@EconomyTradeableComponent@@QEAAXXZ
     MCAPI void tryIncrementCuredDiscount();
@@ -113,7 +113,7 @@ public:
     MCAPI void tryToTransferOldOffers(class MerchantRecipeList* oldOffers);
 
     // symbol: ?isUseNewTradeScreen@EconomyTradeableComponent@@SA_NAEBVActor@@@Z
-    MCAPI static bool isUseNewTradeScreen(class Actor const&);
+    MCAPI static bool isUseNewTradeScreen(class Actor const& owner);
 
     // NOLINTEND
 

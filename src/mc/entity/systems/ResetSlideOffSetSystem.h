@@ -25,7 +25,7 @@ public:
                                                  class StrictEntityContext,
                                                  struct Exclude<class FlagComponent<struct AutoStepRequestFlag>>,
                                                  struct MoveRequestComponent const,
-                                                 struct SlideOffsetComponent>);
+                                                 struct SlideOffsetComponent> view);
 
     // NOLINTEND
 };

@@ -82,7 +82,10 @@ public:
     virtual void __unk_vfn_168();
 
     // symbol: ??0Bee@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Bee(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI
+    Bee(class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext);
 
     // symbol: ?postNormalTick@Bee@@QEAAXXZ
     MCAPI void postNormalTick();

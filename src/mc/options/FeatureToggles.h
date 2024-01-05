@@ -67,7 +67,8 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_getDisableIfOtherOptionDisabledSetupCallback@FeatureToggles@@AEBA?AV?$function@$$A6AXAEAVOption@@@Z@std@@W4FeatureOptionID@@@Z
-    MCAPI std::function<void(class Option&)> _getDisableIfOtherOptionDisabledSetupCallback(::FeatureOptionID) const;
+    MCAPI std::function<void(class Option&)>
+          _getDisableIfOtherOptionDisabledSetupCallback(::FeatureOptionID optionIdToCheck) const;
 
     // symbol:
     // ?_getDisabledIfOptionExpectationsNotMetSetupCallback@FeatureToggles@@AEAA?AV?$function@$$A6AXAEAVOption@@@Z@std@@V?$vector@W4FeatureOptionID@@V?$allocator@W4FeatureOptionID@@@std@@@3@0@Z
@@ -89,8 +90,16 @@ public:
 
     // symbol:
     // ?_registerFeature@FeatureToggles@@AEAAXW4FeatureOptionTabID@@W4FeatureOptionID@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@2_N1V?$function@$$A6AXAEAVOption@@@Z@5@V?$function@$$A6AXAEA_N@Z@5@@Z
-    MCAPI void
-    _registerFeature(::FeatureOptionTabID, ::FeatureOptionID, std::string const&, std::string const&, bool, ::FeatureOptionID, std::function<void(class Option&)>, std::function<void(bool&)>);
+    MCAPI void _registerFeature(
+        ::FeatureOptionTabID,
+        ::FeatureOptionID                  featureID,
+        std::string const&                 locName,
+        std::string const&                 saveName,
+        bool                               defaultValue,
+        ::FeatureOptionID                  dependencyFeatureID,
+        std::function<void(class Option&)> setup,
+        std::function<void(bool&)>         lock
+    );
 
     // symbol: ?_registerFeatures@FeatureToggles@@AEAAXXZ
     MCAPI void _registerFeatures();

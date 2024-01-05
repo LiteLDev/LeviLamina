@@ -85,7 +85,11 @@ public:
     virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // symbol: ??0Turtle@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Turtle(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Turtle(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 };

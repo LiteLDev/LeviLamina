@@ -12,7 +12,7 @@ public:
     MCAPI SlotDescriptor(struct SlotDescriptor const&);
 
     // symbol: ?addAcceptedItem@SlotDescriptor@@QEAAXAEBVItemDescriptor@@@Z
-    MCAPI void addAcceptedItem(class ItemDescriptor const&);
+    MCAPI void addAcceptedItem(class ItemDescriptor const& itemDescriptor);
 
     // symbol: ??4SlotDescriptor@@QEAAAEAU0@AEBU0@@Z
     MCAPI struct SlotDescriptor& operator=(struct SlotDescriptor const&);

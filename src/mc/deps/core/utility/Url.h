@@ -19,22 +19,22 @@ MCAPI extern struct Util::Url::Components const EMPTY_URL;
 
 // symbol:
 // ?addUrlSchemeIfNotPresent@Url@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@0@Z
-MCAPI std::string addUrlSchemeIfNotPresent(std::string const&, std::string const&);
+MCAPI std::string addUrlSchemeIfNotPresent(std::string const& url, std::string const&);
 
 // symbol: ?anonymizeIPAddress@Url@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z
-MCAPI std::string anonymizeIPAddress(std::string const&);
+MCAPI std::string anonymizeIPAddress(std::string const& ipAddress);
 
 // symbol: ?anonymizeIPv6Address@Url@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z
-MCAPI std::string anonymizeIPv6Address(std::string const&);
+MCAPI std::string anonymizeIPv6Address(std::string const& ipAddress);
 
 // symbol: ?append@Url@Util@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@0@Z
-MCAPI std::string append(std::string const&, std::string const&);
+MCAPI std::string append(std::string const& lhs, std::string const& rhs);
 
 // symbol: ?isValidIP@Url@Util@@YA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@_N1@Z
-MCAPI bool isValidIP(std::string_view, bool, bool);
+MCAPI bool isValidIP(std::string_view ipAddrStr, bool considerIPv4Valid, bool considerIPv6Valid);
 
 // symbol: ?parseUrl@Url@Util@@YA?AUComponentsView@12@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-MCAPI struct Util::Url::ComponentsView parseUrl(std::string_view);
+MCAPI struct Util::Url::ComponentsView parseUrl(std::string_view url);
 // NOLINTEND
 
 }; // namespace Util::Url

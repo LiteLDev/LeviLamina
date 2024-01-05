@@ -20,7 +20,8 @@ public:
     virtual ~FunctionEntry() = default;
 
     // vIndex: 1, symbol: ?execute@FunctionEntry@@UEAAXAEAVFunctionManager@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
-    virtual void execute(class FunctionManager&, class CommandOrigin const&, ::FunctionQueueOrder);
+    virtual void
+    execute(class FunctionManager& functionManager, class CommandOrigin const& origin, ::FunctionQueueOrder order);
 
     // symbol: ?getErrorState@FunctionEntry@@QEBA?AW4FunctionState@@XZ
     MCAPI ::FunctionState getErrorState() const;

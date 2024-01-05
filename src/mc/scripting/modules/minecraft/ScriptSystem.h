@@ -28,7 +28,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0ScriptSystem@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVServerLevel@@@gsl@@@Z
-    MCAPI ScriptSystem(class Scripting::WeakLifetimeScope const&, gsl::not_null<class ServerLevel*>);
+    MCAPI ScriptSystem(class Scripting::WeakLifetimeScope const& scope, gsl::not_null<class ServerLevel*> level);
 
     // symbol: ?clearRun@ScriptSystem@ScriptModuleMinecraft@@QEAAXI@Z
     MCAPI void clearRun(uint);
@@ -45,14 +45,14 @@ public:
 
     // symbol:
     // ?runInterval@ScriptSystem@ScriptModuleMinecraft@@QEAAIV?$Closure@$$A6AXXZ$$V@Scripting@@V?$optional@I@std@@@Z
-    MCAPI uint runInterval(class Scripting::Closure<void(void)>, std::optional<uint>);
+    MCAPI uint runInterval(class Scripting::Closure<void(void)>, std::optional<uint> interval);
 
     // symbol: ?runSafe@ScriptSystem@ScriptModuleMinecraft@@QEAAIV?$Closure@$$A6AXXZ$$V@Scripting@@@Z
     MCAPI uint runSafe(class Scripting::Closure<void(void)>);
 
     // symbol:
     // ?runTimeout@ScriptSystem@ScriptModuleMinecraft@@QEAAIV?$Closure@$$A6AXXZ$$V@Scripting@@V?$optional@I@std@@@Z
-    MCAPI uint runTimeout(class Scripting::Closure<void(void)>, std::optional<uint>);
+    MCAPI uint runTimeout(class Scripting::Closure<void(void)>, std::optional<uint> delay);
 
     // symbol:
     // ?bind@ScriptSystem@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptSystem@ScriptModuleMinecraft@@@Scripting@@XZ

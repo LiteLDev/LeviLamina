@@ -134,7 +134,7 @@ public:
 
     // symbol:
     // ??0ClientRequestPlaceholderBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI ClientRequestPlaceholderBlock(std::string const&, int, class Material const&);
+    MCAPI ClientRequestPlaceholderBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

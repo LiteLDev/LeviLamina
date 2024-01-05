@@ -44,7 +44,7 @@ public:
 
     // vIndex: 2, symbol:
     // ?onEvent@?$EventListenerDispatcher@VActorEventListener@@@@MEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct ActorNotificationEvent const&);
+    virtual ::EventResult onEvent(struct ActorNotificationEvent const& event);
 
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();

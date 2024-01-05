@@ -84,7 +84,7 @@ public:
     // symbol:
     // ?_handleActorDefinitionStartedEvent@ScriptActorGameplayHandler@@AEBA_NAEAUActorDefinitionStartedEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldBeforeEvents@ScriptModuleMinecraft@@@4@@Z
     MCAPI bool
-    _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>)
+    _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent&, class Scripting::WeakLifetimeScope const& scope, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldBeforeEvents>)
         const;
 
     // symbol:

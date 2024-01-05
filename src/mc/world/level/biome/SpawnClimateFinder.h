@@ -42,11 +42,11 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_calculateClimateFitness@SpawnClimateFinder@@AEBA_JVBlockPos@@@Z
-    MCAPI int64 _calculateClimateFitness(class BlockPos) const;
+    MCAPI int64 _calculateClimateFitness(class BlockPos pos) const;
 
     // symbol: ?_radialSearch@SpawnClimateFinder@@AEBA?AUResultDetails@1@U21@HH@Z
     MCAPI struct SpawnClimateFinder::ResultDetails
-    _radialSearch(struct SpawnClimateFinder::ResultDetails, int, int) const;
+    _radialSearch(struct SpawnClimateFinder::ResultDetails workingData, int, int) const;
 
     // NOLINTEND
 };

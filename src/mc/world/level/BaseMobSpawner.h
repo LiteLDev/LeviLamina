@@ -27,13 +27,13 @@ public:
     virtual class BlockPos const& getPos() = 0;
 
     // symbol: ??0BaseMobSpawner@@QEAA@UActorDefinitionIdentifier@@@Z
-    MCAPI explicit BaseMobSpawner(struct ActorDefinitionIdentifier entityId);
+    MCAPI explicit BaseMobSpawner(struct ActorDefinitionIdentifier);
 
     // symbol: ?removeDisplayEntity@BaseMobSpawner@@QEAAXXZ
     MCAPI void removeDisplayEntity();
 
     // symbol: ?setEntityId@BaseMobSpawner@@QEAAXUActorDefinitionIdentifier@@@Z
-    MCAPI void setEntityId(struct ActorDefinitionIdentifier entityId);
+    MCAPI void setEntityId(struct ActorDefinitionIdentifier);
 
     // symbol:
     // ?setNextSpawnData@BaseMobSpawner@@QEAAXV?$unique_ptr@VSpawnData@@U?$default_delete@VSpawnData@@@std@@@std@@@Z

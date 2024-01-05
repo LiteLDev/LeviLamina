@@ -55,7 +55,7 @@ public:
     MCAPI bool operator<(class HashedString const& rhs) const;
 
     // symbol: ??4HashedString@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class HashedString& operator=(class HashedString&&);
+    MCAPI class HashedString& operator=(class HashedString&& rhs);
 
     // symbol: ??4HashedString@@QEAAAEAV0@AEBV0@@Z
     MCAPI class HashedString& operator=(class HashedString const& rhs);

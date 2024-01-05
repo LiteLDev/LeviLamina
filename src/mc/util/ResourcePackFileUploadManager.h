@@ -26,11 +26,22 @@ public:
 
     // vIndex: 2, symbol:
     // ?uploadFileToRealmStorage@ResourcePackFileUploadManager@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z
-    virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&);
+    virtual void uploadFileToRealmStorage(
+        std::string const&      uploadId,
+        class Core::Path const& path,
+        int,
+        std::string const& realmsGuid
+    );
 
     // symbol:
     // ?uploadResourcePack@ResourcePackFileUploadManager@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVResourceLocation@@_N2W4PackType@@@Z
-    MCAPI void uploadResourcePack(std::string const&, class ResourceLocation const&, bool, bool, ::PackType);
+    MCAPI void uploadResourcePack(
+        std::string const&            resourcePackName,
+        class ResourceLocation const& resourceLocation,
+        bool                          isZipped,
+        bool                          isPremium,
+        ::PackType                    packType
+    );
 
     // NOLINTEND
 
@@ -38,12 +49,17 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_uploadPackToRealmStorage@ResourcePackFileUploadManager@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z
-    MCAPI void _uploadPackToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&);
+    MCAPI void
+    _uploadPackToRealmStorage(std::string const& uploadId, class Core::Path const& path, int, std::string const&);
 
     // symbol:
     // ?_uploadResourcePackFolder@ResourcePackFileUploadManager@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVResourceLocation@@AEBVPath@Core@@AEBVValue@Json@@@Z
-    MCAPI void
-    _uploadResourcePackFolder(std::string const&, class ResourceLocation const&, class Core::Path const&, class Json::Value const&);
+    MCAPI void _uploadResourcePackFolder(
+        std::string const&            resourcePack,
+        class ResourceLocation const& resourcePackLocation,
+        class Core::Path const&       resourceZipPath,
+        class Json::Value const&      uploadOptions
+    );
 
     // NOLINTEND
 };

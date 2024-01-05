@@ -17,16 +17,20 @@ public:
 
     // symbol:
     // ?deleteDataWithID@DimensionDataSerializer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelStorage@@@Z
-    MCAPI void deleteDataWithID(std::string const&, class LevelStorage&);
+    MCAPI void deleteDataWithID(std::string const&, class LevelStorage& levelStorage);
 
     // symbol:
     // ?forEachKeyWithDimensionPrefix@DimensionDataSerializer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVLevelStorage@@AEBV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z@3@@Z
-    MCAPI void
-    forEachKeyWithDimensionPrefix(std::string const&, std::string const&, class LevelStorage&, std::function<void(std::string const&, class CompoundTag const&)> const&);
+    MCAPI void forEachKeyWithDimensionPrefix(
+        std::string const&,
+        std::string const&,
+        class LevelStorage&                                                      levelStorage,
+        std::function<void(std::string const&, class CompoundTag const&)> const& callback
+    );
 
     // symbol:
     // ?saveDataWithID@DimensionDataSerializer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@AEAVLevelStorage@@@Z
-    MCAPI void saveDataWithID(std::string const&, class CompoundTag const&, class LevelStorage&);
+    MCAPI void saveDataWithID(std::string const&, class CompoundTag const& tag, class LevelStorage& levelStorage);
 
     // NOLINTEND
 

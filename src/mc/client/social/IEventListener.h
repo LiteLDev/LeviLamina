@@ -28,10 +28,10 @@ public:
     // vIndex: 1, symbol:
     // ?recordEvent@AggregationEventListener@Events@Social@@UEAAXAEBVEvent@23@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
     virtual void
-    recordEvent(class Social::Events::Event const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&) = 0;
+    recordEvent(class Social::Events::Event const& event, class Bedrock::NonOwnerPointer<class AppPlatform> const&) = 0;
 
     // vIndex: 2, symbol: ?sendEvents@AggregationEventListener@Events@Social@@UEAAX_N@Z
-    virtual void sendEvents(bool) = 0;
+    virtual void sendEvents(bool forceSend) = 0;
 
     // vIndex: 3, symbol: ?getEventTagsFilter@OneDSEventListener@Events@Social@@UEBAHXZ
     virtual int getEventTagsFilter() const = 0;

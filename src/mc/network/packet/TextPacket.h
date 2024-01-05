@@ -33,7 +33,7 @@ public:
     virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol: ?_read@TextPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0TextPacket@@QEAA@XZ
     MCAPI TextPacket();
@@ -44,7 +44,7 @@ public:
     // symbol:
     // ?_shouldHandleTextPacketForPlayer@TextPacket@@SA?B_NAEBV1@AEAUIPlayerData@PlayerCapabilities@@AEBUISharedController@3@@Z
     MCAPI static bool const
-    _shouldHandleTextPacketForPlayer(class TextPacket const&, struct PlayerCapabilities::IPlayerData&, struct PlayerCapabilities::ISharedController const&);
+    _shouldHandleTextPacketForPlayer(class TextPacket const& packet, struct PlayerCapabilities::IPlayerData&, struct PlayerCapabilities::ISharedController const&);
 
     // symbol:
     // ?createAnnouncement@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
@@ -65,7 +65,8 @@ public:
 
     // symbol:
     // ?createJukeboxPopup@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-    MCAPI static class TextPacket createJukeboxPopup(std::string const&, std::vector<std::string> const&);
+    MCAPI static class TextPacket
+    createJukeboxPopup(std::string const& message, std::vector<std::string> const& params);
 
     // symbol:
     // ?createRawJsonObjectMessage@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -77,18 +78,20 @@ public:
 
     // symbol:
     // ?createTextObjectMessage@TextPacket@@SA?AV1@AEBVResolvedTextObject@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-    MCAPI static class TextPacket
-    createTextObjectMessage(class ResolvedTextObject const& textObject, std::string xuid, std::string platformId);
+    MCAPI static class TextPacket createTextObjectMessage(class ResolvedTextObject const&, std::string, std::string);
 
     // symbol:
     // ?createTextObjectWhisperMessage@TextPacket@@SA?AV1@AEBVResolvedTextObject@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-    MCAPI static class TextPacket
-    createTextObjectWhisperMessage(class ResolvedTextObject const&, std::string const&, std::string const&);
+    MCAPI static class TextPacket createTextObjectWhisperMessage(
+        class ResolvedTextObject const&,
+        std::string const& xuid,
+        std::string const& platformId
+    );
 
     // symbol:
     // ?createTextObjectWhisperMessage@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
     MCAPI static class TextPacket
-    createTextObjectWhisperMessage(std::string const&, std::string const&, std::string const&);
+    createTextObjectWhisperMessage(std::string const& message, std::string const& xuid, std::string const& platformId);
 
     // symbol:
     // ?createTranslated@TextPacket@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z

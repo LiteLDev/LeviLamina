@@ -29,12 +29,15 @@ public:
     MCAPI ScriptContext();
 
     // symbol: ??0ScriptContext@Scripting@@QEAA@$$QEAV01@@Z
-    MCAPI ScriptContext(class Scripting::ScriptContext&&);
+    MCAPI ScriptContext(class Scripting::ScriptContext&& rhs);
 
     // symbol:
     // ??0ScriptContext@Scripting@@QEAA@PEAVIRuntime@1@UContextId@1@V?$shared_ptr@VLifetimeRegistry@Scripting@@@std@@@Z
-    MCAPI
-    ScriptContext(class Scripting::IRuntime*, struct Scripting::ContextId, std::shared_ptr<class Scripting::LifetimeRegistry>);
+    MCAPI ScriptContext(
+        class Scripting::IRuntime*,
+        struct Scripting::ContextId,
+        std::shared_ptr<class Scripting::LifetimeRegistry> registry
+    );
 
     // symbol: ?getContextId@ScriptContext@Scripting@@QEBA?AUContextId@2@XZ
     MCAPI struct Scripting::ContextId getContextId() const;
@@ -46,11 +49,11 @@ public:
     MCAPI class Scripting::WeakLifetimeScope getWeakLifetimeScope() const;
 
     // symbol: ??4ScriptContext@Scripting@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class Scripting::ScriptContext& operator=(class Scripting::ScriptContext&&);
+    MCAPI class Scripting::ScriptContext& operator=(class Scripting::ScriptContext&& rhs);
 
     // symbol:
     // ?run@ScriptContext@Scripting@@QEAA?AVResultAny@2@AEAVIPayload@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
-    MCAPI class Scripting::ResultAny run(class Scripting::IPayload&, std::optional<::Scripting::Privilege>);
+    MCAPI class Scripting::ResultAny run(class Scripting::IPayload& payload, std::optional<::Scripting::Privilege>);
 
     // symbol: ??1ScriptContext@Scripting@@QEAA@XZ
     MCAPI ~ScriptContext();

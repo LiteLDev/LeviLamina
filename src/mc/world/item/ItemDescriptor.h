@@ -65,7 +65,7 @@ public:
 
         // vIndex: 5, symbol:
         // ?forEachItemUntil@BaseDescriptor@ItemDescriptor@@UEBA_NV?$function@$$A6A_NAEBVItem@@F@Z@std@@@Z
-        virtual bool forEachItemUntil(std::function<bool(class Item const&, short)>) const;
+        virtual bool forEachItemUntil(std::function<bool(class Item const&, short)> func) const;
 
         // vIndex: 6, symbol:
         // ?toMap@ComplexAliasDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
@@ -75,10 +75,10 @@ public:
         virtual std::optional<class CompoundTag> save() const = 0;
 
         // vIndex: 8, symbol: ?serialize@BaseDescriptor@ItemDescriptor@@UEBAXAEAVValue@Json@@@Z
-        virtual void serialize(class Json::Value&) const;
+        virtual void serialize(class Json::Value& val) const;
 
         // vIndex: 9, symbol: ?serialize@ComplexAliasDescriptor@@UEBAXAEAVBinaryStream@@@Z
-        virtual void serialize(class BinaryStream&) const = 0;
+        virtual void serialize(class BinaryStream& stream) const = 0;
 
         // vIndex: 10, symbol: ?getType@ComplexAliasDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
         virtual ::ItemDescriptor::InternalType getType() const = 0;
@@ -108,10 +108,10 @@ public:
     virtual ~ItemDescriptor();
 
     // vIndex: 1, symbol: ?serialize@ItemDescriptor@@UEBAXAEAVValue@Json@@@Z
-    virtual void serialize(class Json::Value&) const;
+    virtual void serialize(class Json::Value& val) const;
 
     // vIndex: 2, symbol: ?serialize@ItemDescriptor@@UEBAXAEAVBinaryStream@@@Z
-    virtual void serialize(class BinaryStream&) const;
+    virtual void serialize(class BinaryStream& stream) const;
 
     // symbol: ??0ItemDescriptor@@QEAA@XZ
     MCAPI ItemDescriptor();
@@ -123,13 +123,13 @@ public:
     MCAPI explicit ItemDescriptor(class BlockLegacy const& block);
 
     // symbol: ??0ItemDescriptor@@QEAA@$$QEAV0@@Z
-    MCAPI ItemDescriptor(class ItemDescriptor&&);
+    MCAPI ItemDescriptor(class ItemDescriptor&& rhs);
 
     // symbol: ??0ItemDescriptor@@QEAA@AEBV0@@Z
-    MCAPI ItemDescriptor(class ItemDescriptor const&);
+    MCAPI ItemDescriptor(class ItemDescriptor const& rhs);
 
     // symbol: ??0ItemDescriptor@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI explicit ItemDescriptor(class ReadOnlyBinaryStream&);
+    MCAPI explicit ItemDescriptor(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0ItemDescriptor@@QEAA@AEBUItemTag@@@Z
     MCAPI explicit ItemDescriptor(struct ItemTag const&);
@@ -138,13 +138,13 @@ public:
     MCAPI ItemDescriptor(class Item const& item, int auxValue);
 
     // symbol: ??0ItemDescriptor@@QEAA@AEBVValue@Json@@AEBVSemVersion@@@Z
-    MCAPI ItemDescriptor(class Json::Value const&, class SemVersion const&);
+    MCAPI ItemDescriptor(class Json::Value const& val, class SemVersion const& engineVersion);
 
     // symbol: ??0ItemDescriptor@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@H@Z
-    MCAPI ItemDescriptor(std::string_view, int);
+    MCAPI ItemDescriptor(std::string_view fullName, int itemAux);
 
     // symbol: ?forEachItemUntil@ItemDescriptor@@QEBA_NV?$function@$$A6A_NAEBVItem@@F@Z@std@@@Z
-    MCAPI bool forEachItemUntil(std::function<bool(class Item const&, short)>) const;
+    MCAPI bool forEachItemUntil(std::function<bool(class Item const&, short)> func) const;
 
     // symbol: ?getAuxValue@ItemDescriptor@@QEBAFXZ
     MCAPI short getAuxValue() const;
@@ -187,10 +187,10 @@ public:
     MCAPI bool isValid(bool) const;
 
     // symbol: ??4ItemDescriptor@@QEAAX$$QEAV0@@Z
-    MCAPI void operator=(class ItemDescriptor&&);
+    MCAPI void operator=(class ItemDescriptor&& rhs);
 
     // symbol: ??4ItemDescriptor@@QEAAXAEBV0@@Z
-    MCAPI void operator=(class ItemDescriptor const&);
+    MCAPI void operator=(class ItemDescriptor const& rhs);
 
     // symbol: ??8ItemDescriptor@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class ItemDescriptor const& rhs) const;
@@ -199,7 +199,7 @@ public:
     MCAPI bool sameItem(class ItemDescriptor const&, bool) const;
 
     // symbol: ?sameItem@ItemDescriptor@@QEBA_NAEBVItemStack@@_N@Z
-    MCAPI bool sameItem(class ItemStack const&, bool) const;
+    MCAPI bool sameItem(class ItemStack const& itemStack, bool) const;
 
     // symbol: ?save@ItemDescriptor@@QEBA?AV?$optional@VCompoundTag@@@std@@XZ
     MCAPI std::optional<class CompoundTag> save() const;
@@ -216,8 +216,11 @@ public:
 
     // symbol:
     // ?fromMap@ItemDescriptor@@CAXAEAV1@AEBV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBVBedrockLoadContext@@@Z
-    MCAPI static void
-    fromMap(class ItemDescriptor&, std::map<std::string, std::string> const&, class BedrockLoadContext const&);
+    MCAPI static void fromMap(
+        class ItemDescriptor&                     instance,
+        std::map<std::string, std::string> const& map,
+        class BedrockLoadContext const&           context
+    );
 
     // symbol:
     // ?toMap@ItemDescriptor@@CA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBV1@@Z

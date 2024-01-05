@@ -31,7 +31,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@PlayerActionPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0PlayerActionPacket@@QEAA@XZ
     MCAPI PlayerActionPacket();
@@ -55,8 +55,13 @@ public:
     );
 
     // symbol: ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@1HVActorRuntimeID@@@Z
-    MCAPI
-    PlayerActionPacket(::PlayerActionType, class BlockPos const&, class BlockPos const&, int, class ActorRuntimeID);
+    MCAPI PlayerActionPacket(
+        ::PlayerActionType    action,
+        class BlockPos const& pos,
+        class BlockPos const&,
+        int                  data,
+        class ActorRuntimeID runtimeId
+    );
 
     // symbol: ?getIsFromServerPlayerMovementSystem@PlayerActionPacket@@QEBA_NXZ
     MCAPI bool getIsFromServerPlayerMovementSystem() const;

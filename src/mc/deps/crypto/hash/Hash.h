@@ -30,16 +30,16 @@ public:
     virtual void reset();
 
     // vIndex: 2, symbol: ?update@Hash@1Crypto@@UEAAXPEBXI@Z
-    virtual void update(void const*, uint);
+    virtual void update(void const* data, uint size);
 
     // vIndex: 3, symbol: ?final@Hash@1Crypto@@UEAAXPEAE@Z
-    virtual void final(uchar*);
+    virtual void final(uchar* result);
 
     // vIndex: 4, symbol: ?resultSize@Hash@1Crypto@@UEBA_KXZ
     virtual uint64 resultSize() const;
 
     // symbol: ??0Hash@0Crypto@@QEAA@W4HashType@01@@Z
-    MCAPI explicit Hash(::Crypto::Hash::HashType);
+    MCAPI explicit Hash(::Crypto::Hash::HashType type);
 
     // symbol: ?final@Hash@1Crypto@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string final();

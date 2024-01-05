@@ -31,7 +31,7 @@ public:
     virtual ~AmethystBlock();
 
     // vIndex: 17, symbol: ?onProjectileHit@AmethystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
-    virtual void onProjectileHit(class BlockSource&, class BlockPos const&, class Actor const&) const;
+    virtual void onProjectileHit(class BlockSource& region, class BlockPos const& pos, class Actor const&) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -133,7 +133,7 @@ public:
     MCVAPI bool isSilentWhenJumpingOff() const;
 
     // symbol: ??0AmethystBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI AmethystBlock(std::string const&, int, class Material const&);
+    MCAPI AmethystBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

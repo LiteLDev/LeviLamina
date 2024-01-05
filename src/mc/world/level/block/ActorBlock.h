@@ -110,7 +110,7 @@ public:
     // vIndex: 95, symbol:
     // ?spawnResources@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const&, class Randomize& randomize, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 105, symbol: ?triggerEvent@ActorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@HH@Z
@@ -145,7 +145,7 @@ public:
 
     // vIndex: 168, symbol: ?getEntityResourceItem@ActorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
     virtual class ItemInstance
-    getEntityResourceItem(class Randomize& random, class BlockActor const& blockEntity, int bonusLootLevel) const;
+    getEntityResourceItem(class Randomize& randomize, class BlockActor const& blockEntity, int bonusLootLevel) const;
 
     // symbol: ?canBeSilkTouched@ActorBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -155,7 +155,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0ActorBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI ActorBlock(std::string const& nameId, int id, class Material const& material);
+    MCAPI ActorBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

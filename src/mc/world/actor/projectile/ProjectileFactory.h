@@ -21,13 +21,18 @@ public:
 
     // symbol:
     // ?shootProjectileFromDefinition@ProjectileFactory@@QEAAPEAVActor@@AEBUActorDefinitionIdentifier@@PEAVMob@@VVec3@@HM@Z
-    MCAPI class Actor*
-    shootProjectileFromDefinition(struct ActorDefinitionIdentifier const&, class Mob*, class Vec3, int, float);
+    MCAPI class Actor* shootProjectileFromDefinition(
+        struct ActorDefinitionIdentifier const& identifier,
+        class Mob*                              owner,
+        class Vec3                              targetDir,
+        int                                     auxValue,
+        float
+    );
 
     // symbol:
     // ?createSubcomponent@ProjectileFactory@@SA?AV?$unique_ptr@VOnHitSubcomponent@@U?$default_delete@VOnHitSubcomponent@@@std@@@std@@AEAVValue@Json@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCAPI static std::unique_ptr<class OnHitSubcomponent>
-    createSubcomponent(class Json::Value&, class SemVersion const&, std::string const&);
+    createSubcomponent(class Json::Value& trigger, class SemVersion const& engineVersion, std::string const& name);
 
     // symbol: ?initFactory@ProjectileFactory@@SAXXZ
     MCAPI static void initFactory();

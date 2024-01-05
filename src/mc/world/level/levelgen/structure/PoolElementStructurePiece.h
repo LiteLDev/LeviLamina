@@ -37,7 +37,8 @@ public:
         const = 0;
 
     // vIndex: 14, symbol: ?getSupportBlock@VillagePiece@@UEBAPEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@@Z
-    virtual class Block const* getSupportBlock(class BlockSource&, class BlockPos const&, class Block const&) const = 0;
+    virtual class Block const*
+    getSupportBlock(class BlockSource& region, class BlockPos const& pos, class Block const&) const = 0;
 
     // vIndex: 15, symbol: ?getBeardStabilizeBlock@AncientCityPiece@@UEBAAEBVBlock@@AEBV2@@Z
     virtual class Block const& getBeardStabilizeBlock(class Block const&) const = 0;
@@ -46,17 +47,17 @@ public:
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
 
     // vIndex: 17, symbol: ?_needsPostProcessing@PoolElementStructurePiece@@MEAA_NAEAVBlockSource@@@Z
-    virtual bool _needsPostProcessing(class BlockSource&);
+    virtual bool _needsPostProcessing(class BlockSource& region);
 
     // symbol:
     // ??0PoolElementStructurePiece@@QEAA@AEBVStructurePoolElement@@VBlockPos@@W4Rotation@@HAEAUJigsawJunction@@AEBVBoundingBox@@1@Z
     MCAPI PoolElementStructurePiece(
-        class StructurePoolElement const&,
-        class BlockPos,
-        ::Rotation,
-        int,
-        struct JigsawJunction&,
-        class BoundingBox const&,
+        class StructurePoolElement const& element,
+        class BlockPos                    position,
+        ::Rotation                        rotation,
+        int                               genDepth,
+        struct JigsawJunction&            junction,
+        class BoundingBox const&          box,
         class BlockPos
     );
 
@@ -67,7 +68,7 @@ public:
     MCAPI class BlockPos const& getPosition() const;
 
     // symbol: ?setReferencePosition@PoolElementStructurePiece@@QEAAXAEBVBlockPos@@@Z
-    MCAPI void setReferencePosition(class BlockPos const&);
+    MCAPI void setReferencePosition(class BlockPos const& pos);
 
     // NOLINTEND
 };

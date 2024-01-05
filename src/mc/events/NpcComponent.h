@@ -28,25 +28,26 @@ public:
     MCAPI NpcComponent();
 
     // symbol: ??0NpcComponent@@QEAA@$$QEAV0@@Z
-    MCAPI NpcComponent(class NpcComponent&&);
+    MCAPI NpcComponent(class NpcComponent&& rhs);
 
     // symbol: ?addAdditionalSaveData@NpcComponent@@QEBAXAEAVCompoundTag@@AEBVActor@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&, class Actor const&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag, class Actor const& owner) const;
 
     // symbol: ?clearSceneStateForAllPlayers@NpcComponent@@QEAAXXZ
     MCAPI void clearSceneStateForAllPlayers();
 
     // symbol:
     // ?executeClosingCommands@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void executeClosingCommands(class Actor&, class Player&, std::string const&);
+    MCAPI void executeClosingCommands(class Actor& owner, class Player& sourcePlayer, std::string const&);
 
     // symbol:
     // ?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void executeCommandAction(class Actor&, class Player&, int, std::string const&);
+    MCAPI void
+    executeCommandAction(class Actor& owner, class Player& sourcePlayer, int actionIndex, std::string const&);
 
     // symbol:
     // ?executeOpeningCommands@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void executeOpeningCommands(class Actor&, class Player&, std::string const&);
+    MCAPI void executeOpeningCommands(class Actor& owner, class Player& sourcePlayer, std::string const&);
 
     // symbol: ?getActionsContainer@NpcComponent@@QEAAAEAUActionContainer@npc@@XZ
     MCAPI struct npc::ActionContainer& getActionsContainer();
@@ -85,7 +86,7 @@ public:
     MCAPI int getUrlCount() const;
 
     // symbol: ?initClientOnlyData@NpcComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initClientOnlyData(class Actor&);
+    MCAPI void initClientOnlyData(class Actor& owner);
 
     // symbol: ?initFromDefinition@NpcComponent@@QEAAXAEAVActor@@@Z
     MCAPI void initFromDefinition(class Actor& owner);
@@ -103,7 +104,7 @@ public:
     MCAPI void loadNameRawText(class Actor& owner);
 
     // symbol: ??4NpcComponent@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class NpcComponent& operator=(class NpcComponent&&);
+    MCAPI class NpcComponent& operator=(class NpcComponent&& rhs);
 
     // symbol: ?readAdditionalSaveData@NpcComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCAPI void
@@ -111,14 +112,17 @@ public:
 
     // symbol:
     // ?setActions@NpcComponent@@QEAAXAEAVActor@@$$QEAV?$vector@V?$variant@UCommandAction@npc@@UUrlAction@2@@std@@V?$allocator@V?$variant@UCommandAction@npc@@UUrlAction@2@@std@@@2@@std@@@Z
-    MCAPI void setActions(class Actor&, std::vector<std::variant<struct npc::CommandAction, struct npc::UrlAction>>&&);
+    MCAPI void setActions(
+        class Actor&                                                                  owner,
+        std::vector<std::variant<struct npc::CommandAction, struct npc::UrlAction>>&& newActions
+    );
 
     // symbol: ?setDefaultSceneId@NpcComponent@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void setDefaultSceneId(std::string);
 
     // symbol:
     // ?setDialogueScene@NpcComponent@@QEAA_NAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool setDialogueScene(class Actor&, std::string const&);
+    MCAPI bool setDialogueScene(class Actor& owner, std::string const&);
 
     // symbol:
     // ?setInteractiveText@NpcComponent@@QEAAXAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
@@ -130,7 +134,7 @@ public:
 
     // symbol:
     // ?setSceneStateForPlayer@NpcComponent@@QEAAXAEAVActor@@AEBUActorUniqueID@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setSceneStateForPlayer(class Actor&, struct ActorUniqueID const&, std::string const&);
+    MCAPI void setSceneStateForPlayer(class Actor& owner, struct ActorUniqueID const& playerID, std::string const&);
 
     // symbol: ?setSkin@NpcComponent@@QEAA_NAEAVActor@@@Z
     MCAPI bool setSkin(class Actor& owner);
@@ -164,7 +168,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_defineEntityDataString@NpcComponent@@AEAAXAEAVActor@@W4ActorDataIDs@@@Z
-    MCAPI void _defineEntityDataString(class Actor& owner, ::ActorDataIDs id);
+    MCAPI void _defineEntityDataString(class Actor& owner, ::ActorDataIDs);
 
     // symbol: ?_deserializeData@NpcComponent@@AEAAXAEBVValue@Json@@@Z
     MCAPI void _deserializeData(class Json::Value const&);

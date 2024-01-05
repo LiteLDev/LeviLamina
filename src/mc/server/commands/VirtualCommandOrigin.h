@@ -91,7 +91,7 @@ public:
     virtual void updateValues();
 
     // vIndex: 28, symbol: ?getExecutePosition@VirtualCommandOrigin@@UEBA?BVVec3@@HAEBVCommandPositionFloat@@@Z
-    virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const&) const;
+    virtual class Vec3 const getExecutePosition(int version, class CommandPositionFloat const&) const;
 
     // vIndex: 29, symbol: ?serialize@VirtualCommandOrigin@@UEBA?AVCompoundTag@@XZ
     virtual class CompoundTag serialize() const;
@@ -100,23 +100,28 @@ public:
     virtual bool isValid() const;
 
     // symbol: ??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@AEAVActor@@AEBVCommandPositionFloat@@H@Z
-    MCAPI VirtualCommandOrigin(class CommandOrigin const&, class Actor&, class CommandPositionFloat const&, int);
+    MCAPI VirtualCommandOrigin(
+        class CommandOrigin const& outputReceiver,
+        class Actor&               entity,
+        class CommandPositionFloat const&,
+        int version
+    );
 
     // symbol: ??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@0AEBVCommandPositionFloat@@H@Z
     MCAPI VirtualCommandOrigin(
-        class CommandOrigin const&,
-        class CommandOrigin const&,
+        class CommandOrigin const& outputReceiver,
+        class CommandOrigin const& source,
         class CommandPositionFloat const&,
-        int
+        int version
     );
 
     // symbol:
     // ??0VirtualCommandOrigin@@QEAA@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@0AEBVCommandPositionFloat@@H@Z
     MCAPI VirtualCommandOrigin(
-        std::unique_ptr<class CommandOrigin>,
-        std::unique_ptr<class CommandOrigin>,
+        std::unique_ptr<class CommandOrigin> outputReceiver,
+        std::unique_ptr<class CommandOrigin> source,
         class CommandPositionFloat const&,
-        int
+        int version
     );
 
     // symbol: ?getOrigin@VirtualCommandOrigin@@QEBAPEAVCommandOrigin@@XZ
@@ -124,7 +129,8 @@ public:
 
     // symbol:
     // ?load@VirtualCommandOrigin@@SA?AV?$unique_ptr@VVirtualCommandOrigin@@U?$default_delete@VVirtualCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
-    MCAPI static std::unique_ptr<class VirtualCommandOrigin> load(class CompoundTag const&, class ServerLevel&);
+    MCAPI static std::unique_ptr<class VirtualCommandOrigin>
+    load(class CompoundTag const& tag, class ServerLevel& level);
 
     // NOLINTEND
 };

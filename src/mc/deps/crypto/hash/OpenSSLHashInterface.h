@@ -28,10 +28,10 @@ public:
     virtual void reset();
 
     // vIndex: 2, symbol: ?update@OpenSSLHashInterface@Hash@Crypto@@UEAAXPEBXI@Z
-    virtual void update(void const*, uint);
+    virtual void update(void const* data, uint size);
 
     // vIndex: 3, symbol: ?final@OpenSSLHashInterface@Hash@Crypto@@UEAAXPEAE@Z
-    virtual void final(uchar*);
+    virtual void final(uchar* result);
 
     // vIndex: 4, symbol: ?resultSize@OpenSSLHashInterface@Hash@Crypto@@UEBA_KXZ
     virtual uint64 resultSize() const;

@@ -21,7 +21,7 @@ public:
 
     // symbol:
     // ?deserialize@ItemStackNetIdVariant@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void> deserialize(class ReadOnlyBinaryStream&);
+    MCAPI class Bedrock::Result<void> deserialize(class ReadOnlyBinaryStream& stream);
 
     // symbol: ?hasServerNetId@ItemStackNetIdVariant@@QEBA_NXZ
     MCAPI bool hasServerNetId() const;
@@ -42,10 +42,10 @@ public:
     MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant const&);
 
     // symbol: ??8ItemStackNetIdVariant@@QEBA_NAEBU0@@Z
-    MCAPI bool operator==(struct ItemStackNetIdVariant const&) const;
+    MCAPI bool operator==(struct ItemStackNetIdVariant const& other) const;
 
     // symbol: ?serialize@ItemStackNetIdVariant@@QEBAXAEAVBinaryStream@@@Z
-    MCAPI void serialize(class BinaryStream&) const;
+    MCAPI void serialize(class BinaryStream& stream) const;
 
     // symbol: ?toString@ItemStackNetIdVariant@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString() const;

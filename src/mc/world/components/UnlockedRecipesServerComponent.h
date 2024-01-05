@@ -44,14 +44,14 @@ public:
     MCAPI UnlockedRecipesServerComponent(class UnlockedRecipesServerComponent const&);
 
     // symbol: ?addAdditionalSaveData@UnlockedRecipesServerComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?addChangedInventorySlot@UnlockedRecipesServerComponent@@QEAAXH@Z
     MCAPI void addChangedInventorySlot(int);
 
     // symbol:
     // ?addUnlockedRecipe@UnlockedRecipesServerComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void addUnlockedRecipe(std::string const&);
+    MCAPI void addUnlockedRecipe(std::string const& recipeId);
 
     // symbol: ?addUnlockingInstruction@UnlockedRecipesServerComponent@@QEAAXUUnlockingInstruction@1@@Z
     MCAPI void addUnlockingInstruction(struct UnlockedRecipesServerComponent::UnlockingInstruction);
@@ -77,7 +77,7 @@ public:
 
     // symbol:
     // ?hasContextBeenUsed@UnlockedRecipesServerComponent@@QEBA_NW4UnlockingContext@RecipeUnlockingRequirement@@@Z
-    MCAPI bool hasContextBeenUsed(::RecipeUnlockingRequirement::UnlockingContext) const;
+    MCAPI bool hasContextBeenUsed(::RecipeUnlockingRequirement::UnlockingContext context) const;
 
     // symbol: ?hasInitialDataBeenSent@UnlockedRecipesServerComponent@@QEBA_NXZ
     MCAPI bool hasInitialDataBeenSent() const;
@@ -93,10 +93,10 @@ public:
 
     // symbol:
     // ?isRecipeUnlocked@UnlockedRecipesServerComponent@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool isRecipeUnlocked(std::string const&) const;
+    MCAPI bool isRecipeUnlocked(std::string const& recipeId) const;
 
     // symbol: ?markContextAsUsed@UnlockedRecipesServerComponent@@QEAAXW4UnlockingContext@RecipeUnlockingRequirement@@@Z
-    MCAPI void markContextAsUsed(::RecipeUnlockingRequirement::UnlockingContext);
+    MCAPI void markContextAsUsed(::RecipeUnlockingRequirement::UnlockingContext context);
 
     // symbol: ?markInitialDataAsSent@UnlockedRecipesServerComponent@@QEAAXXZ
     MCAPI void markInitialDataAsSent();
@@ -106,14 +106,14 @@ public:
 
     // symbol:
     // ?readAdditionalSaveData@UnlockedRecipesServerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const& tag, class DataLoadHelper&);
 
     // symbol: ?removeAllUnlockedRecipes@UnlockedRecipesServerComponent@@QEAAXXZ
     MCAPI void removeAllUnlockedRecipes();
 
     // symbol:
     // ?removeUnlockedRecipe@UnlockedRecipesServerComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void removeUnlockedRecipe(std::string const&);
+    MCAPI void removeUnlockedRecipe(std::string const& recipeId);
 
     // symbol: ?resetUsedContexts@UnlockedRecipesServerComponent@@QEAAXXZ
     MCAPI void resetUsedContexts();

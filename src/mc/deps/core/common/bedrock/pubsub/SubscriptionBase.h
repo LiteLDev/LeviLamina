@@ -17,7 +17,7 @@ public:
     MCAPI void disconnect();
 
     // symbol: ??8SubscriptionBase@PubSub@Bedrock@@QEBA_NAEBV012@@Z
-    MCAPI bool operator==(class Bedrock::PubSub::SubscriptionBase const&) const;
+    MCAPI bool operator==(class Bedrock::PubSub::SubscriptionBase const& other) const;
 
     // NOLINTEND
 };

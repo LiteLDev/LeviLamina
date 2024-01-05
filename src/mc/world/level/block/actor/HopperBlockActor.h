@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_getUpdatePacket@HopperBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // symbol: ?_onUpdatePacket@HopperBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -52,10 +52,14 @@ public:
     MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?serverInitItemStackIds@HopperBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
 
     // symbol: ?setContainerChanged@HopperBlockActor@@UEAAXH@Z
-    MCVAPI void setContainerChanged(int);
+    MCVAPI void setContainerChanged(int slot);
 
     // symbol: ?setItem@HopperBlockActor@@UEAAXHAEBVItemStack@@@Z
     MCVAPI void setItem(int slot, class ItemStack const& item);

@@ -21,8 +21,7 @@ public:
     MCAPI class MobSpawnRules& addHerd(int minCount, int maxCount, std::string const& herdEvent);
 
     // symbol: ?addPermutation@MobSpawnRules@@QEAAAEAV1@HHAEBUActorDefinitionIdentifier@@@Z
-    MCAPI class MobSpawnRules&
-    addPermutation(int weight, int guaranteedCount, struct ActorDefinitionIdentifier const& id);
+    MCAPI class MobSpawnRules& addPermutation(int weight, int guaranteedCount, struct ActorDefinitionIdentifier const&);
 
     // symbol: ?canSpawnInConditions@MobSpawnRules@@QEBA_NAEBVSpawnConditions@@AEAVBlockSource@@@Z
     MCAPI bool canSpawnInConditions(class SpawnConditions const& conditions, class BlockSource& region) const;
@@ -68,7 +67,7 @@ public:
     MCAPI struct MobSpawnHerdInfo const& selectRandomHerd(class Random& random) const;
 
     // symbol: ?setAboveBlockDistance@MobSpawnRules@@QEAAAEAV1@H@Z
-    MCAPI class MobSpawnRules& setAboveBlockDistance(int);
+    MCAPI class MobSpawnRules& setAboveBlockDistance(int distance);
 
     // symbol: ?setBrightnessRange@MobSpawnRules@@QEAAAEAV1@HH_N@Z
     MCAPI class MobSpawnRules& setBrightnessRange(int minBrightness, int maxBrightness, bool adjustForWeather);
@@ -78,7 +77,7 @@ public:
 
     // symbol:
     // ?setDelayRange@MobSpawnRules@@QEAAAEAV1@HHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class MobSpawnRules& setDelayRange(int min, int max, std::string const& id);
+    MCAPI class MobSpawnRules& setDelayRange(int min, int max, std::string const&);
 
     // symbol: ?setDelaySpawnChance@MobSpawnRules@@QEAAAEAV1@H@Z
     MCAPI class MobSpawnRules& setDelaySpawnChance(int chance);
@@ -92,7 +91,7 @@ public:
     // symbol:
     // ?setHardcodedSpawnRuleCallback@MobSpawnRules@@QEAAAEAV1@V?$function@$$A6A_NAEBVSpawnConditions@@AEAVBlockSource@@@Z@std@@@Z
     MCAPI class MobSpawnRules&
-        setHardcodedSpawnRuleCallback(std::function<bool(class SpawnConditions const&, class BlockSource&)>);
+    setHardcodedSpawnRuleCallback(std::function<bool(class SpawnConditions const&, class BlockSource&)> callback);
 
     // symbol: ?setHeightRange@MobSpawnRules@@QEAAAEAV1@HH@Z
     MCAPI class MobSpawnRules& setHeightRange(int minHeight, int maxHeight);

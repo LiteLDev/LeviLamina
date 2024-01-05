@@ -27,18 +27,18 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@LessonProgressPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@LessonProgressPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0LessonProgressPacket@@QEAA@XZ
     MCAPI LessonProgressPacket();
 
     // symbol:
     // ??0LessonProgressPacket@@QEAA@W4LessonAction@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI LessonProgressPacket(::LessonAction, int, std::string const&);
+    MCAPI LessonProgressPacket(::LessonAction action, int score, std::string const&);
 
     // NOLINTEND
 };

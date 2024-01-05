@@ -18,19 +18,21 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?_upgradeOldLimboEntity@NetherDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
-    MCVAPI void _upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion);
+    MCVAPI void _upgradeOldLimboEntity(class CompoundTag& tag, ::LimboEntitiesVersion vers);
 
     // symbol:
     // ?_wrapStorageForVersionCompatibility@NetherDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
-    MCVAPI std::unique_ptr<class ChunkSource>
-           _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
+    MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(
+        std::unique_ptr<class ChunkSource> storageSource,
+        ::StorageVersion                   levelVersion
+    );
 
     // symbol:
     // ?createGenerator@NetherDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
     MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
 
     // symbol: ?fixWallChunk@NetherDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-    MCVAPI void fixWallChunk(class ChunkSource&, class LevelChunk&);
+    MCVAPI void fixWallChunk(class ChunkSource& source, class LevelChunk& lc);
 
     // symbol: ?forceCheckAllNeighChunkSavedStat@NetherDimension@@UEBA_NXZ
     MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
@@ -54,7 +56,7 @@ public:
     MCVAPI bool isValidSpawn(int x, int z) const;
 
     // symbol: ?levelChunkNeedsUpgrade@NetherDimension@@UEBA_NAEBVLevelChunk@@@Z
-    MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
+    MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const& lc) const;
 
     // symbol: ?mayRespawnViaBed@NetherDimension@@UEBA_NXZ
     MCVAPI bool mayRespawnViaBed() const;
@@ -66,7 +68,7 @@ public:
     MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const& originalPos, DimensionType fromId) const;
 
     // symbol: ?upgradeLevelChunk@NetherDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
-    MCVAPI void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
+    MCVAPI void upgradeLevelChunk(class ChunkSource& source, class LevelChunk& lc, class LevelChunk& generatedChunk);
 
     // symbol: ??0NetherDimension@@QEAA@AEAVILevel@@AEAVScheduler@@@Z
     MCAPI NetherDimension(class ILevel& level, class Scheduler& callbackContext);
@@ -78,7 +80,7 @@ public:
     // symbol:
     // ?makeStructureFeatures@NetherDimension@@CA?AV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@IAEBVBaseGameVersion@@@Z
     MCAPI static std::unique_ptr<class StructureFeatureRegistry>
-    makeStructureFeatures(uint, class BaseGameVersion const&);
+    makeStructureFeatures(uint seed, class BaseGameVersion const& baseGameVersion);
 
     // NOLINTEND
 };

@@ -31,19 +31,14 @@ public:
 
     // vIndex: 2, symbol:
     // ?load@ResourcePackManager@@UEBA_NAEBVResourceLocation@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-    virtual bool load(
-        class ResourceLocation const&   resourceLocation,
-        std::string&                    resourceStream,
-        std::vector<std::string> const& extensions
-    ) const;
+    virtual bool
+    load(class ResourceLocation const& resourceLocation, std::string& resourceStream, std::vector<std::string> const&)
+        const;
 
     // vIndex: 3, symbol:
     // ?load@ResourcePackManager@@UEBA_NAEBVResourceLocationPair@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-    virtual bool load(
-        class ResourceLocationPair const& resourceLocation,
-        std::string&                      resourceStream,
-        std::vector<std::string> const&   extensions
-    ) const;
+    virtual bool
+    load(class ResourceLocationPair const&, std::string& resourceStream, std::vector<std::string> const&) const;
 
     // vIndex: 4, symbol:
     // ?loadAllVersionsOf@ResourcePackManager@@UEBA?AV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@AEBVResourceLocation@@@Z
@@ -55,10 +50,8 @@ public:
 
     // vIndex: 6, symbol:
     // ?isInStreamableLocation@ResourcePackManager@@UEBA_NAEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    virtual bool isInStreamableLocation(
-        class ResourceLocation const&   resourceLocation,
-        std::vector<std::string> const& extensions
-    ) const;
+    virtual bool
+    isInStreamableLocation(class ResourceLocation const& resourceLocation, std::vector<std::string> const&) const;
 
     // vIndex: 7, symbol:
     // ?getPath@ResourcePackManager@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@@Z
@@ -67,7 +60,7 @@ public:
     // vIndex: 8, symbol:
     // ?getPath@ResourcePackManager@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     virtual class Core::PathBuffer<std::string>
-    getPath(class ResourceLocation const& resourceLocation, std::vector<std::string> const& extensions) const;
+    getPath(class ResourceLocation const& resourceLocation, std::vector<std::string> const&) const;
 
     // vIndex: 9, symbol:
     // ?getPathContainingResource@ResourcePackManager@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@@Z
@@ -75,19 +68,17 @@ public:
 
     // vIndex: 10, symbol:
     // ?getPathContainingResource@ResourcePackManager@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    virtual class Core::PathBuffer<std::string> getPathContainingResource(
-        class ResourceLocation const& resourceLocation,
-        std::vector<std::string>      extensions
-    ) const;
+    virtual class Core::PathBuffer<std::string>
+    getPathContainingResource(class ResourceLocation const& resourceLocation, std::vector<std::string>) const;
 
     // vIndex: 11, symbol:
     // ?getPackStackIndexOfResource@ResourcePackManager@@UEBA?AU?$pair@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
     virtual std::pair<int, std::string const&>
-    getPackStackIndexOfResource(class ResourceLocation const&, std::vector<std::string> const&) const;
+    getPackStackIndexOfResource(class ResourceLocation const& resourceLocation, std::vector<std::string> const&) const;
 
     // vIndex: 12, symbol:
     // ?hasCapability@ResourcePackManager@@UEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    virtual bool hasCapability(std::string_view) const;
+    virtual bool hasCapability(std::string_view requiredCapability) const;
 
     // symbol:
     // ??0ResourcePackManager@@QEAA@V?$function@$$A6A?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ@std@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentTierManager@@@Bedrock@@@gsl@@_N@Z
@@ -136,7 +127,7 @@ public:
     MCAPI bool isOnlyBaseGamePacks() const;
 
     // symbol: ?iteratePacks@ResourcePackManager@@QEBAXAEBV?$function@$$A6AXAEBVPackInstance@@@Z@std@@@Z
-    MCAPI void iteratePacks(std::function<void(class PackInstance const&)> const&) const;
+    MCAPI void iteratePacks(std::function<void(class PackInstance const&)> const& pred) const;
 
     // symbol: ?loadAllVersionsOf@ResourcePackManager@@QEBA_NAEBVResourceLocation@@AEAVResourcePackMergeStrategy@@@Z
     MCAPI bool loadAllVersionsOf(
@@ -148,7 +139,7 @@ public:
     MCAPI void registerResourcePackListener(class ResourcePackListener& listener);
 
     // symbol: ?removeIf@ResourcePackManager@@QEAAXAEBV?$function@$$A6A_NAEBVPackInstance@@@Z@std@@@Z
-    MCAPI void removeIf(std::function<bool(class PackInstance const&)> const&);
+    MCAPI void removeIf(std::function<bool(class PackInstance const&)> const& pred);
 
     // symbol: ?setPackSourceReport@ResourcePackManager@@QEAAX$$QEAVPackSourceReport@@@Z
     MCAPI void setPackSourceReport(class PackSourceReport&& report);

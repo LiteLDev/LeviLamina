@@ -28,40 +28,41 @@ public:
     MCAPI CreativeItemRegistry();
 
     // symbol: ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBVItemInstance@@@Z
-    MCAPI class CreativeItemEntry* findCreativeItemEntry(class ItemInstance const&);
+    MCAPI class CreativeItemEntry* findCreativeItemEntry(class ItemInstance const& instance);
 
     // symbol:
     // ?findCreativeItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@@Z
     MCAPI class CreativeItemEntry* findCreativeItemEntry(CreativeItemNetId const&);
 
     // symbol: ?getCreativeCategory@CreativeItemRegistry@@QEAAPEAVCreativeItemGroupCategory@@W4CreativeItemCategory@@@Z
-    MCAPI class CreativeItemGroupCategory* getCreativeCategory(::CreativeItemCategory);
+    MCAPI class CreativeItemGroupCategory* getCreativeCategory(::CreativeItemCategory category);
 
     // symbol:
     // ?getCreativeItemEntries@CreativeItemRegistry@@QEAAAEBV?$vector@VCreativeItemEntry@@V?$allocator@VCreativeItemEntry@@@std@@@std@@XZ
     MCAPI std::vector<class CreativeItemEntry> const& getCreativeItemEntries();
 
     // symbol: ?getItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@I@Z
-    MCAPI class CreativeItemEntry* getItemEntry(uint);
+    MCAPI class CreativeItemEntry* getItemEntry(uint index);
 
     // symbol:
     // ?newCreativeCategory@CreativeItemRegistry@@QEAAPEAVCreativeItemGroupCategory@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CreativeItemCategory@@@Z
-    MCAPI class CreativeItemGroupCategory* newCreativeCategory(std::string const&, ::CreativeItemCategory);
+    MCAPI class CreativeItemGroupCategory*
+    newCreativeCategory(std::string const& name, ::CreativeItemCategory category);
 
     // symbol:
     // ?newCreativeGroup@CreativeItemRegistry@@QEAAPEAVCreativeGroupInfo@@W4CreativeItemCategory@@AEBVHashedString@@AEBVItemInstance@@@Z
     MCAPI class CreativeGroupInfo*
-    newCreativeGroup(::CreativeItemCategory, class HashedString const&, class ItemInstance const&);
+    newCreativeGroup(::CreativeItemCategory category, class HashedString const& name, class ItemInstance const& icon);
 
     // symbol:
     // ?newItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@AEBVItemInstance@@@Z
-    MCAPI class CreativeItemEntry* newItemEntry(CreativeItemNetId const&, class ItemInstance const&);
+    MCAPI class CreativeItemEntry* newItemEntry(CreativeItemNetId const&, class ItemInstance const& item);
 
     // symbol: ?resetGroups@CreativeItemRegistry@@QEAAXXZ
     MCAPI void resetGroups();
 
     // symbol: ?updateItemEntry@CreativeItemRegistry@@QEAAPEAVCreativeItemEntry@@IAEBVItemInstance@@@Z
-    MCAPI class CreativeItemEntry* updateItemEntry(uint, class ItemInstance const&);
+    MCAPI class CreativeItemEntry* updateItemEntry(uint index, class ItemInstance const& item);
 
     // symbol: ?updateNetIdMap@CreativeItemRegistry@@QEAAXXZ
     MCAPI void updateNetIdMap();
@@ -70,14 +71,14 @@ public:
     MCAPI static class CreativeItemRegistry* current();
 
     // symbol: ?forEachCreativeItemInstance@CreativeItemRegistry@@SAXV?$function@$$A6A_NAEAVItemInstance@@@Z@std@@@Z
-    MCAPI static void forEachCreativeItemInstance(std::function<bool(class ItemInstance&)>);
+    MCAPI static void forEachCreativeItemInstance(std::function<bool(class ItemInstance&)> func);
 
     // symbol: ?reset@CreativeItemRegistry@@SAXXZ
     MCAPI static void reset();
 
     // symbol:
     // ?setCurrentRegistry@CreativeItemRegistry@@SAX$$QEAV?$unique_ptr@VCreativeItemRegistry@@U?$default_delete@VCreativeItemRegistry@@@std@@@std@@@Z
-    MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry>&&);
+    MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry>&& registry);
 
     // symbol: ?mCreativeListMutex@CreativeItemRegistry@@2VMutex@Threading@Bedrock@@A
     MCAPI static class Bedrock::Threading::Mutex mCreativeListMutex;
@@ -87,7 +88,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_forEachCreativeItemInstance@CreativeItemRegistry@@AEAAXV?$function@$$A6A_NAEAVItemInstance@@@Z@std@@@Z
-    MCAPI void _forEachCreativeItemInstance(std::function<bool(class ItemInstance&)>);
+    MCAPI void _forEachCreativeItemInstance(std::function<bool(class ItemInstance&)> func);
 
     // NOLINTEND
 

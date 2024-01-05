@@ -33,11 +33,11 @@ public:
     // symbol:
     // ??0WorldTemplateManager@@QEAA@AEAVPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEAVPackSourceFactory@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@3@_N@Z
     MCAPI WorldTemplateManager(
-        class PackManifestFactory&,
-        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&,
-        class PackSourceFactory&,
-        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&,
-        bool
+        class PackManifestFactory&                                          packManifestFactory,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider,
+        class PackSourceFactory&                                            packSourceFactory,
+        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&     filePathManager,
+        bool                                                                initAsync
     );
 
     // symbol: ?findInstalledWorldTemplate@WorldTemplateManager@@QEBAPEBUWorldTemplateInfo@@AEBUPackIdVersion@@@Z

@@ -48,10 +48,10 @@ public:
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
     // vIndex: 15, symbol: ?randomlyModifyPosition@DoublePlantBaseBlock@@UEBA?AVVec3@@AEBVBlockPos@@AEAH@Z
-    virtual class Vec3 randomlyModifyPosition(class BlockPos const&, int&) const;
+    virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos, int& seed) const;
 
     // vIndex: 16, symbol: ?randomlyModifyPosition@DoublePlantBaseBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-    virtual class Vec3 randomlyModifyPosition(class BlockPos const&) const;
+    virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -127,27 +127,29 @@ public:
 
     // vIndex: 79, symbol:
     // ?onFertilized@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
 
     // vIndex: 81, symbol: ?canBeFertilized@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // vIndex: 84, symbol: ?mayPlace@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar) const;
 
     // vIndex: 85, symbol: ?mayPlace@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 93, symbol: ?getSecondPart@DoublePlantBaseBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-    virtual bool getSecondPart(class BlockSource const&, class BlockPos const&, class BlockPos&) const;
+    virtual bool getSecondPart(class BlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
 
     // vIndex: 94, symbol: ?playerWillDestroy@DoublePlantBaseBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
-    virtual class Block const* playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
+    virtual class Block const*
+    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 95, symbol:
     // ?spawnResources@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Randomize& randomize, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 109, symbol: __unk_vfn_109
@@ -169,13 +171,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -184,22 +186,22 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@DoublePlantBaseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 165, symbol: ?getResourceCount@DoublePlantBaseBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const&, int bonusLootLevel) const;
 
     // vIndex: 168, symbol: ?checkAlive@DoublePlantBaseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void checkAlive(class BlockSource&, class BlockPos const&) const;
+    virtual void checkAlive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 170, symbol: ?_keepRelevantStateForDropping@DoublePlantBaseBlock@@MEBAAEBVBlock@@AEBV2@@Z
-    virtual class Block const& _keepRelevantStateForDropping(class Block const&) const;
+    virtual class Block const& _keepRelevantStateForDropping(class Block const& block) const;
 
     // symbol: ?canBeSilkTouched@DoublePlantBaseBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0DoublePlantBaseBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DoublePlantBaseBlock(std::string const&, int);
+    MCAPI DoublePlantBaseBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

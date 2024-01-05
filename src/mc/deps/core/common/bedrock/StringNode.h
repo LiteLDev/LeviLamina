@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?set@StringNode@JSONObject@Bedrock@@QEAA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@_N@Z
-    MCAPI bool set(std::string_view, bool);
+    MCAPI bool set(std::string_view str, bool copy);
 
     // NOLINTEND
 };

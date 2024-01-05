@@ -104,7 +104,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 85, symbol: ?mayPlace@SnifferEggBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -126,19 +126,19 @@ public:
     virtual std::string buildDescriptionId(class Block const&) const;
 
     // vIndex: 129, symbol: ?getVariant@SnifferEggBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@SnifferEggBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@SnifferEggBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -156,17 +156,17 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SnifferEggBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SnifferEggBlock(std::string const&, int);
+    MCAPI SnifferEggBlock(std::string const& nameId, int);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_addToRandomTickingQueue@SnifferEggBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static void _addToRandomTickingQueue(class BlockSource&, class BlockPos const&);
+    MCAPI static void _addToRandomTickingQueue(class BlockSource& region, class BlockPos const& pos);
 
     // symbol: ?_shouldHatchFaster@SnifferEggBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool _shouldHatchFaster(class BlockSource&, class BlockPos const&);
+    MCAPI static bool _shouldHatchFaster(class BlockSource& region, class BlockPos const& pos);
 
     // symbol: ?_spawnParticles@SnifferEggBlock@@CAXW4LevelEvent@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static void _spawnParticles(::LevelEvent, class BlockSource&, class BlockPos const&);

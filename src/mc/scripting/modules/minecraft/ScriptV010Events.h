@@ -59,8 +59,9 @@ public:
 
     // symbol:
     // ?onActorHurt@ScriptV010Events@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptActorHurtAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCVAPI void
-    onActorHurt(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent>&);
+    MCVAPI void onActorHurt(
+        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent>& hurtEvent
+    );
 
     // symbol:
     // ?onActorRemoved@ScriptV010Events@ScriptModuleMinecraft@@UEAAXAEBV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@AEAV?$StrongTypedObjectHandle@UScriptActorRemoveAfterEvent@ScriptModuleMinecraft@@@4@@Z
@@ -70,22 +71,27 @@ public:
     // symbol:
     // ?onBeforeChat@ScriptV010Events@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptChatSendBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     MCVAPI void
-        onBeforeChat(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent>);
+    onBeforeChat(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent>
+                     beforeChatEvent);
 
     // symbol:
     // ?onBeforeItemUse@ScriptV010Events@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptItemUseBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCVAPI void onBeforeItemUse(class Scripting::StrongTypedObjectHandle<
-                                struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent>);
+    MCVAPI void onBeforeItemUse(
+        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent> itemEvent
+    );
 
     // symbol:
     // ?onBeforeItemUseOn@ScriptV010Events@ScriptModuleMinecraft@@UEAAXV?$StrongTypedObjectHandle@UScriptItemUseOnBeforeEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCVAPI void onBeforeItemUseOn(class Scripting::StrongTypedObjectHandle<
-                                  struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>);
+    MCVAPI void onBeforeItemUseOn(
+        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent> itemEvent
+    );
 
     // symbol:
     // ?onDataDrivenActorEventSend@ScriptV010Events@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptDataDrivenActorTriggerAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCVAPI void onDataDrivenActorEventSend(class Scripting::StrongTypedObjectHandle<
-                                           struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>&);
+    MCVAPI void onDataDrivenActorEventSend(
+        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>&
+            dataDrivenActorEventSend
+    );
 
     // symbol:
     // ?onItemCompleteUse@ScriptV010Events@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptItemCompleteUseAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
@@ -109,28 +115,31 @@ public:
 
     // symbol:
     // ?onItemUseOn@ScriptV010Events@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptItemUseOnAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCVAPI void
-    onItemUseOn(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>&);
+    MCVAPI void onItemUseOn(
+        class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>& itemEvent
+    );
 
     // symbol:
     // ?onPlayerJoin@ScriptV010Events@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptPlayerJoinAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     MCVAPI void
-    onPlayerJoin(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent>&);
+    onPlayerJoin(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent>&
+                     playerJoinEvent);
 
     // symbol:
     // ?onPlayerLeave@ScriptV010Events@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptPlayerLeaveAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     MCVAPI void
-    onPlayerLeave(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>&);
+    onPlayerLeave(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>&
+                      playerLeaveEvent);
 
     // symbol:
     // ?onWeatherChanged@ScriptV010Events@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptWeatherChangedAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     MCVAPI void onWeatherChanged(class Scripting::StrongTypedObjectHandle<
-                                 struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>&);
+                                 struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>& weatherChangedEvent);
 
     // symbol:
     // ?onWorldInitialize@ScriptV010Events@ScriptModuleMinecraft@@UEAAXAEAV?$StrongTypedObjectHandle@UScriptWorldInitializeAfterEvent@ScriptModuleMinecraft@@@Scripting@@@Z
     MCVAPI void onWorldInitialize(class Scripting::StrongTypedObjectHandle<
-                                  struct ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>&);
+                                  struct ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>& worldInitializeEvent);
 
     // symbol: ??1ScriptV010Events@ScriptModuleMinecraft@@UEAA@XZ
     MCVAPI ~ScriptV010Events();
@@ -140,7 +149,7 @@ public:
 
     // symbol:
     // ??0ScriptV010Events@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@V?$not_null@PEAVLevel@@@gsl@@@Z
-    MCAPI ScriptV010Events(class Scripting::WeakLifetimeScope const&, gsl::not_null<class Level*>);
+    MCAPI ScriptV010Events(class Scripting::WeakLifetimeScope const& scope, gsl::not_null<class Level*> level);
 
     // symbol:
     // ?onActorCreated@ScriptV010Events@ScriptModuleMinecraft@@QEAAXAEAV?$StrongTypedObjectHandle@UScriptActorCreateEvent@ScriptModuleMinecraft@@@Scripting@@@Z
@@ -156,7 +165,8 @@ public:
 
     // symbol:
     // ?registerListener@ScriptV010Events@ScriptModuleMinecraft@@QEAAXU?$TypedObjectHandle@VScriptV010Events@ScriptModuleMinecraft@@@Scripting@@@Z
-    MCAPI void registerListener(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptV010Events>);
+    MCAPI void
+    registerListener(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptV010Events> handle);
 
     // symbol: ?bind@ScriptV010Events@ScriptModuleMinecraft@@SAXAEAVModuleBindingBuilder@Scripting@@@Z
     MCAPI static void bind(class Scripting::ModuleBindingBuilder&);

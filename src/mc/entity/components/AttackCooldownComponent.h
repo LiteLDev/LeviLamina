@@ -28,13 +28,13 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ?initialize@AttackCooldownDefinition@AttackCooldownComponent@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext&, class AttackCooldownComponent&) const;
+        MCAPI void initialize(class EntityContext& entity, class AttackCooldownComponent&) const;
 
         // symbol:
         // ?buildSchema@AttackCooldownDefinition@AttackCooldownComponent@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAttackCooldownDefinition@AttackCooldownComponent@@@JsonUtil@@@std@@@Z
         MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                           class JsonUtil::EmptyClass,
-                                          class AttackCooldownComponent::AttackCooldownDefinition>>&);
+                                          class AttackCooldownComponent::AttackCooldownDefinition>>& root);
 
         // NOLINTEND
     };

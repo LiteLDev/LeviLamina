@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ExpectedSlotConsume@@QEAA@W4ContainerEnumName@@EAEBVItemStack@@E@Z
-    MCAPI ExpectedSlotConsume(::ContainerEnumName, uchar, class ItemStack const&, uchar);
+    MCAPI ExpectedSlotConsume(::ContainerEnumName, uchar slot, class ItemStack const& item, uchar);
 
     // NOLINTEND
 };

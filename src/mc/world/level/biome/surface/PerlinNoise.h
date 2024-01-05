@@ -20,7 +20,7 @@ public:
     MCAPI PerlinNoise(uint seed, int levels, int minLevel);
 
     // symbol: ??0PerlinNoise@@QEAA@AEAVIRandom@@UYBlendingBugSettings@@HH@Z
-    MCAPI PerlinNoise(class IRandom&, struct YBlendingBugSettings, int, int);
+    MCAPI PerlinNoise(class IRandom& random, struct YBlendingBugSettings, int levels, int minLevel);
 
     // symbol: ?getRegion@PerlinNoise@@QEBAXPEAMAEBVVec2@@HH1M@Z
     MCAPI void
@@ -34,7 +34,7 @@ public:
     MCAPI float getValue(class Vec3 const& pos) const;
 
     // symbol: ?getValueNormalized@PerlinNoise@@QEBAMAEBVVec3@@@Z
-    MCAPI float getValueNormalized(class Vec3 const&) const;
+    MCAPI float getValueNormalized(class Vec3 const& pos) const;
 
     // symbol: ??1PerlinNoise@@QEAA@XZ
     MCAPI ~PerlinNoise();
@@ -44,7 +44,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_init@PerlinNoise@@AEAAXAEAVIRandom@@UYBlendingBugSettings@@@Z
-    MCAPI void _init(class IRandom&, struct YBlendingBugSettings);
+    MCAPI void _init(class IRandom& random, struct YBlendingBugSettings);
 
     // NOLINTEND
 };

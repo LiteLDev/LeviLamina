@@ -125,7 +125,7 @@ public:
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@ScaffoldingBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // vIndex: 92, symbol: ?neighborChanged@ScaffoldingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void
@@ -194,7 +194,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0ScaffoldingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ScaffoldingBlock(std::string const& nameId, int id);
+    MCAPI ScaffoldingBlock(std::string const& nameId, int);
 
     // symbol: ?MAX_STABILITY@ScaffoldingBlock@@2HB
     MCAPI static int const MAX_STABILITY;

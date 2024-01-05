@@ -22,11 +22,11 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0PromoteCenter@OperationNodeFilters@@QEAA@AEAVBiome@@0@Z
-    MCAPI PromoteCenter(class Biome&, class Biome&);
+    MCAPI PromoteCenter(class Biome& from, class Biome& to);
 
     // symbol:
     // ??RPromoteCenter@OperationNodeFilters@@QEBAPEAVBiome@@AEAU?$NeighborhoodReader@PEAVBiome@@$00$00@OperationNodeDetails@@@Z
-    MCAPI class Biome* operator()(struct OperationNodeDetails::NeighborhoodReader<class Biome*, 1, 1>&) const;
+    MCAPI class Biome* operator()(struct OperationNodeDetails::NeighborhoodReader<class Biome*, 1, 1>& reader) const;
 
     // NOLINTEND
 };

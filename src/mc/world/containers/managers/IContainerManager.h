@@ -22,7 +22,7 @@ public:
     virtual ::ContainerID getContainerId() const = 0;
 
     // vIndex: 2, symbol: ?setContainerId@ContainerManagerModel@@UEAAXW4ContainerID@@@Z
-    virtual void setContainerId(::ContainerID id) = 0;
+    virtual void setContainerId(::ContainerID) = 0;
 
     // vIndex: 3, symbol: ?getContainerType@ContainerManagerModel@@UEBA?AW4ContainerType@@XZ
     virtual ::ContainerType getContainerType() const = 0;
@@ -44,7 +44,7 @@ public:
     virtual class ItemStack const& getSlot(int slot) const = 0;
 
     // vIndex: 9, symbol: ?setData@FurnaceContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int id, int value) = 0;
+    virtual void setData(int, int value) = 0;
 
     // vIndex: 10, symbol: ?broadcastChanges@LevelContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges() = 0;

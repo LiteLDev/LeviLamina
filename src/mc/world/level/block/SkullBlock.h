@@ -37,7 +37,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@SkullBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -115,7 +115,7 @@ public:
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 96, symbol: ?asItemInstance@SkullBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const* blockActor) const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@SkullBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const& getPlacementBlock(
@@ -162,13 +162,13 @@ public:
 
     // vIndex: 168, symbol: ?getEntityResourceItem@SkullBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
     virtual class ItemInstance
-    getEntityResourceItem(class Randomize& random, class BlockActor const& blockEntity, int bonusLootLevel) const;
+    getEntityResourceItem(class Randomize& randomize, class BlockActor const& blockEntity, int bonusLootLevel) const;
 
     // symbol: ?waterSpreadCausesSpawn@SkullBlock@@UEBA_NXZ
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SkullBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SkullBlock(std::string const& nameId, int id);
+    MCAPI SkullBlock(std::string const& nameId, int);
 
     // symbol: ?checkMobSpawn@SkullBlock@@QEBA_NAEAVLevel@@AEAVBlockSource@@AEBVBlockPos@@AEAVSkullBlockActor@@@Z
     MCAPI bool checkMobSpawn(

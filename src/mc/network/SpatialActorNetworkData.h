@@ -98,7 +98,7 @@ public:
     MCAPI bool shouldSendUpdate(bool forceTeleport, bool forceMoveLocalEntity) const;
 
     // symbol: ?teleportEntity@SpatialActorNetworkData@@QEAAXAEBVVec3@@AEBVVec2@@M@Z
-    MCAPI void teleportEntity(class Vec3 const&, class Vec2 const&, float);
+    MCAPI void teleportEntity(class Vec3 const& pos, class Vec2 const& rot, float yHeadRot);
 
     // symbol: ?getDebugSpatialPacketModifiers@SpatialActorNetworkData@@SAAEAUDebugSpatialPacketModifiers@1@XZ
     MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers& getDebugSpatialPacketModifiers();
@@ -112,13 +112,13 @@ public:
     MCAPI std::vector<struct NetworkIdentifierWithSubId> _findRelevantPlayersToSendUpdate();
 
     // symbol: ?_getOptimizationScore@SpatialActorNetworkData@@AEBA_KAEAVPlayer@@@Z
-    MCAPI uint64 _getOptimizationScore(class Player&) const;
+    MCAPI uint64 _getOptimizationScore(class Player& player) const;
 
     // symbol: ?_initializeLastSentValues@SpatialActorNetworkData@@AEAAXXZ
     MCAPI void _initializeLastSentValues();
 
     // symbol: ?_shouldUpdateBasedOptimizationOnScore@SpatialActorNetworkData@@AEBA_NAEAVPlayer@@@Z
-    MCAPI bool _shouldUpdateBasedOptimizationOnScore(class Player&) const;
+    MCAPI bool _shouldUpdateBasedOptimizationOnScore(class Player& player) const;
 
     // NOLINTEND
 

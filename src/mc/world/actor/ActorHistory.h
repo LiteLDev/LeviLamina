@@ -37,7 +37,7 @@ public:
     MCAPI bool addFrame(class EntityContext&, uint64, class EntityRegistry&);
 
     // symbol: ?addInputToFrame@ActorHistory@@QEAAXV?$shared_ptr@UIReplayableActorInput@@@std@@_K@Z
-    MCAPI void addInputToFrame(std::shared_ptr<struct IReplayableActorInput>, uint64);
+    MCAPI void addInputToFrame(std::shared_ptr<struct IReplayableActorInput> input, uint64 frame);
 
     // symbol: ?addInputToFrontOfFrame@ActorHistory@@QEAAXV?$shared_ptr@UIReplayableActorInput@@@std@@_K@Z
     MCAPI void addInputToFrontOfFrame(std::shared_ptr<struct IReplayableActorInput>, uint64);

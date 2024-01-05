@@ -209,7 +209,7 @@ public:
 
     // symbol:
     // ?parseInt32Value@PropertiesSettings@@SAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static int parseInt32Value(std::string const&);
+    MCAPI static int parseInt32Value(std::string const& value);
 
     // NOLINTEND
 };

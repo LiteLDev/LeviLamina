@@ -124,7 +124,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@PistonBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // vIndex: 92, symbol: ?neighborChanged@PistonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void
@@ -173,7 +173,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@PistonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -182,20 +182,19 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@PistonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 164, symbol: ?getResourceItem@PistonBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // symbol: ?pushesUpFallingBlocks@PistonBlock@@UEBA_NXZ
     MCVAPI bool pushesUpFallingBlocks() const;
 
     // symbol: ??0PistonBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@@Z
-    MCAPI PistonBlock(std::string const& nameId, int id, ::PistonBlock::Type isSticky);
+    MCAPI PistonBlock(std::string const& nameId, int, ::PistonBlock::Type isSticky);
 
     // symbol: ?getFacingDir@PistonBlock@@SAAEBVBlockPos@@E@Z
-    MCAPI static class BlockPos const& getFacingDir(uchar inFacing);
+    MCAPI static class BlockPos const& getFacingDir(uchar);
 
     // NOLINTEND
 

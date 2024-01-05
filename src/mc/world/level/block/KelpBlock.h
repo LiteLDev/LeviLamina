@@ -121,7 +121,7 @@ public:
     virtual bool mayConsumeFertilizer(class BlockSource& region) const;
 
     // vIndex: 81, symbol: ?canBeFertilized@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 85, symbol: ?mayPlace@KelpBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
@@ -152,7 +152,7 @@ public:
     virtual int getColor(class Block const& block) const;
 
     // vIndex: 126, symbol: ?onGraphicsModeChanged@KelpBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const&);
+    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -179,7 +179,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0KelpBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI KelpBlock(std::string const& nameId, int id);
+    MCAPI KelpBlock(std::string const& nameId, int);
 
     // symbol: ?shouldGrow@KelpBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool shouldGrow(class BlockSource& region, class BlockPos const& pos) const;

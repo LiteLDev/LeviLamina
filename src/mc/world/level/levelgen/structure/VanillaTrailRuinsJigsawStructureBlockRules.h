@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initialize@VanillaTrailRuinsJigsawStructureBlockRules@@SAXAEAVJigsawStructureRegistry@@@Z
-    MCAPI static void initialize(class JigsawStructureRegistry&);
+    MCAPI static void initialize(class JigsawStructureRegistry& jigsawRegistry);
 
     // NOLINTEND
 };

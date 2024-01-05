@@ -27,17 +27,20 @@ public:
 
     // vIndex: 2, symbol:
     // ?getCompoundTag@DBStorage@@UEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z
-    virtual std::unique_ptr<class CompoundTag> getCompoundTag(std::string const&, ::DBHelpers::Category) = 0;
+    virtual std::unique_ptr<class CompoundTag>
+    getCompoundTag(std::string const& key, ::DBHelpers::Category category) = 0;
 
     // vIndex: 3, symbol:
     // ?hasKey@DBStorage@@UEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@W4Category@DBHelpers@@@Z
-    virtual bool hasKey(std::string_view, ::DBHelpers::Category) const = 0;
+    virtual bool hasKey(std::string_view key, ::DBHelpers::Category category) const = 0;
 
     // vIndex: 4, symbol:
     // ?forEachKeyWithPrefix@DBStorage@@UEBAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@W4Category@DBHelpers@@AEBV?$function@$$A6AXV?$basic_string_view@DU?$char_traits@D@std@@@std@@0@Z@3@@Z
-    virtual void
-    forEachKeyWithPrefix(std::string_view, ::DBHelpers::Category, std::function<void(std::string_view, std::string_view)> const&)
-        const = 0;
+    virtual void forEachKeyWithPrefix(
+        std::string_view                                               prefix,
+        ::DBHelpers::Category                                          category,
+        std::function<void(std::string_view, std::string_view)> const& callback
+    ) const = 0;
 
     // vIndex: 5, symbol: ?loadLevelData@DBStorage@@UEAA_NAEAVLevelData@@@Z
     virtual bool loadLevelData(class LevelData& data) = 0;
@@ -45,7 +48,7 @@ public:
     // vIndex: 6, symbol:
     // ?createChunkStorage@DBStorage@@UEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
     virtual std::unique_ptr<class ChunkSource>
-    createChunkStorage(std::unique_ptr<class ChunkSource> generator, ::StorageVersion v) = 0;
+    createChunkStorage(std::unique_ptr<class ChunkSource> generator, ::StorageVersion) = 0;
 
     // vIndex: 7, symbol: ?saveLevelData@DBStorage@@UEAAXAEBVLevelData@@@Z
     virtual void saveLevelData(class LevelData const& levelData) = 0;
@@ -57,24 +60,24 @@ public:
     // vIndex: 9, symbol:
     // ?saveData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@$$QEAV43@W4Category@DBHelpers@@@Z
     virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-    saveData(std::string const&, std::string&&, ::DBHelpers::Category) = 0;
+    saveData(std::string const& key, std::string&& data, ::DBHelpers::Category category) = 0;
 
     // vIndex: 10, symbol:
     // ?saveData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBVLevelStorageWriteBatch@@@Z
     virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-    saveData(class LevelStorageWriteBatch const&) = 0;
+    saveData(class LevelStorageWriteBatch const& batch) = 0;
 
     // vIndex: 11, symbol:
     // ?deleteData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z
     virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-    deleteData(std::string const&, ::DBHelpers::Category) = 0;
+    deleteData(std::string const& key, ::DBHelpers::Category category) = 0;
 
     // vIndex: 12, symbol:
     // ?getStatistics@DBStorage@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void getStatistics(std::string& stats) const = 0;
 
     // vIndex: 13, symbol: ?clonePlayerData@LevelStorage@@UEAA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@0@Z
-    virtual bool clonePlayerData(std::string_view, std::string_view);
+    virtual bool clonePlayerData(std::string_view fromKey, std::string_view toKey);
 
     // vIndex: 14, symbol: __unk_vfn_14
     virtual void __unk_vfn_14() = 0;
@@ -90,7 +93,7 @@ public:
 
     // vIndex: 18, symbol:
     // ?loadData@LevelStorage@@UEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z
-    virtual bool loadData(std::string_view, std::string&, ::DBHelpers::Category) const;
+    virtual bool loadData(std::string_view key, std::string& buffer, ::DBHelpers::Category category) const;
 
     // vIndex: 19, symbol: __unk_vfn_19
     virtual void __unk_vfn_19() = 0;
@@ -143,7 +146,7 @@ public:
 
     // symbol:
     // ?loadPlayerDataFromTag@LevelStorage@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
-    MCAPI std::unique_ptr<class CompoundTag> loadPlayerDataFromTag(std::string_view);
+    MCAPI std::unique_ptr<class CompoundTag> loadPlayerDataFromTag(std::string_view saveTag);
 
     // symbol:
     // ?loadServerPlayerData@LevelStorage@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBVPlayer@@_N@Z
@@ -155,7 +158,7 @@ public:
     // symbol:
     // ?saveData@LevelStorage@@QEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVCompoundTag@@W4Category@DBHelpers@@@Z
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-          saveData(std::string const&, class CompoundTag const&, ::DBHelpers::Category);
+          saveData(std::string const& key, class CompoundTag const& tag, ::DBHelpers::Category category);
 
     // symbol:
     // ?LEGACY_CONSOLE_PLAYER_PREFIX@LevelStorage@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B

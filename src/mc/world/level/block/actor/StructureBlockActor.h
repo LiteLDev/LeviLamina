@@ -63,7 +63,7 @@ public:
 
     // vIndex: 40, symbol:
     // ?_getUpdatePacket@StructureBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@StructureBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -101,13 +101,19 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_loadStructure@StructureBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBaseGameVersion@@@Z
-    MCAPI bool _loadStructure(class BlockSource&, class BlockPos const&, class BaseGameVersion const&);
+    MCAPI bool
+    _loadStructure(class BlockSource& region, class BlockPos const& position, class BaseGameVersion const& version);
 
     // symbol: ?_saveStructure@StructureBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z
     MCAPI bool _saveStructure(class BlockSource& region, class BlockPos const& position, bool redstoneTriggered);
 
     // symbol: ?_trigger@StructureBlockActor@@AEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVBaseGameVersion@@_N@Z
-    MCAPI void _trigger(class BlockSource&, class BlockPos const&, class BaseGameVersion const&, bool);
+    MCAPI void _trigger(
+        class BlockSource&           region,
+        class BlockPos const&        pos,
+        class BaseGameVersion const& version,
+        bool                         redstoneTriggered
+    );
 
     // NOLINTEND
 };

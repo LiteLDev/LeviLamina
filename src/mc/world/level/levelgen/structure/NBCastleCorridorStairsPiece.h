@@ -31,7 +31,7 @@ public:
 
     // vIndex: 4, symbol:
     // ?postProcess@NBCastleCorridorStairsPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual bool postProcess(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // NOLINTEND
 };

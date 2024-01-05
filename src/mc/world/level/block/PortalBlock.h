@@ -171,19 +171,20 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 167, symbol: ?entityInside@PortalBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-    virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
+    virtual void entityInside(class BlockSource&, class BlockPos const& pos, class Actor& entity) const;
 
     // symbol: ?waterSpreadCausesSpawn@PortalBlock@@UEBA_NXZ
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0PortalBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PortalBlock(std::string const& nameId, int id);
+    MCAPI PortalBlock(std::string const& nameId, int);
 
     // symbol: ?tryMatchPortalRecordToFrameBlocksContainingPos@PortalBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void tryMatchPortalRecordToFrameBlocksContainingPos(class BlockSource&, class BlockPos const&) const;
+    MCAPI void
+    tryMatchPortalRecordToFrameBlocksContainingPos(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?trySpawnPortal@PortalBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool trySpawnPortal(class BlockSource&, class BlockPos const&);
+    MCAPI static bool trySpawnPortal(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 };

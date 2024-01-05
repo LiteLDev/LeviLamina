@@ -38,7 +38,13 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0HoldGroundGoal@@QEAA@AEAVMob@@M_NMAEBVActorDefinitionTrigger@@@Z
-    MCAPI HoldGroundGoal(class Mob&, float, bool, float, class ActorDefinitionTrigger const&);
+    MCAPI HoldGroundGoal(
+        class Mob&                          mob,
+        float                               hostileRadius,
+        bool                                broadcast,
+        float                               broadcastRange,
+        class ActorDefinitionTrigger const& withinRange
+    );
 
     // NOLINTEND
 };

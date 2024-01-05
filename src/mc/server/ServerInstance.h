@@ -34,7 +34,7 @@ public:
     MCVAPI void onAppSuspended();
 
     // symbol: ?onCriticalDiskError@ServerInstance@@UEAAX_NAEBW4LevelStorageState@Core@@@Z
-    MCVAPI void onCriticalDiskError(bool, ::Core::LevelStorageState const&);
+    MCVAPI void onCriticalDiskError(bool bSet, ::Core::LevelStorageState const& errorCode);
 
     // symbol: ?onGameModeChanged@ServerInstance@@UEAAXXZ
     MCVAPI void onGameModeChanged();
@@ -52,13 +52,13 @@ public:
     MCVAPI void onLevelExit();
 
     // symbol: ?onLowDiskSpace@ServerInstance@@UEAAX_N@Z
-    MCVAPI void onLowDiskSpace(bool);
+    MCVAPI void onLowDiskSpace(bool bSet);
 
     // symbol: ?onLowMemory@ServerInstance@@UEAAXXZ
     MCVAPI void onLowMemory();
 
     // symbol: ?onOutOfDiskSpace@ServerInstance@@UEAAX_N@Z
-    MCVAPI void onOutOfDiskSpace(bool);
+    MCVAPI void onOutOfDiskSpace(bool bSet);
 
     // symbol: ?onRequestResourceReload@ServerInstance@@UEAAXXZ
     MCVAPI void onRequestResourceReload();
@@ -74,8 +74,10 @@ public:
 
     // symbol:
     // ??0ServerInstance@@QEAA@AEAVIMinecraftApp@@AEBV?$not_null@V?$NonOwnerPointer@VServerInstanceEventCoordinator@@@Bedrock@@@gsl@@@Z
-    MCAPI
-    ServerInstance(class IMinecraftApp&, Bedrock::NotNullNonOwnerPtr<class ServerInstanceEventCoordinator> const&);
+    MCAPI ServerInstance(
+        class IMinecraftApp&                                                     app,
+        Bedrock::NotNullNonOwnerPtr<class ServerInstanceEventCoordinator> const& coordinator
+    );
 
     // symbol:
     // ?disconnectAllClientsWithMessage@ServerInstance@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -113,14 +115,14 @@ public:
     MCAPI void queueForServerThread(std::function<void(void)> command);
 
     // symbol: ?setLevelCorruptionCallback@ServerInstance@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCAPI void setLevelCorruptionCallback(std::function<void(void)> levelCorruptCallback);
+    MCAPI void setLevelCorruptionCallback(std::function<void(void)>);
 
     // symbol: ?setWakeupFrequency@ServerInstance@@QEAAXH@Z
     MCAPI void setWakeupFrequency(int hertz);
 
     // symbol:
     // ?shutDownWithMessage@ServerInstance@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void shutDownWithMessage(std::string);
+    MCAPI void shutDownWithMessage(std::string msg);
 
     // symbol: ?startServerThread@ServerInstance@@QEAAXXZ
     MCAPI void startServerThread();
@@ -143,7 +145,7 @@ public:
     MCAPI void _update();
 
     // symbol: ?_useClientSideChunkGeneration@ServerInstance@@AEBA_NPEAVLevelData@@@Z
-    MCAPI bool _useClientSideChunkGeneration(class LevelData*) const;
+    MCAPI bool _useClientSideChunkGeneration(class LevelData* levelData) const;
 
     // NOLINTEND
 };

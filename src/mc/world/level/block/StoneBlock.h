@@ -103,7 +103,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@StoneBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -124,7 +124,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 141, symbol: ?tryGetInfested@StoneBlock@@UEBAPEBVBlock@@AEBV2@@Z
-    virtual class Block const* tryGetInfested(class Block const&) const;
+    virtual class Block const* tryGetInfested(class Block const& block) const;
 
     // vIndex: 143, symbol: ?_addHardCodedBlockComponents@StoneBlock@@UEAAXXZ
     virtual void _addHardCodedBlockComponents();
@@ -139,14 +139,13 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 162, symbol: ?getMapColor@StoneBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
     // vIndex: 164, symbol: ?getResourceItem@StoneBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // symbol: ??0StoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI StoneBlock(std::string const& nameId, int id);
+    MCAPI StoneBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

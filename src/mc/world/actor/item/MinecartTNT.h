@@ -98,7 +98,11 @@ public:
     virtual class Block const* getDefaultDisplayBlock() const;
 
     // symbol: ??0MinecartTNT@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI MinecartTNT(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI MinecartTNT(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?primeFuse@MinecartTNT@@QEAAXW4ActorDamageCause@@@Z
     MCAPI void primeFuse(::ActorDamageCause cause);

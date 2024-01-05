@@ -23,7 +23,12 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0BiomeInit@OperationNodeFilters@@QEAA@AEBVBiomeRegistry@@AEAVBiome@@1W4GeneratorType@@@Z
-    MCAPI BiomeInit(class BiomeRegistry const&, class Biome&, class Biome&, ::GeneratorType);
+    MCAPI BiomeInit(
+        class BiomeRegistry const& registry,
+        class Biome&               defaultOceanBiome,
+        class Biome&               fallbackBiome,
+        ::GeneratorType            generator
+    );
 
     // NOLINTEND
 };

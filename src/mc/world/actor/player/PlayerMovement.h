@@ -17,7 +17,7 @@ MCAPI class Vec2
 calculateMoveVector(struct MoveInputState const&, class LayeredAbilities const&, class SynchedActorData const&, bool, struct SneakingComponent const*);
 
 // symbol: ?clearInputState@PlayerMovement@@YAXAEAUMoveInputComponent@@@Z
-MCAPI void clearInputState(struct MoveInputComponent&);
+MCAPI void clearInputState(struct MoveInputComponent& input);
 
 // symbol:
 // ?getControllingPassengerID@PlayerMovement@@YA?AUActorUniqueID@@AEBV?$vector@UStrictActorIDEntityContextPair@@V?$allocator@UStrictActorIDEntityContextPair@@@std@@@std@@H@Z

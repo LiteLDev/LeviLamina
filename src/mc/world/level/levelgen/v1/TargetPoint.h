@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0TargetPoint@@QEAA@MMMMMM@Z
-    MCAPI TargetPoint(float, float, float, float, float, float);
+    MCAPI TargetPoint(float temperature, float, float, float, float depth, float);
 
     // NOLINTEND
 };

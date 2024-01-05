@@ -44,7 +44,7 @@ public:
     virtual ::CommandOriginType getOriginType() const;
 
     // symbol: ??0GameDirectorEntityServerCommandOrigin@@QEAA@AEAVActor@@@Z
-    MCAPI explicit GameDirectorEntityServerCommandOrigin(class Actor&);
+    MCAPI explicit GameDirectorEntityServerCommandOrigin(class Actor& origin);
 
     // NOLINTEND
 };

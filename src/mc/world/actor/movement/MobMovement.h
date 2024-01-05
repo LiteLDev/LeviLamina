@@ -35,19 +35,20 @@ MCAPI void setDiscardFriction(class EntityContext&, bool);
 MCAPI void setFlySpeed(class EntityContext&, float);
 
 // symbol: ?setFrictionModifier@MobMovement@@YAXAEAVEntityContext@@M@Z
-MCAPI void setFrictionModifier(class EntityContext&, float);
+MCAPI void setFrictionModifier(class EntityContext&, float modifier);
 
 // symbol: ?setLocalMoveVelocity@MobMovement@@YAXAEAVEntityContext@@AEBVVec3@@@Z
 MCAPI void setLocalMoveVelocity(class EntityContext&, class Vec3 const&);
 
 // symbol: ?setLocalMoveVelocity@MobMovement@@YAXAEAVEntityContext@@V?$optional@M@std@@11@Z
-MCAPI void setLocalMoveVelocity(class EntityContext&, std::optional<float>, std::optional<float>, std::optional<float>);
+MCAPI void
+setLocalMoveVelocity(class EntityContext&, std::optional<float> x, std::optional<float> y, std::optional<float> z);
 
 // symbol: ?setMobRotation@MobMovement@@YAXAEAVEntityContext@@M@Z
-MCAPI void setMobRotation(class EntityContext&, float);
+MCAPI void setMobRotation(class EntityContext&, float rotation);
 
 // symbol: ?setMovementSpeed@MobMovement@@YAXAEAVEntityContext@@M@Z
-MCAPI void setMovementSpeed(class EntityContext&, float);
+MCAPI void setMovementSpeed(class EntityContext&, float speed);
 // NOLINTEND
 
 }; // namespace MobMovement

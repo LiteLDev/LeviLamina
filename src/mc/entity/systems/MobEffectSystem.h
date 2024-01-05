@@ -28,7 +28,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_tickComponent@MobEffectSystem@@CAXAEAVActorOwnerComponent@@AEAVMobEffectComponent@@@Z
-    MCAPI static void _tickComponent(class ActorOwnerComponent&, class MobEffectComponent&);
+    MCAPI static void _tickComponent(class ActorOwnerComponent&, class MobEffectComponent& mobEffectComponent);
 
     // NOLINTEND
 };

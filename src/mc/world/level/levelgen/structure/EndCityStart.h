@@ -21,7 +21,7 @@ public:
     virtual bool isValid() const;
 
     // symbol: ?getYPositionForFeature@EndCityStart@@SAHAEBVChunkPos@@AEAVDimension@@@Z
-    MCAPI static int getYPositionForFeature(class ChunkPos const&, class Dimension&);
+    MCAPI static int getYPositionForFeature(class ChunkPos const& pos, class Dimension& dimension);
 
     // NOLINTEND
 };

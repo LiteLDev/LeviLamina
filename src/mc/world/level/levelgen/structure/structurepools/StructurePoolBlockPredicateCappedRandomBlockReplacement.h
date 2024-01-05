@@ -20,7 +20,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?test@StructurePoolBlockPredicateCappedRandomBlockReplacement@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
-    virtual bool test(class Block const&, class Randomize&) const;
+    virtual bool test(class Block const& block, class Randomize&) const;
 
     // vIndex: 2, symbol:
     // ?test@StructurePoolBlockPredicateCappedRandomBlockReplacement@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
@@ -28,7 +28,7 @@ public:
 
     // vIndex: 3, symbol:
     // ?finalize@StructurePoolBlockPredicateCappedRandomBlockReplacement@@UEAA_NAEAVBlockSource@@AEAVIRandom@@@Z
-    virtual bool finalize(class BlockSource&, class IRandom&);
+    virtual bool finalize(class BlockSource& region, class IRandom& random);
 
     // symbol:
     // ??0StructurePoolBlockPredicateCappedRandomBlockReplacement@@QEAA@AEBV?$map@VHashedString@@V1@U?$less@VHashedString@@@std@@V?$allocator@U?$pair@$$CBVHashedString@@V1@@std@@@3@@std@@_K@Z
@@ -43,7 +43,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_finalize@StructurePoolBlockPredicateCappedRandomBlockReplacement@@IEAA_NAEAVBlockSource@@AEAVIRandom@@V?$function@$$A6AXAEAVBlockPos@@@Z@std@@@Z
-    MCAPI bool _finalize(class BlockSource&, class IRandom&, std::function<void(class BlockPos&)>);
+    MCAPI bool _finalize(class BlockSource& region, class IRandom& random, std::function<void(class BlockPos&)>);
 
     // NOLINTEND
 };

@@ -85,7 +85,7 @@ public:
     // symbol:
     // ?sendSoundRequest@PlayJumpSoundSystemImpl@@SAXAEBVIConstBlockSource@@AEBUSynchedActorDataComponent@@AEBUActorDefinitionIdentifierComponent@@AEBVVec3@@V?$OptionalComponentWrapper@USoundEventRequestQueueComponent@@@@H@Z
     MCAPI static void sendSoundRequest(
-        class IConstBlockSource const&,
+        class IConstBlockSource const& region,
         struct SynchedActorDataComponent const&,
         struct ActorDefinitionIdentifierComponent const&,
         class Vec3 const&,

@@ -27,13 +27,16 @@ public:
 
     // vIndex: 1, symbol:
     // ?queue@TaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
-    virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-    queue(struct TaskStartInfoEx<void> const&, std::function<class TaskResult(void)>&&, std::function<void(void)>&&);
+    virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(
+        struct TaskStartInfoEx<void> const&     startInfo,
+        std::function<class TaskResult(void)>&& task,
+        std::function<void(void)>&&             callback
+    );
 
     // vIndex: 2, symbol:
     // ?queueSync@TaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
     virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-    queueSync(struct TaskStartInfoEx<void> const&, std::function<class TaskResult(void)>&&);
+    queueSync(struct TaskStartInfoEx<void> const& startInfo, std::function<class TaskResult(void)>&& task);
 
     // vIndex: 3, symbol: ?taskRegister@TaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
     virtual void taskRegister(std::shared_ptr<class BackgroundTaskBase> task);
@@ -75,25 +78,30 @@ public:
     // symbol:
     // ?queue@TaskGroup@@QEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-          queue(std::string_view, std::function<class TaskResult(void)>&&, std::function<void(void)>&&);
+    queue(std::string_view name, std::function<class TaskResult(void)>&& task, std::function<void(void)>&& callback);
 
     // symbol:
     // ?queueSync@TaskGroup@@QEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-          queueSync(std::string_view, std::function<class TaskResult(void)>&&);
+          queueSync(std::string_view name, std::function<class TaskResult(void)>&& task);
 
     // symbol: ?sync_DEPRECATED_ASK_TOMMO@TaskGroup@@QEAAXV?$function@$$A6AXXZ@std@@@Z
     MCAPI void sync_DEPRECATED_ASK_TOMMO(std::function<void(void)> waitFn);
 
     // symbol:
     // ?queueChildSync_DEPRECATED@TaskGroup@@SA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
-    MCAPI static std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-    queueChildSync_DEPRECATED(struct TaskStartInfoEx<void> const&, std::function<class TaskResult(void)>&&);
+    MCAPI static std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueChildSync_DEPRECATED(
+        struct TaskStartInfoEx<void> const&     startInfo,
+        std::function<class TaskResult(void)>&& task
+    );
 
     // symbol:
     // ?queueChild_DEPRECATED@TaskGroup@@SA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
-    MCAPI static std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-    queueChild_DEPRECATED(struct TaskStartInfoEx<void> const&, std::function<class TaskResult(void)>&&, std::function<void(void)>&&);
+    MCAPI static std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueChild_DEPRECATED(
+        struct TaskStartInfoEx<void> const&     startInfo,
+        std::function<class TaskResult(void)>&& task,
+        std::function<void(void)>&&             callback
+    );
 
     // NOLINTEND
 
@@ -101,8 +109,10 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_forAllTasks@TaskGroup@@AEAAXAEAV?$UniqueLock@VMutex@Threading@Bedrock@@@Threading@Bedrock@@V?$function@$$A6AXAEBV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z@std@@@Z
-    MCAPI void
-    _forAllTasks(class Bedrock::Threading::UniqueLock<class Bedrock::Threading::Mutex>&, std::function<void(std::shared_ptr<class BackgroundTaskBase> const&)>);
+    MCAPI void _forAllTasks(
+        class Bedrock::Threading::UniqueLock<class Bedrock::Threading::Mutex>& lock,
+        std::function<void(std::shared_ptr<class BackgroundTaskBase> const&)>  callback
+    );
 
     // symbol: ?_isEmptyInternal@TaskGroup@@AEBA_NXZ
     MCAPI bool _isEmptyInternal() const;

@@ -30,7 +30,7 @@ public:
         // NOLINTBEGIN
         // symbol:
         // ??0AllowListEntryMatcher@AllowList@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-        MCAPI AllowListEntryMatcher(std::string, std::string);
+        MCAPI AllowListEntryMatcher(std::string name, std::string xuid);
 
         // symbol: ??RAllowListEntryMatcher@AllowList@@QEAA_NAEAVAllowListEntry@@@Z
         MCAPI bool operator()(class AllowListEntry&);
@@ -53,31 +53,31 @@ public:
     virtual ~AllowList() = default;
 
     // vIndex: 1, symbol: ?serialize@AllowList@@UEAAXAEAVValue@Json@@@Z
-    virtual void serialize(class Json::Value&);
+    virtual void serialize(class Json::Value& root);
 
     // vIndex: 2, symbol: ?deserialize@AllowList@@UEAAXAEAVValue@Json@@@Z
-    virtual void deserialize(class Json::Value&);
+    virtual void deserialize(class Json::Value& root);
 
     // symbol: ?addEntry@AllowList@@QEAA_NAEBVAllowListEntry@@@Z
-    MCAPI bool addEntry(class AllowListEntry const&);
+    MCAPI bool addEntry(class AllowListEntry const& entry);
 
     // symbol: ?getEntries@AllowList@@QEBAAEBV?$vector@VAllowListEntry@@V?$allocator@VAllowListEntry@@@std@@@std@@XZ
     MCAPI std::vector<class AllowListEntry> const& getEntries() const;
 
     // symbol:
     // ?isAllowed@AllowList@@QEBA_NAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool isAllowed(class mce::UUID const&, std::string const&) const;
+    MCAPI bool isAllowed(class mce::UUID const& uuid, std::string const& xuid) const;
 
     // symbol:
     // ?isIgnoringPlayerLimit@AllowList@@QEBA_NAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool isIgnoringPlayerLimit(class mce::UUID const&, std::string const&) const;
+    MCAPI bool isIgnoringPlayerLimit(class mce::UUID const& uuid, std::string const& xuid) const;
 
     // symbol: ?removeByName@AllowList@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool removeByName(std::string const&);
+    MCAPI bool removeByName(std::string const& name);
 
     // symbol:
     // ?tryUpdateEntries@AllowList@@QEAAXAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-    MCAPI void tryUpdateEntries(class mce::UUID const&, std::string const&, std::string const&);
+    MCAPI void tryUpdateEntries(class mce::UUID const& uuid, std::string const& xuid, std::string const& name);
 
     // NOLINTEND
 };

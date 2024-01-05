@@ -73,10 +73,10 @@ public:
     MCAPI ScriptPluginResult(class ScriptPluginResult const&);
 
     // symbol: ?addError@ScriptPluginResult@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void addError(std::string const&);
+    MCAPI void addError(std::string const& error);
 
     // symbol: ?addInfo@ScriptPluginResult@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void addInfo(std::string const&);
+    MCAPI void addInfo(std::string const& info);
 
     // symbol: ?addWarning@ScriptPluginResult@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI void addWarning(std::string const&);

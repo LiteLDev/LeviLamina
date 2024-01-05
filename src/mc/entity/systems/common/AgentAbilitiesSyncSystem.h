@@ -19,8 +19,17 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?tick@AgentAbilitiesSyncSystem@@SAXV?$ViewT@VStrictEntityContext@@VActorOwnerComponent@@V?$FlagComponent@UPlayerComponentFlag@@@@U?$Include@$$CBV?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UAbilitiesDirtyFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@VLevelComponent@@@@V?$EntityModifier@V?$FlagComponent@UAbilitiesDirtyFlag@@@@@@@Z
-    MCAPI static void
-        tick(class ViewT<class StrictEntityContext, class ActorOwnerComponent, class FlagComponent<struct PlayerComponentFlag>, struct Include<class FlagComponent<struct ActorTickedFlag> const, class FlagComponent<struct AbilitiesDirtyFlag>>>, class ViewT<class StrictEntityContext, class LevelComponent>, class EntityModifier<class FlagComponent<struct AbilitiesDirtyFlag>>);
+    MCAPI static void tick(
+        class ViewT<
+            class StrictEntityContext,
+            class ActorOwnerComponent,
+            class FlagComponent<struct PlayerComponentFlag>,
+            struct Include<
+                class FlagComponent<struct ActorTickedFlag> const,
+                class FlagComponent<struct AbilitiesDirtyFlag>>> view,
+        class ViewT<class StrictEntityContext, class LevelComponent>,
+        class EntityModifier<class FlagComponent<struct AbilitiesDirtyFlag>> modifier
+    );
 
     // NOLINTEND
 };

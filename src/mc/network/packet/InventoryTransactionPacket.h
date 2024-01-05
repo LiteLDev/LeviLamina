@@ -30,17 +30,17 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@InventoryTransactionPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0InventoryTransactionPacket@@QEAA@XZ
     MCAPI InventoryTransactionPacket();
 
     // symbol:
     // ??0InventoryTransactionPacket@@QEAA@V?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@_N@Z
-    MCAPI InventoryTransactionPacket(std::unique_ptr<class ComplexInventoryTransaction>, bool);
+    MCAPI InventoryTransactionPacket(std::unique_ptr<class ComplexInventoryTransaction> transaction, bool isClientSide);
 
     // symbol: ?postLoadItems@InventoryTransactionPacket@@QEBAXAEAVBlockPalette@@_N@Z
-    MCAPI void postLoadItems(class BlockPalette&, bool) const;
+    MCAPI void postLoadItems(class BlockPalette& blockPalette, bool isClientSide) const;
 
     // NOLINTEND
 };

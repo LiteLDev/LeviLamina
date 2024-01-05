@@ -39,7 +39,7 @@ public:
         class Scripting::ScriptObjectFactory&,
         class Scripting::QuickJS::ObjectInspector&,
         class Scripting::IPrinter*,
-        std::vector<struct Scripting::ModuleBinding> const&,
+        std::vector<struct Scripting::ModuleBinding> const& modules,
         struct Scripting::ContextConfig
     );
 

@@ -20,16 +20,17 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initialize@IsTamedDefinition@@QEBAXAEAVEntityContext@@@Z
-    MCAPI void initialize(class EntityContext&) const;
+    MCAPI void initialize(class EntityContext& entity) const;
 
     // symbol: ?uninitialize@IsTamedDefinition@@QEBAXAEAVEntityContext@@@Z
-    MCAPI void uninitialize(class EntityContext&) const;
+    MCAPI void uninitialize(class EntityContext& entity) const;
 
     // symbol:
     // ?buildSchema@IsTamedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsTamedDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsTamedDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsTamedDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

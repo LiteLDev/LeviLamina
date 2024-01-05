@@ -86,7 +86,7 @@ public:
     virtual void releaseUsing(class ItemStack& itemStack, class Player* player, int durationLeft) const;
 
     // vIndex: 95, symbol: ?enchantProjectile@CrossbowItem@@UEBAXAEBVItemStackBase@@AEAVActor@@@Z
-    virtual void enchantProjectile(class ItemStackBase const&, class Actor&) const;
+    virtual void enchantProjectile(class ItemStackBase const&, class Actor& projectile) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -96,10 +96,11 @@ public:
 
     // vIndex: 102, symbol:
     // ?setIconInfo@CrossbowItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const& name, int);
 
     // vIndex: 103, symbol: ?getIconInfo@CrossbowItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo
+    getIconInfo(class ItemStackBase const& itemStack, int, bool inInventoryPane) const;
 
     // vIndex: 105, symbol: ?getAnimationFrameFor@CrossbowItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
     virtual int
@@ -112,7 +113,7 @@ public:
     virtual void playSoundIncrementally(class ItemStack const& itemStack, class Mob& mob) const;
 
     // symbol: ??0CrossbowItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CrossbowItem(std::string const& name, int id);
+    MCAPI CrossbowItem(std::string const& name, int);
 
     // NOLINTEND
 

@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getActorFromArg@MolangEvalParams@@QEBAPEAVActor@@AEBUMolangScriptArg@@@Z
-    MCAPI class Actor* getActorFromArg(struct MolangScriptArg const&) const;
+    MCAPI class Actor* getActorFromArg(struct MolangScriptArg const& arg) const;
 
     // symbol: ?getActorPtrFromPushedArray@MolangEvalParams@@QEBAPEAVActor@@_K0AEA_N@Z
     MCAPI class Actor* getActorPtrFromPushedArray(uint64, uint64, bool&) const;
@@ -31,7 +31,7 @@ public:
     MCAPI uint64 popHash();
 
     // symbol: ?popMissingVariableOrActorAddress@MolangEvalParams@@QEAA_KAEBVHashedString@@@Z
-    MCAPI uint64 popMissingVariableOrActorAddress(class HashedString const&);
+    MCAPI uint64 popMissingVariableOrActorAddress(class HashedString const& variableName);
 
     // symbol: ?popMissingVariableOrActorAddress@MolangEvalParams@@QEAA_KW4MolangVariableIndex@@@Z
     MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex);
@@ -46,13 +46,13 @@ public:
     MCAPI void pushLoopScope(uint64, uint64);
 
     // symbol: ?pushRenderParams@MolangEvalParams@@QEAAXAEBVRenderParams@@@Z
-    MCAPI void pushRenderParams(class RenderParams const&);
+    MCAPI void pushRenderParams(class RenderParams const& rhs);
 
     // symbol: ?pushReturnValue@MolangEvalParams@@QEAAXXZ
     MCAPI void pushReturnValue();
 
     // symbol: ?pushValue@MolangEvalParams@@QEAAXM@Z
-    MCAPI void pushValue(float);
+    MCAPI void pushValue(float value);
 
     // symbol: ?renderParams@MolangEvalParams@@QEAAAEAVRenderParams@@XZ
     MCAPI class RenderParams& renderParams();

@@ -34,7 +34,7 @@ public:
     ) const;
 
     // symbol: ?_init@ImprovedNoise@@AEAAXAEBVVec3@@AEAVIRandom@@UYBlendingBugSettings@@@Z
-    MCAPI void _init(class Vec3 const&, class IRandom&, struct YBlendingBugSettings);
+    MCAPI void _init(class Vec3 const& origin, class IRandom& random, struct YBlendingBugSettings);
 
     // NOLINTEND
 };

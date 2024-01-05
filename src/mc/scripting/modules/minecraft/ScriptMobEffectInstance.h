@@ -53,7 +53,7 @@ public:
     // symbol:
     // ?getHandle@ScriptMobEffectInstance@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptMobEffectInstance@ScriptModuleMinecraft@@@Scripting@@AEBVActor@@IAEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMobEffectInstance>
-    getHandle(class Actor const&, uint, class Scripting::WeakLifetimeScope const&);
+    getHandle(class Actor const& actor, uint, class Scripting::WeakLifetimeScope const& scope);
 
     // NOLINTEND
 };

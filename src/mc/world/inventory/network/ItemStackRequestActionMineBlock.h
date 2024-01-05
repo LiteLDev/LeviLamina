@@ -22,11 +22,11 @@ public:
     virtual ~ItemStackRequestActionMineBlock() = default;
 
     // vIndex: 4, symbol: ?_write@ItemStackRequestActionMineBlock@@MEBAXAEAVBinaryStream@@@Z
-    virtual void _write(class BinaryStream&) const;
+    virtual void _write(class BinaryStream& stream) const;
 
     // vIndex: 5, symbol:
     // ?_read@ItemStackRequestActionMineBlock@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0ItemStackRequestActionMineBlock@@QEAA@XZ
     MCAPI ItemStackRequestActionMineBlock();
@@ -35,7 +35,7 @@ public:
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;
 
     // symbol: ?setPreValidationStatus@ItemStackRequestActionMineBlock@@QEBAXW4PreValidationStatus@1@@Z
-    MCAPI void setPreValidationStatus(::ItemStackRequestActionMineBlock::PreValidationStatus) const;
+    MCAPI void setPreValidationStatus(::ItemStackRequestActionMineBlock::PreValidationStatus status) const;
 
     // NOLINTEND
 };

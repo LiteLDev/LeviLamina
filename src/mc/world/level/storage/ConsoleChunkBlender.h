@@ -25,31 +25,36 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_blendChunkEnd4J@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@0@Z
-    MCAPI void _blendChunkEnd4J(class LevelChunk&, class LevelChunk&);
+    MCAPI void _blendChunkEnd4J(class LevelChunk& generatedChunk, class LevelChunk& lc);
 
     // symbol: ?_blendChunkNether4J@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@0@Z
-    MCAPI void _blendChunkNether4J(class LevelChunk&, class LevelChunk&);
+    MCAPI void _blendChunkNether4J(class LevelChunk& generatedChunk, class LevelChunk& lc);
 
     // symbol: ?_blendChunkOverworld@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@0W4ShiftBlockTypes@1@@Z
-    MCAPI void _blendChunkOverworld(class LevelChunk&, class LevelChunk&, ::ConsoleChunkBlender::ShiftBlockTypes);
+    MCAPI void _blendChunkOverworld(
+        class LevelChunk& generatedChunk,
+        class LevelChunk& lc,
+        ::ConsoleChunkBlender::ShiftBlockTypes
+    );
 
     // symbol: ?_copyColumnFromGeneratedChunkNether@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@0HH@Z
-    MCAPI void _copyColumnFromGeneratedChunkNether(class LevelChunk&, class LevelChunk&, int, int);
+    MCAPI void
+    _copyColumnFromGeneratedChunkNether(class LevelChunk& generatedChunk, class LevelChunk& lc, int x, int z);
 
     // symbol:
     // ?_copyColumnFromGeneratedChunkOverworld@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@0HHW4ShiftBlockTypes@1@@Z
     MCAPI void _copyColumnFromGeneratedChunkOverworld(
-        class LevelChunk&,
-        class LevelChunk&,
-        int,
-        int,
+        class LevelChunk& generatedChunk,
+        class LevelChunk& lc,
+        int               x,
+        int               z,
         ::ConsoleChunkBlender::ShiftBlockTypes
     );
 
     // symbol:
     // ?_findTopMostWaterHeight@ConsoleChunkBlender@@IEAA?AVChunkLocalHeight@@AEAVLevelChunk@@HHAEBV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@@Z
     MCAPI class ChunkLocalHeight
-    _findTopMostWaterHeight(class LevelChunk&, int, int, std::unordered_set<class BlockLegacy const*> const&);
+    _findTopMostWaterHeight(class LevelChunk& lc, int x, int z, std::unordered_set<class BlockLegacy const*> const&);
 
     // symbol: ?_prepInterpTable@ConsoleChunkBlender@@IEAAXXZ
     MCAPI void _prepInterpTable();
@@ -57,7 +62,7 @@ public:
     // symbol:
     // ?_shiftColumnBySetBlocks@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@HHH_NVChunkLocalHeight@@W4ShiftBlockTypes@1@AEBUOverworldBlendRules@@@Z
     MCAPI void
-    _shiftColumnBySetBlocks(class LevelChunk&, int, int, int, bool, class ChunkLocalHeight, ::ConsoleChunkBlender::ShiftBlockTypes, struct OverworldBlendRules const&);
+    _shiftColumnBySetBlocks(class LevelChunk& lc, int x, int z, int adj, bool, class ChunkLocalHeight, ::ConsoleChunkBlender::ShiftBlockTypes, struct OverworldBlendRules const&);
 
     // NOLINTEND
 };

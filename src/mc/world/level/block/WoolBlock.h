@@ -134,7 +134,7 @@ public:
     MCVAPI bool canOccludeVibrations() const;
 
     // symbol: ??0WoolBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4BlockColor@@@Z
-    MCAPI WoolBlock(std::string const&, int, ::BlockColor);
+    MCAPI WoolBlock(std::string const& nameId, int, ::BlockColor color);
 
     // NOLINTEND
 };

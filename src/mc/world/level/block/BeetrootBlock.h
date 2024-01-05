@@ -147,10 +147,10 @@ public:
     virtual class ItemInstance const getBaseCrop() const;
 
     // vIndex: 173, symbol: ?getCropNum@BeetrootBlock@@UEBAHAEAVRandomize@@HH@Z
-    virtual int getCropNum(class Randomize& random, int growth, int bonusLootLevel) const;
+    virtual int getCropNum(class Randomize& randomize, int growth, int bonusLootLevel) const;
 
     // symbol: ??0BeetrootBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BeetrootBlock(std::string const& nameId, int id);
+    MCAPI BeetrootBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

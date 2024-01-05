@@ -29,7 +29,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_tickComponent@RailActivatorSystem@@CAXAEAVEntityContext@@AEAVActorOwnerComponent@@AEAVRailActivatorComponent@@@Z
-    MCAPI static void _tickComponent(class EntityContext&, class ActorOwnerComponent&, class RailActivatorComponent&);
+    MCAPI static void _tickComponent(
+        class EntityContext& entity,
+        class ActorOwnerComponent&,
+        class RailActivatorComponent& railActivatorComponent
+    );
 
     // NOLINTEND
 };

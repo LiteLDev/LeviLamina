@@ -24,7 +24,7 @@ public:
     // symbol:
     // ?tryGetAttenuatedBiome@ChunkBlender@@QEBAPEBVBiome@@AEBV?$DividedPos@$03@@AEBVBiomeRegistry@@AEBV?$NormalNoiseImpl@$0A@V?$MultiOctaveNoiseImpl@$0A@V?$ParityImprovedNoiseImpl@$0A@@@@@@@@Z
     MCAPI class Biome const*
-    tryGetAttenuatedBiome(class DividedPos<4> const&, class BiomeRegistry const&, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> const&)
+    tryGetAttenuatedBiome(class DividedPos<4> const&, class BiomeRegistry const& biomeRegistry, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> const&)
         const;
 
     // NOLINTEND

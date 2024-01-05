@@ -12,10 +12,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?load@VibrationInfo@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void load(class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?save@VibrationInfo@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void save(class CompoundTag&) const;
+    MCAPI void save(class CompoundTag& tag) const;
 
     // NOLINTEND
 };

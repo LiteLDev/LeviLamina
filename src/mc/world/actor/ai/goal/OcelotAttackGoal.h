@@ -35,7 +35,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0OcelotAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit OcelotAttackGoal(class Mob&);
+    MCAPI explicit OcelotAttackGoal(class Mob& mob);
 
     // NOLINTEND
 };

@@ -20,7 +20,11 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0AddBiomeIsland@OperationNodeFilters@@QEAA@AEBVBiomeRegistry@@AEAVBiome@@1@Z
-    MCAPI AddBiomeIsland(class BiomeRegistry const&, class Biome&, class Biome&);
+    MCAPI AddBiomeIsland(
+        class BiomeRegistry const& biomeRegistry,
+        class Biome&               defaultIslandBiome,
+        class Biome&               specialIslandBiome
+    );
 
     // NOLINTEND
 };

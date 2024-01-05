@@ -18,12 +18,12 @@ public:
     MCAPI class BlockPatternBuilder& build();
 
     // symbol: ?define@BlockPatternBuilder@@QEAAAEAV1@DAEBVBlock@@@Z
-    MCAPI class BlockPatternBuilder& define(char, class Block const&);
+    MCAPI class BlockPatternBuilder& define(char pattern, class Block const& block);
 
     // symbol:
     // ?define@BlockPatternBuilder@@QEAAAEAV1@DV?$function@$$A6A_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z@std@@@Z
     MCAPI class BlockPatternBuilder&
-    define(char, std::function<bool(class BlockSource&, class BlockPos const&, class Block const&)>);
+    define(char pattern, std::function<bool(class BlockSource&, class BlockPos const&, class Block const&)> tester);
 
     // symbol: ?isReadyForMatch@BlockPatternBuilder@@QEAA_NXZ
     MCAPI bool isReadyForMatch();

@@ -31,7 +31,7 @@ public:
     virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 3, symbol: ?postLoadItems@ItemUseOnActorInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
-    virtual void postLoadItems(class BlockPalette&, bool);
+    virtual void postLoadItems(class BlockPalette& blockPalette, bool isClientSide);
 
     // vIndex: 4, symbol:
     // ?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z

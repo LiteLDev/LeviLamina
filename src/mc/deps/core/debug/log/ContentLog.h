@@ -42,7 +42,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0ContentLogScope@ContentLog@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-        MCAPI explicit ContentLogScope(std::string);
+        MCAPI explicit ContentLogScope(std::string scope);
 
         // symbol: ??1ContentLogScope@ContentLog@@QEAA@XZ
         MCAPI ~ContentLogScope();

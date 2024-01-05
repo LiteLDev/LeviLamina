@@ -56,7 +56,15 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V34@W4LogAreaID@@I1HH@Z
-    MCAPI void _appendLogEntryMetadata(std::string&, std::string, ::LogAreaID, uint, std::string, int, int);
+    MCAPI void _appendLogEntryMetadata(
+        std::string& logEntry,
+        std::string  timestamp,
+        ::LogAreaID  area,
+        uint         priority,
+        std::string  functionName,
+        int          lineNumber,
+        int          _messageId
+    );
 
     // symbol:
     // ?_getCurrentTimestamp@LogDetails@BedrockLog@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -79,7 +87,8 @@ public:
 
     // symbol:
     // ?_makeLogString@LogDetails@BedrockLog@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V34@W4LogAreaID@@I0HHAEBV34@@Z
-    MCAPI std::string _makeLogString(std::string, ::LogAreaID, uint, std::string, int, int, std::string const&);
+    MCAPI std::string
+    _makeLogString(std::string timestamp, ::LogAreaID area, uint priority, std::string functionName, int lineNumber, int messageId, std::string const&);
 
     // symbol: ?_openLogFile@LogDetails@BedrockLog@@AEAAXXZ
     MCAPI void _openLogFile();

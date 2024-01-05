@@ -24,7 +24,7 @@ public:
     virtual void tick(class EntityRegistry& registry);
 
     // symbol: ?_tickProjectileComponent@ProjectileSystem@@SAXPEAVActor@@AEAVProjectileComponent@@@Z
-    MCAPI static void _tickProjectileComponent(class Actor*, class ProjectileComponent&);
+    MCAPI static void _tickProjectileComponent(class Actor* actor, class ProjectileComponent&);
 
     // NOLINTEND
 };

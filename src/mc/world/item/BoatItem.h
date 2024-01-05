@@ -98,13 +98,13 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@BoatItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& itemStack, class Actor&, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;
 
     // vIndex: 118, symbol: ?_getActorType@BoatItem@@EEBA?AW4ActorType@@XZ
     virtual ::ActorType _getActorType() const;
 
     // symbol: ??0BoatItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z
-    MCAPI BoatItem(std::string const&, int, int);
+    MCAPI BoatItem(std::string const& name, int, int woodType);
 
     // NOLINTEND
 };

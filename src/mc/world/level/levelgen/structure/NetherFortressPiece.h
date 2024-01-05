@@ -19,7 +19,7 @@ public:
     virtual ~NetherFortressPiece();
 
     // vIndex: 4, symbol: ?postProcess@NetherFortressPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual bool postProcess(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // vIndex: 12, symbol: ?addHardcodedSpawnAreas@NetherFortressPiece@@UEBAXAEAVLevelChunk@@@Z
     virtual void addHardcodedSpawnAreas(class LevelChunk& chunk) const;

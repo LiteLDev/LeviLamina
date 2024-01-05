@@ -44,7 +44,7 @@ public:
     virtual bool findTargetBlock();
 
     // symbol: ??0DropItemForGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit DropItemForGoal(class Mob&);
+    MCAPI explicit DropItemForGoal(class Mob& mob);
 
     // NOLINTEND
 

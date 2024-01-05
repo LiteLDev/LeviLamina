@@ -18,7 +18,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?init@VanillaGameModuleServer@@UEAAXAEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VLevel@@@Bedrock@@@gsl@@@Z
-    virtual void init(class ServerInstance&, Bedrock::NotNullNonOwnerPtr<class Level> const&) = 0;
+    virtual void init(class ServerInstance& server, Bedrock::NotNullNonOwnerPtr<class Level> const& level) = 0;
 
     // vIndex: 2, symbol:
     // ?initializeBehaviorStack@VanillaGameModuleServer@@UEAAXAEBVExperiments@@AEBV?$not_null@V?$NonOwnerPointer@VIResourcePackRepository@@@Bedrock@@@gsl@@AEAVResourcePackStack@@AEBVBaseGameVersion@@@Z
@@ -27,15 +27,19 @@ public:
 
     // vIndex: 3, symbol:
     // ?configureLevel@VanillaGameModuleServer@@UEAAXAEBV?$not_null@V?$NonOwnerPointer@VLevel@@@Bedrock@@@gsl@@AEBVExperiments@@AEAVResourcePackManager@@AEBVBaseGameVersion@@@Z
-    virtual void
-    configureLevel(Bedrock::NotNullNonOwnerPtr<class Level> const&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&) = 0;
+    virtual void configureLevel(
+        Bedrock::NotNullNonOwnerPtr<class Level> const& level,
+        class Experiments const&,
+        class ResourcePackManager&   resourcePackManager,
+        class BaseGameVersion const& baseGameVersion
+    ) = 0;
 
     // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4() = 0;
 
     // vIndex: 5, symbol:
     // ?configureDocumentation@VanillaGameModuleServer@@UEAAXAEAVIGameModuleDocumentation@@VItemRegistryRef@@@Z
-    virtual void configureDocumentation(class IGameModuleDocumentation&, class ItemRegistryRef) = 0;
+    virtual void configureDocumentation(class IGameModuleDocumentation& moduleDocumentation, class ItemRegistryRef) = 0;
 
     // vIndex: 6, symbol: __unk_vfn_6
     virtual void __unk_vfn_6() = 0;
@@ -45,8 +49,10 @@ public:
 
     // vIndex: 8, symbol:
     // ?configureServerNetworkHandler@VanillaGameModuleServer@@UEAAXAEAVServerInstance@@V?$not_null@V?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@@gsl@@@Z
-    virtual void
-    configureServerNetworkHandler(class ServerInstance&, Bedrock::NotNullNonOwnerPtr<class ServerNetworkHandler>) = 0;
+    virtual void configureServerNetworkHandler(
+        class ServerInstance&                                   server,
+        Bedrock::NotNullNonOwnerPtr<class ServerNetworkHandler> handler
+    ) = 0;
 
     // symbol: ??0GameModuleServer@@QEAA@XZ
     MCAPI GameModuleServer();

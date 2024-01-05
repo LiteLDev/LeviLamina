@@ -12,7 +12,8 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getNewPassengerPosition@PositionPassengerUtility@@SA?AVVec3@@VSynchedActorDataReader@@AEBV2@AEBVVec2@@@Z
-    MCAPI static class Vec3 getNewPassengerPosition(class SynchedActorDataReader, class Vec3 const&, class Vec2 const&);
+    MCAPI static class Vec3
+    getNewPassengerPosition(class SynchedActorDataReader data, class Vec3 const&, class Vec2 const&);
 
     // NOLINTEND
 };

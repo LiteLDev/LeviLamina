@@ -14,7 +14,7 @@ MCAPI ::GameType getUnmappedGameType(class EntityContext const&);
 MCAPI void initialize(class EntityContext&);
 
 // symbol: ?setUnmappedGameType@ActorPermission@@YAXAEAVEntityContext@@W4GameType@@@Z
-MCAPI void setUnmappedGameType(class EntityContext&, ::GameType);
+MCAPI void setUnmappedGameType(class EntityContext&, ::GameType gameType);
 // NOLINTEND
 
 }; // namespace ActorPermission

@@ -29,7 +29,8 @@ public:
 
     // vIndex: 1, symbol:
     // ?send@HttpInterfaceInternal@Http@Bedrock@@UEAAXV?$not_null@PEAUHC_CALL@@@gsl@@V?$not_null@PEAUXAsyncBlock@@@5@PEAUHC_PERFORM_ENV@@@Z
-    virtual void send(gsl::not_null<struct HC_CALL*>, gsl::not_null<struct XAsyncBlock*>, struct HC_PERFORM_ENV*);
+    virtual void
+    send(gsl::not_null<struct HC_CALL*> call, gsl::not_null<struct XAsyncBlock*>, struct HC_PERFORM_ENV* env);
 
     // NOLINTEND
 };

@@ -14,7 +14,7 @@ public:
     MCAPI GiveableTrigger(struct GiveableTrigger const&);
 
     // symbol: ?addItem@GiveableTrigger@@QEAAXAEBVItemDescriptor@@@Z
-    MCAPI void addItem(class ItemDescriptor const&);
+    MCAPI void addItem(class ItemDescriptor const& itemDescriptor);
 
     // symbol: ??1GiveableTrigger@@QEAA@XZ
     MCAPI ~GiveableTrigger();

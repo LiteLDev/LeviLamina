@@ -30,13 +30,13 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@UpdateBlockPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0UpdateBlockPacket@@QEAA@XZ
     MCAPI UpdateBlockPacket();
 
     // symbol: ??0UpdateBlockPacket@@QEAA@AEBVBlockPos@@IIE@Z
-    MCAPI UpdateBlockPacket(class BlockPos const&, uint, uint, uchar);
+    MCAPI UpdateBlockPacket(class BlockPos const& pos, uint layer, uint runtimeId, uchar updateFlags);
 
     // NOLINTEND
 };

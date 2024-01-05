@@ -65,7 +65,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 64, symbol: ?setTarget@Skeleton@@UEAAXPEAVActor@@@Z
-    virtual void setTarget(class Actor* entity);
+    virtual void setTarget(class Actor* target);
 
     // vIndex: 101, symbol: ?canFreeze@Skeleton@@UEBA_NXZ
     virtual bool canFreeze() const;
@@ -74,7 +74,7 @@ public:
     virtual void __unk_vfn_107();
 
     // vIndex: 124, symbol: ?canBeAffected@Skeleton@@UEBA_NI@Z
-    virtual bool canBeAffected(uint) const;
+    virtual bool canBeAffected(uint effectId) const;
 
     // vIndex: 134, symbol:
     // ?getDebugText@Skeleton@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
@@ -96,10 +96,14 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 186, symbol: ?doHurtTarget@Skeleton@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
-    virtual bool doHurtTarget(class Actor*, ::ActorDamageCause const&);
+    virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
 
     // symbol: ??0Skeleton@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Skeleton(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Skeleton(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?setWitherParent@Skeleton@@QEAAXPEAVWitherBoss@@@Z
     MCAPI void setWitherParent(class WitherBoss* wither);

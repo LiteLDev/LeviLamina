@@ -13,7 +13,7 @@ public:
     MCAPI SeatDescription(struct SeatDescription const&);
 
     // symbol: ?addRotationExpressionNode@SeatDescription@@QEAAXAEBVExpressionNode@@@Z
-    MCAPI void addRotationExpressionNode(class ExpressionNode const&);
+    MCAPI void addRotationExpressionNode(class ExpressionNode const& node);
 
     // symbol: ??4SeatDescription@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct SeatDescription& operator=(struct SeatDescription&&);
@@ -22,7 +22,7 @@ public:
     MCAPI struct SeatDescription& operator=(struct SeatDescription const&);
 
     // symbol: ??8SeatDescription@@QEBA_NAEBU0@@Z
-    MCAPI bool operator==(struct SeatDescription const&) const;
+    MCAPI bool operator==(struct SeatDescription const& seat) const;
 
     // symbol: ??1SeatDescription@@QEAA@XZ
     MCAPI ~SeatDescription();

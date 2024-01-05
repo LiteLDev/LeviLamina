@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@Squid@@MEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: ??1Squid@@UEAA@XZ
     virtual ~Squid();
@@ -64,7 +64,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 83, symbol: ?handleEntityEvent@Squid@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -99,7 +99,7 @@ public:
     // symbol:
     // ??0Squid@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@AEBVColor@mce@@@Z
     MCAPI
-    Squid(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&, class mce::Color const&);
+    Squid(class ActorDefinitionGroup* definitions, struct ActorDefinitionIdentifier const& definitionName, class EntityContext& entityContext, class mce::Color const&);
 
     // symbol: ?postAiStep@Squid@@QEAAXXZ
     MCAPI void postAiStep();

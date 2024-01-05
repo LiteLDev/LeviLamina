@@ -21,9 +21,9 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?buildSchema@ScaleDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UScaleDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ScaleDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ScaleDefinition>>& root
+    );
 
     // NOLINTEND
 };

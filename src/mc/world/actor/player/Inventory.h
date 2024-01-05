@@ -21,10 +21,10 @@ public:
     virtual void init();
 
     // vIndex: 10, symbol: ?setItem@Inventory@@UEAAXHAEBVItemStack@@@Z
-    virtual void setItem(int, class ItemStack const&);
+    virtual void setItem(int slot, class ItemStack const& item);
 
     // vIndex: 11, symbol: ?setItemWithForceBalance@Inventory@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
+    virtual void setItemWithForceBalance(int slot, class ItemStack const& item, bool);
 
     // vIndex: 22, symbol: ?getEmptySlotsCount@Inventory@@UEBAHXZ
     virtual int getEmptySlotsCount() const;
@@ -54,7 +54,7 @@ public:
     MCAPI explicit Inventory(class Player* player);
 
     // symbol: ?dropSlot@Inventory@@QEAAXH_N00@Z
-    MCAPI void dropSlot(int, bool, bool, bool);
+    MCAPI void dropSlot(int slot, bool onlyClearContainer, bool dropAll, bool randomly);
 
     // symbol: ?setupDefault@Inventory@@QEAAXXZ
     MCAPI void setupDefault();

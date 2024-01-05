@@ -20,7 +20,7 @@ public:
     MCAPI void initFromDefinition(class Actor& actor);
 
     // symbol: ?initFromDefinition@DanceComponent@@QEAAXAEAVActor@@M@Z
-    MCAPI void initFromDefinition(class Actor&, float);
+    MCAPI void initFromDefinition(class Actor& actor, float distance);
 
     // NOLINTEND
 };

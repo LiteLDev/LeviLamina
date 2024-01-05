@@ -23,7 +23,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_addCommand@CommandResponseBase@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void _addCommand(std::string const&);
+    MCAPI void _addCommand(std::string const& entry);
 
     // symbol: ?_executeAction@CommandResponseBase@@IEBAXAEAVRenderParams@@@Z
     MCAPI void _executeAction(class RenderParams&) const;
@@ -33,7 +33,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_compileCommands@CommandResponseBase@@AEBAXAEAVILevel@@@Z
-    MCAPI void _compileCommands(class ILevel&) const;
+    MCAPI void _compileCommands(class ILevel& level) const;
 
     // NOLINTEND
 };

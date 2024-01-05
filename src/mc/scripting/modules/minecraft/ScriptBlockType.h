@@ -42,7 +42,7 @@ public:
     // symbol:
     // ?getOrCreateHandle@ScriptBlockType@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptBlockType@ScriptModuleMinecraft@@@Scripting@@AEBVWeakLifetimeScope@4@AEBVBlockLegacy@@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>
-    getOrCreateHandle(class Scripting::WeakLifetimeScope const&, class BlockLegacy const&);
+    getOrCreateHandle(class Scripting::WeakLifetimeScope const& scope, class BlockLegacy const& block);
 
     // NOLINTEND
 };

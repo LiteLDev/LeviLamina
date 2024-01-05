@@ -18,7 +18,7 @@ public:
     MCAPI void leash(class Actor& owner, class Actor& leashHolder);
 
     // symbol: ?unleash@LeashableComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void unleash(class Actor&);
+    MCAPI void unleash(class Actor& owner);
 
     // NOLINTEND
 };

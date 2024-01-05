@@ -19,16 +19,16 @@ public:
     MCAPI bool isPreRelease() const;
 
     // symbol: ??MVersion@Scripting@@QEBA_NAEBU01@@Z
-    MCAPI bool operator<(struct Scripting::Version const&) const;
+    MCAPI bool operator<(struct Scripting::Version const& rhs) const;
 
     // symbol: ??8Version@Scripting@@QEBA_NAEBU01@@Z
-    MCAPI bool operator==(struct Scripting::Version const&) const;
+    MCAPI bool operator==(struct Scripting::Version const& rhs) const;
 
     // symbol: ??PVersion@Scripting@@QEBA_NAEBU01@@Z
-    MCAPI bool operator>=(struct Scripting::Version const&) const;
+    MCAPI bool operator>=(struct Scripting::Version const& rhs) const;
 
     // symbol: ?satisfies@Version@Scripting@@QEBA_NAEBU12@@Z
-    MCAPI bool satisfies(struct Scripting::Version const&) const;
+    MCAPI bool satisfies(struct Scripting::Version const& other) const;
 
     // symbol: ?toString@Version@Scripting@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string toString() const;

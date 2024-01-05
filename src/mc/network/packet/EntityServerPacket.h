@@ -23,7 +23,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@EntityServerPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0EntityServerPacket@@QEAA@XZ
     MCAPI EntityServerPacket();

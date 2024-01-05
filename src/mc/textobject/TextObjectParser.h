@@ -45,7 +45,11 @@ public:
         // NOLINTBEGIN
         // symbol:
         // ??0ServerData@TextObjectParser@@QEAA@AEAVParser@CommandRegistry@@AEBVCommandOrigin@@AEBVScoreboard@@@Z
-        MCAPI ServerData(class CommandRegistry::Parser&, class CommandOrigin const&, class Scoreboard const&);
+        MCAPI ServerData(
+            class CommandRegistry::Parser& parser,
+            class CommandOrigin const&,
+            class Scoreboard const& scoreboard
+        );
 
         // NOLINTEND
     };
@@ -66,7 +70,7 @@ public:
     // symbol:
     // ?textObjectFromJsonServer@TextObjectParser@@SA_NAEBVValue@Json@@AEAVTextObjectRoot@@UServerData@1@AEAUErrorLocalization@1@@Z
     MCAPI static bool
-    textObjectFromJsonServer(class Json::Value const&, class TextObjectRoot&, struct TextObjectParser::ServerData, struct TextObjectParser::ErrorLocalization&);
+    textObjectFromJsonServer(class Json::Value const& root, class TextObjectRoot& parsedObject, struct TextObjectParser::ServerData, struct TextObjectParser::ErrorLocalization&);
 
     // symbol:
     // ?textObjectFromJsonString@TextObjectParser@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVTextObjectRoot@@AEAV23@@Z
@@ -127,7 +131,7 @@ public:
     // symbol:
     // ?_getObjectsFromTextObject@TextObjectParser@@CA_NAEBVValue@Json@@AEAVTextObjectRoot@@PEAUServerData@1@AEAUErrorLocalization@1@@Z
     MCAPI static bool
-    _getObjectsFromTextObject(class Json::Value const&, class TextObjectRoot&, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
+    _getObjectsFromTextObject(class Json::Value const& root, class TextObjectRoot& parsedObject, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
 
     // symbol:
     // ?_parseScoreTextObject@TextObjectParser@@CA_NAEAVTextObjectRoot@@AEBVValue@Json@@PEAUServerData@1@AEAUErrorLocalization@1@@Z
@@ -142,12 +146,12 @@ public:
     // symbol:
     // ?_textObjectFromJson@TextObjectParser@@CA_NAEBVValue@Json@@AEAVTextObjectRoot@@PEAUServerData@1@AEAUErrorLocalization@1@@Z
     MCAPI static bool
-    _textObjectFromJson(class Json::Value const&, class TextObjectRoot&, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
+    _textObjectFromJson(class Json::Value const& root, class TextObjectRoot& parsedObject, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
 
     // symbol:
     // ?_textObjectFromString@TextObjectParser@@CA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVTextObjectRoot@@PEAUServerData@1@AEAUErrorLocalization@1@@Z
     MCAPI static bool
-    _textObjectFromString(std::string const&, class TextObjectRoot&, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
+    _textObjectFromString(std::string const& jsonAsString, class TextObjectRoot& parsedObject, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
 
     // NOLINTEND
 };

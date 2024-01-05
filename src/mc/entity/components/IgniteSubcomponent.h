@@ -22,7 +22,7 @@ public:
     virtual ~IgniteSubcomponent() = default;
 
     // vIndex: 1, symbol: ?readfromJSON@IgniteSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-    virtual void readfromJSON(class Json::Value&, class SemVersion const&);
+    virtual void readfromJSON(class Json::Value& component, class SemVersion const& engineVersion);
 
     // vIndex: 2, symbol: ?writetoJSON@IgniteSubcomponent@@UEBAXAEAVValue@Json@@@Z
     virtual void writetoJSON(class Json::Value& component) const;

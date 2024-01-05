@@ -43,19 +43,19 @@ public:
     // symbol:
     // ?getTestFunctionsWithTag@GameTestRegistry@gametest@@QEAA?AV?$vector@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@V?$allocator@V?$shared_ptr@VBaseGameTestFunction@gametest@@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
     MCAPI std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>>
-          getTestFunctionsWithTag(std::string const&);
+          getTestFunctionsWithTag(std::string const& tag);
 
     // symbol:
     // ?isTestTag@GameTestRegistry@gametest@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool isTestTag(std::string const&) const;
+    MCAPI bool isTestTag(std::string const& tag) const;
 
     // symbol:
     // ?registerBeforeBatchFunction@GameTestRegistry@gametest@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXXZ@4@@Z
-    MCAPI bool registerBeforeBatchFunction(std::string const&, std::function<void(void)>);
+    MCAPI bool registerBeforeBatchFunction(std::string const&, std::function<void(void)> fn);
 
     // symbol:
     // ?registerTestMethod@GameTestRegistry@gametest@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@VBaseGameTestFunction@gametest@@@4@@Z
-    MCAPI bool registerTestMethod(std::string const&, std::shared_ptr<class gametest::BaseGameTestFunction>);
+    MCAPI bool registerTestMethod(std::string const&, std::shared_ptr<class gametest::BaseGameTestFunction> fn);
 
     // NOLINTEND
 };

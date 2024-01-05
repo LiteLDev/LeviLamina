@@ -115,19 +115,19 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 122, symbol: ?getColor@CherryLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 125, symbol: ?isSeasonTinted@CherryLeavesBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool isSeasonTinted(class Block const&, class BlockSource&, class BlockPos const&) const;
 
     // vIndex: 126, symbol: ?onGraphicsModeChanged@CherryLeavesBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const&);
+    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
 
     // vIndex: 129, symbol: ?getVariant@CherryLeavesBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
 
     // vIndex: 135, symbol: ?animateTick@CherryLeavesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void animateTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -143,11 +143,13 @@ public:
 
     // vIndex: 158, symbol:
     // ?getRenderLayer@CherryLeavesBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
+    virtual ::BlockRenderLayer
+    getRenderLayer(class Block const&, class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 162, symbol:
     // ?getMapColor@CherryLeavesBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color
+    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 164, symbol: ?getResourceItem@CherryLeavesBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
@@ -156,7 +158,7 @@ public:
     virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
 
     // symbol: ??0CherryLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CherryLeavesBlock(std::string const&, int);
+    MCAPI CherryLeavesBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

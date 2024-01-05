@@ -130,7 +130,7 @@ public:
     );
 
     // symbol: ?removeIgnoredThrottlePath@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@@Z
-    MCAPI static class Core::Result removeIgnoredThrottlePath(class Core::Path const&);
+    MCAPI static class Core::Result removeIgnoredThrottlePath(class Core::Path const& path);
 
     // symbol: ?renameFile@FileSystem@Core@@SA?AVResult@2@AEBVPath@2@0@Z
     MCAPI static class Core::Result renameFile(class Core::Path const& sourceName, class Core::Path const& targetName);

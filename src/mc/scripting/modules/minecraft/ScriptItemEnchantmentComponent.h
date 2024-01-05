@@ -46,7 +46,8 @@ public:
 
     // symbol:
     // ?setEnchantments@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBVScriptItemEnchantments@2@@Z
-    MCAPI class Scripting::Result<void> setEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments const&);
+    MCAPI class Scripting::Result<void>
+    setEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments const& enchantments);
 
     // symbol:
     // ?bind@ScriptItemEnchantmentComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemEnchantmentComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

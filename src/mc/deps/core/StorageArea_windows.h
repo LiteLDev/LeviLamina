@@ -111,7 +111,7 @@ public:
     virtual bool shouldAllowCommit() const;
 
     // vIndex: 28, symbol: ?trackBytesWritten@FileStorageArea@Core@@UEAAXAEBVPath@2@_KW4WriteOperation@2@@Z
-    virtual void trackBytesWritten(class Core::Path const&, uint64, ::Core::WriteOperation);
+    virtual void trackBytesWritten(class Core::Path const&, uint64 amount, ::Core::WriteOperation);
 
     // vIndex: 29, symbol: ?trackWriteOperation@FileStorageArea@Core@@UEAAXAEBVPath@2@W4WriteOperation@2@@Z
     virtual void trackWriteOperation(class Core::Path const&, ::Core::WriteOperation);

@@ -53,8 +53,7 @@ public:
 
     // symbol:
     // ??0ActorAnimationControllerStatePlayer@@QEAA@AEBVHashedString@@AEAVActorAnimationControllerPlayer@@V?$shared_ptr@VActorAnimationControllerState@@@std@@AEAVAnimationComponent@@AEBVExpressionNode@@AEAV?$set@VHashedString@@U?$hash@VHashedString@@@std@@V?$allocator@VHashedString@@@3@@4@@Z
-    MCAPI
-    ActorAnimationControllerStatePlayer(class HashedString const&, class ActorAnimationControllerPlayer&, std::shared_ptr<class ActorAnimationControllerState>, class AnimationComponent&, class ExpressionNode const&, std::set<class HashedString, std::hash<class HashedString>>&);
+    MCAPI ActorAnimationControllerStatePlayer(class HashedString const& friendlyName, class ActorAnimationControllerPlayer& owner, std::shared_ptr<class ActorAnimationControllerState> animationControllerState, class AnimationComponent& animationComponent, class ExpressionNode const& blendExpression, std::set<class HashedString, std::hash<class HashedString>>&);
 
     // symbol: ?allAnimationsFinished@ActorAnimationControllerStatePlayer@@QEBA_NXZ
     MCAPI bool allAnimationsFinished() const;

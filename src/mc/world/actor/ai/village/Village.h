@@ -68,10 +68,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Village@@QEAA@AEAVDimension@@VUUID@mce@@AEBVBlockPos@@@Z
-    MCAPI Village(class Dimension& dimension, class mce::UUID id, class BlockPos const& origin);
+    MCAPI Village(class Dimension& dimension, class mce::UUID, class BlockPos const& origin);
 
     // symbol: ?addActorToVillage@Village@@QEAAXW4DwellerRole@@AEBUActorUniqueID@@@Z
-    MCAPI void addActorToVillage(::DwellerRole role, struct ActorUniqueID const& actor);
+    MCAPI void addActorToVillage(::DwellerRole role, struct ActorUniqueID const& actorID);
 
     // symbol: ?addAggressor@Village@@QEAAXAEBVMob@@@Z
     MCAPI void addAggressor(class Mob const& mob);
@@ -80,7 +80,7 @@ public:
     MCAPI bool addPOI(std::weak_ptr<class POIInstance> pi);
 
     // symbol: ?addVillager@Village@@QEAAXAEBUActorUniqueID@@@Z
-    MCAPI void addVillager(struct ActorUniqueID const& villager);
+    MCAPI void addVillager(struct ActorUniqueID const&);
 
     // symbol: ?checkNeedMoreVillagers@Village@@QEBA_NXZ
     MCAPI bool checkNeedMoreVillagers() const;
@@ -89,7 +89,7 @@ public:
     MCAPI void debugDraw();
 
     // symbol: ?fetchOwnedPOI@Village@@QEAA?AV?$weak_ptr@VPOIInstance@@@std@@AEBUActorUniqueID@@W4POIType@@@Z
-    MCAPI std::weak_ptr<class POIInstance> fetchOwnedPOI(struct ActorUniqueID const& id, ::POIType type);
+    MCAPI std::weak_ptr<class POIInstance> fetchOwnedPOI(struct ActorUniqueID const&, ::POIType type);
 
     // symbol: ?fireSoundTheAlarm@Village@@QEAAXXZ
     MCAPI void fireSoundTheAlarm();
@@ -110,7 +110,7 @@ public:
     MCAPI class Actor* getClosestAggressor(class Actor* from);
 
     // symbol: ?getClosestBadStandingPlayer@Village@@QEAAPEAVPlayer@@AEAVActor@@@Z
-    MCAPI class Player* getClosestBadStandingPlayer(class Actor&);
+    MCAPI class Player* getClosestBadStandingPlayer(class Actor& from);
 
     // symbol: ?getClosestPOI@Village@@QEAA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@AEBVBlockPos@@@Z
     MCAPI std::weak_ptr<class POIInstance> getClosestPOI(::POIType type, class BlockPos const& position);
@@ -137,7 +137,7 @@ public:
     MCAPI bool hasRaid() const;
 
     // symbol: ?hasSpecificDweller@Village@@QEBA_NW4DwellerRole@@AEBUActorUniqueID@@@Z
-    MCAPI bool hasSpecificDweller(::DwellerRole role, struct ActorUniqueID const& id) const;
+    MCAPI bool hasSpecificDweller(::DwellerRole role, struct ActorUniqueID const&) const;
 
     // symbol:
     // ?loadDataByKey@Village@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z
@@ -159,7 +159,7 @@ public:
     MCAPI void removeVillageSavedData();
 
     // symbol: ?resetDwellerTimer@Village@@QEAAXW4DwellerRole@@AEBUActorUniqueID@@@Z
-    MCAPI void resetDwellerTimer(::DwellerRole role, struct ActorUniqueID const& id);
+    MCAPI void resetDwellerTimer(::DwellerRole role, struct ActorUniqueID const&);
 
     // symbol: ?resetNoBreedTimer@Village@@QEAAXXZ
     MCAPI void resetNoBreedTimer();
@@ -168,7 +168,7 @@ public:
     MCAPI void rewardAllPlayers(int deltaAmount);
 
     // symbol: ?setSavedDwellerPosition@Village@@QEAAXW4DwellerRole@@AEBUActorUniqueID@@VBlockPos@@@Z
-    MCAPI void setSavedDwellerPosition(::DwellerRole, struct ActorUniqueID const&, class BlockPos);
+    MCAPI void setSavedDwellerPosition(::DwellerRole role, struct ActorUniqueID const&, class BlockPos pos);
 
     // symbol: ?tick@Village@@QEAAXUTick@@AEAVBlockSource@@@Z
     MCAPI void tick(struct Tick tick, class BlockSource& region);
@@ -183,7 +183,7 @@ public:
     MCAPI void trySetVillagerWorkTimestamp(struct ActorUniqueID const&);
 
     // symbol: ?unlinkMismatchedJobsites@Village@@QEAAXAEBVActor@@@Z
-    MCAPI void unlinkMismatchedJobsites(class Actor const&);
+    MCAPI void unlinkMismatchedJobsites(class Actor const& villager);
 
     // symbol: ?villagerLivesHere@Village@@QEBA_NAEBUActorUniqueID@@@Z
     MCAPI bool villagerLivesHere(struct ActorUniqueID const& villager) const;
@@ -238,7 +238,7 @@ public:
     MCAPI void _createRaid();
 
     // symbol: ?_findAvailablePOI@Village@@AEAA_N_KAEAVLevel@@AEAVRandom@@UActorUniqueID@@@Z
-    MCAPI bool _findAvailablePOI(uint64 index, class Level& level, class Random& random, struct ActorUniqueID id);
+    MCAPI bool _findAvailablePOI(uint64 index, class Level& level, class Random& random, struct ActorUniqueID);
 
     // symbol: ?_findPlayerCentricSpawnPointForRaid@Village@@AEBA_NAEAVVec3@@_N@Z
     MCAPI bool _findPlayerCentricSpawnPointForRaid(class Vec3& outSpawnPoint, bool snapToSurface) const;
@@ -261,7 +261,7 @@ public:
     MCAPI void _findWeightedPOI(
         std::vector<std::weak_ptr<class POIInstance>>& unclaimedPOIStack,
         class Random&                                  random,
-        struct ActorUniqueID                           id
+        struct ActorUniqueID
     );
 
     // symbol: ?_helpLocateRaiders@Village@@AEAAXAEBVRaid@@@Z
@@ -302,7 +302,7 @@ public:
     MCAPI void _saveVillageRaid(class LevelStorage&) const;
 
     // symbol: ?_spawnPassiveDwellers@Village@@AEAAXAEAVBlockSource@@H@Z
-    MCAPI void _spawnPassiveDwellers(class BlockSource& region, int bedCount);
+    MCAPI void _spawnPassiveDwellers(class BlockSource& region, int);
 
     // symbol:
     // ?_spawnRaidGroup@Village@@AEBA_NVVec3@@EAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z

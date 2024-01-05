@@ -35,7 +35,7 @@ public:
     virtual void __unk_vfn_12();
 
     // vIndex: 13, symbol: ?onRemoved@ItemFrameBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onRemoved(class BlockSource&);
+    virtual void onRemoved(class BlockSource& region);
 
     // vIndex: 18, symbol: __unk_vfn_18
     virtual void __unk_vfn_18();
@@ -69,7 +69,7 @@ public:
 
     // vIndex: 40, symbol:
     // ?_getUpdatePacket@ItemFrameBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@ItemFrameBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -79,7 +79,7 @@ public:
 
     // symbol:
     // ??0ItemFrameBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ItemFrameBlockActor(class BlockPos, ::BlockActorType, std::string const&);
+    MCAPI ItemFrameBlockActor(class BlockPos pos, ::BlockActorType type, std::string const&);
 
     // symbol: ?actuallyDropItem@ItemFrameBlockActor@@QEAAXAEAVBlockSource@@_NPEAVActor@@@Z
     MCAPI void actuallyDropItem(class BlockSource&, bool, class Actor*);
@@ -116,7 +116,8 @@ public:
     MCAPI void _checkMapRemoval(class BlockSource& region, class ItemInstance& item);
 
     // symbol: ?_updateBit@ItemFrameBlockActor@@AEAAXAEAVBlockSource@@AEBV?$BlockStateVariant@_N@@AEBVHashedString@@@Z
-    MCAPI void _updateBit(class BlockSource&, class BlockStateVariant<bool> const&, class HashedString const&);
+    MCAPI void
+    _updateBit(class BlockSource& region, class BlockStateVariant<bool> const&, class HashedString const& itemName);
 
     // NOLINTEND
 };

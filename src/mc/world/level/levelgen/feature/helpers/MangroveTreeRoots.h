@@ -22,7 +22,7 @@ public:
     // vIndex: 1, symbol:
     // ?placeRoots@MangroveTreeRoots@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@@Z
     virtual std::optional<class BlockPos>
-    placeRoots(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, int, class RenderParams&, struct TreeHelper::TreeParams const&)
+    placeRoots(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int trunkHeight, class RenderParams&, struct TreeHelper::TreeParams const&)
         const;
 
     // NOLINTEND
@@ -30,20 +30,20 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_canPlaceRoot@MangroveTreeRoots@@AEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-    MCAPI bool _canPlaceRoot(class IBlockWorldGenAPI&, class BlockPos const&) const;
+    MCAPI bool _canPlaceRoot(class IBlockWorldGenAPI& target, class BlockPos const& pos) const;
 
     // symbol: ?_placeRoot@MangroveTreeRoots@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@@Z
-    MCAPI void _placeRoot(class IBlockWorldGenAPI&, class BlockPos const&, class Random&) const;
+    MCAPI void _placeRoot(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random) const;
 
     // symbol:
     // ?_potentialRootPositions@MangroveTreeRoots@@AEBA?AV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVBlockPos@@EAEAVRandom@@0@Z
     MCAPI std::vector<class BlockPos>
-          _potentialRootPositions(class BlockPos const&, uchar, class Random&, class BlockPos const&) const;
+    _potentialRootPositions(class BlockPos const& pos, uchar, class Random& random, class BlockPos const& origin) const;
 
     // symbol:
     // ?_simulateRoots@MangroveTreeRoots@@AEBA_NAEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@2EPEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@HAEBUTreeParams@TreeHelper@@@Z
     MCAPI bool
-    _simulateRoots(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, class BlockPos const&, uchar, std::vector<class BlockPos>*, int, struct TreeHelper::TreeParams const&)
+    _simulateRoots(class IBlockWorldGenAPI& target, class Random& random, class BlockPos const&, class BlockPos const&, uchar dir, std::vector<class BlockPos>*, int layer, struct TreeHelper::TreeParams const&)
         const;
 
     // NOLINTEND

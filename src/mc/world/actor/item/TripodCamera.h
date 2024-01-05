@@ -106,7 +106,11 @@ public:
     MCVAPI bool isTargetable() const;
 
     // symbol: ??0TripodCamera@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI TripodCamera(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI TripodCamera(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?interactWithPlayer@TripodCamera@@QEAA_NAEAVPlayer@@@Z
     MCAPI bool interactWithPlayer(class Player& player);

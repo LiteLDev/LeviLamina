@@ -29,7 +29,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ?setValue@DrawDuration@ShooterItemComponent@@QEAAXM@Z
-        MCAPI void setValue(float);
+        MCAPI void setValue(float duration);
 
         // NOLINTEND
     };
@@ -104,7 +104,7 @@ public:
     MCAPI class ShooterItemComponent& operator=(class ShooterItemComponent const&);
 
     // symbol: ?releaseUsing@ShooterItemComponent@@QEBA_NAEAVItemStack@@PEAVPlayer@@H@Z
-    MCAPI bool releaseUsing(class ItemStack&, class Player*, int) const;
+    MCAPI bool releaseUsing(class ItemStack& itemStack, class Player* player, int durationLeft) const;
 
     // symbol:
     // ?bindType@ShooterItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z
@@ -119,16 +119,16 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_consumeAmmunition@ShooterItemComponent@@AEBAXPEAVPlayer@@AEBVItemStack@@H_N2@Z
-    MCAPI void _consumeAmmunition(class Player*, class ItemStack const&, int, bool, bool) const;
+    MCAPI void _consumeAmmunition(class Player* player, class ItemStack const&, int, bool, bool) const;
 
     // symbol: ?_getAmmunition@ShooterItemComponent@@AEBAHPEBVPlayer@@_NAEAVItemStack@@AEA_N@Z
-    MCAPI int _getAmmunition(class Player const*, bool, class ItemStack&, bool&) const;
+    MCAPI int _getAmmunition(class Player const* player, bool, class ItemStack&, bool&) const;
 
     // symbol: ?_getMaxUseDuration@ShooterItemComponent@@AEBAHAEBVItemStack@@@Z
     MCAPI int _getMaxUseDuration(class ItemStack const&) const;
 
     // symbol: ?_shootProjectiles@ShooterItemComponent@@AEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-    MCAPI void _shootProjectiles(class ItemStack&, class Player*, int) const;
+    MCAPI void _shootProjectiles(class ItemStack&, class Player* player, int durationLeft) const;
 
     // NOLINTEND
 };

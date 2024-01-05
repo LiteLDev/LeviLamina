@@ -41,7 +41,7 @@ public:
 
     // vIndex: 6, symbol:
     // ?initializeComponents@AbstractArrow@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: ??1AbstractArrow@@UEAA@XZ
     virtual ~AbstractArrow();
@@ -110,7 +110,11 @@ public:
     virtual class ItemStack _getPickupItem() const = 0;
 
     // symbol: ??0AbstractArrow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI AbstractArrow(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI AbstractArrow(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?isPlayerOwned@AbstractArrow@@QEBA_NXZ
     MCAPI bool isPlayerOwned() const;
@@ -122,7 +126,8 @@ public:
     MCAPI void setIsCreative(bool creativeOnly);
 
     // symbol: ?spawnPlayerProjectile@AbstractArrow@@SAPEAVActor@@AEBUActorDefinitionIdentifier@@AEAVPlayer@@VVec3@@@Z
-    MCAPI static class Actor* spawnPlayerProjectile(struct ActorDefinitionIdentifier const&, class Player&, class Vec3);
+    MCAPI static class Actor*
+    spawnPlayerProjectile(struct ActorDefinitionIdentifier const&, class Player& player, class Vec3);
 
     // NOLINTEND
 

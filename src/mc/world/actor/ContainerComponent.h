@@ -42,7 +42,7 @@ public:
     MCAPI bool addItem(class ItemStack& item);
 
     // symbol: ?addItem@ContainerComponent@@QEAA_NAEAVItemStack@@HH@Z
-    MCAPI bool addItem(class ItemStack&, int, int);
+    MCAPI bool addItem(class ItemStack& item, int face, int itemCount);
 
     // symbol: ?canBeSiphonedFrom@ContainerComponent@@QEBA_NXZ
     MCAPI bool canBeSiphonedFrom() const;
@@ -116,7 +116,7 @@ public:
     MCAPI void removeItemsOfType(class ItemStack const& item, int count);
 
     // symbol: ?serverInitItemStackIds@ContainerComponent@@QEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCAPI void serverInitItemStackIds(int, int count, std::function<void(int, class ItemStack const&)>);
 
     // symbol:
     // ?setCustomName@ContainerComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -130,7 +130,7 @@ public:
     MCAPI void setLootTable(std::string const& lootTable, int lootTableSeed);
 
     // symbol: ?unpackLootTable@ContainerComponent@@QEAAXAEAVLevel@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void unpackLootTable(class Level&, DimensionType);
+    MCAPI void unpackLootTable(class Level& level, DimensionType dimensionId);
 
     // NOLINTEND
 };

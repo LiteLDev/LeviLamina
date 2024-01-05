@@ -17,7 +17,7 @@ public:
     MCAPI EntityRegistry();
 
     // symbol: ??0EntityRegistry@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit EntityRegistry(std::string);
+    MCAPI explicit EntityRegistry(std::string identifier);
 
     // symbol: ?getWeakRef@EntityRegistry@@QEAA?AV?$WeakRefT@UEntityRegistryRefTraits@@@@XZ
     MCAPI class WeakRefT<struct EntityRegistryRefTraits> getWeakRef();
@@ -33,7 +33,7 @@ public:
     MCAPI class EntityContext _createEntity();
 
     // symbol: ?_destroyEntity@EntityRegistry@@IEAAXVEntityContext@@@Z
-    MCAPI void _destroyEntity(class EntityContext);
+    MCAPI void _destroyEntity(class EntityContext entity);
 
     // NOLINTEND
 

@@ -31,17 +31,17 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@InventoryContentPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0InventoryContentPacket@@QEAA@XZ
     MCAPI InventoryContentPacket();
 
     // symbol:
     // ??0InventoryContentPacket@@QEAA@W4ContainerID@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-    MCAPI InventoryContentPacket(::ContainerID id, std::vector<class ItemStack> const& items);
+    MCAPI InventoryContentPacket(::ContainerID, std::vector<class ItemStack> const& items);
 
     // symbol: ?fromPlayerInventoryId@InventoryContentPacket@@SA?AV1@W4ContainerID@@AEAVPlayer@@@Z
-    MCAPI static class InventoryContentPacket fromPlayerInventoryId(::ContainerID id, class Player& player);
+    MCAPI static class InventoryContentPacket fromPlayerInventoryId(::ContainerID, class Player& player);
 
     // NOLINTEND
 };

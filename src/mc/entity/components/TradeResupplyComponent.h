@@ -17,11 +17,10 @@ public:
     MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?initFromDefinition@TradeResupplyComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor& actor);
+    MCAPI void initFromDefinition(class Actor&);
 
     // symbol: ?readAdditionalSaveData@TradeResupplyComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void
-    readAdditionalSaveData(class Actor& actor, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const& tag, class DataLoadHelper&);
 
     // symbol: ?reloadComponent@TradeResupplyComponent@@QEAAXAEAVActor@@@Z
     MCAPI void reloadComponent(class Actor& actor);

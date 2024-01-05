@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?parseJson@EntityTypes@@QEAA_NAEBVValue@Json@@@Z
-    MCAPI bool parseJson(class Json::Value const&);
+    MCAPI bool parseJson(class Json::Value const& root);
 
     // symbol: ??1EntityTypes@@QEAA@XZ
     MCAPI ~EntityTypes();

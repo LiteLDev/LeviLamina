@@ -74,7 +74,12 @@ public:
 
     // vIndex: 17, symbol:
     // ?registerLoop@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEAULoopingSoundState@@@Z@3@MM@Z
-    virtual uint64 registerLoop(std::string const&, std::function<void(struct LoopingSoundState&)>, float, float) = 0;
+    virtual uint64 registerLoop(
+        std::string const&                             name,
+        std::function<void(struct LoopingSoundState&)> getSoundState,
+        float,
+        float
+    ) = 0;
 
     // vIndex: 18, symbol: __unk_vfn_18
     virtual void __unk_vfn_18() = 0;

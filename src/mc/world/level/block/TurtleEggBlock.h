@@ -34,7 +34,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@TurtleEggBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -105,8 +105,7 @@ public:
 
     // vIndex: 64, symbol: ?transformOnFall@TurtleEggBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@M@Z
     virtual void
-    transformOnFall(class BlockSource& region, class BlockPos const& pos, class Actor* entity, float fallDistance)
-        const;
+    transformOnFall(class BlockSource& region, class BlockPos const& pos, class Actor* actor, float fallDistance) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -156,39 +155,45 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@TurtleEggBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@TurtleEggBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@TurtleEggBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@TurtleEggBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // vIndex: 167, symbol: ?entityInside@TurtleEggBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-    virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
+    virtual void entityInside(class BlockSource&, class BlockPos const& pos, class Actor& entity) const;
 
     // symbol: ?waterSpreadCausesSpawn@TurtleEggBlock@@UEBA_NXZ
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0TurtleEggBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TurtleEggBlock(std::string const& nameId, int id);
+    MCAPI TurtleEggBlock(std::string const& nameId, int);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_decreaseEggs@TurtleEggBlock@@CAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@I_N@Z
-    MCAPI static class Block const& _decreaseEggs(class BlockSource&, class BlockPos const&, uint, bool);
+    MCAPI static class Block const&
+    _decreaseEggs(class BlockSource& region, class BlockPos const& pos, uint count, bool brokenWithSilkTouch);
 
     // symbol: ?_destroyEgg@TurtleEggBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@H_N@Z
-    MCAPI static void _destroyEgg(class BlockSource&, class BlockPos const&, class Actor&, int, bool);
+    MCAPI static void _destroyEgg(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class Actor&          actor,
+        int                   randomness,
+        bool                  brokenWithSilkTouch
+    );
 
     // NOLINTEND
 };

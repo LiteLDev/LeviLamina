@@ -45,28 +45,30 @@ public:
     virtual float slideAwayDuration() const;
 
     // vIndex: 7, symbol: ?canPlace@CameraItemComponentLegacy@@UEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
-    virtual bool canPlace(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+    virtual bool
+    canPlace(class ItemStack const& instance, class Actor& actor, class BlockPos const& blockPos, uchar face) const;
 
     // vIndex: 8, symbol: ?takePictureNow@CameraItemComponentLegacy@@UEAAXAEAVPlayer@@PEAVActor@@1@Z
-    virtual void takePictureNow(class Player&, class Actor*, class Actor*);
+    virtual void takePictureNow(class Player& player, class Actor* camera, class Actor* target);
 
     // vIndex: 9, symbol: ?registerCallbacks@CameraItemComponentLegacy@@UEAAXPEAVCameraCallbacks@@@Z
-    virtual void registerCallbacks(class CameraCallbacks*);
+    virtual void registerCallbacks(class CameraCallbacks* callbacks);
 
     // vIndex: 10, symbol: ?use@CameraItemComponentLegacy@@UEAAXAEAVItemStack@@AEAVPlayer@@@Z
-    virtual void use(class ItemStack&, class Player&);
+    virtual void use(class ItemStack& instance, class Player& player);
 
     // vIndex: 11, symbol: ?releaseUsing@CameraItemComponentLegacy@@UEAAXAEAVItemStack@@AEAVPlayer@@H@Z
-    virtual void releaseUsing(class ItemStack&, class Player&, int);
+    virtual void releaseUsing(class ItemStack& instance, class Player& player, int durationLeft);
 
     // vIndex: 12, symbol: ?useOn@CameraItemComponentLegacy@@UEAA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-    virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&);
+    virtual bool
+    useOn(class ItemStack& instance, class Actor& actor, class BlockPos const& blockPos, uchar face, class Vec3 const&);
 
     // symbol: ??0CameraItemComponentLegacy@@QEAA@AEAVItem@@@Z
-    MCAPI explicit CameraItemComponentLegacy(class Item&);
+    MCAPI explicit CameraItemComponentLegacy(class Item& owner);
 
     // symbol: ?init@CameraItemComponentLegacy@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
-    MCAPI bool init(class Json::Value&, class SemVersion const&);
+    MCAPI bool init(class Json::Value& data, class SemVersion const& engineVersion);
 
     // NOLINTEND
 
@@ -74,8 +76,13 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_tryPlace@CameraItemComponentLegacy@@AEBA?AW4UseAction@1@AEBVItemStack@@AEAVActor@@AEBVBlockPos@@EAEAVVec3@@@Z
-    MCAPI ::CameraItemComponentLegacy::UseAction
-    _tryPlace(class ItemStack const&, class Actor&, class BlockPos const&, uchar, class Vec3&) const;
+    MCAPI ::CameraItemComponentLegacy::UseAction _tryPlace(
+        class ItemStack const& instance,
+        class Actor&           actor,
+        class BlockPos const&  blockPos,
+        uchar                  face,
+        class Vec3&            spawnPos
+    ) const;
 
     // NOLINTEND
 };

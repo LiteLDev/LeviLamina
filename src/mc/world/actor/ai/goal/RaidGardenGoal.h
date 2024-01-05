@@ -40,7 +40,7 @@ public:
     // symbol:
     // ??0RaidGardenGoal@@QEAA@AEAVMob@@MHHHMHHHHAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@@Z
     MCAPI
-    RaidGardenGoal(class Mob&, float, int, int, int, float, int, int, int, int, std::vector<class BlockDescriptor> const&);
+    RaidGardenGoal(class Mob& mob, float speedModifier, int searchRange, int searchHeight, int searchCount, float goalRadius, int maxToEat, int hasEatenFillDelay, int eatDelay, int initialEatDelay, std::vector<class BlockDescriptor> const&);
 
     // NOLINTEND
 };

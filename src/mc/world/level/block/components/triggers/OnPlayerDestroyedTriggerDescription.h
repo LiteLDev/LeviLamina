@@ -42,9 +42,12 @@ public:
 
     // vIndex: 6, symbol:
     // ?buildSchema@?$BlockTriggerDescription@VOnPlayerDestroyedTrigger@@@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z
-    virtual void
-    buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&)
-        const;
+    virtual void buildSchema(
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&
+                                           componentSchema,
+        class BlockComponentFactory const& factory
+    ) const;
 
     // vIndex: 7, symbol: ?isNetworkComponent@BlockComponentDescription@@UEBA_NXZ
     virtual bool isNetworkComponent() const;

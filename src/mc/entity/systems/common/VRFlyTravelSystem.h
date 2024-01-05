@@ -22,15 +22,20 @@ public:
 
     // symbol:
     // ?_prePlayerTravelSystem@VRFlyTravelSystem@@SAXAEBVStrictEntityContext@@AEBUPlayerInputModeComponent@@AEAUMobTravelComponent@@AEAUAbilitiesComponent@@V?$EntityModifier@ULocalPlayerPrePlayerTravelComponent@@@@@Z
-    MCAPI static void
-    _prePlayerTravelSystem(class StrictEntityContext const&, struct PlayerInputModeComponent const&, struct MobTravelComponent&, struct AbilitiesComponent&, class EntityModifier<struct LocalPlayerPrePlayerTravelComponent>);
+    MCAPI static void _prePlayerTravelSystem(
+        class StrictEntityContext const&       context,
+        struct PlayerInputModeComponent const& inputMode,
+        struct MobTravelComponent&,
+        struct AbilitiesComponent&,
+        class EntityModifier<struct LocalPlayerPrePlayerTravelComponent> mod
+    );
 
     // symbol:
     // ?_tickPostPlayerTravelSystem@VRFlyTravelSystem@@SAXV?$ViewT@VStrictEntityContext@@$$CBULocalPlayerPrePlayerTravelComponent@@UAbilitiesComponent@@@@@Z
     MCAPI static void _tickPostPlayerTravelSystem(class ViewT<
                                                   class StrictEntityContext,
                                                   struct LocalPlayerPrePlayerTravelComponent const,
-                                                  struct AbilitiesComponent>);
+                                                  struct AbilitiesComponent> view);
 
     // symbol: ?createPostPlayerTravelSystem@VRFlyTravelSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createPostPlayerTravelSystem();

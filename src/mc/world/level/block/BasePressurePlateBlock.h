@@ -135,7 +135,8 @@ public:
 
     // vIndex: 102, symbol:
     // ?shouldTriggerEntityInside@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-    virtual bool shouldTriggerEntityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
+    virtual bool
+    shouldTriggerEntityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -168,7 +169,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -177,7 +178,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@BasePressurePlateBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@BasePressurePlateBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
@@ -206,10 +207,16 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0BasePressurePlateBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI BasePressurePlateBlock(std::string const& nameId, int id, class Material const& material);
+    MCAPI BasePressurePlateBlock(std::string const& nameId, int, class Material const& material);
 
     // symbol: ?checkPressed@BasePressurePlateBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@HH@Z
-    MCAPI void checkPressed(class BlockSource&, class BlockPos const&, class Actor*, int, int) const;
+    MCAPI void checkPressed(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class Actor*          sourceEntity,
+        int                   oldSignal,
+        int                   newSignal
+    ) const;
 
     // NOLINTEND
 };

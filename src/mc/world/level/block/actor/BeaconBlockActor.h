@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_getUpdatePacket@BeaconBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // symbol: ?_onUpdatePacket@BeaconBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -43,13 +43,17 @@ public:
     MCVAPI void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?removeItem@BeaconBlockActor@@UEAAXHH@Z
-    MCVAPI void removeItem(int slot, int i);
+    MCVAPI void removeItem(int slot, int count);
 
     // symbol: ?save@BeaconBlockActor@@UEBA_NAEAVCompoundTag@@@Z
     MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?serverInitItemStackIds@BeaconBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
 
     // symbol: ?setItem@BeaconBlockActor@@UEAAXHAEBVItemStack@@@Z
     MCVAPI void setItem(int slot, class ItemStack const& item);
@@ -67,7 +71,7 @@ public:
     MCAPI explicit BeaconBlockActor(class BlockPos const& pos);
 
     // symbol: ?checkShapeAndAchievement@BeaconBlockActor@@QEAAXAEAVBlockSource@@@Z
-    MCAPI void checkShapeAndAchievement(class BlockSource&);
+    MCAPI void checkShapeAndAchievement(class BlockSource& region);
 
     // symbol: ?getBeaconData@BeaconBlockActor@@QEAA?AVCompoundTag@@XZ
     MCAPI class CompoundTag getBeaconData();

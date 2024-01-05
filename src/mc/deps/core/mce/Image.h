@@ -27,7 +27,7 @@ public:
     MCAPI bool isEmpty() const;
 
     // symbol: ??4Image@mce@@QEAAAEAU01@$$QEAU01@@Z
-    MCAPI struct mce::Image& operator=(struct mce::Image&& rhs);
+    MCAPI struct mce::Image& operator=(struct mce::Image&&);
 
     // symbol: ?resizeImageBytesToFitImageDescription@Image@mce@@QEAAXXZ
     MCAPI void resizeImageBytesToFitImageDescription();

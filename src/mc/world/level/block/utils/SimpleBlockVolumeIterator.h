@@ -18,7 +18,7 @@ public:
     virtual ~SimpleBlockVolumeIterator() = default;
 
     // symbol: ??0SimpleBlockVolumeIterator@@QEAA@AEBVSimpleBlockVolume@@_N@Z
-    MCAPI SimpleBlockVolumeIterator(class SimpleBlockVolume const&, bool);
+    MCAPI SimpleBlockVolumeIterator(class SimpleBlockVolume const&, bool begin);
 
     // NOLINTEND
 };

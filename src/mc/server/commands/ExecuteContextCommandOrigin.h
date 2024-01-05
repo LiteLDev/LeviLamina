@@ -69,7 +69,7 @@ public:
     virtual void updateValues();
 
     // vIndex: 28, symbol: ?getExecutePosition@ExecuteContextCommandOrigin@@UEBA?BVVec3@@HAEBVCommandPositionFloat@@@Z
-    virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const&) const;
+    virtual class Vec3 const getExecutePosition(int version, class CommandPositionFloat const&) const;
 
     // vIndex: 29, symbol: ?serialize@ExecuteContextCommandOrigin@@UEBA?AVCompoundTag@@XZ
     virtual class CompoundTag serialize() const;
@@ -95,29 +95,30 @@ public:
     MCAPI class Actor const* getPositionEntity();
 
     // symbol: ?setDimension@ExecuteContextCommandOrigin@@QEAAXAEBV?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void setDimension(DimensionType const&);
+    MCAPI void setDimension(DimensionType const& dimensionType);
 
     // symbol: ?setDimension@ExecuteContextCommandOrigin@@QEAAXAEBVDimension@@@Z
-    MCAPI void setDimension(class Dimension const&);
+    MCAPI void setDimension(class Dimension const& dimension);
 
     // symbol: ?setExecutionEntity@ExecuteContextCommandOrigin@@QEAAXAEBVActor@@@Z
-    MCAPI void setExecutionEntity(class Actor const&);
+    MCAPI void setExecutionEntity(class Actor const& entity);
 
     // symbol: ?setPosition@ExecuteContextCommandOrigin@@QEAAXAEBVVec3@@@Z
-    MCAPI void setPosition(class Vec3 const&);
+    MCAPI void setPosition(class Vec3 const& position);
 
     // symbol: ?setPositionEntity@ExecuteContextCommandOrigin@@QEAAXAEBVActor@@@Z
-    MCAPI void setPositionEntity(class Actor const&);
+    MCAPI void setPositionEntity(class Actor const& entity);
 
     // symbol: ?setRotation@ExecuteContextCommandOrigin@@QEAAXAEBVVec2@@@Z
-    MCAPI void setRotation(class Vec2 const&);
+    MCAPI void setRotation(class Vec2 const& rotation);
 
     // symbol: ?setRotationEntity@ExecuteContextCommandOrigin@@QEAAXAEBVActor@@@Z
-    MCAPI void setRotationEntity(class Actor const&);
+    MCAPI void setRotationEntity(class Actor const& entity);
 
     // symbol:
     // ?load@ExecuteContextCommandOrigin@@SA?AV?$unique_ptr@VExecuteContextCommandOrigin@@U?$default_delete@VExecuteContextCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
-    MCAPI static std::unique_ptr<class ExecuteContextCommandOrigin> load(class CompoundTag const&, class ServerLevel&);
+    MCAPI static std::unique_ptr<class ExecuteContextCommandOrigin>
+    load(class CompoundTag const& tag, class ServerLevel& level);
 
     // NOLINTEND
 };

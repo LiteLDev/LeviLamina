@@ -106,7 +106,7 @@ public:
     virtual void releaseUsing(class ItemStack& itemStack, class Player* player, int durationLeft) const;
 
     // vIndex: 75, symbol: ?hurtActor@TridentItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
+    virtual void hurtActor(class ItemStack& itemStack, class Actor& actor, class Mob& attacker) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -125,7 +125,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_setupProjectile@TridentItem@@AEBAPEAVActor@@PEAV2@VItemStack@@_N@Z
-    MCAPI class Actor* _setupProjectile(class Actor* entity, class ItemStack itemStack, bool creative) const;
+    MCAPI class Actor* _setupProjectile(class Actor*, class ItemStack itemStack, bool creative) const;
 
     // NOLINTEND
 };

@@ -36,12 +36,15 @@ public:
         MCAPI Definition();
 
         // symbol: ?initialize@Definition@EmergeGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext&, class EmergeGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class EmergeGoal& goal) const;
 
         // symbol:
         // ?buildSchema@Definition@EmergeGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@EmergeGoal@@@JsonUtil@@@4@@Z
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EmergeGoal::Definition>>&);
+        MCAPI static void buildSchema(
+            std::string const& name,
+            std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EmergeGoal::Definition>>& root
+        );
 
         // NOLINTEND
     };
@@ -74,10 +77,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@EmergeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0EmergeGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit EmergeGoal(class Mob&);
+    MCAPI explicit EmergeGoal(class Mob& mob);
 
     // NOLINTEND
 };

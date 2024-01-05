@@ -176,19 +176,19 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@LeverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@LeverBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@LeverBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?isInteractiveBlock@LeverBlock@@UEBA_NXZ
     MCVAPI bool isInteractiveBlock() const;
@@ -197,10 +197,10 @@ public:
     MCVAPI bool isLeverBlock() const;
 
     // symbol: ??0LeverBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LeverBlock(std::string const& nameId, int id);
+    MCAPI LeverBlock(std::string const& nameId, int);
 
     // symbol: ?toggle@LeverBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVPlayer@@@Z
-    MCAPI void toggle(class BlockSource&, class BlockPos const&, class Player*) const;
+    MCAPI void toggle(class BlockSource& region, class BlockPos const& pos, class Player* player) const;
 
     // symbol: ?getLeverFacing@LeverBlock@@SA?AW4LeverDirection@@H@Z
     MCAPI static ::LeverDirection getLeverFacing(int facing);

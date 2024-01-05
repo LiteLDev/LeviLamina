@@ -24,7 +24,7 @@ public:
 
     // symbol:
     // ?initSchema@EventResponseFactory@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@@Z
-    MCAPI void initSchema(std::string const&, class SemVersion const&);
+    MCAPI void initSchema(std::string const&, class SemVersion const& version);
 
     // NOLINTEND
 };

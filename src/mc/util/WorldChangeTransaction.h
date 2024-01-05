@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0WorldChangeTransaction@@QEAA@AEAVIBlockWorldGenAPI@@@Z
-    MCAPI explicit WorldChangeTransaction(class IBlockWorldGenAPI&);
+    MCAPI explicit WorldChangeTransaction(class IBlockWorldGenAPI& target);
 
     // symbol: ?apply@WorldChangeTransaction@@QEBA_NXZ
     MCAPI bool apply() const;

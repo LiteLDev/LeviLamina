@@ -12,10 +12,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?canPullOutItem@BrewingStandBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPullOutItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPullOutItem(int slot, int face, class ItemStack const&) const;
 
     // symbol: ?canPushInItem@BrewingStandBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPushInItem(int slot, int face, class ItemStack const& item) const;
 
     // symbol: ?getContainer@BrewingStandBlockActor@@UEAAPEAVContainer@@XZ
     MCVAPI class Container* getContainer();
@@ -48,10 +48,14 @@ public:
     MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?serverInitItemStackIds@BrewingStandBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
 
     // symbol: ?setContainerChanged@BrewingStandBlockActor@@UEAAXH@Z
-    MCVAPI void setContainerChanged(int);
+    MCVAPI void setContainerChanged(int slot);
 
     // symbol: ?setItem@BrewingStandBlockActor@@UEAAXHAEBVItemStack@@@Z
     MCVAPI void setItem(int slot, class ItemStack const& item);

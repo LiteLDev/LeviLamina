@@ -23,7 +23,7 @@ public:
     virtual ~NetworkChunkPublisher() = default;
 
     // symbol: ??0NetworkChunkPublisher@@QEAA@AEAVLevel@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
-    MCAPI NetworkChunkPublisher(class Level&, class NetworkIdentifier const&, ::SubClientId);
+    MCAPI NetworkChunkPublisher(class Level& level, class NetworkIdentifier const& owner, ::SubClientId subClientId);
 
     // symbol: ?clearRegion@NetworkChunkPublisher@@QEAAXXZ
     MCAPI void clearRegion();
@@ -32,10 +32,11 @@ public:
     MCAPI void destroyRegion();
 
     // symbol: ?is2DPositionRelevant@NetworkChunkPublisher@@QEBA_NAEBVBlockPos@@@Z
-    MCAPI bool is2DPositionRelevant(class BlockPos const&) const;
+    MCAPI bool is2DPositionRelevant(class BlockPos const& position) const;
 
     // symbol: ?moveRegion@NetworkChunkPublisher@@QEAAXAEBVBlockPos@@IAEBVVec3@@M@Z
-    MCAPI void moveRegion(class BlockPos const&, uint, class Vec3 const&, float);
+    MCAPI void
+    moveRegion(class BlockPos const& position, uint blockRadius, class Vec3 const& direction, float minDistance);
 
     // symbol: ?prepareRegion@NetworkChunkPublisher@@QEAAXAEAVChunkSource@@AEBVChunkPos@@@Z
     MCAPI void prepareRegion(class ChunkSource& mainChunkSource, class ChunkPos const& center);

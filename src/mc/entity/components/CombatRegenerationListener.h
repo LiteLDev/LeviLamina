@@ -19,7 +19,7 @@ public:
     virtual ~CombatRegenerationListener() = default;
 
     // vIndex: 1, symbol: ?onEvent@CombatRegenerationListener@@UEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct ActorNotificationEvent const&);
+    virtual ::EventResult onEvent(struct ActorNotificationEvent const& event);
 
     // NOLINTEND
 };

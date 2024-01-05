@@ -39,7 +39,7 @@ public:
     // symbol:
     // ??0SyncScriptGameTestFunction@ScriptModuleGameTest@@QEAA@VWeakLifetimeScope@Scripting@@V?$Closure@$$A6AXU?$TypedObjectHandle@VScriptGameTestHelper@ScriptModuleGameTest@@@Scripting@@@Z$$V@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI
-    SyncScriptGameTestFunction(class Scripting::WeakLifetimeScope, class Scripting::Closure<void(struct Scripting::TypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestHelper>)>, std::string const&);
+    SyncScriptGameTestFunction(class Scripting::WeakLifetimeScope scope, class Scripting::Closure<void(struct Scripting::TypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestHelper>)>, std::string const&);
 
     // NOLINTEND
 };

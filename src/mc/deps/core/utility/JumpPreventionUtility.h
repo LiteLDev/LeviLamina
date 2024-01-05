@@ -10,7 +10,7 @@ MCAPI float getJumpMultiplier(bool);
 // symbol:
 // ?getJumpPrevention@JumpPreventionUtility@@YA?AUJumpPreventionResult@@_NAEBVAABB@@VBlockPos@@AEBVIConstBlockSource@@@Z
 MCAPI struct JumpPreventionResult
-getJumpPrevention(bool, class AABB const&, class BlockPos, class IConstBlockSource const&);
+getJumpPrevention(bool isOnGround, class AABB const& aabb, class BlockPos pos, class IConstBlockSource const& region);
 // NOLINTEND
 
 }; // namespace JumpPreventionUtility

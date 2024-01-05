@@ -40,9 +40,12 @@ public:
 
     // vIndex: 6, symbol:
     // ?buildSchema@BlockComponentDescription@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z
-    virtual void
-    buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&)
-        const;
+    virtual void buildSchema(
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&
+                                           componentSchema,
+        class BlockComponentFactory const& factory
+    ) const;
 
     // vIndex: 7, symbol: ?isNetworkComponent@BlockCollisionBoxDescription@@UEBA_NXZ
     virtual bool isNetworkComponent() const;
@@ -62,7 +65,7 @@ public:
     MCAPI BlockGeometryDescription();
 
     // symbol: ??0BlockGeometryDescription@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit BlockGeometryDescription(std::string const&);
+    MCAPI explicit BlockGeometryDescription(std::string const& geometryName);
 
     // symbol: ?bindType@BlockGeometryDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

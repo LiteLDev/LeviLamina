@@ -99,7 +99,7 @@ public:
     virtual void __unk_vfn_48();
 
     // vIndex: 49, symbol: ?isValidAuxValue@CactusBlock@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int value) const;
 
     // vIndex: 54, symbol: __unk_vfn_54
     virtual void __unk_vfn_54();
@@ -136,7 +136,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 126, symbol: ?onGraphicsModeChanged@CactusBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const&);
+    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -151,7 +151,7 @@ public:
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 151, symbol: ?randomTick@CactusBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -166,7 +166,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0CactusBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CactusBlock(std::string const& nameId, int id);
+    MCAPI CactusBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

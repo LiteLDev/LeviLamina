@@ -68,7 +68,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 64, symbol: ?setTarget@Guardian@@UEAAXPEAVActor@@@Z
-    virtual void setTarget(class Actor* entity);
+    virtual void setTarget(class Actor* target);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -104,7 +104,11 @@ public:
     virtual bool isDarkEnoughToSpawn() const;
 
     // symbol: ??0Guardian@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Guardian(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Guardian(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getAttackDuration@Guardian@@QEAAHXZ
     MCAPI int getAttackDuration();

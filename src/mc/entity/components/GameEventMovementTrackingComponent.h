@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initializeFromCode@GameEventMovementTrackingComponent@@QEAAXAEAVActor@@_N@Z
-    MCAPI void initializeFromCode(class Actor&, bool);
+    MCAPI void initializeFromCode(class Actor& actor, bool);
 
     // symbol: ?shouldEmitEntityMoveGameEvent@GameEventMovementTrackingComponent@@QEAA_NXZ
     MCAPI bool shouldEmitEntityMoveGameEvent();

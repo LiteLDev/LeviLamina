@@ -41,7 +41,8 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_addTestResult@DedicatedServerGameTestRunnerListener@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$optional@UGameTestError@gametest@@@3@@Z
-    MCAPI void _addTestResult(std::string const&, std::string const&, std::optional<struct gametest::GameTestError>);
+    MCAPI void
+    _addTestResult(std::string const&, std::string const& result, std::optional<struct gametest::GameTestError> error);
 
     // symbol:
     // ?_getTestNameWithRotation@DedicatedServerGameTestRunnerListener@@CA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBaseGameTestInstance@gametest@@@Z

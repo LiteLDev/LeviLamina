@@ -48,7 +48,7 @@ public:
     virtual ~Minecart();
 
     // vIndex: 18, symbol: ?getInterpolatedBodyYaw@Minecart@@UEBAMM@Z
-    virtual float getInterpolatedBodyYaw(float) const;
+    virtual float getInterpolatedBodyYaw(float a) const;
 
     // vIndex: 23, symbol: __unk_vfn_23
     virtual void __unk_vfn_23();
@@ -123,7 +123,7 @@ public:
     virtual int getDefaultDisplayOffset() const;
 
     // vIndex: 173, symbol: ?applyNaturalSlowdown@Minecart@@MEAAXAEAVBlockSource@@@Z
-    virtual void applyNaturalSlowdown(class BlockSource&);
+    virtual void applyNaturalSlowdown(class BlockSource& region);
 
     // vIndex: 174, symbol: ?_lazyInitDisplayBlock@Minecart@@EEAAXXZ
     virtual void _lazyInitDisplayBlock();
@@ -132,10 +132,14 @@ public:
     MCVAPI bool canMakeStepSound() const;
 
     // symbol: ??0Minecart@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Minecart(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Minecart(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?dropMinecartWithContentsAndRemove@Minecart@@QEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@_N@Z
-    MCAPI void dropMinecartWithContentsAndRemove(std::string_view, bool);
+    MCAPI void dropMinecartWithContentsAndRemove(std::string_view, bool dropMinecartComponents);
 
     // symbol: ?postNormalTick@Minecart@@QEAAXAEBVBlockPos@@@Z
     MCAPI void postNormalTick(class BlockPos const&);

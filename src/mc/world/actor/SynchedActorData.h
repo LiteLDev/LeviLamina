@@ -23,22 +23,22 @@ public:
     MCAPI class SynchedActorData _clone() const;
 
     // symbol: ?getFloat@SynchedActorData@@QEBAMG@Z
-    MCAPI float getFloat(ushort id) const;
+    MCAPI float getFloat(ushort) const;
 
     // symbol: ?getInt@SynchedActorData@@QEBAHG@Z
-    MCAPI int getInt(ushort id) const;
+    MCAPI int getInt(ushort) const;
 
     // symbol: ?getInt64@SynchedActorData@@QEBA_JG@Z
-    MCAPI int64 getInt64(ushort id) const;
+    MCAPI int64 getInt64(ushort) const;
 
     // symbol: ?getInt8@SynchedActorData@@QEBACG@Z
-    MCAPI schar getInt8(ushort id) const;
+    MCAPI schar getInt8(ushort) const;
 
     // symbol: ?getStatusFlag@SynchedActorData@@QEBA_NW4ActorFlags@@@Z
-    MCAPI bool getStatusFlag(::ActorFlags) const;
+    MCAPI bool getStatusFlag(::ActorFlags flag) const;
 
     // symbol: ?getVec3@SynchedActorData@@QEBA?AVVec3@@G@Z
-    MCAPI class Vec3 getVec3(ushort id) const;
+    MCAPI class Vec3 getVec3(ushort) const;
 
     // symbol: ??4SynchedActorData@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class SynchedActorData& operator=(class SynchedActorData&& rhs);
@@ -52,7 +52,7 @@ public:
     MCAPI std::vector<std::unique_ptr<class DataItem>> packDirty(class EntityContext&);
 
     // symbol: ?setStatusFlag@SynchedActorData@@QEAAXW4ActorFlags@@_N@Z
-    MCAPI void setStatusFlag(::ActorFlags, bool);
+    MCAPI void setStatusFlag(::ActorFlags flag, bool value);
 
     // symbol: ??1SynchedActorData@@QEAA@XZ
     MCAPI ~SynchedActorData();
@@ -71,16 +71,16 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_find@SynchedActorData@@AEBAPEAVDataItem@@G@Z
-    MCAPI class DataItem* _find(ushort id) const;
+    MCAPI class DataItem* _find(ushort) const;
 
     // symbol: ?_get@SynchedActorData@@AEAAAEAVDataItem@@G@Z
-    MCAPI class DataItem& _get(ushort id);
+    MCAPI class DataItem& _get(ushort);
 
     // symbol: ?_resizeToContain@SynchedActorData@@AEAAXG@Z
-    MCAPI void _resizeToContain(ushort id);
+    MCAPI void _resizeToContain(ushort);
 
     // symbol: ?_setDirty@SynchedActorData@@AEAAXG@Z
-    MCAPI void _setDirty(ushort id);
+    MCAPI void _setDirty(ushort);
 
     // NOLINTEND
 };

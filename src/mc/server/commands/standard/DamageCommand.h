@@ -19,10 +19,10 @@ public:
     virtual ~DamageCommand() = default;
 
     // vIndex: 2, symbol: ?execute@DamageCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?setup@DamageCommand@@SAXAEAVCommandRegistry@@@Z
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
@@ -30,9 +30,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_applyDamage@DamageCommand@@AEBAXAEAV?$CommandSelectorResults@VActor@@@@AEBVActorDamageSource@@AEAVCommandOutput@@@Z
-    MCAPI void
-    _applyDamage(class CommandSelectorResults<class Actor>&, class ActorDamageSource const&, class CommandOutput&)
-        const;
+    MCAPI void _applyDamage(
+        class CommandSelectorResults<class Actor>& targets,
+        class ActorDamageSource const&             source,
+        class CommandOutput&                       output
+    ) const;
 
     // NOLINTEND
 };

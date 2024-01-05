@@ -165,7 +165,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@TripWireHookBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -177,7 +177,7 @@ public:
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0TripWireHookBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TripWireHookBlock(std::string const& nameId, int id);
+    MCAPI TripWireHookBlock(std::string const& nameId, int);
 
     // symbol: ?calculateState@TripWireHookBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@_NH@Z
     MCAPI void calculateState(class BlockSource&, class BlockPos const&, bool, int) const;
@@ -187,7 +187,14 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_emitState@TripWireHookBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@_N222@Z
-    MCAPI void _emitState(class BlockSource&, class BlockPos const&, bool, bool, bool, bool) const;
+    MCAPI void _emitState(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        bool                  attached,
+        bool                  powered,
+        bool                  wasAttached,
+        bool                  wasPowered
+    ) const;
 
     // NOLINTEND
 };

@@ -238,7 +238,7 @@ MCAPI extern class mce::Color const WOOD;
 MCAPI extern class mce::Color const WOOL;
 
 // symbol: ?getColorFromPaletteColor@VanillaMapColor@@YA?AVColor@mce@@W4PaletteColor@@@Z
-MCAPI class mce::Color getColorFromPaletteColor(::PaletteColor);
+MCAPI class mce::Color getColorFromPaletteColor(::PaletteColor color);
 // NOLINTEND
 
 }; // namespace VanillaMapColor

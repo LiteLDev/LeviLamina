@@ -17,7 +17,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_getUpdatePacket@DispenserBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // symbol: ?_onUpdatePacket@DispenserBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -50,7 +50,11 @@ public:
     MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?serverInitItemStackIds@DispenserBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
 
     // symbol: ?setItem@DispenserBlockActor@@UEAAXHAEBVItemStack@@@Z
     MCVAPI void setItem(int slot, class ItemStack const& item);
@@ -68,7 +72,7 @@ public:
     MCAPI DispenserBlockActor(class BlockPos pos, ::BlockActorType type);
 
     // symbol: ?getRandomSlot@DispenserBlockActor@@QEAAHAEAVRandom@@@Z
-    MCAPI int getRandomSlot(class Random&);
+    MCAPI int getRandomSlot(class Random& random);
 
     // NOLINTEND
 

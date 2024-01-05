@@ -27,7 +27,7 @@ public:
     // symbol:
     // ?createAnimationPlayer@AnimationComponent@@QEAA?AV?$shared_ptr@VActorAnimationPlayer@@@std@@AEBVHashedString@@AEBVExpressionNode@@AEAV?$set@VHashedString@@U?$hash@VHashedString@@@std@@V?$allocator@VHashedString@@@3@@3@@Z
     MCAPI std::shared_ptr<class ActorAnimationPlayer>
-    createAnimationPlayer(class HashedString const&, class ExpressionNode const&, std::set<class HashedString, std::hash<class HashedString>>&);
+    createAnimationPlayer(class HashedString const& friendlyName, class ExpressionNode const& blendExpression, std::set<class HashedString, std::hash<class HashedString>>&);
 
     // symbol:
     // ?getAllBoneOrientations@AnimationComponent@@QEAAAEAV?$unordered_map@W4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@U?$hash@W4SkeletalHierarchyIndex@@@3@U?$equal_to@W4SkeletalHierarchyIndex@@@3@V?$allocator@U?$pair@$$CBW4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@@std@@@3@@std@@XZ
@@ -54,12 +54,15 @@ public:
     MCAPI class RenderParams& getRenderParams();
 
     // symbol: ?initInstanceSpecificAnimationData@AnimationComponent@@QEAAXPEAVMolangVariableMap@@@Z
-    MCAPI void initInstanceSpecificAnimationData(class MolangVariableMap*);
+    MCAPI void initInstanceSpecificAnimationData(class MolangVariableMap* variableMap);
 
     // symbol:
     // ?initializeServerAnimationComponent@AnimationComponent@@QEAAXAEAVActor@@V?$shared_ptr@VCommonResourceDefinitionMap@@@std@@V?$function@$$A6AXAEAVActorAnimationPlayer@@@Z@4@@Z
-    MCAPI void
-    initializeServerAnimationComponent(class Actor&, std::shared_ptr<class CommonResourceDefinitionMap>, std::function<void(class ActorAnimationPlayer&)>);
+    MCAPI void initializeServerAnimationComponent(
+        class Actor&                                       actor,
+        std::shared_ptr<class CommonResourceDefinitionMap> animationResourceDefinition,
+        std::function<void(class ActorAnimationPlayer&)>   animationComponentInitFunction
+    );
 
     // symbol: ?isInitialized@AnimationComponent@@QEAA_NXZ
     MCAPI bool isInitialized();
@@ -69,7 +72,8 @@ public:
 
     // symbol:
     // ?setCurrentAnimationControllerStatePlayer@AnimationComponent@@QEAAXV?$shared_ptr@VActorAnimationControllerStatePlayer@@@std@@@Z
-    MCAPI void setCurrentAnimationControllerStatePlayer(std::shared_ptr<class ActorAnimationControllerStatePlayer>);
+    MCAPI void
+    setCurrentAnimationControllerStatePlayer(std::shared_ptr<class ActorAnimationControllerStatePlayer> statePlayer);
 
     // symbol: ?setDirty@AnimationComponent@@QEAAXXZ
     MCAPI void setDirty();

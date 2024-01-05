@@ -13,7 +13,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0ActorAnimationController@@QEAA@AEBVHashedString@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ActorAnimationController(class HashedString const&, class SemVersion const&, std::string const&);
+    MCAPI ActorAnimationController(
+        class HashedString const& name,
+        class SemVersion const&   version,
+        std::string const&        sourceFilePathWithExtension
+    );
 
     // symbol:
     // ?addState@ActorAnimationController@@QEAAAEAV?$shared_ptr@VActorAnimationControllerState@@@std@@AEBVHashedString@@@Z

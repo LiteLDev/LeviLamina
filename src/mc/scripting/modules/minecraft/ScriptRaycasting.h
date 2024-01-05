@@ -18,7 +18,7 @@ namespace ScriptModuleMinecraft::ScriptRaycasting {
 // symbol:
 // ?getBlockFromRay@ScriptRaycasting@ScriptModuleMinecraft@@YA?AV?$optional@UBlockHitInfo@ScriptRaycasting@ScriptModuleMinecraft@@@std@@AEBVBlockSource@@AEBVVec3@@1AEBUScriptBlockRaycastOptions@2@@Z
 MCAPI std::optional<struct ScriptModuleMinecraft::ScriptRaycasting::BlockHitInfo>
-getBlockFromRay(class BlockSource const&, class Vec3 const&, class Vec3 const&, struct ScriptModuleMinecraft::ScriptBlockRaycastOptions const&);
+getBlockFromRay(class BlockSource const& region, class Vec3 const& pos, class Vec3 const& vector, struct ScriptModuleMinecraft::ScriptBlockRaycastOptions const&);
 
 // symbol:
 // ?getEntitiesFromRay@ScriptRaycasting@ScriptModuleMinecraft@@YA?AV?$vector@UEntityHitInfo@ScriptRaycasting@ScriptModuleMinecraft@@V?$allocator@UEntityHitInfo@ScriptRaycasting@ScriptModuleMinecraft@@@std@@@std@@AEAVBlockSource@@AEBVVec3@@1AEBUScriptEntityRaycastOptions@2@V?$optional@PEBVActor@@@4@@Z

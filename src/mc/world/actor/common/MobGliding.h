@@ -11,7 +11,7 @@ MCAPI int getFallFlyTicks(class EntityContext const&);
 MCAPI void initializeMob(class EntityContext&);
 
 // symbol: ?setArmorFlyEnabled@MobGliding@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setArmorFlyEnabled(class EntityContext&, bool);
+MCAPI void setArmorFlyEnabled(class EntityContext&, bool value);
 // NOLINTEND
 
 }; // namespace MobGliding

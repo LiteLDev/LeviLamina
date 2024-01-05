@@ -16,16 +16,28 @@ _tickActorUpdatePositionAndAABBSystem2(struct ActorSetPositionRequestComponent c
 
 // symbol:
 // ?_tickAddLocalPlayerEntityMovedSystemAsynchronous1@ActorSetPosSystemImpl@@YAXAEAVStrictEntityContext@@V?$EntityModifier@V?$FlagComponent@UActorChunkMoveFlag@@@@V?$FlagComponent@UActorLocalPlayerEntityMovedFlag@@@@UActorSetPositionRequestComponent@@@@@Z
-MCAPI void
-_tickAddLocalPlayerEntityMovedSystemAsynchronous1(class StrictEntityContext&, class EntityModifier<class FlagComponent<struct ActorChunkMoveFlag>, class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>, struct ActorSetPositionRequestComponent>);
+MCAPI void _tickAddLocalPlayerEntityMovedSystemAsynchronous1(
+    class StrictEntityContext& context,
+    class EntityModifier<
+        class FlagComponent<struct ActorChunkMoveFlag>,
+        class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>,
+        struct ActorSetPositionRequestComponent> modifier
+);
 
 // symbol: ?_tickAddLocalPlayerEntityMovedSystemSynchronous1@ActorSetPosSystemImpl@@YAXAEBVActorOwnerComponent@@@Z
 MCAPI void _tickAddLocalPlayerEntityMovedSystemSynchronous1(class ActorOwnerComponent const&);
 
 // symbol:
 // ?_tickChunkMoveNeededSystemAsynchronous4@ActorSetPosSystemImpl@@YAXAEAVStrictEntityContext@@AEBUChunkPositionComponent@@AEBUStateVectorComponent@@V?$EntityModifier@V?$FlagComponent@UActorChunkMoveFlag@@@@V?$FlagComponent@UActorLocalPlayerEntityMovedFlag@@@@UActorSetPositionRequestComponent@@@@@Z
-MCAPI void
-_tickChunkMoveNeededSystemAsynchronous4(class StrictEntityContext&, struct ChunkPositionComponent const&, struct StateVectorComponent const&, class EntityModifier<class FlagComponent<struct ActorChunkMoveFlag>, class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>, struct ActorSetPositionRequestComponent>);
+MCAPI void _tickChunkMoveNeededSystemAsynchronous4(
+    class StrictEntityContext& context,
+    struct ChunkPositionComponent const&,
+    struct StateVectorComponent const&,
+    class EntityModifier<
+        class FlagComponent<struct ActorChunkMoveFlag>,
+        class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>,
+        struct ActorSetPositionRequestComponent> modifier
+);
 
 // symbol:
 // ?_tickChunkMoveNeededSystemSynchronous4@ActorSetPosSystemImpl@@YAXAEBVActorOwnerComponent@@AEBUChunkPositionComponent@@AEBUStateVectorComponent@@@Z

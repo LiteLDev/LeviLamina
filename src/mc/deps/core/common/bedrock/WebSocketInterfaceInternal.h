@@ -30,12 +30,17 @@ public:
 
     // symbol:
     // ?connect@WebSocketInterfaceInternal@Http@Bedrock@@UEAAJPEBD0V?$not_null@PEAUHC_WEBSOCKET_OBSERVER@@@gsl@@V?$not_null@PEAUXAsyncBlock@@@5@PEAUHC_PERFORM_ENV@@@Z
-    MCVAPI long
-    connect(char const*, char const*, gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, gsl::not_null<struct XAsyncBlock*>, struct HC_PERFORM_ENV*);
+    MCVAPI long connect(
+        char const*                                  uri,
+        char const*                                  subProtocol,
+        gsl::not_null<struct HC_WEBSOCKET_OBSERVER*> websocket,
+        gsl::not_null<struct XAsyncBlock*>           asyncBlock,
+        struct HC_PERFORM_ENV*                       env
+    );
 
     // symbol:
     // ?disconnect@WebSocketInterfaceInternal@Http@Bedrock@@UEAAJV?$not_null@PEAUHC_WEBSOCKET_OBSERVER@@@gsl@@W4HCWebSocketCloseStatus@@@Z
-    MCVAPI long disconnect(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*>, ::HCWebSocketCloseStatus);
+    MCVAPI long disconnect(gsl::not_null<struct HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status);
 
     // symbol:
     // ?sendBinaryMessage@WebSocketInterfaceInternal@Http@Bedrock@@UEAAJV?$not_null@PEAUHC_WEBSOCKET_OBSERVER@@@gsl@@V?$span@$$CBE$0?0@5@V?$not_null@PEAUXAsyncBlock@@@5@@Z

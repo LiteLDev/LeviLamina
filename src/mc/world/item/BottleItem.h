@@ -84,10 +84,11 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@BottleItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol: ??0BottleItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BottleItem(std::string const& name, int id);
+    MCAPI BottleItem(std::string const& name, int);
 
     // NOLINTEND
 
@@ -95,13 +96,18 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_createBottledItem@BottleItem@@AEBAXAEAVActor@@AEAVItemStack@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI void _createBottledItem(class Actor&, class ItemStack&, std::string_view) const;
+    MCAPI void _createBottledItem(class Actor& entity, class ItemStack& instance, std::string_view itemToCreate) const;
 
     // symbol:
     // ?_fillBottleViaDispenser@BottleItem@@AEBAXAEAVBlockSource@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEAVContainer@@HAEBVVec3@@E@Z
-    MCAPI void
-    _fillBottleViaDispenser(class BlockSource&, std::string_view, class Container&, int, class Vec3 const&, uchar)
-        const;
+    MCAPI void _fillBottleViaDispenser(
+        class BlockSource& region,
+        std::string_view   bottledItem,
+        class Container&   container,
+        int                slot,
+        class Vec3 const&  pos,
+        uchar              face
+    ) const;
 
     // NOLINTEND
 };

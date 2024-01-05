@@ -42,7 +42,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_attemptAttack@StompAttackGoal@@IEAAXAEAVActor@@@Z
-    MCAPI void _attemptAttack(class Actor&);
+    MCAPI void _attemptAttack(class Actor& target);
 
     // NOLINTEND
 };

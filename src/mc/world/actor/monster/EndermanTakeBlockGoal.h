@@ -29,7 +29,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 10, symbol: ?getRandomNearbyBlockPos@EndermanTakeBlockGoal@@MEBA?AVBlockPos@@AEBVVec3@@@Z
-    virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const&) const;
+    virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const& centerPos) const;
 
     // symbol: ??0EndermanTakeBlockGoal@@QEAA@AEAVEnderMan@@@Z
     MCAPI explicit EndermanTakeBlockGoal(class EnderMan& enderman);

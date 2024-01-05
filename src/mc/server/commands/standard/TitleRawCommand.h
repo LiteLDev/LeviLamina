@@ -31,9 +31,12 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_sendTitlePacketTextObject@TitleRawCommand@@AEBA_NW4TitleType@SetTitlePacket@@AEBVCommandOrigin@@AEAVCommandOutput@@AEBV?$CommandSelectorResults@VPlayer@@@@@Z
-    MCAPI bool
-    _sendTitlePacketTextObject(::SetTitlePacket::TitleType, class CommandOrigin const&, class CommandOutput&, class CommandSelectorResults<class Player> const&)
-        const;
+    MCAPI bool _sendTitlePacketTextObject(
+        ::SetTitlePacket::TitleType                       type,
+        class CommandOrigin const&                        origin,
+        class CommandOutput&                              output,
+        class CommandSelectorResults<class Player> const& targets
+    ) const;
 
     // NOLINTEND
 };

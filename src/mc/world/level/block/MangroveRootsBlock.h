@@ -34,7 +34,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 25, symbol: ?canConnect@MangroveRootsBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
+    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -134,7 +134,7 @@ public:
 
     // symbol:
     // ??0MangroveRootsBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI MangroveRootsBlock(std::string const&, int, class Material const&);
+    MCAPI MangroveRootsBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

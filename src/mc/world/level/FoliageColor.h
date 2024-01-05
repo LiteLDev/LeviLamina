@@ -33,7 +33,7 @@ public:
     MCAPI static int getFoliageColor(float temp, float rain);
 
     // symbol: ?getFoliageColor@FoliageColor@@SAHW4PaletteName@1@MM@Z
-    MCAPI static int getFoliageColor(::FoliageColor::PaletteName, float, float);
+    MCAPI static int getFoliageColor(::FoliageColor::PaletteName paletteName, float temp, float rain);
 
     // symbol: ?getMapBirchColor@FoliageColor@@SAHMM@Z
     MCAPI static int getMapBirchColor(float temp, float rain);

@@ -42,7 +42,7 @@ public:
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
     // vIndex: 16, symbol: ?randomlyModifyPosition@CoralPlantBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-    virtual class Vec3 randomlyModifyPosition(class BlockPos const&) const;
+    virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -111,7 +111,8 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 61, symbol: ?checkIsPathable@CoralPlantBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    virtual bool
+    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -120,18 +121,19 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 80, symbol: ?mayConsumeFertilizer@CoralPlantBlock@@UEBA_NAEAVBlockSource@@@Z
-    virtual bool mayConsumeFertilizer(class BlockSource&) const;
+    virtual bool mayConsumeFertilizer(class BlockSource& region) const;
 
     // vIndex: 86, symbol: ?mayPlaceOn@CoralPlantBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlaceOn(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@CoralPlantBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 95, symbol:
     // ?spawnResources@CoralPlantBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Randomize& randomize, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 109, symbol: __unk_vfn_109
@@ -153,13 +155,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@CoralPlantBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@CoralPlantBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -168,10 +170,11 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@CoralPlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 162, symbol: ?getMapColor@CoralPlantBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color
+    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 165, symbol: ?getResourceCount@CoralPlantBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
     virtual int getResourceCount(class Randomize&, class Block const&, int) const;
@@ -180,14 +183,14 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0CoralPlantBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CoralPlantBlock(std::string const&, int);
+    MCAPI CoralPlantBlock(std::string const& nameId, int);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?checkAlive@CoralPlantBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void checkAlive(class BlockSource&, class BlockPos const&) const;
+    MCAPI void checkAlive(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

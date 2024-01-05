@@ -107,7 +107,8 @@ public:
     virtual bool canContainLiquid() const;
 
     // vIndex: 61, symbol: ?checkIsPathable@FireBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    virtual bool
+    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -162,7 +163,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 167, symbol: ?entityInside@FireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-    virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
+    virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor& entity) const;
 
     // symbol: ?canBeSilkTouched@FireBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -171,24 +172,25 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0FireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FireBlock(std::string const& nameId, int id);
+    MCAPI FireBlock(std::string const& nameId, int);
 
     // symbol: ?checkBurn@FireBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@HAEAVRandomize@@H@Z
     MCAPI void
-    checkBurn(class BlockSource& region, class BlockPos const& pos, int chance, class Randomize& random, int age) const;
+    checkBurn(class BlockSource& region, class BlockPos const& pos, int chance, class Randomize& randomize, int age)
+        const;
 
     // symbol: ?isSolidToppedBlock@FireBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool isSolidToppedBlock(class BlockSource&, class BlockPos const&);
+    MCAPI static bool isSolidToppedBlock(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_tryAddToTickingQueue@FireBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    MCAPI void _tryAddToTickingQueue(class BlockSource&, class BlockPos const&, class Random&) const;
+    MCAPI void _tryAddToTickingQueue(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ?_trySpawnSoulFire@FireBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _trySpawnSoulFire(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool _trySpawnSoulFire(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?getFireOdds@FireBlock@@AEBAMAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI float getFireOdds(class BlockSource& region, class BlockPos const& pos) const;

@@ -15,7 +15,7 @@ MCAPI ::Puv::Legacy::EquipmentSlot hashToEquipmentSlot(uint64 const&);
 
 // symbol:
 // ?stringToEquipmentSlot@EquipmentSlots@@YA?AW4EquipmentSlot@Legacy@Puv@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI ::Puv::Legacy::EquipmentSlot stringToEquipmentSlot(std::string const&);
+MCAPI ::Puv::Legacy::EquipmentSlot stringToEquipmentSlot(std::string const& slotName);
 // NOLINTEND
 
 }; // namespace EquipmentSlots

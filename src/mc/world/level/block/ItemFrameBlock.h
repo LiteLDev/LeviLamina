@@ -131,11 +131,11 @@ public:
     // vIndex: 95, symbol:
     // ?spawnResources@ItemFrameBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Randomize& randomize, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 96, symbol: ?asItemInstance@ItemFrameBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const* blockActor) const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@ItemFrameBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const& getPlacementBlock(
@@ -182,13 +182,13 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@ItemFrameBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@ItemFrameBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -197,13 +197,12 @@ public:
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 164, symbol: ?getResourceItem@ItemFrameBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 168, symbol:
     // ?getEntityResourceItem@ItemFrameBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
     virtual class ItemInstance
-    getEntityResourceItem(class Randomize& random, class BlockActor const& blockEntity, int bonusLootLevel) const;
+    getEntityResourceItem(class Randomize& randomize, class BlockActor const& blockEntity, int bonusLootLevel) const;
 
     // vIndex: 169, symbol: ?getSpawnedItemName@ItemFrameBlock@@UEBA?AVHashedString@@XZ
     virtual class HashedString getSpawnedItemName() const;
@@ -218,7 +217,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0ItemFrameBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ItemFrameBlock(std::string const& nameId, int id);
+    MCAPI ItemFrameBlock(std::string const& nameId, int);
 
     // NOLINTEND
 

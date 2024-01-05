@@ -59,15 +59,17 @@ public:
     virtual ::Mirror loadMirror(::Mirror mirror);
 
     // vIndex: 13, symbol: ?loadActorUniqueID@StructureDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
-    virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID id);
+    virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
 
     // vIndex: 14, symbol: ?loadOwnerID@StructureDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
-    virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID id);
+    virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
 
     // vIndex: 15, symbol:
     // ?loadActorInternalComponentInfo@StructureDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
-    virtual struct InternalComponentRegistry::ComponentInfo const*
-    loadActorInternalComponentInfo(std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo> const&, std::string const&);
+    virtual struct InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(
+        std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo> const& registry,
+        std::string const&                                                                             componentName
+    );
 
     // vIndex: 16, symbol: ?getType@StructureDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ
     virtual ::DataLoadHelperType getType() const;

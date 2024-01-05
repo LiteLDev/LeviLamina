@@ -117,10 +117,11 @@ public:
     virtual bool mayPick() const;
 
     // vIndex: 85, symbol: ?mayPlace@SoulFireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@SoulFireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -144,13 +145,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@SoulFireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@SoulFireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -159,10 +160,10 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@SoulFireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 167, symbol: ?entityInside@SoulFireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-    virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
+    virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor& entity) const;
 
     // symbol: ?canBeSilkTouched@SoulFireBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -171,10 +172,10 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SoulFireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SoulFireBlock(std::string const&, int);
+    MCAPI SoulFireBlock(std::string const& nameId, int);
 
     // symbol: ?isValidSoulFireFuel@SoulFireBlock@@SA_NAEBVBlockLegacy@@@Z
-    MCAPI static bool isValidSoulFireFuel(class BlockLegacy const&);
+    MCAPI static bool isValidSoulFireFuel(class BlockLegacy const& block);
 
     // NOLINTEND
 };

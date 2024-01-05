@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??8ScriptBlockAreaSize@ScriptModuleMinecraft@@QEBA_NAEBV01@@Z
-    MCAPI bool operator==(class ScriptModuleMinecraft::ScriptBlockAreaSize const&) const;
+    MCAPI bool operator==(class ScriptModuleMinecraft::ScriptBlockAreaSize const& other) const;
 
     // symbol:
     // ?bind@ScriptBlockAreaSize@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockAreaSize@ScriptModuleMinecraft@@@Scripting@@XZ

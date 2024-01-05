@@ -49,7 +49,7 @@ public:
     MCAPI bool isValid() const;
 
     // symbol: ??8EntityContext@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class EntityContext const& other) const;
+    MCAPI bool operator==(class EntityContext const&) const;
 
     // NOLINTEND
 

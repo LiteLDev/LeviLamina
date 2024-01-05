@@ -38,15 +38,10 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0RangedAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit RangedAttackGoal(class Mob&);
+    MCAPI explicit RangedAttackGoal(class Mob& mob);
 
     // symbol: ?handleAttackBehavior@RangedAttackGoal@@QEAAXPEAVActor@@AEBVVec3@@M_N@Z
-    MCAPI void handleAttackBehavior(
-        class Actor*      lockedTarget,
-        class Vec3 const& lockedTargetPos,
-        float             targetDistSqr,
-        bool              canSee
-    );
+    MCAPI void handleAttackBehavior(class Actor* lockedTarget, class Vec3 const& lockedTargetPos, float, bool canSee);
 
     // NOLINTEND
 };

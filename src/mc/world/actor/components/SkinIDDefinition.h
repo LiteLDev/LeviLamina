@@ -21,9 +21,9 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?buildSchema@SkinIDDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@USkinIDDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct SkinIDDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct SkinIDDefinition>>& root
+    );
 
     // NOLINTEND
 };

@@ -87,7 +87,7 @@ public:
     );
 
     // symbol: ?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@@Z
-    MCVAPI ::EventResult onPlayerDestroyedBlock(class Player& player, class Block const& blockType);
+    MCVAPI ::EventResult onPlayerDestroyedBlock(class Player& player, class Block const& block);
 
     // symbol: ?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@HHH@Z
     MCVAPI ::EventResult onPlayerDestroyedBlock(class Player& player, int x, int y, int z);
@@ -136,7 +136,8 @@ public:
 
     // symbol:
     // ?onPlayerPiglinBarter@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCVAPI ::EventResult onPlayerPiglinBarter(class Player&, std::string const&, bool);
+    MCVAPI ::EventResult
+    onPlayerPiglinBarter(class Player& player, std::string const& item, bool wasTargetingBarteringPlayer);
 
     // symbol:
     // ?onPlayerPortalBuilt@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
@@ -157,14 +158,18 @@ public:
     MCVAPI ::EventResult onPlayerSmithiedItem(class Player&, class ItemDescriptor const&);
 
     // symbol: ?onPlayerStartRiding@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVActor@@@Z
-    MCVAPI ::EventResult onPlayerStartRiding(class Player& player, class Actor& ride);
+    MCVAPI ::EventResult onPlayerStartRiding(class Player& player, class Actor& vehicle);
 
     // symbol: ?onPlayerStopRiding@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@_N11@Z
-    MCVAPI ::EventResult
-    onPlayerStopRiding(class Player& player, bool exitFromRider, bool entityIsBeingDestroyed, bool switchingRides);
+    MCVAPI ::EventResult onPlayerStopRiding(
+        class Player& player,
+        bool          exitFromPassenger,
+        bool          entityIsBeingDestroyed,
+        bool          switchingVehicles
+    );
 
     // symbol: ?onPlayerTargetBlockHit@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z
-    MCVAPI ::EventResult onPlayerTargetBlockHit(class Player&, int);
+    MCVAPI ::EventResult onPlayerTargetBlockHit(class Player& player, int signalStrength);
 
     // symbol: ?onPlayerTeleported@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
     MCVAPI ::EventResult onPlayerTeleported(class Player& player);
@@ -179,7 +184,7 @@ public:
     MCVAPI ::EventResult onPlayerTurn(class Player& player, class Vec2& turnDelta);
 
     // symbol: ?onPlayerWaxOnWaxOff@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z
-    MCVAPI ::EventResult onPlayerWaxOnWaxOff(class Player&, int);
+    MCVAPI ::EventResult onPlayerWaxOnWaxOff(class Player& player, int blockID);
 
     // symbol: ?onStartDestroyBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@AEAE@Z
     MCVAPI ::EventResult onStartDestroyBlock(class Player& player, class BlockPos const& pos, uchar& face);

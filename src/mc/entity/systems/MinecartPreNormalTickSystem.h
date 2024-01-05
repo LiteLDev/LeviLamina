@@ -23,8 +23,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_doMinecartPreNormalTickSystem@MinecartPreNormalTickSystem@@CAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@V?$EntityModifier@UMinecartPreNormalTickBlockPosComponent@@@@@Z
-    MCAPI static void
-    _doMinecartPreNormalTickSystem(class StrictEntityContext&, class ActorOwnerComponent&, class EntityModifier<struct MinecartPreNormalTickBlockPosComponent>);
+    MCAPI static void _doMinecartPreNormalTickSystem(
+        class StrictEntityContext& context,
+        class ActorOwnerComponent&,
+        class EntityModifier<struct MinecartPreNormalTickBlockPosComponent> mod
+    );
 
     // NOLINTEND
 };

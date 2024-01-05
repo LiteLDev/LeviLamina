@@ -37,7 +37,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@DecoratedPotBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -112,22 +112,27 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 94, symbol: ?playerWillDestroy@DecoratedPotBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
-    virtual class Block const* playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
+    virtual class Block const*
+    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 95, symbol:
     // ?spawnResources@DecoratedPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Randomize&, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 96, symbol: ?asItemInstance@DecoratedPotBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const* blockActor) const;
 
     // vIndex: 97, symbol:
     // ?trySpawnResourcesOnExplosion@DecoratedPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@M@Z
-    virtual void
-    trySpawnResourcesOnExplosion(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, float)
-        const;
+    virtual void trySpawnResourcesOnExplosion(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class Block const&    block,
+        class Randomize&,
+        float
+    ) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -167,7 +172,8 @@ public:
 
     // vIndex: 168, symbol:
     // ?getEntityResourceItem@DecoratedPotBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
-    virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
+    virtual class ItemInstance
+    getEntityResourceItem(class Randomize& randomize, class BlockActor const& blockEntity, int bonusLootLevel) const;
 
     // symbol: ?hasComparatorSignal@DecoratedPotBlock@@UEBA_NXZ
     MCVAPI bool hasComparatorSignal() const;
@@ -176,7 +182,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0DecoratedPotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DecoratedPotBlock(std::string const&, int);
+    MCAPI DecoratedPotBlock(std::string const& name, int);
 
     // NOLINTEND
 

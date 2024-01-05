@@ -89,7 +89,7 @@ public:
     virtual bool isSecondaryPowered() const;
 
     // vIndex: 22, symbol: ?removeFromAnySourceList@BaseCircuitComponent@@MEAAXPEBV1@@Z
-    virtual void removeFromAnySourceList(class BaseCircuitComponent const*);
+    virtual void removeFromAnySourceList(class BaseCircuitComponent const* component);
 
     // vIndex: 23, symbol: ?getCircuitComponentType@BaseCircuitComponent@@UEBA?AW4CircuitComponentType@@XZ
     virtual ::CircuitComponentType getCircuitComponentType() const;
@@ -107,7 +107,7 @@ public:
     MCAPI BaseCircuitComponent();
 
     // symbol: ?addSourceItem@BaseCircuitComponent@@QEAAXAEBVItem@CircuitComponentList@@@Z
-    MCAPI void addSourceItem(class CircuitComponentList::Item const&);
+    MCAPI void addSourceItem(class CircuitComponentList::Item const& item);
 
     // symbol: ?hasDirectPower@BaseCircuitComponent@@QEAA_NXZ
     MCAPI bool hasDirectPower();
@@ -117,7 +117,8 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?trackPowerSource@BaseCircuitComponent@@IEAA_NAEBVCircuitTrackingInfo@@H_NH1@Z
-    MCAPI bool trackPowerSource(class CircuitTrackingInfo const&, int, bool, int, bool);
+    MCAPI bool
+    trackPowerSource(class CircuitTrackingInfo const& info, int dampening, bool directlyPowered, int data, bool);
 
     // NOLINTEND
 };

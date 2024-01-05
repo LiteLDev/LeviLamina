@@ -24,7 +24,7 @@ public:
     operator=(struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&);
 
     // symbol: ??8ScriptActorApplyDamageByProjectileOptions@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
-    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&) const;
+    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const& other) const;
 
     // symbol: ??1ScriptActorApplyDamageByProjectileOptions@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptActorApplyDamageByProjectileOptions();

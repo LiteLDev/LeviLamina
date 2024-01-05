@@ -41,7 +41,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?defaultDeleter@Blob@mce@@CAXPEAE@Z
-    MCAPI static void defaultDeleter(uchar*);
+    MCAPI static void defaultDeleter(uchar* ptr);
 
     // NOLINTEND
 };

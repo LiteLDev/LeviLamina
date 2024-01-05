@@ -21,7 +21,7 @@ public:
     virtual float getBaseAmbientValue() const;
 
     // symbol: ?getBrightnessRampValue@DimensionBrightnessRamp@@QEBAMH@Z
-    MCAPI float getBrightnessRampValue(int) const;
+    MCAPI float getBrightnessRampValue(int index) const;
 
     // NOLINTEND
 };

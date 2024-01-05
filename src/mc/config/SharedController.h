@@ -26,13 +26,13 @@ public:
     virtual ~SharedController() = default;
 
     // vIndex: 1, symbol: ?canChat@SharedController@PlayerCapabilities@@UEBA_NAEBUIPlayerData@2@@Z
-    virtual bool canChat(struct PlayerCapabilities::IPlayerData const&) const;
+    virtual bool canChat(struct PlayerCapabilities::IPlayerData const& player) const;
 
     // vIndex: 2, symbol: ?canTell@SharedController@PlayerCapabilities@@UEBA_NAEBUIPlayerData@2@@Z
-    virtual bool canTell(struct PlayerCapabilities::IPlayerData const&) const;
+    virtual bool canTell(struct PlayerCapabilities::IPlayerData const& player) const;
 
     // vIndex: 3, symbol: ?canOpenChat@SharedController@PlayerCapabilities@@UEBA_NAEBUIPlayerData@2@@Z
-    virtual bool canOpenChat(struct PlayerCapabilities::IPlayerData const&) const;
+    virtual bool canOpenChat(struct PlayerCapabilities::IPlayerData const& player) const;
 
     // NOLINTEND
 };

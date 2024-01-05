@@ -22,7 +22,7 @@ public:
     virtual ~SplashPotionEffectSubcomponent();
 
     // vIndex: 1, symbol: ?readfromJSON@SplashPotionEffectSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-    virtual void readfromJSON(class Json::Value&, class SemVersion const&);
+    virtual void readfromJSON(class Json::Value& component, class SemVersion const& engineVersion);
 
     // vIndex: 2, symbol: ?writetoJSON@SplashPotionEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
     virtual void writetoJSON(class Json::Value& component) const;
@@ -40,7 +40,7 @@ public:
     // ?applyMobEffects@SplashPotionEffectSubcomponent@@QEAAXAEBVMobEffectInstance@@AEBV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@AEAVActor@@AEBV?$shared_ptr@$$CBVPotion@@@4@MPEAVMobEffect@@AEAVHitResult@@H@Z
     MCAPI void applyMobEffects(
         class MobEffectInstance const&             effectInst,
-        std::vector<class Actor*> const&           entities,
+        std::vector<class Actor*> const&           actors,
         class Actor&                               projectile,
         std::shared_ptr<class Potion const> const& potion,
         float                                      splashRange,

@@ -24,7 +24,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?handleConsumedItem@CraftHandlerCrafting@@UEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z
-    virtual ::ItemStackNetResult handleConsumedItem(::ContainerEnumName, uchar, class ItemStack const&);
+    virtual ::ItemStackNetResult handleConsumedItem(::ContainerEnumName, uchar slot, class ItemStack const&);
 
     // vIndex: 2, symbol:
     // ?preHandleAction@CraftHandlerCrafting@@UEAA?AW4ItemStackNetResult@@W4ItemStackRequestActionType@@@Z

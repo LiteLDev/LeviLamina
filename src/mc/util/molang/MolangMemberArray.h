@@ -35,50 +35,54 @@ public:
     MCAPI MolangMemberArray(struct MolangMemberArray const&);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_RGB@@AEBVColor@mce@@@Z
-    MCAPI MolangMemberArray(::MolangStruct_RGB, class mce::Color const&);
+    MCAPI MolangMemberArray(::MolangStruct_RGB, class mce::Color const& color);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_RGBA@@AEBVColor@mce@@@Z
-    MCAPI MolangMemberArray(::MolangStruct_RGBA, class mce::Color const&);
+    MCAPI MolangMemberArray(::MolangStruct_RGBA, class mce::Color const& color);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_XY@@AEBVVec2@@@Z
-    MCAPI MolangMemberArray(::MolangStruct_XY, class Vec2 const&);
+    MCAPI MolangMemberArray(::MolangStruct_XY, class Vec2 const& vec);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_XYZ@@AEBVVec3@@@Z
-    MCAPI MolangMemberArray(::MolangStruct_XYZ, class Vec3 const&);
+    MCAPI MolangMemberArray(::MolangStruct_XYZ, class Vec3 const& vec);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_BaseAndPattern@@HH@Z
-    MCAPI MolangMemberArray(::MolangStruct_BaseAndPattern, int, int);
+    MCAPI MolangMemberArray(::MolangStruct_BaseAndPattern, int base, int pattern);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_MinAndMax@@$$QEAU0@1@Z
-    MCAPI MolangMemberArray(::MolangStruct_MinAndMax, struct MolangMemberArray&&, struct MolangMemberArray&&);
+    MCAPI MolangMemberArray(::MolangStruct_MinAndMax, struct MolangMemberArray&& min, struct MolangMemberArray&& max);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_PoseIndexAndHurtTime@@HH@Z
-    MCAPI MolangMemberArray(::MolangStruct_PoseIndexAndHurtTime, int, int);
+    MCAPI MolangMemberArray(::MolangStruct_PoseIndexAndHurtTime, int poseIndex, int hurtTime);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_RotYAndPosY@@MM@Z
-    MCAPI MolangMemberArray(::MolangStruct_RotYAndPosY, float, float);
+    MCAPI MolangMemberArray(::MolangStruct_RotYAndPosY, float rotY, float);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_SpeedAndDirection@@MAEBVVec3@@@Z
-    MCAPI MolangMemberArray(::MolangStruct_SpeedAndDirection, float, class Vec3 const&);
+    MCAPI MolangMemberArray(::MolangStruct_SpeedAndDirection, float speed, class Vec3 const& direction);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_TentacleAngleAndSwimRotation@@MM@Z
     MCAPI MolangMemberArray(::MolangStruct_TentacleAngleAndSwimRotation, float, float);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_UV@@MM@Z
-    MCAPI MolangMemberArray(::MolangStruct_UV, float, float);
+    MCAPI MolangMemberArray(::MolangStruct_UV, float u, float v);
 
     // symbol: ??0MolangMemberArray@@QEAA@W4MolangStruct_TRS@@$$QEAU0@11@Z
-    MCAPI
-    MolangMemberArray(::MolangStruct_TRS, struct MolangMemberArray&&, struct MolangMemberArray&&, struct MolangMemberArray&&);
+    MCAPI MolangMemberArray(
+        ::MolangStruct_TRS,
+        struct MolangMemberArray&&,
+        struct MolangMemberArray&& rotation,
+        struct MolangMemberArray&& scale
+    );
 
     // symbol: ?get@MolangMemberArray@@QEBAPEBUMolangScriptArg@@AEBVHashedString@@@Z
-    MCAPI struct MolangScriptArg const* get(class HashedString const&) const;
+    MCAPI struct MolangScriptArg const* get(class HashedString const& name) const;
 
     // symbol: ?getOrAdd@MolangMemberArray@@QEAAAEAUMolangScriptArg@@AEBVHashedString@@@Z
-    MCAPI struct MolangScriptArg& getOrAdd(class HashedString const&);
+    MCAPI struct MolangScriptArg& getOrAdd(class HashedString const& name);
 
     // symbol: ??8MolangMemberArray@@QEBA_NAEBU0@@Z
-    MCAPI bool operator==(struct MolangMemberArray const&) const;
+    MCAPI bool operator==(struct MolangMemberArray const& rhs) const;
 
     // symbol: ??1MolangMemberArray@@QEAA@XZ
     MCAPI ~MolangMemberArray();

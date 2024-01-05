@@ -22,7 +22,7 @@ public:
     MCAPI BlockBreakSensorDefinition();
 
     // symbol: ?initialize@BlockBreakSensorDefinition@@QEBAXAEAVEntityContext@@AEAVBlockBreakSensorComponent@@@Z
-    MCAPI void initialize(class EntityContext& entity, class BlockBreakSensorComponent& component) const;
+    MCAPI void initialize(class EntityContext&, class BlockBreakSensorComponent& component) const;
 
     // symbol:
     // ?buildSchema@BlockBreakSensorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBlockBreakSensorDefinition@@@JsonUtil@@@std@@@Z

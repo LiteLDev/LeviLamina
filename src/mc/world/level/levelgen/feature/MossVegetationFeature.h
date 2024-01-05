@@ -17,7 +17,7 @@ public:
     virtual ~MossVegetationFeature() = default;
 
     // vIndex: 3, symbol: ?place@MossVegetationFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ??0MossVegetationFeature@@QEAA@XZ
     MCAPI MossVegetationFeature();

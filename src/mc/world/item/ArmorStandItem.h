@@ -77,10 +77,10 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@ArmorStandItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor&, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;
 
     // symbol: ??0ArmorStandItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-    MCAPI ArmorStandItem(std::string const& name, short id);
+    MCAPI ArmorStandItem(std::string const& name, short);
 
     // symbol: ?_shouldRemove@ArmorStandItem@@QEBA_NAEAVBlockSource@@VBlockPos@@@Z
     MCAPI bool _shouldRemove(class BlockSource& region, class BlockPos pos) const;

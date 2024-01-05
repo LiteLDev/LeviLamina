@@ -41,7 +41,8 @@ public:
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
     // vIndex: 17, symbol: ?onProjectileHit@BigDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
-    virtual void onProjectileHit(class BlockSource&, class BlockPos const&, class Actor const&) const;
+    virtual void
+    onProjectileHit(class BlockSource& region, class BlockPos const& pos, class Actor const& projectile) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -113,32 +114,35 @@ public:
     virtual bool canContainLiquid() const;
 
     // vIndex: 61, symbol: ?checkIsPathable@BigDripleafBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    virtual bool checkIsPathable(class Actor& entity, class BlockPos const&, class BlockPos const& pathPos) const;
 
     // vIndex: 65, symbol: ?onRedstoneUpdate@BigDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-    virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
+    virtual void onRedstoneUpdate(class BlockSource& region, class BlockPos const& pos, int strength, bool) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
 
     // vIndex: 71, symbol: ?setupRedstoneComponent@BigDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
+    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
 
     // vIndex: 79, symbol:
     // ?onFertilized@BigDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
+        const;
 
     // vIndex: 81, symbol: ?canBeFertilized@BigDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 86, symbol: ?mayPlaceOn@BigDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlaceOn(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@BigDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -162,13 +166,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@BigDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@BigDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -177,10 +181,10 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@BigDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 167, symbol: ?entityInside@BigDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-    virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
+    virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
     // symbol: ?canBeSilkTouched@BigDripleafBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -189,10 +193,11 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0BigDripleafBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BigDripleafBlock(std::string const&, int);
+    MCAPI BigDripleafBlock(std::string const& nameId, int);
 
     // symbol: ?placeWithRandomHeight@BigDripleafBlock@@SAXAEAVBlockSource@@AEAVRandom@@VBlockPos@@H@Z
-    MCAPI static void placeWithRandomHeight(class BlockSource&, class Random&, class BlockPos, int);
+    MCAPI static void
+    placeWithRandomHeight(class BlockSource& region, class Random& random, class BlockPos, int facing);
 
     // symbol: ?MAX_DRIPLEAF_GROWTH_HEIGHT@BigDripleafBlock@@2HB
     MCAPI static int const MAX_DRIPLEAF_GROWTH_HEIGHT;
@@ -202,13 +207,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_findHeadPos@BigDripleafBlock@@AEBA?AVBlockPos@@AEAVBlockSource@@V2@@Z
-    MCAPI class BlockPos _findHeadPos(class BlockSource&, class BlockPos) const;
+    MCAPI class BlockPos _findHeadPos(class BlockSource& region, class BlockPos pos) const;
 
     // symbol: ?_resetTilt@BigDripleafBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void _resetTilt(class BlockSource&, class BlockPos const&) const;
+    MCAPI void _resetTilt(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?_setTiltAndScheduleTick@BigDripleafBlock@@AEBAXW4BigDripleafTilt@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void _setTiltAndScheduleTick(::BigDripleafTilt, class BlockSource&, class BlockPos const&) const;
+    MCAPI void _setTiltAndScheduleTick(::BigDripleafTilt, class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

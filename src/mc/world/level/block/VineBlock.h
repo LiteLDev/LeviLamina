@@ -164,10 +164,10 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@VineBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 151, symbol: ?randomTick@VineBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -176,10 +176,11 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@VineBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 162, symbol: ?getMapColor@VineBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color
+    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // symbol: ?canBeSilkTouched@VineBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -188,22 +189,22 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0VineBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI VineBlock(std::string const& nameId, int id);
+    MCAPI VineBlock(std::string const& nameId, int);
 
     // symbol: ?growDown@VineBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI void growDown(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void growDown(class BlockSource& region, class BlockPos const& pos, int) const;
 
     // symbol: ?growSideways@VineBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI void growSideways(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void growSideways(class BlockSource& region, class BlockPos const& pos, int) const;
 
     // symbol: ?growUp@VineBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI void growUp(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void growUp(class BlockSource& region, class BlockPos const& pos, int) const;
 
     // symbol: ?getBlockForFace@VineBlock@@SAAEBVBlock@@E@Z
-    MCAPI static class Block const& getBlockForFace(uchar);
+    MCAPI static class Block const& getBlockForFace(uchar face);
 
     // symbol: ?isAcceptableNeighbour@VineBlock@@SA_NAEBVBlock@@@Z
-    MCAPI static bool isAcceptableNeighbour(class Block const&);
+    MCAPI static bool isAcceptableNeighbour(class Block const& block);
 
     // symbol: ?VINE_ALL@VineBlock@@2HB
     MCAPI static int const VINE_ALL;
@@ -225,16 +226,16 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_canGrowDown@VineBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _canGrowDown(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool _canGrowDown(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?_canGrowUp@VineBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _canGrowUp(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool _canGrowUp(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?_canSideSpread@VineBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _canSideSpread(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool _canSideSpread(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?_nextVineDirections@VineBlock@@AEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI int _nextVineDirections(class BlockSource&, class BlockPos const&) const;
+    MCAPI int _nextVineDirections(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

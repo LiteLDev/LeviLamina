@@ -33,8 +33,12 @@ public:
 
     // vIndex: 2, symbol:
     // ?onDestroyObject@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
-    virtual void
-    onDestroyObject(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&, uint);
+    virtual void onDestroyObject(
+        class Scripting::LifetimeRegistry& registry,
+        struct Scripting::ObjectHandle     handle,
+        entt::meta_type const&             type,
+        uint
+    );
 
     // vIndex: 3, symbol:
     // ?onTrackObject@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
@@ -43,20 +47,28 @@ public:
 
     // vIndex: 4, symbol:
     // ?onUntrackObject@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@UObjectHandle@3@AEBVmeta_type@entt@@I@Z
-    virtual void
-    onUntrackObject(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&, uint);
+    virtual void onUntrackObject(
+        class Scripting::LifetimeRegistry& registry,
+        struct Scripting::ObjectHandle     handle,
+        entt::meta_type const&             type,
+        uint
+    );
 
     // vIndex: 5, symbol:
     // ?onObjectReducedToSingleOwner@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@UObjectHandle@3@@Z
-    virtual void onObjectReducedToSingleOwner(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
+    virtual void
+    onObjectReducedToSingleOwner(class Scripting::LifetimeRegistry& registry, struct Scripting::ObjectHandle handle);
 
     // vIndex: 6, symbol:
     // ?onObjectPromotedToMultipleOwners@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@UObjectHandle@3@@Z
-    virtual void onObjectPromotedToMultipleOwners(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
+    virtual void onObjectPromotedToMultipleOwners(
+        class Scripting::LifetimeRegistry& registry,
+        struct Scripting::ObjectHandle     handle
+    );
 
     // vIndex: 7, symbol:
     // ?onPreLifetimeScopeDestroy@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@@Z
-    virtual void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
+    virtual void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry& registry);
 
     // vIndex: 8, symbol:
     // ?onPostLifetimeScopeDestroy@ContextScopeListener@QuickJS@Scripting@@UEAAXAEAVLifetimeRegistry@3@@Z
@@ -68,8 +80,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_maybeReleaseNativeJSValueRef@ContextScopeListener@QuickJS@Scripting@@AEAAXAEAVLifetimeRegistry@3@UObjectHandle@3@AEBVmeta_type@entt@@@Z
-    MCAPI void
-    _maybeReleaseNativeJSValueRef(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle, entt::meta_type const&);
+    MCAPI void _maybeReleaseNativeJSValueRef(
+        class Scripting::LifetimeRegistry& registry,
+        struct Scripting::ObjectHandle     handle,
+        entt::meta_type const&             type
+    );
 
     // NOLINTEND
 };

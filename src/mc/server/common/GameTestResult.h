@@ -19,7 +19,7 @@ public:
     MCAPI struct GameTestResult& operator=(struct GameTestResult const&);
 
     // symbol: ??8GameTestResult@@QEBA_NAEBU0@@Z
-    MCAPI bool operator==(struct GameTestResult const&) const;
+    MCAPI bool operator==(struct GameTestResult const& rhs) const;
 
     // symbol: ??1GameTestResult@@QEAA@XZ
     MCAPI ~GameTestResult();

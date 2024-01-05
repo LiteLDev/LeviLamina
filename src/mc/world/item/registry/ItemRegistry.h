@@ -95,14 +95,14 @@ public:
     _parseItemDefinition(std::string const&, bool, std::function<void(class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&, bool, class Experiments const&)>, class Experiments const&, ::ItemVersion, ::PackType, class Core::Path const&, struct cereal::ReflectionCtx&);
 
     // symbol: ?addItemToTagMap@ItemRegistry@@AEAAXAEBVItem@@@Z
-    MCAPI void addItemToTagMap(class Item const&);
+    MCAPI void addItemToTagMap(class Item const& item);
 
     // symbol: ?clearItemAndCreativeItemRegistry@ItemRegistry@@AEAAXXZ
     MCAPI void clearItemAndCreativeItemRegistry();
 
     // symbol:
     // ?digestServerItemComponents@ItemRegistry@@AEAAXAEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@@2@@std@@@Z
-    MCAPI void digestServerItemComponents(std::vector<std::pair<std::string, class CompoundTag>> const&);
+    MCAPI void digestServerItemComponents(std::vector<std::pair<std::string, class CompoundTag>> const& items);
 
     // symbol: ?finishedRegistration@ItemRegistry@@AEAAXXZ
     MCAPI void finishedRegistration();
@@ -119,61 +119,70 @@ public:
     MCAPI class WeakPtr<class Item> getItem(short);
 
     // symbol: ?getNameFromAlias@ItemRegistry@@AEBA?AU?$pair@VHashedString@@H@std@@AEBVHashedString@@H@Z
-    MCAPI std::pair<class HashedString, int> getNameFromAlias(class HashedString const&, int) const;
+    MCAPI std::pair<class HashedString, int> getNameFromAlias(class HashedString const& name, int aux) const;
 
     // symbol: ?getRef@ItemRegistry@@AEAA?AVItemRegistryRef@@XZ
     MCAPI class ItemRegistryRef getRef();
 
     // symbol: ?init@ItemRegistry@@AEAAXAEBVExperiments@@AEBVBaseGameVersion@@PEAVResourcePackManager@@@Z
-    MCAPI void init(class Experiments const&, class BaseGameVersion const&, class ResourcePackManager*);
+    MCAPI void
+    init(class Experiments const&, class BaseGameVersion const& baseGameVersion, class ResourcePackManager* rpm);
 
     // symbol:
     // ?initCreativeItemsServer@ItemRegistry@@AEAAXPEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@_NAEBVExperiments@@V?$function@$$A6AXVItemRegistryRef@@PEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@PEAVCreativeItemRegistry@@_NAEBVBaseGameVersion@@AEBVExperiments@@@Z@std@@@Z
-    MCAPI void
-    initCreativeItemsServer(class ActorInfoRegistry*, class BlockDefinitionGroup*, bool, class Experiments const&, std::function<void(class ItemRegistryRef, class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&)>);
+    MCAPI void initCreativeItemsServer(
+        class ActorInfoRegistry*    actorInfoRegistry,
+        class BlockDefinitionGroup* blockDefinitionGroup,
+        bool                        isClient,
+        class Experiments const&,
+        std::function<
+            void(class ItemRegistryRef, class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&)>
+            registerCallback
+    );
 
     // symbol: ?initServerData@ItemRegistry@@AEAAXAEAVResourcePackManager@@AEBVExperiments@@W4ItemVersion@@@Z
-    MCAPI void initServerData(class ResourcePackManager&, class Experiments const&, ::ItemVersion);
+    MCAPI void initServerData(class ResourcePackManager& resourcePackManager, class Experiments const&, ::ItemVersion);
 
     // symbol: ?lookupByName@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const&) const;
+    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const& inString) const;
 
     // symbol:
     // ?lookupByName@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEAHV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class WeakPtr<class Item> lookupByName(int&, std::string_view) const;
+    MCAPI class WeakPtr<class Item> lookupByName(int&, std::string_view inString) const;
 
     // symbol:
     // ?lookupByNameNoAlias@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string_view) const;
+    MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string_view inString) const;
 
     // symbol: ?lookupByNameNoParsing@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEAHAEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int&, class HashedString const&) const;
+    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int&, class HashedString const& fullName) const;
 
     // symbol: ?registerAlias@ItemRegistry@@AEAAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
-    MCAPI void registerAlias(class HashedString const&, class HashedString const&, class BaseGameVersion const&);
+    MCAPI void
+    registerAlias(class HashedString const& alias, class HashedString const& name, class BaseGameVersion const&);
 
     // symbol:
     // ?registerComplexAlias@ItemRegistry@@AEAA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@AEBUItemRegistryComplexAlias@@@Z
     MCAPI class WeakPtr<class Item>
-    registerComplexAlias(class HashedString const&, struct ItemRegistryComplexAlias const&);
+    registerComplexAlias(class HashedString const& alias, struct ItemRegistryComplexAlias const&);
 
     // symbol: ?registerItem@ItemRegistry@@AEAAXV?$SharedPtr@VItem@@@@@Z
-    MCAPI void registerItem(class SharedPtr<class Item>);
+    MCAPI void registerItem(class SharedPtr<class Item> item);
 
     // symbol: ?registerLegacyID@ItemRegistry@@AEAAXAEBVHashedString@@F@Z
-    MCAPI void registerLegacyID(class HashedString const&, short);
+    MCAPI void registerLegacyID(class HashedString const& name, short);
 
     // symbol: ?registerLegacyMapping@ItemRegistry@@AEAAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
     MCAPI void
-    registerLegacyMapping(class HashedString const&, class HashedString const&, class BaseGameVersion const&);
+    registerLegacyMapping(class HashedString const& alias, class HashedString const& name, class BaseGameVersion const&);
 
     // symbol: ?unregisterItem@ItemRegistry@@AEAAXAEBVHashedString@@@Z
-    MCAPI void unregisterItem(class HashedString const&);
+    MCAPI void unregisterItem(class HashedString const& itemName);
 
     // symbol:
     // ?validateServerItemComponents@ItemRegistry@@AEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@@2@@3@@Z
     MCAPI std::vector<std::string>
-          validateServerItemComponents(std::vector<std::pair<std::string, class CompoundTag>> const&);
+          validateServerItemComponents(std::vector<std::pair<std::string, class CompoundTag>> const& items);
 
     // symbol: ?getBlockItemId@ItemRegistry@@CAFAEBVBlock@@@Z
     MCAPI static short getBlockItemId(class Block const&);

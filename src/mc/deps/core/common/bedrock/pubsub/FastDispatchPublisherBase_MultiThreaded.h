@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_loadDispatchTargets@FastDispatchPublisherBase_MultiThreaded@Detail@PubSub@Bedrock@@IEBA_NAEAVDispatchTargets@234@@Z
-    MCAPI bool _loadDispatchTargets(class Bedrock::PubSub::Detail::DispatchTargets&) const;
+    MCAPI bool _loadDispatchTargets(class Bedrock::PubSub::Detail::DispatchTargets& targets) const;
 
     // NOLINTEND
 };

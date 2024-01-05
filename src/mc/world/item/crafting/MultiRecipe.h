@@ -35,7 +35,7 @@ public:
     MCVAPI bool isShapeless() const;
 
     // symbol: ??0MultiRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@VHashedString@@@Z
-    MCAPI MultiRecipe(std::string_view, class HashedString);
+    MCAPI MultiRecipe(std::string_view recipeId, class HashedString tag);
 
     // NOLINTEND
 };

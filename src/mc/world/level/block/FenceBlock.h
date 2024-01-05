@@ -45,7 +45,7 @@ public:
     // vIndex: 7, symbol:
     // ?addCollisionShapes@FenceBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
     virtual bool
-    addCollisionShapes(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
+    addCollisionShapes(class Block const& block, class BlockSource const& region, class BlockPos const& pos, class AABB const* intersectTestBox, std::vector<class AABB>& inoutBoxes, class optional_ref<class GetCollisionShapeInterface const>)
         const;
 
     // vIndex: 9, symbol: ?getOutline@FenceBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@@Z
@@ -64,10 +64,10 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@FenceBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
+    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 25, symbol: ?canConnect@FenceBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
+    virtual bool canConnect(class Block const& otherBlock, uchar, class Block const&) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -142,10 +142,10 @@ public:
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@FenceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion version) const;
 
     // vIndex: 96, symbol: ?asItemInstance@FenceBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -176,7 +176,7 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@FenceBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -188,7 +188,7 @@ public:
     MCVAPI bool isFenceBlock() const;
 
     // symbol: ??0FenceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI FenceBlock(std::string const& nameId, int id, class Material const& material);
+    MCAPI FenceBlock(std::string const& nameId, int, class Material const& material);
 
     // symbol:
     // ?fetchPathableNeighbors@FenceBlock@@QEBAXAEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAVBlockSource@@AEBVBlockPos@@AEBVVec3@@@Z

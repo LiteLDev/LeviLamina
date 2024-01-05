@@ -28,7 +28,7 @@ public:
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
 
     // symbol: ?clear@GameTestInstanceLedger@@QEAAXV?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void clear(DimensionType);
+    MCAPI void clear(DimensionType dimension);
 
     // NOLINTEND
 

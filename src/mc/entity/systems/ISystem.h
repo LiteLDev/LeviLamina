@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
-    MCVAPI void registerEvents(entt::dispatcher&);
+    MCVAPI void registerEvents(entt::dispatcher& dispatcher);
 
     // NOLINTEND
 };

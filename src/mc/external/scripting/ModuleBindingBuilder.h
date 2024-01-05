@@ -32,7 +32,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0ModuleBindingBuilder@Scripting@@QEAA@AEBUUUID@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUVersion@1@@Z
-    MCAPI ModuleBindingBuilder(struct Scripting::UUID const&, std::string const&, struct Scripting::Version const&);
+    MCAPI ModuleBindingBuilder(
+        struct Scripting::UUID const&,
+        std::string const&               name,
+        struct Scripting::Version const& version
+    );
 
     // symbol:
     // ?build@ModuleBindingBuilder@Scripting@@QEAA?AUModuleBinding@2@_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
@@ -43,7 +47,8 @@ public:
 
     // symbol:
     // ?dependency@ModuleBindingBuilder@Scripting@@QEAAAEAV12@AEBV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@std@@@Z
-    MCAPI class Scripting::ModuleBindingBuilder& dependency(std::vector<struct Scripting::ModuleDescriptor> const&);
+    MCAPI class Scripting::ModuleBindingBuilder&
+    dependency(std::vector<struct Scripting::ModuleDescriptor> const& modules);
 
     // symbol: ?enumBinding@ModuleBindingBuilder@Scripting@@QEAAAEAV12@$$QEAUEnumBinding@2@@Z
     MCAPI class Scripting::ModuleBindingBuilder& enumBinding(struct Scripting::EnumBinding&&);
@@ -99,7 +104,7 @@ public:
 
     // symbol:
     // ?_isClassTypeInList@ModuleBindingBuilder@Scripting@@AEBA_NVmeta_type@entt@@AEBV?$vector@UClassBinding@Scripting@@V?$allocator@UClassBinding@Scripting@@@std@@@std@@@Z
-    MCAPI bool _isClassTypeInList(entt::meta_type, std::vector<struct Scripting::ClassBinding> const&) const;
+    MCAPI bool _isClassTypeInList(entt::meta_type type, std::vector<struct Scripting::ClassBinding> const&) const;
 
     // symbol:
     // ?_orderClassBindingsByDependency@ModuleBindingBuilder@Scripting@@AEBA?AV?$vector@UClassBinding@Scripting@@V?$allocator@UClassBinding@Scripting@@@std@@@std@@AEAV34@@Z
@@ -109,17 +114,17 @@ public:
     // symbol:
     // ?_assertClassMemberSymbolDoesntExist@ModuleBindingBuilder@Scripting@@CA_NAEBUClassBinding@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUTaggedBinding@2@@Z
     MCAPI static bool
-    _assertClassMemberSymbolDoesntExist(struct Scripting::ClassBinding const&, std::string const&, struct Scripting::TaggedBinding const&);
+    _assertClassMemberSymbolDoesntExist(struct Scripting::ClassBinding const&, std::string const& name, struct Scripting::TaggedBinding const&);
 
     // symbol:
     // ?_assertEnumMemberSymbolDoesntExist@ModuleBindingBuilder@Scripting@@CA_NAEBUEnumBinding@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUTaggedBinding@2@@Z
     MCAPI static bool
-    _assertEnumMemberSymbolDoesntExist(struct Scripting::EnumBinding const&, std::string const&, struct Scripting::TaggedBinding const&);
+    _assertEnumMemberSymbolDoesntExist(struct Scripting::EnumBinding const&, std::string const& name, struct Scripting::TaggedBinding const&);
 
     // symbol:
     // ?_assertModuleMemberSymbolDoesntExist@ModuleBindingBuilder@Scripting@@CA_NAEBUModuleBinding@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUTaggedBinding@2@@Z
     MCAPI static bool
-    _assertModuleMemberSymbolDoesntExist(struct Scripting::ModuleBinding const&, std::string const&, struct Scripting::TaggedBinding const&);
+    _assertModuleMemberSymbolDoesntExist(struct Scripting::ModuleBinding const&, std::string const& name, struct Scripting::TaggedBinding const&);
 
     // symbol: ?_validateClassConstructors@ModuleBindingBuilder@Scripting@@CAXAEBUModuleBinding@2@@Z
     MCAPI static void _validateClassConstructors(struct Scripting::ModuleBinding const&);

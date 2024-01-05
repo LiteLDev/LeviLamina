@@ -20,7 +20,7 @@ public:
     MCAPI void initFromDefinition(class Actor& owner);
 
     // symbol: ?implInteraction@BucketableComponent@@SAXAEAVActor@@AEAVPlayer@@@Z
-    MCAPI static void implInteraction(class Actor&, class Player&);
+    MCAPI static void implInteraction(class Actor& owner, class Player& player);
 
     // NOLINTEND
 

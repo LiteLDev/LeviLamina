@@ -30,11 +30,12 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_calculateTargetPos@ShipwreckPiece@@CA?AVBlockPos@@AEAVBlockSource@@V2@W4Rotation@@1@Z
-    MCAPI static class BlockPos _calculateTargetPos(class BlockSource&, class BlockPos, ::Rotation, class BlockPos);
+    MCAPI static class BlockPos
+    _calculateTargetPos(class BlockSource& region, class BlockPos origin, ::Rotation rot, class BlockPos size);
 
     // symbol: ?_calculateTargetPosLegacy@ShipwreckPiece@@CA?AVBlockPos@@AEAVBlockSource@@V2@W4Rotation@@1@Z
     MCAPI static class BlockPos
-    _calculateTargetPosLegacy(class BlockSource&, class BlockPos, ::Rotation, class BlockPos);
+    _calculateTargetPosLegacy(class BlockSource& region, class BlockPos origin, ::Rotation rot, class BlockPos size);
 
     // NOLINTEND
 

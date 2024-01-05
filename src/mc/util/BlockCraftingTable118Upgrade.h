@@ -33,7 +33,7 @@ public:
     virtual bool upgradeToNext(rapidjson::GenericDocument<
                                rapidjson::UTF8<char>,
                                rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
-                               rapidjson::CrtAllocator>&) const;
+                               rapidjson::CrtAllocator>& document) const;
 
     // symbol: ??0BlockCraftingTable118Upgrade@BlockCraftingTableVersioning@@QEAA@XZ
     MCAPI BlockCraftingTable118Upgrade();

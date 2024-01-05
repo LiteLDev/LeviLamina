@@ -34,7 +34,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@DaylightDetectorBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -153,17 +153,16 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@DaylightDetectorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@DaylightDetectorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@DaylightDetectorBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
 
     // vIndex: 169, symbol: ?updateSignalStrength@DaylightDetectorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void updateSignalStrength(class BlockSource& region, class BlockPos const& pos) const;
@@ -172,7 +171,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0DaylightDetectorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI DaylightDetectorBlock(std::string const& nameId, int id, bool isInverted);
+    MCAPI DaylightDetectorBlock(std::string const& nameId, int, bool isInverted);
 
     // NOLINTEND
 };

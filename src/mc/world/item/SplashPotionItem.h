@@ -100,10 +100,11 @@ public:
 
     // vIndex: 102, symbol:
     // ?setIconInfo@SplashPotionItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const& name, int);
 
     // vIndex: 103, symbol: ?getIconInfo@SplashPotionItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo
+    getIconInfo(class ItemStackBase const& itemStack, int, bool inInventoryPane) const;
 
     // vIndex: 118, symbol: ?getPotionType@SplashPotionItem@@UEBA?AW4PotionType@Potion@@XZ
     virtual ::Potion::PotionType getPotionType() const;

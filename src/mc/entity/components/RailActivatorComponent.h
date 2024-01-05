@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?ejectAllPassengers@RailActivatorComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void ejectAllPassengers(class Actor&);
+    MCAPI void ejectAllPassengers(class Actor& owner);
 
     // NOLINTEND
 };

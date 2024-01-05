@@ -61,7 +61,8 @@ public:
 
     // symbol:
     // ?unPackLootTable@RandomizableBlockActorContainerBase@@QEAAXAEAVLevel@@AEAVContainer@@V?$AutomaticID@VDimension@@H@@PEAVActor@@@Z
-    MCAPI void unPackLootTable(class Level&, class Container&, DimensionType, class Actor*);
+    MCAPI void
+    unPackLootTable(class Level& level, class Container& container, DimensionType dimensionId, class Actor* actor);
 
     // NOLINTEND
 };

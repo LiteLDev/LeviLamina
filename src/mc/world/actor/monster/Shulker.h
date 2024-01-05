@@ -74,7 +74,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 63, symbol: ?canAttack@Shulker@@UEBA_NPEAVActor@@_N@Z
-    virtual bool canAttack(class Actor* entity, bool allowInvulnerable) const;
+    virtual bool canAttack(class Actor* actor, bool allowInvulnerable) const;
 
     // vIndex: 75, symbol: ?shouldRender@Shulker@@UEBA_NXZ
     virtual bool shouldRender() const;
@@ -113,7 +113,7 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 179, symbol: ?checkSpawnRules@Shulker@@UEAA_N_N@Z
-    virtual bool checkSpawnRules(bool);
+    virtual bool checkSpawnRules(bool fromSpawner);
 
     // vIndex: 184, symbol: ?getMaxHeadXRot@Shulker@@UEAAMXZ
     virtual float getMaxHeadXRot();
@@ -129,16 +129,21 @@ public:
     MCVAPI bool breaksFallingBlocks() const;
 
     // symbol: ??0Shulker@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Shulker(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Shulker(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?postNormalTick@Shulker@@QEAAXXZ
     MCAPI void postNormalTick();
 
     // symbol: ?postSetPosSetShulkerAttachPosAndPeekAmount@Shulker@@SAXVSynchedActorDataWriter@@AEBVBlockPos@@@Z
-    MCAPI static void postSetPosSetShulkerAttachPosAndPeekAmount(class SynchedActorDataWriter, class BlockPos const&);
+    MCAPI static void
+    postSetPosSetShulkerAttachPosAndPeekAmount(class SynchedActorDataWriter data, class BlockPos const&);
 
     // symbol: ?setShulkerAttachPos@Shulker@@SAXVSynchedActorDataWriter@@AEBVBlockPos@@@Z
-    MCAPI static void setShulkerAttachPos(class SynchedActorDataWriter, class BlockPos const&);
+    MCAPI static void setShulkerAttachPos(class SynchedActorDataWriter data, class BlockPos const& pos);
 
     // symbol: ?COVERED_ARMOR_MODIFIER@Shulker@@2V?$shared_ptr@VAttributeModifier@@@std@@A
     MCAPI static std::shared_ptr<class AttributeModifier> COVERED_ARMOR_MODIFIER;
@@ -151,10 +156,10 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_canOpenLidAt@Shulker@@IEBA_NVBlockPos@@E@Z
-    MCAPI bool _canOpenLidAt(class BlockPos, uchar) const;
+    MCAPI bool _canOpenLidAt(class BlockPos position, uchar direction) const;
 
     // symbol: ?_setPeekAmount@Shulker@@KAXVSynchedActorDataWriter@@H@Z
-    MCAPI static void _setPeekAmount(class SynchedActorDataWriter, int);
+    MCAPI static void _setPeekAmount(class SynchedActorDataWriter data, int amount);
 
     // NOLINTEND
 
@@ -164,19 +169,19 @@ public:
     MCAPI void _calculateBB();
 
     // symbol: ?_isPosOccupiedByOtherShulker@Shulker@@AEBA_NVBlockPos@@@Z
-    MCAPI bool _isPosOccupiedByOtherShulker(class BlockPos) const;
+    MCAPI bool _isPosOccupiedByOtherShulker(class BlockPos blockPos) const;
 
     // symbol: ?_isValidAttach@Shulker@@AEAA_NVBlockPos@@E@Z
-    MCAPI bool _isValidAttach(class BlockPos, uchar);
+    MCAPI bool _isValidAttach(class BlockPos attachPos, uchar direction);
 
     // symbol: ?_peekAmountTick@Shulker@@AEAAXXZ
     MCAPI void _peekAmountTick();
 
     // symbol: ?_setAttachFace@Shulker@@AEAAXE@Z
-    MCAPI void _setAttachFace(uchar);
+    MCAPI void _setAttachFace(uchar facing);
 
     // symbol: ?_tryAttachingToNeighbouringFaces@Shulker@@AEAA_NVBlockPos@@@Z
-    MCAPI bool _tryAttachingToNeighbouringFaces(class BlockPos);
+    MCAPI bool _tryAttachingToNeighbouringFaces(class BlockPos currentPos);
 
     // symbol: ?_trySpawnShulker@Shulker@@AEAAXXZ
     MCAPI void _trySpawnShulker();

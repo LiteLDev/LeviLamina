@@ -22,7 +22,7 @@ public:
     MCAPI LegacyTradeableDefinition();
 
     // symbol: ?initialize@LegacyTradeableDefinition@@QEBAXAEAVEntityContext@@AEAVLegacyTradeableComponent@@@Z
-    MCAPI void initialize(class EntityContext& entity, class LegacyTradeableComponent& component) const;
+    MCAPI void initialize(class EntityContext& entity, class LegacyTradeableComponent&) const;
 
     // symbol:
     // ?buildSchema@LegacyTradeableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VLegacyTradeableDefinition@@@JsonUtil@@@std@@@Z

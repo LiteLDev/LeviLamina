@@ -78,14 +78,16 @@ public:
     virtual void __unk_vfn_99();
 
     // vIndex: 103, symbol: ?getIconInfo@AbstractCompassItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo
+    getIconInfo(class ItemStackBase const& itemStack, int, bool inInventoryPane) const;
 
     // vIndex: 105, symbol: ?getAnimationFrameFor@AbstractCompassItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-    virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
+    virtual int
+    getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
 
     // symbol:
     // ??0AbstractCompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6A?AVCompassSpriteCalculator@@PEAVMob@@@Z@2@@Z
-    MCAPI AbstractCompassItem(std::string const&, int, std::function<class CompassSpriteCalculator(class Mob*)>);
+    MCAPI AbstractCompassItem(std::string const& name, int, std::function<class CompassSpriteCalculator(class Mob*)>);
 
     // NOLINTEND
 };

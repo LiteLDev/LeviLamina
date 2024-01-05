@@ -62,7 +62,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 32, symbol: ?startRiding@WitherBoss@@UEAA_NAEAVActor@@@Z
-    virtual bool startRiding(class Actor& ride);
+    virtual bool startRiding(class Actor&);
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
@@ -86,7 +86,7 @@ public:
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@WitherBoss@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent, int data);
 
     // vIndex: 101, symbol: ?canFreeze@WitherBoss@@UEBA_NXZ
     virtual bool canFreeze() const;
@@ -98,7 +98,7 @@ public:
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
     // vIndex: 124, symbol: ?canBeAffected@WitherBoss@@UEBA_NI@Z
-    virtual bool canBeAffected(uint) const;
+    virtual bool canBeAffected(uint effectId) const;
 
     // vIndex: 125, symbol: ?canBeAffectedByArrow@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z
     virtual bool canBeAffectedByArrow(class MobEffectInstance const& effect) const;
@@ -140,7 +140,11 @@ public:
     virtual void newServerAiStep();
 
     // symbol: ??0WitherBoss@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI WitherBoss(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI WitherBoss(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?awardSpawnWitherAchievement@WitherBoss@@QEBAXXZ
     MCAPI void awardSpawnWitherAchievement() const;
@@ -194,7 +198,7 @@ public:
     MCAPI bool wantsToMove();
 
     // symbol: ?canDestroy@WitherBoss@@SA_NAEBVBlock@@W4WitherAttackType@1@@Z
-    MCAPI static bool canDestroy(class Block const&, ::WitherBoss::WitherAttackType);
+    MCAPI static bool canDestroy(class Block const& block, ::WitherBoss::WitherAttackType);
 
     // symbol: ?MAX_HEALTH_CAP_UUID@WitherBoss@@2VUUID@mce@@B
     MCAPI static class mce::UUID const MAX_HEALTH_CAP_UUID;
@@ -204,7 +208,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSource@@HW4WitherAttackType@1@@Z
-    MCAPI void _destroyBlocks(class Level&, class AABB const&, class BlockSource&, int, ::WitherBoss::WitherAttackType);
+    MCAPI void _destroyBlocks(
+        class Level&       level,
+        class AABB const&  bb,
+        class BlockSource& region,
+        int                range,
+        ::WitherBoss::WitherAttackType
+    );
 
     // symbol: ?_performRangedAttack@WitherBoss@@AEAAXHAEAVActor@@@Z
     MCAPI void _performRangedAttack(int headID, class Actor& target);

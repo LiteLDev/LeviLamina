@@ -17,7 +17,7 @@ public:
     MCAPI EntitySensorComponent(class EntitySensorComponent&&);
 
     // symbol: ?evaluateActor@EntitySensorComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void evaluateActor(class Actor&);
+    MCAPI void evaluateActor(class Actor& actor);
 
     // symbol: ??4EntitySensorComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class EntitySensorComponent& operator=(class EntitySensorComponent&&);

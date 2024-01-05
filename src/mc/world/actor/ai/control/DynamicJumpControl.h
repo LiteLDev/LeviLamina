@@ -28,16 +28,16 @@ public:
     virtual void tick(class JumpControlComponent& parent, class Mob& mob);
 
     // vIndex: 4, symbol: ?getJumpDelay@DynamicJumpControl@@MEBAHAEBVJumpControlComponent@@@Z
-    virtual int getJumpDelay(class JumpControlComponent const&) const;
+    virtual int getJumpDelay(class JumpControlComponent const& parent) const;
 
     // vIndex: 5, symbol: ?getJumpPower@DynamicJumpControl@@MEBAMAEBVJumpControlComponent@@@Z
-    virtual float getJumpPower(class JumpControlComponent const&) const;
+    virtual float getJumpPower(class JumpControlComponent const& parent) const;
 
     // vIndex: 6, symbol: ?getJumpType@DynamicJumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@@Z
-    virtual ::JumpType getJumpType(class JumpControlComponent const&) const;
+    virtual ::JumpType getJumpType(class JumpControlComponent const& parent) const;
 
     // vIndex: 7, symbol: ?setJumpType@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@W4JumpType@@@Z
-    virtual void setJumpType(class JumpControlComponent&, ::JumpType);
+    virtual void setJumpType(class JumpControlComponent& parent, ::JumpType type);
 
     // vIndex: 8, symbol: ?resetSpeedModifier@DynamicJumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z
     virtual void resetSpeedModifier(class JumpControlComponent const& parent, class Mob& mob);

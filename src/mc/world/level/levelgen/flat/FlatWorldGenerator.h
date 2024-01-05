@@ -43,7 +43,7 @@ public:
     MCVAPI ::StructureFeatureType findStructureFeatureTypeAt(class BlockPos const&);
 
     // symbol: ?garbageCollectBlueprints@FlatWorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z
-    MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos> activeChunks);
+    MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>);
 
     // symbol: ?getBiomeArea@FlatWorldGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
     MCVAPI class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
@@ -68,17 +68,17 @@ public:
     MCVAPI void prepareAndComputeHeights(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int);
 
     // symbol: ?prepareHeights@FlatWorldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
-    MCVAPI void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
+    MCVAPI void prepareHeights(class BlockVolume&, class ChunkPos const&, bool);
 
     // symbol: ??0FlatWorldGenerator@@QEAA@AEAVDimension@@IAEBVValue@Json@@@Z
-    MCAPI FlatWorldGenerator(class Dimension& dimension, uint seed, class Json::Value const& generationOptionsJSON);
+    MCAPI FlatWorldGenerator(class Dimension& dimension, uint, class Json::Value const& generationOptionsJSON);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_generatePrototypeBlockValues@FlatWorldGenerator@@AEAAXAEBVFlatWorldGeneratorOptions@@F@Z
-    MCAPI void _generatePrototypeBlockValues(class FlatWorldGeneratorOptions const&, short);
+    MCAPI void _generatePrototypeBlockValues(class FlatWorldGeneratorOptions const& layersDesc, short);
 
     // NOLINTEND
 };

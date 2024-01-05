@@ -22,7 +22,7 @@ public:
     virtual void init();
 
     // vIndex: 2, symbol: ?serverInitItemStackIds@CraftingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    virtual void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>) = 0;
+    virtual void serverInitItemStackIds(int, int count, std::function<void(int, class ItemStack const&)>) = 0;
 
     // vIndex: 3, symbol: ?addContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z
     virtual void addContentChangeListener(class ContainerContentChangeListener* listener);
@@ -40,16 +40,16 @@ public:
     virtual bool addItem(class ItemStack& item);
 
     // vIndex: 8, symbol: ?addItemWithForceBalance@Container@@UEAA_NAEAVItemStack@@@Z
-    virtual bool addItemWithForceBalance(class ItemStack&);
+    virtual bool addItemWithForceBalance(class ItemStack& item);
 
     // vIndex: 9, symbol: ?addItemToFirstEmptySlot@Container@@UEAA_NAEBVItemStack@@@Z
-    virtual bool addItemToFirstEmptySlot(class ItemStack const&);
+    virtual bool addItemToFirstEmptySlot(class ItemStack const& item);
 
     // vIndex: 10, symbol: ?setItem@CraftingContainer@@UEAAXHAEBVItemStack@@@Z
     virtual void setItem(int slot, class ItemStack const& item) = 0;
 
     // vIndex: 11, symbol: ?setItemWithForceBalance@Container@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
+    virtual void setItemWithForceBalance(int slot, class ItemStack const& item, bool);
 
     // vIndex: 12, symbol: ?removeItem@Container@@UEAAXHH@Z
     virtual void removeItem(int slot, int count);
@@ -139,7 +139,7 @@ public:
     MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
 
     // symbol: ?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void initializeContainerContents(class BlockSource&);
+    MCVAPI void initializeContainerContents(class BlockSource& region);
 
     // symbol: ??0Container@@QEAA@AEBV0@@Z
     MCAPI Container(class Container const&);
@@ -157,10 +157,10 @@ public:
     MCAPI ::ContainerType getGameplayContainerType() const;
 
     // symbol: ?getItemCount@Container@@QEAAHV?$function@$$A6A_NAEBVItemStack@@@Z@std@@@Z
-    MCAPI int getItemCount(std::function<bool(class ItemStack const&)>);
+    MCAPI int getItemCount(std::function<bool(class ItemStack const&)> comparator);
 
     // symbol: ?getRedstoneSignalFromContainer@Container@@QEAAHAEAVBlockSource@@@Z
-    MCAPI int getRedstoneSignalFromContainer(class BlockSource&);
+    MCAPI int getRedstoneSignalFromContainer(class BlockSource& region);
 
     // symbol: ?getRuntimeId@Container@@QEBAAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@XZ
     MCAPI ContainerRuntimeId const& getRuntimeId() const;
@@ -175,7 +175,7 @@ public:
     MCAPI void serverInitItemStackIdsAll(std::function<void(int, class ItemStack const&)>);
 
     // symbol: ?setGameplayContainerType@Container@@QEAAXW4ContainerType@@@Z
-    MCAPI void setGameplayContainerType(::ContainerType);
+    MCAPI void setGameplayContainerType(::ContainerType type);
 
     // symbol: ?triggerTransactionChange@Container@@QEAAXHAEBVItemStack@@0@Z
     MCAPI void triggerTransactionChange(int slot, class ItemStack const& oldItem, class ItemStack const& newItem);
@@ -193,13 +193,13 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_getEmptySlotsCount@Container@@IEBAHHH@Z
-    MCAPI int _getEmptySlotsCount(int, int) const;
+    MCAPI int _getEmptySlotsCount(int start, int end) const;
 
     // symbol: ?_initRuntimeId@Container@@IEAAXAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
     MCAPI void _initRuntimeId(ContainerRuntimeId const&);
 
     // symbol: ?_serverInitId@Container@@IEAAXHAEAVItemStack@@V?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCAPI void _serverInitId(int, class ItemStack&, std::function<void(int, class ItemStack const&)>);
+    MCAPI void _serverInitId(int slot, class ItemStack& item, std::function<void(int, class ItemStack const&)>);
 
     // NOLINTEND
 

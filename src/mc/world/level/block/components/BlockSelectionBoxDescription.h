@@ -52,10 +52,10 @@ public:
     virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
     // symbol: ??0BlockSelectionBoxDescription@@QEAA@_N@Z
-    MCAPI explicit BlockSelectionBoxDescription(bool);
+    MCAPI explicit BlockSelectionBoxDescription(bool enabled);
 
     // symbol: ??0BlockSelectionBoxDescription@@QEAA@AEBVVec3@@0@Z
-    MCAPI BlockSelectionBoxDescription(class Vec3 const&, class Vec3 const&);
+    MCAPI BlockSelectionBoxDescription(class Vec3 const& origin, class Vec3 const& size);
 
     // symbol: ?bindType@BlockSelectionBoxDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

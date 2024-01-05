@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?PopulateEvent@PlayerTelemetry@Events@Social@@QEBAXAEAVEvent@23@@Z
-    MCAPI void PopulateEvent(class Social::Events::Event&) const;
+    MCAPI void PopulateEvent(class Social::Events::Event& event) const;
 
     // symbol: ?ShouldSendEvent@PlayerTelemetry@Events@Social@@QEBA_NXZ
     MCAPI bool ShouldSendEvent() const;

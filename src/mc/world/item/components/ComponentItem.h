@@ -53,7 +53,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?executeEvent@ComponentItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
-    virtual void executeEvent(class ItemStackBase&, std::string const&, class RenderParams&) const;
+    virtual void executeEvent(class ItemStackBase& item, std::string const& name, class RenderParams&) const;
 
     // vIndex: 8, symbol: __unk_vfn_8
     virtual void __unk_vfn_8();
@@ -95,14 +95,14 @@ public:
     virtual class IFoodItemComponent* getFood() const;
 
     // vIndex: 23, symbol: ?setMaxDamage@ComponentItem@@UEAAAEAVItem@@H@Z
-    virtual class Item& setMaxDamage(int);
+    virtual class Item& setMaxDamage(int maxDamage);
 
     // vIndex: 25, symbol:
     // ?buildNetworkTag@ComponentItem@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 
     // vIndex: 26, symbol: ?initializeFromNetwork@ComponentItem@@UEAAXAEBVCompoundTag@@@Z
-    virtual void initializeFromNetwork(class CompoundTag const&);
+    virtual void initializeFromNetwork(class CompoundTag const& tag);
 
     // vIndex: 27, symbol:
     // ?validateFromNetwork@ComponentItem@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVCompoundTag@@@Z
@@ -115,7 +115,7 @@ public:
     virtual bool canBeDepleted() const;
 
     // vIndex: 30, symbol: ?canDestroySpecial@ComponentItem@@UEBA_NAEBVBlock@@@Z
-    virtual bool canDestroySpecial(class Block const&) const;
+    virtual bool canDestroySpecial(class Block const& block) const;
 
     // vIndex: 31, symbol: ?getLevelDataForAuxValue@ComponentItem@@UEBAHH@Z
     virtual int getLevelDataForAuxValue(int) const;
@@ -127,7 +127,7 @@ public:
     virtual int getAttackDamage() const;
 
     // vIndex: 36, symbol: ?isGlint@ComponentItem@@UEBA_NAEBVItemStackBase@@@Z
-    virtual bool isGlint(class ItemStackBase const&) const;
+    virtual bool isGlint(class ItemStackBase const& stack) const;
 
     // vIndex: 37, symbol: __unk_vfn_37
     virtual void __unk_vfn_37();
@@ -149,11 +149,19 @@ public:
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@ComponentItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
     // vIndex: 47, symbol: ?isValidRepairItem@ComponentItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
-    virtual bool
-    isValidRepairItem(class ItemStackBase const&, class ItemStackBase const&, class BaseGameVersion const&) const;
+    virtual bool isValidRepairItem(
+        class ItemStackBase const&   source,
+        class ItemStackBase const&   repairItem,
+        class BaseGameVersion const& baseGameVersion
+    ) const;
 
     // vIndex: 48, symbol: ?getEnchantSlot@ComponentItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
@@ -168,7 +176,7 @@ public:
     virtual void __unk_vfn_52();
 
     // vIndex: 54, symbol: ?getDamageChance@ComponentItem@@UEBAHH@Z
-    virtual int getDamageChance(int) const;
+    virtual int getDamageChance(int unbreaking) const;
 
     // vIndex: 56, symbol: __unk_vfn_56
     virtual void __unk_vfn_56();
@@ -180,7 +188,7 @@ public:
     virtual void __unk_vfn_58();
 
     // vIndex: 59, symbol: ?getColor@ComponentItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
-    virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
+    virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const& instance) const;
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -198,35 +206,41 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@ComponentItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& itemStack, class Player& player) const;
 
     // vIndex: 71, symbol: ?dispense@ComponentItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 72, symbol:
     // ?useTimeDepleted@ComponentItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
-    virtual ::ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
+    virtual ::ItemUseMethod
+    useTimeDepleted(class ItemStack& inoutInstance, class Level* level, class Player* player) const;
 
     // vIndex: 73, symbol: ?releaseUsing@ComponentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-    virtual void releaseUsing(class ItemStack&, class Player*, int) const;
+    virtual void releaseUsing(class ItemStack& itemStack, class Player* player, int durationLeft) const;
 
     // vIndex: 74, symbol: ?getDestroySpeed@ComponentItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
-    virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
+    virtual float getDestroySpeed(class ItemStackBase const& itemStack, class Block const& block) const;
 
     // vIndex: 75, symbol: ?hurtActor@ComponentItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
+    virtual void hurtActor(class ItemStack& itemStack, class Actor& actor, class Mob& attacker) const;
 
     // vIndex: 76, symbol: ?hitActor@ComponentItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-    virtual void hitActor(class ItemStack&, class Actor&, class Mob&) const;
+    virtual void hitActor(class ItemStack& itemStack, class Actor& actor, class Mob& attacker) const;
 
     // vIndex: 77, symbol: ?hitBlock@ComponentItem@@UEBAXAEAVItemStack@@AEBVBlock@@AEBVBlockPos@@AEAVMob@@@Z
-    virtual void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
+    virtual void
+    hitBlock(class ItemStack& itemStack, class Block const& block, class BlockPos const& blockPos, class Mob& attacker)
+        const;
 
     // vIndex: 78, symbol: ?mineBlock@ComponentItem@@UEBA_NAEAVItemInstance@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool
+    mineBlock(class ItemInstance& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
     // vIndex: 79, symbol: ?mineBlock@ComponentItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
+    virtual bool
+    mineBlock(class ItemStack& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
     // vIndex: 80, symbol:
     // ?buildDescriptionName@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
@@ -266,10 +280,11 @@ public:
 
     // vIndex: 102, symbol:
     // ?setIconInfo@ComponentItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const& name, int frame);
 
     // vIndex: 103, symbol: ?getIconInfo@ComponentItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo
+    getIconInfo(class ItemStackBase const& itemStack, int, bool inInventoryPane) const;
 
     // vIndex: 104, symbol:
     // ?getInteractText@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
@@ -290,10 +305,13 @@ public:
 
     // vIndex: 114, symbol:
     // ?_checkUseOnPermissions@ComponentItem@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z
-    virtual bool _checkUseOnPermissions(class Actor&, class ItemStackBase&, uchar const&, class BlockPos const&) const;
+    virtual bool
+    _checkUseOnPermissions(class Actor& entity, class ItemStackBase& item, uchar const& face, class BlockPos const& pos)
+        const;
 
     // vIndex: 115, symbol: ?_calculatePlacePos@ComponentItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, uchar&, class BlockPos&) const;
+    virtual bool
+    _calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
     // vIndex: 116, symbol: ?_shouldAutoCalculatePlacePos@ComponentItem@@EEBA_NXZ
     virtual bool _shouldAutoCalculatePlacePos() const;
@@ -301,7 +319,8 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@ComponentItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol: ?getVariant@ComponentItem@@UEBAHHH_N@Z
     MCVAPI int getVariant(int, int, bool) const;
@@ -319,7 +338,7 @@ public:
     MCVAPI bool useVariant(int, int, bool) const;
 
     // symbol: ??0ComponentItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-    MCAPI ComponentItem(std::string const&, short);
+    MCAPI ComponentItem(std::string const& nameId, short);
 
     // symbol: ?_addCerealItemsToMap@ComponentItem@@QEAAXXZ
     MCAPI void _addCerealItemsToMap();
@@ -337,7 +356,8 @@ public:
     MCAPI bool checkComponentDataForContentErrors() const;
 
     // symbol: ?executeTrigger@ComponentItem@@QEBA_NAEAVItemStackBase@@AEBVDefinitionTrigger@@AEAVRenderParams@@@Z
-    MCAPI bool executeTrigger(class ItemStackBase&, class DefinitionTrigger const&, class RenderParams&) const;
+    MCAPI bool
+    executeTrigger(class ItemStackBase& item, class DefinitionTrigger const& trigger, class RenderParams&) const;
 
     // symbol: ?getMovementModifier@ComponentItem@@QEBAMXZ
     MCAPI float getMovementModifier() const;
@@ -409,7 +429,7 @@ public:
     MCAPI void _loadItemPropertiesNetworkTag(class CompoundTag const&, struct cereal::ReflectionCtx&);
 
     // symbol: ?_loadItemTagsNetworkTag@ComponentItem@@AEAAXAEBVListTag@@@Z
-    MCAPI void _loadItemTagsNetworkTag(class ListTag const&);
+    MCAPI void _loadItemTagsNetworkTag(class ListTag const& listTag);
 
     // symbol: ?_moveDataToComponentItem@ComponentItem@@CAXAEAV1@AEAUComponentItemData_Legacy@@@Z
     MCAPI static void _moveDataToComponentItem(class ComponentItem&, struct ComponentItemData_Legacy&);

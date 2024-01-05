@@ -14,7 +14,7 @@ public:
     MCAPI RelativeFloat();
 
     // symbol: ??0RelativeFloat@@QEAA@M_N@Z
-    MCAPI RelativeFloat(float, bool);
+    MCAPI RelativeFloat(float offset, bool relative);
 
     // symbol: ?getValue@RelativeFloat@@QEBAMM@Z
     MCAPI float getValue(float base) const;

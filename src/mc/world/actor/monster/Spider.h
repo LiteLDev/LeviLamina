@@ -70,7 +70,7 @@ public:
     virtual void __unk_vfn_107();
 
     // vIndex: 124, symbol: ?canBeAffected@Spider@@UEBA_NI@Z
-    virtual bool canBeAffected(uint) const;
+    virtual bool canBeAffected(uint effectId) const;
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
@@ -91,7 +91,11 @@ public:
     virtual float getModelScale() const;
 
     // symbol: ??0Spider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Spider(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Spider(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 };

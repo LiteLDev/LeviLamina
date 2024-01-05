@@ -86,10 +86,14 @@ public:
     virtual class Block const* getDefaultDisplayBlock() const;
 
     // vIndex: 173, symbol: ?applyNaturalSlowdown@MinecartChest@@UEAAXAEAVBlockSource@@@Z
-    virtual void applyNaturalSlowdown(class BlockSource&);
+    virtual void applyNaturalSlowdown(class BlockSource& region);
 
     // symbol: ??0MinecartChest@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI MinecartChest(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI MinecartChest(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 

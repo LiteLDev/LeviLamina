@@ -26,9 +26,11 @@ public:
 
     // vIndex: 3, symbol:
     // ?_fillArea@AddOceanTemperatureOperationNode@@MEBAXAEAV?$WorkingData@W4BiomeTemperatureCategory@@D@OperationNodeDetails@@AEBVPos2d@@1@Z
-    virtual void
-    _fillArea(class OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>&, class Pos2d const&, class Pos2d const&)
-        const;
+    virtual void _fillArea(
+        class OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>&,
+        class Pos2d const& origin,
+        class Pos2d const& size
+    ) const;
 
     // NOLINTEND
 };

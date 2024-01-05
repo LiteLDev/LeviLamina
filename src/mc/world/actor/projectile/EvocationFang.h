@@ -67,7 +67,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 83, symbol: ?handleEntityEvent@EvocationFang@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent, int data);
 
     // vIndex: 100, symbol: ?getSourceUniqueID@EvocationFang@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getSourceUniqueID() const;
@@ -82,14 +82,18 @@ public:
     virtual void __unk_vfn_162();
 
     // symbol: ??0EvocationFang@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI EvocationFang(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI EvocationFang(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_dealDamageTo@EvocationFang@@AEAAXAEAVMob@@@Z
-    MCAPI void _dealDamageTo(class Mob&);
+    MCAPI void _dealDamageTo(class Mob& entity);
 
     // NOLINTEND
 };

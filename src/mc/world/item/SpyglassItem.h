@@ -72,14 +72,14 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@SpyglassItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
 
     // vIndex: 72, symbol:
     // ?useTimeDepleted@SpyglassItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
-    virtual ::ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
+    virtual ::ItemUseMethod useTimeDepleted(class ItemStack& inoutInstance, class Level*, class Player* player) const;
 
     // vIndex: 73, symbol: ?releaseUsing@SpyglassItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-    virtual void releaseUsing(class ItemStack&, class Player*, int) const;
+    virtual void releaseUsing(class ItemStack& inoutInstance, class Player* player, int) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -88,7 +88,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0SpyglassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-    MCAPI SpyglassItem(std::string const&, short);
+    MCAPI SpyglassItem(std::string const& name, short);
 
     // NOLINTEND
 };

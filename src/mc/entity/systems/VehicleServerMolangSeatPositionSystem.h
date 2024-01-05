@@ -17,7 +17,7 @@ public:
     // symbol:
     // ?_tickActor@VehicleServerMolangSeatPositionSystem@@SAXAEAVStrictEntityContext@@AEBUPassengerComponent@@AEAVActorOwnerComponent@@AEAUPositionPassengerRequestComponent@@V?$ViewT@VStrictEntityContext@@$$CBVRideableComponent@@$$CBUVehicleComponent@@@@@Z
     MCAPI static void
-    _tickActor(class StrictEntityContext&, struct PassengerComponent const&, class ActorOwnerComponent&, struct PositionPassengerRequestComponent&, class ViewT<class StrictEntityContext, class RideableComponent const, struct VehicleComponent const>);
+    _tickActor(class StrictEntityContext&, struct PassengerComponent const&, class ActorOwnerComponent& actorComponent, struct PositionPassengerRequestComponent&, class ViewT<class StrictEntityContext, class RideableComponent const, struct VehicleComponent const>);
 
     // symbol:
     // ?_tickVehicleServerMolangSeatPositionSystem@VehicleServerMolangSeatPositionSystem@@SAXV?$ViewT@VStrictEntityContext@@$$CBUPassengerComponent@@VActorOwnerComponent@@UPositionPassengerRequestComponent@@@@V?$ViewT@VStrictEntityContext@@$$CBVRideableComponent@@$$CBUVehicleComponent@@@@@Z

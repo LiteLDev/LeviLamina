@@ -54,7 +54,7 @@ public:
     MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const&, class ScriptPluginResult&);
 
     // symbol: ?_tryAddRuntime@ScriptPluginManager@@AEAAXAEBVScriptPlugin@@AEAVScriptPluginResult@@@Z
-    MCAPI void _tryAddRuntime(class ScriptPlugin const&, class ScriptPluginResult&);
+    MCAPI void _tryAddRuntime(class ScriptPlugin const& plugin, class ScriptPluginResult&);
 
     // NOLINTEND
 };

@@ -26,7 +26,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0MeleeAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit MeleeAttackGoal(class Mob&);
+    MCAPI explicit MeleeAttackGoal(class Mob& mob);
 
     // symbol: ?_canReachTarget@MeleeAttackGoal@@SA_NAEBVMob@@AEBVVec3@@MMMMH@Z
     MCAPI static bool _canReachTarget(class Mob const&, class Vec3 const&, float, float, float, float, int);
@@ -45,7 +45,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_getAttackReachSqr@MeleeAttackGoal@@IEBAMAEBVActor@@@Z
-    MCAPI float _getAttackReachSqr(class Actor const&) const;
+    MCAPI float _getAttackReachSqr(class Actor const& target) const;
 
     // NOLINTEND
 

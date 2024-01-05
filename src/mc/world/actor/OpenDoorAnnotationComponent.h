@@ -30,7 +30,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_cleanUp@OpenDoorAnnotationComponent@@AEAAXAEAVMob@@@Z
-    MCAPI void _cleanUp(class Mob&);
+    MCAPI void _cleanUp(class Mob& mob);
 
     // NOLINTEND
 };

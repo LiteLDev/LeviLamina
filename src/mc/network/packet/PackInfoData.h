@@ -19,13 +19,13 @@ public:
     // symbol:
     // ??0PackInfoData@@QEAA@AEBVUUID@mce@@AEBVSemVersion@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3AEBVContentIdentity@@_N5@Z
     MCAPI PackInfoData(
-        class mce::UUID const&,
-        class SemVersion const&,
-        uint64,
-        std::string const&,
-        std::string const&,
-        class ContentIdentity const&,
-        bool,
+        class mce::UUID const&       guid,
+        class SemVersion const&      version,
+        uint64                       packSize,
+        std::string const&           contentKey,
+        std::string const&           subpackName,
+        class ContentIdentity const& contentIdentity,
+        bool                         hasScripts,
         bool
     );
 

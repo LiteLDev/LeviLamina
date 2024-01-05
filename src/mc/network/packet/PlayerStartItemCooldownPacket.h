@@ -26,18 +26,18 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@PlayerStartItemCooldownPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@PlayerStartItemCooldownPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0PlayerStartItemCooldownPacket@@QEAA@XZ
     MCAPI PlayerStartItemCooldownPacket();
 
     // symbol:
     // ??0PlayerStartItemCooldownPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PlayerStartItemCooldownPacket(std::string const&, int);
+    MCAPI PlayerStartItemCooldownPacket(std::string const&, int durationTicks);
 
     // NOLINTEND
 };

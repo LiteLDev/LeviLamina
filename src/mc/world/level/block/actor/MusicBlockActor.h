@@ -63,14 +63,14 @@ public:
     MCAPI void tune();
 
     // symbol: ?getInstrumentIndex@MusicBlockActor@@SA?AV?$optional@H@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static std::optional<int> getInstrumentIndex(class BlockSource&, class BlockPos const&);
+    MCAPI static std::optional<int> getInstrumentIndex(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_getInstrumentIndexForBlock@MusicBlockActor@@CAHAEBVBlockLegacy@@@Z
-    MCAPI static int _getInstrumentIndexForBlock(class BlockLegacy const&);
+    MCAPI static int _getInstrumentIndexForBlock(class BlockLegacy const& blockLegacy);
 
     // NOLINTEND
 };

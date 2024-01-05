@@ -134,7 +134,7 @@ public:
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 151, symbol: ?randomTick@MagmaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -149,7 +149,7 @@ public:
     MCVAPI bool shouldTickOnSetBlock() const;
 
     // symbol: ??0MagmaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MagmaBlock(std::string const& nameId, int id);
+    MCAPI MagmaBlock(std::string const& nameId, int);
 
     // NOLINTEND
 

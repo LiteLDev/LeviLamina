@@ -30,25 +30,25 @@ public:
     virtual ~PromiseAny() = default;
 
     // symbol: ??0PromiseAny@Scripting@@QEAA@$$QEAV01@@Z
-    MCAPI PromiseAny(class Scripting::PromiseAny&&);
+    MCAPI PromiseAny(class Scripting::PromiseAny&& rhs);
 
     // symbol: ??0PromiseAny@Scripting@@QEAA@AEBV01@@Z
-    MCAPI PromiseAny(class Scripting::PromiseAny const&);
+    MCAPI PromiseAny(class Scripting::PromiseAny const& rhs);
 
     // symbol:
     // ??0PromiseAny@Scripting@@QEAA@PEAVIRuntime@1@UContextId@1@VWeakLifetimeScope@1@AEBV?$StrongTypedObjectHandle@UPromiseType@Scripting@@@1@@Z
     MCAPI
-    PromiseAny(class Scripting::IRuntime*, struct Scripting::ContextId, class Scripting::WeakLifetimeScope, class Scripting::StrongTypedObjectHandle<struct Scripting::PromiseType> const&);
+    PromiseAny(class Scripting::IRuntime*, struct Scripting::ContextId, class Scripting::WeakLifetimeScope scope, class Scripting::StrongTypedObjectHandle<struct Scripting::PromiseType> const&);
 
     // symbol:
     // ?getPromiseHandle@PromiseAny@Scripting@@QEBA?AV?$optional@U?$TypedObjectHandle@UPromiseType@Scripting@@@Scripting@@@std@@XZ
     MCAPI std::optional<struct Scripting::TypedObjectHandle<struct Scripting::PromiseType>> getPromiseHandle() const;
 
     // symbol: ??4PromiseAny@Scripting@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class Scripting::PromiseAny& operator=(class Scripting::PromiseAny&&);
+    MCAPI class Scripting::PromiseAny& operator=(class Scripting::PromiseAny&& rhs);
 
     // symbol: ??4PromiseAny@Scripting@@QEAAAEAV01@AEBV01@@Z
-    MCAPI class Scripting::PromiseAny& operator=(class Scripting::PromiseAny const&);
+    MCAPI class Scripting::PromiseAny& operator=(class Scripting::PromiseAny const& rhs);
 
     // NOLINTEND
 

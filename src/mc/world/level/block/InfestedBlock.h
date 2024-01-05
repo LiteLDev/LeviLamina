@@ -102,11 +102,11 @@ public:
     // vIndex: 95, symbol:
     // ?spawnResources@InfestedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const&, class Randomize&, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 96, symbol: ?asItemInstance@InfestedBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -131,13 +131,13 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 129, symbol: ?getVariant@InfestedBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
 
     // vIndex: 142, symbol: ?tryGetUninfested@InfestedBlock@@UEBAPEBVBlock@@AEBV2@@Z
-    virtual class Block const* tryGetUninfested(class Block const&) const;
+    virtual class Block const* tryGetUninfested(class Block const& block) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -152,13 +152,13 @@ public:
     virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@InfestedBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol: ??0InfestedBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI InfestedBlock(std::string const&, int);
+    MCAPI InfestedBlock(std::string const& nameId, int);
 
     // symbol: ?spawnSilverfish@InfestedBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static void spawnSilverfish(class BlockSource&, class BlockPos const&);
+    MCAPI static void spawnSilverfish(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 };

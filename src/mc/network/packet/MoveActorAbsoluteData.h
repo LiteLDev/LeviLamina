@@ -35,7 +35,7 @@ public:
     MCAPI void setRot(class Vec2 const& rot);
 
     // symbol: ?setYBodyRot@MoveActorAbsoluteData@@QEAAXM@Z
-    MCAPI void setYBodyRot(float);
+    MCAPI void setYBodyRot(float rot);
 
     // symbol: ?setYHeadRot@MoveActorAbsoluteData@@QEAAXM@Z
     MCAPI void setYHeadRot(float rot);

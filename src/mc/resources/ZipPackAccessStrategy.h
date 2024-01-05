@@ -46,7 +46,7 @@ public:
     virtual bool isTrusted() const;
 
     // vIndex: 7, symbol: ?hasAsset@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@_N1@Z
-    virtual bool hasAsset(class Core::Path const&, bool, bool) const;
+    virtual bool hasAsset(class Core::Path const& packRelativePath, bool trustedContentOnly, bool) const;
 
     // vIndex: 8, symbol: ?hasFolder@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@@Z
     virtual bool hasFolder(class Core::Path const& packRelativePath) const;
@@ -89,8 +89,11 @@ public:
 
     // symbol:
     // ??0ZipPackAccessStrategy@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@AEBVResourceLocation@@AEBVPath@Core@@@Z
-    MCAPI
-    ZipPackAccessStrategy(Bedrock::NotNullNonOwnerPtr<class IFileAccess> const&, class ResourceLocation const&, class Core::Path const&);
+    MCAPI ZipPackAccessStrategy(
+        Bedrock::NotNullNonOwnerPtr<class IFileAccess> const& fileAccess,
+        class ResourceLocation const&                         location,
+        class Core::Path const&                               subPath
+    );
 
     // NOLINTEND
 

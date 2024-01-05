@@ -124,7 +124,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@DeepslateRedStoneOreBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -136,10 +136,10 @@ public:
     virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
 
     // vIndex: 168, symbol: ?_lightUpBlock@DeepslateRedStoneOreBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void _lightUpBlock(class BlockSource&, class BlockPos const&) const;
+    virtual void _lightUpBlock(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0DeepslateRedStoneOreBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI DeepslateRedStoneOreBlock(std::string const&, int, bool);
+    MCAPI DeepslateRedStoneOreBlock(std::string const& nameId, int, bool lit);
 
     // NOLINTEND
 };

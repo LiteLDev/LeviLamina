@@ -29,7 +29,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0MapItemTrackedActor@@QEAA@AEBUUniqueId@0@AEAVBlockSource@@@Z
-    MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const& id, class BlockSource& region);
+    MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const&, class BlockSource& region);
 
     // symbol: ?getDecorationRotation@MapItemTrackedActor@@QEAAMAEAVBlockSource@@@Z
     MCAPI float getDecorationRotation(class BlockSource& region);

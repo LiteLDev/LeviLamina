@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0GuardianAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit GuardianAttackGoal(class Mob&);
+    MCAPI explicit GuardianAttackGoal(class Mob& mob);
 
     // NOLINTEND
 };

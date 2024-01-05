@@ -84,7 +84,7 @@ public:
     virtual class ItemStack& use(class ItemStack& itemStack, class Player& player) const;
 
     // vIndex: 75, symbol: ?hurtActor@FishingRodItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
+    virtual void hurtActor(class ItemStack& itemStack, class Actor& actor, class Mob& attacker) const;
 
     // vIndex: 79, symbol: ?mineBlock@FishingRodItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
@@ -105,7 +105,8 @@ public:
     virtual class Item& setIconInfo(std::string const&, int);
 
     // vIndex: 103, symbol: ?getIconInfo@FishingRodItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo
+    getIconInfo(class ItemStackBase const& itemStack, int, bool inInventoryPane) const;
 
     // vIndex: 104, symbol:
     // ?getInteractText@FishingRodItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
@@ -122,7 +123,7 @@ public:
     MCVAPI bool shouldUseJsonForRenderMatrix() const;
 
     // symbol: ??0FishingRodItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FishingRodItem(std::string const& name, int id);
+    MCAPI FishingRodItem(std::string const& name, int);
 
     // NOLINTEND
 };

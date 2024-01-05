@@ -137,7 +137,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@CakeBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -146,13 +146,13 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@CakeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@CakeBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -167,10 +167,11 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 
     // symbol: ??0CakeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CakeBlock(std::string const& nameId, int id);
+    MCAPI CakeBlock(std::string const& nameId, int);
 
     // symbol: ?removeCakeSlice@CakeBlock@@SAXAEAVPlayer@@AEAVBlockSource@@AEBVBlockPos@@PEBVBlock@@@Z
-    MCAPI static void removeCakeSlice(class Player&, class BlockSource&, class BlockPos const&, class Block const*);
+    MCAPI static void
+    removeCakeSlice(class Player& player, class BlockSource& region, class BlockPos const& pos, class Block const*);
 
     // NOLINTEND
 };

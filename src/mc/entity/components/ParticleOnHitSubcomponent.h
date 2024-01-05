@@ -22,7 +22,7 @@ public:
     virtual ~ParticleOnHitSubcomponent() = default;
 
     // vIndex: 1, symbol: ?readfromJSON@ParticleOnHitSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-    virtual void readfromJSON(class Json::Value&, class SemVersion const&);
+    virtual void readfromJSON(class Json::Value& value, class SemVersion const& engineVersion);
 
     // vIndex: 2, symbol: ?writetoJSON@ParticleOnHitSubcomponent@@UEBAXAEAVValue@Json@@@Z
     virtual void writetoJSON(class Json::Value& component) const;

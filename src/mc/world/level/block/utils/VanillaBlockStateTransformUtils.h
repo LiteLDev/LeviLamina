@@ -18,17 +18,18 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4CommonDirection@@@Z
-    MCAPI static class Block const* transformBlock(class Block const&, ::CommonDirection);
+    MCAPI static class Block const* transformBlock(class Block const& block, ::CommonDirection);
 
     // symbol: ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Name@Facing@@@Z
-    MCAPI static class Block const* transformBlock(class Block const&, ::Facing::Name);
+    MCAPI static class Block const* transformBlock(class Block const& block, ::Facing::Name);
 
     // symbol: ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Rotation@@W4Mirror@@@Z
-    MCAPI static class Block const* transformBlock(class Block const&, ::Rotation, ::Mirror);
+    MCAPI static class Block const* transformBlock(class Block const& block, ::Rotation rotation, ::Mirror mirror);
 
     // symbol:
     // ?transformMultiFaceDirectionBits@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Rotation@@W4Mirror@@@Z
-    MCAPI static class Block const* transformMultiFaceDirectionBits(class Block const&, ::Rotation, ::Mirror);
+    MCAPI static class Block const*
+    transformMultiFaceDirectionBits(class Block const& block, ::Rotation rotation, ::Mirror mirror);
 
     // NOLINTEND
 

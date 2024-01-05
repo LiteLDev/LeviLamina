@@ -41,7 +41,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 25, symbol: ?canConnect@BellBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
+    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -165,7 +165,7 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@BellBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -174,7 +174,7 @@ public:
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@BellBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
 
     // vIndex: 167, symbol: ?entityInside@BellBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
     virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& actor) const;
@@ -183,7 +183,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0BellBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BellBlock(std::string const& nameId, int id);
+    MCAPI BellBlock(std::string const& nameId, int);
 
     // symbol: ?hasValidAttachment@BellBlock@@QEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool hasValidAttachment(class Block const& block, class BlockSource& region, class BlockPos const& pos) const;
@@ -197,13 +197,18 @@ public:
     _determineAttachment(class Actor const& by, class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
     // symbol: ?_getItemId@BellBlock@@AEBAFAEBVBlockSource@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI short _getItemId(class BlockSource const&, std::string_view) const;
+    MCAPI short _getItemId(class BlockSource const& region, std::string_view itemName) const;
 
     // symbol: ?_sendBellUsedEventToClient@BellBlock@@AEBAXAEBVBlockSource@@AEBVActor@@@Z
     MCAPI void _sendBellUsedEventToClient(class BlockSource const& region, class Actor const& sourceActor) const;
 
     // symbol: ?_tryAttachToNeighbors@BellBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@1H@Z
-    MCAPI void _tryAttachToNeighbors(class BlockSource&, class BlockPos const&, class BlockPos const&, int) const;
+    MCAPI void _tryAttachToNeighbors(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class BlockPos const& neighborPos,
+        int                   updateFlags
+    ) const;
 
     // NOLINTEND
 };

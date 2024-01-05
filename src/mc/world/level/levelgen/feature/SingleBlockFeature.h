@@ -20,7 +20,7 @@ public:
     // vIndex: 1, symbol:
     // ?place@SingleBlockFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
     virtual std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    place(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random&, class RenderParams&) const;
 
     // vIndex: 2, symbol:
     // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -31,7 +31,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_mayAttach@SingleBlockFeature@@AEBAPEBVBlock@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-    MCAPI class Block const* _mayAttach(class IBlockWorldGenAPI&, class BlockPos const&) const;
+    MCAPI class Block const* _mayAttach(class IBlockWorldGenAPI& target, class BlockPos const& pos) const;
 
     // NOLINTEND
 };

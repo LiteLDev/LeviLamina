@@ -21,7 +21,7 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?onSourceDestroyed@BlockSourceHandle@@UEAAXAEAVBlockSource@@@Z
-    virtual void onSourceDestroyed(class BlockSource&);
+    virtual void onSourceDestroyed(class BlockSource& source);
 
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();

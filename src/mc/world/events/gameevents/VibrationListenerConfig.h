@@ -15,7 +15,7 @@ public:
     MCVAPI bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
 
     // symbol: ?isValidVibration@VibrationListenerConfig@@UEAA_NAEBVGameEvent@@@Z
-    MCVAPI bool isValidVibration(class GameEvent const&);
+    MCVAPI bool isValidVibration(class GameEvent const& gameEvent);
 
     // symbol: ?onSerializableDataChanged@VibrationListenerConfig@@UEAAXAEAVBlockSource@@@Z
     MCVAPI void onSerializableDataChanged(class BlockSource&);

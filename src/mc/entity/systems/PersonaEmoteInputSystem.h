@@ -25,12 +25,27 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_personaEmoteInputSystem@PersonaEmoteInputSystem@@CAXAEBVStrictEntityContext@@AEBUEventingDispatcherComponent@@AEBUEmotePlayedTelemetryDataComponent@@V?$ViewT@VStrictEntityContext@@UEventingRequestQueueComponent@@@@V?$EntityModifier@UEmotePlayedTelemetryDataComponent@@UShouldStopEmotingRequestComponent@@@@@Z
-    MCAPI static void
-    _personaEmoteInputSystem(class StrictEntityContext const&, struct EventingDispatcherComponent const&, struct EmotePlayedTelemetryDataComponent const&, class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent>, class EntityModifier<struct EmotePlayedTelemetryDataComponent, struct ShouldStopEmotingRequestComponent>);
+    MCAPI static void _personaEmoteInputSystem(
+        class StrictEntityContext const& entity,
+        struct EventingDispatcherComponent const&,
+        struct EmotePlayedTelemetryDataComponent const&,
+        class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent>,
+        class EntityModifier<struct EmotePlayedTelemetryDataComponent, struct ShouldStopEmotingRequestComponent>
+            modifier
+    );
 
     // symbol:
     // ?_tickPersonaEmoteInputSystem@PersonaEmoteInputSystem@@CAXV?$ViewT@VStrictEntityContext@@U?$Include@UShouldStopEmotingRequestComponent@@@@$$CBUEventingDispatcherComponent@@$$CBUEmotePlayedTelemetryDataComponent@@@@V?$ViewT@VStrictEntityContext@@UEventingRequestQueueComponent@@@@V?$EntityModifier@UEmotePlayedTelemetryDataComponent@@UShouldStopEmotingRequestComponent@@@@@Z
-    MCAPI static void _tickPersonaEmoteInputSystem(class ViewT<class StrictEntityContext, struct Include<struct ShouldStopEmotingRequestComponent>, struct EventingDispatcherComponent const, struct EmotePlayedTelemetryDataComponent const>, class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent>, class EntityModifier<struct EmotePlayedTelemetryDataComponent, struct ShouldStopEmotingRequestComponent>);
+    MCAPI static void _tickPersonaEmoteInputSystem(
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<struct ShouldStopEmotingRequestComponent>,
+            struct EventingDispatcherComponent const,
+            struct EmotePlayedTelemetryDataComponent const> view,
+        class ViewT<class StrictEntityContext, struct EventingRequestQueueComponent>,
+        class EntityModifier<struct EmotePlayedTelemetryDataComponent, struct ShouldStopEmotingRequestComponent>
+            modifier
+    );
 
     // NOLINTEND
 };

@@ -100,7 +100,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@StainedGlassPaneBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -142,8 +142,8 @@ public:
     // symbol:
     // ??0StainedGlassPaneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N22@Z
     MCAPI StainedGlassPaneBlock(
-        std::string const&    nameId,
-        int                   id,
+        std::string const& nameId,
+        int,
         class Material const& material,
         bool                  dropsResources,
         bool                  singleSide,

@@ -28,8 +28,10 @@ public:
 
     // symbol:
     // ??0ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEAA@AEBUExplosionStartedEvent@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI
-    ScriptExplosionStartedAfterEvent(struct ExplosionStartedEvent const&, class Scripting::WeakLifetimeScope const&);
+    MCAPI ScriptExplosionStartedAfterEvent(
+        struct ExplosionStartedEvent const&,
+        class Scripting::WeakLifetimeScope const& scope
+    );
 
     // symbol: ?copyTo@ScriptExplosionStartedAfterEvent@ScriptModuleMinecraft@@QEBAXAEAUExplosionStartedEvent@@@Z
     MCAPI void copyTo(struct ExplosionStartedEvent&) const;

@@ -32,7 +32,7 @@ public:
     virtual bool _setWantedPosition();
 
     // symbol: ??0RandomSwimmingGoal@@QEAA@AEAVMob@@MHHH_N@Z
-    MCAPI RandomSwimmingGoal(class Mob&, float, int, int, int, bool);
+    MCAPI RandomSwimmingGoal(class Mob& mob, float speed, int xzDist, int yDist, int interval, bool);
 
     // NOLINTEND
 };

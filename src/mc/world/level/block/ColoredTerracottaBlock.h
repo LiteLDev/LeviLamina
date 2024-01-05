@@ -100,7 +100,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@ColoredTerracottaBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -130,11 +130,11 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@ColoredTerracottaBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // symbol:
     // ??0ColoredTerracottaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI ColoredTerracottaBlock(std::string const&, int, class Material const&);
+    MCAPI ColoredTerracottaBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

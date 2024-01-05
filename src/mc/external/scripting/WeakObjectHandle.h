@@ -18,10 +18,10 @@ public:
     MCAPI WeakObjectHandle();
 
     // symbol: ??0WeakObjectHandle@Scripting@@QEAA@$$QEAV01@@Z
-    MCAPI WeakObjectHandle(class Scripting::WeakObjectHandle&&);
+    MCAPI WeakObjectHandle(class Scripting::WeakObjectHandle&& rhs);
 
     // symbol: ??0WeakObjectHandle@Scripting@@QEAA@AEBV01@@Z
-    MCAPI WeakObjectHandle(class Scripting::WeakObjectHandle const&);
+    MCAPI WeakObjectHandle(class Scripting::WeakObjectHandle const& rhs);
 
     // symbol: ??0WeakObjectHandle@Scripting@@QEAA@VWeakLifetimeScope@1@UObjectHandle@1@@Z
     MCAPI WeakObjectHandle(class Scripting::WeakLifetimeScope, struct Scripting::ObjectHandle);
@@ -36,13 +36,13 @@ public:
     MCAPI class Scripting::WeakLifetimeScope getScope() const;
 
     // symbol: ??4WeakObjectHandle@Scripting@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class Scripting::WeakObjectHandle& operator=(class Scripting::WeakObjectHandle&&);
+    MCAPI class Scripting::WeakObjectHandle& operator=(class Scripting::WeakObjectHandle&& rhs);
 
     // symbol: ??4WeakObjectHandle@Scripting@@QEAAAEAV01@AEBV01@@Z
-    MCAPI class Scripting::WeakObjectHandle& operator=(class Scripting::WeakObjectHandle const&);
+    MCAPI class Scripting::WeakObjectHandle& operator=(class Scripting::WeakObjectHandle const& rhs);
 
     // symbol: ??8WeakObjectHandle@Scripting@@QEBA_NAEBV01@@Z
-    MCAPI bool operator==(class Scripting::WeakObjectHandle const&) const;
+    MCAPI bool operator==(class Scripting::WeakObjectHandle const& rhs) const;
 
     // symbol: ?valid@WeakObjectHandle@Scripting@@QEBA_NXZ
     MCAPI bool valid() const;

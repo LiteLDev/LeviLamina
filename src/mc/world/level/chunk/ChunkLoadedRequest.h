@@ -24,13 +24,13 @@ public:
 
     // symbol:
     // ??0ChunkLoadedRequest@@QEAA@AEBUBounds@@V?$unique_ptr@VIRequestAction@@U?$default_delete@VIRequestAction@@@std@@@std@@_N2@Z
-    MCAPI ChunkLoadedRequest(struct Bounds const&, std::unique_ptr<class IRequestAction>, bool, bool);
+    MCAPI ChunkLoadedRequest(struct Bounds const& bounds, std::unique_ptr<class IRequestAction>, bool, bool);
 
     // symbol: ?areAllChunksLoaded@ChunkLoadedRequest@@QEBA?AW4ChunksLoadedStatus@@AEAVDimension@@UTick@@@Z
-    MCAPI ::ChunksLoadedStatus areAllChunksLoaded(class Dimension&, struct Tick) const;
+    MCAPI ::ChunksLoadedStatus areAllChunksLoaded(class Dimension& dimension, struct Tick) const;
 
     // symbol: ?areaContainsChunk@ChunkLoadedRequest@@QEBA_NAEBVLevelChunk@@@Z
-    MCAPI bool areaContainsChunk(class LevelChunk const&) const;
+    MCAPI bool areaContainsChunk(class LevelChunk const& chunk) const;
 
     // symbol: ?serialize@ChunkLoadedRequest@@QEAA?AVCompoundTag@@W4ChunkRequestListType@@@Z
     MCAPI class CompoundTag serialize(::ChunkRequestListType);
@@ -41,14 +41,14 @@ public:
     // symbol:
     // ?load@ChunkLoadedRequest@@SA?AUDeserializedChunkLoadedRequest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@AEAVICommandOriginLoader@@0@Z
     MCAPI static struct DeserializedChunkLoadedRequest
-    load(std::string const&, class CompoundTag const&, class ICommandOriginLoader&, std::string const&);
+    load(std::string const& key, class CompoundTag const& tag, class ICommandOriginLoader& loader, std::string const&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_getTickingArea@ChunkLoadedRequest@@AEBAPEBVITickingAreaView@@AEBVDimension@@@Z
-    MCAPI class ITickingAreaView const* _getTickingArea(class Dimension const&) const;
+    MCAPI class ITickingAreaView const* _getTickingArea(class Dimension const& dimension) const;
 
     // NOLINTEND
 };

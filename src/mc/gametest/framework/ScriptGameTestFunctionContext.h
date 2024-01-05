@@ -30,7 +30,8 @@ public:
 
     // symbol:
     // ??0ScriptGameTestFunctionContext@ScriptModuleGameTest@@QEAA@VWeakLifetimeScope@Scripting@@AEAVBaseGameTestHelper@gametest@@@Z
-    MCAPI ScriptGameTestFunctionContext(class Scripting::WeakLifetimeScope, class gametest::BaseGameTestHelper&);
+    MCAPI
+    ScriptGameTestFunctionContext(class Scripting::WeakLifetimeScope scope, class gametest::BaseGameTestHelper& helper);
 
     // symbol:
     // ?getScriptGameTestHelper@ScriptGameTestFunctionContext@ScriptModuleGameTest@@QEAA?AV?$WeakTypedObjectHandle@VScriptGameTestHelper@ScriptModuleGameTest@@@Scripting@@XZ

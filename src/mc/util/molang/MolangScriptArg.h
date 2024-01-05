@@ -12,7 +12,7 @@ public:
     MCAPI MolangScriptArg();
 
     // symbol: ??0MolangScriptArg@@QEAA@M@Z
-    MCAPI explicit MolangScriptArg(float value);
+    MCAPI explicit MolangScriptArg(float);
 
     // symbol: ??0MolangScriptArg@@QEAA@H@Z
     MCAPI explicit MolangScriptArg(int);
@@ -39,13 +39,13 @@ public:
     MCAPI struct MolangMemberArray const* getIfMolangMemberArray() const;
 
     // symbol: ?isEqual@MolangScriptArg@@QEBA_NAEBU1@@Z
-    MCAPI bool isEqual(struct MolangScriptArg const& rhs) const;
+    MCAPI bool isEqual(struct MolangScriptArg const&) const;
 
     // symbol: ??4MolangScriptArg@@QEAAAEAU0@$$QEAU0@@Z
-    MCAPI struct MolangScriptArg& operator=(struct MolangScriptArg&& rhs);
+    MCAPI struct MolangScriptArg& operator=(struct MolangScriptArg&&);
 
     // symbol: ??4MolangScriptArg@@QEAAAEAU0@AEBU0@@Z
-    MCAPI struct MolangScriptArg& operator=(struct MolangScriptArg const& rhs);
+    MCAPI struct MolangScriptArg& operator=(struct MolangScriptArg const&);
 
     // symbol: ?setType@MolangScriptArg@@QEAAXW4MolangScriptArgType@@@Z
     MCAPI void setType(::MolangScriptArgType);

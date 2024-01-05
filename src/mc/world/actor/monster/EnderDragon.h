@@ -83,7 +83,7 @@ public:
     virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@EnderDragon@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent, int data);
 
     // vIndex: 106, symbol: ?canChangeDimensionsUsingPortal@EnderDragon@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
@@ -101,10 +101,10 @@ public:
     virtual void __unk_vfn_144();
 
     // vIndex: 147, symbol: ?die@EnderDragon@@UEAAXAEBVActorDamageSource@@@Z
-    virtual void die(class ActorDamageSource const&);
+    virtual void die(class ActorDamageSource const& source);
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@EnderDragon@@UEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
@@ -125,7 +125,11 @@ public:
     MCVAPI bool canExistInPeaceful() const;
 
     // symbol: ??0EnderDragon@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI EnderDragon(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI EnderDragon(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?dieNaturally@EnderDragon@@QEAAXXZ
     MCAPI void dieNaturally();
@@ -201,21 +205,21 @@ public:
     MCAPI void _checkCrystals();
 
     // symbol: ?_checkWalls@EnderDragon@@AEAA_NVAABB@@@Z
-    MCAPI bool _checkWalls(class AABB);
+    MCAPI bool _checkWalls(class AABB bb);
 
     // symbol: ?_hurtEntities@EnderDragon@@AEBAXV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@@Z
-    MCAPI void _hurtEntities(gsl::span<gsl::not_null<class Actor*>>) const;
+    MCAPI void _hurtEntities(gsl::span<gsl::not_null<class Actor*>> actors) const;
 
     // symbol: ?_knockBack@EnderDragon@@AEBAXV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@@Z
-    MCAPI void _knockBack(gsl::span<gsl::not_null<class Actor*>>) const;
+    MCAPI void _knockBack(gsl::span<gsl::not_null<class Actor*>> actors) const;
 
     // symbol:
     // ?_reconstructPath@EnderDragon@@AEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVPathfinderNode@@0W4PathCompletionType@@@Z
     MCAPI std::unique_ptr<class Path>
-          _reconstructPath(class PathfinderNode&, class PathfinderNode&, ::PathCompletionType);
+          _reconstructPath(class PathfinderNode& from, class PathfinderNode& to, ::PathCompletionType completionType);
 
     // symbol: ?_isDragonImmuneBlock@EnderDragon@@CA_NAEBVBlockLegacy@@@Z
-    MCAPI static bool _isDragonImmuneBlock(class BlockLegacy const&);
+    MCAPI static bool _isDragonImmuneBlock(class BlockLegacy const& block);
 
     // NOLINTEND
 

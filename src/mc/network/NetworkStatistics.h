@@ -32,7 +32,7 @@ public:
 
     // vIndex: 3, symbol:
     // ?dataSentTo@NetworkStatistics@@UEAAXAEBVNetworkIdentifier@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    virtual void dataSentTo(class NetworkIdentifier const&, std::string_view);
+    virtual void dataSentTo(class NetworkIdentifier const& target, std::string_view data);
 
     // vIndex: 4, symbol:
     // ?dataReceivedFrom@NetworkStatistics@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -51,7 +51,7 @@ public:
     // symbol:
     // ??0NetworkStatistics@@AEAA@$$QEAVClientOrServerNetworkSystemRef@@W4TrackerType@@$$QEAV?$function@$$A6A_NAEAURakNetStatistics@RakNet@@@Z@std@@V?$not_null@V?$NonOwnerPointer@VNetworkDebugManager@@@Bedrock@@@gsl@@@Z
     MCAPI
-    NetworkStatistics(class ClientOrServerNetworkSystemRef&&, ::TrackerType, std::function<bool(struct RakNet::RakNetStatistics&)>&&, Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>);
+    NetworkStatistics(class ClientOrServerNetworkSystemRef&& network, ::TrackerType type, std::function<bool(struct RakNet::RakNetStatistics&)>&& getRakNetStatsReading, Bedrock::NotNullNonOwnerPtr<class NetworkDebugManager>);
 
     // symbol: ?_clearCSVStats@NetworkStatistics@@AEAAXXZ
     MCAPI void _clearCSVStats();

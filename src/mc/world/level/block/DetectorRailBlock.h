@@ -158,7 +158,7 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 
     // symbol: ??0DetectorRailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DetectorRailBlock(std::string const& nameId, int id);
+    MCAPI DetectorRailBlock(std::string const& nameId, int);
 
     // NOLINTEND
 

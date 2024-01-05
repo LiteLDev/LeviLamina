@@ -35,10 +35,10 @@ public:
     MCAPI void run(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?shouldUseCommandOriginRotation@Command@@SA_NAEBVCommandOrigin@@H@Z
-    MCAPI static bool shouldUseCommandOriginRotation(class CommandOrigin const&, int);
+    MCAPI static bool shouldUseCommandOriginRotation(class CommandOrigin const& origin, int version);
 
     // symbol: ?validRange@Command@@SA_NMMMAEAVCommandOutput@@@Z
-    MCAPI static bool validRange(float, float, float, class CommandOutput&);
+    MCAPI static bool validRange(float input, float low, float high, class CommandOutput& output);
 
     // symbol: ?validRange@Command@@SA_NHHHAEAVCommandOutput@@@Z
     MCAPI static bool validRange(int input, int low, int high, class CommandOutput& output);

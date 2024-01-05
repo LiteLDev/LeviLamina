@@ -18,10 +18,11 @@ public:
     MCAPI PropertyComponent(class PropertyComponent&&);
 
     // symbol: ??0PropertyComponent@@QEAA@V?$not_null@V?$shared_ptr@$$CBVPropertyGroup@@@std@@@gsl@@AEAVRenderParams@@@Z
-    MCAPI PropertyComponent(gsl::not_null<std::shared_ptr<class PropertyGroup const>>, class RenderParams&);
+    MCAPI
+    PropertyComponent(gsl::not_null<std::shared_ptr<class PropertyGroup const>>, class RenderParams& renderParams);
 
     // symbol: ?addAdditionalSaveData@PropertyComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol:
     // ?applyPendingChanges@PropertyComponent@@QEAAXAEBV?$unordered_map@_KV?$variant@HM_N_K@std@@U?$hash@_K@2@U?$equal_to@_K@2@V?$allocator@U?$pair@$$CB_KV?$variant@HM_N_K@std@@@std@@@2@@std@@@Z
@@ -37,7 +38,7 @@ public:
     MCAPI int getInt(uint64) const;
 
     // symbol: ?getMolangValue@PropertyComponent@@QEBA_N_KAEAUMolangScriptArg@@@Z
-    MCAPI bool getMolangValue(uint64, struct MolangScriptArg&) const;
+    MCAPI bool getMolangValue(uint64, struct MolangScriptArg& out) const;
 
     // symbol: ?getPropertyType@PropertyComponent@@QEBA?AW4ContainedType@PropertyMetadata@@_K@Z
     MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64) const;

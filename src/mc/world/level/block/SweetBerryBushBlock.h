@@ -124,11 +124,11 @@ public:
     // vIndex: 79, symbol:
     // ?onFertilized@SweetBerryBushBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
     virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
         const;
 
     // vIndex: 81, symbol: ?canBeFertilized@SweetBerryBushBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 85, symbol: ?mayPlace@SweetBerryBushBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
@@ -139,7 +139,7 @@ public:
     // vIndex: 95, symbol:
     // ?spawnResources@SweetBerryBushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Randomize& randomize, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 96, symbol: ?asItemInstance@SweetBerryBushBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
@@ -186,13 +186,13 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 151, symbol: ?randomTick@SweetBerryBushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@SweetBerryBushBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -209,7 +209,7 @@ public:
     getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
 
     // vIndex: 165, symbol: ?getResourceCount@SweetBerryBushBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 167, symbol: ?entityInside@SweetBerryBushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
     virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
@@ -221,7 +221,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0SweetBerryBushBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SweetBerryBushBlock(std::string const& nameId, int id);
+    MCAPI SweetBerryBushBlock(std::string const& nameId, int);
 
     // NOLINTEND
 

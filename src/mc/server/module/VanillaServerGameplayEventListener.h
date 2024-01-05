@@ -16,11 +16,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?onActorCreationAttemptFailed@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVActor@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCVAPI ::EventResult onActorCreationAttemptFailed(class Actor&, std::string_view);
+    MCVAPI ::EventResult onActorCreationAttemptFailed(class Actor& actor, std::string_view message);
 
     // symbol:
     // ?onBlockInteractedWith@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCVAPI ::EventResult onBlockInteractedWith(class Player&, class BlockPos const&);
+    MCVAPI ::EventResult onBlockInteractedWith(class Player& player, class BlockPos const& blockPos);
 
     // symbol:
     // ?onBlockPlacedByPlayer@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z
@@ -32,13 +32,13 @@ public:
     );
 
     // symbol: ?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerDamageEvent@@@Z
-    MCVAPI ::EventResult onEvent(struct PlayerDamageEvent const&);
+    MCVAPI ::EventResult onEvent(struct PlayerDamageEvent const& playerDamageEvent);
 
     // symbol: ?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorHurtEvent@@@Z
-    MCVAPI ::EventResult onEvent(struct ActorHurtEvent const&);
+    MCVAPI ::EventResult onEvent(struct ActorHurtEvent const& actorHurtEvent);
 
     // symbol: ?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z
-    MCVAPI ::EventResult onEvent(struct PlayerOpenContainerEvent const&);
+    MCVAPI ::EventResult onEvent(struct PlayerOpenContainerEvent const& playerOpenContainerEvent);
 
     // symbol:
     // ?onPlayerMovementAnomaly@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z

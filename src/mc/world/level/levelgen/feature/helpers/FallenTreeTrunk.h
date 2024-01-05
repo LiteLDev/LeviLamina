@@ -22,11 +22,11 @@ public:
     // vIndex: 1, symbol:
     // ?placeTrunk@FallenTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
     virtual std::optional<class BlockPos>
-    placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, int, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*)
+    placeTrunk(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int treeHeight, class RenderParams& renderParams, struct TreeHelper::TreeParams const&, class ITreeCanopy const*)
         const;
 
     // vIndex: 2, symbol: ?getTreeHeight@FallenTreeTrunk@@UEBAHAEAVRandom@@@Z
-    virtual int getTreeHeight(class Random&) const;
+    virtual int getTreeHeight(class Random& random) const;
 
     // NOLINTEND
 };

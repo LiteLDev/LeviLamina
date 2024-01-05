@@ -20,11 +20,11 @@ public:
     virtual ~ActorFactory() = default;
 
     // symbol: ??0ActorFactory@@QEAA@V?$not_null@V?$NonOwnerPointer@VLevel@@@Bedrock@@@gsl@@@Z
-    MCAPI explicit ActorFactory(Bedrock::NotNullNonOwnerPtr<class Level>);
+    MCAPI explicit ActorFactory(Bedrock::NotNullNonOwnerPtr<class Level> level);
 
     // symbol:
     // ?applyEntityInitializer@ActorFactory@@QEBAXV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@AEAVEntityContext@@@Z
-    MCAPI void applyEntityInitializer(std::unique_ptr<class Actor>, class EntityContext&) const;
+    MCAPI void applyEntityInitializer(std::unique_ptr<class Actor> actor, class EntityContext& entity) const;
 
     // symbol:
     // ?buildSummonEntityTypeEnum@ActorFactory@@QEBA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBUActorDefinitionIdentifier@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBUActorDefinitionIdentifier@@@std@@@2@@std@@AEBVExperiments@@@Z
@@ -36,33 +36,45 @@ public:
 
     // symbol:
     // ?createActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@AEBVVec2@@@Z
-    MCAPI class OwnerPtrT<struct EntityRefTraits>
-    createActor(std::string const&, struct ActorDefinitionIdentifier const&, class Actor*, class Vec3 const&, class Vec2 const&);
+    MCAPI class OwnerPtrT<struct EntityRefTraits> createActor(
+        std::string const&                      method,
+        struct ActorDefinitionIdentifier const& identifier,
+        class Actor*                            spawner,
+        class Vec3 const&                       position,
+        class Vec2 const&                       rotation
+    );
 
     // symbol:
     // ?createBornActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBUActorDefinitionIdentifier@@PEAVActor@@@Z
     MCAPI class OwnerPtrT<struct EntityRefTraits>
-    createBornActor(struct ActorDefinitionIdentifier const&, class Actor*);
+    createBornActor(struct ActorDefinitionIdentifier const& identifier, class Actor* parent);
 
     // symbol:
     // ?createBornActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBUActorDefinitionIdentifier@@AEBVBlockPos@@@Z
     MCAPI class OwnerPtrT<struct EntityRefTraits>
-    createBornActor(struct ActorDefinitionIdentifier const&, class BlockPos const&);
+    createBornActor(struct ActorDefinitionIdentifier const& identifier, class BlockPos const& pos);
 
     // symbol:
     // ?createSpawnedActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@AEBVVec2@@@Z
-    MCAPI class OwnerPtrT<struct EntityRefTraits>
-    createSpawnedActor(struct ActorDefinitionIdentifier const&, class Actor*, class Vec3 const&, class Vec2 const&);
+    MCAPI class OwnerPtrT<struct EntityRefTraits> createSpawnedActor(
+        struct ActorDefinitionIdentifier const& identifier,
+        class Actor*                            spawner,
+        class Vec3 const&                       position,
+        class Vec2 const&                       rotation
+    );
 
     // symbol:
     // ?createSummonedActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@@Z
-    MCAPI class OwnerPtrT<struct EntityRefTraits>
-    createSummonedActor(struct ActorDefinitionIdentifier const&, class Actor*, class Vec3 const&);
+    MCAPI class OwnerPtrT<struct EntityRefTraits> createSummonedActor(
+        struct ActorDefinitionIdentifier const& identifier,
+        class Actor*                            spawner,
+        class Vec3 const&                       position
+    );
 
     // symbol:
     // ?createTransformedActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBUActorDefinitionIdentifier@@PEAVActor@@@Z
     MCAPI class OwnerPtrT<struct EntityRefTraits>
-    createTransformedActor(struct ActorDefinitionIdentifier const&, class Actor*);
+    createTransformedActor(struct ActorDefinitionIdentifier const& identifier, class Actor* from);
 
     // symbol: ?getGoalFactory@ActorFactory@@QEAAAEAVActorGoalFactory@@XZ
     MCAPI class ActorGoalFactory& getGoalFactory();
@@ -80,11 +92,15 @@ public:
 
     // symbol:
     // ?loadActor@ActorFactory@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@PEAVCompoundTag@@AEAVDataLoadHelper@@AEBVDimensionHeightRange@@PEBVLevelChunk@@@Z
-    MCAPI class OwnerPtrT<struct EntityRefTraits>
-    loadActor(class CompoundTag*, class DataLoadHelper&, class DimensionHeightRange const&, class LevelChunk const*);
+    MCAPI class OwnerPtrT<struct EntityRefTraits> loadActor(
+        class CompoundTag*    tag,
+        class DataLoadHelper& dataLoadHelper,
+        class DimensionHeightRange const&,
+        class LevelChunk const* levelChunk
+    );
 
     // symbol: ?lookupEntityType@ActorFactory@@QEBA?AW4ActorType@@AEBUActorDefinitionIdentifier@@@Z
-    MCAPI ::ActorType lookupEntityType(struct ActorDefinitionIdentifier const&) const;
+    MCAPI ::ActorType lookupEntityType(struct ActorDefinitionIdentifier const& identifier) const;
 
     // symbol: ?setDefinitionGroup@ActorFactory@@QEAAXPEAVActorDefinitionGroup@@@Z
     MCAPI void setDefinitionGroup(class ActorDefinitionGroup* group);
@@ -97,8 +113,12 @@ public:
 
     // symbol:
     // ?fillFactoryData@ActorFactory@@SAXAEBUActorDefinitionIdentifier@@0AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorFactoryData@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorFactoryData@@@std@@@2@@std@@AEAUActorFactoryData@@@Z
-    MCAPI static void
-    fillFactoryData(struct ActorDefinitionIdentifier const&, struct ActorDefinitionIdentifier const&, std::unordered_map<std::string, struct ActorFactoryData> const&, struct ActorFactoryData&);
+    MCAPI static void fillFactoryData(
+        struct ActorDefinitionIdentifier const& identifier,
+        struct ActorDefinitionIdentifier const&,
+        std::unordered_map<std::string, struct ActorFactoryData> const&,
+        struct ActorFactoryData& data
+    );
 
     // symbol: ?fixLegacyEntity@ActorFactory@@SAPEAVActor@@AEAVBlockSource@@PEBVCompoundTag@@@Z
     MCAPI static class Actor* fixLegacyEntity(class BlockSource& region, class CompoundTag const* tag);
@@ -106,7 +126,7 @@ public:
     // symbol:
     // ?registerEntityMapping@ActorFactory@@SAXAEBW4ActorType@@_NAEBQ6A?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@ZV?$optional@H@4@@Z
     MCAPI static void
-    registerEntityMapping(::ActorType const&, bool, std::unique_ptr<class Actor> (*const&)(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&), std::optional<int>);
+    registerEntityMapping(::ActorType const&, bool allowSummon, std::unique_ptr<class Actor> (*const&)(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&) factory, std::optional<int>);
 
     // NOLINTEND
 
@@ -114,27 +134,31 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_buildSummonableActorList@ActorFactory@@AEBAXAEBVExperiments@@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUActorFactoryData@@@Z@std@@@Z
-    MCAPI void
-    _buildSummonableActorList(class Experiments const&, std::function<void(std::string const&, struct ActorFactoryData const&)>)
-        const;
+    MCAPI void _buildSummonableActorList(
+        class Experiments const&,
+        std::function<void(std::string const&, struct ActorFactoryData const&)> callback
+    ) const;
 
     // symbol:
     // ?_constructActor@ActorFactory@@AEBA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBUActorDefinitionIdentifier@@AEBVVec3@@AEBVVec2@@PEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
     MCAPI class OwnerPtrT<struct EntityRefTraits>
-    _constructActor(struct ActorDefinitionIdentifier const&, class Vec3 const&, class Vec2 const&, std::vector<std::string> const*)
+    _constructActor(struct ActorDefinitionIdentifier const& identifier, class Vec3 const& position, class Vec2 const& rotation, std::vector<std::string> const*)
         const;
 
     // symbol: ?_loadDefinitionGroups@ActorFactory@@AEAAXPEAVActorDefinitionGroup@@@Z
-    MCAPI void _loadDefinitionGroups(class ActorDefinitionGroup*);
+    MCAPI void _loadDefinitionGroups(class ActorDefinitionGroup* group);
 
     // symbol: ?_loadDefinitionsHelper@ActorFactory@@AEAAXXZ
     MCAPI void _loadDefinitionsHelper();
 
     // symbol:
     // ?_validateActorData@ActorFactory@@AEBA_NAEAVCompoundTag@@AEAUActorDefinitionIdentifier@@AEAVVec3@@PEBVLevelChunk@@@Z
-    MCAPI bool
-    _validateActorData(class CompoundTag&, struct ActorDefinitionIdentifier&, class Vec3&, class LevelChunk const*)
-        const;
+    MCAPI bool _validateActorData(
+        class CompoundTag&                tag,
+        struct ActorDefinitionIdentifier& outDefinition,
+        class Vec3&                       outPosition,
+        class LevelChunk const*           levelChunk
+    ) const;
 
     // NOLINTEND
 

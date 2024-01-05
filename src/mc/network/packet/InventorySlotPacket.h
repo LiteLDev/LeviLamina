@@ -31,13 +31,13 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@InventorySlotPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0InventorySlotPacket@@QEAA@XZ
     MCAPI InventorySlotPacket();
 
     // symbol: ??0InventorySlotPacket@@QEAA@W4ContainerID@@IAEBVItemStack@@@Z
-    MCAPI InventorySlotPacket(::ContainerID id, uint slot, class ItemStack const& item);
+    MCAPI InventorySlotPacket(::ContainerID, uint slot, class ItemStack const& item);
 
     // NOLINTEND
 };

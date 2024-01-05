@@ -28,11 +28,11 @@ public:
     virtual ~Debugger() = default;
 
     // vIndex: 1, symbol: ?listen@Debugger@QuickJS@Scripting@@UEAA_NG@Z
-    virtual bool listen(ushort);
+    virtual bool listen(ushort port);
 
     // vIndex: 2, symbol:
     // ?connect@Debugger@QuickJS@Scripting@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-    virtual bool connect(std::string const&, ushort);
+    virtual bool connect(std::string const& host, ushort port);
 
     // vIndex: 3, symbol: ?disconnect@Debugger@QuickJS@Scripting@@UEAAXXZ
     virtual void disconnect();
@@ -58,10 +58,10 @@ public:
     MCAPI bool _tryAttach();
 
     // symbol: ?ContextToId@Debugger@QuickJS@Scripting@@CAIPEAUJSContext@@PEAX@Z
-    MCAPI static uint ContextToId(struct JSContext*, void*);
+    MCAPI static uint ContextToId(struct JSContext* ctx, void*);
 
     // symbol: ?ToTypeName@Debugger@QuickJS@Scripting@@CAPEBDPEAUJSContext@@UJSValue@@@Z
-    MCAPI static char const* ToTypeName(struct JSContext*, struct JSValue);
+    MCAPI static char const* ToTypeName(struct JSContext* ctx, struct JSValue val);
 
     // symbol: ?TransportClose@Debugger@QuickJS@Scripting@@CAXPEAUJSRuntime@@PEAX@Z
     MCAPI static void TransportClose(struct JSRuntime*, void*);
@@ -73,7 +73,7 @@ public:
     MCAPI static uint64 TransportRead(void*, char*, uint64);
 
     // symbol: ?TransportWrite@Debugger@QuickJS@Scripting@@CA_KPEAXPEBD_K@Z
-    MCAPI static uint64 TransportWrite(void*, char const*, uint64);
+    MCAPI static uint64 TransportWrite(void*, char const* buffer, uint64 length);
 
     // NOLINTEND
 };

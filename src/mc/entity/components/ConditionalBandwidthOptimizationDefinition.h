@@ -29,7 +29,7 @@ public:
 
     // symbol:
     // ?initialize@ConditionalBandwidthOptimizationDefinition@@QEBAXAEAVEntityContext@@AEAVConditionalBandwidthOptimizationComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class ConditionalBandwidthOptimizationComponent&) const;
+    MCAPI void initialize(class EntityContext&, class ConditionalBandwidthOptimizationComponent& component) const;
 
     // symbol: ??1ConditionalBandwidthOptimizationDefinition@@QEAA@XZ
     MCAPI ~ConditionalBandwidthOptimizationDefinition();
@@ -38,7 +38,7 @@ public:
     // ?buildSchema@ConditionalBandwidthOptimizationDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VConditionalBandwidthOptimizationDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                       class JsonUtil::EmptyClass,
-                                      class ConditionalBandwidthOptimizationDefinition>>&);
+                                      class ConditionalBandwidthOptimizationDefinition>>& root);
 
     // NOLINTEND
 };

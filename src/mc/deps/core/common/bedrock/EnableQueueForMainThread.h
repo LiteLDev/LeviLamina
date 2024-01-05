@@ -27,7 +27,7 @@ public:
 
     // symbol:
     // ??0EnableQueueForMainThread@Threading@Bedrock@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit EnableQueueForMainThread(std::string);
+    MCAPI explicit EnableQueueForMainThread(std::string name);
 
     // NOLINTEND
 
@@ -38,7 +38,8 @@ public:
 
     // symbol:
     // ?queueForMainThread@EnableQueueForMainThread@Threading@Bedrock@@IEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@$$QEAV?$function@$$A6AXXZ@5@@Z
-    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueForMainThread(std::function<void(void)>&&);
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
+          queueForMainThread(std::function<void(void)>&& callback);
 
     // NOLINTEND
 };

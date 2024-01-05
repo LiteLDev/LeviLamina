@@ -69,7 +69,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 90, symbol: ?fixupCommon@ChemistryAuxDataBlockItem@@UEBAXAEAVItemStackBase@@@Z
-    virtual void fixupCommon(class ItemStackBase&) const;
+    virtual void fixupCommon(class ItemStackBase& stack) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();

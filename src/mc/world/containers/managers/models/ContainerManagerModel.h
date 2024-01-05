@@ -24,7 +24,7 @@ public:
     virtual ::ContainerID getContainerId() const;
 
     // vIndex: 2, symbol: ?setContainerId@ContainerManagerModel@@UEAAXW4ContainerID@@@Z
-    virtual void setContainerId(::ContainerID id);
+    virtual void setContainerId(::ContainerID);
 
     // vIndex: 3, symbol: ?getContainerType@ContainerManagerModel@@UEBA?AW4ContainerType@@XZ
     virtual ::ContainerType getContainerType() const;
@@ -39,7 +39,7 @@ public:
     virtual bool tick();
 
     // vIndex: 12, symbol: ?debitPlayerLevels@ContainerManagerModel@@UEAAXH@Z
-    virtual void debitPlayerLevels(int);
+    virtual void debitPlayerLevels(int levels);
 
     // vIndex: 13, symbol: ?isCreativeMode@ContainerManagerModel@@UEBA_NXZ
     virtual bool isCreativeMode() const;
@@ -73,20 +73,20 @@ public:
     MCAPI void _addContainer(std::shared_ptr<class ContainerModel> containerModel);
 
     // symbol: ?_containerScreenContext@ContainerManagerModel@@IEAA?AVContainerScreenContext@@AEBVBlockPos@@@Z
-    MCAPI class ContainerScreenContext _containerScreenContext(class BlockPos const&);
+    MCAPI class ContainerScreenContext _containerScreenContext(class BlockPos const& blockPos);
 
     // symbol: ?_containerScreenContext@ContainerManagerModel@@IEAA?AVContainerScreenContext@@UActorUniqueID@@@Z
-    MCAPI class ContainerScreenContext _containerScreenContext(struct ActorUniqueID);
+    MCAPI class ContainerScreenContext _containerScreenContext(struct ActorUniqueID actorId);
 
     // symbol: ?_getContainer@ContainerManagerModel@@IEBA?AV?$shared_ptr@VContainerModel@@@std@@W4ContainerEnumName@@@Z
     MCAPI std::shared_ptr<class ContainerModel> _getContainer(::ContainerEnumName) const;
 
     // symbol: ?_isPlayerInRangeOfPosition@ContainerManagerModel@@IEBA_NAEBVBlockPos@@M@Z
-    MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const&, float) const;
+    MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const& blockPos, float pickRange) const;
 
     // symbol:
     // ?_appendCopies@ContainerManagerModel@@KAXAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBV23@@Z
-    MCAPI static void _appendCopies(std::vector<class ItemStack>&, std::vector<class ItemStack> const&);
+    MCAPI static void _appendCopies(std::vector<class ItemStack>& out, std::vector<class ItemStack> const& items);
 
     // NOLINTEND
 };

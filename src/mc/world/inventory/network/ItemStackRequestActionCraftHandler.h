@@ -19,17 +19,17 @@ public:
     virtual ~ItemStackRequestActionCraftHandler() = default;
 
     // symbol: ??0ItemStackRequestActionCraftHandler@@QEAA@AEAVItemStackRequestActionHandler@@AEAVPlayer@@@Z
-    MCAPI ItemStackRequestActionCraftHandler(class ItemStackRequestActionHandler&, class Player&);
+    MCAPI ItemStackRequestActionCraftHandler(class ItemStackRequestActionHandler&, class Player& player);
 
     // symbol:
     // ?_initCraftResults@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@E@Z
-    MCAPI ::ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const&, uchar);
+    MCAPI ::ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const& results, uchar);
 
     // symbol: ?_initSingleCraftResult@ItemStackRequestActionCraftHandler@@QEAAPEAVItemInstance@@AEBV2@@Z
-    MCAPI class ItemInstance* _initSingleCraftResult(class ItemInstance const&);
+    MCAPI class ItemInstance* _initSingleCraftResult(class ItemInstance const& itemInstance);
 
     // symbol: ?endRequest@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@W42@@Z
-    MCAPI ::ItemStackNetResult endRequest(::ItemStackNetResult);
+    MCAPI ::ItemStackNetResult endRequest(::ItemStackNetResult currentResult);
 
     // symbol: ?endRequestBatch@ItemStackRequestActionCraftHandler@@QEAAXXZ
     MCAPI void endRequestBatch();
@@ -57,7 +57,7 @@ public:
     MCAPI void onContainerScreenOpen(class ContainerScreenContext const&);
 
     // symbol: ?postRequest@ItemStackRequestActionCraftHandler@@QEAAX_N@Z
-    MCAPI void postRequest(bool);
+    MCAPI void postRequest(bool wasSuccess);
 
     // symbol:
     // ?preHandleAction@ItemStackRequestActionCraftHandler@@QEAA?AW4ItemStackNetResult@@W4ItemStackRequestActionType@@@Z

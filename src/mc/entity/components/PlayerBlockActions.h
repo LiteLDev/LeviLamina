@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?findFirstOfType@PlayerBlockActions@@QEBAPEBUPlayerBlockActionData@@W4PlayerActionType@@@Z
-    MCAPI struct PlayerBlockActionData const* findFirstOfType(::PlayerActionType) const;
+    MCAPI struct PlayerBlockActionData const* findFirstOfType(::PlayerActionType type) const;
 
     // symbol: ?get@PlayerBlockActions@@QEBA?AV?$span@$$CBUPlayerBlockActionData@@$0?0@gsl@@XZ
     MCAPI gsl::span<struct PlayerBlockActionData const> get() const;
@@ -29,10 +29,10 @@ public:
 
     // symbol:
     // ?read@PlayerBlockActions@@SA?AV?$Result@VPlayerBlockActions@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<class PlayerBlockActions> read(class ReadOnlyBinaryStream&);
+    MCAPI static class Bedrock::Result<class PlayerBlockActions> read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ?write@PlayerBlockActions@@SAXAEBV1@AEAVBinaryStream@@@Z
-    MCAPI static void write(class PlayerBlockActions const&, class BinaryStream&);
+    MCAPI static void write(class PlayerBlockActions const& val, class BinaryStream& stream);
 
     // NOLINTEND
 };

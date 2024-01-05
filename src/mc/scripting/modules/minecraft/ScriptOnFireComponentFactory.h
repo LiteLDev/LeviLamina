@@ -31,10 +31,10 @@ public:
     // vIndex: 1, symbol:
     // ?createComponent@ScriptOnFireComponentFactory@ScriptModuleMinecraft@@UEAA?AV?$StrongTypedObjectHandle@VScriptActorComponent@ScriptModuleMinecraft@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@4@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorComponent>
-    createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const&, std::string const&);
+    createComponent(class WeakEntityRef entity, class Scripting::WeakLifetimeScope const& scope, std::string const&);
 
     // vIndex: 2, symbol: ?hasComponent@ScriptOnFireComponentFactory@ScriptModuleMinecraft@@UEBA_NVWeakEntityRef@@@Z
-    virtual bool hasComponent(class WeakEntityRef) const;
+    virtual bool hasComponent(class WeakEntityRef entity) const;
 
     // NOLINTEND
 };

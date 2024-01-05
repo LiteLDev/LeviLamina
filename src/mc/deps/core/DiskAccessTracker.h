@@ -34,7 +34,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_addNewWriteOperation@DiskAccessTracker@Core@@AEAAX_KW4WriteOperation@2@AEBVPath@2@@Z
-    MCAPI void _addNewWriteOperation(uint64, ::Core::WriteOperation, class Core::Path const&);
+    MCAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation, class Core::Path const& path);
 
     // NOLINTEND
 };

@@ -16,7 +16,7 @@ public:
     MCAPI explicit SerializedSkin(class ConnectionRequest const& request);
 
     // symbol: ??0SerializedSkin@@QEAA@$$QEAV0@@Z
-    MCAPI SerializedSkin(class SerializedSkin&&);
+    MCAPI SerializedSkin(class SerializedSkin&& rhs);
 
     // symbol: ??0SerializedSkin@@QEAA@AEBV0@@Z
     MCAPI SerializedSkin(class SerializedSkin const& rhs);
@@ -62,7 +62,7 @@ public:
     MCAPI static class SerializedSkin createTrustedDefaultSerializedSkin();
 
     // symbol: ?isSkinDisabled@SerializedSkin@@SA_NAEBV1@AEBVLevelData@@@Z
-    MCAPI static bool isSkinDisabled(class SerializedSkin const&, class LevelData const&);
+    MCAPI static bool isSkinDisabled(class SerializedSkin const& skin, class LevelData const& levelData);
 
     // NOLINTEND
 };

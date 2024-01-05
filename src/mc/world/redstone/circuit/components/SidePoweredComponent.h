@@ -26,11 +26,11 @@ public:
     virtual bool canConsumerPower() const;
 
     // vIndex: 10, symbol: ?removeSource@SidePoweredComponent@@UEAAXAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
-    virtual void removeSource(class BlockPos const&, class BaseCircuitComponent const*);
+    virtual void removeSource(class BlockPos const& posSource, class BaseCircuitComponent const* pComponent);
 
     // vIndex: 12, symbol:
     // ?allowConnection@SidePoweredComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-    virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
+    virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
 
     // vIndex: 17, symbol: __unk_vfn_17
     virtual void __unk_vfn_17();
@@ -39,7 +39,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 22, symbol: ?removeFromAnySourceList@SidePoweredComponent@@MEAAXPEBVBaseCircuitComponent@@@Z
-    virtual void removeFromAnySourceList(class BaseCircuitComponent const*);
+    virtual void removeFromAnySourceList(class BaseCircuitComponent const* component);
 
     // vIndex: 25, symbol: ?getPoweroutDirection@SidePoweredComponent@@UEBAEXZ
     virtual uchar getPoweroutDirection() const;

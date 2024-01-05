@@ -26,15 +26,18 @@ public:
     MCAPI EatBlockDefinition();
 
     // symbol: ?addSuccessChanceExpressionNode@EatBlockDefinition@@QEAAXAEBVExpressionNode@@@Z
-    MCAPI void addSuccessChanceExpressionNode(class ExpressionNode const&);
+    MCAPI void addSuccessChanceExpressionNode(class ExpressionNode const& node);
 
     // symbol: ?initialize@EatBlockDefinition@@QEBAXAEAVEntityContext@@AEAVEatBlockGoal@@@Z
-    MCAPI void initialize(class EntityContext&, class EatBlockGoal&) const;
+    MCAPI void initialize(class EntityContext& entity, class EatBlockGoal& goal) const;
 
     // symbol:
     // ?buildSchema@EatBlockDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VEatBlockDefinition@@@JsonUtil@@@3@@Z
-    MCAPI static void
-    buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EatBlockDefinition>>&);
+    MCAPI static void buildSchema(
+        std::string const& name,
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EatBlockDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

@@ -47,7 +47,15 @@ public:
     );
 
     // symbol: ??0TargetGoal@@QEAA@AEAVMob@@_NH1M1H@Z
-    MCAPI TargetGoal(class Mob&, bool, int, bool, float, bool, int);
+    MCAPI TargetGoal(
+        class Mob& pathMob,
+        bool       mustSee,
+        int        mustSeeForgetTicks,
+        bool       mustReach,
+        float      withinDefault,
+        bool       attackOwner,
+        int        persistTargetTicks
+    );
 
     // symbol:
     // ??0TargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@_NH2M2H@Z
@@ -70,10 +78,15 @@ public:
     MCAPI bool _canAttack(class Actor* target, bool allowInvulnerable, struct MobDescriptor const** outDescriptorMatch);
 
     // symbol: ?_canReachAfterDelay@TargetGoal@@IEAA_NAEAVActor@@@Z
-    MCAPI bool _canReachAfterDelay(class Actor&);
+    MCAPI bool _canReachAfterDelay(class Actor& target);
 
     // symbol: ?_matchesTargetTypes@TargetGoal@@IEAA_NPEAVMob@@PEAVActor@@_NPEAPEBUMobDescriptor@@@Z
-    MCAPI bool _matchesTargetTypes(class Mob*, class Actor*, bool, struct MobDescriptor const**);
+    MCAPI bool _matchesTargetTypes(
+        class Mob*                   testMob,
+        class Actor*                 target,
+        bool                         mustSee,
+        struct MobDescriptor const** outDescriptorMatch
+    );
 
     // symbol: ?_withinRange@TargetGoal@@IEAA_NAEBVActor@@@Z
     MCAPI bool _withinRange(class Actor const& target);

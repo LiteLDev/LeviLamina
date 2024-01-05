@@ -111,7 +111,7 @@ public:
     virtual void __unk_vfn_67();
 
     // vIndex: 68, symbol: ?movedByPiston@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void movedByPiston(class BlockSource&, class BlockPos const&) const;
+    virtual void movedByPiston(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 71, symbol: ?setupRedstoneComponent@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
@@ -126,7 +126,7 @@ public:
     // vIndex: 95, symbol:
     // ?spawnResources@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const&, class Randomize& randomize, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 109, symbol: __unk_vfn_109
@@ -160,7 +160,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 147, symbol: ?onPlace@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
@@ -178,10 +178,10 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ?allowStateMismatchOnPlacement@ObserverBlock@@UEBA_NAEBVBlock@@0@Z
-    MCVAPI bool allowStateMismatchOnPlacement(class Block const&, class Block const&) const;
+    MCVAPI bool allowStateMismatchOnPlacement(class Block const& clientTarget, class Block const& serverTarget) const;
 
     // symbol: ??0ObserverBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ObserverBlock(std::string const& nameId, int id);
+    MCAPI ObserverBlock(std::string const& nameId, int);
 
     // symbol: ?MAX_TICK_DELAY@ObserverBlock@@2UTick@@B
     MCAPI static struct Tick const MAX_TICK_DELAY;
@@ -191,7 +191,8 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_installCircuit@ObserverBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@_N2@Z
-    MCAPI void _installCircuit(class BlockSource&, class BlockPos const&, bool, bool) const;
+    MCAPI void
+    _installCircuit(class BlockSource& region, class BlockPos const& pos, bool calledFromLoad, bool turnOn) const;
 
     // symbol: ?_updateState@ObserverBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVPulseCapacitor@@_N@Z
     MCAPI void

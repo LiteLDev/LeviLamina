@@ -44,7 +44,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@FarmBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -111,8 +111,7 @@ public:
 
     // vIndex: 64, symbol: ?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@M@Z
     virtual void
-    transformOnFall(class BlockSource& region, class BlockPos const& pos, class Actor* entity, float fallDistance)
-        const;
+    transformOnFall(class BlockSource& region, class BlockPos const& pos, class Actor* actor, float fallDistance) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -146,7 +145,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -155,7 +154,7 @@ public:
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 151, symbol: ?randomTick@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -164,10 +163,10 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@FarmBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0FarmBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FarmBlock(std::string const& nameId, int id);
+    MCAPI FarmBlock(std::string const& nameId, int);
 
     // symbol: ?BLOCK_AABB@FarmBlock@@2VAABB@@A
     MCAPI static class AABB BLOCK_AABB;

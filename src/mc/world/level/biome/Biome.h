@@ -30,8 +30,10 @@ public:
 
     // symbol:
     // ?addTag@Biome@@QEAAAEAV1@VHashedString@@AEAV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@@Z
-    MCAPI class Biome&
-    addTag(class HashedString, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>&);
+    MCAPI class Biome& addTag(
+        class HashedString                                                                                tag,
+        class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>& tagRegistry
+    );
 
     // symbol: ?cacheClientComponentData@Biome@@QEAAXXZ
     MCAPI void cacheClientComponentData();
@@ -82,22 +84,26 @@ public:
     MCAPI ::Biome::BiomeTempCategory getTemperatureCategory() const;
 
     // symbol: ?getTemperatureWorldGen@Biome@@QEBAMAEBVBlockPos@@F@Z
-    MCAPI float getTemperatureWorldGen(class BlockPos const&, short) const;
+    MCAPI float getTemperatureWorldGen(class BlockPos const& pos, short seaLevel) const;
 
     // symbol: ?hasTag@Biome@@QEBA_NAEBVWellKnownTagID@@@Z
     MCAPI bool hasTag(class WellKnownTagID const& tagID) const;
 
     // symbol:
     // ?hasTag@Biome@@QEBA_NAEBU?$IDType@UBiomeTagIDType@@@@AEBV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@@Z
-    MCAPI bool
-    hasTag(struct IDType<struct BiomeTagIDType> const&, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const&)
-        const;
+    MCAPI bool hasTag(
+        struct IDType<struct BiomeTagIDType> const& tagID,
+        class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const&
+            tagRegistry
+    ) const;
 
     // symbol:
     // ?hasTag@Biome@@QEBA_N_KAEBV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@@Z
-    MCAPI bool
-    hasTag(uint64, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const&)
-        const;
+    MCAPI bool hasTag(
+        uint64,
+        class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const&
+            tagRegistry
+    ) const;
 
     // symbol: ?isHumid@Biome@@QEBA_NXZ
     MCAPI bool isHumid() const;
@@ -125,8 +131,10 @@ public:
 
     // symbol:
     // ?writePacketData@Biome@@QEAAXAEAVCompoundTag@@AEAV?$TagRegistry@U?$IDType@UBiomeTagIDType@@@@U?$IDType@UBiomeTagSetIDType@@@@@@@Z
-    MCAPI void
-    writePacketData(class CompoundTag&, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>&);
+    MCAPI void writePacketData(
+        class CompoundTag&                                                                                tag,
+        class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>& tagRegistry
+    );
 
     // symbol: ?buildCachedTemperatureNoise@Biome@@SAXAEAVLevelChunk@@@Z
     MCAPI static void buildCachedTemperatureNoise(class LevelChunk& chunk);

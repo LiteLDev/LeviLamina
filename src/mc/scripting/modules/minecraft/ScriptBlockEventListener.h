@@ -43,7 +43,12 @@ public:
 
     // vIndex: 1, symbol:
     // ?onBlockPlacedByPlayer@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z
-    virtual ::EventResult onBlockPlacedByPlayer(class Player&, class Block const&, class BlockPos const&, bool);
+    virtual ::EventResult onBlockPlacedByPlayer(
+        class Player&         player,
+        class Block const&    placedBlock,
+        class BlockPos const& pos,
+        bool                  isUnderwater
+    );
 
     // vIndex: 2, symbol:
     // ?onBlockDestroyedByPlayer@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@AEBVItemStackBase@@3@Z
@@ -68,7 +73,12 @@ public:
 
     // vIndex: 8, symbol:
     // ?onBlockExploded@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVDimension@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z
-    virtual ::EventResult onBlockExploded(class Dimension&, class BlockPos const&, class Block const&, class Actor*);
+    virtual ::EventResult onBlockExploded(
+        class Dimension&      dimension,
+        class BlockPos const& blockPos,
+        class Block const&,
+        class Actor* source
+    );
 
     // vIndex: 9, symbol: __unk_vfn_9
     virtual void __unk_vfn_9();
@@ -78,7 +88,7 @@ public:
 
     // vIndex: 11, symbol:
     // ?onEvent@?$EventListenerDispatcher@VBlockEventListener@@@@MEAA?AW4EventResult@@AEBUBlockNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct BlockNotificationEvent const&);
+    virtual ::EventResult onEvent(struct BlockNotificationEvent const& event);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
@@ -123,8 +133,10 @@ public:
 
     // symbol:
     // ??0ScriptBlockEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldAfterEvents@ScriptModuleMinecraft@@@3@@Z
-    MCAPI
-    ScriptBlockEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldAfterEvents>);
+    MCAPI ScriptBlockEventListener(
+        class Scripting::WeakLifetimeScope const&                                                 scope,
+        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
+    );
 
     // NOLINTEND
 };

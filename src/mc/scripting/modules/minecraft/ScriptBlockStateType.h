@@ -30,7 +30,7 @@ public:
     // symbol:
     // ?getOrCreateHandle@ScriptBlockStateType@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptBlockStateType@ScriptModuleMinecraft@@@Scripting@@AEBVWeakLifetimeScope@4@AEBVBlockState@@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockStateType>
-    getOrCreateHandle(class Scripting::WeakLifetimeScope const&, class BlockState const&);
+    getOrCreateHandle(class Scripting::WeakLifetimeScope const& scope, class BlockState const& blockState);
 
     // NOLINTEND
 

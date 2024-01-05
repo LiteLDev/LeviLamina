@@ -55,7 +55,7 @@ public:
     MCAPI void removeBossBar(class Actor& owner);
 
     // symbol: ?resendRaidBossEventData@RaidBossComponent@@QEAAXAEAVPlayer@@@Z
-    MCAPI void resendRaidBossEventData(class Player&);
+    MCAPI void resendRaidBossEventData(class Player& player);
 
     // symbol: ?sendRegistryMessages@RaidBossComponent@@QEAAXAEAVActor@@@Z
     MCAPI void sendRegistryMessages(class Actor& owner);
@@ -67,10 +67,10 @@ public:
     MCAPI void setWaveStarted(bool val);
 
     // symbol: ?setupBossBarInfo@RaidBossComponent@@QEAAXAEAVActor@@PEAVVillage@@@Z
-    MCAPI void setupBossBarInfo(class Actor&, class Village*);
+    MCAPI void setupBossBarInfo(class Actor& owner, class Village* village);
 
     // symbol: ?tryRemoveBoss@RaidBossComponent@@QEAA_NAEAVActor@@AEAVPlayer@@@Z
-    MCAPI bool tryRemoveBoss(class Actor&, class Player&);
+    MCAPI bool tryRemoveBoss(class Actor& owner, class Player& player);
 
     // symbol: ?unRegisterPlayer@RaidBossComponent@@QEAAXPEAVPlayer@@@Z
     MCAPI void unRegisterPlayer(class Player* player);

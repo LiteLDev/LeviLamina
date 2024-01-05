@@ -109,7 +109,7 @@ public:
         const;
 
     // vIndex: 81, symbol: ?canBeFertilized@CocoaBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@CocoaBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
     virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
@@ -152,10 +152,10 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@CocoaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 151, symbol: ?randomTick@CocoaBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -167,20 +167,19 @@ public:
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 164, symbol: ?getResourceItem@CocoaBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@CocoaBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const& block, int) const;
 
     // symbol: ?canBeSilkTouched@CocoaBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0CocoaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CocoaBlock(std::string const& nameId, int id);
+    MCAPI CocoaBlock(std::string const& nameId, int);
 
     // symbol: ?isSupportedBy@CocoaBlock@@SA_NAEBVBlock@@@Z
-    MCAPI static bool isSupportedBy(class Block const&);
+    MCAPI static bool isSupportedBy(class Block const& block);
 
     // NOLINTEND
 };

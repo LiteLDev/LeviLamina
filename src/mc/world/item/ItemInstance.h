@@ -18,7 +18,7 @@ public:
     virtual void reinit(class BlockLegacy const& block, int count);
 
     // vIndex: 3, symbol: ?reinit@ItemInstance@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@Z
-    virtual void reinit(std::string_view, int, int);
+    virtual void reinit(std::string_view name, int count, int auxValue);
 
     // symbol: ??0ItemInstance@@QEAA@XZ
     MCAPI ItemInstance();
@@ -39,7 +39,7 @@ public:
     MCAPI ItemInstance(class Item const& item, int count, int auxValue, class CompoundTag const* _userData);
 
     // symbol: ??0ItemInstance@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HHPEBVCompoundTag@@@Z
-    MCAPI ItemInstance(std::string_view, int, int, class CompoundTag const*);
+    MCAPI ItemInstance(std::string_view name, int count, int auxValue, class CompoundTag const* _userData);
 
     // symbol: ?clone@ItemInstance@@QEBA?AV1@XZ
     MCAPI class ItemInstance clone() const;

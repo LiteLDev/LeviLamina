@@ -43,7 +43,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@HangingSignBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -106,7 +106,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 61, symbol: ?checkIsPathable@HangingSignBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    virtual bool checkIsPathable(class Actor& entity, class BlockPos const&, class BlockPos const& pathPos) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -115,7 +115,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 84, symbol: ?mayPlace@HangingSignBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -145,40 +145,40 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@HangingSignBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 169, symbol: ?getYRotationInDegrees@HangingSignBlock@@UEBAMAEBVBlock@@@Z
-    virtual float getYRotationInDegrees(class Block const&) const;
+    virtual float getYRotationInDegrees(class Block const& block) const;
 
     // vIndex: 171, symbol: ?_getItemInstance@HangingSignBlock@@MEBA?AVItemInstance@@XZ
     virtual class ItemInstance _getItemInstance() const;
 
     // symbol:
     // ??0HangingSignBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NW4SignType@SignBlock@@@Z
-    MCAPI HangingSignBlock(std::string const&, int, bool, ::SignBlock::SignType);
+    MCAPI HangingSignBlock(std::string const& nameId, int, bool onGround, ::SignBlock::SignType signType);
 
     // symbol: ?isDoubleChainHangingSign@HangingSignBlock@@SA_NAEBVBlock@@@Z
-    MCAPI static bool isDoubleChainHangingSign(class Block const&);
+    MCAPI static bool isDoubleChainHangingSign(class Block const& block);
 
     // symbol: ?isSideAttachedHangingSign@HangingSignBlock@@SA_NAEBVBlock@@@Z
-    MCAPI static bool isSideAttachedHangingSign(class Block const&);
+    MCAPI static bool isSideAttachedHangingSign(class Block const& block);
 
     // symbol: ?isVShapedHangingSign@HangingSignBlock@@SA_NAEBVBlock@@@Z
-    MCAPI static bool isVShapedHangingSign(class Block const&);
+    MCAPI static bool isVShapedHangingSign(class Block const& block);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_canAttachTo@HangingSignBlock@@IEBA_NAEAVBlockSource@@VBlockPos@@EE@Z
-    MCAPI bool _canAttachTo(class BlockSource&, class BlockPos, uchar, uchar) const;
+    MCAPI bool _canAttachTo(class BlockSource& region, class BlockPos attachPos, uchar, uchar ourFace) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_isHangingSign@HangingSignBlock@@CA_NAEBVBlock@@@Z
-    MCAPI static bool _isHangingSign(class Block const&);
+    MCAPI static bool _isHangingSign(class Block const& block);
 
     // NOLINTEND
 };

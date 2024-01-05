@@ -32,11 +32,11 @@ public:
 
     // symbol:
     // ?registerItemGameplayHandler@ItemEventCoordinator@@QEAAXV?$unique_ptr@VItemGameplayHandler@@U?$default_delete@VItemGameplayHandler@@@std@@@std@@@Z
-    MCAPI void registerItemGameplayHandler(std::unique_ptr<class ItemGameplayHandler>);
+    MCAPI void registerItemGameplayHandler(std::unique_ptr<class ItemGameplayHandler> handler);
 
     // symbol:
     // ?sendEvent@ItemEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableItemGameplayEvent@W4CoordinatorResult@@@@@@@Z
-    MCAPI ::CoordinatorResult sendEvent(class EventRef<struct MutableItemGameplayEvent<::CoordinatorResult>>);
+    MCAPI ::CoordinatorResult sendEvent(class EventRef<struct MutableItemGameplayEvent<::CoordinatorResult>> event);
 
     // NOLINTEND
 };

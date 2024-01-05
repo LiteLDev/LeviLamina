@@ -111,10 +111,10 @@ public:
     virtual bool mayConsumeFertilizer(class BlockSource& region) const;
 
     // vIndex: 81, symbol: ?canBeFertilized@SandBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 96, symbol: ?asItemInstance@SandBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -154,7 +154,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 162, symbol: ?getMapColor@SandBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
     // vIndex: 168, symbol: ?getDustColor@SandBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
     virtual class mce::Color getDustColor(class Block const& block) const;
@@ -167,7 +167,7 @@ public:
     virtual void __unk_vfn_170();
 
     // symbol: ??0SandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SandBlock(std::string const& nameId, int id);
+    MCAPI SandBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

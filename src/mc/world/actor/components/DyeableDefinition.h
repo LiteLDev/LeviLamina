@@ -21,9 +21,10 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?buildSchema@DyeableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UDyeableDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct DyeableDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct DyeableDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

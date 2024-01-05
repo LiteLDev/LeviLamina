@@ -21,8 +21,11 @@ public:
 
     // symbol:
     // ?doInLavaSensing@InLavaSensingSystem@@SAXAEBVStrictEntityContext@@AEBUUpdateWaterStateRequestComponent@@V?$EntityModifier@V?$FlagComponent@UInLavaFlag@@@@@@@Z
-    MCAPI static void
-    doInLavaSensing(class StrictEntityContext const&, struct UpdateWaterStateRequestComponent const&, class EntityModifier<class FlagComponent<struct InLavaFlag>>);
+    MCAPI static void doInLavaSensing(
+        class StrictEntityContext const& entity,
+        struct UpdateWaterStateRequestComponent const&,
+        class EntityModifier<class FlagComponent<struct InLavaFlag>> mod
+    );
 
     // symbol:
     // ?tickSystem@InLavaSensingSystem@@SAXV?$ViewT@VStrictEntityContext@@$$CBUUpdateWaterStateRequestComponent@@@@V?$EntityModifier@V?$FlagComponent@UInLavaFlag@@@@@@@Z

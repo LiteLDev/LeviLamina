@@ -24,13 +24,13 @@ public:
     // symbol:
     // ?init@RenderParams@@QEAAAEAV1@PEAVBaseActorRenderContext@@PEAVActor@@PEAVAnimationComponent@@PEAVMolangVariableMap@@V?$shared_ptr@VDataDrivenModel@@@std@@MM@Z
     MCAPI class RenderParams& init(
-        class BaseActorRenderContext*,
-        class Actor*,
-        class AnimationComponent*,
-        class MolangVariableMap*,
-        std::shared_ptr<class DataDrivenModel>,
-        float,
-        float
+        class BaseActorRenderContext*          baseActorRenderContext,
+        class Actor*                           actor,
+        class AnimationComponent*              animationComponent,
+        class MolangVariableMap*               variableMap,
+        std::shared_ptr<class DataDrivenModel> model,
+        float                                  frameAlpha,
+        float                                  modelScale
     );
 
     // symbol: ??4RenderParams@@QEAAAEAV0@$$QEAV0@@Z
@@ -43,7 +43,7 @@ public:
     MCAPI ~RenderParams();
 
     // symbol: ?getRenderParams@RenderParams@@SAAEAV1@AEAVActor@@@Z
-    MCAPI static class RenderParams& getRenderParams(class Actor&);
+    MCAPI static class RenderParams& getRenderParams(class Actor& actor);
 
     // NOLINTEND
 };

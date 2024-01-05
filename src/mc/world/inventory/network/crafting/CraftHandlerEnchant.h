@@ -30,7 +30,7 @@ public:
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
 
     // vIndex: 5, symbol: ?_postCraftRequest@CraftHandlerEnchant@@MEAAX_N@Z
-    virtual void _postCraftRequest(bool);
+    virtual void _postCraftRequest(bool wasSuccess);
 
     // NOLINTEND
 

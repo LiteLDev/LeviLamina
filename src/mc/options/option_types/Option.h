@@ -69,7 +69,7 @@ public:
     MCAPI void notifyOptionValueChanged(bool saveOptionChange);
 
     // symbol: ?registerLock@Option@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEA_N@Z@std@@@Z
-    MCAPI class Bedrock::PubSub::Subscription registerLock(std::function<void(bool&)>);
+    MCAPI class Bedrock::PubSub::Subscription registerLock(std::function<void(bool&)> isModifiableCondition);
 
     // symbol: ?registerObserver@Option@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEBVOption@@@Z@std@@@Z
     MCAPI class Bedrock::PubSub::Subscription registerObserver(std::function<void(class Option const&)>);

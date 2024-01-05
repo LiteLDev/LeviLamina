@@ -70,11 +70,13 @@ public:
 
     // symbol:
     // ?registerOnSaveGameDataCallback@LevelStorageManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVLevelStorage@@@Z@std@@@Z
-    MCAPI class Bedrock::PubSub::Subscription registerOnSaveGameDataCallback(std::function<void(class LevelStorage&)>);
+    MCAPI class Bedrock::PubSub::Subscription
+    registerOnSaveGameDataCallback(std::function<void(class LevelStorage&)> callback);
 
     // symbol:
     // ?registerOnSaveLevelDataCallback@LevelStorageManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVLevelStorage@@@Z@std@@@Z
-    MCAPI class Bedrock::PubSub::Subscription registerOnSaveLevelDataCallback(std::function<void(class LevelStorage&)>);
+    MCAPI class Bedrock::PubSub::Subscription
+    registerOnSaveLevelDataCallback(std::function<void(class LevelStorage&)> callback);
 
     // symbol:
     // ?registerOnStartLeaveGameCallback@LevelStorageManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVLevelStorage@@@Z@std@@@Z

@@ -33,7 +33,7 @@ public:
     MCAPI ScriptContainerSlot(class ScriptModuleMinecraft::ScriptContainerSlot const&);
 
     // symbol: ??0ScriptContainerSlot@ScriptModuleMinecraft@@QEAA@VItemContext@@VWeakLifetimeScope@Scripting@@@Z
-    MCAPI ScriptContainerSlot(class ItemContext, class Scripting::WeakLifetimeScope);
+    MCAPI ScriptContainerSlot(class ItemContext, class Scripting::WeakLifetimeScope scope);
 
     // symbol: ?getAmount@ScriptContainerSlot@ScriptModuleMinecraft@@QEBA?AV?$Result@H$$V@Scripting@@XZ
     MCAPI class Scripting::Result<int> getAmount() const;
@@ -76,21 +76,22 @@ public:
 
     // symbol:
     // ?hasTag@ScriptContainerSlot@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Scripting::Result<bool> hasTag(std::string const&) const;
+    MCAPI class Scripting::Result<bool> hasTag(std::string const& tag) const;
 
     // symbol: ?isStackable@ScriptContainerSlot@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> isStackable() const;
 
     // symbol:
     // ?isStackableWith@ScriptContainerSlot@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@AEBVScriptItemStack@2@@Z
-    MCAPI class Scripting::Result<bool> isStackableWith(class ScriptModuleMinecraft::ScriptItemStack const&) const;
+    MCAPI class Scripting::Result<bool> isStackableWith(class ScriptModuleMinecraft::ScriptItemStack const& other
+    ) const;
 
     // symbol: ??4ScriptContainerSlot@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptContainerSlot&
     operator=(class ScriptModuleMinecraft::ScriptContainerSlot&&);
 
     // symbol: ?setAmount@ScriptContainerSlot@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<void> setAmount(int);
+    MCAPI class Scripting::Result<void> setAmount(int amount);
 
     // symbol:
     // ?setCanDestroy@ScriptContainerSlot@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$optional@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@std@@@Z
@@ -105,7 +106,7 @@ public:
     MCAPI class Scripting::Result<void> setItem(std::optional<class ScriptModuleMinecraft::ScriptItemStack> const&);
 
     // symbol: ?setKeepOnDeath@ScriptContainerSlot@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@_N@Z
-    MCAPI class Scripting::Result<void> setKeepOnDeath(bool);
+    MCAPI class Scripting::Result<void> setKeepOnDeath(bool value);
 
     // symbol:
     // ?setLockMode@ScriptContainerSlot@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@W4ItemLockMode@@@Z

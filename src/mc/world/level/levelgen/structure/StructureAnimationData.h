@@ -17,7 +17,7 @@ public:
     // symbol:
     // ??0StructureAnimationData@@QEAA@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@AEBVStructureSettings@@EAEBVBlockPos@@@Z
     MCAPI
-    StructureAnimationData(std::unique_ptr<class CommandArea>, uint64, std::string const&, class StructureSettings const&, uchar, class BlockPos const&);
+    StructureAnimationData(std::unique_ptr<class CommandArea>, uint64, std::string const& structureName, class StructureSettings const& structureSettings, uchar, class BlockPos const&);
 
     // symbol: ?getPosition@StructureAnimationData@@QEBAAEBVBlockPos@@XZ
     MCAPI class BlockPos const& getPosition() const;
@@ -30,7 +30,7 @@ public:
     MCAPI class StructureSettings const& getStructureSettings() const;
 
     // symbol: ?serialize@StructureAnimationData@@QEAAAEAVCompoundTag@@AEAV2@@Z
-    MCAPI class CompoundTag& serialize(class CompoundTag&);
+    MCAPI class CompoundTag& serialize(class CompoundTag& tag);
 
     // symbol:
     // ?setCmdArea@StructureAnimationData@@QEAAXV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@@Z
@@ -41,7 +41,7 @@ public:
 
     // symbol:
     // ?load@StructureAnimationData@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z
-    MCAPI static class StructureAnimationData load(std::string const&, class CompoundTag const&);
+    MCAPI static class StructureAnimationData load(std::string const& key, class CompoundTag const& tag);
 
     // NOLINTEND
 };

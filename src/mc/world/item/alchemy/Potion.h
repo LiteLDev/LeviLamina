@@ -21,9 +21,13 @@ public:
 
     // symbol:
     // ?appendFormattedPotionText@Potion@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@W4PotionVariant@1@AEBVPlayer@@M@Z
-    MCAPI void
-    appendFormattedPotionText(std::string&, ::Potion::PotionType, ::Potion::PotionVariant, class Player const&, float)
-        const;
+    MCAPI void appendFormattedPotionText(
+        std::string&         hovertext,
+        ::Potion::PotionType potionType,
+        ::Potion::PotionVariant,
+        class Player const& player,
+        float               timeMod
+    ) const;
 
     // symbol:
     // ?effectDurationToString@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@MAEBVMobEffectInstance@@@Z
@@ -56,12 +60,8 @@ public:
 
     // symbol:
     // ?getPotentencyDescription@Potion@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@MV?$basic_string_view@DU?$char_traits@D@std@@@3@AEBVMobEffectInstance@@@Z
-    MCAPI std::string getPotentencyDescription(
-        ::Potion::PotionType           potionType,
-        float                          timeMod,
-        std::string_view               descID,
-        class MobEffectInstance const& effect
-    ) const;
+    MCAPI std::string
+          getPotentencyDescription(::Potion::PotionType, float, std::string_view, class MobEffectInstance const&) const;
 
     // symbol: ?getPotionId@Potion@@QEBAHXZ
     MCAPI int getPotionId() const;
@@ -80,7 +80,7 @@ public:
     MCAPI static std::string getBasePotion(::Potion::PotionType);
 
     // symbol: ?getPotion@Potion@@SA?AV?$shared_ptr@$$CBVPotion@@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
-    MCAPI static std::shared_ptr<class Potion const> getPotion(std::string_view);
+    MCAPI static std::shared_ptr<class Potion const> getPotion(std::string_view potionNameId);
 
     // symbol: ?getPotion@Potion@@SA?AV?$shared_ptr@$$CBVPotion@@@std@@H@Z
     MCAPI static std::shared_ptr<class Potion const> getPotion(int potionId);
@@ -229,7 +229,12 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0Potion@@AEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@0AEBVMobEffectInstance@@W4PotionVariant@0@@Z
-    MCAPI Potion(std::string_view, std::string_view, class MobEffectInstance const&, ::Potion::PotionVariant);
+    MCAPI Potion(
+        std::string_view               nameId,
+        std::string_view               descriptionID,
+        class MobEffectInstance const& mobEffect,
+        ::Potion::PotionVariant        var
+    );
 
     // symbol:
     // ??0Potion@@AEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@V?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@2@W4PotionVariant@0@@Z

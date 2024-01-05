@@ -30,7 +30,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@CraftingDataPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0CraftingDataPacket@@QEAA@XZ
     MCAPI CraftingDataPacket();

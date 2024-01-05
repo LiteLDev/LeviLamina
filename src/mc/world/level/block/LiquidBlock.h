@@ -141,7 +141,7 @@ public:
     virtual int getColorAtPos(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 126, symbol: ?onGraphicsModeChanged@LiquidBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const&);
+    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
 
     // vIndex: 134, symbol: ?animateTickBedrockLegacy@LiquidBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
@@ -162,16 +162,17 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 162, symbol: ?getMapColor@LiquidBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color
+    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 165, symbol: ?getResourceCount@LiquidBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol: ?canBeSilkTouched@LiquidBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0LiquidBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LiquidBlock(std::string const& nameId, int id, class Material const& material);
+    MCAPI LiquidBlock(std::string const& nameId, int, class Material const& material);
 
     // symbol: ?getTickDelay@LiquidBlock@@QEBAHAEAVBlockSource@@@Z
     MCAPI int getTickDelay(class BlockSource& region) const;
@@ -180,8 +181,12 @@ public:
     MCAPI static float getHeightFromDepth(int depth);
 
     // symbol: ?handleEntityInside@LiquidBlock@@SAXAEBVIConstBlockSource@@AEBVBlockPos@@AEAVVec3@@AEBVMaterial@@@Z
-    MCAPI static void
-    handleEntityInside(class IConstBlockSource const&, class BlockPos const&, class Vec3&, class Material const&);
+    MCAPI static void handleEntityInside(
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos,
+        class Vec3&                    current,
+        class Material const&          material
+    );
 
     // NOLINTEND
 
@@ -198,20 +203,24 @@ public:
     MCAPI void trySpreadFire(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ?getDepth@LiquidBlock@@KAHAEBVIConstBlockSource@@AEBVBlockPos@@AEBVMaterial@@@Z
-    MCAPI static int getDepth(class IConstBlockSource const&, class BlockPos const&, class Material const&);
+    MCAPI static int
+    getDepth(class IConstBlockSource const& region, class BlockPos const& pos, class Material const& material);
 
     // symbol: ?getRenderedDepth@LiquidBlock@@KAHAEBVIConstBlockSource@@AEBVBlockPos@@AEBVMaterial@@@Z
-    MCAPI static int getRenderedDepth(class IConstBlockSource const&, class BlockPos const&, class Material const&);
+    MCAPI static int
+    getRenderedDepth(class IConstBlockSource const& region, class BlockPos const& pos, class Material const& material);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_solidify@LiquidBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    MCAPI void _solidify(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    MCAPI void
+    _solidify(class BlockSource& region, class BlockPos const& pos, class BlockPos const& changedNeighbor) const;
 
     // symbol: ?_getFlow@LiquidBlock@@CA?AVVec3@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVMaterial@@@Z
-    MCAPI static class Vec3 _getFlow(class IConstBlockSource const&, class BlockPos const&, class Material const&);
+    MCAPI static class Vec3
+    _getFlow(class IConstBlockSource const& region, class BlockPos const& pos, class Material const& material);
 
     // NOLINTEND
 };

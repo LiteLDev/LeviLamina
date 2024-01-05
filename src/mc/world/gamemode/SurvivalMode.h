@@ -28,7 +28,7 @@ public:
     virtual void startBuildBlock(class BlockPos const& pos, uchar face);
 
     // vIndex: 6, symbol: ?buildBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E_N@Z
-    virtual bool buildBlock(class BlockPos const&, uchar, bool);
+    virtual bool buildBlock(class BlockPos const& pos, uchar face, bool);
 
     // vIndex: 9, symbol: ?tick@SurvivalMode@@UEAAXXZ
     virtual void tick();

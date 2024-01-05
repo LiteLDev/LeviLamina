@@ -32,7 +32,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?executeEvent@HatchetItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
-    virtual void executeEvent(class ItemStackBase&, std::string const&, class RenderParams&) const;
+    virtual void executeEvent(class ItemStackBase& item, std::string const& name, class RenderParams&) const;
 
     // vIndex: 8, symbol: __unk_vfn_8
     virtual void __unk_vfn_8();
@@ -86,7 +86,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0HatchetItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z
-    MCAPI HatchetItem(std::string const& name, int id, class Item::Tier const& tier);
+    MCAPI HatchetItem(std::string const& name, int, class Item::Tier const& tier);
 
     // NOLINTEND
 };

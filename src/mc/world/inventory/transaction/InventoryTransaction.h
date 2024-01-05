@@ -40,10 +40,10 @@ public:
           getVerifyFunction(class InventorySource const& source) const;
 
     // symbol: ?postLoadItems@InventoryTransaction@@QEAAXAEAVBlockPalette@@_N@Z
-    MCAPI void postLoadItems(class BlockPalette&, bool);
+    MCAPI void postLoadItems(class BlockPalette& blockPalette, bool isClientSide);
 
     // symbol: ?serialize@InventoryTransaction@@QEBAXAEAVBinaryStream@@_N@Z
-    MCAPI void serialize(class BinaryStream&, bool) const;
+    MCAPI void serialize(class BinaryStream& stream, bool isClientSide) const;
 
     // symbol: ?verifyFull@InventoryTransaction@@QEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
     MCAPI ::InventoryTransactionError verifyFull(class Player& p, bool isSenderAuthority) const;
@@ -56,7 +56,7 @@ public:
 
     // symbol:
     // ?deserialize@InventoryTransaction@@SA?AV?$Result@VInventoryTransaction@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<class InventoryTransaction> deserialize(class ReadOnlyBinaryStream&);
+    MCAPI static class Bedrock::Result<class InventoryTransaction> deserialize(class ReadOnlyBinaryStream& stream);
 
     // symbol:
     // ?getInventoryTransactionErrorName@InventoryTransaction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4InventoryTransactionError@@@Z

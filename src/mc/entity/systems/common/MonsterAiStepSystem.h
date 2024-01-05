@@ -63,8 +63,16 @@ public:
 
     // symbol:
     // ?tickMonsterAiStep@MonsterAiStepSystem@@SAXAEBVStrictEntityContext@@AEBUAABBShapeComponent@@AEBUOffsetsComponent@@AEBUStateVectorComponent@@AEAUNoActionTimeComponent@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UBlazeFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@ULavaSlimeFlag@@@@@@@@AEBVIConstBlockSource@@@Z
-    MCAPI static void
-    tickMonsterAiStep(class StrictEntityContext const&, struct AABBShapeComponent const&, struct OffsetsComponent const&, struct StateVectorComponent const&, struct NoActionTimeComponent&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct BlazeFlag>>>, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct LavaSlimeFlag>>>, class IConstBlockSource const&);
+    MCAPI static void tickMonsterAiStep(
+        class StrictEntityContext const& entity,
+        struct AABBShapeComponent const&,
+        struct OffsetsComponent const&,
+        struct StateVectorComponent const&,
+        struct NoActionTimeComponent&,
+        class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct BlazeFlag>>>,
+        class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct LavaSlimeFlag>>>,
+        class IConstBlockSource const& region
+    );
 
     // NOLINTEND
 };

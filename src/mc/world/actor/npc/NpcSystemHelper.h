@@ -10,7 +10,7 @@ namespace NpcComponents { struct LeaveMenuCountdown; }
 namespace NpcSystemHelper {
 // NOLINTBEGIN
 // symbol: ?sendClosePacket@NpcSystemHelper@@YAXAEAVEntityContext@@AEBULeaveMenuCountdown@NpcComponents@@@Z
-MCAPI void sendClosePacket(class EntityContext&, struct NpcComponents::LeaveMenuCountdown const&);
+MCAPI void sendClosePacket(class EntityContext& entity, struct NpcComponents::LeaveMenuCountdown const&);
 // NOLINTEND
 
 }; // namespace NpcSystemHelper

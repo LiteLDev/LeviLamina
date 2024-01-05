@@ -34,7 +34,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@SculkShriekerBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -100,7 +100,7 @@ public:
     virtual void __unk_vfn_67();
 
     // vIndex: 71, symbol: ?setupRedstoneComponent@SculkShriekerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
+    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
@@ -121,7 +121,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@SculkShriekerBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 136, symbol: ?init@SculkShriekerBlock@@UEAAAEAVBlockLegacy@@XZ
     virtual class BlockLegacy& init();
@@ -130,19 +130,19 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@SculkShriekerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 146, symbol: ?onStandOn@SculkShriekerBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
-    virtual void onStandOn(class EntityContext&, class BlockPos const&) const;
+    virtual void onStandOn(class EntityContext& entity, class BlockPos const& pos) const;
 
     // vIndex: 147, symbol: ?onPlace@SculkShriekerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@SculkShriekerBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -164,7 +164,7 @@ public:
 
     // symbol:
     // ??0SculkShriekerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI SculkShriekerBlock(std::string const&, int, class Material const&);
+    MCAPI SculkShriekerBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

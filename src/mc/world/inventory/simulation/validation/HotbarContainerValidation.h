@@ -19,20 +19,21 @@ public:
 
     // vIndex: 1, symbol:
     // ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    virtual bool
+    isValidSlotForContainer(class ContainerScreenContext const&, class Container const& container, int slot) const;
 
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
 
     // vIndex: 3, symbol: ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-    virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
+    virtual int getAvailableSetCount(int slot, class ItemStackBase const& item) const;
 
     // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4();
 
     // vIndex: 5, symbol:
     // ?isItemAllowedToRemove@HotbarContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
-    virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
+    virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const& item) const;
 
     // vIndex: 6, symbol: __unk_vfn_6
     virtual void __unk_vfn_6();
@@ -45,10 +46,10 @@ public:
 
     // vIndex: 9, symbol:
     // ?getContainerSize@HotbarContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
-    virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    virtual int getContainerSize(class ContainerScreenContext const&, class Container const& container) const;
 
     // symbol: ?canItemMoveToContainer@HotbarContainerValidation@@UEBA_NAEBVItemStackBase@@@Z
-    MCVAPI bool canItemMoveToContainer(class ItemStackBase const&) const;
+    MCVAPI bool canItemMoveToContainer(class ItemStackBase const& item) const;
 
     // NOLINTEND
 };

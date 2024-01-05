@@ -114,7 +114,7 @@ public:
     MCVAPI bool canManageLegacyData() const;
 
     // symbol: ?canSwapVRMode@AppPlatform@@UEBA_N_N@Z
-    MCVAPI bool canSwapVRMode(bool) const;
+    MCVAPI bool canSwapVRMode(bool inVRMode) const;
 
     // symbol: ?checkLicense@AppPlatform@@UEAAHXZ
     MCVAPI int checkLicense();
@@ -127,7 +127,7 @@ public:
     MCVAPI bool compareAppReceiptToLocalReceipt(std::string const& otherReceipt);
 
     // symbol: ?copyAssetFile@AppPlatform@@UEAA_NAEBVPath@Core@@0@Z
-    MCVAPI bool copyAssetFile(class Core::Path const&, class Core::Path const&);
+    MCVAPI bool copyAssetFile(class Core::Path const& filename, class Core::Path const& destination);
 
     // symbol:
     // ?copyImportFileToTempFolder@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z
@@ -152,7 +152,7 @@ public:
     MCVAPI bool doesLANRequireMultiplayerRestrictions() const;
 
     // symbol: ?exitVRMode@AppPlatform@@UEAAXV?$function@$$A6AXXZ@std@@@Z
-    MCVAPI void exitVRMode(std::function<void(void)>);
+    MCVAPI void exitVRMode(std::function<void(void)> callback);
 
     // symbol: ?finish@AppPlatform@@UEAAXXZ
     MCVAPI void finish();
@@ -414,10 +414,10 @@ public:
     MCVAPI void goToExternalConsumablesStoreListing() const;
 
     // symbol: ?handlePlatformSpecificCommerceError@AppPlatform@@UEAAXI@Z
-    MCVAPI void handlePlatformSpecificCommerceError(uint);
+    MCVAPI void handlePlatformSpecificCommerceError(uint error);
 
     // symbol: ?hasAssetFile@AppPlatform@@UEAA_NAEBVPath@Core@@@Z
-    MCVAPI bool hasAssetFile(class Core::Path const&);
+    MCVAPI bool hasAssetFile(class Core::Path const& filename);
 
     // symbol: ?hasBuyButtonWhenInvalidLicense@AppPlatform@@UEAA_NXZ
     MCVAPI bool hasBuyButtonWhenInvalidLicense();
@@ -586,7 +586,7 @@ public:
 
     // symbol:
     // ?registerExperimentsActiveCrashDump@AppPlatform@@UEBAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const&) const;
+    MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const& activeExperiments) const;
 
     // symbol: ?registerFileForCollectionWithCrashDump@AppPlatform@@UEAAXAEBVPath@Core@@@Z
     MCVAPI void registerFileForCollectionWithCrashDump(class Core::Path const& fileName);
@@ -649,7 +649,7 @@ public:
     MCVAPI void setNetworkAllowed(bool allowed);
 
     // symbol: ?setNetworkConnectionType@AppPlatform@@UEAAXW4NetworkConnectionType@@@Z
-    MCVAPI void setNetworkConnectionType(::NetworkConnectionType);
+    MCVAPI void setNetworkConnectionType(::NetworkConnectionType connectionType);
 
     // symbol: ?setScreenSize@AppPlatform@@UEAAXHH@Z
     MCVAPI void setScreenSize(int width, int height);
@@ -689,7 +689,7 @@ public:
     MCVAPI void showDialog(int dialogId);
 
     // symbol: ?showPlatformEmptyStoreDialog@AppPlatform@@UEAAX$$QEAV?$function@$$A6AX_N@Z@std@@@Z
-    MCVAPI void showPlatformEmptyStoreDialog(std::function<void(bool)>&&);
+    MCVAPI void showPlatformEmptyStoreDialog(std::function<void(bool)>&& callback);
 
     // symbol: ?showPlatformStoreIcon@AppPlatform@@UEAAX_N@Z
     MCVAPI void showPlatformStoreIcon(bool shouldShow);
@@ -744,7 +744,7 @@ public:
     );
 
     // symbol: ?tryEnterVRMode@AppPlatform@@UEAAX_NV?$function@$$A6AX_N@Z@std@@@Z
-    MCVAPI void tryEnterVRMode(bool, std::function<void(bool)>);
+    MCVAPI void tryEnterVRMode(bool duringStartup, std::function<void(bool)> callback);
 
     // symbol: ?updateLocalization@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void updateLocalization(std::string const& loc);

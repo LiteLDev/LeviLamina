@@ -48,7 +48,8 @@ public:
 
     // symbol:
     // ?create@ToXAsyncBlock@AsyncResult@Threading@Bedrock@@SA?AV?$shared_ptr@VToXAsyncBlock@AsyncResult@Threading@Bedrock@@@std@@PEAUXTaskQueueObject@@@Z
-    MCAPI static std::shared_ptr<class Bedrock::Threading::AsyncResult::ToXAsyncBlock> create(struct XTaskQueueObject*);
+    MCAPI static std::shared_ptr<class Bedrock::Threading::AsyncResult::ToXAsyncBlock>
+    create(struct XTaskQueueObject* queue);
 
     // NOLINTEND
 

@@ -69,7 +69,7 @@ public:
                           class FlagComponent<struct ActorHeadWasInWaterFlag>>,
                       struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&);
+                      struct EntityFactoryT<>>& context);
 
     // vIndex: 6, symbol:
     // ?singleTick@UnderWaterSensingSystem@@EEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@@@U?$Read@UDimensionTypeComponent@@UUpdateWaterStateRequestComponent@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UStateVectorComponent@@USynchedActorDataComponent@@UAABBShapeComponent@@UActorRotationComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@@@U?$Write@$$V@@U?$AddRemove@V?$FlagComponent@UActorHeadInWaterFlag@@@@V?$FlagComponent@UActorHeadWasInWaterFlag@@@@@@U?$GlobalRead@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEAVStrictEntityContext@@@Z

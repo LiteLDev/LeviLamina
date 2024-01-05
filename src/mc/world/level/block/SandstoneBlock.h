@@ -103,7 +103,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@SandstoneBlock@@MEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -141,7 +141,7 @@ public:
 
     // symbol:
     // ??0SandstoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI SandstoneBlock(std::string const&, int, class Material const&);
+    MCAPI SandstoneBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

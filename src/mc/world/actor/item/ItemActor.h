@@ -110,7 +110,11 @@ public:
     MCVAPI bool canMakeStepSound() const;
 
     // symbol: ??0ItemActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI ItemActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI ItemActor(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?postNormalTick@ItemActor@@QEAAXXZ
     MCAPI void postNormalTick();
@@ -122,7 +126,7 @@ public:
     MCAPI static class AABB getLiquidAABB(struct AABBShapeComponent const&);
 
     // symbol: ?tryGetFromEntity@ItemActor@@SAPEAV1@AEAVEntityContext@@_N@Z
-    MCAPI static class ItemActor* tryGetFromEntity(class EntityContext&, bool);
+    MCAPI static class ItemActor* tryGetFromEntity(class EntityContext& entity, bool);
 
     // NOLINTEND
 

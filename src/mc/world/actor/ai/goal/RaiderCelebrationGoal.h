@@ -37,15 +37,19 @@ public:
 
         // symbol:
         // ?addCelebrationSoundByName@RaiderCelebrationDefinition@RaiderCelebrationGoal@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-        MCAPI void addCelebrationSoundByName(std::string const&);
+        MCAPI void addCelebrationSoundByName(std::string const& name);
 
         // symbol: ?initialize@RaiderCelebrationDefinition@RaiderCelebrationGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext&, class RaiderCelebrationGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class RaiderCelebrationGoal& goal) const;
 
         // symbol:
         // ?buildSchema@RaiderCelebrationDefinition@RaiderCelebrationGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VRaiderCelebrationDefinition@RaiderCelebrationGoal@@@JsonUtil@@@4@@Z
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RaiderCelebrationGoal::RaiderCelebrationDefinition>>&);
+        MCAPI static void buildSchema(
+            std::string const&                                              name,
+            std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                class JsonUtil::EmptyClass,
+                class RaiderCelebrationGoal::RaiderCelebrationDefinition>>& root
+        );
 
         // NOLINTEND
     };
@@ -81,7 +85,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0RaiderCelebrationGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit RaiderCelebrationGoal(class Mob&);
+    MCAPI explicit RaiderCelebrationGoal(class Mob& mob);
 
     // NOLINTEND
 };

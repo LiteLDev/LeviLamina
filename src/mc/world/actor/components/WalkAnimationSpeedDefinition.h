@@ -21,9 +21,10 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?buildSchema@WalkAnimationSpeedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UWalkAnimationSpeedDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      struct WalkAnimationSpeedDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct WalkAnimationSpeedDefinition>>& root
+    );
 
     // NOLINTEND
 };

@@ -26,17 +26,17 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@MotionPredictionHintsPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@MotionPredictionHintsPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0MotionPredictionHintsPacket@@QEAA@XZ
     MCAPI MotionPredictionHintsPacket();
 
     // symbol: ??0MotionPredictionHintsPacket@@QEAA@AEBVActor@@@Z
-    MCAPI explicit MotionPredictionHintsPacket(class Actor const&);
+    MCAPI explicit MotionPredictionHintsPacket(class Actor const& entity);
 
     // NOLINTEND
 };

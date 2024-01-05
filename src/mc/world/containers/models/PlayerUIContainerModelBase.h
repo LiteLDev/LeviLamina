@@ -57,7 +57,7 @@ public:
     virtual int _getContainerOffset() const;
 
     // vIndex: 24, symbol: ?_onItemChanged@PlayerUIContainerModelBase@@MEAAXHAEBVItemStack@@0@Z
-    virtual void _onItemChanged(int slot, class ItemStack const& oldItem, class ItemStack const& newItem);
+    virtual void _onItemChanged(int, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // symbol: ??0PlayerUIContainerModelBase@@QEAA@W4ContainerEnumName@@AEAVPlayer@@HW4ContainerCategory@@@Z
     MCAPI PlayerUIContainerModelBase(
@@ -72,7 +72,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_refreshContainer@PlayerUIContainerModelBase@@IEAAX_N@Z
-    MCAPI void _refreshContainer(bool);
+    MCAPI void _refreshContainer(bool initial);
 
     // NOLINTEND
 };

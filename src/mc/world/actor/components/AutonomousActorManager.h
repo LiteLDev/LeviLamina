@@ -17,15 +17,17 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0AutonomousActorManager@@QEAA@V?$WeakRefT@UEntityRegistryRefTraits@@@@@Z
-    MCAPI explicit AutonomousActorManager(class WeakRefT<struct EntityRegistryRefTraits>);
+    MCAPI explicit AutonomousActorManager(class WeakRefT<struct EntityRegistryRefTraits> entityRegistry);
 
     // symbol:
     // ?addAutonomousActorEntity@AutonomousActorManager@@QEAAPEAVActor@@AEAVDimension@@V?$OwnerPtrT@UEntityRefTraits@@@@@Z
-    MCAPI class Actor* addAutonomousActorEntity(class Dimension&, class OwnerPtrT<struct EntityRefTraits>);
+    MCAPI class Actor*
+    addAutonomousActorEntity(class Dimension& dimension, class OwnerPtrT<struct EntityRefTraits> entity);
 
     // symbol:
     // ?addAutonomousActorEntity@AutonomousActorManager@@QEAAPEAVActor@@AEAVIAddActorEntityProxy@@V?$OwnerPtrT@UEntityRefTraits@@@@@Z
-    MCAPI class Actor* addAutonomousActorEntity(class IAddActorEntityProxy&, class OwnerPtrT<struct EntityRefTraits>);
+    MCAPI class Actor*
+    addAutonomousActorEntity(class IAddActorEntityProxy&, class OwnerPtrT<struct EntityRefTraits> entity);
 
     // symbol: ?hasOwnedInactiveAutonomousActorWithUniqueID@AutonomousActorManager@@QEBA_NUActorUniqueID@@@Z
     MCAPI bool hasOwnedInactiveAutonomousActorWithUniqueID(struct ActorUniqueID) const;
@@ -38,10 +40,10 @@ public:
     MCAPI void loadAutonomousActorsFromDisk(class LevelStorage&, class ActorFactory&);
 
     // symbol: ?onChunkDiscarded@AutonomousActorManager@@QEAAXAEAVLevelChunk@@@Z
-    MCAPI void onChunkDiscarded(class LevelChunk&);
+    MCAPI void onChunkDiscarded(class LevelChunk& levelChunk);
 
     // symbol: ?onChunkLoaded@AutonomousActorManager@@QEAAXAEAVLevelChunk@@@Z
-    MCAPI void onChunkLoaded(class LevelChunk&);
+    MCAPI void onChunkLoaded(class LevelChunk& levelChunk);
 
     // symbol: ?registerLevelStorageManagerListener@AutonomousActorManager@@QEAAXAEAVLevelStorageManager@@@Z
     MCAPI void registerLevelStorageManagerListener(class LevelStorageManager&);
@@ -60,13 +62,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_moveActiveAutonomousActorEntityToInactive@AutonomousActorManager@@AEAAXAEAVActor@@AEAVLevelChunk@@@Z
-    MCAPI void _moveActiveAutonomousActorEntityToInactive(class Actor&, class LevelChunk&);
+    MCAPI void _moveActiveAutonomousActorEntityToInactive(class Actor& actor, class LevelChunk& levelChunk);
 
     // symbol: ?_onRemoveActorEntityReferences@AutonomousActorManager@@AEAAXAEAVActor@@@Z
-    MCAPI void _onRemoveActorEntityReferences(class Actor&);
+    MCAPI void _onRemoveActorEntityReferences(class Actor& actor);
 
     // symbol: ?_saveAllAutonomousActors@AutonomousActorManager@@AEAAXAEAVLevelStorage@@@Z
-    MCAPI void _saveAllAutonomousActors(class LevelStorage&);
+    MCAPI void _saveAllAutonomousActors(class LevelStorage& levelStorage);
 
     // symbol: ?_deduplicateDuplicateActorsFromList@AutonomousActorManager@@CAXAEAVListTag@@@Z
     MCAPI static void _deduplicateDuplicateActorsFromList(class ListTag&);

@@ -26,7 +26,7 @@ public:
 
     // symbol:
     // ?deserialize@LootPoolEntry@@SA?AV?$unique_ptr@VLootPoolEntry@@U?$default_delete@VLootPoolEntry@@@std@@@std@@AEBVValue@Json@@@Z
-    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const&);
+    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const& entryJson);
 
     // NOLINTEND
 };

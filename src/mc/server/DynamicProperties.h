@@ -63,7 +63,7 @@ public:
     // symbol:
     // ?getDynamicProperty@DynamicProperties@@QEAAPEAV?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@0@Z
     MCAPI std::variant<double, float, bool, std::string, class Vec3>*
-          getDynamicProperty(std::string const&, std::string const&);
+          getDynamicProperty(std::string const& key, std::string const& collectionName);
 
     // symbol:
     // ?getDynamicPropertyIds@DynamicProperties@@QEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
@@ -78,7 +78,7 @@ public:
 
     // symbol:
     // ?removeDynamicProperty@DynamicProperties@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI bool removeDynamicProperty(std::string const&, std::string const&);
+    MCAPI bool removeDynamicProperty(std::string const& key, std::string const& collectionName);
 
     // symbol:
     // ?serialize@DynamicProperties@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBUReflectionCtx@cereal@@@Z
@@ -86,8 +86,11 @@ public:
 
     // symbol:
     // ?setDynamicProperty@DynamicProperties@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@3@0@Z
-    MCAPI void
-    setDynamicProperty(std::string const&, std::variant<double, float, bool, std::string, class Vec3> const&, std::string const&);
+    MCAPI void setDynamicProperty(
+        std::string const&                                                key,
+        std::variant<double, float, bool, std::string, class Vec3> const& value,
+        std::string const&                                                collectionName
+    );
 
     // symbol:
     // ?updateCollectionName@DynamicProperties@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
@@ -118,7 +121,8 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_getPropertyVariant@DynamicProperties@@CA?AVmeta_any@entt@@AEBV?$variant@NM_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VVec3@@@std@@@Z
-    MCAPI static entt::meta_any _getPropertyVariant(std::variant<double, float, bool, std::string, class Vec3> const&);
+    MCAPI static entt::meta_any
+    _getPropertyVariant(std::variant<double, float, bool, std::string, class Vec3> const& var);
 
     // NOLINTEND
 };

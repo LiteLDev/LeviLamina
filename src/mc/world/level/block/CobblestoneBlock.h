@@ -118,7 +118,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 141, symbol: ?tryGetInfested@CobblestoneBlock@@UEBAPEBVBlock@@AEBV2@@Z
-    virtual class Block const* tryGetInfested(class Block const&) const;
+    virtual class Block const* tryGetInfested(class Block const& block) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -131,7 +131,7 @@ public:
 
     // symbol:
     // ??0CobblestoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI CobblestoneBlock(std::string const&, int, class Material const&);
+    MCAPI CobblestoneBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

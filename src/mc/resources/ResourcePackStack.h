@@ -32,9 +32,11 @@ public:
 
     // vIndex: 3, symbol:
     // ?loadAllVersionsOf@ResourcePackStack@@UEBA_NAEBVResourceLocation@@AEBV?$function@$$A6A_NAEBVPackInstance@@@Z@std@@AEAVResourcePackMergeStrategy@@@Z
-    virtual bool
-    loadAllVersionsOf(class ResourceLocation const&, std::function<bool(class PackInstance const&)> const&, class ResourcePackMergeStrategy&)
-        const;
+    virtual bool loadAllVersionsOf(
+        class ResourceLocation const& resourceLocation,
+        std::function<bool(class PackInstance const&)> const&,
+        class ResourcePackMergeStrategy& mergeStrategy
+    ) const;
 
     // symbol:
     // ?add@ResourcePackStack@@QEAAXVPackInstance@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIResourcePackRepository@@@Bedrock@@@gsl@@_N@Z
@@ -44,7 +46,7 @@ public:
     MCAPI void getSplitStacks(class ResourcePackStack& clientStack, class ResourcePackStack& serverStack) const;
 
     // symbol: ?hasCapabilityInStack@ResourcePackStack@@QEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI bool hasCapabilityInStack(std::string_view) const;
+    MCAPI bool hasCapabilityInStack(std::string_view capability) const;
 
     // symbol: ?hasPlatformLockedContent@ResourcePackStack@@QEBA_NXZ
     MCAPI bool hasPlatformLockedContent() const;

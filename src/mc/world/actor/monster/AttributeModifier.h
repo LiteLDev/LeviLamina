@@ -30,17 +30,17 @@ public:
     // ??0AttributeModifier@@QEAA@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MW4AttributeModifierOperation@@W4AttributeOperands@@_N@Z
     MCAPI AttributeModifier(
         class mce::UUID,
-        std::string const&,
-        float,
-        ::AttributeModifierOperation,
-        ::AttributeOperands,
-        bool
+        std::string const&           name,
+        float                        amount,
+        ::AttributeModifierOperation operation,
+        ::AttributeOperands          operand,
+        bool                         serializable
     );
 
     // symbol:
     // ??0AttributeModifier@@QEAA@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MHH_N@Z
     MCAPI AttributeModifier(
-        class mce::UUID    id,
+        class mce::UUID,
         std::string const& name,
         float              amount,
         int                operation,

@@ -23,10 +23,10 @@ public:
     virtual ~SetItemLoreFunction() = default;
 
     // vIndex: 1, symbol: ?apply@SetItemLoreFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemStack& itemStack, class Random& random, class LootTableContext& context);
+    virtual void apply(class ItemStack& itemStack, class Random&, class LootTableContext&);
 
     // vIndex: 3, symbol: ?apply@SetItemLoreFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemInstance& itemInstance, class Random& random, class LootTableContext& context);
+    virtual void apply(class ItemInstance& itemInstance, class Random&, class LootTableContext&);
 
     // symbol:
     // ?deserialize@SetItemLoreFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z

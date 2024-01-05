@@ -38,10 +38,18 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 9, symbol: ?onPlayerDimensionChanged@FollowOwnerGoal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-    virtual void onPlayerDimensionChanged(class Player*, DimensionType, DimensionType);
+    virtual void onPlayerDimensionChanged(class Player* player, DimensionType fromDimension, DimensionType toDimension);
 
     // symbol: ??0FollowOwnerGoal@@QEAA@AEAVMob@@MMM_N1M@Z
-    MCAPI FollowOwnerGoal(class Mob&, float, float, float, bool, bool, float);
+    MCAPI FollowOwnerGoal(
+        class Mob& mob,
+        float      speed,
+        float      startDistance,
+        float      stopDistance,
+        bool,
+        bool,
+        float maxDistance
+    );
 
     // NOLINTEND
 };

@@ -100,10 +100,12 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 79, symbol: ?onFertilized@MossBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
+        const;
 
     // vIndex: 81, symbol: ?canBeFertilized@MossBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -133,7 +135,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0MossBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MossBlock(std::string const&, int);
+    MCAPI MossBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

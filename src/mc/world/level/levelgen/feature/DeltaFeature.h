@@ -18,14 +18,14 @@ public:
     virtual ~DeltaFeature() = default;
 
     // vIndex: 3, symbol: ?place@DeltaFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& centerPos, class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_isValidPlacement@DeltaFeature@@AEBA_NAEAVBlockSource@@VBlockPos@@@Z
-    MCAPI bool _isValidPlacement(class BlockSource&, class BlockPos) const;
+    MCAPI bool _isValidPlacement(class BlockSource& region, class BlockPos) const;
 
     // NOLINTEND
 };

@@ -24,11 +24,12 @@ public:
 
     // symbol:
     // ?registerServerNetworkEventHandler@ServerNetworkEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VServerNetworkEventHandler@@U?$default_delete@VServerNetworkEventHandler@@@std@@@std@@@Z
-    MCAPI void registerServerNetworkEventHandler(std::unique_ptr<class ServerNetworkEventHandler>&&);
+    MCAPI void registerServerNetworkEventHandler(std::unique_ptr<class ServerNetworkEventHandler>&& handler);
 
     // symbol:
     // ?sendEvent@ServerNetworkEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableServerNetworkGameplayEvent@W4CoordinatorResult@@@@@@@Z
-    MCAPI ::CoordinatorResult sendEvent(class EventRef<struct MutableServerNetworkGameplayEvent<::CoordinatorResult>>);
+    MCAPI ::CoordinatorResult
+    sendEvent(class EventRef<struct MutableServerNetworkGameplayEvent<::CoordinatorResult>> event);
 
     // symbol: ?sendMessage@ServerNetworkEventCoordinator@@QEAAXAEAUMessageEvent@@@Z
     MCAPI void sendMessage(struct MessageEvent&);

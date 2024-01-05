@@ -55,13 +55,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?acquireAllRandomTicks@BlockTickingQueue@@QEAAXAEAVLevelChunk@@@Z
-    MCAPI void acquireAllRandomTicks(class LevelChunk&);
+    MCAPI void acquireAllRandomTicks(class LevelChunk& lc);
 
     // symbol: ?acquireAllTicks@BlockTickingQueue@@QEAAXAEAV1@@Z
     MCAPI void acquireAllTicks(class BlockTickingQueue&);
 
     // symbol: ?acquireAllTicks@BlockTickingQueue@@QEAAXAEAVLevelChunk@@@Z
-    MCAPI void acquireAllTicks(class LevelChunk&);
+    MCAPI void acquireAllTicks(class LevelChunk& lc);
 
     // symbol: ?add@BlockTickingQueue@@QEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@HH@Z
     MCAPI void
@@ -72,7 +72,13 @@ public:
         int                   priorityOffset);
 
     // symbol: ?addTickToLevelChunk@BlockTickingQueue@@QEAAXAEAVLevelChunk@@AEBVBlockPos@@AEBVBlock@@HH@Z
-    MCAPI void addTickToLevelChunk(class LevelChunk&, class BlockPos const&, class Block const&, int, int);
+    MCAPI void addTickToLevelChunk(
+        class LevelChunk&     lc,
+        class BlockPos const& pos,
+        class Block const&    block,
+        int                   tickDelay,
+        int                   priorityOffset
+    );
 
     // symbol: ?eliminateAllTicksZeroAndAbove@BlockTickingQueue@@QEAAXXZ
     MCAPI void eliminateAllTicksZeroAndAbove();
@@ -87,7 +93,7 @@ public:
     MCAPI bool getNextUpdateForPos(class BlockPos const& pos, struct Tick& tick) const;
 
     // symbol: ?getTickDelayForNextTickUpdateAtPos@BlockTickingQueue@@QEBA?AV?$optional@UTick@@@std@@AEBVBlockPos@@@Z
-    MCAPI std::optional<struct Tick> getTickDelayForNextTickUpdateAtPos(class BlockPos const&) const;
+    MCAPI std::optional<struct Tick> getTickDelayForNextTickUpdateAtPos(class BlockPos const& pos) const;
 
     // symbol:
     // ?getTickDelaysInArea@BlockTickingQueue@@QEBA?AV?$unordered_multimap@VBlockPos@@UTickDelayBlock@@U?$hash@VBlockPos@@@std@@U?$equal_to@VBlockPos@@@4@V?$allocator@U?$pair@$$CBVBlockPos@@UTickDelayBlock@@@std@@@4@@std@@AEBVBoundingBox@@@Z
@@ -101,10 +107,10 @@ public:
     MCAPI bool hasTickInPendingTicks(class BlockPos const& pos) const;
 
     // symbol: ?isBlockInPendingTick@BlockTickingQueue@@QEBA_NAEBVBlockPos@@AEBVBlock@@@Z
-    MCAPI bool isBlockInPendingTick(class BlockPos const&, class Block const&) const;
+    MCAPI bool isBlockInPendingTick(class BlockPos const& pos, class Block const& block) const;
 
     // symbol: ?isBlockTypeInPendingTick@BlockTickingQueue@@QEBA_NAEBVBlockPos@@AEBVBlockLegacy@@@Z
-    MCAPI bool isBlockTypeInPendingTick(class BlockPos const&, class BlockLegacy const&) const;
+    MCAPI bool isBlockTypeInPendingTick(class BlockPos const& pos, class BlockLegacy const& block) const;
 
     // symbol: ?isEmpty@BlockTickingQueue@@QEBA_NXZ
     MCAPI bool isEmpty() const;
@@ -154,10 +160,11 @@ public:
     MCAPI void _acquireAllTicks(class BlockTickingQueue&);
 
     // symbol: ?_addToNextTickQueue@BlockTickingQueue@@AEAAXAEBVBlockPos@@AEBVBlock@@HH@Z
-    MCAPI void _addToNextTickQueue(class BlockPos const&, class Block const&, int, int);
+    MCAPI void
+    _addToNextTickQueue(class BlockPos const& pos, class Block const& block, int tickDelay, int priorityOffset);
 
     // symbol: ?_eliminateTicksForZeroAndAbove@BlockTickingQueue@@AEAAXAEAVTickDataSet@1@@Z
-    MCAPI void _eliminateTicksForZeroAndAbove(class BlockTickingQueue::TickDataSet&);
+    MCAPI void _eliminateTicksForZeroAndAbove(class BlockTickingQueue::TickDataSet& queue);
 
     // NOLINTEND
 };

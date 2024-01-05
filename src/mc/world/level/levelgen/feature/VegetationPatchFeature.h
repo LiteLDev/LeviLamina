@@ -19,8 +19,12 @@ public:
 
     // vIndex: 1, symbol:
     // ?place@VegetationPatchFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-    virtual std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    virtual std::optional<class BlockPos> place(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    pos,
+        class Random&            random,
+        class RenderParams&      renderParams
+    ) const;
 
     // vIndex: 2, symbol:
     // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -31,12 +35,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_isExposedDirection@VegetationPatchFeature@@AEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@E@Z
-    MCAPI bool _isExposedDirection(class IBlockWorldGenAPI&, class BlockPos const&, uchar) const;
+    MCAPI bool _isExposedDirection(class IBlockWorldGenAPI& target, class BlockPos const& pos, uchar direction) const;
 
     // symbol:
     // ?_placeGroundPatch@VegetationPatchFeature@@AEBA?AV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAVIBlockWorldGenAPI@@AEAVRandom@@AEBVBlockPos@@HH@Z
     MCAPI std::vector<class BlockPos>
-          _placeGroundPatch(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int, int) const;
+    _placeGroundPatch(class IBlockWorldGenAPI& target, class Random& random, class BlockPos const& origin, int, int)
+        const;
 
     // NOLINTEND
 };

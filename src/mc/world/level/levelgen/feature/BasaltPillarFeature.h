@@ -18,14 +18,16 @@ public:
     virtual ~BasaltPillarFeature() = default;
 
     // vIndex: 3, symbol: ?place@BasaltPillarFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_growColumn@BasaltPillarFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@MAEBVBlock@@@Z
-    MCAPI bool _growColumn(class BlockSource&, class BlockPos const&, class Random&, float, class Block const&) const;
+    MCAPI bool
+    _growColumn(class BlockSource& region, class BlockPos const& pos, class Random& random, float, class Block const&)
+        const;
 
     // NOLINTEND
 };

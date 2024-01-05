@@ -112,7 +112,7 @@ public:
     virtual bool mayConsumeFertilizer(class BlockSource& region) const;
 
     // vIndex: 81, symbol: ?canBeFertilized@GravelBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -143,7 +143,7 @@ public:
 
     // vIndex: 164, symbol: ?getResourceItem@GravelBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
     virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    getResourceItem(class Randomize& randomize, class Block const&, int bonusLootLevel) const;
 
     // vIndex: 168, symbol: ?getDustColor@GravelBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z
     virtual class mce::Color getDustColor(class Block const& block) const;

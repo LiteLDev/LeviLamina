@@ -39,19 +39,19 @@ public:
     MCVAPI void playerListChanged();
 
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUErrorMessage@CodeBuilder@@@Z
-    MCVAPI void send(struct CodeBuilder::ErrorMessage const&);
+    MCVAPI void send(struct CodeBuilder::ErrorMessage const& message);
 
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUAgentMessage@CodeBuilder@@@Z
-    MCVAPI void send(struct CodeBuilder::AgentMessage const&);
+    MCVAPI void send(struct CodeBuilder::AgentMessage const& message);
 
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUCommandMessage@CodeBuilder@@@Z
-    MCVAPI void send(struct CodeBuilder::CommandMessage const&);
+    MCVAPI void send(struct CodeBuilder::CommandMessage const& message);
 
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUChatMessage@CodeBuilder@@@Z
-    MCVAPI void send(struct CodeBuilder::ChatMessage const&);
+    MCVAPI void send(struct CodeBuilder::ChatMessage const& message);
 
     // symbol: ?send@AutomationClient@Automation@@UEAAXAEBUEventMessage@CodeBuilder@@@Z
-    MCVAPI void send(struct CodeBuilder::EventMessage const&);
+    MCVAPI void send(struct CodeBuilder::EventMessage const& message);
 
     // symbol: ?tick@AutomationClient@Automation@@UEAAXXZ
     MCVAPI void tick();
@@ -68,7 +68,7 @@ public:
 
     // symbol:
     // ?getSessionForCommand@AutomationClient@Automation@@QEAA?AV?$shared_ptr@VAutomationSession@Automation@@@std@@AEBVCommandOrigin@@@Z
-    MCAPI std::shared_ptr<class Automation::AutomationSession> getSessionForCommand(class CommandOrigin const&);
+    MCAPI std::shared_ptr<class Automation::AutomationSession> getSessionForCommand(class CommandOrigin const& origin);
 
     // symbol: ?isReadyForInGameCommands@AutomationClient@Automation@@QEAA_NXZ
     MCAPI bool isReadyForInGameCommands();
@@ -85,7 +85,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_forEachSession@AutomationClient@Automation@@AEAAXAEBV?$function@$$A6A_NAEAVAutomationSession@Automation@@@Z@std@@@Z
-    MCAPI void _forEachSession(std::function<bool(class Automation::AutomationSession&)> const&);
+    MCAPI void _forEachSession(std::function<bool(class Automation::AutomationSession&)> const& callback);
 
     // symbol: ?_removeSession@AutomationClient@Automation@@AEAAXAEBVAutomationSession@2@@Z
     MCAPI void _removeSession(class Automation::AutomationSession const&);

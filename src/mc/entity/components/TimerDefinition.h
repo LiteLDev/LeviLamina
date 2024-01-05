@@ -22,16 +22,16 @@ public:
     MCAPI TimerDefinition();
 
     // symbol: ?addWeightedChoiceEntry@TimerDefinition@@QEAAXAEBUWeightChoiceEntry@@@Z
-    MCAPI void addWeightedChoiceEntry(struct WeightChoiceEntry const&);
+    MCAPI void addWeightedChoiceEntry(struct WeightChoiceEntry const& entry);
 
     // symbol: ?initialize@TimerDefinition@@QEBAXAEAVEntityContext@@AEAVTimerComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class TimerComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class TimerComponent& component) const;
 
     // symbol:
     // ?buildSchema@TimerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTimerDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TimerDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TimerDefinition>>& root
+    );
 
     // NOLINTEND
 };

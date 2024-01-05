@@ -31,7 +31,8 @@ public:
 
     // symbol:
     // ??0ScatteredFeatureStart@RandomScatteredLargeFeatureDetails@@QEAA@AEBVBiomeSource@@FHHAEBVIPreliminarySurfaceProvider@@@Z
-    MCAPI ScatteredFeatureStart(class BiomeSource const&, short, int, int, class IPreliminarySurfaceProvider const&);
+    MCAPI
+    ScatteredFeatureStart(class BiomeSource const& source, short seaLevel, int chunkX, int chunkZ, class IPreliminarySurfaceProvider const&);
 
     // NOLINTEND
 };

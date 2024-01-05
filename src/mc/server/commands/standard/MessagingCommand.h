@@ -31,12 +31,12 @@ public:
     // symbol:
     // ?checkMutedAndSendToastIfMuted@MessagingCommand@@KAXAEBVPlayer@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@@Z
     MCAPI static void
-    checkMutedAndSendToastIfMuted(class Player const&, std::vector<::Safety::TextFilteringEvent> const&);
+    checkMutedAndSendToastIfMuted(class Player const& player, std::vector<::Safety::TextFilteringEvent> const&);
 
     // symbol:
     // ?checkMutedAndSendToastIfMuted@MessagingCommand@@KAXAEBUCommandOriginIdentity@@AEBVLevel@@AEBV?$vector@W4TextFilteringEvent@Safety@@V?$allocator@W4TextFilteringEvent@Safety@@@std@@@std@@@Z
     MCAPI static void
-    checkMutedAndSendToastIfMuted(struct CommandOriginIdentity const&, class Level const&, std::vector<::Safety::TextFilteringEvent> const&);
+    checkMutedAndSendToastIfMuted(struct CommandOriginIdentity const& identity, class Level const& level, std::vector<::Safety::TextFilteringEvent> const&);
 
     // NOLINTEND
 };

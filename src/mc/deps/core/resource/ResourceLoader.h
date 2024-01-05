@@ -29,15 +29,17 @@ public:
 
     // vIndex: 2, symbol:
     // ?load@ResourcePackManager@@UEBA_NAEBVResourceLocation@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-    virtual bool load(
-        class ResourceLocation const&   resourceLocation,
-        std::string&                    resourceStream,
-        std::vector<std::string> const& extensions
-    ) const = 0;
+    virtual bool
+    load(class ResourceLocation const& resourceLocation, std::string& resourceStream, std::vector<std::string> const&)
+        const = 0;
 
     // vIndex: 3, symbol:
     // ?load@ResourceLoader@@UEBA_NAEBVResourceLocationPair@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-    virtual bool load(class ResourceLocationPair const&, std::string&, std::vector<std::string> const&) const;
+    virtual bool load(
+        class ResourceLocationPair const& resourceLocation,
+        std::string&                      resourceStream,
+        std::vector<std::string> const&   extensions
+    ) const;
 
     // vIndex: 4, symbol:
     // ?loadAllVersionsOf@ResourcePackManager@@UEBA?AV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@AEBVResourceLocation@@@Z
@@ -69,13 +71,17 @@ public:
 
     // vIndex: 10, symbol:
     // ?getPathContainingResource@ResourceLoader@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    virtual class Core::PathBuffer<std::string>
-    getPathContainingResource(class ResourceLocation const&, std::vector<std::string>) const;
+    virtual class Core::PathBuffer<std::string> getPathContainingResource(
+        class ResourceLocation const& resourceLocation,
+        std::vector<std::string>      extensions
+    ) const;
 
     // vIndex: 11, symbol:
     // ?getPackStackIndexOfResource@ResourceLoader@@UEBA?AU?$pair@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-    virtual std::pair<int, std::string const&>
-    getPackStackIndexOfResource(class ResourceLocation const&, std::vector<std::string> const&) const;
+    virtual std::pair<int, std::string const&> getPackStackIndexOfResource(
+        class ResourceLocation const&   resourceLocation,
+        std::vector<std::string> const& extensions
+    ) const;
 
     // NOLINTEND
 };

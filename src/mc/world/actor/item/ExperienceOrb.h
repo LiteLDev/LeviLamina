@@ -101,7 +101,11 @@ public:
     virtual void _playStepSound(class BlockPos const& pos, class Block const& onBlock);
 
     // symbol: ??0ExperienceOrb@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI ExperienceOrb(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI ExperienceOrb(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getIconIndex@ExperienceOrb@@QEBAHXZ
     MCAPI int getIconIndex() const;
@@ -136,13 +140,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_handleMending@ExperienceOrb@@AEAAXAEAVPlayer@@@Z
-    MCAPI void _handleMending(class Player&);
+    MCAPI void _handleMending(class Player& player);
 
     // symbol: ?_tryMergeExistingOrbs@ExperienceOrb@@AEAAXXZ
     MCAPI void _tryMergeExistingOrbs();
 
     // symbol: ?_spawnOrb@ExperienceOrb@@CAXAEAVBlockSource@@AEAVLevel@@AEBVVec3@@H@Z
-    MCAPI static void _spawnOrb(class BlockSource&, class Level&, class Vec3 const&, int);
+    MCAPI static void _spawnOrb(class BlockSource& region, class Level& level, class Vec3 const& pos, int);
 
     // symbol: ?_tryMergeIntoExistingOrbs@ExperienceOrb@@CA_NAEAVBlockSource@@AEBVVec3@@H@Z
     MCAPI static bool _tryMergeIntoExistingOrbs(class BlockSource&, class Vec3 const&, int);

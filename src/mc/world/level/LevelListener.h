@@ -73,7 +73,7 @@ public:
     virtual void __unk_vfn_18();
 
     // vIndex: 19, symbol: ?onChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-    virtual void onChunkLoaded(class ChunkSource&, class LevelChunk&);
+    virtual void onChunkLoaded(class ChunkSource& source, class LevelChunk& lc);
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -95,7 +95,11 @@ public:
     virtual void levelEvent(::LevelEvent type, class Vec3 const& pos, int data);
 
     // symbol: ?addBreakingItemParticleEffect@LevelListener@@UEAAXAEBVVec3@@W4ParticleType@@AEBUResolvedItemIconInfo@@@Z
-    MCVAPI void addBreakingItemParticleEffect(class Vec3 const&, ::ParticleType, struct ResolvedItemIconInfo const&);
+    MCVAPI void addBreakingItemParticleEffect(
+        class Vec3 const&                  pos,
+        ::ParticleType                     type,
+        struct ResolvedItemIconInfo const& textureInfo
+    );
 
     // symbol: ?addParticleEffect@LevelListener@@UEAAXAEBVHashedString@@AEBVActor@@0AEBVVec3@@AEBVMolangVariableMap@@@Z
     MCVAPI void addParticleEffect(
@@ -133,7 +137,7 @@ public:
     MCVAPI void levelEvent(::LevelEvent type, class CompoundTag const& data);
 
     // symbol: ?onChunkReloaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-    MCVAPI void onChunkReloaded(class ChunkSource&, class LevelChunk&);
+    MCVAPI void onChunkReloaded(class ChunkSource& source, class LevelChunk& lc);
 
     // symbol: ?onEntityAdded@LevelListener@@UEAAXAEAVActor@@@Z
     MCVAPI void onEntityAdded(class Actor& entity);
@@ -142,7 +146,12 @@ public:
     MCVAPI void onEntityRemoved(class Actor& entity);
 
     // symbol: ?onSubChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@F_N@Z
-    MCVAPI void onSubChunkLoaded(class ChunkSource&, class LevelChunk&, short, bool);
+    MCVAPI void onSubChunkLoaded(
+        class ChunkSource& source,
+        class LevelChunk&  lc,
+        short              absoluteSubChunkIndex,
+        bool               subChunkVisibilityChanged
+    );
 
     // symbol:
     // ?playMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z

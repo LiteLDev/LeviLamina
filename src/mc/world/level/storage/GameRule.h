@@ -42,7 +42,7 @@ public:
     MCAPI GameRule(class GameRule const&);
 
     // symbol: ??0GameRule@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI GameRule(std::string const&, bool);
+    MCAPI GameRule(std::string const& name, bool);
 
     // symbol: ?allowUseInCommand@GameRule@@QEBA_NXZ
     MCAPI bool allowUseInCommand() const;

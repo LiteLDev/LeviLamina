@@ -91,7 +91,7 @@ public:
     virtual void __unk_vfn_48();
 
     // vIndex: 49, symbol: ?isValidAuxValue@DirtBlock@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int value) const;
 
     // vIndex: 54, symbol: __unk_vfn_54
     virtual void __unk_vfn_54();
@@ -114,13 +114,14 @@ public:
     virtual bool mayConsumeFertilizer(class BlockSource& region) const;
 
     // vIndex: 81, symbol: ?canBeFertilized@DirtBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 88, symbol: ?tryToTill@DirtBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@AEAVItemStack@@@Z
-    virtual bool tryToTill(class BlockSource&, class BlockPos const&, class Actor&, class ItemStack&) const;
+    virtual bool
+    tryToTill(class BlockSource& region, class BlockPos const& pos, class Actor& entity, class ItemStack& item) const;
 
     // vIndex: 96, symbol: ?asItemInstance@DirtBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -160,23 +161,23 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@DirtBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 162, symbol: ?getMapColor@DirtBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color
+    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 164, symbol: ?getResourceItem@DirtBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@DirtBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol: ??0DirtBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DirtBlock(std::string const& nameId, int id);
+    MCAPI DirtBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

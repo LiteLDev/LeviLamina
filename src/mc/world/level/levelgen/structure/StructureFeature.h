@@ -37,30 +37,30 @@ public:
     // vIndex: 5, symbol:
     // ?isFeatureChunk@AncientCityFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
     virtual bool
-    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, uint, class IPreliminarySurfaceProvider const&, class Dimension const&) = 0;
+    isFeatureChunk(class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& chunkPos, uint levelSeed, class IPreliminarySurfaceProvider const&, class Dimension const&) = 0;
 
     // vIndex: 6, symbol:
     // ?createStructureStart@AncientCityFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
     virtual std::unique_ptr<class StructureStart>
-    createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&) = 0;
+    createStructureStart(class Dimension& dimension, class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& chunkPos, class IPreliminarySurfaceProvider const&) = 0;
 
     // vIndex: 7, symbol: ?getStructureAt@StructureFeature@@MEAAPEAVStructureStart@@HHH@Z
     virtual class StructureStart* getStructureAt(int cellX, int cellY, int cellZ);
 
     // symbol: ??0StructureFeature@@QEAA@IW4StructureFeatureType@@@Z
-    MCAPI StructureFeature(uint, ::StructureFeatureType);
+    MCAPI StructureFeature(uint seed, ::StructureFeatureType);
 
     // symbol: ?addHardcodedSpawnAreas@StructureFeature@@QEAAXAEAVLevelChunk@@@Z
-    MCAPI void addHardcodedSpawnAreas(class LevelChunk&);
+    MCAPI void addHardcodedSpawnAreas(class LevelChunk& lc);
 
     // symbol:
     // ?chunkStartAtSurfaceLevel@StructureFeature@@QEAA?AVBlockPos@@AEBVIPreliminarySurfaceProvider@@VChunkPos@@H@Z
-    MCAPI class BlockPos chunkStartAtSurfaceLevel(class IPreliminarySurfaceProvider const&, class ChunkPos, int);
+    MCAPI class BlockPos chunkStartAtSurfaceLevel(class IPreliminarySurfaceProvider const&, class ChunkPos pos, int);
 
     // symbol:
     // ?createBlueprints@StructureFeature@@QEAAXAEAVDimension@@AEBVChunkPos@@AEBVBiomeSource@@AEBVIPreliminarySurfaceProvider@@@Z
     MCAPI void
-    createBlueprints(class Dimension&, class ChunkPos const&, class BiomeSource const&, class IPreliminarySurfaceProvider const&);
+    createBlueprints(class Dimension& dimension, class ChunkPos const& cp, class BiomeSource const& biomeSource, class IPreliminarySurfaceProvider const&);
 
     // symbol: ?debugRender@StructureFeature@@QEAAXXZ
     MCAPI void debugRender();
@@ -82,11 +82,11 @@ public:
     MCAPI bool isInsideBoundingFeature(int cellX, int cellY, int cellZ);
 
     // symbol: ?postProcess@StructureFeature@@QEAA_NAEAVBlockSource@@AEAVRandom@@HH@Z
-    MCAPI bool postProcess(class BlockSource& level, class Random& random, int chunkX, int chunkZ);
+    MCAPI bool postProcess(class BlockSource& region, class Random& random, int chunkX, int chunkZ);
 
     // symbol: ?postProcessMobsAt@StructureFeature@@QEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
     MCAPI void
-    postProcessMobsAt(class BlockSource& blockSource, int chunkWestBlock, int chunkNorthBlock, class Random& random);
+    postProcessMobsAt(class BlockSource& region, int chunkWestBlock, int chunkNorthBlock, class Random& random);
 
     // symbol: ?waitForFeatureBlueprints@StructureFeature@@QEAAXXZ
     MCAPI void waitForFeatureBlueprints();
@@ -115,7 +115,15 @@ public:
     getBiomeForFeatureGeneration(class BiomeSource const&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 
     // symbol: ?getChunkPosInSpace@StructureFeature@@SA?AVChunkPos@@AEBV2@AEAVRandom@@IHHH_N@Z
-    MCAPI static class ChunkPos getChunkPosInSpace(class ChunkPos const&, class Random&, uint, int, int, int, bool);
+    MCAPI static class ChunkPos getChunkPosInSpace(
+        class ChunkPos const& cp,
+        class Random&         random,
+        uint                  levelSeed,
+        int,
+        int,
+        int  salt,
+        bool tiltedSpacing
+    );
 
     // symbol: ?setRandomSeedFor@StructureFeature@@SAXAEAVRandom@@HHHI@Z
     MCAPI static void setRandomSeedFor(class Random& result, int x, int z, int salt, uint levelSeed);
@@ -127,7 +135,7 @@ public:
     // symbol:
     // ?addFeature@StructureFeature@@IEAAXAEAVDimension@@AEAVRandom@@AEBVChunkPos@@AEBVBiomeSource@@AEBVIPreliminarySurfaceProvider@@@Z
     MCAPI void
-    addFeature(class Dimension&, class Random&, class ChunkPos const&, class BiomeSource const&, class IPreliminarySurfaceProvider const&);
+    addFeature(class Dimension& dimension, class Random& random, class ChunkPos const& cp, class BiomeSource const& biomeSource, class IPreliminarySurfaceProvider const&);
 
     // NOLINTEND
 

@@ -19,7 +19,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?handle@VanillaServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
-    virtual void handle(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
+    virtual void handle(class NetworkIdentifier const& source, class ResourcePackClientResponsePacket const& packet);
 
     // NOLINTEND
 };

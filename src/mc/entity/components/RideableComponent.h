@@ -17,7 +17,7 @@ public:
     MCAPI RideableComponent(class RideableComponent&&);
 
     // symbol: ?areSeatsFull@RideableComponent@@QEBA_NAEBVActor@@@Z
-    MCAPI bool areSeatsFull(class Actor const&) const;
+    MCAPI bool areSeatsFull(class Actor const& owner) const;
 
     // symbol: ?canAddPassenger@RideableComponent@@QEBA_NAEBVActor@@AEAV2@@Z
     MCAPI bool canAddPassenger(class Actor const&, class Actor&) const;
@@ -26,8 +26,7 @@ public:
     MCAPI bool fitsInVehicle(class AABB const&) const;
 
     // symbol: ?getFirstAvailableSeatPosition@RideableComponent@@QEBA_NAEBVActor@@AEAV2@AEAVVec3@@@Z
-    MCAPI bool
-    getFirstAvailableSeatPosition(class Actor const& owner, class Actor& potentialRider, class Vec3& result) const;
+    MCAPI bool getFirstAvailableSeatPosition(class Actor const& owner, class Actor&, class Vec3& result) const;
 
     // symbol: ?getInteraction@RideableComponent@@QEBA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
     MCAPI bool getInteraction(class Actor& owner, class Player& player, class ActorInteraction& interaction) const;
@@ -43,7 +42,7 @@ public:
     MCAPI class RideableComponent& operator=(class RideableComponent&&);
 
     // symbol: ?pullInEntity@RideableComponent@@QEBA_NAEAVActor@@0@Z
-    MCAPI bool pullInEntity(class Actor& owner, class Actor& entity) const;
+    MCAPI bool pullInEntity(class Actor&, class Actor&) const;
 
     // NOLINTEND
 

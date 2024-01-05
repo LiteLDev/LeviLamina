@@ -199,16 +199,16 @@ public:
     MCAPI class LevelSettings& setChatRestrictionLevel(::ChatRestrictionLevel);
 
     // symbol: ?setCommandsEnabled@LevelSettings@@QEAAAEAV1@_N@Z
-    MCAPI class LevelSettings& setCommandsEnabled(bool);
+    MCAPI class LevelSettings& setCommandsEnabled(bool commandsEnabled);
 
     // symbol: ?setCustomSkinsDisabled@LevelSettings@@QEAAAEAV1@_N@Z
-    MCAPI class LevelSettings& setCustomSkinsDisabled(bool);
+    MCAPI class LevelSettings& setCustomSkinsDisabled(bool val);
 
     // symbol: ?setDefaultPlayerPermissions@LevelSettings@@QEAAAEAV1@W4PlayerPermissionLevel@@@Z
     MCAPI class LevelSettings& setDefaultPlayerPermissions(::PlayerPermissionLevel);
 
     // symbol: ?setDifficulty@LevelSettings@@QEAAAEAV1@W4Difficulty@@@Z
-    MCAPI class LevelSettings& setDifficulty(::Difficulty);
+    MCAPI class LevelSettings& setDifficulty(::Difficulty difficulty);
 
     // symbol: ?setDisablePlayerInteractions@LevelSettings@@QEAAAEAV1@_N@Z
     MCAPI class LevelSettings& setDisablePlayerInteractions(bool);
@@ -227,7 +227,7 @@ public:
     MCAPI class LevelSettings& setEducationProductID(std::string);
 
     // symbol: ?setEmoteChatMuted@LevelSettings@@QEAAAEAV1@_N@Z
-    MCAPI class LevelSettings& setEmoteChatMuted(bool);
+    MCAPI class LevelSettings& setEmoteChatMuted(bool val);
 
     // symbol: ?setExperiments@LevelSettings@@QEAAAEAV1@AEBVExperimentStorage@@@Z
     MCAPI class LevelSettings& setExperiments(class ExperimentStorage const&);
@@ -236,13 +236,13 @@ public:
     MCAPI class LevelSettings& setForceGameType(bool value);
 
     // symbol: ?setGameRules@LevelSettings@@QEAAAEAV1@VGameRules@@@Z
-    MCAPI class LevelSettings& setGameRules(class GameRules);
+    MCAPI class LevelSettings& setGameRules(class GameRules gameRules);
 
     // symbol: ?setGameType@LevelSettings@@QEAAAEAV1@W4GameType@@@Z
-    MCAPI class LevelSettings& setGameType(::GameType);
+    MCAPI class LevelSettings& setGameType(::GameType gameType);
 
     // symbol: ?setGeneratorType@LevelSettings@@QEAAAEAV1@W4GeneratorType@@@Z
-    MCAPI class LevelSettings& setGeneratorType(::GeneratorType);
+    MCAPI class LevelSettings& setGeneratorType(::GeneratorType generatorType);
 
     // symbol: ?setOnlySpawnV1Villagers@LevelSettings@@QEAAX_N@Z
     MCAPI void setOnlySpawnV1Villagers(bool spawnV1Villagers);
@@ -251,25 +251,25 @@ public:
     MCAPI class LevelSettings& setOverrideSavedSettings(bool overrideSaved);
 
     // symbol: ?setPlatformBroadcastIntent@LevelSettings@@QEAAAEAV1@W4GamePublishSetting@Social@@@Z
-    MCAPI class LevelSettings& setPlatformBroadcastIntent(::Social::GamePublishSetting);
+    MCAPI class LevelSettings& setPlatformBroadcastIntent(::Social::GamePublishSetting platformBroadcastIntent);
 
     // symbol: ?setRandomSeed@LevelSettings@@QEAAAEAV1@VLevelSeed64@@@Z
-    MCAPI class LevelSettings& setRandomSeed(class LevelSeed64);
+    MCAPI class LevelSettings& setRandomSeed(class LevelSeed64 seed);
 
     // symbol: ?setServerChunkTickRange@LevelSettings@@QEAAAEAV1@I@Z
-    MCAPI class LevelSettings& setServerChunkTickRange(uint);
+    MCAPI class LevelSettings& setServerChunkTickRange(uint serverChunkTickRange);
 
     // symbol: ?setSpawnSettings@LevelSettings@@QEAAAEAV1@USpawnSettings@@@Z
     MCAPI class LevelSettings& setSpawnSettings(struct SpawnSettings);
 
     // symbol: ?setTexturePackRequired@LevelSettings@@QEAAAEAV1@_N@Z
-    MCAPI class LevelSettings& setTexturePackRequired(bool);
+    MCAPI class LevelSettings& setTexturePackRequired(bool texturePackRequired);
 
     // symbol: ?setUseMsaGamertagsOnly@LevelSettings@@QEAAAEAV1@_N@Z
-    MCAPI class LevelSettings& setUseMsaGamertagsOnly(bool);
+    MCAPI class LevelSettings& setUseMsaGamertagsOnly(bool useMsaGamertagsOnly);
 
     // symbol: ?setXblBroadcastIntent@LevelSettings@@QEAAAEAV1@W4GamePublishSetting@Social@@@Z
-    MCAPI class LevelSettings& setXblBroadcastIntent(::Social::GamePublishSetting);
+    MCAPI class LevelSettings& setXblBroadcastIntent(::Social::GamePublishSetting xblBroadcastIntent);
 
     // symbol: ?shouldOverrideSavedSettings@LevelSettings@@QEBA_NXZ
     MCAPI bool shouldOverrideSavedSettings() const;

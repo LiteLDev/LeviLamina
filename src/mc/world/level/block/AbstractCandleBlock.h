@@ -106,7 +106,8 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 92, symbol: ?neighborChanged@AbstractCandleBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -128,7 +129,7 @@ public:
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // vIndex: 137, symbol: ?getLightEmission@AbstractCandleBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
-    virtual struct Brightness getLightEmission(class Block const&) const;
+    virtual struct Brightness getLightEmission(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -137,7 +138,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@AbstractCandleBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -146,7 +147,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 167, symbol: ?entityInside@AbstractCandleBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-    virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
+    virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
     // vIndex: 168, symbol: ?_getNumCandles@AbstractCandleBlock@@MEBAHAEBVBlock@@@Z
     virtual int _getNumCandles(class Block const&) const;
@@ -154,7 +155,8 @@ public:
     // vIndex: 169, symbol:
     // ?_iterateCandles@AbstractCandleBlock@@MEBAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
     virtual void
-    _iterateCandles(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int)>) const;
+    _iterateCandles(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int)> callback)
+        const;
 
     // vIndex: 170, symbol: ?_tryLightOnFire@AbstractCandleBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
     virtual void _tryLightOnFire(class BlockSource&, class BlockPos const&, class Actor*) const;
@@ -170,26 +172,27 @@ public:
 
     // symbol:
     // ??0AbstractCandleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI AbstractCandleBlock(std::string const&, int, class Material const&);
+    MCAPI AbstractCandleBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_checkForWaterlogging@AbstractCandleBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void _checkForWaterlogging(class BlockSource&, class BlockPos const&) const;
+    MCAPI void _checkForWaterlogging(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?_extinguish@AbstractCandleBlock@@IEBAXPEAVActor@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void _extinguish(class Actor*, class Block const&, class BlockSource&, class BlockPos const&) const;
+    MCAPI void
+    _extinguish(class Actor*, class Block const& block, class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?_canBeLit@AbstractCandleBlock@@KA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool _canBeLit(class Block const&, class BlockSource&, class BlockPos const&);
+    MCAPI static bool _canBeLit(class Block const& block, class BlockSource& region, class BlockPos const& pos);
 
     // symbol: ?_isLit@AbstractCandleBlock@@KA_NAEBVBlock@@@Z
-    MCAPI static bool _isLit(class Block const&);
+    MCAPI static bool _isLit(class Block const& block);
 
     // symbol: ?_setLit@AbstractCandleBlock@@KAXAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@_N@Z
-    MCAPI static void _setLit(class Block const&, class BlockSource&, class BlockPos const&, bool);
+    MCAPI static void _setLit(class Block const& block, class BlockSource& region, class BlockPos const& pos, bool);
 
     // NOLINTEND
 };

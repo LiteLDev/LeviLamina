@@ -133,10 +133,10 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@BedrockBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
 
     // symbol: ??0BedrockBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BedrockBlock(std::string const& nameId, int id);
+    MCAPI BedrockBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

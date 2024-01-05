@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0CommandCooldown@AgentComponents@@QEAA@M@Z
-    MCAPI explicit CommandCooldown(float);
+    MCAPI explicit CommandCooldown(float delay);
 
     // NOLINTEND
 };

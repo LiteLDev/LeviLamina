@@ -22,7 +22,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?doValidate@StringConstraint@cereal@@EEBAXAEBVmeta_any@entt@@AEAVSerializerContext@2@@Z
-    virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext&) const;
+    virtual void doValidate(entt::meta_any const&, class cereal::SerializerContext& context) const;
 
     // vIndex: 1, symbol: ??1StringConstraint@cereal@@UEAA@XZ
     virtual ~StringConstraint();
@@ -44,7 +44,7 @@ public:
 
     // symbol:
     // ?regex@StringConstraint@cereal@@QEAAAEAV12@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class cereal::StringConstraint& regex(std::string);
+    MCAPI class cereal::StringConstraint& regex(std::string str);
 
     // symbol: ?rejectEmpty@StringConstraint@cereal@@QEAAAEAV12@XZ
     MCAPI class cereal::StringConstraint& rejectEmpty();

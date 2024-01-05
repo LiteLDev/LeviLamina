@@ -31,7 +31,7 @@ public:
     virtual int getJumpDelay(class JumpControlComponent const&) const;
 
     // vIndex: 5, symbol: ?getJumpPower@JumpControl@@MEBAMAEBVJumpControlComponent@@@Z
-    virtual float getJumpPower(class JumpControlComponent const&) const;
+    virtual float getJumpPower(class JumpControlComponent const& parent) const;
 
     // vIndex: 6, symbol: ?getJumpType@JumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@@Z
     virtual ::JumpType getJumpType(class JumpControlComponent const&) const;
@@ -40,7 +40,7 @@ public:
     virtual void setJumpType(class JumpControlComponent&, ::JumpType);
 
     // vIndex: 8, symbol: ?resetSpeedModifier@JumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z
-    virtual void resetSpeedModifier(class JumpControlComponent const& parent, class Mob& mob);
+    virtual void resetSpeedModifier(class JumpControlComponent const&, class Mob&);
 
     // symbol: ??0JumpControl@@QEAA@XZ
     MCAPI JumpControl();

@@ -17,10 +17,10 @@ public:
     MCAPI ContainerScreenContext();
 
     // symbol: ??0ContainerScreenContext@@QEAA@AEAVPlayer@@W4ContainerType@@AEBVBlockPos@@@Z
-    MCAPI ContainerScreenContext(class Player&, ::ContainerType, class BlockPos const&);
+    MCAPI ContainerScreenContext(class Player& player, ::ContainerType, class BlockPos const& blockPos);
 
     // symbol: ??0ContainerScreenContext@@QEAA@AEAVPlayer@@W4ContainerType@@AEBUActorUniqueID@@@Z
-    MCAPI ContainerScreenContext(class Player&, ::ContainerType, struct ActorUniqueID const&);
+    MCAPI ContainerScreenContext(class Player& player, ::ContainerType, struct ActorUniqueID const& actorId);
 
     // symbol: ?getPlayer@ContainerScreenContext@@QEBAAEAVPlayer@@XZ
     MCAPI class Player& getPlayer() const;

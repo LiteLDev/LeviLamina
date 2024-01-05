@@ -59,7 +59,7 @@ public:
     virtual void __unk_vfn_42();
 
     // vIndex: 46, symbol: ?getBrightness@HangingActor@@UEBAMMAEBVIConstBlockSource@@@Z
-    virtual float getBrightness(float, class IConstBlockSource const&) const;
+    virtual float getBrightness(float, class IConstBlockSource const& region) const;
 
     // vIndex: 47, symbol: __unk_vfn_47
     virtual void __unk_vfn_47();
@@ -119,7 +119,11 @@ public:
     virtual bool wouldSurvive(class BlockSource& region);
 
     // symbol: ??0HangingActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI HangingActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI HangingActor(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getDirection@HangingActor@@QEBAHXZ
     MCAPI int getDirection() const;
@@ -135,20 +139,20 @@ public:
     MCAPI void _calculateActorPositionFromPlacementPosition(class BlockPos const& blockPos);
 
     // symbol: ?_wouldSurvive@HangingActor@@IEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z
-    MCAPI bool _wouldSurvive(class BlockSource&, class BlockPos const&, bool);
+    MCAPI bool _wouldSurvive(class BlockSource& region, class BlockPos const& blockPos, bool);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_blockContainsObstruction@HangingActor@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _blockContainsObstruction(class BlockSource const&, class BlockPos const&) const;
+    MCAPI bool _blockContainsObstruction(class BlockSource const& region, class BlockPos const& blockPos) const;
 
     // symbol: ?_blockIsObstruction@HangingActor@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _blockIsObstruction(class BlockSource const&, class BlockPos const&) const;
+    MCAPI bool _blockIsObstruction(class BlockSource const& region, class BlockPos const& blockPos) const;
 
     // symbol: ?_canSurviveOnBlock@HangingActor@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@_N@Z
-    MCAPI bool _canSurviveOnBlock(class BlockSource const&, class BlockPos const&, bool) const;
+    MCAPI bool _canSurviveOnBlock(class BlockSource const& region, class BlockPos const& blockPos, bool) const;
 
     // NOLINTEND
 

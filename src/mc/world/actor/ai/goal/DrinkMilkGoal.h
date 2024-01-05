@@ -34,12 +34,16 @@ public:
         virtual ~DrinkMilkDefinition() = default;
 
         // symbol: ?initialize@DrinkMilkDefinition@DrinkMilkGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext&, class DrinkMilkGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class DrinkMilkGoal& goal) const;
 
         // symbol:
         // ?buildSchema@DrinkMilkDefinition@DrinkMilkGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDrinkMilkDefinition@DrinkMilkGoal@@@JsonUtil@@@4@@Z
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DrinkMilkGoal::DrinkMilkDefinition>>&);
+        MCAPI static void buildSchema(
+            std::string const&                              name,
+            std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                class JsonUtil::EmptyClass,
+                class DrinkMilkGoal::DrinkMilkDefinition>>& root
+        );
 
         // NOLINTEND
     };
@@ -72,10 +76,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@DrinkMilkGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0DrinkMilkGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit DrinkMilkGoal(class Mob&);
+    MCAPI explicit DrinkMilkGoal(class Mob& mob);
 
     // NOLINTEND
 };

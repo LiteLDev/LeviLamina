@@ -109,7 +109,8 @@ public:
 
     // vIndex: 73, symbol:
     // ?updateEntityAfterFallOn@MovingBlock@@UEBAXAEBVBlockPos@@AEAUUpdateEntityAfterFallOnInterface@@@Z
-    virtual void updateEntityAfterFallOn(class BlockPos const&, struct UpdateEntityAfterFallOnInterface&) const;
+    virtual void
+    updateEntityAfterFallOn(class BlockPos const& pos, struct UpdateEntityAfterFallOnInterface& entity) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
@@ -162,7 +163,7 @@ public:
     MCVAPI bool pushesUpFallingBlocks() const;
 
     // symbol: ??0MovingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MovingBlock(std::string const& nameId, int id);
+    MCAPI MovingBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

@@ -62,7 +62,7 @@ public:
     MCAPI std::vector<class AttributeInstanceHandle> getSyncableAttributes() const;
 
     // symbol: ?inheritFrom@BaseAttributeMap@@QEAAXAEBV1@@Z
-    MCAPI void inheritFrom(class BaseAttributeMap const&);
+    MCAPI void inheritFrom(class BaseAttributeMap const& other);
 
     // symbol: ?registerAttribute@BaseAttributeMap@@QEAAAEAVAttributeInstance@@AEBVAttribute@@@Z
     MCAPI class AttributeInstance& registerAttribute(class Attribute const& baseAttribute);
@@ -72,8 +72,14 @@ public:
 
     // symbol:
     // ?updateAttribute@BaseAttributeMap@@QEAAXAEBVHashedString@@MMMMAEBV?$vector@VAttributeModifier@@V?$allocator@VAttributeModifier@@@std@@@std@@@Z
-    MCAPI void
-    updateAttribute(class HashedString const&, float, float, float, float, std::vector<class AttributeModifier> const&);
+    MCAPI void updateAttribute(
+        class HashedString const& attributeName,
+        float                     minVal,
+        float                     maxVal,
+        float,
+        float,
+        std::vector<class AttributeModifier> const& modifiers
+    );
 
     // symbol: ??1BaseAttributeMap@@QEAA@XZ
     MCAPI ~BaseAttributeMap();

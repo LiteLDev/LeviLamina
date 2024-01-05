@@ -15,7 +15,7 @@ public:
 
     // symbol:
     // ??0PlayerTickComponent@@QEAA@V?$unique_ptr@UIPlayerTickPolicy@@U?$default_delete@UIPlayerTickPolicy@@@std@@@std@@@Z
-    MCAPI explicit PlayerTickComponent(std::unique_ptr<struct IPlayerTickPolicy>);
+    MCAPI explicit PlayerTickComponent(std::unique_ptr<struct IPlayerTickPolicy> policy);
 
     // symbol: ??0PlayerTickComponent@@QEAA@$$QEAU0@@Z
     MCAPI PlayerTickComponent(struct PlayerTickComponent&&);

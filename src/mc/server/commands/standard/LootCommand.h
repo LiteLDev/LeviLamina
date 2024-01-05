@@ -24,13 +24,13 @@ public:
     virtual ~LootCommand() = default;
 
     // vIndex: 2, symbol: ?execute@LootCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?getToolItemStack@LootCommand@@QEBA?AVItemStack@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    MCAPI class ItemStack getToolItemStack(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI class ItemStack getToolItemStack(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?setup@LootCommand@@SAXAEAVCommandRegistry@@VItemRegistryRef@@@Z
-    MCAPI static void setup(class CommandRegistry&, class ItemRegistryRef);
+    MCAPI static void setup(class CommandRegistry& registry, class ItemRegistryRef);
 
     // NOLINTEND
 
@@ -39,23 +39,27 @@ public:
     // symbol:
     // ?_getItemsFromSource@LootCommand@@AEBA?AV?$optional@V?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@std@@AEBVCommandOrigin@@AEAVCommandOutput@@AEBVItemStack@@AEAVLevel@@V?$AutomaticID@VDimension@@H@@@Z
     MCAPI std::optional<std::vector<class ItemStack>> _getItemsFromSource(
-        class CommandOrigin const&,
-        class CommandOutput&,
+        class CommandOrigin const& origin,
+        class CommandOutput&       output,
         class ItemStack const&,
-        class Level&,
-        DimensionType
+        class Level&  level,
+        DimensionType dimensionId
     ) const;
 
     // symbol: ?_outputError@LootCommand@@AEBAXAEAVCommandOutput@@UReplacementResults@Util@@PEBVActor@@@Z
-    MCAPI void _outputError(class CommandOutput&, struct Util::ReplacementResults, class Actor const*) const;
+    MCAPI void
+    _outputError(class CommandOutput& output, struct Util::ReplacementResults, class Actor const* entity) const;
 
     // symbol: ?_outputSuccess@LootCommand@@AEBAXAEAVCommandOutput@@H@Z
-    MCAPI void _outputSuccess(class CommandOutput&, int) const;
+    MCAPI void _outputSuccess(class CommandOutput& output, int) const;
 
     // symbol:
     // ?_placeItemsInTarget@LootCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-    MCAPI void
-    _placeItemsInTarget(class CommandOrigin const&, class CommandOutput&, std::vector<class ItemStack>&) const;
+    MCAPI void _placeItemsInTarget(
+        class CommandOrigin const&    origin,
+        class CommandOutput&          output,
+        std::vector<class ItemStack>& items
+    ) const;
 
     // NOLINTEND
 };

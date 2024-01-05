@@ -18,16 +18,16 @@ public:
     virtual ~BigEndianStringByteOutput();
 
     // vIndex: 3, symbol: ?writeFloat@BigEndianStringByteOutput@@UEAAXM@Z
-    virtual void writeFloat(float);
+    virtual void writeFloat(float v);
 
     // vIndex: 4, symbol: ?writeDouble@BigEndianStringByteOutput@@UEAAXN@Z
-    virtual void writeDouble(double);
+    virtual void writeDouble(double v);
 
     // vIndex: 6, symbol: ?writeShort@BigEndianStringByteOutput@@UEAAXF@Z
-    virtual void writeShort(short);
+    virtual void writeShort(short v);
 
     // vIndex: 7, symbol: ?writeInt@BigEndianStringByteOutput@@UEAAXH@Z
-    virtual void writeInt(int);
+    virtual void writeInt(int v);
 
     // vIndex: 8, symbol: ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
     virtual void writeLongLong(int64);

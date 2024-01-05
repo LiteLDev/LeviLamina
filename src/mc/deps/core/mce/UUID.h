@@ -20,7 +20,7 @@ public:
     MCAPI bool isEmpty() const;
 
     // symbol: ?canParse@UUID@mce@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static bool canParse(std::string const&);
+    MCAPI static bool canParse(std::string const& in);
 
     // symbol: ?fromString@UUID@mce@@SA?AV12@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static class mce::UUID fromString(std::string const& in);

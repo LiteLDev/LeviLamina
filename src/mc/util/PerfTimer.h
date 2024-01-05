@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0PerfTimer@@QEAA@Vid@thread@std@@@Z
-    MCAPI explicit PerfTimer(std::thread::id id);
+    MCAPI explicit PerfTimer(std::thread::id);
 
     // symbol: ??1PerfTimer@@QEAA@XZ
     MCAPI ~PerfTimer();

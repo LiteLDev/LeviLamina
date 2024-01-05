@@ -21,7 +21,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0FromCenter@BlockPosIterator@@QEAA@AEBVBlockPos@@0@Z
-        MCAPI FromCenter(class BlockPos const&, class BlockPos const&);
+        MCAPI FromCenter(class BlockPos const& pos, class BlockPos const&);
 
         // symbol: ?begin@FromCenter@BlockPosIterator@@QEBA?AV12@XZ
         MCAPI class BlockPosIterator::FromCenter begin() const;
@@ -30,7 +30,7 @@ public:
         MCAPI class BlockPosIterator::FromCenter end() const;
 
         // symbol: ??9FromCenter@BlockPosIterator@@QEBA_NAEBV01@@Z
-        MCAPI bool operator!=(class BlockPosIterator::FromCenter const&) const;
+        MCAPI bool operator!=(class BlockPosIterator::FromCenter const& other) const;
 
         // symbol: ??DFromCenter@BlockPosIterator@@QEAAAEBVBlockPos@@XZ
         MCAPI class BlockPos const& operator*();
@@ -51,7 +51,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0ManhattanDistance@BlockPosIterator@@QEAA@AEBVBlockPos@@H@Z
-        MCAPI ManhattanDistance(class BlockPos const&, int);
+        MCAPI ManhattanDistance(class BlockPos const& pos, int distance);
 
         // symbol: ?begin@ManhattanDistance@BlockPosIterator@@QEBA?AV12@XZ
         MCAPI class BlockPosIterator::ManhattanDistance begin() const;
@@ -60,7 +60,7 @@ public:
         MCAPI class BlockPosIterator::ManhattanDistance end() const;
 
         // symbol: ??9ManhattanDistance@BlockPosIterator@@QEBA_NAEBV01@@Z
-        MCAPI bool operator!=(class BlockPosIterator::ManhattanDistance const&) const;
+        MCAPI bool operator!=(class BlockPosIterator::ManhattanDistance const& other) const;
 
         // symbol: ??DManhattanDistance@BlockPosIterator@@QEAAAEBVBlockPos@@XZ
         MCAPI class BlockPos const& operator*();

@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?deserialize@LootTable@@QEAAXAEBVValue@Json@@@Z
-    MCAPI void deserialize(class Json::Value const&);
+    MCAPI void deserialize(class Json::Value const& table);
 
     // symbol: ?fill@LootTable@@QEAAXAEAVContainer@@AEAVRandom@@AEAVLootTableContext@@@Z
     MCAPI void fill(class Container& container, class Random& random, class LootTableContext& context);

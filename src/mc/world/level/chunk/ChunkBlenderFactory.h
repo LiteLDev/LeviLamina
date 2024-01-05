@@ -56,7 +56,7 @@ public:
     MCAPI void _processDensityColumn(
         std::vector<std::array<struct ChunkBlenderFactory::IntermediateAttenuationData, 4>>&,
         class BlendingData const&,
-        float,
+        float weight,
         std::pair<int, int>,
         std::pair<int, int>,
         bool

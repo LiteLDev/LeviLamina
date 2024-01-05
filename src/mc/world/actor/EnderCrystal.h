@@ -91,7 +91,11 @@ public:
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0EnderCrystal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI EnderCrystal(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI EnderCrystal(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?setBeamTarget@EnderCrystal@@QEAAXAEBVBlockPos@@@Z
     MCAPI void setBeamTarget(class BlockPos const& target);

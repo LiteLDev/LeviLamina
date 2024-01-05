@@ -113,7 +113,8 @@ public:
     virtual void __unk_vfn_48();
 
     // vIndex: 51, symbol: ?sanitizeFillBlock@MultifaceBlock@@UEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@@Z
-    virtual class Block const& sanitizeFillBlock(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class Block const&
+    sanitizeFillBlock(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 54, symbol: __unk_vfn_54
     virtual void __unk_vfn_54();
@@ -128,14 +129,20 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 84, symbol: ?mayPlace@MultifaceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 92, symbol: ?neighborChanged@MultifaceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@MultifaceBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    virtual class Block const& getPlacementBlock(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -159,7 +166,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@MultifaceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -168,7 +175,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@MultifaceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 168, symbol: ?getMultifaceBlock@GlowLichenBlock@@UEBAAEBVBlock@@XZ
     virtual class Block const& getMultifaceBlock() const = 0;
@@ -181,35 +188,45 @@ public:
 
     // symbol:
     // ??0MultifaceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI MultifaceBlock(std::string const&, int, class Material const&);
+    MCAPI MultifaceBlock(std::string const& nameId, int, class Material const& material);
 
     // symbol: ?removeFace@MultifaceBlock@@QEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@E_N@Z
-    MCAPI void
-    removeFace(class IBlockWorldGenAPI&, class BlockSource*, class Block const&, class BlockPos const&, uchar, bool)
-        const;
+    MCAPI void removeFace(
+        class IBlockWorldGenAPI& target,
+        class BlockSource*       region,
+        class Block const&       block,
+        class BlockPos const&    pos,
+        uchar,
+        bool
+    ) const;
 
     // symbol: ?convertOldMultifaceToNewMultifaceValue@MultifaceBlock@@SAHH@Z
     MCAPI static int convertOldMultifaceToNewMultifaceValue(int);
 
     // symbol: ?getBlockForPlacement@MultifaceBlock@@SAAEBVBlock@@AEBV2@0AEAVBlockSource@@AEBVBlockPos@@E@Z
-    MCAPI static class Block const&
-    getBlockForPlacement(class Block const&, class Block const&, class BlockSource&, class BlockPos const&, uchar);
+    MCAPI static class Block const& getBlockForPlacement(
+        class Block const& oldBlock,
+        class Block const&,
+        class BlockSource& region,
+        class BlockPos const&,
+        uchar
+    );
 
     // symbol:
     // ?getBlockForPlacementWorldGen@MultifaceBlock@@SAAEBVBlock@@AEBV2@0AEAVIBlockWorldGenAPI@@AEBVBlockPos@@E@Z
     MCAPI static class Block const& getBlockForPlacementWorldGen(
+        class Block const& oldBlock,
         class Block const&,
-        class Block const&,
-        class IBlockWorldGenAPI&,
+        class IBlockWorldGenAPI& region,
         class BlockPos const&,
         uchar
     );
 
     // symbol: ?getMultifaceValueFromFace@MultifaceBlock@@SAHE@Z
-    MCAPI static int getMultifaceValueFromFace(uchar);
+    MCAPI static int getMultifaceValueFromFace(uchar face);
 
     // symbol: ?hasFace@MultifaceBlock@@SA_NAEBVBlock@@E@Z
-    MCAPI static bool hasFace(class Block const&, uchar);
+    MCAPI static bool hasFace(class Block const& block, uchar);
 
     // symbol: ?MULTIFACE_ALL@MultifaceBlock@@2HB
     MCAPI static int const MULTIFACE_ALL;
@@ -240,17 +257,19 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_canSpread@MultifaceBlock@@IEBA_NAEAVIBlockWorldGenAPI@@AEBVBlock@@AEBVBlockPos@@E@Z
-    MCAPI bool _canSpread(class IBlockWorldGenAPI&, class Block const&, class BlockPos const&, uchar) const;
+    MCAPI bool
+    _canSpread(class IBlockWorldGenAPI& target, class Block const& block, class BlockPos const& pos, uchar) const;
 
     // symbol: ?_getNumSides@MultifaceBlock@@IEBAHAEBVBlock@@@Z
-    MCAPI int _getNumSides(class Block const&) const;
+    MCAPI int _getNumSides(class Block const& block) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_removeBlock@MultifaceBlock@@AEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@_N@Z
-    MCAPI void _removeBlock(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&, bool) const;
+    MCAPI void
+    _removeBlock(class IBlockWorldGenAPI& target, class BlockSource* region, class BlockPos const& pos, bool) const;
 
     // NOLINTEND
 };

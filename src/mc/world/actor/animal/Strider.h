@@ -101,7 +101,7 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 166, symbol: ?_playStepSound@Strider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-    virtual void _playStepSound(class BlockPos const&, class Block const&);
+    virtual void _playStepSound(class BlockPos const&, class Block const& onBlock);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -110,10 +110,14 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 204, symbol: ?_getWalkTargetValue@Strider@@UEAAMAEBVBlockPos@@@Z
-    virtual float _getWalkTargetValue(class BlockPos const&);
+    virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // symbol: ??0Strider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Strider(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Strider(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 };

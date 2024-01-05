@@ -26,7 +26,7 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?tick@FreezingSystem@@UEAAXAEAVEntityRegistry@@@Z
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry& registry);
 
     // symbol: ?FREEZE_EFFECT_UUID@FreezingSystem@@2VUUID@mce@@B
     MCAPI static class mce::UUID const FREEZE_EFFECT_UUID;

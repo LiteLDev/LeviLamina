@@ -22,7 +22,7 @@ public:
     // symbol:
     // ?loadEvent@DefinitionEventLoader@@SA?AVDefinitionEvent@@VValue@Json@@AEBVSemVersion@@W4TypeExecutingEvent@@PEBVEventResponseFactory@@@Z
     MCAPI static class DefinitionEvent
-    loadEvent(class Json::Value, class SemVersion const&, ::TypeExecutingEvent, class EventResponseFactory const*);
+    loadEvent(class Json::Value root, class SemVersion const& engineVersion, ::TypeExecutingEvent, class EventResponseFactory const*);
 
     // NOLINTEND
 
@@ -31,7 +31,7 @@ public:
     // symbol:
     // ?_loadCollection@DefinitionEventLoader@@CAXAEAVDefinitionEvent@@AEBVValue@Json@@AEBVSemVersion@@W4TypeExecutingEvent@@PEBVEventResponseFactory@@@Z
     MCAPI static void
-    _loadCollection(class DefinitionEvent&, class Json::Value const&, class SemVersion const&, ::TypeExecutingEvent, class EventResponseFactory const*);
+    _loadCollection(class DefinitionEvent&, class Json::Value const& collection, class SemVersion const& engineVersion, ::TypeExecutingEvent, class EventResponseFactory const*);
 
     // NOLINTEND
 };

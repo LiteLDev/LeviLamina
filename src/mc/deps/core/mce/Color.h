@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??8Color@mce@@QEBA_NAEBV01@@Z
-    MCAPI bool operator==(class mce::Color const&) const;
+    MCAPI bool operator==(class mce::Color const& c) const;
 
     // symbol: ?toABGR@Color@mce@@QEBAHXZ
     MCAPI int toABGR() const;

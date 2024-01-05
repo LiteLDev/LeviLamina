@@ -25,15 +25,16 @@ public:
 
     // symbol:
     // ?registerScriptingEventHandler@ScriptingEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VScriptingEventHandler@@U?$default_delete@VScriptingEventHandler@@@std@@@std@@@Z
-    MCAPI void registerScriptingEventHandler(std::unique_ptr<class ScriptingEventHandler>&&);
+    MCAPI void registerScriptingEventHandler(std::unique_ptr<class ScriptingEventHandler>&& handler);
 
     // symbol:
     // ?sendEvent@ScriptingEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableScriptingGameplayEvent@W4CoordinatorResult@@@@@@@Z
-    MCAPI ::CoordinatorResult sendEvent(class EventRef<struct MutableScriptingGameplayEvent<::CoordinatorResult>>);
+    MCAPI ::CoordinatorResult sendEvent(class EventRef<struct MutableScriptingGameplayEvent<::CoordinatorResult>> event
+    );
 
     // symbol:
     // ?sendEvent@ScriptingEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$ScriptingGameplayEvent@W4CoordinatorResult@@@@@@@Z
-    MCAPI ::CoordinatorResult sendEvent(class EventRef<struct ScriptingGameplayEvent<::CoordinatorResult>>);
+    MCAPI ::CoordinatorResult sendEvent(class EventRef<struct ScriptingGameplayEvent<::CoordinatorResult>> event);
 
     // NOLINTEND
 };

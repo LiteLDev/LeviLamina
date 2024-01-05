@@ -124,7 +124,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@TorchflowerCropBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -139,8 +139,13 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 169, symbol: ?setGrowth@TorchflowerCropBlock@@UEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@GH@Z
-    virtual class Block const&
-    setGrowth(class BlockSource&, class BlockPos const&, class Block const&, ushort, int) const;
+    virtual class Block const& setGrowth(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class Block const&    baseBlock,
+        ushort,
+        int updateFlags
+    ) const;
 
     // vIndex: 170, symbol: ?getBaseSeed@TorchflowerCropBlock@@UEBA?BVItemInstance@@XZ
     virtual class ItemInstance const getBaseSeed() const;
@@ -152,7 +157,7 @@ public:
     virtual int getSeedNum(class Randomize&, int, int) const;
 
     // symbol: ??0TorchflowerCropBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TorchflowerCropBlock(std::string const&, int);
+    MCAPI TorchflowerCropBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

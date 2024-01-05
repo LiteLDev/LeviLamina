@@ -21,7 +21,7 @@ public:
     virtual bool isInstantaneous() const;
 
     // vIndex: 7, symbol: ?isDurationEffectTick@InstantaneousMobEffect@@UEBA_NHH@Z
-    virtual bool isDurationEffectTick(int remainingDuration, int amplification) const;
+    virtual bool isDurationEffectTick(int remainingDuration, int) const;
 
     // symbol: ??0InstantaneousMobEffect@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
     MCAPI InstantaneousMobEffect(

@@ -32,13 +32,18 @@ public:
 
     // vIndex: 1, symbol:
     // ?newBlockEntity@EndGatewayBlock@@UEBA?AV?$shared_ptr@VBlockActor@@@std@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual std::shared_ptr<class BlockActor> newBlockEntity(class BlockPos const&, class Block const&) const;
+    virtual std::shared_ptr<class BlockActor> newBlockEntity(class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 7, symbol:
     // ?addCollisionShapes@EndGatewayBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-    virtual bool
-    addCollisionShapes(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual bool addCollisionShapes(
+        class Block const&                                         block,
+        class BlockSource const&                                   region,
+        class BlockPos const&                                      pos,
+        class AABB const*                                          intersectTestBox,
+        std::vector<class AABB>&                                   inoutBoxes,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -159,13 +164,13 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 165, symbol: ?getResourceCount@EndGatewayBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const& block, int bonusLootLevel) const;
 
     // symbol: ?waterSpreadCausesSpawn@EndGatewayBlock@@UEBA_NXZ
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0EndGatewayBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI EndGatewayBlock(std::string const& nameId, int id);
+    MCAPI EndGatewayBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

@@ -22,11 +22,11 @@ public:
     // symbol:
     // ?getAnimationComponent@AnimationComponentGroup@@SA?AV?$shared_ptr@VAnimationComponent@@@std@@W4AnimationComponentGroupType@@VAnimationComponentID@@@Z
     MCAPI static std::shared_ptr<class AnimationComponent>
-        getAnimationComponent(::AnimationComponentGroupType, class AnimationComponentID);
+    getAnimationComponent(::AnimationComponentGroupType, class AnimationComponentID ownerUUID);
 
     // symbol:
     // ?releaseAnimationComponent@AnimationComponentGroup@@SAXW4AnimationComponentGroupType@@VAnimationComponentID@@@Z
-    MCAPI static void releaseAnimationComponent(::AnimationComponentGroupType, class AnimationComponentID);
+    MCAPI static void releaseAnimationComponent(::AnimationComponentGroupType, class AnimationComponentID ownerUUID);
 
     // NOLINTEND
 

@@ -28,8 +28,10 @@ public:
 
     // vIndex: 1, symbol:
     // ?tick@AsyncOperationBase@PositionTrackingDB@@UEAA_NV?$weak_ptr@VPositionTrackingDBServer@PositionTrackingDB@@@std@@AEAVTrackingRecord@2@@Z
-    virtual bool
-    tick(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
+    virtual bool tick(
+        std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>,
+        class PositionTrackingDB::TrackingRecord& record
+    );
 
     // vIndex: 2, symbol: ?getDescription@DestroyOperation@PositionTrackingDB@@UEBAPEBDXZ
     virtual char const* getDescription() const;
@@ -42,8 +44,10 @@ public:
 
     // vIndex: 5, symbol:
     // ?_init@DestroyOperation@PositionTrackingDB@@MEAA_NV?$weak_ptr@VPositionTrackingDBServer@PositionTrackingDB@@@std@@AEAVTrackingRecord@2@@Z
-    virtual bool
-    _init(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
+    virtual bool _init(
+        std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>,
+        class PositionTrackingDB::TrackingRecord& record
+    );
 
     // vIndex: 6, symbol:
     // ?_tick@DestroyOperation@PositionTrackingDB@@MEAA_NV?$weak_ptr@VPositionTrackingDBServer@PositionTrackingDB@@@std@@AEAVTrackingRecord@2@@Z

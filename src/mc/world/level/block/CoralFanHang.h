@@ -121,7 +121,7 @@ public:
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 96, symbol: ?asItemInstance@CoralFanHang@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -161,14 +161,13 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@CoralFanHang@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 164, symbol: ?getResourceItem@CoralFanHang@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@CoralFanHang@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@CoralFanHang@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
@@ -177,10 +176,10 @@ public:
     virtual void checkAlive(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0CoralFanHang@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CoralFanHang(std::string const& nameId, int id);
+    MCAPI CoralFanHang(std::string const& nameId, int);
 
     // symbol: ?hasSupport@CoralFanHang@@SA_NAEBVBlock@@E@Z
-    MCAPI static bool hasSupport(class Block const&, uchar);
+    MCAPI static bool hasSupport(class Block const&, uchar face);
 
     // NOLINTEND
 };

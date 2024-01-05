@@ -25,15 +25,15 @@ public:
 
     // vIndex: 1, symbol:
     // ?forBlockPos@XoroshiroPositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBVBlockPos@@@Z
-    virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const&) const;
+    virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const& blockPos) const;
 
     // vIndex: 2, symbol:
     // ?forString@XoroshiroPositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    virtual std::unique_ptr<class IRandom> forString(std::string const&) const;
+    virtual std::unique_ptr<class IRandom> forString(std::string const& s) const;
 
     // symbol:
     // ?forStringImpl@XoroshiroPositionalRandomFactory@@QEBA?AVXoroshiroRandom@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class XoroshiroRandom forStringImpl(std::string const&) const;
+    MCAPI class XoroshiroRandom forStringImpl(std::string const& s) const;
 
     // NOLINTEND
 

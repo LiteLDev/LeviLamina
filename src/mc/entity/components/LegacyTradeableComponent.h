@@ -107,7 +107,7 @@ public:
     MCAPI ~LegacyTradeableComponent();
 
     // symbol: ?isUseNewTradeScreen@LegacyTradeableComponent@@SA_NAEBVActor@@@Z
-    MCAPI static bool isUseNewTradeScreen(class Actor const&);
+    MCAPI static bool isUseNewTradeScreen(class Actor const& owner);
 
     // NOLINTEND
 

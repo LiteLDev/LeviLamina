@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?generateNext@UniformFloat@ValueProviders@@QEBAMAEAVRandom@@@Z
-    MCAPI float generateNext(class Random&) const;
+    MCAPI float generateNext(class Random& random) const;
 
     // NOLINTEND
 };

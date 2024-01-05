@@ -38,9 +38,14 @@ public:
 
     // vIndex: 7, symbol:
     // ?addCollisionShapes@HopperBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-    virtual bool
-    addCollisionShapes(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual bool addCollisionShapes(
+        class Block const&                                         block,
+        class BlockSource const&                                   region,
+        class BlockPos const&                                      pos,
+        class AABB const*                                          intersectTestBox,
+        std::vector<class AABB>&                                   inoutBoxes,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
 
     // vIndex: 8, symbol:
     // ?addAABBs@HopperBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
@@ -135,7 +140,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@HopperBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // vIndex: 96, symbol: ?asItemInstance@HopperBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
@@ -185,14 +190,13 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@HopperBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@HopperBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // symbol: ?hasComparatorSignal@HopperBlock@@UEBA_NXZ
     MCVAPI bool hasComparatorSignal() const;
@@ -204,7 +208,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0HopperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI HopperBlock(std::string const& nameId, int id);
+    MCAPI HopperBlock(std::string const& nameId, int);
 
     // symbol: ?getAttachedOffset@HopperBlock@@SA?AVBlockPos@@E@Z
     MCAPI static class BlockPos getAttachedOffset(uchar facing);

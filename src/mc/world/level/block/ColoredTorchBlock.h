@@ -95,7 +95,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 60, symbol: ?canBeUsedInCommands@ColoredTorchBlock@@UEBA_NAEBVBaseGameVersion@@@Z
-    virtual bool canBeUsedInCommands(class BaseGameVersion const&) const;
+    virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -104,7 +104,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@ColoredTorchBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@ColoredTorchBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const& getPlacementBlock(
@@ -157,12 +157,11 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@ColoredTorchBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // symbol:
     // ??0ColoredTorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ColoredTorchColor@@@Z
-    MCAPI ColoredTorchBlock(std::string const& nameId, int id, ::ColoredTorchColor baseColor);
+    MCAPI ColoredTorchBlock(std::string const& nameId, int, ::ColoredTorchColor baseColor);
 
     // symbol: ?getItemForColor@ColoredTorchBlock@@SA?AVItemInstance@@W4ColoredTorchColor@@@Z
     MCAPI static class ItemInstance getItemForColor(::ColoredTorchColor color);

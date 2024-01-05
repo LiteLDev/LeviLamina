@@ -112,7 +112,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@SoulSandBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // vIndex: 92, symbol: ?neighborChanged@SoulSandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void
@@ -146,7 +146,7 @@ public:
     virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 151, symbol: ?randomTick@SoulSandBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -155,7 +155,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0SoulSandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SoulSandBlock(std::string const& nameId, int id);
+    MCAPI SoulSandBlock(std::string const& nameId, int);
 
     // symbol: ?BLOCK_AABB@SoulSandBlock@@2VAABB@@A
     MCAPI static class AABB BLOCK_AABB;

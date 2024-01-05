@@ -23,7 +23,8 @@ public:
     // ?buildSchema@InstantDespawnDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VInstantDespawnDefinition@@@JsonUtil@@@std@@@Z
     MCAPI static void
     buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InstantDespawnDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InstantDespawnDefinition>>& root
+    );
 
     // NOLINTEND
 };

@@ -18,7 +18,7 @@ public:
     MCAPI explicit BaseGameVersion(class SemVersion const& semVersion);
 
     // symbol: ??0BaseGameVersion@@QEAA@GII@Z
-    MCAPI BaseGameVersion(ushort, uint, uint);
+    MCAPI BaseGameVersion(ushort major, uint minor, uint patch);
 
     // symbol: ?asSemVersion@BaseGameVersion@@QEBAAEBVSemVersion@@XZ
     MCAPI class SemVersion const& asSemVersion() const;
@@ -48,7 +48,7 @@ public:
     MCAPI bool isValid() const;
 
     // symbol: ??9BaseGameVersion@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class BaseGameVersion const&) const;
+    MCAPI bool operator!=(class BaseGameVersion const& rhs) const;
 
     // symbol: ??MBaseGameVersion@@QEBA_NAEBV0@@Z
     MCAPI bool operator<(class BaseGameVersion const& rhs) const;

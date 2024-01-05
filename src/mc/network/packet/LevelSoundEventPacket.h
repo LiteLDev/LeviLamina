@@ -31,7 +31,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@LevelSoundEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0LevelSoundEventPacket@@QEAA@XZ
     MCAPI LevelSoundEventPacket();
@@ -39,12 +39,12 @@ public:
     // symbol:
     // ??0LevelSoundEventPacket@@QEAA@W4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N3@Z
     MCAPI LevelSoundEventPacket(
-        ::Puv::Legacy::LevelSoundEvent id,
-        class Vec3 const&              pos,
-        int                            data,
-        std::string const&             entityType,
-        bool                           isBabyMob,
-        bool                           isGlobal
+        ::Puv::Legacy::LevelSoundEvent,
+        class Vec3 const&  pos,
+        int                data,
+        std::string const& entityType,
+        bool               isBabyMob,
+        bool               isGlobal
     );
 
     // NOLINTEND

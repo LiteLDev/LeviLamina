@@ -29,8 +29,13 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_sendMessageToPlayer@TellCommand@@CAXAEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEBUCommandOriginIdentity@@AEAVLevel@@@Z
-    MCAPI static void
-    _sendMessageToPlayer(class Player&, std::string const&, std::string const&, struct CommandOriginIdentity const&, class Level&);
+    MCAPI static void _sendMessageToPlayer(
+        class Player&                       player,
+        std::string const&                  message,
+        std::string const&                  sender,
+        struct CommandOriginIdentity const& identity,
+        class Level&                        level
+    );
 
     // NOLINTEND
 };

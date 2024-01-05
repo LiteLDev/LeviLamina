@@ -33,21 +33,27 @@ public:
 
     // vIndex: 1, symbol:
     // ?openFile@FileSystemInterfaceImpl@Core@@UEAA?AV?$unique_ptr@VIFile@Core@@U?$default_delete@VIFile@Core@@@std@@@std@@AEBVPath@2@VFileOpenMode@2@W4FileBufferingMode@2@@Z
-    virtual std::unique_ptr<class Core::IFile>
-    openFile(class Core::Path const&, class Core::FileOpenMode, ::Core::FileBufferingMode);
+    virtual std::unique_ptr<class Core::IFile> openFile(
+        class Core::Path const&   filePath,
+        class Core::FileOpenMode  openMode,
+        ::Core::FileBufferingMode bufferingMode
+    );
 
     // vIndex: 2, symbol: ?fileExists@FileSystemInterfaceImpl@Core@@UEAA_NAEBVPath@2@@Z
-    virtual bool fileExists(class Core::Path const&);
+    virtual bool fileExists(class Core::Path const& filePath);
 
     // vIndex: 3, symbol:
     // ?iterateOverDirectory@FileSystemInterfaceImpl@Core@@UEAA?AVResult@2@AEBVPath@2@W4DirectoryIterationFlags@2@V?$function@$$A6A?AVResult@Core@@AEBUDirectoryIterationItem@2@@Z@std@@@Z
-    virtual class Core::Result
-    iterateOverDirectory(class Core::Path const&, ::Core::DirectoryIterationFlags, std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
+    virtual class Core::Result iterateOverDirectory(
+        class Core::Path const&                                                       directoryName,
+        ::Core::DirectoryIterationFlags                                               flags,
+        std::function<class Core::Result(struct Core::DirectoryIterationItem const&)> callbackFunction
+    );
 
     // vIndex: 4, symbol:
     // ?getDirectoryFiles@FileSystemInterfaceImpl@Core@@UEAA?AVResult@2@AEAV?$vector@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@@std@@AEBVPath@2@@Z
     virtual class Core::Result
-    getDirectoryFiles(std::vector<class Core::PathBuffer<std::string>>&, class Core::Path const&);
+    getDirectoryFiles(std::vector<class Core::PathBuffer<std::string>>& files, class Core::Path const& directoryPath);
 
     // symbol: ??0FileSystemInterfaceImpl@Core@@QEAA@XZ
     MCAPI FileSystemInterfaceImpl();

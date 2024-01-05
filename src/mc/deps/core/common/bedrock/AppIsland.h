@@ -31,7 +31,7 @@ public:
     MCVAPI void mainUpdate();
 
     // symbol: ?processActivationArguments@AppIsland@Bedrock@@UEAAXAEBVActivationArguments@2@@Z
-    MCVAPI void processActivationArguments(class Bedrock::ActivationArguments const&);
+    MCVAPI void processActivationArguments(class Bedrock::ActivationArguments const& args);
 
     // symbol: ?resume@AppIsland@Bedrock@@UEAA_NXZ
     MCVAPI bool resume();

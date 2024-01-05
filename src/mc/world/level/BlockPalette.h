@@ -43,7 +43,7 @@ public:
     virtual void appendBlock(class Block const& blockState);
 
     // vIndex: 3, symbol: ?getBlock@BlockPalette@@UEBAAEBVBlock@@AEBI@Z
-    virtual class Block const& getBlock(uint const& runtimeId) const;
+    virtual class Block const& getBlock(uint const&) const;
 
     // vIndex: 4, symbol: ?assignBlockNetworkId@BlockPalette@@MEBAXAEBVBlock@@_K@Z
     virtual void assignBlockNetworkId(class Block const&, uint64) const;
@@ -58,7 +58,7 @@ public:
     MCAPI void cacheBlockComponentData();
 
     // symbol: ?getBlockFromLegacyData@BlockPalette@@QEBAAEBVBlock@@UNewBlockID@@I@Z
-    MCAPI class Block const& getBlockFromLegacyData(struct NewBlockID id, uint data) const;
+    MCAPI class Block const& getBlockFromLegacyData(struct NewBlockID, uint data) const;
 
     // symbol:
     // ?getUnknownBlockTypeRegistry@BlockPalette@@QEBA?BV?$NonOwnerPointer@VIUnknownBlockTypeRegistry@@@Bedrock@@XZ
@@ -87,7 +87,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?shouldWarnFor@BlockPalette@@IEBA_NUNewBlockID@@G@Z
-    MCAPI bool shouldWarnFor(struct NewBlockID id, ushort data) const;
+    MCAPI bool shouldWarnFor(struct NewBlockID, ushort data) const;
 
     // NOLINTEND
 };

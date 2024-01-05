@@ -40,8 +40,7 @@ public:
 
     // symbol:
     // ??0MoveToBlockGoal@@QEAA@AEAVMob@@MHHHHMVVec3@@MW4TargetSelectionMethod@@V?$vector@VActorDefinitionTrigger@@V?$allocator@VActorDefinitionTrigger@@@std@@@std@@3V?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@5@AEBVActorFilterGroup@@@Z
-    MCAPI
-    MoveToBlockGoal(class Mob&, float, int, int, int, int, float, class Vec3, float, ::TargetSelectionMethod, std::vector<class ActorDefinitionTrigger>, std::vector<class ActorDefinitionTrigger>, std::vector<class ItemDescriptor>, class ActorFilterGroup const&);
+    MCAPI MoveToBlockGoal(class Mob& mob, float speedModifier, int searchRange, int searchHeight, int tickInterval, int stayDurationTicks, float goalRadius, class Vec3 targetPositionOffset, float chanceToStart, ::TargetSelectionMethod targetSelectionMethod, std::vector<class ActorDefinitionTrigger> onReachTriggers, std::vector<class ActorDefinitionTrigger> onStayCompletedTriggers, std::vector<class ItemDescriptor> targetBlocks, class ActorFilterGroup const&);
 
     // NOLINTEND
 

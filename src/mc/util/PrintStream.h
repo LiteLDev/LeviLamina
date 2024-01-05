@@ -18,7 +18,7 @@ public:
     virtual void print(std::string const&);
 
     // symbol: ?println@PrintStream@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void println(std::string const& s);
+    MCAPI void println(std::string const&);
 
     // NOLINTEND
 };

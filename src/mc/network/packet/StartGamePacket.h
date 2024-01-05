@@ -36,7 +36,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@StartGamePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0StartGamePacket@@QEAA@XZ
     MCAPI StartGamePacket();
@@ -45,25 +45,25 @@ public:
     // ??0StartGamePacket@@QEAA@VItemRegistryRef@@AEBVLevelSettings@@UActorUniqueID@@VActorRuntimeID@@W4GameType@@_NAEBVVec3@@AEBVVec2@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@8AEBVContentIdentity@@8AEBVBlockDefinitionGroup@@5VCompoundTag@@AEBUPlayerMovementSettings@@8AEBVUUID@mce@@_KH_K@Z
     MCAPI StartGamePacket(
         class ItemRegistryRef,
-        class LevelSettings const&,
-        struct ActorUniqueID,
-        class ActorRuntimeID,
-        ::GameType,
+        class LevelSettings const& settings,
+        struct ActorUniqueID       entityId,
+        class ActorRuntimeID       runtimeId,
+        ::GameType                 entityGameType,
         bool,
-        class Vec3 const&,
-        class Vec2 const&,
-        std::string const&,
-        std::string const&,
-        class ContentIdentity const&,
-        std::string const&,
-        class BlockDefinitionGroup const&,
-        bool,
+        class Vec3 const&                 pos,
+        class Vec2 const&                 rot,
+        std::string const&                levelId,
+        std::string const&                levelName,
+        class ContentIdentity const&      premiumTemplateContentIdentity,
+        std::string const&                multiplayerCorrelationId,
+        class BlockDefinitionGroup const& blockDefinitionGroup,
+        bool                              isTrial,
         class CompoundTag,
         struct PlayerMovementSettings const&,
         std::string const&,
-        class mce::UUID const&,
-        uint64,
-        int,
+        class mce::UUID const& worldTemplateId,
+        uint64                 levelCurrentTime,
+        int                    enchantmentSeed,
         uint64
     );
 

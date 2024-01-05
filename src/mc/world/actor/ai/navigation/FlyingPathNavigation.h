@@ -50,10 +50,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_restorePreviousGravityFlag@FlyingPathNavigation@@AEAAXAEAVMob@@@Z
-    MCAPI void _restorePreviousGravityFlag(class Mob&);
+    MCAPI void _restorePreviousGravityFlag(class Mob& mob);
 
     // symbol: ?_storePreviousGravityFlag@FlyingPathNavigation@@AEAAXAEAVMob@@@Z
-    MCAPI void _storePreviousGravityFlag(class Mob&);
+    MCAPI void _storePreviousGravityFlag(class Mob& mob);
 
     // NOLINTEND
 };

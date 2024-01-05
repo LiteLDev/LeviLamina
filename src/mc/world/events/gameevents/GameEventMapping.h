@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?nameToEvent@GameEventMapping@@SAAEBVGameEvent@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class GameEvent const& nameToEvent(std::string const&);
+    MCAPI static class GameEvent const& nameToEvent(std::string const& name);
 
     // NOLINTEND
 

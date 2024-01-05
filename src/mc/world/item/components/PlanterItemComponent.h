@@ -42,10 +42,17 @@ public:
     virtual void handleVersionBasedInitialization(class SemVersion const&);
 
     // vIndex: 7, symbol: ?_canUseOn@PlanterItemComponent@@MEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
-    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
+    virtual bool
+    _canUseOn(class ItemStack const& instance, class Actor& entity, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 8, symbol: ?_useOn@PlanterItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+    virtual bool _useOn(
+        class ItemStack&      itemStack,
+        class Actor&          entity,
+        class BlockPos const& blockPos,
+        uchar                 face,
+        class Vec3 const&     clickPos
+    ) const;
 
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
     virtual void _initializeComponent();
@@ -54,7 +61,8 @@ public:
     MCAPI explicit PlanterItemComponent(class Block const&);
 
     // symbol: ?calculatePlacePos@PlanterItemComponent@@QEBA_NAEBVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-    MCAPI bool calculatePlacePos(class ItemStackBase const&, class Actor&, uchar&, class BlockPos&) const;
+    MCAPI bool
+    calculatePlacePos(class ItemStackBase const& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
     // symbol: ??4PlanterItemComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class PlanterItemComponent& operator=(class PlanterItemComponent&&);
@@ -75,7 +83,12 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_placeBlock@PlanterItemComponent@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlock@@AEBVBlockPos@@@Z
-    MCAPI bool _placeBlock(class ItemStack&, class Actor&, class Block const&, class BlockPos const&) const;
+    MCAPI bool _placeBlock(
+        class ItemStack&      itemStack,
+        class Actor&          entity,
+        class Block const&    block,
+        class BlockPos const& blockPos
+    ) const;
 
     // NOLINTEND
 };

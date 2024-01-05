@@ -21,9 +21,10 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?buildSchema@FrictionModifierDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UFrictionModifierDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FrictionModifierDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<
+            class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FrictionModifierDefinition>>& root
+    );
 
     // NOLINTEND
 };

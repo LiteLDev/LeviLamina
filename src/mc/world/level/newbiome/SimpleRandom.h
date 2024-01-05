@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?consumeCount@SimpleRandom@@UEAAXI@Z
-    MCVAPI void consumeCount(uint);
+    MCVAPI void consumeCount(uint count);
 
     // symbol: ?fork@SimpleRandom@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
     MCVAPI std::unique_ptr<class IRandom> fork();
@@ -37,7 +37,7 @@ public:
     MCVAPI int nextInt();
 
     // symbol: ?nextInt@SimpleRandom@@UEAAHH@Z
-    MCVAPI int nextInt(int);
+    MCVAPI int nextInt(int bound);
 
     // symbol: ?nextLong@SimpleRandom@@UEAA_JXZ
     MCVAPI int64 nextLong();

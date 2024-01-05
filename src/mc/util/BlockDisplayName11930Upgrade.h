@@ -33,7 +33,7 @@ public:
     virtual bool upgradeToNext(rapidjson::GenericDocument<
                                rapidjson::UTF8<char>,
                                rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>,
-                               rapidjson::CrtAllocator>&) const;
+                               rapidjson::CrtAllocator>& document) const;
 
     // symbol: ??0BlockDisplayName11930Upgrade@BlockDisplayNameVersioning@@QEAA@XZ
     MCAPI BlockDisplayName11930Upgrade();

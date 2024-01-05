@@ -88,15 +88,17 @@ public:
         // NOLINTBEGIN
         // symbol:
         // ??ARecordGroup@ImguiProfiler@@QEAAAEAUFullStackRecord@01@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-        MCAPI struct ImguiProfiler::RecordGroup::FullStackRecord& operator[](std::string const&);
+        MCAPI struct ImguiProfiler::RecordGroup::FullStackRecord& operator[](std::string const& name);
 
         // NOLINTEND
 
         // private:
         // NOLINTBEGIN
         // symbol: ?isGreaterThan@RecordGroup@ImguiProfiler@@AEAA_NAEBUFullStackRecord@12@0@Z
-        MCAPI bool
-        isGreaterThan(struct ImguiProfiler::RecordGroup::FullStackRecord const&, struct ImguiProfiler::RecordGroup::FullStackRecord const&);
+        MCAPI bool isGreaterThan(
+            struct ImguiProfiler::RecordGroup::FullStackRecord const& lhs,
+            struct ImguiProfiler::RecordGroup::FullStackRecord const& rhs
+        );
 
         // NOLINTEND
     };
@@ -129,7 +131,7 @@ public:
         virtual ~ManualTimer();
 
         // symbol: ??0ManualTimer@ImguiProfiler@@QEAA@PEBD0_N@Z
-        MCAPI ManualTimer(char const*, char const*, bool);
+        MCAPI ManualTimer(char const* group, char const* name, bool isClient);
 
         // symbol: ?mark@ManualTimer@ImguiProfiler@@QEAAXXZ
         MCAPI void mark();
@@ -150,7 +152,7 @@ public:
         virtual ~ScopedTimer();
 
         // symbol: ??0ScopedTimer@ImguiProfiler@@QEAA@PEBD0_N@Z
-        MCAPI ScopedTimer(char const*, char const*, bool);
+        MCAPI ScopedTimer(char const* group, char const* name, bool isClient);
 
         // NOLINTEND
     };
@@ -170,7 +172,8 @@ public:
 
     // symbol:
     // ?getTimeAccumulator@ImguiProfiler@@QEAA?AVTimeAccumulator@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
-    MCAPI class TimeAccumulator getTimeAccumulator(std::string const&, std::string const&, bool);
+    MCAPI class TimeAccumulator
+    getTimeAccumulator(std::string const& group, std::string const& name, bool isClientSide);
 
     // symbol: ?update@ImguiProfiler@@QEAAXXZ
     MCAPI void update();

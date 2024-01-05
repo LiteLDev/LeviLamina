@@ -53,7 +53,12 @@ public:
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@SmithingTemplateItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -88,7 +93,7 @@ public:
 
     // symbol:
     // ??0SmithingTemplateItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4UpgradeType@0@0@Z
-    MCAPI SmithingTemplateItem(std::string const&, int, ::SmithingTemplateItem::UpgradeType, std::string const&);
+    MCAPI SmithingTemplateItem(std::string const& name, int, ::SmithingTemplateItem::UpgradeType, std::string const&);
 
     // NOLINTEND
 };

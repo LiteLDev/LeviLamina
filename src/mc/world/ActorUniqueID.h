@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?fromUUID@ActorUniqueID@@SA?AU1@AEBVUUID@mce@@@Z
-    MCAPI static struct ActorUniqueID fromUUID(class mce::UUID const& uuid);
+    MCAPI static struct ActorUniqueID fromUUID(class mce::UUID const&);
 
     // symbol: ?INVALID_ID@ActorUniqueID@@2U1@B
     MCAPI static struct ActorUniqueID const INVALID_ID;

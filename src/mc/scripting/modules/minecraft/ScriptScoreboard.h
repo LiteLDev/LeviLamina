@@ -39,13 +39,14 @@ public:
 
     // symbol:
     // ??0ScriptScoreboard@ScriptModuleMinecraft@@QEAA@AEAVScoreboard@@AEAVLevel@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI ScriptScoreboard(class Scoreboard&, class Level&, class Scripting::WeakLifetimeScope const&);
+    MCAPI
+    ScriptScoreboard(class Scoreboard& scoreboard, class Level& level, class Scripting::WeakLifetimeScope const& scope);
 
     // symbol:
     // ?addObjective@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>>
-    addObjective(std::string const&, std::string const&);
+    addObjective(std::string const&, std::string const& displayName);
 
     // symbol:
     // ?clearObjectiveAtDisplaySlot@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@@std@@W4ScriptDisplayObjectiveSlotId@2@@Z
@@ -72,7 +73,7 @@ public:
     // symbol:
     // ?getOrCreateScoreboardIdentity@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@AEBVIdentityDefinition@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>
-    getOrCreateScoreboardIdentity(class IdentityDefinition const&);
+    getOrCreateScoreboardIdentity(class IdentityDefinition const& identity);
 
     // symbol:
     // ?getParticipants@ScriptScoreboard@ScriptModuleMinecraft@@QEAA?AV?$vector@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptScoreboardIdentity@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@XZ
@@ -123,7 +124,7 @@ public:
     // symbol:
     // ?_getOrCreateScoreboardObjective@ScriptScoreboard@ScriptModuleMinecraft@@AEAA?AV?$StrongTypedObjectHandle@VScriptScoreboardObjective@ScriptModuleMinecraft@@@Scripting@@AEBVObjective@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardObjective>
-    _getOrCreateScoreboardObjective(class Objective const&);
+    _getOrCreateScoreboardObjective(class Objective const& objective);
 
     // NOLINTEND
 };

@@ -17,7 +17,7 @@ public:
     MCAPI Result(class Core::Result&& rhs);
 
     // symbol: ??0Result@Core@@QEAA@_NV?$function@$$A6AXPEAVResult@Core@@@Z@std@@@Z
-    MCAPI Result(bool, std::function<void(class Core::Result*)>);
+    MCAPI Result(bool success, std::function<void(class Core::Result*)> messageResolver);
 
     // symbol: ?architecturalProblem@Result@Core@@QEBAXXZ
     MCAPI void architecturalProblem() const;
@@ -65,7 +65,7 @@ public:
     MCAPI static class Core::Result makeFailure();
 
     // symbol: ?makeFailure@Result@Core@@SA?AV12@$$QEAV?$function@$$A6AXPEAVResult@Core@@@Z@std@@@Z
-    MCAPI static class Core::Result makeFailure(std::function<void(class Core::Result*)>&&);
+    MCAPI static class Core::Result makeFailure(std::function<void(class Core::Result*)>&& resolver);
 
     // symbol: ?makeFailureNotImplemented@Result@Core@@SA?AV12@XZ
     MCAPI static class Core::Result makeFailureNotImplemented();

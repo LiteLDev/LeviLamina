@@ -18,7 +18,7 @@ public:
     virtual ~ExperienceCostCommitObject() = default;
 
     // vIndex: 1, symbol: ?append@ExperienceCostCommitObject@@UEAA_NPEAVContainerValidationCommitObject@@@Z
-    virtual bool append(class ContainerValidationCommitObject*);
+    virtual bool append(class ContainerValidationCommitObject* other);
 
     // vIndex: 2, symbol: ?canCommit@ExperienceCostCommitObject@@UEBA_NAEBVContainerScreenContext@@@Z
     virtual bool canCommit(class ContainerScreenContext const&) const;

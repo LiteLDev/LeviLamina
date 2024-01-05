@@ -21,13 +21,13 @@ public:
     virtual void tick();
 
     // vIndex: 3, symbol: ?willChange@HealthAttributeDelegate@@UEAA_NMMAEBVAttributeBuff@@@Z
-    virtual bool willChange(float, float, class AttributeBuff const&);
+    virtual bool willChange(float oldValue, float newValue, class AttributeBuff const& buff);
 
     // vIndex: 4, symbol: ?change@HealthAttributeDelegate@@UEAAMMMAEBVAttributeBuff@@@Z
-    virtual float change(float oldValue, float newValue, class AttributeBuff const& buffInfo);
+    virtual float change(float oldValue, float newValue, class AttributeBuff const& buff);
 
     // vIndex: 5, symbol: ?getBuffValueWithModifiers@HealthAttributeDelegate@@UEBAMAEBVAttributeBuff@@@Z
-    virtual float getBuffValueWithModifiers(class AttributeBuff const&) const;
+    virtual float getBuffValueWithModifiers(class AttributeBuff const& buff) const;
 
     // symbol: ??0HealthAttributeDelegate@@QEAA@AEBVAttributeInstance@@PEAVMob@@@Z
     MCAPI HealthAttributeDelegate(class AttributeInstance const& attribute, class Mob* mob);

@@ -115,16 +115,19 @@ public:
 
     // vIndex: 79, symbol:
     // ?onFertilized@TwistingVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
+        const;
 
     // vIndex: 81, symbol: ?canBeFertilized@TwistingVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 85, symbol: ?mayPlace@TwistingVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@TwistingVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -145,16 +148,16 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@TwistingVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 147, symbol: ?onPlace@TwistingVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@TwistingVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -163,23 +166,23 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@TwistingVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 164, symbol: ?getResourceItem@TwistingVinesBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize& randomize, class Block const&, int) const;
 
     // symbol: ??0TwistingVinesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TwistingVinesBlock(std::string const&, int);
+    MCAPI TwistingVinesBlock(std::string const& nameId, int);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_shouldGrow@TwistingVinesBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI bool _shouldGrow(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI bool _shouldGrow(class BlockSource& region, class BlockPos const& pos, int age) const;
 
     // symbol: ?_tryGrow@TwistingVinesBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI void _tryGrow(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void _tryGrow(class BlockSource& region, class BlockPos const& pos, int age) const;
 
     // NOLINTEND
 };

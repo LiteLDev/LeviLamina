@@ -21,13 +21,13 @@ public:
 
     // symbol:
     // ?_getUpdatePacket@ShulkerBoxBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // symbol: ?_onUpdatePacket@ShulkerBoxBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ?canPushInItem@ShulkerBoxBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPushInItem(int slot, int face, class ItemStack const& item) const;
 
     // symbol: ?getMaxStackSize@ShulkerBoxBlockActor@@UEBAHXZ
     MCVAPI int getMaxStackSize() const;
@@ -65,8 +65,8 @@ public:
     // symbol:
     // ??0ShulkerBoxBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@@Z
     MCAPI ShulkerBoxBlockActor(
-        ::BlockActorType       type,
-        std::string const&     id,
+        ::BlockActorType type,
+        std::string const&,
         ::BlockActorRendererId renderId,
         class BlockPos const&  pos
     );
@@ -78,7 +78,7 @@ public:
     MCAPI void setupRedstoneComponent(class BlockSource&) const;
 
     // symbol: ?itemAllowedInSlot@ShulkerBoxBlockActor@@SA_NHAEBVItemStackBase@@H@Z
-    MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const&, int);
+    MCAPI static bool itemAllowedInSlot(int slot, class ItemStackBase const& item, int amount);
 
     // NOLINTEND
 

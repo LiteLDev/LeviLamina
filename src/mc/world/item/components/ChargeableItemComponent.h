@@ -44,10 +44,10 @@ public:
     MCAPI class ChargeableItemComponent& operator=(class ChargeableItemComponent const&);
 
     // symbol: ?use@ChargeableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
-    MCAPI bool use(class ItemStack&, class Player&) const;
+    MCAPI bool use(class ItemStack& instance, class Player& player) const;
 
     // symbol: ?useTimeDepleted@ChargeableItemComponent@@QEBAXAEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z
-    MCAPI void useTimeDepleted(class ItemStack&, class Player&, class Level&) const;
+    MCAPI void useTimeDepleted(class ItemStack& instance, class Player& player, class Level& level) const;
 
     // symbol:
     // ?bindType@ChargeableItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

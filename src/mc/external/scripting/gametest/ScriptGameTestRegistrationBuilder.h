@@ -43,7 +43,7 @@ public:
     // symbol:
     // ?required@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@_N@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    required(bool);
+    required(bool required);
 
     // symbol:
     // ?requiredSuccessfulAttempts@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@H@Z
@@ -63,12 +63,12 @@ public:
     // symbol:
     // ?structureName@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-        structureName(std::string);
+    structureName(std::string structureName);
 
     // symbol:
     // ?tag@ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA?AV?$StrongTypedObjectHandle@VScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-        tag(std::string);
+    tag(std::string tag);
 
     // symbol: ??1ScriptGameTestRegistrationBuilder@ScriptModuleGameTest@@QEAA@XZ
     MCAPI ~ScriptGameTestRegistrationBuilder();

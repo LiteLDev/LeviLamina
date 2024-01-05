@@ -24,7 +24,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0Builder@LootTableContext@@QEAA@PEAVILevel@@V?$AutomaticID@VDimension@@H@@@Z
-        MCAPI Builder(class ILevel*, DimensionType);
+        MCAPI Builder(class ILevel* level, DimensionType dimensionId);
 
         // symbol: ?create@Builder@LootTableContext@@QEBA?AV2@XZ
         MCAPI class LootTableContext create() const;
@@ -36,7 +36,7 @@ public:
         MCAPI class LootTableContext::Builder& withExplosionRadius(float explosionRadius);
 
         // symbol: ?withKilledActor@Builder@LootTableContext@@QEAAAEAV12@PEAVActor@@@Z
-        MCAPI class LootTableContext::Builder& withKilledActor(class Actor*);
+        MCAPI class LootTableContext::Builder& withKilledActor(class Actor* actor);
 
         // symbol: ?withKillerPlayer@Builder@LootTableContext@@QEAAAEAV12@PEAVPlayer@@@Z
         MCAPI class LootTableContext::Builder& withKillerPlayer(class Player* player);
@@ -45,7 +45,7 @@ public:
         MCAPI class LootTableContext::Builder& withLuck(float luck);
 
         // symbol: ?withThisEntity@Builder@LootTableContext@@QEAAAEAV12@PEAVActor@@@Z
-        MCAPI class LootTableContext::Builder& withThisEntity(class Actor* entity);
+        MCAPI class LootTableContext::Builder& withThisEntity(class Actor* actor);
 
         // symbol: ?withTool@Builder@LootTableContext@@QEAAAEAV12@PEBVItemStack@@@Z
         MCAPI class LootTableContext::Builder& withTool(class ItemStack const*);
@@ -67,7 +67,7 @@ public:
     // symbol:
     // ??0LootTableContext@@QEAA@MPEAVILevel@@UActorUniqueID@@PEAVPlayer@@PEAVActor@@PEBVActorDamageSource@@MV?$AutomaticID@VDimension@@H@@PEBVItemStack@@@Z
     MCAPI
-    LootTableContext(float, class ILevel*, struct ActorUniqueID, class Player*, class Actor*, class ActorDamageSource const*, float, DimensionType, class ItemStack const*);
+    LootTableContext(float luck, class ILevel* level, struct ActorUniqueID, class Player* player, class Actor*, class ActorDamageSource const* deathSource, float explosionRadius, DimensionType dimensionId, class ItemStack const*);
 
     // symbol: ?getDimensionId@LootTableContext@@QEBA?AV?$AutomaticID@VDimension@@H@@XZ
     MCAPI DimensionType getDimensionId() const;

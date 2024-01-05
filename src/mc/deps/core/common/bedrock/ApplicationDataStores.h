@@ -32,19 +32,19 @@ public:
     // symbol:
     // ?getDataStore@ApplicationDataStores@Bedrock@@UEBA?AV?$NonOwnerPointer@$$CBVDataStore@Bedrock@@@2@W4DataStores@IApplicationDataStores@2@@Z
     MCVAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore const>
-        getDataStore(::Bedrock::IApplicationDataStores::DataStores) const;
+    getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const;
 
     // symbol:
     // ?getDataStore@ApplicationDataStores@Bedrock@@UEAA?AV?$NonOwnerPointer@VDataStore@Bedrock@@@2@W4DataStores@IApplicationDataStores@2@@Z
     MCVAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore>
-        getDataStore(::Bedrock::IApplicationDataStores::DataStores);
+    getDataStore(::Bedrock::IApplicationDataStores::DataStores which);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_initDataStore@ApplicationDataStores@Bedrock@@AEAAXW4DataStores@IApplicationDataStores@2@@Z
-    MCAPI void _initDataStore(::Bedrock::IApplicationDataStores::DataStores);
+    MCAPI void _initDataStore(::Bedrock::IApplicationDataStores::DataStores which);
 
     // NOLINTEND
 };

@@ -37,8 +37,10 @@ public:
 
     // symbol:
     // ?resolve@DependencyResolver@Scripting@@QEAA?AUModuleResolveResult@2@AEBUModuleDescriptor@2@AEBV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@std@@@Z
-    MCAPI struct Scripting::ModuleResolveResult
-    resolve(struct Scripting::ModuleDescriptor const&, std::vector<struct Scripting::ModuleDescriptor> const&);
+    MCAPI struct Scripting::ModuleResolveResult resolve(
+        struct Scripting::ModuleDescriptor const&,
+        std::vector<struct Scripting::ModuleDescriptor> const& dependencies
+    );
 
     // symbol: ??1DependencyResolver@Scripting@@QEAA@XZ
     MCAPI ~DependencyResolver();
@@ -50,11 +52,13 @@ public:
     // symbol:
     // ?_buildVersionRequestTable@DependencyResolver@Scripting@@AEBA?AV?$unordered_map@UVersionRequestKey@Scripting@@V?$vector@UVersionRequestedBy@Scripting@@V?$allocator@UVersionRequestedBy@Scripting@@@std@@@std@@U?$hash@UVersionRequestKey@Scripting@@@4@U?$equal_to@UVersionRequestKey@Scripting@@@4@V?$allocator@U?$pair@$$CBUVersionRequestKey@Scripting@@V?$vector@UVersionRequestedBy@Scripting@@V?$allocator@UVersionRequestedBy@Scripting@@@std@@@std@@@std@@@4@@std@@AEBUModuleDescriptor@2@AEBV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@4@@Z
     MCAPI std::unordered_map<struct Scripting::VersionRequestKey, std::vector<struct Scripting::VersionRequestedBy>>
-    _buildVersionRequestTable(struct Scripting::ModuleDescriptor const&, std::vector<struct Scripting::ModuleDescriptor> const&)
-        const;
+          _buildVersionRequestTable(
+              struct Scripting::ModuleDescriptor const&,
+              std::vector<struct Scripting::ModuleDescriptor> const& dependencies
+          ) const;
 
     // symbol: ?_getModuleBindingFactory@DependencyResolver@Scripting@@AEBAPEAVIModuleBindingFactory@2@AEBUUUID@2@@Z
-    MCAPI class Scripting::IModuleBindingFactory* _getModuleBindingFactory(struct Scripting::UUID const&) const;
+    MCAPI class Scripting::IModuleBindingFactory* _getModuleBindingFactory(struct Scripting::UUID const& uuid) const;
 
     // symbol: ?_isVersionMissing@DependencyResolver@Scripting@@AEBA_NAEBVIModuleBindingFactory@2@AEBUVersion@2@@Z
     MCAPI bool _isVersionMissing(class Scripting::IModuleBindingFactory const&, struct Scripting::Version const&) const;

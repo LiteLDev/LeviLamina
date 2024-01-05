@@ -8,19 +8,19 @@
 namespace PlayerGameTypeUtility {
 // NOLINTBEGIN
 // symbol: ?isAdventure@PlayerGameTypeUtility@@YA_NW4GameType@@0@Z
-MCAPI bool isAdventure(::GameType, ::GameType);
+MCAPI bool isAdventure(::GameType playerGameType, ::GameType);
 
 // symbol: ?isCreative@PlayerGameTypeUtility@@YA_NW4GameType@@0@Z
-MCAPI bool isCreative(::GameType, ::GameType);
+MCAPI bool isCreative(::GameType playerGameType, ::GameType);
 
 // symbol: ?isSpectator@PlayerGameTypeUtility@@YA_NW4GameType@@0@Z
-MCAPI bool isSpectator(::GameType, ::GameType);
+MCAPI bool isSpectator(::GameType playerGameType, ::GameType);
 
 // symbol: ?isSurvival@PlayerGameTypeUtility@@YA_NW4GameType@@0@Z
-MCAPI bool isSurvival(::GameType, ::GameType);
+MCAPI bool isSurvival(::GameType playerGameType, ::GameType);
 
 // symbol: ?isWorldBuilderBedrock@PlayerGameTypeUtility@@YA_NAEBUAbilitiesComponent@@W4GameType@@1@Z
-MCAPI bool isWorldBuilderBedrock(struct AbilitiesComponent const&, ::GameType, ::GameType);
+MCAPI bool isWorldBuilderBedrock(struct AbilitiesComponent const&, ::GameType playerGameType, ::GameType);
 // NOLINTEND
 
 }; // namespace PlayerGameTypeUtility

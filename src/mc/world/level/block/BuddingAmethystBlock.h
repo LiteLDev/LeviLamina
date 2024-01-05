@@ -124,7 +124,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 151, symbol: ?randomTick@BuddingAmethystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -140,10 +140,10 @@ public:
 
     // symbol:
     // ??0BuddingAmethystBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI BuddingAmethystBlock(std::string const&, int, class Material const&);
+    MCAPI BuddingAmethystBlock(std::string const& nameId, int, class Material const& material);
 
     // symbol: ?canBudGrowAtPos@BuddingAmethystBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool canBudGrowAtPos(class BlockSource&, class BlockPos const&);
+    MCAPI static bool canBudGrowAtPos(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 };

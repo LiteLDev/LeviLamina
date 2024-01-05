@@ -42,7 +42,7 @@ public:
     virtual void __unk_vfn_17();
 
     // vIndex: 31, symbol: ?getLevelDataForAuxValue@BambooItem@@UEBAHH@Z
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int getLevelDataForAuxValue(int auxValue) const;
 
     // vIndex: 37, symbol: __unk_vfn_37
     virtual void __unk_vfn_37();
@@ -80,10 +80,11 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@BambooItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol: ??0BambooItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BambooItem(std::string const&, int);
+    MCAPI BambooItem(std::string const& name, int);
 
     // NOLINTEND
 };

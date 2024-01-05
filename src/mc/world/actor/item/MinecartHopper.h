@@ -89,10 +89,14 @@ public:
     virtual int getDefaultDisplayOffset() const;
 
     // vIndex: 173, symbol: ?applyNaturalSlowdown@MinecartHopper@@UEAAXAEAVBlockSource@@@Z
-    virtual void applyNaturalSlowdown(class BlockSource&);
+    virtual void applyNaturalSlowdown(class BlockSource& region);
 
     // symbol: ??0MinecartHopper@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI MinecartHopper(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI MinecartHopper(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 };

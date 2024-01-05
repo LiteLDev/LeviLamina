@@ -33,7 +33,7 @@ public:
 
         // vIndex: 1, symbol:
         // ?onActiveResourcePacksChanged@VanillaWorldChecker@DebugEndPoint@@UEAAXAEAVResourcePackManager@@@Z
-        virtual void onActiveResourcePacksChanged(class ResourcePackManager&);
+        virtual void onActiveResourcePacksChanged(class ResourcePackManager& mgr);
 
         // vIndex: 2, symbol: __unk_vfn_2
         virtual void __unk_vfn_2();
@@ -46,10 +46,10 @@ public:
 
         // vIndex: 5, symbol:
         // ?onResourceManagerDestroyed@VanillaWorldChecker@DebugEndPoint@@UEAAXAEAVResourcePackManager@@@Z
-        virtual void onResourceManagerDestroyed(class ResourcePackManager&);
+        virtual void onResourceManagerDestroyed(class ResourcePackManager& mgr);
 
         // symbol: ?checkWorldData@VanillaWorldChecker@DebugEndPoint@@QEAAXAEBVPath@Core@@@Z
-        MCAPI void checkWorldData(class Core::Path const&);
+        MCAPI void checkWorldData(class Core::Path const& levelPath);
 
         // NOLINTEND
     };
@@ -63,7 +63,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?contentAssert@DebugEndPoint@@MEAAXW4LogArea@@W4LogLevel@@PEBD@Z
-    MCVAPI void contentAssert(::LogArea, ::LogLevel, char const*);
+    MCVAPI void contentAssert(::LogArea area, ::LogLevel level, char const* message);
 
     // symbol: ?flush@DebugEndPoint@@UEAAXXZ
     MCVAPI void flush();
@@ -72,19 +72,19 @@ public:
     MCVAPI bool isEnabled() const;
 
     // symbol: ?log@DebugEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z
-    MCVAPI void log(::LogArea, ::LogLevel, char const*);
+    MCVAPI void log(::LogArea area, ::LogLevel level, char const* message);
 
     // symbol: ?logOnlyOnce@DebugEndPoint@@UEBA_NXZ
     MCVAPI bool logOnlyOnce() const;
 
     // symbol: ?setEnabled@DebugEndPoint@@UEAAX_N@Z
-    MCVAPI void setEnabled(bool);
+    MCVAPI void setEnabled(bool newState);
 
     // symbol: ??0DebugEndPoint@@QEAA@V?$optional@W4LogLevel@@@std@@@Z
     MCAPI explicit DebugEndPoint(std::optional<::LogLevel>);
 
     // symbol: ?initializeContentLogging@DebugEndPoint@@QEAAXAEAVResourcePackManager@@AEBVPath@Core@@@Z
-    MCAPI void initializeContentLogging(class ResourcePackManager&, class Core::Path const&);
+    MCAPI void initializeContentLogging(class ResourcePackManager& mgr, class Core::Path const& levelPath);
 
     // NOLINTEND
 

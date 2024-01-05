@@ -76,7 +76,7 @@ public:
 
     // vIndex: 71, symbol: ?dispense@ShearsItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
 
     // vIndex: 74, symbol: ?getDestroySpeed@ShearsItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
     virtual float getDestroySpeed(class ItemStackBase const& itemStack, class Block const& block) const;
@@ -86,7 +86,7 @@ public:
 
     // vIndex: 79, symbol: ?mineBlock@ShearsItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
-    mineBlock(class ItemStack& itemStack, class Block const& block, int x, int y, int z, class Actor* owner) const;
+    mineBlock(class ItemStack& itemStack, class Block const& block, int, int, int, class Actor* owner) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -97,7 +97,7 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@ShearsItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
 
     // symbol: ??0ShearsItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI ShearsItem(std::string const& name, int itemId);
@@ -108,16 +108,16 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_spawnLoot@ShearsItem@@CAXAEAVLevel@@PEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static void _spawnLoot(class Level&, class Actor*, std::string const&);
+    MCAPI static void _spawnLoot(class Level& level, class Actor* actor, std::string const& lootTable);
 
     // symbol: ?_tryShearMooshroom@ShearsItem@@CA_NAEAVLevel@@AEAVBlockSource@@PEAVActor@@@Z
-    MCAPI static bool _tryShearMooshroom(class Level&, class BlockSource&, class Actor*);
+    MCAPI static bool _tryShearMooshroom(class Level& level, class BlockSource& region, class Actor* actor);
 
     // symbol: ?_tryShearSheep@ShearsItem@@CA_NAEAVLevel@@PEAVActor@@@Z
-    MCAPI static bool _tryShearSheep(class Level&, class Actor*);
+    MCAPI static bool _tryShearSheep(class Level& level, class Actor* actor);
 
     // symbol: ?_tryShearSnowGolem@ShearsItem@@CA_NAEAVLevel@@PEAVActor@@@Z
-    MCAPI static bool _tryShearSnowGolem(class Level&, class Actor*);
+    MCAPI static bool _tryShearSnowGolem(class Level& level, class Actor* actor);
 
     // NOLINTEND
 };

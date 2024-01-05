@@ -83,17 +83,21 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 169, symbol: ?destroy@ChestBoat@@UEAAXPEAVActor@@@Z
-    virtual void destroy(class Actor*);
+    virtual void destroy(class Actor* sourceActor);
 
     // symbol: ??0ChestBoat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI ChestBoat(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI ChestBoat(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_dropChestContents@ChestBoat@@AEAAXAEBVVec3@@@Z
-    MCAPI void _dropChestContents(class Vec3 const&);
+    MCAPI void _dropChestContents(class Vec3 const& pos);
 
     // NOLINTEND
 };

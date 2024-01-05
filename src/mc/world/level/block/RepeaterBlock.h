@@ -156,7 +156,7 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@RepeaterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -186,7 +186,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0RepeaterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI RepeaterBlock(std::string const& nameId, int id, bool on);
+    MCAPI RepeaterBlock(std::string const& nameId, int, bool on);
 
     // symbol: ?updateDelay@RepeaterBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
     MCAPI void updateDelay(class BlockSource& region, class BlockPos const& pos, bool doIncrement) const;

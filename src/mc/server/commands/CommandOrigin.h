@@ -112,7 +112,7 @@ public:
     virtual void updateValues();
 
     // vIndex: 28, symbol: ?getExecutePosition@CommandOrigin@@UEBA?BVVec3@@HAEBVCommandPositionFloat@@@Z
-    virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const&) const;
+    virtual class Vec3 const getExecutePosition(int version, class CommandPositionFloat const&) const;
 
     // vIndex: 29, symbol: ?serialize@CommandOrigin@@UEBA?AVCompoundTag@@XZ
     virtual class CompoundTag serialize() const;
@@ -128,28 +128,33 @@ public:
 
     // symbol:
     // ?getAreaAt@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H@Z
-    MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&, int) const;
+    MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const& pos, int commandVersion) const;
 
     // symbol:
     // ?getAreaAt@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N@Z
-    MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&, class BlockPos const&, int, bool) const;
+    MCAPI std::unique_ptr<class CommandArea>
+    getAreaAt(class BlockPos const& min, class BlockPos const& max, int commandVersion, bool allowUnloadedChunks) const;
 
     // symbol:
     // ?getAreaAtWithBuffer@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H@Z
-    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const&, int) const;
+    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const& pos, int commandVersion) const;
 
     // symbol:
     // ?getAreaAtWithBuffer@CommandOrigin@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N@Z
-    MCAPI std::unique_ptr<class CommandArea>
-          getAreaAtWithBuffer(class BlockPos const&, class BlockPos const&, int, bool) const;
+    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(
+        class BlockPos const& min,
+        class BlockPos const& max,
+        int                   commandVersion,
+        bool                  allowUnloadedChunks
+    ) const;
 
     // symbol:
     // ?fromCommandOriginData@CommandOrigin@@SA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBUCommandOriginData@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
     MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(
-        struct CommandOriginData const&,
-        class Bedrock::NonOwnerPointer<class ILevel> const&,
-        class NetworkIdentifier const&,
-        ::SubClientId
+        struct CommandOriginData const&                     data,
+        class Bedrock::NonOwnerPointer<class ILevel> const& level,
+        class NetworkIdentifier const&                      sourceId,
+        ::SubClientId                                       sourceSubId
     );
 
     // NOLINTEND

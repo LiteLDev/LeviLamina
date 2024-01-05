@@ -29,27 +29,27 @@ public:
     MCAPI ActorManager();
 
     // symbol: ?addActorEntity@ActorManager@@QEAAPEAVActor@@AEAVDimension@@V?$OwnerPtrT@UEntityRefTraits@@@@@Z
-    MCAPI class Actor* addActorEntity(class Dimension&, class OwnerPtrT<struct EntityRefTraits>);
+    MCAPI class Actor* addActorEntity(class Dimension& dimension, class OwnerPtrT<struct EntityRefTraits> entity);
 
     // symbol:
     // ?addActorEntity@ActorManager@@QEAAPEAVActor@@AEAVIAddActorEntityProxy@@V?$OwnerPtrT@UEntityRefTraits@@@@@Z
-    MCAPI class Actor* addActorEntity(class IAddActorEntityProxy&, class OwnerPtrT<struct EntityRefTraits>);
+    MCAPI class Actor* addActorEntity(class IAddActorEntityProxy&, class OwnerPtrT<struct EntityRefTraits> entity);
 
     // symbol: ?cleanupActorEntityReferencesGarbageCollect@ActorManager@@QEAAXV?$OwnerPtrT@UEntityRefTraits@@@@@Z
-    MCAPI void cleanupActorEntityReferencesGarbageCollect(class OwnerPtrT<struct EntityRefTraits>);
+    MCAPI void cleanupActorEntityReferencesGarbageCollect(class OwnerPtrT<struct EntityRefTraits> entity);
 
     // symbol: ?cleanupRemovedActorEntityReferencesGarbageCollect@ActorManager@@QEAAXV?$OwnerPtrT@UEntityRefTraits@@@@@Z
-    MCAPI void cleanupRemovedActorEntityReferencesGarbageCollect(class OwnerPtrT<struct EntityRefTraits>);
+    MCAPI void cleanupRemovedActorEntityReferencesGarbageCollect(class OwnerPtrT<struct EntityRefTraits> entity);
 
     // symbol:
     // ?deleteActorEntityFromWorldAndTakeEntity@ActorManager@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@VWeakEntityRef@@@Z
     MCAPI class OwnerPtrT<struct EntityRefTraits> deleteActorEntityFromWorldAndTakeEntity(class WeakEntityRef);
 
     // symbol: ?forceRemoveActor@ActorManager@@QEAAXAEAVActor@@@Z
-    MCAPI void forceRemoveActor(class Actor&);
+    MCAPI void forceRemoveActor(class Actor& actor);
 
     // symbol: ?forceRemoveActorFromWorld@ActorManager@@QEAAXAEAVActor@@@Z
-    MCAPI void forceRemoveActorFromWorld(class Actor&);
+    MCAPI void forceRemoveActorFromWorld(class Actor& actor);
 
     // symbol:
     // ?getEntities@ActorManager@@QEBAAEBV?$vector@V?$OwnerPtrT@UEntityRefTraits@@@@V?$allocator@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@std@@XZ
@@ -68,11 +68,13 @@ public:
 
     // symbol:
     // ?registerActorEntityAddedCallback@ActorManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVActor@@@Z@std@@@Z
-    MCAPI class Bedrock::PubSub::Subscription registerActorEntityAddedCallback(std::function<void(class Actor&)>);
+    MCAPI class Bedrock::PubSub::Subscription
+    registerActorEntityAddedCallback(std::function<void(class Actor&)> callback);
 
     // symbol:
     // ?registerOnRemoveActorEntityReferences@ActorManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVActor@@@Z@std@@@Z
-    MCAPI class Bedrock::PubSub::Subscription registerOnRemoveActorEntityReferences(std::function<void(class Actor&)>);
+    MCAPI class Bedrock::PubSub::Subscription
+    registerOnRemoveActorEntityReferences(std::function<void(class Actor&)> callback);
 
     // symbol:
     // ?registerPostReloadActor@ActorManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVActor@@W4ActorInitializationMethod@@@Z@std@@@Z
@@ -83,7 +85,7 @@ public:
     MCAPI class OwnerPtrT<struct EntityRefTraits> removeActorEntityAndTakeEntity(class WeakEntityRef);
 
     // symbol: ?removeActorEntityReferencesForDeletion@ActorManager@@QEAAXAEAVActor@@@Z
-    MCAPI void removeActorEntityReferencesForDeletion(class Actor&);
+    MCAPI void removeActorEntityReferencesForDeletion(class Actor& actor);
 
     // symbol: ?removeEntity@ActorManager@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@VWeakEntityRef@@@Z
     MCAPI class OwnerPtrT<struct EntityRefTraits> removeEntity(class WeakEntityRef);
@@ -92,7 +94,7 @@ public:
     MCAPI void setLevelIsTearingDown();
 
     // symbol: ?takeEntity@ActorManager@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@VWeakEntityRef@@AEAVLevelChunk@@@Z
-    MCAPI class OwnerPtrT<struct EntityRefTraits> takeEntity(class WeakEntityRef, class LevelChunk&);
+    MCAPI class OwnerPtrT<struct EntityRefTraits> takeEntity(class WeakEntityRef, class LevelChunk& levelChunk);
 
     // NOLINTEND
 };

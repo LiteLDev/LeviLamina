@@ -141,7 +141,7 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@BarrelBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -156,7 +156,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0BarrelBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI BarrelBlock(std::string const& nameId, int id, class Material const& material);
+    MCAPI BarrelBlock(std::string const& nameId, int, class Material const& material);
 
     // symbol: ?setOpen@BarrelBlock@@SAX_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static void setOpen(bool isOpen, class BlockSource& region, class BlockPos const& pos);

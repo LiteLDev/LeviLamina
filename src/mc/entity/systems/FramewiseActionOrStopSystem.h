@@ -28,7 +28,7 @@ public:
                                                           class FlagComponent<struct LocalPlayerComponentFlag>,
                                                           struct PlayerInputRequestComponent>,
                                                       struct LocalMoveVelocityComponent const,
-                                                      struct ActionOrStopComponent>);
+                                                      struct ActionOrStopComponent> view);
 
     // NOLINTEND
 

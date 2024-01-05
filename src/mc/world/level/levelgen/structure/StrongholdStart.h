@@ -21,14 +21,14 @@ public:
     virtual bool isValid() const;
 
     // symbol: ??0StrongholdStart@@QEAA@AEAVDimension@@AEAVRandom@@HH@Z
-    MCAPI StrongholdStart(class Dimension& source, class Random& random, int chunkX, int chunkZ);
+    MCAPI StrongholdStart(class Dimension& dimension, class Random& random, int chunkX, int chunkZ);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_initializePieceSet@StrongholdStart@@AEAAXAEAVRandom@@@Z
-    MCAPI void _initializePieceSet(class Random&);
+    MCAPI void _initializePieceSet(class Random& random);
 
     // NOLINTEND
 };

@@ -21,15 +21,19 @@ public:
 
     // symbol:
     // ??0StructurePoolBlockRule@@QEAA@$$QEAV?$unique_ptr@VIStructurePoolBlockPredicate@@U?$default_delete@VIStructurePoolBlockPredicate@@@std@@@std@@00PEBVBlock@@@Z
-    MCAPI
-    StructurePoolBlockRule(std::unique_ptr<class IStructurePoolBlockPredicate>&&, std::unique_ptr<class IStructurePoolBlockPredicate>&&, std::unique_ptr<class IStructurePoolBlockPredicate>&&, class Block const*);
+    MCAPI StructurePoolBlockRule(
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& sourceBlockPredicate,
+        std::unique_ptr<class IStructurePoolBlockPredicate>&& targetBlockPredicate,
+        std::unique_ptr<class IStructurePoolBlockPredicate>&&,
+        class Block const* resultBlock
+    );
 
     // symbol: ?finalizeRule@StructurePoolBlockRule@@QEAA_NAEAVBlockSource@@AEAVIRandom@@@Z
-    MCAPI bool finalizeRule(class BlockSource&, class IRandom&);
+    MCAPI bool finalizeRule(class BlockSource& region, class IRandom& random);
 
     // symbol: ?processRule@StructurePoolBlockRule@@QEBA_NAEBVBlock@@0AEAVRandom@@AEAPEBV2@AEBVBlockPos@@3@Z
     MCAPI bool
-    processRule(class Block const&, class Block const&, class Random&, class Block const*&, class BlockPos const&, class BlockPos const&)
+    processRule(class Block const& sourceBlock, class Block const& targetBlock, class Random& random, class Block const*& outputBlock, class BlockPos const&, class BlockPos const&)
         const;
 
     // NOLINTEND

@@ -5,7 +5,7 @@
 namespace Scripting::OptionalHelper {
 // NOLINTBEGIN
 // symbol: ?isOptionalAny@OptionalHelper@Scripting@@YA_NVmeta_type@entt@@@Z
-MCAPI bool isOptionalAny(entt::meta_type);
+MCAPI bool isOptionalAny(entt::meta_type type);
 // NOLINTEND
 
 }; // namespace Scripting::OptionalHelper

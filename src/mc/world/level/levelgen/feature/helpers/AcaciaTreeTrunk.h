@@ -22,11 +22,11 @@ public:
     // vIndex: 1, symbol:
     // ?placeTrunk@AcaciaTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
     virtual std::optional<class BlockPos>
-    placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, int, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*)
+    placeTrunk(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Random& random, int treeHeight, class RenderParams& renderParams, struct TreeHelper::TreeParams const&, class ITreeCanopy const*)
         const;
 
     // vIndex: 2, symbol: ?getTreeHeight@AcaciaTreeTrunk@@UEBAHAEAVRandom@@@Z
-    virtual int getTreeHeight(class Random&) const;
+    virtual int getTreeHeight(class Random& random) const;
 
     // NOLINTEND
 
@@ -35,13 +35,13 @@ public:
     // symbol:
     // ?_placeLeaningBranches@AcaciaTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1AEAVRandom@@AEAVRenderParams@@HHHAEBUTreeParams@TreeHelper@@@Z
     MCAPI void
-    _placeLeaningBranches(class IBlockWorldGenAPI&, class BlockPos const&, class BlockPos const&, class Random&, class RenderParams&, int, int, int, struct TreeHelper::TreeParams const&)
+    _placeLeaningBranches(class IBlockWorldGenAPI& target, class BlockPos const& pos, class BlockPos const&, class Random& random, class RenderParams& renderParams, int treeHeight, int, int, struct TreeHelper::TreeParams const&)
         const;
 
     // symbol:
     // ?_placeVerticalBranches@AcaciaTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@@Z
     MCAPI void
-    _placeVerticalBranches(class IBlockWorldGenAPI&, class BlockPos const&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&)
+    _placeVerticalBranches(class IBlockWorldGenAPI& target, class BlockPos const& pos, class BlockPos const&, class Random& random, class RenderParams& renderParams, struct TreeHelper::TreeParams const&)
         const;
 
     // NOLINTEND

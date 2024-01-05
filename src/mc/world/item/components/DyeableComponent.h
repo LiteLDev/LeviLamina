@@ -18,16 +18,16 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?appendFormattedHovertext@DyeableComponent@@QEBAXAEBVItemStackBase@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI void appendFormattedHovertext(class ItemStackBase const&, std::string&, bool) const;
+    MCAPI void appendFormattedHovertext(class ItemStackBase const& item, std::string& hovertext, bool) const;
 
     // symbol: ?clearColor@DyeableComponent@@QEBAXAEAVItemStackBase@@@Z
-    MCAPI void clearColor(class ItemStackBase&) const;
+    MCAPI void clearColor(class ItemStackBase& instance) const;
 
     // symbol: ?hasCustomColor@DyeableComponent@@QEBA_NAEBVItemStackBase@@@Z
-    MCAPI bool hasCustomColor(class ItemStackBase const&) const;
+    MCAPI bool hasCustomColor(class ItemStackBase const& instance) const;
 
     // symbol: ?setColor@DyeableComponent@@QEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
-    MCAPI void setColor(class ItemStackBase&, class mce::Color const&) const;
+    MCAPI void setColor(class ItemStackBase& instance, class mce::Color const& color) const;
 
     // symbol: ?ResetDefaultLeatherColor@DyeableComponent@@SAXXZ
     MCAPI static void ResetDefaultLeatherColor();

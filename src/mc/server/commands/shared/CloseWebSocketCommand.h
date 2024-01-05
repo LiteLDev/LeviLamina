@@ -18,10 +18,10 @@ public:
     virtual ~CloseWebSocketCommand() = default;
 
     // vIndex: 2, symbol: ?execute@CloseWebSocketCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const& origin, class CommandOutput&) const;
 
     // symbol: ?setup@CloseWebSocketCommand@@SAXAEAVCommandRegistry@@AEAVIMinecraftApp@@@Z
-    MCAPI static void setup(class CommandRegistry&, class IMinecraftApp&);
+    MCAPI static void setup(class CommandRegistry& registry, class IMinecraftApp& app);
 
     // NOLINTEND
 

@@ -59,8 +59,12 @@ public:
 
     // symbol:
     // ?rungametest@GameTestNetworkAdapter@@QEAAXV?$not_null@PEAVPacketSender@@@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVDimension@@AEBUTestParameters@gametest@@@Z
-    MCAPI void
-    rungametest(gsl::not_null<class PacketSender*>, std::string const&, class Dimension&, struct gametest::TestParameters const&);
+    MCAPI void rungametest(
+        gsl::not_null<class PacketSender*> packetSender,
+        std::string const&,
+        class Dimension&                       dimension,
+        struct gametest::TestParameters const& params
+    );
 
     // NOLINTEND
 };

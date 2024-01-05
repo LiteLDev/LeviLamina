@@ -22,7 +22,7 @@ public:
     MCAPI ScaleByAgeDefinition();
 
     // symbol: ?initialize@ScaleByAgeDefinition@@QEBAXAEAVEntityContext@@AEAVScaleByAgeComponent@@@Z
-    MCAPI void initialize(class EntityContext& entity, class ScaleByAgeComponent& component) const;
+    MCAPI void initialize(class EntityContext&, class ScaleByAgeComponent& component) const;
 
     // symbol:
     // ?buildSchema@ScaleByAgeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VScaleByAgeDefinition@@@JsonUtil@@@std@@@Z

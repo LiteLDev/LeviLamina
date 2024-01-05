@@ -41,7 +41,8 @@ public:
     // symbol:
     // ?forEachFeature@FeatureRegistry@@QEBAXV?$function@$$A6AXAEBVHashedString@@V?$WeakRefT@UFeatureRefTraits@@@@@Z@std@@@Z
     MCAPI void
-        forEachFeature(std::function<void(class HashedString const&, class WeakRefT<struct FeatureRefTraits>)>) const;
+    forEachFeature(std::function<void(class HashedString const&, class WeakRefT<struct FeatureRefTraits>)> callback
+    ) const;
 
     // symbol:
     // ?getLargeFeaturePasses@FeatureRegistry@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
@@ -56,11 +57,7 @@ public:
     MCAPI bool isFeaturePassDefined(std::string const&) const;
 
     // symbol: ?loadFromDefinitions@FeatureRegistry@@QEAAXAEAVIWorldRegistriesProvider@@AEBVResourcePackManager@@_N@Z
-    MCAPI void loadFromDefinitions(
-        class IWorldRegistriesProvider&  worldRegistries,
-        class ResourcePackManager const& rpm,
-        bool                             isExperimentalEnabled
-    );
+    MCAPI void loadFromDefinitions(class IWorldRegistriesProvider&, class ResourcePackManager const&, bool);
 
     // symbol:
     // ?lookupByName@FeatureRegistry@@QEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -68,7 +65,7 @@ public:
 
     // symbol:
     // ?lookupOrReserveFeature@FeatureRegistry@@QEAA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits> lookupOrReserveFeature(std::string const&);
+    MCAPI class WeakRefT<struct FeatureRefTraits> lookupOrReserveFeature(std::string const& featureName);
 
     // symbol:
     // ?reserveFeature@FeatureRegistry@@QEAA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -129,11 +126,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_featureNamespaceFromInput@FeatureRegistry@@AEAA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@0@Z
-    MCAPI std::string const _featureNamespaceFromInput(std::string const&, std::string const&);
+    MCAPI std::string const _featureNamespaceFromInput(std::string const& filePath, std::string const& contents);
 
     // symbol:
     // ?_registerFeature@FeatureRegistry@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VIFeature@@U?$default_delete@VIFeature@@@std@@@3@@Z
-    MCAPI void _registerFeature(std::string const&, std::unique_ptr<class IFeature>);
+    MCAPI void _registerFeature(std::string const& name, std::unique_ptr<class IFeature>);
 
     // symbol:
     // ?_setupFeature@FeatureRegistry@@AEAA_NAEAVIWorldRegistriesProvider@@_NAEBVResourcePackManager@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3AEBVSemVersion@@1@Z

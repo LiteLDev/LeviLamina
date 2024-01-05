@@ -19,10 +19,10 @@ public:
     virtual ~MineshaftPiece();
 
     // vIndex: 6, symbol: ?isInInvalidLocation@MineshaftPiece@@UEAA_NAEAVBlockSource@@AEBVBoundingBox@@@Z
-    virtual bool isInInvalidLocation(class BlockSource&, class BoundingBox const&);
+    virtual bool isInInvalidLocation(class BlockSource& region, class BoundingBox const& chunkBB);
 
     // vIndex: 10, symbol: ?canBeReplaced@MineshaftPiece@@UEAA_NAEAVBlockSource@@HHHAEBVBoundingBox@@@Z
-    virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
+    virtual bool canBeReplaced(class BlockSource& region, int x, int y, int z, class BoundingBox const& chunkBB);
 
     // symbol:
     // ?createRandomShaftPiece@MineshaftPiece@@QEAA?AV?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@AEAUMineshaftData@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@3@AEAVRandom@@HHHHH@Z
@@ -51,7 +51,7 @@ public:
     );
 
     // symbol: ?setPlanksBlock@MineshaftPiece@@QEAAXAEAVBlockSource@@AEBVBlock@@HHH@Z
-    MCAPI void setPlanksBlock(class BlockSource&, class Block const&, int, int, int);
+    MCAPI void setPlanksBlock(class BlockSource& region, class Block const&, int x, int y, int z);
 
     // NOLINTEND
 };

@@ -132,7 +132,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_serializeTag@NBTSchemaWriter@@AEAA_NV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@@Z
-    MCAPI bool _serializeTag(std::unique_ptr<class Tag>);
+    MCAPI bool _serializeTag(std::unique_ptr<class Tag> tag);
 
     // NOLINTEND
 };

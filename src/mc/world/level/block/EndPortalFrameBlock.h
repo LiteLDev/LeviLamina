@@ -32,9 +32,14 @@ public:
 
     // vIndex: 7, symbol:
     // ?addCollisionShapes@EndPortalFrameBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-    virtual bool
-    addCollisionShapes(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual bool addCollisionShapes(
+        class Block const&                                         block,
+        class BlockSource const&                                   region,
+        class BlockPos const&                                      pos,
+        class AABB const*                                          intersectTestBox,
+        std::vector<class AABB>&                                   inoutBoxes,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
 
     // vIndex: 8, symbol:
     // ?addAABBs@EndPortalFrameBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
@@ -50,7 +55,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@EndPortalFrameBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -142,7 +147,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@EndPortalFrameBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -151,16 +156,16 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@EndPortalFrameBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 165, symbol: ?getResourceCount@EndPortalFrameBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@EndPortalFrameBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
 
     // symbol: ?hasComparatorSignal@EndPortalFrameBlock@@UEBA_NXZ
     MCVAPI bool hasComparatorSignal() const;
@@ -169,7 +174,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0EndPortalFrameBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI EndPortalFrameBlock(std::string const& nameId, int id);
+    MCAPI EndPortalFrameBlock(std::string const& nameId, int);
 
     // NOLINTEND
 
@@ -179,7 +184,7 @@ public:
     MCAPI static void createPortal(class BlockSource& region, class BlockPos const& origin);
 
     // symbol: ?removePortal@EndPortalFrameBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static void removePortal(class BlockSource&, class BlockPos const&);
+    MCAPI static void removePortal(class BlockSource& region, class BlockPos const& origin);
 
     // NOLINTEND
 };

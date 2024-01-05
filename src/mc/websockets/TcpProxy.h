@@ -21,17 +21,17 @@ public:
     virtual ~TcpProxy();
 
     // vIndex: 1, symbol: ?start@RakTcpProxy@@UEAA_NGGG@Z
-    virtual bool start(ushort, ushort, ushort) = 0;
+    virtual bool start(ushort port, ushort, ushort) = 0;
 
     // vIndex: 2, symbol:
     // ?connect@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-    virtual struct RakNet::SystemAddress connect(std::string const&, ushort) = 0;
+    virtual struct RakNet::SystemAddress connect(std::string const& host, ushort port) = 0;
 
     // vIndex: 3, symbol: ?send@RakTcpProxy@@UEAAXPEBDIUSystemAddress@RakNet@@@Z
-    virtual void send(char const*, uint, struct RakNet::SystemAddress) = 0;
+    virtual void send(char const* data, uint length, struct RakNet::SystemAddress address) = 0;
 
     // vIndex: 4, symbol: ?close@RakTcpProxy@@UEAAXUSystemAddress@RakNet@@@Z
-    virtual void close(struct RakNet::SystemAddress) = 0;
+    virtual void close(struct RakNet::SystemAddress address) = 0;
 
     // vIndex: 5, symbol: ?packetsAvailable@RakTcpProxy@@UEAA_NXZ
     virtual bool packetsAvailable() = 0;
@@ -40,7 +40,7 @@ public:
     virtual struct RakNet::Packet* nextPacket() = 0;
 
     // vIndex: 7, symbol: ?deallocatePacket@RakTcpProxy@@UEAAXPEAUPacket@RakNet@@@Z
-    virtual void deallocatePacket(struct RakNet::Packet*) = 0;
+    virtual void deallocatePacket(struct RakNet::Packet* packet) = 0;
 
     // vIndex: 8, symbol: ?nextCompletedConnectionAttempt@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@XZ
     virtual struct RakNet::SystemAddress nextCompletedConnectionAttempt() = 0;

@@ -131,10 +131,10 @@ public:
     // symbol:
     // ??0OldLogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@V?$optional@ULogBlockMapColors@@@2@W4OldLogType@@@Z
     MCAPI OldLogBlock(
-        std::string const&,
+        std::string const& nameId,
         int,
         class WeakPtr<class BlockLegacy>,
-        std::optional<struct LogBlockMapColors>,
+        std::optional<struct LogBlockMapColors> mapColors,
         ::OldLogType
     );
 

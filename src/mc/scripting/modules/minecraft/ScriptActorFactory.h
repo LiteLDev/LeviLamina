@@ -26,12 +26,12 @@ public:
     // symbol:
     // ?createHandle@ScriptActorFactory@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@AEBVActor@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    createHandle(class Actor const&, class Scripting::WeakLifetimeScope const&);
+    createHandle(class Actor const& actor, class Scripting::WeakLifetimeScope const& scope);
 
     // symbol:
     // ?getHandle@ScriptActorFactory@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@AEBVActor@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    getHandle(class Actor const&, class Scripting::WeakLifetimeScope const&);
+    getHandle(class Actor const& actor, class Scripting::WeakLifetimeScope const& scope);
 
     // NOLINTEND
 

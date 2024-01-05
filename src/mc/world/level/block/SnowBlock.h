@@ -127,17 +127,16 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@SnowBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@SnowBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol: ?waterSpreadCausesSpawn@SnowBlock@@UEBA_NXZ
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SnowBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SnowBlock(std::string const& nameId, int id);
+    MCAPI SnowBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

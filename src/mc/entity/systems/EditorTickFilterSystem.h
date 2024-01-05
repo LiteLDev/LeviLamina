@@ -19,13 +19,21 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_addPauseTickNeeded@EditorTickFilterSystem@@SAXAEAVStrictEntityContext@@AEAVActorTickNeededComponent@@AEAV?$EntityModifier@V?$FlagComponent@UEditorActorPauseTickNeededFlag@@@@@@@Z
-    MCAPI static void
-    _addPauseTickNeeded(class StrictEntityContext&, class ActorTickNeededComponent&, class EntityModifier<class FlagComponent<struct EditorActorPauseTickNeededFlag>>&);
+    MCAPI static void _addPauseTickNeeded(
+        class StrictEntityContext& entity,
+        class ActorTickNeededComponent&,
+        class EntityModifier<class FlagComponent<struct EditorActorPauseTickNeededFlag>>& modifier
+    );
 
     // symbol:
     // ?_tickAddPauseTickNeeded@EditorTickFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UEditorActorPausedFlag@@@@@@VActorTickNeededComponent@@@@V?$EntityModifier@V?$FlagComponent@UEditorActorPauseTickNeededFlag@@@@@@@Z
-    MCAPI static void
-        _tickAddPauseTickNeeded(class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct EditorActorPausedFlag>>, class ActorTickNeededComponent>, class EntityModifier<class FlagComponent<struct EditorActorPauseTickNeededFlag>>);
+    MCAPI static void _tickAddPauseTickNeeded(
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<class FlagComponent<struct EditorActorPausedFlag>>,
+            class ActorTickNeededComponent>                                              view,
+        class EntityModifier<class FlagComponent<struct EditorActorPauseTickNeededFlag>> modifier
+    );
 
     // symbol: ?createAddPauseTickNeeded@EditorTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createAddPauseTickNeeded();

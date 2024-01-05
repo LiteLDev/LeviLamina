@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?convertFacingDirectionToDirection@Direction@@SA?AW4Type@1@E@Z
-    MCAPI static ::Direction::Type convertFacingDirectionToDirection(uchar);
+    MCAPI static ::Direction::Type convertFacingDirectionToDirection(uchar facingDirection);
 
     // symbol: ?getDirection@Direction@@SA?AW4Type@1@MM@Z
     MCAPI static ::Direction::Type getDirection(float xd, float zd);

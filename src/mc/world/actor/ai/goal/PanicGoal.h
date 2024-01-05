@@ -42,7 +42,7 @@ public:
     // symbol:
     // ??0PanicGoal@@QEAA@AEAVMob@@M_NW4LevelSoundEvent@Legacy@Puv@@UFloatRange@@11V?$vector@W4ActorDamageCause@@V?$allocator@W4ActorDamageCause@@@std@@@std@@@Z
     MCAPI
-    PanicGoal(class Mob&, float, bool, ::Puv::Legacy::LevelSoundEvent, struct FloatRange, bool, bool, std::vector<::ActorDamageCause>);
+    PanicGoal(class Mob& mob, float speedMultiplier, bool ignoreMobDamage, ::Puv::Legacy::LevelSoundEvent sound, struct FloatRange soundIntervalRange, bool forceUse, bool preferWater, std::vector<::ActorDamageCause>);
 
     // NOLINTEND
 

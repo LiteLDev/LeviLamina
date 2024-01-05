@@ -30,7 +30,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@ClientCacheMissResponsePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0ClientCacheMissResponsePacket@@QEAA@XZ
     MCAPI ClientCacheMissResponsePacket();

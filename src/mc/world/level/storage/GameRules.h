@@ -26,7 +26,7 @@ public:
     MCAPI void deserializeRules(class GameRulesChangedPacketData const& ruleData);
 
     // symbol: ?getBool@GameRules@@QEBA_NUGameRuleId@@_N@Z
-    MCAPI bool getBool(struct GameRuleId, bool) const;
+    MCAPI bool getBool(struct GameRuleId ruleType, bool defaultValue) const;
 
     // symbol: ?getInt@GameRules@@QEBAHUGameRuleId@@@Z
     MCAPI int getInt(struct GameRuleId ruleType) const;
@@ -123,8 +123,15 @@ public:
 
     // symbol:
     // ?_setGameRule@GameRules@@AEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@PEAVGameRule@@TValue@4@W4Type@4@_NPEA_N4PEAVValidationError@4@@Z
-    MCAPI std::unique_ptr<class GameRulesChangedPacket>
-    _setGameRule(class GameRule*, union GameRule::Value, ::GameRule::Type, bool, bool*, bool*, class GameRule::ValidationError*);
+    MCAPI std::unique_ptr<class GameRulesChangedPacket> _setGameRule(
+        class GameRule*                  gameRule,
+        union GameRule::Value            value,
+        ::GameRule::Type                 type,
+        bool                             returnPacket,
+        bool*                            pValueValidated,
+        bool*                            pValueChanged,
+        class GameRule::ValidationError* errorOutput
+    );
 
     // symbol:
     // ?_setRule@GameRules@@AEAA?AV?$unique_ptr@VGameRulesChangedPacket@@U?$default_delete@VGameRulesChangedPacket@@@std@@@std@@UGameRuleId@@TValue@GameRule@@W4Type@6@_NPEA_N4PEAVValidationError@6@@Z

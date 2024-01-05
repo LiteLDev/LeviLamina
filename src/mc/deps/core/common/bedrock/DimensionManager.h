@@ -31,17 +31,17 @@ public:
     // symbol:
     // ??0DimensionManager@@QEAA@V?$not_null@V?$NonOwnerPointer@VIDimensionFactory@@@Bedrock@@@gsl@@V?$optional@VDimensionDefinitionGroup@@@std@@@Z
     MCAPI
-    DimensionManager(Bedrock::NotNullNonOwnerPtr<class IDimensionFactory>, std::optional<class DimensionDefinitionGroup>);
+    DimensionManager(Bedrock::NotNullNonOwnerPtr<class IDimensionFactory> dimensionFactory, std::optional<class DimensionDefinitionGroup>);
 
     // symbol: ?forEachDimension@DimensionManager@@QEAAXV?$function@$$A6A_NAEAVDimension@@@Z@std@@@Z
-    MCAPI void forEachDimension(std::function<bool(class Dimension&)>);
+    MCAPI void forEachDimension(std::function<bool(class Dimension&)> callback);
 
     // symbol: ?forEachDimension@DimensionManager@@QEBAXV?$function@$$A6A_NAEBVDimension@@@Z@std@@@Z
-    MCAPI void forEachDimension(std::function<bool(class Dimension const&)>) const;
+    MCAPI void forEachDimension(std::function<bool(class Dimension const&)> callback) const;
 
     // symbol:
     // ?getDimension@DimensionManager@@QEBA?AV?$WeakRefT@U?$SharePtrRefTraits@VDimension@@@@@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getDimension(DimensionType) const;
+    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getDimension(DimensionType dimensionType) const;
 
     // symbol:
     // ?getDimensionDefinition@DimensionManager@@QEBA?AV?$optional@UDimensionDefinition@DimensionDefinitionGroup@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
@@ -53,18 +53,19 @@ public:
 
     // symbol:
     // ?getOrCreateDimension@DimensionManager@@QEAA?AV?$WeakRefT@U?$SharePtrRefTraits@VDimension@@@@@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getOrCreateDimension(DimensionType);
+    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getOrCreateDimension(DimensionType dimensionType);
 
     // symbol:
     // ?getRandomDimension@DimensionManager@@QEAA?AV?$WeakRefT@U?$SharePtrRefTraits@VDimension@@@@@@AEAVRandom@@@Z
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getRandomDimension(class Random&);
+    MCAPI class WeakRefT<struct SharePtrRefTraits<class Dimension>> getRandomDimension(class Random& random);
 
     // symbol: ?hasDimensions@DimensionManager@@QEBA_NXZ
     MCAPI bool hasDimensions() const;
 
     // symbol:
     // ?registerOnNewDimensionCreated@DimensionManager@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEAVDimension@@@Z@std@@@Z
-    MCAPI class Bedrock::PubSub::Subscription registerOnNewDimensionCreated(std::function<void(class Dimension&)>);
+    MCAPI class Bedrock::PubSub::Subscription
+    registerOnNewDimensionCreated(std::function<void(class Dimension&)> callback);
 
     // symbol: ?setDimensionDefinitionGroup@DimensionManager@@QEAAXV?$optional@VDimensionDefinitionGroup@@@std@@@Z
     MCAPI void setDimensionDefinitionGroup(std::optional<class DimensionDefinitionGroup>);

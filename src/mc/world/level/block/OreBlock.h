@@ -105,7 +105,7 @@ public:
     // vIndex: 95, symbol:
     // ?spawnResources@OreBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Randomize& randomize, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 109, symbol: __unk_vfn_109
@@ -137,13 +137,13 @@ public:
 
     // vIndex: 164, symbol: ?getResourceItem@OreBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
     virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    getResourceItem(class Randomize& randomize, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 165, symbol: ?getResourceCount@OreBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const& block, int bonusLootLevel) const;
 
     // symbol: ??0OreBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI OreBlock(std::string const& nameId, int id);
+    MCAPI OreBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

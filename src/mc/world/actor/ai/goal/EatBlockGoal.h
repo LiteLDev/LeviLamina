@@ -38,10 +38,10 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0EatBlockGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit EatBlockGoal(class Mob&);
+    MCAPI explicit EatBlockGoal(class Mob& mob);
 
     // symbol: ?getEatSuccessChance@EatBlockGoal@@QEBAMAEAVActor@@@Z
-    MCAPI float getEatSuccessChance(class Actor&) const;
+    MCAPI float getEatSuccessChance(class Actor& owner) const;
 
     // NOLINTEND
 };

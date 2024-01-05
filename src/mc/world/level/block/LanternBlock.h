@@ -151,7 +151,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@LanternBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -172,7 +172,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0LanternBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LanternBlock(std::string const& nameId, int id);
+    MCAPI LanternBlock(std::string const& nameId, int);
 
     // NOLINTEND
 

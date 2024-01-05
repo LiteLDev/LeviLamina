@@ -24,14 +24,14 @@ MCAPI std::nullopt_t createContext();
 MCAPI struct Bedrock::Detail::ErrorInfoBuilder<std::error_code> createError(std::errc);
 
 // symbol: ?defaultDataStoreDelete@Detail@Bedrock@@YAXAEBVPath@Core@@@Z
-MCAPI void defaultDataStoreDelete(class Core::Path const&);
+MCAPI void defaultDataStoreDelete(class Core::Path const& path);
 
 // symbol:
 // ?defaultDataStoreLoad@Detail@Bedrock@@YA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBVPath@Core@@@Z
 MCAPI std::optional<std::string> defaultDataStoreLoad(class Core::Path const&);
 
 // symbol: ?defaultDataStoreSave@Detail@Bedrock@@YAXAEBVPath@Core@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-MCAPI void defaultDataStoreSave(class Core::Path const&, std::string_view);
+MCAPI void defaultDataStoreSave(class Core::Path const& path, std::string_view data);
 // NOLINTEND
 
 }; // namespace Bedrock::Detail

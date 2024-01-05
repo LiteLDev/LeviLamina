@@ -22,17 +22,17 @@ public:
     virtual ::StructurePieceType getType() const;
 
     // vIndex: 4, symbol: ?postProcess@SHFillerCorridor@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual bool postProcess(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(class BlockSource& region, class Random&, class BoundingBox const& chunkBB);
 
     // symbol:
     // ?findPieceBox@SHFillerCorridor@@SA?AVBoundingBox@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@HHHH@Z
     MCAPI static class BoundingBox findPieceBox(
         std::vector<std::unique_ptr<class StructurePiece>>& pieces,
-        class Random&                                       random,
-        int                                                 footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction
+        class Random&,
+        int footX,
+        int footY,
+        int footZ,
+        int direction
     );
 
     // NOLINTEND

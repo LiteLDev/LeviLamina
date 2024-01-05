@@ -70,50 +70,54 @@ public:
 
     // symbol:
     // ?onInventoryItemCraftedAutomaticallyByRecipe@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@@Z
-    MCVAPI ::EventResult onInventoryItemCraftedAutomaticallyByRecipe(class ItemStackBase const&);
+    MCVAPI ::EventResult onInventoryItemCraftedAutomaticallyByRecipe(class ItemStackBase const& item);
 
     // symbol: ?onInventoryItemOpened@ItemEventListener@@UEAA?AW4EventResult@@_N@Z
-    MCVAPI ::EventResult onInventoryItemOpened(bool);
+    MCVAPI ::EventResult onInventoryItemOpened(bool workbench);
 
     // symbol: ?onInventoryLayoutSelected@ItemEventListener@@UEAA?AW4EventResult@@HH@Z
-    MCVAPI ::EventResult onInventoryLayoutSelected(int, int);
+    MCVAPI ::EventResult onInventoryLayoutSelected(int activeInventoryLayout, int activeInventoryLeftTabIndex);
 
     // symbol:
     // ?onItemDefinitionEventTriggered@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI ::EventResult onItemDefinitionEventTriggered(class ItemStackBase const&, std::string const&);
+    MCVAPI ::EventResult onItemDefinitionEventTriggered(class ItemStackBase const& item, std::string const& event);
 
     // symbol: ?onItemModifiedActor@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBVActor@@@Z
-    MCVAPI ::EventResult onItemModifiedActor(class ItemStackBase const&, class Actor const&);
+    MCVAPI ::EventResult onItemModifiedActor(class ItemStackBase const& item, class Actor const& modifiedActor);
 
     // symbol: ?onItemSelected@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@@Z
     MCVAPI ::EventResult onItemSelected(class ItemStackBase const&);
 
     // symbol: ?onItemSelectedSlot@ItemEventListener@@UEAA?AW4EventResult@@H@Z
-    MCVAPI ::EventResult onItemSelectedSlot(int);
+    MCVAPI ::EventResult onItemSelectedSlot(int slot);
 
     // symbol: ?onItemSmelted@ItemEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@1@Z
-    MCVAPI ::EventResult onItemSmelted(class Player&, class ItemDescriptor const&, class ItemDescriptor const&);
+    MCVAPI ::EventResult
+    onItemSmelted(class Player& player, class ItemDescriptor const& item, class ItemDescriptor const& lastFuelItem);
 
     // symbol: ?onItemSpawnedActor@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBVActor@@@Z
-    MCVAPI ::EventResult onItemSpawnedActor(class ItemStackBase const&, class Actor const&);
+    MCVAPI ::EventResult onItemSpawnedActor(class ItemStackBase const& item, class Actor const& spawnedActor);
 
     // symbol: ?onItemSpawningActor@ItemEventListener@@UEAA?AW4EventResult@@AEBVActor@@@Z
-    MCVAPI ::EventResult onItemSpawningActor(class Actor const&);
+    MCVAPI ::EventResult onItemSpawningActor(class Actor const& spawningActor);
 
     // symbol:
     // ?onItemTransferredFromContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI ::EventResult onItemTransferredFromContainer(class ItemStackBase const&, std::string const&);
+    MCVAPI ::EventResult
+    onItemTransferredFromContainer(class ItemStackBase const& item, std::string const& srcContainerName);
 
     // symbol:
     // ?onItemTransferredToContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI ::EventResult onItemTransferredToContainer(class ItemStackBase const&, std::string const&);
+    MCVAPI ::EventResult
+    onItemTransferredToContainer(class ItemStackBase const& item, std::string const& dstContainerName);
 
     // symbol:
     // ?onPreviewItemPopulatedInContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI ::EventResult onPreviewItemPopulatedInContainer(class ItemStackBase const&, std::string const&);
+    MCVAPI ::EventResult
+    onPreviewItemPopulatedInContainer(class ItemStackBase const& item, std::string const& containerName);
 
     // symbol: ?onRecipeSelected@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@@Z
-    MCVAPI ::EventResult onRecipeSelected(class ItemStackBase const&);
+    MCVAPI ::EventResult onRecipeSelected(class ItemStackBase const& item);
 
     // NOLINTEND
 };

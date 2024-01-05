@@ -21,7 +21,7 @@ public:
     virtual ::BlockPalette::PaletteType getPaletteType();
 
     // vIndex: 2, symbol: ?appendBlock@BlockHashPalette@@UEAAXAEBVBlock@@@Z
-    virtual void appendBlock(class Block const&);
+    virtual void appendBlock(class Block const& block);
 
     // vIndex: 3, symbol: ?getBlock@BlockHashPalette@@UEBAAEBVBlock@@AEBI@Z
     virtual class Block const& getBlock(uint const&) const;
@@ -30,7 +30,7 @@ public:
     virtual void assignBlockNetworkId(class Block const&, uint64) const;
 
     // symbol: ??0BlockHashPalette@@QEAA@AEAVLevel@@@Z
-    MCAPI explicit BlockHashPalette(class Level&);
+    MCAPI explicit BlockHashPalette(class Level& level);
 
     // NOLINTEND
 };

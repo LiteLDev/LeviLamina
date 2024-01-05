@@ -85,7 +85,11 @@ public:
     virtual void setTransitioningSitting(bool value);
 
     // symbol: ??0Panda@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Panda(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Panda(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getLieOnBackAmount@Panda@@QEBAMM@Z
     MCAPI float getLieOnBackAmount(float a) const;

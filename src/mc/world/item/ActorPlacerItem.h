@@ -54,13 +54,13 @@ public:
     virtual bool isLiquidClipItem() const;
 
     // vIndex: 44, symbol: ?shouldInteractionWithBlockBypassLiquid@ActorPlacerItem@@UEBA_NAEBVBlock@@@Z
-    virtual bool shouldInteractionWithBlockBypassLiquid(class Block const&) const;
+    virtual bool shouldInteractionWithBlockBypassLiquid(class Block const& block) const;
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
 
     // vIndex: 53, symbol: ?isValidAuxValue@ActorPlacerItem@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int auxValue) const;
 
     // vIndex: 56, symbol: __unk_vfn_56
     virtual void __unk_vfn_56();
@@ -84,7 +84,8 @@ public:
     virtual struct ActorDefinitionIdentifier getActorIdentifier(class ItemStack const&) const;
 
     // vIndex: 71, symbol: ?dispense@ActorPlacerItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 81, symbol:
     // ?buildDescriptionId@ActorPlacerItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
@@ -102,7 +103,8 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@ActorPlacerItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol: ?getBaseColor@ActorPlacerItem@@UEBA?AVColor@mce@@AEBVItemStack@@@Z
     MCVAPI class mce::Color getBaseColor(class ItemStack const&) const;
@@ -118,34 +120,39 @@ public:
 
     // symbol:
     // ??0ActorPlacerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBUActorDefinitionIdentifier@@@Z
-    MCAPI ActorPlacerItem(std::string const&, int, struct ActorDefinitionIdentifier const&);
+    MCAPI ActorPlacerItem(std::string const& name, int, struct ActorDefinitionIdentifier const& actorID);
 
     // symbol: ?forEachCustomEgg@ActorPlacerItem@@SAXVItemRegistryRef@@AEBV?$function@$$A6AXAEBVItem@@@Z@std@@@Z
-    MCAPI static void forEachCustomEgg(class ItemRegistryRef, std::function<void(class Item const&)> const&);
+    MCAPI static void forEachCustomEgg(class ItemRegistryRef, std::function<void(class Item const&)> const& callback);
 
     // symbol:
     // ?getCustomSpawnEggName@ActorPlacerItem@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     MCAPI static std::string getCustomSpawnEggName(int);
 
     // symbol: ?registerCustomEggs@ActorPlacerItem@@SAXVItemRegistryRef@@AEBVActorInfoRegistry@@@Z
-    MCAPI static void registerCustomEggs(class ItemRegistryRef, class ActorInfoRegistry const&);
+    MCAPI static void registerCustomEggs(class ItemRegistryRef, class ActorInfoRegistry const& registry);
 
     // symbol: ?spawnOrMoveAgent@ActorPlacerItem@@SAPEAVActor@@AEBVVec3@@AEAV2@@Z
-    MCAPI static class Actor* spawnOrMoveAgent(class Vec3 const&, class Actor&);
+    MCAPI static class Actor* spawnOrMoveAgent(class Vec3 const& pos, class Actor& owner);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_getActorID@ActorPlacerItem@@AEBA?AUActorDefinitionIdentifier@@AEAVBlockSource@@@Z
-    MCAPI struct ActorDefinitionIdentifier _getActorID(class BlockSource&) const;
+    MCAPI struct ActorDefinitionIdentifier _getActorID(class BlockSource& region) const;
 
     // symbol: ?_spawnActorAt@ActorPlacerItem@@AEBAPEAVActor@@AEAVBlockSource@@AEBVVec3@@1AEBVItemStack@@PEAV2@@Z
-    MCAPI class Actor*
-    _spawnActorAt(class BlockSource&, class Vec3 const&, class Vec3 const&, class ItemStack const&, class Actor*) const;
+    MCAPI class Actor* _spawnActorAt(
+        class BlockSource&     region,
+        class Vec3 const&      pos,
+        class Vec3 const&      playerFeetPos,
+        class ItemStack const& item,
+        class Actor*           spawner
+    ) const;
 
     // symbol: ?_setAgentOwner@ActorPlacerItem@@CAXAEAVPlayer@@AEAVAgent@@@Z
-    MCAPI static void _setAgentOwner(class Player&, class Agent&);
+    MCAPI static void _setAgentOwner(class Player& owner, class Agent& agent);
 
     // NOLINTEND
 

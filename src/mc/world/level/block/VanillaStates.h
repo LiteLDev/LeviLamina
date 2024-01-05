@@ -445,7 +445,7 @@ MCAPI extern class BlockStateVariant<int> const WeirdoDirection;
 MCAPI extern class BlockStateVariant<::WoodType> const WoodType;
 
 // symbol: ?getState@VanillaStates@@YAPEBVBlockState@@AEBVHashedString@@@Z
-MCAPI class BlockState const* getState(class HashedString const&);
+MCAPI class BlockState const* getState(class HashedString const& name);
 
 // symbol: ?registerStates@VanillaStates@@YAXXZ
 MCAPI void registerStates();

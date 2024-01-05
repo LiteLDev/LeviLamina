@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 5, symbol: ?reloadHardcodedClient@Blaze@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcodedClient(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcodedClient(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1Blaze@@UEAA@XZ
     virtual ~Blaze() = default;
@@ -94,7 +94,11 @@ public:
     virtual bool isDarkEnoughToSpawn() const;
 
     // symbol: ??0Blaze@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Blaze(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Blaze(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?preTravel@Blaze@@QEAAXXZ
     MCAPI void preTravel();

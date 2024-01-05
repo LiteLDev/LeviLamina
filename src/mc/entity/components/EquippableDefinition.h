@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initialize@EquippableDefinition@@QEBAXAEAVEntityContext@@AEAVEquippableComponent@@@Z
-    MCAPI void initialize(class EntityContext& entity, class EquippableComponent& component) const;
+    MCAPI void initialize(class EntityContext&, class EquippableComponent& component) const;
 
     // symbol:
     // ?buildSchema@EquippableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VEquippableDefinition@@@JsonUtil@@@std@@@Z

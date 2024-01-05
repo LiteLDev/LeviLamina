@@ -18,23 +18,23 @@ public:
     virtual ~MusicCommand() = default;
 
     // vIndex: 2, symbol: ?execute@MusicCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?setup@MusicCommand@@SAXAEAVCommandRegistry@@@Z
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_handleActionQueueOrPlay@MusicCommand@@AEBAXAEAVCompoundTag@@AEAVCommandOutput@@@Z
-    MCAPI void _handleActionQueueOrPlay(class CompoundTag&, class CommandOutput&) const;
+    MCAPI void _handleActionQueueOrPlay(class CompoundTag& data, class CommandOutput& output) const;
 
     // symbol: ?_handleActionStop@MusicCommand@@AEBAXAEAVCompoundTag@@AEAVCommandOutput@@@Z
-    MCAPI void _handleActionStop(class CompoundTag&, class CommandOutput&) const;
+    MCAPI void _handleActionStop(class CompoundTag& data, class CommandOutput& output) const;
 
     // symbol: ?_handleActionVolume@MusicCommand@@AEBAXAEAVCompoundTag@@AEAVCommandOutput@@@Z
-    MCAPI void _handleActionVolume(class CompoundTag&, class CommandOutput&) const;
+    MCAPI void _handleActionVolume(class CompoundTag& data, class CommandOutput& output) const;
 
     // NOLINTEND
 };

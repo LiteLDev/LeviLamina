@@ -30,7 +30,7 @@ public:
                                                             class FlagComponent<struct LocalPlayerComponentFlag>,
                                                             struct PassengerComponent>,
                                                         struct StateVectorComponent const,
-                                                        struct VanillaClientGameplayComponent>);
+                                                        struct VanillaClientGameplayComponent> view);
 
     // symbol: ?createSystem@StorePreviousRideStatsSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();

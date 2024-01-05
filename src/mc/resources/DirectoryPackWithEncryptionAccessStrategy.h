@@ -46,7 +46,7 @@ public:
     virtual bool isTrusted() const;
 
     // vIndex: 7, symbol: ?hasAsset@DirectoryPackWithEncryptionAccessStrategy@@UEBA_NAEBVPath@Core@@_N1@Z
-    virtual bool hasAsset(class Core::Path const&, bool, bool) const;
+    virtual bool hasAsset(class Core::Path const& packRelativePath, bool trustedContentOnly, bool) const;
 
     // vIndex: 8, symbol: ?hasFolder@DirectoryPackWithEncryptionAccessStrategy@@UEBA_NAEBVPath@Core@@@Z
     virtual bool hasFolder(class Core::Path const& packRelativePath) const;
@@ -93,8 +93,11 @@ public:
 
     // symbol:
     // ??0DirectoryPackWithEncryptionAccessStrategy@@QEAA@AEBVResourceLocation@@0AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-    MCAPI
-    DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const&, class ResourceLocation const&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&);
+    MCAPI DirectoryPackWithEncryptionAccessStrategy(
+        class ResourceLocation const&                                       packLocation,
+        class ResourceLocation const&                                       encryptedContentLocation,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    );
 
     // NOLINTEND
 

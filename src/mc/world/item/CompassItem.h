@@ -77,10 +77,11 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@CompassItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& itemStack, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol: ??0CompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CompassItem(std::string const& name, int id);
+    MCAPI CompassItem(std::string const& name, int);
 
     // NOLINTEND
 };

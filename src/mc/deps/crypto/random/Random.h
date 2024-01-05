@@ -16,7 +16,7 @@ public:
     MCAPI Random();
 
     // symbol: ?fillData@Random@1Crypto@@QEAAXPEADI@Z
-    MCAPI void fillData(char*, uint);
+    MCAPI void fillData(char* data, uint amount);
 
     // symbol: ?getBytes@Random@1Crypto@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I@Z
     MCAPI std::string getBytes(uint);

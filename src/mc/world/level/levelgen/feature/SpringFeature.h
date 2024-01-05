@@ -25,7 +25,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?isValidSpringBorderBlock@SpringFeature@@AEBA_NAEBVBlockLegacy@@AEAVBlockSource@@@Z
-    MCAPI bool isValidSpringBorderBlock(class BlockLegacy const&, class BlockSource&) const;
+    MCAPI bool isValidSpringBorderBlock(class BlockLegacy const& block, class BlockSource& region) const;
 
     // NOLINTEND
 };

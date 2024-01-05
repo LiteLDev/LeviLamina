@@ -64,7 +64,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 83, symbol: ?handleEntityEvent@GlowSquid@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -76,7 +76,7 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@GlowSquid@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -85,13 +85,17 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 204, symbol: ?_getWalkTargetValue@GlowSquid@@UEAAMAEBVBlockPos@@@Z
-    virtual float _getWalkTargetValue(class BlockPos const&);
+    virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // vIndex: 210, symbol: ?_getInkSquirtSoundEvent@GlowSquid@@MEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ
     virtual ::Puv::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const;
 
     // symbol: ??0GlowSquid@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI GlowSquid(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI GlowSquid(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 

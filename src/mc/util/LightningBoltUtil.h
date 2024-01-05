@@ -5,7 +5,7 @@
 namespace LightningBoltUtil {
 // NOLINTBEGIN
 // symbol: ?_clearCopperOnLightningStrike@LightningBoltUtil@@YAXAEAVBlockSource@@AEBVBlockPos@@@Z
-MCAPI void _clearCopperOnLightningStrike(class BlockSource&, class BlockPos const&);
+MCAPI void _clearCopperOnLightningStrike(class BlockSource& region, class BlockPos const& pos);
 // NOLINTEND
 
 }; // namespace LightningBoltUtil

@@ -12,11 +12,11 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addAdditionalSaveData@VibrationListenerComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol:
     // ?readAdditionalSaveData@VibrationListenerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // NOLINTEND
 };

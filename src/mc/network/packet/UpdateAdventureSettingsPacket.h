@@ -26,17 +26,17 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@UpdateAdventureSettingsPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@UpdateAdventureSettingsPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0UpdateAdventureSettingsPacket@@QEAA@XZ
     MCAPI UpdateAdventureSettingsPacket();
 
     // symbol: ??0UpdateAdventureSettingsPacket@@QEAA@AEBUAdventureSettings@@@Z
-    MCAPI explicit UpdateAdventureSettingsPacket(struct AdventureSettings const&);
+    MCAPI explicit UpdateAdventureSettingsPacket(struct AdventureSettings const& adventureSettings);
 
     // NOLINTEND
 };

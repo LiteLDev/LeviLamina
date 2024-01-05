@@ -29,11 +29,11 @@ public:
     MCAPI double getTimer() const;
 
     // symbol: ?increaseTimer@BuoyancyComponent@@QEAAXM@Z
-    MCAPI void increaseTimer(float);
+    MCAPI void increaseTimer(float toAdd);
 
     // symbol:
     // ?loadData@BuoyancyComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@@Z
-    MCAPI void loadData(std::string const&, class SemVersion const&);
+    MCAPI void loadData(std::string const& data, class SemVersion const& engineVersion);
 
     // symbol: ?needToResurface@BuoyancyComponent@@QEBA_NAEBUStateVectorComponent@@AEBVIConstBlockSource@@@Z
     MCAPI bool needToResurface(struct StateVectorComponent const&, class IConstBlockSource const&) const;

@@ -39,7 +39,7 @@ public:
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
     // vIndex: 16, symbol: ?randomlyModifyPosition@MangrovePropaguleBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
-    virtual class Vec3 randomlyModifyPosition(class BlockPos const&) const;
+    virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -115,13 +115,14 @@ public:
 
     // vIndex: 79, symbol:
     // ?onFertilized@MangrovePropaguleBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType) const;
 
     // vIndex: 81, symbol: ?canBeFertilized@MangrovePropaguleBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 86, symbol: ?mayPlaceOn@MangrovePropaguleBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlaceOn(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -139,7 +140,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@MangrovePropaguleBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 136, symbol: ?init@MangrovePropaguleBlock@@UEAAAEAVBlockLegacy@@XZ
     virtual class BlockLegacy& init();
@@ -151,7 +152,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 151, symbol: ?randomTick@MangrovePropaguleBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -160,35 +161,35 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@MangrovePropaguleBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 164, symbol: ?getResourceItem@MangrovePropaguleBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@MangrovePropaguleBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@MangrovePropaguleBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol: ?waterSpreadCausesSpawn@MangrovePropaguleBlock@@UEBA_NXZ
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0MangrovePropaguleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MangrovePropaguleBlock(std::string const&, int);
+    MCAPI MangrovePropaguleBlock(std::string const& nameId, int);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_growTree@MangrovePropaguleBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    MCAPI bool _growTree(class BlockSource&, class BlockPos const&, class Random&) const;
+    MCAPI bool _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ?_isFullyGrown@MangrovePropaguleBlock@@AEBA_NAEBVBlock@@@Z
-    MCAPI bool _isFullyGrown(class Block const&) const;
+    MCAPI bool _isFullyGrown(class Block const& block) const;
 
     // symbol: ?_shouldDropMangrovePropaguleItem@MangrovePropaguleBlock@@AEBA_NAEBVBlock@@@Z
-    MCAPI bool _shouldDropMangrovePropaguleItem(class Block const&) const;
+    MCAPI bool _shouldDropMangrovePropaguleItem(class Block const& block) const;
 
     // NOLINTEND
 };

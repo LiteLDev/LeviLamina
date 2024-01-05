@@ -46,12 +46,12 @@ public:
                       struct AddRemove<>,
                       struct GlobalRead<>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&);
+                      struct EntityFactoryT<>>& context);
 
     // symbol:
     // ?_tickSneakingSystem@SneakingSystem@@SAXAEAVStrictEntityContext@@AEBV?$FlagComponent@UPlayerComponentFlag@@@@AEAUSneakingComponent@@AEAVActorOwnerComponent@@@Z
     MCAPI static void
-    _tickSneakingSystem(class StrictEntityContext&, class FlagComponent<struct PlayerComponentFlag> const&, struct SneakingComponent&, class ActorOwnerComponent&);
+    _tickSneakingSystem(class StrictEntityContext&, class FlagComponent<struct PlayerComponentFlag> const&, struct SneakingComponent& sneaking, class ActorOwnerComponent&);
 
     // symbol: ?createSystem@SneakingSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();

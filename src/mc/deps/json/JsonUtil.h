@@ -40,11 +40,12 @@ MCAPI class BlockLegacy const* getBlockLegacy(std::string const&);
 
 // symbol:
 // ?getMemberByCaseInsensitiveName@JsonUtil@@YAAEAVValue@Json@@AEAV23@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-MCAPI class Json::Value& getMemberByCaseInsensitiveName(class Json::Value&, std::string_view const&);
+MCAPI class Json::Value& getMemberByCaseInsensitiveName(class Json::Value& node, std::string_view const& memberName);
 
 // symbol:
 // ?getMemberByCaseInsensitiveNameConst@JsonUtil@@YAAEBVValue@Json@@AEBV23@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-MCAPI class Json::Value const& getMemberByCaseInsensitiveNameConst(class Json::Value const&, std::string_view const&);
+MCAPI class Json::Value const&
+getMemberByCaseInsensitiveNameConst(class Json::Value const& node, std::string_view const& memberName);
 
 // symbol:
 // ?getSchemaMap@JsonUtil@@YAAEAV?$map@VHashedString@@V?$map@VSemVersion@@V?$shared_ptr@VJsonSchemaNodeBase@JsonUtil@@@std@@U?$less@VSemVersion@@@3@V?$allocator@U?$pair@$$CBVSemVersion@@V?$shared_ptr@VJsonSchemaNodeBase@JsonUtil@@@std@@@std@@@3@@std@@U?$less@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$map@VSemVersion@@V?$shared_ptr@VJsonSchemaNodeBase@JsonUtil@@@std@@U?$less@VSemVersion@@@3@V?$allocator@U?$pair@$$CBVSemVersion@@V?$shared_ptr@VJsonSchemaNodeBase@JsonUtil@@@std@@@std@@@3@@std@@@std@@@3@@std@@XZ
@@ -55,7 +56,7 @@ MCAPI std::map<class HashedString, std::map<class SemVersion, std::shared_ptr<cl
 MCAPI class Bedrock::Threading::Mutex& getSchemaMapLock();
 
 // symbol: ?parseBannerBlockType@JsonUtil@@YA_NAEAW4BannerBlockType@@AEBVValue@Json@@@Z
-MCAPI bool parseBannerBlockType(::BannerBlockType&, class Json::Value const&);
+MCAPI bool parseBannerBlockType(::BannerBlockType&, class Json::Value const& root);
 
 // symbol:
 // ?parseItem@JsonUtil@@YA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAHV?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
@@ -63,7 +64,7 @@ MCAPI bool
 parseItem(std::string& outItemName, std::string& outItemNamespace, int& inoutItemAux, std::string_view inString);
 
 // symbol: ?parseItemColor@JsonUtil@@YA_NAEAW4ItemColor@@AEBVValue@Json@@@Z
-MCAPI bool parseItemColor(::ItemColor&, class Json::Value const&);
+MCAPI bool parseItemColor(::ItemColor&, class Json::Value const& root);
 
 // symbol: ?parseRange@JsonUtil@@YA_NAEBVValue@Json@@AEAH1@Z
 MCAPI bool parseRange(class Json::Value const& root, int& outMin, int& outMax);
@@ -73,8 +74,17 @@ MCAPI bool parseVec3(class Vec3& outVec, class Json::Value const& root);
 
 // symbol:
 // ?printJsonSchema_childNode@JsonUtil@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBVHashedString@@1_N_K411@Z
-MCAPI void
-printJsonSchema_childNode(std::string&, std::string const&, class HashedString const&, std::string const&, bool, uint64, uint64, std::string const&, std::string const&);
+MCAPI void printJsonSchema_childNode(
+    std::string&              output,
+    std::string const&        indent,
+    class HashedString const& typeName,
+    std::string const&        memberName,
+    bool                      isRequired,
+    uint64                    minChildren,
+    uint64                    maxChildren,
+    std::string const&,
+    std::string const& documentation
+);
 
 // symbol:
 // ?setDefaultPrettyName@JsonUtil@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVHashedString@@@Z

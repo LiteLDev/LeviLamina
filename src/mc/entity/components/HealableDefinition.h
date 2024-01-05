@@ -26,7 +26,7 @@ public:
 
     // symbol:
     // ?addFeedItemByName@HealableDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void addFeedItemByName(std::string const& name);
+    MCAPI void addFeedItemByName(std::string const& itemName);
 
     // symbol:
     // ?buildSchema@HealableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VHealableDefinition@@@JsonUtil@@@std@@@Z

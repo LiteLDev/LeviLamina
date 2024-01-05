@@ -46,7 +46,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 32, symbol: ?startRiding@Fish@@UEAA_NAEAVActor@@@Z
-    virtual bool startRiding(class Actor& ride);
+    virtual bool startRiding(class Actor&);
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
@@ -88,7 +88,11 @@ public:
     virtual bool createAIGoals();
 
     // symbol: ??0Fish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Fish(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Fish(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?postNormalTick@Fish@@QEAAXXZ
     MCAPI void postNormalTick();

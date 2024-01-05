@@ -113,7 +113,7 @@ public:
     // vIndex: 95, symbol:
     // ?spawnResources@PotatoBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Randomize& randomize, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 109, symbol: __unk_vfn_109
@@ -153,10 +153,10 @@ public:
     virtual class ItemInstance const getBaseCrop() const;
 
     // vIndex: 173, symbol: ?getCropNum@PotatoBlock@@UEBAHAEAVRandomize@@HH@Z
-    virtual int getCropNum(class Randomize& random, int growth, int bonusLootLevel) const;
+    virtual int getCropNum(class Randomize& randomize, int growth, int bonusLootLevel) const;
 
     // symbol: ??0PotatoBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PotatoBlock(std::string const& nameId, int id);
+    MCAPI PotatoBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

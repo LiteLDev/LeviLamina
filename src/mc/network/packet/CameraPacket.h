@@ -28,7 +28,7 @@ public:
     virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol: ?_read@CameraPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0CameraPacket@@QEAA@XZ
     MCAPI CameraPacket();

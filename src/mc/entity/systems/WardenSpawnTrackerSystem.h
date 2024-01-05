@@ -15,10 +15,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?onLevelAddedPlayer@WardenSpawnTrackerSystem@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
-    MCVAPI ::EventResult onLevelAddedPlayer(class Level&, class Player&);
+    MCVAPI ::EventResult onLevelAddedPlayer(class Level& level, class Player& player);
 
     // symbol: ?tick@WardenSpawnTrackerSystem@@UEAAXAEAVEntityRegistry@@@Z
-    MCVAPI void tick(class EntityRegistry&);
+    MCVAPI void tick(class EntityRegistry& registry);
 
     // NOLINTEND
 };

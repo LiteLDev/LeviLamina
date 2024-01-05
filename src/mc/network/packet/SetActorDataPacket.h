@@ -30,7 +30,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@SetActorDataPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0SetActorDataPacket@@QEAA@XZ
     MCAPI SetActorDataPacket();
@@ -39,9 +39,9 @@ public:
     // ??0SetActorDataPacket@@QEAA@VActorRuntimeID@@AEAVSynchedActorDataEntityWrapper@@PEAVPropertyComponent@@_K_N@Z
     MCAPI SetActorDataPacket(
         class ActorRuntimeID,
-        class SynchedActorDataEntityWrapper&,
+        class SynchedActorDataEntityWrapper& entityData,
         class PropertyComponent*,
-        uint64,
+        uint64 tick,
         bool
     );
 

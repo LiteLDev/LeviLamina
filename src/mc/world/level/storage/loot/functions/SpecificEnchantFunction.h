@@ -38,7 +38,8 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_applyInner@SpecificEnchantFunction@@AEAAXAEAVItemStackBase@@AEAVRandom@@AEAVLootTableContext@@_N@Z
-    MCAPI void _applyInner(class ItemStackBase&, class Random&, class LootTableContext&, bool);
+    MCAPI void
+    _applyInner(class ItemStackBase& itemStack, class Random& random, class LootTableContext&, bool allowNonVanilla);
 
     // NOLINTEND
 };

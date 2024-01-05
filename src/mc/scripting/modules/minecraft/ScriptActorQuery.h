@@ -36,18 +36,25 @@ public:
     // symbol:
     // ?createActorIterator@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptActorIterator@ScriptModuleMinecraft@@@Scripting@@$$QEAV?$CommandSelectorResults@VActor@@@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorIterator>
-    createActorIterator(class CommandSelectorResults<class Actor>&&, class Scripting::WeakLifetimeScope const&);
+    createActorIterator(
+        class CommandSelectorResults<class Actor>&& actors,
+        class Scripting::WeakLifetimeScope const&   scope
+    );
 
     // symbol:
     // ?createPlayerIterator@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptPlayerIterator@ScriptModuleMinecraft@@@Scripting@@$$QEAV?$CommandSelectorResults@VPlayer@@@@AEBVWeakLifetimeScope@4@PEBVDimension@@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayerIterator>
-    createPlayerIterator(class CommandSelectorResults<class Player>&&, class Scripting::WeakLifetimeScope const&, class Dimension const*);
+    createPlayerIterator(
+        class CommandSelectorResults<class Player>&& actors,
+        class Scripting::WeakLifetimeScope const&    scope,
+        class Dimension const*                       dimension
+    );
 
     // symbol:
     // ?getAllPlayers@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@AEBVWeakLifetimeScope@4@AEAVLevel@@@Z
     MCAPI static class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>>
-    getAllPlayers(class Scripting::WeakLifetimeScope const&, class Level&);
+    getAllPlayers(class Scripting::WeakLifetimeScope const& scope, class Level& level);
 
     // symbol:
     // ?matches@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@_N$$V@Scripting@@AEBVActor@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@@Z
@@ -58,25 +65,47 @@ public:
     // ?queryActors@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@W4ActorSelectorType@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@AEBVWeakLifetimeScope@4@PEAVDimension@@AEAVLevel@@@Z
     MCAPI static class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>>
-    queryActors(::ActorSelectorType, std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> const&, class Scripting::WeakLifetimeScope const&, class Dimension*, class Level&);
+    queryActors(
+        ::ActorSelectorType,
+        std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> const& options,
+        class Scripting::WeakLifetimeScope const&                                   scope,
+        class Dimension*                                                            dimension,
+        class Level&                                                                level
+    );
 
     // symbol:
     // ?queryActors_V010@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActorIterator@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@W4ActorSelectorType@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@AEBVWeakLifetimeScope@4@PEAVDimension@@AEAVLevel@@@Z
     MCAPI static class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorIterator>>
-    queryActors_V010(::ActorSelectorType, std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> const&, class Scripting::WeakLifetimeScope const&, class Dimension*, class Level&);
+    queryActors_V010(
+        ::ActorSelectorType,
+        std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> const& options,
+        class Scripting::WeakLifetimeScope const&                                   scope,
+        class Dimension*                                                            dimension,
+        class Level&                                                                level
+    );
 
     // symbol:
     // ?queryPlayers@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@AEBVWeakLifetimeScope@4@PEAVDimension@@AEAVLevel@@@Z
     MCAPI static class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>>>
-    queryPlayers(std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> const&, class Scripting::WeakLifetimeScope const&, class Dimension*, class Level&);
+    queryPlayers(
+        std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> const& options,
+        class Scripting::WeakLifetimeScope const&                                   scope,
+        class Dimension*                                                            dimension,
+        class Level&                                                                level
+    );
 
     // symbol:
     // ?queryPlayers_V010@ScriptActorQuery@ScriptModuleMinecraft@@SA?AV?$Result@V?$StrongTypedObjectHandle@VScriptPlayerIterator@ScriptModuleMinecraft@@@Scripting@@$$V@Scripting@@AEBV?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@AEBVWeakLifetimeScope@4@PEAVDimension@@AEAVLevel@@@Z
     MCAPI static class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayerIterator>>
-    queryPlayers_V010(std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> const&, class Scripting::WeakLifetimeScope const&, class Dimension*, class Level&);
+    queryPlayers_V010(
+        std::optional<struct ScriptModuleMinecraft::ScriptActorQueryOptions> const& options,
+        class Scripting::WeakLifetimeScope const&                                   scope,
+        class Dimension*                                                            dimension,
+        class Level&                                                                level
+    );
 
     // NOLINTEND
 };

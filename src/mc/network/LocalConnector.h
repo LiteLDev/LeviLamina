@@ -79,7 +79,7 @@ public:
 
     // symbol:
     // ?startNatPunchingClient@LocalConnector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-    MCVAPI void startNatPunchingClient(std::string const&, ushort);
+    MCVAPI void startNatPunchingClient(std::string const& address, ushort port);
 
     // symbol: ?disconnect@LocalConnector@@QEAAXXZ
     MCAPI void disconnect();

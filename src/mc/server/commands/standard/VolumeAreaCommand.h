@@ -18,10 +18,10 @@ public:
     virtual ~VolumeAreaCommand() = default;
 
     // vIndex: 2, symbol: ?execute@VolumeAreaCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?setup@VolumeAreaCommand@@SAXAEAVCommandRegistry@@@Z
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
@@ -29,27 +29,39 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_add@VolumeAreaCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEBVDimension@@AEAVVolumeEntityManagerServer@@AEAVPacketSender@@@Z
-    MCAPI void
-    _add(class CommandOrigin const&, class CommandOutput&, class Dimension const&, class VolumeEntityManagerServer&, class PacketSender&)
-        const;
+    MCAPI void _add(
+        class CommandOrigin const& origin,
+        class CommandOutput&       output,
+        class Dimension const&     dimension,
+        class VolumeEntityManagerServer&,
+        class PacketSender& packetSender
+    ) const;
 
     // symbol:
     // ?_list@VolumeAreaCommand@@AEBAXAEAVCommandOutput@@AEBVLevel@@AEBVDimension@@AEBVVolumeEntityManagerServer@@@Z
     MCAPI void
-    _list(class CommandOutput&, class Level const&, class Dimension const&, class VolumeEntityManagerServer const&)
+    _list(class CommandOutput& output, class Level const& level, class Dimension const& dimension, class VolumeEntityManagerServer const&)
         const;
 
     // symbol:
     // ?_remove@VolumeAreaCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEBVDimension@@AEAVVolumeEntityManagerServer@@AEAVPacketSender@@@Z
-    MCAPI void
-    _remove(class CommandOrigin const&, class CommandOutput&, class Dimension const&, class VolumeEntityManagerServer&, class PacketSender&)
-        const;
+    MCAPI void _remove(
+        class CommandOrigin const& origin,
+        class CommandOutput&       output,
+        class Dimension const&     dimension,
+        class VolumeEntityManagerServer&,
+        class PacketSender& packetSender
+    ) const;
 
     // symbol:
     // ?_removeAll@VolumeAreaCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEBVDimension@@AEAVVolumeEntityManagerServer@@AEAVPacketSender@@@Z
-    MCAPI void
-    _removeAll(class CommandOrigin const&, class CommandOutput&, class Dimension const&, class VolumeEntityManagerServer&, class PacketSender&)
-        const;
+    MCAPI void _removeAll(
+        class CommandOrigin const& origin,
+        class CommandOutput&       output,
+        class Dimension const&     dimension,
+        class VolumeEntityManagerServer&,
+        class PacketSender& packetSender
+    ) const;
 
     // NOLINTEND
 };

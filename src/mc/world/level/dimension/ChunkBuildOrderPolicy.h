@@ -24,13 +24,13 @@ public:
     virtual uint registerForUpdates();
 
     // vIndex: 3, symbol: ?unregisterForUpdates@ChunkBuildOrderPolicy@@UEAAXI@Z
-    virtual void unregisterForUpdates(uint);
+    virtual void unregisterForUpdates(uint handle);
 
     // vIndex: 4, symbol: ?setPlayerInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@AEBVVec3@@@Z
-    virtual void setPlayerInfluence(uint, class ChunkPos const&, class Vec3 const&);
+    virtual void setPlayerInfluence(uint handle, class ChunkPos const&, class Vec3 const&);
 
     // vIndex: 5, symbol: ?setTickingAreaInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@HH_N1@Z
-    virtual void setTickingAreaInfluence(uint, class ChunkPos const&, int, int, bool, bool);
+    virtual void setTickingAreaInfluence(uint handle, class ChunkPos const&, int sizeX, int sizeZ, bool isCircle, bool);
 
     // vIndex: 6, symbol: ?updateInfluences@ChunkBuildOrderPolicy@@UEAAXXZ
     virtual void updateInfluences();

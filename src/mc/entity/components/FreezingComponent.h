@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addAdditionalSaveData@FreezingComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?decreaseFreezingEffect@FreezingComponent@@QEAAXXZ
     MCAPI void decreaseFreezingEffect();
@@ -30,7 +30,8 @@ public:
     MCAPI bool isFullyUnfrozen() const;
 
     // symbol: ?readAdditionalSaveData@FreezingComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?resetFreezingEffect@FreezingComponent@@QEAAXXZ
     MCAPI void resetFreezingEffect();

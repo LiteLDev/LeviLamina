@@ -22,8 +22,15 @@ public:
 
     // symbol:
     // ?tickPlayerPreMobTravelSystem@PlayerPreMobTravelSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@UMobTravelComponent@@@@$$CBUAbilitiesComponent@@$$CBUStateVectorComponent@@$$CBUFlySpeedComponent@@@@V?$EntityModifier@UPlayerPreMobTravelComponent@@@@@Z
-    MCAPI static void
-        tickPlayerPreMobTravelSystem(class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PlayerComponentFlag>, struct MobTravelComponent>, struct AbilitiesComponent const, struct StateVectorComponent const, struct FlySpeedComponent const>, class EntityModifier<struct PlayerPreMobTravelComponent>);
+    MCAPI static void tickPlayerPreMobTravelSystem(
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<class FlagComponent<struct PlayerComponentFlag>, struct MobTravelComponent>,
+            struct AbilitiesComponent const,
+            struct StateVectorComponent const,
+            struct FlySpeedComponent const>                      view,
+        class EntityModifier<struct PlayerPreMobTravelComponent> mod
+    );
 
     // NOLINTEND
 };

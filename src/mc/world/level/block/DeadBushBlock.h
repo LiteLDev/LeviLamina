@@ -100,7 +100,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 86, symbol: ?mayPlaceOn@DeadBushBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlaceOn(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 95, symbol:
     // ?spawnResources@DeadBushBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
@@ -139,13 +139,13 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@DeadBushBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const&, int) const;
 
     // symbol: ?canBeSilkTouched@DeadBushBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0DeadBushBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DeadBushBlock(std::string const&, int);
+    MCAPI DeadBushBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

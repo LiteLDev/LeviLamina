@@ -18,12 +18,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?_upgradeOldLimboEntity@TheEndDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
-    MCVAPI void _upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion);
+    MCVAPI void _upgradeOldLimboEntity(class CompoundTag& tag, ::LimboEntitiesVersion vers);
 
     // symbol:
     // ?_wrapStorageForVersionCompatibility@TheEndDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
-    MCVAPI std::unique_ptr<class ChunkSource>
-           _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, ::StorageVersion);
+    MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(
+        std::unique_ptr<class ChunkSource> storageSource,
+        ::StorageVersion                   levelVersion
+    );
 
     // symbol:
     // ?createGenerator@TheEndDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
@@ -33,7 +35,7 @@ public:
     MCVAPI void deserialize(class CompoundTag const& tag);
 
     // symbol: ?fixWallChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-    MCVAPI void fixWallChunk(class ChunkSource&, class LevelChunk&);
+    MCVAPI void fixWallChunk(class ChunkSource& source, class LevelChunk& lc);
 
     // symbol: ?getCloudHeight@TheEndDimension@@UEBAFXZ
     MCVAPI short getCloudHeight() const;
@@ -72,7 +74,7 @@ public:
     MCVAPI bool isValidSpawn(int x, int z) const;
 
     // symbol: ?levelChunkNeedsUpgrade@TheEndDimension@@UEBA_NAEBVLevelChunk@@@Z
-    MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
+    MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const& lc) const;
 
     // symbol: ?mayRespawnViaBed@TheEndDimension@@UEBA_NXZ
     MCVAPI bool mayRespawnViaBed() const;
@@ -90,7 +92,7 @@ public:
     MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const& originalPos, DimensionType fromId) const;
 
     // symbol: ?upgradeLevelChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
-    MCVAPI void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
+    MCVAPI void upgradeLevelChunk(class ChunkSource& source, class LevelChunk& lc, class LevelChunk& generatedChunk);
 
     // symbol: ?AMBIENT_MULTIPLIER@TheEndDimension@@2MB
     MCAPI static float const AMBIENT_MULTIPLIER;
@@ -101,7 +103,8 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?makeStructureFeatures@TheEndDimension@@CA?AV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@AEAVDimension@@I@Z
-    MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(class Dimension&, uint);
+    MCAPI static std::unique_ptr<class StructureFeatureRegistry>
+    makeStructureFeatures(class Dimension& dimension, uint seed);
 
     // NOLINTEND
 };

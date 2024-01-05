@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?isValidIdentifier@FogDefinition@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static bool isValidIdentifier(std::string const&);
+    MCAPI static bool isValidIdentifier(std::string const& format);
 
     // symbol: ?DEFAULT_DISTANCE_AIR_SETTING@FogDefinition@@2UFogDistanceSetting@@B
     MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_AIR_SETTING;

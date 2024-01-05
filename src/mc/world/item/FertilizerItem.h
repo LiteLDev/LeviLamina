@@ -32,7 +32,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?executeEvent@FertilizerItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
-    virtual void executeEvent(class ItemStackBase&, std::string const&, class RenderParams&) const;
+    virtual void executeEvent(class ItemStackBase& item, std::string const& name, class RenderParams&) const;
 
     // vIndex: 8, symbol: __unk_vfn_8
     virtual void __unk_vfn_8();
@@ -86,14 +86,15 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@FertilizerItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol: ?isFertilizer@FertilizerItem@@UEBA_NXZ
     MCVAPI bool isFertilizer() const;
 
     // symbol:
     // ??0FertilizerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4FertilizerType@@@Z
-    MCAPI FertilizerItem(std::string const& name, int id, ::FertilizerType type);
+    MCAPI FertilizerItem(std::string const& name, int, ::FertilizerType type);
 
     // symbol: ?getFertilizerType@FertilizerItem@@QEBA?AW4FertilizerType@@XZ
     MCAPI ::FertilizerType getFertilizerType() const;

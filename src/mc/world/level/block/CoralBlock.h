@@ -103,14 +103,14 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 86, symbol: ?mayPlaceOn@CoralBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlaceOn(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@CoralBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 96, symbol: ?asItemInstance@CoralBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -156,14 +156,13 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 162, symbol: ?getMapColor@CoralBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
     // vIndex: 164, symbol: ?getResourceItem@CoralBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // symbol: ??0CoralBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CoralBlock(std::string const& nameId, int id);
+    MCAPI CoralBlock(std::string const& nameId, int);
 
     // symbol: ?DEAD_CORAL_BIT@CoralBlock@@2HB
     MCAPI static int const DEAD_CORAL_BIT;

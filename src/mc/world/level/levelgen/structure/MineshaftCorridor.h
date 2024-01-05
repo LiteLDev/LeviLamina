@@ -30,14 +30,14 @@ public:
     );
 
     // vIndex: 4, symbol: ?postProcess@MineshaftCorridor@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual bool postProcess(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // vIndex: 5, symbol: ?postProcessMobsAt@MineshaftCorridor@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual void postProcessMobsAt(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
+    virtual void postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // symbol: ?_placeCobWeb@MineshaftCorridor@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@AEAVRandom@@MHHH@Z
     MCAPI void _placeCobWeb(
-        class BlockSource&       level,
+        class BlockSource&       region,
         class BoundingBox const& chunkBB,
         class Random&            random,
         float                    p,
@@ -48,7 +48,7 @@ public:
 
     // symbol: ?_placeSupport@MineshaftCorridor@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHHHAEAVRandom@@@Z
     MCAPI void _placeSupport(
-        class BlockSource&       level,
+        class BlockSource&       region,
         class BoundingBox const& chunkBB,
         int                      x0,
         int                      y0,
@@ -63,10 +63,12 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_fillPillarDownOrChainUp@MineshaftCorridor@@AEAAXAEAVBlockSource@@HHHAEBVBoundingBox@@@Z
-    MCAPI void _fillPillarDownOrChainUp(class BlockSource&, int, int, int, class BoundingBox const&);
+    MCAPI void
+    _fillPillarDownOrChainUp(class BlockSource& region, int x, int y, int z, class BoundingBox const& chunkBB);
 
     // symbol: ?_placeDoubleLowerOrUpperSupport@MineshaftCorridor@@AEAAXAEAVBlockSource@@AEBVBoundingBox@@HHH@Z
-    MCAPI void _placeDoubleLowerOrUpperSupport(class BlockSource&, class BoundingBox const&, int, int, int);
+    MCAPI void
+    _placeDoubleLowerOrUpperSupport(class BlockSource& region, class BoundingBox const& chunkBB, int x, int y, int z);
 
     // NOLINTEND
 };

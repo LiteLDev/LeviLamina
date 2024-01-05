@@ -5,7 +5,7 @@
 namespace ContainerUtility {
 // NOLINTBEGIN
 // symbol: ?getNotNoneTypeContainerComponentFromActor@ContainerUtility@@YAPEAVContainerComponent@@PEAVActor@@@Z
-MCAPI class ContainerComponent* getNotNoneTypeContainerComponentFromActor(class Actor*);
+MCAPI class ContainerComponent* getNotNoneTypeContainerComponentFromActor(class Actor* actor);
 // NOLINTEND
 
 }; // namespace ContainerUtility

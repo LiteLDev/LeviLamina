@@ -30,7 +30,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@RemoveObjectivePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0RemoveObjectivePacket@@QEAA@XZ
     MCAPI RemoveObjectivePacket();

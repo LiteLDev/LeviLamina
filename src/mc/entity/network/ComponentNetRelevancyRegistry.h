@@ -40,16 +40,20 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getFilteredDefinitionsForServer@ComponentNetRelevancyRegistry@@QEBA?AVDefinitionInstanceGroup@@AEBV2@@Z
-    MCAPI class DefinitionInstanceGroup getFilteredDefinitionsForServer(class DefinitionInstanceGroup const&) const;
+    MCAPI class DefinitionInstanceGroup
+    getFilteredDefinitionsForServer(class DefinitionInstanceGroup const& definitionGroup) const;
 
     // symbol:
     // ?registerNetSerialization@ComponentNetRelevancyRegistry@@QEAAAEAUNetSerializationCallbacks@1@AEBVHashedString@@V?$function@$$A6A_NAEBVDefinitionInstanceGroup@@AEAVCompoundTag@@@Z@std@@@Z
     MCAPI struct ComponentNetRelevancyRegistry::NetSerializationCallbacks&
-    registerNetSerialization(class HashedString const&, std::function<bool(class DefinitionInstanceGroup const&, class CompoundTag&)>);
+    registerNetSerialization(class HashedString const& definitionName, std::function<bool(class DefinitionInstanceGroup const&, class CompoundTag&)>);
 
     // symbol:
     // ?serializeComponentDefinitionsForClient@ComponentNetRelevancyRegistry@@QEBA_NAEBVDefinitionInstanceGroup@@AEAVCompoundTag@@@Z
-    MCAPI bool serializeComponentDefinitionsForClient(class DefinitionInstanceGroup const&, class CompoundTag&) const;
+    MCAPI bool serializeComponentDefinitionsForClient(
+        class DefinitionInstanceGroup const& definitionGroup,
+        class CompoundTag&                   tag
+    ) const;
 
     // symbol: ??1ComponentNetRelevancyRegistry@@QEAA@XZ
     MCAPI ~ComponentNetRelevancyRegistry();

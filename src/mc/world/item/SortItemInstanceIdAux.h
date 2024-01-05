@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??RSortItemInstanceIdAux@@QEBA_NAEBVItemInstance@@0@Z
-    MCAPI bool operator()(class ItemInstance const& lhs, class ItemInstance const& rhs) const;
+    MCAPI bool operator()(class ItemInstance const&, class ItemInstance const&) const;
 
     // NOLINTEND
 };

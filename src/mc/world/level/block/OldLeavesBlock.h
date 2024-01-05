@@ -101,7 +101,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@OldLeavesBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -126,10 +126,10 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 122, symbol: ?getColor@OldLeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 129, symbol: ?getVariant@OldLeavesBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -145,23 +145,25 @@ public:
 
     // vIndex: 158, symbol:
     // ?getRenderLayer@OldLeavesBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
+    virtual ::BlockRenderLayer
+    getRenderLayer(class Block const& block, class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 162, symbol: ?getMapColor@OldLeavesBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color
+    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 164, symbol: ?getResourceItem@OldLeavesBlock@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@OldLeavesBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // vIndex: 168, symbol: ?getExtraResourceItem@OldLeavesBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getExtraResourceItem(class Block const&) const;
+    virtual class ItemInstance getExtraResourceItem(class Block const& block) const;
 
     // symbol:
     // ??0OldLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI OldLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy>);
+    MCAPI OldLeavesBlock(std::string const& nameId, int, class WeakPtr<class BlockLegacy> sapling);
 
     // NOLINTEND
 };

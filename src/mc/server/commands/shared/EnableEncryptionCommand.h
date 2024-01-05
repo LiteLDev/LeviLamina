@@ -18,10 +18,10 @@ public:
     virtual ~EnableEncryptionCommand() = default;
 
     // vIndex: 2, symbol: ?execute@EnableEncryptionCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?setup@EnableEncryptionCommand@@SAXAEAVCommandRegistry@@AEAVIMinecraftApp@@@Z
-    MCAPI static void setup(class CommandRegistry&, class IMinecraftApp&);
+    MCAPI static void setup(class CommandRegistry& registry, class IMinecraftApp& app);
 
     // NOLINTEND
 

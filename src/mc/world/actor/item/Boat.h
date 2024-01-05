@@ -54,7 +54,7 @@ public:
 
     // vIndex: 34, symbol:
     // ?getExitTip@Boat@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@W4NewInteractionModel@@@Z
-    virtual std::string getExitTip(std::string const&, ::InputMode, ::NewInteractionModel) const;
+    virtual std::string getExitTip(std::string const& kind, ::InputMode mode, ::NewInteractionModel) const;
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
@@ -117,7 +117,11 @@ public:
     MCVAPI bool breaksFallingBlocks() const;
 
     // symbol: ??0Boat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Boat(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Boat(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getWoodID@Boat@@QEBAEXZ
     MCAPI uchar getWoodID() const;

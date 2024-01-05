@@ -17,11 +17,12 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ActorSkeletalAnimation@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI ActorSkeletalAnimation(std::string const&, std::string const&);
+    MCAPI ActorSkeletalAnimation(std::string const& name, std::string const& sourceFilePathWithExtension);
 
     // symbol:
     // ?addActorEvent@ActorSkeletalAnimation@@QEAAAEAVActorAnimationEvent@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
-    MCAPI class ActorAnimationEvent& addActorEvent(float, std::string const&, ::CurrentCmdVersion, ::MolangVersion);
+    MCAPI class ActorAnimationEvent&
+    addActorEvent(float time, std::string const& event, ::CurrentCmdVersion commandVersion, ::MolangVersion);
 
     // symbol:
     // ?addBoneAnimation@ActorSkeletalAnimation@@QEAAAEAVBoneAnimation@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -56,7 +57,7 @@ public:
     MCAPI void setBlendWeight(class ExpressionNode const& expression);
 
     // symbol: ?setLoopDelay@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
-    MCAPI void setLoopDelay(class ExpressionNode const&);
+    MCAPI void setLoopDelay(class ExpressionNode const& expression);
 
     // symbol: ?setLoopMode@ActorSkeletalAnimation@@QEAAXW4AnimationLoopMode@@@Z
     MCAPI void setLoopMode(::AnimationLoopMode);
@@ -65,7 +66,7 @@ public:
     MCAPI void setShouldOverridePreviousAnimation(bool overridePreviousAnimation);
 
     // symbol: ?setStartDelay@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
-    MCAPI void setStartDelay(class ExpressionNode const&);
+    MCAPI void setStartDelay(class ExpressionNode const& expression);
 
     // symbol: ?sortEvents@ActorSkeletalAnimation@@QEAAXXZ
     MCAPI void sortEvents();

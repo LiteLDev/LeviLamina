@@ -26,7 +26,7 @@ public:
     operator=(struct ScriptModuleMinecraft::ScriptRawTextInterface&&);
 
     // symbol: ??8ScriptRawTextInterface@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
-    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptRawTextInterface const&) const;
+    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptRawTextInterface const& other) const;
 
     // symbol: ??1ScriptRawTextInterface@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptRawTextInterface();
@@ -36,7 +36,7 @@ public:
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptRawTextInterface> bind();
 
     // symbol: ?fromJSON@ScriptRawTextInterface@ScriptModuleMinecraft@@SA?AU12@AEBVValue@Json@@@Z
-    MCAPI static struct ScriptModuleMinecraft::ScriptRawTextInterface fromJSON(class Json::Value const&);
+    MCAPI static struct ScriptModuleMinecraft::ScriptRawTextInterface fromJSON(class Json::Value const& json);
 
     // NOLINTEND
 };

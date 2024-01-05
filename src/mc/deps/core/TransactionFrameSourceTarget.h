@@ -36,7 +36,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ??0TransactionFrameSourceTarget@Core@@AEAA@AEBVPath@1@0@Z
-    MCAPI TransactionFrameSourceTarget(class Core::Path const&, class Core::Path const&);
+    MCAPI TransactionFrameSourceTarget(class Core::Path const& source, class Core::Path const& target);
 
     // NOLINTEND
 };

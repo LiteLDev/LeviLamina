@@ -97,7 +97,7 @@ public:
     virtual void __unk_vfn_67();
 
     // vIndex: 71, symbol: ?setupRedstoneComponent@CalibratedSculkSensorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
+    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
@@ -118,13 +118,13 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@CalibratedSculkSensorBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 132, symbol: ?getMappedFace@CalibratedSculkSensorBlock@@UEBAEEAEBVBlock@@@Z
-    virtual uchar getMappedFace(uchar, class Block const&) const;
+    virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
     // vIndex: 133, symbol: ?getFaceFlip@CalibratedSculkSensorBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
-    virtual ::Flip getFaceFlip(uchar, class Block const&) const;
+    virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -139,10 +139,10 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0CalibratedSculkSensorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CalibratedSculkSensorBlock(std::string const&, int);
+    MCAPI CalibratedSculkSensorBlock(std::string const& nameId, int);
 
     // symbol: ?getInputStrength@CalibratedSculkSensorBlock@@SAHAEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static int getInputStrength(class BlockSource const&, class BlockPos const&);
+    MCAPI static int getInputStrength(class BlockSource const& region, class BlockPos const& pos);
 
     // NOLINTEND
 };

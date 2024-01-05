@@ -31,16 +31,20 @@ public:
     // vIndex: 1, symbol:
     // ?_createGameTestInstance@MinecraftGameTestBatchRunner@@MEAA?AV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVBaseGameTestFunction@gametest@@@Z
     virtual std::shared_ptr<class gametest::BaseGameTestInstance>
-    _createGameTestInstance(class gametest::BaseGameTestFunction&) = 0;
+    _createGameTestInstance(class gametest::BaseGameTestFunction& function) = 0;
 
     // vIndex: 2, symbol:
     // ?_runTest@MinecraftGameTestBatchRunner@@MEAAXV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVGameTestTicker@gametest@@@Z
-    virtual void _runTest(std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker&) = 0;
+    virtual void
+    _runTest(std::shared_ptr<class gametest::BaseGameTestInstance> test, class gametest::GameTestTicker&) = 0;
 
     // symbol:
     // ??0BaseGameTestBatchRunner@gametest@@QEAA@$$QEAV?$vector@VGameTestBatch@gametest@@V?$allocator@VGameTestBatch@gametest@@@std@@@std@@AEAVGameTestTicker@1@$$QEAUTestParameters@1@@Z
-    MCAPI
-    BaseGameTestBatchRunner(std::vector<class gametest::GameTestBatch>&&, class gametest::GameTestTicker&, struct gametest::TestParameters&&);
+    MCAPI BaseGameTestBatchRunner(
+        std::vector<class gametest::GameTestBatch>&&,
+        class gametest::GameTestTicker&,
+        struct gametest::TestParameters&& params
+    );
 
     // symbol: ?start@BaseGameTestBatchRunner@gametest@@QEAAXXZ
     MCAPI void start();
@@ -54,7 +58,7 @@ public:
     MCAPI void _addTestInstanceWithRotation(
         std::vector<std::shared_ptr<class gametest::BaseGameTestInstance>>&,
         std::shared_ptr<class gametest::BaseGameTestFunction>,
-        ::Rotation
+        ::Rotation rotation
     );
 
     // symbol: ?_resetBatchTracker@BaseGameTestBatchRunner@gametest@@AEAAXXZ

@@ -27,7 +27,7 @@ public:
     virtual void endRequestBatch();
 
     // vIndex: 4, symbol: ?postRequest@ScreenHandlerBase@@UEAAX_N@Z
-    virtual void postRequest(bool);
+    virtual void postRequest(bool wasSuccess);
 
     // symbol: ??0ScreenHandlerBase@@QEAA@AEAVItemStackRequestActionHandler@@@Z
     MCAPI explicit ScreenHandlerBase(class ItemStackRequestActionHandler&);

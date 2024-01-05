@@ -59,7 +59,7 @@ public:
 
     // vIndex: 40, symbol:
     // ?_getUpdatePacket@BellBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@BellBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -71,7 +71,8 @@ public:
     MCAPI bool isRinging() const;
 
     // symbol: ?ring@BellBlockActor@@QEAA_NW4Type@Direction@@AEAVBlockSource@@PEAVActor@@_N@Z
-    MCAPI bool ring(::Direction::Type, class BlockSource&, class Actor*, bool);
+    MCAPI bool
+    ring(::Direction::Type direction, class BlockSource& region, class Actor* sourceActor, bool alarmNearbyDwellers);
 
     // NOLINTEND
 };

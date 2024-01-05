@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ReplayStateConfig@@QEAA@W4ReplayStateMode@@@Z
-    MCAPI explicit ReplayStateConfig(::ReplayStateMode);
+    MCAPI explicit ReplayStateConfig(::ReplayStateMode mode);
 
     // NOLINTEND
 };

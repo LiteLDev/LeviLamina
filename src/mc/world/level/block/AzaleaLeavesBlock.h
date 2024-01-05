@@ -119,7 +119,7 @@ public:
     virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // vIndex: 126, symbol: ?onGraphicsModeChanged@AzaleaLeavesBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const&);
+    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
 
     // vIndex: 129, symbol: ?getVariant@AzaleaLeavesBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const&) const;
@@ -138,11 +138,13 @@ public:
 
     // vIndex: 158, symbol:
     // ?getRenderLayer@AzaleaLeavesBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
+    virtual ::BlockRenderLayer
+    getRenderLayer(class Block const&, class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 162, symbol:
     // ?getMapColor@AzaleaLeavesBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color
+    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 164, symbol: ?getResourceItem@AzaleaLeavesBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
@@ -152,7 +154,7 @@ public:
 
     // symbol:
     // ??0AzaleaLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI AzaleaLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy>);
+    MCAPI AzaleaLeavesBlock(std::string const& nameId, int, class WeakPtr<class BlockLegacy> sapling);
 
     // NOLINTEND
 };

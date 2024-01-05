@@ -16,7 +16,7 @@ public:
     MCAPI PositionTrackingId(class PositionTrackingId const&);
 
     // symbol: ?fromTag@PositionTrackingId@@QEAAXPEBVTag@@@Z
-    MCAPI void fromTag(class Tag const*);
+    MCAPI void fromTag(class Tag const* tag);
 
     // symbol: ?getTag@PositionTrackingId@@QEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class Tag> getTag() const;

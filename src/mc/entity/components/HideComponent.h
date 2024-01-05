@@ -17,7 +17,7 @@ public:
     MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?initFromDefinition@HideComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void initFromDefinition(class Actor& owner);
+    MCAPI void initFromDefinition(class Actor&);
 
     // symbol: ?isInRaid@HideComponent@@QEAA_NXZ
     MCAPI bool isInRaid();

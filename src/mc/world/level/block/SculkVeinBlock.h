@@ -103,7 +103,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@SculkVeinBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -139,7 +139,7 @@ public:
     virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@SculkVeinBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // vIndex: 168, symbol: ?getMultifaceBlock@SculkVeinBlock@@UEBAAEBVBlock@@XZ
     virtual class Block const& getMultifaceBlock() const;
@@ -149,7 +149,7 @@ public:
 
     // symbol:
     // ??0SculkVeinBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI SculkVeinBlock(std::string const&, int, class Material const&);
+    MCAPI SculkVeinBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

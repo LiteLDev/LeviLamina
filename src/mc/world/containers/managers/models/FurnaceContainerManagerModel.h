@@ -31,13 +31,13 @@ public:
     virtual class ItemStack const& getSlot(int slot) const;
 
     // vIndex: 9, symbol: ?setData@FurnaceContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int id, int value);
+    virtual void setData(int, int value);
 
     // vIndex: 10, symbol: ?broadcastChanges@FurnaceContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();
 
     // vIndex: 16, symbol: ?isValid@FurnaceContainerManagerModel@@UEAA_NM@Z
-    virtual bool isValid(float);
+    virtual bool isValid(float pickRange);
 
     // vIndex: 17, symbol: ?_postInit@FurnaceContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
     virtual class ContainerScreenContext _postInit();

@@ -23,7 +23,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ?rotationTypeFromVec3@RotationType@BlockTransformationComponent@@QEAAXAEBVVec3@@@Z
-        MCAPI void rotationTypeFromVec3(class Vec3 const&);
+        MCAPI void rotationTypeFromVec3(class Vec3 const& arr);
 
         // NOLINTEND
     };

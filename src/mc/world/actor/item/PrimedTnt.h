@@ -45,7 +45,7 @@ public:
 
     // vIndex: 6, symbol:
     // ?initializeComponents@PrimedTnt@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1PrimedTnt@@UEAA@XZ
     virtual ~PrimedTnt() = default;
@@ -57,7 +57,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 26, symbol: ?teleportTo@PrimedTnt@@UEAAXAEBVVec3@@_NHH1@Z
-    virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool);
 
     // vIndex: 29, symbol: ?normalTick@PrimedTnt@@UEAAXXZ
     virtual void normalTick();
@@ -108,7 +108,11 @@ public:
     virtual void addAdditionalSaveData(class CompoundTag& entityTag) const;
 
     // symbol: ??0PrimedTnt@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI PrimedTnt(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI PrimedTnt(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?postNormalTick@PrimedTnt@@QEAAXXZ
     MCAPI void postNormalTick();

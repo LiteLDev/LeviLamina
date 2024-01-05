@@ -28,13 +28,13 @@ public:
     // NOLINTBEGIN
     // symbol: ??0Aquifer@@QEAA@AEBVChunkPos@@AEBVAquiferNoises@@AEBUOverworldNoises3d@@AEBVSurfaceLevelCache@@HHH@Z
     MCAPI Aquifer(
-        class ChunkPos const&,
+        class ChunkPos const& chunkPos,
         class AquiferNoises const&,
         struct OverworldNoises3d const&,
         class SurfaceLevelCache const&,
         int,
         int,
-        int
+        int seaLevel
     );
 
     // symbol: ?computeAt@Aquifer@@QEAAXAEBVBlockPos@@@Z

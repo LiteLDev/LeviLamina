@@ -13,56 +13,56 @@ namespace mce { class Color; }
 namespace ActorSynchedData {
 // NOLINTBEGIN
 // symbol: ?updateAction@ActorSynchedData@@YAXAEAVActor@@@Z
-MCAPI void updateAction(class Actor&);
+MCAPI void updateAction(class Actor& actor);
 
 // symbol: ?updateAmbientSound@ActorSynchedData@@YAXAEAVEntityContext@@@Z
-MCAPI void updateAmbientSound(class EntityContext&);
+MCAPI void updateAmbientSound(class EntityContext& entity);
 
 // symbol: ?updateBoundingBox@ActorSynchedData@@YAXAEAVEntityContext@@AEBVSynchedActorDataEntityWrapper@@@Z
 MCAPI void updateBoundingBox(class EntityContext&, class SynchedActorDataEntityWrapper const&);
 
 // symbol: ?updateBuoyancyData@ActorSynchedData@@YAXAEAVEntityContext@@AEBVSynchedActorDataEntityWrapper@@@Z
-MCAPI void updateBuoyancyData(class EntityContext&, class SynchedActorDataEntityWrapper const&);
+MCAPI void updateBuoyancyData(class EntityContext& entity, class SynchedActorDataEntityWrapper const& entityData);
 
 // symbol:
 // ?updateCommandBlock@ActorSynchedData@@YAXAEAVActor@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI void updateCommandBlock(class Actor&, int, std::string&);
+MCAPI void updateCommandBlock(class Actor& actor, int dataId, std::string&);
 
 // symbol: ?updateContainer@ActorSynchedData@@YAXAEAVActor@@@Z
-MCAPI void updateContainer(class Actor&);
+MCAPI void updateContainer(class Actor& actor);
 
 // symbol: ?updateHasNPC@ActorSynchedData@@YAXAEAVActor@@@Z
-MCAPI void updateHasNPC(class Actor&);
+MCAPI void updateHasNPC(class Actor& actor);
 
 // symbol: ?updateHeartbeat@ActorSynchedData@@YAXAEAVEntityContext@@@Z
-MCAPI void updateHeartbeat(class EntityContext&);
+MCAPI void updateHeartbeat(class EntityContext& entity);
 
 // symbol: ?updateHitbox@ActorSynchedData@@YAXAEAVEntityContext@@AEBVSynchedActorDataEntityWrapper@@@Z
-MCAPI void updateHitbox(class EntityContext&, class SynchedActorDataEntityWrapper const&);
+MCAPI void updateHitbox(class EntityContext& entity, class SynchedActorDataEntityWrapper const& entityData);
 
 // symbol: ?updateInteractText@ActorSynchedData@@YAXAEAVActor@@@Z
-MCAPI void updateInteractText(class Actor&);
+MCAPI void updateInteractText(class Actor& actor);
 
 // symbol: ?updateIsBuoyant@ActorSynchedData@@YAXAEAVEntityContext@@AEAVSynchedActorDataEntityWrapper@@@Z
-MCAPI void updateIsBuoyant(class EntityContext&, class SynchedActorDataEntityWrapper&);
+MCAPI void updateIsBuoyant(class EntityContext& entity, class SynchedActorDataEntityWrapper& entityData);
 
 // symbol: ?updateNPCData@ActorSynchedData@@YAXAEAVActor@@@Z
-MCAPI void updateNPCData(class Actor&);
+MCAPI void updateNPCData(class Actor& actor);
 
 // symbol: ?updateNameTag@ActorSynchedData@@YAXAEAVActor@@@Z
-MCAPI void updateNameTag(class Actor&);
+MCAPI void updateNameTag(class Actor& actor);
 
 // symbol: ?updateRawNameText@ActorSynchedData@@YAXAEAVActor@@@Z
-MCAPI void updateRawNameText(class Actor&);
+MCAPI void updateRawNameText(class Actor& actor);
 
 // symbol: ?updateRuntimeID@ActorSynchedData@@YAXAEAVActor@@@Z
-MCAPI void updateRuntimeID(class Actor&);
+MCAPI void updateRuntimeID(class Actor& actor);
 
 // symbol: ?updateSize@ActorSynchedData@@YAXAEAVActor@@@Z
-MCAPI void updateSize(class Actor&);
+MCAPI void updateSize(class Actor& actor);
 
 // symbol: ?updateTarget@ActorSynchedData@@YAXAEAVActor@@AEAUActorUniqueID@@@Z
-MCAPI void updateTarget(class Actor&, struct ActorUniqueID&);
+MCAPI void updateTarget(class Actor& actor, struct ActorUniqueID& target);
 
 // symbol: ?updateTintColor@ActorSynchedData@@YAXAEAVColor@mce@@AEBW4PaletteColor@@@Z
 MCAPI void updateTintColor(class mce::Color&, ::PaletteColor const&);

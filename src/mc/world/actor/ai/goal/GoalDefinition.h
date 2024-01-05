@@ -28,7 +28,7 @@ public:
     MCAPI struct GoalDefinition& operator=(struct GoalDefinition const&);
 
     // symbol: ?parse@GoalDefinition@@QEAA_NAEBUConstDeserializeDataParams@@H@Z
-    MCAPI bool parse(struct ConstDeserializeDataParams const&, int);
+    MCAPI bool parse(struct ConstDeserializeDataParams const&, int priority);
 
     // symbol: ??1GoalDefinition@@QEAA@XZ
     MCAPI ~GoalDefinition();

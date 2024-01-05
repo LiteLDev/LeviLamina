@@ -36,46 +36,57 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?dropItems@LootTableUtils@Util@@SAHAEAVBlockSource@@AEAVSpawner@@PEAVActor@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVBlockPos@@@Z
-    MCAPI static int
-    dropItems(class BlockSource&, class Spawner&, class Actor*, std::vector<class ItemStack> const&, class BlockPos const&);
+    MCAPI static int dropItems(
+        class BlockSource&                  region,
+        class Spawner&                      spawner,
+        class Actor*                        summoner,
+        std::vector<class ItemStack> const& items,
+        class BlockPos const&               position
+    );
 
     // symbol:
     // ?fillContainer@LootTableUtils@Util@@SAHAEAVContainer@@AEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-    MCAPI static int fillContainer(class Container&, std::vector<class ItemStack>&);
+    MCAPI static int fillContainer(class Container& container, std::vector<class ItemStack>& items);
 
     // symbol:
     // ?fillContainer@LootTableUtils@Util@@SAXAEAVLevel@@AEAVContainer@@AEAVRandom@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$AutomaticID@VDimension@@H@@PEAVActor@@@Z
-    MCAPI static void
-    fillContainer(class Level&, class Container&, class Random&, std::string const&, DimensionType, class Actor*);
+    MCAPI static void fillContainer(
+        class Level&       level,
+        class Container&   container,
+        class Random&      random,
+        std::string const& tableName,
+        DimensionType      dimensionId,
+        class Actor*       entity
+    );
 
     // symbol:
     // ?generateRandomDeathLoot@LootTableUtils@Util@@SA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVLootTable@@AEAVActor@@PEBVActorDamageSource@@PEBVItemStack@@PEAVPlayer@@M@Z
     MCAPI static std::vector<class ItemStack> generateRandomDeathLoot(
-        class LootTable const&,
-        class Actor&,
-        class ActorDamageSource const*,
+        class LootTable const&         table,
+        class Actor&                   entity,
+        class ActorDamageSource const* damageSource,
         class ItemStack const*,
         class Player*,
-        float
+        float luck
     );
 
     // symbol:
     // ?getRandomItems@LootTableUtils@Util@@SA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVLootTable@@AEAVRandom@@AEAVLootTableContext@@@Z
     MCAPI static std::vector<class ItemStack>
-    getRandomItems(class LootTable const&, class Random&, class LootTableContext&);
+    getRandomItems(class LootTable const& table, class Random& random, class LootTableContext& context);
 
     // symbol:
     // ?getRandomItems@LootTableUtils@Util@@SA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@AEAVRandom@@AEAVLootTableContext@@@Z
     MCAPI static std::vector<class ItemStack>
-    getRandomItems(std::string const&, class Random&, class LootTableContext&);
+    getRandomItems(std::string const& tableName, class Random& random, class LootTableContext& context);
 
     // symbol:
     // ?givePlayer@LootTableUtils@Util@@SAHAEAVPlayer@@AEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@_N@Z
-    MCAPI static int givePlayer(class Player&, std::vector<class ItemStack>&, bool);
+    MCAPI static int givePlayer(class Player& player, std::vector<class ItemStack>& items, bool);
 
     // symbol:
     // ?lookupLootTable@LootTableUtils@Util@@SAPEAVLootTable@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVILevel@@@Z
-    MCAPI static class LootTable* lookupLootTable(std::string const&, class ILevel&);
+    MCAPI static class LootTable* lookupLootTable(std::string const& tableName, class ILevel& level);
 
     // NOLINTEND
 };

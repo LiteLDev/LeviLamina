@@ -26,17 +26,17 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@ScriptMessagePacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@ScriptMessagePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0ScriptMessagePacket@@QEAA@XZ
     MCAPI ScriptMessagePacket();
 
     // symbol: ??0ScriptMessagePacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI ScriptMessagePacket(std::string const&, std::string const&);
+    MCAPI ScriptMessagePacket(std::string const& messageId, std::string const&);
 
     // symbol:
     // ?getMessageId@ScriptMessagePacket@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

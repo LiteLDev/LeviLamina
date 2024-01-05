@@ -34,7 +34,7 @@ public:
 
         // vIndex: 4, symbol:
         // ?postProcess@OceanRuinPiece@OceanRuinPieces@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-        virtual bool postProcess(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
+        virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
         // vIndex: 13, symbol:
         // ?_handleDataMarker@OceanRuinPiece@OceanRuinPieces@@MEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z

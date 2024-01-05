@@ -114,7 +114,7 @@ public:
 
     // symbol:
     // ?_tickRespawnAnimation@EndDragonFight@@AEAAXAEBV?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@H@Z
-    MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const& crystals, int time);
+    MCAPI void _tickRespawnAnimation(std::vector<struct ActorUniqueID> const&, int time);
 
     // symbol: ?_updateCrystalCount@EndDragonFight@@AEAAXXZ
     MCAPI void _updateCrystalCount();

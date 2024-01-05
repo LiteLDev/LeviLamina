@@ -82,7 +82,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0AuxDataBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HPEBVBlock@@@Z
-    MCAPI AuxDataBlockItem(std::string const& name, int id, class Block const* parentBlock);
+    MCAPI AuxDataBlockItem(std::string const& name, int, class Block const* parentBlock);
 
     // NOLINTEND
 };

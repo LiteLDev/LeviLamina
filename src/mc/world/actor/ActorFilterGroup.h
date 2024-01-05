@@ -45,7 +45,7 @@ public:
     virtual bool _handleUnknownMember(std::string const& name, class Json::Value const& jsonVal);
 
     // symbol: ?evaluateActor@ActorFilterGroup@@QEBA_NAEBVActor@@AEBVVariantParameterList@@@Z
-    MCAPI bool evaluateActor(class Actor const&, class VariantParameterList const&) const;
+    MCAPI bool evaluateActor(class Actor const& e, class VariantParameterList const& params) const;
 
     // symbol: ??4ActorFilterGroup@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ActorFilterGroup& operator=(class ActorFilterGroup&&);

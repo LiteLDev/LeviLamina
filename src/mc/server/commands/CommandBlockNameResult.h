@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0CommandBlockNameResult@@QEAA@AEBVHashedString@@PEBVBlock@@_N@Z
-    MCAPI CommandBlockNameResult(class HashedString const&, class Block const*, bool);
+    MCAPI CommandBlockNameResult(class HashedString const& originalName, class Block const* block, bool);
 
     // symbol: ?getBlock@CommandBlockNameResult@@QEBAPEBVBlock@@XZ
     MCAPI class Block const* getBlock() const;
@@ -28,7 +28,7 @@ public:
     MCAPI bool isComplexAlias() const;
 
     // symbol: ?isSameBlock@CommandBlockNameResult@@QEBA_NAEBVBlock@@_N@Z
-    MCAPI bool isSameBlock(class Block const&, bool) const;
+    MCAPI bool isSameBlock(class Block const& rhs, bool) const;
 
     // symbol: ??1CommandBlockNameResult@@QEAA@XZ
     MCAPI ~CommandBlockNameResult();

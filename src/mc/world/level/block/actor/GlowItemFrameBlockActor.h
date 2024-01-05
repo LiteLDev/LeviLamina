@@ -48,7 +48,7 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0GlowItemFrameBlockActor@@QEAA@VBlockPos@@@Z
-    MCAPI explicit GlowItemFrameBlockActor(class BlockPos);
+    MCAPI explicit GlowItemFrameBlockActor(class BlockPos pos);
 
     // NOLINTEND
 };

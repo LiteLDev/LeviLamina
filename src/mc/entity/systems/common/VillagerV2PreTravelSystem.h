@@ -24,8 +24,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_doVillagerV2PreTravel@VillagerV2PreTravelSystem@@CAXAEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@V?$EntityModifier@V?$FlagComponent@USkipMobTravelFlag@@@@@@@Z
-    MCAPI static void
-    _doVillagerV2PreTravel(class StrictEntityContext const&, struct SynchedActorDataComponent const&, class EntityModifier<class FlagComponent<struct SkipMobTravelFlag>>);
+    MCAPI static void _doVillagerV2PreTravel(
+        class StrictEntityContext const& entity,
+        struct SynchedActorDataComponent const&,
+        class EntityModifier<class FlagComponent<struct SkipMobTravelFlag>> modifier
+    );
 
     // NOLINTEND
 };

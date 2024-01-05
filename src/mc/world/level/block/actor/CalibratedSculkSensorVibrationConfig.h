@@ -19,7 +19,7 @@ public:
 
     // vIndex: 3, symbol:
     // ?shouldListen@CalibratedSculkSensorVibrationConfig@@UEAA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
-    virtual bool shouldListen(class BlockSource&, class GameEvent const&, struct GameEventContext const&);
+    virtual bool shouldListen(class BlockSource& region, class GameEvent const&, struct GameEventContext const&);
 
     // NOLINTEND
 };

@@ -62,7 +62,7 @@ public:
     virtual void __unk_vfn_13();
 
     // vIndex: 14, symbol: ?_isValidEnchantmentTypeForCategory@Enchant@@EEBA_NW4Type@1@@Z
-    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type) const;
+    virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
 
     // symbol: ?getMinLevel@Enchant@@UEBAHXZ
     MCVAPI int getMinLevel() const;
@@ -80,7 +80,15 @@ public:
     MCVAPI bool isTreasureOnly() const;
 
     // symbol: ??0Enchant@@QEAA@W4Type@0@W4Frequency@0@V?$basic_string_view@DU?$char_traits@D@std@@@std@@2HH_N@Z
-    MCAPI Enchant(::Enchant::Type, ::Enchant::Frequency, std::string_view, std::string_view, int, int, bool);
+    MCAPI Enchant(
+        ::Enchant::Type      type,
+        ::Enchant::Frequency frequency,
+        std::string_view     stringId,
+        std::string_view     description,
+        int                  primarySlots,
+        int                  secondarySlots,
+        bool                 isLootable
+    );
 
     // symbol: ?getDescriptionId@Enchant@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getDescriptionId() const;
@@ -98,16 +106,16 @@ public:
     MCAPI bool isDisabled() const;
 
     // symbol: ?enchantSlotFromString@Enchant@@SA?AW4Slot@1@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI static ::Enchant::Slot enchantSlotFromString(std::string_view);
+    MCAPI static ::Enchant::Slot enchantSlotFromString(std::string_view str);
 
     // symbol: ?getEnchant@Enchant@@SAPEBV1@AEBW4Type@1@@Z
-    MCAPI static class Enchant const* getEnchant(::Enchant::Type const&);
+    MCAPI static class Enchant const* getEnchant(::Enchant::Type const& type);
 
     // symbol: ?getEnchantFromName@Enchant@@SAPEBV1@AEBVHashedString@@@Z
-    MCAPI static class Enchant const* getEnchantFromName(class HashedString const&);
+    MCAPI static class Enchant const* getEnchantFromName(class HashedString const& name);
 
     // symbol: ?getEnchantTypeFromName@Enchant@@SA?AW4Type@1@AEBVHashedString@@@Z
-    MCAPI static ::Enchant::Type getEnchantTypeFromName(class HashedString const&);
+    MCAPI static ::Enchant::Type getEnchantTypeFromName(class HashedString const& name);
 
     // symbol: ?initEnchants@Enchant@@SAXXZ
     MCAPI static void initEnchants();

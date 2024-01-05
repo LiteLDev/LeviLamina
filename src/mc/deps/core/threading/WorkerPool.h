@@ -30,8 +30,14 @@ public:
 
     // symbol:
     // ??0WorkerPool@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_KAEBVOSThreadPriority@Threading@Bedrock@@V?$optional@_K@2@_NV?$optional@H@2@@Z
-    MCAPI
-    WorkerPool(std::string, uint64, class Bedrock::Threading::OSThreadPriority const&, std::optional<uint64>, bool, std::optional<int>);
+    MCAPI WorkerPool(
+        std::string                                       name,
+        uint64                                            threadCount,
+        class Bedrock::Threading::OSThreadPriority const& priority,
+        std::optional<uint64>                             coreAffinityMask,
+        bool                                              suppressWorkerProfiling,
+        std::optional<int>                                idealCore
+    );
 
     // symbol: ?queue@WorkerPool@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z
     MCAPI void queue(std::shared_ptr<class BackgroundTaskBase> task, bool queueImmediate);

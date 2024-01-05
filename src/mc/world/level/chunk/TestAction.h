@@ -17,10 +17,10 @@ public:
     virtual ~TestAction() = default;
 
     // vIndex: 1, symbol: ?execute@TestAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
-    virtual void execute(class ServerLevel&, class Dimension&);
+    virtual void execute(class ServerLevel& level, class Dimension& dimension);
 
     // vIndex: 3, symbol: ??8TestAction@@UEBA_NAEBVIRequestAction@@@Z
-    virtual bool operator==(class IRequestAction const&) const;
+    virtual bool operator==(class IRequestAction const& action) const;
 
     // symbol: ??0TestAction@@QEAA@XZ
     MCAPI TestAction();

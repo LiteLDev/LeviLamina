@@ -16,7 +16,7 @@ public:
     MCAPI std::vector<struct TrimPattern> getAllEntries() const;
 
     // symbol: ?getPatternIdByItem@TrimPatternRegistry@@QEBA?AV?$optional@VHashedString@@@std@@AEBVHashedString@@@Z
-    MCAPI std::optional<class HashedString> getPatternIdByItem(class HashedString const&) const;
+    MCAPI std::optional<class HashedString> getPatternIdByItem(class HashedString const& itemId) const;
 
     // symbol: ?initializeServer@TrimPatternRegistry@@QEAAXVItemRegistryRef@@@Z
     MCAPI void initializeServer(class ItemRegistryRef);

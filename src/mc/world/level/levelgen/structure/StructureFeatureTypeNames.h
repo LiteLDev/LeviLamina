@@ -21,7 +21,7 @@ MCAPI std::map<std::string, std::string> const& getFeatureNameAliasesMap();
 
 // symbol:
 // ?getFeatureType@StructureFeatureTypeNames@@YA?AW4StructureFeatureType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI ::StructureFeatureType getFeatureType(std::string const&);
+MCAPI ::StructureFeatureType getFeatureType(std::string const& featureName);
 // NOLINTEND
 
 }; // namespace StructureFeatureTypeNames

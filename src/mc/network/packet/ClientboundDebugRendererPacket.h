@@ -35,22 +35,26 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@ClientboundDebugRendererPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@ClientboundDebugRendererPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0ClientboundDebugRendererPacket@@QEAA@XZ
     MCAPI ClientboundDebugRendererPacket();
 
     // symbol: ??0ClientboundDebugRendererPacket@@QEAA@W4Type@0@@Z
-    MCAPI explicit ClientboundDebugRendererPacket(::ClientboundDebugRendererPacket::Type);
+    MCAPI explicit ClientboundDebugRendererPacket(::ClientboundDebugRendererPacket::Type type);
 
     // symbol:
     // ??0ClientboundDebugRendererPacket@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@AEBVVec3@@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@2@@Z
-    MCAPI
-    ClientboundDebugRendererPacket(std::string, class mce::Color const&, class Vec3 const&, std::chrono::milliseconds);
+    MCAPI ClientboundDebugRendererPacket(
+        std::string               text,
+        class mce::Color const&   color,
+        class Vec3 const&         position,
+        std::chrono::milliseconds duration
+    );
 
     // NOLINTEND
 };

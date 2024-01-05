@@ -124,7 +124,8 @@ public:
     virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
     // vIndex: 61, symbol: ?checkIsPathable@ButtonBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    virtual bool
+    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -189,22 +190,22 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@ButtonBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@ButtonBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 167, symbol: ?entityInside@ButtonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-    virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
+    virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor&) const;
 
     // symbol: ?isButtonBlock@ButtonBlock@@UEBA_NXZ
     MCVAPI bool isButtonBlock() const;
@@ -213,7 +214,12 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ?buttonPressed@ButtonBlock@@QEBAXAEAVBlockSource@@AEBVBlock@@AEBVVec3@@PEAVActor@@@Z
-    MCAPI void buttonPressed(class BlockSource&, class Block const&, class Vec3 const&, class Actor*) const;
+    MCAPI void buttonPressed(
+        class BlockSource& region,
+        class Block const& buttonBlock,
+        class Vec3 const&  pos,
+        class Actor*       sourceActor
+    ) const;
 
     // symbol: ?canAttachTo@ButtonBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
     MCAPI static bool canAttachTo(class BlockSource& region, class BlockPos const& pos, uchar facing);
@@ -223,14 +229,19 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0ButtonBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N@Z
-    MCAPI ButtonBlock(std::string const& nameId, int id, class Material const& material, bool sensitive);
+    MCAPI ButtonBlock(std::string const& nameId, int, class Material const& material, bool sensitive);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_buttonUnpressed@ButtonBlock@@AEBAXAEAVBlockSource@@AEBVBlock@@AEBVVec3@@PEAVActor@@@Z
-    MCAPI void _buttonUnpressed(class BlockSource&, class Block const&, class Vec3 const&, class Actor*) const;
+    MCAPI void _buttonUnpressed(
+        class BlockSource& region,
+        class Block const& buttonBlock,
+        class Vec3 const&  pos,
+        class Actor*       sourceActor
+    ) const;
 
     // symbol: ?_checkPressed@ButtonBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void _checkPressed(class BlockSource& region, class BlockPos const& pos) const;

@@ -64,7 +64,7 @@ public:
 
     // vIndex: 40, symbol:
     // ?_getUpdatePacket@CampfireBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@CampfireBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -73,7 +73,7 @@ public:
     MCAPI void dropAllItems(class BlockSource& region);
 
     // symbol: ?getCampfireTag@CampfireBlockActor@@QEBAAEBVHashedString@@AEBVBlockSource@@@Z
-    MCAPI class HashedString const& getCampfireTag(class BlockSource const&) const;
+    MCAPI class HashedString const& getCampfireTag(class BlockSource const& region) const;
 
     // symbol: ?getCookingItem@CampfireBlockActor@@QEAAAEBVItemInstance@@H@Z
     MCAPI class ItemInstance const& getCookingItem(int slot);

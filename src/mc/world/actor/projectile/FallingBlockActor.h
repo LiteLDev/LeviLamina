@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 4, symbol:
     // ?reloadHardcoded@FallingBlockActor@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1FallingBlockActor@@UEAA@XZ
     virtual ~FallingBlockActor() = default;
@@ -47,7 +47,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 26, symbol: ?teleportTo@FallingBlockActor@@UEAAXAEBVVec3@@_NHH1@Z
-    virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool);
 
     // vIndex: 29, symbol: ?normalTick@FallingBlockActor@@UEAAXXZ
     virtual void normalTick();
@@ -86,7 +86,7 @@ public:
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
     // vIndex: 112, symbol: ?onSynchedDataUpdate@FallingBlockActor@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int dataId);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
@@ -101,13 +101,17 @@ public:
     virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@FallingBlockActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@FallingBlockActor@@MEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0FallingBlockActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI FallingBlockActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI FallingBlockActor(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?breakBlock@FallingBlockActor@@QEAAXXZ
     MCAPI void breakBlock();
@@ -119,10 +123,10 @@ public:
     MCAPI class Block const& getFallingBlock() const;
 
     // symbol: ?setFallDamageAmount@FallingBlockActor@@QEAAXM@Z
-    MCAPI void setFallDamageAmount(float);
+    MCAPI void setFallDamageAmount(float amount);
 
     // symbol: ?setFallingBlock@FallingBlockActor@@QEAAXAEBVBlock@@_N@Z
-    MCAPI void setFallingBlock(class Block const&, bool);
+    MCAPI void setFallingBlock(class Block const& block, bool creative);
 
     // NOLINTEND
 

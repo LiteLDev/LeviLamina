@@ -92,7 +92,11 @@ public:
     virtual void __unk_vfn_168();
 
     // symbol: ??0ThrownPotion@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI ThrownPotion(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI ThrownPotion(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getPotionId@ThrownPotion@@QEBAFXZ
     MCAPI short getPotionId() const;

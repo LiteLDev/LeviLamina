@@ -101,7 +101,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@NewLeavesBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -126,7 +126,7 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 129, symbol: ?getVariant@NewLeavesBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -141,17 +141,17 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@NewLeavesBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@NewLeavesBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // vIndex: 168, symbol: ?getExtraResourceItem@NewLeavesBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getExtraResourceItem(class Block const&) const;
+    virtual class ItemInstance getExtraResourceItem(class Block const& block) const;
 
     // symbol:
     // ??0NewLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI NewLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy>);
+    MCAPI NewLeavesBlock(std::string const& nameId, int, class WeakPtr<class BlockLegacy> sapling);
 
     // NOLINTEND
 };

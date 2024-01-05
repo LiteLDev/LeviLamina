@@ -15,7 +15,7 @@ public:
     MCVAPI bool canGetChunk() const;
 
     // symbol: ?getChunk@IBlockWorldGenAPI@@UEAAPEAVLevelChunk@@AEBVChunkPos@@@Z
-    MCVAPI class LevelChunk* getChunk(class ChunkPos const&);
+    MCVAPI class LevelChunk* getChunk(class ChunkPos const& pos);
 
     // NOLINTEND
 };

@@ -21,7 +21,7 @@ public:
     virtual ~ItemDescriptorCount();
 
     // vIndex: 2, symbol: ?serialize@ItemDescriptorCount@@UEBAXAEAVBinaryStream@@@Z
-    virtual void serialize(class BinaryStream&) const;
+    virtual void serialize(class BinaryStream& stream) const;
 
     // symbol: ??0ItemDescriptorCount@@QEAA@XZ
     MCAPI ItemDescriptorCount();
@@ -30,7 +30,7 @@ public:
     MCAPI ItemDescriptorCount(class ItemDescriptorCount const&);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI explicit ItemDescriptorCount(class ReadOnlyBinaryStream&);
+    MCAPI explicit ItemDescriptorCount(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBVBlock@@G@Z
     MCAPI ItemDescriptorCount(class Block const& block, ushort stackSize);
@@ -42,13 +42,13 @@ public:
     MCAPI ItemDescriptorCount(class ItemDescriptor const& descriptor, ushort stackSize);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBUItemTag@@G@Z
-    MCAPI ItemDescriptorCount(struct ItemTag const&, ushort);
+    MCAPI ItemDescriptorCount(struct ItemTag const&, ushort stackSize);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@AEBVItem@@HG@Z
     MCAPI ItemDescriptorCount(class Item const& item, int auxValue, ushort stackSize);
 
     // symbol: ??0ItemDescriptorCount@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HG@Z
-    MCAPI ItemDescriptorCount(std::string_view, int, ushort);
+    MCAPI ItemDescriptorCount(std::string_view item, int auxValue, ushort stackSize);
 
     // symbol: ?getStackSize@ItemDescriptorCount@@QEBAFXZ
     MCAPI short getStackSize() const;

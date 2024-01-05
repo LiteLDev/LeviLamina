@@ -26,7 +26,7 @@ public:
     MCAPI void addDeathExpressionNode(class ExpressionNode const& node);
 
     // symbol: ?initialize@ExperienceRewardDefinition@@QEBAXAEAVEntityContext@@AEAVExperienceRewardComponent@@@Z
-    MCAPI void initialize(class EntityContext& entity, class ExperienceRewardComponent& component) const;
+    MCAPI void initialize(class EntityContext&, class ExperienceRewardComponent& component) const;
 
     // symbol:
     // ?buildSchema@ExperienceRewardDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VExperienceRewardDefinition@@@JsonUtil@@@std@@@Z

@@ -43,7 +43,7 @@ public:
         // symbol:
         // ?fromStringVector@EnabledStates@PlacementDirection@BlockTrait@@SAXAEAU123@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
         MCAPI static void
-        fromStringVector(struct BlockTrait::PlacementDirection::EnabledStates&, std::vector<std::string> const&);
+        fromStringVector(struct BlockTrait::PlacementDirection::EnabledStates& instance, std::vector<std::string> const&);
 
         // NOLINTEND
     };
@@ -112,17 +112,17 @@ public:
     virtual ~PlacementDirection();
 
     // vIndex: 1, symbol: ?applyToBlockLegacy@PlacementDirection@BlockTrait@@UEBAXAEAVBlockLegacy@@@Z
-    virtual void applyToBlockLegacy(class BlockLegacy&) const;
+    virtual void applyToBlockLegacy(class BlockLegacy& blockLegacy) const;
 
     // vIndex: 2, symbol:
     // ?buildNetworkTag@PlacementDirection@BlockTrait@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 
     // vIndex: 3, symbol: ?initializeFromNetwork@PlacementDirection@BlockTrait@@UEAAXAEBVCompoundTag@@@Z
-    virtual void initializeFromNetwork(class CompoundTag const&);
+    virtual void initializeFromNetwork(class CompoundTag const& tag);
 
     // symbol: ?setRotationOffset@PlacementDirection@BlockTrait@@QEAAXAEBM@Z
-    MCAPI void setRotationOffset(float const&);
+    MCAPI void setRotationOffset(float const& rotation);
 
     // symbol: ?CardinalDirection@PlacementDirection@BlockTrait@@SA?AV12@M@Z
     MCAPI static class BlockTrait::PlacementDirection CardinalDirection(float);

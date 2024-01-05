@@ -30,7 +30,7 @@ public:
     MCAPI BlockPos(class ChunkPos const& cp, int y);
 
     // symbol: ??0BlockPos@@QEAA@AEBVChunkPos@@AEBVChunkBlockPos@@F@Z
-    MCAPI BlockPos(class ChunkPos const&, class ChunkBlockPos const&, short);
+    MCAPI BlockPos(class ChunkPos const& cp, class ChunkBlockPos const& offset, short);
 
     // symbol: ??0BlockPos@@QEAA@MMM@Z
     MCAPI BlockPos(float x, float y, float z);
@@ -48,10 +48,10 @@ public:
     MCAPI explicit operator class Vec3() const;
 
     // symbol: ??9BlockPos@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class BlockPos const& rhs) const;
+    MCAPI bool operator!=(class BlockPos const&) const;
 
     // symbol: ??HBlockPos@@QEBA?AV0@AEBV0@@Z
-    MCAPI class BlockPos operator+(class BlockPos const& rhs) const;
+    MCAPI class BlockPos operator+(class BlockPos const&) const;
 
     // symbol: ??8BlockPos@@QEBA_NAEBV0@@Z
     MCAPI bool operator==(class BlockPos const& rhs) const;

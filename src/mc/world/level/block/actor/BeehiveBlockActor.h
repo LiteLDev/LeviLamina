@@ -103,7 +103,7 @@ public:
     _revive(class BlockSource& region, struct BeehiveBlockActor::Occupant const& occupant, uchar spawnDirection);
 
     // symbol: ?_tickOccupant@BeehiveBlockActor@@AEAA_NAEAVBlockSource@@AEAUOccupant@1@@Z
-    MCAPI bool _tickOccupant(class BlockSource&, struct BeehiveBlockActor::Occupant&);
+    MCAPI bool _tickOccupant(class BlockSource& region, struct BeehiveBlockActor::Occupant& occupant);
 
     // symbol: ?_trySpawnBees@BeehiveBlockActor@@AEAAXAEAVBlockSource@@@Z
     MCAPI void _trySpawnBees(class BlockSource& region);

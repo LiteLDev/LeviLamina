@@ -12,12 +12,12 @@ namespace ColumnUtils {
 // symbol:
 // ?scanColumn@ColumnUtils@@YA?AV?$optional@UColumnRange@ColumnUtils@@@std@@AEBVBlockPos@@HV?$function@$$A6A_NAEBVBlockPos@@@Z@3@1@Z
 MCAPI std::optional<struct ColumnUtils::ColumnRange>
-scanColumn(class BlockPos const&, int, std::function<bool(class BlockPos const&)>, std::function<bool(class BlockPos const&)>);
+scanColumn(class BlockPos const& pos, int searchRange, std::function<bool(class BlockPos const&)>, std::function<bool(class BlockPos const&)>);
 
 // symbol:
 // ?scanColumnWithinPosBiome@ColumnUtils@@YA?AV?$optional@UColumnRange@ColumnUtils@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@HV?$function@$$A6A_NAEBVBlockPos@@@Z@3@2@Z
 MCAPI std::optional<struct ColumnUtils::ColumnRange>
-scanColumnWithinPosBiome(class IBlockWorldGenAPI&, class BlockPos const&, int, std::function<bool(class BlockPos const&)>, std::function<bool(class BlockPos const&)>);
+scanColumnWithinPosBiome(class IBlockWorldGenAPI& target, class BlockPos const& pos, int searchRange, std::function<bool(class BlockPos const&)>, std::function<bool(class BlockPos const&)>);
 // NOLINTEND
 
 }; // namespace ColumnUtils

@@ -43,11 +43,11 @@ public:
 
     // vIndex: 2, symbol:
     // ?clearVelocity@ScriptSimulatedPlayer@ScriptModuleGameTest@@UEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@@Z
-    virtual class Scripting::Result<void> clearVelocity(class Actor&);
+    virtual class Scripting::Result<void> clearVelocity(class Actor& self);
 
     // vIndex: 7, symbol:
     // ?applyImpulse@ScriptSimulatedPlayer@ScriptModuleGameTest@@UEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@AEBVVec3@@@Z
-    virtual class Scripting::Result<void> applyImpulse(class Actor&, class Vec3 const&);
+    virtual class Scripting::Result<void> applyImpulse(class Actor& self, class Vec3 const& vector);
 
     // vIndex: 8, symbol:
     // ?remove@ScriptSimulatedPlayer@ScriptModuleGameTest@@UEAA?AV?$Result@X$$V@Scripting@@AEAVActor@@@Z
@@ -65,7 +65,8 @@ public:
 
     // symbol:
     // ?breakBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@AEBVVec3@@W4ScriptFacing@ScriptModuleMinecraft@@@Z
-    MCAPI class Scripting::Result<bool> breakBlock(class Vec3 const&, ::ScriptModuleMinecraft::ScriptFacing) const;
+    MCAPI class Scripting::Result<bool>
+    breakBlock(class Vec3 const& pos, ::ScriptModuleMinecraft::ScriptFacing face) const;
 
     // symbol:
     // ?chat@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -99,7 +100,7 @@ public:
     // symbol:
     // ?interactWithBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@AEBVVec3@@W4ScriptFacing@ScriptModuleMinecraft@@@Z
     MCAPI class Scripting::Result<bool>
-    interactWithBlock(class Vec3 const&, ::ScriptModuleMinecraft::ScriptFacing) const;
+    interactWithBlock(class Vec3 const& blockPos, ::ScriptModuleMinecraft::ScriptFacing facing) const;
 
     // symbol:
     // ?interactWithEntity@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@AEBVScriptActor@ScriptModuleMinecraft@@@Z
@@ -109,45 +110,46 @@ public:
     MCAPI class Scripting::Result<bool> jump() const;
 
     // symbol: ?lookAtBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVVec3@@@Z
-    MCAPI class Scripting::Result<void> lookAtBlock(class Vec3 const&) const;
+    MCAPI class Scripting::Result<void> lookAtBlock(class Vec3 const& blockPos) const;
 
     // symbol:
     // ?lookAtEntity@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVScriptActor@ScriptModuleMinecraft@@@Z
     MCAPI class Scripting::Result<void> lookAtEntity(class ScriptModuleMinecraft::ScriptActor const&) const;
 
     // symbol: ?lookAtLocation@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVVec3@@@Z
-    MCAPI class Scripting::Result<void> lookAtLocation(class Vec3 const&) const;
+    MCAPI class Scripting::Result<void> lookAtLocation(class Vec3 const& pos) const;
 
     // symbol: ?move@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@MMM@Z
-    MCAPI class Scripting::Result<void> move(float, float, float) const;
+    MCAPI class Scripting::Result<void> move(float, float, float speed) const;
 
     // symbol: ?moveRelative@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@MMM@Z
-    MCAPI class Scripting::Result<void> moveRelative(float, float, float) const;
+    MCAPI class Scripting::Result<void> moveRelative(float, float, float speed) const;
 
     // symbol: ?moveToBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVVec3@@M@Z
-    MCAPI class Scripting::Result<void> moveToBlock(class Vec3 const&, float) const;
+    MCAPI class Scripting::Result<void> moveToBlock(class Vec3 const& position, float speed) const;
 
     // symbol: ?moveToLocation@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBVVec3@@M@Z
-    MCAPI class Scripting::Result<void> moveToLocation(class Vec3 const&, float) const;
+    MCAPI class Scripting::Result<void> moveToLocation(class Vec3 const& position, float speed) const;
 
     // symbol:
     // ?navigateToBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@UScriptNavigationResult@ScriptModuleMinecraft@@$$V@Scripting@@AEBVVec3@@M@Z
     MCAPI class Scripting::Result<struct ScriptModuleMinecraft::ScriptNavigationResult>
-    navigateToBlock(class Vec3 const&, float) const;
+    navigateToBlock(class Vec3 const& position, float speed) const;
 
     // symbol:
     // ?navigateToEntity@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@UScriptNavigationResult@ScriptModuleMinecraft@@$$V@Scripting@@AEBVScriptActor@ScriptModuleMinecraft@@M@Z
     MCAPI class Scripting::Result<struct ScriptModuleMinecraft::ScriptNavigationResult>
-    navigateToEntity(class ScriptModuleMinecraft::ScriptActor const&, float) const;
+    navigateToEntity(class ScriptModuleMinecraft::ScriptActor const&, float speed) const;
 
     // symbol:
     // ?navigateToLocation@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@UScriptNavigationResult@ScriptModuleMinecraft@@$$V@Scripting@@AEBVVec3@@M@Z
     MCAPI class Scripting::Result<struct ScriptModuleMinecraft::ScriptNavigationResult>
-    navigateToLocation(class Vec3 const&, float) const;
+    navigateToLocation(class Vec3 const& position, float speed) const;
 
     // symbol:
     // ?navigateToLocations@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@AEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@M@Z
-    MCAPI class Scripting::Result<void> navigateToLocations(std::vector<class Vec3> const&, float) const;
+    MCAPI class Scripting::Result<void>
+    navigateToLocations(std::vector<class Vec3> const& positions, float speed) const;
 
     // symbol: ?respawn@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@XZ
     MCAPI class Scripting::Result<bool> respawn() const;
@@ -159,11 +161,12 @@ public:
     MCAPI class Scripting::Result<void> setBodyRotation(float) const;
 
     // symbol: ?setGameMode@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEAA?AV?$Result@X$$V@Scripting@@W4GameType@@@Z
-    MCAPI class Scripting::Result<void> setGameMode(::GameType);
+    MCAPI class Scripting::Result<void> setGameMode(::GameType gameType);
 
     // symbol:
     // ?setItem@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@AEBVScriptItemStack@ScriptModuleMinecraft@@H_N@Z
-    MCAPI class Scripting::Result<bool> setItem(class ScriptModuleMinecraft::ScriptItemStack const&, int, bool) const;
+    MCAPI class Scripting::Result<bool>
+    setItem(class ScriptModuleMinecraft::ScriptItemStack const&, int slot, bool) const;
 
     // symbol: ?setSprinting@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@X$$V@Scripting@@_N@Z
     MCAPI class Scripting::Result<void> setSprinting(bool) const;
@@ -203,18 +206,18 @@ public:
     MCAPI class Scripting::Result<bool> useItem(class ScriptModuleMinecraft::ScriptItemStack const&) const;
 
     // symbol: ?useItemInSlot@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<bool> useItemInSlot(int) const;
+    MCAPI class Scripting::Result<bool> useItemInSlot(int slot) const;
 
     // symbol:
     // ?useItemInSlotOnBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@HAEBVVec3@@W4ScriptFacing@ScriptModuleMinecraft@@V?$optional@VVec3@@@std@@@Z
     MCAPI class Scripting::Result<bool>
-    useItemInSlotOnBlock(int, class Vec3 const&, ::ScriptModuleMinecraft::ScriptFacing, std::optional<class Vec3>)
+    useItemInSlotOnBlock(int slot, class Vec3 const& pos, ::ScriptModuleMinecraft::ScriptFacing face, std::optional<class Vec3>)
         const;
 
     // symbol:
     // ?useItemOnBlock@ScriptSimulatedPlayer@ScriptModuleGameTest@@QEBA?AV?$Result@_N$$V@Scripting@@AEBVScriptItemStack@ScriptModuleMinecraft@@AEBVVec3@@W4ScriptFacing@6@V?$optional@VVec3@@@std@@@Z
     MCAPI class Scripting::Result<bool>
-    useItemOnBlock(class ScriptModuleMinecraft::ScriptItemStack const&, class Vec3 const&, ::ScriptModuleMinecraft::ScriptFacing, std::optional<class Vec3>)
+    useItemOnBlock(class ScriptModuleMinecraft::ScriptItemStack const&, class Vec3 const& pos, ::ScriptModuleMinecraft::ScriptFacing face, std::optional<class Vec3>)
         const;
 
     // symbol:
@@ -227,17 +230,17 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_getHelper@ScriptSimulatedPlayer@ScriptModuleGameTest@@CAPEBVBaseGameTestHelper@gametest@@AEBVSimulatedPlayer@@@Z
-    MCAPI static class gametest::BaseGameTestHelper const* _getHelper(class SimulatedPlayer const&);
+    MCAPI static class gametest::BaseGameTestHelper const* _getHelper(class SimulatedPlayer const& player);
 
     // symbol:
     // ?_toWorld@ScriptSimulatedPlayer@ScriptModuleGameTest@@CA?AV?$optional@UGameTestError@gametest@@@std@@AEAVSimulatedPlayer@@PEAVBlockPos@@PEAEPEAVVec3@@@Z
     MCAPI static std::optional<struct gametest::GameTestError>
-    _toWorld(class SimulatedPlayer&, class BlockPos*, uchar*, class Vec3*);
+    _toWorld(class SimulatedPlayer& player, class BlockPos* blockPos, uchar* face, class Vec3* pos);
 
     // symbol:
     // ?_worldToLocalNavigationResult@ScriptSimulatedPlayer@ScriptModuleGameTest@@CA?AUScriptNavigationResult@ScriptModuleMinecraft@@AEAVSimulatedPlayer@@U34@@Z
     MCAPI static struct ScriptModuleMinecraft::ScriptNavigationResult
-    _worldToLocalNavigationResult(class SimulatedPlayer&, struct ScriptModuleMinecraft::ScriptNavigationResult);
+    _worldToLocalNavigationResult(class SimulatedPlayer& player, struct ScriptModuleMinecraft::ScriptNavigationResult);
 
     // NOLINTEND
 };

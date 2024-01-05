@@ -15,26 +15,35 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?createNoiseCache@VoidGenerator@@MEBA?AVChunkLocalNoiseCache@@VChunkPos@@@Z
-    MCVAPI class ChunkLocalNoiseCache createNoiseCache(class ChunkPos) const;
+    MCVAPI class ChunkLocalNoiseCache createNoiseCache(class ChunkPos chunkPos) const;
 
     // symbol: ?createWorldGenCache@VoidGenerator@@MEBA?AVWorldGenCache@@VChunkPos@@@Z
-    MCVAPI class WorldGenCache createWorldGenCache(class ChunkPos) const;
+    MCVAPI class WorldGenCache createWorldGenCache(class ChunkPos chunkPos) const;
 
     // symbol:
     // ?decorateWorldGenLoadChunk@VoidGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
-    MCVAPI void
-    decorateWorldGenLoadChunk(class Biome&, class LevelChunk&, class BlockVolumeTarget&, class Random&, class ChunkPos const&)
-        const;
+    MCVAPI void decorateWorldGenLoadChunk(
+        class Biome&             biome,
+        class LevelChunk&        lc,
+        class BlockVolumeTarget& target,
+        class Random&            random,
+        class ChunkPos const&    pos
+    ) const;
 
     // symbol:
     // ?decorateWorldGenPostProcess@VoidGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
-    MCVAPI void decorateWorldGenPostProcess(class Biome&, class LevelChunk&, class BlockSource&, class Random&) const;
+    MCVAPI void decorateWorldGenPostProcess(
+        class Biome&       biome,
+        class LevelChunk&  lc,
+        class BlockSource& source,
+        class Random&      random
+    ) const;
 
     // symbol: ?findSpawnPosition@VoidGenerator@@UEBA?AVBlockPos@@XZ
     MCVAPI class BlockPos findSpawnPosition() const;
 
     // symbol: ?getBiomeArea@VoidGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const&, uint) const;
+    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
     // symbol: ?getBiomeSource@VoidGenerator@@UEBAAEBVBiomeSource@@XZ
     MCVAPI class BiomeSource const& getBiomeSource() const;
@@ -43,20 +52,26 @@ public:
     MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
 
     // symbol: ?loadChunk@VoidGenerator@@UEAAXAEAVLevelChunk@@_N@Z
-    MCVAPI void loadChunk(class LevelChunk&, bool);
+    MCVAPI void loadChunk(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
     // symbol: ?postProcess@VoidGenerator@@UEAA_NAEAVChunkViewSource@@@Z
-    MCVAPI bool postProcess(class ChunkViewSource&);
+    MCVAPI bool postProcess(class ChunkViewSource& neighborhood);
 
     // symbol:
     // ?prepareAndComputeHeights@VoidGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
-    MCVAPI void prepareAndComputeHeights(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int);
+    MCVAPI void prepareAndComputeHeights(
+        class BlockVolume&    box,
+        class ChunkPos const& chunkPos,
+        std::vector<short>&   ZXheights,
+        bool                  factorInBeardsAndShavers,
+        int                   skipTopN
+    );
 
     // symbol: ?prepareHeights@VoidGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
-    MCVAPI void prepareHeights(class BlockVolume&, class ChunkPos const&, bool);
+    MCVAPI void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
     // symbol: ??0VoidGenerator@@QEAA@AEAVDimension@@@Z
-    MCAPI explicit VoidGenerator(class Dimension&);
+    MCAPI explicit VoidGenerator(class Dimension& dimension);
 
     // NOLINTEND
 };

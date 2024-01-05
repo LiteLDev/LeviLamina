@@ -70,7 +70,7 @@ public:
     MCAPI AttributeBuff(float amount, int operand, ::AttributeBuffType type);
 
     // symbol: ??0AttributeBuff@@IEAA@MHAEBVActorDamageSource@@W4AttributeBuffType@@@Z
-    MCAPI AttributeBuff(float, int, class ActorDamageSource const&, ::AttributeBuffType);
+    MCAPI AttributeBuff(float amount, int operand, class ActorDamageSource const& source, ::AttributeBuffType type);
 
     // NOLINTEND
 };

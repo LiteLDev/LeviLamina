@@ -30,7 +30,7 @@ public:
     virtual int getCraftingSize() const;
 
     // vIndex: 3, symbol: ?getIngredient@FireworksRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-    virtual class RecipeIngredient const& getIngredient(int x, int y) const;
+    virtual class RecipeIngredient const& getIngredient(int, int) const;
 
     // vIndex: 4, symbol:
     // ?getResultItem@FireworksRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
@@ -40,7 +40,7 @@ public:
     virtual void __unk_vfn_5();
 
     // vIndex: 6, symbol: ?matches@FireworksRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
-    virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const;
+    virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
 
     // vIndex: 7, symbol: ?size@FireworksRecipe@@UEBAHXZ
     virtual int size() const;
@@ -49,7 +49,7 @@ public:
     MCVAPI bool isShapeless() const;
 
     // symbol: ??0FireworksRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@PEBVUUID@mce@@@Z
-    MCAPI FireworksRecipe(std::string_view, class mce::UUID const*);
+    MCAPI FireworksRecipe(std::string_view recipeId, class mce::UUID const* uuid);
 
     // symbol: ?ID@FireworksRecipe@@2VUUID@mce@@A
     MCAPI static class mce::UUID ID;

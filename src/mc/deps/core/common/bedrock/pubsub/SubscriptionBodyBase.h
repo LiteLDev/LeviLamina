@@ -23,7 +23,7 @@ public:
 
     // symbol:
     // ??0SubscriptionBodyBase@Detail@PubSub@Bedrock@@QEAA@$$QEAV?$unique_ptr@VSubscriptionContext@PubSub@Bedrock@@U?$default_delete@VSubscriptionContext@PubSub@Bedrock@@@std@@@std@@@Z
-    MCAPI explicit SubscriptionBodyBase(std::unique_ptr<class Bedrock::PubSub::SubscriptionContext>&&);
+    MCAPI explicit SubscriptionBodyBase(std::unique_ptr<class Bedrock::PubSub::SubscriptionContext>&& context);
 
     // NOLINTEND
 };

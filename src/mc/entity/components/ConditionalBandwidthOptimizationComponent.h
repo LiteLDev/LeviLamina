@@ -16,11 +16,11 @@ public:
 
     // symbol:
     // ?getCurrentOptimizationValues@ConditionalBandwidthOptimizationComponent@@QEAA?AUConditionalBandwidthOptimization@@AEAVActor@@@Z
-    MCAPI struct ConditionalBandwidthOptimization getCurrentOptimizationValues(class Actor&);
+    MCAPI struct ConditionalBandwidthOptimization getCurrentOptimizationValues(class Actor& owner);
 
     // symbol:
     // ?initFromDefinition@ConditionalBandwidthOptimizationComponent@@QEAAXAEAVActor@@AEBVConditionalBandwidthOptimizationDefinition@@@Z
-    MCAPI void initFromDefinition(class Actor&, class ConditionalBandwidthOptimizationDefinition const&);
+    MCAPI void initFromDefinition(class Actor& actor, class ConditionalBandwidthOptimizationDefinition const& def);
 
     // symbol: ??4ConditionalBandwidthOptimizationComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ConditionalBandwidthOptimizationComponent& operator=(class ConditionalBandwidthOptimizationComponent&&);

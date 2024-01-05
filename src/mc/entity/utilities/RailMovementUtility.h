@@ -28,27 +28,38 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?calculateGoldenRailSpeedIncrease@RailMovementUtility@@SA?AVVec3@@AEBVIConstBlockSource@@AEBVBlockPos@@HV2@@Z
-    MCAPI static class Vec3
-    calculateGoldenRailSpeedIncrease(class IConstBlockSource const&, class BlockPos const&, int, class Vec3);
+    MCAPI static class Vec3 calculateGoldenRailSpeedIncrease(
+        class IConstBlockSource const& region,
+        class BlockPos const&          pos,
+        int                            direction,
+        class Vec3                     posDelta
+    );
 
     // symbol:
     // ?calculateMoveVelocity@RailMovementUtility@@SA?AVVec3@@AEBVBlock@@HM_NAEAV2@AEA_N3AEBV?$function@$$A6A_NAEAVVec3@@@Z@std@@@Z
     MCAPI static class Vec3
-    calculateMoveVelocity(class Block const&, int, float, bool, class Vec3&, bool&, bool&, std::function<bool(class Vec3&)> const&);
+    calculateMoveVelocity(class Block const& block, int, float, bool, class Vec3& posDelta, bool&, bool&, std::function<bool(class Vec3&)> const&);
 
     // symbol: ?calculatePassengerRailMovementInput@RailMovementUtility@@SA_NAEAVVec3@@MM@Z
-    MCAPI static bool calculatePassengerRailMovementInput(class Vec3&, float, float);
+    MCAPI static bool calculatePassengerRailMovementInput(class Vec3& posDelta, float forward, float);
 
     // symbol:
     // ?calculatePostRailMovementMinecartPosition@RailMovementUtility@@SA?AVVec3@@AEBVIConstBlockSource@@AEBV2@V2@AEBVBlockPos@@HAEAV2@@Z
-    MCAPI static class Vec3
-    calculatePostRailMovementMinecartPosition(class IConstBlockSource const&, class Vec3 const&, class Vec3, class BlockPos const&, int, class Vec3&);
+    MCAPI static class Vec3 calculatePostRailMovementMinecartPosition(
+        class IConstBlockSource const& region,
+        class Vec3 const&,
+        class Vec3            entityPos,
+        class BlockPos const& pos,
+        int,
+        class Vec3& posDelta
+    );
 
     // symbol: ?calculatePreRailMovementMinecartPosition@RailMovementUtility@@SA?AVVec3@@V2@AEBVBlockPos@@HM@Z
-    MCAPI static class Vec3 calculatePreRailMovementMinecartPosition(class Vec3, class BlockPos const&, int, float);
+    MCAPI static class Vec3
+    calculatePreRailMovementMinecartPosition(class Vec3 entityPos, class BlockPos const& pos, int, float heightOffset);
 
     // symbol: ?getPos@RailMovementUtility@@SA_NAEBVIConstBlockSource@@AEAVVec3@@V3@@Z
-    MCAPI static bool getPos(class IConstBlockSource const&, class Vec3&, class Vec3);
+    MCAPI static bool getPos(class IConstBlockSource const& region, class Vec3& valueVec, class Vec3 pos);
 
     // NOLINTEND
 

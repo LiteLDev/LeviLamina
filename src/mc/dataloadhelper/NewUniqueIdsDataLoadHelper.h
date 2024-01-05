@@ -66,8 +66,10 @@ public:
 
     // vIndex: 15, symbol:
     // ?loadActorInternalComponentInfo@NewUniqueIdsDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
-    virtual struct InternalComponentRegistry::ComponentInfo const*
-    loadActorInternalComponentInfo(std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo> const&, std::string const&);
+    virtual struct InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(
+        std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo> const& registry,
+        std::string const&                                                                             componentName
+    );
 
     // vIndex: 16, symbol: ?getType@NewUniqueIdsDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ
     virtual ::DataLoadHelperType getType() const;
@@ -76,43 +78,43 @@ public:
     virtual bool shouldResetTime();
 
     // symbol: ?loadBlockPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-    MCVAPI class BlockPos loadBlockPosition(class BlockPos const&);
+    MCVAPI class BlockPos loadBlockPosition(class BlockPos const& blockPos);
 
     // symbol: ?loadBlockPositionOffset@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
-    MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const&);
+    MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const& blockPosOffset);
 
     // symbol: ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-    MCVAPI class Vec3 loadDirection(class Vec3 const&);
+    MCVAPI class Vec3 loadDirection(class Vec3 const& direction);
 
     // symbol: ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
-    MCVAPI ::Direction::Type loadDirection(::Direction::Type);
+    MCVAPI ::Direction::Type loadDirection(::Direction::Type direction);
 
     // symbol: ?loadFacingID@NewUniqueIdsDataLoadHelper@@UEAAEE@Z
-    MCVAPI uchar loadFacingID(uchar);
+    MCVAPI uchar loadFacingID(uchar facing);
 
     // symbol: ?loadMirror@NewUniqueIdsDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
-    MCVAPI ::Mirror loadMirror(::Mirror);
+    MCVAPI ::Mirror loadMirror(::Mirror mirror);
 
     // symbol: ?loadPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
-    MCVAPI class Vec3 loadPosition(class Vec3 const&);
+    MCVAPI class Vec3 loadPosition(class Vec3 const& position);
 
     // symbol: ?loadRotation@NewUniqueIdsDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
-    MCVAPI ::Rotation loadRotation(::Rotation);
+    MCVAPI ::Rotation loadRotation(::Rotation rotation);
 
     // symbol: ?loadRotationDegreesX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationDegreesX(float);
+    MCVAPI float loadRotationDegreesX(float x);
 
     // symbol: ?loadRotationDegreesY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationDegreesY(float);
+    MCVAPI float loadRotationDegreesY(float y);
 
     // symbol: ?loadRotationRadiansX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationRadiansX(float);
+    MCVAPI float loadRotationRadiansX(float x);
 
     // symbol: ?loadRotationRadiansY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
-    MCVAPI float loadRotationRadiansY(float);
+    MCVAPI float loadRotationRadiansY(float y);
 
     // symbol: ??0NewUniqueIdsDataLoadHelper@@QEAA@AEAVILevel@@@Z
-    MCAPI explicit NewUniqueIdsDataLoadHelper(class ILevel&);
+    MCAPI explicit NewUniqueIdsDataLoadHelper(class ILevel& level);
 
     // NOLINTEND
 };

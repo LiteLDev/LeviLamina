@@ -21,10 +21,10 @@ public:
     MCAPI bool getUsed() const;
 
     // symbol: ?setToStart@PrioritizedGoal@@QEAAX_N@Z
-    MCAPI void setToStart(bool val);
+    MCAPI void setToStart(bool start);
 
     // symbol: ?setUsed@PrioritizedGoal@@QEAAX_N@Z
-    MCAPI void setUsed(bool val);
+    MCAPI void setUsed(bool used);
 
     // symbol: ??1PrioritizedGoal@@QEAA@XZ
     MCAPI ~PrioritizedGoal();

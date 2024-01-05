@@ -6,13 +6,13 @@ namespace GoalSelectorUtility {
 // NOLINTBEGIN
 // symbol:
 // ?canUseInSystem@GoalSelectorUtility@@YA_NAEAVPrioritizedGoal@@AEAV?$vector@U?$pair@GVPrioritizedGoal@@@std@@V?$allocator@U?$pair@GVPrioritizedGoal@@@std@@@2@@std@@@Z
-MCAPI bool canUseInSystem(class PrioritizedGoal&, std::vector<std::pair<ushort, class PrioritizedGoal>>&);
+MCAPI bool canUseInSystem(class PrioritizedGoal& goal, std::vector<std::pair<ushort, class PrioritizedGoal>>& goalSet);
 
 // symbol: ?tickGoals@GoalSelectorUtility@@YAXAEAVMob@@_N@Z
-MCAPI void tickGoals(class Mob&, bool);
+MCAPI void tickGoals(class Mob& owner, bool);
 
 // symbol: ?tryStartGoals@GoalSelectorUtility@@YAXAEAVMob@@_N@Z
-MCAPI void tryStartGoals(class Mob&, bool);
+MCAPI void tryStartGoals(class Mob& owner, bool);
 // NOLINTEND
 
 }; // namespace GoalSelectorUtility

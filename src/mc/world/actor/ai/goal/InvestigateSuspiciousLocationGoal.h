@@ -36,12 +36,16 @@ public:
         MCAPI Definition();
 
         // symbol: ?initialize@Definition@InvestigateSuspiciousLocationGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext&, class InvestigateSuspiciousLocationGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class InvestigateSuspiciousLocationGoal& goal) const;
 
         // symbol:
         // ?buildSchema@Definition@InvestigateSuspiciousLocationGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@InvestigateSuspiciousLocationGoal@@@JsonUtil@@@4@@Z
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InvestigateSuspiciousLocationGoal::Definition>>&);
+        MCAPI static void buildSchema(
+            std::string const&                                         name,
+            std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                class JsonUtil::EmptyClass,
+                class InvestigateSuspiciousLocationGoal::Definition>>& root
+        );
 
         // NOLINTEND
     };
@@ -74,10 +78,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@InvestigateSuspiciousLocationGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0InvestigateSuspiciousLocationGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit InvestigateSuspiciousLocationGoal(class Mob&);
+    MCAPI explicit InvestigateSuspiciousLocationGoal(class Mob& mob);
 
     // NOLINTEND
 };

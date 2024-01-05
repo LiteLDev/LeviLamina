@@ -31,18 +31,22 @@ public:
     // ?_fillArea@RegionHillsOperationNode@@MEBAXAEAV?$WorkingData@PEAVBiome@@PEAV1@@OperationNodeDetails@@AEBVPos2d@@1H@Z
     virtual void _fillArea(
         class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&,
-        class Pos2d const&,
-        class Pos2d const&,
-        int
+        class Pos2d const& origin,
+        class Pos2d const& size,
+        int                pw
     ) const;
 
     // vIndex: 4, symbol: ?_getAreaRead@RegionHillsOperationNode@@MEBA?AV?$tuple@VPos2d@@V1@@std@@AEBVPos2d@@0@Z
-    virtual std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const&, class Pos2d const&) const;
+    virtual std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const& origin, class Pos2d const& size) const;
 
     // symbol:
     // ??0RegionHillsOperationNode@@QEAA@IAEAV?$shared_ptr@V?$OperationNode@PEAVBiome@@VPos2d@@@@@std@@AEAV?$shared_ptr@V?$OperationNode@HVPos2d@@@@@2@AEBVBiomeRegistry@@@Z
-    MCAPI
-    RegionHillsOperationNode(uint, std::shared_ptr<class OperationNode<class Biome*, class Pos2d>>&, std::shared_ptr<class OperationNode<int, class Pos2d>>&, class BiomeRegistry const&);
+    MCAPI RegionHillsOperationNode(
+        uint                                                             seedMixup,
+        std::shared_ptr<class OperationNode<class Biome*, class Pos2d>>& parent,
+        std::shared_ptr<class OperationNode<int, class Pos2d>>&,
+        class BiomeRegistry const& biomeRegistry
+    );
 
     // NOLINTEND
 };

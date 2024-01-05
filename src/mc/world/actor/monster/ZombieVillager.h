@@ -65,7 +65,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 83, symbol: ?handleEntityEvent@ZombieVillager@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -89,7 +89,11 @@ public:
     virtual void __unk_vfn_168();
 
     // symbol: ??0ZombieVillager@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI ZombieVillager(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI ZombieVillager(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 };

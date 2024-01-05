@@ -45,8 +45,14 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?createWorkerPool@WorkerPoolManagerImpl@Bedrock@@UEAA?AV?$shared_ptr@VPoolHandleInterface@WorkerPoolManager@Bedrock@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@_KAEBVOSThreadPriority@Threading@2@V?$optional@_K@4@_NV?$optional@H@4@@Z
-    MCVAPI std::shared_ptr<class Bedrock::WorkerPoolManager::PoolHandleInterface>
-    createWorkerPool(std::string, uint64, class Bedrock::Threading::OSThreadPriority const&, std::optional<uint64>, bool, std::optional<int>);
+    MCVAPI std::shared_ptr<class Bedrock::WorkerPoolManager::PoolHandleInterface> createWorkerPool(
+        std::string                                       name,
+        uint64                                            threadCount,
+        class Bedrock::Threading::OSThreadPriority const& priority,
+        std::optional<uint64>                             coreAffinityMask,
+        bool                                              suppressWorkerProfiling,
+        std::optional<int>                                idealCore
+    );
 
     // symbol: ?init@WorkerPoolManagerImpl@Bedrock@@UEAAXXZ
     MCVAPI void init();

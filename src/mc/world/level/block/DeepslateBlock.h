@@ -121,7 +121,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 141, symbol: ?tryGetInfested@DeepslateBlock@@UEBAPEBVBlock@@AEBV2@@Z
-    virtual class Block const* tryGetInfested(class Block const&) const;
+    virtual class Block const* tryGetInfested(class Block const& block) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -139,7 +139,7 @@ public:
     virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
 
     // symbol: ??0DeepslateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DeepslateBlock(std::string const&, int);
+    MCAPI DeepslateBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

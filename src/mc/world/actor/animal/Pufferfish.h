@@ -46,7 +46,7 @@ public:
     virtual void normalTick();
 
     // vIndex: 32, symbol: ?startRiding@Pufferfish@@UEAA_NAEAVActor@@@Z
-    virtual bool startRiding(class Actor& ride);
+    virtual bool startRiding(class Actor&);
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
@@ -88,7 +88,11 @@ public:
     virtual void __unk_vfn_168();
 
     // symbol: ??0Pufferfish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Pufferfish(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Pufferfish(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 };

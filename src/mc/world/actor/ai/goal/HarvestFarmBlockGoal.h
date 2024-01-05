@@ -41,14 +41,14 @@ public:
     virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
 
     // symbol: ??0HarvestFarmBlockGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit HarvestFarmBlockGoal(class Mob&);
+    MCAPI explicit HarvestFarmBlockGoal(class Mob& mob);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?trySowCrop@HarvestFarmBlockGoal@@IEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool trySowCrop(class BlockSource&, class BlockPos const&);
+    MCAPI bool trySowCrop(class BlockSource& region, class BlockPos const&);
 
     // NOLINTEND
 };

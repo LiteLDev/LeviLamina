@@ -11,10 +11,10 @@ MCAPI bool canDash(class ActorStatusProvider const&);
 MCAPI bool hasDashCooldown(class ActorStatusProvider const&);
 
 // symbol: ?setCanDash@ActorStatus@@YAX_NAEAVActorStatusProvider@@@Z
-MCAPI void setCanDash(bool, class ActorStatusProvider&);
+MCAPI void setCanDash(bool value, class ActorStatusProvider&);
 
 // symbol: ?setHasDashCooldown@ActorStatus@@YAX_NAEAVActorStatusProvider@@@Z
-MCAPI void setHasDashCooldown(bool, class ActorStatusProvider&);
+MCAPI void setHasDashCooldown(bool value, class ActorStatusProvider&);
 // NOLINTEND
 
 }; // namespace ActorStatus

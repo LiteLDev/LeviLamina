@@ -8,7 +8,7 @@
 namespace LegacyBlockIdMappingUtils {
 // NOLINTBEGIN
 // symbol: ?addLegacyBlockIdMapping@LegacyBlockIdMappingUtils@@YAXAEBVBlockLegacy@@_K@Z
-MCAPI void addLegacyBlockIdMapping(class BlockLegacy const&, uint64);
+MCAPI void addLegacyBlockIdMapping(class BlockLegacy const& legacyBlock, uint64 legacyId);
 
 // symbol: ?addLegacyBlockIdMappings@LegacyBlockIdMappingUtils@@YAXXZ
 MCAPI void addLegacyBlockIdMappings();

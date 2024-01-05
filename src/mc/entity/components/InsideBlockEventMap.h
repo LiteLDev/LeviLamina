@@ -14,7 +14,7 @@ public:
 
     // symbol: ??0InsideBlockEventMap@@QEAA@AEBVBlock@@_N11AEBVActorDefinitionTrigger@@2@Z
     MCAPI
-    InsideBlockEventMap(class Block const&, bool, bool, bool, class ActorDefinitionTrigger const&, class ActorDefinitionTrigger const&);
+    InsideBlockEventMap(class Block const& block, bool, bool, bool, class ActorDefinitionTrigger const&, class ActorDefinitionTrigger const&);
 
     // symbol: ?getBlock@InsideBlockEventMap@@QEBA?AV?$not_null@PEBVBlock@@@gsl@@XZ
     MCAPI gsl::not_null<class Block const*> getBlock() const;
@@ -44,7 +44,7 @@ public:
     MCAPI void setCurrentlyInside(bool);
 
     // symbol: ?setWasInside@InsideBlockEventMap@@QEAAX_N@Z
-    MCAPI void setWasInside(bool);
+    MCAPI void setWasInside(bool wasInside);
 
     // symbol: ?wasActorInsideLastTick@InsideBlockEventMap@@QEBA_NXZ
     MCAPI bool wasActorInsideLastTick() const;

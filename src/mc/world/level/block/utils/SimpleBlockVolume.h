@@ -22,22 +22,22 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0SimpleBlockVolume@@QEAA@$$QEAV0@@Z
-    MCAPI SimpleBlockVolume(class SimpleBlockVolume&&);
+    MCAPI SimpleBlockVolume(class SimpleBlockVolume&& volume);
 
     // symbol: ??0SimpleBlockVolume@@QEAA@AEBV0@@Z
-    MCAPI SimpleBlockVolume(class SimpleBlockVolume const&);
+    MCAPI SimpleBlockVolume(class SimpleBlockVolume const& volume);
 
     // symbol: ?begin@SimpleBlockVolume@@QEBA?AVSimpleBlockVolumeIterator@@XZ
     MCAPI class SimpleBlockVolumeIterator begin() const;
 
     // symbol: ?contains@SimpleBlockVolume@@QEBA_NAEBVBlockPos@@@Z
-    MCAPI bool contains(class BlockPos const&) const;
+    MCAPI bool contains(class BlockPos const& pos) const;
 
     // symbol: ?doesAreaTouchFaces@SimpleBlockVolume@@QEBA_NAEBVBlockPos@@0@Z
-    MCAPI bool doesAreaTouchFaces(class BlockPos const&, class BlockPos const&) const;
+    MCAPI bool doesAreaTouchFaces(class BlockPos const& min, class BlockPos const& max) const;
 
     // symbol: ?doesBlockTouchFaces@SimpleBlockVolume@@QEBA_NAEBVBlockPos@@@Z
-    MCAPI bool doesBlockTouchFaces(class BlockPos const&) const;
+    MCAPI bool doesBlockTouchFaces(class BlockPos const& blockPos) const;
 
     // symbol: ?getBoundingBox@SimpleBlockVolume@@QEBA?AVBoundingBox@@XZ
     MCAPI class BoundingBox getBoundingBox() const;
@@ -64,16 +64,16 @@ public:
     MCAPI class AABB getWorldAABB() const;
 
     // symbol: ?intersects@SimpleBlockVolume@@QEBA?AW4IntersectionResult@1@AEBV1@@Z
-    MCAPI ::SimpleBlockVolume::IntersectionResult intersects(class SimpleBlockVolume const&) const;
+    MCAPI ::SimpleBlockVolume::IntersectionResult intersects(class SimpleBlockVolume const& other) const;
 
     // symbol: ??4SimpleBlockVolume@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class SimpleBlockVolume& operator=(class SimpleBlockVolume&&);
+    MCAPI class SimpleBlockVolume& operator=(class SimpleBlockVolume&& other);
 
     // symbol: ??4SimpleBlockVolume@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class SimpleBlockVolume& operator=(class SimpleBlockVolume const&);
+    MCAPI class SimpleBlockVolume& operator=(class SimpleBlockVolume const& other);
 
     // symbol: ??8SimpleBlockVolume@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class SimpleBlockVolume const&) const;
+    MCAPI bool operator==(class SimpleBlockVolume const& other) const;
 
     // symbol: ?translate@SimpleBlockVolume@@QEAAAEAV1@AEBVBlockPos@@@Z
     MCAPI class SimpleBlockVolume& translate(class BlockPos const&);
@@ -89,10 +89,10 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_setFrom@SimpleBlockVolume@@IEAAXAEBVVec3@@@Z
-    MCAPI void _setFrom(class Vec3 const&);
+    MCAPI void _setFrom(class Vec3 const& from);
 
     // symbol: ?_setTo@SimpleBlockVolume@@IEAAXAEBVVec3@@@Z
-    MCAPI void _setTo(class Vec3 const&);
+    MCAPI void _setTo(class Vec3 const& to);
 
     // NOLINTEND
 };

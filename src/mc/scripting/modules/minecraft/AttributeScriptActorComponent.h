@@ -35,7 +35,7 @@ public:
 
     // vIndex: 3, symbol:
     // ?setCurrent@AttributeScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@_N$$V@Scripting@@AEBM@Z
-    virtual class Scripting::Result<bool> setCurrent(float const&) const;
+    virtual class Scripting::Result<bool> setCurrent(float const& value) const;
 
     // vIndex: 4, symbol:
     // ?getValue@AttributeScriptActorComponent@ScriptModuleMinecraft@@UEBA?AV?$Result@M$$V@Scripting@@XZ

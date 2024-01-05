@@ -40,7 +40,7 @@ public:
     virtual std::optional<class CompoundTag> save() const;
 
     // vIndex: 9, symbol: ?serialize@DeferredDescriptor@@UEBAXAEAVBinaryStream@@@Z
-    virtual void serialize(class BinaryStream&) const;
+    virtual void serialize(class BinaryStream& stream) const;
 
     // vIndex: 10, symbol: ?getType@DeferredDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
     virtual ::ItemDescriptor::InternalType getType() const;
@@ -61,7 +61,7 @@ public:
     // symbol:
     // ?deserialize@DeferredDescriptor@@SA?AV?$Result@V?$unique_ptr@UDeferredDescriptor@@U?$default_delete@UDeferredDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCAPI static class Bedrock::Result<std::unique_ptr<struct DeferredDescriptor>>
-    deserialize(class ReadOnlyBinaryStream&);
+    deserialize(class ReadOnlyBinaryStream& stream);
 
     // NOLINTEND
 
@@ -70,12 +70,12 @@ public:
     // symbol:
     // ?_initFromBlockLegacy@DeferredDescriptor@@AEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@AEBVBlockLegacy@@$$QEAV?$WeakPtr@VItem@@@@@Z
     MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor>
-          _initFromBlockLegacy(class BlockLegacy const&, class WeakPtr<class Item>&&) const;
+          _initFromBlockLegacy(class BlockLegacy const& block, class WeakPtr<class Item>&& item) const;
 
     // symbol:
     // ?_initFromItem@DeferredDescriptor@@AEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@$$QEAV?$WeakPtr@VItem@@@@F@Z
     MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor>
-          _initFromItem(class WeakPtr<class Item>&&, short) const;
+          _initFromItem(class WeakPtr<class Item>&& item, short aux) const;
 
     // NOLINTEND
 };
