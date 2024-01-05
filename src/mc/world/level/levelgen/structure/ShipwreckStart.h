@@ -18,7 +18,7 @@ public:
     virtual ~ShipwreckStart() = default;
 
     // symbol: ??0ShipwreckStart@@QEAA@AEBVBiomeSource@@AEAVRandom@@HHF@Z
-    MCAPI ShipwreckStart(class BiomeSource const&, class Random&, int, int, short);
+    MCAPI ShipwreckStart(class BiomeSource const& source, class Random& random, int x, int z, short seaLevel);
 
     // NOLINTEND
 };

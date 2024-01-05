@@ -100,7 +100,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@ChiseledBookshelfBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -113,7 +113,8 @@ public:
 
     // vIndex: 112, symbol:
     // ?getComparatorSignal@ChiseledBookshelfBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-    virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, uchar) const;
+    virtual int
+    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
 
     // vIndex: 114, symbol: __unk_vfn_114
     virtual void __unk_vfn_114();
@@ -125,7 +126,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@ChiseledBookshelfBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -134,7 +135,7 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 153, symbol: ?use@ChiseledBookshelfBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@EV?$optional@VVec3@@@std@@@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar, std::optional<class Vec3>) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face, std::optional<class Vec3>) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -146,7 +147,7 @@ public:
     virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@ChiseledBookshelfBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol: ?canBeSilkTouched@ChiseledBookshelfBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -158,7 +159,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0ChiseledBookshelfBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ChiseledBookshelfBlock(std::string const&, int);
+    MCAPI ChiseledBookshelfBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

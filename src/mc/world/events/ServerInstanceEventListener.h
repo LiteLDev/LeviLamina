@@ -23,8 +23,10 @@ public:
 
     // symbol:
     // ?onServerMinecraftInitialized@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@@Z
-    MCVAPI ::EventResult
-    onServerMinecraftInitialized(class ServerInstance&, Bedrock::NotNullNonOwnerPtr<class Minecraft> const&);
+    MCVAPI ::EventResult onServerMinecraftInitialized(
+        class ServerInstance&                               instance,
+        Bedrock::NotNullNonOwnerPtr<class Minecraft> const& minecraft
+    );
 
     // symbol: ?onServerResume@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
     MCVAPI ::EventResult onServerResume(class ServerInstance& instance);

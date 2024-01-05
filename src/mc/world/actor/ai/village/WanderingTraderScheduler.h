@@ -44,11 +44,17 @@ public:
 
     // symbol:
     // ?_findValidSpawnPosUnder@WanderingTraderScheduler@@AEBA?AV?$optional@VBlockPos@@@std@@AEBVBlockPos@@AEAVBlockSource@@@Z
-    MCAPI std::optional<class BlockPos> _findValidSpawnPosUnder(class BlockPos const&, class BlockSource&) const;
+    MCAPI std::optional<class BlockPos>
+          _findValidSpawnPosUnder(class BlockPos const& pos, class BlockSource& region) const;
 
     // symbol:
     // ?_getRandomHeightmapPosAroundOrigin@WanderingTraderScheduler@@AEAA?AVBlockPos@@AEBVBlockSource@@AEBV2@H_N@Z
-    MCAPI class BlockPos _getRandomHeightmapPosAroundOrigin(class BlockSource const&, class BlockPos const&, int, bool);
+    MCAPI class BlockPos _getRandomHeightmapPosAroundOrigin(
+        class BlockSource const& region,
+        class BlockPos const&    origin,
+        int                      distFromOrigin,
+        bool                     exactDist
+    );
 
     // symbol: ?_getRandomPlayerInOverworld@WanderingTraderScheduler@@AEBAPEAVActor@@XZ
     MCAPI class Actor* _getRandomPlayerInOverworld() const;

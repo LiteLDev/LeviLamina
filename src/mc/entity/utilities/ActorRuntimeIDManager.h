@@ -20,7 +20,7 @@ public:
     MCAPI class ActorRuntimeID getNextRuntimeID();
 
     // symbol: ?getRuntimeActorEntity@ActorRuntimeIDManager@@QEBAPEAVActor@@VActorRuntimeID@@_N@Z
-    MCAPI class Actor* getRuntimeActorEntity(class ActorRuntimeID, bool) const;
+    MCAPI class Actor* getRuntimeActorEntity(class ActorRuntimeID actorId, bool getRemoved) const;
 
     // symbol:
     // ?getRuntimeActorList@ActorRuntimeIDManager@@QEBA?AV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@XZ
@@ -40,16 +40,16 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_addEntity@ActorRuntimeIDManager@@AEAAXAEBVEntityContext@@@Z
-    MCAPI void _addEntity(class EntityContext const&);
+    MCAPI void _addEntity(class EntityContext const& entity);
 
     // symbol: ?_onActorAdded@ActorRuntimeIDManager@@AEAAXAEAVActor@@@Z
-    MCAPI void _onActorAdded(class Actor&);
+    MCAPI void _onActorAdded(class Actor& actor);
 
     // symbol: ?_onRemoveActorEntityReferences@ActorRuntimeIDManager@@AEAAXAEAVActor@@@Z
-    MCAPI void _onRemoveActorEntityReferences(class Actor&);
+    MCAPI void _onRemoveActorEntityReferences(class Actor& actor);
 
     // symbol: ?_removeEntity@ActorRuntimeIDManager@@AEAAXAEBVEntityContext@@@Z
-    MCAPI void _removeEntity(class EntityContext const&);
+    MCAPI void _removeEntity(class EntityContext const& entity);
 
     // NOLINTEND
 };

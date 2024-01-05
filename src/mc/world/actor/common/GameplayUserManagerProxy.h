@@ -22,7 +22,7 @@ public:
     virtual bool shouldGeneratePlayerIndex() const;
 
     // vIndex: 3, symbol: ?reloadActor@GameplayUserManagerProxy@@UEBAXAEAVActor@@@Z
-    virtual void reloadActor(class Actor&) const;
+    virtual void reloadActor(class Actor& actor) const;
 
     // NOLINTEND
 };

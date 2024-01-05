@@ -23,16 +23,17 @@ public:
     MCAPI BuoyancyDefinition();
 
     // symbol: ?initialize@BuoyancyDefinition@@QEBAXAEAVEntityContext@@AEAVBuoyancyComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class BuoyancyComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class BuoyancyComponent& component) const;
 
     // symbol: ?uninitialize@BuoyancyDefinition@@QEBAXAEAVEntityContext@@AEAVBuoyancyComponent@@@Z
-    MCAPI void uninitialize(class EntityContext&, class BuoyancyComponent&) const;
+    MCAPI void uninitialize(class EntityContext& entity, class BuoyancyComponent&) const;
 
     // symbol:
     // ?buildSchema@BuoyancyDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBuoyancyDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BuoyancyDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BuoyancyDefinition>>&
+            root
+    );
 
     // NOLINTEND
 

@@ -26,7 +26,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptPropertyRegistry@ScriptModuleMinecraft@@QEAA@AEAVServerLevel@@@Z
-    MCAPI explicit ScriptPropertyRegistry(class ServerLevel&);
+    MCAPI explicit ScriptPropertyRegistry(class ServerLevel& level);
 
     // symbol:
     // ?registerEntityTypeDynamicProperties@ScriptPropertyRegistry@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@VWeakLifetimeScope@4@AEBVScriptDynamicPropertiesDefinition@2@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VScriptActorType@ScriptModuleMinecraft@@@std@@@Z

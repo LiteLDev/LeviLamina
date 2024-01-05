@@ -41,10 +41,10 @@ public:
     // ?_replaceArmorSlots@ItemReplacementCommandUtil@Util@@CAXAEAUReplacementResults@2@AEAVActor@@V?$span@$$CBVItemStack@@$0?0@gsl@@W4EquipmentSlot@Legacy@Puv@@H@Z
     MCAPI static void _replaceArmorSlots(
         struct Util::ReplacementResults&,
-        class Actor&,
+        class Actor& entity,
         gsl::span<class ItemStack const>,
         ::Puv::Legacy::EquipmentSlot,
-        int
+        int count
     );
 
     // symbol: ?_slotBoundsValid@ItemReplacementCommandUtil@Util@@CA_NAEAUReplacementResults@2@HHV?$optional@H@std@@1@Z

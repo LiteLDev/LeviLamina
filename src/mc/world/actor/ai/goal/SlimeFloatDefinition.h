@@ -26,12 +26,15 @@ public:
     MCAPI SlimeFloatDefinition();
 
     // symbol: ?initialize@SlimeFloatDefinition@@QEBAXAEAVEntityContext@@AEAVSlimeFloatGoal@@@Z
-    MCAPI void initialize(class EntityContext&, class SlimeFloatGoal&) const;
+    MCAPI void initialize(class EntityContext& entity, class SlimeFloatGoal& goal) const;
 
     // symbol:
     // ?buildSchema@SlimeFloatDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSlimeFloatDefinition@@@JsonUtil@@@3@@Z
-    MCAPI static void
-    buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeFloatDefinition>>&);
+    MCAPI static void buildSchema(
+        std::string const& name,
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeFloatDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

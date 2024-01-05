@@ -50,7 +50,12 @@ public:
 
     // vIndex: 2, symbol:
     // ?uploadFileToRealmStorage@ResourcePackFileUploadManager@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z
-    virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&) = 0;
+    virtual void uploadFileToRealmStorage(
+        std::string const&      uploadId,
+        class Core::Path const& path,
+        int,
+        std::string const& realmsGuid
+    ) = 0;
 
     // symbol: ??0FileUploadManager@@QEAA@AEAVTaskGroup@@V?$shared_ptr@VIFileChunkUploader@@@std@@@Z
     MCAPI FileUploadManager(class TaskGroup& taskGroup, std::shared_ptr<class IFileChunkUploader> fileUploader);
@@ -59,7 +64,7 @@ public:
     MCAPI void addCallbackQueue(std::function<void(void)> callback);
 
     // symbol: ?setFailed@FileUploadManager@@QEAAXW4UploadError@@@Z
-    MCAPI void setFailed(::UploadError);
+    MCAPI void setFailed(::UploadError reason);
 
     // symbol: ?setUseStream@FileUploadManager@@QEAAX_N@Z
     MCAPI void setUseStream(bool stream);

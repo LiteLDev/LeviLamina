@@ -50,13 +50,17 @@ public:
 
     // vIndex: 6, symbol:
     // ?createLevelStorage@ExternalFileLevelStorageSource@@UEAA?AV?$OwnerPtrT@U?$SharePtrRefTraits@VLevelStorage@@@@@@AEAVScheduler@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@5@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@8@V?$unique_ptr@VLevelStorageEventing@@U?$default_delete@VLevelStorageEventing@@@std@@@5@@Z
-    virtual class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>
-    createLevelStorage(class Scheduler&, std::string const&, class ContentIdentity const&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&, std::chrono::nanoseconds const&, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>, std::unique_ptr<class LevelStorageEventing>) = 0;
+    virtual class
+        OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>
+        createLevelStorage(class Scheduler& scheduler, std::string const& levelId, class ContentIdentity const& contentIdentity, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider, std::chrono::nanoseconds const&, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>, std::unique_ptr<class LevelStorageEventing>) = 0;
 
     // vIndex: 7, symbol:
     // ?createLevelLooseStorage@ExternalFileLevelStorageSource@@UEAA?AV?$unique_ptr@VLevelLooseFileStorage@@U?$default_delete@VLevelLooseFileStorage@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVContentIdentity@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-    virtual std::unique_ptr<class LevelLooseFileStorage>
-    createLevelLooseStorage(std::string const&, class ContentIdentity const&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&) = 0;
+    virtual std::unique_ptr<class LevelLooseFileStorage> createLevelLooseStorage(
+        std::string const&                                                  levelId,
+        class ContentIdentity const&                                        contentIdentity,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    ) = 0;
 
     // vIndex: 8, symbol:
     // ?isNewLevelIdAcceptable@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

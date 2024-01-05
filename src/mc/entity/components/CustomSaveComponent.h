@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?save@CustomSaveComponent@@QEAA_NAEAVLevelStorage@@AEAVActor@@@Z
-    MCAPI bool save(class LevelStorage&, class Actor&);
+    MCAPI bool save(class LevelStorage& levelStorage, class Actor& owner);
 
     // NOLINTEND
 };

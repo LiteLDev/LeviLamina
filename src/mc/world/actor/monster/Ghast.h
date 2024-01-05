@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 4, symbol: ?reloadHardcoded@Ghast@@MEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void reloadHardcoded(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void reloadHardcoded(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1Ghast@@UEAA@XZ
     virtual ~Ghast() = default;
@@ -85,13 +85,17 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 204, symbol: ?_getWalkTargetValue@Ghast@@UEAAMAEBVBlockPos@@@Z
-    virtual float _getWalkTargetValue(class BlockPos const&);
+    virtual float _getWalkTargetValue(class BlockPos const& pos);
 
     // vIndex: 210, symbol: ?isDarkEnoughToSpawn@Ghast@@UEBA_NXZ
     virtual bool isDarkEnoughToSpawn() const;
 
     // symbol: ??0Ghast@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Ghast(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Ghast(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 };

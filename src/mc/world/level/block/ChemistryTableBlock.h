@@ -95,7 +95,7 @@ public:
     virtual bool isValidAuxValue(int value) const;
 
     // vIndex: 52, symbol: ?onFillBlock@ChemistryTableBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual void onFillBlock(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
+    virtual void onFillBlock(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 54, symbol: __unk_vfn_54
     virtual void __unk_vfn_54();
@@ -104,7 +104,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 60, symbol: ?canBeUsedInCommands@ChemistryTableBlock@@UEBA_NAEBVBaseGameVersion@@@Z
-    virtual bool canBeUsedInCommands(class BaseGameVersion const&) const;
+    virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -113,7 +113,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@ChemistryTableBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 98, symbol:
     // ?getPlacementBlock@ChemistryTableBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
@@ -166,7 +166,7 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@ChemistryTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -174,7 +174,7 @@ public:
     // vIndex: 168, symbol:
     // ?getEntityResourceItem@ChemistryTableBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlockActor@@H@Z
     virtual class ItemInstance
-    getEntityResourceItem(class Randomize& random, class BlockActor const& blockEntity, int bonusLootLevel) const;
+    getEntityResourceItem(class Randomize& randomize, class BlockActor const& blockEntity, int bonusLootLevel) const;
 
     // symbol: ?isCraftingBlock@ChemistryTableBlock@@UEBA_NXZ
     MCVAPI bool isCraftingBlock() const;
@@ -183,7 +183,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0ChemistryTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ChemistryTableBlock(std::string const& nameId, int id);
+    MCAPI ChemistryTableBlock(std::string const& nameId, int);
 
     // symbol: ?getItemForType@ChemistryTableBlock@@SA?AVItemInstance@@W4ChemistryTableType@@H@Z
     MCAPI static class ItemInstance getItemForType(::ChemistryTableType type, int stackCount);

@@ -34,8 +34,10 @@ public:
 
     // vIndex: 5, symbol:
     // ?load@WorldHistoryPackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-    virtual class PackSourceReport
-    load(class IPackManifestFactory&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&);
+    virtual class PackSourceReport load(
+        class IPackManifestFactory&                                         manifestFactory,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    );
 
     // NOLINTEND
 

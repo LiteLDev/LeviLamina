@@ -9,13 +9,14 @@
 namespace VanillaLevelChunkUpgrade {
 // NOLINTBEGIN
 // symbol: ?_updateBelowZero@VanillaLevelChunkUpgrade@@YA_NAEAVLevelChunk@@0AEAVBlockSource@@@Z
-MCAPI bool _updateBelowZero(class LevelChunk&, class LevelChunk&, class BlockSource&);
+MCAPI bool _updateBelowZero(class LevelChunk& lc, class LevelChunk& generatedChunk, class BlockSource& region);
 
 // symbol: ?_upgradeLevelChunkLegacy@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@AEAVBlockSource@@@Z
-MCAPI void _upgradeLevelChunkLegacy(class LevelChunk&, class BlockSource&);
+MCAPI void _upgradeLevelChunkLegacy(class LevelChunk& lc, class BlockSource& region);
 
 // symbol: ?_upgradeLevelChunkViaMetaData@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@0AEAVBlockSource@@@Z
-MCAPI void _upgradeLevelChunkViaMetaData(class LevelChunk&, class LevelChunk&, class BlockSource&);
+MCAPI void
+_upgradeLevelChunkViaMetaData(class LevelChunk& lc, class LevelChunk& generatedChunk, class BlockSource& region);
 
 // symbol: ?addBiomeSpecificVillageSkins@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@AEAVBlockSource@@@Z
 MCAPI bool addBiomeSpecificVillageSkins(class CompoundTag& tag, class BlockSource& region);
@@ -36,51 +37,55 @@ MCAPI bool convertZombieVillagerV1TagToV2(class CompoundTag& tag);
 MCAPI bool convertZombieVillagerV2TagToV1(class CompoundTag& tag);
 
 // symbol: ?fillNegativeSubChunksWithAir@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@AEAVBlockSource@@@Z
-MCAPI void fillNegativeSubChunksWithAir(class LevelChunk&, class BlockSource&);
+MCAPI void fillNegativeSubChunksWithAir(class LevelChunk& lc, class BlockSource& region);
 
 // symbol: ?fillNegativeSubChunksWithGeneration@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@0@Z
-MCAPI void fillNegativeSubChunksWithGeneration(class LevelChunk&, class LevelChunk&);
+MCAPI void fillNegativeSubChunksWithGeneration(class LevelChunk& lc, class LevelChunk& generatedChunk);
 
 // symbol: ?fillNegativeSubChunksWithGenerationOrAir@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@0AEAVBlockSource@@@Z
-MCAPI void fillNegativeSubChunksWithGenerationOrAir(class LevelChunk&, class LevelChunk&, class BlockSource&);
+MCAPI void fillNegativeSubChunksWithGenerationOrAir(
+    class LevelChunk&  lc,
+    class LevelChunk&  generatedChunk,
+    class BlockSource& region
+);
 
 // symbol:
 // ?fixBlockStatesOnChunkBorderAxis@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@AEBVLevelChunk@@EVBlockPos@@W4Axis@1@@Z
 MCAPI void fixBlockStatesOnChunkBorderAxis(
-    class BlockSource&,
-    class LevelChunk const&,
+    class BlockSource&      region,
+    class LevelChunk const& levelChunk,
     uchar,
-    class BlockPos,
+    class BlockPos pos,
     ::VanillaLevelChunkUpgrade::Axis
 );
 
 // symbol: ?fixStemBlockStates@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@VBlockPos@@AEBVBlock@@@Z
-MCAPI void fixStemBlockStates(class BlockSource&, class BlockPos, class Block const&);
+MCAPI void fixStemBlockStates(class BlockSource& region, class BlockPos, class Block const& block);
 
 // symbol: ?fixUselessDynamicWater@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@AEAVBlockSource@@@Z
 MCAPI void fixUselessDynamicWater(class LevelChunk& lc, class BlockSource& region);
 
 // symbol: ?fixWallBlockStates@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@VBlockPos@@@Z
-MCAPI void fixWallBlockStates(class BlockSource&, class BlockPos);
+MCAPI void fixWallBlockStates(class BlockSource& region, class BlockPos);
 
 // symbol: ?fixWallChunk@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@AEAVBlockSource@@@Z
-MCAPI void fixWallChunk(class LevelChunk&, class BlockSource&);
+MCAPI void fixWallChunk(class LevelChunk& lc, class BlockSource& region);
 
 // symbol:
 // ?getV1CareerFromDefinitionsList@VanillaLevelChunkUpgrade@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVListTag@@@Z
 MCAPI std::string const& getV1CareerFromDefinitionsList(class ListTag const*);
 
 // symbol: ?isWallBlock@VanillaLevelChunkUpgrade@@YA_NAEBVBlock@@@Z
-MCAPI bool isWallBlock(class Block const&);
+MCAPI bool isWallBlock(class Block const& testBlock);
 
 // symbol: ?levelChunkNeedsUpgrade@VanillaLevelChunkUpgrade@@YA_NAEBVLevelChunk@@@Z
-MCAPI bool levelChunkNeedsUpgrade(class LevelChunk const&);
+MCAPI bool levelChunkNeedsUpgrade(class LevelChunk const& lc);
 
 // symbol: ?upgradeArmorStandComponents@VanillaLevelChunkUpgrade@@YA_NAEAVCompoundTag@@@Z
-MCAPI bool upgradeArmorStandComponents(class CompoundTag&);
+MCAPI bool upgradeArmorStandComponents(class CompoundTag& tag);
 
 // symbol: ?upgradeOldLimboEntity@VanillaLevelChunkUpgrade@@YAXAEAVCompoundTag@@W4LimboEntitiesVersion@@_N@Z
-MCAPI void upgradeOldLimboEntity(class CompoundTag&, ::LimboEntitiesVersion, bool);
+MCAPI void upgradeOldLimboEntity(class CompoundTag& tag, ::LimboEntitiesVersion vers, bool);
 // NOLINTEND
 
 }; // namespace VanillaLevelChunkUpgrade

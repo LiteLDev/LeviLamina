@@ -24,7 +24,7 @@ public:
     virtual void tick(class EntityRegistry& registry);
 
     // symbol: ?tickLookAtComponent@LookAtSystem@@SAXAEAVActorOwnerComponent@@AEAVLookAtComponent@@@Z
-    MCAPI static void tickLookAtComponent(class ActorOwnerComponent&, class LookAtComponent&);
+    MCAPI static void tickLookAtComponent(class ActorOwnerComponent&, class LookAtComponent& lookAtComponent);
 
     // NOLINTEND
 };

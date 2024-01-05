@@ -18,25 +18,25 @@ public:
     MCAPI StrictEntityContext();
 
     // symbol: ??0StrictEntityContext@@QEAA@AEBVEntityContext@@@Z
-    MCAPI explicit StrictEntityContext(class EntityContext const&);
+    MCAPI explicit StrictEntityContext(class EntityContext const& entity);
 
     // symbol: ??0StrictEntityContext@@QEAA@$$QEAV0@@Z
-    MCAPI StrictEntityContext(class StrictEntityContext&&);
+    MCAPI StrictEntityContext(class StrictEntityContext&& other);
 
     // symbol: ??0StrictEntityContext@@QEAA@AEAVEntityRegistry@@VEntityId@@@Z
-    MCAPI StrictEntityContext(class EntityRegistry&, class EntityId);
+    MCAPI StrictEntityContext(class EntityRegistry& registry, class EntityId entity);
 
     // symbol: ?isNull@StrictEntityContext@@QEBA_NXZ
     MCAPI bool isNull() const;
 
     // symbol: ??9StrictEntityContext@@QEBA_NAEBV0@@Z
-    MCAPI bool operator!=(class StrictEntityContext const&) const;
+    MCAPI bool operator!=(class StrictEntityContext const& other) const;
 
     // symbol: ??4StrictEntityContext@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class StrictEntityContext& operator=(class StrictEntityContext&&);
+    MCAPI class StrictEntityContext& operator=(class StrictEntityContext&& other);
 
     // symbol: ??8StrictEntityContext@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class StrictEntityContext const&) const;
+    MCAPI bool operator==(class StrictEntityContext const& other) const;
 
     // NOLINTEND
 

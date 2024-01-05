@@ -91,7 +91,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0IceBombItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI IceBombItem(std::string const& nameId, int id);
+    MCAPI IceBombItem(std::string const& nameId, int);
 
     // symbol: ?ICE_BOMB_COOLDOWN@IceBombItem@@2VHashedString@@B
     MCAPI static class HashedString const ICE_BOMB_COOLDOWN;

@@ -23,14 +23,11 @@ public:
 
     // vIndex: 3, symbol:
     // ?addChildren@SHPortalRoom@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
-    virtual void addChildren(
-        class StructurePiece&                               startPiece,
-        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
-        class Random&                                       random
-    );
+    virtual void
+    addChildren(class StructurePiece& startPiece, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
 
     // vIndex: 4, symbol: ?postProcess@SHPortalRoom@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual bool postProcess(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // NOLINTEND
 };

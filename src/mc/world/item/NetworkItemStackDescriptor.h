@@ -27,10 +27,10 @@ public:
     virtual ~NetworkItemStackDescriptor();
 
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStack@@@Z
-    MCAPI explicit NetworkItemStackDescriptor(class ItemStack const&);
+    MCAPI explicit NetworkItemStackDescriptor(class ItemStack const& item);
 
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStackDescriptor@@@Z
-    MCAPI explicit NetworkItemStackDescriptor(class ItemStackDescriptor const&);
+    MCAPI explicit NetworkItemStackDescriptor(class ItemStackDescriptor const& descriptor);
 
     // symbol: ??0NetworkItemStackDescriptor@@QEAA@$$QEAV0@@Z
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor&&);
@@ -40,7 +40,7 @@ public:
 
     // symbol:
     // ?read@NetworkItemStackDescriptor@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
+    MCAPI class Bedrock::Result<void> read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ?setIncludeNetIds@NetworkItemStackDescriptor@@QEBAX_N@Z
     MCAPI void setIncludeNetIds(bool) const;
@@ -49,7 +49,7 @@ public:
     MCAPI ItemStackNetId const* tryGetServerNetId() const;
 
     // symbol: ?write@NetworkItemStackDescriptor@@QEBAXAEAVBinaryStream@@@Z
-    MCAPI void write(class BinaryStream&) const;
+    MCAPI void write(class BinaryStream& stream) const;
 
     // NOLINTEND
 };

@@ -169,13 +169,13 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@FenceGateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@FenceGateBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -187,10 +187,10 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0FenceGateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4WoodType@@@Z
-    MCAPI FenceGateBlock(std::string const& nameId, int id, ::WoodType woodType);
+    MCAPI FenceGateBlock(std::string const& nameId, int, ::WoodType woodType);
 
     // symbol: ?resolveIsInWall@FenceGateBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void resolveIsInWall(class BlockSource&, class BlockPos const&) const;
+    MCAPI void resolveIsInWall(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 
@@ -201,8 +201,13 @@ public:
 
     // symbol:
     // ?_setOpen@FenceGateBlock@@AEBAXAEAVBlockSource@@V?$not_null@PEBVBlock@@@gsl@@AEBVBlockPos@@PEAVPlayer@@_N@Z
-    MCAPI void
-    _setOpen(class BlockSource&, gsl::not_null<class Block const*>, class BlockPos const&, class Player*, bool) const;
+    MCAPI void _setOpen(
+        class BlockSource&                region,
+        gsl::not_null<class Block const*> block,
+        class BlockPos const&             pos,
+        class Player*                     player,
+        bool                              shouldBeOpen
+    ) const;
 
     // symbol: ?_getShape@FenceGateBlock@@CAAEBVAABB@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
     MCAPI static class AABB const& _getShape(class BlockPos const&, class Block const&, class AABB&, bool);

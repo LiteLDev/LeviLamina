@@ -41,12 +41,16 @@ public:
         MCAPI void addBlockDescriptor(class BlockDescriptor const&);
 
         // symbol: ?initialize@Definition@RandomSearchAndDigGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext&, class RandomSearchAndDigGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class RandomSearchAndDigGoal& goal) const;
 
         // symbol:
         // ?buildSchema@Definition@RandomSearchAndDigGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@RandomSearchAndDigGoal@@@JsonUtil@@@4@@Z
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RandomSearchAndDigGoal::Definition>>&);
+        MCAPI static void buildSchema(
+            std::string const&                              name,
+            std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                class JsonUtil::EmptyClass,
+                class RandomSearchAndDigGoal::Definition>>& root
+        );
 
         // NOLINTEND
     };
@@ -79,10 +83,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@RandomSearchAndDigGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0RandomSearchAndDigGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit RandomSearchAndDigGoal(class Mob&);
+    MCAPI explicit RandomSearchAndDigGoal(class Mob& mob);
 
     // symbol: ?_canUse@RandomSearchAndDigGoal@@QEAA?AW4CanUseOutcome@1@XZ
     MCAPI ::RandomSearchAndDigGoal::CanUseOutcome _canUse();

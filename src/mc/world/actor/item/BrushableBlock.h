@@ -101,7 +101,8 @@ public:
 
     // vIndex: 79, symbol:
     // ?onFertilized@BrushableBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor*, ::FertilizerType) const;
 
     // vIndex: 80, symbol: ?mayConsumeFertilizer@BrushableBlock@@UEBA_NAEAVBlockSource@@@Z
     virtual bool mayConsumeFertilizer(class BlockSource&) const;
@@ -110,7 +111,7 @@ public:
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
     // vIndex: 96, symbol: ?asItemInstance@BrushableBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const* blockActor) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -128,7 +129,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@BrushableBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 136, symbol: ?init@BrushableBlock@@UEAAAEAVBlockLegacy@@XZ
     virtual class BlockLegacy& init();
@@ -140,7 +141,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@BrushableBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -165,10 +166,10 @@ public:
     virtual void __unk_vfn_170();
 
     // vIndex: 171, symbol: ?onLand@BrushableBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onLand(class BlockSource&, class BlockPos const&) const;
+    virtual void onLand(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0BrushableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BrushableBlock(std::string const&, int);
+    MCAPI BrushableBlock(std::string const& nameID, int);
 
     // symbol: ?EmptyBrushedBlock@BrushableBlock@@2VHashedString@@B
     MCAPI static class HashedString const EmptyBrushedBlock;

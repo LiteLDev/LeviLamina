@@ -22,7 +22,7 @@ public:
     MCAPI BreedableDefinition();
 
     // symbol: ?addBreedItem@BreedableDefinition@@QEAAXAEBVItemDescriptor@@@Z
-    MCAPI void addBreedItem(class ItemDescriptor const&);
+    MCAPI void addBreedItem(class ItemDescriptor const& itemDescriptor);
 
     // symbol: ?addBreedableType@BreedableDefinition@@QEAAXAEBUBreedableType@@@Z
     MCAPI void addBreedableType(struct BreedableType const& breedType);
@@ -35,7 +35,7 @@ public:
     MCAPI void addParentCentricAttributeBlending(std::string const&);
 
     // symbol: ?initialize@BreedableDefinition@@QEBAXAEAVEntityContext@@AEAVBreedableComponent@@@Z
-    MCAPI void initialize(class EntityContext& entity, class BreedableComponent& component) const;
+    MCAPI void initialize(class EntityContext&, class BreedableComponent& component) const;
 
     // symbol:
     // ?setMutationStrategy@BreedableDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

@@ -94,7 +94,7 @@ public:
     virtual void __unk_vfn_48();
 
     // vIndex: 49, symbol: ?isValidAuxValue@SeagrassBlock@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int value) const;
 
     // vIndex: 54, symbol: __unk_vfn_54
     virtual void __unk_vfn_54();
@@ -110,19 +110,22 @@ public:
 
     // vIndex: 79, symbol:
     // ?onFertilized@SeagrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
+        const;
 
     // vIndex: 80, symbol: ?mayConsumeFertilizer@SeagrassBlock@@UEBA_NAEAVBlockSource@@@Z
-    virtual bool mayConsumeFertilizer(class BlockSource&) const;
+    virtual bool mayConsumeFertilizer(class BlockSource& region) const;
 
     // vIndex: 81, symbol: ?canBeFertilized@SeagrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 85, symbol: ?mayPlace@SeagrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@SeagrassBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 95, symbol:
     // ?spawnResources@SeagrassBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
@@ -150,22 +153,22 @@ public:
     virtual std::string buildDescriptionId(class Block const&) const;
 
     // vIndex: 121, symbol: ?getColor@SeagrassBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getColor(class Block const&) const;
+    virtual int getColor(class Block const& block) const;
 
     // vIndex: 122, symbol: ?getColor@SeagrassBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@SeagrassBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@SeagrassBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -174,7 +177,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@SeagrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?canBeSilkTouched@SeagrassBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -183,10 +186,10 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SeagrassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SeagrassBlock(std::string const&, int);
+    MCAPI SeagrassBlock(std::string const& nameId, int);
 
     // symbol: ?trySpawnSeaGrass@SeagrassBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool trySpawnSeaGrass(class BlockSource&, class BlockPos const&);
+    MCAPI static bool trySpawnSeaGrass(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 };

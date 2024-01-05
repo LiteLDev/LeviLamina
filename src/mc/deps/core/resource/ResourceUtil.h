@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?pathFromString@ResourceUtil@@SA?AW4ResourceFileSystem@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI static ::ResourceFileSystem pathFromString(std::string_view);
+    MCAPI static ::ResourceFileSystem pathFromString(std::string_view name);
 
     // symbol:
     // ?stringFromPath@ResourceUtil@@SA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@W4ResourceFileSystem@@@Z

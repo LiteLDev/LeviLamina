@@ -16,16 +16,16 @@ public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // symbol: ?_onUpdatePacket@ChiseledBookshelfBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    MCVAPI void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ?addItemToFirstEmptySlot@ChiseledBookshelfBlockActor@@UEAA_NAEBVItemStack@@@Z
-    MCVAPI bool addItemToFirstEmptySlot(class ItemStack const&);
+    MCVAPI bool addItemToFirstEmptySlot(class ItemStack const& item);
 
     // symbol: ?canPullOutItem@ChiseledBookshelfBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPullOutItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPullOutItem(int slot, int, class ItemStack const&) const;
 
     // symbol: ?canPushInItem@ChiseledBookshelfBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPushInItem(int slot, int, class ItemStack const& item) const;
 
     // symbol: ?getContainer@ChiseledBookshelfBlockActor@@UEAAPEAVContainer@@XZ
     MCVAPI class Container* getContainer();
@@ -37,7 +37,7 @@ public:
     MCVAPI int getContainerSize() const;
 
     // symbol: ?getItem@ChiseledBookshelfBlockActor@@UEBAAEBVItemStack@@H@Z
-    MCVAPI class ItemStack const& getItem(int) const;
+    MCVAPI class ItemStack const& getItem(int slot) const;
 
     // symbol: ?getMaxStackSize@ChiseledBookshelfBlockActor@@UEBAHXZ
     MCVAPI int getMaxStackSize() const;
@@ -50,19 +50,23 @@ public:
     MCVAPI bool isEmpty() const;
 
     // symbol: ?load@ChiseledBookshelfBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCVAPI void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    MCVAPI void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?onChanged@ChiseledBookshelfBlockActor@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void onChanged(class BlockSource&);
+    MCVAPI void onChanged(class BlockSource& region);
 
     // symbol: ?save@ChiseledBookshelfBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    MCVAPI bool save(class CompoundTag&) const;
+    MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?serverInitItemStackIds@ChiseledBookshelfBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
 
     // symbol: ?setItem@ChiseledBookshelfBlockActor@@UEAAXHAEBVItemStack@@@Z
-    MCVAPI void setItem(int, class ItemStack const&);
+    MCVAPI void setItem(int slot, class ItemStack const& item);
 
     // symbol: ?startOpen@ChiseledBookshelfBlockActor@@UEAAXAEAVPlayer@@@Z
     MCVAPI void startOpen(class Player&);
@@ -71,19 +75,19 @@ public:
     MCVAPI void stopOpen(class Player&);
 
     // symbol: ??0ChiseledBookshelfBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit ChiseledBookshelfBlockActor(class BlockPos const&);
+    MCAPI explicit ChiseledBookshelfBlockActor(class BlockPos const& pos);
 
     // symbol: ?getLastInteractedSlot@ChiseledBookshelfBlockActor@@QEBAIXZ
     MCAPI uint getLastInteractedSlot() const;
 
     // symbol: ?retrieveBook@ChiseledBookshelfBlockActor@@QEAA?AVItemStack@@H@Z
-    MCAPI class ItemStack retrieveBook(int);
+    MCAPI class ItemStack retrieveBook(int slot);
 
     // symbol: ?allowedItem@ChiseledBookshelfBlockActor@@SA_NAEBVItemStack@@@Z
-    MCAPI static bool allowedItem(class ItemStack const&);
+    MCAPI static bool allowedItem(class ItemStack const& item);
 
     // symbol: ?tryGet@ChiseledBookshelfBlockActor@@SAPEAV1@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static class ChiseledBookshelfBlockActor* tryGet(class BlockSource&, class BlockPos const&);
+    MCAPI static class ChiseledBookshelfBlockActor* tryGet(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 

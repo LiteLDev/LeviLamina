@@ -13,9 +13,13 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?evaluateAdjustments@SurfaceMaterialAdjustmentAttributes@@QEBA?AUSurfaceMaterialAdjustmentEvaluated@@AEAVRenderParams@@V?$not_null@PEAVPerlinSimplexNoise@@@gsl@@AEBVBlockPos@@HH@Z
-    MCAPI struct SurfaceMaterialAdjustmentEvaluated
-    evaluateAdjustments(class RenderParams&, gsl::not_null<class PerlinSimplexNoise*>, class BlockPos const&, int, int)
-        const;
+    MCAPI struct SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(
+        class RenderParams&                      molangParams,
+        gsl::not_null<class PerlinSimplexNoise*> noise,
+        class BlockPos const&                    pos,
+        int,
+        int
+    ) const;
 
     // symbol: ??4SurfaceMaterialAdjustmentAttributes@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct SurfaceMaterialAdjustmentAttributes& operator=(struct SurfaceMaterialAdjustmentAttributes&&);
@@ -23,11 +27,11 @@ public:
     // symbol:
     // ?parseExpressionNodeFloat@SurfaceMaterialAdjustmentAttributes@@QEAAXAEBVCompoundTag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEAVExpressionNode@@M@Z
     MCAPI void parseExpressionNodeFloat(
-        class CompoundTag const&,
+        class CompoundTag const& tag,
+        std::string const&       tagName,
         std::string const&,
-        std::string const&,
-        class ExpressionNode&,
-        float
+        class ExpressionNode& node,
+        float                 defaultValue
     );
 
     // NOLINTEND

@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0RiverInit@OperationNodeFilters@@QEAA@AEBVBiomeRegistry@@@Z
-    MCAPI explicit RiverInit(class BiomeRegistry const&);
+    MCAPI explicit RiverInit(class BiomeRegistry const& biomeRegistry);
 
     // NOLINTEND
 };

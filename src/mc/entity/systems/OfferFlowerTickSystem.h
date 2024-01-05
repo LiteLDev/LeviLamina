@@ -31,7 +31,7 @@ public:
     MCAPI static void _tickOfferFlowerTickSystem(class ViewT<
                                                  class StrictEntityContext,
                                                  struct Include<class ActorTickNeededComponent>,
-                                                 struct OfferFlowerTickComponent>);
+                                                 struct OfferFlowerTickComponent> view);
 
     // NOLINTEND
 };

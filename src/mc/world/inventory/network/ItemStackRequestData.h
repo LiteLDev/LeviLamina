@@ -32,20 +32,21 @@ public:
     MCAPI ::TextProcessingEventOrigin const& getStringsToFilterOrigin() const;
 
     // symbol: ?postLoadItems@ItemStackRequestData@@QEAAXAEAVBlockPalette@@_N@Z
-    MCAPI void postLoadItems(class BlockPalette&, bool);
+    MCAPI void postLoadItems(class BlockPalette& blockPalette, bool isClientSide);
 
     // symbol: ?tryFindAction@ItemStackRequestData@@QEBAPEBVItemStackRequestAction@@W4ItemStackRequestActionType@@@Z
-    MCAPI class ItemStackRequestAction const* tryFindAction(::ItemStackRequestActionType) const;
+    MCAPI class ItemStackRequestAction const* tryFindAction(::ItemStackRequestActionType type) const;
 
     // symbol: ?write@ItemStackRequestData@@QEBAXAEAVBinaryStream@@@Z
-    MCAPI void write(class BinaryStream&) const;
+    MCAPI void write(class BinaryStream& stream) const;
 
     // symbol: ??1ItemStackRequestData@@QEAA@XZ
     MCAPI ~ItemStackRequestData();
 
     // symbol:
     // ?read@ItemStackRequestData@@SA?AV?$Result@V?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestData>> read(class ReadOnlyBinaryStream&);
+    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestData>>
+    read(class ReadOnlyBinaryStream& stream);
 
     // NOLINTEND
 };

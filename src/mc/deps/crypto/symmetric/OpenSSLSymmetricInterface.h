@@ -18,15 +18,15 @@ public:
 
     // vIndex: 1, symbol:
     // ?init@OpenSSLSymmetricInterface@Symmetric@Crypto@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    virtual void init(std::string const&, std::string const&);
+    virtual void init(std::string const& key, std::string const&);
 
     // vIndex: 2, symbol:
     // ?encrypt@OpenSSLSymmetricInterface@Symmetric@Crypto@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV45@@Z
-    virtual void encrypt(std::string const&, std::string&);
+    virtual void encrypt(std::string const&, std::string& out);
 
     // vIndex: 3, symbol:
     // ?decrypt@OpenSSLSymmetricInterface@Symmetric@Crypto@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV45@@Z
-    virtual void decrypt(std::string const&, std::string&);
+    virtual void decrypt(std::string const&, std::string& out);
 
     // vIndex: 4, symbol: ?getKeySize@OpenSSLSymmetricInterface@Symmetric@Crypto@@UEBA_KXZ
     virtual uint64 getKeySize() const;
@@ -39,7 +39,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?encryptToBuffer@OpenSSLSymmetricInterface@Symmetric@Crypto@@UEAA_NV?$span@$$CBD$0?0@gsl@@V?$span@D$0?0@5@AEA_K@Z
-    virtual bool encryptToBuffer(gsl::span<char const>, gsl::span<char>, uint64&);
+    virtual bool encryptToBuffer(gsl::span<char const> input, gsl::span<char> output, uint64& bytesWritten);
 
     // NOLINTEND
 };

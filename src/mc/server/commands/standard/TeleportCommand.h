@@ -46,17 +46,17 @@ public:
     virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?applyTarget@TeleportCommand@@SAXAEAVActor@@VTeleportTarget@@_N@Z
-    MCAPI static void applyTarget(class Actor&, class TeleportTarget, bool);
+    MCAPI static void applyTarget(class Actor& victim, class TeleportTarget target, bool);
 
     // symbol:
     // ?computeTarget@TeleportCommand@@SA?AVTeleportTarget@@AEAVActor@@VVec3@@PEAV4@V?$AutomaticID@VDimension@@H@@AEBV?$optional@VRotationData@RotationCommandUtils@@@std@@H@Z
     MCAPI static class TeleportTarget computeTarget(
-        class Actor&,
-        class Vec3,
-        class Vec3*,
-        DimensionType,
+        class Actor&  victim,
+        class Vec3    destination,
+        class Vec3*   facePosition,
+        DimensionType destinationDimension,
         std::optional<class RotationCommandUtils::RotationData> const&,
-        int
+        int commandVersion
     );
 
     // symbol: ?setup@TeleportCommand@@SAXAEAVCommandRegistry@@@Z
@@ -69,16 +69,17 @@ public:
     // symbol:
     // ?getFacingDirection@TeleportCommand@@AEBA?AW4FacingResult@RotationCommandUtils@@AEBVCommandOrigin@@AEAVCommandOutput@@AEAVVec3@@PEAVActor@@@Z
     MCAPI ::RotationCommandUtils::FacingResult
-    getFacingDirection(class CommandOrigin const&, class CommandOutput&, class Vec3&, class Actor*) const;
+    getFacingDirection(class CommandOrigin const& origin, class CommandOutput& output, class Vec3& faceTarget, class Actor*)
+        const;
 
     // symbol:
     // ?getCommandAreaForTargets@TeleportCommand@@CA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVCommandOrigin@@AEBV?$CommandSelectorResults@VActor@@@@VVec3@@H_N@Z
     MCAPI static std::unique_ptr<class CommandArea> getCommandAreaForTargets(
-        class CommandOrigin const&,
-        class CommandSelectorResults<class Actor> const&,
-        class Vec3,
-        int,
-        bool
+        class CommandOrigin const&                       origin,
+        class CommandSelectorResults<class Actor> const& targets,
+        class Vec3                                       destination,
+        int                                              commandVersion,
+        bool                                             allowUnloadedChunks
     );
 
     // NOLINTEND

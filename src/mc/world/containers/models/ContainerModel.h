@@ -57,7 +57,7 @@ public:
     virtual void __unk_vfn_12();
 
     // vIndex: 13, symbol: ?setItem@ContainerModel@@UEAAXHAEBVItemStack@@@Z
-    virtual void setItem(int, class ItemStack const&);
+    virtual void setItem(int, class ItemStack const& item);
 
     // vIndex: 14, symbol: ?isValid@ContainerModel@@UEAA_NXZ
     virtual bool isValid();
@@ -91,13 +91,13 @@ public:
     virtual void _init();
 
     // vIndex: 24, symbol: ?_onItemChanged@ContainerModel@@MEAAXHAEBVItemStack@@0@Z
-    virtual void _onItemChanged(int slot, class ItemStack const& oldItem, class ItemStack const& newItem);
+    virtual void _onItemChanged(int, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // symbol: ?isExpanableItemFiltered@ContainerModel@@UEBA_NH@Z
     MCVAPI bool isExpanableItemFiltered(int index) const;
 
     // symbol: ?isItemFiltered@ContainerModel@@UEBA_NAEBVItemStackBase@@@Z
-    MCVAPI bool isItemFiltered(class ItemStackBase const&) const;
+    MCVAPI bool isItemFiltered(class ItemStackBase const& item) const;
 
     // symbol: ?isItemInstanceBased@ContainerModel@@UEBA_NXZ
     MCVAPI bool isItemInstanceBased() const;
@@ -109,7 +109,12 @@ public:
     MCVAPI void tick(int selectedSlot);
 
     // symbol: ??0ContainerModel@@QEAA@W4ContainerEnumName@@HW4ContainerCategory@@_N@Z
-    MCAPI ContainerModel(::ContainerEnumName, int, ::ContainerCategory, bool);
+    MCAPI ContainerModel(
+        ::ContainerEnumName containerName,
+        int                 containerSize,
+        ::ContainerCategory containerCategory,
+        bool                isClientSide
+    );
 
     // symbol: ?getContainerEnumName@ContainerModel@@QEBA?AW4ContainerEnumName@@XZ
     MCAPI ::ContainerEnumName getContainerEnumName() const;
@@ -125,7 +130,7 @@ public:
     MCAPI bool isContainerSlotInRange(int) const;
 
     // symbol: ?networkUpdateItem@ContainerModel@@QEAAXHAEBVItemStack@@0@Z
-    MCAPI void networkUpdateItem(int index, class ItemStack const& oldItem, class ItemStack const& newItem);
+    MCAPI void networkUpdateItem(int, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // symbol: ?registerOnContainerChangedCallback@ContainerModel@@QEAAXV?$function@$$A6AXHAEBVItemStack@@0@Z@std@@@Z
     MCAPI void
@@ -148,7 +153,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_onClientUIItemNetworkChanged@ContainerModel@@AEAAXHAEBVItemStack@@0@Z
-    MCAPI void _onClientUIItemNetworkChanged(int, class ItemStack const&, class ItemStack const&);
+    MCAPI void _onClientUIItemNetworkChanged(int, class ItemStack const& oldItem, class ItemStack const& newItem);
 
     // NOLINTEND
 };

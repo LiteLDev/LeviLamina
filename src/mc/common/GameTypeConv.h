@@ -16,7 +16,7 @@ MCAPI std::string gameTypeToNonLocString(::GameType);
 MCAPI std::string gameTypeToString(::GameType);
 
 // symbol: ?intToGameType@GameTypeConv@@YA?AW4GameType@@H@Z
-MCAPI ::GameType intToGameType(int id);
+MCAPI ::GameType intToGameType(int);
 
 // symbol: ?intToGameTypeForCommands@GameTypeConv@@YA?AW4GameType@@H@Z
 MCAPI ::GameType intToGameTypeForCommands(int);

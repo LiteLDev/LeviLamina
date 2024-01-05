@@ -22,8 +22,11 @@ public:
 
     // symbol:
     // ?createContainerValidator@ContainerValidatorFactory@@SA?AV?$shared_ptr@$$CBVContainerValidationBase@@@std@@W4ContainerEnumName@@AEBVContainerScreenContext@@W4ContainerValidationCaller@@@Z
-    MCAPI static std::shared_ptr<class ContainerValidationBase const>
-    createContainerValidator(::ContainerEnumName, class ContainerScreenContext const&, ::ContainerValidationCaller);
+    MCAPI static std::shared_ptr<class ContainerValidationBase const> createContainerValidator(
+        ::ContainerEnumName containerId,
+        class ContainerScreenContext const&,
+        ::ContainerValidationCaller
+    );
 
     // symbol:
     // ?getBackingContainer@ContainerValidatorFactory@@SAPEAVContainer@@W4ContainerEnumName@@AEBVContainerScreenContext@@@Z

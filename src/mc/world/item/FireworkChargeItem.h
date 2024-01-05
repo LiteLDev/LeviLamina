@@ -67,7 +67,7 @@ public:
     virtual void __unk_vfn_52();
 
     // vIndex: 53, symbol: ?isValidAuxValue@FireworkChargeItem@@UEBA_NH@Z
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isValidAuxValue(int auxValue) const;
 
     // vIndex: 56, symbol: __unk_vfn_56
     virtual void __unk_vfn_56();
@@ -79,7 +79,7 @@ public:
     virtual void __unk_vfn_58();
 
     // vIndex: 59, symbol: ?getColor@FireworkChargeItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
-    virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
+    virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const& instance) const;
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -97,10 +97,10 @@ public:
     virtual void __unk_vfn_99();
 
     // vIndex: 100, symbol: ?hasSameRelevantUserData@FireworkChargeItem@@UEBA_NAEBVItemStackBase@@0@Z
-    virtual bool hasSameRelevantUserData(class ItemStackBase const&, class ItemStackBase const&) const;
+    virtual bool hasSameRelevantUserData(class ItemStackBase const& stack, class ItemStackBase const& other) const;
 
     // symbol: ??0FireworkChargeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FireworkChargeItem(std::string const& nameId, int id);
+    MCAPI FireworkChargeItem(std::string const& nameId, int);
 
     // symbol:
     // ?getFormattedHoverText@FireworkChargeItem@@SAXAEBVCompoundTag@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z
@@ -130,7 +130,7 @@ public:
     );
 
     // symbol: ?setColor@FireworkChargeItem@@SAXAEAVItemStackBase@@@Z
-    MCAPI static void setColor(class ItemStackBase&);
+    MCAPI static void setColor(class ItemStackBase& instance);
 
     // symbol: ?TAG_EXPLOSION@FireworkChargeItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const TAG_EXPLOSION;
@@ -157,12 +157,12 @@ public:
     // symbol:
     // ?_initFireworkChargeItem@FireworkChargeItem@@CAXAEAVItemStackBase@@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
     MCAPI static void _initFireworkChargeItem(
-        class ItemStackBase&,
-        ::FireworkChargeItem::Shape,
-        std::vector<uchar>,
-        std::vector<uchar>,
-        bool,
-        bool
+        class ItemStackBase&        itemInstance,
+        ::FireworkChargeItem::Shape shape,
+        std::vector<uchar>          colors,
+        std::vector<uchar>          fadeColors,
+        bool                        hasTrail,
+        bool                        hasFlicker
     );
 
     // symbol:

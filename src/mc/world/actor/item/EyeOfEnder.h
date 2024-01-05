@@ -82,7 +82,11 @@ public:
     virtual void __unk_vfn_162();
 
     // symbol: ??0EyeOfEnder@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI EyeOfEnder(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI EyeOfEnder(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?preNormalTick@EyeOfEnder@@QEAAXXZ
     MCAPI void preNormalTick();

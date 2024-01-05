@@ -57,8 +57,12 @@ public:
 
     // vIndex: 6, symbol:
     // ?uploadStream@IFileChunkUploader@@UEAAXAEBUFileInfo@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4UploadStreamResult@IFileChunkUploader@@@Z@4@@Z
-    virtual void
-    uploadStream(struct FileInfo const&, uint64, std::string const&, std::function<void(::IFileChunkUploader::UploadStreamResult)>);
+    virtual void uploadStream(
+        struct FileInfo const&                                        file,
+        uint64                                                        streamSize,
+        std::string const&                                            boundary,
+        std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
+    );
 
     // vIndex: 7, symbol: ?canCancelUpload@ServerFileChunkUploader@@UEBA_NAEBUFileInfo@@@Z
     virtual bool canCancelUpload(struct FileInfo const& file) const;
@@ -79,7 +83,7 @@ public:
     MCVAPI void cancelUpload(struct FileInfo const& file);
 
     // symbol: ?confirmChunkReceived@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@@Z
-    MCVAPI void confirmChunkReceived(struct FileInfo const& file, struct FileChunkInfo const& chunk);
+    MCVAPI void confirmChunkReceived(struct FileInfo const&, struct FileChunkInfo const&);
 
     // symbol: ?update@ServerFileChunkUploader@@UEAAXXZ
     MCVAPI void update();

@@ -19,7 +19,11 @@ public:
 
     // vIndex: 1, symbol:
     // ?isSatisfied@BlockIntersectionConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
-    virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, ::Rotation const&) const;
+    virtual bool isSatisfied(
+        class IBlockWorldGenAPI const& target,
+        class BlockPos const&          structurePos,
+        ::Rotation const&              structureRot
+    ) const;
 
     // symbol: ??0BlockIntersectionConstraint@@QEAA@AEAVStructureTemplate@@@Z
     MCAPI explicit BlockIntersectionConstraint(class StructureTemplate& structure);

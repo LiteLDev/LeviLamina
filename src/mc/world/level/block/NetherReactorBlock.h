@@ -102,7 +102,7 @@ public:
     // vIndex: 95, symbol:
     // ?spawnResources@NetherReactorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const&, class Randomize&, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 109, symbol: __unk_vfn_109
@@ -133,11 +133,11 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 165, symbol: ?getResourceCount@NetherReactorBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol:
     // ??0NetherReactorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI NetherReactorBlock(std::string const& nameId, int id, class Material const& material);
+    MCAPI NetherReactorBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

@@ -15,7 +15,7 @@ public:
     MCAPI bool checkShouldUse();
 
     // symbol: ?clearItemInUse@PlayerItemInUse@@QEAAXAEAVEntityContext@@@Z
-    MCAPI void clearItemInUse(class EntityContext&);
+    MCAPI void clearItemInUse(class EntityContext& owner);
 
     // symbol: ?getItemInUse@PlayerItemInUse@@QEBAAEBVItemStack@@XZ
     MCAPI class ItemStack const& getItemInUse() const;
@@ -27,13 +27,18 @@ public:
     MCAPI int getUsedDuration() const;
 
     // symbol: ?isInSlot@PlayerItemInUse@@QEBA_NUPlayerInventorySlotData@@@Z
-    MCAPI bool isInSlot(struct PlayerInventorySlotData) const;
+    MCAPI bool isInSlot(struct PlayerInventorySlotData slot) const;
 
     // symbol: ?releaseUsing@PlayerItemInUse@@QEAAXAEAVPlayer@@@Z
-    MCAPI void releaseUsing(class Player&);
+    MCAPI void releaseUsing(class Player& player);
 
     // symbol: ?setItemInUse@PlayerItemInUse@@QEAAXAEBVItemStack@@AEAVEntityContext@@HUPlayerInventorySlotData@@@Z
-    MCAPI void setItemInUse(class ItemStack const&, class EntityContext&, int, struct PlayerInventorySlotData);
+    MCAPI void setItemInUse(
+        class ItemStack const&         newItem,
+        class EntityContext&           owner,
+        int                            duration,
+        struct PlayerInventorySlotData slot
+    );
 
     // symbol: ??1PlayerItemInUse@@QEAA@XZ
     MCAPI ~PlayerItemInUse();

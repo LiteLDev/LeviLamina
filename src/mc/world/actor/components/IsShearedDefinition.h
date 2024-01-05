@@ -20,16 +20,17 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initialize@IsShearedDefinition@@QEBAXAEAVEntityContext@@@Z
-    MCAPI void initialize(class EntityContext&) const;
+    MCAPI void initialize(class EntityContext& entity) const;
 
     // symbol: ?uninitialize@IsShearedDefinition@@QEBAXAEAVEntityContext@@@Z
-    MCAPI void uninitialize(class EntityContext&) const;
+    MCAPI void uninitialize(class EntityContext& entity) const;
 
     // symbol:
     // ?buildSchema@IsShearedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsShearedDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsShearedDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsShearedDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

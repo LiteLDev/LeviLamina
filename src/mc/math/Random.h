@@ -54,7 +54,7 @@ public:
     virtual double nextGaussianDouble();
 
     // vIndex: 8, symbol: ?consumeCount@Random@Core@@UEAAXI@Z
-    virtual void consumeCount(uint);
+    virtual void consumeCount(uint count);
 
     // vIndex: 9, symbol: ?fork@Random@Core@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
     virtual std::unique_ptr<class IRandom> fork();
@@ -76,7 +76,7 @@ public:
     MCAPI uint _genUniformRandomInt();
 
     // symbol: ?_setSeed@Random@Core@@AEAAXI@Z
-    MCAPI void _setSeed(uint seed);
+    MCAPI void _setSeed(uint);
 
     // NOLINTEND
 

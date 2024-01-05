@@ -26,7 +26,7 @@ public:
     PacketViolationDetectedTelemetryData(uint64, std::string, ::PacketViolationResponse, ::MinecraftPacketIds, class NetworkIdentifier const&);
 
     // symbol: ?WriteEventData@PacketViolationDetectedTelemetryData@@QEBAXAEAVEvent@Events@Social@@@Z
-    MCAPI void WriteEventData(class Social::Events::Event&) const;
+    MCAPI void WriteEventData(class Social::Events::Event& event) const;
 
     // symbol: ??1PacketViolationDetectedTelemetryData@@QEAA@XZ
     MCAPI ~PacketViolationDetectedTelemetryData();

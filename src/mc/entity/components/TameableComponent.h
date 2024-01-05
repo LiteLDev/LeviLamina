@@ -17,20 +17,20 @@ public:
     MCAPI bool getInteraction(class Actor& owner, class Player& player, class ActorInteraction& interaction);
 
     // symbol: ?tame@TameableComponent@@QEAAXAEAVActor@@AEAVPlayer@@@Z
-    MCAPI void tame(class Actor&, class Player&);
+    MCAPI void tame(class Actor& owner, class Player& player);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_attemptToTame@TameableComponent@@AEAA_NAEAVActor@@AEAVPlayer@@@Z
-    MCAPI bool _attemptToTame(class Actor&, class Player&);
+    MCAPI bool _attemptToTame(class Actor& owner, class Player& player);
 
     // symbol: ?_canTame@TameableComponent@@AEAA_NAEAVActor@@AEAVPlayer@@@Z
-    MCAPI bool _canTame(class Actor&, class Player&);
+    MCAPI bool _canTame(class Actor& owner, class Player& player);
 
     // symbol: ?_becomeTame@TameableComponent@@CAXAEAVActor@@@Z
-    MCAPI static void _becomeTame(class Actor&);
+    MCAPI static void _becomeTame(class Actor& owner);
 
     // NOLINTEND
 };

@@ -27,10 +27,10 @@ MCAPI void _buildSurface(
     struct SurfaceMaterialBlocks const&,
     class Block const*,
     struct SurfaceMaterialAdjustmentEvaluated const&,
-    class Random&,
-    class BlockVolume&,
-    class BlockPos const&,
-    short,
+    class Random&         random,
+    class BlockVolume&    blocks,
+    class BlockPos const& pos,
+    short                 seaLevel,
     int,
     bool,
     ::ISurfaceBuilder::WaterLevelStrategy,
@@ -46,18 +46,18 @@ MCAPI void buildSurface(struct ISurfaceBuilder::BuildParameters const&);
 MCAPI void ensureValidSurfaceMaterials(struct SurfaceMaterialAttributes& surfaceMaterials);
 
 // symbol: ?findGroundHeight@Utils@VanillaSurfaceBuilders@@YAFAEBVBlockVolume@@VPos@@AEBVHeightmapWrapper@@@Z
-MCAPI short findGroundHeight(class BlockVolume const&, class Pos, class HeightmapWrapper const&);
+MCAPI short findGroundHeight(class BlockVolume const& blocks, class Pos p, class HeightmapWrapper const&);
 
 // symbol:
 // ?isSteepTerrain@Utils@VanillaSurfaceBuilders@@YA_NAEBVBlockVolume@@AEBVBlockPos@@AEBUSteepMaterial@MountainAttributes@@AEBVHeightmapWrapper@@@Z
 MCAPI bool
-isSteepTerrain(class BlockVolume const&, class BlockPos const&, struct MountainAttributes::SteepMaterial const&, class HeightmapWrapper const&);
+isSteepTerrain(class BlockVolume const& blocks, class BlockPos const& pos, struct MountainAttributes::SteepMaterial const&, class HeightmapWrapper const&);
 
 // symbol: ?placeBedrockCeiling@Utils@VanillaSurfaceBuilders@@YAXAEAVRandom@@AEAVBlockVolume@@AEBVBlockPos@@@Z
-MCAPI void placeBedrockCeiling(class Random&, class BlockVolume&, class BlockPos const&);
+MCAPI void placeBedrockCeiling(class Random& random, class BlockVolume& blocks, class BlockPos const& pos);
 
 // symbol: ?placeBedrockFloor@Utils@VanillaSurfaceBuilders@@YAXAEAVRandom@@AEAVBlockVolume@@AEBVBlockPos@@@Z
-MCAPI void placeBedrockFloor(class Random&, class BlockVolume&, class BlockPos const&);
+MCAPI void placeBedrockFloor(class Random& random, class BlockVolume& blocks, class BlockPos const& pos);
 // NOLINTEND
 
 }; // namespace VanillaSurfaceBuilders::Utils

@@ -20,16 +20,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addAABB@HitboxDefinition@@QEAAXAEBUHitboxJson@@@Z
-    MCAPI void addAABB(struct HitboxJson const&);
+    MCAPI void addAABB(struct HitboxJson const& aabb);
 
     // symbol: ?initialize@HitboxDefinition@@QEBAXAEAVEntityContext@@AEAVHitboxComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class HitboxComponent&) const;
+    MCAPI void initialize(class EntityContext&, class HitboxComponent& component) const;
 
     // symbol:
     // ?buildSchema@HitboxDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VHitboxDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HitboxDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HitboxDefinition>>& root
+    );
 
     // NOLINTEND
 };

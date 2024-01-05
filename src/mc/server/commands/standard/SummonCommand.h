@@ -31,7 +31,7 @@ public:
     // symbol:
     // ?_getFacingDirection@SummonCommand@@AEBA?AW4FacingResult@RotationCommandUtils@@AEBVCommandOrigin@@AEAVCommandOutput@@AEAVVec3@@@Z
     MCAPI ::RotationCommandUtils::FacingResult
-    _getFacingDirection(class CommandOrigin const&, class CommandOutput&, class Vec3&) const;
+    _getFacingDirection(class CommandOrigin const& origin, class CommandOutput& output, class Vec3& faceTarget) const;
 
     // NOLINTEND
 };

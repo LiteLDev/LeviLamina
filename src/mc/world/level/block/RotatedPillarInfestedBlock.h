@@ -102,7 +102,7 @@ public:
     // vIndex: 95, symbol:
     // ?spawnResources@RotatedPillarInfestedBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const&, class Randomize&, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 109, symbol: __unk_vfn_109
@@ -136,11 +136,11 @@ public:
     virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@RotatedPillarInfestedBlock@@MEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol:
     // ??0RotatedPillarInfestedBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI RotatedPillarInfestedBlock(std::string const&, int, class Material const&);
+    MCAPI RotatedPillarInfestedBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

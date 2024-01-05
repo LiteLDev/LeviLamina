@@ -17,11 +17,11 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0OverworldBiomeBuilder@@QEAA@AEBVBaseGameVersion@@@Z
-    MCAPI explicit OverworldBiomeBuilder(class BaseGameVersion const&);
+    MCAPI explicit OverworldBiomeBuilder(class BaseGameVersion const& baseGameVersion);
 
     // symbol:
     // ?addBiomes@OverworldBiomeBuilder@@QEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBVBiomeRegistry@@@Z
-    MCAPI void addBiomes(std::vector<struct BiomeNoiseTarget>&, class BiomeRegistry const&) const;
+    MCAPI void addBiomes(std::vector<struct BiomeNoiseTarget>& biomes, class BiomeRegistry const& biomeRegistry) const;
 
     // symbol: ??1OverworldBiomeBuilder@@QEAA@XZ
     MCAPI ~OverworldBiomeBuilder();
@@ -32,61 +32,88 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_addHighSlice@OverworldBiomeBuilder@@AEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
-    MCAPI void
-    _addHighSlice(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&, class BiomeRegistry const&)
-        const;
+    MCAPI void _addHighSlice(
+        std::vector<struct BiomeNoiseTarget>& biomes,
+        struct ClimateUtils::Parameter const&,
+        class BiomeRegistry const& biomeRegistry
+    ) const;
 
     // symbol:
     // ?_addInlandBiomes@OverworldBiomeBuilder@@AEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBVBiomeRegistry@@@Z
-    MCAPI void _addInlandBiomes(std::vector<struct BiomeNoiseTarget>&, class BiomeRegistry const&) const;
+    MCAPI void
+    _addInlandBiomes(std::vector<struct BiomeNoiseTarget>& biomes, class BiomeRegistry const& biomeRegistry) const;
 
     // symbol:
     // ?_addLowSlice@OverworldBiomeBuilder@@AEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
-    MCAPI void
-    _addLowSlice(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&, class BiomeRegistry const&)
-        const;
+    MCAPI void _addLowSlice(
+        std::vector<struct BiomeNoiseTarget>& biomes,
+        struct ClimateUtils::Parameter const&,
+        class BiomeRegistry const& biomeRegistry
+    ) const;
 
     // symbol:
     // ?_addMidSlice@OverworldBiomeBuilder@@AEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
-    MCAPI void
-    _addMidSlice(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&, class BiomeRegistry const&)
-        const;
+    MCAPI void _addMidSlice(
+        std::vector<struct BiomeNoiseTarget>& biomes,
+        struct ClimateUtils::Parameter const&,
+        class BiomeRegistry const& biomeRegistry
+    ) const;
 
     // symbol:
     // ?_addPeaks@OverworldBiomeBuilder@@AEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
-    MCAPI void
-    _addPeaks(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&, class BiomeRegistry const&)
-        const;
+    MCAPI void _addPeaks(
+        std::vector<struct BiomeNoiseTarget>& biomes,
+        struct ClimateUtils::Parameter const&,
+        class BiomeRegistry const& biomeRegistry
+    ) const;
 
     // symbol:
     // ?_addSurfaceBiome@OverworldBiomeBuilder@@AEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBUParameter@ClimateUtils@@1111MPEAVBiome@@@Z
-    MCAPI void
-    _addSurfaceBiome(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, float, class Biome*)
-        const;
+    MCAPI void _addSurfaceBiome(
+        std::vector<struct BiomeNoiseTarget>& biomes,
+        struct ClimateUtils::Parameter const& temperature,
+        struct ClimateUtils::Parameter const&,
+        struct ClimateUtils::Parameter const&,
+        struct ClimateUtils::Parameter const&,
+        struct ClimateUtils::Parameter const&,
+        float        offset,
+        class Biome* second
+    ) const;
 
     // symbol:
     // ?_addUndergroundBiome@OverworldBiomeBuilder@@AEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBUParameter@ClimateUtils@@1111MPEAVBiome@@@Z
-    MCAPI void
-    _addUndergroundBiome(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, struct ClimateUtils::Parameter const&, float, class Biome*)
-        const;
+    MCAPI void _addUndergroundBiome(
+        std::vector<struct BiomeNoiseTarget>& biomes,
+        struct ClimateUtils::Parameter const& temperature,
+        struct ClimateUtils::Parameter const&,
+        struct ClimateUtils::Parameter const&,
+        struct ClimateUtils::Parameter const&,
+        struct ClimateUtils::Parameter const&,
+        float        offset,
+        class Biome* second
+    ) const;
 
     // symbol:
     // ?_addValleys@OverworldBiomeBuilder@@AEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
-    MCAPI void
-    _addValleys(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&, class BiomeRegistry const&)
-        const;
+    MCAPI void _addValleys(
+        std::vector<struct BiomeNoiseTarget>& biomes,
+        struct ClimateUtils::Parameter const&,
+        class BiomeRegistry const& biomeRegistry
+    ) const;
 
     // symbol:
     // ?_pickBadlandsBiome@OverworldBiomeBuilder@@AEBAPEAVBiome@@HAEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
-    MCAPI class Biome* _pickBadlandsBiome(int, struct ClimateUtils::Parameter const&, class BiomeRegistry const&) const;
+    MCAPI class Biome*
+    _pickBadlandsBiome(int, struct ClimateUtils::Parameter const&, class BiomeRegistry const& biomeRegistry) const;
 
     // symbol:
     // ?_pickShatteredCoastBiome@OverworldBiomeBuilder@@AEBAPEAVBiome@@HHAEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
     MCAPI class Biome*
-    _pickShatteredCoastBiome(int, int, struct ClimateUtils::Parameter const&, class BiomeRegistry const&) const;
+    _pickShatteredCoastBiome(int, int, struct ClimateUtils::Parameter const&, class BiomeRegistry const& biomeRegistry)
+        const;
 
     // symbol: ?_populateBiomeArrays@OverworldBiomeBuilder@@AEBAXAEBVBiomeRegistry@@@Z
-    MCAPI void _populateBiomeArrays(class BiomeRegistry const&) const;
+    MCAPI void _populateBiomeArrays(class BiomeRegistry const& biomeRegistry) const;
 
     // NOLINTEND
 

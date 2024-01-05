@@ -56,7 +56,7 @@ public:
     MCAPI void setFileSize(uint64);
 
     // symbol: ?setFullPathName@DirectoryIterationItem@Core@@QEAAXAEBVPath@2@@Z
-    MCAPI void setFullPathName(class Core::Path const&);
+    MCAPI void setFullPathName(class Core::Path const& fullPathName);
 
     // symbol: ?setModifyTime@DirectoryIterationItem@Core@@QEAAX_J@Z
     MCAPI void setModifyTime(int64);

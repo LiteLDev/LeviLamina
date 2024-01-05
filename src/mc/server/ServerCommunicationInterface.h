@@ -27,7 +27,7 @@ public:
     );
 
     // symbol: ?sendChunkLoadTelemtryData@ServerCommunicationInterface@@QEAAXAEBUChunkLoadTelemetryData@@@Z
-    MCAPI void sendChunkLoadTelemtryData(struct ChunkLoadTelemetryData const&);
+    MCAPI void sendChunkLoadTelemtryData(struct ChunkLoadTelemetryData const& data);
 
     // symbol: ?sendServerStarted@ServerCommunicationInterface@@QEAAXXZ
     MCAPI void sendServerStarted();

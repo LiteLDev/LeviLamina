@@ -77,10 +77,10 @@ public:
     MCAPI bool isRegistrationFinished() const;
 
     // symbol: ?lookupByHash@BiomeRegistry@@QEBAPEAVBiome@@AEBVHashedString@@@Z
-    MCAPI class Biome* lookupByHash(class HashedString const&) const;
+    MCAPI class Biome* lookupByHash(class HashedString const& hash) const;
 
     // symbol: ?lookupById@BiomeRegistry@@QEBAPEAVBiome@@H@Z
-    MCAPI class Biome* lookupById(int id) const;
+    MCAPI class Biome* lookupById(int) const;
 
     // symbol:
     // ?lookupByName@BiomeRegistry@@QEBAPEAVBiome@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -96,8 +96,12 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_addToInheritanceTree@BiomeRegistry@@AEAA_NAEAV?$InheritanceTree@UBiomeParent@BiomeRegistry@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@AEBVSemVersion@@@Z
-    MCAPI bool
-    _addToInheritanceTree(class InheritanceTree<struct BiomeRegistry::BiomeParent>&, std::string const&, class Json::Value&&, class SemVersion const&);
+    MCAPI bool _addToInheritanceTree(
+        class InheritanceTree<struct BiomeRegistry::BiomeParent>& inheritance,
+        std::string const&                                        expectedBiomeName,
+        class Json::Value&&                                       value,
+        class SemVersion const&                                   engineVersion
+    );
 
     // symbol:
     // ?_buildInheritanceTree@BiomeRegistry@@AEAA?AV?$InheritanceTree@UBiomeParent@BiomeRegistry@@@@AEAVResourcePackManager@@@Z
@@ -117,8 +121,12 @@ public:
 
     // symbol:
     // ?_mergeDataInheritance@BiomeRegistry@@AEAAXAEAVValue@Json@@AEAVSemVersion@@AEAV?$InheritanceTree@UBiomeParent@BiomeRegistry@@@@AEBUBiomeParent@1@@Z
-    MCAPI void
-    _mergeDataInheritance(class Json::Value&, class SemVersion&, class InheritanceTree<struct BiomeRegistry::BiomeParent>&, struct BiomeRegistry::BiomeParent const&);
+    MCAPI void _mergeDataInheritance(
+        class Json::Value& mergeInto,
+        class SemVersion&,
+        class InheritanceTree<struct BiomeRegistry::BiomeParent>& inheritance,
+        struct BiomeRegistry::BiomeParent const&                  currentNode
+    );
 
     // symbol: ?_save@BiomeRegistry@@AEAAXAEAVLevelStorage@@@Z
     MCAPI void _save(class LevelStorage&);

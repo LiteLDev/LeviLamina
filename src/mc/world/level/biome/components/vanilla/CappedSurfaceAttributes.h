@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initializeNoise@CappedSurfaceAttributes@@QEAAXI@Z
-    MCAPI void initializeNoise(uint);
+    MCAPI void initializeNoise(uint levelSeed);
 
     // symbol: ??4CappedSurfaceAttributes@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct CappedSurfaceAttributes& operator=(struct CappedSurfaceAttributes&&);

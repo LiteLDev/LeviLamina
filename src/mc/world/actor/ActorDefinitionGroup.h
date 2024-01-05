@@ -52,7 +52,7 @@ public:
     // symbol:
     // ??0ActorDefinitionGroup@@QEAA@AEAVLevel@@AEAVResourcePackManager@@AEAVIMinecraftEventing@@AEBVExperiments@@@Z
     MCAPI
-    ActorDefinitionGroup(class Level&, class ResourcePackManager&, class IMinecraftEventing&, class Experiments const&);
+    ActorDefinitionGroup(class Level& level, class ResourcePackManager& resourcePackManager, class IMinecraftEventing& eventing, class Experiments const&);
 
     // symbol:
     // ?buildActorEventList@ActorDefinitionGroup@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
@@ -81,7 +81,7 @@ public:
     // ?loadActorDefinitionIdentifier@ActorDefinitionGroup@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static bool loadActorDefinitionIdentifier(
         class Json::Value const& root,
-        class SemVersion const&  version,
+        class SemVersion const&  formatVersion,
         std::string&             identifier
     );
 
@@ -89,7 +89,7 @@ public:
     // ?loadActorDefinitionRuntimeIdentifier@ActorDefinitionGroup@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI static bool loadActorDefinitionRuntimeIdentifier(
         class Json::Value const& root,
-        class SemVersion const&  version,
+        class SemVersion const&  formatVersion,
         std::string&             runtimeIdentifier
     );
 
@@ -146,13 +146,14 @@ public:
 
     // symbol:
     // ?_loadTemplates@ActorDefinitionGroup@@AEAA?AW4ActorDefinitionParseStatus@@AEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UDeserializeDataParams@@@Z
-    MCAPI ::ActorDefinitionParseStatus _loadTemplates(class Level&, std::string const&, struct DeserializeDataParams);
+    MCAPI ::ActorDefinitionParseStatus
+    _loadTemplates(class Level& level, std::string const& base, struct DeserializeDataParams);
 
     // symbol: ?_setupCommonResourceDefinitionMap@ActorDefinitionGroup@@AEAAXAEAVActorDefinition@@AEAVLevel@@@Z
-    MCAPI void _setupCommonResourceDefinitionMap(class ActorDefinition&, class Level&);
+    MCAPI void _setupCommonResourceDefinitionMap(class ActorDefinition& def, class Level& level);
 
     // symbol: ?_setupPropertyGroups@ActorDefinitionGroup@@AEAAXAEAVLevel@@@Z
-    MCAPI void _setupPropertyGroups(class Level&);
+    MCAPI void _setupPropertyGroups(class Level& level);
 
     // NOLINTEND
 };

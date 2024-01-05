@@ -357,7 +357,7 @@ public:
         // vIndex: 5, symbol:
         // ?postProcessMobsAt@WoodlandMansionPiece@WoodlandMansionPieces@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
         virtual void
-        postProcessMobsAt(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
+        postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
         // vIndex: 13, symbol:
         // ?_handleDataMarker@WoodlandMansionPiece@WoodlandMansionPieces@@MEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z

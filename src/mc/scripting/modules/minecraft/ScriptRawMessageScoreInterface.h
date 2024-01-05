@@ -29,7 +29,7 @@ public:
     operator=(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
 
     // symbol: ??8ScriptRawMessageScoreInterface@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
-    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&) const;
+    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const& other) const;
 
     // symbol: ??1ScriptRawMessageScoreInterface@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptRawMessageScoreInterface();

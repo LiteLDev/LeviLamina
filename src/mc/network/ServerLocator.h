@@ -72,8 +72,11 @@ public:
 
     // vIndex: 13, symbol:
     // ?checkCanConnectToCustomServerAsync@StubServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AXW4ServerConnectivityTestResult@@@Z@3@@Z
-    virtual void
-    checkCanConnectToCustomServerAsync(std::string, int, std::function<void(::ServerConnectivityTestResult)>) = 0;
+    virtual void checkCanConnectToCustomServerAsync(
+        std::string                                         hostIpAddress,
+        int                                                 port,
+        std::function<void(::ServerConnectivityTestResult)> callback
+    ) = 0;
 
     // NOLINTEND
 };

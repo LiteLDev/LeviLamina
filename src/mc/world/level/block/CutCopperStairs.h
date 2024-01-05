@@ -32,7 +32,7 @@ public:
     virtual ~CutCopperStairs() = default;
 
     // vIndex: 18, symbol: ?onLightningHit@CutCopperStairs@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onLightningHit(class BlockSource&, class BlockPos const&) const;
+    virtual void onLightningHit(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -128,25 +128,26 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 151, symbol: ?randomTick@CutCopperStairs@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@CutCopperStairs@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // symbol:
     // ??0CutCopperStairs@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@W4CopperType@@AEBVHashedString@@@Z
-    MCAPI CutCopperStairs(std::string const&, int, class BlockLegacy const&, ::CopperType, class HashedString const&);
+    MCAPI
+    CutCopperStairs(std::string const& nameId, int, class BlockLegacy const& base, ::CopperType, class HashedString const&);
 
     // symbol:
     // ??0CutCopperStairs@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@W4CopperType@@AEBVHashedString@@33@Z
     MCAPI
-    CutCopperStairs(std::string const&, int, class BlockLegacy const&, ::CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
+    CutCopperStairs(std::string const& nameId, int, class BlockLegacy const& base, ::CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
 
     // NOLINTEND
 };

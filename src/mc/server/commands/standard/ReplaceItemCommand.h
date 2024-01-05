@@ -34,7 +34,8 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_outputError@ReplaceItemCommand@@AEBAXAEAVCommandOutput@@UReplacementResults@Util@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void _outputError(class CommandOutput&, struct Util::ReplacementResults, std::string const&) const;
+    MCAPI void
+    _outputError(class CommandOutput& output, struct Util::ReplacementResults, std::string const& itemName) const;
 
     // NOLINTEND
 };

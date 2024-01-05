@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_getUpdatePacket@JukeboxBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // symbol: ?_onUpdatePacket@JukeboxBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -25,7 +25,7 @@ public:
     MCVAPI bool canPullOutItem(int, int, class ItemStack const&) const;
 
     // symbol: ?canPushInItem@JukeboxBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPushInItem(int, int, class ItemStack const& itemStack) const;
 
     // symbol: ?getContainer@JukeboxBlockActor@@UEAAPEAVContainer@@XZ
     MCVAPI class Container* getContainer();
@@ -52,7 +52,11 @@ public:
     MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?serverInitItemStackIds@JukeboxBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
 
     // symbol: ?setItem@JukeboxBlockActor@@UEAAXHAEBVItemStack@@@Z
     MCVAPI void setItem(int slot, class ItemStack const& item);
@@ -86,7 +90,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_spawnMusicParticles@JukeboxBlockActor@@AEAAXAEAVLevel@@M@Z
-    MCAPI void _spawnMusicParticles(class Level&, float);
+    MCAPI void _spawnMusicParticles(class Level& level, float);
 
     // NOLINTEND
 };

@@ -21,10 +21,10 @@ public:
 
     // symbol:
     // ?registerServerInstanceEventHandler@ServerInstanceEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VServerInstanceEventHandler@@U?$default_delete@VServerInstanceEventHandler@@@std@@@std@@@Z
-    MCAPI void registerServerInstanceEventHandler(std::unique_ptr<class ServerInstanceEventHandler>&&);
+    MCAPI void registerServerInstanceEventHandler(std::unique_ptr<class ServerInstanceEventHandler>&& handler);
 
     // symbol: ?sendEvent@ServerInstanceEventCoordinator@@QEAAXAEBV?$EventRef@U?$ServerInstanceGameplayEvent@X@@@@@Z
-    MCAPI void sendEvent(class EventRef<struct ServerInstanceGameplayEvent<void>> const&);
+    MCAPI void sendEvent(class EventRef<struct ServerInstanceGameplayEvent<void>> const& event);
 
     // symbol: ?sendServerInitializeEnd@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
     MCAPI void sendServerInitializeEnd(class ServerInstance& instance);
@@ -37,8 +37,10 @@ public:
 
     // symbol:
     // ?sendServerMinecraftInitialized@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@@Z
-    MCAPI void
-    sendServerMinecraftInitialized(class ServerInstance&, Bedrock::NotNullNonOwnerPtr<class Minecraft> const&);
+    MCAPI void sendServerMinecraftInitialized(
+        class ServerInstance&                               instance,
+        Bedrock::NotNullNonOwnerPtr<class Minecraft> const& minecraft
+    );
 
     // symbol: ?sendServerThreadStarted@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z
     MCAPI void sendServerThreadStarted(class ServerInstance& instance);

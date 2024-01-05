@@ -101,10 +101,10 @@ public:
     virtual std::string getInteractText(class Player const&) const;
 
     // symbol: ?canBeCopied@WrittenBookItem@@SA_NPEBVCompoundTag@@@Z
-    MCAPI static bool canBeCopied(class CompoundTag const*);
+    MCAPI static bool canBeCopied(class CompoundTag const* tag);
 
     // symbol: ?getGeneration@WrittenBookItem@@SAHPEBVCompoundTag@@@Z
-    MCAPI static int getGeneration(class CompoundTag const*);
+    MCAPI static int getGeneration(class CompoundTag const* tag);
 
     // symbol: ?getPageCount@WrittenBookItem@@SAHAEBVItemStack@@@Z
     MCAPI static int getPageCount(class ItemStack const& book);

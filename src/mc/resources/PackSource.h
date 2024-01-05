@@ -33,16 +33,20 @@ public:
 
     // vIndex: 5, symbol:
     // ?load@CompositePackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-    virtual class PackSourceReport
-    load(class IPackManifestFactory&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&) = 0;
+    virtual class PackSourceReport load(
+        class IPackManifestFactory&                                         manifestFactory,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    ) = 0;
 
     // symbol: ?fetchPack@PackSource@@QEAAPEAVPack@@AEBUPackIdVersion@@@Z
     MCAPI class Pack* fetchPack(struct PackIdVersion const& packId);
 
     // symbol:
     // ?resolveUpgradeDependencies@PackSource@@QEAAXAEAVPack@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
-    MCAPI void
-    resolveUpgradeDependencies(class Pack&, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const&);
+    MCAPI void resolveUpgradeDependencies(
+        class Pack&                                                         pack,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> const& keyProvider
+    );
 
     // NOLINTEND
 };

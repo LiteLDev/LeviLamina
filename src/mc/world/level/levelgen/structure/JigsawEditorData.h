@@ -21,8 +21,13 @@ public:
 
     // symbol:
     // ??0JigsawEditorData@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000W4JigsawJointType@@@Z
-    MCAPI
-    JigsawEditorData(std::string const&, std::string const&, std::string const&, std::string const&, ::JigsawJointType);
+    MCAPI JigsawEditorData(
+        std::string const& name,
+        std::string const& target,
+        std::string const& targetPool,
+        std::string const&,
+        ::JigsawJointType
+    );
 
     // symbol: ?getFinalBlock@JigsawEditorData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string const& getFinalBlock() const;
@@ -37,25 +42,25 @@ public:
     MCAPI std::string const& getTarget() const;
 
     // symbol: ?load@JigsawEditorData@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void load(class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?save@JigsawEditorData@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void save(class CompoundTag&) const;
+    MCAPI void save(class CompoundTag& tag) const;
 
     // symbol: ?setFinalBlock@JigsawEditorData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setFinalBlock(std::string const&);
+    MCAPI void setFinalBlock(std::string const& finalBlock);
 
     // symbol: ?setJointType@JigsawEditorData@@QEAAXAEBW4JigsawJointType@@@Z
     MCAPI void setJointType(::JigsawJointType const&);
 
     // symbol: ?setName@JigsawEditorData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setName(std::string const&);
+    MCAPI void setName(std::string const& name);
 
     // symbol: ?setTarget@JigsawEditorData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setTarget(std::string const&);
+    MCAPI void setTarget(std::string const& target);
 
     // symbol: ?setTargetPool@JigsawEditorData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setTargetPool(std::string const&);
+    MCAPI void setTargetPool(std::string const& targetPool);
 
     // symbol: ??1JigsawEditorData@@QEAA@XZ
     MCAPI ~JigsawEditorData();

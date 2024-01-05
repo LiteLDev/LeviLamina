@@ -15,13 +15,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0PropertyContainer@@QEAA@V?$not_null@V?$shared_ptr@$$CBVPropertyGroup@@@std@@@gsl@@AEAVRenderParams@@@Z
-    MCAPI PropertyContainer(gsl::not_null<std::shared_ptr<class PropertyGroup const>>, class RenderParams&);
+    MCAPI
+    PropertyContainer(gsl::not_null<std::shared_ptr<class PropertyGroup const>>, class RenderParams& renderParams);
 
     // symbol: ?addEntryToSyncData@PropertyContainer@@QEBAXAEBVPropertyMetadata@@AEAUPropertySyncData@@@Z
     MCAPI void addEntryToSyncData(class PropertyMetadata const&, struct PropertySyncData&) const;
 
     // symbol: ?getMolangValue@PropertyContainer@@QEBA_N_KAEAUMolangScriptArg@@@Z
-    MCAPI bool getMolangValue(uint64, struct MolangScriptArg&) const;
+    MCAPI bool getMolangValue(uint64, struct MolangScriptArg& out) const;
 
     // symbol: ?readLoadedProperties@PropertyContainer@@QEAAXAEBVCompoundTag@@@Z
     MCAPI void readLoadedProperties(class CompoundTag const&);
@@ -45,18 +46,18 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_addDataToCompoundTag@PropertyContainer@@AEBAXAEAVCompoundTag@@AEBVPropertyMetadata@@@Z
-    MCAPI void _addDataToCompoundTag(class CompoundTag&, class PropertyMetadata const&) const;
+    MCAPI void _addDataToCompoundTag(class CompoundTag& compoundTag, class PropertyMetadata const&) const;
 
     // symbol:
     // ?_getPropertyTypeArrayIndex@PropertyContainer@@AEBA?AV?$optional@_K@std@@_KW4ContainedType@PropertyMetadata@@@Z
     MCAPI std::optional<uint64> _getPropertyTypeArrayIndex(uint64, ::PropertyMetadata::ContainedType) const;
 
     // symbol: ?_readValueFromTag@PropertyContainer@@AEAA_NAEBVPropertyMetadata@@AEBVTag@@@Z
-    MCAPI bool _readValueFromTag(class PropertyMetadata const&, class Tag const&);
+    MCAPI bool _readValueFromTag(class PropertyMetadata const&, class Tag const& tag);
 
     // symbol:
     // ?_trySetEnumIndexByString@PropertyContainer@@AEAA_N_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool _trySetEnumIndexByString(uint64, std::string const&);
+    MCAPI bool _trySetEnumIndexByString(uint64, std::string const& value);
 
     // NOLINTEND
 };

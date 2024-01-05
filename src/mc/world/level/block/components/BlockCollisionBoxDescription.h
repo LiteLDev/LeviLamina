@@ -52,10 +52,10 @@ public:
     virtual void initializeFromNetwork(class CompoundTag const&, struct cereal::ReflectionCtx const&);
 
     // symbol: ??0BlockCollisionBoxDescription@@QEAA@_N@Z
-    MCAPI explicit BlockCollisionBoxDescription(bool);
+    MCAPI explicit BlockCollisionBoxDescription(bool enabled);
 
     // symbol: ??0BlockCollisionBoxDescription@@QEAA@AEBVVec3@@0@Z
-    MCAPI BlockCollisionBoxDescription(class Vec3 const&, class Vec3 const&);
+    MCAPI BlockCollisionBoxDescription(class Vec3 const& origin, class Vec3 const& size);
 
     // symbol: ?bindType@BlockCollisionBoxDescription@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

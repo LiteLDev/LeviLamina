@@ -35,7 +35,7 @@ public:
                                                         struct Include<
                                                             class FlagComponent<struct ActorMovementTickNeededFlag>,
                                                             class FlagComponent<struct FallingBlockFlag>>,
-                                                        class ActorOwnerComponent>);
+                                                        class ActorOwnerComponent> view);
 
     // NOLINTEND
 };

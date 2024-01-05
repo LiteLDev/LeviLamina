@@ -18,14 +18,16 @@ public:
     virtual ~TwistingVinesClusterFeature() = default;
 
     // vIndex: 3, symbol: ?place@TwistingVinesClusterFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_placeVineString@TwistingVinesClusterFeature@@AEBAXAEAVBlockSource@@AEAVRandom@@AEBVBlockPos@@HHH@Z
-    MCAPI void _placeVineString(class BlockSource&, class Random&, class BlockPos const&, int, int, int) const;
+    MCAPI void
+    _placeVineString(class BlockSource& region, class Random& random, class BlockPos const& vinePos, int, int, int)
+        const;
 
     // NOLINTEND
 };

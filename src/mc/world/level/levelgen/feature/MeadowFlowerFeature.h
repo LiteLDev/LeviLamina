@@ -17,7 +17,7 @@ public:
     virtual ~MeadowFlowerFeature() = default;
 
     // vIndex: 3, symbol: ?place@MeadowFlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // symbol: ??0MeadowFlowerFeature@@QEAA@XZ
     MCAPI MeadowFlowerFeature();
@@ -27,7 +27,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?getRandomArrayIndex@MeadowFlowerFeature@@AEBAHAEBVBlockPos@@_KM@Z
-    MCAPI int getRandomArrayIndex(class BlockPos const&, uint64, float) const;
+    MCAPI int getRandomArrayIndex(class BlockPos const& pos, uint64 length, float scale) const;
 
     // NOLINTEND
 };

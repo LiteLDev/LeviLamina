@@ -52,13 +52,13 @@ public:
     MCAPI explicit ItemRegistryRef(std::weak_ptr<class ItemRegistry>);
 
     // symbol: ?addItemToTagMap@ItemRegistryRef@@QEBAXAEBVItem@@@Z
-    MCAPI void addItemToTagMap(class Item const&) const;
+    MCAPI void addItemToTagMap(class Item const& item) const;
 
     // symbol: ?allowTagUpdate@ItemRegistryRef@@QEBA?AVTagUpdateToken@@XZ
     MCAPI class TagUpdateToken allowTagUpdate() const;
 
     // symbol: ?alterAvailableCreativeItems@ItemRegistryRef@@QEBAXPEAVActorInfoRegistry@@AEAVLevelData@@@Z
-    MCAPI void alterAvailableCreativeItems(class ActorInfoRegistry*, class LevelData&) const;
+    MCAPI void alterAvailableCreativeItems(class ActorInfoRegistry*, class LevelData& levelData) const;
 
     // symbol: ?canAddTags@ItemRegistryRef@@QEBA_NXZ
     MCAPI bool canAddTags() const;
@@ -79,7 +79,7 @@ public:
     MCAPI class WeakPtr<class Item> getItem(class HashedString const&) const;
 
     // symbol: ?getItem@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@F@Z
-    MCAPI class WeakPtr<class Item> getItem(short) const;
+    MCAPI class WeakPtr<class Item> getItem(short itemId) const;
 
     // symbol: ?getItemCount@ItemRegistryRef@@QEBAHXZ
     MCAPI int getItemCount() const;
@@ -98,19 +98,26 @@ public:
     MCAPI class BaseGameVersion getWorldBaseGameVersion() const;
 
     // symbol: ?init@ItemRegistryRef@@QEBAXAEBVExperiments@@AEBVBaseGameVersion@@PEAVResourcePackManager@@@Z
-    MCAPI void init(class Experiments const&, class BaseGameVersion const&, class ResourcePackManager*) const;
+    MCAPI void
+    init(class Experiments const&, class BaseGameVersion const& baseGameVersion, class ResourcePackManager* rpm) const;
 
     // symbol:
     // ?initCreativeItemsServer@ItemRegistryRef@@QEBAXPEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@_NAEBVExperiments@@V?$function@$$A6AXVItemRegistryRef@@PEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@PEAVCreativeItemRegistry@@_NAEBVBaseGameVersion@@AEBVExperiments@@@Z@std@@@Z
-    MCAPI void
-    initCreativeItemsServer(class ActorInfoRegistry*, class BlockDefinitionGroup*, bool, class Experiments const&, std::function<void(class ItemRegistryRef, class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&)>)
-        const;
+    MCAPI void initCreativeItemsServer(
+        class ActorInfoRegistry*    actorInfoRegistry,
+        class BlockDefinitionGroup* blockDefinitionGroup,
+        bool                        isClient,
+        class Experiments const&,
+        std::function<
+            void(class ItemRegistryRef, class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&)>
+            registerCallback
+    ) const;
 
     // symbol: ?isComplexAlias@ItemRegistryRef@@QEBA_NAEBVHashedString@@@Z
     MCAPI bool isComplexAlias(class HashedString const&) const;
 
     // symbol: ?isCreativeItem@ItemRegistryRef@@QEBA_NAEBVItemInstance@@@Z
-    MCAPI bool isCreativeItem(class ItemInstance const&) const;
+    MCAPI bool isCreativeItem(class ItemInstance const& itemInstance) const;
 
     // symbol: ?isServerInitializingCreativeItems@ItemRegistryRef@@QEBA_NXZ
     MCAPI bool isServerInitializingCreativeItems() const;
@@ -122,50 +129,52 @@ public:
     MCAPI class ItemRegistryRef::LockGuard lockItemWorldCompatibilityMutex() const;
 
     // symbol: ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const&) const;
+    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const& inString) const;
 
     // symbol:
     // ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAHV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class WeakPtr<class Item> lookupByName(int&, std::string_view) const;
+    MCAPI class WeakPtr<class Item> lookupByName(int& outItemAux, std::string_view inString) const;
 
     // symbol:
     // ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAH0V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class WeakPtr<class Item> lookupByName(int&, int&, std::string_view) const;
+    MCAPI class WeakPtr<class Item> lookupByName(int& outItemId, int& outItemAux, std::string_view inString) const;
 
     // symbol: ?lookupByNameNoAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> lookupByNameNoAlias(class HashedString const&) const;
+    MCAPI class WeakPtr<class Item> lookupByNameNoAlias(class HashedString const& inString) const;
 
     // symbol:
     // ?lookupByNameNoAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string_view) const;
+    MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string_view inString) const;
 
     // symbol: ?lookupByNameNoParsing@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAHAEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int&, class HashedString const&) const;
+    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int&, class HashedString const& fullName) const;
 
     // symbol:
     // ?lookupByTag@ItemRegistryRef@@QEBA?AV?$unordered_set@PEBVItem@@U?$hash@PEBVItem@@@std@@U?$equal_to@PEBVItem@@@3@V?$allocator@PEBVItem@@@3@@std@@AEBUItemTag@@@Z
-    MCAPI std::unordered_set<class Item const*> lookupByTag(struct ItemTag const&) const;
+    MCAPI std::unordered_set<class Item const*> lookupByTag(struct ItemTag const& tag) const;
 
     // symbol: ?lookupByVanillaName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> lookupByVanillaName(class HashedString const&) const;
+    MCAPI class WeakPtr<class Item> lookupByVanillaName(class HashedString const& inString) const;
 
     // symbol: ?registerAlias@ItemRegistryRef@@QEBAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
-    MCAPI void registerAlias(class HashedString const&, class HashedString const&, class BaseGameVersion const&) const;
+    MCAPI void
+    registerAlias(class HashedString const& alias, class HashedString const& name, class BaseGameVersion const&) const;
 
     // symbol:
     // ?registerComplexAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@AEBUItemRegistryComplexAlias@@@Z
     MCAPI class WeakPtr<class Item>
-    registerComplexAlias(class HashedString const&, struct ItemRegistryComplexAlias const&) const;
+    registerComplexAlias(class HashedString const& alias, struct ItemRegistryComplexAlias const&) const;
 
     // symbol: ?registerExtraItemInitCallback@ItemRegistryRef@@QEBAXV?$function@$$A6AXVItemRegistryRef@@@Z@std@@@Z
-    MCAPI void registerExtraItemInitCallback(std::function<void(class ItemRegistryRef)>) const;
+    MCAPI void registerExtraItemInitCallback(std::function<void(class ItemRegistryRef)> callback) const;
 
     // symbol: ?registerLegacyID@ItemRegistryRef@@QEBAXAEBVHashedString@@F@Z
-    MCAPI void registerLegacyID(class HashedString const&, short) const;
+    MCAPI void registerLegacyID(class HashedString const& name, short) const;
 
     // symbol: ?registerLegacyMapping@ItemRegistryRef@@QEBAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
     MCAPI void
-    registerLegacyMapping(class HashedString const&, class HashedString const&, class BaseGameVersion const&) const;
+    registerLegacyMapping(class HashedString const& alias, class HashedString const& name, class BaseGameVersion const&)
+        const;
 
     // symbol: ?remapToFullLegacyNameByHash@ItemRegistryRef@@QEBA_K_K@Z
     MCAPI uint64 remapToFullLegacyNameByHash(uint64) const;
@@ -174,13 +183,13 @@ public:
     MCAPI uint64 remapToLegacyNameByHash(uint64) const;
 
     // symbol: ?setCheckForItemWorldCompatibility@ItemRegistryRef@@QEBAX_N@Z
-    MCAPI void setCheckForItemWorldCompatibility(bool) const;
+    MCAPI void setCheckForItemWorldCompatibility(bool value) const;
 
     // symbol: ?setOwningThreadId@ItemRegistryRef@@QEBAXVid@thread@std@@@Z
-    MCAPI void setOwningThreadId(std::thread::id) const;
+    MCAPI void setOwningThreadId(std::thread::id threadId) const;
 
     // symbol: ?setServerInitializingCreativeItems@ItemRegistryRef@@QEBAX_N@Z
-    MCAPI void setServerInitializingCreativeItems(bool) const;
+    MCAPI void setServerInitializingCreativeItems(bool value) const;
 
     // symbol: ?shouldCheckForItemWorldCompatibility@ItemRegistryRef@@QEBA_NXZ
     MCAPI bool shouldCheckForItemWorldCompatibility() const;
@@ -189,7 +198,7 @@ public:
     MCAPI void shutdown() const;
 
     // symbol: ?unregisterItem@ItemRegistryRef@@QEBAXAEBVHashedString@@@Z
-    MCAPI void unregisterItem(class HashedString const&) const;
+    MCAPI void unregisterItem(class HashedString const& itemName) const;
 
     // symbol:
     // ?validateServerItemComponents@ItemRegistryRef@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@@2@@3@@Z

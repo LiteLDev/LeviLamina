@@ -28,7 +28,7 @@ public:
 
     // vIndex: 4, symbol:
     // ?setNull@ItemStack@@UEAAXV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z
-    virtual void setNull(std::optional<std::string>);
+    virtual void setNull(std::optional<std::string> reason);
 
     // vIndex: 5, symbol: ?toString@ItemStack@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string toString() const;
@@ -64,7 +64,7 @@ public:
     ItemStack(std::string_view name, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
 
     // symbol: ?_assignNetIdVariant@ItemStack@@QEBAXAEBV1@@Z
-    MCAPI void _assignNetIdVariant(class ItemStack const&) const;
+    MCAPI void _assignNetIdVariant(class ItemStack const& fromItem) const;
 
     // symbol: ?clientInitLegacyRequestId@ItemStack@@QEAAXAEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@@Z
     MCAPI void clientInitLegacyRequestId(ItemStackLegacyRequestId const&);
@@ -91,10 +91,10 @@ public:
     MCAPI bool inventoryTick(class Level& level, class Actor& owner, int slot, bool selected);
 
     // symbol: ?matchesAndNetIdVariantMatches@ItemStack@@QEBA_NAEBV1@@Z
-    MCAPI bool matchesAndNetIdVariantMatches(class ItemStack const&) const;
+    MCAPI bool matchesAndNetIdVariantMatches(class ItemStack const& other) const;
 
     // symbol: ?matchesNetIdVariant@ItemStack@@QEBA_NAEBV1@@Z
-    MCAPI bool matchesNetIdVariant(class ItemStack const&) const;
+    MCAPI bool matchesNetIdVariant(class ItemStack const& other) const;
 
     // symbol: ?mineBlock@ItemStack@@QEAAXAEBVBlock@@HHHPEAVMob@@@Z
     MCAPI void mineBlock(class Block const& block, int x, int y, int z, class Mob* owner);
@@ -131,7 +131,11 @@ public:
     MCAPI ::ItemUseMethod useTimeDepleted(class Level* level, class Player* player);
 
     // symbol: ?fromDescriptor@ItemStack@@SA?AV1@AEBVNetworkItemStackDescriptor@@AEAVBlockPalette@@_N@Z
-    MCAPI static class ItemStack fromDescriptor(class NetworkItemStackDescriptor const&, class BlockPalette&, bool);
+    MCAPI static class ItemStack fromDescriptor(
+        class NetworkItemStackDescriptor const& descriptor,
+        class BlockPalette&                     blockPalette,
+        bool                                    isClientSide
+    );
 
     // symbol: ?fromTag@ItemStack@@SA?AV1@AEBVCompoundTag@@@Z
     MCAPI static class ItemStack fromTag(class CompoundTag const& tag);

@@ -38,9 +38,14 @@ public:
 
     // vIndex: 7, symbol:
     // ?addCollisionShapes@BubbleColumnBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-    virtual bool
-    addCollisionShapes(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual bool addCollisionShapes(
+        class Block const&                                         block,
+        class BlockSource const&                                   region,
+        class BlockPos const&                                      pos,
+        class AABB const*                                          intersectTestBox,
+        std::vector<class AABB>&                                   inoutBoxes,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
 
     // vIndex: 8, symbol:
     // ?addAABBs@BubbleColumnBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
@@ -135,7 +140,7 @@ public:
     virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const*) const;
 
     // vIndex: 83, symbol: ?mayPick@BubbleColumnBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z
-    virtual bool mayPick(class BlockSource const&, class Block const&, bool) const;
+    virtual bool mayPick(class BlockSource const& region, class Block const& block, bool liquid) const;
 
     // vIndex: 92, symbol: ?neighborChanged@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void
@@ -157,7 +162,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 126, symbol: ?onGraphicsModeChanged@BubbleColumnBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const&);
+    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
 
     // vIndex: 134, symbol:
     // ?animateTickBedrockLegacy@BubbleColumnBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
@@ -185,22 +190,22 @@ public:
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 165, symbol: ?getResourceCount@BubbleColumnBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol: ?shouldTickOnSetBlock@BubbleColumnBlock@@UEBA_NXZ
     MCVAPI bool shouldTickOnSetBlock() const;
 
     // symbol: ??0BubbleColumnBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BubbleColumnBlock(std::string const& nameId, int id);
+    MCAPI BubbleColumnBlock(std::string const& nameId, int);
 
     // symbol: ?addBubbleColumnSegment@BubbleColumnBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool addBubbleColumnSegment(class BlockSource& region, class BlockPos const& pos);
 
     // symbol: ?shouldDragDown@BubbleColumnBlock@@SA_NAEBVBlock@@@Z
-    MCAPI static bool shouldDragDown(class Block const&);
+    MCAPI static bool shouldDragDown(class Block const& block);
 
     // symbol: ?spawnBubbles@BubbleColumnBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static void spawnBubbles(class BlockSource&, class BlockPos const&);
+    MCAPI static void spawnBubbles(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 

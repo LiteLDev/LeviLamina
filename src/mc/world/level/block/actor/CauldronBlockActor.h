@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_getUpdatePacket@CauldronBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // symbol: ?_onUpdatePacket@CauldronBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -54,7 +54,11 @@ public:
     MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?serverInitItemStackIds@CauldronBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
 
     // symbol: ?setItem@CauldronBlockActor@@UEAAXHAEBVItemStack@@@Z
     MCVAPI void setItem(int slot, class ItemStack const& item);
@@ -87,10 +91,10 @@ public:
     MCAPI void mixDyes();
 
     // symbol: ?setCustomColor@CauldronBlockActor@@QEAAXAEBVColor@mce@@@Z
-    MCAPI void setCustomColor(class mce::Color const&);
+    MCAPI void setCustomColor(class mce::Color const& color);
 
     // symbol: ?setPotionType@CauldronBlockActor@@QEAAXW4PotionType@Potion@@@Z
-    MCAPI void setPotionType(::Potion::PotionType);
+    MCAPI void setPotionType(::Potion::PotionType type);
 
     // symbol: ?WATER_COLOR@CauldronBlockActor@@2VColor@mce@@A
     MCAPI static class mce::Color WATER_COLOR;

@@ -149,14 +149,19 @@ public:
     virtual void checkAlive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 169, symbol: ?setGrowth@BushBlock@@MEBAAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@GH@Z
-    virtual class Block const&
-    setGrowth(class BlockSource&, class BlockPos const&, class Block const&, ushort, int) const;
+    virtual class Block const& setGrowth(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class Block const&    baseBlock,
+        ushort,
+        int updateFlags
+    ) const;
 
     // symbol: ?waterSpreadCausesSpawn@BushBlock@@UEBA_NXZ
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0BushBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI BushBlock(std::string const& nameId, int id, class Material const& material);
+    MCAPI BushBlock(std::string const& nameId, int, class Material const& material);
 
     // symbol: ?growCrops@BushBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@W4FertilizerType@@@Z
     MCAPI bool growCrops(class BlockSource& region, class BlockPos const& pos, ::FertilizerType fType) const;

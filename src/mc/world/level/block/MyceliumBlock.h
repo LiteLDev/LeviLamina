@@ -124,7 +124,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 151, symbol: ?randomTick@MyceliumBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -133,11 +133,10 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@MyceliumBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // symbol: ??0MyceliumBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MyceliumBlock(std::string const& nameId, int id);
+    MCAPI MyceliumBlock(std::string const& nameId, int);
 
     // symbol: ?MIN_BRIGHTNESS_TO_PERSIST@MyceliumBlock@@2UBrightness@@B
     MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_PERSIST;
@@ -150,7 +149,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_canSpreadToBlock@MyceliumBlock@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _canSpreadToBlock(class BlockSource const&, class BlockPos const&) const;
+    MCAPI bool _canSpreadToBlock(class BlockSource const& region, class BlockPos const& blockPos) const;
 
     // NOLINTEND
 };

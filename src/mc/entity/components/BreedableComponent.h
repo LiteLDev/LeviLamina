@@ -63,7 +63,7 @@ public:
     MCAPI struct BreedableComponent::MatingResult mate(class Actor& owner, class Actor& partner);
 
     // symbol: ?meetsSittingRequirements@BreedableComponent@@QEBA_NAEBVActor@@@Z
-    MCAPI bool meetsSittingRequirements(class Actor const&) const;
+    MCAPI bool meetsSittingRequirements(class Actor const& actor) const;
 
     // symbol: ?readAdditionalSaveData@BreedableComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCAPI void
@@ -82,9 +82,9 @@ public:
     // ?setOffspringAttributesWithParentCentricBlending@BreedableComponent@@SAXAEAVAttributeInstance@@AEBV2@1AEAVIRandom@@MM@Z
     MCAPI static void setOffspringAttributesWithParentCentricBlending(
         class AttributeInstance&,
-        class AttributeInstance const&,
-        class AttributeInstance const&,
-        class IRandom&,
+        class AttributeInstance const& owner,
+        class AttributeInstance const& partner,
+        class IRandom&                 random,
         float,
         float
     );
@@ -94,10 +94,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_canBreed@BreedableComponent@@AEAA_NAEAVActor@@AEAVPlayer@@AEBVItemStack@@@Z
-    MCAPI bool _canBreed(class Actor&, class Player&, class ItemStack const&);
+    MCAPI bool _canBreed(class Actor& owner, class Player& player, class ItemStack const&);
 
     // symbol: ?_determineBreedType@BreedableComponent@@AEBA?AV?$optional@UBreedableType@@@std@@AEBVActor@@@Z
-    MCAPI std::optional<struct BreedableType> _determineBreedType(class Actor const&) const;
+    MCAPI std::optional<struct BreedableType> _determineBreedType(class Actor const& partner) const;
 
     // symbol: ?_handleMate@BreedableComponent@@AEAAPEAVActor@@AEAV2@0@Z
     MCAPI class Actor* _handleMate(class Actor& owner, class Actor& partner);
@@ -109,13 +109,13 @@ public:
     MCAPI bool _meetsEnvironmentRequirements(class Actor& owner) const;
 
     // symbol: ?_spawnExperienceOrbs@BreedableComponent@@AEAAXAEAVActor@@@Z
-    MCAPI void _spawnExperienceOrbs(class Actor&);
+    MCAPI void _spawnExperienceOrbs(class Actor& owner);
 
     // symbol: ?_spawnLoveParticles@BreedableComponent@@AEAAXAEAVActor@@@Z
-    MCAPI void _spawnLoveParticles(class Actor&);
+    MCAPI void _spawnLoveParticles(class Actor& owner);
 
     // symbol: ?_useBreedItem@BreedableComponent@@AEAAXAEAVActor@@AEAVPlayer@@AEBVItemStack@@@Z
-    MCAPI void _useBreedItem(class Actor&, class Player&, class ItemStack const&);
+    MCAPI void _useBreedItem(class Actor& owner, class Player& player, class ItemStack const&);
 
     // NOLINTEND
 };

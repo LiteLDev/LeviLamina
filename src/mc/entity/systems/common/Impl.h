@@ -28,10 +28,10 @@ public:
     // symbol:
     // ??0Impl@VanillaWorldSystems@@QEAA@AEBV?$NonOwnerPointer@VLevel@@@Bedrock@@AEBVExperiments@@AEBVBaseGameVersion@@PEAVResourcePackManager@@VItemRegistryRef@@@Z
     MCAPI Impl(
-        class Bedrock::NonOwnerPointer<class Level> const&,
+        class Bedrock::NonOwnerPointer<class Level> const& level,
         class Experiments const&,
-        class BaseGameVersion const&,
-        class ResourcePackManager*,
+        class BaseGameVersion const& baseGameVersion,
+        class ResourcePackManager*   rpm,
         class ItemRegistryRef
     );
 

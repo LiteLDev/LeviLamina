@@ -18,7 +18,11 @@ public:
     virtual ~GroundedConstraint() = default;
 
     // vIndex: 1, symbol: ?isSatisfied@GroundedConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
-    virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, ::Rotation const&) const;
+    virtual bool isSatisfied(
+        class IBlockWorldGenAPI const& target,
+        class BlockPos const&          structurePos,
+        ::Rotation const&              structureRot
+    ) const;
 
     // symbol: ??0GroundedConstraint@@QEAA@AEAVStructureTemplate@@@Z
     MCAPI explicit GroundedConstraint(class StructureTemplate& structure);

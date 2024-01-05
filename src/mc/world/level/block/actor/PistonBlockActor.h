@@ -61,7 +61,7 @@ public:
 
     // vIndex: 40, symbol:
     // ?_getUpdatePacket@PistonBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@PistonBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -82,7 +82,7 @@ public:
     MCAPI class Block const* getCorrectArmBlock() const;
 
     // symbol: ?getFacingDir@PistonBlockActor@@QEBAAEBVBlockPos@@AEBVIConstBlockSource@@@Z
-    MCAPI class BlockPos const& getFacingDir(class IConstBlockSource const&) const;
+    MCAPI class BlockPos const& getFacingDir(class IConstBlockSource const& region) const;
 
     // symbol: ?getProgress@PistonBlockActor@@QEBAMM@Z
     MCAPI float getProgress(float a) const;
@@ -158,7 +158,7 @@ public:
     MCAPI void _spawnBlocks(class BlockSource& region);
 
     // symbol: ?_spawnMovingBlock@PistonBlockActor@@AEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void _spawnMovingBlock(class BlockSource&, class BlockPos const&);
+    MCAPI void _spawnMovingBlock(class BlockSource& region, class BlockPos const& blockPos);
 
     // symbol: ?_spawnMovingBlocks@PistonBlockActor@@AEAAXAEAVBlockSource@@@Z
     MCAPI void _spawnMovingBlocks(class BlockSource& region);
@@ -166,7 +166,7 @@ public:
     // symbol:
     // ?_spawnResourcesForBlockAndExtraBlock@PistonBlockActor@@CAXAEAVBlockSource@@AEBVBlockPos@@VRandomize@@AEBUResourceDropsContext@@@Z
     MCAPI static void
-    _spawnResourcesForBlockAndExtraBlock(class BlockSource&, class BlockPos const&, class Randomize, struct ResourceDropsContext const&);
+    _spawnResourcesForBlockAndExtraBlock(class BlockSource& region, class BlockPos const& blockPos, class Randomize randomize, struct ResourceDropsContext const&);
 
     // NOLINTEND
 

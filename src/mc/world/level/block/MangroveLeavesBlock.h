@@ -102,10 +102,11 @@ public:
 
     // vIndex: 79, symbol:
     // ?onFertilized@MangroveLeavesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType) const;
 
     // vIndex: 81, symbol: ?canBeFertilized@MangroveLeavesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -142,7 +143,7 @@ public:
 
     // symbol:
     // ??0MangroveLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI MangroveLeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy>);
+    MCAPI MangroveLeavesBlock(std::string const& nameId, int, class WeakPtr<class BlockLegacy> sapling);
 
     // NOLINTEND
 };

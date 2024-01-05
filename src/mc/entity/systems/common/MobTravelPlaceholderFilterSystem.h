@@ -19,8 +19,12 @@ public:
 
     // symbol:
     // ?tick@MobTravelPlaceholderFilterSystem@@SAXAEBVStrictEntityContext@@AEAUStateVectorComponent@@V?$EntityModifier@UMobTravelComponent@@@@AEBVIConstBlockSource@@@Z
-    MCAPI static void
-    tick(class StrictEntityContext const&, struct StateVectorComponent&, class EntityModifier<struct MobTravelComponent>, class IConstBlockSource const&);
+    MCAPI static void tick(
+        class StrictEntityContext const& context,
+        struct StateVectorComponent&,
+        class EntityModifier<struct MobTravelComponent> mod,
+        class IConstBlockSource const&                  region
+    );
 
     // NOLINTEND
 };

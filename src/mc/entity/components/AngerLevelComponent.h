@@ -42,20 +42,21 @@ public:
     MCAPI AngerLevelComponent(class AngerLevelComponent const&);
 
     // symbol: ?addAdditionalSaveData@AngerLevelComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?belowAngryThreshold@AngerLevelComponent@@QEBA_NUActorUniqueID@@@Z
     MCAPI bool belowAngryThreshold(struct ActorUniqueID) const;
 
     // symbol: ?canBeNuisance@AngerLevelComponent@@QEBA_NPEAVActor@@0@Z
-    MCAPI bool canBeNuisance(class Actor*, class Actor*) const;
+    MCAPI bool canBeNuisance(class Actor* owner, class Actor* target) const;
 
     // symbol: ?getAngerForAnimations@AngerLevelComponent@@QEBAHAEAVActor@@@Z
-    MCAPI int getAngerForAnimations(class Actor&) const;
+    MCAPI int getAngerForAnimations(class Actor& owner) const;
 
     // symbol:
     // ?getTopActiveNuisance@AngerLevelComponent@@QEBA?AV?$optional@U?$pair@PEAVActor@@H@std@@@std@@PEAVActor@@AEBVILevel@@@Z
-    MCAPI std::optional<std::pair<class Actor*, int>> getTopActiveNuisance(class Actor*, class ILevel const&) const;
+    MCAPI std::optional<std::pair<class Actor*, int>>
+          getTopActiveNuisance(class Actor* owner, class ILevel const& level) const;
 
     // symbol: ?isAngry@AngerLevelComponent@@QEBA_NXZ
     MCAPI bool isAngry() const;
@@ -64,13 +65,14 @@ public:
     MCAPI class AngerLevelComponent& operator=(class AngerLevelComponent&&);
 
     // symbol: ?readAdditionalSaveData@AngerLevelComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?tick@AngerLevelComponent@@QEAAXPEAVActor@@AEBVILevel@@@Z
-    MCAPI void tick(class Actor*, class ILevel const&);
+    MCAPI void tick(class Actor* owner, class ILevel const& level);
 
     // symbol: ?tryIncreaseAngerAt@AngerLevelComponent@@QEAAXAEAVActor@@0H_N@Z
-    MCAPI void tryIncreaseAngerAt(class Actor&, class Actor&, int, bool);
+    MCAPI void tryIncreaseAngerAt(class Actor& owner, class Actor&, int anger, bool);
 
     // symbol: ??1AngerLevelComponent@@QEAA@XZ
     MCAPI ~AngerLevelComponent();
@@ -99,7 +101,7 @@ public:
 
     // symbol:
     // ?_getListeningSoundEvent@AngerLevelComponent@@AEBA?AV?$optional@W4LevelSoundEvent@Legacy@Puv@@@std@@AEAVActor@@@Z
-    MCAPI std::optional<::Puv::Legacy::LevelSoundEvent> _getListeningSoundEvent(class Actor&) const;
+    MCAPI std::optional<::Puv::Legacy::LevelSoundEvent> _getListeningSoundEvent(class Actor& actor) const;
 
     // NOLINTEND
 };

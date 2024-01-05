@@ -49,13 +49,14 @@ public:
 
     // vIndex: 9, symbol:
     // ?_addLegacyTransactionRequestSetItemSlot@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@W4ContainerType@@H@Z
-    virtual void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen&, ::ContainerType, int);
+    virtual void
+    _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen&, ::ContainerType containerType, int slot);
 
     // vIndex: 10, symbol: ?_initScreen@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@@Z
     virtual void _initScreen(class ItemStackNetManagerScreen&);
 
     // symbol: ??0ItemStackNetManagerBase@@QEAA@AEAVPlayer@@_N1@Z
-    MCAPI ItemStackNetManagerBase(class Player&, bool, bool);
+    MCAPI ItemStackNetManagerBase(class Player& player, bool isClientSide, bool isEnabled);
 
     // symbol: ?getScreenContext@ItemStackNetManagerBase@@QEBAAEBVContainerScreenContext@@XZ
     MCAPI class ContainerScreenContext const& getScreenContext() const;
@@ -68,12 +69,19 @@ public:
 
     // symbol:
     // ?_tryBeginClientLegacyTransactionRequest@ItemStackNetManagerBase@@SA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@PEAVPlayer@@@Z
-    MCAPI static gsl::final_action<std::function<void(void)>> _tryBeginClientLegacyTransactionRequest(class Player*);
+    MCAPI static gsl::final_action<std::function<void(void)>>
+    _tryBeginClientLegacyTransactionRequest(class Player* player);
 
     // symbol:
     // ?setPlayerContainer@ItemStackNetManagerBase@@SA_NAEAVPlayer@@W4ContainerType@@HAEBVItemStack@@AEAV4@AEBV?$function@$$A6AXAEBVItemStack@@@Z@std@@@Z
-    MCAPI static bool
-    setPlayerContainer(class Player&, ::ContainerType, int, class ItemStack const&, class ItemStack&, std::function<void(class ItemStack const&)> const&);
+    MCAPI static bool setPlayerContainer(
+        class Player&                                      player,
+        ::ContainerType                                    containerType,
+        int                                                slot,
+        class ItemStack const&                             item,
+        class ItemStack&                                   slotItem,
+        std::function<void(class ItemStack const&)> const& callback
+    );
 
     // NOLINTEND
 

@@ -42,7 +42,7 @@ public:
     virtual void __unk_vfn_17();
 
     // vIndex: 31, symbol: ?getLevelDataForAuxValue@LeavesBlockItem@@UEBAHH@Z
-    virtual int getLevelDataForAuxValue(int) const;
+    virtual int getLevelDataForAuxValue(int auxValue) const;
 
     // vIndex: 37, symbol: __unk_vfn_37
     virtual void __unk_vfn_37();
@@ -76,10 +76,10 @@ public:
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
     // vIndex: 90, symbol: ?fixupCommon@LeavesBlockItem@@UEBAXAEAVItemStackBase@@@Z
-    virtual void fixupCommon(class ItemStackBase&) const;
+    virtual void fixupCommon(class ItemStackBase& stack) const;
 
     // vIndex: 91, symbol: ?fixupCommon@LeavesBlockItem@@UEBAXAEAVItemStackBase@@AEAVLevel@@@Z
-    virtual void fixupCommon(class ItemStackBase&, class Level&) const;
+    virtual void fixupCommon(class ItemStackBase& stack, class Level& level) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();

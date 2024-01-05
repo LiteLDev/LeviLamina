@@ -61,12 +61,17 @@ public:
 
     // symbol:
     // ?runDedicatedServerLoop@DedicatedServer@@QEAA?AW4StartResult@1@AEAVFilePathManager@Core@@AEAVPropertiesSettings@@AEAVLevelSettings@@AEAVAllowListFile@@AEAV?$unique_ptr@VPermissionsFile@@U?$default_delete@VPermissionsFile@@@std@@@std@@@Z
-    MCAPI ::DedicatedServer::StartResult
-    runDedicatedServerLoop(class Core::FilePathManager&, class PropertiesSettings&, class LevelSettings&, class AllowListFile&, std::unique_ptr<class PermissionsFile>&);
+    MCAPI ::DedicatedServer::StartResult runDedicatedServerLoop(
+        class Core::FilePathManager& filePathManager,
+        class PropertiesSettings&    properties,
+        class LevelSettings&         settings,
+        class AllowListFile&,
+        std::unique_ptr<class PermissionsFile>& permissionsFile
+    );
 
     // symbol:
     // ?start@DedicatedServer@@QEAA?AW4StartResult@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActivationArguments@Bedrock@@@Z
-    MCAPI ::DedicatedServer::StartResult start(std::string const&, class Bedrock::ActivationArguments const&);
+    MCAPI ::DedicatedServer::StartResult start(std::string const& sessionID, class Bedrock::ActivationArguments const&);
 
     // NOLINTEND
 

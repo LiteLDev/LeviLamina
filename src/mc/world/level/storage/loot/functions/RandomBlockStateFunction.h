@@ -49,12 +49,12 @@ public:
     // symbol:
     // ?_tryRemapComplexAliasBlock@RandomBlockStateFunction@@AEAA?AW4RemapComplexAliasBlockResult@1@AEAVItemInstance@@HAEAPEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult
-    _tryRemapComplexAliasBlock(class ItemInstance&, int, class Block const*&, std::string const&);
+    _tryRemapComplexAliasBlock(class ItemInstance& item, int, class Block const*&, std::string const& originalName);
 
     // symbol:
     // ?_tryRemapComplexAliasBlock@RandomBlockStateFunction@@AEAA?AW4RemapComplexAliasBlockResult@1@AEAVItemStack@@HAEAPEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult
-    _tryRemapComplexAliasBlock(class ItemStack&, int, class Block const*&, std::string const&);
+    _tryRemapComplexAliasBlock(class ItemStack& item, int, class Block const*&, std::string const& originalName);
 
     // NOLINTEND
 };

@@ -29,7 +29,8 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_getBase@NodeBase@JSONObject@Bedrock@@IEBAAEBV123@VOffset@123@E@Z
-    MCAPI class Bedrock::JSONObject::NodeBase const& _getBase(class Bedrock::JSONObject::NodeBase::Offset, uchar) const;
+    MCAPI class Bedrock::JSONObject::NodeBase const&
+    _getBase(class Bedrock::JSONObject::NodeBase::Offset offset, uchar page) const;
 
     // NOLINTEND
 

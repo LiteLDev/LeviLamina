@@ -21,7 +21,7 @@ canActivateElytra(struct MoveInputComponent const&, struct VanillaClientGameplay
 // symbol:
 // ?canJump@ActorMobilityUtils@@YA_NAEBUSynchedActorDataComponent@@AEBVIConstBlockSource@@AEBUStateVectorComponent@@AEBUAABBShapeComponent@@AEBVGetCollisionShapeInterface@@@Z
 MCAPI bool
-canJump(struct SynchedActorDataComponent const&, class IConstBlockSource const&, struct StateVectorComponent const&, struct AABBShapeComponent const&, class GetCollisionShapeInterface const&);
+canJump(struct SynchedActorDataComponent const&, class IConstBlockSource const& region, struct StateVectorComponent const&, struct AABBShapeComponent const&, class GetCollisionShapeInterface const&);
 
 // symbol:
 // ?endJump@ActorMobilityUtils@@YAXAEBVStrictEntityContext@@AEBUStateVectorComponent@@AEAUActorDataJumpDurationComponent@@AEAUActorDataDirtyFlagsComponent@@AEAUMobJumpComponent@@PEBUVehicleComponent@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UParrotFlag@@@@@@$$CBUPassengerComponent@@@@AEAV?$EntityModifier@V?$FlagComponent@UExitFromPassengerFlag@@@@V?$FlagComponent@UStopRidingRequestFlag@@@@V?$FlagComponent@UMobIsJumpingFlag@@@@@@@Z
@@ -30,28 +30,35 @@ MCAPI void endJump(class StrictEntityContext const&, struct StateVectorComponent
 // symbol:
 // ?getBrightness@ActorMobilityUtils@@YAMAEBVStrictEntityContext@@MAEBVIConstBlockSource@@AEBUAABBShapeComponent@@AEBUOffsetsComponent@@AEBUStateVectorComponent@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UBlazeFlag@@@@@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@ULavaSlimeFlag@@@@@@@@@Z
 MCAPI float
-getBrightness(class StrictEntityContext const&, float, class IConstBlockSource const&, struct AABBShapeComponent const&, struct OffsetsComponent const&, struct StateVectorComponent const&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct BlazeFlag>>>, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct LavaSlimeFlag>>>);
+getBrightness(class StrictEntityContext const& context, float alpha, class IConstBlockSource const& region, struct AABBShapeComponent const&, struct OffsetsComponent const&, struct StateVectorComponent const&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct BlazeFlag>>>, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct LavaSlimeFlag>>>);
 
 // symbol:
 // ?getJumpEffectAmplifierValue@ActorMobilityUtils@@YAMAEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@@Z
-MCAPI float getJumpEffectAmplifierValue(std::vector<class MobEffectInstance> const&);
+MCAPI float getJumpEffectAmplifierValue(std::vector<class MobEffectInstance> const& mobEffects);
 
 // symbol: ?getJumpEffectAmplifierValue@ActorMobilityUtils@@YAMAEBUMobEffectsComponent@@@Z
 MCAPI float getJumpEffectAmplifierValue(struct MobEffectsComponent const&);
 
 // symbol: ?getJumpPower@ActorMobilityUtils@@YAMPEBVJumpControlComponent@@_N@Z
-MCAPI float getJumpPower(class JumpControlComponent const*, bool);
+MCAPI float getJumpPower(class JumpControlComponent const* jumpControlComponent, bool);
 
 // symbol: ?getPosFromAABB@ActorMobilityUtils@@YA?AVVec3@@AEBVAABB@@MAEBVVec2@@@Z
-MCAPI class Vec3 getPosFromAABB(class AABB const&, float, class Vec2 const&);
+MCAPI class Vec3 getPosFromAABB(class AABB const& aabb, float heightOffset, class Vec2 const&);
 
 // symbol:
 // ?getSpeed@ActorMobilityUtils@@YAMAEBVStrictEntityContext@@AEBV?$ViewT@VStrictEntityContext@@$$CBUAttributesComponent@@$$CBUMovementSpeedComponent@@@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@@@@@@Z
-MCAPI float
-getSpeed(class StrictEntityContext const&, class ViewT<class StrictEntityContext, struct AttributesComponent const, struct MovementSpeedComponent const> const&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PlayerComponentFlag>>> const&);
+MCAPI float getSpeed(
+    class StrictEntityContext const& entity,
+    class ViewT<
+        class StrictEntityContext,
+        struct AttributesComponent const,
+        struct MovementSpeedComponent const> const&,
+    class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PlayerComponentFlag>>> const&
+        players
+);
 
 // symbol: ?isFlying@ActorMobilityUtils@@YA_NAEBUAbilitiesComponent@@@Z
-MCAPI bool isFlying(struct AbilitiesComponent const&);
+MCAPI bool isFlying(struct AbilitiesComponent const& abilities);
 
 // symbol: ?isGliding@ActorMobilityUtils@@YA_NAEBUSynchedActorDataComponent@@@Z
 MCAPI bool isGliding(struct SynchedActorDataComponent const&);
@@ -59,10 +66,11 @@ MCAPI bool isGliding(struct SynchedActorDataComponent const&);
 // symbol:
 // ?isImmobile@ActorMobilityUtils@@YA_NAEBVStrictEntityContext@@PEAV?$ViewT@VStrictEntityContext@@$$CBUSynchedActorDataComponent@@V?$Optional@V?$FlagComponent@UActorIsImmobileFlag@@@@@@@@PEAV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UMobFlag@@@@@@$$CBUAttributesComponent@@V?$Optional@V?$FlagComponent@UActorIsKnockedBackOnDeathFlag@@@@@@@@PEAV?$ViewT@VStrictEntityContext@@$$CBUSynchedActorDataComponent@@U?$Include@V?$FlagComponent@UOnGroundFlag@@@@V?$FlagComponent@UHorseFlag@@@@@@U?$Exclude@V?$FlagComponent@UMobAllowStandSlidingFlag@@@@V?$FlagComponent@UMobIsJumpingFlag@@@@@@@@PEAV?$ViewT@VStrictEntityContext@@V?$FlagComponent@UHorseFlag@@@@@@PEAV?$ViewT@VStrictEntityContext@@$$CBV?$FlagComponent@UPlayerIsSleepingFlag@@@@$$CBV?$FlagComponent@UPlayerComponentFlag@@@@@@@Z
 MCAPI bool
-isImmobile(class StrictEntityContext const&, class ViewT<class StrictEntityContext, struct SynchedActorDataComponent const, class Optional<class FlagComponent<struct ActorIsImmobileFlag>>>*, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct MobFlag>>, struct AttributesComponent const, class Optional<class FlagComponent<struct ActorIsKnockedBackOnDeathFlag>>>*, class ViewT<class StrictEntityContext, struct SynchedActorDataComponent const, struct Include<class FlagComponent<struct OnGroundFlag>, class FlagComponent<struct HorseFlag>>, struct Exclude<class FlagComponent<struct MobAllowStandSlidingFlag>, class FlagComponent<struct MobIsJumpingFlag>>>*, class ViewT<class StrictEntityContext, class FlagComponent<struct HorseFlag>>*, class ViewT<class StrictEntityContext, class FlagComponent<struct PlayerIsSleepingFlag> const, class FlagComponent<struct PlayerComponentFlag> const>*);
+isImmobile(class StrictEntityContext const& context, class ViewT<class StrictEntityContext, struct SynchedActorDataComponent const, class Optional<class FlagComponent<struct ActorIsImmobileFlag>>>*, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct MobFlag>>, struct AttributesComponent const, class Optional<class FlagComponent<struct ActorIsKnockedBackOnDeathFlag>>>*, class ViewT<class StrictEntityContext, struct SynchedActorDataComponent const, struct Include<class FlagComponent<struct OnGroundFlag>, class FlagComponent<struct HorseFlag>>, struct Exclude<class FlagComponent<struct MobAllowStandSlidingFlag>, class FlagComponent<struct MobIsJumpingFlag>>>*, class ViewT<class StrictEntityContext, class FlagComponent<struct HorseFlag>>*, class ViewT<class StrictEntityContext, class FlagComponent<struct PlayerIsSleepingFlag> const, class FlagComponent<struct PlayerComponentFlag> const>*);
 
 // symbol: ?isInLava@ActorMobilityUtils@@YA_NAEBVIConstBlockSource@@AEBUAABBShapeComponent@@AEBUSubBBsComponent@@@Z
-MCAPI bool isInLava(class IConstBlockSource const&, struct AABBShapeComponent const&, struct SubBBsComponent const&);
+MCAPI bool
+isInLava(class IConstBlockSource const& region, struct AABBShapeComponent const& aabb, struct SubBBsComponent const&);
 
 // symbol:
 // ?isOnFire@ActorMobilityUtils@@YA_NAEBUSynchedActorDataComponent@@PEBUOnFireComponent@@PEBV?$FlagComponent@ULavaSlimeFlag@@@@PEBV?$FlagComponent@UShulkerBulletFlag@@@@PEBV?$FlagComponent@UWitherSkullFlag@@@@PEBV?$FlagComponent@UBlazeFlag@@@@@Z
@@ -76,18 +84,24 @@ MCAPI bool isSprinting(struct SynchedActorDataComponent const&);
 MCAPI bool isSwimming(struct SynchedActorDataComponent const&);
 
 // symbol: ?isUnderLiquid@ActorMobilityUtils@@YA_NAEBVVec3@@0AEBVIConstBlockSource@@W4MaterialType@@@Z
-MCAPI bool isUnderLiquid(class Vec3 const&, class Vec3 const&, class IConstBlockSource const&, ::MaterialType);
+MCAPI bool
+isUnderLiquid(class Vec3 const&, class Vec3 const&, class IConstBlockSource const& region, ::MaterialType blockType);
 
 // symbol: ?moveBBs@ActorMobilityUtils@@YAXAEBVVec3@@AEAUAABBShapeComponent@@AEAUSubBBsComponent@@@Z
-MCAPI void moveBBs(class Vec3 const&, struct AABBShapeComponent&, struct SubBBsComponent&);
+MCAPI void moveBBs(class Vec3 const& pos, struct AABBShapeComponent& aabb, struct SubBBsComponent&);
 
 // symbol: ?onHoverableBlock@ActorMobilityUtils@@YA_NAEBVIConstBlockSource@@AEBVVec3@@AEBVAABB@@@Z
-MCAPI bool onHoverableBlock(class IConstBlockSource const&, class Vec3 const&, class AABB const&);
+MCAPI bool onHoverableBlock(class IConstBlockSource const& region, class Vec3 const& pos, class AABB const& aabb);
 
 // symbol:
 // ?setSpeed@ActorMobilityUtils@@YAXAEBVStrictEntityContext@@MAEBV?$ViewT@VStrictEntityContext@@UMovementSpeedComponent@@ULocalMoveVelocityComponent@@@@AEBV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@@@@@@Z
-MCAPI void
-setSpeed(class StrictEntityContext const&, float, class ViewT<class StrictEntityContext, struct MovementSpeedComponent, struct LocalMoveVelocityComponent> const&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PlayerComponentFlag>>> const&);
+MCAPI void setSpeed(
+    class StrictEntityContext const& entity,
+    float                            speed,
+    class ViewT<class StrictEntityContext, struct MovementSpeedComponent, struct LocalMoveVelocityComponent> const&,
+    class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PlayerComponentFlag>>> const&
+        players
+);
 
 // symbol: ?setSprinting@ActorMobilityUtils@@YAXAEAUAttributesComponent@@AEAUSynchedActorDataComponent@@_N@Z
 MCAPI void setSprinting(struct AttributesComponent&, struct SynchedActorDataComponent&, bool);
@@ -104,7 +118,7 @@ MCAPI void setStanding(
 );
 
 // symbol: ?shouldApplyLava@ActorMobilityUtils@@YA_NAEBVIConstBlockSource@@AEBVEntityContext@@@Z
-MCAPI bool shouldApplyLava(class IConstBlockSource const&, class EntityContext const&);
+MCAPI bool shouldApplyLava(class IConstBlockSource const& region, class EntityContext const& entity);
 // NOLINTEND
 
 }; // namespace ActorMobilityUtils

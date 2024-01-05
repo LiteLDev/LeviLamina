@@ -65,7 +65,7 @@ public:
     virtual ::TickingAreaLoadMode getLoadMode() const;
 
     // vIndex: 14, symbol: ?setLoadMode@TickingArea@@UEAAXW4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
-    virtual void setLoadMode(::TickingAreaLoadMode, class LevelStorage&);
+    virtual void setLoadMode(::TickingAreaLoadMode, class LevelStorage& levelStorage);
 
     // vIndex: 15, symbol: ?isPreloadDone@TickingArea@@UEBA_NXZ
     virtual bool isPreloadDone() const;
@@ -80,7 +80,7 @@ public:
     virtual void updatePosition(class Vec3 const& pos);
 
     // vIndex: 19, symbol: ?updateAndCenter@TickingArea@@UEAAXAEAVLevelStorage@@UTick@@@Z
-    virtual void updateAndCenter(class LevelStorage&, struct Tick);
+    virtual void updateAndCenter(class LevelStorage& levelStorage, struct Tick);
 
     // vIndex: 20, symbol: ?findOwner@TickingArea@@UEAAPEAVActor@@AEAE@Z
     virtual class Actor* findOwner(uchar& pendingChunks);
@@ -95,13 +95,14 @@ public:
     virtual bool isRemoved();
 
     // vIndex: 24, symbol: ?remove@TickingArea@@UEAAXAEAVLevelStorage@@@Z
-    virtual void remove(class LevelStorage&);
+    virtual void remove(class LevelStorage& levelStorage);
 
     // vIndex: 25, symbol: ?onComponentChanged@TickingArea@@UEAAXIM_NAEAVLevelStorage@@@Z
-    virtual void onComponentChanged(uint, float, bool, class LevelStorage&);
+    virtual void
+    onComponentChanged(uint radius, float maxDistToPlayers, bool alwaysActive, class LevelStorage& levelStorage);
 
     // vIndex: 26, symbol: ?updateBlockSourceCurrentTick@TickingArea@@UEAAXAEBUTick@@@Z
-    virtual void updateBlockSourceCurrentTick(struct Tick const&);
+    virtual void updateBlockSourceCurrentTick(struct Tick const& currentTick);
 
     // symbol: ?getBlockSource@TickingArea@@UEBA?BV?$WeakRefT@U?$SharePtrRefTraits@VBlockSource@@@@@@XZ
     MCVAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource>> const getBlockSource() const;
@@ -118,11 +119,11 @@ public:
     // symbol:
     // ??0TickingArea@@QEAA@AEAVDimension@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUBounds@@_NW4TickingAreaLoadMode@@@Z
     MCAPI TickingArea(
-        class Dimension&,
-        class mce::UUID,
-        std::string const&,
-        struct Bounds const&,
-        bool,
+        class Dimension&     dimension,
+        class mce::UUID      uniqueId,
+        std::string const&   name,
+        struct Bounds const& bounds,
+        bool                 isCircle,
         ::TickingAreaLoadMode
     );
 
@@ -133,22 +134,22 @@ public:
     // symbol:
     // ??0TickingArea@@AEAA@AEAVDimension@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@AEBUBounds@@_NM5W4TickingAreaLoadMode@@@Z
     MCAPI TickingArea(
-        class Dimension&,
-        class mce::UUID,
-        std::string const&,
-        struct ActorUniqueID,
-        struct Bounds const&,
-        bool,
-        float,
-        bool,
+        class Dimension&     dimension,
+        class mce::UUID      uniqueId,
+        std::string const&   name,
+        struct ActorUniqueID entityId,
+        struct Bounds const& bounds,
+        bool                 isCircle,
+        float                maxDistToPlayers,
+        bool                 alwaysActive,
         ::TickingAreaLoadMode
     );
 
     // symbol: ?_center@TickingArea@@AEAAXAEAVLevelStorage@@@Z
-    MCAPI void _center(class LevelStorage&);
+    MCAPI void _center(class LevelStorage& levelStorage);
 
     // symbol: ?_save@TickingArea@@AEAAXAEAVLevelStorage@@@Z
-    MCAPI void _save(class LevelStorage&);
+    MCAPI void _save(class LevelStorage& levelStorage);
 
     // NOLINTEND
 };

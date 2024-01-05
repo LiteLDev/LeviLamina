@@ -52,13 +52,13 @@ public:
 
     // symbol: ?_setLightHelper@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@UBrightness@@111II@Z
     MCAPI void _setLightHelper(
-        struct SubChunkLightIndex,
-        struct Brightness,
-        struct Brightness,
-        struct Brightness,
-        struct Brightness,
+        struct SubChunkLightIndex coordIndex,
+        struct Brightness         oldBrightness,
+        struct Brightness         newBrightness,
+        struct Brightness         oldAbsorption,
+        struct Brightness         newAbsorption,
         uint,
-        uint
+        uint subChunkIndex
     );
 
     // symbol: ?_setPropagatedBlockLightValue@SubChunkRelighter@@QEAAXUSubChunkLightIndex@@E@Z
@@ -88,7 +88,7 @@ public:
     // symbol:
     // ?getLightPairWithPlaceholderCheck@SubChunkRelighter@@QEBA?AULightPair@SubChunkBrightnessStorage@@AEBVPos@@AEBU23@@Z
     MCAPI struct SubChunkBrightnessStorage::LightPair
-    getLightPairWithPlaceholderCheck(class Pos const&, struct SubChunkBrightnessStorage::LightPair const&) const;
+    getLightPairWithPlaceholderCheck(class Pos const& coord, struct SubChunkBrightnessStorage::LightPair const&) const;
 
     // symbol: ?getTouchedSubChunks@SubChunkRelighter@@QEAAXAEAV?$vector@VPos@@V?$allocator@VPos@@@std@@@std@@@Z
     MCAPI void getTouchedSubChunks(std::vector<class Pos>& subChunkPosList);

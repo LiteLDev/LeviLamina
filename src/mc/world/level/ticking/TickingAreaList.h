@@ -19,8 +19,11 @@ public:
 
     // vIndex: 1, symbol:
     // ?removeDistantEntityAreasAndCheckForRemoved@TickingAreaList@@UEAA_NAEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@V?$function@$$A6AXAEBVITickingArea@@@Z@3@AEAVLevelStorage@@@Z
-    virtual bool
-    removeDistantEntityAreasAndCheckForRemoved(std::vector<class Vec3> const&, std::function<void(class ITickingArea const&)>, class LevelStorage&);
+    virtual bool removeDistantEntityAreasAndCheckForRemoved(
+        std::vector<class Vec3> const&                 playerPositions,
+        std::function<void(class ITickingArea const&)> requeue,
+        class LevelStorage&                            levelStorage
+    );
 
     // NOLINTEND
 };

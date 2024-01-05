@@ -27,12 +27,12 @@ public:
     // symbol:
     // ?_onLevelSoundEvent@DanceComponentListener@@AEAAXW4LevelSoundEvent@Legacy@Puv@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
     MCAPI void _onLevelSoundEvent(
-        ::Puv::Legacy::LevelSoundEvent,
-        class Vec3 const&,
-        int,
-        struct ActorDefinitionIdentifier const&,
-        bool,
-        bool
+        ::Puv::Legacy::LevelSoundEvent          type,
+        class Vec3 const&                       pos,
+        int                                     data,
+        struct ActorDefinitionIdentifier const& entityType,
+        bool                                    isBabyMob,
+        bool                                    isGlobal
     );
 
     // NOLINTEND

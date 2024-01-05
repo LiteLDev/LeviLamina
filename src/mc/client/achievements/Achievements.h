@@ -5,7 +5,7 @@
 namespace Achievements {
 // NOLINTBEGIN
 // symbol: ?getIndexForFroglight@Achievements@@YAHAEBVItemStack@@@Z
-MCAPI int getIndexForFroglight(class ItemStack const&);
+MCAPI int getIndexForFroglight(class ItemStack const& item);
 // NOLINTEND
 
 }; // namespace Achievements

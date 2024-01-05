@@ -34,7 +34,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@MapInfoRequestPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0MapInfoRequestPacket@@QEAA@XZ
     MCAPI MapInfoRequestPacket();
@@ -43,13 +43,13 @@ public:
     MCAPI explicit MapInfoRequestPacket(struct ActorUniqueID mapId);
 
     // symbol: ??0MapInfoRequestPacket@@QEAA@UActorUniqueID@@AEAVMapItemSavedData@@@Z
-    MCAPI MapInfoRequestPacket(struct ActorUniqueID, class MapItemSavedData&);
+    MCAPI MapInfoRequestPacket(struct ActorUniqueID mapId, class MapItemSavedData& map);
 
     // symbol: ?getMapId@MapInfoRequestPacket@@QEBA?AUActorUniqueID@@XZ
     MCAPI struct ActorUniqueID getMapId() const;
 
     // symbol: ?replaceServerPixels@MapInfoRequestPacket@@QEBA_NAEAVMapItemSavedData@@@Z
-    MCAPI bool replaceServerPixels(class MapItemSavedData&) const;
+    MCAPI bool replaceServerPixels(class MapItemSavedData& map) const;
 
     // NOLINTEND
 };

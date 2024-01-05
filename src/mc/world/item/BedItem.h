@@ -82,7 +82,7 @@ public:
     virtual void __unk_vfn_99();
 
     // vIndex: 103, symbol: ?getIconInfo@BedItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& itemStack, int, bool) const;
 
     // vIndex: 114, symbol: ?_checkUseOnPermissions@BedItem@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z
     virtual bool
@@ -92,15 +92,21 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@BedItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_tryUseOn@BedItem@@AEBA?AVInteractionResult@@AEAVItemStackBase@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-    MCAPI class InteractionResult
-    _tryUseOn(class ItemStackBase&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    MCAPI class InteractionResult _tryUseOn(
+        class ItemStackBase& instance,
+        class Actor&         actor,
+        class BlockPos       pos,
+        uchar                face,
+        class Vec3 const&    clickPos
+    ) const;
 
     // NOLINTEND
 };

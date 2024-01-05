@@ -85,10 +85,10 @@ public:
     virtual void __unk_vfn_99();
 
     // vIndex: 103, symbol: ?getIconInfo@BlockItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& itemStack, int, bool) const;
 
     // vIndex: 107, symbol: ?getLightEmission@BlockItem@@UEBA?AUBrightness@@H@Z
-    virtual struct Brightness getLightEmission(int) const;
+    virtual struct Brightness getLightEmission(int data) const;
 
     // vIndex: 108, symbol: ?getIconYOffset@BlockItem@@UEBAHXZ
     virtual int getIconYOffset() const;
@@ -100,17 +100,18 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@BlockItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol: ??0BlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BlockItem(std::string const& name, int id_);
+    MCAPI BlockItem(std::string const& name, int id);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_displayHeightLimitErrorMessages@BlockItem@@IEBAXAEAVActor@@H_N@Z
-    MCAPI void _displayHeightLimitErrorMessages(class Actor&, int, bool) const;
+    MCAPI void _displayHeightLimitErrorMessages(class Actor& actor, int y, bool) const;
 
     // NOLINTEND
 };

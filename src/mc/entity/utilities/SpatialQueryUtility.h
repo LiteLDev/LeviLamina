@@ -24,12 +24,12 @@ public:
     // symbol:
     // ?testForCollidableMobs@SpatialQueryUtility@@SAXAEBVStrictEntityContext@@AEAVLocalSpatialEntityFetcher@@AEBVAABB@@2V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UCollidableMobFlag@@@@@@$$CBUAABBShapeComponent@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UFallingBlockFlag@@@@@@@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
     MCAPI static void
-    testForCollidableMobs(class StrictEntityContext const&, class LocalSpatialEntityFetcher&, class AABB const&, class AABB const&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct CollidableMobFlag>>, struct AABBShapeComponent const>, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct FallingBlockFlag>>>, std::vector<class AABB>&);
+    testForCollidableMobs(class StrictEntityContext const& except, class LocalSpatialEntityFetcher&, class AABB const&, class AABB const& intersectTestBox, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct CollidableMobFlag>>, struct AABBShapeComponent const> view, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct FallingBlockFlag>>>, std::vector<class AABB>&);
 
     // symbol:
     // ?testForEntityStacking@SpatialQueryUtility@@SAXAEBVStrictEntityContext@@AEAVLocalSpatialEntityFetcher@@AEBVAABB@@V?$ViewT@VStrictEntityContext@@$$CBUAABBShapeComponent@@$$CBUSynchedActorDataComponent@@@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
     MCAPI static void
-    testForEntityStacking(class StrictEntityContext const&, class LocalSpatialEntityFetcher&, class AABB const&, class ViewT<class StrictEntityContext, struct AABBShapeComponent const, struct SynchedActorDataComponent const>, std::vector<class AABB>&);
+    testForEntityStacking(class StrictEntityContext const& except, class LocalSpatialEntityFetcher& component, class AABB const& intersectTestBox, class ViewT<class StrictEntityContext, struct AABBShapeComponent const, struct SynchedActorDataComponent const> view, std::vector<class AABB>&);
 
     // symbol:
     // ?tryFetchEntity@SpatialQueryUtility@@SA?AVStrictEntityContext@@AEAVLocalSpatialEntityFetcher@@AEBUActorUniqueID@@@Z

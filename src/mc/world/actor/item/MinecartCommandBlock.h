@@ -96,15 +96,18 @@ public:
     virtual class Block const* getDefaultDisplayBlock() const;
 
     // vIndex: 173, symbol: ?applyNaturalSlowdown@MinecartCommandBlock@@MEAAXAEAVBlockSource@@@Z
-    virtual void applyNaturalSlowdown(class BlockSource&);
+    virtual void applyNaturalSlowdown(class BlockSource& region);
 
     // vIndex: 174, symbol: ?_lazyInitDisplayBlock@MinecartCommandBlock@@EEAAXXZ
     virtual void _lazyInitDisplayBlock();
 
     // symbol:
     // ??0MinecartCommandBlock@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI
-    MinecartCommandBlock(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI MinecartCommandBlock(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 };

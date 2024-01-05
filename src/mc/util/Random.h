@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?consumeCount@Random@@UEAAXI@Z
-    MCVAPI void consumeCount(uint);
+    MCVAPI void consumeCount(uint count);
 
     // symbol: ?fork@Random@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
     MCVAPI std::unique_ptr<class IRandom> fork();
@@ -52,16 +52,16 @@ public:
     MCAPI Random();
 
     // symbol: ??0Random@@QEAA@I_N@Z
-    MCAPI Random(uint, bool);
+    MCAPI Random(uint seed, bool);
 
     // symbol: ?nextFloat@Random@@QEAAMMM@Z
-    MCAPI float nextFloat(float min, float max);
+    MCAPI float nextFloat(float, float);
 
     // symbol: ?nextGaussianFloat@Random@@QEAAMXZ
     MCAPI float nextGaussianFloat();
 
     // symbol: ?nextGaussianInt@Random@@QEAAHH@Z
-    MCAPI int nextGaussianInt(int n);
+    MCAPI int nextGaussianInt(int);
 
     // symbol: ?nextInt@Random@@QEAAHHH@Z
     MCAPI int nextInt(int min, int max);

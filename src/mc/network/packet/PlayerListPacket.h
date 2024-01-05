@@ -35,13 +35,13 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@PlayerListPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0PlayerListPacket@@QEAA@XZ
     MCAPI PlayerListPacket();
 
     // symbol: ?emplace@PlayerListPacket@@QEAAX$$QEAVPlayerListEntry@@@Z
-    MCAPI void emplace(class PlayerListEntry&&);
+    MCAPI void emplace(class PlayerListEntry&& entry);
 
     // NOLINTEND
 };

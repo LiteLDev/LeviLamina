@@ -23,7 +23,7 @@ public:
     MCAPI void addGiveableTrigger(struct GiveableTrigger const& trigger);
 
     // symbol: ?initialize@GiveableDefinition@@QEBAXAEAVEntityContext@@AEAVGiveableComponent@@@Z
-    MCAPI void initialize(class EntityContext& entity, class GiveableComponent& component) const;
+    MCAPI void initialize(class EntityContext&, class GiveableComponent& component) const;
 
     // symbol:
     // ?buildSchema@GiveableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGiveableDefinition@@@JsonUtil@@@std@@@Z

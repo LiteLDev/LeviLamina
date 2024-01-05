@@ -15,10 +15,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVStrictEntityContext@@@Z
-    MCVAPI void singleTick(class EntityRegistry&, class StrictEntityContext&);
+    MCVAPI void singleTick(class EntityRegistry& registry, class StrictEntityContext& entity);
 
     // symbol: ?singleTick@ITickingSystem@@UEAAXAEAVEntityRegistry@@AEAVEntityContext@@@Z
-    MCVAPI void singleTick(class EntityRegistry&, class EntityContext&);
+    MCVAPI void singleTick(class EntityRegistry& registry, class EntityContext& entity);
 
     // NOLINTEND
 };

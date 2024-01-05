@@ -45,7 +45,7 @@ public:
     virtual bool setup(struct FilterTest::Definition const& definition, struct FilterInputs const& inputs);
 
     // vIndex: 2, symbol: ?evaluate@ActorBoolPropertyTest@@UEBA_NAEBUFilterContext@@@Z
-    virtual bool evaluate(struct FilterContext const&) const = 0;
+    virtual bool evaluate(struct FilterContext const& context) const = 0;
 
     // vIndex: 3, symbol: ?finalizeParsedValue@FilterTest@@UEAAXAEAVIWorldRegistriesProvider@@@Z
     virtual void finalizeParsedValue(class IWorldRegistriesProvider& registries);
@@ -70,7 +70,7 @@ public:
     MCAPI bool _testValuesWithOperator(bool a, bool b) const;
 
     // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_NAEBVHashedString@@0@Z
-    MCAPI bool _testValuesWithOperator(class HashedString const&, class HashedString const&) const;
+    MCAPI bool _testValuesWithOperator(class HashedString const& a, class HashedString const& b) const;
 
     // symbol: ?_testValuesWithOperator@FilterTest@@IEBA_NMM@Z
     MCAPI bool _testValuesWithOperator(float a, float b) const;

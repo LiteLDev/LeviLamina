@@ -36,7 +36,7 @@ public:
     MCAPI void setDelayTicks(int delayTicks);
 
     // symbol: ?transformIfAble@TransformationComponent@@QEAAXAEAVActor@@_N@Z
-    MCAPI void transformIfAble(class Actor&, bool);
+    MCAPI void transformIfAble(class Actor& actor, bool);
 
     // NOLINTEND
 };

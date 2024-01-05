@@ -36,12 +36,16 @@ public:
         MCAPI Definition();
 
         // symbol: ?initialize@Definition@GoAndGiveItemsToOwnerGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext&, class GoAndGiveItemsToOwnerGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class GoAndGiveItemsToOwnerGoal& goal) const;
 
         // symbol:
         // ?buildSchema@Definition@GoAndGiveItemsToOwnerGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@GoAndGiveItemsToOwnerGoal@@@JsonUtil@@@4@@Z
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GoAndGiveItemsToOwnerGoal::Definition>>&);
+        MCAPI static void buildSchema(
+            std::string const&                                 name,
+            std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                class JsonUtil::EmptyClass,
+                class GoAndGiveItemsToOwnerGoal::Definition>>& root
+        );
 
         // NOLINTEND
     };
@@ -74,10 +78,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@GoAndGiveItemsToOwnerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0GoAndGiveItemsToOwnerGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit GoAndGiveItemsToOwnerGoal(class Mob&);
+    MCAPI explicit GoAndGiveItemsToOwnerGoal(class Mob& mob);
 
     // NOLINTEND
 

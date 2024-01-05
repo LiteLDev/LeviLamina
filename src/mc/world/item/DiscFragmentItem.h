@@ -49,7 +49,12 @@ public:
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@DiscFragmentItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -83,7 +88,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0DiscFragmentItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DiscFragmentItem(std::string const&, int);
+    MCAPI DiscFragmentItem(std::string const& name, int);
 
     // NOLINTEND
 };

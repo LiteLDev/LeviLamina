@@ -34,13 +34,13 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@TakeItemActorPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0TakeItemActorPacket@@QEAA@XZ
     MCAPI TakeItemActorPacket();
 
     // symbol: ??0TakeItemActorPacket@@QEAA@VActorRuntimeID@@0@Z
-    MCAPI TakeItemActorPacket(class ActorRuntimeID itemId, class ActorRuntimeID playerId);
+    MCAPI TakeItemActorPacket(class ActorRuntimeID itemId, class ActorRuntimeID actorId);
 
     // NOLINTEND
 };

@@ -28,7 +28,7 @@ public:
                                class FlagComponent<struct ShulkerFlag>>,
                            struct ActorRotationComponent,
                            struct MobBodyRotationComponent,
-                           struct StateVectorComponent>);
+                           struct StateVectorComponent> view);
 
     // NOLINTEND
 

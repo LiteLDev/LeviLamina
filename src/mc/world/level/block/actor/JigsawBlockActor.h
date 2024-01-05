@@ -18,10 +18,10 @@ public:
     virtual ~JigsawBlockActor() = default;
 
     // vIndex: 1, symbol: ?load@JigsawBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2, symbol: ?save@JigsawBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
@@ -63,10 +63,10 @@ public:
 
     // vIndex: 40, symbol:
     // ?_getUpdatePacket@JigsawBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@JigsawBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ??0JigsawBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit JigsawBlockActor(class BlockPos const& pos);

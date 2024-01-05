@@ -84,7 +84,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0EnchantedBookItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI EnchantedBookItem(std::string const& name, int id, bool isGlint);
+    MCAPI EnchantedBookItem(std::string const& name, int, bool isGlint);
 
     // NOLINTEND
 };

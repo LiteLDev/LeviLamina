@@ -31,28 +31,30 @@ public:
     _addItem(class BlockSource& region, class Container& container, class ItemStack& item, int face, int itemCount);
 
     // symbol: ?_getAttachedContainerInBlock@Hopper@@IEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@H@Z
-    MCAPI class Container* _getAttachedContainerInBlock(class BlockSource&, class Vec3 const&, int);
+    MCAPI class Container*
+    _getAttachedContainerInBlock(class BlockSource& region, class Vec3 const& pos, int attachedFace);
 
     // symbol:
     // ?_getAttachedContainers@Hopper@@IEAA?AV?$vector@PEAVContainer@@V?$allocator@PEAVContainer@@@std@@@std@@AEAVBlockSource@@AEBVVec3@@H@Z
-    MCAPI std::vector<class Container*> _getAttachedContainers(class BlockSource&, class Vec3 const&, int);
+    MCAPI std::vector<class Container*>
+          _getAttachedContainers(class BlockSource& region, class Vec3 const& pos, int attachedFace);
 
     // symbol: ?_getContainerInBlock@Hopper@@IEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z
-    MCAPI class Container* _getContainerInBlock(class BlockSource&, class Vec3 const&);
+    MCAPI class Container* _getContainerInBlock(class BlockSource& region, class Vec3 const& pos);
 
     // symbol:
     // ?_getContainersAt@Hopper@@IEAA?AV?$vector@PEAVContainer@@V?$allocator@PEAVContainer@@@std@@@std@@AEAVBlockSource@@AEBVVec3@@@Z
-    MCAPI std::vector<class Container*> _getContainersAt(class BlockSource&, class Vec3 const&);
+    MCAPI std::vector<class Container*> _getContainersAt(class BlockSource& region, class Vec3 const& pos);
 
     // symbol:
     // ?_getSourceContainers@Hopper@@IEAA?AV?$vector@PEAVContainer@@V?$allocator@PEAVContainer@@@std@@@std@@AEAVBlockSource@@AEBVVec3@@@Z
-    MCAPI std::vector<class Container*> _getSourceContainers(class BlockSource&, class Vec3 const&);
+    MCAPI std::vector<class Container*> _getSourceContainers(class BlockSource& region, class Vec3 const& pos);
 
     // symbol: ?_isEmptyContainer@Hopper@@IEAA_NAEAVContainer@@H@Z
     MCAPI bool _isEmptyContainer(class Container& container, int face);
 
     // symbol: ?_isFullContainer@Hopper@@IEAA_NAEAVContainer@@H@Z
-    MCAPI bool _isFullContainer(class Container&, int);
+    MCAPI bool _isFullContainer(class Container& container, int);
 
     // symbol: ?_pushOutItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@H@Z
     MCAPI bool _pushOutItems(
@@ -72,7 +74,8 @@ public:
     );
 
     // symbol: ?_tryPullInItemsFromAboveContainer@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@@Z
-    MCAPI bool _tryPullInItemsFromAboveContainer(class BlockSource&, class Container&, class Vec3 const&);
+    MCAPI bool
+    _tryPullInItemsFromAboveContainer(class BlockSource& region, class Container& toContainer, class Vec3 const& pos);
 
     // symbol: ?_tryPushToComposter@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@VBlockPos@@H@Z
     MCAPI bool _tryPushToComposter(
@@ -96,7 +99,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_tryAddItemsFromPos@Hopper@@AEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@@Z
-    MCAPI bool _tryAddItemsFromPos(class BlockSource&, class Container&, class Vec3 const&);
+    MCAPI bool _tryAddItemsFromPos(class BlockSource& region, class Container& toContainer, class Vec3 const& pos);
 
     // NOLINTEND
 };

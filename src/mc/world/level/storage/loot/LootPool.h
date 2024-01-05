@@ -22,7 +22,7 @@ public:
     addRandomItems(std::vector<class ItemStack>& result, class Random& random, class LootTableContext& context);
 
     // symbol: ?deserialize@LootPool@@QEAAXAEBVValue@Json@@@Z
-    MCAPI void deserialize(class Json::Value const&);
+    MCAPI void deserialize(class Json::Value const& pool);
 
     // NOLINTEND
 

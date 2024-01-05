@@ -95,13 +95,13 @@ namespace Core { class Path; }
 namespace Bedrock {
 // NOLINTBEGIN
 // symbol: ?strtoint32@Bedrock@@YAHPEBDPEAPEADH@Z
-MCAPI int strtoint32(char const*, char**, int);
+MCAPI int strtoint32(char const* str, char**, int base);
 
 // symbol: ?strtouint32@Bedrock@@YAIPEBDPEAPEADH@Z
-MCAPI uint strtouint32(char const*, char**, int);
+MCAPI uint strtouint32(char const* str, char**, int base);
 
 // symbol: ?throw_system_error@Bedrock@@YAXW4errc@std@@@Z
-MCAPI void throw_system_error(std::errc errc);
+MCAPI void throw_system_error(std::errc);
 // NOLINTEND
 
 }; // namespace Bedrock

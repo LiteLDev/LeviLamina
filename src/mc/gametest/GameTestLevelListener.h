@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?onEvent@GameTestLevelListener@@UEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z
-    MCVAPI ::EventResult onEvent(struct LevelNotificationEvent const&);
+    MCVAPI ::EventResult onEvent(struct LevelNotificationEvent const& event);
 
     // symbol: ?onLevelTickEnd@GameTestLevelListener@@UEAAXXZ
     MCVAPI void onLevelTickEnd();

@@ -25,8 +25,12 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0ScriptDataDrivenActorTriggerBeforeEvent@ScriptModuleMinecraft@@QEAA@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@UActorDefinitionModifier@@V?$allocator@UActorDefinitionModifier@@@std@@@4@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI
-    ScriptDataDrivenActorTriggerBeforeEvent(class Actor&, std::string const&, std::vector<struct ActorDefinitionModifier>&, class Scripting::WeakLifetimeScope const&);
+    MCAPI ScriptDataDrivenActorTriggerBeforeEvent(
+        class Actor&                                 actor,
+        std::string const&                           event,
+        std::vector<struct ActorDefinitionModifier>& modifiers,
+        class Scripting::WeakLifetimeScope const&    scope
+    );
 
     // symbol:
     // ?getModifiers@ScriptDataDrivenActorTriggerBeforeEvent@ScriptModuleMinecraft@@QEBA?AV?$vector@UActorDefinitionModifier@@V?$allocator@UActorDefinitionModifier@@@std@@@std@@XZ
@@ -34,7 +38,7 @@ public:
 
     // symbol:
     // ?setModifiers@ScriptDataDrivenActorTriggerBeforeEvent@ScriptModuleMinecraft@@QEAAXAEBV?$vector@UActorDefinitionModifier@@V?$allocator@UActorDefinitionModifier@@@std@@@std@@@Z
-    MCAPI void setModifiers(std::vector<struct ActorDefinitionModifier> const&);
+    MCAPI void setModifiers(std::vector<struct ActorDefinitionModifier> const& modifiers);
 
     // symbol:
     // ?bind@ScriptDataDrivenActorTriggerBeforeEvent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@UScriptDataDrivenActorTriggerBeforeEvent@ScriptModuleMinecraft@@@Scripting@@XZ

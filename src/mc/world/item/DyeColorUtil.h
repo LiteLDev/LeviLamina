@@ -15,13 +15,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getAuxValue@DyeColorUtil@@SAHW4ItemColor@@@Z
-    MCAPI static int getAuxValue(::ItemColor);
+    MCAPI static int getAuxValue(::ItemColor color);
 
     // symbol: ?getItemColor@DyeColorUtil@@SA?AW4ItemColor@@H@Z
     MCAPI static ::ItemColor getItemColor(int auxValue);
 
     // symbol: ?getRandomItemColor@DyeColorUtil@@SA?AW4ItemColor@@AEAVRandom@@@Z
-    MCAPI static ::ItemColor getRandomItemColor(class Random&);
+    MCAPI static ::ItemColor getRandomItemColor(class Random& random);
 
     // symbol: ?COLOR_TO_AUX@DyeColorUtil@@2V?$array@F$0BA@@std@@B
     MCAPI static std::array<short, 16> const COLOR_TO_AUX;

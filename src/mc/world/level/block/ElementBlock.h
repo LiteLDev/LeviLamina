@@ -95,7 +95,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 60, symbol: ?canBeUsedInCommands@ElementBlock@@UEBA_NAEBVBaseGameVersion@@@Z
-    virtual bool canBeUsedInCommands(class BaseGameVersion const&) const;
+    virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -138,10 +138,10 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 162, symbol: ?getMapColor@ElementBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
     // symbol: ??0ElementBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ElementType@@@Z
-    MCAPI ElementBlock(std::string const& nameId, int id, ::ElementType type);
+    MCAPI ElementBlock(std::string const& nameId, int, ::ElementType type);
 
     // symbol: ?getElementInfo@ElementBlock@@SA?AUElementInfo@@W4ElementType@@@Z
     MCAPI static struct ElementInfo getElementInfo(::ElementType e);

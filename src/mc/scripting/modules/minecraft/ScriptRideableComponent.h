@@ -37,7 +37,7 @@ public:
     // symbol:
     // ??0ScriptRideableComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI
-    ScriptRideableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
+    ScriptRideableComponent(class WeakEntityRef const& entity, class Scripting::WeakLifetimeScope const& scope, std::string const&);
 
     // symbol:
     // ?addPassenger@ScriptRideableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@_N$$V@Scripting@@AEAVScriptActor@2@@Z

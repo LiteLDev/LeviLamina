@@ -126,12 +126,12 @@ public:
 
     // vIndex: 33, symbol:
     // ?getScreenCapabilities@AppConfigs@@UEBA?AV?$unique_ptr@VIScreenCapabilities@@U?$default_delete@VIScreenCapabilities@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const&) const;
+    virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const& screenName) const;
 
     // vIndex: 34, symbol:
     // ?createContentAccessibility@AppConfigs@@UEBA?AV?$unique_ptr@VIContentAccessibilityProvider@@U?$default_delete@VIContentAccessibilityProvider@@@std@@@std@@V?$not_null@V?$NonOwnerPointer@VIEntitlementManager@@@Bedrock@@@gsl@@@Z
     virtual std::unique_ptr<class IContentAccessibilityProvider>
-        createContentAccessibility(Bedrock::NotNullNonOwnerPtr<class IEntitlementManager>) const;
+    createContentAccessibility(Bedrock::NotNullNonOwnerPtr<class IEntitlementManager> entitlementManager) const;
 
     // vIndex: 35, symbol:
     // ?getFeedbackURL@AppConfigs@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -198,7 +198,7 @@ public:
     MCVAPI bool sendPermissionsTelemetry() const;
 
     // symbol: ?setCanAccessWorldCallback@AppConfigs@@UEAAXAEAVIMinecraftGame@@@Z
-    MCVAPI void setCanAccessWorldCallback(class IMinecraftGame&);
+    MCVAPI void setCanAccessWorldCallback(class IMinecraftGame& minecraftGame);
 
     // symbol: ?shouldPromptBeforeExit@AppConfigs@@UEBA_NXZ
     MCVAPI bool shouldPromptBeforeExit() const;

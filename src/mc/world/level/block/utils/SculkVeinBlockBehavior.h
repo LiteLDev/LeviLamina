@@ -18,7 +18,7 @@ public:
     virtual int updateDecayDelay(int) const;
 
     // vIndex: 1, symbol: ?updateFacingData@SculkVeinBlockBehavior@@UEBAHHAEBVBlock@@@Z
-    virtual int updateFacingData(int, class Block const&) const;
+    virtual int updateFacingData(int, class Block const& block) const;
 
     // vIndex: 2, symbol: ?canChangeBlockOnSpread@SculkVeinBlockBehavior@@UEBA_NXZ
     virtual bool canChangeBlockOnSpread() const;
@@ -26,26 +26,27 @@ public:
     // vIndex: 3, symbol:
     // ?attemptSpreadVeins@SculkVeinBlockBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z
     virtual bool
-    attemptSpreadVeins(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int, class SculkSpreader&)
+    attemptSpreadVeins(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Block const& block, int, class SculkSpreader&)
         const;
 
     // vIndex: 4, symbol:
     // ?attemptUseCharge@SculkVeinBlockBehavior@@UEBAHAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@2HHAEAVRandom@@AEAVSculkSpreader@@_N@Z
     virtual int attemptUseCharge(
-        class IBlockWorldGenAPI&,
-        class BlockSource*,
+        class IBlockWorldGenAPI& target,
+        class BlockSource*       region,
         class BlockPos const&,
-        class BlockPos const&,
+        class BlockPos const& pos,
+        int                   charge,
         int,
-        int,
-        class Random&,
+        class Random& random,
         class SculkSpreader&,
         bool
     ) const;
 
     // vIndex: 5, symbol:
     // ?onDischarged@SculkVeinBlockBehavior@@UEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onDischarged(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&) const;
+    virtual void
+    onDischarged(class IBlockWorldGenAPI& target, class BlockSource* region, class BlockPos const& pos) const;
 
     // NOLINTEND
 
@@ -53,13 +54,21 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_attemptPlaceSculk@SculkVeinBlockBehavior@@CA_NAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@AEAVSculkSpreader@@AEAVRandom@@@Z
-    MCAPI static bool
-    _attemptPlaceSculk(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&, class SculkSpreader&, class Random&);
+    MCAPI static bool _attemptPlaceSculk(
+        class IBlockWorldGenAPI& target,
+        class BlockSource*       region,
+        class BlockPos const&    pos,
+        class SculkSpreader&,
+        class Random& random
+    );
 
     // symbol:
     // ?_cleanUpVeinsWithSculkSubstrate@SculkVeinBlockBehavior@@CAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static void
-    _cleanUpVeinsWithSculkSubstrate(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&);
+    MCAPI static void _cleanUpVeinsWithSculkSubstrate(
+        class IBlockWorldGenAPI& target,
+        class BlockSource*       region,
+        class BlockPos const&    pos
+    );
 
     // NOLINTEND
 };

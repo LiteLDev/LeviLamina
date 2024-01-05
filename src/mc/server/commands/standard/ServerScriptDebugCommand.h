@@ -18,12 +18,15 @@ public:
     virtual ~ServerScriptDebugCommand() = default;
 
     // vIndex: 2, symbol: ?execute@ServerScriptDebugCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput& output) const;
 
     // symbol:
     // ?setup@ServerScriptDebugCommand@@SAXAEAVCommandRegistry@@PEAVIScriptDebugger@@AEBV?$optional@UScriptSettings@@@std@@@Z
-    MCAPI static void
-    setup(class CommandRegistry&, class IScriptDebugger*, std::optional<struct ScriptSettings> const&);
+    MCAPI static void setup(
+        class CommandRegistry& registry,
+        class IScriptDebugger*,
+        std::optional<struct ScriptSettings> const& settings
+    );
 
     // NOLINTEND
 

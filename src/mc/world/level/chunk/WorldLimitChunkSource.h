@@ -23,7 +23,8 @@ public:
 
     // vIndex: 7, symbol:
     // ?createNewChunk@WorldLimitChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z
-    virtual std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const&, ::ChunkSource::LoadMode, bool);
+    virtual std::shared_ptr<class LevelChunk>
+    createNewChunk(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
     // vIndex: 23, symbol: ?isWithinWorldLimit@WorldLimitChunkSource@@UEBA_NAEBVChunkPos@@@Z
     virtual bool isWithinWorldLimit(class ChunkPos const& cp) const;
@@ -37,7 +38,12 @@ public:
 
     // symbol:
     // ??0WorldLimitChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@AEBVBlockPos@@HH@Z
-    MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const&, int, int);
+    MCAPI WorldLimitChunkSource(
+        std::unique_ptr<class ChunkSource> storage,
+        class BlockPos const&              center,
+        int                                width,
+        int                                depth
+    );
 
     // NOLINTEND
 };

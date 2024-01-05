@@ -109,10 +109,10 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@StainedGlassBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // vIndex: 96, symbol: ?asItemInstance@StainedGlassBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -150,16 +150,16 @@ public:
 
     // vIndex: 162, symbol:
     // ?getMapColor@StainedGlassBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
     // vIndex: 165, symbol: ?getResourceCount@StainedGlassBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@StainedGlassBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol: ??0StainedGlassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N11@Z
-    MCAPI StainedGlassBlock(std::string const& nameId, int id, bool material, bool doesDrops, bool useableInCommands);
+    MCAPI StainedGlassBlock(std::string const& nameId, int, bool material, bool doesDrops, bool useableInCommands);
 
     // NOLINTEND
 

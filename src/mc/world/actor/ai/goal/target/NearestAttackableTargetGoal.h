@@ -35,7 +35,7 @@ public:
     virtual struct ActorUniqueID _findTarget(struct MobDescriptor const** outMobDescriptor);
 
     // symbol: ??0NearestAttackableTargetGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit NearestAttackableTargetGoal(class Mob&);
+    MCAPI explicit NearestAttackableTargetGoal(class Mob& mob);
 
     // symbol: ?isTargetVisible@NearestAttackableTargetGoal@@QEBA_NAEBVMob@@MM@Z
     MCAPI bool isTargetVisible(class Mob const&, float, float) const;

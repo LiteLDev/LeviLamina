@@ -15,42 +15,44 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?containerContentChanged@PlayerInventory@@UEAAXH@Z
-    MCVAPI void containerContentChanged(int);
+    MCVAPI void containerContentChanged(int slot);
 
     // symbol: ?containerSizeChanged@PlayerInventory@@UEAAXH@Z
-    MCVAPI void containerSizeChanged(int);
+    MCVAPI void containerSizeChanged(int size);
 
     // symbol:
     // ?createTransactionContext@PlayerInventory@@UEAAXV?$function@$$A6AXAEAVContainer@@HAEBVItemStack@@1@Z@std@@V?$function@$$A6AXXZ@3@@Z
-    MCVAPI void
-        createTransactionContext(std::function<void(class Container&, int, class ItemStack const&, class ItemStack const&)>, std::function<void(void)>);
+    MCVAPI void createTransactionContext(
+        std::function<void(class Container&, int, class ItemStack const&, class ItemStack const&)> callback,
+        std::function<void(void)>                                                                  execute
+    );
 
     // symbol: ??0PlayerInventory@@QEAA@V?$unique_ptr@VInventory@@U?$default_delete@VInventory@@@std@@@std@@@Z
-    MCAPI explicit PlayerInventory(std::unique_ptr<class Inventory>);
+    MCAPI explicit PlayerInventory(std::unique_ptr<class Inventory> inv);
 
     // symbol: ?_getHudContainerManagerModel@PlayerInventory@@QEAA?AV?$weak_ptr@VHudContainerManagerModel@@@std@@XZ
     MCAPI std::weak_ptr<class HudContainerManagerModel> _getHudContainerManagerModel();
 
     // symbol: ?add@PlayerInventory@@QEAA_NAEAVItemStack@@_N@Z
-    MCAPI bool add(class ItemStack&, bool);
+    MCAPI bool add(class ItemStack& item, bool linkEmptySlot);
 
     // symbol: ?addListener@PlayerInventory@@QEAAXPEAVContainerContentChangeListener@@@Z
-    MCAPI void addListener(class ContainerContentChangeListener*);
+    MCAPI void addListener(class ContainerContentChangeListener* listener);
 
     // symbol: ?canAdd@PlayerInventory@@QEBA_NAEBVItemStack@@@Z
-    MCAPI bool canAdd(class ItemStack const&) const;
+    MCAPI bool canAdd(class ItemStack const& item) const;
 
     // symbol: ?clearInventory@PlayerInventory@@QEAAHH@Z
-    MCAPI int clearInventory(int);
+    MCAPI int clearInventory(int resize);
 
     // symbol: ?clearSlot@PlayerInventory@@QEAAXHW4ContainerID@@@Z
-    MCAPI void clearSlot(int, ::ContainerID);
+    MCAPI void clearSlot(int slot, ::ContainerID containerId);
 
     // symbol: ?clearVanishEnchantedItemsOnDeath@PlayerInventory@@QEAAXXZ
     MCAPI void clearVanishEnchantedItemsOnDeath();
 
     // symbol: ?dropAllOnDeath@PlayerInventory@@QEAAX_N@Z
-    MCAPI void dropAllOnDeath(bool);
+    MCAPI void dropAllOnDeath(bool onlyClearContainer);
 
     // symbol:
     // ?getAllContainerIds@PlayerInventory@@QEAAAEBV?$vector@W4ContainerID@@V?$allocator@W4ContainerID@@@std@@@std@@XZ
@@ -58,13 +60,13 @@ public:
 
     // symbol:
     // ?getComplexItems@PlayerInventory@@QEBAAEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@W4ContainerID@@@Z
-    MCAPI std::vector<class ItemStack> const& getComplexItems(::ContainerID) const;
+    MCAPI std::vector<class ItemStack> const& getComplexItems(::ContainerID containerId) const;
 
     // symbol: ?getContainer@PlayerInventory@@QEAAAEAVContainer@@XZ
     MCAPI class Container& getContainer();
 
     // symbol: ?getContainerSize@PlayerInventory@@QEBAHW4ContainerID@@@Z
-    MCAPI int getContainerSize(::ContainerID) const;
+    MCAPI int getContainerSize(::ContainerID containerId) const;
 
     // symbol: ?getFirstEmptySlot@PlayerInventory@@QEBAHXZ
     MCAPI int getFirstEmptySlot() const;
@@ -73,10 +75,10 @@ public:
     MCAPI int getHotbarSize() const;
 
     // symbol: ?getItem@PlayerInventory@@QEBAAEBVItemStack@@HW4ContainerID@@@Z
-    MCAPI class ItemStack const& getItem(int, ::ContainerID) const;
+    MCAPI class ItemStack const& getItem(int slot, ::ContainerID containerId) const;
 
     // symbol: ?getItemCount@PlayerInventory@@QEAAHV?$function@$$A6A_NAEBVItemStack@@@Z@std@@@Z
-    MCAPI int getItemCount(std::function<bool(class ItemStack const&)>);
+    MCAPI int getItemCount(std::function<bool(class ItemStack const&)> comparator);
 
     // symbol: ?getSelectedContainerId@PlayerInventory@@QEAA?AW4ContainerID@@XZ
     MCAPI ::ContainerID getSelectedContainerId();
@@ -88,55 +90,55 @@ public:
     MCAPI struct PlayerInventorySlotData getSelectedSlot() const;
 
     // symbol: ?getSlotWithItem@PlayerInventory@@QEBAHAEBVItemStack@@_N1@Z
-    MCAPI int getSlotWithItem(class ItemStack const&, bool, bool) const;
+    MCAPI int getSlotWithItem(class ItemStack const& item, bool checkAux, bool checkData) const;
 
     // symbol: ?getSlots@PlayerInventory@@QEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
     MCAPI std::vector<class ItemStack const*> getSlots() const;
 
     // symbol: ?hasResource@PlayerInventory@@QEAA_NH@Z
-    MCAPI bool hasResource(int);
+    MCAPI bool hasResource(int type);
 
     // symbol: ?init@PlayerInventory@@QEAAXV?$weak_ptr@VHudContainerManagerModel@@@std@@@Z
-    MCAPI void init(std::weak_ptr<class HudContainerManagerModel>);
+    MCAPI void init(std::weak_ptr<class HudContainerManagerModel> hud);
 
     // symbol: ?load@PlayerInventory@@QEAAXAEBVListTag@@AEBVSemVersion@@AEAVLevel@@@Z
-    MCAPI void load(class ListTag const&, class SemVersion const&, class Level&);
+    MCAPI void load(class ListTag const& inventoryList, class SemVersion const& version, class Level& level);
 
     // symbol: ?removeItem@PlayerInventory@@QEAAXHHW4ContainerID@@@Z
-    MCAPI void removeItem(int, int, ::ContainerID);
+    MCAPI void removeItem(int slot, int count, ::ContainerID containerId);
 
     // symbol: ?removeListener@PlayerInventory@@QEAAXPEAVContainerContentChangeListener@@@Z
-    MCAPI void removeListener(class ContainerContentChangeListener*);
+    MCAPI void removeListener(class ContainerContentChangeListener* listener);
 
     // symbol: ?removeResource@PlayerInventory@@QEAA_NH@Z
-    MCAPI bool removeResource(int);
+    MCAPI bool removeResource(int type);
 
     // symbol: ?removeResource@PlayerInventory@@QEAAHAEBVItemStack@@_N1H@Z
-    MCAPI int removeResource(class ItemStack const&, bool, bool, int);
+    MCAPI int removeResource(class ItemStack const& item, bool requireExactAux, bool requireExactData, int maxCount);
 
     // symbol: ?save@PlayerInventory@@QEAA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class ListTag> save();
 
     // symbol: ?selectSlot@PlayerInventory@@QEAA_NHW4ContainerID@@@Z
-    MCAPI bool selectSlot(int, ::ContainerID);
+    MCAPI bool selectSlot(int slot, ::ContainerID containerId);
 
     // symbol: ?serverInitItemStackIds@PlayerInventory@@QEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCAPI void serverInitItemStackIds(int, int count, std::function<void(int, class ItemStack const&)>);
 
     // symbol: ?setContainerChanged@PlayerInventory@@QEAAXH@Z
-    MCAPI void setContainerChanged(int);
+    MCAPI void setContainerChanged(int slot);
 
     // symbol: ?setItem@PlayerInventory@@QEAAXHAEBVItemStack@@W4ContainerID@@_N@Z
-    MCAPI void setItem(int, class ItemStack const&, ::ContainerID, bool);
+    MCAPI void setItem(int slot, class ItemStack const& item, ::ContainerID containerId, bool);
 
     // symbol: ?setSelectedItem@PlayerInventory@@QEAAXAEBVItemStack@@@Z
-    MCAPI void setSelectedItem(class ItemStack const&);
+    MCAPI void setSelectedItem(class ItemStack const& item);
 
     // symbol: ?setupDefaultInventory@PlayerInventory@@QEAAXXZ
     MCAPI void setupDefaultInventory();
 
     // symbol: ?swapSlots@PlayerInventory@@QEAAXHH@Z
-    MCAPI void swapSlots(int, int);
+    MCAPI void swapSlots(int from, int to);
 
     // symbol: ?tick@PlayerInventory@@QEAAXXZ
     MCAPI void tick();

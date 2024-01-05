@@ -16,7 +16,8 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?getTierItems@VanillaItemTiers@@SA?BV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVTier@Item@@AEBVBaseGameVersion@@@Z
-    MCAPI static std::vector<class ItemStack> const getTierItems(class Item::Tier const&, class BaseGameVersion const&);
+    MCAPI static std::vector<class ItemStack> const
+    getTierItems(class Item::Tier const& tier, class BaseGameVersion const& baseGameVersion);
 
     // symbol: ?DIAMOND@VanillaItemTiers@@2VTier@Item@@B
     MCAPI static class Item::Tier const DIAMOND;

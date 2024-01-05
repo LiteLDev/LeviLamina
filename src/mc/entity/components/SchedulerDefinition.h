@@ -22,7 +22,7 @@ public:
     MCAPI SchedulerDefinition();
 
     // symbol: ?initialize@SchedulerDefinition@@QEBAXAEAVEntityContext@@AEAVSchedulerComponent@@@Z
-    MCAPI void initialize(class EntityContext& entity, class SchedulerComponent& component) const;
+    MCAPI void initialize(class EntityContext&, class SchedulerComponent& component) const;
 
     // symbol: ?setMaxDelayTicks@SchedulerDefinition@@QEAAXAEBM@Z
     MCAPI void setMaxDelayTicks(float const& seconds);

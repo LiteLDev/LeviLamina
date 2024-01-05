@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getVersion@MolangVersionMapping@@SA?BW4MolangVersion@@AEBVSemVersion@@@Z
-    MCAPI static ::MolangVersion const getVersion(class SemVersion const&);
+    MCAPI static ::MolangVersion const getVersion(class SemVersion const& semVersion);
 
     // NOLINTEND
 };

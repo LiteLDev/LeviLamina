@@ -13,8 +13,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_foreachTransactionPacket@ProcessPlayerActionPacketSystem@@SAXAEBUPlayerActionComponent@@_NAEBV?$function@$$A6AXAEAVInventoryTransactionPacket@@@Z@std@@@Z
-    MCAPI static void
-    _foreachTransactionPacket(struct PlayerActionComponent const&, bool, std::function<void(class InventoryTransactionPacket&)> const&);
+    MCAPI static void _foreachTransactionPacket(
+        struct PlayerActionComponent const&                           actions,
+        bool                                                          isClientSide,
+        std::function<void(class InventoryTransactionPacket&)> const& callback
+    );
 
     // symbol: ?createSystem@ProcessPlayerActionPacketSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createSystem();

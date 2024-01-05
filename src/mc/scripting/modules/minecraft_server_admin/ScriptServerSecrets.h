@@ -31,7 +31,7 @@ public:
 
     // symbol:
     // ?get@ScriptServerSecrets@ScriptModuleMinecraftServerAdmin@@QEBA?AV?$optional@VScriptSecretString@ScriptModuleMinecraftServerAdmin@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
-    MCAPI std::optional<class ScriptModuleMinecraftServerAdmin::ScriptSecretString> get(std::string const&) const;
+    MCAPI std::optional<class ScriptModuleMinecraftServerAdmin::ScriptSecretString> get(std::string const& name) const;
 
     // symbol:
     // ?getAllSecretNames@ScriptServerSecrets@ScriptModuleMinecraftServerAdmin@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ

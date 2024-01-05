@@ -39,7 +39,11 @@ public:
     MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?serverInitItemStackIds@ChemistryTableBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
 
     // symbol: ?setItem@ChemistryTableBlockActor@@UEAAXHAEBVItemStack@@@Z
     MCVAPI void setItem(int slot, class ItemStack const& item);
@@ -64,10 +68,10 @@ public:
 
     // symbol:
     // ?serverCombine@ChemistryTableBlockActor@@QEAAXAEAVBlockSource@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-    MCAPI void serverCombine(class BlockSource&, std::vector<class ItemStack> const&);
+    MCAPI void serverCombine(class BlockSource& region, std::vector<class ItemStack> const&);
 
     // symbol: ?serverLabTablePacket_DEPRECATED@ChemistryTableBlockActor@@QEAAXAEBVLabTablePacket@@AEAVBlockSource@@@Z
-    MCAPI void serverLabTablePacket_DEPRECATED(class LabTablePacket const&, class BlockSource&);
+    MCAPI void serverLabTablePacket_DEPRECATED(class LabTablePacket const& packet, class BlockSource& region);
 
     // NOLINTEND
 
@@ -75,7 +79,8 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_createReaction@ChemistryTableBlockActor@@AEAA?AV?$unique_ptr@VLabTableReaction@@U?$default_delete@VLabTableReaction@@@std@@@std@@AEAVRandom@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@3@@Z
-    MCAPI std::unique_ptr<class LabTableReaction> _createReaction(class Random&, std::vector<class ItemStack> const&);
+    MCAPI std::unique_ptr<class LabTableReaction>
+          _createReaction(class Random& random, std::vector<class ItemStack> const&);
 
     // symbol: ?_popPendingReactionOutput@ChemistryTableBlockActor@@AEAAXAEAVBlockSource@@@Z
     MCAPI void _popPendingReactionOutput(class BlockSource& region);

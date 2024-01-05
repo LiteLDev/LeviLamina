@@ -23,11 +23,12 @@ public:
     MCAPI struct NpcDialogueScene const* getScene(std::string const&) const;
 
     // symbol: ?init@NpcDialogueStorage@@QEAAXAEAVResourcePackManager@@@Z
-    MCAPI void init(class ResourcePackManager&);
+    MCAPI void init(class ResourcePackManager& resourcePackManager);
 
     // symbol:
     // ?parseFile@NpcDialogueStorage@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4CurrentCmdVersion@@@Z
-    MCAPI bool parseFile(std::string const&, std::string const&, ::CurrentCmdVersion);
+    MCAPI bool
+    parseFile(std::string const& fileData, std::string const& fileName, ::CurrentCmdVersion packCommandVersion);
 
     // NOLINTEND
 };

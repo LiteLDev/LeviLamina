@@ -35,7 +35,7 @@ public:
     // symbol:
     // ??0BoolOption@@QEAA@W4OptionID@@W4OptionOwnerType@@W4OptionResetFlags@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3_N@Z
     MCAPI BoolOption(
-        ::OptionID         id,
+        ::OptionID,
         ::OptionOwnerType  ownerType,
         ::OptionResetFlags resetFlags,
         std::string const& captionId,

@@ -29,12 +29,17 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_sendMessage@SayCommand@@CAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBUCommandOriginIdentity@@AEAVLevel@@@Z
-    MCAPI static void
-    _sendMessage(std::string const&, std::string const&, struct CommandOriginIdentity const&, class Level&);
+    MCAPI static void _sendMessage(
+        std::string const&                  message,
+        std::string const&                  sender,
+        struct CommandOriginIdentity const& identity,
+        class Level&                        level
+    );
 
     // symbol:
     // ?_trySendSayCommandEvent@SayCommand@@CA_NAEBVPlayer@@AEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static bool _trySendSayCommandEvent(class Player const&, class Level&, std::string const&);
+    MCAPI static bool
+    _trySendSayCommandEvent(class Player const& player, class Level& level, std::string const& message);
 
     // NOLINTEND
 };

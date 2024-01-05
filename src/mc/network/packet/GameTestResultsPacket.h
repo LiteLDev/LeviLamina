@@ -30,17 +30,17 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@GameTestResultsPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@GameTestResultsPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0GameTestResultsPacket@@QEAA@XZ
     MCAPI GameTestResultsPacket();
 
     // symbol: ??0GameTestResultsPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
-    MCAPI GameTestResultsPacket(std::string const&, std::string const&, bool);
+    MCAPI GameTestResultsPacket(std::string const&, std::string const& error, bool succeeded);
 
     // NOLINTEND
 };

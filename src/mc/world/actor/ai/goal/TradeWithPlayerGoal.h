@@ -35,8 +35,12 @@ public:
 
         // symbol:
         // ?buildSchema@TradeWithPlayerDefinition@TradeWithPlayerGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTradeWithPlayerDefinition@TradeWithPlayerGoal@@@JsonUtil@@@4@@Z
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TradeWithPlayerGoal::TradeWithPlayerDefinition>>&);
+        MCAPI static void buildSchema(
+            std::string const&                                          name,
+            std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                class JsonUtil::EmptyClass,
+                class TradeWithPlayerGoal::TradeWithPlayerDefinition>>& root
+        );
 
         // NOLINTEND
     };

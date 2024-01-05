@@ -54,8 +54,12 @@ public:
 
     // vIndex: 1, symbol:
     // ?createContext@QuickJSRuntime@QuickJS@Scripting@@UEAA?AV?$optional@VScriptContext@Scripting@@@std@@AEBUModuleBindingBundle@3@PEAVIDependencyLoader@3@PEAVIPrinter@3@AEBUContextConfig@3@@Z
-    virtual std::optional<class Scripting::ScriptContext>
-    createContext(struct Scripting::ModuleBindingBundle const&, class Scripting::IDependencyLoader*, class Scripting::IPrinter*, struct Scripting::ContextConfig const&);
+    virtual std::optional<class Scripting::ScriptContext> createContext(
+        struct Scripting::ModuleBindingBundle const&,
+        class Scripting::IDependencyLoader* loader,
+        class Scripting::IPrinter*,
+        struct Scripting::ContextConfig const& config
+    );
 
     // vIndex: 2, symbol: ?destroyContext@QuickJSRuntime@QuickJS@Scripting@@UEAAXUContextId@3@@Z
     virtual void destroyContext(struct Scripting::ContextId);
@@ -63,22 +67,28 @@ public:
     // vIndex: 3, symbol:
     // ?run@StringBasedRuntime@Scripting@@UEAA?AVResultAny@2@UContextId@2@PEAVIPayload@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
     virtual class Scripting::ResultAny
-    run(struct Scripting::ContextId, class Scripting::IPayload*, std::optional<::Scripting::Privilege>);
+    run(struct Scripting::ContextId, class Scripting::IPayload* payload, std::optional<::Scripting::Privilege>);
 
     // vIndex: 4, symbol:
     // ?call@QuickJSRuntime@QuickJS@Scripting@@UEAA?AVResultAny@3@UContextId@3@U?$TypedObjectHandle@UClosureType@Scripting@@@3@PEAVmeta_any@entt@@IAEBVmeta_type@8@V?$optional@W4Privilege@Scripting@@@std@@@Z
     virtual class Scripting::ResultAny
-    call(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::ClosureType>, entt::meta_any*, uint, entt::meta_type const&, std::optional<::Scripting::Privilege>);
+    call(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::ClosureType>, entt::meta_any* args, uint, entt::meta_type const&, std::optional<::Scripting::Privilege>);
 
     // vIndex: 5, symbol:
     // ?resolve@QuickJSRuntime@QuickJS@Scripting@@UEAA?AVResultAny@3@UContextId@3@U?$TypedObjectHandle@UPromiseType@Scripting@@@3@AEAVmeta_any@entt@@@Z
-    virtual class Scripting::ResultAny
-    resolve(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::PromiseType>, entt::meta_any&);
+    virtual class Scripting::ResultAny resolve(
+        struct Scripting::ContextId,
+        struct Scripting::TypedObjectHandle<struct Scripting::PromiseType>,
+        entt::meta_any& arg
+    );
 
     // vIndex: 6, symbol:
     // ?reject@QuickJSRuntime@QuickJS@Scripting@@UEAA?AVResultAny@3@UContextId@3@U?$TypedObjectHandle@UPromiseType@Scripting@@@3@AEAVmeta_any@entt@@@Z
-    virtual class Scripting::ResultAny
-    reject(struct Scripting::ContextId, struct Scripting::TypedObjectHandle<struct Scripting::PromiseType>, entt::meta_any&);
+    virtual class Scripting::ResultAny reject(
+        struct Scripting::ContextId,
+        struct Scripting::TypedObjectHandle<struct Scripting::PromiseType>,
+        entt::meta_any& arg
+    );
 
     // vIndex: 7, symbol:
     // ?getFutureStatus@QuickJSRuntime@QuickJS@Scripting@@UEBA?AW4FutureStatus@3@UContextId@3@U?$TypedObjectHandle@UFutureType@Scripting@@@3@@Z
@@ -117,7 +127,7 @@ public:
     virtual struct Scripting::RuntimeStats computeRuntimeStats() const;
 
     // vIndex: 16, symbol: ?enableWatchdog@QuickJSRuntime@QuickJS@Scripting@@UEAAPEAVIWatchdog@3@UWatchdogSettings@3@@Z
-    virtual class Scripting::IWatchdog* enableWatchdog(struct Scripting::WatchdogSettings);
+    virtual class Scripting::IWatchdog* enableWatchdog(struct Scripting::WatchdogSettings settings);
 
     // vIndex: 17, symbol: ?disableWatchdog@QuickJSRuntime@QuickJS@Scripting@@UEAAXXZ
     virtual void disableWatchdog();
@@ -133,12 +143,12 @@ public:
     // vIndex: 20, symbol:
     // ?runString@QuickJSRuntime@QuickJS@Scripting@@UEAA?AVResultAny@3@UContextId@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1V?$optional@W4Privilege@Scripting@@@7@@Z
     virtual class Scripting::ResultAny
-    runString(struct Scripting::ContextId, std::string const&, std::string const&, std::optional<::Scripting::Privilege>);
+    runString(struct Scripting::ContextId, std::string const& scriptName, std::string const&, std::optional<::Scripting::Privilege>);
 
     // symbol:
     // ??0QuickJSRuntime@QuickJS@Scripting@@QEAA@AEAVRegistryManager@2@PEAVDependencyLocator@2@V?$unique_ptr@UMallocFunctions@QuickJS@Scripting@@U?$default_delete@UMallocFunctions@QuickJS@Scripting@@@std@@@std@@V?$function@$$A6A?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$basic_string_view@DU?$char_traits@D@std@@@2@AEBV12@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@Z@6@@Z
     MCAPI
-    QuickJSRuntime(class Scripting::RegistryManager&, class Scripting::DependencyLocator*, std::unique_ptr<struct Scripting::QuickJS::MallocFunctions>, std::function<std::string(std::string_view const&, std::string const&, std::vector<std::string> const&)>);
+    QuickJSRuntime(class Scripting::RegistryManager&, class Scripting::DependencyLocator* locator, std::unique_ptr<struct Scripting::QuickJS::MallocFunctions>, std::function<std::string(std::string_view const&, std::string const&, std::vector<std::string> const&)>);
 
     // symbol: ?getContext@QuickJSRuntime@QuickJS@Scripting@@QEBAPEAVContextObject@23@UContextId@3@@Z
     MCAPI class Scripting::QuickJS::ContextObject* getContext(struct Scripting::ContextId) const;
@@ -148,10 +158,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_moduleLoader@QuickJSRuntime@QuickJS@Scripting@@CAPEAUJSModuleDef@@PEAUJSContext@@PEBDPEAX@Z
-    MCAPI static struct JSModuleDef* _moduleLoader(struct JSContext*, char const*, void*);
+    MCAPI static struct JSModuleDef* _moduleLoader(struct JSContext* ctx, char const*, void* opaque);
 
     // symbol: ?_moduleNameNormalizer@QuickJSRuntime@QuickJS@Scripting@@CAPEADPEAUJSContext@@PEBD1PEAX@Z
-    MCAPI static char* _moduleNameNormalizer(struct JSContext*, char const*, char const*, void*);
+    MCAPI static char* _moduleNameNormalizer(struct JSContext* ctx, char const*, char const*, void* opaque);
 
     // NOLINTEND
 };

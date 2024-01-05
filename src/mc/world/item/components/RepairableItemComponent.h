@@ -72,10 +72,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_getRepairItemEntry@RepairableItemComponent@@AEBAPEBURepairItemEntry@@AEBVItemStackBase@@@Z
-    MCAPI struct RepairItemEntry const* _getRepairItemEntry(class ItemStackBase const&) const;
+    MCAPI struct RepairItemEntry const* _getRepairItemEntry(class ItemStackBase const& item) const;
 
     // symbol: ?_repairItem@RepairableItemComponent@@AEBAHAEAVItemStackBase@@0VExpressionNode@@@Z
-    MCAPI int _repairItem(class ItemStackBase&, class ItemStackBase&, class ExpressionNode) const;
+    MCAPI int _repairItem(class ItemStackBase&, class ItemStackBase& resultItem, class ExpressionNode) const;
 
     // NOLINTEND
 };

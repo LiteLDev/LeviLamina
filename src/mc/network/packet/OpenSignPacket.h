@@ -30,17 +30,17 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@OpenSignPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@OpenSignPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0OpenSignPacket@@QEAA@XZ
     MCAPI OpenSignPacket();
 
     // symbol: ??0OpenSignPacket@@QEAA@AEBVBlockPos@@_N@Z
-    MCAPI OpenSignPacket(class BlockPos const&, bool);
+    MCAPI OpenSignPacket(class BlockPos const& pos, bool);
 
     // NOLINTEND
 };

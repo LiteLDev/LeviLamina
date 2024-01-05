@@ -40,13 +40,13 @@ public:
     virtual void __unk_vfn_5();
 
     // vIndex: 6, symbol: ?matches@ShapelessRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
-    virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const;
+    virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
 
     // vIndex: 7, symbol: ?size@ShapelessRecipe@@UEBAHXZ
     virtual int size() const;
 
     // vIndex: 15, symbol: ?loadResultList@ShapelessRecipe@@UEBAXAEBVBlockPalette@@@Z
-    virtual void loadResultList(class BlockPalette const&) const;
+    virtual void loadResultList(class BlockPalette const& blockPalette) const;
 
     // symbol: ?isShapeless@ShapelessRecipe@@UEBA_NXZ
     MCVAPI bool isShapeless() const;

@@ -20,13 +20,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addItemLockMode@ItemLockHelper@@SA_NAEAVItemStackBase@@AEBVValue@Json@@@Z
-    MCAPI static bool addItemLockMode(class ItemStackBase&, class Json::Value const&);
+    MCAPI static bool addItemLockMode(class ItemStackBase&, class Json::Value const& data);
 
     // symbol: ?addKeepOnDeath@ItemLockHelper@@SA_NAEAVItemStackBase@@AEBVValue@Json@@@Z
-    MCAPI static bool addKeepOnDeath(class ItemStackBase&, class Json::Value const&);
+    MCAPI static bool addKeepOnDeath(class ItemStackBase&, class Json::Value const& data);
 
     // symbol: ?canMoveItemSlots@ItemLockHelper@@SA_NAEBVActor@@AEBVItemStackBase@@@Z
-    MCAPI static bool canMoveItemSlots(class Actor const&, class ItemStackBase const&);
+    MCAPI static bool canMoveItemSlots(class Actor const& actor, class ItemStackBase const&);
 
     // symbol: ?getItemLockMode@ItemLockHelper@@SA?AW4ItemLockMode@@AEBVItemStackBase@@@Z
     MCAPI static ::ItemLockMode getItemLockMode(class ItemStackBase const&);
@@ -41,20 +41,20 @@ public:
     MCAPI static void setItemLockMode(class ItemStackBase&, ::ItemLockMode);
 
     // symbol: ?setKeepOnDeath@ItemLockHelper@@SAXAEAVItemStackBase@@_N@Z
-    MCAPI static void setKeepOnDeath(class ItemStackBase&, bool);
+    MCAPI static void setKeepOnDeath(class ItemStackBase&, bool value);
 
     // symbol: ?shouldKeepOnDeath@ItemLockHelper@@SA_NAEBVItemStackBase@@@Z
     MCAPI static bool shouldKeepOnDeath(class ItemStackBase const&);
 
     // symbol: ?shouldKeepOnDeath@ItemLockHelper@@SA_NAEBVActor@@AEBVItemStackBase@@@Z
-    MCAPI static bool shouldKeepOnDeath(class Actor const&, class ItemStackBase const&);
+    MCAPI static bool shouldKeepOnDeath(class Actor const& actor, class ItemStackBase const&);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_parseItemLockMode@ItemLockHelper@@CA_NAEAVItemStackBase@@AEBVValue@Json@@@Z
-    MCAPI static bool _parseItemLockMode(class ItemStackBase&, class Json::Value const&);
+    MCAPI static bool _parseItemLockMode(class ItemStackBase&, class Json::Value const& data);
 
     // NOLINTEND
 };

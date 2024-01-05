@@ -19,7 +19,15 @@ public:
     getPos(class Vec3& outPos, class Mob& mob, int xzDist, int yDist, int tries, ::SolidityCheckType blockTest);
 
     // symbol: ?getPosAvoid@RandomPos@@SA_NAEAVVec3@@AEAVMob@@HHAEBV2@W4SolidityCheckType@@H@Z
-    MCAPI static bool getPosAvoid(class Vec3&, class Mob&, int, int, class Vec3 const&, ::SolidityCheckType, int);
+    MCAPI static bool getPosAvoid(
+        class Vec3&         outPos,
+        class Mob&          mob,
+        int                 xzDist,
+        int                 yDist,
+        class Vec3 const&   avoidPos,
+        ::SolidityCheckType blockTest,
+        int                 tries
+    );
 
     // symbol: ?getPosInDirection@RandomPos@@SA_NAEAVVec3@@AEAVMob@@HHH_N2PEAV2@AEBUIntRange@@HW4SolidityCheckType@@@Z
     MCAPI static bool getPosInDirection(
@@ -41,7 +49,14 @@ public:
     getPosTowards(class Vec3& outPos, class Mob& mob, int xzDist, int yDist, class Vec3 const& towardsPos);
 
     // symbol: ?getPosTowards@RandomPos@@SA_NAEAVRandom@@AEAVVec3@@AEAVMob@@HHAEBV3@@Z
-    MCAPI static bool getPosTowards(class Random&, class Vec3&, class Mob&, int, int, class Vec3 const&);
+    MCAPI static bool getPosTowards(
+        class Random&     random,
+        class Vec3&       outPos,
+        class Mob&        mob,
+        int               xzDist,
+        int               yDist,
+        class Vec3 const& towardsPos
+    );
 
     // symbol: ?getSpawnPos@RandomPos@@SA_NAEAVBlockSource@@AEAVRandom@@AEAVVec3@@HHH@Z
     MCAPI static bool getSpawnPos(
@@ -73,18 +88,18 @@ public:
     // symbol:
     // ?generateRandomPos@RandomPos@@CA_NAEAVRandomize@@AEAVVec3@@AEAVMob@@HHHPEBV3@_N4AEBUIntRange@@HW4SolidityCheckType@@@Z
     MCAPI static bool generateRandomPos(
-        class Randomize&,
-        class Vec3&,
-        class Mob&,
-        int,
-        int,
-        int,
-        class Vec3 const*,
-        bool,
-        bool,
-        struct IntRange const&,
-        int,
-        ::SolidityCheckType
+        class Randomize&       randomize,
+        class Vec3&            outPos,
+        class Mob&             mob,
+        int                    xzDist,
+        int                    yDist,
+        int                    yOffset,
+        class Vec3 const*      dir,
+        bool                   canFly,
+        bool                   canSwim,
+        struct IntRange const& hoverHeight,
+        int                    tries,
+        ::SolidityCheckType    blockTest
     );
 
     // symbol: ?snapToGround@RandomPos@@CA_NAEAVBlockPos@@HHV?$function@$$A6A_NAEAVBlockPos@@@Z@std@@@Z

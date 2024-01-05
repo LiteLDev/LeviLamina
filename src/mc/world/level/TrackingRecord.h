@@ -42,14 +42,14 @@ public:
     // symbol:
     // ?_addTransaction@TrackingRecord@PositionTrackingDB@@IEAA_NV?$weak_ptr@VPositionTrackingDBServer@PositionTrackingDB@@@std@@V?$unique_ptr@VOperationBase@PositionTrackingDB@@U?$default_delete@VOperationBase@PositionTrackingDB@@@std@@@4@@Z
     MCAPI bool
-        _addTransaction(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, std::unique_ptr<class PositionTrackingDB::OperationBase>);
+    _addTransaction(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer> parent, std::unique_ptr<class PositionTrackingDB::OperationBase>);
 
     // symbol: ?deserialize@TrackingRecord@PositionTrackingDB@@IEAAXAEBVCompoundTag@@@Z
-    MCAPI void deserialize(class CompoundTag const&);
+    MCAPI void deserialize(class CompoundTag const& tag);
 
     // symbol:
     // ?loadRecordFromStorage@TrackingRecord@PositionTrackingDB@@IEAA_NV?$weak_ptr@VPositionTrackingDBServer@PositionTrackingDB@@@std@@@Z
-    MCAPI bool loadRecordFromStorage(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>);
+    MCAPI bool loadRecordFromStorage(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer> parent);
 
     // symbol: ?serialize@TrackingRecord@PositionTrackingDB@@IEBA?AVCompoundTag@@XZ
     MCAPI class CompoundTag serialize() const;

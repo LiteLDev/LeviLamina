@@ -42,7 +42,7 @@ public:
     MCAPI void loadActorAnimationControllersSync(class ResourcePackManager& resourcePackManager);
 
     // symbol: ?loadFormatVersion@ActorAnimationControllerGroup@@SA_NAEBVValue@Json@@AEAVSemVersion@@@Z
-    MCAPI static bool loadFormatVersion(class Json::Value const&, class SemVersion&);
+    MCAPI static bool loadFormatVersion(class Json::Value const& root, class SemVersion& version);
 
     // NOLINTEND
 
@@ -62,7 +62,7 @@ public:
     MCAPI static std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
         class JsonUtil::EmptyClass,
         struct ActorAnimationControllerGroupParseMetaData>>
-    _buildAnimationControllerFileSchema_v1_10_Or_Later(class SemVersion const&);
+    _buildAnimationControllerFileSchema_v1_10_Or_Later(class SemVersion const& version);
 
     // symbol:
     // ?_buildAnimationControllerFileSchema_v1_8@ActorAnimationControllerGroup@@CA?AV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@_N@JsonUtil@@@std@@XZ
@@ -70,7 +70,7 @@ public:
     _buildAnimationControllerFileSchema_v1_8();
 
     // symbol: ?upgrade_v1_8_to_v1_10@ActorAnimationControllerGroup@@CA_NAEAVValue@Json@@AEBVSemVersion@@@Z
-    MCAPI static bool upgrade_v1_8_to_v1_10(class Json::Value&, class SemVersion const&);
+    MCAPI static bool upgrade_v1_8_to_v1_10(class Json::Value& root, class SemVersion const& engineVersion);
 
     // NOLINTEND
 };

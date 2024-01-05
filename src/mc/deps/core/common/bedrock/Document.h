@@ -27,17 +27,17 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Document@JSONObject@Bedrock@@QEAA@AEBVDocumentOptions@12@@Z
-    MCAPI explicit Document(class Bedrock::JSONObject::DocumentOptions const&);
+    MCAPI explicit Document(class Bedrock::JSONObject::DocumentOptions const& options);
 
     // symbol:
     // ?loadString@Document@JSONObject@Bedrock@@QEAAAEBVParseResult@23@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class Bedrock::JSONObject::ParseResult const& loadString(std::string_view);
+    MCAPI class Bedrock::JSONObject::ParseResult const& loadString(std::string_view str);
 
     // symbol: ?reset@Document@JSONObject@Bedrock@@QEAAXXZ
     MCAPI void reset();
 
     // symbol: ?setRoot@Document@JSONObject@Bedrock@@QEAAPEAVNode@23@AEBVValueWrapper@23@@Z
-    MCAPI class Bedrock::JSONObject::Node* setRoot(class Bedrock::JSONObject::ValueWrapper const&);
+    MCAPI class Bedrock::JSONObject::Node* setRoot(class Bedrock::JSONObject::ValueWrapper const& value);
 
     // symbol: ??1Document@JSONObject@Bedrock@@QEAA@XZ
     MCAPI ~Document();
@@ -53,21 +53,21 @@ public:
             class Bedrock::JSONObject::NodeBase,
             class Bedrock::JSONObject::NodeBase,
             class Bedrock::JSONObject::NodeBase>&,
-        uint64,
-        uint64
+        uint64 size,
+        uint64 alignment
     );
 
     // symbol: ?_createNode@Document@JSONObject@Bedrock@@AEAAPEAVNodeBase@23@AEBVValueWrapper@23@@Z
-    MCAPI class Bedrock::JSONObject::NodeBase* _createNode(class Bedrock::JSONObject::ValueWrapper const&);
+    MCAPI class Bedrock::JSONObject::NodeBase* _createNode(class Bedrock::JSONObject::ValueWrapper const& value);
 
     // symbol: ?_initialize@Document@JSONObject@Bedrock@@AEAAXXZ
     MCAPI void _initialize();
 
     // symbol: ?_releaseNode@Document@JSONObject@Bedrock@@AEAAXAEAVNodeBase@23@@Z
-    MCAPI void _releaseNode(class Bedrock::JSONObject::NodeBase&);
+    MCAPI void _releaseNode(class Bedrock::JSONObject::NodeBase& node);
 
     // symbol: ?_releaseStringBuffer@Document@JSONObject@Bedrock@@AEAAXAEAVStringNode@23@@Z
-    MCAPI void _releaseStringBuffer(class Bedrock::JSONObject::StringNode&);
+    MCAPI void _releaseStringBuffer(class Bedrock::JSONObject::StringNode& node);
 
     // NOLINTEND
 };

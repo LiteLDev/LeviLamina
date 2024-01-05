@@ -34,7 +34,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@LecternBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -107,8 +107,7 @@ public:
     virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
     // vIndex: 61, symbol: ?checkIsPathable@LecternBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-    virtual bool
-    checkIsPathable(class Actor& entity, class BlockPos const& lastPathPos, class BlockPos const& pathPos) const;
+    virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -124,13 +123,8 @@ public:
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@LecternBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const& getPlacementBlock(
-        class Actor const&    by,
-        class BlockPos const& pos,
-        uchar                 face,
-        class Vec3 const&     clickPos,
-        int                   itemValue
-    ) const;
+    virtual class Block const&
+    getPlacementBlock(class Actor const& by, class BlockPos const& pos, uchar, class Vec3 const&, int) const;
 
     // vIndex: 101, symbol: ?attack@LecternBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z
     virtual bool attack(class Player* player, class BlockPos const& pos) const;
@@ -146,8 +140,7 @@ public:
 
     // vIndex: 112, symbol: ?getComparatorSignal@LecternBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
     virtual int
-    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const& block, uchar dir)
-        const;
+    getComparatorSignal(class BlockSource& region, class BlockPos const& pos, class Block const&, uchar) const;
 
     // vIndex: 114, symbol: __unk_vfn_114
     virtual void __unk_vfn_114();
@@ -165,13 +158,13 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@LecternBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@LecternBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -183,7 +176,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0LecternBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LecternBlock(std::string const& nameId, int id);
+    MCAPI LecternBlock(std::string const& nameId, int);
 
     // symbol: ?emitRedstonePulse@LecternBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void emitRedstonePulse(class BlockSource& region, class BlockPos const& pos) const;

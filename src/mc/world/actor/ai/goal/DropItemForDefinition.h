@@ -26,12 +26,15 @@ public:
     MCAPI DropItemForDefinition();
 
     // symbol: ?initialize@DropItemForDefinition@@QEBAXAEAVEntityContext@@AEAVDropItemForGoal@@@Z
-    MCAPI void initialize(class EntityContext&, class DropItemForGoal&) const;
+    MCAPI void initialize(class EntityContext& entity, class DropItemForGoal& goal) const;
 
     // symbol:
     // ?buildSchema@DropItemForDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDropItemForDefinition@@@JsonUtil@@@3@@Z
-    MCAPI static void
-    buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DropItemForDefinition>>&);
+    MCAPI static void buildSchema(
+        std::string const& name,
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DropItemForDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

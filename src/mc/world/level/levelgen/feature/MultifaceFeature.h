@@ -19,7 +19,8 @@ public:
     // vIndex: 1, symbol:
     // ?place@MultifaceFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
     virtual std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    place(class IBlockWorldGenAPI&, class BlockPos const& pos, class Random& random, class RenderParams& renderParams)
+        const;
 
     // vIndex: 2, symbol:
     // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -35,10 +36,11 @@ public:
     // symbol:
     // ?_placeBlockIfPossible@MultifaceFeature@@AEBA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEBV?$vector@EV?$allocator@E@std@@@3@@Z
     MCAPI std::optional<class BlockPos>
-    _placeBlockIfPossible(class BlockSource&, class BlockPos const&, class Random&, std::vector<uchar> const&) const;
+    _placeBlockIfPossible(class BlockSource& region, class BlockPos const& pos, class Random& random, std::vector<uchar> const&)
+        const;
 
     // symbol: ?_getShuffledDirections@MultifaceFeature@@CA?AV?$vector@EV?$allocator@E@std@@@std@@V23@@Z
-    MCAPI static std::vector<uchar> _getShuffledDirections(std::vector<uchar>);
+    MCAPI static std::vector<uchar> _getShuffledDirections(std::vector<uchar> faces);
 
     // NOLINTEND
 };

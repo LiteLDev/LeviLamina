@@ -95,7 +95,8 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 63, symbol: ?dispense@WoolCarpetBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -135,14 +136,14 @@ public:
 
     // symbol:
     // ??0WoolCarpetBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4BlockColor@@@Z
-    MCAPI WoolCarpetBlock(std::string const&, int, ::BlockColor);
+    MCAPI WoolCarpetBlock(std::string const& nameId, int, ::BlockColor color);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_tryEquipCarpet@WoolCarpetBlock@@CA_NPEAVActor@@AEBVItemStack@@@Z
-    MCAPI static bool _tryEquipCarpet(class Actor*, class ItemStack const&);
+    MCAPI static bool _tryEquipCarpet(class Actor* actor, class ItemStack const&);
 
     // NOLINTEND
 };

@@ -79,8 +79,11 @@ public:
     ) const;
 
     // vIndex: 47, symbol: ?isValidRepairItem@ArmorItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
-    virtual bool
-    isValidRepairItem(class ItemStackBase const&, class ItemStackBase const&, class BaseGameVersion const&) const;
+    virtual bool isValidRepairItem(
+        class ItemStackBase const&   source,
+        class ItemStackBase const&   repairItem,
+        class BaseGameVersion const& baseGameVersion
+    ) const;
 
     // vIndex: 48, symbol: ?getEnchantSlot@ArmorItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
@@ -110,10 +113,10 @@ public:
     virtual void __unk_vfn_58();
 
     // vIndex: 59, symbol: ?getColor@ArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
-    virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
+    virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const&) const;
 
     // vIndex: 60, symbol: ?hasCustomColor@ArmorItem@@UEBA_NPEBVCompoundTag@@@Z
-    virtual bool hasCustomColor(class CompoundTag const*) const;
+    virtual bool hasCustomColor(class CompoundTag const* userData) const;
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
@@ -122,7 +125,7 @@ public:
     virtual void clearColor(class ItemStackBase& instance) const;
 
     // vIndex: 64, symbol: ?setColor@ArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
-    virtual void setColor(class ItemStackBase& instance, class mce::Color const& color) const;
+    virtual void setColor(class ItemStackBase& itemStack, class mce::Color const& color) const;
 
     // vIndex: 65, symbol: __unk_vfn_65
     virtual void __unk_vfn_65();
@@ -131,7 +134,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 68, symbol: ?buildIdAux@ArmorItem@@UEBAHFPEBVCompoundTag@@@Z
-    virtual int buildIdAux(short, class CompoundTag const*) const;
+    virtual int buildIdAux(short auxValue, class CompoundTag const* userData) const;
 
     // vIndex: 70, symbol: ?use@ArmorItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
     virtual class ItemStack& use(class ItemStack& item, class Player& player) const;
@@ -144,8 +147,7 @@ public:
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
     // vIndex: 79, symbol: ?mineBlock@ArmorItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool
-    mineBlock(class ItemStack& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
+    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
 
     // vIndex: 96, symbol: ?getEquipLocation@ArmorItem@@UEBA?AW4ActorLocation@@XZ
     virtual ::ActorLocation getEquipLocation() const;
@@ -160,14 +162,22 @@ public:
     virtual void __unk_vfn_99();
 
     // vIndex: 103, symbol: ?getIconInfo@ArmorItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo
+    getIconInfo(class ItemStackBase const& itemStack, int, bool inInventoryPane) const;
 
     // vIndex: 118, symbol: ?getArmorKnockbackResistance@ArmorItem@@UEBAMXZ
     virtual float getArmorKnockbackResistance() const;
 
     // symbol:
     // ??0ArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVArmorMaterial@0@HW4ArmorSlot@@_N@Z
-    MCAPI ArmorItem(std::string const&, int, class ArmorItem::ArmorMaterial const&, int, ::ArmorSlot, bool);
+    MCAPI ArmorItem(
+        std::string const& name,
+        int,
+        class ArmorItem::ArmorMaterial const& armorType,
+        int                                   icon,
+        ::ArmorSlot                           slot,
+        bool
+    );
 
     // symbol: ?isTrimAllowed@ArmorItem@@QEBA_NXZ
     MCAPI bool isTrimAllowed() const;
@@ -178,8 +188,8 @@ public:
         class Container&   container,
         int                slot,
         class Vec3 const&  pos,
-        uchar              face,
-        ::ArmorSlot        armorSlot
+        uchar,
+        ::ArmorSlot armorSlot
     );
 
     // symbol: ?getSlotForItem@ArmorItem@@SA?AW4ArmorSlot@@AEBVItemStackBase@@@Z

@@ -47,14 +47,14 @@ public:
     // symbol:
     // ??0LayEggGoal@@QEAA@AEAVMob@@MHHMAEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@AEBV?$vector@W4MaterialType@@V?$allocator@W4MaterialType@@@std@@@3@_N3MAEBVItemDescriptor@@AEBVActorDefinitionTrigger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
     MCAPI
-    LayEggGoal(class Mob&, float, int, int, float, std::vector<class ItemDescriptor> const&, std::vector<::MaterialType> const&, bool, bool, float, class ItemDescriptor const&, class ActorDefinitionTrigger const&, std::string const&);
+    LayEggGoal(class Mob& mob, float speedModifier, int searchRange, int searchHeight, float goalRadius, std::vector<class ItemDescriptor> const& targetBlocks, std::vector<::MaterialType> const&, bool, bool, float, class ItemDescriptor const&, class ActorDefinitionTrigger const& onLay, std::string const&);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_isTargetBlock@LayEggGoal@@IEBA_NAEBVBlockLegacy@@@Z
-    MCAPI bool _isTargetBlock(class BlockLegacy const&) const;
+    MCAPI bool _isTargetBlock(class BlockLegacy const& block) const;
 
     // symbol: ?_layEgg@LayEggGoal@@IEAAXAEBVBlockPos@@@Z
     MCAPI void _layEgg(class BlockPos const& pos);

@@ -35,13 +35,13 @@ public:
     // symbol:
     // ??0BackgroundWorker@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NAEBVOSThreadPriority@Threading@Bedrock@@V?$optional@_K@2@V?$optional@H@2@AEAVWorkerPool@@1@Z
     MCAPI BackgroundWorker(
-        std::string,
-        bool,
-        class Bedrock::Threading::OSThreadPriority const&,
-        std::optional<uint64>,
-        std::optional<int>,
-        class WorkerPool&,
-        bool
+        std::string                                       name,
+        bool                                              async,
+        class Bedrock::Threading::OSThreadPriority const& priority,
+        std::optional<uint64>                             coreAffinity,
+        std::optional<int>                                idealCore,
+        class WorkerPool&                                 workerPool,
+        bool                                              suppressProfiling
     );
 
     // symbol: ?queue@BackgroundWorker@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z

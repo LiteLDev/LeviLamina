@@ -107,7 +107,7 @@ public:
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 96, symbol: ?asItemInstance@SpongeBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -153,7 +153,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0SpongeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI SpongeBlock(std::string const& nameId, int id, class Material const& material);
+    MCAPI SpongeBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 

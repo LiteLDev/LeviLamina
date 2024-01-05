@@ -18,7 +18,7 @@ public:
     virtual ~DragonBaseGoalDefinition() = default;
 
     // vIndex: 1, symbol: ?validateMobType@DragonBaseGoalDefinition@@UEBA_NAEAVMob@@@Z
-    virtual bool validateMobType(class Mob&) const;
+    virtual bool validateMobType(class Mob& mob) const;
 
     // NOLINTEND
 };

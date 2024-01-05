@@ -35,10 +35,10 @@ public:
     virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB) = 0;
 
     // vIndex: 5, symbol: ?postProcessMobsAt@StructurePiece@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual void postProcessMobsAt(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
+    virtual void postProcessMobsAt(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // vIndex: 6, symbol: ?isInInvalidLocation@StructurePiece@@UEAA_NAEAVBlockSource@@AEBVBoundingBox@@@Z
-    virtual bool isInInvalidLocation(class BlockSource&, class BoundingBox const&);
+    virtual bool isInInvalidLocation(class BlockSource& region, class BoundingBox const& chunkBB);
 
     // vIndex: 7, symbol: ?getWorldX@StructurePiece@@UEAAHHH@Z
     virtual int getWorldX(int x, int z);
@@ -48,7 +48,7 @@ public:
 
     // vIndex: 9, symbol: ?placeBlock@StructurePiece@@UEAAXAEAVBlockSource@@AEBVBlock@@HHHAEBVBoundingBox@@@Z
     virtual void placeBlock(
-        class BlockSource&       level,
+        class BlockSource&       region,
         class Block const&       block,
         int                      x,
         int                      y,
@@ -61,7 +61,7 @@ public:
 
     // vIndex: 11, symbol: ?generateBox@StructurePiece@@UEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHHHHAEBVBlock@@2_N@Z
     virtual void generateBox(
-        class BlockSource&       level,
+        class BlockSource&       region,
         class BoundingBox const& chunkBB,
         int                      x0,
         int                      y0,
@@ -81,11 +81,11 @@ public:
     MCAPI class BlockPos _getWorldPos(int x, int y, int z);
 
     // symbol: ?addTerrainAdjustmentToken@StructurePiece@@QEAAXV?$shared_ptr@_N@std@@@Z
-    MCAPI void addTerrainAdjustmentToken(std::shared_ptr<bool>);
+    MCAPI void addTerrainAdjustmentToken(std::shared_ptr<bool> token);
 
     // symbol: ?generateAirBox@StructurePiece@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHHHH@Z
     MCAPI void generateAirBox(
-        class BlockSource&       level,
+        class BlockSource&       region,
         class BoundingBox const& chunkBB,
         int                      x0,
         int                      y0,
@@ -98,7 +98,7 @@ public:
     // symbol:
     // ?generateBox@StructurePiece@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHHHH_NAEAVRandom@@AEBVBlockSelector@@@Z
     MCAPI void generateBox(
-        class BlockSource&         level,
+        class BlockSource&         region,
         class BoundingBox const&   chunkBB,
         int                        x0,
         int                        y0,
@@ -114,7 +114,7 @@ public:
     // symbol:
     // ?generateMaybeBox@StructurePiece@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@AEAVRandom@@MHHHHHHAEBVBlock@@3_N4@Z
     MCAPI void generateMaybeBox(
-        class BlockSource&       level,
+        class BlockSource&       region,
         class BoundingBox const& chunkBB,
         class Random&            random,
         float                    probability,
@@ -132,7 +132,7 @@ public:
 
     // symbol: ?generateUpperHalfSphere@StructurePiece@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHHHHAEBVBlock@@_N@Z
     MCAPI void generateUpperHalfSphere(
-        class BlockSource&       level,
+        class BlockSource&       region,
         class BoundingBox const& chunkBB,
         int                      x0,
         int                      y0,
@@ -145,7 +145,7 @@ public:
     );
 
     // symbol: ?getBlock@StructurePiece@@QEAAAEBVBlock@@AEAVBlockSource@@HHHAEBVBoundingBox@@@Z
-    MCAPI class Block const& getBlock(class BlockSource& level, int x, int y, int z, class BoundingBox const& chunkBB);
+    MCAPI class Block const& getBlock(class BlockSource& region, int x, int y, int z, class BoundingBox const& chunkBB);
 
     // symbol: ?getOrientationData@StructurePiece@@QEAAGPEBVBlock@@G@Z
     MCAPI ushort getOrientationData(class Block const* block, ushort data);
@@ -154,17 +154,17 @@ public:
     MCAPI int getWorldY(int y);
 
     // symbol: ?isAboveGround@StructurePiece@@QEAA_NHHHAEAVBlockSource@@@Z
-    MCAPI bool isAboveGround(int x0, int y1, int z, class BlockSource& level);
+    MCAPI bool isAboveGround(int x0, int y1, int z, class BlockSource& region);
 
     // symbol: ?isAir@StructurePiece@@QEAA_NAEAVBlockSource@@HHHAEBVBoundingBox@@@Z
-    MCAPI bool isAir(class BlockSource& level, int x, int y, int z, class BoundingBox const& chunkBB);
+    MCAPI bool isAir(class BlockSource& region, int x, int y, int z, class BoundingBox const& chunkBB);
 
     // symbol: ?isReplaceableBlock@StructurePiece@@QEAA_NAEBVBlock@@@Z
-    MCAPI bool isReplaceableBlock(class Block const&);
+    MCAPI bool isReplaceableBlock(class Block const& block);
 
     // symbol: ?maybeGenerateBlock@StructurePiece@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@AEAVRandom@@MHHHAEBVBlock@@@Z
     MCAPI void maybeGenerateBlock(
-        class BlockSource&       level,
+        class BlockSource&       region,
         class BoundingBox const& chunkBB,
         class Random&            random,
         float                    probability,
@@ -176,8 +176,16 @@ public:
 
     // symbol:
     // ?maybeGenerateBlockIfNotFloating@StructurePiece@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@AEAVRandom@@MHHHAEBVBlock@@@Z
-    MCAPI void
-    maybeGenerateBlockIfNotFloating(class BlockSource&, class BoundingBox const&, class Random&, float, int, int, int, class Block const&);
+    MCAPI void maybeGenerateBlockIfNotFloating(
+        class BlockSource&       region,
+        class BoundingBox const& chunkBB,
+        class Random&            random,
+        float                    probability,
+        int                      x,
+        int                      y,
+        int                      z,
+        class Block const&       block
+    );
 
     // symbol:
     // ?findCollisionPiece@StructurePiece@@SAPEAV1@AEBV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEBVBoundingBox@@@Z

@@ -30,7 +30,7 @@ public:
     virtual class ItemStack const& getSlot(int slot) const;
 
     // vIndex: 9, symbol: ?setData@LabTableContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int id, int value);
+    virtual void setData(int, int value);
 
     // vIndex: 10, symbol: ?broadcastChanges@LabTableContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();

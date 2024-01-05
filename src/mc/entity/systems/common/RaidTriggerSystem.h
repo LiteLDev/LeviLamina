@@ -25,7 +25,17 @@ public:
 
     // symbol:
     // ?_tickRaidTriggerSystem@RaidTriggerSystem@@CAXV?$OptionalGlobal@$$CBUVillageManagerComponent@@@@V?$ViewT@VStrictEntityContext@@U?$Include@$$CBV?$FlagComponent@UActorTickedFlag@@@@$$CBV?$ActorFlagComponent@URaidTriggerFlag@@@@@@$$CBUDimensionTypeComponent@@$$CBUStateVectorComponent@@VActorOwnerComponent@@@@@Z
-    MCAPI static void _tickRaidTriggerSystem(class OptionalGlobal<struct VillageManagerComponent const>, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct ActorTickedFlag> const, class ActorFlagComponent<struct RaidTriggerFlag> const>, struct DimensionTypeComponent const, struct StateVectorComponent const, class ActorOwnerComponent>);
+    MCAPI static void _tickRaidTriggerSystem(
+        class OptionalGlobal<struct VillageManagerComponent const>,
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<
+                class FlagComponent<struct ActorTickedFlag> const,
+                class ActorFlagComponent<struct RaidTriggerFlag> const>,
+            struct DimensionTypeComponent const,
+            struct StateVectorComponent const,
+            class ActorOwnerComponent> view
+    );
 
     // NOLINTEND
 };

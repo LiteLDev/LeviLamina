@@ -100,16 +100,16 @@ public:
     virtual void kill();
 
     // vIndex: 147, symbol: ?die@ArmorStand@@UEAAXAEBVActorDamageSource@@@Z
-    virtual void die(class ActorDamageSource const&);
+    virtual void die(class ActorDamageSource const& source);
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@ArmorStand@@UEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@ArmorStand@@UEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    virtual bool _hurt(class ActorDamageSource const& source, float, bool, bool);
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@ArmorStand@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
@@ -130,7 +130,11 @@ public:
     MCVAPI bool interactPreventDefault();
 
     // symbol: ??0ArmorStand@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI ArmorStand(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI ArmorStand(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 

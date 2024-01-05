@@ -29,10 +29,10 @@ public:
     // vIndex: 1, symbol:
     // ?createWorldTemplatePackSource@PackSourceFactory@@UEAAAEAVWorldTemplatePackSource@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVWorldTemplateManager@@@Bedrock@@@gsl@@AEBVUUID@mce@@W4PackType@@W4PackOrigin@@@Z
     virtual class WorldTemplatePackSource& createWorldTemplatePackSource(
-        Bedrock::NotNullNonOwnerPtr<class WorldTemplateManager const> const&,
-        class mce::UUID const&,
-        ::PackType,
-        ::PackOrigin
+        Bedrock::NotNullNonOwnerPtr<class WorldTemplateManager const> const& worldTemplateManager,
+        class mce::UUID const&                                               worldTemplateId,
+        ::PackType                                                           packType,
+        ::PackOrigin                                                         packOrigin
     );
 
     // vIndex: 2, symbol:
@@ -78,10 +78,10 @@ public:
 
     // vIndex: 11, symbol:
     // ?createDynamicPackagePackSource@PackSourceFactory@@UEAAAEAVInPackagePackSource@@W4PackType@@@Z
-    virtual class InPackagePackSource& createDynamicPackagePackSource(::PackType);
+    virtual class InPackagePackSource& createDynamicPackagePackSource(::PackType packType);
 
     // vIndex: 12, symbol: ?getDynamicPackagePackSource@PackSourceFactory@@UEAAPEAVInPackagePackSource@@W4PackType@@@Z
-    virtual class InPackagePackSource* getDynamicPackagePackSource(::PackType);
+    virtual class InPackagePackSource* getDynamicPackagePackSource(::PackType packType);
 
     // vIndex: 13, symbol:
     // ?setDynamicPackagePacks@PackSourceFactory@@UEAAXAEBV?$shared_ptr@VIDynamicPackagePacks@@@std@@@Z
@@ -89,7 +89,7 @@ public:
 
     // vIndex: 14, symbol:
     // ?setDynamicPackageRoot@PackSourceFactory@@UEAAXV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
-    virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string>);
+    virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string> path);
 
     // symbol: ??0PackSourceFactory@@QEAA@AEBV?$shared_ptr@VIInPackagePacks@@@std@@@Z
     MCAPI explicit PackSourceFactory(std::shared_ptr<class IInPackagePacks> const& inPackagePacks);

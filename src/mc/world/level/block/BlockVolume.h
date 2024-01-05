@@ -54,7 +54,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0BlockVolume@@QEAA@V?$buffer_span_mut@PEBVBlock@@@@HHHAEBVBlock@@H@Z
-    MCAPI BlockVolume(class buffer_span_mut<class Block const*>, int, int, int, class Block const&, int);
+    MCAPI BlockVolume(
+        class buffer_span_mut<class Block const*> buffer,
+        int                                       width,
+        int                                       height,
+        int                                       depth,
+        class Block const&                        initBlock,
+        int
+    );
 
     // symbol: ?begin@BlockVolume@@QEBA?AUBlockVolumeIter@1@XZ
     MCAPI struct BlockVolume::BlockVolumeIter begin() const;
@@ -87,10 +94,10 @@ public:
     MCAPI uint index(class Pos const& pos) const;
 
     // symbol: ?indexNoBoundsCheck@BlockVolume@@QEBAIAEBVBlockPos@@@Z
-    MCAPI uint indexNoBoundsCheck(class BlockPos const&) const;
+    MCAPI uint indexNoBoundsCheck(class BlockPos const& pos) const;
 
     // symbol: ?indexNoBoundsCheck@BlockVolume@@QEBAIAEBVPos@@@Z
-    MCAPI uint indexNoBoundsCheck(class Pos const&) const;
+    MCAPI uint indexNoBoundsCheck(class Pos const& pos) const;
 
     // symbol: ?isInBounds@BlockVolume@@QEBA_NAEBVBlockPos@@@Z
     MCAPI bool isInBounds(class BlockPos const& pos) const;

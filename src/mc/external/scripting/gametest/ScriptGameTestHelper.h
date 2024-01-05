@@ -48,12 +48,14 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0ScriptGameTestHelper@ScriptModuleGameTest@@QEAA@AEAVBaseGameTestHelper@gametest@@VWeakLifetimeScope@Scripting@@@Z
-    MCAPI ScriptGameTestHelper(class gametest::BaseGameTestHelper&, class Scripting::WeakLifetimeScope);
+    MCAPI ScriptGameTestHelper(class gametest::BaseGameTestHelper& helper, class Scripting::WeakLifetimeScope scope);
 
     // symbol:
     // ?assertBlockState@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVVec3@@V?$Closure@$$A6A_NU?$TypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@@Z$$V@4@@Z
-    MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    assertBlockState(class Vec3 const&, class Scripting::Closure<bool(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>)>);
+    MCAPI class Scripting::Result<void, struct gametest::GameTestError> assertBlockState(
+        class Vec3 const& position,
+        class Scripting::Closure<bool(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>)> fn
+    );
 
     // symbol:
     // ?assertBlockTypePresent@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBV?$variant@V?$StrongTypedObjectHandle@VScriptBlockType@ScriptModuleMinecraft@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBVVec3@@_N@Z
@@ -68,35 +70,43 @@ public:
     // symbol:
     // ?assertCanReachLocation@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEAVScriptActor@ScriptModuleMinecraft@@AEBVVec3@@_N@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    assertCanReachLocation(class ScriptModuleMinecraft::ScriptActor&, class Vec3 const&, bool);
+    assertCanReachLocation(class ScriptModuleMinecraft::ScriptActor& mob, class Vec3 const& position, bool);
 
     // symbol:
     // ?assertCondition@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Scripting::Result<void, struct gametest::GameTestError> assertCondition(bool, std::string const&);
+    MCAPI class Scripting::Result<void, struct gametest::GameTestError>
+    assertCondition(bool condition, std::string const& message);
 
     // symbol:
     // ?assertContainerContains@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVScriptItemStack@ScriptModuleMinecraft@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    assertContainerContains(class ScriptModuleMinecraft::ScriptItemStack const&, class Vec3 const&);
+    assertContainerContains(class ScriptModuleMinecraft::ScriptItemStack const& itemStack, class Vec3 const& position);
 
     // symbol:
     // ?assertContainerEmpty@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVVec3@@@Z
-    MCAPI class Scripting::Result<void, struct gametest::GameTestError> assertContainerEmpty(class Vec3 const&);
+    MCAPI class Scripting::Result<void, struct gametest::GameTestError> assertContainerEmpty(class Vec3 const& position
+    );
 
     // symbol:
     // ?assertEntityHasArmor@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H0HAEBVVec3@@_N@Z
-    MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    assertEntityHasArmor(std::string const&, int, std::string const&, int, class Vec3 const&, bool);
+    MCAPI class Scripting::Result<void, struct gametest::GameTestError> assertEntityHasArmor(
+        std::string const& actorIdentifier,
+        int                armorSlot,
+        std::string const&,
+        int,
+        class Vec3 const& position,
+        bool
+    );
 
     // symbol:
     // ?assertEntityHasComponent@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBVVec3@@_N@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    assertEntityHasComponent(std::string const&, std::string const&, class Vec3 const&, bool);
+    assertEntityHasComponent(std::string const& actorIdentifier, std::string const&, class Vec3 const& position, bool);
 
     // symbol:
     // ?assertEntityInstancePresent@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVScriptActor@ScriptModuleMinecraft@@AEBVVec3@@_N@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    assertEntityInstancePresent(class ScriptModuleMinecraft::ScriptActor const&, class Vec3 const&, bool);
+    assertEntityInstancePresent(class ScriptModuleMinecraft::ScriptActor const&, class Vec3 const& position, bool);
 
     // symbol:
     // ?assertEntityInstancePresentInArea@ScriptGameTestHelper@ScriptModuleGameTest@@QEBA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVScriptActor@ScriptModuleMinecraft@@_N@Z
@@ -106,26 +116,30 @@ public:
     // symbol:
     // ?assertEntityPresent@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@M_N@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    assertEntityPresent(std::string const&, class Vec3 const&, float, bool);
+    assertEntityPresent(std::string const& entityIdentifier, class Vec3 const& position, float distance, bool);
 
     // symbol:
     // ?assertEntityPresentInArea@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    assertEntityPresentInArea(std::string const&, bool);
+    assertEntityPresentInArea(std::string const& entityIdentifier, bool);
 
     // symbol:
     // ?assertEntityState@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVVec3@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$Closure@$$A6A_NU?$TypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@Z$$V@4@@Z
-    MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    assertEntityState(class Vec3 const&, std::string const&, class Scripting::Closure<bool(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>)>);
+    MCAPI class Scripting::Result<void, struct gametest::GameTestError> assertEntityState(
+        class Vec3 const&  position,
+        std::string const& entityIdentifier,
+        class Scripting::Closure<bool(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>)> fn
+    );
 
     // symbol:
     // ?assertEntityTouching@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@_N@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    assertEntityTouching(std::string const&, class Vec3 const&, bool);
+    assertEntityTouching(std::string const& entityIdentifier, class Vec3 const& position, bool);
 
     // symbol:
     // ?assertIsWaterlogged@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVVec3@@_N@Z
-    MCAPI class Scripting::Result<void, struct gametest::GameTestError> assertIsWaterlogged(class Vec3 const&, bool);
+    MCAPI class Scripting::Result<void, struct gametest::GameTestError>
+    assertIsWaterlogged(class Vec3 const& position, bool);
 
     // symbol:
     // ?assertItemEntityCountIs@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VScriptItemType@ScriptModuleMinecraft@@@std@@AEBVVec3@@MH@Z
@@ -147,26 +161,28 @@ public:
 
     // symbol:
     // ?assertRedstonePower@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVVec3@@H@Z
-    MCAPI class Scripting::Result<void, struct gametest::GameTestError> assertRedstonePower(class Vec3 const&, int);
+    MCAPI class Scripting::Result<void, struct gametest::GameTestError>
+    assertRedstonePower(class Vec3 const& position, int power);
 
     // symbol:
     // ?destroyBlock@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVVec3@@_N@Z
-    MCAPI class Scripting::Result<void, struct gametest::GameTestError> destroyBlock(class Vec3 const&, bool);
+    MCAPI class Scripting::Result<void, struct gametest::GameTestError>
+    destroyBlock(class Vec3 const& position, bool dropResources);
 
     // symbol:
     // ?fail@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Scripting::Result<void> fail(std::string const&);
+    MCAPI class Scripting::Result<void> fail(std::string const& error);
 
     // symbol:
     // ?failIf@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@X$$V@Scripting@@V?$Closure@$$A6AXXZ$$V@4@@Z
-    MCAPI class Scripting::Result<void> failIf(class Scripting::Closure<void(void)>);
+    MCAPI class Scripting::Result<void> failIf(class Scripting::Closure<void(void)> fn);
 
     // symbol:
     // ?getBlock@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptBlock@ScriptModuleMinecraft@@@Scripting@@UGameTestError@gametest@@@Scripting@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>,
         struct gametest::GameTestError>
-    getBlock(class Vec3 const&);
+    getBlock(class Vec3 const& position);
 
     // symbol:
     // ?getDimension@ScriptGameTestHelper@ScriptModuleGameTest@@QEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptDimension@ScriptModuleMinecraft@@@Scripting@@UGameTestError@gametest@@@Scripting@@XZ
@@ -196,7 +212,7 @@ public:
     // symbol:
     // ?idle@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Promise@XUError@Scripting@@X@Scripting@@AEAVScriptObjectFactory@4@H@Z
     MCAPI class Scripting::Promise<void, struct Scripting::Error, void>
-    idle(class Scripting::ScriptObjectFactory&, int);
+    idle(class Scripting::ScriptObjectFactory& factory, int tickDelay);
 
     // symbol:
     // ?killAllEntities@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@XZ
@@ -205,23 +221,24 @@ public:
     // symbol:
     // ?onPlayerJump@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEAVScriptActor@ScriptModuleMinecraft@@H@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    onPlayerJump(class ScriptModuleMinecraft::ScriptActor&, int);
+    onPlayerJump(class ScriptModuleMinecraft::ScriptActor& mob, int jumpAmount);
 
     // symbol:
     // ?pressButton@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVVec3@@@Z
-    MCAPI class Scripting::Result<void, struct gametest::GameTestError> pressButton(class Vec3 const&);
+    MCAPI class Scripting::Result<void, struct gametest::GameTestError> pressButton(class Vec3 const& position);
 
     // symbol:
     // ?print@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Scripting::Result<void, struct gametest::GameTestError> print(std::string const&);
+    MCAPI class Scripting::Result<void, struct gametest::GameTestError> print(std::string const& text);
 
     // symbol:
     // ?pullLever@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVVec3@@@Z
-    MCAPI class Scripting::Result<void, struct gametest::GameTestError> pullLever(class Vec3 const&);
+    MCAPI class Scripting::Result<void, struct gametest::GameTestError> pullLever(class Vec3 const& position);
 
     // symbol:
     // ?pulseRedstone@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVVec3@@H@Z
-    MCAPI class Scripting::Result<void, struct gametest::GameTestError> pulseRedstone(class Vec3 const&, int);
+    MCAPI class Scripting::Result<void, struct gametest::GameTestError>
+    pulseRedstone(class Vec3 const& position, int duration);
 
     // symbol:
     // ?relativeBlockPosition@ScriptGameTestHelper@ScriptModuleGameTest@@QEBA?AV?$Result@VVec3@@UGameTestError@gametest@@@Scripting@@AEBVVec3@@@Z
@@ -238,7 +255,7 @@ public:
     // symbol:
     // ?rotateDirection@ScriptGameTestHelper@ScriptModuleGameTest@@QEBA?AV?$Result@W4ScriptFacing@ScriptModuleMinecraft@@UGameTestError@gametest@@@Scripting@@W4ScriptFacing@ScriptModuleMinecraft@@@Z
     MCAPI class Scripting::Result<::ScriptModuleMinecraft::ScriptFacing, struct gametest::GameTestError>
-        rotateDirection(::ScriptModuleMinecraft::ScriptFacing) const;
+    rotateDirection(::ScriptModuleMinecraft::ScriptFacing direction) const;
 
     // symbol:
     // ?rotateVector@ScriptGameTestHelper@ScriptModuleGameTest@@QEBA?AV?$Result@VVec3@@UGameTestError@gametest@@@Scripting@@AEBVVec3@@@Z
@@ -246,16 +263,16 @@ public:
 
     // symbol:
     // ?runAfterDelay@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@X$$V@Scripting@@HV?$Closure@$$A6AXXZ$$V@4@@Z
-    MCAPI class Scripting::Result<void> runAfterDelay(int, class Scripting::Closure<void(void)>);
+    MCAPI class Scripting::Result<void> runAfterDelay(int, class Scripting::Closure<void(void)> fn);
 
     // symbol:
     // ?runAtTickTime@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@X$$V@Scripting@@HV?$Closure@$$A6AXXZ$$V@4@@Z
-    MCAPI class Scripting::Result<void> runAtTickTime(int, class Scripting::Closure<void(void)>);
+    MCAPI class Scripting::Result<void> runAtTickTime(int, class Scripting::Closure<void(void)> fn);
 
     // symbol:
     // ?setBlockPermutation@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVScriptBlockPermutation@ScriptModuleMinecraft@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    setBlockPermutation(class ScriptModuleMinecraft::ScriptBlockPermutation const&, class Vec3 const&);
+    setBlockPermutation(class ScriptModuleMinecraft::ScriptBlockPermutation const& block, class Vec3 const& position);
 
     // symbol:
     // ?setBlockType@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBV?$variant@V?$StrongTypedObjectHandle@VScriptBlockType@ScriptModuleMinecraft@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBVVec3@@@Z
@@ -265,61 +282,61 @@ public:
     // symbol:
     // ?setFluidContainer@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVVec3@@W4ScriptFluidType@ScriptModuleMinecraft@@@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    setFluidContainer(class Vec3 const&, ::ScriptModuleMinecraft::ScriptFluidType);
+    setFluidContainer(class Vec3 const& position, ::ScriptModuleMinecraft::ScriptFluidType type);
 
     // symbol:
     // ?setTntFuse@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEAVScriptActor@ScriptModuleMinecraft@@H@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    setTntFuse(class ScriptModuleMinecraft::ScriptActor&, int);
+    setTntFuse(class ScriptModuleMinecraft::ScriptActor&, int fuseLength);
 
     // symbol:
     // ?spawn@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@UGameTestError@gametest@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
         struct gametest::GameTestError>
-    spawn(std::string const&, class Vec3 const&);
+    spawn(std::string const& entityIdentifier, class Vec3 const& position);
 
     // symbol:
     // ?spawnAtLocation@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@UGameTestError@gametest@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
         struct gametest::GameTestError>
-    spawnAtLocation(std::string const&, class Vec3 const&);
+    spawnAtLocation(std::string const& entityIdentifier, class Vec3 const& position);
 
     // symbol:
     // ?spawnItem@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@UGameTestError@gametest@@@Scripting@@AEBVScriptItemStack@ScriptModuleMinecraft@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
         struct gametest::GameTestError>
-    spawnItem(class ScriptModuleMinecraft::ScriptItemStack const&, class Vec3 const&);
+    spawnItem(class ScriptModuleMinecraft::ScriptItemStack const& item, class Vec3 const& position);
 
     // symbol:
     // ?spawnSimulatedPlayer@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptSimulatedPlayer@ScriptModuleGameTest@@@Scripting@@UGameTestError@gametest@@@Scripting@@AEBVVec3@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4GameType@@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptSimulatedPlayer>,
         struct gametest::GameTestError>
-    spawnSimulatedPlayer(class Vec3 const&, std::string const&, ::GameType);
+    spawnSimulatedPlayer(class Vec3 const& position, std::string const& name, ::GameType);
 
     // symbol:
     // ?spawnWithoutBehaviors@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@UGameTestError@gametest@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
         struct gametest::GameTestError>
-    spawnWithoutBehaviors(std::string const&, class Vec3 const&);
+    spawnWithoutBehaviors(std::string const& entityIdentifier, class Vec3 const& position);
 
     // symbol:
     // ?spawnWithoutBehaviorsAtLocation@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@UGameTestError@gametest@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@@Z
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
         struct gametest::GameTestError>
-    spawnWithoutBehaviorsAtLocation(std::string const&, class Vec3 const&);
+    spawnWithoutBehaviorsAtLocation(std::string const& entityIdentifier, class Vec3 const& position);
 
     // symbol:
     // ?spreadFromFaceTowardDirection@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVVec3@@W4ScriptFacing@ScriptModuleMinecraft@@1@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError> spreadFromFaceTowardDirection(
-        class Vec3 const&,
+        class Vec3 const& pos,
         ::ScriptModuleMinecraft::ScriptFacing,
-        ::ScriptModuleMinecraft::ScriptFacing
+        ::ScriptModuleMinecraft::ScriptFacing direction
     );
 
     // symbol:
@@ -331,18 +348,18 @@ public:
 
     // symbol:
     // ?succeedIf@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@X$$V@Scripting@@V?$Closure@$$A6AXXZ$$V@4@@Z
-    MCAPI class Scripting::Result<void> succeedIf(class Scripting::Closure<void(void)>);
+    MCAPI class Scripting::Result<void> succeedIf(class Scripting::Closure<void(void)> fn);
 
     // symbol: ?succeedOnTick@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@X$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<void> succeedOnTick(int);
+    MCAPI class Scripting::Result<void> succeedOnTick(int tick);
 
     // symbol:
     // ?succeedOnTickWhen@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@X$$V@Scripting@@HV?$Closure@$$A6AXXZ$$V@4@@Z
-    MCAPI class Scripting::Result<void> succeedOnTickWhen(int, class Scripting::Closure<void(void)>);
+    MCAPI class Scripting::Result<void> succeedOnTickWhen(int tick, class Scripting::Closure<void(void)> fn);
 
     // symbol:
     // ?succeedWhen@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@X$$V@Scripting@@V?$Closure@$$A6AXXZ$$V@4@@Z
-    MCAPI class Scripting::Result<void> succeedWhen(class Scripting::Closure<void(void)>);
+    MCAPI class Scripting::Result<void> succeedWhen(class Scripting::Closure<void(void)> fn);
 
     // symbol:
     // ?succeedWhenBlockPresent@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBV?$variant@V?$StrongTypedObjectHandle@VScriptBlockType@ScriptModuleMinecraft@@@Scripting@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBVVec3@@_N@Z
@@ -356,32 +373,37 @@ public:
 
     // symbol:
     // ?succeedWhenEntityHasComponent@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBVVec3@@_N@Z
-    MCAPI class Scripting::Result<void>
-    succeedWhenEntityHasComponent(std::string const&, std::string const&, class Vec3 const&, bool);
+    MCAPI class Scripting::Result<void> succeedWhenEntityHasComponent(
+        std::string const& actorIdentifier,
+        std::string const& componentName,
+        class Vec3 const&  position,
+        bool
+    );
 
     // symbol:
     // ?succeedWhenEntityPresent@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@_N@Z
-    MCAPI class Scripting::Result<void> succeedWhenEntityPresent(std::string const&, class Vec3 const&, bool);
+    MCAPI class Scripting::Result<void>
+    succeedWhenEntityPresent(std::string const& entityIdentifier, class Vec3 const& position, bool);
 
     // symbol:
     // ?triggerInternalBlockEvent@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEBVVec3@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@MV?$allocator@M@std@@@7@@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    triggerInternalBlockEvent(class Vec3 const&, std::string const&, std::vector<float> const&);
+    triggerInternalBlockEvent(class Vec3 const& pos, std::string const& event, std::vector<float> const& parameters);
 
     // symbol:
     // ?until@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Promise@XUError@Scripting@@X@Scripting@@AEAVScriptObjectFactory@4@V?$Closure@$$A6AXXZ$$V@4@@Z
     MCAPI class Scripting::Promise<void, struct Scripting::Error, void>
-    until(class Scripting::ScriptObjectFactory&, class Scripting::Closure<void(void)>);
+    until(class Scripting::ScriptObjectFactory& factory, class Scripting::Closure<void(void)> fn);
 
     // symbol:
     // ?walkTo@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEAVScriptActor@ScriptModuleMinecraft@@AEBVVec3@@M@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    walkTo(class ScriptModuleMinecraft::ScriptActor&, class Vec3 const&, float);
+    walkTo(class ScriptModuleMinecraft::ScriptActor& mob, class Vec3 const& position, float speedModifier);
 
     // symbol:
     // ?walkToLocation@ScriptGameTestHelper@ScriptModuleGameTest@@QEAA?AV?$Result@XUGameTestError@gametest@@@Scripting@@AEAVScriptActor@ScriptModuleMinecraft@@AEBVVec3@@M@Z
     MCAPI class Scripting::Result<void, struct gametest::GameTestError>
-    walkToLocation(class ScriptModuleMinecraft::ScriptActor&, class Vec3 const&, float);
+    walkToLocation(class ScriptModuleMinecraft::ScriptActor& mob, class Vec3 const& position, float speedModifier);
 
     // symbol:
     // ?worldBlockPosition@ScriptGameTestHelper@ScriptModuleGameTest@@QEBA?AV?$Result@VVec3@@UGameTestError@gametest@@@Scripting@@AEBVVec3@@@Z

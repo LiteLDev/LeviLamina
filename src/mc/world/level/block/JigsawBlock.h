@@ -94,7 +94,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 60, symbol: ?canBeUsedInCommands@JigsawBlock@@UEBA_NAEBVBaseGameVersion@@@Z
-    virtual bool canBeUsedInCommands(class BaseGameVersion const&) const;
+    virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -103,8 +103,13 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 98, symbol: ?getPlacementBlock@JigsawBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    virtual class Block const& getPlacementBlock(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -125,7 +130,7 @@ public:
     virtual class Block const& getRenderBlock() const;
 
     // vIndex: 132, symbol: ?getMappedFace@JigsawBlock@@UEBAEEAEBVBlock@@@Z
-    virtual uchar getMappedFace(uchar, class Block const&) const;
+    virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
     // vIndex: 133, symbol: ?getFaceFlip@JigsawBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
     virtual ::Flip getFaceFlip(uchar face, class Block const& block) const;
@@ -140,19 +145,19 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@JigsawBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 165, symbol: ?getResourceCount@JigsawBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol: ?isInteractiveBlock@JigsawBlock@@UEBA_NXZ
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0JigsawBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI JigsawBlock(std::string const& nameId, int id);
+    MCAPI JigsawBlock(std::string const& nameId, int);
 
     // symbol: ?canAttach@JigsawBlock@@SA_NAEBVJigsawBlockInfo@@0@Z
     MCAPI static bool canAttach(class JigsawBlockInfo const& block1, class JigsawBlockInfo const& block2);

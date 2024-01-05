@@ -100,13 +100,14 @@ public:
 
     // vIndex: 102, symbol:
     // ?setIconInfo@ArrowItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const& name, int);
 
     // vIndex: 103, symbol: ?getIconInfo@ArrowItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo
+    getIconInfo(class ItemStackBase const& itemStack, int, bool inInventoryPane) const;
 
     // symbol: ??0ArrowItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ArrowItem(std::string const& name, int id);
+    MCAPI ArrowItem(std::string const& name, int);
 
     // symbol: ?applyEffect@ArrowItem@@QEBAXPEAVArrow@@AEBVItemInstance@@@Z
     MCAPI void applyEffect(class Arrow* arrow, class ItemInstance const& slotItem) const;
@@ -124,7 +125,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_potionExistsOrContentError@ArrowItem@@AEBA?AV?$shared_ptr@$$CBVPotion@@@std@@H@Z
-    MCAPI std::shared_ptr<class Potion const> _potionExistsOrContentError(int) const;
+    MCAPI std::shared_ptr<class Potion const> _potionExistsOrContentError(int aux) const;
 
     // NOLINTEND
 };

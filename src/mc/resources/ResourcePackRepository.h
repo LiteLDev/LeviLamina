@@ -93,7 +93,7 @@ public:
     virtual class ResourcePack* getResourcePackForPackId(struct PackIdVersion const& idAndVersion) const;
 
     // vIndex: 3, symbol: ?getResourcePackByUUID@ResourcePackRepository@@UEBAPEAVResourcePack@@AEBVUUID@mce@@@Z
-    virtual class ResourcePack* getResourcePackByUUID(class mce::UUID const& id) const;
+    virtual class ResourcePack* getResourcePackByUUID(class mce::UUID const&) const;
 
     // vIndex: 4, symbol:
     // ?getResourcePackForPackIdOwned@ResourcePackRepository@@UEBAPEAVResourcePack@@AEBUPackIdVersion@@@Z
@@ -136,7 +136,7 @@ public:
     virtual std::vector<struct PackIdVersion> const& getServicePacks() const;
 
     // vIndex: 15, symbol: ?addServicePacksToStack@ResourcePackRepository@@UEBAXAEAVResourcePackStack@@@Z
-    virtual void addServicePacksToStack(class ResourcePackStack&) const;
+    virtual void addServicePacksToStack(class ResourcePackStack& stack) const;
 
     // vIndex: 16, symbol:
     // ?addCachedResourcePacks@ResourcePackRepository@@UEAAXPEBV?$unordered_map@VContentIdentity@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@VContentIdentity@@@3@U?$equal_to@VContentIdentity@@@3@V?$allocator@U?$pair@$$CBVContentIdentity@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@@Z
@@ -274,12 +274,12 @@ public:
     // symbol:
     // ??0ResourcePackRepository@@QEAA@AEAVIMinecraftEventing@@AEAVPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@VIContentAccessibilityProvider@@@Bedrock@@@gsl@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@4@AEAVPackSourceFactory@@_N@Z
     MCAPI ResourcePackRepository(
-        class IMinecraftEventing&,
-        class PackManifestFactory&,
-        Bedrock::NotNullNonOwnerPtr<class IContentAccessibilityProvider> const&,
-        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&,
-        class PackSourceFactory&,
-        bool
+        class IMinecraftEventing&                                               eventing,
+        class PackManifestFactory&                                              manifestFactory,
+        Bedrock::NotNullNonOwnerPtr<class IContentAccessibilityProvider> const& contentAccessibility,
+        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&         pathManager,
+        class PackSourceFactory&                                                packSourceFactory,
+        bool                                                                    initAsync
     );
 
     // symbol:

@@ -27,14 +27,14 @@ public:
     virtual int getFilteredStringIndex() const;
 
     // vIndex: 3, symbol: ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestAction@@UEAAXAEAVBlockPalette@@_N@Z
-    virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
+    virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette& blockPalette, bool isClientSide);
 
     // vIndex: 4, symbol: ?_write@ItemStackRequestActionBeaconPayment@@MEBAXAEAVBinaryStream@@@Z
-    virtual void _write(class BinaryStream&) const = 0;
+    virtual void _write(class BinaryStream& stream) const = 0;
 
     // vIndex: 5, symbol:
     // ?_read@ItemStackRequestActionBeaconPayment@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&) = 0;
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream) = 0;
 
     // symbol: ??0ItemStackRequestAction@@QEAA@W4ItemStackRequestActionType@@@Z
     MCAPI explicit ItemStackRequestAction(::ItemStackRequestActionType);
@@ -43,7 +43,7 @@ public:
     MCAPI ::ItemStackRequestActionType getActionType() const;
 
     // symbol: ?write@ItemStackRequestAction@@QEBAXAEAVBinaryStream@@@Z
-    MCAPI void write(class BinaryStream&) const;
+    MCAPI void write(class BinaryStream& stream) const;
 
     // symbol:
     // ?getActionTypeName@ItemStackRequestAction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemStackRequestActionType@@@Z
@@ -51,7 +51,8 @@ public:
 
     // symbol:
     // ?read@ItemStackRequestAction@@SA?AV?$Result@V?$unique_ptr@VItemStackRequestAction@@U?$default_delete@VItemStackRequestAction@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestAction>> read(class ReadOnlyBinaryStream&);
+    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestAction>>
+    read(class ReadOnlyBinaryStream& stream);
 
     // NOLINTEND
 

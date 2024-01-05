@@ -15,10 +15,10 @@ public:
     MCAPI explicit EntityStorageKeyComponent(std::string const&);
 
     // symbol: ?addAdditionalSaveData@EntityStorageKeyComponent@@QEBAXAEBVActor@@AEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class Actor const&, class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class Actor const& owner, class CompoundTag& tag) const;
 
     // symbol: ?readAdditionalSaveData@EntityStorageKeyComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&);
+    MCAPI void readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag);
 
     // symbol: ??1EntityStorageKeyComponent@@QEAA@XZ
     MCAPI ~EntityStorageKeyComponent();

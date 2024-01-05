@@ -15,13 +15,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0MolangVariable@@QEAA@W4MolangVariableIndex@@VHashedString@@UMolangScriptArg@@@Z
-    MCAPI MolangVariable(::MolangVariableIndex, class HashedString, struct MolangScriptArg);
+    MCAPI MolangVariable(::MolangVariableIndex index, class HashedString name, struct MolangScriptArg value);
 
     // symbol: ??1MolangVariable@@QEAA@XZ
     MCAPI ~MolangVariable();
 
     // symbol: ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@AEBVHashedString@@@Z
-    MCAPI static ::MolangVariableIndex getVariableIndex(class HashedString const&);
+    MCAPI static ::MolangVariableIndex getVariableIndex(class HashedString const& name);
 
     // symbol: ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@_K@Z
     MCAPI static ::MolangVariableIndex getVariableIndex(uint64);
@@ -30,7 +30,7 @@ public:
     MCAPI static ::MolangVariableIndex getVariableIndex(uint64, char const*, bool);
 
     // symbol: ?getVariableName@MolangVariable@@SAAEBVHashedString@@W4MolangVariableIndex@@@Z
-    MCAPI static class HashedString const& getVariableName(::MolangVariableIndex);
+    MCAPI static class HashedString const& getVariableName(::MolangVariableIndex index);
 
     // symbol: ?initVariableMaps@MolangVariable@@SAXXZ
     MCAPI static void initVariableMaps();

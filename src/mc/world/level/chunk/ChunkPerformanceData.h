@@ -49,7 +49,7 @@ public:
     MCAPI ChunkPerformanceData();
 
     // symbol: ?recordLoadedChunk@ChunkPerformanceData@@QEAAXAEBVLevelChunk@@@Z
-    MCAPI void recordLoadedChunk(class LevelChunk const&);
+    MCAPI void recordLoadedChunk(class LevelChunk const& chunk);
 
     // symbol: ?resetAll@ChunkPerformanceData@@QEAAXXZ
     MCAPI void resetAll();

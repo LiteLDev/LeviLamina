@@ -30,7 +30,7 @@ public:
     virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 3, symbol: ?postLoadItems@ItemUseInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
-    virtual void postLoadItems(class BlockPalette&, bool);
+    virtual void postLoadItems(class BlockPalette& blockPalette, bool isClientSide);
 
     // vIndex: 4, symbol: ?handle@ItemUseInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
     virtual ::InventoryTransactionError handle(class Player& player, bool isSenderAuthority) const;
@@ -40,7 +40,7 @@ public:
     virtual void onTransactionError(class Player& player, ::InventoryTransactionError error) const;
 
     // symbol: ??0ItemUseInventoryTransaction@@QEAA@AEBV0@@Z
-    MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const& transaction);
+    MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const&);
 
     // symbol: ??4ItemUseInventoryTransaction@@QEAAAEAV0@AEBV0@@Z
     MCAPI class ItemUseInventoryTransaction& operator=(class ItemUseInventoryTransaction const&);
@@ -49,13 +49,13 @@ public:
     MCAPI void resendBlocksAroundArea(class Player& player, class BlockPos const& pos, uchar facing) const;
 
     // symbol: ?resendPlayerState@ItemUseInventoryTransaction@@QEBAXAEAVPlayer@@@Z
-    MCAPI void resendPlayerState(class Player&) const;
+    MCAPI void resendPlayerState(class Player& player) const;
 
     // symbol: ?setSelectedItem@ItemUseInventoryTransaction@@QEAAAEAV1@AEBVItemStack@@@Z
     MCAPI class ItemUseInventoryTransaction& setSelectedItem(class ItemStack const& item);
 
     // symbol: ?setTargetBlock@ItemUseInventoryTransaction@@QEAAAEAV1@AEBVBlock@@@Z
-    MCAPI class ItemUseInventoryTransaction& setTargetBlock(class Block const& targetBlock);
+    MCAPI class ItemUseInventoryTransaction& setTargetBlock(class Block const&);
 
     // NOLINTEND
 

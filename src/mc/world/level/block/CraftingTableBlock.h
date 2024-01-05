@@ -127,7 +127,7 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@CraftingTableBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -136,7 +136,7 @@ public:
     MCVAPI bool isCraftingBlock() const;
 
     // symbol: ??0CraftingTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CraftingTableBlock(std::string const&, int);
+    MCAPI CraftingTableBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

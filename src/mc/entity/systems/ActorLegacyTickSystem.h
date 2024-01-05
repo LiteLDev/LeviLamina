@@ -21,11 +21,12 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?tick@ActorLegacyTickSystem@@UEAAXAEAVEntityRegistry@@@Z
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry& registry);
 
     // symbol:
     // ?tickActorLegacyTickSystem@ActorLegacyTickSystem@@SAXAEAVEntityContext@@AEAVActor@@AEAVActorTickNeededComponent@@@Z
-    MCAPI static void tickActorLegacyTickSystem(class EntityContext&, class Actor&, class ActorTickNeededComponent&);
+    MCAPI static void
+    tickActorLegacyTickSystem(class EntityContext& entity, class Actor& actor, class ActorTickNeededComponent&);
 
     // NOLINTEND
 };

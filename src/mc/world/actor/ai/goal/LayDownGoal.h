@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0LayDownGoal@@QEAA@AEAVMob@@HH@Z
-    MCAPI LayDownGoal(class Mob& mob, int interval, int endInterval);
+    MCAPI LayDownGoal(class Mob& mob, int, int);
 
     // NOLINTEND
 };

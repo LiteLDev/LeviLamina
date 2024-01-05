@@ -22,8 +22,12 @@ public:
 
     // vIndex: 1, symbol:
     // ?place@SnapToSurfaceFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-    virtual std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    virtual std::optional<class BlockPos> place(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    pos,
+        class Random&            random,
+        class RenderParams&      renderParams
+    ) const;
 
     // vIndex: 2, symbol:
     // ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -39,7 +43,7 @@ public:
     // symbol:
     // ?_findSnapPos@SnapToSurfaceFeature@@AEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@W4Surface@1@@Z
     MCAPI std::optional<class BlockPos>
-          _findSnapPos(class IBlockWorldGenAPI&, class BlockPos const&, ::SnapToSurfaceFeature::Surface) const;
+    _findSnapPos(class IBlockWorldGenAPI& target, class BlockPos const& pos, ::SnapToSurfaceFeature::Surface) const;
 
     // NOLINTEND
 };

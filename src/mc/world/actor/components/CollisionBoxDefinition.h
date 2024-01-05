@@ -20,19 +20,20 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initialize@CollisionBoxDefinition@@QEBAXAEAVEntityContext@@AEAVCollisionBoxComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class CollisionBoxComponent&) const;
+    MCAPI void initialize(class EntityContext&, class CollisionBoxComponent& component) const;
 
     // symbol: ?setHeight@CollisionBoxDefinition@@QEAAXAEBM@Z
-    MCAPI void setHeight(float const&);
+    MCAPI void setHeight(float const& height);
 
     // symbol: ?setWidth@CollisionBoxDefinition@@QEAAXAEBM@Z
-    MCAPI void setWidth(float const&);
+    MCAPI void setWidth(float const& width);
 
     // symbol:
     // ?buildSchema@CollisionBoxDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VCollisionBoxDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CollisionBoxDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CollisionBoxDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

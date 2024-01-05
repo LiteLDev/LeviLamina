@@ -12,10 +12,10 @@ public:
     virtual ~BytesDataOutput() = default;
 
     // vIndex: 1, symbol: ?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    virtual void writeString(std::string_view);
+    virtual void writeString(std::string_view v);
 
     // vIndex: 2, symbol: ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    virtual void writeLongString(std::string_view);
+    virtual void writeLongString(std::string_view v);
 
     // vIndex: 3, symbol: ?writeFloat@BytesDataOutput@@UEAAXM@Z
     virtual void writeFloat(float);

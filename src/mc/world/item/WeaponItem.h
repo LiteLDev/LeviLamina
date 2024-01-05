@@ -69,8 +69,11 @@ public:
     ) const;
 
     // vIndex: 47, symbol: ?isValidRepairItem@WeaponItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
-    virtual bool
-    isValidRepairItem(class ItemStackBase const&, class ItemStackBase const&, class BaseGameVersion const&) const;
+    virtual bool isValidRepairItem(
+        class ItemStackBase const&,
+        class ItemStackBase const&   repairItem,
+        class BaseGameVersion const& baseGameVersion
+    ) const;
 
     // vIndex: 48, symbol: ?getEnchantSlot@WeaponItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
@@ -106,7 +109,7 @@ public:
     virtual float getDestroySpeed(class ItemStackBase const& itemStack, class Block const& block) const;
 
     // vIndex: 75, symbol: ?hurtActor@WeaponItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
+    virtual void hurtActor(class ItemStack& itemStack, class Actor& actor, class Mob& attacker) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();

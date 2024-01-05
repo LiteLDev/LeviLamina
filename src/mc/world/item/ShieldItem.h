@@ -52,11 +52,19 @@ public:
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@ShieldItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& stack,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
     // vIndex: 47, symbol: ?isValidRepairItem@ShieldItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
-    virtual bool
-    isValidRepairItem(class ItemStackBase const&, class ItemStackBase const&, class BaseGameVersion const&) const;
+    virtual bool isValidRepairItem(
+        class ItemStackBase const&   source,
+        class ItemStackBase const&   repairItem,
+        class BaseGameVersion const& baseGameVersion
+    ) const;
 
     // vIndex: 48, symbol: ?getEnchantSlot@ShieldItem@@UEBAHXZ
     virtual int getEnchantSlot() const;
@@ -83,13 +91,14 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@ShieldItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& itemStack, class Player&) const;
 
     // vIndex: 71, symbol: ?dispense@ShieldItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 75, symbol: ?hurtActor@ShieldItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
+    virtual void hurtActor(class ItemStack& itemStack, class Actor& actor, class Mob& attacker) const;
 
     // vIndex: 81, symbol:
     // ?buildDescriptionId@ShieldItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
@@ -143,7 +152,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0ShieldItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ShieldItem(std::string const& name, int id);
+    MCAPI ShieldItem(std::string const& name, int);
 
     // symbol: ?playBlockSound@ShieldItem@@QEBAXPEAVPlayer@@@Z
     MCAPI void playBlockSound(class Player* player) const;
@@ -168,8 +177,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_getInHandUpdateType@ShieldItem@@AEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
-    MCAPI ::InHandUpdateType
-    _getInHandUpdateType(class Player const&, class ItemStack const&, class ItemStack const&, bool, bool) const;
+    MCAPI ::InHandUpdateType _getInHandUpdateType(
+        class Player const&    player,
+        class ItemStack const& oldItem,
+        class ItemStack const& newItem,
+        bool,
+        bool slotChanged
+    ) const;
 
     // NOLINTEND
 };

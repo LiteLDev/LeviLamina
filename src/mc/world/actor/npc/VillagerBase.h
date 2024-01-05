@@ -92,7 +92,11 @@ public:
     MCVAPI bool interactPreventDefault();
 
     // symbol: ??0VillagerBase@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI VillagerBase(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI VillagerBase(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?consumeLoveFood@VillagerBase@@QEAAXXZ
     MCAPI void consumeLoveFood();

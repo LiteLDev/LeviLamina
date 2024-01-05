@@ -78,7 +78,7 @@ public:
     virtual void releaseUsing(class ItemStack& itemStack, class Player* player, int durationLeft) const;
 
     // vIndex: 75, symbol: ?hurtActor@RangedWeaponItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
+    virtual void hurtActor(class ItemStack& itemInstance, class Actor& actor, class Mob& attacker) const;
 
     // vIndex: 79, symbol: ?mineBlock@RangedWeaponItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
@@ -95,7 +95,7 @@ public:
     getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
 
     // symbol: ??0RangedWeaponItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI RangedWeaponItem(std::string const& name, int id);
+    MCAPI RangedWeaponItem(std::string const& name, int);
 
     // symbol: ?getLaunchPower@RangedWeaponItem@@QEBAMHHH@Z
     MCAPI float getLaunchPower(int durationLeft, int maxDrawDuration, int maxUseDuration) const;

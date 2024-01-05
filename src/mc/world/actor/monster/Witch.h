@@ -64,10 +64,10 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 63, symbol: ?canAttack@Witch@@UEBA_NPEAVActor@@_N@Z
-    virtual bool canAttack(class Actor* entity, bool allowInvulnerable) const;
+    virtual bool canAttack(class Actor* actor, bool allowInvulnerable) const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@Witch@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -88,10 +88,14 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 198, symbol: ?getDamageAfterEnchantReduction@Witch@@MEBAMAEBVActorDamageSource@@M@Z
-    virtual float getDamageAfterEnchantReduction(class ActorDamageSource const&, float) const;
+    virtual float getDamageAfterEnchantReduction(class ActorDamageSource const& source, float damage) const;
 
     // symbol: ??0Witch@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Witch(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Witch(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?preAiStep@Witch@@QEAAXXZ
     MCAPI void preAiStep();

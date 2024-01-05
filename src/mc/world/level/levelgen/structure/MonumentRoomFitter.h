@@ -15,7 +15,7 @@ public:
     virtual ~MonumentRoomFitter() = default;
 
     // vIndex: 1, symbol: ?fits@FitDoubleXRoom@@UEBA_NAEBVRoomDefinition@@@Z
-    virtual bool fits(class RoomDefinition const&) const = 0;
+    virtual bool fits(class RoomDefinition const& definition) const = 0;
 
     // vIndex: 2, symbol:
     // ?create@FitDoubleXRoom@@UEAA?AV?$unique_ptr@VOceanMonumentPiece@@U?$default_delete@VOceanMonumentPiece@@@std@@@std@@AEAHV?$shared_ptr@VRoomDefinition@@@3@AEAVRandom@@@Z

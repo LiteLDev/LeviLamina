@@ -27,8 +27,11 @@ public:
 
     // symbol:
     // ?applyPlayerPermissionsFromDisk@PermissionsFile@@QEAAXAEAVPlayer@@AEBVUserEntityIdentifierComponent@@W4CommandPermissionLevel@@@Z
-    MCAPI void
-    applyPlayerPermissionsFromDisk(class Player&, class UserEntityIdentifierComponent const&, ::CommandPermissionLevel);
+    MCAPI void applyPlayerPermissionsFromDisk(
+        class Player& player,
+        class UserEntityIdentifierComponent const&,
+        ::CommandPermissionLevel opCommandPermissionLevel
+    );
 
     // symbol:
     // ?getPermissions@PermissionsFile@@QEBAAEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PlayerPermissionLevel@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PlayerPermissionLevel@@@std@@@2@@std@@XZ
@@ -44,7 +47,8 @@ public:
 
     // symbol:
     // ?persistPlayerPermissionsToDisk@PermissionsFile@@QEAAXAEBVUserEntityIdentifierComponent@@W4PlayerPermissionLevel@@@Z
-    MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const&, ::PlayerPermissionLevel);
+    MCAPI void
+    persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const&, ::PlayerPermissionLevel permission);
 
     // symbol:
     // ?persistPlayerPermissionsToDisk@PermissionsFile@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PlayerPermissionLevel@@@Z

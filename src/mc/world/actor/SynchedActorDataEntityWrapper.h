@@ -18,7 +18,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0SynchedActorDataEntityWrapper@@QEAA@AEAVEntityContext@@@Z
-    MCAPI explicit SynchedActorDataEntityWrapper(class EntityContext&);
+    MCAPI explicit SynchedActorDataEntityWrapper(class EntityContext& entity);
 
     // symbol: ?getCompoundTag@SynchedActorDataEntityWrapper@@QEBAAEBVCompoundTag@@G@Z
     MCAPI class CompoundTag const& getCompoundTag(ushort) const;
@@ -42,7 +42,7 @@ public:
     MCAPI short getShort(ushort) const;
 
     // symbol: ?getStatusFlag@SynchedActorDataEntityWrapper@@QEBA_NW4ActorFlags@@@Z
-    MCAPI bool getStatusFlag(::ActorFlags) const;
+    MCAPI bool getStatusFlag(::ActorFlags flag) const;
 
     // symbol:
     // ?getString@SynchedActorDataEntityWrapper@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
@@ -72,7 +72,7 @@ public:
     MCAPI class SynchedActorDataReader reader() const;
 
     // symbol: ?setStatusFlag@SynchedActorDataEntityWrapper@@QEAAXW4ActorFlags@@_N@Z
-    MCAPI void setStatusFlag(::ActorFlags, bool);
+    MCAPI void setStatusFlag(::ActorFlags flag, bool value);
 
     // symbol: ?writer@SynchedActorDataEntityWrapper@@QEAA?AVSynchedActorDataWriter@@XZ
     MCAPI class SynchedActorDataWriter writer();

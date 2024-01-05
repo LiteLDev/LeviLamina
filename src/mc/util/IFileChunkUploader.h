@@ -44,8 +44,12 @@ public:
 
     // vIndex: 6, symbol:
     // ?uploadStream@IFileChunkUploader@@UEAAXAEBUFileInfo@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4UploadStreamResult@IFileChunkUploader@@@Z@4@@Z
-    virtual void
-    uploadStream(struct FileInfo const&, uint64, std::string const&, std::function<void(::IFileChunkUploader::UploadStreamResult)>);
+    virtual void uploadStream(
+        struct FileInfo const&                                        file,
+        uint64                                                        streamSize,
+        std::string const&                                            boundary,
+        std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
+    );
 
     // vIndex: 7, symbol: __unk_vfn_7
     virtual void __unk_vfn_7() = 0;

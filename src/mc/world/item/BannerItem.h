@@ -48,7 +48,7 @@ public:
     virtual void __unk_vfn_39();
 
     // vIndex: 40, symbol: ?isWearableThroughLootTable@BannerItem@@UEBA_NPEBVCompoundTag@@@Z
-    virtual bool isWearableThroughLootTable(class CompoundTag const*) const;
+    virtual bool isWearableThroughLootTable(class CompoundTag const* userData) const;
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@BannerItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
@@ -96,15 +96,16 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@BannerItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol: ??0BannerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BannerItem(std::string const& name, int id_);
+    MCAPI BannerItem(std::string const& name, int id);
 
     // symbol:
     // ?getPatternAndColorPairsFromItemStack@BannerItem@@SA?AV?$vector@U?$pair@V?$not_null@PEBVBannerPattern@@@gsl@@W4ItemColor@@@std@@V?$allocator@U?$pair@V?$not_null@PEBVBannerPattern@@@gsl@@W4ItemColor@@@std@@@2@@std@@AEBVItemStackBase@@@Z
     MCAPI static std::vector<std::pair<gsl::not_null<class BannerPattern const*>, ::ItemColor>>
-    getPatternAndColorPairsFromItemStack(class ItemStackBase const&);
+    getPatternAndColorPairsFromItemStack(class ItemStackBase const& itemStack);
 
     // NOLINTEND
 };

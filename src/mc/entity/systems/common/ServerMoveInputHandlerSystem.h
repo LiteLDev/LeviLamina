@@ -16,7 +16,8 @@ public:
 
     // symbol:
     // ?digestPlayerInputPacket@ServerMoveInputHandlerSystem@@SAXAEAUMoveInputComponent@@AEBVPlayerAuthInputPacket@@@Z
-    MCAPI static void digestPlayerInputPacket(struct MoveInputComponent&, class PlayerAuthInputPacket const&);
+    MCAPI static void
+    digestPlayerInputPacket(struct MoveInputComponent& input, class PlayerAuthInputPacket const& packet);
 
     // NOLINTEND
 };

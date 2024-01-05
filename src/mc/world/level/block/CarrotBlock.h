@@ -143,7 +143,7 @@ public:
     getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
 
     // vIndex: 165, symbol: ?getResourceCount@CarrotBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const&, int bonusLootLevel) const;
 
     // vIndex: 170, symbol: ?getBaseSeed@CarrotBlock@@UEBA?BVItemInstance@@XZ
     virtual class ItemInstance const getBaseSeed() const;
@@ -152,10 +152,10 @@ public:
     virtual class ItemInstance const getBaseCrop() const;
 
     // vIndex: 173, symbol: ?getCropNum@CarrotBlock@@UEBAHAEAVRandomize@@HH@Z
-    virtual int getCropNum(class Randomize& random, int growth, int bonusLootLevel) const;
+    virtual int getCropNum(class Randomize& randomize, int growth, int bonusLootLevel) const;
 
     // symbol: ??0CarrotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CarrotBlock(std::string const& nameId, int id);
+    MCAPI CarrotBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

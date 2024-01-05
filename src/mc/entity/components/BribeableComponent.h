@@ -40,10 +40,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_bribe@BribeableComponent@@AEAAXAEAVActor@@AEAVPlayer@@@Z
-    MCAPI void _bribe(class Actor&, class Player&);
+    MCAPI void _bribe(class Actor& owner, class Player& player);
 
     // symbol: ?_canBribe@BribeableComponent@@AEAA_NAEBVItemStack@@@Z
-    MCAPI bool _canBribe(class ItemStack const&);
+    MCAPI bool _canBribe(class ItemStack const& item);
 
     // NOLINTEND
 };

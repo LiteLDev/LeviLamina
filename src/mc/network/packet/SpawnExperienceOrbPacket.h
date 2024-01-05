@@ -34,13 +34,13 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@SpawnExperienceOrbPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0SpawnExperienceOrbPacket@@QEAA@XZ
     MCAPI SpawnExperienceOrbPacket();
 
     // symbol: ??0SpawnExperienceOrbPacket@@QEAA@AEBVVec3@@H@Z
-    MCAPI SpawnExperienceOrbPacket(class Vec3 const& pos, int count);
+    MCAPI SpawnExperienceOrbPacket(class Vec3 const& pos, int xpValue);
 
     // NOLINTEND
 };

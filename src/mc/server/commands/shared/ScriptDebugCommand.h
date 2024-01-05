@@ -33,21 +33,32 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_handleDebuggerAttach@ScriptDebugCommand@@IEBAXPEAVIScriptDebugger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DebuggerAction@1@1GAEAVCommandOutput@@@Z
-    MCAPI void
-    _handleDebuggerAttach(class IScriptDebugger*, std::string const&, ::ScriptDebugCommand::DebuggerAction, std::string const&, ushort, class CommandOutput&)
-        const;
+    MCAPI void _handleDebuggerAttach(
+        class IScriptDebugger*,
+        std::string const&,
+        ::ScriptDebugCommand::DebuggerAction action,
+        std::string const&                   host,
+        ushort                               port,
+        class CommandOutput&                 output
+    ) const;
 
     // symbol:
     // ?_handleProfilerAction@ScriptDebugCommand@@IEBAXPEAVIScriptDebugger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ProfilerAction@1@AEAVCommandOutput@@@Z
-    MCAPI void
-    _handleProfilerAction(class IScriptDebugger*, std::string const&, ::ScriptDebugCommand::ProfilerAction, class CommandOutput&)
-        const;
+    MCAPI void _handleProfilerAction(
+        class IScriptDebugger*,
+        std::string const&,
+        ::ScriptDebugCommand::ProfilerAction action,
+        class CommandOutput&                 output
+    ) const;
 
     // symbol:
     // ?_handleWatchdogAction@ScriptDebugCommand@@IEBAXPEAVIScriptDebugger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4WatchdogAction@1@AEAVCommandOutput@@@Z
-    MCAPI void
-    _handleWatchdogAction(class IScriptDebugger*, std::string const&, ::ScriptDebugCommand::WatchdogAction, class CommandOutput&)
-        const;
+    MCAPI void _handleWatchdogAction(
+        class IScriptDebugger*,
+        std::string const&,
+        ::ScriptDebugCommand::WatchdogAction action,
+        class CommandOutput&                 output
+    ) const;
 
     // NOLINTEND
 };

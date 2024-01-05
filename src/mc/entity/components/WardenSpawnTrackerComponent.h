@@ -17,7 +17,7 @@ public:
     MCAPI WardenSpawnTrackerComponent();
 
     // symbol: ?addAdditionalSaveData@WardenSpawnTrackerComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?canIncreaseThreatLevel@WardenSpawnTrackerComponent@@QEBA_NXZ
     MCAPI bool canIncreaseThreatLevel() const;
@@ -27,7 +27,8 @@ public:
 
     // symbol:
     // ?readAdditionalSaveData@WardenSpawnTrackerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?tick@WardenSpawnTrackerComponent@@QEAAXXZ
     MCAPI void tick();
@@ -40,7 +41,7 @@ public:
     MCAPI static std::optional<::Puv::Legacy::LevelSoundEvent> getSoundEventForThreatLevel(int);
 
     // symbol: ?hasNearbyWarden@WardenSpawnTrackerComponent@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool hasNearbyWarden(class BlockSource&, class BlockPos const&);
+    MCAPI static bool hasNearbyWarden(class BlockSource& region, class BlockPos const& pos);
 
     // symbol: ?MAX_THREAT_LEVEL@WardenSpawnTrackerComponent@@2HB
     MCAPI static int const MAX_THREAT_LEVEL;

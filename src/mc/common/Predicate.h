@@ -5,7 +5,7 @@
 namespace Predicate {
 // NOLINTBEGIN
 // symbol: ?_calulatePositionalChance@Predicate@@YA_NMMHHHM@Z
-MCAPI bool _calulatePositionalChance(float, float, int, int, int, float);
+MCAPI bool _calulatePositionalChance(float, float, int, int maxDist, int, float);
 // NOLINTEND
 
 }; // namespace Predicate

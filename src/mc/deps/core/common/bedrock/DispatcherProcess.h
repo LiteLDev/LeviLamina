@@ -28,7 +28,7 @@ public:
     // vIndex: 1, symbol:
     // ?send@DispatchQueue@Http@Bedrock@@UEAA?AV?$shared_ptr@V?$IAsyncResult@VResponse@Http@Bedrock@@@Threading@Bedrock@@@std@@$$QEAVRequest@23@@Z
     virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
-    send(class Bedrock::Http::Request&&) = 0;
+    send(class Bedrock::Http::Request&& request) = 0;
 
     // vIndex: 2, symbol: ?initialize@DispatcherProcess@Http@Bedrock@@UEAAXXZ
     virtual void initialize();

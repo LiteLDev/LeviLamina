@@ -168,7 +168,7 @@ public:
 
     // vIndex: 45, symbol:
     // ?onEvent@?$EventListenerDispatcher@VPlayerEventListener@@@@MEAA?AW4EventResult@@AEBUPlayerNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct PlayerNotificationEvent const&);
+    virtual ::EventResult onEvent(struct PlayerNotificationEvent const& event);
 
     // vIndex: 46, symbol: __unk_vfn_46
     virtual void __unk_vfn_46();
@@ -211,8 +211,10 @@ public:
 
     // symbol:
     // ??0ScriptPlayerEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldAfterEvents@ScriptModuleMinecraft@@@3@@Z
-    MCAPI
-    ScriptPlayerEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldAfterEvents>);
+    MCAPI ScriptPlayerEventListener(
+        class Scripting::WeakLifetimeScope const&                                                 scope,
+        struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptWorldAfterEvents> handle
+    );
 
     // NOLINTEND
 };

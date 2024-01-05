@@ -127,14 +127,15 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@GildedBlackstoneBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance
+    getResourceItem(class Randomize& randomize, class Block const& block, int bonusLootLevel) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@GildedBlackstoneBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-    virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
+    virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol:
     // ??0GildedBlackstoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI GildedBlackstoneBlock(std::string const&, int, class Material const&);
+    MCAPI GildedBlackstoneBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

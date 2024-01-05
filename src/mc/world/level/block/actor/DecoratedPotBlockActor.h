@@ -19,7 +19,7 @@ public:
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
 
     // symbol: ?_onUpdatePacket@DecoratedPotBlockActor@@EEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-    MCVAPI void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ?getContainerSize@DecoratedPotBlockActor@@UEBAHXZ
     MCVAPI int getContainerSize() const;
@@ -31,10 +31,10 @@ public:
     MCVAPI int getMaxStackSize() const;
 
     // symbol: ?load@DecoratedPotBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCVAPI void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    MCVAPI void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?save@DecoratedPotBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    MCVAPI bool save(class CompoundTag&) const;
+    MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?serverInitItemStackIds@DecoratedPotBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
     MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
@@ -46,7 +46,7 @@ public:
     MCVAPI void tick(class BlockSource&);
 
     // symbol: ??0DecoratedPotBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit DecoratedPotBlockActor(class BlockPos const&);
+    MCAPI explicit DecoratedPotBlockActor(class BlockPos const& pos);
 
     // symbol:
     // ?getSherdNames@DecoratedPotBlockActor@@QEBAAEBV?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$03@std@@XZ
@@ -63,7 +63,7 @@ public:
     MCAPI static void saveSherdsToTag(class CompoundTag&, std::array<std::string, 4> const&, bool);
 
     // symbol: ?tryGet@DecoratedPotBlockActor@@SAPEAV1@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static class DecoratedPotBlockActor* tryGet(class BlockSource&, class BlockPos const&);
+    MCAPI static class DecoratedPotBlockActor* tryGet(class BlockSource& region, class BlockPos const& pos);
 
     // symbol:
     // ?tryGetSherdsFromTag@DecoratedPotBlockActor@@SA?AV?$optional@V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$03@std@@@std@@AEBVCompoundTag@@@Z

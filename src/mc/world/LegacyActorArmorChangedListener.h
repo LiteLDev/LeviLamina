@@ -21,10 +21,10 @@ public:
     virtual ~LegacyActorArmorChangedListener() = default;
 
     // symbol: ?containerContentChanged@LegacyActorArmorChangedListener@@QEAAXAEAVActor@@@Z
-    MCAPI void containerContentChanged(class Actor&);
+    MCAPI void containerContentChanged(class Actor& actor);
 
     // symbol: ?initializeEntity@LegacyActorArmorChangedListener@@SAXAEAVEntityContext@@@Z
-    MCAPI static void initializeEntity(class EntityContext&);
+    MCAPI static void initializeEntity(class EntityContext& entity);
 
     // NOLINTEND
 };

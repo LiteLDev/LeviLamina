@@ -15,7 +15,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?onEvent@LevelEventListener@@UEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z
-    MCVAPI ::EventResult onEvent(struct LevelNotificationEvent const&);
+    MCVAPI ::EventResult onEvent(struct LevelNotificationEvent const& event);
 
     // symbol: ?onLevelAddedPlayer@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
     MCVAPI ::EventResult onLevelAddedPlayer(class Level& level, class Player& player);

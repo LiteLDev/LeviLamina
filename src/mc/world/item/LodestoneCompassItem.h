@@ -77,18 +77,20 @@ public:
     virtual void __unk_vfn_99();
 
     // vIndex: 105, symbol: ?getAnimationFrameFor@LodestoneCompassItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-    virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
+    virtual int
+    getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
 
     // vIndex: 117, symbol:
     // ?_useOn@LodestoneCompassItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& itemStack, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol: ??0LodestoneCompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LodestoneCompassItem(std::string const&, int);
+    MCAPI LodestoneCompassItem(std::string const& name, int);
 
     // symbol: ?linkCompassToLodestone@LodestoneCompassItem@@SA_NAEAVItemStack@@AEAVBlockSource@@VBlockPos@@@Z
-    MCAPI static bool linkCompassToLodestone(class ItemStack&, class BlockSource&, class BlockPos);
+    MCAPI static bool linkCompassToLodestone(class ItemStack& itemStack, class BlockSource& region, class BlockPos pos);
 
     // NOLINTEND
 
@@ -97,7 +99,7 @@ public:
     // symbol:
     // ?_tryGetOrAddComponent@LodestoneCompassItem@@CAPEAVLodestoneCompassComponent@@PEAVTrackingRecord@PositionTrackingDB@@AEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@@Z
     MCAPI static class LodestoneCompassComponent*
-    _tryGetOrAddComponent(class PositionTrackingDB::TrackingRecord*, std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const&);
+    _tryGetOrAddComponent(class PositionTrackingDB::TrackingRecord* record, std::variant<struct ActorUniqueID, std::pair<class BlockPos, DimensionType>> const&);
 
     // NOLINTEND
 };

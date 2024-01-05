@@ -18,8 +18,12 @@ public:
 
     // symbol:
     // ?setValuesToSynchedActorData@SeatDescriptionUtility@@SAXVSynchedActorDataWriter@@AEBVVec3@@AEBUSeatDescription@@M@Z
-    MCAPI static void
-    setValuesToSynchedActorData(class SynchedActorDataWriter, class Vec3 const&, struct SeatDescription const&, float);
+    MCAPI static void setValuesToSynchedActorData(
+        class SynchedActorDataWriter,
+        class Vec3 const&             offset,
+        struct SeatDescription const& seat,
+        float
+    );
 
     // NOLINTEND
 };

@@ -10,12 +10,12 @@ namespace VillageManagerComponentUtils {
 // NOLINTBEGIN
 // symbol:
 // ?addVillageManager@VillageManagerComponentUtils@@YAXAEAUVillageManagerComponent@@V?$AutomaticID@VDimension@@H@@PEAVIVillageManager@@@Z
-MCAPI void addVillageManager(struct VillageManagerComponent&, DimensionType, class IVillageManager*);
+MCAPI void addVillageManager(struct VillageManagerComponent&, DimensionType type, class IVillageManager* manager);
 
 // symbol:
 // ?getVillageManager@VillageManagerComponentUtils@@YA?AV?$NonOwnerPointer@VIVillageManager@@@Bedrock@@AEBUVillageManagerComponent@@V?$AutomaticID@VDimension@@H@@@Z
 MCAPI class Bedrock::NonOwnerPointer<class IVillageManager>
-getVillageManager(struct VillageManagerComponent const&, DimensionType);
+getVillageManager(struct VillageManagerComponent const&, DimensionType type);
 // NOLINTEND
 
 }; // namespace VillageManagerComponentUtils

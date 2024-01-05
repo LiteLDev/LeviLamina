@@ -29,18 +29,18 @@ public:
     // symbol:
     // ??0NearestPrioritizedAttackableTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MH_NH22HM2H2@Z
     MCAPI NearestPrioritizedAttackableTargetGoal(
-        class Mob&,
-        std::vector<struct MobDescriptor> const&,
-        float,
+        class Mob&                               mob,
+        std::vector<struct MobDescriptor> const& targetTypes,
+        float                                    within,
         int,
-        bool,
-        int,
-        bool,
-        bool,
-        int,
-        float,
-        bool,
-        int,
+        bool  mustSee,
+        int   mustSeeForgetTicks,
+        bool  mustReach,
+        bool  reselectTargets,
+        int   scanInterval,
+        float targetSearchHeight,
+        bool  attackOwner,
+        int   persistTargetTicks,
         bool
     );
 

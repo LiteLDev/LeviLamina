@@ -16,7 +16,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?onLanguageChanged@NpcI18nObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void onLanguageChanged(std::string const&, bool);
+    virtual void onLanguageChanged(std::string const& code, bool languageSystemInitializing);
 
     // NOLINTEND
 };

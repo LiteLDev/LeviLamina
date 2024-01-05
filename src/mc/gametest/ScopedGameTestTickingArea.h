@@ -13,7 +13,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0ScopedGameTestTickingArea@@QEAA@AEAVDimension@@AEBVBoundingBox@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ScopedGameTestTickingArea(class Dimension&, class BoundingBox const&, std::string const&);
+    MCAPI ScopedGameTestTickingArea(
+        class Dimension&         dimension,
+        class BoundingBox const& bounds,
+        std::string const&       structureName
+    );
 
     // symbol: ?areChunksLoaded@ScopedGameTestTickingArea@@QEAA_NXZ
     MCAPI bool areChunksLoaded();

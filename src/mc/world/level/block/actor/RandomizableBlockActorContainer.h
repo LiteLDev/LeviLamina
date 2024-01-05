@@ -19,10 +19,10 @@ public:
     MCVAPI void dropContents(class BlockSource& region, class Vec3 const& pos, bool randomizeDrop);
 
     // symbol: ?initializeContainerContents@RandomizableBlockActorContainer@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void initializeContainerContents(class BlockSource&);
+    MCVAPI void initializeContainerContents(class BlockSource& region);
 
     // symbol: ?setContainerChanged@RandomizableBlockActorContainer@@UEAAXH@Z
-    MCVAPI void setContainerChanged(int);
+    MCVAPI void setContainerChanged(int slot);
 
     // symbol: ?startOpen@RandomizableBlockActorContainer@@UEAAXAEAVPlayer@@@Z
     MCVAPI void startOpen(class Player& player);
@@ -33,8 +33,8 @@ public:
     // symbol:
     // ??0RandomizableBlockActorContainer@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4ContainerType@@@Z
     MCAPI RandomizableBlockActorContainer(
-        ::BlockActorType      blockEntityType,
-        std::string const&    id,
+        ::BlockActorType blockEntityType,
+        std::string const&,
         class BlockPos const& pos,
         ::ContainerType       containerType
     );

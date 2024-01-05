@@ -24,14 +24,14 @@ public:
 
     // vIndex: 1, symbol:
     // ?handleConsumedItem@CraftHandlerTrade@@EEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z
-    virtual ::ItemStackNetResult handleConsumedItem(::ContainerEnumName, uchar, class ItemStack const&);
+    virtual ::ItemStackNetResult handleConsumedItem(::ContainerEnumName, uchar slot, class ItemStack const&);
 
     // vIndex: 4, symbol:
     // ?_handleCraftAction@CraftHandlerTrade@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
 
     // vIndex: 5, symbol: ?_postCraftRequest@CraftHandlerTrade@@EEAAX_N@Z
-    virtual void _postCraftRequest(bool);
+    virtual void _postCraftRequest(bool wasSuccess);
 
     // NOLINTEND
 
@@ -53,7 +53,7 @@ public:
     MCAPI ::ItemStackNetResult _initTrade2Consumes();
 
     // symbol: ?_matchesAuxValueTrade2@CraftHandlerTrade@@AEBA_NAEBVItemStackBase@@0@Z
-    MCAPI bool _matchesAuxValueTrade2(class ItemStackBase const&, class ItemStackBase const&) const;
+    MCAPI bool _matchesAuxValueTrade2(class ItemStackBase const&, class ItemStackBase const& expected) const;
 
     // NOLINTEND
 };

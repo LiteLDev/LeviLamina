@@ -33,13 +33,13 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@NetworkSettingsPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0NetworkSettingsPacket@@QEAA@XZ
     MCAPI NetworkSettingsPacket();
 
     // symbol: ??0NetworkSettingsPacket@@QEAA@AEBUNetworkSettingOptions@@@Z
-    MCAPI explicit NetworkSettingsPacket(struct NetworkSettingOptions const& options);
+    MCAPI explicit NetworkSettingsPacket(struct NetworkSettingOptions const&);
 
     // NOLINTEND
 };

@@ -39,7 +39,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@ChestBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -109,7 +109,8 @@ public:
     virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, ::Direction::Type) const;
 
     // vIndex: 63, symbol: ?dispense@ChestBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
 
     // vIndex: 66, symbol: ?onMove@ChestBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void onMove(class BlockSource& region, class BlockPos const& from, class BlockPos const& to) const;
@@ -171,13 +172,13 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@ChestBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // symbol: ?detachesOnPistonMove@ChestBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCVAPI bool detachesOnPistonMove(class BlockSource& region, class BlockPos const& pos) const;
+    MCVAPI bool detachesOnPistonMove(class BlockSource&, class BlockPos const&) const;
 
     // symbol: ?hasComparatorSignal@ChestBlock@@UEBA_NXZ
     MCVAPI bool hasComparatorSignal() const;
@@ -190,7 +191,7 @@ public:
 
     // symbol:
     // ??0ChestBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ChestType@0@W4MaterialType@@@Z
-    MCAPI ChestBlock(std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
+    MCAPI ChestBlock(std::string const& nameId, int, ::ChestBlock::ChestType type, ::MaterialType materialType);
 
     // symbol: ?updateSignalStrength@ChestBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
     MCAPI void updateSignalStrength(class BlockSource& region, class BlockPos const& pos, int strength) const;

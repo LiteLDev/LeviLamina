@@ -94,7 +94,11 @@ public:
     virtual void __unk_vfn_162();
 
     // symbol: ??0FishingHook@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI FishingHook(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI FishingHook(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getFishingTarget@FishingHook@@QEAAPEAVActor@@XZ
     MCAPI class Actor* getFishingTarget();

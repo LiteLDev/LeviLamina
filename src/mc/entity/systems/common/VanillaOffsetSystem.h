@@ -51,13 +51,13 @@ public:
                       struct AddRemove<struct IsHorizontalPoseFlagComponent>,
                       struct GlobalRead<struct BaseGameVersionComponent>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&);
+                      struct EntityFactoryT<>>& context);
 
     // symbol: ?createSystem@VanillaOffsetSystem@@SA?AUTickingSystemWithInfo@@_N@Z
     MCAPI static struct TickingSystemWithInfo createSystem(bool);
 
     // symbol: ?getCameraPosition@VanillaOffsetSystem@@SA?AVVec3@@AEBVActor@@M@Z
-    MCAPI static class Vec3 getCameraPosition(class Actor const&, float);
+    MCAPI static class Vec3 getCameraPosition(class Actor const& actor, float alpha);
 
     // symbol:
     // ?getCameraPosition@VanillaOffsetSystem@@SA?AVVec3@@AEBV2@PEBUPassengerRenderingRidingOffsetComponent@@PEBUVanillaOffsetComponent@@M@Z

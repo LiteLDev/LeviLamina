@@ -35,7 +35,8 @@ public:
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
     // vIndex: 14, symbol: ?isObstructingChests@SlabBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool isObstructingChests(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool
+    isObstructingChests(class BlockSource& region, class BlockPos const& pos, class Block const& thisBlock) const;
 
     // vIndex: 19, symbol:
     // ?liquidCanFlowIntoFromDirection@SlabBlock@@UEBA_NEAEBV?$function@$$A6AAEBVBlock@@AEBVBlockPos@@@Z@std@@AEBVBlockPos@@@Z
@@ -125,7 +126,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@SlabBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // vIndex: 96, symbol: ?asItemInstance@SlabBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
@@ -165,7 +166,7 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@SlabBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol: ?canBeSilkTouched@SlabBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -176,8 +177,8 @@ public:
     // symbol:
     // ??0SlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVMaterial@@V?$WeakPtr@VBlockLegacy@@@@@Z
     MCAPI SlabBlock(
-        std::string const&               nameId,
-        int                              id,
+        std::string const& nameId,
+        int,
         bool                             _fullsize,
         class Material const&            mat,
         class WeakPtr<class BlockLegacy> baseSlab

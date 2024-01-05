@@ -24,12 +24,12 @@ public:
 
     // symbol:
     // ?tryGetPropertyDefinition@DynamicPropertiesDefinition@@QEBAPEBUDynamicPropertyDefinition@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI struct DynamicPropertyDefinition const* tryGetPropertyDefinition(std::string const&) const;
+    MCAPI struct DynamicPropertyDefinition const* tryGetPropertyDefinition(std::string const& identifier) const;
 
     // symbol:
     // ?tryMergeDefinitions@DynamicPropertiesDefinition@@QEAA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@_K@Z
     MCAPI std::optional<std::string>
-          tryMergeDefinitions(class DynamicPropertiesDefinition const&, std::string const&, uint64);
+          tryMergeDefinitions(class DynamicPropertiesDefinition const& other, std::string const& identifier, uint64);
 
     // symbol: ??1DynamicPropertiesDefinition@@QEAA@XZ
     MCAPI ~DynamicPropertiesDefinition();
@@ -53,8 +53,12 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_canMergeDefinitions@DynamicPropertiesDefinition@@AEBA_NAEBV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_KAEAV23@@Z
-    MCAPI bool
-    _canMergeDefinitions(class DynamicPropertiesDefinition const&, std::string const&, uint64, std::string&) const;
+    MCAPI bool _canMergeDefinitions(
+        class DynamicPropertiesDefinition const& other,
+        std::string const&                       identifier,
+        uint64,
+        std::string& error
+    ) const;
 
     // NOLINTEND
 };

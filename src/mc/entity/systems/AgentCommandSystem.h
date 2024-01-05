@@ -29,16 +29,16 @@ public:
     virtual void tick(class EntityRegistry& registry);
 
     // symbol: ?cleanUp@AgentCommandSystem@@SAXAEAVEntityContext@@M@Z
-    MCAPI static void cleanUp(class EntityContext&, float);
+    MCAPI static void cleanUp(class EntityContext& agent, float);
 
     // symbol: ?initialize@AgentCommandSystem@@SAXAEAVEntityContext@@@Z
-    MCAPI static void initialize(class EntityContext&);
+    MCAPI static void initialize(class EntityContext& entity);
 
     // symbol: ?tickAgentCooldown@AgentCommandSystem@@SAXAEAVEntityContext@@AEAVCommandCooldown@AgentComponents@@@Z
-    MCAPI static void tickAgentCooldown(class EntityContext&, class AgentComponents::CommandCooldown&);
+    MCAPI static void tickAgentCooldown(class EntityContext& entity, class AgentComponents::CommandCooldown&);
 
     // symbol: ?tickLegacy@AgentCommandSystem@@SAXAEAVEntityContext@@AEAVAgentCommandComponent@@@Z
-    MCAPI static void tickLegacy(class EntityContext&, class AgentCommandComponent&);
+    MCAPI static void tickLegacy(class EntityContext& entity, class AgentCommandComponent&);
 
     // NOLINTEND
 };

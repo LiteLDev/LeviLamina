@@ -23,8 +23,12 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_place@ITreeFeature@@IEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-    MCAPI std::optional<class BlockPos>
-          _place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    MCAPI std::optional<class BlockPos> _place(
+        class IBlockWorldGenAPI& target,
+        class BlockPos const&    pos,
+        class Random&            random,
+        class RenderParams&      renderParams
+    ) const;
 
     // NOLINTEND
 };

@@ -191,7 +191,7 @@ public:
     virtual class Block const* getOffBlock(class Block const* block) const = 0;
 
     // symbol: ??0DiodeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI DiodeBlock(std::string const& nameId, int id, bool on);
+    MCAPI DiodeBlock(std::string const& nameId, int, bool on);
 
     // symbol: ?isDiode@DiodeBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isDiode(class Block const& block);

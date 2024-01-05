@@ -80,17 +80,29 @@ public:
 
     // symbol:
     // ??0FileArchiver@@QEAA@AEAVScheduler@@AEAVILevelListCache@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@gsl@@AEBV?$not_null@V?$NonOwnerPointer@VIResourcePackRepository@@@Bedrock@@@4@_NV?$unique_ptr@VIWorldConverter@FileArchiver@@U?$default_delete@VIWorldConverter@FileArchiver@@@std@@@std@@V?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@4@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@4@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@7@@Z
-    MCAPI
-    FileArchiver(class Scheduler&, class ILevelListCache&, Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&, Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const&, bool, std::unique_ptr<class FileArchiver::IWorldConverter>, Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const>, Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>, std::function<void(std::string const&)>);
+    MCAPI FileArchiver(
+        class Scheduler& scheduler,
+        class ILevelListCache&,
+        Bedrock::NotNullNonOwnerPtr<class Core::FilePathManager> const&   pathManager,
+        Bedrock::NotNullNonOwnerPtr<class IResourcePackRepository> const& resourcePackRepository,
+        bool,
+        std::unique_ptr<class FileArchiver::IWorldConverter>,
+        Bedrock::NotNullNonOwnerPtr<class IContentKeyProvider const> keyProvider,
+        Bedrock::NotNullNonOwnerPtr<class LevelDbEnv>,
+        std::function<void(std::string const&)> displayMessageFunction
+    );
 
     // symbol:
     // ?exportPack@FileArchiver@@QEAA?AV?$shared_ptr@V?$IAsyncResult@UResult@FileArchiver@@@Threading@Bedrock@@@std@@AEBVPath@Core@@0@Z
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<struct FileArchiver::Result>>
-          exportPack(class Core::Path const&, class Core::Path const&);
+          exportPack(class Core::Path const& path, class Core::Path const& exportFilePath);
 
     // symbol: ?exportPack@FileArchiver@@QEAAXAEBVPath@Core@@0V?$function@$$A6AXAEAUResult@FileArchiver@@@Z@std@@@Z
-    MCAPI void
-    exportPack(class Core::Path const&, class Core::Path const&, std::function<void(struct FileArchiver::Result&)>);
+    MCAPI void exportPack(
+        class Core::Path const&                           path,
+        class Core::Path const&                           exportFilePath,
+        std::function<void(struct FileArchiver::Result&)> exportCallback
+    );
 
     // symbol:
     // ?setWorldConverter@FileArchiver@@QEAAXV?$unique_ptr@VIWorldConverter@FileArchiver@@U?$default_delete@VIWorldConverter@FileArchiver@@@std@@@std@@@Z
@@ -122,7 +134,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_printLevelResultMessage@FileArchiver@@AEAAXAEBUResult@1@@Z
-    MCAPI void _printLevelResultMessage(struct FileArchiver::Result const&);
+    MCAPI void _printLevelResultMessage(struct FileArchiver::Result const& result);
 
     // NOLINTEND
 };

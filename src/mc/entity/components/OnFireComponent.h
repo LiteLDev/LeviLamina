@@ -12,16 +12,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addAdditionalSaveData@OnFireComponent@@QEBAXAEBVActor@@AEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class Actor const&, class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class Actor const&, class CompoundTag& tag) const;
 
     // symbol: ?readAdditionalSaveData@OnFireComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&);
+    MCAPI void readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag);
 
     // symbol: ?convertFromLegacyData@OnFireComponent@@SAXAEBVCompoundTag@@AEAV2@@Z
-    MCAPI static void convertFromLegacyData(class CompoundTag const&, class CompoundTag&);
+    MCAPI static void convertFromLegacyData(class CompoundTag const& tag, class CompoundTag&);
 
     // symbol: ?needsLegacyConversion@OnFireComponent@@SA_NAEBVCompoundTag@@@Z
-    MCAPI static bool needsLegacyConversion(class CompoundTag const&);
+    MCAPI static bool needsLegacyConversion(class CompoundTag const& tag);
 
     // NOLINTEND
 

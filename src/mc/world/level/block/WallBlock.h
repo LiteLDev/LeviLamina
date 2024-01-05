@@ -59,10 +59,10 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@WallBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
+    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 25, symbol: ?canConnect@WallBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
+    virtual bool canConnect(class Block const& otherBlock, uchar, class Block const&) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -131,26 +131,32 @@ public:
     virtual void __unk_vfn_67();
 
     // vIndex: 69, symbol: ?onStructureBlockPlace@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onStructureBlockPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onStructureBlockPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 70, symbol: ?onStructureNeighborBlockPlace@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onStructureNeighborBlockPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onStructureNeighborBlockPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@WallBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion version) const;
 
     // vIndex: 92, symbol: ?neighborChanged@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void
+    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 96, symbol: ?asItemInstance@WallBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@WallBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    virtual class Block const& getPlacementBlock(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -181,13 +187,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -196,7 +202,8 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 162, symbol: ?getMapColor@WallBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color
+    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // symbol: ?canBeSilkTouched@WallBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -205,13 +212,13 @@ public:
     MCVAPI bool isWallBlock() const;
 
     // symbol: ??0WallBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@@Z
-    MCAPI WallBlock(std::string const& nameId, int id, class BlockLegacy const& baseBlock);
+    MCAPI WallBlock(std::string const& nameId, int, class BlockLegacy const& baseBlock);
 
     // symbol: ??0WallBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI WallBlock(std::string const& nameId, int id, class Material const& material);
+    MCAPI WallBlock(std::string const& nameId, int, class Material const& material);
 
     // symbol: ?tryFixWallStates@WallBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI void tryFixWallStates(class BlockSource&, class BlockPos const&, int) const;
+    MCAPI void tryFixWallStates(class BlockSource& region, class BlockPos const& pos, int updateFlags) const;
 
     // symbol: ?POST_HEIGHT@WallBlock@@2MB
     MCAPI static float const POST_HEIGHT;
@@ -234,16 +241,17 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_desiredConnectionState@WallBlock@@AEBA?AW4WallConnectionType@@AEAVBlockSource@@AEBVBlockPos@@E@Z
-    MCAPI ::WallConnectionType _desiredConnectionState(class BlockSource&, class BlockPos const&, uchar) const;
+    MCAPI ::WallConnectionType
+    _desiredConnectionState(class BlockSource& region, class BlockPos const& pos, uchar neighbor) const;
 
     // symbol: ?_isCovered@WallBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVAABB@@@Z
-    MCAPI bool _isCovered(class BlockSource&, class BlockPos const&, class AABB const&) const;
+    MCAPI bool _isCovered(class BlockSource& region, class BlockPos const& pos, class AABB const&) const;
 
     // symbol: ?_shouldBePost@WallBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    MCAPI bool _shouldBePost(class BlockSource&, class BlockPos const&, class Block const&) const;
+    MCAPI bool _shouldBePost(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // symbol: ?_tryAddToTickingQueue@WallBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _tryAddToTickingQueue(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool _tryAddToTickingQueue(class BlockSource& region, class BlockPos const& pos) const;
 
     // NOLINTEND
 

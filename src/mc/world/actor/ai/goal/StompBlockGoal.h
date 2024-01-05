@@ -62,7 +62,15 @@ public:
     virtual void _playDestroySound(class Level& level, class BlockSource& region, class BlockPos pos);
 
     // symbol: ??0StompBlockGoal@@QEAA@PEBVBlock@@AEAVMob@@MHHMH@Z
-    MCAPI StompBlockGoal(class Block const*, class Mob&, float, int, int, float, int);
+    MCAPI StompBlockGoal(
+        class Block const* block,
+        class Mob&         mob,
+        float              speedModifier,
+        int                horizontalSearchRange,
+        int                verticalSearchRange,
+        float              goalRadius,
+        int                interval
+    );
 
     // NOLINTEND
 };

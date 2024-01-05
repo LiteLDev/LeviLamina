@@ -44,10 +44,11 @@ public:
     virtual void registerComponents();
 
     // symbol: ?addComponentSaveData@InternalComponentRegistry@@QEAAXAEBVActor@@AEAVCompoundTag@@@Z
-    MCAPI void addComponentSaveData(class Actor const&, class CompoundTag&);
+    MCAPI void addComponentSaveData(class Actor const& owner, class CompoundTag& tag);
 
     // symbol: ?initializeComponents@InternalComponentRegistry@@QEBAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void initializeComponents(class Actor&, class CompoundTag const&, class DataLoadHelper&) const;
+    MCAPI void
+    initializeComponents(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper) const;
 
     // symbol:
     // ?INTERNAL_COMPONENTS@InternalComponentRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
@@ -58,15 +59,18 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_initializeComponents@InternalComponentRegistry@@IEBAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void _initializeComponents(class Actor&, class CompoundTag const&, class DataLoadHelper&) const;
+    MCAPI void
+    _initializeComponents(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper) const;
 
     // symbol:
     // ?_getComponentScope@InternalComponentRegistry@@KAPEBVCompoundTag@@AEBV2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class CompoundTag const* _getComponentScope(class CompoundTag const&, std::string const&);
+    MCAPI static class CompoundTag const*
+    _getComponentScope(class CompoundTag const& tag, std::string const& componentName);
 
     // symbol:
     // ?_getOrCreateComponentScope@InternalComponentRegistry@@KAAEAVCompoundTag@@AEAV2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class CompoundTag& _getOrCreateComponentScope(class CompoundTag&, std::string const&);
+    MCAPI static class CompoundTag&
+    _getOrCreateComponentScope(class CompoundTag& tag, std::string const& componentName);
 
     // NOLINTEND
 };

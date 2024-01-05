@@ -101,7 +101,7 @@ public:
     virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
 
     // vIndex: 85, symbol: ?getMaxStackSize@BucketItem@@UEBAEAEBVItemDescriptor@@@Z
-    virtual uchar getMaxStackSize(class ItemDescriptor const& item) const;
+    virtual uchar getMaxStackSize(class ItemDescriptor const&) const;
 
     // vIndex: 94, symbol: ?validFishInteraction@BucketItem@@UEBA_NH@Z
     virtual bool validFishInteraction(int auxValue) const;
@@ -114,10 +114,10 @@ public:
 
     // vIndex: 102, symbol:
     // ?setIconInfo@BucketItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const& name, int);
 
     // vIndex: 107, symbol: ?getLightEmission@BucketItem@@UEBA?AUBrightness@@H@Z
-    virtual struct Brightness getLightEmission(int) const;
+    virtual struct Brightness getLightEmission(int auxValue) const;
 
     // vIndex: 112, symbol:
     // ?getAuxValuesDescription@BucketItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -126,7 +126,8 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@BucketItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol: ?isBucket@BucketItem@@UEBA_NXZ
     MCVAPI bool isBucket() const;
@@ -136,7 +137,7 @@ public:
 
     // symbol:
     // ??0BucketItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4BucketFillType@@@Z
-    MCAPI BucketItem(std::string const&, int, ::BucketFillType);
+    MCAPI BucketItem(std::string const& name, int, ::BucketFillType type);
 
     // symbol: ?DRINK_DURATION@BucketItem@@2HB
     MCAPI static int const DRINK_DURATION;
@@ -157,8 +158,12 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_canEmptyBucketIntoBlock@BucketItem@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@2@Z
-    MCAPI bool
-    _canEmptyBucketIntoBlock(class BlockSource&, class BlockPos const&, class Block const&, class Block const&) const;
+    MCAPI bool _canEmptyBucketIntoBlock(
+        class BlockSource&    region,
+        class BlockPos const& pos,
+        class Block const&    block,
+        class Block const&    extraBlock
+    ) const;
 
     // symbol: ?_emptyBucket@BucketItem@@AEBA_NAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@PEAVActor@@AEBVItemStack@@E@Z
     MCAPI bool _emptyBucket(
@@ -171,13 +176,13 @@ public:
     ) const;
 
     // symbol: ?_removeBubbleColumn@BucketItem@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void _removeBubbleColumn(class BlockSource&, class BlockPos const&) const;
+    MCAPI void _removeBubbleColumn(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?_takeLiquid@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z
     MCAPI bool _takeLiquid(class ItemStack& itemStack, class Actor& entity, class BlockPos const& pos) const;
 
     // symbol: ?_takePowderSnow@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z
-    MCAPI bool _takePowderSnow(class ItemStack&, class Actor&, class BlockPos const&) const;
+    MCAPI bool _takePowderSnow(class ItemStack& itemStack, class Actor& actor, class BlockPos const& pos) const;
 
     // symbol: ?_tryGetBlock@BucketItem@@AEBAPEBVBlockLegacy@@W4BucketFillType@@@Z
     MCAPI class BlockLegacy const* _tryGetBlock(::BucketFillType contents) const;

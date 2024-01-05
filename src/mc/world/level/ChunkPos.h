@@ -19,10 +19,10 @@ public:
     MCAPI explicit ChunkPos(class Vec3 const& pos);
 
     // symbol: ?isWithinBounds@ChunkPos@@QEBA_NAEBV1@0@Z
-    MCAPI bool isWithinBounds(class ChunkPos const&, class ChunkPos const&) const;
+    MCAPI bool isWithinBounds(class ChunkPos const& min, class ChunkPos const& max) const;
 
     // symbol: ?toBlockSpaceVec3@ChunkPos@@QEBA?AVVec3@@M@Z
-    MCAPI class Vec3 toBlockSpaceVec3(float) const;
+    MCAPI class Vec3 toBlockSpaceVec3(float y) const;
 
     // symbol: ?INVALID@ChunkPos@@2V1@B
     MCAPI static class ChunkPos const INVALID;

@@ -36,11 +36,11 @@ public:
     ActorSpawnRuleGroup(class ResourcePackManager& resourcePackManager, class IWorldRegistriesProvider& registries);
 
     // symbol: ?getActorSpawnPool@ActorSpawnRuleGroup@@QEBAHAEBUActorDefinitionIdentifier@@@Z
-    MCAPI int getActorSpawnPool(struct ActorDefinitionIdentifier const& id) const;
+    MCAPI int getActorSpawnPool(struct ActorDefinitionIdentifier const&) const;
 
     // symbol:
     // ?getDelayEnd@ActorSpawnRuleGroup@@QEBAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI int getDelayEnd(std::string const& id) const;
+    MCAPI int getDelayEnd(std::string const&) const;
 
     // symbol: ?offSetDelayByCurrentTick@ActorSpawnRuleGroup@@QEAAXAEBUTick@@@Z
     MCAPI void offSetDelayByCurrentTick(struct Tick const& currentTick);

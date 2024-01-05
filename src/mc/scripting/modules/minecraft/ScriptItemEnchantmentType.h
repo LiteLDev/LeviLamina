@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAA@AEBW4Type@Enchant@@@Z
-    MCAPI explicit ScriptItemEnchantmentType(::Enchant::Type const&);
+    MCAPI explicit ScriptItemEnchantmentType(::Enchant::Type const& type);
 
     // symbol:
     // ?getName@ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -28,7 +28,7 @@ public:
     operator=(struct ScriptModuleMinecraft::ScriptItemEnchantmentType const&);
 
     // symbol: ??8ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEBA_NAEBU01@@Z
-    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptItemEnchantmentType const&) const;
+    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptItemEnchantmentType const& other) const;
 
     // symbol: ??1ScriptItemEnchantmentType@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptItemEnchantmentType();

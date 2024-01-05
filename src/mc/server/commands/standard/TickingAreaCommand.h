@@ -45,7 +45,12 @@ public:
     ) const;
 
     // symbol: ?_preload@TickingAreaCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEAVLevel@@AEAVDimension@@@Z
-    MCAPI void _preload(class CommandOrigin const&, class CommandOutput&, class Level&, class Dimension&) const;
+    MCAPI void _preload(
+        class CommandOrigin const& origin,
+        class CommandOutput&       output,
+        class Level&               level,
+        class Dimension&           dimension
+    ) const;
 
     // symbol: ?_remove@TickingAreaCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEAVLevel@@AEAVDimension@@@Z
     MCAPI void _remove(

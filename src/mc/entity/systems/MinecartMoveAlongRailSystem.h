@@ -21,7 +21,7 @@ public:
     // symbol:
     // ?_calculateAllPassengersRailMovementInput@MinecartMoveAlongRailSystem@@SA_NAEBV?$vector@UStrictActorIDEntityContextPair@@V?$allocator@UStrictActorIDEntityContextPair@@@std@@@std@@AEAVVec3@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@@@$$CBUActorRotationComponent@@$$CBULocalMoveVelocityComponent@@@@@Z
     MCAPI static bool
-    _calculateAllPassengersRailMovementInput(std::vector<struct StrictActorIDEntityContextPair> const&, class Vec3&, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct ActorRotationComponent const, struct LocalMoveVelocityComponent const>);
+    _calculateAllPassengersRailMovementInput(std::vector<struct StrictActorIDEntityContextPair> const&, class Vec3& posDelta, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct ActorRotationComponent const, struct LocalMoveVelocityComponent const>);
 
     // symbol: ?createCleanupSystem@MinecartMoveAlongRailSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
@@ -41,18 +41,29 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_calculateRailMovementSystem@MinecartMoveAlongRailSystem@@CAXAEBVStrictEntityContext@@AEBVRailMovementComponent@@AEAUSnapOnRailComponent@@AEAUStateVectorComponent@@V?$Optional@$$CBUVehicleComponent@@@@V?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UPlayerComponentFlag@@@@@@$$CBUActorRotationComponent@@$$CBULocalMoveVelocityComponent@@@@V?$EntityModifier@UMoveRequestComponent@@@@@Z
-    MCAPI static void
-    _calculateRailMovementSystem(class StrictEntityContext const&, class RailMovementComponent const&, struct SnapOnRailComponent&, struct StateVectorComponent&, class Optional<struct VehicleComponent const>, class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct ActorRotationComponent const, struct LocalMoveVelocityComponent const>, class EntityModifier<struct MoveRequestComponent>);
+    MCAPI static void _calculateRailMovementSystem(
+        class StrictEntityContext const&   context,
+        class RailMovementComponent const& railMovementComponent,
+        struct SnapOnRailComponent&,
+        struct StateVectorComponent&,
+        class Optional<struct VehicleComponent const>,
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<class FlagComponent<struct PlayerComponentFlag>>,
+            struct ActorRotationComponent const,
+            struct LocalMoveVelocityComponent const>,
+        class EntityModifier<struct MoveRequestComponent> mod
+    );
 
     // symbol:
     // ?_postRailMovementCalculateMinecartPositionSystem@MinecartMoveAlongRailSystem@@CAXAEBVStrictEntityContext@@AEBUSnapOnRailComponent@@AEAUStateVectorComponent@@V?$EntityModifier@UActorSetPositionRequestComponent@@@@AEBVIConstBlockSource@@@Z
     MCAPI static void
-    _postRailMovementCalculateMinecartPositionSystem(class StrictEntityContext const&, struct SnapOnRailComponent const&, struct StateVectorComponent&, class EntityModifier<struct ActorSetPositionRequestComponent>, class IConstBlockSource const&);
+    _postRailMovementCalculateMinecartPositionSystem(class StrictEntityContext const& context, struct SnapOnRailComponent const&, struct StateVectorComponent&, class EntityModifier<struct ActorSetPositionRequestComponent> mod, class IConstBlockSource const&);
 
     // symbol:
     // ?_preRailMovementCalculateMinecartPositionSystem@MinecartMoveAlongRailSystem@@CAXAEBVStrictEntityContext@@AEBUOffsetsComponent@@AEBUStateVectorComponent@@AEAUFallDistanceComponent@@AEAUSnapOnRailComponent@@V?$EntityModifier@UActorSetPositionRequestComponent@@@@AEBVIConstBlockSource@@@Z
     MCAPI static void
-    _preRailMovementCalculateMinecartPositionSystem(class StrictEntityContext const&, struct OffsetsComponent const&, struct StateVectorComponent const&, struct FallDistanceComponent&, struct SnapOnRailComponent&, class EntityModifier<struct ActorSetPositionRequestComponent>, class IConstBlockSource const&);
+    _preRailMovementCalculateMinecartPositionSystem(class StrictEntityContext const& context, struct OffsetsComponent const&, struct StateVectorComponent const&, struct FallDistanceComponent&, struct SnapOnRailComponent&, class EntityModifier<struct ActorSetPositionRequestComponent> mod, class IConstBlockSource const&);
 
     // NOLINTEND
 };

@@ -20,25 +20,25 @@ public:
     virtual ~VarIntDataOutput();
 
     // vIndex: 1, symbol: ?writeString@VarIntDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    virtual void writeString(std::string_view);
+    virtual void writeString(std::string_view v);
 
     // vIndex: 2, symbol: ?writeLongString@VarIntDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    virtual void writeLongString(std::string_view);
+    virtual void writeLongString(std::string_view v);
 
     // vIndex: 3, symbol: ?writeFloat@VarIntDataOutput@@UEAAXM@Z
-    virtual void writeFloat(float);
+    virtual void writeFloat(float v);
 
     // vIndex: 4, symbol: ?writeDouble@VarIntDataOutput@@UEAAXN@Z
-    virtual void writeDouble(double);
+    virtual void writeDouble(double v);
 
     // vIndex: 5, symbol: ?writeByte@VarIntDataOutput@@UEAAXD@Z
-    virtual void writeByte(char);
+    virtual void writeByte(char v);
 
     // vIndex: 6, symbol: ?writeShort@VarIntDataOutput@@UEAAXF@Z
-    virtual void writeShort(short);
+    virtual void writeShort(short v);
 
     // vIndex: 7, symbol: ?writeInt@VarIntDataOutput@@UEAAXH@Z
-    virtual void writeInt(int);
+    virtual void writeInt(int v);
 
     // vIndex: 8, symbol: ?writeLongLong@VarIntDataOutput@@UEAAX_J@Z
     virtual void writeLongLong(int64);

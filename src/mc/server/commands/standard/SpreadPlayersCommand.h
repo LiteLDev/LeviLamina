@@ -27,7 +27,8 @@ public:
     createInitialPositions(class Random& random, int count, class Vec2 const& minPos, class Vec2 const& maxPos);
 
     // symbol: ?isDangerousSpawn@SpreadPlayersCommand@@SA_NAEAVBlockSource@@AEBVBlockPos@@FH@Z
-    MCAPI static bool isDangerousSpawn(class BlockSource&, class BlockPos const&, short, int);
+    MCAPI static bool
+    isDangerousSpawn(class BlockSource& region, class BlockPos const&, short minHeight, int commandVersion);
 
     // symbol: ?setup@SpreadPlayersCommand@@SAXAEAVCommandRegistry@@@Z
     MCAPI static void setup(class CommandRegistry& registry);
@@ -35,16 +36,16 @@ public:
     // symbol:
     // ?spreadPositions@SpreadPlayersCommand@@SA_NAEAVCommandOutput@@AEAVRandom@@AEBVCommandOrigin@@AEBVVec2@@M33AEAV?$vector@VVec2@@V?$allocator@VVec2@@@std@@@std@@AEAV?$map@VChunkPos@@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@U?$less@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@@std@@@3@@7@H@Z
     MCAPI static bool spreadPositions(
-        class CommandOutput&,
-        class Random&,
-        class CommandOrigin const&,
-        class Vec2 const&,
-        float,
-        class Vec2 const&,
-        class Vec2 const&,
-        std::vector<class Vec2>&,
+        class CommandOutput&       output,
+        class Random&              random,
+        class CommandOrigin const& origin,
+        class Vec2 const&          center,
+        float                      spreadDist,
+        class Vec2 const&          minPos,
+        class Vec2 const&          maxPos,
+        std::vector<class Vec2>&   positions,
         std::map<class ChunkPos, std::unique_ptr<class CommandArea>>&,
-        int
+        int commandVersion
     );
 
     // NOLINTEND
@@ -54,30 +55,30 @@ public:
     // symbol:
     // ?_checkPositionValid@SpreadPlayersCommand@@CA_NAEBVCommandOrigin@@AEBVBlockPos@@AEAV?$map@VChunkPos@@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@U?$less@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@@std@@@3@@std@@H@Z
     MCAPI static bool _checkPositionValid(
-        class CommandOrigin const&,
+        class CommandOrigin const& origin,
         class BlockPos const&,
         std::map<class ChunkPos, std::unique_ptr<class CommandArea>>&,
-        int
+        int commandVersion
     );
 
     // symbol: ?_getTeleportHeight@SpreadPlayersCommand@@CAFAEAVBlockSource@@HH@Z
-    MCAPI static short _getTeleportHeight(class BlockSource&, int, int);
+    MCAPI static short _getTeleportHeight(class BlockSource& region, int x, int z);
 
     // symbol:
     // ?_setPlayerPositions@SpreadPlayersCommand@@CAMAEAV?$CommandSelectorResults@VActor@@@@AEAV?$vector@VVec2@@V?$allocator@VVec2@@@std@@@std@@AEAV?$map@VChunkPos@@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@U?$less@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@@std@@@3@@4@@Z
     MCAPI static float
-    _setPlayerPositions(class CommandSelectorResults<class Actor>&, std::vector<class Vec2>&, std::map<class ChunkPos, std::unique_ptr<class CommandArea>>&);
+    _setPlayerPositions(class CommandSelectorResults<class Actor>& entities, std::vector<class Vec2>& positions, std::map<class ChunkPos, std::unique_ptr<class CommandArea>>&);
 
     // symbol:
     // ?_spreadEntities@SpreadPlayersCommand@@CA_NAEAVCommandOutput@@AEAV?$CommandSelectorResults@VActor@@@@AEBVCommandOrigin@@AEBVVec2@@MMH@Z
     MCAPI static bool _spreadEntities(
-        class CommandOutput&,
-        class CommandSelectorResults<class Actor>&,
-        class CommandOrigin const&,
-        class Vec2 const&,
-        float,
-        float,
-        int
+        class CommandOutput&                       output,
+        class CommandSelectorResults<class Actor>& entities,
+        class CommandOrigin const&                 origin,
+        class Vec2 const&                          center,
+        float                                      spreadDist,
+        float                                      maxDistFromCenter,
+        int                                        commandVersion
     );
 
     // NOLINTEND

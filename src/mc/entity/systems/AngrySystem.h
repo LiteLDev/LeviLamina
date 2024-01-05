@@ -28,7 +28,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_tickComponent@AngrySystem@@CAXAEAVEntityContext@@AEAVAngryComponent@@@Z
-    MCAPI static void _tickComponent(class EntityContext&, class AngryComponent&);
+    MCAPI static void _tickComponent(class EntityContext& entity, class AngryComponent& angryComponent);
 
     // NOLINTEND
 };

@@ -62,7 +62,7 @@ public:
 
     // vIndex: 40, symbol:
     // ?_getUpdatePacket@BannerBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@BannerBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -74,19 +74,19 @@ public:
     MCAPI void setItemValues(class ItemStackBase const& instance);
 
     // symbol: ?getBannerType@BannerBlockActor@@SA?AW4BannerBlockType@@PEBVCompoundTag@@@Z
-    MCAPI static ::BannerBlockType getBannerType(class CompoundTag const*);
+    MCAPI static ::BannerBlockType getBannerType(class CompoundTag const* tag);
 
     // symbol: ?getBaseColor@BannerBlockActor@@SAHAEBVItemStack@@@Z
     MCAPI static int getBaseColor(class ItemStack const& item);
 
     // symbol: ?getPatternCount@BannerBlockActor@@SAHPEBVCompoundTag@@@Z
-    MCAPI static int getPatternCount(class CompoundTag const*);
+    MCAPI static int getPatternCount(class CompoundTag const* tagElement);
 
     // symbol: ?isDefaultBanner@BannerBlockActor@@SA_NAEBVItemStackBase@@@Z
-    MCAPI static bool isDefaultBanner(class ItemStackBase const&);
+    MCAPI static bool isDefaultBanner(class ItemStackBase const& instance);
 
     // symbol: ?removeLastPattern@BannerBlockActor@@SA_NAEAVItemStack@@AEAVPlayer@@@Z
-    MCAPI static bool removeLastPattern(class ItemStack& instance, class Player& player);
+    MCAPI static bool removeLastPattern(class ItemStack& instance, class Player&);
 
     // symbol: ?MAX_PATTERNS@BannerBlockActor@@2HB
     MCAPI static int const MAX_PATTERNS;

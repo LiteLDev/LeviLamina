@@ -18,7 +18,7 @@ public:
     virtual ~PillagerOutpostStart() = default;
 
     // vIndex: 1, symbol: ?postProcess@PillagerOutpostStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-    virtual bool postProcess(class BlockSource& level, class Random& random, class BoundingBox const& chunkBB);
+    virtual bool postProcess(class BlockSource& region, class Random& random, class BoundingBox const& chunkBB);
 
     // symbol: ??0PillagerOutpostStart@@QEAA@AEAVDimension@@AEAVRandom@@HH@Z
     MCAPI PillagerOutpostStart(class Dimension& dim, class Random& random, int x, int z);

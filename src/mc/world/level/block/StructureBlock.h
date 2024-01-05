@@ -137,19 +137,19 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@StructureBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 165, symbol: ?getResourceCount@StructureBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol: ?isInteractiveBlock@StructureBlock@@UEBA_NXZ
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0StructureBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI StructureBlock(std::string const& nameId, int id);
+    MCAPI StructureBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

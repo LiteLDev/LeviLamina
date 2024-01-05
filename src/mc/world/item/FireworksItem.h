@@ -48,7 +48,7 @@ public:
     virtual void __unk_vfn_39();
 
     // vIndex: 42, symbol: ?isDestructive@FireworksItem@@UEBA_NH@Z
-    virtual bool isDestructive(int) const;
+    virtual bool isDestructive(int auxValue) const;
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@FireworksItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
@@ -81,7 +81,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@FireworksItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack& instance, class Player& player) const;
+    virtual class ItemStack& use(class ItemStack& itemStack, class Player& player) const;
 
     // vIndex: 71, symbol: ?dispense@FireworksItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
@@ -96,10 +96,10 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@FireworksItem@@UEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor&, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;
 
     // symbol: ??0FireworksItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FireworksItem(std::string const& nameId, int id);
+    MCAPI FireworksItem(std::string const& nameId, int);
 
     // symbol:
     // ?initFireworksRocketItem@FireworksItem@@SAAEBVItemInstance@@AEAV2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@H@Z

@@ -35,11 +35,11 @@ public:
         class Mob&                               mob,
         std::vector<struct MobDescriptor> const& targetTypes,
         float                                    within,
-        int                                      randomInterval,
-        bool                                     mustSee,
-        int                                      mustSeeForgetTicks,
-        ::Puv::Legacy::LevelSoundEvent           sound,
-        class ActorDefinitionTrigger const&      onStartEvent
+        int,
+        bool                                mustSee,
+        int                                 mustSeeForgetTicks,
+        ::Puv::Legacy::LevelSoundEvent      sound,
+        class ActorDefinitionTrigger const& onStartEvent
     );
 
     // NOLINTEND

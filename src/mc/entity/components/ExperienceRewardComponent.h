@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addAdditionalSaveData@ExperienceRewardComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?getIsExperienceDropEnabled@ExperienceRewardComponent@@QEBA_NXZ
     MCAPI bool getIsExperienceDropEnabled() const;
@@ -28,7 +28,7 @@ public:
 
     // symbol:
     // ?readAdditionalSaveData@ExperienceRewardComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const& tag, class DataLoadHelper&);
 
     // symbol: ?setIsExperienceDropEnabled@ExperienceRewardComponent@@QEAAX_N@Z
     MCAPI void setIsExperienceDropEnabled(bool);

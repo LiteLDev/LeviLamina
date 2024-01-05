@@ -42,7 +42,7 @@ public:
     virtual std::optional<class CompoundTag> save() const;
 
     // vIndex: 9, symbol: ?serialize@InternalItemDescriptor@@UEBAXAEAVBinaryStream@@@Z
-    virtual void serialize(class BinaryStream&) const;
+    virtual void serialize(class BinaryStream& stream) const;
 
     // vIndex: 10, symbol: ?getType@InternalItemDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
     virtual ::ItemDescriptor::InternalType getType() const;
@@ -56,7 +56,7 @@ public:
     // symbol:
     // ?deserialize@InternalItemDescriptor@@SA?AV?$Result@V?$unique_ptr@UInternalItemDescriptor@@U?$default_delete@UInternalItemDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
     MCAPI static class Bedrock::Result<std::unique_ptr<struct InternalItemDescriptor>>
-    deserialize(class ReadOnlyBinaryStream&);
+    deserialize(class ReadOnlyBinaryStream& stream);
 
     // NOLINTEND
 };

@@ -54,24 +54,26 @@ public:
     virtual bool isShutdownDone();
 
     // vIndex: 3, symbol: ?getExistingChunk@ChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
-    virtual std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const& cp);
+    virtual std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);
 
     // vIndex: 4, symbol: ?getRandomChunk@ChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEAVRandom@@@Z
     virtual std::shared_ptr<class LevelChunk> getRandomChunk(class Random& random);
 
     // vIndex: 5, symbol: ?isChunkKnown@ChunkSource@@UEAA_NAEBVChunkPos@@@Z
-    virtual bool isChunkKnown(class ChunkPos const&);
+    virtual bool isChunkKnown(class ChunkPos const& chunkPos);
 
     // vIndex: 6, symbol: ?isChunkSaved@ChunkSource@@UEAA_NAEBVChunkPos@@@Z
-    virtual bool isChunkSaved(class ChunkPos const&);
+    virtual bool isChunkSaved(class ChunkPos const& chunkPos);
 
     // vIndex: 7, symbol:
     // ?createNewChunk@ChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@1@_N@Z
-    virtual std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const&, ::ChunkSource::LoadMode, bool);
+    virtual std::shared_ptr<class LevelChunk>
+    createNewChunk(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
     // vIndex: 8, symbol:
     // ?getOrLoadChunk@ChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@1@_N@Z
-    virtual std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const&, ::ChunkSource::LoadMode, bool);
+    virtual std::shared_ptr<class LevelChunk>
+    getOrLoadChunk(class ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
     // vIndex: 9, symbol: ?postProcess@ChunkSource@@UEAA_NAEAVChunkViewSource@@@Z
     virtual bool postProcess(class ChunkViewSource& neighborhood);
@@ -84,13 +86,13 @@ public:
 
     // vIndex: 12, symbol: ?postProcessMobsAt@ChunkSource@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
     virtual void
-    postProcessMobsAt(class BlockSource& blockSource, int chunkWestBlock, int chunkNorthBlock, class Random& random);
+    postProcessMobsAt(class BlockSource& region, int chunkWestBlock, int chunkNorthBlock, class Random& random);
 
     // vIndex: 13, symbol: ?saveLiveChunk@ChunkSource@@UEAA_NAEAVLevelChunk@@@Z
     virtual bool saveLiveChunk(class LevelChunk& lc);
 
     // vIndex: 14, symbol: ?writeEntityChunkTransfer@ChunkSource@@UEAAXAEAVLevelChunk@@@Z
-    virtual void writeEntityChunkTransfer(class LevelChunk&);
+    virtual void writeEntityChunkTransfer(class LevelChunk& levelChunk);
 
     // vIndex: 15, symbol:
     // ?writeEntityChunkTransfersToUnloadedChunk@ChunkSource@@UEAAXAEBVChunkKey@@AEBV?$vector@UActorUnloadedChunkTransferEntry@@V?$allocator@UActorUnloadedChunkTransferEntry@@@std@@@std@@@Z
@@ -151,7 +153,7 @@ public:
     virtual bool canLaunchTasks() const;
 
     // vIndex: 32, symbol: ?chunkPosNeedsBlending@ChunkSource@@UEAA_NAEBVChunkPos@@@Z
-    virtual bool chunkPosNeedsBlending(class ChunkPos const&);
+    virtual bool chunkPosNeedsBlending(class ChunkPos const& cp);
 
     // symbol: ??0ChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@@Z
     MCAPI explicit ChunkSource(std::unique_ptr<class ChunkSource> parent);
@@ -165,7 +167,7 @@ public:
     // symbol:
     // ?createEmptyView@ChunkSource@@QEAA?AV?$GridArea@V?$shared_ptr@VLevelChunk@@@std@@@@W4LoadMode@1@_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@W4ChunkSourceViewGenerateMode@@PEBM@Z
     MCAPI class GridArea<std::shared_ptr<class LevelChunk>>
-    createEmptyView(::ChunkSource::LoadMode, bool, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)>, ::ChunkSourceViewGenerateMode, float const*);
+    createEmptyView(::ChunkSource::LoadMode lm, bool circle, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<uint>)> add, ::ChunkSourceViewGenerateMode, float const*);
 
     // symbol: ?getAvailableChunk@ChunkSource@@QEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
     MCAPI std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const& cp);
@@ -189,10 +191,10 @@ public:
     MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
 
     // symbol: ?setShuttingDown@ChunkSource@@QEAAX_N@Z
-    MCAPI void setShuttingDown(bool);
+    MCAPI void setShuttingDown(bool value);
 
     // symbol: ?shouldServerGeneratePos@ChunkSource@@QEAA_NAEBVChunkPos@@MH@Z
-    MCAPI bool shouldServerGeneratePos(class ChunkPos const&, float, int);
+    MCAPI bool shouldServerGeneratePos(class ChunkPos const& chunkPos, float, int);
 
     // symbol: ?gPerfIsClientSide@ChunkSource@@2_NA
     MCAPI static bool gPerfIsClientSide;
@@ -202,35 +204,37 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_checkAndDispatchTaskForLevelChunk@ChunkSource@@IEAA_NAEBU?$pair@VChunkPos@@W4ChunkState@@@std@@_N@Z
-    MCAPI bool _checkAndDispatchTaskForLevelChunk(std::pair<class ChunkPos, ::ChunkState> const&, bool);
+    MCAPI bool _checkAndDispatchTaskForLevelChunk(std::pair<class ChunkPos, ::ChunkState> const&, bool areInTask);
 
     // symbol: ?_checkForReplacementDataTask@ChunkSource@@IEAAXAEAVLevelChunk@@AEAVChunkViewSource@@@Z
-    MCAPI void _checkForReplacementDataTask(class LevelChunk&, class ChunkViewSource&);
+    MCAPI void _checkForReplacementDataTask(class LevelChunk& lc, class ChunkViewSource& chunks);
 
     // symbol: ?_checkForUnblockingChunks@ChunkSource@@IEAAXAEBVLevelChunk@@@Z
-    MCAPI void _checkForUnblockingChunks(class LevelChunk const&);
+    MCAPI void _checkForUnblockingChunks(class LevelChunk const& lc);
 
     // symbol:
     // ?_checkLevelChunkForNextStage@ChunkSource@@IEAAXAEBVLevelChunk@@AEAV?$LevelChunkGridAreaElement@V?$weak_ptr@VLevelChunk@@@std@@@@W4ChunkState@@@Z
     MCAPI void _checkLevelChunkForNextStage(
-        class LevelChunk const&,
-        class LevelChunkGridAreaElement<std::weak_ptr<class LevelChunk>>&,
-        ::ChunkState
+        class LevelChunk const&                                           lc,
+        class LevelChunkGridAreaElement<std::weak_ptr<class LevelChunk>>& grid,
+        ::ChunkState                                                      stateToCheck
     );
 
     // symbol:
     // ?_checkLevelChunkForPostProcessing@ChunkSource@@IEAAXAEBVLevelChunk@@AEAV?$LevelChunkGridAreaElement@V?$weak_ptr@VLevelChunk@@@std@@@@@Z
-    MCAPI void
-    _checkLevelChunkForPostProcessing(class LevelChunk const&, class LevelChunkGridAreaElement<std::weak_ptr<class LevelChunk>>&);
+    MCAPI void _checkLevelChunkForPostProcessing(
+        class LevelChunk const&                                           lc,
+        class LevelChunkGridAreaElement<std::weak_ptr<class LevelChunk>>& grid
+    );
 
     // symbol: ?_chunkAtStage@ChunkSource@@IEAA_NV?$weak_ptr@VLevelChunk@@@std@@W4ChunkState@@@Z
     MCAPI bool _chunkAtStage(std::weak_ptr<class LevelChunk> lcwp, ::ChunkState stateToCheck);
 
     // symbol: ?_createOrReplaceGridAreaMap@ChunkSource@@IEAAXV?$shared_ptr@VLevelChunk@@@std@@_N@Z
-    MCAPI void _createOrReplaceGridAreaMap(std::shared_ptr<class LevelChunk>, bool);
+    MCAPI void _createOrReplaceGridAreaMap(std::shared_ptr<class LevelChunk> lc, bool);
 
     // symbol: ?_freeChunkGenerationGridMap@ChunkSource@@IEAAXAEBVChunkPos@@_N@Z
-    MCAPI void _freeChunkGenerationGridMap(class ChunkPos const&, bool);
+    MCAPI void _freeChunkGenerationGridMap(class ChunkPos const& cp, bool);
 
     // symbol: ?_launchGenerationTask@ChunkSource@@IEAAXAEBV?$shared_ptr@VLevelChunk@@@std@@_N@Z
     MCAPI void _launchGenerationTask(std::shared_ptr<class LevelChunk> const& lc, bool areInTask);
@@ -260,13 +264,13 @@ public:
     );
 
     // symbol: ?_lightingTask@ChunkSource@@IEAAXAEBV?$shared_ptr@VLevelChunk@@@std@@AEAVChunkViewSource@@@Z
-    MCAPI void _lightingTask(std::shared_ptr<class LevelChunk> const&, class ChunkViewSource&);
+    MCAPI void _lightingTask(std::shared_ptr<class LevelChunk> const& lc, class ChunkViewSource& chunks);
 
     // symbol: ?_loadChunkTask@ChunkSource@@IEAAXAEAVLevelChunk@@@Z
     MCAPI void _loadChunkTask(class LevelChunk& lc);
 
     // symbol: ?_postProcessingTask@ChunkSource@@IEAAXAEAVLevelChunk@@AEAVChunkViewSource@@@Z
-    MCAPI void _postProcessingTask(class LevelChunk&, class ChunkViewSource&);
+    MCAPI void _postProcessingTask(class LevelChunk& lc, class ChunkViewSource& chunks);
 
     // symbol: ?_spawnChunkGenerationTasks@ChunkSource@@IEAAXH_N@Z
     MCAPI void _spawnChunkGenerationTasks(int numTasks, bool calledFromTask);

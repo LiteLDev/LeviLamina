@@ -35,7 +35,14 @@ public:
     virtual void _playDestroySound(class Level& level, class BlockSource& region, class BlockPos pos);
 
     // symbol: ??0StompEggGoal@@QEAA@AEAVMob@@MHHMH@Z
-    MCAPI StompEggGoal(class Mob&, float, int, int, float, int);
+    MCAPI StompEggGoal(
+        class Mob& mob,
+        float      speedModifier,
+        int        horizontalSearchRange,
+        int        verticalSearchRange,
+        float      goalRadius,
+        int        interval
+    );
 
     // NOLINTEND
 };

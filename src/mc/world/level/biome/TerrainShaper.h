@@ -23,16 +23,16 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ?getContinents@Point@TerrainShaper@@SAMAEBU12@@Z
-        MCAPI static float getContinents(struct TerrainShaper::Point const&);
+        MCAPI static float getContinents(struct TerrainShaper::Point const& point);
 
         // symbol: ?getErosion@Point@TerrainShaper@@SAMAEBU12@@Z
-        MCAPI static float getErosion(struct TerrainShaper::Point const&);
+        MCAPI static float getErosion(struct TerrainShaper::Point const& point);
 
         // symbol: ?getRidges@Point@TerrainShaper@@SAMAEBU12@@Z
-        MCAPI static float getRidges(struct TerrainShaper::Point const&);
+        MCAPI static float getRidges(struct TerrainShaper::Point const& point);
 
         // symbol: ?getWeirdness@Point@TerrainShaper@@SAMAEBU12@@Z
-        MCAPI static float getWeirdness(struct TerrainShaper::Point const&);
+        MCAPI static float getWeirdness(struct TerrainShaper::Point const& point);
 
         // symbol: ?CONTINENTS_EXTRACTOR@Point@TerrainShaper@@2V?$ToFloatFunction@UPoint@TerrainShaper@@@@A
         MCAPI static class ToFloatFunction<struct TerrainShaper::Point> CONTINENTS_EXTRACTOR;
@@ -80,7 +80,7 @@ public:
     // symbol:
     // ?buildErosionOffsetSpline@TerrainShaper@@CA?AV?$ToFloatFunction@UPoint@TerrainShaper@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMMMMM_N1@Z
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point>
-    buildErosionOffsetSpline(std::string const&, float, float, float, float, float, float, bool, bool);
+    buildErosionOffsetSpline(std::string const& name, float, float, float, float, float, float, bool, bool);
 
     // symbol: ?buildMountainRidgeSplineWithPoints@TerrainShaper@@CA?AV?$ToFloatFunction@UPoint@TerrainShaper@@@@M_N@Z
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildMountainRidgeSplineWithPoints(float, bool);
@@ -97,7 +97,7 @@ public:
     // symbol:
     // ?ridgeSpline@TerrainShaper@@CA?AV?$ToFloatFunction@UPoint@TerrainShaper@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MMMMMM@Z
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point>
-    ridgeSpline(std::string const&, float, float, float, float, float, float);
+    ridgeSpline(std::string const& name, float, float low, float, float high, float, float);
 
     // NOLINTEND
 };

@@ -98,7 +98,8 @@ public:
 
     // vIndex: 73, symbol:
     // ?updateEntityAfterFallOn@SlimeBlock@@UEBAXAEBVBlockPos@@AEAUUpdateEntityAfterFallOnInterface@@@Z
-    virtual void updateEntityAfterFallOn(class BlockPos const&, struct UpdateEntityAfterFallOnInterface&) const;
+    virtual void
+    updateEntityAfterFallOn(class BlockPos const& pos, struct UpdateEntityAfterFallOnInterface& entity) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
@@ -122,7 +123,7 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 146, symbol: ?onStandOn@SlimeBlock@@UEBAXAEAVEntityContext@@AEBVBlockPos@@@Z
-    virtual void onStandOn(class EntityContext&, class BlockPos const&) const;
+    virtual void onStandOn(class EntityContext& entity, class BlockPos const& pos) const;
 
     // vIndex: 148, symbol: ?onFallOn@SlimeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
     virtual void
@@ -144,7 +145,7 @@ public:
     MCVAPI bool isBounceBlock() const;
 
     // symbol: ??0SlimeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI SlimeBlock(std::string const& nameId, int id, class Material const& material);
+    MCAPI SlimeBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

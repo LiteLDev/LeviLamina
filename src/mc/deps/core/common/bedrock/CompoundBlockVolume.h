@@ -47,13 +47,13 @@ public:
     MCAPI bool isEmpty() const;
 
     // symbol: ?isInside@CompoundBlockVolume@@QEBA_NAEBVBlockPos@@@Z
-    MCAPI bool isInside(class BlockPos const&) const;
+    MCAPI bool isInside(class BlockPos const& pos) const;
 
     // symbol: ??4CompoundBlockVolume@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class CompoundBlockVolume& operator=(class CompoundBlockVolume const&);
+    MCAPI class CompoundBlockVolume& operator=(class CompoundBlockVolume const& other);
 
     // symbol: ??8CompoundBlockVolume@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class CompoundBlockVolume const&) const;
+    MCAPI bool operator==(class CompoundBlockVolume const& other) const;
 
     // symbol:
     // ?peekLastVolume@CompoundBlockVolume@@QEBA?AV?$optional@VCompoundBlockVolumeItem@@@std@@V?$optional@W4CompoundBlockVolumePositionRelativity@@@3@@Z
@@ -64,7 +64,7 @@ public:
     MCAPI bool popVolume();
 
     // symbol: ?pushVolume@CompoundBlockVolume@@QEAAX$$QEAVCompoundBlockVolumeItem@@@Z
-    MCAPI void pushVolume(class CompoundBlockVolumeItem&&);
+    MCAPI void pushVolume(class CompoundBlockVolumeItem&& item);
 
     // symbol: ?setOrigin@CompoundBlockVolume@@QEAAXAEBVBlockPos@@_N@Z
     MCAPI void setOrigin(class BlockPos const&, bool);

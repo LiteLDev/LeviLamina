@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?compose@ComposedAssertMessage@DebugUtils@@QEAAXAEBUAssertHandlerContext@@@Z
-    MCAPI void compose(struct AssertHandlerContext const&);
+    MCAPI void compose(struct AssertHandlerContext const& context);
 
     // symbol: ??1ComposedAssertMessage@DebugUtils@@QEAA@XZ
     MCAPI ~ComposedAssertMessage();

@@ -101,12 +101,10 @@ public:
 
     // vIndex: 79, symbol:
     // ?onFertilized@WitherRoseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool
-    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* entity, ::FertilizerType fType)
-        const;
+    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
 
     // vIndex: 81, symbol: ?canBeFertilized@WitherRoseBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 86, symbol: ?mayPlaceOn@WitherRoseBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
@@ -134,7 +132,7 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 130, symbol: ?canSpawnOn@WitherRoseBlock@@UEBA_NPEAVActor@@@Z
-    virtual bool canSpawnOn(class Actor*) const;
+    virtual bool canSpawnOn(class Actor* actor) const;
 
     // vIndex: 134, symbol:
     // ?animateTickBedrockLegacy@WitherRoseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
@@ -153,10 +151,10 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 167, symbol: ?entityInside@WitherRoseBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-    virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
+    virtual void entityInside(class BlockSource& region, class BlockPos const&, class Actor& entity) const;
 
     // symbol: ??0WitherRoseBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI WitherRoseBlock(std::string const& nameId, int id);
+    MCAPI WitherRoseBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

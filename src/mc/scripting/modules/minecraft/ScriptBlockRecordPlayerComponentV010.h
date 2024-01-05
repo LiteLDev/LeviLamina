@@ -40,7 +40,7 @@ public:
     // ?tryCreate@ScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI static std::optional<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockRecordPlayerComponentV010>>
-    tryCreate(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
+    tryCreate(class BlockSource& region, class BlockPos position, class Scripting::WeakLifetimeScope const& scope);
 
     // symbol: ?ComponentId@ScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;
@@ -59,7 +59,7 @@ public:
 
     // symbol:
     // ?setRecord@ScriptBlockRecordPlayerComponentV010@ScriptModuleMinecraft@@IEAA?AV?$Result@X$$V@Scripting@@AEBVScriptItemType@2@@Z
-    MCAPI class Scripting::Result<void> setRecord(class ScriptModuleMinecraft::ScriptItemType const&);
+    MCAPI class Scripting::Result<void> setRecord(class ScriptModuleMinecraft::ScriptItemType const& itemType);
 
     // NOLINTEND
 };

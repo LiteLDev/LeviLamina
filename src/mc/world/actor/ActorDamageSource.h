@@ -109,7 +109,7 @@ public:
     MCAPI static std::vector<class VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
 
     // symbol: ?isDamageCausedByMob@ActorDamageSource@@SA_NW4ActorDamageCause@@@Z
-    MCAPI static bool isDamageCausedByMob(::ActorDamageCause);
+    MCAPI static bool isDamageCausedByMob(::ActorDamageCause cause);
 
     // symbol:
     // ?lookupCause@ActorDamageSource@@SA?AW4ActorDamageCause@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

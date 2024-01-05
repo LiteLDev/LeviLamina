@@ -18,7 +18,7 @@ public:
     virtual ~FillingContainer();
 
     // vIndex: 2, symbol: ?serverInitItemStackIds@FillingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    virtual void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    virtual void serverInitItemStackIds(int, int count, std::function<void(int, class ItemStack const&)>);
 
     // vIndex: 5, symbol: ?getItem@FillingContainer@@UEBAAEBVItemStack@@H@Z
     virtual class ItemStack const& getItem(int slot) const;
@@ -27,7 +27,7 @@ public:
     virtual void setItem(int slot, class ItemStack const& item);
 
     // vIndex: 11, symbol: ?setItemWithForceBalance@FillingContainer@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
+    virtual void setItemWithForceBalance(int slot, class ItemStack const& item, bool);
 
     // vIndex: 12, symbol: ?removeItem@FillingContainer@@UEAAXHH@Z
     virtual void removeItem(int slot, int count);
@@ -100,7 +100,7 @@ public:
     MCAPI int _addResource(class ItemStack const& itemStack);
 
     // symbol: ?_doDrop@FillingContainer@@IEAAXAEAVItemStack@@_N@Z
-    MCAPI void _doDrop(class ItemStack&, bool);
+    MCAPI void _doDrop(class ItemStack& item, bool randomly);
 
     // symbol: ?_fixBackwardCompabilityItem@FillingContainer@@IEAAXAEAVItemStack@@@Z
     MCAPI void _fixBackwardCompabilityItem(class ItemStack& item);

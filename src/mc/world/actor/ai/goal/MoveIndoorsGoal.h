@@ -36,15 +36,19 @@ public:
         MCAPI MoveIndoorsDefinition();
 
         // symbol: ?addCooldownTicksBySeconds@MoveIndoorsDefinition@MoveIndoorsGoal@@QEAAXAEBM@Z
-        MCAPI void addCooldownTicksBySeconds(float const&);
+        MCAPI void addCooldownTicksBySeconds(float const& seconds);
 
         // symbol: ?initialize@MoveIndoorsDefinition@MoveIndoorsGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext&, class MoveIndoorsGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class MoveIndoorsGoal& goal) const;
 
         // symbol:
         // ?buildSchema@MoveIndoorsDefinition@MoveIndoorsGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VMoveIndoorsDefinition@MoveIndoorsGoal@@@JsonUtil@@@4@@Z
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MoveIndoorsGoal::MoveIndoorsDefinition>>&);
+        MCAPI static void buildSchema(
+            std::string const&                                  name,
+            std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                class JsonUtil::EmptyClass,
+                class MoveIndoorsGoal::MoveIndoorsDefinition>>& root
+        );
 
         // NOLINTEND
     };
@@ -80,7 +84,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0MoveIndoorsGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit MoveIndoorsGoal(class Mob&);
+    MCAPI explicit MoveIndoorsGoal(class Mob& mob);
 
     // NOLINTEND
 

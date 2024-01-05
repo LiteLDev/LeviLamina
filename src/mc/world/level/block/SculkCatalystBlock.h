@@ -115,7 +115,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 129, symbol: ?getVariant@SculkCatalystBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -124,7 +124,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@SculkCatalystBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -146,10 +146,11 @@ public:
 
     // symbol:
     // ??0SculkCatalystBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI SculkCatalystBlock(std::string const&, int, class Material const&);
+    MCAPI SculkCatalystBlock(std::string const& nameId, int, class Material const& material);
 
     // symbol: ?bloom@SculkCatalystBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandom@@@Z
-    MCAPI static void bloom(class BlockSource&, class BlockPos const&, class Block const&, class Random&);
+    MCAPI static void
+    bloom(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Random&);
 
     // NOLINTEND
 };

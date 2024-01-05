@@ -17,7 +17,7 @@ public:
     MCAPI NavigationComponent();
 
     // symbol: ??0NavigationComponent@@QEAA@AEBV0@@Z
-    MCAPI NavigationComponent(class NavigationComponent const&);
+    MCAPI NavigationComponent(class NavigationComponent const& other);
 
     // symbol:
     // ?createPath@NavigationComponent@@QEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVMob@@AEAVActor@@@Z
@@ -110,7 +110,7 @@ public:
     MCAPI void incrementTick();
 
     // symbol: ?initMultiTypeNavigationComponent@NavigationComponent@@QEAAXAEAVMob@@AEAVActorDefinitionDescriptor@@@Z
-    MCAPI void initMultiTypeNavigationComponent(class Mob&, class ActorDefinitionDescriptor&);
+    MCAPI void initMultiTypeNavigationComponent(class Mob& entity, class ActorDefinitionDescriptor&);
 
     // symbol: ?initializeFromDefinition@NavigationComponent@@QEAAXAEAVMob@@PEAUNavigationDescription@@@Z
     MCAPI void initializeFromDefinition(class Mob& owner, struct NavigationDescription* description);
@@ -119,8 +119,13 @@ public:
     MCAPI bool isDone() const;
 
     // symbol: ?isFree@NavigationComponent@@QEAA?AW4NodeType@@AEAVMob@@AEBVBlockPos@@11W4CanJumpIntoNode@@@Z
-    MCAPI ::NodeType
-    isFree(class Mob&, class BlockPos const&, class BlockPos const&, class BlockPos const&, ::CanJumpIntoNode);
+    MCAPI ::NodeType isFree(
+        class Mob&            owner,
+        class BlockPos const& lastPathPos,
+        class BlockPos const& testPos,
+        class BlockPos const& size,
+        ::CanJumpIntoNode     jumpIntoNode
+    );
 
     // symbol: ?isStuck@NavigationComponent@@QEBA_NH@Z
     MCAPI bool isStuck(int stuckTimeThreshold) const;

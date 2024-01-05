@@ -160,14 +160,13 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@DispenserBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@DispenserBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@DispenserBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
@@ -188,13 +187,14 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0DispenserBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DispenserBlock(std::string const& nameId, int id);
+    MCAPI DispenserBlock(std::string const& nameId, int);
 
     // symbol: ?dropAllItemsFromContainer@DispenserBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static void dropAllItemsFromContainer(class BlockSource&, class BlockPos const&);
 
     // symbol: ?ejectItem@DispenserBlock@@SAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@H@Z
-    MCAPI static void ejectItem(class BlockSource&, class Vec3 const&, uchar, class ItemStack const&, int);
+    MCAPI static void
+    ejectItem(class BlockSource& region, class Vec3 const& pos, uchar face, class ItemStack const& item, int);
 
     // symbol: ?openInventoryContainer@DispenserBlock@@SAXAEAVPlayer@@AEBVBlockPos@@@Z
     MCAPI static void openInventoryContainer(class Player&, class BlockPos const&);
@@ -207,8 +207,15 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?ejectItem@DispenserBlock@@IEBAXAEAVBlockSource@@AEBVVec3@@EAEBVItemStack@@AEAVContainer@@HH@Z
-    MCAPI void
-    ejectItem(class BlockSource&, class Vec3 const&, uchar, class ItemStack const&, class Container&, int, int) const;
+    MCAPI void ejectItem(
+        class BlockSource&     region,
+        class Vec3 const&      pos,
+        uchar                  face,
+        class ItemStack const& item,
+        class Container&       container,
+        int                    slot,
+        int
+    ) const;
 
     // symbol: ?getDispensePosition@DispenserBlock@@IEBA?AVVec3@@AEAVBlockSource@@AEBV2@@Z
     MCAPI class Vec3 getDispensePosition(class BlockSource& region, class Vec3 const& pos) const;

@@ -41,7 +41,7 @@ public:
     virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 3, symbol: ?postLoadItems@ComplexInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
-    virtual void postLoadItems(class BlockPalette&, bool);
+    virtual void postLoadItems(class BlockPalette& blockPalette, bool isClientSide);
 
     // vIndex: 4, symbol: ?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
     virtual ::InventoryTransactionError handle(class Player& player, bool isSenderAuthority) const;
@@ -51,7 +51,7 @@ public:
     virtual void onTransactionError(class Player& player, ::InventoryTransactionError error) const;
 
     // symbol: ??0ComplexInventoryTransaction@@QEAA@W4Type@0@@Z
-    MCAPI explicit ComplexInventoryTransaction(::ComplexInventoryTransaction::Type type);
+    MCAPI explicit ComplexInventoryTransaction(::ComplexInventoryTransaction::Type);
 
     // symbol:
     // ?fromType@ComplexInventoryTransaction@@SA?AV?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@W4Type@1@@Z

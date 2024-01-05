@@ -106,21 +106,20 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 84, symbol: ?mayPlace@FlowerPotBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar) const;
 
     // vIndex: 85, symbol: ?mayPlace@FlowerPotBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@FlowerPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void
-    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
 
     // vIndex: 94, symbol: ?playerWillDestroy@FlowerPotBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
     virtual class Block const*
     playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 96, symbol: ?asItemInstance@FlowerPotBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const* blockActor) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -147,13 +146,13 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@FlowerPotBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@FlowerPotBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -162,8 +161,7 @@ public:
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 164, symbol: ?getResourceItem@FlowerPotBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // symbol: ?isInteractiveBlock@FlowerPotBlock@@UEBA_NXZ
     MCVAPI bool isInteractiveBlock() const;
@@ -172,29 +170,33 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0FlowerPotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FlowerPotBlock(std::string const& nameId, int id);
+    MCAPI FlowerPotBlock(std::string const& nameId, int);
 
     // symbol: ?isSupportedBlock@FlowerPotBlock@@SA_NAEBVBlock@@@Z
-    MCAPI static bool isSupportedBlock(class Block const&);
+    MCAPI static bool isSupportedBlock(class Block const& block);
 
     // symbol: ?isValidResource@FlowerPotBlock@@SA_NAEBVBlock@@@Z
-    MCAPI static bool isValidResource(class Block const&);
+    MCAPI static bool isValidResource(class Block const& plant);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_tryPlaceFlower@FlowerPotBlock@@AEBA_NAEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI bool _tryPlaceFlower(class Player&, class BlockPos const&) const;
+    MCAPI bool _tryPlaceFlower(class Player& player, class BlockPos const& blockPos) const;
 
     // symbol: ?_tryTakeFlower@FlowerPotBlock@@AEBA_NAEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI bool _tryTakeFlower(class Player&, class BlockPos const&) const;
+    MCAPI bool _tryTakeFlower(class Player& player, class BlockPos const& blockPos) const;
 
     // symbol:
     // ?_updateFlowerPotEntity@FlowerPotBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVFlowerPotBlockActor@@PEBVBlock@@AEAVActor@@@Z
-    MCAPI void
-    _updateFlowerPotEntity(class BlockSource&, class BlockPos const&, class FlowerPotBlockActor*, class Block const*, class Actor&)
-        const;
+    MCAPI void _updateFlowerPotEntity(
+        class BlockSource&    region,
+        class BlockPos const& blockPos,
+        class FlowerPotBlockActor*,
+        class Block const*,
+        class Actor& sourceActor
+    ) const;
 
     // NOLINTEND
 };

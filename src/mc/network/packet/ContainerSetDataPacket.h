@@ -36,13 +36,13 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@ContainerSetDataPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0ContainerSetDataPacket@@QEAA@XZ
     MCAPI ContainerSetDataPacket();
 
     // symbol: ??0ContainerSetDataPacket@@QEAA@W4ContainerID@@HH@Z
-    MCAPI ContainerSetDataPacket(::ContainerID containerId, int id, int value);
+    MCAPI ContainerSetDataPacket(::ContainerID containerId, int, int value);
 
     // NOLINTEND
 };

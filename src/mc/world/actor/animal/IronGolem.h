@@ -64,7 +64,7 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 83, symbol: ?handleEntityEvent@IronGolem@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -91,16 +91,20 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 176, symbol: ?hurtEffects@IronGolem@@UEAAXAEBVActorDamageSource@@M_N1@Z
-    virtual void hurtEffects(class ActorDamageSource const&, float, bool, bool);
+    virtual void hurtEffects(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 177, symbol: ?aiStep@IronGolem@@UEAAXXZ
     virtual void aiStep();
 
     // vIndex: 186, symbol: ?doHurtTarget@IronGolem@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
-    virtual bool doHurtTarget(class Actor*, ::ActorDamageCause const&);
+    virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
 
     // symbol: ??0IronGolem@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI IronGolem(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI IronGolem(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 };

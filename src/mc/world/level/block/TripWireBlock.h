@@ -116,7 +116,8 @@ public:
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
     // vIndex: 102, symbol: ?shouldTriggerEntityInside@TripWireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-    virtual bool shouldTriggerEntityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
+    virtual bool
+    shouldTriggerEntityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -158,7 +159,7 @@ public:
     virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
     // symbol: ??0TripWireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TripWireBlock(std::string const& nameId, int id);
+    MCAPI TripWireBlock(std::string const& nameId, int);
 
     // NOLINTEND
 

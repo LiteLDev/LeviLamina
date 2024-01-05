@@ -45,49 +45,49 @@ MCAPI bool isStuckInCollider(class EntityContext const&);
 MCAPI bool isStuckItem(class EntityContext const&);
 
 // symbol: ?onOnewayCollision@ActorCollision@@YAXAEAVEntityContext@@AEBVAABB@@@Z
-MCAPI void onOnewayCollision(class EntityContext&, class AABB const&);
+MCAPI void onOnewayCollision(class EntityContext&, class AABB const& oneWayVolume);
 
 // symbol: ?setCollidableMob@ActorCollision@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setCollidableMob(class EntityContext&, bool);
+MCAPI void setCollidableMob(class EntityContext&, bool value);
 
 // symbol: ?setCollidableMobNear@ActorCollision@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setCollidableMobNear(class EntityContext&, bool);
+MCAPI void setCollidableMobNear(class EntityContext&, bool value);
 
 // symbol: ?setCollision@ActorCollision@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setCollision(class EntityContext&, bool);
+MCAPI void setCollision(class EntityContext&, bool value);
 
 // symbol: ?setHorizontalCollision@ActorCollision@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setHorizontalCollision(class EntityContext&, bool);
+MCAPI void setHorizontalCollision(class EntityContext&, bool value);
 
 // symbol: ?setIsKnockedBackOnDeath@ActorCollision@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setIsKnockedBackOnDeath(class EntityContext&, bool);
+MCAPI void setIsKnockedBackOnDeath(class EntityContext&, bool value);
 
 // symbol: ?setOnGround@ActorCollision@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setOnGround(class EntityContext&, bool);
+MCAPI void setOnGround(class EntityContext&, bool value);
 
 // symbol: ?setPushedBy@ActorCollision@@YAXAEAVEntityContext@@VStrictEntityContext@@AEBUActorUniqueID@@@Z
-MCAPI void setPushedBy(class EntityContext&, class StrictEntityContext, struct ActorUniqueID const&);
+MCAPI void setPushedBy(class EntityContext&, class StrictEntityContext context, struct ActorUniqueID const&);
 
 // symbol: ?setStuckInCollider@ActorCollision@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setStuckInCollider(class EntityContext&, bool);
+MCAPI void setStuckInCollider(class EntityContext&, bool value);
 
 // symbol: ?setStuckItem@ActorCollision@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setStuckItem(class EntityContext&, bool);
+MCAPI void setStuckItem(class EntityContext&, bool value);
 
 // symbol: ?setSubAABBs@ActorCollision@@YAXAEAVEntityContext@@AEBV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
 MCAPI void setSubAABBs(class EntityContext&, std::vector<class AABB> const&);
 
 // symbol: ?setUsesOneWayCollision@ActorCollision@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setUsesOneWayCollision(class EntityContext&, bool);
+MCAPI void setUsesOneWayCollision(class EntityContext&, bool value);
 
 // symbol: ?setVerticalCollision@ActorCollision@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setVerticalCollision(class EntityContext&, bool);
+MCAPI void setVerticalCollision(class EntityContext&, bool value);
 
 // symbol: ?setWasOnGround@ActorCollision@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setWasOnGround(class EntityContext&, bool);
+MCAPI void setWasOnGround(class EntityContext&, bool value);
 
 // symbol: ?setWasPenetratingLastFrame@ActorCollision@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setWasPenetratingLastFrame(class EntityContext&, bool);
+MCAPI void setWasPenetratingLastFrame(class EntityContext&, bool value);
 
 // symbol: ?updateOnewayCollisions@ActorCollision@@YAXAEAVEntityContext@@@Z
 MCAPI void updateOnewayCollisions(class EntityContext&);

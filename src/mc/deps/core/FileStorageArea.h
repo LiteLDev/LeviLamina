@@ -51,7 +51,7 @@ public:
     // vIndex: 1, symbol:
     // ?createTransaction@FileStorageArea@Core@@UEAA?AV?$unique_ptr@VFileSystemImpl@Core@@U?$default_delete@VFileSystemImpl@Core@@@std@@@std@@W4FileAccessType@2@W4TransactionFlags@2@@Z
     virtual std::unique_ptr<class Core::FileSystemImpl>
-        createTransaction(::Core::FileAccessType, ::Core::TransactionFlags);
+    createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
 
     // vIndex: 2, symbol: __unk_vfn_2
     virtual void __unk_vfn_2();
@@ -136,7 +136,7 @@ public:
     virtual bool shouldAllowCommit() const;
 
     // vIndex: 28, symbol: ?trackBytesWritten@FileStorageArea@Core@@UEAAXAEBVPath@2@_KW4WriteOperation@2@@Z
-    virtual void trackBytesWritten(class Core::Path const&, uint64, ::Core::WriteOperation);
+    virtual void trackBytesWritten(class Core::Path const&, uint64 amount, ::Core::WriteOperation);
 
     // vIndex: 29, symbol: ?trackWriteOperation@FileStorageArea@Core@@UEAAXAEBVPath@2@W4WriteOperation@2@@Z
     virtual void trackWriteOperation(class Core::Path const&, ::Core::WriteOperation);
@@ -241,10 +241,10 @@ public:
     MCAPI class Core::Result _endTransaction(class Core::FileSystemImpl* pTransaction, bool fromChild);
 
     // symbol: ?_onDeleteFile@FileStorageArea@Core@@AEAAXAEBVPath@2@@Z
-    MCAPI void _onDeleteFile(class Core::Path const&);
+    MCAPI void _onDeleteFile(class Core::Path const& filePath);
 
     // symbol: ?_onWriteFile@FileStorageArea@Core@@AEAAXAEBVPath@2@@Z
-    MCAPI void _onWriteFile(class Core::Path const&);
+    MCAPI void _onWriteFile(class Core::Path const& filePath);
 
     // symbol:
     // ?_getStorageAreaForPathImpl@FileStorageArea@Core@@CA?AVResult@2@AEAV?$shared_ptr@VFileStorageArea@Core@@@std@@AEBVPath@2@@Z

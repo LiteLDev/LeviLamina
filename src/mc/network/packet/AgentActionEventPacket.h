@@ -33,18 +33,19 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@AgentActionEventPacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@AgentActionEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0AgentActionEventPacket@@QEAA@XZ
     MCAPI AgentActionEventPacket();
 
     // symbol:
     // ??0AgentActionEventPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4AgentActionType@@AEBVValue@Json@@@Z
-    MCAPI AgentActionEventPacket(std::string const&, ::AgentActionType, class Json::Value const&);
+    MCAPI
+    AgentActionEventPacket(std::string const& requestId, ::AgentActionType action, class Json::Value const& response);
 
     // NOLINTEND
 };

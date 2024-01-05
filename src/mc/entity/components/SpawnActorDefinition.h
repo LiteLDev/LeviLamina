@@ -20,13 +20,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initialize@SpawnActorDefinition@@QEBAXAEAVEntityContext@@AEAVSpawnActorComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class SpawnActorComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class SpawnActorComponent& component) const;
 
     // symbol:
     // ?buildSchema@SpawnActorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSpawnActorDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SpawnActorDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SpawnActorDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

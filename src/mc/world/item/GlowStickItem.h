@@ -82,10 +82,10 @@ public:
     virtual void __unk_vfn_99();
 
     // vIndex: 107, symbol: ?getLightEmission@GlowStickItem@@UEBA?AUBrightness@@H@Z
-    virtual struct Brightness getLightEmission(int) const;
+    virtual struct Brightness getLightEmission(int auxValue) const;
 
     // symbol: ??0GlowStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI GlowStickItem(std::string const& name, int id_);
+    MCAPI GlowStickItem(std::string const& name, int id);
 
     // symbol: ?COLORS@GlowStickItem@@2QBW4ItemColor@@B
     MCAPI static ::ItemColor const COLORS[];

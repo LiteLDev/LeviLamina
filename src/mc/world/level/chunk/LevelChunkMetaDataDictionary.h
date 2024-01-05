@@ -16,7 +16,7 @@ public:
     MCAPI void checkAndSerialize(std::function<void(std::string const&)>) const;
 
     // symbol: ?deserialize@LevelChunkMetaDataDictionary@@QEAAXAEAVIDataInput@@@Z
-    MCAPI void deserialize(class IDataInput&);
+    MCAPI void deserialize(class IDataInput& stream);
 
     // symbol:
     // ?registerMetaData@LevelChunkMetaDataDictionary@@QEAA?AV?$shared_ptr@VLevelChunkMetaData@@@std@@AEBVLevelChunkMetaData@@@Z

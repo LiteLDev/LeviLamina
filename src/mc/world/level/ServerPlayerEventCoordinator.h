@@ -18,10 +18,10 @@ public:
     virtual ~ServerPlayerEventCoordinator() = default;
 
     // symbol: ?sendPlayerAuthInputApplied@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-    MCAPI void sendPlayerAuthInputApplied(class Player&);
+    MCAPI void sendPlayerAuthInputApplied(class Player& player);
 
     // symbol: ?sendPlayerAuthInputReceived@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
-    MCAPI void sendPlayerAuthInputReceived(class Player&);
+    MCAPI void sendPlayerAuthInputReceived(class Player& player);
 
     // symbol: ?sendPlayerMovementAnomaly@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVVec3@@MM@Z
     MCAPI void

@@ -12,13 +12,17 @@ namespace ActorContainerDiffHelperImpl::Compare {
 // NOLINTBEGIN
 // symbol:
 // ?_attributeSnapshotLessThan@Compare@ActorContainerDiffHelperImpl@@YA_NV?$not_null@PEBVAttributeInstance@@@gsl@@0@Z
-MCAPI bool
-    _attributeSnapshotLessThan(gsl::not_null<class AttributeInstance const*>, gsl::not_null<class AttributeInstance const*>);
+MCAPI bool _attributeSnapshotLessThan(
+    gsl::not_null<class AttributeInstance const*> a,
+    gsl::not_null<class AttributeInstance const*> b
+);
 
 // symbol:
 // ?_mobEffectInstanceLessThan@Compare@ActorContainerDiffHelperImpl@@YA_NV?$not_null@PEBVMobEffectInstance@@@gsl@@0@Z
-MCAPI bool
-    _mobEffectInstanceLessThan(gsl::not_null<class MobEffectInstance const*>, gsl::not_null<class MobEffectInstance const*>);
+MCAPI bool _mobEffectInstanceLessThan(
+    gsl::not_null<class MobEffectInstance const*> a,
+    gsl::not_null<class MobEffectInstance const*> b
+);
 // NOLINTEND
 
 }; // namespace ActorContainerDiffHelperImpl::Compare

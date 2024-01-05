@@ -70,7 +70,7 @@ public:
     MCAPI void _doThrow(class ItemStack&, class Player&, class ProjectileItemComponent const&, float) const;
 
     // symbol: ?_getLaunchPower@ThrowableItemComponent@@AEBAMHHH@Z
-    MCAPI float _getLaunchPower(int, int, int) const;
+    MCAPI float _getLaunchPower(int durationLeft, int maxDrawDuration, int maxUseDuration) const;
 
     // NOLINTEND
 };

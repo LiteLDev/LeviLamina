@@ -41,7 +41,7 @@ public:
         MCAPI static std::string getSubcommandName(::NewExecuteCommand::ExecuteChainedSubcommand::Subcommand);
 
         // symbol: ?setup@ExecuteChainedSubcommand@NewExecuteCommand@@SAXAEAVCommandRegistry@@@Z
-        MCAPI static void setup(class CommandRegistry&);
+        MCAPI static void setup(class CommandRegistry& registry);
 
         // symbol: ?CHAINED_OPTION_0@ExecuteChainedSubcommand@NewExecuteCommand@@2PEBDEB
         MCAPI static char const* CHAINED_OPTION_0;
@@ -150,39 +150,48 @@ public:
     virtual ~NewExecuteCommand();
 
     // vIndex: 2, symbol: ?execute@NewExecuteCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ??0NewExecuteCommand@@QEAA@XZ
     MCAPI NewExecuteCommand();
 
     // symbol: ?setup@NewExecuteCommand@@SAXAEAVCommandRegistry@@H@Z
-    MCAPI static void setup(class CommandRegistry&, int);
+    MCAPI static void setup(class CommandRegistry& registry, int);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_commandOutputFail@NewExecuteCommand@@AEBAXAEAVCommandOutput@@AEBV?$optional@H@std@@@Z
-    MCAPI void _commandOutputFail(class CommandOutput&, std::optional<int> const&) const;
+    MCAPI void _commandOutputFail(class CommandOutput& output, std::optional<int> const&) const;
 
     // symbol: ?_commandOutputSuccess@NewExecuteCommand@@AEBAXAEAVCommandOutput@@AEBV?$optional@H@std@@@Z
-    MCAPI void _commandOutputSuccess(class CommandOutput&, std::optional<int> const&) const;
+    MCAPI void _commandOutputSuccess(class CommandOutput& output, std::optional<int> const&) const;
 
     // symbol:
     // ?_detectConditionSubcommand@NewExecuteCommand@@AEBA_NAEBVCommandOrigin@@AEAVCommandOutput@@AEAV?$optional@H@std@@@Z
-    MCAPI bool _detectConditionSubcommand(class CommandOrigin const&, class CommandOutput&, std::optional<int>&) const;
+    MCAPI bool
+    _detectConditionSubcommand(class CommandOrigin const& origin, class CommandOutput& output, std::optional<int>&)
+        const;
 
     // symbol:
     // ?_getScoreFromSelectorOnObjective@NewExecuteCommand@@AEBA?AV?$optional@UScoreInfo@@@std@@AEBVScoreboard@@AEBV?$CommandSelector@VActor@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    MCAPI std::optional<struct ScoreInfo>
-    _getScoreFromSelectorOnObjective(class Scoreboard const&, class CommandSelector<class Actor> const&, std::string const&, class CommandOrigin const&, class CommandOutput&)
-        const;
+    MCAPI std::optional<struct ScoreInfo> _getScoreFromSelectorOnObjective(
+        class Scoreboard const&                   scoreboard,
+        class CommandSelector<class Actor> const& selector,
+        std::string const&                        objectiveName,
+        class CommandOrigin const&                origin,
+        class CommandOutput&                      output
+    ) const;
 
     // symbol:
     // ?_getScoreboardIdForSelector@NewExecuteCommand@@AEBA?AV?$optional@UScoreboardId@@@std@@AEBVScoreboard@@AEBV?$CommandSelector@VActor@@@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    MCAPI std::optional<struct ScoreboardId>
-    _getScoreboardIdForSelector(class Scoreboard const&, class CommandSelector<class Actor> const&, class CommandOrigin const&, class CommandOutput&)
-        const;
+    MCAPI std::optional<struct ScoreboardId> _getScoreboardIdForSelector(
+        class Scoreboard const&                   scoreboard,
+        class CommandSelector<class Actor> const& selector,
+        class CommandOrigin const&                origin,
+        class CommandOutput&                      output
+    ) const;
 
     // NOLINTEND
 };

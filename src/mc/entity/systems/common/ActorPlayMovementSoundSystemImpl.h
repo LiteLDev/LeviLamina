@@ -19,7 +19,7 @@ MCAPI void tick(class ViewT<
                 class StrictEntityContext,
                 struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
                 struct Exclude<struct PassengerComponent, class FlagComponent<struct ActorRemovedFlag>>,
-                class ActorOwnerComponent>);
+                class ActorOwnerComponent> view);
 // NOLINTEND
 
 }; // namespace ActorPlayMovementSoundSystemImpl

@@ -21,13 +21,13 @@ public:
     virtual void notify(int64);
 
     // vIndex: 3, symbol: ?willChange@AttributeInstanceDelegate@@UEAA_NMMAEBVAttributeBuff@@@Z
-    virtual bool willChange(float, float, class AttributeBuff const&);
+    virtual bool willChange(float oldValue, float newValue, class AttributeBuff const& buff);
 
     // vIndex: 4, symbol: ?change@AttributeInstanceDelegate@@UEAAMMMAEBVAttributeBuff@@@Z
-    virtual float change(float oldValue, float newValue, class AttributeBuff const& buffInfo);
+    virtual float change(float oldValue, float newValue, class AttributeBuff const& buff);
 
     // vIndex: 5, symbol: ?getBuffValueWithModifiers@AttributeInstanceDelegate@@UEBAMAEBVAttributeBuff@@@Z
-    virtual float getBuffValueWithModifiers(class AttributeBuff const&) const;
+    virtual float getBuffValueWithModifiers(class AttributeBuff const& buff) const;
 
     // NOLINTEND
 };

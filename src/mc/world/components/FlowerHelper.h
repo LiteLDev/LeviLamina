@@ -9,13 +9,22 @@ namespace FlowerHelper {
 // NOLINTBEGIN
 // symbol:
 // ?getRandomFlowerBlock@FlowerHelper@@YAAEBVBlock@@W4FlowerPlacementType@@AEBVBlockPos@@AEAVRandom@@AEBVPerlinSimplexNoise@@@Z
-MCAPI class Block const&
-getRandomFlowerBlock(::FlowerPlacementType, class BlockPos const&, class Random&, class PerlinSimplexNoise const&);
+MCAPI class Block const& getRandomFlowerBlock(
+    ::FlowerPlacementType           type,
+    class BlockPos const&           pos,
+    class Random&                   random,
+    class PerlinSimplexNoise const& biomeInfoNoise
+);
 
 // symbol:
 // ?getRandomFlowerBlock@FlowerHelper@@YAAEBVBlock@@AEBVBiome@@AEBVBlockPos@@AEAVRandom@@AEAVBiomeRegistry@@AEBVPerlinSimplexNoise@@@Z
-MCAPI class Block const&
-getRandomFlowerBlock(class Biome const&, class BlockPos const&, class Random&, class BiomeRegistry&, class PerlinSimplexNoise const&);
+MCAPI class Block const& getRandomFlowerBlock(
+    class Biome const&              biome,
+    class BlockPos const&           pos,
+    class Random&                   random,
+    class BiomeRegistry&            biomeRegistry,
+    class PerlinSimplexNoise const& biomeInfoNoise
+);
 // NOLINTEND
 
 }; // namespace FlowerHelper

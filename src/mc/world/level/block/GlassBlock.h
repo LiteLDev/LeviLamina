@@ -103,7 +103,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 60, symbol: ?canBeUsedInCommands@GlassBlock@@UEBA_NAEBVBaseGameVersion@@@Z
-    virtual bool canBeUsedInCommands(class BaseGameVersion const&) const;
+    virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -112,7 +112,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@GlassBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -142,7 +142,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 165, symbol: ?getResourceCount@GlassBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const& block, int bonusLootLevel) const;
 
     // symbol:
     // ??0GlassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N22@Z

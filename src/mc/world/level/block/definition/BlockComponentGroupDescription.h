@@ -21,7 +21,7 @@ public:
 
     // symbol:
     // ?getComponentDescription@BlockComponentGroupDescription@@QEBAPEAUBlockComponentDescription@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI struct BlockComponentDescription* getComponentDescription(std::string const&) const;
+    MCAPI struct BlockComponentDescription* getComponentDescription(std::string const& name) const;
 
     // symbol: ??4BlockComponentGroupDescription@@QEAAAEAU0@$$QEAU0@@Z
     MCAPI struct BlockComponentGroupDescription& operator=(struct BlockComponentGroupDescription&&);

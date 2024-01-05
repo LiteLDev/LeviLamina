@@ -26,7 +26,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0StackResultStorageEntity@@IEAA@AEBVOwnerStorageEntity@@@Z
-    MCAPI explicit StackResultStorageEntity(class OwnerStorageEntity const& weakStorage);
+    MCAPI explicit StackResultStorageEntity(class OwnerStorageEntity const& ownerStorage);
 
     // symbol: ??0StackResultStorageEntity@@IEAA@$$QEAV0@@Z
     MCAPI StackResultStorageEntity(class StackResultStorageEntity&& other);

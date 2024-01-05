@@ -31,7 +31,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_shootProjectile@ShooterComponent@@AEAAXAEAVActor@@AEBUActorDefinitionIdentifier@@H@Z
-    MCAPI void _shootProjectile(class Actor&, struct ActorDefinitionIdentifier const&, int);
+    MCAPI void _shootProjectile(class Actor& owner, struct ActorDefinitionIdentifier const&, int);
 
     // NOLINTEND
 };

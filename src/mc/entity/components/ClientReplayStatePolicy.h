@@ -19,7 +19,7 @@ public:
     virtual ~ClientReplayStatePolicy() = default;
 
     // vIndex: 1, symbol: ?isReplayNeeded@ClientReplayStatePolicy@@UEBA_NW4AdvanceFrameResult@@@Z
-    virtual bool isReplayNeeded(::AdvanceFrameResult) const;
+    virtual bool isReplayNeeded(::AdvanceFrameResult result) const;
 
     // vIndex: 2, symbol: ?canRewindToFrame@ClientReplayStatePolicy@@UEAA_NAEBVEntityContext@@_K1@Z
     virtual bool canRewindToFrame(class EntityContext const&, uint64, uint64);

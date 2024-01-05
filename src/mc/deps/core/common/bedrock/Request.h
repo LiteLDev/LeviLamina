@@ -25,7 +25,7 @@ public:
     MCAPI Request();
 
     // symbol: ??0Request@Http@Bedrock@@QEAA@AEBV012@@Z
-    MCAPI Request(class Bedrock::Http::Request const&);
+    MCAPI Request(class Bedrock::Http::Request const& rhs);
 
     // symbol:
     // ?getBody@Request@Http@Bedrock@@QEBA?AV?$not_null@V?$shared_ptr@VIRequestBody@Internal@Http@Bedrock@@@std@@@gsl@@XZ
@@ -62,13 +62,13 @@ public:
 
     // symbol:
     // ?setBody@Request@Http@Bedrock@@QEAAXV?$not_null@V?$shared_ptr@VIRequestBody@Internal@Http@Bedrock@@@std@@@gsl@@@Z
-    MCAPI void setBody(gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IRequestBody>>);
+    MCAPI void setBody(gsl::not_null<std::shared_ptr<class Bedrock::Http::Internal::IRequestBody>> body);
 
     // symbol: ?setHeaders@Request@Http@Bedrock@@QEAAXAEBVHeaderCollection@23@@Z
     MCAPI void setHeaders(class Bedrock::Http::HeaderCollection const&);
 
     // symbol: ?setMethod@Request@Http@Bedrock@@QEAAXVMethod@23@@Z
-    MCAPI void setMethod(class Bedrock::Http::Method);
+    MCAPI void setMethod(class Bedrock::Http::Method method);
 
     // symbol: ??1Request@Http@Bedrock@@QEAA@XZ
     MCAPI ~Request();

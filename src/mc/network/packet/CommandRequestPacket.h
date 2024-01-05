@@ -36,7 +36,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@CommandRequestPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0CommandRequestPacket@@QEAA@XZ
     MCAPI CommandRequestPacket();
@@ -46,8 +46,10 @@ public:
 
     // symbol:
     // ?createCommandContext@CommandRequestPacket@@QEBA?AV?$unique_ptr@VCommandContext@@U?$default_delete@VCommandContext@@@std@@@std@@AEBVNetworkIdentifier@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@@Z
-    MCAPI std::unique_ptr<class CommandContext>
-    createCommandContext(class NetworkIdentifier const&, class Bedrock::NonOwnerPointer<class ILevel> const&) const;
+    MCAPI std::unique_ptr<class CommandContext> createCommandContext(
+        class NetworkIdentifier const&                      source,
+        class Bedrock::NonOwnerPointer<class ILevel> const& level
+    ) const;
 
     // symbol: ?getInternalSource@CommandRequestPacket@@QEBA_NXZ
     MCAPI bool getInternalSource() const;

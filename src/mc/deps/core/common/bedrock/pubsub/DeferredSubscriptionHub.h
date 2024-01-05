@@ -60,7 +60,8 @@ public:
 
     // vIndex: 10, symbol:
     // ?_enqueue@PriorityDeferredSubscriptionHub@PubSub@Bedrock@@EEAAXV?$function@$$A6AXXZ@std@@W4ConnectPosition@23@V?$optional@H@5@@Z
-    virtual void _enqueue(std::function<void(void)>, ::Bedrock::PubSub::ConnectPosition, std::optional<int>) = 0;
+    virtual void
+    _enqueue(std::function<void(void)> fn, ::Bedrock::PubSub::ConnectPosition at, std::optional<int> group) = 0;
 
     // symbol:
     // ?makePriorityHub@DeferredSubscriptionHub@PubSub@Bedrock@@SA?AV?$unique_ptr@VDeferredSubscriptionHub@PubSub@Bedrock@@U?$default_delete@VDeferredSubscriptionHub@PubSub@Bedrock@@@std@@@std@@XZ

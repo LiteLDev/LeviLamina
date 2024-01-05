@@ -21,11 +21,11 @@ public:
     virtual int getFilteredStringIndex() const;
 
     // vIndex: 4, symbol: ?_write@ItemStackRequestActionCraftRecipeOptional@@UEBAXAEAVBinaryStream@@@Z
-    virtual void _write(class BinaryStream&) const;
+    virtual void _write(class BinaryStream& stream) const;
 
     // vIndex: 5, symbol:
     // ?_read@ItemStackRequestActionCraftRecipeOptional@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0ItemStackRequestActionCraftRecipeOptional@@QEAA@XZ
     MCAPI ItemStackRequestActionCraftRecipeOptional();

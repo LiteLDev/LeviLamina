@@ -117,7 +117,7 @@ public:
     MCAPI bool hasModule(struct PackIdVersion const& moduleIdentity) const;
 
     // symbol: ?hasPackCapability@PackManifest@@QEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI bool hasPackCapability(std::string_view) const;
+    MCAPI bool hasPackCapability(std::string_view capability) const;
 
     // symbol: ?hasPlugins@PackManifest@@QEBA_NXZ
     MCAPI bool hasPlugins() const;

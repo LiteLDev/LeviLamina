@@ -67,7 +67,7 @@ public:
 
     // vIndex: 40, symbol:
     // ?_getUpdatePacket@EndGatewayBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // symbol: ??0EndGatewayBlockActor@@QEAA@AEBVBlockPos@@@Z
     MCAPI explicit EndGatewayBlockActor(class BlockPos const& pos);

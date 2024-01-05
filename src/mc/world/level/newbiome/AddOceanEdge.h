@@ -20,7 +20,7 @@ public:
     // symbol:
     // ??RAddOceanEdge@OperationNodeFilters@@QEBA?AW4BiomeTemperatureCategory@@AEAU?$NeighborhoodReader@W4BiomeTemperatureCategory@@$00$00@OperationNodeDetails@@@Z
     MCAPI ::BiomeTemperatureCategory
-    operator()(struct OperationNodeDetails::NeighborhoodReader<::BiomeTemperatureCategory, 1, 1>&) const;
+    operator()(struct OperationNodeDetails::NeighborhoodReader<::BiomeTemperatureCategory, 1, 1>& reader) const;
 
     // NOLINTEND
 };

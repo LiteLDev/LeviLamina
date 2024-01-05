@@ -32,7 +32,7 @@ public:
         // NOLINTBEGIN
         // symbol:
         // ??0PlayerLegacyRequestSlotIdAssignment@ItemStackRequestActionHandler@@QEAA@W4ContainerEnumName@@AEAVContainer@@@Z
-        MCAPI PlayerLegacyRequestSlotIdAssignment(::ContainerEnumName, class Container&);
+        MCAPI PlayerLegacyRequestSlotIdAssignment(::ContainerEnumName containerName, class Container& container);
 
         // symbol: ??1PlayerLegacyRequestSlotIdAssignment@ItemStackRequestActionHandler@@QEAA@XZ
         MCAPI ~PlayerLegacyRequestSlotIdAssignment();
@@ -76,20 +76,20 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ItemStackRequestActionHandler@@QEAA@AEAVItemStackNetManagerServer@@AEAVPlayer@@@Z
-    MCAPI ItemStackRequestActionHandler(class ItemStackNetManagerServer&, class Player&);
+    MCAPI ItemStackRequestActionHandler(class ItemStackNetManagerServer&, class Player& player);
 
     // symbol:
     // ?_addResponseSlotInfo@ItemStackRequestActionHandler@@QEAAXAEBUItemStackRequestHandlerSlotInfo@@AEBVItemStack@@@Z
-    MCAPI void _addResponseSlotInfo(struct ItemStackRequestHandlerSlotInfo const&, class ItemStack const&);
+    MCAPI void _addResponseSlotInfo(struct ItemStackRequestHandlerSlotInfo const&, class ItemStack const& item);
 
     // symbol:
     // ?_cacheLegacySlotIdAssignment@ItemStackRequestActionHandler@@QEAAXW4ContainerEnumName@@EAEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@AEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@@Z
     MCAPI void
-    _cacheLegacySlotIdAssignment(::ContainerEnumName, uchar, ItemStackLegacyRequestId const&, ItemStackNetId const&);
+    _cacheLegacySlotIdAssignment(::ContainerEnumName containerName, uchar slot, ItemStackLegacyRequestId const&, ItemStackNetId const&);
 
     // symbol:
     // ?_cacheSlotIdAssigment@ItemStackRequestActionHandler@@QEAAXAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@EEAEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@@Z
-    MCAPI void _cacheSlotIdAssigment(ContainerRuntimeId const&, uchar, uchar, ItemStackNetId const&);
+    MCAPI void _cacheSlotIdAssigment(ContainerRuntimeId const&, uchar, uchar slot, ItemStackNetId const&);
 
     // symbol:
     // ?_getOrInitSparseContainer@ItemStackRequestActionHandler@@QEAA?AV?$shared_ptr@VSimpleSparseContainer@@@std@@W4ContainerEnumName@@@Z
@@ -113,12 +113,12 @@ public:
 
     // symbol:
     // ?addFilteredStrings@ItemStackRequestActionHandler@@QEAAXV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-    MCAPI void addFilteredStrings(ItemStackRequestId, std::vector<std::string>);
+    MCAPI void addFilteredStrings(ItemStackRequestId requestId, std::vector<std::string>);
 
     // symbol:
     // ?endRequest@ItemStackRequestActionHandler@@QEAA?AV?$tuple@W4ItemStackNetResult@@V?$vector@UItemStackResponseContainerInfo@@V?$allocator@UItemStackResponseContainerInfo@@@std@@@std@@@std@@W4ItemStackNetResult@@@Z
     MCAPI std::tuple<::ItemStackNetResult, std::vector<struct ItemStackResponseContainerInfo>>
-          endRequest(::ItemStackNetResult);
+          endRequest(::ItemStackNetResult currentResult);
 
     // symbol:
     // ?getFilteredStrings@ItemStackRequestActionHandler@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@@Z

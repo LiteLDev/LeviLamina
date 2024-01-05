@@ -26,7 +26,7 @@ public:
     MCAPI int getValue(class Random& random) const;
 
     // symbol: ?getValueInclusive@IntRange@@QEBAHAEAVRandom@@@Z
-    MCAPI int getValueInclusive(class Random&) const;
+    MCAPI int getValueInclusive(class Random& random) const;
 
     // symbol: ?isInRangeInclusive@IntRange@@QEBA_NH@Z
     MCAPI bool isInRangeInclusive(int value) const;

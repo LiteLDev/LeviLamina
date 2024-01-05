@@ -23,7 +23,7 @@ public:
     virtual std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
 
     // symbol: ??0SurfaceLevelCache@@QEAA@V?$DividedPos2d@$03@@AEBVIPreliminarySurfaceProvider@@_K@Z
-    MCAPI SurfaceLevelCache(class DividedPos2d<4>, class IPreliminarySurfaceProvider const&, uint64);
+    MCAPI SurfaceLevelCache(class DividedPos2d<4> startPos, class IPreliminarySurfaceProvider const&, uint64);
 
     // NOLINTEND
 };

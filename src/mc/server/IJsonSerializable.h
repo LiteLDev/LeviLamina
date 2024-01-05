@@ -14,10 +14,10 @@ public:
     virtual ~IJsonSerializable();
 
     // vIndex: 1, symbol: ?serialize@AllowList@@UEAAXAEAVValue@Json@@@Z
-    virtual void serialize(class Json::Value&) = 0;
+    virtual void serialize(class Json::Value& root) = 0;
 
     // vIndex: 2, symbol: ?deserialize@AllowList@@UEAAXAEAVValue@Json@@@Z
-    virtual void deserialize(class Json::Value&) = 0;
+    virtual void deserialize(class Json::Value& root) = 0;
 
     // NOLINTEND
 };

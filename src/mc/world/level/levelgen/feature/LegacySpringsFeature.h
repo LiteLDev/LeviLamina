@@ -21,7 +21,7 @@ public:
     virtual bool place(class BlockSource& region, class BlockPos const& origin, class Random& random) const;
 
     // symbol: ??0LegacySpringsFeature@@QEAA@AEBVFeatureRegistry@@AEBVBaseGameVersion@@@Z
-    MCAPI LegacySpringsFeature(class FeatureRegistry const&, class BaseGameVersion const&);
+    MCAPI LegacySpringsFeature(class FeatureRegistry const& registry, class BaseGameVersion const& baseGameVersion);
 
     // NOLINTEND
 };

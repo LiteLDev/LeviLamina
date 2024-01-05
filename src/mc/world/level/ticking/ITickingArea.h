@@ -62,7 +62,7 @@ public:
     virtual ::TickingAreaLoadMode getLoadMode() const = 0;
 
     // vIndex: 14, symbol: ?setLoadMode@TickingArea@@UEAAXW4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
-    virtual void setLoadMode(::TickingAreaLoadMode, class LevelStorage&) = 0;
+    virtual void setLoadMode(::TickingAreaLoadMode, class LevelStorage& levelStorage) = 0;
 
     // vIndex: 15, symbol: ?isPreloadDone@TickingArea@@UEBA_NXZ
     virtual bool isPreloadDone() const = 0;
@@ -77,7 +77,7 @@ public:
     virtual void updatePosition(class Vec3 const& pos) = 0;
 
     // vIndex: 19, symbol: ?updateAndCenter@TickingArea@@UEAAXAEAVLevelStorage@@UTick@@@Z
-    virtual void updateAndCenter(class LevelStorage&, struct Tick) = 0;
+    virtual void updateAndCenter(class LevelStorage& levelStorage, struct Tick) = 0;
 
     // vIndex: 20, symbol: ?findOwner@TickingArea@@UEAAPEAVActor@@AEAE@Z
     virtual class Actor* findOwner(uchar& pendingChunks) = 0;
@@ -92,13 +92,14 @@ public:
     virtual bool isRemoved() = 0;
 
     // vIndex: 24, symbol: ?remove@TickingArea@@UEAAXAEAVLevelStorage@@@Z
-    virtual void remove(class LevelStorage&) = 0;
+    virtual void remove(class LevelStorage& levelStorage) = 0;
 
     // vIndex: 25, symbol: ?onComponentChanged@TickingArea@@UEAAXIM_NAEAVLevelStorage@@@Z
-    virtual void onComponentChanged(uint, float, bool, class LevelStorage&) = 0;
+    virtual void
+    onComponentChanged(uint radius, float maxDistToPlayers, bool alwaysActive, class LevelStorage& levelStorage) = 0;
 
     // vIndex: 26, symbol: ?updateBlockSourceCurrentTick@TickingArea@@UEAAXAEBUTick@@@Z
-    virtual void updateBlockSourceCurrentTick(struct Tick const&) = 0;
+    virtual void updateBlockSourceCurrentTick(struct Tick const& currentTick) = 0;
 
     // symbol: ?serialize@ITickingArea@@QEBA?AVCompoundTag@@XZ
     MCAPI class CompoundTag serialize() const;

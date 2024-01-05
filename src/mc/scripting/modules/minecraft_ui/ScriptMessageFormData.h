@@ -43,32 +43,32 @@ public:
     // symbol:
     // ?body@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
-        body(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>);
+    body(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> text);
 
     // symbol:
     // ?bodyV010@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
-    bodyV010(std::string const&);
+    bodyV010(std::string const& text);
 
     // symbol:
     // ?button1@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
-        button1(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>);
+    button1(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> text);
 
     // symbol:
     // ?button1V010@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
-    button1V010(std::string const&);
+    button1V010(std::string const& text);
 
     // symbol:
     // ?button2@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
-        button2(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>);
+    button2(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> text);
 
     // symbol:
     // ?button2V010@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
-    button2V010(std::string const&);
+    button2V010(std::string const& text);
 
     // symbol: ??4ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraftServerUI::ScriptMessageFormData&
@@ -80,17 +80,17 @@ public:
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormResponse>,
         class ScriptModuleMinecraftServerUI::ScriptFormRejectError,
         void>>
-    show(struct Scripting::ContextConfig const&, class Scripting::ScriptObjectFactory&, class Scripting::DependencyLocator&, class ScriptModuleMinecraft::ScriptPlayer&);
+    show(struct Scripting::ContextConfig const&, class Scripting::ScriptObjectFactory& factory, class Scripting::DependencyLocator& locator, class ScriptModuleMinecraft::ScriptPlayer&);
 
     // symbol:
     // ?title@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@V?$variant@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UScriptRawMessageInterface@ScriptModuleMinecraft@@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
-        title(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>);
+    title(std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> title);
 
     // symbol:
     // ?titleV010@ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA?AV?$StrongTypedObjectHandle@VScriptMessageFormData@ScriptModuleMinecraftServerUI@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
-    titleV010(std::string const&);
+    titleV010(std::string const& title);
 
     // symbol: ??1ScriptMessageFormData@ScriptModuleMinecraftServerUI@@QEAA@XZ
     MCAPI ~ScriptMessageFormData();

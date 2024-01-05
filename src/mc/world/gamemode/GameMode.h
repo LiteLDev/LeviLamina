@@ -55,7 +55,8 @@ public:
     virtual bool destroyBlock(class BlockPos const& pos, uchar face);
 
     // vIndex: 3, symbol: ?continueDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEBVVec3@@AEA_N@Z
-    virtual bool continueDestroyBlock(class BlockPos const&, uchar, class Vec3 const&, bool&);
+    virtual bool
+    continueDestroyBlock(class BlockPos const& pos, uchar face, class Vec3 const& playerPos, bool& hasDestroyedBlock);
 
     // vIndex: 4, symbol: ?stopDestroyBlock@GameMode@@UEAAXAEBVBlockPos@@@Z
     virtual void stopDestroyBlock(class BlockPos const& pos);
@@ -64,7 +65,7 @@ public:
     virtual void startBuildBlock(class BlockPos const& pos, uchar face);
 
     // vIndex: 6, symbol: ?buildBlock@GameMode@@UEAA_NAEBVBlockPos@@E_N@Z
-    virtual bool buildBlock(class BlockPos const&, uchar, bool);
+    virtual bool buildBlock(class BlockPos const& pos, uchar face, bool);
 
     // vIndex: 7, symbol: ?continueBuildBlock@GameMode@@UEAAXAEBVBlockPos@@E@Z
     virtual void continueBuildBlock(class BlockPos const& pos, uchar face);
@@ -111,23 +112,24 @@ public:
 
     // symbol:
     // ??0GameMode@@QEAA@AEAVPlayer@@V?$unique_ptr@UIGameModeTimer@@U?$default_delete@UIGameModeTimer@@@std@@@std@@V?$unique_ptr@UIGameModeMessenger@@U?$default_delete@UIGameModeMessenger@@@std@@@3@@Z
-    MCAPI GameMode(class Player&, std::unique_ptr<struct IGameModeTimer>, std::unique_ptr<struct IGameModeMessenger>);
+    MCAPI
+    GameMode(class Player& player, std::unique_ptr<struct IGameModeTimer> timer, std::unique_ptr<struct IGameModeMessenger>);
 
     // symbol: ?_startDestroyBlock@GameMode@@QEAA_NAEBVBlockPos@@AEBVVec3@@EAEA_N@Z
-    MCAPI bool _startDestroyBlock(class BlockPos const&, class Vec3 const&, uchar, bool&);
+    MCAPI bool _startDestroyBlock(class BlockPos const& hitPos, class Vec3 const&, uchar, bool& hasDestroyedBlock);
 
     // symbol: ?_tickContinueDestroyBlock@GameMode@@QEAA_NAEBVBlockPos@@AEBVVec3@@EAEA_NAEBV?$function@$$A6AXXZ@std@@@Z
     MCAPI bool
-    _tickContinueDestroyBlock(class BlockPos const&, class Vec3 const&, uchar, bool&, std::function<void(void)> const&);
+    _tickContinueDestroyBlock(class BlockPos const& hitPos, class Vec3 const& playerPos, uchar, bool& hasDestroyedBlock, std::function<void(void)> const&);
 
     // symbol: ?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z
     MCAPI bool baseUseItem(class ItemStack& item);
 
     // symbol:
     // ?createBlockBreakCaptureScope@GameMode@@QEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@V?$function@$$A6AXAEBVItemStack@@0AEBVBlockPos@@@Z@std@@@Z
-    MCAPI gsl::final_action<std::function<void(void)>>
-          createBlockBreakCaptureScope(std::function<
-                                     void(class ItemStack const&, class ItemStack const&, class BlockPos const&)>);
+    MCAPI gsl::final_action<std::function<void(void)>> createBlockBreakCaptureScope(
+        std::function<void(class ItemStack const&, class ItemStack const&, class BlockPos const&)> callback
+    );
 
     // symbol: ?getDestroyBlockFace@GameMode@@QEBAEXZ
     MCAPI uchar getDestroyBlockFace() const;

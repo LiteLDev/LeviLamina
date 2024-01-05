@@ -22,7 +22,7 @@ public:
     // symbol:
     // ??0ServerNetworkSystem@@QEAA@AEAVScheduler@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBUNetworkSystemToggles@@AEBV?$NonOwnerPointer@VNetworkDebugManager@@@Bedrock@@V?$ServiceReference@VServicesManager@@@@V?$not_null@V?$NonOwnerPointer@VNetworkSessionOwner@@@Bedrock@@@gsl@@@Z
     MCAPI
-    ServerNetworkSystem(class Scheduler&, std::vector<std::string> const&, struct NetworkSystemToggles const&, class Bedrock::NonOwnerPointer<class NetworkDebugManager> const&, class ServiceReference<class ServicesManager>, Bedrock::NotNullNonOwnerPtr<class NetworkSessionOwner>);
+    ServerNetworkSystem(class Scheduler& receiveThread, std::vector<std::string> const&, struct NetworkSystemToggles const&, class Bedrock::NonOwnerPointer<class NetworkDebugManager> const&, class ServiceReference<class ServicesManager>, Bedrock::NotNullNonOwnerPtr<class NetworkSessionOwner>);
 
     // symbol: ?getLocalNetworkId@ServerNetworkSystem@@QEBA?AVNetworkIdentifier@@XZ
     MCAPI class NetworkIdentifier getLocalNetworkId() const;
@@ -50,7 +50,7 @@ public:
     // ?_createConstructionDependencies@ServerNetworkSystem@@CA?AUDependencies@NetworkSystem@@PEAV1@AEAVScheduler@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBUNetworkSystemToggles@@V?$ServiceReference@VServicesManager@@@@AEBVNetherNetTransportFactory@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@V?$not_null@V?$NonOwnerPointer@VNetworkSessionOwner@@@Bedrock@@@gsl@@@Z
     MCAPI static struct NetworkSystem::
         Dependencies
-        _createConstructionDependencies(class ServerNetworkSystem*, class Scheduler&, std::vector<std::string> const&, struct NetworkSystemToggles const&, class ServiceReference<class ServicesManager>, class NetherNetTransportFactory const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&, Bedrock::NotNullNonOwnerPtr<class NetworkSessionOwner>);
+        _createConstructionDependencies(class ServerNetworkSystem*, class Scheduler&, std::vector<std::string> const& receiveThread, struct NetworkSystemToggles const&, class ServiceReference<class ServicesManager>, class NetherNetTransportFactory const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&, Bedrock::NotNullNonOwnerPtr<class NetworkSessionOwner>);
 
     // NOLINTEND
 };

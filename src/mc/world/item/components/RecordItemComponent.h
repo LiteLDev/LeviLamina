@@ -57,7 +57,7 @@ public:
 
     // symbol:
     // ?appendFormattedHovertext@RecordItemComponent@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void appendFormattedHovertext(std::string&) const;
+    MCAPI void appendFormattedHovertext(std::string& hovertext) const;
 
     // symbol: ?getComparatorSignal@RecordItemComponent@@QEBAHXZ
     MCAPI int getComparatorSignal() const;

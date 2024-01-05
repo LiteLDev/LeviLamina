@@ -17,10 +17,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0SeedItemComponentLegacy@@QEAA@AEAVItem@@@Z
-    MCAPI explicit SeedItemComponentLegacy(class Item&);
+    MCAPI explicit SeedItemComponentLegacy(class Item& owner);
 
     // symbol: ?init@SeedItemComponentLegacy@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
-    MCAPI bool init(class Json::Value&, class SemVersion const&);
+    MCAPI bool init(class Json::Value& data, class SemVersion const& engineVersion);
 
     // symbol: ?isPlanting@SeedItemComponentLegacy@@QEBA_NXZ
     MCAPI bool isPlanting() const;
@@ -29,14 +29,20 @@ public:
     MCAPI void setPlanting(bool);
 
     // symbol: ?useOn@SeedItemComponentLegacy@@QEAA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-    MCAPI bool useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&);
+    MCAPI bool useOn(
+        class ItemStack&      instance,
+        class Actor&          actor,
+        class BlockPos const& blockPos,
+        uchar                 face,
+        class Vec3 const&     clickPos
+    );
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_canPlant@SeedItemComponentLegacy@@AEBA_NAEBVBlock@@@Z
-    MCAPI bool _canPlant(class Block const&) const;
+    MCAPI bool _canPlant(class Block const& target) const;
 
     // NOLINTEND
 };

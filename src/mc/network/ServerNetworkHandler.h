@@ -42,7 +42,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ?removeSubClientRequest@Client@ServerNetworkHandler@@QEAAXW4SubClientId@@@Z
-        MCAPI void removeSubClientRequest(::SubClientId);
+        MCAPI void removeSubClientRequest(::SubClientId subClientId);
 
         // NOLINTEND
     };
@@ -72,7 +72,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?_getServerPlayer@ServerNetworkHandler@@EEAAPEAVServerPlayer@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
-    MCVAPI class ServerPlayer* _getServerPlayer(class NetworkIdentifier const&, ::SubClientId);
+    MCVAPI class ServerPlayer* _getServerPlayer(class NetworkIdentifier const& source, ::SubClientId subId);
 
     // symbol: ?allowIncomingPacketId@ServerNetworkHandler@@UEAA_NAEBVNetworkIdentifier@@W4MinecraftPacketIds@@@Z
     MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const& id, ::MinecraftPacketIds packetId);
@@ -81,7 +81,7 @@ public:
     MCVAPI class GameSpecificNetEventCallback* getGameSpecificNetEventCallback();
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVChangeMobPropertyPacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class ChangeMobPropertyPacket const&);
+    MCVAPI void handle(class NetworkIdentifier const&, class ChangeMobPropertyPacket const& packet);
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPhotoTransferPacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const& source, class PhotoTransferPacket const& packet);
@@ -114,7 +114,7 @@ public:
     MCVAPI void handle(class NetworkIdentifier const& source, class PlayerSkinPacket const& packet);
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCodeBuilderSourcePacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class CodeBuilderSourcePacket const&);
+    MCVAPI void handle(class NetworkIdentifier const& source, class CodeBuilderSourcePacket const& packet);
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLabTablePacket@@@Z
     MCVAPI void handle(class NetworkIdentifier const& source, class LabTablePacket const& packet);
@@ -246,7 +246,8 @@ public:
     MCVAPI void handle(class NetworkIdentifier const& source, class RequestNetworkSettingsPacket const& packet);
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPositionTrackingDBClientRequestPacket@@@Z
-    MCVAPI void handle(class NetworkIdentifier const&, class PositionTrackingDBClientRequestPacket const&);
+    MCVAPI void
+    handle(class NetworkIdentifier const& source, class PositionTrackingDBClientRequestPacket const& packet);
 
     // symbol: ?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLevelSoundEventPacketV1@@@Z
     MCVAPI void handle(class NetworkIdentifier const& source, class LevelSoundEventPacketV1 const& packet);
@@ -326,7 +327,8 @@ public:
 
     // symbol:
     // ?onTextFilterSkipped@ServerNetworkHandler@@EEAAXAEBVNetworkIdentifier@@W4SubClientId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void onTextFilterSkipped(class NetworkIdentifier const&, ::SubClientId, std::string const&);
+    MCVAPI void
+    onTextFilterSkipped(class NetworkIdentifier const& source, ::SubClientId subId, std::string const& text);
 
     // symbol: ?onTick@ServerNetworkHandler@@UEAAXXZ
     MCVAPI void onTick();
@@ -352,7 +354,7 @@ public:
     MCVAPI void onXboxUserUnblocked(std::string const& xuid);
 
     // symbol: ?sendServerLegacyParticle@ServerNetworkHandler@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
-    MCVAPI void sendServerLegacyParticle(::ParticleType name, class Vec3 const& pos, class Vec3 const& dir, int data);
+    MCVAPI void sendServerLegacyParticle(::ParticleType name, class Vec3 const& pos, class Vec3 const&, int data);
 
     // symbol: ??1ServerNetworkHandler@@UEAA@XZ
     MCVAPI ~ServerNetworkHandler();
@@ -367,7 +369,7 @@ public:
 
     // symbol:
     // ?addToDenyList@ServerNetworkHandler@@QEAAXAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void addToDenyList(class mce::UUID const&, std::string const&);
+    MCAPI void addToDenyList(class mce::UUID const& uuid, std::string const& xuid);
 
     // symbol:
     // ?allowIncomingConnections@ServerNetworkHandler@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
@@ -376,19 +378,24 @@ public:
     // symbol:
     // ?createNewPlayer@ServerNetworkHandler@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBVNetworkIdentifier@@AEBVConnectionRequest@@@Z
     MCAPI class OwnerPtrT<struct EntityRefTraits>
-    createNewPlayer(class NetworkIdentifier const&, class ConnectionRequest const&);
+    createNewPlayer(class NetworkIdentifier const& source, class ConnectionRequest const& connectionRequest);
 
     // symbol:
     // ?createSimulatedPlayer@ServerNetworkHandler@@QEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI class OwnerPtrT<struct EntityRefTraits> createSimulatedPlayer(std::string const&, std::string const&);
+    MCAPI class OwnerPtrT<struct EntityRefTraits>
+    createSimulatedPlayer(std::string const& name, std::string const& xuid);
 
     // symbol: ?disallowIncomingConnections@ServerNetworkHandler@@QEAAXXZ
     MCAPI void disallowIncomingConnections();
 
     // symbol:
     // ?disconnectClient@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@W4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    MCAPI void
-    disconnectClient(class NetworkIdentifier const&, ::Connection::DisconnectFailReason, std::string const&, bool);
+    MCAPI void disconnectClient(
+        class NetworkIdentifier const&,
+        ::Connection::DisconnectFailReason subId,
+        std::string const&                 message,
+        bool                               skipMessage
+    );
 
     // symbol:
     // ?disconnectClient@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@W4SubClientId@@W4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
@@ -402,21 +409,27 @@ public:
 
     // symbol:
     // ?engineCancelResponseHelper@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
-    MCAPI void
-    engineCancelResponseHelper(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
+    MCAPI void engineCancelResponseHelper(
+        class NetworkIdentifier const&                source,
+        class ResourcePackClientResponsePacket const& packet
+    );
 
     // symbol:
     // ?engineDownloadingFinishedResponseHelper@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
-    MCAPI void
-    engineDownloadingFinishedResponseHelper(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
+    MCAPI void engineDownloadingFinishedResponseHelper(
+        class NetworkIdentifier const&                source,
+        class ResourcePackClientResponsePacket const& packet
+    );
 
     // symbol:
     // ?engineDownloadingResponseHelper@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
-    MCAPI void
-    engineDownloadingResponseHelper(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
+    MCAPI void engineDownloadingResponseHelper(
+        class NetworkIdentifier const&                source,
+        class ResourcePackClientResponsePacket const& packet
+    );
 
     // symbol: ?fetchConnectionRequest@ServerNetworkHandler@@QEAAAEBVConnectionRequest@@AEBVNetworkIdentifier@@@Z
-    MCAPI class ConnectionRequest const& fetchConnectionRequest(class NetworkIdentifier const&);
+    MCAPI class ConnectionRequest const& fetchConnectionRequest(class NetworkIdentifier const& source);
 
     // symbol:
     // ?getGlobalMultiplayerCorrelationId@ServerNetworkHandler@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -426,7 +439,7 @@ public:
     MCAPI bool isDedicatedServer();
 
     // symbol: ?isHost@ServerNetworkHandler@@QEAA_NAEAVServerPlayer@@@Z
-    MCAPI bool isHost(class ServerPlayer&);
+    MCAPI bool isHost(class ServerPlayer& player);
 
     // symbol: ?onReady_ClientGeneration@ServerNetworkHandler@@QEAAXAEAVPlayer@@AEBVNetworkIdentifier@@@Z
     MCAPI void onReady_ClientGeneration(class Player& newPlayer, class NetworkIdentifier const& source);
@@ -436,12 +449,18 @@ public:
 
     // symbol:
     // ?persistPlayerPermissionsToDisk@ServerNetworkHandler@@QEAAXAEBVUserEntityIdentifierComponent@@W4PlayerPermissionLevel@@@Z
-    MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const&, ::PlayerPermissionLevel);
+    MCAPI void persistPlayerPermissionsToDisk(
+        class UserEntityIdentifierComponent const&,
+        ::PlayerPermissionLevel playerPermission
+    );
 
     // symbol:
     // ?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVConnectionRequest@@AEAVServerPlayer@@@Z
-    MCAPI void
-    sendLoginMessageLocal(class NetworkIdentifier const&, class ConnectionRequest const&, class ServerPlayer&);
+    MCAPI void sendLoginMessageLocal(
+        class NetworkIdentifier const& source,
+        class ConnectionRequest const& connectionRequest,
+        class ServerPlayer&            player
+    );
 
     // symbol:
     // ?sendSubClientLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVSubClientConnectionRequest@@W4SubClientId@@@Z
@@ -453,16 +472,16 @@ public:
 
     // symbol:
     // ?setAutomationClient@ServerNetworkHandler@@QEAAXV?$NonOwnerPointer@VAutomationClient@Automation@@@Bedrock@@@Z
-    MCAPI void setAutomationClient(class Bedrock::NonOwnerPointer<class Automation::AutomationClient>);
+    MCAPI void setAutomationClient(class Bedrock::NonOwnerPointer<class Automation::AutomationClient> client);
 
     // symbol: ?setMaxNumPlayers@ServerNetworkHandler@@QEAAHH@Z
     MCAPI int setMaxNumPlayers(int maxPlayers);
 
     // symbol: ?setNewPlayerPermissions@ServerNetworkHandler@@QEAAXAEAVServerPlayer@@@Z
-    MCAPI void setNewPlayerPermissions(class ServerPlayer&);
+    MCAPI void setNewPlayerPermissions(class ServerPlayer& newPlayer);
 
     // symbol: ?trytLoadPlayer@ServerNetworkHandler@@QEAA_NAEAVServerPlayer@@AEBVConnectionRequest@@@Z
-    MCAPI bool trytLoadPlayer(class ServerPlayer&, class ConnectionRequest const&);
+    MCAPI bool trytLoadPlayer(class ServerPlayer& player, class ConnectionRequest const& connectionRequest);
 
     // symbol: ?updateServerAnnouncement@ServerNetworkHandler@@QEAAXXZ
     MCAPI void updateServerAnnouncement();
@@ -474,9 +493,9 @@ public:
     // symbol:
     // ?_buildSubChunkPacketData@ServerNetworkHandler@@AEAAXAEBVNetworkIdentifier@@PEBVServerPlayer@@AEBVSubChunkRequestPacket@@AEAVSubChunkPacket@@I_N@Z
     MCAPI void _buildSubChunkPacketData(
-        class NetworkIdentifier const&,
-        class ServerPlayer const*,
-        class SubChunkRequestPacket const&,
+        class NetworkIdentifier const&     source,
+        class ServerPlayer const*          player,
+        class SubChunkRequestPacket const& packet,
         class SubChunkPacket&,
         uint,
         bool
@@ -491,7 +510,7 @@ public:
     );
 
     // symbol: ?_displayGameMessage@ServerNetworkHandler@@AEAAXAEBVPlayer@@AEAUChatEvent@@@Z
-    MCAPI void _displayGameMessage(class Player const&, struct ChatEvent&);
+    MCAPI void _displayGameMessage(class Player const& sender, struct ChatEvent&);
 
     // symbol: ?_getActiveAndInProgressPlayerCount@ServerNetworkHandler@@AEBAHVUUID@mce@@@Z
     MCAPI int _getActiveAndInProgressPlayerCount(class mce::UUID excludePlayer) const;
@@ -504,11 +523,14 @@ public:
 
     // symbol:
     // ?_handleCommandBlockUpdatePacket@ServerNetworkHandler@@AEAAXAEBVServerPlayer@@AEBVNetworkIdentifier@@AEBVCommandBlockUpdatePacket@@@Z
-    MCAPI void
-    _handleCommandBlockUpdatePacket(class ServerPlayer const&, class NetworkIdentifier const&, class CommandBlockUpdatePacket const&);
+    MCAPI void _handleCommandBlockUpdatePacket(
+        class ServerPlayer const&             player,
+        class NetworkIdentifier const&        source,
+        class CommandBlockUpdatePacket const& packet
+    );
 
     // symbol: ?_handleSetDifficulty@ServerNetworkHandler@@AEBAXAEBVServerPlayer@@AEBVSetDifficultyPacket@@@Z
-    MCAPI void _handleSetDifficulty(class ServerPlayer const&, class SetDifficultyPacket const&) const;
+    MCAPI void _handleSetDifficulty(class ServerPlayer const& player, class SetDifficultyPacket const& packet) const;
 
     // symbol: ?_loadNewPlayer@ServerNetworkHandler@@AEAA_NAEAVServerPlayer@@_N@Z
     MCAPI bool _loadNewPlayer(class ServerPlayer& newPlayer, bool isXboxLive);
@@ -535,8 +557,13 @@ public:
 
     // symbol:
     // ?_updatePermissions@ServerNetworkHandler@@AEAA_NAEBVServerPlayer@@AEBVRequestPermissionsPacket@@AEAVAbilities@@AEAVPermissionsHandler@@PEAVPlayer@@@Z
-    MCAPI bool
-    _updatePermissions(class ServerPlayer const&, class RequestPermissionsPacket const&, class Abilities&, class PermissionsHandler&, class Player*);
+    MCAPI bool _updatePermissions(
+        class ServerPlayer const&,
+        class RequestPermissionsPacket const& packet,
+        class Abilities&                      abilities,
+        class PermissionsHandler&             permissions,
+        class Player*                         player
+    );
 
     // NOLINTEND
 };

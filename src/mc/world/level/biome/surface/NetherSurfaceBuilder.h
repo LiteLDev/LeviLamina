@@ -29,7 +29,7 @@ public:
 
     // vIndex: 2, symbol:
     // ?buildSurfaceAt@NetherSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z
-    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&) const;
+    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters) const;
 
     // symbol: ??0NetherSurfaceBuilder@VanillaSurfaceBuilders@@QEAA@XZ
     MCAPI NetherSurfaceBuilder();

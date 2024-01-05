@@ -45,7 +45,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0EventScope@PerfContextTracker@@QEAA@W4PerfContextEvent@@@Z
-        MCAPI explicit EventScope(::PerfContextEvent);
+        MCAPI explicit EventScope(::PerfContextEvent eventType);
 
         // symbol: ??1EventScope@PerfContextTracker@@QEAA@XZ
         MCAPI ~EventScope();

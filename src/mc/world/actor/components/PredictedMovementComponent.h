@@ -135,7 +135,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0PredictedMovementComponent@@QEAA@AEAVActor@@@Z
-    MCAPI explicit PredictedMovementComponent(class Actor&);
+    MCAPI explicit PredictedMovementComponent(class Actor& actor);
 
     // symbol: ?isEnabled@PredictedMovementComponent@@QEBA_NXZ
     MCAPI bool isEnabled() const;
@@ -145,7 +145,7 @@ public:
 
     // symbol:
     // ?tick@PredictedMovementComponent@@QEAAXAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
-    MCAPI void tick(std::chrono::steady_clock::time_point const&);
+    MCAPI void tick(std::chrono::steady_clock::time_point const& timepoint);
 
     // symbol: ??1PredictedMovementComponent@@QEAA@XZ
     MCAPI ~PredictedMovementComponent();
@@ -162,7 +162,7 @@ public:
 
     // symbol:
     // ?_tickNextPosition@PredictedMovementComponent@@AEAAXAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
-    MCAPI void _tickNextPosition(std::chrono::steady_clock::time_point const&);
+    MCAPI void _tickNextPosition(std::chrono::steady_clock::time_point const& timepoint);
 
     // symbol:
     // ?_tryInterpolate@PredictedMovementComponent@@AEAA_NAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z

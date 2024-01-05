@@ -12,7 +12,12 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addCandidate@VibrationSelector@@QEAAXUTick@@AEBVGameEvent@@AEBUGameEventContext@@AEBVBlockPos@@@Z
-    MCAPI void addCandidate(struct Tick, class GameEvent const&, struct GameEventContext const&, class BlockPos const&);
+    MCAPI void addCandidate(
+        struct Tick currentTick,
+        class GameEvent const&,
+        struct GameEventContext const&,
+        class BlockPos const& destinationPos
+    );
 
     // NOLINTEND
 };

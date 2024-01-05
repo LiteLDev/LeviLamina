@@ -20,7 +20,7 @@ public:
     virtual ~RecipeIngredient();
 
     // symbol: ??0RecipeIngredient@@QEAA@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI explicit RecipeIngredient(class ReadOnlyBinaryStream&);
+    MCAPI explicit RecipeIngredient(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0RecipeIngredient@@QEAA@$$QEAV0@@Z
     MCAPI RecipeIngredient(class RecipeIngredient&&);
@@ -38,13 +38,13 @@ public:
     MCAPI RecipeIngredient(class ItemDescriptor const& descriptor, ushort stackSize);
 
     // symbol: ??0RecipeIngredient@@QEAA@AEBUItemTag@@G@Z
-    MCAPI RecipeIngredient(struct ItemTag const&, ushort);
+    MCAPI RecipeIngredient(struct ItemTag const&, ushort stackSize);
 
     // symbol: ??0RecipeIngredient@@QEAA@AEBVItem@@HG@Z
     MCAPI RecipeIngredient(class Item const& item, int auxValue, ushort stackSize);
 
     // symbol: ??0RecipeIngredient@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@HG@Z
-    MCAPI RecipeIngredient(std::string_view, int, ushort);
+    MCAPI RecipeIngredient(std::string_view item, int auxValue, ushort stackSize);
 
     // symbol: ?EMPTY_INGREDIENT@RecipeIngredient@@2V1@A
     MCAPI static class RecipeIngredient EMPTY_INGREDIENT;

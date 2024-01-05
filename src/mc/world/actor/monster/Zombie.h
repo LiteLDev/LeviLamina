@@ -72,7 +72,7 @@ public:
     virtual void __unk_vfn_107();
 
     // vIndex: 114, symbol: ?canPickupItem@Zombie@@UEBA_NAEBVItemStack@@@Z
-    virtual bool canPickupItem(class ItemStack const&) const;
+    virtual bool canPickupItem(class ItemStack const& itemStack) const;
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
@@ -93,7 +93,11 @@ public:
     virtual int getArmorValue() const;
 
     // symbol: ??0Zombie@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Zombie(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Zombie(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?setZombieType@Zombie@@QEAAXW4ZombieType@1@@Z
     MCAPI void setZombieType(::Zombie::ZombieType type);

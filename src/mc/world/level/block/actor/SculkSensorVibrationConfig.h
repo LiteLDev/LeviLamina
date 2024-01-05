@@ -20,14 +20,14 @@ public:
     // vIndex: 1, symbol:
     // ?onSignalReceive@SculkSensorVibrationConfig@@UEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVGameEvent@@PEAVActor@@MI3@Z
     virtual void
-    onSignalReceive(class BlockSource&, class BlockPos const&, class GameEvent const&, class Actor*, float, uint, class Actor*);
+    onSignalReceive(class BlockSource& region, class BlockPos const&, class GameEvent const&, class Actor* source, float distance, uint, class Actor*);
 
     // vIndex: 2, symbol: ?isValidVibration@VibrationListenerConfig@@UEAA_NAEBVGameEvent@@@Z
     virtual bool isValidVibration(class GameEvent const&);
 
     // vIndex: 3, symbol:
     // ?shouldListen@SculkSensorVibrationConfig@@UEAA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
-    virtual bool shouldListen(class BlockSource&, class GameEvent const&, struct GameEventContext const&);
+    virtual bool shouldListen(class BlockSource& region, class GameEvent const&, struct GameEventContext const&);
 
     // vIndex: 4, symbol: ?onSerializableDataChanged@SculkSensorVibrationConfig@@UEAAXAEAVBlockSource@@@Z
     virtual void onSerializableDataChanged(class BlockSource&);
@@ -36,7 +36,7 @@ public:
     virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const;
 
     // symbol: ??0SculkSensorVibrationConfig@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit SculkSensorVibrationConfig(class BlockPos const&);
+    MCAPI explicit SculkSensorVibrationConfig(class BlockPos const& pos);
 
     // NOLINTEND
 };

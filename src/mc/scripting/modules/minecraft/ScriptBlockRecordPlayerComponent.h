@@ -41,7 +41,7 @@ public:
     // ?tryCreate@ScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@SA?AV?$optional@V?$StrongTypedObjectHandle@VScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@@Scripting@@@std@@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@@Z
     MCAPI static std::optional<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockRecordPlayerComponent>>
-    tryCreate(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
+    tryCreate(class BlockSource& region, class BlockPos position, class Scripting::WeakLifetimeScope const& scope);
 
     // symbol: ?ComponentId@ScriptBlockRecordPlayerComponent@ScriptModuleMinecraft@@2PEBDEB
     MCAPI static char const* ComponentId;

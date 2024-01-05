@@ -106,19 +106,19 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@PlayerAuthInputPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0PlayerAuthInputPacket@@QEAA@XZ
     MCAPI PlayerAuthInputPacket();
 
     // symbol: ??0PlayerAuthInputPacket@@QEAA@$$QEAV0@@Z
-    MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket&&);
+    MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket&& rhs);
 
     // symbol: ?getInput@PlayerAuthInputPacket@@QEBA_NW4InputData@1@@Z
     MCAPI bool getInput(::PlayerAuthInputPacket::InputData point) const;
 
     // symbol: ??4PlayerAuthInputPacket@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class PlayerAuthInputPacket& operator=(class PlayerAuthInputPacket&&);
+    MCAPI class PlayerAuthInputPacket& operator=(class PlayerAuthInputPacket&& rhs);
 
     // symbol: ?readIntoComponent@PlayerAuthInputPacket@@QEBA?AUPlayerActionComponent@@XZ
     MCAPI struct PlayerActionComponent readIntoComponent() const;

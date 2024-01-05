@@ -119,7 +119,7 @@ public:
                       struct AddRemove<struct TriggerJumpRequestComponent>,
                       struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&);
+                      struct EntityFactoryT<>>& context);
 
     // vIndex: 6, symbol:
     // ?singleTick@JumpFromGroundSystem@MobJumpFromGroundSystemImpl@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UCanStandOnSnowFlag@@@@V?$FlagComponent@UHasLightweightFamilyFlag@@@@V?$FlagComponent@UHorseFlag@@@@V?$FlagComponent@UMobFlag@@@@V?$FlagComponent@UParrotFlag@@@@UVehicleComponent@@V?$FlagComponent@UCamelFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@ULocalPlayerJumpRequestFlag@@@@V?$FlagComponent@ULavaSlimeJumpRequestFlag@@@@V?$FlagComponent@USquidJumpRequestFlag@@@@V?$FlagComponent@UOtherJumpRequestFlag@@@@@@U?$Read@UAbilitiesComponent@@UActorTypeComponent@@UFallDistanceComponent@@UActorGameTypeComponent@@UVehicleComponent@@UMobBodyRotationComponent@@UPassengerComponent@@URenderRotationComponent@@UStandAnimationComponent@@UStateVectorComponent@@UOffsetsComponent@@UVanillaOffsetComponent@@UPassengerRenderingRidingOffsetComponent@@UAABBShapeComponent@@UActorRotationComponent@@UMobEffectsComponent@@USynchedActorDataComponent@@VJumpControlComponent@@UDimensionTypeComponent@@@@U?$Write@UMobJumpComponent@@UStateVectorComponent@@UPlayerActionComponent@@@@U?$AddRemove@UTriggerJumpRequestComponent@@@@U?$GlobalRead@UExternalDataComponent@@ULocalConstBlockSourceFactoryComponent@@@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEAVStrictEntityContext@@@Z

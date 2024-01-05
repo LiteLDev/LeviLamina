@@ -164,11 +164,10 @@ public:
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 164, symbol: ?getResourceItem@ChorusPlantBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@ChorusPlantBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const&, int) const;
 
     // symbol: ?canBeSilkTouched@ChorusPlantBlock@@UEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -177,7 +176,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0ChorusPlantBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ChorusPlantBlock(std::string const& nameId, int id);
+    MCAPI ChorusPlantBlock(std::string const& nameId, int);
 
     // symbol: ?canGrowChorus@ChorusPlantBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool canGrowChorus(class Block const& block);

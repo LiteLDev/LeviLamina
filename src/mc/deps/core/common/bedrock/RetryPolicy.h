@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?getDelay@RetryPolicy@Http@Bedrock@@QEBA?AV?$optional@V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@@std@@AEBVResponse@23@@Z
-    MCAPI std::optional<std::chrono::seconds> getDelay(class Bedrock::Http::Response const&) const;
+    MCAPI std::optional<std::chrono::seconds> getDelay(class Bedrock::Http::Response const& response) const;
 
     // NOLINTEND
 };

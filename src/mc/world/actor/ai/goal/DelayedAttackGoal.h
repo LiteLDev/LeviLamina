@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0DelayedAttackGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit DelayedAttackGoal(class Mob&);
+    MCAPI explicit DelayedAttackGoal(class Mob& mob);
 
     // symbol: ?_isTargetInLineOfSightLegacy@DelayedAttackGoal@@SA_NAEBVMob@@AEBVActor@@@Z
     MCAPI static bool _isTargetInLineOfSightLegacy(class Mob const&, class Actor const&);
@@ -48,7 +48,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_attemptStartAttacking@DelayedAttackGoal@@AEBAXPEAVActor@@@Z
-    MCAPI void _attemptStartAttacking(class Actor*) const;
+    MCAPI void _attemptStartAttacking(class Actor* target) const;
 
     // symbol: ?_manageAttackTime@DelayedAttackGoal@@AEAAXXZ
     MCAPI void _manageAttackTime();

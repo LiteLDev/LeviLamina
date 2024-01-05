@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?fromString@TagsProxy@BlockDescriptorSerializer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void fromString(std::string const&);
+    MCAPI void fromString(std::string const& expression);
 
     // symbol: ??1TagsProxy@BlockDescriptorSerializer@@QEAA@XZ
     MCAPI ~TagsProxy();

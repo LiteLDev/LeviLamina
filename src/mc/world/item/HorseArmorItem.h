@@ -79,19 +79,19 @@ public:
     virtual void __unk_vfn_58();
 
     // vIndex: 59, symbol: ?getColor@HorseArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
-    virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
+    virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const&) const;
 
     // vIndex: 60, symbol: ?hasCustomColor@HorseArmorItem@@UEBA_NPEBVCompoundTag@@@Z
-    virtual bool hasCustomColor(class CompoundTag const*) const;
+    virtual bool hasCustomColor(class CompoundTag const* userData) const;
 
     // vIndex: 61, symbol: __unk_vfn_61
     virtual void __unk_vfn_61();
 
     // vIndex: 63, symbol: ?clearColor@HorseArmorItem@@UEBAXPEAVCompoundTag@@@Z
-    virtual void clearColor(class CompoundTag*) const;
+    virtual void clearColor(class CompoundTag* userData) const;
 
     // vIndex: 64, symbol: ?setColor@HorseArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
-    virtual void setColor(class ItemStackBase& instance, class mce::Color const& color) const;
+    virtual void setColor(class ItemStackBase& itemStack, class mce::Color const& color) const;
 
     // vIndex: 65, symbol: __unk_vfn_65
     virtual void __unk_vfn_65();
@@ -101,7 +101,7 @@ public:
 
     // vIndex: 71, symbol: ?dispense@HorseArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
     virtual bool
-    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar) const;
 
     // vIndex: 98, symbol: __unk_vfn_98
     virtual void __unk_vfn_98();
@@ -110,7 +110,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0HorseArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHW4Tier@0@@Z
-    MCAPI HorseArmorItem(std::string const& name, int id, int icon, ::HorseArmorItem::Tier tier);
+    MCAPI HorseArmorItem(std::string const& name, int, int icon, ::HorseArmorItem::Tier tier);
 
     // symbol: ?getTier@HorseArmorItem@@QEBA?AW4Tier@1@XZ
     MCAPI ::HorseArmorItem::Tier getTier() const;

@@ -14,7 +14,7 @@ public:
     MCAPI NameAction(struct NameAction const&);
 
     // symbol: ?addNameFilterByName@NameAction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void addNameFilterByName(std::string const&);
+    MCAPI void addNameFilterByName(std::string const& name);
 
     // symbol: ??1NameAction@@QEAA@XZ
     MCAPI ~NameAction();

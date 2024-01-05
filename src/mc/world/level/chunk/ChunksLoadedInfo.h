@@ -24,9 +24,9 @@ public:
     // symbol:
     // ?areAllChunksLoadedAndTicking@ChunksLoadedInfo@@SA?AW4ChunksLoadedStatus@@AEBVDimension@@AEAVChunkSource@@AEBUBounds@@_NUTick@@_N@Z
     MCAPI static ::ChunksLoadedStatus areAllChunksLoadedAndTicking(
-        class Dimension const&,
-        class ChunkSource&,
-        struct Bounds const&,
+        class Dimension const& dimension,
+        class ChunkSource&     source,
+        struct Bounds const&   bounds,
         bool,
         struct Tick,
         bool
@@ -35,12 +35,12 @@ public:
     // symbol:
     // ?calculateChunksLoadedInfo@ChunksLoadedInfo@@SA?AU1@AEBVDimension@@AEAVChunkSource@@AEBUBounds@@_NUTick@@_N55@Z
     MCAPI static struct ChunksLoadedInfo calculateChunksLoadedInfo(
-        class Dimension const&,
-        class ChunkSource&,
-        struct Bounds const&,
+        class Dimension const& dimension,
+        class ChunkSource&     source,
+        struct Bounds const&   bounds,
         bool,
         struct Tick,
-        bool,
+        bool allowUnloadedChunks,
         bool,
         bool
     );

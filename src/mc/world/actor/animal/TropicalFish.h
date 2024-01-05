@@ -47,7 +47,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 32, symbol: ?startRiding@TropicalFish@@UEAA_NAEAVActor@@@Z
-    virtual bool startRiding(class Actor& ride);
+    virtual bool startRiding(class Actor&);
 
     // vIndex: 39, symbol: __unk_vfn_39
     virtual void __unk_vfn_39();
@@ -71,7 +71,7 @@ public:
     virtual void __unk_vfn_107();
 
     // vIndex: 112, symbol: ?onSynchedDataUpdate@TropicalFish@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int dataId);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
@@ -92,7 +92,11 @@ public:
     virtual bool createAIGoals();
 
     // symbol: ??0TropicalFish@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI TropicalFish(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI TropicalFish(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?postNormalTick@TropicalFish@@QEAAXXZ
     MCAPI void postNormalTick();

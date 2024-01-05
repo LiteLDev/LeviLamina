@@ -133,7 +133,7 @@ public:
     virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol: ??0SculkBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI SculkBlock(std::string const&, int, class Material const&);
+    MCAPI SculkBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

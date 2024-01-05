@@ -165,17 +165,16 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@TntBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@TntBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // symbol: ??0TntBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TntBlock(std::string const& nameId, int id);
+    MCAPI TntBlock(std::string const& nameId, int);
 
     // symbol: ?_setAllowUnderwater@TntBlock@@QEBAXPEAVActor@@@Z
     MCAPI void _setAllowUnderwater(class Actor* e) const;
@@ -184,7 +183,7 @@ public:
     MCAPI bool _shouldAllowUnderwater(class Block const& block) const;
 
     // symbol: ?tryLightTnt@TntBlock@@SA_NAEAVPlayer@@AEBVBlockPos@@@Z
-    MCAPI static bool tryLightTnt(class Player&, class BlockPos const&);
+    MCAPI static bool tryLightTnt(class Player& player, class BlockPos const& pos);
 
     // NOLINTEND
 };

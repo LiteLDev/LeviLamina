@@ -28,7 +28,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_tickComponent@TrailSystem@@CAXAEAVActorOwnerComponent@@AEAVTrailComponent@@@Z
-    MCAPI static void _tickComponent(class ActorOwnerComponent&, class TrailComponent&);
+    MCAPI static void _tickComponent(class ActorOwnerComponent&, class TrailComponent& trailComponent);
 
     // NOLINTEND
 };

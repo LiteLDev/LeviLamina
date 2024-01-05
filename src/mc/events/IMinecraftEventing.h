@@ -85,7 +85,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?updatePlayerUndergroundStatus@IMinecraftEventing@@UEAAXPEAVPlayer@@_N@Z
-    MCVAPI void updatePlayerUndergroundStatus(class Player*, bool);
+    MCVAPI void updatePlayerUndergroundStatus(class Player* player, bool isUnderground);
 
     // symbol: ??1IMinecraftEventing@@UEAA@XZ
     MCVAPI ~IMinecraftEventing();

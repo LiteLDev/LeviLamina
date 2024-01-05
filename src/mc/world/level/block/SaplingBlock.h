@@ -105,16 +105,18 @@ public:
 
     // vIndex: 79, symbol:
     // ?onFertilized@SaplingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
+        const;
 
     // vIndex: 81, symbol: ?canBeFertilized@SaplingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 85, symbol: ?mayPlace@SaplingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 96, symbol: ?asItemInstance@SaplingBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -139,7 +141,7 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 129, symbol: ?getVariant@SaplingBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -148,7 +150,7 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 151, symbol: ?randomTick@SaplingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -161,17 +163,19 @@ public:
 
     // vIndex: 158, symbol:
     // ?getRenderLayer@SaplingBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
+    virtual ::BlockRenderLayer
+    getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
 
     // symbol: ??0SaplingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SaplingBlock(std::string const&, int);
+    MCAPI SaplingBlock(std::string const& nameId, int);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?advanceTree@SaplingBlock@@IEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@PEAVActor@@@Z
-    MCAPI bool advanceTree(class BlockSource&, class BlockPos const&, class Random&, class Actor*) const;
+    MCAPI bool
+    advanceTree(class BlockSource& region, class BlockPos const& pos, class Random& random, class Actor*) const;
 
     // NOLINTEND
 
@@ -179,29 +183,49 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_generateJungleTree@SaplingBlock@@AEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEAH0AEA_NAEBVBlockPos@@AEAVBlockSource@@AEBVFeatureRegistry@@@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits>
-    _generateJungleTree(int&, int&, bool&, class BlockPos const&, class BlockSource&, class FeatureRegistry const&)
-        const;
+    MCAPI class WeakRefT<struct FeatureRefTraits> _generateJungleTree(
+        int&                         ox,
+        int&                         oz,
+        bool&                        multiblock,
+        class BlockPos const&        pos,
+        class BlockSource&           region,
+        class FeatureRegistry const& registry
+    ) const;
 
     // symbol:
     // ?_generateOakTree@SaplingBlock@@AEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBVFeatureRegistry@@AEBVBlockPos@@AEAVBlockSource@@AEAVRandom@@_N@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits>
-    _generateOakTree(class FeatureRegistry const&, class BlockPos const&, class BlockSource&, class Random&, bool)
-        const;
+    MCAPI class WeakRefT<struct FeatureRefTraits> _generateOakTree(
+        class FeatureRegistry const& registry,
+        class BlockPos const&        pos,
+        class BlockSource&           region,
+        class Random&                random,
+        bool
+    ) const;
 
     // symbol:
     // ?_generateRedwoodTree@SaplingBlock@@AEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEAH0AEA_NAEBVBlockPos@@AEAVBlockSource@@AEBVFeatureRegistry@@@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits>
-    _generateRedwoodTree(int&, int&, bool&, class BlockPos const&, class BlockSource&, class FeatureRegistry const&)
-        const;
+    MCAPI class WeakRefT<struct FeatureRefTraits> _generateRedwoodTree(
+        int&                         ox,
+        int&                         oz,
+        bool&                        multiblock,
+        class BlockPos const&        pos,
+        class BlockSource&           region,
+        class FeatureRegistry const& registry
+    ) const;
 
     // symbol:
     // ?_generateRoofTree@SaplingBlock@@AEBA?AV?$WeakRefT@UFeatureRefTraits@@@@AEAH0AEA_NAEBVBlockPos@@AEAVBlockSource@@AEBVFeatureRegistry@@@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits>
-    _generateRoofTree(int&, int&, bool&, class BlockPos const&, class BlockSource&, class FeatureRegistry const&) const;
+    MCAPI class WeakRefT<struct FeatureRefTraits> _generateRoofTree(
+        int&                         ox,
+        int&                         oz,
+        bool&                        multiblock,
+        class BlockPos const&        pos,
+        class BlockSource&           region,
+        class FeatureRegistry const& registry
+    ) const;
 
     // symbol: ?_growTree@SaplingBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
-    MCAPI bool _growTree(class BlockSource&, class BlockPos const&, class Random&, bool) const;
+    MCAPI bool _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random, bool) const;
 
     // NOLINTEND
 };

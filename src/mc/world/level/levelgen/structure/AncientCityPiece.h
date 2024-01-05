@@ -37,8 +37,14 @@ public:
 
     // symbol:
     // ?addPieces@AncientCityPiece@@SAXVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEAVJigsawStructureRegistry@@W4VanillaBiomeTypes@@AEAVDimension@@@Z
-    MCAPI static void
-    addPieces(class BlockPos, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, class JigsawStructureRegistry&, ::VanillaBiomeTypes, class Dimension&);
+    MCAPI static void addPieces(
+        class BlockPos                                      position,
+        std::vector<std::unique_ptr<class StructurePiece>>& pieces,
+        class Random&                                       random,
+        class JigsawStructureRegistry&                      pools,
+        ::VanillaBiomeTypes,
+        class Dimension& dimension
+    );
 
     // NOLINTEND
 };

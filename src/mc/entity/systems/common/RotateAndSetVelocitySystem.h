@@ -21,7 +21,7 @@ public:
     // symbol:
     // ?doTick@RotateAndSetVelocitySystem@@SAXAEBUMoveInputComponent@@AEBUPlayerInputModeComponent@@AEBUVRMoveAdjustAngleComponent@@AEAULocalMoveVelocityComponent@@@Z
     MCAPI static void
-    doTick(struct MoveInputComponent const&, struct PlayerInputModeComponent const&, struct VRMoveAdjustAngleComponent const&, struct LocalMoveVelocityComponent&);
+    doTick(struct MoveInputComponent const& input, struct PlayerInputModeComponent const& inputMode, struct VRMoveAdjustAngleComponent const&, struct LocalMoveVelocityComponent&);
 
     // symbol:
     // ?tick@RotateAndSetVelocitySystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@UPlayerInputRequestComponent@@@@$$CBUMoveInputComponent@@$$CBUPlayerInputModeComponent@@$$CBUVRMoveAdjustAngleComponent@@ULocalMoveVelocityComponent@@@@@Z
@@ -31,7 +31,7 @@ public:
                            struct MoveInputComponent const,
                            struct PlayerInputModeComponent const,
                            struct VRMoveAdjustAngleComponent const,
-                           struct LocalMoveVelocityComponent>);
+                           struct LocalMoveVelocityComponent> view);
 
     // NOLINTEND
 };

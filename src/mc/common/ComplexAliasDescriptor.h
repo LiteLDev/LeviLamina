@@ -38,7 +38,7 @@ public:
     virtual struct ItemDescriptor::ItemEntry getItem() const;
 
     // vIndex: 5, symbol: ?forEachItemUntil@ComplexAliasDescriptor@@UEBA_NV?$function@$$A6A_NAEBVItem@@F@Z@std@@@Z
-    virtual bool forEachItemUntil(std::function<bool(class Item const&, short)>) const;
+    virtual bool forEachItemUntil(std::function<bool(class Item const&, short)> func) const;
 
     // vIndex: 6, symbol:
     // ?toMap@ComplexAliasDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
@@ -48,7 +48,7 @@ public:
     virtual std::optional<class CompoundTag> save() const;
 
     // vIndex: 9, symbol: ?serialize@ComplexAliasDescriptor@@UEBAXAEAVBinaryStream@@@Z
-    virtual void serialize(class BinaryStream&) const;
+    virtual void serialize(class BinaryStream& stream) const;
 
     // vIndex: 10, symbol: ?getType@ComplexAliasDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
     virtual ::ItemDescriptor::InternalType getType() const;
@@ -60,7 +60,7 @@ public:
     virtual ~ComplexAliasDescriptor() = default;
 
     // symbol: ??0ComplexAliasDescriptor@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI explicit ComplexAliasDescriptor(std::string const&);
+    MCAPI explicit ComplexAliasDescriptor(std::string const& fullName);
 
     // symbol:
     // ?deserialize@ComplexAliasDescriptor@@SA?AV?$Result@V?$unique_ptr@UComplexAliasDescriptor@@U?$default_delete@UComplexAliasDescriptor@@@std@@@std@@Verror_code@2@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z

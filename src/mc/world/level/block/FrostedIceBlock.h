@@ -100,7 +100,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@FrostedIceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // vIndex: 94, symbol: ?playerWillDestroy@FrostedIceBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
     virtual class Block const*
@@ -149,7 +149,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0FrostedIceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI FrostedIceBlock(std::string const& nameId, int id, bool packed);
+    MCAPI FrostedIceBlock(std::string const& nameId, int, bool packed);
 
     // symbol: ?_slightlyMelt@FrostedIceBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
     MCAPI void

@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0DragonChargePlayerGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit DragonChargePlayerGoal(class Mob&);
+    MCAPI explicit DragonChargePlayerGoal(class Mob& mob);
 
     // NOLINTEND
 };

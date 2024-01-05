@@ -34,12 +34,16 @@ public:
         virtual ~OfferFlowerDefinition() = default;
 
         // symbol: ?initialize@OfferFlowerDefinition@OfferFlowerGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext&, class OfferFlowerGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class OfferFlowerGoal& goal) const;
 
         // symbol:
         // ?buildSchema@OfferFlowerDefinition@OfferFlowerGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VOfferFlowerDefinition@OfferFlowerGoal@@@JsonUtil@@@4@@Z
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class OfferFlowerGoal::OfferFlowerDefinition>>&);
+        MCAPI static void buildSchema(
+            std::string const&                                  name,
+            std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                class JsonUtil::EmptyClass,
+                class OfferFlowerGoal::OfferFlowerDefinition>>& root
+        );
 
         // symbol: ?getStrictParsingVersion@OfferFlowerDefinition@OfferFlowerGoal@@SA?AVSemVersion@@XZ
         MCAPI static class SemVersion getStrictParsingVersion();
@@ -78,7 +82,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0OfferFlowerGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit OfferFlowerGoal(class Mob&);
+    MCAPI explicit OfferFlowerGoal(class Mob& mob);
 
     // symbol: ?getMaxOfferFlowerDurationTicks@OfferFlowerGoal@@QEBAHXZ
     MCAPI int getMaxOfferFlowerDurationTicks() const;

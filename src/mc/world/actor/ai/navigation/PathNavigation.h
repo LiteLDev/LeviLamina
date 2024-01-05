@@ -76,12 +76,12 @@ public:
     // symbol:
     // ?isFree@PathNavigation@@IEAA?AW4NodeType@@AEAVNavigationComponent@@AEAVMob@@AEBVBlockPos@@22W4CanJumpIntoNode@@@Z
     MCAPI ::NodeType isFree(
-        class NavigationComponent&,
-        class Mob&,
-        class BlockPos const&,
-        class BlockPos const&,
-        class BlockPos const&,
-        ::CanJumpIntoNode
+        class NavigationComponent& parent,
+        class Mob&                 mob,
+        class BlockPos const&      lastPathPos,
+        class BlockPos const&      testPos,
+        class BlockPos const&      size,
+        ::CanJumpIntoNode          jumpIntoNode
     );
 
     // NOLINTEND

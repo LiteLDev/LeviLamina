@@ -63,8 +63,11 @@ public:
     ) const;
 
     // vIndex: 47, symbol: ?isValidRepairItem@DiggerItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
-    virtual bool
-    isValidRepairItem(class ItemStackBase const&, class ItemStackBase const&, class BaseGameVersion const&) const;
+    virtual bool isValidRepairItem(
+        class ItemStackBase const&,
+        class ItemStackBase const&   repairItem,
+        class BaseGameVersion const& baseGameVersion
+    ) const;
 
     // vIndex: 49, symbol: ?getEnchantValue@DiggerItem@@UEBAHXZ
     virtual int getEnchantValue() const;
@@ -113,8 +116,8 @@ public:
     // symbol:
     // ??0DiggerItem@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHAEBVTier@Item@@AEBV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@2@@Z
     MCAPI DiggerItem(
-        std::string const&                     name,
-        int                                    id,
+        std::string const& name,
+        int,
         int                                    attackDamage,
         class Item::Tier const&                tier,
         std::vector<class Block const*> const& blocks

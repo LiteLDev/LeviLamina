@@ -64,13 +64,13 @@ public:
     virtual void __unk_vfn_107();
 
     // vIndex: 139, symbol: ?getInteraction@Piglin@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
-    virtual bool getInteraction(class Player&, class ActorInteraction&, class Vec3 const&);
+    virtual bool getInteraction(class Player& player, class ActorInteraction& interaction, class Vec3 const& location);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Piglin@@UEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
@@ -88,7 +88,11 @@ public:
     MCVAPI bool canExistInPeaceful() const;
 
     // symbol: ??0Piglin@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Piglin(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Piglin(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 };

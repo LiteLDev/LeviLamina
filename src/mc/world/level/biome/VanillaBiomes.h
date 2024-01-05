@@ -23,12 +23,12 @@ public:
     MCAPI static void initBiomeComponents(class BiomeComponentFactory& factory);
 
     // symbol: ?initBiomeDimensionComponent@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
-    MCAPI static void initBiomeDimensionComponent(class BiomeRegistry&);
+    MCAPI static void initBiomeDimensionComponent(class BiomeRegistry& registry);
 
     // symbol:
     // ?initBiomes@VanillaBiomes@@SAXAEAVBiomeRegistry@@AEBUSpawnSettings@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
     MCAPI static void
-    initBiomes(class BiomeRegistry&, struct SpawnSettings const&, class BaseGameVersion const&, class Experiments const&);
+    initBiomes(class BiomeRegistry& registry, struct SpawnSettings const&, class BaseGameVersion const& baseGameVersion, class Experiments const&);
 
     // symbol: ?initClientOnlyComponents@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
     MCAPI static void initClientOnlyComponents(class BiomeRegistry& registry);
@@ -37,7 +37,8 @@ public:
     MCAPI static void initDefaultWorldGenComponents(class IWorldRegistriesProvider& registries);
 
     // symbol: ?initSurfaceBuilders@VanillaBiomes@@SAXAEAVSurfaceBuilderRegistry@@AEBVBaseGameVersion@@@Z
-    MCAPI static void initSurfaceBuilders(class SurfaceBuilderRegistry&, class BaseGameVersion const&);
+    MCAPI static void
+    initSurfaceBuilders(class SurfaceBuilderRegistry& registry, class BaseGameVersion const& baseGameVersion);
 
     // symbol: ?initVanillaBiomeTypeComponent@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
     MCAPI static void initVanillaBiomeTypeComponent(class BiomeRegistry& registry);
@@ -60,8 +61,11 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?addBiomeDimensionAttributeComponentHelper@VanillaBiomes@@CAXAEAVBiomeRegistry@@AEBVHashedString@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI static void
-    addBiomeDimensionAttributeComponentHelper(class BiomeRegistry&, class HashedString const&, DimensionType);
+    MCAPI static void addBiomeDimensionAttributeComponentHelper(
+        class BiomeRegistry&      registry,
+        class HashedString const& name,
+        DimensionType             dimensionType
+    );
 
     // NOLINTEND
 };

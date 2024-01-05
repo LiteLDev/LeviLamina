@@ -24,7 +24,8 @@ public:
 
     // vIndex: 1, symbol:
     // ?assemble@ShulkerBoxRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@AEAVCraftingContext@@@Z
-    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const;
+    virtual std::vector<class ItemInstance> const&
+    assemble(class CraftingContainer& craftSlots, class CraftingContext&) const;
 
     // vIndex: 5, symbol: __unk_vfn_5
     virtual void __unk_vfn_5();

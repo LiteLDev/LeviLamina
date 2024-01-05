@@ -50,7 +50,12 @@ public:
 
     // vIndex: 8, symbol:
     // ?onBlockExploded@BlockEventListener@@UEAA?AW4EventResult@@AEAVDimension@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z
-    virtual ::EventResult onBlockExploded(class Dimension&, class BlockPos const&, class Block const&, class Actor*);
+    virtual ::EventResult onBlockExploded(
+        class Dimension&      dimension,
+        class BlockPos const& blockPos,
+        class Block const&    destroyedBlock,
+        class Actor*          source
+    );
 
     // vIndex: 9, symbol: __unk_vfn_9
     virtual void __unk_vfn_9();
@@ -66,7 +71,7 @@ public:
 
     // symbol:
     // ?onBlockInPosWillBeDestroyedByPlayer@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z
-    MCVAPI ::EventResult onBlockInPosWillBeDestroyedByPlayer(class Player&, class BlockPos const&);
+    MCVAPI ::EventResult onBlockInPosWillBeDestroyedByPlayer(class Player& player, class BlockPos const& pos);
 
     // symbol: ?onBlockInteractedWith@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z
     MCVAPI ::EventResult onBlockInteractedWith(class Player& player, class BlockPos const& blockPos);
@@ -76,7 +81,8 @@ public:
     onBlockModified(class BlockPos const& pos, class Block const& oldBlock, class Block const& newBlock);
 
     // symbol: ?onBlockMovedByPiston@BlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@0W4PistonState@@@Z
-    MCVAPI ::EventResult onBlockMovedByPiston(class BlockPos const&, class BlockPos const&, ::PistonState);
+    MCVAPI ::EventResult
+    onBlockMovedByPiston(class BlockPos const& pistonPos, class BlockPos const& blockPos, ::PistonState action);
 
     // symbol: ?onUnknownBlockReceived@BlockEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEBUNewBlockID@@G@Z
     MCVAPI ::EventResult onUnknownBlockReceived(class Level& level, struct NewBlockID const& blockId, ushort data);

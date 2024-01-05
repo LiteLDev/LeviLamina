@@ -45,7 +45,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 2, symbol: ?hasComponent@Mob@@UEBA_NAEBVHashedString@@@Z
-    virtual bool hasComponent(class HashedString const&) const;
+    virtual bool hasComponent(class HashedString const& name) const;
 
     // vIndex: 3, symbol: ?outOfWorld@Mob@@MEAAXXZ
     virtual void outOfWorld();
@@ -87,7 +87,7 @@ public:
     virtual void blockedByShield(class ActorDamageSource const& source, class Actor& blocker);
 
     // vIndex: 26, symbol: ?teleportTo@Mob@@UEAAXAEBVVec3@@_NHH1@Z
-    virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool);
 
     // vIndex: 29, symbol: ?normalTick@Mob@@UEAAXXZ
     virtual void normalTick();
@@ -96,7 +96,7 @@ public:
     virtual void baseTick();
 
     // vIndex: 32, symbol: ?startRiding@Mob@@UEAA_NAEAVActor@@@Z
-    virtual bool startRiding(class Actor& ride);
+    virtual bool startRiding(class Actor&);
 
     // vIndex: 33, symbol: ?addPassenger@Mob@@UEAAXAEAVActor@@@Z
     virtual void addPassenger(class Actor&);
@@ -144,19 +144,19 @@ public:
     virtual void setTarget(class Actor* target);
 
     // vIndex: 66, symbol: ?attack@Mob@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z
-    virtual bool attack(class Actor&, ::ActorDamageCause const&);
+    virtual bool attack(class Actor& target, ::ActorDamageCause const& cause);
 
     // vIndex: 73, symbol: ?canPowerJump@Mob@@UEBA_NXZ
     virtual bool canPowerJump() const;
 
     // vIndex: 79, symbol: ?getBlockDamageCause@Mob@@UEBA?AW4ActorDamageCause@@AEBVBlock@@@Z
-    virtual ::ActorDamageCause getBlockDamageCause(class Block const&) const;
+    virtual ::ActorDamageCause getBlockDamageCause(class Block const& block) const;
 
     // vIndex: 80, symbol: ?doFireHurt@Mob@@UEAA_NH@Z
     virtual bool doFireHurt(int amount);
 
     // vIndex: 83, symbol: ?handleEntityEvent@Mob@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent, int data);
 
     // vIndex: 88, symbol: ?getArmorMaterialTypeInSlot@Mob@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z
     virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::ArmorSlot slot) const;
@@ -217,7 +217,7 @@ public:
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const& source, float dmg, bool knock, bool ignite);
+    virtual bool _hurt(class ActorDamageSource const& source, float dmg, bool knock, bool);
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@Mob@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
@@ -235,8 +235,7 @@ public:
     virtual void __unk_vfn_168();
 
     // vIndex: 169, symbol: ?knockback@Mob@@UEAAXPEAVActor@@HMMMMM@Z
-    virtual void
-    knockback(class Actor* source, int dmg, float xd, float zd, float power, float height, float heightCap);
+    virtual void knockback(class Actor* source, int dmg, float xd, float zd, float, float, float heightCap);
 
     // vIndex: 170, symbol: ?spawnAnim@Mob@@UEAAXXZ
     virtual void spawnAnim();
@@ -287,16 +286,16 @@ public:
     virtual bool isAlliedTo(class Mob* other);
 
     // vIndex: 186, symbol: ?doHurtTarget@Mob@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
-    virtual bool doHurtTarget(class Actor*, ::ActorDamageCause const&);
+    virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
 
     // vIndex: 187, symbol: ?getArmorValue@Mob@@UEBAHXZ
     virtual int getArmorValue() const;
 
     // vIndex: 188, symbol: ?hurtArmorSlots@Mob@@UEAAXAEBVActorDamageSource@@HV?$bitset@$03@std@@@Z
-    virtual void hurtArmorSlots(class ActorDamageSource const&, int, std::bitset<4>);
+    virtual void hurtArmorSlots(class ActorDamageSource const& source, int dmg, std::bitset<4>);
 
     // vIndex: 189, symbol: ?setDamagedArmor@Mob@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
-    virtual void setDamagedArmor(::ArmorSlot, class ItemStack const&);
+    virtual void setDamagedArmor(::ArmorSlot slot, class ItemStack const& item);
 
     // vIndex: 190, symbol: ?sendArmorDamage@Mob@@UEAAXV?$bitset@$03@std@@@Z
     virtual void sendArmorDamage(std::bitset<4>);
@@ -312,7 +311,7 @@ public:
     virtual std::vector<class ItemStack const*> getAllEquipment() const;
 
     // vIndex: 194, symbol: ?dropEquipmentOnDeath@Mob@@UEAAXAEBVActorDamageSource@@H@Z
-    virtual void dropEquipmentOnDeath(class ActorDamageSource const&, int);
+    virtual void dropEquipmentOnDeath(class ActorDamageSource const& source, int lootBonusLevel);
 
     // vIndex: 195, symbol: ?dropEquipmentOnDeath@Mob@@UEAAXXZ
     virtual void dropEquipmentOnDeath();
@@ -358,20 +357,24 @@ public:
     virtual void tickDeath();
 
     // vIndex: 209, symbol: ?_getAdjustedAABBForSpawnCheck@Mob@@MEBA?AVAABB@@AEBV2@AEBVVec3@@@Z
-    virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const&, class Vec3 const&) const;
+    virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const& aabb, class Vec3 const& mobPos) const;
 
     // symbol: ?renderDebugServerState@Mob@@UEAAXAEBVOptions@@@Z
     MCVAPI void renderDebugServerState(class Options const& options);
 
     // symbol: ??0Mob@@QEAA@AEAVLevel@@AEAVEntityContext@@@Z
-    MCAPI Mob(class Level&, class EntityContext&);
+    MCAPI Mob(class Level& level, class EntityContext& entityContext);
 
     // symbol: ??0Mob@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Mob(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI
+    Mob(class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext);
 
     // symbol:
     // ?addSpeedModifier@Mob@@QEAAXAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z
-    MCAPI void addSpeedModifier(class mce::UUID const&, std::string const&, float);
+    MCAPI void
+    addSpeedModifier(class mce::UUID const& attributeID, std::string const& attributeName, float speedModifier);
 
     // symbol: ?ate@Mob@@QEAAXXZ
     MCAPI void ate();
@@ -380,10 +383,10 @@ public:
     MCAPI void attackAnimation(class Actor* target, float distance);
 
     // symbol: ?calcMoveRelativeSpeed@Mob@@QEAAMW4TravelType@@@Z
-    MCAPI float calcMoveRelativeSpeed(::TravelType);
+    MCAPI float calcMoveRelativeSpeed(::TravelType travelType);
 
     // symbol: ?checkForPostHitDamageImmunity@Mob@@QEAA_NMAEBVActorDamageSource@@@Z
-    MCAPI bool checkForPostHitDamageImmunity(float, class ActorDamageSource const&);
+    MCAPI bool checkForPostHitDamageImmunity(float damage, class ActorDamageSource const& source);
 
     // symbol: ?checkTotemDeathProtection@Mob@@QEAA_NAEBVActorDamageSource@@@Z
     MCAPI bool checkTotemDeathProtection(class ActorDamageSource const& killingDamage);
@@ -419,16 +422,16 @@ public:
     MCAPI int getCaravanSize() const;
 
     // symbol: ?getDamageAfterArmorReduction@Mob@@QEBAMAEBVActorDamageSource@@M@Z
-    MCAPI float getDamageAfterArmorReduction(class ActorDamageSource const&, float) const;
+    MCAPI float getDamageAfterArmorReduction(class ActorDamageSource const& source, float damage) const;
 
     // symbol: ?getDamageAfterResistanceEffect@Mob@@QEBAMAEBVActorDamageSource@@M@Z
-    MCAPI float getDamageAfterResistanceEffect(class ActorDamageSource const&, float) const;
+    MCAPI float getDamageAfterResistanceEffect(class ActorDamageSource const& source, float damage) const;
 
     // symbol: ?getEatCounter@Mob@@QEBAHXZ
     MCAPI int getEatCounter() const;
 
     // symbol: ?getExpectedFallDamage@Mob@@QEBAMMM@Z
-    MCAPI float getExpectedFallDamage(float, float) const;
+    MCAPI float getExpectedFallDamage(float distance, float) const;
 
     // symbol: ?getFirstCaravanHead@Mob@@QEAAPEAV1@XZ
     MCAPI class Mob* getFirstCaravanHead();
@@ -479,7 +482,7 @@ public:
     MCAPI bool hasCaravanTail() const;
 
     // symbol: ?hurtArmor@Mob@@QEAAXAEBVActorDamageSource@@H@Z
-    MCAPI void hurtArmor(class ActorDamageSource const&, int);
+    MCAPI void hurtArmor(class ActorDamageSource const& source, int dmg);
 
     // symbol: ?isAbleToMove@Mob@@QEBA_NXZ
     MCAPI bool isAbleToMove() const;
@@ -518,16 +521,16 @@ public:
     MCAPI void leaveCaravan();
 
     // symbol: ?lookAt@Mob@@QEAAXPEAVActor@@MM@Z
-    MCAPI void lookAt(class Actor* e, float yMax, float xMax);
+    MCAPI void lookAt(class Actor* lookAt, float yMax, float xMax);
 
     // symbol: ?onPlayerDimensionChanged@Mob@@QEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-    MCAPI void onPlayerDimensionChanged(class Player*, DimensionType, DimensionType);
+    MCAPI void onPlayerDimensionChanged(class Player* player, DimensionType fromDimension, DimensionType toDimension);
 
     // symbol: ?onPlayerJump@Mob@@QEAAXH@Z
     MCAPI void onPlayerJump(int jumpAmount);
 
     // symbol: ?removeSpeedModifier@Mob@@QEAAXAEBVUUID@mce@@@Z
-    MCAPI void removeSpeedModifier(class mce::UUID const&);
+    MCAPI void removeSpeedModifier(class mce::UUID const& attributeID);
 
     // symbol: ?resetAttributes@Mob@@QEAAXXZ
     MCAPI void resetAttributes();
@@ -536,10 +539,10 @@ public:
     MCAPI void resetNoActionTime();
 
     // symbol: ?sendArmorDamageSlot@Mob@@QEAAXW4ArmorSlot@@@Z
-    MCAPI void sendArmorDamageSlot(::ArmorSlot);
+    MCAPI void sendArmorDamageSlot(::ArmorSlot slot);
 
     // symbol: ?sendArmorSlot@Mob@@QEAAXW4ArmorSlot@@@Z
-    MCAPI void sendArmorSlot(::ArmorSlot);
+    MCAPI void sendArmorSlot(::ArmorSlot slot);
 
     // symbol: ?setEatCounter@Mob@@QEAAXH@Z
     MCAPI void setEatCounter(int value);
@@ -554,7 +557,7 @@ public:
     MCAPI void setIsPregnant(bool pregnant);
 
     // symbol: ?setJumpTicks@Mob@@QEAAXH@Z
-    MCAPI void setJumpTicks(int);
+    MCAPI void setJumpTicks(int ticks);
 
     // symbol: ?setMovementComponentCurrentSpeed@Mob@@QEAAXM@Z
     MCAPI void setMovementComponentCurrentSpeed(float);
@@ -575,13 +578,13 @@ public:
     MCAPI void setSurfaceMob(bool isSurfaceMob);
 
     // symbol: ?setTargetCaptain@Mob@@QEAAXUActorUniqueID@@@Z
-    MCAPI void setTargetCaptain(struct ActorUniqueID id);
+    MCAPI void setTargetCaptain(struct ActorUniqueID);
 
     // symbol: ?setYBodyRotation@Mob@@QEAAXM@Z
-    MCAPI void setYBodyRotation(float);
+    MCAPI void setYBodyRotation(float rotation);
 
     // symbol: ?setYBodyRotations@Mob@@QEAAXMM@Z
-    MCAPI void setYBodyRotations(float, float);
+    MCAPI void setYBodyRotations(float rotation, float);
 
     // symbol: ?shouldApplyWaterGravity@Mob@@QEAA_NXZ
     MCAPI bool shouldApplyWaterGravity();
@@ -605,10 +608,11 @@ public:
     MCAPI void updateEquipment();
 
     // symbol: ?setSprinting@Mob@@SAXAEAVBaseAttributeMap@@VSynchedActorDataWriter@@_N@Z
-    MCAPI static void setSprinting(class BaseAttributeMap&, class SynchedActorDataWriter, bool);
+    MCAPI static void
+    setSprinting(class BaseAttributeMap& attributes, class SynchedActorDataWriter data, bool shouldSprint);
 
     // symbol: ?tryGetFromEntity@Mob@@SAPEAV1@AEAVEntityContext@@_N@Z
-    MCAPI static class Mob* tryGetFromEntity(class EntityContext&, bool);
+    MCAPI static class Mob* tryGetFromEntity(class EntityContext& entity, bool);
 
     // symbol: ?ARMOR_DAMAGE_DIVISOR@Mob@@2HB
     MCAPI static int const ARMOR_DAMAGE_DIVISOR;
@@ -687,7 +691,7 @@ public:
     MCAPI int getCurrentSwingDuration();
 
     // symbol: ?jumpFromGround@Mob@@IEAAXAEBVIConstBlockSource@@@Z
-    MCAPI void jumpFromGround(class IConstBlockSource const&);
+    MCAPI void jumpFromGround(class IConstBlockSource const& region);
 
     // symbol: ?saveOffhand@Mob@@IEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
     MCAPI std::unique_ptr<class ListTag> saveOffhand() const;
@@ -706,10 +710,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_initHardCodedComponents@Mob@@AEAA_N_N@Z
-    MCAPI bool _initHardCodedComponents(bool);
+    MCAPI bool _initHardCodedComponents(bool isClientSide);
 
     // symbol: ?_initialize@Mob@@AEAAXAEAVEntityContext@@_N@Z
-    MCAPI void _initialize(class EntityContext&, bool);
+    MCAPI void _initialize(class EntityContext& entityContext, bool isClientSide);
 
     // symbol:
     // ?_logMobComponentInitializationError@Mob@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0PEBD@Z

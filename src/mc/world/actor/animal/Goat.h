@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 6, symbol: ?initializeComponents@Goat@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1Goat@@UEAA@XZ
     virtual ~Goat() = default;
@@ -67,7 +67,7 @@ public:
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@Goat@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int);
+    virtual void handleEntityEvent(::ActorEvent, int data);
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
@@ -76,16 +76,16 @@ public:
     virtual void __unk_vfn_144();
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Goat@@UEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
 
     // vIndex: 164, symbol: ?readAdditionalSaveData@Goat@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    virtual void readAdditionalSaveData(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 165, symbol: ?addAdditionalSaveData@Goat@@UEBAXAEAVCompoundTag@@@Z
-    virtual void addAdditionalSaveData(class CompoundTag&) const;
+    virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -100,7 +100,11 @@ public:
     virtual ::Puv::Legacy::LevelSoundEvent getDeathSound();
 
     // symbol: ??0Goat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Goat(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Goat(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getHornCount@Goat@@QEBAHXZ
     MCAPI int getHornCount() const;

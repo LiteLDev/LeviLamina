@@ -49,7 +49,12 @@ public:
 
     // vIndex: 46, symbol:
     // ?appendFormattedHovertext@GoatHornItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-    virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
+    virtual void appendFormattedHovertext(
+        class ItemStackBase const& instance,
+        class Level&               level,
+        std::string&               hovertext,
+        bool                       showCategory
+    ) const;
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -73,7 +78,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 70, symbol: ?use@GoatHornItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-    virtual class ItemStack& use(class ItemStack&, class Player&) const;
+    virtual class ItemStack& use(class ItemStack& itemStack, class Player& player) const;
 
     // vIndex: 88, symbol: ?getCooldownType@GoatHornItem@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getCooldownType() const;
@@ -91,10 +96,10 @@ public:
     virtual bool canBeCharged() const;
 
     // symbol: ??0GoatHornItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI GoatHornItem(std::string const&, int);
+    MCAPI GoatHornItem(std::string const& name, int);
 
     // symbol: ?addGoatHornVarationSaveData@GoatHornItem@@SAXAEAVGoat@@AEAVItemStack@@@Z
-    MCAPI static void addGoatHornVarationSaveData(class Goat&, class ItemStack&);
+    MCAPI static void addGoatHornVarationSaveData(class Goat&, class ItemStack& instance);
 
     // NOLINTEND
 };

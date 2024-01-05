@@ -37,7 +37,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@CandleBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const&, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -106,7 +106,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@CandleBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -133,27 +133,30 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@CandleBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@CandleBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@CandleBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 168, symbol: ?_getNumCandles@CandleBlock@@MEBAHAEBVBlock@@@Z
-    virtual int _getNumCandles(class Block const&) const;
+    virtual int _getNumCandles(class Block const& block) const;
 
     // vIndex: 169, symbol:
     // ?_iterateCandles@CandleBlock@@MEBAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
-    virtual void
-    _iterateCandles(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int)>) const;
+    virtual void _iterateCandles(
+        class Block const&                          block,
+        class BlockPos const&                       pos,
+        std::function<void(class Vec3 const&, int)> callback
+    ) const;
 
     // vIndex: 170, symbol: ?_tryLightOnFire@CandleBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-    virtual void _tryLightOnFire(class BlockSource&, class BlockPos const&, class Actor*) const;
+    virtual void _tryLightOnFire(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor) const;
 
     // symbol: ?isInteractiveBlock@CandleBlock@@UEBA_NXZ
     MCVAPI bool isInteractiveBlock() const;
@@ -162,18 +165,21 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0CandleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CandleBlock(std::string const&, int);
+    MCAPI CandleBlock(std::string const& nameId, int);
 
     // symbol: ?tryLightFire@CandleBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-    MCAPI static bool tryLightFire(class BlockSource&, class BlockPos const&, class Actor*);
+    MCAPI static bool tryLightFire(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_forEachCandle@CandleBlock@@CAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
-    MCAPI static void
-    _forEachCandle(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int)>);
+    MCAPI static void _forEachCandle(
+        class Block const&                          block,
+        class BlockPos const&                       pos,
+        std::function<void(class Vec3 const&, int)> callback
+    );
 
     // NOLINTEND
 };

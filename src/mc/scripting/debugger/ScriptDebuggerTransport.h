@@ -23,11 +23,11 @@ public:
     virtual ~ScriptDebuggerTransport() = default;
 
     // vIndex: 1, symbol: ?listen@ScriptDebuggerTransport@@UEAA_NG@Z
-    virtual bool listen(ushort);
+    virtual bool listen(ushort port);
 
     // vIndex: 2, symbol:
     // ?connect@ScriptDebuggerTransport@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-    virtual bool connect(std::string const&, ushort);
+    virtual bool connect(std::string const& host, ushort port);
 
     // vIndex: 3, symbol: ?selectClient@ScriptDebuggerTransport@@UEAA_NXZ
     virtual bool selectClient();

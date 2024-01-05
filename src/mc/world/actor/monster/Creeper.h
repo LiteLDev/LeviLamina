@@ -82,7 +82,11 @@ public:
     virtual void __unk_vfn_168();
 
     // symbol: ??0Creeper@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Creeper(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Creeper(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getSwellDir@Creeper@@QEAAHXZ
     MCAPI int getSwellDir();
@@ -91,7 +95,7 @@ public:
     MCAPI float getSwelling(float a) const;
 
     // symbol: ?tryGetFromEntity@Creeper@@SAPEAV1@AEAVEntityContext@@_N@Z
-    MCAPI static class Creeper* tryGetFromEntity(class EntityContext&, bool);
+    MCAPI static class Creeper* tryGetFromEntity(class EntityContext& entity, bool);
 
     // NOLINTEND
 

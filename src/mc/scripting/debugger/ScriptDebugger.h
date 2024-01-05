@@ -20,7 +20,7 @@ public:
     MCVAPI void close();
 
     // symbol: ?connect@ScriptDebugger@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-    MCVAPI bool connect(std::string const&, ushort);
+    MCVAPI bool connect(std::string const& host, ushort port);
 
     // symbol: ?getResourceStats@ScriptDebugger@@UEBA?AUScriptResourceStats@@XZ
     MCVAPI struct ScriptResourceStats getResourceStats() const;
@@ -38,7 +38,7 @@ public:
     MCVAPI void startProfiler();
 
     // symbol: ?stopProfiler@ScriptDebugger@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCVAPI void stopProfiler(std::string const&);
+    MCVAPI void stopProfiler(std::string const& savePath);
 
     // symbol: ?checkConnections@ScriptDebugger@@QEAA_NXZ
     MCAPI bool checkConnections();

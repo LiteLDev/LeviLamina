@@ -21,13 +21,13 @@ public:
     virtual bool isInLava() const = 0;
 
     // vIndex: 3, symbol: ?isWaterBlock@PathBlockSource@@UEBA_NAEBVBlockPos@@@Z
-    virtual bool isWaterBlock(class BlockPos const&) const = 0;
+    virtual bool isWaterBlock(class BlockPos const& blockPos) const = 0;
 
     // vIndex: 4, symbol: ?isLavaBlock@PathBlockSource@@UEBA_NAEBVBlockPos@@@Z
-    virtual bool isLavaBlock(class BlockPos const&) const = 0;
+    virtual bool isLavaBlock(class BlockPos const& blockPos) const = 0;
 
     // vIndex: 5, symbol: ?isSolidBlock@PathBlockSource@@UEBA_NAEBVBlockPos@@@Z
-    virtual bool isSolidBlock(class BlockPos const&) const = 0;
+    virtual bool isSolidBlock(class BlockPos const& blockPos) const = 0;
 
     // NOLINTEND
 };

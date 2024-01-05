@@ -37,10 +37,10 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@ChainBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 25, symbol: ?canConnect@ChainBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
+    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -142,7 +142,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0ChainBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI ChainBlock(std::string const&, int, class Material const&);
+    MCAPI ChainBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

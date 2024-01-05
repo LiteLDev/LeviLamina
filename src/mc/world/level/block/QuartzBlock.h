@@ -100,11 +100,16 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@QuartzBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@QuartzBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    virtual class Block const& getPlacementBlock(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -129,10 +134,10 @@ public:
     virtual bool isAuxValueRelevantForPicking() const;
 
     // vIndex: 129, symbol: ?getVariant@QuartzBlock@@UEBAHAEBVBlock@@@Z
-    virtual int getVariant(class Block const&) const;
+    virtual int getVariant(class Block const& block) const;
 
     // vIndex: 132, symbol: ?getMappedFace@QuartzBlock@@UEBAEEAEBVBlock@@@Z
-    virtual uchar getMappedFace(uchar, class Block const&) const;
+    virtual uchar getMappedFace(uchar face, class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -147,7 +152,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0QuartzBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI QuartzBlock(std::string const&, int);
+    MCAPI QuartzBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

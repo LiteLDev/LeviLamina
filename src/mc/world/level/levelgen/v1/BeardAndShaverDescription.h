@@ -12,10 +12,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0BeardAndShaverDescription@@QEAA@VBeardingDescriptionCache@@AEBUBeardKernel@@MM@Z
-    MCAPI BeardAndShaverDescription(class BeardingDescriptionCache, struct BeardKernel const&, float, float);
+    MCAPI BeardAndShaverDescription(class BeardingDescriptionCache cache, struct BeardKernel const&, float, float);
 
     // symbol: ?calculateContribution@BeardAndShaverDescription@@QEBAMAEBVBlockPos@@@Z
-    MCAPI float calculateContribution(class BlockPos const&) const;
+    MCAPI float calculateContribution(class BlockPos const& pos) const;
 
     // symbol: ?getCache@BeardAndShaverDescription@@QEBAAEBVBeardingDescriptionCache@@XZ
     MCAPI class BeardingDescriptionCache const& getCache() const;

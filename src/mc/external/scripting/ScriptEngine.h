@@ -64,8 +64,13 @@ public:
 
     // vIndex: 1, symbol:
     // ?createScriptingContext@ScriptEngine@Scripting@@UEAA?AUScriptContextResult@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUModuleDescriptor@2@AEBV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@5@PEAVIDependencyLoader@2@AEBUContextConfig@2@@Z
-    virtual struct Scripting::ScriptContextResult
-    createScriptingContext(std::string const&, struct Scripting::ModuleDescriptor const&, std::vector<struct Scripting::ModuleDescriptor> const&, class Scripting::IDependencyLoader*, struct Scripting::ContextConfig const&);
+    virtual struct Scripting::ScriptContextResult createScriptingContext(
+        std::string const&,
+        struct Scripting::ModuleDescriptor const&,
+        std::vector<struct Scripting::ModuleDescriptor> const& dependencies,
+        class Scripting::IDependencyLoader*                    loader,
+        struct Scripting::ContextConfig const&                 config
+    );
 
     // vIndex: 2, symbol: ?getRegistryManager@ScriptEngine@Scripting@@UEAAAEAVRegistryManager@2@XZ
     virtual class Scripting::RegistryManager& getRegistryManager();
@@ -79,7 +84,7 @@ public:
 
     // symbol:
     // ?addRuntime@ScriptEngine@Scripting@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VIRuntime@Scripting@@U?$default_delete@VIRuntime@Scripting@@@std@@@4@@Z
-    MCAPI void addRuntime(std::string, std::unique_ptr<class Scripting::IRuntime>);
+    MCAPI void addRuntime(std::string name, std::unique_ptr<class Scripting::IRuntime>);
 
     // symbol:
     // ?computeRuntimeStats@ScriptEngine@Scripting@@QEBA?AURuntimeStats@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -100,7 +105,8 @@ public:
 
     // symbol:
     // ?enableWatchdog@ScriptEngine@Scripting@@QEAAPEAVIWatchdog@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUWatchdogSettings@2@@Z
-    MCAPI class Scripting::IWatchdog* enableWatchdog(std::string const&, struct Scripting::WatchdogSettings const&);
+    MCAPI class Scripting::IWatchdog*
+    enableWatchdog(std::string const&, struct Scripting::WatchdogSettings const& settings);
 
     // symbol: ?executeCoroutines@ScriptEngine@Scripting@@QEAAXV?$duration@_JU?$ratio@$00$0PECEA@@std@@@chrono@std@@@Z
     MCAPI void executeCoroutines(std::chrono::microseconds);
@@ -110,7 +116,7 @@ public:
 
     // symbol:
     // ?getModuleDescriptorByName@ScriptEngine@Scripting@@QEBA?AV?$optional@UModuleDescriptor@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
-    MCAPI std::optional<struct Scripting::ModuleDescriptor> getModuleDescriptorByName(std::string const&) const;
+    MCAPI std::optional<struct Scripting::ModuleDescriptor> getModuleDescriptorByName(std::string const& name) const;
 
     // symbol:
     // ?getSupportedBindingModules@ScriptEngine@Scripting@@QEBA?AV?$vector@USupportedBindingModule@Scripting@@V?$allocator@USupportedBindingModule@Scripting@@@std@@@std@@XZ
@@ -121,11 +127,11 @@ public:
     MCAPI class Scripting::IWatchdog* getWatchdog(std::string const&) const;
 
     // symbol: ?hasModuleBindingFactory@ScriptEngine@Scripting@@QEBA_NAEBUUUID@2@@Z
-    MCAPI bool hasModuleBindingFactory(struct Scripting::UUID const&) const;
+    MCAPI bool hasModuleBindingFactory(struct Scripting::UUID const& uuid) const;
 
     // symbol:
     // ?hasRuntime@ScriptEngine@Scripting@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool hasRuntime(std::string const&) const;
+    MCAPI bool hasRuntime(std::string const& name) const;
 
     // symbol: ?releaseRuntimes@ScriptEngine@Scripting@@QEAAXXZ
     MCAPI void releaseRuntimes();

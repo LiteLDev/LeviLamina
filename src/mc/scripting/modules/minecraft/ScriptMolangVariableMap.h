@@ -56,21 +56,26 @@ public:
 
     // symbol:
     // ?setSpeedAndDirection@ScriptMolangVariableMap@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MAEBVVec3@@@Z
-    MCAPI class Scripting::Result<void> setSpeedAndDirection(std::string const&, float, class Vec3 const&);
+    MCAPI class Scripting::Result<void>
+    setSpeedAndDirection(std::string const& variableName, float speed, class Vec3 const& direction);
 
     // symbol:
     // ?setSpeedAndDirection_V010@ScriptMolangVariableMap@ScriptModuleMinecraft@@QEAA?AV?$StrongTypedObjectHandle@VScriptMolangVariableMap@ScriptModuleMinecraft@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MAEBVScriptVector@2@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMolangVariableMap>
-    setSpeedAndDirection_V010(std::string const&, float, class ScriptModuleMinecraft::ScriptVector const&);
+    setSpeedAndDirection_V010(
+        std::string const&                               variableName,
+        float                                            speed,
+        class ScriptModuleMinecraft::ScriptVector const& direction
+    );
 
     // symbol:
     // ?setVector3@ScriptMolangVariableMap@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@@Z
-    MCAPI class Scripting::Result<void> setVector3(std::string const&, class Vec3 const&);
+    MCAPI class Scripting::Result<void> setVector3(std::string const& variableName, class Vec3 const& vector);
 
     // symbol:
     // ?setVector3_V010@ScriptMolangVariableMap@ScriptModuleMinecraft@@QEAA?AV?$StrongTypedObjectHandle@VScriptMolangVariableMap@ScriptModuleMinecraft@@@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVScriptVector@2@@Z
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMolangVariableMap>
-    setVector3_V010(std::string const&, class ScriptModuleMinecraft::ScriptVector const&);
+    setVector3_V010(std::string const& variableName, class ScriptModuleMinecraft::ScriptVector const& vector);
 
     // symbol: ??1ScriptMolangVariableMap@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptMolangVariableMap();

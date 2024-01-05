@@ -40,10 +40,10 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@PowderSnowBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 25, symbol: ?canConnect@PowderSnowBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
+    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisBlock) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -118,7 +118,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@PowderSnowBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // vIndex: 96, symbol: ?asItemInstance@PowderSnowBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
@@ -142,7 +142,8 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 148, symbol: ?onFallOn@PowderSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-    virtual void onFallOn(class BlockSource&, class BlockPos const&, class Actor&, float) const;
+    virtual void
+    onFallOn(class BlockSource& region, class BlockPos const& pos, class Actor& entity, float fallDistance) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
@@ -164,16 +165,16 @@ public:
 
     // symbol:
     // ??0PowderSnowBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI PowderSnowBlock(std::string const&, int, class Material const&);
+    MCAPI PowderSnowBlock(std::string const& nameId, int, class Material const& material);
 
     // symbol: ?canWalkOnTop@PowderSnowBlock@@SA_NAEBVGetCollisionShapeInterface@@@Z
-    MCAPI static bool canWalkOnTop(class GetCollisionShapeInterface const&);
+    MCAPI static bool canWalkOnTop(class GetCollisionShapeInterface const& actor);
 
     // symbol: ?clearFire@PowderSnowBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    MCAPI static void clearFire(class BlockSource&, class BlockPos const&, class Block const&);
+    MCAPI static void clearFire(class BlockSource& region, class BlockPos const& pos, class Block const& block);
 
     // symbol: ?spawnPowderSnowParticles@PowderSnowBlock@@SAXAEAVLevel@@AEBVBlockPos@@@Z
-    MCAPI static void spawnPowderSnowParticles(class Level&, class BlockPos const&);
+    MCAPI static void spawnPowderSnowParticles(class Level& level, class BlockPos const& pos);
 
     // NOLINTEND
 };

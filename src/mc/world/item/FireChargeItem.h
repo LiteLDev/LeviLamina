@@ -48,7 +48,7 @@ public:
     virtual void __unk_vfn_39();
 
     // vIndex: 42, symbol: ?isDestructive@FireChargeItem@@UEBA_NH@Z
-    virtual bool isDestructive(int) const;
+    virtual bool isDestructive(int auxValue) const;
 
     // vIndex: 52, symbol: __unk_vfn_52
     virtual void __unk_vfn_52();
@@ -83,15 +83,16 @@ public:
 
     // vIndex: 115, symbol: ?_calculatePlacePos@FireChargeItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
     virtual bool
-    _calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
+    _calculatePlacePos(class ItemStackBase& instance, class Actor& actor, uchar& face, class BlockPos& pos) const;
 
     // vIndex: 117, symbol:
     // ?_useOn@FireChargeItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol: ??0FireChargeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FireChargeItem(std::string const& name, int id);
+    MCAPI FireChargeItem(std::string const& name, int);
 
     // symbol: ?LEVEL_SOUND_EVENT_VOLUME@FireChargeItem@@2HB
     MCAPI static int const LEVEL_SOUND_EVENT_VOLUME;

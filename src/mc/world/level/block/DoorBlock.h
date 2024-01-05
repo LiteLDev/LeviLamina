@@ -35,7 +35,7 @@ public:
     virtual ~DoorBlock();
 
     // vIndex: 2, symbol: ?getNextBlockPermutation@DoorBlock@@UEBAPEBVBlock@@AEBV2@@Z
-    virtual class Block const* getNextBlockPermutation(class Block const& currentBlock) const;
+    virtual class Block const* getNextBlockPermutation(class Block const&) const;
 
     // vIndex: 5, symbol:
     // ?getCollisionShape@DoorBlock@@UEBA?AVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
@@ -113,7 +113,7 @@ public:
     virtual void __unk_vfn_48();
 
     // vIndex: 50, symbol: ?canFillAtPos@DoorBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canFillAtPos(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canFillAtPos(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 52, symbol: ?onFillBlock@DoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual void onFillBlock(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
@@ -152,7 +152,7 @@ public:
     virtual bool getSecondPart(class BlockSource const& region, class BlockPos const& pos, class BlockPos& out) const;
 
     // vIndex: 96, symbol: ?asItemInstance@DoorBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -182,32 +182,31 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@DoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@DoorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@DoorBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 164, symbol: ?getResourceItem@DoorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@DoorBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@DoorBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // vIndex: 167, symbol: ?entityInside@DoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-    virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
+    virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
     // symbol: ?canBeSilkTouched@DoorBlock@@MEBA_NXZ
     MCVAPI bool canBeSilkTouched() const;
@@ -220,7 +219,7 @@ public:
 
     // symbol:
     // ??0DoorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@W4DoorType@0@@Z
-    MCAPI DoorBlock(std::string const& nameId, int id, class Material const& material, ::DoorBlock::DoorType type);
+    MCAPI DoorBlock(std::string const& nameId, int, class Material const& material, ::DoorBlock::DoorType type);
 
     // symbol: ?getBlockedDirection@DoorBlock@@QEBA?AW4Type@Direction@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z
     MCAPI ::Direction::Type getBlockedDirection(class IConstBlockSource const& region, class BlockPos const& pos) const;
@@ -232,7 +231,8 @@ public:
     MCAPI bool isToggled(class IConstBlockSource const& region, class BlockPos const& pos) const;
 
     // symbol: ?setToggled@DoorBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@_N@Z
-    MCAPI void setToggled(class BlockSource&, class BlockPos const&, class Actor*, bool) const;
+    MCAPI void
+    setToggled(class BlockSource& region, class BlockPos const& pos, class Actor* sourceActor, bool toggled) const;
 
     // symbol: ?getDoorBlocks@DoorBlock@@SAXAEBVIConstBlockSource@@AEBVBlockLegacy@@AEBVBlockPos@@AEAPEBVBlock@@3@Z
     MCAPI static void

@@ -51,22 +51,22 @@ public:
     MCAPI ChunkRecyclerTelemetryData();
 
     // symbol: ?endLevel@ChunkRecyclerTelemetryData@@QEAAXAEAVLevel@@@Z
-    MCAPI void endLevel(class Level&);
+    MCAPI void endLevel(class Level& level);
 
     // symbol: ?recordCacheCheck@ChunkRecyclerTelemetryData@@QEAAXAEBVLevelChunk@@@Z
-    MCAPI void recordCacheCheck(class LevelChunk const&);
+    MCAPI void recordCacheCheck(class LevelChunk const& lc);
 
     // symbol: ?recordChunkDeleted@ChunkRecyclerTelemetryData@@QEAAXAEBVLevelChunk@@@Z
-    MCAPI void recordChunkDeleted(class LevelChunk const&);
+    MCAPI void recordChunkDeleted(class LevelChunk const& lc);
 
     // symbol: ?recordTaskCompleted@ChunkRecyclerTelemetryData@@QEAAXAEBVLevelChunk@@AEBVTaskInfo@1@@Z
-    MCAPI void recordTaskCompleted(class LevelChunk const&, class ChunkRecyclerTelemetryData::TaskInfo const&);
+    MCAPI void recordTaskCompleted(class LevelChunk const& lc, class ChunkRecyclerTelemetryData::TaskInfo const&);
 
     // symbol: ?startLevel@ChunkRecyclerTelemetryData@@QEAAXAEBVLevel@@@Z
-    MCAPI void startLevel(class Level const&);
+    MCAPI void startLevel(class Level const& level);
 
     // symbol: ?tickLevel@ChunkRecyclerTelemetryData@@QEAAXAEBVLevel@@@Z
-    MCAPI void tickLevel(class Level const&);
+    MCAPI void tickLevel(class Level const& level);
 
     // symbol: ?taskStarted@ChunkRecyclerTelemetryData@@SA?AVTaskInfo@1@XZ
     MCAPI static class ChunkRecyclerTelemetryData::TaskInfo taskStarted();

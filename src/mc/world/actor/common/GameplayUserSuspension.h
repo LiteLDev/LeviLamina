@@ -16,7 +16,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0GameplayUserSuspension@@QEAA@VWeakEntityRef@@W4State@0@@Z
-    MCAPI GameplayUserSuspension(class WeakEntityRef, ::GameplayUserSuspension::State);
+    MCAPI GameplayUserSuspension(class WeakEntityRef, ::GameplayUserSuspension::State suspensionState);
 
     // NOLINTEND
 };

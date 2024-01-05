@@ -18,7 +18,7 @@ public:
     virtual ~SporeBlossomBlockActor() = default;
 
     // vIndex: 7, symbol: ?tick@SporeBlossomBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void tick(class BlockSource&);
+    virtual void tick(class BlockSource& region);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
@@ -51,7 +51,7 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0SporeBlossomBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit SporeBlossomBlockActor(class BlockPos const&);
+    MCAPI explicit SporeBlossomBlockActor(class BlockPos const& pos);
 
     // NOLINTEND
 };

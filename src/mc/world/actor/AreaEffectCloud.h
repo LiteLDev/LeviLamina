@@ -90,10 +90,14 @@ public:
     virtual void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ??0AreaEffectCloud@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI AreaEffectCloud(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI AreaEffectCloud(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?addAreaEffect@AreaEffectCloud@@QEAAXVMobEffectInstance@@@Z
-    MCAPI void addAreaEffect(class MobEffectInstance);
+    MCAPI void addAreaEffect(class MobEffectInstance effect);
 
     // symbol: ?getDuration@AreaEffectCloud@@QEBAHXZ
     MCAPI int getDuration() const;
@@ -120,7 +124,7 @@ public:
     MCAPI void setParticle(::ParticleType type);
 
     // symbol: ?setParticleColor@AreaEffectCloud@@QEAAXAEAVColor@mce@@@Z
-    MCAPI void setParticleColor(class mce::Color&);
+    MCAPI void setParticleColor(class mce::Color& c);
 
     // symbol: ?setPotion@AreaEffectCloud@@QEAAXF@Z
     MCAPI void setPotion(short potionAUX);

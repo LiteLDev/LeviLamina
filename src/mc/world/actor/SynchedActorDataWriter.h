@@ -18,7 +18,7 @@ public:
     MCAPI class SynchedActorDataReader reader() const;
 
     // symbol: ?setStatusFlag@SynchedActorDataWriter@@QEAAXW4ActorFlags@@_N@Z
-    MCAPI void setStatusFlag(::ActorFlags, bool);
+    MCAPI void setStatusFlag(::ActorFlags flag, bool value);
 
     // NOLINTEND
 

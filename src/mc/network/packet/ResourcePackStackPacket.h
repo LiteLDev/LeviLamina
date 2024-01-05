@@ -39,20 +39,15 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@ResourcePackStackPacket@@MEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0ResourcePackStackPacket@@QEAA@XZ
     MCAPI ResourcePackStackPacket();
 
     // symbol:
     // ??0ResourcePackStackPacket@@QEAA@V?$vector@UPackInstanceId@@V?$allocator@UPackInstanceId@@@std@@@std@@0AEBVBaseGameVersion@@_NAEBVExperiments@@@Z
-    MCAPI ResourcePackStackPacket(
-        std::vector<struct PackInstanceId> addOnIdsAndVersions,
-        std::vector<struct PackInstanceId> texturePackIdsAndVersions,
-        class BaseGameVersion const&       baseGameVersion,
-        bool                               texturePackRequired,
-        class Experiments const&           isExperimentalGameplay
-    );
+    MCAPI
+    ResourcePackStackPacket(std::vector<struct PackInstanceId> addOnIdsAndVersions, std::vector<struct PackInstanceId> texturePackIdsAndVersions, class BaseGameVersion const& baseGameVersion, bool texturePackRequired, class Experiments const&);
 
     // NOLINTEND
 };

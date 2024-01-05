@@ -69,11 +69,11 @@ public:
 
     // symbol:
     // ?onNewIncomingConnection@NetworkSystem@@EEAA_NAEBVNetworkIdentifier@@$$QEAV?$shared_ptr@VNetworkPeer@@@std@@@Z
-    MCVAPI bool onNewIncomingConnection(class NetworkIdentifier const&, std::shared_ptr<class NetworkPeer>&&);
+    MCVAPI bool onNewIncomingConnection(class NetworkIdentifier const& id, std::shared_ptr<class NetworkPeer>&& peer);
 
     // symbol:
     // ?onNewOutgoingConnection@NetworkSystem@@EEAA_NAEBVNetworkIdentifier@@$$QEAV?$shared_ptr@VNetworkPeer@@@std@@@Z
-    MCVAPI bool onNewOutgoingConnection(class NetworkIdentifier const&, std::shared_ptr<class NetworkPeer>&&);
+    MCVAPI bool onNewOutgoingConnection(class NetworkIdentifier const& id, std::shared_ptr<class NetworkPeer>&& peer);
 
     // symbol:
     // ?onOutgoingConnectionFailed@NetworkSystem@@EEAAXW4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -81,7 +81,11 @@ public:
 
     // symbol:
     // ?onWebsocketRequest@NetworkSystem@@EEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z
-    MCVAPI void onWebsocketRequest(std::string const&, std::string const&, std::function<void(void)>);
+    MCVAPI void onWebsocketRequest(
+        std::string const&        serverAddress,
+        std::string const&        payload,
+        std::function<void(void)> errorCallback
+    );
 
     // symbol: ?useIPv4Only@NetworkSystem@@UEBA_NXZ
     MCVAPI bool useIPv4Only() const;
@@ -126,38 +130,41 @@ public:
 
     // symbol:
     // ?getResourcePackUploadManager@NetworkSystem@@QEAAAEAVResourcePackFileUploadManager@@AEAVPacketSender@@AEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class ResourcePackFileUploadManager&
-    getResourcePackUploadManager(class PacketSender&, class NetworkIdentifier const&, std::string const&);
+    MCAPI class ResourcePackFileUploadManager& getResourcePackUploadManager(
+        class PacketSender&            packetSender,
+        class NetworkIdentifier const& source,
+        std::string const&             resourceName
+    );
 
     // symbol: ?getServerLocator@NetworkSystem@@QEAAAEAVServerLocator@@XZ
     MCAPI class ServerLocator& getServerLocator();
 
     // symbol: ?isHostingPlayer@NetworkSystem@@QEBA_NAEBVNetworkIdentifier@@AEBW4SubClientId@@@Z
-    MCAPI bool isHostingPlayer(class NetworkIdentifier const&, ::SubClientId const&) const;
+    MCAPI bool isHostingPlayer(class NetworkIdentifier const& playerId, ::SubClientId const& subid) const;
 
     // symbol: ?isServer@NetworkSystem@@QEBA_NXZ
     MCAPI bool isServer() const;
 
     // symbol: ?registerServerInstance@NetworkSystem@@QEAAXAEAVNetEventCallback@@@Z
-    MCAPI void registerServerInstance(class NetEventCallback&);
+    MCAPI void registerServerInstance(class NetEventCallback& callback);
 
     // symbol: ?runEvents@NetworkSystem@@QEAAX_N@Z
-    MCAPI void runEvents(bool);
+    MCAPI void runEvents(bool networkIsCritical);
 
     // symbol: ?send@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@AEBVPacket@@W4SubClientId@@@Z
-    MCAPI void send(class NetworkIdentifier const&, class Packet const&, ::SubClientId);
+    MCAPI void send(class NetworkIdentifier const&, class Packet const& packet, ::SubClientId senderSubId);
 
     // symbol: ?setClientUpdateAndRenderThrottle@NetworkSystem@@QEAAX_NHM@Z
-    MCAPI void setClientUpdateAndRenderThrottle(bool, int, float);
+    MCAPI void setClientUpdateAndRenderThrottle(bool enabled, int threshold, float scalar);
 
     // symbol: ?setCloseConnection@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void setCloseConnection(class NetworkIdentifier const&);
 
     // symbol: ?unregisterClientOrServerInstance@NetworkSystem@@QEAAXAEBW4SubClientId@@@Z
-    MCAPI void unregisterClientOrServerInstance(::SubClientId const&);
+    MCAPI void unregisterClientOrServerInstance(::SubClientId const& subID);
 
     // symbol: ?update@NetworkSystem@@QEAAXPEBV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@@Z
-    MCAPI void update(std::vector<class WeakEntityRef> const*);
+    MCAPI void update(std::vector<class WeakEntityRef> const* userList);
 
     // NOLINTEND
 
@@ -192,11 +199,12 @@ public:
 
     // symbol:
     // ?_sendInternal@NetworkSystem@@AEAAXAEBVNetworkIdentifier@@AEBVPacket@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void _sendInternal(class NetworkIdentifier const&, class Packet const&, std::string const&);
+    MCAPI void _sendInternal(class NetworkIdentifier const&, class Packet const& packet, std::string const& data);
 
     // symbol:
     // ?_sortAndPacketizeEvents@NetworkSystem@@AEAA_NAEAVNetworkConnection@@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
-    MCAPI bool _sortAndPacketizeEvents(class NetworkConnection&, std::chrono::steady_clock::time_point);
+    MCAPI bool
+    _sortAndPacketizeEvents(class NetworkConnection& connection, std::chrono::steady_clock::time_point endTime);
 
     // NOLINTEND
 };

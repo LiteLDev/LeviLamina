@@ -19,7 +19,7 @@ public:
     virtual ~OnHitSubcomponent();
 
     // vIndex: 1, symbol: ?readfromJSON@ActorDefinitionEventSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-    virtual void readfromJSON(class Json::Value&, class SemVersion const&) = 0;
+    virtual void readfromJSON(class Json::Value& component, class SemVersion const& engineVersion) = 0;
 
     // vIndex: 2, symbol: ?writetoJSON@ActorDefinitionEventSubcomponent@@UEBAXAEAVValue@Json@@@Z
     virtual void writetoJSON(class Json::Value& component) const = 0;

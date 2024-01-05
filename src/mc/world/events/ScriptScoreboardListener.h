@@ -28,7 +28,7 @@ public:
 
     // vIndex: 2, symbol:
     // ?onObjectiveRemoved@ScriptScoreboardListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual ::EventResult onObjectiveRemoved(std::string const&);
+    virtual ::EventResult onObjectiveRemoved(std::string const& objective);
 
     // vIndex: 3, symbol:
     // ?onScoreboardIdentityRemoved@ScriptScoreboardListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScoreboardId@@@Z

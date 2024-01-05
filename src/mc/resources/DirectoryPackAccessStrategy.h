@@ -45,7 +45,7 @@ public:
     virtual bool isTrusted() const;
 
     // vIndex: 7, symbol: ?hasAsset@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@_N1@Z
-    virtual bool hasAsset(class Core::Path const&, bool, bool) const;
+    virtual bool hasAsset(class Core::Path const& packRelativePath, bool trustedContentOnly, bool) const;
 
     // vIndex: 8, symbol: ?hasFolder@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@@Z
     virtual bool hasFolder(class Core::Path const& packRelativePath) const;

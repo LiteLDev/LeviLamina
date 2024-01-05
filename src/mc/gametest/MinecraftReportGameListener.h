@@ -38,21 +38,21 @@ public:
     MCAPI std::string _generateErrorDescription(struct gametest::GameTestError const&) const;
 
     // symbol: ?_reportFailure@MinecraftReportGameListener@@AEAAXAEBUGameTestError@gametest@@AEAVBlockSource@@@Z
-    MCAPI void _reportFailure(struct gametest::GameTestError const&, class BlockSource&);
+    MCAPI void _reportFailure(struct gametest::GameTestError const& error, class BlockSource& region);
 
     // symbol:
     // ?_say@MinecraftReportGameListener@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI void _say(std::string const&, std::string const&);
+    MCAPI void _say(std::string const&, std::string const& text);
 
     // symbol: ?_spawnBeacon@MinecraftReportGameListener@@AEAAXAEBVBlock@@@Z
     MCAPI void _spawnBeacon(class Block const&);
 
     // symbol:
     // ?_spawnLectern@MinecraftReportGameListener@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void _spawnLectern(std::string const&);
+    MCAPI void _spawnLectern(std::string const& text);
 
     // symbol: ?_visualizeFailedTest@MinecraftReportGameListener@@AEAAXAEBUGameTestError@gametest@@AEAVBlockSource@@@Z
-    MCAPI void _visualizeFailedTest(struct gametest::GameTestError const&, class BlockSource&);
+    MCAPI void _visualizeFailedTest(struct gametest::GameTestError const& error, class BlockSource&);
 
     // NOLINTEND
 };

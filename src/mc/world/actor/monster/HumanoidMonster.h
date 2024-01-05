@@ -88,7 +88,7 @@ public:
     virtual int getItemUseDuration() const;
 
     // vIndex: 186, symbol: ?doHurtTarget@HumanoidMonster@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
-    virtual bool doHurtTarget(class Actor*, ::ActorDamageCause const&);
+    virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
 
     // NOLINTEND
 

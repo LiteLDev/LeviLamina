@@ -82,10 +82,10 @@ public:
     MCAPI std::unique_ptr<class CompoundTag> clone() const;
 
     // symbol: ?contains@CompoundTag@@QEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI bool contains(std::string_view) const;
+    MCAPI bool contains(std::string_view name) const;
 
     // symbol: ?contains@CompoundTag@@QEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@W4Type@Tag@@@Z
-    MCAPI bool contains(std::string_view, ::Tag::Type) const;
+    MCAPI bool contains(std::string_view name, ::Tag::Type type) const;
 
     // symbol: ?deepCopy@CompoundTag@@QEAAXAEBV1@@Z
     MCAPI void deepCopy(class CompoundTag const& other);
@@ -95,68 +95,68 @@ public:
     MCAPI TagMap::const_iterator end() const;
 
     // symbol: ?get@CompoundTag@@QEAAPEAVTag@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class Tag* get(std::string_view);
+    MCAPI class Tag* get(std::string_view name);
 
     // symbol: ?get@CompoundTag@@QEBAPEBVTag@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class Tag const* get(std::string_view) const;
+    MCAPI class Tag const* get(std::string_view name) const;
 
     // symbol: ?getBoolean@CompoundTag@@QEBA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI bool getBoolean(std::string_view) const;
+    MCAPI bool getBoolean(std::string_view string) const;
 
     // symbol: ?getByte@CompoundTag@@QEBAEV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI uchar getByte(std::string_view) const;
+    MCAPI uchar getByte(std::string_view name) const;
 
     // symbol: ?getByteArray@CompoundTag@@QEBAAEBUTagMemoryChunk@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI struct TagMemoryChunk const& getByteArray(std::string_view) const;
+    MCAPI struct TagMemoryChunk const& getByteArray(std::string_view name) const;
 
     // symbol: ?getByteTag@CompoundTag@@QEAAPEAVByteTag@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class ByteTag* getByteTag(std::string_view);
+    MCAPI class ByteTag* getByteTag(std::string_view name);
 
     // symbol: ?getCompound@CompoundTag@@QEAAPEAV1@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class CompoundTag* getCompound(std::string_view);
+    MCAPI class CompoundTag* getCompound(std::string_view name);
 
     // symbol: ?getCompound@CompoundTag@@QEBAPEBV1@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class CompoundTag const* getCompound(std::string_view) const;
+    MCAPI class CompoundTag const* getCompound(std::string_view name) const;
 
     // symbol: ?getFloat@CompoundTag@@QEBAMV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI float getFloat(std::string_view) const;
+    MCAPI float getFloat(std::string_view name) const;
 
     // symbol: ?getInt@CompoundTag@@QEBAHV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI int getInt(std::string_view) const;
+    MCAPI int getInt(std::string_view name) const;
 
     // symbol: ?getInt64@CompoundTag@@QEBA_JV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI int64 getInt64(std::string_view) const;
+    MCAPI int64 getInt64(std::string_view name) const;
 
     // symbol: ?getInt64Tag@CompoundTag@@QEAAPEAVInt64Tag@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class Int64Tag* getInt64Tag(std::string_view);
+    MCAPI class Int64Tag* getInt64Tag(std::string_view name);
 
     // symbol: ?getInt64Tag@CompoundTag@@QEBAPEBVInt64Tag@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class Int64Tag const* getInt64Tag(std::string_view) const;
+    MCAPI class Int64Tag const* getInt64Tag(std::string_view name) const;
 
     // symbol: ?getIntTag@CompoundTag@@QEAAPEAVIntTag@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class IntTag* getIntTag(std::string_view);
+    MCAPI class IntTag* getIntTag(std::string_view name);
 
     // symbol: ?getIntTag@CompoundTag@@QEBAPEBVIntTag@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class IntTag const* getIntTag(std::string_view) const;
+    MCAPI class IntTag const* getIntTag(std::string_view name) const;
 
     // symbol: ?getList@CompoundTag@@QEAAPEAVListTag@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class ListTag* getList(std::string_view);
+    MCAPI class ListTag* getList(std::string_view name);
 
     // symbol: ?getList@CompoundTag@@QEBAPEBVListTag@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class ListTag const* getList(std::string_view) const;
+    MCAPI class ListTag const* getList(std::string_view name) const;
 
     // symbol: ?getShort@CompoundTag@@QEBAFV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI short getShort(std::string_view) const;
+    MCAPI short getShort(std::string_view name) const;
 
     // symbol: ?getShortTag@CompoundTag@@QEBAPEBVShortTag@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class ShortTag const* getShortTag(std::string_view) const;
+    MCAPI class ShortTag const* getShortTag(std::string_view name) const;
 
     // symbol:
     // ?getString@CompoundTag@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_view@DU?$char_traits@D@std@@@3@@Z
     MCAPI std::string const& getString(std::string_view) const;
 
     // symbol: ?getStringTag@CompoundTag@@QEBAPEBVStringTag@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI class StringTag const* getStringTag(std::string_view) const;
+    MCAPI class StringTag const* getStringTag(std::string_view name) const;
 
     // symbol: ?isEmpty@CompoundTag@@QEBA_NXZ
     MCAPI bool isEmpty() const;
@@ -205,7 +205,7 @@ public:
     MCAPI TagMap const& rawView() const;
 
     // symbol: ?remove@CompoundTag@@QEAA_NV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI bool remove(std::string_view);
+    MCAPI bool remove(std::string_view name);
 
     // symbol:
     // ?rename@CompoundTag@@QEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z

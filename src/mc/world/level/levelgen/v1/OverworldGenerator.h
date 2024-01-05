@@ -30,16 +30,20 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?createNoiseCache@OverworldGenerator@@MEBA?AVChunkLocalNoiseCache@@VChunkPos@@@Z
-    MCVAPI class ChunkLocalNoiseCache createNoiseCache(class ChunkPos) const;
+    MCVAPI class ChunkLocalNoiseCache createNoiseCache(class ChunkPos chunkPos) const;
 
     // symbol: ?createWorldGenCache@OverworldGenerator@@MEBA?AVWorldGenCache@@VChunkPos@@@Z
-    MCVAPI class WorldGenCache createWorldGenCache(class ChunkPos) const;
+    MCVAPI class WorldGenCache createWorldGenCache(class ChunkPos chunkPos) const;
 
     // symbol:
     // ?decorateWorldGenLoadChunk@OverworldGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
-    MCVAPI void
-    decorateWorldGenLoadChunk(class Biome&, class LevelChunk&, class BlockVolumeTarget&, class Random&, class ChunkPos const&)
-        const;
+    MCVAPI void decorateWorldGenLoadChunk(
+        class Biome&             biome,
+        class LevelChunk&        lc,
+        class BlockVolumeTarget& target,
+        class Random&            random,
+        class ChunkPos const&    pos
+    ) const;
 
     // symbol: ?getBiomeArea@OverworldGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
     MCVAPI class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
@@ -51,31 +55,42 @@ public:
     MCVAPI void loadChunk(class LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
     // symbol: ?postProcess@OverworldGenerator@@UEAA_NAEAVChunkViewSource@@@Z
-    MCVAPI bool postProcess(class ChunkViewSource& neighborhood);
+    MCVAPI bool postProcess(class ChunkViewSource& neighborhoodIn);
 
     // symbol:
     // ?prepareAndComputeHeights@OverworldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
-    MCVAPI void prepareAndComputeHeights(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int);
+    MCVAPI void prepareAndComputeHeights(
+        class BlockVolume&    box,
+        class ChunkPos const& chunkPos,
+        std::vector<short>&   ZXheights,
+        bool                  factorInBeardsAndShavers,
+        int                   skipTopN
+    );
 
     // symbol: ?prepareHeights@OverworldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
     MCVAPI void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
     // symbol:
     // ?tryMakeAquifer@OverworldGenerator@@MEBA?AV?$unique_ptr@VAquifer@@U?$default_delete@VAquifer@@@std@@@std@@AEBVChunkPos@@AEBVSurfaceLevelCache@@FFF@Z
-    MCVAPI std::unique_ptr<class Aquifer>
-           tryMakeAquifer(class ChunkPos const&, class SurfaceLevelCache const&, short, short, short) const;
+    MCVAPI std::unique_ptr<class Aquifer> tryMakeAquifer(
+        class ChunkPos const&          chunkPos,
+        class SurfaceLevelCache const& surfaceLevelCache,
+        short                          minHeight,
+        short                          levelGenHeight,
+        short                          seaLevel
+    ) const;
 
     // symbol: ??1OverworldGenerator@@UEAA@XZ
     MCVAPI ~OverworldGenerator();
 
     // symbol:
     // ??0OverworldGenerator@@QEAA@AEAVDimension@@_NV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
-    MCAPI OverworldGenerator(class Dimension&, bool, std::unique_ptr<class StructureFeatureRegistry>);
+    MCAPI OverworldGenerator(class Dimension& dimension, bool, std::unique_ptr<class StructureFeatureRegistry>);
 
     // symbol:
     // ?buildSurfaces@OverworldGenerator@@QEAAXAEAUThreadData@1@AEAVBlockVolume@@AEAVLevelChunk@@AEBVChunkPos@@AEBVSurfaceLevelCache@@@Z
     MCAPI void
-    buildSurfaces(struct OverworldGenerator::ThreadData&, class BlockVolume&, class LevelChunk&, class ChunkPos const&, class SurfaceLevelCache const&);
+    buildSurfaces(struct OverworldGenerator::ThreadData& thread, class BlockVolume& blocks, class LevelChunk& levelChunk, class ChunkPos const& chunkPos, class SurfaceLevelCache const&);
 
     // NOLINTEND
 };

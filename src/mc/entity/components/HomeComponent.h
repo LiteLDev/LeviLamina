@@ -35,7 +35,7 @@ public:
     MCAPI bool hasValidHomePos() const;
 
     // symbol: ?isWithinRestriction@HomeComponent@@QEBA_NAEBVBlockPos@@@Z
-    MCAPI bool isWithinRestriction(class BlockPos const&) const;
+    MCAPI bool isWithinRestriction(class BlockPos const& pos) const;
 
     // symbol: ??4HomeComponent@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class HomeComponent& operator=(class HomeComponent&&);
@@ -45,10 +45,10 @@ public:
     readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?setHome@HomeComponent@@QEAAXAEBVBlockPos@@AEBV?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void setHome(class BlockPos const& pos, DimensionType const& id);
+    MCAPI void setHome(class BlockPos const& pos, DimensionType const&);
 
     // symbol: ?tick@HomeComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void tick(class Actor&);
+    MCAPI void tick(class Actor& owner);
 
     // NOLINTEND
 };

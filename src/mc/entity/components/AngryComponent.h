@@ -20,10 +20,11 @@ public:
     MCAPI AngryComponent(class AngryComponent&&);
 
     // symbol: ?canGetAngry@AngryComponent@@QEBA_NAEAVMob@@PEAV2@PEAVActor@@_N3@Z
-    MCAPI bool canGetAngry(class Mob&, class Mob*, class Actor*, bool, bool) const;
+    MCAPI bool
+    canGetAngry(class Mob& owner, class Mob* testMob, class Actor* target, bool allowInvulnerable, bool mustSee) const;
 
     // symbol: ?getAngrySound@AngryComponent@@QEBA?BW4LevelSoundEvent@Legacy@Puv@@AEBVMob@@@Z
-    MCAPI ::Puv::Legacy::LevelSoundEvent const getAngrySound(class Mob const&) const;
+    MCAPI ::Puv::Legacy::LevelSoundEvent const getAngrySound(class Mob const& mob) const;
 
     // symbol: ?getBroadcastAnger@AngryComponent@@QEBA_NXZ
     MCAPI bool getBroadcastAnger() const;
@@ -59,7 +60,7 @@ public:
     MCAPI void setHasTicked(bool hasTicked);
 
     // symbol: ?setNextSoundEventTick@AngryComponent@@QEAAXAEBVMob@@@Z
-    MCAPI void setNextSoundEventTick(class Mob const&);
+    MCAPI void setNextSoundEventTick(class Mob const& mob);
 
     // symbol: ??1AngryComponent@@QEAA@XZ
     MCAPI ~AngryComponent();

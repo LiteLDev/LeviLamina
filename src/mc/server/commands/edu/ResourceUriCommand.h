@@ -18,23 +18,23 @@ public:
     virtual ~ResourceUriCommand() = default;
 
     // vIndex: 2, symbol: ?execute@ResourceUriCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?setup@ResourceUriCommand@@SAXAEAVCommandRegistry@@@Z
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry& registry);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_executeClear@ResourceUriCommand@@AEBAXAEAVLevel@@PEAVPlayer@@AEAVCommandOutput@@@Z
-    MCAPI void _executeClear(class Level&, class Player*, class CommandOutput&) const;
+    MCAPI void _executeClear(class Level& level, class Player* originPlayer, class CommandOutput& output) const;
 
     // symbol: ?_executeNamed@ResourceUriCommand@@AEBAXAEAVLevel@@PEAVPlayer@@AEAVCommandOutput@@@Z
-    MCAPI void _executeNamed(class Level&, class Player*, class CommandOutput&) const;
+    MCAPI void _executeNamed(class Level& level, class Player* originPlayer, class CommandOutput& output) const;
 
     // symbol: ?_executeUriOnly@ResourceUriCommand@@AEBAXAEAVLevel@@PEAVPlayer@@AEAVCommandOutput@@@Z
-    MCAPI void _executeUriOnly(class Level&, class Player*, class CommandOutput&) const;
+    MCAPI void _executeUriOnly(class Level& level, class Player* originPlayer, class CommandOutput& output) const;
 
     // NOLINTEND
 };

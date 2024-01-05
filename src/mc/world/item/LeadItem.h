@@ -77,13 +77,14 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@LeadItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol: ??0LeadItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LeadItem(std::string const& name, int id);
+    MCAPI LeadItem(std::string const& name, int);
 
     // symbol: ?bindPlayerMobs@LeadItem@@SA_NAEAVActor@@HHHPEAVItemInstance@@@Z
-    MCAPI static bool bindPlayerMobs(class Actor& entity, int x, int y, int z, class ItemInstance* itemUsed);
+    MCAPI static bool bindPlayerMobs(class Actor&, int x, int y, int z, class ItemInstance* itemUsed);
 
     // symbol: ?canBindPlayerMobs@LeadItem@@SA_NAEBVActor@@AEBVBlockPos@@@Z
     MCAPI static bool canBindPlayerMobs(class Actor const& entity, class BlockPos const& blockPos);

@@ -104,7 +104,11 @@ public:
     virtual void newServerAiStep();
 
     // symbol: ??0EnderMan@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI EnderMan(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI EnderMan(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getCarryingBlock@EnderMan@@QEBAAEBVBlock@@XZ
     MCAPI class Block const& getCarryingBlock() const;

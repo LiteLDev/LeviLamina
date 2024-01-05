@@ -41,7 +41,7 @@ public:
 
     // vIndex: 14, symbol:
     // ?_getItemContext@ScriptBlockInventoryComponentContainer@ScriptModuleMinecraft@@MEBA?AVItemContext@@H@Z
-    virtual class ItemContext _getItemContext(int) const;
+    virtual class ItemContext _getItemContext(int slot) const;
 
     // NOLINTEND
 };

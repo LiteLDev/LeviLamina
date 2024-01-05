@@ -14,7 +14,7 @@ namespace BlendingDataFactoryUtil { struct BorderCellEntry; }
 namespace BlendingDataFactoryUtil {
 // NOLINTBEGIN
 // symbol: ?_deduceBlockTypeFromBlock@BlendingDataFactoryUtil@@YA?AW4BlendingBlockType@@AEBVBlock@@0@Z
-MCAPI ::BlendingBlockType _deduceBlockTypeFromBlock(class Block const&, class Block const&);
+MCAPI ::BlendingBlockType _deduceBlockTypeFromBlock(class Block const& block, class Block const& extraBlock);
 
 // symbol:
 // ?_processBlockTypeFromCellEntry@BlendingDataFactoryUtil@@YA?AW4BlendingBlockType@@AEAV?$vector@W4BlendingBlockType@@V?$allocator@W4BlendingBlockType@@@std@@@std@@@Z
@@ -30,17 +30,28 @@ MCAPI void calculateSurfaceDensity(class BlendingData&, uint64);
 
 // symbol:
 // ?iterateDownCellColumnUntil@BlendingDataFactoryUtil@@YAXVChunkLocalHeight@@AEAV?$vector@UBorderCellEntry@BlendingDataFactoryUtil@@V?$allocator@UBorderCellEntry@BlendingDataFactoryUtil@@@std@@@std@@HV?$function@$$A6AAEAUSubChunk@@H@Z@4@V?$function@$$A6A_NAEBUSubChunk@@AEAUBorderCellEntry@BlendingDataFactoryUtil@@VChunkLocalHeight@@GH@Z@4@@Z
-MCAPI void
-iterateDownCellColumnUntil(class ChunkLocalHeight, std::vector<struct BlendingDataFactoryUtil::BorderCellEntry>&, int, std::function<struct SubChunk&(int)>, std::function<bool(struct SubChunk const&, struct BlendingDataFactoryUtil::BorderCellEntry&, class ChunkLocalHeight, ushort, int)>);
+MCAPI void iterateDownCellColumnUntil(
+    class ChunkLocalHeight,
+    std::vector<struct BlendingDataFactoryUtil::BorderCellEntry>& entries,
+    int                                                           minHeight,
+    std::function<struct SubChunk&(int)>,
+    std::function<bool(
+        struct SubChunk const&,
+        struct BlendingDataFactoryUtil::BorderCellEntry&,
+        class ChunkLocalHeight,
+        ushort,
+        int
+    )> callback
+);
 
 // symbol: ?processBorderCells@BlendingDataFactoryUtil@@YAXVNeighbors@LevelChunk@@V?$function@$$A6AX_KHH0@Z@std@@@Z
 MCAPI void processBorderCells(class LevelChunk::Neighbors, std::function<void(uint64, int, int, uint64)>);
 
 // symbol: ?setBiome@BlendingDataFactoryUtil@@YAXAEAVBlendingData@@_KHE@Z
-MCAPI void setBiome(class BlendingData&, uint64, int, uchar);
+MCAPI void setBiome(class BlendingData&, uint64 index, int, uchar biomeId);
 
 // symbol: ?setDensity@BlendingDataFactoryUtil@@YAXAEAVBlendingData@@_KHM@Z
-MCAPI void setDensity(class BlendingData&, uint64, int, float);
+MCAPI void setDensity(class BlendingData&, uint64 index, int, float);
 // NOLINTEND
 
 }; // namespace BlendingDataFactoryUtil

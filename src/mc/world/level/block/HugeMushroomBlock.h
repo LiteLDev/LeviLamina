@@ -105,7 +105,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 96, symbol: ?asItemInstance@HugeMushroomBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -143,33 +143,29 @@ public:
 
     // vIndex: 162, symbol:
     // ?getMapColor@HugeMushroomBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color
+    getMapColor(class BlockSource& source, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 164, symbol: ?getResourceItem@HugeMushroomBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@HugeMushroomBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const&, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@HugeMushroomBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol:
     // ??0HugeMushroomBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@W4Type@0@@Z
-    MCAPI HugeMushroomBlock(
-        std::string const&        nameId,
-        int                       id,
-        class Material const&     material,
-        ::HugeMushroomBlock::Type type
-    );
+    MCAPI
+    HugeMushroomBlock(std::string const& nameId, int, class Material const& material, ::HugeMushroomBlock::Type type);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_getBlockItemWithState@HugeMushroomBlock@@AEBA?AVItemInstance@@AEBVBlock@@W4MushroomOuterType@@@Z
-    MCAPI class ItemInstance _getBlockItemWithState(class Block const&, ::MushroomOuterType) const;
+    MCAPI class ItemInstance _getBlockItemWithState(class Block const& block, ::MushroomOuterType state) const;
 
     // NOLINTEND
 };

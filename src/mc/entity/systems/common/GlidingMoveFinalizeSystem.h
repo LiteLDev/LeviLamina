@@ -16,8 +16,13 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_tickCollisionDamageCalculate@GlidingMoveFinalizeSystem@@SAXAEBVStrictEntityContext@@AEBUMobTravelComponent@@AEBUStateVectorComponent@@AEAV?$EntityModifier@UGlidingCollisionDamageComponent@@@@AEBVIConstBlockSource@@@Z
-    MCAPI static void
-    _tickCollisionDamageCalculate(class StrictEntityContext const&, struct MobTravelComponent const&, struct StateVectorComponent const&, class EntityModifier<struct GlidingCollisionDamageComponent>&, class IConstBlockSource const&);
+    MCAPI static void _tickCollisionDamageCalculate(
+        class StrictEntityContext const& entity,
+        struct MobTravelComponent const&,
+        struct StateVectorComponent const&,
+        class EntityModifier<struct GlidingCollisionDamageComponent>& modifier,
+        class IConstBlockSource const&                                region
+    );
 
     // symbol:
     // ?_tickCollisionDamageHurt@GlidingMoveFinalizeSystem@@SAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@AEBUGlidingCollisionDamageComponent@@@Z

@@ -104,7 +104,7 @@ public:
     neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
 
     // vIndex: 96, symbol: ?asItemInstance@ConcretePowderBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 108, symbol: ?shouldStopFalling@ConcretePowderBlock@@UEBA_NAEAVActor@@@Z
     virtual bool shouldStopFalling(class Actor& entity) const;
@@ -150,7 +150,7 @@ public:
     virtual void __unk_vfn_170();
 
     // symbol: ??0ConcretePowderBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ConcretePowderBlock(std::string const& nameId, int id);
+    MCAPI ConcretePowderBlock(std::string const& nameId, int);
 
     // NOLINTEND
 

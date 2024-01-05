@@ -35,7 +35,7 @@ public:
 
     // symbol: ?_tryEquipitem@InteractComponent@@CAXAEAVActor@@AEAVPlayer@@AEAVItemStack@@AEBV4@HAEA_N4@Z
     MCAPI static void
-    _tryEquipitem(class Actor&, class Player&, class ItemStack&, class ItemStack const&, int, bool&, bool&);
+    _tryEquipitem(class Actor& owner, class Player& player, class ItemStack&, class ItemStack const&, int slot, bool&, bool&);
 
     // NOLINTEND
 };

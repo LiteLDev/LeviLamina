@@ -30,7 +30,7 @@ public:
                                                           class Optional<struct MovementInterpolatorComponent>,
                                                           struct PlayerPositionModeComponent const,
                                                           struct FallDistanceComponent,
-                                                          struct StateVectorComponent>);
+                                                          struct StateVectorComponent> view);
 
     // NOLINTEND
 };

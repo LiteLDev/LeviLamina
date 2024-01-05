@@ -27,15 +27,15 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?tick@AgentDetectCommandSystem@@UEAAXAEAVEntityRegistry@@@Z
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry& registry);
 
     // symbol:
     // ?initializeObstacle@AgentDetectCommandSystem@@SAXAEAVEntityContext@@AEAVDetectObstacle@AgentComponents@@@Z
-    MCAPI static void initializeObstacle(class EntityContext&, class AgentComponents::DetectObstacle&);
+    MCAPI static void initializeObstacle(class EntityContext& entity, class AgentComponents::DetectObstacle&);
 
     // symbol:
     // ?initializeRedstone@AgentDetectCommandSystem@@SAXAEAVEntityContext@@AEAVDetectRedstone@AgentComponents@@@Z
-    MCAPI static void initializeRedstone(class EntityContext&, class AgentComponents::DetectRedstone&);
+    MCAPI static void initializeRedstone(class EntityContext& entity, class AgentComponents::DetectRedstone&);
 
     // NOLINTEND
 };

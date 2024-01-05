@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0ExploreOutskirtsGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit ExploreOutskirtsGoal(class Mob&);
+    MCAPI explicit ExploreOutskirtsGoal(class Mob& mob);
 
     // NOLINTEND
 };

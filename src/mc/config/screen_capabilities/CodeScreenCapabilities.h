@@ -19,7 +19,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?isOfType@?$TypedScreenCapabilities@UCodeScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@Bedrock@@@Z
-    virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities>) const;
+    virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities> type) const;
 
     // NOLINTEND
 };

@@ -137,7 +137,7 @@ public:
     MCAPI void setStructureBlockType(::StructureBlockType structureBlockType);
 
     // symbol: ?setStructureName@StructureEditorData@@QEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    MCAPI void setStructureName(std::string_view);
+    MCAPI void setStructureName(std::string_view name);
 
     // symbol: ?setStructureOffset@StructureEditorData@@QEAAXAEBVBlockPos@@@Z
     MCAPI void setStructureOffset(class BlockPos const& offset);

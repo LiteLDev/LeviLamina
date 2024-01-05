@@ -19,19 +19,19 @@ public:
     virtual ~SculkSensorBlockActor();
 
     // vIndex: 1, symbol: ?load@SculkSensorBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // vIndex: 2, symbol: ?save@SculkSensorBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag& tag) const;
 
     // vIndex: 7, symbol: ?tick@SculkSensorBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void tick(class BlockSource&);
+    virtual void tick(class BlockSource& region);
 
     // vIndex: 12, symbol: __unk_vfn_12
     virtual void __unk_vfn_12();
 
     // vIndex: 13, symbol: ?onRemoved@SculkSensorBlockActor@@UEAAXAEAVBlockSource@@@Z
-    virtual void onRemoved(class BlockSource&);
+    virtual void onRemoved(class BlockSource& region);
 
     // vIndex: 18, symbol: __unk_vfn_18
     virtual void __unk_vfn_18();
@@ -61,12 +61,12 @@ public:
     virtual void __unk_vfn_39();
 
     // symbol: ??0SculkSensorBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit SculkSensorBlockActor(class BlockPos const&);
+    MCAPI explicit SculkSensorBlockActor(class BlockPos const& pos);
 
     // symbol:
     // ??0SculkSensorBlockActor@@QEAA@W4BlockActorType@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I$$QEAV?$unique_ptr@VSculkSensorVibrationConfig@@U?$default_delete@VSculkSensorVibrationConfig@@@std@@@4@@Z
     MCAPI
-    SculkSensorBlockActor(::BlockActorType, class BlockPos const&, std::string const&, uint, std::unique_ptr<class SculkSensorVibrationConfig>&&);
+    SculkSensorBlockActor(::BlockActorType type, class BlockPos const& pos, std::string const&, uint, std::unique_ptr<class SculkSensorVibrationConfig>&&);
 
     // symbol: ?getLatestReceivedVibrationFrequency@SculkSensorBlockActor@@QEBAHXZ
     MCAPI int getLatestReceivedVibrationFrequency() const;

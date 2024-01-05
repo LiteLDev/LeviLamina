@@ -94,7 +94,7 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 60, symbol: ?canBeUsedInCommands@CameraBlock@@UEBA_NAEBVBaseGameVersion@@@Z
-    virtual bool canBeUsedInCommands(class BaseGameVersion const&) const;
+    virtual bool canBeUsedInCommands(class BaseGameVersion const& requiredBaseGameVersion) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -130,7 +130,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0CameraBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CameraBlock(std::string const& nameId, int id);
+    MCAPI CameraBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

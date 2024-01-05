@@ -37,7 +37,7 @@ public:
 
     // vIndex: 2, symbol:
     // ?setFillLevel@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@UEAA?AV?$Result@X$$V@Scripting@@H@Z
-    virtual class Scripting::Result<void> setFillLevel(int);
+    virtual class Scripting::Result<void> setFillLevel(int level);
 
     // symbol:
     // ??0BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@QEAA@AEAVBlockSource@@VBlockPos@@AEBVWeakLifetimeScope@Scripting@@W4CauldronLiquidType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ScriptFluidType@1@@Z
@@ -86,7 +86,7 @@ public:
     // symbol:
     // ?_getActualCauldronLiquidType@BaseScriptBlockLiquidContainerComponent@ScriptModuleMinecraft@@KA?AW4ScriptFluidType@2@AEAVBlockSource@@VBlockPos@@@Z
     MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
-    _getActualCauldronLiquidType(class BlockSource&, class BlockPos);
+    _getActualCauldronLiquidType(class BlockSource& region, class BlockPos position);
 
     // NOLINTEND
 };

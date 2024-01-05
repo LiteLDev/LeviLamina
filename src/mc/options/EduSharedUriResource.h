@@ -17,7 +17,7 @@ public:
     MCAPI EduSharedUriResource();
 
     // symbol: ??0EduSharedUriResource@@QEAA@AEBVCompoundTag@@@Z
-    MCAPI explicit EduSharedUriResource(class CompoundTag const&);
+    MCAPI explicit EduSharedUriResource(class CompoundTag const& tag);
 
     // symbol: ??0EduSharedUriResource@@QEAA@$$QEAU0@@Z
     MCAPI EduSharedUriResource(struct EduSharedUriResource&&);
@@ -26,11 +26,11 @@ public:
     MCAPI ~EduSharedUriResource();
 
     // symbol: ?fromTag@EduSharedUriResource@@SA?AU1@AEBVCompoundTag@@@Z
-    MCAPI static struct EduSharedUriResource fromTag(class CompoundTag const&);
+    MCAPI static struct EduSharedUriResource fromTag(class CompoundTag const& tag);
 
     // symbol:
     // ?toTag@EduSharedUriResource@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBU1@@Z
-    MCAPI static std::unique_ptr<class CompoundTag> toTag(struct EduSharedUriResource const&);
+    MCAPI static std::unique_ptr<class CompoundTag> toTag(struct EduSharedUriResource const& resource);
 
     // NOLINTEND
 };

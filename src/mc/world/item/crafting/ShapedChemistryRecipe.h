@@ -26,7 +26,7 @@ public:
     virtual void __unk_vfn_5();
 
     // vIndex: 6, symbol: ?matches@ShapedChemistryRecipe@@UEBA_NAEBVCraftingContainer@@AEBVCraftingContext@@@Z
-    virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const;
+    virtual bool matches(class CraftingContainer const& craftSlots, class CraftingContext const&) const;
 
     // vIndex: 8, symbol: ?getId@ShapedChemistryRecipe@@UEBAAEBVUUID@mce@@XZ
     virtual class mce::UUID const& getId() const;

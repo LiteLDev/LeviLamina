@@ -15,7 +15,7 @@ public:
     MCAPI static struct TickingSystemWithInfo createOnGroundPostTickSystem();
 
     // symbol: ?createTickSystem@MovementInterpolatorSystem@@SA?AUTickingSystemWithInfo@@_N@Z
-    MCAPI static struct TickingSystemWithInfo createTickSystem(bool);
+    MCAPI static struct TickingSystemWithInfo createTickSystem(bool isClientSide);
 
     // NOLINTEND
 };

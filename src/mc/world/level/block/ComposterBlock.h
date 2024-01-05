@@ -39,9 +39,14 @@ public:
 
     // vIndex: 7, symbol:
     // ?addCollisionShapes@ComposterBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-    virtual bool
-    addCollisionShapes(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>) // NOLINT
-        const;
+    virtual bool addCollisionShapes(
+        class Block const&                                         block,
+        class BlockSource const&                                   region,
+        class BlockPos const&                                      pos,
+        class AABB const*                                          intersectTestBox,
+        std::vector<class AABB>&                                   inoutBoxes,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
 
     // vIndex: 8, symbol:
     // ?addAABBs@ComposterBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
@@ -132,7 +137,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@ComposterBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -176,7 +181,7 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@ComposterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -185,7 +190,7 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 
     // symbol: ??0ComposterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ComposterBlock(std::string const& nameId, int id);
+    MCAPI ComposterBlock(std::string const& nameId, int);
 
     // symbol: ?addItem@ComposterBlock@@SA_NAEAVContainer@@HAEAVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
     MCAPI static bool addItem(
@@ -199,12 +204,24 @@ public:
 
     // symbol:
     // ?addItems@ComposterBlock@@SA_NAEAVContainer@@HAEAVItemStack@@HAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-    MCAPI static bool
-    addItems(class Container&, int, class ItemStack&, int, class BlockSource&, class Block const&, class BlockPos const&);
+    MCAPI static bool addItems(
+        class Container&      fromContainer,
+        int                   slot,
+        class ItemStack&      item,
+        int                   amount,
+        class BlockSource&    region,
+        class Block const&    block,
+        class BlockPos const& pos
+    );
 
     // symbol: ?addItems@ComposterBlock@@SAHAEBVItemStack@@HAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
-    MCAPI static int
-    addItems(class ItemStack const&, int, class BlockSource&, class Block const&, class BlockPos const&);
+    MCAPI static int addItems(
+        class ItemStack const& item,
+        int                    amount,
+        class BlockSource&     region,
+        class Block const&     block,
+        class BlockPos const&  pos
+    );
 
     // symbol: ?empty@ComposterBlock@@SAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
     MCAPI static void empty(class BlockSource& region, class Block const& composter, class BlockPos const& pos);
@@ -221,7 +238,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_emitBoneMeal@ComposterBlock@@AEBAXAEAVLevel@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void _emitBoneMeal(class Level& level, class BlockSource& region, class BlockPos const& pos) const;
+    MCAPI void _emitBoneMeal(class Level&, class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol:
     // ?_notifyClientComposterUsed@ComposterBlock@@AEBAXAEBVPlayer@@FW4POIBlockInteractionType@MinecraftEventing@@@Z

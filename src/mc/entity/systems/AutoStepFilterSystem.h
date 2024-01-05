@@ -22,8 +22,15 @@ public:
 
     // symbol:
     // ?tickAutoStepFilterSystem@AutoStepFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@$$CBUMoveRequestComponent@@$$CBUMaxAutoStepComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$Optional@$$CBUAbilitiesComponent@@@@@@V?$EntityModifier@V?$FlagComponent@UAutoStepRequestFlag@@@@@@@Z
-    MCAPI static void
-        tickAutoStepFilterSystem(class ViewT<class StrictEntityContext, struct MoveRequestComponent const, struct MaxAutoStepComponent const, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct AbilitiesComponent const>>, class EntityModifier<class FlagComponent<struct AutoStepRequestFlag>>);
+    MCAPI static void tickAutoStepFilterSystem(
+        class ViewT<
+            class StrictEntityContext,
+            struct MoveRequestComponent const,
+            struct MaxAutoStepComponent const,
+            class Optional<class FlagComponent<struct OnGroundFlag> const>,
+            class Optional<struct AbilitiesComponent const>>                  view,
+        class EntityModifier<class FlagComponent<struct AutoStepRequestFlag>> mod
+    );
 
     // NOLINTEND
 };

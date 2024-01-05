@@ -25,109 +25,239 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAVItemDescriptor@@@Z
-    MCAPI static bool parse(class Json::Value const&, class SemVersion const&, class ItemDescriptor&);
+    MCAPI static bool
+    parse(class Json::Value const& val, class SemVersion const& engineVersion, class ItemDescriptor& itemDescriptor);
 
     // symbol:
     // ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAV?$vector@VActorDefinitionTrigger@@V?$allocator@VActorDefinitionTrigger@@@std@@@std@@@Z
-    MCAPI static bool
-    parse(class Json::Value const&, class SemVersion const&, std::vector<class ActorDefinitionTrigger>&);
+    MCAPI static bool parse(
+        class Json::Value const&                   val,
+        class SemVersion const&                    engineVersion,
+        std::vector<class ActorDefinitionTrigger>& triggers
+    );
 
     // symbol:
     // ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@@Z
-    MCAPI static bool parse(class Json::Value const&, class SemVersion const&, std::vector<class ItemDescriptor>&);
+    MCAPI static bool parse(
+        class Json::Value const&           val,
+        class SemVersion const&            engineVersion,
+        std::vector<class ItemDescriptor>& itemDescriptors
+    );
 
     // symbol: ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAVActorDefinitionTrigger@@_N@Z
-    MCAPI static bool parse(class Json::Value const&, class SemVersion const&, class ActorDefinitionTrigger&, bool);
+    MCAPI static bool parse(
+        class Json::Value const&      val,
+        class SemVersion const&       engineVersion,
+        class ActorDefinitionTrigger& definitionTrigger,
+        bool
+    );
 
     // symbol: ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAVActorDefinitionTrigger@@PEBD@Z
-    MCAPI static bool
-    parse(class Json::Value const&, class SemVersion const&, class ActorDefinitionTrigger&, char const*);
+    MCAPI static bool parse(
+        class Json::Value const&      val,
+        class SemVersion const&       engineVersion,
+        class ActorDefinitionTrigger& trigger,
+        char const*                   jsonName
+    );
 
     // symbol: ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAVDefinitionTrigger@@_N@Z
-    MCAPI static bool parse(class Json::Value const&, class SemVersion const&, class DefinitionTrigger&, bool);
+    MCAPI static bool parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        class DefinitionTrigger& definitionTrigger,
+        bool
+    );
 
     // symbol: ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAW4FilterSubject@Legacy@Puv@@PEBD3@Z
-    MCAPI static bool
-    parse(class Json::Value const&, class SemVersion const&, ::Puv::Legacy::FilterSubject&, char const*, char const*);
+    MCAPI static bool parse(
+        class Json::Value const&      val,
+        class SemVersion const&       engineVersion,
+        ::Puv::Legacy::FilterSubject& target,
+        char const*                   jsonName,
+        char const*                   defaultValue
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAVBlockDescriptor@@@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, class BlockDescriptor&);
+    MCAPI static void
+    parse(class Json::Value const& val, class SemVersion const& engineVersion, class BlockDescriptor&);
 
     // symbol:
     // ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, std::vector<class BlockDescriptor>&);
+    MCAPI static void
+    parse(class Json::Value const& val, class SemVersion const& engineVersion, std::vector<class BlockDescriptor>&);
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAV23@PEBD@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, class Json::Value&, char const*);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        class Json::Value&       variable,
+        char const*              jsonName
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAVMobEffectInstance@@PEBD@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, class MobEffectInstance&, char const*);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        class MobEffectInstance& variable,
+        char const*              jsonName
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAV?$WeightedChoices@VActorDefinitionTrigger@@@@PEBD@Z
-    MCAPI static void
-    parse(class Json::Value const&, class SemVersion const&, class WeightedChoices<class ActorDefinitionTrigger>&, char const*);
+    MCAPI static void parse(
+        class Json::Value const&                             val,
+        class SemVersion const&                              engineVersion,
+        class WeightedChoices<class ActorDefinitionTrigger>& variable,
+        char const*                                          jsonName
+    );
 
     // symbol:
     // ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@PEBD@Z
-    MCAPI static void
-    parse(class Json::Value const&, class SemVersion const&, std::vector<class BlockDescriptor>&, char const*);
+    MCAPI static void parse(
+        class Json::Value const&            val,
+        class SemVersion const&             engineVersion,
+        std::vector<class BlockDescriptor>& variable,
+        char const*                         jsonName
+    );
 
     // symbol:
     // ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@PEBD@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, std::vector<std::string>&, char const*);
+    MCAPI static void parse(
+        class Json::Value const&  val,
+        class SemVersion const&   engineVersion,
+        std::vector<std::string>& variable,
+        char const*               jsonName
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAUFloatRange@@PEBD@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, struct FloatRange&, char const*);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        struct FloatRange&       variable,
+        char const*              jsonName
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAEE@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, uchar&, uchar);
+    MCAPI static void
+    parse(class Json::Value const& val, class SemVersion const& engineVersion, uchar& face, uchar defaultValue);
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEA_NPEBD_N@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, bool&, char const*, bool);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        bool&                    variable,
+        char const*              jsonName,
+        bool                     defaultValue
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAVFilterGroup@@PEBD3@Z
-    MCAPI static void
-    parse(class Json::Value const&, class SemVersion const&, class FilterGroup&, char const*, char const*);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        class FilterGroup&       variable,
+        char const*              jsonName,
+        char const*              defaultValue
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAVHashedString@@PEBD3@Z
-    MCAPI static void
-    parse(class Json::Value const&, class SemVersion const&, class HashedString&, char const*, char const*);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        class HashedString&      variable,
+        char const*              jsonName,
+        char const*              defaultValue
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAVVec3@@PEBDAEBV5@@Z
-    MCAPI static void
-    parse(class Json::Value const&, class SemVersion const&, class Vec3&, char const*, class Vec3 const&);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        class Vec3&              variable,
+        char const*              jsonName,
+        class Vec3 const&        defaultValue
+    );
 
     // symbol:
     // ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD3@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, std::string&, char const*, char const*);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        std::string&             variable,
+        char const*              jsonName,
+        char const*              defaultValue
+    );
 
     // symbol:
     // ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAV?$vector@W4LevelSoundEvent@Legacy@Puv@@V?$allocator@W4LevelSoundEvent@Legacy@Puv@@@std@@@std@@PEBD3@Z
-    MCAPI static void
-    parse(class Json::Value const&, class SemVersion const&, std::vector<::Puv::Legacy::LevelSoundEvent>&, char const*, char const*);
+    MCAPI static void parse(
+        class Json::Value const&                     val,
+        class SemVersion const&                      engineVersion,
+        std::vector<::Puv::Legacy::LevelSoundEvent>& variable,
+        char const*                                  jsonName,
+        char const*                                  defaultValue
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAW4ActorType@@PEBD3@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, ::ActorType&, char const*, char const*);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        ::ActorType&             variable,
+        char const*              jsonName,
+        char const*              defaultValue
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAW4Difficulty@@PEBD3@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, ::Difficulty&, char const*, char const*);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        ::Difficulty&            variable,
+        char const*              jsonName,
+        char const*              defaultValue
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAW4ParticleType@@PEBD3@Z
-    MCAPI static void
-    parse(class Json::Value const&, class SemVersion const&, ::ParticleType&, char const*, char const*);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        ::ParticleType&          variable,
+        char const*              jsonName,
+        char const*              defaultValue
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAMPEBDM@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, float&, char const*, float);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        float&                   variable,
+        char const*              jsonName,
+        float                    defaultValue
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAHPEBDH@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, int&, char const*, int);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        int&                     variable,
+        char const*              jsonName,
+        int                      defaultValue
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAUActorDefinitionIdentifier@@PEBD3@Z
-    MCAPI static void
-    parse(class Json::Value const&, class SemVersion const&, struct ActorDefinitionIdentifier&, char const*, char const*);
+    MCAPI static void parse(
+        class Json::Value const&          val,
+        class SemVersion const&           engineVersion,
+        struct ActorDefinitionIdentifier& variable,
+        char const*                       jsonName,
+        char const*                       defaultValue
+    );
 
     // symbol: ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAIPEBDI@Z
-    MCAPI static void parse(class Json::Value const&, class SemVersion const&, uint&, char const*, uint);
+    MCAPI static void parse(
+        class Json::Value const& val,
+        class SemVersion const&  engineVersion,
+        uint&                    variable,
+        char const*              jsonName,
+        uint                     defaultValue
+    );
 
     // symbol: ?serialize@Parser@@SAXAEBVActorDefinitionTrigger@@AEAVValue@Json@@PEBD@Z
     MCAPI static void
@@ -150,7 +280,8 @@ public:
     MCAPI static void serialize(::ParticleType const& variable, class Json::Value& val, char const* jsonName);
 
     // symbol: ?serialize@Parser@@SAXAEBW4FilterSubject@Legacy@Puv@@AEAVValue@Json@@PEBD@Z
-    MCAPI static void serialize(::Puv::Legacy::FilterSubject const&, class Json::Value&, char const*);
+    MCAPI static void
+    serialize(::Puv::Legacy::FilterSubject const& variable, class Json::Value& val, char const* jsonName);
 
     // symbol: ?serialize@Parser@@SAXAEBUActorDefinitionIdentifier@@AEAVValue@Json@@PEBD@Z
     MCAPI static void

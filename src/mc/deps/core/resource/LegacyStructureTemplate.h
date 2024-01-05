@@ -21,8 +21,12 @@ public:
 
     // vIndex: 1, symbol:
     // ?placeInWorld@LegacyStructureTemplate@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVLegacyStructureSettings@@AEAVRandom@@@Z
-    virtual void
-    placeInWorld(class BlockSource&, class BlockPos const&, class LegacyStructureSettings&, class Random&) const;
+    virtual void placeInWorld(
+        class BlockSource&             region,
+        class BlockPos const&          pos,
+        class LegacyStructureSettings& settings,
+        class Random&                  random
+    ) const;
 
     // vIndex: 2, symbol: __gen_??1LegacyStructureTemplate@@UEAA@XZ
     virtual ~LegacyStructureTemplate() = default;
@@ -42,7 +46,8 @@ public:
     // symbol:
     // ?finalizeBlockRules@LegacyStructureTemplate@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVLegacyStructureSettings@@AEAVRandom@@@Z
     MCAPI void
-    finalizeBlockRules(class BlockSource&, class BlockPos const&, class LegacyStructureSettings&, class Random&) const;
+    finalizeBlockRules(class BlockSource& region, class BlockPos const& position, class LegacyStructureSettings& settings, class Random&)
+        const;
 
     // symbol:
     // ?getJigsawMarkers@LegacyStructureTemplate@@QEBA?AV?$vector@VJigsawStructureBlockInfo@@V?$allocator@VJigsawStructureBlockInfo@@@std@@@std@@XZ
@@ -56,8 +61,12 @@ public:
 
     // symbol:
     // ?placeInWorldChunk@LegacyStructureTemplate@@QEAAXAEAVBlockSource@@AEBVBlockPos@@AEAVLegacyStructureSettings@@AEAVRandom@@@Z
-    MCAPI void
-    placeInWorldChunk(class BlockSource&, class BlockPos const&, class LegacyStructureSettings&, class Random&);
+    MCAPI void placeInWorldChunk(
+        class BlockSource&             region,
+        class BlockPos const&          position,
+        class LegacyStructureSettings& settings,
+        class Random&                  random
+    );
 
     // symbol:
     // ?_mapPropertyToExtraBlock@LegacyStructureTemplate@@SAPEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
@@ -144,15 +153,20 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_mapPropertiesToTags@LegacyStructureTemplate@@CAXAEAVCompoundTag@@AEBV2@@Z
-    MCAPI static void _mapPropertiesToTags(class CompoundTag&, class CompoundTag const&);
+    MCAPI static void _mapPropertiesToTags(class CompoundTag& originalTag, class CompoundTag const&);
 
     // symbol:
     // ?_mapPropertyToTag@LegacyStructureTemplate@@CAXAEAVCompoundTag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-    MCAPI static void _mapPropertyToTag(class CompoundTag&, std::string const&, std::string const&);
+    MCAPI static void _mapPropertyToTag(
+        class CompoundTag& originalTag,
+        std::string const& propertyString,
+        std::string const& valueString
+    );
 
     // symbol:
     // ?_mapTag@LegacyStructureTemplate@@CA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@V23@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCAPI static std::unique_ptr<class CompoundTag> _mapTag(std::unique_ptr<class CompoundTag>, std::string const&);
+    MCAPI static std::unique_ptr<class CompoundTag>
+    _mapTag(std::unique_ptr<class CompoundTag> originalTag, std::string const& javaBlockName);
 
     // NOLINTEND
 };

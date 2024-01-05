@@ -115,12 +115,12 @@ public:
     // vIndex: 95, symbol:
     // ?spawnResources@LeavesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
     virtual void
-    spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, struct ResourceDropsContext const&)
+    spawnResources(class BlockSource& region, class BlockPos const& pos, class Block const& block, class Randomize& randomize, struct ResourceDropsContext const&)
         const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@LeavesBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
     virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int itemValue) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -138,25 +138,25 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 122, symbol: ?getColor@LeavesBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 125, symbol: ?isSeasonTinted@LeavesBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool isSeasonTinted(class Block const&, class BlockSource&, class BlockPos const&) const;
+    virtual bool isSeasonTinted(class Block const& block, class BlockSource& region, class BlockPos const& p) const;
 
     // vIndex: 126, symbol: ?onGraphicsModeChanged@LeavesBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const&);
+    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
 
     // vIndex: 144, symbol: ?onRemove@LeavesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onRemove(class BlockSource&, class BlockPos const&) const;
+    virtual void onRemove(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 151, symbol: ?randomTick@LeavesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -166,26 +166,29 @@ public:
 
     // vIndex: 158, symbol:
     // ?getRenderLayer@LeavesBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual ::BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
+    virtual ::BlockRenderLayer
+    getRenderLayer(class Block const&, class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 162, symbol: ?getMapColor@LeavesBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual class mce::Color
+    getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 165, symbol: ?getResourceCount@LeavesBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const&, int) const;
 
     // vIndex: 168, symbol: ?getExtraResourceItem@LeavesBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getExtraResourceItem(class Block const&) const;
 
     // symbol:
     // ??0LeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI LeavesBlock(std::string const&, int, class WeakPtr<class BlockLegacy>);
+    MCAPI LeavesBlock(std::string const& nameId, int, class WeakPtr<class BlockLegacy> sapling);
 
     // symbol: ?getSeasonsColor@LeavesBlock@@QEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@HH@Z
-    MCAPI class mce::Color getSeasonsColor(class BlockSource&, class BlockPos const&, int, int) const;
+    MCAPI class mce::Color
+    getSeasonsColor(class BlockSource& region, class BlockPos const& pos, int startColumn, int endColumn) const;
 
     // symbol: ?runDecay@LeavesBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI static void runDecay(class BlockSource&, class BlockPos const&, int);
+    MCAPI static void runDecay(class BlockSource& region, class BlockPos const& pos, int range);
 
     // NOLINTEND
 
@@ -195,7 +198,7 @@ public:
     MCAPI class Block const& _getSapling() const;
 
     // symbol: ?_isTransparent@LeavesBlock@@KA_NAEBVBlock@@AEBW4BlockProperty@@@Z
-    MCAPI static bool _isTransparent(class Block const&, ::BlockProperty const&);
+    MCAPI static bool _isTransparent(class Block const& block, ::BlockProperty const&);
 
     // NOLINTEND
 };

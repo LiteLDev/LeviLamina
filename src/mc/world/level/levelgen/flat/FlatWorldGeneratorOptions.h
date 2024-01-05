@@ -20,7 +20,7 @@ public:
     MCAPI ~FlatWorldGeneratorOptions();
 
     // symbol: ?getLayers@FlatWorldGeneratorOptions@@SA?AVValue@Json@@AEBVLevelData@@@Z
-    MCAPI static class Json::Value getLayers(class LevelData const&);
+    MCAPI static class Json::Value getLayers(class LevelData const& levelData);
 
     // NOLINTEND
 

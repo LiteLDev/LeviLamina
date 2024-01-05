@@ -96,7 +96,7 @@ public:
     MCAPI void erase(uint64);
 
     // symbol: ?forEachCompoundTag@ListTag@@QEBAXV?$function@$$A6AXAEBVCompoundTag@@@Z@std@@@Z
-    MCAPI void forEachCompoundTag(std::function<void(class CompoundTag const&)>) const;
+    MCAPI void forEachCompoundTag(std::function<void(class CompoundTag const&)> func) const;
 
     // symbol: ?get@ListTag@@QEBAPEAVTag@@H@Z
     MCAPI class Tag* get(int index) const;

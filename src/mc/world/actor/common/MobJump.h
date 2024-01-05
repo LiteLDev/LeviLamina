@@ -17,7 +17,7 @@ MCAPI bool isJumping(class EntityContext const&);
 MCAPI void setJumpPendingScale(class EntityContext&, float);
 
 // symbol: ?setJumpStartPosition@MobJump@@YAXAEAVEntityContext@@AEBVVec3@@@Z
-MCAPI void setJumpStartPosition(class EntityContext&, class Vec3 const&);
+MCAPI void setJumpStartPosition(class EntityContext&, class Vec3 const& position);
 
 // symbol: ?setJumpVelRedux@MobJump@@YAXAEAVEntityContext@@_N@Z
 MCAPI void setJumpVelRedux(class EntityContext&, bool);

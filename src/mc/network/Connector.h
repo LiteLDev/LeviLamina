@@ -111,7 +111,7 @@ public:
     MCVAPI void startNatPunchingClient(std::string const&, ushort);
 
     // symbol: ??0Connector@@QEAA@AEAUConnectionCallbacks@0@@Z
-    MCAPI explicit Connector(struct Connector::ConnectionCallbacks&);
+    MCAPI explicit Connector(struct Connector::ConnectionCallbacks& callbacks);
 
     // NOLINTEND
 };

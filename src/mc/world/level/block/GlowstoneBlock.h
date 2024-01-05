@@ -94,7 +94,8 @@ public:
     virtual void __unk_vfn_55();
 
     // vIndex: 63, symbol: ?dispense@GlowstoneBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-    virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, uchar) const;
+    virtual bool
+    dispense(class BlockSource& region, class Container& container, int slot, class Vec3 const& pos, uchar face) const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -133,11 +134,11 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@GlowstoneBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize&, class Block const&, int) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const&, int bonusLootLevel) const;
 
     // symbol:
     // ??0GlowstoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI GlowstoneBlock(std::string const&, int, class Material const&);
+    MCAPI GlowstoneBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

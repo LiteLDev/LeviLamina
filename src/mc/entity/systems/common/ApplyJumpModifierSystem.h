@@ -19,19 +19,19 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_tickApplyJumpModifierSystem@ApplyJumpModifierSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UOnGroundFlag@@@@V?$FlagComponent@UPowerJump@@@@@@U?$Exclude@V?$FlagComponent@UMobIsJumpingFlag@@@@@@$$CBUTriggerJumpRequestComponent@@$$CBUActorRotationComponent@@$$CBUAttributesComponent@@$$CBUMobEffectsComponent@@$$CBUMobTravelComponent@@UJumpPendingScaleComponent@@UStateVectorComponent@@@@@Z
-    MCAPI static void _tickApplyJumpModifierSystem(class ViewT<
-                                                   class StrictEntityContext,
-                                                   struct Include<
-                                                       class FlagComponent<struct OnGroundFlag>,
-                                                       class FlagComponent<struct PowerJump>>,
-                                                   struct Exclude<class FlagComponent<struct MobIsJumpingFlag>>,
-                                                   struct TriggerJumpRequestComponent const,
-                                                   struct ActorRotationComponent const,
-                                                   struct AttributesComponent const,
-                                                   struct MobEffectsComponent const,
-                                                   struct MobTravelComponent const,
-                                                   struct JumpPendingScaleComponent,
-                                                   struct StateVectorComponent>);
+    MCAPI static void _tickApplyJumpModifierSystem(
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<class FlagComponent<struct OnGroundFlag>, class FlagComponent<struct PowerJump>>,
+            struct Exclude<class FlagComponent<struct MobIsJumpingFlag>>,
+            struct TriggerJumpRequestComponent const,
+            struct ActorRotationComponent const,
+            struct AttributesComponent const,
+            struct MobEffectsComponent const,
+            struct MobTravelComponent const,
+            struct JumpPendingScaleComponent,
+            struct StateVectorComponent> view
+    );
 
     // symbol: ?createApplyJumpModifierSystem@ApplyJumpModifierSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createApplyJumpModifierSystem();

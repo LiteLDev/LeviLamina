@@ -28,13 +28,13 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ?initialize@DryingOutTimerDefinition@DryingOutTimerComponent@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext&, class DryingOutTimerComponent&) const;
+        MCAPI void initialize(class EntityContext& entity, class DryingOutTimerComponent&) const;
 
         // symbol:
         // ?buildSchema@DryingOutTimerDefinition@DryingOutTimerComponent@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDryingOutTimerDefinition@DryingOutTimerComponent@@@JsonUtil@@@std@@@Z
         MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                           class JsonUtil::EmptyClass,
-                                          class DryingOutTimerComponent::DryingOutTimerDefinition>>&);
+                                          class DryingOutTimerComponent::DryingOutTimerDefinition>>& root);
 
         // NOLINTEND
     };
@@ -51,7 +51,7 @@ public:
     MCAPI DryingOutTimerComponent(class DryingOutTimerComponent&&);
 
     // symbol: ?addAdditionalSaveData@DryingOutTimerComponent@@QEBAXAEAVCompoundTag@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?canBeAffectedByWaterBottle@DryingOutTimerComponent@@QEBA_NXZ
     MCAPI bool canBeAffectedByWaterBottle() const;
@@ -60,7 +60,7 @@ public:
     MCAPI class DryingOutTimerComponent& operator=(class DryingOutTimerComponent&&);
 
     // symbol: ?readAdditionalSaveData@DryingOutTimerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const& tag, class DataLoadHelper&);
 
     // symbol: ?refillTimeWithWaterBottle@DryingOutTimerComponent@@QEAAXXZ
     MCAPI void refillTimeWithWaterBottle();

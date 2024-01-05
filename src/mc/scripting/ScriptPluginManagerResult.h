@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?getOrCreatePluginResults@ScriptPluginManagerResult@@QEAAAEAVScriptPluginResult@@AEBUModuleDescriptor@Scripting@@@Z
-    MCAPI class ScriptPluginResult& getOrCreatePluginResults(struct Scripting::ModuleDescriptor const&);
+    MCAPI class ScriptPluginResult& getOrCreatePluginResults(struct Scripting::ModuleDescriptor const& descriptor);
 
     // symbol: ?writeToContentLog@ScriptPluginManagerResult@@QEBAXXZ
     MCAPI void writeToContentLog() const;

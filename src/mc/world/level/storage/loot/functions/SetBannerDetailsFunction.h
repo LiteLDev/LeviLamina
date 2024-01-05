@@ -39,11 +39,11 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_apply@SetBannerDetailsFunction@@AEBAXAEAVItemStackBase@@AEAVRandom@@AEAVLootTableContext@@@Z
-    MCAPI void _apply(class ItemStackBase&, class Random&, class LootTableContext&) const;
+    MCAPI void _apply(class ItemStackBase& item, class Random& random, class LootTableContext& context) const;
 
     // symbol:
     // ?_parseBannerPattern@SetBannerDetailsFunction@@CAXAEAV?$vector@U?$pair@EW4ItemColor@@@std@@V?$allocator@U?$pair@EW4ItemColor@@@std@@@2@@std@@AEBVValue@Json@@@Z
-    MCAPI static void _parseBannerPattern(std::vector<std::pair<uchar, ::ItemColor>>&, class Json::Value const&);
+    MCAPI static void _parseBannerPattern(std::vector<std::pair<uchar, ::ItemColor>>&, class Json::Value const& object);
 
     // NOLINTEND
 };

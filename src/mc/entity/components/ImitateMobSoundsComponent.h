@@ -16,10 +16,10 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?getRandomImitatedSound@ImitateMobSoundsComponent@@SA?AW4LevelSoundEvent@Legacy@Puv@@AEBVRandomize@@@Z
-    MCAPI static ::Puv::Legacy::LevelSoundEvent getRandomImitatedSound(class Randomize const&);
+    MCAPI static ::Puv::Legacy::LevelSoundEvent getRandomImitatedSound(class Randomize const& randomize);
 
     // symbol: ?imitateNearbyMobs@ImitateMobSoundsComponent@@SA_NAEAVActor@@AEBVRandomize@@@Z
-    MCAPI static bool imitateNearbyMobs(class Actor&, class Randomize const&);
+    MCAPI static bool imitateNearbyMobs(class Actor& actor, class Randomize const& randomize);
 
     // NOLINTEND
 

@@ -18,7 +18,7 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?execute@StopCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const& origin, class CommandOutput& output) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
     // symbol: ?setup@StopCommand@@SAXAEAVCommandRegistry@@AEAVDedicatedServer@@@Z
     MCAPI static void setup(class CommandRegistry& registry, class DedicatedServer& server);

@@ -12,14 +12,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ReplayStateComponent@@QEAA@$$QEAV0@@Z
-    MCAPI ReplayStateComponent(class ReplayStateComponent&&);
+    MCAPI ReplayStateComponent(class ReplayStateComponent&& rhs);
 
     // symbol:
     // ??0ReplayStateComponent@@QEAA@V?$unique_ptr@VActorHistory@@U?$default_delete@VActorHistory@@@std@@@std@@V?$unique_ptr@UIReplayStatePolicy@@U?$default_delete@UIReplayStatePolicy@@@std@@@2@@Z
-    MCAPI ReplayStateComponent(std::unique_ptr<class ActorHistory>, std::unique_ptr<struct IReplayStatePolicy>);
+    MCAPI ReplayStateComponent(std::unique_ptr<class ActorHistory>, std::unique_ptr<struct IReplayStatePolicy> policy);
 
     // symbol: ?addInputToCurrentFrame@ReplayStateComponent@@QEBAXV?$shared_ptr@UIReplayableActorInput@@@std@@@Z
-    MCAPI void addInputToCurrentFrame(std::shared_ptr<struct IReplayableActorInput>) const;
+    MCAPI void addInputToCurrentFrame(std::shared_ptr<struct IReplayableActorInput> input) const;
 
     // symbol: ?addInputToFrontOfCurrentFrame@ReplayStateComponent@@QEBAXV?$shared_ptr@UIReplayableActorInput@@@std@@@Z
     MCAPI void addInputToFrontOfCurrentFrame(std::shared_ptr<struct IReplayableActorInput>) const;

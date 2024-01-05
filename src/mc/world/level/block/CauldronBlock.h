@@ -42,9 +42,14 @@ public:
 
     // vIndex: 7, symbol:
     // ?addCollisionShapes@CauldronBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-    virtual bool
-    addCollisionShapes(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
-        const;
+    virtual bool addCollisionShapes(
+        class Block const&                                         block,
+        class BlockSource const&                                   region,
+        class BlockPos const&                                      pos,
+        class AABB const*                                          intersectTestBox,
+        std::vector<class AABB>&                                   inoutBoxes,
+        class optional_ref<class GetCollisionShapeInterface const> entity
+    ) const;
 
     // vIndex: 8, symbol:
     // ?addAABBs@CauldronBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
@@ -126,7 +131,9 @@ public:
     virtual bool canContainLiquid() const;
 
     // vIndex: 59, symbol: ?handlePrecipitation@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@MM@Z
-    virtual void handlePrecipitation(class BlockSource&, class BlockPos const&, float, float) const;
+    virtual void
+    handlePrecipitation(class BlockSource& region, class BlockPos const& pos, float downfallAmount, float temperature)
+        const;
 
     // vIndex: 67, symbol: __unk_vfn_67
     virtual void __unk_vfn_67();
@@ -135,7 +142,7 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@CauldronBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // vIndex: 92, symbol: ?neighborChanged@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
     virtual void
@@ -168,7 +175,7 @@ public:
     virtual void animateTickBedrockLegacy(class BlockSource&, class BlockPos const&, class Random&) const;
 
     // vIndex: 137, symbol: ?getLightEmission@CauldronBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
-    virtual struct Brightness getLightEmission(class Block const&) const;
+    virtual struct Brightness getLightEmission(class Block const& block) const;
 
     // vIndex: 138, symbol: __unk_vfn_138
     virtual void __unk_vfn_138();
@@ -180,13 +187,13 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@CauldronBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@CauldronBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -195,11 +202,10 @@ public:
     virtual int getExtraRenderLayers() const;
 
     // vIndex: 160, symbol: ?getLight@CauldronBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
-    virtual struct Brightness getLight(class Block const&) const;
+    virtual struct Brightness getLight(class Block const& block) const;
 
     // vIndex: 164, symbol: ?getResourceItem@CauldronBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 166, symbol: ?getSilkTouchItemInstance@CauldronBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
     virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
@@ -211,15 +217,14 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0CauldronBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CauldronBlock(std::string const& nameId, int id);
+    MCAPI CauldronBlock(std::string const& nameId, int);
 
     // symbol: ?setLiquidLevel@CauldronBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@HW4CauldronLiquidType@@@Z
     MCAPI void
-    setLiquidLevel(class BlockSource& region, class BlockPos const& pos, int waterLevel, ::CauldronLiquidType type)
-        const;
+    setLiquidLevel(class BlockSource& region, class BlockPos const& pos, int, ::CauldronLiquidType type) const;
 
     // symbol: ?canReceiveStalactiteDrip@CauldronBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@W4MaterialType@@@Z
-    MCAPI static bool canReceiveStalactiteDrip(class BlockSource&, class BlockPos const&, ::MaterialType);
+    MCAPI static bool canReceiveStalactiteDrip(class BlockSource& region, class BlockPos const& pos, ::MaterialType);
 
     // symbol: ?clampLiquidLevel@CauldronBlock@@SAHH@Z
     MCAPI static int clampLiquidLevel(int);
@@ -236,13 +241,13 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_checkForStalactiteDrip@CauldronBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void _checkForStalactiteDrip(class BlockSource&, class BlockPos const&) const;
+    MCAPI void _checkForStalactiteDrip(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?_explodeCauldronContents@CauldronBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@G@Z
     MCAPI void _explodeCauldronContents(class BlockSource& region, class BlockPos const& pos, ushort data) const;
 
     // symbol: ?_mayUpdateLiquidLevel@CauldronBlock@@AEBA?B_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool const _mayUpdateLiquidLevel(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool const _mayUpdateLiquidLevel(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol:
     // ?_sendCauldronUsedEventToClient@CauldronBlock@@AEBAXAEBVPlayer@@FW4POIBlockInteractionType@MinecraftEventing@@@Z
@@ -258,14 +263,14 @@ public:
     // symbol:
     // ?_useDyeableComponent@CauldronBlock@@AEBA_NAEAVItemStack@@AEAVPlayer@@AEBVBlockPos@@AEAVCauldronBlockActor@@AEAVBlockSource@@H_N55@Z
     MCAPI bool _useDyeableComponent(
-        class ItemStack&,
-        class Player&,
-        class BlockPos const&,
-        class CauldronBlockActor&,
-        class BlockSource&,
-        int,
+        class ItemStack&          itemInstance,
+        class Player&             player,
+        class BlockPos const&     pos,
+        class CauldronBlockActor& blockEntity,
+        class BlockSource&        region,
+        int                       fillLevel,
         bool,
-        bool,
+        bool isWater,
         bool
     ) const;
 

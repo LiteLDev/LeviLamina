@@ -21,7 +21,7 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?tick@LevelChunkTickingSystem@@UEAAXAEAVEntityRegistry@@@Z
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry& registry);
 
     // NOLINTEND
 
@@ -29,12 +29,19 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_determineLevelChunksToTick@LevelChunkTickingSystem@@CAXAEBVActor@@AEAVBlockSource@@AEAVLoadedChunksComponent@@AEAV?$vector@V?$shared_ptr@VLevelChunk@@@std@@V?$allocator@V?$shared_ptr@VLevelChunk@@@std@@@2@@std@@3AEBUTick@@@Z
-    MCAPI static void
-    _determineLevelChunksToTick(class Actor const&, class BlockSource&, class LoadedChunksComponent&, std::vector<std::shared_ptr<class LevelChunk>>&, std::vector<std::shared_ptr<class LevelChunk>>&, struct Tick const&);
+    MCAPI static void _determineLevelChunksToTick(
+        class Actor const& actor,
+        class BlockSource& region,
+        class LoadedChunksComponent&,
+        std::vector<std::shared_ptr<class LevelChunk>>&,
+        std::vector<std::shared_ptr<class LevelChunk>>&,
+        struct Tick const& currentTick
+    );
 
     // symbol:
     // ?_tickLevelChunksAroundActor@LevelChunkTickingSystem@@CAXAEAVActor@@AEAVBlockSource@@AEAVLoadedChunksComponent@@@Z
-    MCAPI static void _tickLevelChunksAroundActor(class Actor&, class BlockSource&, class LoadedChunksComponent&);
+    MCAPI static void
+    _tickLevelChunksAroundActor(class Actor& actor, class BlockSource& region, class LoadedChunksComponent&);
 
     // symbol:
     // ?_tickLevelChunksAroundActorView@LevelChunkTickingSystem@@CAXAEAVActorOwnerComponent@@AEAVLoadedChunksComponent@@@Z

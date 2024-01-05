@@ -18,10 +18,10 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?execute@AllowListCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput& output) const;
 
     // symbol: ?setup@AllowListCommand@@SAXAEAVCommandRegistry@@AEAVAllowListFile@@@Z
-    MCAPI static void setup(class CommandRegistry&, class AllowListFile&);
+    MCAPI static void setup(class CommandRegistry& registry, class AllowListFile&);
 
     // NOLINTEND
 

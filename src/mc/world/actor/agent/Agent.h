@@ -49,7 +49,7 @@ public:
     virtual void __unk_vfn_23();
 
     // vIndex: 26, symbol: ?teleportTo@Agent@@UEAAXAEBVVec3@@_NHH1@Z
-    virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
+    virtual void teleportTo(class Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool);
 
     // vIndex: 29, symbol: ?normalTick@Agent@@UEAAXXZ
     virtual void normalTick();
@@ -88,7 +88,7 @@ public:
     virtual void setOwner(struct ActorUniqueID);
 
     // vIndex: 83, symbol: ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent, int data);
 
     // vIndex: 92, symbol: ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
     virtual void setCarriedItem(class ItemStack const& item);
@@ -149,16 +149,20 @@ public:
     MCVAPI bool isTargetable() const;
 
     // symbol: ??0Agent@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Agent(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Agent(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?checkTravelType@Agent@@QEAA?AW4AgentTravelType@@XZ
     MCAPI ::AgentTravelType checkTravelType();
 
     // symbol: ?doClientTravel@Agent@@QEAAXAEBVAABB@@@Z
-    MCAPI void doClientTravel(class AABB const&);
+    MCAPI void doClientTravel(class AABB const& aabb);
 
     // symbol: ?doServerTravel@Agent@@QEAA?AVVec3@@AEBVAABB@@W4AgentTravelType@@@Z
-    MCAPI class Vec3 doServerTravel(class AABB const&, ::AgentTravelType);
+    MCAPI class Vec3 doServerTravel(class AABB const& aabb, ::AgentTravelType travelType);
 
     // symbol: ?getMoveSpeedScalar@Agent@@QEBAMXZ
     MCAPI float getMoveSpeedScalar() const;
@@ -179,13 +183,13 @@ public:
     MCAPI bool isValidSlotNum(int slotNum);
 
     // symbol: ?setGameType@Agent@@QEAAXW4GameType@@@Z
-    MCAPI void setGameType(::GameType);
+    MCAPI void setGameType(::GameType gameType);
 
     // symbol: ?setMoveTarget@Agent@@QEAAXVVec2@@@Z
-    MCAPI void setMoveTarget(class Vec2);
+    MCAPI void setMoveTarget(class Vec2 target);
 
     // symbol: ?setMoveTarget@Agent@@QEAAXM@Z
-    MCAPI void setMoveTarget(float);
+    MCAPI void setMoveTarget(float target);
 
     // symbol: ?setNameTagFromOwner@Agent@@QEAAXAEBVPlayer@@@Z
     MCAPI void setNameTagFromOwner(class Player const& player);
@@ -209,14 +213,14 @@ public:
     MCAPI static class Vec3 roundTeleportPos(class Vec3 const& pos);
 
     // symbol: ?tryGetFromEntity@Agent@@SAPEAV1@AEAVEntityContext@@_N@Z
-    MCAPI static class Agent* tryGetFromEntity(class EntityContext&, bool);
+    MCAPI static class Agent* tryGetFromEntity(class EntityContext& entity, bool);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_isOnGround@Agent@@AEAA_NAEBVAABB@@@Z
-    MCAPI bool _isOnGround(class AABB const&);
+    MCAPI bool _isOnGround(class AABB const& aabb);
 
     // NOLINTEND
 };

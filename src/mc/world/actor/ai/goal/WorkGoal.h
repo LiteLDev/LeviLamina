@@ -42,7 +42,7 @@ public:
     virtual void useWorkstation();
 
     // symbol: ??0WorkGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit WorkGoal(class Mob&);
+    MCAPI explicit WorkGoal(class Mob& mob);
 
     // symbol: ?playPOISoundEvent@WorkGoal@@QEBAXXZ
     MCAPI void playPOISoundEvent() const;

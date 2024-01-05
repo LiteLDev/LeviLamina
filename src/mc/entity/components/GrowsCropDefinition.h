@@ -22,7 +22,7 @@ public:
     MCAPI GrowsCropDefinition();
 
     // symbol: ?initialize@GrowsCropDefinition@@QEBAXAEAVEntityContext@@AEAVGrowsCropComponent@@@Z
-    MCAPI void initialize(class EntityContext& entity, class GrowsCropComponent& component) const;
+    MCAPI void initialize(class EntityContext&, class GrowsCropComponent& component) const;
 
     // symbol:
     // ?buildSchema@GrowsCropDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGrowsCropDefinition@@@JsonUtil@@@std@@@Z

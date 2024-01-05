@@ -134,13 +134,13 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@PitcherPlantBlock@@MEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@PitcherPlantBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
     virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol: ??0PitcherPlantBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PitcherPlantBlock(std::string const&, int);
+    MCAPI PitcherPlantBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

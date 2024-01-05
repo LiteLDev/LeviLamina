@@ -30,7 +30,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?onLand@SystemTickDelegate@FallingBlockSystemOnLand@@UEAAXAEBVFallingBlock@@AEAVIBlockSource@@AEBVBlockPos@@@Z
-    virtual void onLand(class FallingBlock const&, class IBlockSource&, class BlockPos const&);
+    virtual void onLand(class FallingBlock const& block, class IBlockSource& region, class BlockPos const& pos);
 
     // vIndex: 2, symbol: ?breakBlock@SystemTickDelegate@FallingBlockSystemOnLand@@UEAAXAEAVFallingBlockActor@@@Z
     virtual void breakBlock(class FallingBlockActor&);

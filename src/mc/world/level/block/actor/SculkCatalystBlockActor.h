@@ -30,22 +30,26 @@ public:
     MCVAPI uint getRange() const;
 
     // symbol: ?handleGameEvent@SculkCatalystBlockActor@@UEAAXAEBVGameEvent@@AEBUGameEventContext@@AEAVBlockSource@@@Z
-    MCVAPI void handleGameEvent(class GameEvent const&, struct GameEventContext const&, class BlockSource&);
+    MCVAPI void handleGameEvent(
+        class GameEvent const&         gameEvent,
+        struct GameEventContext const& gameEventContext,
+        class BlockSource&             region
+    );
 
     // symbol: ?load@SculkCatalystBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCVAPI void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    MCVAPI void load(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?onRemoved@SculkCatalystBlockActor@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void onRemoved(class BlockSource&);
+    MCVAPI void onRemoved(class BlockSource& region);
 
     // symbol: ?save@SculkCatalystBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-    MCVAPI bool save(class CompoundTag&) const;
+    MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?tick@SculkCatalystBlockActor@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void tick(class BlockSource&);
+    MCVAPI void tick(class BlockSource& region);
 
     // symbol: ??0SculkCatalystBlockActor@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit SculkCatalystBlockActor(class BlockPos const&);
+    MCAPI explicit SculkCatalystBlockActor(class BlockPos const& pos);
 
     // symbol: ?getSculkSpreader@SculkCatalystBlockActor@@QEAAAEAVSculkSpreader@@XZ
     MCAPI class SculkSpreader& getSculkSpreader();
@@ -61,7 +65,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_tryConsumeOnDeathExperience@SculkCatalystBlockActor@@AEAAXAEAVLevel@@AEAVActor@@@Z
-    MCAPI void _tryConsumeOnDeathExperience(class Level&, class Actor&);
+    MCAPI void _tryConsumeOnDeathExperience(class Level& level, class Actor& actor);
 
     // NOLINTEND
 };

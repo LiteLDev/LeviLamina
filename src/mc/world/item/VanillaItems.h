@@ -15,13 +15,17 @@ public:
     MCAPI static void registerHardCodedItemTags(class ItemRegistryRef);
 
     // symbol: ?registerItems@VanillaItems@@SAXVItemRegistryRef@@AEBVBaseGameVersion@@AEBVExperiments@@_N@Z
-    MCAPI static void
-    registerItems(class ItemRegistryRef, class BaseGameVersion const&, class Experiments const&, bool);
+    MCAPI static void registerItems(
+        class ItemRegistryRef,
+        class BaseGameVersion const& baseGameVersion,
+        class Experiments const&,
+        bool enableExperimentalGameplay
+    );
 
     // symbol:
     // ?serverInitCreativeItemsCallback@VanillaItems@@SAXVItemRegistryRef@@PEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@PEAVCreativeItemRegistry@@_NAEBVBaseGameVersion@@AEBVExperiments@@@Z
     MCAPI static void
-    serverInitCreativeItemsCallback(class ItemRegistryRef, class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&);
+    serverInitCreativeItemsCallback(class ItemRegistryRef, class ActorInfoRegistry*, class BlockDefinitionGroup* blockDefinitionGroup, class CreativeItemRegistry*, bool isClient, class BaseGameVersion const&, class Experiments const&);
 
     // NOLINTEND
 

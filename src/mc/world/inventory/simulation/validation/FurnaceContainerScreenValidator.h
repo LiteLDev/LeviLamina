@@ -20,7 +20,7 @@ public:
     // vIndex: 1, symbol:
     // ?postCommitItemRemoved@FurnaceContainerScreenValidator@@UEAA?AV?$shared_ptr@VContainerValidationCommitObject@@@std@@W4ContainerEnumName@@HAEBVItemStack@@@Z
     virtual std::shared_ptr<class ContainerValidationCommitObject>
-    postCommitItemRemoved(::ContainerEnumName, int, class ItemStack const&);
+    postCommitItemRemoved(::ContainerEnumName, int slot, class ItemStack const& item);
 
     // symbol: ??0FurnaceContainerScreenValidator@@QEAA@XZ
     MCAPI FurnaceContainerScreenValidator();

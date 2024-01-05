@@ -17,7 +17,7 @@ public:
 
     // symbol:
     // ?setActorDefByName@ShooterProjectileData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setActorDefByName(std::string const&);
+    MCAPI void setActorDefByName(std::string const& name);
 
     // symbol: ??1ShooterProjectileData@@QEAA@XZ
     MCAPI ~ShooterProjectileData();

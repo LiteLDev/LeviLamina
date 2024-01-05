@@ -18,19 +18,19 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_getUpdatePacket@FurnaceBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // symbol: ?_onUpdatePacket@FurnaceBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
 
     // symbol: ?canPullOutItem@FurnaceBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPullOutItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPullOutItem(int slot, int face, class ItemStack const& item) const;
 
     // symbol: ?canPushInItem@FurnaceBlockActor@@UEBA_NHHAEBVItemStack@@@Z
-    MCVAPI bool canPushInItem(int, int, class ItemStack const&) const;
+    MCVAPI bool canPushInItem(int slot, int face, class ItemStack const& item) const;
 
     // symbol: ?fixupOnLoad@FurnaceBlockActor@@UEAAXAEAVLevelChunk@@@Z
-    MCVAPI void fixupOnLoad(class LevelChunk&);
+    MCVAPI void fixupOnLoad(class LevelChunk& lc);
 
     // symbol: ?getContainer@FurnaceBlockActor@@UEAAPEAVContainer@@XZ
     MCVAPI class Container* getContainer();
@@ -66,7 +66,11 @@ public:
     MCVAPI bool save(class CompoundTag& tag) const;
 
     // symbol: ?serverInitItemStackIds@FurnaceBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
 
     // symbol: ?setItem@FurnaceBlockActor@@UEAAXHAEBVItemStack@@@Z
     MCVAPI void setItem(int slot, class ItemStack const& item);
@@ -123,25 +127,25 @@ public:
     MCAPI void setTickCount(int value);
 
     // symbol: ?storeXPRewardForRemovingWithHopper@FurnaceBlockActor@@QEAAXAEBVItemStackBase@@H@Z
-    MCAPI void storeXPRewardForRemovingWithHopper(class ItemStackBase const&, int);
+    MCAPI void storeXPRewardForRemovingWithHopper(class ItemStackBase const& item, int numItemsSmelted);
 
     // symbol: ?withdrawStoredXPReward@FurnaceBlockActor@@QEAAHXZ
     MCAPI int withdrawStoredXPReward();
 
     // symbol: ?getAvailableFuelSetCount@FurnaceBlockActor@@SAHHAEBVItemStackBase@@@Z
-    MCAPI static int getAvailableFuelSetCount(int, class ItemStackBase const&);
+    MCAPI static int getAvailableFuelSetCount(int slot, class ItemStackBase const& item);
 
     // symbol: ?getBurnDuration@FurnaceBlockActor@@SAMAEBVItemStackBase@@M@Z
-    MCAPI static float getBurnDuration(class ItemStackBase const&, float);
+    MCAPI static float getBurnDuration(class ItemStackBase const& itemInstance, float burnInterval);
 
     // symbol: ?getItemBurnDuration@FurnaceBlockActor@@SAMAEBVItem@@M@Z
-    MCAPI static float getItemBurnDuration(class Item const&, float);
+    MCAPI static float getItemBurnDuration(class Item const& item, float burnInterval);
 
     // symbol: ?getXPRewardFromSmeltingItems@FurnaceBlockActor@@SAHAEBVItemStackBase@@H@Z
-    MCAPI static int getXPRewardFromSmeltingItems(class ItemStackBase const&, int);
+    MCAPI static int getXPRewardFromSmeltingItems(class ItemStackBase const& item, int numItemsSmelted);
 
     // symbol: ?isItemAllowedInFuelSlot@FurnaceBlockActor@@SA_NHAEBVItemStackBase@@H@Z
-    MCAPI static bool isItemAllowedInFuelSlot(int, class ItemStackBase const&, int);
+    MCAPI static bool isItemAllowedInFuelSlot(int slot, class ItemStackBase const& item, int amount);
 
     // symbol: ?BURN_INTERVAL@FurnaceBlockActor@@2HB
     MCAPI static int const BURN_INTERVAL;
@@ -180,10 +184,10 @@ public:
     MCAPI bool canBurn(class Recipes const& recipes);
 
     // symbol: ?_getXPRewardMultiplier@FurnaceBlockActor@@CAMAEBVItemStackBase@@@Z
-    MCAPI static float _getXPRewardMultiplier(class ItemStackBase const&);
+    MCAPI static float _getXPRewardMultiplier(class ItemStackBase const& item);
 
     // symbol: ?_roundXPReward@FurnaceBlockActor@@CAHM@Z
-    MCAPI static int _roundXPReward(float);
+    MCAPI static int _roundXPReward(float xpTotal);
 
     // NOLINTEND
 

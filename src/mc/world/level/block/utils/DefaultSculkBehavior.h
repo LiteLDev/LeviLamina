@@ -15,10 +15,10 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ?updateDecayDelay@DefaultSculkBehavior@@UEBAHH@Z
-    virtual int updateDecayDelay(int) const;
+    virtual int updateDecayDelay(int currentValue) const;
 
     // vIndex: 1, symbol: ?updateFacingData@DefaultSculkBehavior@@UEBAHHAEBVBlock@@@Z
-    virtual int updateFacingData(int, class Block const&) const;
+    virtual int updateFacingData(int currentValue, class Block const&) const;
 
     // vIndex: 2, symbol: ?canChangeBlockOnSpread@DefaultSculkBehavior@@UEBA_NXZ
     virtual bool canChangeBlockOnSpread() const;
@@ -26,7 +26,7 @@ public:
     // vIndex: 3, symbol:
     // ?attemptSpreadVeins@DefaultSculkBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z
     virtual bool
-    attemptSpreadVeins(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int, class SculkSpreader&)
+    attemptSpreadVeins(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Block const& block, int, class SculkSpreader&)
         const;
 
     // vIndex: 4, symbol:
@@ -36,7 +36,7 @@ public:
         class BlockSource*,
         class BlockPos const&,
         class BlockPos const&,
-        int,
+        int charge,
         int,
         class Random&,
         class SculkSpreader&,

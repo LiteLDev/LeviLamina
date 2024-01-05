@@ -38,7 +38,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0ChargeHeldItemGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit ChargeHeldItemGoal(class Mob&);
+    MCAPI explicit ChargeHeldItemGoal(class Mob& mob);
 
     // NOLINTEND
 };

@@ -19,7 +19,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?setContents@ArrayNode@JSONObject@Bedrock@@QEAA_NAEBVValueWrapper@23@@Z
-    MCAPI bool setContents(class Bedrock::JSONObject::ValueWrapper const&);
+    MCAPI bool setContents(class Bedrock::JSONObject::ValueWrapper const& contents);
 
     // NOLINTEND
 };

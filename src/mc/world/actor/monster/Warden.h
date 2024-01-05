@@ -67,28 +67,28 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 64, symbol: ?setTarget@Warden@@UEAAXPEAVActor@@@Z
-    virtual void setTarget(class Actor*);
+    virtual void setTarget(class Actor* target);
 
     // vIndex: 78, symbol: ?isInvulnerableTo@Warden@@UEBA_NAEBVActorDamageSource@@@Z
-    virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
+    virtual bool isInvulnerableTo(class ActorDamageSource const& source) const;
 
     // vIndex: 107, symbol: __unk_vfn_107
     virtual void __unk_vfn_107();
 
     // vIndex: 112, symbol: ?onSynchedDataUpdate@Warden@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int dataId);
 
     // vIndex: 144, symbol: __unk_vfn_144
     virtual void __unk_vfn_144();
 
     // vIndex: 151, symbol: ?onPush@Warden@@UEAAXAEAVActor@@@Z
-    virtual void onPush(class Actor&);
+    virtual void onPush(class Actor& source);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
 
     // vIndex: 163, symbol: ?_hurt@Warden@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
+    virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // vIndex: 167, symbol: __unk_vfn_167
     virtual void __unk_vfn_167();
@@ -103,10 +103,14 @@ public:
     virtual bool checkSpawnObstruction() const;
 
     // vIndex: 186, symbol: ?doHurtTarget@Warden@@MEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
-    virtual bool doHurtTarget(class Actor*, ::ActorDamageCause const&);
+    virtual bool doHurtTarget(class Actor* target, ::ActorDamageCause const& cause);
 
     // symbol: ??0Warden@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Warden(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Warden(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // NOLINTEND
 };

@@ -29,7 +29,7 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0FloatGoal@@QEAA@AEAVMob@@_N@Z
-    MCAPI FloatGoal(class Mob&, bool);
+    MCAPI FloatGoal(class Mob& mob, bool);
 
     // NOLINTEND
 };

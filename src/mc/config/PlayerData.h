@@ -29,7 +29,7 @@ public:
     virtual ~PlayerData() = default;
 
     // vIndex: 1, symbol: ?isAbilityEnabled@PlayerData@PlayerCapabilities@@UEBA_NW4AbilitiesIndex@@@Z
-    virtual bool isAbilityEnabled(::AbilitiesIndex) const;
+    virtual bool isAbilityEnabled(::AbilitiesIndex ability) const;
 
     // vIndex: 2, symbol: ?isTeacher@PlayerData@PlayerCapabilities@@UEBA_NXZ
     virtual bool isTeacher() const;
@@ -38,7 +38,7 @@ public:
     virtual bool isOperator() const;
 
     // symbol: ??0PlayerData@PlayerCapabilities@@QEAA@AEBVPlayer@@@Z
-    MCAPI explicit PlayerData(class Player const&);
+    MCAPI explicit PlayerData(class Player const& player);
 
     // NOLINTEND
 };

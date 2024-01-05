@@ -17,31 +17,31 @@ namespace Json { class Value; }
 namespace Util::CodeBuilder {
 // NOLINTBEGIN
 // symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVActor@@@Z
-MCAPI class Json::Value createObject(class Actor const&);
+MCAPI class Json::Value createObject(class Actor const& actor);
 
 // symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVBlock@@@Z
-MCAPI class Json::Value createObject(class Block const&);
+MCAPI class Json::Value createObject(class Block const& val);
 
 // symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVCommandOutput@@@Z
-MCAPI class Json::Value createObject(class CommandOutput const&);
+MCAPI class Json::Value createObject(class CommandOutput const& commandOutput);
 
 // symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVItemDescriptor@@@Z
-MCAPI class Json::Value createObject(class ItemDescriptor const&);
+MCAPI class Json::Value createObject(class ItemDescriptor const& item);
 
 // symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVItemStack@@@Z
-MCAPI class Json::Value createObject(class ItemStack const&);
+MCAPI class Json::Value createObject(class ItemStack const& item);
 
 // symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVItemStackBase@@@Z
-MCAPI class Json::Value createObject(class ItemStackBase const&);
+MCAPI class Json::Value createObject(class ItemStackBase const& item);
 
 // symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVPlayer@@@Z
-MCAPI class Json::Value createObject(class Player const&);
+MCAPI class Json::Value createObject(class Player const& player);
 
 // symbol: ?createObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVBlock@@H@Z
-MCAPI class Json::Value createObject(class Block const&, int);
+MCAPI class Json::Value createObject(class Block const& val, int aux);
 
 // symbol: ?createTraderObject@CodeBuilder@Util@@YA?AVValue@Json@@AEBVActor@@@Z
-MCAPI class Json::Value createTraderObject(class Actor const&);
+MCAPI class Json::Value createTraderObject(class Actor const& trader);
 // NOLINTEND
 
 }; // namespace Util::CodeBuilder

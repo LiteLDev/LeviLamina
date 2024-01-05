@@ -34,7 +34,7 @@ public:
     MCAPI class Scripting::Result<int> getCurrentDamage();
 
     // symbol: ?getDamageChance@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@H$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<int> getDamageChance(int);
+    MCAPI class Scripting::Result<int> getDamageChance(int unbreaking);
 
     // symbol:
     // ?getDamageRange@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@UNumberRange@Scripting@@$$V@Scripting@@XZ
@@ -53,7 +53,7 @@ public:
 
     // symbol:
     // ?setCurrentDamage@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@H@Z
-    MCAPI class Scripting::Result<void> setCurrentDamage(int);
+    MCAPI class Scripting::Result<void> setCurrentDamage(int damage);
 
     // symbol:
     // ?bind@ScriptItemDurabilityComponent@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptItemDurabilityComponent@ScriptModuleMinecraft@@@Scripting@@AEAVScriptComponentTypeEnumBuilder@2@@Z

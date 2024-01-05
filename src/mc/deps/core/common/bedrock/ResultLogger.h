@@ -30,8 +30,8 @@ public:
     // ?log@ResultLogger@Bedrock@@CAXV?$optional@W4LogLevel@Bedrock@@@std@@V?$optional@W4LogAreaID@@@4@AEBVerror_code@4@AEBUCallStack@2@@Z
     MCAPI static void
     log(std::optional<::Bedrock::LogLevel>,
-        std::optional<::LogAreaID>,
-        std::error_code const&,
+        std::optional<::LogAreaID> logArea,
+        std::error_code const&     errorCode,
         struct Bedrock::CallStack const&);
 
     // NOLINTEND

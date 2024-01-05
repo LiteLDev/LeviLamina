@@ -37,23 +37,23 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@SetScorePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ?change@SetScorePacket@@SA?AV1@V?$vector@UScorePacketInfo@@V?$allocator@UScorePacketInfo@@@std@@@std@@@Z
     MCAPI static class SetScorePacket change(std::vector<struct ScorePacketInfo> info);
 
     // symbol: ?change@SetScorePacket@@SA?AV1@AEBUScoreboardId@@AEBVObjective@@@Z
-    MCAPI static class SetScorePacket change(struct ScoreboardId const& id, class Objective const& objective);
+    MCAPI static class SetScorePacket change(struct ScoreboardId const&, class Objective const& objective);
 
     // symbol: ?remove@SetScorePacket@@SA?AV1@AEBUScoreboardId@@AEBVObjective@@@Z
-    MCAPI static class SetScorePacket remove(struct ScoreboardId const& id, class Objective const& objective);
+    MCAPI static class SetScorePacket remove(struct ScoreboardId const&, class Objective const& objective);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ??0SetScorePacket@@AEAA@W4ScorePacketType@@AEBUScoreboardId@@AEBVObjective@@@Z
-    MCAPI SetScorePacket(::ScorePacketType type, struct ScoreboardId const& id, class Objective const& objective);
+    MCAPI SetScorePacket(::ScorePacketType type, struct ScoreboardId const&, class Objective const& objective);
 
     // NOLINTEND
 };

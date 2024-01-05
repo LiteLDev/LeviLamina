@@ -93,7 +93,7 @@ public:
     MCAPI bool isOutOfUses() const;
 
     // symbol: ?isSame@MerchantRecipe@@QEBA_NAEBV1@@Z
-    MCAPI bool isSame(class MerchantRecipe const& other) const;
+    MCAPI bool isSame(class MerchantRecipe const& lhs) const;
 
     // symbol: ?legacyCalculateDemandPrices@MerchantRecipe@@QEAAXHH@Z
     MCAPI void legacyCalculateDemandPrices(int, int);

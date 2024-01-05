@@ -37,7 +37,7 @@ public:
 public:
     // NOLINTBEGIN
     // vIndex: 6, symbol: ?initializeComponents@Tadpole@@UEAAXW4ActorInitializationMethod@@AEBVVariantParameterList@@@Z
-    virtual void initializeComponents(::ActorInitializationMethod, class VariantParameterList const&);
+    virtual void initializeComponents(::ActorInitializationMethod method, class VariantParameterList const& params);
 
     // vIndex: 10, symbol: __gen_??1Tadpole@@UEAA@XZ
     virtual ~Tadpole() = default;
@@ -85,7 +85,11 @@ public:
     virtual float getFlopHorizontalVelocityFactor() const;
 
     // symbol: ??0Tadpole@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Tadpole(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Tadpole(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityId
+    );
 
     // NOLINTEND
 };

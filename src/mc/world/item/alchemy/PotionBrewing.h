@@ -57,8 +57,11 @@ public:
     addContainerRecipe(class Item const& from, class PotionBrewing::Ingredient const& ingredient, class Item const& to);
 
     // symbol: ?addPotionMix@PotionBrewing@@SAXAEBVItemDescriptor@@AEBVIngredient@1@0@Z
-    MCAPI static void
-    addPotionMix(class ItemDescriptor const&, class PotionBrewing::Ingredient const&, class ItemDescriptor const&);
+    MCAPI static void addPotionMix(
+        class ItemDescriptor const&            from,
+        class PotionBrewing::Ingredient const& ingredient,
+        class ItemDescriptor const&            to
+    );
 
     // symbol: ?getFuelValue@PotionBrewing@@SAHAEBVItemDescriptor@@@Z
     MCAPI static int getFuelValue(class ItemDescriptor const& item);
@@ -76,7 +79,7 @@ public:
     MCAPI static bool isIngredient(class ItemDescriptor const& item);
 
     // symbol: ?isPotionRecipeInput@PotionBrewing@@SA_NAEBVItemDescriptor@@@Z
-    MCAPI static bool isPotionRecipeInput(class ItemDescriptor const&);
+    MCAPI static bool isPotionRecipeInput(class ItemDescriptor const& item);
 
     // symbol: ?mix@PotionBrewing@@SA?AVItemInstance@@AEBVItemDescriptor@@AEBV2@@Z
     MCAPI static class ItemInstance mix(class ItemDescriptor const& ingredient, class ItemInstance const& source);

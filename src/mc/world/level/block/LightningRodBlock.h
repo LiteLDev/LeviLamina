@@ -34,16 +34,17 @@ public:
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
     // vIndex: 17, symbol: ?onProjectileHit@LightningRodBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
-    virtual void onProjectileHit(class BlockSource&, class BlockPos const&, class Actor const&) const;
+    virtual void
+    onProjectileHit(class BlockSource& region, class BlockPos const& pos, class Actor const& projectile) const;
 
     // vIndex: 18, symbol: ?onLightningHit@LightningRodBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onLightningHit(class BlockSource&, class BlockPos const&) const;
+    virtual void onLightningHit(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
 
     // vIndex: 23, symbol: ?canProvideSupport@LightningRodBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-    virtual bool canProvideSupport(class Block const&, uchar, ::BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const& block, uchar face, ::BlockSupportType type) const;
 
     // vIndex: 25, symbol: ?canConnect@LightningRodBlock@@UEBA_NAEBVBlock@@E0@Z
     virtual bool canConnect(class Block const&, uchar, class Block const&) const;
@@ -122,17 +123,22 @@ public:
     virtual void __unk_vfn_67();
 
     // vIndex: 71, symbol: ?setupRedstoneComponent@LightningRodBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
+    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@LightningRodBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-    virtual bool breaksFallingBlocks(class Block const&, class BaseGameVersion) const;
+    virtual bool breaksFallingBlocks(class Block const& block, class BaseGameVersion version) const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@LightningRodBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    virtual class Block const& getPlacementBlock(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -157,13 +163,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@LightningRodBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@LightningRodBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -173,7 +179,7 @@ public:
 
     // symbol:
     // ??0LightningRodBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LightningRodBlock(std::string const&, int, class Material const&);
+    MCAPI LightningRodBlock(std::string const& nameId, int, class Material const& material);
 
     // NOLINTEND
 };

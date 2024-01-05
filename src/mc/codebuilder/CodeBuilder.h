@@ -33,7 +33,7 @@ namespace Json { class Value; }
 namespace CodeBuilder {
 // NOLINTBEGIN
 // symbol: ?deserialize@CodeBuilder@@YA?AUMCRESULT@@AEBVValue@Json@@AEAURequestHeader@1@@Z
-MCAPI struct MCRESULT deserialize(class Json::Value const&, struct CodeBuilder::RequestHeader&);
+MCAPI struct MCRESULT deserialize(class Json::Value const& json, struct CodeBuilder::RequestHeader& result);
 
 // symbol:
 // ?fromString@CodeBuilder@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAW4RequestPurpose@1@@Z
@@ -69,7 +69,7 @@ MCAPI std::string serialize(struct CodeBuilder::EventMessage const&);
 
 // symbol:
 // ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUChatMessage@1@AEBV23@@Z
-MCAPI std::string serialize(struct CodeBuilder::ChatMessage const&, std::string const&);
+MCAPI std::string serialize(struct CodeBuilder::ChatMessage const& message, std::string const& requestId);
 
 // symbol:
 // ?toString@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ResponsePurpose@1@@Z

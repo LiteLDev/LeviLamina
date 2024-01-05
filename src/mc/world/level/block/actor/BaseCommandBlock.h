@@ -75,7 +75,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_performCommand@BaseCommandBlock@@AEAA_NAEAVBlockSource@@AEBVCommandOrigin@@AEA_N@Z
-    MCAPI bool _performCommand(class BlockSource&, class CommandOrigin const&, bool&);
+    MCAPI bool _performCommand(class BlockSource& region, class CommandOrigin const& origin, bool& markForSaving);
 
     // symbol:
     // ?_setCommand@BaseCommandBlock@@AEAAXAEAVBlockSource@@AEBVCommandOrigin@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

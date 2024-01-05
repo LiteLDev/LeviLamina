@@ -26,9 +26,11 @@ public:
 
     // vIndex: 3, symbol:
     // ?_fillArea@IslandOperationNode@@EEBAXAEAV?$WorkingData@W4Terrain@OperationNodeValues@@D@OperationNodeDetails@@AEBVPos2d@@1@Z
-    virtual void
-    _fillArea(class OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>&, class Pos2d const&, class Pos2d const&)
-        const;
+    virtual void _fillArea(
+        class OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>&,
+        class Pos2d const& origin,
+        class Pos2d const& size
+    ) const;
 
     // NOLINTEND
 };

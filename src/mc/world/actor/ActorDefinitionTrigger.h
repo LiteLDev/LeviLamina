@@ -14,7 +14,7 @@ public:
     MCAPI ActorDefinitionTrigger(class ActorDefinitionTrigger&&);
 
     // symbol: ?canTrigger@ActorDefinitionTrigger@@QEBA_NAEBVActor@@AEBVVariantParameterList@@@Z
-    MCAPI bool canTrigger(class Actor const&, class VariantParameterList const&) const;
+    MCAPI bool canTrigger(class Actor const& entity, class VariantParameterList const& list) const;
 
     // symbol: ??4ActorDefinitionTrigger@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class ActorDefinitionTrigger& operator=(class ActorDefinitionTrigger&&);

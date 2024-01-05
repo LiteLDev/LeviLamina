@@ -34,7 +34,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0BlockPositionData@StructureBlockPalette@@QEAA@AEBU01@@Z
-        MCAPI BlockPositionData(struct StructureBlockPalette::BlockPositionData const&);
+        MCAPI BlockPositionData(struct StructureBlockPalette::BlockPositionData const& rhs);
 
         // symbol: ??1BlockPositionData@StructureBlockPalette@@QEAA@XZ
         MCAPI ~BlockPositionData();
@@ -65,7 +65,8 @@ public:
     // symbol:
     // ?getBlock@StructureBlockPalette@@QEBAAEBVBlock@@AEBVBlockPalette@@_KV?$NonOwnerPointer@VIUnknownBlockTypeRegistry@@@Bedrock@@@Z
     MCAPI class Block const&
-    getBlock(class BlockPalette const&, uint64, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>) const;
+    getBlock(class BlockPalette const& blockPalette, uint64, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>)
+        const;
 
     // symbol: ?getBlockPositionData@StructureBlockPalette@@QEBAPEBUBlockPositionData@1@_K@Z
     MCAPI struct StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64) const;

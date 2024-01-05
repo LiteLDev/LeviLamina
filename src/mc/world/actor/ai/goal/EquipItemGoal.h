@@ -34,12 +34,15 @@ public:
         virtual ~Definition() = default;
 
         // symbol: ?initialize@Definition@EquipItemGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext&, class EquipItemGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class EquipItemGoal& goal) const;
 
         // symbol:
         // ?buildSchema@Definition@EquipItemGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@EquipItemGoal@@@JsonUtil@@@4@@Z
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EquipItemGoal::Definition>>&);
+        MCAPI static void buildSchema(
+            std::string const& name,
+            std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EquipItemGoal::Definition>>& root
+        );
 
         // NOLINTEND
     };
@@ -66,17 +69,17 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@EquipItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0EquipItemGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit EquipItemGoal(class Mob&);
+    MCAPI explicit EquipItemGoal(class Mob& mob);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_dropItem@EquipItemGoal@@AEBAXAEBVItemStack@@@Z
-    MCAPI void _dropItem(class ItemStack const&) const;
+    MCAPI void _dropItem(class ItemStack const& item) const;
 
     // symbol: ?_sendMobEquipmentPacket@EquipItemGoal@@AEBAXVMobEquipmentPacket@@@Z
     MCAPI void _sendMobEquipmentPacket(class MobEquipmentPacket) const;

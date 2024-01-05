@@ -31,7 +31,8 @@ public:
     virtual ~TargetBlock() = default;
 
     // vIndex: 17, symbol: ?onProjectileHit@TargetBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
-    virtual void onProjectileHit(class BlockSource&, class BlockPos const&, class Actor const&) const;
+    virtual void
+    onProjectileHit(class BlockSource& region, class BlockPos const& pos, class Actor const& projectile) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -107,7 +108,7 @@ public:
     virtual void __unk_vfn_67();
 
     // vIndex: 71, symbol: ?setupRedstoneComponent@TargetBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
+    virtual void setupRedstoneComponent(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 74, symbol: __unk_vfn_74
     virtual void __unk_vfn_74();
@@ -131,13 +132,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@TargetBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@TargetBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -146,16 +147,19 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0TargetBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TargetBlock(std::string const&, int);
+    MCAPI TargetBlock(std::string const& nameId, int);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_processHitByProjectileAtPos@TargetBlock@@AEBAXAEBVVec3@@AEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
-    MCAPI void
-    _processHitByProjectileAtPos(class Vec3 const&, class BlockSource&, class BlockPos const&, class Actor const&)
-        const;
+    MCAPI void _processHitByProjectileAtPos(
+        class Vec3 const&     hitPos,
+        class BlockSource&    region,
+        class BlockPos const& blockPos,
+        class Actor const&    projectile
+    ) const;
 
     // NOLINTEND
 };

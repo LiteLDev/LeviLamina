@@ -81,7 +81,7 @@ public:
     virtual void __unk_vfn_66();
 
     // vIndex: 75, symbol: ?hurtActor@CarrotOnAStickItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-    virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
+    virtual void hurtActor(class ItemStack& itemStack, class Actor& actor, class Mob& attacker) const;
 
     // vIndex: 79, symbol: ?mineBlock@CarrotOnAStickItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
@@ -94,7 +94,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0CarrotOnAStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CarrotOnAStickItem(std::string const& name, int id);
+    MCAPI CarrotOnAStickItem(std::string const& name, int);
 
     // NOLINTEND
 };

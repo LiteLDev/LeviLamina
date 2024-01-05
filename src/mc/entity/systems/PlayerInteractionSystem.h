@@ -24,7 +24,7 @@ public:
 
         // vIndex: 1, symbol:
         // ?getInteraction@InteractionMappingBase@PlayerInteractionSystem@@UEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-        virtual bool getInteraction(class Actor& actor, class Player& player, class ActorInteraction& interaction);
+        virtual bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
 
         // NOLINTEND
     };

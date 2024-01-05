@@ -18,7 +18,7 @@ public:
     virtual ~NetherFortressStart() = default;
 
     // symbol: ??0NetherFortressStart@@QEAA@AEAVRandom@@FHH@Z
-    MCAPI NetherFortressStart(class Random&, short, int, int);
+    MCAPI NetherFortressStart(class Random& random, short seaLevel, int chunkX, int chunkZ);
 
     // NOLINTEND
 };

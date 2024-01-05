@@ -71,7 +71,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_getRandomEnchantInstance@EnchantBookForTradingFunction@@AEBA?AVEnchantmentInstance@@AEAVRandom@@@Z
-    MCAPI class EnchantmentInstance _getRandomEnchantInstance(class Random&) const;
+    MCAPI class EnchantmentInstance _getRandomEnchantInstance(class Random& random) const;
 
     // symbol:
     // ?_trySelectEnchantmentFromOptions@EnchantBookForTradingFunction@@AEBA?AV?$optional@VEnchantmentInstance@@@std@@AEAVRandom@@@Z

@@ -38,10 +38,10 @@ public:
     virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0AvoidMobTypeGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit AvoidMobTypeGoal(class Mob&);
+    MCAPI explicit AvoidMobTypeGoal(class Mob& mob);
 
     // symbol: ?canFindAvoidPath@AvoidMobTypeGoal@@QEAA_NPEAVActor@@@Z
-    MCAPI bool canFindAvoidPath(class Actor*);
+    MCAPI bool canFindAvoidPath(class Actor* actor);
 
     // symbol: ?findNearestEntityToAvoid@AvoidMobTypeGoal@@QEAAPEAVActor@@M@Z
     MCAPI class Actor* findNearestEntityToAvoid(float dist);

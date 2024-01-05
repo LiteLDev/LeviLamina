@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initialize@DamageOverTimeDefinition@@QEBAXAEAVEntityContext@@AEAVDamageOverTimeComponent@@@Z
-    MCAPI void initialize(class EntityContext& entity, class DamageOverTimeComponent& component) const;
+    MCAPI void initialize(class EntityContext&, class DamageOverTimeComponent& component) const;
 
     // symbol:
     // ?buildSchema@DamageOverTimeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDamageOverTimeDefinition@@@JsonUtil@@@std@@@Z

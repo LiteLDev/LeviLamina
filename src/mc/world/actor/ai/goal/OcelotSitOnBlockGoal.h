@@ -38,7 +38,7 @@ public:
     virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
 
     // vIndex: 13, symbol: ?_canReach@OcelotSitOnBlockGoal@@UEAA_NAEBVBlockPos@@@Z
-    virtual bool _canReach(class BlockPos const&);
+    virtual bool _canReach(class BlockPos const& pos);
 
     // symbol: ??0OcelotSitOnBlockGoal@@QEAA@AEAVMob@@M@Z
     MCAPI OcelotSitOnBlockGoal(class Mob& mob, float speedMod);

@@ -19,16 +19,16 @@ public:
     MCAPI bool hasAnyLock() const;
 
     // symbol: ?hasLockCategory@ClientInputLockComponent@@QEBA_NW4ClientInputLockCategory@@@Z
-    MCAPI bool hasLockCategory(::ClientInputLockCategory) const;
+    MCAPI bool hasLockCategory(::ClientInputLockCategory category) const;
 
     // symbol: ?hasLockType@ClientInputLockComponent@@QEBA_NW4ClientInputLockType@@@Z
-    MCAPI bool hasLockType(::ClientInputLockType) const;
+    MCAPI bool hasLockType(::ClientInputLockType lock) const;
 
     // symbol: ?serialize@ClientInputLockComponent@@QEBAIXZ
     MCAPI uint serialize() const;
 
     // symbol: ?setLockCategory@ClientInputLockComponent@@QEAAXW4ClientInputLockCategory@@_N@Z
-    MCAPI void setLockCategory(::ClientInputLockCategory, bool);
+    MCAPI void setLockCategory(::ClientInputLockCategory category, bool state);
 
     // NOLINTEND
 };

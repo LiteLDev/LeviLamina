@@ -80,14 +80,14 @@ public:
     virtual void loadChunk(class LevelChunk&, bool);
 
     // symbol: ??0FlatWorldGenerator@@QEAA@AEAVDimension@@IAEBVValue@Json@@@Z
-    MCAPI FlatWorldGenerator(class Dimension& dimension, uint seed, class Json::Value const& generationOptionsJSON);
+    MCAPI FlatWorldGenerator(class Dimension& dimension, uint, class Json::Value const& generationOptionsJSON);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_generatePrototypeBlockValues@FlatWorldGenerator@@AEAAXAEBVFlatWorldGeneratorOptions@@F@Z
-    MCAPI void _generatePrototypeBlockValues(class FlatWorldGeneratorOptions const&, short);
+    MCAPI void _generatePrototypeBlockValues(class FlatWorldGeneratorOptions const& layersDesc, short);
 
     // NOLINTEND
 };

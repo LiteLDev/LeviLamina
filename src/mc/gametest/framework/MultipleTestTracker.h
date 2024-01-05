@@ -19,13 +19,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addListener@MultipleTestTracker@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
-    MCAPI void addListener(std::shared_ptr<class gametest::IGameTestListener>);
+    MCAPI void addListener(std::shared_ptr<class gametest::IGameTestListener> listener);
 
     // symbol: ?isDone@MultipleTestTracker@gametest@@QEBA_NXZ
     MCAPI bool isDone() const;
 
     // symbol: ?removeListener@MultipleTestTracker@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
-    MCAPI void removeListener(std::shared_ptr<class gametest::IGameTestListener>);
+    MCAPI void removeListener(std::shared_ptr<class gametest::IGameTestListener> listener);
 
     // NOLINTEND
 

@@ -32,7 +32,7 @@ public:
     MCAPI DwellerComponent(class DwellerComponent&&);
 
     // symbol: ?addAdditionalSaveData@DwellerComponent@@QEBAXAEAVCompoundTag@@AEBVActor@@@Z
-    MCAPI void addAdditionalSaveData(class CompoundTag&, class Actor const&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag& tag, class Actor const& owner) const;
 
     // symbol: ?checkandUpdateDwellingStatus@DwellerComponent@@QEAAXAEBVActor@@PEAVVillage@@@Z
     MCAPI void checkandUpdateDwellingStatus(class Actor const& owner, class Village* myVillage);
@@ -41,7 +41,7 @@ public:
     MCAPI void clearPreferredProfession();
 
     // symbol: ?fixupProfession@DwellerComponent@@QEAAXAEBVActor@@PEAVVillage@@@Z
-    MCAPI void fixupProfession(class Actor const&, class Village*);
+    MCAPI void fixupProfession(class Actor const& owner, class Village* village);
 
     // symbol: ?getCanFindPOI@DwellerComponent@@QEBA_NXZ
     MCAPI bool getCanFindPOI() const;
@@ -86,7 +86,7 @@ public:
     MCAPI bool isWithinRestriction(class Actor const& owner) const;
 
     // symbol: ?needsToFixupProfession@DwellerComponent@@QEBA_NAEBVActor@@@Z
-    MCAPI bool needsToFixupProfession(class Actor const&) const;
+    MCAPI bool needsToFixupProfession(class Actor const& owner) const;
 
     // symbol: ?needsToFixupVillageRole@DwellerComponent@@QEBA_NAEBVActor@@PEAVVillage@@@Z
     MCAPI bool needsToFixupVillageRole(class Actor const& owner, class Village* myVillage) const;
@@ -95,7 +95,7 @@ public:
     MCAPI void onDeath(class Actor& owner, class ActorDamageSource const& source);
 
     // symbol: ?onDimensionChange@DwellerComponent@@QEAAXAEAVActor@@@Z
-    MCAPI void onDimensionChange(class Actor&);
+    MCAPI void onDimensionChange(class Actor& owner);
 
     // symbol: ?onRemove@DwellerComponent@@QEAAXAEAVActor@@@Z
     MCAPI void onRemove(class Actor& owner);
@@ -108,7 +108,7 @@ public:
     readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?setDwellingUniqueID@DwellerComponent@@QEAAXAEAVActor@@VUUID@mce@@@Z
-    MCAPI void setDwellingUniqueID(class Actor& owner, class mce::UUID id);
+    MCAPI void setDwellingUniqueID(class Actor& owner, class mce::UUID);
 
     // symbol: ?setDwellingUpdateInterval@DwellerComponent@@QEAAX_K@Z
     MCAPI void setDwellingUpdateInterval(uint64);

@@ -115,12 +115,12 @@ public:
 
         // vIndex: 1, symbol:
         // ?sendPacket@RakNetNetworkPeer@RakNetConnector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@W4Compressibility@@@Z
-        virtual void sendPacket(std::string const&, ::NetworkPeer::Reliability, ::Compressibility);
+        virtual void sendPacket(std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
 
         // vIndex: 2, symbol:
         // ?receivePacket@RakNetNetworkPeer@RakNetConnector@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@6@@Z
         virtual ::NetworkPeer::DataStatus
-        receivePacket(std::string&, std::shared_ptr<std::chrono::steady_clock::time_point> const&);
+        receivePacket(std::string& outData, std::shared_ptr<std::chrono::steady_clock::time_point> const&);
 
         // vIndex: 3, symbol: ?getNetworkStatus@RakNetNetworkPeer@RakNetConnector@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
         virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
@@ -136,7 +136,7 @@ public:
 
         // symbol:
         // ?newData@RakNetNetworkPeer@RakNetConnector@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-        MCAPI void newData(std::string);
+        MCAPI void newData(std::string data);
 
         // NOLINTEND
     };
@@ -156,13 +156,16 @@ public:
     MCVAPI void _onEnable();
 
     // symbol: ?addConnectionStateListener@RakNetConnector@@UEAAXPEAVConnectionStateListener@Connector@@@Z
-    MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener*);
+    MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener* listener);
 
     // symbol: ?closeNetworkConnection@RakNetConnector@@UEAAXAEBVNetworkIdentifier@@@Z
-    MCVAPI void closeNetworkConnection(class NetworkIdentifier const&);
+    MCVAPI void closeNetworkConnection(class NetworkIdentifier const& id);
 
     // symbol: ?connect@RakNetConnector@@UEAA_NAEBVGameConnectionInfo@Social@@0@Z
-    MCVAPI bool connect(class Social::GameConnectionInfo const&, class Social::GameConnectionInfo const&);
+    MCVAPI bool connect(
+        class Social::GameConnectionInfo const& primaryConnection,
+        class Social::GameConnectionInfo const& backupConnection
+    );
 
     // symbol: ?disconnect@RakNetConnector@@UEAAXXZ
     MCVAPI void disconnect();
@@ -203,10 +206,10 @@ public:
     MCVAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const;
 
     // symbol: ?host@RakNetConnector@@UEAA_NAEBUConnectionDefinition@@@Z
-    MCVAPI bool host(struct ConnectionDefinition const&);
+    MCVAPI bool host(struct ConnectionDefinition const& definition);
 
     // symbol: ?isConnected@RakNetConnector@@UEBA_NAEBVNetworkIdentifier@@@Z
-    MCVAPI bool isConnected(class NetworkIdentifier const&) const;
+    MCVAPI bool isConnected(class NetworkIdentifier const& id) const;
 
     // symbol: ?isIPv4Supported@RakNetConnector@@UEBA_NXZ
     MCVAPI bool isIPv4Supported() const;
@@ -218,17 +221,17 @@ public:
     MCVAPI bool isServer() const;
 
     // symbol: ?removeConnectionStateListener@RakNetConnector@@UEAAXPEAVConnectionStateListener@Connector@@@Z
-    MCVAPI void removeConnectionStateListener(class Connector::ConnectionStateListener*);
+    MCVAPI void removeConnectionStateListener(class Connector::ConnectionStateListener* listener);
 
     // symbol: ?runEvents@RakNetConnector@@UEAAXXZ
     MCVAPI void runEvents();
 
     // symbol: ?setupNatPunch@RakNetConnector@@UEAAX_N@Z
-    MCVAPI void setupNatPunch(bool);
+    MCVAPI void setupNatPunch(bool connectToClient);
 
     // symbol:
     // ?startNatPunchingClient@RakNetConnector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-    MCVAPI void startNatPunchingClient(std::string const&, ushort);
+    MCVAPI void startNatPunchingClient(std::string const& address, ushort port);
 
     // symbol: ?tick@RakNetConnector@@UEAAXXZ
     MCVAPI void tick();
@@ -239,10 +242,10 @@ public:
     // symbol:
     // ??0RakNetConnector@@QEAA@AEAUConnectionCallbacks@0@AEAVIPSupportInterface@RakPeerHelper@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
     MCAPI
-    RakNetConnector(struct RakNetConnector::ConnectionCallbacks&, class RakPeerHelper::IPSupportInterface&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+    RakNetConnector(struct RakNetConnector::ConnectionCallbacks& callbacks, class RakPeerHelper::IPSupportInterface& ipInterface, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
 
     // symbol: ?getStatistics@RakNetConnector@@QEAA_NAEAURakNetStatistics@RakNet@@@Z
-    MCAPI bool getStatistics(struct RakNet::RakNetStatistics&);
+    MCAPI bool getStatistics(struct RakNet::RakNetStatistics& rns);
 
     // NOLINTEND
 
@@ -250,17 +253,17 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_changeNatState@RakNetConnector@@AEAAXW4NATState@1@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void _changeNatState(::RakNetConnector::NATState, int, std::string const&);
+    MCAPI void _changeNatState(::RakNetConnector::NATState newState, int port, std::string const& statusDescription);
 
     // symbol:
     // ?_createPeer@RakNetConnector@@AEAA?AV?$shared_ptr@VRakNetNetworkPeer@RakNetConnector@@@std@@AEBVNetworkIdentifier@@@Z
     MCAPI std::shared_ptr<class RakNetConnector::RakNetNetworkPeer> _createPeer(class NetworkIdentifier const&);
 
     // symbol: ?_openNatConnection@RakNetConnector@@AEAAXAEBUSystemAddress@RakNet@@@Z
-    MCAPI void _openNatConnection(struct RakNet::SystemAddress const&);
+    MCAPI void _openNatConnection(struct RakNet::SystemAddress const& remoteAddress);
 
     // symbol: ?_pingNatService@RakNetConnector@@AEAAX_N@Z
-    MCAPI void _pingNatService(bool);
+    MCAPI void _pingNatService(bool isInitialPing);
 
     // symbol: ?_storeLocalIP@RakNetConnector@@AEAAXXZ
     MCAPI void _storeLocalIP();

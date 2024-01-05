@@ -24,7 +24,7 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@TradeContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
+    virtual void setSlot(int slot, class ItemStack const& item, bool);
 
     // vIndex: 8, symbol: ?getSlot@TradeContainerManagerModel@@UEBAAEBVItemStack@@H@Z
     virtual class ItemStack const& getSlot(int slot) const;
@@ -33,7 +33,7 @@ public:
     virtual void broadcastChanges();
 
     // vIndex: 16, symbol: ?isValid@TradeContainerManagerModel@@UEAA_NM@Z
-    virtual bool isValid(float);
+    virtual bool isValid(float pickRange);
 
     // vIndex: 17, symbol: ?_postInit@TradeContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
     virtual class ContainerScreenContext _postInit();

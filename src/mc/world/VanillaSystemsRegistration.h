@@ -31,8 +31,10 @@ MCAPI void
 registerActorNormalTickSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
 
 // symbol: ?registerActorPreTravelSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEBURegistrationOptions@1@@Z
-MCAPI void
-registerActorPreTravelSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
+MCAPI void registerActorPreTravelSystems(
+    class EntitySystems&                                          systemRegistry,
+    struct VanillaSystemsRegistration::RegistrationOptions const& options
+);
 
 // symbol: ?registerActorTravelSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEBURegistrationOptions@1@@Z
 MCAPI void
@@ -76,15 +78,18 @@ MCAPI void
 registerResetMovementValuesSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
 
 // symbol: ?registerSharedVanillaPlayerInteractionSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@@Z
-MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems&);
+MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems& systemRegistry);
 
 // symbol: ?registerTickFilterSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@@Z
-MCAPI void registerTickFilterSystems(class EntitySystems&);
+MCAPI void registerTickFilterSystems(class EntitySystems& systemRegistry);
 
 // symbol:
 // ?registerVanillaServerTickingSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@AEBURegistrationOptions@1@@Z
-MCAPI void
-registerVanillaServerTickingSystems(class EntitySystems&, Bedrock::NotNullNonOwnerPtr<class ILevel const>, struct VanillaSystemsRegistration::RegistrationOptions const&);
+MCAPI void registerVanillaServerTickingSystems(
+    class EntitySystems&                                          systemRegistry,
+    Bedrock::NotNullNonOwnerPtr<class ILevel const>               level,
+    struct VanillaSystemsRegistration::RegistrationOptions const& options
+);
 
 // symbol:
 // ?registerVehicleManagementSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@AEBURegistrationOptions@1@@Z

@@ -33,11 +33,14 @@ public:
     virtual class OwnerPtrT<struct SharePtrRefTraits<class Dimension>> create(std::string const&) const;
 
     // vIndex: 2, symbol: ?initializeDimension@DimensionFactory@@UEBAXAEAVDimension@@@Z
-    virtual void initializeDimension(class Dimension&) const;
+    virtual void initializeDimension(class Dimension& dimension) const;
 
     // symbol:
     // ??0DimensionFactory@@QEAA@V?$not_null@V?$NonOwnerPointer@VILevel@@@Bedrock@@@gsl@@V?$not_null@V?$NonOwnerPointer@VScheduler@@@Bedrock@@@2@@Z
-    MCAPI DimensionFactory(Bedrock::NotNullNonOwnerPtr<class ILevel>, Bedrock::NotNullNonOwnerPtr<class Scheduler>);
+    MCAPI DimensionFactory(
+        Bedrock::NotNullNonOwnerPtr<class ILevel>    level,
+        Bedrock::NotNullNonOwnerPtr<class Scheduler> scheduler
+    );
 
     // symbol:
     // ?getDimensionOwnerPtrFactory@DimensionFactory@@QEAAAEAV?$OwnerPtrFactory@VDimension@@AEAVILevel@@AEAVScheduler@@@@XZ

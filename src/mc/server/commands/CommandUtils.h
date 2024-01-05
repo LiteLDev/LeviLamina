@@ -36,19 +36,19 @@ MCAPI void alterSpawnableEntities(
 );
 
 // symbol: ?broadcastPlayerSpawnedMobEvent@CommandUtils@@YAXAEBVActor@@AEAV2@@Z
-MCAPI void broadcastPlayerSpawnedMobEvent(class Actor const&, class Actor&);
+MCAPI void broadcastPlayerSpawnedMobEvent(class Actor const& entity, class Actor& summoner);
 
 // symbol: ?canBeSummoned@CommandUtils@@YA_NAEBUActorDefinitionIdentifier@@AEBVCommandOrigin@@@Z
-MCAPI bool canBeSummoned(struct ActorDefinitionIdentifier const&, class CommandOrigin const&);
+MCAPI bool canBeSummoned(struct ActorDefinitionIdentifier const& actorId, class CommandOrigin const& origin);
 
 // symbol: ?clearBlockEntityContents@CommandUtils@@YAXAEAVBlockSource@@AEBVBlockPos@@@Z
 MCAPI void clearBlockEntityContents(class BlockSource& region, class BlockPos const& pos);
 
 // symbol: ?clearBlockEntityLootTable@CommandUtils@@YAXAEAVBlockSource@@AEBVBlockPos@@@Z
-MCAPI void clearBlockEntityLootTable(class BlockSource&, class BlockPos const&);
+MCAPI void clearBlockEntityLootTable(class BlockSource& region, class BlockPos const& pos);
 
 // symbol: ?convertBlockEntityTag@CommandUtils@@YAXAEAVCompoundTag@@AEBVBlockActor@@AEBVBlockPos@@@Z
-MCAPI void convertBlockEntityTag(class CompoundTag&, class BlockActor const&, class BlockPos const&);
+MCAPI void convertBlockEntityTag(class CompoundTag& tag, class BlockActor const& entity, class BlockPos const& offset);
 
 // symbol:
 // ?createItemStack@CommandUtils@@YA?AVItemStack@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z
@@ -91,24 +91,24 @@ MCAPI std::vector<::ActorType> getInvalidCommandEntities(bool, bool);
 MCAPI std::string getTelemetryErrorList(class CommandOutput const&);
 
 // symbol: ?isActiveTickingChunk@CommandUtils@@YA_NAEBVLevelChunk@@@Z
-MCAPI bool isActiveTickingChunk(class LevelChunk const&);
+MCAPI bool isActiveTickingChunk(class LevelChunk const& chunk);
 
 // symbol: ?isActiveTickingChunk@CommandUtils@@YA_NUTick@@0@Z
 MCAPI bool isActiveTickingChunk(struct Tick, struct Tick);
 
 // symbol:
 // ?isFunctionValid@CommandUtils@@YA_NAEAVCommandOutput@@AEAVFunctionEntry@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI bool isFunctionValid(class CommandOutput&, class FunctionEntry&, std::string const&);
+MCAPI bool isFunctionValid(class CommandOutput& output, class FunctionEntry&, std::string const&);
 
 // symbol: ?isPlayerSpawnedMob@CommandUtils@@YA_NAEBVActor@@0@Z
-MCAPI bool isPlayerSpawnedMob(class Actor const&, class Actor const&);
+MCAPI bool isPlayerSpawnedMob(class Actor const& entity, class Actor const& summoner);
 
 // symbol: ?nameEntity@CommandUtils@@YAXAEAVActor@@_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI void nameEntity(class Actor&, bool, std::string const&);
+MCAPI void nameEntity(class Actor& actor, bool, std::string const&);
 
 // symbol:
 // ?setInitEvent@CommandUtils@@YAXAEAUActorDefinitionIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-MCAPI void setInitEvent(struct ActorDefinitionIdentifier&, std::string const&);
+MCAPI void setInitEvent(struct ActorDefinitionIdentifier& actorId, std::string const& eventName);
 
 // symbol:
 // ?spawnEntityAt@CommandUtils@@YAPEAVActor@@AEAVBlockSource@@AEBVVec3@@AEBUActorDefinitionIdentifier@@AEAUActorUniqueID@@PEAV2@@Z
@@ -116,8 +116,8 @@ MCAPI class Actor* spawnEntityAt(
     class BlockSource&                      region,
     class Vec3 const&                       pos,
     struct ActorDefinitionIdentifier const& type,
-    struct ActorUniqueID&                   id,
-    class Actor*                            summoner
+    struct ActorUniqueID&,
+    class Actor* summoner
 );
 
 // symbol:

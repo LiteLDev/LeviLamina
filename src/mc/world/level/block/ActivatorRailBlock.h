@@ -134,7 +134,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0ActivatorRailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ActivatorRailBlock(std::string const& nameId, int id);
+    MCAPI ActivatorRailBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

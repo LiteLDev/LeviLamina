@@ -26,11 +26,11 @@ public:
     // vIndex: 5, symbol:
     // ?carveEllipsoidVolume@UnderwaterCaveFeature@@MEBA_NAEAVIBlockWorldGenAPI@@AEBUCarverConfiguration@CaveFeatureUtils@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@AEBVBoundingBox@@MMAEBUCarvingParameters@4@@Z
     virtual bool
-    carveEllipsoidVolume(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, class BoundingBox const&, float, float, struct CaveFeatureUtils::CarvingParameters const&)
+    carveEllipsoidVolume(class IBlockWorldGenAPI& target, struct CaveFeatureUtils::CarverConfiguration const& configuration, class Random& random, class ChunkPos const& pos, class Vec3 const& startPos, class BoundingBox const& volume, float rad, float yRad, struct CaveFeatureUtils::CarvingParameters const&)
         const;
 
     // symbol: ?isDiggable@UnderwaterCaveFeature@@SA_NAEBVBlock@@@Z
-    MCAPI static bool isDiggable(class Block const&);
+    MCAPI static bool isDiggable(class Block const& block);
 
     // NOLINTEND
 };

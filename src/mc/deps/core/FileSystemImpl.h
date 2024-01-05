@@ -232,12 +232,16 @@ public:
 
     // symbol:
     // ?requestFlush@FileSystemImpl@Core@@UEAAXAEBV?$vector@UPendingWrite@Core@@V?$allocator@UPendingWrite@Core@@@std@@@std@@@Z
-    MCVAPI void requestFlush(std::vector<struct Core::PendingWrite> const&);
+    MCVAPI void requestFlush(std::vector<struct Core::PendingWrite> const& writeRequests);
 
     // symbol:
     // ??0FileSystemImpl@Core@@QEAA@W4FileAccessType@1@V?$shared_ptr@VFileStorageArea@Core@@@std@@W4TransactionFlags@1@V?$shared_ptr@VFlatFileManifestTracker@Core@@@4@@Z
-    MCAPI
-    FileSystemImpl(::Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, ::Core::TransactionFlags, std::shared_ptr<class Core::FlatFileManifestTracker>);
+    MCAPI FileSystemImpl(
+        ::Core::FileAccessType                       accessType,
+        std::shared_ptr<class Core::FileStorageArea> storageArea,
+        ::Core::TransactionFlags,
+        std::shared_ptr<class Core::FlatFileManifestTracker> manifestTracker
+    );
 
     // symbol: ?commit@FileSystemImpl@Core@@QEAA?AVResult@2@XZ
     MCAPI class Core::Result commit();
@@ -329,20 +333,20 @@ public:
     MCAPI class Core::Result readFileData(class Core::Path const& filePath, std::vector<uchar>& data);
 
     // symbol: ?removeIgnoredThrottlePath@FileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@@Z
-    MCAPI class Core::Result removeIgnoredThrottlePath(class Core::Path const&);
+    MCAPI class Core::Result removeIgnoredThrottlePath(class Core::Path const& path);
 
     // symbol: ?renameFile@FileSystemImpl@Core@@QEAA?AVResult@2@AEBVPath@2@0@Z
     MCAPI class Core::Result renameFile(class Core::Path const& sourceFilePath, class Core::Path const& targetFilePath);
 
     // symbol: ?isValidPath@FileSystemImpl@Core@@SA?AVResult@2@AEBVPath@2@@Z
-    MCAPI static class Core::Result isValidPath(class Core::Path const&);
+    MCAPI static class Core::Result isValidPath(class Core::Path const& path);
 
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
     // symbol: ?_flatFileUnloadManifest@FileSystemImpl@Core@@IEAA?AVResult@2@AEBVPath@2@@Z
-    MCAPI class Core::Result _flatFileUnloadManifest(class Core::Path const&);
+    MCAPI class Core::Result _flatFileUnloadManifest(class Core::Path const& filePath);
 
     // NOLINTEND
 

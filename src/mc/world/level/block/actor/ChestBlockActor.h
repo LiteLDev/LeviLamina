@@ -24,7 +24,7 @@ public:
 
     // symbol:
     // ?_getUpdatePacket@ChestBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // symbol: ?_onUpdatePacket@ChestBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     MCVAPI void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -76,7 +76,7 @@ public:
     MCVAPI class AABB getObstructionAABB() const;
 
     // symbol: ?initializeContainerContents@ChestBlockActor@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void initializeContainerContents(class BlockSource&);
+    MCVAPI void initializeContainerContents(class BlockSource& region);
 
     // symbol: ?load@ChestBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     MCVAPI void load(class Level& level, class CompoundTag const& base, class DataLoadHelper& dataLoadHelper);
@@ -97,7 +97,7 @@ public:
     MCVAPI void onPlace(class BlockSource& region);
 
     // symbol: ?onRemoved@ChestBlockActor@@UEAAXAEAVBlockSource@@@Z
-    MCVAPI void onRemoved(class BlockSource& region);
+    MCVAPI void onRemoved(class BlockSource&);
 
     // symbol: ?playCloseSound@ChestBlockActor@@MEAAXAEAVBlockSource@@@Z
     MCVAPI void playCloseSound(class BlockSource& region);
@@ -118,7 +118,11 @@ public:
     MCVAPI bool saveItems(class CompoundTag& base) const;
 
     // symbol: ?serverInitItemStackIds@ChestBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
+    MCVAPI void serverInitItemStackIds(
+        int                                              containerSlot,
+        int                                              count,
+        std::function<void(int, class ItemStack const&)> onNetIdChanged
+    );
 
     // symbol: ?setContainerChanged@ChestBlockActor@@UEAAXH@Z
     MCVAPI void setContainerChanged(int slot);
@@ -127,7 +131,7 @@ public:
     MCVAPI void setItem(int slot, class ItemStack const& item);
 
     // symbol: ?setItemWithForceBalance@ChestBlockActor@@UEAAXHAEBVItemStack@@_N@Z
-    MCVAPI void setItemWithForceBalance(int, class ItemStack const&, bool);
+    MCVAPI void setItemWithForceBalance(int slot, class ItemStack const& item, bool forceBalanced);
 
     // symbol: ?startOpen@ChestBlockActor@@UEAAXAEAVPlayer@@@Z
     MCVAPI void startOpen(class Player& player);
@@ -147,8 +151,8 @@ public:
     // symbol:
     // ??0ChestBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@_N@Z
     MCAPI ChestBlockActor(
-        ::BlockActorType       type,
-        std::string const&     id,
+        ::BlockActorType type,
+        std::string const&,
         ::BlockActorRendererId renderId,
         class BlockPos const&  pos,
         bool                   isTrapped

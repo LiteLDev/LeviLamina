@@ -11,7 +11,7 @@ namespace ScriptModuleMinecraft::ScriptHandleTrackerUtils {
 // NOLINTBEGIN
 // symbol:
 // ?removeAllTrackedHandles@ScriptHandleTrackerUtils@ScriptModuleMinecraft@@YAXAEBVWeakLifetimeScope@Scripting@@@Z
-MCAPI void removeAllTrackedHandles(class Scripting::WeakLifetimeScope const&);
+MCAPI void removeAllTrackedHandles(class Scripting::WeakLifetimeScope const& scope);
 // NOLINTEND
 
 }; // namespace ScriptModuleMinecraft::ScriptHandleTrackerUtils

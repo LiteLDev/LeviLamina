@@ -40,7 +40,7 @@ public:
     runOn(struct Scripting::ContextId, class Scripting::StringBasedRuntime&, std::optional<::Scripting::Privilege>);
 
     // symbol: ??0StringPayload@Scripting@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI StringPayload(std::string, std::string);
+    MCAPI StringPayload(std::string scriptName, std::string);
 
     // NOLINTEND
 };

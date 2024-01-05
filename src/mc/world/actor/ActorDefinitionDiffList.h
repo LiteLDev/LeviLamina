@@ -73,7 +73,7 @@ public:
 
     // symbol:
     // ?setDefinitionStack@ActorDefinitionDiffList@@QEAAXAEAV?$vector@UDiffListPair@@V?$allocator@UDiffListPair@@@std@@@std@@@Z
-    MCAPI void setDefinitionStack(std::vector<struct DiffListPair>&);
+    MCAPI void setDefinitionStack(std::vector<struct DiffListPair>& stack);
 
     // symbol: ?size@ActorDefinitionDiffList@@QEBA_KXZ
     MCAPI uint64 size() const;

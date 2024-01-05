@@ -18,7 +18,7 @@ public:
     virtual ~DeferredCommand() = default;
 
     // vIndex: 1, symbol: ?execute@DeferredCommand@@UEAAXAEAVMinecraftCommands@@@Z
-    virtual void execute(class MinecraftCommands&);
+    virtual void execute(class MinecraftCommands& commands);
 
     // NOLINTEND
 };

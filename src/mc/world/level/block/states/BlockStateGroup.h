@@ -23,18 +23,21 @@ public:
 
     // symbol:
     // ?getBlockStateFromName@BlockStateGroup@@QEBAPEBVBlockStateMeta@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class BlockStateMeta const* getBlockStateFromName(std::string const&) const;
+    MCAPI class BlockStateMeta const* getBlockStateFromName(std::string const& name) const;
 
     // symbol: ?registerBlockStateDefinition@BlockStateGroup@@QEAAXAEBUBlockStateDefinition@@@Z
-    MCAPI void registerBlockStateDefinition(struct BlockStateDefinition const&);
+    MCAPI void registerBlockStateDefinition(struct BlockStateDefinition const& def);
 
     // symbol: ?registerExistingBlockState@BlockStateGroup@@QEAAXAEBVBlockState@@@Z
-    MCAPI void registerExistingBlockState(class BlockState const&);
+    MCAPI void registerExistingBlockState(class BlockState const& state);
 
     // symbol:
     // ?loadBlockStateFromJson@BlockStateGroup@@SA_NAEAUBlockStateDefinition@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
-    MCAPI static bool
-    loadBlockStateFromJson(struct BlockStateDefinition&, std::string const&, class Json::Value const&);
+    MCAPI static bool loadBlockStateFromJson(
+        struct BlockStateDefinition& blockState,
+        std::string const&           name,
+        class Json::Value const&     root
+    );
 
     // symbol: ?MAX_ENUM_SIZE@BlockStateGroup@@2HB
     MCAPI static int const MAX_ENUM_SIZE;

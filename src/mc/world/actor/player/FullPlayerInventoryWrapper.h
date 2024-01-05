@@ -28,11 +28,16 @@ public:
     MCAPI int clearAllItems();
 
     // symbol: ?getItemCount@FullPlayerInventoryWrapper@@QEAAHV?$function@$$A6A_NAEBVItemStack@@@Z@std@@@Z
-    MCAPI int getItemCount(std::function<bool(class ItemStack const&)>);
+    MCAPI int getItemCount(std::function<bool(class ItemStack const&)> comparator);
 
     // symbol:
     // ?removeResource@FullPlayerInventoryWrapper@@QEAAHAEBVItemStack@@V?$function@$$A6A_NAEBVItemStack@@@Z@std@@_NH@Z
-    MCAPI int removeResource(class ItemStack const&, std::function<bool(class ItemStack const&)>, bool, int);
+    MCAPI int removeResource(
+        class ItemStack const&                      sourceItem,
+        std::function<bool(class ItemStack const&)> comparator,
+        bool                                        requireExactAux,
+        int                                         maxCount
+    );
 
     // NOLINTEND
 
@@ -43,7 +48,11 @@ public:
 
     // symbol:
     // ?_getSimpleContainerItemCount@FullPlayerInventoryWrapper@@AEAAHAEAVSimpleContainer@@HV?$function@$$A6A_NAEBVItemStack@@@Z@std@@@Z
-    MCAPI int _getSimpleContainerItemCount(class SimpleContainer&, int, std::function<bool(class ItemStack const&)>);
+    MCAPI int _getSimpleContainerItemCount(
+        class SimpleContainer&                      container,
+        int                                         slot,
+        std::function<bool(class ItemStack const&)> comparator
+    );
 
     // symbol: ?_removeCursorItem@FullPlayerInventoryWrapper@@AEAAHAEBVItemStack@@_NH@Z
     MCAPI int _removeCursorItem(class ItemStack const& item, bool requireExactAux, int maxCount);

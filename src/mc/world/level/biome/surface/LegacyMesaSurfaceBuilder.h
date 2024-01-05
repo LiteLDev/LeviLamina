@@ -29,22 +29,22 @@ public:
     virtual ~LegacyMesaSurfaceBuilder() = default;
 
     // vIndex: 1, symbol: ?init@LegacyMesaSurfaceBuilder@VanillaSurfaceBuilders@@UEAAXAEAVEntityContext@@I@Z
-    virtual void init(class EntityContext&, uint);
+    virtual void init(class EntityContext& entity, uint levelSeed);
 
     // vIndex: 2, symbol:
     // ?buildSurfaceAt@LegacyMesaSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z
-    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&) const;
+    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const& parameters) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?generateBands@LegacyMesaSurfaceBuilder@VanillaSurfaceBuilders@@AEAAXAEAVRandom@@@Z
-    MCAPI void generateBands(class Random&);
+    MCAPI void generateBands(class Random& random);
 
     // symbol:
     // ?getBand@LegacyMesaSurfaceBuilder@VanillaSurfaceBuilders@@AEBA?AW4BlockColor@@HHHAEBVPerlinSimplexNoise@@@Z
-    MCAPI ::BlockColor getBand(int, int, int, class PerlinSimplexNoise const&) const;
+    MCAPI ::BlockColor getBand(int worldX, int y, int worldZ, class PerlinSimplexNoise const& noiseBuf) const;
 
     // NOLINTEND
 };

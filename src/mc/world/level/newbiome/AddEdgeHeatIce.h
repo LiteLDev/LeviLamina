@@ -24,7 +24,8 @@ public:
     // symbol:
     // ??RAddEdgeHeatIce@OperationNodeFilters@@QEBA?AUPreBiome@OperationNodeValues@@AEAU?$NeighborhoodReader@UPreBiome@OperationNodeValues@@$00$00@OperationNodeDetails@@@Z
     MCAPI struct OperationNodeValues::PreBiome
-    operator()(struct OperationNodeDetails::NeighborhoodReader<struct OperationNodeValues::PreBiome, 1, 1>&) const;
+    operator()(struct OperationNodeDetails::NeighborhoodReader<struct OperationNodeValues::PreBiome, 1, 1>& reader
+    ) const;
 
     // NOLINTEND
 };

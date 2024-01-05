@@ -17,7 +17,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?appendEnchantToFormattedText@EnchantUtils@@SAXW4Type@Enchant@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
-    MCAPI static void appendEnchantToFormattedText(::Enchant::Type, std::string_view, std::string&);
+    MCAPI static void appendEnchantToFormattedText(::Enchant::Type type, std::string_view, std::string&);
 
     // symbol: ?applyEnchant@EnchantUtils@@SA_NAEAVItemStackBase@@AEBVEnchantmentInstance@@_N@Z
     MCAPI static bool
@@ -68,7 +68,7 @@ public:
 
     // symbol:
     // ?getCurses@EnchantUtils@@SAXAEBVItemStackBase@@AEAV?$vector@VEnchantmentInstance@@V?$allocator@VEnchantmentInstance@@@std@@@std@@@Z
-    MCAPI static void getCurses(class ItemStackBase const&, std::vector<class EnchantmentInstance>&);
+    MCAPI static void getCurses(class ItemStackBase const& itemStack, std::vector<class EnchantmentInstance>&);
 
     // symbol: ?getDamageReduction@EnchantUtils@@SAMAEBVActorDamageSource@@AEBVMob@@@Z
     MCAPI static float getDamageReduction(class ActorDamageSource const& source, class Mob const& target);
@@ -88,7 +88,7 @@ public:
     MCAPI static std::vector<class Vec3> getEnchantingTablePositions(class BlockSource& source, class Vec3 const& pos);
 
     // symbol: ?getEnchantmentId@EnchantUtils@@SA?AW4Type@Enchant@@AEBVHashedString@@@Z
-    MCAPI static ::Enchant::Type getEnchantmentId(class HashedString const&);
+    MCAPI static ::Enchant::Type getEnchantmentId(class HashedString const& stringId);
 
     // symbol: ?getLegalEnchants@EnchantUtils@@SA?AV?$vector@HV?$allocator@H@std@@@std@@PEBVItem@@@Z
     MCAPI static std::vector<int> getLegalEnchants(class Item const* item);
@@ -100,7 +100,7 @@ public:
     MCAPI static float getMeleeDamageBonus(class Actor const& victim, class Actor& attacker);
 
     // symbol: ?getRandomDamagedItemWithMending@EnchantUtils@@SAAEBVItemStack@@AEBVMob@@@Z
-    MCAPI static class ItemStack const& getRandomDamagedItemWithMending(class Mob const&);
+    MCAPI static class ItemStack const& getRandomDamagedItemWithMending(class Mob const& equipped);
 
     // symbol: ?getRandomItemWith@EnchantUtils@@SAAEBVItemStack@@W4Type@Enchant@@AEBVMob@@W4EquipmentFilter@@@Z
     MCAPI static class ItemStack const&
@@ -113,13 +113,13 @@ public:
     MCAPI static int getTotalProtectionLevels(::Enchant::Type type, class Mob const& target);
 
     // symbol: ?hasCurse@EnchantUtils@@SA_NAEBVItemStackBase@@@Z
-    MCAPI static bool hasCurse(class ItemStackBase const&);
+    MCAPI static bool hasCurse(class ItemStackBase const& item);
 
     // symbol: ?hasEnchant@EnchantUtils@@SA_NW4Type@Enchant@@AEBVItemStackBase@@@Z
     MCAPI static bool hasEnchant(::Enchant::Type enchantType, class ItemStackBase const& item);
 
     // symbol: ?isCurse@EnchantUtils@@SA_NW4Type@Enchant@@@Z
-    MCAPI static bool isCurse(::Enchant::Type);
+    MCAPI static bool isCurse(::Enchant::Type enchantType);
 
     // symbol: ?randomlyEnchant@EnchantUtils@@SAXAEAVItemInstance@@HH_N@Z
     MCAPI static void randomlyEnchant(class ItemInstance& out, int cost, int valueBuff, bool treasure);

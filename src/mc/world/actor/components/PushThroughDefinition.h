@@ -20,13 +20,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initialize@PushThroughDefinition@@QEBAXAEAVEntityContext@@@Z
-    MCAPI void initialize(class EntityContext&) const;
+    MCAPI void initialize(class EntityContext& entity) const;
 
     // symbol:
     // ?buildSchema@PushThroughDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UPushThroughDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct PushThroughDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct PushThroughDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

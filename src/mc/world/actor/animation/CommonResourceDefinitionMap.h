@@ -35,14 +35,15 @@ public:
 
     // symbol:
     // ?mergeActorAnimateScriptArray@CommonResourceDefinitionMap@@QEAAXAEBV?$vector@UNamedMolangScript@@V?$allocator@UNamedMolangScript@@@std@@@std@@@Z
-    MCAPI void mergeActorAnimateScriptArray(std::vector<struct NamedMolangScript> const&);
+    MCAPI void mergeActorAnimateScriptArray(std::vector<struct NamedMolangScript> const& actorAnimateScriptArray);
 
     // symbol: ?mergeAnimation@CommonResourceDefinitionMap@@QEAAXAEBVHashedString@@VActorSkeletalAnimationPtr@@@Z
-    MCAPI void mergeAnimation(class HashedString const&, class ActorSkeletalAnimationPtr);
+    MCAPI void mergeAnimation(class HashedString const& name, class ActorSkeletalAnimationPtr animationPtr);
 
     // symbol:
     // ?mergeAnimationController@CommonResourceDefinitionMap@@QEAAXAEBVHashedString@@VActorAnimationControllerPtr@@@Z
-    MCAPI void mergeAnimationController(class HashedString const&, class ActorAnimationControllerPtr);
+    MCAPI void
+    mergeAnimationController(class HashedString const& name, class ActorAnimationControllerPtr animationControllerPtr);
 
     // NOLINTEND
 

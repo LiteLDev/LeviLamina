@@ -22,10 +22,10 @@ public:
     // symbol:
     // ?tickResetPositionModeSystem@ResetPositionModeSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@UPlayerPositionModeComponent@@@@@Z
     MCAPI static void
-        tickResetPositionModeSystem(class ViewT<
-                                    class StrictEntityContext,
-                                    struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                                    struct PlayerPositionModeComponent>);
+    tickResetPositionModeSystem(class ViewT<
+                                class StrictEntityContext,
+                                struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
+                                struct PlayerPositionModeComponent> view);
 
     // NOLINTEND
 };

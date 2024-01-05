@@ -36,12 +36,16 @@ public:
         MCAPI Definition();
 
         // symbol: ?initialize@Definition@StayNearNoteblockGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext&, class StayNearNoteblockGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class StayNearNoteblockGoal& goal) const;
 
         // symbol:
         // ?buildSchema@Definition@StayNearNoteblockGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@StayNearNoteblockGoal@@@JsonUtil@@@4@@Z
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class StayNearNoteblockGoal::Definition>>&);
+        MCAPI static void buildSchema(
+            std::string const&                             name,
+            std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                class JsonUtil::EmptyClass,
+                class StayNearNoteblockGoal::Definition>>& root
+        );
 
         // NOLINTEND
     };
@@ -74,10 +78,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@StayNearNoteblockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0StayNearNoteblockGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit StayNearNoteblockGoal(class Mob&);
+    MCAPI explicit StayNearNoteblockGoal(class Mob& mob);
 
     // NOLINTEND
 

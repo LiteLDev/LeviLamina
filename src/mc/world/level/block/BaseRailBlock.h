@@ -175,8 +175,7 @@ public:
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@BaseRailBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void
-    neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const& neighborPos) const;
+    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -194,7 +193,7 @@ public:
     virtual void __unk_vfn_117();
 
     // vIndex: 126, symbol: ?onGraphicsModeChanged@BaseRailBlock@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
-    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const&);
+    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const& context);
 
     // vIndex: 130, symbol: ?canSpawnOn@BaseRailBlock@@UEBA_NPEAVActor@@@Z
     virtual bool canSpawnOn(class Actor*) const;
@@ -218,12 +217,12 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@BaseRailBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 158, symbol:
     // ?getRenderLayer@BaseRailBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual ::BlockRenderLayer
-    getRenderLayer(class Block const& block, class BlockSource& region, class BlockPos const& pos) const;
+    getRenderLayer(class Block const&, class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?isRailBlock@BaseRailBlock@@UEBA_NXZ
     MCVAPI bool isRailBlock() const;
@@ -232,13 +231,13 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0BaseRailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI BaseRailBlock(std::string const& nameId, int id, bool usesDataBit);
+    MCAPI BaseRailBlock(std::string const& nameId, int, bool usesDataBit);
 
     // symbol: ?isCorner@BaseRailBlock@@SA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool isCorner(class BlockSource const&, class BlockPos const&);
+    MCAPI static bool isCorner(class BlockSource const& region, class BlockPos const& pos);
 
     // symbol: ?isFacingWestEast@BaseRailBlock@@SA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool isFacingWestEast(class BlockSource const&, class BlockPos const&);
+    MCAPI static bool isFacingWestEast(class BlockSource const& region, class BlockPos const& pos);
 
     // symbol: ?isRail@BaseRailBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isRail(class Block const& block);
@@ -247,7 +246,7 @@ public:
     MCAPI static bool isRail(class IConstBlockSource const& region, class BlockPos const& pos);
 
     // symbol: ?isSlope@BaseRailBlock@@SA_NAEBVBlock@@@Z
-    MCAPI static bool isSlope(class Block const&);
+    MCAPI static bool isSlope(class Block const& block);
 
     // symbol: ?isSlope@BaseRailBlock@@SA_NH@Z
     MCAPI static bool isSlope(int);

@@ -51,10 +51,10 @@ public:
     virtual void __unk_vfn_8();
 
     // vIndex: 9, symbol: ?onServerThreadStarted@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-    virtual ::EventResult onServerThreadStarted(class ServerInstance&);
+    virtual ::EventResult onServerThreadStarted(class ServerInstance& instance);
 
     // vIndex: 10, symbol: ?onServerThreadStopped@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-    virtual ::EventResult onServerThreadStopped(class ServerInstance&);
+    virtual ::EventResult onServerThreadStopped(class ServerInstance& serverInstance);
 
     // vIndex: 11, symbol: __unk_vfn_11
     virtual void __unk_vfn_11();
@@ -65,7 +65,7 @@ public:
 
     // vIndex: 13, symbol:
     // ?onEvent@?$EventListenerDispatcher@VServerInstanceEventListener@@@@MEAA?AW4EventResult@@AEBUServerInstanceNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct ServerInstanceNotificationEvent const&);
+    virtual ::EventResult onEvent(struct ServerInstanceNotificationEvent const& event);
 
     // symbol:
     // ??0ServerScriptManager@@QEAA@UScriptSettings@@V?$NonOwnerPointer@VScheduler@@@Bedrock@@AEAVIMinecraftEventing@@_N@Z
@@ -99,13 +99,13 @@ public:
     MCAPI bool _loadAndRunAllPlugins(class ServerInstance&, class ServerLevel&, bool);
 
     // symbol: ?_registerEventHandlers@ServerScriptManager@@AEBAXAEAVLevel@@@Z
-    MCAPI void _registerEventHandlers(class Level&) const;
+    MCAPI void _registerEventHandlers(class Level& level) const;
 
     // symbol: ?_unregisterEventHandlers@ServerScriptManager@@AEBAXAEAVLevel@@@Z
-    MCAPI void _unregisterEventHandlers(class Level&) const;
+    MCAPI void _unregisterEventHandlers(class Level& level) const;
 
     // symbol: ?_sendWorldInitializeEvent@ServerScriptManager@@CAXAEAVServerLevel@@VWeakLifetimeScope@Scripting@@@Z
-    MCAPI static void _sendWorldInitializeEvent(class ServerLevel&, class Scripting::WeakLifetimeScope);
+    MCAPI static void _sendWorldInitializeEvent(class ServerLevel& level, class Scripting::WeakLifetimeScope scope);
 
     // NOLINTEND
 };

@@ -25,7 +25,7 @@ public:
     MCAPI void initialize(class EntityContext& entity, class MobEffectComponent& component) const;
 
     // symbol: ?setCooldownTimeInTicks@MobEffectDefinition@@QEAAXAEBH@Z
-    MCAPI void setCooldownTimeInTicks(int const&);
+    MCAPI void setCooldownTimeInTicks(int const& seconds);
 
     // symbol: ?setEffectTimeInTicks@MobEffectDefinition@@QEAAXAEBH@Z
     MCAPI void setEffectTimeInTicks(int const& seconds);

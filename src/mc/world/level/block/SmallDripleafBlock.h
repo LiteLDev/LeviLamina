@@ -118,19 +118,21 @@ public:
 
     // vIndex: 79, symbol:
     // ?onFertilized@SmallDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
+        const;
 
     // vIndex: 81, symbol: ?canBeFertilized@SmallDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 85, symbol: ?mayPlace@SmallDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 86, symbol: ?mayPlaceOn@SmallDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlaceOn(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@SmallDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void neighborChanged(class BlockSource& region, class BlockPos const& pos, class BlockPos const&) const;
 
     // vIndex: 95, symbol:
     // ?spawnResources@SmallDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z
@@ -139,8 +141,13 @@ public:
         const;
 
     // vIndex: 98, symbol: ?getPlacementBlock@SmallDripleafBlock@@UEBAAEBVBlock@@AEBVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-    virtual class Block const&
-    getPlacementBlock(class Actor const&, class BlockPos const&, uchar, class Vec3 const&, int) const;
+    virtual class Block const& getPlacementBlock(
+        class Actor const&    by,
+        class BlockPos const& pos,
+        uchar                 face,
+        class Vec3 const&     clickPos,
+        int                   itemValue
+    ) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -164,13 +171,13 @@ public:
     virtual void __unk_vfn_138();
 
     // vIndex: 147, symbol: ?onPlace@SmallDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onPlace(class BlockSource&, class BlockPos const&) const;
+    virtual void onPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 149, symbol: __unk_vfn_149
     virtual void __unk_vfn_149();
 
     // vIndex: 150, symbol: ?tick@SmallDripleafBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource& region, class BlockPos const& pos, class Random&) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
@@ -179,7 +186,7 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 156, symbol: ?canSurvive@SmallDripleafBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 164, symbol: ?getResourceItem@SmallDripleafBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
@@ -191,20 +198,20 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SmallDripleafBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SmallDripleafBlock(std::string const&, int);
+    MCAPI SmallDripleafBlock(std::string const& nameId, int);
 
     // symbol: ?tryPlaceSmallDripleaf@SmallDripleafBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@HH@Z
-    MCAPI static bool tryPlaceSmallDripleaf(class BlockSource&, class BlockPos const&, int, int);
+    MCAPI static bool tryPlaceSmallDripleaf(class BlockSource& region, class BlockPos const& pos, int, int updateFlags);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_isViablePlacePos@SmallDripleafBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool _isViablePlacePos(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool _isViablePlacePos(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?placeUpperBlock@SmallDripleafBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI static void placeUpperBlock(class BlockSource&, class BlockPos const&, int);
+    MCAPI static void placeUpperBlock(class BlockSource& region, class BlockPos const& pos, int updateFlags);
 
     // NOLINTEND
 };

@@ -21,9 +21,10 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?buildSchema@OnDeathDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnDeathDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnDeathDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnDeathDefinition>>&
+            root
+    );
 
     // NOLINTEND
 };

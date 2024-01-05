@@ -20,14 +20,14 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?addDropItem@AgeableDefinition@@QEAAXAEBVItemDescriptor@@@Z
-    MCAPI void addDropItem(class ItemDescriptor const&);
+    MCAPI void addDropItem(class ItemDescriptor const& itemDescriptor);
 
     // symbol: ?addFeedItem@AgeableDefinition@@QEAAXAEBUActorDefinitionFeedItem@@@Z
-    MCAPI void addFeedItem(struct ActorDefinitionFeedItem const&);
+    MCAPI void addFeedItem(struct ActorDefinitionFeedItem const& feedItem);
 
     // symbol:
     // ?addFeedItemByName@AgeableDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void addFeedItemByName(std::string const& name);
+    MCAPI void addFeedItemByName(std::string const& itemName);
 
     // symbol: ?canGrowUp@AgeableDefinition@@QEBA_NXZ
     MCAPI bool canGrowUp() const;

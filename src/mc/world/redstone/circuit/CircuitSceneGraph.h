@@ -63,11 +63,11 @@ public:
     MCAPI class BaseCircuitComponent* getBaseComponent(class BlockPos const& pos);
 
     // symbol: ?getComponent@CircuitSceneGraph@@QEAAPEAVBaseCircuitComponent@@AEBVBlockPos@@W4CircuitComponentType@@@Z
-    MCAPI class BaseCircuitComponent* getComponent(class BlockPos const&, ::CircuitComponentType);
+    MCAPI class BaseCircuitComponent* getComponent(class BlockPos const& pos, ::CircuitComponentType typeID);
 
     // symbol:
     // ?getFromPendingAdd@CircuitSceneGraph@@QEAAPEAVBaseCircuitComponent@@AEBVBlockPos@@W4CircuitComponentType@@@Z
-    MCAPI class BaseCircuitComponent* getFromPendingAdd(class BlockPos const&, ::CircuitComponentType);
+    MCAPI class BaseCircuitComponent* getFromPendingAdd(class BlockPos const& pos, ::CircuitComponentType typeID);
 
     // symbol: ?invalidatePos@CircuitSceneGraph@@QEAAXAEBVBlockPos@@@Z
     MCAPI void invalidatePos(class BlockPos const& pos);

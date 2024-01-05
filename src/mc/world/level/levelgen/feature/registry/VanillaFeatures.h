@@ -15,7 +15,8 @@ public:
     MCAPI static void registerFeatureTypes(class FeatureTypeFactory& typeFactories);
 
     // symbol: ?registerFeatures@VanillaFeatures@@SAXAEAVFeatureRegistry@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-    MCAPI static void registerFeatures(class FeatureRegistry&, class BaseGameVersion const&, class Experiments const&);
+    MCAPI static void
+    registerFeatures(class FeatureRegistry& registry, class BaseGameVersion const& baseGameVersion, class Experiments const&);
 
     // NOLINTEND
 };

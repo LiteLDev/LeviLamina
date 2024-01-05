@@ -18,8 +18,15 @@ namespace AgentActionSystems {
 // NOLINTBEGIN
 // symbol:
 // ?tickActionFailed@AgentActionSystems@@YAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@AEAV?$EntityModifier@UActionDetails@AgentComponents@@V?$FlagComponent@UAnimationShrugFlag@AgentComponents@@@@VCommandCooldown@2@V?$FlagComponent@UExecutingFlag@AgentComponents@@@@@@@Z
-MCAPI void
-tickActionFailed(class StrictEntityContext&, class ActorOwnerComponent&, class EntityModifier<struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::AnimationShrugFlag>, class AgentComponents::CommandCooldown, class FlagComponent<struct AgentComponents::ExecutingFlag>>&);
+MCAPI void tickActionFailed(
+    class StrictEntityContext& entity,
+    class ActorOwnerComponent&,
+    class EntityModifier<
+        struct AgentComponents::ActionDetails,
+        class FlagComponent<struct AgentComponents::AnimationShrugFlag>,
+        class AgentComponents::CommandCooldown,
+        class FlagComponent<struct AgentComponents::ExecutingFlag>>& modifier
+);
 // NOLINTEND
 
 }; // namespace AgentActionSystems

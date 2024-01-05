@@ -38,7 +38,7 @@ public:
 
     // symbol:
     // ?fromString@ScriptDimensionTypes@ScriptModuleMinecraft@@SA?AV?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static DimensionType fromString(std::string const&);
+    MCAPI static DimensionType fromString(std::string const& name);
 
     // symbol:
     // ?toString@ScriptDimensionTypes@ScriptModuleMinecraft@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$AutomaticID@VDimension@@H@@@Z

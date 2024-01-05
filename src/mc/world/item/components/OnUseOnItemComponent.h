@@ -44,7 +44,13 @@ public:
     virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, uchar) const;
 
     // vIndex: 8, symbol: ?_useOn@OnUseOnItemComponent@@MEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, uchar, class Vec3 const&) const;
+    virtual bool _useOn(
+        class ItemStack&      itemInstance,
+        class Actor&          entity,
+        class BlockPos const& blockPos,
+        uchar                 face,
+        class Vec3 const&     clickPos
+    ) const;
 
     // vIndex: 9, symbol: ?_initializeComponent@ItemComponent@@MEAAXXZ
     virtual void _initializeComponent();

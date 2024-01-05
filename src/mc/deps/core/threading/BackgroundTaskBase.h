@@ -23,7 +23,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0CurrentTaskAutoScope@BackgroundTaskBase@@QEAA@PEAV1@@Z
-        MCAPI explicit CurrentTaskAutoScope(class BackgroundTaskBase*);
+        MCAPI explicit CurrentTaskAutoScope(class BackgroundTaskBase* curr);
 
         // symbol: ??1CurrentTaskAutoScope@BackgroundTaskBase@@QEAA@XZ
         MCAPI ~CurrentTaskAutoScope();
@@ -43,7 +43,11 @@ public:
     virtual ~BackgroundTaskBase();
 
     // symbol: ??0BackgroundTaskBase@@QEAA@V?$not_null@PEAVIBackgroundTaskOwner@@@gsl@@AEBUTaskStartInfoBase@@_N@Z
-    MCAPI BackgroundTaskBase(gsl::not_null<class IBackgroundTaskOwner*>, struct TaskStartInfoBase const&, bool);
+    MCAPI BackgroundTaskBase(
+        gsl::not_null<class IBackgroundTaskOwner*> group,
+        struct TaskStartInfoBase const&            startInfo,
+        bool                                       isAsync
+    );
 
     // symbol: ?getGroup@BackgroundTaskBase@@QEAAPEAVIBackgroundTaskOwner@@XZ
     MCAPI class IBackgroundTaskOwner* getGroup();
@@ -55,7 +59,7 @@ public:
     MCAPI bool isAsync() const;
 
     // symbol: ?setNext@BackgroundTaskBase@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
-    MCAPI void setNext(std::shared_ptr<class BackgroundTaskBase>);
+    MCAPI void setNext(std::shared_ptr<class BackgroundTaskBase> next);
 
     // NOLINTEND
 

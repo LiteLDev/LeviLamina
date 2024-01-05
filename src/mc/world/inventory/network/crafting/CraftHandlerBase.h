@@ -21,7 +21,7 @@ public:
 
     // vIndex: 1, symbol:
     // ?handleConsumedItem@CraftHandlerBase@@UEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z
-    virtual ::ItemStackNetResult handleConsumedItem(::ContainerEnumName, uchar, class ItemStack const&);
+    virtual ::ItemStackNetResult handleConsumedItem(::ContainerEnumName, uchar slot, class ItemStack const&);
 
     // vIndex: 2, symbol:
     // ?preHandleAction@CraftHandlerBase@@UEAA?AW4ItemStackNetResult@@W4ItemStackRequestActionType@@@Z
@@ -35,7 +35,7 @@ public:
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&) = 0;
 
     // vIndex: 5, symbol: ?_postCraftRequest@CraftHandlerBase@@MEAAX_N@Z
-    virtual void _postCraftRequest(bool);
+    virtual void _postCraftRequest(bool wasSuccess);
 
     // vIndex: 6, symbol: ?_getLevelRecipes@CraftHandlerBase@@MEBAPEBVRecipes@@XZ
     virtual class Recipes const* _getLevelRecipes() const;

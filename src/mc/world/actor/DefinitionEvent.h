@@ -17,7 +17,7 @@ public:
 
     // symbol:
     // ?evaluateEvent@DefinitionEvent@@QEBAXAEAVRenderParams@@AEAV?$vector@UDefinitionModifier@@V?$allocator@UDefinitionModifier@@@std@@@std@@@Z
-    MCAPI void evaluateEvent(class RenderParams&, std::vector<struct DefinitionModifier>&) const;
+    MCAPI void evaluateEvent(class RenderParams& params, std::vector<struct DefinitionModifier>& modifications) const;
 
     // symbol: ??4DefinitionEvent@@QEAAAEAV0@AEBV0@@Z
     MCAPI class DefinitionEvent& operator=(class DefinitionEvent const&);

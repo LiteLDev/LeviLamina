@@ -16,7 +16,7 @@ public:
     MCAPI bool isNan() const;
 
     // symbol: ?isNear@Vec3@@QEBA_NAEBV1@M@Z
-    MCAPI bool isNear(class Vec3 const&, float) const;
+    MCAPI bool isNear(class Vec3 const& rhs, float e) const;
 
     // symbol: ?maxComponent@Vec3@@QEBAMXZ
     MCAPI float maxComponent() const;
@@ -34,7 +34,7 @@ public:
     MCAPI static class Vec3 directionFromRotation(float rotX, float rotY);
 
     // symbol: ?fromXZ@Vec3@@SA?AV1@AEBVVec2@@M@Z
-    MCAPI static class Vec3 fromXZ(class Vec2 const&, float);
+    MCAPI static class Vec3 fromXZ(class Vec2 const&, float y);
 
     // symbol: ?rotationFromDirection@Vec3@@SA?AVVec2@@AEBV1@@Z
     MCAPI static class Vec2 rotationFromDirection(class Vec3 const& dir);

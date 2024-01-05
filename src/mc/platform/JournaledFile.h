@@ -51,7 +51,7 @@ public:
     MCAPI static void populateImportantFiles(class Core::Path fileName, std::vector<std::string>& importantFiles);
 
     // symbol: ?replaceHeadFileWithBackup@JournaledFile@@SA?AVResult@Core@@VPath@3@@Z
-    MCAPI static class Core::Result replaceHeadFileWithBackup(class Core::Path);
+    MCAPI static class Core::Result replaceHeadFileWithBackup(class Core::Path fileName);
 
     // NOLINTEND
 

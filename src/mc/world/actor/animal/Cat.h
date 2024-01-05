@@ -88,7 +88,10 @@ public:
     virtual void aiStep();
 
     // symbol: ??0Cat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Cat(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI
+    Cat(class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext);
 
     // symbol: ?SNEAK_SPEED_MOD@Cat@@2MB
     MCAPI static float const SNEAK_SPEED_MOD;

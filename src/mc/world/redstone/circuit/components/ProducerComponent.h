@@ -29,11 +29,10 @@ public:
 
     // vIndex: 12, symbol:
     // ?allowConnection@ProducerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-    virtual bool
-    allowConnection(class CircuitSceneGraph& graph, class CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const& info, bool&);
 
     // vIndex: 14, symbol: ?evaluate@ProducerComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-    virtual bool evaluate(class CircuitSystem& system, class BlockPos const& pos);
+    virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
 
     // vIndex: 17, symbol: __unk_vfn_17
     virtual void __unk_vfn_17();

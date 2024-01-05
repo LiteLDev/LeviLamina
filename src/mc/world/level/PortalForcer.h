@@ -42,19 +42,20 @@ public:
     ) const;
 
     // symbol: ?force@PortalForcer@@QEAAXAEAVActor@@AEBUDimensionTransitionComponent@@@Z
-    MCAPI void force(class Actor&, struct DimensionTransitionComponent const&);
+    MCAPI void force(class Actor& entity, struct DimensionTransitionComponent const&);
 
     // symbol: ?portalRecordExists@PortalForcer@@QEBA_NV?$AutomaticID@VDimension@@H@@AEBVPortalRecord@@@Z
     MCAPI bool portalRecordExists(DimensionType dimensionType, class PortalRecord const& record) const;
 
     // symbol: ?removeMisalignedPortalRecords@PortalForcer@@QEAAXAEAVBlockSource@@AEBVPortalShape@@AEBVPortalRecord@@@Z
-    MCAPI void removeMisalignedPortalRecords(class BlockSource&, class PortalShape const&, class PortalRecord const&);
+    MCAPI void
+    removeMisalignedPortalRecords(class BlockSource& region, class PortalShape const&, class PortalRecord const&);
 
     // symbol: ?removePortalRecord@PortalForcer@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void removePortalRecord(class BlockSource& source, class BlockPos const& pos);
 
     // symbol: ?canPortalReplaceBlock@PortalForcer@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static bool canPortalReplaceBlock(class BlockSource&, class BlockPos const&);
+    MCAPI static bool canPortalReplaceBlock(class BlockSource& region, class BlockPos const& blockPos);
 
     // symbol: ?MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION@PortalForcer@@2VBaseGameVersion@@B
     MCAPI static class BaseGameVersion const MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION;
@@ -68,8 +69,12 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_findPortal@PortalForcer@@AEBA?AV?$optional@VPortalRecord@@@std@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@HAEAV5@@Z
-    MCAPI std::optional<class PortalRecord>
-          _findPortal(DimensionType, class BlockPos const&, int, class BlockPos&) const;
+    MCAPI std::optional<class PortalRecord> _findPortal(
+        DimensionType         dimensionId,
+        class BlockPos const& centerBlockPos,
+        int                   radius,
+        class BlockPos&       targetBlockPos
+    ) const;
 
     // NOLINTEND
 };

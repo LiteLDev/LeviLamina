@@ -41,7 +41,7 @@ public:
     virtual class ResourcePack* getResourcePackForPackId(struct PackIdVersion const& idAndVersion) const = 0;
 
     // vIndex: 3, symbol: ?getResourcePackByUUID@ResourcePackRepository@@UEBAPEAVResourcePack@@AEBVUUID@mce@@@Z
-    virtual class ResourcePack* getResourcePackByUUID(class mce::UUID const& id) const = 0;
+    virtual class ResourcePack* getResourcePackByUUID(class mce::UUID const&) const = 0;
 
     // vIndex: 4, symbol:
     // ?getResourcePackForPackIdOwned@ResourcePackRepository@@UEBAPEAVResourcePack@@AEBUPackIdVersion@@@Z
@@ -84,7 +84,7 @@ public:
     virtual std::vector<struct PackIdVersion> const& getServicePacks() const = 0;
 
     // vIndex: 15, symbol: ?addServicePacksToStack@ResourcePackRepository@@UEBAXAEAVResourcePackStack@@@Z
-    virtual void addServicePacksToStack(class ResourcePackStack&) const = 0;
+    virtual void addServicePacksToStack(class ResourcePackStack& stack) const = 0;
 
     // vIndex: 16, symbol:
     // ?addCachedResourcePacks@ResourcePackRepository@@UEAAXPEBV?$unordered_map@VContentIdentity@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@VContentIdentity@@@3@U?$equal_to@VContentIdentity@@@3@V?$allocator@U?$pair@$$CBVContentIdentity@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@@Z

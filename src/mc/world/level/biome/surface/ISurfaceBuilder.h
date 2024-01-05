@@ -24,12 +24,12 @@ public:
         // symbol:
         // ??0BuildParameters@ISurfaceBuilder@@QEAA@AEBVBiome@@AEAVRandom@@AEAVBlockVolume@@AEBVBlockPos@@MFAEBV?$unique_ptr@VPerlinSimplexNoise@@U?$default_delete@VPerlinSimplexNoise@@@std@@@std@@W4WaterLevelStrategy@1@HAEBVHeightmapWrapper@@_N@Z
         MCAPI BuildParameters(
-            class Biome const&,
-            class Random&,
-            class BlockVolume&,
-            class BlockPos const&,
-            float,
-            short,
+            class Biome const&    biome,
+            class Random&         random,
+            class BlockVolume&    blocks,
+            class BlockPos const& pos,
+            float                 depthValue,
+            short                 seaLevel,
             std::unique_ptr<class PerlinSimplexNoise> const&,
             ::ISurfaceBuilder::WaterLevelStrategy,
             int,

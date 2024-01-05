@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     // symbol: ??4ScriptBlockLocationIterator@ScriptModuleMinecraft@@QEAAAEAV01@$$QEAV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptBlockLocationIterator&
-    operator=(class ScriptModuleMinecraft::ScriptBlockLocationIterator&&);
+    operator=(class ScriptModuleMinecraft::ScriptBlockLocationIterator&& it);
 
     // symbol:
     // ?bind@ScriptBlockLocationIterator@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptBlockLocationIterator@ScriptModuleMinecraft@@@Scripting@@XZ

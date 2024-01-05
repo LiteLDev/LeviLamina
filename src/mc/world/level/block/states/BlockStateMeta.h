@@ -15,16 +15,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0BlockStateMeta@@QEAA@AEBVBlockState@@AEBUBlockStateDefinition@@@Z
-    MCAPI BlockStateMeta(class BlockState const&, struct BlockStateDefinition const&);
+    MCAPI BlockStateMeta(class BlockState const& blockState, struct BlockStateDefinition const& def);
 
     // symbol: ?getBool@BlockStateMeta@@QEBA?B_NH@Z
-    MCAPI bool const getBool(int) const;
+    MCAPI bool const getBool(int index) const;
 
     // symbol: ?getID@BlockStateMeta@@QEBA_KXZ
     MCAPI uint64 getID() const;
 
     // symbol: ?getInt@BlockStateMeta@@QEBA?BHH@Z
-    MCAPI int const getInt(int) const;
+    MCAPI int const getInt(int index) const;
 
     // symbol: ?getState@BlockStateMeta@@QEBAAEBVBlockState@@XZ
     MCAPI class BlockState const& getState() const;

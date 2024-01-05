@@ -40,7 +40,7 @@ public:
     MCAPI BossComponent(class BossComponent&&);
 
     // symbol: ?addPlayerToParty@BossComponent@@QEAAXVUUID@mce@@H@Z
-    MCAPI void addPlayerToParty(class mce::UUID id, int damage);
+    MCAPI void addPlayerToParty(class mce::UUID, int damage);
 
     // symbol: ?broadcastBossEvent@BossComponent@@QEAAXAEAVActor@@W4BossEventUpdateType@@@Z
     MCAPI void broadcastBossEvent(class Actor& owner, ::BossEventUpdateType type);
@@ -81,13 +81,14 @@ public:
     MCAPI class BossComponent& operator=(class BossComponent&&);
 
     // symbol: ?readAdditionalSaveData@BossComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void
+    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?registerPlayer@BossComponent@@QEAAXAEAVActor@@PEAVPlayer@@@Z
     MCAPI void registerPlayer(class Actor& owner, class Player* player);
 
     // symbol: ?resendBossEventData@BossComponent@@QEAAXAEAVActor@@PEAVPlayer@@@Z
-    MCAPI void resendBossEventData(class Actor&, class Player*);
+    MCAPI void resendBossEventData(class Actor& owner, class Player* player);
 
     // symbol: ?sendDeathTelemetry@BossComponent@@QEAAXAEAVActor@@@Z
     MCAPI void sendDeathTelemetry(class Actor& owner);
@@ -110,7 +111,7 @@ public:
 
     // symbol:
     // ?setName@BossComponent@@QEAAXAEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setName(class Actor&, std::string const&);
+    MCAPI void setName(class Actor& owner, std::string const& name);
 
     // symbol: ?tryRemoveBoss@BossComponent@@QEAA_NAEAVActor@@AEAVPlayer@@@Z
     MCAPI bool tryRemoveBoss(class Actor& owner, class Player& player);

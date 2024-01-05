@@ -55,7 +55,7 @@ public:
     );
 
     // symbol: ?execute@FunctionManager@@QEAAHAEAVFunctionEntry@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
-    MCAPI int execute(class FunctionEntry&, class CommandOrigin const&, ::FunctionQueueOrder);
+    MCAPI int execute(class FunctionEntry& toExecute, class CommandOrigin const& origin, ::FunctionQueueOrder order);
 
     // symbol:
     // ?getFunction@FunctionManager@@QEAAPEAVFunctionEntry@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -76,7 +76,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_addTickFunctionsFromJson@FunctionManager@@IEAAXAEBVValue@Json@@W4CurrentCmdVersion@@@Z
-    MCAPI void _addTickFunctionsFromJson(class Json::Value const&, ::CurrentCmdVersion);
+    MCAPI void _addTickFunctionsFromJson(class Json::Value const& arrayVal, ::CurrentCmdVersion);
 
     // symbol:
     // ?_processFunctionEntry@FunctionManager@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEAV43@W4CurrentCmdVersion@@AEBVCommandRegistry@@@Z
@@ -97,8 +97,10 @@ public:
 
     // symbol:
     // ?_queueCommandsAfterCaller@FunctionManager@@AEAAXAEBV?$vector@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@V?$allocator@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@@2@@std@@AEBVCommandOrigin@@@Z
-    MCAPI void
-    _queueCommandsAfterCaller(std::vector<std::unique_ptr<class IFunctionEntry>> const&, class CommandOrigin const&);
+    MCAPI void _queueCommandsAfterCaller(
+        std::vector<std::unique_ptr<class IFunctionEntry>> const& toQueue,
+        class CommandOrigin const&                                origin
+    );
 
     // symbol: ?_removeOriginReference@FunctionManager@@AEAAXAEBVCommandOrigin@@I@Z
     MCAPI void _removeOriginReference(class CommandOrigin const& origin, uint amount);

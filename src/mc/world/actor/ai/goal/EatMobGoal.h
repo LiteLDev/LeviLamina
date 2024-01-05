@@ -36,12 +36,15 @@ public:
         MCAPI Definition();
 
         // symbol: ?initialize@Definition@EatMobGoal@@QEBAXAEAVEntityContext@@AEAV2@@Z
-        MCAPI void initialize(class EntityContext&, class EatMobGoal&) const;
+        MCAPI void initialize(class EntityContext& entity, class EatMobGoal& goal) const;
 
         // symbol:
         // ?buildSchema@Definition@EatMobGoal@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDefinition@EatMobGoal@@@JsonUtil@@@4@@Z
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EatMobGoal::Definition>>&);
+        MCAPI static void buildSchema(
+            std::string const& name,
+            std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EatMobGoal::Definition>>& root
+        );
 
         // NOLINTEND
     };
@@ -74,10 +77,10 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@EatMobGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // symbol: ??0EatMobGoal@@QEAA@AEAVMob@@@Z
-    MCAPI explicit EatMobGoal(class Mob&);
+    MCAPI explicit EatMobGoal(class Mob& mob);
 
     // NOLINTEND
 };

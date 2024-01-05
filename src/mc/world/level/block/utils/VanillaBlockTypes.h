@@ -80,7 +80,7 @@ MCAPI extern class WeakPtr<class BlockLegacy> mWaxedWeatheredCutCopperStairs;
 MCAPI extern class WeakPtr<class BlockLegacy> mWeatheredCutCopperStairs;
 
 // symbol: ?registerBlocks@VanillaBlockTypes@@YAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
-MCAPI void registerBlocks(class BaseGameVersion const&, class Experiments const&);
+MCAPI void registerBlocks(class BaseGameVersion const& baseGameVersion, class Experiments const&);
 
 // symbol: ?unregisterBlocks@VanillaBlockTypes@@YAXXZ
 MCAPI void unregisterBlocks();

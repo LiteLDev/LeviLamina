@@ -22,7 +22,8 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?setup@Move@AgentComponents@@SAXAEAV12@AEAVEntityContext@@W4Direction@2@@Z
-    MCAPI static void setup(class AgentComponents::Move&, class EntityContext&, ::AgentComponents::Direction);
+    MCAPI static void
+    setup(class AgentComponents::Move&, class EntityContext& entity, ::AgentComponents::Direction dir);
 
     // NOLINTEND
 };

@@ -18,10 +18,10 @@ public:
     MCAPI MolangVariableMap();
 
     // symbol: ??0MolangVariableMap@@QEAA@$$QEAV0@@Z
-    MCAPI MolangVariableMap(class MolangVariableMap&&);
+    MCAPI MolangVariableMap(class MolangVariableMap&& rhs);
 
     // symbol: ??0MolangVariableMap@@QEAA@AEBV0@@Z
-    MCAPI MolangVariableMap(class MolangVariableMap const&);
+    MCAPI MolangVariableMap(class MolangVariableMap const& rhs);
 
     // symbol: ?clear@MolangVariableMap@@QEAAAEAV1@XZ
     MCAPI class MolangVariableMap& clear();
@@ -49,26 +49,27 @@ public:
     MCAPI struct MolangScriptArg const& getPublicMolangVariable(::MolangVariableIndex const&, bool&) const;
 
     // symbol: ??4MolangVariableMap@@QEAAAEAV0@$$QEAV0@@Z
-    MCAPI class MolangVariableMap& operator=(class MolangVariableMap&&);
+    MCAPI class MolangVariableMap& operator=(class MolangVariableMap&& rhs);
 
     // symbol: ??4MolangVariableMap@@QEAAAEAV0@AEBV0@@Z
-    MCAPI class MolangVariableMap& operator=(class MolangVariableMap const&);
+    MCAPI class MolangVariableMap& operator=(class MolangVariableMap const& rhs);
 
     // symbol: ?setMolangStructMember@MolangVariableMap@@QEAAXAEBVHashedString@@0AEBUMolangScriptArg@@@Z
     MCAPI void
-    setMolangStructMember(class HashedString const&, class HashedString const&, struct MolangScriptArg const&);
+    setMolangStructMember(class HashedString const&, class HashedString const&, struct MolangScriptArg const& value);
 
     // symbol: ?setMolangVariable@MolangVariableMap@@QEAAXAEBVHashedString@@AEBUMolangScriptArg@@@Z
-    MCAPI void setMolangVariable(class HashedString const&, struct MolangScriptArg const&);
+    MCAPI void setMolangVariable(class HashedString const& variableName, struct MolangScriptArg const& value);
 
     // symbol: ?setMolangVariable@MolangVariableMap@@QEAAXW4MolangVariableIndex@@AEBUMolangScriptArg@@@Z
-    MCAPI void setMolangVariable(::MolangVariableIndex, struct MolangScriptArg const&);
+    MCAPI void setMolangVariable(::MolangVariableIndex, struct MolangScriptArg const& value);
 
     // symbol: ?setMolangVariable@MolangVariableMap@@QEAAX_KPEBDAEBUMolangScriptArg@@@Z
-    MCAPI void setMolangVariable(uint64, char const*, struct MolangScriptArg const&);
+    MCAPI void
+    setMolangVariable(uint64 variableNameHash, char const* variableName, struct MolangScriptArg const& value);
 
     // symbol: ?setMolangVariableSettings@MolangVariableMap@@QEAAXAEBUMolangVariableSettings@@@Z
-    MCAPI void setMolangVariableSettings(struct MolangVariableSettings const&);
+    MCAPI void setMolangVariableSettings(struct MolangVariableSettings const& settings);
 
     // symbol: ??1MolangVariableMap@@QEAA@XZ
     MCAPI ~MolangVariableMap();
@@ -84,7 +85,7 @@ public:
     MCAPI class MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex);
 
     // symbol: ?_getOrAddMolangVariable@MolangVariableMap@@AEAAPEAVMolangVariable@@AEB_KPEBD_N@Z
-    MCAPI class MolangVariable* _getOrAddMolangVariable(uint64 const&, char const*, bool);
+    MCAPI class MolangVariable* _getOrAddMolangVariable(uint64 const& variableNameHash, char const* variableName, bool);
 
     // NOLINTEND
 };

@@ -15,13 +15,14 @@ public:
     MCAPI ChunkTickRangeManager(uint, uint);
 
     // symbol: ?getAdjustedChunkTickRange@ChunkTickRangeManager@@QEAAIAEBVLevelSettings@@@Z
-    MCAPI uint getAdjustedChunkTickRange(class LevelSettings const&);
+    MCAPI uint getAdjustedChunkTickRange(class LevelSettings const& levelSettings);
 
     // symbol: ?isChunkInTickRange@ChunkTickRangeManager@@QEBA_NAEBVLevelChunk@@V?$optional@H@std@@@Z
-    MCAPI bool isChunkInTickRange(class LevelChunk const&, std::optional<int>) const;
+    MCAPI bool isChunkInTickRange(class LevelChunk const& lc, std::optional<int>) const;
 
     // symbol: ?isChunkInTickRange@ChunkTickRangeManager@@QEBA_NAEBVChunkPos@@AEBVDimension@@_NMHH@Z
-    MCAPI bool isChunkInTickRange(class ChunkPos const&, class Dimension const&, bool, float, int, int) const;
+    MCAPI bool
+    isChunkInTickRange(class ChunkPos const& chunkPos, class Dimension const& dimension, bool, float, int, int) const;
 
     // symbol: ?setChunkTickRange@ChunkTickRangeManager@@QEAAXI@Z
     MCAPI void setChunkTickRange(uint);

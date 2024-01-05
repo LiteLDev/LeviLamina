@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0KeyFrameTransform@@QEAA@M@Z
-    MCAPI explicit KeyFrameTransform(float time);
+    MCAPI explicit KeyFrameTransform(float);
 
     // symbol: ?getLerpMode@KeyFrameTransform@@QEAAAEAVKeyFrameLerpMode@@XZ
     MCAPI class KeyFrameLerpMode& getLerpMode();
@@ -21,7 +21,7 @@ public:
     MCAPI class KeyFrameTransform& operator=(class KeyFrameTransform&&);
 
     // symbol: ?optimizeAndGetDataValues@KeyFrameTransform@@QEAA_NAEAVVec3@@0@Z
-    MCAPI bool optimizeAndGetDataValues(class Vec3&, class Vec3&);
+    MCAPI bool optimizeAndGetDataValues(class Vec3&, class Vec3& maxValue);
 
     // symbol: ?set@KeyFrameTransform@@QEAAXAEBVExpressionNode@@@Z
     MCAPI void set(class ExpressionNode const& expression);

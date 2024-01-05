@@ -70,22 +70,22 @@ public:
     clipCollide(class AABB const& c, class Vec3 const& velocity, bool oneWay, float* penetration) const;
 
     // symbol: ?cloneAndExpandAlongDirection@AABB@@QEBA?AV1@AEBVVec3@@@Z
-    MCAPI class AABB cloneAndExpandAlongDirection(class Vec3 const&) const;
+    MCAPI class AABB cloneAndExpandAlongDirection(class Vec3 const& direction) const;
 
     // symbol: ?cloneAndFloor@AABB@@QEBA?AV1@MM@Z
-    MCAPI class AABB cloneAndFloor(float, float) const;
+    MCAPI class AABB cloneAndFloor(float offsetMin, float offsetMax) const;
 
     // symbol: ?cloneAndFloorMinAndCeilingMax@AABB@@QEBA?AV1@XZ
     MCAPI class AABB cloneAndFloorMinAndCeilingMax() const;
 
     // symbol: ?cloneAndGrow@AABB@@QEBA?AV1@AEBVVec3@@@Z
-    MCAPI class AABB cloneAndGrow(class Vec3 const&) const;
+    MCAPI class AABB cloneAndGrow(class Vec3 const& distance) const;
 
     // symbol: ?cloneAndShrink@AABB@@QEBA?AV1@AEBVVec3@@@Z
-    MCAPI class AABB cloneAndShrink(class Vec3 const&) const;
+    MCAPI class AABB cloneAndShrink(class Vec3 const& offset) const;
 
     // symbol: ?cloneAndTransformByMatrix@AABB@@QEBA?AV1@AEBVMatrix@@@Z
-    MCAPI class AABB cloneAndTransformByMatrix(class Matrix const&) const;
+    MCAPI class AABB cloneAndTransformByMatrix(class Matrix const& transform) const;
 
     // symbol: ?distanceTo@AABB@@QEBAMAEBV1@@Z
     MCAPI float distanceTo(class AABB const& aabb) const;
@@ -156,7 +156,7 @@ public:
     MCAPI static struct ClipCollideResult clipCollide(class AABB const&, class AABB const&, class Vec3 const&);
 
     // symbol: ?fromPoints@AABB@@SA?AV1@AEBVVec3@@0@Z
-    MCAPI static class AABB fromPoints(class Vec3 const& A, class Vec3 const& B);
+    MCAPI static class AABB fromPoints(class Vec3 const&, class Vec3 const&);
 
     // symbol: ?BLOCK_SHAPE@AABB@@2V1@B
     MCAPI static class AABB const BLOCK_SHAPE;

@@ -100,7 +100,8 @@ public:
     virtual void __unk_vfn_74();
 
     // vIndex: 94, symbol: ?playerWillDestroy@LodestoneBlock@@UEBAPEBVBlock@@AEAVPlayer@@AEBVBlockPos@@AEBV2@@Z
-    virtual class Block const* playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
+    virtual class Block const*
+    playerWillDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -131,10 +132,10 @@ public:
 
     // symbol:
     // ??0LodestoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LodestoneBlock(std::string const&, int, class Material const&);
+    MCAPI LodestoneBlock(std::string const& nameId, int, class Material const& material);
 
     // symbol: ?getBlockActor@LodestoneBlock@@SAPEAVLodestoneBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static class LodestoneBlockActor* getBlockActor(class BlockSource&, class BlockPos const&);
+    MCAPI static class LodestoneBlockActor* getBlockActor(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 };

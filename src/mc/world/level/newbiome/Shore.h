@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0Shore@OperationNodeFilters@@QEAA@AEBVBiomeRegistry@@AEAVBiome@@@Z
-    MCAPI Shore(class BiomeRegistry const&, class Biome&);
+    MCAPI Shore(class BiomeRegistry const& registry, class Biome& defaultShore);
 
     // NOLINTEND
 };

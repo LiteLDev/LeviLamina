@@ -37,15 +37,15 @@ public:
 
     // vIndex: 2, symbol:
     // ?onLevelAddedPlayer@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
-    virtual ::EventResult onLevelAddedPlayer(class Level&, class Player&);
+    virtual ::EventResult onLevelAddedPlayer(class Level&, class Player& player);
 
     // vIndex: 3, symbol:
     // ?onLevelRemovedPlayer@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
-    virtual ::EventResult onLevelRemovedPlayer(class Level&, class Player&);
+    virtual ::EventResult onLevelRemovedPlayer(class Level&, class Player& player);
 
     // vIndex: 4, symbol:
     // ?onLevelRemovedActor@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVLevel@@AEAVActor@@@Z
-    virtual ::EventResult onLevelRemovedActor(class Level&, class Actor&);
+    virtual ::EventResult onLevelRemovedActor(class Level&, class Actor& actor);
 
     // vIndex: 5, symbol:
     // ?onLevelTick@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEAVLevel@@@Z
@@ -56,7 +56,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?onLevelWeatherChange@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
-    virtual ::EventResult onLevelWeatherChange(std::string const&, bool, bool);
+    virtual ::EventResult onLevelWeatherChange(std::string const& dimension, bool raining, bool lightning);
 
     // vIndex: 8, symbol:
     // ?onEvent@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBULevelStartLeaveGameEvent@@@Z
@@ -68,7 +68,7 @@ public:
 
     // vIndex: 10, symbol:
     // ?onEvent@?$EventListenerDispatcher@VLevelEventListener@@@@MEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct LevelNotificationEvent const&);
+    virtual ::EventResult onEvent(struct LevelNotificationEvent const& event);
 
     // symbol:
     // ??0ScriptLevelEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldAfterEvents@ScriptModuleMinecraft@@@3@_N@Z

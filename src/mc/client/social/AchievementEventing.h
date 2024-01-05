@@ -32,28 +32,29 @@ public:
     MCAPI void AwardAchievement(class Player&, ::MinecraftEventing::AchievementIds);
 
     // symbol: ?BlockBroken@AchievementEventing@Events@Social@@QEAAXAEBVPlayer@@AEBVBlock@@HHG@Z
-    MCAPI void BlockBroken(class Player const&, class Block const&, int, int, ushort);
+    MCAPI void
+    BlockBroken(class Player const& player, class Block const& destroyedBlock, int method, int variantData, ushort);
 
     // symbol: ?CaravanChanged@AchievementEventing@Events@Social@@QEAAXAEAVMob@@H@Z
-    MCAPI void CaravanChanged(class Mob&, int);
+    MCAPI void CaravanChanged(class Mob& mob, int caravanSize);
 
     // symbol: ?ItemUsed@AchievementEventing@Events@Social@@QEAAXAEBVPlayer@@AEBVItemDescriptor@@I@Z
-    MCAPI void ItemUsed(class Player const&, class ItemDescriptor const&, uint);
+    MCAPI void ItemUsed(class Player const& player, class ItemDescriptor const& item, uint useMethod);
 
     // symbol: ?JukeboxUsed@AchievementEventing@Events@Social@@QEAAXAEBVPlayer@@AEBVItemDescriptor@@@Z
-    MCAPI void JukeboxUsed(class Player const&, class ItemDescriptor const&);
+    MCAPI void JukeboxUsed(class Player const& player, class ItemDescriptor const& disc);
 
     // symbol: ?MobEffectChanged@AchievementEventing@Events@Social@@QEAAXAEBVPlayer@@AEBVMobEffectInstance@@H@Z
-    MCAPI void MobEffectChanged(class Player const&, class MobEffectInstance const&, int);
+    MCAPI void MobEffectChanged(class Player const& player, class MobEffectInstance const& effectInstance, int change);
 
     // symbol: ?PlayerBounced@AchievementEventing@Events@Social@@QEAAXAEBVPlayer@@AEBVBlock@@HH@Z
-    MCAPI void PlayerBounced(class Player const&, class Block const&, int, int);
+    MCAPI void PlayerBounced(class Player const& player, class Block const& block, int bounceHeight, int);
 
     // symbol: ?PlayerTeleported@AchievementEventing@Events@Social@@QEAAXAEAVPlayer@@MHH@Z
-    MCAPI void PlayerTeleported(class Player&, float, int, int);
+    MCAPI void PlayerTeleported(class Player& player, float metersTravelled, int cause, int sourceType);
 
     // symbol: ?PlayerTravelled@AchievementEventing@Events@Social@@QEAAXAEBVPlayer@@MHH@Z
-    MCAPI void PlayerTravelled(class Player const&, float, int, int);
+    MCAPI void PlayerTravelled(class Player const& player, float metersTravelledSinceLastEvent, int, int newBiome);
 
     // symbol: ??1AchievementEventing@Events@Social@@QEAA@XZ
     MCAPI ~AchievementEventing();

@@ -18,7 +18,7 @@ public:
     virtual ~TargetGoalDefinition();
 
     // symbol: ?initialize@TargetGoalDefinition@@QEBAXAEAVEntityContext@@AEAVTargetGoal@@@Z
-    MCAPI void initialize(class EntityContext&, class TargetGoal&) const;
+    MCAPI void initialize(class EntityContext& entity, class TargetGoal& goal) const;
 
     // NOLINTEND
 };

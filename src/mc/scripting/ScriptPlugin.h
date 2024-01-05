@@ -27,7 +27,7 @@ public:
     // vIndex: 1, symbol:
     // ?onLoadScript@ScriptPlugin@@UEAA?AV?$optional@UScriptData@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@V?$optional@V?$vector@UModuleBinding@Scripting@@V?$allocator@UModuleBinding@Scripting@@@std@@@std@@@3@@Z
     virtual std::optional<struct Scripting::ScriptData>
-    onLoadScript(std::string const&, std::optional<std::vector<struct Scripting::ModuleBinding>>);
+    onLoadScript(std::string const& name, std::optional<std::vector<struct Scripting::ModuleBinding>>);
 
     // symbol: ?hasErrors@ScriptPlugin@@QEBA_NXZ
     MCAPI bool hasErrors() const;
@@ -42,7 +42,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_loadScript@ScriptPlugin@@AEAA?AV?$optional@UScriptData@Scripting@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCAPI std::optional<struct Scripting::ScriptData> _loadScript(std::string const&);
+    MCAPI std::optional<struct Scripting::ScriptData> _loadScript(std::string const& fileName);
 
     // NOLINTEND
 };

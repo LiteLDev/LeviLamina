@@ -52,7 +52,7 @@ public:
 
     // symbol: ?generateDefaultFloor@OceanMonumentPiece@@IEAAXAEAVBlockSource@@AEBVBoundingBox@@HH_N@Z
     MCAPI void generateDefaultFloor(
-        class BlockSource&       level,
+        class BlockSource&       region,
         class BoundingBox const& chunkBB,
         int                      xOff,
         int                      zOff,
@@ -60,7 +60,7 @@ public:
     );
 
     // symbol: ?spawnElder@OceanMonumentPiece@@IEAAXAEAVBlockSource@@AEBVBoundingBox@@HHH@Z
-    MCAPI void spawnElder(class BlockSource& level, class BoundingBox const& chunkBB, int x, int y, int z);
+    MCAPI void spawnElder(class BlockSource& region, class BoundingBox const& chunkBB, int x, int y, int z);
 
     // NOLINTEND
 

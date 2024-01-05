@@ -27,19 +27,19 @@ public:
     virtual void __unk_vfn_1();
 
     // vIndex: 2, symbol: ?tick@AgentMoveCommandSystem@@UEAAXAEAVEntityRegistry@@@Z
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry& registry);
 
     // symbol: ?cleanUp@AgentMoveCommandSystem@@SAXAEAVEntityContext@@M@Z
-    MCAPI static void cleanUp(class EntityContext&, float);
+    MCAPI static void cleanUp(class EntityContext& agent, float cooldownTime);
 
     // symbol:
     // ?initialize@AgentMoveCommandSystem@@SAXAEAVEntityContext@@AEAUActionDetails@AgentComponents@@AEAVMove@4@@Z
     MCAPI static void
-    initialize(class EntityContext&, struct AgentComponents::ActionDetails&, class AgentComponents::Move&);
+    initialize(class EntityContext& entity, struct AgentComponents::ActionDetails& details, class AgentComponents::Move&);
 
     // symbol: ?tickMove@AgentMoveCommandSystem@@SAXAEAVEntityContext@@AEAUActionDetails@AgentComponents@@AEAVMove@4@@Z
     MCAPI static void
-    tickMove(class EntityContext&, struct AgentComponents::ActionDetails&, class AgentComponents::Move&);
+    tickMove(class EntityContext& entity, struct AgentComponents::ActionDetails& details, class AgentComponents::Move&);
 
     // NOLINTEND
 };

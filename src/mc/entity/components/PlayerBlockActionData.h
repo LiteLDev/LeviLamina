@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?read@PlayerBlockActionData@@SA?AV?$Result@UPlayerBlockActionData@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    MCAPI static class Bedrock::Result<struct PlayerBlockActionData> read(class ReadOnlyBinaryStream&);
+    MCAPI static class Bedrock::Result<struct PlayerBlockActionData> read(class ReadOnlyBinaryStream& stream);
 
     // NOLINTEND
 };

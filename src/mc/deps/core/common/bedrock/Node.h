@@ -23,7 +23,7 @@ public:
     MCAPI class Bedrock::JSONObject::ObjectNode* asObject();
 
     // symbol: ??4Node@JSONObject@Bedrock@@QEAAPEAV012@AEBVValueWrapper@12@@Z
-    MCAPI class Bedrock::JSONObject::Node* operator=(class Bedrock::JSONObject::ValueWrapper const&);
+    MCAPI class Bedrock::JSONObject::Node* operator=(class Bedrock::JSONObject::ValueWrapper const& rhs);
 
     // symbol:
     // ?toJSONString@Node@JSONObject@Bedrock@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

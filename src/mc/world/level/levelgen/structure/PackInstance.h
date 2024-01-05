@@ -40,7 +40,12 @@ public:
 
     // symbol:
     // ??0PackInstance@@QEAA@V?$not_null@V?$NonOwnerPointer@VResourcePack@@@Bedrock@@@gsl@@H_NPEAVPackSettings@@@Z
-    MCAPI PackInstance(Bedrock::NotNullNonOwnerPtr<class ResourcePack>, int, bool, class PackSettings*);
+    MCAPI PackInstance(
+        Bedrock::NotNullNonOwnerPtr<class ResourcePack> pack,
+        int                                             subpackIndex,
+        bool                                            isDependent,
+        class PackSettings*                             packSettings
+    );
 
     // symbol: ?forEachIn@PackInstance@@QEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@_N@Z
     MCAPI void

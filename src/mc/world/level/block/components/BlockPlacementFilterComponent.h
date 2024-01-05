@@ -18,10 +18,10 @@ public:
     virtual ~BlockPlacementFilterComponent() = default;
 
     // symbol: ?mayPlace@BlockPlacementFilterComponent@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?mayPlace@BlockPlacementFilterComponent@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&, uchar) const;
+    MCAPI bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
     // NOLINTEND
 };

@@ -23,19 +23,19 @@ public:
 
     // symbol:
     // ?addBroadcastTargetByName@AngryDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void addBroadcastTargetByName(std::string const&);
+    MCAPI void addBroadcastTargetByName(std::string const& name);
 
     // symbol: ?initialize@AngryDefinition@@QEBAXAEAVEntityContext@@AEAVAngryComponent@@@Z
-    MCAPI void initialize(class EntityContext&, class AngryComponent&) const;
+    MCAPI void initialize(class EntityContext& entity, class AngryComponent& component) const;
 
     // symbol: ?uninitialize@AngryDefinition@@QEBAXAEAVEntityContext@@AEAVAngryComponent@@@Z
-    MCAPI void uninitialize(class EntityContext&, class AngryComponent&) const;
+    MCAPI void uninitialize(class EntityContext& entity, class AngryComponent&) const;
 
     // symbol:
     // ?buildSchema@AngryDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAngryDefinition@@@JsonUtil@@@std@@@Z
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AngryDefinition>>&);
+    MCAPI static void buildSchema(
+        std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AngryDefinition>>& root
+    );
 
     // NOLINTEND
 };

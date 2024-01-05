@@ -34,7 +34,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_say@TestSummaryDisplayer@@AEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI void _say(std::string const&, std::string const&) const;
+    MCAPI void _say(std::string const& text, std::string const&) const;
 
     // symbol: ?_showTestSummaryIfAllDone@TestSummaryDisplayer@@AEBAXXZ
     MCAPI void _showTestSummaryIfAllDone() const;

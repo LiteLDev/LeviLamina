@@ -27,7 +27,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0DimensionDefinitionGroup@@QEAA@QEAVResourcePackManager@@_N@Z
-    MCAPI DimensionDefinitionGroup(class ResourcePackManager* const, bool);
+    MCAPI DimensionDefinitionGroup(class ResourcePackManager* const rpm, bool);
 
     // symbol:
     // ?getDimensionDefinition@DimensionDefinitionGroup@@QEBA?AV?$optional@UDimensionDefinition@DimensionDefinitionGroup@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
@@ -49,7 +49,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_checkValidDimensionBounds@DimensionDefinitionGroup@@AEAA_NAEBUDimension@DimensionDocument@@@Z
-    MCAPI bool _checkValidDimensionBounds(struct DimensionDocument::Dimension const&);
+    MCAPI bool _checkValidDimensionBounds(struct DimensionDocument::Dimension const& dimension);
 
     // NOLINTEND
 };

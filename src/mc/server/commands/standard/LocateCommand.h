@@ -28,10 +28,10 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_executeLocateBiome@LocateCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    MCAPI void _executeLocateBiome(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void _executeLocateBiome(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // symbol: ?_executeLocateStructure@LocateCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-    MCAPI void _executeLocateStructure(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void _executeLocateStructure(class CommandOrigin const& origin, class CommandOutput& output) const;
 
     // NOLINTEND
 };

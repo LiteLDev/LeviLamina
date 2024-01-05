@@ -26,19 +26,19 @@ public:
     // vIndex: 3, symbol:
     // ?attemptSpreadVeins@SculkBlockBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z
     virtual bool
-    attemptSpreadVeins(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int, class SculkSpreader&)
+    attemptSpreadVeins(class IBlockWorldGenAPI& target, class BlockPos const& pos, class Block const& block, int, class SculkSpreader&)
         const;
 
     // vIndex: 4, symbol:
     // ?attemptUseCharge@SculkBlockBehavior@@UEBAHAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@2HHAEAVRandom@@AEAVSculkSpreader@@_N@Z
     virtual int attemptUseCharge(
-        class IBlockWorldGenAPI&,
-        class BlockSource*,
+        class IBlockWorldGenAPI& target,
+        class BlockSource*       region,
         class BlockPos const&,
-        class BlockPos const&,
+        class BlockPos const& pos,
+        int                   charge,
         int,
-        int,
-        class Random&,
+        class Random& random,
         class SculkSpreader&,
         bool
     ) const;
@@ -54,7 +54,7 @@ public:
     // symbol:
     // ?_placeGrowthAt@SculkBlockBehavior@@CAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAVSculkSpreader@@@Z
     MCAPI static void
-    _placeGrowthAt(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&, class Random&, class SculkSpreader&);
+    _placeGrowthAt(class IBlockWorldGenAPI& target, class BlockSource* region, class BlockPos const& pos, class Random& random, class SculkSpreader&);
 
     // NOLINTEND
 };

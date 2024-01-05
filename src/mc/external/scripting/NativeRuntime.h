@@ -49,7 +49,7 @@ public:
     // vIndex: 1, symbol:
     // ?createContext@NativeRuntime@Scripting@@UEAA?AV?$optional@VScriptContext@Scripting@@@std@@AEBUModuleBindingBundle@2@PEAVIDependencyLoader@2@PEAVIPrinter@2@AEBUContextConfig@2@@Z
     virtual std::optional<class Scripting::ScriptContext>
-    createContext(struct Scripting::ModuleBindingBundle const&, class Scripting::IDependencyLoader*, class Scripting::IPrinter*, struct Scripting::ContextConfig const&);
+    createContext(struct Scripting::ModuleBindingBundle const&, class Scripting::IDependencyLoader* loader, class Scripting::IPrinter*, struct Scripting::ContextConfig const&);
 
     // vIndex: 2, symbol: ?destroyContext@NativeRuntime@Scripting@@UEAAXUContextId@2@@Z
     virtual void destroyContext(struct Scripting::ContextId);
@@ -57,7 +57,7 @@ public:
     // vIndex: 3, symbol:
     // ?run@NativeRuntime@Scripting@@UEAA?AVResultAny@2@UContextId@2@PEAVIPayload@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
     virtual class Scripting::ResultAny
-    run(struct Scripting::ContextId, class Scripting::IPayload*, std::optional<::Scripting::Privilege>);
+    run(struct Scripting::ContextId, class Scripting::IPayload* payload, std::optional<::Scripting::Privilege>);
 
     // vIndex: 4, symbol: __unk_vfn_4
     virtual void __unk_vfn_4();
@@ -167,8 +167,13 @@ public:
 
     // symbol:
     // ?runFunction@NativeRuntime@Scripting@@QEAA?AVResultAny@2@UContextId@2@AEBV?$function@$$A6A?AVResultAny@Scripting@@AEAVNativeRuntime@2@UContextId@2@VWeakLifetimeScope@2@AEBUModuleBindingBundle@2@PEAVIDependencyLoader@2@PEAVIPrinter@2@@Z@std@@@Z
-    MCAPI class Scripting::ResultAny
-    runFunction(struct Scripting::ContextId, std::function<class Scripting::ResultAny(class Scripting::NativeRuntime&, struct Scripting::ContextId, class Scripting::WeakLifetimeScope, struct Scripting::ModuleBindingBundle const&, class Scripting::IDependencyLoader*, class Scripting::IPrinter*)> const&);
+    MCAPI class Scripting::ResultAny runFunction(
+        struct Scripting::ContextId,
+        std::function<
+            class Scripting::
+                ResultAny(class Scripting::NativeRuntime&, struct Scripting::ContextId, class Scripting::WeakLifetimeScope, struct Scripting::ModuleBindingBundle const&, class Scripting::IDependencyLoader*, class Scripting::IPrinter*)> const&
+            function
+    );
 
     // NOLINTEND
 };

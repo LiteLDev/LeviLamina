@@ -41,11 +41,11 @@ public:
     virtual std::string getName() const;
 
     // vIndex: 3, symbol: ?write@NpcDialoguePacket@@UEBAXAEAVBinaryStream@@@Z
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream& stream) const;
 
     // vIndex: 7, symbol:
     // ?_read@NpcDialoguePacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream);
 
     // symbol: ??0NpcDialoguePacket@@QEAA@XZ
     MCAPI NpcDialoguePacket();
@@ -55,7 +55,8 @@ public:
 
     // symbol:
     // ?initializePacket@NpcDialoguePacket@@SA_NAEAV1@PEBVNpcDialogueStorage@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static bool initializePacket(class NpcDialoguePacket&, class NpcDialogueStorage const*, std::string const&);
+    MCAPI static bool
+    initializePacket(class NpcDialoguePacket&, class NpcDialogueStorage const* storage, std::string const&);
 
     // NOLINTEND
 

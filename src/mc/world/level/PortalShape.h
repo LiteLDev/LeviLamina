@@ -37,7 +37,7 @@ public:
     MCAPI bool isValid() const;
 
     // symbol: ?removePortalBlocks@PortalShape@@QEBAXAEAVWorldChangeTransaction@@AEBVBlockPos@@@Z
-    MCAPI void removePortalBlocks(class WorldChangeTransaction&, class BlockPos const&) const;
+    MCAPI void removePortalBlocks(class WorldChangeTransaction& transaction, class BlockPos const&) const;
 
     // symbol: ?setAxis@PortalShape@@QEAAXW4PortalAxis@@@Z
     MCAPI void setAxis(::PortalAxis axis);

@@ -43,9 +43,12 @@ public:
 
     // symbol:
     // ??0NativeFunctionPayload@Scripting@@QEAA@V?$function@$$A6A?AVResultAny@Scripting@@AEAVNativeRuntime@2@UContextId@2@VWeakLifetimeScope@2@AEBUModuleBindingBundle@2@PEAVIDependencyLoader@2@PEAVIPrinter@2@@Z@std@@@Z
-    MCAPI explicit NativeFunctionPayload(std::function<
-                                         class Scripting::
-                                             ResultAny(class Scripting::NativeRuntime&, struct Scripting::ContextId, class Scripting::WeakLifetimeScope, struct Scripting::ModuleBindingBundle const&, class Scripting::IDependencyLoader*, class Scripting::IPrinter*)>);
+    MCAPI explicit NativeFunctionPayload(
+        std::function<
+            class Scripting::
+                ResultAny(class Scripting::NativeRuntime&, struct Scripting::ContextId, class Scripting::WeakLifetimeScope, struct Scripting::ModuleBindingBundle const&, class Scripting::IDependencyLoader*, class Scripting::IPrinter*)>
+            func
+    );
 
     // NOLINTEND
 };

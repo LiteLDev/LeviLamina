@@ -116,7 +116,11 @@ public:
     virtual class OwnerPtrT<struct EntityRefTraits> createChild(int i);
 
     // symbol: ??0Slime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Slime(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Slime(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getOldSquishValue@Slime@@QEBAMXZ
     MCAPI float getOldSquishValue() const;
@@ -125,7 +129,7 @@ public:
     MCAPI float getSquishValue() const;
 
     // symbol: ?postNormalTick@Slime@@QEAAX_N@Z
-    MCAPI void postNormalTick(bool);
+    MCAPI void postNormalTick(bool wasOnGround);
 
     // symbol: ?preNormalTick@Slime@@QEAAXXZ
     MCAPI void preNormalTick();

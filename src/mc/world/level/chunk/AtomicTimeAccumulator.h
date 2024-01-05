@@ -14,7 +14,7 @@ public:
     MCAPI AtomicTimeAccumulator();
 
     // symbol: ?addTime@AtomicTimeAccumulator@@QEAAXAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
-    MCAPI void addTime(std::chrono::nanoseconds const&);
+    MCAPI void addTime(std::chrono::nanoseconds const& time);
 
     // NOLINTEND
 };

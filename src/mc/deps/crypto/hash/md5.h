@@ -27,10 +27,10 @@ public:
     virtual void reset();
 
     // vIndex: 2, symbol: ?update@md5@Hash@Crypto@@UEAAXPEBXI@Z
-    virtual void update(void const*, uint);
+    virtual void update(void const* data, uint size);
 
     // vIndex: 3, symbol: ?final@md5@Hash@Crypto@@UEAAXPEAE@Z
-    virtual void final(uchar*);
+    virtual void final(uchar* result);
 
     // vIndex: 4, symbol: ?resultSize@md5@Hash@Crypto@@UEBA_KXZ
     virtual uint64 resultSize() const;
@@ -43,7 +43,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_body@md5@Hash@Crypto@@AEAAPEBXPEBXI@Z
-    MCAPI void const* _body(void const*, uint);
+    MCAPI void const* _body(void const* data, uint size);
 
     // NOLINTEND
 };

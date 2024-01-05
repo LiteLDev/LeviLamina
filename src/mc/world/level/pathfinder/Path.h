@@ -41,7 +41,7 @@ public:
     MCAPI class BlockPos const& currentPos() const;
 
     // symbol: ?currentPos@Path@@QEBA?AVVec3@@PEBVActor@@@Z
-    MCAPI class Vec3 currentPos(class Actor const* e) const;
+    MCAPI class Vec3 currentPos(class Actor const* actor) const;
 
     // symbol: ?endsInXZ@Path@@QEAA_NAEBVVec3@@@Z
     MCAPI bool endsInXZ(class Vec3 const& pos);

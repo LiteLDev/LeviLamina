@@ -30,16 +30,16 @@ public:
     virtual void __unk_vfn_12();
 
     // vIndex: 14, symbol: ?isPreserved@MovingBlockActor@@UEBA_NAEAVBlockSource@@@Z
-    virtual bool isPreserved(class BlockSource&) const;
+    virtual bool isPreserved(class BlockSource& region) const;
 
     // vIndex: 15, symbol: ?shouldPreserve@MovingBlockActor@@UEAA_NAEAVBlockSource@@@Z
-    virtual bool shouldPreserve(class BlockSource&);
+    virtual bool shouldPreserve(class BlockSource& region);
 
     // vIndex: 18, symbol: __unk_vfn_18
     virtual void __unk_vfn_18();
 
     // vIndex: 22, symbol: ?getCollisionShape@MovingBlockActor@@UEBA?AVAABB@@AEBVIConstBlockSource@@@Z
-    virtual class AABB getCollisionShape(class IConstBlockSource const&) const;
+    virtual class AABB getCollisionShape(class IConstBlockSource const& region) const;
 
     // vIndex: 30, symbol: __unk_vfn_30
     virtual void __unk_vfn_30();
@@ -67,7 +67,7 @@ public:
 
     // vIndex: 40, symbol:
     // ?_getUpdatePacket@MovingBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& region);
 
     // vIndex: 41, symbol: ?_onUpdatePacket@MovingBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
     virtual void _onUpdatePacket(class CompoundTag const& data, class BlockSource& region);
@@ -82,7 +82,7 @@ public:
     MCAPI explicit MovingBlockActor(class BlockPos const& pos);
 
     // symbol: ?getDrawPos@MovingBlockActor@@QEBA?AVVec3@@AEBVIConstBlockSource@@M@Z
-    MCAPI class Vec3 getDrawPos(class IConstBlockSource const&, float) const;
+    MCAPI class Vec3 getDrawPos(class IConstBlockSource const& region, float a) const;
 
     // symbol: ?moveCollidedEntities@MovingBlockActor@@QEAAXAEAVPistonBlockActor@@AEAVBlockSource@@@Z
     MCAPI void moveCollidedEntities(class PistonBlockActor& pistonBlock, class BlockSource& region);
@@ -92,7 +92,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_validPistonPos@MovingBlockActor@@AEBA_NAEBVIConstBlockSource@@@Z
-    MCAPI bool _validPistonPos(class IConstBlockSource const&) const;
+    MCAPI bool _validPistonPos(class IConstBlockSource const& region) const;
 
     // NOLINTEND
 };

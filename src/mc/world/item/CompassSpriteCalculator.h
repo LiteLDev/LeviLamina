@@ -18,7 +18,7 @@ public:
     MCAPI CompassSpriteCalculator(
         std::function<class BlockPos(class BlockSource const*, class Actor*)>,
         std::function<bool(class BlockSource const*, class Actor*)>,
-        float,
+        float rot,
         float
     );
 
@@ -26,10 +26,18 @@ public:
     MCAPI int getFrame() const;
 
     // symbol: ?update@CompassSpriteCalculator@@QEAAHAEAVActor@@_N@Z
-    MCAPI int update(class Actor& entity, bool instant);
+    MCAPI int update(class Actor& actor, bool instant);
 
     // symbol: ?updateFromPosition@CompassSpriteCalculator@@QEAAHPEBVBlockSource@@PEAVActor@@MMM_N2@Z
-    MCAPI int updateFromPosition(class BlockSource const*, class Actor*, float, float, float, bool, bool);
+    MCAPI int updateFromPosition(
+        class BlockSource const* region,
+        class Actor*             actor,
+        float                    x,
+        float                    z,
+        float                    yRot,
+        bool                     isZFlipped,
+        bool                     instant
+    );
 
     // symbol: ??1CompassSpriteCalculator@@QEAA@XZ
     MCAPI ~CompassSpriteCalculator();

@@ -26,7 +26,8 @@ MCAPI bool onMoveActorAbsolutePacket(struct ServerPlayerMovementComponent&, clas
 
 // symbol:
 // ?onPlayerAuthInputPacket@ServerPlayerInputSystem@@YA_NAEAUServerPlayerMovementComponent@@AEBVPlayerAuthInputPacket@@@Z
-MCAPI bool onPlayerAuthInputPacket(struct ServerPlayerMovementComponent&, class PlayerAuthInputPacket const&);
+MCAPI bool
+onPlayerAuthInputPacket(struct ServerPlayerMovementComponent& component, class PlayerAuthInputPacket const& packet);
 // NOLINTEND
 
 }; // namespace ServerPlayerInputSystem

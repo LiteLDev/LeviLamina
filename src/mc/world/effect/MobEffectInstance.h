@@ -51,7 +51,7 @@ public:
 
     // symbol: ??0MobEffectInstance@@QEAA@IHHHHH_N00@Z
     MCAPI MobEffectInstance(
-        uint id,
+        uint,
         int  duration,
         int  durationEasy,
         int  durationNormal,
@@ -139,21 +139,21 @@ public:
     MCAPI void update(class MobEffectInstance const& takeOver);
 
     // symbol: ?updateEffects@MobEffectInstance@@QEBAXPEAVActor@@@Z
-    MCAPI void updateEffects(class Actor*) const;
+    MCAPI void updateEffects(class Actor* mob) const;
 
     // symbol: ??1MobEffectInstance@@QEAA@XZ
     MCAPI ~MobEffectInstance();
 
     // symbol:
     // ?areAllEffectsAmbientOrInvisible@MobEffectInstance@@SA_NAEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@@Z
-    MCAPI static bool areAllEffectsAmbientOrInvisible(std::vector<class MobEffectInstance> const&);
+    MCAPI static bool areAllEffectsAmbientOrInvisible(std::vector<class MobEffectInstance> const& effects);
 
     // symbol:
     // ?getColorValue@MobEffectInstance@@SA?AVColor@mce@@AEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@@Z
     MCAPI static class mce::Color getColorValue(std::vector<class MobEffectInstance> const& effects);
 
     // symbol: ?load@MobEffectInstance@@SA?AV1@AEBVCompoundTag@@@Z
-    MCAPI static class MobEffectInstance load(class CompoundTag const&);
+    MCAPI static class MobEffectInstance load(class CompoundTag const& tag);
 
     // symbol: ?MAX_AMPLIFIER_COUNT@MobEffectInstance@@2HB
     MCAPI static int const MAX_AMPLIFIER_COUNT;

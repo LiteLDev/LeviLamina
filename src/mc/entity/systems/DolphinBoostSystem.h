@@ -18,8 +18,12 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_tickScan@DolphinBoostSystem@@SAXAEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@AEAUScanForDolphinTimerComponent@@V?$EntityModifier@V?$FlagComponent@UScanForDolphin@@@@@@@Z
-    MCAPI static void
-    _tickScan(class StrictEntityContext const&, struct SynchedActorDataComponent const&, struct ScanForDolphinTimerComponent&, class EntityModifier<class FlagComponent<struct ScanForDolphin>>);
+    MCAPI static void _tickScan(
+        class StrictEntityContext const& context,
+        struct SynchedActorDataComponent const&,
+        struct ScanForDolphinTimerComponent&,
+        class EntityModifier<class FlagComponent<struct ScanForDolphin>> modifier
+    );
 
     // symbol:
     // ?_tickSwimSpeedModifier@DolphinBoostSystem@@SAXAEBVStrictEntityContext@@AEBUSynchedActorDataComponent@@AEAUSwimSpeedMultiplierComponent@@V?$Optional@V?$FlagComponent@UScanForDolphin@@@@@@V?$Optional@V?$FlagComponent@UIsNearDolphinsFlag@@@@@@@Z

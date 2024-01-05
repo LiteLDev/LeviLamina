@@ -43,7 +43,7 @@ public:
 
     // symbol:
     // ?setState@PetSleepWithOwnerGoal@@QEAAXV?$unique_ptr@VPetSleepWithOwnerState@@U?$default_delete@VPetSleepWithOwnerState@@@std@@@std@@@Z
-    MCAPI void setState(std::unique_ptr<class PetSleepWithOwnerState>);
+    MCAPI void setState(std::unique_ptr<class PetSleepWithOwnerState> state);
 
     // NOLINTEND
 };

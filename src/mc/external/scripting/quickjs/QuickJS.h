@@ -79,7 +79,7 @@ namespace Scripting::QuickJS {
 // symbol:
 // ?ConvertJSValueArgsToNativeAnys@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@PEAVIFunction@Reflection@2@IPEAU3@AEAV?$array@Vmeta_any@entt@@$0BA@@std@@I@Z
 MCAPI struct JSValue ConvertJSValueArgsToNativeAnys(
-    struct JSContext*,
+    struct JSContext* ctx,
     class Scripting::Reflection::IFunction*,
     uint,
     struct JSValue*,
@@ -98,7 +98,7 @@ MCAPI struct JSValue
 CopyJSValueObjectToNativeAssociativeContainer(struct JSContext*, struct JSValue, entt::meta_associative_container&, entt::meta_type const&);
 
 // symbol: ?CreateArrayProxy@QuickJS@Scripting@@YA?AUArrayProxy@12@PEAUJSContext@@@Z
-MCAPI struct Scripting::QuickJS::ArrayProxy CreateArrayProxy(struct JSContext*);
+MCAPI struct Scripting::QuickJS::ArrayProxy CreateArrayProxy(struct JSContext* ctx);
 
 // symbol:
 // ?CreateIteratorClassBinding@QuickJS@Scripting@@YA?AV?$unique_ptr@UClassBinding@Scripting@@U?$default_delete@UClassBinding@Scripting@@@std@@@std@@AEAUIteratorBinding@2@@Z
@@ -109,33 +109,33 @@ MCAPI std::unique_ptr<struct Scripting::ClassBinding> CreateIteratorClassBinding
 MCAPI std::unique_ptr<struct Scripting::ClassBinding> CreateNextClassBinding(struct Scripting::IteratorBinding&);
 
 // symbol: ?ExceptionWriter@QuickJS@Scripting@@YA?AVmeta_any@entt@@PEAUJSContext@@@Z
-MCAPI entt::meta_any ExceptionWriter(struct JSContext*);
+MCAPI entt::meta_any ExceptionWriter(struct JSContext* ctx);
 
 // symbol: ?GenericFreeFunctionCaller@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@H2@Z
 MCAPI struct JSValue
-GenericFreeFunctionCaller(struct JSContext*, struct JSValue, int, struct JSValue*, int, struct JSValue*);
+GenericFreeFunctionCaller(struct JSContext* ctx, struct JSValue, int, struct JSValue*, int, struct JSValue*);
 
 // symbol: ?GenericObjectFunctionCaller@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@H2@Z
 MCAPI struct JSValue
-GenericObjectFunctionCaller(struct JSContext*, struct JSValue, int, struct JSValue*, int, struct JSValue*);
+GenericObjectFunctionCaller(struct JSContext* ctx, struct JSValue, int, struct JSValue*, int, struct JSValue*);
 
 // symbol: ?GenericReflectionCtorCaller@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@H@Z
-MCAPI struct JSValue GenericReflectionCtorCaller(struct JSContext*, struct JSValue, int, struct JSValue*, int);
+MCAPI struct JSValue GenericReflectionCtorCaller(struct JSContext* ctx, struct JSValue, int, struct JSValue*, int);
 
 // symbol: ?GenericReflectionPropertyGetter@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@H2@Z
 MCAPI struct JSValue
-GenericReflectionPropertyGetter(struct JSContext*, struct JSValue, int, struct JSValue*, int, struct JSValue*);
+GenericReflectionPropertyGetter(struct JSContext* ctx, struct JSValue, int, struct JSValue*, int, struct JSValue*);
 
 // symbol: ?GenericReflectionPropertySetter@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@H2@Z
 MCAPI struct JSValue
-GenericReflectionPropertySetter(struct JSContext*, struct JSValue, int, struct JSValue*, int, struct JSValue*);
+GenericReflectionPropertySetter(struct JSContext* ctx, struct JSValue, int, struct JSValue*, int, struct JSValue*);
 
 // symbol: ?GetNativeObjectHandleFromJSValue@QuickJS@Scripting@@YA?AUObjectHandle@2@UJSValue@@@Z
 MCAPI struct Scripting::ObjectHandle GetNativeObjectHandleFromJSValue(struct JSValue);
 
 // symbol: ?GetPropertyGetSetFromJSFuncData@QuickJS@Scripting@@YAAEBUPropertyGetSet@12@PEAUJSContext@@PEAUJSValue@@@Z
 MCAPI struct Scripting::QuickJS::PropertyGetSet const&
-GetPropertyGetSetFromJSFuncData(struct JSContext*, struct JSValue*);
+GetPropertyGetSetFromJSFuncData(struct JSContext* ctx, struct JSValue*);
 
 // symbol: ?HasNativeObjectHandle@QuickJS@Scripting@@YA_NUJSValue@@@Z
 MCAPI bool HasNativeObjectHandle(struct JSValue);
@@ -150,7 +150,7 @@ InitializeBakedProperties(struct JSContext*, struct JSValue, struct Scripting::O
 MCAPI std::string JSAtomCStringToString(struct JSContext*, uint);
 
 // symbol: ?JSErrorToNativeAny@QuickJS@Scripting@@YA?AVmeta_any@entt@@PEAUJSContext@@UJSValue@@@Z
-MCAPI entt::meta_any JSErrorToNativeAny(struct JSContext*, struct JSValue);
+MCAPI entt::meta_any JSErrorToNativeAny(struct JSContext* ctx, struct JSValue);
 
 // symbol:
 // ?JSValueCStringToString@QuickJS@Scripting@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAUJSContext@@UJSValue@@@Z
@@ -165,36 +165,36 @@ MCAPI bool JSValueIsNan(struct JSValue const&);
 // symbol:
 // ?JSValueToNativeAny@QuickJS@Scripting@@YA?AV?$variant@Vmeta_any@entt@@UJSValue@@@std@@PEAUJSContext@@UJSValue@@AEBVmeta_type@entt@@@Z
 MCAPI std::variant<entt::meta_any, struct JSValue>
-      JSValueToNativeAny(struct JSContext*, struct JSValue, entt::meta_type const&);
+      JSValueToNativeAny(struct JSContext* ctx, struct JSValue, entt::meta_type const& type);
 
 // symbol:
 // ?JSValueToNativeInterface@QuickJS@Scripting@@YA?AV?$variant@Vmeta_any@entt@@UJSValue@@@std@@PEAUJSContext@@UJSValue@@PEAVContextUserData@12@AEBVmeta_type@entt@@AEBUInterfaceBinding@2@@Z
 MCAPI std::variant<entt::meta_any, struct JSValue>
-JSValueToNativeInterface(struct JSContext*, struct JSValue, class Scripting::QuickJS::ContextUserData*, entt::meta_type const&, struct Scripting::InterfaceBinding const&);
+JSValueToNativeInterface(struct JSContext* ctx, struct JSValue, class Scripting::QuickJS::ContextUserData*, entt::meta_type const& type, struct Scripting::InterfaceBinding const&);
 
 // symbol:
 // ?NativeAnyToJSProtoClass@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@AEAVmeta_any@entt@@AEBVRegisteredClass@12@AEAVContextUserData@12@@Z
 MCAPI struct JSValue
-NativeAnyToJSProtoClass(struct JSContext*, struct JSValue, entt::meta_any&, class Scripting::QuickJS::RegisteredClass const&, class Scripting::QuickJS::ContextUserData&);
+NativeAnyToJSProtoClass(struct JSContext* ctx, struct JSValue, entt::meta_any&, class Scripting::QuickJS::RegisteredClass const&, class Scripting::QuickJS::ContextUserData&);
 
 // symbol: ?NativeAnyToJSValue@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@AEAVmeta_any@entt@@_N2@Z
-MCAPI struct JSValue NativeAnyToJSValue(struct JSContext*, entt::meta_any&, bool, bool);
+MCAPI struct JSValue NativeAnyToJSValue(struct JSContext* ctx, entt::meta_any&, bool, bool);
 
 // symbol: ?NativeEnumToJSValue@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@AEAVmeta_any@entt@@_N2@Z
-MCAPI struct JSValue NativeEnumToJSValue(struct JSContext*, entt::meta_any&, bool, bool);
+MCAPI struct JSValue NativeEnumToJSValue(struct JSContext* ctx, entt::meta_any&, bool, bool);
 
 // symbol: ?NativeErrorToJSValue@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@AEAVmeta_any@entt@@@Z
-MCAPI struct JSValue NativeErrorToJSValue(struct JSContext*, entt::meta_any&);
+MCAPI struct JSValue NativeErrorToJSValue(struct JSContext* ctx, entt::meta_any&);
 
 // symbol:
 // ?NativeErrorToJSValueInternal@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@AEAVmeta_any@entt@@IAEAVLifetimeRegistry@2@@Z
 MCAPI struct JSValue
-NativeErrorToJSValueInternal(struct JSContext*, entt::meta_any&, uint, class Scripting::LifetimeRegistry&);
+NativeErrorToJSValueInternal(struct JSContext* ctx, entt::meta_any&, uint, class Scripting::LifetimeRegistry& registry);
 
 // symbol:
 // ?NativeInterfaceToJSValue@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@AEAVmeta_any@entt@@AEBVRegisteredInterface@12@_N3@Z
 MCAPI struct JSValue NativeInterfaceToJSValue(
-    struct JSContext*,
+    struct JSContext* ctx,
     entt::meta_any&,
     class Scripting::QuickJS::RegisteredInterface const&,
     bool,
@@ -203,14 +203,19 @@ MCAPI struct JSValue NativeInterfaceToJSValue(
 
 // symbol:
 // ?NativeObjectHandleToJSProtoClass@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@UObjectHandle@2@AEBVRegisteredClass@12@AEAVLifetimeRegistry@2@@Z
-MCAPI struct JSValue
-NativeObjectHandleToJSProtoClass(struct JSContext*, struct JSValue, struct Scripting::ObjectHandle, class Scripting::QuickJS::RegisteredClass const&, class Scripting::LifetimeRegistry&);
+MCAPI struct JSValue NativeObjectHandleToJSProtoClass(
+    struct JSContext* ctx,
+    struct JSValue,
+    struct Scripting::ObjectHandle objectHandle,
+    class Scripting::QuickJS::RegisteredClass const&,
+    class Scripting::LifetimeRegistry& registry
+);
 
 // symbol:
 // ?NativeObjectHandleToJSValue@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@UObjectHandle@2@_N2W4NativeObjectOwnership@12@@Z
 MCAPI struct JSValue NativeObjectHandleToJSValue(
-    struct JSContext*,
-    struct Scripting::ObjectHandle,
+    struct JSContext*              ctx,
+    struct Scripting::ObjectHandle objectHandle,
     bool,
     bool,
     ::Scripting::QuickJS::NativeObjectOwnership
@@ -219,19 +224,19 @@ MCAPI struct JSValue NativeObjectHandleToJSValue(
 // symbol:
 // ?NativeRegisteredEnumToJSValue@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@AEAVmeta_any@entt@@AEBVRegisteredEnum@12@@Z
 MCAPI struct JSValue
-NativeRegisteredEnumToJSValue(struct JSContext*, entt::meta_any&, class Scripting::QuickJS::RegisteredEnum const&);
+NativeRegisteredEnumToJSValue(struct JSContext* ctx, entt::meta_any&, class Scripting::QuickJS::RegisteredEnum const&);
 
 // symbol: ?PrintError@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@@Z
-MCAPI struct JSValue PrintError(struct JSContext*, struct JSValue, int, struct JSValue*);
+MCAPI struct JSValue PrintError(struct JSContext* ctx, struct JSValue, int, struct JSValue*);
 
 // symbol: ?PrintInfo@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@@Z
-MCAPI struct JSValue PrintInfo(struct JSContext*, struct JSValue, int, struct JSValue*);
+MCAPI struct JSValue PrintInfo(struct JSContext* ctx, struct JSValue, int, struct JSValue*);
 
 // symbol: ?PrintWarn@QuickJS@Scripting@@YA?AUJSValue@@PEAUJSContext@@U3@HPEAU3@@Z
-MCAPI struct JSValue PrintWarn(struct JSContext*, struct JSValue, int, struct JSValue*);
+MCAPI struct JSValue PrintWarn(struct JSContext* ctx, struct JSValue, int, struct JSValue*);
 
 // symbol: ?WriteError@QuickJS@Scripting@@YA?AVmeta_any@entt@@PEAUJSContext@@UJSValue@@@Z
-MCAPI entt::meta_any WriteError(struct JSContext*, struct JSValue);
+MCAPI entt::meta_any WriteError(struct JSContext* ctx, struct JSValue);
 // NOLINTEND
 
 }; // namespace Scripting::QuickJS

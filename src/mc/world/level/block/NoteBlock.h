@@ -140,7 +140,7 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@NoteBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -149,17 +149,17 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0NoteBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI NoteBlock(std::string const& nameId, int id);
+    MCAPI NoteBlock(std::string const& nameId, int);
 
     // symbol: ?enableSkullPlacement@NoteBlock@@QEAAAEAV1@_N@Z
-    MCAPI class NoteBlock& enableSkullPlacement(bool);
+    MCAPI class NoteBlock& enableSkullPlacement(bool enabled);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_triggerNoteParticle@NoteBlock@@AEBAXAEAVLevel@@AEBVVec3@@H@Z
-    MCAPI void _triggerNoteParticle(class Level&, class Vec3 const&, int) const;
+    MCAPI void _triggerNoteParticle(class Level& level, class Vec3 const&, int note) const;
 
     // NOLINTEND
 };

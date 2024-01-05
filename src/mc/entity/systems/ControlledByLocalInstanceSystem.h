@@ -29,7 +29,7 @@ public:
     // symbol:
     // ?createCalculateControlledByLocalInstanceSystem@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@AEBUConfig@1@@Z
     MCAPI static struct TickingSystemWithInfo
-    createCalculateControlledByLocalInstanceSystem(struct ControlledByLocalInstanceSystem::Config const&);
+    createCalculateControlledByLocalInstanceSystem(struct ControlledByLocalInstanceSystem::Config const& config);
 
     // symbol: ?createWasControlledByLocalInstanceSystem@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
     MCAPI static struct TickingSystemWithInfo createWasControlledByLocalInstanceSystem();

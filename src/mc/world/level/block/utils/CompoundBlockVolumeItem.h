@@ -17,7 +17,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??8CompoundBlockVolumeItem@@QEBA_NAEBV0@@Z
-    MCAPI bool operator==(class CompoundBlockVolumeItem const&) const;
+    MCAPI bool operator==(class CompoundBlockVolumeItem const& other) const;
 
     // symbol: ?bindType@CompoundBlockVolumeItem@@SAXAEAUReflectionCtx@cereal@@@Z
     MCAPI static void bindType(struct cereal::ReflectionCtx&);

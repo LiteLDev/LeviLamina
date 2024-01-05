@@ -15,10 +15,15 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0ResourceDropsContext@@QEAA@MAEBVItemStack@@AEBVBlockSource@@@Z
-    MCAPI ResourceDropsContext(float, class ItemStack const&, class BlockSource const&);
+    MCAPI ResourceDropsContext(float explosionRadius, class ItemStack const&, class BlockSource const& region);
 
     // symbol: ??0ResourceDropsContext@@QEAA@MAEBVItemStack@@AEAVILevel@@V?$AutomaticID@VDimension@@H@@@Z
-    MCAPI ResourceDropsContext(float, class ItemStack const&, class ILevel&, DimensionType);
+    MCAPI ResourceDropsContext(
+        float explosionRadius,
+        class ItemStack const&,
+        class ILevel& level,
+        DimensionType dimensionType
+    );
 
     // symbol: ?getRandom@ResourceDropsContext@@QEBAAEAVRandom@@XZ
     MCAPI class Random& getRandom() const;

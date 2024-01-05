@@ -17,7 +17,7 @@ public:
     MCAPI void initFromDefinition(class Actor& actor);
 
     // symbol: ?initFromDefinition@PushableComponent@@QEAAXAEAVActor@@AEBUPushableDescription@@@Z
-    MCAPI void initFromDefinition(class Actor& actor, struct PushableDescription const& desc);
+    MCAPI void initFromDefinition(class Actor&, struct PushableDescription const& desc);
 
     // symbol: ?isPushable@PushableComponent@@QEAA_NXZ
     MCAPI bool isPushable();

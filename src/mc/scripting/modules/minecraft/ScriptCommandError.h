@@ -23,7 +23,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0ScriptCommandError@ScriptModuleMinecraft@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUMCRESULT@@@Z
-    MCAPI ScriptCommandError(std::string, struct MCRESULT const&);
+    MCAPI ScriptCommandError(std::string messages, struct MCRESULT const& result);
 
     // symbol: ??1ScriptCommandError@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptCommandError();

@@ -64,24 +64,52 @@ public:
                           struct ActorSetPositionRequestComponent>,
                       struct GlobalRead<>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&);
+                      struct EntityFactoryT<>>& executionContext);
 
     // vIndex: 6, symbol:
     // ?singleTick@ActorSetPosSystem@@UEAAXAEAV?$StrictExecutionContext@U?$Filter@V?$FlagComponent@UActorAddedFlag@@@@V?$FlagComponent@UActorRemovedFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@V?$FlagComponent@UPaintingFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@V?$FlagComponent@UShulkerFlag@@@@@@U?$Read@VActorOwnerComponent@@UChunkPositionComponent@@UOffsetsComponent@@USlideOffsetComponent@@@@U?$Write@UAABBShapeComponent@@UActorSetPositionRequestComponent@@VHitboxComponent@@UStateVectorComponent@@USynchedActorDataComponent@@@@U?$AddRemove@V?$FlagComponent@UActorChunkMoveFlag@@@@V?$FlagComponent@UActorLocalPlayerEntityMovedFlag@@@@UActorSetPositionRequestComponent@@@@U?$GlobalRead@$$V@@U?$GlobalWrite@$$V@@U?$EntityFactoryT@$$V@@@@AEAVStrictEntityContext@@@Z
-    virtual void
-    singleTick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorAddedFlag>, class FlagComponent<struct ActorRemovedFlag>, class FlagComponent<struct LocalPlayerComponentFlag>, class FlagComponent<struct PaintingFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct ShulkerFlag>>, struct Read<class ActorOwnerComponent, struct ChunkPositionComponent, struct OffsetsComponent, struct SlideOffsetComponent>, struct Write<struct AABBShapeComponent, struct ActorSetPositionRequestComponent, class HitboxComponent, struct StateVectorComponent, struct SynchedActorDataComponent>, struct AddRemove<class FlagComponent<struct ActorChunkMoveFlag>, class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>, struct ActorSetPositionRequestComponent>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);
+    virtual void singleTick(
+        class StrictExecutionContext<
+            struct Filter<
+                class FlagComponent<struct ActorAddedFlag>,
+                class FlagComponent<struct ActorRemovedFlag>,
+                class FlagComponent<struct LocalPlayerComponentFlag>,
+                class FlagComponent<struct PaintingFlag>,
+                class FlagComponent<struct PlayerComponentFlag>,
+                class FlagComponent<struct ShulkerFlag>>,
+            struct Read<
+                class ActorOwnerComponent,
+                struct ChunkPositionComponent,
+                struct OffsetsComponent,
+                struct SlideOffsetComponent>,
+            struct Write<
+                struct AABBShapeComponent,
+                struct ActorSetPositionRequestComponent,
+                class HitboxComponent,
+                struct StateVectorComponent,
+                struct SynchedActorDataComponent>,
+            struct AddRemove<
+                class FlagComponent<struct ActorChunkMoveFlag>,
+                class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>,
+                struct ActorSetPositionRequestComponent>,
+            struct GlobalRead<>,
+            struct GlobalWrite<>,
+            struct EntityFactoryT<>>& executionContext,
+        class StrictEntityContext&    entityContext
+    );
 
     // symbol: ?actorUpdateOwnerChunk@ActorSetPosSystem@@SAXAEAVEntityContext@@@Z
-    MCAPI static void actorUpdateOwnerChunk(class EntityContext&);
+    MCAPI static void actorUpdateOwnerChunk(class EntityContext& entity);
 
     // symbol: ?createSystem@ActorSetPosSystem@@SA?AUTickingSystemWithInfo@@_N@Z
-    MCAPI static struct TickingSystemWithInfo createSystem(bool);
+    MCAPI static struct TickingSystemWithInfo createSystem(bool isClientSide);
 
     // symbol: ?moveHitboxTo@ActorSetPosSystem@@SAXAEBVVec3@@AEAV?$vector@UHitbox@@V?$allocator@UHitbox@@@std@@@std@@@Z
-    MCAPI static void moveHitboxTo(class Vec3 const&, std::vector<struct Hitbox>&);
+    MCAPI static void moveHitboxTo(class Vec3 const& pos, std::vector<struct Hitbox>&);
 
     // symbol: ?refreshAABB@ActorSetPosSystem@@SA?AVAABB@@MAEBVVec3@@AEBVVec2@@1@Z
-    MCAPI static class AABB refreshAABB(float, class Vec3 const&, class Vec2 const&, class Vec2 const&);
+    MCAPI static class AABB
+    refreshAABB(float heightOffset, class Vec3 const& pos, class Vec2 const& aabbDim, class Vec2 const&);
 
     // NOLINTEND
 };

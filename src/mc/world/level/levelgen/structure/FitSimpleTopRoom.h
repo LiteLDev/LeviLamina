@@ -18,7 +18,7 @@ public:
     virtual ~FitSimpleTopRoom() = default;
 
     // vIndex: 1, symbol: ?fits@FitSimpleTopRoom@@UEBA_NAEBVRoomDefinition@@@Z
-    virtual bool fits(class RoomDefinition const&) const;
+    virtual bool fits(class RoomDefinition const& definition) const;
 
     // vIndex: 2, symbol:
     // ?create@FitSimpleTopRoom@@UEAA?AV?$unique_ptr@VOceanMonumentPiece@@U?$default_delete@VOceanMonumentPiece@@@std@@@std@@AEAHV?$shared_ptr@VRoomDefinition@@@3@AEAVRandom@@@Z

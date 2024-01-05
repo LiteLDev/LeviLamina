@@ -24,7 +24,7 @@ public:
     virtual ~CreativeItemEntry() = default;
 
     // symbol: ??0CreativeItemEntry@@QEAA@$$QEAV0@@Z
-    MCAPI CreativeItemEntry(class CreativeItemEntry&&);
+    MCAPI CreativeItemEntry(class CreativeItemEntry&& rhs);
 
     // symbol: ?getCreativeNetId@CreativeItemEntry@@QEBAAEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@XZ
     MCAPI CreativeItemNetId const& getCreativeNetId() const;

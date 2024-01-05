@@ -85,7 +85,11 @@ public:
     virtual float getFlopHorizontalVelocityFactor() const;
 
     // symbol: ??0WaterAnimal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI WaterAnimal(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI WaterAnimal(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?preAiStep@WaterAnimal@@QEAAXXZ
     MCAPI void preAiStep();

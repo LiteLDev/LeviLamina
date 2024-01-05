@@ -27,16 +27,24 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@MoveToLiquidGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string& str) const;
 
     // vIndex: 11, symbol: ?isValidTarget@MoveToLiquidGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    virtual bool isValidTarget(class BlockSource& region, class BlockPos const& pos);
 
     // vIndex: 17, symbol: ?findTargetBlock@MoveToLiquidGoal@@UEAA_NXZ
     virtual bool findTargetBlock();
 
     // symbol: ??0MoveToLiquidGoal@@QEAA@AEAVMob@@MHHHW4MaterialType@@M@Z
-    MCAPI MoveToLiquidGoal(class Mob&, float, int, int, int, ::MaterialType, float);
+    MCAPI MoveToLiquidGoal(
+        class Mob&     mob,
+        float          speedModifier,
+        int            searchRange,
+        int            searchHeight,
+        int            searchCount,
+        ::MaterialType materialType,
+        float          goalRadius
+    );
 
     // NOLINTEND
 };

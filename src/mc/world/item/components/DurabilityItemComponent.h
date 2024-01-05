@@ -61,7 +61,7 @@ public:
     MCAPI int getMaxDamage() const;
 
     // symbol: ?setMaxDamage@DurabilityItemComponent@@QEAAXH@Z
-    MCAPI void setMaxDamage(int);
+    MCAPI void setMaxDamage(int maxDamage);
 
     // symbol:
     // ?bindType@DurabilityItemComponent@@SAXAEAUReflectionCtx@cereal@@AEBV?$vector@W4AllExperiments@@V?$allocator@W4AllExperiments@@@std@@@std@@V?$optional@VSemVersion@@@5@@Z

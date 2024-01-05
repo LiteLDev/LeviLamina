@@ -47,10 +47,10 @@ public:
     virtual void setWatchdogEventHandler(std::function<void(struct Scripting::WatchdogEvent)>);
 
     // vIndex: 6, symbol: ?pausePerformanceWatchdog@Watchdog@QuickJS@Scripting@@UEAAX_N@Z
-    virtual void pausePerformanceWatchdog(bool);
+    virtual void pausePerformanceWatchdog(bool pause);
 
     // symbol: ??0Watchdog@QuickJS@Scripting@@QEAA@PEAUJSRuntime@@UWatchdogSettings@2@@Z
-    MCAPI Watchdog(struct JSRuntime*, struct Scripting::WatchdogSettings);
+    MCAPI Watchdog(struct JSRuntime*, struct Scripting::WatchdogSettings settings);
 
     // NOLINTEND
 
@@ -60,13 +60,13 @@ public:
     MCAPI void _updateContextTiming(struct Scripting::ContextId);
 
     // symbol: ?_outOfMemoryHandler@Watchdog@QuickJS@Scripting@@CAXPEAUJSContext@@PEAX@Z
-    MCAPI static void _outOfMemoryHandler(struct JSContext*, void*);
+    MCAPI static void _outOfMemoryHandler(struct JSContext* ctx, void*);
 
     // symbol: ?_stackOverflowHandler@Watchdog@QuickJS@Scripting@@CAHPEAUJSContext@@PEAX@Z
-    MCAPI static int _stackOverflowHandler(struct JSContext*, void*);
+    MCAPI static int _stackOverflowHandler(struct JSContext* ctx, void*);
 
     // symbol: ?_timeoutHandler@Watchdog@QuickJS@Scripting@@CAHPEAUJSContext@@PEAX@Z
-    MCAPI static int _timeoutHandler(struct JSContext*, void*);
+    MCAPI static int _timeoutHandler(struct JSContext* ctx, void*);
 
     // NOLINTEND
 };

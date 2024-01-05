@@ -27,26 +27,26 @@ public:
 
     // vIndex: 1, symbol:
     // ?onInfo@PrintListener@QuickJS@Scripting@@UEBAXUContextId@3@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    virtual void onInfo(struct Scripting::ContextId, std::string_view const&) const;
+    virtual void onInfo(struct Scripting::ContextId, std::string_view const& message) const;
 
     // vIndex: 2, symbol:
     // ?onWarn@PrintListener@QuickJS@Scripting@@UEBAXUContextId@3@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    virtual void onWarn(struct Scripting::ContextId, std::string_view const&) const;
+    virtual void onWarn(struct Scripting::ContextId, std::string_view const& message) const;
 
     // vIndex: 3, symbol:
     // ?onError@PrintListener@QuickJS@Scripting@@UEBAXUContextId@3@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-    virtual void onError(struct Scripting::ContextId, std::string_view const&) const;
+    virtual void onError(struct Scripting::ContextId, std::string_view const& message) const;
 
     // vIndex: 4, symbol: ?onException@PrintListener@QuickJS@Scripting@@UEBAXUContextId@3@AEBVmeta_any@entt@@@Z
-    virtual void onException(struct Scripting::ContextId, entt::meta_any const&) const;
+    virtual void onException(struct Scripting::ContextId, entt::meta_any const& e) const;
 
     // vIndex: 5, symbol:
     // ?shouldPrintException@PrintListener@QuickJS@Scripting@@UEBA_NUContextId@3@AEBVmeta_any@entt@@@Z
-    virtual bool shouldPrintException(struct Scripting::ContextId, entt::meta_any const&) const;
+    virtual bool shouldPrintException(struct Scripting::ContextId, entt::meta_any const& e) const;
 
     // vIndex: 6, symbol:
     // ?onPromiseRejection@PrintListener@QuickJS@Scripting@@UEBAXUContextId@3@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@_N@Z
-    virtual void onPromiseRejection(struct Scripting::ContextId, std::string_view const&, bool) const;
+    virtual void onPromiseRejection(struct Scripting::ContextId, std::string_view const& reason, bool) const;
 
     // symbol:
     // ??0PrintListener@QuickJS@Scripting@@QEAA@V?$function@$$A6AXUContextId@Scripting@@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z@std@@00V?$function@$$A6AXUContextId@Scripting@@AEBVmeta_any@entt@@@Z@4@V?$function@$$A6A_NUContextId@Scripting@@AEBVmeta_any@entt@@@Z@4@V?$function@$$A6AXUContextId@Scripting@@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@_N@Z@4@@Z

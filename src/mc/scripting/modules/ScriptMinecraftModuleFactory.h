@@ -30,14 +30,14 @@ public:
     virtual ~ScriptMinecraftModuleFactory() = default;
 
     // symbol: ??0ScriptMinecraftModuleFactory@@QEAA@PEAVServerLevel@@@Z
-    MCAPI explicit ScriptMinecraftModuleFactory(class ServerLevel*);
+    MCAPI explicit ScriptMinecraftModuleFactory(class ServerLevel* level);
 
     // symbol:
     // ?getModuleUUIDAsString@ScriptMinecraftModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI static std::string getModuleUUIDAsString();
 
     // symbol: ?makeModuleDescriptorFor@ScriptMinecraftModuleFactory@@SA?AUModuleDescriptor@Scripting@@UVersion@3@@Z
-    MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version);
+    MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version version);
 
     // NOLINTEND
 

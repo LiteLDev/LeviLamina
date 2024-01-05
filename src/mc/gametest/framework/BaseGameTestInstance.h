@@ -74,17 +74,19 @@ public:
 
     // symbol:
     // ??0BaseGameTestInstance@gametest@@QEAA@AEBVBaseGameTestFunction@1@V?$unique_ptr@VIGameTestHelperProvider@gametest@@U?$default_delete@VIGameTestHelperProvider@gametest@@@std@@@std@@@Z
-    MCAPI
-    BaseGameTestInstance(class gametest::BaseGameTestFunction const&, std::unique_ptr<class gametest::IGameTestHelperProvider>);
+    MCAPI BaseGameTestInstance(
+        class gametest::BaseGameTestFunction const&,
+        std::unique_ptr<class gametest::IGameTestHelperProvider> helper
+    );
 
     // symbol: ?addListener@BaseGameTestInstance@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
-    MCAPI void addListener(std::shared_ptr<class gametest::IGameTestListener>);
+    MCAPI void addListener(std::shared_ptr<class gametest::IGameTestListener> listener);
 
     // symbol: ?createSequence@BaseGameTestInstance@gametest@@QEAAAEAVGameTestSequence@2@XZ
     MCAPI class gametest::GameTestSequence& createSequence();
 
     // symbol: ?fail@BaseGameTestInstance@gametest@@QEAAXUGameTestError@2@_N@Z
-    MCAPI void fail(struct gametest::GameTestError, bool);
+    MCAPI void fail(struct gametest::GameTestError error, bool);
 
     // symbol: ?finish@BaseGameTestInstance@gametest@@QEAAX_N@Z
     MCAPI void finish(bool);
@@ -103,7 +105,7 @@ public:
     MCAPI bool hasRetryAttempts() const;
 
     // symbol: ?removeListener@BaseGameTestInstance@gametest@@QEAAXV?$shared_ptr@VIGameTestListener@gametest@@@std@@@Z
-    MCAPI void removeListener(std::shared_ptr<class gametest::IGameTestListener>);
+    MCAPI void removeListener(std::shared_ptr<class gametest::IGameTestListener> listener);
 
     // symbol: ?startExecution@BaseGameTestInstance@gametest@@QEAAXXZ
     MCAPI void startExecution();

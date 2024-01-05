@@ -20,7 +20,8 @@ public:
 
     // vIndex: 1, symbol:
     // ?execute@CommandFunctionEntry@@UEAAXAEAVFunctionManager@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
-    virtual void execute(class FunctionManager&, class CommandOrigin const&, ::FunctionQueueOrder);
+    virtual void
+    execute(class FunctionManager& functionManager, class CommandOrigin const& origin, ::FunctionQueueOrder order);
 
     // NOLINTEND
 };

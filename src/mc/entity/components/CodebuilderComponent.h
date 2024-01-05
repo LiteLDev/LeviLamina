@@ -22,11 +22,11 @@ public:
 
     // symbol:
     // ?setCodeStatus@CodebuilderComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void setCodeStatus(std::string const&);
+    MCAPI void setCodeStatus(std::string const& status);
 
     // symbol:
     // ?stringToCodeStatus@CodebuilderComponent@@QEBA?AW4CodeStatus@CodeBuilderExecutionState@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ::CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const&) const;
+    MCAPI ::CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const& status) const;
 
     // NOLINTEND
 };

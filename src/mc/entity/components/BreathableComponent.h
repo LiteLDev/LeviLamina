@@ -48,8 +48,7 @@ public:
     MCAPI class BreathableComponent& operator=(class BreathableComponent&&);
 
     // symbol: ?readAdditionalSaveData@BreathableComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void
-    readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const& tag, class DataLoadHelper&);
 
     // symbol: ?setAirSupply@BreathableComponent@@QEAAXF@Z
     MCAPI void setAirSupply(short supply);

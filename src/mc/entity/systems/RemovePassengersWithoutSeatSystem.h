@@ -20,8 +20,12 @@ public:
 
     // symbol:
     // ?removePassengersWithoutSeat@RemovePassengersWithoutSeatSystem@@SAXAEAVStrictEntityContext@@AEBVRideableComponent@@AEAUVehicleComponent@@AEAV?$EntityModifier@V?$FlagComponent@UStopRidingRequestFlag@@@@@@@Z
-    MCAPI static void
-    removePassengersWithoutSeat(class StrictEntityContext&, class RideableComponent const&, struct VehicleComponent&, class EntityModifier<class FlagComponent<struct StopRidingRequestFlag>>&);
+    MCAPI static void removePassengersWithoutSeat(
+        class StrictEntityContext&,
+        class RideableComponent const&,
+        struct VehicleComponent&,
+        class EntityModifier<class FlagComponent<struct StopRidingRequestFlag>>& modifier
+    );
 
     // NOLINTEND
 };

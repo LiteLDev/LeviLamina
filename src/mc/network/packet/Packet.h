@@ -88,7 +88,7 @@ public:
     virtual void write(class BinaryStream& stream) const = 0;
 
     // vIndex: 4, symbol: ?read@Packet@@UEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void> read(class ReadOnlyBinaryStream& bitStream);
 
     // vIndex: 5, symbol: ?disallowBatching@Packet@@UEBA_NXZ
     virtual bool disallowBatching() const;
@@ -98,7 +98,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?_read@ActorEventPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z
-    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream&) = 0;
+    virtual class Bedrock::Result<void> _read(class ReadOnlyBinaryStream& stream) = 0;
 
     // symbol: ?handle@Packet@@QEAAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z
     MCAPI void handle(
@@ -112,7 +112,7 @@ public:
     MCAPI class Bedrock::Result<void> readNoHeader(class ReadOnlyBinaryStream&, ::SubClientId const&);
 
     // symbol: ?writeWithHeader@Packet@@QEBAXW4SubClientId@@AEAVBinaryStream@@@Z
-    MCAPI void writeWithHeader(::SubClientId, class BinaryStream&) const;
+    MCAPI void writeWithHeader(::SubClientId subClientId, class BinaryStream& bitstream) const;
 
     // NOLINTEND
 };

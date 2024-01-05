@@ -89,7 +89,8 @@ public:
     // vIndex: 117, symbol:
     // ?_useOn@BrushItem@@MEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& itemStack, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const& clickPos)
+        const;
 
     // symbol: ?useInterruptedByAttacking@BrushItem@@UEBA_NXZ
     MCVAPI bool useInterruptedByAttacking() const;
@@ -99,7 +100,13 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ?_spawnDustParticles@BrushItem@@KAXAEAVLevel@@VVec3@@AEBVBlock@@AEBVBlockPos@@E@Z
-    MCAPI static void _spawnDustParticles(class Level&, class Vec3, class Block const&, class BlockPos const&, uchar);
+    MCAPI static void _spawnDustParticles(
+        class Level&          level,
+        class Vec3            clickPos,
+        class Block const&    block,
+        class BlockPos const& pos,
+        uchar                 face
+    );
 
     // NOLINTEND
 };

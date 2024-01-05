@@ -32,10 +32,10 @@ public:
     MCAPI void clearPendingEntities();
 
     // symbol: ?garbageCollectEntity@ActorGarbageCollector@@QEAAXV?$OwnerPtrT@UEntityRefTraits@@@@@Z
-    MCAPI void garbageCollectEntity(class OwnerPtrT<struct EntityRefTraits>);
+    MCAPI void garbageCollectEntity(class OwnerPtrT<struct EntityRefTraits> entity);
 
     // symbol: ?garbageCollectEntityWhenChunkDiscarded@ActorGarbageCollector@@QEAAXV?$OwnerPtrT@UEntityRefTraits@@@@@Z
-    MCAPI void garbageCollectEntityWhenChunkDiscarded(class OwnerPtrT<struct EntityRefTraits>);
+    MCAPI void garbageCollectEntityWhenChunkDiscarded(class OwnerPtrT<struct EntityRefTraits> entity);
 
     // symbol: ?update@ActorGarbageCollector@@QEAAXXZ
     MCAPI void update();

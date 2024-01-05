@@ -52,7 +52,7 @@ public:
     MCAPI float getMinValue() const;
 
     // symbol: ?getModifier@AttributeInstance@@QEBA?AVAttributeModifier@@AEBVUUID@mce@@@Z
-    MCAPI class AttributeModifier getModifier(class mce::UUID const& id) const;
+    MCAPI class AttributeModifier getModifier(class mce::UUID const&) const;
 
     // symbol:
     // ?getModifiers@AttributeInstance@@QEBA?AV?$vector@VAttributeModifier@@V?$allocator@VAttributeModifier@@@std@@@std@@XZ
@@ -96,7 +96,7 @@ public:
     MCAPI void removeBuffs();
 
     // symbol: ?removeModifier@AttributeInstance@@QEAA_NAEBVUUID@mce@@@Z
-    MCAPI bool removeModifier(class mce::UUID const& id);
+    MCAPI bool removeModifier(class mce::UUID const&);
 
     // symbol: ?removeModifier@AttributeInstance@@QEAAXAEBVAttributeModifier@@@Z
     MCAPI void removeModifier(class AttributeModifier const& modifier);
@@ -123,7 +123,7 @@ public:
     MCAPI void serializationSetValue(float currentValue, int operand, float maxValue);
 
     // symbol: ?setCurrentValue@AttributeInstance@@QEAAXM@Z
-    MCAPI void setCurrentValue(float);
+    MCAPI void setCurrentValue(float value);
 
     // symbol: ?setDefaultValue@AttributeInstance@@QEAAXMH@Z
     MCAPI void setDefaultValue(float defaultValue, int operand);
@@ -141,7 +141,7 @@ public:
     MCAPI void setRange(float min, float defaultValue, float max);
 
     // symbol: ?updateModifier@AttributeInstance@@QEAAXAEBVAttributeModifier@@@Z
-    MCAPI void updateModifier(class AttributeModifier const&);
+    MCAPI void updateModifier(class AttributeModifier const& takeOver);
 
     // NOLINTEND
 

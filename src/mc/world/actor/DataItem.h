@@ -49,7 +49,7 @@ public:
     virtual ~DataItem();
 
     // vIndex: 1, symbol: ?isDataEqual@DataItem@@UEBA_NAEBV1@@Z
-    virtual bool isDataEqual(class DataItem const& rhs) const;
+    virtual bool isDataEqual(class DataItem const&) const;
 
     // vIndex: 2, symbol:
     // ?clone@?$DataItem2@M@@UEBA?AV?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@XZ

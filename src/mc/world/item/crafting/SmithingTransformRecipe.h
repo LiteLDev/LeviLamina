@@ -34,8 +34,14 @@ public:
 
     // symbol:
     // ??0SmithingTransformRecipe@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVRecipeIngredient@@11AEBVItemInstance@@AEBVHashedString@@@Z
-    MCAPI
-    SmithingTransformRecipe(std::string const&, class RecipeIngredient const&, class RecipeIngredient const&, class RecipeIngredient const&, class ItemInstance const&, class HashedString const&);
+    MCAPI SmithingTransformRecipe(
+        std::string const& recipeId,
+        class RecipeIngredient const&,
+        class RecipeIngredient const&,
+        class RecipeIngredient const&,
+        class ItemInstance const& resultItem,
+        class HashedString const& tag
+    );
 
     // symbol: ?getAdditionIngredient@SmithingTransformRecipe@@QEBAAEBVRecipeIngredient@@XZ
     MCAPI class RecipeIngredient const& getAdditionIngredient() const;

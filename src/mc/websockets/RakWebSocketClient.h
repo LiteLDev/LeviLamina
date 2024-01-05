@@ -26,7 +26,7 @@ public:
     virtual uint _genMaskingKey() const;
 
     // symbol: ??0RakWebSocketClient@@QEAA@V?$unique_ptr@VTcpProxy@@U?$default_delete@VTcpProxy@@@std@@@std@@@Z
-    MCAPI explicit RakWebSocketClient(std::unique_ptr<class TcpProxy>);
+    MCAPI explicit RakWebSocketClient(std::unique_ptr<class TcpProxy> proxy);
 
     // NOLINTEND
 };

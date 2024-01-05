@@ -106,7 +106,7 @@ public:
     virtual bool isSequenceReader() const;
 
     // symbol: ??0NBTSchemaReader@@QEAA@V?$not_null@PEBVCompoundTag@@@gsl@@@Z
-    MCAPI explicit NBTSchemaReader(gsl::not_null<class CompoundTag const*>);
+    MCAPI explicit NBTSchemaReader(gsl::not_null<class CompoundTag const*> tag);
 
     // NOLINTEND
 };

@@ -27,8 +27,11 @@ public:
 
     // symbol:
     // ??0ZipPackAccessStrategyOwningFileAccess@@QEAA@V?$shared_ptr@VIFileAccess@@@std@@AEBVResourceLocation@@AEBVPath@Core@@@Z
-    MCAPI
-    ZipPackAccessStrategyOwningFileAccess(std::shared_ptr<class IFileAccess>, class ResourceLocation const&, class Core::Path const&);
+    MCAPI ZipPackAccessStrategyOwningFileAccess(
+        std::shared_ptr<class IFileAccess> fileAccess,
+        class ResourceLocation const&      path,
+        class Core::Path const&            subPath
+    );
 
     // NOLINTEND
 };

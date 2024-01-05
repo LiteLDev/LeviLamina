@@ -41,12 +41,14 @@ public:
 
     // vIndex: 14, symbol:
     // ?_getItemContext@ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@MEBA?AVItemContext@@H@Z
-    virtual class ItemContext _getItemContext(int) const;
+    virtual class ItemContext _getItemContext(int slot) const;
 
     // symbol:
     // ??0ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@@Z
-    MCAPI
-    ScriptPlayerInventoryComponentContainer(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&);
+    MCAPI ScriptPlayerInventoryComponentContainer(
+        class WeakEntityRef const&,
+        class Scripting::WeakLifetimeScope const& scope
+    );
 
     // symbol:
     // ?bindV010@ScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@SA?AV?$ClassBindingBuilder@VScriptPlayerInventoryComponentContainer@ScriptModuleMinecraft@@@Scripting@@XZ

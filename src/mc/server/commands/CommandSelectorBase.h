@@ -46,25 +46,30 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?addFamilyFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z
-    MCAPI void addFamilyFilter(struct InvertableFilter<std::string> const&);
+    MCAPI void addFamilyFilter(struct InvertableFilter<std::string> const& filter);
 
     // symbol: ?addFilter@CommandSelectorBase@@QEAAXV?$function@$$A6A_NAEBVCommandOrigin@@AEBVActor@@@Z@std@@@Z
     MCAPI void addFilter(std::function<bool(class CommandOrigin const&, class Actor const&)> filter);
 
     // symbol: ?addGameModeFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@W4GameType@@@@@Z
-    MCAPI void addGameModeFilter(struct InvertableFilter<::GameType> const&);
+    MCAPI void addGameModeFilter(struct InvertableFilter<::GameType> const& filter);
 
     // symbol:
     // ?addHasItemFilter@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@H@3@AEBVCommandIntegerRange@@W4EquipmentSlot@Legacy@Puv@@2@Z
-    MCAPI void
-    addHasItemFilter(std::string const&, std::optional<int>, class CommandIntegerRange const&, ::Puv::Legacy::EquipmentSlot, class CommandIntegerRange const&);
+    MCAPI void addHasItemFilter(
+        std::string const&               itemName,
+        std::optional<int>               auxValue,
+        class CommandIntegerRange const& quantity,
+        ::Puv::Legacy::EquipmentSlot,
+        class CommandIntegerRange const& slot
+    );
 
     // symbol:
     // ?addHasPermissionFilters@CommandSelectorBase@@QEAAXAEBV?$vector@UHasPermissionFilter@@V?$allocator@UHasPermissionFilter@@@std@@@std@@@Z
-    MCAPI void addHasPermissionFilters(std::vector<struct HasPermissionFilter> const&);
+    MCAPI void addHasPermissionFilters(std::vector<struct HasPermissionFilter> const& filters);
 
     // symbol: ?addLevelFilter@CommandSelectorBase@@QEAAXAEBU?$pair@HH@std@@@Z
-    MCAPI void addLevelFilter(std::pair<int, int> const&);
+    MCAPI void addLevelFilter(std::pair<int, int> const& level);
 
     // symbol:
     // ?addNameFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z
@@ -72,8 +77,11 @@ public:
 
     // symbol:
     // ?addScoreFilter@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCommandIntegerRange@@V?$function@$$A6AHAEA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@@Z@3@@Z
-    MCAPI void
-    addScoreFilter(std::string const&, class CommandIntegerRange const&, std::function<int(bool&, std::string const&, class Actor const&)>);
+    MCAPI void addScoreFilter(
+        std::string const&                                                objName,
+        class CommandIntegerRange const&                                  range,
+        std::function<int(bool&, std::string const&, class Actor const&)> callback
+    );
 
     // symbol:
     // ?addTagFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z
@@ -87,7 +95,7 @@ public:
     MCAPI void addXRotationFilter(std::pair<float, float> const&);
 
     // symbol: ?addYRotationFilter@CommandSelectorBase@@QEAAXAEBU?$pair@MM@std@@@Z
-    MCAPI void addYRotationFilter(std::pair<float, float> const&);
+    MCAPI void addYRotationFilter(std::pair<float, float> const& yRotation);
 
     // symbol:
     // ?compile@CommandSelectorBase@@QEAA_NAEBVCommandOrigin@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -109,7 +117,7 @@ public:
     MCAPI bool isExplicitIdSelector() const;
 
     // symbol: ?setBox@CommandSelectorBase@@QEAAXAEBVVec3@@@Z
-    MCAPI void setBox(class Vec3 const&);
+    MCAPI void setBox(class Vec3 const& deltas);
 
     // symbol: ?setExcludeAgents@CommandSelectorBase@@QEAAX_N@Z
     MCAPI void setExcludeAgents(bool);
@@ -162,10 +170,10 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?compareName@CommandSelectorBase@@AEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool compareName(std::string const&) const;
+    MCAPI bool compareName(std::string const& name) const;
 
     // symbol: ?filter@CommandSelectorBase@@AEBA_NAEBVCommandOrigin@@AEAVActor@@@Z
-    MCAPI bool filter(class CommandOrigin const&, class Actor&) const;
+    MCAPI bool filter(class CommandOrigin const& origin, class Actor& actor) const;
 
     // symbol: ?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEBVCommandOrigin@@@Z
     MCAPI bool isExpansionAllowed(class CommandOrigin const& origin) const;
@@ -174,7 +182,7 @@ public:
     MCAPI bool isInDimension(class CommandOrigin const& origin, class Actor& entity) const;
 
     // symbol: ?matchFamily@CommandSelectorBase@@AEBA_NAEBVActor@@@Z
-    MCAPI bool matchFamily(class Actor const&) const;
+    MCAPI bool matchFamily(class Actor const& entity) const;
 
     // symbol: ?matchName@CommandSelectorBase@@AEBA_NAEBVActor@@@Z
     MCAPI bool matchName(class Actor const& entity) const;

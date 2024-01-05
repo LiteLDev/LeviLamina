@@ -25,8 +25,12 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_doSlimePreNormalTickSystem@SlimePreNormalTickSystem@@CAXAEAVStrictEntityContext@@AEAVActorOwnerComponent@@V?$Optional@$$CBV?$FlagComponent@UOnGroundFlag@@@@@@V?$EntityModifier@V?$FlagComponent@USlimeWasOnGroundPreNormalTick@@@@@@@Z
-    MCAPI static void
-    _doSlimePreNormalTickSystem(class StrictEntityContext&, class ActorOwnerComponent&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class EntityModifier<class FlagComponent<struct SlimeWasOnGroundPreNormalTick>>);
+    MCAPI static void _doSlimePreNormalTickSystem(
+        class StrictEntityContext& context,
+        class ActorOwnerComponent&,
+        class Optional<class FlagComponent<struct OnGroundFlag> const>                  onGround,
+        class EntityModifier<class FlagComponent<struct SlimeWasOnGroundPreNormalTick>> mod
+    );
 
     // NOLINTEND
 };

@@ -23,7 +23,7 @@ public:
     MCAPI DefinitionTrigger(std::string, ::Puv::Legacy::FilterSubject, class ExpressionNode);
 
     // symbol: ?canTrigger@DefinitionTrigger@@QEBA_NAEAVRenderParams@@@Z
-    MCAPI bool canTrigger(class RenderParams&) const;
+    MCAPI bool canTrigger(class RenderParams& params) const;
 
     // symbol: ??4DefinitionTrigger@@QEAAAEAV0@$$QEAV0@@Z
     MCAPI class DefinitionTrigger& operator=(class DefinitionTrigger&&);

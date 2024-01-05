@@ -70,7 +70,7 @@ public:
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@Wolf@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent id, int data);
+    virtual void handleEntityEvent(::ActorEvent, int data);
 
     // vIndex: 98, symbol: ?load@Wolf@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual bool load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
@@ -106,7 +106,11 @@ public:
     virtual void newServerAiStep();
 
     // symbol: ??0Wolf@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Wolf(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Wolf(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?getHeadRollAngle@Wolf@@QEAAMM@Z
     MCAPI float getHeadRollAngle(float a);

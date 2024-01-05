@@ -35,7 +35,7 @@ public:
 
     // vIndex: 3, symbol:
     // ?hasAlias@GenericModuleBindingFactory@Scripting@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual bool hasAlias(std::string const&) const;
+    virtual bool hasAlias(std::string const& alias) const;
 
     // vIndex: 4, symbol:
     // ?getSupportedVersions@GenericModuleBindingFactory@Scripting@@UEBA?AV?$vector@UVersion@Scripting@@V?$allocator@UVersion@Scripting@@@std@@@std@@XZ
@@ -43,12 +43,14 @@ public:
 
     // vIndex: 5, symbol:
     // ?getDependencies@GenericModuleBindingFactory@Scripting@@UEBA?AV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@std@@UVersion@2@@Z
-    virtual std::vector<struct Scripting::ModuleDescriptor> getDependencies(struct Scripting::Version) const;
+    virtual std::vector<struct Scripting::ModuleDescriptor> getDependencies(struct Scripting::Version version) const;
 
     // vIndex: 6, symbol:
     // ?createModuleBinding@GenericModuleBindingFactory@Scripting@@UEAA?AV?$optional@UModuleBinding@Scripting@@@std@@UVersion@2@AEBV?$optional@UContextConfig@Scripting@@@4@@Z
-    virtual std::optional<struct Scripting::ModuleBinding>
-    createModuleBinding(struct Scripting::Version, std::optional<struct Scripting::ContextConfig> const&);
+    virtual std::optional<struct Scripting::ModuleBinding> createModuleBinding(
+        struct Scripting::Version                             version,
+        std::optional<struct Scripting::ContextConfig> const& config
+    );
 
     // symbol: ??0ScriptMinecraftNetModuleFactory@@QEAA@V?$NonOwnerPointer@VScheduler@@@Bedrock@@@Z
     MCAPI explicit ScriptMinecraftNetModuleFactory(class Bedrock::NonOwnerPointer<class Scheduler>);

@@ -27,18 +27,18 @@ public:
 
     // vIndex: 2, symbol:
     // ?loadScripts@ScriptPluginPackSource@@UEAA?AV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    virtual std::unordered_map<std::string, std::string> loadScripts(std::string const&);
+    virtual std::unordered_map<std::string, std::string> loadScripts(std::string const& extension);
 
     // vIndex: 3, symbol:
     // ?removeRootFromPath@ScriptPluginPackSource@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
-    virtual std::string removeRootFromPath(std::string const&);
+    virtual std::string removeRootFromPath(std::string const& path);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_removeRootFromPath@ScriptPluginPackSource@@AEAA?AVPath@Core@@AEBV23@@Z
-    MCAPI class Core::Path _removeRootFromPath(class Core::Path const&);
+    MCAPI class Core::Path _removeRootFromPath(class Core::Path const& pathIn);
 
     // NOLINTEND
 };

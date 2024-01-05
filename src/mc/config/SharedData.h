@@ -30,7 +30,7 @@ public:
     virtual ~SharedData() = default;
 
     // vIndex: 1, symbol: ?isGameRuleEnabled@SharedData@PlayerCapabilities@@UEBA?AV?$optional@_N@std@@UGameRuleId@@@Z
-    virtual std::optional<bool> isGameRuleEnabled(struct GameRuleId) const;
+    virtual std::optional<bool> isGameRuleEnabled(struct GameRuleId rule) const;
 
     // vIndex: 2, symbol: ?getChatRestrictionLevel@SharedData@PlayerCapabilities@@UEBA?AW4ChatRestrictionLevel@@XZ
     virtual ::ChatRestrictionLevel getChatRestrictionLevel() const;

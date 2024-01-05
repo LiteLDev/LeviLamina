@@ -36,13 +36,13 @@ public:
 
     // vIndex: 7, symbol:
     // ?appendDebugInfo@AdmireItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual void appendDebugInfo(std::string&) const = 0;
+    virtual void appendDebugInfo(std::string& str) const = 0;
 
     // vIndex: 8, symbol: ?isTargetGoal@Goal@@UEBA_NXZ
     virtual bool isTargetGoal() const;
 
     // vIndex: 9, symbol: ?onPlayerDimensionChanged@Goal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
-    virtual void onPlayerDimensionChanged(class Player*, DimensionType, DimensionType);
+    virtual void onPlayerDimensionChanged(class Player* player, DimensionType fromDimension, DimensionType toDimension);
 
     // symbol: ??0Goal@@QEAA@XZ
     MCAPI Goal();
@@ -57,7 +57,7 @@ public:
     MCAPI void setRequiredControlFlags(int requiredControlFlags);
 
     // symbol: ?setTypeId@Goal@@QEAAXG@Z
-    MCAPI void setTypeId(ushort);
+    MCAPI void setTypeId(ushort typeId);
 
     // NOLINTEND
 };

@@ -43,7 +43,7 @@ public:
     virtual bool isTrusted() const = 0;
 
     // vIndex: 7, symbol: ?hasAsset@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@_N1@Z
-    virtual bool hasAsset(class Core::Path const&, bool, bool) const = 0;
+    virtual bool hasAsset(class Core::Path const& packRelativePath, bool trustedContentOnly, bool) const = 0;
 
     // vIndex: 8, symbol: ?hasFolder@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@@Z
     virtual bool hasFolder(class Core::Path const& packRelativePath) const = 0;
@@ -70,10 +70,7 @@ public:
 
     // vIndex: 13, symbol:
     // ?forEachInAssetSet@PackAccessStrategy@@UEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@@Z
-    virtual void forEachInAssetSet(
-        class Core::Path const&                      packRelativePath,
-        std::function<void(class Core::Path const&)> callback
-    ) const;
+    virtual void forEachInAssetSet(class Core::Path const&, std::function<void(class Core::Path const&)>) const;
 
     // vIndex: 14, symbol: ?getStrategyType@DirectoryPackAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ
     virtual ::PackAccessStrategyType getStrategyType() const = 0;
@@ -125,7 +122,7 @@ public:
     MCAPI bool _isInAssetSet(class Core::Path const& path) const;
 
     // symbol: ?_isInAssetSetCaseInsensative@PackAccessStrategy@@IEBA_NAEBVPath@Core@@@Z
-    MCAPI bool _isInAssetSetCaseInsensative(class Core::Path const&) const;
+    MCAPI bool _isInAssetSetCaseInsensative(class Core::Path const& path) const;
 
     // NOLINTEND
 };

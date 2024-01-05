@@ -31,7 +31,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0LevelData@@QEAA@_N@Z
-    MCAPI explicit LevelData(bool);
+    MCAPI explicit LevelData(bool isEduMode);
 
     // symbol: ??0LevelData@@QEAA@$$QEAV0@@Z
     MCAPI LevelData(class LevelData&& rhs);
@@ -332,10 +332,10 @@ public:
     MCAPI void setCommandsEnabled(bool commandsEnabled);
 
     // symbol: ?setCustomSkinsDisabled@LevelData@@QEAAX_N@Z
-    MCAPI void setCustomSkinsDisabled(bool);
+    MCAPI void setCustomSkinsDisabled(bool val);
 
     // symbol: ?setDataDrivenGenerator@LevelData@@QEAAXW4GeneratorType@@@Z
-    MCAPI void setDataDrivenGenerator(::GeneratorType);
+    MCAPI void setDataDrivenGenerator(::GeneratorType type);
 
     // symbol: ?setEduSharedUriResource@LevelData@@QEAAXAEBUEduSharedUriResource@@@Z
     MCAPI void setEduSharedUriResource(struct EduSharedUriResource const&);
@@ -350,7 +350,7 @@ public:
     MCAPI void setEducationOid(std::string const& educationOid);
 
     // symbol: ?setEmoteChatMuted@LevelData@@QEAAX_N@Z
-    MCAPI void setEmoteChatMuted(bool);
+    MCAPI void setEmoteChatMuted(bool val);
 
     // symbol: ?setForceGameType@LevelData@@QEAAX_N@Z
     MCAPI void setForceGameType(bool value);
@@ -395,7 +395,7 @@ public:
     MCAPI void setOnlySpawnV1Villagers(bool val);
 
     // symbol: ?setPersonaDisabled@LevelData@@QEAAX_N@Z
-    MCAPI void setPersonaDisabled(bool);
+    MCAPI void setPersonaDisabled(bool val);
 
     // symbol: ?setPlatformBroadcastIntent@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
     MCAPI void setPlatformBroadcastIntent(::Social::GamePublishSetting broadcastMode);
@@ -413,7 +413,7 @@ public:
     MCAPI void setRainTime(int rainTime);
 
     // symbol: ?setSeed@LevelData@@QEAAXVLevelSeed64@@@Z
-    MCAPI void setSeed(class LevelSeed64);
+    MCAPI void setSeed(class LevelSeed64 seed);
 
     // symbol: ?setServerChunkTickRange@LevelData@@QEAAXI@Z
     MCAPI void setServerChunkTickRange(uint newRange);
@@ -443,7 +443,7 @@ public:
     MCAPI void setWorldTemplateOptionLocked(bool isLocked);
 
     // symbol: ?setWorldVersion@LevelData@@QEAAXW4WorldVersion@@@Z
-    MCAPI void setWorldVersion(::WorldVersion);
+    MCAPI void setWorldVersion(::WorldVersion version);
 
     // symbol: ?setXBLBroadcastIntent@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
     MCAPI void setXBLBroadcastIntent(::Social::GamePublishSetting broadcastMode);
@@ -471,7 +471,7 @@ public:
     MCAPI void _determineMaxBaseGameVersion();
 
     // symbol: ?_setValue@LevelData@@AEAAXAEBVHashedString@@$$QEAULevelDataValue@@@Z
-    MCAPI void _setValue(class HashedString const&, struct LevelDataValue&&);
+    MCAPI void _setValue(class HashedString const& key, struct LevelDataValue&& value);
 
     // NOLINTEND
 };

@@ -78,7 +78,7 @@ public:
 
     // symbol:
     // ??0NpcSceneDialogueData@@QEAA@VWeakEntityRef@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI NpcSceneDialogueData(class WeakEntityRef, std::string const&);
+    MCAPI NpcSceneDialogueData(class WeakEntityRef npc, std::string const&);
 
     // NOLINTEND
 };

@@ -79,7 +79,7 @@ public:
     virtual void levelEvent(::LevelEvent type, class Vec3 const& pos, int data);
 
     // symbol: ??0Weather@@QEAA@AEAVDimension@@AEAVIRandom@@@Z
-    MCAPI Weather(class Dimension&, class IRandom&);
+    MCAPI Weather(class Dimension& d, class IRandom& random);
 
     // symbol: ?calcSnowBlockDepth@Weather@@QEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
     MCAPI int calcSnowBlockDepth(class BlockSource& region, class BlockPos const& pos, int maxLayerDepth) const;
@@ -124,10 +124,10 @@ public:
     MCAPI void setSkyFlashTime(int flash);
 
     // symbol: ?setTargetLightningLevel@Weather@@QEAAXM@Z
-    MCAPI void setTargetLightningLevel(float);
+    MCAPI void setTargetLightningLevel(float lightningLevel);
 
     // symbol: ?setTargetRainLevel@Weather@@QEAAXM@Z
-    MCAPI void setTargetRainLevel(float);
+    MCAPI void setTargetRainLevel(float rainLevel);
 
     // symbol: ?stop@Weather@@QEAAXXZ
     MCAPI void stop();
@@ -144,16 +144,16 @@ public:
     );
 
     // symbol: ?calcLightningCycleTime@Weather@@SAHAEAVIRandom@@@Z
-    MCAPI static int calcLightningCycleTime(class IRandom&);
+    MCAPI static int calcLightningCycleTime(class IRandom& random);
 
     // symbol: ?calcRainCycleTime@Weather@@SAHAEAVIRandom@@@Z
-    MCAPI static int calcRainCycleTime(class IRandom&);
+    MCAPI static int calcRainCycleTime(class IRandom& random);
 
     // symbol: ?calcRainDuration@Weather@@SAHAEAVIRandom@@@Z
-    MCAPI static int calcRainDuration(class IRandom&);
+    MCAPI static int calcRainDuration(class IRandom& random);
 
     // symbol: ?rebuildTopSnowToDepth@Weather@@SAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-    MCAPI static void rebuildTopSnowToDepth(class BlockSource&, class BlockPos const&, int);
+    MCAPI static void rebuildTopSnowToDepth(class BlockSource& region, class BlockPos const& testPos, int desiredDepth);
 
     // NOLINTEND
 };

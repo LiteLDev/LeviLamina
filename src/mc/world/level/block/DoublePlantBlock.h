@@ -110,10 +110,10 @@ public:
         const;
 
     // vIndex: 81, symbol: ?canBeFertilized@DoublePlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 96, symbol: ?asItemInstance@DoublePlantBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
-    virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
+    virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
     // vIndex: 104, symbol: ?canBeBuiltOver@DoublePlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canBeBuiltOver(class BlockSource& region, class BlockPos const& pos) const;
@@ -174,14 +174,13 @@ public:
     virtual void playerDestroy(class Player& player, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 164, symbol: ?getResourceItem@DoublePlantBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize& randomize, class Block const& block, int) const;
 
     // vIndex: 170, symbol: ?_keepRelevantStateForDropping@DoublePlantBlock@@MEBAAEBVBlock@@AEBV2@@Z
-    virtual class Block const& _keepRelevantStateForDropping(class Block const&) const;
+    virtual class Block const& _keepRelevantStateForDropping(class Block const& block) const;
 
     // symbol: ??0DoublePlantBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DoublePlantBlock(std::string const& nameId, int id);
+    MCAPI DoublePlantBlock(std::string const& nameId, int);
 
     // symbol: ?getType@DoublePlantBlock@@QEBAHAEBVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     MCAPI int getType(class BlockSource const& region, class BlockPos const& pos, class Block const& block) const;

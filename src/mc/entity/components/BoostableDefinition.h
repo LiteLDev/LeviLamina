@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?initialize@BoostableDefinition@@QEBAXAEAVEntityContext@@AEAVBoostableComponent@@@Z
-    MCAPI void initialize(class EntityContext& entity, class BoostableComponent& component) const;
+    MCAPI void initialize(class EntityContext&, class BoostableComponent& component) const;
 
     // symbol:
     // ?buildSchema@BoostableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBoostableDefinition@@@JsonUtil@@@std@@@Z

@@ -102,13 +102,14 @@ public:
 
     // vIndex: 102, symbol:
     // ?setIconInfo@SparklerItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item& setIconInfo(std::string const&, int);
+    virtual class Item& setIconInfo(std::string const& name, int);
 
     // vIndex: 103, symbol: ?getIconInfo@SparklerItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
-    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const&, int, bool) const;
+    virtual struct ResolvedItemIconInfo
+    getIconInfo(class ItemStackBase const& itemStack, int, bool inInventoryPane) const;
 
     // vIndex: 107, symbol: ?getLightEmission@SparklerItem@@UEBA?AUBrightness@@H@Z
-    virtual struct Brightness getLightEmission(int) const;
+    virtual struct Brightness getLightEmission(int auxValue) const;
 
     // symbol: ?COLORS@SparklerItem@@2QBUColorInfo@1@B
     MCAPI static struct SparklerItem::ColorInfo const COLORS[];

@@ -8,14 +8,14 @@
 namespace VanillaBlockConversion {
 // NOLINTBEGIN
 // symbol: ?getBlockTypeFromLegacyId@VanillaBlockConversion@@YA?AV?$WeakPtr@VBlockLegacy@@@@I@Z
-MCAPI class WeakPtr<class BlockLegacy> getBlockTypeFromLegacyId(uint id);
+MCAPI class WeakPtr<class BlockLegacy> getBlockTypeFromLegacyId(uint);
 
 // symbol:
 // ?getBlockTypeLegacyIdFromName@VanillaBlockConversion@@YAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
 MCAPI int getBlockTypeLegacyIdFromName(std::string const& rawName);
 
 // symbol: ?tryGetLegacyState@VanillaBlockConversion@@YAPEBVBlock@@II@Z
-MCAPI class Block const* tryGetLegacyState(uint id, uint data);
+MCAPI class Block const* tryGetLegacyState(uint, uint data);
 // NOLINTEND
 
 }; // namespace VanillaBlockConversion

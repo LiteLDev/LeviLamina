@@ -10,7 +10,7 @@ public:
     MCAPI static std::unique_ptr<class CompoundTag> read(class IDataInput& dis);
 
     // symbol: ?write@NbtIo@@SAXPEBVCompoundTag@@AEAVIDataOutput@@@Z
-    MCAPI static void write(class CompoundTag const* tag, class IDataOutput& dos);
+    MCAPI static void write(class CompoundTag const*, class IDataOutput&);
 
     // NOLINTEND
 };

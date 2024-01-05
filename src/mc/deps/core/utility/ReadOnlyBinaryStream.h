@@ -86,7 +86,7 @@ public:
 
     // symbol:
     // ?getString@ReadOnlyBinaryStream@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class Bedrock::Result<void> getString(std::string& outString);
+    MCAPI class Bedrock::Result<void> getString(std::string&);
 
     // symbol: ?getUnsignedChar@ReadOnlyBinaryStream@@QEAA?AV?$Result@EVerror_code@std@@@Bedrock@@XZ
     MCAPI class Bedrock::Result<uchar> getUnsignedChar();
@@ -117,7 +117,7 @@ public:
 
     // symbol:
     // ?readVectorList@ReadOnlyBinaryStream@@QEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAV?$vector@IV?$allocator@I@std@@@std@@@Z
-    MCAPI class Bedrock::Result<void> readVectorList(std::vector<uint>& list);
+    MCAPI class Bedrock::Result<void> readVectorList(std::vector<uint>&);
 
     // NOLINTEND
 };

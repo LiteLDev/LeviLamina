@@ -25,7 +25,7 @@ public:
     MCAPI void initialize(class EntityContext& entity, class ExplodeComponent& component) const;
 
     // symbol: ?uninitialize@ExplodeDefinition@@QEBAXAEAVEntityContext@@@Z
-    MCAPI void uninitialize(class EntityContext&) const;
+    MCAPI void uninitialize(class EntityContext& entity) const;
 
     // symbol:
     // ?buildSchema@ExplodeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VExplodeDefinition@@@JsonUtil@@@std@@@Z

@@ -14,7 +14,7 @@ MCAPI void initializeHorse(class EntityContext&);
 MCAPI void resetStandCounter(struct HorseStandCounterComponent&);
 
 // symbol: ?setAllowStandSliding@HorseMovement@@YAXAEAVEntityContext@@_N@Z
-MCAPI void setAllowStandSliding(class EntityContext&, bool);
+MCAPI void setAllowStandSliding(class EntityContext&, bool value);
 
 // symbol: ?startStandCounter@HorseMovement@@YAXAEAUHorseStandCounterComponent@@@Z
 MCAPI void startStandCounter(struct HorseStandCounterComponent&);

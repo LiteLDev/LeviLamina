@@ -19,24 +19,27 @@ public:
 
     // vIndex: 1, symbol:
     // ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    virtual bool
+    isValidSlotForContainer(class ContainerScreenContext const&, class Container const& container, int slot) const;
 
     // vIndex: 2, symbol:
     // ?isItemAllowedInSlot@ArmorContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-    virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    virtual bool
+    isItemAllowedInSlot(class ContainerScreenContext const&, int slot, class ItemStackBase const& item, int amount)
+        const;
 
     // vIndex: 3, symbol: ?getAvailableSetCount@ArmorContainerValidation@@UEBAHHAEBVItemStackBase@@@Z
-    virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
+    virtual int getAvailableSetCount(int slot, class ItemStackBase const& item) const;
 
     // vIndex: 4, symbol: ?isItemAllowedToAdd@ArmorContainerValidation@@UEBA_NAEBVItemStack@@@Z
-    virtual bool isItemAllowedToAdd(class ItemStack const&) const;
+    virtual bool isItemAllowedToAdd(class ItemStack const& item) const;
 
     // vIndex: 5, symbol:
     // ?isItemAllowedToRemove@ArmorContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
-    virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
+    virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const& item) const;
 
     // vIndex: 6, symbol: ?canItemMoveToContainer@ArmorContainerValidation@@UEBA_NAEBVItemStackBase@@@Z
-    virtual bool canItemMoveToContainer(class ItemStackBase const&) const;
+    virtual bool canItemMoveToContainer(class ItemStackBase const& item) const;
 
     // vIndex: 7, symbol: ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
     virtual bool canDestroy(class ContainerScreenContext const&) const;
@@ -45,7 +48,7 @@ public:
     virtual void __unk_vfn_8();
 
     // vIndex: 9, symbol: ?getContainerSize@ArmorContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
-    virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    virtual int getContainerSize(class ContainerScreenContext const&, class Container const& container) const;
 
     // NOLINTEND
 };

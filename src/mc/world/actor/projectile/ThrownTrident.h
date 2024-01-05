@@ -106,7 +106,11 @@ public:
     virtual class ItemStack _getPickupItem() const;
 
     // symbol: ??0ThrownTrident@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI ThrownTrident(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI ThrownTrident(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?doNormalTick@ThrownTrident@@QEAAXXZ
     MCAPI void doNormalTick();

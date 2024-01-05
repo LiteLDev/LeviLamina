@@ -14,7 +14,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?assign@AssignedThread@Threading@Bedrock@@QEAAXAEBVid@thread@std@@@Z
-    MCAPI void assign(std::thread::id const&);
+    MCAPI void assign(std::thread::id const& thread);
 
     // symbol: ?isOnThread@AssignedThread@Threading@Bedrock@@QEBA_NXZ
     MCAPI bool isOnThread() const;

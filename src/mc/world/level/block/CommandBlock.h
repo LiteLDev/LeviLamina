@@ -165,7 +165,7 @@ public:
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@CommandBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -181,10 +181,10 @@ public:
 
     // symbol:
     // ??0CommandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CommandBlockMode@@@Z
-    MCAPI CommandBlock(std::string const& nameId, int id, ::CommandBlockMode mode);
+    MCAPI CommandBlock(std::string const& nameId, int, ::CommandBlockMode mode);
 
     // symbol: ?execute@CommandBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI void execute(class BlockSource&, class BlockPos const&) const;
+    MCAPI void execute(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ?getMode@CommandBlock@@QEBA?AW4CommandBlockMode@@XZ
     MCAPI ::CommandBlockMode getMode() const;
@@ -195,7 +195,7 @@ public:
         const;
 
     // symbol: ?_getCommandBlockActor@CommandBlock@@SAPEAVCommandBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
-    MCAPI static class CommandBlockActor* _getCommandBlockActor(class BlockSource&, class BlockPos const&);
+    MCAPI static class CommandBlockActor* _getCommandBlockActor(class BlockSource& region, class BlockPos const& pos);
 
     // NOLINTEND
 

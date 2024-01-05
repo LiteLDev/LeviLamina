@@ -40,7 +40,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 24, symbol: ?canProvideMultifaceSupport@AzaleaBlock@@UEBA_NAEBVBlock@@E@Z
-    virtual bool canProvideMultifaceSupport(class Block const&, uchar) const;
+    virtual bool canProvideMultifaceSupport(class Block const& block, uchar face) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -113,13 +113,15 @@ public:
 
     // vIndex: 79, symbol:
     // ?onFertilized@AzaleaBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
-    virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, ::FertilizerType) const;
+    virtual bool
+    onFertilized(class BlockSource& region, class BlockPos const& pos, class Actor* actor, ::FertilizerType fType)
+        const;
 
     // vIndex: 81, symbol: ?canBeFertilized@AzaleaBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
+    virtual bool canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const&) const;
 
     // vIndex: 86, symbol: ?mayPlaceOn@AzaleaBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual bool mayPlaceOn(class BlockSource&, class BlockPos const&) const;
+    virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 109, symbol: __unk_vfn_109
     virtual void __unk_vfn_109();
@@ -149,14 +151,14 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0AzaleaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI AzaleaBlock(std::string const&, int);
+    MCAPI AzaleaBlock(std::string const& nameId, int);
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_growTree@AzaleaBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    MCAPI bool _growTree(class BlockSource&, class BlockPos const&, class Random&) const;
+    MCAPI bool _growTree(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 };

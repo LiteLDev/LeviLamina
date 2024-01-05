@@ -19,7 +19,7 @@ public:
     MCAPI EntitySet(class EntitySet const&);
 
     // symbol: ?add@EntitySet@@QEAA_NAEBVEntityContext@@@Z
-    MCAPI bool add(class EntityContext const&);
+    MCAPI bool add(class EntityContext const& entity);
 
     // symbol:
     // ?erase@EntitySet@@QEAA?AV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CB_KVWeakEntityRef@@@std@@@std@@@std@@@std@@V23@@Z

@@ -23,21 +23,23 @@ public:
     MCVAPI bool areBossEventSubscribersReady() const;
 
     // symbol: ?broadcastBossEvent@BossEventSubscriptionManagerImpl@@UEAAXW4BossEventUpdateType@@@Z
-    MCVAPI void broadcastBossEvent(::BossEventUpdateType);
+    MCVAPI void broadcastBossEvent(::BossEventUpdateType type);
 
     // symbol:
     // ?broadcastBossEvent@BossEventSubscriptionManagerImpl@@UEAAXW4BossEventUpdateType@@AEBUActorUniqueID@@AEBVBossEventPacket@@@Z
-    MCVAPI void broadcastBossEvent(::BossEventUpdateType, struct ActorUniqueID const&, class BossEventPacket const&);
+    MCVAPI void
+    broadcastBossEvent(::BossEventUpdateType type, struct ActorUniqueID const& id, class BossEventPacket const& packet);
 
     // symbol:
     // ?subscribeToBossEvent@BossEventSubscriptionManagerImpl@@UEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXW4BossEventUpdateType@@@Z@std@@@Z
-    MCVAPI class Bedrock::PubSub::Subscription subscribeToBossEvent(std::function<void(::BossEventUpdateType)>);
+    MCVAPI class Bedrock::PubSub::Subscription subscribeToBossEvent(std::function<void(::BossEventUpdateType)> callback
+    );
 
     // symbol:
     // ?subscribeToBossEvent@BossEventSubscriptionManagerImpl@@UEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXW4BossEventUpdateType@@AEBUActorUniqueID@@AEBVBossEventPacket@@@Z@std@@@Z
-    MCVAPI class Bedrock::PubSub::Subscription
-        subscribeToBossEvent(std::function<
-                             void(::BossEventUpdateType, struct ActorUniqueID const&, class BossEventPacket const&)>);
+    MCVAPI class Bedrock::PubSub::Subscription subscribeToBossEvent(
+        std::function<void(::BossEventUpdateType, struct ActorUniqueID const&, class BossEventPacket const&)> callback
+    );
 
     // symbol: ??0BossEventSubscriptionManagerImpl@@QEAA@XZ
     MCAPI BossEventSubscriptionManagerImpl();

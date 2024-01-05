@@ -26,13 +26,27 @@ public:
 
     // symbol:
     // ?tickGenericSystem@NormalTickFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@UPlayerComponentFlag@@@@@@V?$Optional@$$CBVDimensionStateComponent@@@@@@V?$EntityModifier@V?$FlagComponent@USkipNormalTick@@@@@@@Z
-    MCAPI static void
-        tickGenericSystem(class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct PlayerComponentFlag>>, class Optional<class DimensionStateComponent const>>, class EntityModifier<class FlagComponent<struct SkipNormalTick>>);
+    MCAPI static void tickGenericSystem(
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<
+                class FlagComponent<struct ActorMovementTickNeededFlag>,
+                class FlagComponent<struct PlayerComponentFlag>>,
+            class Optional<class DimensionStateComponent const>>         view,
+        class EntityModifier<class FlagComponent<struct SkipNormalTick>> mod
+    );
 
     // symbol:
     // ?tickLocalPlayerSystem@NormalTickFilterSystem@@SAXV?$ViewT@VStrictEntityContext@@U?$Include@V?$FlagComponent@UActorMovementTickNeededFlag@@@@V?$FlagComponent@ULocalPlayerComponentFlag@@@@@@V?$Optional@$$CBVLoadingStateComponent@@@@@@V?$EntityModifier@V?$FlagComponent@USkipNormalTick@@@@@@@Z
-    MCAPI static void
-        tickLocalPlayerSystem(class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct LocalPlayerComponentFlag>>, class Optional<class LoadingStateComponent const>>, class EntityModifier<class FlagComponent<struct SkipNormalTick>>);
+    MCAPI static void tickLocalPlayerSystem(
+        class ViewT<
+            class StrictEntityContext,
+            struct Include<
+                class FlagComponent<struct ActorMovementTickNeededFlag>,
+                class FlagComponent<struct LocalPlayerComponentFlag>>,
+            class Optional<class LoadingStateComponent const>>           view,
+        class EntityModifier<class FlagComponent<struct SkipNormalTick>> mod
+    );
 
     // NOLINTEND
 };

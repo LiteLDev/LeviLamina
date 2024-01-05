@@ -25,13 +25,13 @@ public:
     virtual std::vector<class ItemStack> getItemCopies() const;
 
     // vIndex: 7, symbol: ?setSlot@LevelContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-    virtual void setSlot(int slot, class ItemStack const& item, bool fromNetwork);
+    virtual void setSlot(int slot, class ItemStack const& item, bool);
 
     // vIndex: 8, symbol: ?getSlot@LevelContainerManagerModel@@UEBAAEBVItemStack@@H@Z
     virtual class ItemStack const& getSlot(int slot) const;
 
     // vIndex: 9, symbol: ?setData@LevelContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int id, int value);
+    virtual void setData(int, int value);
 
     // vIndex: 10, symbol: ?broadcastChanges@LevelContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();

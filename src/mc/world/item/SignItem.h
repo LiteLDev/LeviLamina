@@ -76,20 +76,19 @@ public:
     virtual void __unk_vfn_99();
 
     // vIndex: 115, symbol: ?_calculatePlacePos@SignItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
-    virtual bool
-    _calculatePlacePos(class ItemStackBase& instance, class Actor& entity, uchar& face, class BlockPos& pos) const;
+    virtual bool _calculatePlacePos(class ItemStackBase&, class Actor& entity, uchar& face, class BlockPos& pos) const;
 
     // vIndex: 117, symbol:
     // ?_useOn@SignItem@@EEBA?AVInteractionResult@@AEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
     virtual class InteractionResult
-    _useOn(class ItemStack&, class Actor&, class BlockPos, uchar, class Vec3 const&) const;
+    _useOn(class ItemStack& instance, class Actor& entity, class BlockPos pos, uchar face, class Vec3 const&) const;
 
     // vIndex: 118, symbol: ?getBlockToPlace@SignItem@@UEBAPEBVBlock@@EAEBVActor@@VBlockPos@@@Z
-    virtual class Block const* getBlockToPlace(uchar, class Actor const&, class BlockPos) const;
+    virtual class Block const* getBlockToPlace(uchar face, class Actor const& entity, class BlockPos pos) const;
 
     // symbol:
     // ??0SignItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4SignType@SignBlock@@@Z
-    MCAPI SignItem(std::string const& name, int id, ::SignBlock::SignType type);
+    MCAPI SignItem(std::string const& name, int, ::SignBlock::SignType type);
 
     // NOLINTEND
 };

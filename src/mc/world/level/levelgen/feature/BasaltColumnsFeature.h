@@ -18,17 +18,17 @@ public:
     virtual ~BasaltColumnsFeature() = default;
 
     // vIndex: 3, symbol: ?place@BasaltColumnsFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     // symbol: ?_findSurface@BasaltColumnsFeature@@AEBA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@VBlockPos@@HH@Z
-    MCAPI std::optional<class BlockPos> _findSurface(class BlockSource&, class BlockPos, int, int) const;
+    MCAPI std::optional<class BlockPos> _findSurface(class BlockSource& region, class BlockPos, int limit, int) const;
 
     // symbol: ?_placeColumnCluster@BasaltColumnsFeature@@AEBAXAEAVBlockSource@@VBlockPos@@HH@Z
-    MCAPI void _placeColumnCluster(class BlockSource&, class BlockPos, int, int) const;
+    MCAPI void _placeColumnCluster(class BlockSource& region, class BlockPos origin, int, int) const;
 
     // NOLINTEND
 };

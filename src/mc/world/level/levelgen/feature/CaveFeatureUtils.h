@@ -13,25 +13,25 @@ namespace CaveFeatureUtils {
 MCAPI struct CaveFeatureUtils::CarverConfiguration const& getCurrentConfiguration(bool);
 
 // symbol: ?getDistance_1_16@CaveFeatureUtils@@YAHAEAVRandom@@@Z
-MCAPI int getDistance_1_16(class Random&);
+MCAPI int getDistance_1_16(class Random& random);
 
 // symbol: ?getDistance_1_18@CaveFeatureUtils@@YAHAEAVRandom@@@Z
-MCAPI int getDistance_1_18(class Random&);
+MCAPI int getDistance_1_18(class Random& random);
 
 // symbol: ?getTunnelThickness_1_16@CaveFeatureUtils@@YAMAEAVRandom@@@Z
-MCAPI float getTunnelThickness_1_16(class Random&);
+MCAPI float getTunnelThickness_1_16(class Random& random);
 
 // symbol: ?getTunnelThickness_1_18@CaveFeatureUtils@@YAMAEAVRandom@@@Z
-MCAPI float getTunnelThickness_1_18(class Random&);
+MCAPI float getTunnelThickness_1_18(class Random& random);
 
 // symbol: ?isDiggable_1_16@CaveFeatureUtils@@YA_NAEBVBlock@@0@Z
-MCAPI bool isDiggable_1_16(class Block const&, class Block const&);
+MCAPI bool isDiggable_1_16(class Block const& block, class Block const& above);
 
 // symbol: ?isDiggable_1_18@CaveFeatureUtils@@YA_NAEBVBlock@@0@Z
-MCAPI bool isDiggable_1_18(class Block const&, class Block const&);
+MCAPI bool isDiggable_1_18(class Block const& block, class Block const&);
 
 // symbol: ?sampleFloatRange@CaveFeatureUtils@@YAMAEBUFloatRange@@AEAVRandom@@@Z
-MCAPI float sampleFloatRange(struct FloatRange const&, class Random&);
+MCAPI float sampleFloatRange(struct FloatRange const& range, class Random& random);
 // NOLINTEND
 
 }; // namespace CaveFeatureUtils

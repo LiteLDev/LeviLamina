@@ -23,7 +23,7 @@ public:
     virtual ~IUnknownBlockTypeRegistry();
 
     // vIndex: 1, symbol: ?getUnknownBlock@UnknownBlockTypeRegistry@@UEAAAEBVBlock@@AEBVCompoundTag@@@Z
-    virtual class Block const& getUnknownBlock(class CompoundTag const&) = 0;
+    virtual class Block const& getUnknownBlock(class CompoundTag const& serId) = 0;
 
     // NOLINTEND
 };

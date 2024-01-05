@@ -74,7 +74,8 @@ public:
 
     // vIndex: 17, symbol:
     // ?registerLoop@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEAULoopingSoundState@@@Z@3@MM@Z
-    virtual uint64 registerLoop(std::string const&, std::function<void(struct LoopingSoundState&)>, float, float);
+    virtual uint64
+    registerLoop(std::string const& name, std::function<void(struct LoopingSoundState&)> getSoundState, float, float);
 
     // vIndex: 18, symbol: __unk_vfn_18
     virtual void __unk_vfn_18();
@@ -100,7 +101,7 @@ public:
     MCVAPI void fadeOut(uint64, float);
 
     // symbol: ?fadeToStopMusic@NullSoundPlayer@@UEAAXM@Z
-    MCVAPI void fadeToStopMusic(float);
+    MCVAPI void fadeToStopMusic(float fadeSeconds);
 
     // symbol:
     // ?getItem@NullSoundPlayer@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@AEAVSoundItem@@@Z
@@ -141,7 +142,7 @@ public:
     MCVAPI uint64 playUI(std::string const& name, float volume, float pitch);
 
     // symbol: ?setMusicVolumeMultiplier@NullSoundPlayer@@UEAAXM@Z
-    MCVAPI void setMusicVolumeMultiplier(float);
+    MCVAPI void setMusicVolumeMultiplier(float volumeMultiplier);
 
     // symbol: ?stop@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCVAPI void stop(std::string const& name);

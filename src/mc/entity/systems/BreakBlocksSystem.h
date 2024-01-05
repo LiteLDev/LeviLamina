@@ -28,7 +28,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_tickComponent@BreakBlocksSystem@@CAXAEAVActorOwnerComponent@@AEAVBreakBlocksComponent@@@Z
-    MCAPI static void _tickComponent(class ActorOwnerComponent&, class BreakBlocksComponent&);
+    MCAPI static void _tickComponent(class ActorOwnerComponent&, class BreakBlocksComponent& breakBlocksComponent);
 
     // NOLINTEND
 };

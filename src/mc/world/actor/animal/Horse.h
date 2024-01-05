@@ -44,7 +44,7 @@ public:
     virtual ~Horse() = default;
 
     // vIndex: 20, symbol: ?getInterpolatedRidingOffset@Horse@@UEBA?AVVec3@@MH@Z
-    virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
+    virtual class Vec3 getInterpolatedRidingOffset(float a, int) const;
 
     // vIndex: 23, symbol: __unk_vfn_23
     virtual void __unk_vfn_23();
@@ -95,7 +95,7 @@ public:
     virtual float causeFallDamageToActor(float, float, class ActorDamageSource);
 
     // vIndex: 112, symbol: ?onSynchedDataUpdate@Horse@@UEAAXH@Z
-    virtual void onSynchedDataUpdate(int);
+    virtual void onSynchedDataUpdate(int dataId);
 
     // vIndex: 131, symbol: ?openContainerComponent@Horse@@UEAAXAEAVPlayer@@@Z
     virtual void openContainerComponent(class Player& player);
@@ -107,7 +107,7 @@ public:
     virtual void die(class ActorDamageSource const& damagesource);
 
     // vIndex: 160, symbol: ?updateEntitySpecificMolangVariables@Horse@@UEAAXAEAVRenderParams@@@Z
-    virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    virtual void updateEntitySpecificMolangVariables(class RenderParams& renderParams);
 
     // vIndex: 162, symbol: __unk_vfn_162
     virtual void __unk_vfn_162();
@@ -134,7 +134,7 @@ public:
     virtual int getType() const;
 
     // vIndex: 212, symbol: ?setHorseEating@Horse@@UEAAX_N@Z
-    virtual void setHorseEating(bool);
+    virtual void setHorseEating(bool state);
 
     // vIndex: 213, symbol: ?getStandAnim@Horse@@UEBAMM@Z
     virtual float getStandAnim(float a) const;
@@ -155,7 +155,11 @@ public:
     virtual bool tameToPlayer(class Player& player, bool tamingParticles);
 
     // symbol: ??0Horse@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Horse(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Horse(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?postAiStep@Horse@@QEAAXXZ
     MCAPI void postAiStep();
@@ -165,11 +169,14 @@ public:
 
     // symbol:
     // ?getInterpolatedRidingOffset@Horse@@SA?AVVec3@@AEBURenderRotationComponent@@AEBUStandAnimationComponent@@M@Z
-    MCAPI static class Vec3
-    getInterpolatedRidingOffset(struct RenderRotationComponent const&, struct StandAnimationComponent const&, float);
+    MCAPI static class Vec3 getInterpolatedRidingOffset(
+        struct RenderRotationComponent const&,
+        struct StandAnimationComponent const&,
+        float alpha
+    );
 
     // symbol: ?getInterpolatedRidingOffset@Horse@@SA?AVVec3@@AEBVVec2@@MMM@Z
-    MCAPI static class Vec3 getInterpolatedRidingOffset(class Vec2 const&, float, float, float);
+    MCAPI static class Vec3 getInterpolatedRidingOffset(class Vec2 const&, float, float, float alpha);
 
     // symbol:
     // ?getNewPassengerPos@Horse@@SA?AVVec3@@AEBURenderPositionComponent@@AEBURenderRotationComponent@@AEBUStandAnimationComponent@@MM@Z
@@ -177,7 +184,7 @@ public:
         struct RenderPositionComponent const&,
         struct RenderRotationComponent const&,
         struct StandAnimationComponent const&,
-        float,
+        float alpha,
         float
     );
 
@@ -191,7 +198,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_setHorseFlag@Horse@@AEAAXW4HorseFlags@@_N@Z
-    MCAPI void _setHorseFlag(::HorseFlags, bool);
+    MCAPI void _setHorseFlag(::HorseFlags flag, bool value);
 
     // symbol: ?_setHorseType@Horse@@AEAA_NAEAW4ActorType@@@Z
     MCAPI bool _setHorseType(::ActorType&);

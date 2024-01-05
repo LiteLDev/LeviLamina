@@ -39,7 +39,12 @@ public:
 
     // symbol:
     // ??0EncryptedProxyEnv@@QEAA@PEAVEnv@leveldb@@AEBVContentIdentity@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4EncryptedProxyReadMode@@@Z
-    MCAPI EncryptedProxyEnv(leveldb::Env*, class ContentIdentity const&, std::string const&, ::EncryptedProxyReadMode);
+    MCAPI EncryptedProxyEnv(
+        leveldb::Env*                env,
+        class ContentIdentity const& contentIdentity,
+        std::string const&           contentKey,
+        ::EncryptedProxyReadMode     mode
+    );
 
     // NOLINTEND
 };

@@ -27,11 +27,12 @@ public:
     // symbol:
     // ?addEntryActorEvent@ActorAnimationControllerState@@QEAAAEAVActorAnimationEvent@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
     MCAPI class ActorAnimationEvent&
-    addEntryActorEvent(float, std::string const&, ::CurrentCmdVersion, ::MolangVersion);
+    addEntryActorEvent(float time, std::string const& event, ::CurrentCmdVersion commandVersion, ::MolangVersion);
 
     // symbol:
     // ?addExitActorEvent@ActorAnimationControllerState@@QEAAAEAVActorAnimationEvent@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
-    MCAPI class ActorAnimationEvent& addExitActorEvent(float, std::string const&, ::CurrentCmdVersion, ::MolangVersion);
+    MCAPI class ActorAnimationEvent&
+    addExitActorEvent(float time, std::string const& event, ::CurrentCmdVersion commandVersion, ::MolangVersion);
 
     // symbol: ?addParticleEffect@ActorAnimationControllerState@@QEAAAEAVActorParticleEffect@@XZ
     MCAPI class ActorParticleEffect& addParticleEffect();
@@ -41,7 +42,12 @@ public:
 
     // symbol:
     // ?addTransition@ActorAnimationControllerState@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4MolangVersion@@_N@Z
-    MCAPI void addTransition(std::string const&, std::string const&, ::MolangVersion, bool);
+    MCAPI void addTransition(
+        std::string const& stateName,
+        std::string const& expression,
+        ::MolangVersion,
+        bool createEvenIfAlreadyExists
+    );
 
     // symbol:
     // ?addVariable@ActorAnimationControllerState@@QEAAAEAVStateAnimationVariable@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

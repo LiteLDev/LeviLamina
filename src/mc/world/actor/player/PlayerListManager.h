@@ -38,7 +38,7 @@ public:
     MCAPI void initializeWithGameplayUserManagerOnServer(class GameplayUserManager&);
 
     // symbol: ?setPacketSender@PlayerListManager@@QEAAXAEAVPacketSender@@@Z
-    MCAPI void setPacketSender(class PacketSender&);
+    MCAPI void setPacketSender(class PacketSender& packetSender);
 
     // symbol: ??1PlayerListManager@@QEAA@XZ
     MCAPI ~PlayerListManager();
@@ -51,7 +51,7 @@ public:
     MCAPI void _onAnyGameplayUsersRemoved();
 
     // symbol: ?_onGameplayUserRemoved@PlayerListManager@@AEAAXAEAVEntityContext@@@Z
-    MCAPI void _onGameplayUserRemoved(class EntityContext&);
+    MCAPI void _onGameplayUserRemoved(class EntityContext& entity);
 
     // NOLINTEND
 };

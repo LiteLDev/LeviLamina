@@ -16,13 +16,16 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?_playSound@SoundEventSystem@@SAXAEAVILevel@@AEBUSoundEventRequest@@AEBUSynchronizedPlainData@3@@Z
-    MCAPI static void
-    _playSound(class ILevel&, struct SoundEventRequest const&, struct SoundEventRequest::SynchronizedPlainData const&);
+    MCAPI static void _playSound(
+        class ILevel&                                          level,
+        struct SoundEventRequest const&                        request,
+        struct SoundEventRequest::SynchronizedPlainData const& data
+    );
 
     // symbol:
     // ?_tick@SoundEventSystem@@SAXAEBVStrictEntityContext@@AEAVLevelComponent@@AEAUSoundEventRequestQueueComponent@@@Z
     MCAPI static void
-    _tick(class StrictEntityContext const&, class LevelComponent&, struct SoundEventRequestQueueComponent&);
+    _tick(class StrictEntityContext const&, class LevelComponent& level, struct SoundEventRequestQueueComponent&);
 
     // symbol:
     // ?_view@SoundEventSystem@@SAXV?$ViewT@VStrictEntityContext@@VLevelComponent@@USoundEventRequestQueueComponent@@@@@Z

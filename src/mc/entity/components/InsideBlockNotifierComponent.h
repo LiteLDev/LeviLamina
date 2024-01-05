@@ -16,13 +16,13 @@ public:
     MCAPI std::vector<class InsideBlockEventMap> const& getBlockList() const;
 
     // symbol: ?isTrackedBlock@InsideBlockNotifierComponent@@QEBA_NAEBVBlock@@@Z
-    MCAPI bool isTrackedBlock(class Block const&) const;
+    MCAPI bool isTrackedBlock(class Block const& block) const;
 
     // symbol: ?resetBlocksInsideState@InsideBlockNotifierComponent@@QEAAXXZ
     MCAPI void resetBlocksInsideState();
 
     // symbol: ?setInsideBlock@InsideBlockNotifierComponent@@QEAAXAEBVBlock@@_N@Z
-    MCAPI void setInsideBlock(class Block const&, bool);
+    MCAPI void setInsideBlock(class Block const& block, bool);
 
     // NOLINTEND
 };

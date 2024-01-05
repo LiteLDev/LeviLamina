@@ -34,7 +34,7 @@ public:
     virtual void __unk_vfn_20();
 
     // vIndex: 25, symbol: ?canConnect@MelonBlock@@UEBA_NAEBVBlock@@E0@Z
-    virtual bool canConnect(class Block const& otherBlock, uchar toOther, class Block const& thisData) const;
+    virtual bool canConnect(class Block const&, uchar, class Block const&) const;
 
     // vIndex: 27, symbol: __unk_vfn_27
     virtual void __unk_vfn_27();
@@ -130,14 +130,13 @@ public:
     virtual void __unk_vfn_155();
 
     // vIndex: 164, symbol: ?getResourceItem@MelonBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-    virtual class ItemInstance
-    getResourceItem(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // vIndex: 165, symbol: ?getResourceCount@MelonBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-    virtual int getResourceCount(class Randomize& random, class Block const& block, int bonusLootLevel) const;
+    virtual int getResourceCount(class Randomize& randomize, class Block const&, int bonusLootLevel) const;
 
     // symbol: ??0MelonBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MelonBlock(std::string const& nameId, int id);
+    MCAPI MelonBlock(std::string const& nameId, int);
 
     // NOLINTEND
 };

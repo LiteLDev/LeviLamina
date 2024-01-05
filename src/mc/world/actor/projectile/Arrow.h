@@ -109,7 +109,11 @@ public:
     MCVAPI bool canMakeStepSound() const;
 
     // symbol: ??0Arrow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Arrow(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Arrow(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?addMobEffect@Arrow@@QEAAXVMobEffectInstance@@@Z
     MCAPI void addMobEffect(class MobEffectInstance effect);

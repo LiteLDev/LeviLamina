@@ -21,7 +21,7 @@ public:
     virtual bool validate(class Mob&) const;
 
     // symbol: ?initialize@BaseGoalDefinition@@QEBAXAEAVEntityContext@@AEAVGoal@@@Z
-    MCAPI void initialize(class EntityContext&, class Goal&) const;
+    MCAPI void initialize(class EntityContext&, class Goal& goal) const;
 
     // NOLINTEND
 

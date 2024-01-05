@@ -82,7 +82,11 @@ public:
     virtual bool _hurt(class ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     // symbol: ??0Balloon@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-    MCAPI Balloon(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    MCAPI Balloon(
+        class ActorDefinitionGroup*             definitions,
+        struct ActorDefinitionIdentifier const& definitionName,
+        class EntityContext&                    entityContext
+    );
 
     // symbol: ?remove@Balloon@@QEAAX_N@Z
     MCAPI void remove(bool shouldPop);

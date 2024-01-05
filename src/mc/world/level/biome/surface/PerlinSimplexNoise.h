@@ -17,7 +17,7 @@ public:
     MCAPI PerlinSimplexNoise(uint seed, int levels);
 
     // symbol: ??0PerlinSimplexNoise@@QEAA@AEAVIRandom@@H_N@Z
-    MCAPI PerlinSimplexNoise(class IRandom&, int, bool);
+    MCAPI PerlinSimplexNoise(class IRandom& r, int levels, bool);
 
     // symbol: ?getRegion@PerlinSimplexNoise@@QEBAPEAMPEAMAEBVVec2@@HH1MM@Z
     MCAPI float* getRegion(
@@ -50,7 +50,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_init@PerlinSimplexNoise@@AEAAXAEAVIRandom@@_N@Z
-    MCAPI void _init(class IRandom&, bool);
+    MCAPI void _init(class IRandom& r, bool);
 
     // NOLINTEND
 };

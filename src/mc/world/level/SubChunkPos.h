@@ -9,7 +9,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0SubChunkPos@@QEAA@AEBVBlockPos@@@Z
-    MCAPI explicit SubChunkPos(class BlockPos const&);
+    MCAPI explicit SubChunkPos(class BlockPos const& bp);
 
     // symbol: ??BSubChunkPos@@QEBA?AVBlockPos@@XZ
     MCAPI explicit operator class BlockPos() const;

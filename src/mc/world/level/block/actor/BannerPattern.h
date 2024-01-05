@@ -52,7 +52,7 @@ public:
     MCAPI bool hasPattern() const;
 
     // symbol: ?matchesPatternItem@BannerPattern@@QEBA_NAEBVItemStackBase@@@Z
-    MCAPI bool matchesPatternItem(class ItemStackBase const&) const;
+    MCAPI bool matchesPatternItem(class ItemStackBase const& item) const;
 
     // symbol: ?requiresIngredientItem@BannerPattern@@QEBA_NXZ
     MCAPI bool requiresIngredientItem() const;
@@ -62,11 +62,11 @@ public:
 
     // symbol:
     // ?findPatternIndexByNameID@BannerPattern@@SA?AV?$optional@E@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCAPI static std::optional<uchar> findPatternIndexByNameID(std::string const&);
+    MCAPI static std::optional<uchar> findPatternIndexByNameID(std::string const& nameID);
 
     // symbol:
     // ?getPatternIndexFromName@BannerPattern@@SA?AV?$optional@E@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-    MCAPI static std::optional<uchar> getPatternIndexFromName(std::string const&);
+    MCAPI static std::optional<uchar> getPatternIndexFromName(std::string const& name);
 
     // symbol:
     // ?getPatternIndexFromNameID@BannerPattern@@SAEAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -76,7 +76,7 @@ public:
     MCAPI static void initPatterns();
 
     // symbol: ?tryGetPatternDataFromTag@BannerPattern@@SAPEBVCompoundTag@@PEBVTag@@@Z
-    MCAPI static class CompoundTag const* tryGetPatternDataFromTag(class Tag const*);
+    MCAPI static class CompoundTag const* tryGetPatternDataFromTag(class Tag const* tag);
 
     // symbol: ?mBase@BannerPattern@@2PEAV1@EA
     MCAPI static class BannerPattern* mBase;

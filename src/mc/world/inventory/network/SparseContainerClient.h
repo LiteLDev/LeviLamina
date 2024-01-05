@@ -20,7 +20,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?_networkUpdateItem@SparseContainerClient@@QEAAXHAEBVItemStack@@@Z
-    MCAPI void _networkUpdateItem(int, class ItemStack const&);
+    MCAPI void _networkUpdateItem(int slot, class ItemStack const& newItem);
 
     // NOLINTEND
 

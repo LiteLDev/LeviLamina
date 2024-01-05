@@ -25,7 +25,7 @@ public:
     virtual ::ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
 
     // vIndex: 5, symbol: ?_postCraftRequest@CraftHandlerGrindstone@@EEAAX_N@Z
-    virtual void _postCraftRequest(bool);
+    virtual void _postCraftRequest(bool wasSuccess);
 
     // symbol:
     // ?getResultItem@CraftHandlerGrindstone@@SA?AU?$pair@VItemStack@@UItemStackNetIdVariant@@@std@@AEBVItemStack@@0@Z
@@ -37,11 +37,11 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_getExperienceFromItem@CraftHandlerGrindstone@@AEBAHAEBVItemStack@@@Z
-    MCAPI int _getExperienceFromItem(class ItemStack const&) const;
+    MCAPI int _getExperienceFromItem(class ItemStack const& stack) const;
 
     // symbol:
     // ?_resolveNetIdAndValidate@CraftHandlerGrindstone@@AEAA_NW4ContainerEnumName@@EAEBUItemStackNetIdVariant@@@Z
-    MCAPI bool _resolveNetIdAndValidate(::ContainerEnumName, uchar, struct ItemStackNetIdVariant const&);
+    MCAPI bool _resolveNetIdAndValidate(::ContainerEnumName, uchar slot, struct ItemStackNetIdVariant const&);
 
     // symbol:
     // ?_getResultItemWithNoEnchants@CraftHandlerGrindstone@@CA?AVItemStack@@AEAV2@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEA_N@Z

@@ -15,10 +15,10 @@ class StrongObjectHandle {
 public:
     // NOLINTBEGIN
     // symbol: ??0StrongObjectHandle@Scripting@@QEAA@$$QEAV01@@Z
-    MCAPI StrongObjectHandle(class Scripting::StrongObjectHandle&&);
+    MCAPI StrongObjectHandle(class Scripting::StrongObjectHandle&& rhs);
 
     // symbol: ??0StrongObjectHandle@Scripting@@QEAA@AEBV01@@Z
-    MCAPI StrongObjectHandle(class Scripting::StrongObjectHandle const&);
+    MCAPI StrongObjectHandle(class Scripting::StrongObjectHandle const& rhs);
 
     // symbol: ??0StrongObjectHandle@Scripting@@QEAA@VWeakLifetimeScope@1@UObjectHandle@1@_N@Z
     MCAPI StrongObjectHandle(class Scripting::WeakLifetimeScope, struct Scripting::ObjectHandle, bool);
@@ -36,13 +36,13 @@ public:
     MCAPI class Scripting::WeakLifetimeScope getScope() const;
 
     // symbol: ??4StrongObjectHandle@Scripting@@QEAAAEAV01@$$QEAV01@@Z
-    MCAPI class Scripting::StrongObjectHandle& operator=(class Scripting::StrongObjectHandle&&);
+    MCAPI class Scripting::StrongObjectHandle& operator=(class Scripting::StrongObjectHandle&& rhs);
 
     // symbol: ??4StrongObjectHandle@Scripting@@QEAAAEAV01@AEBV01@@Z
-    MCAPI class Scripting::StrongObjectHandle& operator=(class Scripting::StrongObjectHandle const&);
+    MCAPI class Scripting::StrongObjectHandle& operator=(class Scripting::StrongObjectHandle const& rhs);
 
     // symbol: ??8StrongObjectHandle@Scripting@@QEBA_NAEBV01@@Z
-    MCAPI bool operator==(class Scripting::StrongObjectHandle const&) const;
+    MCAPI bool operator==(class Scripting::StrongObjectHandle const& rhs) const;
 
     // symbol: ?valid@StrongObjectHandle@Scripting@@QEBA_NXZ
     MCAPI bool valid() const;

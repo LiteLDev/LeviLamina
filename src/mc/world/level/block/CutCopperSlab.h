@@ -32,7 +32,7 @@ public:
     virtual ~CutCopperSlab() = default;
 
     // vIndex: 18, symbol: ?onLightningHit@CutCopperSlab@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-    virtual void onLightningHit(class BlockSource&, class BlockPos const&) const;
+    virtual void onLightningHit(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 20, symbol: __unk_vfn_20
     virtual void __unk_vfn_20();
@@ -128,13 +128,13 @@ public:
     virtual void __unk_vfn_149();
 
     // vIndex: 151, symbol: ?randomTick@CutCopperSlab@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-    virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
     // vIndex: 152, symbol: __unk_vfn_152
     virtual void __unk_vfn_152();
 
     // vIndex: 154, symbol: ?use@CutCopperSlab@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-    virtual bool use(class Player&, class BlockPos const&, uchar) const;
+    virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 155, symbol: __unk_vfn_155
     virtual void __unk_vfn_155();
@@ -142,12 +142,12 @@ public:
     // symbol:
     // ??0CutCopperSlab@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVHashedString@@W4CopperType@@2@Z
     MCAPI
-    CutCopperSlab(std::string const&, int, bool, class HashedString const&, ::CopperType, class HashedString const&);
+    CutCopperSlab(std::string const& nameId, int, bool fullSize, class HashedString const& baseSlab, ::CopperType, class HashedString const&);
 
     // symbol:
     // ??0CutCopperSlab@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVHashedString@@W4CopperType@@222@Z
     MCAPI
-    CutCopperSlab(std::string const&, int, bool, class HashedString const&, ::CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
+    CutCopperSlab(std::string const& nameId, int, bool fullSize, class HashedString const& baseSlab, ::CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
 
     // NOLINTEND
 };

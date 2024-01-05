@@ -39,7 +39,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?recordLoadedChunk@ChunkLoadTelemetryData@@QEAAXAEBVLevelChunk@@@Z
-    MCAPI void recordLoadedChunk(class LevelChunk const&);
+    MCAPI void recordLoadedChunk(class LevelChunk const& chunk);
 
     // symbol: ?toJson@ChunkLoadTelemetryData@@QEBA?AVValue@Json@@XZ
     MCAPI class Json::Value toJson() const;
