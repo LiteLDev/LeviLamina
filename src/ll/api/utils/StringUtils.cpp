@@ -223,43 +223,42 @@ std::string str2str(std::string_view str, uint fromCodePage, uint toCodePage) {
 }
 
 std::string removeEscapeCode(std::string_view str) {
-    std::stringstream res;
-    auto              sbu8 = sv2u8sv(str);
+    std::string res;
+    auto        sbu8 = sv2u8sv(str);
     for (auto& s : ctre::split<u8"(\x1B(?:[@-Z\\-_]|\\[[0-?]*[ -/]*[@-~]))|((?<!§)§(?:[0-9a-u]))">(sbu8)) {
-        res << u8sv2sv(s);
+        res += u8sv2sv(s);
     }
-    return res.str();
+    return res;
 }
 
 std::string replaceAnsiToMcCode(std::string_view str) {
-    std::stringstream res;
-
-    auto i     = ctre::iterator<"\x1B(?:[@-Z\\-_]|\\[[0-?]*[ -/]*[@-~])">(str);
-    auto begin = i.orig_begin;
+    std::string res;
+    auto        i     = ctre::iterator<"\x1B(?:[@-Z\\-_]|\\[[0-?]*[ -/]*[@-~])">(str);
+    auto        begin = i.orig_begin;
     for (; i.current_match; ++i) {
-        if (begin != i.current_match.begin()) res << std::string_view{begin, i.current_match.begin()};
+        if (begin != i.current_match.begin()) res += std::string_view{begin, i.current_match.begin()};
         begin = i.current;
 
-        res << getMcCodeFromTextStyle(getTextStyleFromCode(i.current_match.view()));
+        res += getMcCodeFromTextStyle(getTextStyleFromCode(i.current_match.view()));
     }
-    if (begin != str.end()) res << std::string_view{begin, str.end()};
-    return res.str();
+    if (begin != str.end()) res += std::string_view{begin, str.end()};
+    return res;
 }
 
 std::string replaceMcToAnsiCode(std::string_view str) {
-    auto              sbu8 = sv2u8sv(str);
-    std::stringstream res;
-    auto              i     = ctre::iterator<u8"(?<!§)§(?:[0-9a-u])">(sbu8);
-    auto              begin = sbu8.begin();
+    auto        sbu8 = sv2u8sv(str);
+    std::string res;
+    auto        i     = ctre::iterator<u8"(?<!§)§(?:[0-9a-u])">(sbu8);
+    auto        begin = sbu8.begin();
     for (; i.current_match; ++i) {
         auto view = i.current_match.view();
-        if (begin != view.begin()) res << u8sv2sv(std::u8string_view{begin, view.begin()});
-        begin = view.end();
-        res << getAnsiCodeFromTextStyle(getTextStyleFromCode(u8sv2sv(view)));
+        if (begin != view.begin()) res += u8sv2sv(std::u8string_view{begin, view.begin()});
+        begin  = view.end();
+        res   += getAnsiCodeFromTextStyle(getTextStyleFromCode(u8sv2sv(view)));
     }
-    if (begin != sbu8.end()) res << u8sv2sv(std::u8string_view{begin, sbu8.end()});
-    res << getAnsiCodeFromTextStyle({});
-    return res.str();
+    if (begin != sbu8.end()) res += u8sv2sv(std::u8string_view{begin, sbu8.end()});
+    res += getAnsiCodeFromTextStyle({});
+    return res;
 }
 
 bool isu8str(std::string_view str) noexcept {

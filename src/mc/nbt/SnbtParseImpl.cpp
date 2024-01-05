@@ -230,7 +230,7 @@ std::optional<std::string> parseString(std::string_view& s) {
         return std::nullopt;
     }
 
-    auto res = std::vector<char>{};
+    std::string res;
 
     if (starts == '\"' || starts == '\'') {
         s.remove_prefix(1);
@@ -241,7 +241,7 @@ std::optional<std::string> parseString(std::string_view& s) {
                 s.remove_prefix(1);
                 res.push_back(fc);
             } else {
-                return std::string{res.begin(), res.end()};
+                return res;
             }
         }
     }
