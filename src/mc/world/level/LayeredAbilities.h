@@ -13,7 +13,7 @@
 
 class LayeredAbilities {
 public:
-    class PermissionsHandler mPermissions;
+    PermissionsHandler       mPermissions;
     std::array<Abilities, 5> mLayers;
 
     // NOLINTBEGIN

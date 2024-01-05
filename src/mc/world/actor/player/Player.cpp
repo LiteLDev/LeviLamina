@@ -1,5 +1,9 @@
 #include "mc/world/actor/player/Player.h"
 
+#include <memory>
+
+#include "ll/api/service/Bedrock.h"
+
 #include "mc/certificates/ExtendedCertificate.h"
 #include "mc/certificates/WebToken.h"
 #include "mc/deps/core/utility/BinaryStream.h"
@@ -12,13 +16,14 @@
 #include "mc/network/NetworkPeer.h"
 #include "mc/network/NetworkSystem.h"
 #include "mc/network/ServerNetworkHandler.h"
-#include "mc/network/packet/Packet.h"
+#include "mc/network/packet/TextPacket.h"
+#include "mc/network/packet/UpdateAbilitiesPacket.h"
+#include "mc/network/packet/UpdateAdventureSettingsPacket.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/world/Minecraft.h"
+#include "mc/world/level/AdventureSettings.h"
+#include "mc/world/level/LayeredAbilities.h"
 
-#include "ll/api/service/Bedrock.h"
-#include "mc/network/packet/TextPacket.h"
-#include <memory>
 
 UserEntityIdentifierComponent const& Player::getUserEntityIdentifier() const {
     return *(getEntityContext().tryGetComponent<UserEntityIdentifierComponent>());
@@ -76,3 +81,26 @@ void Player::disconnect(std::string_view reason) const {
 }
 
 void Player::sendMessage(std::string_view msg) const { TextPacket::createRawMessage(msg).sendTo(*this); }
+
+LLAPI void Player::setAbility(::AbilitiesIndex index, bool value) {
+    auto& abilities = getAbilities();
+    auto  flying    = abilities.getAbility(AbilitiesIndex::Flying).getBool();
+    if (index == AbilitiesIndex::Flying && value && isOnGround()) {
+        abilities.setAbility(AbilitiesIndex::MayFly, value);
+    }
+    if (index == AbilitiesIndex::MayFly && !value && flying) {
+        abilities.setAbility(AbilitiesIndex::Flying, false);
+    }
+    abilities.setAbility(index, value);
+    auto mayfly = abilities.getAbility(AbilitiesIndex::MayFly).getBool();
+    auto noclip = abilities.getAbility(AbilitiesIndex::NoClip).getBool();
+    setCanFly(mayfly || noclip);
+    if (index == AbilitiesIndex::NoClip) {
+        abilities.setAbility(AbilitiesIndex::Flying, value);
+    }
+    flying = abilities.getAbility(AbilitiesIndex::Flying).getBool();
+    abilities.getAbility(AbilitiesLayer::Base, AbilitiesIndex::Flying).setBool(flying);
+    UpdateAbilitiesPacket{getOrCreateUniqueID(), abilities}.sendTo(*this);
+    abilities.setAbility(AbilitiesIndex::Flying, flying);
+    UpdateAdventureSettingsPacket{}.sendTo(*this);
+}

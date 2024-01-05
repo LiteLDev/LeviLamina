@@ -144,6 +144,8 @@ public:
      */
     LLAPI void sendMessage(std::string_view msg) const;
 
+    LLAPI void setAbility(::AbilitiesIndex index, bool value);
+
     // prevent constructor by default
     Player& operator=(Player const&);
     Player(Player const&);
