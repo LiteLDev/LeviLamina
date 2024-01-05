@@ -104,3 +104,9 @@ LLAPI void Player::setAbility(::AbilitiesIndex index, bool value) {
     abilities.setAbility(AbilitiesIndex::Flying, flying);
     UpdateAdventureSettingsPacket{}.sendTo(*this);
 }
+
+bool Player::addAndFresh(class ItemStack& item) {
+    auto rtn = add(item);
+    refreshInventory();
+    return rtn;
+}

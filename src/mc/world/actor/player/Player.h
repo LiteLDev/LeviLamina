@@ -146,6 +146,8 @@ public:
 
     LLAPI void setAbility(::AbilitiesIndex index, bool value);
 
+    LLAPI bool addAndFresh(class ItemStack& item);
+
     // prevent constructor by default
     Player& operator=(Player const&);
     Player(Player const&);
