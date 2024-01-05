@@ -1,8 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
+#include "mc/world/level/levelgen/structure/StructurePiece.h"
 
 class StructureStart {
+public:
+    BoundingBox                                  mBoundingBox;
+    int                                          mChunkX;
+    int                                          mChunkZ;
+    std::vector<std::unique_ptr<StructurePiece>> mPieces;
+
 public:
     // prevent constructor by default
     StructureStart& operator=(StructureStart const&);
