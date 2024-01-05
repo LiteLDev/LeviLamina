@@ -34,7 +34,7 @@ jobs:
           xmake repo -u
 
       - run: |
-          xmake f -a x64 -m release -p windows -v -y --ccache=n
+          xmake f -a x64 -m release -p windows -v -y
 
       - run: |
           xmake -w -y
@@ -46,6 +46,39 @@ jobs:
             build/windows/x64/release/LeviLamina.dll
             build/windows/x64/release/LeviLamina.lib
             build/windows/x64/release/LeviLamina.pdb
+
+  build-debug:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: xmake-io/github-action-setup-xmake@v1
+
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/AppData/Local/.xmake
+            .xmake
+          key: xmake-levilamina-debug-windows-x64-${{ github.sha }}
+          restore-keys: |
+            xmake-levilamina-debug-windows-x64-
+
+      - run: |
+          xmake repo -u
+
+      - run: |
+          xmake f -a x64 -m debug -p windows -v -y
+
+      - run: |
+          xmake -w -y
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: levilamina-debug-windows-x64-${{ github.sha }}
+          path: |
+            build/windows/x64/debug/LeviLamina.dll
+            build/windows/x64/debug/LeviLamina.lib
+            build/windows/x64/debug/LeviLamina.pdb
 
   build-with-tests:
     runs-on: windows-latest
@@ -67,7 +100,7 @@ jobs:
           xmake repo -u
 
       - run: |
-          xmake f -a x64 -m release -p windows -v -y --ccache=n --tests=true
+          xmake f -a x64 -m release -p windows -v -y --tests=true
 
       - run: |
           xmake -w -y
@@ -79,3 +112,36 @@ jobs:
             build/windows/x64/release/LeviLamina.dll
             build/windows/x64/release/LeviLamina.lib
             build/windows/x64/release/LeviLamina.pdb
+
+  build-debug-with-tests:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: xmake-io/github-action-setup-xmake@v1
+
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/AppData/Local/.xmake
+            .xmake
+          key: xmake-levilamina-debug-with-tests-windows-x64-${{ github.sha }}
+          restore-keys: |
+            xmake-levilamina-debug-with-tests-windows-x64-
+
+      - run: |
+          xmake repo -u
+
+      - run: |
+          xmake f -a x64 -m debug -p windows -v -y --tests=true
+
+      - run: |
+          xmake -w -y
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: levilamina-debug-with-tests-windows-x64-${{ github.sha }}
+          path: |
+            build/windows/x64/debug/LeviLamina.dll
+            build/windows/x64/debug/LeviLamina.lib
+            build/windows/x64/debug/LeviLamina.pdb

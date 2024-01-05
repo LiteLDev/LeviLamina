@@ -541,7 +541,7 @@ player.add(itemStack);
 ```
 
 !!! note
-    Here, we use the `ItemStack` class instead of the `Item` class. The `ItemStack` class is a wrapper for the `Item` class, and it includes information such as the quantity, enchantments, durability, etc. In LeviLamina, we recommend using the `ItemStack` class instead of the `Item` class.
+    Here, we use the `ItemStack` class instead of the `Item` class. The `ItemStack` class is a wrapper for the `Item` class, and it includes information such as the quantity, enchantments, durability, etc, while `Item` class just represents the item kind. Therefore, you should the `ItemStack` class instead of the `Item` class.
 
 Then, we need to refresh the player's inventory so that the player can see the clock.
 

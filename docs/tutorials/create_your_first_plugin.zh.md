@@ -552,7 +552,7 @@ player.add(itemStack);
 ```
 
 !!! note
-    这里使用了`ItemStack`类，而不是`Item`类。`ItemStack`类是`Item`类的一个包装，它包含了物品的数量、附魔、耐久等信息。在LeviLamina中，我们建议使用`ItemStack`类而不是`Item`类。
+    这里使用了`ItemStack`类，而不是`Item`类。`ItemStack`类是`Item`类的一个包装，它包含了物品的数量、附魔、耐久等信息，而`Item`类仅仅代表这个物品类别。因此应当使用`ItemStack`类而不是`Item`类。
 
 然后，我们需要刷新玩家的背包，以便玩家能够看到钟。
 

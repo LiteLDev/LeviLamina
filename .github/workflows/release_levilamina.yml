@@ -11,20 +11,11 @@ jobs:
 
       - uses: xmake-io/github-action-setup-xmake@v1
 
-      - uses: actions/cache@v3
-        with:
-          path: |
-            ~/AppData/Local/.xmake
-            .xmake
-          key: xmake-levilamina-windows-x64-${{ github.sha }}
-          restore-keys: |
-            xmake-levilamina-windows-x64-
-
       - run: |
           xmake repo -u
 
       - run: |
-          xmake f -a x64 -m release -p windows -v -y --ccache=n
+          xmake f -a x64 -m release -p windows -v -y
 
       - run: |
           xmake -w -y
@@ -37,6 +28,30 @@ jobs:
             build/windows/x64/release/LeviLamina.lib
             build/windows/x64/release/LeviLamina.pdb
 
+  build-debug:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: xmake-io/github-action-setup-xmake@v1
+
+      - run: |
+          xmake repo -u
+
+      - run: |
+          xmake f -a x64 -m debug -p windows -v -y
+
+      - run: |
+          xmake -w -y
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: levilamina-debug-windows-x64-${{ github.sha }}
+          path: |
+            build/windows/x64/debug/LeviLamina.dll
+            build/windows/x64/debug/LeviLamina.lib
+            build/windows/x64/debug/LeviLamina.pdb
+
   upload-to-release:
     needs:
       - build
@@ -46,29 +61,49 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/download-artifact@v3
+      - name: Download release artifact
+        uses: actions/download-artifact@v3
         with:
           name: levilamina-windows-x64-${{ github.sha }}
-          path: release/lib
+          path: release/release/lib
 
-      - run: |
+      - name: Download debug artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: levilamina-debug-windows-x64-${{ github.sha }}
+          path: release/debug/lib
+
+      - name: Make include directory
+        run: |
           python scripts/make_include.py
 
-      - run: |
-          cp -r include release/
-
-      - run: |
-          cp CHANGELOG.md LICENSE.md README.md release/
-
-      - name: Archive release
+      - name: Copy include
         run: |
-          cd release
-          zip -r ../levilamina-windows-x64.zip *
-          cd ..
+          cp -r include release/release/
+          cp -r include release/debug/
 
-      - id: calculate-sha256
+      - name: Copy README, LICENSE and CHANGELOG
         run: |
-          echo ::set-output name=sha256::$(sha256sum levilamina-windows-x64.zip | awk '{print $1}')
+          cp CHANGELOG.md LICENSE.md README.md release/release/
+          cp CHANGELOG.md LICENSE.md README.md release/debug/
+
+      - name: Archive release release
+        run: |
+          cd release/release/
+          zip -r ../../levilamina-windows-x64.zip *
+          cd ../../
+
+      - name: Archive debug release
+        run: |
+          cd release/debug/
+          zip -r ../../levilamina-debug-windows-x64.zip *
+          cd ../../
+
+      - name: Calculate SHA256
+        id: calculate-sha256
+        run: |
+          echo ::set-output name=release::$(sha256sum levilamina-windows-x64.zip | awk '{print $1}')
+          echo ::set-output name=debug::$(sha256sum levilamina-debug-windows-x64.zip | awk '{print $1}')
 
       - uses: softprops/action-gh-release@v1
         with:
@@ -76,6 +111,8 @@ jobs:
           body: |
             | File | SHA256 |
             | ---- | ------ |
-            | levilamina-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |
+            | levilamina-windows-x64.zip | ${{ steps.calculate-sha256.outputs.release }} |
+            | levilamina-debug-windows-x64.zip | ${{ steps.calculate-sha256.outputs.debug }} |
           files: |
             levilamina-windows-x64.zip
+            levilamina-debug-windows-x64.zip
