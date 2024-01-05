@@ -16,7 +16,7 @@ public:
     StructureFeatureType                                          mStructureFeatureType;       // this+8
     std::unordered_map<ChunkPos, std::unique_ptr<StructureStart>> mCachedStructures;           // this+16
     std::shared_mutex                                             mCacheMutex;                 // this+80
-    std::unordered_set<ChunkPos, std::hash<ChunkPos>>             mVisitedPositions;           // this+88
+    std::unordered_set<ChunkPos>                                  mVisitedPositions;           // this+88
     SpinLock                                                      mVisitedPositionsMutex;      // this+152
     unsigned int                                                  mRadius;                     // this+184
     int                                                           mXScale;                     // this+188
