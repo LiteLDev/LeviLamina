@@ -18,7 +18,7 @@ protected:
       mPos(pos) {}
 
 public:
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI BlockPos const& pos() const;
 };
@@ -31,7 +31,7 @@ public:
     : Cancellable(player, pos),
       mFace(face) {}
 
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI uchar const& face() const;
 };
@@ -44,7 +44,7 @@ public:
     : PlayerPlaceBlockEvent(player, pos),
       mPlacedBlock(placedBlock) {}
 
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI Block const& placedBlock() const;
 };

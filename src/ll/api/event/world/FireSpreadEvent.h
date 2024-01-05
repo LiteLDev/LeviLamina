@@ -14,7 +14,7 @@ class FireSpreadEvent : public Cancellable<WorldEvent> {
 public:
     constexpr FireSpreadEvent(BlockSource& blockSource, BlockPos const& pos) : Cancellable(blockSource), mPos(pos) {}
 
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI BlockPos const& pos() const;
 };

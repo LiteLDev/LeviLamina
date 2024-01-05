@@ -11,7 +11,7 @@ class ServerStartedEvent : public Event {
 public:
     constexpr explicit ServerStartedEvent(ServerInstance& server) : mInstance(server) {}
 
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI ServerInstance& server() const;
 };

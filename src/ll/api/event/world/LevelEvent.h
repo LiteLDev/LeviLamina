@@ -13,7 +13,7 @@ protected:
     constexpr explicit LevelEvent(Level& level) : mLevel(level) {}
 
 public:
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI Level& level() const;
 };

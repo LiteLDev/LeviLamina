@@ -14,7 +14,7 @@ public:
     : PlayerEvent(player),
       mSource(source) {}
 
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI ActorDamageSource const& source() const;
 };

@@ -27,7 +27,7 @@ public:
       mNewBlock(newBlock),
       mPos(pos) {}
 
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI uint const&     layer() const;
     LLNDAPI Block const&    previousBlock() const;

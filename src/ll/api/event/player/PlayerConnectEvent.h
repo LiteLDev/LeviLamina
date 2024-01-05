@@ -22,7 +22,7 @@ public:
       mNetworkIdentifier(networkIdentifier),
       mConnectionRequest(connectionRequest) {}
 
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI NetworkIdentifier const& networkIdentifier() const;
     LLNDAPI ConnectionRequest const& connectionRequest() const;

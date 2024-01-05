@@ -13,7 +13,7 @@ class PlayerInteractBlockEvent : public Cancellable<PlayerEvent> {
 public:
     constexpr PlayerInteractBlockEvent(Player& player, BlockPos const& pos) : Cancellable(player), mPos(pos) {}
 
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI BlockPos const& pos() const;
 };

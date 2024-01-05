@@ -12,7 +12,7 @@ class MobDieEvent : public MobEvent {
 public:
     constexpr explicit MobDieEvent(Mob& mob, ActorDamageSource const& source) : MobEvent(mob), mSource(source) {}
 
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI ActorDamageSource const& source() const;
 };

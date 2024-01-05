@@ -27,8 +27,8 @@ public:
       mKnock(knock),
       mIgnite(ignite) {}
 
-    void serialize(CompoundTag&) const override;
-    void deserialize(CompoundTag const&) override;
+    LLAPI void serialize(CompoundTag&) const override;
+    LLAPI void deserialize(CompoundTag const&) override;
 
     LLNDAPI ActorDamageSource const& source() const;
     LLNDAPI float&                   damage() const;

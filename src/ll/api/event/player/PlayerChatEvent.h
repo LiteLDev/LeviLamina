@@ -11,8 +11,8 @@ class PlayerChatEvent : public Cancellable<PlayerEvent> {
 public:
     constexpr explicit PlayerChatEvent(Player& player, std::string& message) : Cancellable(player), mMessage(message) {}
 
-    void serialize(CompoundTag&) const override;
-    void deserialize(CompoundTag const&) override;
+    LLAPI void serialize(CompoundTag&) const override;
+    LLAPI void deserialize(CompoundTag const&) override;
 
     LLNDAPI std::string& message() const;
 };

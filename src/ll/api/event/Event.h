@@ -21,8 +21,8 @@ private:
 
     bool mCancelled{false};
 
-    void serializeWithCancell(CompoundTag&) const;
-    void deserializeWithCancell(CompoundTag const&);
+    LLAPI void serializeWithCancell(CompoundTag&) const;
+    LLAPI void deserializeWithCancell(CompoundTag const&);
 
 protected:
     constexpr Event() = default;
@@ -30,8 +30,8 @@ protected:
 public:
     virtual ~Event() = default;
 
-    virtual void serialize(CompoundTag&) const;
-    virtual void deserialize(CompoundTag const&);
+    LLAPI virtual void serialize(CompoundTag&) const;
+    LLAPI virtual void deserialize(CompoundTag const&);
 
     static constexpr ll::event::EventId CustomEventId{EmptyEventId};
 };

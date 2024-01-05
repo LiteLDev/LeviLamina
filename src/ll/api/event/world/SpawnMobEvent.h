@@ -37,7 +37,7 @@ protected:
       mFromSpawner(fromSpawner) {}
 
 public:
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI ActorDefinitionIdentifier const& identifier() const;
     LLNDAPI optional_ref<Actor> spawner() const;
@@ -60,7 +60,7 @@ public:
     : Cancellable(blockSource, identifier, spawner, pos, naturalSpawn, surface, fromSpawner) {}
 
 public:
-    void deserialize(CompoundTag const&) override;
+    LLAPI void deserialize(CompoundTag const&) override;
 
     LLNDAPI bool& naturalSpawn() const;
     LLNDAPI bool& surface() const;
@@ -84,7 +84,7 @@ public:
       mMob(mob) {}
 
 public:
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI optional_ref<Mob> mob() const;
 };

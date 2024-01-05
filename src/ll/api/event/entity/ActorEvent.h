@@ -14,7 +14,7 @@ protected:
     constexpr explicit ActorEvent(Actor& actor) : mSelf(actor) {}
 
 public:
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI Actor& self() const;
 };

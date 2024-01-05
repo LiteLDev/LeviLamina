@@ -13,7 +13,7 @@ class PlayerUseItemEvent : public Cancellable<PlayerRightClickEvent> {
 public:
     constexpr PlayerUseItemEvent(Player& player, ItemStack& item) : Cancellable(player), mItem(item) {}
 
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI ItemStack& item() const;
 };

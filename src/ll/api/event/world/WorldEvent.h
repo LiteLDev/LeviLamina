@@ -13,7 +13,7 @@ protected:
     constexpr explicit WorldEvent(BlockSource& blockSource) : mBlockSource(blockSource) {}
 
 public:
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI BlockSource& blockSource() const;
 };

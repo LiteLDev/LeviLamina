@@ -11,7 +11,7 @@ class ServerStoppingEvent : public Event {
 public:
     constexpr explicit ServerStoppingEvent(ServerInstance& server) : mServer(server) {}
 
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI ServerInstance& server() const;
 };

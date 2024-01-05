@@ -13,8 +13,8 @@ public:
     : Cancellable(player),
       mMewPerm(newPerm) {}
 
-    void serialize(CompoundTag&) const override;
-    void deserialize(CompoundTag const&) override;
+    LLAPI void serialize(CompoundTag&) const override;
+    LLAPI void deserialize(CompoundTag const&) override;
 
     LLNDAPI CommandPermissionLevel& newPerm() const;
 };

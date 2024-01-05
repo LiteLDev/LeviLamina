@@ -30,7 +30,7 @@ public:
       mClickPos(clickPos),
       mBlock(block) {}
 
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI BlockPos const& blockPos() const;
     LLNDAPI uchar const&    face() const;

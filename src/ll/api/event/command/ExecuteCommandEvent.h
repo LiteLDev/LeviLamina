@@ -27,7 +27,7 @@ protected:
       mSuppressOutput(suppressOutput) {}
 
 public:
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI MinecraftCommands&    minecraftCommands() const;
     LLNDAPI CommandContext const& commandContext() const;
@@ -42,7 +42,7 @@ public:
     )
     : Cancellable(minecraftCommands, commandContext, suppressOutput) {}
 
-    void deserialize(CompoundTag const&) override;
+    LLAPI void deserialize(CompoundTag const&) override;
 
     LLNDAPI CommandContext& commandContext() const;
     LLNDAPI bool&           suppressOutput() const;
@@ -60,7 +60,7 @@ public:
     : ExecuteCommandEvent(minecraftCommands, commandContext, suppressOutput),
       mResult(result) {}
 
-    void serialize(CompoundTag&) const override;
+    LLAPI void serialize(CompoundTag&) const override;
 
     LLNDAPI MCRESULT& result() const;
 };
