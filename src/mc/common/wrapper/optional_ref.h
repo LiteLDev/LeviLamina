@@ -74,6 +74,7 @@ public:
     [[nodiscard]] constexpr T* operator->() const { return &get(); }
     [[nodiscard]] constexpr    operator T&() const { return get(); }
     [[nodiscard]] constexpr    operator T*() const { return &get(); }
+    [[nodiscard]] constexpr decltype(auto) operator[](int index) const { return get()[index]; }
 
     template <class U>
     [[nodiscard]] constexpr T& value_or(U& right) const& {
@@ -103,6 +104,22 @@ public:
             -> decltype(std::invoke(*mPtr, static_cast<Types&&>(args)...)) {
         return std::invoke(*mPtr, static_cast<Types&&>(args)...);
     }
+
+    [[nodiscard]] decltype(auto) begin() { return get().begin(); }
+
+    [[nodiscard]] decltype(auto) cbegin() const { return get().cbegin(); }
+
+    [[nodiscard]] decltype(auto) rbegin() { return get().rbegin(); }
+
+    [[nodiscard]] decltype(auto) crbegin() const { return get().crbegin(); }
+
+    [[nodiscard]] decltype(auto) end() { return get().end(); }
+
+    [[nodiscard]] decltype(auto) cend() const { return get().cend(); }
+
+    [[nodiscard]] decltype(auto) rend() { return get().rend(); }
+
+    [[nodiscard]] decltype(auto) crend() const { return get().crend(); }
 };
 // NOLINTEND
 template <typename T>
