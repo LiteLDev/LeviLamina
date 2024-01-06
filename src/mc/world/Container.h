@@ -29,9 +29,9 @@ public:
 
     LLNDAPI optional_ref<ItemStack> getItemNonConst(int index);
 
-    [[nodiscard]] ItemStack& operator[](size_t index) { return this->getItemNonConst(static_cast<int>(index)); }
+    [[nodiscard]] ItemStack& operator[](int index) { return this->getItemNonConst(index); }
 
-    [[nodiscard]] ItemStack const& operator[](size_t index) const { return this->getItem(static_cast<int>(index)); }
+    [[nodiscard]] ItemStack const& operator[](int index) const { return this->getItem(index); }
 
 public:
     using Iterator      = ContainerIterator<Container, false>;
