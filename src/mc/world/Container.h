@@ -24,13 +24,13 @@ public:
     bool                                                mCustomName;              // this+0xD8
     ContainerRuntimeId                                  mContainerRuntimeId;      // this+0xDC
 
-    [[nodiscard]] inline std::string const& getTypeName() const { return getContainerTypeName(getContainerType()); }
+    [[nodiscard]] std::string const& getTypeName() const { return getContainerTypeName(getContainerType()); }
 
     LLNDAPI optional_ref<ItemStack> getItemNonConst(int index);
 
-    [[nodiscard]] inline ItemStack& operator[](int index) { return this->getItemNonConst(index); }
+    [[nodiscard]] ItemStack& operator[](size_t index) { return this->getItemNonConst(static_cast<int>(index)); }
 
-    [[nodiscard]] inline ItemStack const& operator[](int index) const { return this->getItem(index); }
+    [[nodiscard]] ItemStack const& operator[](size_t index) const { return this->getItem(static_cast<int>(index)); }
 
 
 public:
@@ -47,36 +47,30 @@ public:
         using reference         = ItemStack&;
         using iterator_category = std::random_access_iterator_tag;
 
-        ConstIterator(const Container* container, int position) : container_(container), position_(position) {}
+        [[nodiscard]] constexpr ConstIterator(const Container* container, int position)
+        : mContainer(container),
+          mPosition(position) {}
+        [[nodiscard]] constexpr bool operator==(const ConstIterator& other) const {
+            return mContainer == other.mContainer && mPosition == other.mPosition;
+        }
+        [[nodiscard]] constexpr ItemStack const& operator*() const { return mContainer->getItem(mPosition); }
+        [[nodiscard]] constexpr ItemStack const* operator->() const { return &mContainer->getItem(mPosition); }
 
-        bool operator!=(const ConstIterator& other) const { return position_ != other.position_; }
-
-        const ItemStack& operator*() const { return container_->getItem(position_); }
-
-        const ItemStack* operator->() const { return &container_->getItem(position_); }
-
-        const ConstIterator& operator++() {
-            ++position_;
+        constexpr ConstIterator& operator++() {
+            ++mPosition;
+            return *this;
+        }
+        constexpr ConstIterator& operator--() {
+            --mPosition;
             return *this;
         }
 
-        const ConstIterator& operator--() {
-            --position_;
-            return *this;
-        }
-
-        const ConstIterator& operator[](int offset) {
-            position_ += offset;
-            return *this;
-        }
-
-
-    private:
-        const Container* container_;
-        int              position_;
+    protected:
+        const Container* mContainer;
+        int              mPosition;
     };
 
-    class Iterator {
+    class Iterator : public ConstIterator {
     public:
         using difference_type   = std::ptrdiff_t;
         using value_type        = ItemStack;
@@ -84,55 +78,36 @@ public:
         using reference         = ItemStack&;
         using iterator_category = std::random_access_iterator_tag;
 
-        Iterator(Container* container, int position) : container_(container), position_(position) {}
+        [[nodiscard]] constexpr Iterator(Container* container, int position) : ConstIterator(container, position) {}
+        [[nodiscard]] constexpr Container& getContainer() const { return *const_cast<Container*>(mContainer); }
+        [[nodiscard]] constexpr ItemStack& operator*() const { return getContainer().getItemNonConst(mPosition); }
+        [[nodiscard]] constexpr ItemStack* operator->() const { return getContainer().getItemNonConst(mPosition); }
 
-        bool operator!=(const Iterator& other) const { return position_ != other.position_; }
-
-        bool operator==(const Iterator& other) const { return position_ == other.position_; }
-
-        ItemStack& operator*() { return container_->getItemNonConst(position_); }
-
-        ItemStack* operator->() const { return container_->getItemNonConst(position_); }
-
-        Iterator& operator++() {
-            ++position_;
+        constexpr Iterator& operator++() {
+            ++mPosition;
             return *this;
         }
-
-        Iterator& operator--() {
-            --position_;
+        constexpr Iterator& operator--() {
+            --mPosition;
             return *this;
         }
-
-        Iterator& operator[](int offset) {
-            position_ += offset;
-            return *this;
-        }
-
-
-    private:
-        Container* container_;
-        int        position_;
     };
 
     using ReverseIterator      = std::reverse_iterator<Iterator>;
     using ConstReverseIterator = std::reverse_iterator<ConstIterator>;
 
-    [[nodiscard]] Iterator begin() noexcept { return {this, 0}; }
-
-    [[nodiscard]] ReverseIterator rbegin() noexcept { return ReverseIterator(end()); }
-
-    [[nodiscard]] ConstIterator cbegin() const noexcept { return {this, 0}; }
-
-    [[nodiscard]] ConstReverseIterator crbegin() const noexcept { return ConstReverseIterator(cend()); }
-
-    [[nodiscard]] Iterator end() noexcept { return {this, getContainerSize()}; }
-
-    [[nodiscard]] ReverseIterator rend() noexcept { return ReverseIterator(begin()); }
-
-    [[nodiscard]] ConstIterator cend() const noexcept { return {this, getContainerSize()}; }
-
-    [[nodiscard]] ConstReverseIterator crend() const noexcept { return ConstReverseIterator(cbegin()); }
+    [[nodiscard]] constexpr Iterator             begin() noexcept { return {this, 0}; }
+    [[nodiscard]] constexpr Iterator             end() noexcept { return {this, getContainerSize()}; }
+    [[nodiscard]] constexpr ReverseIterator      rbegin() noexcept { return ReverseIterator(end()); }
+    [[nodiscard]] constexpr ReverseIterator      rend() noexcept { return ReverseIterator(begin()); }
+    [[nodiscard]] constexpr ConstIterator        begin() const noexcept { return {this, 0}; }
+    [[nodiscard]] constexpr ConstIterator        end() const noexcept { return {this, getContainerSize()}; }
+    [[nodiscard]] constexpr ConstIterator        cbegin() const noexcept { return {this, 0}; }
+    [[nodiscard]] constexpr ConstIterator        cend() const noexcept { return {this, getContainerSize()}; }
+    [[nodiscard]] constexpr ConstReverseIterator rbegin() const noexcept { return ConstReverseIterator(end()); }
+    [[nodiscard]] constexpr ConstReverseIterator rend() const noexcept { return ConstReverseIterator(begin()); }
+    [[nodiscard]] constexpr ConstReverseIterator crbegin() const noexcept { return ConstReverseIterator(cend()); }
+    [[nodiscard]] constexpr ConstReverseIterator crend() const noexcept { return ConstReverseIterator(cbegin()); }
 
 public:
     // NOLINTBEGIN
