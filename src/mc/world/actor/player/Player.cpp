@@ -1,7 +1,9 @@
 #include "mc/world/actor/player/Player.h"
 
 #include <memory>
+#include <vector>
 
+#include "ll/api/memory/Memory.h"
 #include "ll/api/service/Bedrock.h"
 
 #include "mc/certificates/ExtendedCertificate.h"
@@ -109,4 +111,15 @@ bool Player::addAndRefresh(class ItemStack& item) {
     auto rtn = add(item);
     refreshInventory();
     return rtn;
+}
+
+
+optional_ref<EnderChestContainer> Player::getEnderChestContainer() {
+    std::vector<int> ids;
+    return ll::memory::dAccess<EnderChestContainer*>(this, 3304);
+    // ida: Player::Player : EnderChestContainer::EnderChestContainer
+}
+
+optional_ref<EnderChestContainer> Player::getEnderChestContainer() const {
+    return ll::memory::dAccess<EnderChestContainer*>(this, 3304);
 }

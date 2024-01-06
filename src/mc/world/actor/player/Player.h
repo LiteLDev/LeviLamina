@@ -1,8 +1,10 @@
 #pragma once
 
+#include "ll/api/base/Macro.h"
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/network/NetworkPeer.h"
 #include "mc/server/volume/UserEntityIdentifierComponent.h"
+#include "mc/world/actor/player/EnderChestContainer.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/BedSleepingResult.h"
@@ -147,6 +149,10 @@ public:
     LLAPI void setAbility(::AbilitiesIndex index, bool value);
 
     LLAPI bool addAndRefresh(class ItemStack& item);
+
+    LLNDAPI optional_ref<EnderChestContainer> getEnderChestContainer();
+
+    LLNDAPI optional_ref<EnderChestContainer> getEnderChestContainer() const;
 
     // prevent constructor by default
     Player& operator=(Player const&);
