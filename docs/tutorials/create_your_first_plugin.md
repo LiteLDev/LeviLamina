@@ -36,6 +36,8 @@ These tutorials assume a basic knowledge of the C++ programming language. If you
 - [cppreference.com](https://en.cppreference.com/w/)
 - [C++ Tutorial](https://www.w3schools.com/cpp/)
 - [C++ Language Tutorial](https://cplusplus.com/doc/tutorial/)
+- [hacking C++](https://hackingcpp.com/)
+- [C++ Core Guidelines](http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
 
 ## Set Up Your Workspace
 
