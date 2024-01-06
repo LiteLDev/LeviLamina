@@ -60,7 +60,6 @@ public:
         return getDimension(dimId).get();
     }
 
-    LLNDAPI optional_ref<Player> getPlayerByNameOrXUID(std::string const& info) const;
 
     // LLAPI bool executeCommandAs(Player player, std::string const& cmd) const;
     // LLAPI std::pair<bool, std::string> executeCommandEx(std::string const& cmd) const;
