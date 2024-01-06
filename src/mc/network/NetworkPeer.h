@@ -71,7 +71,8 @@ public:
 
     // vIndex: 2, symbol:
     // ?receivePacket@BatchedNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
-    virtual ::NetworkPeer::DataStatus receivePacket(std::string& outData, std::shared_ptr<PacketRecvTimepoint> const&) = 0;
+    virtual ::NetworkPeer::DataStatus
+    receivePacket(std::string& outData, std::shared_ptr<PacketRecvTimepoint> const&) = 0;
 
     // vIndex: 3, symbol: ?getNetworkStatus@BatchedNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
     virtual struct NetworkStatus getNetworkStatus() const = 0;

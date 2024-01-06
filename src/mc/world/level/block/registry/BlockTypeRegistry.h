@@ -136,7 +136,8 @@ public:
     MCAPI static class Block const* lookupByName(class HashedString const& name, int data, bool logNotFound = false);
 
     // symbol: ?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBVHashedString@@_N@Z
-    MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const& name, bool logNotFound = false);
+    MCAPI static class WeakPtr<class BlockLegacy>
+    lookupByName(class HashedString const& name, bool logNotFound = false);
 
     // symbol: ?prepareBlocks@BlockTypeRegistry@@SAXI@Z
     MCAPI static void prepareBlocks(uint latestUpdaterVersion);
@@ -162,7 +163,7 @@ public:
     // symbol:
     // ?_lookupByNameImpl@BlockTypeRegistry@@CA?AULookupByNameImplReturnType@1@AEBVHashedString@@HW4LookupByNameImplResolve@1@_N@Z
     MCAPI static struct BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
-        class HashedString const&name,
+        class HashedString const&                    name,
         int                                          data,
         ::BlockTypeRegistry::LookupByNameImplResolve resolve,
         bool                                         logNotFound = false

@@ -101,7 +101,7 @@ public:
         class BlockPos const&               position,
         class StructureSettings const&      structureSettings,
         class StructureTelemetryServerData* telemetryServerData = nullptr,
-        bool updateItemData                                     = true
+        bool                                updateItemData      = true
     ) const;
 
     // symbol: ?placeNextSegmentInWorld@StructureTemplate@@QEBAXAEAVStructureAnimationData@@AEBVBlockPalette@@@Z
@@ -140,14 +140,18 @@ public:
     _fillEntityList(class BlockSource& region, class BlockPos const& minCorner, class BlockPos const& maxCorner);
 
     // symbol: ?_placeEntitiesInWorld@StructureTemplate@@AEBAXAEAVBlockSource@@AEAVDataLoadHelper@@_N@Z
-    MCAPI void _placeEntitiesInWorld(class BlockSource& region, class DataLoadHelper& dataLoadHelper, bool shouldReloadActorEquipment) const;
+    MCAPI void _placeEntitiesInWorld(
+        class BlockSource&    region,
+        class DataLoadHelper& dataLoadHelper,
+        bool                  shouldReloadActorEquipment
+    ) const;
 
     // symbol:
     // ?_placeNextBlockSegmentInWorld@StructureTemplate@@AEBAXAEAVBlockSource@@_K1AEBVStructureSettings@@AEAVDataLoadHelper@@AEBVStructureBlockPalette@@AEBVBlockPalette@@VBlockPos@@AEBV7@AEBVVec3@@W4Rotation@@W4Mirror@@MIPEAVStructureTelemetryServerData@@_N_N@Z
     MCAPI void _placeNextBlockSegmentInWorld(
-        class BlockSource& region,
-        uint64 startPlacement,
-        uint64 endPlacement,
+        class BlockSource&                 region,
+        uint64                             startPlacement,
+        uint64                             endPlacement,
         class StructureSettings const&     structureSettings,
         class DataLoadHelper&              dataLoadHelper,
         class StructureBlockPalette const& structureBlockPalette,
@@ -157,8 +161,8 @@ public:
         class Vec3 const&                  pivot,
         ::Rotation                         rotation,
         ::Mirror                           mirror,
-        float integrityValue,
-        uint  integritySeed,
+        float                              integrityValue,
+        uint                               integritySeed,
         class StructureTelemetryServerData*,
         bool updateItemData,
         bool ignoreJigsawBlocks

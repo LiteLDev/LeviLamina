@@ -51,7 +51,7 @@ public:
     // ??0ExpressionNode@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@V?$span@$$CBVHashedString@@$0?0@gsl@@@Z
     MCAPI ExpressionNode(
         std::string const& expression,
-        ::MolangVersion version             = MolangVersion::Latest,
+        ::MolangVersion    version          = MolangVersion::Latest,
         gsl::span<class HashedString const> = gsl::span<class HashedString const>{{HashedString{"default"}}}
     );
 
