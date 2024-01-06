@@ -5,6 +5,10 @@
 // auto generated inclusion list
 #include "mc/enums/MaterialType.h"
 
+class Material;
+class AABB;
+class GetCollisionShapeInterface;
+
 class IConstBlockSource {
 public:
     // prevent constructor by default

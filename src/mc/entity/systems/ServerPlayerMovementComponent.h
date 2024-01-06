@@ -8,7 +8,7 @@
 
 struct ServerPlayerMovementComponent {
 public:
-    bool mServerHasMovementAuthority;
+    bool                        mServerHasMovementAuthority;
     std::deque<MovementPackets> mQueuedUpdates;
     // prevent constructor by default
     ServerPlayerMovementComponent& operator=(ServerPlayerMovementComponent const&);

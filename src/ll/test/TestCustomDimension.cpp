@@ -37,8 +37,8 @@
  *
  *                          FlatWorldGenerator  --∖
  *                          NetherGenerator      --∖
- * OverworldGenerator2d --- OverworldGenerator2d --- WorldGenerator --- ChunkSource --- Bedrock::EnableNonOwnerReferences
- *                          TheEndGenerator      --∕                ∖-- IPreliminarySurfaceProvider
+ * OverworldGenerator2d --- OverworldGenerator2d --- WorldGenerator --- ChunkSource ---
+ * Bedrock::EnableNonOwnerReferences TheEndGenerator      --∕                ∖-- IPreliminarySurfaceProvider
  *                          VoidGenerator       --∕
  *
  */
@@ -62,7 +62,7 @@
  * FixedBiomeSource --- BiomeSource
  *
  */
-
+/*
 class ILevel;
 class Scheduler;
 class Dimension;
@@ -71,7 +71,7 @@ class StructureFeatureRegistry;
 using namespace ll::memory;
 
 namespace {
-ll::Logger logger("TestMoreDimension");
+ll::Logger logger("TestCustomDimension");
 
 void addDimMap() {
     ll::memory::modify(VanillaDimensions::$DimensionMap(), [&](auto& dimMap) {
@@ -281,7 +281,8 @@ LL_AUTO_STATIC_HOOK(
 }
 
 // registry dimensoin when in ll, must reload Dimension::getWeakRef
-LL_AUTO_TYPED_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimension, &Dimension::getWeakRef,
-WeakRefT<SharePtrRefTraits<Dimension>>) { if (this->getDimensionId() == 3) return weak_from_this(); return origin();
+LL_AUTO_TYPED_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimension, &Dimension::getWeakRef, WeakRefT<SharePtrRefTraits<Dimension>>) {
+    if (this->getDimensionId() == 3) return weak_from_this();
+    return origin();
 };
 */

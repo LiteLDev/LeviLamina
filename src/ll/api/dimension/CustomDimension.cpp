@@ -1,7 +1,7 @@
 
-#include "MoreDimension.h"
+#include "CustomDimension.h"
 
-#include "ll/api/service/GlobalService.h"
+#include "ll/api/service/Bedrock.h"
 #include "mc/deps/core/mce/Color.h"
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/DimensionConversionData.h"
@@ -10,6 +10,7 @@
 #include "mc/world/level/chunk/VanillaLevelChunkUpgrade.h"
 #include "mc/world/level/dimension/NetherDimension.h"
 #include "mc/world/level/dimension/OverworldDimension.h"
+#include "mc/world/level/dimension/VanillaDimensions.h"
 #include "mc/world/level/dimension/end/TheEndDimension.h"
 #include "mc/world/level/levelgen/VoidGenerator.h"
 #include "mc/world/level/levelgen/flat/FlatWorldGenerator.h"
@@ -18,12 +19,16 @@
 #include "mc/world/level/levelgen/v1/TheEndGenerator.h"
 
 
-MoreDimension::MoreDimension(ILevel& ilevel, Scheduler& scheduler, MoreDimensionManager::DimensionInfo& dimensionInfo)
+CustomDimension::CustomDimension(
+    ILevel&                                ilevel,
+    Scheduler&                             scheduler,
+    CustomDimensionManager::DimensionInfo& dimensionInfo
+)
 : Dimension(ilevel, dimensionInfo.id, {-64, 320}, scheduler, dimensionInfo.name) {
-    loggerMoreDim.debug("MoreDimension::MoreDimension dimension name:{}", dimensionInfo.name);
-    this->mDefaultBrightness.sky = Brightness::MAX;
-    this->generatorType          = dimensionInfo.generatorType;
-    this->seed                   = dimensionInfo.seed;
+    loggerMoreDim.debug("CustomDimension::CustomDimension dimension name:{}", dimensionInfo.name);
+    mDefaultBrightness.sky = Brightness::MAX;
+    generatorType          = dimensionInfo.generatorType;
+    seed                   = dimensionInfo.seed;
     switch (generatorType) {
     case GeneratorType::TheEnd: {
         mSeaLevel                = 63;
@@ -43,19 +48,19 @@ MoreDimension::MoreDimension(ILevel& ilevel, Scheduler& scheduler, MoreDimension
     mDimensionBrightnessRamp->buildBrightnessRamp();
 }
 
-void MoreDimension::init() {
-    loggerMoreDim.debug("MoreDimension::init");
+void CustomDimension::init() {
+    loggerMoreDim.debug("CustomDimension::init");
     setSkylight(false);
     Dimension::init();
 }
 
-std::unique_ptr<WorldGenerator> MoreDimension::createGenerator() {
-    loggerMoreDim.debug("MoreDimension::createGenerator");
-    auto& level         = getLevel();
-    auto& levelData     = level.getLevelData();
-    auto  biome         = level.getBiomeRegistry().lookupByName(levelData.getBiomeOverride());
+std::unique_ptr<WorldGenerator> CustomDimension::createGenerator() {
+    loggerMoreDim.debug("CustomDimension::createGenerator");
+    auto& level     = getLevel();
+    auto& levelData = level.getLevelData();
+    auto  biome     = level.getBiomeRegistry().lookupByName(levelData.getBiomeOverride());
 
-    switch (this->generatorType) {
+    switch (generatorType) {
     case GeneratorType::Overworld:
         return std::make_unique<OverworldGenerator2d>(
             *this,
@@ -79,55 +84,56 @@ std::unique_ptr<WorldGenerator> MoreDimension::createGenerator() {
             makeStructureFeatures(false, levelData.getBaseGameVersion(), levelData.getExperiments())
         );
     case GeneratorType::Flat:
-        return std::make_unique<FlatWorldGenerator>(*this, this->seed, levelData.getFlatWorldGeneratorOptions());
+        return std::make_unique<FlatWorldGenerator>(*this, seed, levelData.getFlatWorldGeneratorOptions());
     default:
         return std::make_unique<VoidGenerator>(*this);
     }
 }
 
-void MoreDimension::upgradeLevelChunk(ChunkSource& cs, LevelChunk& lc, LevelChunk& generatedChunk) {
-    loggerMoreDim.debug("MoreDimension::upgradeLevelChunk");
-    BlockSource blockSource = BlockSource(this->getLevel(), *this, cs, false, true, false);
+void CustomDimension::upgradeLevelChunk(ChunkSource& cs, LevelChunk& lc, LevelChunk& generatedChunk) {
+    loggerMoreDim.debug("CustomDimension::upgradeLevelChunk");
+    auto blockSource = BlockSource(getLevel(), *this, cs, false, true, false);
     VanillaLevelChunkUpgrade::_upgradeLevelChunkViaMetaData(lc, generatedChunk, blockSource);
     VanillaLevelChunkUpgrade::_upgradeLevelChunkLegacy(lc, blockSource);
 }
 
-void MoreDimension::fixWallChunk(ChunkSource& cs, LevelChunk& lc) {
-    loggerMoreDim.debug("MoreDimension::fixWallChunk");
-    BlockSource blockSource = BlockSource(this->getLevel(), *this, cs, false, true, false);
+void CustomDimension::fixWallChunk(ChunkSource& cs, LevelChunk& lc) {
+    loggerMoreDim.debug("CustomDimension::fixWallChunk");
+    auto blockSource = BlockSource(getLevel(), *this, cs, false, true, false);
     VanillaLevelChunkUpgrade::fixWallChunk(lc, blockSource);
 }
 
-bool MoreDimension::levelChunkNeedsUpgrade(LevelChunk const& lc) const {
-    loggerMoreDim.debug("MoreDimension::levelChunkNeedsUpgrade");
+bool CustomDimension::levelChunkNeedsUpgrade(LevelChunk const& lc) const {
+    loggerMoreDim.debug("CustomDimension::levelChunkNeedsUpgrade");
     return VanillaLevelChunkUpgrade::levelChunkNeedsUpgrade(lc);
 }
-void MoreDimension::_upgradeOldLimboEntity(CompoundTag& tag, ::LimboEntitiesVersion vers) {
-    loggerMoreDim.debug("MoreDimension::_upgradeOldLimboEntity");
-    auto isTemplate = this->getLevel().getLevelData().isFromWorldTemplate();
+void CustomDimension::_upgradeOldLimboEntity(CompoundTag& tag, ::LimboEntitiesVersion vers) {
+    loggerMoreDim.debug("CustomDimension::_upgradeOldLimboEntity");
+    auto isTemplate = getLevel().getLevelData().isFromWorldTemplate();
     return VanillaLevelChunkUpgrade::upgradeOldLimboEntity(tag, vers, isTemplate);
 }
 
-Vec3 MoreDimension::translatePosAcrossDimension(Vec3 const& fromPos, DimensionType fromId) const {
-    loggerMoreDim.debug("MoreDimension::translatePosAcrossDimension");
-    auto data  = this->getLevel().getDimensionConversionData();
+Vec3 CustomDimension::translatePosAcrossDimension(Vec3 const& fromPos, DimensionType fromId) const {
+    loggerMoreDim.debug("CustomDimension::translatePosAcrossDimension");
+    auto data  = getLevel().getDimensionConversionData();
     auto topos = Vec3();
-    VanillaDimensions::convertPointBetweenDimensions(fromPos, topos, fromId, this->mId, data);
-    if (topos.x >= 31999872) topos.x = 31999872;
-    if (topos.x <= -31999872) topos.x = -31999872;
-    if (topos.z >= 31999872) topos.z = 31999872;
-    if (topos.z <= -31999872) topos.z = -31999872;
+    VanillaDimensions::convertPointBetweenDimensions(fromPos, topos, fromId, mId, data);
+    constexpr auto clampVal = 32000000.0f - 128.0f;
+
+    topos.x = std::clamp(topos.x, -clampVal, clampVal);
+    topos.z = std::clamp(topos.z, -clampVal, clampVal);
+
     return topos;
 }
 
 std::unique_ptr<ChunkSource>
-MoreDimension::_wrapStorageForVersionCompatibility(std::unique_ptr<ChunkSource> cs, ::StorageVersion ver) {
-    loggerMoreDim.debug("MoreDimension::_wrapStorageForVersionCompatibility");
+CustomDimension::_wrapStorageForVersionCompatibility(std::unique_ptr<ChunkSource> cs, ::StorageVersion /*ver*/) {
+    loggerMoreDim.debug("CustomDimension::_wrapStorageForVersionCompatibility");
     return cs;
 }
 
-mce::Color MoreDimension::getBrightnessDependentFogColor(mce::Color const& color, float brightness) const {
-    loggerMoreDim.debug("MoreDimension::getBrightnessDependentFogColor");
+mce::Color CustomDimension::getBrightnessDependentFogColor(mce::Color const& color, float brightness) const {
+    loggerMoreDim.debug("CustomDimension::getBrightnessDependentFogColor");
     float temp   = (brightness * 0.94f) + 0.06f;
     float temp2  = (brightness * 0.91f) + 0.09f;
     auto  result = color;
@@ -137,18 +143,18 @@ mce::Color MoreDimension::getBrightnessDependentFogColor(mce::Color const& color
     return result;
 };
 
-std::unique_ptr<StructureFeatureRegistry> MoreDimension::makeStructureFeatures(
+std::unique_ptr<StructureFeatureRegistry> CustomDimension::makeStructureFeatures(
     bool                   isLegacy,
     BaseGameVersion const& baseGameVersion,
     Experiments const&     experiments
 ) {
-    loggerMoreDim.debug("MoreDimension::makeStructureFeatures");
-    switch (this->generatorType) {
+    loggerMoreDim.debug("CustomDimension::makeStructureFeatures");
+    switch (generatorType) {
     case GeneratorType::Nether:
-        return NetherDimension::makeStructureFeatures(this->seed, baseGameVersion);
+        return NetherDimension::makeStructureFeatures(seed, baseGameVersion);
     case GeneratorType::TheEnd:
-        return TheEndDimension::makeStructureFeatures(*this, this->seed);
+        return TheEndDimension::makeStructureFeatures(*this, seed);
     default:
-        return OverworldDimension::makeStructureFeatures(this->seed, isLegacy, baseGameVersion, experiments);
+        return OverworldDimension::makeStructureFeatures(seed, isLegacy, baseGameVersion, experiments);
     }
 };

@@ -82,8 +82,8 @@ public:
 
     // vIndex: 50, symbol:
     // ?tryMakeAquifer@OverworldGenerator@@MEBA?AV?$unique_ptr@VAquifer@@U?$default_delete@VAquifer@@@std@@@std@@AEBVChunkPos@@AEBVSurfaceLevelCache@@FFF@Z
-    virtual std::unique_ptr<class Aquifer>
-    tryMakeAquifer(class ChunkPos const&chunkPos,
+    virtual std::unique_ptr<class Aquifer> tryMakeAquifer(
+        class ChunkPos const&          chunkPos,
         class SurfaceLevelCache const& surfaceLevelCache,
         short                          minHeight,
         short                          levelGenHeight,

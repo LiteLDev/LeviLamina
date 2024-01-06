@@ -8,18 +8,18 @@
 #include <mutex>
 
 namespace {
-ll::Logger loggerMoreDimMag("MoreDimensionManager");
+ll::Logger loggerMoreDimMag("CustomDimensionManager");
 }
 
-class MoreDimensionManager {
-    MoreDimensionManager();
-    ~MoreDimensionManager();
+class CustomDimensionManager {
+    CustomDimensionManager();
+    ~CustomDimensionManager();
 
-    std::atomic<int> new_dimension_id_ = 3;
-    std::mutex       map_mutex_;
+    std::atomic<int> mNewDimensionId;
+    std::mutex       mMapMutex;
 
 public:
-    LLNDAPI static MoreDimensionManager& getInstance();
+    LLNDAPI static CustomDimensionManager& getInstance();
 
     struct DimensionInfo {
         const std::string           name;
@@ -27,10 +27,10 @@ public:
         uint                        seed          = 123;
         GeneratorType               generatorType = GeneratorType::Overworld;
     };
-    std::unique_ptr<FakeDimensionId> fakeDimensionIdInstance = nullptr;
-    std::unordered_map<std::string, DimensionInfo> MoreDimensionMap; // save all dimension info
+    std::unique_ptr<FakeDimensionId>               fakeDimensionIdInstance = nullptr;
+    std::unordered_map<std::string, DimensionInfo> CustomDimensionMap;   // save all dimension info
     std::unordered_map<std::string, DimensionInfo> RegistryDimensionMap; // save registry dimension info
 
     LLNDAPI AutomaticID<Dimension, int>
-          AddDimension(std::string_view dimensionName, uint seed, GeneratorType generatorType);
+            AddDimension(std::string_view dimensionName, uint seed, GeneratorType generatorType);
 };

@@ -9,14 +9,14 @@
 
 namespace Bedrock {
 
-#if _HAS_CXX23
-template <typename T, typename Err>
-class Result : public std::expected<T, ErrorInfo<Err>> {
-public:
-    using Base = std::expected<T, ErrorInfo<Err>>;
-    using Base::Base;
-};
-#else
+// #if _HAS_CXX23
+// template <typename T, typename Err>
+// class Result : public std::expected<T, ErrorInfo<Err>> {
+// public:
+//     using Base = std::expected<T, ErrorInfo<Err>>;
+//     using Base::Base;
+// };
+// #else
 template <typename T, typename Err>
 class Result {
     using value_type = std::conditional_t<std::is_void_v<T>, char, T>;
@@ -110,6 +110,6 @@ public:
         }
     }
 };
-#endif
+// #endif
 
 }; // namespace Bedrock

@@ -7,9 +7,9 @@
 #include "ll/api/base/StdInt.h"
 #include "mc/world/level/levelgen/GeneratorType.h"
 
-namespace MoreDimensionConfig {
+namespace CustomDimensionConfig {
 namespace {
-ll::Logger logger("MoreDimensionConfig");
+ll::Logger logger("CustomDimensionConfig");
 }
 
 struct Config {
@@ -27,4 +27,4 @@ extern Config      dimConfig;
 void setDimensionConfigPath();
 bool loadConfigFile();
 bool saveConfigFile();
-}; // namespace MoreDimensionConfig
+}; // namespace CustomDimensionConfig

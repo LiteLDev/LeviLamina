@@ -1,25 +1,27 @@
 #pragma once
 
 #include "ll/api/Logger.h"
-#include "ll/api/dimension/MoreDimensionManager.h"
+#include "ll/api/dimension/CustomDimensionManager.h"
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/level/dimension/NetherBrightnessRamp.h"
 #include "mc/world/level/dimension/OverworldBrightnessRamp.h"
 #include "mc/world/level/levelgen/structure/StructureFeatureRegistry.h"
 
 namespace {
-ll::Logger loggerMoreDim("MoreDimension");
+ll::Logger loggerMoreDim("CustomDimension");
 }
 
 class BaseGameVersion;
 class Experiments;
+class ChunkSource;
+class LevelChunk;
 
-class MoreDimension : public Dimension {
+class CustomDimension : public Dimension {
     uint          seed;
     GeneratorType generatorType;
 
 public:
-    MoreDimension(ILevel& ilevel, Scheduler& scheduler, MoreDimensionManager::DimensionInfo& dimensionInfo);
+    CustomDimension(ILevel& ilevel, Scheduler& scheduler, CustomDimensionManager::DimensionInfo& dimensionInfo);
     void                            init() override;
     std::unique_ptr<WorldGenerator> createGenerator() override;
     void upgradeLevelChunk(ChunkSource& chunkSource, LevelChunk& oldLc, LevelChunk& newLc) override;
@@ -33,9 +35,6 @@ public:
     mce::Color getBrightnessDependentFogColor(mce::Color const& color, float brightness) const override;
     short      getCloudHeight() const override { return 192; };
     bool       hasPrecipitationFog() const override { return true; };
-    std::unique_ptr<StructureFeatureRegistry> makeStructureFeatures(
-        bool                   isLegacy,
-        BaseGameVersion const& baseGameVersion,
-        Experiments const&     experiments
-    );
+    std::unique_ptr<StructureFeatureRegistry>
+    makeStructureFeatures(bool isLegacy, BaseGameVersion const& baseGameVersion, Experiments const& experiments);
 };
