@@ -166,7 +166,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0CactusBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CactusBlock(std::string const& nameId, int);
+    MCAPI CactusBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

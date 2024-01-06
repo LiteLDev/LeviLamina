@@ -110,7 +110,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0HorseArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHW4Tier@0@@Z
-    MCAPI HorseArmorItem(std::string const& name, int, int icon, ::HorseArmorItem::Tier tier);
+    MCAPI HorseArmorItem(std::string const& name, int id, int icon, ::HorseArmorItem::Tier tier);
 
     // symbol: ?getTier@HorseArmorItem@@QEBA?AW4Tier@1@XZ
     MCAPI ::HorseArmorItem::Tier getTier() const;

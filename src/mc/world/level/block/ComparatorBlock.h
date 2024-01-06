@@ -184,7 +184,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0ComparatorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI ComparatorBlock(std::string const& nameId, int, bool on);
+    MCAPI ComparatorBlock(std::string const& nameId, int id, bool on);
 
     // NOLINTEND
 

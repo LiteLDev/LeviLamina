@@ -177,7 +177,7 @@ public:
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0TripWireHookBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TripWireHookBlock(std::string const& nameId, int);
+    MCAPI TripWireHookBlock(std::string const& nameId, int id);
 
     // symbol: ?calculateState@TripWireHookBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@_NH@Z
     MCAPI void calculateState(class BlockSource&, class BlockPos const&, bool, int) const;

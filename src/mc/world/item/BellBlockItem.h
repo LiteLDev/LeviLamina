@@ -81,7 +81,7 @@ public:
         const;
 
     // symbol: ??0BellBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BellBlockItem(std::string const& name, int);
+    MCAPI BellBlockItem(std::string const& name, int id);
 
     // NOLINTEND
 };

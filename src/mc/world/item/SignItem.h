@@ -88,7 +88,7 @@ public:
 
     // symbol:
     // ??0SignItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4SignType@SignBlock@@@Z
-    MCAPI SignItem(std::string const& name, int, ::SignBlock::SignType type);
+    MCAPI SignItem(std::string const& name, int id, ::SignBlock::SignType type);
 
     // NOLINTEND
 };

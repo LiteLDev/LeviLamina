@@ -54,14 +54,14 @@ public:
 
     // symbol:
     // ?requestSetInteractText@NpcRequestPacket@@SA?AV1@VActorRuntimeID@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class NpcRequestPacket requestSetInteractText(class ActorRuntimeID, std::string text);
+    MCAPI static class NpcRequestPacket requestSetInteractText(class ActorRuntimeID id, std::string text);
 
     // symbol:
     // ?requestSetName@NpcRequestPacket@@SA?AV1@VActorRuntimeID@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI static class NpcRequestPacket requestSetName(class ActorRuntimeID, std::string name);
+    MCAPI static class NpcRequestPacket requestSetName(class ActorRuntimeID id, std::string name);
 
     // symbol: ?requestSetSkin@NpcRequestPacket@@SA?AV1@VActorRuntimeID@@H@Z
-    MCAPI static class NpcRequestPacket requestSetSkin(class ActorRuntimeID, int skin);
+    MCAPI static class NpcRequestPacket requestSetSkin(class ActorRuntimeID id, int skin);
 
     // NOLINTEND
 
@@ -70,7 +70,7 @@ public:
     // symbol:
     // ??0NpcRequestPacket@@AEAA@VActorRuntimeID@@W4RequestType@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@E@Z
     MCAPI NpcRequestPacket(
-        class ActorRuntimeID,
+        class ActorRuntimeID            id,
         ::NpcRequestPacket::RequestType type,
         std::string                     actions,
         uchar                           actionIndex

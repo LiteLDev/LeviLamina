@@ -204,7 +204,7 @@ public:
     MCAPI void _deserializeData(class CompoundTag const& tag);
 
     // symbol: ?_removeDecoration@MapItemSavedData@@AEAAXAEBUUniqueId@MapItemTrackedActor@@@Z
-    MCAPI void _removeDecoration(struct MapItemTrackedActor::UniqueId const&);
+    MCAPI void _removeDecoration(struct MapItemTrackedActor::UniqueId const& id);
 
     // symbol: ?_removeTrackedMapEntity@MapItemSavedData@@AEAAXAEBUUniqueId@MapItemTrackedActor@@@Z
     MCAPI void _removeTrackedMapEntity(struct MapItemTrackedActor::UniqueId const& key);

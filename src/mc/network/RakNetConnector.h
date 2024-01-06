@@ -257,7 +257,7 @@ public:
 
     // symbol:
     // ?_createPeer@RakNetConnector@@AEAA?AV?$shared_ptr@VRakNetNetworkPeer@RakNetConnector@@@std@@AEBVNetworkIdentifier@@@Z
-    MCAPI std::shared_ptr<class RakNetConnector::RakNetNetworkPeer> _createPeer(class NetworkIdentifier const&);
+    MCAPI std::shared_ptr<class RakNetConnector::RakNetNetworkPeer> _createPeer(class NetworkIdentifier const& id);
 
     // symbol: ?_openNatConnection@RakNetConnector@@AEAAXAEBUSystemAddress@RakNet@@@Z
     MCAPI void _openNatConnection(struct RakNet::SystemAddress const& remoteAddress);

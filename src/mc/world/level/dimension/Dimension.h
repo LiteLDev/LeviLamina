@@ -202,7 +202,7 @@ public:
     MCAPI void addPlayerToReplication(class WeakEntityRef const& player);
 
     // symbol: ?addWither@Dimension@@QEAAXAEBUActorUniqueID@@@Z
-    MCAPI void addWither(struct ActorUniqueID const&);
+    MCAPI void addWither(struct ActorUniqueID const& id);
 
     // symbol: ?clearPlayerReplicationList@Dimension@@QEAAXXZ
     MCAPI void clearPlayerReplicationList();
@@ -379,10 +379,10 @@ public:
     MCAPI void registerEntity(struct ActorUniqueID const& actorID, class WeakRefT<struct EntityRefTraits>);
 
     // symbol: ?removeActorByID@Dimension@@QEAAXAEBUActorUniqueID@@@Z
-    MCAPI void removeActorByID(struct ActorUniqueID const&);
+    MCAPI void removeActorByID(struct ActorUniqueID const& id);
 
     // symbol: ?removeWither@Dimension@@QEAAXAEBUActorUniqueID@@@Z
-    MCAPI void removeWither(struct ActorUniqueID const&);
+    MCAPI void removeWither(struct ActorUniqueID const& id);
 
     // symbol: ?sendPacketForEntity@Dimension@@QEAAXAEBVActor@@AEBVPacket@@PEBVPlayer@@@Z
     MCAPI void sendPacketForEntity(class Actor const& actor, class Packet const& packet, class Player const* except);

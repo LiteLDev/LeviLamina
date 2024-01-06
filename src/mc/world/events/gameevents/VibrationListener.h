@@ -65,7 +65,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_requestVibrationParticle@VibrationListener@@AEAAXAEAVBlockSource@@AEBVBlockPos@@M@Z
-    MCAPI void _requestVibrationParticle(class BlockSource& region, class BlockPos const&, float);
+    MCAPI void _requestVibrationParticle(class BlockSource& region, class BlockPos const& origin, float);
 
     // symbol: ?_tryAdvanceInFlightVibration@VibrationListener@@AEAA_NAEAVBlockSource@@@Z
     MCAPI bool _tryAdvanceInFlightVibration(class BlockSource&);
@@ -76,7 +76,8 @@ public:
     _trySendSneakCloseToSculkSensorEventPacket(class BlockSource& region, class GameEvent const&, struct GameEventContext const&, class Vec3 const&);
 
     // symbol: ?_isVibrationOccluded@VibrationListener@@CA_NAEAVBlockSource@@AEBVVec3@@1@Z
-    MCAPI static bool _isVibrationOccluded(class BlockSource& region, class Vec3 const&, class Vec3 const& targetPos);
+    MCAPI static bool
+    _isVibrationOccluded(class BlockSource& region, class Vec3 const& origin, class Vec3 const& targetPos);
 
     // symbol: ?_shouldIgnoreVibration@VibrationListener@@CA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
     MCAPI static bool

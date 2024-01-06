@@ -21,7 +21,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0BlockPos@@QEAA@AEBVSubChunkPos@@@Z
-    MCAPI explicit BlockPos(class SubChunkPos const&);
+    MCAPI explicit BlockPos(class SubChunkPos const& subChunkPos);
 
     // symbol: ??0BlockPos@@QEAA@AEBVVec3@@@Z
     MCAPI explicit BlockPos(class Vec3 const& v);

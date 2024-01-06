@@ -79,7 +79,7 @@ public:
 
     // symbol:
     // ??0ItemFrameBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ItemFrameBlockActor(class BlockPos pos, ::BlockActorType type, std::string const&);
+    MCAPI ItemFrameBlockActor(class BlockPos pos, ::BlockActorType type, std::string const& id);
 
     // symbol: ?actuallyDropItem@ItemFrameBlockActor@@QEAAXAEAVBlockSource@@_NPEAVActor@@@Z
     MCAPI void actuallyDropItem(class BlockSource&, bool, class Actor*);

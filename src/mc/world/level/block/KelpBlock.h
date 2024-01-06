@@ -179,7 +179,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0KelpBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI KelpBlock(std::string const& nameId, int);
+    MCAPI KelpBlock(std::string const& nameId, int id);
 
     // symbol: ?shouldGrow@KelpBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool shouldGrow(class BlockSource& region, class BlockPos const& pos) const;

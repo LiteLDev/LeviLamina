@@ -79,7 +79,7 @@ public:
     MCAPI class Biome* lookupByHash(class HashedString const& hash) const;
 
     // symbol: ?lookupById@BiomeRegistry@@QEBAPEAVBiome@@H@Z
-    MCAPI class Biome* lookupById(int) const;
+    MCAPI class Biome* lookupById(int id) const;
 
     // symbol:
     // ?lookupByName@BiomeRegistry@@QEBAPEAVBiome@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

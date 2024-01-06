@@ -38,7 +38,7 @@ public:
     // symbol:
     // ??0SetActorDataPacket@@QEAA@VActorRuntimeID@@AEAVSynchedActorDataEntityWrapper@@PEAVPropertyComponent@@_K_N@Z
     MCAPI SetActorDataPacket(
-        class ActorRuntimeID,
+        class ActorRuntimeID                 id,
         class SynchedActorDataEntityWrapper& entityData,
         class PropertyComponent*,
         uint64 tick,

@@ -229,7 +229,7 @@ public:
     // protected:
     // NOLINTBEGIN
     // symbol: ??0ButtonBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N@Z
-    MCAPI ButtonBlock(std::string const& nameId, int, class Material const& material, bool sensitive);
+    MCAPI ButtonBlock(std::string const& nameId, int id, class Material const& material, bool sensitive);
 
     // NOLINTEND
 

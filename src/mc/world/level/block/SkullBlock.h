@@ -168,7 +168,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SkullBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SkullBlock(std::string const& nameId, int);
+    MCAPI SkullBlock(std::string const& nameId, int id);
 
     // symbol: ?checkMobSpawn@SkullBlock@@QEBA_NAEAVLevel@@AEAVBlockSource@@AEBVBlockPos@@AEAVSkullBlockActor@@@Z
     MCAPI bool checkMobSpawn(

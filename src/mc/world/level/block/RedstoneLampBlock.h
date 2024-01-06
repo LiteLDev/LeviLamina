@@ -153,7 +153,7 @@ public:
     virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol: ??0RedstoneLampBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI RedstoneLampBlock(std::string const& nameId, int, bool isLit);
+    MCAPI RedstoneLampBlock(std::string const& nameId, int id, bool isLit);
 
     // NOLINTEND
 };

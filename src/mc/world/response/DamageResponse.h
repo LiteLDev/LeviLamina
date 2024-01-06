@@ -29,7 +29,7 @@ public:
     virtual std::string const& getName() const;
 
     // vIndex: 2, symbol: ?executeAction@DamageResponse@@UEBAXAEAVRenderParams@@@Z
-    virtual void executeAction(class RenderParams&) const;
+    virtual void executeAction(class RenderParams& params) const;
 
     // vIndex: 3, symbol:
     // ?buildSchema@DamageResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
@@ -47,7 +47,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?repairOrHurtItem@DamageResponse@@AEBAXAEBHAEAVRenderParams@@@Z
-    MCAPI void repairOrHurtItem(int const& amount, class RenderParams&) const;
+    MCAPI void repairOrHurtItem(int const& amount, class RenderParams& params) const;
 
     // NOLINTEND
 };

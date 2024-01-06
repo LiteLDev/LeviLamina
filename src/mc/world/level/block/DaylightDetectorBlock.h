@@ -171,7 +171,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0DaylightDetectorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI DaylightDetectorBlock(std::string const& nameId, int, bool isInverted);
+    MCAPI DaylightDetectorBlock(std::string const& nameId, int id, bool isInverted);
 
     // NOLINTEND
 };

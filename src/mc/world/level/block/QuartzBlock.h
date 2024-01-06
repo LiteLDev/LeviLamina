@@ -152,7 +152,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0QuartzBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI QuartzBlock(std::string const& nameId, int);
+    MCAPI QuartzBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

@@ -100,14 +100,14 @@ public:
 
     // vIndex: 102, symbol:
     // ?setIconInfo@ArrowItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item& setIconInfo(std::string const& name, int);
+    virtual class Item& setIconInfo(std::string const& name, int id);
 
     // vIndex: 103, symbol: ?getIconInfo@ArrowItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo
     getIconInfo(class ItemStackBase const& itemStack, int, bool inInventoryPane) const;
 
     // symbol: ??0ArrowItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ArrowItem(std::string const& name, int);
+    MCAPI ArrowItem(std::string const& name, int id);
 
     // symbol: ?applyEffect@ArrowItem@@QEBAXPEAVArrow@@AEBVItemInstance@@@Z
     MCAPI void applyEffect(class Arrow* arrow, class ItemInstance const& slotItem) const;

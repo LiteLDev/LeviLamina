@@ -96,7 +96,7 @@ public:
     virtual bool canBeCharged() const;
 
     // symbol: ??0GoatHornItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI GoatHornItem(std::string const& name, int);
+    MCAPI GoatHornItem(std::string const& name, int id);
 
     // symbol: ?addGoatHornVarationSaveData@GoatHornItem@@SAXAEAVGoat@@AEAVItemStack@@@Z
     MCAPI static void addGoatHornVarationSaveData(class Goat&, class ItemStack& instance);

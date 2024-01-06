@@ -132,7 +132,7 @@ public:
     // ??0NewLogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@V?$optional@ULogBlockMapColors@@@2@W4NewLogType@@@Z
     MCAPI NewLogBlock(
         std::string const& nameId,
-        int,
+        int                id,
         class WeakPtr<class BlockLegacy>,
         std::optional<struct LogBlockMapColors> mapColors,
         ::NewLogType

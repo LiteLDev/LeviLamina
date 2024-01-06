@@ -146,7 +146,7 @@ public:
 
     // symbol:
     // ??0SculkCatalystBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI SculkCatalystBlock(std::string const& nameId, int, class Material const& material);
+    MCAPI SculkCatalystBlock(std::string const& nameId, int id, class Material const& material);
 
     // symbol: ?bloom@SculkCatalystBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandom@@@Z
     MCAPI static void

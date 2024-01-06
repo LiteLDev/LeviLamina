@@ -208,7 +208,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0HopperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI HopperBlock(std::string const& nameId, int);
+    MCAPI HopperBlock(std::string const& nameId, int id);
 
     // symbol: ?getAttachedOffset@HopperBlock@@SA?AVBlockPos@@E@Z
     MCAPI static class BlockPos getAttachedOffset(uchar facing);

@@ -159,7 +159,7 @@ public:
     virtual class ItemInstance getSilkTouchItemInstance(class Block const& block) const;
 
     // symbol: ??0StainedGlassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N11@Z
-    MCAPI StainedGlassBlock(std::string const& nameId, int, bool material, bool doesDrops, bool useableInCommands);
+    MCAPI StainedGlassBlock(std::string const& nameId, int id, bool material, bool doesDrops, bool useableInCommands);
 
     // NOLINTEND
 

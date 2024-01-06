@@ -37,12 +37,12 @@ public:
 
     // symbol:
     // ?destroyTracker@PositionTrackingDBServer@PositionTrackingDB@@QEAA?AW4ResultCode@2@AEBVPositionTrackingId@@_N@Z
-    MCAPI ::PositionTrackingDB::ResultCode destroyTracker(class PositionTrackingId const&, bool);
+    MCAPI ::PositionTrackingDB::ResultCode destroyTracker(class PositionTrackingId const& id, bool);
 
     // symbol:
     // ?findTracker@PositionTrackingDBServer@PositionTrackingDB@@QEAA?AW4ResultCode@2@AEBVPositionTrackingId@@PEAPEAVTrackingRecord@2@@Z
     MCAPI ::PositionTrackingDB::ResultCode
-    findTracker(class PositionTrackingId const&, class PositionTrackingDB::TrackingRecord**);
+    findTracker(class PositionTrackingId const& id, class PositionTrackingDB::TrackingRecord**);
 
     // symbol:
     // ?onReceivePacket@PositionTrackingDBServer@PositionTrackingDB@@QEAAXAEBVPositionTrackingDBClientRequestPacket@@@Z

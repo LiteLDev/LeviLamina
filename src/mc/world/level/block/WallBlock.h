@@ -212,10 +212,10 @@ public:
     MCVAPI bool isWallBlock() const;
 
     // symbol: ??0WallBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@@Z
-    MCAPI WallBlock(std::string const& nameId, int, class BlockLegacy const& baseBlock);
+    MCAPI WallBlock(std::string const& nameId, int id, class BlockLegacy const& baseBlock);
 
     // symbol: ??0WallBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI WallBlock(std::string const& nameId, int, class Material const& material);
+    MCAPI WallBlock(std::string const& nameId, int id, class Material const& material);
 
     // symbol: ?tryFixWallStates@WallBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
     MCAPI void tryFixWallStates(class BlockSource& region, class BlockPos const& pos, int updateFlags) const;

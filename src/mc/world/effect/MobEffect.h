@@ -77,7 +77,7 @@ public:
     // symbol:
     // ??0MobEffect@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH01AEBUFactorCalculationData@0@@Z
     MCAPI
-    MobEffect(uint, std::string const& resourceName, std::string const& locName, bool isHarmful, int color, int icon, std::string const& iconName, bool drawParticles, struct MobEffect::FactorCalculationData const&);
+    MobEffect(uint id, std::string const& resourceName, std::string const& locName, bool isHarmful, int color, int icon, std::string const& iconName, bool drawParticles, struct MobEffect::FactorCalculationData const&);
 
     // symbol: ?addAttributeBuff@MobEffect@@QEAAXAEBVAttribute@@V?$shared_ptr@VAttributeBuff@@@std@@@Z
     MCAPI void addAttributeBuff(class Attribute const& attribute, std::shared_ptr<class AttributeBuff> buff);

@@ -143,7 +143,7 @@ public:
 
     // symbol:
     // ??0MangroveLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI MangroveLeavesBlock(std::string const& nameId, int, class WeakPtr<class BlockLegacy> sapling);
+    MCAPI MangroveLeavesBlock(std::string const& nameId, int id, class WeakPtr<class BlockLegacy> sapling);
 
     // NOLINTEND
 };

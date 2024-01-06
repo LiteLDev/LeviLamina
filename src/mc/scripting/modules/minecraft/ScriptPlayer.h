@@ -150,7 +150,7 @@ public:
 
     // symbol:
     // ?postClientMessage@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI class Scripting::Result<void> postClientMessage(std::string const&, std::string const& value);
+    MCAPI class Scripting::Result<void> postClientMessage(std::string const& id, std::string const& value);
 
     // symbol:
     // ?queueMusic@ScriptPlayer@ScriptModuleMinecraft@@QEAA?AV?$Result@X$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@UScriptMusicOptions@ScriptModuleMinecraft@@@6@@Z

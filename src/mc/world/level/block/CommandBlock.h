@@ -181,7 +181,7 @@ public:
 
     // symbol:
     // ??0CommandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CommandBlockMode@@@Z
-    MCAPI CommandBlock(std::string const& nameId, int, ::CommandBlockMode mode);
+    MCAPI CommandBlock(std::string const& nameId, int id, ::CommandBlockMode mode);
 
     // symbol: ?execute@CommandBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void execute(class BlockSource& region, class BlockPos const& pos) const;

@@ -135,7 +135,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0MossBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MossBlock(std::string const& nameId, int);
+    MCAPI MossBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

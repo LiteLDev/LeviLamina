@@ -34,9 +34,9 @@ public:
     virtual int attemptUseCharge(
         class IBlockWorldGenAPI& target,
         class BlockSource*       region,
-        class BlockPos const&,
-        class BlockPos const& pos,
-        int                   charge,
+        class BlockPos const&    origin,
+        class BlockPos const&    pos,
+        int                      charge,
         int,
         class Random& random,
         class SculkSpreader&,

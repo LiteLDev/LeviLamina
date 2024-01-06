@@ -15,7 +15,7 @@ public:
     MCAPI static void logLevelChunkEvent(class ChunkPos const& chunkPos, char const* message, bool isClientSide);
 
     // symbol: ?logSubChunkEvent@LevelChunkAndSubChunkLoggingData@@SAXAEBVSubChunkPos@@PEBD_N@Z
-    MCAPI static void logSubChunkEvent(class SubChunkPos const&, char const* message, bool isClientSide);
+    MCAPI static void logSubChunkEvent(class SubChunkPos const& subChunkPos, char const* message, bool isClientSide);
 
     // NOLINTEND
 };

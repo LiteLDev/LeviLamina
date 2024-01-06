@@ -45,7 +45,7 @@ public:
     MCAPI void addAdditionalSaveData(class CompoundTag& tag) const;
 
     // symbol: ?belowAngryThreshold@AngerLevelComponent@@QEBA_NUActorUniqueID@@@Z
-    MCAPI bool belowAngryThreshold(struct ActorUniqueID) const;
+    MCAPI bool belowAngryThreshold(struct ActorUniqueID id) const;
 
     // symbol: ?canBeNuisance@AngerLevelComponent@@QEBA_NPEAVActor@@0@Z
     MCAPI bool canBeNuisance(class Actor* owner, class Actor* target) const;

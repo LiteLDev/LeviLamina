@@ -104,7 +104,7 @@ public:
     virtual ::ActorType _getActorType() const;
 
     // symbol: ??0BoatItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z
-    MCAPI BoatItem(std::string const& name, int, int woodType);
+    MCAPI BoatItem(std::string const& name, int id, int woodType);
 
     // NOLINTEND
 };

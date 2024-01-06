@@ -28,7 +28,7 @@ public:
     virtual std::string const& getName() const;
 
     // vIndex: 2, symbol: ?executeAction@DamageResponse@@UEBAXAEAVRenderParams@@@Z
-    virtual void executeAction(class RenderParams&) const = 0;
+    virtual void executeAction(class RenderParams& params) const = 0;
 
     // vIndex: 3, symbol:
     // ?buildSchema@EventResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z

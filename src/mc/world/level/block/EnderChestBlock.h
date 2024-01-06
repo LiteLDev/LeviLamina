@@ -140,7 +140,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0EnderChestBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI EnderChestBlock(std::string const& nameId, int);
+    MCAPI EnderChestBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

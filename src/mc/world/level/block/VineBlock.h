@@ -189,7 +189,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0VineBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI VineBlock(std::string const& nameId, int);
+    MCAPI VineBlock(std::string const& nameId, int id);
 
     // symbol: ?growDown@VineBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
     MCAPI void growDown(class BlockSource& region, class BlockPos const& pos, int) const;

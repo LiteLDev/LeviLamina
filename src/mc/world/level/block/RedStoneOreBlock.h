@@ -161,7 +161,7 @@ public:
     virtual void _lightUpBlock(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0RedStoneOreBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI RedStoneOreBlock(std::string const& nameId, int, bool lit);
+    MCAPI RedStoneOreBlock(std::string const& nameId, int id, bool lit);
 
     // NOLINTEND
 

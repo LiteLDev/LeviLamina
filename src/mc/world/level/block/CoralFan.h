@@ -207,7 +207,7 @@ public:
     virtual void checkAlive(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0CoralFan@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CoralFan(std::string const& nameId, int);
+    MCAPI CoralFan(std::string const& nameId, int id);
 
     // symbol: ?CORAL_FAN_NAMES@CoralFan@@2QBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
     MCAPI static std::string const CORAL_FAN_NAMES[];

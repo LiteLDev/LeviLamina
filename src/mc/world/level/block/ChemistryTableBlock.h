@@ -183,7 +183,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0ChemistryTableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ChemistryTableBlock(std::string const& nameId, int);
+    MCAPI ChemistryTableBlock(std::string const& nameId, int id);
 
     // symbol: ?getItemForType@ChemistryTableBlock@@SA?AVItemInstance@@W4ChemistryTableType@@H@Z
     MCAPI static class ItemInstance getItemForType(::ChemistryTableType type, int stackCount);

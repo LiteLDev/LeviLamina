@@ -204,7 +204,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0CropBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CropBlock(std::string const& nameId, int);
+    MCAPI CropBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

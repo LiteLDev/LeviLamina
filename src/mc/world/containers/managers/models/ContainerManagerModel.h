@@ -24,7 +24,7 @@ public:
     virtual ::ContainerID getContainerId() const;
 
     // vIndex: 2, symbol: ?setContainerId@ContainerManagerModel@@UEAAXW4ContainerID@@@Z
-    virtual void setContainerId(::ContainerID);
+    virtual void setContainerId(::ContainerID id);
 
     // vIndex: 3, symbol: ?getContainerType@ContainerManagerModel@@UEBA?AW4ContainerType@@XZ
     virtual ::ContainerType getContainerType() const;

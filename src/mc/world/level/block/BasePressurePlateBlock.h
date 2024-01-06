@@ -207,7 +207,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ??0BasePressurePlateBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI BasePressurePlateBlock(std::string const& nameId, int, class Material const& material);
+    MCAPI BasePressurePlateBlock(std::string const& nameId, int id, class Material const& material);
 
     // symbol: ?checkPressed@BasePressurePlateBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@HH@Z
     MCAPI void checkPressed(

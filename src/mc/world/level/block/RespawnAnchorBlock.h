@@ -160,7 +160,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0RespawnAnchorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI RespawnAnchorBlock(std::string const& nameId, int);
+    MCAPI RespawnAnchorBlock(std::string const& nameId, int id);
 
     // symbol:
     // ?addItem@RespawnAnchorBlock@@SA_NAEAVContainer@@HAEAVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z

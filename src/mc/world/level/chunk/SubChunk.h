@@ -33,7 +33,7 @@ public:
     // symbol:
     // ?deserialize@SubChunk@@QEAAXAEAVIDataInput@@AEBVBlockPalette@@AEBVSubChunkPos@@V?$optional@PEAUDeserializationChanges@@@std@@@Z
     MCAPI void
-    deserialize(class IDataInput& stream, class BlockPalette const& palette, class SubChunkPos const&, std::optional<struct DeserializationChanges*>);
+    deserialize(class IDataInput& stream, class BlockPalette const& palette, class SubChunkPos const& subChunkPos, std::optional<struct DeserializationChanges*>);
 
     // symbol: ?fetchBlocks@SubChunk@@QEBAXAEBVBlockPos@@0FAEAVBlockVolume@@@Z
     MCAPI void fetchBlocks(

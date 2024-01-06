@@ -91,7 +91,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0WarpedFungusOnAStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI WarpedFungusOnAStickItem(std::string const& name, int);
+    MCAPI WarpedFungusOnAStickItem(std::string const& name, int id);
 
     // NOLINTEND
 };

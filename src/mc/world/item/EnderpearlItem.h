@@ -87,7 +87,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0EnderpearlItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI EnderpearlItem(std::string const& nameId, int);
+    MCAPI EnderpearlItem(std::string const& nameId, int id);
 
     // symbol: ?ENDER_PEARL_COOLDOWN@EnderpearlItem@@2VHashedString@@B
     MCAPI static class HashedString const ENDER_PEARL_COOLDOWN;

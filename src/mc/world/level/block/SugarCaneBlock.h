@@ -183,7 +183,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SugarCaneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SugarCaneBlock(std::string const& nameId, int);
+    MCAPI SugarCaneBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 

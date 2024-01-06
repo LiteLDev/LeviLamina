@@ -136,7 +136,7 @@ public:
 
     // symbol:
     // ??0WoolCarpetBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4BlockColor@@@Z
-    MCAPI WoolCarpetBlock(std::string const& nameId, int, ::BlockColor color);
+    MCAPI WoolCarpetBlock(std::string const& nameId, int id, ::BlockColor color);
 
     // NOLINTEND
 

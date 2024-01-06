@@ -23,7 +23,7 @@ public:
     public:
         // NOLINTBEGIN
         // symbol: ??0PacketStats@PacketObserver@@QEAA@I@Z
-        MCAPI explicit PacketStats(uint);
+        MCAPI explicit PacketStats(uint id);
 
         // NOLINTEND
     };

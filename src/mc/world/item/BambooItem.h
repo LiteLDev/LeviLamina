@@ -84,7 +84,7 @@ public:
         const;
 
     // symbol: ??0BambooItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BambooItem(std::string const& name, int);
+    MCAPI BambooItem(std::string const& name, int id);
 
     // NOLINTEND
 };

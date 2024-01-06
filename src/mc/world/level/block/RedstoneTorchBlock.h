@@ -170,7 +170,7 @@ public:
     virtual int getTickDelay();
 
     // symbol: ??0RedstoneTorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI RedstoneTorchBlock(std::string const& nameId, int, bool on);
+    MCAPI RedstoneTorchBlock(std::string const& nameId, int id, bool on);
 
     // NOLINTEND
 

@@ -205,7 +205,7 @@ public:
 
     // symbol:
     // ??0CaveVinesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CaveVinesVariant@@@Z
-    MCAPI CaveVinesBlock(std::string const& nameId, int, ::CaveVinesVariant variant);
+    MCAPI CaveVinesBlock(std::string const& nameId, int id, ::CaveVinesVariant variant);
 
     // symbol: ?tryGrow@CaveVinesBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@MM@Z
     MCAPI static void tryGrow(class BlockSource& region, class BlockPos const& pos, float, float);

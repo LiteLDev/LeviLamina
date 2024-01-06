@@ -169,7 +169,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0GrassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI GrassBlock(std::string const& nameId, int);
+    MCAPI GrassBlock(std::string const& nameId, int id);
 
     // symbol: ?fertilize@GrassBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandomize@@@Z
     MCAPI bool fertilize(class BlockSource& region, class BlockPos const& pos, class Randomize& randomize) const;

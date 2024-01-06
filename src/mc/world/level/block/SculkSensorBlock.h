@@ -185,11 +185,11 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 
     // symbol: ??0SculkSensorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SculkSensorBlock(std::string const& nameId, int);
+    MCAPI SculkSensorBlock(std::string const& nameId, int id);
 
     // symbol:
     // ??0SculkSensorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4BlockActorType@@H@Z
-    MCAPI SculkSensorBlock(std::string const& nameId, int, ::BlockActorType type, int);
+    MCAPI SculkSensorBlock(std::string const& nameId, int id, ::BlockActorType type, int);
 
     // symbol: ?isActive@SculkSensorBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isActive(class BlockSource& region, class BlockPos const& pos);

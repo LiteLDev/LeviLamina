@@ -172,7 +172,7 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize& randomize, class Block const&, int) const;
 
     // symbol: ??0WeepingVinesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI WeepingVinesBlock(std::string const& nameId, int);
+    MCAPI WeepingVinesBlock(std::string const& nameId, int id);
 
     // symbol: ?placeVineString@WeepingVinesBlock@@SAXAEAVBlockSource@@AEAVRandom@@AEBVBlockPos@@HHH@Z
     MCAPI static void

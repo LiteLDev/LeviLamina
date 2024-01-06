@@ -144,7 +144,7 @@ public:
 
     // symbol:
     // ??0WeightedPressurePlateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@H@Z
-    MCAPI WeightedPressurePlateBlock(std::string const& nameId, int, class Material const& material, int maxWeight);
+    MCAPI WeightedPressurePlateBlock(std::string const& nameId, int id, class Material const& material, int maxWeight);
 
     // symbol: ?MAX_WEIGHT_HEAVY@WeightedPressurePlateBlock@@2HB
     MCAPI static int const MAX_WEIGHT_HEAVY;

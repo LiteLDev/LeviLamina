@@ -139,7 +139,7 @@ public:
 
     // symbol:
     // ??0StrippedLogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$optional@ULogBlockMapColors@@@2@@Z
-    MCAPI StrippedLogBlock(std::string const& nameId, int, std::optional<struct LogBlockMapColors> mapColors);
+    MCAPI StrippedLogBlock(std::string const& nameId, int id, std::optional<struct LogBlockMapColors> mapColors);
 
     // NOLINTEND
 };

@@ -171,8 +171,8 @@ public:
     // symbol:
     // ??0ArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVArmorMaterial@0@HW4ArmorSlot@@_N@Z
     MCAPI ArmorItem(
-        std::string const& name,
-        int,
+        std::string const&                    name,
+        int                                   id,
         class ArmorItem::ArmorMaterial const& armorType,
         int                                   icon,
         ::ArmorSlot                           slot,

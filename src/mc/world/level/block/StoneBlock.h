@@ -145,7 +145,7 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // symbol: ??0StoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI StoneBlock(std::string const& nameId, int);
+    MCAPI StoneBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

@@ -20,7 +20,7 @@ public:
     MCAPI bool isOnThread() const;
 
     // symbol: ??8AssignedThread@Threading@Bedrock@@QEBA_NAEBVid@thread@std@@@Z
-    MCAPI bool operator==(std::thread::id const&) const;
+    MCAPI bool operator==(std::thread::id const& id) const;
 
     // NOLINTEND
 };

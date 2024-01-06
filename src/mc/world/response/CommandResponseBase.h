@@ -26,7 +26,7 @@ public:
     MCAPI void _addCommand(std::string const& entry);
 
     // symbol: ?_executeAction@CommandResponseBase@@IEBAXAEAVRenderParams@@@Z
-    MCAPI void _executeAction(class RenderParams&) const;
+    MCAPI void _executeAction(class RenderParams& params) const;
 
     // NOLINTEND
 

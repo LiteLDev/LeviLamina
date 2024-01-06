@@ -17,7 +17,7 @@ public:
     MCAPI ChunkViewOwner(class ChunkViewOwner const& copy);
 
     // symbol: ??0ChunkViewOwner@@QEAA@AEBVNetworkIdentifier@@W4SubClientId@@@Z
-    MCAPI ChunkViewOwner(class NetworkIdentifier const&, ::SubClientId);
+    MCAPI ChunkViewOwner(class NetworkIdentifier const&, ::SubClientId id);
 
     // symbol: ?getHash@ChunkViewOwner@@QEBA_KXZ
     MCAPI uint64 getHash() const;

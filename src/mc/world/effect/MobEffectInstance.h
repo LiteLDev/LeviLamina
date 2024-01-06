@@ -24,20 +24,21 @@ public:
     MCAPI MobEffectInstance(class MobEffectInstance const&);
 
     // symbol: ??0MobEffectInstance@@QEAA@I@Z
-    MCAPI explicit MobEffectInstance(uint);
+    MCAPI explicit MobEffectInstance(uint id);
 
     // symbol: ??0MobEffectInstance@@QEAA@IH@Z
-    MCAPI MobEffectInstance(uint, int duration);
+    MCAPI MobEffectInstance(uint id, int duration);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHH@Z
-    MCAPI MobEffectInstance(uint, int duration, int amplifier);
+    MCAPI MobEffectInstance(uint id, int duration, int amplifier);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHH_N00@Z
-    MCAPI MobEffectInstance(uint, int duration, int amplifier, bool ambient, bool effectVisible, bool displayAnimation);
+    MCAPI
+    MobEffectInstance(uint id, int duration, int amplifier, bool ambient, bool effectVisible, bool displayAnimation);
 
     // symbol: ??0MobEffectInstance@@QEAA@IHHHHH_N00@Z
     MCAPI MobEffectInstance(
-        uint,
+        uint id,
         int  duration,
         int  durationEasy,
         int  durationNormal,

@@ -159,7 +159,7 @@ public:
     getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
 
     // symbol: ??0MushroomBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MushroomBlock(std::string const& nameId, int);
+    MCAPI MushroomBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

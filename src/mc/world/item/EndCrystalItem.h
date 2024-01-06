@@ -86,7 +86,7 @@ public:
     _useOn(class ItemStack& instance, class Actor&, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;
 
     // symbol: ??0EndCrystalItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI EndCrystalItem(std::string const& nameId, int);
+    MCAPI EndCrystalItem(std::string const& nameId, int id);
 
     // NOLINTEND
 };

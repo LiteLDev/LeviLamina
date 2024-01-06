@@ -76,7 +76,7 @@ public:
           getComplexAliasSplitNames(class HashedString const&) const;
 
     // symbol: ?getItem@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> getItem(class HashedString const&) const;
+    MCAPI class WeakPtr<class Item> getItem(class HashedString const& id) const;
 
     // symbol: ?getItem@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@F@Z
     MCAPI class WeakPtr<class Item> getItem(short itemId) const;
@@ -88,7 +88,7 @@ public:
     MCAPI class ItemEventResponseFactory* getItemResponseFactory() const;
 
     // symbol: ?getNameFromLegacyID@ItemRegistryRef@@QEBA?AVHashedString@@F@Z
-    MCAPI class HashedString getNameFromLegacyID(short) const;
+    MCAPI class HashedString getNameFromLegacyID(short id) const;
 
     // symbol:
     // ?getNameToItemMap@ItemRegistryRef@@QEBAAEBV?$unordered_map@VHashedString@@V?$WeakPtr@VItem@@@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@V?$WeakPtr@VItem@@@@@std@@@4@@std@@XZ
@@ -169,7 +169,7 @@ public:
     MCAPI void registerExtraItemInitCallback(std::function<void(class ItemRegistryRef)> callback) const;
 
     // symbol: ?registerLegacyID@ItemRegistryRef@@QEBAXAEBVHashedString@@F@Z
-    MCAPI void registerLegacyID(class HashedString const& name, short) const;
+    MCAPI void registerLegacyID(class HashedString const& name, short id) const;
 
     // symbol: ?registerLegacyMapping@ItemRegistryRef@@QEBAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
     MCAPI void

@@ -93,7 +93,7 @@ public:
     virtual float getFurnaceXPmultiplier(class ItemStackBase const& instance) const;
 
     // symbol: ??0CoalItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@@Z
-    MCAPI CoalItem(std::string const& name, int, ::CoalItem::Type type);
+    MCAPI CoalItem(std::string const& name, int id, ::CoalItem::Type type);
 
     // NOLINTEND
 };

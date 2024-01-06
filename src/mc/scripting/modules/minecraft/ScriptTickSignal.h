@@ -75,7 +75,7 @@ public:
     MCAPI uint scheduleTimeoutSafe(class Scripting::Closure<void(void)>&&, uint currentTick);
 
     // symbol: ?unschedule@ScriptTickSignal@ScriptModuleMinecraft@@QEAAXI@Z
-    MCAPI void unschedule(uint);
+    MCAPI void unschedule(uint id);
 
     // symbol: ??1ScriptTickSignal@ScriptModuleMinecraft@@QEAA@XZ
     MCAPI ~ScriptTickSignal();

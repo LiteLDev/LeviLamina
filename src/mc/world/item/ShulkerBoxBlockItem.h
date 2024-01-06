@@ -92,7 +92,7 @@ public:
 
     // symbol:
     // ??0ShulkerBoxBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HPEBVBlock@@@Z
-    MCAPI ShulkerBoxBlockItem(std::string const& name, int, class Block const* parentBlock);
+    MCAPI ShulkerBoxBlockItem(std::string const& name, int id, class Block const* parentBlock);
 
     // NOLINTEND
 

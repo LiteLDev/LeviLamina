@@ -183,7 +183,7 @@ public:
 
     // symbol:
     // ??0BlockActor@@QEAA@W4BlockActorType@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI BlockActor(::BlockActorType type, class BlockPos const& pos, std::string const&);
+    MCAPI BlockActor(::BlockActorType type, class BlockPos const& pos, std::string const& id);
 
     // symbol: ?assignBlockIfNotAssigned@BlockActor@@QEAAXAEAVBlockSource@@@Z
     MCAPI void assignBlockIfNotAssigned(class BlockSource& region);

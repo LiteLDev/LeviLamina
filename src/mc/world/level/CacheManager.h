@@ -27,9 +27,9 @@ public:
     // symbol:
     // ?createTrackingRecordInLocalCache@CacheManager@PositionTrackingDB@@QEAA?AV?$not_null@PEAVTrackingRecord@PositionTrackingDB@@@gsl@@AEBVPositionTrackingId@@AEBVBlockPos@@AEBV?$AutomaticID@VDimension@@H@@@Z
     MCAPI gsl::not_null<class PositionTrackingDB::TrackingRecord*> createTrackingRecordInLocalCache(
-        class PositionTrackingId const&,
-        class BlockPos const& pos,
-        DimensionType const&  dimension
+        class PositionTrackingId const& id,
+        class BlockPos const&           pos,
+        DimensionType const&            dimension
     );
 
     // NOLINTEND

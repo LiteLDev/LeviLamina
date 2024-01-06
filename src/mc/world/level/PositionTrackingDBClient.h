@@ -25,7 +25,7 @@ public:
     // symbol:
     // ?findTracker@PositionTrackingDBClient@PositionTrackingDB@@QEAA?AW4ResultCode@2@AEBVPositionTrackingId@@PEAPEAVTrackingRecord@2@@Z
     MCAPI ::PositionTrackingDB::ResultCode
-    findTracker(class PositionTrackingId const&, class PositionTrackingDB::TrackingRecord**);
+    findTracker(class PositionTrackingId const& id, class PositionTrackingDB::TrackingRecord**);
 
     // NOLINTEND
 };

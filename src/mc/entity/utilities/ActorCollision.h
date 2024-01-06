@@ -66,7 +66,7 @@ MCAPI void setIsKnockedBackOnDeath(class EntityContext&, bool value);
 MCAPI void setOnGround(class EntityContext&, bool value);
 
 // symbol: ?setPushedBy@ActorCollision@@YAXAEAVEntityContext@@VStrictEntityContext@@AEBUActorUniqueID@@@Z
-MCAPI void setPushedBy(class EntityContext&, class StrictEntityContext context, struct ActorUniqueID const&);
+MCAPI void setPushedBy(class EntityContext&, class StrictEntityContext context, struct ActorUniqueID const& id);
 
 // symbol: ?setStuckInCollider@ActorCollision@@YAXAEAVEntityContext@@_N@Z
 MCAPI void setStuckInCollider(class EntityContext&, bool value);

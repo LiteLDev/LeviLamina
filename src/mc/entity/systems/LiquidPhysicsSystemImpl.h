@@ -22,7 +22,7 @@ public:
     MCAPI static bool _hasAdjacentFlowingBlock(
         std::vector<struct LiquidBlockEntry> const&,
         class IConstBlockSource const& region,
-        ::MaterialType
+        ::MaterialType                 liquidType
     );
 
     // symbol:

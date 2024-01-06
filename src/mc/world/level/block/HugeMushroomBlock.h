@@ -157,8 +157,12 @@ public:
 
     // symbol:
     // ??0HugeMushroomBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@W4Type@0@@Z
-    MCAPI
-    HugeMushroomBlock(std::string const& nameId, int, class Material const& material, ::HugeMushroomBlock::Type type);
+    MCAPI HugeMushroomBlock(
+        std::string const&        nameId,
+        int                       id,
+        class Material const&     material,
+        ::HugeMushroomBlock::Type type
+    );
 
     // NOLINTEND
 

@@ -196,7 +196,7 @@ public:
     MCVAPI bool shouldTickOnSetBlock() const;
 
     // symbol: ??0BubbleColumnBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BubbleColumnBlock(std::string const& nameId, int);
+    MCAPI BubbleColumnBlock(std::string const& nameId, int id);
 
     // symbol: ?addBubbleColumnSegment@BubbleColumnBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool addBubbleColumnSegment(class BlockSource& region, class BlockPos const& pos);

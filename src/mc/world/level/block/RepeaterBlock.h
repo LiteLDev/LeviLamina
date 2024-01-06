@@ -186,7 +186,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0RepeaterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI RepeaterBlock(std::string const& nameId, int, bool on);
+    MCAPI RepeaterBlock(std::string const& nameId, int id, bool on);
 
     // symbol: ?updateDelay@RepeaterBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
     MCAPI void updateDelay(class BlockSource& region, class BlockPos const& pos, bool doIncrement) const;

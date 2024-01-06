@@ -181,7 +181,7 @@ public:
     MCVAPI bool isCandleCakeBlock() const;
 
     // symbol: ??0CandleCakeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CandleCakeBlock(std::string const& nameId, int);
+    MCAPI CandleCakeBlock(std::string const& nameId, int id);
 
     // symbol: ?getCandleCakeFromCandle@CandleCakeBlock@@SAAEBVBlock@@AEBV2@@Z
     MCAPI static class Block const& getCandleCakeFromCandle(class Block const&);

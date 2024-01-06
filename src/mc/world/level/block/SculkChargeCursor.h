@@ -19,8 +19,8 @@ public:
     MCAPI void update(
         class IBlockWorldGenAPI& target,
         class BlockSource*       region,
-        class BlockPos const&,
-        class Random& random,
+        class BlockPos const&    origin,
+        class Random&            random,
         class SculkSpreader&,
         bool
     );

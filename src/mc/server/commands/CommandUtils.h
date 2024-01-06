@@ -112,8 +112,8 @@ MCAPI class Actor* spawnEntityAt(
     class BlockSource&                      region,
     class Vec3 const&                       pos,
     struct ActorDefinitionIdentifier const& type,
-    struct ActorUniqueID&,
-    class Actor* summoner
+    struct ActorUniqueID&                   id,
+    class Actor*                            summoner
 );
 
 // symbol:

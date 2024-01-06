@@ -197,7 +197,7 @@ public:
     MCVAPI bool isLeverBlock() const;
 
     // symbol: ??0LeverBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LeverBlock(std::string const& nameId, int);
+    MCAPI LeverBlock(std::string const& nameId, int id);
 
     // symbol: ?toggle@LeverBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVPlayer@@@Z
     MCAPI void toggle(class BlockSource& region, class BlockPos const& pos, class Player* player) const;

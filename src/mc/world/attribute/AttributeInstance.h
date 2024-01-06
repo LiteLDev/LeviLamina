@@ -52,7 +52,7 @@ public:
     MCAPI float getMinValue() const;
 
     // symbol: ?getModifier@AttributeInstance@@QEBA?AVAttributeModifier@@AEBVUUID@mce@@@Z
-    MCAPI class AttributeModifier getModifier(class mce::UUID const&) const;
+    MCAPI class AttributeModifier getModifier(class mce::UUID const& id) const;
 
     // symbol:
     // ?getModifiers@AttributeInstance@@QEBA?AV?$vector@VAttributeModifier@@V?$allocator@VAttributeModifier@@@std@@@std@@XZ
@@ -66,7 +66,7 @@ public:
     MCAPI bool hasModifier(class AttributeModifier const& modifier) const;
 
     // symbol: ?hasModifier@AttributeInstance@@QEBA_NAEBVUUID@mce@@@Z
-    MCAPI bool hasModifier(class mce::UUID const&) const;
+    MCAPI bool hasModifier(class mce::UUID const& id) const;
 
     // symbol: ?hasModifier@AttributeInstance@@QEBA_NV?$shared_ptr@VAttributeModifier@@@std@@@Z
     MCAPI bool hasModifier(std::shared_ptr<class AttributeModifier> modifier) const;
@@ -96,7 +96,7 @@ public:
     MCAPI void removeBuffs();
 
     // symbol: ?removeModifier@AttributeInstance@@QEAA_NAEBVUUID@mce@@@Z
-    MCAPI bool removeModifier(class mce::UUID const&);
+    MCAPI bool removeModifier(class mce::UUID const& id);
 
     // symbol: ?removeModifier@AttributeInstance@@QEAAXAEBVAttributeModifier@@@Z
     MCAPI void removeModifier(class AttributeModifier const& modifier);

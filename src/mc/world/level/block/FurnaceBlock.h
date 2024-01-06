@@ -166,7 +166,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0FurnaceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI FurnaceBlock(std::string const& nameId, int, bool lit);
+    MCAPI FurnaceBlock(std::string const& nameId, int id, bool lit);
 
     // symbol: ?setLit@FurnaceBlock@@SAX_NAEAVBlockSource@@AEBVBlockPos@@W4BlockActorType@@AEBVBlock@@4@Z
     MCAPI static void setLit(

@@ -47,7 +47,7 @@ public:
     virtual int size() const;
 
     // symbol: ??0MapLockingRecipe@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVUUID@mce@@@Z
-    MCAPI MapLockingRecipe(std::string_view recipeId, class mce::UUID const&);
+    MCAPI MapLockingRecipe(std::string_view recipeId, class mce::UUID const& id);
 
     // symbol: ?CartographyTableID@MapLockingRecipe@@2VUUID@mce@@B
     MCAPI static class mce::UUID const CartographyTableID;

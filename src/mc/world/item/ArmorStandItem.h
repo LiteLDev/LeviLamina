@@ -80,7 +80,7 @@ public:
     _useOn(class ItemStack& instance, class Actor&, class BlockPos pos, uchar face, class Vec3 const& clickPos) const;
 
     // symbol: ??0ArmorStandItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-    MCAPI ArmorStandItem(std::string const& name, short);
+    MCAPI ArmorStandItem(std::string const& name, short id);
 
     // symbol: ?_shouldRemove@ArmorStandItem@@QEBA_NAEAVBlockSource@@VBlockPos@@@Z
     MCAPI bool _shouldRemove(class BlockSource& region, class BlockPos pos) const;

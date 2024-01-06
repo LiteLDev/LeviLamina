@@ -134,7 +134,7 @@ public:
     _calculateDistanceFromPositionToEdgeOfVillage(class BlockPos const& position, class Village const& village) const;
 
     // symbol: ?_createOrGetVillage@VillageManager@@AEAA?AV?$shared_ptr@VVillage@@@std@@AEBVUUID@mce@@AEBVBlockPos@@@Z
-    MCAPI std::shared_ptr<class Village> _createOrGetVillage(class mce::UUID const&, class BlockPos const&);
+    MCAPI std::shared_ptr<class Village> _createOrGetVillage(class mce::UUID const& id, class BlockPos const&);
 
     // symbol:
     // ?_getVillageWithBedsAvailableMap@VillageManager@@AEBA?AV?$unordered_map@PEBVVillage@@W4BedAvailabilityState@VillageManager@@U?$hash@PEBVVillage@@@std@@U?$equal_to@PEBVVillage@@@5@V?$allocator@U?$pair@QEBVVillage@@W4BedAvailabilityState@VillageManager@@@std@@@5@@std@@XZ

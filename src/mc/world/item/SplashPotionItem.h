@@ -100,7 +100,7 @@ public:
 
     // vIndex: 102, symbol:
     // ?setIconInfo@SplashPotionItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item& setIconInfo(std::string const& name, int);
+    virtual class Item& setIconInfo(std::string const& name, int id);
 
     // vIndex: 103, symbol: ?getIconInfo@SplashPotionItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo

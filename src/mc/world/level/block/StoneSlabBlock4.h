@@ -154,7 +154,7 @@ public:
 
     // symbol:
     // ??0StoneSlabBlock4@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI StoneSlabBlock4(std::string const& nameId, int, bool fullSize, class WeakPtr<class BlockLegacy> baseSlab);
+    MCAPI StoneSlabBlock4(std::string const& nameId, int id, bool fullSize, class WeakPtr<class BlockLegacy> baseSlab);
 
     // symbol:
     // ?SLAB_NAMES@StoneSlabBlock4@@2V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$04@std@@B

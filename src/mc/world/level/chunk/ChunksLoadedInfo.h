@@ -29,7 +29,7 @@ public:
         struct Bounds const&   bounds,
         bool,
         struct Tick,
-        bool
+        bool allowNonPlayerTicking
     );
 
     // symbol:
@@ -41,7 +41,7 @@ public:
         bool,
         struct Tick,
         bool allowUnloadedChunks,
-        bool,
+        bool allowNonPlayerTicking,
         bool
     );
 

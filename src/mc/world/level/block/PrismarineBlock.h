@@ -140,7 +140,7 @@ public:
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
     // symbol: ??0PrismarineBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PrismarineBlock(std::string const& nameId, int);
+    MCAPI PrismarineBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

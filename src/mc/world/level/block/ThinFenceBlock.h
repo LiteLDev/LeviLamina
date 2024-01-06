@@ -194,8 +194,8 @@ public:
     // symbol:
     // ??0ThinFenceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_N22@Z
     MCAPI ThinFenceBlock(
-        std::string const& nameId,
-        int,
+        std::string const&    nameId,
+        int                   id,
         class Material const& material,
         bool                  dropsResources,
         bool                  singleSide,

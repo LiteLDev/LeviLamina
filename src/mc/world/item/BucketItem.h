@@ -114,7 +114,7 @@ public:
 
     // vIndex: 102, symbol:
     // ?setIconInfo@BucketItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item& setIconInfo(std::string const& name, int);
+    virtual class Item& setIconInfo(std::string const& name, int id);
 
     // vIndex: 107, symbol: ?getLightEmission@BucketItem@@UEBA?AUBrightness@@H@Z
     virtual struct Brightness getLightEmission(int auxValue) const;
@@ -137,7 +137,7 @@ public:
 
     // symbol:
     // ??0BucketItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4BucketFillType@@@Z
-    MCAPI BucketItem(std::string const& name, int, ::BucketFillType type);
+    MCAPI BucketItem(std::string const& name, int id, ::BucketFillType type);
 
     // symbol: ?DRINK_DURATION@BucketItem@@2HB
     MCAPI static int const DRINK_DURATION;

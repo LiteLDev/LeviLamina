@@ -19,17 +19,17 @@ public:
 
     // vIndex: 4, symbol:
     // ?onScoreChanged@PlayerScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual ::EventResult onScoreChanged(struct ScoreboardId const&, std::string const& objective, int score);
+    virtual ::EventResult onScoreChanged(struct ScoreboardId const& id, std::string const& objective, int score);
 
     // symbol: ??0PlayerScoreboardEventListener@@QEAA@XZ
     MCAPI PlayerScoreboardEventListener();
 
     // symbol:
     // ?getPlayerSubscriptions@PlayerScoreboardEventListener@@QEAAAEAVSubscribedObjectives@@AEBUScoreboardId@@AEBVPlayer@@@Z
-    MCAPI class SubscribedObjectives& getPlayerSubscriptions(struct ScoreboardId const&, class Player const& player);
+    MCAPI class SubscribedObjectives& getPlayerSubscriptions(struct ScoreboardId const& id, class Player const& player);
 
     // symbol: ?removePlayerSubscriptions@PlayerScoreboardEventListener@@QEAAXAEBUScoreboardId@@@Z
-    MCAPI void removePlayerSubscriptions(struct ScoreboardId const&);
+    MCAPI void removePlayerSubscriptions(struct ScoreboardId const& id);
 
     // NOLINTEND
 };

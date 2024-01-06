@@ -59,7 +59,7 @@ public:
     // symbol:
     // ?getComponent@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$optional@V?$StrongTypedObjectHandle@VScriptItemComponent@ScriptModuleMinecraft@@@Scripting@@@std@@VWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@@Z
     MCAPI std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemComponent>>
-          getComponent(class Scripting::WeakLifetimeScope scope, std::string const&);
+          getComponent(class Scripting::WeakLifetimeScope scope, std::string const& id);
 
     // symbol:
     // ?getComponents@ScriptItemStack@ScriptModuleMinecraft@@QEAA?AV?$vector@V?$StrongTypedObjectHandle@VScriptItemComponent@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptItemComponent@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@VWeakLifetimeScope@Scripting@@@Z
@@ -94,7 +94,7 @@ public:
 
     // symbol:
     // ?hasComponent@ScriptItemStack@ScriptModuleMinecraft@@QEAA_NVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI bool hasComponent(class Scripting::WeakLifetimeScope scope, std::string const&);
+    MCAPI bool hasComponent(class Scripting::WeakLifetimeScope scope, std::string const& id);
 
     // symbol:
     // ?hasTag@ScriptItemStack@ScriptModuleMinecraft@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

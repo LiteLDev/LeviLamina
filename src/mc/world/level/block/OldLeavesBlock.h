@@ -163,7 +163,7 @@ public:
 
     // symbol:
     // ??0OldLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI OldLeavesBlock(std::string const& nameId, int, class WeakPtr<class BlockLegacy> sapling);
+    MCAPI OldLeavesBlock(std::string const& nameId, int id, class WeakPtr<class BlockLegacy> sapling);
 
     // NOLINTEND
 };

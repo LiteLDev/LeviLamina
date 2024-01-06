@@ -169,7 +169,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0NetherFungusBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI NetherFungusBlock(std::string const& nameId, int);
+    MCAPI NetherFungusBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

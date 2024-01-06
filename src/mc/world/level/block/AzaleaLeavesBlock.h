@@ -154,7 +154,7 @@ public:
 
     // symbol:
     // ??0AzaleaLeavesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI AzaleaLeavesBlock(std::string const& nameId, int, class WeakPtr<class BlockLegacy> sapling);
+    MCAPI AzaleaLeavesBlock(std::string const& nameId, int id, class WeakPtr<class BlockLegacy> sapling);
 
     // NOLINTEND
 };

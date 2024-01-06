@@ -141,7 +141,7 @@ public:
     virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
     // symbol: ??0ElementBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ElementType@@@Z
-    MCAPI ElementBlock(std::string const& nameId, int, ::ElementType type);
+    MCAPI ElementBlock(std::string const& nameId, int id, ::ElementType type);
 
     // symbol: ?getElementInfo@ElementBlock@@SA?AUElementInfo@@W4ElementType@@@Z
     MCAPI static struct ElementInfo getElementInfo(::ElementType e);

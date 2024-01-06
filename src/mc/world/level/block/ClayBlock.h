@@ -147,7 +147,7 @@ public:
     virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol: ??0ClayBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ClayBlock(std::string const& nameId, int);
+    MCAPI ClayBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

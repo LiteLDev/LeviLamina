@@ -108,7 +108,7 @@ public:
     readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?setDwellingUniqueID@DwellerComponent@@QEAAXAEAVActor@@VUUID@mce@@@Z
-    MCAPI void setDwellingUniqueID(class Actor& owner, class mce::UUID);
+    MCAPI void setDwellingUniqueID(class Actor& owner, class mce::UUID id);
 
     // symbol: ?setDwellingUpdateInterval@DwellerComponent@@QEAAX_K@Z
     MCAPI void setDwellingUpdateInterval(uint64);

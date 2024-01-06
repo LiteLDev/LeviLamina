@@ -186,7 +186,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SeagrassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SeagrassBlock(std::string const& nameId, int);
+    MCAPI SeagrassBlock(std::string const& nameId, int id);
 
     // symbol: ?trySpawnSeaGrass@SeagrassBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool trySpawnSeaGrass(class BlockSource& region, class BlockPos const& pos);

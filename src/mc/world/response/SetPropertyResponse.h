@@ -29,7 +29,7 @@ public:
     virtual std::string const& getName() const;
 
     // vIndex: 2, symbol: ?executeAction@SetPropertyResponse@@UEBAXAEAVRenderParams@@@Z
-    virtual void executeAction(class RenderParams&) const;
+    virtual void executeAction(class RenderParams& params) const;
 
     // vIndex: 3, symbol:
     // ?buildSchema@SetPropertyResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UActorEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VActorEventResponse@@$$V@@@Z

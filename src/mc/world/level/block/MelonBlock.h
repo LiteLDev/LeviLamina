@@ -136,7 +136,7 @@ public:
     virtual int getResourceCount(class Randomize& randomize, class Block const&, int bonusLootLevel) const;
 
     // symbol: ??0MelonBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MelonBlock(std::string const& nameId, int);
+    MCAPI MelonBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

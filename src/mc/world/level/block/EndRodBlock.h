@@ -165,7 +165,7 @@ public:
     getMapColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // symbol: ??0EndRodBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI EndRodBlock(std::string const& nameId, int);
+    MCAPI EndRodBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

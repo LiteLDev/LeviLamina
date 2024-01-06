@@ -181,7 +181,7 @@ public:
     MCVAPI bool allowStateMismatchOnPlacement(class Block const& clientTarget, class Block const& serverTarget) const;
 
     // symbol: ??0ObserverBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ObserverBlock(std::string const& nameId, int);
+    MCAPI ObserverBlock(std::string const& nameId, int id);
 
     // symbol: ?MAX_TICK_DELAY@ObserverBlock@@2UTick@@B
     MCAPI static struct Tick const MAX_TICK_DELAY;

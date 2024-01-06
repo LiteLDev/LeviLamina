@@ -93,7 +93,8 @@ public:
 
     // symbol:
     // ??0SmithingTemplateItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4UpgradeType@0@0@Z
-    MCAPI SmithingTemplateItem(std::string const& name, int, ::SmithingTemplateItem::UpgradeType, std::string const&);
+    MCAPI
+    SmithingTemplateItem(std::string const& name, int id, ::SmithingTemplateItem::UpgradeType, std::string const&);
 
     // NOLINTEND
 };

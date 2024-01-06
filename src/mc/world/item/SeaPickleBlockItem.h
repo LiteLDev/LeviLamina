@@ -83,7 +83,7 @@ public:
     _useOn(class ItemStack& instance, class Actor& actor, class BlockPos pos, uchar face, class Vec3 const&) const;
 
     // symbol: ??0SeaPickleBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SeaPickleBlockItem(std::string const& name, int);
+    MCAPI SeaPickleBlockItem(std::string const& name, int id);
 
     // NOLINTEND
 };

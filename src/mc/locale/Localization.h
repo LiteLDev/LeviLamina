@@ -34,7 +34,7 @@ public:
 
     // symbol:
     // ?get@Localization@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
-    MCAPI bool get(std::string const&, std::string& out, std::vector<std::string> const& params) const;
+    MCAPI bool get(std::string const& id, std::string& out, std::vector<std::string> const& params) const;
 
     // symbol: ?getFullLanguageCode@Localization@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     MCAPI std::string getFullLanguageCode() const;
@@ -71,15 +71,15 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_get@Localization@@IEBA?AUOptionalString@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
-    MCAPI struct OptionalString _get(std::string const&, std::vector<std::string> const& params) const;
+    MCAPI struct OptionalString _get(std::string const& id, std::vector<std::string> const& params) const;
 
     // symbol:
     // ?_getSimple@Localization@@IEBA?AUOptionalString@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI struct OptionalString _getSimple(std::string const&) const;
+    MCAPI struct OptionalString _getSimple(std::string const& id) const;
 
     // symbol:
     // ?_parseFormattedString@Localization@@IEBA?AUOptionalString@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI struct OptionalString _parseFormattedString(std::string const&) const;
+    MCAPI struct OptionalString _parseFormattedString(std::string const& id) const;
 
     // symbol:
     // ?_replaceTokens@Localization@@IEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z

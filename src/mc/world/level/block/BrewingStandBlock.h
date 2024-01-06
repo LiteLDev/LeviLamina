@@ -203,7 +203,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0BrewingStandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BrewingStandBlock(std::string const& nameId, int);
+    MCAPI BrewingStandBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

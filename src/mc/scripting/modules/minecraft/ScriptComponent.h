@@ -28,7 +28,7 @@ public:
 
     // symbol:
     // ??0ScriptComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI ScriptComponent(class Scripting::WeakLifetimeScope const& scope, std::string const&);
+    MCAPI ScriptComponent(class Scripting::WeakLifetimeScope const& scope, std::string const& id);
 
     // symbol: ??4ScriptComponent@ScriptModuleMinecraft@@QEAAAEAV01@AEBV01@@Z
     MCAPI class ScriptModuleMinecraft::ScriptComponent& operator=(class ScriptModuleMinecraft::ScriptComponent const&);

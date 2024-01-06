@@ -186,7 +186,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0TorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4MaterialType@@@Z
-    MCAPI TorchBlock(std::string const& nameId, int, ::MaterialType mat);
+    MCAPI TorchBlock(std::string const& nameId, int id, ::MaterialType mat);
 
     // NOLINTEND
 

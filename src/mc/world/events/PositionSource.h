@@ -31,7 +31,7 @@ public:
     MCAPI void serializeTo(class CompoundTag& tag) const;
 
     // symbol: ?forActor@PositionSource@GameEvents@@SA?AV12@UActorUniqueID@@W4ActorLocation@@@Z
-    MCAPI static class GameEvents::PositionSource forActor(struct ActorUniqueID, ::ActorLocation attachPos);
+    MCAPI static class GameEvents::PositionSource forActor(struct ActorUniqueID id, ::ActorLocation attachPos);
 
     // symbol: ?forFixedPos@PositionSource@GameEvents@@SA?AV12@AEBVVec3@@@Z
     MCAPI static class GameEvents::PositionSource forFixedPos(class Vec3 const& pos);

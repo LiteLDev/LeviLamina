@@ -33,8 +33,8 @@ public:
     // symbol:
     // ??0RandomizableBlockActorContainer@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4ContainerType@@@Z
     MCAPI RandomizableBlockActorContainer(
-        ::BlockActorType blockEntityType,
-        std::string const&,
+        ::BlockActorType      blockEntityType,
+        std::string const&    id,
         class BlockPos const& pos,
         ::ContainerType       containerType
     );

@@ -167,7 +167,7 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // symbol: ??0DirtPathBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DirtPathBlock(std::string const& nameId, int);
+    MCAPI DirtPathBlock(std::string const& nameId, int id);
 
     // symbol: ?BLOCK_AABB@DirtPathBlock@@2VAABB@@A
     MCAPI static class AABB BLOCK_AABB;

@@ -12,7 +12,7 @@ MCAPI extern uint const MAX_CUSTOM_BIOMES;
 MCAPI uint adjustForReservedRanges(uint defaultId, std::string const& biomeName);
 
 // symbol: ?isReserved@BiomeIdCompatibility@@YA_NI@Z
-MCAPI bool isReserved(uint);
+MCAPI bool isReserved(uint id);
 // NOLINTEND
 
 }; // namespace BiomeIdCompatibility

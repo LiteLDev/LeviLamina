@@ -164,7 +164,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0GrindstoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI GrindstoneBlock(std::string const& nameId, int);
+    MCAPI GrindstoneBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

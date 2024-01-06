@@ -174,7 +174,7 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // symbol: ??0TntBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TntBlock(std::string const& nameId, int);
+    MCAPI TntBlock(std::string const& nameId, int id);
 
     // symbol: ?_setAllowUnderwater@TntBlock@@QEBAXPEAVActor@@@Z
     MCAPI void _setAllowUnderwater(class Actor* e) const;

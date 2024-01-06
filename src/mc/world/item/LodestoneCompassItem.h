@@ -87,7 +87,7 @@ public:
         const;
 
     // symbol: ??0LodestoneCompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LodestoneCompassItem(std::string const& name, int);
+    MCAPI LodestoneCompassItem(std::string const& name, int id);
 
     // symbol: ?linkCompassToLodestone@LodestoneCompassItem@@SA_NAEAVItemStack@@AEAVBlockSource@@VBlockPos@@@Z
     MCAPI static bool linkCompassToLodestone(class ItemStack& itemStack, class BlockSource& region, class BlockPos pos);

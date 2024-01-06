@@ -92,7 +92,7 @@ public:
         const;
 
     // symbol: ??0FireChargeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FireChargeItem(std::string const& name, int);
+    MCAPI FireChargeItem(std::string const& name, int id);
 
     // symbol: ?LEVEL_SOUND_EVENT_VOLUME@FireChargeItem@@2HB
     MCAPI static int const LEVEL_SOUND_EVENT_VOLUME;

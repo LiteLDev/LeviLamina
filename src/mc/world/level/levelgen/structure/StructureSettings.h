@@ -30,7 +30,7 @@ public:
     MCAPI class StructureSettings& operator=(class StructureSettings const&);
 
     // symbol: ?setAllowNonTickingPlayerAndTickingAreaChunks@StructureSettings@@QEAAX_N@Z
-    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);
+    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool allowNonPlayerTicking);
 
     // symbol: ?setIgnoreBlocks@StructureSettings@@QEAAX_N@Z
     MCAPI void setIgnoreBlocks(bool ignoreBlocks);

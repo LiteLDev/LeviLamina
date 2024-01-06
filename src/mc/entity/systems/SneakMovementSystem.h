@@ -103,7 +103,7 @@ public:
         class ViewT<class StrictEntityContext, struct Include<class FlagComponent<struct FallingBlockFlag>>>,
         class IConstBlockSource const& region,
         bool,
-        std::vector<class AABB>&,
+        std::vector<class AABB>& aabbs,
         class StrictExecutionContext<
             struct Filter<
                 class FlagComponent<struct CanStandOnSnowFlag>,

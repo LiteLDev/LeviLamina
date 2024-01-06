@@ -191,7 +191,7 @@ public:
     MCVAPI bool pushesUpFallingBlocks() const;
 
     // symbol: ??0PistonBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@@Z
-    MCAPI PistonBlock(std::string const& nameId, int, ::PistonBlock::Type isSticky);
+    MCAPI PistonBlock(std::string const& nameId, int id, ::PistonBlock::Type isSticky);
 
     // symbol: ?getFacingDir@PistonBlock@@SAAEBVBlockPos@@E@Z
     MCAPI static class BlockPos const& getFacingDir(uchar);

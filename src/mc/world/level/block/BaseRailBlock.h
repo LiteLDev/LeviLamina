@@ -231,7 +231,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0BaseRailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI BaseRailBlock(std::string const& nameId, int, bool usesDataBit);
+    MCAPI BaseRailBlock(std::string const& nameId, int id, bool usesDataBit);
 
     // symbol: ?isCorner@BaseRailBlock@@SA_NAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static bool isCorner(class BlockSource const& region, class BlockPos const& pos);
