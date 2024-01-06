@@ -72,10 +72,10 @@ public:
     MCAPI void _addSurfaceBiome(
         std::vector<struct BiomeNoiseTarget>& biomes,
         struct ClimateUtils::Parameter const& temperature,
-        struct ClimateUtils::Parameter const&,
-        struct ClimateUtils::Parameter const&,
-        struct ClimateUtils::Parameter const&,
-        struct ClimateUtils::Parameter const&,
+        struct ClimateUtils::Parameter const& humidity,
+        struct ClimateUtils::Parameter const& continentalness,
+        struct ClimateUtils::Parameter const& erosion,
+        struct ClimateUtils::Parameter const& weirdness,
         float        offset,
         class Biome* second
     ) const;
@@ -85,10 +85,10 @@ public:
     MCAPI void _addUndergroundBiome(
         std::vector<struct BiomeNoiseTarget>& biomes,
         struct ClimateUtils::Parameter const& temperature,
-        struct ClimateUtils::Parameter const&,
-        struct ClimateUtils::Parameter const&,
-        struct ClimateUtils::Parameter const&,
-        struct ClimateUtils::Parameter const&,
+        struct ClimateUtils::Parameter const& humidity,
+        struct ClimateUtils::Parameter const& continentalness,
+        struct ClimateUtils::Parameter const& erosion,
+        struct ClimateUtils::Parameter const& weirdness,
         float        offset,
         class Biome* second
     ) const;
