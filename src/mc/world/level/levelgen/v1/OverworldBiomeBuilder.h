@@ -34,8 +34,8 @@ public:
     // ?_addHighSlice@OverworldBiomeBuilder@@AEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
     MCAPI void _addHighSlice(
         std::vector<struct BiomeNoiseTarget>& biomes,
-        struct ClimateUtils::Parameter const&,
-        class BiomeRegistry const& biomeRegistry
+        struct ClimateUtils::Parameter const& weirdness,
+        class BiomeRegistry const&            biomeRegistry
     ) const;
 
     // symbol:
@@ -47,24 +47,24 @@ public:
     // ?_addLowSlice@OverworldBiomeBuilder@@AEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
     MCAPI void _addLowSlice(
         std::vector<struct BiomeNoiseTarget>& biomes,
-        struct ClimateUtils::Parameter const&,
-        class BiomeRegistry const& biomeRegistry
+        struct ClimateUtils::Parameter const& weirdness,
+        class BiomeRegistry const&            biomeRegistry
     ) const;
 
     // symbol:
     // ?_addMidSlice@OverworldBiomeBuilder@@AEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
     MCAPI void _addMidSlice(
         std::vector<struct BiomeNoiseTarget>& biomes,
-        struct ClimateUtils::Parameter const&,
-        class BiomeRegistry const& biomeRegistry
+        struct ClimateUtils::Parameter const& weirdness,
+        class BiomeRegistry const&            biomeRegistry
     ) const;
 
     // symbol:
     // ?_addPeaks@OverworldBiomeBuilder@@AEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
     MCAPI void _addPeaks(
         std::vector<struct BiomeNoiseTarget>& biomes,
-        struct ClimateUtils::Parameter const&,
-        class BiomeRegistry const& biomeRegistry
+        struct ClimateUtils::Parameter const& weirdness,
+        class BiomeRegistry const&            biomeRegistry
     ) const;
 
     // symbol:
@@ -76,8 +76,8 @@ public:
         struct ClimateUtils::Parameter const& continentalness,
         struct ClimateUtils::Parameter const& erosion,
         struct ClimateUtils::Parameter const& weirdness,
-        float        offset,
-        class Biome* second
+        float                                 offset,
+        class Biome*                          second
     ) const;
 
     // symbol:
@@ -89,28 +89,34 @@ public:
         struct ClimateUtils::Parameter const& continentalness,
         struct ClimateUtils::Parameter const& erosion,
         struct ClimateUtils::Parameter const& weirdness,
-        float        offset,
-        class Biome* second
+        float                                 offset,
+        class Biome*                          second
     ) const;
 
     // symbol:
     // ?_addValleys@OverworldBiomeBuilder@@AEBAXAEAV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@AEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
     MCAPI void _addValleys(
         std::vector<struct BiomeNoiseTarget>& biomes,
-        struct ClimateUtils::Parameter const&,
-        class BiomeRegistry const& biomeRegistry
+        struct ClimateUtils::Parameter const& weirdness,
+        class BiomeRegistry const&            biomeRegistry
     ) const;
 
     // symbol:
     // ?_pickBadlandsBiome@OverworldBiomeBuilder@@AEBAPEAVBiome@@HAEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
-    MCAPI class Biome*
-    _pickBadlandsBiome(int, struct ClimateUtils::Parameter const&, class BiomeRegistry const& biomeRegistry) const;
+    MCAPI class Biome* _pickBadlandsBiome(
+        int                                   humidityIdx,
+        struct ClimateUtils::Parameter const& weirdness,
+        class BiomeRegistry const&            biomeRegistry
+    ) const;
 
     // symbol:
     // ?_pickShatteredCoastBiome@OverworldBiomeBuilder@@AEBAPEAVBiome@@HHAEBUParameter@ClimateUtils@@AEBVBiomeRegistry@@@Z
-    MCAPI class Biome*
-    _pickShatteredCoastBiome(int, int, struct ClimateUtils::Parameter const&, class BiomeRegistry const& biomeRegistry)
-        const;
+    MCAPI class Biome* _pickShatteredCoastBiome(
+        int                                   temperatureIdx,
+        int                                   humidityIdx,
+        struct ClimateUtils::Parameter const& weirdness,
+        class BiomeRegistry const&            biomeRegistry
+    ) const;
 
     // symbol: ?_populateBiomeArrays@OverworldBiomeBuilder@@AEBAXAEBVBiomeRegistry@@@Z
     MCAPI void _populateBiomeArrays(class BiomeRegistry const& biomeRegistry) const;
