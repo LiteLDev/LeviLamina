@@ -13,12 +13,6 @@ class ContainerSizeChangeListener;
 
 class Container {
 public:
-    [[nodiscard]] inline std::string const& getTypeName() const { return getContainerTypeName(getContainerType()); }
-
-    // prevent constructor by default
-    Container& operator=(Container const&);
-    Container();
-
     using TransactionContext = std::function<void(Container&, int, ItemStack const&, ItemStack const&)>;
 
     ContainerType                                       mContainerType;           // this+0x8
@@ -30,18 +24,14 @@ public:
     bool                                                mCustomName;              // this+0xD8
     ContainerRuntimeId                                  mContainerRuntimeId;      // this+0xDC
 
-    [[nodiscard]] inline ItemStack& getItemNonConst(int index) { return const_cast<ItemStack&>(getItem(index)); }
+    [[nodiscard]] inline std::string const& getTypeName() const { return getContainerTypeName(getContainerType()); }
 
-    [[nodiscard]] inline std::vector<std::reference_wrapper<ItemStack>>
-    getSlotsNonConst() { // same with virtual getSlots
-        std::vector<std::reference_wrapper<ItemStack>> res;
-        int                                            size = getContainerSize();
-        res.reserve(size);
-        for (int i = 0; i < size; ++i) {
-            res.emplace_back(getItemNonConst(i));
-        }
-        return res;
-    }
+    LLNDAPI optional_ref<ItemStack> getItemNonConst(int index);
+
+public:
+    // prevent constructor by default
+    Container& operator=(Container const&);
+    Container();
 
 public:
     // NOLINTBEGIN
