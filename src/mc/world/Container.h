@@ -28,10 +28,111 @@ public:
 
     LLNDAPI optional_ref<ItemStack> getItemNonConst(int index);
 
+    [[nodiscard]] inline ItemStack& operator[](int index) { return this->getItemNonConst(index); }
+
+    [[nodiscard]] inline ItemStack const& operator[](int index) const { return this->getItem(index); }
+
+
 public:
     // prevent constructor by default
     Container& operator=(Container const&);
     Container();
+
+public:
+    class ConstIterator {
+    public:
+        using difference_type   = std::ptrdiff_t;
+        using value_type        = ItemStack;
+        using pointer           = ItemStack*;
+        using reference         = ItemStack&;
+        using iterator_category = std::random_access_iterator_tag;
+
+        ConstIterator(const Container* container, int position) : container_(container), position_(position) {}
+
+        bool operator!=(const ConstIterator& other) const { return position_ != other.position_; }
+
+        const ItemStack& operator*() const { return container_->getItem(position_); }
+
+        const ItemStack* operator->() const { return &container_->getItem(position_); }
+
+        const ConstIterator& operator++() {
+            ++position_;
+            return *this;
+        }
+
+        const ConstIterator& operator--() {
+            --position_;
+            return *this;
+        }
+
+        const ConstIterator& operator[](int offset) {
+            position_ += offset;
+            return *this;
+        }
+
+
+    private:
+        const Container* container_;
+        int              position_;
+    };
+
+    class Iterator {
+    public:
+        using difference_type   = std::ptrdiff_t;
+        using value_type        = ItemStack;
+        using pointer           = ItemStack*;
+        using reference         = ItemStack&;
+        using iterator_category = std::random_access_iterator_tag;
+
+        Iterator(Container* container, int position) : container_(container), position_(position) {}
+
+        bool operator!=(const Iterator& other) const { return position_ != other.position_; }
+
+        bool operator==(const Iterator& other) const { return position_ == other.position_; }
+
+        ItemStack& operator*() { return container_->getItemNonConst(position_); }
+
+        ItemStack* operator->() const { return container_->getItemNonConst(position_); }
+
+        Iterator& operator++() {
+            ++position_;
+            return *this;
+        }
+
+        Iterator& operator--() {
+            --position_;
+            return *this;
+        }
+
+        Iterator& operator[](int offset) {
+            position_ += offset;
+            return *this;
+        }
+
+
+    private:
+        Container* container_;
+        int        position_;
+    };
+
+    using ReverseIterator      = std::reverse_iterator<Iterator>;
+    using ConstReverseIterator = std::reverse_iterator<ConstIterator>;
+
+    [[nodiscard]] Iterator begin() noexcept { return {this, 0}; }
+
+    [[nodiscard]] ReverseIterator rbegin() noexcept { return ReverseIterator(end()); }
+
+    [[nodiscard]] ConstIterator cbegin() const noexcept { return {this, 0}; }
+
+    [[nodiscard]] ConstReverseIterator crbegin() const noexcept { return ConstReverseIterator(cend()); }
+
+    [[nodiscard]] Iterator end() noexcept { return {this, getContainerSize()}; }
+
+    [[nodiscard]] ReverseIterator rend() noexcept { return ReverseIterator(begin()); }
+
+    [[nodiscard]] ConstIterator cend() const noexcept { return {this, getContainerSize()}; }
+
+    [[nodiscard]] ConstReverseIterator crend() const noexcept { return ConstReverseIterator(cbegin()); }
 
 public:
     // NOLINTBEGIN
