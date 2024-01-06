@@ -14,8 +14,6 @@
 
 - [QQ频道](https://pd.qq.com/s/a13gu04rv)
 
-- [GitHub Discussions](https://github.com/LiteLDev/LeviLamina/discussions)
-
 - [我们的官方论坛](https://bbs.liteldev.com)
 
 ## 开发者
@@ -23,3 +21,5 @@
 要联系LeviLamina的核心开发人员并讨论与开发过程相关的事宜,以及提出困难的问题,您可以使用以下方式:
 
 - [GitHub Issues](https://github.com/LiteLDev/LeviLamina/issues)
+
+- [GitHub Discussions](https://github.com/LiteLDev/LeviLamina/discussions)

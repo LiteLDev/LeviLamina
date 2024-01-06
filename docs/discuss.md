@@ -14,8 +14,6 @@ We provide a variety of ways to discuss, you can choose the one you like best.
 
 - [QQ Guild](https://pd.qq.com/s/a13gu04rv)
 
-- [GitHub Discussions](https://github.com/LiteLDev/LeviLamina/discussions)
-
 - [Our Official BBS](https://bbs.liteldev.com)
 
 ## Developers
@@ -23,3 +21,5 @@ We provide a variety of ways to discuss, you can choose the one you like best.
 To contact the core developers of LeviLamina and discuss matters pertaining to the development process, as well as to ask the difficult questions, you can use the following means:
 
 - [GitHub Issues](https://github.com/LiteLDev/LeviLamina/issues)
+
+- [GitHub Discussions](https://github.com/LiteLDev/LeviLamina/discussions)
