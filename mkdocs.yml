@@ -32,7 +32,7 @@ nav:
 
   - Native APIs: api/native
 
-  - contacts.md
+  - discuss.md
 
 exclude_docs: |
   api/native/
