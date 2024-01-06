@@ -134,7 +134,7 @@ public:
      */
     LLNDAPI std::string getRealName() const;
 
-     /**
+    /**
      * @brief Get the name of the player's langtext.
      * @return The name of the player's langtext.
      * @warning This is not the player's in-game nickname.
@@ -157,7 +157,8 @@ public:
 
     /**
      * @brief Give player item and refresh.
-     * @return Whether it is a complete success (e.g. returning false if the quantity of items given to the player does not match the expectation).
+     * @return Whether it is a complete success (e.g. returning false if the quantity of items given to the player does
+     * not match the expectation).
      * @warning The return value does not take into account whether the refresh was successful.
      *          You can use Player::add, but it will not refresh the item, which may lead to potential issues.
      */
