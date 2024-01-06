@@ -58,13 +58,13 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ?factor@TerrainShaper@@QEBAMMMM@Z
-    MCAPI float factor(float, float, float) const;
+    MCAPI float factor(float continentalness, float erosion, float weirdness) const;
 
     // symbol: ?jaggedness@TerrainShaper@@QEBAMMMM@Z
-    MCAPI float jaggedness(float, float, float) const;
+    MCAPI float jaggedness(float continentalness, float erosion, float weirdness) const;
 
     // symbol: ?offset@TerrainShaper@@QEBAMMMM@Z
-    MCAPI float offset(float, float, float) const;
+    MCAPI float offset(float continentalness, float erosion, float weirdness) const;
 
     // symbol: ?buildOverworld@TerrainShaper@@SA?AV1@XZ
     MCAPI static class TerrainShaper buildOverworld();
