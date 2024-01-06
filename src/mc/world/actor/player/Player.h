@@ -134,13 +134,20 @@ public:
      */
     LLNDAPI std::string getRealName() const;
 
+     /**
+     * @brief Get the name of the player's langtext.
+     * @return The name of the player's langtext.
+     * @warning This is not the player's in-game nickname.
+     */
     LLNDAPI std::string getLocaleName() const;
 
     LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
+
     /**
      * @brief Disconnect player's client
      */
     LLAPI void disconnect(std::string_view reason) const;
+
     /**
      * @brief Send a message to player
      */
@@ -148,11 +155,17 @@ public:
 
     LLAPI void setAbility(::AbilitiesIndex index, bool value);
 
+    /**
+     * @brief Give player item and refresh.
+     * @return Whether it is a complete success (e.g. returning false if the quantity of items given to the player does not match the expectation).
+     * @warning The return value does not take into account whether the refresh was successful.
+     *          You can use Player::add, but it will not refresh the item, which may lead to potential issues.
+     */
     LLAPI bool addAndRefresh(class ItemStack& item);
 
     LLNDAPI optional_ref<EnderChestContainer> getEnderChestContainer();
 
-    LLNDAPI optional_ref<EnderChestContainer> getEnderChestContainer() const;
+    LLNDAPI optional_ref<EnderChestContainer const> getEnderChestContainer() const;
 
     // prevent constructor by default
     Player& operator=(Player const&);

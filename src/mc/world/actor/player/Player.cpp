@@ -115,11 +115,10 @@ bool Player::addAndRefresh(class ItemStack& item) {
 
 
 optional_ref<EnderChestContainer> Player::getEnderChestContainer() {
-    std::vector<int> ids;
     return ll::memory::dAccess<EnderChestContainer*>(this, 3304);
     // ida: Player::Player : EnderChestContainer::EnderChestContainer
 }
 
-optional_ref<EnderChestContainer> Player::getEnderChestContainer() const {
+optional_ref<EnderChestContainer const> Player::getEnderChestContainer() const {
     return ll::memory::dAccess<EnderChestContainer*>(this, 3304);
 }

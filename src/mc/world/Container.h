@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ContainerIterator.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
@@ -32,82 +33,27 @@ public:
 
     [[nodiscard]] ItemStack const& operator[](size_t index) const { return this->getItem(static_cast<int>(index)); }
 
+public:
+    using Iterator      = ContainerIterator<Container, false>;
+    using ConstIterator = ContainerIterator<Container, true>;
+
+    using ReverseIterator      = std::reverse_iterator<Iterator>;
+    using ConstReverseIterator = std::reverse_iterator<ConstIterator>;
+
+    [[nodiscard]] constexpr Iterator      begin() noexcept { return {this, 0}; }
+    [[nodiscard]] constexpr ConstIterator cbegin() const noexcept { return {this, 0}; }
+    [[nodiscard]] constexpr Iterator      end() noexcept { return {this, getContainerSize()}; }
+    [[nodiscard]] constexpr ConstIterator cend() const noexcept { return {this, getContainerSize()}; }
+
+    [[nodiscard]] constexpr ReverseIterator      rbegin() noexcept { return ReverseIterator{end()}; }
+    [[nodiscard]] constexpr ConstReverseIterator crbegin() const noexcept { return ConstReverseIterator{cend()}; }
+    [[nodiscard]] constexpr ReverseIterator      rend() noexcept { return ReverseIterator{begin()}; }
+    [[nodiscard]] constexpr ConstReverseIterator crend() const noexcept { return ConstReverseIterator{cbegin()}; }
 
 public:
     // prevent constructor by default
     Container& operator=(Container const&);
     Container();
-
-public:
-    class ConstIterator {
-    public:
-        using difference_type   = std::ptrdiff_t;
-        using value_type        = ItemStack;
-        using pointer           = ItemStack*;
-        using reference         = ItemStack&;
-        using iterator_category = std::random_access_iterator_tag;
-
-        [[nodiscard]] constexpr ConstIterator(const Container* container, int position)
-        : mContainer(container),
-          mPosition(position) {}
-        [[nodiscard]] constexpr bool operator==(const ConstIterator& other) const {
-            return mContainer == other.mContainer && mPosition == other.mPosition;
-        }
-        [[nodiscard]] constexpr ItemStack const& operator*() const { return mContainer->getItem(mPosition); }
-        [[nodiscard]] constexpr ItemStack const* operator->() const { return &mContainer->getItem(mPosition); }
-
-        constexpr ConstIterator& operator++() {
-            ++mPosition;
-            return *this;
-        }
-        constexpr ConstIterator& operator--() {
-            --mPosition;
-            return *this;
-        }
-
-    protected:
-        const Container* mContainer;
-        int              mPosition;
-    };
-
-    class Iterator : public ConstIterator {
-    public:
-        using difference_type   = std::ptrdiff_t;
-        using value_type        = ItemStack;
-        using pointer           = ItemStack*;
-        using reference         = ItemStack&;
-        using iterator_category = std::random_access_iterator_tag;
-
-        [[nodiscard]] constexpr Iterator(Container* container, int position) : ConstIterator(container, position) {}
-        [[nodiscard]] constexpr Container& getContainer() const { return *const_cast<Container*>(mContainer); }
-        [[nodiscard]] constexpr ItemStack& operator*() const { return getContainer().getItemNonConst(mPosition); }
-        [[nodiscard]] constexpr ItemStack* operator->() const { return getContainer().getItemNonConst(mPosition); }
-
-        constexpr Iterator& operator++() {
-            ++mPosition;
-            return *this;
-        }
-        constexpr Iterator& operator--() {
-            --mPosition;
-            return *this;
-        }
-    };
-
-    using ReverseIterator      = std::reverse_iterator<Iterator>;
-    using ConstReverseIterator = std::reverse_iterator<ConstIterator>;
-
-    [[nodiscard]] constexpr Iterator             begin() noexcept { return {this, 0}; }
-    [[nodiscard]] constexpr Iterator             end() noexcept { return {this, getContainerSize()}; }
-    [[nodiscard]] constexpr ReverseIterator      rbegin() noexcept { return ReverseIterator(end()); }
-    [[nodiscard]] constexpr ReverseIterator      rend() noexcept { return ReverseIterator(begin()); }
-    [[nodiscard]] constexpr ConstIterator        begin() const noexcept { return {this, 0}; }
-    [[nodiscard]] constexpr ConstIterator        end() const noexcept { return {this, getContainerSize()}; }
-    [[nodiscard]] constexpr ConstIterator        cbegin() const noexcept { return {this, 0}; }
-    [[nodiscard]] constexpr ConstIterator        cend() const noexcept { return {this, getContainerSize()}; }
-    [[nodiscard]] constexpr ConstReverseIterator rbegin() const noexcept { return ConstReverseIterator(end()); }
-    [[nodiscard]] constexpr ConstReverseIterator rend() const noexcept { return ConstReverseIterator(begin()); }
-    [[nodiscard]] constexpr ConstReverseIterator crbegin() const noexcept { return ConstReverseIterator(cend()); }
-    [[nodiscard]] constexpr ConstReverseIterator crend() const noexcept { return ConstReverseIterator(cbegin()); }
 
 public:
     // NOLINTBEGIN
