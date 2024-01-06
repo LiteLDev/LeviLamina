@@ -472,6 +472,8 @@ private:
 bool Plugin::enable() {
     // ...
 
+    auto& eventBus = ll::event::EventBus::getInstance();
+
     mPlayerJoinEventListener = eventBus.emplaceListener<ll::event::player::PlayerJoinEvent>(
         [doGiveClockOnFirstJoin = mConfig.doGiveClockOnFirstJoin,
          &logger,
@@ -505,6 +507,8 @@ bool Plugin::enable() {
 
 bool Plugin::disable() {
     // ...
+
+    auto& eventBus = ll::event::EventBus::getInstance();
 
     eventBus.removeListener(mPlayerJoinEventListener);
 
