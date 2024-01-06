@@ -66,4 +66,19 @@ Then you can start lipUI, select a proper workspace, and install LeviLamina from
 
 ### Install Manually
 
-You can download the modules from there corresponding GitHub releases pages and install them following their own installation guides.
+#### Download the required files
+
+1. find the desired version from releases on [github.com/LiteLDev/LeviLamina](github.com/LiteLDev/LeviLamina), download the `levilamina-windows-x64.zip` zip from that version's Assets
+2. Download the corresponding version of the BDS server from [minecraft.net](https://www.minecraft.net/zh-hans/download/server/bedrock) and get the `bedrock-server-<version>.zip` archive.
+3. Download the corresponding versions of `PeEditor.exe` and `PreLoader.dll` from the releases of [github.com/LiteLDev/PeEditor](github.com/LiteLDev/PeEditor) and [github.com/LiteLDev/PreLoader](github.com/LiteLDev/PreLoader)
+
+In the usual case, the latest version of LeviLamina should correspond to the latest version of PeEditor and PreLoader, please pay attention to the corresponding BDS version of LeviLamina.
+
+#### Installation
+
+1. Extract the `bedrock-server-<version>.zip` archive obtained in step 2 of the **Download Required Files** above to an empty folder.
+2. Move the `PeEditor.exe` and `PreLoader.dll` files obtained in step 3 of the **Download Required Files** above into the folder where you unzipped the BSD archive in the previous step, so that it is in the same directory as `bedrock_server.exe`.
+3. Unzip the `levilamina-windows-x64.zip` obtained in step 1 of the above **Download the required files** and move the `/lib/LeviLamina.dll` and `/lib/LeviLamina.pdb` files into the folder in which you unzipped the BSD package in step 1, so that they are in the same directory as the `bedrock_server.exe` in the same directory.
+4. Double-click `PeEditor.exe` and wait for it to finish running, at which point you should see `bedrock_server_mod.exe` in that folder and notice that `bedrock_server.exe` has been renamed to `bedrock_server.exe.bak`.
+
+At this point, you have successfully installed LeviLamina You can start it by running `bedrock_server_mod.exe`.
