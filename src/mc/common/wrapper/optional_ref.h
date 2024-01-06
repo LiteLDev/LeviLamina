@@ -103,8 +103,10 @@ public:
             -> decltype(std::invoke(*mPtr, static_cast<Types&&>(args)...)) {
         return std::invoke(*mPtr, static_cast<Types&&>(args)...);
     }
-
-    [[nodiscard]] constexpr decltype(auto) operator[](size_t index) const { return get()[index]; }
+    template <class Arg>
+    [[nodiscard]] constexpr decltype(auto) operator[](Arg&& index) const {
+        return get()[std::forward<Arg>(index)];
+    }
     [[nodiscard]] constexpr decltype(auto) end() { return get().end(); }
     [[nodiscard]] constexpr decltype(auto) begin() { return get().begin(); }
     [[nodiscard]] constexpr decltype(auto) end() const { return get().end(); }
