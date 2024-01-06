@@ -85,7 +85,7 @@ public:
         const;
 
     // symbol: ??0SlabBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SlabBlockItem(std::string const& name, int);
+    MCAPI SlabBlockItem(std::string const& name, int id);
 
     // NOLINTEND
 

@@ -136,7 +136,7 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // symbol: ??0MyceliumBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI MyceliumBlock(std::string const& nameId, int);
+    MCAPI MyceliumBlock(std::string const& nameId, int id);
 
     // symbol: ?MIN_BRIGHTNESS_TO_PERSIST@MyceliumBlock@@2UBrightness@@B
     MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_PERSIST;

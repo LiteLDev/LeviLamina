@@ -125,7 +125,7 @@ public:
     MCAPI void setNoPhysics(bool value);
 
     // symbol: ?setOwnerId@ProjectileComponent@@QEAAXUActorUniqueID@@@Z
-    MCAPI void setOwnerId(struct ActorUniqueID);
+    MCAPI void setOwnerId(struct ActorUniqueID id);
 
     // symbol: ?setPotionEffect@ProjectileComponent@@QEAAXH@Z
     MCAPI void setPotionEffect(int potionEffect);

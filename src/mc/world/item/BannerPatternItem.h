@@ -98,7 +98,7 @@ public:
     MCVAPI bool isPattern() const;
 
     // symbol: ??0BannerPatternItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@@Z
-    MCAPI BannerPatternItem(std::string const& name, int, ::BannerPatternItem::Type type);
+    MCAPI BannerPatternItem(std::string const& name, int id, ::BannerPatternItem::Type type);
 
     // NOLINTEND
 };

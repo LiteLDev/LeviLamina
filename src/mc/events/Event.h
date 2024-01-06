@@ -28,7 +28,7 @@ public:
     // symbol:
     // ??0Event@Events@Social@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@@std@@@2@@4@H@Z
     MCAPI Event(
-        uint,
+        uint                                                              id,
         std::string const&                                                eventName,
         std::unordered_map<std::string, class Social::Events::Property>&& commonProperties,
         int                                                               eventTags
@@ -37,7 +37,7 @@ public:
     // symbol:
     // ??0Event@Events@Social@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VProperty@Events@Social@@@std@@@2@@4@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@H@Z
     MCAPI Event(
-        uint,
+        uint                                                              id,
         std::string const&                                                eventName,
         std::unordered_map<std::string, class Social::Events::Property>&& commonProperties,
         class Bedrock::NonOwnerPointer<class AppPlatform> const&,

@@ -188,7 +188,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0LightBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LightBlock(std::string const& nameId, int, class Material const& material);
+    MCAPI LightBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
 };

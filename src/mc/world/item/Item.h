@@ -50,7 +50,7 @@ public:
         // symbol:
         // ??0ScopedCreativeGroup@Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@FFPEBVCompoundTag@@@Z
         MCAPI
-        ScopedCreativeGroup(std::string const& groupName, short, short auxValue, class CompoundTag const* userData);
+        ScopedCreativeGroup(std::string const& groupName, short id, short auxValue, class CompoundTag const* userData);
 
         // symbol: ??1ScopedCreativeGroup@Item@@QEAA@XZ
         MCAPI ~ScopedCreativeGroup();
@@ -121,7 +121,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?executeEvent@Item@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
-    virtual void executeEvent(class ItemStackBase& item, std::string const& name, class RenderParams&) const;
+    virtual void executeEvent(class ItemStackBase& item, std::string const& name, class RenderParams& params) const;
 
     // vIndex: 8, symbol: __unk_vfn_8
     virtual void __unk_vfn_8();
@@ -545,7 +545,7 @@ public:
     MCVAPI bool useInterruptedByAttacking() const;
 
     // symbol: ??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-    MCAPI Item(std::string const& nameId, short);
+    MCAPI Item(std::string const& nameId, short id);
 
     // symbol: ?addOnResetBAIcallback@Item@@QEAAXAEBV?$function@$$A6AXXZ@std@@@Z
     MCAPI void addOnResetBAIcallback(std::function<void(void)> const& callback);

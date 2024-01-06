@@ -33,7 +33,7 @@ public:
     // symbol:
     // ??0ModuleBindingBuilder@Scripting@@QEAA@AEBUUUID@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUVersion@1@@Z
     MCAPI ModuleBindingBuilder(
-        struct Scripting::UUID const&,
+        struct Scripting::UUID const&    id,
         std::string const&               name,
         struct Scripting::Version const& version
     );

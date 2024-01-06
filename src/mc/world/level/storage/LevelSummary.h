@@ -38,7 +38,7 @@ public:
     // symbol:
     // ??0LevelSummary@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_JW4GameType@@W4Difficulty@@VLevelSeed64@@H_K_N6W4GamePublishSetting@Social@@6W4EducationEditionOffer@@AEBVGameVersion@@9W4StorageVersion@@AEBVPath@Core@@AEBVContentIdentity@@0_NAEBUEduSharedUriResource@@AEBVExperiments@@AEBVBaseGameVersion@@W4WorldType@Editor@@@Z
     MCAPI LevelSummary(
-        std::string const&,
+        std::string const&           id,
         std::string const&           name,
         int64                        lastPlayed,
         ::GameType                   gameType,

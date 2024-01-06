@@ -127,7 +127,7 @@ public:
 
     // symbol: ?spawnPlayerProjectile@AbstractArrow@@SAPEAVActor@@AEBUActorDefinitionIdentifier@@AEAVPlayer@@VVec3@@@Z
     MCAPI static class Actor*
-    spawnPlayerProjectile(struct ActorDefinitionIdentifier const&, class Player& player, class Vec3);
+    spawnPlayerProjectile(struct ActorDefinitionIdentifier const& id, class Player& player, class Vec3);
 
     // NOLINTEND
 

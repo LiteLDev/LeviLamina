@@ -168,7 +168,7 @@ public:
     virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
 
     // symbol: ??0AmethystClusterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
-    MCAPI AmethystClusterBlock(std::string const& nameId, int, int height, int);
+    MCAPI AmethystClusterBlock(std::string const& nameId, int id, int height, int);
 
     // NOLINTEND
 

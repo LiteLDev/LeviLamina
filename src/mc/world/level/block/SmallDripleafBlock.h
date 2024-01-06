@@ -198,7 +198,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SmallDripleafBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SmallDripleafBlock(std::string const& nameId, int);
+    MCAPI SmallDripleafBlock(std::string const& nameId, int id);
 
     // symbol: ?tryPlaceSmallDripleaf@SmallDripleafBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@HH@Z
     MCAPI static bool tryPlaceSmallDripleaf(class BlockSource& region, class BlockPos const& pos, int, int updateFlags);

@@ -150,7 +150,7 @@ public:
     virtual void __unk_vfn_170();
 
     // symbol: ??0ConcretePowderBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ConcretePowderBlock(std::string const& nameId, int);
+    MCAPI ConcretePowderBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 

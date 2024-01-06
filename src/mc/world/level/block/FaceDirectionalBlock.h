@@ -151,8 +151,8 @@ public:
     // symbol:
     // ??0FaceDirectionalBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@_NM@Z
     MCAPI FaceDirectionalBlock(
-        std::string const& nameId,
-        int,
+        std::string const&    nameId,
+        int                   id,
         class Material const& material,
         bool                  horizontalOnly,
         float                 yRotOffset

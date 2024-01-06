@@ -32,7 +32,7 @@ public:
 
     // vIndex: 3, symbol:
     // ?onScoreboardIdentityRemoved@ScriptScoreboardListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScoreboardId@@@Z
-    virtual ::EventResult onScoreboardIdentityRemoved(struct ScoreboardId const&);
+    virtual ::EventResult onScoreboardIdentityRemoved(struct ScoreboardId const& id);
 
     // NOLINTEND
 };

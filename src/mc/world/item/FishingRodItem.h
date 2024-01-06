@@ -123,7 +123,7 @@ public:
     MCVAPI bool shouldUseJsonForRenderMatrix() const;
 
     // symbol: ??0FishingRodItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FishingRodItem(std::string const& name, int);
+    MCAPI FishingRodItem(std::string const& name, int id);
 
     // NOLINTEND
 };

@@ -14,7 +14,7 @@ public:
     MCAPI LegacyStructureBlockPalette();
 
     // symbol: ?getBlock@LegacyStructureBlockPalette@@QEAAAEBVBlock@@H@Z
-    MCAPI class Block const& getBlock(int);
+    MCAPI class Block const& getBlock(int id);
 
     // symbol: ??1LegacyStructureBlockPalette@@QEAA@XZ
     MCAPI ~LegacyStructureBlockPalette();

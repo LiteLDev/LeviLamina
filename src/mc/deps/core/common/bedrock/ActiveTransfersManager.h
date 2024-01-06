@@ -61,7 +61,7 @@ public:
     // symbol:
     // ?dropBlobFor@ActiveTransfersManager@Server@ClientBlobCache@@QEAA?AV?$shared_ptr@VBlob@Server@ClientBlobCache@@@std@@AEBVNetworkIdentifier@@_K@Z
     MCAPI std::shared_ptr<class ClientBlobCache::Server::Blob>
-          dropBlobFor(class NetworkIdentifier const& client, uint64);
+          dropBlobFor(class NetworkIdentifier const& client, uint64 id);
 
     // symbol: ?enableCacheFor@ActiveTransfersManager@Server@ClientBlobCache@@QEAAXAEBVNetworkIdentifier@@@Z
     MCAPI void enableCacheFor(class NetworkIdentifier const& client);
@@ -85,7 +85,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?rememberBlob@ActiveTransfersManager@Server@ClientBlobCache@@AEAA?AV?$shared_ptr@VBlob@Server@ClientBlobCache@@@std@@_KAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@_N@Z
-    MCAPI std::shared_ptr<class ClientBlobCache::Server::Blob> rememberBlob(uint64, std::string& data, bool);
+    MCAPI std::shared_ptr<class ClientBlobCache::Server::Blob> rememberBlob(uint64 id, std::string& data, bool);
 
     // NOLINTEND
 };

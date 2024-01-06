@@ -191,7 +191,7 @@ public:
 
     // symbol:
     // ??0ChestBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ChestType@0@W4MaterialType@@@Z
-    MCAPI ChestBlock(std::string const& nameId, int, ::ChestBlock::ChestType type, ::MaterialType materialType);
+    MCAPI ChestBlock(std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
 
     // symbol: ?updateSignalStrength@ChestBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
     MCAPI void updateSignalStrength(class BlockSource& region, class BlockPos const& pos, int strength) const;

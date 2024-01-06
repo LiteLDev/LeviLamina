@@ -95,7 +95,7 @@ public:
     MCAPI void save(class CompoundTag& tag) const;
 
     // symbol: ?setAllowNonTickingPlayerAndTickingAreaChunks@StructureEditorData@@QEAAX_N@Z
-    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);
+    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool allowNonPlayerTicking);
 
     // symbol: ?setAnimationMode@StructureEditorData@@QEAAXW4AnimationMode@@@Z
     MCAPI void setAnimationMode(::AnimationMode);

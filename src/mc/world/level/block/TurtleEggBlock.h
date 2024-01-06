@@ -176,7 +176,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0TurtleEggBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TurtleEggBlock(std::string const& nameId, int);
+    MCAPI TurtleEggBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 

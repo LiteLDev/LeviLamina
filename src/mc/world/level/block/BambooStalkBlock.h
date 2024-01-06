@@ -193,7 +193,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0BambooStalkBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BambooStalkBlock(std::string const& nameId, int);
+    MCAPI BambooStalkBlock(std::string const& nameId, int id);
 
     // symbol: ?getMaxHeight@BambooStalkBlock@@SAHAEBVBlockPos@@@Z
     MCAPI static int getMaxHeight(class BlockPos const& pos);

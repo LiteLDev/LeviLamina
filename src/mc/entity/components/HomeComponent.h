@@ -45,7 +45,7 @@ public:
     readAdditionalSaveData(class Actor& owner, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
 
     // symbol: ?setHome@HomeComponent@@QEAAXAEBVBlockPos@@AEBV?$AutomaticID@VDimension@@H@@@Z
-    MCAPI void setHome(class BlockPos const& pos, DimensionType const&);
+    MCAPI void setHome(class BlockPos const& pos, DimensionType const& id);
 
     // symbol: ?tick@HomeComponent@@QEAAXAEAVActor@@@Z
     MCAPI void tick(class Actor& owner);

@@ -162,7 +162,7 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const& block, int) const;
 
     // symbol: ??0CoralBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CoralBlock(std::string const& nameId, int);
+    MCAPI CoralBlock(std::string const& nameId, int id);
 
     // symbol: ?DEAD_CORAL_BIT@CoralBlock@@2HB
     MCAPI static int const DEAD_CORAL_BIT;

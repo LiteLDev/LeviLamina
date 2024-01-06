@@ -47,7 +47,7 @@ public:
 
     // symbol:
     // ?broadcastClientMessage@ScriptWorld@ScriptModuleMinecraft@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI void broadcastClientMessage(std::string const&, std::string const& value);
+    MCAPI void broadcastClientMessage(std::string const& id, std::string const& value);
 
     // symbol: ?clearDynamicProperties@ScriptWorld@ScriptModuleMinecraft@@QEAAXAEBUContextConfig@Scripting@@@Z
     MCAPI void clearDynamicProperties(struct Scripting::ContextConfig const&);
@@ -101,7 +101,7 @@ public:
     // ?getEntity@ScriptWorld@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$optional@V?$StrongTypedObjectHandle@VScriptActor@ScriptModuleMinecraft@@@Scripting@@@std@@$$V@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     MCAPI class Scripting::Result<
         std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>>
-    getEntity(std::string const&) const;
+    getEntity(std::string const& id) const;
 
     // symbol:
     // ?getPlayers@ScriptWorld@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptPlayer@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@V?$optional@UScriptActorQueryOptions@ScriptModuleMinecraft@@@std@@@Z

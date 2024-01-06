@@ -174,7 +174,7 @@ public:
     MCVAPI bool isStemBlock() const;
 
     // symbol: ??0StemBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@@Z
-    MCAPI StemBlock(std::string const& nameId, int, class BlockLegacy const& fruit);
+    MCAPI StemBlock(std::string const& nameId, int id, class BlockLegacy const& fruit);
 
     // symbol: ?getFruitBlock@StemBlock@@QEBAAEBVBlockLegacy@@XZ
     MCAPI class BlockLegacy const& getFruitBlock() const;

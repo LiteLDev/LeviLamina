@@ -85,10 +85,10 @@ public:
     virtual void __unk_vfn_62();
 
     // vIndex: 68, symbol: ?setOwner@Agent@@UEAAXUActorUniqueID@@@Z
-    virtual void setOwner(struct ActorUniqueID);
+    virtual void setOwner(struct ActorUniqueID id);
 
     // vIndex: 83, symbol: ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int data);
+    virtual void handleEntityEvent(::ActorEvent id, int data);
 
     // vIndex: 92, symbol: ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
     virtual void setCarriedItem(class ItemStack const& item);

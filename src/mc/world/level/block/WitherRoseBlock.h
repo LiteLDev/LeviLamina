@@ -154,7 +154,7 @@ public:
     virtual void entityInside(class BlockSource& region, class BlockPos const&, class Actor& entity) const;
 
     // symbol: ??0WitherRoseBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI WitherRoseBlock(std::string const& nameId, int);
+    MCAPI WitherRoseBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

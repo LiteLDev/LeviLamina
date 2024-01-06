@@ -22,7 +22,7 @@ public:
 
     // symbol: ??0AttackDamageMobEffect@@QEAA@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
     MCAPI AttackDamageMobEffect(
-        int,
+        int                id,
         std::string const& resourceName,
         std::string const& locName,
         bool               isHarmful,

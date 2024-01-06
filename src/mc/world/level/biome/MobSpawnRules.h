@@ -21,7 +21,8 @@ public:
     MCAPI class MobSpawnRules& addHerd(int minCount, int maxCount, std::string const& herdEvent);
 
     // symbol: ?addPermutation@MobSpawnRules@@QEAAAEAV1@HHAEBUActorDefinitionIdentifier@@@Z
-    MCAPI class MobSpawnRules& addPermutation(int weight, int guaranteedCount, struct ActorDefinitionIdentifier const&);
+    MCAPI class MobSpawnRules&
+    addPermutation(int weight, int guaranteedCount, struct ActorDefinitionIdentifier const& id);
 
     // symbol: ?canSpawnInConditions@MobSpawnRules@@QEBA_NAEBVSpawnConditions@@AEAVBlockSource@@@Z
     MCAPI bool canSpawnInConditions(class SpawnConditions const& conditions, class BlockSource& region) const;
@@ -77,7 +78,7 @@ public:
 
     // symbol:
     // ?setDelayRange@MobSpawnRules@@QEAAAEAV1@HHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class MobSpawnRules& setDelayRange(int min, int max, std::string const&);
+    MCAPI class MobSpawnRules& setDelayRange(int min, int max, std::string const& id);
 
     // symbol: ?setDelaySpawnChance@MobSpawnRules@@QEAAAEAV1@H@Z
     MCAPI class MobSpawnRules& setDelaySpawnChance(int chance);

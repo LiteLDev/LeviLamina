@@ -146,7 +146,7 @@ public:
     virtual int getExtraRenderLayers() const;
 
     // symbol: ??0HoneyBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI HoneyBlock(std::string const& nameId, int, class Material const& material);
+    MCAPI HoneyBlock(std::string const& nameId, int id, class Material const& material);
 
     // symbol: ?triggerSlidingDownEffects@HoneyBlock@@SAXAEAVActor@@AEBVBlockPos@@AEBVBlock@@@Z
     MCAPI static void triggerSlidingDownEffects(class Actor& entity, class BlockPos const& pos, class Block const&);

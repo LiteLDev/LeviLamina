@@ -180,7 +180,7 @@ public:
     virtual class Block const& _keepRelevantStateForDropping(class Block const& block) const;
 
     // symbol: ??0DoublePlantBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DoublePlantBlock(std::string const& nameId, int);
+    MCAPI DoublePlantBlock(std::string const& nameId, int id);
 
     // symbol: ?getType@DoublePlantBlock@@QEBAHAEBVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     MCAPI int getType(class BlockSource const& region, class BlockPos const& pos, class Block const& block) const;

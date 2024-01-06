@@ -159,7 +159,7 @@ public:
     virtual void entityInside(class BlockSource& region, class BlockPos const& pos, class Actor& entity) const;
 
     // symbol: ??0TripWireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TripWireBlock(std::string const& nameId, int);
+    MCAPI TripWireBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 

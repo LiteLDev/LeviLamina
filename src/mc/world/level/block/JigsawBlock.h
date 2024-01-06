@@ -157,7 +157,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0JigsawBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI JigsawBlock(std::string const& nameId, int);
+    MCAPI JigsawBlock(std::string const& nameId, int id);
 
     // symbol: ?canAttach@JigsawBlock@@SA_NAEBVJigsawBlockInfo@@0@Z
     MCAPI static bool canAttach(class JigsawBlockInfo const& block1, class JigsawBlockInfo const& block2);

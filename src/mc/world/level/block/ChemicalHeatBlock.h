@@ -139,7 +139,7 @@ public:
     virtual int getExtraRenderLayers() const;
 
     // symbol: ??0ChemicalHeatBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ChemicalHeatBlock(std::string const& nameId, int);
+    MCAPI ChemicalHeatBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

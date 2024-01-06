@@ -188,7 +188,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0CampfireBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N_N@Z
-    MCAPI CampfireBlock(std::string const& nameId, int, bool, bool);
+    MCAPI CampfireBlock(std::string const& nameId, int id, bool, bool);
 
     // symbol: ?isLit@CampfireBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isLit(class Block const& block);

@@ -88,7 +88,7 @@ public:
         const;
 
     // symbol: ??0BottleItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BottleItem(std::string const& name, int);
+    MCAPI BottleItem(std::string const& name, int id);
 
     // NOLINTEND
 

@@ -198,7 +198,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0SeaPickleBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SeaPickleBlock(std::string const& nameId, int);
+    MCAPI SeaPickleBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

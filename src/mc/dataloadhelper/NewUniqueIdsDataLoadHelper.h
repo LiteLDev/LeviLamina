@@ -59,10 +59,10 @@ public:
     virtual ::Mirror loadMirror(::Mirror);
 
     // vIndex: 13, symbol: ?loadActorUniqueID@NewUniqueIdsDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
-    virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
+    virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID id);
 
     // vIndex: 14, symbol: ?loadOwnerID@NewUniqueIdsDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
-    virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
+    virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID id);
 
     // vIndex: 15, symbol:
     // ?loadActorInternalComponentInfo@NewUniqueIdsDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z

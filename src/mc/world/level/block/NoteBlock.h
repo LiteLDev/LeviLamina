@@ -149,7 +149,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0NoteBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI NoteBlock(std::string const& nameId, int);
+    MCAPI NoteBlock(std::string const& nameId, int id);
 
     // symbol: ?enableSkullPlacement@NoteBlock@@QEAAAEAV1@_N@Z
     MCAPI class NoteBlock& enableSkullPlacement(bool enabled);

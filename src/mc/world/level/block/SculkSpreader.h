@@ -44,8 +44,8 @@ public:
     MCAPI void updateCursors(
         class IBlockWorldGenAPI& target,
         class BlockSource*       region,
-        class BlockPos const&,
-        class Random& random,
+        class BlockPos const&    origin,
+        class Random&            random,
         bool
     );
 

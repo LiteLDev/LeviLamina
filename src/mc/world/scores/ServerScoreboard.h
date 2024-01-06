@@ -67,10 +67,10 @@ public:
     virtual void onObjectiveRemoved(class Objective& objective);
 
     // vIndex: 8, symbol: ?onScoreChanged@ServerScoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z
-    virtual void onScoreChanged(struct ScoreboardId const&, class Objective const& obj);
+    virtual void onScoreChanged(struct ScoreboardId const& id, class Objective const& obj);
 
     // vIndex: 9, symbol: ?onPlayerScoreRemoved@ServerScoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z
-    virtual void onPlayerScoreRemoved(struct ScoreboardId const&, class Objective const& objective);
+    virtual void onPlayerScoreRemoved(struct ScoreboardId const& id, class Objective const& objective);
 
     // vIndex: 10, symbol: ?onPlayerJoined@ServerScoreboard@@UEAAXAEBVPlayer@@@Z
     virtual void onPlayerJoined(class Player const& player);

@@ -176,7 +176,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0ChorusPlantBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ChorusPlantBlock(std::string const& nameId, int);
+    MCAPI ChorusPlantBlock(std::string const& nameId, int id);
 
     // symbol: ?canGrowChorus@ChorusPlantBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool canGrowChorus(class Block const& block);

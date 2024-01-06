@@ -217,14 +217,15 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0CauldronBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CauldronBlock(std::string const& nameId, int);
+    MCAPI CauldronBlock(std::string const& nameId, int id);
 
     // symbol: ?setLiquidLevel@CauldronBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@HW4CauldronLiquidType@@@Z
     MCAPI void
     setLiquidLevel(class BlockSource& region, class BlockPos const& pos, int, ::CauldronLiquidType type) const;
 
     // symbol: ?canReceiveStalactiteDrip@CauldronBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@W4MaterialType@@@Z
-    MCAPI static bool canReceiveStalactiteDrip(class BlockSource& region, class BlockPos const& pos, ::MaterialType);
+    MCAPI static bool
+    canReceiveStalactiteDrip(class BlockSource& region, class BlockPos const& pos, ::MaterialType liquidType);
 
     // symbol: ?clampLiquidLevel@CauldronBlock@@SAHH@Z
     MCAPI static int clampLiquidLevel(int);

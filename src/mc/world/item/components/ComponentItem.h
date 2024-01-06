@@ -53,7 +53,7 @@ public:
 
     // vIndex: 7, symbol:
     // ?executeEvent@ComponentItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
-    virtual void executeEvent(class ItemStackBase& item, std::string const& name, class RenderParams&) const;
+    virtual void executeEvent(class ItemStackBase& item, std::string const& name, class RenderParams& params) const;
 
     // vIndex: 8, symbol: __unk_vfn_8
     virtual void __unk_vfn_8();
@@ -89,7 +89,7 @@ public:
     virtual bool isUseable() const;
 
     // vIndex: 21, symbol: ?getComponent@ComponentItem@@UEBAPEAVItemComponent@@AEBVHashedString@@@Z
-    virtual class ItemComponent* getComponent(class HashedString const&) const;
+    virtual class ItemComponent* getComponent(class HashedString const& id) const;
 
     // vIndex: 22, symbol: ?getFood@ComponentItem@@UEBAPEAVIFoodItemComponent@@XZ
     virtual class IFoodItemComponent* getFood() const;
@@ -338,7 +338,7 @@ public:
     MCVAPI bool useVariant(int, int, bool) const;
 
     // symbol: ??0ComponentItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-    MCAPI ComponentItem(std::string const& nameId, short);
+    MCAPI ComponentItem(std::string const& nameId, short id);
 
     // symbol: ?_addCerealItemsToMap@ComponentItem@@QEAAXXZ
     MCAPI void _addCerealItemsToMap();
@@ -357,7 +357,7 @@ public:
 
     // symbol: ?executeTrigger@ComponentItem@@QEBA_NAEAVItemStackBase@@AEBVDefinitionTrigger@@AEAVRenderParams@@@Z
     MCAPI bool
-    executeTrigger(class ItemStackBase& item, class DefinitionTrigger const& trigger, class RenderParams&) const;
+    executeTrigger(class ItemStackBase& item, class DefinitionTrigger const& trigger, class RenderParams& params) const;
 
     // symbol: ?getMovementModifier@ComponentItem@@QEBAMXZ
     MCAPI float getMovementModifier() const;

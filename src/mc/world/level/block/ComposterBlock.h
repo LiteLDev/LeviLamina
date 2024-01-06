@@ -190,7 +190,7 @@ public:
     MCVAPI bool hasComparatorSignal() const;
 
     // symbol: ??0ComposterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI ComposterBlock(std::string const& nameId, int);
+    MCAPI ComposterBlock(std::string const& nameId, int id);
 
     // symbol: ?addItem@ComposterBlock@@SA_NAEAVContainer@@HAEAVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
     MCAPI static bool addItem(

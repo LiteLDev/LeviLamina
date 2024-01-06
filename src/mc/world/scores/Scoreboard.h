@@ -66,10 +66,10 @@ public:
     virtual void onObjectiveRemoved(class Objective& objective);
 
     // vIndex: 8, symbol: ?onScoreChanged@Scoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z
-    virtual void onScoreChanged(struct ScoreboardId const&, class Objective const& obj);
+    virtual void onScoreChanged(struct ScoreboardId const& id, class Objective const& obj);
 
     // vIndex: 9, symbol: ?onPlayerScoreRemoved@Scoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z
-    virtual void onPlayerScoreRemoved(struct ScoreboardId const&, class Objective const& objective);
+    virtual void onPlayerScoreRemoved(struct ScoreboardId const& id, class Objective const& objective);
 
     // vIndex: 10, symbol: ?onPlayerJoined@Scoreboard@@UEAAXAEBVPlayer@@@Z
     virtual void onPlayerJoined(class Player const& player);
@@ -144,7 +144,7 @@ public:
 
     // symbol:
     // ?getIdScores@Scoreboard@@QEBA?AV?$vector@UScoreInfo@@V?$allocator@UScoreInfo@@@std@@@std@@AEBUScoreboardId@@@Z
-    MCAPI std::vector<struct ScoreInfo> getIdScores(struct ScoreboardId const&) const;
+    MCAPI std::vector<struct ScoreInfo> getIdScores(struct ScoreboardId const& id) const;
 
     // symbol:
     // ?getObjective@Scoreboard@@QEBAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -192,20 +192,20 @@ public:
     // symbol:
     // ?modifyPlayerScore@Scoreboard@@QEAAHAEA_NPEAVScoreboardIdentityRef@@AEAVObjective@@HW4PlayerScoreSetFunction@@@Z
     MCAPI int modifyPlayerScore(
-        bool& success,
-        class ScoreboardIdentityRef*,
-        class Objective&         objective,
-        int                      scoreValue,
-        ::PlayerScoreSetFunction action
+        bool&                        success,
+        class ScoreboardIdentityRef* id,
+        class Objective&             objective,
+        int                          scoreValue,
+        ::PlayerScoreSetFunction     action
     );
 
     // symbol: ?modifyPlayerScore@Scoreboard@@QEAAHAEA_NAEBUScoreboardId@@AEAVObjective@@HW4PlayerScoreSetFunction@@@Z
     MCAPI int modifyPlayerScore(
-        bool& success,
-        struct ScoreboardId const&,
-        class Objective&         objective,
-        int                      scoreValue,
-        ::PlayerScoreSetFunction action
+        bool&                      success,
+        struct ScoreboardId const& id,
+        class Objective&           objective,
+        int                        scoreValue,
+        ::PlayerScoreSetFunction   action
     );
 
     // symbol:
@@ -234,10 +234,10 @@ public:
     MCAPI void removeScoreListener(class Player const& player, std::string const& objective);
 
     // symbol: ?resetPlayerScore@Scoreboard@@QEAA_NAEBUScoreboardId@@AEAVObjective@@@Z
-    MCAPI bool resetPlayerScore(struct ScoreboardId const&, class Objective& objective);
+    MCAPI bool resetPlayerScore(struct ScoreboardId const& id, class Objective& objective);
 
     // symbol: ?resetPlayerScore@Scoreboard@@QEAAXAEBUScoreboardId@@@Z
-    MCAPI void resetPlayerScore(struct ScoreboardId const&);
+    MCAPI void resetPlayerScore(struct ScoreboardId const& id);
 
     // symbol: ?shouldClearScoresOnDeath@Scoreboard@@SA_NAEBVActor@@@Z
     MCAPI static bool shouldClearScoresOnDeath(class Actor const& actor);

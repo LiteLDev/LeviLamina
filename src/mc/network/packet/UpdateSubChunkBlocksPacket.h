@@ -103,7 +103,7 @@ public:
     UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const&, std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const&);
 
     // symbol: ?setSubChunkPosition@UpdateSubChunkBlocksPacket@@QEAAXAEBVSubChunkPos@@@Z
-    MCAPI void setSubChunkPosition(class SubChunkPos const&);
+    MCAPI void setSubChunkPosition(class SubChunkPos const& subChunkPos);
 
     // NOLINTEND
 };

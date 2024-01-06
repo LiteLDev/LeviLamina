@@ -596,10 +596,11 @@ public:
     MCAPI void neighborChanged(class BlockPos const& neighPos, class BlockPos const& myPos);
 
     // symbol: ?postGameEvent@BlockSource@@QEAAXPEAVActor@@AEBVGameEvent@@AEBVBlockPos@@PEBVBlock@@@Z
-    MCAPI void postGameEvent(class Actor* source, class GameEvent const&, class BlockPos const&, class Block const*);
+    MCAPI void
+    postGameEvent(class Actor* source, class GameEvent const&, class BlockPos const& origin, class Block const*);
 
     // symbol: ?postGameEvent@BlockSource@@QEAAXPEAVActor@@AEBVGameEvent@@AEBVVec3@@PEBVBlock@@@Z
-    MCAPI void postGameEvent(class Actor* source, class GameEvent const&, class Vec3 const&, class Block const*);
+    MCAPI void postGameEvent(class Actor* source, class GameEvent const&, class Vec3 const& origin, class Block const*);
 
     // symbol: ?removeBlock@BlockSource@@QEAA_NAEBVBlockPos@@@Z
     MCAPI bool removeBlock(class BlockPos const& pos);

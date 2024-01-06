@@ -81,7 +81,7 @@ public:
         const;
 
     // symbol: ??0LeadItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LeadItem(std::string const& name, int);
+    MCAPI LeadItem(std::string const& name, int id);
 
     // symbol: ?bindPlayerMobs@LeadItem@@SA_NAEAVActor@@HHHPEAVItemInstance@@@Z
     MCAPI static bool bindPlayerMobs(class Actor&, int x, int y, int z, class ItemInstance* itemUsed);

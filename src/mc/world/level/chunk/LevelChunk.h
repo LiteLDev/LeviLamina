@@ -497,7 +497,7 @@ public:
     MCAPI void serializeBlockEntities(class IDataOutput& stream) const;
 
     // symbol: ?serializeBlockEntitiesForSubChunk@LevelChunk@@QEBAXAEAVIDataOutput@@AEBVSubChunkPos@@@Z
-    MCAPI void serializeBlockEntitiesForSubChunk(class IDataOutput& stream, class SubChunkPos const&) const;
+    MCAPI void serializeBlockEntitiesForSubChunk(class IDataOutput& stream, class SubChunkPos const& subChunkPos) const;
 
     // symbol: ?serializeBorderBlocks@LevelChunk@@QEBA_NAEAVIDataOutput@@@Z
     MCAPI bool serializeBorderBlocks(class IDataOutput& stream) const;

@@ -57,10 +57,10 @@ public:
     MCAPI static std::optional<struct SoundEventRequest> tryPlaySound(
         DimensionType dimension,
         class SynchedActorData const&,
-        struct ActorDefinitionIdentifier const&,
-        ::Puv::Legacy::LevelSoundEvent type,
-        class Vec3 const&              pos,
-        int                            data
+        struct ActorDefinitionIdentifier const& id,
+        ::Puv::Legacy::LevelSoundEvent          type,
+        class Vec3 const&                       pos,
+        int                                     data
     );
 
     // NOLINTEND

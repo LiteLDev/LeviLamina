@@ -116,8 +116,8 @@ public:
     // symbol:
     // ??0DiggerItem@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHAEBVTier@Item@@AEBV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@2@@Z
     MCAPI DiggerItem(
-        std::string const& name,
-        int,
+        std::string const&                     name,
+        int                                    id,
         int                                    attackDamage,
         class Item::Tier const&                tier,
         std::vector<class Block const*> const& blocks

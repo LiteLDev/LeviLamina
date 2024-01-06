@@ -188,7 +188,7 @@ public:
     MCVAPI bool isFenceBlock() const;
 
     // symbol: ??0FenceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI FenceBlock(std::string const& nameId, int, class Material const& material);
+    MCAPI FenceBlock(std::string const& nameId, int id, class Material const& material);
 
     // symbol:
     // ?fetchPathableNeighbors@FenceBlock@@QEBAXAEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAVBlockSource@@AEBVBlockPos@@AEBVVec3@@@Z

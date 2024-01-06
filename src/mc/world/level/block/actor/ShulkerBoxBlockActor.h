@@ -65,8 +65,8 @@ public:
     // symbol:
     // ??0ShulkerBoxBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@@Z
     MCAPI ShulkerBoxBlockActor(
-        ::BlockActorType type,
-        std::string const&,
+        ::BlockActorType       type,
+        std::string const&     id,
         ::BlockActorRendererId renderId,
         class BlockPos const&  pos
     );

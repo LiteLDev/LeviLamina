@@ -219,7 +219,7 @@ public:
 
     // symbol:
     // ??0DoorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@W4DoorType@0@@Z
-    MCAPI DoorBlock(std::string const& nameId, int, class Material const& material, ::DoorBlock::DoorType type);
+    MCAPI DoorBlock(std::string const& nameId, int id, class Material const& material, ::DoorBlock::DoorType type);
 
     // symbol: ?getBlockedDirection@DoorBlock@@QEBA?AW4Type@Direction@@AEBVIConstBlockSource@@AEBVBlockPos@@@Z
     MCAPI ::Direction::Type getBlockedDirection(class IConstBlockSource const& region, class BlockPos const& pos) const;

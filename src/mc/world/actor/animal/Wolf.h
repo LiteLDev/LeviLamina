@@ -70,7 +70,7 @@ public:
     virtual ::Puv::Legacy::LevelSoundEvent getAmbientSound() const;
 
     // vIndex: 83, symbol: ?handleEntityEvent@Wolf@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int data);
+    virtual void handleEntityEvent(::ActorEvent id, int data);
 
     // vIndex: 98, symbol: ?load@Wolf@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
     virtual bool load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);

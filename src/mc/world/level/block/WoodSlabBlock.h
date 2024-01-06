@@ -154,7 +154,7 @@ public:
 
     // symbol:
     // ??0WoodSlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NV?$WeakPtr@VBlockLegacy@@@@@Z
-    MCAPI WoodSlabBlock(std::string const& nameId, int, bool fullSize, class WeakPtr<class BlockLegacy> baseSlab);
+    MCAPI WoodSlabBlock(std::string const& nameId, int id, bool fullSize, class WeakPtr<class BlockLegacy> baseSlab);
 
     // NOLINTEND
 };

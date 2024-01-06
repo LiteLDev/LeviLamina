@@ -170,7 +170,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0FlowerPotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI FlowerPotBlock(std::string const& nameId, int);
+    MCAPI FlowerPotBlock(std::string const& nameId, int id);
 
     // symbol: ?isSupportedBlock@FlowerPotBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isSupportedBlock(class Block const& block);

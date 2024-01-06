@@ -95,7 +95,7 @@ public:
     getAnimationFrameFor(class Mob* holder, bool asItemEntity, class ItemStack const* item, bool shouldAnimate) const;
 
     // symbol: ??0RangedWeaponItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI RangedWeaponItem(std::string const& name, int);
+    MCAPI RangedWeaponItem(std::string const& name, int id);
 
     // symbol: ?getLaunchPower@RangedWeaponItem@@QEBAMHHH@Z
     MCAPI float getLaunchPower(int durationLeft, int maxDrawDuration, int maxUseDuration) const;

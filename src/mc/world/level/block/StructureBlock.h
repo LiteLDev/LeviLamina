@@ -149,7 +149,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0StructureBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI StructureBlock(std::string const& nameId, int);
+    MCAPI StructureBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

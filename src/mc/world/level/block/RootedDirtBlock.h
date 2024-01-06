@@ -146,7 +146,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0RootedDirtBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI RootedDirtBlock(std::string const& nameId, int);
+    MCAPI RootedDirtBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

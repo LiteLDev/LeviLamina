@@ -139,7 +139,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0CalibratedSculkSensorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CalibratedSculkSensorBlock(std::string const& nameId, int);
+    MCAPI CalibratedSculkSensorBlock(std::string const& nameId, int id);
 
     // symbol: ?getInputStrength@CalibratedSculkSensorBlock@@SAHAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static int getInputStrength(class BlockSource const& region, class BlockPos const& pos);

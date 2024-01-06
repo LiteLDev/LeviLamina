@@ -47,8 +47,12 @@ public:
     MCAPI ContainerOpenPacket();
 
     // symbol: ??0ContainerOpenPacket@@QEAA@W4ContainerID@@W4ContainerType@@AEBVBlockPos@@AEBUActorUniqueID@@@Z
-    MCAPI
-    ContainerOpenPacket(::ContainerID containerId, ::ContainerType type, class BlockPos const& pos, struct ActorUniqueID const&);
+    MCAPI ContainerOpenPacket(
+        ::ContainerID               containerId,
+        ::ContainerType             type,
+        class BlockPos const&       pos,
+        struct ActorUniqueID const& id
+    );
 
     // NOLINTEND
 };

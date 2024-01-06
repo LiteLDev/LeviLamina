@@ -139,7 +139,7 @@ public:
     virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
 
     // symbol: ??0DeepslateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI DeepslateBlock(std::string const& nameId, int);
+    MCAPI DeepslateBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

@@ -66,7 +66,7 @@ public:
     // symbol:
     // ??0SculkSensorBlockActor@@QEAA@W4BlockActorType@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I$$QEAV?$unique_ptr@VSculkSensorVibrationConfig@@U?$default_delete@VSculkSensorVibrationConfig@@@std@@@4@@Z
     MCAPI
-    SculkSensorBlockActor(::BlockActorType type, class BlockPos const& pos, std::string const&, uint, std::unique_ptr<class SculkSensorVibrationConfig>&&);
+    SculkSensorBlockActor(::BlockActorType type, class BlockPos const& pos, std::string const& id, uint, std::unique_ptr<class SculkSensorVibrationConfig>&&);
 
     // symbol: ?getLatestReceivedVibrationFrequency@SculkSensorBlockActor@@QEBAHXZ
     MCAPI int getLatestReceivedVibrationFrequency() const;

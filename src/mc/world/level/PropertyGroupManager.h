@@ -22,7 +22,7 @@ public:
           getAllPropertyGroups() const;
 
     // symbol: ?registerGroup@PropertyGroupManager@@QEAAXAEBVHashedString@@V?$shared_ptr@$$CBVPropertyGroup@@@std@@@Z
-    MCAPI void registerGroup(class HashedString const&, std::shared_ptr<class PropertyGroup const> group);
+    MCAPI void registerGroup(class HashedString const& id, std::shared_ptr<class PropertyGroup const> group);
 
     // symbol: ?tryInitPropertiesOnActor@PropertyGroupManager@@QEBAXAEAVActor@@@Z
     MCAPI void tryInitPropertiesOnActor(class Actor& actor) const;

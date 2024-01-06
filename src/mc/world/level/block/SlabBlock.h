@@ -177,8 +177,8 @@ public:
     // symbol:
     // ??0SlabBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVMaterial@@V?$WeakPtr@VBlockLegacy@@@@@Z
     MCAPI SlabBlock(
-        std::string const& nameId,
-        int,
+        std::string const&               nameId,
+        int                              id,
         bool                             _fullsize,
         class Material const&            mat,
         class WeakPtr<class BlockLegacy> baseSlab

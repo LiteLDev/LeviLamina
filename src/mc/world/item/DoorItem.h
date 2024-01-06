@@ -83,7 +83,7 @@ public:
 
     // symbol:
     // ??0DoorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4DoorType@DoorBlock@@@Z
-    MCAPI DoorItem(std::string const& name, int, ::DoorBlock::DoorType type);
+    MCAPI DoorItem(std::string const& name, int id, ::DoorBlock::DoorType type);
 
     // symbol: ?getDoorBlock@DoorItem@@QEBAPEBVBlock@@XZ
     MCAPI class Block const* getDoorBlock() const;

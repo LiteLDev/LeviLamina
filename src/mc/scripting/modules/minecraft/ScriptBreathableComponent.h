@@ -35,8 +35,11 @@ public:
 
     // symbol:
     // ??0ScriptBreathableComponent@ScriptModuleMinecraft@@QEAA@AEBVWeakEntityRef@@AEBVWeakLifetimeScope@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI
-    ScriptBreathableComponent(class WeakEntityRef const& entity, class Scripting::WeakLifetimeScope const& scope, std::string const&);
+    MCAPI ScriptBreathableComponent(
+        class WeakEntityRef const&                entity,
+        class Scripting::WeakLifetimeScope const& scope,
+        std::string const&                        id
+    );
 
     // symbol:
     // ?getBreatheBlocks@ScriptBreathableComponent@ScriptModuleMinecraft@@QEBA?AV?$Result@V?$vector@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@V?$allocator@V?$StrongTypedObjectHandle@VScriptBlockPermutation@ScriptModuleMinecraft@@@Scripting@@@std@@@std@@$$V@Scripting@@XZ

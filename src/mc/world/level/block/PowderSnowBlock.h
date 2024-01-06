@@ -165,7 +165,7 @@ public:
 
     // symbol:
     // ??0PowderSnowBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI PowderSnowBlock(std::string const& nameId, int, class Material const& material);
+    MCAPI PowderSnowBlock(std::string const& nameId, int id, class Material const& material);
 
     // symbol: ?canWalkOnTop@PowderSnowBlock@@SA_NAEBVGetCollisionShapeInterface@@@Z
     MCAPI static bool canWalkOnTop(class GetCollisionShapeInterface const& actor);

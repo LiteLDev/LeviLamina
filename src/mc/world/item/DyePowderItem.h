@@ -89,7 +89,7 @@ public:
 
     // vIndex: 102, symbol:
     // ?setIconInfo@DyePowderItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item& setIconInfo(std::string const& name, int);
+    virtual class Item& setIconInfo(std::string const& name, int id);
 
     // symbol: ??0DyePowderItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ItemColor@@@Z
     MCAPI DyePowderItem(std::string const&, int, ::ItemColor);

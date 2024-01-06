@@ -79,7 +79,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0SaddleItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
-    MCAPI SaddleItem(std::string const& nameId, short);
+    MCAPI SaddleItem(std::string const& nameId, short id);
 
     // NOLINTEND
 

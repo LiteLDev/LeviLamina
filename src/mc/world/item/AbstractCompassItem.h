@@ -87,7 +87,8 @@ public:
 
     // symbol:
     // ??0AbstractCompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6A?AVCompassSpriteCalculator@@PEAVMob@@@Z@2@@Z
-    MCAPI AbstractCompassItem(std::string const& name, int, std::function<class CompassSpriteCalculator(class Mob*)>);
+    MCAPI
+    AbstractCompassItem(std::string const& name, int id, std::function<class CompassSpriteCalculator(class Mob*)>);
 
     // NOLINTEND
 };

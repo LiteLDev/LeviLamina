@@ -169,7 +169,7 @@ public:
     virtual void onLand(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0BrushableBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BrushableBlock(std::string const& nameID, int);
+    MCAPI BrushableBlock(std::string const& nameID, int id);
 
     // symbol: ?EmptyBrushedBlock@BrushableBlock@@2VHashedString@@B
     MCAPI static class HashedString const EmptyBrushedBlock;

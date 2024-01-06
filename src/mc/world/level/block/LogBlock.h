@@ -141,7 +141,7 @@ public:
     // ??0LogBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$WeakPtr@VBlockLegacy@@@@V?$optional@ULogBlockMapColors@@@2@@Z
     MCAPI LogBlock(
         std::string const& nameId,
-        int,
+        int                id,
         class WeakPtr<class BlockLegacy>,
         std::optional<struct LogBlockMapColors> mapColors
     );

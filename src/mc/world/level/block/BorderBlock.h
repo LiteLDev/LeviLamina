@@ -157,7 +157,7 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // symbol: ??0BorderBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BorderBlock(std::string const& nameId, int);
+    MCAPI BorderBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

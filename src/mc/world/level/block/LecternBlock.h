@@ -176,7 +176,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0LecternBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI LecternBlock(std::string const& nameId, int);
+    MCAPI LecternBlock(std::string const& nameId, int id);
 
     // symbol: ?emitRedstonePulse@LecternBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void emitRedstonePulse(class BlockSource& region, class BlockPos const& pos) const;

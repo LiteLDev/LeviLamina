@@ -51,7 +51,7 @@ public:
 
     // symbol: ??0MobEffectInstance@@QEAA@IHHHHH_N00@Z
     MCAPI MobEffectInstance(
-        uint,
+        uint id,
         int  duration,
         int  durationEasy,
         int  durationNormal,

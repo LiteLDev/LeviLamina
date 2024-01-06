@@ -155,7 +155,7 @@ public:
     virtual int getCropNum(class Randomize& randomize, int growth, int bonusLootLevel) const;
 
     // symbol: ??0CarrotBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CarrotBlock(std::string const& nameId, int);
+    MCAPI CarrotBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

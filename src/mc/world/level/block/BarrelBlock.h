@@ -156,7 +156,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0BarrelBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI BarrelBlock(std::string const& nameId, int, class Material const& material);
+    MCAPI BarrelBlock(std::string const& nameId, int id, class Material const& material);
 
     // symbol: ?setOpen@BarrelBlock@@SAX_NAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static void setOpen(bool isOpen, class BlockSource& region, class BlockPos const& pos);

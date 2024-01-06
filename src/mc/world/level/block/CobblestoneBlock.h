@@ -131,7 +131,7 @@ public:
 
     // symbol:
     // ??0CobblestoneBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI CobblestoneBlock(std::string const& nameId, int, class Material const& material);
+    MCAPI CobblestoneBlock(std::string const& nameId, int id, class Material const& material);
 
     // NOLINTEND
 };

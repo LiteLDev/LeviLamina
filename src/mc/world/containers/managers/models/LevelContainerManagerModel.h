@@ -31,7 +31,7 @@ public:
     virtual class ItemStack const& getSlot(int slot) const;
 
     // vIndex: 9, symbol: ?setData@LevelContainerManagerModel@@UEAAXHH@Z
-    virtual void setData(int, int value);
+    virtual void setData(int id, int value);
 
     // vIndex: 10, symbol: ?broadcastChanges@LevelContainerManagerModel@@UEAAXXZ
     virtual void broadcastChanges();

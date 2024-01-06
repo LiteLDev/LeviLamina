@@ -157,7 +157,7 @@ public:
     virtual int getSeedNum(class Randomize&, int, int) const;
 
     // symbol: ??0TorchflowerCropBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TorchflowerCropBlock(std::string const& nameId, int);
+    MCAPI TorchflowerCropBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

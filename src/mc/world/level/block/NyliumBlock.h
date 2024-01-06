@@ -142,7 +142,7 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
 
     // symbol: ??0NyliumBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI NyliumBlock(std::string const& nameId, int);
+    MCAPI NyliumBlock(std::string const& nameId, int id);
 
     // symbol: ?canBeNylium@NyliumBlock@@QEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool canBeNylium(class BlockSource const& region, class BlockPos const& pos) const;

@@ -297,7 +297,7 @@ public:
     // symbol:
     // ?getOrCreateHandle@ScriptDimension@ScriptModuleMinecraft@@SA?AV?$StrongTypedObjectHandle@VScriptDimension@ScriptModuleMinecraft@@@Scripting@@V?$AutomaticID@VDimension@@H@@AEAVLevel@@AEBVWeakLifetimeScope@4@@Z
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>
-    getOrCreateHandle(DimensionType, class Level& level, class Scripting::WeakLifetimeScope const& scope);
+    getOrCreateHandle(DimensionType id, class Level& level, class Scripting::WeakLifetimeScope const& scope);
 
     // NOLINTEND
 };

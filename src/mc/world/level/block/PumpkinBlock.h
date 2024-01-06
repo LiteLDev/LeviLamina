@@ -152,7 +152,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0PumpkinBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N1@Z
-    MCAPI PumpkinBlock(std::string const& nameId, int, bool lit, bool carved);
+    MCAPI PumpkinBlock(std::string const& nameId, int id, bool lit, bool carved);
 
     // NOLINTEND
 

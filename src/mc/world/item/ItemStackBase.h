@@ -118,7 +118,7 @@ public:
 
     // symbol:
     // ?executeEvent@ItemStackBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
-    MCAPI void executeEvent(std::string const& event, class RenderParams&);
+    MCAPI void executeEvent(std::string const& event, class RenderParams& params);
 
     // symbol: ?getArmorSlot@ItemStackBase@@QEBA?AW4ArmorSlot@@XZ
     MCAPI ::ArmorSlot getArmorSlot() const;
@@ -156,7 +156,7 @@ public:
     MCAPI class mce::Color getColor() const;
 
     // symbol: ?getComponent@ItemStackBase@@QEBAPEBVItemComponent@@AEBVHashedString@@@Z
-    MCAPI class ItemComponent const* getComponent(class HashedString const&) const;
+    MCAPI class ItemComponent const* getComponent(class HashedString const& id) const;
 
     // symbol: ?getComponentItem@ItemStackBase@@QEBAPEBVComponentItem@@XZ
     MCAPI class ComponentItem const* getComponentItem() const;
@@ -412,7 +412,7 @@ public:
 
     // symbol:
     // ?sendEventTriggered@ItemStackBase@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVRenderParams@@@Z
-    MCAPI bool sendEventTriggered(std::string const& event, class RenderParams const&);
+    MCAPI bool sendEventTriggered(std::string const& event, class RenderParams const& params);
 
     // symbol: ?serializeComponents@ItemStackBase@@QEBAXAEAVIDataOutput@@@Z
     MCAPI void serializeComponents(class IDataOutput& output) const;
@@ -541,7 +541,7 @@ public:
     MCAPI void init(class BlockLegacy const& block, int count);
 
     // symbol: ?init@ItemStackBase@@IEAAXHHH_N@Z
-    MCAPI void init(int, int count_, int aux_, bool);
+    MCAPI void init(int id, int count_, int aux_, bool);
 
     // symbol: ?init@ItemStackBase@@IEAAXAEBVItem@@HHPEBVCompoundTag@@_N@Z
     MCAPI void init(class Item const& item, int count, int auxValue, class CompoundTag const* userData, bool);
@@ -574,7 +574,7 @@ public:
     MCAPI void _setChargedItem(class ItemInstance const& item);
 
     // symbol: ?_setItem@ItemStackBase@@AEAA_NH_N@Z
-    MCAPI bool _setItem(int, bool);
+    MCAPI bool _setItem(int id, bool);
 
     // symbol: ?_updateCompareHashes@ItemStackBase@@AEAAXXZ
     MCAPI void _updateCompareHashes();

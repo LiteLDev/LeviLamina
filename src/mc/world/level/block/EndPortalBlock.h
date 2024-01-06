@@ -177,7 +177,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0EndPortalBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI EndPortalBlock(std::string const& nameId, int);
+    MCAPI EndPortalBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

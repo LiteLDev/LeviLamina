@@ -28,7 +28,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0BlockPos@@QEAA@AEBVSubChunkPos@@@Z
-    MCAPI BlockPos(class SubChunkPos const&);
+    MCAPI BlockPos(class SubChunkPos const& subChunkPos);
 
     // symbol: ??0BlockPos@@QEAA@AEBVChunkPos@@H@Z
     MCAPI BlockPos(class ChunkPos const& cp, int y);

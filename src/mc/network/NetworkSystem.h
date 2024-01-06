@@ -100,11 +100,11 @@ public:
     MCAPI void disconnect();
 
     // symbol: ?enableAsyncFlush@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@@Z
-    MCAPI void enableAsyncFlush(class NetworkIdentifier const&);
+    MCAPI void enableAsyncFlush(class NetworkIdentifier const& id);
 
     // symbol:
     // ?getCompressedPeerForUser@NetworkSystem@@QEAA?AV?$weak_ptr@VCompressedNetworkPeer@@@std@@AEBVNetworkIdentifier@@@Z
-    MCAPI std::weak_ptr<class CompressedNetworkPeer> getCompressedPeerForUser(class NetworkIdentifier const&);
+    MCAPI std::weak_ptr<class CompressedNetworkPeer> getCompressedPeerForUser(class NetworkIdentifier const& id);
 
     // symbol:
     // ?getConnections@NetworkSystem@@QEBAAEBV?$vector@V?$unique_ptr@VNetworkConnection@@U?$default_delete@VNetworkConnection@@@std@@@std@@V?$allocator@V?$unique_ptr@VNetworkConnection@@U?$default_delete@VNetworkConnection@@@std@@@std@@@2@@std@@XZ
@@ -112,13 +112,13 @@ public:
 
     // symbol:
     // ?getEncryptedPeerForUser@NetworkSystem@@QEAA?AV?$weak_ptr@VEncryptedNetworkPeer@@@std@@AEBVNetworkIdentifier@@@Z
-    MCAPI std::weak_ptr<class EncryptedNetworkPeer> getEncryptedPeerForUser(class NetworkIdentifier const&);
+    MCAPI std::weak_ptr<class EncryptedNetworkPeer> getEncryptedPeerForUser(class NetworkIdentifier const& id);
 
     // symbol: ?getNetworkStatistics@NetworkSystem@@QEBAPEBVNetworkStatistics@@XZ
     MCAPI class NetworkStatistics const* getNetworkStatistics() const;
 
     // symbol: ?getPeerForUser@NetworkSystem@@QEAAPEAVNetworkPeer@@AEBVNetworkIdentifier@@@Z
-    MCAPI class NetworkPeer* getPeerForUser(class NetworkIdentifier const&);
+    MCAPI class NetworkPeer* getPeerForUser(class NetworkIdentifier const& id);
 
     // symbol:
     // ?getRemoteConnector@NetworkSystem@@QEBA?AV?$not_null@V?$NonOwnerPointer@$$CBVRemoteConnector@@@Bedrock@@@gsl@@XZ
@@ -152,13 +152,13 @@ public:
     MCAPI void runEvents(bool networkIsCritical);
 
     // symbol: ?send@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@AEBVPacket@@W4SubClientId@@@Z
-    MCAPI void send(class NetworkIdentifier const&, class Packet const& packet, ::SubClientId senderSubId);
+    MCAPI void send(class NetworkIdentifier const& id, class Packet const& packet, ::SubClientId senderSubId);
 
     // symbol: ?setClientUpdateAndRenderThrottle@NetworkSystem@@QEAAX_NHM@Z
     MCAPI void setClientUpdateAndRenderThrottle(bool enabled, int threshold, float scalar);
 
     // symbol: ?setCloseConnection@NetworkSystem@@QEAAXAEBVNetworkIdentifier@@@Z
-    MCAPI void setCloseConnection(class NetworkIdentifier const&);
+    MCAPI void setCloseConnection(class NetworkIdentifier const& id);
 
     // symbol: ?unregisterClientOrServerInstance@NetworkSystem@@QEAAXAEBW4SubClientId@@@Z
     MCAPI void unregisterClientOrServerInstance(::SubClientId const& subID);
@@ -184,7 +184,7 @@ public:
     // private:
     // NOLINTBEGIN
     // symbol: ?_getConnectionFromId@NetworkSystem@@AEBAPEAVNetworkConnection@@AEBVNetworkIdentifier@@@Z
-    MCAPI class NetworkConnection* _getConnectionFromId(class NetworkIdentifier const&) const;
+    MCAPI class NetworkConnection* _getConnectionFromId(class NetworkIdentifier const& id) const;
 
     // symbol:
     // ?_handlePacketViolation@NetworkSystem@@AEAAXAEBU?$ErrorInfo@Verror_code@std@@@Bedrock@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@AEAVNetworkConnection@@W4SubClientId@@@Z
@@ -199,7 +199,7 @@ public:
 
     // symbol:
     // ?_sendInternal@NetworkSystem@@AEAAXAEBVNetworkIdentifier@@AEBVPacket@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI void _sendInternal(class NetworkIdentifier const&, class Packet const& packet, std::string const& data);
+    MCAPI void _sendInternal(class NetworkIdentifier const& id, class Packet const& packet, std::string const& data);
 
     // symbol:
     // ?_sortAndPacketizeEvents@NetworkSystem@@AEAA_NAEAVNetworkConnection@@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z

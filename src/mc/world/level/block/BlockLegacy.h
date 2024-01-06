@@ -871,7 +871,7 @@ public:
     MCVAPI bool waterSpreadCausesSpawn() const;
 
     // symbol: ??0BlockLegacy@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI BlockLegacy(std::string const& nameId, int, class Material const& material);
+    MCAPI BlockLegacy(std::string const& nameId, int id, class Material const& material);
 
     // symbol: ?_isDataDrivingVanillaBlocksAndItems@BlockLegacy@@QEBA_NXZ
     MCAPI bool _isDataDrivingVanillaBlocksAndItems() const;
@@ -1126,7 +1126,7 @@ public:
     MCAPI class BlockLegacy& setMinRequiredBaseGameVersion(class BaseGameVersion const& baseGameVersion);
 
     // symbol: ?setNameId@BlockLegacy@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class BlockLegacy& setNameId(std::string const&);
+    MCAPI class BlockLegacy& setNameId(std::string const& id);
 
     // symbol:
     // ?setOnlyPermutationandDefaultState@BlockLegacy@@QEAAXV?$unique_ptr@VBlock@@U?$default_delete@VBlock@@@std@@@std@@@Z

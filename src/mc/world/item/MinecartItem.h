@@ -89,7 +89,7 @@ public:
 
     // symbol:
     // ??0MinecartItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4MinecartType@@@Z
-    MCAPI MinecartItem(std::string const& name, int, ::MinecartType type);
+    MCAPI MinecartItem(std::string const& name, int id, ::MinecartType type);
 
     // NOLINTEND
 };

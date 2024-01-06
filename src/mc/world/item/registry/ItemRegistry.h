@@ -113,10 +113,10 @@ public:
           getComplexAliasSplitNames(class HashedString const&) const;
 
     // symbol: ?getItem@ItemRegistry@@AEAA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
-    MCAPI class WeakPtr<class Item> getItem(class HashedString const&);
+    MCAPI class WeakPtr<class Item> getItem(class HashedString const& id);
 
     // symbol: ?getItem@ItemRegistry@@AEAA?AV?$WeakPtr@VItem@@@@F@Z
-    MCAPI class WeakPtr<class Item> getItem(short);
+    MCAPI class WeakPtr<class Item> getItem(short id);
 
     // symbol: ?getNameFromAlias@ItemRegistry@@AEBA?AU?$pair@VHashedString@@H@std@@AEBVHashedString@@H@Z
     MCAPI std::pair<class HashedString, int> getNameFromAlias(class HashedString const& name, int aux) const;
@@ -170,7 +170,7 @@ public:
     MCAPI void registerItem(class SharedPtr<class Item> item);
 
     // symbol: ?registerLegacyID@ItemRegistry@@AEAAXAEBVHashedString@@F@Z
-    MCAPI void registerLegacyID(class HashedString const& name, short);
+    MCAPI void registerLegacyID(class HashedString const& name, short id);
 
     // symbol: ?registerLegacyMapping@ItemRegistry@@AEAAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
     MCAPI void

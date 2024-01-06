@@ -49,13 +49,13 @@ public:
     // symbol:
     // ?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z
     MCAPI class Mob* spawnMob(
-        class BlockSource& region,
-        struct ActorDefinitionIdentifier const&,
-        class Actor*      spawner,
-        class Vec3 const& pos,
-        bool              naturalSpawn = false,
-        bool              surface      = true,
-        bool              fromSpawner  = false
+        class BlockSource&                      region,
+        struct ActorDefinitionIdentifier const& id,
+        class Actor*                            spawner,
+        class Vec3 const&                       pos,
+        bool                                    naturalSpawn = false,
+        bool                                    surface      = true,
+        bool                                    fromSpawner  = false
     );
 
     // symbol:
@@ -72,11 +72,11 @@ public:
     // symbol:
     // ?spawnProjectile@Spawner@@QEAAPEAVActor@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAV2@AEBVVec3@@3@Z
     MCAPI class Actor* spawnProjectile(
-        class BlockSource& region,
-        struct ActorDefinitionIdentifier const&,
-        class Actor*      spawner,
-        class Vec3 const& position,
-        class Vec3 const& direction
+        class BlockSource&                      region,
+        struct ActorDefinitionIdentifier const& id,
+        class Actor*                            spawner,
+        class Vec3 const&                       position,
+        class Vec3 const&                       direction
     );
 
     // symbol: ?tick@Spawner@@QEAAXAEAVBlockSource@@AEBVLevelChunk@@@Z
@@ -152,11 +152,11 @@ public:
     // symbol:
     // ?_spawnMobInCluster@Spawner@@AEAAXAEAVBlockSource@@UActorDefinitionIdentifier@@AEBVBlockPos@@AEBVSpawnConditions@@AEAV?$vector@PEAVMob@@V?$allocator@PEAVMob@@@std@@@std@@@Z
     MCAPI void _spawnMobInCluster(
-        class BlockSource& region,
-        struct ActorDefinitionIdentifier,
-        class BlockPos const&        pos,
-        class SpawnConditions const& conditions,
-        std::vector<class Mob*>&     spawnGroup
+        class BlockSource&               region,
+        struct ActorDefinitionIdentifier id,
+        class BlockPos const&            pos,
+        class SpawnConditions const&     conditions,
+        std::vector<class Mob*>&         spawnGroup
     );
 
     // symbol: ?_updateMobCounts@Spawner@@AEAAXAEBUActorDefinitionIdentifier@@AEBVSpawnConditions@@@Z

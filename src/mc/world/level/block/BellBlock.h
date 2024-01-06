@@ -183,7 +183,7 @@ public:
     MCVAPI bool isInteractiveBlock() const;
 
     // symbol: ??0BellBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BellBlock(std::string const& nameId, int);
+    MCAPI BellBlock(std::string const& nameId, int id);
 
     // symbol: ?hasValidAttachment@BellBlock@@QEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI bool hasValidAttachment(class Block const& block, class BlockSource& region, class BlockPos const& pos) const;

@@ -156,7 +156,7 @@ public:
     virtual bool doFireHurt(int amount);
 
     // vIndex: 83, symbol: ?handleEntityEvent@Mob@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int data);
+    virtual void handleEntityEvent(::ActorEvent id, int data);
 
     // vIndex: 88, symbol: ?getArmorMaterialTypeInSlot@Mob@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z
     virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::ArmorSlot slot) const;
@@ -578,7 +578,7 @@ public:
     MCAPI void setSurfaceMob(bool isSurfaceMob);
 
     // symbol: ?setTargetCaptain@Mob@@QEAAXUActorUniqueID@@@Z
-    MCAPI void setTargetCaptain(struct ActorUniqueID);
+    MCAPI void setTargetCaptain(struct ActorUniqueID id);
 
     // symbol: ?setYBodyRotation@Mob@@QEAAXM@Z
     MCAPI void setYBodyRotation(float rotation);

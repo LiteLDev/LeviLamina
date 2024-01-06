@@ -12,7 +12,7 @@ public:
 public:
     // NOLINTBEGIN
     // symbol: ??0LegacyPackIdVersion@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    MCAPI LegacyPackIdVersion(std::string const&, std::string const& version);
+    MCAPI LegacyPackIdVersion(std::string const& id, std::string const& version);
 
     // symbol: ?getUpgradedPackId@LegacyPackIdVersion@@QEBA?AUPackIdVersion@@XZ
     MCAPI struct PackIdVersion getUpgradedPackId() const;

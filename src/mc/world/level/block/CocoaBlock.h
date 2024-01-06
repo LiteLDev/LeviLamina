@@ -176,7 +176,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0CocoaBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CocoaBlock(std::string const& nameId, int);
+    MCAPI CocoaBlock(std::string const& nameId, int id);
 
     // symbol: ?isSupportedBy@CocoaBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isSupportedBy(class Block const& block);

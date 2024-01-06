@@ -110,7 +110,7 @@ public:
 
     // vIndex: 102, symbol:
     // ?setIconInfo@PotionItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item& setIconInfo(std::string const& name, int);
+    virtual class Item& setIconInfo(std::string const& name, int id);
 
     // vIndex: 103, symbol: ?getIconInfo@PotionItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const& itemStack, int, bool) const;
@@ -127,7 +127,7 @@ public:
     MCVAPI bool uniqueAuxValues() const;
 
     // symbol: ??0PotionItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PotionItem(std::string const& name, int);
+    MCAPI PotionItem(std::string const& name, int id);
 
     // symbol: ?applyEffect@PotionItem@@SAXPEAVThrownPotion@@AEBVItemStack@@@Z
     MCAPI static void applyEffect(class ThrownPotion* potion, class ItemStack const& slotItem);

@@ -41,7 +41,7 @@ public:
     virtual class ResourcePack* getResourcePackForPackId(struct PackIdVersion const& idAndVersion) const = 0;
 
     // vIndex: 3, symbol: ?getResourcePackByUUID@ResourcePackRepository@@UEBAPEAVResourcePack@@AEBVUUID@mce@@@Z
-    virtual class ResourcePack* getResourcePackByUUID(class mce::UUID const&) const = 0;
+    virtual class ResourcePack* getResourcePackByUUID(class mce::UUID const& id) const = 0;
 
     // vIndex: 4, symbol:
     // ?getResourcePackForPackIdOwned@ResourcePackRepository@@UEBAPEAVResourcePack@@AEBUPackIdVersion@@@Z

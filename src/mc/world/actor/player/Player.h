@@ -250,7 +250,7 @@ public:
     virtual void feed(int itemId);
 
     // vIndex: 83, symbol: ?handleEntityEvent@Player@@UEAAXW4ActorEvent@@H@Z
-    virtual void handleEntityEvent(::ActorEvent, int data);
+    virtual void handleEntityEvent(::ActorEvent id, int data);
 
     // vIndex: 85, symbol: ?getActorRendererId@Player@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& getActorRendererId() const;
@@ -578,7 +578,7 @@ public:
     virtual void addLevels(int levels);
 
     // vIndex: 254, symbol: ?setContainerData@ServerPlayer@@UEAAXAEAVIContainerManager@@HH@Z
-    virtual void setContainerData(class IContainerManager& menu, int, int value) = 0;
+    virtual void setContainerData(class IContainerManager& menu, int id, int value) = 0;
 
     // vIndex: 255, symbol: ?slotChanged@ServerPlayer@@UEAAXAEAVIContainerManager@@AEAVContainer@@HAEBVItemStack@@2_N@Z
     virtual void slotChanged(

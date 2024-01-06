@@ -155,7 +155,7 @@ public:
 
     // symbol:
     // ??0HangingSignBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NW4SignType@SignBlock@@@Z
-    MCAPI HangingSignBlock(std::string const& nameId, int, bool onGround, ::SignBlock::SignType signType);
+    MCAPI HangingSignBlock(std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
 
     // symbol: ?isDoubleChainHangingSign@HangingSignBlock@@SA_NAEBVBlock@@@Z
     MCAPI static bool isDoubleChainHangingSign(class Block const& block);

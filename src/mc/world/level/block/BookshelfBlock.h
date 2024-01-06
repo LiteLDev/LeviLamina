@@ -136,7 +136,7 @@ public:
     virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol: ??0BookshelfBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI BookshelfBlock(std::string const& nameId, int);
+    MCAPI BookshelfBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

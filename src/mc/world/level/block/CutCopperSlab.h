@@ -142,12 +142,12 @@ public:
     // symbol:
     // ??0CutCopperSlab@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVHashedString@@W4CopperType@@2@Z
     MCAPI
-    CutCopperSlab(std::string const& nameId, int, bool fullSize, class HashedString const& baseSlab, ::CopperType, class HashedString const&);
+    CutCopperSlab(std::string const& nameId, int id, bool fullSize, class HashedString const& baseSlab, ::CopperType, class HashedString const&);
 
     // symbol:
     // ??0CutCopperSlab@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_NAEBVHashedString@@W4CopperType@@222@Z
     MCAPI
-    CutCopperSlab(std::string const& nameId, int, bool fullSize, class HashedString const& baseSlab, ::CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
+    CutCopperSlab(std::string const& nameId, int id, bool fullSize, class HashedString const& baseSlab, ::CopperType, class HashedString const&, class HashedString const&, class HashedString const&);
 
     // NOLINTEND
 };

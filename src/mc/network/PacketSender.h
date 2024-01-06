@@ -35,7 +35,7 @@ public:
     virtual void sendToClient(class UserEntityIdentifierComponent const*, class Packet const& packet) = 0;
 
     // vIndex: 4, symbol: ?sendToClient@LoopbackPacketSender@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@W4SubClientId@@@Z
-    virtual void sendToClient(class NetworkIdentifier const&, class Packet const& packet, ::SubClientId subid) = 0;
+    virtual void sendToClient(class NetworkIdentifier const& id, class Packet const& packet, ::SubClientId subid) = 0;
 
     // vIndex: 5, symbol:
     // ?sendToClients@LoopbackPacketSender@@UEAAXAEBV?$vector@UNetworkIdentifierWithSubId@@V?$allocator@UNetworkIdentifierWithSubId@@@std@@@std@@AEBVPacket@@@Z
@@ -50,7 +50,7 @@ public:
     sendBroadcast(class NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, class Packet const& packet) = 0;
 
     // vIndex: 8, symbol: ?flush@LoopbackPacketSender@@UEAAXAEBVNetworkIdentifier@@$$QEAV?$function@$$A6AXXZ@std@@@Z
-    virtual void flush(class NetworkIdentifier const&, std::function<void(void)>&& callback) = 0;
+    virtual void flush(class NetworkIdentifier const& id, std::function<void(void)>&& callback) = 0;
 
     // NOLINTEND
 };

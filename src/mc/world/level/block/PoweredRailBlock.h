@@ -134,7 +134,7 @@ public:
     virtual void __unk_vfn_155();
 
     // symbol: ??0PoweredRailBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI PoweredRailBlock(std::string const& nameId, int);
+    MCAPI PoweredRailBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };

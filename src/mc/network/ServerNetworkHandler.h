@@ -391,7 +391,7 @@ public:
     // symbol:
     // ?disconnectClient@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@W4DisconnectFailReason@Connection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
     MCAPI void disconnectClient(
-        class NetworkIdentifier const&,
+        class NetworkIdentifier const&     id,
         ::Connection::DisconnectFailReason subId,
         std::string const&                 message,
         bool                               skipMessage

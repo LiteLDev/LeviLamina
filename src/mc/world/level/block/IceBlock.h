@@ -143,7 +143,7 @@ public:
     virtual int getResourceCount(class Randomize&, class Block const&, int) const;
 
     // symbol: ??0IceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI IceBlock(std::string const& nameId, int, bool packed);
+    MCAPI IceBlock(std::string const& nameId, int id, bool packed);
 
     // symbol: ?melt@IceBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI static void melt(class BlockSource& region, class BlockPos const& pos);

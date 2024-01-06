@@ -423,7 +423,7 @@ public:
     virtual bool canFreeze() const;
 
     // vIndex: 102, symbol: ?getLiquidAABB@Actor@@UEBA?AVAABB@@W4MaterialType@@@Z
-    virtual class AABB getLiquidAABB(::MaterialType) const;
+    virtual class AABB getLiquidAABB(::MaterialType liquidType) const;
 
     // vIndex: 103, symbol: ?handleInsidePortal@Actor@@UEAAXAEBVBlockPos@@@Z
     virtual void handleInsidePortal(class BlockPos const& portalPos);
@@ -490,7 +490,7 @@ public:
     virtual int getDeathTime() const;
 
     // vIndex: 124, symbol: ?canBeAffected@Actor@@UEBA_NI@Z
-    virtual bool canBeAffected(uint) const;
+    virtual bool canBeAffected(uint id) const;
 
     // vIndex: 125, symbol: ?canBeAffectedByArrow@Actor@@UEBA_NAEBVMobEffectInstance@@@Z
     virtual bool canBeAffectedByArrow(class MobEffectInstance const& effect) const;
@@ -2029,10 +2029,10 @@ public:
     MCAPI static class Vec2 getInterpolatedRotation(class Vec2 const&, class Vec2 const& rot, float a);
 
     // symbol: ?getLiquidAABB@Actor@@SA?AVAABB@@AEBV2@W4MaterialType@@@Z
-    MCAPI static class AABB getLiquidAABB(class AABB const& aabb, ::MaterialType);
+    MCAPI static class AABB getLiquidAABB(class AABB const& aabb, ::MaterialType liquidType);
 
     // symbol: ?getLiquidFlowStrength@Actor@@SAMW4MaterialType@@@Z
-    MCAPI static float getLiquidFlowStrength(::MaterialType);
+    MCAPI static float getLiquidFlowStrength(::MaterialType liquidType);
 
     // symbol: ?getStatusFlag@Actor@@SA_NAEBVSynchedActorData@@W4ActorFlags@@@Z
     MCAPI static bool getStatusFlag(class SynchedActorData const& data, ::ActorFlags flag);
@@ -2049,7 +2049,7 @@ public:
     // symbol:
     // ?isInLiquid@Actor@@SA_NW4MaterialType@@AEBVIConstBlockSource@@AEBVAABB@@AEBV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
     MCAPI static bool
-    isInLiquid(::MaterialType, class IConstBlockSource const& region, class AABB const&, std::vector<class AABB> const&);
+    isInLiquid(::MaterialType liquidType, class IConstBlockSource const& region, class AABB const&, std::vector<class AABB> const&);
 
     // symbol: ?isStanding@Actor@@SA_NAEBVEntityContext@@@Z
     MCAPI static bool isStanding(class EntityContext const&);

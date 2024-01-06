@@ -167,7 +167,7 @@ public:
     getEntityResourceItem(class Randomize& randomize, class BlockActor const& blockEntity, int bonusLootLevel) const;
 
     // symbol: ??0BannerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI BannerBlock(std::string const& nameId, int, bool onGround);
+    MCAPI BannerBlock(std::string const& nameId, int id, bool onGround);
 
     // symbol: ?EAST_AABB@BannerBlock@@2VAABB@@A
     MCAPI static class AABB EAST_AABB;

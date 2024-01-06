@@ -300,7 +300,7 @@ public:
 
     // symbol:
     // ?setEducationProductID@LevelSettings@@QEAAAEAV1@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class LevelSettings& setEducationProductID(std::string);
+    MCAPI class LevelSettings& setEducationProductID(std::string id);
 
     // symbol: ?setEmoteChatMuted@LevelSettings@@QEAAAEAV1@_N@Z
     MCAPI class LevelSettings& setEmoteChatMuted(bool val);

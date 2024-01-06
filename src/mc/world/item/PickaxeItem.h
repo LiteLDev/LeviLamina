@@ -85,7 +85,7 @@ public:
     virtual void __unk_vfn_99();
 
     // symbol: ??0PickaxeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z
-    MCAPI PickaxeItem(std::string const& name, int, class Item::Tier const& tier);
+    MCAPI PickaxeItem(std::string const& name, int id, class Item::Tier const& tier);
 
     // NOLINTEND
 

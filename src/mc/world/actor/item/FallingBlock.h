@@ -164,7 +164,7 @@ public:
     MCVAPI bool falling() const;
 
     // symbol: ??0FallingBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI FallingBlock(std::string const& nameId, int, class Material const& material);
+    MCAPI FallingBlock(std::string const& nameId, int id, class Material const& material);
 
     // symbol: ?triggerFallCheck@FallingBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI void triggerFallCheck(class BlockSource& region, class BlockPos const& pos) const;

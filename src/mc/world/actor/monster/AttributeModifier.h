@@ -37,7 +37,7 @@ public:
     // symbol:
     // ??0AttributeModifier@@QEAA@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MW4AttributeModifierOperation@@W4AttributeOperands@@_N@Z
     MCAPI AttributeModifier(
-        class mce::UUID,
+        class mce::UUID              id,
         std::string const&           name,
         float                        amount,
         ::AttributeModifierOperation operation,
@@ -48,7 +48,7 @@ public:
     // symbol:
     // ??0AttributeModifier@@QEAA@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MHH_N@Z
     MCAPI AttributeModifier(
-        class mce::UUID,
+        class mce::UUID    id,
         std::string const& name,
         float              amount,
         int                operation,

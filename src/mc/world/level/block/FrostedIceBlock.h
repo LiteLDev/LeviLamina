@@ -149,7 +149,7 @@ public:
     MCVAPI bool canBeSilkTouched() const;
 
     // symbol: ??0FrostedIceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI FrostedIceBlock(std::string const& nameId, int, bool packed);
+    MCAPI FrostedIceBlock(std::string const& nameId, int id, bool packed);
 
     // symbol: ?_slightlyMelt@FrostedIceBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@_N@Z
     MCAPI void

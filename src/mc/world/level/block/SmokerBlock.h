@@ -139,7 +139,7 @@ public:
     virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
 
     // symbol: ??0SmokerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
-    MCAPI SmokerBlock(std::string const& nameId, int, bool lit);
+    MCAPI SmokerBlock(std::string const& nameId, int id, bool lit);
 
     // NOLINTEND
 };

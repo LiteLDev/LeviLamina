@@ -189,7 +189,7 @@ public:
 
     // symbol:
     // ??0FlowerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@AEBVMaterial@@@Z
-    MCAPI FlowerBlock(std::string const& nameId, int, ::FlowerBlock::Type type, class Material const& material);
+    MCAPI FlowerBlock(std::string const& nameId, int id, ::FlowerBlock::Type type, class Material const& material);
 
     // NOLINTEND
 };

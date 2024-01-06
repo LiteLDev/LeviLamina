@@ -84,7 +84,7 @@ public:
 
     // vIndex: 102, symbol:
     // ?setIconInfo@BlockPlanterItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    virtual class Item& setIconInfo(std::string const& name, int);
+    virtual class Item& setIconInfo(std::string const& name, int id);
 
     // vIndex: 103, symbol: ?getIconInfo@BlockPlanterItem@@UEBA?AUResolvedItemIconInfo@@AEBVItemStackBase@@H_N@Z
     virtual struct ResolvedItemIconInfo
@@ -92,7 +92,7 @@ public:
 
     // symbol:
     // ??0BlockPlanterItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlock@@_N@Z
-    MCAPI BlockPlanterItem(std::string const& name, int, class Block const& block, bool useBlockDescription);
+    MCAPI BlockPlanterItem(std::string const& name, int id, class Block const& block, bool useBlockDescription);
 
     // NOLINTEND
 };

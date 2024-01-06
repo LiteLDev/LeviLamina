@@ -30,10 +30,10 @@ public:
     MCAPI std::string const& getName() const;
 
     // symbol: ?getPlayerScore@Objective@@QEBA?AUScoreInfo@@AEBUScoreboardId@@@Z
-    MCAPI struct ScoreInfo getPlayerScore(struct ScoreboardId const&) const;
+    MCAPI struct ScoreInfo getPlayerScore(struct ScoreboardId const& id) const;
 
     // symbol: ?getPlayerScoreRef@Objective@@QEAA_NAEBUScoreboardId@@AEAUScoreInfoRef@@@Z
-    MCAPI bool getPlayerScoreRef(struct ScoreboardId const&, struct ScoreInfoRef& scoreInfo);
+    MCAPI bool getPlayerScoreRef(struct ScoreboardId const& id, struct ScoreInfoRef& scoreInfo);
 
     // symbol: ?getPlayers@Objective@@QEBA?AV?$vector@UScoreboardId@@V?$allocator@UScoreboardId@@@std@@@std@@XZ
     MCAPI std::vector<struct ScoreboardId> getPlayers() const;
@@ -43,7 +43,7 @@ public:
     MCAPI std::unordered_map<struct ScoreboardId, int> const& getScores() const;
 
     // symbol: ?hasScore@Objective@@QEBA_NAEBUScoreboardId@@@Z
-    MCAPI bool hasScore(struct ScoreboardId const&) const;
+    MCAPI bool hasScore(struct ScoreboardId const& id) const;
 
     // symbol:
     // ?deserialize@Objective@@SA?AV?$unique_ptr@VObjective@@U?$default_delete@VObjective@@@std@@@std@@AEBVCompoundTag@@AEAVScoreboard@@@Z

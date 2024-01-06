@@ -176,7 +176,7 @@ public:
     virtual void checkAlive(class BlockSource& region, class BlockPos const& pos) const;
 
     // symbol: ??0CoralFanHang@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI CoralFanHang(std::string const& nameId, int);
+    MCAPI CoralFanHang(std::string const& nameId, int id);
 
     // symbol: ?hasSupport@CoralFanHang@@SA_NAEBVBlock@@E@Z
     MCAPI static bool hasSupport(class Block const&, uchar face);

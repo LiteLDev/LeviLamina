@@ -172,7 +172,7 @@ public:
     virtual class ItemInstance getResourceItem(class Randomize& randomize, class Block const&, int) const;
 
     // symbol: ??0TwistingVinesBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI TwistingVinesBlock(std::string const& nameId, int);
+    MCAPI TwistingVinesBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 

@@ -40,7 +40,7 @@ public:
     MCAPI BossComponent(class BossComponent&&);
 
     // symbol: ?addPlayerToParty@BossComponent@@QEAAXVUUID@mce@@H@Z
-    MCAPI void addPlayerToParty(class mce::UUID, int damage);
+    MCAPI void addPlayerToParty(class mce::UUID id, int damage);
 
     // symbol: ?broadcastBossEvent@BossComponent@@QEAAXAEAVActor@@W4BossEventUpdateType@@@Z
     MCAPI void broadcastBossEvent(class Actor& owner, ::BossEventUpdateType type);

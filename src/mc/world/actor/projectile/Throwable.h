@@ -117,7 +117,7 @@ public:
     MCAPI void shoot(class Vec3 const& dir, float pow, float uncertainty, class Vec3 const& baseSpeed);
 
     // symbol: ?spawnPlayerProjectile@Throwable@@SAPEAVActor@@AEBUActorDefinitionIdentifier@@AEAVPlayer@@@Z
-    MCAPI static class Actor* spawnPlayerProjectile(struct ActorDefinitionIdentifier const&, class Player& player);
+    MCAPI static class Actor* spawnPlayerProjectile(struct ActorDefinitionIdentifier const& id, class Player& player);
 
     // NOLINTEND
 };

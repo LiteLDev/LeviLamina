@@ -137,7 +137,7 @@ public:
 
     // symbol:
     // ??0LiquidBlockDynamic@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-    MCAPI LiquidBlockDynamic(std::string const& nameId, int, class Material const& material);
+    MCAPI LiquidBlockDynamic(std::string const& nameId, int id, class Material const& material);
 
     // symbol: ?getSpread@LiquidBlockDynamic@@QEBA?AV?$array@_N$03@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
     MCAPI std::array<bool, 4> getSpread(class BlockSource& region, class BlockPos const& pos) const;

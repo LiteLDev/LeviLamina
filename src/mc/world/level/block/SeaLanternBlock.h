@@ -133,7 +133,7 @@ public:
     virtual int getResourceCount(class Randomize& randomize, class Block const&, int) const;
 
     // symbol: ??0SeaLanternBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-    MCAPI SeaLanternBlock(std::string const& nameId, int);
+    MCAPI SeaLanternBlock(std::string const& nameId, int id);
 
     // NOLINTEND
 };
