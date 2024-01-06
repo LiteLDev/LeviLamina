@@ -8,7 +8,7 @@ public:
     // CommandBlockNameResult inner types define
     enum class Result : uchar {
         Unknown       = 0x0,
-        Succeess      = 0x1,
+        Success       = 0x1,
         NoBlockName   = 0x2,
         SetDataError  = 0x3,
         SetStateError = 0x4,
