@@ -6,7 +6,11 @@
 #include "ll/api/service/Bedrock.h"
 
 namespace ll::plugin {
-std::filesystem::path pluginsPath{u8"plugins/"};
+
+std::filesystem::path const& getPluginsRoot() {
+    static std::filesystem::path path = u8"plugins/";
+    return path;
+}
 
 struct Plugin::Impl {
     Manifest   manifest;
@@ -33,7 +37,7 @@ Plugin::SharedData&       Plugin::getSharedData() { return mImpl->sharedData; }
 
 std::filesystem::path Plugin::getPluginDir() const {
     static auto path = [&] {
-        auto dataPath = pluginsPath / mImpl->manifest.name;
+        auto dataPath = getPluginsRoot() / mImpl->manifest.name;
         if (!std::filesystem::exists(dataPath)) {
             std::error_code ec;
             std::filesystem::create_directories(dataPath, ec);

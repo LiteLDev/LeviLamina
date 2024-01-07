@@ -10,14 +10,11 @@
 #include "mc/common/wrapper/optional_ref.h"
 
 namespace ll::plugin {
-LLETAPI std::filesystem::path pluginsPath;
+
+LLAPI std::filesystem::path const& getPluginsRoot();
 
 class PluginManager;
 class Plugin {
-    friend PluginManager;
-
-    struct Impl;
-    std::unique_ptr<Impl> mImpl;
 
 public:
     enum class State {
@@ -27,30 +24,11 @@ public:
     using callback_t = bool(Plugin&);
     using CallbackFn = std::function<callback_t>;
 
-protected:
-    LLAPI void setState(State state) const;
+    using SharedData = UnorderedStringMap<std::any>;
 
-    LLNDAPI bool hasOnLoad();
-    LLNDAPI bool hasOnUnload();
-    LLNDAPI bool hasOnEnable();
-    LLNDAPI bool hasOnDisable();
-
-    LLAPI bool onLoad();
-    LLAPI bool onUnload();
-    LLAPI bool onEnable();
-    LLAPI bool onDisable();
-
-    LLAPI void onLoad(CallbackFn func);
-    LLAPI void onUnload(CallbackFn func);
-    LLAPI void onEnable(CallbackFn func);
-    LLAPI void onDisable(CallbackFn func);
-
-public:
     LLAPI explicit Plugin(Manifest manifest);
 
     LLAPI ~Plugin();
-
-    using SharedData = UnorderedStringMap<std::any>;
 
     LLNDAPI State getState() const;
 
@@ -68,10 +46,10 @@ public:
 
     LLNDAPI Logger& getLogger() const;
 
-    bool hasSharedData(std::string_view key) const { return getSharedData().contains(key); }
+    [[nodiscard]] bool hasSharedData(std::string_view key) const { return getSharedData().contains(key); }
 
     template <class T>
-    bool hasSharedData(std::string_view key) const {
+    [[nodiscard]] bool hasSharedData(std::string_view key) const {
         return getSharedData().contains(key);
     }
 
@@ -103,5 +81,29 @@ public:
             getSharedData().erase(it);
         }
     }
+
+protected:
+    LLAPI void setState(State state) const;
+
+    LLNDAPI bool hasOnLoad();
+    LLNDAPI bool hasOnUnload();
+    LLNDAPI bool hasOnEnable();
+    LLNDAPI bool hasOnDisable();
+
+    LLAPI bool onLoad();
+    LLAPI bool onUnload();
+    LLAPI bool onEnable();
+    LLAPI bool onDisable();
+
+    LLAPI void onLoad(CallbackFn func);
+    LLAPI void onUnload(CallbackFn func);
+    LLAPI void onEnable(CallbackFn func);
+    LLAPI void onDisable(CallbackFn func);
+
+private:
+    friend PluginManager;
+
+    struct Impl;
+    std::unique_ptr<Impl> mImpl;
 };
 } // namespace ll::plugin

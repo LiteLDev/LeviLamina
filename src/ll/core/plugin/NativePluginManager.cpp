@@ -12,7 +12,7 @@ bool NativePluginManager::load(Manifest manifest) {
     if (hasPlugin(manifest.name)) {
         return false;
     }
-    auto entry = pluginsPath / manifest.name / manifest.entry;
+    auto entry = getPluginsRoot() / manifest.name / manifest.entry;
     auto lib   = LoadLibrary(entry.c_str());
     if (!lib) {
         error_info::printException(error_info::getWinLastError());

@@ -1,7 +1,6 @@
 #include "ll/core/LeviLamina.h"
 
 #include <csignal>
-#include <iostream>
 #include <string>
 
 #include "ll/api/Logger.h"
@@ -9,8 +8,6 @@
 #include "ll/api/base/ErrorInfo.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
-#include "ll/api/utils/StringUtils.h"
-
 #include "ll/api/service/PlayerInfo.h"
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
@@ -197,7 +194,7 @@ void leviLaminaMain() {
 
     // Create Plugin Directory
     std::error_code ec;
-    fs::create_directories(plugin::pluginsPath, ec);
+    fs::create_directories(plugin::getPluginsRoot(), ec);
 
     i18n::load(u8"plugins/LeviLamina/lang");
 

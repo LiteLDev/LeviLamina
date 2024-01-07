@@ -72,7 +72,7 @@ void PluginRegistrar::registerPlugins() {
         return;
     }
 
-    for (auto& file : std::filesystem::directory_iterator(pluginsPath)) {
+    for (auto& file : std::filesystem::directory_iterator(getPluginsRoot())) {
         if (!file.is_directory()) {
             continue;
         }
