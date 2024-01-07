@@ -2,6 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/scores/ObjectiveCriteria.h"
+#include "mc/world/scores/ScoreboardId.h"
 
 class Objective {
 public:
