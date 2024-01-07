@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class IdentityDefinition;
+
 struct ScoreboardId {
 public:
-    int64                     mRawId;       // this+0x0
-    class IdentityDefinition* mIdentityDef; // this+0x8
+    int64               mRawId;       // this+0x0
+    IdentityDefinition* mIdentityDef; // this+0x8
 
     ScoreboardId& operator++() {
         ++mRawId;

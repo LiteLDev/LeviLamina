@@ -7,6 +7,7 @@
 #include "mc/world/scores/DisplayObjective.h"
 #include "mc/world/scores/IdentityDictionary.h"
 #include "mc/world/scores/ObjectiveCriteria.h"
+#include "mc/world/scores/ScoreboardId.h"
 #include "mc/world/scores/ScoreboardIdentityRef.h"
 
 // auto generated inclusion list
