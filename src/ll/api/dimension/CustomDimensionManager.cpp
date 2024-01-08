@@ -89,9 +89,6 @@ LL_TYPED_STATIC_HOOK(
     DimensionType const& dim
 ) {
     if (dim <= 2) return origin(dim);
-    for (auto& i : VanillaDimensions::$DimensionMap().mLeft) {
-        loggerMoreDimMag.debug("map: name->{}, id->{}", i.second, i.first.id);
-    }
     return VanillaDimensions::$DimensionMap().mLeft.at(dim);
 }
 

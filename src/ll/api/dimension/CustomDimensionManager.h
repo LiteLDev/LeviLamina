@@ -29,8 +29,12 @@ public:
     std::unordered_map<std::string, DimensionInfo> customDimensionMap;     // save all dimension info
     std::unordered_map<std::string, DimensionInfo> registeredDimensionMap; // save registry dimension info
 
+    /**
+     * @brief Add a custom dimension
+     * @return success add dimension id
+     */
     LLNDAPI AutomaticID<Dimension, int>
-            AddDimension(std::string_view dimensionName, uint seed, GeneratorType generatorType);
+    AddDimension(std::string_view dimensionName, uint seed, GeneratorType generatorType = GeneratorType::Overworld);
 };
 
 } // namespace ll::dimension
