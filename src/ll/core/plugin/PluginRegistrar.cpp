@@ -11,7 +11,6 @@
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
-
 namespace ll::plugin {
 using namespace i18n_literals;
 
@@ -19,8 +18,8 @@ struct PluginRegistrarEnableAll;
 struct PluginRegistrarDisableAll;
 
 struct PluginRegistrar::Impl {
-    std::recursive_mutex                         mutex;
-    DependencyGraph<std::string>                 deps;
+    std::recursive_mutex         mutex;
+    DependencyGraph<std::string> deps;
 };
 
 PluginRegistrar::PluginRegistrar() : impl(std::make_unique<Impl>()) {}

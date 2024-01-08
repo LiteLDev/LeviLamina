@@ -61,6 +61,14 @@ public:
         }
         return false;
     }
+    bool emplaceDependencies(T const& node, std::vector<T> const& dependencies) {
+        for (auto& dependency : dependencies) {
+            if (!emplaceDependency(node, dependency)) {
+                return false;
+            }
+        }
+        return true;
+    }
     bool eraseDependency(T const& node, T const& dependency) {
         if (dependency != node && data.contains(dependency)) {
             auto& deps = data.at(dependency);
