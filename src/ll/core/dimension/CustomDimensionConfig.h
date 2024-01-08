@@ -3,15 +3,10 @@
 #include <string>
 #include <unordered_map>
 
-#include "ll/api/Logger.h"
 #include "ll/api/base/StdInt.h"
 #include "mc/world/level/levelgen/GeneratorType.h"
 
-namespace CustomDimensionConfig {
-namespace {
-ll::Logger logger("CustomDimensionConfig");
-}
-
+namespace ll::dimension::CustomDimensionConfig {
 struct Config {
     struct dimensionInfo {
         int           id            = -1;
@@ -21,10 +16,9 @@ struct Config {
     int                                            version       = 1;
     std::unordered_map<std::string, dimensionInfo> dimensionList = {};
 };
-extern std::string dimensionConfigPath;
-extern Config      dimConfig;
+extern Config dimConfig;
 
 void setDimensionConfigPath();
 bool loadConfigFile();
 bool saveConfigFile();
-}; // namespace CustomDimensionConfig
+}; // namespace ll::dimension::CustomDimensionConfig

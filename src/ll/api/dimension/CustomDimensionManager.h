@@ -1,10 +1,12 @@
 #pragma once
 
-#include "ll/api/Logger.h"
-#include "mc/world/AutomaticID.h"
-#include "mc/world/level/levelgen/GeneratorType.h"
 #include <atomic>
 #include <mutex>
+
+#include "mc/world/AutomaticID.h"
+#include "mc/world/level/levelgen/GeneratorType.h"
+
+namespace ll::dimension {
 
 class FakeDimensionId;
 class CustomDimensionManager {
@@ -30,3 +32,5 @@ public:
     LLNDAPI AutomaticID<Dimension, int>
             AddDimension(std::string_view dimensionName, uint seed, GeneratorType generatorType);
 };
+
+} // namespace ll::dimension

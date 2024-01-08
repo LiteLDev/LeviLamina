@@ -1,20 +1,17 @@
 #pragma once
 
-#include "ll/api/Logger.h"
 #include "ll/api/dimension/CustomDimensionManager.h"
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/level/dimension/NetherBrightnessRamp.h"
 #include "mc/world/level/dimension/OverworldBrightnessRamp.h"
 #include "mc/world/level/levelgen/structure/StructureFeatureRegistry.h"
 
-namespace {
-ll::Logger loggerMoreDim("CustomDimension");
-}
-
 class BaseGameVersion;
 class Experiments;
 class ChunkSource;
 class LevelChunk;
+
+namespace ll::dimension {
 
 class CustomDimension : public Dimension {
     uint          seed;
@@ -38,3 +35,4 @@ public:
     std::unique_ptr<StructureFeatureRegistry>
     makeStructureFeatures(bool isLegacy, BaseGameVersion const& baseGameVersion, Experiments const& experiments);
 };
+} // namespace ll::dimension

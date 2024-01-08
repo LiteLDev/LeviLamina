@@ -1,11 +1,14 @@
 
 #include "CustomDimensionManager.h"
 
+#include "ll/api/Logger.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/core/dimension/CustomDimension.h"
+#include "ll/core/dimension/FakeDimensionId.h"
 #include "ll/core/dimension/CustomDimensionConfig.h"
 #include "ll/core/dimension/FakeDimensionId.h"
+
 #include "mc/math/Vec3.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/level/dimension/Dimension.h"
@@ -15,9 +18,10 @@
 
 class Scheduler;
 
-namespace {
-ll::Logger loggerMoreDimMag("CustomDimensionManager");
-}
+namespace ll::dimension {
+
+static ll::Logger loggerMoreDimMag("CustomDimensionManager");
+
 
 namespace CustomDimensionHookList {
 LL_TYPED_STATIC_HOOK(
@@ -98,7 +102,7 @@ LL_TYPED_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimension,
     return origin();
 };
 
-void hookAll() {
+static void hookAll() {
     VanillaDimensionsConverHook::hook();
     VanillaDimensionsFromSerializedIntHook::hook();
     VanillaDimensionsFromSerializedIntHookI::hook();
@@ -106,7 +110,7 @@ void hookAll() {
     VanillaDimensionsToStringHook::hook();
     DimensionGetWeakRefHook::hook();
 }
-void unhookAll() {
+static void unhookAll() {
     VanillaDimensionsConverHook::unhook();
     VanillaDimensionsFromSerializedIntHook::unhook();
     VanillaDimensionsFromSerializedIntHookI::unhook();
@@ -198,3 +202,4 @@ CustomDimensionManager::AddDimension(std::string_view dimensionName, uint seed, 
 
     return dimId;
 }
+} // namespace ll::dimension

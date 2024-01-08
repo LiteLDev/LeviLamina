@@ -4,6 +4,7 @@
 #include "ll/api/dimension/CustomDimensionManager.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
+
 #include "mc/certificates/Certificate.h"
 #include "mc/entity/systems/ServerPlayerMovementComponent.h"
 #include "mc/network/NetworkIdentifierWithSubId.h"
@@ -38,10 +39,9 @@
 // SubChunkPacket.java
 // SubChunkRequestPacket.java
 
-namespace {
-ll::Logger logger("FakeDimensionId");
+namespace ll::dimension {
 
-} // namespace
+static ll::Logger logger("FakeDimensionId");
 
 namespace CustomDimension::hooklist {
 
@@ -414,3 +414,4 @@ bool FakeDimensionId::teleportToCustomDimension(ServerPlayer* player, DimensionT
     }
     return true;
 }
+} // namespace ll::dimension

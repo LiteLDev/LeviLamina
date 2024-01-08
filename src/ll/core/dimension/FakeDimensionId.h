@@ -13,6 +13,8 @@
 
 class ServerPlayer;
 
+namespace ll::dimension {
+
 class FakeDimensionId {
     struct CustomDimensionIdSetting {
         bool                  needRemovePacket      = false;
@@ -36,3 +38,4 @@ public:
 
     bool teleportToCustomDimension(ServerPlayer* player, DimensionType dimensionType, Vec3& pos);
 };
+} // namespace ll::dimension

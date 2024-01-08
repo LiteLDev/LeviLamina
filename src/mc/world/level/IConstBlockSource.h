@@ -8,6 +8,10 @@
 class Material;
 class AABB;
 class GetCollisionShapeInterface;
+class BlockPos;
+class BlockActor;
+class Block;
+class Bounds;
 
 class IConstBlockSource {
 public:

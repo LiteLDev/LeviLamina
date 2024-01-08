@@ -1,7 +1,9 @@
 
 #include "CustomDimension.h"
 
+#include "ll/api/Logger.h"
 #include "ll/api/service/Bedrock.h"
+
 #include "mc/deps/core/mce/Color.h"
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/DimensionConversionData.h"
@@ -18,6 +20,9 @@
 #include "mc/world/level/levelgen/v1/OverworldGenerator2d.h"
 #include "mc/world/level/levelgen/v1/TheEndGenerator.h"
 
+namespace ll::dimension {
+
+static ll::Logger loggerMoreDim("CustomDimension");
 
 CustomDimension::CustomDimension(
     ILevel&                                ilevel,
@@ -158,3 +163,4 @@ std::unique_ptr<StructureFeatureRegistry> CustomDimension::makeStructureFeatures
         return OverworldDimension::makeStructureFeatures(seed, isLegacy, baseGameVersion, experiments);
     }
 };
+} // namespace ll::dimension

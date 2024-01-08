@@ -2,15 +2,18 @@
 #include "CustomDimensionConfig.h"
 
 #include "ll/api/Config.h"
+#include "ll/api/Logger.h"
 #include "ll/api/service/Bedrock.h"
+
 #include "mc/world/level/Level.h"
 #include "mc/world/level/LevelSeed64.h"
 #include "mc/world/level/storage/LevelData.h"
 
-namespace CustomDimensionConfig {
+namespace ll::dimension::CustomDimensionConfig {
 
-std::string dimensionConfigPath = R"(worlds\Bedrock level\dimension_config.json)";
-Config      dimConfig{};
+static ll::Logger logger("CustomDimensionConfig");
+std::string       dimensionConfigPath = R"(worlds\Bedrock level\dimension_config.json)";
+Config            dimConfig{};
 
 void setDimensionConfigPath() {
     auto levelName = ll::service::getLevel()->getLevelData().getLevelName();
@@ -37,4 +40,4 @@ bool saveConfigFile() {
     }
     return true;
 }
-} // namespace CustomDimensionConfig
+} // namespace ll::dimension::CustomDimensionConfig
