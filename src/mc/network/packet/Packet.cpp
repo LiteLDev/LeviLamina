@@ -29,7 +29,7 @@ void Packet::sendToClient(NetworkIdentifier const& id, SubClientId clientId) con
 }
 
 void Packet::sendToClient(NetworkIdentifierWithSubId const& identifierWithSubId) const {
-    sendToClient(identifierWithSubId.identifier, identifierWithSubId.subClientId);
+    sendToClient(identifierWithSubId.mIdentifier, identifierWithSubId.mSubClientId);
 }
 
 void Packet::sendToClients() {
