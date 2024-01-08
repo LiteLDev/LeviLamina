@@ -14,8 +14,6 @@ class PluginManagerRegistry {
     PluginManagerRegistry();
     ~PluginManagerRegistry();
 
-    std::shared_ptr<PluginManager> const& getSharedManager(std::string_view type);
-
     bool loadPlugin(Manifest manifest);
 
     bool unloadPlugin(std::string_view name);
@@ -32,6 +30,8 @@ public:
     LLNDAPI bool hasManager(std::string_view type);
 
     LLNDAPI std::weak_ptr<PluginManager> getManager(std::string_view type);
+
+    LLNDAPI std::weak_ptr<PluginManager> getManagerForPlugin(std::string_view name);
 
     LLNDAPI bool eraseManager(std::string_view type);
 

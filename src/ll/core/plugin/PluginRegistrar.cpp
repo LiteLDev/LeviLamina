@@ -1,21 +1,20 @@
 #include "ll/core/plugin/PluginRegistrar.h"
 
+#include <ranges>
+
 #include "ll/api/base/ErrorInfo.h"
+#include "ll/api/event/Emitter.h"
 #include "ll/api/io/FileUtils.h"
+#include "ll/api/memory/Hook.h"
 #include "ll/api/reflection/Deserialization.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/plugin/NativePluginManager.h"
 
-#include "ll/api/event/Emitter.h"
-#include "ll/api/memory/Hook.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 namespace ll::plugin {
 using namespace i18n_literals;
-
-struct PluginRegistrarEnableAll;
-struct PluginRegistrarDisableAll;
 
 struct PluginRegistrar::Impl {
     std::recursive_mutex         mutex;
@@ -215,13 +214,19 @@ void PluginRegistrar::registerPlugins() {
     }
     size_t loadedCount = sort.sorted.size() - loadErrored.size();
 
-    ll::memory::HookRegistrar<PluginRegistrarEnableAll>  r1;
-    ll::memory::HookRegistrar<PluginRegistrarDisableAll> r2;
+    static ll::memory::HookRegistrar<EnableAllPlugins>  r1;
+    static ll::memory::HookRegistrar<DisableAllPlugins> r2;
 
     ll::logger.info("ll.loader.loadMain.done"_tr(loadedCount));
 }
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    PluginRegistrarEnableAll,
+
+std::vector<std::string> PluginRegistrar::getSortedPluginNames() const {
+    std::lock_guard lock(impl->mutex);
+    return impl->deps.sort().sorted;
+}
+
+LL_TYPED_INSTANCE_HOOK(
+    PluginRegistrar::EnableAllPlugins,
     ll::memory::HookPriority::High,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,
@@ -230,26 +235,34 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
     origin(ins);
     try {
-        PluginManagerRegistry::getInstance().forEachManager([&](std::string_view, PluginManager& manager) {
-            manager.enableAll();
-            return true;
-        });
+        auto& registry = PluginManagerRegistry::getInstance();
+        for (auto& name : PluginRegistrar::getInstance().getSortedPluginNames()) {
+            try {
+                registry.enablePlugin(name);
+            } catch (...) {
+                error_info::printCurrentException();
+            }
+        }
     } catch (...) {
         error_info::printCurrentException();
     }
 }
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    PluginRegistrarDisableAll,
+LL_TYPED_INSTANCE_HOOK(
+    PluginRegistrar::DisableAllPlugins,
     HookPriority::Low,
     ServerInstance,
     &ServerInstance::leaveGameSync,
     void
 ) {
     try {
-        PluginManagerRegistry::getInstance().forEachManager([&](std::string_view, PluginManager& manager) {
-            manager.disableAll();
-            return true;
-        });
+        auto& registry = PluginManagerRegistry::getInstance();
+        for (auto& name : std::ranges::reverse_view(PluginRegistrar::getInstance().getSortedPluginNames())) {
+            try {
+                registry.disablePlugin(name);
+            } catch (...) {
+                error_info::printCurrentException();
+            }
+        }
     } catch (...) {
         error_info::printCurrentException();
     }

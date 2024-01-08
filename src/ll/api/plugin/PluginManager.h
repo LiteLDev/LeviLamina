@@ -45,12 +45,6 @@ public:
 
     LLNDAPI size_t getPluginCount();
 
-    LLNDAPI std::vector<std::string> getPluginNames();
-
     LLAPI void forEachPlugin(std::function<bool(std::string_view name, Plugin&)> const& fn);
-
-    LLAPI size_t unloadAll();
-    LLAPI size_t enableAll();
-    LLAPI size_t disableAll();
 };
 } // namespace ll::plugin
