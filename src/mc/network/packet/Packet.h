@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/enums/Compressibility.h"
 #include "mc/network/IPacketHandlerDispatcher.h"
+#include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/network/NetworkPeer.h"
 #include "mc/resources/PacketPriority.h"
 
@@ -13,6 +14,9 @@
 
 class BinaryStream;
 class ReadOnlyBinaryStream;
+class Player;
+class Actor;
+class BlockPos;
 
 class Packet {
 public:
@@ -41,15 +45,15 @@ public:
      *
      * @param player The server player to send the packet to.
      */
-    LLAPI void sendTo(class Player const&);
+    LLAPI void sendTo(Player const& player);
 
     /**
      * Send the packet to all relevant players in a 2D plane at a position in a given dimension.
      * @param pos The position to send the packet to.
-     * @param type The type of dimension to send the packet in.
+     * @param dimId The type of dimension to send the packet in.
      * @param except exclude this player.
      */
-    LLAPI void sendTo(class BlockPos const&, DimensionType, optional_ref<class Player const>) const;
+    LLAPI void sendTo(BlockPos const& pos, DimensionType dimId, optional_ref<Player const> except) const;
 
     /**
      * Send the packet to all relevant players within a specific actor.
@@ -57,7 +61,7 @@ public:
      * @param actor The actor to send the packet to.
      * @param except exclude this player.
      */
-    LLAPI void sendTo(class Actor const&, optional_ref<class Player const>) const;
+    LLAPI void sendTo(Actor const& actor, optional_ref<Player const> except) const;
 
     /**
      * Send the packet to a specific client identified by network identifier and sub-client ID.
@@ -65,7 +69,9 @@ public:
      * @param id The network identifier of the client to send the packet to.
      * @param clientId The sub-client ID of the client to send the packet to.
      */
-    LLAPI void sendToClient(class NetworkIdentifier const&, ::SubClientId) const;
+    LLAPI void sendToClient(NetworkIdentifier const& identifier, ::SubClientId clientId) const;
+
+    LLAPI void sendToClient(NetworkIdentifierWithSubId const& identifierWithSubId) const;
 
     /**
      * Send the packet to all clients connected to the server.

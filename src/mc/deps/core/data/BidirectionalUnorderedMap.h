@@ -31,8 +31,8 @@ public:
         mLeft.emplace(a2, a1);
     }
     void set(T0 const& a1, T1 const& a2) {
-        mRight[a1] = a2;
-        mLeft[a2]  = a1;
+        mRight.insert_or_assign(a1, a2);
+        mLeft.insert_or_assign(a2, a1);
     }
     void eraser(T0 const& a) {
         if (!mRight.contains(a)) {

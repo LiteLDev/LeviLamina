@@ -95,8 +95,8 @@ class HitResult Actor::traceRay(
             tMax,
             origin,
             getAABB(),
-            const_cast<Actor*>(this),
-            hasCategory(ActorCategory::Player) ? (Player*)(this) : nullptr,
+            (Actor*)(this),
+            (Player*)(this),
             resDistance,
             resActor,
             resPos
@@ -143,10 +143,7 @@ float Actor::quickEvalMolangScript(std::string const& expression) {
 
 std::unique_ptr<CompoundTag> Actor::save() const {
     auto res = std::make_unique<CompoundTag>();
-
-    bool success = save(*res);
-
-    if (success) {
+    if (save(*res)) {
         return res;
     }
     return nullptr;

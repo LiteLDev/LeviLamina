@@ -44,10 +44,7 @@ void BlockActor::refresh(optional_ref<class BlockSource> blockSource) {
 
 std::unique_ptr<class CompoundTag> BlockActor::save() const {
     auto res = std::make_unique<CompoundTag>();
-
-    bool success = save(*res);
-
-    if (success) {
+    if (save(*res)) {
         return res;
     }
     return nullptr;
@@ -57,7 +54,7 @@ void BlockActor::load(class CompoundTag const& nbt, optional_ref<class BlockSour
     if (!ll::service::getLevel()) {
         return;
     }
-    load(*ll::service::getLevel(), nbt, defaultDataLoadHelper);
+    load(ll::service::getLevel(), nbt, defaultDataLoadHelper);
     refresh(blockSource);
 }
 
@@ -65,7 +62,7 @@ std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt) {
     if (!ll::service::getLevel()) {
         return nullptr;
     }
-    return loadStatic(*ll::service::getLevel(), nbt, defaultDataLoadHelper);
+    return loadStatic(ll::service::getLevel(), nbt, defaultDataLoadHelper);
 }
 
 std::shared_ptr<BlockActor> BlockActor::create(class CompoundTag const& nbt, class BlockPos const& pos) {

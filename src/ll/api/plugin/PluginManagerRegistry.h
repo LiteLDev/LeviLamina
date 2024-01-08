@@ -14,15 +14,13 @@ class PluginManagerRegistry {
     PluginManagerRegistry();
     ~PluginManagerRegistry();
 
-    std::shared_ptr<PluginManager> const& getSharedManager(std::string_view type);
-
     bool loadPlugin(Manifest manifest);
 
-    bool unloadPlugin(std::string_view type, std::string_view name);
+    bool unloadPlugin(std::string_view name);
 
-    bool enablePlugin(std::string_view type, std::string_view name);
+    bool enablePlugin(std::string_view name);
 
-    bool disablePlugin(std::string_view type, std::string_view name);
+    bool disablePlugin(std::string_view name);
 
 public:
     LLNDAPI static PluginManagerRegistry& getInstance();
@@ -33,6 +31,8 @@ public:
 
     LLNDAPI std::weak_ptr<PluginManager> getManager(std::string_view type);
 
+    LLNDAPI std::weak_ptr<PluginManager> getManagerForPlugin(std::string_view name);
+
     LLNDAPI bool eraseManager(std::string_view type);
 
     LLAPI void forEachManager(std::function<bool(std::string_view type, PluginManager&)> const& fn);
@@ -40,8 +40,8 @@ public:
     LLAPI void
     forEachPluginWithType(std::function<bool(std::string_view type, std::string_view name, Plugin&)> const& fn);
 
-    LLNDAPI bool hasPlugin(std::string_view name, std::string_view type = "");
+    LLNDAPI bool hasPlugin(std::string_view name);
 
-    LLNDAPI std::weak_ptr<Plugin> getPlugin(std::string_view name, std::string_view type = "");
+    LLNDAPI std::weak_ptr<Plugin> getPlugin(std::string_view name);
 };
 } // namespace ll::plugin

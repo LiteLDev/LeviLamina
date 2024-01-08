@@ -6,6 +6,6 @@
 
 struct NetworkIdentifierWithSubId {
 public:
-    NetworkIdentifier id{};          // this+0x0
-    SubClientId       subClientId{}; // this+0xA0
+    NetworkIdentifier mIdentifier{};  // this+0x0
+    SubClientId       mSubClientId{}; // this+0xA0
 };

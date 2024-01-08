@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/BlockUpdateFlag.h"
+#include "mc/enums/BlockLayer.h"
 #include "mc/network/NetworkBlockPosition.h"
 
 // auto generated inclusion list
@@ -10,25 +12,10 @@
 
 class UpdateBlockPacket : public ::Packet {
 public:
-    enum class Layer : uint {
-        Standard = 0,
-        Extra    = 1,
-        Count    = 2,
-    };
-    enum class Flags : uchar {
-        None        = 0,
-        Neighbors   = 1 << 0,
-        Network     = 1 << 1,
-        NoGraphic   = 1 << 2,
-        Priority    = 1 << 3,
-        All         = Neighbors | Network, // default value in BDS
-        AllPriority = All | Priority,
-    };
-
     static const bool          SHARE_WITH_HANDLER = true; // constant
     class NetworkBlockPosition mPos;                      // this+0x30
-    Layer                      mLayer;                    // this+0x3C
-    Flags                      mUpdateFlags;              // this+0x40
+    BlockLayer                 mLayer;                    // this+0x3C
+    BlockUpdateFlag            mUpdateFlags;              // this+0x40
     uint                       mRuntimeId;                // this+0x44
 
 public:

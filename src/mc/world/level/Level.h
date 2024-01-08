@@ -51,19 +51,10 @@ class ServerLevel;
 
 class Level : public ILevel, public BlockSourceListener, public IWorldRegistriesProvider {
 public:
-    [[nodiscard]] inline std::string const& getLevelName() const { return getLevelData().getLevelName(); }
-    [[nodiscard]] inline std::string        getLevelPath() const { return "./worlds/" + getLevelName(); }
+    [[nodiscard]] std::string const& getLevelName() const { return getLevelData().getLevelName(); }
+    [[nodiscard]] std::string        getLevelPath() const { return "./worlds/" + getLevelName(); }
 
-    LLNDAPI ServerLevel& asServer();
-
-    [[nodiscard]] inline optional_ref<Dimension> getDimensionOptRef(DimensionType dimId) const {
-        return getDimension(dimId).get();
-    }
-
-
-    // LLAPI bool executeCommandAs(Player player, std::string const& cmd) const;
-    // LLAPI std::pair<bool, std::string> executeCommandEx(std::string const& cmd) const;
-    // LLAPI bool executeCommand(std::string const& cmd) const;
+    [[nodiscard]] ServerLevel& asServer() { return *reinterpret_cast<ServerLevel*>(this); }
 
     // prevent constructor by default
     Level& operator=(Level const&);
