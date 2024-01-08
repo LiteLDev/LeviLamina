@@ -3,103 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 template <typename T>
-class WeakStorageSharePtr {
-public:
-    enum class VariadicInit : int {
-        NonAmbiguous = 0,
-    };
-    enum class EmptyInit : int {
-        NoValue = 0,
-    };
-    std::weak_ptr<T> mHandle;
-
-    WeakStorageSharePtr() noexcept = default;
-
-    ~WeakStorageSharePtr() = default;
-
-    WeakStorageSharePtr(std::nullptr_t) noexcept {}
-
-    template <class Y>
-    WeakStorageSharePtr(std::shared_ptr<Y> const& ptr)
-        requires(std::convertible_to<Y*, T*>)
-    : mHandle(ptr) {}
-    template <class Y>
-    WeakStorageSharePtr(std::weak_ptr<Y> const& ptr)
-        requires(std::convertible_to<Y*, T*>)
-    : mHandle(ptr) {}
-    template <class Y>
-    WeakStorageSharePtr(std::weak_ptr<Y>&& ptr) noexcept
-        requires(std::convertible_to<Y*, T*>)
-    : mHandle(std::move(ptr)) {}
-    template <class Y>
-    WeakStorageSharePtr(WeakStorageSharePtr<Y> const& other)
-        requires(std::convertible_to<Y*, T*>)
-    : mHandle(other.mHandle) {}
-    template <class Y>
-    WeakStorageSharePtr(WeakStorageSharePtr<Y>&& other) noexcept
-        requires(std::convertible_to<Y*, T*>)
-    : mHandle(std::move(other.mHandle)) {}
-
-    template <class Y>
-    WeakStorageSharePtr& operator=(std::shared_ptr<Y> const& other)
-        requires(std::convertible_to<Y*, T*>)
-    {
-        mHandle = other;
-        return *this;
-    }
-
-    template <class Y>
-    WeakStorageSharePtr& operator=(std::weak_ptr<Y> const& other)
-        requires(std::convertible_to<Y*, T*>)
-    {
-        mHandle = other;
-        return *this;
-    }
-
-    template <class Y>
-    WeakStorageSharePtr& operator=(std::weak_ptr<Y>&& other) noexcept
-        requires(std::convertible_to<Y*, T*>)
-    {
-        mHandle = std::move(other);
-        return *this;
-    }
-
-    template <class Y>
-    WeakStorageSharePtr& operator=(WeakStorageSharePtr<Y> const& other)
-        requires(std::convertible_to<Y*, T*>)
-    {
-        if (this != &other) {
-            mHandle = other.mHandle;
-        }
-        return *this;
-    }
-
-    template <class Y>
-    WeakStorageSharePtr& operator=(WeakStorageSharePtr<Y>&& other) noexcept
-        requires(std::convertible_to<Y*, T*>)
-    {
-        if (this != &other) {
-            mHandle = std::move(other.mHandle);
-        }
-        return *this;
-    }
-
-    void reset() { mHandle.reset(); }
-
-    bool expired() const { return mHandle.expired(); }
-
-    T* get() const {
-        auto sp = mHandle.lock();
-        if (!sp) {
-            return nullptr;
-        }
-        return sp.get();
-    }
-
-    T* operator->() const { return get(); }
-};
-
-template <typename T>
 class OwnerStorageSharePtr {
 public:
     enum class VariadicInit : int {
@@ -110,31 +13,31 @@ public:
     };
     std::shared_ptr<T> mHandle;
 
-    OwnerStorageSharePtr() noexcept = default;
+    constexpr OwnerStorageSharePtr() noexcept = default;
 
-    ~OwnerStorageSharePtr() = default;
+    constexpr ~OwnerStorageSharePtr() = default;
 
-    OwnerStorageSharePtr(std::nullptr_t) noexcept {}
+    constexpr OwnerStorageSharePtr(std::nullptr_t) noexcept {}
 
     template <class Y>
-    OwnerStorageSharePtr(std::shared_ptr<Y> const& ptr)
+    constexpr OwnerStorageSharePtr(std::shared_ptr<Y> const& ptr)
         requires(std::convertible_to<Y*, T*>)
     : mHandle(ptr) {}
     template <class Y>
-    OwnerStorageSharePtr(std::shared_ptr<Y>&& ptr) noexcept
+    constexpr OwnerStorageSharePtr(std::shared_ptr<Y>&& ptr) noexcept
         requires(std::convertible_to<Y*, T*>)
     : mHandle(std::move(ptr)) {}
     template <class Y>
-    OwnerStorageSharePtr(OwnerStorageSharePtr<Y> const& other)
+    constexpr OwnerStorageSharePtr(OwnerStorageSharePtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     : mHandle(other.mHandle) {}
     template <class Y>
-    OwnerStorageSharePtr(OwnerStorageSharePtr<Y>&& other) noexcept
+    constexpr OwnerStorageSharePtr(OwnerStorageSharePtr<Y>&& other) noexcept
         requires(std::convertible_to<Y*, T*>)
     : mHandle(std::move(other.mHandle)) {}
 
     template <class Y>
-    OwnerStorageSharePtr& operator=(std::shared_ptr<Y> const& other)
+    constexpr OwnerStorageSharePtr& operator=(std::shared_ptr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
         mHandle = other;
@@ -142,7 +45,7 @@ public:
     }
 
     template <class Y>
-    OwnerStorageSharePtr& operator=(std::shared_ptr<Y>&& other) noexcept
+    constexpr OwnerStorageSharePtr& operator=(std::shared_ptr<Y>&& other) noexcept
         requires(std::convertible_to<Y*, T*>)
     {
         mHandle = std::move(other);
@@ -150,7 +53,7 @@ public:
     }
 
     template <class Y>
-    OwnerStorageSharePtr& operator=(OwnerStorageSharePtr<Y> const& other)
+    constexpr OwnerStorageSharePtr& operator=(OwnerStorageSharePtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
         if (this != &other) {
@@ -160,7 +63,7 @@ public:
     }
 
     template <class Y>
-    OwnerStorageSharePtr& operator=(OwnerStorageSharePtr<Y>&& other) noexcept
+    constexpr OwnerStorageSharePtr& operator=(OwnerStorageSharePtr<Y>&& other) noexcept
         requires(std::convertible_to<Y*, T*>)
     {
         if (this != &other) {
@@ -169,13 +72,15 @@ public:
         return *this;
     }
 
-    void reset() { mHandle.reset(); }
+    constexpr void reset() { mHandle.reset(); }
 
-    bool isNull() const { return !mHandle; }
+    constexpr operator bool() const { return mHandle != nullptr; } // NOLINT
 
-    T* get() const { return mHandle.get(); }
+    constexpr T* get() const { return mHandle.get(); }
 
-    T* operator->() const { return get(); }
+    constexpr T& operator*() const { return *get(); }
+
+    constexpr T* operator->() const { return get(); }
 };
 
 template <typename T>
@@ -183,31 +88,31 @@ class StackResultStorageSharePtr {
 public:
     std::shared_ptr<T> mHandle;
 
-    StackResultStorageSharePtr() noexcept = default;
+    constexpr StackResultStorageSharePtr() noexcept = default;
 
-    ~StackResultStorageSharePtr() = default;
+    constexpr ~StackResultStorageSharePtr() = default;
 
-    StackResultStorageSharePtr(std::nullptr_t) noexcept {}
+    constexpr StackResultStorageSharePtr(std::nullptr_t) noexcept {}
 
     template <class Y>
-    StackResultStorageSharePtr(std::shared_ptr<Y> const& ptr)
+    constexpr StackResultStorageSharePtr(std::shared_ptr<Y> const& ptr)
         requires(std::convertible_to<Y*, T*>)
     : mHandle(ptr) {}
     template <class Y>
-    StackResultStorageSharePtr(std::shared_ptr<Y>&& ptr) noexcept
+    constexpr StackResultStorageSharePtr(std::shared_ptr<Y>&& ptr) noexcept
         requires(std::convertible_to<Y*, T*>)
     : mHandle(std::move(ptr)) {}
     template <class Y>
-    StackResultStorageSharePtr(StackResultStorageSharePtr<Y> const& other)
+    constexpr StackResultStorageSharePtr(StackResultStorageSharePtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     : mHandle(other.mHandle) {}
     template <class Y>
-    StackResultStorageSharePtr(StackResultStorageSharePtr<Y>&& other) noexcept
+    constexpr StackResultStorageSharePtr(StackResultStorageSharePtr<Y>&& other) noexcept
         requires(std::convertible_to<Y*, T*>)
     : mHandle(std::move(other.mHandle)) {}
 
     template <class Y>
-    StackResultStorageSharePtr& operator=(std::shared_ptr<Y> const& other)
+    constexpr StackResultStorageSharePtr& operator=(std::shared_ptr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
         mHandle = other;
@@ -215,7 +120,7 @@ public:
     }
 
     template <class Y>
-    StackResultStorageSharePtr& operator=(std::shared_ptr<Y>&& other) noexcept
+    constexpr StackResultStorageSharePtr& operator=(std::shared_ptr<Y>&& other) noexcept
         requires(std::convertible_to<Y*, T*>)
     {
         mHandle = std::move(other);
@@ -223,7 +128,7 @@ public:
     }
 
     template <class Y>
-    StackResultStorageSharePtr& operator=(StackResultStorageSharePtr<Y> const& other)
+    constexpr StackResultStorageSharePtr& operator=(StackResultStorageSharePtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
         if (this != &other) {
@@ -233,7 +138,7 @@ public:
     }
 
     template <class Y>
-    StackResultStorageSharePtr& operator=(StackResultStorageSharePtr<Y>&& other) noexcept
+    constexpr StackResultStorageSharePtr& operator=(StackResultStorageSharePtr<Y>&& other) noexcept
         requires(std::convertible_to<Y*, T*>)
     {
         if (this != &other) {
@@ -242,31 +147,136 @@ public:
         return *this;
     }
 
-    void reset() { mHandle.reset(); }
+    constexpr void reset() { mHandle.reset(); }
 
-    bool isNull() const { return !mHandle; }
+    constexpr operator bool() const { return mHandle != nullptr; } // NOLINT
 
-    T* get() const { return mHandle.get(); }
+    constexpr T* get() const { return mHandle.get(); }
 
-    T* operator->() const { return get(); }
+    constexpr T& operator*() const { return *get(); }
+
+    constexpr T* operator->() const { return get(); }
+};
+
+template <typename T>
+class WeakStorageSharePtr {
+public:
+    enum class VariadicInit : int {
+        NonAmbiguous = 0,
+    };
+    enum class EmptyInit : int {
+        NoValue = 0,
+    };
+    std::weak_ptr<T> mHandle;
+
+    constexpr WeakStorageSharePtr() noexcept = default;
+
+    constexpr ~WeakStorageSharePtr() = default;
+
+    constexpr WeakStorageSharePtr(std::nullptr_t) noexcept {}
+
+    template <class Y>
+    constexpr WeakStorageSharePtr(std::shared_ptr<Y> const& ptr)
+        requires(std::convertible_to<Y*, T*>)
+    : mHandle(ptr) {}
+    template <class Y>
+    constexpr WeakStorageSharePtr(std::weak_ptr<Y> const& ptr)
+        requires(std::convertible_to<Y*, T*>)
+    : mHandle(ptr) {}
+    template <class Y>
+    constexpr WeakStorageSharePtr(std::weak_ptr<Y>&& ptr) noexcept
+        requires(std::convertible_to<Y*, T*>)
+    : mHandle(std::move(ptr)) {}
+    template <class Y>
+    constexpr WeakStorageSharePtr(WeakStorageSharePtr<Y> const& other)
+        requires(std::convertible_to<Y*, T*>)
+    : mHandle(other.mHandle) {}
+    template <class Y>
+    constexpr WeakStorageSharePtr(WeakStorageSharePtr<Y>&& other) noexcept
+        requires(std::convertible_to<Y*, T*>)
+    : mHandle(std::move(other.mHandle)) {}
+
+    template <class Y>
+    constexpr WeakStorageSharePtr& operator=(std::shared_ptr<Y> const& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
+        mHandle = other;
+        return *this;
+    }
+
+    template <class Y>
+    constexpr WeakStorageSharePtr& operator=(std::weak_ptr<Y> const& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
+        mHandle = other;
+        return *this;
+    }
+
+    template <class Y>
+    constexpr WeakStorageSharePtr& operator=(std::weak_ptr<Y>&& other) noexcept
+        requires(std::convertible_to<Y*, T*>)
+    {
+        mHandle = std::move(other);
+        return *this;
+    }
+
+    template <class Y>
+    constexpr WeakStorageSharePtr& operator=(WeakStorageSharePtr<Y> const& other)
+        requires(std::convertible_to<Y*, T*>)
+    {
+        if (this != &other) {
+            mHandle = other.mHandle;
+        }
+        return *this;
+    }
+
+    template <class Y>
+    constexpr WeakStorageSharePtr& operator=(WeakStorageSharePtr<Y>&& other) noexcept
+        requires(std::convertible_to<Y*, T*>)
+    {
+        if (this != &other) {
+            mHandle = std::move(other.mHandle);
+        }
+        return *this;
+    }
+
+    constexpr void reset() { mHandle.reset(); }
+
+    constexpr bool expired() const { return mHandle.expired(); }
+
+    constexpr StackResultStorageSharePtr<T> lock() const { return mHandle.lock(); }
+
+    constexpr T* get() const {
+        auto sp = mHandle.lock();
+        if (!sp) {
+            return nullptr;
+        }
+        return sp.get();
+    }
+
+    constexpr operator bool() const { return get() != nullptr; } // NOLINT
+
+    constexpr T& operator*() const { return *get(); }
+
+    constexpr T* operator->() const { return get(); }
 };
 
 template <typename T>
 class SharedCounter {
 public:
-    explicit SharedCounter(T* p = nullptr) : ptr(p), share_count(1), weak_count(0) {}
+    constexpr explicit SharedCounter(T* p = nullptr) : ptr(p), share_count(1), weak_count(0) {}
 
-    void addShareCount() { share_count++; }
+    constexpr void addShareCount() { share_count++; }
 
-    void addWeakCount() { weak_count++; }
+    constexpr void addWeakCount() { weak_count++; }
 
-    int getShareCount() const { return share_count.load(); }
+    constexpr int getShareCount() const { return share_count.load(); }
 
-    int getWeakCount() const { return weak_count.load(); }
+    constexpr int getWeakCount() const { return weak_count.load(); }
 
-    T* get() const { return ptr; }
+    constexpr T* get() const { return ptr; }
 
-    void release() {
+    constexpr void release() {
         if (--share_count == 0) {
             delete ptr;
             ptr = nullptr;
@@ -276,7 +286,7 @@ public:
         }
     }
 
-    void releaseWeak() {
+    constexpr void releaseWeak() {
         if (--weak_count == 0 && share_count == 0) {
             delete this;
         }
