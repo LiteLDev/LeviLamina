@@ -43,7 +43,7 @@ namespace ll::dimension {
 
 static ll::Logger logger("FakeDimensionId");
 
-namespace CustomDimension::hooklist {
+namespace CustomDimensionHookList {
 
 namespace sendpackethook {
 LL_TYPED_INSTANCE_HOOK(
@@ -279,7 +279,7 @@ LL_TYPED_INSTANCE_HOOK(
     PlayerActionPacket&      packet
 ) {
     auto  player          = getServerPlayer(netId, packet.mClientSubId);
-    auto  uuid            = player->getUserEntityIdentifier().mClientUUID;
+    auto  uuid            = player->getUuid();
     auto& fakeDimensionId = CustomDimensionManager::getInstance().fakeDimensionIdInstance;
     if (packet.mAction == PlayerActionType::ChangeDimensionAck) {
         // 处理中转第二次传目的维度
@@ -291,7 +291,9 @@ LL_TYPED_INSTANCE_HOOK(
     }
     if (packet.mAction == PlayerActionType::Respawn) {
         // 处理复活回主世界
-        if (!fakeDimensionId->isNeedRemove(uuid)) return origin(netId, packet);
+        if (!fakeDimensionId->isNeedRemove(uuid)) {
+            return origin(netId, packet);
+        }
         fakeDimensionId->setNeedRemove(uuid, false);
         auto moveComp = player->getEntityContext().tryGetComponent<ServerPlayerMovementComponent>();
         if (moveComp) {
@@ -327,11 +329,11 @@ void DisableHook() {
 
     receivepackethook::ServerNetworkHandlerPlayerActionPacketHandler::unhook();
 }
-} // namespace CustomDimension::hooklist
+} // namespace CustomDimensionHookList
 
-FakeDimensionId::FakeDimensionId() { CustomDimension::hooklist::EnableHook(); };
+FakeDimensionId::FakeDimensionId() { CustomDimensionHookList::EnableHook(); };
 
-FakeDimensionId::~FakeDimensionId() { CustomDimension::hooklist::DisableHook(); }
+FakeDimensionId::~FakeDimensionId() { CustomDimensionHookList::DisableHook(); }
 
 Packet& FakeDimensionId::changePacketDimension(Packet& packet) {
     auto packId = packet.getId();

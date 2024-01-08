@@ -5,7 +5,6 @@
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/core/dimension/CustomDimension.h"
-#include "ll/core/dimension/FakeDimensionId.h"
 #include "ll/core/dimension/CustomDimensionConfig.h"
 #include "ll/core/dimension/FakeDimensionId.h"
 
@@ -187,8 +186,7 @@ CustomDimensionManager::AddDimension(std::string_view dimensionName, uint seed, 
     loggerMoreDimMag.debug("Add new dimension to DimensionMap");
     ll::memory::modify(VanillaDimensions::$DimensionMap(), [&](auto& dimMap) {
         loggerMoreDimMag.debug("Add new dimension: name->{}, id->{} to DimensionMap", dimName, dimId.id);
-        dimMap.mRight.insert(std::make_pair(dimName, dimId));
-        dimMap.mLeft.insert(std::make_pair(dimId, dimName));
+        dimMap.set(dimName, dimId);
     });
     // modify default Undefined dimension id
     ll::memory::modify(VanillaDimensions::Undefined, [&](auto& dimId) {
