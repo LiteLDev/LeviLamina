@@ -16,7 +16,7 @@ void ServerStartedEvent::serialize(CompoundTag& nbt) const {
 
 ServerInstance& ServerStartedEvent::server() const { return mInstance; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ServerStartedEventHook,
     ll::memory::HookPriority::Normal,
     ServerInstanceEventCoordinator,

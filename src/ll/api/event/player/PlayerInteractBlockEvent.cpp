@@ -13,7 +13,7 @@ void PlayerInteractBlockEvent::serialize(CompoundTag& nbt) const {
 
 BlockPos const& PlayerInteractBlockEvent::pos() const { return mPos; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerInteractBlockEventHook,
     HookPriority::Normal,
     VanillaServerGameplayEventListener,

@@ -40,14 +40,14 @@ bool PluginManagerRegistry::unloadPlugin(std::string_view name) {
 
     return false;
 }
-bool PluginManagerRegistry::enablePlugin(std::string_view name) {
+bool PluginManagerRegistry::enablePlugin(std::string_view name) const {
     std::lock_guard lock(impl->mutex);
     if (!hasPlugin(name)) {
         return false;
     }
     return getManagerForPlugin(name).lock()->enable(name);
 }
-bool PluginManagerRegistry::disablePlugin(std::string_view name) {
+bool PluginManagerRegistry::disablePlugin(std::string_view name) const {
     std::lock_guard lock(impl->mutex);
     if (!hasPlugin(name)) {
         return false;
@@ -61,18 +61,18 @@ bool PluginManagerRegistry::addManager(std::shared_ptr<PluginManager> const& man
     }
     return impl->managers.emplace(manager->getType(), manager).second;
 }
-bool PluginManagerRegistry::hasManager(std::string_view type) {
+bool PluginManagerRegistry::hasManager(std::string_view type) const {
     std::lock_guard lock(impl->mutex);
     return impl->managers.contains(type);
 }
-std::weak_ptr<PluginManager> PluginManagerRegistry::getManager(std::string_view type) {
+std::weak_ptr<PluginManager> PluginManagerRegistry::getManager(std::string_view type) const {
     std::lock_guard lock(impl->mutex);
     if (hasManager(type)) {
         return impl->managers.find(type)->second;
     }
     return {};
 }
-std::weak_ptr<PluginManager> PluginManagerRegistry::getManagerForPlugin(std::string_view name) {
+std::weak_ptr<PluginManager> PluginManagerRegistry::getManagerForPlugin(std::string_view name) const {
     std::lock_guard lock(impl->mutex);
     if (hasPlugin(name)) {
         return getManager(impl->loadedPlugins.find(name)->second);
@@ -88,7 +88,7 @@ bool PluginManagerRegistry::eraseManager(std::string_view type) {
     }
     return false;
 }
-void PluginManagerRegistry::forEachManager(std::function<bool(std::string_view type, PluginManager&)> const& fn) {
+void PluginManagerRegistry::forEachManager(std::function<bool(std::string_view type, PluginManager&)> const& fn) const {
     std::lock_guard lock(impl->mutex);
     for (auto& [type, manager] : impl->managers) {
         if (!fn(type, *manager)) {
@@ -98,7 +98,7 @@ void PluginManagerRegistry::forEachManager(std::function<bool(std::string_view t
 }
 void PluginManagerRegistry::forEachPluginWithType(
     std::function<bool(std::string_view type, std::string_view name, Plugin&)> const& fn
-) {
+) const {
     std::lock_guard lock(impl->mutex);
     bool            interrupted = false;
     forEachManager([&](std::string_view type, PluginManager& manager) {
@@ -111,11 +111,18 @@ void PluginManagerRegistry::forEachPluginWithType(
         return !interrupted;
     });
 }
-bool PluginManagerRegistry::hasPlugin(std::string_view name) {
+bool PluginManagerRegistry::hasPlugin(std::string_view name) const {
     std::lock_guard lock(impl->mutex);
     return impl->loadedPlugins.contains(name) && hasManager(impl->loadedPlugins.find(name)->second);
 }
-std::weak_ptr<Plugin> PluginManagerRegistry::getPlugin(std::string_view name) {
+std::string PluginManagerRegistry::getPluginType(std::string_view name) const {
+    std::lock_guard lock(impl->mutex);
+    if (hasPlugin(name)) {
+        return impl->loadedPlugins.find(name)->second;
+    }
+    return {};
+}
+std::weak_ptr<Plugin> PluginManagerRegistry::getPlugin(std::string_view name) const {
     std::lock_guard lock(impl->mutex);
     if (!hasPlugin(name)) {
         return {};

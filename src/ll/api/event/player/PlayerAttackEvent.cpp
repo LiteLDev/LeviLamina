@@ -16,7 +16,7 @@ Actor&                  PlayerAttackEvent::target() const { return mTarget; }
 ActorDamageCause const& PlayerAttackEvent::cause() const { return mCause; }
 
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerAttackEventHook,
     HookPriority::Normal,
     Player,

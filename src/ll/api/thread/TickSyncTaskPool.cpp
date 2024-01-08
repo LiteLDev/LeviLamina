@@ -12,7 +12,7 @@ std::mutex                                            poolListMutex;
 std::atomic_size_t                                    poolListSize{};
 std::vector<std::reference_wrapper<TickSyncTaskPool>> poolList;
 
-LL_TYPED_INSTANCE_HOOK(TickSyncTaskPoolWorker, HookPriority::Low, ServerLevel, &ServerLevel::_subTick, void) {
+LL_TYPE_INSTANCE_HOOK(TickSyncTaskPoolWorker, HookPriority::Low, ServerLevel, &ServerLevel::_subTick, void) {
     if (poolListSize > 0) {
         std::lock_guard lock(poolListMutex);
         for (auto& e : poolList) {

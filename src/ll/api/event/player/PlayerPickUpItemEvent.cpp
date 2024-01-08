@@ -23,7 +23,7 @@ ItemActor& PlayerPickUpItemEvent::itemActor() const { return mItemActor; }
 int&       PlayerPickUpItemEvent::orgCount() const { return mOrgCount; }
 int&       PlayerPickUpItemEvent::favoredSlot() const { return mFavoredSlot; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerPickUpItemEventHook,
     HookPriority::Normal,
     Player,

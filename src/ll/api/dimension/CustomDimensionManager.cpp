@@ -23,7 +23,7 @@ static ll::Logger loggerMoreDimMag("CustomDimensionManager");
 
 
 namespace CustomDimensionHookList {
-LL_TYPED_STATIC_HOOK(
+LL_TYPE_STATIC_HOOK(
     VanillaDimensionsConverHook,
     HookPriority::Normal,
     VanillaDimensions,
@@ -43,7 +43,7 @@ LL_TYPED_STATIC_HOOK(
 using BedResult_Dim = Bedrock::Result<DimensionType>;
 using BedResult_int = Bedrock::Result<int>&;
 
-LL_TYPED_STATIC_HOOK(
+LL_TYPE_STATIC_HOOK(
     VanillaDimensionsFromSerializedIntHook,
     HookPriority::Normal,
     VanillaDimensions,
@@ -56,7 +56,7 @@ LL_TYPED_STATIC_HOOK(
     return dim.value();
 };
 
-LL_TYPED_STATIC_HOOK(
+LL_TYPE_STATIC_HOOK(
     VanillaDimensionsFromSerializedIntHookI,
     HookPriority::Normal,
     VanillaDimensions,
@@ -68,7 +68,7 @@ LL_TYPED_STATIC_HOOK(
     return {dimId};
 }
 
-LL_TYPED_STATIC_HOOK(
+LL_TYPE_STATIC_HOOK(
     VanillaDimensionsToSerializedIntHook,
     HookPriority::Normal,
     VanillaDimensions,
@@ -80,7 +80,7 @@ LL_TYPED_STATIC_HOOK(
     return dim.id;
 }
 
-LL_TYPED_STATIC_HOOK(
+LL_TYPE_STATIC_HOOK(
     VanillaDimensionsToStringHook,
     HookPriority::Normal,
     VanillaDimensions,
@@ -93,27 +93,19 @@ LL_TYPED_STATIC_HOOK(
 }
 
 // registry dimensoin when in ll, must reload Dimension::getWeakRef
-LL_TYPED_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimension, &Dimension::getWeakRef, WeakRefT<SharePtrRefTraits<Dimension>>) {
+LL_TYPE_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimension, &Dimension::getWeakRef, WeakRefT<SharePtrRefTraits<Dimension>>) {
     if (getDimensionId() > 2 && getDimensionId() != VanillaDimensions::Undefined.id) return weak_from_this();
     return origin();
 };
 
-static void hookAll() {
-    VanillaDimensionsConverHook::hook();
-    VanillaDimensionsFromSerializedIntHook::hook();
-    VanillaDimensionsFromSerializedIntHookI::hook();
-    VanillaDimensionsToSerializedIntHook::hook();
-    VanillaDimensionsToStringHook::hook();
-    DimensionGetWeakRefHook::hook();
-}
-static void unhookAll() {
-    VanillaDimensionsConverHook::unhook();
-    VanillaDimensionsFromSerializedIntHook::unhook();
-    VanillaDimensionsFromSerializedIntHookI::unhook();
-    VanillaDimensionsToSerializedIntHook::unhook();
-    VanillaDimensionsToStringHook::unhook();
-    DimensionGetWeakRefHook::unhook();
-}
+using HookReg = memory::HookRegistrar<
+    VanillaDimensionsConverHook,
+    VanillaDimensionsFromSerializedIntHook,
+    VanillaDimensionsFromSerializedIntHookI,
+    VanillaDimensionsToSerializedIntHook,
+    VanillaDimensionsToStringHook,
+    DimensionGetWeakRefHook>;
+
 } // namespace CustomDimensionHookList
 
 CustomDimensionManager::CustomDimensionManager() : mNewDimensionId(3) {
@@ -126,11 +118,14 @@ CustomDimensionManager::CustomDimensionManager() : mNewDimensionId(3) {
             );
         }
         mNewDimensionId += static_cast<int>(customDimensionMap.size());
-        CustomDimensionHookList::hookAll();
+
+        CustomDimensionHookList::HookReg::hook();
+
+        fakeDimensionIdInstance = std::make_unique<FakeDimensionId>();
     }
 };
 
-CustomDimensionManager::~CustomDimensionManager() { CustomDimensionHookList::unhookAll(); }
+CustomDimensionManager::~CustomDimensionManager() { CustomDimensionHookList::HookReg::unhook(); }
 
 CustomDimensionManager& CustomDimensionManager::getInstance() {
     static CustomDimensionManager instance{};
@@ -190,11 +185,6 @@ CustomDimensionManager::addDimension(std::string_view dimensionName, uint seed, 
         dimId.id = mNewDimensionId;
         loggerMoreDimMag.debug("Set VanillaDimensions::Undefined to {}", dimId.id);
     });
-    if (!fakeDimensionIdInstance) {
-        fakeDimensionIdInstance = std::make_unique<FakeDimensionId>();
-    }
-    CustomDimensionHookList::hookAll();
-
     return dimId;
 }
 } // namespace ll::dimension

@@ -128,7 +128,7 @@ Packet& changePacketDimension(Packet& packet, int id, NetworkIdentifier const& n
 
 } // namespace
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     LoopbackPacketSendersendToClientHook1,
     HookPriority::Normal,
     LoopbackPacketSender,
@@ -143,7 +143,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     return origin(netId, tempP, subId);
 };
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     LoopbackPacketSendersendToClientHook2,
     HookPriority::Normal,
     LoopbackPacketSender,
@@ -156,7 +156,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     return origin(comp, tempP);
 };
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     LoopbackPacketSendersendToClientsHook,
     HookPriority::Normal,
     LoopbackPacketSender,
@@ -171,7 +171,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     return origin(subIds, tempP);
 };
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     ServerNetworkHandlerSubChunkRequestPacketHook,
     HookPriority::Normal,
     ServerNetworkHandler,

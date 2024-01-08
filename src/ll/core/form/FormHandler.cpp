@@ -83,7 +83,7 @@ bool handleFormPacket(Player& player, uint formId, std::string const& data) {
     return true;
 }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     FormResponseHandler,
     HookPriority::Highest,
     PacketHandlerDispatcherInstance<ModalFormResponsePacket>,

@@ -28,11 +28,11 @@ using namespace ll::memory;
 // Minecraft
 optional_ref<Minecraft> minecraft;
 
-LL_AUTO_TYPED_INSTANCE_HOOK(MinecraftInitHook, HookPriority::High, Minecraft, &Minecraft::initAsDedicatedServer, void) {
+LL_TYPE_INSTANCE_HOOK(MinecraftInit, HookPriority::High, Minecraft, &Minecraft::initAsDedicatedServer, void) {
     minecraft = this;
     origin();
 }
-LL_AUTO_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UEAA@XZ", void) {
+LL_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UEAA@XZ", void) {
     minecraft = nullptr;
     origin();
 }
@@ -40,7 +40,7 @@ LL_AUTO_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, "??1Minecraft@@UE
 // PropertiesSettings
 optional_ref<PropertiesSettings> propertiesSettings;
 
-LL_AUTO_INSTANCE_HOOK(
+LL_INSTANCE_HOOK(
     PropertiesSettingsConstructor,
     HookPriority::High,
     "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
@@ -49,7 +49,7 @@ LL_AUTO_INSTANCE_HOOK(
 ) {
     return propertiesSettings = origin(path);
 }
-LL_AUTO_INSTANCE_HOOK(PropertiesSettingsDestructor, HookPriority::High, "??1PropertiesSettings@@QEAA@XZ", void) {
+LL_INSTANCE_HOOK(PropertiesSettingsDestructor, HookPriority::High, "??1PropertiesSettings@@QEAA@XZ", void) {
     propertiesSettings = nullptr;
     origin();
 }
@@ -57,8 +57,8 @@ LL_AUTO_INSTANCE_HOOK(PropertiesSettingsDestructor, HookPriority::High, "??1Prop
 // ServerNetworkHandler
 optional_ref<ServerNetworkHandler> serverNetworkHandler;
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    ServerNetworkHandlerInitHook,
+LL_TYPE_INSTANCE_HOOK(
+    ServerNetworkHandlerInit,
     HookPriority::High,
     ServerNetworkHandler,
     &ServerNetworkHandler::allowIncomingConnections,
@@ -70,7 +70,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     unhook();
     origin(a1, a2);
 }
-LL_AUTO_INSTANCE_HOOK(ServerNetworkHandlerDestructor, HookPriority::High, "??1ServerNetworkHandler@@UEAA@XZ", void) {
+LL_INSTANCE_HOOK(ServerNetworkHandlerDestructor, HookPriority::High, "??1ServerNetworkHandler@@UEAA@XZ", void) {
     serverNetworkHandler = nullptr;
     origin();
 }
@@ -78,7 +78,7 @@ LL_AUTO_INSTANCE_HOOK(ServerNetworkHandlerDestructor, HookPriority::High, "??1Se
 // NetworkSystem
 optional_ref<NetworkSystem> networkSystem;
 
-LL_AUTO_INSTANCE_HOOK(
+LL_INSTANCE_HOOK(
     NetworkSystemConstructor,
     HookPriority::High,
     "??0NetworkSystem@@IEAA@$$QEAUDependencies@0@@Z",
@@ -87,7 +87,7 @@ LL_AUTO_INSTANCE_HOOK(
 ) {
     return networkSystem = origin(std::move(dependencies));
 }
-LL_AUTO_INSTANCE_HOOK(NetworkSystemDestructor, HookPriority::High, "??1NetworkSystem@@MEAA@XZ", void) {
+LL_INSTANCE_HOOK(NetworkSystemDestructor, HookPriority::High, "??1NetworkSystem@@MEAA@XZ", void) {
     networkSystem = nullptr;
     origin();
 }
@@ -95,8 +95,8 @@ LL_AUTO_INSTANCE_HOOK(NetworkSystemDestructor, HookPriority::High, "??1NetworkSy
 // Level
 optional_ref<Level> level;
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    ServerLevelInitHook,
+LL_TYPE_INSTANCE_HOOK(
+    ServerLevelInit,
     HookPriority::High,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerThreadStarted,
@@ -106,7 +106,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     level = ll::service::getMinecraft()->getLevel();
     origin(ins);
 }
-LL_AUTO_INSTANCE_HOOK(LevelDestructor, HookPriority::High, "??1Level@@UEAA@XZ", void) {
+LL_INSTANCE_HOOK(LevelDestructor, HookPriority::High, "??1Level@@UEAA@XZ", void) {
     level = nullptr;
     origin();
 }
@@ -114,12 +114,12 @@ LL_AUTO_INSTANCE_HOOK(LevelDestructor, HookPriority::High, "??1Level@@UEAA@XZ", 
 // RakNet::RakPeer
 optional_ref<RakNet::RakPeer> rakPeer;
 
-LL_AUTO_INSTANCE_HOOK(RakNetRakPeerConstructor, HookPriority::High, "??0RakPeer@RakNet@@QEAA@XZ", RakNet::RakPeer*) {
+LL_INSTANCE_HOOK(RakNetRakPeerConstructor, HookPriority::High, "??0RakPeer@RakNet@@QEAA@XZ", RakNet::RakPeer*) {
     unhook();
     return rakPeer = origin();
 }
 
-LL_AUTO_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::High, "??1RakPeer@RakNet@@UEAA@XZ", void) {
+LL_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::High, "??1RakPeer@RakNet@@UEAA@XZ", void) {
     if ((void*)this == (void*)ll::service::getRakPeer()) rakPeer = nullptr;
     origin();
 }
@@ -127,8 +127,8 @@ LL_AUTO_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::High, "??1RakPeer@R
 // ResourcePackRepository
 optional_ref<ResourcePackRepository> resourcePackRepository;
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
-    ResourcePackRepositoryInitHook,
+LL_TYPE_INSTANCE_HOOK(
+    ResourcePackRepositoryInit,
     HookPriority::High,
     ResourcePackRepository,
     &ResourcePackRepository::_initialize,
@@ -137,12 +137,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     resourcePackRepository = this;
     origin();
 }
-LL_AUTO_INSTANCE_HOOK(
-    ResourcePackRepositoryDestructor,
-    HookPriority::High,
-    "??1ResourcePackRepository@@QEAA@XZ",
-    void
-) {
+LL_INSTANCE_HOOK(ResourcePackRepositoryDestructor, HookPriority::High, "??1ResourcePackRepository@@QEAA@XZ", void) {
     resourcePackRepository = nullptr;
     origin();
 }
@@ -150,10 +145,10 @@ LL_AUTO_INSTANCE_HOOK(
 // CommandRegistry
 optional_ref<CommandRegistry> commandRegistry;
 
-LL_AUTO_TYPED_INSTANCE_HOOK(CommandRegistryConstructor, HookPriority::High, CommandRegistry, "??0CommandRegistry@@QEAA@XZ", CommandRegistry*) {
+LL_TYPE_INSTANCE_HOOK(CommandRegistryConstructor, HookPriority::High, CommandRegistry, "??0CommandRegistry@@QEAA@XZ", CommandRegistry*) {
     return commandRegistry = origin();
 }
-LL_AUTO_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, "??1CommandRegistry@@QEAA@XZ", void) {
+LL_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, "??1CommandRegistry@@QEAA@XZ", void) {
     commandRegistry = nullptr;
     origin();
 }
@@ -161,10 +156,10 @@ LL_AUTO_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, "??1Command
 // ServerInstance
 optional_ref<ServerInstance> serverInstance;
 
-LL_AUTO_TYPED_INSTANCE_HOOK(ServerInstanceConstructor, HookPriority::High, ServerInstance, "??0ServerInstance@@QEAA@AEAVIMinecraftApp@@AEBV?$not_null@V?$NonOwnerPointer@VServerInstanceEventCoordinator@@@Bedrock@@@gsl@@@Z", ServerInstance*) {
+LL_TYPE_INSTANCE_HOOK(ServerInstanceConstructor, HookPriority::High, ServerInstance, "??0ServerInstance@@QEAA@AEAVIMinecraftApp@@AEBV?$not_null@V?$NonOwnerPointer@VServerInstanceEventCoordinator@@@Bedrock@@@gsl@@@Z", ServerInstance*) {
     return serverInstance = origin();
 }
-LL_AUTO_INSTANCE_HOOK(ServerInstanceDestructor, HookPriority::High, "??1ServerInstance@@UEAA@XZ", void) {
+LL_INSTANCE_HOOK(ServerInstanceDestructor, HookPriority::High, "??1ServerInstance@@UEAA@XZ", void) {
     serverInstance = nullptr;
     origin();
 }
@@ -186,5 +181,27 @@ optional_ref<ResourcePackRepository> getResourcePackRepository() { return resour
 optional_ref<CommandRegistry> getCommandRegistry() { return commandRegistry; }
 
 optional_ref<ServerInstance> getServerInstance() { return serverInstance; }
+
+using HookReg = memory::HookRegistrar<
+    MinecraftInit,
+    MinecraftDestructor,
+    PropertiesSettingsConstructor,
+    PropertiesSettingsDestructor,
+    ServerNetworkHandlerInit,
+    ServerNetworkHandlerDestructor,
+    NetworkSystemConstructor,
+    NetworkSystemDestructor,
+    ServerLevelInit,
+    LevelDestructor,
+    RakNetRakPeerConstructor,
+    RakNetRakPeerDestructor,
+    ResourcePackRepositoryInit,
+    ResourcePackRepositoryDestructor,
+    CommandRegistryConstructor,
+    CommandRegistryDestructor,
+    ServerInstanceConstructor,
+    ServerInstanceDestructor>;
+
+static HookReg hookRegister;
 
 } // namespace ll::service::inline bedrock

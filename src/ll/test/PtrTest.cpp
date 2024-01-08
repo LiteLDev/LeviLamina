@@ -60,7 +60,7 @@ auto test() {
     // ll::logger.warn("mAllSystemsInfo size {} {}", systems.mAllSystemsInfo.size(), systems.mAllSystems.size());
 }
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     ServerStartedEventHook,
     ll::memory::HookPriority::Low,
     ServerInstanceEventCoordinator,
@@ -87,7 +87,7 @@ size_t printHello(size_t data, int a) {
 #pragma warning(push)
 #pragma warning(disable : 4723)
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     BlockDefinitionGroupRegisterBlocks,
     HookPriority::Normal,
     BlockDefinitionGroup,
@@ -170,7 +170,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 #pragma warning(pop)
 
 
-// LL_AUTO_TYPED_INSTANCE_HOOK(
+// LL_AUTO_TYPE_INSTANCE_HOOK(
 //     EStickHook,
 //     HookPriority::Normal,
 //     EntitySystems,

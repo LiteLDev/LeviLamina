@@ -214,8 +214,7 @@ void PluginRegistrar::registerPlugins() {
     }
     size_t loadedCount = sort.sorted.size() - loadErrored.size();
 
-    static ll::memory::HookRegistrar<EnableAllPlugins>  r1;
-    static ll::memory::HookRegistrar<DisableAllPlugins> r2;
+    static ll::memory::HookRegistrar<EnableAllPlugins, DisableAllPlugins> reg;
 
     ll::logger.info("ll.loader.loadMain.done"_tr(loadedCount));
 }
@@ -225,7 +224,7 @@ std::vector<std::string> PluginRegistrar::getSortedPluginNames() const {
     return impl->deps.sort().sorted;
 }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PluginRegistrar::EnableAllPlugins,
     ll::memory::HookPriority::High,
     ServerInstanceEventCoordinator,
@@ -235,10 +234,10 @@ LL_TYPED_INSTANCE_HOOK(
 ) {
     origin(ins);
     try {
-        auto& registry = PluginManagerRegistry::getInstance();
-        for (auto& name : PluginRegistrar::getInstance().getSortedPluginNames()) {
+        auto& registrar = PluginRegistrar::getInstance();
+        for (auto& name : registrar.getSortedPluginNames()) {
             try {
-                registry.enablePlugin(name);
+                registrar.enablePlugin(name);
             } catch (...) {
                 error_info::printCurrentException();
             }
@@ -247,7 +246,7 @@ LL_TYPED_INSTANCE_HOOK(
         error_info::printCurrentException();
     }
 }
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PluginRegistrar::DisableAllPlugins,
     HookPriority::Low,
     ServerInstance,
@@ -255,10 +254,10 @@ LL_TYPED_INSTANCE_HOOK(
     void
 ) {
     try {
-        auto& registry = PluginManagerRegistry::getInstance();
-        for (auto& name : std::ranges::reverse_view(PluginRegistrar::getInstance().getSortedPluginNames())) {
+        auto& registrar = PluginRegistrar::getInstance();
+        for (auto& name : std::ranges::reverse_view(registrar.getSortedPluginNames())) {
             try {
-                registry.disablePlugin(name);
+                registrar.disablePlugin(name);
             } catch (...) {
                 error_info::printCurrentException();
             }
@@ -268,4 +267,63 @@ LL_TYPED_INSTANCE_HOOK(
     }
     origin();
 }
+
+
+bool PluginRegistrar::loadPlugin(Manifest manifest) { return false; } // TODO: check dep confi ......
+
+bool PluginRegistrar::unloadPlugin(std::string_view name) {
+    std::lock_guard lock(impl->mutex);
+    auto            dependents = impl->deps.dependentBy(std::string{name});
+    if (!dependents.empty()) {
+        logger.error("ll.plugin.error.stillHasDependentsLoaded"_tr(dependents));
+    } else if (PluginManagerRegistry::getInstance().unloadPlugin(name)) {
+        impl->deps.erase(std::string{name});
+        return true;
+    }
+    return false;
+}
+
+bool PluginRegistrar::enablePlugin(std::string_view name) {
+    std::lock_guard lock(impl->mutex);
+    auto&           registry   = PluginManagerRegistry::getInstance();
+    auto            dependents = impl->deps.dependentOn(std::string{name});
+    if (!dependents.empty()) {
+        for (auto& depName : dependents) {
+            if (auto ptr = registry.getPlugin(depName).lock()) {
+                if (ptr->getState() == Plugin::State::Enabled) {
+                    continue;
+                }
+                logger.error("ll.plugin.error.stillHasDependentsDisable"_tr(depName));
+                return false;
+            }
+        }
+    }
+    if (registry.enablePlugin(name)) {
+        impl->deps.erase(std::string{name});
+        return true;
+    }
+    return false;
+}
+bool PluginRegistrar::disablePlugin(std::string_view name) {
+    std::lock_guard lock(impl->mutex);
+    auto&           registry   = PluginManagerRegistry::getInstance();
+    auto            dependents = impl->deps.dependentBy(std::string{name});
+    if (!dependents.empty()) {
+        for (auto& depName : dependents) {
+            if (auto ptr = registry.getPlugin(depName).lock()) {
+                if (ptr->getState() == Plugin::State::Disabled) {
+                    continue;
+                }
+                logger.error("ll.plugin.error.stillHasDependentsEnable"_tr(depName));
+                return false;
+            }
+        }
+    }
+    if (registry.disablePlugin(name)) {
+        impl->deps.erase(std::string{name});
+        return true;
+    }
+    return false;
+}
+
 } // namespace ll::plugin

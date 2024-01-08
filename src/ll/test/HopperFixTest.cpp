@@ -8,7 +8,7 @@
 #include "mc/world/level/Level.h"
 #include "mc/world/level/block/actor/HopperBlockActor.h"
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     HopperAddItemHook,
     ll::memory::HookPriority::Normal,
     Hopper,

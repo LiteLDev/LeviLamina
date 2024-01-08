@@ -17,7 +17,7 @@ void PlayerConnectEvent::serialize(CompoundTag& nbt) const {
 NetworkIdentifier const& PlayerConnectEvent::networkIdentifier() const { return mNetworkIdentifier; }
 ConnectionRequest const& PlayerConnectEvent::connectionRequest() const { return mConnectionRequest; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerConnectEventHook,
     HookPriority::Normal,
     ServerNetworkHandler,

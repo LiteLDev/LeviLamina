@@ -11,7 +11,7 @@ std::atomic_llong servertime{0};
 
 ServerClock::time_point ServerClock::now() noexcept { return time_point(duration(servertime.load())); }
 
-LL_AUTO_TYPED_INSTANCE_HOOK(ServerClockTickHook, HookPriority::High, ServerLevel, &ServerLevel::_subTick, void) {
+LL_AUTO_TYPE_INSTANCE_HOOK(ServerClockTickHook, HookPriority::High, ServerLevel, &ServerLevel::_subTick, void) {
     servertime++;
     origin();
 }

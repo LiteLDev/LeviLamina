@@ -4,7 +4,7 @@
 
 namespace ll::event::inline player {
 
-LL_TYPED_INSTANCE_HOOK(PlayerLeaveEventHook, HookPriority::Normal, ServerPlayer, &ServerPlayer::disconnect, void) {
+LL_TYPE_INSTANCE_HOOK(PlayerLeaveEventHook, HookPriority::Normal, ServerPlayer, &ServerPlayer::disconnect, void) {
     EventBus::getInstance().publish(PlayerLeaveEvent{*this});
     origin();
 }

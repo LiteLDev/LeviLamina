@@ -4,7 +4,7 @@
 
 namespace ll::event::inline player {
 
-LL_TYPED_INSTANCE_HOOK(PlayerJumpEventHook, HookPriority::Normal, Player, &Player::handleJumpEffects, void) {
+LL_TYPE_INSTANCE_HOOK(PlayerJumpEventHook, HookPriority::Normal, Player, &Player::handleJumpEffects, void) {
     EventBus::getInstance().publish(PlayerJumpEvent(*this));
     return origin();
 }

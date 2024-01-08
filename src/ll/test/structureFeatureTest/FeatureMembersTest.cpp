@@ -10,7 +10,7 @@
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
 /*
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     StructureStartHook,
     ll::memory::HookPriority::Normal,
     StructureStart,
@@ -26,7 +26,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     unhook();
 }
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     WorldChangeTransactionHook,
     ll::memory::HookPriority::Normal,
     WorldChangeTransaction,

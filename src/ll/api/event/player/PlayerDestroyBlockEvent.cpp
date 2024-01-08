@@ -14,7 +14,7 @@ void PlayerDestroyBlockEvent::serialize(CompoundTag& nbt) const {
 
 BlockPos const& PlayerDestroyBlockEvent::pos() const { return mPos; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerDestroyBlockEventHook,
     HookPriority::Normal,
     Block,

@@ -16,7 +16,7 @@ BlockPos const& FireSpreadEvent::pos() const { return mPos; }
 
 thread_local bool onFireSpreadWhenOnPlace = false;
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     FireSpreadEventHook1,
     HookPriority::Normal,
     FireBlock,
@@ -30,7 +30,7 @@ LL_TYPED_INSTANCE_HOOK(
     onFireSpreadWhenOnPlace = false;
 }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     FireSpreadEventHook2,
     HookPriority::Normal,
     FireBlock,

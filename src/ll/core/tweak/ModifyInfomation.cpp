@@ -15,7 +15,7 @@ MCAPI void BedrockLogOut(uint priority, char const* pszFormat, ...); // NOLINT
 
 namespace ll {
 // disable auto compaction log
-LL_AUTO_STATIC_HOOK(
+LL_STATIC_HOOK(
     DiagnosticsLogHook,
     HookPriority::Normal,
     Bedrock::Diagnostics::Interface::log,
@@ -74,7 +74,7 @@ void tryModifyServerStartInfo(std::string& s) {
     );
 }
 
-LL_AUTO_STATIC_HOOK(
+LL_STATIC_HOOK(
     BedrockLogOutHook,
     HookPriority::Normal,
     BedrockLogOut,
@@ -128,7 +128,7 @@ LL_AUTO_STATIC_HOOK(
 
 // Block BDS from adding LOG metadata
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     AppendLogEntryMetadataHook,
     HookPriority::Normal,
     ::BedrockLog::LogDetails,
@@ -142,4 +142,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     int,
     int
 ) {}
+
+using HookReg = memory::HookRegistrar<DiagnosticsLogHook, BedrockLogOutHook, AppendLogEntryMetadataHook>;
+
+static HookReg hookRegister;
+
 } // namespace ll

@@ -25,7 +25,7 @@ BlockPos const& PlayerPlaceBlockEvent::pos() const { return mPos; }
 uchar const&    PlayerPlacingBlockEvent::face() const { return mFace; }
 Block const&    PlayerPlacedBlockEvent::placedBlock() const { return mPlacedBlock; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerPlacingBlockEventHook,
     HookPriority::Normal,
     BlockSource,
@@ -47,7 +47,7 @@ LL_TYPED_INSTANCE_HOOK(
     return origin(actor, blockpos, face, item, genParticle);
 }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerPlacedBlockEventHook,
     HookPriority::Normal,
     BlockEventCoordinator,

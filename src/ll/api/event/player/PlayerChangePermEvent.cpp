@@ -24,7 +24,7 @@ void PlayerChangePermEvent::deserialize(CompoundTag const& nbt) {
 
 CommandPermissionLevel& PlayerChangePermEvent::newPerm() const { return mMewPerm; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerChangePermEventHook,
     HookPriority::Normal,
     Player,

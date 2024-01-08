@@ -13,7 +13,7 @@ std::vector<std::variant<
     std::reference_wrapper<TickSyncSleep<chrono::GameTickClock>>>>
     tickList;
 
-LL_TYPED_INSTANCE_HOOK(TickSyncSleepInterrruptHook, HookPriority::Normal, ServerLevel, &ServerLevel::_subTick, void) {
+LL_TYPE_INSTANCE_HOOK(TickSyncSleepInterrruptHook, HookPriority::Normal, ServerLevel, &ServerLevel::_subTick, void) {
     if (tickListSize > 0) {
         std::lock_guard lock(listMutex);
         for (auto& e : tickList) {

@@ -26,7 +26,7 @@ float&                   ActorHurtEvent::damage() const { return mDamage; }
 bool&                    ActorHurtEvent::knock() const { return mKnock; }
 bool&                    ActorHurtEvent::ignite() const { return mIgnite; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ActorHurtEventHook,
     HookPriority::Normal,
     Actor,

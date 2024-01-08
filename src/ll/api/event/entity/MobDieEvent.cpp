@@ -14,7 +14,7 @@ void MobDieEvent::serialize(CompoundTag& nbt) const {
 ActorDamageSource const& MobDieEvent::source() const { return mSource; }
 
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     MobDieEventHook,
     HookPriority::Normal,
     Mob,

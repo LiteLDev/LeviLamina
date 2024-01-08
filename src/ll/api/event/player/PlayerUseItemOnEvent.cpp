@@ -24,7 +24,7 @@ uchar const&              PlayerUseItemOnEvent::face() const { return mFace; }
 Vec3 const&               PlayerUseItemOnEvent::clickPos() const { return mClickPos; }
 optional_ref<Block const> PlayerUseItemOnEvent::block() const { return mBlock; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerUseItemOnEventHook,
     HookPriority::Normal,
     GameMode,

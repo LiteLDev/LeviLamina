@@ -10,6 +10,7 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/memory/Memory.h"
 #include "ll/api/reflection/TypeName.h"
+#include "ll/api/thread/GlobalThreadPauser.h"
 
 #ifdef LL_HOOK_DEBUG
 #include "ll/api/Logger.h"
@@ -81,9 +82,9 @@ enum class HookPriority : int {
     Lowest  = 400,
 };
 
-LLAPI int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority);
+LLAPI int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority, bool stopTheWorld = true);
 
-LLAPI bool unhook(FuncPtr target, FuncPtr detour);
+LLAPI bool unhook(FuncPtr target, FuncPtr detour, bool stopTheWorld = true);
 
 /**
  * @brief Get the pointer of a function by identifier.
@@ -128,11 +129,24 @@ class HookRegistrar {
 public:
     static inline std::atomic_uint count{};
 
+    static void hook() {
+        thread::GlobalThreadPauser pauser;
+        (Ts::hook(false), ...);
+    }
+    static void unhook() {
+        thread::GlobalThreadPauser pauser;
+        (Ts::unhook(false), ...);
+    }
+
     HookRegistrar() noexcept {
-        if (++count == 1) (Ts::hook(), ...);
+        if (++count == 1) {
+            hook();
+        }
     }
     ~HookRegistrar() {
-        if (--count == 0) (Ts::unhook(), ...);
+        if (--count == 0) {
+            unhook();
+        }
     }
     HookRegistrar(HookRegistrar const&) noexcept { ++count; }
     HookRegistrar& operator=(HookRegistrar const& other) noexcept {
@@ -182,7 +196,7 @@ public:
                                                                                                                        \
         STATIC RET_TYPE detour(__VA_ARGS__);                                                                           \
                                                                                                                        \
-        static int hook() {                                                                                            \
+        static int hook(bool stopTheWorld = true) {                                                                    \
             detector<DEF_TYPE>();                                                                                      \
             target__ = ll::memory::resolveIdentifier<OriginFuncType>(IDENTIFIER);                                      \
             if (target__ == nullptr) {                                                                                 \
@@ -192,11 +206,14 @@ public:
                 target__,                                                                                              \
                 ll::memory::toFuncPtr(&DEF_TYPE::detour),                                                              \
                 reinterpret_cast<FuncPtr*>(&originFunc__),                                                             \
-                PRIORITY                                                                                               \
+                PRIORITY,                                                                                              \
+                stopTheWorld                                                                                           \
             );                                                                                                         \
         }                                                                                                              \
                                                                                                                        \
-        static bool unhook() { return ll::memory::unhook(target__, ll::memory::toFuncPtr(&DEF_TYPE::detour)); }        \
+        static bool unhook(bool stopTheWorld = true) {                                                                 \
+            return ll::memory::unhook(target__, ll::memory::toFuncPtr(&DEF_TYPE::detour), stopTheWorld);               \
+        }                                                                                                              \
     };                                                                                                                 \
     REGISTER;                                                                                                          \
     RET_TYPE DEF_TYPE::detour(__VA_ARGS__)
@@ -234,7 +251,7 @@ public:
  *
  * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
  */
-#define LL_TYPED_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                                      \
+#define LL_TYPE_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                                       \
     LL_VA_EXPAND(LL_STATIC_HOOK_IMPL(DEF_TYPE, : public TYPE, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
 
 /**
@@ -253,9 +270,9 @@ public:
 /**
  * @brief Register a hook for a typed static function.
  * @details The hook will be automatically registered and unregistered.
- * @see LL_TYPED_STATIC_HOOK for usage.
+ * @see LL_TYPE_STATIC_HOOK for usage.
  */
-#define LL_AUTO_TYPED_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                                 \
+#define LL_AUTO_TYPE_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                                  \
     LL_VA_EXPAND(LL_AUTO_STATIC_HOOK_IMPL(DEF_TYPE, : public TYPE, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
 
 /**
@@ -277,7 +294,7 @@ public:
  *
  * @note register or unregister by calling DEF_TYPE::hook() and DEF_TYPE::unhook().
  */
-#define LL_TYPED_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                                    \
+#define LL_TYPE_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                                     \
     LL_VA_EXPAND(LL_INSTANCE_HOOK_IMPL(DEF_TYPE, : public TYPE, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
 
 /**
@@ -296,9 +313,9 @@ public:
 /**
  * @brief Register a hook for a typed instance function.
  * @details The hook will be automatically registered and unregistered.
- * @see LL_TYPED_INSTANCE_HOOK for usage.
+ * @see LL_TYPE_INSTANCE_HOOK for usage.
  */
-#define LL_AUTO_TYPED_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                               \
+#define LL_AUTO_TYPE_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)                                \
     LL_VA_EXPAND(LL_AUTO_INSTANCE_HOOK_IMPL(DEF_TYPE, : public TYPE, PRIORITY, IDENTIFIER, RET_TYPE, __VA_ARGS__))
 
 /**

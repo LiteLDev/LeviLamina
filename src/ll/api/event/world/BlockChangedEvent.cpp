@@ -20,7 +20,7 @@ Block const&    BlockChangedEvent::previousBlock() const { return mPreviousBlock
 Block const&    BlockChangedEvent::newBlock() const { return mNewBlock; }
 BlockPos const& BlockChangedEvent::pos() const { return mPos; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     BlockChangedEventHook,
     HookPriority::Normal,
     BlockSource,

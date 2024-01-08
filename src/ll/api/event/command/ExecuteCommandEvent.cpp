@@ -28,7 +28,7 @@ CommandContext&       ExecutingCommandEvent::commandContext() const { return mCo
 bool&                 ExecutingCommandEvent::suppressOutput() const { return mSuppressOutput; }
 MCRESULT&             ExecutedCommandEvent::result() const { return mResult; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ExecutingCommandEventHook,
     HookPriority::Normal,
     MinecraftCommands,
@@ -45,7 +45,7 @@ LL_TYPED_INSTANCE_HOOK(
     return origin(context, suppressOutput);
 }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ExecutedCommandEventHook,
     HookPriority::Low,
     MinecraftCommands,

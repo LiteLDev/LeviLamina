@@ -15,7 +15,7 @@ void PlayerUseItemEvent::serialize(CompoundTag& nbt) const {
 
 ItemStack& PlayerUseItemEvent::item() const { return mItem; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerUseItemEventHook,
     HookPriority::Normal,
     GameMode,

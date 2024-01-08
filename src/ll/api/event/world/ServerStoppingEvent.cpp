@@ -14,7 +14,7 @@ void ServerStoppingEvent::serialize(CompoundTag& nbt) const {
 
 ServerInstance& ServerStoppingEvent::server() const { return mServer; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ServerStoppingEventHook,
     HookPriority::Normal,
     ServerInstance,

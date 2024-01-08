@@ -26,7 +26,7 @@ GameTickScheduler        s3;
 #pragma warning(push)
 #pragma warning(disable : 4723)
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     SchedulerTestHook,
     HookPriority::Normal,
     ServerInstanceEventCoordinator,

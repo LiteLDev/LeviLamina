@@ -20,6 +20,14 @@ public:
     std::vector<std::string> getSortedPluginNames() const;
 
     void registerPlugins();
+
+    bool loadPlugin(Manifest manifest);
+
+    bool unloadPlugin(std::string_view name);
+
+    bool enablePlugin(std::string_view name);
+
+    bool disablePlugin(std::string_view name);
 };
 
 } // namespace ll::plugin

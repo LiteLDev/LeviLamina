@@ -74,7 +74,7 @@ using namespace ll::chrono_literals;
 
 SystemTimeScheduler remover;
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     EventTestH,
     ll::memory::HookPriority::Normal,
     ServerInstanceEventCoordinator,

@@ -44,7 +44,7 @@ bool& SpawningMobEvent::fromSpawner() const { return mFromSpawner; }
 
 optional_ref<Mob> SpawnedMobEvent::mob() const { return mMob; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     SpawningMobEventHook,
     HookPriority::Normal,
     Spawner,
@@ -66,7 +66,7 @@ LL_TYPED_INSTANCE_HOOK(
     return origin(blockSource, id, spawner, pos, naturalSpawn, surface, fromSpawner);
 }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     SpawnedMobEventHook,
     HookPriority::Low,
     Spawner,

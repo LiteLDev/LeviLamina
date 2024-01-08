@@ -18,7 +18,7 @@ void PlayerAddExperienceEvent::deserialize(CompoundTag const& nbt) {
 
 int& PlayerAddExperienceEvent::experience() const { return mExperience; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerAddExperienceEventHook,
     HookPriority::Normal,
     Player,

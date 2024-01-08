@@ -8,7 +8,7 @@
 #include "mc/network/packet/PlayerActionPacket.h"
 
 namespace ll::event::inline player {
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerActionEventHook,
     HookPriority::Normal,
     ServerNetworkHandler,

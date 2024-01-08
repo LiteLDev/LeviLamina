@@ -44,7 +44,7 @@ public:
                 for (auto& dependency : deps.dependOn) {
                     eraseDependency(node, dependency);
                 }
-                deps.erase(node);
+                data.erase(node);
                 return true;
             }
         }
@@ -88,6 +88,20 @@ public:
             auto now = queue.front();
             queue.pop();
             for (auto& deps : data.at(now).dependBy) {
+                queue.push(deps);
+                result.push_back(deps);
+            }
+        }
+        return result;
+    }
+    std::vector<T> dependentOn(T const& node) const {
+        std::queue<T>  queue;
+        std::vector<T> result;
+        queue.push(node);
+        while (!queue.empty()) {
+            auto now = queue.front();
+            queue.pop();
+            for (auto& deps : data.at(now).dependOn) {
                 queue.push(deps);
                 result.push_back(deps);
             }

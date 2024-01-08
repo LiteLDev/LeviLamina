@@ -21,7 +21,7 @@ void PlayerChatEvent::deserialize(CompoundTag const& nbt) {
 
 std::string& PlayerChatEvent::message() const { return mMessage; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerSendMessageEventHook,
     HookPriority::Normal,
     ServerNetworkHandler,

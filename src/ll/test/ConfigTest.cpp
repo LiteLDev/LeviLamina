@@ -83,14 +83,14 @@ public:
         Benum,
     } hi;
 };
-// LL_AUTO_TYPED_INSTANCE_HOOK(Virtual, HookPriority::Normal, FillCommand, &FillCommand::execute, void, CommandOrigin
+// LL_AUTO_TYPE_INSTANCE_HOOK(Virtual, HookPriority::Normal, FillCommand, &FillCommand::execute, void, CommandOrigin
 // const&, CommandOutput&) {
 // }
 
 class myTypeList1;
 class myTypeList2;
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     ConfigTest,
     HookPriority::Normal,
     ServerInstance,

@@ -4,7 +4,7 @@
 #include "mc/nbt/IntArrayTag.h"
 
 namespace ll::inline bugfix {
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     ByteArrayTagEqualsHook,
     HookPriority::Normal,
     ByteArrayTag,
@@ -18,7 +18,7 @@ LL_TYPED_INSTANCE_HOOK(
     }
     return memcmp(data.mBuffer.get(), ((ByteArrayTag&)other).data.mBuffer.get(), data.mSize) == 0;
 }
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     IntArrayTagEqualsHook,
     HookPriority::Normal,
     IntArrayTag,

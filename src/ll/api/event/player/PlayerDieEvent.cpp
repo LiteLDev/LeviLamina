@@ -13,7 +13,7 @@ void PlayerDieEvent::serialize(CompoundTag& nbt) const {
 
 ActorDamageSource const& PlayerDieEvent::source() const { return mSource; }
 
-LL_TYPED_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     PlayerDieEventHook,
     HookPriority::Normal,
     Player,
