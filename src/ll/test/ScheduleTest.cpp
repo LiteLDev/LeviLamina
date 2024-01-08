@@ -15,9 +15,9 @@ using namespace ll::chrono_literals;
 
 ll::Logger schedulelogger("Schedule");
 
-SystemTimeScheduler    s;
-GameTickAsyncScheduler s2;
-GameTimeScheduler      s3;
+SystemTimeScheduler      s;
+ServerTimeAsyncScheduler s2;
+GameTickScheduler        s3;
 
 #include "mc/network/packet/TextPacket.h"
 
@@ -41,17 +41,17 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
          s.add<RepeatTask>(100_tick, [&] {
              schedulelogger.info(
                  "hi, 100_tick life {} ramdom {}",
-                 ll::chrono::GameTimeClock::now().time_since_epoch(),
+                 ll::chrono::GameTickClock::now().time_since_epoch(),
                  ll::random::rand<uint>()
              );
          });
 
          s2.add<DelayTask>(1_tick, [&] {
-             schedulelogger.info("try GameTime {}", ll::chrono::GameTimeClock::now().time_since_epoch());
+             schedulelogger.info("try GameTime {}", ll::chrono::GameTickClock::now().time_since_epoch());
              s3.add<RepeatTask>(5s, [&] {
                  schedulelogger.warn(
                      "hi, 5s       gt   {} ramdom {}",
-                     ll::chrono::GameTimeClock::now().time_since_epoch(),
+                     ll::chrono::GameTickClock::now().time_since_epoch(),
                      ll::random::rand<double>()
                  );
              });
@@ -61,7 +61,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
              auto lock = ll::Logger::lock();
              schedulelogger.info(
                  "hi, 0.1min   game {} random {}",
-                 ll::chrono::GameTimeClock::now().time_since_epoch(),
+                 ll::chrono::GameTickClock::now().time_since_epoch(),
                  ll::random::rand<int64>()
              );
              auto random  = ll::random::rand<int64>();

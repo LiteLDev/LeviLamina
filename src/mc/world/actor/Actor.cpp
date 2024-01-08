@@ -141,7 +141,7 @@ float Actor::quickEvalMolangScript(std::string const& expression) {
     return ExpressionNode(expression).evalAsFloat(getRenderParams());
 }
 
-std::unique_ptr<CompoundTag> Actor::saveToNbt() const {
+std::unique_ptr<CompoundTag> Actor::save() const {
     auto res = std::make_unique<CompoundTag>();
     if (save(*res)) {
         return res;
@@ -149,7 +149,7 @@ std::unique_ptr<CompoundTag> Actor::saveToNbt() const {
     return nullptr;
 }
 
-bool Actor::loadFromNbt(class CompoundTag const& nbt) {
+bool Actor::load(class CompoundTag const& nbt) {
     bool res = load(nbt, defaultDataLoadHelper);
     refresh();
     return res;

@@ -16,7 +16,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(ServerClockTickHook, HookPriority::High, ServerLevel
     origin();
 }
 
-GameTimeClock::time_point GameTimeClock::now() noexcept {
+GameTickClock::time_point GameTickClock::now() noexcept {
     if (!ll::service::getLevel()) {
         return time_point::max();
     }

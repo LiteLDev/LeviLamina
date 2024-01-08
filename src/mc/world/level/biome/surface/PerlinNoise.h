@@ -1,9 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/levelgen/synth/ImprovedNoise.h"
 
 class PerlinNoise {
 public:
+    const int                  mLevels;              // this+0x0
+    const int                  mMinLevel;            // this+0x4
+    std::vector<ImprovedNoise> mNoiseLevels;         // this+0x8
+    float                      mNormalizationFactor; // this+0x20
+
     // prevent constructor by default
     PerlinNoise& operator=(PerlinNoise const&);
     PerlinNoise();

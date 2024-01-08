@@ -9,6 +9,9 @@ namespace CanyonFeatureUtils { struct CanyonConfiguration; }
 
 class CanyonFeature {
 public:
+    short mSeaLevel;         // this+0x8
+    bool  mAllowMegaRavines; // this+0xA
+
     // prevent constructor by default
     CanyonFeature& operator=(CanyonFeature const&);
     CanyonFeature(CanyonFeature const&);

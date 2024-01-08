@@ -9,6 +9,15 @@
 
 class TheEndGenerator : public ::WorldGenerator {
 public:
+    std::unique_ptr<PerlinNoise>        mLPerlinNoise1;    // this+0x68
+    std::unique_ptr<PerlinNoise>        mLPerlinNoise2;    // this+0x70
+    std::unique_ptr<PerlinNoise>        mPerlinNoise1;     // this+0x78
+    std::unique_ptr<SimplexNoise>       mIslandNoise;      // this+0x80
+    std::unique_ptr<PerlinSimplexNoise> mMaterialAdjNoise; // this+0x88
+    // Bedrock::Threading::InstancedThreadLocal<TheEndGenerator::ThreadData>
+    char                              generatorHelpersPool[168]; // this+0x90
+    std::unique_ptr<FixedBiomeSource> mBiomeSource;              // this+0x138
+
     // prevent constructor by default
     TheEndGenerator& operator=(TheEndGenerator const&);
     TheEndGenerator(TheEndGenerator const&);
@@ -16,9 +25,9 @@ public:
 
 public:
     // NOLINTBEGIN
-    // symbol:
+    // vIndex: 45, symbol:
     // ?decorateWorldGenLoadChunk@TheEndGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
-    MCVAPI void decorateWorldGenLoadChunk(
+    virtual void decorateWorldGenLoadChunk(
         class Biome&             biome,
         class LevelChunk&        lc,
         class BlockVolumeTarget& target,
@@ -26,43 +35,43 @@ public:
         class ChunkPos const&    pos
     ) const;
 
-    // symbol:
+    // vIndex: 46, symbol:
     // ?decorateWorldGenPostProcess@TheEndGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
-    MCVAPI void decorateWorldGenPostProcess(
+    virtual void decorateWorldGenPostProcess(
         class Biome&       biome,
         class LevelChunk&  lc,
         class BlockSource& source,
         class Random&      random
     ) const;
 
-    // symbol: ?findSpawnPosition@TheEndGenerator@@UEBA?AVBlockPos@@XZ
-    MCVAPI class BlockPos findSpawnPosition() const;
+    // vIndex: 42, symbol: ?findSpawnPosition@TheEndGenerator@@UEBA?AVBlockPos@@XZ
+    virtual class BlockPos findSpawnPosition() const;
 
-    // symbol: ?getBiomeArea@TheEndGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
+    // vIndex: 39, symbol: ?getBiomeArea@TheEndGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
+    virtual class BiomeArea getBiomeArea(class BoundingBox const& area, uint scale) const;
 
-    // symbol: ?getBiomeSource@TheEndGenerator@@UEBAAEBVBiomeSource@@XZ
-    MCVAPI class BiomeSource const& getBiomeSource() const;
+    // vIndex: 40, symbol: ?getBiomeSource@TheEndGenerator@@UEBAAEBVBiomeSource@@XZ
+    virtual class BiomeSource const& getBiomeSource() const;
 
-    // symbol: ?getBlockVolumeDimensions@TheEndGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
-    MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
+    // vIndex: 41, symbol: ?getBlockVolumeDimensions@TheEndGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
+    virtual struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
 
     // symbol: ?getPreliminarySurfaceLevel@TheEndGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
-    MCVAPI std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> worldQuartPos) const;
+    virtual std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> worldQuartPos) const;
 
-    // symbol: ?loadChunk@TheEndGenerator@@UEAAXAEAVLevelChunk@@_N@Z
-    MCVAPI void loadChunk(class LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
+    // vIndex: 11, symbol: ?loadChunk@TheEndGenerator@@UEAAXAEAVLevelChunk@@_N@Z
+    virtual void loadChunk(class LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
 
-    // symbol: ?postProcess@TheEndGenerator@@UEAA_NAEAVChunkViewSource@@@Z
-    MCVAPI bool postProcess(class ChunkViewSource& neighborhood);
+    // vIndex: 9, symbol: ?postProcess@TheEndGenerator@@UEAA_NAEAVChunkViewSource@@@Z
+    virtual bool postProcess(class ChunkViewSource& neighborhood);
 
-    // symbol: ?postProcessMobsAt@TheEndGenerator@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
-    MCVAPI void
+    // vIndex: 12, symbol: ?postProcessMobsAt@TheEndGenerator@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
+    virtual void
     postProcessMobsAt(class BlockSource& blockSource, int chunkWestBlock, int chunkNorthBlock, class Random& random);
 
-    // symbol:
+    // vIndex: 38, symbol:
     // ?prepareAndComputeHeights@TheEndGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
-    MCVAPI void prepareAndComputeHeights(
+    virtual void prepareAndComputeHeights(
         class BlockVolume&    box,
         class ChunkPos const& chunkPos,
         std::vector<short>&   ZXheights,
@@ -70,8 +79,8 @@ public:
         int                   skipTopN
     );
 
-    // symbol: ?prepareHeights@TheEndGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
-    MCVAPI void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
+    // vIndex: 37, symbol: ?prepareHeights@TheEndGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
+    virtual void prepareHeights(class BlockVolume& box, class ChunkPos const& chunkPos, bool factorInBeardsAndShavers);
 
     // symbol:
     // ??0TheEndGenerator@@QEAA@AEAVDimension@@IPEBVBiome@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z

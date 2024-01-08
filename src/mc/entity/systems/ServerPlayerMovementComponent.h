@@ -1,12 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/movement/MovementPackets.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/optional_ref.h"
 
 struct ServerPlayerMovementComponent {
 public:
+    bool                        mServerHasMovementAuthority;
+    std::deque<MovementPackets> mQueuedUpdates;
     // prevent constructor by default
     ServerPlayerMovementComponent& operator=(ServerPlayerMovementComponent const&);
     ServerPlayerMovementComponent(ServerPlayerMovementComponent const&);

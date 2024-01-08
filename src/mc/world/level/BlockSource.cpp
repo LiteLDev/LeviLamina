@@ -63,7 +63,7 @@ optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
 }
 
 optional_ref<Actor> BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<DimensionType> dimId) {
-    auto nbt = origin.saveToNbt();
+    auto nbt = origin.save();
     if (!nbt || !nbt->contains("Pos")) {
         return nullptr;
     }

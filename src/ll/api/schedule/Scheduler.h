@@ -24,19 +24,19 @@ struct SleeperType<ll::chrono::ServerClock> {
 };
 
 template <>
-struct SleeperType<ll::chrono::GameTimeClock> {
-    using type = ll::thread::TickSyncSleep<ll::chrono::GameTimeClock>;
+struct SleeperType<ll::chrono::GameTickClock> {
+    using type = ll::thread::TickSyncSleep<ll::chrono::GameTickClock>;
 };
 
 template <class Clock, class Pool = ll::thread::ThreadPool, class Sleeper = SleeperType<Clock>::type>
 class Scheduler;
 
-using GameTickAsyncScheduler = Scheduler<ll::chrono::ServerClock>;
-using GameTimeAsyncScheduler = Scheduler<ll::chrono::GameTimeClock>;
-using SystemTimeScheduler    = Scheduler<std::chrono::system_clock>;
+using ServerTimeAsyncScheduler = Scheduler<ll::chrono::ServerClock>;
+using GameTickAsyncScheduler   = Scheduler<ll::chrono::GameTickClock>;
+using SystemTimeScheduler      = Scheduler<std::chrono::system_clock>;
 
-using GameTickScheduler = Scheduler<ll::chrono::ServerClock, ll::thread::TickSyncTaskPool>;
-using GameTimeScheduler = Scheduler<ll::chrono::GameTimeClock, ll::thread::TickSyncTaskPool>;
+using ServerTimeScheduler = Scheduler<ll::chrono::ServerClock, ll::thread::TickSyncTaskPool>;
+using GameTickScheduler   = Scheduler<ll::chrono::GameTickClock, ll::thread::TickSyncTaskPool>;
 
 template <class Clock, class Pool, class Sleeper>
 class Scheduler {

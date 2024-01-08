@@ -12,6 +12,7 @@
 
 class HardcodedSpawnAreaRegistry;
 class StructureFeatureRegistry;
+class AirBlockCache;
 
 class WorldGenerator : public ChunkSource, public IPreliminarySurfaceProvider {
 public:
@@ -27,6 +28,7 @@ public:
         uint mHeight; // this+0x8
     };
 
+    AirBlockCache*                              airBlockCache;             // this+0x78
     std::unique_ptr<HardcodedSpawnAreaRegistry> mHardcodedSpawnTypes;      // this+0x78
     std::unique_ptr<StructureFeatureRegistry>   mStructureFeatureRegistry; // this+0x80
 
