@@ -28,6 +28,10 @@ void Packet::sendToClient(NetworkIdentifier const& id, SubClientId clientId) con
     ll::service::getLevel()->getPacketSender()->sendToClient(id, *this, clientId);
 }
 
+void Packet::sendToClient(NetworkIdentifierWithSubId const& identifierWithSubId) const {
+    sendToClient(identifierWithSubId.identifier, identifierWithSubId.subClientId);
+}
+
 void Packet::sendToClients() {
     if (!ll::service::getLevel()) {
         return;
