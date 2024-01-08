@@ -9,7 +9,7 @@
 #include "mc/world/level/block/Block.h"
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
-
+/*
 LL_AUTO_TYPED_INSTANCE_HOOK(
     StructureStartHook,
     ll::memory::HookPriority::Normal,
@@ -19,10 +19,10 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
     origin();
 
-    ll::logger.info("calculateBoundingBox");
-    ll::logger.info("StructureStart:");
-    ll::logger.info("mChunkX={}", this->mChunkX);
-    ll::logger.info("mChunkZ={}", this->mChunkZ);
+    ll::logger.debug("calculateBoundingBox");
+    ll::logger.debug("StructureStart:");
+    ll::logger.debug("mChunkX={}", this->mChunkX);
+    ll::logger.debug("mChunkZ={}", this->mChunkZ);
     unhook();
 }
 
@@ -35,10 +35,10 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
     bool rtv = origin();
 
-    ll::logger.info("{}<-calculateBoundingBox", rtv);
-    ll::logger.info("WorldChangeTransaction:");
+    ll::logger.debug("{}<-calculateBoundingBox", rtv);
+    ll::logger.debug("WorldChangeTransaction:");
     for (auto& v : this->mData->mChanges) {
-        ll::logger.info(
+        ll::logger.debug(
             "mData->mChanges[{},{{{},{},{}}}]",
             v.first.toString(),
             v.second.mUpdateFlags,
@@ -49,3 +49,4 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
     return rtv;
 }
+*/

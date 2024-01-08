@@ -93,7 +93,8 @@ class TeleportDimensionCommand : public Command {
 
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
-        if ((int)DimensionId < 0 || (int)DimensionId > 2) {
+        if (((int)DimensionId < 0 || (int)DimensionId > 2)
+            && !VanillaDimensions::$DimensionMap().contains((int)DimensionId)) {
             output.error("ll.cmd.tpdim.invalidDimid"_tr((int)DimensionId));
             return;
         }

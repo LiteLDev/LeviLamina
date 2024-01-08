@@ -138,7 +138,7 @@ CustomDimensionManager& CustomDimensionManager::getInstance() {
 }
 
 AutomaticID<Dimension, int>
-CustomDimensionManager::AddDimension(std::string_view dimensionName, uint seed, GeneratorType generatorType) {
+CustomDimensionManager::addDimension(std::string_view dimensionName, uint seed, GeneratorType generatorType) {
     std::string                 dimName(dimensionName);
     AutomaticID<Dimension, int> dimId = -1;
     if (customDimensionMap.find(dimName) != customDimensionMap.end()) {

@@ -9,32 +9,83 @@
 namespace ll::dimension {
 
 class FakeDimensionId;
+class CustomDimension;
+
 class CustomDimensionManager {
-    CustomDimensionManager();
-    ~CustomDimensionManager();
+    friend CustomDimension;
+    friend FakeDimensionId;
 
     std::atomic<int> mNewDimensionId;
     std::mutex       mMapMutex;
 
-public:
-    LLNDAPI static CustomDimensionManager& getInstance();
+    std::unique_ptr<FakeDimensionId> fakeDimensionIdInstance;
 
+    CustomDimensionManager();
+    ~CustomDimensionManager();
+
+protected:
     struct DimensionInfo {
         const std::string           name;
         AutomaticID<Dimension, int> id;
-        uint                        seed          = 123;
-        GeneratorType               generatorType = GeneratorType::Overworld;
+        uint                        seed;
+        GeneratorType               generatorType;
     };
-    std::unique_ptr<FakeDimensionId>               fakeDimensionIdInstance;
     std::unordered_map<std::string, DimensionInfo> customDimensionMap;     // save all dimension info
     std::unordered_map<std::string, DimensionInfo> registeredDimensionMap; // save registry dimension info
 
+public:
+    LLNDAPI static CustomDimensionManager& getInstance();
     /**
      * @brief Add a custom dimension
      * @return success add dimension id
      */
-    LLNDAPI AutomaticID<Dimension, int>
-    AddDimension(std::string_view dimensionName, uint seed, GeneratorType generatorType = GeneratorType::Overworld);
+    LLAPI AutomaticID<Dimension, int> addDimension(
+        std::string_view dimensionName,
+        uint             seed          = 123,
+        GeneratorType    generatorType = GeneratorType::Overworld
+    );
 };
+
+// Dimension need to test virtual tables
+
+/* Dimension related virtual tables
+ *
+ *                                    ∕-- IDimension
+ * OverworldDimension --∖           ∕-- LevelListener --- BlockSourceListener
+ * NetherDimension    --- Dimension --- SavedData
+ * TheEndDimension    --∕           ∖-- Bedrock::EnableNonOwnerReferences
+ *                                    ∖-- std::enable_shared_from_this<Dimension>
+ *
+ */
+
+/* WorldGenerator related virtual tables
+ *
+ *                          FlatWorldGenerator  --∖
+ *                          NetherGenerator      --∖
+ * OverworldGenerator2d --- OverworldGenerator2d --- WorldGenerator --- ChunkSource ---
+ * Bedrock::EnableNonOwnerReferences TheEndGenerator      --∕                ∖-- IPreliminarySurfaceProvider
+ *                          VoidGenerator       --∕
+ *
+ */
+
+/* DimensionBrightnessRamp related virtual tables
+ *
+ * NetherBrightnessRamp   --∖
+ * OverworldBrightnessRamp --- DimensionBrightnessRamp
+ *
+ */
+
+/* BlockSource related virtual tables
+ *
+ * BlockSource --- IBlockSource --- IConstBlockSource
+ *             ∖-- std::enable_shared_from_this<BlockSource>
+ *
+ */
+
+/* BiomeSource related virtual tables
+ *
+ * FixedBiomeSource --- BiomeSource
+ *
+ */
 
 } // namespace ll::dimension

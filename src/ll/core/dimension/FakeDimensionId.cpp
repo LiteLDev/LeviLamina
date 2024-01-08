@@ -6,6 +6,7 @@
 #include "ll/api/service/Bedrock.h"
 
 #include "mc/entity/systems/ServerPlayerMovementComponent.h"
+#include "mc/entity/utilities/ActorDataIDs.h"
 #include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/packet/ActorEventPacket.h"
@@ -81,18 +82,15 @@ LL_TYPED_INSTANCE_HOOK(
     }
 
     // 屏蔽死亡回主世界时的改维度包
-    if (CustomDimensionManager::getInstance().fakeDimensionIdInstance->isNeedRemove(uuid)
-        && packet.getId() == MinecraftPacketIds::ChangeDimension) {
+    if (FakeDimensionId::getInstance().isNeedRemove(uuid) && packet.getId() == MinecraftPacketIds::ChangeDimension) {
         return;
     }
     // 移除通用事件包。其中，事件id时9801，对应LevelEvent是SleepingPlayers
-    if (packet.getId() == MinecraftPacketIds::LevelEventGeneric
-        && CustomDimensionManager::getInstance().fakeDimensionIdInstance->isNeedRemove(uuid)) {
+    if (packet.getId() == MinecraftPacketIds::LevelEventGeneric && FakeDimensionId::getInstance().isNeedRemove(uuid)) {
         return;
     }
     // 屏蔽死亡回主世界时发送的成功转维度的事件包
-    if (CustomDimensionManager::getInstance().fakeDimensionIdInstance->isNeedRemove(uuid)
-        && packet.getId() == MinecraftPacketIds::PlayerAction) {
+    if (FakeDimensionId::getInstance().isNeedRemove(uuid) && packet.getId() == MinecraftPacketIds::PlayerAction) {
         auto& actionPacket = (PlayerActionPacket&)packet;
         if (actionPacket.mAction == PlayerActionType::ChangeDimensionAck) {
             return;
@@ -216,8 +214,8 @@ LL_TYPED_INSTANCE_HOOK(
     uint                         count,
     bool                         isCacheEnabled
 ) {
-    if (serverPlayer->getDimensionId().id >= 3) {
-        auto inDim                                                               = serverPlayer->getDimensionId();
+    auto inDim = serverPlayer->getDimensionId();
+    if (inDim >= 3) {
         const_cast<SubChunkRequestPacket&>(subChunkRequestPacket).mDimensionType = inDim;
         // dimensionType value of subChunkPacket is not read in this function, so it is changed together.
         subChunkPacket.mDimensionType = FakeDimensionId::fakeDim;
@@ -256,7 +254,7 @@ LL_TYPED_INSTANCE_HOOK(
 ) {
     if (getDimensionId().id >= 3) {
         logger.debug("Remove set true");
-        CustomDimensionManager::getInstance().fakeDimensionIdInstance->setNeedRemove(getUuid(), true);
+        FakeDimensionId::getInstance().setNeedRemove(getUuid(), true);
     }
     return origin(a1);
 }
@@ -275,30 +273,29 @@ LL_TYPED_INSTANCE_HOOK(
 ) {
     auto  player          = getServerPlayer(netId, packet.mClientSubId);
     auto  uuid            = player->getUuid();
-    auto& fakeDimensionId = CustomDimensionManager::getInstance().fakeDimensionIdInstance;
+    auto& fakeDimensionId = FakeDimensionId::getInstance();
     if (packet.mAction == PlayerActionType::ChangeDimensionAck) {
         // second teleport player, this will go target dimension
-        if (fakeDimensionId->getBackDimensionCallback(uuid)) {
-            fakeDimensionId->getBackDimensionCallback(uuid)();
+        if (fakeDimensionId.getBackDimensionCallback(uuid)) {
+            fakeDimensionId.getBackDimensionCallback(uuid)();
             logger.debug("go more dimension!");
             return origin(netId, packet);
         }
     }
     if (packet.mAction == PlayerActionType::Respawn) {
         // when player go overworld with die
-        if (!fakeDimensionId->isNeedRemove(uuid)) {
+        if (!fakeDimensionId.isNeedRemove(uuid)) {
             return origin(netId, packet);
         }
-        fakeDimensionId->setNeedRemove(uuid, false);
+        fakeDimensionId.setNeedRemove(uuid, false);
         auto moveComp = player->getEntityContext().tryGetComponent<ServerPlayerMovementComponent>();
         if (moveComp) {
             moveComp->mServerHasMovementAuthority = false;
         }
-        fakeDimensionId->onPlayerLeftCustomDimension(uuid, true);
+        fakeDimensionId.onPlayerLeftCustomDimension(uuid, true);
         // flash player bounding box
-        // ActorDataIDs::Width and ActorDataIDs::Height
-        player->getEntityData().markDirty(53); // width
-        player->getEntityData().markDirty(54); // height
+        player->getEntityData().markDirty(std::to_underlying(ActorDataIDs::Width));
+        player->getEntityData().markDirty(std::to_underlying(ActorDataIDs::Height));
     }
     return origin(netId, packet);
 };
@@ -318,11 +315,11 @@ LL_TYPED_INSTANCE_HOOK(
     if (entity.getTypeName() != "minecraft:player") {
         return origin(entity, toId, entityPos);
     }
-    if (toId.id == 1 || toId.id == 2 || entity.getDimensionId().id == 1 || entity.getDimensionId().id == 2) {
+    auto inId = entity.getDimensionId();
+    if (toId == 1 || toId == 2 || inId == 1 || inId == 2) {
         return origin(entity, toId, entityPos);
     }
-    CustomDimensionManager::getInstance()
-        .fakeDimensionIdInstance->teleportToCustomDimension(&(ServerPlayer&)entity, toId, entityPos.value());
+    FakeDimensionId::getInstance().teleportToCustomDimension((ServerPlayer&)entity, toId, entityPos.value());
 }
 
 LL_TYPED_INSTANCE_HOOK(
@@ -335,15 +332,13 @@ LL_TYPED_INSTANCE_HOOK(
     Player&                                 player,
     std::unique_ptr<ChangeDimensionRequest> changeRequest
 ) {
-    if (changeRequest->mToDimensionId.id == 1 || changeRequest->mToDimensionId.id == 2
-        || player.getDimensionId().id == 1 || player.getDimensionId().id == 2 || player.isDead()) {
+    auto inId = player.getDimensionId();
+    if (changeRequest->mToDimensionId == 1 || changeRequest->mToDimensionId == 2 || inId == 1 || inId == 2
+        || player.isDead()) {
         return origin(player, std::move(changeRequest));
     }
-    CustomDimensionManager::getInstance().fakeDimensionIdInstance->teleportToCustomDimension(
-        &(ServerPlayer&)player,
-        changeRequest->mToDimensionId,
-        changeRequest->mToPosition
-    );
+    FakeDimensionId::getInstance()
+        .teleportToCustomDimension((ServerPlayer&)player, changeRequest->mToDimensionId, changeRequest->mToPosition);
 }
 
 void EnableHook() {
@@ -377,9 +372,13 @@ void DisableHook() {
 }
 } // namespace CustomDimensionHookList
 
-FakeDimensionId::FakeDimensionId() { CustomDimensionHookList::EnableHook(); };
+FakeDimensionId::FakeDimensionId() { CustomDimensionHookList::EnableHook(); }
 
 FakeDimensionId::~FakeDimensionId() { CustomDimensionHookList::DisableHook(); }
+
+FakeDimensionId& FakeDimensionId::getInstance() {
+    return *CustomDimensionManager::getInstance().fakeDimensionIdInstance;
+}
 
 Packet& FakeDimensionId::changePacketDimension(Packet& packet) {
     auto packId = packet.getId();
@@ -444,18 +443,19 @@ std::function<void()> FakeDimensionId::getBackDimensionCallback(mce::UUID uuid) 
         return nullptr;
     }
 }
-bool FakeDimensionId::teleportToCustomDimension(ServerPlayer* player, DimensionType dimensionType, Vec3& pos) {
-    if (player->getDimensionId() == dimensionType) {
-        logger.warn("player->{} already at this id->{} dimension!", player->getNameTag(), dimensionType.id);
+bool FakeDimensionId::teleportToCustomDimension(ServerPlayer& player, DimensionType dimensionType, Vec3& pos) {
+    auto inId = player.getDimensionId();
+    if (inId == dimensionType) {
+        logger.warn("player->{} already at this id->{} dimension!", player.getNameTag(), dimensionType.id);
         return false;
     }
     if (dimensionType < 3) {
         logger.debug("This Dimension Id->{} is not More dimension id!!!", dimensionType.id);
         return false;
     }
-    if (player->getDimensionId().id >= 3 || player->getDimensionId().id == fakeDim) {
-        player->teleport(pos, temporaryDimId);
-        auto uuid = player->getUuid();
+    if (inId >= 3 || inId == fakeDim) {
+        player.teleport(pos, temporaryDimId);
+        auto uuid = player.getUuid();
         onPlayerGoCustomDimension(uuid, [uuid, pos, dimensionType]() {
             ll::service::getLevel()->getPlayer(uuid)->teleport(pos, dimensionType);
         });
