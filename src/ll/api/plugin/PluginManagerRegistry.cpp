@@ -6,6 +6,7 @@ namespace ll::plugin {
 struct PluginManagerRegistry::Impl {
     std::recursive_mutex                               mutex;
     UnorderedStringMap<std::shared_ptr<PluginManager>> managers;
+    UnorderedStringMap<std::string>                    loadedPlugins; // k, v: name, type
 };
 
 PluginManagerRegistry::PluginManagerRegistry() : impl(std::make_unique<Impl>()) {}
@@ -21,26 +22,46 @@ std::shared_ptr<PluginManager> const& PluginManagerRegistry::getSharedManager(st
 bool PluginManagerRegistry::loadPlugin(Manifest manifest) {
     std::lock_guard lock(impl->mutex);
     if (hasManager(manifest.type)) {
-        return getSharedManager(manifest.type)->load(std::move(manifest));
+        std::string name = manifest.name;
+        std::string type = manifest.type;
+        if (getSharedManager(type)->load(std::move(manifest))) {
+            impl->loadedPlugins.insert_or_assign(std::move(name), std::move(type));
+            return true;
+        }
     }
     return false;
 }
-bool PluginManagerRegistry::unloadPlugin(std::string_view type, std::string_view name) {
+bool PluginManagerRegistry::unloadPlugin(std::string_view name) {
     std::lock_guard lock(impl->mutex);
+    if (!hasPlugin(name)) {
+        return {};
+    }
+    auto& type = impl->loadedPlugins.find(name)->first;
     if (hasManager(type)) {
-        return getSharedManager(type)->unload(name);
+        if (getSharedManager(type)->unload(name)) {
+            impl->loadedPlugins.erase(std::string{name});
+            return true;
+        }
     }
     return false;
 }
-bool PluginManagerRegistry::enablePlugin(std::string_view type, std::string_view name) {
+bool PluginManagerRegistry::enablePlugin(std::string_view name) {
     std::lock_guard lock(impl->mutex);
+    if (!hasPlugin(name)) {
+        return {};
+    }
+    auto& type = impl->loadedPlugins.find(name)->first;
     if (hasManager(type)) {
         return getSharedManager(type)->enable(name);
     }
     return false;
 }
-bool PluginManagerRegistry::disablePlugin(std::string_view type, std::string_view name) {
+bool PluginManagerRegistry::disablePlugin(std::string_view name) {
     std::lock_guard lock(impl->mutex);
+    if (!hasPlugin(name)) {
+        return {};
+    }
+    auto& type = impl->loadedPlugins.find(name)->first;
     if (hasManager(type)) {
         return getSharedManager(type)->disable(name);
     }
@@ -67,6 +88,7 @@ std::weak_ptr<PluginManager> PluginManagerRegistry::getManager(std::string_view 
 bool PluginManagerRegistry::eraseManager(std::string_view type) {
     std::lock_guard lock(impl->mutex);
     if (auto i = impl->managers.find(type); i != impl->managers.end()) {
+        std::erase_if(impl->loadedPlugins, [type](auto& item) { return item.second == type; });
         impl->managers.erase(i);
         return true;
     }
@@ -95,42 +117,19 @@ void PluginManagerRegistry::forEachPluginWithType(
         return !interrupted;
     });
 }
-bool PluginManagerRegistry::hasPlugin(std::string_view name, std::string_view type) {
+bool PluginManagerRegistry::hasPlugin(std::string_view name) {
     std::lock_guard lock(impl->mutex);
-    if (type.empty()) {
-        bool res = false;
-        forEachManager([&](std::string_view, PluginManager& manager) {
-            if (manager.hasPlugin(name)) {
-                res = true;
-            }
-            return !res;
-        });
-        return res;
-    } else {
-        if (!hasManager(type)) {
-            return false;
-        }
-        return getSharedManager(type)->hasPlugin(name);
-    }
+    return impl->loadedPlugins.contains(name);
 }
-std::weak_ptr<Plugin> PluginManagerRegistry::getPlugin(std::string_view name, std::string_view type) {
+std::weak_ptr<Plugin> PluginManagerRegistry::getPlugin(std::string_view name) {
     std::lock_guard lock(impl->mutex);
-    if (type.empty()) {
-        bool                  has = false;
-        std::weak_ptr<Plugin> res;
-        forEachManager([&](std::string_view, PluginManager& manager) {
-            if (manager.hasPlugin(name)) {
-                has = true;
-                res = manager.getPlugin(name);
-            }
-            return !has;
-        });
-        return res;
-    } else {
-        if (!hasManager(type)) {
-            return {};
-        }
+    if (!hasPlugin(name)) {
+        return {};
+    }
+    auto& type = impl->loadedPlugins.find(name)->first;
+    if (hasManager(type)) {
         return getSharedManager(type)->getPlugin(name);
     }
+    return {};
 }
 } // namespace ll::plugin

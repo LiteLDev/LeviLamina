@@ -18,6 +18,14 @@ using namespace i18n_literals;
 struct PluginRegistrarEnableAll;
 struct PluginRegistrarDisableAll;
 
+struct PluginRegistrar::Impl {
+    std::recursive_mutex                         mutex;
+    DependencyGraph<std::string>                 deps;
+};
+
+PluginRegistrar::PluginRegistrar() : impl(std::make_unique<Impl>()) {}
+PluginRegistrar::~PluginRegistrar() = default;
+
 static bool checkVersion(Manifest const& real, Dependency const& need) {
     if (!real.version || !need.version) {
         return true;
@@ -61,6 +69,8 @@ PluginRegistrar& PluginRegistrar::getInstance() {
 }
 
 void PluginRegistrar::registerPlugins() {
+    std::lock_guard lock(impl->mutex);
+
     std::unordered_map<std::string, Manifest> manifests;
 
     ll::logger.info("ll.loader.loadMain.start"_tr);
@@ -68,7 +78,7 @@ void PluginRegistrar::registerPlugins() {
     auto& registry = PluginManagerRegistry::getInstance();
 
     if (!registry.addManager(std::make_shared<NativePluginManager>())) {
-        logger.error("ll.plugin.error.failCreateManager"_tr);
+        logger.error("ll.plugin.error.failCreateNativePluginManager"_tr);
         return;
     }
 
@@ -143,8 +153,6 @@ void PluginRegistrar::registerPlugins() {
     for (auto& name : conflicts) {
         needLoad.erase(name);
     }
-
-    DependencyGraph<std::string> deps;
     for (auto& name : needLoad) {
         auto& manifest = manifests.at(name);
         if (manifest.dependencies) {
@@ -158,27 +166,27 @@ void PluginRegistrar::registerPlugins() {
                 continue;
             }
             for (auto& dependency : *manifest.dependencies) {
-                deps.emplaceDependency(name, dependency.name);
+                impl->deps.emplaceDependency(name, dependency.name);
             }
         } else {
-            deps.emplace(name);
+            impl->deps.emplace(name);
         }
         if (manifest.optionalDependencies) {
             for (auto& dependency : *manifest.optionalDependencies) {
                 if (needLoad.contains(dependency.name)) {
-                    deps.emplaceDependency(name, dependency.name);
+                    impl->deps.emplaceDependency(name, dependency.name);
                 }
             }
         }
         if (manifest.loadBefore) {
             for (auto& dependency : *manifest.loadBefore) {
                 if (needLoad.contains(dependency.name) && checkVersion(manifests.at(dependency.name), dependency)) {
-                    deps.emplaceDependency(dependency.name, name);
+                    impl->deps.emplaceDependency(dependency.name, name);
                 }
             }
         }
     }
-    auto sort = deps.sort();
+    auto sort = impl->deps.sort();
     for (auto& name : sort.unsorted) {
         logger.error("ll.plugin.error.cycleDeps"_tr(name));
     }

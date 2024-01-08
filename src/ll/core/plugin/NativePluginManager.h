@@ -9,6 +9,7 @@ public:
     using Handle = void*;
 
     NativePluginManager();
+    ~NativePluginManager();
 
     std::unordered_map<Handle, std::weak_ptr<NativePlugin>> handleMap;
 

@@ -1,11 +1,11 @@
 #include "ll/core/plugin/NativePluginManager.h"
 #include "ll/api/base/ErrorInfo.h"
-#include "ll/core/LeviLamina.h"
 #include "windows.h"
 
 namespace ll::plugin {
 
 NativePluginManager::NativePluginManager() : PluginManager("native") {}
+NativePluginManager::~NativePluginManager() = default;
 
 bool NativePluginManager::load(Manifest manifest) {
     auto l(lock());
