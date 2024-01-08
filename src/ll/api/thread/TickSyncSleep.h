@@ -16,7 +16,7 @@ LLETAPI std::mutex listMutex;
 LLETAPI std::atomic_size_t tickListSize;
 LLETAPI                    std::vector<std::variant<
     std::reference_wrapper<TickSyncSleep<chrono::ServerClock>>,
-    std::reference_wrapper<TickSyncSleep<chrono::GameTimeClock>>>>
+    std::reference_wrapper<TickSyncSleep<chrono::GameTickClock>>>>
                            tickList;
 LLAPI void                 notify();
 }; // namespace detail

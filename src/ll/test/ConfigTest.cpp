@@ -14,8 +14,6 @@
 // #include "mc/world/level/Level.h"
 // #include "mc/world/level/LevelChunkTag.h"
 // #include "mc/world/level/storage/LevelStorage.h"
-// using namespace ll::schedule;
-// GameTickScheduler s;
 
 #include "ll/api/utils/WinUtils.h"
 

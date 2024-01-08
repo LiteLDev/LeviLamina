@@ -10,7 +10,7 @@ std::mutex         listMutex;
 std::atomic_size_t tickListSize{};
 std::vector<std::variant<
     std::reference_wrapper<TickSyncSleep<chrono::ServerClock>>,
-    std::reference_wrapper<TickSyncSleep<chrono::GameTimeClock>>>>
+    std::reference_wrapper<TickSyncSleep<chrono::GameTickClock>>>>
     tickList;
 
 LL_TYPED_INSTANCE_HOOK(TickSyncSleepInterrruptHook, HookPriority::Normal, ServerLevel, &ServerLevel::_subTick, void) {

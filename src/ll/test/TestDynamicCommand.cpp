@@ -22,7 +22,7 @@ using namespace ll::hash_literals;
 using namespace ll::chrono_literals;
 using namespace ll::i18n_literals;
 
-ll::schedule::GameTimeScheduler scheduler;
+ll::schedule::GameTickScheduler scheduler;
 
 static void setupTestParamCommand(CommandRegistry& registry) {
     using Param     = DynamicCommand::ParameterData;
@@ -353,7 +353,7 @@ static void setupTimingCommand(CommandRegistry& registry) {
 
             std::unordered_map<uint, DefaultEntitySystemsCollection::ECSTiming> timings{};
             using namespace ll::chrono;
-            ll::thread::TickSyncSleep<GameTimeClock> sleeper;
+            ll::thread::TickSyncSleep<GameTickClock> sleeper;
             auto                                     begin = std::chrono::steady_clock::now();
             for (size_t i = 0; i < counttick; i++) {
                 sleeper.sleepFor(1_tick);

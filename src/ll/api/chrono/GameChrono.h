@@ -25,11 +25,11 @@ struct ServerClock {
     LLNDAPI static time_point now() noexcept;
 };
 
-struct GameTimeClock {
+struct GameTickClock {
     using duration                  = ticks;
     using rep                       = duration::rep;
     using period                    = duration::period;
-    using time_point                = std::chrono::time_point<GameTimeClock>;
+    using time_point                = std::chrono::time_point<GameTickClock>;
     static constexpr bool is_steady = false;
 
     LLNDAPI static time_point now() noexcept;
