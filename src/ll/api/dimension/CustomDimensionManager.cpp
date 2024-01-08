@@ -1,10 +1,11 @@
 
 #include "CustomDimensionManager.h"
 
-#include "ll/api/dimension/CustomDimension.h"
-#include "ll/api/dimension/CustomDimensionConfig.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
+#include "ll/core/dimension/CustomDimension.h"
+#include "ll/core/dimension/CustomDimensionConfig.h"
+#include "ll/core/dimension/FakeDimensionId.h"
 #include "mc/math/Vec3.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/level/dimension/Dimension.h"
@@ -13,6 +14,10 @@
 #include "mc/world/level/storage/LevelData.h"
 
 class Scheduler;
+
+namespace {
+ll::Logger loggerMoreDimMag("CustomDimensionManager");
+}
 
 namespace CustomDimensionHookList {
 LL_TYPED_STATIC_HOOK(
@@ -115,22 +120,17 @@ CustomDimensionManager::CustomDimensionManager() : mNewDimensionId(3) {
     CustomDimensionConfig::loadConfigFile();
     if (!CustomDimensionConfig::dimConfig.dimensionList.empty()) {
         for (auto& dim : CustomDimensionConfig::dimConfig.dimensionList) {
-            CustomDimensionMap.emplace(
+            customDimensionMap.emplace(
                 dim.first,
                 DimensionInfo{dim.first, dim.second.id, dim.second.seed, dim.second.generatorType}
             );
         }
-        mNewDimensionId += static_cast<int>(CustomDimensionMap.size());
+        mNewDimensionId += static_cast<int>(customDimensionMap.size());
         CustomDimensionHookList::hookAll();
     }
 };
 
-CustomDimensionManager::~CustomDimensionManager() {
-    CustomDimensionHookList::unhookAll();
-    if (fakeDimensionIdInstance) {
-        fakeDimensionIdInstance->~FakeDimensionId();
-    }
-}
+CustomDimensionManager::~CustomDimensionManager() { CustomDimensionHookList::unhookAll(); }
 
 CustomDimensionManager& CustomDimensionManager::getInstance() {
     static CustomDimensionManager instance{};
@@ -141,8 +141,8 @@ AutomaticID<Dimension, int>
 CustomDimensionManager::AddDimension(std::string_view dimensionName, uint seed, GeneratorType generatorType) {
     std::string                 dimName(dimensionName);
     AutomaticID<Dimension, int> dimId = -1;
-    if (CustomDimensionMap.find(dimName) != CustomDimensionMap.end()) {
-        dimId = CustomDimensionMap.at(dimName).id;
+    if (customDimensionMap.find(dimName) != customDimensionMap.end()) {
+        dimId = customDimensionMap.at(dimName).id;
         loggerMoreDimMag.info("The dimension already registry. use old id, name: {}, id: {}", dimName, dimId.id);
     } else {
         // Assign new id
@@ -150,7 +150,7 @@ CustomDimensionManager::AddDimension(std::string_view dimensionName, uint seed, 
             std::lock_guard lock{mMapMutex};
             dimId = mNewDimensionId.load();
             mNewDimensionId++;
-            CustomDimensionMap.emplace(dimName, DimensionInfo{dimName, dimId, seed, generatorType});
+            customDimensionMap.emplace(dimName, DimensionInfo{dimName, dimId, seed, generatorType});
             CustomDimensionConfig::dimConfig.dimensionList.emplace(
                 dimName,
                 CustomDimensionConfig::Config::dimensionInfo{dimId, seed, generatorType}
@@ -172,7 +172,7 @@ CustomDimensionManager::AddDimension(std::string_view dimensionName, uint seed, 
         );
         {
             std::lock_guard lock{mMapMutex};
-            RegistryDimensionMap.emplace(dimName, DimensionInfo{dimName, dimId, seed, generatorType});
+            registeredDimensionMap.emplace(dimName, DimensionInfo{dimName, dimId, seed, generatorType});
         };
     } else {
         loggerMoreDimMag.error("Level is nullptr, cannot registry new dimension, name: {}, id: {}", dimName, dimId.id);

@@ -11,7 +11,6 @@
 #include "mc/math/Vec3.h"
 #include "mc/network/packet/Packet.h"
 
-
 class ServerPlayer;
 
 class FakeDimensionId {
@@ -35,5 +34,5 @@ public:
     void                  onPlayerLeftCustomDimension(mce::UUID uuid, bool isRespawn);
     std::function<void()> getBackDimensionCallback(mce::UUID uuid);
 
-    LLAPI bool teleportToCustomDimension(ServerPlayer* player, DimensionType dimensionType, Vec3& pos);
+    bool teleportToCustomDimension(ServerPlayer* player, DimensionType dimensionType, Vec3& pos);
 };
