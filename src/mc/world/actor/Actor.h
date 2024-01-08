@@ -101,9 +101,9 @@ public:
 
     LLNDAPI float quickEvalMolangScript(std::string const& expression);
 
-    LLNDAPI std::unique_ptr<class CompoundTag> saveToNbt() const;
+    LLNDAPI std::unique_ptr<class CompoundTag> save() const;
 
-    LLAPI bool loadFromNbt(class CompoundTag const& nbt);
+    LLAPI bool load(class CompoundTag const& nbt);
 
     // prevent constructor by default
     Actor& operator=(Actor const&);
