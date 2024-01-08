@@ -113,11 +113,11 @@ LL_TYPED_INSTANCE_HOOK(
         || packet.getId() == MinecraftPacketIds::AddVolumeEntityPacket) {
         for (auto& subId : subIds) {
             auto player =
-                ll::service::getServerNetworkHandler()->_getServerPlayer(subId.id, SubClientId::PrimaryClient);
+                ll::service::getServerNetworkHandler()->_getServerPlayer(subId.mIdentifier, SubClientId::PrimaryClient);
             if (player && player->getDimensionId().id >= 3) {
                 FakeDimensionId::changePacketDimension(packet);
             }
-            packet.sendToClient(subId.id, subId.subClientId);
+            packet.sendToClient(subId);
         }
         return;
     }
