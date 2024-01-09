@@ -26,8 +26,8 @@ nav:
     - guides/form_guide.md
     - guides/hook_guide.md
     - guides/i18n_guide.md
-    - guides/permission_guide.md
     - guides/item_guide.md
+    - guides/permission_guide.md
 
   - faq.md
 
