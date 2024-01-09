@@ -19,9 +19,9 @@ public:
 
     std::vector<std::string> getSortedPluginNames() const;
 
-    void registerPlugins();
+    void loadAllPlugins();
 
-    bool loadPlugin(Manifest manifest);
+    bool loadPlugin(std::string_view name);
 
     bool unloadPlugin(std::string_view name);
 

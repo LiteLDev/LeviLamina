@@ -1,5 +1,6 @@
 #include "ll/core/plugin/PluginRegistrar.h"
 
+#include <expected>
 #include <ranges>
 
 #include "ll/api/base/ErrorInfo.h"
@@ -38,27 +39,28 @@ enum class DirState {
     Success,
 };
 
-static DirState loadManifest(Manifest& manifest, std::filesystem::path const& file) {
+static std::expected<Manifest, DirState> loadManifest(std::filesystem::path const& file) {
     auto content = file_utils::readFile(file / u8"manifest.json");
     if (!content || content->empty()) {
-        return DirState::Empty;
+        return std::unexpected{DirState::Empty};
     }
     auto json = nlohmann::json::parse(*content, nullptr, false, true);
     if (json.is_discarded()) {
-        return DirState::Error;
+        return std::unexpected{DirState::Error};
     }
     std::string dirName = string_utils::u8str2str(file.stem().u8string());
+    Manifest    manifest;
     try {
         reflection::deserialize<nlohmann::json, Manifest>(manifest, json);
     } catch (...) {
         error_info::printCurrentException();
-        return DirState::Error;
+        return std::unexpected{DirState::Error};
     }
     if (manifest.name != dirName) {
         logger.error("ll.plugin.error.nameUnmatch"_tr(manifest.name, dirName));
-        return DirState::Error;
+        return std::unexpected{DirState::Error};
     }
-    return DirState::Success;
+    return manifest;
 }
 
 PluginRegistrar& PluginRegistrar::getInstance() {
@@ -66,7 +68,7 @@ PluginRegistrar& PluginRegistrar::getInstance() {
     return instance;
 }
 
-void PluginRegistrar::registerPlugins() {
+void PluginRegistrar::loadAllPlugins() {
     std::lock_guard lock(impl->mutex);
 
     std::unordered_map<std::string, Manifest> manifests;
@@ -84,15 +86,16 @@ void PluginRegistrar::registerPlugins() {
         if (!file.is_directory()) {
             continue;
         }
-        Manifest manifest;
-        auto     res = loadManifest(manifest, file.path());
+        auto res =
+            loadManifest(file.path())
+                .transform([&](auto&& manifest) { manifests.emplace(std::string{manifest.name}, std::move(manifest)); })
+                .error_or(DirState::Success);
         if (res != DirState::Success) {
             if (res == DirState::Error) {
                 logger.error("ll.plugin.error.failToLoad"_tr(string_utils::u8str2str(file.path().stem().u8string())));
             }
             continue;
         }
-        manifests.emplace(std::string{manifest.name}, std::move(manifest));
     }
 
     std::unordered_set<std::string> needLoad;
@@ -268,9 +271,21 @@ LL_TYPE_INSTANCE_HOOK(
     origin();
 }
 
-
-bool PluginRegistrar::loadPlugin(Manifest manifest) { return false; } // TODO: check dep confi ......
-
+bool PluginRegistrar::loadPlugin(std::string_view name) {
+    std::lock_guard lock(impl->mutex);
+    auto            res = loadManifest(getPluginsRoot() / string_utils::sv2u8sv(name));
+    if (!res.has_value()) {
+        logger.error("ll.plugin.error.failToLoad"_tr(name));
+        return false;
+    }
+    auto& manifest = *res;
+    // TODO: check deps,...,......
+    if (PluginManagerRegistry::getInstance().loadPlugin(std::move(manifest))) {
+        impl->deps.emplace(std::string{name});
+        return true;
+    }
+    return false;
+}
 bool PluginRegistrar::unloadPlugin(std::string_view name) {
     std::lock_guard lock(impl->mutex);
     auto            dependents = impl->deps.dependentBy(std::string{name});
@@ -282,7 +297,6 @@ bool PluginRegistrar::unloadPlugin(std::string_view name) {
     }
     return false;
 }
-
 bool PluginRegistrar::enablePlugin(std::string_view name) {
     std::lock_guard lock(impl->mutex);
     auto&           registry   = PluginManagerRegistry::getInstance();
@@ -325,5 +339,4 @@ bool PluginRegistrar::disablePlugin(std::string_view name) {
     }
     return false;
 }
-
 } // namespace ll::plugin

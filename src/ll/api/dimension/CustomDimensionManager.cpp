@@ -138,7 +138,7 @@ CustomDimensionManager::addDimension(std::string_view dimensionName, uint seed, 
     AutomaticID<Dimension, int> dimId = -1;
     if (customDimensionMap.find(dimName) != customDimensionMap.end()) {
         dimId = customDimensionMap.at(dimName).id;
-        loggerMoreDimMag.info("The dimension already registry. use old id, name: {}, id: {}", dimName, dimId.id);
+        loggerMoreDimMag.debug("The dimension already registry. use old id, name: {}, id: {}", dimName, dimId.id);
     } else {
         // Assign new id
         {

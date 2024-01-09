@@ -231,7 +231,7 @@ void leviLaminaMain() {
     logger.warn("ll.main.warning.inDebugMode"_tr);
 #endif
 
-    plugin::PluginRegistrar::getInstance().registerPlugins();
+    plugin::PluginRegistrar::getInstance().loadAllPlugins();
 
     registerLeviCommands();
 }

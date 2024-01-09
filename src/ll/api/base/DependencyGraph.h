@@ -80,33 +80,17 @@ public:
         }
         return false;
     }
-    std::vector<T> dependentBy(T const& node) const {
-        std::queue<T>  queue;
-        std::vector<T> result;
-        queue.push(node);
-        while (!queue.empty()) {
-            auto now = queue.front();
-            queue.pop();
-            for (auto& deps : data.at(now).dependBy) {
-                queue.push(deps);
-                result.push_back(deps);
-            }
+    std::unordered_set<T> dependentBy(T const& node) const {
+        if (contains(node)) {
+            return {};
         }
-        return result;
+        return data.at(node).dependBy;
     }
-    std::vector<T> dependentOn(T const& node) const {
-        std::queue<T>  queue;
-        std::vector<T> result;
-        queue.push(node);
-        while (!queue.empty()) {
-            auto now = queue.front();
-            queue.pop();
-            for (auto& deps : data.at(now).dependOn) {
-                queue.push(deps);
-                result.push_back(deps);
-            }
+    std::unordered_set<T> dependentOn(T const& node) const {
+        if (contains(node)) {
+            return {};
         }
-        return result;
+        return data.at(node).dependOn;
     }
     [[nodiscard]] SortResult sort() const {
         std::vector<T> sorted;
