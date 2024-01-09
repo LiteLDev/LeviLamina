@@ -103,8 +103,8 @@ jobs:
       - name: Calculate SHA256
         id: calculate-sha256
         run: |
-          echo ::set-output name=release::$(sha256sum levilamina-windows-x64.zip | awk '{print $1}')
-          echo ::set-output name=debug::$(sha256sum levilamina-debug-windows-x64.zip | awk '{print $1}')
+          echo release=$(sha256sum levilamina-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
+          echo debug=$(sha256sum levilamina-debug-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
 
       - uses: softprops/action-gh-release@v1
         with:
