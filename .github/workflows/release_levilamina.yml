@@ -55,6 +55,7 @@ jobs:
   upload-to-release:
     needs:
       - build
+      - build-debug
     permissions:
       contents: write
     runs-on: ubuntu-latest
