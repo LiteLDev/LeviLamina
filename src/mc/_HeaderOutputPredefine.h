@@ -104,8 +104,6 @@
 #include "mc/common/wrapper/optional_ref.h" // replace optional<reference_wrapper<>>
 #include "mc/math/vector/Vecs.h"            // for vector types
 
-using FacingID = uchar;
-
 // clang-format off
 template <typename T0, typename T1>
 class AutomaticID;
