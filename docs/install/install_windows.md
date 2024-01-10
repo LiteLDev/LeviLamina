@@ -66,19 +66,37 @@ Then you can start lipUI, select a proper workspace, and install LeviLamina from
 
 ### Install Manually
 
-#### Downloading Required Files
+#### Downloading Necessary Files
 
-1. Navigate to the releases section on [github.com/LiteLDev/LeviLamina](https://github.com/LiteLDev/LeviLamina), select the preferred version, and download the `levilamina-windows-x64.zip` file from that version's assets.
-2. Download the corresponding Bedrock Dedicated Server (BDS) version from [minecraft.net](https://www.minecraft.net/en-us/download/server/bedrock) and obtain the `bedrock-server-<version>.zip` archive.
-3. Acquire the matching versions of `PeEditor.exe` and `PreLoader.dll` by visiting the releases on [github.com/LiteLDev/PeEditor](https://github.com/LiteLDev/PeEditor) and [github.com/LiteLDev/PreLoader](https://github.com/LiteLDev/PreLoader) respectively.
+1. **Download LeviLamina**:
+   - Go to [LeviLamina's Release Page on GitHub](https://github.com/LiteLDev/LeviLamina/releases).
+   - Choose the version you want.
+   - Download the `levilamina-windows-x64.zip` file from the selected version's assets.
 
-> Typically, the latest LeviLamina release should coincide with the latest versions of PeEditor and PreLoader. Ensure compatibility with the corresponding BDS version.
+2. **Download BDS (Minecraft Server)**:
+   - Visit [Minecraft's server download page](https://www.minecraft.net/en-us/download/server/bedrock).
+   - Get the Bedrock Dedicated Server (BDS) version that corresponds with your LeviLamina version, named `bedrock-server-<version>.zip`.
 
-#### Installation Process
+3. **Get PeEditor and PreLoader**:
+   - Head to their respective GitHub release pages: [PeEditor Releases](https://github.com/LiteLDev/PeEditor/releases) and [PreLoader Releases](https://github.com/LiteLDev/PreLoader/releases).
+   - Download the latest `PeEditor.exe` and `PreLoader.dll`.
 
-1. Unzip the `bedrock-server-<version>.zip` file, obtained from step 2 of **Downloading Required Files**, into an empty directory.
-2. Transfer the `PeEditor.exe` and `PreLoader.dll` files, secured in step 3 of **Downloading Required Files**, into the same directory where you extracted the BDS archive, ensuring they are alongside `bedrock_server.exe`.
-3. Extract the `levilamina-windows-x64.zip` file from step 1 and relocate the `/lib/LeviLamina.dll` and `/lib/LeviLamina.pdb` files into the same directory as the BDS files from step 1.
-4. Execute `PeEditor.exe` by double-clicking and wait until the process completes. You should then find `bedrock_server_mod.exe` in the directory, and the original `bedrock_server.exe` will be renamed to `bedrock_server.exe.bak`.
+> **Note**: Typically, the latest version of LeviLamina aligns with the newest versions of PeEditor and PreLoader. Ensure they are compatible with your BDS version.
 
-You have now successfully installed LeviLamina. Initiate it by running `bedrock_server_mod.exe`.
+#### Installation Steps
+
+1. **Unzip the BDS File**:
+   - Extract the `bedrock-server-<version>.zip` file, which you obtained from step 2, into a new, empty folder.
+
+2. **Place PeEditor and PreLoader**:
+   - Move `PeEditor.exe` and `PreLoader.dll` into the same directory where you extracted the BDS files, ensuring they are alongside `bedrock_server.exe`.
+
+3. **Include LeviLamina Files**:
+   - Unzip the `levilamina-windows-x64.zip` file from step 1.
+   - Take the `lib/LeviLamina.dll` and `lib/LeviLamina.pdb` files and place them in the same directory as the BDS files.
+
+4. **Run PeEditor**:
+   - Double-click `PeEditor.exe` and wait for the process to complete.
+   - You should then find a new file named `bedrock_server_mod.exe` in the directory, and the original `bedrock_server.exe` will be renamed to `bedrock_server.exe.bak`.
+
+Now, you have successfully installed LeviLamina. To start it, run `bedrock_server_mod.exe`.
