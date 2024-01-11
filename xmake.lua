@@ -125,6 +125,19 @@ target("LeviLamina")
         add_packages("gtest")
         add_defines("LL_DEBUG")
         add_files("src/ll/test/**.cpp")
+
+        before_build(function (target)
+            headers = ""
+            for _,x in ipairs(os.files("src/**.h")) do
+             headers = headers.."#include \""..path.relative(x, "src/").."\"\n"
+            end
+            file = io.open("src/ll/test/include_all.cpp", "w")
+            file:write(headers)
+            file:close()
+        end)
+        after_build(function (target)
+            io.writefile("src/ll/test/include_all.cpp", "// auto gen when build test")
+        end)
     end
 
     if is_mode("debug") then

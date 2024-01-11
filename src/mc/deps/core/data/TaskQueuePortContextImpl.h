@@ -8,6 +8,8 @@
 #include "mc/enums/TaskQueuePortStatus.h"
 #include "mc/enums/XTaskQueuePort.h"
 
+#pragma warning(push)
+#pragma warning(disable : 5204)
 class TaskQueuePortContextImpl : public ::ITaskQueuePortContext {
 public:
     // prevent constructor by default
@@ -55,3 +57,4 @@ public:
 
     // NOLINTEND
 };
+#pragma warning(pop)

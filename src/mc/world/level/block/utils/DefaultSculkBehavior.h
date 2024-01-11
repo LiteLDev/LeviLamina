@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/world/level/block/SculkBehavior.h"
 
+#pragma warning(push)
+#pragma warning(disable : 5204)
 class DefaultSculkBehavior : public ::SculkBehavior {
 public:
     // prevent constructor by default
@@ -49,3 +51,4 @@ public:
 
     // NOLINTEND
 };
+#pragma warning(pop)

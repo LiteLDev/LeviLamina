@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/ChunkLocalHeight.h"
 
-class ChunkBlockPos : public Field<ChunkBlockPos, char, short, char> {
+class ChunkBlockPos : public ll::math::Field<ChunkBlockPos, char, short, char> {
 public:
     schar            x;
     schar            z;
     ChunkLocalHeight y;
     [[nodiscard]] constexpr ChunkBlockPos() noexcept : x(0), z(0), y(0){};
-    template <std::convertible_to<short> T>
-    [[nodiscard]] constexpr explicit ChunkBlockPos(T const& all) noexcept
+    [[nodiscard]] constexpr explicit ChunkBlockPos(short all) noexcept
     : x(static_cast<schar>(all)),
       z(static_cast<schar>(all)),
       y(static_cast<short>(all)){};

@@ -106,7 +106,7 @@ template <IsCommutativeGroup T>
     T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
         if constexpr (std::is_base_of_v<CommutativeGroupTag, axis_type>) {
             tmp.template get<axis_type>(iter) =
-                ::min<axis_type>(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+                min<axis_type>(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
         } else {
             tmp.template get<axis_type>(iter) =
                 std::min<axis_type>(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
@@ -121,7 +121,7 @@ template <IsCommutativeGroup T>
     T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
         if constexpr (std::is_base_of_v<CommutativeGroupTag, axis_type>) {
             tmp.template get<axis_type>(iter) =
-                ::max<axis_type>(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+                max<axis_type>(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
         } else {
             tmp.template get<axis_type>(iter) =
                 std::max<axis_type>(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
