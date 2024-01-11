@@ -136,7 +136,7 @@ target("LeviLamina")
             file:close()
         end)
         after_build(function (target)
-            io.writefile("src/ll/test/include_all.cpp", "// auto gen when build test")
+            io.writefile("src/ll/test/include_all.cpp", "// auto gen when build test\n")
         end)
     end
 

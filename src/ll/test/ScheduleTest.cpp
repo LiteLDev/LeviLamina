@@ -35,7 +35,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     ::ServerInstance& ins
 ) {
 
-    // ll::Logger::setDefaultPlayerOutputFunc([](std::string_view sv) { TextPacket::createRawMessage(sv).sendToClients(); }
+    // ll::Logger::setDefaultPlayerOutputFunc([](std::string_view sv) {
+    // TextPacket::createRawMessage(sv).sendToClients(); }
     // );
     /*
          s.add<RepeatTask>(100_tick, [&] {

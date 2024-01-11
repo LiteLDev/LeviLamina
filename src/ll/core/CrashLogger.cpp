@@ -175,7 +175,7 @@ static void dumpSystemInfo() {
 }
 static void dumpStacktrace(_CONTEXT const& c) {
     crashInfo.logger.info("Stacktrace:");
-    auto str = stacktrace_utils::toString(error_info::stacktraceFromCurrExc(c));
+    auto str = stacktrace_utils::toString(error_info::stacktraceFromContext(c));
     for (auto& sv : splitByPattern(str, "\n")) {
         crashInfo.logger.info("  |{}", sv);
     }

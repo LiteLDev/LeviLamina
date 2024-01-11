@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/BlockUpdateFlag.h"
 #include "mc/enums/BlockLayer.h"
+#include "mc/enums/BlockUpdateFlag.h"
 #include "mc/network/NetworkBlockPosition.h"
 
 // auto generated inclusion list

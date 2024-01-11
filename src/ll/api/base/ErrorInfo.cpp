@@ -152,7 +152,7 @@ std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const& rec) noexcept {
 
 #if _HAS_CXX23
 
-std::stacktrace stacktraceFromCurrExc(_CONTEXT const& context) {
+std::stacktrace stacktraceFromContext(_CONTEXT const& context, size_t skip, size_t maxDepth) {
     if (std::addressof(context) == nullptr) {
         return {};
     }
@@ -178,7 +178,7 @@ std::stacktrace stacktraceFromCurrExc(_CONTEXT const& context) {
 
     auto tmpCtx = context;
 
-    for (;;) {
+    for (size_t i = 0; i < maxDepth; ++i) {
         SetLastError(0);
         BOOL correct = StackWalk64(
             machine,
@@ -192,6 +192,9 @@ std::stacktrace stacktraceFromCurrExc(_CONTEXT const& context) {
             nullptr
         );
         if (!correct || !sf.AddrFrame.Offset) break;
+        if (i < skip) {
+            continue;
+        }
         realStacktrace.hash += (ulong)sf.AddrPC.Offset;
         realStacktrace.addresses.push_back(sf.AddrPC.Offset);
     }
@@ -311,8 +314,16 @@ void printCurrentException(optional_ref<ll::Logger> l, std::exception_ptr const&
     try {
 #if defined(LL_DEBUG) && _HAS_CXX23
         std::string res;
-        res = stacktrace_utils::toString(stacktraceFromCurrExc());
-        res = makeExceptionString(e) + (res.empty() ? "" : ("\ndebug stacktrace:\n" + res));
+        auto        stacktrace = stacktraceFromCurrExc();
+        if (stacktrace.empty()) {
+            stacktrace = std::stacktrace::current(2);
+            if (!stacktrace.empty()) {
+                res = "\ncurrent stacktrace:\n" + stacktrace_utils::toString(stacktrace);
+            }
+        } else {
+            res = "\nexception stacktrace:\n" + stacktrace_utils::toString(stacktrace);
+        }
+        res = makeExceptionString(e) + res;
 #else
         auto res = makeExceptionString(e);
 #endif

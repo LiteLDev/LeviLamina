@@ -90,13 +90,7 @@ public:
 class myTypeList1;
 class myTypeList2;
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
-    ConfigTest,
-    HookPriority::Normal,
-    ServerInstance,
-    &ServerInstance::startServerThread,
-    void
-) {
+LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &ServerInstance::startServerThread, void) {
     origin();
 
     auto lock = ll::Logger::lock();

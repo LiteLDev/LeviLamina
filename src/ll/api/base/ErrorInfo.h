@@ -85,7 +85,11 @@ LLNDAPI _CONTEXT&          current_exception_context() noexcept;
 LLNDAPI std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const&) noexcept;
 
 #if _HAS_CXX23
-LLNDAPI std::stacktrace stacktraceFromCurrExc(_CONTEXT const& = current_exception_context());
+LLNDAPI std::stacktrace stacktraceFromContext(_CONTEXT const& context, size_t skip = 0, size_t maxDepth = ~0ui64);
+
+inline std::stacktrace stacktraceFromCurrExc(size_t skip = 2, size_t maxDepth = ~0ui64) {
+    return stacktraceFromContext(current_exception_context(), skip, maxDepth);
+}
 #endif
 
 LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr) noexcept;
