@@ -1,7 +1,6 @@
 #include "mc/world/actor/Actor.h"
 #include "ll/api/memory/Memory.h"
 #include "mc/common/HitDetection.h"
-#include "mc/dataloadhelper/DefaultDataLoadHelper.h"
 #include "mc/entity/EntityContext.h"
 #include "mc/entity/flags/SimulatedPlayerFlag.h"
 #include "mc/entity/systems/OnFireSystem.h"
@@ -139,18 +138,4 @@ void Actor::setName(std::string const& name) {
 
 float Actor::quickEvalMolangScript(std::string const& expression) {
     return ExpressionNode(expression).evalAsFloat(getRenderParams());
-}
-
-std::unique_ptr<CompoundTag> Actor::save() const {
-    auto res = std::make_unique<CompoundTag>();
-    if (save(*res)) {
-        return res;
-    }
-    return nullptr;
-}
-
-bool Actor::load(class CompoundTag const& nbt) {
-    bool res = load(nbt, defaultDataLoadHelper);
-    refresh();
-    return res;
 }

@@ -45,9 +45,9 @@ optional_ref<Container> BlockSource::tryGetContainer(class BlockPos const& pos) 
     return DropperBlockActor::getContainerAt(*this, pos.center());
 }
 
-optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
-    auto& level         = getLevel();
-    auto  actorOwnerPtr = level.getActorFactory().loadActor(const_cast<CompoundTag*>(&nbt), defaultDataLoadHelper);
+optional_ref<Actor> BlockSource::spawnActor(CompoundTag& nbt) {
+    auto& level        = getLevel();
+    auto actorOwnerPtr = level.getActorFactory().loadActor(const_cast<CompoundTag*>(&nbt), ::ll::defaultDataLoadHelper);
     if (!actorOwnerPtr) {
         return nullptr;
     }
@@ -63,11 +63,11 @@ optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
 }
 
 optional_ref<Actor> BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<DimensionType> dimId) {
-    auto nbt = origin.save();
-    if (!nbt || !nbt->contains("Pos")) {
+    CompoundTag nbt;
+    if (!origin.save(nbt) || !nbt.contains("Pos")) {
         return nullptr;
     }
-    if (auto& nbtPos = nbt->at("Pos"); nbtPos.hold<ListTag>()) {
+    if (auto& nbtPos = nbt.at("Pos"); nbtPos.hold<ListTag>()) {
         nbtPos = ListTag{pos.x, pos.y, pos.z};
     }
     Dimension* dim{};
@@ -79,7 +79,7 @@ optional_ref<Actor> BlockSource::cloneActor(Actor const& origin, Vec3 const& pos
     if (!dim) {
         return nullptr;
     }
-    return dim->getBlockSourceFromMainChunkSource().spawnActor(*nbt);
+    return dim->getBlockSourceFromMainChunkSource().spawnActor(nbt);
 }
 
 bool BlockSource::destroyBlock(BlockPos const& pos, optional_ref<ItemStack> tool, optional_ref<Mob> toolOwner) {

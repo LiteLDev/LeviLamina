@@ -7,6 +7,11 @@
 #include "mc/world/Direction.h"
 #include "mc/world/actor/InternalComponentRegistry.h"
 
+class Vec3;
+class BlockPos;
+struct ActorUniqueID;
+class HashedString;
+
 class DataLoadHelper {
 public:
     // NOLINTBEGIN

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/dataloadhelper/DefaultDataLoadHelper.h"
 #include "mc/entity/utilities/ActorDamageCause.h"
 #include "mc/world/actor/common/ClipDefaults.h"
 #include "mc/world/phys/HitResult.h"
@@ -101,9 +102,9 @@ public:
 
     LLNDAPI float quickEvalMolangScript(std::string const& expression);
 
-    LLNDAPI std::unique_ptr<class CompoundTag> save() const;
+    LLNDAPI std::unique_ptr<class CompoundTag> saveToNbt() const;
 
-    LLAPI bool load(class CompoundTag const& nbt);
+    LLAPI bool loadFromNbt(class CompoundTag const& nbt);
 
     // prevent constructor by default
     Actor& operator=(Actor const&);
@@ -411,7 +412,7 @@ public:
     virtual bool save(class CompoundTag& entityTag) const;
 
     // vIndex: 98, symbol: ?load@Actor@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual bool load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    virtual bool load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper = ::ll::defaultDataLoadHelper);
 
     // vIndex: 99, symbol: ?queryEntityRenderer@Actor@@UEBAAEBVHashedString@@XZ
     virtual class HashedString const& queryEntityRenderer() const;
@@ -1525,7 +1526,8 @@ public:
     MCAPI void lerpTo(class Vec3 const& pos, class Vec2 const& rot, float headYaw, int steps);
 
     // symbol: ?loadEntityFlags@Actor@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI void loadEntityFlags(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI void
+    loadEntityFlags(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper = ::ll::defaultDataLoadHelper);
 
     // symbol:
     // ?loadLinks@Actor@@QEAAXAEBVCompoundTag@@AEAV?$vector@UActorLink@@V?$allocator@UActorLink@@@std@@@std@@AEAVDataLoadHelper@@@Z

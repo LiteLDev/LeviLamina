@@ -37,7 +37,7 @@ public:
 
     LLNDAPI optional_ref<Container> tryGetContainer(BlockPos const& pos);
 
-    LLAPI optional_ref<Actor> spawnActor(class CompoundTag const&);
+    LLAPI optional_ref<Actor> spawnActor(class CompoundTag&);
 
     LLAPI optional_ref<Actor>
           cloneActor(Actor const& origin, Vec3 const& pos, std::optional<DimensionType> dimId = std::nullopt);

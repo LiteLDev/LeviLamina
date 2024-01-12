@@ -54,6 +54,7 @@ class Certificate;
 class UserEntityIdentifierComponent;
 class ConnectionRequest;
 class Packet;
+class PlayerEventCoordinator;
 
 class Player : public ::Mob {
 public:

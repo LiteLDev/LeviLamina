@@ -30,6 +30,8 @@ namespace mce { class Color; }
 namespace mce { class UUID; }
 // clang-format on
 
+class BodyControl;
+
 class Mob : public ::Actor {
 public:
     inline void refreshInventory() {

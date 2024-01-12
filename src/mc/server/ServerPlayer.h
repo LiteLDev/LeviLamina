@@ -94,7 +94,7 @@ public:
     virtual void setOffhandSlot(class ItemStack const& item);
 
     // vIndex: 98, symbol: ?load@ServerPlayer@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual bool load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    virtual bool load(class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper = ::ll::defaultDataLoadHelper);
 
     // vIndex: 106, symbol: ?canChangeDimensionsUsingPortal@ServerPlayer@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;

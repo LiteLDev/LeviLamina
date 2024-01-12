@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/dataloadhelper/DefaultDataLoadHelper.h"
 
 // auto generated inclusion list
 #include "mc/world/level/block/utils/BlockActorType.h"
@@ -12,10 +13,6 @@ class BlockPos;
 class BlockActor {
 public:
     LLAPI void refresh(optional_ref<class BlockSource> blockSource = std::nullopt);
-
-    LLNDAPI std::unique_ptr<class CompoundTag> save() const;
-
-    LLAPI void load(class CompoundTag const& nbt, optional_ref<class BlockSource> blockSource = std::nullopt);
 
     LLNDAPI static std::shared_ptr<BlockActor> create(class CompoundTag const& nbt);
 
@@ -32,7 +29,7 @@ public:
     virtual ~BlockActor();
 
     // vIndex: 1, symbol: ?load@BlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    virtual void load(class Level&, class CompoundTag const& tag, class DataLoadHelper&);
+    virtual void load(class Level&, class CompoundTag const& tag, class DataLoadHelper& = ::ll::defaultDataLoadHelper);
 
     // vIndex: 2, symbol: ?save@BlockActor@@UEBA_NAEAVCompoundTag@@@Z
     virtual bool save(class CompoundTag& tag) const;
@@ -44,7 +41,8 @@ public:
     virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
 
     // vIndex: 5, symbol: ?loadBlockData@BlockActor@@UEAAXAEBVCompoundTag@@AEAVBlockSource@@AEAVDataLoadHelper@@@Z
-    virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
+    virtual void
+    loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper& = ::ll::defaultDataLoadHelper);
 
     // vIndex: 6, symbol: ?onCustomTagLoadDone@BlockActor@@UEAAXAEAVBlockSource@@@Z
     virtual void onCustomTagLoadDone(class BlockSource&);
@@ -244,8 +242,11 @@ public:
 
     // symbol:
     // ?loadStatic@BlockActor@@SA?AV?$shared_ptr@VBlockActor@@@std@@AEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-    MCAPI static std::shared_ptr<class BlockActor>
-    loadStatic(class Level& level, class CompoundTag const& tag, class DataLoadHelper& dataLoadHelper);
+    MCAPI static std::shared_ptr<class BlockActor> loadStatic(
+        class Level&             level,
+        class CompoundTag const& tag,
+        class DataLoadHelper&    dataLoadHelper = ::ll::defaultDataLoadHelper
+    );
 
     // NOLINTEND
 

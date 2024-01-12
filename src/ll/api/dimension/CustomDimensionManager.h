@@ -6,6 +6,11 @@
 #include "mc/world/AutomaticID.h"
 #include "mc/world/level/levelgen/GeneratorType.h"
 
+class Dimension;
+class ILevel;
+class Scheduler;
+using DimensionType = AutomaticID<Dimension, int>;
+
 namespace ll::dimension {
 
 class FakeDimensionId;
@@ -25,10 +30,10 @@ class CustomDimensionManager {
 
 protected:
     struct DimensionInfo {
-        const std::string           name;
-        AutomaticID<Dimension, int> id;
-        uint                        seed;
-        GeneratorType               generatorType;
+        const std::string name;
+        DimensionType     id;
+        uint              seed;
+        GeneratorType     generatorType;
     };
     std::unordered_map<std::string, DimensionInfo> customDimensionMap;     // save all dimension info
     std::unordered_map<std::string, DimensionInfo> registeredDimensionMap; // save registry dimension info
@@ -39,11 +44,16 @@ public:
      * @brief Add a custom dimension
      * @return success add dimension id
      */
-    LLAPI AutomaticID<Dimension, int> addDimension(
+    LLAPI DimensionType addDimension(
         std::string_view dimensionName,
         uint             seed          = 123,
         GeneratorType    generatorType = GeneratorType::Overworld
     );
+
+    // LLAPI DimensionType addDimension(
+    //     std::string_view                                                                     dimensionName,
+    //     std::function<std::shared_ptr<Dimension>(DimensionType, ILevel&, Scheduler&)> const& factory
+    // );
 };
 
 // Dimension need to test virtual tables

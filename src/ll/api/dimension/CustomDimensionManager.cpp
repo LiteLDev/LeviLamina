@@ -132,10 +132,10 @@ CustomDimensionManager& CustomDimensionManager::getInstance() {
     return instance;
 }
 
-AutomaticID<Dimension, int>
+DimensionType
 CustomDimensionManager::addDimension(std::string_view dimensionName, uint seed, GeneratorType generatorType) {
-    std::string                 dimName(dimensionName);
-    AutomaticID<Dimension, int> dimId = -1;
+    std::string   dimName(dimensionName);
+    DimensionType dimId = -1;
     if (customDimensionMap.find(dimName) != customDimensionMap.end()) {
         dimId = customDimensionMap.at(dimName).id;
         loggerMoreDimMag.debug("The dimension already registry. use old id, name: {}, id: {}", dimName, dimId.id);

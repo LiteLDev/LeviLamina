@@ -20,8 +20,6 @@ public:
     OverworldDimension(OverworldDimension const&);
     OverworldDimension();
 
-    LLNDAPI OverworldDimension(ILevel& ilevel, Scheduler& scheduler);
-
 public:
     // NOLINTBEGIN
     // symbol:
