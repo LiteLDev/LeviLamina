@@ -47,7 +47,7 @@
         "github.com/tooth-hub/another-plugin": "2.0.x"
     },
     "prerequisites": {
-        "github.com/tooth-hub/levilamina": "1.0.x"
+        "github.com/LiteLDev/LeviLamina": "1.0.x"
     },
     "files": {
         "place": [
@@ -63,7 +63,7 @@
 替换`tooth`字段的值为你的插件的GitHub仓库地址，替换`version`字段的值为你的插件的版本号，填写`info`中各个字段的值，填写`dependencies`和`prerequisites`中各个字段的值。
 
 !!! note
-    `dependencies`在安装插件时，会自动安装依赖的插件，在卸载插件时，会自动卸载依赖的插件。但是`prerequisites`不会自动安装，而是在缺少依赖时报错。一般来说，`prerequisites`中的插件应当是一些基础性的、框架级别的包，例如`github.com/tooth-hub/levilamina`，以避免插件的卸载过程中误卸载了这些包。
+    `dependencies`在安装插件时，会自动安装依赖的插件，在卸载插件时，会自动卸载依赖的插件。但是`prerequisites`不会自动安装，而是在缺少依赖时报错。一般来说，`prerequisites`中的插件应当是一些基础性的、框架级别的包，例如`github.com/LiteLDev/LeviLamina`，以避免插件的卸载过程中误卸载了这些包。
 
 更多关于`tooth.json`的信息，请参考<https://docs.lippkg.com/tooth_json_file_reference.html>。
 

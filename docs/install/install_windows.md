@@ -32,19 +32,19 @@ If you have not installed lip, you can install it following the instructions in 
 After installing lip, you can install LeviLamina by running the following command:
 
 ```powershell
-lip install github.com/tooth-hub/levilamina
+lip install github.com/LiteLDev/LeviLamina
 ```
 
-To install a specific version of LeviLamina, for example, 1.0.0, you can run the following command:
+To install a specific version of LeviLamina, for example, 0.4.2, you can run the following command:
 
 ```powershell
-lip install github.com/tooth-hub/levilamina@1.0.0
+lip install github.com/LiteLDev/LeviLamina@0.4.2
 ```
 
 During the installation, you might be asked to confirm some prompts. You can press `y` to confirm the prompts. To skip the prompts, you can add the `-y` option to the command.
 
 ```powershell
-lip install -y github.com/tooth-hub/levilamina
+lip install -y github.com/LiteLDev/LeviLamina
 ```
 
 You have now successfully installed LeviLamina.
@@ -52,7 +52,7 @@ You have now successfully installed LeviLamina.
 To upgrade LeviLamina, you can run the following command:
 
 ```powershell
-lip install --upgrade github.com/tooth-hub/levilamina
+lip install --upgrade github.com/LiteLDev/LeviLamina
 ```
 
 !!! danger

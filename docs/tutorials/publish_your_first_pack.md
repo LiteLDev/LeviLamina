@@ -26,7 +26,7 @@ Create a `tooth.json` file in the export directory of the pack with the followin
         ]
     },
     "dependencies": {
-        "github.com/tooth-hub/levilamina": "1.0.x",
+        "github.com/LiteLDev/LeviLamina": "1.0.x",
         "github.com/tooth-hub/another-pack": "2.0.x"
     }
 }

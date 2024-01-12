@@ -47,7 +47,7 @@ cd myserver
 接下来，使用lip安装捆绑了Minecraft Bedrock Server的LeviLamina：
 
 ```sh
-lip install github.com/tooth-hub/levilamina
+lip install github.com/LiteLDev/LeviLamina
 ```
 
 如需更多信息，请参阅[文档](https://levilamina.liteldev.com)。
@@ -59,7 +59,7 @@ lip install github.com/tooth-hub/levilamina
 然而，如果您坚持要在相同位置更新，您可以使用以下命令来更新LeviLamina：
 
 ```sh
-lip install --upgrade github.com/tooth-hub/levilamina
+lip install --upgrade github.com/LiteLDev/LeviLamina
 ```
 
 ## 使用方法

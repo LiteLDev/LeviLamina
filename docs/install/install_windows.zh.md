@@ -32,25 +32,25 @@
 安装 lip 后，你可以通过运行以下命令来安装 LeviLamina：
 
 ```powershell
-lip install github.com/tooth-hub/levilamina
+lip install github.com/LiteLDev/LeviLamina
 ```
 
 要安装 LeviLamina 的特定版本，例如，1.0.0，你可以运行以下命令：
 
 ```powershell
-lip install github.com/tooth-hub/levilamina@1.0.0
+lip install github.com/LiteLDev/LeviLamina@1.0.0
 ```
 
 在安装过程中，你可能会被要求确认一些提示。你可以按 `y` 来确认提示。要跳过提示，你可以在命令中添加 `-y` 选项。
 
 ```powershell
-lip install -y github.com/tooth-hub/levilamina
+lip install -y github.com/LiteLDev/LeviLamina
 ```
 
 你现在已经成功安装了 LeviLamina。要升级 LeviLamina，你可以运行以下命令：
 
 ```powershell
-lip install --upgrade github.com/tooth-hub/levilamina
+lip install --upgrade github.com/LiteLDev/LeviLamina
 ```
 
 !!! danger

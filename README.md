@@ -51,7 +51,7 @@ cd myserver
 Then, install LeviLamina bundled with Minecraft Bedrock Server using lip:
 
 ```sh
-lip install github.com/tooth-hub/levilamina
+lip install github.com/LiteLDev/LeviLamina
 ```
 
 For more information, please refer to [the documentation](https://levilamina.liteldev.com).
@@ -63,7 +63,7 @@ When it comes to data security, we advise against updating LeviLamina in its cur
 However, if you insist on updating in the same location, you can utilize the following command to update LeviLamina:
 
 ```sh
-lip install --upgrade github.com/tooth-hub/levilamina
+lip install --upgrade github.com/LiteLDev/LeviLamina
 ```
 
 ## Usage

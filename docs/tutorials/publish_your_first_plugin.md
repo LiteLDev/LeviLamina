@@ -47,7 +47,7 @@ Create a `tooth.json` file in the exported plugin directory with the following c
         "github.com/tooth-hub/another-plugin": "2.0.x"
     },
     "prerequisites": {
-        "github.com/tooth-hub/levilamina": "1.0.x"
+        "github.com/LiteLDev/LeviLamina": "1.0.x"
     },
     "files": {
         "place": [
@@ -63,7 +63,7 @@ Create a `tooth.json` file in the exported plugin directory with the following c
 Replace the value of the `tooth` field with the GitHub repository address of your plugin, replace the value of the `version` field with the version number of your plugin, fill in the values of the fields in the `info` section, and fill in the values of the fields in the `dependencies` and `prerequisites` sections.
 
 !!! note
-    The `dependencies` section automatically installs the required plugins when installing the plugin and uninstalls them when uninstalling the plugin. However, the `prerequisites` section does not automatically install the required plugins; instead, it throws an error if the dependencies are missing. Generally, the plugins listed in the `prerequisites` section should be fundamental and framework-level packages, such as `github.com/tooth-hub/levilamina`, to avoid accidentally uninstalling them during the plugin uninstallation process.
+    The `dependencies` section automatically installs the required plugins when installing the plugin and uninstalls them when uninstalling the plugin. However, the `prerequisites` section does not automatically install the required plugins; instead, it throws an error if the dependencies are missing. Generally, the plugins listed in the `prerequisites` section should be fundamental and framework-level packages, such as `github.com/LiteLDev/LeviLamina`, to avoid accidentally uninstalling them during the plugin uninstallation process.
 
 For more information about `tooth.json`, please refer to <https://docs.lippkg.com/tooth_json_file_reference.html>.
 

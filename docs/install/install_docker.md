@@ -31,5 +31,5 @@ volumes:
 ## Environment variables
 
 - `EULA`(`FALSE`): must be set to `TRUE` to accept the [Minecraft End User License Agreement](https://minecraft.net/terms).
-- `VERSION`(`LATEST`): can be set to a specific [LeviLamina](https://github.com/tooth-hub/levilamina/tags) version or `LATEST` to automatically download the latest version.
+- `VERSION`(`LATEST`): can be set to a specific [LeviLamina](https://github.com/LiteLDev/LeviLamina/tags) version or `LATEST` to automatically download the latest version.
 - `PACKAGES`(``): can be set to a list of packages to install on first run. Each package must be a valid [lip specifier](https://docs.lippkg.com/commands/lip_install.html). Both local and remote lip teeth are supported. For local packages, you may need to mount the packages to the container.
