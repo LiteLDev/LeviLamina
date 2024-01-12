@@ -23,7 +23,15 @@ public:
     LLAPI ~SymbolLoader();
 };
 
-LLNDAPI uintptr_t tryGetSymbolAddress(std::string_view);
+struct StackTraceEntryInfo {
+    std::optional<size_t> displacement;
+    std::string           name;
+    std::optional<ulong>  line;
+    std::string           file;
+};
+
+LLNDAPI uintptr_t           tryGetSymbolAddress(std::string_view);
+LLNDAPI StackTraceEntryInfo getInfo(std::stacktrace_entry const&);
 LLNDAPI std::string toString(std::stacktrace_entry const&);
 LLNDAPI std::string toString(std::stacktrace const&);
 LLNDAPI std::string toString(_CONTEXT const&);

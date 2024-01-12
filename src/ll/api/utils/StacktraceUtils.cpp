@@ -110,7 +110,7 @@ public:
         return attached;
     }
 
-    auto getInfo(const void* const address) {
+    StackTraceEntryInfo getInfo(const void* const address) {
         std::optional<size_t> displacement = 0;
         std::string           name;
         std::optional<ulong>  line = 0;
@@ -135,7 +135,7 @@ public:
         } else {
             line = std::nullopt;
         }
-        return std::make_tuple(displacement, name, line, file);
+        return {displacement, name, line, file};
     }
 
     uintptr_t getSymbol(std::string_view sv) {
@@ -202,6 +202,14 @@ uintptr_t tryGetSymbolAddress(std::string_view symbol) {
         return 0;
     }
     return data.getSymbol(symbol);
+}
+
+StackTraceEntryInfo getInfo(std::stacktrace_entry const& entry) {
+    DbgEngData data;
+    if (!data.tryInit()) {
+        return {};
+    }
+    return data.getInfo(entry.native_handle());
 }
 
 std::string toString(std::stacktrace_entry const& entry) {
