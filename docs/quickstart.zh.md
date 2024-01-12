@@ -45,16 +45,16 @@ lip install --upgrade github.com/LiteLDev/LeviLamina
 
 对于大多数插件，特别是在 lip index 上的插件，安装就像运行 `lip install <plugin>` 一样简单。
 
-例如，要安装 [levianticheat](https://github.com/tooth-hub/levianticheat)，您可以运行：
+例如，要安装 [levianticheat](https://github.com/LiteLDev/LeviAntiCheat)，您可以运行：
 
 ```sh
-lip install github.com/tooth-hub/levianticheat
+lip install github.com/LiteLDev/LeviAntiCheat
 ```
 
 或安装特定版本：
 
 ```sh
-lip install github.com/tooth-hub/levianticheat@1.0.0
+lip install github.com/LiteLDev/LeviAntiCheat@1.0.0
 ```
 
 但是，有些插件可能需要额外的安装步骤。请按照插件开发者提供的说明安装您正在使用的插件。

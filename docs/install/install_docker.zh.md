@@ -17,7 +17,7 @@ ymlCopy codeservices:
       EULA: TRUE
       VERSION: 0.1.0
       PACKAGES: |
-        github.com/tooth-hub/levianticheat@0.1.1
+        github.com/LiteLDev/LeviAntiCheat@0.1.1
     ports:
       - 19132:19132/udp
     volumes:

@@ -45,16 +45,16 @@ Before installing a plugin, you'll need to find what you want to install. The be
 
 For most plugins, especially those on lip index, installation is as simple as running `lip install <plugin>`.
 
-For example, to install [levianticheat](https://github.com/tooth-hub/levianticheat), you would run:
+For example, to install [levianticheat](https://github.com/LiteLDev/LeviAntiCheat), you would run:
 
 ```sh
-lip install github.com/tooth-hub/levianticheat
+lip install github.com/LiteLDev/LeviAntiCheat
 ```
 
 Or install a specific version:
 
 ```sh
-lip install github.com/tooth-hub/levianticheat@1.0.0
+lip install github.com/LiteLDev/LeviAntiCheat@1.0.0
 ```
 
 However, some plugins may require additional steps to install. Follow the instructions provided by the plugin developers to install the plugins you are using.

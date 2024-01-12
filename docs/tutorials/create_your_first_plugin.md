@@ -25,7 +25,7 @@ This tutorial covers the following key points:
     All source code for this tutorial can be found at [futrime/better-suicide](https://github.com/futrime/better-suicide). We recommend that you review the source code while following the tutorial. If you have already installed [lip](https://docs.lippkg.com), you can also directly run the following code to install the plugins implemented in this tutorial in the LeviLamina instance environment.
 
     ```shell
-    lip install github.com/tooth-hub/better-suicide
+    lip install github.com/futrime/better-suicide
     ```
 
 ## Learn C++

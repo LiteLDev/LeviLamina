@@ -26,8 +26,7 @@
         ]
     },
     "dependencies": {
-        "github.com/LiteLDev/LeviLamina": "1.0.x",
-        "github.com/tooth-hub/another-pack": "2.0.x"
+        "github.com/LiteLDev/LeviLamina": "1.0.x"
     }
 }
 ```
