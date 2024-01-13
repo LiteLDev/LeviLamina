@@ -46,11 +46,6 @@ public:
         Frame                  mFrame;
         std::optional<Context> mContext;
 
-        // prevent constructor by default
-        FrameWithContext& operator=(FrameWithContext const&);
-        FrameWithContext(FrameWithContext const&);
-        FrameWithContext();
-
     public:
         // NOLINTBEGIN
         // symbol:

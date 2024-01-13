@@ -40,20 +40,19 @@ LL_TYPE_STATIC_HOOK(
     return true;
 };
 
-using BedResult_Dim = Bedrock::Result<DimensionType>;
-using BedResult_int = Bedrock::Result<int>&;
-
 LL_TYPE_STATIC_HOOK(
     VanillaDimensionsFromSerializedIntHook,
     HookPriority::Normal,
     VanillaDimensions,
     "?fromSerializedInt@VanillaDimensions@@SA?AV?$Result@V?$AutomaticID@VDimension@@H@@Verror_code@std@@@Bedrock@@$$"
     "QEAV?$Result@HVerror_code@std@@@3@@Z",
-    BedResult_Dim,
-    BedResult_int& dim
+    Bedrock::Result<DimensionType>,
+    Bedrock::Result<int>& dim
 ) {
-    if (dim.value() <= 2) return origin(dim);
-    return dim.value();
+    if (!dim || *dim <= 2) {
+        return origin(dim);
+    }
+    return *dim;
 };
 
 LL_TYPE_STATIC_HOOK(
