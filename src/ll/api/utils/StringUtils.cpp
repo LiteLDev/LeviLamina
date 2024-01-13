@@ -277,8 +277,7 @@ std::string tou8str(std::string_view str) {
     if (isu8str(str)) {
         return std::string{str};
     } else {
-        auto res = str2str(str);
-        return isu8str(res) ? res : "unknown codepage";
+        return str2str(str, CodePage::DefaultACP, CodePage::UTF8);
     }
 }
 bool strtobool(std::string const& str) {

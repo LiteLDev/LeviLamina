@@ -150,9 +150,11 @@ LLNDAPI std::string tou8str(std::string_view str);
 
 namespace CodePage {
 enum : uint {
-    UTF16 = 0,
-    ANSI  = 936,
-    UTF8  = 65001,
+    DefaultACP = 0,  // default to ANSI code page
+    ThreadACP  = 3,  // current thread's ANSI code page
+    Symbol     = 42, // SYMBOL translations
+    GB2312     = 936,
+    UTF8       = 65001,
 };
 } // namespace CodePage
 
@@ -160,7 +162,8 @@ LLNDAPI std::wstring str2wstr(std::string_view str, uint codePage = CodePage::UT
 
 LLNDAPI std::string wstr2str(std::wstring_view str, uint codePage = CodePage::UTF8);
 
-LLNDAPI std::string str2str(std::string_view str, uint fromCodePage = CodePage::ANSI, uint toCodePage = CodePage::UTF8);
+LLNDAPI std::string
+        str2str(std::string_view str, uint fromCodePage = CodePage::DefaultACP, uint toCodePage = CodePage::UTF8);
 
 [[nodiscard]] inline std::string u8str2str(std::u8string str) {
     std::string& tmp = *reinterpret_cast<std::string*>(&str);
