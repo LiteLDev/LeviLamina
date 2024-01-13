@@ -13,49 +13,39 @@ std::filesystem::path const& getPluginsRoot() {
 }
 
 struct Plugin::Impl {
-    Manifest   manifest;
-    State      state = State::Disabled;
-    Logger     logger;
-    SharedData sharedData;
+    Manifest manifest;
+
+    State state;
+
+    Logger logger;
+
     CallbackFn onLoad;
     CallbackFn onUnload;
     CallbackFn onEnable;
     CallbackFn onDisable;
+
+    std::filesystem::path pluginDir;
+    std::filesystem::path dataDir;
+    std::filesystem::path configDir;
 };
 
 Plugin::Plugin(Manifest manifest) : mImpl(std::make_unique<Impl>()) {
     mImpl->manifest     = std::move(manifest);
+    mImpl->state        = State::Disabled;
     mImpl->logger.title = mImpl->manifest.name;
+    mImpl->pluginDir    = getPluginsRoot() / mImpl->manifest.name;
+    mImpl->dataDir      = mImpl->pluginDir / u8"data";
+    mImpl->configDir    = mImpl->pluginDir / u8"config";
 }
 Plugin::~Plugin() = default;
 
 Manifest const& Plugin::getManifest() const { return mImpl->manifest; }
 
-Plugin::SharedData const& Plugin::getSharedData() const { return mImpl->sharedData; }
-Plugin::SharedData&       Plugin::getSharedData() { return mImpl->sharedData; }
+std::filesystem::path const& Plugin::getPluginDir() const { return mImpl->pluginDir; }
 
+std::filesystem::path const& Plugin::getDataDir() const { return mImpl->dataDir; }
 
-std::filesystem::path Plugin::getPluginDir() const {
-    static auto path = [&] {
-        auto dataPath = getPluginsRoot() / mImpl->manifest.name;
-        if (!std::filesystem::exists(dataPath)) {
-            std::error_code ec;
-            std::filesystem::create_directories(dataPath, ec);
-        }
-        return dataPath;
-    }();
-    return path;
-}
-
-std::filesystem::path Plugin::getDataDir() const {
-    static auto path = getPluginDir() / u8"data";
-    return path;
-}
-
-std::filesystem::path Plugin::getConfigDir() const {
-    static auto path = getPluginDir() / u8"config";
-    return path;
-}
+std::filesystem::path const& Plugin::getConfigDir() const { return mImpl->configDir; }
 
 bool Plugin::hasOnLoad() { return mImpl->onLoad != nullptr; }
 

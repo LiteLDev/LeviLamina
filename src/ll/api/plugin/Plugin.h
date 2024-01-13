@@ -24,9 +24,7 @@ public:
     using callback_t = bool(Plugin&);
     using CallbackFn = std::function<callback_t>;
 
-    using SharedData = UnorderedStringMap<std::any>;
-
-    LLAPI explicit Plugin(Manifest manifest);
+    LLNDAPI explicit Plugin(Manifest manifest);
 
     LLAPI ~Plugin();
 
@@ -34,53 +32,13 @@ public:
 
     LLNDAPI Manifest const& getManifest() const;
 
-    LLNDAPI SharedData const& getSharedData() const;
+    LLNDAPI std::filesystem::path const& getPluginDir() const;
 
-    LLNDAPI SharedData& getSharedData();
+    LLNDAPI std::filesystem::path const& getDataDir() const;
 
-    LLNDAPI std::filesystem::path getPluginDir() const;
-
-    LLNDAPI std::filesystem::path getDataDir() const;
-
-    LLNDAPI std::filesystem::path getConfigDir() const;
+    LLNDAPI std::filesystem::path const& getConfigDir() const;
 
     LLNDAPI Logger& getLogger() const;
-
-    [[nodiscard]] bool hasSharedData(std::string_view key) const { return getSharedData().contains(key); }
-
-    template <class T>
-    [[nodiscard]] bool hasSharedData(std::string_view key) const {
-        return getSharedData().contains(key);
-    }
-
-    template <class T>
-    optional_ref<std::add_const_t<T>> getSharedData(std::string_view key) const {
-        if (getSharedData().contains(key)) {
-            return std::any_cast<T>(&getSharedData().find(key)->second);
-        }
-        return std::nullopt;
-    }
-
-    template <class T>
-    optional_ref<T> getSharedData(std::string_view key) {
-        if (getSharedData().contains(key)) {
-            return std::any_cast<T>(&getSharedData().find(key)->second);
-        }
-        return std::nullopt;
-    }
-
-    template <class T, class... Args>
-        requires(std::is_constructible_v<std::any, std::in_place_type_t<T>, Args...>)
-    [[maybe_unused]] void setSharedData(std::string const& key, Args&&... args) {
-        getSharedData().insert_or_assign(key, std::make_any<T>(std::forward<Args>(args)...));
-    }
-
-    [[maybe_unused]] void removeSharedData(std::string_view key) {
-        auto it = getSharedData().find(key);
-        if (it != getSharedData().end()) {
-            getSharedData().erase(it);
-        }
-    }
 
 protected:
     LLAPI void setState(State state) const;
