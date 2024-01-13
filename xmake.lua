@@ -6,6 +6,7 @@ add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
 
 -- Dependencies from xmake-repo.
 add_requires("entt 3.12.2")
+add_requires("expected-lite v0.6.3")
 add_requires("fmt 10.1.1")
 add_requires("gsl 4.0.0")
 add_requires("leveldb 1.23")
@@ -96,6 +97,7 @@ target("LeviLamina")
     )
     add_packages(
         "entt",
+        "expected-lite",
         "fmt",
         "gsl",
         "leveldb",
