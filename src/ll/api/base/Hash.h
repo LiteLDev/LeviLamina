@@ -14,7 +14,7 @@ constexpr void hashCombine(T const& v, size_t& seed) {
 [[nodiscard]] constexpr uint64 do_hash(std::string_view x) {
     uint64 rval = 0;
     for (size_t i = 0; i < x.size(); i++) {
-        rval ^= (i & 1 == 0) ? (~((rval << 7) ^ x[i] ^ (rval >> 3))) : (~((rval << 11) ^ x[i] ^ (rval >> 5)));
+        rval ^= ((i & 1) == 0) ? (~((rval << 7) ^ x[i] ^ (rval >> 3))) : (~((rval << 11) ^ x[i] ^ (rval >> 5)));
     }
     return rval;
 }

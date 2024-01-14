@@ -194,7 +194,7 @@ template <class T, auto f>
 [[nodiscard]] inline T svtonum(std::string_view str, size_t* idx, int base) {
     int&        errnoRef = errno;
     char const* ptr      = str.data();
-    char*       eptr;
+    char*       eptr{};
     errnoRef       = 0;
     const auto ans = f(ptr, &eptr, base);
     if (ptr == eptr) {
@@ -212,7 +212,7 @@ template <class T, auto f>
 [[nodiscard]] inline T svtonum(std::string_view str, size_t* idx) {
     int&        errnoRef = errno;
     char const* ptr      = str.data();
-    char*       eptr;
+    char*       eptr{};
     errnoRef       = 0;
     const auto ans = f(ptr, &eptr);
     if (ptr == eptr) {
