@@ -13,19 +13,19 @@ In LeviLamina, we provide well-packaged Hook APIs, allowing you to quickly and c
 In [`ll/api/memory/Hook.h`](https://github.com/LiteLDev/LeviLamina/blob/develop/src/ll/api/memory/Hook.h#L180C1-L180C1), we defined the following Hook macros:
 
 ```cpp
-#define LL_TYPED_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
+#define LL_TYPE_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
 
 #define LL_STATIC_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)
 
-#define LL_TYPED_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
+#define LL_TYPE_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
 
 #define LL_INSTANCE_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)
 
-#define LL_AUTO_TYPED_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
+#define LL_AUTO_TYPE_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
 
 #define LL_AUTO_STATIC_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)
 
-#define LL_AUTO_TYPED_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
+#define LL_AUTO_TYPE_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
 
 #define LL_AUTO_INSTANCE_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)
 ```
@@ -72,7 +72,7 @@ Or refer to the [`Fake Header`](https://github.com/LiteLDev/LeviLamina/tree/deve
 
 ll::Logger dedicatedServerLogger("DedicatedServer");
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     DedicatedServerHook,
     ll::memory::HookPriority::Normal,
     DedicatedServer,
@@ -94,7 +94,7 @@ Since the constructor is a member function of the class, we used the `INSTANCE_H
 
 We used the `AUTO`-marked Hook because we want it to automatically register when the plugin is loaded.
 
-Finally, for convenience, we used the `TYPED`-marked Hook, so we can directly call functions under the DedicatedServer type in the function body. Although we did not use it in this code, it is a good habit.
+Finally, for convenience, we used the `TYPE`-marked Hook, so we can directly call functions under the DedicatedServer type in the function body. Although we did not use it in this code, it is a good habit.
 
 ### Registering and Unloading Hooks
 
