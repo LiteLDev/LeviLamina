@@ -13,19 +13,19 @@ wikipedia 关于 Hook 的解释：[Hooking](https://en.wikipedia.org/wiki/Hookin
 在 [```ll/api/memory/Hook.h```](https://github.com/LiteLDev/LeviLamina/blob/develop/src/ll/api/memory/Hook.h#L180C1-L180C1) 中，我们定义了以下几种Hook 宏：
 
 ```cpp
-#define LL_TYPED_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
+#define LL_TYPE_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
 
 #define LL_STATIC_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)
 
-#define LL_TYPED_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
+#define LL_TYPE_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
 
 #define LL_INSTANCE_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)
 
-#define LL_AUTO_TYPED_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
+#define LL_AUTO_TYPE_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
 
 #define LL_AUTO_STATIC_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)
 
-#define LL_AUTO_TYPED_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
+#define LL_AUTO_TYPE_INSTANCE_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
 
 #define LL_AUTO_INSTANCE_HOOK(DEF_TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)
 ```
@@ -72,7 +72,7 @@ TYPED 标注的 Hook 会给你的 DEF_TYPE 继承到你指定的类型。
 
 ll::Logger dedicatedServerLogger("DedicatedServer");
 
-LL_AUTO_TYPED_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     DedicatedServerHook,
     ll::memory::HookPriority::Normal,
     DedicatedServer,
@@ -94,7 +94,7 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 
 又由于我们希望在插件被加载的时候自动注册，所以我们使用了 ```AUTO```标注的 Hook。
 
-最后由于方便，我们使用了 ```TYPED```标注的 Hook，使得我们可以直接在函数体内调用 DedicatedServer 类型下的函数，虽然在这段代码中我们并没有使用到，但是这是一个好习惯。
+最后由于方便，我们使用了 ```TYPE```标注的 Hook，使得我们可以直接在函数体内调用 DedicatedServer 类型下的函数，虽然在这段代码中我们并没有使用到，但是这是一个好习惯。
 
 ### Hook的注册和卸载
 
