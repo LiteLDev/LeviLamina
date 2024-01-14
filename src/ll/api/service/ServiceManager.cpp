@@ -69,11 +69,23 @@ public:
     bool removeService(ServiceId const& id) {
         std::lock_guard lock(mutex);
         if (auto it = services.find(id.name); it != services.end()) {
+            // invalidate the service, in case there are still references to it
+            it->second->service->invalidate();
             pluginServices[it->second->pluginName].erase(it->second.get());
             services.erase(it);
             return true;
         }
         return false;
+    }
+
+    void removeService(std::string_view pluginName) {
+        std::lock_guard lock(mutex);
+        if (auto it = pluginServices.find(pluginName); it != pluginServices.end()) {
+            for (auto& info : it->second) {
+                services.erase(info->name);
+            }
+            pluginServices.erase(it);
+        }
     }
 };
 
@@ -89,13 +101,12 @@ auto ServiceManager::getService(ServiceId const& id) -> nonstd::expected<std::sh
     return info->service;
 }
 
-std::optional<std::pair<ServiceId, std::shared_ptr<Service>>> ServiceManager::queryService(std::string_view name) {
+std::optional<QueryServiceResult> ServiceManager::queryService(std::string_view name) {
     std::lock_guard lock(impl->mutex);
-    if (!impl->services.contains(name)) {
-        return std::nullopt;
+    if (auto it = impl->services.find(name); it != impl->services.end()) {
+        return QueryServiceResult{it->second->name, it->second->version, it->second->pluginName, it->second->service};
     }
-    auto& info = impl->services[name];
-    return std::make_pair(ServiceId{info->name, info->version}, info->service);
+    return std::nullopt;
 }
 
 bool ServiceManager::unregisterService(ServiceId const& id) {
@@ -105,13 +116,7 @@ bool ServiceManager::unregisterService(ServiceId const& id) {
 
 void ServiceManager::unregisterService(plugin::Plugin const& plugin) {
     std::lock_guard lock(impl->mutex);
-    if (!impl->pluginServices.contains(plugin.getManifest().name)) {
-        return;
-    }
-    for (auto& info : impl->pluginServices[plugin.getManifest().name]) {
-        impl->services.erase(info->name);
-    }
-    impl->pluginServices.erase(plugin.getManifest().name);
+    impl->removeService(plugin.getManifest().name);
 }
 
 bool ServiceManager::registerService(

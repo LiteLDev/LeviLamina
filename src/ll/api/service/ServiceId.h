@@ -23,11 +23,11 @@ public:
     [[nodiscard]] constexpr ServiceId(auto_name_t<T>, size_t version) noexcept
     : ServiceId{ll::reflection::type_raw_name_v<T>, version} {}
 
-    [[nodiscard]] constexpr bool operator==(ServiceId other) const noexcept {
+    [[nodiscard]] constexpr bool operator==(ServiceId const& other) const noexcept {
         return hash == other.hash && version == other.version && name == other.name;
     }
 
-    [[nodiscard]] constexpr std::strong_ordering operator<=>(ServiceId other) const noexcept {
+    [[nodiscard]] constexpr std::strong_ordering operator<=>(ServiceId const& other) const noexcept {
         if (hash != other.hash) {
             return hash <=> other.hash;
         }
