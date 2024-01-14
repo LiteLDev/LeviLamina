@@ -4,7 +4,7 @@
 
 namespace ll::plugin {
 
-NativePluginManager::NativePluginManager() : PluginManager("native") {}
+NativePluginManager::NativePluginManager() : PluginManager(NativePluginManagerName) {}
 NativePluginManager::~NativePluginManager() = default;
 
 bool NativePluginManager::load(Manifest manifest) {
@@ -38,7 +38,7 @@ bool NativePluginManager::unload(std::string_view name) {
     if (!hasPlugin(name)) {
         return false;
     }
-    auto ptr = std::static_pointer_cast<NativePlugin>(getPlugin(name).lock());
+    auto ptr = std::static_pointer_cast<NativePlugin>(getPlugin(name));
     if (!ptr->hasOnUnload()) {
         return false;
     }

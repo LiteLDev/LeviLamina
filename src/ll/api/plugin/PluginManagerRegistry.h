@@ -31,9 +31,9 @@ public:
 
     LLNDAPI bool hasManager(std::string_view type) const;
 
-    LLNDAPI std::weak_ptr<PluginManager> getManager(std::string_view type) const;
+    LLNDAPI std::shared_ptr<PluginManager> getManager(std::string_view type) const;
 
-    LLNDAPI std::weak_ptr<PluginManager> getManagerForPlugin(std::string_view name) const;
+    LLNDAPI std::shared_ptr<PluginManager> getManagerForPlugin(std::string_view name) const;
 
     LLAPI void forEachManager(std::function<bool(std::string_view type, PluginManager&)> const& fn) const;
 
@@ -44,6 +44,6 @@ public:
 
     LLNDAPI std::string getPluginType(std::string_view name) const;
 
-    LLNDAPI std::weak_ptr<Plugin> getPlugin(std::string_view name) const;
+    LLNDAPI std::shared_ptr<Plugin> getPlugin(std::string_view name) const;
 };
 } // namespace ll::plugin

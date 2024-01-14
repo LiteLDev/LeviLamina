@@ -6,27 +6,40 @@
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
-#include "ll/api/memory/Memory.h"
 
 #include "fmt/color.h"
-#include "fmt/core.h"
 
 namespace ll::inline utils::string_utils {
+namespace detail {
+template <concepts::IsString T>
+struct SplitByPatternReturn {
+    using type = std::string_view;
+};
+
+template <>
+struct SplitByPatternReturn<std::string&&> {
+    using type = std::string;
+};
+} // namespace detail
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
-[[nodiscard]] constexpr std::vector<std::string_view>
-splitByPattern(std::string_view s, std::string_view pattern, bool keepEmpty = false) {
-    if (s.empty()) return {};
+template <class T>
+[[nodiscard]] constexpr auto splitByPattern(T&& str, std::string_view pattern, bool keepEmpty = false)
+    -> decltype(auto) {
+    using ReturnTypeElement = typename detail::SplitByPatternReturn<T&&>::type;
+    using ReturnType        = std::vector<ReturnTypeElement>;
+    std::string_view s{str};
+    if (s.empty()) return ReturnType{};
     size_t pos  = s.find(pattern);
     size_t size = s.size();
 
-    std::vector<std::string_view> ret;
+    ReturnType ret;
     while (pos != std::string::npos) {
-        if (keepEmpty || pos != 0) ret.push_back(s.substr(0, pos));
+        if (keepEmpty || pos != 0) ret.push_back(ReturnTypeElement{s.substr(0, pos)});
         s   = s.substr(pos + pattern.size(), size - pos - pattern.size());
         pos = s.find(pattern);
     }
-    if (keepEmpty || !s.empty()) ret.push_back(s);
+    if (keepEmpty || !s.empty()) ret.push_back(ReturnTypeElement{s});
     return ret;
 }
 

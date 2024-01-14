@@ -1,11 +1,10 @@
 #include "ll/core/tweak/SimpleServerLogger.h"
-#include "ll/api/event/command/ExecuteCommandEvent.h"
-#include "ll/api/event/player/PlayerChangePermEvent.h"
-#include "ll/api/event/player/PlayerChatEvent.h"
 
 #include "ll/api/Logger.h"
 #include "ll/api/event/EventBus.h"
-#include "ll/core/Config.h"
+#include "ll/api/event/command/ExecuteCommandEvent.h"
+#include "ll/api/event/player/PlayerChangePermEvent.h"
+#include "ll/api/event/player/PlayerChatEvent.h"
 
 #include "magic_enum.hpp"
 

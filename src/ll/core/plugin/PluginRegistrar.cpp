@@ -86,10 +86,11 @@ void PluginRegistrar::loadAllPlugins() {
         if (!file.is_directory()) {
             continue;
         }
-        auto res =
-            loadManifest(file.path())
-                .transform([&](auto&& manifest) { manifests.emplace(std::string{manifest.name}, std::move(manifest)); })
-                .error_or(DirState::Success);
+        auto res = loadManifest(file.path())
+                       .transform([&](auto&& manifest) {
+                           manifests.emplace(std::string{manifest.name}, std::forward<decltype(manifest)>(manifest));
+                       })
+                       .error_or(DirState::Success);
         if (res != DirState::Success) {
             if (res == DirState::Error) {
                 logger.error("ll.plugin.error.failToLoad"_tr(string_utils::u8str2str(file.path().stem().u8string())));
@@ -303,7 +304,7 @@ bool PluginRegistrar::enablePlugin(std::string_view name) {
     auto            dependents = impl->deps.dependentOn(std::string{name});
     if (!dependents.empty()) {
         for (auto& depName : dependents) {
-            if (auto ptr = registry.getPlugin(depName).lock()) {
+            if (auto ptr = registry.getPlugin(depName)) {
                 if (ptr->getState() == Plugin::State::Enabled) {
                     continue;
                 }
@@ -324,7 +325,7 @@ bool PluginRegistrar::disablePlugin(std::string_view name) {
     auto            dependents = impl->deps.dependentBy(std::string{name});
     if (!dependents.empty()) {
         for (auto& depName : dependents) {
-            if (auto ptr = registry.getPlugin(depName).lock()) {
+            if (auto ptr = registry.getPlugin(depName)) {
                 if (ptr->getState() == Plugin::State::Disabled) {
                     continue;
                 }

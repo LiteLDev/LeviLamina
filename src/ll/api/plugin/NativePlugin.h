@@ -4,7 +4,10 @@
 #include "ll/api/utils/WinUtils.h"
 
 namespace ll::plugin {
+
 class NativePluginManager;
+constexpr std::string_view NativePluginManagerName = "native";
+
 class NativePlugin : public Plugin {
     friend NativePluginManager;
     struct Impl;
@@ -14,16 +17,16 @@ public:
     using Handle = void*;
 
 protected:
-    void setHandle(Handle);
+    void setHandle(Handle handle);
 
 public:
-    NativePlugin(Manifest, Handle);
+    NativePlugin(Manifest manifest, Handle handle);
     ~NativePlugin();
 
     LLNDAPI Handle getHandle() const;
 
-    LLNDAPI static std::weak_ptr<NativePlugin> getByHandle(Handle);
+    LLNDAPI static std::shared_ptr<NativePlugin> getByHandle(Handle handle);
 
-    LLNDAPI static std::weak_ptr<NativePlugin> current(Handle = win_utils::getCurrentModuleHandle());
+    LLNDAPI static std::shared_ptr<NativePlugin> current(Handle handle = win_utils::getCurrentModuleHandle());
 };
 } // namespace ll::plugin
