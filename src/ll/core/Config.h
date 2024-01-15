@@ -8,13 +8,12 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/reflection/Dispatcher.h"
 #include "ll/core/tweak/SimpleServerLogger.h"
-#include "ll/core/tweak/bugfix/ArrayTagBugFix.h"
 
 namespace ll {
 
 struct LeviConfig {
 
-    int version = 9;
+    int version = 10;
 
     std::string language = "system";
     struct {
@@ -31,10 +30,6 @@ struct LeviConfig {
         } crashLogger{};
 
         struct {
-            struct {
-                reflection::Dispatcher<bool, ArrayTagBugFix> fixArrayTagCompareBug = true;
-            } bugfixes{};
-
             bool tpdimCommand             = true;
             bool settingsCommand          = true;
             bool disableAutoCompactionLog = true;
