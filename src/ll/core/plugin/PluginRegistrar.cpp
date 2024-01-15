@@ -39,8 +39,8 @@ enum class DirState {
     Success,
 };
 
-static std::expected<Manifest, DirState> loadManifest(std::filesystem::path const& file) {
-    auto content = file_utils::readFile(file / u8"manifest.json");
+static std::expected<Manifest, DirState> loadManifest(std::filesystem::path const& dir) {
+    auto content = file_utils::readFile(dir / u8"manifest.json");
     if (!content || content->empty()) {
         return std::unexpected{DirState::Empty};
     }
@@ -48,7 +48,7 @@ static std::expected<Manifest, DirState> loadManifest(std::filesystem::path cons
     if (json.is_discarded()) {
         return std::unexpected{DirState::Error};
     }
-    std::string dirName = string_utils::u8str2str(file.stem().u8string());
+    std::string dirName = string_utils::u8str2str(dir.filename().u8string());
     Manifest    manifest;
     try {
         reflection::deserialize<nlohmann::json, Manifest>(manifest, json);
