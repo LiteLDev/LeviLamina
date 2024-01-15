@@ -18,7 +18,7 @@ public:
     template <class T>
         requires(std::is_trivially_destructible_v<T>)
     [[nodiscard]] _CONSTEXPR23 ByteArrayTag(std::in_place_type_t<T>, TagMemoryChunk mem) : data(std::move(mem)) {
-        data.mSize = data.mCapacity;
+        data.mSize = data.mSize * sizeof(T);
     }
 
     [[nodiscard]] _CONSTEXPR23 ByteArrayTag(std::vector<schar> const& arr) : data(std::span{arr}) {} // NOLINT
