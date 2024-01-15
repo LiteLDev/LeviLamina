@@ -38,6 +38,8 @@ public:
 
     LLNDAPI std::filesystem::path const& getConfigDir() const;
 
+    LLNDAPI std::filesystem::path const& getLangDir() const;
+
     LLNDAPI Logger& getLogger() const;
 
 protected:

@@ -16,15 +16,14 @@ public:
     BinaryStream(BinaryStream const&);
 
     template <typename T>
-    inline void writeType(T const& x, char const* docName = nullptr, char const* docDesc = nullptr) {
+    inline void writeType(T const& x, char const* = nullptr, char const* = nullptr) {
         serialize<T>::write(x, *this);
     }
 
-MCTAPI void writeType(class NetworkItemStackDescriptor const &, char const *, char const *);
-MCTAPI void writeType(class MoveActorAbsoluteData const &, char const *, char const *);
-MCTAPI void writeType(class NetworkItemInstanceDescriptor const &, char const *, char const *);
-MCTAPI void writeType(struct PropertySyncData const &, char const *, char const *);
-
+    MCTAPI void writeType(class NetworkItemStackDescriptor const&, char const*, char const*);
+    MCTAPI void writeType(class MoveActorAbsoluteData const&, char const*, char const*);
+    MCTAPI void writeType(class NetworkItemInstanceDescriptor const&, char const*, char const*);
+    MCTAPI void writeType(struct PropertySyncData const&, char const*, char const*);
 
 public:
     // NOLINTBEGIN

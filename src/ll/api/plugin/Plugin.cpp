@@ -27,6 +27,7 @@ struct Plugin::Impl {
     std::filesystem::path pluginDir;
     std::filesystem::path dataDir;
     std::filesystem::path configDir;
+    std::filesystem::path langDir;
 };
 
 Plugin::Plugin(Manifest manifest) : mImpl(std::make_unique<Impl>()) {
@@ -36,6 +37,7 @@ Plugin::Plugin(Manifest manifest) : mImpl(std::make_unique<Impl>()) {
     mImpl->pluginDir    = getPluginsRoot() / mImpl->manifest.name;
     mImpl->dataDir      = mImpl->pluginDir / u8"data";
     mImpl->configDir    = mImpl->pluginDir / u8"config";
+    mImpl->langDir      = mImpl->pluginDir / u8"lang";
 }
 Plugin::~Plugin() = default;
 
@@ -46,6 +48,8 @@ std::filesystem::path const& Plugin::getPluginDir() const { return mImpl->plugin
 std::filesystem::path const& Plugin::getDataDir() const { return mImpl->dataDir; }
 
 std::filesystem::path const& Plugin::getConfigDir() const { return mImpl->configDir; }
+
+std::filesystem::path const& Plugin::getLangDir() const { return mImpl->langDir; }
 
 bool Plugin::hasOnLoad() { return mImpl->onLoad != nullptr; }
 
