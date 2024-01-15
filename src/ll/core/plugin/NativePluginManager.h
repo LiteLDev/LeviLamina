@@ -9,11 +9,9 @@ public:
     using Handle = void*;
 
     NativePluginManager();
-    ~NativePluginManager();
+    ~NativePluginManager() override;
 
-    std::unordered_map<Handle, std::weak_ptr<NativePlugin>> handleMap;
-
-    std::weak_ptr<NativePlugin> getPluginByHandle(Handle handle) {
+    std::shared_ptr<NativePlugin> getPluginByHandle(Handle handle) {
         if (handleMap.contains(handle)) {
             return handleMap.at(handle);
         }
@@ -24,5 +22,8 @@ protected:
     bool load(Manifest manifest) override;
 
     bool unload(std::string_view name) override;
+
+private:
+    std::unordered_map<Handle, std::shared_ptr<NativePlugin>> handleMap;
 };
 } // namespace ll::plugin

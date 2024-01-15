@@ -2,7 +2,7 @@
 
 #include "ll/api/ServerInfo.h"
 #include "ll/api/event/EventBus.h"
-#include "ll/api/event/world/ServerStartedEvent.h"
+#include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/service/Bedrock.h"
 
 namespace ll::plugin {

@@ -8,8 +8,10 @@ namespace ll::hash {
 
 template <class T>
 constexpr void hashCombine(T const& v, size_t& seed) {
-    seed ^= v + 2654435769ui64 + (seed << 6ui64) + (seed >> 2ui64);
+    seed ^= v + 0x9e3779b9ui64 + (seed << 6ui64) + (seed >> 2ui64);
 }
+
+constexpr size_t hashCombine(size_t a, size_t b) { return a ^ (b + 0x9e3779b9ui64 + (a << 6) + (a >> 2)); }
 
 [[nodiscard]] constexpr uint64 do_hash(std::string_view x) {
     uint64 rval = 0;

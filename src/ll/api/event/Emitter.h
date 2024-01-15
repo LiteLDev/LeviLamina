@@ -5,7 +5,7 @@
 
 namespace ll::event {
 template <std::derived_from<Event> T, auto F>
-class Emitter : public EmitterBase {
+class Emitter : virtual public EmitterBase {
     static inline bool reg = [] {
         EventBus::getInstance().setEventEmitter<T>(F);
         return true;

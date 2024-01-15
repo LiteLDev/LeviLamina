@@ -16,9 +16,6 @@ public:
     [[nodiscard]] constexpr bool operator==(EventId other) const noexcept {
         return hash == other.hash && name == other.name;
     }
-    [[nodiscard]] constexpr bool operator!=(EventId other) const noexcept {
-        return hash != other.hash || name != other.name;
-    }
 
     [[nodiscard]] constexpr std::strong_ordering operator<=>(EventId other) const noexcept {
         if (hash != other.hash) {

@@ -1,4 +1,4 @@
-#include "ll/api/event/world/ServerStartedEvent.h"
+#include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/ServerInfo.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
@@ -7,7 +7,7 @@
 
 #include "mc/nbt/CompoundTag.h"
 
-namespace ll::event::inline world {
+namespace ll::event::inline server {
 
 void ServerStartedEvent::serialize(CompoundTag& nbt) const {
     Event::serialize(nbt);

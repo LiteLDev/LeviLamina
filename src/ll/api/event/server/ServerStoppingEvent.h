@@ -4,7 +4,7 @@
 
 #include "mc/server/ServerInstance.h"
 
-namespace ll::event::inline world {
+namespace ll::event::inline server {
 class ServerStoppingEvent : public Event {
     ServerInstance& mServer;
 

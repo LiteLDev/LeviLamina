@@ -63,7 +63,7 @@ public:
 
     virtual void call(Event& event) = 0;
 
-    virtual EventId factoryId(EventId eid) const { return eid; }
+    [[nodiscard]] virtual EventId factoryId(EventId eid) const { return eid; }
 };
 
 using ListenerPtr = std::shared_ptr<ListenerBase>;

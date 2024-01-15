@@ -17,7 +17,7 @@ class PluginRegistrar {
 public:
     static PluginRegistrar& getInstance();
 
-    std::vector<std::string> getSortedPluginNames() const;
+    [[nodiscard]] std::vector<std::string> getSortedPluginNames() const;
 
     void loadAllPlugins();
 

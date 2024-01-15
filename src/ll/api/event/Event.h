@@ -5,7 +5,6 @@
 
 #include "ll/api/event/EmitterBase.h"
 #include "ll/api/event/EventId.h"
-#include "ll/api/event/ListenerBase.h"
 
 class CompoundTag;
 
@@ -28,7 +27,7 @@ protected:
     constexpr Event() = default;
 
 public:
-    virtual ~Event() = default;
+    LLAPI virtual ~Event() = default;
 
     LLAPI virtual void serialize(CompoundTag&) const;
     LLAPI virtual void deserialize(CompoundTag const&);
