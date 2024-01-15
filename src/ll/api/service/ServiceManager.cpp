@@ -54,13 +54,9 @@ public:
 
     std::unordered_map<std::string_view, std::unordered_set<ServiceInfo*>> pluginServices; // plugin name -> services
 
-    bool addService(
-        ServiceId const&                       id,
-        std::shared_ptr<Service> const&        service,
-        std::shared_ptr<plugin::Plugin> const& plugin
-    ) {
+    bool addService(std::shared_ptr<Service> const& service, std::shared_ptr<plugin::Plugin> const& plugin) {
         std::lock_guard lock(mutex);
-
+        auto            id = service->getServiceId();
         if (services.contains(id.name)) {
             return false;
         }
@@ -141,7 +137,7 @@ bool ServiceManager::registerService(
     std::shared_ptr<plugin::Plugin> const& plugin
 ) {
     std::lock_guard lock(impl->mutex);
-    return impl->addService(service->getServiceId(), service, plugin);
+    return impl->addService(service, plugin);
 }
 
 ServiceManager& ServiceManager::getInstance() {
