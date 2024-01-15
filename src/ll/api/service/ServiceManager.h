@@ -2,9 +2,13 @@
 
 #include "nonstd/expected.hpp"
 
+#include "ll/api/event/EventBus.h"
+#include "ll/api/event/MultiListener.h"
+#include "ll/api/event/server/ServiceEvents.h"
 #include "ll/api/plugin/NativePlugin.h"
 #include "ll/api/service/Service.h"
 #include "ll/api/service/ServiceId.h"
+#include <type_traits>
 
 namespace ll::service {
 
@@ -24,11 +28,9 @@ struct GetServiceError {
 };
 
 struct QueryServiceResult {
-    std::string name;
-    size_t      version;
-    std::string pluginName;
-
-    // in normal cases, this service is an instance of ServiceWrapper<T>
+    std::string              name;
+    size_t                   version;
+    std::string              pluginName;
     std::shared_ptr<Service> service;
 };
 
@@ -37,18 +39,35 @@ public:
     static ServiceManager& getInstance();
 
     template <IsService T>
-    nonstd::expected<std::shared_ptr<ServiceWrapper<T>>, GetServiceError> getService() {
+    event::ListenerPtr subscribeService(std::function<void(std::shared_ptr<T> const&)> const& fn) {
+        if (auto service = getService<T>(); service) {
+            fn(*service);
+        }
+        auto listener =
+            event::MultiListener<event::server::ServiceRegisterEvent, event::server::ServiceUnregisterEvent>::create(
+                [fn](auto&& event) {
+                    if (event.service()->getServiceId() == T::ServiceId) {
+                        if constexpr (std::is_same_v<
+                                          std::remove_cvref_t<decltype(event)>,
+                                          event::server::ServiceUnregisterEvent>) {
+                            fn(nullptr);
+                        } else {
+                            fn(std::static_pointer_cast<T>(event.service()));
+                        }
+                    }
+                }
+            );
+        event::EventBus::getInstance().addListener(listener);
+        return listener;
+    }
+
+    template <IsService T>
+    nonstd::expected<std::shared_ptr<T>, GetServiceError> getService() {
         auto res = getService(getServiceId<T>);
         if (!res) {
             return nonstd::make_unexpected(res.error());
         }
-        return std::static_pointer_cast<ServiceWrapper<T>>(*res);
-    }
-
-    template <IsService T>
-    bool registerService(std::shared_ptr<T> const& service) {
-        auto wrapper = std::make_shared(ServiceWrapper{service});
-        return registerService(getServiceId<T>, wrapper);
+        return std::static_pointer_cast<T>(*res);
     }
 
     LLNDAPI nonstd::expected<std::shared_ptr<Service>, GetServiceError> getService(ServiceId const& id);
@@ -56,7 +75,6 @@ public:
     LLNDAPI std::optional<QueryServiceResult> queryService(std::string_view name);
 
     LLAPI bool registerService(
-        ServiceId const&                       id,
         std::shared_ptr<Service> const&        service,
         std::shared_ptr<plugin::Plugin> const& plugin = plugin::NativePlugin::current()
     );

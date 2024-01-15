@@ -4,6 +4,9 @@
 
 #include "nonstd/expected.hpp"
 
+#include "ll/api/event/EventBus.h"
+#include "ll/api/event/server/ServiceEvents.h"
+
 namespace ll::service {
 // to avoid a lifetime dependency on external Plugin
 struct ServiceInfo {
@@ -57,25 +60,39 @@ public:
         std::shared_ptr<plugin::Plugin> const& plugin
     ) {
         std::lock_guard lock(mutex);
+
         if (services.contains(id.name)) {
             return false;
         }
-        auto info = std::make_unique<ServiceInfo>(id, plugin->getManifest().name, service);
+
+        auto info = std::make_unique<ServiceInfo>(id, plugin ? plugin->getManifest().name : "", service);
         pluginServices[info->pluginName].insert(info.get());
         services.emplace(info->name, std::move(info));
+
+        // notify the service that it has been registered or updated
+        event::EventBus::getInstance().publish(event::ServiceRegisterEvent{service});
+
         return true;
     }
 
     bool removeService(ServiceId const& id) {
         std::lock_guard lock(mutex);
-        if (auto it = services.find(id.name); it != services.end()) {
-            // invalidate the service, in case there are still references to it
-            it->second->service->invalidate();
-            pluginServices[it->second->pluginName].erase(it->second.get());
-            services.erase(it);
-            return true;
+
+        auto it = services.find(id.name);
+        if (it == services.end()) {
+            return false;
         }
-        return false;
+
+        // notify the service that it has been unregistered
+        event::EventBus::getInstance().publish(event::ServiceUnregisterEvent{it->second->service});
+
+        // invalidate the service, to notify the service that it is being removed,
+        // so they can do cleanup and other stuff
+        it->second->service->invalidate();
+        pluginServices[it->second->pluginName].erase(it->second.get());
+        services.erase(it);
+
+        return true;
     }
 
     void removeService(std::string_view pluginName) {
@@ -120,12 +137,11 @@ void ServiceManager::unregisterService(plugin::Plugin const& plugin) {
 }
 
 bool ServiceManager::registerService(
-    ServiceId const&                       id,
     std::shared_ptr<Service> const&        service,
     std::shared_ptr<plugin::Plugin> const& plugin
 ) {
     std::lock_guard lock(impl->mutex);
-    return impl->addService(id, service, plugin);
+    return impl->addService(service->getServiceId(), service, plugin);
 }
 
 ServiceManager& ServiceManager::getInstance() {

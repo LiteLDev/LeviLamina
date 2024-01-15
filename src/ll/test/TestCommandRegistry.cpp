@@ -1,6 +1,6 @@
 
 #include "ll/api/event/EventBus.h"
-#include "ll/api/event/world/ServerStartedEvent.h"
+#include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/core/LeviLamina.h"

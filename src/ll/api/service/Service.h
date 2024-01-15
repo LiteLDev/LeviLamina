@@ -1,14 +1,12 @@
 #pragma once
 
-#include <memory>
-
 #include "ll/api/service/ServiceId.h"
 
 namespace ll::service {
 
 class Service {
 public:
-    virtual ~Service() = 0;
+    LLAPI virtual ~Service() = 0;
 
     [[nodiscard]] virtual ServiceId getServiceId() const noexcept = 0;
 
@@ -16,7 +14,15 @@ public:
     virtual void invalidate() = 0;
 
     static constexpr ServiceId ServiceId{EmptyServiceId};
+
+    Service()                          = default;
+    Service(Service const&)            = delete;
+    Service(Service&&)                 = delete;
+    Service& operator=(Service const&) = delete;
+    Service& operator=(Service&&)      = delete;
 };
+
+inline Service::~Service() = default;
 
 template <class T>
 concept IsService = std::is_base_of_v<Service, T> && requires {
@@ -24,44 +30,14 @@ concept IsService = std::is_base_of_v<Service, T> && requires {
     requires std::same_as<std::remove_cvref_t<decltype(T::ServiceId)>, ServiceId>;
 };
 
-class ServiceUnavailableError : public std::runtime_error {
+template <class T, size_t version>
+class ServiceImpl : public Service {
 public:
-    explicit ServiceUnavailableError() : std::runtime_error("Service unavailable") {}
-};
-
-template <IsService T>
-class ServiceWrapper final : public Service {
-public:
-    ~ServiceWrapper() override = default;
-
     [[nodiscard]] class ServiceId getServiceId() const noexcept override { return T::ServiceId; }
 
-    void invalidate() override { mService.reset(); }
-
-    explicit ServiceWrapper(std::shared_ptr<T> service) : mService(std::move(service)) {}
-
-    [[nodiscard]] T& operator*() const noexcept {
-        if (!mService) {
-            throw ServiceUnavailableError();
-        }
-        return *mService;
-    }
-
-    [[nodiscard]] T* operator->() const noexcept {
-        if (!mService) {
-            throw ServiceUnavailableError();
-        }
-        return mService.get();
-    }
-
-    [[nodiscard]] T* get() const noexcept { return mService.get(); }
-
-    [[nodiscard]] bool isAvailable() const noexcept { return mService != nullptr; }
-
-    [[nodiscard]] explicit operator bool() const noexcept { return isAvailable(); }
-
-private:
-    std::shared_ptr<T> mService;
+    static constexpr class ServiceId ServiceId {
+        auto_name_t<T>{}, version
+    };
 };
 
 } // namespace ll::service

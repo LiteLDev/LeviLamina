@@ -11,7 +11,7 @@
 #include "ll/api/schedule/Scheduler.h"
 
 #include "ll/api/event/EventBus.h"
-#include "ll/api/event/world/ServerStartedEvent.h"
+#include "ll/api/event/server/ServerStartedEvent.h"
 
 using Param      = DynamicCommand::ParameterData;
 using ParamType  = DynamicCommand::ParameterType;
