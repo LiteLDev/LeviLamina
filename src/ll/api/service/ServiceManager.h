@@ -1,6 +1,6 @@
 #pragma once
 
-#include "nonstd/expected.hpp"
+#include <type_traits>
 
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/MultiListener.h"
@@ -8,7 +8,8 @@
 #include "ll/api/plugin/NativePlugin.h"
 #include "ll/api/service/Service.h"
 #include "ll/api/service/ServiceId.h"
-#include <type_traits>
+
+#include "mc/external/expected_lite/expected.h"
 
 namespace ll::service {
 

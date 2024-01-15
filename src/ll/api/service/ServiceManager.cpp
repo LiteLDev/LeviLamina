@@ -2,8 +2,6 @@
 
 #include <unordered_map>
 
-#include "nonstd/expected.hpp"
-
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/server/ServiceEvents.h"
 

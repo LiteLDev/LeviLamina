@@ -279,19 +279,23 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.logger.info("");
 
         crashInfo.logger.info("Exception:");
-        {
+        try {
             auto str = error_info::makeExceptionString(error_info::createExceptionPtr(*e->ExceptionRecord));
             for (auto& sv : string_utils::splitByPattern(str, "\n")) {
                 crashInfo.logger.info("  |{}", sv);
             }
+        } catch (...) {
+            crashInfo.logger.info("unknown error");
         }
         crashInfo.logger.info("");
         crashInfo.logger.info("Registers:");
-        {
+        try {
             auto str = stacktrace_utils::toString(*e->ContextRecord);
             for (auto& sv : splitByPattern(str, "\n")) {
                 crashInfo.logger.info("  |{}", sv);
             }
+        } catch (...) {
+            crashInfo.logger.info("unknown error");
         }
         crashInfo.logger.info("");
         dumpStacktrace(*e->ContextRecord);
