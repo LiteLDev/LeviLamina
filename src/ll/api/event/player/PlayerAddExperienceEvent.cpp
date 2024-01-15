@@ -35,7 +35,7 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
-class PlayerAddExperienceEventEmitter : public Emitter<PlayerAddExperienceEvent, emitterFactory> {
+class PlayerAddExperienceEventEmitter : public Emitter<emitterFactory, PlayerAddExperienceEvent> {
     memory::HookRegistrar<PlayerAddExperienceEventHook> hook;
 };
 

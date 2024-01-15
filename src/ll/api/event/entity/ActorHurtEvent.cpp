@@ -46,7 +46,7 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
-class ActorHurtEventEmitter : public Emitter<ActorHurtEvent, emitterFactory> {
+class ActorHurtEventEmitter : public Emitter<emitterFactory, ActorHurtEvent> {
     memory::HookRegistrar<ActorHurtEventHook> hook;
 };
 

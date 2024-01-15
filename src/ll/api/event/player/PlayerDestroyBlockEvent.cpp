@@ -32,7 +32,7 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
-class PlayerDestroyBlockEventEmitter : public Emitter<PlayerDestroyBlockEvent, emitterFactory> {
+class PlayerDestroyBlockEventEmitter : public Emitter<emitterFactory, PlayerDestroyBlockEvent> {
     memory::HookRegistrar<PlayerDestroyBlockEventHook> hook;
 };
 

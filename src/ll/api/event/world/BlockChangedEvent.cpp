@@ -40,7 +40,7 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 static std::unique_ptr<EmitterBase> spawnedEmitterFactory(ListenerBase&);
-class BlockChangedEventEmitter : public Emitter<BlockChangedEvent, spawnedEmitterFactory> {
+class BlockChangedEventEmitter : public Emitter<spawnedEmitterFactory, BlockChangedEvent> {
     memory::HookRegistrar<BlockChangedEventHook> hook;
 };
 

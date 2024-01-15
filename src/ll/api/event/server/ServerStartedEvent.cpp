@@ -30,7 +30,7 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
-class ServerStartedEventEmitter : public Emitter<ServerStartedEvent, emitterFactory> {
+class ServerStartedEventEmitter : public Emitter<emitterFactory, ServerStartedEvent> {
     memory::HookRegistrar<ServerStartedEventHook> hook;
 };
 

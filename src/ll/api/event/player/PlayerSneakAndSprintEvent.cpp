@@ -53,22 +53,22 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 static std::unique_ptr<EmitterBase> startSprintEmitterFactory(ListenerBase&);
-class PlayerStartSprintEventEmitter : public Emitter<PlayerSprintingEvent, startSprintEmitterFactory> {
+class PlayerStartSprintEventEmitter : public Emitter<startSprintEmitterFactory, PlayerSprintingEvent> {
     ll::memory::HookRegistrar<PlayerActionEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> stopSprintEmitterFactory(ListenerBase&);
-class PlayerStopSprintEventEmitter : public Emitter<PlayerSprintedEvent, stopSprintEmitterFactory> {
+class PlayerStopSprintEventEmitter : public Emitter<stopSprintEmitterFactory, PlayerSprintedEvent> {
     ll::memory::HookRegistrar<PlayerActionEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> startSneakEmitterFactory(ListenerBase&);
-class PlayerStartSneakEventEmitter : public Emitter<PlayerSneakingEvent, startSneakEmitterFactory> {
+class PlayerStartSneakEventEmitter : public Emitter<startSneakEmitterFactory, PlayerSneakingEvent> {
     ll::memory::HookRegistrar<PlayerActionEventHook> hook;
 };
 
 static std::unique_ptr<EmitterBase> stopSneakEmitterFactory(ListenerBase&);
-class PlayerStopSneakEventEmitter : public Emitter<PlayerSneakedEvent, stopSneakEmitterFactory> {
+class PlayerStopSneakEventEmitter : public Emitter<stopSneakEmitterFactory, PlayerSneakedEvent> {
     ll::memory::HookRegistrar<PlayerActionEventHook> hook;
 };
 

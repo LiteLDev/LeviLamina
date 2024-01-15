@@ -4,10 +4,10 @@
 #include "ll/api/event/EventBus.h"
 
 namespace ll::event {
-template <std::derived_from<Event> T, auto F>
-class Emitter : virtual public EmitterBase {
+template <auto F, std::derived_from<Event>... Ts>
+class Emitter : public EmitterBase {
     static inline bool reg = [] {
-        EventBus::getInstance().setEventEmitter<T>(F);
+        (EventBus::getInstance().setEventEmitter<Ts>(F), ...);
         return true;
     }();
 

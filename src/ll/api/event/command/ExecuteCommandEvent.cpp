@@ -63,7 +63,7 @@ LL_TYPE_INSTANCE_HOOK(
 
 
 static std::unique_ptr<EmitterBase> executingEmitterFactory(ListenerBase&);
-class ExecutingCommandEventEmitter : public Emitter<ExecutingCommandEvent, executingEmitterFactory> {
+class ExecutingCommandEventEmitter : public Emitter<executingEmitterFactory, ExecutingCommandEvent> {
     memory::HookRegistrar<ExecutingCommandEventHook> hook;
 };
 
@@ -72,7 +72,7 @@ static std::unique_ptr<EmitterBase> executingEmitterFactory(ListenerBase&) {
 }
 
 static std::unique_ptr<EmitterBase> executedEmitterFactory(ListenerBase&);
-class ExecutedCommandEventEmitter : public Emitter<ExecutedCommandEvent, executedEmitterFactory> {
+class ExecutedCommandEventEmitter : public Emitter<executedEmitterFactory, ExecutedCommandEvent> {
     memory::HookRegistrar<ExecutedCommandEventHook> hook;
 };
 

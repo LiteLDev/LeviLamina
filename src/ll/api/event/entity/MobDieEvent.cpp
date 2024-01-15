@@ -28,7 +28,7 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
-class MobDieEventEmitter : public Emitter<MobDieEvent, emitterFactory> {
+class MobDieEventEmitter : public Emitter<emitterFactory, MobDieEvent> {
     memory::HookRegistrar<MobDieEventHook> hook;
 };
 

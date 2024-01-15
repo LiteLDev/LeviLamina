@@ -88,7 +88,7 @@ LL_TYPE_INSTANCE_HOOK(
 
 
 static std::unique_ptr<EmitterBase> spawningEmitterFactory(ListenerBase&);
-class SpawningMobEventEmitter : public Emitter<SpawningMobEvent, spawningEmitterFactory> {
+class SpawningMobEventEmitter : public Emitter<spawningEmitterFactory, SpawningMobEvent> {
     memory::HookRegistrar<SpawningMobEventHook> hook;
 };
 
@@ -97,7 +97,7 @@ static std::unique_ptr<EmitterBase> spawningEmitterFactory(ListenerBase&) {
 }
 
 static std::unique_ptr<EmitterBase> spawnedEmitterFactory(ListenerBase&);
-class SpawnedMobEventEmitter : public Emitter<SpawnedMobEvent, spawnedEmitterFactory> {
+class SpawnedMobEventEmitter : public Emitter<spawnedEmitterFactory, SpawnedMobEvent> {
     memory::HookRegistrar<SpawnedMobEventHook> hook;
 };
 

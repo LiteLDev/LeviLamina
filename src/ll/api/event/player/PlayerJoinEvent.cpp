@@ -20,7 +20,7 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
-class PlayerJoinEventEmitter : public Emitter<PlayerJoinEvent, emitterFactory> {
+class PlayerJoinEventEmitter : public Emitter<emitterFactory, PlayerJoinEvent> {
     memory::HookRegistrar<PlayerJoinEventHook> hook;
 };
 

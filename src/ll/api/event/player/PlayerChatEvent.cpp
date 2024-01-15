@@ -41,7 +41,7 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
-class PlayerSendMessageEventEmitter : public Emitter<PlayerChatEvent, emitterFactory> {
+class PlayerSendMessageEventEmitter : public Emitter<emitterFactory, PlayerChatEvent> {
     memory::HookRegistrar<PlayerSendMessageEventHook> hook;
 };
 

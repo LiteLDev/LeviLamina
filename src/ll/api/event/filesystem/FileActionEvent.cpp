@@ -35,21 +35,21 @@ FileActionType const&        FileActionEvent::type() const { return mType; }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase& l);
 // modified from Thomas Monkman's
-class FileWatcher : public Emitter<FileActionEvent, emitterFactory> {
+class FileWatcher : public Emitter<emitterFactory, FileActionEvent> {
 private:
-    std::function<void(std::filesystem::path const& file, FileActionType eventType)> callback;
+    std::function<void(std::filesystem::path const& file, FileActionType eventType)> mCallback;
 
-    std::wstring filename; // not empty for single file
+    std::wstring mFilename; // not empty for single file
 
-    std::thread watchThread;
+    std::thread mWatchThread;
 
-    std::condition_variable                                       cv;
-    std::mutex                                                    callbackMutex;
-    std::vector<std::pair<std::filesystem::path, FileActionType>> callbackInfo;
-    std::thread                                                   callbackThread;
+    std::condition_variable                                       mCv;
+    std::mutex                                                    mCallbackMutex;
+    std::vector<std::pair<std::filesystem::path, FileActionType>> mCallbackInfo;
+    std::thread                                                   mCallbackThread;
 
-    std::promise<void> running;
-    std::atomic<bool>  destory{false};
+    std::promise<void> mRunning;
+    std::atomic<bool>  mDestroy{false};
 
     void* directoryHandle{nullptr};
     void* closeEvent{nullptr};
@@ -62,31 +62,31 @@ private:
         }
 
 
-        callbackThread = std::thread([this]() {
+        mCallbackThread = std::thread([this]() {
             try {
-                while (!destory) {
-                    std::unique_lock lock(callbackMutex);
-                    if (callbackInfo.empty() && !destory) {
-                        cv.wait(lock, [this] { return !callbackInfo.empty() || destory; });
+                while (!mDestroy) {
+                    std::unique_lock lock(mCallbackMutex);
+                    if (mCallbackInfo.empty() && !mDestroy) {
+                        mCv.wait(lock, [this] { return !mCallbackInfo.empty() || mDestroy; });
                     }
-                    decltype(callbackInfo) callback_information = {};
-                    std::swap(callback_information, callbackInfo);
+                    decltype(mCallbackInfo) callback_information = {};
+                    std::swap(callback_information, mCallbackInfo);
                     lock.unlock();
 
                     for (const auto& file : callback_information) {
                         try {
-                            callback(file.first, file.second);
+                            mCallback(file.first, file.second);
                         } catch (...) {}
                     }
                 }
             } catch (...) {
                 try {
-                    running.set_exception(std::current_exception());
+                    mRunning.set_exception(std::current_exception());
                 } catch (...) {} // set_exception() may throw too
             }
         });
 
-        watchThread = std::thread([this]() {
+        mWatchThread = std::thread([this]() {
             try {
                 std::vector<BYTE> buffer(1024 * 256);
                 DWORD             bytes_returned = 0;
@@ -100,7 +100,7 @@ private:
                 std::array<void*, 2> handles{overlapped_buffer.hEvent, closeEvent};
 
                 bool async_pending;
-                running.set_value();
+                mRunning.set_value();
                 do {
                     std::vector<std::pair<std::filesystem::path, FileActionType>> parsed_information;
                     ReadDirectoryChangesW(
@@ -157,11 +157,11 @@ private:
                     }
                     // dispatch callbacks
                     {
-                        std::lock_guard lock(callbackMutex);
-                        callbackInfo.insert(callbackInfo.end(), parsed_information.begin(), parsed_information.end());
+                        std::lock_guard lock(mCallbackMutex);
+                        mCallbackInfo.insert(mCallbackInfo.end(), parsed_information.begin(), parsed_information.end());
                     }
-                    cv.notify_one();
-                } while (!destory);
+                    mCv.notify_one();
+                } while (!mDestroy);
 
                 if (async_pending) {
                     // clean up running async io
@@ -170,32 +170,32 @@ private:
                 }
             } catch (...) {
                 try {
-                    running.set_exception(std::current_exception());
+                    mRunning.set_exception(std::current_exception());
                 } catch (...) {} // set_exception() may throw too
             }
         });
 
-        std::future<void> future = running.get_future();
+        std::future<void> future = mRunning.get_future();
         future.get(); // block until the monitor_directory is up and running
     }
 
     void destroy() {
-        destory = true;
-        running = std::promise<void>();
+        mDestroy = true;
+        mRunning = std::promise<void>();
 
         SetEvent(closeEvent);
 
-        cv.notify_one();
-        watchThread.join();
-        callbackThread.join();
+        mCv.notify_one();
+        mWatchThread.join();
+        mCallbackThread.join();
 
         CloseHandle(directoryHandle);
     }
 
     bool passFilter(std::wstring const& filePath) {
-        if (!filename.empty()) {
+        if (!mFilename.empty()) {
             // if we are watching a single file, only that file should trigger action
-            return std::filesystem::path(filePath).filename() == filename;
+            return std::filesystem::path(filePath).filename() == mFilename;
         }
         return true;
     }
@@ -205,7 +205,7 @@ private:
             if (std::filesystem::is_directory(path)) {
                 return path;
             } else {
-                filename = path.filename();
+                mFilename = path.filename();
                 if (!path.has_parent_path()) {
                     return std::filesystem::path{u8"./"};
                 }
@@ -234,7 +234,7 @@ public:
         std::filesystem::path const&                                      path,
         std::function<void(std::filesystem::path const&, FileActionType)> callback
     )
-    : callback(std::move(callback)),
+    : mCallback(std::move(callback)),
       directoryHandle(getDirectory(path)) {
         init();
     }

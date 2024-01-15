@@ -1,7 +1,6 @@
 #include "ll/api/event/server/ServiceEvents.h"
 
 #include "ll/api/event/Emitter.h"
-#include "ll/api/event/EmitterBase.h"
 #include "ll/api/event/ListenerBase.h"
 
 namespace ll::event::inline server {
@@ -14,13 +13,7 @@ ServiceRegisterEvent::ServiceRegisterEvent(std::shared_ptr<service::Service> ser
 ServiceUnregisterEvent::ServiceUnregisterEvent(std::shared_ptr<service::Service> service)
 : ServiceEvent(std::move(service)) {}
 
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
-class ServiceEventEmitter : public Emitter<ServiceRegisterEvent, emitterFactory>,
-                            public Emitter<ServiceUnregisterEvent, emitterFactory> {
-public:
-    ServiceEventEmitter() noexcept = default;
-};
-
-static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) { return std::make_unique<ServiceEventEmitter>(); }
+class ServiceEventEmitter
+: public Emitter<[](auto&&) { return nullptr; }, ServiceRegisterEvent, ServiceUnregisterEvent> {};
 
 } // namespace ll::event::inline server

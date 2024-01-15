@@ -65,7 +65,7 @@ LL_TYPE_INSTANCE_HOOK(
 
 
 static std::unique_ptr<EmitterBase> spawningEmitterFactory(ListenerBase&);
-class PlayerPlacingBlockEventEmitter : public Emitter<PlayerPlacingBlockEvent, spawningEmitterFactory> {
+class PlayerPlacingBlockEventEmitter : public Emitter<spawningEmitterFactory, PlayerPlacingBlockEvent> {
     memory::HookRegistrar<PlayerPlacingBlockEventHook> hook;
 };
 
@@ -74,7 +74,7 @@ static std::unique_ptr<EmitterBase> spawningEmitterFactory(ListenerBase&) {
 }
 
 static std::unique_ptr<EmitterBase> spawnedEmitterFactory(ListenerBase&);
-class PlayerPlacedBlockEventEmitter : public Emitter<PlayerPlacedBlockEvent, spawnedEmitterFactory> {
+class PlayerPlacedBlockEventEmitter : public Emitter<spawnedEmitterFactory, PlayerPlacedBlockEvent> {
     memory::HookRegistrar<PlayerPlacedBlockEventHook> hook;
 };
 

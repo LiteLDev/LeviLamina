@@ -27,7 +27,7 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&);
-class ServerStoppingEventEmitter : public Emitter<ServerStoppingEvent, emitterFactory> {
+class ServerStoppingEventEmitter : public Emitter<emitterFactory, ServerStoppingEvent> {
     memory::HookRegistrar<ServerStoppingEventHook> hook;
 };
 
