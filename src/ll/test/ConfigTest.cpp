@@ -141,7 +141,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
             nlohmann::ordered_json::parse(R"({"structure":{"hello":""}})", nullptr, false, true)
         );
     } catch (...) {
-        ll::error_info::printCurrentException();
+        ll::error_info::printCurrentException(ll::logger);
     }
 
     ll::logger.debug("789\xDB\xFE");

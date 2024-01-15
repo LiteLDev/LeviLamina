@@ -87,24 +87,21 @@ LLNDAPI std::exception_ptr createExceptionPtr(_EXCEPTION_RECORD const&) noexcept
 #if _HAS_CXX23
 LLNDAPI std::stacktrace stacktraceFromContext(_CONTEXT const& context, size_t skip = 0, size_t maxDepth = ~0ui64);
 
-inline std::stacktrace stacktraceFromCurrExc(size_t skip = 2, size_t maxDepth = ~0ui64) {
+inline std::stacktrace stacktraceFromCurrExc(size_t skip = 0, size_t maxDepth = ~0ui64) {
     return stacktraceFromContext(current_exception_context(), skip, maxDepth);
 }
 #endif
 
 LLNDAPI std::string makeExceptionString(std::exception_ptr ePtr) noexcept;
 
-LLAPI void printCurrentException(
-    optional_ref<ll::Logger>  = nullptr,
-    std::exception_ptr const& = std::current_exception()
-) noexcept;
+LLAPI void printCurrentException(ll::Logger& l, std::exception_ptr const& = std::current_exception()) noexcept;
 
-inline void printException(_EXCEPTION_RECORD const& e, optional_ref<ll::Logger> l = nullptr) noexcept {
+inline void printException(ll::Logger& l, _EXCEPTION_RECORD const& e) noexcept {
     printCurrentException(l, createExceptionPtr(e));
 }
 template <class T>
     requires(!std::is_same_v<T, std::exception_ptr>)
-inline void printException(T const& e, optional_ref<ll::Logger> l = nullptr) noexcept {
+inline void printException(ll::Logger& l, T const& e) noexcept {
     printCurrentException(l, std::make_exception_ptr(e));
 }
 

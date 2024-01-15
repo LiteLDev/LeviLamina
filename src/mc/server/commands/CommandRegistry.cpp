@@ -113,7 +113,7 @@ bool CommandRegistry::unregisterCommand(std::string const& name) {
         mAliases.erase(command);
         return true;
     } catch (...) {
-        ll::error_info::printCurrentException();
+        ll::error_info::printCurrentException(ll::logger);
     }
     return false;
 }

@@ -264,7 +264,7 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
     try {
         leviLaminaMain();
     } catch (...) {
-        ll::error_info::printCurrentException();
+        ll::error_info::printCurrentException(logger);
     }
     auto res = origin(argc, argv);
     setServerStatus(ServerStatus::Default);

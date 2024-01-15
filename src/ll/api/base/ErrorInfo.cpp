@@ -1,8 +1,11 @@
 #include "ll/api/base/ErrorInfo.h"
+
+#include <filesystem>
+
+#include "ll/api/Logger.h"
 #include "ll/api/memory/Memory.h"
 #include "ll/api/reflection/Reflection.h"
 #include "ll/api/utils/StringUtils.h"
-#include "ll/core/LeviLamina.h"
 
 #include "windows.h"
 
@@ -309,8 +312,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
     return "unknown error when make exception string";
 }
 
-void printCurrentException(optional_ref<ll::Logger> l, std::exception_ptr const& e) noexcept {
-    auto& rlogger = l.value_or(logger);
+void printCurrentException(ll::Logger& logger, std::exception_ptr const& e) noexcept {
     try {
 #if defined(LL_DEBUG) && _HAS_CXX23
         std::string res;
@@ -328,10 +330,10 @@ void printCurrentException(optional_ref<ll::Logger> l, std::exception_ptr const&
         auto res = makeExceptionString(e);
 #endif
         for (auto& sv : string_utils::splitByPattern(res, "\n")) {
-            rlogger.error(sv);
+            logger.error(sv);
         }
         return;
     } catch (...) {}
-    rlogger.error("unknown error");
+    logger.error("unknown error");
 }
 } // namespace ll::error_info

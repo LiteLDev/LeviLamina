@@ -53,7 +53,7 @@ static std::expected<Manifest, DirState> loadManifest(std::filesystem::path cons
     try {
         reflection::deserialize<nlohmann::json, Manifest>(manifest, json);
     } catch (...) {
-        error_info::printCurrentException();
+        error_info::printCurrentException(logger);
         return std::unexpected{DirState::Error};
     }
     if (manifest.name != dirName) {
@@ -243,11 +243,11 @@ LL_TYPE_INSTANCE_HOOK(
             try {
                 registrar.enablePlugin(name);
             } catch (...) {
-                error_info::printCurrentException();
+                error_info::printCurrentException(logger);
             }
         }
     } catch (...) {
-        error_info::printCurrentException();
+        error_info::printCurrentException(logger);
     }
 }
 LL_TYPE_INSTANCE_HOOK(
@@ -263,11 +263,11 @@ LL_TYPE_INSTANCE_HOOK(
             try {
                 registrar.disablePlugin(name);
             } catch (...) {
-                error_info::printCurrentException();
+                error_info::printCurrentException(logger);
             }
         }
     } catch (...) {
-        error_info::printCurrentException();
+        error_info::printCurrentException(logger);
     }
     origin();
 }

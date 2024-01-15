@@ -43,7 +43,7 @@ public:
                         l->pluginPtr.expired() ? "unknown plugin" : l->pluginPtr.lock()->getManifest().name
                     );
                 } catch (...) {}
-                error_info::printCurrentException();
+                error_info::printCurrentException(logger);
             }
         }
     }
@@ -66,7 +66,7 @@ public:
                         pluginName
                     );
                 } catch (...) {}
-                error_info::printCurrentException();
+                error_info::printCurrentException(logger);
             }
         }
     }

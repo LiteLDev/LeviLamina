@@ -52,7 +52,7 @@ bool CrashLogger::startCrashLoggerProcess() {
     ));
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("ll.crashLogger.error.cannotCreateDaemonProcess"_tr);
-        error_info::printException(error_info::getWinLastError(), crashLogger);
+        error_info::printException(crashLogger, error_info::getWinLastError());
         return false;
     }
 
@@ -174,11 +174,13 @@ static void dumpSystemInfo() {
     crashInfo.logger.info("  |LocalTime: {}", fmt::format("{0:%F %T} (UTC{0:%z})", fmt::localtime(_time64(nullptr))));
 }
 static void dumpStacktrace(_CONTEXT const& c) {
-    crashInfo.logger.info("Stacktrace:");
-    auto str = stacktrace_utils::toString(error_info::stacktraceFromContext(c));
-    for (auto& sv : splitByPattern(str, "\n")) {
-        crashInfo.logger.info("  |{}", sv);
-    }
+    try {
+        crashInfo.logger.info("Stacktrace:");
+        auto str = stacktrace_utils::toString(error_info::stacktraceFromContext(c));
+        for (auto& sv : splitByPattern(str, "\n")) {
+            crashInfo.logger.info("  |{}", sv);
+        }
+    } catch (...) {}
 }
 
 static BOOL CALLBACK dumpModules(

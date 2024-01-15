@@ -23,7 +23,7 @@ bool loadLeviConfig() {
         return true;
     } catch (...) {
         logger.error("ll.config.load.fail"_tr);
-        ll::error_info::printCurrentException();
+        ll::error_info::printCurrentException(logger);
         return false;
     }
 }
@@ -34,7 +34,7 @@ bool saveLeviConfig() {
         res = ll::config::saveConfig(globalConfig, leviConfigPath);
     } catch (...) {
         logger.error("ll.config.save.fail"_tr);
-        ll::error_info::printCurrentException();
+        ll::error_info::printCurrentException(logger);
         return false;
     }
     if (!res) {
