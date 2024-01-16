@@ -38,7 +38,7 @@
 
 #include "ll/api/base/Hash.h"
 
-class myTypeList2;
+struct myTypeList2 : ll::meta::DynamicTypeList<myTypeList2> {};
 
 using namespace ll::hash;
 using namespace ll::hash_literals;
@@ -210,8 +210,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     });
     bus.addListener(mul);
 
-    ll::meta::DynamicTypeList::push_back<myTypeList2, float>();
-    ll::logger.debug("{}", typeid(ll::meta::DynamicTypeList::value<myTypeList2>()).name());
+    myTypeList2::push_back<float>();
+    ll::logger.debug("{}", typeid(myTypeList2::value()).name());
 
     auto dl = DynamicListener::create([](CompoundTag& nbt) {
         // nbt["cancelled"] = true;
