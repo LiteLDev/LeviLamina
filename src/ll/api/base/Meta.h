@@ -62,6 +62,15 @@ struct max_type<T, U> {
     using type = typename std::conditional<(sizeof(T) < sizeof(U)), U, T>::type;
 };
 
+template <class T, class... Ts>
+struct index_of;
+
+template <class T, class... Ts>
+struct index_of<T, T, Ts...> : std::integral_constant<size_t, 0> {};
+
+template <class T, class U, class... Ts>
+struct index_of<T, U, Ts...> : std::integral_constant<size_t, 1 + index_of<T, Ts...>::value> {};
+
 template <class... TL>
 class TypeList {
 public:
@@ -97,17 +106,7 @@ public:
     }
 
     template <class T>
-    static constexpr size_t index = [] {
-        size_t res = ~0ui64;
-        forEachIndexed([&]<class Ts>(size_t i) {
-            if constexpr (std::is_same_v<T, Ts>) {
-                if (res == ~0ui64) {
-                    res = i;
-                }
-            }
-        });
-        return res;
-    }();
+    static constexpr size_t index = index_of<T, TL...>::value;
 };
 
 template <class Group, auto Id>

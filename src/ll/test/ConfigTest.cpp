@@ -89,17 +89,24 @@ public:
 
 struct myTypeList1 : ll::meta::DynamicTypeList<myTypeList1> {};
 struct myTypeList2 : ll::meta::DynamicTypeList<myTypeList2> {};
+struct myTypeList3 : ll::meta::TypeList<bool, int> {};
+struct myTypeList4 : ll::meta::TypeList<> {};
 
 LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &ServerInstance::startServerThread, void) {
     origin();
 
     auto lock = ll::Logger::lock();
 
-    int s = 1;
-
-    auto sbbbbbb = DataItem::create(1, s);
+    int         s        = 1;
+    float       f        = 1.0f;
+    std::string str      = "hello world";
+    auto        sbbbbbb  = DataItem::create(1, s);
+    auto        sbbbbbb1 = DataItem::create(1, f);
+    auto        sbbbbbb2 = DataItem::create(1, str);
 
     ll::logger.debug("DataItem {} {}", typeid(*sbbbbbb).name(), sbbbbbb->getData<int>().value());
+    ll::logger.debug("DataItem {} {}", typeid(*sbbbbbb1).name(), sbbbbbb1->getData<float>().value());
+    ll::logger.debug("DataItem {} {}", typeid(*sbbbbbb2).name(), sbbbbbb2->getData<std::string>().value());
 
 
     auto helloReflection = TestClass<int>{};
@@ -169,4 +176,14 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
     ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(myTypeList1::value())>);
     myTypeList1::map<std::add_lvalue_reference>();
     ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(myTypeList1::value())>);
+
+    ll::logger.debug("myTypeList3::index {} {}", myTypeList3::index<bool>, myTypeList3::index<int>);
+
+    myTypeList3::forEach([]<typename T>() { ll::logger.debug(typeid(T).name()); });
+
+    myTypeList3::forEachIndexed([]<typename T>(size_t index) { ll::logger.debug("{} : {}", typeid(T).name(), index); });
+
+    myTypeList4::forEach([]<typename T>() { ll::logger.debug(typeid(T).name()); });
+
+    myTypeList4::forEachIndexed([]<typename T>(size_t index) { ll::logger.debug("{} : {}", typeid(T).name(), index); });
 }
