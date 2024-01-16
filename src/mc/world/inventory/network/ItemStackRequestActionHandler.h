@@ -12,8 +12,8 @@
 
 class ItemStackRequestActionHandler {
 public:
-    Player& mPlayer;                        // this+0x0
-    char    filler[0xE0 - sizeof(mPlayer)]; // BDS-WIN 1.20.51 ItemStackNetManagerServer::ItemStackNetManagerServer line=15
+    Player& mPlayer;          // this+0x0
+    char    filler[0xE0 - 8]; // BDS-WIN 1.20.51 ItemStackNetManagerServer::ItemStackNetManagerServer line=15
 
 public:
     // ItemStackRequestActionHandler inner types declare
