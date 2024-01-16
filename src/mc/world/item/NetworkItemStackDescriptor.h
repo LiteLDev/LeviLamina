@@ -15,12 +15,13 @@ namespace Json { class Value; }
 
 class NetworkItemStackDescriptor : public ::ItemDescriptorCount {
 public:
-    NetworkItemStackDescriptor() = delete;
+    bool                  mIncludeNetIds{};  // this+0x18
+    ItemStackNetIdVariant mNetIdVariant{};   // this+0x20
+    uint                  mBlockRuntimeId{}; // this+0x38
+    std::string           mUserDataBuffer{}; // this+0x40
+public:
+    NetworkItemStackDescriptor() = default;
 
-    bool                  mIncludeNetIds;  // this+0x18
-    ItemStackNetIdVariant mNetIdVariant;   // this+0x20
-    uint                  mBlockRuntimeId; // this+0x38
-    std::string           mUserDataBuffer; // this+0x40
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1NetworkItemStackDescriptor@@UEAA@XZ
