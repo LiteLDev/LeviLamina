@@ -179,4 +179,4 @@ inline FuncPtr signatureCache = resolveSignature(signature);
 
 #define LL_ADDRESS_CALL(address, Ret, ...) ((Ret(*)(__VA_ARGS__))(address))
 
-#define LL_SIGNATURE_CALL(...) ((Ret(*)(__VA_ARGS__))(ll::memory::signatureCache<symbol>))
+#define LL_SIGNATURE_CALL(signature, Ret, ...) ((Ret(*)(__VA_ARGS__))(ll::memory::signatureCache<signature>))
