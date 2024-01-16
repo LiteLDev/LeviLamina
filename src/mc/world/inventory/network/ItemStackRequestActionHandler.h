@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/player/Player.h"
 
 // auto generated inclusion list
 #include "mc/network/TypedClientNetId.h"
@@ -10,6 +11,10 @@
 #include "mc/world/item/components/ItemStackNetResult.h"
 
 class ItemStackRequestActionHandler {
+public:
+    Player& mPlayer;                        // this+0x0
+    char    filler[0xE0 - sizeof(mPlayer)]; // BDS-WIN 1.20.51 ItemStackNetManagerServer::ItemStackNetManagerServer line=15
+
 public:
     // ItemStackRequestActionHandler inner types declare
     // clang-format off
@@ -159,7 +164,12 @@ public:
 
     // symbol:
     // ?_handleTransfer@ItemStackRequestActionHandler@@AEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionTransferBase@@_N11@Z
-    MCAPI ::ItemStackNetResult _handleTransfer(class ItemStackRequestActionTransferBase const&, bool, bool, bool);
+    MCAPI ::ItemStackNetResult _handleTransfer(
+        class ItemStackRequestActionTransferBase const& requestAction,
+        bool                                            isMerge,
+        bool                                            isMove,
+        bool                                            isSwap
+    );
 
     // symbol:
     // ?_resolveSlotIdAssignment@ItemStackRequestActionHandler@@AEAA?AV?$optional@URequestSlotIdAssignment@ItemStackRequestActionHandler@@@std@@AEBUItemStackRequestSlotInfo@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
