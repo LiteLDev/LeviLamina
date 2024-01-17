@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Refactor print exception
 - Refactor dynamic type list
 - Refactor NonOwnerPointer
+- Readd constructor in ScorePacketInfo
 
 ### Fixed
 
@@ -34,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix BinaryStream writeType
 - Fix plugin name with dot
 - Fix TypeList::index error
+- Fix WorldGenerator vftable
 
 ## [0.4.2] - 2024-01-12
 
