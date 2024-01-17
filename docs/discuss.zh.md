@@ -7,10 +7,7 @@
 [![Discord](https://img.shields.io/discord/849252980430864384?style=for-the-badge&logo=discord)
 ](https://discord.gg/GDWytKaebw) 
 [![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=telegram)
-](https://t.me/LiteLoader) 
-[![Forum](https://img.shields.io/badge/%E5%AE%98%E6%96%B9%E8%AE%BA%E5%9D%9B-orange?style=for-the-badge
-)
-](https://bbs.liteldev.com)  
+](https://t.me/LiteLoader)  
 [![656669024](https://img.shields.io/badge/656669024-red?style=for-the-badge&logo=tencent%20qq)
 ](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ndxRXO1HARA8ing7OunMClOz3cQTogL0&authKey=D7QTcqnzhBzuh3zc%2F70FjgklsVvkCImTjSRqHMwYGCLwIFpxzp%2FflC97Y7AUG%2Fpy&noverify=0&group_code=656669024) 
 [![850517473](https://img.shields.io/badge/850517473-red?style=for-the-badge&logo=tencent%20qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=YFHRYvpO6mjqE5QeZxcMIlahGzWR3JLA&authKey=M8p8hkdctNSyXJo7Ux%2FzdNu4VL2jLiqMGakM3eHlA4ZLvjdwtL%2F1SIKE51s%2FKcp6&noverify=0&group_code=850517473) 

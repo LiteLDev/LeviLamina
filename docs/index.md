@@ -38,6 +38,8 @@ This project exists thanks to all the people who contribute.
 
 ![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
 
+We are also very appreciate to our [Donors](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ).
+
 ## License
 
 [LGPL-3.0-only](https://github.com/LiteLDev/LeviLamina/blob/HEAD/LICENSE.md) © 2021-2023 LiteLDev

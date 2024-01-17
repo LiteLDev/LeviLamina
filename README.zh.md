@@ -88,6 +88,8 @@ LeviLamina遵循[贡献者契约](https://www.contributor-covenant.org/version/2
 
 ![贡献者](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
 
+我们也十分感谢我们的[捐赠者们](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ).
+
 ## 许可证
 
 [LGPL-3.0-only](https://github.com/LiteLDev/LeviLamina/blob/HEAD/LICENSE.md) © 2021-2023 LiteLDev
