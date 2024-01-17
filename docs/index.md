@@ -26,6 +26,10 @@ In response to these predicaments, the maintainers of the precursor project, Lit
 
 Nevertheless, as LiteLoaderBDS progressed, certain issues came to the fore. The early design failed to account for future advancements, rendering many aspects obsolete and impeding the utilization of contemporary tools, thereby falling short of meeting the latest performance requirements. Furthermore, its tightly coupled design engendered substantial efforts when adapting to new iterations of Minecraft Bedrock Server. Consequently, LiteLDev made the decision to commence from scratch, leveraging existing expertise, and undertaking a comprehensive framework redesign to cultivate a plugin engine that promotes user-friendliness for maintainers, developers, and users alike.
 
+## Thanks
+
+We extend sincere thanks to [all donors](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ)!
+
 ## Contributing
 
 Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LeviLamina/issues/new/choose) or submit PRs.
@@ -37,8 +41,6 @@ LeviLamina follows the [Contributor Covenant](https://www.contributor-covenant.o
 This project exists thanks to all the people who contribute.
 
 ![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
-
-We are also very appreciate to our [Donors](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ).
 
 ## License
 

@@ -7,6 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2023-01-17
+
+### Added
+
+- Add service and refactor plugin system
+- Add lang dir to plugin
+- Add hash function to InventorySource
+- Complete the missing parameters for the LL_SIGNATURE_CALL macro
+- Complete the size of ItemStackRequestActionHandler and the parameter names of ItemStackRequestActionHandler::_handleTransfer
+- Add InventoryAction and NetworkItemStackDescriptor missed constructor
+- Add members to FlowerFeature,FlatWorldGeneratorOptions
+
+### Changed
+
+- Allow multiple implement of emitter
+- Refactor print exception
+- Refactor dynamic type list
+- Refactor NonOwnerPointer
+
+### Fixed
+
+- Fix plugin dir cache
+- Fix ansi code page
+- Remove BugFix
+- Fix BinaryStream writeType
+- Fix plugin name with dot
+- Fix TypeList::index error
+
 ## [0.4.2] - 2024-01-12
 
 ### Added
@@ -62,6 +90,7 @@ First preview release.
 For lip and tooth-hub test only.
 
 [unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.4.2...HEAD
+[0.5.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.4.2...v0.5.0
 [0.4.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.3.0...v0.4.0

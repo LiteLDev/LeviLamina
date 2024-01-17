@@ -22,6 +22,10 @@ Minecraft Bedrock Edition的最初版本缺乏Minecraft Java Edition中存在的
 
 然而，随着LiteLoaderBDS的进展，一些问题也暴露出来。早期的设计没有考虑到未来的发展，使得许多方面过时和难以使用现代化的工具，从而无法满足最新的性能要求。此外，它的紧耦合设计在适应新版本的Minecraft Bedrock Server时也需要付出巨大的努力。因此，LiteLDev决定从头开始，利用现有的专业知识，进行全面的框架重设计，培育一个对维护者、开发者和用户都友好的插件引擎。
 
+## 感谢
+
+我们衷心感谢[所有捐赠者](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ)！
+
 ## 贡献
 
 欢迎参与！[打开一个问题](https://github.com/LiteLDev/LeviLamina/issues/new/choose)或提交Pull Requests。
@@ -33,8 +37,6 @@ LeviLamina遵循[贡献者契约](https://www.contributor-covenant.org/version/2
 这个项目的存在要感谢所有的贡献者。
 
 ![贡献者](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
-
-我们也十分感谢我们的[捐赠者们](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ).
 
 ## 许可证
 

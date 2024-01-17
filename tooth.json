@@ -1,7 +1,7 @@
 {
     "format_version": 2,
     "tooth": "github.com/LiteLDev/LeviLamina",
-    "version": "0.4.2",
+    "version": "0.5.0",
     "info": {
         "name": "LeviLamina",
         "description": "A lightweight, modular and versatile plugin loader for Minecraft Bedrock Server BDS, formerly known as LiteLoaderBDS",
