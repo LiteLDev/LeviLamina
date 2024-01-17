@@ -4,13 +4,11 @@
 #include "mc/deps/json/Value.h"
 #include "mc/enums/BlockLayer.h"
 #include "mc/enums/WorldVersion.h"
-#include "mc/world/level/block/Block.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 // clang-format on
-
 
 class FlatWorldGeneratorOptions {
 public:
