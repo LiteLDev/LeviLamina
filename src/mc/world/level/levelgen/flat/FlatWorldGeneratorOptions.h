@@ -1,13 +1,25 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/Value.h"
+#include "mc/enums/BlockLayer.h"
+#include "mc/enums/WorldVersion.h"
+#include "mc/world/level/block/Block.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 // clang-format on
 
+
 class FlatWorldGeneratorOptions {
+public:
+    int                                     mEncodingVersion;  // this+0x0
+    std::vector<std::pair<BlockLayer, int>> mBlockLayers;      // this+0x8
+    int                                     mBiomeId;          // this+0x20
+    Json::Value                             mStructureOptions; // this+0x28
+    WorldVersion                            mWorldVersion;     // this+0x38
+
 public:
     // prevent constructor by default
     FlatWorldGeneratorOptions& operator=(FlatWorldGeneratorOptions const&);

@@ -1,11 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/block/Block.h"
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
 
 class FlowerFeature : public ::Feature {
+public:
+    const Block& mBlock;
+
 public:
     // prevent constructor by default
     FlowerFeature& operator=(FlowerFeature const&);
