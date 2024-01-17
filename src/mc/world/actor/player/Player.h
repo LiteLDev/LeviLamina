@@ -158,7 +158,7 @@ public:
 
     /**
      * @brief Give player item and refresh.
-     * @return Whether it is a complete success 
+     * @return Whether it is a complete success
      *         (e.g. returning false if the quantity of items given to the player does not match the expectation).
      * @warning The return value does not take into account whether the refresh was successful.
      *          You can use Player::add, but it will not refresh the item, which may lead to potential issues.

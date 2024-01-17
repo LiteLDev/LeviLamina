@@ -8,7 +8,7 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakRefT.h"
 
-class FeatureRefTraits;
+struct FeatureRefTraits;
 
 class FeatureRegistry {
 public:
@@ -76,7 +76,7 @@ public:
 
     // symbol:
     // ?lookupOrReserveFeature@FeatureRegistry@@QEAA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    MCAPI class WeakRefT<struct FeatureRefTraits> lookupOrReserveFeature(std::string const& featureName);
+    MCAPI class WeakRefT<struct FeatureRefTraits> lookupOrReserveFeature(std::string const& name);
 
     // symbol:
     // ?reserveFeature@FeatureRegistry@@QEAA?AV?$WeakRefT@UFeatureRefTraits@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

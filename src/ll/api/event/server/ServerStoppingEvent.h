@@ -15,4 +15,4 @@ public:
 
     LLNDAPI ServerInstance& server() const;
 };
-} // namespace ll::event::inline world
+} // namespace ll::event::inline server

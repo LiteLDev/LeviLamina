@@ -4,6 +4,7 @@
 #include <utility>
 
 #include "ll/api/base/Concepts.h"
+#include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 
 namespace ll::meta {
@@ -145,23 +146,7 @@ struct DynamicTypeList {
     struct Setter {
         friend auto valueStored(Getter<N>) { return Type{}; }
     };
-#ifdef __INTELLISENSE__
-    template <auto Id = size_t{}>
-    [[maybe_unused]] static consteval auto value() {
-        return TypeList<>{};
-    }
-    template <concepts::Specializes<TypeList> T>
-    [[maybe_unused]] static consteval void assign() {}
-    template <class T>
-    [[maybe_unused]] static consteval void push_back() {}
-    template <class T>
-    [[maybe_unused]] static consteval void push_front() {}
-    template <template <class> class W>
-    [[maybe_unused]] static consteval void wrap() {}
-    template <template <class> class M>
-    [[maybe_unused]] static consteval void map() {}
-#else
-    template <auto Id = size_t{}, class UniqueTag = decltype([] {})>
+    template <auto Id = size_t{}, class UniqueTag = LL_UNIQUE_TYPE>
     [[maybe_unused]] static consteval auto value() {
         if constexpr (requires(Getter<Id + 1> g) { valueStored(g); }) {
             return value<Id + 1, UniqueTag>();
@@ -171,39 +156,38 @@ struct DynamicTypeList {
             return TypeList<>{};
         }
     }
-    template <concepts::Specializes<TypeList> T, class UniqueTag = decltype([] {})>
+    template <concepts::Specializes<TypeList> T, class UniqueTag = LL_UNIQUE_TYPE>
     [[maybe_unused]] static consteval void assign() {
         constexpr auto id = uniqueId<Group, UniqueTag>();
         Setter<id, T>  setter{};
     }
-    template <class T, class UniqueTag = decltype([] {})>
+    template <class T, class UniqueTag = LL_UNIQUE_TYPE>
     [[maybe_unused]] static consteval void push_back() {
         using now         = decltype(value<0, UniqueTag>());
         constexpr auto id = uniqueId<Group, UniqueTag>();
         using next        = typename now::template push_back<T>;
         Setter<id, next> setter{};
     }
-    template <class T, class UniqueTag = decltype([] {})>
+    template <class T, class UniqueTag = LL_UNIQUE_TYPE>
     [[maybe_unused]] static consteval void push_front() {
         using now         = decltype(value<0, UniqueTag>());
         constexpr auto id = uniqueId<Group, UniqueTag>();
         using next        = typename now::template push_front<T>;
         Setter<id, next> setter{};
     }
-    template <template <class> class W, class UniqueTag = decltype([] {})>
+    template <template <class> class W, class UniqueTag = LL_UNIQUE_TYPE>
     [[maybe_unused]] static consteval void wrap() {
         using now         = decltype(value<0, UniqueTag>());
         constexpr auto id = uniqueId<Group, UniqueTag>();
         using next        = typename now::template wrap<W>;
         Setter<id, next> setter{};
     }
-    template <template <class> class M, class UniqueTag = decltype([] {})>
+    template <template <class> class M, class UniqueTag = LL_UNIQUE_TYPE>
     [[maybe_unused]] static consteval void map() {
         using now         = decltype(value<0, UniqueTag>());
         constexpr auto id = uniqueId<Group, UniqueTag>();
         using next        = typename now::template map<M>;
         Setter<id, next> setter{};
     }
-#endif
 };
 } // namespace ll::meta

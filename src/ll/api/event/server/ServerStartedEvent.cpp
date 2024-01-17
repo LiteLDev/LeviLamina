@@ -37,4 +37,4 @@ class ServerStartedEventEmitter : public Emitter<emitterFactory, ServerStartedEv
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<ServerStartedEventEmitter>();
 }
-} // namespace ll::event::inline world
+} // namespace ll::event::inline server

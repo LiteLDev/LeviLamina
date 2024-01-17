@@ -34,4 +34,4 @@ class ServerStoppingEventEmitter : public Emitter<emitterFactory, ServerStopping
 static std::unique_ptr<EmitterBase> emitterFactory(ListenerBase&) {
     return std::make_unique<ServerStoppingEventEmitter>();
 }
-} // namespace ll::event::inline world
+} // namespace ll::event::inline server

@@ -29,7 +29,7 @@ public:
 namespace std {
 template <>
 struct hash<InventorySource> {
-    size_t operator()( InventorySource const& key) const {
+    size_t operator()(InventorySource const& key) const {
         return static_cast<size_t>(key.mContainerId)
              ^ (static_cast<size_t>(static_cast<unsigned int>(key.mType)) << 16);
     }

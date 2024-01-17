@@ -13,6 +13,8 @@
 class HardcodedSpawnAreaRegistry;
 class StructureFeatureRegistry;
 class AirBlockCache;
+class BiomeArea;
+class HashedString;
 
 class WorldGenerator : public ChunkSource, public IPreliminarySurfaceProvider {
 public:
@@ -51,7 +53,8 @@ public:
 
     // vIndex: 35, symbol:
     // ?findNearestStructureFeature@WorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z
-    virtual bool findNearestStructureFeature(::StructureFeatureType, class BlockPos const&, class BlockPos&, bool);
+    virtual bool
+    findNearestStructureFeature(::StructureFeatureType, class BlockPos const&, class BlockPos&, bool, std::optional<HashedString>);
 
     // vIndex: 36, symbol: ?garbageCollectBlueprints@WorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z
     virtual void garbageCollectBlueprints(class buffer_span<class ChunkPos>);

@@ -67,7 +67,8 @@ public:
 
     // vIndex: 35, symbol:
     // ?findNearestStructureFeature@FlatWorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z
-    virtual bool findNearestStructureFeature(::StructureFeatureType, class BlockPos const&, class BlockPos&, bool);
+    virtual bool
+    findNearestStructureFeature(::StructureFeatureType, class BlockPos const&, class BlockPos&, bool, std::optional<HashedString>);
 
     // vIndex: 36, symbol: ?garbageCollectBlueprints@FlatWorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z
     virtual void garbageCollectBlueprints(class buffer_span<class ChunkPos>);
