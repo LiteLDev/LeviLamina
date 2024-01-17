@@ -15,12 +15,12 @@ LeviLamina是一个非官方的插件加载器，旨在为Minecraft Bedrock Serv
 
 ## 目录
 
-- [安全性](#安全)
-- [背景](#背景)
+- [安全](#安全)
 - [安装](#安装)
   - [更新](#更新)
 - [使用方法](#使用方法)
 - [星星历史](#星星历史)
+- [感谢](#感谢)
 - [贡献](#贡献)
   - [贡献者](#贡献者)
 - [许可证](#许可证)
@@ -76,11 +76,15 @@ lip install --upgrade github.com/LiteLDev/LeviLamina
 
 ![星星历史图](https://api.star-history.com/svg?repos=LiteLDev/LeviLamina&type=Date)
 
+## 感谢
+
+我们衷心感谢[所有捐赠者](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ)！
+
 ## 贡献
 
 欢迎参与！[打开一个问题](https://github.com/LiteLDev/LeviLamina/issues/new/choose)或提交Pull Requests。
 
-LeviLamina遵循[贡献者契约](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)行为准则。
+LeviLamina遵循[Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)行为准则。
 
 ### 贡献者
 
@@ -88,8 +92,6 @@ LeviLamina遵循[贡献者契约](https://www.contributor-covenant.org/version/2
 
 ![贡献者](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
 
-我们也十分感谢我们的[捐赠者们](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ).
-
 ## 许可证
 
-[LGPL-3.0-only](https://github.com/LiteLDev/LeviLamina/blob/HEAD/LICENSE.md) © 2021-2023 LiteLDev
+LGPL-3.0-only © LiteLDev

@@ -16,11 +16,11 @@ For more information, please refer to [the documentation](https://levilamina.lit
 ## Table of Contents
 
 - [Security](#security)
-- [Background](#background)
 - [Install](#install)
   - [Updating](#updating)
 - [Usage](#usage)
 - [Star History](#star-history)
+- [Thanks](#thanks)
 - [Contributing](#contributing)
   - [Contributors](#contributors)
 - [License](#license)
@@ -80,6 +80,10 @@ For more information, please refer to [the documentation](https://levilamina.lit
 
 ![Star History Chart](https://api.star-history.com/svg?repos=LiteLDev/LeviLamina&type=Date)
 
+## Thanks
+
+We extend sincere thanks to [all donors](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ)!
+
 ## Contributing
 
 Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LeviLamina/issues/new/choose) or submit PRs.
@@ -92,8 +96,6 @@ This project exists thanks to all the people who contribute.
 
 ![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
 
-We are also very appreciate to our [Donors](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ).
-
 ## License
 
-[LGPL-3.0-only](LICENSE.md) © 2021-2023 LiteLDev
+[LGPL-3.0-only](LICENSE.md) © LiteLDev
