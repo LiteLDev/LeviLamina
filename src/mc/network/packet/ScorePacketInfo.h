@@ -16,7 +16,11 @@ public:
     ActorUniqueID            mEntityId;       // this+0x40
     std::string              mFakePlayerName; // this+0x48
 
-    ScorePacketInfo() = delete;
+public:
+    // prevent constructor by default
+    ScorePacketInfo& operator=(ScorePacketInfo const&);
+    ScorePacketInfo(ScorePacketInfo const&);
+    ScorePacketInfo();
 
 public:
     // NOLINTBEGIN
