@@ -12,7 +12,7 @@ public:
     template <class T = IFeature>
     [[nodiscard]] optional_ref<T> tryUnwrap() const {
         if (_hasValue()) {
-            return *(T*)(&_getStackRef());
+            return reinterpret_cast<T*>(&_getStackRef());
         }
         return nullptr;
     }
