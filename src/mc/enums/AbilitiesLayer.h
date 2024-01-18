@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class AbilitiesLayer {
+enum class AbilitiesLayer : ushort {
     CustomCache = 0x0,
     Base        = 0x1,
     Spectator   = 0x2,

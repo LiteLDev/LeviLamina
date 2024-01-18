@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class SubChunkInitMode {
+enum class SubChunkInitMode : int {
     All                      = 0x0,
     AllButLast               = 0x1,
     None                     = 0x2,

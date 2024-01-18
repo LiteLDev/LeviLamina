@@ -4,7 +4,7 @@
 
 namespace Bedrock::Threading {
 
-enum class AsyncStatus {
+enum class AsyncStatus : int {
     Started   = 0,
     Completed = 1,
     Canceled  = 2,

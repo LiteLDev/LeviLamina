@@ -8,7 +8,7 @@
 
 class RepeaterCapacitor : public ::SidePoweredComponent {
 public:
-    enum class States {
+    enum class States : int {
         Off       = 0x0,
         On        = 0x1,
         OffLocked = 0x2,

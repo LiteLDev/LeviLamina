@@ -11,7 +11,7 @@
 class AnimatePacket : public ::Packet {
 public:
     // AnimatePacket inner types define
-    enum class Action {
+    enum class Action : int {
         NoAction         = 0x0,
         Swing            = 0x1,
         WakeUp           = 0x3,

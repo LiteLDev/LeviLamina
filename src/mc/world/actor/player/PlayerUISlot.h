@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class PlayerUISlot {
+enum class PlayerUISlot : int {
     CursorSelected         = 0x0,
     AnvilInput             = 0x1,
     AnvilMaterial          = 0x2,

@@ -1,13 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
+#include "mc/nbt/CompoundTag.h"
 
 // auto generated inclusion list
 #include "mc/world/AutomaticID.h"
 
 class ChangeDimensionRequest {
 public:
-    enum class State {
+    enum class State : int {
         PrepareRegion     = 0x0,
         WaitingForChunks  = 0x1,
         WaitingForRespawn = 0x2,

@@ -9,7 +9,7 @@
 class ComparatorCapacitor : public ::SidePoweredComponent {
 public:
     // ComparatorCapacitor inner types define
-    enum class Mode {
+    enum class Mode : int {
         CompareMode  = 0x0,
         SubtractMode = 0x1,
     };

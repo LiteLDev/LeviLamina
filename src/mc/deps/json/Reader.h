@@ -25,7 +25,7 @@ public:
     using Location = char const*;
 
     // Reader inner types define
-    enum class TokenType {
+    enum class TokenType : int {
         EndOfStream     = 0x0,
         ObjectBegin     = 0x1,
         ObjectEnd       = 0x2,

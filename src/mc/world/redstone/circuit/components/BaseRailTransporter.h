@@ -8,7 +8,7 @@
 
 class BaseRailTransporter : public ::BaseCircuitComponent {
 public:
-    enum class RailType {
+    enum class RailType : int {
         Activator = 0x0,
         Power     = 0x1,
     } mRailType;

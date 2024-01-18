@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class VanillaBiomeTypes {
+enum class VanillaBiomeTypes : int {
     Beach          = 0x0,
     Desert         = 0x1,
     ExtremeHills   = 0x2,

@@ -4,7 +4,7 @@
 
 namespace gametest {
 
-enum class GameTestErrorType {
+enum class GameTestErrorType : int {
     Unknown                      = 0x0,
     Waiting                      = 0x1,
     ExhaustedAttempts            = 0x2,

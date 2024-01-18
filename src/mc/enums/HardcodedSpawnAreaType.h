@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class HardcodedSpawnAreaType {
+enum class HardcodedSpawnAreaType : uchar {
 
     None                  = 0x0,
     NetherFortress        = 0x1,

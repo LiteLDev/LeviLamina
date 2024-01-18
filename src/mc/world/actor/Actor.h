@@ -44,7 +44,7 @@ class ActorDamageSource;
 class Actor : public ::ActorStatusProvider {
 public:
     // Actor inner types define
-    enum class InitializationMethod {
+    enum class InitializationMethod : uchar {
         Invalid     = 0x0,
         Loaded      = 0x1,
         Spawned     = 0x2,

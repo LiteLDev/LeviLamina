@@ -9,7 +9,7 @@
 class IdentityDefinition {
 public:
     // IdentityDefinition inner types define
-    enum class Type {
+    enum class Type : uchar {
         Invalid    = 0x0,
         Player     = 0x1,
         Entity     = 0x2,

@@ -4,7 +4,7 @@
 
 namespace Connection {
 
-enum class DisconnectFailReason {
+enum class DisconnectFailReason : int {
     Unknown                                = 0x0,
     CantConnectNoInternet                  = 0x1,
     NoPermissions                          = 0x2,

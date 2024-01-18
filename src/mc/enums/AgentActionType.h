@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class AgentActionType {
+enum class AgentActionType : int {
     Attack            = 0x1,
     Collect           = 0x2,
     Destroy           = 0x3,

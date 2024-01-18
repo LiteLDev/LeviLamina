@@ -7,7 +7,7 @@
 struct Bounds : public BoundingBox {
 public:
     // Bounds inner types define
-    enum class Option {
+    enum class Option : int {
         Default = 0x0,
         Flatten = 0x1,
     };

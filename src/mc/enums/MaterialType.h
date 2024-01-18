@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class MaterialType {
+enum class MaterialType : uint {
     Air                      = 0x0,
     Dirt                     = 0x1,
     Wood                     = 0x2,
