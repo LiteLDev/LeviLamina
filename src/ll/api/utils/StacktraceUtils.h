@@ -2,10 +2,12 @@
 
 #if _HAS_CXX23
 #include <atomic>
+#include <optional>
 #include <stacktrace>
 #include <string>
 
 #include "ll/api/base/Macro.h"
+#include "ll/api/base/StdInt.h"
 
 struct _CONTEXT; // NOLINT(bugprone-reserved-identifier)
 

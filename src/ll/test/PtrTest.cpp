@@ -8,7 +8,7 @@
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/material/Material.h"
 
-#include "ll/api/base/ErrorInfo.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StacktraceUtils.h"
 #include "ll/core/LeviLamina.h"
 
@@ -96,13 +96,13 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 ) {
     std::cout << "type_hash  " << entt::type_hash<FlagComponent<ExitFromPassengerFlag>>::value() << std::endl;
 
-    ll::error_info::printException(ll::logger, ll::error_info::getWinLastError());
+    ll::error_utils::printException(ll::logger, ll::error_utils::getWinLastError());
 
     try {
         char* pp = (char*)(0x123);
         *pp      = 'a';
     } catch (...) {
-        ll::error_info::printCurrentException(ll::logger);
+        ll::error_utils::printCurrentException(ll::logger);
     }
 
     try {
@@ -110,7 +110,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         int b = 2 / a;
         std::cout << "b = " << b << std::endl;
     } catch (...) {
-        ll::error_info::printCurrentException(ll::logger);
+        ll::error_utils::printCurrentException(ll::logger);
     }
     try {
         try {
@@ -125,7 +125,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
             std::throw_with_nested(std::system_error(std::error_code{1, std::generic_category()}, "run() failed"));
         }
     } catch (...) {
-        ll::error_info::printCurrentException(ll::logger);
+        ll::error_utils::printCurrentException(ll::logger);
     }
     // throw std::runtime_error("Test New Crash Logger");
 

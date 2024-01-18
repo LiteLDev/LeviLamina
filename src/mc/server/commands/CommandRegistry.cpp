@@ -1,5 +1,5 @@
 #include "mc/server/commands/CommandRegistry.h"
-#include "ll/api/base/ErrorInfo.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/server/commands/CommandParameterData.h"
@@ -113,7 +113,7 @@ bool CommandRegistry::unregisterCommand(std::string const& name) {
         mAliases.erase(command);
         return true;
     } catch (...) {
-        ll::error_info::printCurrentException(ll::logger);
+        ll::error_utils::printCurrentException(ll::logger);
     }
     return false;
 }

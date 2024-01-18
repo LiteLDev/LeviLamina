@@ -1,5 +1,5 @@
-#include "ll/api/base/Base64.h"
-#include "ll/api/base/Hash.h"
+#include "ll/api/utils/Base64Utils.h"
+#include "ll/api/utils/HashUtils.h"
 #include "mc/nbt/CompoundTag.h"
 
 namespace ll::nbt::detail {
@@ -10,7 +10,7 @@ bool isTrivialNbtStringChar(char c) { return isalnum(c) || c == '-' || c == '+' 
 namespace {
 
 using namespace ll::hash_literals;
-using namespace ll::hash;
+using namespace ll::hash_utils;
 using namespace ll::nbt::detail;
 
 bool scanComment(std::string_view& s) noexcept {
@@ -257,7 +257,7 @@ std::optional<std::string> parseString(std::string_view& s) {
         case '\"': {
             if (starts == '\"') {
                 if (s.starts_with(" /*BASE64*/")) {
-                    return ll::base64::decode(res);
+                    return ll::base64_utils::decode(res);
                 }
                 return res;
             }

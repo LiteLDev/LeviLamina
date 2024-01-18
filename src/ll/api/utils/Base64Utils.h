@@ -4,7 +4,7 @@
 
 #include "ll/api/base/StdInt.h"
 
-namespace ll::base64 {
+namespace ll::inline utils::base64_utils {
 namespace detail {
 constexpr uchar encodeLookup(uchar c) {
     return "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -87,4 +87,4 @@ constexpr std::string decode(std::string_view str) {
     }
     return out;
 }
-} // namespace ll::base64
+} // namespace ll::inline utils::base64_utils

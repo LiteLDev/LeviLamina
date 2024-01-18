@@ -34,8 +34,8 @@ namespace std {
 template <>
 struct hash<ll::service::ServiceInfo> {
     size_t operator()(ll::service::ServiceInfo const& info) const noexcept {
-        return ll::hash::hashCombine(
-            ll::hash::hashCombine(std::hash<std::string_view>{}(info.name), std::hash<size_t>{}(info.version)),
+        return ll::hash_utils::hashCombine(
+            ll::hash_utils::hashCombine(std::hash<std::string_view>{}(info.name), std::hash<size_t>{}(info.version)),
             std::hash<std::string_view>{}(info.pluginName)
         );
     }

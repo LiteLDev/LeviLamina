@@ -6,16 +6,16 @@
 namespace Bedrock {
 
 template <typename E = std::error_code>
-struct ErrorInfo {
+struct ErrorUtils {
 public:
-    ErrorInfo() = default;
+    ErrorUtils() = default;
 
     [[nodiscard]] constexpr E&       code() { return mError; }
     [[nodiscard]] constexpr E const& code() const { return mError; }
 
     E                      mError;
     CallStack              mCallStack;
-    std::vector<ErrorInfo> mStackErrors;
+    std::vector<ErrorUtils> mStackErrors;
 };
 
 }; // namespace Bedrock

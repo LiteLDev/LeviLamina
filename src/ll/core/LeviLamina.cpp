@@ -4,11 +4,11 @@
 #include <string>
 
 #include "ll/api/Logger.h"
-#include "ll/api/ServerInfo.h"
-#include "ll/api/base/ErrorInfo.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/PlayerInfo.h"
+#include "ll/api/service/ServerInfo.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
 #include "ll/core/Version.h"
@@ -25,7 +25,7 @@
 
 namespace ll {
 
-using namespace hash;
+using namespace hash_utils;
 using namespace hash_literals;
 using namespace i18n_literals;
 
@@ -184,7 +184,7 @@ void startCrashLogger() {
 }
 
 void leviLaminaMain() {
-    error_info::setSehTranslator();
+    error_utils::setSehTranslator();
 
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
@@ -264,7 +264,7 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main", int, int arg
     try {
         leviLaminaMain();
     } catch (...) {
-        ll::error_info::printCurrentException(logger);
+        ll::error_utils::printCurrentException(logger);
     }
     auto res = origin(argc, argv);
     setServerStatus(ServerStatus::Default);

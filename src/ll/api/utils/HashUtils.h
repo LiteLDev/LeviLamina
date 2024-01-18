@@ -4,7 +4,7 @@
 
 #include "ll/api/base/StdInt.h"
 
-namespace ll::hash {
+namespace ll::inline utils::hash_utils {
 
 template <class T>
 constexpr void hashCombine(T const& v, size_t& seed) {
@@ -44,8 +44,8 @@ template <class T>
 [[nodiscard]] constexpr uint64 hashType(T const& v) {
     return do_hash2({reinterpret_cast<char const*>(std::addressof(v)), sizeof(T)});
 }
-} // namespace ll::hash
+} // namespace ll::inline utils::hash_utils
 
 namespace ll::hash_literals {
-[[nodiscard]] constexpr uint64 operator""_h(char const* x, size_t len) { return ll::hash::do_hash({x, len}); }
+[[nodiscard]] constexpr uint64 operator""_h(char const* x, size_t len) { return ll::hash_utils::do_hash({x, len}); }
 } // namespace ll::hash_literals

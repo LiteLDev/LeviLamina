@@ -1,8 +1,8 @@
 
 #include "ll/api/Logger.h"
-#include "ll/api/base/Random.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/schedule/Scheduler.h"
+#include "ll/api/utils/RandomUtils.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
@@ -21,7 +21,7 @@ GameTickScheduler        s3;
 
 #include "mc/network/packet/TextPacket.h"
 
-#include "ll/api/base/DependencyGraph.h"
+#include "ll/api/data/DependencyGraph.h"
 
 #pragma warning(push)
 #pragma warning(disable : 4723)
@@ -43,7 +43,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
              schedulelogger.info(
                  "hi, 100_tick life {} ramdom {}",
                  ll::chrono::GameTickClock::now().time_since_epoch(),
-                 ll::random::rand<uint>()
+                 ll::random_utils::rand<uint>()
              );
          });
 
@@ -53,7 +53,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
                  schedulelogger.warn(
                      "hi, 5s       gt   {} ramdom {}",
                      ll::chrono::GameTickClock::now().time_since_epoch(),
-                     ll::random::rand<double>()
+                     ll::random_utils::rand<double>()
                  );
              });
          });
@@ -63,12 +63,12 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
              schedulelogger.info(
                  "hi, 0.1min   game {} random {}",
                  ll::chrono::GameTickClock::now().time_since_epoch(),
-                 ll::random::rand<int64>()
+                 ll::random_utils::rand<int64>()
              );
-             auto random  = ll::random::rand<int64>();
+             auto random  = ll::random_utils::rand<int64>();
              random      /= 0;
              schedulelogger.info("{}", random);
-             throw std::system_error(std::error_code(0, ll::error_info::hresult_category()));
+             throw std::system_error(std::error_code(0, ll::error_utils::hresult_category()));
          });
 
          // s2.add<RepeatTask>(0.3min, [&] {

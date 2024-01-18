@@ -3,7 +3,7 @@
 #include <spanstream>
 
 #include "ll/api/Logger.h"
-#include "ll/api/base/ErrorInfo.h"
+#include "ll/api/utils/ErrorUtils.h"
 
 namespace ll::schedule {
 inline namespace task {
@@ -42,7 +42,7 @@ void printScheduleError() noexcept {
     try {
         logger.error("Error in schedule thread [{}]:", std::this_thread::get_id());
     } catch (...) {}
-    error_info::printCurrentException(logger);
+    error_utils::printCurrentException(logger);
 }
 } // namespace detail
 

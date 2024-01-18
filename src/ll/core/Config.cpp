@@ -1,6 +1,6 @@
 #include "ll/core/Config.h"
 #include "ll/api/Config.h"
-#include "ll/api/base/ErrorInfo.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
 namespace ll {
@@ -23,7 +23,7 @@ bool loadLeviConfig() {
         return true;
     } catch (...) {
         logger.error("ll.config.load.fail"_tr);
-        ll::error_info::printCurrentException(logger);
+        ll::error_utils::printCurrentException(logger);
         return false;
     }
 }
@@ -34,7 +34,7 @@ bool saveLeviConfig() {
         res = ll::config::saveConfig(globalConfig, leviConfigPath);
     } catch (...) {
         logger.error("ll.config.save.fail"_tr);
-        ll::error_info::printCurrentException(logger);
+        ll::error_utils::printCurrentException(logger);
         return false;
     }
     if (!res) {

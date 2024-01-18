@@ -1,9 +1,9 @@
-#include "ll/api/base/ErrorInfo.h"
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/filesystem/FileActionEvent.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/schedule/Scheduler.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
@@ -36,11 +36,11 @@
 
 #include "ll/api/base/FixedString.h"
 
-#include "ll/api/base/Hash.h"
+#include "ll/api/utils/HashUtils.h"
 
 struct myTypeList2 : ll::meta::DynamicTypeList<myTypeList2> {};
 
-using namespace ll::hash;
+using namespace ll::hash_utils;
 using namespace ll::hash_literals;
 
 class TestEventB : public ll::event::Event {

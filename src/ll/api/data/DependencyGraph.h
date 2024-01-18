@@ -1,11 +1,10 @@
 #pragma once
 
-#include <queue>
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
 
-namespace ll {
+namespace ll::inline data {
 template <class T>
 class DependencyGraph {
     struct Data {
@@ -121,4 +120,4 @@ public:
         return {sorted, unsorted};
     }
 };
-} // namespace ll
+} // namespace ll::inline data

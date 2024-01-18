@@ -6,7 +6,7 @@
 #include "pl/SymbolProvider.h"
 
 #include "ll/api/Logger.h"
-#include "ll/api/ServerInfo.h"
+#include "ll/api/service/ServerInfo.h"
 #include "ll/api/thread/GlobalThreadPauser.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"

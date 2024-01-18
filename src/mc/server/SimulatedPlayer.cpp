@@ -1,5 +1,5 @@
 #include "mc/server/SimulatedPlayer.h"
-#include "ll/api/base/Random.h"
+#include "ll/api/utils/RandomUtils.h"
 #include "ll/api/service/Bedrock.h"
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/deps/core/string/HashedString.h"
@@ -19,7 +19,7 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     }
     OwnerPtrT<EntityRefTraits> ownerPtr = ll::service::getServerNetworkHandler()->createSimulatedPlayer(
         name,
-        std::to_string(random::rand<int64>(INT64_MIN, -1))
+        std::to_string(random_utils::rand<int64>(INT64_MIN, -1))
     );
     auto player = ownerPtr.tryUnwrap<SimulatedPlayer>();
     if (!player) {

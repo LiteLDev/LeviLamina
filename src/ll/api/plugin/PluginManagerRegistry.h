@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ll/api/base/DependencyGraph.h"
 #include "ll/api/base/Macro.h"
+#include "ll/api/data/DependencyGraph.h"
 #include "ll/api/plugin/PluginManager.h"
 
 namespace ll::plugin {

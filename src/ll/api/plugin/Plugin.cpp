@@ -1,9 +1,9 @@
 #include "ll/api/plugin/Plugin.h"
 
-#include "ll/api/ServerInfo.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/service/Bedrock.h"
+#include "ll/api/service/ServerInfo.h"
 
 namespace ll::plugin {
 

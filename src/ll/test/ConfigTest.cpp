@@ -1,9 +1,9 @@
 #include "nlohmann/json.hpp"
 
 #include "ll/api/Config.h"
-#include "ll/api/base/ErrorInfo.h"
-#include "ll/api/base/Version.h"
+#include "ll/api/data/Version.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
 #include "mc/server/ServerInstance.h"
@@ -148,7 +148,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
             nlohmann::ordered_json::parse(R"({"structure":{"hello":""}})", nullptr, false, true)
         );
     } catch (...) {
-        ll::error_info::printCurrentException(ll::logger);
+        ll::error_utils::printCurrentException(ll::logger);
     }
 
     ll::logger.debug("789\xDB\xFE");

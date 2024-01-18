@@ -4,7 +4,7 @@
 #include <filesystem>
 
 #include "ll/api/Logger.h"
-#include "ll/api/base/UnorderedStringMap.h"
+#include "ll/api/base/Containers.h"
 #include "ll/api/plugin/Manifest.h"
 
 #include "mc/common/wrapper/optional_ref.h"

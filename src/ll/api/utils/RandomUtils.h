@@ -8,7 +8,7 @@
 
 #include "ll/api/base/StdInt.h"
 
-namespace ll::random {
+namespace ll::inline utils::random_utils {
 
 template <std::integral T>
 inline T rand(T upBound = 0) {
@@ -67,4 +67,4 @@ inline T leftCloseIntervalRand(T min = 0, T max = 1) {
     return rand<T>(min, max);
 }
 
-} // namespace ll::random
+} // namespace ll::inline utils::random_utils

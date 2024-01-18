@@ -13,10 +13,10 @@
 #include <thread>
 #include <vector>
 
-#include "ll/api/base/ErrorInfo.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/event/EventBus.h"
 #include "ll/api/io/FileUtils.h"
+#include "ll/api/utils/ErrorUtils.h"
 
 #include "windows.h"
 
@@ -58,7 +58,7 @@ private:
 
         closeEvent = CreateEventW(nullptr, TRUE, FALSE, nullptr);
         if (!closeEvent) {
-            throw ll::error_info::getWinLastError();
+            throw ll::error_utils::getWinLastError();
         }
 
 
@@ -121,7 +121,7 @@ private:
                     switch (WaitForMultipleObjects(2, handles.data(), FALSE, INFINITE)) {
                     case WAIT_OBJECT_0: {
                         if (!GetOverlappedResult(directoryHandle, &overlapped_buffer, &bytes_returned, TRUE)) {
-                            throw ll::error_info::getWinLastError();
+                            throw ll::error_utils::getWinLastError();
                         }
                         async_pending = false;
 
@@ -224,7 +224,7 @@ private:
         ); // file with attributes to copy
 
         if (directory == INVALID_HANDLE_VALUE) {
-            throw ll::error_info::getWinLastError();
+            throw ll::error_utils::getWinLastError();
         }
         return directory;
     }

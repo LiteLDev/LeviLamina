@@ -1,6 +1,6 @@
 #include "ll/api/thread/GlobalThreadPauser.h"
 
-#include "ll/api/base/ErrorInfo.h"
+#include "ll/api/utils/ErrorUtils.h"
 
 #include "windows.h"
 
@@ -10,7 +10,7 @@ namespace ll::thread {
 GlobalThreadPauser::GlobalThreadPauser() {
     HANDLE h = CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, 0);
     if (h == INVALID_HANDLE_VALUE) {
-        throw error_info::getWinLastError();
+        throw error_utils::getWinLastError();
     }
     static auto processId = GetCurrentProcessId();
     auto        threadId  = GetCurrentThreadId();
