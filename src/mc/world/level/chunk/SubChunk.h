@@ -24,12 +24,6 @@ public:
         RequestFinished            = 7,
     };
 
-    enum class BlockLayer : schar {
-        Standard = 0,
-        Extra    = 1,
-        Count    = 2,
-    };
-
 public:
     // prevent constructor by default
     SubChunk& operator=(SubChunk const&);
