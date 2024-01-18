@@ -4,6 +4,9 @@
 
 该项目使用 [lip](https://github.com/lippkg/lip)。如果您尚未在本地安装，请前往查看。
 
+!!! tip
+    不习惯使用命令行工具？你可以使用[LipUI](https://github.com/lippkg/LipUI)。
+
 ## 安装 LeviLamina
 
 首先，创建一个新目录用于您的 Minecraft 服务器，并进入该目录：

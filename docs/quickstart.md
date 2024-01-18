@@ -4,6 +4,9 @@
 
 This project uses [lip](https://github.com/lippkg/lip). Go check them out if you don't have them locally installed.
 
+!!! tip
+    Not accustomed to using command-line tools? You can use [LipUI](https://github.com/lippkg/LipUI).
+
 ## Installing LeviLamina
 
 First, create a new directory for your Minecraft server and enter it:

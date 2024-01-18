@@ -19,11 +19,15 @@
 
 你可以通过不同的方式安装 LeviLamina，取决于你的需求：
 
-- 你可以[通过 lip 安装](#通过-lip-安装)，以便于安装和升级任务。这是推荐的方法。
-
 - 你可以[通过 lipUI 安装](#通过-lipui-安装)，这是 lip 的图形用户界面。这对于不熟悉命令行的用户很有用。
 
+- 你可以[通过 lip 安装](#通过-lip-安装)，以便于安装和升级任务。这是推荐的方法。
+
 - 你可以下载模块并[手动安装](#手动安装)并完全手动管理升级。这在一些情况下很有用，比如在没有网络访问的隔离系统上安装 LeviLamina。
+
+### 通过 lipUI 安装
+
+你可以前往[LipUI](https://github.com/lippkg/LipUI)了解更多信息。
 
 ### 通过 lip 安装
 
@@ -55,12 +59,6 @@ lip install --upgrade github.com/LiteLDev/LeviLamina
 
 !!! danger
     升级 LeviLamina 可能会导致数据丢失。请确保在升级之前备份你的数据。
-
-### 通过 lipUI 安装
-
-在安装之前，你应该获取 lipUI 的副本。请参阅[这里](https://docs.lippkg.com/lipui_quickstart.html)的指南。
-
-然后你可以启动 lipUI，选择一个合适的工作空间，并从 Tooth Index 安装 LeviLamina。
 
 ### 手动安装
 
