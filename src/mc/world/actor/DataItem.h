@@ -70,9 +70,9 @@ public:
 
     [[nodiscard]] constexpr T& value() { return mValue; };
 
-    [[nodiscard]] constexpr operator T const&() const { return mValue; };
+    [[nodiscard]] constexpr explicit operator T const&() const { return mValue; };
 
-    [[nodiscard]] constexpr operator T&() { return mValue; };
+    [[nodiscard]] constexpr explicit operator T&() { return mValue; };
 
     template <class T2>
     constexpr void setData(T2&& value) {
@@ -85,7 +85,7 @@ public:
         return *this;
     }
     template <class... Args>
-    constexpr DataItem2(ushort key, Args&&... args)
+    constexpr explicit DataItem2(ushort key, Args&&... args)
     : DataItem((::DataItemType)DataItem::TypeList::index<T>, (::ActorDataIDs)key),
       mValue(std::forward<Args>(args)...) {}
 };

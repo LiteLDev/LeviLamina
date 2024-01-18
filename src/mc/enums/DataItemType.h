@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class DataItemType {
+enum class DataItemType : byte {
     Byte        = 0x0,
     Short       = 0x1,
     Int         = 0x2,
