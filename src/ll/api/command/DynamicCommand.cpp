@@ -1,8 +1,8 @@
 ﻿#include "ll/api/command/DynamicCommand.h"
 
 #include "ll/api/Logger.h"
-#include "ll/api/base/ErrorInfo.h"
 #include "ll/api/memory/Closure.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 
@@ -97,7 +97,7 @@ auto const ParameterSizeMap = std::unordered_map<ParameterType, size_t>{
 
 inline void OutputError(const std::string& command, const std::string& func = __builtin_FUNCTION()) {
     auto lock = ll::Logger::lock();
-    ll::error_info::printCurrentException(logger);
+    ll::error_utils::printCurrentException(logger);
     logger.error("In Function ({})", func);
     logger.error("In Command <{}>", command);
 }

@@ -10,7 +10,7 @@
 #include "ll/api/io/FileUtils.h"
 #include "ll/core/LeviLamina.h"
 
-using namespace ll;
+using namespace ll::data;
 
 class KeyValueDB::KeyValueDBImpl {
 public:

@@ -1,4 +1,4 @@
-#include "ll/api/ServerInfo.h"
+#include "ll/api/service/ServerInfo.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/core/Version.h"
 #include "mc/common/BuildInfo.h"

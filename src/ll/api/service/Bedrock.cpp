@@ -16,9 +16,9 @@
 #include "mc/world/Minecraft.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
-#include "ll/api/base/Hash.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/reflection/Reflection.h"
+#include "ll/api/utils/HashUtils.h"
 #include "ll/core/LeviLamina.h"
 
 namespace ll::service::inline bedrock {

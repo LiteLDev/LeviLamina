@@ -1,4 +1,4 @@
-#include "ll/api/base/ErrorInfo.h"
+#include "ll/api/utils/ErrorUtils.h"
 
 #include <filesystem>
 
@@ -22,7 +22,7 @@
 #include "ll/api/utils/StacktraceUtils.h"
 #endif
 
-namespace ll::error_info {
+namespace ll::inline utils::error_utils {
 
 UntypedException::UntypedException(const EXCEPTION_RECORD& er)
 : exception_object(reinterpret_cast<void*>(er.ExceptionInformation[1])),
@@ -136,7 +136,7 @@ seh_exception::seh_exception(uint ntStatus, _EXCEPTION_POINTERS* expPtr)
 : std::system_error(std::error_code{(int)ntStatus, ntstatus_category()}),
   expPtr(expPtr) {}
 
-void setSehTranslator() { _set_se_translator(error_info::translateSEHtoCE); }
+void setSehTranslator() { _set_se_translator(error_utils::translateSEHtoCE); }
 
 std::system_error getWinLastError() noexcept { return std::error_code{(int)GetLastError(), u8system_category()}; }
 
@@ -336,4 +336,4 @@ void printCurrentException(ll::Logger& logger, std::exception_ptr const& e) noex
     } catch (...) {}
     logger.error("unknown error");
 }
-} // namespace ll::error_info
+} // namespace ll::inline utils::error_utils

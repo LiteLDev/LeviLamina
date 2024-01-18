@@ -7,11 +7,12 @@
 #include <utility>
 
 #include "ll/api/base/Concepts.h"
-#include "ll/api/base/Hash.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/Meta.h"
+#include "ll/api/utils/HashUtils.h"
 
 namespace ll::math {
+
 template <typename T, typename = void>
 struct has_toString : std::false_type {};
 
@@ -93,11 +94,14 @@ struct LL_EBO VectorBase : concepts::VectorBaseTag {
         size_t res = 0;
         forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
             if constexpr (std::is_integral_v<axis_type>) {
-                hash::hashCombine(hash::hashType(static_cast<T const*>(this)->template get<axis_type>(iter)), res);
+                hash_utils::hashCombine(
+                    hash_utils::hashType(static_cast<T const*>(this)->template get<axis_type>(iter)),
+                    res
+                );
             } else if constexpr (has_hash<axis_type>::value) {
-                hash::hashCombine(static_cast<T const*>(this)->template get<axis_type>(iter).hash(), res);
+                hash_utils::hashCombine(static_cast<T const*>(this)->template get<axis_type>(iter).hash(), res);
             } else {
-                hash::hashCombine(
+                hash_utils::hashCombine(
                     std::hash<axis_type>()(static_cast<T const*>(this)->template get<axis_type>(iter)),
                     res
                 );

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ll/api/base/Hash.h"
 #include "ll/api/reflection/Reflection.h"
+#include "ll/api/utils/HashUtils.h"
 
 namespace ll::event {
 class EventId {
@@ -11,7 +11,7 @@ public:
 
     [[nodiscard]] constexpr explicit EventId(std::string_view name) noexcept
     : name(name),
-      hash(ll::hash::do_hash(name)) {}
+      hash(ll::hash_utils::do_hash(name)) {}
 
     [[nodiscard]] constexpr bool operator==(EventId other) const noexcept {
         return hash == other.hash && name == other.name;

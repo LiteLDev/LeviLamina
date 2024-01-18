@@ -3,8 +3,8 @@
 #include <mutex>
 
 #include "fmt/format.h"
-#include "ll/api/base/ErrorInfo.h"
 #include "ll/api/io/FileUtils.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
 
 #include "windows.h"
@@ -171,7 +171,7 @@ SymbolLoader::SymbolLoader() : handle(GetCurrentProcess()) {
         return;
     }
     if (!SymInitializeW(handle, nullptr, true)) {
-        throw error_info::getWinLastError();
+        throw error_utils::getWinLastError();
     }
     count++;
     DWORD options  = SymGetOptions();
@@ -183,7 +183,7 @@ SymbolLoader::SymbolLoader(std::string_view extra) : handle(GetCurrentProcess())
         return;
     }
     if (!SymInitializeW(handle, string_utils::str2wstr(extra).c_str(), true)) {
-        throw error_info::getWinLastError();
+        throw error_utils::getWinLastError();
     }
     count++;
     DWORD options  = SymGetOptions();

@@ -2,9 +2,9 @@
 
 #include "ll/api/Logger.h"
 
-#include "ll/api/base/ErrorInfo.h"
-#include "ll/api/base/Hash.h"
 #include "ll/api/io/FileUtils.h"
+#include "ll/api/utils/ErrorUtils.h"
+#include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/Config.h"
 
@@ -68,7 +68,7 @@ void Logger::OutputStream::print(std::string_view s) const noexcept {
         try {
             fmt::print(
                 "\x1b[31mERROR IN LOGGER API:\n{}\x1b[91m\n{}\x1b[0m\n",
-                error_info::makeExceptionString(std::current_exception()),
+                error_utils::makeExceptionString(std::current_exception()),
                 tou8str(s)
             );
         } catch (...) {

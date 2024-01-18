@@ -1,4 +1,4 @@
 #include "mc/deps/core/mce/UUID.h"
-#include "ll/api/base/Random.h"
+#include "ll/api/utils/RandomUtils.h"
 
-mce::UUID mce::UUID::random() { return {ll::random::rand<uint64>(), ll::random::rand<uint64>()}; }
+mce::UUID mce::UUID::random() { return {ll::random_utils::rand<uint64>(), ll::random_utils::rand<uint64>()}; }

@@ -1,7 +1,7 @@
 #include "ll/api/memory/Hook.h"
 #include "ll/api/Logger.h"
-#include "ll/api/ServerInfo.h"
 #include "ll/api/memory/Memory.h"
+#include "ll/api/service/ServerInfo.h"
 #include "ll/api/utils/StacktraceUtils.h"
 #include "ll/api/utils/WinUtils.h"
 #include "pl/Hook.h"

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ll/api/base/Hash.h"
+#include "ll/api/utils/HashUtils.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace mce {
@@ -18,7 +18,7 @@ public:
     LLNDAPI static mce::UUID random();
 
     [[nodiscard]] inline mce::UUID fromStringHash(std::string_view sv) {
-        return {ll::hash::do_hash(sv), ll::hash::do_hash2(sv)};
+        return {ll::hash_utils::do_hash(sv), ll::hash_utils::do_hash2(sv)};
     }
 
     [[nodiscard]] inline explicit operator bool() const { return !isEmpty(); }

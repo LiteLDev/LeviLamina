@@ -3,11 +3,11 @@
 #include <expected>
 #include <ranges>
 
-#include "ll/api/base/ErrorInfo.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/reflection/Deserialization.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/plugin/NativePluginManager.h"
 
@@ -53,7 +53,7 @@ static std::expected<Manifest, DirState> loadManifest(std::filesystem::path cons
     try {
         reflection::deserialize<nlohmann::json, Manifest>(manifest, json);
     } catch (...) {
-        error_info::printCurrentException(logger);
+        error_utils::printCurrentException(logger);
         return std::unexpected{DirState::Error};
     }
     if (manifest.name != dirName) {
@@ -243,11 +243,11 @@ LL_TYPE_INSTANCE_HOOK(
             try {
                 registrar.enablePlugin(name);
             } catch (...) {
-                error_info::printCurrentException(logger);
+                error_utils::printCurrentException(logger);
             }
         }
     } catch (...) {
-        error_info::printCurrentException(logger);
+        error_utils::printCurrentException(logger);
     }
 }
 LL_TYPE_INSTANCE_HOOK(
@@ -263,11 +263,11 @@ LL_TYPE_INSTANCE_HOOK(
             try {
                 registrar.disablePlugin(name);
             } catch (...) {
-                error_info::printCurrentException(logger);
+                error_utils::printCurrentException(logger);
             }
         }
     } catch (...) {
-        error_info::printCurrentException(logger);
+        error_utils::printCurrentException(logger);
     }
     origin();
 }

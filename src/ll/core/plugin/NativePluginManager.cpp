@@ -1,5 +1,5 @@
 #include "ll/core/plugin/NativePluginManager.h"
-#include "ll/api/base/ErrorInfo.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
 #include "windows.h"
@@ -17,7 +17,7 @@ bool NativePluginManager::load(Manifest manifest) {
     auto entry = getPluginsRoot() / manifest.name / manifest.entry;
     auto lib   = LoadLibrary(entry.c_str());
     if (!lib) {
-        error_info::printException(logger, error_info::getWinLastError());
+        error_utils::printException(logger, error_utils::getWinLastError());
         return false;
     }
     auto plugin = std::make_shared<NativePlugin>(std::move(manifest), lib);
@@ -49,7 +49,7 @@ bool NativePluginManager::unload(std::string_view name) {
         return false;
     }
     if (!FreeLibrary((HMODULE)ptr->getHandle())) {
-        error_info::printException(logger, error_info::getWinLastError());
+        error_utils::printException(logger, error_utils::getWinLastError());
         return false;
     }
     erasePlugin(name);

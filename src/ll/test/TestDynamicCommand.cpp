@@ -1,8 +1,8 @@
 
 #include "ll/api/Logger.h"
-#include "ll/api/base/Hash.h"
 #include "ll/api/command/DynamicCommand.h"
 #include "ll/api/service/Bedrock.h"
+#include "ll/api/utils/HashUtils.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/server/commands/ServerCommands.h"
 #include "mc/world/actor/Actor.h"
@@ -17,7 +17,7 @@ using Param      = DynamicCommand::ParameterData;
 using ParamType  = DynamicCommand::ParameterType;
 using ParamIndex = DynamicCommandInstance::ParameterIndex;
 
-using namespace ll::hash;
+using namespace ll::hash_utils;
 using namespace ll::hash_literals;
 using namespace ll::chrono_literals;
 using namespace ll::i18n_literals;

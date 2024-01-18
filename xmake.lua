@@ -120,7 +120,7 @@ target("LeviLamina")
     set_exceptions("none")
     set_kind("shared")
     set_languages("c++20")
-    set_pcxxheader("src/mc/_HeaderOutputPredefine.h")
+    set_pcxxheader("src/ll/api/Global.h")
     set_symbols("debug")
 
     if has_config("tests") then

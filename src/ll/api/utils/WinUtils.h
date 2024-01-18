@@ -5,6 +5,8 @@
 #include <span>
 #include <string>
 
+#include <intrin.h>
+
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 

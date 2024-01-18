@@ -9,7 +9,7 @@
 
 #include "ll/api/utils/StringUtils.h"
 
-namespace ll {
+namespace ll::inline data {
 
 namespace detail {
 
@@ -301,4 +301,4 @@ namespace literals {
 }
 } // namespace literals
 
-} // namespace ll
+} // namespace ll::inline data

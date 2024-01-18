@@ -5,8 +5,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "ll/api/base/Hash.h"
-#include "ll/api/base/Version.h"
+#include "ll/api/data/Version.h"
+#include "ll/api/utils/HashUtils.h"
 
 namespace ll::plugin {
 struct Dependency {
@@ -23,7 +23,7 @@ template <>
 struct hash<ll::plugin::Dependency> {
     size_t operator()(ll::plugin::Dependency const& d) const noexcept {
         size_t hash = std::hash<std::string>{}(d.name);
-        ll::hash::hashCombine(std::hash<std::optional<std::string>>{}(d.version), hash);
+        ll::hash_utils::hashCombine(std::hash<std::optional<std::string>>{}(d.version), hash);
         return hash;
     }
 };

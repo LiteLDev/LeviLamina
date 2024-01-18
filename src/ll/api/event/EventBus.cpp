@@ -6,9 +6,9 @@
 #include <unordered_set>
 
 #include "ll/api/Logger.h"
-#include "ll/api/base/ErrorInfo.h"
 #include "ll/api/event/EmitterBase.h"
 #include "ll/api/thread/SharedRecursiveMutex.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
 namespace ll::event {
@@ -43,7 +43,7 @@ public:
                         l->pluginPtr.expired() ? "unknown plugin" : l->pluginPtr.lock()->getManifest().name
                     );
                 } catch (...) {}
-                error_info::printCurrentException(logger);
+                error_utils::printCurrentException(logger);
             }
         }
     }
@@ -66,7 +66,7 @@ public:
                         pluginName
                     );
                 } catch (...) {}
-                error_info::printCurrentException(logger);
+                error_utils::printCurrentException(logger);
             }
         }
     }

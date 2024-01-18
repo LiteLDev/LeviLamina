@@ -1,7 +1,7 @@
 #pragma once
 
-#include "ll/api/base/Hash.h"
 #include "ll/api/reflection/Reflection.h"
+#include "ll/api/utils/HashUtils.h"
 
 namespace ll::service {
 
@@ -17,7 +17,7 @@ public:
     [[nodiscard]] constexpr ServiceId(std::string_view name, size_t version) noexcept
     : name(name),
       version(version),
-      hash(ll::hash::hashCombine(ll::hash::do_hash(name), version)) {}
+      hash(ll::hash_utils::hashCombine(ll::hash_utils::do_hash(name), version)) {}
 
     template <class T>
     [[nodiscard]] constexpr ServiceId(auto_name_t<T>, size_t version) noexcept

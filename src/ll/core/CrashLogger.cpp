@@ -3,9 +3,9 @@
 #include <chrono>
 
 #include "ll/api/Logger.h"
-#include "ll/api/ServerInfo.h"
-#include "ll/api/base/ErrorInfo.h"
-#include "ll/api/base/Version.h"
+#include "ll/api/data/Version.h"
+#include "ll/api/service/ServerInfo.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StacktraceUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"
@@ -52,7 +52,7 @@ bool CrashLogger::startCrashLoggerProcess() {
     ));
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("ll.crashLogger.error.cannotCreateDaemonProcess"_tr);
-        error_info::printException(crashLogger, error_info::getWinLastError());
+        error_utils::printException(crashLogger, error_utils::getWinLastError());
         return false;
     }
 
@@ -176,7 +176,7 @@ static void dumpSystemInfo() {
 static void dumpStacktrace(_CONTEXT const& c) {
     try {
         crashInfo.logger.info("Stacktrace:");
-        auto str = stacktrace_utils::toString(error_info::stacktraceFromContext(c));
+        auto str = stacktrace_utils::toString(error_utils::stacktraceFromContext(c));
         for (auto& sv : splitByPattern(str, "\n")) {
             crashInfo.logger.info("  |{}", sv);
         }
@@ -206,7 +206,7 @@ static bool genMiniDumpFile(PEXCEPTION_POINTERS e) {
     auto hDumpFile =
         CreateFileW(dumpFilePath.c_str(), GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
     if (hDumpFile == INVALID_HANDLE_VALUE || hDumpFile == nullptr) {
-        throw error_info::getWinLastError();
+        throw error_utils::getWinLastError();
     }
 
     MINIDUMP_EXCEPTION_INFORMATION dumpInfo;
@@ -226,7 +226,7 @@ static bool genMiniDumpFile(PEXCEPTION_POINTERS e) {
             nullptr
         )) {
         CloseHandle(hDumpFile);
-        throw error_info::getWinLastError();
+        throw error_utils::getWinLastError();
     }
     CloseHandle(hDumpFile);
     std::error_code ec;
@@ -270,7 +270,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
             genMiniDumpFile(e);
         } catch (...) {
             crashInfo.logger.error("!!! Error In GenMiniDumpFile !!!");
-            ll::error_info::printCurrentException(crashInfo.logger);
+            ll::error_utils::printCurrentException(crashInfo.logger);
         }
         stacktrace_utils::SymbolLoader symbol{};
 
@@ -280,7 +280,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
 
         crashInfo.logger.info("Exception:");
         try {
-            auto str = error_info::makeExceptionString(error_info::createExceptionPtr(*e->ExceptionRecord));
+            auto str = error_utils::makeExceptionString(error_utils::createExceptionPtr(*e->ExceptionRecord));
             for (auto& sv : string_utils::splitByPattern(str, "\n")) {
                 crashInfo.logger.info("  |{}", sv);
             }
@@ -302,11 +302,11 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.logger.info("");
         crashInfo.logger.info("Modules:");
         if (!EnumerateLoadedModulesW64(crashInfo.process, dumpModules, nullptr)) {
-            throw error_info::getWinLastError();
+            throw error_utils::getWinLastError();
         }
     } catch (...) {
         crashInfo.logger.error("!!! Error In CrashLogger !!!");
-        ll::error_info::printCurrentException(crashInfo.logger);
+        ll::error_utils::printCurrentException(crashInfo.logger);
         crashInfo.logger.error("");
         crashInfo.logger.error("\n{}", ll::stacktrace_utils::toString(std::stacktrace::current()));
     }
