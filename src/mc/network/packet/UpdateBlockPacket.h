@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/BlockLayer.h"
 #include "mc/enums/BlockUpdateFlag.h"
 #include "mc/network/NetworkBlockPosition.h"
 
@@ -12,6 +11,12 @@
 
 class UpdateBlockPacket : public ::Packet {
 public:
+    enum class BlockLayer : uint {
+        Standard = 0,
+        Extra    = 1,
+        Count    = 2,
+    };
+
     static const bool          SHARE_WITH_HANDLER = true; // constant
     class NetworkBlockPosition mPos;                      // this+0x30
     BlockLayer                 mLayer;                    // this+0x3C
