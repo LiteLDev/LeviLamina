@@ -6,9 +6,9 @@
 
 namespace Bedrock {
 template <typename T, typename Err>
-class Result : public nonstd::expected<T, ErrorUtils<Err>> {
+class Result : public nonstd::expected<T, ErrorInfo<Err>> {
 public:
-    using Base = nonstd::expected<T, ErrorUtils<Err>>;
+    using Base = nonstd::expected<T, ErrorInfo<Err>>;
     using Base::Base;
 };
 }; // namespace Bedrock

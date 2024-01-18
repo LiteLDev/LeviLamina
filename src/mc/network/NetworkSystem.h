@@ -189,7 +189,7 @@ public:
     // symbol:
     // ?_handlePacketViolation@NetworkSystem@@AEAAXAEBU?$ErrorInfo@Verror_code@std@@@Bedrock@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@AEAVNetworkConnection@@W4SubClientId@@@Z
     MCAPI void _handlePacketViolation(
-        struct Bedrock::ErrorUtils<std::error_code> const&,
+        struct Bedrock::ErrorInfo<std::error_code> const&,
         ::PacketViolationResponse,
         ::MinecraftPacketIds,
         class NetworkIdentifier const&,
