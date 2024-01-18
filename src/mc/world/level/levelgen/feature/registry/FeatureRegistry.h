@@ -44,6 +44,14 @@ public:
     std::vector<std::string>                              mLargeFeaturePasses;   // this+0x90
     std::vector<std::string>                              mSmallFeaturePasses;   // this+0xA8
 
+    template <std::derived_from<IFeature> T, class... Args>
+    T& registerFeature(std::string const& name, Args&&... args) {
+        auto ptr = std::make_unique<T>(std::forward<Args>(args)...);
+        auto res = *ptr;
+        _registerFeature(name, std::move(ptr));
+        return res;
+    }
+
 public:
     // NOLINTBEGIN
     // symbol: ??0FeatureRegistry@@QEAA@XZ

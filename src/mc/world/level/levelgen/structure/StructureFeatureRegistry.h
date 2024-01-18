@@ -14,6 +14,14 @@ public:
     StructureFeatureRegistry& operator=(StructureFeatureRegistry const&);
     StructureFeatureRegistry(StructureFeatureRegistry const&);
 
+    template <std::derived_from<StructureFeature> T, class... Args>
+    T& registerFeature(Args&&... args) {
+        auto ptr = std::make_unique<T>(std::forward<Args>(args)...);
+        auto res = *ptr;
+        mStructureFeatures.push_back(std::move(ptr));
+        return res;
+    }
+
 public:
     // NOLINTBEGIN
     // symbol: ??0StructureFeatureRegistry@@QEAA@XZ
