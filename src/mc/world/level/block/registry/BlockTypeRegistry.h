@@ -162,7 +162,7 @@ public:
     // NOLINTBEGIN
     // symbol:
     // ?_lookupByNameImpl@BlockTypeRegistry@@CA?AULookupByNameImplReturnType@1@AEBVHashedString@@HW4LookupByNameImplResolve@1@_N@Z
-    MCAPI static struct BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
+    MCAPI static struct ::BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
         class HashedString const&                    name,
         int                                          data,
         ::BlockTypeRegistry::LookupByNameImplResolve resolve,

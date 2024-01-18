@@ -10,17 +10,17 @@ template <typename T>
 class SharedPtr {
 public:
     template <typename... Args>
-    static SharedPtr<T> makeShared(Args&&... args) {
+    [[nodiscard]] static SharedPtr<T> make(Args&&... args) {
         return SharedPtr<T>(new T(std::forward<Args>(args)...));
     }
 
-    SharedPtr() noexcept : counter(nullptr) {}               // NOLINT
-    SharedPtr(std::nullptr_t) noexcept : counter(nullptr) {} // NOLINT
+    [[nodiscard]] SharedPtr() noexcept : counter(nullptr) {}               // NOLINT
+    [[nodiscard]] SharedPtr(std::nullptr_t) noexcept : counter(nullptr) {} // NOLINT
 
-    explicit SharedPtr(T* p) : counter(new SharedCounter<T>(p)) {}
+    [[nodiscard]] explicit SharedPtr(T* p) : counter(new SharedCounter<T>(p)) {}
 
     template <class Y>
-    explicit SharedPtr(SharedPtr<Y> const& other)
+    [[nodiscard]] explicit SharedPtr(SharedPtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
         counter = (SharedCounter<T>*)other.counter;
@@ -30,7 +30,7 @@ public:
     }
 
     template <class Y>
-    explicit SharedPtr(SharedPtr<Y>&& other)
+    [[nodiscard]] explicit SharedPtr(SharedPtr<Y>&& other)
         requires(std::convertible_to<Y*, T*>)
     {
         counter       = (SharedCounter<T>*)other.counter;
@@ -38,7 +38,7 @@ public:
     }
 
     template <class Y>
-    explicit SharedPtr(WeakPtr<Y> const& other)
+    [[nodiscard]] explicit SharedPtr(WeakPtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
         counter = (SharedCounter<T>*)other.counter;
@@ -88,13 +88,13 @@ public:
         return *this;
     }
 
-    T* get() const { return counter ? counter->get() : nullptr; }
+    [[nodiscard]] T* get() const { return counter ? counter->get() : nullptr; }
 
-    T* operator->() const { return get(); }
+    [[nodiscard]] T* operator->() const { return get(); }
 
-    T& operator*() const { return *get(); }
+    [[nodiscard]] T& operator*() const { return *get(); }
 
-    explicit operator bool() const { return get() != nullptr; }
+    [[nodiscard]] explicit operator bool() const { return get() != nullptr; }
 
     [[nodiscard]] int use_count() const { return counter ? counter->getShareCount() : 0; }
 

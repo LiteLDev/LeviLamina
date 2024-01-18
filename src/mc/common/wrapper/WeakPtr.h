@@ -9,11 +9,11 @@ class SharedPtr;
 template <typename T>
 class WeakPtr {
 public:
-    WeakPtr() noexcept : counter(nullptr) {}               // NOLINT
-    WeakPtr(std::nullptr_t) noexcept : counter(nullptr) {} // NOLINT
+    [[nodiscard]] WeakPtr() noexcept : counter(nullptr) {}               // NOLINT
+    [[nodiscard]] WeakPtr(std::nullptr_t) noexcept : counter(nullptr) {} // NOLINT
 
     template <class Y>
-    explicit WeakPtr(SharedPtr<Y> const& other)
+    [[nodiscard]] explicit WeakPtr(SharedPtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
         counter = (SharedCounter<T>*)other.counter;
@@ -23,7 +23,7 @@ public:
     }
 
     template <class Y>
-    explicit WeakPtr(WeakPtr<Y> const& other)
+    [[nodiscard]] explicit WeakPtr(WeakPtr<Y> const& other)
         requires(std::convertible_to<Y*, T*>)
     {
         counter = (SharedCounter<T>*)other.counter;
@@ -33,7 +33,7 @@ public:
     }
 
     template <class Y>
-    explicit WeakPtr(WeakPtr<Y>&& other)
+    [[nodiscard]] explicit WeakPtr(WeakPtr<Y>&& other)
         requires(std::convertible_to<Y*, T*>)
     {
         counter       = (SharedCounter<T>*)other.counter;
@@ -87,15 +87,15 @@ public:
 
     [[nodiscard]] bool expired() const { return use_count() == 0; }
 
-    SharedPtr<T> lock() const { return expired() ? SharedPtr<T>() : SharedPtr<T>(*this); }
+    [[nodiscard]] SharedPtr<T> lock() const { return expired() ? SharedPtr<T>() : SharedPtr<T>(*this); }
 
-    T* get() const { return counter ? counter->get() : nullptr; }
+    [[nodiscard]] T* get() const { return counter ? counter->get() : nullptr; }
 
-    T* operator->() const { return get(); }
+    [[nodiscard]] T* operator->() const { return get(); }
 
-    T& operator*() const { return *get(); }
+    [[nodiscard]] T& operator*() const { return *get(); }
 
-    explicit operator bool() const { return get() != nullptr; }
+    [[nodiscard]] explicit operator bool() const { return get() != nullptr; }
 
     SharedCounter<T>* counter;
 };
