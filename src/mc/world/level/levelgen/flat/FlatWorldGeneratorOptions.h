@@ -13,7 +13,7 @@ class Block;
 
 class FlatWorldGeneratorOptions {
 public:
-    class Layer {
+    struct Layer {
         Block const* mBlock;
         int          mNumLayers;
     };
