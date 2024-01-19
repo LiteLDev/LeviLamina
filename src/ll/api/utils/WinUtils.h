@@ -28,6 +28,8 @@ LLNDAPI std::optional<std::filesystem::path> getModulePath(void* handle);
 
 LLNDAPI std::string getModuleFileName(void* handle);
 
+LLNDAPI std::pair<std::tm, int> getLocalTime(); // tm & ms
+
 [[nodiscard]] inline std::string getCallerModuleFileName(void* addr = _ReturnAddress()) {
     return getModuleFileName(getModuleHandle(addr));
 }

@@ -8,6 +8,8 @@
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/Config.h"
 
+#include "ll/api/utils/WinUtils.h"
+
 using namespace ll::string_utils;
 
 namespace ll {
@@ -20,11 +22,9 @@ static bool checkLogLevel(int level, int outLevel) {
 
 void Logger::OutputStream::print(std::string_view s) const noexcept {
     try {
-        auto        lock = Logger::lock();
-        static auto zone = std::chrono::current_zone();
-        auto        now  = zone->to_local(std::chrono::system_clock::now());
-        auto        time = std::chrono::floor<std::chrono::seconds>(now);
-        auto        ms   = (std::chrono::floor<std::chrono::milliseconds>(now) - time).count();
+        auto lock = Logger::lock();
+
+        auto [time, ms] = win_utils::getLocalTime();
 
         if (logger->ignoreConfig || checkLogLevel(logger->consoleLevel, level)) {
             std::string str = fmt::format(
