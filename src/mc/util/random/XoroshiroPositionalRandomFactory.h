@@ -13,10 +13,11 @@ namespace Crypto::Hash { class md5; }
 
 class XoroshiroPositionalRandomFactory : public ::IPositionalRandomFactory {
 public:
-    // prevent constructor by default
-    XoroshiroPositionalRandomFactory& operator=(XoroshiroPositionalRandomFactory const&);
-    XoroshiroPositionalRandomFactory(XoroshiroPositionalRandomFactory const&);
-    XoroshiroPositionalRandomFactory();
+    uint64_t mSeedLo; // this+0x8
+    uint64_t mSeedHi; // this+0x10
+
+public:
+    XoroshiroPositionalRandomFactory(uint64_t seedLo, uint64_t seedHi) : mSeedLo(seedLo), mSeedHi(seedHi) {}
 
 public:
     // NOLINTBEGIN

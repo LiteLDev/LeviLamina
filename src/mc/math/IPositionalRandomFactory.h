@@ -4,8 +4,6 @@
 
 class IPositionalRandomFactory {
 public:
-    // prevent constructor by default
-    IPositionalRandomFactory& operator=(IPositionalRandomFactory const&);
-    IPositionalRandomFactory(IPositionalRandomFactory const&);
-    IPositionalRandomFactory();
+    // vIndex: 0
+    virtual ~IPositionalRandomFactory() = default;
 };
