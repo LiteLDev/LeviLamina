@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.1] - 2023-01-19
+
+## Added
+
+- Add registerFeature to FeatureRegistry
+- Add SubChunk::BlockLayer
+- Add members to XoroshiroPositionalRandomFactory and IPositionalRandomFactory
+- Add various tests related to world generation
+
+## Changed
+
+- Refactor SharedPtr
+- Create new pch file and fix some header include problem
+- Update DataItemType enum to use uchar instead of byte
+- Fix the omissions in Layer and added member variables to LakeFeature
+- Refactor custom dimension
+
+### Fixed
+
+- Fix the issue with IFeature vtable and the issue with StackResultStorageFeature::tryUnwrap
+- Fix Dataitem alignment erro
+- Update enum classes with explicit underlying types
+- Fix FlatWorldGeneratorOptions
+
 ## [0.5.0] - 2023-01-17
 
 ### Added
