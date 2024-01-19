@@ -29,9 +29,8 @@ bool defaultConfigUpdater(T& config, J& data) {
     data = patch;
     return true;
 }
-template <IsConfig T, class J = nlohmann::ordered_json>
-inline bool
-loadConfig(T& config, std::filesystem::path const& path, std::function<bool(T&, J&)> updater = defaultConfigUpdater<T, J>) {
+template <IsConfig T, class J = nlohmann::ordered_json, class F = bool(T&, J&)>
+inline bool loadConfig(T& config, std::filesystem::path const& path, F&& updater = defaultConfigUpdater<T, J>) {
     bool noNeedRewrite = true;
     auto content       = file_utils::readFile(path);
     if (content && !(*content).empty()) {
@@ -41,7 +40,7 @@ loadConfig(T& config, std::filesystem::path const& path, std::function<bool(T&, 
         } else if ((int64)(data["version"]) != config.version) {
             noNeedRewrite = false;
         }
-        if (noNeedRewrite || updater(config, data)) {
+        if (noNeedRewrite || std::forward<F>(updater)(config, data)) {
             ll::reflection::deserialize<J, T>(config, data);
         }
     } else {

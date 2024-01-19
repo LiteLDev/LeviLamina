@@ -4,9 +4,8 @@
 #include "ll/api/Logger.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
-#include "ll/core/dimension/CustomDimension.h"
+#include "ll/api/utils/Base64Utils.h"
 #include "ll/core/dimension/CustomDimensionConfig.h"
-#include "ll/core/dimension/FakeDimensionId.h"
 
 #include "mc/math/Vec3.h"
 #include "mc/world/level/Level.h"
@@ -107,21 +106,31 @@ using HookReg = memory::HookRegistrar<
 
 } // namespace CustomDimensionHookList
 
-CustomDimensionManager::CustomDimensionManager() : mNewDimensionId(3) {
+struct CustomDimensionManager::Impl {
+    std::atomic<int> mNewDimensionId{3};
+    std::mutex       mMapMutex;
+
+    struct DimensionInfo {
+        DimensionType id;
+        CompoundTag   nbt;
+    };
+    std::unordered_map<std::string, DimensionInfo> customDimensionMap;
+    std::unordered_set<std::string>                registeredDimension;
+};
+
+CustomDimensionManager::CustomDimensionManager() : impl(std::make_unique<Impl>()) {
+    std::lock_guard lock{impl->mMapMutex};
     CustomDimensionConfig::loadConfigFile();
     if (!CustomDimensionConfig::dimConfig.dimensionList.empty()) {
-        for (auto& dim : CustomDimensionConfig::dimConfig.dimensionList) {
-            customDimensionMap.emplace(
-                dim.first,
-                DimensionInfo{dim.first, dim.second.id, dim.second.seed, dim.second.generatorType}
+        for (auto& [name, info] : CustomDimensionConfig::dimConfig.dimensionList) {
+            impl->customDimensionMap.emplace(
+                name,
+                Impl::DimensionInfo{info.dimId, *CompoundTag::fromBinaryNbt(base64_utils::decode(info.base64Nbt))}
             );
         }
-        mNewDimensionId += static_cast<int>(customDimensionMap.size());
-
-        CustomDimensionHookList::HookReg::hook();
-
-        fakeDimensionIdInstance = std::make_unique<FakeDimensionId>();
+        impl->mNewDimensionId += static_cast<int>(impl->customDimensionMap.size());
     }
+    CustomDimensionHookList::HookReg::hook();
 };
 
 CustomDimensionManager::~CustomDimensionManager() { CustomDimensionHookList::HookReg::unhook(); }
@@ -131,59 +140,62 @@ CustomDimensionManager& CustomDimensionManager::getInstance() {
     return instance;
 }
 
-DimensionType
-CustomDimensionManager::addDimension(std::string_view dimensionName, uint seed, GeneratorType generatorType) {
-    std::string   dimName(dimensionName);
-    DimensionType dimId = -1;
-    if (customDimensionMap.find(dimName) != customDimensionMap.end()) {
-        dimId = customDimensionMap.at(dimName).id;
-        loggerMoreDimMag.debug("The dimension already registry. use old id, name: {}, id: {}", dimName, dimId.id);
+DimensionType CustomDimensionManager::addDimension(
+    std::string const&                  dimName,
+    std::function<DimensionFactoryT>    factory,
+    std::function<CompoundTag()> const& data
+) {
+    std::lock_guard     lock{impl->mMapMutex};
+    Impl::DimensionInfo info;
+    bool                newDim{};
+    if (impl->customDimensionMap.contains(dimName)) {
+        info = impl->customDimensionMap.at(dimName);
+        loggerMoreDimMag.debug("The dimension already registry. use old id, name: {}, id: {}", dimName, info.id.id);
     } else {
         // Assign new id
-        {
-            std::lock_guard lock{mMapMutex};
-            dimId = mNewDimensionId.load();
-            mNewDimensionId++;
-            customDimensionMap.emplace(dimName, DimensionInfo{dimName, dimId, seed, generatorType});
-            CustomDimensionConfig::dimConfig.dimensionList.emplace(
-                dimName,
-                CustomDimensionConfig::Config::dimensionInfo{dimId, seed, generatorType}
-            );
-        };
-        CustomDimensionConfig::saveConfigFile();
+        info.id  = impl->mNewDimensionId++;
+        info.nbt = data();
+        newDim   = true;
     };
 
     // registry create dimension function
-    if (ll::service::getLevel()) {
-        ll::service::getLevel()->getDimensionFactory().registerFactory(
-            dimName,
-            [dimName, dimId, seed, generatorType](ILevel& ilevel, Scheduler& scheduler)
-                -> OwnerPtrT<SharePtrRefTraits<Dimension>> {
-                loggerMoreDimMag.debug("Create dimension, name: {}, id: {}", dimName, dimId.id);
-                DimensionInfo dimensionInfo{dimName, dimId, seed, generatorType};
-                return std::make_shared<CustomDimension>(ilevel, scheduler, dimensionInfo);
-            }
-        );
-        {
-            std::lock_guard lock{mMapMutex};
-            registeredDimensionMap.emplace(dimName, DimensionInfo{dimName, dimId, seed, generatorType});
-        };
-    } else {
-        loggerMoreDimMag.error("Level is nullptr, cannot registry new dimension, name: {}, id: {}", dimName, dimId.id);
-        return {-1};
+    if (!ll::service::getLevel()) {
+        throw std::runtime_error("Level is nullptr, cannot registry new dimension " + dimName);
     }
+
+    ll::service::getLevel()->getDimensionFactory().registerFactory(
+        dimName,
+        [dimName, info, factory = std::move(factory)](ILevel& ilevel, Scheduler& scheduler)
+            -> OwnerPtrT<SharePtrRefTraits<Dimension>> {
+            loggerMoreDimMag.debug("Create dimension, name: {}, id: {}", dimName, info.id.id);
+            return factory(DimensionFactoryInfo{ilevel, scheduler, info.nbt, info.id});
+        }
+    );
 
     // modify default dimension map
     loggerMoreDimMag.debug("Add new dimension to DimensionMap");
     ll::memory::modify(VanillaDimensions::$DimensionMap(), [&](auto& dimMap) {
-        loggerMoreDimMag.debug("Add new dimension: name->{}, id->{} to DimensionMap", dimName, dimId.id);
-        dimMap.set(dimName, dimId);
+        loggerMoreDimMag.debug("Add new dimension: name->{}, id->{} to DimensionMap", dimName, info.id.id);
+        dimMap.insert_or_assign(dimName, info.id);
     });
+
     // modify default Undefined dimension id
-    ll::memory::modify(VanillaDimensions::Undefined, [&](auto& dimId) {
-        dimId.id = mNewDimensionId;
-        loggerMoreDimMag.debug("Set VanillaDimensions::Undefined to {}", dimId.id);
+    ll::memory::modify(VanillaDimensions::Undefined, [&](auto& uid) {
+        uid = info.id;
+        loggerMoreDimMag.debug("Set VanillaDimensions::Undefined to {}", uid.id);
     });
-    return dimId;
+
+    // config
+    impl->registeredDimension.emplace(dimName);
+    if (newDim) {
+        impl->customDimensionMap.emplace(dimName, info);
+        CustomDimensionConfig::dimConfig.dimensionList.emplace(
+            dimName,
+            CustomDimensionConfig::Config::Info{info.id, base64_utils::encode(info.nbt.toBinaryNbt())}
+        );
+        CustomDimensionConfig::saveConfigFile();
+    }
+
+    return info.id;
 }
 } // namespace ll::dimension

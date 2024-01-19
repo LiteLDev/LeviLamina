@@ -8,13 +8,12 @@
 
 namespace ll::dimension::CustomDimensionConfig {
 struct Config {
-    struct dimensionInfo {
-        int           id            = -1;
-        uint          seed          = 123;
-        GeneratorType generatorType = GeneratorType::Void;
+    struct Info {
+        int         dimId{};
+        std::string base64Nbt;
     };
-    int                                            version       = 1;
-    std::unordered_map<std::string, dimensionInfo> dimensionList = {};
+    int                                   version = 2;
+    std::unordered_map<std::string, Info> dimensionList{};
 };
 extern Config dimConfig;
 

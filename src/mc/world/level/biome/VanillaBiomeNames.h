@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class HashedString;
+
 namespace VanillaBiomeNames {
 // NOLINTBEGIN
 // symbol: ?BambooJungle@VanillaBiomeNames@@3VHashedString@@B

@@ -11,18 +11,21 @@
 
 namespace ll::dimension::CustomDimensionConfig {
 
-static ll::Logger logger("CustomDimensionConfig");
-std::string       dimensionConfigPath = R"(worlds\Bedrock level\dimension_config.json)";
-Config            dimConfig{};
+static ll::Logger  logger("CustomDimensionConfig");
+static std::string dimensionConfigPath{R"(worlds\Bedrock level\dimension_config.json)"};
+Config             dimConfig{};
 
 void setDimensionConfigPath() {
+    if (!ll::service::getLevel()) {
+        return;
+    }
     auto levelName = ll::service::getLevel()->getLevelData().getLevelName();
     dimensionConfigPath.replace(dimensionConfigPath.find("Bedrock level"), 13, levelName);
 }
 
 bool loadConfigFile() {
     setDimensionConfigPath(); // set real world path
-    if (!ll::config::loadConfig(dimConfig, dimensionConfigPath)) {
+    if (!ll::config::loadConfig(dimConfig, dimensionConfigPath, [](auto&, auto&) -> bool { return false; })) {
         if (ll::config::saveConfig(dimConfig, dimensionConfigPath)) {
             logger.warn("Config file rewrite success!");
         } else {

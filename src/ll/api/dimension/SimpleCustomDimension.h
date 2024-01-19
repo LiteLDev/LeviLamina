@@ -13,12 +13,14 @@ class LevelChunk;
 
 namespace ll::dimension {
 
-class CustomDimension : public Dimension {
+class SimpleCustomDimension : public Dimension {
     uint          seed;
     GeneratorType generatorType;
 
 public:
-    CustomDimension(ILevel& ilevel, Scheduler& scheduler, CustomDimensionManager::DimensionInfo const& dimensionInfo);
+    LLNDAPI SimpleCustomDimension(std::string const& name, DimensionFactoryInfo const& info);
+
+    LLNDAPI static CompoundTag generateNewData(uint seed = 123, GeneratorType generatorType = GeneratorType::Overworld);
 
     void init() override;
 
@@ -40,9 +42,9 @@ public:
 
     mce::Color getBrightnessDependentFogColor(mce::Color const& color, float brightness) const override;
 
-    short getCloudHeight() const override { return 192; };
+    short getCloudHeight() const override;
 
-    bool hasPrecipitationFog() const override { return true; };
+    bool hasPrecipitationFog() const override;
 
     std::unique_ptr<StructureFeatureRegistry>
     makeStructureFeatures(bool isLegacy, BaseGameVersion const& baseGameVersion, Experiments const& experiments);

@@ -3,6 +3,7 @@
 #include <atomic>
 #include <mutex>
 
+#include "mc/nbt/CompoundTag.h"
 #include "mc/world/AutomaticID.h"
 #include "mc/world/level/levelgen/GeneratorType.h"
 
@@ -13,47 +14,43 @@ using DimensionType = AutomaticID<Dimension, int>;
 
 namespace ll::dimension {
 
-class FakeDimensionId;
-class CustomDimension;
+struct DimensionFactoryInfo {
+    ILevel&            level;
+    Scheduler&         scheduler;
+    CompoundTag const& data;
+    DimensionType      dimId;
+};
 
 class CustomDimensionManager {
-    friend CustomDimension;
-    friend FakeDimensionId;
-
-    std::atomic<int> mNewDimensionId;
-    std::mutex       mMapMutex;
-
-    std::unique_ptr<FakeDimensionId> fakeDimensionIdInstance;
+    struct Impl;
+    std::unique_ptr<Impl> impl;
 
     CustomDimensionManager();
     ~CustomDimensionManager();
 
+public:
+    using DimensionFactoryT = std::shared_ptr<Dimension>(DimensionFactoryInfo const&);
+
 protected:
-    struct DimensionInfo {
-        const std::string name;
-        DimensionType     id;
-        uint              seed;
-        GeneratorType     generatorType;
-    };
-    std::unordered_map<std::string, DimensionInfo> customDimensionMap;     // save all dimension info
-    std::unordered_map<std::string, DimensionInfo> registeredDimensionMap; // save registry dimension info
+    LLAPI DimensionType addDimension(
+        std::string const&                  dimName,
+        std::function<DimensionFactoryT>    factory,
+        std::function<CompoundTag()> const& newData
+    );
 
 public:
     LLNDAPI static CustomDimensionManager& getInstance();
-    /**
-     * @brief Add a custom dimension
-     * @return success add dimension id
-     */
-    LLAPI DimensionType addDimension(
-        std::string_view dimensionName,
-        uint             seed          = 123,
-        GeneratorType    generatorType = GeneratorType::Overworld
-    );
 
-    // LLAPI DimensionType addDimension(
-    //     std::string_view                                                                     dimensionName,
-    //     std::function<std::shared_ptr<Dimension>(DimensionType, ILevel&, Scheduler&)> const& factory
-    // );
+    template <std::derived_from<Dimension> D, class... Args>
+    DimensionType addDimension(std::string const& dimName, Args&&... args) {
+        return addDimension(
+            dimName,
+            [dimName](ll::dimension::DimensionFactoryInfo const& info) -> std::shared_ptr<Dimension> {
+                return std::make_shared<D>(dimName, info);
+            },
+            [&] { return D::generateNewData(std::forward<Args>(args)...); }
+        );
+    }
 };
 
 // Dimension need to test virtual tables

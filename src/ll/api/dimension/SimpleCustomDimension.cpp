@@ -1,5 +1,5 @@
 
-#include "CustomDimension.h"
+#include "SimpleCustomDimension.h"
 
 #include "ll/api/Logger.h"
 #include "ll/api/service/Bedrock.h"
@@ -8,6 +8,7 @@
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/DimensionConversionData.h"
 #include "mc/world/level/Level.h"
+#include "mc/world/level/biome/VanillaBiomeNames.h"
 #include "mc/world/level/biome/registry/BiomeRegistry.h"
 #include "mc/world/level/chunk/VanillaLevelChunkUpgrade.h"
 #include "mc/world/level/dimension/NetherDimension.h"
@@ -20,20 +21,18 @@
 #include "mc/world/level/levelgen/v1/OverworldGenerator2d.h"
 #include "mc/world/level/levelgen/v1/TheEndGenerator.h"
 
+#include "magic_enum.hpp"
+
 namespace ll::dimension {
 
-static ll::Logger loggerMoreDim("CustomDimension");
+static ll::Logger loggerMoreDim("SimpleCustomDimension");
 
-CustomDimension::CustomDimension(
-    ILevel&                                      ilevel,
-    Scheduler&                                   scheduler,
-    CustomDimensionManager::DimensionInfo const& dimensionInfo
-)
-: Dimension(ilevel, dimensionInfo.id, {-64, 320}, scheduler, dimensionInfo.name) {
-    loggerMoreDim.debug(__FUNCTION__ " dimension name:{}", dimensionInfo.name);
+SimpleCustomDimension::SimpleCustomDimension(std::string const& name, DimensionFactoryInfo const& info)
+: Dimension(info.level, info.dimId, {-64, 320}, info.scheduler, name) {
+    loggerMoreDim.debug(__FUNCTION__ " dimension name:{}", name);
     mDefaultBrightness.sky = Brightness::MAX;
-    generatorType          = dimensionInfo.generatorType;
-    seed                   = dimensionInfo.seed;
+    generatorType          = *magic_enum::enum_cast<GeneratorType>((std::string_view)info.data["generatorType"]);
+    seed                   = info.data["seed"];
     switch (generatorType) {
     case GeneratorType::TheEnd: {
         mSeaLevel                = 63;
@@ -53,13 +52,20 @@ CustomDimension::CustomDimension(
     mDimensionBrightnessRamp->buildBrightnessRamp();
 }
 
-void CustomDimension::init() {
+CompoundTag SimpleCustomDimension::generateNewData(uint seed, GeneratorType generatorType) {
+    CompoundTag result;
+    result["seed"]          = seed;
+    result["generatorType"] = magic_enum::enum_name(generatorType);
+    return result;
+}
+
+void SimpleCustomDimension::init() {
     loggerMoreDim.debug(__FUNCTION__);
     setSkylight(false);
     Dimension::init();
 }
 
-std::unique_ptr<WorldGenerator> CustomDimension::createGenerator() {
+std::unique_ptr<WorldGenerator> SimpleCustomDimension::createGenerator() {
     loggerMoreDim.debug(__FUNCTION__);
     auto& level     = getLevel();
     auto& levelData = level.getLevelData();
@@ -90,35 +96,38 @@ std::unique_ptr<WorldGenerator> CustomDimension::createGenerator() {
         );
     case GeneratorType::Flat:
         return std::make_unique<FlatWorldGenerator>(*this, seed, levelData.getFlatWorldGeneratorOptions());
-    default:
-        return std::make_unique<VoidGenerator>(*this);
+    default: {
+        auto generator    = std::make_unique<VoidGenerator>(*this);
+        generator->mBiome = level.getBiomeRegistry().lookupByHash(VanillaBiomeNames::Ocean);
+        return std::move(generator);
+    }
     }
 }
 
-void CustomDimension::upgradeLevelChunk(ChunkSource& cs, LevelChunk& lc, LevelChunk& generatedChunk) {
+void SimpleCustomDimension::upgradeLevelChunk(ChunkSource& cs, LevelChunk& lc, LevelChunk& generatedChunk) {
     loggerMoreDim.debug(__FUNCTION__);
     auto blockSource = BlockSource(getLevel(), *this, cs, false, true, false);
     VanillaLevelChunkUpgrade::_upgradeLevelChunkViaMetaData(lc, generatedChunk, blockSource);
     VanillaLevelChunkUpgrade::_upgradeLevelChunkLegacy(lc, blockSource);
 }
 
-void CustomDimension::fixWallChunk(ChunkSource& cs, LevelChunk& lc) {
+void SimpleCustomDimension::fixWallChunk(ChunkSource& cs, LevelChunk& lc) {
     loggerMoreDim.debug(__FUNCTION__);
     auto blockSource = BlockSource(getLevel(), *this, cs, false, true, false);
     VanillaLevelChunkUpgrade::fixWallChunk(lc, blockSource);
 }
 
-bool CustomDimension::levelChunkNeedsUpgrade(LevelChunk const& lc) const {
+bool SimpleCustomDimension::levelChunkNeedsUpgrade(LevelChunk const& lc) const {
     loggerMoreDim.debug(__FUNCTION__);
     return VanillaLevelChunkUpgrade::levelChunkNeedsUpgrade(lc);
 }
-void CustomDimension::_upgradeOldLimboEntity(CompoundTag& tag, ::LimboEntitiesVersion vers) {
+void SimpleCustomDimension::_upgradeOldLimboEntity(CompoundTag& tag, ::LimboEntitiesVersion vers) {
     loggerMoreDim.debug(__FUNCTION__);
     auto isTemplate = getLevel().getLevelData().isFromWorldTemplate();
     return VanillaLevelChunkUpgrade::upgradeOldLimboEntity(tag, vers, isTemplate);
 }
 
-Vec3 CustomDimension::translatePosAcrossDimension(Vec3 const& fromPos, DimensionType fromId) const {
+Vec3 SimpleCustomDimension::translatePosAcrossDimension(Vec3 const& fromPos, DimensionType fromId) const {
     loggerMoreDim.debug(__FUNCTION__);
     Vec3 topos;
     VanillaDimensions::convertPointBetweenDimensions(
@@ -136,13 +145,17 @@ Vec3 CustomDimension::translatePosAcrossDimension(Vec3 const& fromPos, Dimension
     return topos;
 }
 
+short SimpleCustomDimension::getCloudHeight() const { return 192; }
+
+bool SimpleCustomDimension::hasPrecipitationFog() const { return true; }
+
 std::unique_ptr<ChunkSource>
-CustomDimension::_wrapStorageForVersionCompatibility(std::unique_ptr<ChunkSource> cs, ::StorageVersion /*ver*/) {
+SimpleCustomDimension::_wrapStorageForVersionCompatibility(std::unique_ptr<ChunkSource> cs, ::StorageVersion /*ver*/) {
     loggerMoreDim.debug(__FUNCTION__);
     return cs;
 }
 
-mce::Color CustomDimension::getBrightnessDependentFogColor(mce::Color const& color, float brightness) const {
+mce::Color SimpleCustomDimension::getBrightnessDependentFogColor(mce::Color const& color, float brightness) const {
     loggerMoreDim.debug(__FUNCTION__);
     float temp   = (brightness * 0.94f) + 0.06f;
     float temp2  = (brightness * 0.91f) + 0.09f;
@@ -153,7 +166,7 @@ mce::Color CustomDimension::getBrightnessDependentFogColor(mce::Color const& col
     return result;
 };
 
-std::unique_ptr<StructureFeatureRegistry> CustomDimension::makeStructureFeatures(
+std::unique_ptr<StructureFeatureRegistry> SimpleCustomDimension::makeStructureFeatures(
     bool                   isLegacy,
     BaseGameVersion const& baseGameVersion,
     Experiments const&     experiments

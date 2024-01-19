@@ -362,7 +362,8 @@ FakeDimensionId::FakeDimensionId() { CustomDimensionHookList::HookReg::hook(); }
 FakeDimensionId::~FakeDimensionId() { CustomDimensionHookList::HookReg::unhook(); }
 
 FakeDimensionId& FakeDimensionId::getInstance() {
-    return *CustomDimensionManager::getInstance().fakeDimensionIdInstance;
+    static FakeDimensionId ins{};
+    return ins;
 }
 
 Packet& FakeDimensionId::changePacketDimension(Packet& packet) {
