@@ -1,0 +1,24 @@
+{
+  "biome_id": 192,
+  "world_version": "version.post_1_18",
+  "block_layers": [
+    {
+      "block_name": "minecraft:air",
+      "count": 64
+    },
+    {
+      "block_name": "minecraft:bedrock",
+      "count": 1
+    },
+    {
+      "block_name": "minecraft:cherry_log",
+      "count": 2
+    },
+    {
+      "block_name": "minecraft:cherry_leaves",
+      "count": 1
+    }
+  ],
+  "encoding_version": 6,
+  "structure_options": null
+}
