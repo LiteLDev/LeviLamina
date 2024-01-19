@@ -9,14 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.5.1] - 2023-01-19
 
-## Added
+### Added
 
 - Add registerFeature to FeatureRegistry
 - Add SubChunk::BlockLayer
 - Add members to XoroshiroPositionalRandomFactory and IPositionalRandomFactory
 - Add various tests related to world generation
 
-## Changed
+### Changed
 
 - Refactor SharedPtr
 - Create new pch file and fix some header include problem
