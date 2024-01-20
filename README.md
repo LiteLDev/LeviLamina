@@ -98,4 +98,4 @@ This project exists thanks to all the people who contribute.
 
 ## License
 
-[LGPL-3.0-only](LICENSE.md) © LiteLDev
+LGPL-3.0-only © LiteLDev

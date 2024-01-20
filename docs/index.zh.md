@@ -1,5 +1,9 @@
 # LeviLamina
 
+![LeviLamina](https://socialify.git.ci/LiteLDev/LeviLamina/image?description=1&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLeviLamina%2FHEAD%2Fdocs%2Fimg%2Flogo.svg&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
+
+轻量级、模块化和多功能的Minecraft Bedrock Server BDS插件加载器，曾被称为LiteLoaderBDS
+
 LeviLamina是一个非官方的插件加载器，旨在为Minecraft Bedrock Server BDS提供必不可少的API支持。它拥有全面的API，一系列的实用接口，一个强大的事件系统，以及对基本接口的全面支持。LeviLamina提供了一个广泛的API，一个强大的事件系统，以及丰富的封装开发基础设施接口，为增强Bedrock Edition BDS的附加游戏功能和功能提供了坚实的基础。通过利用插件，扩展BDS功能的过程变得轻而易举，具有用户友好的开发过程和灵活的方法。
 
 开发者可以轻松地用C++，JavaScript，Lua，Python，C#等语言编写插件。这种无缝集成赋予了他们轻松扩展和个性化BDS功能的能力，促进了直观的学习体验和无与伦比的灵活性。
@@ -12,15 +16,48 @@ LeviLamina（以下简称“本软件”）由LiteLDev（以下简称“开发�
 
 开发者保留随时修改、更新或终止本软件及其相关服务的权利，无需事先通知用户。用户应备份重要数据并定期检查本软件的更新。用户在使用本软件时应遵守相关法律法规，尊重他人的知识产权和隐私权，不得将本软件用于任何非法或侵权活动。如果用户违反上述规定，给任何第三方造成任何损害或被任何第三方索赔，开发者不承担任何责任。如果您对本免责声明有任何疑问或意见，请联系开发者。
 
-## 背景
+## 安装
 
-Minecraft Bedrock Edition的最初版本缺乏Minecraft Java Edition中存在的广泛的模组和服务器插件生态系统，从而限制了其游戏可能性。一群精通Minecraft Bedrock Server的C++爱好者，进行了分析，并利用逆向工程技术和钩子注入机制，干预了游戏服务器的运行，从而开创了第一套服务器插件的开发。
+该项目使用 [lip](https://github.com/lippkg/lip)。如果您尚未在本地安装，请前往查看。
 
-然而，这种开发范式遇到了一些挑战。首先，缺乏底层框架的支持，使得插件开发过程中需要依赖各种低级工具来进行符号分析、注入实现、钩子注册等功能。这导致了不同插件之间的代码冗余和重复，以及潜在的冲突。其次，缺乏明确的类型定义，迫使开发者在创建插件时进行逆向工程分析，导致了开发门槛的提高和效率的降低。
+首先，创建一个新的目录用于您的Minecraft服务器，并进入该目录：
 
-为了应对这些困境，前期项目LiteLoaderBDS的维护者，构建了一个基于注入的插件加载引擎和一个插件开发框架。此外，他们还提供了类型信息，使插件开发者无需深入了解底层原理就能创建插件。这大大降低了插件开发的入门难度，促进了插件生态系统的繁荣。
+```sh
+mkdir myserver
+cd myserver
+```
 
-然而，随着LiteLoaderBDS的进展，一些问题也暴露出来。早期的设计没有考虑到未来的发展，使得许多方面过时和难以使用现代化的工具，从而无法满足最新的性能要求。此外，它的紧耦合设计在适应新版本的Minecraft Bedrock Server时也需要付出巨大的努力。因此，LiteLDev决定从头开始，利用现有的专业知识，进行全面的框架重设计，培育一个对维护者、开发者和用户都友好的插件引擎。
+接下来，使用lip安装捆绑了Minecraft Bedrock Server的LeviLamina：
+
+```sh
+lip install github.com/LiteLDev/LeviLamina
+```
+
+如需更多信息，请参阅[文档](https://levilamina.liteldev.com)。
+
+### 更新
+
+在涉及数据安全时，我们建议不要在当前位置更新LeviLamina。相反，我们建议创建一个新目录，在新目录中安装新版本的LeviLamina，并将旧位置的`worlds`目录复制到新目录中。然后，按照插件开发者提供的说明，将您使用的插件的配置文件和数据文件迁移到新目录中。
+
+然而，如果您坚持要在相同位置更新，您可以使用以下命令来更新LeviLamina：
+
+```sh
+lip install --upgrade github.com/LiteLDev/LeviLamina
+```
+
+## 使用方法
+
+要启动服务器，只需运行`bedrock_server_mod.exe`：
+
+```sh
+./bedrock_server_mod.exe
+```
+
+如需更多信息，请参阅[文档](https://levilamina.liteldev.com)。
+
+## 星星历史
+
+![星星历史图](https://api.star-history.com/svg?repos=LiteLDev/LeviLamina&type=Date)
 
 ## 感谢
 
@@ -30,7 +67,7 @@ Minecraft Bedrock Edition的最初版本缺乏Minecraft Java Edition中存在的
 
 欢迎参与！[打开一个问题](https://github.com/LiteLDev/LeviLamina/issues/new/choose)或提交Pull Requests。
 
-LeviLamina遵循[贡献者契约](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)行为准则。
+LeviLamina遵循[Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)行为准则。
 
 ### 贡献者
 
@@ -40,4 +77,4 @@ LeviLamina遵循[贡献者契约](https://www.contributor-covenant.org/version/2
 
 ## 许可证
 
-[LGPL-3.0-only](https://github.com/LiteLDev/LeviLamina/blob/HEAD/LICENSE.md) © 2021-2023 LiteLDev
+LGPL-3.0-only © LiteLDev
