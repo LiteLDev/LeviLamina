@@ -16,23 +16,21 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
     origin();
 
     auto nbt = CompoundTag{
-        {
-         {"anull", nullptr},
-         {"string?", R"(streee _ _o-ix 我超, utf8 "\asfa%"*)##q)$\\"\Q34\\""'':)"_tag},
-         {"num", 1},
-         {"nums", 3i16},
-         {"byte", 127i8},
-         {"list", ListTag{5_b, ByteTag{true}, ByteTag{false}, -2_b}},
-         {"compound",
-             CompoundTag{{
-                 {"float", 0.1f},
-                 {"long", 10000ui64},
-                 {"double", 0.3},
-                 {"sdouble", 1.0},
-             }}},
-         {"bytearray", ByteArrayTag{{1, 2, 3, 4, 5, -2, -3, -6}}},
-         {"intarray", IntArrayTag{{1, 2, 3, 4, 5, -2, -3, -6}}},
-         }
+        {"anull",     nullptr                                                           },
+        {"string?",   R"(streee _ _o-ix 我超, utf8 "\asfa%"*)##q)$\\"\Q34\\""'':)"_tag},
+        {"num",       1                                                                 },
+        {"nums",      3i16                                                              },
+        {"byte",      127i8                                                             },
+        {"list",      ListTag{5_b, ByteTag{true}, ByteTag{false}, -2_b}                 },
+        {"compound",
+         CompoundTag{
+             {"float", 0.1f},
+             {"long", 10000ui64},
+             {"double", 0.3},
+             {"sdouble", 1.0},
+         }                                                                              },
+        {"bytearray", ByteArrayTag{{1, 2, 3, 4, 5, -2, -3, -6}}                         },
+        {"intarray",  IntArrayTag{{1, 2, 3, 4, 5, -2, -3, -6}}                          },
     };
 
     nbt["some"]["new"]["compound"]          = nbt;
