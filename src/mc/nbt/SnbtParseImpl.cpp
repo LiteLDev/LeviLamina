@@ -592,6 +592,7 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
     }
 
     if (s.front() == ']') {
+        s.remove_prefix(1);
         return ListTag{};
     }
 
@@ -687,11 +688,9 @@ std::optional<CompoundTag> parseCompound(std::string_view& s) {
 } // namespace
 namespace ll::nbt::detail {
 std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s) {
-
-    if (!skipWhitespace(s)) {
+    if (!skipWhitespace(s) || s.empty()) {
         return std::nullopt;
     }
-
     std::optional<CompoundTagVariant> res = std::nullopt;
 
     switch (s.front()) {

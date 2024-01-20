@@ -149,4 +149,19 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
 
     ll::logger.debug("\n{}", replaceAnsiToMcCode(nbt.toSnbt(SnbtFormat::Colored | SnbtFormat::Console)));
     ll::logger.debug("\n{}", (nbt2.toSnbt(SnbtFormat::Colored)));
+
+
+    ll::logger.debug(
+        "\n{}",
+        CompoundTag::fromSnbt(R"({
+    Findable: 0b,
+    Items: [],
+    id: Chest,
+    isMovable: 1b,
+    x: -3,
+    y: 88,
+    z: -1
+})")
+            ->toSnbt(SnbtFormat::PrettyConsolePrint)
+    );
 }
