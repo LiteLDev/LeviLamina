@@ -12,7 +12,7 @@ struct Config {
         int         dimId{};
         std::string base64Nbt;
     };
-    int                                   version = 2;
+    int                                   version = 3;
     std::unordered_map<std::string, Info> dimensionList{};
 };
 extern Config dimConfig;

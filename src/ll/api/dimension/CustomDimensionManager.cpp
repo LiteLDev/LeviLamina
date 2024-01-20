@@ -120,12 +120,16 @@ struct CustomDimensionManager::Impl {
 
 CustomDimensionManager::CustomDimensionManager() : impl(std::make_unique<Impl>()) {
     std::lock_guard lock{impl->mMapMutex};
+    CustomDimensionConfig::setDimensionConfigPath();
     CustomDimensionConfig::loadConfigFile();
     if (!CustomDimensionConfig::dimConfig.dimensionList.empty()) {
         for (auto& [name, info] : CustomDimensionConfig::dimConfig.dimensionList) {
             impl->customDimensionMap.emplace(
                 name,
-                Impl::DimensionInfo{info.dimId, *CompoundTag::fromBinaryNbt(base64_utils::decode(info.base64Nbt))}
+                Impl::DimensionInfo{
+                    info.dimId,
+                    *CompoundTag::fromBinaryNbt(string_utils::decompress(base64_utils::decode(info.base64Nbt)))
+                }
             );
         }
         impl->mNewDimensionId += static_cast<int>(impl->customDimensionMap.size());
@@ -150,12 +154,19 @@ DimensionType CustomDimensionManager::addDimension(
     bool                newDim{};
     if (impl->customDimensionMap.contains(dimName)) {
         info = impl->customDimensionMap.at(dimName);
-        loggerMoreDimMag.debug("The dimension already registry. use old id, name: {}, id: {}", dimName, info.id.id);
+        loggerMoreDimMag.debug(
+            "The dimension already registry. use old id, name: {}, id: {}, \ndata: {}",
+            dimName,
+            info.id.id,
+            info.nbt.toSnbt()
+        );
     } else {
         // Assign new id
         info.id  = impl->mNewDimensionId++;
         info.nbt = data();
         newDim   = true;
+        loggerMoreDimMag
+            .debug("registry new dimension, name: {}, id: {}, \ndata: {}", dimName, info.id.id, info.nbt.toSnbt());
     };
 
     // registry create dimension function
@@ -191,7 +202,10 @@ DimensionType CustomDimensionManager::addDimension(
         impl->customDimensionMap.emplace(dimName, info);
         CustomDimensionConfig::dimConfig.dimensionList.emplace(
             dimName,
-            CustomDimensionConfig::Config::Info{info.id, base64_utils::encode(info.nbt.toBinaryNbt())}
+            CustomDimensionConfig::Config::Info{
+                info.id,
+                base64_utils::encode(string_utils::compress(info.nbt.toBinaryNbt()))
+            }
         );
         CustomDimensionConfig::saveConfigFile();
     }

@@ -52,7 +52,6 @@ class ServerLevel;
 class Level : public ILevel, public BlockSourceListener, public IWorldRegistriesProvider {
 public:
     [[nodiscard]] std::string const& getLevelName() const { return getLevelData().getLevelName(); }
-    [[nodiscard]] std::string        getLevelPath() const { return "./worlds/" + getLevelName(); }
 
     [[nodiscard]] ServerLevel& asServer() { return *reinterpret_cast<ServerLevel*>(this); }
 

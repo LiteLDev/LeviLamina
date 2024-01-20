@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class IBlockWorldGenAPI;
+class BlockPos;
+class Random;
+class RenderParams;
+
 class IFeature {
 public:
     // prevent constructor by default
