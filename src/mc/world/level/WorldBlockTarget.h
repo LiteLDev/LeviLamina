@@ -1,12 +1,19 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/BlockSource.h"
+#include "mc/world/level/WorldGenContext.h"
 
 // auto generated inclusion list
 #include "mc/world/level/IBlockWorldGenAPI.h"
 #include "mc/world/level/block/utils/BlockDataFetchResult.h"
 
 class WorldBlockTarget : public ::IBlockWorldGenAPI {
+public:
+    BlockSource&    mBlockSource;          // this+0x8
+    WorldGenContext mWorldGenContext;      // this+0x10
+    bool            mBlockSimpleIsAllowed; // this+0x60
+
 public:
     // prevent constructor by default
     WorldBlockTarget& operator=(WorldBlockTarget const&);

@@ -7,6 +7,9 @@
 
 class RenderParams {
 public:
+    char filler[0x1F0]; // BDS1.20.51 ActorDefinitionDescriptor::_executeEvent line=256
+
+public:
     // prevent constructor by default
     RenderParams& operator=(RenderParams const&);
 

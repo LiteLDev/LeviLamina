@@ -15,6 +15,7 @@ namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class VanillaTreeFeature : public ::ITreeFeature {
+    // size:ok
 public:
     // prevent constructor by default
     VanillaTreeFeature& operator=(VanillaTreeFeature const&);

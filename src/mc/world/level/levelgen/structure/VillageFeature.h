@@ -7,6 +7,9 @@
 
 class VillageFeature : public ::StructureFeature {
 public:
+    char filler[64]; // BDS1.20.51 OverworldDimension::makeStructureFeatures line=129
+
+public:
     // prevent constructor by default
     VillageFeature& operator=(VillageFeature const&);
     VillageFeature(VillageFeature const&);
@@ -42,7 +45,7 @@ public:
     createStructureStart(class Dimension& generator, class BiomeSource const& biomeSource, class Random& random, class ChunkPos const& chunkPos, class IPreliminarySurfaceProvider const&);
 
     // symbol: ??0VillageFeature@@QEAA@IHH@Z
-    MCAPI VillageFeature(uint seed, int, int);
+    MCAPI VillageFeature(uint seed, int townSpacing, int minTownSeparation);
 
     // NOLINTEND
 };
