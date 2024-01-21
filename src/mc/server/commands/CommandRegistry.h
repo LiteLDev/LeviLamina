@@ -111,7 +111,7 @@ public:
 
     class Symbol {
     public:
-        int mValue{}; // this+0x0
+        int mValue; // this+0x0
 
         Symbol() = default;
 
