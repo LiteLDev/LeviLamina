@@ -153,3 +153,18 @@ jobs:
             build/windows/x64/debug/LeviLamina.dll
             build/windows/x64/debug/LeviLamina.lib
             build/windows/x64/debug/LeviLamina.pdb
+
+  check-style:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - run: |
+          npm install clang-format@1.8.0
+
+      - run: |
+          npx clang-format --dry-run --Werror $(find src/ -type f -name '*.cpp' -o -name '*.h')
