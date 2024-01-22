@@ -10,6 +10,9 @@ public:
     IBlockWorldGenAPI();
 
 public:
+    // vIndex: 0
+    virtual ~IBlockWorldGenAPI() = default;
+
     // NOLINTBEGIN
     // symbol: ?canGetChunk@IBlockWorldGenAPI@@UEBA_NXZ
     MCVAPI bool canGetChunk() const;
