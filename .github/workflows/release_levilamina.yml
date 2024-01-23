@@ -89,8 +89,8 @@ jobs:
 
       - name: Copy README, LICENSE and CHANGELOG
         run: |
-          cp CHANGELOG.md LICENSE.md README.md release/release/
-          cp CHANGELOG.md LICENSE.md README.md release/debug/
+          cp CHANGELOG.md COPYING COPYING.LESSER README.md release/release/
+          cp CHANGELOG.md COPYING COPYING.LESSER README.md release/debug/
 
       - name: Archive release release
         run: |
