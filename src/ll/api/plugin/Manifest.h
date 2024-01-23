@@ -34,7 +34,7 @@ struct Manifest {
     std::string                                                 name;
     std::string                                                 type;
     std::optional<bool>                                         passive;
-    std::optional<Version>                                      version;
+    std::optional<data::Version>                                version;
     std::optional<std::string>                                  author;
     std::optional<std::string>                                  description;
     std::optional<std::unordered_set<Dependency>>               dependencies;

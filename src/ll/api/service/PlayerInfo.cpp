@@ -15,7 +15,7 @@ public:
     std::unordered_map<mce::UUID, std::shared_ptr<PlayerInfoEntry>>        uuids;
     std::unordered_map<std::string_view, std::shared_ptr<PlayerInfoEntry>> xuids;
     std::unordered_map<std::string_view, std::shared_ptr<PlayerInfoEntry>> names;
-    KeyValueDB         storage{u8"plugins/LeviLamina/data/playerinfo"};
+    data::KeyValueDB   storage{u8"plugins/LeviLamina/data/playerinfo"};
     event::ListenerPtr listener;
 
     void addPlayer(mce::UUID uuid, std::string xuid, std::string name) {

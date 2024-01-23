@@ -4,7 +4,7 @@
 #include <unordered_set>
 #include <vector>
 
-namespace ll::inline data {
+namespace ll::data {
 template <class T>
 class DependencyGraph {
     struct Data {
@@ -120,4 +120,4 @@ public:
         return {sorted, unsorted};
     }
 };
-} // namespace ll::inline data
+} // namespace ll::data

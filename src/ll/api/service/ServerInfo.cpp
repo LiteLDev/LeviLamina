@@ -12,11 +12,11 @@ static std::atomic<ServerStatus> status;
 void                             setServerStatus(ServerStatus value) { status = value; }
 ServerStatus                     getServerStatus() { return status.load(); }
 
-Version getBdsVersion() {
+data::Version getBdsVersion() {
     static auto ver = [] {
         auto info    = Common::getBuildInfo();
-        auto v       = Version{info.mBuildId};
-        v.preRelease = PreRelease{};
+        auto v       = data::Version{info.mBuildId};
+        v.preRelease = data::PreRelease{};
         v.preRelease->values.emplace_back((uint16_t)SharedConstants::RevisionVersion);
         v.preRelease->values.emplace_back((uint16_t)SharedConstants::NetworkProtocolVersion);
         v.build = info.mCommitId.substr(0, 9);
@@ -25,9 +25,9 @@ Version getBdsVersion() {
     return ver;
 }
 
-Version getLoaderVersion() {
+data::Version getLoaderVersion() {
     static auto ver = [] {
-        auto v = Version{
+        auto v = data::Version{
             LL_VERSION_MAJOR,
             LL_VERSION_MINOR,
             LL_VERSION_PATCH,

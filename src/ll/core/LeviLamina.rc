@@ -1,20 +1,33 @@
-// Microsoft Visual C++ generated resource script.
-//
-#include "Resource.h"
-
-#define APSTUDIO_READONLY_SYMBOLS
 #include "ll/core/Version.h"
 #include "winres.h"
 
 #pragma code_page(65001)
 
-VS_VERSION_INFO VERSIONINFO FILEVERSION LL_VERSION_MAJOR, LL_VERSION_MINOR,
-    LL_VERSION_PATCH PRODUCTVERSION     LL_VERSION_MAJOR, LL_VERSION_MINOR,
-    LL_VERSION_PATCH                    FILEFLAGSMASK 0x3fL FILEFLAGS LL_FILE_VERSION_FLAG
-        FILEOS 0x40004L FILETYPE 0x2L FILESUBTYPE 0x0L BEGIN BLOCK "StringFileInfo" BEGIN BLOCK "080404b0" BEGIN VALUE
-                                                                   "CompanyName",
-    "LiteLDev" VALUE "FileDescription", "A light-weight plugin loader for Bedrock Dedicated Server" VALUE "FileVersion",
-    LL_FILE_VERSION_STRING VALUE "InternalName", "LeviLamina.dll" VALUE "LegalCopyright",
-    "Copyright (c) 2021-present LiteLDev. Distributed under LGPL-3.0." VALUE "OriginalFilename",
-    "LeviLamina.dll" VALUE "ProductName", "LeviLamina for BDS" VALUE "ProductVersion",
-    LL_FILE_VERSION_STRING END END BLOCK "VarFileInfo" BEGIN VALUE "Translation", 0x804, 1200 END END
+VS_VERSION_INFO VERSIONINFO
+    FILEVERSION LL_VERSION_MAJOR, LL_VERSION_MINOR, LL_VERSION_PATCH
+    PRODUCTVERSION LL_VERSION_MAJOR, LL_VERSION_MINOR, LL_VERSION_PATCH
+    FILEFLAGSMASK 0x3fL
+    FILEFLAGS LL_FILE_VERSION_FLAG
+    FILEOS 0x40004L
+    FILETYPE 0x2L
+    FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "CompanyName", "LiteLDev"
+            VALUE "FileDescription", "A light-weight plugin loader for Bedrock Dedicated Server"
+            VALUE "FileVersion", LL_FILE_VERSION_STRING
+            VALUE "InternalName", "LeviLamina.dll"
+            VALUE "LegalCopyright", "Copyright (c) 2021-present LiteLDev. Distributed under LGPL-3.0."
+            VALUE "OriginalFilename", "LeviLamina.dll"
+            VALUE "ProductName", "LeviLamina for BDS"
+            VALUE "ProductVersion", LL_FILE_VERSION_STRING
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END

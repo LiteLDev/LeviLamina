@@ -47,7 +47,7 @@ public:
 
     int version = 2;
 
-    ll::Version ver;
+    ll::data::Version ver;
 
     bool        someFlag = false;
     bool        eeeeFlag = true;

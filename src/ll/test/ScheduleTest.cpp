@@ -85,7 +85,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
          // });
      */
 
-    ll::DependencyGraph<std::string> dep;
+    ll::data::DependencyGraph<std::string> dep;
     dep.emplaceDependencies("a", {"b", "c", "e"});
     dep.emplaceDependencies("b", {"c"});
     dep.emplaceDependencies("c", {"d"});

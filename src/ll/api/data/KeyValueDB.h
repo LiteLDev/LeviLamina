@@ -9,7 +9,7 @@
 
 #include "ll/api/base/Macro.h"
 
-namespace ll::inline data {
+namespace ll::data {
 class KeyValueDB {
 private:
     class KeyValueDBImpl;
@@ -40,4 +40,4 @@ public:
     LLNDAPI std::vector<std::string> getAllKeys() const;
 };
 
-} // namespace ll::inline data
+} // namespace ll::data

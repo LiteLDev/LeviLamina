@@ -18,8 +18,8 @@ namespace ll::plugin {
 using namespace i18n_literals;
 
 struct PluginRegistrar::Impl {
-    std::recursive_mutex         mutex;
-    DependencyGraph<std::string> deps;
+    std::recursive_mutex               mutex;
+    data::DependencyGraph<std::string> deps;
 };
 
 PluginRegistrar::PluginRegistrar() : impl(std::make_unique<Impl>()) {}

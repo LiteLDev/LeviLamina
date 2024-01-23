@@ -76,14 +76,14 @@ getFileVersion(std::wstring_view filePath, ushort& ver1, ushort& ver2, ushort& v
     return true;
 }
 
-Version getVersion(std::filesystem::path const& filePath) {
-    ll::Version version;
-    ushort      build_ver{};
-    uint        flag{};
+data::Version getVersion(std::filesystem::path const& filePath) {
+    data::Version version;
+    ushort        build_ver{};
+    uint          flag{};
     if (!getFileVersion(filePath.native(), version.major, version.minor, version.patch, build_ver, flag)) {
-        return Version{};
+        return {};
     } else {
-        version.preRelease = PreRelease{};
+        version.preRelease = data::PreRelease{};
         auto& vec          = version.preRelease->values;
         vec.emplace_back(build_ver);
         if (flag & VS_FF_DEBUG) vec.emplace_back("debug");
