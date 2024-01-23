@@ -16,6 +16,10 @@
 namespace Bedrock { class EnableNonOwnerReferences; }
 // clang-format on
 
+class Level;
+class LevelChunkBuilderData;
+class Dimension;
+
 class ChunkSource : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // ChunkSource inner types define
@@ -24,17 +28,17 @@ public:
         Deferred = 0x1,
     };
 
+    /*These member variables were obtained by analyzing BDS 1.20.51 using IDA.*/
+    int                          mChunkSide;             // this+0x18
+    Level*                       mLevel;                 // this+0x20
+    Dimension*                   mDimension;             // this+0x28
+    ChunkSource*                 mParent;                // this+0x30
+    std::unique_ptr<ChunkSource> mOwnedParent;           // this+0x38
+    LevelChunkBuilderData*       mLevelChunkBuilderData; // this+0x40
+    std::atomic_bool             mShuttingDown;          // this+0x48
+    char                         filler[32];             // the other four member variables
 
-    // int                          mChunkSide;             // this+0x18
-    // Level*                       mLevel;                 // this+0x20
-    // Dimension*                   mDimension;             // this+0x28
-    // ChunkSource*                 mParent;                // this+0x30
-    // std::unique_ptr<ChunkSource> mOwnedParent;           // this+0x38
-    // LevelChunkBuilderData*       mLevelChunkBuilderData; // this+0x40
-    // std::atomic_bool             mShuttingDown;          // this+0x48
-    // void*                        unknownPtr              // this+0x50
-
-    uchar filler[0x70 - sizeof(Bedrock::EnableNonOwnerReferences)];
+    // uchar filler[0x70 - sizeof(Bedrock::EnableNonOwnerReferences)];
 
 public:
     // prevent constructor by default

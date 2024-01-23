@@ -82,12 +82,12 @@ ModalForm::ModalForm(
     Callback    callback
 )
 : impl(std::make_unique<ModalFormImpl>(
-      std::move(title),
-      std::move(content),
-      std::move(buttonLeft),
-      std::move(buttonRight),
-      std::move(callback)
-  )) {}
+    std::move(title),
+    std::move(content),
+    std::move(buttonLeft),
+    std::move(buttonRight),
+    std::move(callback)
+)) {}
 
 ModalForm::~ModalForm() = default;
 
