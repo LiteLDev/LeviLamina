@@ -7,7 +7,7 @@
 
 class SynchedActorDataEntityWrapper {
 public:
-    int                                             (**_vptr_SynchedActorDataEntityWrapper)(void);
+    int (**_vptr_SynchedActorDataEntityWrapper)(void);
     gsl::not_null<class SynchedActorDataComponent*> mData;
 
     template <typename T>

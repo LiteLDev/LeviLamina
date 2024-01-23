@@ -155,16 +155,13 @@ jobs:
             build/windows/x64/debug/LeviLamina.pdb
 
   check-style:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      - run: |
+          choco install llvm -y --version=17.0.6
 
       - run: |
-          npm install clang-format@1.8.0
-
-      - run: |
-          npx clang-format --dry-run --Werror $(find src/ -type f -name '*.cpp' -o -name '*.h')
+          Get-ChildItem src/ -Filter *.cpp -Recurse | ForEach-Object { clang-format -i -Werror $_.FullName }
+          Get-ChildItem src/ -Filter *.h -Recurse | ForEach-Object { clang-format -i -Werror $_.FullName }

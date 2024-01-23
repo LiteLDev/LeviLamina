@@ -226,7 +226,7 @@ MCAPI std::vector<std::string> splitLines(
     std::vector<std::string> const& delims,
     bool                            includeDelimCharsInResult,
     bool                            includeEmptyLines,
-    std::istream&                   (*fnGetline)(std::istream&, std::string&)
+    std::istream& (*fnGetline)(std::istream&, std::string&)
 );
 
 // symbol:

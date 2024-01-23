@@ -51,11 +51,11 @@ namespace ll::utils {
 
 template <size_t len>
 struct PatchHelper {
-    uchar               data[len];
+    uchar data[len];
     using ref_t = uchar (&)[len];
-    constexpr bool      operator==(ref_t ref) const noexcept { return memcmp(data, ref, sizeof data) == 0; }
-    constexpr bool      operator!=(ref_t ref) const noexcept { return memcmp(data, ref, sizeof data) != 0; }
-    constexpr bool      operator==(PatchHelper const& ref) const noexcept {
+    constexpr bool operator==(ref_t ref) const noexcept { return memcmp(data, ref, sizeof data) == 0; }
+    constexpr bool operator!=(ref_t ref) const noexcept { return memcmp(data, ref, sizeof data) != 0; }
+    constexpr bool operator==(PatchHelper const& ref) const noexcept {
         return memcmp(data, ref.data, sizeof data) == 0;
     }
     constexpr bool operator!=(PatchHelper const& ref) const noexcept {

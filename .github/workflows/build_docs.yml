@@ -1,5 +1,11 @@
 on:
   push:
+    paths:
+      - .github/workflows/build_docs.yml
+      - docs/**
+      - src/**/*.h
+      - Doxyfile
+      - DoxygenLayout.xml
   workflow_dispatch:
 
 jobs:
