@@ -387,7 +387,7 @@ Firstly, let's add a member variable to the `Plugin` class to store the database
 ```cpp
 // ...
 
-#include <ll/api/base/KeyValueDB.h>
+#include <ll/api/data/KeyValueDB.h>
 
 class Plugin {
 
@@ -411,7 +411,7 @@ Next, in the constructor of the `Plugin` class, let's initialize the database in
 
 #include <memory>
 
-#include <ll/api/base/KeyValueDB.h>
+#include <ll/api/data/KeyValueDB.h>
 
 // ...
 

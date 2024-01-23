@@ -396,7 +396,7 @@ Plugin::Plugin(ll::plugin::Plugin& self) : mSelf(self) {
 ```cpp
 // ...
 
-#include <ll/api/base/KeyValueDB.h>
+#include <ll/api/data/KeyValueDB.h>
 
 class Plugin {
 
@@ -420,7 +420,7 @@ private:
 
 #include <memory>
 
-#include <ll/api/base/KeyValueDB.h>
+#include <ll/api/data/KeyValueDB.h>
 
 // ...
 
