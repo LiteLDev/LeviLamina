@@ -31,8 +31,8 @@ public:
     };
 
     AirBlockCache*                              airBlockCache;             // this+0x78
-    std::unique_ptr<HardcodedSpawnAreaRegistry> mHardcodedSpawnTypes;      // this+0x78
-    std::unique_ptr<StructureFeatureRegistry>   mStructureFeatureRegistry; // this+0x80
+    std::unique_ptr<HardcodedSpawnAreaRegistry> mHardcodedSpawnTypes;      // this+0x80
+    std::unique_ptr<StructureFeatureRegistry>   mStructureFeatureRegistry; // this+0x88
 
 public:
     // prevent constructor by default
