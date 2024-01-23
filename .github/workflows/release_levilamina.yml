@@ -66,6 +66,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - id: validate-release
+        name: Validate release stuff (tooth.json, CHANGELOG.md, etc.)
+        run: |
+          python scripts/validate_release.py --tag ${{ github.event.release.tag_name }} > release_notes.md
+          echo release_notes=$(cat release_notes.md) >> $GITHUB_OUTPUT
+
       - name: Download release artifact
         uses: actions/download-artifact@v3
         with:
@@ -104,8 +110,8 @@ jobs:
           zip -r ../../levilamina-debug-windows-x64.zip *
           cd ../../
 
-      - name: Calculate SHA256
-        id: calculate-sha256
+      - id: calculate-sha256
+        name: Calculate SHA256
         run: |
           echo release=$(sha256sum levilamina-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
           echo debug=$(sha256sum levilamina-debug-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
@@ -114,6 +120,8 @@ jobs:
         with:
           append_body: true
           body: |
+            ${{ steps.validate-release.outputs.release_notes }}
+
             | File | SHA256 |
             | ---- | ------ |
             | levilamina-windows-x64.zip | ${{ steps.calculate-sha256.outputs.release }} |
