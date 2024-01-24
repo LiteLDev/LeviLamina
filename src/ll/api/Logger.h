@@ -66,12 +66,13 @@ public:
         );
 
         template <typename... Args>
-        void operator()(fmt::format_string<Args...> fmt, Args&&... args) const noexcept(sizeof...(args) == 0) {
-            if constexpr (sizeof...(args) == 0) {
-                print(fmt);
-            } else {
-                print(fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
-            }
+        void operator()(fmt::format_string<Args...> fmt, Args&&... args) const {
+            print(fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
+        }
+
+        template <ll::concepts::IsString S>
+        void operator()(S const& msg) const {
+            print(msg);
         }
 
         void setPlayerOutputFunc(player_output_fn const& func) { playerOutputCallback = func; }
