@@ -66,8 +66,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - id: validate-release
-        name: Validate release stuff (tooth.json, CHANGELOG.md, etc.)
+      - name: Validate release stuff (tooth.json, CHANGELOG.md, etc.)
         run: |
           python scripts/validate_release.py --tag ${{ github.event.release.tag_name }} > release_notes.md
           echo release_notes=$(cat release_notes.md) >> $GITHUB_OUTPUT
@@ -116,11 +115,14 @@ jobs:
           echo release=$(sha256sum levilamina-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
           echo debug=$(sha256sum levilamina-debug-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
 
+      - id: extract-release-notes
+        uses: ffurrer2/extract-release-notes@v1
+
       - uses: softprops/action-gh-release@v1
         with:
           append_body: true
           body: |
-            ${{ steps.validate-release.outputs.release_notes }}
+            ${{ steps.extract-release-notes.outputs.release_notes }}
 
             | File | SHA256 |
             | ---- | ------ |
