@@ -18,7 +18,8 @@ add_requires("rapidjson 1.1.0")
 add_requires("ctre 3.8.1")
 add_requires("pcg_cpp 1.0.0")
 add_requires("pfr 2.1.1")
-add_requires("preloader 1.4.0")
+add_requires("demangler v17.0.6")
+add_requires("preloader 1.4.2")
 add_requires("symbolprovider 1.1.0")
 
 if has_config("tests") then
@@ -107,6 +108,7 @@ target("LeviLamina")
         "ctre",
         "pcg_cpp",
         "pfr",
+        "demangler",
         "preloader",
         "symbolprovider",
         { public = true }
