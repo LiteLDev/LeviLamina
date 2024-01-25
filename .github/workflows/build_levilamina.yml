@@ -23,14 +23,13 @@ jobs:
 
       - uses: xmake-io/github-action-setup-xmake@v1
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           path: |
             ~/AppData/Local/.xmake
-            .xmake
-          key: xmake-levilamina-windows-x64-${{ github.sha }}
+          key: xmake-${{ hashFiles('xmake.lua') }}
           restore-keys: |
-            xmake-levilamina-windows-x64-
+            xmake-
 
       - run: |
           xmake repo -u
@@ -58,14 +57,13 @@ jobs:
 
       - uses: xmake-io/github-action-setup-xmake@v1
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           path: |
             ~/AppData/Local/.xmake
-            .xmake
-          key: xmake-levilamina-debug-windows-x64-${{ github.sha }}
+          key: xmake-${{ hashFiles('xmake.lua') }}
           restore-keys: |
-            xmake-levilamina-debug-windows-x64-
+            xmake-
 
       - run: |
           xmake repo -u
@@ -93,14 +91,13 @@ jobs:
 
       - uses: xmake-io/github-action-setup-xmake@v1
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           path: |
             ~/AppData/Local/.xmake
-            .xmake
-          key: xmake-levilamina-with-tests-windows-x64-${{ github.sha }}
+          key: xmake-${{ hashFiles('xmake.lua') }}
           restore-keys: |
-            xmake-levilamina-with-tests-windows-x64-
+            xmake-
 
       - run: |
           xmake repo -u
@@ -128,14 +125,13 @@ jobs:
 
       - uses: xmake-io/github-action-setup-xmake@v1
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         with:
           path: |
             ~/AppData/Local/.xmake
-            .xmake
-          key: xmake-levilamina-debug-with-tests-windows-x64-${{ github.sha }}
+          key: xmake-${{ hashFiles('xmake.lua') }}
           restore-keys: |
-            xmake-levilamina-debug-with-tests-windows-x64-
+            xmake-
 
       - run: |
           xmake repo -u
