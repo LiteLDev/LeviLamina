@@ -2,13 +2,11 @@ on:
   push:
     paths:
       - .github/workflows/build_levilamina.yml
-      - scripts/localbdslibrary.lua
       - src/**
       - xmake.lua
   pull_request:
     paths:
       - .github/workflows/build_levilamina.yml
-      - scripts/localbdslibrary.lua
       - src/**
       - xmake.lua
   workflow_dispatch:
