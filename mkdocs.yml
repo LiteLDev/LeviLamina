@@ -3,12 +3,12 @@ repo_url: https://github.com/LiteLDev/LeviLamina
 
 nav:
   - Home: index.md
+  
+  - quickstart.md
 
   - Install:
-    - install/install_windows.md
-    - install/install_docker.md
-
-  - quickstart.md
+    - install.md
+    - Install on Docker: https://github.com/LiteLDev/levilamina-docker-server
 
   - Tutorials:
     - tutorials/ai_npc_and_assistant.md
@@ -89,6 +89,7 @@ plugins:
           nav_translations:
             Home: 主页
             Install: 安装
+            Install on Docker: 在Docker上安装
             Tutorials: 教程
             Guides: 指南
             Native APIs: 原生API

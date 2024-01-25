@@ -1,4 +1,4 @@
-# 在 Windows 上安装
+# 在Windows上安装
 
 ## 前提条件
 
