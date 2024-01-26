@@ -1,10 +1,27 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/levelgen/synth/AquiferNoises.h"
+#include "mc/world/level/levelgen/synth/OverworldNoises3d.h"
+#include "mc/world/level/levelgen/v1/SurfaceLevelCache.h"
+#include "mc/world/level/block/Block.h"
 
 class Aquifer {
 public:
     // Aquifer inner types declare
+    AquiferNoises*     mAquiferNoises;             // 0
+    OverworldNoises3d* mOverworldNoises3d;         // 8
+    SurfaceLevelCache* mSurfaceLevelCache;         // 16
+    int                seaLevel;                   // 24
+    int                mLastFluidLevel;            // 28
+    float              mLastBarrier;               // 32
+    char               filler1[1];                 // 36
+    bool               mShouldScheduleFluidUpdate; // 37
+    char               filler2[50];                // 38
+    Block*             mWaterBlock;                // 88
+    Block*             mLavaBlock;                 // 96
+    Block*             mFlowingWaterBlock;         // 104
+    Block*             mFlowingLavaBlock;          // 112
     // clang-format off
     struct FluidSample;
     // clang-format on
