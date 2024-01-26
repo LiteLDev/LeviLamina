@@ -29,10 +29,7 @@ public:
     // Aquifer inner types define
     struct FluidSample {
     public:
-        // prevent constructor by default
-        FluidSample& operator=(FluidSample const&);
-        FluidSample(FluidSample const&);
-        FluidSample();
+        char filler[20];
     };
 
 public:
