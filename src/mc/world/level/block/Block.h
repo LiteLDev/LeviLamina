@@ -37,6 +37,9 @@ public:
 
     [[nodiscard]] inline short getData() const { return ll::memory::dAccess<ushort>(this, 8); }
 
+    char filler[0xD0 - 8];
+
+public:
     // prevent constructor by default
     Block& operator=(Block const&);
     Block(Block const&);
