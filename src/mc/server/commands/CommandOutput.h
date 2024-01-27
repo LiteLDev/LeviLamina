@@ -22,16 +22,14 @@ public:
     CommandOutput& operator=(CommandOutput const&);
     CommandOutput();
 
-    template <ll::concepts::IsString S, class First, typename... Args>
-        requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
-    inline void success(S const& fmt, First&& _args, Args&&... args) {
-        success(fmt::format(fmt::runtime(fmt), std::forward<First>(_args), std::forward<Args>(args)...));
+    template <typename... Args>
+    inline void success(fmt::format_string<Args...> fmt, Args&&... args) {
+        success(fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
     }
 
-    template <ll::concepts::IsString S, class First, typename... Args>
-        requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
-    inline void error(S const& fmt, First&& _args, Args&&... args) {
-        error(fmt::format(fmt::runtime(fmt), std::forward<First>(_args), std::forward<Args>(args)...));
+    template <typename... Args>
+    inline void error(fmt::format_string<Args...> fmt, Args&&... args) {
+        error(fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
     }
 
     inline void success(char const* str) { success(std::string{str}); }

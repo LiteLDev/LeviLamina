@@ -6,11 +6,6 @@ class LevelSeed64 {
 public:
     uint64 mValue;
 
-    // prevent constructor by default
-    LevelSeed64& operator=(LevelSeed64 const&);
-    LevelSeed64(LevelSeed64 const&) = default;
-    LevelSeed64();
-
 public:
     // NOLINTBEGIN
     // symbol: ?to32BitRandomSeed@LevelSeed64@@QEBAIXZ
