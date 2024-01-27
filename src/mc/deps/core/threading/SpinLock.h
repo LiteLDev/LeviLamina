@@ -4,6 +4,7 @@
 
 class SpinLock {
 public:
+    char unk[0x20];
     // prevent constructor by default
     SpinLock& operator=(SpinLock const&);
     SpinLock(SpinLock const&);

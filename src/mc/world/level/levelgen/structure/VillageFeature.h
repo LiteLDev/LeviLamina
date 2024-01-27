@@ -7,7 +7,9 @@
 
 class VillageFeature : public ::StructureFeature {
 public:
-    char filler[64]; // BDS1.20.51 OverworldDimension::makeStructureFeatures line=129
+    std::vector<uint64> mBiomeHash;
+    int                 mTownSpacing;
+    int                 mMinTownSeparation;
 
 public:
     // prevent constructor by default
