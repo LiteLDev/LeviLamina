@@ -25,14 +25,14 @@ public:
     AquiferNoises*                    mAquiferNoises;             // 0
     OverworldNoises3d*                mOverworldNoises3d;         // 8
     SurfaceLevelCache*                mSurfaceLevelCache;         // 16
-    int                               seaLevel;                   // 24
+    int                               mSeaLevel;                  // 24
     int                               mLastFluidLevel;            // 28
     float                             mLastBarrier;               // 32
     Aquifer::FluidSample::FluidType   mFluidType;                 // 36
     bool                              mShouldScheduleFluidUpdate; // 37
     BlockPos                          unk_pos_40;                 // 40
     std::vector<Aquifer::FluidSample> unk_vec_52;                 // 52
-    char                              filler_76[8];               // 76
+    uint64_t                          unk_76;                     // 76
     Block*                            mWaterBlock;                // 88 Aquifer::getLastFluidBlockType
     Block*                            mLavaBlock;                 // 96
     Block*                            mFlowingWaterBlock;         // 104
@@ -42,11 +42,11 @@ public:
     // NOLINTBEGIN
     // symbol: ??0Aquifer@@QEAA@AEBVChunkPos@@AEBVAquiferNoises@@AEBUOverworldNoises3d@@AEBVSurfaceLevelCache@@HHH@Z
     MCAPI Aquifer(
-        class ChunkPos const&      chunkPos,
-        class AquiferNoises const& aquiferNoises,
-        struct OverworldNoises3d const&,
-        class SurfaceLevelCache const& surfaceLevelCache,
-        int                            minHeight,
+        class ChunkPos const&           chunkPos,
+        class AquiferNoises const&      aquiferNoises,
+        struct OverworldNoises3d const& overworldNoises3d,
+        class SurfaceLevelCache const&  surfaceLevelCache,
+        int                             minHeight,
         int,
         int seaLevel
     );
