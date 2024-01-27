@@ -38,7 +38,7 @@ jobs:
       - run: |
           xmake -w -y
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: levilamina-windows-x64-${{ github.sha }}
           path: |
@@ -72,7 +72,7 @@ jobs:
       - run: |
           xmake -w -y
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: levilamina-debug-windows-x64-${{ github.sha }}
           path: |
@@ -106,7 +106,7 @@ jobs:
       - run: |
           xmake -w -y
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: levilamina-with-tests-windows-x64-${{ github.sha }}
           path: |
@@ -140,7 +140,7 @@ jobs:
       - run: |
           xmake -w -y
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: levilamina-debug-with-tests-windows-x64-${{ github.sha }}
           path: |
