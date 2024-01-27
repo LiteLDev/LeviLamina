@@ -79,6 +79,9 @@ public:
             mBlock = mIngredient.getBlock();
         }
 
+        inline Type(Type const&) = default;
+        inline Type& operator=(Type const&) = default;
+
     public:
         // NOLINTBEGIN
         // symbol: ??0Type@Recipes@@QEAA@$$QEAV01@@Z
