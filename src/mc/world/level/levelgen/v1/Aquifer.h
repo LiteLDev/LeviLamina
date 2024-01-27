@@ -28,9 +28,8 @@ public:
     int                               seaLevel;                   // 24
     int                               mLastFluidLevel;            // 28
     float                             mLastBarrier;               // 32
-    Aquifer::FluidSample::FluidType   fluidType;                  // 36
+    Aquifer::FluidSample::FluidType   mFluidType;                 // 36
     bool                              mShouldScheduleFluidUpdate; // 37
-    char                              filler_38[2];               // 38
     BlockPos                          unk_pos_40;                 // 40
     std::vector<Aquifer::FluidSample> unk_vec_52;                 // 52
     char                              filler_76[8];               // 76
