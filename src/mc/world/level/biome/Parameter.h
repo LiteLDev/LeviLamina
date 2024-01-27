@@ -18,9 +18,9 @@ public:
     MCAPI Parameter(float min, float max);
 
     inline Parameter() = default;
-    inline Parameter(const Parameter &) = default;
-    inline Parameter(Parameter &&) = default;
-    inline Parameter &operator=(const Parameter &) = default;
+    inline Parameter(Parameter const&) = default;
+    inline Parameter(Parameter&&) = default;
+    inline Parameter &operator=(Parameter const&) = default;
 
     // symbol: ?fromParameters@Parameter@ClimateUtils@@SA?AU12@AEBU12@0@Z
     MCAPI static struct ClimateUtils::Parameter
