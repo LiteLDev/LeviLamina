@@ -6,6 +6,8 @@ class LevelSeed64 {
 public:
     uint64 mValue;
 
+    explicit LevelSeed64(uint64 value) : mValue(value) {}
+
 public:
     // NOLINTBEGIN
     // symbol: ?to32BitRandomSeed@LevelSeed64@@QEBAIXZ
