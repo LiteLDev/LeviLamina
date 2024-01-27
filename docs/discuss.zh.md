@@ -5,7 +5,7 @@
 我们提供了各种讨论方式,你可以选择你最喜欢的方式。
 
 [![Discord](https://img.shields.io/discord/849252980430864384?style=for-the-badge&logo=discord)
-](https://discord.gg/GDWytKaebw) 
+](https://discord.gg/v5R5P4vRZk) 
 [![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=telegram)
 ](https://t.me/LiteLoader)  
 [![656669024](https://img.shields.io/badge/656669024-red?style=for-the-badge&logo=tencent%20qq)
