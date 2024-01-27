@@ -6,6 +6,7 @@
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/utils/Base64Utils.h"
 #include "ll/core/dimension/CustomDimensionConfig.h"
+#include "ll/core/dimension/FakeDimensionId.h"
 
 #include "mc/math/Vec3.h"
 #include "mc/world/level/Level.h"
@@ -128,12 +129,12 @@ CustomDimensionManager::CustomDimensionManager() : impl(std::make_unique<Impl>()
                 name,
                 Impl::DimensionInfo{
                     info.dimId,
-                    *CompoundTag::fromBinaryNbt(string_utils::decompress(base64_utils::decode(info.base64Nbt)))
-                }
+                    *CompoundTag::fromBinaryNbt(string_utils::decompress(base64_utils::decode(info.base64Nbt)))}
             );
         }
         impl->mNewDimensionId += static_cast<int>(impl->customDimensionMap.size());
     }
+    FakeDimensionId::getInstance();
     CustomDimensionHookList::HookReg::hook();
 };
 
@@ -192,7 +193,7 @@ DimensionType CustomDimensionManager::addDimension(
 
     // modify default Undefined dimension id
     ll::memory::modify(VanillaDimensions::Undefined, [&](auto& uid) {
-        uid = info.id;
+        uid.id = impl->mNewDimensionId;
         loggerMoreDimMag.debug("Set VanillaDimensions::Undefined to {}", uid.id);
     });
 
@@ -204,8 +205,7 @@ DimensionType CustomDimensionManager::addDimension(
             dimName,
             CustomDimensionConfig::Config::Info{
                 info.id,
-                base64_utils::encode(string_utils::compress(info.nbt.toBinaryNbt()))
-            }
+                base64_utils::encode(string_utils::compress(info.nbt.toBinaryNbt()))}
         );
         CustomDimensionConfig::saveConfigFile();
     }

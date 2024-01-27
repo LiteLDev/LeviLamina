@@ -10,6 +10,7 @@
 #include "mc/deps/core/mce/UUID.h"
 #include "mc/math/Vec3.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/world/ActorRuntimeID.h"
 
 class ServerPlayer;
 
@@ -17,8 +18,7 @@ namespace ll::dimension {
 
 class FakeDimensionId {
     struct CustomDimensionIdSetting {
-        bool                  needRemovePacket{};
-        std::function<void()> backDimensionCallback;
+        bool needRemovePacket{};
     };
     std::mutex mMapMutex;
 
@@ -31,13 +31,17 @@ public:
 
     FakeDimensionId();
     ~FakeDimensionId();
-    static Packet&        changePacketDimension(Packet& packet);
-    void                  setNeedRemove(mce::UUID uuid, bool needRemove);
-    bool                  isNeedRemove(mce::UUID uuid);
-    void                  onPlayerGoCustomDimension(mce::UUID uuid, std::function<void()> backDimCallback);
-    void                  onPlayerLeftCustomDimension(mce::UUID uuid, bool isRespawn);
-    std::function<void()> getBackDimensionCallback(mce::UUID uuid);
-
-    bool teleportToCustomDimension(ServerPlayer& player, DimensionType dimensionType, Vec3& pos);
+    static Packet& changePacketDimension(Packet& packet);
+    void           setNeedRemove(mce::UUID uuid, bool needRemove);
+    bool           isNeedRemove(mce::UUID uuid);
+    void           onPlayerGoCustomDimension(mce::UUID uuid);
+    void           onPlayerLeftCustomDimension(mce::UUID uuid, bool isRespawn);
+    void           sendEmptyChunks(const NetworkIdentifier& netId, const Vec3& position, int radius, bool forceUpdate);
+    void           fakeChangeDimension(
+                  const NetworkIdentifier& netId,
+                  ActorRuntimeID           runtimeId,
+                  DimensionType            fakeDimId,
+                  const Vec3&              pos
+              );
 };
 } // namespace ll::dimension

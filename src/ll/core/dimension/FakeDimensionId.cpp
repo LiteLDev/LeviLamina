@@ -5,6 +5,7 @@
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
 
+#include "mc/deps/core/utility/BinaryStream.h"
 #include "mc/entity/systems/ServerPlayerMovementComponent.h"
 #include "mc/entity/utilities/ActorDataIDs.h"
 #include "mc/network/NetworkIdentifierWithSubId.h"
@@ -21,8 +22,10 @@
 #include "mc/network/packet/StartGamePacket.h"
 #include "mc/network/packet/SubChunkPacket.h"
 #include "mc/network/packet/SubChunkRequestPacket.h"
+#include "mc/network/packet/UpdateBlockPacket.h"
 #include "mc/server/LoopbackPacketSender.h"
 #include "mc/server/ServerPlayer.h"
+#include "mc/util/VarIntDataOutput.h"
 #include "mc/world/actor/SynchedActorDataEntityWrapper.h"
 #include "mc/world/level/ChangeDimensionRequest.h"
 #include "mc/world/level/Level.h"
@@ -274,14 +277,6 @@ LL_TYPE_INSTANCE_HOOK(
     auto  player          = getServerPlayer(netId, packet.mClientSubId);
     auto  uuid            = player->getUuid();
     auto& fakeDimensionId = FakeDimensionId::getInstance();
-    if (packet.mAction == PlayerActionType::ChangeDimensionAck) {
-        // second teleport player, this will go target dimension
-        if (fakeDimensionId.getBackDimensionCallback(uuid)) {
-            fakeDimensionId.getBackDimensionCallback(uuid)();
-            logger.debug("go more dimension!");
-            return origin(netId, packet);
-        }
-    }
     if (packet.mAction == PlayerActionType::Respawn) {
         // when player go overworld with die
         if (!fakeDimensionId.isNeedRemove(uuid)) {
@@ -301,26 +296,6 @@ LL_TYPE_INSTANCE_HOOK(
 };
 } // namespace receivepackethook
 
-LL_TYPE_INSTANCE_HOOK(
-    LevelentityChangeDimensionHandler,
-    HookPriority::Normal,
-    Level,
-    "?entityChangeDimension@Level@@UEAAXAEAVActor@@V?$AutomaticID@VDimension@@H@@V?$optional@VVec3@@@std@@@Z",
-    void,
-    Actor&              entity,
-    DimensionType       toId,
-    std::optional<Vec3> entityPos
-) {
-    logger.debug("tp hook, {}", entity.getTypeName());
-    if (entity.getTypeName() != "minecraft:player") {
-        return origin(entity, toId, entityPos);
-    }
-    auto inId = entity.getDimensionId();
-    if (toId == 1 || toId == 2 || inId == 1 || inId == 2) {
-        return origin(entity, toId, entityPos);
-    }
-    FakeDimensionId::getInstance().teleportToCustomDimension((ServerPlayer&)entity, toId, entityPos.value());
-}
 
 LL_TYPE_INSTANCE_HOOK(
     LevelrequestPlayerChangeDimensionHandler,
@@ -337,8 +312,13 @@ LL_TYPE_INSTANCE_HOOK(
         || player.isDead()) {
         return origin(player, std::move(changeRequest));
     }
-    FakeDimensionId::getInstance()
-        .teleportToCustomDimension((ServerPlayer&)player, changeRequest->mToDimensionId, changeRequest->mToPosition);
+    FakeDimensionId::getInstance().fakeChangeDimension(
+        player.getNetworkIdentifier(),
+        player.getRuntimeID(),
+        ll::dimension::FakeDimensionId::temporaryDimId,
+        player.getPosition()
+    );
+    return origin(player, std::move(changeRequest));
 }
 
 
@@ -351,7 +331,6 @@ using HookReg = memory::HookRegistrar<
     sendpackethook::StartGamePacketHandler,
     sendpackethook::ChangeDimensionPacketHandler,
     PlayerdieHandler,
-    LevelentityChangeDimensionHandler,
     LevelrequestPlayerChangeDimensionHandler,
     receivepackethook::ServerNetworkHandlerPlayerActionPacketHandler>;
 
@@ -390,7 +369,7 @@ void FakeDimensionId::setNeedRemove(mce::UUID uuid, bool needRemove) {
     if (mSettingMap.count(uuid)) {
         mSettingMap.at(uuid).needRemovePacket = needRemove;
     } else {
-        mSettingMap.emplace(uuid, CustomDimensionIdSetting{needRemove, nullptr});
+        mSettingMap.emplace(uuid, CustomDimensionIdSetting{needRemove});
     }
 }
 
@@ -401,12 +380,10 @@ bool FakeDimensionId::isNeedRemove(mce::UUID uuid) {
     return false;
 }
 
-void FakeDimensionId::onPlayerGoCustomDimension(mce::UUID uuid, std::function<void()> backDimCallback) {
-    if (mSettingMap.count(uuid)) {
-        mSettingMap.at(uuid).backDimensionCallback = std::move(backDimCallback);
-    } else {
+void FakeDimensionId::onPlayerGoCustomDimension(mce::UUID uuid) {
+    if (!mSettingMap.count(uuid)) {
         std::lock_guard lockGuard{mMapMutex};
-        mSettingMap.emplace(uuid, CustomDimensionIdSetting{false, std::move(backDimCallback)});
+        mSettingMap.emplace(uuid, CustomDimensionIdSetting{false});
     }
 }
 
@@ -414,39 +391,67 @@ void FakeDimensionId::onPlayerLeftCustomDimension(mce::UUID uuid, bool isRespawn
     std::lock_guard lockGuard{mMapMutex};
     if (mSettingMap.count(uuid)) {
         if (isRespawn) {
-            mSettingMap.at(uuid).needRemovePacket      = false;
-            mSettingMap.at(uuid).backDimensionCallback = nullptr;
+            mSettingMap.at(uuid).needRemovePacket = false;
         } else {
             mSettingMap.erase(uuid);
         }
     }
 }
 
-std::function<void()> FakeDimensionId::getBackDimensionCallback(mce::UUID uuid) {
-    if (mSettingMap.count(uuid)) {
-        return mSettingMap.at(uuid).backDimensionCallback;
-    } else {
-        return nullptr;
+void sendEmptyChunk(const NetworkIdentifier& netId, int chunkX, int chunkZ, bool forceUpdate) {
+    std::array<uchar, 4096> biome{};
+    LevelChunkPacket        levelChunkPacket;
+    BinaryStream            binaryStream{levelChunkPacket.mSerializedChunk, false};
+    VarIntDataOutput        varIntDataOutput(&binaryStream);
+
+    varIntDataOutput.writeBytes(&biome, 4096); // write void biome
+    for (int i = 1; i < 8; i++) {
+        varIntDataOutput.writeByte((127 << 1) | 1);
+    }
+    varIntDataOutput.mStream->writeUnsignedChar(0); // write border blocks
+
+    levelChunkPacket.mPos.x          = chunkX;
+    levelChunkPacket.mPos.z          = chunkZ;
+    levelChunkPacket.mCacheEnabled   = false;
+    levelChunkPacket.mSubChunksCount = 0;
+
+    ll::service::getLevel()->getPacketSender()->sendToClient(netId, levelChunkPacket, SubClientId::PrimaryClient);
+
+    if (forceUpdate) {
+        NetworkBlockPosition pos{chunkX << 4, 80, chunkZ << 4};
+        UpdateBlockPacket    blockPacket;
+        blockPacket.mPos         = pos;
+        blockPacket.mLayer       = UpdateBlockPacket::BlockLayer::Standard;
+        blockPacket.mUpdateFlags = BlockUpdateFlag::Neighbors;
+        ll::service::getLevel()->getPacketSender()->sendToClient(netId, blockPacket, SubClientId::PrimaryClient);
     }
 }
-bool FakeDimensionId::teleportToCustomDimension(ServerPlayer& player, DimensionType dimensionType, Vec3& pos) {
-    auto inId = player.getDimensionId();
-    if (inId == dimensionType) {
-        logger.warn("player->{} already at this id->{} dimension!", player.getNameTag(), dimensionType.id);
-        return false;
+
+void FakeDimensionId::sendEmptyChunks(
+    const NetworkIdentifier& netId,
+    const Vec3&              position,
+    int                      radius,
+    bool                     forceUpdate
+) {
+    int chunkX = (int)(position.x) >> 4;
+    int chunkZ = (int)(position.z) >> 4;
+    for (int x = -radius; x <= radius; x++) {
+        for (int z = -radius; z <= radius; z++) {
+            sendEmptyChunk(netId, chunkX + x, chunkZ + z, forceUpdate);
+        }
     }
-    if (dimensionType == 1 || dimensionType == 2) {
-        logger.debug("This dimension id->{} isn't custom dimension id!!!", dimensionType.id);
-        return false;
-    }
-    if (inId >= 3 || inId == fakeDim) {
-        player.teleport(pos, temporaryDimId);
-        auto uuid = player.getUuid();
-        onPlayerGoCustomDimension(uuid, [uuid, pos, dimensionType]() {
-            ll::service::getLevel()->getPlayer(uuid)->teleport(pos, dimensionType);
-        });
-        return true;
-    }
-    return false;
+}
+
+void FakeDimensionId::fakeChangeDimension(
+    const NetworkIdentifier& netId,
+    ActorRuntimeID           runtimeId,
+    DimensionType            fakeDimId,
+    const Vec3&              pos
+) {
+    ChangeDimensionPacket changeDimensionPacket{fakeDimId, pos, true};
+    ll::service::getLevel()->getPacketSender()->sendToClient(netId, changeDimensionPacket, SubClientId::PrimaryClient);
+    PlayerActionPacket playerActionPacket{PlayerActionType::ChangeDimensionAck, runtimeId};
+    ll::service::getLevel()->getPacketSender()->sendToClient(netId, playerActionPacket, SubClientId::PrimaryClient);
+    sendEmptyChunks(netId, pos, 3, true);
 }
 } // namespace ll::dimension
