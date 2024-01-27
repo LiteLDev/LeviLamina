@@ -13,11 +13,4 @@ public:
 
     ActorUniqueID                    mEntityUniqueID;
     ActorBlockSyncMessage::MessageId mMessage;
-
-
-public:
-    // prevent constructor by default
-    ActorBlockSyncMessage& operator=(ActorBlockSyncMessage const&);
-    ActorBlockSyncMessage(ActorBlockSyncMessage const&);
-    ActorBlockSyncMessage();
 };
