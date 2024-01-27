@@ -36,12 +36,5 @@ public:
     bool           isNeedRemove(mce::UUID uuid);
     void           onPlayerGoCustomDimension(mce::UUID uuid);
     void           onPlayerLeftCustomDimension(mce::UUID uuid, bool isRespawn);
-    void           sendEmptyChunks(const NetworkIdentifier& netId, const Vec3& position, int radius, bool forceUpdate);
-    void           fakeChangeDimension(
-                  const NetworkIdentifier& netId,
-                  ActorRuntimeID           runtimeId,
-                  DimensionType            fakeDimId,
-                  const Vec3&              pos
-              );
 };
 } // namespace ll::dimension
