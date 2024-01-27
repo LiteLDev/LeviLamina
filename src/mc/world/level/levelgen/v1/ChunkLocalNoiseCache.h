@@ -14,12 +14,21 @@ public:
 
     // ChunkLocalNoiseCache inner types define
     struct CacheEntry {
-    public:
-        // prevent constructor by default
-        CacheEntry& operator=(CacheEntry const&);
-        CacheEntry(CacheEntry const&);
-        CacheEntry();
+        float shiftedX;
+        float shiftedZ;
+        float continentalness;
+        float weirdness;
+        float erosion;
+        float offset;
+        float factor;
+        float jag;
+        float temperature;
+        float humidity;
     };
+
+    DividedPos2d<4> const                         mFirstQuartPos;     // this+0x0
+    int const                                     mCellCountXZ;       // this+0x8
+    std::vector<ChunkLocalNoiseCache::CacheEntry> mNoiseCacheEntries; // this+0x10
 
 public:
     // prevent constructor by default
