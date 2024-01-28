@@ -80,7 +80,7 @@ data::Version getVersion(std::filesystem::path const& filePath) {
     data::Version version;
     ushort        build_ver{};
     uint          flag{};
-    if (!getFileVersion(filePath.native(), version.major, version.minor, version.patch, build_ver, flag)) {
+    if (!getFileVersion(filePath.wstring(), version.major, version.minor, version.patch, build_ver, flag)) {
         return {};
     } else {
         version.preRelease = data::PreRelease{};

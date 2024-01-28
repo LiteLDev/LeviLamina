@@ -91,7 +91,7 @@ KeyValueDB::KeyValueDB(std::filesystem::path const& path, bool createIfMiss, int
         std::error_code ec;
         std::filesystem::create_directories(path, ec);
     }
-    impl = std::make_unique<KeyValueDBImpl>(string_utils::wstr2str(path.native()), createIfMiss, bloomFilterBit);
+    impl = std::make_unique<KeyValueDBImpl>(string_utils::wstr2str(path.wstring()), createIfMiss, bloomFilterBit);
 }
 
 KeyValueDB::KeyValueDB(KeyValueDB&&) noexcept = default;

@@ -13,7 +13,7 @@ NativePluginManager::NativePluginManager() : PluginManager(NativePluginManagerNa
 NativePluginManager::~NativePluginManager() = default;
 
 static void printDependencyError(
-    const std::unique_ptr<pl::dependency_walker::DependencyIssueItem>& item,
+    std::unique_ptr<pl::dependency_walker::DependencyIssueItem> const& item,
     std::ostream&                                                      stream,
     size_t                                                             depth = 0
 ) {
@@ -39,14 +39,14 @@ static void printDependencyError(
             }
         }
         if (!item->mDependencies.empty()) {
-            for (const auto& [module, subItem] : item->mDependencies) {
+            for (auto const& [module, subItem] : item->mDependencies) {
                 printDependencyError(subItem, stream, depth + 1);
             }
         }
     }
 }
 
-std::string diagnosticDependency(const std::filesystem::path& path) {
+static std::string diagnosticDependency(std::filesystem::path const& path) {
     auto              result = pl::dependency_walker::pl_diagnostic_dependency(path);
     std::stringstream stream;
     printDependencyError(result, stream);
@@ -58,7 +58,19 @@ bool NativePluginManager::load(Manifest manifest) {
     if (hasPlugin(manifest.name)) {
         return false;
     }
-    auto entry = getPluginsRoot() / manifest.name / manifest.entry;
+    auto pluginDir = std::filesystem::canonical(getPluginsRoot() / manifest.name);
+
+    std::wstring buffer(32767, '\0');
+
+    if (auto res = GetEnvironmentVariable(L"PATH", buffer.data(), 32767); res != 0 && res != 32767) {
+        buffer.resize(res);
+        if (!buffer.empty()) {
+            buffer += L";";
+        }
+        buffer += pluginDir.wstring();
+        SetEnvironmentVariable(L"PATH", buffer.c_str());
+    }
+    auto entry = pluginDir / manifest.entry;
     auto lib   = LoadLibrary(entry.c_str());
     if (!lib) {
         auto e = error_utils::getWinLastError();
