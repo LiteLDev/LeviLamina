@@ -8,6 +8,7 @@
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/DimensionConversionData.h"
 #include "mc/world/level/Level.h"
+#include "mc/world/level/LevelSeed64.h"
 #include "mc/world/level/biome/VanillaBiomeNames.h"
 #include "mc/world/level/biome/registry/BiomeRegistry.h"
 #include "mc/world/level/chunk/VanillaLevelChunkUpgrade.h"
@@ -18,7 +19,7 @@
 #include "mc/world/level/levelgen/VoidGenerator.h"
 #include "mc/world/level/levelgen/flat/FlatWorldGenerator.h"
 #include "mc/world/level/levelgen/v1/NetherGenerator.h"
-#include "mc/world/level/levelgen/v1/OverworldGenerator2d.h"
+#include "mc/world/level/levelgen/v1/OverworldGeneratorMultinoise.h"
 #include "mc/world/level/levelgen/v1/TheEndGenerator.h"
 
 #include "magic_enum.hpp"
@@ -73,10 +74,9 @@ std::unique_ptr<WorldGenerator> SimpleCustomDimension::createGenerator() {
 
     switch (generatorType) {
     case GeneratorType::Overworld:
-        return std::make_unique<OverworldGenerator2d>(
+        return std::make_unique<OverworldGeneratorMultinoise>(
             *this,
-            seed,
-            false,
+            LevelSeed64::fromUnsigned32(seed),
             biome,
             makeStructureFeatures(false, levelData.getBaseGameVersion(), levelData.getExperiments())
         );

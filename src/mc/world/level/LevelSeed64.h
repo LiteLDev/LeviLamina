@@ -6,10 +6,7 @@ class LevelSeed64 {
 public:
     uint64 mValue;
 
-    // prevent constructor by default
-    LevelSeed64& operator=(LevelSeed64 const&);
-    LevelSeed64(LevelSeed64 const&);
-    LevelSeed64();
+    explicit LevelSeed64(uint64 value) : mValue(value) {}
 
 public:
     // NOLINTBEGIN
