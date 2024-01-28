@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include <span>
 
 struct TagMemoryChunk {
 public:

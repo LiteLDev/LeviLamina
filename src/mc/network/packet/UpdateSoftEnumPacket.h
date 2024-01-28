@@ -8,7 +8,6 @@
 #include "mc/enums/MinecraftPacketIds.h"
 #include "mc/enums/SoftEnumUpdateType.h"
 #include "mc/network/packet/Packet.h"
-#include <string>
 
 class UpdateSoftEnumPacket : public ::Packet {
 public:

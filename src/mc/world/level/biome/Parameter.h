@@ -9,6 +9,8 @@ public:
     int64 mMin; // this+0x0
     int64 mMax; // this+0x8
 
+    Parameter() = default;
+
 public:
     // NOLINTBEGIN
     // symbol: ??0Parameter@ClimateUtils@@QEAA@AEB_J0@Z

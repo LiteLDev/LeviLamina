@@ -1,7 +1,5 @@
 #pragma once
 
-#include <utility>
-
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/item/crafting/Recipe.h"
@@ -78,6 +76,10 @@ public:
             mItem  = mIngredient.getItem();
             mBlock = mIngredient.getBlock();
         }
+
+        Type(Type const&) noexcept            = default;
+        Type& operator=(Type&&) noexcept      = default;
+        Type& operator=(Type const&) noexcept = default;
 
     public:
         // NOLINTBEGIN

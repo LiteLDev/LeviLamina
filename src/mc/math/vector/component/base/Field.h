@@ -4,6 +4,7 @@
 #include <cmath>
 
 #include "mc/math/vector/component/base/CommutativeGroup.h"
+
 namespace ll::math {
 struct FieldTag {};
 
