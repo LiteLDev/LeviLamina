@@ -2,8 +2,10 @@
 
 #include <concepts>
 #include <format>
+#include <ostream>
 #include <string>
 
+#include "fmt/core.h"
 #include "fmt/format.h"
 
 #include "ll/api/base/Concepts.h"

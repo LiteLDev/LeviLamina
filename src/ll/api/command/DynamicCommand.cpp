@@ -1,21 +1,49 @@
 ﻿#include "ll/api/command/DynamicCommand.h"
 
+#include <algorithm>
+#include <cstddef>
+#include <cstdint>
+#include <memory>
+#include <sstream>
+#include <stdexcept>
+#include <string>
+#include <string_view>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
+#include "fmt/core.h"
+#include "magic_enum.hpp"
+
 #include "ll/api/Logger.h"
 #include "ll/api/memory/Closure.h"
+#include "ll/api/memory/Memory.h"
 #include "ll/api/utils/ErrorUtils.h"
-#include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
 
+#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/enums/SoftEnumUpdateType.h"
 #include "mc/network/packet/AvailableCommandsPacket.h"
-#include "mc/server/LoopbackPacketSender.h"
 #include "mc/server/commands/BlockStateCommandParam.h"
+#include "mc/server/commands/CommandBlockName.h"
+#include "mc/server/commands/CommandFlag.h"
+#include "mc/server/commands/CommandItem.h"
+#include "mc/server/commands/CommandOrigin.h"
+#include "mc/server/commands/CommandOutput.h"
+#include "mc/server/commands/CommandOutputType.h"
+#include "mc/server/commands/CommandParameterOption.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/server/commands/CommandPosition.h"
 #include "mc/server/commands/CommandRegistry.h"
+#include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/CommandSoftEnumRegistry.h"
 #include "mc/server/commands/CommandUtils.h"
+#include "mc/server/commands/WildcardCommandSelector.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/effect/MobEffect.h"
 #include "mc/world/item/ItemInstance.h"
+#include "mc/world/level/Command.h"
 #include "mc/world/level/Level.h"
-#include "mc/world/level/block/actor/BaseCommandBlock.h"
 
 using ll::logger;
 
@@ -198,7 +226,7 @@ CommandParameterData DynamicCommand::ParameterData::makeParameterData() const {
     case ParameterType::Command:
         return makeParameterData<ParameterType::Command, ParameterDataType::Command>();
     default:
-        _STL_UNREACHABLE;
+        throw std::runtime_error("Unknown Parameter Type");
     }
 }
 

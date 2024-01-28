@@ -1,6 +1,7 @@
 #pragma once
 
 #include <chrono>
+#include <ratio>
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"

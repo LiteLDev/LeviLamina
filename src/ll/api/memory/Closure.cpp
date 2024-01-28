@@ -1,11 +1,16 @@
 #include "ll/api/memory/Closure.h"
 
+#include <cstddef>
+#include <cstdint>
+#include <cstring>
+#include <memory>
 #include <stdexcept>
 
-#include "memoryapi.h"
-
+#include "ll/api/base/StdInt.h"
 #include "ll/api/memory/Memory.h"
-#include "ll/api/utils/StringUtils.h"
+
+#include <memoryapi.h>
+#include <winnt.h>
 
 namespace ll::memory::detail {
 size_t getVolatileOffset(void* impl) {

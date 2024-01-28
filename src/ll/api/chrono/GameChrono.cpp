@@ -1,4 +1,8 @@
 #include "ll/api/chrono/GameChrono.h"
+
+#include <atomic>
+
+#include "ll/api/base/StdInt.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
 
