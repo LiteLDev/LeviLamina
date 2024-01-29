@@ -7,7 +7,7 @@
 std::unique_ptr<CompoundTag> CompoundTag::fromSnbt(std::string_view snbt) {
     auto res = parseSnbt(snbt);
     if (res && res->getId() == Tag::Type::Compound) {
-        return std::unique_ptr<CompoundTag>((CompoundTag*)res.release());
+        return std::unique_ptr<CompoundTag>(static_cast<CompoundTag*>(res.release()));
     }
     return nullptr;
 }
@@ -40,6 +40,8 @@ std::string CompoundTag::toNetworkNbt() const {
 std::unique_ptr<CompoundTag> CompoundTag::fromNetworkNbt(std::string const& data) {
     auto stream = ReadOnlyBinaryStream{data, false};
     auto res    = std::make_unique<CompoundTag>();
-    stream.readType(*res);
-    return res;
+    if (stream.readType(*res)) {
+        return res;
+    }
+    return nullptr;
 }
