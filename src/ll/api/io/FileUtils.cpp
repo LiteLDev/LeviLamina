@@ -157,9 +157,6 @@ private:
                 OVERLAPPED        overlapped_buffer{};
 
                 overlapped_buffer.hEvent = CreateEventW(nullptr, TRUE, FALSE, nullptr);
-                if (!overlapped_buffer.hEvent) {
-                    std::cerr << "Error creating monitor event" << std::endl;
-                }
 
                 std::array<void*, 2> handles{overlapped_buffer.hEvent, closeEvent};
 
