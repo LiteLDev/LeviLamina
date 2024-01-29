@@ -6,7 +6,7 @@ namespace ll::service {
 
 class Service {
 public:
-    LLAPI virtual ~Service() = 0;
+    virtual ~Service() = default;
 
     [[nodiscard]] virtual ServiceId getServiceId() const noexcept = 0;
 
@@ -21,8 +21,6 @@ public:
     Service& operator=(Service const&) = delete;
     Service& operator=(Service&&)      = delete;
 };
-
-inline Service::~Service() = default;
 
 template <class T>
 concept IsService = std::is_base_of_v<Service, T> && requires {

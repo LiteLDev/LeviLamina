@@ -37,14 +37,14 @@ protected:
 
     LLAPI bool erasePlugin(std::string_view name);
 
-    virtual ~PluginManager();
+    LLAPI virtual ~PluginManager();
 
     virtual bool load(Manifest manifest) = 0;
 
     virtual bool unload(std::string_view name) = 0;
 
-    virtual bool enable(std::string_view name);
+    LLAPI virtual bool enable(std::string_view name);
 
-    virtual bool disable(std::string_view name);
+    LLAPI virtual bool disable(std::string_view name);
 };
 } // namespace ll::plugin
