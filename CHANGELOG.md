@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.1] - 2024-01-29
+
+### Changed
+
+- Add check to fromNetworkNbt
+
+### Fixed
+
+- Fix commandOutput bugs
+- add type to CommandOutputMessageType
+- Fix CommandOutput success&error
+
 ## [0.6.0] - 2024-01-28
 
 ### Added
@@ -150,6 +162,7 @@ First preview release.
 For lip and tooth-hub test only.
 
 [unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.4.2...HEAD
+[0.6.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.4.2...v0.5.0
