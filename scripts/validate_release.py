@@ -1,5 +1,6 @@
 import argparse
 import re
+import subprocess
 from typing import TypedDict
 
 
@@ -31,6 +32,7 @@ def get_args() -> Args:
         "tag": args.tag,
     }
 
+
 def get_changelog_current_version_content(version: str) -> str:
     with open("CHANGELOG.md", "r", encoding="utf-8") as f:
         content = f.read()
@@ -41,19 +43,26 @@ def get_changelog_current_version_content(version: str) -> str:
 
     if not result:
         raise Exception("CHANGELOG.md lacks version {}".format(version))
-    
+
     return result.group(1)
 
 
 def validate_changelog(version: str):
+    try:
+        subprocess.run(
+            f"npx changelog --format markdownlint",
+            shell=True,
+            check=True,
+        )
+    except subprocess.CalledProcessError as e:
+        print("Have you installed it by `npm i -g keep-a-changelog`?")
+        raise e
+
     with open("CHANGELOG.md", "r", encoding="utf-8") as f:
         content = f.read()
 
     if not re.search(r"## \[{}\]".format(version), content):
         raise Exception("CHANGELOG.md lacks version {}".format(version))
-
-    if not re.search(r"\[{}\]:".format(version), content):
-        raise Exception("CHANGELOG.md lacks version link {}".format(version))
 
 
 def validate_tooth_json(version: str):
