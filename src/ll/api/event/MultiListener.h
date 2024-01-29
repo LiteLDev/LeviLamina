@@ -31,8 +31,12 @@ public:
     void call(Event& event) override { callback.at(typeid(event))(event); }
 
     template <class Callable>
-    static std::shared_ptr<MultiListener> create(Callable&& fn, EventPriority priority = EventPriority::Normal) {
-        return std::make_shared<MultiListener>(std::forward<Callable>(fn), priority);
+    static std::shared_ptr<MultiListener> create(
+        Callable&&                    fn,
+        EventPriority                 priority = EventPriority::Normal,
+        std::weak_ptr<plugin::Plugin> plugin   = plugin::NativePlugin::current()
+    ) {
+        return std::make_shared<MultiListener>(std::forward<Callable>(fn), priority, std::move(plugin));
     }
 
 private:

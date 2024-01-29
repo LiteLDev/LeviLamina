@@ -23,8 +23,12 @@ public:
 
     void call(Event& event) override { callback(static_cast<event_type&>(event)); }
 
-    static std::shared_ptr<Listener> create(callback_fn fn, EventPriority priority = EventPriority::Normal) {
-        return std::make_shared<Listener>(fn, priority);
+    static std::shared_ptr<Listener> create(
+        callback_fn                   fn,
+        EventPriority                 priority = EventPriority::Normal,
+        std::weak_ptr<plugin::Plugin> plugin   = plugin::NativePlugin::current()
+    ) {
+        return std::make_shared<Listener>(std::move(fn), priority, std::move(plugin));
     }
 
 private:

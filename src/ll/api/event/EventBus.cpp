@@ -104,7 +104,7 @@ public:
             return i->second.addListener(listener);
         } else {
             if (streams[eventId].addListener(listener)) {
-                if (auto fac = emitterFactory.find(listener->factoryId(eventId)); fac != emitterFactory.end()) {
+                if (auto fac = emitterFactory.find(eventId); fac != emitterFactory.end()) {
                     streams[eventId].emitter = fac->second(*listener);
                     return true;
                 }

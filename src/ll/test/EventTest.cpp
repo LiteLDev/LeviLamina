@@ -1,6 +1,5 @@
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/EventBus.h"
-#include "ll/api/event/filesystem/FileActionEvent.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/schedule/Scheduler.h"
 #include "ll/api/utils/ErrorUtils.h"
@@ -29,6 +28,7 @@
 #include "ll/api/event/player/PlayerUseItemEvent.h"
 #include "ll/api/event/player/PlayerUseItemOnEvent.h"
 #include "ll/api/event/world/SpawnMobEvent.h"
+#include "ll/api/io/FileUtils.h"
 #include "mc/codebuilder/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/world/actor/ActorDamageSource.h"
@@ -136,12 +136,14 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     // ll::logger.debug("{}", str.buf);
 
-    auto listener4 = Listener<FileActionEvent>::create("./", [](FileActionEvent& ev) {
-        ll::logger.debug("dyn receive: {}, {} {}", typeid(ev).name(), ev.path(), magic_enum::enum_name(ev.type()));
-    });
-    bus.addListener(listener4);
+    auto fileWatcher = std::make_shared<ll::file_utils::FileWatcher>(
+        "./",
+        [](std::filesystem::path const& path, ll::file_utils::FileWatcher::FileActionType type) {
+            ll::logger.debug("FileWatcher: {} {}", path, magic_enum::enum_name(type));
+        }
+    );
 
-    remover.add<DelayTask>(2min, [=, &bus] { bus.removeListener(listener4); });
+    remover.add<DelayTask>(2min, [=, &bus] { auto file = fileWatcher; });
 
     bus.emplaceListener<ExecutingCommandEvent>([](ExecutingCommandEvent& ev) {
         ll::logger.debug("ExecutingCommandEvent: {}", ev.commandContext().mCommand);
