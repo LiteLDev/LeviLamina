@@ -22,21 +22,23 @@ public:
     CommandOutput& operator=(CommandOutput const&);
     CommandOutput();
 
-    template <typename... Args>
-    inline void success(fmt::format_string<Args...> fmt, Args&&... args) {
-        success(fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
+    template <class First, class... Args>
+        requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
+    void success(fmt::format_string<Args...> fmt, First&& _args, Args&&... args) {
+        success(fmt::vformat(fmt.get(), fmt::make_format_args(_args, args...)));
     }
 
-    template <typename... Args>
-    inline void error(fmt::format_string<Args...> fmt, Args&&... args) {
-        error(fmt::vformat(fmt.get(), fmt::make_format_args(args...)));
+    template <class First, class... Args>
+        requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
+    void error(fmt::format_string<Args...> fmt, First&& _args, Args&&... args) {
+        error(fmt::vformat(fmt.get(), fmt::make_format_args(_args, args...)));
     }
 
-    inline void success(char const* str) { success(std::string{str}); }
-    inline void error(char const* str) { error(std::string{str}); }
+    void success(char const* str) { success(std::string{str}); }
+    void error(char const* str) { error(std::string{str}); }
 
-    inline void success(std::string_view str) { success(std::string{str}); }
-    inline void error(std::string_view str) { error(std::string{str}); }
+    void success(std::string_view str) { success(std::string{str}); }
+    void error(std::string_view str) { error(std::string{str}); }
 
 public:
     // NOLINTBEGIN
