@@ -24,13 +24,13 @@ public:
 
     template <class First, class... Args>
         requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
-    void success(fmt::format_string<Args...> fmt, First&& _args, Args&&... args) {
+    void success(fmt::format_string<First, Args...> fmt, First&& _args, Args&&... args) {
         success(fmt::vformat(fmt.get(), fmt::make_format_args(_args, args...)));
     }
 
     template <class First, class... Args>
         requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
-    void error(fmt::format_string<Args...> fmt, First&& _args, Args&&... args) {
+    void error(fmt::format_string<First, Args...> fmt, First&& _args, Args&&... args) {
         error(fmt::vformat(fmt.get(), fmt::make_format_args(_args, args...)));
     }
 
