@@ -26,11 +26,11 @@
 
 namespace ll::dimension {
 
-static ll::Logger loggerMoreDim("SimpleCustomDimension");
+static ll::Logger loggerMoreDim("SimpleCustomDim");
 
 SimpleCustomDimension::SimpleCustomDimension(std::string const& name, DimensionFactoryInfo const& info)
 : Dimension(info.level, info.dimId, {-64, 320}, info.scheduler, name) {
-    loggerMoreDim.debug(__FUNCTION__ " dimension name:{}", name);
+    loggerMoreDim.debug("{} dimension name:{}", __FUNCTION__, name);
     mDefaultBrightness.sky = Brightness::MAX;
     generatorType          = *magic_enum::enum_cast<GeneratorType>((std::string_view)info.data["generatorType"]);
     seed                   = info.data["seed"];
