@@ -154,7 +154,7 @@ public:
 
     bool remove(uint64 id) {
         std::lock_guard l{mutex};
-        return std::erase_if(tasks, [&](auto& t) { return t.second.getId() == id; });
+        return std::erase_if(tasks, [&](auto& t) { return t.second->getId() == id; });
     }
 
     void clear() {
