@@ -137,6 +137,7 @@ template <class Group, class T, auto Id = int64{}>
     }
 }
 
+#ifndef __clang__
 template <class Group>
 struct DynamicTypeList {
     template <size_t N>
@@ -191,4 +192,6 @@ struct DynamicTypeList {
         Setter<id, next> setter{};
     }
 };
+#endif
+
 } // namespace ll::meta

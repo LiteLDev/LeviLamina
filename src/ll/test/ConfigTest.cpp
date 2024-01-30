@@ -86,11 +86,12 @@ public:
 // LL_AUTO_TYPE_INSTANCE_HOOK(Virtual, HookPriority::Normal, FillCommand, &FillCommand::execute, void, CommandOrigin
 // const&, CommandOutput&) {
 // }
-
+#ifndef __clang__
 struct myTypeList1 : ll::meta::DynamicTypeList<myTypeList1> {};
 struct myTypeList2 : ll::meta::DynamicTypeList<myTypeList2> {};
 struct myTypeList3 : ll::meta::TypeList<bool, int> {};
 struct myTypeList4 : ll::meta::TypeList<> {};
+#endif
 
 LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &ServerInstance::startServerThread, void) {
     origin();
@@ -153,7 +154,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
 
     ll::logger.debug("789\xDB\xFE");
     ll::logger.debug("789\xDB\xFE");
-
+#ifndef __clang__
     myTypeList1::push_back<int>();
     myTypeList1::push_back<float>();
     ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(myTypeList1::value())>);
@@ -186,4 +187,5 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
     myTypeList4::forEach([]<typename T>() { ll::logger.debug(typeid(T).name()); });
 
     myTypeList4::forEachIndexed([]<typename T>(size_t index) { ll::logger.debug("{} : {}", typeid(T).name(), index); });
+#endif
 }
