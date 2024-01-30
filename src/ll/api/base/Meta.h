@@ -137,7 +137,7 @@ template <class Group, class T, auto Id = int64{}>
     }
 }
 
-#ifndef __clang__
+#if 0
 template <class Group>
 struct DynamicTypeList {
     template <size_t N>
