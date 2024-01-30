@@ -10,6 +10,7 @@ CompileFlags:
   Add:
     - "-ferror-limit=0"
     - '-D__FUNCTION__="dummy"'
+    - '-D__clangd__'
     - "-Yusrc/ll/api/Global.h"
     - "-FIsrc/ll/api/Global.h" # clangd bug can't find pch file
   Remove:

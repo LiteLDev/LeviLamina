@@ -31,6 +31,11 @@
 
 #include "mc/world/actor/DataItem.h"
 
+// [0, 8, 16, 96, 97, 98, 104, 136, 144, 160, 176, 184, 196, 208, 232, 248, 304, 328, 360, 392, 408]
+
+// ["structure", "version", "ver", "someFlag", "eeeeFlag", "ssbbFlag", "str", "plain", "amap", "bmap", "vec2", "vec3",
+// "pos", "box", "tuple", "pair", "array", "vector", "nullvector", "mulset", "hi"]
+
 template <class T>
 class TestClass {
 public:
@@ -86,7 +91,7 @@ public:
 // LL_AUTO_TYPE_INSTANCE_HOOK(Virtual, HookPriority::Normal, FillCommand, &FillCommand::execute, void, CommandOrigin
 // const&, CommandOutput&) {
 // }
-#if 0
+#if !(defined(__INTELLISENSE__) || defined(__clangd__) || defined(__clang__))
 struct myTypeList1 : ll::meta::DynamicTypeList<myTypeList1> {};
 struct myTypeList2 : ll::meta::DynamicTypeList<myTypeList2> {};
 struct myTypeList3 : ll::meta::TypeList<bool, int> {};
@@ -154,7 +159,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
 
     ll::logger.debug("789\xDB\xFE");
     ll::logger.debug("789\xDB\xFE");
-#if 0
+
+    ll::logger.debug("{}", ll::reflection::offset_array_v<TestClass<int>>);
+
+#if !(defined(__INTELLISENSE__) || defined(__clangd__) || defined(__clang__))
     myTypeList1::push_back<int>();
     myTypeList1::push_back<float>();
     ll::logger.debug("{}", ll::reflection::type_raw_name_v<decltype(myTypeList1::value())>);

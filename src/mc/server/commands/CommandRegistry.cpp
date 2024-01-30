@@ -20,7 +20,7 @@ CommandRegistry::Signature::Signature(
 : name(name),
   desc(desc),
   perm(perm),
-  main_symbol(symbol),
+  mainSymbol(symbol),
   flag(flag) {}
 
 void CommandRegistry::registerOverload(
@@ -102,11 +102,11 @@ bool CommandRegistry::unregisterCommand(std::string const& name) {
 
         auto sig = mSignatures.find(command);
         std::erase_if(mCommandSymbols, [&](Symbol const& r) {
-            return r == sig->second.main_symbol || r == sig->second.alt_symbol;
+            return r == sig->second.mainSymbol || r == sig->second.altSymbol;
         });
 
         std::erase_if(mFactorizations, [&](Factorization const& r) {
-            return r.commandSymbol == sig->second.main_symbol || r.commandSymbol == sig->second.alt_symbol;
+            return r.commandSymbol == sig->second.mainSymbol || r.commandSymbol == sig->second.altSymbol;
         });
 
         mSignatures.erase(sig);

@@ -236,8 +236,8 @@ public:
         std::vector<Overload>  overloads;            // this+0x40
         std::vector<void*>     unk88;                // this+0x58
         CommandPermissionLevel perm;                 // this+0x70
-        Symbol                 main_symbol;          // this+0x74
-        Symbol                 alt_symbol;           // this+0x78
+        Symbol                 mainSymbol;           // this+0x74
+        Symbol                 altSymbol;            // this+0x78
         CommandFlag            flag;                 // this+0x7C
         int                    firstRule{};          // this+0x80
         int                    firstFactorization{}; // this+0x84

@@ -38,7 +38,7 @@
 
 #include "ll/api/utils/HashUtils.h"
 
-#if 0
+#if !(defined(__INTELLISENSE__) || defined(__clangd__) || defined(__clang__))
 struct myTypeList2 : ll::meta::DynamicTypeList<myTypeList2> {};
 #endif
 
@@ -213,7 +213,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
             .debug("Player {} MultiListener of {}", ev.self().getRealName(), ll::reflection::type_raw_name_v<decltype(ev)>);
     });
     bus.addListener(mul);
-#if 0
+#if !(defined(__INTELLISENSE__) || defined(__clangd__) || defined(__clang__))
     myTypeList2::push_back<float>();
     ll::logger.debug("{}", typeid(myTypeList2::value()).name());
 #endif

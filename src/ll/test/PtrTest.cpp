@@ -94,8 +94,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     &BlockDefinitionGroup::registerBlocks,
     void
 ) {
-    std::cout << "type_hash  " << entt::type_hash<FlagComponent<ExitFromPassengerFlag>>::value() << std::endl;
-
     ll::error_utils::printException(ll::logger, ll::error_utils::getWinLastError());
 
     try {

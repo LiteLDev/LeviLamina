@@ -136,8 +136,8 @@ template <class Group, class T, auto Id = int64{}>
         return Id;
     }
 }
-
-#if 0
+// TODO: fix this
+#if !(defined(__INTELLISENSE__) || defined(__clangd__) || defined(__clang__))
 template <class Group>
 struct DynamicTypeList {
     template <size_t N>
