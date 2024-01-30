@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.3] - 2024-01-30
+
+### Changed
+
+- Remove constructor of ScorePacketInfo
+- Disable DynamicTypeList
+
+### Fixed
+
+- Fix scheduler remove id
+- Make clang-cl compilable
+
 ## [0.6.2] - 2024-01-29
 
 ### Changed
@@ -174,7 +186,8 @@ First preview release.
 
 For lip and tooth-hub test only.
 
-[unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.3...HEAD
+[0.6.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.2...v0.6.3
 [0.6.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.5.1...v0.6.0
