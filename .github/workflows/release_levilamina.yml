@@ -68,6 +68,7 @@ jobs:
 
       - name: Validate release stuff (tooth.json, CHANGELOG.md, etc.)
         run: |
+          npm i -g keep-a-changelog
           python scripts/validate_release.py --tag ${{ github.event.release.tag_name }} > release_notes.md
           echo release_notes=$(cat release_notes.md) >> $GITHUB_OUTPUT
 
