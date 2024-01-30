@@ -412,7 +412,6 @@ static void setupTimingCommand(CommandRegistry& registry) {
 
 
 #include "mc/server/SimulatedPlayer.h"
-#include "mc/world/actor/Actor.h"
 
 static void setupCreateSimulatePlayerCommand(CommandRegistry& registry) {
     auto command = DynamicCommand::createCommand(

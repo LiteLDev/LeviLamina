@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class Actor;
+
 class InternalComponentRegistry {
 public:
     // InternalComponentRegistry inner types declare
