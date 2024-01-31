@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class CommandPermissionLevel : schar {
+enum class CommandPermissionLevel : uchar {
     Any           = 0x0,
     GameDirectors = 0x1,
     Admin         = 0x2,

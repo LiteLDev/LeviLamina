@@ -408,111 +408,112 @@ public:
         );
 
         // ll settings
-        registry.addEnum<Operation>(
-            "Operation_Settings",
-            {
-                {"settings", Operation::Settings}
-        }
-        );
-        registry.addEnum<LLSettingsOperation>(
-            "SettingsOperation",
-            {
-                {"get",    LLSettingsOperation::Get   },
-                {"set",    LLSettingsOperation::Set   },
-                {"delete", LLSettingsOperation::Delete},
-                {"reload", LLSettingsOperation::Reload},
-                {"save",   LLSettingsOperation::Save  },
-                {"list",   LLSettingsOperation::List  }
-        }
-        );
-        registry.registerOverload<LLCommand>(
-            "ll",
-            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
-                &LLCommand::operation,
-                "Operation",
-                "Operation_Settings"
-            )
-                .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
-                &LLCommand::settingsOperation,
-                "SettingsOperation",
-                "SettingsOperation"
-            )
-                .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            CommandParameterData::makeOptional(&LLCommand::key, "JsonPointer", &LLCommand::hasKeySet),
-            CommandParameterData::makeOptional(&LLCommand::value, "Value", &LLCommand::hasValueSet)
-        );
+        // registry.addEnum<Operation>(
+        //     "Operation_Settings",
+        //     {
+        //         {"settings", Operation::Settings}
+        // }
+        // );
+        // registry.addEnum<LLSettingsOperation>(
+        //     "SettingsOperation",
+        //     {
+        //         {"get",    LLSettingsOperation::Get   },
+        //         {"set",    LLSettingsOperation::Set   },
+        //         {"delete", LLSettingsOperation::Delete},
+        //         {"reload", LLSettingsOperation::Reload},
+        //         {"save",   LLSettingsOperation::Save  },
+        //         {"list",   LLSettingsOperation::List  }
+        // }
+        // );
+        // registry.registerOverload<LLCommand>(
+        //     "ll",
+        //     CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
+        //         &LLCommand::operation,
+        //         "Operation",
+        //         "Operation_Settings"
+        //     )
+        //         .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
+        //     CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
+        //         &LLCommand::settingsOperation,
+        //         "SettingsOperation",
+        //         "SettingsOperation"
+        //     )
+        //         .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
+        //     CommandParameterData::makeOptional(&LLCommand::key, "JsonPointer", &LLCommand::hasKeySet),
+        //     CommandParameterData::makeOptional(&LLCommand::value, "Value", &LLCommand::hasValueSet)
+        // );
 
         // ll load
-        registry.addEnum<Operation>(
-            "Operation_FreeFilePath",
-            {
-                {"load", Operation::Load},
-        }
-        );
-        registry.registerOverload<LLCommand>(
-            "ll",
-            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
-                &LLCommand::operation,
-                "Operation",
-                "Operation_FreeFilePath"
-            )
-                .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            CommandParameterData::makeMandatory<CommandParameterDataType::Basic>(
-                &LLCommand::pluginNameToDoOperation,
-                "pluginPath",
-                nullptr,
-                &LLCommand::hasPluginNameSet
-            )
-        );
+        // registry.addEnum<Operation>(
+        //     "Operation_FreeFilePath",
+        //     {
+        //         {"load", Operation::Load},
+        // }
+        // );
+        // registry.registerOverload<LLCommand>(
+        //     "ll",
+        //     CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
+        //         &LLCommand::operation,
+        //         "Operation",
+        //         "Operation_FreeFilePath"
+        //     )
+        //         .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
+        //     CommandParameterData::makeMandatory<CommandParameterDataType::Basic>(
+        //         &LLCommand::pluginNameToDoOperation,
+        //         "pluginPath",
+        //         nullptr,
+        //         &LLCommand::hasPluginNameSet
+        //     )
+        // );
 
         // ll unload
-        registry.addEnum<Operation>(
-            "Operation_MustPluginName",
-            {
-                {"unload", Operation::Unload},
-        }
-        );
-        registry.registerOverload<LLCommand>(
-            "ll",
-            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
-                &LLCommand::operation,
-                "Operation",
-                "Operation_MustPluginName"
-            )
-                .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            CommandParameterData::makeMandatory<CommandParameterDataType::SoftEnum>(
-                (std::string LLCommand::*)&LLCommand::pluginNameToDoOperation,
-                "pluginName",
-                "PluginName",
-                &LLCommand::hasPluginNameSet
-            )
-        );
+        // registry.addEnum<Operation>(
+        //     "Operation_MustPluginName",
+        //     {
+        //         {"unload", Operation::Unload},
+        // }
+        // );
+        // registry.registerOverload<LLCommand>(
+        //     "ll",
+        //     CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
+        //         &LLCommand::operation,
+        //         "Operation",
+        //         "Operation_MustPluginName"
+        //     )
 
-        // ll list & reload
-        registry.addEnum<Operation>(
-            "Operation_OptionalPluginName",
-            {
-                {"list",    Operation::List  },
-                {"plugins", Operation::List  },
-                {"reload",  Operation::Reload},
-        }
-        );
-        registry.registerOverload<LLCommand>(
-            "ll",
-            CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
-                &LLCommand::operation,
-                "Operation",
-                "Operation_OptionalPluginName"
-            )
-                .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
-            CommandParameterData::makeOptional<CommandParameterDataType::SoftEnum>(
-                (std::string LLCommand::*)&LLCommand::pluginNameToDoOperation,
-                "pluginName",
-                "PluginName",
-                &LLCommand::hasPluginNameSet
-            )
-        );
+        //         .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
+        //     CommandParameterData::makeMandatory<CommandParameterDataType::SoftEnum>(
+        //         (std::string LLCommand::*)&LLCommand::pluginNameToDoOperation,
+        //         "pluginName",
+        //         "PluginName",
+        //         &LLCommand::hasPluginNameSet
+        //     )
+        // );
+
+        // // ll list & reload
+        // registry.addEnum<Operation>(
+        //     "Operation_OptionalPluginName",
+        //     {
+        //         {"list",    Operation::List  },
+        //         {"plugins", Operation::List  },
+        //         {"reload",  Operation::Reload},
+        // }
+        // );
+        // registry.registerOverload<LLCommand>(
+        //     "ll",
+        //     CommandParameterData::makeMandatory<CommandParameterDataType::Enum>(
+        //         &LLCommand::operation,
+        //         "Operation",
+        //         "Operation_OptionalPluginName"
+        //     )
+        //         .addOptions(CommandParameterOption::EnumAutocompleteExpansion),
+        //     CommandParameterData::makeOptional<CommandParameterDataType::SoftEnum>(
+        //         &LLCommand::pluginNameToDoOperation,
+        //         "pluginName",
+        //         "PluginName",
+        //         &LLCommand::hasPluginNameSet
+        //     )
+        // );
     }
 };
 
