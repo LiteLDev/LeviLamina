@@ -1,5 +1,7 @@
 #include "mc/world/level/block/utils/StaticVanillaBlocks.h"
+
 #include "ll/api/memory/Hook.h"
+
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/block/utils/BedrockBlockNames.h"
 #include "mc/world/level/block/utils/VanillaBlockTypeIds.h"

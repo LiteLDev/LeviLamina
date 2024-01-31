@@ -1,12 +1,12 @@
 #pragma once
 
-#include <string_view>
+#include <cstddef>
 #include <type_traits>
-
-#include "ll/api/reflection/TypeName.h"
+#include <utility>
 
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Meta.h"
+#include "ll/api/reflection/TypeName.h"
 
 #if defined(__clang__) && !defined(BOOST_PFR_CORE_NAME_PARSING)
 #define BOOST_PFR_CORE_NAME_PARSING                                                                                    \
@@ -15,6 +15,7 @@
 #endif
 
 #include "boost/pfr.hpp"
+#include "boost/pfr/detail/make_integer_sequence.hpp"
 #include "boost/pfr/detail/offset_based_getter.hpp"
 
 #include "magic_enum.hpp"
