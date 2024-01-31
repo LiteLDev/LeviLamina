@@ -198,18 +198,13 @@ struct __declspec(empty_bases) Hook {};
                                                                                                                        \
         LL_HOOK_DEBUG_OUTPUT(IDENTIFIER);                                                                              \
                                                                                                                        \
-        template <class Arg>                                                                                           \
+        template <class T>                                                                                             \
         static consteval void detector() {                                                                             \
-            if constexpr (requires {                                                                                   \
-                              ::ll::memory::virtualDetector<_OriginFuncType, IDENTIFIER>();                            \
-                              ::ll::memory::resolveIdentifier<_OriginFuncType>(IDENTIFIER);                            \
-                          }) {                                                                                         \
-                if constexpr (::ll::memory::virtualDetector<_OriginFuncType, IDENTIFIER>()) {                          \
-                    static_assert(                                                                                     \
-                        ::ll::concepts::always_false<Arg>,                                                             \
-                        #IDENTIFIER " is a virtual function, for now you can't use function pointer to hook it."       \
-                    );                                                                                                 \
-                }                                                                                                      \
+            if constexpr (::ll::memory::virtualDetector<_OriginFuncType, IDENTIFIER>()) {                              \
+                static_assert(                                                                                         \
+                    ::ll::concepts::always_false<T>,                                                                   \
+                    #IDENTIFIER " is a virtual function, for now you can't use function pointer to hook it."           \
+                );                                                                                                     \
             }                                                                                                          \
         }                                                                                                              \
                                                                                                                        \
