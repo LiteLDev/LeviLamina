@@ -67,8 +67,8 @@ struct AddConstAtMemberFun<Ret (T::*)(Args...)> {
 template <class T>
 using AddConstAtMemberFunT = typename AddConstAtMemberFun<T>::type;
 
-template <class T, class U>
-using AddConstAtMemberFunIfOriginIs = std::conditional_t<IsConstMemberFunV<U>, AddConstAtMemberFunT<T>, T>;
+template <class T, bool U>
+using AddConstAtMemberFunIfOriginIs = std::conditional_t<U, AddConstAtMemberFunT<T>, T>;
 
 /**
  * @brief Hook priority enum.
@@ -166,8 +166,11 @@ public:
     struct DEF_TYPE TYPE {                                                                                             \
         using FuncPtr      = ::ll::memory::FuncPtr;                                                                    \
         using HookPriority = ::ll::memory::HookPriority;                                                               \
-        using OriginFuncType =                                                                                         \
-            ::ll::memory::AddConstAtMemberFunIfOriginIs<RET_TYPE FUNC_PTR(__VA_ARGS__), decltype(IDENTIFIER)>;         \
+        template <class T>                                                                                             \
+        static constexpr bool isConstMemberFunction =                                                                  \
+            requires(T const&) { static_cast<RET_TYPE FUNC_PTR(__VA_ARGS__) const>(IDENTIFIER); };                     \
+        using OriginFuncType = ::ll::memory::                                                                          \
+            AddConstAtMemberFunIfOriginIs<RET_TYPE FUNC_PTR(__VA_ARGS__), isConstMemberFunction<DEF_TYPE>>;            \
                                                                                                                        \
         inline static FuncPtr        target__{};                                                                       \
         inline static OriginFuncType originFunc__{};                                                                   \
@@ -177,10 +180,10 @@ public:
         template <class Arg>                                                                                           \
         static consteval void detector() {                                                                             \
             if constexpr (requires {                                                                                   \
-                              ::ll::memory::virtualDetector<IDENTIFIER>();                                             \
+                              ::ll::memory::virtualDetector<static_cast<OriginFuncType>(IDENTIFIER)>();                \
                               ll::memory::resolveIdentifier<OriginFuncType>(IDENTIFIER);                               \
                           }) {                                                                                         \
-                if constexpr (::ll::memory::virtualDetector<IDENTIFIER>()) {                                           \
+                if constexpr (::ll::memory::virtualDetector<static_cast<OriginFuncType>(IDENTIFIER)>()) {              \
                     static_assert(                                                                                     \
                         ::ll::concepts::always_false<Arg>,                                                             \
                         #IDENTIFIER " is a virtual function, for now you can't use function pointer to hook it."       \
