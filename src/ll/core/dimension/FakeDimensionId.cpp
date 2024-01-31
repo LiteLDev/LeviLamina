@@ -320,10 +320,10 @@ LL_TYPE_INSTANCE_HOOK(
     ServerNetworkHandlerPlayerActionPacketHandler,
     HookPriority::Normal,
     ServerNetworkHandler,
-    "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerActionPacket@@@Z",
+    &ServerNetworkHandler::handle,
     void,
-    NetworkIdentifier const& netId,
-    PlayerActionPacket&      packet
+    NetworkIdentifier const&  netId,
+    PlayerActionPacket const& packet
 ) {
     auto  player          = getServerPlayer(netId, packet.mClientSubId);
     auto  uuid            = player->getUuid();
@@ -352,8 +352,7 @@ LL_TYPE_INSTANCE_HOOK(
     LevelrequestPlayerChangeDimensionHandler,
     HookPriority::Normal,
     Level,
-    "?requestPlayerChangeDimension@Level@@UEAAXAEAVPlayer@@V?$unique_ptr@VChangeDimensionRequest@@U?$default_delete@"
-    "VChangeDimensionRequest@@@std@@@std@@@Z",
+    &Level::requestPlayerChangeDimension,
     void,
     Player&                                 player,
     std::unique_ptr<ChangeDimensionRequest> changeRequest

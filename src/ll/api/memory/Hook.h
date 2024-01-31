@@ -203,7 +203,7 @@ struct __declspec(empty_bases) Hook {};
             if constexpr (::ll::memory::virtualDetector<_OriginFuncType, IDENTIFIER>()) {                              \
                 static_assert(                                                                                         \
                     ::ll::concepts::always_false<T>,                                                                   \
-                    #IDENTIFIER " is a virtual function, for now you can't use function pointer to hook it."           \
+                    #IDENTIFIER " is a virtual function, you need use prefix $ workaround to hook it."                 \
                 );                                                                                                     \
             }                                                                                                          \
         }                                                                                                              \

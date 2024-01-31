@@ -45,13 +45,12 @@ LL_TYPE_STATIC_HOOK(
     VanillaDimensionsFromSerializedIntHook,
     HookPriority::Normal,
     VanillaDimensions,
-    "?fromSerializedInt@VanillaDimensions@@SA?AV?$Result@V?$AutomaticID@VDimension@@H@@Verror_code@std@@@Bedrock@@$$"
-    "QEAV?$Result@HVerror_code@std@@@3@@Z",
+    VanillaDimensions::fromSerializedInt,
     Bedrock::Result<DimensionType>,
-    Bedrock::Result<int>& dim
+    Bedrock::Result<int>&& dim
 ) {
     if (!dim || *dim <= 2) {
-        return origin(dim);
+        return origin(std::move(dim));
     }
     return *dim;
 };
@@ -60,7 +59,7 @@ LL_TYPE_STATIC_HOOK(
     VanillaDimensionsFromSerializedIntHookI,
     HookPriority::Normal,
     VanillaDimensions,
-    "?fromSerializedInt@VanillaDimensions@@SA?AV?$AutomaticID@VDimension@@H@@H@Z",
+    VanillaDimensions::fromSerializedInt,
     DimensionType,
     int dimId
 ) {
@@ -130,7 +129,8 @@ CustomDimensionManager::CustomDimensionManager() : impl(std::make_unique<Impl>()
                 name,
                 Impl::DimensionInfo{
                     info.dimId,
-                    *CompoundTag::fromBinaryNbt(string_utils::decompress(base64_utils::decode(info.base64Nbt)))}
+                    *CompoundTag::fromBinaryNbt(string_utils::decompress(base64_utils::decode(info.base64Nbt)))
+                }
             );
         }
         impl->mNewDimensionId += static_cast<int>(impl->customDimensionMap.size());
@@ -206,7 +206,8 @@ DimensionType CustomDimensionManager::addDimension(
             dimName,
             CustomDimensionConfig::Config::Info{
                 info.id,
-                base64_utils::encode(string_utils::compress(info.nbt.toBinaryNbt()))}
+                base64_utils::encode(string_utils::compress(info.nbt.toBinaryNbt()))
+            }
         );
         CustomDimensionConfig::saveConfigFile();
     }

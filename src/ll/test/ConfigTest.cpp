@@ -160,7 +160,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(ConfigTest, HookPriority::Normal, ServerInstance, &Se
     ll::logger.debug("789\xDB\xFE");
     ll::logger.debug("789\xDB\xFE");
 
-    ll::logger.debug("{}", ll::reflection::offset_array_v<TestClass<int>>);
+    // ll::logger.debug("{}", ll::reflection::offset_array_v<TestClass<int>>);
 
 #if !(defined(__INTELLISENSE__) || defined(__clangd__) || defined(__clang__))
     myTypeList1::push_back<int>();
