@@ -4,6 +4,7 @@
 
 #include "ll/api/Logger.h"
 #include "ll/api/data/Version.h"
+#include "ll/api/i18n/I18nAPI.h"
 #include "ll/api/service/ServerInfo.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StacktraceUtils.h"
@@ -11,7 +12,7 @@
 #include "ll/api/utils/WinUtils.h"
 #include "ll/core/Config.h"
 
-#include "windows.h"
+#include <windows.h>
 
 #if _HAS_CXX23
 #include "DbgHelp.h"

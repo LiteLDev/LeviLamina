@@ -5,6 +5,7 @@
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/utils/Base64Utils.h"
+#include "ll/api/utils/StringUtils.h"
 #include "ll/core/dimension/CustomDimensionConfig.h"
 #include "ll/core/dimension/FakeDimensionId.h"
 

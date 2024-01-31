@@ -14,25 +14,25 @@
  * @endcode
  */
 
-#include "ll/api/base/Concepts.h"
-#include "ll/api/i18n/I18nAPI.h"
-
+#include <array>
 #include <filesystem>
 #include <fstream>
-#include <iostream>
+#include <functional>
 #include <mutex>
-#include <source_location>
-#include <sstream>
+#include <optional>
 #include <string>
+#include <string_view>
 #include <utility>
 
-#include "fmt/chrono.h"
+#include "fmt/chrono.h" // IWYU pragma: keep
 #include "fmt/color.h"
-#include "fmt/compile.h"
+#include "fmt/core.h"
 #include "fmt/format.h"
-#include "fmt/os.h"
-#include "fmt/ranges.h"
-#include "fmt/std.h"
+#include "fmt/os.h"     // IWYU pragma: keep
+#include "fmt/ranges.h" // IWYU pragma: keep
+#include "fmt/std.h"    // IWYU pragma: keep
+
+#include "ll/api/base/Macro.h"
 
 namespace ll {
 class Logger {

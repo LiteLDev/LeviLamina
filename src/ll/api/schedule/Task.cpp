@@ -1,9 +1,12 @@
 #include "ll/api/schedule/Task.h"
 
 #include <spanstream>
+#include <thread>
 
 #include "ll/api/Logger.h"
 #include "ll/api/utils/ErrorUtils.h"
+
+#include "fmt/std.h" // IWYU pragma: keep
 
 namespace ll::schedule {
 inline namespace task {

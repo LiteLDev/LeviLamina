@@ -1,15 +1,35 @@
 #include "ll/core/plugin/PluginRegistrar.h"
 
+#include <cstddef>
 #include <expected>
+#include <filesystem>
+#include <memory>
+#include <mutex>
 #include <ranges>
+#include <string>
+#include <string_view>
+#include <unordered_map>
+#include <unordered_set>
+#include <utility>
+#include <vector>
 
-#include "ll/api/event/Emitter.h"
+#include "nlohmann/json.hpp"
+#include "nlohmann/json_fwd.hpp"
+
+#include "ll/api/base/Concepts.h" // IWYU pragma: keep
+#include "ll/api/data/DependencyGraph.h"
+#include "ll/api/i18n/I18nAPI.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/api/plugin/Manifest.h"
+#include "ll/api/plugin/Plugin.h"
+#include "ll/api/plugin/PluginManagerRegistry.h"
 #include "ll/api/reflection/Deserialization.h"
 #include "ll/api/utils/ErrorUtils.h"
+#include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
 #include "ll/core/plugin/NativePluginManager.h"
+
 
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
