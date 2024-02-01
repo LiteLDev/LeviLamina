@@ -37,8 +37,6 @@ Then, install LeviLamina bundled with Minecraft Bedrock Server using lip:
 lip install github.com/LiteLDev/LeviLamina
 ```
 
-For more information, please refer to [the documentation](https://levilamina.liteldev.com).
-
 ### Updating
 
 When it comes to data security, we advise against updating LeviLamina in its current location. Instead, we recommend creating a new directory, installing the new version of LeviLamina there, and subsequently copying the `worlds` directory from the old location to the new one. Next, follow the instructions provided by the plugin developers to migrate the configuration files and data files of the plugins you are using to the new directory.
@@ -56,8 +54,6 @@ To start the server, simply run `bedrock_server_mod.exe`:
 ```sh
 ./bedrock_server_mod.exe
 ```
-
-For more information, please refer to [the documentation](https://levilamina.liteldev.com).
 
 ## Star History
 
