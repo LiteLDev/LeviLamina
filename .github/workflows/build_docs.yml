@@ -6,6 +6,7 @@ on:
       - src/**/*.h
       - Doxyfile
       - DoxygenLayout.xml
+      - mkdocs.yml
   workflow_dispatch:
 
 jobs:
