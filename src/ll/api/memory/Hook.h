@@ -99,8 +99,7 @@ LLNDAPI FuncPtr resolveIdentifier(std::string_view identifier, bool disableError
 template <class T>
 concept FuncPtrType = std::is_function_v<std::remove_pointer_t<T>> || std::is_member_function_pointer_v<T>;
 
-template <class T>
-    requires(FuncPtrType<T> || std::is_same_v<T, uintptr_t>)
+template <FuncPtrType T>
 constexpr FuncPtr resolveIdentifier(T identifier) {
     return toFuncPtr(identifier);
 }
@@ -111,10 +110,14 @@ constexpr FuncPtr resolveIdentifier(std::string_view identifier) {
     return resolveIdentifier(identifier);
 }
 
-// redirect to resolveIdentifier(uintptr_t)
 template <class T>
 constexpr FuncPtr resolveIdentifier(uintptr_t address) {
-    return resolveIdentifier(address);
+    return toFuncPtr(address);
+}
+
+template <class T>
+constexpr FuncPtr resolveIdentifier(void* address) {
+    return address;
 }
 
 template <class, FixedString>
@@ -175,7 +178,7 @@ struct __declspec(empty_bases) Hook {};
                                                                                                                        \
         template <class T>                                                                                             \
         struct _ConstDetector {                                                                                        \
-            static constexpr bool value = false;                                                                       \
+            [[maybe_unused]] static constexpr bool value = false;                                                      \
             explicit constexpr _ConstDetector(T) {}                                                                    \
         };                                                                                                             \
         template <class T>                                                                                             \
@@ -183,7 +186,7 @@ struct __declspec(empty_bases) Hook {};
         [[maybe_unused]] _ConstDetector(_RawFuncType) -> _ConstDetector<_RawFuncType>;                                 \
         template <>                                                                                                    \
         struct _ConstDetector<_RawConstFuncType> {                                                                     \
-            static constexpr bool value = true;                                                                        \
+            [[maybe_unused]] static constexpr bool value = true;                                                       \
             explicit constexpr _ConstDetector(_RawConstFuncType) {}                                                    \
         };                                                                                                             \
         template <class T = _RawFuncType, std::enable_if_t<std::is_member_function_pointer_v<T>, int> = 0>             \
@@ -200,11 +203,13 @@ struct __declspec(empty_bases) Hook {};
                                                                                                                        \
         template <class T>                                                                                             \
         static consteval void detector() {                                                                             \
-            if constexpr (::ll::memory::virtualDetector<_OriginFuncType, IDENTIFIER>()) {                              \
-                static_assert(                                                                                         \
-                    ::ll::concepts::always_false<T>,                                                                   \
-                    #IDENTIFIER " is a virtual function, you need use prefix $ workaround to hook it."                 \
-                );                                                                                                     \
+            if constexpr (requires { ::ll::memory::virtualDetector<T, IDENTIFIER>(); }) {                              \
+                if constexpr (::ll::memory::virtualDetector<T, IDENTIFIER>()) {                                        \
+                    static_assert(                                                                                     \
+                        ::ll::concepts::always_false<T>,                                                               \
+                        #IDENTIFIER " is a virtual function, you need use prefix $ workaround to hook it."             \
+                    );                                                                                                 \
+                }                                                                                                      \
             }                                                                                                          \
         }                                                                                                              \
                                                                                                                        \
@@ -216,7 +221,7 @@ struct __declspec(empty_bases) Hook {};
         STATIC RET_TYPE detour(__VA_ARGS__);                                                                           \
                                                                                                                        \
         static int hook(bool suspendThreads = true) {                                                                  \
-            detector<DEF_TYPE>();                                                                                      \
+            detector<_OriginFuncType>();                                                                               \
             _HookTarget = ::ll::memory::resolveIdentifier<_OriginFuncType>(IDENTIFIER);                                \
             if (_HookTarget == nullptr) {                                                                              \
                 return -1;                                                                                             \
