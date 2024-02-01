@@ -31,12 +31,12 @@ nav:
 
   - faq.md
 
-  - Native APIs: api/native
+  - Native APIs: https://levilamina.liteldev.com/api
 
   - discuss.md
 
 exclude_docs: |
-  api/native/
+  api/assets/
 
 theme:
   name: material

@@ -17,7 +17,7 @@ jobs:
           submodules: true
 
       - run: |
-          mkdir -p site/api/native
+          mkdir -p site/api
       
       - uses: mattnotmitt/doxygen-action@1.9.5
 
