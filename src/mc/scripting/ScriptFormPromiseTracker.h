@@ -1,6 +1,10 @@
 #pragma once
 
+#include "ll/api/base/StdInt.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include <unordered_map>
+
 
 // auto generated inclusion list
 #include "mc/world/events/EventResult.h"
@@ -10,7 +14,7 @@
 namespace Json { class Value; }
 // clang-format on
 
-class ScriptFormPromiseTracker {
+class ScriptFormPromiseTracker : public Bedrock::EnableNonOwnerReferences {
 public:
     // ScriptFormPromiseTracker inner types declare
     // clang-format off
@@ -32,6 +36,11 @@ public:
 
         // NOLINTEND
     };
+
+public:
+    char padding[0x8]; // parent class EventListenerDispatcher<PlayerEventListener>
+    int  mLastRequestId;
+    std::unordered_map<uint, ScriptFormPromiseTracker::FromRequest> mFormRequests;
 
 public:
     // prevent constructor by default

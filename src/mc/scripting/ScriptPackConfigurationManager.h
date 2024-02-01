@@ -1,6 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/scripting/ScriptPackConfiguration.h"
+#include <string>
+#include <unordered_map>
+
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
@@ -12,6 +16,10 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 // clang-format on
 
 class ScriptPackConfigurationManager : public ::Bedrock::EnableNonOwnerReferences {
+public:
+    std::unordered_map<std::string, ScriptPackConfiguration> mPackConfigurations;
+    ScriptPackConfiguration                                  mDefaultPackConfiguration;
+
 public:
     // prevent constructor by default
     ScriptPackConfigurationManager& operator=(ScriptPackConfigurationManager const&);

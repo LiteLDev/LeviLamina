@@ -5,11 +5,14 @@
 namespace Scripting {
 
 struct WatchdogSettings {
-public:
-    // prevent constructor by default
-    WatchdogSettings& operator=(WatchdogSettings const&);
-    WatchdogSettings(WatchdogSettings const&);
-    WatchdogSettings();
+    int  mHangThresholdMs;
+    int  mSpikeThresholdMs;
+    int  mSlowThresholdMs;
+    bool mHangException;
+    bool mEnableExceptionHandling;
+    bool mEnableShutdown;
+    int  mMemoryWarningMB;
+    int  mMemoryLimitMB;
 };
 
 }; // namespace Scripting

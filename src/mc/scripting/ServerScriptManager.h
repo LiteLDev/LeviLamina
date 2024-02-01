@@ -1,10 +1,24 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/threading/Scheduler.h"
+#include "mc/external/scripting/DependencyLocator.h"
+#include "mc/external/scripting/ScriptSettings.h"
+#include "mc/scripting/ScriptFormPromiseTracker.h"
+#include "mc/scripting/ScriptPluginManager.h"
+#include "mc/scripting/ScriptPluginResult.h"
+#include "mc/scripting/ScriptPrintLogger.h"
+#include "mc/scripting/ScriptTickListener.h"
+#include "mc/scripting/debugger/ScriptDebugger.h"
+#include "mc/scripting/debugger/ScriptDebuggerWatchdog.h"
+
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/world/events/EventResult.h"
+#include <functional>
+#include <memory>
+#include <vector>
 
 // auto generated forward declare list
 // clang-format off
@@ -14,6 +28,22 @@ namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 class ServerScriptManager {
+public:
+    Bedrock::NonOwnerPointer<Scheduler>           mServerScheduler;
+    ScriptSettings                                mScriptSettings;
+    std::unique_ptr<ScriptPrintLogger>            mPrintLogger;
+    std::unique_ptr<ScriptFormPromiseTracker>     mFormPromiseTracker;
+    std::unique_ptr<Scripting::DependencyLocator> mDependencyLocator;
+    std::unique_ptr<Scripting::ScriptEngine>      mScriptEngine;
+    std::unique_ptr<ScriptDebuggerWatchdog>       mScriptDebuggerWatchdog;
+    std::unique_ptr<ScriptPluginManager>          mScriptPluginManager;
+    std::unique_ptr<ScriptDebugger>               mScriptDebugger;
+    std::unique_ptr<ScriptTickListener>           mScriptTickListener;
+    std::vector<std::function<
+        bool(const PackManifest&, const Scripting::ModuleDescriptor&, const Scripting::ModuleDescriptor&, ScriptPluginResult&)>>
+         mModuleFilters;
+    bool mInitializeEditorModules;
+
 public:
     // prevent constructor by default
     ServerScriptManager& operator=(ServerScriptManager const&);

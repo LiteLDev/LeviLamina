@@ -1,8 +1,19 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/Value.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include <optional>
+#include <string>
+#include <unordered_map>
+#include <vector>
 
 class ScriptPackPermissions {
+public:
+    std::unordered_map<std::string, std::unordered_map<std::string, Json::Value>> mModulePermissions;
+    std::vector<std::string>                                                      mAllowedModules;
+    std::optional<CommandPermissionLevel>                                         mCommandsPermissionLevel;
+
 public:
     // prevent constructor by default
     ScriptPackPermissions& operator=(ScriptPackPermissions const&);
