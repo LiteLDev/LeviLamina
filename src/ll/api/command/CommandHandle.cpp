@@ -30,6 +30,7 @@ struct ParamTest {
 #include "ll/api/memory/Hook.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
+namespace {
 LL_AUTO_TYPE_INSTANCE_HOOK(
     ServerStartedEventHook,
     ll::memory::HookPriority::Low,
@@ -74,3 +75,5 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
             output.success("p3: {}", param.p3);
         }>();
 }
+
+} // namespace
