@@ -14,19 +14,19 @@ namespace Bedrock { class EnableNonOwnerReferences; }
 
 class Scheduler : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    int                                                                          mTotalFrames;
-    int                                                                          mStarvedFrames;
-    int                                                                          mPromotionFrames;
-    int                                                                          mTargetFPS;
-    int                                                                          mEffectiveFPS;
-    int                                                                          mFramesOverBound;
-    double                                                                       mAverageCallbackDuration;
-    double                                                                       mTotalCoroutineDuration;
-    uint64                                                                       mTotalRunCoroutines;
-    double                                                                       mCoroutineTimeLimit;
-    std::unique_ptr<WorkerPool>                                                  mCoroutinePool;
-    std::chrono::time_point<std::chrono::system_clock, std::chrono::nanoseconds> mNextStarveCheckTime;
-    std::thread::id                                                              mThreadID;
+    int                                   mTotalFrames;
+    int                                   mStarvedFrames;
+    int                                   mPromotionFrames;
+    int                                   mTargetFPS;
+    int                                   mEffectiveFPS;
+    int                                   mFramesOverBound;
+    double                                mAverageCallbackDuration;
+    double                                mTotalCoroutineDuration;
+    uint64                                mTotalRunCoroutines;
+    double                                mCoroutineTimeLimit;
+    std::unique_ptr<WorkerPool>           mCoroutinePool;
+    std::chrono::steady_clock::time_point mNextStarveCheckTime;
+    std::thread::id                       mThreadID;
 
 public:
     // prevent constructor by default
