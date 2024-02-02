@@ -19,9 +19,6 @@ public:
 
     LLNDAPI CommandRegistry& getRegistry() const;
 
-    template <class Params, class Callable>
-    constexpr void registerOverload(std::string_view description, Callable&& executor) {
-
-    }
+    
 };
 } // namespace ll::command

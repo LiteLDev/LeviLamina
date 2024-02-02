@@ -566,10 +566,10 @@ public:
     // ?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z
     MCAPI void registerCommand(
         std::string const&       name,
-        char const*              description,
-        ::CommandPermissionLevel requirement,
-        struct CommandFlag = CommandFlagValue::None,
-        struct CommandFlag = CommandFlagValue::None // useless, idiot
+        char const*              description = "", // will copy to std::string
+        ::CommandPermissionLevel requirement = CommandPermissionLevel::Any,
+        struct CommandFlag                   = CommandFlagValue::None,
+        struct CommandFlag                   = CommandFlagValue::None // useless, idiot
     );
 
     // symbol:

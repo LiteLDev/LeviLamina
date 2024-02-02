@@ -6,19 +6,13 @@
 
 namespace ll::command {
 
-template <reflection::Reflectable T, auto Executor>
-    requires(std::default_initializable<T>)
+template <reflection::Reflectable Params, auto Executor>
+    requires(std::default_initializable<Params>)
 class Command : public ::Command {
-    T parameters;
+    uint64 placeholder{};
+    Params parameters;
 
-    Command() {
-        reflection::forEachMember(parameters, [](std::string_view name, auto& member) {
-            using member_type = std::remove_cvref_t<decltype(member)>;
-            if constexpr (concepts::IsOptional<member_type>) {
-                if (!member) member.emplace();
-            }
-        });
-    }
+    Command() = default;
 
 public:
     static std::unique_ptr<::Command> make() { return std::unique_ptr<Command>(new Command{}); }

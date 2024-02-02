@@ -35,7 +35,7 @@ public:
         char const*                               enumName,
         int                                       offset,
         bool                                      optional,
-        int                                       flag_offset
+        int                                       flagOffset
     )
     : mTypeIndex(typeIndex),
       mParse(parser),
@@ -46,7 +46,7 @@ public:
       mPostfixSymbol(-1),
       mParamType(type),
       mOffset(offset),
-      mSetOffset(flag_offset),
+      mSetOffset(flagOffset),
       mIsOptional(optional),
       mOptions(CommandParameterOption::None){};
 
