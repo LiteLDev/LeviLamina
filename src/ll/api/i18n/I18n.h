@@ -142,6 +142,8 @@ inline void load(std::filesystem::path const& path) {
 } // namespace ll::i18n
 
 #ifdef LL_I18N_COLLECT_STRINGS
+#include "ll/api/reflection/TypeName.h"
+
 namespace ll::i18n_literals {
 namespace detail {
 template <FixedString str>
@@ -157,9 +159,9 @@ struct TrString {
 namespace ll::i18n_literals {
 template <FixedString Fmt>
 [[nodiscard]] constexpr auto operator""_tr() {
-    return [=]<typename... Args>(Args&&... args) {
+    return [=]<class... Args>(Args&&... args) {
 #ifdef LL_I18N_COLLECT_STRINGS
-        static detail::TrString<str> e{};
+        static detail::TrString<Fmt> e{};
 #endif
         [[maybe_unused]] static constexpr auto checker = fmt::format_string<Args...>(std::string_view{Fmt});
         return fmt::vformat(::ll::i18n::getInstance()->get(Fmt), fmt::make_format_args(args...));

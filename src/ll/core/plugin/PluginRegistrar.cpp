@@ -224,12 +224,10 @@ void PluginRegistrar::loadAllPlugins() {
             for (auto& dependency : *manifest.dependencies) {
                 if (loadErrored.contains(dependency.name)) {
                     deniedByDepError = true;
-                    logger.error(
-                        "The dependency of {} is not loaded successfully, will not be loaded"_tr(name, dependency.name)
-                    );
                 }
             }
             if (deniedByDepError) {
+                logger.error("The dependencies of {} is not loaded, will not be loaded"_tr(name));
                 loadErrored.emplace(name);
                 continue;
             }
