@@ -2,6 +2,7 @@
 
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Containers.h"
+#include "ll/api/base/FixedString.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/utils/StringUtils.h"
 
@@ -18,8 +19,6 @@
 #include "nlohmann/json.hpp"
 
 // #define LL_I18N_COLLECT_STRINGS
-
-class Player;
 
 namespace ll::i18n {
 
@@ -140,61 +139,9 @@ inline void load(std::filesystem::path const& path) {
     } catch (...) {}
     getInstance() = nullptr;
 }
-namespace detail {
-template <ll::concepts::IsString S, class... Args>
-inline auto tr(S const& fmt, Args&&... args)
-    -> std::conditional_t<sizeof...(args) == 0, std::string_view, std::string> {
-    auto res = getInstance()->get(fmt);
-    if constexpr (sizeof...(args) != 0) {
-        return fmt::format(fmt::runtime(res), std::forward<Args>(args)...);
-    }
-    return res;
-}
-template <ll::concepts::IsString S, class... Args>
-[[nodiscard]] inline auto trl(std::string_view localeName, S const& fmt, Args&&... args)
-    -> std::conditional_t<sizeof...(args) == 0, std::string_view, std::string> {
-    auto res = getInstance()->get(fmt, localeName);
-    if constexpr (sizeof...(args) != 0) {
-        return fmt::format(fmt::runtime(res), std::forward<Args>(args)...);
-    }
-    return res;
-}
-LLNDAPI std::string getPlayerLocale(Player const&);
-} // namespace detail
-
-struct TranslateFunctor {
-    std::string_view view;
-    [[nodiscard]] constexpr TranslateFunctor(std::string_view view) : view(view) {}       // NOLINT
-    [[nodiscard]] inline   operator std::string_view() const { return detail::tr(view); } // NOLINT
-    [[nodiscard]] inline   operator fmt::string_view() const { return detail::tr(view); } // NOLINT
-    [[nodiscard]] explicit operator std::string() const { return std::string{detail::tr(view)}; }
-
-    template <class... Args>
-    [[nodiscard]] inline std::string operator()(Args&&... args) {
-        return fmt::format(fmt::runtime(detail::tr(view)), std::forward<Args>(args)...);
-    }
-};
-
-struct TranslateFunctorWithLocale : TranslateFunctor {
-    using TranslateFunctor::TranslateFunctor;
-
-    template <class... Args>
-    [[nodiscard]] inline std::string operator()(std::string_view locale, Args&&... args) {
-        return fmt::format(fmt::runtime(detail::trl(locale, view)), std::forward<Args>(args)...);
-    }
-    template <class... Args>
-    [[nodiscard]] inline std::string operator()(Player const& player, Args&&... args) {
-        return fmt::format(
-            fmt::runtime(detail::trl(detail::getPlayerLocale(player), view)),
-            std::forward<Args>(args)...
-        );
-    }
-};
-
 } // namespace ll::i18n
 
 #ifdef LL_I18N_COLLECT_STRINGS
-#include "ll/api/base/FixedString.h"
 namespace ll::i18n_literals {
 namespace detail {
 template <FixedString str>
@@ -205,24 +152,17 @@ struct TrString {
     }();
 };
 } // namespace detail
-template <FixedString str>
-[[nodiscard]] inline i18n::TranslateFunctor operator""_tr() {
-    static detail::TrString<str> e{};
-    return (std::string_view)str;
-}
-template <FixedString str>
-[[nodiscard]] inline i18n::TranslateFunctorWithLocale operator""_trl() {
-    static detail::TrString<str> e{};
-    return (std::string_view)str;
-}
-} // namespace ll::i18n_literals
-#else
-namespace ll::i18n_literals {
-[[nodiscard]] inline i18n::TranslateFunctor operator""_tr(char const* x, size_t len) {
-    return std::string_view{x, len};
-}
-[[nodiscard]] inline i18n::TranslateFunctorWithLocale operator""_trl(char const* x, size_t len) {
-    return std::string_view{x, len};
-}
 } // namespace ll::i18n_literals
 #endif
+namespace ll::i18n_literals {
+template <FixedString Fmt>
+[[nodiscard]] constexpr auto operator""_tr() {
+    return [=]<typename... Args>(Args&&... args) {
+#ifdef LL_I18N_COLLECT_STRINGS
+        static detail::TrString<str> e{};
+#endif
+        [[maybe_unused]] static constexpr auto checker = fmt::format_string<Args...>(std::string_view{Fmt});
+        return fmt::vformat(::ll::i18n::getInstance()->get(Fmt), fmt::make_format_args(args...));
+    };
+}
+} // namespace ll::i18n_literals

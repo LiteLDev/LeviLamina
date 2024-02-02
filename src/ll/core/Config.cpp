@@ -1,7 +1,7 @@
 #include "ll/core/Config.h"
 
 #include "ll/api/Config.h"
-#include "ll/api/i18n/I18nAPI.h"
+#include "ll/api/i18n/I18n.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/core/LeviLamina.h"
 
@@ -16,15 +16,15 @@ bool loadLeviConfig() {
     try {
         if (!ll::config::loadConfig(globalConfig, leviConfigPath)) {
             if (ll::config::saveConfig(globalConfig, leviConfigPath)) {
-                logger.warn("LeviConfig rewrite successfully"_tr);
+                logger.warn("LeviConfig rewrite successfully"_tr());
             } else {
-                logger.error("LeviConfig rewrite failed"_tr);
+                logger.error("LeviConfig rewrite failed"_tr());
                 return false;
             }
         }
         return true;
     } catch (...) {
-        logger.error("LeviConfig load failed"_tr);
+        logger.error("LeviConfig load failed"_tr());
         ll::error_utils::printCurrentException(logger);
         return false;
     }
@@ -39,7 +39,7 @@ bool saveLeviConfig() {
         ll::error_utils::printCurrentException(logger);
     }
     if (!res) {
-        logger.error("LeviConfig failed to save"_tr);
+        logger.error("LeviConfig failed to save"_tr());
         return false;
     }
     return true;

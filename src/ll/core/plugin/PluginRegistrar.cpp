@@ -18,7 +18,7 @@
 
 #include "ll/api/base/Concepts.h" // IWYU pragma: keep
 #include "ll/api/data/DependencyGraph.h"
-#include "ll/api/i18n/I18nAPI.h"
+#include "ll/api/i18n/I18n.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/plugin/Manifest.h"
@@ -351,7 +351,7 @@ bool PluginRegistrar::enablePlugin(std::string_view name) {
                 if (ptr->getState() == Plugin::State::Enabled) {
                     continue;
                 }
-                logger.error("Dependency {} of {} is not enabled"_tr(depName));
+                logger.error("Dependency {} of {} is not enabled"_tr(depName, name));
                 return false;
             }
         }

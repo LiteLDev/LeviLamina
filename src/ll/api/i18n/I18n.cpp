@@ -1,9 +1,7 @@
-#include "ll/api/i18n/I18nAPI.h"
+#include "ll/api/i18n/I18n.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"
-
-#include "mc/world/actor/player/Player.h"
 
 namespace fs = std::filesystem;
 
@@ -210,7 +208,4 @@ void MultiFileI18N::save(bool nested) {
 I18N::Type MultiFileI18N::getType() const { return Type::MultiFile; }
 
 #pragma endregion
-namespace detail {
-LLNDAPI std::string getPlayerLocale(Player const& player) { return player.getLocaleName(); }
-} // namespace detail
 } // namespace ll::i18n

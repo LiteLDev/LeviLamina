@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "ll/api/i18n/I18nAPI.h"
+#include "ll/api/i18n/I18n.h"
 #include "ll/api/memory/Memory.h"
 #include "ll/api/utils/StringUtils.h"
 
