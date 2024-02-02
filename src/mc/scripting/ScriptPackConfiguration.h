@@ -2,8 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/scripting/ScriptPackPermissions.h"
-#include <string>
-#include <unordered_map>
 
 // auto generated forward declare list
 // clang-format off

@@ -4,8 +4,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/external/scripting/WatchdogSettings.h"
 #include "mc/scripting/ScriptPackConfigurationManager.h"
-#include <optional>
-
 
 struct ScriptSettings {
 public:

@@ -3,10 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/json/Value.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include <optional>
-#include <string>
-#include <unordered_map>
-#include <vector>
 
 class ScriptPackPermissions {
 public:

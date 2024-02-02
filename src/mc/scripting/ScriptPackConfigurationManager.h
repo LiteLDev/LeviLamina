@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/scripting/ScriptPackConfiguration.h"
-#include <string>
-#include <unordered_map>
-
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
