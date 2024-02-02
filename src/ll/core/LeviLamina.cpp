@@ -85,10 +85,10 @@ void checkOtherBdsInstance() {
             }
             // Compare the path
             if (path == currentPath) {
-                logger.error("ll.main.checkOtherBdsInstance.detected"_tr);
-                logger.error("ll.main.checkOtherBdsInstance.tip"_tr);
+                logger.error("Detected the existence of another BDS process with the same path!"_tr());
+                logger.error("This may cause the network port and the level to be occupied"_tr());
                 while (true) {
-                    logger.error("ll.main.checkOtherBdsInstance.ask"_tr(pid));
+                    logger.error("Do you want to terminate the process with PID {}?  (y=Yes, n=No, e=Exit)"_tr(pid));
                     char input;
                     rewind(stdin);
                     input = static_cast<char>(getchar());
@@ -123,18 +123,21 @@ void printWelcomeMsg() {
     logger.info(R"(                                                                      )");
     logger.info(R"(                                                                      )");
 
-    logger.info("ll.notice.license"_tr("LGPLv3"));
-    logger.info("ll.notice.newForum"_tr("https://forum.litebds.com"));
-    logger.info("ll.notice.translateText"_tr("https://crowdin.com/project/liteloaderbds"));
-    logger.info("ll.notice.sponsor.thanks"_tr);
+    logger.info("LeviLamina is licensed under {}"_tr("LGPLv3"));
+    logger.info("Help us translate & improve text -> {}"_tr("https://crowdin.com/project/levilamina"));
+    logger.info("ll.sponsor.thanks"_tr());
     logger.info("");
 }
 
 void checkProtocolVersion() {
     auto currentProtocol = getServerProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-        logger.warn("ll.main.warning.protocolVersionNotMatch.1"_tr(TARGET_BDS_PROTOCOL_VERSION, currentProtocol));
-        logger.warn("ll.main.warning.protocolVersionNotMatch.2"_tr);
+        logger.warn("Protocol version not match, target version: {}, current version: {}"_tr(
+            TARGET_BDS_PROTOCOL_VERSION,
+            currentProtocol
+        ));
+        logger.warn("This will most likely crash the server, please use the LeviLamina that matches the BDS version!"_tr()
+        );
     }
 }
 
@@ -197,7 +200,7 @@ void leviLaminaMain() {
     std::error_code ec;
     fs::create_directories(plugin::getPluginsRoot(), ec);
 
-    i18n::load(u8"plugins/LeviLamina/lang");
+    ::ll::i18n::load(u8"plugins/LeviLamina/lang");
 
     loadLeviConfig();
 
@@ -229,7 +232,7 @@ void leviLaminaMain() {
     printWelcomeMsg();
 
 #ifdef LL_DEBUG
-    logger.warn("ll.main.warning.inDebugMode"_tr);
+    logger.warn("ll is now in debug mode"_tr());
 #endif
 
     plugin::PluginRegistrar::getInstance().loadAllPlugins();

@@ -61,7 +61,7 @@ class TeleportDimensionCommand : public Command {
         auto dim = VanillaDimensions::toString((int)DimensionId);
         auto pos = getTargetPos(ori, actor);
         actor->teleport(pos, (int)DimensionId);
-        output.success("ll.cmd.tpdim.success"_tr(actor->getNameTag(), dim, pos.x, pos.y, pos.z));
+        output.success("ll.cmd.tpdim.success {} {} {}"_tr(actor->getNameTag(), dim, pos.toString()));
         return true;
     }
 
@@ -78,7 +78,7 @@ class TeleportDimensionCommand : public Command {
             output.success();
         }
         if (output.getSuccessCount() == 0) {
-            output.error("ll.cmd.tpdim.error.noActorTeleported"_tr);
+            output.error("ll.cmd.tpdim.error.noActorTeleported"_tr());
             return false;
         } else {
             std::string message = fmt::format("Teleported {} to {}", names.substr(2), dim);
@@ -95,17 +95,17 @@ public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
         if (((int)DimensionId < 0 || (int)DimensionId > 2)
             && !VanillaDimensions::$DimensionMap().contains((int)DimensionId)) {
-            output.error("ll.cmd.tpdim.invalidDimid"_tr((int)DimensionId));
+            output.error("ll.cmd.tpdim.invalidDimid {}"_tr((int)DimensionId));
             return;
         }
         if (Victim_isSet) {
             auto result = Victim.results(ori);
-            if (result.empty()) output.error("ll.cmd.tpdim.error.noActorSpecified"_tr);
+            if (result.empty()) output.error("ll.cmd.tpdim.error.noActorSpecified"_tr());
             else if (result.count() == 1) teleportTarget(ori, output, *result.begin());
             else teleportTargets(ori, output, result);
         } else {
             auto actor = ori.getEntity();
-            if (!actor) output.error("ll.cmd.tpdim.error.noActorSpecified"_tr);
+            if (!actor) output.error("ll.cmd.tpdim.error.noActorSpecified"_tr());
             else teleportTarget(ori, output, actor);
         }
     }
@@ -209,14 +209,14 @@ void LLPluginInfoCommand(CommandOutput& output, std::string const& pluginName) {
 }
 */
 void LLVersionCommand(CommandOutput& output) {
-    output.success("ll.cmd.version.msg"_tr(
+    output.success("{} {} {}"_tr(
         ll::getBdsVersion().to_string(),
         ll::getLoaderVersion().to_string(),
         ll::getServerProtocolVersion()
     ));
 }
 
-void LLHelpCommand(CommandOutput& output) { output.success("ll.cmd.help.msg"_tr); }
+void LLHelpCommand(CommandOutput& output) { output.success("ll.cmd.help.msg"_tr()); }
 
 // void LLLoadPluginCommand(CommandOutput& output, std::string const& path) {
 

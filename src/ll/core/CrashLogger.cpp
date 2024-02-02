@@ -25,61 +25,6 @@ using namespace utils;
 using namespace string_utils;
 Logger crashLogger("CrashLogger");
 
-bool CrashLogger::startCrashLoggerProcess() {
-    if (IsDebuggerPresent()) {
-        crashLogger.info("ll.crashLogger.existsingDebuggerDetected"_tr);
-        return true;
-    }
-    if (win_utils::isWine()) {
-        crashLogger.info("ll.crashLogger.wineDetected"_tr);
-        return true;
-    }
-
-    STARTUPINFO si;
-    ZeroMemory(&si, sizeof(si));
-    si.cb = sizeof(si);
-    PROCESS_INFORMATION pi;
-
-    SECURITY_ATTRIBUTES sa;
-    sa.bInheritHandle       = true;
-    sa.lpSecurityDescriptor = nullptr;
-    sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
-
-    std::wstring cmd = string_utils::str2wstr(fmt::format(
-        "{} {} \"{}\"",
-        R"(.\plugins\LeviLamina\data\CrashLogger.exe)",
-        GetCurrentProcessId(),
-        ll::getBdsVersion().to_string()
-    ));
-    if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
-        crashLogger.error("ll.crashLogger.error.cannotCreateDaemonProcess"_tr);
-        error_utils::printException(crashLogger, error_utils::getWinLastError());
-        return false;
-    }
-
-    CloseHandle(pi.hProcess);
-    CloseHandle(pi.hThread);
-    return true;
-}
-
-void CrashLogger::initCrashLogger(bool enableCrashLogger) {
-
-    if (!enableCrashLogger) {
-        crashLogger.warn("ll.crashLogger.warning.crashLoggerDisabled.1"_tr);
-        crashLogger.warn("ll.crashLogger.warning.crashLoggerDisabled.2"_tr);
-        crashLogger.warn("ll.crashLogger.warning.crashLoggerDisabled.3"_tr);
-        crashLogger.warn("");
-        crashLogger.warn("ll.crashLogger.warning.crashLoggerDisabled.4"_tr);
-        return;
-    }
-    // Start CrashLogger
-    if (!startCrashLoggerProcess()) {
-        crashLogger.warn("ll.crashLogger.init.fail.msg"_tr);
-        crashLogger.warn("ll.crashLogger.init.fail.tip"_tr);
-    } else {
-        crashLogger.info("ll.crashLogger.init.success.msg"_tr);
-    }
-}
 #if _HAS_CXX23
 
 static struct CrashInfo {
@@ -306,7 +251,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
             throw error_utils::getWinLastError();
         }
     } catch (...) {
-        crashInfo.logger.error("!!! Error In CrashLogger !!!");
+        crashInfo.logger.error("!!! Error in CrashLogger !!!");
         ll::error_utils::printCurrentException(crashInfo.logger);
         crashInfo.logger.error("");
         crashInfo.logger.error("\n{}", ll::stacktrace_utils::toString(std::stacktrace::current()));
@@ -316,10 +261,10 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
 
 CrashLoggerNew::CrashLoggerNew() {
     if (IsDebuggerPresent()) {
-        crashLogger.warn("ll.crashLogger.init.fail.msg"_tr);
+        crashLogger.warn("Debugger detected, CrashLogger will not be enabled"_tr());
     } else {
         previous = SetUnhandledExceptionFilter(unhandledExceptionFilter);
-        crashLogger.info("ll.crashLogger.init.success.msg"_tr);
+        crashLogger.info("CrashLogger enabled successfully"_tr());
     }
 }
 

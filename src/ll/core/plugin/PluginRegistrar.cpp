@@ -77,7 +77,7 @@ static std::expected<Manifest, DirState> loadManifest(std::filesystem::path cons
         return std::unexpected{DirState::Error};
     }
     if (manifest.name != dirName) {
-        logger.error("ll.plugin.error.nameUnmatch"_tr(manifest.name, dirName));
+        logger.error("Plugin name {} do not match folder {}"_tr(manifest.name, dirName));
         return std::unexpected{DirState::Error};
     }
     return manifest;
@@ -93,12 +93,12 @@ void PluginRegistrar::loadAllPlugins() {
 
     std::unordered_map<std::string, Manifest> manifests;
 
-    ll::logger.info("ll.loader.loadMain.start"_tr);
+    ll::logger.info("Loading plugins..."_tr());
 
     auto& registry = PluginManagerRegistry::getInstance();
 
     if (!registry.addManager(std::make_shared<NativePluginManager>())) {
-        logger.error("ll.plugin.error.failCreateNativePluginManager"_tr);
+        logger.error("Failed to create native plugin manager"_tr());
         return;
     }
 
@@ -113,7 +113,8 @@ void PluginRegistrar::loadAllPlugins() {
                        .error_or(DirState::Success);
         if (res != DirState::Success) {
             if (res == DirState::Error) {
-                logger.error("ll.plugin.error.failToLoad"_tr(string_utils::u8str2str(file.path().stem().u8string())));
+                logger.error("Failed to load manifest for {}"_tr(string_utils::u8str2str(file.path().stem().u8string()))
+                );
             }
             continue;
         }
@@ -130,7 +131,7 @@ void PluginRegistrar::loadAllPlugins() {
                 if (!manifests.contains(dependency.name) || !checkVersion(manifests.at(dependency.name), dependency)) {
                     error = true;
 #if _HAS_CXX23
-                    logger.error("ll.plugin.error.lackDependence"_tr(
+                    logger.error("Missing dependency {}"_tr(
                         dependency.version.transform([&](auto& ver) { return dependency.name + " " + ver; }
                         ).value_or(dependency.name)
                     ));
@@ -138,6 +139,7 @@ void PluginRegistrar::loadAllPlugins() {
                 }
             }
             if (error) {
+                logger.error("The dependencies of {} are missing, will not be loaded"_tr(name));
                 continue;
             }
             for (auto& dependency : *manifest.dependencies) {
@@ -163,7 +165,7 @@ void PluginRegistrar::loadAllPlugins() {
             if (manifests.contains(conflict.name) && checkVersion(manifests.at(conflict.name), conflict)) {
                 conflicts.emplace_back(name);
 #if _HAS_CXX23
-                logger.error("ll.plugin.error.conflict"_tr(
+                logger.error("{} conflicts with {}"_tr(
                     name,
                     conflict.version.transform([&](auto& ver) { return conflict.name + " " + ver; }
                     ).value_or(conflict.name)
@@ -185,6 +187,7 @@ void PluginRegistrar::loadAllPlugins() {
                 }
             }
             if (deniedByConflict) {
+                logger.error("The dependencies of {} are in conflict, will not be loaded"_tr(name));
                 continue;
             }
             for (auto& dependency : *manifest.dependencies) {
@@ -210,7 +213,7 @@ void PluginRegistrar::loadAllPlugins() {
     }
     auto sort = impl->deps.sort();
     for (auto& name : sort.unsorted) {
-        logger.error("ll.plugin.error.cycleDeps"_tr(name));
+        logger.error("The dependencies of {} are in loops, will not be loaded"_tr(name));
     }
 
     std::unordered_set<std::string> loadErrored;
@@ -221,7 +224,9 @@ void PluginRegistrar::loadAllPlugins() {
             for (auto& dependency : *manifest.dependencies) {
                 if (loadErrored.contains(dependency.name)) {
                     deniedByDepError = true;
-                    logger.error("ll.plugin.error.depsNotLoaded"_tr(name, dependency.name));
+                    logger.error(
+                        "The dependency of {} is not loaded successfully, will not be loaded"_tr(name, dependency.name)
+                    );
                 }
             }
             if (deniedByDepError) {
@@ -230,17 +235,17 @@ void PluginRegistrar::loadAllPlugins() {
             }
         }
         if (registry.loadPlugin(std::move(manifest))) {
-            logger.info("ll.plugin.info.loaded"_tr(name));
+            logger.info("{} loaded"_tr(name));
         } else {
             loadErrored.emplace(name);
-            logger.error("ll.plugin.error.failToLoad"_tr(name));
+            logger.error("Failed to load {}"_tr(name));
         }
     }
     size_t loadedCount = sort.sorted.size() - loadErrored.size();
 
     static ll::memory::HookRegistrar<EnableAllPlugins, DisableAllPlugins> reg;
 
-    ll::logger.info("ll.loader.loadMain.done"_tr(loadedCount));
+    ll::logger.info("{} plugin(s) loaded"_tr(loadedCount));
 }
 
 std::vector<std::string> PluginRegistrar::getSortedPluginNames() const {
@@ -258,13 +263,29 @@ LL_TYPE_INSTANCE_HOOK(
 ) {
     origin(ins);
     try {
-        auto& registrar = PluginRegistrar::getInstance();
+        auto   begin     = std::chrono::steady_clock::now();
+        auto&  registrar = PluginRegistrar::getInstance();
+        size_t count{};
         for (auto& name : registrar.getSortedPluginNames()) {
+            bool enabled{};
             try {
-                registrar.enablePlugin(name);
+                enabled = registrar.enablePlugin(name);
             } catch (...) {
+                enabled = false;
                 error_utils::printCurrentException(logger);
             }
+            if (enabled) {
+                count++;
+            } else {
+                logger.error("Failed to enable {}"_tr(name));
+            }
+        }
+        if (count > 0) {
+            ll::logger.info("{} plugin(s) enabled in ({:.1f}s)"_tr(
+                count,
+                std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::steady_clock::now() - begin)
+                    .count()
+            ));
         }
     } catch (...) {
         error_utils::printCurrentException(logger);
@@ -296,7 +317,7 @@ bool PluginRegistrar::loadPlugin(std::string_view name) {
     std::lock_guard lock(impl->mutex);
     auto            res = loadManifest(getPluginsRoot() / string_utils::sv2u8sv(name));
     if (!res.has_value()) {
-        logger.error("ll.plugin.error.failToLoad"_tr(name));
+        logger.error("Failed to load manifest {}"_tr(name));
         return false;
     }
     auto& manifest = *res;
@@ -311,8 +332,10 @@ bool PluginRegistrar::unloadPlugin(std::string_view name) {
     std::lock_guard lock(impl->mutex);
     auto            dependents = impl->deps.dependentBy(std::string{name});
     if (!dependents.empty()) {
-        logger.error("ll.plugin.error.stillHasDependentsLoaded"_tr(dependents));
-    } else if (PluginManagerRegistry::getInstance().unloadPlugin(name)) {
+        logger.error("{} is still dependent on {}"_tr(name, dependents));
+        return false;
+    }
+    if (PluginManagerRegistry::getInstance().unloadPlugin(name)) {
         impl->deps.erase(std::string{name});
         return true;
     }
@@ -328,7 +351,7 @@ bool PluginRegistrar::enablePlugin(std::string_view name) {
                 if (ptr->getState() == Plugin::State::Enabled) {
                     continue;
                 }
-                logger.error("ll.plugin.error.stillHasDependentsDisable"_tr(depName));
+                logger.error("Dependency {} of {} is not enabled"_tr(depName));
                 return false;
             }
         }
@@ -349,7 +372,7 @@ bool PluginRegistrar::disablePlugin(std::string_view name) {
                 if (ptr->getState() == Plugin::State::Disabled) {
                     continue;
                 }
-                logger.error("ll.plugin.error.stillHasDependentsEnable"_tr(depName));
+                logger.error("{} is still dependent on {}"_tr(name, depName));
                 return false;
             }
         }

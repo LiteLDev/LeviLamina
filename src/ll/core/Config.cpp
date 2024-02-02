@@ -16,15 +16,15 @@ bool loadLeviConfig() {
     try {
         if (!ll::config::loadConfig(globalConfig, leviConfigPath)) {
             if (ll::config::saveConfig(globalConfig, leviConfigPath)) {
-                logger.warn("ll.config.rewrite.success"_tr);
+                logger.warn("LeviConfig rewrite successfully"_tr);
             } else {
-                logger.error("ll.config.rewrite.fail"_tr);
+                logger.error("LeviConfig rewrite failed"_tr);
                 return false;
             }
         }
         return true;
     } catch (...) {
-        logger.error("ll.config.load.fail"_tr);
+        logger.error("LeviConfig load failed"_tr);
         ll::error_utils::printCurrentException(logger);
         return false;
     }
@@ -35,12 +35,11 @@ bool saveLeviConfig() {
     try {
         res = ll::config::saveConfig(globalConfig, leviConfigPath);
     } catch (...) {
-        logger.error("ll.config.save.fail"_tr);
+        res = false;
         ll::error_utils::printCurrentException(logger);
-        return false;
     }
     if (!res) {
-        logger.error("ll.config.save.fail"_tr);
+        logger.error("LeviConfig failed to save"_tr);
         return false;
     }
     return true;

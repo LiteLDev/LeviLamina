@@ -2,6 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/server/commands/CommandPositionFloat.h"
+#include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/FacingResult.h"
 #include "mc/server/commands/RelativeFloat.h"
 
@@ -22,10 +23,10 @@ public:
         void(Actor&, Vec3, Vec3*, DimensionType, std::optional<RotationCommandUtils::RotationData> const&, int)>
         mApplyTeleport; // this+0x20
 
-    class CommandSelector<Actor>       mTargets;               // this+0x60
-    class CommandSelector<Actor>       mDestinationEntity;     // this+0x128
+    CommandSelector<Actor>             mTargets;               // this+0x60
+    CommandSelector<Actor>             mDestinationEntity;     // this+0x128
     CommandPositionFloat               mDestinationPos;        // this+0x1F0
-    class CommandSelector<Actor>       mFacingEntity;          // this+0x200
+    CommandSelector<Actor>             mFacingEntity;          // this+0x200
     CommandPositionFloat               mFacingPos;             // this+0x2C8
     RelativeFloat                      mYRot;                  // this+0x2D8
     RelativeFloat                      mXRot;                  // this+0x2E0
@@ -35,7 +36,7 @@ public:
     bool                               mFacingIsPosition;      // this+0x2EE
     bool                               mCheckForBlocks;        // this+0x2EF
 
-    TeleportCommand() = delete;
+    TeleportCommand();
 
 public:
     // NOLINTBEGIN

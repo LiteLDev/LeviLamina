@@ -9,11 +9,6 @@
 #endif
 
 namespace ll {
-class CrashLogger {
-public:
-    static bool startCrashLoggerProcess();
-    static void initCrashLogger(bool enableCrashLogger);
-};
 #if _HAS_CXX23
 class CrashLoggerNew {
     void* previous{};

@@ -4,10 +4,12 @@
 
 struct PlayerStorageIds {
 public:
-    // prevent constructor by default
-    PlayerStorageIds& operator=(PlayerStorageIds const&);
-    PlayerStorageIds(PlayerStorageIds const&);
-    PlayerStorageIds();
+    std::string MsaId;             // this+0x0
+    std::string PlatformId;        // this+0x20
+    std::string PlatformOnlineId;  // this+0x40
+    std::string PlatformOfflineId; // this+0x60
+    std::string SelfSignedId;      // this+0x80
+    std::string RandomClientId;    // this+0xA0
 
 public:
     // NOLINTBEGIN
