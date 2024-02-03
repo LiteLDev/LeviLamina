@@ -21,7 +21,8 @@ struct ParamTest {
 };
 
 struct ParamTest2 {
-    CommandBlockName block;
+    CommandBlockName           block;
+    std::unique_ptr<::Command> subcmd;
 };
 
 LL_AUTO_TYPE_INSTANCE_HOOK(
@@ -46,7 +47,12 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     cmd.overload<ParamTest>().required("p1").text("gr").required("p5").optional("p2").optional("p3").execute<lambda>();
     cmd.overload<ParamTest2>()
         .required("block")
-        .execute<[](CommandOrigin const&, CommandOutput& output, ParamTest2 const& param) {
+        .optional("subcmd")
+        .execute<[](CommandOrigin const& ori, CommandOutput& output, ParamTest2 const& param) {
             output.success("block: {}", param.block.getDescriptionId());
+            if (param.subcmd) {
+                output.success("subcmd: {}", param.subcmd->getCommandName());
+                param.subcmd->run(ori, output);
+            }
         }>();
 }

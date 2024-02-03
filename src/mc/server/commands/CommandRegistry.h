@@ -23,6 +23,7 @@
 namespace Json { class Value; }
 // clang-format on
 
+class Command;
 class CommandParameterData;
 class CommandFilePath;
 class CommandIntegerRange;
@@ -510,10 +511,10 @@ public:
     // ?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z
     MCAPI void registerCommand(
         std::string const&       name,
-        char const*              description = "", // will copy to std::string
-        ::CommandPermissionLevel requirement = CommandPermissionLevel::Any,
-        struct CommandFlag                   = CommandFlagValue::None,
-        struct CommandFlag                   = CommandFlagValue::None // useless, idiot
+        char const*              description, // will copy to std::string
+        ::CommandPermissionLevel requirement,
+        struct CommandFlag,
+        struct CommandFlag = CommandFlagValue::None // useless, idiot
     );
 
     // symbol:
@@ -989,7 +990,7 @@ MCTAPI bool CommandRegistry::parse<WildcardCommandSelector<
     const;
 
 MCTAPI bool CommandRegistry::parse<std::unique_ptr<
-    Command>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+    ::Command>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
     const;
 
 MCTAPI bool CommandRegistry::parse<std::vector<
