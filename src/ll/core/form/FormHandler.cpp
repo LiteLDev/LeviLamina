@@ -1,5 +1,5 @@
 #include "FormHandler.h"
-#include "d:/githubPos/LiteLoaderBDS/src/ll/api/base/StdInt.h"
+#include "ll/api/base/StdInt.h"
 #include "ll/api/form/CustomForm.h"
 #include "ll/api/form/SimpleForm.h"
 #include "ll/api/memory/Hook.h"
@@ -112,7 +112,7 @@ void CustomFormHandler::handle(Player& player, std::optional<Json::Value> data) 
 void ModalFormHandler::handle(Player& player, std::optional<Json::Value> data) const {
     bool selected = data == true;
     if (mCallback) {
-        mCallback(player, selected);
+        mCallback(player, (ll::form::ModalForm::SelectedButton)selected);
     }
 }
 

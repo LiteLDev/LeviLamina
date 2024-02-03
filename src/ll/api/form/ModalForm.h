@@ -12,15 +12,20 @@ class ModalForm : public Form {
     std::unique_ptr<ModalFormImpl> impl;
 
 public:
-    using Callback = std::function<void(Player&, bool)>;
+    enum class SelectedButton : bool {
+        Upper = true,
+        Lower = false,
+    };
+
+    using Callback = std::function<void(Player&, SelectedButton)>;
 
     LLNDAPI ModalForm();
 
     LLNDAPI ModalForm(
         std::string title,
         std::string content,
-        std::string buttonLeft,
-        std::string buttonRight,
+        std::string upperButton,
+        std::string lowerButton,
         Callback    callback = Callback()
     );
     LLAPI ~ModalForm() override;
@@ -29,16 +34,13 @@ public:
 
     LLAPI ModalForm& setContent(std::string const& content);
 
-    LLAPI ModalForm& setButtonLeft(std::string const& buttonLeft);
+    LLAPI ModalForm& setUpperButton(std::string const& upperButton);
 
-    LLAPI ModalForm& setButtonRight(std::string const& buttonRight);
+    LLAPI ModalForm& setLowerButton(std::string const& lowerButton);
 
     LLAPI ModalForm& setCallback(Callback callback);
 
     LLAPI bool sendTo(Player& player, Callback callback = Callback());
-
-    static constexpr bool BUTTON_LEFT  = false;
-    static constexpr bool BUTTON_RIGHT = true;
 };
 
 } // namespace ll::form

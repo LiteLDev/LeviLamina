@@ -12,8 +12,8 @@ public:
 
     std::string mTitle{};
     std::string mContent{};
-    std::string mButtonLeft{};
-    std::string mButtonRight{};
+    std::string mUpperButton{};
+    std::string mLowerButton{};
     Callback    mCallback{};
 
     ModalFormImpl() = default;
@@ -21,14 +21,14 @@ public:
     ModalFormImpl(
         std::string title,
         std::string content,
-        std::string buttonLeft,
-        std::string buttonRight,
+        std::string upperButton,
+        std::string lowerButton,
         Callback    callback = Callback()
     )
     : mTitle(std::move(title)),
       mContent(std::move(content)),
-      mButtonLeft(std::move(buttonLeft)),
-      mButtonRight(std::move(buttonRight)),
+      mUpperButton(std::move(upperButton)),
+      mLowerButton(std::move(lowerButton)),
       mCallback(std::move(callback)) {}
     ~ModalFormImpl() override = default;
 
@@ -36,9 +36,9 @@ public:
 
     void setContent(std::string const& content) { mContent = content; }
 
-    void setButtonLeft(std::string const& buttonLeft) { mButtonLeft = buttonLeft; }
+    void setUpperButton(std::string const& upperButton) { mUpperButton = upperButton; }
 
-    void setButtonRight(std::string const& buttonRight) { mButtonRight = buttonRight; }
+    void setLowerButton(std::string const& lowerButton) { mLowerButton = lowerButton; }
 
     void setCallback(Callback callback) { mCallback = std::move(callback); }
 
@@ -66,8 +66,8 @@ protected:
                 {"type",    "modal"     },
                 {"title",   mTitle      },
                 {"content", mContent    },
-                {"button1", mButtonLeft },
-                {"button2", mButtonRight}
+                {"button1", mUpperButton},
+                {"button2", mLowerButton}
             };
         } catch (...) {
             ll::logger.error("Failed to serialize ModalForm");
@@ -81,15 +81,15 @@ ModalForm::ModalForm() : impl(std::make_unique<ModalFormImpl>()) {}
 ModalForm::ModalForm(
     std::string title,
     std::string content,
-    std::string buttonLeft,
-    std::string buttonRight,
+    std::string upperButton,
+    std::string lowerButton,
     Callback    callback
 )
 : impl(std::make_unique<ModalFormImpl>(
     std::move(title),
     std::move(content),
-    std::move(buttonLeft),
-    std::move(buttonRight),
+    std::move(upperButton),
+    std::move(lowerButton),
     std::move(callback)
 )) {}
 
@@ -105,13 +105,13 @@ ModalForm& ModalForm::setContent(std::string const& content) {
     return *this;
 }
 
-ModalForm& ModalForm::setButtonLeft(std::string const& buttonLeft) {
-    impl->setButtonLeft(buttonLeft);
+ModalForm& ModalForm::setUpperButton(std::string const& upperButton) {
+    impl->setUpperButton(upperButton);
     return *this;
 }
 
-ModalForm& ModalForm::setButtonRight(std::string const& buttonRight) {
-    impl->setButtonRight(buttonRight);
+ModalForm& ModalForm::setLowerButton(std::string const& lowerButton) {
+    impl->setLowerButton(lowerButton);
     return *this;
 }
 
