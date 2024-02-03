@@ -7,8 +7,8 @@ namespace BlockSerializationUtils {
 
 struct NbtToBlockCache {
 public:
-    std::map<ulong, std::pair<BlockSerializationUtils::NBTState, const class Block*>> mCache;
-    std::mutex                                                                        mMutex;
+    std::map<uint64, std::pair<BlockSerializationUtils::NBTState, const class Block*>> mCache;
+    std::mutex                                                                         mMutex;
 
 public:
     // NOLINTBEGIN

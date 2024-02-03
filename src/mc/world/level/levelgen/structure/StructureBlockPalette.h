@@ -43,8 +43,8 @@ public:
     };
 
 public:
-    std::vector<std::unique_ptr<CompoundTag>>                           mStructurePaletteIdToSerializationId;
-    std::unordered_map<ulong, StructureBlockPalette::BlockPositionData> mBlockPositionData;
+    std::vector<std::unique_ptr<CompoundTag>>                            mStructurePaletteIdToSerializationId;
+    std::unordered_map<uint64, StructureBlockPalette::BlockPositionData> mBlockPositionData;
 
     // prevent constructor by default
     StructureBlockPalette& operator=(StructureBlockPalette const&);

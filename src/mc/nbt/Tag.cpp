@@ -16,40 +16,39 @@ extern std::string                       TypedToSnbt(IntArrayTag&, uchar, SnbtFo
 extern std::string                       TypedToSnbt(EndTag&, uchar, SnbtFormat);
 extern std::optional<CompoundTagVariant> parseSnbtValue(std::string_view&);
 } // namespace ll::nbt::detail
-using namespace ll::nbt::detail;
 
 std::string Tag::toSnbt(SnbtFormat snbtFormat, uchar indent) const {
     switch (getId()) {
     case Type::Byte:
-        return TypedToSnbt(*(ByteTag*)this, indent, snbtFormat);
+        return ll::nbt::detail::TypedToSnbt(*(ByteTag*)this, indent, snbtFormat);
     case Type::Short:
-        return TypedToSnbt(*(ShortTag*)this, indent, snbtFormat);
+        return ll::nbt::detail::TypedToSnbt(*(ShortTag*)this, indent, snbtFormat);
     case Type::Int:
-        return TypedToSnbt(*(IntTag*)this, indent, snbtFormat);
+        return ll::nbt::detail::TypedToSnbt(*(IntTag*)this, indent, snbtFormat);
     case Type::Int64:
-        return TypedToSnbt(*(Int64Tag*)this, indent, snbtFormat);
+        return ll::nbt::detail::TypedToSnbt(*(Int64Tag*)this, indent, snbtFormat);
     case Type::Float:
-        return TypedToSnbt(*(FloatTag*)this, indent, snbtFormat);
+        return ll::nbt::detail::TypedToSnbt(*(FloatTag*)this, indent, snbtFormat);
     case Type::Double:
-        return TypedToSnbt(*(DoubleTag*)this, indent, snbtFormat);
+        return ll::nbt::detail::TypedToSnbt(*(DoubleTag*)this, indent, snbtFormat);
     case Type::ByteArray:
-        return TypedToSnbt(*(ByteArrayTag*)this, indent, snbtFormat);
+        return ll::nbt::detail::TypedToSnbt(*(ByteArrayTag*)this, indent, snbtFormat);
     case Type::String:
-        return TypedToSnbt(*(StringTag*)this, indent, snbtFormat);
+        return ll::nbt::detail::TypedToSnbt(*(StringTag*)this, indent, snbtFormat);
     case Type::List:
-        return TypedToSnbt(*(ListTag*)this, indent, snbtFormat);
+        return ll::nbt::detail::TypedToSnbt(*(ListTag*)this, indent, snbtFormat);
     case Type::Compound:
-        return TypedToSnbt(*(CompoundTag*)this, indent, snbtFormat);
+        return ll::nbt::detail::TypedToSnbt(*(CompoundTag*)this, indent, snbtFormat);
     case Type::IntArray:
-        return TypedToSnbt(*(IntArrayTag*)this, indent, snbtFormat);
+        return ll::nbt::detail::TypedToSnbt(*(IntArrayTag*)this, indent, snbtFormat);
     case Type::End:
     default:
-        return TypedToSnbt(*(EndTag*)this, indent, snbtFormat);
+        return ll::nbt::detail::TypedToSnbt(*(EndTag*)this, indent, snbtFormat);
     }
 }
 
 std::unique_ptr<Tag> Tag::parseSnbt(std::string_view s) {
-    auto tag = parseSnbtValue(s);
+    auto tag = ll::nbt::detail::parseSnbtValue(s);
     if (tag) {
         return (*std::move(tag)).toUnique();
     }

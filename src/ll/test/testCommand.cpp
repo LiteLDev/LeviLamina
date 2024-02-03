@@ -6,22 +6,23 @@
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "mc/server/commands/CommandBlockName.h"
+#include "mc/world/AutomaticID.h"
 
 using namespace ll::command;
-
 
 struct ParamTest {
     int             p1;
     Optional<float> p2;
     bool            p3;
 
-    enum class TestEnums { sb, sb2, sj, g7 } p4;
-    enum class TestEnums2 { s1b, s2b2, s3j, g, s, sf, b };
+    enum class TestEnums { sb, sb2, CamCas } p4;
+    enum class TestEnums2 { s1b, s2b2, s3j, gGG, s, sf, b };
     SoftEnum<TestEnums2> p5;
 };
 
 struct ParamTest2 {
     CommandBlockName           block;
+    DimensionType              dim;
     std::unique_ptr<::Command> subcmd;
 };
 
@@ -47,9 +48,12 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     cmd.overload<ParamTest>().required("p1").text("gr").required("p5").optional("p2").optional("p3").execute<lambda>();
     cmd.overload<ParamTest2>()
         .required("block")
+        .required("dim")
         .optional("subcmd")
         .execute<[](CommandOrigin const& ori, CommandOutput& output, ParamTest2 const& param) {
             output.success("block: {}", param.block.getDescriptionId());
+            output.success("dim: {}", param.dim.id);
+
             if (param.subcmd) {
                 output.success("subcmd: {}", param.subcmd->getCommandName());
                 param.subcmd->run(ori, output);

@@ -19,12 +19,10 @@ class CommandRegistrar {
 
     char const* addText(CommandHandle&, std::string_view);
 
+    CommandRegistry& getRegistry() const;
+
 public:
     LLNDAPI static CommandRegistrar& getInstance();
-
-    LLNDAPI CommandRegistry* operator->() const;
-
-    LLNDAPI CommandRegistry& getRegistry() const;
 
     LLNDAPI CommandHandle& getOrCreateCommand(
         std::string const&     name,
@@ -32,22 +30,31 @@ public:
         CommandPermissionLevel requirement = CommandPermissionLevel::Any,
         CommandFlag            flag        = CommandFlagValue::NotCheat
     );
+
+    LLAPI bool hasEnum(std::string const& name);
+
     LLAPI bool tryRegisterEnum(
-        std::string const&                                 name,
-        std::vector<std::pair<std::string, uint64>> const& values,
-        Bedrock::typeid_t<CommandRegistry>                 type,
-        CommandRegistry::ParseFn                           parser
+        std::string const&                          name,
+        std::vector<std::pair<std::string, uint64>> values,
+        Bedrock::typeid_t<CommandRegistry>          type,
+        CommandRegistry::ParseFn                    parser
     );
+    LLAPI bool addEnumValues(
+        std::string const&                          name,
+        std::vector<std::pair<std::string, uint64>> values,
+        Bedrock::typeid_t<CommandRegistry>          type
+    );
+
+    LLAPI bool hasSoftEnum(std::string const& name);
+
     LLAPI bool tryRegisterSoftEnum(std::string const& name, std::vector<std::string> values);
 
-    template <concepts::ConceptFor<std::is_enum> T>
-    constexpr bool tryRegisterEnum(std::vector<std::pair<std::string, uint64>> const& values) {
-        return tryRegisterEnum(::ll::command::enum_name_v<T>, values, Bedrock::type_id<CommandRegistry, T>(), &CommandRegistry::parse<T>);
-    }
-    template <concepts::Specializes<SoftEnum> T>
-    constexpr bool tryRegisterSoftEnum(std::vector<std::string> values) {
-        return tryRegisterSoftEnum(::ll::command::enum_name_v<T>, values);
-    }
+    LLAPI bool addSoftEnumValues(std::string const& name, std::vector<std::string> values);
+
+    LLAPI bool removeSoftEnumValues(std::string const& name, std::vector<std::string> values);
+
+    LLAPI bool setSoftEnumValues(std::string const& name, std::vector<std::string> values);
+
     template <concepts::ConceptFor<std::is_enum> T>
     constexpr bool tryRegisterEnum() {
         static std::vector<std::pair<std::string, uint64>> values{[] {

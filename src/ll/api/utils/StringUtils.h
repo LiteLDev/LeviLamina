@@ -151,6 +151,8 @@ LLNDAPI bool isu8str(std::string_view str) noexcept;
 
 LLNDAPI std::string tou8str(std::string_view str);
 
+LLNDAPI std::string toSnakeCase(std::string_view str);
+
 namespace CodePage {
 enum : uint {
     DefaultACP = 0,  // default to ANSI code page

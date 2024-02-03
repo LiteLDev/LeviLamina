@@ -9,6 +9,8 @@
 #include "ll/core/dimension/CustomDimensionConfig.h"
 #include "ll/core/dimension/FakeDimensionId.h"
 
+#include "ll/api/command/CommandRegistrar.h"
+
 #include "mc/math/Vec3.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/level/dimension/Dimension.h"
@@ -211,6 +213,16 @@ DimensionType CustomDimensionManager::addDimension(
         );
         CustomDimensionConfig::saveConfigFile();
     }
+
+    // add to command enum
+
+    ll::command::CommandRegistrar::getInstance().addEnumValues(
+        "Dimension",
+        {
+            {dimName, info.id.id}
+    },
+        Bedrock::type_id<CommandRegistry, DimensionType>()
+    );
 
     return info.id;
 }

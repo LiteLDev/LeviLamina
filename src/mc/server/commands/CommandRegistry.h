@@ -79,10 +79,10 @@ public:
 
     struct Enum {
 
-        std::string                                         name;   // this+0x0
-        Bedrock::typeid_t<CommandRegistry>                  type;   // this+0x20
-        ParseFn                                             parse;  // this+0x28
-        std::vector<std::tuple<ulong, ulong, ulong, ulong>> values; // this+0x30
+        std::string                            name;   // this+0x0
+        Bedrock::typeid_t<CommandRegistry>     type;   // this+0x20
+        ParseFn                                parse;  // this+0x28
+        std::vector<std::pair<uint64, uint64>> values; // this+0x30
 
     public:
         // NOLINTBEGIN
@@ -233,7 +233,7 @@ public:
         std::string            name;                 // this+0x0
         std::string            desc;                 // this+0x20
         std::vector<Overload>  overloads;            // this+0x40
-        std::vector<void*>     unk88;                // this+0x58
+        std::vector<void*>     mUnknown;             // this+0x58  // ChainedSubcommand
         CommandPermissionLevel perm;                 // this+0x70
         Symbol                 mainSymbol;           // this+0x74
         Symbol                 altSymbol;            // this+0x78
@@ -310,13 +310,12 @@ public:
         // NOLINTBEGIN
         // symbol:
         // ?_findParsePrediction@Parser@CommandRegistry@@AEBA?AV?$dense_map_iterator@V?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@U?$dense_map_node@U?$pair@VSymbol@CommandRegistry@@V12@@std@@H@internal@entt@@@std@@@std@@@std@@@internal@entt@@AEBULexicalToken@2@AEBVSymbol@2@@Z
-        MCAPI entt::internal::dense_map_iterator<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<
-            entt::internal::
-                dense_map_node<std::pair<class CommandRegistry::Symbol, class CommandRegistry::Symbol>, int>>>>>
-              _findParsePrediction(
-                  struct CommandRegistry::LexicalToken const& lexToken,
-                  class CommandRegistry::Symbol const&        stackSymbol
-              ) const;
+        MCAPI entt::dense_map<std::pair<class CommandRegistry::Symbol, class CommandRegistry::Symbol>, int>::
+            const_iterator
+            _findParsePrediction(
+                struct CommandRegistry::LexicalToken const& lexToken,
+                class CommandRegistry::Symbol const&        stackSymbol
+            ) const;
 
         // symbol:
         // ?_parse@Parser@CommandRegistry@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -391,13 +390,13 @@ public:
     std::vector<OptionalParameterChain>                         mOptionals;                    // this+0xA8
     std::vector<std::string>                                    mEnumValues;                   // this+0xC0
     std::vector<Enum>                                           mEnums;                        // this+0xD8
-    std::vector<int>                                            mUnknow_1;                     // this+0xF0
-    std::vector<int>                                            mUnknow_2;                     // this+0x108
+    std::vector<int>                                            mUnknown1;                     // this+0xF0
+    std::vector<int>                                            mUnknown2;                     // this+0x108
     std::vector<Factorization>                                  mFactorizations;               // this+0x120
     std::vector<std::string>                                    mPostfixes;                    // this+0x138
     std::map<std::string, uint>                                 mEnumLookup;                   // this+0x150
-    std::map<std::string, ulong>                                mEnumValueLookup;              // this+0x160
-    std::map<std::string, int>                                  mUnknow_3;                     // this+0x170
+    std::map<std::string, uint64>                               mEnumValueLookup;              // this+0x160
+    std::map<std::string, int>                                  mUnknown3;                     // this+0x170
     std::map<std::string, int>                                  mChainedSubcommandLookUp;      // this+0x180
     std::vector<Symbol>                                         mCommandSymbols;               // this+0x190
     std::map<std::string, Signature>                            mSignatures;                   // this+0x1A8
@@ -406,7 +405,7 @@ public:
     std::vector<SemanticConstraint>                             mSemanticConstraints;          // this+0x1D8
     std::map<SemanticConstraint, uchar>                         mSemanticConstraintLookup;     // this+0x1F0
     std::vector<ConstrainedValue>                               mConstrainedValues;            // this+0x200
-    std::map<std::pair<ulong, uint>, uint>                      mConstrainedValueLookup;       // this+0x218
+    std::map<std::pair<uint64, uint>, uint>                     mConstrainedValueLookup;       // this+0x218
     std::vector<SoftEnum>                                       mSoftEnums;                    // this+0x228
     std::map<std::string, uint>                                 mSoftEnumLookup;               // this+0x240
     std::vector<RegistryState>                                  mStateStack;                   // this+0x250

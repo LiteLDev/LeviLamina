@@ -2,6 +2,8 @@
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/service/Bedrock.h"
 
+#include "ll/api/utils/StringUtils.h"
+
 namespace ll::command {
 struct CommandRegistrar::Impl {
     std::unordered_map<std::string, CommandHandle> commands;
@@ -15,8 +17,6 @@ CommandRegistrar& CommandRegistrar::getInstance() {
     return instance;
 }
 CommandRegistry& CommandRegistrar::getRegistry() const { return *ll::service::getCommandRegistry(); }
-
-CommandRegistry* CommandRegistrar::operator->() const { return &getRegistry(); }
 
 CommandHandle& CommandRegistrar::getOrCreateCommand(
     std::string const&     name,
@@ -38,19 +38,42 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
     }
 }
 
+bool CommandRegistrar::hasEnum(std::string const& name) { return getRegistry().mEnumLookup.contains(name); }
+
+static auto toLower(std::vector<std::pair<std::string, uint64>>& vec) {
+    for (auto& [k, v] : vec) {
+        k = string_utils::toSnakeCase(k);
+    }
+    return vec;
+}
+
 bool CommandRegistrar::tryRegisterEnum(
-    std::string const&                                 name,
-    std::vector<std::pair<std::string, uint64>> const& values,
-    Bedrock::typeid_t<CommandRegistry>                 type,
-    CommandRegistry::ParseFn                           parser
+    std::string const&                          name,
+    std::vector<std::pair<std::string, uint64>> values,
+    Bedrock::typeid_t<CommandRegistry>          type,
+    CommandRegistry::ParseFn                    parser
 ) {
     auto& registry = getRegistry();
     if (registry.mEnumLookup.contains(name)) {
         return false;
     }
-    registry._addEnumValuesInternal(name, values, type, parser);
+    registry._addEnumValuesInternal(name, toLower(values), type, parser);
     return true;
 }
+bool CommandRegistrar::addEnumValues(
+    std::string const&                          name,
+    std::vector<std::pair<std::string, uint64>> values,
+    Bedrock::typeid_t<CommandRegistry>          type
+) {
+    auto& registry = getRegistry();
+    if (!registry.mEnumLookup.contains(name)) {
+        return false;
+    }
+    registry._addEnumValuesInternal(name, toLower(values), type, nullptr);
+    return true;
+}
+bool CommandRegistrar::hasSoftEnum(std::string const& name) { return getRegistry().mSoftEnumLookup.contains(name); }
+
 bool CommandRegistrar::tryRegisterSoftEnum(std::string const& name, std::vector<std::string> values) {
     auto& registry = getRegistry();
     if (registry.mSoftEnumLookup.contains(name)) {
@@ -59,6 +82,34 @@ bool CommandRegistrar::tryRegisterSoftEnum(std::string const& name, std::vector<
     registry.addSoftEnum(name, std::move(values));
     return true;
 }
+
+bool CommandRegistrar::addSoftEnumValues(std::string const& name, std::vector<std::string> values) {
+    auto& registry = getRegistry();
+    if (!registry.mSoftEnumLookup.contains(name)) {
+        return false;
+    }
+    registry.addSoftEnumValues(name, std::move(values));
+    return true;
+}
+
+bool CommandRegistrar::removeSoftEnumValues(std::string const& name, std::vector<std::string> values) {
+    auto& registry = getRegistry();
+    if (!registry.mSoftEnumLookup.contains(name)) {
+        return false;
+    }
+    registry.removeSoftEnumValues(name, std::move(values));
+    return true;
+}
+
+bool CommandRegistrar::setSoftEnumValues(std::string const& name, std::vector<std::string> values) {
+    auto& registry = getRegistry();
+    if (!registry.mSoftEnumLookup.contains(name)) {
+        return false;
+    }
+    registry.setSoftEnumValues(name, std::move(values));
+    return true;
+}
+
 char const* CommandRegistrar::addText(CommandHandle& handle, std::string_view text) {
     std::string storedName{"ll_text_enum_name_"};
     storedName += text;

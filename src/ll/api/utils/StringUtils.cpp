@@ -280,6 +280,24 @@ std::string tou8str(std::string_view str) {
         return str2str(str, CodePage::DefaultACP, CodePage::UTF8);
     }
 }
+std::string toSnakeCase(std::string_view str) {
+    if (str.empty()) {
+        return {};
+    }
+    std::string res;
+    res.reserve(str.length());
+    res.push_back((char)tolower(str.front()));
+    str.remove_prefix(1);
+    for (auto c : str) {
+        if (isupper(c)) {
+            res.push_back('_');
+            res.push_back((char)tolower(c));
+        } else {
+            res.push_back(c);
+        }
+    }
+    return res;
+}
 bool strtobool(std::string const& str) {
     bool res = false;
     Util::toBool(str, res);

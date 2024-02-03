@@ -7,11 +7,9 @@ std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s);
 
 bool isTrivialNbtStringChar(char c) { return isalnum(c) || c == '-' || c == '+' || c == '_' || c == '.'; }
 } // namespace ll::nbt::detail
-namespace {
+namespace ll {
 
 using namespace ll::hash_literals;
-using namespace ll::hash_utils;
-using namespace ll::nbt::detail;
 
 bool scanComment(std::string_view& s) noexcept {
     size_t i = 0;
@@ -163,7 +161,7 @@ std::optional<CompoundTagVariant> parseNumber(std::string_view& s) {
     default:
         break;
     }
-    if (s.size() >= 6) switch (do_hash(s.substr(0, 6))) {
+    if (s.size() >= 6) switch (ll::hash_utils::do_hash(s.substr(0, 6))) {
         case " /*b*/"_h:
         case " /*B*/"_h:
             s.remove_prefix(6);
@@ -226,7 +224,7 @@ std::optional<std::string> parseString(std::string_view& s) {
 
     char starts = s.front();
 
-    if (starts != '\"' && starts != '\'' && !isTrivialNbtStringChar(starts)) {
+    if (starts != '\"' && starts != '\'' && !ll::nbt::detail::isTrivialNbtStringChar(starts)) {
         return std::nullopt;
     }
 
@@ -237,7 +235,7 @@ std::optional<std::string> parseString(std::string_view& s) {
     } else {
         while (!s.empty()) {
             auto fc = s.front();
-            if (isTrivialNbtStringChar(fc)) {
+            if (ll::nbt::detail::isTrivialNbtStringChar(fc)) {
                 s.remove_prefix(1);
                 res.push_back(fc);
             } else {
@@ -603,7 +601,7 @@ std::optional<CompoundTagVariant> parseList(std::string_view& s) {
 
     while (!s.empty()) {
 
-        auto value = parseSnbtValue(s);
+        auto value = ll::nbt::detail::parseSnbtValue(s);
 
         if (!value) {
             return res;
@@ -664,7 +662,7 @@ std::optional<CompoundTag> parseCompound(std::string_view& s) {
             return std::nullopt;
         }
 
-        auto value = parseSnbtValue(s);
+        auto value = ll::nbt::detail::parseSnbtValue(s);
 
         if (!value) {
             return res;
@@ -685,7 +683,7 @@ std::optional<CompoundTag> parseCompound(std::string_view& s) {
 
     return std::nullopt;
 }
-} // namespace
+} // namespace ll
 namespace ll::nbt::detail {
 std::optional<CompoundTagVariant> parseSnbtValue(std::string_view& s) {
     if (!skipWhitespace(s) || s.empty()) {

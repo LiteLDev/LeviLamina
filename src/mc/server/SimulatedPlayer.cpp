@@ -6,8 +6,6 @@
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/server/ServerLevel.h"
 
-using namespace ll;
-
 optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     std::string const& name,
     class Vec3 const&  pos,
@@ -19,7 +17,7 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     }
     OwnerPtrT<EntityRefTraits> ownerPtr = ll::service::getServerNetworkHandler()->createSimulatedPlayer(
         name,
-        std::to_string(random_utils::rand<int64>(INT64_MIN, -1))
+        std::to_string(ll::random_utils::rand<int64>(INT64_MIN, -1))
     );
     auto player = ownerPtr.tryUnwrap<SimulatedPlayer>();
     if (!player) {

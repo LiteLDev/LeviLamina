@@ -13,8 +13,6 @@ extern bool isTrivialNbtStringChar(char c);
 
 namespace {
 
-using namespace ll::string_utils;
-
 namespace cf = ColorFormat;
 
 const std::string base64Id = " /*BASE64*/";
@@ -84,9 +82,9 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
-            res = applyTextStyle(fmt::fg(defaultc), res);
+            res = ll::string_utils::applyTextStyle(fmt::fg(defaultc), res);
             if (base64) {
-                res += applyTextStyle(fmt::fg(fmt::color::olive_drab), base64Id);
+                res += ll::string_utils::applyTextStyle(fmt::fg(fmt::color::olive_drab), base64Id);
             }
         } else {
             res = WrapColorCode(res, defaultmc);
@@ -105,7 +103,7 @@ std::string toDumpString(std::string const& str, fmt::color defaultc, std::strin
 std::string toDumpNumber(std::string str, SnbtFormat format) {
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
-            str = applyTextStyle(fmt::fg(fmt::color::pale_green), str);
+            str = ll::string_utils::applyTextStyle(fmt::fg(fmt::color::pale_green), str);
         } else {
             str = WrapColorCode(str, cf::GREEN);
         }
@@ -120,7 +118,7 @@ std::string TypedToSnbt(EndTag&, uchar, SnbtFormat format) {
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
-            res = applyTextStyle(fmt::fg(fmt::color::royal_blue), res);
+            res = ll::string_utils::applyTextStyle(fmt::fg(fmt::color::royal_blue), res);
         } else {
             res = WrapColorCode(res, cf::BLUE);
         }
@@ -171,8 +169,8 @@ std::string TypedToSnbt(ListTag& self, uchar indent, SnbtFormat format) {
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
-            lbracket = applyTextStyle(bracketColor, lbracket);
-            rbracket = applyTextStyle(bracketColor, rbracket);
+            lbracket = ll::string_utils::applyTextStyle(bracketColor, lbracket);
+            rbracket = ll::string_utils::applyTextStyle(bracketColor, rbracket);
         } else {
             lbracket = WrapColorCode(lbracket, cf::MATERIAL_DIAMOND);
             rbracket = WrapColorCode(rbracket, cf::MATERIAL_DIAMOND);
@@ -200,7 +198,7 @@ std::string TypedToSnbt(ListTag& self, uchar indent, SnbtFormat format) {
         auto key = tag->toSnbt(format, indent);
 
         if (isNewLine) {
-            replaceAll(key, "\n", "\n" + indentSpace);
+            ll::string_utils::replaceAll(key, "\n", "\n" + indentSpace);
         }
         res += key;
 
@@ -230,8 +228,8 @@ std::string TypedToSnbt(CompoundTag& self, uchar indent, SnbtFormat format) {
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
-            lbracket = applyTextStyle(bracketColor, lbracket);
-            rbracket = applyTextStyle(bracketColor, rbracket);
+            lbracket = ll::string_utils::applyTextStyle(bracketColor, lbracket);
+            rbracket = ll::string_utils::applyTextStyle(bracketColor, rbracket);
         } else {
             lbracket = WrapColorCode(lbracket, cf::LIGHT_PURPLE);
             rbracket = WrapColorCode(rbracket, cf::LIGHT_PURPLE);
@@ -269,7 +267,7 @@ std::string TypedToSnbt(CompoundTag& self, uchar indent, SnbtFormat format) {
         auto key = v.toSnbt(format, indent);
 
         if (isNewLine) {
-            replaceAll(key, "\n", "\n" + indentSpace);
+            ll::string_utils::replaceAll(key, "\n", "\n" + indentSpace);
         }
         res += key;
 
@@ -301,8 +299,8 @@ std::string TypedToSnbt(ByteArrayTag& self, uchar indent, SnbtFormat format) {
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
-            lbracket = applyTextStyle(bracketColor, lbracket);
-            rbracket = applyTextStyle(bracketColor, rbracket);
+            lbracket = ll::string_utils::applyTextStyle(bracketColor, lbracket);
+            rbracket = ll::string_utils::applyTextStyle(bracketColor, rbracket);
         } else {
             lbracket = WrapColorCode(lbracket, cf::YELLOW);
             rbracket = WrapColorCode(rbracket, cf::YELLOW);
@@ -362,8 +360,8 @@ std::string TypedToSnbt(IntArrayTag& self, uchar indent, SnbtFormat format) {
 
     if ((int)format & (int)SnbtFormat::Colored) {
         if ((int)format & (int)SnbtFormat::Console) {
-            lbracket = applyTextStyle(bracketColor, lbracket);
-            rbracket = applyTextStyle(bracketColor, rbracket);
+            lbracket = ll::string_utils::applyTextStyle(bracketColor, lbracket);
+            rbracket = ll::string_utils::applyTextStyle(bracketColor, rbracket);
         } else {
             lbracket = WrapColorCode(lbracket, cf::YELLOW);
             rbracket = WrapColorCode(rbracket, cf::YELLOW);
