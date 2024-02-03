@@ -540,16 +540,10 @@ static void setupTestFormCommand(CommandRegistry& registry) {
                     .appendDropdown("dropdown", "dropdown", {"a", "b", "c"})
                     .sendTo(*(Player*)ori.getEntity(), [](Player&, ll::form::CustomFormResult const& data) {
                         for (auto [name, result] : data) {
-                            static auto logDebugResult = [&](const ll::form::CustomFormElementResult& var) {
-                                if (std::holds_alternative<uint64_t>(var)) {
-                                    ll::logger.debug("CustomForm callback {} = {}", name, std::get<uint64_t>(var));
-                                } else if (std::holds_alternative<double>(var)) {
-                                    ll::logger.debug("CustomForm callback {} = {}", name, std::get<double>(var));
-                                } else if (std::holds_alternative<std::string>(var)) {
-                                    ll::logger.debug("CustomForm callback {} = {}", name, std::get<std::string>(var));
-                                }
-                            };
-                            logDebugResult(result);
+                            std::visit(
+                                [&](const auto& var) { ll::logger.debug("CustomForm callback {} = {}", name, var); },
+                                result
+                            );
                         }
                     });
                 break;
