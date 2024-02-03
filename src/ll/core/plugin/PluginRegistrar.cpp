@@ -241,6 +241,10 @@ void PluginRegistrar::loadAllPlugins() {
     }
     size_t loadedCount = sort.sorted.size() - loadErrored.size();
 
+    for (auto& errored : loadErrored) {
+        impl->deps.erase(errored);
+    }
+
     static ll::memory::HookRegistrar<EnableAllPlugins, DisableAllPlugins> reg;
 
     ll::logger.info("{} plugin(s) loaded"_tr(loadedCount));

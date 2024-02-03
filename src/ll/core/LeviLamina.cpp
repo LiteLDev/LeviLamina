@@ -136,7 +136,8 @@ void checkProtocolVersion() {
             TARGET_BDS_PROTOCOL_VERSION,
             currentProtocol
         ));
-        logger.warn("This will most likely crash the server, please use the LeviLamina that matches the BDS version!"_tr()
+        logger.warn(
+            "This will most likely crash the server, please use the LeviLamina that matches the BDS version!"_tr()
         );
     }
 }
@@ -173,7 +174,7 @@ void unixSignalHandler(int signum) {
 }
 
 // extern
-extern void registerLeviCommands();
+// extern void registerLeviCommands();
 
 namespace i18n {
 extern std::string globalDefaultLocaleName;
@@ -237,7 +238,7 @@ void leviLaminaMain() {
 
     plugin::PluginRegistrar::getInstance().loadAllPlugins();
 
-    registerLeviCommands();
+    // registerLeviCommands();
 }
 
 

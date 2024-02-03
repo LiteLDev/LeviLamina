@@ -7,8 +7,9 @@
 
 class CommandVersion {
 public:
-    int mFrom = CurrentVersion, mTo = 0x7FFFFFFF;
-    CommandVersion(){};
+    int mFrom = 1, mTo = 0x7FFFFFFF;
+
+    CommandVersion() = default;
 
 public:
     // NOLINTBEGIN

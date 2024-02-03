@@ -12,18 +12,18 @@ class CommandParameterData {
 public:
     using ParseFn = typename CommandRegistry::ParseFn;
 
-    Bedrock::typeid_t<CommandRegistry> mTypeIndex;     // this+0x0
-    ParseFn                            mParse;         // this+0x8
-    std::string                        mName;          // this+0x10
-    char const*                        mEnumName;      // this+0x30
-    int                                mEnumSymbol;    // this+0x38
-    char const*                        mPostfix;       // this+0x40
-    int                                mPostfixSymbol; // this+0x48
-    CommandParameterDataType           mParamType;     // this+0x4c
-    int                                mOffset;        // this+0x50
-    int                                mSetOffset;     // this+0x54
-    bool                               mIsOptional;    // this+0x58
-    CommandParameterOption             mOptions;       // this+0x59
+    Bedrock::typeid_t<CommandRegistry> mTypeIndex;               // this+0x0
+    ParseFn                            mParse;                   // this+0x8
+    std::string                        mName;                    // this+0x10
+    char const*                        mEnumNameOrPostfix;       // this+0x30
+    int                                mEnumOrPostfixSymbol{-1}; // this+0x38
+    char const*                        mUnknown;                 // this+0x40
+    int                                mUnknownSymbol{-1};       // this+0x48
+    CommandParameterDataType           mParamType;               // this+0x4c
+    int                                mOffset;                  // this+0x50
+    int                                mSetOffset;               // this+0x54
+    bool                               mIsOptional;              // this+0x58
+    CommandParameterOption             mOptions;                 // this+0x59
 
     CommandParameterData() : mTypeIndex(0){};
 
@@ -32,7 +32,7 @@ public:
         ParseFn                                   parser,
         std::string                               name,
         ::CommandParameterDataType                type,
-        char const*                               enumName,
+        char const*                               enumNameOrPostfix,
         int                                       offset,
         bool                                      optional,
         int                                       flagOffset
@@ -40,10 +40,8 @@ public:
     : mTypeIndex(typeIndex),
       mParse(parser),
       mName(std::move(name)),
-      mEnumName(enumName),
-      mEnumSymbol(-1),
-      mPostfix(nullptr),
-      mPostfixSymbol(-1),
+      mEnumNameOrPostfix(enumNameOrPostfix),
+      mUnknown(nullptr),
       mParamType(type),
       mOffset(offset),
       mSetOffset(flagOffset),
@@ -134,8 +132,8 @@ public:
         ParseFn                                        parser,
         char const*                                    name,
         ::CommandParameterDataType                     paramType,
-        char const*                                    enumName,
-        char const*                                    postFix,
+        char const*                                    enumNameOrPostfix,
+        char const*                                    unknown,
         int                                            offset,
         bool                                           optional,
         int                                            flagOffset

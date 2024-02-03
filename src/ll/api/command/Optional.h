@@ -15,7 +15,6 @@ class Optional {
     bool hasValue{};
 
 public:
-
     using value_type = T;
 
     [[nodiscard]] constexpr Optional() noexcept(std::is_nothrow_default_constructible_v<T>) = default;
@@ -79,32 +78,18 @@ public:
     [[nodiscard]] constexpr operator T*() { return &get(); }
 
     template <class U>
-    [[nodiscard]] constexpr T const& value_or(U const& right) const& {
+    [[nodiscard]] constexpr T value_or(U&& right) const& {
         if (has_value()) {
             return mValue;
         }
-        return static_cast<T const&>(right);
-    }
-    template <class U>
-    [[nodiscard]] constexpr T& value_or(U& right) & {
-        if (has_value()) {
-            return mValue;
-        }
-        return static_cast<T&>(right);
-    }
-    template <class U>
-    [[nodiscard]] constexpr T const&& value_or(U const&& right) const&& {
-        if (has_value()) {
-            return std::move(right);
-        }
-        return std::move(right);
+        return static_cast<T const&>(std::forward<U>(right));
     }
     template <class U>
     [[nodiscard]] constexpr T&& value_or(U&& right) && {
         if (has_value()) {
             return std::move(right);
         }
-        return std::move(right);
+        return static_cast<T&&>(std::forward<U>(right));
     }
 
     [[nodiscard]] constexpr T const&& value_or_default() const&& { return std::move(value); }
@@ -133,7 +118,7 @@ using remove_optional_t = remove_optional<T>::type;
 
 
 template <std::default_initializable T>
-struct OptionalOffsetGetter{
+struct OptionalOffsetGetter {
     static constexpr auto value = offsetof(Optional<T>, hasValue);
 };
 } // namespace ll::command

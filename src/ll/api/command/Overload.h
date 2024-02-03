@@ -1,0 +1,127 @@
+#pragma once
+
+#include "ll/api/command/Command.h"
+#include "ll/api/command/EnumName.h"
+#include "ll/api/command/Optional.h"
+#include "ll/api/command/OverloadData.h"
+#include "ll/api/command/SoftEnum.h"
+
+namespace ll::command {
+
+class CommandRegistrar;
+
+template <reflection::Reflectable Params>
+class Overload : public OverloadData {
+    friend CommandHandle;
+
+    struct TestOffset : public ::Command {
+        uint64 placeholder{};
+        Params params;
+    };
+    static inline auto ParamOffset       = offsetof(Overload<Params>::TestOffset, params);
+    static inline auto PlaceholderOffset = offsetof(Overload<Params>::TestOffset, placeholder);
+
+    constexpr Overload& addParam(std::string_view name) {
+        bool hasName{};
+        reflection::forEachMember((*(Params*)ParamOffset), [&, this](std::string_view param, auto& val) {
+            if (name != param) {
+                return;
+            }
+            hasName = true;
+
+            using OriginalType = std::remove_cvref_t<decltype(val)>;
+
+            using RemoveOptionalType = remove_optional_t<OriginalType>;
+
+            using ParamType = std::conditional_t<
+                concepts::is_specialization_of_v<RemoveOptionalType, SoftEnum>,
+                std::string,
+                RemoveOptionalType>;
+
+            int offset     = (int)(size_t)std::addressof(val);
+            int flagOffset = -1;
+            if constexpr (concepts::is_specialization_of_v<OriginalType, Optional>) {
+                flagOffset = offset + OptionalOffsetGetter<ParamType>::value;
+            }
+
+            CommandParameterDataType paramType = CommandParameterDataType::Basic;
+            if constexpr (std::is_enum_v<ParamType>) {
+                paramType = CommandParameterDataType::Enum;
+                static std::vector<std::pair<std::string, uint64>> values{[] {
+                    std::vector<std::pair<std::string, uint64>> vals;
+                    magic_enum::enum_for_each<ParamType>([&](ParamType enumVal) {
+                        vals.emplace_back(magic_enum::enum_name(enumVal), (uint64)enumVal);
+                    });
+                    return vals;
+                }()};
+                tryRegisterEnum(enum_name_v<ParamType>, values, Bedrock::type_id<CommandRegistry, ParamType>(), &CommandRegistry::parse<ParamType>);
+            } else if constexpr (concepts::is_specialization_of_v<RemoveOptionalType, SoftEnum>) {
+                paramType = CommandParameterDataType::SoftEnum;
+                static std::vector<std::string> values{[] {
+                    std::vector<std::string> vals;
+                    magic_enum::enum_for_each<remove_soft_enum_t<RemoveOptionalType>>(
+                        [&](remove_soft_enum_t<RemoveOptionalType> enumVal) {
+                            vals.emplace_back(magic_enum::enum_name(enumVal));
+                        }
+                    );
+                    return vals;
+                }()};
+                tryRegisterSoftEnum(enum_name_v<RemoveOptionalType>, {});
+            }
+
+            addParamImpl(
+                Bedrock::type_id<CommandRegistry, ParamType>(),
+                &CommandRegistry::parse<ParamType>,
+                std::string{name},
+                paramType,
+                enum_name_v<RemoveOptionalType>,
+                offset,
+                flagOffset,
+                true
+            );
+        });
+        if (!hasName) {
+            throw std::runtime_error("miss param " + std::string(name));
+        }
+        return *this;
+    }
+
+    constexpr Overload(CommandHandle& handle) : OverloadData(handle) {}
+
+public:
+    constexpr Overload& optional(std::string_view name) {
+        addParam(name).back().mIsOptional = true;
+        return *this;
+    }
+    constexpr Overload& required(std::string_view name) {
+        addParam(name).back().mIsOptional = false;
+        return *this;
+    }
+
+    constexpr Overload& text(std::string_view text) {
+        addTextImpl(text, (int)PlaceholderOffset);
+        return *this;
+    }
+    [[deprecated]] constexpr Overload& postfix(std::string_view postfix) {
+        auto& last = back();
+        if (postfix.size() != 1 || last.mTypeIndex.value != Bedrock::type_id<CommandRegistry, int>().value) {
+            throw std::runtime_error("wrong postfix type");
+        }
+        last.mEnumNameOrPostfix = postfix.data();
+        last.mParamType         = CommandParameterDataType::Postfix;
+        return *this;
+    }
+    constexpr Overload& option(CommandParameterOption option) {
+        back().addOptions(option);
+        return *this;
+    }
+    constexpr Overload& deoption(CommandParameterOption option) {
+        back().mOptions = (CommandParameterOption)((uchar)(back().mOptions) & (!(uchar)option));
+        return *this;
+    }
+    template <auto Executor>
+    void constexpr execute() {
+        setFactory(&Command<Params, Executor>::make);
+    }
+};
+} // namespace ll::command

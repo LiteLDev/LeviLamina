@@ -98,8 +98,6 @@ public:
         int                               versionOffset; // this+0x28
         std::vector<Symbol>               paramsSymbol;  // this+0x30
 
-        LLAPI Overload(CommandVersion version, FactoryFn factory, std::vector<CommandParameterData> args);
-
     public:
         // NOLINTBEGIN
         // symbol:
@@ -244,14 +242,6 @@ public:
         int                    firstOptional{};      // this+0x88
         bool                   runnable{};           // this+0x8C
         size_t                 ruleCounter{};        // this+0x90
-
-        LLAPI Signature(
-            std::string_view       name,
-            std::string_view       desc,
-            CommandPermissionLevel perm,
-            Symbol                 symbol,
-            CommandFlag            flag
-        );
 
     public:
         // NOLINTBEGIN
@@ -424,63 +414,17 @@ public:
     std::unordered_map<uchar, uchar>                            mAllowEmptySymbols;            // this+0x308
     std::function<void(CommandFlag&, std::string const&)>       mCommandOverrideFunctor;       // this+0x348
 
-    // following is the command parameter overloading
-
-    template <std::default_initializable T>
-    [[nodiscard]] inline static std::unique_ptr<Command> allocateCommand() {
-        return std::make_unique<T>();
-    };
-
-    LLAPI void registerOverload(std::string const& name, FactoryFn factory, std::vector<CommandParameterData>&& args);
-
-    template <std::default_initializable T, typename... Params>
-    inline void registerOverload(std::string const& name, Params... params) {
-        registerOverload(name, &allocateCommand<T>, {std::move(params)...});
-    };
-
-    // following sections add sections for directive parameter enumeration
-    bool
-    parseEnumStringAndInt(void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-        const {
-        auto str                              = token.toString();
-        auto data                             = getEnumData(token);
-        *(std::pair<std::string, int>*)target = {str, (int)data};
-        return true;
-    };
-
-    template <typename Type>
-    bool
-    parseEnum(void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-        const {
-        auto data      = getEnumData(token);
-        *(Type*)target = (Type)(data);
-        return true;
-    };
-
     template <typename T>
-    CommandRegistry* addEnum(std::string const& name, std::vector<std::pair<std::string, T>> const& values) {
-        std::vector<std::pair<std::string, uint64>> converted;
-        converted.reserve(values.size());
-        for (auto& value : values) converted.emplace_back(value.first, (uint64)(value.second));
-        _addEnumValuesInternal(name, converted, Bedrock::type_id<CommandRegistry, T>(), &CommandRegistry::parseEnum<T>);
-        return this;
+    bool
+    parse(void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
+        const {
+        if constexpr (std::is_enum_v<T>) {
+            *(T*)target = (T)getEnumData(token);
+            return true;
+        } else {
+            return false;
+        }
     }
-
-    template <typename T>
-    bool
-    parse(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-        const {
-        return false;
-    };
-
-    // API
-    LLNDAPI std::vector<std::string> getEnumNames();
-    LLNDAPI std::vector<std::string> getSoftEnumNames();
-    LLNDAPI std::vector<std::string> getEnumValues(std::string const& name);
-    LLNDAPI std::vector<std::string> getSoftEnumValues(std::string const& name);
-    LLNDAPI std::string getCommandFullName(std::string const& name);
-    // Experiment
-    LLAPI bool unregisterCommand(std::string const& name);
 
 public:
     // prevent constructor by default
