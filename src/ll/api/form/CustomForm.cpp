@@ -259,9 +259,11 @@ class CustomForm::CustomFormImpl : public FormImpl {
 public:
     using Callback = CustomForm::Callback;
 
-    std::string                                     mTitle;
+    std::string                                     mTitle{};
     std::vector<std::shared_ptr<CustomFormElement>> mElements{};
     Callback                                        mCallback;
+
+    CustomFormImpl() = default;
 
     explicit CustomFormImpl(std::string title) : mTitle(std::move(title)) {}
 
@@ -351,6 +353,8 @@ protected:
         }
     }
 };
+
+CustomForm::CustomForm() : impl(std::make_unique<CustomFormImpl>()) {}
 
 CustomForm::CustomForm(std::string const& title) : impl(std::make_unique<CustomFormImpl>(title)) {}
 

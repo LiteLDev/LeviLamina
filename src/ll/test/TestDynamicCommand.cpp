@@ -491,6 +491,88 @@ static void kickAllSimulatePlayerCommand(CommandRegistry& registry) {
     DynamicCommand::setup(registry, std::move(command));
 }
 
+#include "ll/api/form/CustomForm.h"
+#include "ll/api/form/ModalForm.h"
+#include "ll/api/form/SimpleForm.h"
+
+
+static void setupTestFormCommand(CommandRegistry& registry) {
+    using ParamType = DynamicCommand::ParameterType;
+    using Param     = DynamicCommand::ParameterData;
+    DynamicCommand::setup(
+        registry,
+        "testform",
+        "test form",
+        {
+            {"formEnum1", {"modal", "custom", "simple"}},
+    },
+        {
+            Param("formEnum", ParamType::Enum, "formEnum1", "", CommandParameterOption::EnumAutocompleteExpansion),
+
+        },
+        {
+            {"formEnum1"}, // testform <modal|custom|simple>
+        },
+        [](DynamicCommand const&,
+           CommandOrigin const& ori,
+           CommandOutput&,
+           std::unordered_map<std::string, DynamicCommand::Result>& results) {
+            auto& action = results["formEnum"].getRaw<std::string>();
+            switch (do_hash(action)) {
+            case "modal"_h: {
+                ll::form::ModalForm form;
+                form.setTitle("ModalForm")
+                    .setButtonLeft("Left")
+                    .setButtonRight("Right")
+                    .sendTo(*(Player*)ori.getEntity(), [](Player&, bool selected) {
+                        ll::logger.debug("ModalForm callback {}", selected);
+                    });
+                break;
+            }
+            case "custom"_h: {
+                ll::form::CustomForm form;
+                form.setTitle("CustomForm")
+                    .appendLabel("label")
+                    .appendInput("input1", "input")
+                    .appendToggle("toggle", "toggle")
+                    .appendSlider("slider", "slider", 0, 100, 1)
+                    .appendStepSlider("stepSlider", "stepSlider", {"a", "b", "c"})
+                    .appendDropdown("dropdown", "dropdown", {"a", "b", "c"})
+                    .sendTo(*(Player*)ori.getEntity(), [](Player&, ll::form::CustomFormResult const& data) {
+                        for (auto [name, result] : data) {
+                            static auto logDebugResult = [&](const ll::form::CustomFormElementResult& var) {
+                                if (std::holds_alternative<uint64_t>(var)) {
+                                    ll::logger.debug("CustomForm callback {} = {}", name, std::get<uint64_t>(var));
+                                } else if (std::holds_alternative<double>(var)) {
+                                    ll::logger.debug("CustomForm callback {} = {}", name, std::get<double>(var));
+                                } else if (std::holds_alternative<std::string>(var)) {
+                                    ll::logger.debug("CustomForm callback {} = {}", name, std::get<std::string>(var));
+                                }
+                            };
+                            logDebugResult(result);
+                        }
+                    });
+                break;
+            }
+            case "simple"_h: {
+                ll::form::SimpleForm form;
+                form.setTitle("SimpleForm")
+                    .setContent("Content")
+                    .appendButton("Button1")
+                    .appendButton("Button2", "textures/ui/absorption_effect", "path")
+                    .sendTo(*(Player*)ori.getEntity(), [](Player&, int selected) {
+                        ll::logger.debug("SimpleForm callback {}", selected);
+                    });
+                break;
+            }
+            default:
+                break;
+            }
+        },
+        CommandPermissionLevel::GameDirectors
+    );
+}
+
 static bool reg = [] {
     using namespace ll::event;
     EventBus::getInstance().emplaceListener<ServerStartedEvent>([](ServerStartedEvent&) {
@@ -505,6 +587,7 @@ static bool reg = [] {
         setupTimingCommand(registry);
         setupCreateSimulatePlayerCommand(registry);
         kickAllSimulatePlayerCommand(registry);
+        setupTestFormCommand(registry);
     });
     return true;
 }();

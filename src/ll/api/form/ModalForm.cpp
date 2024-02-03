@@ -16,6 +16,8 @@ public:
     std::string mButtonRight{};
     Callback    mCallback{};
 
+    ModalFormImpl() = default;
+
     ModalFormImpl(
         std::string title,
         std::string content,
@@ -73,6 +75,8 @@ protected:
         }
     }
 };
+
+ModalForm::ModalForm() : impl(std::make_unique<ModalFormImpl>()) {}
 
 ModalForm::ModalForm(
     std::string title,

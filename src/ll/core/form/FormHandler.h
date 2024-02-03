@@ -5,7 +5,10 @@
 #include "ll/api/form/ModalForm.h"
 #include "ll/api/form/SimpleForm.h"
 #include "ll/core/form/CustomFormElement.h"
+#include "mc/deps/json/Value.h"
+#include "mc/enums/ModalFormCancelReason.h"
 #include "mc/world/actor/player/Player.h"
+#include <optional>
 
 namespace ll::form::handler {
 
@@ -14,7 +17,7 @@ class FormHandler {
 public:
     virtual ~FormHandler() = default;
 
-    virtual void handle(Player& player, std::string const& data) const = 0;
+    virtual void handle(Player& player, std::optional<Json::Value> data) const = 0;
 
     [[nodiscard]] virtual FormType getType() const = 0;
 };
@@ -28,7 +31,8 @@ public:
     : mCallback(std::move(callback)),
       mButtonCallbacks(std::move(buttonCallbacks)) {}
 
-    void                   handle(Player& player, std::string const& data) const override;
+    void handle(Player& player, std::optional<Json::Value> data) const override;
+
     [[nodiscard]] FormType getType() const override { return FormType::SimpleForm; }
 };
 
@@ -41,7 +45,8 @@ public:
     : mCallback(std::move(callback)),
       mFormElements(std::move(formElements)) {}
 
-    void                   handle(Player& player, std::string const& data) const override;
+    void handle(Player& player, std::optional<Json::Value> data) const override;
+
     [[nodiscard]] FormType getType() const override { return FormType::CustomForm; }
 };
 
@@ -51,7 +56,8 @@ public:
 
     explicit ModalFormHandler(ModalForm::Callback callback) : mCallback(std::move(callback)) {}
 
-    void                   handle(Player& player, std::string const& data) const override;
+    void handle(Player& player, std::optional<Json::Value> data) const override;
+
     [[nodiscard]] FormType getType() const override { return FormType::ModalForm; }
 };
 

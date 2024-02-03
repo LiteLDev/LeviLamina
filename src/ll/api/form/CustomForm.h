@@ -16,6 +16,8 @@ class CustomForm : public Form {
 public:
     using Callback = std::function<void(Player&, CustomFormResult const&)>;
 
+    LLNDAPI CustomForm();
+
     LLNDAPI explicit CustomForm(std::string const& title);
 
     LLAPI ~CustomForm() override;
