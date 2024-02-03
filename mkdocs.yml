@@ -31,9 +31,11 @@ nav:
 
   - faq.md
 
-  - Native APIs: https://levilamina.liteldev.com/api
+  - APIs: https://levilamina.liteldev.com/api
 
   - discuss.md
+
+  - Plugins: https://lippkg.com
 
 exclude_docs: |
   api/assets/
@@ -92,5 +94,7 @@ plugins:
             Install on Docker: 在Docker上安装
             Tutorials: 教程
             Guides: 指南
-            Native APIs: 原生API
+            APIs: 接口
+            Plugins: 插件
+
   - search
