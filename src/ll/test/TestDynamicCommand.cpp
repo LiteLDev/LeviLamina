@@ -522,10 +522,10 @@ static void setupTestFormCommand(CommandRegistry& registry) {
             case "modal"_h: {
                 ll::form::ModalForm form;
                 form.setTitle("ModalForm")
-                    .setButtonLeft("Left")
-                    .setButtonRight("Right")
-                    .sendTo(*(Player*)ori.getEntity(), [](Player&, bool selected) {
-                        ll::logger.debug("ModalForm callback {}", selected);
+                    .setUpperButton("Upper")
+                    .setLowerButton("Lower")
+                    .sendTo(*(Player*)ori.getEntity(), [](Player&, ll::form::ModalForm::SelectedButton selected) {
+                        ll::logger.debug("ModalForm callback {}", (bool)selected);
                     });
                 break;
             }
