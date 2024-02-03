@@ -47,26 +47,10 @@ class Overload : public OverloadData {
             CommandParameterDataType paramType = CommandParameterDataType::Basic;
             if constexpr (std::is_enum_v<ParamType>) {
                 paramType = CommandParameterDataType::Enum;
-                static std::vector<std::pair<std::string, uint64>> values{[] {
-                    std::vector<std::pair<std::string, uint64>> vals;
-                    magic_enum::enum_for_each<ParamType>([&](ParamType enumVal) {
-                        vals.emplace_back(magic_enum::enum_name(enumVal), (uint64)enumVal);
-                    });
-                    return vals;
-                }()};
-                tryRegisterEnum(enum_name_v<ParamType>, values, Bedrock::type_id<CommandRegistry, ParamType>(), &CommandRegistry::parse<ParamType>);
+                CommandRegistrar::getInstance().template tryRegisterEnum<ParamType>();
             } else if constexpr (concepts::is_specialization_of_v<RemoveOptionalType, SoftEnum>) {
                 paramType = CommandParameterDataType::SoftEnum;
-                static std::vector<std::string> values{[] {
-                    std::vector<std::string> vals;
-                    magic_enum::enum_for_each<remove_soft_enum_t<RemoveOptionalType>>(
-                        [&](remove_soft_enum_t<RemoveOptionalType> enumVal) {
-                            vals.emplace_back(magic_enum::enum_name(enumVal));
-                        }
-                    );
-                    return vals;
-                }()};
-                tryRegisterSoftEnum(enum_name_v<RemoveOptionalType>, {});
+                CommandRegistrar::getInstance().template tryRegisterSoftEnum<RemoveOptionalType>();
             }
 
             addParamImpl(
