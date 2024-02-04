@@ -93,16 +93,13 @@ public:
         addParam(name).back().mIsOptional = false;
         return *this;
     }
-
     constexpr Overload& text(std::string_view text) {
         addTextImpl(text, (int)PlaceholderOffset);
         return *this;
     }
-    [[deprecated]] constexpr Overload& postfix(std::string_view postfix) {
-        auto& last = back();
-        if (postfix.size() != 1 || last.mTypeIndex.value != Bedrock::type_id<CommandRegistry, int>().value) {
-            throw std::runtime_error("wrong postfix type");
-        }
+
+    constexpr Overload& postfix(std::string_view postfix) {
+        auto& last              = back();
         last.mEnumNameOrPostfix = postfix.data();
         last.mParamType         = CommandParameterDataType::Postfix;
         return *this;
@@ -115,6 +112,7 @@ public:
         back().mOptions = (CommandParameterOption)((uchar)(back().mOptions) & (!(uchar)option));
         return *this;
     }
+
     template <auto Executor>
     void constexpr execute() {
         setFactory(&Command<Params, Executor>::make);

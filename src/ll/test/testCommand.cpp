@@ -12,6 +12,7 @@ using namespace ll::command;
 
 struct ParamTest {
     int             p1;
+    std::string     sPostfix;
     Optional<float> p2;
     bool            p3;
 
@@ -44,7 +45,16 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         output.success("p4: {}", magic_enum::enum_name(param.p4));
         output.success("p5: {}", param.p5);
     };
-    cmd.overload<ParamTest>().required("p1").text("ni").required("p4").optional("p3").optional("p2").execute<lambda>();
+    cmd.overload<ParamTest>()
+        .required("p1")
+        .postfix("hi")
+        .text("ni")
+        .required("p4")
+        .required("sPostfix")
+        .postfix("st")
+        .optional("p3")
+        .optional("p2")
+        .execute<lambda>();
     cmd.overload<ParamTest>().required("p1").text("gr").required("p5").optional("p2").optional("p3").execute<lambda>();
     cmd.overload<ParamTest2>()
         .required("block")
