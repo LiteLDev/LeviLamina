@@ -52,6 +52,7 @@ public:
         Bedrock::typeid_t<CommandRegistry>          type,
         CommandRegistry::ParseFn                    parser
     );
+
     LLAPI bool addEnumValues(
         std::string const&                          name,
         std::vector<std::pair<std::string, uint64>> values,
@@ -68,7 +69,7 @@ public:
 
     LLAPI bool setSoftEnumValues(std::string const& name, std::vector<std::string> values);
 
-    template <concepts::ConceptFor<std::is_enum> T>
+    template <concepts::Require<std::is_enum> T>
     inline bool tryRegisterEnum() {
         static std::vector<std::pair<std::string, uint64>> values{[] {
             std::vector<std::pair<std::string, uint64>> vals;
@@ -79,6 +80,7 @@ public:
         }()};
         return tryRegisterEnum(::ll::command::enum_name_v<T>, values, Bedrock::type_id<CommandRegistry, T>(), &CommandRegistry::parse<T>);
     }
+
     template <concepts::Specializes<SoftEnum> T>
     inline bool tryRegisterSoftEnum() {
         static std::vector<std::string> values{[] {

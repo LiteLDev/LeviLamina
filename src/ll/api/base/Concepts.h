@@ -43,7 +43,7 @@ template <class T>
 concept IsString = is_string_v<T>;
 
 template <class T, template <class> class Z>
-concept ConceptFor = Z<T>::value;
+concept Require = Z<T>::value;
 
 template <class T>
 concept Formattable =
@@ -130,7 +130,11 @@ inline constexpr bool always_false = false;
 
 template <class T>
 concept Stringable = requires(T t) {
-    { t.toString() } -> IsString;
+    requires requires {
+        { t.toString() } -> IsString;
+    } || requires {
+        { t.to_string() } -> IsString;
+    };
 };
 
 } // namespace ll::concepts

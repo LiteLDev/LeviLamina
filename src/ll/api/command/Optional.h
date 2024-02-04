@@ -24,9 +24,14 @@ public:
 
     [[nodiscard]] constexpr Optional() noexcept(std::is_nothrow_default_constructible_v<T>) = default;
 
-    Optional& operator=(Optional&&) noexcept(std::is_nothrow_move_assignable_v<T>)                      = default;
-    Optional& operator=(Optional const&) noexcept(std::is_nothrow_copy_assignable_v<T>)                 = default;
-    [[nodiscard]] constexpr Optional(Optional&&) noexcept(std::is_nothrow_move_constructible_v<T>)      = default;
+    // NOLINTNEXTLINE(performance-noexcept-move-constructor)
+    Optional& operator=(Optional&&) noexcept(std::is_nothrow_move_assignable_v<T>) = default;
+
+    Optional& operator=(Optional const&) noexcept(std::is_nothrow_copy_assignable_v<T>) = default;
+
+    // NOLINTNEXTLINE(performance-noexcept-move-constructor)
+    [[nodiscard]] constexpr Optional(Optional&&) noexcept(std::is_nothrow_move_constructible_v<T>) = default;
+
     [[nodiscard]] constexpr Optional(Optional const&) noexcept(std::is_nothrow_copy_constructible_v<T>) = default;
 
     [[nodiscard]] constexpr explicit operator bool() const noexcept { return hasValue; }
@@ -34,7 +39,8 @@ public:
     [[nodiscard]] constexpr bool has_value() const noexcept { return hasValue; }
 
     [[nodiscard]] constexpr T const* as_ptr() const noexcept { return hasValue ? &mValue : nullptr; }
-    [[nodiscard]] constexpr T*       as_ptr() noexcept { return hasValue ? &mValue : nullptr; }
+
+    [[nodiscard]] constexpr T* as_ptr() noexcept { return hasValue ? &mValue : nullptr; }
 
     [[nodiscard]] constexpr T const& get() const& {
         if (!has_value()) {
@@ -42,18 +48,21 @@ public:
         }
         return mValue;
     }
+
     [[nodiscard]] constexpr T& get() & {
         if (!has_value()) {
             throw std::runtime_error{"bad Optional access"};
         }
         return mValue;
     }
+
     [[nodiscard]] constexpr T const&& get() const&& {
         if (!has_value()) {
             throw std::runtime_error{"bad Optional access"};
         }
         return std::move(mValue);
     }
+
     [[nodiscard]] constexpr T&& get() && {
         if (!has_value()) {
             throw std::runtime_error{"bad Optional access"};

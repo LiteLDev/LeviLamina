@@ -1,28 +1,51 @@
 #include "ll/core/LeviLamina.h"
 
+#include <chrono>
 #include <csignal>
+#include <cstdio>
+#include <cwchar>
+#include <exception>
+#include <filesystem>
 #include <string>
+#include <system_error>
+#include <vector>
+
+#include "fmt/core.h"
 
 #include "ll/api/Logger.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/api/plugin/Plugin.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/PlayerInfo.h"
 #include "ll/api/service/ServerInfo.h"
 #include "ll/api/utils/ErrorUtils.h"
+#include "ll/api/utils/HashUtils.h"
+
+#include "mc/world/Minecraft.h"
+
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
 #include "ll/core/Version.h"
 #include "ll/core/plugin/PluginRegistrar.h"
 
+#include <windows.h>
+
+#include <consoleapi.h>
+#include <errhandlingapi.h>
+#include <handleapi.h>
+#include <libloaderapi.h>
+#include <minwindef.h>
+#include <processenv.h>
+#include <processthreadsapi.h>
+#include <psapi.h>
+#include <tlhelp32.h>
+#include <winbase.h>
+#include <winnt.h>
+
+#if defined(LL_DEBUG) && _HAS_CXX23
 #include "ll/api/utils/StacktraceUtils.h"
-
-#include "mc/world/Minecraft.h"
-
-#include "windows.h"
-
-#include "psapi.h"
-#include "tlhelp32.h"
+#endif
 
 namespace ll {
 
@@ -123,7 +146,7 @@ void printWelcomeMsg() {
     logger.info(R"(                                                                      )");
     logger.info(R"(                                                                      )");
 
-    logger.info("LeviLamina is licensed under {}"_tr("LGPLv3"));
+    logger.info("LeviLamina is a free software licensed under {}"_tr("LGPLv3"));
     logger.info("Help us translate & improve text -> {}"_tr("https://crowdin.com/project/levilamina"));
     logger.info("ll.sponsor.thanks"_tr());
     logger.info("");
@@ -172,9 +195,6 @@ void unixSignalHandler(int signum) {
         break;
     }
 }
-
-// extern
-// extern void registerLeviCommands();
 
 namespace i18n {
 extern std::string globalDefaultLocaleName;
@@ -233,12 +253,10 @@ void leviLaminaMain() {
     printWelcomeMsg();
 
 #ifdef LL_DEBUG
-    logger.warn("ll is now in debug mode"_tr());
+    logger.warn("LeviLamina is running in DEBUG mode!"_tr());
 #endif
 
     plugin::PluginRegistrar::getInstance().loadAllPlugins();
-
-    // registerLeviCommands();
 }
 
 

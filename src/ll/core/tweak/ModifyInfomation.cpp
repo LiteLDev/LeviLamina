@@ -54,11 +54,7 @@ void tryModifyServerStartInfo(std::string& s) {
             s += fmt::format(
                 "(ProtocolVersion {}) with {}",
                 ll::getServerProtocolVersion(),
-                fmt::format(
-                    fg(fmt::color::light_sky_blue) | fmt::emphasis::bold,
-                    "LeviLamina-{}",
-                    ll::getLoaderVersion().to_string()
-                )
+                fmt::format(fg(fmt::color::light_sky_blue), "LeviLamina-{}", ll::getLoaderVersion())
             );
         }
         return;

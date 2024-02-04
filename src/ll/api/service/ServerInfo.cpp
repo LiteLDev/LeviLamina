@@ -19,7 +19,7 @@ data::Version getBdsVersion() {
         v.preRelease = data::PreRelease{};
         v.preRelease->values.emplace_back((uint16_t)SharedConstants::RevisionVersion);
         v.preRelease->values.emplace_back((uint16_t)SharedConstants::NetworkProtocolVersion);
-        v.build = info.mCommitId.substr(0, 9);
+        v.build = info.mCommitId.substr(0, std::min(info.mCommitId.size(), (size_t)7));
         return v;
     }();
     return ver;
