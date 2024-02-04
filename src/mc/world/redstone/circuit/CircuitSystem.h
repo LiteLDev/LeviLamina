@@ -18,8 +18,12 @@ public:
     bool                                           mHasBeenEvaluated;
 
     template <typename Component>
-    Component*
-    create(class BlockPos const& pos, class BlockSource* pSource, ::CircuitComponentType type, ::FacingID direction) {
+    Component* create(
+        class BlockPos const& pos,
+        class BlockSource* /*pSource*/,
+        ::CircuitComponentType type,
+        ::FacingID             direction
+    ) {
         if (mLockGraph) {
             if (!mSceneGraph.getComponent(pos, type)) return (Component*)mSceneGraph.getFromPendingAdd(pos, type);
         }

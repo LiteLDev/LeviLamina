@@ -69,7 +69,7 @@ public:
     LLAPI bool setSoftEnumValues(std::string const& name, std::vector<std::string> values);
 
     template <concepts::ConceptFor<std::is_enum> T>
-    constexpr bool tryRegisterEnum() {
+    inline bool tryRegisterEnum() {
         static std::vector<std::pair<std::string, uint64>> values{[] {
             std::vector<std::pair<std::string, uint64>> vals;
             magic_enum::enum_for_each<T>([&](T enumVal) {
@@ -80,7 +80,7 @@ public:
         return tryRegisterEnum(::ll::command::enum_name_v<T>, values, Bedrock::type_id<CommandRegistry, T>(), &CommandRegistry::parse<T>);
     }
     template <concepts::Specializes<SoftEnum> T>
-    constexpr bool tryRegisterSoftEnum() {
+    inline bool tryRegisterSoftEnum() {
         static std::vector<std::string> values{[] {
             std::vector<std::string> vals;
             magic_enum::enum_for_each<remove_soft_enum_t<T>>([&](remove_soft_enum_t<T> enumVal) {

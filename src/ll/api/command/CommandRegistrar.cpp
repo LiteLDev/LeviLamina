@@ -123,7 +123,7 @@ bool CommandRegistrar::setSoftEnumValues(std::string const& name, std::vector<st
     return true;
 }
 
-char const* CommandRegistrar::addText(CommandHandle& handle, std::string_view text) {
+char const* CommandRegistrar::addText(CommandHandle& /*handle*/, std::string_view text) {
     std::string storedName{"ll_text_enum_name_"};
     storedName += text;
     if (impl->textWithRef.contains(storedName)) {

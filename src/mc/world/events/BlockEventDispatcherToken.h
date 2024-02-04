@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/Dimension/BlockEventDispatcher.h"
+#include "mc/world/level/dimension/BlockEventDispatcher.h"
 
 class BlockEventDispatcherToken {
 public:

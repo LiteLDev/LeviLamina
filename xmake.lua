@@ -64,9 +64,13 @@ target("LeviLamina")
     )
     add_cxflags(
         "/EHs",
-        "-Wno-ignored-qualifiers",
-        "-Wno-c++2b-extensions",
         "-Wno-microsoft-cast",
+        "-Wno-invalid-offsetof",
+        "-Wno-c++2b-extensions",
+        "-Wno-microsoft-include",
+        "-Wno-overloaded-virtual",
+        "-Wno-ignored-qualifiers",
+        "-Wno-potentially-evaluated-expression",
         "-Wno-pragma-system-header-outside-header",
         {tools = {"clang_cl"}}
     )

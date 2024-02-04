@@ -17,7 +17,7 @@
 #include "mc/util/molang/MolangStruct_XYZ.h"
 
 struct MolangScriptArg;
-class MolangMemberVariable;
+struct MolangMemberVariable;
 
 // auto generated forward declare list
 // clang-format off

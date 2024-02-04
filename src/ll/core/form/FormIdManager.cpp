@@ -1,13 +1,12 @@
-#include "ll/api/form/FormIdManager.h"
+#include "ll/core/form/FormIdManager.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/service/Bedrock.h"
 #include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/ServerInstance.h"
 
-
 namespace ll::form {
-uint FormIdAllocator::genFormId() {
-    std::lock_guard<std::mutex> lock(mMutex);
+uint FormIdManager::genFormId() {
+    std::lock_guard lock(mMutex);
 
     auto scriptManager = ll::service::getServerInstance()->getScriptManager();
     if (scriptManager && scriptManager->mFormPromiseTracker) {
@@ -17,6 +16,6 @@ uint FormIdAllocator::genFormId() {
     }
 }
 
-uint       FormIdAllocator::mCurrentId = 0;
-std::mutex FormIdAllocator::mMutex;
+uint       FormIdManager::mCurrentId = 0;
+std::mutex FormIdManager::mMutex;
 } // namespace ll::form

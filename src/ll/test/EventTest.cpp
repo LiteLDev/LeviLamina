@@ -145,7 +145,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         }
     );
 
-    remover.add<DelayTask>(2min, [=, &bus] { auto file = fileWatcher; });
+    remover.add<DelayTask>(2min, [=] { auto file = fileWatcher; });
 
     bus.emplaceListener<ExecutingCommandEvent>([](ExecutingCommandEvent& ev) {
         ll::logger.debug("ExecutingCommandEvent: {}", ev.commandContext().mCommand);

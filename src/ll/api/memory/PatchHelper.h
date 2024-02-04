@@ -47,7 +47,7 @@
 //    }
 //}
 
-namespace ll::utils {
+namespace ll::memory {
 
 template <size_t len>
 struct PatchHelper {
@@ -93,4 +93,4 @@ struct NopFiller {
         return ret;
     }
 };
-} // namespace ll::utils
+} // namespace ll::memory

@@ -11,7 +11,7 @@ class GetCollisionShapeInterface;
 class BlockPos;
 class BlockActor;
 class Block;
-class Bounds;
+struct Bounds;
 
 class IConstBlockSource {
 public:

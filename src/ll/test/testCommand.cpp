@@ -35,8 +35,8 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     ::ServerInstance& ins
 ) {
     origin(ins);
-    auto& cmd    = CommandRegistrar::getInstance().getOrCreateCommand("t", "test tttttt");
-    auto  lambda = [](CommandOrigin const&, CommandOutput& output, ParamTest const& param) {
+    auto&       cmd    = CommandRegistrar::getInstance().getOrCreateCommand("t", "test tttttt");
+    static auto lambda = [](CommandOrigin const&, CommandOutput& output, ParamTest const& param) {
         output.success("overload1");
         output.success("p1: {}", param.p1);
         output.success("p2: {} {}", param.p2.has_value(), param.p2.value_or(233));

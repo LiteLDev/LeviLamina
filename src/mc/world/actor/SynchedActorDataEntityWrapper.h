@@ -5,10 +5,12 @@
 // auto generated inclusion list
 #include "mc/entity/utilities/ActorFlags.h"
 
+struct SynchedActorDataComponent;
+
 class SynchedActorDataEntityWrapper {
 public:
     int (**_vptr_SynchedActorDataEntityWrapper)(void);
-    gsl::not_null<class SynchedActorDataComponent*> mData;
+    gsl::not_null<SynchedActorDataComponent*> mData;
 
     template <typename T>
     MCAPI void define(ushort, T const&);

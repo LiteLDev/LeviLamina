@@ -1,13 +1,15 @@
+#pragma once
+
 #include "ll/api/base/StdInt.h"
 #include <mutex>
 
 namespace ll::form {
-class FormIdAllocator {
+class FormIdManager {
 private:
     static uint       mCurrentId;
     static std::mutex mMutex;
 
 public:
-    LLNDAPI static uint genFormId();
+    static uint genFormId();
 };
 } // namespace ll::form

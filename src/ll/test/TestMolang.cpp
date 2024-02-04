@@ -25,7 +25,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     static ll::Logger logger("MolangTest");
     ExpressionNode::registerQueryFunction(
         "query.is_levilamina",
-        [&](RenderParams&, const std::vector<ExpressionNode>&) -> MolangScriptArg { return MolangScriptArg(true); },
+        [&](RenderParams&, const std::vector<ExpressionNode>&) -> MolangScriptArg const& {
+            static auto v = MolangScriptArg(true);
+            return v;
+        },
         "query is_levilamina",
         MolangQueryFunctionReturnType::Bool,
         "default",
@@ -35,7 +38,10 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     );
     ExpressionNode::registerQueryFunction(
         "query.homo_number",
-        [&](RenderParams&, const std::vector<ExpressionNode>&) -> MolangScriptArg { return MolangScriptArg(114514); },
+        [&](RenderParams&, const std::vector<ExpressionNode>&) -> MolangScriptArg const& {
+            static auto v = MolangScriptArg(114514);
+            return v;
+        },
         "query homo_number",
         MolangQueryFunctionReturnType::Number,
         "default",

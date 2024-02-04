@@ -17,8 +17,15 @@ namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
+struct MolangScriptArg;
+class RenderParams;
+
 class ExpressionNode {
 public:
+    using AccessorT         = MolangScriptArg const&(RenderParams&, std::vector<ExpressionNode> const&);
+    using AccessorFn        = std::function<AccessorT>;
+    using AccessorFnPointer = AccessorFn const*;
+
     uchar filler[200];
 
     // NOLINTBEGIN
@@ -143,9 +150,7 @@ public:
 
     // symbol:
     // ?queryFunctionAccessorFromString@ExpressionNode@@SAPEBV?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$allocator@VExpressionNode@@@std@@@std@@@Z@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4MolangVersion@@AEAW4MolangQueryFunctionReturnType@@_N@Z
-    MCAPI static std::function<
-        struct MolangScriptArg const&(class RenderParams&, std::vector<class ExpressionNode> const&)> const*
-    queryFunctionAccessorFromString(
+    MCAPI static AccessorFnPointer queryFunctionAccessorFromString(
         std::string const& functionName,
         ::MolangVersion,
         ::MolangQueryFunctionReturnType&,
@@ -154,7 +159,8 @@ public:
 
     // symbol:
     // ?registerQueryFunction@ExpressionNode@@SAAEAUMolangQueryFunction@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$allocator@VExpressionNode@@@std@@@std@@@Z@4@0W4MolangQueryFunctionReturnType@@VHashedString@@_K4AEBV?$initializer_list@H@4@@Z
-    MCAPI static struct MolangQueryFunction& registerQueryFunction(std::string const& queryFunctionName, std::function<struct MolangScriptArg const&(class RenderParams&, std::vector<class ExpressionNode> const&)> accessor, std::string const& documentation, ::MolangQueryFunctionReturnType returnType, class HashedString, uint64 minArgumentCount, uint64 maxArgumentCount, std::initializer_list<int> const&);
+    MCAPI static struct MolangQueryFunction&
+    registerQueryFunction(std::string const& queryFunctionName, AccessorFn accessor, std::string const& documentation, ::MolangQueryFunctionReturnType returnType, class HashedString, uint64 minArgumentCount, uint64 maxArgumentCount, std::initializer_list<int> const&);
 
     // symbol: ?setExperiments@ExpressionNode@@SAXAEBVExperiments@@@Z
     MCAPI static void setExperiments(class Experiments const&);
@@ -183,11 +189,7 @@ public:
 
     // symbol:
     // ?_hasDisallowedQueryPtrs@ExpressionNode@@AEBA_NAEBV?$vector@PEBV?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$allocator@VExpressionNode@@@std@@@std@@@Z@std@@V?$allocator@PEBV?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$allocator@VExpressionNode@@@std@@@std@@@Z@std@@@2@@std@@@Z
-    MCAPI bool
-    _hasDisallowedQueryPtrs(std::vector<std::function<
-                                struct
-                                MolangScriptArg const&(class RenderParams&, std::vector<class ExpressionNode> const&)> const*> const&)
-        const;
+    MCAPI bool _hasDisallowedQueryPtrs(std::vector<AccessorFnPointer> const&) const;
 
     // symbol: ?_optimize@ExpressionNode@@AEAA_NW4MolangVersion@@AEAVRenderParams@@H@Z
     MCAPI bool _optimize(::MolangVersion version, class RenderParams&, int);
@@ -298,9 +300,7 @@ private:
     // NOLINTBEGIN
     // symbol:
     // ?_defaultUnknownQueryFunction@ExpressionNode@@0V?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$allocator@VExpressionNode@@@std@@@std@@@Z@std@@A
-    MCAPI static std::function<
-        struct MolangScriptArg const&(class RenderParams&, std::vector<class ExpressionNode> const&)>
-        _defaultUnknownQueryFunction;
+    MCAPI static AccessorFn _defaultUnknownQueryFunction;
 
     // symbol: ?mExperiments@ExpressionNode@@0VExperimentStorage@@A
     MCAPI static class ExperimentStorage mExperiments;

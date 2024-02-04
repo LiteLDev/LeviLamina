@@ -14,6 +14,9 @@ class ItemDescriptorCount : public ::ItemDescriptor {
 public:
     ushort mStackSize; // this+0x10
 
+    ItemDescriptorCount& operator=(ItemDescriptorCount&&)      = default;
+    ItemDescriptorCount& operator=(ItemDescriptorCount const&) = default;
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1ItemDescriptorCount@@UEAA@XZ

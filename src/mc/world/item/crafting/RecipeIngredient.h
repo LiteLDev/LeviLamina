@@ -14,6 +14,9 @@ class RecipeIngredient : public ::ItemDescriptorCount {
 public:
     RecipeIngredient() = delete;
 
+    RecipeIngredient& operator=(RecipeIngredient&&)      = default;
+    RecipeIngredient& operator=(RecipeIngredient const&) = default;
+
 public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: ??1RecipeIngredient@@UEAA@XZ

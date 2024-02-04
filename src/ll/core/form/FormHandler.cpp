@@ -12,7 +12,7 @@
 #include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/ServerInstance.h"
 
-#include "ll/api/form/FormIdManager.h"
+#include "ll/core/form/FormIdManager.h"
 #include "mc/deps/json/Value.h"
 #include "mc/deps/json/ValueConstIterator.h"
 #include "nlohmann/json_fwd.hpp"
@@ -154,7 +154,7 @@ LL_TYPE_INSTANCE_HOOK(
 uint addFormHandler(std::unique_ptr<FormHandler>&& data) {
     static ll::memory::HookRegistrar<FormResponseHandler> hook;
 
-    uint formId = ll::form::FormIdAllocator::genFormId();
+    uint formId = ll::form::FormIdManager::genFormId();
     formHandlers.emplace(formId, std::move(data));
 
     return formId;

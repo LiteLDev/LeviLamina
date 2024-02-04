@@ -34,12 +34,12 @@ public:
     // NOLINTBEGIN
     // symbol: ?blockBroken@Messenger@CodeBuilder@@UEBAXPEBVPlayer@@AEBVBlock@@HHG@Z
     MCVAPI void
-    blockBroken(class Player const* player, class Block const& block, int method, int variantData, ushort auxType)
+    blockBroken(class Player const* player, class ::Block const& block, int method, int variantData, ushort auxType)
         const;
 
     // symbol: ?blockPlaced@Messenger@CodeBuilder@@UEBAXPEBVPlayer@@AEBVBlock@@_NG@Z
     MCVAPI void
-    blockPlaced(class Player const* player, class Block const& block, bool underWater, ushort auxType) const;
+    blockPlaced(class Player const* player, class ::Block const& block, bool underWater, ushort auxType) const;
 
     // symbol: ?cameraUsed@Messenger@CodeBuilder@@UEBAX_N@Z
     MCVAPI void cameraUsed(bool isSelfie) const;
@@ -143,7 +143,7 @@ public:
 
     // symbol: ?playerBounced@Messenger@CodeBuilder@@UEBAXPEBVPlayer@@AEBVBlock@@HH@Z
     MCVAPI void
-    playerBounced(class Player const* player, class Block const& block, int bounceHeight, int auxType) const;
+    playerBounced(class Player const* player, class ::Block const& block, int bounceHeight, int auxType) const;
 
     // symbol: ?playerDied@Messenger@CodeBuilder@@UEBAXPEBVPlayer@@HHH_N@Z
     MCVAPI void playerDied(class Player const* player, int killerId, int killerVariant, int reason, bool inRaid) const;

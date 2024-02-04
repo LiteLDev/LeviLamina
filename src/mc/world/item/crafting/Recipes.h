@@ -77,9 +77,9 @@ public:
             mBlock = mIngredient.getBlock();
         }
 
-        Type(Type const&) noexcept            = default;
-        Type& operator=(Type&&) noexcept      = default;
-        Type& operator=(Type const&) noexcept = default;
+        Type(Type const&)            = default;
+        Type& operator=(Type&&)      = default;
+        Type& operator=(Type const&) = default;
 
     public:
         // NOLINTBEGIN

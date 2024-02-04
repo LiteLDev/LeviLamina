@@ -51,7 +51,7 @@ static void sendEmptyChunk(const NetworkIdentifier& netId, int chunkX, int chunk
 
     varIntDataOutput.writeBytes(&biome, 4096); // write void biome
     for (int i = 1; i < 8; i++) {
-        varIntDataOutput.writeByte((127 << 1) | 1);
+        varIntDataOutput.writeByte(255ui8);
     }
     varIntDataOutput.mStream->writeUnsignedChar(0); // write border blocks
 

@@ -157,7 +157,7 @@ public:
         std::function<void()>         fn,
         std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
     )
-    : DelayTask<Clock>(Clock::now() + std::chrono::duration_cast<duration>(dur), std::move(fn)) {}
+    : DelayTask<Clock>(Clock::now() + std::chrono::duration_cast<duration>(dur), std::move(fn), std::move(plugin)) {}
 
     DelayTask(
         std::string_view              timestr,
@@ -165,7 +165,7 @@ public:
         std::weak_ptr<plugin::Plugin> plugin = plugin::NativePlugin::current()
     )
         requires(std::is_same_v<Clock, std::chrono::system_clock>)
-    : DelayTask<Clock>(parseTime(timestr), std::move(fn)) {}
+    : DelayTask<Clock>(parseTime(timestr), std::move(fn), std::move(plugin)) {}
 
     std::optional<time_point> getFirstTime() override { return time; }
 
