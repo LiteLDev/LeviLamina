@@ -1,14 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
 
-struct MolangArrayVariable {
-public:
-    // prevent constructor by default
-    MolangArrayVariable& operator=(MolangArrayVariable const&);
-    MolangArrayVariable(MolangArrayVariable const&);
-    MolangArrayVariable();
-
+struct MolangArrayVariable : HashedString {
 public:
     // NOLINTBEGIN
     // symbol: ??1MolangArrayVariable@@QEAA@XZ

@@ -1,13 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/util/molang/MolangScriptArg.h"
+
+struct MolangScriptArg;
 
 struct MolangMemberVariable {
-public:
-    // prevent constructor by default
-    MolangMemberVariable& operator=(MolangMemberVariable const&);
-    MolangMemberVariable(MolangMemberVariable const&);
-    MolangMemberVariable();
+    HashedString    mName;
+    MolangScriptArg mData;
 
 public:
     // NOLINTBEGIN

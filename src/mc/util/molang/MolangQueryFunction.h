@@ -6,6 +6,8 @@
 
 class RenderParams;
 
+using QueryFunctionAccessor = std::function<MolangScriptArg const&(RenderParams&, std::vector<ExpressionNode> const&)>;
+
 struct MolangQueryFunction {
 public:
     // prevent constructor by default
@@ -13,8 +15,6 @@ public:
     MolangQueryFunction(MolangQueryFunction const&);
     MolangQueryFunction();
 
-    using QueryFunctionAccessor =
-        std::function<MolangScriptArg const&(RenderParams&, std::vector<ExpressionNode> const&)>;
 
     QueryFunctionAccessor         mAccessor;                    // this+0x0
     std::string                   mDocumentation;               // this+0x40

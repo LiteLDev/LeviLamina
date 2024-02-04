@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class MolangMemberVariable;
+
 // auto generated inclusion list
 #include "mc/util/molang/MolangStruct_BaseAndPattern.h"
 #include "mc/util/molang/MolangStruct_MinAndMax.h"
@@ -16,12 +18,17 @@
 #include "mc/util/molang/MolangStruct_XY.h"
 #include "mc/util/molang/MolangStruct_XYZ.h"
 
+struct MolangScriptArg;
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Color; }
 // clang-format on
 
 struct MolangMemberArray {
+public:
+    std::unique_ptr<std::vector<MolangMemberVariable>> mMembers;
+
 public:
     // prevent constructor by default
     MolangMemberArray& operator=(MolangMemberArray const&);

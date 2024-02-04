@@ -4,10 +4,7 @@
 
 struct MolangActorArrayPtr {
 public:
-    // prevent constructor by default
-    MolangActorArrayPtr& operator=(MolangActorArrayPtr const&);
-    MolangActorArrayPtr(MolangActorArrayPtr const&);
-    MolangActorArrayPtr();
+    std::vector<class Actor*> mActors;
 
 public:
     // NOLINTBEGIN

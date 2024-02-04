@@ -1,13 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
+
+class DataDrivenGeometry;
 
 struct MolangDataDrivenGeometry {
 public:
-    // prevent constructor by default
-    MolangDataDrivenGeometry& operator=(MolangDataDrivenGeometry const&);
-    MolangDataDrivenGeometry(MolangDataDrivenGeometry const&);
-    MolangDataDrivenGeometry();
+    std::weak_ptr<DataDrivenGeometry> mGeometry;
+    HashedString                      mName;
 
 public:
     // NOLINTBEGIN

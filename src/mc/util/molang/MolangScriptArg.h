@@ -1,11 +1,50 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/minecraft_renderer/renderer/MaterialVariants.h"
+#include "mc/util/molang/MolangActorArrayPtr.h"
+#include "mc/util/molang/MolangActorIdArrayPtr.h"
+#include "mc/util/molang/MolangArrayVariable.h"
+#include "mc/util/molang/MolangClientTextureSet.h"
+#include "mc/util/molang/MolangContextVariable.h"
+#include "mc/util/molang/MolangDataDrivenGeometry.h"
+#include "mc/util/molang/MolangEntityVariable.h"
+#include "mc/util/molang/MolangGeometryVariable.h"
+#include "mc/util/molang/MolangMaterialVariable.h"
+#include "mc/util/molang/MolangMatrix.h"
+#include "mc/util/molang/MolangMemberAccessor.h"
+#include "mc/util/molang/MolangMemberArray.h"
+#include "mc/util/molang/MolangQueryFunctionPtr.h"
+#include "mc/util/molang/MolangScriptArgPOD.h"
+#include "mc/util/molang/MolangTempVariable.h"
+#include "mc/util/molang/MolangTextureVariable.h"
 
 // auto generated inclusion list
 #include "mc/util/molang/MolangScriptArgType.h"
 
 struct MolangScriptArg {
+    using MolangScriptArgData = std::variant<
+        MolangMatrix,
+        MaterialVariants,
+        MolangActorArrayPtr,
+        MolangActorIdArrayPtr,
+        MolangArrayVariable,
+        MolangClientTextureSet,
+        MolangContextVariable,
+        MolangDataDrivenGeometry,
+        MolangEntityVariable,
+        MolangGeometryVariable,
+        MolangMaterialVariable,
+        MolangMemberAccessor,
+        MolangMemberArray,
+        MolangQueryFunctionPtr,
+        MolangTempVariable,
+        MolangTextureVariable>;
+
+    MolangScriptArgType mType;
+    MolangScriptArgPOD  mPOD;
+    MolangScriptArgData mData;
+
 public:
     // NOLINTBEGIN
     // symbol: ??0MolangScriptArg@@QEAA@XZ

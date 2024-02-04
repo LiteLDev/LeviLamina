@@ -1,13 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
 
-struct MolangGeometryVariable {
-public:
-    // prevent constructor by default
-    MolangGeometryVariable& operator=(MolangGeometryVariable const&);
-    MolangGeometryVariable(MolangGeometryVariable const&);
-    MolangGeometryVariable();
+struct MolangGeometryVariable : HashedString {
 
 public:
     // NOLINTBEGIN
