@@ -19,10 +19,12 @@ class typeid_t {
 public:
     constexpr static ushort count = 0;
 
-    ushort value;
+    ushort value{};
     [[nodiscard]] constexpr typeid_t(typeid_t const& id) : value(id.value) {}
     [[nodiscard]] constexpr typeid_t(ushort value) : value(value) {}
-    [[nodiscard]] inline typeid_t() : value(++_getCounter()) {}
+    [[nodiscard]] constexpr typeid_t() = default;
+
+    constexpr bool operator==(typeid_t const& other) const { return value == other.value; }
 
     static std::atomic_ushort& _getCounter() {
 
@@ -38,7 +40,7 @@ LLAPI std::atomic_ushort& typeid_t<CommandRegistry>::_getCounter();
 
 template <typename Category, typename Type>
 typeid_t<Category> type_id() {
-    static typeid_t<Category> id{};
+    static typeid_t<Category> id{++typeid_t<Category>::_getCounter()};
     return id;
 }
 

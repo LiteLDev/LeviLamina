@@ -12,7 +12,7 @@ class CommandParameterData {
 public:
     using ParseFn = typename CommandRegistry::ParseFn;
 
-    Bedrock::typeid_t<CommandRegistry> mTypeIndex;               // this+0x0
+    Bedrock::typeid_t<CommandRegistry> mTypeIndex{};            // this+0x0
     ParseFn                            mParse;                   // this+0x8
     std::string                        mName;                    // this+0x10
     char const*                        mEnumNameOrPostfix;       // this+0x30
@@ -25,100 +25,20 @@ public:
     bool                               mIsOptional;              // this+0x58
     CommandParameterOption             mOptions;                 // this+0x59
 
-    CommandParameterData() : mTypeIndex(0){};
+    CommandParameterData() = default;
 
-    CommandParameterData(
-        const Bedrock::typeid_t<CommandRegistry>& typeIndex,
-        ParseFn                                   parser,
-        std::string                               name,
-        ::CommandParameterDataType                type,
-        char const*                               enumNameOrPostfix,
-        int                                       offset,
-        bool                                      optional,
-        int                                       flagOffset
-    )
-    : mTypeIndex(typeIndex),
-      mParse(parser),
-      mName(std::move(name)),
-      mEnumNameOrPostfix(enumNameOrPostfix),
-      mUnknown(nullptr),
-      mParamType(type),
-      mOffset(offset),
-      mSetOffset(flagOffset),
-      mIsOptional(optional),
-      mOptions(CommandParameterOption::None){};
+    LLNDAPI CommandParameterData(
+        Bedrock::typeid_t<CommandRegistry> typeIndex,
+        ParseFn                            parser,
+        std::string                        name,
+        ::CommandParameterDataType         type,
+        char const*                        enumNameOrPostfix,
+        int                                offset,
+        bool                               optional,
+        int                                flagOffset
+    );
 
-    template <typename Command, typename Type>
-    [[nodiscard]] inline static CommandParameterData
-    makeMandatory(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
-
-        return {
-            Bedrock::type_id<CommandRegistry, Type>(),
-            &CommandRegistry::parse<Type>,
-            std::move(name),
-            CommandParameterDataType::Basic,
-            nullptr,
-            getOffset(field),
-            false,
-            isSet ? getOffset(isSet) : -1
-        };
-    }
-    template <CommandParameterDataType DataType, typename Command, typename Type>
-    [[nodiscard]] inline static CommandParameterData
-    makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
-
-        return {
-            Bedrock::type_id<CommandRegistry, Type>(),
-            &CommandRegistry::parse<Type>,
-            std::move(name),
-            DataType,
-            desc,
-            getOffset(field),
-            false,
-            isSet ? getOffset(isSet) : -1
-        };
-    }
-    template <typename Command, typename Type>
-    [[nodiscard]] inline static CommandParameterData
-    makeOptional(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
-
-        return {
-            Bedrock::type_id<CommandRegistry, Type>(),
-            &CommandRegistry::parse<Type>,
-            std::move(name),
-            CommandParameterDataType::Basic,
-            nullptr,
-            getOffset(field),
-            true,
-            isSet ? getOffset(isSet) : -1,
-        };
-    }
-    template <CommandParameterDataType DataType, typename Command, typename Type>
-    [[nodiscard]] inline static CommandParameterData
-    makeOptional(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
-
-        return {
-            Bedrock::type_id<CommandRegistry, Type>(),
-            &CommandRegistry::parse<Type>,
-            std::move(name),
-            DataType,
-            desc,
-            getOffset(field),
-            true,
-            isSet ? getOffset(isSet) : -1,
-        };
-    }
-
-private:
-    template <typename Command, typename Type>
-    [[nodiscard]] inline static int getOffset(Type Command::*src) {
-        union {
-            Type Command::*src;
-            int            value;
-        } u;
-        u.src = src;
-        return u.value;
-    }
+    LLNDAPI bool operator==(CommandParameterData const& other) const;
 
 public:
     // NOLINTBEGIN
