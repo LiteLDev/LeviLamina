@@ -35,7 +35,8 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
     std::string const&     name,
     std::string const&     description,
     CommandPermissionLevel requirement,
-    CommandFlag            flag
+    CommandFlag            flag,
+    std::weak_ptr<plugin::Plugin> /*plugin*/
 ) {
     auto& registry  = getRegistry();
     auto  signature = registry.findCommand(name);
@@ -43,8 +44,7 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
         registry.registerCommand(name, description.c_str(), requirement, flag);
         signature = registry.findCommand(name);
         return impl->commands.try_emplace(name, *this, signature, true).first->second;
-    }
-    if (impl->commands.contains(signature->name)) {
+    } else if (impl->commands.contains(signature->name)) {
         return impl->commands.at(signature->name);
     } else {
         return impl->commands.try_emplace(signature->name, *this, signature, false).first->second;
