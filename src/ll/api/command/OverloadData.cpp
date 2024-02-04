@@ -50,7 +50,8 @@ CommandParameterData& OverloadData::addParamImpl(
 ) {
     auto& param =
         params.emplace_back(id, parser, std::string{name}, type, enumNameOrPostfix, offset, optional, flagOffset);
-    if (id.value == Bedrock::type_id<CommandRegistry, CommandBlockName>().value) {
+    if (id == Bedrock::type_id<CommandRegistry, CommandBlockName>()
+        || id == Bedrock::type_id<CommandRegistry, CommandItem>()) {
         param.addOptions(CommandParameterOption::HasSemanticConstraint);
     }
     if (type == CommandParameterDataType::Enum) {

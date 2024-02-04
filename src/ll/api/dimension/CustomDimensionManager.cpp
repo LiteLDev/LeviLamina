@@ -219,7 +219,7 @@ DimensionType CustomDimensionManager::addDimension(
     ll::command::CommandRegistrar::getInstance().addEnumValues(
         "Dimension",
         {
-            {dimName, info.id.id}
+            {dimName, info.id}
     },
         Bedrock::type_id<CommandRegistry, DimensionType>()
     );
