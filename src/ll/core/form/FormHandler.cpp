@@ -12,6 +12,7 @@
 #include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/ServerInstance.h"
 
+#include "ll/api/form/FormIdManager.h"
 #include "mc/deps/json/Value.h"
 #include "mc/deps/json/ValueConstIterator.h"
 #include "nlohmann/json_fwd.hpp"
@@ -20,6 +21,7 @@
 #include <nlohmann/json.hpp>
 #include <optional>
 #include <utility>
+
 namespace ll::form::handler {
 
 
@@ -117,7 +119,6 @@ void ModalFormHandler::handle(Player& player, std::optional<Json::Value> data) c
 }
 
 std::unordered_map<uint, std::unique_ptr<FormHandler>> formHandlers = {};
-uint                                                   currentId    = 0;
 
 bool handleFormPacket(Player& player, uint formId, std::optional<Json::Value> data) {
     auto it = formHandlers.find(formId);
@@ -153,15 +154,11 @@ LL_TYPE_INSTANCE_HOOK(
 uint addFormHandler(std::unique_ptr<FormHandler>&& data) {
     static ll::memory::HookRegistrar<FormResponseHandler> hook;
 
-    auto scriptManager = ll::service::getServerInstance()->getScriptManager();
+    uint formId = ll::form::FormIdAllocator::genFormId();
+    formHandlers.emplace(formId, std::move(data));
 
-    if (scriptManager && scriptManager->mFormPromiseTracker) {
-        formHandlers.emplace(++scriptManager->mFormPromiseTracker->mLastRequestId, std::move(data));
-        return scriptManager->mFormPromiseTracker->mLastRequestId;
-    }
-
-    formHandlers.emplace(++currentId, std::move(data));
-    return currentId;
+    return formId;
 }
+
 
 } // namespace ll::form::handler
