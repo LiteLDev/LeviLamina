@@ -16,4 +16,7 @@ uint FormIdAllocator::genFormId() {
         return ++mCurrentId;
     }
 }
+
+uint       FormIdAllocator::mCurrentId = 0;
+std::mutex FormIdAllocator::mMutex;
 } // namespace ll::form
