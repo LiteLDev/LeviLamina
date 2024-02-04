@@ -1,8 +1,13 @@
 #pragma once
 
-#include "ll/api/command/Overload.h"
+#include <string_view>
 
-#include "mc/server/commands/CommandParameterData.h"
+#include "gsl/pointers"
+
+#include "ll/api/command/Overload.h"
+#include "ll/api/command/OverloadData.h"
+
+#include "mc/server/commands/CommandRegistry.h"
 
 namespace ll::command {
 class CommandRegistrar;

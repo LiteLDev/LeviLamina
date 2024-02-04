@@ -1,6 +1,20 @@
 #include "ll/api/command/OverloadData.h"
+
+#include <stdexcept>
+#include <string>
+#include <string_view>
+#include <utility>
+#include <vector>
+
+#include "ll/api/base/StdInt.h"
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/CommandRegistrar.h"
+
+#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/server/commands/CommandParameterData.h"
+#include "mc/server/commands/CommandParameterDataType.h"
+#include "mc/server/commands/CommandParameterOption.h"
+#include "mc/server/commands/CommandRegistry.h"
 
 namespace ll::command {
 

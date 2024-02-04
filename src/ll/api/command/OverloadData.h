@@ -1,6 +1,19 @@
 #pragma once
 
+#include <string>
+#include <string_view>
+#include <utility>
+#include <vector>
+
+#include "gsl/pointers"
+
+#include "ll/api/base/Macro.h"
+#include "ll/api/base/StdInt.h"
+
+#include "mc/deps/core/common/bedrock/typeid_t.h"
 #include "mc/server/commands/CommandParameterData.h"
+#include "mc/server/commands/CommandParameterDataType.h"
+#include "mc/server/commands/CommandRegistry.h"
 
 namespace ll::command {
 class CommandHandle;
@@ -16,7 +29,7 @@ class OverloadData {
     std::vector<CommandParameterData> params;
 
 protected:
-    constexpr OverloadData(CommandHandle& handle) : handle(&handle) {}
+    constexpr explicit OverloadData(CommandHandle& handle) : handle(&handle) {}
 
     LLAPI bool tryRegisterEnum(
         std::string const&                                 name,

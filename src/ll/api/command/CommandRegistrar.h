@@ -1,10 +1,23 @@
 #pragma once
 
-#include "ll/api/command/EnumName.h"
-
-#include "mc/server/commands/CommandRegistry.h"
+#include <memory>
+#include <string>
+#include <string_view>
+#include <type_traits>
+#include <utility>
+#include <vector>
 
 #include "magic_enum.hpp"
+
+#include "ll/api/base/Macro.h"
+#include "ll/api/base/StdInt.h"
+#include "ll/api/command/EnumName.h"
+#include "ll/api/command/SoftEnum.h"
+
+#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/server/commands/CommandFlag.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/server/commands/CommandRegistry.h"
 
 namespace ll::command {
 
@@ -19,7 +32,7 @@ class CommandRegistrar {
 
     char const* addText(CommandHandle&, std::string_view);
 
-    CommandRegistry& getRegistry() const;
+    [[nodiscard]] CommandRegistry& getRegistry() const;
 
 public:
     LLNDAPI static CommandRegistrar& getInstance();

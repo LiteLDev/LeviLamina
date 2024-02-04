@@ -1,16 +1,21 @@
 #pragma once
 
-#include <concepts>
+#include <concepts> // IWYU pragma: keep
+#include <cstddef>
 #include <optional>
+#include <stdexcept>
+#include <type_traits>
 
-#include "ll/api/base/Concepts.h"
+#include "ll/api/base/Concepts.h" // IWYU pragma: keep
 
 namespace ll::command {
+
 template <std::default_initializable T>
 struct OptionalOffsetGetter;
+
 template <std::default_initializable T>
 class Optional {
-    friend OptionalOffsetGetter;
+    friend OptionalOffsetGetter<T>;
     T    mValue{};
     bool hasValue{};
 
@@ -69,13 +74,14 @@ public:
     [[nodiscard]] constexpr T const* operator->() const { return &get(); }
     [[nodiscard]] constexpr T*       operator->() { return &get(); }
 
+    // NOLINTNEXTLINE(google-explicit-constructor)
     [[nodiscard]] constexpr operator T const&&() const&& { return std::move(get()); }
-    [[nodiscard]] constexpr operator T&&() && { return std::move(get()); }
-    [[nodiscard]] constexpr operator T const&() const& { return get(); }
-    [[nodiscard]] constexpr operator T&() & { return get(); }
+    [[nodiscard]] constexpr operator T&&() && { return std::move(get()); } // NOLINT(google-explicit-constructor)
+    [[nodiscard]] constexpr operator T const&() const& { return get(); }   // NOLINT(google-explicit-constructor)
+    [[nodiscard]] constexpr operator T&() & { return get(); }              // NOLINT(google-explicit-constructor)
 
-    [[nodiscard]] constexpr operator T const*() const { return &get(); }
-    [[nodiscard]] constexpr operator T*() { return &get(); }
+    [[nodiscard]] constexpr operator T const*() const { return &get(); } // NOLINT(google-explicit-constructor)
+    [[nodiscard]] constexpr operator T*() { return &get(); }             // NOLINT(google-explicit-constructor)
 
     template <class U>
     [[nodiscard]] constexpr T value_or(U&& right) const& {
@@ -84,18 +90,19 @@ public:
         }
         return static_cast<T const&>(std::forward<U>(right));
     }
+
     template <class U>
     [[nodiscard]] constexpr T&& value_or(U&& right) && {
         if (has_value()) {
-            return std::move(right);
+            return std::move(mValue);
         }
         return static_cast<T&&>(std::forward<U>(right));
     }
 
-    [[nodiscard]] constexpr T const&& value_or_default() const&& { return std::move(value); }
-    [[nodiscard]] constexpr T&&       value_or_default() && { return std::move(value); }
-    [[nodiscard]] constexpr T const&  value_or_default() const& { return value; }
-    [[nodiscard]] constexpr T&        value_or_default() & { return value; }
+    [[nodiscard]] constexpr T const&& value_or_default() const&& { return std::move(value()); }
+    [[nodiscard]] constexpr T&&       value_or_default() && { return std::move(value()); }
+    [[nodiscard]] constexpr T const&  value_or_default() const& { return value(); }
+    [[nodiscard]] constexpr T&        value_or_default() & { return value(); }
 
     template <typename U = std::decay_t<T>>
         requires(std::is_constructible_v<U, T>)
@@ -121,4 +128,5 @@ template <std::default_initializable T>
 struct OptionalOffsetGetter {
     static constexpr auto value = offsetof(Optional<T>, hasValue);
 };
+
 } // namespace ll::command

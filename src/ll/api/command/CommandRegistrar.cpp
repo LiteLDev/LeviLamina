@@ -1,8 +1,21 @@
 #include "ll/api/command/CommandRegistrar.h"
-#include "ll/api/command/CommandHandle.h"
-#include "ll/api/service/Bedrock.h"
 
+#include <memory>
+#include <string>
+#include <string_view>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
+#include "ll/api/base/StdInt.h"
+#include "ll/api/command/CommandHandle.h"
+#include "ll/api/command/OverloadData.h"
+#include "ll/api/service/Bedrock.h"
 #include "ll/api/utils/StringUtils.h"
+
+#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/server/commands/CommandFlag.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
 
 namespace ll::command {
 struct CommandRegistrar::Impl {

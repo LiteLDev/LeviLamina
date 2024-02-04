@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ll/api/base/Concepts.h"
+#include "ll/api/base/Concepts.h" // IWYU pragma: keep
 #include "ll/api/base/FixedString.h"
 #include "ll/api/command/SoftEnum.h"
 #include "ll/api/reflection/TypeName.h"

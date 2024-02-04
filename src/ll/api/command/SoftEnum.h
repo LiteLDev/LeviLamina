@@ -1,6 +1,9 @@
 #pragma once
 
-#include "ll/api/base/Concepts.h"
+#include <string>
+#include <type_traits>
+
+#include "ll/api/base/Concepts.h" // IWYU pragma: keep
 
 namespace ll::command {
 template <concepts::ConceptFor<std::is_enum> T>

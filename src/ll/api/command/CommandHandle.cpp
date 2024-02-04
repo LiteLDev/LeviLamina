@@ -1,5 +1,12 @@
 #include "ll/api/command/CommandHandle.h"
+
+#include <string_view>
+#include <utility>
+
 #include "ll/api/command/CommandRegistrar.h"
+#include "ll/api/command/OverloadData.h"
+
+#include "mc/server/commands/CommandVersion.h"
 
 namespace ll::command {
 

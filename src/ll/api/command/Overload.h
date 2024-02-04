@@ -1,14 +1,26 @@
 #pragma once
 
+#include <cstddef>
+#include <stdexcept>
+#include <string>
+#include <string_view>
+#include <type_traits>
+
+#include "ll/api/base/StdInt.h"
 #include "ll/api/command/Command.h"
+#include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/command/EnumName.h"
 #include "ll/api/command/Optional.h"
 #include "ll/api/command/OverloadData.h"
 #include "ll/api/command/SoftEnum.h"
 
-namespace ll::command {
+#include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/server/commands/CommandParameterDataType.h"
+#include "mc/server/commands/CommandParameterOption.h"
+#include "mc/server/commands/CommandRegistry.h"
+#include "mc/world/level/Command.h"
 
-class CommandRegistrar;
+namespace ll::command {
 
 template <reflection::Reflectable Params>
 class Overload : public OverloadData {
@@ -70,7 +82,7 @@ class Overload : public OverloadData {
         return *this;
     }
 
-    constexpr Overload(CommandHandle& handle) : OverloadData(handle) {}
+    constexpr explicit Overload(CommandHandle& handle) : OverloadData(handle) {}
 
 public:
     constexpr Overload& optional(std::string_view name) {
