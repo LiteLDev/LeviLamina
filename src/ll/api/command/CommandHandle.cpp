@@ -10,11 +10,26 @@
 
 namespace ll::command {
 
+struct CommandHandle::Impl {
+    gsl::not_null<CommandRegistrar*>           registrar;
+    gsl::not_null<CommandRegistry::Signature*> signature;
+    bool                                       owned;
+};
+
+
+CommandHandle::CommandHandle(CommandRegistrar& registrar, CommandRegistry::Signature* signature, bool owned)
+: impl(std::make_unique<Impl>(&registrar, signature, owned)) {}
+
+CommandHandle::~CommandHandle() = default;
+
+
+CommandRegistrar& CommandHandle::getRegistrar() { return *impl->registrar; }
+
 void CommandHandle::registerOverload(OverloadData&& data) {
-    auto& overload  = signature->overloads.emplace_back(CommandVersion{}, data.factory);
-    overload.params = std::move(data.params);
-    registrar->getRegistry().registerOverloadInternal(*signature, overload);
+    auto& overload  = impl->signature->overloads.emplace_back(CommandVersion{}, data.getFactory());
+    overload.params = std::move(data.moveParams());
+    impl->registrar->getRegistry().registerOverloadInternal(*impl->signature, overload);
 }
-char const* CommandHandle::addText(std::string_view text) { return registrar->addText(*this, text); }
+char const* CommandHandle::addText(std::string_view text) { return impl->registrar->addText(*this, text); }
 
 } // namespace ll::command

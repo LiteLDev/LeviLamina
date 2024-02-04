@@ -19,21 +19,18 @@ namespace ll::core::command {
 using namespace ll::i18n_literals;
 using ll::command::CommandRegistrar;
 
-struct VersionCommandParams {};
-
 void registerVersionCommand() {
     auto& cmd = CommandRegistrar::getInstance().getOrCreateCommand(
         "version",
         "Query serverversion information",
         CommandPermissionLevel::GameDirectors
     );
-    cmd.overload<VersionCommandParams>()
-        .execute<[&](CommandOrigin const&, CommandOutput& output, VersionCommandParams const&) {
-            output.success("This server is running Bedrock Dedicated Server version {0} with §bLeviLamina-{1}§r."_tr(
-                ll::getBdsVersion(),
-                ll::getLoaderVersion()
-            ));
-        }>();
+    cmd.overload().execute<[&](CommandOrigin const&, CommandOutput& output) {
+        output.success("This server is running Bedrock Dedicated Server version {0} with §bLeviLamina-{1}§r."_tr(
+            ll::getBdsVersion(),
+            ll::getLoaderVersion()
+        ));
+    }>();
 }
 
 } // namespace ll::core::command

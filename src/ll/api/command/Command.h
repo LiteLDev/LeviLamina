@@ -9,6 +9,8 @@
 
 namespace ll::command {
 
+struct EmptyParam {};
+
 template <reflection::Reflectable Params, auto Executor>
     requires(std::default_initializable<Params>)
 class Command : public ::Command {
@@ -22,7 +24,11 @@ public:
 
     virtual ~Command() = default;
     void execute(class CommandOrigin const& origin, class CommandOutput& output) const override {
-        Executor(origin, output, parameters);
+        if constexpr (std::is_same_v<Params, EmptyParam> && requires { Executor(origin, output); }) {
+            Executor(origin, output);
+        } else {
+            Executor(origin, output, parameters);
+        }
     }
 };
 

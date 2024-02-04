@@ -82,7 +82,7 @@ class Overload : public OverloadData {
         return *this;
     }
 
-    constexpr explicit Overload(CommandHandle& handle) : OverloadData(handle) {}
+    explicit Overload(CommandHandle& handle) : OverloadData(handle) {}
 
 public:
     constexpr Overload& optional(std::string_view name) {

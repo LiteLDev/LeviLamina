@@ -13,21 +13,21 @@ namespace ll::command {
 class CommandRegistrar;
 class CommandHandle {
     friend OverloadData;
-    gsl::not_null<CommandRegistrar*>           registrar;
-    gsl::not_null<CommandRegistry::Signature*> signature;
-    bool                                       owned;
+
+    struct Impl;
+    std::unique_ptr<Impl> impl;
+
+    CommandRegistrar& getRegistrar();
 
     void registerOverload(OverloadData&&);
 
     char const* addText(std::string_view);
 
 public:
-    CommandHandle(CommandRegistrar& registrar, CommandRegistry::Signature* signature, bool owned)
-    : registrar(&registrar),
-      signature(signature),
-      owned(owned) {}
+    CommandHandle(CommandRegistrar& registrar, CommandRegistry::Signature* signature, bool owned);
+    ~CommandHandle();
 
-    template <reflection::Reflectable Params>
+    template <reflection::Reflectable Params = EmptyParam>
     constexpr auto overload() -> Overload<Params> {
         return Overload<Params>{*this};
     }

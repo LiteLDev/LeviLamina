@@ -18,21 +18,22 @@
 
 namespace ll::command {
 
-bool OverloadData::tryRegisterEnum(
-    std::string const&                                 name,
-    std::vector<std::pair<std::string, uint64>> const& values,
-    Bedrock::typeid_t<CommandRegistry>                 type,
-    CommandRegistry::ParseFn                           parser
-) {
-    return handle->registrar->tryRegisterEnum(name, values, type, parser);
-}
-bool OverloadData::tryRegisterSoftEnum(std::string const& name, std::vector<std::string> values) {
-    return handle->registrar->tryRegisterSoftEnum(name, values);
-}
+struct OverloadData::Impl {
+    gsl::not_null<CommandHandle*>     handle;
+    CommandRegistry::FactoryFn        factory{};
+    std::vector<CommandParameterData> params;
+};
+
+OverloadData::OverloadData(CommandHandle& handle) : impl(std::make_unique<Impl>(&handle)) {}
+
+OverloadData::~OverloadData() = default;
+
+CommandRegistry::FactoryFn        OverloadData::getFactory() { return impl->factory; }
+std::vector<CommandParameterData> OverloadData::moveParams() { return std::move(impl->params); }
 
 CommandParameterData& OverloadData::back() {
-    if (!params.empty()) {
-        return params.back();
+    if (!impl->params.empty()) {
+        return impl->params.back();
     } else {
         throw std::runtime_error("empty overload");
     }
@@ -49,7 +50,7 @@ CommandParameterData& OverloadData::addParamImpl(
     bool                               optional
 ) {
     auto& param =
-        params.emplace_back(id, parser, std::string{name}, type, enumNameOrPostfix, offset, optional, flagOffset);
+        impl->params.emplace_back(id, parser, std::string{name}, type, enumNameOrPostfix, offset, optional, flagOffset);
     if (id == Bedrock::type_id<CommandRegistry, CommandBlockName>()
         || id == Bedrock::type_id<CommandRegistry, CommandItem>()) {
         param.addOptions(CommandParameterOption::HasSemanticConstraint);
@@ -65,7 +66,7 @@ CommandParameterData& OverloadData::addTextImpl(std::string_view text, int offse
         &CommandRegistry::parse<Placeholder>,
         text,
         CommandParameterDataType::Enum,
-        handle->addText(text),
+        impl->handle->addText(text),
         offset,
         -1,
         false
@@ -73,7 +74,7 @@ CommandParameterData& OverloadData::addTextImpl(std::string_view text, int offse
 }
 
 void OverloadData::setFactory(CommandRegistry::FactoryFn fn) {
-    factory = fn;
-    handle->registerOverload(std::move(*this));
+    impl->factory = fn;
+    impl->handle->registerOverload(std::move(*this));
 }
 } // namespace ll::command

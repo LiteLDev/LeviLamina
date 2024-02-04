@@ -24,20 +24,14 @@ class OverloadData {
 
     enum class Placeholder : uint64 {};
 
-    gsl::not_null<CommandHandle*>     handle;
-    CommandRegistry::FactoryFn        factory{};
-    std::vector<CommandParameterData> params;
+    struct Impl;
+    std::unique_ptr<Impl> impl;
+
+    CommandRegistry::FactoryFn        getFactory();
+    std::vector<CommandParameterData> moveParams();
 
 protected:
-    constexpr explicit OverloadData(CommandHandle& handle) : handle(&handle) {}
-
-    LLAPI bool tryRegisterEnum(
-        std::string const&                                 name,
-        std::vector<std::pair<std::string, uint64>> const& values,
-        Bedrock::typeid_t<CommandRegistry>                 type,
-        CommandRegistry::ParseFn                           parser
-    );
-    LLAPI bool tryRegisterSoftEnum(std::string const& name, std::vector<std::string> values);
+    LLAPI explicit OverloadData(CommandHandle& handle);
 
     LLAPI CommandParameterData& back();
 
@@ -55,5 +49,8 @@ protected:
     LLAPI CommandParameterData& addTextImpl(std::string_view text, int offset);
 
     LLAPI void setFactory(CommandRegistry::FactoryFn fn);
+
+public:
+    LLAPI ~OverloadData();
 };
 } // namespace ll::command
