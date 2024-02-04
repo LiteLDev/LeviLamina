@@ -2,8 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MolangMemberVariable;
-
 // auto generated inclusion list
 #include "mc/util/molang/MolangStruct_BaseAndPattern.h"
 #include "mc/util/molang/MolangStruct_MinAndMax.h"
@@ -19,6 +17,7 @@ class MolangMemberVariable;
 #include "mc/util/molang/MolangStruct_XYZ.h"
 
 struct MolangScriptArg;
+class MolangMemberVariable;
 
 // auto generated forward declare list
 // clang-format off
