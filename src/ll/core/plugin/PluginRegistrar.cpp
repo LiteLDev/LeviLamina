@@ -76,6 +76,9 @@ static std::expected<Manifest, DirState> loadManifest(std::filesystem::path cons
         error_utils::printCurrentException(logger);
         return std::unexpected{DirState::Error};
     }
+    if (manifest.type == "preload-native" /*NativePluginTypeName*/) {
+        return std::unexpected{DirState::Empty}; // bypass preloader plugin
+    }
     if (manifest.name != dirName) {
         logger.error("Plugin name {} do not match folder {}"_tr(manifest.name, dirName));
         return std::unexpected{DirState::Error};
