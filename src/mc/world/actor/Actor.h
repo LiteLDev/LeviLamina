@@ -101,7 +101,7 @@ public:
 
     LLAPI void setName(std::string const& name);
 
-    LLNDAPI float quickEvalMolangScript(std::string const& expression);
+    LLNDAPI float evalMolang(std::string const& expression);
 
     // prevent constructor by default
     Actor& operator=(Actor const&);

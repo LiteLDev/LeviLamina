@@ -136,6 +136,6 @@ void Actor::setName(std::string const& name) {
     refresh();
 }
 
-float Actor::quickEvalMolangScript(std::string const& expression) {
+float Actor::evalMolang(std::string const& expression) {
     return ExpressionNode(expression).evalAsFloat(getRenderParams());
 }
