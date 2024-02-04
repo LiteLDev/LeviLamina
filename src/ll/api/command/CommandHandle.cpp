@@ -27,7 +27,7 @@ CommandRegistrar& CommandHandle::getRegistrar() { return *impl->registrar; }
 
 void CommandHandle::registerOverload(OverloadData&& data) {
     auto& overload  = impl->signature->overloads.emplace_back(CommandVersion{}, data.getFactory());
-    overload.params = std::move(data.moveParams());
+    overload.params = data.moveParams();
     impl->registrar->getRegistry().registerOverloadInternal(*impl->signature, overload);
 }
 char const* CommandHandle::addText(std::string_view text) { return impl->registrar->addText(*this, text); }

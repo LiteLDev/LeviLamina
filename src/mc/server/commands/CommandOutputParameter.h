@@ -16,6 +16,8 @@ public:
     std::string str;
     int         type;
 
+    operator std::string const&() const { return str; } // NOLINT
+
 public:
     // NOLINTBEGIN
     // symbol: ??0CommandOutputParameter@@QEAA@_N@Z

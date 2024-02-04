@@ -3,7 +3,9 @@
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/memory/Hook.h"
 #include "mc/server/commands/CommandOutput.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
+#include "mc/server/commands/ServerCommands.h"
+
+#include "ll/api/service/Bedrock.h"
 
 #include "mc/server/commands/CommandBlockName.h"
 #include "mc/world/AutomaticID.h"
@@ -27,15 +29,18 @@ struct ParamTest2 {
     std::unique_ptr<::Command> subcmd;
 };
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_AUTO_STATIC_HOOK(
     testtttt,
-    ll::memory::HookPriority::Low,
-    ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerThreadStarted,
+    ll::memory::HookPriority::Normal,
+    ServerCommands::setupStandardServer,
     void,
-    ::ServerInstance& ins
+    Minecraft&         server,
+    std::string const& networkCommands,
+    std::string const& networkTestCommands,
+    PermissionsFile*   permissionsFile
 ) {
-    origin(ins);
+    origin(server, networkCommands, networkTestCommands, permissionsFile);
+
     auto&       cmd    = CommandRegistrar::getInstance().getOrCreateCommand("t", "test tttttt");
     static auto lambda = [](CommandOrigin const&, CommandOutput& output, ParamTest const& param) {
         output.success("overload1");
@@ -60,7 +65,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         .required("block")
         .required("dim")
         .optional("subcmd")
-        .execute<[](CommandOrigin const& ori, CommandOutput& output, ParamTest2 const& param) {
+        .execute<[](CommandOrigin const& ori, CommandOutput& output, ParamTest2 const& param, ::Command const&) {
             output.success("block: {}", param.block.getDescriptionId());
             output.success("dim: {}", param.dim.id);
 

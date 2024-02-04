@@ -13,7 +13,7 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 10;
+    int version = 11;
 
     std::string language = "system";
     struct {
@@ -30,10 +30,17 @@ struct LeviConfig {
         } crashLogger{};
 
         struct {
-            bool tpdimCommand             = true;
-            bool settingsCommand          = true;
             bool disableAutoCompactionLog = true;
         } tweak{};
+
+        reflection::Dispatcher<SimpleServerLoggerConfig, SimpleServerLogger> simpleServerLogger{};
+
+        struct {
+            bool enabled             = true;
+            bool tpdimCommand        = true;
+            bool versionCommand      = true;
+            bool pluginManageCommand = true;
+        } commands{};
 
         bool checkRunningBDS = true;
 
@@ -41,7 +48,6 @@ struct LeviConfig {
             bool alwaysLaunch = false;
         } playerInfo{};
 
-        reflection::Dispatcher<SimpleServerLoggerConfig, SimpleServerLogger> simpleServerLogger{};
 
         std::unordered_map<std::string, std::string> resourcePackEncryptionMap = {
             {"<UUID>", "<KEY>"}

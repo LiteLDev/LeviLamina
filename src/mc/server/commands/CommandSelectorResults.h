@@ -11,7 +11,13 @@ public:
 
     auto end() { return data->end(); }
 
-    auto count() const { return data->size(); }
+    auto begin() const { return data->begin(); }
+
+    auto end() const { return data->end(); }
+
+    auto size() const { return data->size(); }
+
+    auto count() const { return size(); }
 
     auto empty() const { return data->empty(); }
 };
