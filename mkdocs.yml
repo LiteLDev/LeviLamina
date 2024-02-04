@@ -35,6 +35,9 @@ nav:
 
   - discuss.md
 
+  - Engines:
+    - LegacyScriptEngine: engines/legacy_script_engine.md
+
   - Plugins: https://lippkg.com
 
 exclude_docs: |
@@ -106,6 +109,7 @@ plugins:
             Tutorials: 教程
             Guides: 指南
             APIs: 接口
+            Engines: 引擎
             Plugins: 插件
 
   - search
