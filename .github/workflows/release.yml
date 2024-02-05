@@ -82,7 +82,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: levilamina-${{ matrix.mode }}-windows-x64-${{ github.sha }}
           path: artifact
@@ -102,6 +102,6 @@ jobs:
         with:
           append_body: true
           body: |
-            | levilamina-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |
+            | levilamina-${{ matrix.mode }}-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |
           files: |
             levilamina-${{ matrix.mode }}-windows-x64.zip
