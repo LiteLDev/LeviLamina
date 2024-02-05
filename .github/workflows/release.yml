@@ -5,6 +5,11 @@ on:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        mode:
+          - debug
+          - release
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -13,51 +18,36 @@ jobs:
 
       - uses: xmake-io/github-action-setup-xmake@v1
 
-      - run: |
-          xmake repo -u
-
-      - run: |
-          xmake f -a x64 -m release -p windows -v -y
-
-      - run: |
-          xmake -w -y
-
-      - uses: actions/upload-artifact@v3
+      - uses: actions/cache@v4
         with:
-          name: levilamina-windows-x64-${{ github.sha }}
           path: |
-            build/windows/x64/release/
-
-  build-debug:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: xmake-io/github-action-setup-xmake@v1
+            ~/AppData/Local/.xmake
+          key: xmake-${{ hashFiles('xmake.lua') }}
+          restore-keys: |
+            xmake-
 
       - run: |
           xmake repo -u
 
       - run: |
-          xmake f -a x64 -m debug -p windows -v -y
+          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y
 
       - run: |
-          xmake -w -y
+          xmake -v -w -y
 
-      - uses: actions/upload-artifact@v3
+      - run: |
+          xmake package -v -y
+
+      - run: |
+          cp CHANGELOG.md COPYING COPYING.LESSER README.md build/packages/l/levilamina/windows/x64/${{ matrix.mode }}/
+
+      - uses: actions/upload-artifact@v4
         with:
-          name: levilamina-debug-windows-x64-${{ github.sha }}
+          name: levilamina-${{ matrix.mode }}-windows-x64-${{ github.sha }}
           path: |
-            build/windows/x64/debug/LeviLamina.dll
-            build/windows/x64/debug/LeviLamina.lib
-            build/windows/x64/debug/LeviLamina.pdb
+            build/packages/l/levilamina/windows/x64/${{ matrix.mode }}/
 
-  upload-to-release:
-    needs:
-      - build
-      - build-debug
+  update-release-notes:
     permissions:
       contents: write
     runs-on: ubuntu-latest
@@ -69,50 +59,6 @@ jobs:
           npm i -g keep-a-changelog
           python scripts/validate_release.py --tag ${{ github.event.release.tag_name }}
 
-      - name: Download release artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: levilamina-windows-x64-${{ github.sha }}
-          path: release/release/lib
-
-      - name: Download debug artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: levilamina-debug-windows-x64-${{ github.sha }}
-          path: release/debug/lib
-
-      - name: Make include directory
-        run: |
-          python scripts/make_include.py
-
-      - name: Copy include
-        run: |
-          cp -r include release/release/
-          cp -r include release/debug/
-
-      - name: Copy README, LICENSE and CHANGELOG
-        run: |
-          cp CHANGELOG.md COPYING COPYING.LESSER README.md release/release/
-          cp CHANGELOG.md COPYING COPYING.LESSER README.md release/debug/
-
-      - name: Archive release release
-        run: |
-          cd release/release/
-          zip -r ../../levilamina-windows-x64.zip *
-          cd ../../
-
-      - name: Archive debug release
-        run: |
-          cd release/debug/
-          zip -r ../../levilamina-debug-windows-x64.zip *
-          cd ../../
-
-      - id: calculate-sha256
-        name: Calculate SHA256
-        run: |
-          echo release=$(sha256sum levilamina-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
-          echo debug=$(sha256sum levilamina-debug-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
-
       - id: extract-release-notes
         uses: ffurrer2/extract-release-notes@v1
 
@@ -123,8 +69,39 @@ jobs:
 
             | File | SHA256 |
             | ---- | ------ |
-            | levilamina-windows-x64.zip | ${{ steps.calculate-sha256.outputs.release }} |
-            | levilamina-debug-windows-x64.zip | ${{ steps.calculate-sha256.outputs.debug }} |
+
+  upload-to-release:
+    needs:
+      - build
+      - update-release-notes
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mode:
+          - debug
+          - release
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: levilamina-${{ matrix.mode }}-windows-x64-${{ github.sha }}
+          path: artifact
+
+      - run: |
+          zip -r ../levilamina-${{ matrix.mode }}-windows-x64.zip *
+        working-directory: artifact
+
+      - id: calculate-sha256
+        run: |
+          echo sha256=$(sha256sum levilamina-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
+
+      - uses: softprops/action-gh-release@v1
+        with:
+          append_body: true
+          body: |
+            | levilamina-windows-x64.zip | ${{ steps.calculate-sha256.outputs.sha256 }} |
           files: |
-            levilamina-windows-x64.zip
-            levilamina-debug-windows-x64.zip
+            levilamina-${{ matrix.mode }}-windows-x64.zip

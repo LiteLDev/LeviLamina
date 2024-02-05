@@ -16,11 +16,8 @@ jobs:
     strategy:
       matrix:
         mode:
-          - release
           - debug
-        tests:
-          - false
-          - true
+          - release
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -41,16 +38,22 @@ jobs:
           xmake repo -u
 
       - run: |
-          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y --tests=${{ matrix.tests }}
+          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y
 
       - run: |
-          xmake -w -y
+          xmake -v -w -y
+
+      - run: |
+          xmake package -v -y
+
+      - run: |
+          cp CHANGELOG.md COPYING COPYING.LESSER README.md build/packages/l/levilamina/windows/x64/${{ matrix.mode }}/
 
       - uses: actions/upload-artifact@v4
         with:
-          name: levilamina-${{ matrix.mode }}${{ matrix.tests == true && '-with-tests' || '' }}-windows-x64-${{ github.sha }}
+          name: levilamina-${{ matrix.mode }}-windows-x64-${{ github.sha }}
           path: |
-            build/windows/x64/${{ matrix.mode }}/
+            build/packages/l/levilamina/windows/x64/${{ matrix.mode }}/
 
   check-style:
     runs-on: windows-latest
