@@ -3,6 +3,7 @@
 #include "ll/core/Config.h"
 
 #include "mc/server/commands/ServerCommands.h"
+#include "mc/server/commands/standard/TeleportCommand.h"
 
 namespace ll::core::command {
 LL_AUTO_STATIC_HOOK(
@@ -22,7 +23,16 @@ LL_AUTO_STATIC_HOOK(
     if (globalConfig.modules.commands.versionCommand) {
         registerVersionCommand();
     }
-    if (globalConfig.modules.commands.tpdimCommand) {
+}
+LL_AUTO_STATIC_HOOK(
+    registerTpdimCommands,
+    ll::memory::HookPriority::Normal,
+    TeleportCommand::setup,
+    void,
+    CommandRegistry& registry
+) {
+    origin(registry);
+    if (globalConfig.modules.commands.enabled && globalConfig.modules.commands.tpdimCommand) {
         registerTpdimCommand();
     }
 }
