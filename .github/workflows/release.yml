@@ -96,7 +96,7 @@ jobs:
 
       - id: calculate-sha256
         run: |
-          echo sha256=$(sha256sum levilamina-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
+          echo sha256=$(sha256sum levilamina-${{ matrix.mode }}-windows-x64.zip | awk '{print $1}') >> $GITHUB_OUTPUT
 
       - uses: softprops/action-gh-release@v1
         with:
