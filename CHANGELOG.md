@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.7.0] - 2024-02-5
+## [0.7.1] - 2024-02-05
+
+### Fixed
+
+- Fix Logger.h include
+
+## [0.7.0] - 2024-02-05
 
 ### Added
 
@@ -218,7 +224,8 @@ First preview release.
 
 For lip and tooth-hub test only.
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.7.1...HEAD
+[0.7.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.3...v0.7.0
 [0.6.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.2...v0.6.3
 [0.6.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.1...v0.6.2
