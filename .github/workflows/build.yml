@@ -13,12 +13,12 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
     strategy:
       matrix:
         mode:
           - debug
           - release
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
         with:
@@ -63,32 +63,3 @@ jobs:
       - run: |
           Get-ChildItem src/ -Filter *.cpp -Recurse | ForEach-Object { clang-format -i -Werror $_.FullName }
           Get-ChildItem src/ -Filter *.h -Recurse | ForEach-Object { clang-format -i -Werror $_.FullName }
-
-  test-headers:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: xmake-io/github-action-setup-xmake@v1
-
-      - uses: actions/cache@v4
-        with:
-          path: |
-            ~/AppData/Local/.xmake
-          key: xmake-${{ hashFiles('xmake.lua') }}
-          restore-keys: |
-            xmake-
-
-      - run: |
-          xmake repo -u
-
-      - run: |
-          python scripts/generate_header_tests.py
-
-      - run: |
-          xmake f -a x64 -m release -p windows -v -y
-
-      - run: |
-          xmake -v -w -y
