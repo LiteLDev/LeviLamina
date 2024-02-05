@@ -1,0 +1,65 @@
+on:
+  push:
+    paths:
+      - .github/workflows/build_levilamina.yml
+      - src/**
+      - xmake.lua
+  pull_request:
+    paths:
+      - .github/workflows/build_levilamina.yml
+      - src/**
+      - xmake.lua
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        mode:
+          - release
+          - debug
+        tests:
+          - false
+          - true
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: xmake-io/github-action-setup-xmake@v1
+
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/AppData/Local/.xmake
+          key: xmake-${{ hashFiles('xmake.lua') }}
+          restore-keys: |
+            xmake-
+
+      - run: |
+          xmake repo -u
+
+      - run: |
+          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y --tests=${{ matrix.tests }}
+
+      - run: |
+          xmake -w -y
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: levilamina-${{ matrix.mode }}${{ matrix.tests == true && '-with-tests' || '' }}-windows-x64-${{ github.sha }}
+          path: |
+            build/windows/x64/${{ matrix.mode }}/
+
+  check-style:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: |
+          choco install llvm -y --version=17.0.6
+
+      - run: |
+          Get-ChildItem src/ -Filter *.cpp -Recurse | ForEach-Object { clang-format -i -Werror $_.FullName }
+          Get-ChildItem src/ -Filter *.h -Recurse | ForEach-Object { clang-format -i -Werror $_.FullName }
