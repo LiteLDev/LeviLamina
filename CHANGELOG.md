@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.0] - 2024-02-5
+
+### Added
+
+- Add reflection offset getter
+- Add some struct for ScriptAPI
+- Add dark mode to docs
+- Add dimension enum to command
+- Support molang registery
+- Add formid manager to resolve potential conflicts
+- Add tpdim command
+
+### Changed
+
+- Refactor the command registration system
+- Support for const member function hook
+- Add overload support to hook
+- Reuse function pointer hook with overload
+- Move native API docs
+- Refactoring tr strings
+- Refactoring i18n
+- Replace logDebugResult into std::visit
+- Refactor form api
+- Bypass preloader plugins
+
+### Fixed
+
+- Remove extra include
+- Fix all clang&msvc warnings
+- Fix bedrock service multi-threaded access conficts
+- Fix a fatal bug in 0.6.3 that causes crashes
+
 ## [0.6.3] - 2024-01-30
 
 ### Changed
@@ -186,7 +218,8 @@ First preview release.
 
 For lip and tooth-hub test only.
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.3...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.3...v0.7.0
 [0.6.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.2...v0.6.3
 [0.6.2]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.1...v0.6.2
 [0.6.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.6.0...v0.6.1
