@@ -38,9 +38,6 @@ jobs:
       - run: |
           xmake package -v -y
 
-      - run: |
-          cp CHANGELOG.md COPYING COPYING.LESSER README.md build/packages/l/levilamina/windows/x64/${{ matrix.mode }}/
-
       - uses: actions/upload-artifact@v4
         with:
           name: levilamina-${{ matrix.mode }}-windows-x64-${{ github.sha }}
@@ -89,6 +86,9 @@ jobs:
         with:
           name: levilamina-${{ matrix.mode }}-windows-x64-${{ github.sha }}
           path: artifact
+
+      - run: |
+          cp CHANGELOG.md COPYING COPYING.LESSER README.md artifact/
 
       - run: |
           zip -r ../levilamina-${{ matrix.mode }}-windows-x64.zip *
