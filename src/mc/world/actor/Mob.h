@@ -34,10 +34,7 @@ class BodyControl;
 
 class Mob : public ::Actor {
 public:
-    inline void refreshInventory() {
-        sendInventory(true);
-        sendArmor(std::bitset<4>{"1111"});
-    }
+    LLAPI void refreshInventory();
 
     // prevent constructor by default
     Mob& operator=(Mob const&);

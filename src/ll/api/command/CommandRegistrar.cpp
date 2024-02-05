@@ -21,6 +21,7 @@ namespace ll::command {
 struct CommandRegistrar::Impl {
     std::unordered_map<std::string, CommandHandle> commands;
     std::unordered_map<std::string, uint64>        textWithRef;
+    std::recursive_mutex                           mutex;
 };
 
 CommandRegistrar::CommandRegistrar() : impl(std::make_unique<Impl>()) {}
@@ -38,11 +39,15 @@ CommandHandle& CommandRegistrar::getOrCreateCommand(
     CommandFlag            flag,
     std::weak_ptr<plugin::Plugin> /*plugin*/
 ) {
-    auto& registry  = getRegistry();
-    auto  signature = registry.findCommand(name);
+    std::lock_guard lock{impl->mutex};
+    auto&           registry  = getRegistry();
+    auto            signature = registry.findCommand(name);
     if (!signature) {
         registry.registerCommand(name, description.c_str(), requirement, flag);
         signature = registry.findCommand(name);
+        if (!signature) {
+            throw std::runtime_error{"failed to register command " + name};
+        }
         return impl->commands.try_emplace(name, *this, signature, true).first->second;
     } else if (impl->commands.contains(signature->name)) {
         return impl->commands.at(signature->name);
@@ -124,7 +129,8 @@ bool CommandRegistrar::setSoftEnumValues(std::string const& name, std::vector<st
 }
 
 char const* CommandRegistrar::addText(CommandHandle& /*handle*/, std::string_view text) {
-    std::string storedName{"ll_text_enum_name_"};
+    std::lock_guard lock{impl->mutex};
+    std::string     storedName{"ll_text_enum_name_"};
     storedName += text;
     if (impl->textWithRef.contains(storedName)) {
         impl->textWithRef.at(storedName)++;

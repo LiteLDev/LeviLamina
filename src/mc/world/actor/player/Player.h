@@ -102,32 +102,30 @@ public:
 
     LLNDAPI optional_ref<ConnectionRequest const> getConnectionRequest() const;
 
-    [[nodiscard]] NetworkIdentifier const& getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
+    LLNDAPI NetworkIdentifier const& getNetworkIdentifier() const;
 
-    [[nodiscard]] optional_ref<Certificate const> getCertificate() const {
-        return getUserEntityIdentifier().mCertificate.get();
-    }
+    LLNDAPI optional_ref<Certificate const> getCertificate() const;
 
-    [[nodiscard]] SubClientId const& getClientSubId() const { return getUserEntityIdentifier().mClientSubId; }
+    LLNDAPI SubClientId const& getClientSubId() const;
 
     /**
      * @brief Get the player's uuid
      * @return Player's uuid
      */
-    [[nodiscard]] mce::UUID const& getUuid() const { return getUserEntityIdentifier().mClientUUID; }
+    LLNDAPI mce::UUID const& getUuid() const;
 
     /**
      * @brief Get the player's IP and port
      * @return player's IP and port
      */
-    [[nodiscard]] std::string getIPAndPort() const { return getNetworkIdentifier().getIPAndPort(); }
+    LLNDAPI std::string getIPAndPort() const;
 
     /**
      * @brief Determine if a player is an administrator of the server
      * @return Returns true if the player is an administrator of the server; otherwise returns false
      * @warning Custom permissions are not considered administrators
      */
-    [[nodiscard]] bool isOperator() const { return getPlayerPermissionLevel() == PlayerPermissionLevel::Operator; }
+    LLNDAPI bool isOperator() const;
 
     /**
      * @brief Get the player's real in-game nickname

@@ -7,6 +7,8 @@
 #include "mc/events/ServerInstanceGameplayEvent.h"
 #include "mc/world/events/EventRef.h"
 
+class ServerInstance;
+
 class ServerInstanceEventCoordinator {
 public:
     // prevent constructor by default

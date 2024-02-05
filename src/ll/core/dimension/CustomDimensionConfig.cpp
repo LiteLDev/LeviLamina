@@ -19,7 +19,7 @@ void setDimensionConfigPath() {
     if (!ll::service::getLevel()) {
         throw std::runtime_error("Level nullptr");
     }
-    dimensionConfigPath /= string_utils::str2u8str(ll::service::getLevel()->getLevelName());
+    dimensionConfigPath /= string_utils::str2u8str(ll::service::getLevel()->getLevelData().getLevelName());
     dimensionConfigPath /= u8"dimension_config.json";
 }
 

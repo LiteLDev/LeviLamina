@@ -22,16 +22,24 @@ struct OverloadData::Impl {
     gsl::not_null<CommandHandle*>     handle;
     CommandRegistry::FactoryFn        factory{};
     std::vector<CommandParameterData> params;
+    std::recursive_mutex              mutex;
 };
 
 OverloadData::OverloadData(CommandHandle& handle) : impl(std::make_unique<Impl>(&handle)) {}
 
 OverloadData::~OverloadData() = default;
 
-CommandRegistry::FactoryFn        OverloadData::getFactory() { return impl->factory; }
-std::vector<CommandParameterData> OverloadData::moveParams() { return std::move(impl->params); }
+CommandRegistry::FactoryFn OverloadData::getFactory() {
+    std::lock_guard lock{impl->mutex};
+    return impl->factory;
+}
+std::vector<CommandParameterData> OverloadData::moveParams() {
+    std::lock_guard lock{impl->mutex};
+    return std::move(impl->params);
+}
 
 CommandParameterData& OverloadData::back() {
+    std::lock_guard lock{impl->mutex};
     if (!impl->params.empty()) {
         return impl->params.back();
     } else {
@@ -49,7 +57,8 @@ CommandParameterData& OverloadData::addParamImpl(
     int                                flagOffset,
     bool                               optional
 ) {
-    auto& param =
+    std::lock_guard lock{impl->mutex};
+    auto&           param =
         impl->params.emplace_back(id, parser, std::string{name}, type, enumNameOrPostfix, offset, optional, flagOffset);
     if (id == Bedrock::type_id<CommandRegistry, CommandBlockName>()
         || id == Bedrock::type_id<CommandRegistry, CommandItem>()) {
@@ -61,6 +70,7 @@ CommandParameterData& OverloadData::addParamImpl(
     return param;
 }
 CommandParameterData& OverloadData::addTextImpl(std::string_view text, int offset) {
+    std::lock_guard lock{impl->mutex};
     return addParamImpl(
         Bedrock::type_id<CommandRegistry, Placeholder>(),
         &CommandRegistry::parse<Placeholder>,
@@ -74,6 +84,7 @@ CommandParameterData& OverloadData::addTextImpl(std::string_view text, int offse
 }
 
 void OverloadData::setFactory(CommandRegistry::FactoryFn fn) {
+    std::lock_guard lock{impl->mutex};
     impl->factory = fn;
     impl->handle->registerOverload(std::move(*this));
 }

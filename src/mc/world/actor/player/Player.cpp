@@ -39,6 +39,18 @@ optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
     return ll::service::getServerNetworkHandler()->fetchConnectionRequest(getNetworkIdentifier());
 }
 
+NetworkIdentifier const& Player::getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
+
+optional_ref<Certificate const> Player::getCertificate() const { return getUserEntityIdentifier().mCertificate.get(); }
+
+SubClientId const& Player::getClientSubId() const { return getUserEntityIdentifier().mClientSubId; }
+
+mce::UUID const& Player::getUuid() const { return getUserEntityIdentifier().mClientUUID; }
+
+std::string Player::getIPAndPort() const { return getNetworkIdentifier().getIPAndPort(); }
+
+bool Player::isOperator() const { return getPlayerPermissionLevel() == PlayerPermissionLevel::Operator; }
+
 std::string Player::getLocaleName() const {
     if (auto request = getConnectionRequest()) {
         return request->mRawToken->mDataInfo["LanguageCode"].asString("");
