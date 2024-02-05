@@ -32,6 +32,7 @@
 #include "fmt/ranges.h" // IWYU pragma: keep
 #include "fmt/std.h"    // IWYU pragma: keep
 
+#include "ll/api/base/Concepts.h" // IWYU pragma: keep
 #include "ll/api/base/Macro.h"
 
 namespace ll {
