@@ -69,7 +69,7 @@ void registerTpdimCommand() {
         .execute<[&](CommandOrigin const& origin, CommandOutput& output, TpTarget const& param, Command const& cmd) {
             auto victim = param.victim.results(origin);
             if (victim.empty()) {
-                output.error("No ta"_tr());
+                output.error("No target"_tr());
                 return;
             }
             Vec3 pos;
