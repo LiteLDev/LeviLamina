@@ -22,6 +22,13 @@ cd myserver
 lip install github.com/LiteLDev/LeviLamina
 ```
 
+!!! tip
+    网络环境不好？你可以添加GitHub镜像源，以加速下载速度。以下是一个示例：
+
+    ```sh
+    lip config GitHubMirrorURL https://github.bibk.top
+    ```
+
 ## 运行服务器
 
 要启动服务器，只需运行 `bedrock_server_mod.exe`：
