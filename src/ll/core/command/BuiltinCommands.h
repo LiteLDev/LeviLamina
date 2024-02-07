@@ -1,8 +1,10 @@
 #pragma once
 
-namespace ll::core::command {
+namespace ll::command {
+
+void registerCommands();
 
 void registerVersionCommand();
 void registerTpdimCommand();
 
-} // namespace ll::core::command
+} // namespace ll::command

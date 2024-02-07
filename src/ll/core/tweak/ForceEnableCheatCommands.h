@@ -12,5 +12,4 @@ struct ForceEnableCheatCommands {
     ForceEnableCheatCommands();
     ~ForceEnableCheatCommands();
 };
-
 } // namespace ll

@@ -17,10 +17,9 @@
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/level/dimension/VanillaDimensions.h"
 
-namespace ll::core::command {
+namespace ll::command {
 
 using namespace ll::i18n_literals;
-using ll::command::CommandRegistrar;
 
 struct TpSelf {
     DimensionType        dimension;
@@ -38,7 +37,7 @@ void registerTpdimCommand() {
     cmd.overload<TpSelf>()
         .required("destination")
         .required("dimension")
-        .execute<[&](CommandOrigin const& origin, CommandOutput& output, TpSelf const& param, Command const& cmd) {
+        .execute<[&](CommandOrigin const& origin, CommandOutput& output, TpSelf const& param, ::Command const& cmd) {
             auto self = origin.getEntity();
             if (!self) {
                 output.error("Not an actor origin"_tr());
@@ -66,7 +65,7 @@ void registerTpdimCommand() {
         .required("victim")
         .required("destination")
         .required("dimension")
-        .execute<[&](CommandOrigin const& origin, CommandOutput& output, TpTarget const& param, Command const& cmd) {
+        .execute<[&](CommandOrigin const& origin, CommandOutput& output, TpTarget const& param, ::Command const& cmd) {
             auto victim = param.victim.results(origin);
             if (victim.empty()) {
                 output.error("No target"_tr());
@@ -93,5 +92,4 @@ void registerTpdimCommand() {
             ));
         }>();
 }
-
-} // namespace ll::core::command
+} // namespace ll::command

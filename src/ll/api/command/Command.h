@@ -26,10 +26,10 @@ public:
     void execute(class CommandOrigin const& origin, class CommandOutput& output) const override {
         if constexpr (requires { Executor(origin, output, parameters, *this); }) {
             Executor(origin, output, parameters, *this);
-        } else if constexpr (std::is_same_v<Params, EmptyParam> && requires { Executor(origin, output); }) {
-            Executor(origin, output);
-        } else {
+        } else if constexpr (requires { Executor(origin, output, parameters); }) {
             Executor(origin, output, parameters);
+        } else {
+            Executor(origin, output);
         }
     }
 };

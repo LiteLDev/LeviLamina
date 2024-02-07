@@ -5,8 +5,8 @@
 #include "mc/server/commands/ServerCommands.h"
 #include "mc/server/commands/standard/TeleportCommand.h"
 
-namespace ll::core::command {
-LL_AUTO_STATIC_HOOK(
+namespace ll::command {
+LL_STATIC_HOOK(
     registerBuiltinCommands,
     ll::memory::HookPriority::Normal,
     ServerCommands::setupStandardServer,
@@ -17,14 +17,11 @@ LL_AUTO_STATIC_HOOK(
     PermissionsFile*   permissionsFile
 ) {
     origin(server, networkCommands, networkTestCommands, permissionsFile);
-    if (!globalConfig.modules.commands.enabled) {
-        return;
-    }
     if (globalConfig.modules.commands.versionCommand) {
         registerVersionCommand();
     }
 }
-LL_AUTO_STATIC_HOOK(
+LL_STATIC_HOOK(
     registerTpdimCommands,
     ll::memory::HookPriority::Normal,
     TeleportCommand::setup,
@@ -32,8 +29,9 @@ LL_AUTO_STATIC_HOOK(
     CommandRegistry& registry
 ) {
     origin(registry);
-    if (globalConfig.modules.commands.enabled && globalConfig.modules.commands.tpdimCommand) {
+    if (globalConfig.modules.commands.tpdimCommand) {
         registerTpdimCommand();
     }
 }
-} // namespace ll::core::command
+void registerCommands() { static memory::HookRegistrar<registerBuiltinCommands, registerTpdimCommands> hooks{}; }
+} // namespace ll::command

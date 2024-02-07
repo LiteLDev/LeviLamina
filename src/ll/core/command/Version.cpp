@@ -9,10 +9,9 @@
 #include "mc/server/commands/CommandOutput.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 
-namespace ll::core::command {
+namespace ll::command {
 
 using namespace ll::i18n_literals;
-using ll::command::CommandRegistrar;
 
 void registerVersionCommand() {
     auto& cmd = CommandRegistrar::getInstance().getOrCreateCommand(
@@ -28,5 +27,4 @@ void registerVersionCommand() {
         ));
     }>();
 }
-
-} // namespace ll::core::command
+} // namespace ll::command

@@ -27,6 +27,7 @@
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
 #include "ll/core/Version.h"
+#include "ll/core/command/BuiltinCommands.h"
 #include "ll/core/plugin/PluginRegistrar.h"
 
 #include <windows.h>
@@ -255,6 +256,10 @@ void leviLaminaMain() {
 #ifdef LL_DEBUG
     logger.warn("LeviLamina is running in DEBUG mode!"_tr());
 #endif
+
+    if (globalConfig.modules.commands.enabled) {
+        command::registerCommands();
+    }
 
     plugin::PluginRegistrar::getInstance().loadAllPlugins();
 }
