@@ -1,11 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/molang/MolangVariableIndex.h"
 
 struct MolangVariableSettings {
-public:
-    // prevent constructor by default
-    MolangVariableSettings& operator=(MolangVariableSettings const&);
-    MolangVariableSettings(MolangVariableSettings const&);
-    MolangVariableSettings();
+    enum AccessSpecifier : int {
+        Private = 0,
+        Public  = 1,
+    };
+    MolangVariableIndex mIndex;
+    AccessSpecifier     mAccessSpecifier;
 };

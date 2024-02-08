@@ -45,16 +45,21 @@ struct MolangScriptArg {
     MolangScriptArgPOD  mPOD;
     MolangScriptArgData mData;
 
+    template <class T>
+    MolangScriptArg(T const&) = delete;
+
+    MCTAPI MolangScriptArg(MolangMemberArray const&);
+
 public:
     // NOLINTBEGIN
     // symbol: ??0MolangScriptArg@@QEAA@XZ
     MCAPI MolangScriptArg();
 
     // symbol: ??0MolangScriptArg@@QEAA@M@Z
-    MCAPI explicit MolangScriptArg(float);
+    MCAPI MolangScriptArg(float);
 
     // symbol: ??0MolangScriptArg@@QEAA@H@Z
-    MCAPI explicit MolangScriptArg(int);
+    MCAPI MolangScriptArg(int);
 
     // symbol: ??0MolangScriptArg@@QEAA@$$QEAU0@@Z
     MCAPI MolangScriptArg(struct MolangScriptArg&&);

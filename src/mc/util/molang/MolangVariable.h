@@ -1,12 +1,20 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/util/molang/MolangScriptArg.h"
+#include "mc/util/molang/MolangVariableSettings.h"
 
 // auto generated inclusion list
 #include "mc/util/molang/MolangVariableIndex.h"
 
 class MolangVariable {
 public:
+    HashedString           mName;
+    MolangScriptArg        mValue;
+    MolangScriptArg        mPublicValue;
+    MolangVariableSettings mSettings;
+
     // prevent constructor by default
     MolangVariable& operator=(MolangVariable const&);
     MolangVariable(MolangVariable const&);

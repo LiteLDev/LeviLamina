@@ -26,7 +26,7 @@ namespace mce { class Color; }
 
 struct MolangMemberArray {
 public:
-    std::unique_ptr<std::vector<MolangMemberVariable>> mMembers;
+    std::vector<MolangMemberVariable> mMembers;
 
 public:
     // prevent constructor by default
