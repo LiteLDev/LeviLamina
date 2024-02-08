@@ -24,11 +24,12 @@ public:
     Json::Value        mStructureOptions; // this+0x28
     WorldVersion       mWorldVersion;     // this+0x38
 
+    FlatWorldGeneratorOptions() = default;
+
 public:
     // prevent constructor by default
     FlatWorldGeneratorOptions& operator=(FlatWorldGeneratorOptions const&);
     FlatWorldGeneratorOptions(FlatWorldGeneratorOptions const&);
-    FlatWorldGeneratorOptions();
 
 public:
     // NOLINTBEGIN
