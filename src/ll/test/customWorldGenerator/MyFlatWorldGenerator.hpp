@@ -61,12 +61,12 @@
 
 class MyFlatWorldGenerator : public WorldGenerator {
 public:
-    std::vector<Block const*>         mPrototypeBlocks; // this+0x90
-    BlockVolume                       mPrototype;       // this+0xA8
-    Biome const*                      mBiome;           // this+0xD0
-    std::unique_ptr<FixedBiomeSource> mBiomeSource;     // this+0xD8
-    uint                              mSeed;
-    int                               mPostProcessCallCount;
+    std::vector<Block const*>         mPrototypeBlocks;      // this+0x90
+    BlockVolume                       mPrototype;            // this+0xA8
+    Biome const*                      mBiome;                // this+0xD0
+    std::unique_ptr<FixedBiomeSource> mBiomeSource;          // this+0xD8
+    uint                              mSeed;                 // this+0xE0
+    int                               mPostProcessCallCount; // this+0xE4
 
 public:
     MyFlatWorldGenerator(Dimension& dimension, uint seed, Json::Value value)
@@ -169,7 +169,7 @@ public:
         return {mPrototype.mWidth, mPrototype.mDepth, mPrototype.mHeight};
     }
 
-    virtual BlockPos WorldGenerator::findSpawnPosition() const { return {0, 0x7FFF}; }
+    virtual BlockPos findSpawnPosition() const { return {0, 0x7FFF}; }
 
     virtual void decorateWorldGenLoadChunk(Biome&, LevelChunk&, BlockVolumeTarget&, Random&, const ChunkPos&) const {}
 
