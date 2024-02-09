@@ -91,7 +91,7 @@ lip install --upgrade github.com/LiteLDev/LeviLamina
 
 ##### 3. **Include LeviLamina Files**:
    - Unzip the `levilamina-windows-x64.zip` file from step 1.
-   - Take the `lib/LeviLamina.dll` and `lib/LeviLamina.pdb` files and place them in the same directory as the BDS files.
+   - Take the `bin/LeviLamina.dll` and `bin/LeviLamina.pdb` files and place them in the same directory as the BDS files.
 
 ##### 4. **Run PeEditor**:
    - Double-click `PeEditor.exe` and wait for the process to complete.
