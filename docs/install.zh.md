@@ -90,7 +90,7 @@ lip install --upgrade github.com/LiteLDev/LeviLamina
 
 ##### 3. **添加 LeviLamina 文件**
    - 解压你在第一步中下载的 `levilamina-windows-x64.zip`。
-   - 从中提取 `lib/LeviLamina.dll` 和 `lib/LeviLamina.pdb` 文件。
+   - 从中提取 `bin/LeviLamina.dll` 和 `bin/LeviLamina.pdb` 文件。
    - 将这些文件也移动到 BDS 文件夹中，与 `bedrock_server.exe` 放在同一目录下。
 
 ##### 4. **运行 PeEditor**
