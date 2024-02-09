@@ -96,6 +96,7 @@ public:
     virtual bool postProcess(ChunkViewSource& chunkViewSource) {
         // BlockSource blockSource(getLevel(), getDimension(), chunkViewSource, 0, 1, 0);
         // Random      random;
+
         // if (mPostProcessCallCount < 1) {
         //     mPostProcessCallCount++;
         //     MolangVariableMap MolangVariableMap;
