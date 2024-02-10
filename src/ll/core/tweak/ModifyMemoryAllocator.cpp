@@ -74,7 +74,7 @@ public:
 class MimallocMemoryAllocatorWithCheck : public MimallocMemoryAllocator {
 public:
     virtual void release(void* ptr) {
-        if (mi_is_in_heap_region(ptr)) {
+        if (mi_is_in_heap_region(ptr)) [[likely]] {
             mi_free(ptr);
         } else {
             free(ptr);
@@ -84,7 +84,7 @@ public:
     virtual void alignedRelease(void* ptr) { release(ptr); }
 
     virtual uint64 getUsableSize(void* ptr) {
-        if (mi_is_in_heap_region(ptr)) {
+        if (mi_is_in_heap_region(ptr)) [[likely]] {
             return mi_usable_size(ptr);
         } else {
             return ptr ? _msize(ptr) : 0ui64;
@@ -92,7 +92,7 @@ public:
     }
 
     virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) {
-        if (mi_is_in_heap_region(ptr)) {
+        if (mi_is_in_heap_region(ptr)) [[likely]] {
             return mi_realloc(ptr, newSize);
         } else {
             return realloc(ptr, newSize);
