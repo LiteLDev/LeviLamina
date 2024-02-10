@@ -175,7 +175,7 @@ public:
     virtual void _updateChunkPublisherView(class Vec3 const&, float);
 
     // symbol: ?isSimulated@SimulatedPlayer@@UEBA_NXZ
-    [[deprecated]] MCVAPI bool isSimulated() const;
+    MCVAPI bool isSimulated() const;
 
     // symbol:
     // ??0SimulatedPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVServerNetworkSystem@@AEAVActiveTransfersManager@Server@ClientBlobCache@@W4GameType@@AEBVNetworkIdentifier@@W4SubClientId@@V?$function@$$A6AXAEAVServerPlayer@@@Z@std@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@H_NAEAVEntityContext@@@Z

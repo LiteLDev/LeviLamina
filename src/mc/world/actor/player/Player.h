@@ -687,10 +687,10 @@ public:
     MCVAPI bool isInTrialMode();
 
     // symbol: ?isPlayer@Player@@UEBA_NXZ
-    [[deprecated]] MCVAPI bool isPlayer() const;
+    MCVAPI bool isPlayer() const;
 
     // symbol: ?isSimulated@Player@@UEBA_NXZ
-    [[deprecated]] MCVAPI bool isSimulated() const;
+    MCVAPI bool isSimulated() const;
 
     // symbol: ?openBook@Player@@UEAAXH_NHPEAVBlockActor@@@Z
     MCVAPI void openBook(int bookSlot, bool editable, int page, class BlockActor* lectern);
