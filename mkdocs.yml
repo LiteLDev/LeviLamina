@@ -11,13 +11,13 @@ nav:
       - Install on Docker: https://github.com/LiteLDev/levilamina-docker-server
 
   - Tutorials:
-      - tutorials/ai_npc_and_assistant.md
       - tutorials/create_your_first_plugin.md
-      - tutorials/customized_terrain_generation.md
-      - tutorials/fly_in_survival.md
-      - tutorials/more_dimensions.md
-      - tutorials/publish_your_first_pack.md
       - tutorials/publish_your_first_plugin.md
+      - tutorials/publish_your_first_pack.md
+      - tutorials/fly_in_survival.md
+      - tutorials/customized_terrain_generation.md
+      - tutorials/more_dimensions.md
+      - tutorials/ai_npc_and_assistant.md
 
   - Guides:
       - guides/event_guide.md
