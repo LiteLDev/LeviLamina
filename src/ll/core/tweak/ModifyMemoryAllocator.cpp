@@ -87,7 +87,7 @@ public:
         if (mi_is_in_heap_region(ptr)) {
             return mi_usable_size(ptr);
         } else {
-            return _msize(ptr);
+            return ptr ? _msize(ptr) : 0ui64;
         }
     }
 
