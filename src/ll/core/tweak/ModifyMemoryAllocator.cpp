@@ -13,8 +13,6 @@
 namespace ll::memory {
 class MimallocMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 public:
-    virtual ~MimallocMemoryAllocator() = default;
-
     virtual void* allocate(uint64 size) { return mi_malloc(size != 0 ? size : 1); }
 
     virtual void release(void* ptr) { mi_free(ptr); }
@@ -40,13 +38,11 @@ public:
 
     virtual void logCurrentState() { mi_stats_print_out(miOutput, nullptr); }
 
-    virtual void* _realloc(gsl::not_null<void*> p, uint64 newSize) { return mi_realloc(p, newSize); }
+    virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) { return mi_realloc(ptr, newSize); }
 };
 
 class StdMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 public:
-    virtual ~StdMemoryAllocator() = default;
-
     virtual void* allocate(uint64 size) { return malloc(size != 0 ? size : 1); }
 
     virtual void release(void* ptr) { free(ptr); }
@@ -72,7 +68,36 @@ public:
         }
     }
 
-    virtual void* _realloc(gsl::not_null<void*> p, uint64 newSize) { return realloc(p, newSize); }
+    virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) { return realloc(ptr, newSize); }
+};
+
+class MimallocMemoryAllocatorWithCheck : public MimallocMemoryAllocator {
+public:
+    virtual void release(void* ptr) {
+        if (mi_is_in_heap_region(ptr)) {
+            mi_free(ptr);
+        } else {
+            free(ptr);
+        }
+    }
+
+    virtual void alignedRelease(void* ptr) { release(ptr); }
+
+    virtual uint64 getUsableSize(void* ptr) {
+        if (mi_is_in_heap_region(ptr)) {
+            return mi_usable_size(ptr);
+        } else {
+            return _msize(ptr);
+        }
+    }
+
+    virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) {
+        if (mi_is_in_heap_region(ptr)) {
+            return mi_realloc(ptr, newSize);
+        } else {
+            return realloc(ptr, newSize);
+        }
+    }
 };
 
 ::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator() {
