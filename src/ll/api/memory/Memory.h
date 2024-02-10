@@ -9,6 +9,10 @@
 #include "ll/api/base/FixedString.h"
 #include "ll/api/base/Macro.h"
 
+namespace Bedrock::Memory {
+class IMemoryAllocator;
+}
+
 namespace ll::memory {
 
 using FuncPtr = void*;
@@ -120,23 +124,20 @@ constexpr void* unwrapFuncPtrJmp(void* ptr) noexcept { // only used for unstripe
     return ptr;
 }
 
-[[nodiscard]] inline size_t getMemSizeFromPtr(void* ptr) {
-    if (!ptr) {
-        return 0;
-    }
-    return _msize(ptr);
-}
+::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator();
+
+LLNDAPI size_t getUsableSize(void* ptr);
 
 template <class T, class D>
-[[nodiscard]] inline size_t getMemSizeFromPtr(std::unique_ptr<T, D>& ptr) {
+[[nodiscard]] inline size_t getUsableSize(std::unique_ptr<T, D>& ptr) {
     if (!ptr) {
         return 0;
     }
-    return _msize(ptr.get());
+    return getUsableSize(ptr.get());
 }
 
 template <template <class> class P, class T>
-[[nodiscard]] inline size_t getMemSizeFromPtr(P<T>& ptr)
+[[nodiscard]] inline size_t getUsableSize(P<T>& ptr)
     requires(std::derived_from<P<T>, std::_Ptr_base<T>>)
 {
     auto& refc = dAccess<std::_Ref_count_base*>(std::addressof(ptr), 8);
@@ -149,11 +150,11 @@ template <template <class> class P, class T>
     }
     if constexpr (!std::is_array_v<T>) {
         if (rawptr == dAccess<T*>(refc, 8 + 4 * 2)) {
-            return getMemSizeFromPtr(rawptr);
+            return getUsableSize(rawptr);
         }
     }
     // clang-format off
-    return _msize(refc // ptr* 8, rep* 8
+    return getUsableSize(refc // ptr* 8, rep* 8
     ) - ( // rep:
     8 +                        // vtable
     4 * 2 +                    // uses & weaks

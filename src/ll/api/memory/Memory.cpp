@@ -11,6 +11,8 @@
 #include "ll/api/utils/StringUtils.h"
 #include "ll/api/utils/WinUtils.h"
 
+#include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
+
 #include "memoryapi.h"
 
 namespace ll::memory {
@@ -100,5 +102,7 @@ void modify(void* ptr, size_t len, const std::function<void()>& callback) {
     callback();
     VirtualProtect(ptr, len, oldProtect, &oldProtect);
 }
+
+size_t getUsableSize(void* ptr) { return getDefaultAllocator().getUsableSize(ptr); }
 
 } // namespace ll::memory

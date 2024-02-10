@@ -37,7 +37,7 @@ inline void forEachPacket(std::function<void(Packet const& packet, std::string c
     while (packetId < 500) {
         auto packet = MinecraftPackets::createPacket((MinecraftPacketIds)packetId);
         if (packet) {
-            auto size = ll::memory::getMemSizeFromPtr(packet);
+            auto size = ll::memory::getUsableSize(packet);
 
             auto className = getVTableName(packet.get());
 

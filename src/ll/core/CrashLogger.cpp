@@ -25,6 +25,42 @@ using namespace utils;
 using namespace string_utils;
 Logger crashLogger("CrashLogger");
 
+void CrashLogger::initCrashLogger() {
+
+    if (IsDebuggerPresent()) {
+        crashLogger.warn("Debugger detected, CrashLogger will not be enabled"_tr());
+        return;
+    }
+
+    STARTUPINFO si;
+    ZeroMemory(&si, sizeof(si));
+    si.cb = sizeof(si);
+    PROCESS_INFORMATION pi;
+
+    SECURITY_ATTRIBUTES sa;
+    sa.bInheritHandle       = true;
+    sa.lpSecurityDescriptor = nullptr;
+    sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
+
+    std::wstring cmd = string_utils::str2wstr(fmt::format(
+        "{} {} \"{}\"",
+        R"(.\plugins\LeviLamina\data\CrashLogger.exe)",
+        GetCurrentProcessId(),
+        ll::getBdsVersion().to_string()
+    ));
+    if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
+        crashLogger.error("Couldn't Create CrashLogger Daemon Process"_tr());
+        error_utils::printException(crashLogger, error_utils::getWinLastError());
+        return;
+    }
+
+    CloseHandle(pi.hProcess);
+    CloseHandle(pi.hThread);
+
+    crashLogger.info("CrashLogger enabled successfully"_tr());
+    return;
+}
+
 #if _HAS_CXX23
 
 static struct CrashInfo {

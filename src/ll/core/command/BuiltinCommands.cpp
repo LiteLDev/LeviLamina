@@ -20,6 +20,9 @@ LL_STATIC_HOOK(
     if (globalConfig.modules.commands.versionCommand) {
         registerVersionCommand();
     }
+    if (globalConfig.modules.commands.memstatusCommand) {
+        registerMemstatusCommand();
+    }
 }
 LL_STATIC_HOOK(
     registerTpdimCommands,

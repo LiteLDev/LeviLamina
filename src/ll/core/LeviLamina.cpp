@@ -203,7 +203,7 @@ extern std::string globalDefaultLocaleName;
 
 void startCrashLogger() {
 #if !LL_BUILTIN_CRASHLOGGER
-    CrashLogger::initCrashLogger(globalConfig.modules.crashLogger.enabled);
+    CrashLogger::initCrashLogger();
 #else
     static CrashLoggerNew crashLogger{};
 #endif

@@ -13,6 +13,7 @@ add_requires("leveldb 1.23")
 add_requires("magic_enum 0.9.0")
 add_requires("nlohmann_json 3.11.2")
 add_requires("rapidjson 1.1.0")
+add_requires("mimalloc 2.1.2")
 
 -- Dependencies from liteldev-repo.
 add_requires("ctre 3.8.1")
@@ -117,6 +118,7 @@ target("LeviLamina")
         "demangler",
         "preloader",
         "symbolprovider",
+        "mimalloc",
         { public = true }
     )
     add_shflags(

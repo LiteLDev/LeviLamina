@@ -14,12 +14,6 @@ namespace Bedrock::Memory {
 
 class InternalHeapAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 public:
-    // prevent constructor by default
-    InternalHeapAllocator& operator=(InternalHeapAllocator const&);
-    InternalHeapAllocator(InternalHeapAllocator const&);
-    InternalHeapAllocator();
-
-public:
     // NOLINTBEGIN
     // vIndex: 0, symbol: __gen_??1InternalHeapAllocator@Memory@Bedrock@@UEAA@XZ
     virtual ~InternalHeapAllocator() = default;
