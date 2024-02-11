@@ -244,7 +244,7 @@ struct __declspec(empty_bases) Hook {};
 
 #define LL_AUTO_REG_HOOK_IMPL(FUNC_PTR, STATIC, CALL, DEF_TYPE, ...)                                                   \
     LL_VA_EXPAND(LL_HOOK_IMPL(                                                                                         \
-        inline ::ll::memory::HookRegistrar<DEF_TYPE> DEF_TYPE##AutoRegister,                                             \
+        inline ::ll::memory::HookRegistrar<DEF_TYPE> DEF_TYPE##AutoRegister,                                           \
         FUNC_PTR,                                                                                                      \
         STATIC,                                                                                                        \
         CALL,                                                                                                          \

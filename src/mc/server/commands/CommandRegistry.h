@@ -512,7 +512,7 @@ public:
         std::string const&       name,
         char const*              description, // will copy to std::string
         ::CommandPermissionLevel requirement,
-        struct CommandFlag f,
+        struct CommandFlag       f,
         struct CommandFlag = CommandFlagValue::None // useless, idiot
     );
 
