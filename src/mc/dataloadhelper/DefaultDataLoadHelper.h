@@ -16,8 +16,8 @@ public:
     // vIndex: 0, symbol: __gen_??1DefaultDataLoadHelper@@UEAA@XZ
     virtual ~DefaultDataLoadHelper() = default;
 
-    // vIndex: 1, symbol: __unk_vfn_1
-    virtual void __unk_vfn_1();
+    // vIndex: 1, symbol: ?loadPosition@DefaultDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+    virtual class Vec3 loadPosition(class Vec3 const& position);
 
     // vIndex: 2, symbol: ?loadBlockPosition@DefaultDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
     virtual class BlockPos loadBlockPosition(class BlockPos const& blockPos);
