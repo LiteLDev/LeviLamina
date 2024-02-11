@@ -15,7 +15,7 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     if (!ll::service::getServerNetworkHandler()) {
         return nullptr;
     }
-    OwnerPtrT<EntityRefTraits> ownerPtr = ll::service::getServerNetworkHandler()->createSimulatedPlayer(
+    auto ownerPtr = ll::service::getServerNetworkHandler()->createSimulatedPlayer(
         name,
         std::to_string(ll::random_utils::rand<int64>(INT64_MIN, -1))
     );

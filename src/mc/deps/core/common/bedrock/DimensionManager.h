@@ -19,7 +19,7 @@ class IDimensionFactory;
 
 class DimensionManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    std::unordered_map<DimensionType, OwnerPtrT<SharePtrRefTraits<Dimension>>> mDimensions;
+    std::unordered_map<DimensionType, OwnerPtr<Dimension>> mDimensions;
     Bedrock::NotNullNonOwnerPtr<IDimensionFactory>                             mDimensionFactory;
     // Bedrock::PubSub::Publisher<void (Dimension &),Bedrock::PubSub::ThreadModel::MultiThreaded>
     // mOnNewDimensionCreatedPublisher;

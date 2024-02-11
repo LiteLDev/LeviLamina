@@ -13,11 +13,11 @@
 
 class EntitySystems : public IEntitySystems, public ::Bedrock::EnableNonOwnerReferences {
 public:
-    std::unique_ptr<PlayerInteractionSystem>         mPlayerInteractionSystem; // this+0x20
-    std::unique_ptr<IEntitySystemsCollection>        mSystems;                 // this+0x28
-    OwnerPtrT<SharePtrRefTraits<EcsEventDispatcher>> mDispatcher;              // this+0x30
-    std::string                                      mName;                    // this+0x40
-    bool                                             mEnableTimingCapture;     // this+0x60
+    std::unique_ptr<PlayerInteractionSystem>  mPlayerInteractionSystem; // this+0x20
+    std::unique_ptr<IEntitySystemsCollection> mSystems;                 // this+0x28
+    OwnerPtr<EcsEventDispatcher>              mDispatcher;              // this+0x30
+    std::string                               mName;                    // this+0x40
+    bool                                      mEnableTimingCapture;     // this+0x60
 
     DefaultEntitySystemsCollection& getDefaultCollection() { return *(DefaultEntitySystemsCollection*)mSystems.get(); }
 

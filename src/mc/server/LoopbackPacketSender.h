@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/EntityRefTraits.h"
+#include "mc/entity/gamerefs_entity/EntityRefTraits.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtr.h"
@@ -12,10 +12,10 @@ class NetworkSystem;
 class NetEventCallback;
 class LoopbackPacketSender : public ::PacketSender {
 public:
-    NetworkSystem*                                 mNetwork;           // this+0x20
-    std::vector<NetEventCallback*>                 mLoopbackCallbacks; // this+0x28
-    const std::vector<OwnerPtrT<EntityRefTraits>>* mUserList;          // this+0x40
-    std::vector<NetworkIdentifierWithSubId>        mTempUserIds;       // this+0x48
+    NetworkSystem*                              mNetwork;           // this+0x20
+    std::vector<NetEventCallback*>              mLoopbackCallbacks; // this+0x28
+    const std::vector<OwnerPtr<EntityContext>>* mUserList;          // this+0x40
+    std::vector<NetworkIdentifierWithSubId>     mTempUserIds;       // this+0x48
 
     // prevent constructor by default
     LoopbackPacketSender& operator=(LoopbackPacketSender const&);

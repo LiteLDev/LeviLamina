@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/EntityRefTraits.h"
+#include "mc/entity/gamerefs_entity/EntityRefTraits.h"
 #include "mc/math/Vec2.h"
 #include "mc/math/Vec3.h"
 #include "mc/world/level/BlockPos.h"

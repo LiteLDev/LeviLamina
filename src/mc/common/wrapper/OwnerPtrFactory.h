@@ -13,7 +13,5 @@ public:
     OwnerPtrFactory(OwnerPtrFactory const&);
     OwnerPtrFactory();
 
-    // symbol:
-    // ?registerFactory@?$OwnerPtrFactory@VDimension@@AEAVILevel@@AEAVScheduler@@@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6A?AV?$OwnerPtrT@U?$SharePtrRefTraits@VDimension@@@@@@AEAVILevel@@AEAVScheduler@@@Z@3@@Z
     MCAPI void registerFactory(std::string const&, std::function<OwnerPtr<T0>(T1, T2)>);
 };

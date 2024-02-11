@@ -1,12 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/entity/EntityRefTraits.h"
+#include "mc/entity/gamerefs_entity/EntityRefTraits.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakRef.h"
 
-class WeakEntityRef : public WeakRefT<struct EntityRefTraits> {
+class WeakEntityRef : public ::WeakRef<EntityContext> {
 public:
     // prevent constructor by default
     WeakEntityRef& operator=(WeakEntityRef const&);

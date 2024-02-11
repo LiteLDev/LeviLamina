@@ -1,16 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/wrapper/WeakRefT.h"
-#include "mc/entity/EntityRegistryRefTraits.h"
+#include "mc/common/wrapper/WeakRef.h"
 #include "mc/entity/gamerefs_entity/StackResultStorageEntity.h"
 
 class Actor;
+class EntityRegistry;
 
 class WeakStorageEntity {
 public:
-    WeakRefT<EntityRegistryRefTraits> mRegistry;
-    class EntityId                    mEntity;
+    WeakRef<EntityRegistry> mRegistry;
+    class EntityId          mEntity;
 
     template <class Entity = Actor, bool IncludeRemoved = false>
     [[nodiscard]] optional_ref<Entity> tryUnwrap() const {
