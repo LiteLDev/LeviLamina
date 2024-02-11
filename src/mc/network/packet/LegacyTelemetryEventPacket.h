@@ -145,15 +145,6 @@ public:
             } RaidUpdate;
 
             struct {
-                MovementEventType mEventType;
-                float             mObservedScore;
-                float             mAveragePosDelta;
-                float             mTotalPosDelta;
-                float             mMinPosDelta;
-                float             mMaxPosDelta;
-            } PlayerMovement;
-
-            struct {
                 int mRedstoneLevel;
             } TargetBlockHit;
 

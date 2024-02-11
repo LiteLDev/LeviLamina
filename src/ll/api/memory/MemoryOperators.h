@@ -1,5 +1,5 @@
 #pragma once
-
+#ifdef LL_MEMORY_OPERATORS
 // This header provides convenient overrides for the new and
 // delete operations in C++.
 //
@@ -100,3 +100,4 @@ _NODISCARD _Ret_notnull_ _Success_(return != NULL) _Post_writable_byte_size_(siz
 operator new[](std::size_t size, std::align_val_t alignment, std::nothrow_t const& tag) noexcept {
     return operator new(size, alignment, tag);
 }
+#endif

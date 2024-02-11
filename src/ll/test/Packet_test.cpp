@@ -1,4 +1,4 @@
-﻿// #define GENERATE_PACKET
+﻿#define GENERATE_PACKET
 
 #ifdef GENERATE_PACKET
 
@@ -110,7 +110,7 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main", int, int a
     return origin(a, c);
 }
 
-#endif // GENERATE_PACKET
+#else // GENERATE_PACKET
 
 #pragma region PacketInclude
 
@@ -517,3 +517,5 @@ PACKET_SIZE_ASSERT(PlayerToggleCrafterSlotRequestPacket, 0x48);
 PACKET_SIZE_ASSERT(SetPlayerInventoryOptionsPacket, 0x48);
 
 #pragma endregion
+
+#endif // GENERATE_PACKET

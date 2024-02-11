@@ -50,6 +50,9 @@ struct MolangScriptArg {
 
     MCTAPI MolangScriptArg(MolangMemberArray const&);
 
+    template <>
+    MolangScriptArg(bool const& value) : MolangScriptArg(static_cast<int>(value)) {}
+
 public:
     // NOLINTBEGIN
     // symbol: ??0MolangScriptArg@@QEAA@XZ

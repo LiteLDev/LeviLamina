@@ -29,7 +29,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
              {"double", 0.3},
              {"sdouble", 1.0},
          }                                                                              },
-        {"bytearray", ByteArrayTag{{1, 2, 3, 4, 5, -2, -3, -6}}                         },
+        {"bytearray", ByteArrayTag{{1, 2, 3, 4, 5, 62, 63, 66}}                         },
         {"intarray",  IntArrayTag{{1, 2, 3, 4, 5, -2, -3, -6}}                          },
     };
 
@@ -49,7 +49,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
 {
     anull = null,
     byte = 127b,
-    bytearray = [B;1b, 2b, 3b, 4b, 5b, -2b, -3b, -6b],
+    bytearray = [B;1b, 2b, 3b, 4b, 5b, 62b, 63b, 66b],
     compound = {
         sdouble = 1.0 /*d*/,
         double = 0.3D,
@@ -72,7 +72,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
             compound = {
                 anull = null,
                 "byte" = 127b
-                "bytearray" = [B;1b, 2b, 3b, 4b, 5b, -2b, -3b, -6b],  // orld   /**/ /*     34t */
+                "bytearray" = [B;1b, 2b, 3b, 4b, 5b, 62b, 63b, 66b],  // orld   /**/ /*     34t */
                 "compound" = {
                     "sdouble" = 1.0 /*d*/
                     "double" = 0.3D

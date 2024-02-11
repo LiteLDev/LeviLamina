@@ -3,7 +3,7 @@
 #include "ll/api/utils/RandomUtils.h"
 
 #include "ll/api/memory/Memory.h"
-#include "mc/common/wrapper/FeatureRefTraits.h"
+#include "mc/world/level/levelgen/feature/gamerefs_feature/FeatureRefTraits.h"
 #include "mc/common/wrapper/WeakRef.h"
 #include "mc/deps/core/debug/log/ContentLog.h"
 #include "mc/deps/core/string/HashedString.h"

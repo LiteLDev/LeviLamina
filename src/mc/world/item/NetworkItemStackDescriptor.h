@@ -19,8 +19,6 @@ public:
     ItemStackNetIdVariant mNetIdVariant{};   // this+0x20
     uint                  mBlockRuntimeId{}; // this+0x38
     std::string           mUserDataBuffer{}; // this+0x40
-public:
-    NetworkItemStackDescriptor() = default;
 
 public:
     // NOLINTBEGIN

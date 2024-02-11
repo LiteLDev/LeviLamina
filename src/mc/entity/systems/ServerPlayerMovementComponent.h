@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/actor/movement/MovementPackets.h"
+#include "mc/entity/systems/movement/MovementPackets.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/optional_ref.h"
