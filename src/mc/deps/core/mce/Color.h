@@ -228,9 +228,6 @@ private:
 
 public:
     // NOLINTBEGIN
-    // symbol: ??0Color@mce@@QEAA@MMMM@Z
-    MCAPI Color(float, float, float, float);
-
     // symbol: ??8Color@mce@@QEBA_NAEBV01@@Z
     MCAPI bool operator==(class mce::Color const& c) const;
 
