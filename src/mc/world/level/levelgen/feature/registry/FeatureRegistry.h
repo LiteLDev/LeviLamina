@@ -1,14 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/wrapper/OwnerPtrT.h"
+#include "mc/common/wrapper/OwnerPtr.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakRef.h"
-
-struct FeatureRefTraits;
 
 class FeatureRegistry {
 public:
@@ -37,7 +35,7 @@ public:
     FeatureRegistry(FeatureRegistry const&);
 
     std::vector<std::unique_ptr<IFeature>>                mFeatureRegistry;      // this+0x0
-    std::vector<OwnerPtrT<FeatureRefTraits>>              mFeatureSlots;         // this+0x18
+    std::vector<OwnerPtr<IFeature>>                       mFeatureSlots;         // this+0x18
     std::unordered_map<HashedString, uint64>              mFeatureLookupMap;     // this+0x30
     std::vector<FeatureRegistry::FeatureBinaryJsonFormat> mFeatureSerializeData; // this+0x70
     bool                                                  mClientInitialized;    // this+0x88

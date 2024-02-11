@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/wrapper/OwnerPtrT.h"
+#include "mc/common/wrapper/OwnerPtr.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakRef.h"
@@ -20,7 +20,7 @@ class IDimensionFactory;
 class DimensionManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     std::unordered_map<DimensionType, OwnerPtr<Dimension>> mDimensions;
-    Bedrock::NotNullNonOwnerPtr<IDimensionFactory>                             mDimensionFactory;
+    Bedrock::NotNullNonOwnerPtr<IDimensionFactory>         mDimensionFactory;
     // Bedrock::PubSub::Publisher<void (Dimension &),Bedrock::PubSub::ThreadModel::MultiThreaded>
     // mOnNewDimensionCreatedPublisher;
     char                                    unk[128];

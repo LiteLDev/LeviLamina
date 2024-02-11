@@ -4,7 +4,7 @@
 
 #include "ll/api/memory/Memory.h"
 #include "mc/common/wrapper/FeatureRefTraits.h"
-#include "mc/common/wrapper/WeakRefT.h"
+#include "mc/common/wrapper/WeakRef.h"
 #include "mc/deps/core/debug/log/ContentLog.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/buffer_span.h"
