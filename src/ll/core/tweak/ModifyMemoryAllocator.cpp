@@ -76,7 +76,7 @@ public:
     virtual void release(void* ptr) {
         if (mi_is_in_heap_region(ptr)) [[likely]] {
             mi_free(ptr);
-        } else {
+        } else if (ptr) [[unlikely]] {
             free(ptr);
         }
     }
