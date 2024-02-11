@@ -22,7 +22,8 @@
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/HashUtils.h"
 
-#include "mc/world/Minecraft.h"
+#include "mc/server/common/DedicatedServer.h"
+#include "mc/server/common/commands/StopCommand.h"
 
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
@@ -171,8 +172,8 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
     case CTRL_C_EVENT:
     case CTRL_CLOSE_EVENT:
     case CTRL_SHUTDOWN_EVENT: {
-        if (service::getMinecraft()) {
-            service::getMinecraft()->requestServerShutdown("");
+        if (StopCommand::$mServer()) {
+            StopCommand::$mServer()->requestServerShutdown("");
         } else {
             std::terminate();
         }
@@ -188,7 +189,7 @@ void unixSignalHandler(int signum) {
     switch (signum) {
     case SIGINT:
     case SIGTERM: {
-        if (service::getMinecraft()) service::getMinecraft()->requestServerShutdown("");
+        if (StopCommand::$mServer()) StopCommand::$mServer()->requestServerShutdown("");
         else std::terminate();
         break;
     }

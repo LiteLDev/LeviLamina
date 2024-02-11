@@ -94,7 +94,7 @@ LL_TYPE_STATIC_HOOK(
 }
 
 // registry dimensoin when in ll, must reload Dimension::getWeakRef
-LL_TYPE_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimension, &Dimension::getWeakRef, WeakRefT<SharePtrRefTraits<Dimension>>) {
+LL_TYPE_INSTANCE_HOOK(DimensionGetWeakRefHook, HookPriority::Normal, Dimension, &Dimension::getWeakRef, WeakRef<Dimension>) {
     if (getDimensionId() > 2 && getDimensionId() != VanillaDimensions::Undefined.id) return weak_from_this();
     return origin();
 };
@@ -181,7 +181,7 @@ DimensionType CustomDimensionManager::addDimension(
     ll::service::getLevel()->getDimensionFactory().registerFactory(
         dimName,
         [dimName, info, factory = std::move(factory)](ILevel& ilevel, Scheduler& scheduler)
-            -> OwnerPtrT<SharePtrRefTraits<Dimension>> {
+            -> OwnerPtr<Dimension> {
             loggerMoreDimMag.debug("Create dimension, name: {}, id: {}", dimName, info.id.id);
             return factory(DimensionFactoryInfo{ilevel, scheduler, info.nbt, info.id});
         }
