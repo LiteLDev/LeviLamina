@@ -8,7 +8,7 @@
 
 #include "heapapi.h"
 
-#define LL_DEFALUT_MEMORY_ALLOCATOR StdMemoryAllocator
+#define LL_DEFALUT_MEMORY_ALLOCATOR MimallocMemoryAllocatorWithCheck
 
 namespace ll::memory {
 class MimallocMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
