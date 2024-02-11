@@ -158,7 +158,7 @@ public:
     virtual void prepareHeights(BlockVolume&, const ChunkPos&, bool) {}
 
     virtual void
-    prepareAndComputeHeights(BlockVolume&, const ChunkPos&, std::vector<short, std::allocator<short>>&, bool, int) {}
+    prepareAndComputeHeights(BlockVolume&, const ChunkPos&, std::vector<short>&, bool, int) {}
 
     virtual BiomeArea getBiomeArea(const BoundingBox& area, uint scale) const {
         return mBiomeSource->getBiomeArea(area, scale);
