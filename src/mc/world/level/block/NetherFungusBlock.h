@@ -57,7 +57,7 @@ public:
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 85, symbol: ?mayPlace@NetherFungusBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 84, symbol: ?mayPlace@NetherFungusBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar) const;
 
     // vIndex: 86, symbol: ?mayPlaceOn@NetherFungusBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z

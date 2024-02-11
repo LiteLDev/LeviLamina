@@ -30,14 +30,14 @@ public:
     virtual ~StringPayload();
 
     // vIndex: 1, symbol:
-    // ?runOn@StringPayload@Scripting@@UEAA?AVResultAny@2@UContextId@2@AEAVStringBasedRuntime@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
-    virtual class Scripting::ResultAny
-    runOn(struct Scripting::ContextId, class Scripting::StringBasedRuntime&, std::optional<::Scripting::Privilege>);
-
-    // vIndex: 2, symbol:
     // ?runOn@IPayload@Scripting@@UEAA?AVResultAny@2@UContextId@2@AEAVNativeRuntime@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
     virtual class Scripting::ResultAny
     runOn(struct Scripting::ContextId, class Scripting::NativeRuntime&, std::optional<::Scripting::Privilege>);
+
+    // vIndex: 2, symbol:
+    // ?runOn@StringPayload@Scripting@@UEAA?AVResultAny@2@UContextId@2@AEAVStringBasedRuntime@2@V?$optional@W4Privilege@Scripting@@@std@@@Z
+    virtual class Scripting::ResultAny
+    runOn(struct Scripting::ContextId, class Scripting::StringBasedRuntime&, std::optional<::Scripting::Privilege>);
 
     // symbol: ??0StringPayload@Scripting@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
     MCAPI StringPayload(std::string scriptName, std::string);

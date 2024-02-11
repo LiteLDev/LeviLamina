@@ -72,7 +72,7 @@ public:
     // vIndex: 56, symbol: ?canContainLiquid@FenceBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 84, symbol: ?mayPlace@FenceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 85, symbol: ?mayPlace@FenceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 89, symbol: ?breaksFallingBlocks@FenceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
@@ -88,7 +88,7 @@ public:
     // vIndex: 138, symbol: ?canBeSilkTouched@FenceBlock@@MEBA_NXZ
     virtual bool canBeSilkTouched() const;
 
-    // vIndex: 153, symbol: ?use@FenceBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 154, symbol: ?use@FenceBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // symbol: ??0FenceBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z

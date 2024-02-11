@@ -153,16 +153,16 @@ public:
     virtual void __unk_vfn_40();
 
     // vIndex: 41, symbol:
-    // ?onEvent@?$EventListenerDispatcher@VPlayerEventListener@@@@MEAA?AW4EventResult@@AEBUPlayerNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct PlayerNotificationEvent const& event);
+    // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerInteractWithEntityEvent@@@Z
+    virtual ::EventResult onEvent(struct PlayerInteractWithEntityEvent const&);
 
     // vIndex: 42, symbol:
     // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerInteractWithBlockEvent@@@Z
     virtual ::EventResult onEvent(struct PlayerInteractWithBlockEvent const&);
 
     // vIndex: 43, symbol:
-    // ?onEvent@ScriptPlayerEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPlayerInteractWithEntityEvent@@@Z
-    virtual ::EventResult onEvent(struct PlayerInteractWithEntityEvent const&);
+    // ?onEvent@?$EventListenerDispatcher@VPlayerEventListener@@@@MEAA?AW4EventResult@@AEBUPlayerNotificationEvent@@@Z
+    virtual ::EventResult onEvent(struct PlayerNotificationEvent const& event);
 
     // vIndex: 44, symbol: __unk_vfn_44
     virtual void __unk_vfn_44();

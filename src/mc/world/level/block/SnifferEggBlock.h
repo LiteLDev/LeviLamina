@@ -37,7 +37,7 @@ public:
     // vIndex: 61, symbol: ?checkIsPathable@SnifferEggBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 84, symbol: ?mayPlace@SnifferEggBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 85, symbol: ?mayPlace@SnifferEggBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 119, symbol:

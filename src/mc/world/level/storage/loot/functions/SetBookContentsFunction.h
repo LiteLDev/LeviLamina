@@ -22,11 +22,11 @@ public:
     // vIndex: 0, symbol: __gen_??1SetBookContentsFunction@@UEAA@XZ
     virtual ~SetBookContentsFunction() = default;
 
-    // vIndex: 2, symbol: ?apply@SetBookContentsFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemInstance& itemInstance, class Random&, class LootTableContext&);
-
-    // vIndex: 4, symbol: ?apply@SetBookContentsFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1, symbol: ?apply@SetBookContentsFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemStack& item, class Random&, class LootTableContext&);
+
+    // vIndex: 3, symbol: ?apply@SetBookContentsFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+    virtual void apply(class ItemInstance& itemInstance, class Random&, class LootTableContext&);
 
     // symbol:
     // ?deserialize@SetBookContentsFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z

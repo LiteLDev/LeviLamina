@@ -34,7 +34,7 @@ public:
     // vIndex: 6, symbol: ?equals@ListTag@@UEBA_NAEBVTag@@@Z
     virtual bool equals(class Tag const& rhs) const;
 
-    // vIndex: 7, symbol:
+    // vIndex: 8, symbol:
     // ?print@ListTag@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPrintStream@@@Z
     virtual void print(std::string const& prefix_, class PrintStream& out) const;
 

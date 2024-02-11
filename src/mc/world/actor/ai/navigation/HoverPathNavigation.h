@@ -27,14 +27,14 @@ public:
     virtual class Vec3 getTempMobPos(class Mob const& mob) const;
 
     // vIndex: 4, symbol:
-    // ?createPath@HoverPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z
-    virtual std::unique_ptr<class Path>
-    createPath(class NavigationComponent& parent, class Mob& mob, class Actor& target);
-
-    // vIndex: 5, symbol:
     // ?createPath@HoverPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
     virtual std::unique_ptr<class Path>
     createPath(class NavigationComponent& parent, class Mob& mob, class Vec3 const& pos);
+
+    // vIndex: 5, symbol:
+    // ?createPath@HoverPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z
+    virtual std::unique_ptr<class Path>
+    createPath(class NavigationComponent& parent, class Mob& mob, class Actor& target);
 
     // vIndex: 9, symbol: ?stop@HoverPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
     virtual void stop(class NavigationComponent& parent, class Mob& mob);

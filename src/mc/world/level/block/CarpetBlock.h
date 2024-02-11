@@ -45,7 +45,7 @@ public:
     // vIndex: 61, symbol: ?checkIsPathable@CarpetBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
     virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
 
-    // vIndex: 84, symbol: ?mayPlace@CarpetBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 85, symbol: ?mayPlace@CarpetBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@CarpetBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z

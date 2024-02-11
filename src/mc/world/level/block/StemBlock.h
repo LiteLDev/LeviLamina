@@ -56,11 +56,11 @@ public:
     // vIndex: 96, symbol: ?asItemInstance@StemBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const&, class BlockActor const*) const;
 
-    // vIndex: 121, symbol: ?getColor@StemBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
-
-    // vIndex: 122, symbol: ?getColor@StemBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 121, symbol: ?getColor@StemBlock@@UEBAHAEBVBlock@@@Z
     virtual int getColor(class Block const& block) const;
+
+    // vIndex: 122, symbol: ?getColor@StemBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    virtual int getColor(class BlockSource&, class BlockPos const&, class Block const& block) const;
 
     // vIndex: 123, symbol: ?getColorAtPos@StemBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual int getColorAtPos(class BlockSource& region, class BlockPos const& pos) const;

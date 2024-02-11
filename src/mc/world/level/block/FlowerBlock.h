@@ -45,7 +45,7 @@ public:
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 15, symbol: ?randomlyModifyPosition@FlowerBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
+    // vIndex: 16, symbol: ?randomlyModifyPosition@FlowerBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
     virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
 
     // vIndex: 56, symbol: ?canContainLiquid@FlowerBlock@@UEBA_NXZ
@@ -61,7 +61,7 @@ public:
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 84, symbol: ?mayPlace@FlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 85, symbol: ?mayPlace@FlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 86, symbol: ?mayPlaceOn@FlowerBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
@@ -80,13 +80,13 @@ public:
     // vIndex: 143, symbol: ?_addHardCodedBlockComponents@FlowerBlock@@UEAAXAEBVExperiments@@@Z
     virtual void _addHardCodedBlockComponents(class Experiments const&);
 
-    // vIndex: 157, symbol:
+    // vIndex: 157, symbol: ?getRenderLayer@FlowerBlock@@UEBA?AW4BlockRenderLayer@@XZ
+    virtual ::BlockRenderLayer getRenderLayer() const;
+
+    // vIndex: 158, symbol:
     // ?getRenderLayer@FlowerBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual ::BlockRenderLayer
     getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
-
-    // vIndex: 158, symbol: ?getRenderLayer@FlowerBlock@@UEBA?AW4BlockRenderLayer@@XZ
-    virtual ::BlockRenderLayer getRenderLayer() const;
 
     // vIndex: 162, symbol: ?getMapColor@FlowerBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual class mce::Color

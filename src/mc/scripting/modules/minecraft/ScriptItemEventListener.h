@@ -41,40 +41,40 @@ public:
     virtual ~ScriptItemEventListener() = default;
 
     // vIndex: 16, symbol:
-    // ?onEvent@?$EventListenerDispatcher@VItemEventListener@@@@MEAA?AW4EventResult@@AEBUItemNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct ItemNotificationEvent const& event);
+    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemUseEvent@@@Z
+    virtual ::EventResult onEvent(struct ItemUseEvent const&);
 
     // vIndex: 17, symbol:
-    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemStopUseEvent@@@Z
-    virtual ::EventResult onEvent(struct ItemStopUseEvent const&);
+    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemUsedOnEvent@@@Z
+    virtual ::EventResult onEvent(struct ItemUsedOnEvent const&);
 
     // vIndex: 18, symbol:
-    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemReleaseUseEvent@@@Z
-    virtual ::EventResult onEvent(struct ItemReleaseUseEvent const&);
+    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemStartUseOnEvent@@@Z
+    virtual ::EventResult onEvent(struct ItemStartUseOnEvent const&);
 
     // vIndex: 19, symbol:
-    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemCompleteUseEvent@@@Z
-    virtual ::EventResult onEvent(struct ItemCompleteUseEvent const&);
+    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemStopUseOnEvent@@@Z
+    virtual ::EventResult onEvent(struct ItemStopUseOnEvent const&);
 
     // vIndex: 20, symbol:
     // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemStartUseEvent@@@Z
     virtual ::EventResult onEvent(struct ItemStartUseEvent const&);
 
     // vIndex: 21, symbol:
-    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemStopUseOnEvent@@@Z
-    virtual ::EventResult onEvent(struct ItemStopUseOnEvent const&);
+    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemCompleteUseEvent@@@Z
+    virtual ::EventResult onEvent(struct ItemCompleteUseEvent const&);
 
     // vIndex: 22, symbol:
-    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemStartUseOnEvent@@@Z
-    virtual ::EventResult onEvent(struct ItemStartUseOnEvent const&);
+    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemReleaseUseEvent@@@Z
+    virtual ::EventResult onEvent(struct ItemReleaseUseEvent const&);
 
     // vIndex: 23, symbol:
-    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemUsedOnEvent@@@Z
-    virtual ::EventResult onEvent(struct ItemUsedOnEvent const&);
+    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemStopUseEvent@@@Z
+    virtual ::EventResult onEvent(struct ItemStopUseEvent const&);
 
     // vIndex: 24, symbol:
-    // ?onEvent@ScriptItemEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUItemUseEvent@@@Z
-    virtual ::EventResult onEvent(struct ItemUseEvent const&);
+    // ?onEvent@?$EventListenerDispatcher@VItemEventListener@@@@MEAA?AW4EventResult@@AEBUItemNotificationEvent@@@Z
+    virtual ::EventResult onEvent(struct ItemNotificationEvent const& event);
 
     // vIndex: 25, symbol: __unk_vfn_25
     virtual void __unk_vfn_25();

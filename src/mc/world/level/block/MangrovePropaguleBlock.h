@@ -38,7 +38,7 @@ public:
     // vIndex: 11, symbol: ?getVisualShape@MangrovePropaguleBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 15, symbol: ?randomlyModifyPosition@MangrovePropaguleBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
+    // vIndex: 16, symbol: ?randomlyModifyPosition@MangrovePropaguleBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
     virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
 
     // vIndex: 55, symbol: ?waterSpreadCausesSpawn@MangrovePropaguleBlock@@UEBA_NXZ

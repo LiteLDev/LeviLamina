@@ -60,13 +60,13 @@ public:
     virtual class BlockPos getSize(::Rotation rotation) const;
 
     // vIndex: 1, symbol:
+    // ?getJigsawMarkers@StructurePoolElement@@UEBA?AV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@VBlockPos@@W4Rotation@@@Z
+    virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos position, ::Rotation rotation) const;
+
+    // vIndex: 2, symbol:
     // ?getJigsawMarkers@StructurePoolElement@@UEBA?AV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@VBlockPos@@AEAVLegacyStructureSettings@@PEAVBlockSource@@@Z
     virtual std::vector<class JigsawBlockInfo>
     getJigsawMarkers(class BlockPos position, class LegacyStructureSettings& settings, class BlockSource* region) const;
-
-    // vIndex: 2, symbol:
-    // ?getJigsawMarkers@StructurePoolElement@@UEBA?AV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@VBlockPos@@W4Rotation@@@Z
-    virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos position, ::Rotation rotation) const;
 
     // vIndex: 3, symbol: ?getBoundingBox@StructurePoolElement@@UEBA?AVBoundingBox@@VBlockPos@@W4Rotation@@@Z
     virtual class BoundingBox getBoundingBox(class BlockPos position, ::Rotation rotation) const;

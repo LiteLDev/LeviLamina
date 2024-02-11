@@ -58,12 +58,12 @@ public:
         virtual ~EditorImpl() = default;
 
         // vIndex: 3, symbol:
-        // ?getValueForKey@EditorImpl@DataStore@Bedrock@@UEBAPEBVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
-        virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view key) const;
-
-        // vIndex: 4, symbol:
         // ?getValueForKey@EditorImpl@DataStore@Bedrock@@UEAAPEAVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
         virtual class Bedrock::JSONObject::Node* getValueForKey(std::string_view key);
+
+        // vIndex: 4, symbol:
+        // ?getValueForKey@EditorImpl@DataStore@Bedrock@@UEBAPEBVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+        virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view key) const;
 
         // vIndex: 5, symbol:
         // ?setValueForKey@EditorImpl@DataStore@Bedrock@@UEAAPEAVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@AEBVValueWrapper@53@@Z
@@ -123,12 +123,12 @@ public:
         virtual ~ViewerImpl() = default;
 
         // vIndex: 1, symbol:
-        // ?getOwningDataStore@ViewerImpl@DataStore@Bedrock@@UEAA?AV?$not_null@PEAVDataStore@Bedrock@@@gsl@@XZ
-        virtual gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
-
-        // vIndex: 2, symbol:
         // ?getOwningDataStore@ViewerImpl@DataStore@Bedrock@@UEBA?AV?$not_null@PEBVDataStore@Bedrock@@@gsl@@XZ
         virtual gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
+
+        // vIndex: 2, symbol:
+        // ?getOwningDataStore@ViewerImpl@DataStore@Bedrock@@UEAA?AV?$not_null@PEAVDataStore@Bedrock@@@gsl@@XZ
+        virtual gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
 
         // vIndex: 3, symbol:
         // ?getValueForKey@ViewerImpl@DataStore@Bedrock@@UEBAPEBVNode@JSONObject@3@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z

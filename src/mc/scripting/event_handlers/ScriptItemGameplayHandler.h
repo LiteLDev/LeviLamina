@@ -29,13 +29,13 @@ public:
     virtual ~ScriptItemGameplayHandler() = default;
 
     // vIndex: 1, symbol:
+    // ?handleEvent@?$Impl@U?$type_list@$$CBU?$ItemGameplayEvent@X@@U?$MutableItemGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VItemGameplayHandler@@@Details@@MEAA?AW4HandlerResult@@AEBU?$ItemGameplayEvent@X@@@Z
+    virtual ::HandlerResult handleEvent(struct ItemGameplayEvent<void> const& event);
+
+    // vIndex: 2, symbol:
     // ?handleEvent@?$Impl@U?$type_list@U?$MutableItemGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VItemGameplayHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAU?$MutableItemGameplayEvent@W4CoordinatorResult@@@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult>
     handleEvent(struct MutableItemGameplayEvent<::CoordinatorResult>& event);
-
-    // vIndex: 2, symbol:
-    // ?handleEvent@?$Impl@U?$type_list@$$CBU?$ItemGameplayEvent@X@@U?$MutableItemGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VItemGameplayHandler@@@Details@@MEAA?AW4HandlerResult@@AEBU?$ItemGameplayEvent@X@@@Z
-    virtual ::HandlerResult handleEvent(struct ItemGameplayEvent<void> const& event);
 
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
@@ -59,16 +59,16 @@ public:
     virtual void __unk_vfn_9();
 
     // vIndex: 10, symbol:
-    // ?handleEvent@ScriptItemGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUItemUseEvent@@@Z
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ItemUseEvent&);
+    // ?handleEvent@ScriptItemGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUItemDefinitionEventTriggeredEvent@@@Z
+    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ItemDefinitionEventTriggeredEvent&);
 
     // vIndex: 11, symbol:
     // ?handleEvent@ScriptItemGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUItemUseOnEvent@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ItemUseOnEvent&);
 
     // vIndex: 12, symbol:
-    // ?handleEvent@ScriptItemGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUItemDefinitionEventTriggeredEvent@@@Z
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ItemDefinitionEventTriggeredEvent&);
+    // ?handleEvent@ScriptItemGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUItemUseEvent@@@Z
+    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ItemUseEvent&);
 
     // NOLINTEND
 

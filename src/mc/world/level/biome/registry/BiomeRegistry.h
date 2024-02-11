@@ -47,11 +47,11 @@ public:
     // vIndex: 0, symbol: ??1BiomeRegistry@@UEAA@XZ
     virtual ~BiomeRegistry();
 
-    // vIndex: 1, symbol: ?getEntityRegistry@BiomeRegistry@@UEAA?AV?$StackRefResult@VEntityRegistry@@@@XZ
-    virtual class StackRefResult<class EntityRegistry> getEntityRegistry();
-
-    // vIndex: 2, symbol: ?getEntityRegistry@BiomeRegistry@@UEBA?AV?$StackRefResult@$$CBVEntityRegistry@@@@XZ
+    // vIndex: 1, symbol: ?getEntityRegistry@BiomeRegistry@@UEBA?AV?$StackRefResult@$$CBVEntityRegistry@@@@XZ
     virtual class StackRefResult<class EntityRegistry const> getEntityRegistry() const;
+
+    // vIndex: 2, symbol: ?getEntityRegistry@BiomeRegistry@@UEAA?AV?$StackRefResult@VEntityRegistry@@@@XZ
+    virtual class StackRefResult<class EntityRegistry> getEntityRegistry();
 
     // symbol: ??0BiomeRegistry@@QEAA@XZ
     MCAPI BiomeRegistry();

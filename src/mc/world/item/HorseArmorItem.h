@@ -51,10 +51,10 @@ public:
     // vIndex: 60, symbol: ?getColor@HorseArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
     virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const&) const;
 
-    // vIndex: 61, symbol: ?hasCustomColor@HorseArmorItem@@UEBA_NPEBVCompoundTag@@@Z
+    // vIndex: 62, symbol: ?hasCustomColor@HorseArmorItem@@UEBA_NPEBVCompoundTag@@@Z
     virtual bool hasCustomColor(class CompoundTag const* userData) const;
 
-    // vIndex: 63, symbol: ?clearColor@HorseArmorItem@@UEBAXPEAVCompoundTag@@@Z
+    // vIndex: 64, symbol: ?clearColor@HorseArmorItem@@UEBAXPEAVCompoundTag@@@Z
     virtual void clearColor(class CompoundTag* userData) const;
 
     // vIndex: 65, symbol: ?setColor@HorseArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z

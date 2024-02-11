@@ -110,17 +110,17 @@ public:
     // vIndex: 29, symbol: ?getRepairCost@BlockActor@@UEBAHXZ
     virtual int getRepairCost() const;
 
-    // vIndex: 30, symbol: ?getOwningPiston@BlockActor@@UEAAPEAVPistonBlockActor@@AEAVBlockSource@@@Z
-    virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
-
-    // vIndex: 31, symbol: ?getOwningPiston@BlockActor@@UEBAPEBVPistonBlockActor@@AEAVBlockSource@@@Z
+    // vIndex: 30, symbol: ?getOwningPiston@BlockActor@@UEBAPEBVPistonBlockActor@@AEAVBlockSource@@@Z
     virtual class PistonBlockActor const* getOwningPiston(class BlockSource&) const;
 
-    // vIndex: 32, symbol: ?getContainer@BlockActor@@UEAAPEAVContainer@@XZ
-    virtual class Container* getContainer();
+    // vIndex: 31, symbol: ?getOwningPiston@BlockActor@@UEAAPEAVPistonBlockActor@@AEAVBlockSource@@@Z
+    virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
 
-    // vIndex: 33, symbol: ?getContainer@BlockActor@@UEBAPEBVContainer@@XZ
+    // vIndex: 32, symbol: ?getContainer@BlockActor@@UEBAPEBVContainer@@XZ
     virtual class Container const* getContainer() const;
+
+    // vIndex: 33, symbol: ?getContainer@BlockActor@@UEAAPEAVContainer@@XZ
+    virtual class Container* getContainer();
 
     // vIndex: 34, symbol: ?eraseLootTable@BlockActor@@UEAAXXZ
     virtual void eraseLootTable();

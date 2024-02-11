@@ -72,11 +72,11 @@ public:
     // ?buildDescriptionId@SeaPickleBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
     virtual std::string buildDescriptionId(class Block const&) const;
 
-    // vIndex: 121, symbol: ?getColor@SeaPickleBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
-
-    // vIndex: 122, symbol: ?getColor@SeaPickleBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 121, symbol: ?getColor@SeaPickleBlock@@UEBAHAEBVBlock@@@Z
     virtual int getColor(class Block const& block) const;
+
+    // vIndex: 122, symbol: ?getColor@SeaPickleBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 137, symbol: ?getLightEmission@SeaPickleBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
     virtual struct Brightness getLightEmission(class Block const& block) const;

@@ -306,11 +306,11 @@ public:
     // ?getAllEquipment@Player@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
     virtual std::vector<class ItemStack const*> getAllEquipment() const;
 
-    // vIndex: 188, symbol: ?dropEquipmentOnDeath@Player@@UEAAXXZ
-    virtual void dropEquipmentOnDeath();
-
-    // vIndex: 189, symbol: ?dropEquipmentOnDeath@Player@@UEAAXAEBVActorDamageSource@@H@Z
+    // vIndex: 188, symbol: ?dropEquipmentOnDeath@Player@@UEAAXAEBVActorDamageSource@@H@Z
     virtual void dropEquipmentOnDeath(class ActorDamageSource const& source, int lootBonusLevel);
+
+    // vIndex: 189, symbol: ?dropEquipmentOnDeath@Player@@UEAAXXZ
+    virtual void dropEquipmentOnDeath();
 
     // vIndex: 190, symbol: ?clearVanishEnchantedItemsOnDeath@Player@@UEAAXXZ
     virtual void clearVanishEnchantedItemsOnDeath();
@@ -403,17 +403,17 @@ public:
     displayTextObjectMessage(class TextObjectRoot const& textObject, std::string const&, std::string const&);
 
     // vIndex: 229, symbol:
-    // ?displayTextObjectWhisperMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
-    virtual void
-    displayTextObjectWhisperMessage(std::string const& message, std::string const& xuid, std::string const& platformId);
-
-    // vIndex: 230, symbol:
     // ?displayTextObjectWhisperMessage@Player@@UEAAXAEBVResolvedTextObject@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
     virtual void displayTextObjectWhisperMessage(
         class ResolvedTextObject const&,
         std::string const& xuid,
         std::string const& platformId
     );
+
+    // vIndex: 230, symbol:
+    // ?displayTextObjectWhisperMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
+    virtual void
+    displayTextObjectWhisperMessage(std::string const& message, std::string const& xuid, std::string const& platformId);
 
     // vIndex: 231, symbol:
     // ?displayWhisperMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z

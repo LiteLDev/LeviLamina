@@ -26,11 +26,11 @@ public:
     // vIndex: 0, symbol: ??1Random@Core@@UEAA@XZ
     virtual ~Random();
 
-    // vIndex: 1, symbol: ?nextInt@Random@Core@@UEAAHH@Z
-    virtual int nextInt(int n);
-
-    // vIndex: 2, symbol: ?nextInt@Random@Core@@UEAAHXZ
+    // vIndex: 1, symbol: ?nextInt@Random@Core@@UEAAHXZ
     virtual int nextInt();
+
+    // vIndex: 2, symbol: ?nextInt@Random@Core@@UEAAHH@Z
+    virtual int nextInt(int n);
 
     // vIndex: 3, symbol: ?nextLong@Random@Core@@UEAA_JXZ
     virtual int64 nextLong();

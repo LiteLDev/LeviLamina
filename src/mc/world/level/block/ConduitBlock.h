@@ -33,7 +33,7 @@ public:
     // vIndex: 56, symbol: ?canContainLiquid@ConduitBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 85, symbol: ?mayPlace@ConduitBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 84, symbol: ?mayPlace@ConduitBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar facing) const;
 
     // symbol: ??0ConduitBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

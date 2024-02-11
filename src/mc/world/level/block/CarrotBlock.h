@@ -38,13 +38,13 @@ public:
     // vIndex: 129, symbol: ?getVariant@CarrotBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 157, symbol:
+    // vIndex: 157, symbol: ?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@XZ
+    virtual ::BlockRenderLayer getRenderLayer() const;
+
+    // vIndex: 158, symbol:
     // ?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual ::BlockRenderLayer
     getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
-
-    // vIndex: 158, symbol: ?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@XZ
-    virtual ::BlockRenderLayer getRenderLayer() const;
 
     // vIndex: 170, symbol: ?getBaseSeed@CarrotBlock@@UEBA?BVItemInstance@@XZ
     virtual class ItemInstance const getBaseSeed() const;

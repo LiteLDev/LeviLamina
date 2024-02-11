@@ -88,10 +88,10 @@ public:
     // vIndex: 60, symbol: ?getColor@ArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
     virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const&) const;
 
-    // vIndex: 61, symbol: ?hasCustomColor@ArmorItem@@UEBA_NPEBVCompoundTag@@@Z
+    // vIndex: 62, symbol: ?hasCustomColor@ArmorItem@@UEBA_NPEBVCompoundTag@@@Z
     virtual bool hasCustomColor(class CompoundTag const* userData) const;
 
-    // vIndex: 64, symbol: ?clearColor@ArmorItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 63, symbol: ?clearColor@ArmorItem@@UEBAXAEAVItemStackBase@@@Z
     virtual void clearColor(class ItemStackBase& instance) const;
 
     // vIndex: 65, symbol: ?setColor@ArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
@@ -110,7 +110,7 @@ public:
     // vIndex: 76, symbol: ?hurtActor@ArmorItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
-    // vIndex: 79, symbol: ?mineBlock@ArmorItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 80, symbol: ?mineBlock@ArmorItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
 
     // vIndex: 97, symbol: ?getEquipLocation@ArmorItem@@UEBA?AW4ActorLocation@@XZ

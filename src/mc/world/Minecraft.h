@@ -29,11 +29,11 @@ public:
     // vIndex: 0, symbol: ??1Minecraft@@UEAA@XZ
     virtual ~Minecraft();
 
-    // vIndex: 1, symbol: ?getEntityRegistry@Minecraft@@UEBA?AV?$StackRefResult@$$CBVEntityRegistry@@@@XZ
-    virtual class StackRefResult<class EntityRegistry const> getEntityRegistry() const;
-
-    // vIndex: 2, symbol: ?getEntityRegistry@Minecraft@@UEAA?AV?$StackRefResult@VEntityRegistry@@@@XZ
+    // vIndex: 1, symbol: ?getEntityRegistry@Minecraft@@UEAA?AV?$StackRefResult@VEntityRegistry@@@@XZ
     virtual class StackRefResult<class EntityRegistry> getEntityRegistry();
+
+    // vIndex: 2, symbol: ?getEntityRegistry@Minecraft@@UEBA?AV?$StackRefResult@$$CBVEntityRegistry@@@@XZ
+    virtual class StackRefResult<class EntityRegistry const> getEntityRegistry() const;
 
     // vIndex: 3, symbol: ?setSimTimePause@Minecraft@@UEAAX_N@Z
     virtual void setSimTimePause(bool pause);

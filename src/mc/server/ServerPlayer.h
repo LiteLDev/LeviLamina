@@ -77,7 +77,7 @@ public:
     // vIndex: 103, symbol: ?canChangeDimensionsUsingPortal@ServerPlayer@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
 
-    // vIndex: 105, symbol: ?changeDimension@ServerPlayer@@UEAAXV?$AutomaticID@VDimension@@H@@@Z
+    // vIndex: 104, symbol: ?changeDimension@ServerPlayer@@UEAAXV?$AutomaticID@VDimension@@H@@@Z
     virtual void changeDimension(DimensionType toId);
 
     // vIndex: 106, symbol: ?getControllingPlayer@ServerPlayer@@UEBA?AUActorUniqueID@@XZ
@@ -173,17 +173,17 @@ public:
     displayTextObjectMessage(class TextObjectRoot const& textObject, std::string const&, std::string const&);
 
     // vIndex: 229, symbol:
-    // ?displayTextObjectWhisperMessage@ServerPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
-    virtual void
-    displayTextObjectWhisperMessage(std::string const& message, std::string const& xuid, std::string const& platformId);
-
-    // vIndex: 230, symbol:
     // ?displayTextObjectWhisperMessage@ServerPlayer@@UEAAXAEBVResolvedTextObject@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
     virtual void displayTextObjectWhisperMessage(
         class ResolvedTextObject const& textObject,
         std::string const&              xuid,
         std::string const&              platformId
     );
+
+    // vIndex: 230, symbol:
+    // ?displayTextObjectWhisperMessage@ServerPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
+    virtual void
+    displayTextObjectWhisperMessage(std::string const& message, std::string const& xuid, std::string const& platformId);
 
     // vIndex: 231, symbol:
     // ?displayWhisperMessage@ServerPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z

@@ -96,11 +96,11 @@ public:
     // ?onLevelDestruction@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void onLevelDestruction(std::string const& levelId);
 
-    // vIndex: 24, symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
-    virtual void levelEvent(::LevelEvent type, class CompoundTag const& data);
-
-    // vIndex: 25, symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
+    // vIndex: 24, symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
     virtual void levelEvent(::LevelEvent type, class Vec3 const& pos, int data);
+
+    // vIndex: 25, symbol: ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
+    virtual void levelEvent(::LevelEvent type, class CompoundTag const& data);
 
     // vIndex: 26, symbol: ?takePicture@LevelListener@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
     virtual void takePicture(

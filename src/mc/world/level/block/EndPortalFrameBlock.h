@@ -68,7 +68,7 @@ public:
     // vIndex: 152, symbol: ?isInteractiveBlock@EndPortalFrameBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 153, symbol: ?use@EndPortalFrameBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 154, symbol: ?use@EndPortalFrameBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 164, symbol: ?getResourceCount@EndPortalFrameBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z

@@ -124,14 +124,14 @@ public:
     virtual class Core::PathBuffer<std::string> const& getFullPath() const;
 
     // vIndex: 9, symbol:
-    // ?saveData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBVLevelStorageWriteBatch@@@Z
-    virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
-    saveData(class LevelStorageWriteBatch const& batch);
-
-    // vIndex: 10, symbol:
     // ?saveData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@$$QEAV43@W4Category@DBHelpers@@@Z
     virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
     saveData(std::string const& key, std::string&& data, ::DBHelpers::Category category);
+
+    // vIndex: 10, symbol:
+    // ?saveData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBVLevelStorageWriteBatch@@@Z
+    virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>>
+    saveData(class LevelStorageWriteBatch const& batch);
 
     // vIndex: 11, symbol:
     // ?deleteData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z

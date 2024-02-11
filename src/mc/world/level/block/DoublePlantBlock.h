@@ -47,7 +47,7 @@ public:
     // vIndex: 96, symbol: ?asItemInstance@DoublePlantBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
     virtual class ItemInstance asItemInstance(class Block const& block, class BlockActor const*) const;
 
-    // vIndex: 103, symbol: ?canBeBuiltOver@DoublePlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 104, symbol: ?canBeBuiltOver@DoublePlantBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canBeBuiltOver(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 119, symbol:
@@ -57,7 +57,7 @@ public:
     // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@DoublePlantBlock@@UEBA_NXZ
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 121, symbol: ?getColor@DoublePlantBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    // vIndex: 122, symbol: ?getColor@DoublePlantBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 124, symbol: ?getColorForParticle@DoublePlantBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
@@ -67,13 +67,13 @@ public:
     // vIndex: 129, symbol: ?getVariant@DoublePlantBlock@@UEBAHAEBVBlock@@@Z
     virtual int getVariant(class Block const& block) const;
 
-    // vIndex: 157, symbol:
+    // vIndex: 157, symbol: ?getRenderLayer@DoublePlantBlock@@UEBA?AW4BlockRenderLayer@@XZ
+    virtual ::BlockRenderLayer getRenderLayer() const;
+
+    // vIndex: 158, symbol:
     // ?getRenderLayer@DoublePlantBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual ::BlockRenderLayer
     getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
-
-    // vIndex: 158, symbol: ?getRenderLayer@DoublePlantBlock@@UEBA?AW4BlockRenderLayer@@XZ
-    virtual ::BlockRenderLayer getRenderLayer() const;
 
     // vIndex: 170, symbol: ?_keepRelevantStateForDropping@DoublePlantBlock@@MEBAAEBVBlock@@AEBV2@@Z
     virtual class Block const& _keepRelevantStateForDropping(class Block const& block) const;

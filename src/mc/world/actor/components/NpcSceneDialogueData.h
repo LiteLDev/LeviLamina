@@ -42,20 +42,20 @@ public:
     // ?getSceneName@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getSceneName() const;
 
-    // vIndex: 6, symbol: ?getActionsContainer@NpcSceneDialogueData@@UEAAPEAUActionContainer@npc@@XZ
-    virtual struct npc::ActionContainer* getActionsContainer();
-
-    // vIndex: 7, symbol: ?getActionsContainer@NpcSceneDialogueData@@UEBAPEBUActionContainer@npc@@XZ
+    // vIndex: 6, symbol: ?getActionsContainer@NpcSceneDialogueData@@UEBAPEBUActionContainer@npc@@XZ
     virtual struct npc::ActionContainer const* getActionsContainer() const;
+
+    // vIndex: 7, symbol: ?getActionsContainer@NpcSceneDialogueData@@UEAAPEAUActionContainer@npc@@XZ
+    virtual struct npc::ActionContainer* getActionsContainer();
 
     // vIndex: 8, symbol: ?getActorUniqueID@NpcSceneDialogueData@@UEAA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getActorUniqueID();
 
-    // vIndex: 9, symbol: ?getActor@NpcSceneDialogueData@@UEAAPEAVActor@@XZ
-    virtual class Actor* getActor();
-
-    // vIndex: 10, symbol: ?getActor@NpcSceneDialogueData@@UEBAPEBVActor@@XZ
+    // vIndex: 9, symbol: ?getActor@NpcSceneDialogueData@@UEBAPEBVActor@@XZ
     virtual class Actor const* getActor() const;
+
+    // vIndex: 10, symbol: ?getActor@NpcSceneDialogueData@@UEAAPEAVActor@@XZ
+    virtual class Actor* getActor();
 
     // vIndex: 11, symbol: ?isRemoteFire@INpcDialogueData@@UEAA_NXZ
     virtual bool isRemoteFire();

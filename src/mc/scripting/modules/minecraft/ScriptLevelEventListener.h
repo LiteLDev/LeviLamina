@@ -60,12 +60,12 @@ public:
     virtual void __unk_vfn_9();
 
     // vIndex: 10, symbol:
-    // ?onEvent@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScriptingInitializeEvent@@@Z
-    virtual ::EventResult onEvent(struct ScriptingInitializeEvent const&);
-
-    // vIndex: 11, symbol:
     // ?onEvent@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBULevelStartLeaveGameEvent@@@Z
     virtual ::EventResult onEvent(struct LevelStartLeaveGameEvent const&);
+
+    // vIndex: 11, symbol:
+    // ?onEvent@ScriptLevelEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUScriptingInitializeEvent@@@Z
+    virtual ::EventResult onEvent(struct ScriptingInitializeEvent const&);
 
     // symbol:
     // ??0ScriptLevelEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldAfterEvents@ScriptModuleMinecraft@@@3@_N@Z

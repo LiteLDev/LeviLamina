@@ -41,7 +41,7 @@ public:
     virtual class AABB const&
     getOutline(class Block const&, class IConstBlockSource const&, class BlockPos const&, class AABB&) const;
 
-    // vIndex: 15, symbol: ?randomlyModifyPosition@TallGrassBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
+    // vIndex: 16, symbol: ?randomlyModifyPosition@TallGrassBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
     virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
 
     // vIndex: 56, symbol: ?canContainLiquid@TallGrassBlock@@UEBA_NXZ
@@ -60,7 +60,7 @@ public:
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 84, symbol: ?mayPlace@TallGrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 85, symbol: ?mayPlace@TallGrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 96, symbol: ?asItemInstance@TallGrassBlock@@UEBA?AVItemInstance@@AEBVBlock@@PEBVBlockActor@@@Z
@@ -73,11 +73,11 @@ public:
     // vIndex: 120, symbol: ?isAuxValueRelevantForPicking@TallGrassBlock@@UEBA_NXZ
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 121, symbol: ?getColor@TallGrassBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-    virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
-
-    // vIndex: 122, symbol: ?getColor@TallGrassBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 121, symbol: ?getColor@TallGrassBlock@@UEBAHAEBVBlock@@@Z
     virtual int getColor(class Block const& block) const;
+
+    // vIndex: 122, symbol: ?getColor@TallGrassBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+    virtual int getColor(class BlockSource& region, class BlockPos const& pos, class Block const& block) const;
 
     // vIndex: 138, symbol: ?canBeSilkTouched@TallGrassBlock@@MEBA_NXZ
     virtual bool canBeSilkTouched() const;
@@ -88,13 +88,13 @@ public:
     // vIndex: 156, symbol: ?canSurvive@TallGrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool canSurvive(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 157, symbol:
+    // vIndex: 157, symbol: ?getRenderLayer@TallGrassBlock@@UEBA?AW4BlockRenderLayer@@XZ
+    virtual ::BlockRenderLayer getRenderLayer() const;
+
+    // vIndex: 158, symbol:
     // ?getRenderLayer@TallGrassBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
     virtual ::BlockRenderLayer
     getRenderLayer(class Block const& block, class BlockSource&, class BlockPos const& pos) const;
-
-    // vIndex: 158, symbol: ?getRenderLayer@TallGrassBlock@@UEBA?AW4BlockRenderLayer@@XZ
-    virtual ::BlockRenderLayer getRenderLayer() const;
 
     // vIndex: 162, symbol: ?getMapColor@TallGrassBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual class mce::Color

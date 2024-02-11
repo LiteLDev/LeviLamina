@@ -17,11 +17,11 @@ public:
     // vIndex: 0, symbol: __gen_??1ExplosionDecayFunction@@UEAA@XZ
     virtual ~ExplosionDecayFunction() = default;
 
-    // vIndex: 2, symbol: ?apply@ExplosionDecayFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
-
-    // vIndex: 4, symbol: ?apply@ExplosionDecayFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1, symbol: ?apply@ExplosionDecayFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
+
+    // vIndex: 3, symbol: ?apply@ExplosionDecayFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
 
     // NOLINTEND
 };

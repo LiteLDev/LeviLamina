@@ -28,7 +28,7 @@ public:
     // ?getName@BlockDestructibleByMiningDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
 
-    // vIndex: 2, symbol: ?initializeComponent@BlockDestructibleByMiningDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 3, symbol: ?initializeComponent@BlockDestructibleByMiningDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponent(class BlockComponentStorage&) const;
 
     // vIndex: 7, symbol: ?isNetworkComponent@BlockDestructibleByMiningDescription@@UEBA_NXZ

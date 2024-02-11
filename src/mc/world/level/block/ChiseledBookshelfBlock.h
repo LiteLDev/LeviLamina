@@ -50,7 +50,7 @@ public:
     // vIndex: 152, symbol: ?isInteractiveBlock@ChiseledBookshelfBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 154, symbol: ?use@ChiseledBookshelfBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@EV?$optional@VVec3@@@std@@@Z
+    // vIndex: 153, symbol: ?use@ChiseledBookshelfBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@EV?$optional@VVec3@@@std@@@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face, std::optional<class Vec3>) const;
 
     // symbol: ??0ChiseledBookshelfBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

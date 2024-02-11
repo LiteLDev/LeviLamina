@@ -359,11 +359,11 @@ public:
     // vIndex: 103, symbol: ?canChangeDimensionsUsingPortal@Actor@@UEBA_NXZ
     virtual bool canChangeDimensionsUsingPortal() const;
 
-    // vIndex: 104, symbol: ?changeDimension@Actor@@UEAAXAEBVChangeDimensionPacket@@@Z
-    virtual void changeDimension(class ChangeDimensionPacket const& packet);
-
-    // vIndex: 105, symbol: ?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@@Z
+    // vIndex: 104, symbol: ?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@@Z
     virtual void changeDimension(DimensionType toId);
+
+    // vIndex: 105, symbol: ?changeDimension@Actor@@UEAAXAEBVChangeDimensionPacket@@@Z
+    virtual void changeDimension(class ChangeDimensionPacket const& packet);
 
     // vIndex: 106, symbol: ?getControllingPlayer@Actor@@UEBA?AUActorUniqueID@@XZ
     virtual struct ActorUniqueID getControllingPlayer() const;

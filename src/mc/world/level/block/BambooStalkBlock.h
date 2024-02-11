@@ -46,7 +46,7 @@ public:
     // vIndex: 11, symbol: ?getVisualShape@BambooStalkBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
     virtual class AABB const& getVisualShape(class Block const&, class AABB&) const;
 
-    // vIndex: 15, symbol: ?randomlyModifyPosition@BambooStalkBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
+    // vIndex: 16, symbol: ?randomlyModifyPosition@BambooStalkBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
     virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
 
     // vIndex: 32, symbol: ?isWaterBlocking@BambooStalkBlock@@UEBA_NXZ
@@ -71,7 +71,7 @@ public:
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 84, symbol: ?mayPlace@BambooStalkBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 85, symbol: ?mayPlace@BambooStalkBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@BambooStalkBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z

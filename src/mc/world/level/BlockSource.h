@@ -27,14 +27,14 @@ public:
     // vIndex: 0, symbol: ??1BlockSource@@UEAA@XZ
     virtual ~BlockSource();
 
-    // vIndex: 1, symbol: ?getBlock@BlockSource@@UEBAAEBVBlock@@AEBVBlockPos@@I@Z
-    virtual class Block const& getBlock(class BlockPos const& pos, uint layer) const;
+    // vIndex: 1, symbol: ?getBlock@BlockSource@@UEBAAEBVBlock@@HHH@Z
+    virtual class Block const& getBlock(int x, int y, int z) const;
 
     // vIndex: 2, symbol: ?getBlock@BlockSource@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
     virtual class Block const& getBlock(class BlockPos const& pos) const;
 
-    // vIndex: 3, symbol: ?getBlock@BlockSource@@UEBAAEBVBlock@@HHH@Z
-    virtual class Block const& getBlock(int x, int y, int z) const;
+    // vIndex: 3, symbol: ?getBlock@BlockSource@@UEBAAEBVBlock@@AEBVBlockPos@@I@Z
+    virtual class Block const& getBlock(class BlockPos const& pos, uint layer) const;
 
     // vIndex: 4, symbol: ?getBlockEntity@BlockSource@@UEBAPEBVBlockActor@@AEBVBlockPos@@@Z
     virtual class BlockActor const* getBlockEntity(class BlockPos const& pos) const;
@@ -57,20 +57,20 @@ public:
     // vIndex: 10, symbol: ?isUnderWater@BlockSource@@UEBA_NAEBVVec3@@AEBVBlock@@@Z
     virtual bool isUnderWater(class Vec3 const& pos, class Block const& block) const;
 
-    // vIndex: 11, symbol: ?getMaterial@BlockSource@@UEBAAEBVMaterial@@HHH@Z
-    virtual class Material const& getMaterial(int x, int y, int z) const;
-
-    // vIndex: 12, symbol: ?getMaterial@BlockSource@@UEBAAEBVMaterial@@AEBVBlockPos@@@Z
+    // vIndex: 11, symbol: ?getMaterial@BlockSource@@UEBAAEBVMaterial@@AEBVBlockPos@@@Z
     virtual class Material const& getMaterial(class BlockPos const& pos) const;
 
-    // vIndex: 13, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBVAABB@@_N@Z
-    virtual bool hasChunksAt(class AABB const& bb, bool) const;
+    // vIndex: 12, symbol: ?getMaterial@BlockSource@@UEBAAEBVMaterial@@HHH@Z
+    virtual class Material const& getMaterial(int x, int y, int z) const;
+
+    // vIndex: 13, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBUBounds@@_N@Z
+    virtual bool hasChunksAt(struct Bounds const& bounds, bool) const;
 
     // vIndex: 14, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBVBlockPos@@H_N@Z
     virtual bool hasChunksAt(class BlockPos const& pos, int r, bool) const;
 
-    // vIndex: 15, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBUBounds@@_N@Z
-    virtual bool hasChunksAt(struct Bounds const& bounds, bool) const;
+    // vIndex: 15, symbol: ?hasChunksAt@BlockSource@@UEBA_NAEBVAABB@@_N@Z
+    virtual bool hasChunksAt(class AABB const& bb, bool) const;
 
     // vIndex: 16, symbol: ?getDimensionId@BlockSource@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
     virtual DimensionType getDimensionId() const;
@@ -117,14 +117,14 @@ public:
     virtual void removeListener(class BlockSourceListener& l);
 
     // vIndex: 26, symbol:
-    // ?fetchEntities@BlockSource@@UEAA?AV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@W4ActorType@@AEBVAABB@@PEBVActor@@V?$function@$$A6A_NPEAVActor@@@Z@std@@@Z
-    virtual gsl::span<gsl::not_null<class Actor*>>
-    fetchEntities(::ActorType, class AABB const&, class Actor const*, std::function<bool(class Actor*)>);
-
-    // vIndex: 27, symbol:
     // ?fetchEntities@BlockSource@@UEAA?AV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@PEBVActor@@AEBVAABB@@_N2@Z
     virtual gsl::span<gsl::not_null<class Actor*>>
     fetchEntities(class Actor const* except, class AABB const& bb, bool, bool);
+
+    // vIndex: 27, symbol:
+    // ?fetchEntities@BlockSource@@UEAA?AV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@W4ActorType@@AEBVAABB@@PEBVActor@@V?$function@$$A6A_NPEAVActor@@@Z@std@@@Z
+    virtual gsl::span<gsl::not_null<class Actor*>>
+    fetchEntities(::ActorType, class AABB const&, class Actor const*, std::function<bool(class Actor*)>);
 
     // vIndex: 28, symbol:
     // ?setBlock@BlockSource@@UEAA_NAEBVBlockPos@@AEBVBlock@@HPEBUActorBlockSyncMessage@@PEAVActor@@@Z
@@ -137,11 +137,11 @@ public:
     // vIndex: 30, symbol: ?getMinHeight@BlockSource@@UEBAFXZ
     virtual short getMinHeight() const;
 
-    // vIndex: 31, symbol: ?getDimension@BlockSource@@UEAAAEAVDimension@@XZ
-    virtual class Dimension& getDimension();
-
-    // vIndex: 32, symbol: ?getDimension@BlockSource@@UEBAAEAVDimension@@XZ
+    // vIndex: 31, symbol: ?getDimension@BlockSource@@UEBAAEAVDimension@@XZ
     virtual class Dimension& getDimension() const;
+
+    // vIndex: 32, symbol: ?getDimension@BlockSource@@UEAAAEAVDimension@@XZ
+    virtual class Dimension& getDimension();
 
     // vIndex: 33, symbol: ?getDimensionConst@BlockSource@@UEBAAEBVDimension@@XZ
     virtual class Dimension const& getDimensionConst() const;
@@ -161,11 +161,11 @@ public:
     // vIndex: 37, symbol: ?getChunkSource@BlockSource@@UEAAAEAVChunkSource@@XZ
     virtual class ChunkSource& getChunkSource();
 
-    // vIndex: 38, symbol: ?isSolidBlockingBlock@BlockSource@@UEBA_NHHH@Z
-    virtual bool isSolidBlockingBlock(int x, int y, int z) const;
-
-    // vIndex: 39, symbol: ?isSolidBlockingBlock@BlockSource@@UEBA_NAEBVBlockPos@@@Z
+    // vIndex: 38, symbol: ?isSolidBlockingBlock@BlockSource@@UEBA_NAEBVBlockPos@@@Z
     virtual bool isSolidBlockingBlock(class BlockPos const& p) const;
+
+    // vIndex: 39, symbol: ?isSolidBlockingBlock@BlockSource@@UEBA_NHHH@Z
+    virtual bool isSolidBlockingBlock(int x, int y, int z) const;
 
     // vIndex: 40, symbol: ?areChunksFullyLoaded@BlockSource@@UEBA_NAEBVBlockPos@@H@Z
     virtual bool areChunksFullyLoaded(class BlockPos const& pos, int r) const;

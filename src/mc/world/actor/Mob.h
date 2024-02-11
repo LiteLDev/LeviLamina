@@ -272,11 +272,11 @@ public:
     // ?getAllEquipment@Mob@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
     virtual std::vector<class ItemStack const*> getAllEquipment() const;
 
-    // vIndex: 188, symbol: ?dropEquipmentOnDeath@Mob@@UEAAXXZ
-    virtual void dropEquipmentOnDeath();
-
-    // vIndex: 189, symbol: ?dropEquipmentOnDeath@Mob@@UEAAXAEBVActorDamageSource@@H@Z
+    // vIndex: 188, symbol: ?dropEquipmentOnDeath@Mob@@UEAAXAEBVActorDamageSource@@H@Z
     virtual void dropEquipmentOnDeath(class ActorDamageSource const& source, int lootBonusLevel);
+
+    // vIndex: 189, symbol: ?dropEquipmentOnDeath@Mob@@UEAAXXZ
+    virtual void dropEquipmentOnDeath();
 
     // vIndex: 190, symbol: ?clearVanishEnchantedItemsOnDeath@Mob@@UEAAXXZ
     virtual void clearVanishEnchantedItemsOnDeath();

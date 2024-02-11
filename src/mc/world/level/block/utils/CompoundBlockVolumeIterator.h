@@ -17,11 +17,11 @@ public:
     // vIndex: 0, symbol: __gen_??1CompoundBlockVolumeIterator@@UEAA@XZ
     virtual ~CompoundBlockVolumeIterator() = default;
 
-    // vIndex: 1, symbol: ??ECompoundBlockVolumeIterator@@UEAA?AVBaseBlockLocationIterator@@H@Z
-    virtual class BaseBlockLocationIterator operator++(int);
-
-    // vIndex: 2, symbol: ??ECompoundBlockVolumeIterator@@UEAAAEAVBaseBlockLocationIterator@@XZ
+    // vIndex: 1, symbol: ??ECompoundBlockVolumeIterator@@UEAAAEAVBaseBlockLocationIterator@@XZ
     virtual class BaseBlockLocationIterator& operator++();
+
+    // vIndex: 2, symbol: ??ECompoundBlockVolumeIterator@@UEAA?AVBaseBlockLocationIterator@@H@Z
+    virtual class BaseBlockLocationIterator operator++(int);
 
     // vIndex: 3, symbol: ?_begin@CompoundBlockVolumeIterator@@MEAAXXZ
     virtual void _begin();

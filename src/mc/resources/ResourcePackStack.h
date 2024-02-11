@@ -19,11 +19,8 @@ public:
     virtual ~ResourcePackStack();
 
     // vIndex: 1, symbol:
-    // ?loadAllVersionsOf@ResourcePackStack@@UEBA_NAEBVResourceLocation@@AEBV?$function@$$A6A_NAEBVPackInstance@@@Z@std@@AEAVResourcePackMergeStrategy@@@Z
-    virtual bool loadAllVersionsOf(
-        class ResourceLocation const& resourceLocation,
-        std::function<bool(class PackInstance const&)> const&,
-        class ResourcePackMergeStrategy& mergeStrategy
+    // ?loadAllVersionsOf@ResourcePackStack@@UEBA?AV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@AEBVResourceLocation@@@Z
+    virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const& resourceLocation
     ) const;
 
     // vIndex: 2, symbol:
@@ -34,8 +31,11 @@ public:
     ) const;
 
     // vIndex: 3, symbol:
-    // ?loadAllVersionsOf@ResourcePackStack@@UEBA?AV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@AEBVResourceLocation@@@Z
-    virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const& resourceLocation
+    // ?loadAllVersionsOf@ResourcePackStack@@UEBA_NAEBVResourceLocation@@AEBV?$function@$$A6A_NAEBVPackInstance@@@Z@std@@AEAVResourcePackMergeStrategy@@@Z
+    virtual bool loadAllVersionsOf(
+        class ResourceLocation const& resourceLocation,
+        std::function<bool(class PackInstance const&)> const&,
+        class ResourcePackMergeStrategy& mergeStrategy
     ) const;
 
     // symbol:

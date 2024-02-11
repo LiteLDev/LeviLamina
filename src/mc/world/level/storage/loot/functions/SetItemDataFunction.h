@@ -29,11 +29,11 @@ public:
     // vIndex: 0, symbol: __gen_??1SetItemDataFunction@@UEAA@XZ
     virtual ~SetItemDataFunction() = default;
 
-    // vIndex: 2, symbol: ?apply@SetItemDataFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
-
-    // vIndex: 4, symbol: ?apply@SetItemDataFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+    // vIndex: 1, symbol: ?apply@SetItemDataFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
+
+    // vIndex: 3, symbol: ?apply@SetItemDataFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+    virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
 
     // symbol:
     // ?deserialize@SetItemDataFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z

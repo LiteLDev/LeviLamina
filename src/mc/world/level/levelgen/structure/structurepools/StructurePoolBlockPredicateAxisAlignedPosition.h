@@ -17,11 +17,11 @@ public:
     // vIndex: 0, symbol: __gen_??1StructurePoolBlockPredicateAxisAlignedPosition@@UEAA@XZ
     virtual ~StructurePoolBlockPredicateAxisAlignedPosition() = default;
 
-    // vIndex: 1, symbol: ?test@StructurePoolBlockPredicateAxisAlignedPosition@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
-    virtual bool test(class BlockPos const& pos, class BlockPos const& refPos, class Randomize& randomize) const;
-
-    // vIndex: 2, symbol: ?test@StructurePoolBlockPredicateAxisAlignedPosition@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
+    // vIndex: 1, symbol: ?test@StructurePoolBlockPredicateAxisAlignedPosition@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
     virtual bool test(class Block const& block, class Randomize& randomize) const;
+
+    // vIndex: 2, symbol: ?test@StructurePoolBlockPredicateAxisAlignedPosition@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
+    virtual bool test(class BlockPos const& pos, class BlockPos const& refPos, class Randomize& randomize) const;
 
     // symbol: ??0StructurePoolBlockPredicateAxisAlignedPosition@@QEAA@MMHHE@Z
     MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float, float, int, int, uchar axis);

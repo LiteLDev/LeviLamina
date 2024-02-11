@@ -23,7 +23,7 @@ public:
     // vIndex: 0, symbol: ?getSize@FeaturePoolElement@@UEBA?AVBlockPos@@W4Rotation@@@Z
     virtual class BlockPos getSize(::Rotation rotation) const;
 
-    // vIndex: 1, symbol:
+    // vIndex: 2, symbol:
     // ?getJigsawMarkers@FeaturePoolElement@@UEBA?AV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@VBlockPos@@AEAVLegacyStructureSettings@@PEAVBlockSource@@@Z
     virtual std::vector<class JigsawBlockInfo>
     getJigsawMarkers(class BlockPos position, class LegacyStructureSettings& settings, class BlockSource* region) const;

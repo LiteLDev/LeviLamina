@@ -38,11 +38,11 @@ public:
     // vIndex: 76, symbol: ?hurtActor@BrushItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
     virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
 
-    // vIndex: 79, symbol: ?mineBlock@BrushItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
-
-    // vIndex: 80, symbol: ?mineBlock@BrushItem@@UEBA_NAEAVItemInstance@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 79, symbol: ?mineBlock@BrushItem@@UEBA_NAEAVItemInstance@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
+
+    // vIndex: 80, symbol: ?mineBlock@BrushItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
 
     // vIndex: 100, symbol: ?useInterruptedByAttacking@BrushItem@@UEBA_NXZ
     virtual bool useInterruptedByAttacking() const;

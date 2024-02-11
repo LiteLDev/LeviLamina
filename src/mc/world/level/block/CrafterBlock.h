@@ -73,7 +73,7 @@ public:
     // vIndex: 152, symbol: ?isInteractiveBlock@CrafterBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 153, symbol: ?use@CrafterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 154, symbol: ?use@CrafterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player&, class BlockPos const&, uchar) const;
 
     // vIndex: 155, symbol: ?allowStateMismatchOnPlacement@CrafterBlock@@UEBA_NAEBVBlock@@0@Z

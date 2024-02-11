@@ -164,10 +164,10 @@ public:
     // vIndex: 60, symbol: ?getColor@ComponentItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
     virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const& instance) const;
 
-    // vIndex: 62, symbol: ?hasCustomColor@ComponentItem@@UEBA_NAEBVItemStackBase@@@Z
+    // vIndex: 61, symbol: ?hasCustomColor@ComponentItem@@UEBA_NAEBVItemStackBase@@@Z
     virtual bool hasCustomColor(class ItemStackBase const&) const;
 
-    // vIndex: 64, symbol: ?clearColor@ComponentItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 63, symbol: ?clearColor@ComponentItem@@UEBAXAEAVItemStackBase@@@Z
     virtual void clearColor(class ItemStackBase&) const;
 
     // vIndex: 65, symbol: ?setColor@ComponentItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
@@ -202,13 +202,13 @@ public:
     hitBlock(class ItemStack& item, class Block const& block, class BlockPos const& blockPos, class Mob& attacker)
         const;
 
-    // vIndex: 79, symbol: ?mineBlock@ComponentItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool
-    mineBlock(class ItemStack& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
-
-    // vIndex: 80, symbol: ?mineBlock@ComponentItem@@UEBA_NAEAVItemInstance@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 79, symbol: ?mineBlock@ComponentItem@@UEBA_NAEAVItemInstance@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
     mineBlock(class ItemInstance& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
+
+    // vIndex: 80, symbol: ?mineBlock@ComponentItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    virtual bool
+    mineBlock(class ItemStack& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
     // vIndex: 81, symbol:
     // ?buildDescriptionName@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z

@@ -60,7 +60,7 @@ public:
     // vIndex: 81, symbol: ?canBeFertilized@CaveVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
     virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
 
-    // vIndex: 84, symbol: ?mayPlace@CaveVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 85, symbol: ?mayPlace@CaveVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
 
     // vIndex: 92, symbol: ?neighborChanged@CaveVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
@@ -95,7 +95,7 @@ public:
     // vIndex: 151, symbol: ?randomTick@CaveVinesBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
     virtual void randomTick(class BlockSource& region, class BlockPos const& pos, class Random& random) const;
 
-    // vIndex: 153, symbol: ?use@CaveVinesBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 154, symbol: ?use@CaveVinesBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 156, symbol: ?canSurvive@CaveVinesBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z

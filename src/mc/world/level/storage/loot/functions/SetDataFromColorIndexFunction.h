@@ -17,12 +17,12 @@ public:
     // vIndex: 0, symbol: __gen_??1SetDataFromColorIndexFunction@@UEAA@XZ
     virtual ~SetDataFromColorIndexFunction() = default;
 
-    // vIndex: 2, symbol:
+    // vIndex: 1, symbol: ?apply@SetDataFromColorIndexFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
+
+    // vIndex: 3, symbol:
     // ?apply@SetDataFromColorIndexFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
     virtual void apply(class ItemInstance& item, class Random& random, class LootTableContext& context);
-
-    // vIndex: 4, symbol: ?apply@SetDataFromColorIndexFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-    virtual void apply(class ItemStack& item, class Random& random, class LootTableContext& context);
 
     // NOLINTEND
 

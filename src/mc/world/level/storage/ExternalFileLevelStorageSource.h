@@ -32,12 +32,12 @@ public:
     virtual std::string const& getName() const;
 
     // vIndex: 2, symbol:
-    // ?getLevelData@ExternalFileLevelStorageSource@@UEBA?AVResult@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelData@@@Z
-    virtual class Core::Result getLevelData(std::string const& levelId, class LevelData& levelDataOut) const;
-
-    // vIndex: 3, symbol:
     // ?getLevelData@ExternalFileLevelStorageSource@@UEBA?AVLevelData@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual class LevelData getLevelData(std::string const& levelId) const;
+
+    // vIndex: 3, symbol:
+    // ?getLevelData@ExternalFileLevelStorageSource@@UEBA?AVResult@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelData@@@Z
+    virtual class Core::Result getLevelData(std::string const& levelId, class LevelData& levelDataOut) const;
 
     // vIndex: 4, symbol:
     // ?saveLevelData@ExternalFileLevelStorageSource@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVLevelData@@@Z
@@ -70,13 +70,13 @@ public:
     virtual void deleteLevel(std::string const& levelId);
 
     // vIndex: 10, symbol:
+    // ?renameLevel@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+    virtual bool renameLevel(std::string const& levelId, std::string const& newLevelName);
+
+    // vIndex: 11, symbol:
     // ?renameLevel@ExternalFileLevelStorageSource@@UEAAXAEAVLevelData@@AEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void
     renameLevel(class LevelData& levelData, class Core::Path const& fullPath, std::string const& newLevelName);
-
-    // vIndex: 11, symbol:
-    // ?renameLevel@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-    virtual bool renameLevel(std::string const& levelId, std::string const& newLevelName);
 
     // vIndex: 12, symbol:
     // ?createBackupCopyOfWorld@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z

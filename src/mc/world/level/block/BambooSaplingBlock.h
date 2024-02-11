@@ -30,7 +30,7 @@ public:
     // vIndex: 0, symbol: __gen_??1BambooSaplingBlock@@UEAA@XZ
     virtual ~BambooSaplingBlock() = default;
 
-    // vIndex: 15, symbol: ?randomlyModifyPosition@BambooSaplingBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
+    // vIndex: 16, symbol: ?randomlyModifyPosition@BambooSaplingBlock@@UEBA?AVVec3@@AEBVBlockPos@@@Z
     virtual class Vec3 randomlyModifyPosition(class BlockPos const& pos) const;
 
     // vIndex: 49, symbol: ?isValidAuxValue@BambooSaplingBlock@@UEBA_NH@Z
@@ -49,7 +49,7 @@ public:
     virtual bool
     canBeFertilized(class BlockSource& region, class BlockPos const& pos, class Block const& aboveBlock) const;
 
-    // vIndex: 84, symbol: ?mayPlace@BambooSaplingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 85, symbol: ?mayPlace@BambooSaplingBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@BambooSaplingBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z

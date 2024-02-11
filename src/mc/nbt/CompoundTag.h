@@ -31,7 +31,7 @@ public:
     // vIndex: 6, symbol: ?equals@CompoundTag@@UEBA_NAEBVTag@@@Z
     virtual bool equals(class Tag const& obj) const;
 
-    // vIndex: 7, symbol:
+    // vIndex: 8, symbol:
     // ?print@CompoundTag@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPrintStream@@@Z
     virtual void print(std::string const& prefix_, class PrintStream& out) const;
 

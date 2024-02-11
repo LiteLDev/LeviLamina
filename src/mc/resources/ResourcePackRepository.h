@@ -243,12 +243,12 @@ public:
     virtual void addInvalidPack(class ResourceLocation const& packLocation, ::PackType type);
 
     // vIndex: 44, symbol:
-    // ?getInvalidPacks@ResourcePackRepository@@UEBA?AV?$vector@VResourceLocation@@V?$allocator@VResourceLocation@@@std@@@std@@AEBUInvalidPacksFilterGroup@@@Z
-    virtual std::vector<class ResourceLocation> getInvalidPacks(struct InvalidPacksFilterGroup const& packTypes) const;
-
-    // vIndex: 45, symbol:
     // ?getInvalidPacks@ResourcePackRepository@@UEBAAEBV?$vector@VResourceLocation@@V?$allocator@VResourceLocation@@@std@@@std@@W4PackType@@@Z
     virtual std::vector<class ResourceLocation> const& getInvalidPacks(::PackType type) const;
+
+    // vIndex: 45, symbol:
+    // ?getInvalidPacks@ResourcePackRepository@@UEBA?AV?$vector@VResourceLocation@@V?$allocator@VResourceLocation@@@std@@@std@@AEBUInvalidPacksFilterGroup@@@Z
+    virtual std::vector<class ResourceLocation> getInvalidPacks(struct InvalidPacksFilterGroup const& packTypes) const;
 
     // vIndex: 46, symbol: ?deletePack@ResourcePackRepository@@UEAAXAEBVResourceLocation@@@Z
     virtual void deletePack(class ResourceLocation const& packLocation);

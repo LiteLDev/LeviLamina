@@ -32,12 +32,12 @@ public:
     virtual uint64 playUI(std::string const& name, float volume, float pitch);
 
     // vIndex: 3, symbol:
-    // ?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z
-    virtual void playMusic(std::string const& name, float volume);
-
-    // vIndex: 4, symbol:
     // ?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MAEAI@Z
     virtual void playMusic(std::string const& name, float volume, uint& index);
+
+    // vIndex: 4, symbol:
+    // ?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z
+    virtual void playMusic(std::string const& name, float volume);
 
     // vIndex: 5, symbol: ?isLoadingMusic@NullSoundPlayer@@UEBA_NXZ
     virtual bool isLoadingMusic() const;
@@ -61,12 +61,12 @@ public:
     // vIndex: 11, symbol: ?stopMusic@NullSoundPlayer@@UEAAXXZ
     virtual void stopMusic();
 
-    // vIndex: 12, symbol: ?stop@NullSoundPlayer@@UEAAX_K@Z
-    virtual void stop(uint64 handle);
-
-    // vIndex: 13, symbol:
+    // vIndex: 12, symbol:
     // ?stop@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
     virtual void stop(std::string const& name);
+
+    // vIndex: 13, symbol: ?stop@NullSoundPlayer@@UEAAX_K@Z
+    virtual void stop(uint64 handle);
 
     // vIndex: 14, symbol: ?stopAllSounds@NullSoundPlayer@@UEAAXXZ
     virtual void stopAllSounds();
@@ -88,11 +88,11 @@ public:
     // vIndex: 18, symbol: ?unregisterLoop@NullSoundPlayer@@UEAAX_K_N@Z
     virtual void unregisterLoop(uint64 handle, bool);
 
-    // vIndex: 19, symbol: ?isPlayingSound@NullSoundPlayer@@UEBA_NAEBVPath@Core@@@Z
-    virtual bool isPlayingSound(class Core::Path const&) const;
-
-    // vIndex: 20, symbol: ?isPlayingSound@NullSoundPlayer@@UEBA_N_K@Z
+    // vIndex: 19, symbol: ?isPlayingSound@NullSoundPlayer@@UEBA_N_K@Z
     virtual bool isPlayingSound(uint64 handle) const;
+
+    // vIndex: 20, symbol: ?isPlayingSound@NullSoundPlayer@@UEBA_NAEBVPath@Core@@@Z
+    virtual bool isPlayingSound(class Core::Path const&) const;
 
     // vIndex: 21, symbol:
     // ?playAttached@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$function@$$A6AXAEAUSoundInstanceProperties@@@Z@3@@Z

@@ -89,32 +89,32 @@ public:
     virtual void __unk_vfn_15();
 
     // vIndex: 16, symbol:
-    // ?onEvent@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUTripWireTripEvent@@@Z
-    virtual ::EventResult onEvent(struct TripWireTripEvent const&);
+    // ?onEvent@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPistonActionEvent@@@Z
+    virtual ::EventResult onEvent(struct PistonActionEvent const&);
 
     // vIndex: 17, symbol:
-    // ?onEvent@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUTargetBlockHitEvent@@@Z
-    virtual ::EventResult onEvent(struct TargetBlockHitEvent const&);
+    // ?onEvent@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBULeverActionEvent@@@Z
+    virtual ::EventResult onEvent(struct LeverActionEvent const&);
 
     // vIndex: 18, symbol:
-    // ?onEvent@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPressurePlatePopEvent@@@Z
-    virtual ::EventResult onEvent(struct PressurePlatePopEvent const&);
+    // ?onEvent@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUButtonPushEvent@@@Z
+    virtual ::EventResult onEvent(struct ButtonPushEvent const&);
 
     // vIndex: 19, symbol:
     // ?onEvent@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPressurePlatePushEvent@@@Z
     virtual ::EventResult onEvent(struct PressurePlatePushEvent const&);
 
     // vIndex: 20, symbol:
-    // ?onEvent@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUButtonPushEvent@@@Z
-    virtual ::EventResult onEvent(struct ButtonPushEvent const&);
+    // ?onEvent@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPressurePlatePopEvent@@@Z
+    virtual ::EventResult onEvent(struct PressurePlatePopEvent const&);
 
     // vIndex: 21, symbol:
-    // ?onEvent@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBULeverActionEvent@@@Z
-    virtual ::EventResult onEvent(struct LeverActionEvent const&);
+    // ?onEvent@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUTargetBlockHitEvent@@@Z
+    virtual ::EventResult onEvent(struct TargetBlockHitEvent const&);
 
     // vIndex: 22, symbol:
-    // ?onEvent@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUPistonActionEvent@@@Z
-    virtual ::EventResult onEvent(struct PistonActionEvent const&);
+    // ?onEvent@ScriptBlockEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUTripWireTripEvent@@@Z
+    virtual ::EventResult onEvent(struct TripWireTripEvent const&);
 
     // symbol:
     // ??0ScriptBlockEventListener@ScriptModuleMinecraft@@QEAA@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VIScriptWorldAfterEvents@ScriptModuleMinecraft@@@3@@Z

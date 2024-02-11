@@ -61,7 +61,7 @@ public:
     // vIndex: 51, symbol: ?sanitizeFillBlock@MultifaceBlock@@UEBAAEBVBlock@@AEBV2@@Z
     virtual class Block const& sanitizeFillBlock(class Block const&) const;
 
-    // vIndex: 85, symbol: ?mayPlace@MultifaceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+    // vIndex: 84, symbol: ?mayPlace@MultifaceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 92, symbol: ?neighborChanged@MultifaceBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z

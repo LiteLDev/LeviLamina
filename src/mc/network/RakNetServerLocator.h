@@ -119,12 +119,12 @@ public:
     // vIndex: 6, symbol: ?stopServerDiscovery@RakNetServerLocator@@UEAAXXZ
     virtual void stopServerDiscovery();
 
-    // vIndex: 7, symbol:
+    // vIndex: 7, symbol: ?addCustomServer@RakNetServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
+    virtual void addCustomServer(class AsynchronousIPResolver const& futureIP, int port);
+
+    // vIndex: 8, symbol:
     // ?addCustomServer@RakNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
     virtual void addCustomServer(std::string const& address, int port);
-
-    // vIndex: 8, symbol: ?addCustomServer@RakNetServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
-    virtual void addCustomServer(class AsynchronousIPResolver const& futureIP, int port);
 
     // vIndex: 9, symbol:
     // ?getServerList@RakNetServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ

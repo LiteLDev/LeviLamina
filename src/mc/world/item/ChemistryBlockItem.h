@@ -29,7 +29,7 @@ public:
     // vIndex: 0, symbol: __gen_??1ChemistryBlockItem@@UEAA@XZ
     virtual ~ChemistryBlockItem() = default;
 
-    // vIndex: 92, symbol: ?fixupCommon@ChemistryBlockItem@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 91, symbol: ?fixupCommon@ChemistryBlockItem@@UEBAXAEAVItemStackBase@@@Z
     virtual void fixupCommon(class ItemStackBase& stack) const;
 
     // NOLINTEND

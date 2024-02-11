@@ -27,13 +27,13 @@ public:
     virtual ~ScriptServerNetworkEventHandler() = default;
 
     // vIndex: 1, symbol:
+    // ?handleEvent@ScriptServerNetworkEventHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUChatEvent@@@Z
+    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ChatEvent&);
+
+    // vIndex: 2, symbol:
     // ?handleEvent@?$Impl@U?$type_list@U?$MutableServerNetworkGameplayEvent@W4CoordinatorResult@@@@@entt@@@?$EventHandlerDispatcher@VServerNetworkEventHandler@@@Details@@MEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAU?$MutableServerNetworkGameplayEvent@W4CoordinatorResult@@@@@Z
     virtual struct GameplayHandlerResult<::CoordinatorResult>
     handleEvent(struct MutableServerNetworkGameplayEvent<::CoordinatorResult>& event);
-
-    // vIndex: 2, symbol:
-    // ?handleEvent@ScriptServerNetworkEventHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUChatEvent@@@Z
-    virtual struct GameplayHandlerResult<::CoordinatorResult> handleEvent(struct ChatEvent&);
 
     // NOLINTEND
 

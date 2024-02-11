@@ -14,14 +14,14 @@ public:
     // vIndex: 0, symbol: ??1ItemStack@@UEAA@XZ
     virtual ~ItemStack();
 
-    // vIndex: 1, symbol: ?reinit@ItemStack@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@Z
-    virtual void reinit(std::string_view name, int count, int auxValue);
+    // vIndex: 1, symbol: ?reinit@ItemStack@@UEAAXAEBVItem@@HH@Z
+    virtual void reinit(class Item const& item, int count, int auxValue);
 
     // vIndex: 2, symbol: ?reinit@ItemStack@@UEAAXAEBVBlockLegacy@@H@Z
     virtual void reinit(class BlockLegacy const& block, int count);
 
-    // vIndex: 3, symbol: ?reinit@ItemStack@@UEAAXAEBVItem@@HH@Z
-    virtual void reinit(class Item const& item, int count, int auxValue);
+    // vIndex: 3, symbol: ?reinit@ItemStack@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@HH@Z
+    virtual void reinit(std::string_view name, int count, int auxValue);
 
     // vIndex: 4, symbol:
     // ?setNull@ItemStack@@UEAAXV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@Z

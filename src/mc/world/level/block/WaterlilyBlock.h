@@ -50,7 +50,7 @@ public:
     // vIndex: 86, symbol: ?mayPlaceOn@WaterlilyBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlaceOn(class BlockSource& region, class BlockPos const& pos) const;
 
-    // vIndex: 122, symbol: ?getColor@WaterlilyBlock@@UEBAHAEBVBlock@@@Z
+    // vIndex: 121, symbol: ?getColor@WaterlilyBlock@@UEBAHAEBVBlock@@@Z
     virtual int getColor(class Block const& block) const;
 
     // vIndex: 123, symbol: ?getColorAtPos@WaterlilyBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@@Z

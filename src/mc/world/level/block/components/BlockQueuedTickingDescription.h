@@ -27,7 +27,7 @@ public:
     // ?getName@BlockQueuedTickingDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
     virtual std::string const& getName() const;
 
-    // vIndex: 2, symbol: ?initializeComponent@BlockQueuedTickingDescription@@UEBAXAEAVBlockComponentStorage@@@Z
+    // vIndex: 3, symbol: ?initializeComponent@BlockQueuedTickingDescription@@UEBAXAEAVBlockComponentStorage@@@Z
     virtual void initializeComponent(class BlockComponentStorage&) const;
 
     // symbol: ??0BlockQueuedTickingDescription@@QEAA@XZ

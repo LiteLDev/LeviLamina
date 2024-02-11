@@ -25,12 +25,12 @@ public:
     virtual ~RakWebSocket();
 
     // vIndex: 1, symbol:
-    // ?connect@RakWebSocket@@UEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-    virtual ::WSConnectionResult connect(std::string const& uri);
-
-    // vIndex: 2, symbol:
     // ?connect@RakWebSocket@@UEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
     virtual ::WSConnectionResult connect(std::string const& uri, std::vector<std::string> const&);
+
+    // vIndex: 2, symbol:
+    // ?connect@RakWebSocket@@UEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+    virtual ::WSConnectionResult connect(std::string const& uri);
 
     // vIndex: 3, symbol: ?isReady@RakWebSocket@@UEBA_NXZ
     virtual bool isReady() const;

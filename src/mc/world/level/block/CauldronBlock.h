@@ -102,7 +102,7 @@ public:
     // vIndex: 152, symbol: ?isInteractiveBlock@CauldronBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 153, symbol: ?use@CauldronBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 154, symbol: ?use@CauldronBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 159, symbol: ?getExtraRenderLayers@CauldronBlock@@UEBAHXZ

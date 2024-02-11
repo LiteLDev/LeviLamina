@@ -87,7 +87,7 @@ public:
     // vIndex: 152, symbol: ?isInteractiveBlock@FenceGateBlock@@UEBA_NXZ
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 153, symbol: ?use@FenceGateBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+    // vIndex: 154, symbol: ?use@FenceGateBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
     virtual bool use(class Player& player, class BlockPos const& pos, uchar face) const;
 
     // vIndex: 166, symbol: ?_onHitByActivatingAttack@FenceGateBlock@@EEBAXAEAVBlockSource@@AEBVBlockPos@@@Z

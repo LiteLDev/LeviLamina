@@ -17,11 +17,11 @@ public:
     // vIndex: 0, symbol: __gen_??1StructurePoolBlockPredicateAlwaysTrueExcept@@UEAA@XZ
     virtual ~StructurePoolBlockPredicateAlwaysTrueExcept() = default;
 
-    // vIndex: 1, symbol: ?test@StructurePoolBlockPredicateAlwaysTrueExcept@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
-    virtual bool test(class BlockPos const& pos, class BlockPos const& refPos, class Randomize& randomize) const;
-
-    // vIndex: 2, symbol: ?test@StructurePoolBlockPredicateAlwaysTrueExcept@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
+    // vIndex: 1, symbol: ?test@StructurePoolBlockPredicateAlwaysTrueExcept@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
     virtual bool test(class Block const& block, class Randomize& randomize) const;
+
+    // vIndex: 2, symbol: ?test@StructurePoolBlockPredicateAlwaysTrueExcept@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
+    virtual bool test(class BlockPos const& pos, class BlockPos const& refPos, class Randomize& randomize) const;
 
     // symbol:
     // ??0StructurePoolBlockPredicateAlwaysTrueExcept@@QEAA@AEBV?$set@PEBVBlock@@U?$less@PEBVBlock@@@std@@V?$allocator@PEBVBlock@@@3@@std@@M@Z

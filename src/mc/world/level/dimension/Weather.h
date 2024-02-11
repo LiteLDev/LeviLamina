@@ -25,7 +25,7 @@ public:
     // vIndex: 0, symbol: __gen_??1Weather@@UEAA@XZ
     virtual ~Weather() = default;
 
-    // vIndex: 25, symbol: ?levelEvent@Weather@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
+    // vIndex: 24, symbol: ?levelEvent@Weather@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
     virtual void levelEvent(::LevelEvent type, class Vec3 const& pos, int data);
 
     // symbol: ??0Weather@@QEAA@AEAVDimension@@AEAVIRandom@@@Z

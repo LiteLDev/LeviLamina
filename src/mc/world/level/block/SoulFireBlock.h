@@ -47,10 +47,10 @@ public:
     // vIndex: 56, symbol: ?canContainLiquid@SoulFireBlock@@UEBA_NXZ
     virtual bool canContainLiquid() const;
 
-    // vIndex: 83, symbol: ?mayPick@SoulFireBlock@@UEBA_NXZ
+    // vIndex: 82, symbol: ?mayPick@SoulFireBlock@@UEBA_NXZ
     virtual bool mayPick() const;
 
-    // vIndex: 84, symbol: ?mayPlace@SoulFireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+    // vIndex: 85, symbol: ?mayPlace@SoulFireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
     virtual bool mayPlace(class BlockSource& region, class BlockPos const& pos) const;
 
     // vIndex: 92, symbol: ?neighborChanged@SoulFireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z

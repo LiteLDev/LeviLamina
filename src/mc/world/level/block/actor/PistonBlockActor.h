@@ -30,11 +30,11 @@ public:
     // vIndex: 13, symbol: ?onRemoved@PistonBlockActor@@UEAAXAEAVBlockSource@@@Z
     virtual void onRemoved(class BlockSource& region);
 
-    // vIndex: 30, symbol: ?getOwningPiston@PistonBlockActor@@UEAAPEAV1@AEAVBlockSource@@@Z
-    virtual class PistonBlockActor* getOwningPiston(class BlockSource& region);
-
-    // vIndex: 31, symbol: ?getOwningPiston@PistonBlockActor@@UEBAPEBV1@AEAVBlockSource@@@Z
+    // vIndex: 30, symbol: ?getOwningPiston@PistonBlockActor@@UEBAPEBV1@AEAVBlockSource@@@Z
     virtual class PistonBlockActor const* getOwningPiston(class BlockSource& region) const;
+
+    // vIndex: 31, symbol: ?getOwningPiston@PistonBlockActor@@UEAAPEAV1@AEAVBlockSource@@@Z
+    virtual class PistonBlockActor* getOwningPiston(class BlockSource& region);
 
     // vIndex: 40, symbol:
     // ?_getUpdatePacket@PistonBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z

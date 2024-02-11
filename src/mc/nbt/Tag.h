@@ -35,12 +35,12 @@ public:
     // vIndex: 6, symbol: ?equals@Tag@@UEBA_NAEBV1@@Z
     virtual bool equals(class Tag const& rhs) const;
 
-    // vIndex: 7, symbol:
+    // vIndex: 7, symbol: ?print@Tag@@UEBAXAEAVPrintStream@@@Z
+    virtual void print(class PrintStream& out) const;
+
+    // vIndex: 8, symbol:
     // ?print@Tag@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPrintStream@@@Z
     virtual void print(std::string const& prefix, class PrintStream& out) const;
-
-    // vIndex: 8, symbol: ?print@Tag@@UEBAXAEAVPrintStream@@@Z
-    virtual void print(class PrintStream& out) const;
 
     // vIndex: 9, symbol: ?copy@ByteArrayTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
     virtual std::unique_ptr<class Tag> copy() const = 0;

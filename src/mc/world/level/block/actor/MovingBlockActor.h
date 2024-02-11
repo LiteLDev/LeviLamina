@@ -36,11 +36,11 @@ public:
     // vIndex: 22, symbol: ?getCollisionShape@MovingBlockActor@@UEBA?AVAABB@@AEBVIConstBlockSource@@@Z
     virtual class AABB getCollisionShape(class IConstBlockSource const& region) const;
 
-    // vIndex: 30, symbol: ?getOwningPiston@MovingBlockActor@@UEAAPEAVPistonBlockActor@@AEAVBlockSource@@@Z
-    virtual class PistonBlockActor* getOwningPiston(class BlockSource& region);
-
-    // vIndex: 31, symbol: ?getOwningPiston@MovingBlockActor@@UEBAPEBVPistonBlockActor@@AEAVBlockSource@@@Z
+    // vIndex: 30, symbol: ?getOwningPiston@MovingBlockActor@@UEBAPEBVPistonBlockActor@@AEAVBlockSource@@@Z
     virtual class PistonBlockActor const* getOwningPiston(class BlockSource& region) const;
+
+    // vIndex: 31, symbol: ?getOwningPiston@MovingBlockActor@@UEAAPEAVPistonBlockActor@@AEAVBlockSource@@@Z
+    virtual class PistonBlockActor* getOwningPiston(class BlockSource& region);
 
     // vIndex: 40, symbol:
     // ?_getUpdatePacket@MovingBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z

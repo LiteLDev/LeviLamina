@@ -36,11 +36,11 @@ public:
     // vIndex: 4, symbol: ?isEntityOwned@TickingArea@@UEBA_NXZ
     virtual bool isEntityOwned() const;
 
-    // vIndex: 5, symbol: ?getBlockSource@TickingArea@@UEAA?AV?$WeakRef@VBlockSource@@@@XZ
-    virtual class WeakRef<class BlockSource> getBlockSource();
-
-    // vIndex: 6, symbol: ?getBlockSource@TickingArea@@UEBA?BV?$WeakRef@VBlockSource@@@@XZ
+    // vIndex: 5, symbol: ?getBlockSource@TickingArea@@UEBA?BV?$WeakRef@VBlockSource@@@@XZ
     virtual class WeakRef<class BlockSource> const getBlockSource() const;
+
+    // vIndex: 6, symbol: ?getBlockSource@TickingArea@@UEAA?AV?$WeakRef@VBlockSource@@@@XZ
+    virtual class WeakRef<class BlockSource> getBlockSource();
 
     // vIndex: 7, symbol: ?getBounds@TickingArea@@UEBAAEBUBounds@@XZ
     virtual struct Bounds const& getBounds() const;
@@ -51,11 +51,11 @@ public:
     // vIndex: 9, symbol: ?getMaxDistToPlayers@TickingArea@@UEBAMXZ
     virtual float getMaxDistToPlayers() const;
 
-    // vIndex: 10, symbol: ?getView@TickingArea@@UEAAAEAVITickingAreaView@@XZ
-    virtual class ITickingAreaView& getView();
-
-    // vIndex: 11, symbol: ?getView@TickingArea@@UEBAAEBVITickingAreaView@@XZ
+    // vIndex: 10, symbol: ?getView@TickingArea@@UEBAAEBVITickingAreaView@@XZ
     virtual class ITickingAreaView const& getView() const;
+
+    // vIndex: 11, symbol: ?getView@TickingArea@@UEAAAEAVITickingAreaView@@XZ
+    virtual class ITickingAreaView& getView();
 
     // vIndex: 12, symbol: ?getDescription@TickingArea@@UEBA?AUTickingAreaDescription@@XZ
     virtual struct TickingAreaDescription getDescription() const;

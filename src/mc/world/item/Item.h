@@ -300,17 +300,17 @@ public:
     // vIndex: 60, symbol: ?getColor@Item@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
     virtual class mce::Color getColor(class CompoundTag const* userData, class ItemDescriptor const& instance) const;
 
-    // vIndex: 61, symbol: ?hasCustomColor@Item@@UEBA_NPEBVCompoundTag@@@Z
-    virtual bool hasCustomColor(class CompoundTag const* userData) const;
-
-    // vIndex: 62, symbol: ?hasCustomColor@Item@@UEBA_NAEBVItemStackBase@@@Z
+    // vIndex: 61, symbol: ?hasCustomColor@Item@@UEBA_NAEBVItemStackBase@@@Z
     virtual bool hasCustomColor(class ItemStackBase const& instance) const;
 
-    // vIndex: 63, symbol: ?clearColor@Item@@UEBAXPEAVCompoundTag@@@Z
-    virtual void clearColor(class CompoundTag* userData) const;
+    // vIndex: 62, symbol: ?hasCustomColor@Item@@UEBA_NPEBVCompoundTag@@@Z
+    virtual bool hasCustomColor(class CompoundTag const* userData) const;
 
-    // vIndex: 64, symbol: ?clearColor@Item@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 63, symbol: ?clearColor@Item@@UEBAXAEAVItemStackBase@@@Z
     virtual void clearColor(class ItemStackBase& instance) const;
+
+    // vIndex: 64, symbol: ?clearColor@Item@@UEBAXPEAVCompoundTag@@@Z
+    virtual void clearColor(class CompoundTag* userData) const;
 
     // vIndex: 65, symbol: ?setColor@Item@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
     virtual void setColor(class ItemStackBase& instance, class mce::Color const& color) const;
@@ -358,13 +358,13 @@ public:
     hitBlock(class ItemStack& instance, class Block const& block, class BlockPos const& blockPos, class Mob& attacker)
         const;
 
-    // vIndex: 79, symbol: ?mineBlock@Item@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-    virtual bool
-    mineBlock(class ItemStack& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
-
-    // vIndex: 80, symbol: ?mineBlock@Item@@UEBA_NAEAVItemInstance@@AEBVBlock@@HHHPEAVActor@@@Z
+    // vIndex: 79, symbol: ?mineBlock@Item@@UEBA_NAEAVItemInstance@@AEBVBlock@@HHHPEAVActor@@@Z
     virtual bool
     mineBlock(class ItemInstance& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
+
+    // vIndex: 80, symbol: ?mineBlock@Item@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+    virtual bool
+    mineBlock(class ItemStack& instance, class Block const& block, int x, int y, int z, class Actor* owner) const;
 
     // vIndex: 81, symbol:
     // ?buildDescriptionName@Item@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
@@ -402,26 +402,26 @@ public:
     // vIndex: 90, symbol: ?getCooldownTime@Item@@UEBAHXZ
     virtual int getCooldownTime() const;
 
-    // vIndex: 91, symbol: ?fixupCommon@Item@@UEBAXAEAVItemStackBase@@AEAVLevel@@@Z
-    virtual void fixupCommon(class ItemStackBase& stack, class Level& level) const;
-
-    // vIndex: 92, symbol: ?fixupCommon@Item@@UEBAXAEAVItemStackBase@@@Z
+    // vIndex: 91, symbol: ?fixupCommon@Item@@UEBAXAEAVItemStackBase@@@Z
     virtual void fixupCommon(class ItemStackBase& stack) const;
 
-    // vIndex: 93, symbol: ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
-    virtual ::InHandUpdateType getInHandUpdateType(
-        class Player const&,
-        class ItemStack const& oldItem,
-        class ItemStack const& newItem,
-        bool,
-        bool slotChanged
-    ) const;
+    // vIndex: 92, symbol: ?fixupCommon@Item@@UEBAXAEAVItemStackBase@@AEAVLevel@@@Z
+    virtual void fixupCommon(class ItemStackBase& stack, class Level& level) const;
 
-    // vIndex: 94, symbol: ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z
+    // vIndex: 93, symbol: ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z
     virtual ::InHandUpdateType getInHandUpdateType(
         class Player const&,
         class ItemInstance const& oldItem,
         class ItemInstance const& newItem,
+        bool,
+        bool slotChanged
+    ) const;
+
+    // vIndex: 94, symbol: ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
+    virtual ::InHandUpdateType getInHandUpdateType(
+        class Player const&,
+        class ItemStack const& oldItem,
+        class ItemStack const& newItem,
         bool,
         bool slotChanged
     ) const;

@@ -84,16 +84,7 @@ public:
     // vIndex: 90, symbol: ?getCooldownTime@ShieldItem@@UEBAHXZ
     virtual int getCooldownTime() const;
 
-    // vIndex: 93, symbol: ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
-    virtual ::InHandUpdateType getInHandUpdateType(
-        class Player const&    player,
-        class ItemStack const& oldItem,
-        class ItemStack const& newItem,
-        bool                   isMainHand,
-        bool                   slotChanged
-    ) const;
-
-    // vIndex: 94, symbol:
+    // vIndex: 93, symbol:
     // ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z
     virtual ::InHandUpdateType getInHandUpdateType(
         class Player const&       player,
@@ -101,6 +92,15 @@ public:
         class ItemInstance const& newItem,
         bool                      isMainHand,
         bool                      slotChanged
+    ) const;
+
+    // vIndex: 94, symbol: ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
+    virtual ::InHandUpdateType getInHandUpdateType(
+        class Player const&    player,
+        class ItemStack const& oldItem,
+        class ItemStack const& newItem,
+        bool                   isMainHand,
+        bool                   slotChanged
     ) const;
 
     // vIndex: 98, symbol: ?getEquipSound@ShieldItem@@UEBA?AW4LevelSoundEvent@Legacy@Puv@@XZ

@@ -39,12 +39,12 @@ public:
     virtual ~ScriptActorEventListener() = default;
 
     // vIndex: 1, symbol:
-    // ?onEvent@?$EventListenerDispatcher@VActorEventListener@@@@MEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct ActorNotificationEvent const& event);
-
-    // vIndex: 2, symbol:
     // ?onEvent@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUActorRemoveEffectEvent@@@Z
     virtual ::EventResult onEvent(struct ActorRemoveEffectEvent const&);
+
+    // vIndex: 2, symbol:
+    // ?onEvent@?$EventListenerDispatcher@VActorEventListener@@@@MEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
+    virtual ::EventResult onEvent(struct ActorNotificationEvent const& event);
 
     // vIndex: 3, symbol: __unk_vfn_3
     virtual void __unk_vfn_3();
@@ -123,12 +123,12 @@ public:
     virtual void __unk_vfn_26();
 
     // vIndex: 27, symbol:
-    // ?onEvent@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUActorHealthChangedEvent@@@Z
-    virtual ::EventResult onEvent(struct ActorHealthChangedEvent const&);
-
-    // vIndex: 28, symbol:
     // ?onEvent@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUActorHurtEvent@@@Z
     virtual ::EventResult onEvent(struct ActorHurtEvent const&);
+
+    // vIndex: 28, symbol:
+    // ?onEvent@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUActorHealthChangedEvent@@@Z
+    virtual ::EventResult onEvent(struct ActorHealthChangedEvent const&);
 
     // vIndex: 29, symbol: __unk_vfn_29
     virtual void __unk_vfn_29();
@@ -137,12 +137,12 @@ public:
     virtual void __unk_vfn_30();
 
     // vIndex: 31, symbol:
-    // ?onEvent@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUActorDiedEvent@@@Z
-    virtual ::EventResult onEvent(struct ActorDiedEvent const&);
-
-    // vIndex: 32, symbol:
     // ?onEvent@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUActorDefinitionEndedEvent@@@Z
     virtual ::EventResult onEvent(struct ActorDefinitionEndedEvent const&);
+
+    // vIndex: 32, symbol:
+    // ?onEvent@ScriptActorEventListener@ScriptModuleMinecraft@@UEAA?AW4EventResult@@AEBUActorDiedEvent@@@Z
+    virtual ::EventResult onEvent(struct ActorDiedEvent const&);
 
     // vIndex: 33, symbol: __unk_vfn_33
     virtual void __unk_vfn_33();

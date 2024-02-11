@@ -38,12 +38,12 @@ public:
     virtual ::EventResult onServerThreadStopped(class ServerInstance& serverInstance);
 
     // vIndex: 12, symbol:
-    // ?onEvent@?$EventListenerDispatcher@VServerInstanceEventListener@@@@MEAA?AW4EventResult@@AEBUServerInstanceNotificationEvent@@@Z
-    virtual ::EventResult onEvent(struct ServerInstanceNotificationEvent const& event);
-
-    // vIndex: 13, symbol:
     // ?onEvent@ServerScriptManager@@UEAA?AW4EventResult@@AEBUServerInstanceRequestResourceReload@@@Z
     virtual ::EventResult onEvent(struct ServerInstanceRequestResourceReload const&);
+
+    // vIndex: 13, symbol:
+    // ?onEvent@?$EventListenerDispatcher@VServerInstanceEventListener@@@@MEAA?AW4EventResult@@AEBUServerInstanceNotificationEvent@@@Z
+    virtual ::EventResult onEvent(struct ServerInstanceNotificationEvent const& event);
 
     // symbol:
     // ??0ServerScriptManager@@QEAA@UScriptSettings@@V?$NonOwnerPointer@VScheduler@@@Bedrock@@AEAVIMinecraftEventing@@_N@Z

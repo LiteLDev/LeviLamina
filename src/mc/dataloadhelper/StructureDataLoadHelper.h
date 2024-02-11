@@ -46,11 +46,11 @@ public:
     // vIndex: 8, symbol: ?loadFacingID@StructureDataLoadHelper@@UEAAEE@Z
     virtual uchar loadFacingID(uchar facing);
 
-    // vIndex: 9, symbol: ?loadDirection@StructureDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
-    virtual ::Direction::Type loadDirection(::Direction::Type direction);
-
-    // vIndex: 10, symbol: ?loadDirection@StructureDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+    // vIndex: 9, symbol: ?loadDirection@StructureDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
     virtual class Vec3 loadDirection(class Vec3 const& direction);
+
+    // vIndex: 10, symbol: ?loadDirection@StructureDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
+    virtual ::Direction::Type loadDirection(::Direction::Type direction);
 
     // vIndex: 11, symbol: ?loadRotation@StructureDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
     virtual ::Rotation loadRotation(::Rotation rotation);
